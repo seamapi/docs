@@ -3,7 +3,7 @@
   description: Adds a specified access system user to a specified user identity.
   request:
     path: /user_identities/add_acs_user
-    body:
+    parameters:
       user_identity_id: 68dd3d7e-c90b-4c89-ad70-3e589014ed87
       acs_user_id: d73f4706-67e3-419d-899e-ec957a75ee0c
   response:
@@ -12,7 +12,7 @@
   description: Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
   request:
     path: /user_identities/create
-    body:
+    parameters:
       user_identity_key: 61c6c8ec-21ac-4d1d-be02-688889c66d8c
       email_address: jane@example.com
       phone_number: '+15551234567'
@@ -36,7 +36,7 @@
   description: Deletes a specified user identity.
   request:
     path: /user_identities/delete
-    body:
+    parameters:
       user_identity_id: 7ad2566e-6fd8-466d-b8e4-c10a14a74fd3
   response:
     body: null
@@ -44,7 +44,7 @@
   description: Generates a new instant key for a specified user identity.
   request:
     path: /user_identities/generate_instant_key
-    body:
+    parameters:
       user_identity_id: d92e0c7b-72a1-4063-9ee8-2acefc240358
       max_use_count: 10
   response:
@@ -99,7 +99,7 @@
   description: Grants a specified user identity access to a specified device.
   request:
     path: /user_identities/grant_access_to_device
-    body:
+    parameters:
       user_identity_id: 4e9b7099-bcad-4af6-bb78-88b96cc347bd
       device_id: 6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8
   response:
@@ -526,7 +526,7 @@
   description: Removes a specified access system user from a specified user identity.
   request:
     path: /user_identities/remove_acs_user
-    body:
+    parameters:
       user_identity_id: 802633b6-a66c-4911-b57b-323e900ee531
       acs_user_id: faa22878-fa74-4ea0-87f7-2b05c1b06181
   response:
@@ -535,7 +535,7 @@
   description: Revokes access to a specified device from a specified user identity.
   request:
     path: /user_identities/revoke_access_to_device
-    body:
+    parameters:
       user_identity_id: a5a48343-a95e-4f51-a5d9-1e4241b73553
       device_id: 92874f9e-a2b5-4d49-a039-0280196ad4d5
   response:
@@ -544,7 +544,7 @@
   description: Updates a specified user identity.
   request:
     path: /user_identities/update
-    body:
+    parameters:
       user_identity_id: dc378ea9-358e-4999-b295-d0f3e0d5ff51
       user_identity_key: jane_doe
       email_address: jane@example.com

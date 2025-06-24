@@ -14,7 +14,16 @@ Updates the thermostat weekly program for a thermostat device.
 #### Code
 
 ```javascript
-await seam.thermostats.updateWeeklyProgram();
+await seam.thermostats.updateWeeklyProgram({
+  device_id: "076546e8-966c-47dd-831b-8d98413bf070",
+  monday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  tuesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  wednesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  thursday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  friday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  saturday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+  sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+});
 ```
 
 #### Output
@@ -38,7 +47,19 @@ Updates the thermostat weekly program for a thermostat device.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/update_weekly_program" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "076546e8-966c-47dd-831b-8d98413bf070",
+  "monday_program_id": "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  "tuesday_program_id": "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  "wednesday_program_id": "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  "thursday_program_id": "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  "friday_program_id": "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  "saturday_program_id": "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+  "sunday_program_id": "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28"
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +84,16 @@ Updates the thermostat weekly program for a thermostat device.
 #### Code
 
 ```python
-seam.thermostats.update_weekly_program()
+seam.thermostats.update_weekly_program(
+    device_id="076546e8-966c-47dd-831b-8d98413bf070",
+    monday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    tuesday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    wednesday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    thursday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    friday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    saturday_program_id="3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+    sunday_program_id="3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+)
 ```
 
 #### Output
@@ -86,7 +116,16 @@ Updates the thermostat weekly program for a thermostat device.
 #### Code
 
 ```ruby
-seam.thermostats.update_weekly_program()
+seam.thermostats.update_weekly_program(
+  device_id: "076546e8-966c-47dd-831b-8d98413bf070",
+  monday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  tuesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  wednesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  thursday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  friday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  saturday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+  sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+)
 ```
 
 #### Output
@@ -111,7 +150,16 @@ Updates the thermostat weekly program for a thermostat device.
 
 ```php
 <?php
-$seam->thermostats->update_weekly_program();
+$seam->thermostats->update_weekly_program(
+    device_id: "076546e8-966c-47dd-831b-8d98413bf070",
+    monday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    tuesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    wednesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    thursday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    friday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    saturday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+    sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28"
+);
 ```
 
 #### Output
@@ -135,7 +183,7 @@ Updates the thermostat weekly program for a thermostat device.
 #### Code
 
 ```seam_cli
-seam thermostats update-weekly-program
+seam thermostats update-weekly-program --device_id "076546e8-966c-47dd-831b-8d98413bf070" --monday_program_id "a36dccaa-aeb9-47da-bf1d-43a08ba5c870" --tuesday_program_id "a36dccaa-aeb9-47da-bf1d-43a08ba5c870" --wednesday_program_id "a36dccaa-aeb9-47da-bf1d-43a08ba5c870" --thursday_program_id "a36dccaa-aeb9-47da-bf1d-43a08ba5c870" --friday_program_id "a36dccaa-aeb9-47da-bf1d-43a08ba5c870" --saturday_program_id "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28" --sunday_program_id "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28"
 ```
 
 #### Output

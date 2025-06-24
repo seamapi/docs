@@ -22,7 +22,9 @@ Retrieves a backup access code for an access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.pullBackupAccessCode();
+await seam.accessCodes.pullBackupAccessCode({
+  access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f",
+});
 ```
 
 #### Output
@@ -62,7 +64,12 @@ Retrieves a backup access code for an access code.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/pull_backup_access_code" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "8e525b87-5e4b-48a5-a322-5d45262a735f"
+}
+EOF
 ```
 
 #### Output
@@ -103,7 +110,9 @@ Retrieves a backup access code for an access code.
 #### Code
 
 ```python
-seam.access_codes.pull_backup_access_code()
+seam.access_codes.pull_backup_access_code(
+    access_code_id="8e525b87-5e4b-48a5-a322-5d45262a735f"
+)
 ```
 
 #### Output
@@ -142,7 +151,7 @@ Retrieves a backup access code for an access code.
 #### Code
 
 ```ruby
-seam.access_codes.pull_backup_access_code()
+seam.access_codes.pull_backup_access_code(access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f")
 ```
 
 #### Output
@@ -182,7 +191,9 @@ Retrieves a backup access code for an access code.
 
 ```php
 <?php
-$seam->access_codes->pull_backup_access_code();
+$seam->access_codes->pull_backup_access_code(
+    access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f"
+);
 ```
 
 #### Output
@@ -222,7 +233,7 @@ Retrieves a backup access code for an access code.
 #### Code
 
 ```seam_cli
-seam access-codes pull-backup-access-code
+seam access-codes pull-backup-access-code --access_code_id "8e525b87-5e4b-48a5-a322-5d45262a735f"
 ```
 
 #### Output

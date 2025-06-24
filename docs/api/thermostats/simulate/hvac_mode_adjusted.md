@@ -14,7 +14,11 @@ Simulates having adjusted the HVAC mode for a thermostat.
 #### Code
 
 ```javascript
-await seam.thermostats.simulate.hvacModeAdjusted();
+await seam.thermostats.simulate.hvacModeAdjusted({
+  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  hvac_mode: "heat",
+  heating_set_point_fahrenheit: 68,
+});
 ```
 
 #### Output
@@ -32,7 +36,14 @@ Simulates having adjusted the HVAC mode for a thermostat.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/simulate/hvac_mode_adjusted" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  "hvac_mode": "heat",
+  "heating_set_point_fahrenheit": 68
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +60,11 @@ Simulates having adjusted the HVAC mode for a thermostat.
 #### Code
 
 ```python
-seam.thermostats.simulate.hvac_mode_adjusted()
+seam.thermostats.simulate.hvac_mode_adjusted(
+    device_id="278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+    hvac_mode="heat",
+    heating_set_point_fahrenheit=68,
+)
 ```
 
 #### Output
@@ -66,7 +81,11 @@ Simulates having adjusted the HVAC mode for a thermostat.
 #### Code
 
 ```ruby
-seam.thermostats.simulate.hvac_mode_adjusted()
+seam.thermostats.simulate.hvac_mode_adjusted(
+  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  hvac_mode: "heat",
+  heating_set_point_fahrenheit: 68,
+)
 ```
 
 #### Output
@@ -84,7 +103,11 @@ Simulates having adjusted the HVAC mode for a thermostat.
 
 ```php
 <?php
-$seam->thermostats->simulate->hvac_mode_adjusted();
+$seam->thermostats->simulate->hvac_mode_adjusted(
+    device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+    hvac_mode: "heat",
+    heating_set_point_fahrenheit: 68
+);
 ```
 
 #### Output
@@ -101,7 +124,7 @@ Simulates having adjusted the HVAC mode for a thermostat.
 #### Code
 
 ```seam_cli
-seam thermostats simulate hvac-mode-adjusted
+seam thermostats simulate hvac-mode-adjusted --device_id "278a72ba-7deb-45e3-a0c0-573fd360ee7b" --hvac_mode "heat" --heating_set_point_fahrenheit 68
 ```
 
 #### Output

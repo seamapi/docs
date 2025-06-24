@@ -14,7 +14,10 @@ Deletes a specified climate preset for a specified thermostat.
 #### Code
 
 ```javascript
-await seam.thermostats.deleteClimatePreset();
+await seam.thermostats.deleteClimatePreset({
+  device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+  climate_preset_key: "Eco",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Deletes a specified climate preset for a specified thermostat.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/delete_climate_preset" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+  "climate_preset_key": "Eco"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,9 @@ Deletes a specified climate preset for a specified thermostat.
 #### Code
 
 ```python
-seam.thermostats.delete_climate_preset()
+seam.thermostats.delete_climate_preset(
+    device_id="88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5", climate_preset_key="Eco"
+)
 ```
 
 #### Output
@@ -66,7 +77,10 @@ Deletes a specified climate preset for a specified thermostat.
 #### Code
 
 ```ruby
-seam.thermostats.delete_climate_preset()
+seam.thermostats.delete_climate_preset(
+  device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+  climate_preset_key: "Eco",
+)
 ```
 
 #### Output
@@ -84,7 +98,10 @@ Deletes a specified climate preset for a specified thermostat.
 
 ```php
 <?php
-$seam->thermostats->delete_climate_preset();
+$seam->thermostats->delete_climate_preset(
+    device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+    climate_preset_key: "Eco"
+);
 ```
 
 #### Output
@@ -101,7 +118,7 @@ Deletes a specified climate preset for a specified thermostat.
 #### Code
 
 ```seam_cli
-seam thermostats delete-climate-preset
+seam thermostats delete-climate-preset --device_id "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5" --climate_preset_key "Eco"
 ```
 
 #### Output

@@ -3,7 +3,7 @@
   description: Creates a new Connect Webview that accepts all stable providers.
   request:
     path: /connect_webviews/create
-    body:
+    parameters:
       custom_redirect_url: https://example.com/redirect
       custom_redirect_failure_url: https://example.com/failure-redirect
       customer_id: 8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0
@@ -75,7 +75,7 @@
   description: Creates a new Connect Webview that accepts specific providers.
   request:
     path: /connect_webviews/create
-    body:
+    parameters:
       custom_redirect_url: https://example.com/redirect
       custom_redirect_failure_url: https://example.com/failure-redirect
       customer_id: 8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0
@@ -126,7 +126,7 @@
   description: Deletes a Connect Webview.
   request:
     path: /connect_webviews/delete
-    body:
+    parameters:
       connect_webview_id: 816f796f-636c-46a9-9fef-7f90ca69e771
   response:
     body: null

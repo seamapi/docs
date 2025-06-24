@@ -14,7 +14,11 @@ Updates a connected account.
 #### Code
 
 ```javascript
-await seam.connectedAccounts.update();
+await seam.connectedAccounts.update({
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  automatically_manage_new_devices: true,
+  custom_metadata: { id: "internalId1" },
+});
 ```
 
 #### Output
@@ -32,7 +36,16 @@ Updates a connected account.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "automatically_manage_new_devices": true,
+  "custom_metadata": {
+    "id": "internalId1"
+  }
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +62,11 @@ Updates a connected account.
 #### Code
 
 ```python
-seam.connected_accounts.update()
+seam.connected_accounts.update(
+    connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
+    automatically_manage_new_devices=true,
+    custom_metadata={"id": "internalId1"},
+)
 ```
 
 #### Output
@@ -66,7 +83,13 @@ Updates a connected account.
 #### Code
 
 ```ruby
-seam.connected_accounts.update()
+seam.connected_accounts.update(
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  automatically_manage_new_devices: true,
+  custom_metadata: {
+    id: "internalId1",
+  },
+)
 ```
 
 #### Output
@@ -84,7 +107,11 @@ Updates a connected account.
 
 ```php
 <?php
-$seam->connected_accounts->update();
+$seam->connected_accounts->update(
+    connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    automatically_manage_new_devices: true,
+    custom_metadata: ["id" => "internalId1"]
+);
 ```
 
 #### Output
@@ -101,7 +128,7 @@ Updates a connected account.
 #### Code
 
 ```seam_cli
-seam connected-accounts update
+seam connected-accounts update --connected_account_id "a289aa54-5488-4707-9a4b-eeea4edf311d" --automatically_manage_new_devices true --custom_metadata {"id":"internalId1"}
 ```
 
 #### Output

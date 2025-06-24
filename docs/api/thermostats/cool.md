@@ -14,7 +14,10 @@ Sets a specified thermostat to cool mode.
 #### Code
 
 ```javascript
-await seam.thermostats.cool();
+await seam.thermostats.cool({
+  device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
+  cooling_set_point_fahrenheit: 75,
+});
 ```
 
 #### Output
@@ -38,7 +41,13 @@ Sets a specified thermostat to cool mode.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/cool" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "408641ab-d0f5-475c-b8a5-9b9096405f9a",
+  "cooling_set_point_fahrenheit": 75
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +72,9 @@ Sets a specified thermostat to cool mode.
 #### Code
 
 ```python
-seam.thermostats.cool()
+seam.thermostats.cool(
+    device_id="408641ab-d0f5-475c-b8a5-9b9096405f9a", cooling_set_point_fahrenheit=75
+)
 ```
 
 #### Output
@@ -86,7 +97,10 @@ Sets a specified thermostat to cool mode.
 #### Code
 
 ```ruby
-seam.thermostats.cool()
+seam.thermostats.cool(
+  device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
+  cooling_set_point_fahrenheit: 75,
+)
 ```
 
 #### Output
@@ -111,7 +125,10 @@ Sets a specified thermostat to cool mode.
 
 ```php
 <?php
-$seam->thermostats->cool();
+$seam->thermostats->cool(
+    device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
+    cooling_set_point_fahrenheit: 75
+);
 ```
 
 #### Output
@@ -135,7 +152,7 @@ Sets a specified thermostat to cool mode.
 #### Code
 
 ```seam_cli
-seam thermostats cool
+seam thermostats cool --device_id "408641ab-d0f5-475c-b8a5-9b9096405f9a" --cooling_set_point_fahrenheit 75
 ```
 
 #### Output

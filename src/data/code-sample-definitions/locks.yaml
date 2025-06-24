@@ -327,7 +327,7 @@
   description: Locks a lock.
   request:
     path: /locks/lock_door
-    body:
+    parameters:
       device_id: 9a31853e-4db0-4d78-b21d-f50c8dbdb9dc
   response:
     body:
@@ -341,7 +341,7 @@
   description: Unlocks a lock.
   request:
     path: /locks/unlock_door
-    body:
+    parameters:
       device_id: be047431-bf00-4da6-9fc7-0a7796a9b57f
   response:
     body:
@@ -355,7 +355,7 @@
   description: Simulates the entry of a code on a keypad.
   request:
     path: /locks/simulate/keypad_code_entry
-    body:
+    parameters:
       device_id: 97a7a706-05a9-405c-91e5-b03e5b9c2003
       code: '1234'
   response:
@@ -370,7 +370,7 @@
   description: Simulates a manual lock action using a keypad.
   request:
     path: /locks/simulate/manual_lock_via_keypad
-    body:
+    parameters:
       device_id: d0eed522-8c2f-4905-88fd-4fe8b067bedc
   response:
     body:

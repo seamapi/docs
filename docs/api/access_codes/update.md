@@ -16,7 +16,13 @@ Updates a specified active or upcoming access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.update();
+await seam.accessCodes.update({
+  access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  name: "My Updated Access Code",
+  starts_at: "2025-06-19T08:26:41.000Z",
+  ends_at: "2025-06-21T17:38:07.000Z",
+  code: "4444",
+});
 ```
 
 #### Output
@@ -34,7 +40,16 @@ Updates a specified active or upcoming access code.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  "name": "My Updated Access Code",
+  "starts_at": "2025-06-19T08:26:41.000Z",
+  "ends_at": "2025-06-21T17:38:07.000Z",
+  "code": "4444"
+}
+EOF
 ```
 
 #### Output
@@ -51,7 +66,13 @@ Updates a specified active or upcoming access code.
 #### Code
 
 ```python
-seam.access_codes.update()
+seam.access_codes.update(
+    access_code_id="b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+    name="My Updated Access Code",
+    starts_at="2025-06-19T08:26:41.000Z",
+    ends_at="2025-06-21T17:38:07.000Z",
+    code="4444",
+)
 ```
 
 #### Output
@@ -68,7 +89,13 @@ Updates a specified active or upcoming access code.
 #### Code
 
 ```ruby
-seam.access_codes.update()
+seam.access_codes.update(
+  access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  name: "My Updated Access Code",
+  starts_at: "2025-06-19T08:26:41.000Z",
+  ends_at: "2025-06-21T17:38:07.000Z",
+  code: "4444",
+)
 ```
 
 #### Output
@@ -86,7 +113,13 @@ Updates a specified active or upcoming access code.
 
 ```php
 <?php
-$seam->access_codes->update();
+$seam->access_codes->update(
+    access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+    name: "My Updated Access Code",
+    starts_at: "2025-06-19T08:26:41.000Z",
+    ends_at: "2025-06-21T17:38:07.000Z",
+    code: "4444"
+);
 ```
 
 #### Output
@@ -103,7 +136,7 @@ Updates a specified active or upcoming access code.
 #### Code
 
 ```seam_cli
-seam access-codes update
+seam access-codes update --access_code_id "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5" --name "My Updated Access Code" --starts_at "2025-06-19T08:26:41.000Z" --ends_at "2025-06-21T17:38:07.000Z" --code "4444"
 ```
 
 #### Output

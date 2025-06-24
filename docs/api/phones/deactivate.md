@@ -14,7 +14,9 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 #### Code
 
 ```javascript
-await seam.phones.deactivate();
+await seam.phones.deactivate({
+  device_id: "6481cd6a-579f-4d8c-9adb-b42bf9fb697e",
+});
 ```
 
 #### Output
@@ -32,7 +34,12 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/deactivate" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "6481cd6a-579f-4d8c-9adb-b42bf9fb697e"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +56,7 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 #### Code
 
 ```python
-seam.phones.deactivate()
+seam.phones.deactivate(device_id="6481cd6a-579f-4d8c-9adb-b42bf9fb697e")
 ```
 
 #### Output
@@ -66,7 +73,7 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 #### Code
 
 ```ruby
-seam.phones.deactivate()
+seam.phones.deactivate(device_id: "6481cd6a-579f-4d8c-9adb-b42bf9fb697e")
 ```
 
 #### Output
@@ -84,7 +91,7 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 
 ```php
 <?php
-$seam->phones->deactivate();
+$seam->phones->deactivate(device_id: "6481cd6a-579f-4d8c-9adb-b42bf9fb697e");
 ```
 
 #### Output
@@ -101,7 +108,7 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 #### Code
 
 ```seam_cli
-seam phones deactivate
+seam phones deactivate --device_id "6481cd6a-579f-4d8c-9adb-b42bf9fb697e"
 ```
 
 #### Output

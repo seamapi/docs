@@ -14,7 +14,11 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 #### Code
 
 ```javascript
-await seam.thermostats.heatCool();
+await seam.thermostats.heatCool({
+  device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
+});
 ```
 
 #### Output
@@ -38,7 +42,14 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "32f974cc-e817-4bd7-b7f1-be92c80884a1",
+  "heating_set_point_celsius": 20,
+  "cooling_set_point_celsius": 25
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +74,11 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 #### Code
 
 ```python
-seam.thermostats.heat_cool()
+seam.thermostats.heat_cool(
+    device_id="32f974cc-e817-4bd7-b7f1-be92c80884a1",
+    heating_set_point_celsius=20,
+    cooling_set_point_celsius=25,
+)
 ```
 
 #### Output
@@ -86,7 +101,11 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 #### Code
 
 ```ruby
-seam.thermostats.heat_cool()
+seam.thermostats.heat_cool(
+  device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
+)
 ```
 
 #### Output
@@ -111,7 +130,11 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 
 ```php
 <?php
-$seam->thermostats->heat_cool();
+$seam->thermostats->heat_cool(
+    device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
+    heating_set_point_celsius: 20,
+    cooling_set_point_celsius: 25
+);
 ```
 
 #### Output
@@ -135,7 +158,7 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 #### Code
 
 ```seam_cli
-seam thermostats heat-cool
+seam thermostats heat-cool --device_id "32f974cc-e817-4bd7-b7f1-be92c80884a1" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
 #### Output

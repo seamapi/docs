@@ -14,7 +14,9 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 #### Code
 
 ```javascript
-await seam.acs.encoders.scanCredential();
+await seam.acs.encoders.scanCredential({
+  acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36",
+});
 ```
 
 #### Output
@@ -96,7 +98,12 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/scan_credential" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_encoder_id": "b062df92-91c6-482c-a3f9-6e578f062d36"
+}
+EOF
 ```
 
 #### Output
@@ -179,7 +186,7 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 #### Code
 
 ```python
-seam.acs.encoders.scan_credential()
+seam.acs.encoders.scan_credential(acs_encoder_id="b062df92-91c6-482c-a3f9-6e578f062d36")
 ```
 
 #### Output
@@ -260,7 +267,7 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 #### Code
 
 ```ruby
-seam.acs.encoders.scan_credential()
+seam.acs.encoders.scan_credential(acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36")
 ```
 
 #### Output
@@ -343,7 +350,9 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 
 ```php
 <?php
-$seam->acs->encoders->scan_credential();
+$seam->acs->encoders->scan_credential(
+    acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36"
+);
 ```
 
 #### Output
@@ -435,7 +444,7 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 #### Code
 
 ```seam_cli
-seam acs encoders scan-credential
+seam acs encoders scan-credential --acs_encoder_id "b062df92-91c6-482c-a3f9-6e578f062d36"
 ```
 
 #### Output

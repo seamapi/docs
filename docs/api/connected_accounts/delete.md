@@ -18,7 +18,9 @@ Deletes a specified connected account.
 #### Code
 
 ```javascript
-await seam.connectedAccounts.delete();
+await seam.connectedAccounts.delete({
+  connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e",
+});
 ```
 
 #### Output
@@ -36,7 +38,12 @@ Deletes a specified connected account.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
+}
+EOF
 ```
 
 #### Output
@@ -53,7 +60,9 @@ Deletes a specified connected account.
 #### Code
 
 ```python
-seam.connected_accounts.delete()
+seam.connected_accounts.delete(
+    connected_account_id="35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
+)
 ```
 
 #### Output
@@ -70,7 +79,7 @@ Deletes a specified connected account.
 #### Code
 
 ```ruby
-seam.connected_accounts.delete()
+seam.connected_accounts.delete(connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e")
 ```
 
 #### Output
@@ -88,7 +97,9 @@ Deletes a specified connected account.
 
 ```php
 <?php
-$seam->connected_accounts->delete();
+$seam->connected_accounts->delete(
+    connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
+);
 ```
 
 #### Output
@@ -105,7 +116,7 @@ Deletes a specified connected account.
 #### Code
 
 ```seam_cli
-seam connected-accounts delete
+seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 ```
 
 #### Output

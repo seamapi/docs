@@ -14,7 +14,13 @@ Creates a new user identity. By specifying the desired acs_system_id, this opera
 #### Code
 
 ```javascript
-await seam.userIdentities.create();
+await seam.userIdentities.create({
+  user_identity_key: "61c6c8ec-21ac-4d1d-be02-688889c66d8c",
+  email_address: "jane@example.com",
+  phone_number: "+15551234567",
+  full_name: "Jane Doe",
+  acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
+});
 ```
 
 #### Output
@@ -43,7 +49,18 @@ Creates a new user identity. By specifying the desired acs_system_id, this opera
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_key": "61c6c8ec-21ac-4d1d-be02-688889c66d8c",
+  "email_address": "jane@example.com",
+  "phone_number": "+15551234567",
+  "full_name": "Jane Doe",
+  "acs_system_ids": [
+    "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+  ]
+}
+EOF
 ```
 
 #### Output
@@ -73,7 +90,13 @@ Creates a new user identity. By specifying the desired acs_system_id, this opera
 #### Code
 
 ```python
-seam.user_identities.create()
+seam.user_identities.create(
+    user_identity_key="61c6c8ec-21ac-4d1d-be02-688889c66d8c",
+    email_address="jane@example.com",
+    phone_number="+15551234567",
+    full_name="Jane Doe",
+    acs_system_ids=["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
+)
 ```
 
 #### Output
@@ -101,7 +124,13 @@ Creates a new user identity. By specifying the desired acs_system_id, this opera
 #### Code
 
 ```ruby
-seam.user_identities.create()
+seam.user_identities.create(
+  user_identity_key: "61c6c8ec-21ac-4d1d-be02-688889c66d8c",
+  email_address: "jane@example.com",
+  phone_number: "+15551234567",
+  full_name: "Jane Doe",
+  acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
+)
 ```
 
 #### Output
@@ -130,7 +159,13 @@ Creates a new user identity. By specifying the desired acs_system_id, this opera
 
 ```php
 <?php
-$seam->user_identities->create();
+$seam->user_identities->create(
+    user_identity_key: "61c6c8ec-21ac-4d1d-be02-688889c66d8c",
+    email_address: "jane@example.com",
+    phone_number: "+15551234567",
+    full_name: "Jane Doe",
+    acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"]
+);
 ```
 
 #### Output
@@ -159,7 +194,7 @@ Creates a new user identity. By specifying the desired acs_system_id, this opera
 #### Code
 
 ```seam_cli
-seam user-identities create
+seam user-identities create --user_identity_key "61c6c8ec-21ac-4d1d-be02-688889c66d8c" --email_address "jane@example.com" --phone_number "+15551234567" --full_name "Jane Doe" --acs_system_ids ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"]
 ```
 
 #### Output

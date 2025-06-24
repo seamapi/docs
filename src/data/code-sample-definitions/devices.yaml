@@ -3,7 +3,7 @@
   description: Deletes a specified device.
   request:
     path: /devices/delete
-    body:
+    parameters:
       device_id: 8c3c4fdf-36e9-40c4-a865-4d9a76688c94
   response:
     body: null
@@ -1387,7 +1387,7 @@
   description: Updates a specified device.
   request:
     path: /devices/update
-    body:
+    parameters:
       device_id: ccfab465-4838-4ff3-af62-97c78e8bf44b
       name: My Updated Device
       is_managed: true
@@ -1884,7 +1884,7 @@
   description: Updates a specified unmanaged device.
   request:
     path: /devices/unmanaged/update
-    body:
+    parameters:
       device_id: 66c3adbf-a0e5-403a-8981-ec5286b5da76
       is_managed: true
   response:
@@ -2049,7 +2049,7 @@
   description: Simulates connecting a device to Seam.
   request:
     path: /devices/simulate/connect
-    body:
+    parameters:
       device_id: 5d703d4f-523f-42af-9439-618415ca651f
   response:
     body: null
@@ -2057,7 +2057,7 @@
   description: Simulates disconnecting a device from Seam.
   request:
     path: /devices/simulate/disconnect
-    body:
+    parameters:
       device_id: a60686b8-f401-452d-9f67-53d139cf6160
   response:
     body: null
@@ -2065,7 +2065,7 @@
   description: Simulates removing a device from Seam.
   request:
     path: /devices/simulate/remove
-    body:
+    parameters:
       device_id: 46757795-11f7-446a-a6cb-779e9f039d7c
   response:
     body: null

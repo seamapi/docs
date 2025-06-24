@@ -17,7 +17,10 @@ Removes devices from a specific space.
 #### Code
 
 ```javascript
-await seam.spaces.removeDevices();
+await seam.spaces.removeDevices({
+  space_id: "6df14344-4114-4d74-9ef4-2e1208378cda",
+  device_ids: ["011460e9-9605-46a5-91f1-6b2a442b70fd"],
+});
 ```
 
 #### Output
@@ -35,7 +38,15 @@ Removes devices from a specific space.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/remove_devices" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "space_id": "6df14344-4114-4d74-9ef4-2e1208378cda",
+  "device_ids": [
+    "011460e9-9605-46a5-91f1-6b2a442b70fd"
+  ]
+}
+EOF
 ```
 
 #### Output
@@ -52,7 +63,10 @@ Removes devices from a specific space.
 #### Code
 
 ```python
-seam.spaces.remove_devices()
+seam.spaces.remove_devices(
+    space_id="6df14344-4114-4d74-9ef4-2e1208378cda",
+    device_ids=["011460e9-9605-46a5-91f1-6b2a442b70fd"],
+)
 ```
 
 #### Output
@@ -69,7 +83,10 @@ Removes devices from a specific space.
 #### Code
 
 ```ruby
-seam.spaces.remove_devices()
+seam.spaces.remove_devices(
+  space_id: "6df14344-4114-4d74-9ef4-2e1208378cda",
+  device_ids: ["011460e9-9605-46a5-91f1-6b2a442b70fd"],
+)
 ```
 
 #### Output
@@ -87,7 +104,10 @@ Removes devices from a specific space.
 
 ```php
 <?php
-$seam->spaces->remove_devices();
+$seam->spaces->remove_devices(
+    space_id: "6df14344-4114-4d74-9ef4-2e1208378cda",
+    device_ids: ["011460e9-9605-46a5-91f1-6b2a442b70fd"]
+);
 ```
 
 #### Output
@@ -104,7 +124,7 @@ Removes devices from a specific space.
 #### Code
 
 ```seam_cli
-seam spaces remove-devices
+seam spaces remove-devices --space_id "6df14344-4114-4d74-9ef4-2e1208378cda" --device_ids ["011460e9-9605-46a5-91f1-6b2a442b70fd"]
 ```
 
 #### Output

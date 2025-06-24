@@ -17,7 +17,10 @@ Adds devices to a specific space.
 #### Code
 
 ```javascript
-await seam.spaces.addDevices();
+await seam.spaces.addDevices({
+  space_id: "4d53b5c0-87cd-4de9-832d-025e075e7cd4",
+  device_ids: ["22fb4992-463c-4ccd-b568-50fcea243665"],
+});
 ```
 
 #### Output
@@ -35,7 +38,15 @@ Adds devices to a specific space.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/add_devices" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "space_id": "4d53b5c0-87cd-4de9-832d-025e075e7cd4",
+  "device_ids": [
+    "22fb4992-463c-4ccd-b568-50fcea243665"
+  ]
+}
+EOF
 ```
 
 #### Output
@@ -52,7 +63,10 @@ Adds devices to a specific space.
 #### Code
 
 ```python
-seam.spaces.add_devices()
+seam.spaces.add_devices(
+    space_id="4d53b5c0-87cd-4de9-832d-025e075e7cd4",
+    device_ids=["22fb4992-463c-4ccd-b568-50fcea243665"],
+)
 ```
 
 #### Output
@@ -69,7 +83,10 @@ Adds devices to a specific space.
 #### Code
 
 ```ruby
-seam.spaces.add_devices()
+seam.spaces.add_devices(
+  space_id: "4d53b5c0-87cd-4de9-832d-025e075e7cd4",
+  device_ids: ["22fb4992-463c-4ccd-b568-50fcea243665"],
+)
 ```
 
 #### Output
@@ -87,7 +104,10 @@ Adds devices to a specific space.
 
 ```php
 <?php
-$seam->spaces->add_devices();
+$seam->spaces->add_devices(
+    space_id: "4d53b5c0-87cd-4de9-832d-025e075e7cd4",
+    device_ids: ["22fb4992-463c-4ccd-b568-50fcea243665"]
+);
 ```
 
 #### Output
@@ -104,7 +124,7 @@ Adds devices to a specific space.
 #### Code
 
 ```seam_cli
-seam spaces add-devices
+seam spaces add-devices --space_id "4d53b5c0-87cd-4de9-832d-025e075e7cd4" --device_ids ["22fb4992-463c-4ccd-b568-50fcea243665"]
 ```
 
 #### Output

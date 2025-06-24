@@ -14,7 +14,10 @@ Simulates a thermostat reaching a specified temperature.
 #### Code
 
 ```javascript
-await seam.thermostats.simulate.temperatureReached();
+await seam.thermostats.simulate.temperatureReached({
+  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  temperature_celsius: 25,
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Simulates a thermostat reaching a specified temperature.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/simulate/temperature_reached" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  "temperature_celsius": 25
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,9 @@ Simulates a thermostat reaching a specified temperature.
 #### Code
 
 ```python
-seam.thermostats.simulate.temperature_reached()
+seam.thermostats.simulate.temperature_reached(
+    device_id="278a72ba-7deb-45e3-a0c0-573fd360ee7b", temperature_celsius=25
+)
 ```
 
 #### Output
@@ -66,7 +77,10 @@ Simulates a thermostat reaching a specified temperature.
 #### Code
 
 ```ruby
-seam.thermostats.simulate.temperature_reached()
+seam.thermostats.simulate.temperature_reached(
+  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  temperature_celsius: 25,
+)
 ```
 
 #### Output
@@ -84,7 +98,10 @@ Simulates a thermostat reaching a specified temperature.
 
 ```php
 <?php
-$seam->thermostats->simulate->temperature_reached();
+$seam->thermostats->simulate->temperature_reached(
+    device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+    temperature_celsius: 25
+);
 ```
 
 #### Output
@@ -101,7 +118,7 @@ Simulates a thermostat reaching a specified temperature.
 #### Code
 
 ```seam_cli
-seam thermostats simulate temperature-reached
+seam thermostats simulate temperature-reached --device_id "278a72ba-7deb-45e3-a0c0-573fd360ee7b" --temperature_celsius 25
 ```
 
 #### Output

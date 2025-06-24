@@ -14,7 +14,11 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 #### Code
 
 ```javascript
-await seam.accessCodes.simulate.createUnmanagedAccessCode();
+await seam.accessCodes.simulate.createUnmanagedAccessCode({
+  device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
+  name: "My Access Code",
+  code: "1234",
+});
 ```
 
 #### Output
@@ -45,7 +49,14 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/simulate/create_unmanaged_access_code" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
+  "name": "My Access Code",
+  "code": "1234"
+}
+EOF
 ```
 
 #### Output
@@ -77,7 +88,9 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 #### Code
 
 ```python
-seam.access_codes.simulate.create_unmanaged_access_code()
+seam.access_codes.simulate.create_unmanaged_access_code(
+    device_id="5db6ef75-2e0d-4491-bf7e-c3eb01d5c963", name="My Access Code", code="1234"
+)
 ```
 
 #### Output
@@ -107,7 +120,11 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 #### Code
 
 ```ruby
-seam.access_codes.simulate.create_unmanaged_access_code()
+seam.access_codes.simulate.create_unmanaged_access_code(
+  device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
+  name: "My Access Code",
+  code: "1234",
+)
 ```
 
 #### Output
@@ -138,7 +155,11 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 
 ```php
 <?php
-$seam->access_codes->simulate->create_unmanaged_access_code();
+$seam->access_codes->simulate->create_unmanaged_access_code(
+    device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
+    name: "My Access Code",
+    code: "1234"
+);
 ```
 
 #### Output
@@ -169,7 +190,7 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 #### Code
 
 ```seam_cli
-seam access-codes simulate create-unmanaged-access-code
+seam access-codes simulate create-unmanaged-access-code --device_id "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963" --name "My Access Code" --code "1234"
 ```
 
 #### Output

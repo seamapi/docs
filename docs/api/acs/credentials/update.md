@@ -14,7 +14,11 @@ Updates the code and ends at date and time for a specified credential.
 #### Code
 
 ```javascript
-await seam.acs.credentials.update();
+await seam.acs.credentials.update({
+  acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  code: "1234",
+  ends_at: "2025-06-18T10:42:53.000Z",
+});
 ```
 
 #### Output
@@ -32,7 +36,14 @@ Updates the code and ends at date and time for a specified credential.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_credential_id": "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  "code": "1234",
+  "ends_at": "2025-06-18T10:42:53.000Z"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +60,11 @@ Updates the code and ends at date and time for a specified credential.
 #### Code
 
 ```python
-seam.acs.credentials.update()
+seam.acs.credentials.update(
+    acs_credential_id="1d4fb22b-743b-492f-ad74-cffcbd63c874",
+    code="1234",
+    ends_at="2025-06-18T10:42:53.000Z",
+)
 ```
 
 #### Output
@@ -66,7 +81,11 @@ Updates the code and ends at date and time for a specified credential.
 #### Code
 
 ```ruby
-seam.acs.credentials.update()
+seam.acs.credentials.update(
+  acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  code: "1234",
+  ends_at: "2025-06-18T10:42:53.000Z",
+)
 ```
 
 #### Output
@@ -84,7 +103,11 @@ Updates the code and ends at date and time for a specified credential.
 
 ```php
 <?php
-$seam->acs->credentials->update();
+$seam->acs->credentials->update(
+    acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+    code: "1234",
+    ends_at: "2025-06-18T10:42:53.000Z"
+);
 ```
 
 #### Output
@@ -101,7 +124,7 @@ Updates the code and ends at date and time for a specified credential.
 #### Code
 
 ```seam_cli
-seam acs credentials update
+seam acs credentials update --acs_credential_id "1d4fb22b-743b-492f-ad74-cffcbd63c874" --code "1234" --ends_at "2025-06-18T10:42:53.000Z"
 ```
 
 #### Output

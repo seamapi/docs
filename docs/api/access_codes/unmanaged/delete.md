@@ -14,7 +14,9 @@ Deletes an unmanaged access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.unmanaged.delete();
+await seam.accessCodes.unmanaged.delete({
+  access_code_id: "95d54d42-477b-49d6-bd3a-5e8a40a5a78f",
+});
 ```
 
 #### Output
@@ -32,7 +34,12 @@ Deletes an unmanaged access code.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "95d54d42-477b-49d6-bd3a-5e8a40a5a78f"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +56,9 @@ Deletes an unmanaged access code.
 #### Code
 
 ```python
-seam.access_codes.unmanaged.delete()
+seam.access_codes.unmanaged.delete(
+    access_code_id="95d54d42-477b-49d6-bd3a-5e8a40a5a78f"
+)
 ```
 
 #### Output
@@ -66,7 +75,7 @@ Deletes an unmanaged access code.
 #### Code
 
 ```ruby
-seam.access_codes.unmanaged.delete()
+seam.access_codes.unmanaged.delete(access_code_id: "95d54d42-477b-49d6-bd3a-5e8a40a5a78f")
 ```
 
 #### Output
@@ -84,7 +93,9 @@ Deletes an unmanaged access code.
 
 ```php
 <?php
-$seam->access_codes->unmanaged->delete();
+$seam->access_codes->unmanaged->delete(
+    access_code_id: "95d54d42-477b-49d6-bd3a-5e8a40a5a78f"
+);
 ```
 
 #### Output
@@ -101,7 +112,7 @@ Deletes an unmanaged access code.
 #### Code
 
 ```seam_cli
-seam access-codes unmanaged delete
+seam access-codes unmanaged delete --access_code_id "95d54d42-477b-49d6-bd3a-5e8a40a5a78f"
 ```
 
 #### Output

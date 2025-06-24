@@ -14,7 +14,10 @@ Sets the fan mode setting for a specified thermostat.
 #### Code
 
 ```javascript
-await seam.thermostats.setFanMode();
+await seam.thermostats.setFanMode({
+  device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
+  fan_mode_setting: "auto",
+});
 ```
 
 #### Output
@@ -38,7 +41,13 @@ Sets the fan mode setting for a specified thermostat.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fan_mode" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "363e657e-3b07-4670-a290-7fb1f32b8e33",
+  "fan_mode_setting": "auto"
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +72,9 @@ Sets the fan mode setting for a specified thermostat.
 #### Code
 
 ```python
-seam.thermostats.set_fan_mode()
+seam.thermostats.set_fan_mode(
+    device_id="363e657e-3b07-4670-a290-7fb1f32b8e33", fan_mode_setting="auto"
+)
 ```
 
 #### Output
@@ -86,7 +97,10 @@ Sets the fan mode setting for a specified thermostat.
 #### Code
 
 ```ruby
-seam.thermostats.set_fan_mode()
+seam.thermostats.set_fan_mode(
+  device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
+  fan_mode_setting: "auto",
+)
 ```
 
 #### Output
@@ -111,7 +125,10 @@ Sets the fan mode setting for a specified thermostat.
 
 ```php
 <?php
-$seam->thermostats->set_fan_mode();
+$seam->thermostats->set_fan_mode(
+    device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
+    fan_mode_setting: "auto"
+);
 ```
 
 #### Output
@@ -135,7 +152,7 @@ Sets the fan mode setting for a specified thermostat.
 #### Code
 
 ```seam_cli
-seam thermostats set-fan-mode
+seam thermostats set-fan-mode --device_id "363e657e-3b07-4670-a290-7fb1f32b8e33" --fan_mode_setting "auto"
 ```
 
 #### Output

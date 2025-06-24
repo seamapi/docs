@@ -3,7 +3,7 @@
   description: Deactivates a phone, which is useful, for example, if a user has lost their phone.
   request:
     path: /phones/deactivate
-    body:
+    parameters:
       device_id: 6481cd6a-579f-4d8c-9adb-b42bf9fb697e
   response:
     body: null
@@ -86,7 +86,7 @@
   description: Creates a new simulated phone in a sandbox workspace.
   request:
     path: /phones/simulate/create_sandbox_phone
-    body:
+    parameters:
       custom_sdk_installation_id: visionline_sdk
       user_identity_id: 799f9914-f2c2-4087-ab34-f1ffb44d6a0b
       phone_metadata:

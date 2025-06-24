@@ -14,7 +14,9 @@ Sets a specified thermostat to "off" mode.
 #### Code
 
 ```javascript
-await seam.thermostats.off();
+await seam.thermostats.off({
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+});
 ```
 
 #### Output
@@ -38,7 +40,12 @@ Sets a specified thermostat to "off" mode.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/off" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "5d5c3b30-5fed-47a3-9df1-ed32f32589e5"
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +70,7 @@ Sets a specified thermostat to "off" mode.
 #### Code
 
 ```python
-seam.thermostats.off()
+seam.thermostats.off(device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
 ```
 
 #### Output
@@ -86,7 +93,7 @@ Sets a specified thermostat to "off" mode.
 #### Code
 
 ```ruby
-seam.thermostats.off()
+seam.thermostats.off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
 ```
 
 #### Output
@@ -111,7 +118,7 @@ Sets a specified thermostat to "off" mode.
 
 ```php
 <?php
-$seam->thermostats->off();
+$seam->thermostats->off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5");
 ```
 
 #### Output
@@ -135,7 +142,7 @@ Sets a specified thermostat to "off" mode.
 #### Code
 
 ```seam_cli
-seam thermostats off
+seam thermostats off --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5"
 ```
 
 #### Output

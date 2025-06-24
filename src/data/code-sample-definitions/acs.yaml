@@ -3,7 +3,7 @@
   description: Adds a specified access system user to a specified access group.
   request:
     path: /acs/access_groups/add_user
-    body:
+    parameters:
       acs_access_group_id: 55efa954-2b84-42af-8d05-fc1f892df51c
       acs_user_id: ebf54c67-746c-471f-a03f-86665148a84c
   response:
@@ -12,7 +12,7 @@
   description: Adds a specified access system user to a specified access group, using the associated user identity.
   request:
     path: /acs/access_groups/add_user
-    body:
+    parameters:
       acs_access_group_id: 55efa954-2b84-42af-8d05-fc1f892df51c
       user_identity_id: 522d1368-973f-430f-92df-4ff3583ebccf
   response:
@@ -145,7 +145,7 @@
   description: Removes a specified access system user from a specified access group, using the associated user identity.
   request:
     path: /acs/access_groups/remove_user
-    body:
+    parameters:
       acs_access_group_id: e320069d-59ba-4adb-a465-f4f01a833e07
       user_identity_id: 3d662a00-5d7c-41b4-aee7-16c385964149
   response:
@@ -154,7 +154,7 @@
   description: Removes a specified access system user from a specified access group.
   request:
     path: /acs/access_groups/remove_user
-    body:
+    parameters:
       acs_access_group_id: e320069d-59ba-4adb-a465-f4f01a833e07
       acs_user_id: 64cfac1f-61c0-4c76-8fa2-3e9ab680edc8
   response:
@@ -163,7 +163,7 @@
   description: Assigns a specified credential to a specified access system user, using the associated user identity.
   request:
     path: /acs/credentials/assign
-    body:
+    parameters:
       user_identity_id: 1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01
       acs_credential_id: 59c9af06-7881-46d2-8d9b-3eda964c058b
   response:
@@ -172,7 +172,7 @@
   description: Assigns a specified credential to a specified access system user.
   request:
     path: /acs/credentials/assign
-    body:
+    parameters:
       acs_user_id: 143f083a-d61c-4d85-923f-d5483fb5a7d4
       acs_credential_id: 59c9af06-7881-46d2-8d9b-3eda964c058b
   response:
@@ -181,7 +181,7 @@
   description: Creates a new PIN code credential for a specified access system user, using the associated user identity.
   request:
     path: /acs/credentials/create
-    body:
+    parameters:
       credential_manager_acs_system_id: bccb0d23-5107-498b-87a6-6a8aa929eeb2
       user_identity_id: 4b6ec19d-ba68-46ca-80fd-55247684c2bb
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
@@ -216,7 +216,7 @@
   description: Creates a new PIN code credential for a specified access system user.
   request:
     path: /acs/credentials/create
-    body:
+    parameters:
       credential_manager_acs_system_id: bccb0d23-5107-498b-87a6-6a8aa929eeb2
       acs_user_id: 53f39f90-5113-4bdd-8432-acf328ce508c
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
@@ -251,7 +251,7 @@
   description: Creates a new card credential for a specified access system user, using the associated user identity.
   request:
     path: /acs/credentials/create
-    body:
+    parameters:
       credential_manager_acs_system_id: bccb0d23-5107-498b-87a6-6a8aa929eeb2
       user_identity_id: 4b6ec19d-ba68-46ca-80fd-55247684c2bb
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
@@ -287,7 +287,7 @@
   description: Creates a new card credential for a specified access system user.
   request:
     path: /acs/credentials/create
-    body:
+    parameters:
       credential_manager_acs_system_id: bccb0d23-5107-498b-87a6-6a8aa929eeb2
       acs_user_id: 53f39f90-5113-4bdd-8432-acf328ce508c
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
@@ -323,7 +323,7 @@
   description: Creates a new mobile key credential for a specified access system user, using the associated user identity.
   request:
     path: /acs/credentials/create
-    body:
+    parameters:
       credential_manager_acs_system_id: bccb0d23-5107-498b-87a6-6a8aa929eeb2
       user_identity_id: 4b6ec19d-ba68-46ca-80fd-55247684c2bb
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
@@ -357,7 +357,7 @@
   description: Creates a new mobile key credential for a specified access system user.
   request:
     path: /acs/credentials/create
-    body:
+    parameters:
       credential_manager_acs_system_id: bccb0d23-5107-498b-87a6-6a8aa929eeb2
       acs_user_id: 53f39f90-5113-4bdd-8432-acf328ce508c
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
@@ -391,7 +391,7 @@
   description: Creates a new offline code credential for a specified access system user.
   request:
     path: /acs/credentials/create_offline_code
-    body:
+    parameters:
       acs_user_id: c52072ef-365c-4325-ba78-251239441f4c
       allowed_acs_entrance_id: a420ee23-dceb-42f3-9992-6cf1245f65da
       is_one_time_use: true
@@ -422,7 +422,7 @@
   description: Deletes a specified credential.
   request:
     path: /acs/credentials/delete
-    body:
+    parameters:
       acs_credential_id: 33bbceea-221e-48bd-8d38-aa72f88a1cab
   response:
     body: null
@@ -503,7 +503,7 @@
   description: Unassigns a specified credential from a specified access system user, using the associated user identity ID.
   request:
     path: /acs/credentials/unassign
-    body:
+    parameters:
       user_identity_id: 417e9370-d2cc-4b23-b6d5-fbf7fdbda354
       acs_credential_id: b1833efd-0669-4a88-81b5-2f2d5fd5c02f
   response:
@@ -512,7 +512,7 @@
   description: Unassigns a specified credential from a specified access system user.
   request:
     path: /acs/credentials/unassign
-    body:
+    parameters:
       acs_user_id: ae76d550-f2e0-4f61-9380-a64d276f9904
       acs_credential_id: b1833efd-0669-4a88-81b5-2f2d5fd5c02f
   response:
@@ -521,7 +521,7 @@
   description: Updates the code and ends at date and time for a specified credential.
   request:
     path: /acs/credentials/update
-    body:
+    parameters:
       acs_credential_id: 1d4fb22b-743b-492f-ad74-cffcbd63c874
       code: '1234'
       ends_at: '2025-06-18T10:42:53.000Z'
@@ -531,7 +531,7 @@
   description: Encodes an existing access method onto a plastic card placed on the specified encoder.
   request:
     path: /acs/encoders/encode_access_method
-    body:
+    parameters:
       acs_encoder_id: c49a6fb0-d5a0-4b1e-9553-f32ac550a3c5
       access_method_id: f608c1c7-95df-433d-a449-10becae931be
   response:
@@ -554,7 +554,7 @@
   description: Encodes an existing credential onto a plastic card placed on the specified encoder.
   request:
     path: /acs/encoders/encode_credential
-    body:
+    parameters:
       acs_encoder_id: 18ad521a-308e-4182-b1a6-2338b46a2763
       acs_credential_id: a383871c-331a-42ae-af66-146824505187
   response:
@@ -628,7 +628,7 @@
   description: Scans an encoded acs_credential from a plastic card placed on the specified encoder.
   request:
     path: /acs/encoders/scan_credential
-    body:
+    parameters:
       acs_encoder_id: b062df92-91c6-482c-a3f9-6e578f062d36
   response:
     body:
@@ -717,7 +717,7 @@
   description: Grants a specified access system user access to a specified access system entrance, using the associated user identity.
   request:
     path: /acs/entrances/grant_access
-    body:
+    parameters:
       acs_entrance_id: d23d7180-c1ee-4bbe-8630-05df5031ce35
       user_identity_id: c6247b75-f1cb-493a-9915-a85a0b9639ae
   response:
@@ -726,7 +726,7 @@
   description: Grants a specified access system user access to a specified access system entrance.
   request:
     path: /acs/entrances/grant_access
-    body:
+    parameters:
       acs_entrance_id: d23d7180-c1ee-4bbe-8630-05df5031ce35
       acs_user_id: ace1dabe-7a25-4271-8d76-50e74ee4ae1f
   response:
@@ -947,7 +947,7 @@
   description: Adds a specified access system user to a specified access group.
   request:
     path: /acs/users/add_to_access_group
-    body:
+    parameters:
       acs_user_id: 15ce02a8-b145-4c02-adc9-d9d84c8a1177
       acs_access_group_id: 58c8b034-e527-4635-a335-afc74dc79b27
   response:
@@ -956,7 +956,7 @@
   description: Creates a new access system user.
   request:
     path: /acs/users/create
-    body:
+    parameters:
       full_name: Jane Doe
       acs_system_id: dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46
       acs_access_group_ids:
@@ -999,7 +999,7 @@
   description: Deletes a specified access system user and invalidates the access system user's credentials.
   request:
     path: /acs/users/delete
-    body:
+    parameters:
       user_identity_id: 586c225c-b05c-4af4-8679-9c8a46066cce
       acs_system_id: 1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64
   response:
@@ -1008,7 +1008,7 @@
   description: Deletes a specified access system user and invalidates the access system user's credentials.
   request:
     path: /acs/users/delete
-    body:
+    parameters:
       acs_user_id: 8d483a94-5cbc-425a-a6ee-bd9825820c26
   response:
     body: null
@@ -1397,7 +1397,7 @@
   description: Removes a specified access system user from a specified access group, using the associated user identity.
   request:
     path: /acs/users/remove_from_access_group
-    body:
+    parameters:
       user_identity_id: 00ff2781-cce8-4b63-8c65-2b97647d790c
       acs_access_group_id: d192f395-4c68-4c33-af41-97a7df5be576
   response:
@@ -1406,7 +1406,7 @@
   description: Removes a specified access system user from a specified access group.
   request:
     path: /acs/users/remove_from_access_group
-    body:
+    parameters:
       acs_user_id: 6808e2d9-b4eb-4ad8-b200-503877cd1057
       acs_access_group_id: d192f395-4c68-4c33-af41-97a7df5be576
   response:
@@ -1415,7 +1415,7 @@
   description: Revokes access to all entrances for a specified access system user, using the associated user identity.
   request:
     path: /acs/users/revoke_access_to_all_entrances
-    body:
+    parameters:
       user_identity_id: aadb341e-6cd5-4c8b-9561-8f686f84160c
       acs_system_id: d42163f1-ac2d-4c15-a651-5f2e0007b297
   response:
@@ -1424,7 +1424,7 @@
   description: Revokes access to all entrances for a specified access system user.
   request:
     path: /acs/users/revoke_access_to_all_entrances
-    body:
+    parameters:
       acs_user_id: 2520b7a7-5c5b-482e-9db2-11d02f4ea6ce
   response:
     body: null
@@ -1432,7 +1432,7 @@
   description: Suspends a specified access system user, using the associated user identity.
   request:
     path: /acs/users/suspend
-    body:
+    parameters:
       user_identity_id: 73fac667-bd93-4548-add2-e75161d69c7c
       acs_system_id: f2240088-0bc7-4edb-80d1-485bd956ba7d
   response:
@@ -1441,7 +1441,7 @@
   description: Suspends a specified access system user, using the associated user identity.
   request:
     path: /acs/users/suspend
-    body:
+    parameters:
       acs_user_id: 8f934186-1dbc-4098-9f66-d1b202abec9d
   response:
     body: null
@@ -1449,7 +1449,7 @@
   description: Unsuspends a specified suspended access system user, using the associated user identity.
   request:
     path: /acs/users/unsuspend
-    body:
+    parameters:
       user_identity_id: 6a42fbcf-da1a-40f8-8221-596774f97537
       acs_system_id: 264ea3f9-e483-469e-aada-c98c094d5521
   response:
@@ -1458,7 +1458,7 @@
   description: Unsuspends a specified suspended access system user.
   request:
     path: /acs/users/unsuspend
-    body:
+    parameters:
       acs_user_id: 56dd7042-4134-4788-9212-53f25f2939e1
   response:
     body: null
@@ -1466,7 +1466,7 @@
   description: Updates the properties of a specified access system user, using the associated user identity.
   request:
     path: /acs/users/update
-    body:
+    parameters:
       acs_user_id: 5db87499-0b3b-4750-a2e8-341b2af64049
       user_identity_id: b0bbb463-4fad-4b21-a695-952463ea6e93
       acs_system_id: 88ae7b8b-c406-414b-a745-91d9cea661f7
@@ -1483,7 +1483,7 @@
   description: Updates the properties of a specified access system user.
   request:
     path: /acs/users/update
-    body:
+    parameters:
       acs_user_id: 5db87499-0b3b-4750-a2e8-341b2af64049
       access_schedule:
         starts_at: '2025-06-10T15:00:00.000Z'
@@ -1787,7 +1787,7 @@
   description: Simulates that the next attempt to encode a credential using the specified encoder will fail.
   request:
     path: /acs/encoders/simulate/next_credential_encode_will_fail
-    body:
+    parameters:
       acs_encoder_id: 182ea706-8e14-4921-8e57-ee18d5a7de31
       error_code: no_credential_on_encoder
   response:
@@ -1796,7 +1796,7 @@
   description: Simulates that the next attempt to encode a credential using the specified encoder will succeed.
   request:
     path: /acs/encoders/simulate/next_credential_encode_will_succeed
-    body:
+    parameters:
       acs_encoder_id: 182ea706-8e14-4921-8e57-ee18d5a7de31
       scenario: credential_is_issued
   response:
@@ -1805,7 +1805,7 @@
   description: Simulates that the next attempt to scan a credential using the specified encoder will fail.
   request:
     path: /acs/encoders/simulate/next_credential_scan_will_fail
-    body:
+    parameters:
       acs_encoder_id: 182ea706-8e14-4921-8e57-ee18d5a7de31
       error_code: no_credential_on_encoder
   response:
@@ -1814,7 +1814,7 @@
   description: Simulates that the next attempt to scan a credential using the specified encoder will succeed.
   request:
     path: /acs/encoders/simulate/next_credential_scan_will_succeed
-    body:
+    parameters:
       acs_encoder_id: 182ea706-8e14-4921-8e57-ee18d5a7de31
       scenario: credential_exists_on_seam
       acs_credential_id_on_seam: 123e4567-e89b-12d3-a456-426614174000

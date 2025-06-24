@@ -17,7 +17,11 @@ Creates a new space.
 #### Code
 
 ```javascript
-await seam.spaces.create();
+await seam.spaces.create({
+  name: "My Space",
+  device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
+  acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"],
+});
 ```
 
 #### Output
@@ -41,7 +45,18 @@ Creates a new space.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "name": "My Space",
+  "device_ids": [
+    "b7254403-db91-4e10-bb7b-31d0615d2963"
+  ],
+  "acs_entrance_ids": [
+    "46a47667-a90b-45cc-9bb6-f0917464f1f3"
+  ]
+}
+EOF
 ```
 
 #### Output
@@ -66,7 +81,11 @@ Creates a new space.
 #### Code
 
 ```python
-seam.spaces.create()
+seam.spaces.create(
+    name="My Space",
+    device_ids=["b7254403-db91-4e10-bb7b-31d0615d2963"],
+    acs_entrance_ids=["46a47667-a90b-45cc-9bb6-f0917464f1f3"],
+)
 ```
 
 #### Output
@@ -89,7 +108,11 @@ Creates a new space.
 #### Code
 
 ```ruby
-seam.spaces.create()
+seam.spaces.create(
+  name: "My Space",
+  device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
+  acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"],
+)
 ```
 
 #### Output
@@ -113,7 +136,11 @@ Creates a new space.
 
 ```php
 <?php
-$seam->spaces->create();
+$seam->spaces->create(
+    name: "My Space",
+    device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
+    acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"]
+);
 ```
 
 #### Output
@@ -137,7 +164,7 @@ Creates a new space.
 #### Code
 
 ```seam_cli
-seam spaces create
+seam spaces create --name "My Space" --device_ids ["b7254403-db91-4e10-bb7b-31d0615d2963"] --acs_entrance_ids ["46a47667-a90b-45cc-9bb6-f0917464f1f3"]
 ```
 
 #### Output

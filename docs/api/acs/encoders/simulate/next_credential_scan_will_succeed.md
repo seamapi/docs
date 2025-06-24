@@ -14,7 +14,11 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```javascript
-await seam.acs.encoders.simulate.nextCredentialScanWillSucceed();
+await seam.acs.encoders.simulate.nextCredentialScanWillSucceed({
+  acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
+  scenario: "credential_exists_on_seam",
+  acs_credential_id_on_seam: "123e4567-e89b-12d3-a456-426614174000",
+});
 ```
 
 #### Output
@@ -32,7 +36,14 @@ Simulates that the next attempt to scan a credential using the specified encoder
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/simulate/next_credential_scan_will_succeed" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_encoder_id": "182ea706-8e14-4921-8e57-ee18d5a7de31",
+  "scenario": "credential_exists_on_seam",
+  "acs_credential_id_on_seam": "123e4567-e89b-12d3-a456-426614174000"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +60,11 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```python
-seam.acs.encoders.simulate.next_credential_scan_will_succeed()
+seam.acs.encoders.simulate.next_credential_scan_will_succeed(
+    acs_encoder_id="182ea706-8e14-4921-8e57-ee18d5a7de31",
+    scenario="credential_exists_on_seam",
+    acs_credential_id_on_seam="123e4567-e89b-12d3-a456-426614174000",
+)
 ```
 
 #### Output
@@ -66,7 +81,11 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```ruby
-seam.acs.encoders.simulate.next_credential_scan_will_succeed()
+seam.acs.encoders.simulate.next_credential_scan_will_succeed(
+  acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
+  scenario: "credential_exists_on_seam",
+  acs_credential_id_on_seam: "123e4567-e89b-12d3-a456-426614174000",
+)
 ```
 
 #### Output
@@ -84,7 +103,11 @@ Simulates that the next attempt to scan a credential using the specified encoder
 
 ```php
 <?php
-$seam->acs->encoders->simulate->next_credential_scan_will_succeed();
+$seam->acs->encoders->simulate->next_credential_scan_will_succeed(
+    acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
+    scenario: "credential_exists_on_seam",
+    acs_credential_id_on_seam: "123e4567-e89b-12d3-a456-426614174000"
+);
 ```
 
 #### Output
@@ -101,7 +124,7 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```seam_cli
-seam acs encoders simulate next-credential-scan-will-succeed
+seam acs encoders simulate next-credential-scan-will-succeed --acs_encoder_id "182ea706-8e14-4921-8e57-ee18d5a7de31" --scenario "credential_exists_on_seam" --acs_credential_id_on_seam "123e4567-e89b-12d3-a456-426614174000"
 ```
 
 #### Output

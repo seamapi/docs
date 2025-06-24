@@ -14,7 +14,10 @@ Generates a new instant key for a specified user identity.
 #### Code
 
 ```javascript
-await seam.userIdentities.generateInstantKey();
+await seam.userIdentities.generateInstantKey({
+  user_identity_id: "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+  max_use_count: 10,
+});
 ```
 
 #### Output
@@ -40,7 +43,13 @@ Generates a new instant key for a specified user identity.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/generate_instant_key" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+  "max_use_count": 10
+}
+EOF
 ```
 
 #### Output
@@ -67,7 +76,9 @@ Generates a new instant key for a specified user identity.
 #### Code
 
 ```python
-seam.user_identities.generate_instant_key()
+seam.user_identities.generate_instant_key(
+    user_identity_id="d92e0c7b-72a1-4063-9ee8-2acefc240358", max_use_count=10
+)
 ```
 
 #### Output
@@ -92,7 +103,10 @@ Generates a new instant key for a specified user identity.
 #### Code
 
 ```ruby
-seam.user_identities.generate_instant_key()
+seam.user_identities.generate_instant_key(
+  user_identity_id: "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+  max_use_count: 10,
+)
 ```
 
 #### Output
@@ -118,7 +132,10 @@ Generates a new instant key for a specified user identity.
 
 ```php
 <?php
-$seam->user_identities->generate_instant_key();
+$seam->user_identities->generate_instant_key(
+    user_identity_id: "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+    max_use_count: 10
+);
 ```
 
 #### Output
@@ -144,7 +161,7 @@ Generates a new instant key for a specified user identity.
 #### Code
 
 ```seam_cli
-seam user-identities generate-instant-key
+seam user-identities generate-instant-key --user_identity_id "d92e0c7b-72a1-4063-9ee8-2acefc240358" --max_use_count 10
 ```
 
 #### Output

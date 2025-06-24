@@ -14,7 +14,10 @@ Activates a specified climate preset for a specified thermostat.
 #### Code
 
 ```javascript
-await seam.thermostats.activateClimatePreset();
+await seam.thermostats.activateClimatePreset({
+  device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+  climate_preset_key: "Eco",
+});
 ```
 
 #### Output
@@ -38,7 +41,13 @@ Activates a specified climate preset for a specified thermostat.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "52b88155-5b81-47d2-b04d-28a802bd7395",
+  "climate_preset_key": "Eco"
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +72,9 @@ Activates a specified climate preset for a specified thermostat.
 #### Code
 
 ```python
-seam.thermostats.activate_climate_preset()
+seam.thermostats.activate_climate_preset(
+    device_id="52b88155-5b81-47d2-b04d-28a802bd7395", climate_preset_key="Eco"
+)
 ```
 
 #### Output
@@ -86,7 +97,10 @@ Activates a specified climate preset for a specified thermostat.
 #### Code
 
 ```ruby
-seam.thermostats.activate_climate_preset()
+seam.thermostats.activate_climate_preset(
+  device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+  climate_preset_key: "Eco",
+)
 ```
 
 #### Output
@@ -111,7 +125,10 @@ Activates a specified climate preset for a specified thermostat.
 
 ```php
 <?php
-$seam->thermostats->activate_climate_preset();
+$seam->thermostats->activate_climate_preset(
+    device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+    climate_preset_key: "Eco"
+);
 ```
 
 #### Output
@@ -135,7 +152,7 @@ Activates a specified climate preset for a specified thermostat.
 #### Code
 
 ```seam_cli
-seam thermostats activate-climate-preset
+seam thermostats activate-climate-preset --device_id "52b88155-5b81-47d2-b04d-28a802bd7395" --climate_preset_key "Eco"
 ```
 
 #### Output

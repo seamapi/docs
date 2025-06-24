@@ -14,7 +14,10 @@ Encodes an existing credential onto a plastic card placed on the specified encod
 #### Code
 
 ```javascript
-await seam.acs.encoders.encodeCredential();
+await seam.acs.encoders.encodeCredential({
+  acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
+  acs_credential_id: "a383871c-331a-42ae-af66-146824505187",
+});
 ```
 
 #### Output
@@ -67,7 +70,13 @@ Encodes an existing credential onto a plastic card placed on the specified encod
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/encode_credential" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_encoder_id": "18ad521a-308e-4182-b1a6-2338b46a2763",
+  "acs_credential_id": "a383871c-331a-42ae-af66-146824505187"
+}
+EOF
 ```
 
 #### Output
@@ -121,7 +130,10 @@ Encodes an existing credential onto a plastic card placed on the specified encod
 #### Code
 
 ```python
-seam.acs.encoders.encode_credential()
+seam.acs.encoders.encode_credential(
+    acs_encoder_id="18ad521a-308e-4182-b1a6-2338b46a2763",
+    acs_credential_id="a383871c-331a-42ae-af66-146824505187",
+)
 ```
 
 #### Output
@@ -173,7 +185,10 @@ Encodes an existing credential onto a plastic card placed on the specified encod
 #### Code
 
 ```ruby
-seam.acs.encoders.encode_credential()
+seam.acs.encoders.encode_credential(
+  acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
+  acs_credential_id: "a383871c-331a-42ae-af66-146824505187",
+)
 ```
 
 #### Output
@@ -226,7 +241,10 @@ Encodes an existing credential onto a plastic card placed on the specified encod
 
 ```php
 <?php
-$seam->acs->encoders->encode_credential();
+$seam->acs->encoders->encode_credential(
+    acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
+    acs_credential_id: "a383871c-331a-42ae-af66-146824505187"
+);
 ```
 
 #### Output
@@ -284,7 +302,7 @@ Encodes an existing credential onto a plastic card placed on the specified encod
 #### Code
 
 ```seam_cli
-seam acs encoders encode-credential
+seam acs encoders encode-credential --acs_encoder_id "18ad521a-308e-4182-b1a6-2338b46a2763" --acs_credential_id "a383871c-331a-42ae-af66-146824505187"
 ```
 
 #### Output

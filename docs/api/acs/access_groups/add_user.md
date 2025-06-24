@@ -15,7 +15,10 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```javascript
-await seam.acs.accessGroups.addUser();
+await seam.acs.accessGroups.addUser({
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c",
+});
 ```
 
 #### Output
@@ -33,7 +36,13 @@ Adds a specified access system user to a specified access group.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/add_user" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_access_group_id": "55efa954-2b84-42af-8d05-fc1f892df51c",
+  "acs_user_id": "ebf54c67-746c-471f-a03f-86665148a84c"
+}
+EOF
 ```
 
 #### Output
@@ -50,7 +59,10 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```python
-seam.acs.access_groups.add_user()
+seam.acs.access_groups.add_user(
+    acs_access_group_id="55efa954-2b84-42af-8d05-fc1f892df51c",
+    acs_user_id="ebf54c67-746c-471f-a03f-86665148a84c",
+)
 ```
 
 #### Output
@@ -67,7 +79,10 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```ruby
-seam.acs.access_groups.add_user()
+seam.acs.access_groups.add_user(
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c",
+)
 ```
 
 #### Output
@@ -85,7 +100,10 @@ Adds a specified access system user to a specified access group.
 
 ```php
 <?php
-$seam->acs->access_groups->add_user();
+$seam->acs->access_groups->add_user(
+    acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+    acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c"
+);
 ```
 
 #### Output
@@ -102,7 +120,7 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```seam_cli
-seam acs access-groups add-user
+seam acs access-groups add-user --acs_access_group_id "55efa954-2b84-42af-8d05-fc1f892df51c" --acs_user_id "ebf54c67-746c-471f-a03f-86665148a84c"
 ```
 
 #### Output
@@ -169,7 +187,10 @@ Adds a specified access system user to a specified access group, using the assoc
 #### Code
 
 ```javascript
-await seam.acs.accessGroups.addUser();
+await seam.acs.accessGroups.addUser({
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf",
+});
 ```
 
 #### Output
@@ -187,7 +208,13 @@ await seam.acs.accessGroups.addUser();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/add_user" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_access_group_id": "55efa954-2b84-42af-8d05-fc1f892df51c",
+  "user_identity_id": "522d1368-973f-430f-92df-4ff3583ebccf"
+}
+EOF
 ```
 
 #### Output
@@ -204,7 +231,10 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/add
 #### Code
 
 ```python
-seam.acs.access_groups.add_user()
+seam.acs.access_groups.add_user(
+    acs_access_group_id="55efa954-2b84-42af-8d05-fc1f892df51c",
+    user_identity_id="522d1368-973f-430f-92df-4ff3583ebccf",
+)
 ```
 
 #### Output
@@ -221,7 +251,10 @@ None
 #### Code
 
 ```ruby
-seam.acs.access_groups.add_user()
+seam.acs.access_groups.add_user(
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf",
+)
 ```
 
 #### Output
@@ -239,7 +272,10 @@ nil
 
 ```php
 <?php
-$seam->acs->access_groups->add_user();
+$seam->acs->access_groups->add_user(
+    acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+    user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf"
+);
 ```
 
 #### Output
@@ -256,7 +292,7 @@ null
 #### Code
 
 ```seam_cli
-seam acs access-groups add-user
+seam acs access-groups add-user --acs_access_group_id "55efa954-2b84-42af-8d05-fc1f892df51c" --user_identity_id "522d1368-973f-430f-92df-4ff3583ebccf"
 ```
 
 #### Output

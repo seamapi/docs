@@ -15,7 +15,11 @@ Creates a new ongoing online access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.create();
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Ongoing Online Access Code",
+  code: "1234",
+});
 ```
 
 #### Output
@@ -53,7 +57,14 @@ Creates a new ongoing online access code.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Ongoing Online Access Code",
+  "code": "1234"
+}
+EOF
 ```
 
 #### Output
@@ -92,7 +103,11 @@ Creates a new ongoing online access code.
 #### Code
 
 ```python
-seam.access_codes.create()
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Ongoing Online Access Code",
+    code="1234",
+)
 ```
 
 #### Output
@@ -129,7 +144,11 @@ Creates a new ongoing online access code.
 #### Code
 
 ```ruby
-seam.access_codes.create()
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Ongoing Online Access Code",
+  code: "1234",
+)
 ```
 
 #### Output
@@ -167,7 +186,11 @@ Creates a new ongoing online access code.
 
 ```php
 <?php
-$seam->access_codes->create();
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Ongoing Online Access Code",
+    code: "1234"
+);
 ```
 
 #### Output
@@ -205,7 +228,7 @@ Creates a new ongoing online access code.
 #### Code
 
 ```seam_cli
-seam access-codes create
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Ongoing Online Access Code" --code "1234"
 ```
 
 #### Output
@@ -367,7 +390,13 @@ Creates a new time-bound online access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.create();
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Online Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+});
 ```
 
 #### Output
@@ -407,7 +436,16 @@ await seam.accessCodes.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Time-Bound Online Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "code": "1234"
+}
+EOF
 ```
 
 #### Output
@@ -448,7 +486,13 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 #### Code
 
 ```python
-seam.access_codes.create()
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Time-Bound Online Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    code="1234",
+)
 ```
 
 #### Output
@@ -487,7 +531,13 @@ AccessCode(
 #### Code
 
 ```ruby
-seam.access_codes.create()
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Online Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+)
 ```
 
 #### Output
@@ -527,7 +577,13 @@ seam.access_codes.create()
 
 ```php
 <?php
-$seam->access_codes->create();
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Time-Bound Online Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    code: "1234"
+);
 ```
 
 #### Output
@@ -567,7 +623,7 @@ $seam->access_codes->create();
 #### Code
 
 ```seam_cli
-seam access-codes create
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Online Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --code "1234"
 ```
 
 #### Output
@@ -616,7 +672,17 @@ Creates a new time-bound offline access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.create();
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  max_time_rounding: "1h",
+});
 ```
 
 #### Output
@@ -656,7 +722,20 @@ await seam.accessCodes.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Time-Bound Offline Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "attempt_for_offline_device": true,
+  "preferred_code_length": 4,
+  "use_offline_access_code": true,
+  "is_offline_access_code": true,
+  "max_time_rounding": "1h"
+}
+EOF
 ```
 
 #### Output
@@ -697,7 +776,17 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 #### Code
 
 ```python
-seam.access_codes.create()
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Time-Bound Offline Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device=true,
+    preferred_code_length=4,
+    use_offline_access_code=true,
+    is_offline_access_code=true,
+    max_time_rounding="1h",
+)
 ```
 
 #### Output
@@ -736,7 +825,17 @@ AccessCode(
 #### Code
 
 ```ruby
-seam.access_codes.create()
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  max_time_rounding: "1h",
+)
 ```
 
 #### Output
@@ -776,7 +875,17 @@ seam.access_codes.create()
 
 ```php
 <?php
-$seam->access_codes->create();
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Time-Bound Offline Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device: true,
+    preferred_code_length: 4,
+    use_offline_access_code: true,
+    is_offline_access_code: true,
+    max_time_rounding: "1h"
+);
 ```
 
 #### Output
@@ -816,7 +925,7 @@ $seam->access_codes->create();
 #### Code
 
 ```seam_cli
-seam access-codes create
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Offline Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --attempt_for_offline_device true --preferred_code_length 4 --use_offline_access_code true --is_offline_access_code true --max_time_rounding "1h"
 ```
 
 #### Output
@@ -865,7 +974,17 @@ Creates a new one-time-use offline access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.create();
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My One-Time-Use Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  is_one_time_use: true,
+});
 ```
 
 #### Output
@@ -905,7 +1024,20 @@ await seam.accessCodes.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My One-Time-Use Offline Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "attempt_for_offline_device": true,
+  "preferred_code_length": 4,
+  "use_offline_access_code": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": true
+}
+EOF
 ```
 
 #### Output
@@ -946,7 +1078,17 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 #### Code
 
 ```python
-seam.access_codes.create()
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My One-Time-Use Offline Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device=true,
+    preferred_code_length=4,
+    use_offline_access_code=true,
+    is_offline_access_code=true,
+    is_one_time_use=true,
+)
 ```
 
 #### Output
@@ -985,7 +1127,17 @@ AccessCode(
 #### Code
 
 ```ruby
-seam.access_codes.create()
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My One-Time-Use Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  is_one_time_use: true,
+)
 ```
 
 #### Output
@@ -1025,7 +1177,17 @@ seam.access_codes.create()
 
 ```php
 <?php
-$seam->access_codes->create();
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My One-Time-Use Offline Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device: true,
+    preferred_code_length: 4,
+    use_offline_access_code: true,
+    is_offline_access_code: true,
+    is_one_time_use: true
+);
 ```
 
 #### Output
@@ -1065,7 +1227,7 @@ $seam->access_codes->create();
 #### Code
 
 ```seam_cli
-seam access-codes create
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My One-Time-Use Offline Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --attempt_for_offline_device true --preferred_code_length 4 --use_offline_access_code true --is_offline_access_code true --is_one_time_use true
 ```
 
 #### Output
@@ -1114,7 +1276,14 @@ Creates a new time-bound online access code with a backup access code pool.
 #### Code
 
 ```javascript
-await seam.accessCodes.create();
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+  use_backup_access_code_pool: true,
+});
 ```
 
 #### Output
@@ -1154,7 +1323,17 @@ await seam.accessCodes.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Time-Bound Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "code": "1234",
+  "use_backup_access_code_pool": true
+}
+EOF
 ```
 
 #### Output
@@ -1195,7 +1374,14 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 #### Code
 
 ```python
-seam.access_codes.create()
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Time-Bound Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    code="1234",
+    use_backup_access_code_pool=true,
+)
 ```
 
 #### Output
@@ -1234,7 +1420,14 @@ AccessCode(
 #### Code
 
 ```ruby
-seam.access_codes.create()
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+  use_backup_access_code_pool: true,
+)
 ```
 
 #### Output
@@ -1274,7 +1467,14 @@ seam.access_codes.create()
 
 ```php
 <?php
-$seam->access_codes->create();
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Time-Bound Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    code: "1234",
+    use_backup_access_code_pool: true
+);
 ```
 
 #### Output
@@ -1314,7 +1514,7 @@ $seam->access_codes->create();
 #### Code
 
 ```seam_cli
-seam access-codes create
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --code "1234" --use_backup_access_code_pool true
 ```
 
 #### Output
