@@ -6,7 +6,7 @@
     body:
       space_id: 9f930664-c0d8-441b-8d66-2b1d0d2466f4
       acs_entrance_ids:
-      - b127a710-db3e-402c-afdf-5474769b1d83
+        - b127a710-db3e-402c-afdf-5474769b1d83
   response:
     body: null
 - title: Add devices to a space
@@ -16,7 +16,7 @@
     body:
       space_id: 4d53b5c0-87cd-4de9-832d-025e075e7cd4
       device_ids:
-      - 22fb4992-463c-4ccd-b568-50fcea243665
+        - 22fb4992-463c-4ccd-b568-50fcea243665
   response:
     body: null
 - title: Create a space
@@ -26,9 +26,9 @@
     body:
       name: My Space
       device_ids:
-      - b7254403-db91-4e10-bb7b-31d0615d2963
+        - b7254403-db91-4e10-bb7b-31d0615d2963
       acs_entrance_ids:
-      - 46a47667-a90b-45cc-9bb6-f0917464f1f3
+        - 46a47667-a90b-45cc-9bb6-f0917464f1f3
   response:
     body:
       space:
@@ -66,11 +66,11 @@
   response:
     body:
       spaces:
-      - created_at: '2025-06-16T16:54:17.946600Z'
-        display_name: My Space
-        name: My Space
-        space_id: 5afeb047-3277-4102-b8c4-99edf05b91d2
-        workspace_id: 96bd12f9-6def-4bf4-b517-760417451ae9
+        - created_at: '2025-06-16T16:54:17.946600Z'
+          display_name: My Space
+          name: My Space
+          space_id: 5afeb047-3277-4102-b8c4-99edf05b91d2
+          workspace_id: 96bd12f9-6def-4bf4-b517-760417451ae9
 - title: Remove entrances from a space
   description: Removes entrances from a specific space.
   request:
@@ -78,7 +78,7 @@
     body:
       space_id: 674e511a-06c6-4734-b4ce-af467496d5fe
       acs_entrance_ids:
-      - fd859a36-199b-4c2f-894a-24d52621f6a4
+        - fd859a36-199b-4c2f-894a-24d52621f6a4
   response:
     body: null
 - title: Remove devices from a space
@@ -88,7 +88,7 @@
     body:
       space_id: 6df14344-4114-4d74-9ef4-2e1208378cda
       device_ids:
-      - 011460e9-9605-46a5-91f1-6b2a442b70fd
+        - 011460e9-9605-46a5-91f1-6b2a442b70fd
   response:
     body: null
 - title: Update a space
