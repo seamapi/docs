@@ -9,45 +9,38 @@ Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobi
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `user_identity_id` to receive the instant key.
+Generates a new instant key for a specified user identity.
 
 #### Code
 
 ```javascript
-await seam.userIdentities.generateInstantKey({
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-});
+await seam.userIdentities.generateInstantKey();
 ```
 
 #### Output
 
 ```javascript
 {
-  "instant_key_id": "33fb0384-b2b3-445e-b780-3fad784e9baa",
-  "instant_key_url": "https://ik.seam.co/EXAMPLE",
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "client_session_id": "7cc9b16b-d139-45e2-8042-5cef6ee101ea",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-01-09T05:45:33.068Z",
-  "expires_at": "2024-02-09T05:45:33.068Z"
+  "client_session_id": "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
+  "created_at": "2025-06-14T16:54:17.946559Z",
+  "expires_at": "2025-06-16T16:54:17.946559Z",
+  "instant_key_id": "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
+  "instant_key_url": "https://se.am/1234",
+  "user_identity_id": "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+  "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `user_identity_id` to receive the instant key.
+Generates a new instant key for a specified user identity.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/generate_instant_key" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -55,13 +48,13 @@ EOF
 ```curl
 {
   "instant_key": {
-    "instant_key_id": "33fb0384-b2b3-445e-b780-3fad784e9baa",
-    "instant_key_url": "https://ik.seam.co/EXAMPLE",
-    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "client_session_id": "7cc9b16b-d139-45e2-8042-5cef6ee101ea",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-09T05:45:33.068Z",
-    "expires_at": "2024-02-09T05:45:33.068Z"
+    "client_session_id": "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
+    "created_at": "2025-06-14T16:54:17.946559Z",
+    "expires_at": "2025-06-16T16:54:17.946559Z",
+    "instant_key_id": "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
+    "instant_key_url": "https://se.am/1234",
+    "user_identity_id": "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+    "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
   }
 }
 ```
@@ -69,67 +62,63 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `user_identity_id` to receive the instant key.
+Generates a new instant key for a specified user identity.
 
 #### Code
 
 ```python
-seam.user_identities.generate_instant_key(
-    user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-)
+seam.user_identities.generate_instant_key()
 ```
 
 #### Output
 
 ```python
 InstantKey(
-    instant_key_id="33fb0384-b2b3-445e-b780-3fad784e9baa",
-    instant_key_url="https://ik.seam.co/EXAMPLE",
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    client_session_id="7cc9b16b-d139-45e2-8042-5cef6ee101ea",
-    workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    created_at="2024-01-09T05:45:33.068Z",
-    expires_at="2024-02-09T05:45:33.068Z",
+    client_session_id="bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
+    created_at="2025-06-14T16:54:17.946559Z",
+    expires_at="2025-06-16T16:54:17.946559Z",
+    instant_key_id="1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
+    instant_key_url="https://se.am/1234",
+    user_identity_id="d92e0c7b-72a1-4063-9ee8-2acefc240358",
+    workspace_id="4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `user_identity_id` to receive the instant key.
+Generates a new instant key for a specified user identity.
 
 #### Code
 
 ```ruby
-seam.user_identities.generate_instant_key(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f")
+seam.user_identities.generate_instant_key()
 ```
 
 #### Output
 
 ```ruby
 {
-  "instant_key_id" => "33fb0384-b2b3-445e-b780-3fad784e9baa",
-  "instant_key_url" => "https://ik.seam.co/EXAMPLE",
-  "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "client_session_id" => "7cc9b16b-d139-45e2-8042-5cef6ee101ea",
-  "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" => "2024-01-09T05:45:33.068Z",
-  "expires_at" => "2024-02-09T05:45:33.068Z",
+  "client_session_id" => "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
+  "created_at" => "2025-06-14T16:54:17.946559Z",
+  "expires_at" => "2025-06-16T16:54:17.946559Z",
+  "instant_key_id" => "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
+  "instant_key_url" => "https://se.am/1234",
+  "user_identity_id" => "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+  "workspace_id" => "4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `user_identity_id` to receive the instant key.
+Generates a new instant key for a specified user identity.
 
 #### Code
 
 ```php
 <?php
-$seam->user_identities->generate_instant_key(
-    user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
-);
+$seam->user_identities->generate_instant_key();
 ```
 
 #### Output
@@ -137,38 +126,38 @@ $seam->user_identities->generate_instant_key(
 ```php
 <?php
 [
-    "instant_key_id" => "33fb0384-b2b3-445e-b780-3fad784e9baa",
-    "instant_key_url" => "https://ik.seam.co/EXAMPLE",
-    "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "client_session_id" => "7cc9b16b-d139-45e2-8042-5cef6ee101ea",
-    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at" => "2024-01-09T05:45:33.068Z",
-    "expires_at" => "2024-02-09T05:45:33.068Z",
+    "client_session_id" => "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
+    "created_at" => "2025-06-14T16:54:17.946559Z",
+    "expires_at" => "2025-06-16T16:54:17.946559Z",
+    "instant_key_id" => "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
+    "instant_key_url" => "https://se.am/1234",
+    "user_identity_id" => "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+    "workspace_id" => "4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `user_identity_id` to receive the instant key.
+Generates a new instant key for a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam user-identities generate-instant-key --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+seam user-identities generate-instant-key
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "instant_key_id": "33fb0384-b2b3-445e-b780-3fad784e9baa",
-  "instant_key_url": "https://ik.seam.co/EXAMPLE",
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "client_session_id": "7cc9b16b-d139-45e2-8042-5cef6ee101ea",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-01-09T05:45:33.068Z",
-  "expires_at": "2024-02-09T05:45:33.068Z"
+  "client_session_id": "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
+  "created_at": "2025-06-14T16:54:17.946559Z",
+  "expires_at": "2025-06-16T16:54:17.946559Z",
+  "instant_key_id": "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
+  "instant_key_url": "https://se.am/1234",
+  "user_identity_id": "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+  "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
 ```
 {% endtab %}

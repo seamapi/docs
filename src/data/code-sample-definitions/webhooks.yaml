@@ -1,0 +1,75 @@
+---
+- title: Create a webhook
+  description: Creates a new webhook.
+  request:
+    path: /webhooks/create
+    body:
+      url: https://example.com
+      event_types:
+        - device.connected
+        - device.disconnected
+  response:
+    body:
+      webhook:
+        event_types:
+          - device.connected
+          - device.disconnected
+        secret: mySecret
+        url: https://example.com
+        webhook_id: ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1
+- title: Delete a webhook
+  description: Deletes a specified webhook.
+  request:
+    path: /webhooks/delete
+    body:
+      webhook_id: d3fb55d3-8b49-43ed-ac6b-e490be7b4274
+  response:
+    body: null
+- title: Get a webhook
+  description: Gets a specified webhook.
+  request:
+    path: /webhooks/get
+    parameters:
+      webhook_id: e5f1b17c-c67d-469d-a860-9510cf814657
+  response:
+    body:
+      webhook:
+        event_types:
+          - device.connected
+          - device.disconnected
+        secret: mySecret
+        url: https://example.com/webhook
+        webhook_id: e5f1b17c-c67d-469d-a860-9510cf814657
+- title: List webhooks
+  description: Returns a list of all webhooks.
+  request:
+    path: /webhooks/list
+  response:
+    body:
+      webhooks:
+        - event_types:
+            - device.connected
+            - device.disconnected
+          secret: mySecret
+          url: https://example.com/webhook
+          webhook_id: ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1
+- title: Update a webhook
+  description: Updates a specified webhook.
+  request:
+    path: /webhooks/update
+    body:
+      webhook_id: e294905f-e7a5-4804-95a6-303f440eb262
+      event_types:
+        - device.connected
+        - device.disconnected
+        - device.unmanaged.converted_to_managed
+  response:
+    body:
+      webhook:
+        event_types:
+          - device.connected
+          - device.disconnected
+          - device.unmanaged.converted_to_managed
+        secret: mySecret
+        url: https://example.com/webhook
+        webhook_id: e294905f-e7a5-4804-95a6-303f440eb262

@@ -10,6 +10,114 @@ An unmanaged access code has a limited set of operations that you can perform on
 Note that not all device providers support converting an unmanaged access code to a managed access code.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```javascript
+await seam.accessCodes.unmanaged.convertToManaged();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/convert_to_managed" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```python
+seam.access_codes.unmanaged.convert_to_managed()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```ruby
+seam.access_codes.unmanaged.convert_to_managed()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->unmanaged->convert_to_managed();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```seam_cli
+seam access-codes unmanaged convert-to-managed
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

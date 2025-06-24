@@ -9,43 +9,36 @@ Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermo
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
 #### Code
 
 ```javascript
-await seam.thermostats.setFanMode({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  fan_mode_setting: "auto",
-});
+await seam.thermostats.setFanMode();
 ```
 
 #### Output
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_FAN_MODE"
+  "action_attempt_id": "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
+  "action_type": "SET_FAN_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fan_mode" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "fan_mode_setting": "auto"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,9 +46,11 @@ EOF
 ```curl
 {
   "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "pending",
-    "action_type": "SET_FAN_MODE"
+    "action_attempt_id": "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
+    "action_type": "SET_FAN_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
   }
 }
 ```
@@ -63,63 +58,60 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
 #### Code
 
 ```python
-seam.thermostats.set_fan_mode(
-    device_id="123e4567-e89b-12d3-a456-426614174000", fan_mode_setting="auto"
-)
+seam.thermostats.set_fan_mode()
 ```
 
 #### Output
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
+    action_attempt_id="2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
     action_type="SET_FAN_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
 #### Code
 
 ```ruby
-seam.thermostats.set_fan_mode(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  fan_mode_setting: "auto",
-)
+seam.thermostats.set_fan_mode()
 ```
 
 #### Output
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
+  "action_attempt_id" => "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
   "action_type" => "SET_FAN_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
 #### Code
 
 ```php
 <?php
-$seam->thermostats->set_fan_mode(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    fan_mode_setting: "auto"
-);
+$seam->thermostats->set_fan_mode();
 ```
 
 #### Output
@@ -127,30 +119,34 @@ $seam->thermostats->set_fan_mode(
 ```php
 <?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
+    "action_attempt_id" => "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
     "action_type" => "SET_FAN_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
 #### Code
 
 ```seam_cli
-seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --fan_mode_setting "auto"
+seam thermostats set-fan-mode
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_FAN_MODE"
+  "action_attempt_id": "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
+  "action_type": "SET_FAN_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}

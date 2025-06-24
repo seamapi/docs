@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -9,15 +10,12 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```javascript
-await seam.acs.credentials.unassign({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-});
+await seam.acs.credentials.unassign();
 ```
 
 #### Output
@@ -29,19 +27,13 @@ await seam.acs.credentials.unassign({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,15 +45,12 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```python
-seam.acs.credentials.unassign(
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    acs_credential_id="66666666-6666-6666-6666-666666666666",
-)
+seam.acs.credentials.unassign()
 ```
 
 #### Output
@@ -73,15 +62,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```ruby
-seam.acs.credentials.unassign(
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-)
+seam.acs.credentials.unassign()
 ```
 
 #### Output
@@ -93,16 +79,13 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```php
 <?php
-$seam->acs->credentials->unassign(
-    acs_user_id: "33333333-3333-3333-3333-333333333333",
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
-);
+$seam->acs->credentials->unassign();
 ```
 
 #### Output
@@ -114,12 +97,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```seam_cli
-seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_credential_id "66666666-6666-6666-6666-666666666666"
+seam acs credentials unassign
 ```
 
 #### Output
@@ -168,3 +151,119 @@ ID of the user identity from which you want to unassign a credential. You can on
 
 void
 
+
+---
+
+## Examples
+
+
+### Unassign a credential from an access system user
+
+Unassigns a specified credential from a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.credentials.unassign();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.credentials.unassign()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.credentials.unassign()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->credentials->unassign();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs credentials unassign
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

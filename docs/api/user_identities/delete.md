@@ -9,14 +9,12 @@ Deletes a specified [user identity](https://docs.seam.co/latest/capability-guide
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```javascript
-await seam.userIdentities.delete({
-  user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135",
-});
+await seam.userIdentities.delete();
 ```
 
 #### Output
@@ -28,18 +26,13 @@ await seam.userIdentities.delete({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "user_identity_id": "44d48b20-0dbe-419d-91ca-ab8bceecd135"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -51,12 +44,12 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```python
-seam.user_identities.delete(user_identity_id="44d48b20-0dbe-419d-91ca-ab8bceecd135")
+seam.user_identities.delete()
 ```
 
 #### Output
@@ -68,12 +61,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```ruby
-seam.user_identities.delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
+seam.user_identities.delete()
 ```
 
 #### Output
@@ -85,15 +78,13 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```php
 <?php
-$seam->user_identities->delete(
-    user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135"
-);
+$seam->user_identities->delete();
 ```
 
 #### Output
@@ -105,12 +96,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+seam user-identities delete
 ```
 
 #### Output

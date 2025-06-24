@@ -78,12 +78,16 @@ None
 ## Examples
 
 {{#each additionalCodeSamples}}
----
 
 ### {{this.title}}
 
 {{this.description}}
 
 {{> code-sample }}
+{{#unless @last}}
+
+---
+
+{{/unless}}
 {{/each}}
 {{/if}}

@@ -9,52 +9,41 @@ Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobi
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
 #### Code
 
 ```javascript
-await seam.userIdentities.create({
-  user_identity_key: "jean_doe",
-  email_address: "jean@example.com",
-  phone_number: "+15555550110",
-  full_name: "Jean Doe",
-});
+await seam.userIdentities.create();
 ```
 
 #### Output
 
 ```javascript
 {
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "display_name": "Jean Doe",
-  "full_name": "Jean Doe",
-  "created_at": "2024-01-11T05:37:50.264Z",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  "created_at": "2025-06-16T16:54:17.946546Z",
+  "display_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "errors": [],
+  "full_name": "Jane Doe",
+  "phone_number": "+15551234567",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "user_identity_key": "jane_doe",
+  "warnings": [],
+  "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "full_name": "Jean Doe"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -62,14 +51,16 @@ EOF
 ```curl
 {
   "user_identity": {
-    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_key": "jean_doe",
-    "email_address": "jean@example.com",
-    "phone_number": "+15555550110",
-    "display_name": "Jean Doe",
-    "full_name": "Jean Doe",
-    "created_at": "2024-01-11T05:37:50.264Z",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+    "created_at": "2025-06-16T16:54:17.946546Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "full_name": "Jane Doe",
+    "phone_number": "+15551234567",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key": "jane_doe",
+    "warnings": [],
+    "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
   }
 }
 ```
@@ -77,80 +68,69 @@ EOF
 
 {% tab title="Python" %}
 
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
 #### Code
 
 ```python
-seam.user_identities.create(
-    user_identity_key="jean_doe",
-    email_address="jean@example.com",
-    phone_number="+15555550110",
-    full_name="Jean Doe",
-)
+seam.user_identities.create()
 ```
 
 #### Output
 
 ```python
 UserIdentity(
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    user_identity_key="jean_doe",
-    email_address="jean@example.com",
-    phone_number="+15555550110",
-    display_name="Jean Doe",
-    full_name="Jean Doe",
-    created_at="2024-01-11T05:37:50.264Z",
-    workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    created_at="2025-06-16T16:54:17.946546Z",
+    display_name="Jane Doe",
+    email_address="jane@example.com",
+    errors=[],
+    full_name="Jane Doe",
+    phone_number="+15551234567",
+    user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+    user_identity_key="jane_doe",
+    warnings=[],
+    workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
 #### Code
 
 ```ruby
-seam.user_identities.create(
-  user_identity_key: "jean_doe",
-  email_address: "jean@example.com",
-  phone_number: "+15555550110",
-  full_name: "Jean Doe",
-)
+seam.user_identities.create()
 ```
 
 #### Output
 
 ```ruby
 {
-  "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "user_identity_key" => "jean_doe",
-  "email_address" => "jean@example.com",
-  "phone_number" => "+15555550110",
-  "display_name" => "Jean Doe",
-  "full_name" => "Jean Doe",
-  "created_at" => "2024-01-11T05:37:50.264Z",
-  "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+  "created_at" => "2025-06-16T16:54:17.946546Z",
+  "display_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  "errors" => [],
+  "full_name" => "Jane Doe",
+  "phone_number" => "+15551234567",
+  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "user_identity_key" => "jane_doe",
+  "warnings" => [],
+  "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
 #### Code
 
 ```php
 <?php
-$seam->user_identities->create(
-    user_identity_key: "jean_doe",
-    email_address: "jean@example.com",
-    phone_number: "+15555550110",
-    full_name: "Jean Doe"
-);
+$seam->user_identities->create();
 ```
 
 #### Output
@@ -158,40 +138,44 @@ $seam->user_identities->create(
 ```php
 <?php
 [
-    "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_key" => "jean_doe",
-    "email_address" => "jean@example.com",
-    "phone_number" => "+15555550110",
-    "display_name" => "Jean Doe",
-    "full_name" => "Jean Doe",
-    "created_at" => "2024-01-11T05:37:50.264Z",
-    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at" => "2025-06-16T16:54:17.946546Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "full_name" => "Jane Doe",
+    "phone_number" => "+15551234567",
+    "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key" => "jane_doe",
+    "warnings" => [],
+    "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify one or more of the unique `user_identity_key`, `email_address`, or `phone_number`. You can also specify the `full_name` of the user associated with the `user_identity`.
+Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
 #### Code
 
 ```seam_cli
-seam user-identities create --user_identity_key "jean_doe" --email_address "jean@example.com" --phone_number "+15555550110" --full_name "Jean Doe"
+seam user-identities create
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "display_name": "Jean Doe",
-  "full_name": "Jean Doe",
-  "created_at": "2024-01-11T05:37:50.264Z",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+  "created_at": "2025-06-16T16:54:17.946546Z",
+  "display_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "errors": [],
+  "full_name": "Jane Doe",
+  "phone_number": "+15551234567",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "user_identity_key": "jane_doe",
+  "warnings": [],
+  "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
 {% endtab %}

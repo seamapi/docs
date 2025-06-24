@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -9,14 +10,12 @@ Deletes a specified [access system user](https://docs.seam.co/latest/capability-
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified access system user and invalidates the access system user's credentials.
 
 #### Code
 
 ```javascript
-await seam.acs.users.delete({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-});
+await seam.acs.users.delete();
 ```
 
 #### Output
@@ -28,18 +27,13 @@ await seam.acs.users.delete({
 
 {% tab title="cURL" %}
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified access system user and invalidates the access system user's credentials.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -51,12 +45,12 @@ EOF
 
 {% tab title="Python" %}
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified access system user and invalidates the access system user's credentials.
 
 #### Code
 
 ```python
-seam.acs.users.delete(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.users.delete()
 ```
 
 #### Output
@@ -68,12 +62,12 @@ None
 
 {% tab title="Ruby" %}
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified access system user and invalidates the access system user's credentials.
 
 #### Code
 
 ```ruby
-seam.acs.users.delete(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.users.delete()
 ```
 
 #### Output
@@ -85,13 +79,13 @@ nil
 
 {% tab title="PHP" %}
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified access system user and invalidates the access system user's credentials.
 
 #### Code
 
 ```php
 <?php
-$seam->acs->users->delete(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
+$seam->acs->users->delete();
 ```
 
 #### Output
@@ -103,12 +97,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified access system user and invalidates the access system user's credentials.
 
 #### Code
 
 ```seam_cli
-seam acs users delete --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+seam acs users delete
 ```
 
 #### Output
@@ -157,3 +151,119 @@ ID of the user identity that you want to delete. You must provide either acs_use
 
 void
 
+
+---
+
+## Examples
+
+
+### Delete an access system user
+
+Deletes a specified access system user and invalidates the access system user's credentials.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.delete();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.delete()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.delete()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->delete();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users delete
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

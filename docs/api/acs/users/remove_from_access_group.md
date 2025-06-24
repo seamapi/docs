@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
@@ -9,15 +10,12 @@ Removes a specified [access system user](https://docs.seam.co/latest/capability-
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
 #### Code
 
 ```javascript
-await seam.acs.users.removeFromAccessGroup({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
-});
+await seam.acs.users.removeFromAccessGroup();
 ```
 
 #### Output
@@ -29,19 +27,13 @@ await seam.acs.users.removeFromAccessGroup({
 
 {% tab title="cURL" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/remove_from_access_group" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  "acs_access_group_id": "123e4567-e89b-12d3-a456-426614174000"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,15 +45,12 @@ EOF
 
 {% tab title="Python" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
 #### Code
 
 ```python
-seam.acs.users.remove_from_access_group(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id="123e4567-e89b-12d3-a456-426614174000",
-)
+seam.acs.users.remove_from_access_group()
 ```
 
 #### Output
@@ -73,15 +62,12 @@ None
 
 {% tab title="Ruby" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
 #### Code
 
 ```ruby
-seam.acs.users.remove_from_access_group(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
-)
+seam.acs.users.remove_from_access_group()
 ```
 
 #### Output
@@ -93,16 +79,13 @@ nil
 
 {% tab title="PHP" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
 #### Code
 
 ```php
 <?php
-$seam->acs->users->remove_from_access_group(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000"
-);
+$seam->acs->users->remove_from_access_group();
 ```
 
 #### Output
@@ -114,12 +97,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
 #### Code
 
 ```seam_cli
-seam acs users remove-from-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --acs_access_group_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs users remove-from-access-group
 ```
 
 #### Output
@@ -168,3 +151,119 @@ ID of the user identity that you want to remove from an access group. You can on
 
 void
 
+
+---
+
+## Examples
+
+
+### Remove an access system user from an access group
+
+Removes a specified access system user from a specified access group.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.removeFromAccessGroup();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/remove_from_access_group" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.remove_from_access_group()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.remove_from_access_group()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->remove_from_access_group();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users remove-from-access-group
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
