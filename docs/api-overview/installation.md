@@ -6,9 +6,7 @@ Install one of the Seam SDKs in the programming language of your choice. Seam su
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -35,7 +33,6 @@ bundle add seam
 composer require seamapi/seam
 ```
 {% endtab %}
-
 
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
