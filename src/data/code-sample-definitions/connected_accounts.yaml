@@ -3,7 +3,7 @@
   description: Deletes a specified connected account.
   request:
     path: /connected_accounts/delete
-    body:
+    parameters:
       connected_account_id: 35a07a42-4eb2-4080-9bf9-ee08aa2bf62e
   response:
     body: null
@@ -147,7 +147,7 @@
   description: Request a connected account sync attempt for the specified connected account.
   request:
     path: /connected_accounts/sync
-    body:
+    parameters:
       connected_account_id: f886f890-4ca5-4ce5-b248-509cbfb6c279
   response:
     body: null
@@ -155,7 +155,7 @@
   description: Updates a connected account.
   request:
     path: /connected_accounts/update
-    body:
+    parameters:
       connected_account_id: a289aa54-5488-4707-9a4b-eeea4edf311d
       automatically_manage_new_devices: true
       custom_metadata:

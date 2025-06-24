@@ -3,7 +3,7 @@
   description: Creates a new sandbox workspace.
   request:
     path: /workspaces/create
-    body:
+    parameters:
       name: My Sandbox Workspace
       company_name: Acme
       connect_partner_name: Acme
@@ -37,7 +37,7 @@
   description: Creates a new production workspace.
   request:
     path: /workspaces/create
-    body:
+    parameters:
       name: My Production Workspace
       company_name: Acme
       connect_partner_name: Acme
@@ -121,7 +121,7 @@
   description: Updates the workspace associated with the authentication value.
   request:
     path: /workspaces/update
-    body:
+    parameters:
       name: My Workspace
       connect_partner_name: Acme
       connect_webview_customization:

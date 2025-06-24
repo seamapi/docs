@@ -3,7 +3,7 @@
   description: Creates a new webhook.
   request:
     path: /webhooks/create
-    body:
+    parameters:
       url: https://example.com
       event_types:
         - device.connected
@@ -21,7 +21,7 @@
   description: Deletes a specified webhook.
   request:
     path: /webhooks/delete
-    body:
+    parameters:
       webhook_id: d3fb55d3-8b49-43ed-ac6b-e490be7b4274
   response:
     body: null
@@ -57,7 +57,7 @@
   description: Updates a specified webhook.
   request:
     path: /webhooks/update
-    body:
+    parameters:
       webhook_id: e294905f-e7a5-4804-95a6-303f440eb262
       event_types:
         - device.connected

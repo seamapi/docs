@@ -151,7 +151,7 @@
   description: Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
   request:
     path: /noise_sensors/simulate/trigger_noise_threshold
-    body:
+    parameters:
       device_id: c0384c1c-9038-427c-9a72-314d2b168d43
   response:
     body: null
@@ -159,7 +159,7 @@
   description: Creates a new noise threshold for a noise sensor.
   request:
     path: /noise_sensors/noise_thresholds/create
-    body:
+    parameters:
       device_id: 8282891b-c4da-4239-8f01-56089d44b80d
       name: My Noise Sensor
       starts_daily_at: '2025-06-20T18:29:57.000Z'
@@ -180,7 +180,7 @@
   description: Deletes a noise threshold from a noise sensor.
   request:
     path: /noise_sensors/noise_thresholds/delete
-    body:
+    parameters:
       noise_threshold_id: 00fbac13-6602-4079-b4ae-c89d5dcbed35
       device_id: 736fc5bf-192d-4416-b879-66ff0195f2f7
   response:
@@ -221,7 +221,7 @@
   description: Updates a noise threshold for a noise sensor.
   request:
     path: /noise_sensors/noise_thresholds/update
-    body:
+    parameters:
       noise_threshold_id: 2cb09850-4962-4dee-a658-d8a79fcb9aff
       device_id: c3885398-6794-44a0-a7a2-1f39ff454dc3
       name: My Updated Noise Sensor

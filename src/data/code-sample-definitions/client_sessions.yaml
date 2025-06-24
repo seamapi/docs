@@ -3,7 +3,7 @@
   description: Creates a new client session.
   request:
     path: /client_sessions/create
-    body:
+    parameters:
       customer_id: e387e15f-be27-47ad-881f-4a6fc5460c57
       customer_key: My Company
       user_identifier_key: jane_doe
@@ -33,7 +33,7 @@
   description: Deletes a client session.
   request:
     path: /client_sessions/delete
-    body:
+    parameters:
       client_session_id: d149de35-cfad-46fe-a78e-f71f649e7a37
   response:
     body: null
@@ -85,7 +85,7 @@
   description: Returns a client session with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
   request:
     path: /client_sessions/get_or_create
-    body:
+    parameters:
       user_identifier_key: jane_doe
       connect_webview_ids:
         - 5e297cfe-23df-4638-bb87-08c4f0f8233b
@@ -113,7 +113,7 @@
   description: Grants a client session access to one or more resources, such as Connect Webviews, user identities, and so on.
   request:
     path: /client_sessions/grant_access
-    body:
+    parameters:
       client_session_id: 3ada79d3-2848-4320-b2ef-a82e1e6dafac
       user_identifier_key: jane_doe
       connected_account_ids:
@@ -251,7 +251,7 @@
   description: Revokes a client session.
   request:
     path: /client_sessions/revoke
-    body:
+    parameters:
       client_session_id: 4271352c-6894-4367-8f52-41d565c48f13
   response:
     body: null

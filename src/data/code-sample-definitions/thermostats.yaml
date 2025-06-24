@@ -3,7 +3,7 @@
   description: Activates a specified climate preset for a specified thermostat.
   request:
     path: /thermostats/activate_climate_preset
-    body:
+    parameters:
       device_id: 52b88155-5b81-47d2-b04d-28a802bd7395
       climate_preset_key: Eco
   response:
@@ -18,7 +18,7 @@
   description: Sets a specified thermostat to cool mode.
   request:
     path: /thermostats/cool
-    body:
+    parameters:
       device_id: 408641ab-d0f5-475c-b8a5-9b9096405f9a
       cooling_set_point_fahrenheit: 75
   response:
@@ -33,7 +33,7 @@
   description: Creates a climate preset for a specified thermostat.
   request:
     path: /thermostats/create_climate_preset
-    body:
+    parameters:
       device_id: ba9b816d-c255-46b9-a16d-971e6f535dd3
       manual_override_allowed: true
       climate_preset_key: Occupied
@@ -48,7 +48,7 @@
   description: Deletes a specified climate preset for a specified thermostat.
   request:
     path: /thermostats/delete_climate_preset
-    body:
+    parameters:
       device_id: 88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5
       climate_preset_key: Eco
   response:
@@ -385,7 +385,7 @@
   description: Sets a specified thermostat to heat mode.
   request:
     path: /thermostats/heat
-    body:
+    parameters:
       device_id: e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5
       heating_set_point_fahrenheit: 65
   response:
@@ -400,7 +400,7 @@
   description: Sets a specified thermostat to heat-cool ("auto") mode.
   request:
     path: /thermostats/heat_cool
-    body:
+    parameters:
       device_id: 32f974cc-e817-4bd7-b7f1-be92c80884a1
       heating_set_point_celsius: 20
       cooling_set_point_celsius: 25
@@ -736,7 +736,7 @@
   description: Sets a specified thermostat to "off" mode.
   request:
     path: /thermostats/off
-    body:
+    parameters:
       device_id: 5d5c3b30-5fed-47a3-9df1-ed32f32589e5
   response:
     body:
@@ -750,7 +750,7 @@
   description: Sets a specified climate preset as the "fallback" preset for a specified thermostat.
   request:
     path: /thermostats/set_fallback_climate_preset
-    body:
+    parameters:
       device_id: 9a21ddcb-8eeb-4351-8770-1835c3db8b2e
       climate_preset_key: Eco
   response:
@@ -759,7 +759,7 @@
   description: Sets the fan mode setting for a specified thermostat.
   request:
     path: /thermostats/set_fan_mode
-    body:
+    parameters:
       device_id: 363e657e-3b07-4670-a290-7fb1f32b8e33
       fan_mode_setting: auto
   response:
@@ -774,7 +774,7 @@
   description: Sets the HVAC mode for a specified thermostat.
   request:
     path: /thermostats/set_hvac_mode
-    body:
+    parameters:
       device_id: 5d5c3b30-5fed-47a3-9df1-ed32f32589e5
       hvac_mode_setting: heat_cool
       heating_set_point_celsius: 20
@@ -791,7 +791,7 @@
   description: Sets a temperature threshold for a specified thermostat.
   request:
     path: /thermostats/set_temperature_threshold
-    body:
+    parameters:
       device_id: a9b52627-e6e2-4beb-9168-964749f7bbae
       lower_limit_fahrenheit: 60
       upper_limit_fahrenheit: 80
@@ -801,7 +801,7 @@
   description: Updates a specified climate preset for a specified thermostat.
   request:
     path: /thermostats/update_climate_preset
-    body:
+    parameters:
       device_id: a2495670-80a5-4c98-b8c0-8b0c9d49c3b8
       climate_preset_key: Home
       name: Home
@@ -816,7 +816,7 @@
   description: Updates the thermostat weekly program for a thermostat device.
   request:
     path: /thermostats/update_weekly_program
-    body:
+    parameters:
       device_id: 076546e8-966c-47dd-831b-8d98413bf070
       monday_program_id: a36dccaa-aeb9-47da-bf1d-43a08ba5c870
       tuesday_program_id: a36dccaa-aeb9-47da-bf1d-43a08ba5c870
@@ -837,7 +837,7 @@
   description: Creates a new thermostat schedule for a specified thermostat.
   request:
     path: /thermostats/schedules/create
-    body:
+    parameters:
       device_id: d710aa35-232d-442b-a817-c28045de1c74
       name: "Jane's Stay"
       climate_preset_key: Occupied
@@ -863,7 +863,7 @@
   description: Deletes a thermostat schedule for a specified thermostat.
   request:
     path: /thermostats/schedules/delete
-    body:
+    parameters:
       thermostat_schedule_id: 0d42131f-ceb2-4fdf-b44e-3cc1143f98de
   response:
     body: null
@@ -931,7 +931,7 @@
   description: Updates a specified thermostat schedule.
   request:
     path: /thermostats/schedules/update
-    body:
+    parameters:
       thermostat_schedule_id: f29b8f4d-ef6e-4219-96e5-16fb2151ec6c
       name: "Jane's Stay"
       climate_preset_key: Occupied
@@ -945,7 +945,7 @@
   description: Creates a new thermostat daily program.
   request:
     path: /thermostats/daily_programs/create
-    body:
+    parameters:
       device_id: cc2d0fb9-1f5f-410f-80f1-a64b699de82a
       name: Weekday Program
       periods:
@@ -970,7 +970,7 @@
   description: Deletes a thermostat daily program.
   request:
     path: /thermostats/daily_programs/delete
-    body:
+    parameters:
       thermostat_daily_program_id: a8665859-629e-4696-88b1-1eda1976250a
   response:
     body: null
@@ -978,7 +978,7 @@
   description: Updates a specified thermostat daily program.
   request:
     path: /thermostats/daily_programs/update
-    body:
+    parameters:
       thermostat_daily_program_id: 6baf3a53-ba83-4052-8ea5-143584e18f03
       name: Weekday Program
       periods:
@@ -998,7 +998,7 @@
   description: Simulates having adjusted the HVAC mode for a thermostat.
   request:
     path: /thermostats/simulate/hvac_mode_adjusted
-    body:
+    parameters:
       device_id: 278a72ba-7deb-45e3-a0c0-573fd360ee7b
       hvac_mode: heat
       heating_set_point_fahrenheit: 68
@@ -1008,7 +1008,7 @@
   description: Simulates a thermostat reaching a specified temperature.
   request:
     path: /thermostats/simulate/temperature_reached
-    body:
+    parameters:
       device_id: 278a72ba-7deb-45e3-a0c0-573fd360ee7b
       temperature_celsius: 25
   response:
