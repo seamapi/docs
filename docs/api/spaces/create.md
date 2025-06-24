@@ -9,6 +9,153 @@
 Creates a new space.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Creates a new space.
+
+#### Code
+
+```javascript
+await seam.spaces.create();
+```
+
+#### Output
+
+```javascript
+{
+  "created_at": "2025-06-16T16:54:17.946600Z",
+  "display_name": "My Space",
+  "name": "My Space",
+  "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
+  "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Creates a new space.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/spaces/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "space": {
+    "created_at": "2025-06-16T16:54:17.946600Z",
+    "display_name": "My Space",
+    "name": "My Space",
+    "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
+    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Creates a new space.
+
+#### Code
+
+```python
+seam.spaces.create()
+```
+
+#### Output
+
+```python
+Space(
+    created_at="2025-06-16T16:54:17.946600Z",
+    display_name="My Space",
+    name="My Space",
+    space_id="5afeb047-3277-4102-b8c4-99edf05b91d2",
+    workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Creates a new space.
+
+#### Code
+
+```ruby
+seam.spaces.create()
+```
+
+#### Output
+
+```ruby
+{
+  "created_at" => "2025-06-16T16:54:17.946600Z",
+  "display_name" => "My Space",
+  "name" => "My Space",
+  "space_id" => "5afeb047-3277-4102-b8c4-99edf05b91d2",
+  "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Creates a new space.
+
+#### Code
+
+```php
+<?php
+$seam->spaces->create();
+```
+
+#### Output
+
+```php
+<?php
+[
+    "created_at" => "2025-06-16T16:54:17.946600Z",
+    "display_name" => "My Space",
+    "name" => "My Space",
+    "space_id" => "5afeb047-3277-4102-b8c4-99edf05b91d2",
+    "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Creates a new space.
+
+#### Code
+
+```seam_cli
+seam spaces create
+```
+
+#### Output
+
+```seam_cli
+{
+  "created_at": "2025-06-16T16:54:17.946600Z",
+  "display_name": "My Space",
+  "name": "My Space",
+  "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
+  "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

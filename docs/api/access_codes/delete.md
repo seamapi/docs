@@ -6,6 +6,114 @@
 Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Deletes an access code.
+
+#### Code
+
+```javascript
+await seam.accessCodes.delete();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Deletes an access code.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Deletes an access code.
+
+#### Code
+
+```python
+seam.access_codes.delete()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Deletes an access code.
+
+#### Code
+
+```ruby
+seam.access_codes.delete()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Deletes an access code.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->delete();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Deletes an access code.
+
+#### Code
+
+```seam_cli
+seam access-codes delete
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

@@ -9,6 +9,114 @@
 Adds devices to a specific space.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Adds devices to a specific space.
+
+#### Code
+
+```javascript
+await seam.spaces.addDevices();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Adds devices to a specific space.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/spaces/add_devices" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Adds devices to a specific space.
+
+#### Code
+
+```python
+seam.spaces.add_devices()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Adds devices to a specific space.
+
+#### Code
+
+```ruby
+seam.spaces.add_devices()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Adds devices to a specific space.
+
+#### Code
+
+```php
+<?php
+$seam->spaces->add_devices();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Adds devices to a specific space.
+
+#### Code
+
+```seam_cli
+seam spaces add-devices
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

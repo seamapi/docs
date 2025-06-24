@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -9,15 +10,12 @@ Updates the properties of a specified [access system user](https://docs.seam.co/
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
 #### Code
 
 ```javascript
-await seam.acs.users.update({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
-});
+await seam.acs.users.update();
 ```
 
 #### Output
@@ -29,19 +27,13 @@ await seam.acs.users.update({
 
 {% tab title="cURL" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  "phone_number": "+15555550222"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,14 +45,12 @@ EOF
 
 {% tab title="Python" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
 #### Code
 
 ```python
-seam.acs.users.update(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222"
-)
+seam.acs.users.update()
 ```
 
 #### Output
@@ -72,15 +62,12 @@ None
 
 {% tab title="Ruby" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
 #### Code
 
 ```ruby
-seam.acs.users.update(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
-)
+seam.acs.users.update()
 ```
 
 #### Output
@@ -92,16 +79,13 @@ nil
 
 {% tab title="PHP" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
 #### Code
 
 ```php
 <?php
-$seam->acs->users->update(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    phone_number: "+15555550222"
-);
+$seam->acs->users->update();
 ```
 
 #### Output
@@ -113,12 +97,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
 #### Code
 
 ```seam_cli
-seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"
+seam acs users update
 ```
 
 #### Output
@@ -220,3 +204,120 @@ ID of the user identity that you want to update. You can only provide acs_user_i
 
 void
 
+
+---
+
+## Examples
+
+---
+
+### Update an access system user
+
+Updates the properties of a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.update();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.update()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.update()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->update();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users update
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

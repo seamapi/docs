@@ -14,6 +14,262 @@ If you want to change these access codes that are not linked by a `common_code_k
 See also [Creating and Updating Multiple Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Creates new access codes that share a common code across multiple devices.
+
+#### Code
+
+```javascript
+await seam.accessCodes.createMultiple();
+```
+
+#### Output
+
+```javascript
+[
+  {
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "ends_at": "2025-07-04T16:54:17.946049Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Linked Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-07-02T16:54:17.946049Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Creates new access codes that share a common code across multiple devices.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/create_multiple" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "access_codes": [
+    {
+      "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+      "code": "1234",
+      "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+      "created_at": "2025-06-14T16:54:17.946242Z",
+      "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+      "ends_at": "2025-07-04T16:54:17.946049Z",
+      "errors": [],
+      "is_backup": false,
+      "is_backup_access_code_available": false,
+      "is_external_modification_allowed": false,
+      "is_managed": true,
+      "is_offline_access_code": false,
+      "is_one_time_use": false,
+      "is_scheduled_on_device": true,
+      "is_waiting_for_code_assignment": false,
+      "name": "My Linked Access Code",
+      "pulled_backup_access_code_id": null,
+      "starts_at": "2025-07-02T16:54:17.946049Z",
+      "status": "set",
+      "type": "time_bound",
+      "warnings": []
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Creates new access codes that share a common code across multiple devices.
+
+#### Code
+
+```python
+seam.access_codes.create_multiple()
+```
+
+#### Output
+
+```python
+[
+    AccessCode(
+        access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+        code="1234",
+        common_code_key="auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+        created_at="2025-06-14T16:54:17.946242Z",
+        device_id="c9cd621d-ef0c-45c8-b608-026ebdb74615",
+        ends_at="2025-07-04T16:54:17.946049Z",
+        errors=[],
+        is_backup=false,
+        is_backup_access_code_available=false,
+        is_external_modification_allowed=false,
+        is_managed=true,
+        is_offline_access_code=false,
+        is_one_time_use=false,
+        is_scheduled_on_device=true,
+        is_waiting_for_code_assignment=false,
+        name="My Linked Access Code",
+        pulled_backup_access_code_id=None,
+        starts_at="2025-07-02T16:54:17.946049Z",
+        status="set",
+        type="time_bound",
+        warnings=[],
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Creates new access codes that share a common code across multiple devices.
+
+#### Code
+
+```ruby
+seam.access_codes.create_multiple()
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code" => "1234",
+    "common_code_key" => "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+    "created_at" => "2025-06-14T16:54:17.946242Z",
+    "device_id" => "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "ends_at" => "2025-07-04T16:54:17.946049Z",
+    "errors" => [],
+    "is_backup" => false,
+    "is_backup_access_code_available" => false,
+    "is_external_modification_allowed" => false,
+    "is_managed" => true,
+    "is_offline_access_code" => false,
+    "is_one_time_use" => false,
+    "is_scheduled_on_device" => true,
+    "is_waiting_for_code_assignment" => false,
+    "name" => "My Linked Access Code",
+    "pulled_backup_access_code_id" => nil,
+    "starts_at" => "2025-07-02T16:54:17.946049Z",
+    "status" => "set",
+    "type" => "time_bound",
+    "warnings" => [],
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Creates new access codes that share a common code across multiple devices.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->create_multiple();
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+        "code" => "1234",
+        "common_code_key" =>
+            "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+        "created_at" => "2025-06-14T16:54:17.946242Z",
+        "device_id" => "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+        "ends_at" => "2025-07-04T16:54:17.946049Z",
+        "errors" => [],
+        "is_backup" => false,
+        "is_backup_access_code_available" => false,
+        "is_external_modification_allowed" => false,
+        "is_managed" => true,
+        "is_offline_access_code" => false,
+        "is_one_time_use" => false,
+        "is_scheduled_on_device" => true,
+        "is_waiting_for_code_assignment" => false,
+        "name" => "My Linked Access Code",
+        "pulled_backup_access_code_id" => null,
+        "starts_at" => "2025-07-02T16:54:17.946049Z",
+        "status" => "set",
+        "type" => "time_bound",
+        "warnings" => [],
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Creates new access codes that share a common code across multiple devices.
+
+#### Code
+
+```seam_cli
+seam access-codes create-multiple
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "ends_at": "2025-07-04T16:54:17.946049Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Linked Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-07-02T16:54:17.946049Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

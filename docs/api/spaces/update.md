@@ -9,6 +9,153 @@
 Updates an existing space.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates an existing space.
+
+#### Code
+
+```javascript
+await seam.spaces.update();
+```
+
+#### Output
+
+```javascript
+{
+  "created_at": "2025-06-16T16:54:17.946600Z",
+  "display_name": "My Updated Space",
+  "name": "My Updated Space",
+  "space_id": "5f30970d-6ef5-4618-9e91-e701fbca6b63",
+  "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates an existing space.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/spaces/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "space": {
+    "created_at": "2025-06-16T16:54:17.946600Z",
+    "display_name": "My Updated Space",
+    "name": "My Updated Space",
+    "space_id": "5f30970d-6ef5-4618-9e91-e701fbca6b63",
+    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates an existing space.
+
+#### Code
+
+```python
+seam.spaces.update()
+```
+
+#### Output
+
+```python
+Space(
+    created_at="2025-06-16T16:54:17.946600Z",
+    display_name="My Updated Space",
+    name="My Updated Space",
+    space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63",
+    workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates an existing space.
+
+#### Code
+
+```ruby
+seam.spaces.update()
+```
+
+#### Output
+
+```ruby
+{
+  "created_at" => "2025-06-16T16:54:17.946600Z",
+  "display_name" => "My Updated Space",
+  "name" => "My Updated Space",
+  "space_id" => "5f30970d-6ef5-4618-9e91-e701fbca6b63",
+  "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates an existing space.
+
+#### Code
+
+```php
+<?php
+$seam->spaces->update();
+```
+
+#### Output
+
+```php
+<?php
+[
+    "created_at" => "2025-06-16T16:54:17.946600Z",
+    "display_name" => "My Updated Space",
+    "name" => "My Updated Space",
+    "space_id" => "5f30970d-6ef5-4618-9e91-e701fbca6b63",
+    "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates an existing space.
+
+#### Code
+
+```seam_cli
+seam spaces update
+```
+
+#### Output
+
+```seam_cli
+{
+  "created_at": "2025-06-16T16:54:17.946600Z",
+  "display_name": "My Updated Space",
+  "name": "My Updated Space",
+  "space_id": "5f30970d-6ef5-4618-9e91-e701fbca6b63",
+  "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

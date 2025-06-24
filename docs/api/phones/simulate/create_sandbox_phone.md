@@ -6,6 +6,240 @@
 Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](../../../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Creates a new simulated phone in a sandbox workspace.
+
+#### Code
+
+```javascript
+await seam.phones.simulate.createSandboxPhone();
+```
+
+#### Output
+
+```javascript
+{
+  "created_at": "2025-06-14T16:54:17.946540Z",
+  "custom_metadata": { "id": "internalId1" },
+  "device_id": "e452f665-a635-4c65-922b-9feab0e0f84f",
+  "device_type": "android_phone",
+  "display_name": "My Phone",
+  "errors": [],
+  "nickname": "My Phone",
+  "properties": {
+    "assa_abloy_credential_service_metadata": {
+      "endpoints": [
+        {
+          "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+          "is_active": true
+        }
+      ],
+      "has_active_endpoint": true
+    }
+  },
+  "warnings": [],
+  "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Creates a new simulated phone in a sandbox workspace.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/phones/simulate/create_sandbox_phone" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{
+  "phone": {
+    "created_at": "2025-06-14T16:54:17.946540Z",
+    "custom_metadata": { "id": "internalId1" },
+    "device_id": "e452f665-a635-4c65-922b-9feab0e0f84f",
+    "device_type": "android_phone",
+    "display_name": "My Phone",
+    "errors": [],
+    "nickname": "My Phone",
+    "properties": {
+      "assa_abloy_credential_service_metadata": {
+        "endpoints": [
+          {
+            "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+            "is_active": true
+          }
+        ],
+        "has_active_endpoint": true
+      }
+    },
+    "warnings": [],
+    "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Creates a new simulated phone in a sandbox workspace.
+
+#### Code
+
+```python
+seam.phones.simulate.create_sandbox_phone()
+```
+
+#### Output
+
+```python
+Phone(
+    created_at="2025-06-14T16:54:17.946540Z",
+    custom_metadata={"id": "internalId1"},
+    device_id="e452f665-a635-4c65-922b-9feab0e0f84f",
+    device_type="android_phone",
+    display_name="My Phone",
+    errors=[],
+    nickname="My Phone",
+    properties={
+        "assa_abloy_credential_service_metadata": {
+            "endpoints": [
+                {
+                    "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+                    "is_active": true,
+                }
+            ],
+            "has_active_endpoint": true,
+        }
+    },
+    warnings=[],
+    workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Creates a new simulated phone in a sandbox workspace.
+
+#### Code
+
+```ruby
+seam.phones.simulate.create_sandbox_phone()
+```
+
+#### Output
+
+```ruby
+{
+  "created_at" => "2025-06-14T16:54:17.946540Z",
+  "custom_metadata" => {
+    id: "internalId1",
+  },
+  "device_id" => "e452f665-a635-4c65-922b-9feab0e0f84f",
+  "device_type" => "android_phone",
+  "display_name" => "My Phone",
+  "errors" => [],
+  "nickname" => "My Phone",
+  "properties" => {
+    assa_abloy_credential_service_metadata: {
+      endpoints: [{ endpoint_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f", is_active: true }],
+      has_active_endpoint: true,
+    },
+  },
+  "warnings" => [],
+  "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Creates a new simulated phone in a sandbox workspace.
+
+#### Code
+
+```php
+<?php
+$seam->phones->simulate->create_sandbox_phone();
+```
+
+#### Output
+
+```php
+<?php
+[
+    "created_at" => "2025-06-14T16:54:17.946540Z",
+    "custom_metadata" => ["id" => "internalId1"],
+    "device_id" => "e452f665-a635-4c65-922b-9feab0e0f84f",
+    "device_type" => "android_phone",
+    "display_name" => "My Phone",
+    "errors" => [],
+    "nickname" => "My Phone",
+    "properties" => [
+        "assa_abloy_credential_service_metadata" => [
+            "endpoints" => [
+                [
+                    "endpoint_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+                    "is_active" => true,
+                ],
+            ],
+            "has_active_endpoint" => true,
+        ],
+    ],
+    "warnings" => [],
+    "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Creates a new simulated phone in a sandbox workspace.
+
+#### Code
+
+```seam_cli
+seam phones simulate create-sandbox-phone
+```
+
+#### Output
+
+```seam_cli
+{
+  "created_at": "2025-06-14T16:54:17.946540Z",
+  "custom_metadata": { "id": "internalId1" },
+  "device_id": "e452f665-a635-4c65-922b-9feab0e0f84f",
+  "device_type": "android_phone",
+  "display_name": "My Phone",
+  "errors": [],
+  "nickname": "My Phone",
+  "properties": {
+    "assa_abloy_credential_service_metadata": {
+      "endpoints": [
+        {
+          "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+          "is_active": true
+        }
+      ],
+      "has_active_endpoint": true
+    }
+  },
+  "warnings": [],
+  "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

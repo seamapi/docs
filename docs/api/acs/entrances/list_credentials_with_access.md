@@ -9,13 +9,13 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+Returns a list of all credentials with access to a specified entrance.
 
 #### Code
 
 ```javascript
 await seam.acs.entrances.listCredentialsWithAccess({
-  acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000",
+  acs_entrance_id: "afdde789-8684-425a-b421-6031bb3df62e",
 });
 ```
 
@@ -24,26 +24,24 @@ await seam.acs.entrances.listCredentialsWithAccess({
 ```javascript
 [
   {
-    "acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_credential_pool_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "parent_acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
-    "display_name": "text",
-    "code": "text",
-    "card_number": "text",
-    "is_issued": false,
-    "issued_at": "2024-10-15T12:54:04.155Z",
     "access_method": "code",
-    "external_type": "pti_card",
-    "external_type_display_name": "text",
-    "created_at": "2024-10-15T12:54:04.155Z",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "starts_at": "text",
-    "ends_at": "text",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "code": "123456",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "FRONT_DOOR",
+    "errors": [],
+    "external_type": "salto_ks_credential",
+    "external_type_display_name": "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
     "is_multi_phone_sync_credential": false,
-    "is_latest_desired_state_synced_with_provider": false,
-    "latest_desired_state_synced_with_provider_at": "2024-10-15T12:54:04.155Z"
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-07-10T16:54:17.946512Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
   }
 ]
 ```
@@ -51,7 +49,7 @@ await seam.acs.entrances.listCredentialsWithAccess({
 
 {% tab title="cURL" %}
 
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+Returns a list of all credentials with access to a specified entrance.
 
 #### Code
 
@@ -60,7 +58,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list_cr
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000"
+  "acs_entrance_id": "afdde789-8684-425a-b421-6031bb3df62e"
 }
 EOF
 ```
@@ -71,26 +69,24 @@ EOF
 {
   "acs_credentials": [
     {
-      "acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
-      "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-      "acs_credential_pool_id": "123e4567-e89b-12d3-a456-426614174000",
-      "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-      "parent_acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
-      "display_name": "text",
-      "code": "text",
-      "card_number": "text",
-      "is_issued": false,
-      "issued_at": "2024-10-15T12:54:04.155Z",
       "access_method": "code",
-      "external_type": "pti_card",
-      "external_type_display_name": "text",
-      "created_at": "2024-10-15T12:54:04.155Z",
-      "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-      "starts_at": "text",
-      "ends_at": "text",
+      "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+      "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+      "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+      "code": "123456",
+      "created_at": "2025-06-16T16:54:17.946514Z",
+      "display_name": "FRONT_DOOR",
+      "errors": [],
+      "external_type": "salto_ks_credential",
+      "external_type_display_name": "Salto KS Credential",
+      "is_latest_desired_state_synced_with_provider": true,
+      "is_managed": true,
       "is_multi_phone_sync_credential": false,
-      "is_latest_desired_state_synced_with_provider": false,
-      "latest_desired_state_synced_with_provider_at": "2024-10-15T12:54:04.155Z"
+      "is_one_time_use": false,
+      "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+      "starts_at": "2025-07-10T16:54:17.946512Z",
+      "warnings": [],
+      "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
     }
   ]
 }
@@ -99,13 +95,13 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+Returns a list of all credentials with access to a specified entrance.
 
 #### Code
 
 ```python
 seam.acs.entrances.list_credentials_with_access(
-    acs_entrance_id="123e4567-e89b-12d3-a456-426614174000"
+    acs_entrance_id="afdde789-8684-425a-b421-6031bb3df62e"
 )
 ```
 
@@ -114,26 +110,24 @@ seam.acs.entrances.list_credentials_with_access(
 ```python
 [
     AcsCredential(
-        acs_credential_id="123e4567-e89b-12d3-a456-426614174000",
-        acs_user_id="123e4567-e89b-12d3-a456-426614174000",
-        acs_credential_pool_id="123e4567-e89b-12d3-a456-426614174000",
-        acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-        parent_acs_credential_id="123e4567-e89b-12d3-a456-426614174000",
-        display_name="text",
-        code="text",
-        card_number="text",
-        is_issued=false,
-        issued_at="2024-10-15T12:54:04.155Z",
         access_method="code",
-        external_type="pti_card",
-        external_type_display_name="text",
-        created_at="2024-10-15T12:54:04.155Z",
-        workspace_id="123e4567-e89b-12d3-a456-426614174000",
-        starts_at="text",
-        ends_at="text",
+        acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+        acs_system_id="b1d03165-2759-474b-a342-e02223f27b39",
+        acs_user_id="0fc82df4-391b-4d00-a234-86378f1c3952",
+        code="123456",
+        created_at="2025-06-16T16:54:17.946514Z",
+        display_name="FRONT_DOOR",
+        errors=[],
+        external_type="salto_ks_credential",
+        external_type_display_name="Salto KS Credential",
+        is_latest_desired_state_synced_with_provider=true,
+        is_managed=true,
         is_multi_phone_sync_credential=false,
-        is_latest_desired_state_synced_with_provider=false,
-        latest_desired_state_synced_with_provider_at="2024-10-15T12:54:04.155Z",
+        is_one_time_use=false,
+        latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+        starts_at="2025-07-10T16:54:17.946512Z",
+        warnings=[],
+        workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
     )
 ]
 ```
@@ -141,13 +135,13 @@ seam.acs.entrances.list_credentials_with_access(
 
 {% tab title="Ruby" %}
 
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+Returns a list of all credentials with access to a specified entrance.
 
 #### Code
 
 ```ruby
 seam.acs.entrances.list_credentials_with_access(
-  acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000",
+  acs_entrance_id: "afdde789-8684-425a-b421-6031bb3df62e",
 )
 ```
 
@@ -156,26 +150,24 @@ seam.acs.entrances.list_credentials_with_access(
 ```ruby
 [
   {
-    "acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_credential_pool_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "parent_acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "display_name" => "text",
-    "code" => "text",
-    "card_number" => "text",
-    "is_issued" => false,
-    "issued_at" => "2024-10-15T12:54:04.155Z",
     "access_method" => "code",
-    "external_type" => "pti_card",
-    "external_type_display_name" => "text",
-    "created_at" => "2024-10-15T12:54:04.155Z",
-    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "starts_at" => "text",
-    "ends_at" => "text",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id" => "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "code" => "123456",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "FRONT_DOOR",
+    "errors" => [],
+    "external_type" => "salto_ks_credential",
+    "external_type_display_name" => "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
     "is_multi_phone_sync_credential" => false,
-    "is_latest_desired_state_synced_with_provider" => false,
-    "latest_desired_state_synced_with_provider_at" => "2024-10-15T12:54:04.155Z",
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-07-10T16:54:17.946512Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
   },
 ]
 ```
@@ -183,14 +175,14 @@ seam.acs.entrances.list_credentials_with_access(
 
 {% tab title="PHP" %}
 
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+Returns a list of all credentials with access to a specified entrance.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->entrances->list_credentials_with_access(
-    acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000"
+    acs_entrance_id: "afdde789-8684-425a-b421-6031bb3df62e"
 );
 ```
 
@@ -200,27 +192,25 @@ $seam->acs->entrances->list_credentials_with_access(
 <?php
 [
     [
-        "acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "acs_credential_pool_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "parent_acs_credential_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "display_name" => "text",
-        "code" => "text",
-        "card_number" => "text",
-        "is_issued" => false,
-        "issued_at" => "2024-10-15T12:54:04.155Z",
         "access_method" => "code",
-        "external_type" => "pti_card",
-        "external_type_display_name" => "text",
-        "created_at" => "2024-10-15T12:54:04.155Z",
-        "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-        "starts_at" => "text",
-        "ends_at" => "text",
+        "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+        "acs_system_id" => "b1d03165-2759-474b-a342-e02223f27b39",
+        "acs_user_id" => "0fc82df4-391b-4d00-a234-86378f1c3952",
+        "code" => "123456",
+        "created_at" => "2025-06-16T16:54:17.946514Z",
+        "display_name" => "FRONT_DOOR",
+        "errors" => [],
+        "external_type" => "salto_ks_credential",
+        "external_type_display_name" => "Salto KS Credential",
+        "is_latest_desired_state_synced_with_provider" => true,
+        "is_managed" => true,
         "is_multi_phone_sync_credential" => false,
-        "is_latest_desired_state_synced_with_provider" => false,
+        "is_one_time_use" => false,
         "latest_desired_state_synced_with_provider_at" =>
-            "2024-10-15T12:54:04.155Z",
+            "2025-06-18T16:54:17.946514Z",
+        "starts_at" => "2025-07-10T16:54:17.946512Z",
+        "warnings" => [],
+        "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
     ],
 ];
 ```
@@ -228,12 +218,12 @@ $seam->acs->entrances->list_credentials_with_access(
 
 {% tab title="Seam CLI" %}
 
-Specify the `acs_entrance_id` to return all credentials that grant access to the specified entrance.
+Returns a list of all credentials with access to a specified entrance.
 
 #### Code
 
 ```seam_cli
-seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs entrances list-credentials-with-access --acs_entrance_id "afdde789-8684-425a-b421-6031bb3df62e"
 ```
 
 #### Output
@@ -241,26 +231,24 @@ seam acs entrances list-credentials-with-access --acs_entrance_id "123e4567-e89b
 ```seam_cli
 [
   {
-    "acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_credential_pool_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "parent_acs_credential_id": "123e4567-e89b-12d3-a456-426614174000",
-    "display_name": "text",
-    "code": "text",
-    "card_number": "text",
-    "is_issued": false,
-    "issued_at": "2024-10-15T12:54:04.155Z",
     "access_method": "code",
-    "external_type": "pti_card",
-    "external_type_display_name": "text",
-    "created_at": "2024-10-15T12:54:04.155Z",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "starts_at": "text",
-    "ends_at": "text",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "code": "123456",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "FRONT_DOOR",
+    "errors": [],
+    "external_type": "salto_ks_credential",
+    "external_type_display_name": "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
     "is_multi_phone_sync_credential": false,
-    "is_latest_desired_state_synced_with_provider": false,
-    "latest_desired_state_synced_with_provider_at": "2024-10-15T12:54:04.155Z"
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-07-10T16:54:17.946512Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
   }
 ]
 ```

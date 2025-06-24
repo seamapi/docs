@@ -9,15 +9,12 @@ Removes a specified [access system user](https://docs.seam.co/latest/capability-
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
 #### Code
 
 ```javascript
-await seam.userIdentities.removeAcsUser({
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
-});
+await seam.userIdentities.removeAcsUser();
 ```
 
 #### Output
@@ -29,19 +26,13 @@ await seam.userIdentities.removeAcsUser({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/remove_acs_user" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  "acs_user_id": "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,15 +44,12 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
 #### Code
 
 ```python
-seam.user_identities.remove_acs_user(
-    user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    acs_user_id="c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
-)
+seam.user_identities.remove_acs_user()
 ```
 
 #### Output
@@ -73,15 +61,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
 #### Code
 
 ```ruby
-seam.user_identities.remove_acs_user(
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
-)
+seam.user_identities.remove_acs_user()
 ```
 
 #### Output
@@ -93,16 +78,13 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
 #### Code
 
 ```php
 <?php
-$seam->user_identities->remove_acs_user(
-    user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
-);
+$seam->user_identities->remove_acs_user();
 ```
 
 #### Output
@@ -114,12 +96,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f" --acs_user_id "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
+seam user-identities remove-acs-user
 ```
 
 #### Output

@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -9,120 +10,209 @@ Returns a list of all [access system users](https://docs.seam.co/latest/capabili
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all access system users for a specified user identity.
 
 #### Code
 
 ```javascript
-await seam.acs.users.list();
+await seam.acs.users.list({
+  user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
+});
 ```
 
 #### Output
 
 ```javascript
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all access system users for a specified user identity.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
+}
+EOF
 ```
 
 #### Output
 
 ```curl
 {
-  "acs_users": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
+  "acs_users": [
+    {
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+    }
+  ]
 }
 ```
 {% endtab %}
 
 {% tab title="Python" %}
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all access system users for a specified user identity.
 
 #### Code
 
 ```python
-seam.acs.users.list()
+seam.acs.users.list(user_identity_id="0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
 ```
 
 #### Output
 
 ```python
-AcsUser(
-    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    workspace_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
-    display_name="Jane Doe",
-    full_name="Jane Doe",
-    email_address="jane@example.com",
-    phone_number="+15555550100",
-)
+[
+    AcsUser(
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
+    )
+]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all access system users for a specified user identity.
 
 #### Code
 
 ```ruby
-seam.acs.users.list()
+seam.acs.users.list(user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
 ```
 
 #### Output
 
 ```ruby
-{
-  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
-  "display_name" => "Jane Doe",
-  "full_name" => "Jane Doe",
-  "email_address" => "jane@example.com",
-  "phone_number" => "+15555550100",
-}
+[
+  {
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+  },
+]
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all access system users for a specified user identity.
 
 #### Code
 
 ```php
 <?php
-$seam->acs->users->list();
+$seam->acs->users->list(
+    user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
+);
 ```
 
 #### Output
@@ -130,41 +220,81 @@ $seam->acs->users->list();
 ```php
 <?php
 [
-    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
-    "display_name" => "Jane Doe",
-    "full_name" => "Jane Doe",
-    "email_address" => "jane@example.com",
-    "phone_number" => "+15555550100",
+    [
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+    ],
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Returns a list of all access system users for a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam acs users list
+seam acs users list --user_identity_id "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
 ```
 
 #### Output
 
 ```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
 ```
 {% endtab %}
 
@@ -238,3 +368,1794 @@ Phone number of the user identity for which you want to retrieve all access syst
 
 Array of [acs\_users](./)
 
+
+---
+
+## Examples
+
+---
+
+### List access system users for a user identity phone number
+
+Returns a list of all access system users for a specified user identity phone number.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.list({ user_identity_phone_number: "+1555551000" });
+```
+
+#### Output
+
+```javascript
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_phone_number": "+1555551000"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": [
+    {
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.list(user_identity_phone_number="+1555551000")
+```
+
+#### Output
+
+```python
+[
+    AcsUser(
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.list(user_identity_phone_number: "+1555551000")
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->list(user_identity_phone_number: "+1555551000");
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users list --user_identity_phone_number "+1555551000"
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}
+---
+
+### List access system users for a user identity email address
+
+Returns a list of all access system users for a specified user identity email address.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.list({ user_identity_email_address: "jane@example.com" });
+```
+
+#### Output
+
+```javascript
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_email_address": "jane@example.com"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": [
+    {
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.list(user_identity_email_address="jane@example.com")
+```
+
+#### Output
+
+```python
+[
+    AcsUser(
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.list(user_identity_email_address: "jane@example.com")
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->list(user_identity_email_address: "jane@example.com");
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users list --user_identity_email_address "jane@example.com"
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}
+---
+
+### List users for an access system
+
+Returns a list of all users for a specified access system.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.list({
+  acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
+});
+```
+
+#### Output
+
+```javascript
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": [
+    {
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2")
+```
+
+#### Output
+
+```python
+[
+    AcsUser(
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2")
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2");
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2"
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}
+---
+
+### List access system users, filtered by a string
+
+Returns a list of all access system users, filtered by a string.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.list({ search: "Jane Doe" });
+```
+
+#### Output
+
+```javascript
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "search": "Jane Doe"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": [
+    {
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.list(search="Jane Doe")
+```
+
+#### Output
+
+```python
+[
+    AcsUser(
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.list(search: "Jane Doe")
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->list(search: "Jane Doe");
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users list --search "Jane Doe"
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}
+---
+
+### List access system users, limited to ten per page
+
+Returns a list of all access system users, with a limit of ten per page.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.list({
+  acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
+  limit: 10,
+});
+```
+
+#### Output
+
+```javascript
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
+  "limit": 10
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": [
+    {
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2", limit=10)
+```
+
+#### Output
+
+```python
+[
+    AcsUser(
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2", limit: 10)
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->list(
+    acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
+    limit: 10
+);
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2" --limit 10
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}
+---
+
+### List access system users created before a date
+
+Returns a list of all access system users created before a specified date.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.list({
+  acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
+  created_before: "2025-06-19T02:22:45.000Z",
+});
+```
+
+#### Output
+
+```javascript
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
+  "created_before": "2025-06-19T02:22:45.000Z"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "acs_users": [
+    {
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.list(
+    acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2",
+    created_before="2025-06-19T02:22:45.000Z",
+)
+```
+
+#### Output
+
+```python
+[
+    AcsUser(
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.list(
+  acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
+  created_before: "2025-06-19T02:22:45.000Z",
+)
+```
+
+#### Output
+
+```ruby
+[
+  {
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->list(
+    acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
+    created_before: "2025-06-19T02:22:45.000Z"
+);
+```
+
+#### Output
+
+```php
+<?php
+[
+    [
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2" --created_before "2025-06-19T02:22:45.000Z"
+```
+
+#### Output
+
+```seam_cli
+[
+  {
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}

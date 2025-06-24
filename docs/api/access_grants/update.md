@@ -9,6 +9,114 @@
 Updates an existing access grant's time window.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates an existing access grant's time window.
+
+#### Code
+
+```javascript
+await seam.accessGrants.update();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates an existing access grant's time window.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_grants/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates an existing access grant's time window.
+
+#### Code
+
+```python
+seam.access_grants.update()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates an existing access grant's time window.
+
+#### Code
+
+```ruby
+seam.access_grants.update()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates an existing access grant's time window.
+
+#### Code
+
+```php
+<?php
+$seam->access_grants->update();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates an existing access grant's time window.
+
+#### Code
+
+```seam_cli
+seam access-grants update
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

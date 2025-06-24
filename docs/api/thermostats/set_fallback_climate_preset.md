@@ -9,15 +9,12 @@ Sets a specified [climate preset](../../capability-guides/thermostats/creating-a
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
+Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
 #### Code
 
 ```javascript
-await seam.thermostats.setFallbackClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "eco",
-});
+await seam.thermostats.setFallbackClimatePreset();
 ```
 
 #### Output
@@ -29,19 +26,13 @@ await seam.thermostats.setFallbackClimatePreset({
 
 {% tab title="cURL" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
+Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fallback_climate_preset" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "climate_preset_key": "eco"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,14 +44,12 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
+Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
 #### Code
 
 ```python
-seam.thermostats.set_fallback_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="eco"
-)
+seam.thermostats.set_fallback_climate_preset()
 ```
 
 #### Output
@@ -72,15 +61,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
+Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
 #### Code
 
 ```ruby
-seam.thermostats.set_fallback_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "eco",
-)
+seam.thermostats.set_fallback_climate_preset()
 ```
 
 #### Output
@@ -92,16 +78,13 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
+Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
 #### Code
 
 ```php
 <?php
-$seam->thermostats->set_fallback_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "eco"
-);
+$seam->thermostats->set_fallback_climate_preset();
 ```
 
 #### Output
@@ -113,12 +96,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired fallback climate preset.
+Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
 #### Code
 
 ```seam_cli
-seam thermostats set-fallback-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "eco"
+seam thermostats set-fallback-climate-preset
 ```
 
 #### Output

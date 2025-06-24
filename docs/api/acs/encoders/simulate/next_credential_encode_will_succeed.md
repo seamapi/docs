@@ -6,6 +6,114 @@
 Simulates that the next attempt to encode a [credential](../../../../capability-guides/access-systems/managing-credentials.md) using the specified [encoder](../../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) will succeed. You can only perform this action within a [sandbox workspace](../../../../core-concepts/workspaces/README.md#sandbox-workspaces).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Simulates that the next attempt to encode a credential using the specified encoder will succeed.
+
+#### Code
+
+```javascript
+await seam.acs.encoders.simulate.nextCredentialEncodeWillSucceed();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Simulates that the next attempt to encode a credential using the specified encoder will succeed.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/encoders/simulate/next_credential_encode_will_succeed" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Simulates that the next attempt to encode a credential using the specified encoder will succeed.
+
+#### Code
+
+```python
+seam.acs.encoders.simulate.next_credential_encode_will_succeed()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Simulates that the next attempt to encode a credential using the specified encoder will succeed.
+
+#### Code
+
+```ruby
+seam.acs.encoders.simulate.next_credential_encode_will_succeed()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Simulates that the next attempt to encode a credential using the specified encoder will succeed.
+
+#### Code
+
+```php
+<?php
+$seam->acs->encoders->simulate->next_credential_encode_will_succeed();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Simulates that the next attempt to encode a credential using the specified encoder will succeed.
+
+#### Code
+
+```seam_cli
+seam acs encoders simulate next-credential-encode-will-succeed
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

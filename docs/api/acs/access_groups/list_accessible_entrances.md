@@ -9,13 +9,13 @@ Returns a list of all accessible entrances for a specified [access group](https:
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+Returns a list of all accessible entrances for a specified access group.
 
 #### Code
 
 ```javascript
 await seam.acs.accessGroups.listAccessibleEntrances({
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+  acs_access_group_id: "1b02a29f-effd-4ce6-8a58-16ec09fd9b50",
 });
 ```
 
@@ -24,12 +24,22 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 ```javascript
 [
   {
-    "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
-    "name": "Main Entrance",
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at": "2025-06-15T16:54:17.946495Z",
     "display_name": "Main Entrance",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-10-15T12:00:00.000Z"
+    "errors": [],
+    "visionline_metadata": {
+      "door_category": "guest",
+      "door_name": "Main Entrance",
+      "profiles": [
+        {
+          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "visionline_door_profile_type": "BLE"
+        }
+      ]
+    }
   }
 ]
 ```
@@ -37,7 +47,7 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 
 {% tab title="cURL" %}
 
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+Returns a list of all accessible entrances for a specified access group.
 
 #### Code
 
@@ -46,7 +56,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/lis
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444"
+  "acs_access_group_id": "1b02a29f-effd-4ce6-8a58-16ec09fd9b50"
 }
 EOF
 ```
@@ -57,12 +67,22 @@ EOF
 {
   "acs_entrances": [
     {
-      "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
-      "name": "Main Entrance",
+      "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+      "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+      "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+      "created_at": "2025-06-15T16:54:17.946495Z",
       "display_name": "Main Entrance",
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
-      "created_at": "2024-10-15T12:00:00.000Z"
+      "errors": [],
+      "visionline_metadata": {
+        "door_category": "guest",
+        "door_name": "Main Entrance",
+        "profiles": [
+          {
+            "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+            "visionline_door_profile_type": "BLE"
+          }
+        ]
+      }
     }
   ]
 }
@@ -71,13 +91,13 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+Returns a list of all accessible entrances for a specified access group.
 
 #### Code
 
 ```python
 seam.acs.access_groups.list_accessible_entrances(
-    acs_access_group_id="44444444-4444-4444-4444-444444444444"
+    acs_access_group_id="1b02a29f-effd-4ce6-8a58-16ec09fd9b50"
 )
 ```
 
@@ -86,12 +106,22 @@ seam.acs.access_groups.list_accessible_entrances(
 ```python
 [
     AcsEntrance(
-        acs_entrance_id="66666666-6666-6666-6666-666666666666",
-        name="Main Entrance",
+        acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
+        acs_system_id="6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+        connected_account_id="1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+        created_at="2025-06-15T16:54:17.946495Z",
         display_name="Main Entrance",
-        acs_system_id="11111111-1111-1111-1111-111111111111",
-        workspace_id="00000000-0000-0000-0000-000000000000",
-        created_at="2024-10-15T12:00:00.000Z",
+        errors=[],
+        visionline_metadata={
+            "door_category": "guest",
+            "door_name": "Main Entrance",
+            "profiles": [
+                {
+                    "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                    "visionline_door_profile_type": "BLE",
+                }
+            ],
+        },
     )
 ]
 ```
@@ -99,13 +129,13 @@ seam.acs.access_groups.list_accessible_entrances(
 
 {% tab title="Ruby" %}
 
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+Returns a list of all accessible entrances for a specified access group.
 
 #### Code
 
 ```ruby
 seam.acs.access_groups.list_accessible_entrances(
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+  acs_access_group_id: "1b02a29f-effd-4ce6-8a58-16ec09fd9b50",
 )
 ```
 
@@ -114,12 +144,22 @@ seam.acs.access_groups.list_accessible_entrances(
 ```ruby
 [
   {
-    "acs_entrance_id" => "66666666-6666-6666-6666-666666666666",
-    "name" => "Main Entrance",
+    "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at" => "2025-06-15T16:54:17.946495Z",
     "display_name" => "Main Entrance",
-    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
-    "created_at" => "2024-10-15T12:00:00.000Z",
+    "errors" => [],
+    "visionline_metadata" => {
+      door_category: "guest",
+      door_name: "Main Entrance",
+      profiles: [
+        {
+          visionline_door_profile_id: "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          visionline_door_profile_type: "BLE",
+        },
+      ],
+    },
   },
 ]
 ```
@@ -127,14 +167,14 @@ seam.acs.access_groups.list_accessible_entrances(
 
 {% tab title="PHP" %}
 
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+Returns a list of all accessible entrances for a specified access group.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->access_groups->list_accessible_entrances(
-    acs_access_group_id: "44444444-4444-4444-4444-444444444444"
+    acs_access_group_id: "1b02a29f-effd-4ce6-8a58-16ec09fd9b50"
 );
 ```
 
@@ -144,12 +184,23 @@ $seam->acs->access_groups->list_accessible_entrances(
 <?php
 [
     [
-        "acs_entrance_id" => "66666666-6666-6666-6666-666666666666",
-        "name" => "Main Entrance",
+        "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
+        "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+        "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+        "created_at" => "2025-06-15T16:54:17.946495Z",
         "display_name" => "Main Entrance",
-        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-        "workspace_id" => "00000000-0000-0000-0000-000000000000",
-        "created_at" => "2024-10-15T12:00:00.000Z",
+        "errors" => [],
+        "visionline_metadata" => [
+            "door_category" => "guest",
+            "door_name" => "Main Entrance",
+            "profiles" => [
+                [
+                    "visionline_door_profile_id" =>
+                        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                    "visionline_door_profile_type" => "BLE",
+                ],
+            ],
+        ],
     ],
 ];
 ```
@@ -157,12 +208,12 @@ $seam->acs->access_groups->list_accessible_entrances(
 
 {% tab title="Seam CLI" %}
 
-Specify the `acs_access_group_id` to retrieve all accessible entrances for an access group.
+Returns a list of all accessible entrances for a specified access group.
 
 #### Code
 
 ```seam_cli
-seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444-4444-4444-4444-444444444444"
+seam acs access-groups list-accessible-entrances --acs_access_group_id "1b02a29f-effd-4ce6-8a58-16ec09fd9b50"
 ```
 
 #### Output
@@ -170,12 +221,22 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "44444444
 ```seam_cli
 [
   {
-    "acs_entrance_id": "66666666-6666-6666-6666-666666666666",
-    "name": "Main Entrance",
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at": "2025-06-15T16:54:17.946495Z",
     "display_name": "Main Entrance",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-10-15T12:00:00.000Z"
+    "errors": [],
+    "visionline_metadata": {
+      "door_category": "guest",
+      "door_name": "Main Entrance",
+      "profiles": [
+        {
+          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "visionline_door_profile_type": "BLE"
+        }
+      ]
+    }
   }
 ]
 ```

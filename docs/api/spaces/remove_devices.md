@@ -9,6 +9,114 @@
 Removes devices from a specific space.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Removes devices from a specific space.
+
+#### Code
+
+```javascript
+await seam.spaces.removeDevices();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Removes devices from a specific space.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/spaces/remove_devices" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Removes devices from a specific space.
+
+#### Code
+
+```python
+seam.spaces.remove_devices()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Removes devices from a specific space.
+
+#### Code
+
+```ruby
+seam.spaces.remove_devices()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Removes devices from a specific space.
+
+#### Code
+
+```php
+<?php
+$seam->spaces->remove_devices();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Removes devices from a specific space.
+
+#### Code
+
+```seam_cli
+seam spaces remove-devices
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

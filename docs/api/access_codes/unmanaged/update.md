@@ -6,6 +6,114 @@
 Updates a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates a specified unmanaged access code.
+
+#### Code
+
+```javascript
+await seam.accessCodes.unmanaged.update();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates a specified unmanaged access code.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates a specified unmanaged access code.
+
+#### Code
+
+```python
+seam.access_codes.unmanaged.update()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates a specified unmanaged access code.
+
+#### Code
+
+```ruby
+seam.access_codes.unmanaged.update()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates a specified unmanaged access code.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->unmanaged->update();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates a specified unmanaged access code.
+
+#### Code
+
+```seam_cli
+seam access-codes unmanaged update
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

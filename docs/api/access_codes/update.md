@@ -8,6 +8,114 @@ Updates a specified active or upcoming [access code](https://docs.seam.co/latest
 See also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```javascript
+await seam.accessCodes.update();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```python
+seam.access_codes.update()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```ruby
+seam.access_codes.update()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->update();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```seam_cli
+seam access-codes update
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

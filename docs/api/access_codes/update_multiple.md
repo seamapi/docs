@@ -10,6 +10,114 @@ Specify the `common_code_key` to identify the set of access codes that you want 
 See also [Update Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md#update-linked-access-codes).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```javascript
+await seam.accessCodes.updateMultiple();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/update_multiple" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```python
+seam.access_codes.update_multiple()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```ruby
+seam.access_codes.update_multiple()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->update_multiple();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```seam_cli
+seam access-codes update-multiple
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

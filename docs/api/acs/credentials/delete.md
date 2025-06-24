@@ -9,14 +9,12 @@ Deletes a specified [credential](../../../capability-guides/access-systems/manag
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
 #### Code
 
 ```javascript
-await seam.acs.credentials.delete({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-});
+await seam.acs.credentials.delete();
 ```
 
 #### Output
@@ -28,18 +26,13 @@ await seam.acs.credentials.delete({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -51,12 +44,12 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
 #### Code
 
 ```python
-seam.acs.credentials.delete(acs_credential_id="66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.delete()
 ```
 
 #### Output
@@ -68,12 +61,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
 #### Code
 
 ```ruby
-seam.acs.credentials.delete(acs_credential_id: "66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.delete()
 ```
 
 #### Output
@@ -85,15 +78,13 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
 #### Code
 
 ```php
 <?php
-$seam->acs->credentials->delete(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
-);
+$seam->acs->credentials->delete();
 ```
 
 #### Output
@@ -105,12 +96,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
 #### Code
 
 ```seam_cli
-seam acs credentials delete --acs_credential_id "66666666-6666-6666-6666-666666666666"
+seam acs credentials delete
 ```
 
 #### Output

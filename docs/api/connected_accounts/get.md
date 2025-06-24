@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 Returns a specified [connected account](../../core-concepts/connected-accounts/README.md).
 
@@ -9,32 +10,42 @@ Returns a specified [connected account](../../core-concepts/connected-accounts/R
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `connected_account_id` of the connected account that you want to get.
+Returns a specified connected account, using an ID.
 
 #### Code
 
 ```javascript
 await seam.connectedAccounts.get({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
 });
 ```
 
 #### Output
 
 ```javascript
-[
-  {
-    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    "created_at": "2022-08-24T10:38:05.128Z",
-    "account_type": "schlage"
-  }
-]
+{
+  "account_type": "salto_space",
+  "account_type_display_name": "Salto Space",
+  "automatically_manage_new_devices": true,
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at": "2025-06-15T16:54:17.946329Z",
+  "custom_metadata": { "id": "internalId1" },
+  "errors": [],
+  "user_identifier": {
+    "api_url": "https://example.com/api",
+    "email": "jane_doe@example.com",
+    "exclusive": true,
+    "phone": "+1555551004",
+    "username": "jane_doe"
+  },
+  "warnings": []
+}
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `connected_account_id` of the connected account that you want to get.
+Returns a specified connected account, using an ID.
 
 #### Code
 
@@ -43,7 +54,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/ge
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d"
 }
 EOF
 ```
@@ -52,73 +63,105 @@ EOF
 
 ```curl
 {
-  "connected_account": [
-    {
-      "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-      "created_at": "2022-08-24T10:38:05.128Z",
-      "account_type": "schlage"
-    }
-  ]
+  "connected_account": {
+    "account_type": "salto_space",
+    "account_type_display_name": "Salto Space",
+    "automatically_manage_new_devices": true,
+    "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    "created_at": "2025-06-15T16:54:17.946329Z",
+    "custom_metadata": { "id": "internalId1" },
+    "errors": [],
+    "user_identifier": {
+      "api_url": "https://example.com/api",
+      "email": "jane_doe@example.com",
+      "exclusive": true,
+      "phone": "+1555551004",
+      "username": "jane_doe"
+    },
+    "warnings": []
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="Python" %}
 
-Specify the `connected_account_id` of the connected account that you want to get.
+Returns a specified connected account, using an ID.
 
 #### Code
 
 ```python
-seam.connected_accounts.get(connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c")
+seam.connected_accounts.get(connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d")
 ```
 
 #### Output
 
 ```python
-[
-    ConnectedAccount(
-        connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c",
-        created_at="2022-08-24T10:38:05.128Z",
-        account_type="schlage",
-    )
-]
+ConnectedAccount(
+    account_type="salto_space",
+    account_type_display_name="Salto Space",
+    automatically_manage_new_devices=true,
+    connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
+    created_at="2025-06-15T16:54:17.946329Z",
+    custom_metadata={"id": "internalId1"},
+    errors=[],
+    user_identifier={
+        "api_url": "https://example.com/api",
+        "email": "jane_doe@example.com",
+        "exclusive": true,
+        "phone": "+1555551004",
+        "username": "jane_doe",
+    },
+    warnings=[],
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `connected_account_id` of the connected account that you want to get.
+Returns a specified connected account, using an ID.
 
 #### Code
 
 ```ruby
-seam.connected_accounts.get(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
+seam.connected_accounts.get(connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d")
 ```
 
 #### Output
 
 ```ruby
-[
-  {
-    "connected_account_id" => "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    "created_at" => "2022-08-24T10:38:05.128Z",
-    "account_type" => "schlage",
+{
+  "account_type" => "salto_space",
+  "account_type_display_name" => "Salto Space",
+  "automatically_manage_new_devices" => true,
+  "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at" => "2025-06-15T16:54:17.946329Z",
+  "custom_metadata" => {
+    id: "internalId1",
   },
-]
+  "errors" => [],
+  "user_identifier" => {
+    api_url: "https://example.com/api",
+    email: "jane_doe@example.com",
+    exclusive: true,
+    phone: "+1555551004",
+    username: "jane_doe",
+  },
+  "warnings" => [],
+}
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `connected_account_id` of the connected account that you want to get.
+Returns a specified connected account, using an ID.
 
 #### Code
 
 ```php
 <?php
 $seam->connected_accounts->get(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d"
 );
 ```
 
@@ -127,35 +170,55 @@ $seam->connected_accounts->get(
 ```php
 <?php
 [
-    [
-        "connected_account_id" => "23e4eb21-6e93-48c4-a077-bf503246d47c",
-        "created_at" => "2022-08-24T10:38:05.128Z",
-        "account_type" => "schlage",
+    "account_type" => "salto_space",
+    "account_type_display_name" => "Salto Space",
+    "automatically_manage_new_devices" => true,
+    "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    "created_at" => "2025-06-15T16:54:17.946329Z",
+    "custom_metadata" => ["id" => "internalId1"],
+    "errors" => [],
+    "user_identifier" => [
+        "api_url" => "https://example.com/api",
+        "email" => "jane_doe@example.com",
+        "exclusive" => true,
+        "phone" => "+1555551004",
+        "username" => "jane_doe",
     ],
+    "warnings" => [],
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `connected_account_id` of the connected account that you want to get.
+Returns a specified connected account, using an ID.
 
 #### Code
 
 ```seam_cli
-seam connected-accounts get --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
+seam connected-accounts get --connected_account_id "a289aa54-5488-4707-9a4b-eeea4edf311d"
 ```
 
 #### Output
 
 ```seam_cli
-[
-  {
-    "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    "created_at": "2022-08-24T10:38:05.128Z",
-    "account_type": "schlage"
-  }
-]
+{
+  "account_type": "salto_space",
+  "account_type_display_name": "Salto Space",
+  "automatically_manage_new_devices": true,
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at": "2025-06-15T16:54:17.946329Z",
+  "custom_metadata": { "id": "internalId1" },
+  "errors": [],
+  "user_identifier": {
+    "api_url": "https://example.com/api",
+    "email": "jane_doe@example.com",
+    "exclusive": true,
+    "phone": "+1555551004",
+    "username": "jane_doe"
+  },
+  "warnings": []
+}
 ```
 {% endtab %}
 
@@ -193,3 +256,226 @@ Email address associated with the connected account that you want to get.
 
 [connected\_account](./)
 
+
+---
+
+## Examples
+
+---
+
+### Get a connected account for an email address
+
+Returns a specified connected account, using an email address.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.connectedAccounts.get({ email: "jane_doe@example.com" });
+```
+
+#### Output
+
+```javascript
+{
+  "account_type": "salto_space",
+  "account_type_display_name": "Salto Space",
+  "automatically_manage_new_devices": true,
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at": "2025-06-15T16:54:17.946329Z",
+  "custom_metadata": { "id": "internalId1" },
+  "errors": [],
+  "user_identifier": {
+    "api_url": "https://example.com/api",
+    "email": "jane_doe@example.com",
+    "exclusive": true,
+    "phone": "+1555551004",
+    "username": "jane_doe"
+  },
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "email": "jane_doe@example.com"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "connected_account": {
+    "account_type": "salto_space",
+    "account_type_display_name": "Salto Space",
+    "automatically_manage_new_devices": true,
+    "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    "created_at": "2025-06-15T16:54:17.946329Z",
+    "custom_metadata": { "id": "internalId1" },
+    "errors": [],
+    "user_identifier": {
+      "api_url": "https://example.com/api",
+      "email": "jane_doe@example.com",
+      "exclusive": true,
+      "phone": "+1555551004",
+      "username": "jane_doe"
+    },
+    "warnings": []
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.connected_accounts.get(email="jane_doe@example.com")
+```
+
+#### Output
+
+```python
+ConnectedAccount(
+    account_type="salto_space",
+    account_type_display_name="Salto Space",
+    automatically_manage_new_devices=true,
+    connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
+    created_at="2025-06-15T16:54:17.946329Z",
+    custom_metadata={"id": "internalId1"},
+    errors=[],
+    user_identifier={
+        "api_url": "https://example.com/api",
+        "email": "jane_doe@example.com",
+        "exclusive": true,
+        "phone": "+1555551004",
+        "username": "jane_doe",
+    },
+    warnings=[],
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.connected_accounts.get(email: "jane_doe@example.com")
+```
+
+#### Output
+
+```ruby
+{
+  "account_type" => "salto_space",
+  "account_type_display_name" => "Salto Space",
+  "automatically_manage_new_devices" => true,
+  "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at" => "2025-06-15T16:54:17.946329Z",
+  "custom_metadata" => {
+    id: "internalId1",
+  },
+  "errors" => [],
+  "user_identifier" => {
+    api_url: "https://example.com/api",
+    email: "jane_doe@example.com",
+    exclusive: true,
+    phone: "+1555551004",
+    username: "jane_doe",
+  },
+  "warnings" => [],
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->connected_accounts->get(email: "jane_doe@example.com");
+```
+
+#### Output
+
+```php
+<?php
+[
+    "account_type" => "salto_space",
+    "account_type_display_name" => "Salto Space",
+    "automatically_manage_new_devices" => true,
+    "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    "created_at" => "2025-06-15T16:54:17.946329Z",
+    "custom_metadata" => ["id" => "internalId1"],
+    "errors" => [],
+    "user_identifier" => [
+        "api_url" => "https://example.com/api",
+        "email" => "jane_doe@example.com",
+        "exclusive" => true,
+        "phone" => "+1555551004",
+        "username" => "jane_doe",
+    ],
+    "warnings" => [],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam connected-accounts get --email "jane_doe@example.com"
+```
+
+#### Output
+
+```seam_cli
+{
+  "account_type": "salto_space",
+  "account_type_display_name": "Salto Space",
+  "automatically_manage_new_devices": true,
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at": "2025-06-15T16:54:17.946329Z",
+  "custom_metadata": { "id": "internalId1" },
+  "errors": [],
+  "user_identifier": {
+    "api_url": "https://example.com/api",
+    "email": "jane_doe@example.com",
+    "exclusive": true,
+    "phone": "+1555551004",
+    "username": "jane_doe"
+  },
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% endtabs %}

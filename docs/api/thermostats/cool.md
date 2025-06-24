@@ -9,43 +9,36 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired cooling set point in °C or °F.
+Sets a specified thermostat to cool mode.
 
 #### Code
 
 ```javascript
-await seam.thermostats.cool({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  cooling_set_point_celsius: 25,
-});
+await seam.thermostats.cool();
 ```
 
 #### Output
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_COOL"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the desired cooling set point in °C or °F.
+Sets a specified thermostat to cool mode.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/cool" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "cooling_set_point_celsius": 25
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,9 +46,11 @@ EOF
 ```curl
 {
   "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "pending",
-    "action_type": "SET_COOL"
+    "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type": "SET_HVAC_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
   }
 }
 ```
@@ -63,63 +58,60 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired cooling set point in °C or °F.
+Sets a specified thermostat to cool mode.
 
 #### Code
 
 ```python
-seam.thermostats.cool(
-    device_id="123e4567-e89b-12d3-a456-426614174000", cooling_set_point_celsius=25
-)
+seam.thermostats.cool()
 ```
 
 #### Output
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
-    action_type="SET_COOL",
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the desired cooling set point in °C or °F.
+Sets a specified thermostat to cool mode.
 
 #### Code
 
 ```ruby
-seam.thermostats.cool(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  cooling_set_point_celsius: 25,
-)
+seam.thermostats.cool()
 ```
 
 #### Output
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
-  "action_type" => "SET_COOL",
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the desired cooling set point in °C or °F.
+Sets a specified thermostat to cool mode.
 
 #### Code
 
 ```php
 <?php
-$seam->thermostats->cool(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    cooling_set_point_celsius: 25
-);
+$seam->thermostats->cool();
 ```
 
 #### Output
@@ -127,30 +119,34 @@ $seam->thermostats->cool(
 ```php
 <?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
-    "action_type" => "SET_COOL",
+    "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type" => "SET_HVAC_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired cooling set point in °C or °F.
+Sets a specified thermostat to cool mode.
 
 #### Code
 
 ```seam_cli
-seam thermostats cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooling_set_point_celsius 25
+seam thermostats cool
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_COOL"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}

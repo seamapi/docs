@@ -9,13 +9,13 @@ Returns a specified [access group](https://docs.seam.co/latest/capability-guides
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
+Returns a specified access group.
 
 #### Code
 
 ```javascript
 await seam.acs.accessGroups.get({
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+  acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae",
 });
 ```
 
@@ -23,23 +23,26 @@ await seam.acs.accessGroups.get({
 
 ```javascript
 {
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
-  "name": "Lobby Access",
-  "display_name": "Lobby Access",
-  "access_group_type_display_name": "PTI access level",
-  "access_group_type": "pti_access_level",
-  "external_type": "pti_access_level",
-  "external_type_display_name": "PTI access level",
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2023-11-30T06:27:15.437Z"
+  "access_group_type": "salto_ks_access_group",
+  "access_group_type_display_name": "Salto KS Access Group",
+  "acs_access_group_id": "09eb5265-6e3b-4e6d-bf96-736171c547ae",
+  "acs_system_id": "045baa77-6d06-40fe-a2cd-b82eef688f4a",
+  "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+  "created_at": "2025-06-15T16:54:17.946453Z",
+  "display_name": "Main Group",
+  "external_type": "salto_ks_access_group",
+  "external_type_display_name": "Salto KS Access Group",
+  "is_managed": true,
+  "name": "My Access Group",
+  "warnings": [],
+  "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
+Returns a specified access group.
 
 #### Code
 
@@ -48,7 +51,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/get
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444"
+  "acs_access_group_id": "09eb5265-6e3b-4e6d-bf96-736171c547ae"
 }
 EOF
 ```
@@ -58,16 +61,19 @@ EOF
 ```curl
 {
   "acs_access_group": {
-    "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
-    "name": "Lobby Access",
-    "display_name": "Lobby Access",
-    "access_group_type_display_name": "PTI access level",
-    "access_group_type": "pti_access_level",
-    "external_type": "pti_access_level",
-    "external_type_display_name": "PTI access level",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2023-11-30T06:27:15.437Z"
+    "access_group_type": "salto_ks_access_group",
+    "access_group_type_display_name": "Salto KS Access Group",
+    "acs_access_group_id": "09eb5265-6e3b-4e6d-bf96-736171c547ae",
+    "acs_system_id": "045baa77-6d06-40fe-a2cd-b82eef688f4a",
+    "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+    "created_at": "2025-06-15T16:54:17.946453Z",
+    "display_name": "Main Group",
+    "external_type": "salto_ks_access_group",
+    "external_type_display_name": "Salto KS Access Group",
+    "is_managed": true,
+    "name": "My Access Group",
+    "warnings": [],
+    "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
   }
 }
 ```
@@ -75,70 +81,76 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
+Returns a specified access group.
 
 #### Code
 
 ```python
-seam.acs.access_groups.get(acs_access_group_id="44444444-4444-4444-4444-444444444444")
+seam.acs.access_groups.get(acs_access_group_id="09eb5265-6e3b-4e6d-bf96-736171c547ae")
 ```
 
 #### Output
 
 ```python
 AcsAccessGroup(
-    acs_access_group_id="44444444-4444-4444-4444-444444444444",
-    name="Lobby Access",
-    display_name="Lobby Access",
-    access_group_type_display_name="PTI access level",
-    access_group_type="pti_access_level",
-    external_type="pti_access_level",
-    external_type_display_name="PTI access level",
-    acs_system_id="11111111-1111-1111-1111-111111111111",
-    workspace_id="00000000-0000-0000-0000-000000000000",
-    created_at="2023-11-30T06:27:15.437Z",
+    access_group_type="salto_ks_access_group",
+    access_group_type_display_name="Salto KS Access Group",
+    acs_access_group_id="09eb5265-6e3b-4e6d-bf96-736171c547ae",
+    acs_system_id="045baa77-6d06-40fe-a2cd-b82eef688f4a",
+    connected_account_id="daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+    created_at="2025-06-15T16:54:17.946453Z",
+    display_name="Main Group",
+    external_type="salto_ks_access_group",
+    external_type_display_name="Salto KS Access Group",
+    is_managed=true,
+    name="My Access Group",
+    warnings=[],
+    workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
+Returns a specified access group.
 
 #### Code
 
 ```ruby
-seam.acs.access_groups.get(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
+seam.acs.access_groups.get(acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae")
 ```
 
 #### Output
 
 ```ruby
 {
-  "acs_access_group_id" => "44444444-4444-4444-4444-444444444444",
-  "name" => "Lobby Access",
-  "display_name" => "Lobby Access",
-  "access_group_type_display_name" => "PTI access level",
-  "access_group_type" => "pti_access_level",
-  "external_type" => "pti_access_level",
-  "external_type_display_name" => "PTI access level",
-  "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-  "workspace_id" => "00000000-0000-0000-0000-000000000000",
-  "created_at" => "2023-11-30T06:27:15.437Z",
+  "access_group_type" => "salto_ks_access_group",
+  "access_group_type_display_name" => "Salto KS Access Group",
+  "acs_access_group_id" => "09eb5265-6e3b-4e6d-bf96-736171c547ae",
+  "acs_system_id" => "045baa77-6d06-40fe-a2cd-b82eef688f4a",
+  "connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+  "created_at" => "2025-06-15T16:54:17.946453Z",
+  "display_name" => "Main Group",
+  "external_type" => "salto_ks_access_group",
+  "external_type_display_name" => "Salto KS Access Group",
+  "is_managed" => true,
+  "name" => "My Access Group",
+  "warnings" => [],
+  "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
+Returns a specified access group.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->access_groups->get(
-    acs_access_group_id: "44444444-4444-4444-4444-444444444444"
+    acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae"
 );
 ```
 
@@ -147,44 +159,50 @@ $seam->acs->access_groups->get(
 ```php
 <?php
 [
-    "acs_access_group_id" => "44444444-4444-4444-4444-444444444444",
-    "name" => "Lobby Access",
-    "display_name" => "Lobby Access",
-    "access_group_type_display_name" => "PTI access level",
-    "access_group_type" => "pti_access_level",
-    "external_type" => "pti_access_level",
-    "external_type_display_name" => "PTI access level",
-    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
-    "created_at" => "2023-11-30T06:27:15.437Z",
+    "access_group_type" => "salto_ks_access_group",
+    "access_group_type_display_name" => "Salto KS Access Group",
+    "acs_access_group_id" => "09eb5265-6e3b-4e6d-bf96-736171c547ae",
+    "acs_system_id" => "045baa77-6d06-40fe-a2cd-b82eef688f4a",
+    "connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+    "created_at" => "2025-06-15T16:54:17.946453Z",
+    "display_name" => "Main Group",
+    "external_type" => "salto_ks_access_group",
+    "external_type_display_name" => "Salto KS Access Group",
+    "is_managed" => true,
+    "name" => "My Access Group",
+    "warnings" => [],
+    "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `acs_access_group_id` of the access group that you want to retrieve.
+Returns a specified access group.
 
 #### Code
 
 ```seam_cli
-seam acs access-groups get --acs_access_group_id "44444444-4444-4444-4444-444444444444"
+seam acs access-groups get --acs_access_group_id "09eb5265-6e3b-4e6d-bf96-736171c547ae"
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
-  "name": "Lobby Access",
-  "display_name": "Lobby Access",
-  "access_group_type_display_name": "PTI access level",
-  "access_group_type": "pti_access_level",
-  "external_type": "pti_access_level",
-  "external_type_display_name": "PTI access level",
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2023-11-30T06:27:15.437Z"
+  "access_group_type": "salto_ks_access_group",
+  "access_group_type_display_name": "Salto KS Access Group",
+  "acs_access_group_id": "09eb5265-6e3b-4e6d-bf96-736171c547ae",
+  "acs_system_id": "045baa77-6d06-40fe-a2cd-b82eef688f4a",
+  "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+  "created_at": "2025-06-15T16:54:17.946453Z",
+  "display_name": "Main Group",
+  "external_type": "salto_ks_access_group",
+  "external_type_display_name": "Salto KS Access Group",
+  "is_managed": true,
+  "name": "My Access Group",
+  "warnings": [],
+  "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
 ```
 {% endtab %}

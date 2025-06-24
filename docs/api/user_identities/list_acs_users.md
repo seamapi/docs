@@ -9,13 +9,13 @@ Returns a list of all [access system users](https://docs.seam.co/latest/capabili
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access system users assigned to a specified user identity.
 
 #### Code
 
 ```javascript
 await seam.userIdentities.listAcsUsers({
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
+  user_identity_id: "b0dc10f2-3971-440e-af25-dab964e5c281",
 });
 ```
 
@@ -24,17 +24,32 @@ await seam.userIdentities.listAcsUsers({
 ```javascript
 [
   {
-    "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
-    "display_name": "Jean Doe",
-    "full_name": "Jean Doe",
-    "email_address": "jean@example.com",
-    "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-11T05:45:41.349Z",
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
     "is_suspended": false,
-    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_email_address": "jean@example.com",
-    "user_identity_phone_number": "+15555550110"
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
   }
 ]
 ```
@@ -42,7 +57,7 @@ await seam.userIdentities.listAcsUsers({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access system users assigned to a specified user identity.
 
 #### Code
 
@@ -51,7 +66,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list_
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+  "user_identity_id": "b0dc10f2-3971-440e-af25-dab964e5c281"
 }
 EOF
 ```
@@ -62,17 +77,32 @@ EOF
 {
   "acs_users": [
     {
-      "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
-      "display_name": "Jean Doe",
-      "full_name": "Jean Doe",
-      "email_address": "jean@example.com",
-      "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2024-01-11T05:45:41.349Z",
+      "access_schedule": {
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
+      },
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
       "is_suspended": false,
-      "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-      "user_identity_email_address": "jean@example.com",
-      "user_identity_phone_number": "+15555550110"
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
+      "user_identity_email_address": "jane@example.com",
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
     }
   ]
 }
@@ -81,13 +111,13 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access system users assigned to a specified user identity.
 
 #### Code
 
 ```python
 seam.user_identities.list_acs_users(
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+    user_identity_id="b0dc10f2-3971-440e-af25-dab964e5c281"
 )
 ```
 
@@ -96,17 +126,32 @@ seam.user_identities.list_acs_users(
 ```python
 [
     AcsUser(
-        acs_user_id="4d223973-0874-4831-8630-bfcb29e6bce0",
-        display_name="Jean Doe",
-        full_name="Jean Doe",
-        email_address="jean@example.com",
-        acs_system_id="8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-        workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-        created_at="2024-01-11T05:45:41.349Z",
+        access_schedule={
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
+        },
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
         is_suspended=false,
-        user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-        user_identity_email_address="jean@example.com",
-        user_identity_phone_number="+15555550110",
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
+        user_identity_email_address="jane@example.com",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
     )
 ]
 ```
@@ -114,12 +159,12 @@ seam.user_identities.list_acs_users(
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access system users assigned to a specified user identity.
 
 #### Code
 
 ```ruby
-seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a")
+seam.user_identities.list_acs_users(user_identity_id: "b0dc10f2-3971-440e-af25-dab964e5c281")
 ```
 
 #### Output
@@ -127,17 +172,32 @@ seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0
 ```ruby
 [
   {
-    "acs_user_id" => "4d223973-0874-4831-8630-bfcb29e6bce0",
-    "display_name" => "Jean Doe",
-    "full_name" => "Jean Doe",
-    "email_address" => "jean@example.com",
-    "acs_system_id" => "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at" => "2024-01-11T05:45:41.349Z",
+    "access_schedule" => {
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
+    },
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
     "is_suspended" => false,
-    "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_email_address" => "jean@example.com",
-    "user_identity_phone_number" => "+15555550110",
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
   },
 ]
 ```
@@ -145,14 +205,14 @@ seam.user_identities.list_acs_users(user_identity_id: "48500a8e-5e7e-4bde-b7e5-0
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access system users assigned to a specified user identity.
 
 #### Code
 
 ```php
 <?php
 $seam->user_identities->list_acs_users(
-    user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+    user_identity_id: "b0dc10f2-3971-440e-af25-dab964e5c281"
 );
 ```
 
@@ -162,17 +222,32 @@ $seam->user_identities->list_acs_users(
 <?php
 [
     [
-        "acs_user_id" => "4d223973-0874-4831-8630-bfcb29e6bce0",
-        "display_name" => "Jean Doe",
-        "full_name" => "Jean Doe",
-        "email_address" => "jean@example.com",
-        "acs_system_id" => "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-        "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-        "created_at" => "2024-01-11T05:45:41.349Z",
+        "access_schedule" => [
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
+        ],
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
         "is_suspended" => false,
-        "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-        "user_identity_email_address" => "jean@example.com",
-        "user_identity_phone_number" => "+15555550110",
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
+        "user_identity_email_address" => "jane@example.com",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
     ],
 ];
 ```
@@ -180,12 +255,12 @@ $seam->user_identities->list_acs_users(
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access system users assigned to a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"
+seam user-identities list-acs-users --user_identity_id "b0dc10f2-3971-440e-af25-dab964e5c281"
 ```
 
 #### Output
@@ -193,17 +268,32 @@ seam user-identities list-acs-users --user_identity_id "48500a8e-5e7e-4bde-b7e5-
 ```seam_cli
 [
   {
-    "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0",
-    "display_name": "Jean Doe",
-    "full_name": "Jean Doe",
-    "email_address": "jean@example.com",
-    "acs_system_id": "8aaa5fa0-9381-4463-a0ed-85f9c1fbcef4",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-11T05:45:41.349Z",
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
     "is_suspended": false,
-    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_email_address": "jean@example.com",
-    "user_identity_phone_number": "+15555550110"
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
   }
 ]
 ```

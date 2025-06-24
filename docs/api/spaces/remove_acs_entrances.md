@@ -9,6 +9,114 @@
 Removes [entrances](../../capability-guides/access-systems/retrieving-entrance-details.md) from a specific space.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Removes entrances from a specific space.
+
+#### Code
+
+```javascript
+await seam.spaces.removeAcsEntrances();
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Removes entrances from a specific space.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/spaces/remove_acs_entrances" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Removes entrances from a specific space.
+
+#### Code
+
+```python
+seam.spaces.remove_acs_entrances()
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Removes entrances from a specific space.
+
+#### Code
+
+```ruby
+seam.spaces.remove_acs_entrances()
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Removes entrances from a specific space.
+
+#### Code
+
+```php
+<?php
+$seam->spaces->remove_acs_entrances();
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Removes entrances from a specific space.
+
+#### Code
+
+```seam_cli
+seam spaces remove-acs-entrances
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

@@ -11,26 +11,46 @@ To filter the list of returned access systems by a specific connected account ID
 {% tabs %}
 {% tab title="JavaScript" %}
 
-To filter the list of ACS systems, include a `connected_account_id`.
+Returns a list of all access systems.
 
 #### Code
 
 ```javascript
 await seam.acs.systems.list({
-  connected_account_id: "123e4567-e89b-12d3-a456-426614174000",
+  connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0",
 });
 ```
 
 #### Output
 
 ```javascript
-[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+[
+  {
+    "acs_access_group_count": 5,
+    "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+    "acs_user_count": 20,
+    "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+    "created_at": "2025-06-15T16:54:17.946425Z",
+    "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+    "errors": [],
+    "external_type": "salto_ks_site",
+    "external_type_display_name": "Salto KS site",
+    "image_alt_text": "Salto KS site Logo",
+    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+    "is_credential_manager": false,
+    "location": { "time_zone": "America/New_York" },
+    "name": "My Access System",
+    "warnings": [],
+    "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
+  }
+]
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-To filter the list of ACS systems, include a `connected_account_id`.
+Returns a list of all access systems.
 
 #### Code
 
@@ -39,7 +59,7 @@ curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "connected_account_id": "123e4567-e89b-12d3-a456-426614174000"
+  "connected_account_id": "2283a842-27c5-474a-bd0e-4c959274efa0"
 }
 EOF
 ```
@@ -47,54 +67,119 @@ EOF
 #### Output
 
 ```curl
-{ "acs_systems": [{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }] }
+{
+  "acs_systems": [
+    {
+      "acs_access_group_count": 5,
+      "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+      "acs_user_count": 20,
+      "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+      "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+      "created_at": "2025-06-15T16:54:17.946425Z",
+      "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+      "errors": [],
+      "external_type": "salto_ks_site",
+      "external_type_display_name": "Salto KS site",
+      "image_alt_text": "Salto KS site Logo",
+      "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+      "is_credential_manager": false,
+      "location": { "time_zone": "America/New_York" },
+      "name": "My Access System",
+      "warnings": [],
+      "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
+    }
+  ]
+}
 ```
 {% endtab %}
 
 {% tab title="Python" %}
 
-To filter the list of ACS systems, include a `connected_account_id`.
+Returns a list of all access systems.
 
 #### Code
 
 ```python
-seam.acs.systems.list(connected_account_id="123e4567-e89b-12d3-a456-426614174000")
+seam.acs.systems.list(connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0")
 ```
 
 #### Output
 
 ```python
-[AcsSystem(acs_system_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")]
+[
+    AcsSystem(
+        acs_access_group_count=5,
+        acs_system_id="dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+        acs_user_count=20,
+        connected_account_id="a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+        connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+        created_at="2025-06-15T16:54:17.946425Z",
+        default_credential_manager_acs_system_id="5dde2def-3507-44f5-9521-7ca96aa4cd18",
+        errors=[],
+        external_type="salto_ks_site",
+        external_type_display_name="Salto KS site",
+        image_alt_text="Salto KS site Logo",
+        image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+        is_credential_manager=false,
+        location={"time_zone": "America/New_York"},
+        name="My Access System",
+        warnings=[],
+        workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f",
+    )
+]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-To filter the list of ACS systems, include a `connected_account_id`.
+Returns a list of all access systems.
 
 #### Code
 
 ```ruby
-seam.acs.systems.list(connected_account_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.acs.systems.list(connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0")
 ```
 
 #### Output
 
 ```ruby
-[{ "acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+[
+  {
+    "acs_access_group_count" => 5,
+    "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+    "acs_user_count" => 20,
+    "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+    "created_at" => "2025-06-15T16:54:17.946425Z",
+    "default_credential_manager_acs_system_id" => "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+    "errors" => [],
+    "external_type" => "salto_ks_site",
+    "external_type_display_name" => "Salto KS site",
+    "image_alt_text" => "Salto KS site Logo",
+    "image_url" =>
+      "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+    "is_credential_manager" => false,
+    "location" => {
+      time_zone: "America/New_York",
+    },
+    "name" => "My Access System",
+    "warnings" => [],
+    "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
+  },
+]
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-To filter the list of ACS systems, include a `connected_account_id`.
+Returns a list of all access systems.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->systems->list(
-    connected_account_id: "123e4567-e89b-12d3-a456-426614174000"
+    connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0"
 );
 ```
 
@@ -102,24 +187,66 @@ $seam->acs->systems->list(
 
 ```php
 <?php
-[["acs_system_id" => "8d7e0b3a-b889-49a7-9164-4b71a0506a33"]];
+[
+    [
+        "acs_access_group_count" => 5,
+        "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+        "acs_user_count" => 20,
+        "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+        "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+        "created_at" => "2025-06-15T16:54:17.946425Z",
+        "default_credential_manager_acs_system_id" =>
+            "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+        "errors" => [],
+        "external_type" => "salto_ks_site",
+        "external_type_display_name" => "Salto KS site",
+        "image_alt_text" => "Salto KS site Logo",
+        "image_url" =>
+            "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+        "is_credential_manager" => false,
+        "location" => ["time_zone" => "America/New_York"],
+        "name" => "My Access System",
+        "warnings" => [],
+        "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
+    ],
+];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-To filter the list of ACS systems, include a `connected_account_id`.
+Returns a list of all access systems.
 
 #### Code
 
 ```seam_cli
-seam acs systems list --connected_account_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs systems list --connected_account_id "2283a842-27c5-474a-bd0e-4c959274efa0"
 ```
 
 #### Output
 
 ```seam_cli
-[{ "acs_system_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33" }]
+[
+  {
+    "acs_access_group_count": 5,
+    "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+    "acs_user_count": 20,
+    "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+    "created_at": "2025-06-15T16:54:17.946425Z",
+    "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+    "errors": [],
+    "external_type": "salto_ks_site",
+    "external_type_display_name": "Salto KS site",
+    "image_alt_text": "Salto KS site Logo",
+    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+    "is_credential_manager": false,
+    "location": { "time_zone": "America/New_York" },
+    "name": "My Access System",
+    "warnings": [],
+    "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
+  }
+]
 ```
 {% endtab %}
 

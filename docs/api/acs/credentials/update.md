@@ -9,15 +9,12 @@ Updates the code and ends at date and time for a specified [credential](../../..
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
 #### Code
 
 ```javascript
-await seam.acs.credentials.update({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-  code: "7890",
-});
+await seam.acs.credentials.update();
 ```
 
 #### Output
@@ -29,19 +26,13 @@ await seam.acs.credentials.update({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
 #### Code
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "code": "7890"
-}
-EOF
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
 #### Output
@@ -53,14 +44,12 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
 #### Code
 
 ```python
-seam.acs.credentials.update(
-    acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890"
-)
+seam.acs.credentials.update()
 ```
 
 #### Output
@@ -72,12 +61,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
 #### Code
 
 ```ruby
-seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
+seam.acs.credentials.update()
 ```
 
 #### Output
@@ -89,16 +78,13 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
 #### Code
 
 ```php
 <?php
-$seam->acs->credentials->update(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666",
-    code: "7890"
-);
+$seam->acs->credentials->update();
 ```
 
 #### Output
@@ -110,12 +96,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
 #### Code
 
 ```seam_cli
-seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
+seam acs credentials update
 ```
 
 #### Output
