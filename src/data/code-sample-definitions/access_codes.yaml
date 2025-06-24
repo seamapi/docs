@@ -228,8 +228,9 @@
       device_id: 02cd5099-d9f8-45a1-a9c0-f2ecbd334792
   response:
     body:
-      device_id: 02cd5099-d9f8-45a1-a9c0-f2ecbd334792
-      code: '1234'
+      generated_code:
+        device_id: 02cd5099-d9f8-45a1-a9c0-f2ecbd334792
+        code: '1234'
 - title: Get an access code
   description: Returns a specified access code.
   request:
