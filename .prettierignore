@@ -15,7 +15,7 @@ gitbook-plugin
 *.d.ts
 *.js
 *.js.map
-!src/**/*.d.ts
+!codegen/**/*.d.ts
 !ava.config.js
 
 # Build directories

@@ -53,7 +53,7 @@ jobs:
       - name: Normalize package-lock.json
         run: npm install
       - name: Generate docs
-        run: npm run build
+        run: npm run codegen
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

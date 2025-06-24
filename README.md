@@ -51,7 +51,7 @@ See the [Development](#development) section below
 for how to contribute to the documentation generation tool.
 
 - The root of this project is a TypeScript project
-  and documentation generation is implemented in `/src`.
+  and documentation generation is implemented in `/codegen`.
 - When a new pull request is opened, code generation will run automatically
   in a GitHub workflow and update the PR will any changes.
 - New PRs are automatically opened by Dependabot to ensure regular daily updates.
@@ -64,10 +64,10 @@ for how to contribute to the documentation generation tool.
 
 ```
 $ git clone https://github.com/seamapi/docs.git
-$ cd api-docs
+$ cd docs
 $ nvm install
 $ npm install
-$ npm run build
+$ npm run codegen
 ```
 
 Primary development tasks are defined under `scripts` in `package.json`
