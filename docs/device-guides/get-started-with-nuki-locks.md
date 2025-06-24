@@ -18,9 +18,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -47,7 +45,6 @@ bundle add seam
 composer require seamapi/seam
 ```
 {% endtab %}
-
 
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
