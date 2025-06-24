@@ -14,7 +14,12 @@ Sets the HVAC mode for a specified thermostat.
 #### Code
 
 ```javascript
-await seam.thermostats.setHvacMode();
+await seam.thermostats.setHvacMode({
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+  hvac_mode_setting: "heat_cool",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
+});
 ```
 
 #### Output
@@ -38,7 +43,15 @@ Sets the HVAC mode for a specified thermostat.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+  "hvac_mode_setting": "heat_cool",
+  "heating_set_point_celsius": 20,
+  "cooling_set_point_celsius": 25
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +76,12 @@ Sets the HVAC mode for a specified thermostat.
 #### Code
 
 ```python
-seam.thermostats.set_hvac_mode()
+seam.thermostats.set_hvac_mode(
+    device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+    hvac_mode_setting="heat_cool",
+    heating_set_point_celsius=20,
+    cooling_set_point_celsius=25,
+)
 ```
 
 #### Output
@@ -86,7 +104,12 @@ Sets the HVAC mode for a specified thermostat.
 #### Code
 
 ```ruby
-seam.thermostats.set_hvac_mode()
+seam.thermostats.set_hvac_mode(
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+  hvac_mode_setting: "heat_cool",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
+)
 ```
 
 #### Output
@@ -111,7 +134,12 @@ Sets the HVAC mode for a specified thermostat.
 
 ```php
 <?php
-$seam->thermostats->set_hvac_mode();
+$seam->thermostats->set_hvac_mode(
+    device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+    hvac_mode_setting: "heat_cool",
+    heating_set_point_celsius: 20,
+    cooling_set_point_celsius: 25
+);
 ```
 
 #### Output
@@ -135,7 +163,7 @@ Sets the HVAC mode for a specified thermostat.
 #### Code
 
 ```seam_cli
-seam thermostats set-hvac-mode
+seam thermostats set-hvac-mode --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
 #### Output

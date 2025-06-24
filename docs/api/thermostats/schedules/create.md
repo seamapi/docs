@@ -14,7 +14,15 @@ Creates a new thermostat schedule for a specified thermostat.
 #### Code
 
 ```javascript
-await seam.thermostats.schedules.create();
+await seam.thermostats.schedules.create({
+  device_id: "d710aa35-232d-442b-a817-c28045de1c74",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
+  max_override_period_minutes: 90,
+  starts_at: "2025-06-19T15:00:00.000Z",
+  ends_at: "2025-06-22T11:00:00.000Z",
+  is_override_allowed: true,
+});
 ```
 
 #### Output
@@ -44,7 +52,18 @@ Creates a new thermostat schedule for a specified thermostat.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "d710aa35-232d-442b-a817-c28045de1c74",
+  "name": "Jane's Stay",
+  "climate_preset_key": "Occupied",
+  "max_override_period_minutes": 90,
+  "starts_at": "2025-06-19T15:00:00.000Z",
+  "ends_at": "2025-06-22T11:00:00.000Z",
+  "is_override_allowed": true
+}
+EOF
 ```
 
 #### Output
@@ -75,7 +94,15 @@ Creates a new thermostat schedule for a specified thermostat.
 #### Code
 
 ```python
-seam.thermostats.schedules.create()
+seam.thermostats.schedules.create(
+    device_id="d710aa35-232d-442b-a817-c28045de1c74",
+    name="Jane's Stay",
+    climate_preset_key="Occupied",
+    max_override_period_minutes=90,
+    starts_at="2025-06-19T15:00:00.000Z",
+    ends_at="2025-06-22T11:00:00.000Z",
+    is_override_allowed=true,
+)
 ```
 
 #### Output
@@ -104,7 +131,15 @@ Creates a new thermostat schedule for a specified thermostat.
 #### Code
 
 ```ruby
-seam.thermostats.schedules.create()
+seam.thermostats.schedules.create(
+  device_id: "d710aa35-232d-442b-a817-c28045de1c74",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
+  max_override_period_minutes: 90,
+  starts_at: "2025-06-19T15:00:00.000Z",
+  ends_at: "2025-06-22T11:00:00.000Z",
+  is_override_allowed: true,
+)
 ```
 
 #### Output
@@ -134,7 +169,15 @@ Creates a new thermostat schedule for a specified thermostat.
 
 ```php
 <?php
-$seam->thermostats->schedules->create();
+$seam->thermostats->schedules->create(
+    device_id: "d710aa35-232d-442b-a817-c28045de1c74",
+    name: "Jane's Stay",
+    climate_preset_key: "Occupied",
+    max_override_period_minutes: 90,
+    starts_at: "2025-06-19T15:00:00.000Z",
+    ends_at: "2025-06-22T11:00:00.000Z",
+    is_override_allowed: true
+);
 ```
 
 #### Output
@@ -164,7 +207,7 @@ Creates a new thermostat schedule for a specified thermostat.
 #### Code
 
 ```seam_cli
-seam thermostats schedules create
+seam thermostats schedules create --device_id "d710aa35-232d-442b-a817-c28045de1c74" --name "Jane's Stay" --climate_preset_key "Occupied" --max_override_period_minutes 90 --starts_at "2025-06-19T15:00:00.000Z" --ends_at "2025-06-22T11:00:00.000Z" --is_override_allowed true
 ```
 
 #### Output

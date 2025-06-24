@@ -15,7 +15,16 @@ Creates a new PIN code credential for a specified access system user, using the 
 #### Code
 
 ```javascript
-await seam.acs.credentials.create();
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+});
 ```
 
 #### Output
@@ -52,7 +61,21 @@ Creates a new PIN code credential for a specified access system user, using the 
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "user_identity_id": "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "code",
+  "code": "1234",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z"
+}
+EOF
 ```
 
 #### Output
@@ -90,7 +113,16 @@ Creates a new PIN code credential for a specified access system user, using the 
 #### Code
 
 ```python
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id="4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="code",
+    code="1234",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+)
 ```
 
 #### Output
@@ -126,7 +158,16 @@ Creates a new PIN code credential for a specified access system user, using the 
 #### Code
 
 ```ruby
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+)
 ```
 
 #### Output
@@ -163,7 +204,16 @@ Creates a new PIN code credential for a specified access system user, using the 
 
 ```php
 <?php
-$seam->acs->credentials->create();
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "code",
+    code: "1234",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z"
+);
 ```
 
 #### Output
@@ -201,7 +251,7 @@ Creates a new PIN code credential for a specified access system user, using the 
 #### Code
 
 ```seam_cli
-seam acs credentials create
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --user_identity_id "4b6ec19d-ba68-46ca-80fd-55247684c2bb" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "code" --code "1234" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z"
 ```
 
 #### Output
@@ -490,7 +540,16 @@ Creates a new PIN code credential for a specified access system user.
 #### Code
 
 ```javascript
-await seam.acs.credentials.create();
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+});
 ```
 
 #### Output
@@ -527,7 +586,21 @@ await seam.acs.credentials.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "code",
+  "code": "1234",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z"
+}
+EOF
 ```
 
 #### Output
@@ -565,7 +638,16 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/creat
 #### Code
 
 ```python
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="code",
+    code="1234",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+)
 ```
 
 #### Output
@@ -601,7 +683,16 @@ AcsCredential(
 #### Code
 
 ```ruby
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+)
 ```
 
 #### Output
@@ -638,7 +729,16 @@ seam.acs.credentials.create()
 
 ```php
 <?php
-$seam->acs->credentials->create();
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "code",
+    code: "1234",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z"
+);
 ```
 
 #### Output
@@ -676,7 +776,7 @@ $seam->acs->credentials->create();
 #### Code
 
 ```seam_cli
-seam acs credentials create
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --acs_user_id "53f39f90-5113-4bdd-8432-acf328ce508c" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "code" --code "1234" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z"
 ```
 
 #### Output
@@ -722,7 +822,16 @@ Creates a new card credential for a specified access system user, using the asso
 #### Code
 
 ```javascript
-await seam.acs.credentials.create();
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: { card_format: "rfid48", override: true },
+});
 ```
 
 #### Output
@@ -758,7 +867,24 @@ await seam.acs.credentials.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "user_identity_id": "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "card",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "visionline_metadata": {
+    "card_format": "rfid48",
+    "override": true
+  }
+}
+EOF
 ```
 
 #### Output
@@ -795,7 +921,16 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/creat
 #### Code
 
 ```python
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id="4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="card",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    visionline_metadata={"card_format": "rfid48", "override": true},
+)
 ```
 
 #### Output
@@ -830,7 +965,19 @@ AcsCredential(
 #### Code
 
 ```ruby
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: {
+    card_format: "rfid48",
+    override: true,
+  },
+)
 ```
 
 #### Output
@@ -866,7 +1013,16 @@ seam.acs.credentials.create()
 
 ```php
 <?php
-$seam->acs->credentials->create();
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "card",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    visionline_metadata: ["card_format" => "rfid48", "override" => true]
+);
 ```
 
 #### Output
@@ -903,7 +1059,7 @@ $seam->acs->credentials->create();
 #### Code
 
 ```seam_cli
-seam acs credentials create
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --user_identity_id "4b6ec19d-ba68-46ca-80fd-55247684c2bb" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "card" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --visionline_metadata {"card_format":"rfid48","override":true}
 ```
 
 #### Output
@@ -948,7 +1104,16 @@ Creates a new card credential for a specified access system user.
 #### Code
 
 ```javascript
-await seam.acs.credentials.create();
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: { card_format: "rfid48", override: true },
+});
 ```
 
 #### Output
@@ -984,7 +1149,24 @@ await seam.acs.credentials.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "card",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "visionline_metadata": {
+    "card_format": "rfid48",
+    "override": true
+  }
+}
+EOF
 ```
 
 #### Output
@@ -1021,7 +1203,16 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/creat
 #### Code
 
 ```python
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="card",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    visionline_metadata={"card_format": "rfid48", "override": true},
+)
 ```
 
 #### Output
@@ -1056,7 +1247,19 @@ AcsCredential(
 #### Code
 
 ```ruby
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: {
+    card_format: "rfid48",
+    override: true,
+  },
+)
 ```
 
 #### Output
@@ -1092,7 +1295,16 @@ seam.acs.credentials.create()
 
 ```php
 <?php
-$seam->acs->credentials->create();
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "card",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    visionline_metadata: ["card_format" => "rfid48", "override" => true]
+);
 ```
 
 #### Output
@@ -1129,7 +1341,7 @@ $seam->acs->credentials->create();
 #### Code
 
 ```seam_cli
-seam acs credentials create
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --acs_user_id "53f39f90-5113-4bdd-8432-acf328ce508c" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "card" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --visionline_metadata {"card_format":"rfid48","override":true}
 ```
 
 #### Output
@@ -1174,7 +1386,16 @@ Creates a new mobile key credential for a specified access system user, using th
 #### Code
 
 ```javascript
-await seam.acs.credentials.create();
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+});
 ```
 
 #### Output
@@ -1210,7 +1431,21 @@ await seam.acs.credentials.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "user_identity_id": "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "mobile_key",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "is_multi_phone_sync_credential": true
+}
+EOF
 ```
 
 #### Output
@@ -1247,7 +1482,16 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/creat
 #### Code
 
 ```python
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id="4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="mobile_key",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential=true,
+)
 ```
 
 #### Output
@@ -1282,7 +1526,16 @@ AcsCredential(
 #### Code
 
 ```ruby
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+)
 ```
 
 #### Output
@@ -1318,7 +1571,16 @@ seam.acs.credentials.create()
 
 ```php
 <?php
-$seam->acs->credentials->create();
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "mobile_key",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential: true
+);
 ```
 
 #### Output
@@ -1355,7 +1617,7 @@ $seam->acs->credentials->create();
 #### Code
 
 ```seam_cli
-seam acs credentials create
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --user_identity_id "4b6ec19d-ba68-46ca-80fd-55247684c2bb" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "mobile_key" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --is_multi_phone_sync_credential true
 ```
 
 #### Output
@@ -1400,7 +1662,16 @@ Creates a new mobile key credential for a specified access system user.
 #### Code
 
 ```javascript
-await seam.acs.credentials.create();
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+});
 ```
 
 #### Output
@@ -1436,7 +1707,21 @@ await seam.acs.credentials.create();
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "mobile_key",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "is_multi_phone_sync_credential": true
+}
+EOF
 ```
 
 #### Output
@@ -1473,7 +1758,16 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/creat
 #### Code
 
 ```python
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="mobile_key",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential=true,
+)
 ```
 
 #### Output
@@ -1508,7 +1802,16 @@ AcsCredential(
 #### Code
 
 ```ruby
-seam.acs.credentials.create()
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+)
 ```
 
 #### Output
@@ -1544,7 +1847,16 @@ seam.acs.credentials.create()
 
 ```php
 <?php
-$seam->acs->credentials->create();
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "mobile_key",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential: true
+);
 ```
 
 #### Output
@@ -1581,7 +1893,7 @@ $seam->acs->credentials->create();
 #### Code
 
 ```seam_cli
-seam acs credentials create
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --acs_user_id "53f39f90-5113-4bdd-8432-acf328ce508c" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "mobile_key" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --is_multi_phone_sync_credential true
 ```
 
 #### Output

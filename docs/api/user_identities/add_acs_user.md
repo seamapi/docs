@@ -14,7 +14,10 @@ Adds a specified access system user to a specified user identity.
 #### Code
 
 ```javascript
-await seam.userIdentities.addAcsUser();
+await seam.userIdentities.addAcsUser({
+  user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Adds a specified access system user to a specified user identity.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/add_acs_user" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  "acs_user_id": "d73f4706-67e3-419d-899e-ec957a75ee0c"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,10 @@ Adds a specified access system user to a specified user identity.
 #### Code
 
 ```python
-seam.user_identities.add_acs_user()
+seam.user_identities.add_acs_user(
+    user_identity_id="68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+    acs_user_id="d73f4706-67e3-419d-899e-ec957a75ee0c",
+)
 ```
 
 #### Output
@@ -66,7 +78,10 @@ Adds a specified access system user to a specified user identity.
 #### Code
 
 ```ruby
-seam.user_identities.add_acs_user()
+seam.user_identities.add_acs_user(
+  user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c",
+)
 ```
 
 #### Output
@@ -84,7 +99,10 @@ Adds a specified access system user to a specified user identity.
 
 ```php
 <?php
-$seam->user_identities->add_acs_user();
+$seam->user_identities->add_acs_user(
+    user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+    acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c"
+);
 ```
 
 #### Output
@@ -101,7 +119,7 @@ Adds a specified access system user to a specified user identity.
 #### Code
 
 ```seam_cli
-seam user-identities add-acs-user
+seam user-identities add-acs-user --user_identity_id "68dd3d7e-c90b-4c89-ad70-3e589014ed87" --acs_user_id "d73f4706-67e3-419d-899e-ec957a75ee0c"
 ```
 
 #### Output

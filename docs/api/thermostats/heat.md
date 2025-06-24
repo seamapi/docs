@@ -14,7 +14,10 @@ Sets a specified thermostat to heat mode.
 #### Code
 
 ```javascript
-await seam.thermostats.heat();
+await seam.thermostats.heat({
+  device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+  heating_set_point_fahrenheit: 65,
+});
 ```
 
 #### Output
@@ -38,7 +41,13 @@ Sets a specified thermostat to heat mode.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/heat" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+  "heating_set_point_fahrenheit": 65
+}
+EOF
 ```
 
 #### Output
@@ -63,7 +72,9 @@ Sets a specified thermostat to heat mode.
 #### Code
 
 ```python
-seam.thermostats.heat()
+seam.thermostats.heat(
+    device_id="e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5", heating_set_point_fahrenheit=65
+)
 ```
 
 #### Output
@@ -86,7 +97,10 @@ Sets a specified thermostat to heat mode.
 #### Code
 
 ```ruby
-seam.thermostats.heat()
+seam.thermostats.heat(
+  device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+  heating_set_point_fahrenheit: 65,
+)
 ```
 
 #### Output
@@ -111,7 +125,10 @@ Sets a specified thermostat to heat mode.
 
 ```php
 <?php
-$seam->thermostats->heat();
+$seam->thermostats->heat(
+    device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+    heating_set_point_fahrenheit: 65
+);
 ```
 
 #### Output
@@ -135,7 +152,7 @@ Sets a specified thermostat to heat mode.
 #### Code
 
 ```seam_cli
-seam thermostats heat
+seam thermostats heat --device_id "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5" --heating_set_point_fahrenheit 65
 ```
 
 #### Output

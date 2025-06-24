@@ -14,7 +14,10 @@ Removes a specified access system user from a specified user identity.
 #### Code
 
 ```javascript
-await seam.userIdentities.removeAcsUser();
+await seam.userIdentities.removeAcsUser({
+  user_identity_id: "802633b6-a66c-4911-b57b-323e900ee531",
+  acs_user_id: "faa22878-fa74-4ea0-87f7-2b05c1b06181",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Removes a specified access system user from a specified user identity.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/remove_acs_user" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "802633b6-a66c-4911-b57b-323e900ee531",
+  "acs_user_id": "faa22878-fa74-4ea0-87f7-2b05c1b06181"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,10 @@ Removes a specified access system user from a specified user identity.
 #### Code
 
 ```python
-seam.user_identities.remove_acs_user()
+seam.user_identities.remove_acs_user(
+    user_identity_id="802633b6-a66c-4911-b57b-323e900ee531",
+    acs_user_id="faa22878-fa74-4ea0-87f7-2b05c1b06181",
+)
 ```
 
 #### Output
@@ -66,7 +78,10 @@ Removes a specified access system user from a specified user identity.
 #### Code
 
 ```ruby
-seam.user_identities.remove_acs_user()
+seam.user_identities.remove_acs_user(
+  user_identity_id: "802633b6-a66c-4911-b57b-323e900ee531",
+  acs_user_id: "faa22878-fa74-4ea0-87f7-2b05c1b06181",
+)
 ```
 
 #### Output
@@ -84,7 +99,10 @@ Removes a specified access system user from a specified user identity.
 
 ```php
 <?php
-$seam->user_identities->remove_acs_user();
+$seam->user_identities->remove_acs_user(
+    user_identity_id: "802633b6-a66c-4911-b57b-323e900ee531",
+    acs_user_id: "faa22878-fa74-4ea0-87f7-2b05c1b06181"
+);
 ```
 
 #### Output
@@ -101,7 +119,7 @@ Removes a specified access system user from a specified user identity.
 #### Code
 
 ```seam_cli
-seam user-identities remove-acs-user
+seam user-identities remove-acs-user --user_identity_id "802633b6-a66c-4911-b57b-323e900ee531" --acs_user_id "faa22878-fa74-4ea0-87f7-2b05c1b06181"
 ```
 
 #### Output

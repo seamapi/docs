@@ -18,7 +18,11 @@ Converts an unmanaged access code to an access code managed through Seam.
 #### Code
 
 ```javascript
-await seam.accessCodes.unmanaged.convertToManaged();
+await seam.accessCodes.unmanaged.convertToManaged({
+  access_code_id: "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+  is_external_modification_allowed: true,
+  force: true,
+});
 ```
 
 #### Output
@@ -36,7 +40,14 @@ Converts an unmanaged access code to an access code managed through Seam.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/convert_to_managed" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+  "is_external_modification_allowed": true,
+  "force": true
+}
+EOF
 ```
 
 #### Output
@@ -53,7 +64,11 @@ Converts an unmanaged access code to an access code managed through Seam.
 #### Code
 
 ```python
-seam.access_codes.unmanaged.convert_to_managed()
+seam.access_codes.unmanaged.convert_to_managed(
+    access_code_id="9ef2af02-e335-4b49-bd51-00e851a83ef6",
+    is_external_modification_allowed=true,
+    force=true,
+)
 ```
 
 #### Output
@@ -70,7 +85,11 @@ Converts an unmanaged access code to an access code managed through Seam.
 #### Code
 
 ```ruby
-seam.access_codes.unmanaged.convert_to_managed()
+seam.access_codes.unmanaged.convert_to_managed(
+  access_code_id: "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+  is_external_modification_allowed: true,
+  force: true,
+)
 ```
 
 #### Output
@@ -88,7 +107,11 @@ Converts an unmanaged access code to an access code managed through Seam.
 
 ```php
 <?php
-$seam->access_codes->unmanaged->convert_to_managed();
+$seam->access_codes->unmanaged->convert_to_managed(
+    access_code_id: "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+    is_external_modification_allowed: true,
+    force: true
+);
 ```
 
 #### Output
@@ -105,7 +128,7 @@ Converts an unmanaged access code to an access code managed through Seam.
 #### Code
 
 ```seam_cli
-seam access-codes unmanaged convert-to-managed
+seam access-codes unmanaged convert-to-managed --access_code_id "9ef2af02-e335-4b49-bd51-00e851a83ef6" --is_external_modification_allowed true --force true
 ```
 
 #### Output

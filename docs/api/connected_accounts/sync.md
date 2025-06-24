@@ -14,7 +14,9 @@ Request a connected account sync attempt for the specified connected account.
 #### Code
 
 ```javascript
-await seam.connectedAccounts.sync();
+await seam.connectedAccounts.sync({
+  connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279",
+});
 ```
 
 #### Output
@@ -32,7 +34,12 @@ Request a connected account sync attempt for the specified connected account.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/sync" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "connected_account_id": "f886f890-4ca5-4ce5-b248-509cbfb6c279"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +56,9 @@ Request a connected account sync attempt for the specified connected account.
 #### Code
 
 ```python
-seam.connected_accounts.sync()
+seam.connected_accounts.sync(
+    connected_account_id="f886f890-4ca5-4ce5-b248-509cbfb6c279"
+)
 ```
 
 #### Output
@@ -66,7 +75,7 @@ Request a connected account sync attempt for the specified connected account.
 #### Code
 
 ```ruby
-seam.connected_accounts.sync()
+seam.connected_accounts.sync(connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279")
 ```
 
 #### Output
@@ -84,7 +93,9 @@ Request a connected account sync attempt for the specified connected account.
 
 ```php
 <?php
-$seam->connected_accounts->sync();
+$seam->connected_accounts->sync(
+    connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279"
+);
 ```
 
 #### Output
@@ -101,7 +112,7 @@ Request a connected account sync attempt for the specified connected account.
 #### Code
 
 ```seam_cli
-seam connected-accounts sync
+seam connected-accounts sync --connected_account_id "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 ```
 
 #### Output

@@ -14,7 +14,10 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```javascript
-await seam.acs.users.addToAccessGroup();
+await seam.acs.users.addToAccessGroup({
+  acs_user_id: "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+  acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Adds a specified access system user to a specified access group.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/add_to_access_group" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+  "acs_access_group_id": "58c8b034-e527-4635-a335-afc74dc79b27"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,10 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```python
-seam.acs.users.add_to_access_group()
+seam.acs.users.add_to_access_group(
+    acs_user_id="15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+    acs_access_group_id="58c8b034-e527-4635-a335-afc74dc79b27",
+)
 ```
 
 #### Output
@@ -66,7 +78,10 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```ruby
-seam.acs.users.add_to_access_group()
+seam.acs.users.add_to_access_group(
+  acs_user_id: "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+  acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27",
+)
 ```
 
 #### Output
@@ -84,7 +99,10 @@ Adds a specified access system user to a specified access group.
 
 ```php
 <?php
-$seam->acs->users->add_to_access_group();
+$seam->acs->users->add_to_access_group(
+    acs_user_id: "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+    acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27"
+);
 ```
 
 #### Output
@@ -101,7 +119,7 @@ Adds a specified access system user to a specified access group.
 #### Code
 
 ```seam_cli
-seam acs users add-to-access-group
+seam acs users add-to-access-group --acs_user_id "15ce02a8-b145-4c02-adc9-d9d84c8a1177" --acs_access_group_id "58c8b034-e527-4635-a335-afc74dc79b27"
 ```
 
 #### Output

@@ -14,7 +14,10 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 #### Code
 
 ```javascript
-await seam.thermostats.setFallbackClimatePreset();
+await seam.thermostats.setFallbackClimatePreset({
+  device_id: "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
+  climate_preset_key: "Eco",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fallback_climate_preset" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
+  "climate_preset_key": "Eco"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,9 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 #### Code
 
 ```python
-seam.thermostats.set_fallback_climate_preset()
+seam.thermostats.set_fallback_climate_preset(
+    device_id="9a21ddcb-8eeb-4351-8770-1835c3db8b2e", climate_preset_key="Eco"
+)
 ```
 
 #### Output
@@ -66,7 +77,10 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 #### Code
 
 ```ruby
-seam.thermostats.set_fallback_climate_preset()
+seam.thermostats.set_fallback_climate_preset(
+  device_id: "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
+  climate_preset_key: "Eco",
+)
 ```
 
 #### Output
@@ -84,7 +98,10 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 
 ```php
 <?php
-$seam->thermostats->set_fallback_climate_preset();
+$seam->thermostats->set_fallback_climate_preset(
+    device_id: "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
+    climate_preset_key: "Eco"
+);
 ```
 
 #### Output
@@ -101,7 +118,7 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 #### Code
 
 ```seam_cli
-seam thermostats set-fallback-climate-preset
+seam thermostats set-fallback-climate-preset --device_id "9a21ddcb-8eeb-4351-8770-1835c3db8b2e" --climate_preset_key "Eco"
 ```
 
 #### Output

@@ -22,7 +22,17 @@ Creates new access codes that share a common code across multiple devices.
 #### Code
 
 ```javascript
-await seam.accessCodes.createMultiple();
+await seam.accessCodes.createMultiple({
+  device_ids: [
+    "d9717800-fa73-401a-b66b-03f0ef950e2a",
+    "550e8400-e29b-41d4-a716-446655440000",
+  ],
+  behavior_when_code_cannot_be_shared: "throw",
+  preferred_code_length: 4,
+  name: "My Linked Access Code",
+  starts_at: "2025-06-19T01:41:56.000Z",
+  ends_at: "2025-06-22T16:40:40.000Z",
+});
 ```
 
 #### Output
@@ -64,7 +74,20 @@ Creates new access codes that share a common code across multiple devices.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create_multiple" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_ids": [
+    "d9717800-fa73-401a-b66b-03f0ef950e2a",
+    "550e8400-e29b-41d4-a716-446655440000"
+  ],
+  "behavior_when_code_cannot_be_shared": "throw",
+  "preferred_code_length": 4,
+  "name": "My Linked Access Code",
+  "starts_at": "2025-06-19T01:41:56.000Z",
+  "ends_at": "2025-06-22T16:40:40.000Z"
+}
+EOF
 ```
 
 #### Output
@@ -107,7 +130,17 @@ Creates new access codes that share a common code across multiple devices.
 #### Code
 
 ```python
-seam.access_codes.create_multiple()
+seam.access_codes.create_multiple(
+    device_ids=[
+        "d9717800-fa73-401a-b66b-03f0ef950e2a",
+        "550e8400-e29b-41d4-a716-446655440000",
+    ],
+    behavior_when_code_cannot_be_shared="throw",
+    preferred_code_length=4,
+    name="My Linked Access Code",
+    starts_at="2025-06-19T01:41:56.000Z",
+    ends_at="2025-06-22T16:40:40.000Z",
+)
 ```
 
 #### Output
@@ -148,7 +181,14 @@ Creates new access codes that share a common code across multiple devices.
 #### Code
 
 ```ruby
-seam.access_codes.create_multiple()
+seam.access_codes.create_multiple(
+  device_ids: %w[d9717800-fa73-401a-b66b-03f0ef950e2a 550e8400-e29b-41d4-a716-446655440000],
+  behavior_when_code_cannot_be_shared: "throw",
+  preferred_code_length: 4,
+  name: "My Linked Access Code",
+  starts_at: "2025-06-19T01:41:56.000Z",
+  ends_at: "2025-06-22T16:40:40.000Z",
+)
 ```
 
 #### Output
@@ -190,7 +230,17 @@ Creates new access codes that share a common code across multiple devices.
 
 ```php
 <?php
-$seam->access_codes->create_multiple();
+$seam->access_codes->create_multiple(
+    device_ids: [
+        "d9717800-fa73-401a-b66b-03f0ef950e2a",
+        "550e8400-e29b-41d4-a716-446655440000",
+    ],
+    behavior_when_code_cannot_be_shared: "throw",
+    preferred_code_length: 4,
+    name: "My Linked Access Code",
+    starts_at: "2025-06-19T01:41:56.000Z",
+    ends_at: "2025-06-22T16:40:40.000Z"
+);
 ```
 
 #### Output
@@ -233,7 +283,7 @@ Creates new access codes that share a common code across multiple devices.
 #### Code
 
 ```seam_cli
-seam access-codes create-multiple
+seam access-codes create-multiple --device_ids ["d9717800-fa73-401a-b66b-03f0ef950e2a","550e8400-e29b-41d4-a716-446655440000"] --behavior_when_code_cannot_be_shared "throw" --preferred_code_length 4 --name "My Linked Access Code" --starts_at "2025-06-19T01:41:56.000Z" --ends_at "2025-06-22T16:40:40.000Z"
 ```
 
 #### Output

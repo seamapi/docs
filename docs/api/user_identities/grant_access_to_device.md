@@ -14,7 +14,10 @@ Grants a specified user identity access to a specified device.
 #### Code
 
 ```javascript
-await seam.userIdentities.grantAccessToDevice();
+await seam.userIdentities.grantAccessToDevice({
+  user_identity_id: "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+  device_id: "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Grants a specified user identity access to a specified device.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/grant_access_to_device" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+  "device_id": "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,10 @@ Grants a specified user identity access to a specified device.
 #### Code
 
 ```python
-seam.user_identities.grant_access_to_device()
+seam.user_identities.grant_access_to_device(
+    user_identity_id="4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+    device_id="6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8",
+)
 ```
 
 #### Output
@@ -66,7 +78,10 @@ Grants a specified user identity access to a specified device.
 #### Code
 
 ```ruby
-seam.user_identities.grant_access_to_device()
+seam.user_identities.grant_access_to_device(
+  user_identity_id: "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+  device_id: "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8",
+)
 ```
 
 #### Output
@@ -84,7 +99,10 @@ Grants a specified user identity access to a specified device.
 
 ```php
 <?php
-$seam->user_identities->grant_access_to_device();
+$seam->user_identities->grant_access_to_device(
+    user_identity_id: "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+    device_id: "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8"
+);
 ```
 
 #### Output
@@ -101,7 +119,7 @@ Grants a specified user identity access to a specified device.
 #### Code
 
 ```seam_cli
-seam user-identities grant-access-to-device
+seam user-identities grant-access-to-device --user_identity_id "4e9b7099-bcad-4af6-bb78-88b96cc347bd" --device_id "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8"
 ```
 
 #### Output

@@ -17,7 +17,10 @@ Removes entrances from a specific space.
 #### Code
 
 ```javascript
-await seam.spaces.removeAcsEntrances();
+await seam.spaces.removeAcsEntrances({
+  space_id: "674e511a-06c6-4734-b4ce-af467496d5fe",
+  acs_entrance_ids: ["fd859a36-199b-4c2f-894a-24d52621f6a4"],
+});
 ```
 
 #### Output
@@ -35,7 +38,15 @@ Removes entrances from a specific space.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/remove_acs_entrances" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "space_id": "674e511a-06c6-4734-b4ce-af467496d5fe",
+  "acs_entrance_ids": [
+    "fd859a36-199b-4c2f-894a-24d52621f6a4"
+  ]
+}
+EOF
 ```
 
 #### Output
@@ -52,7 +63,10 @@ Removes entrances from a specific space.
 #### Code
 
 ```python
-seam.spaces.remove_acs_entrances()
+seam.spaces.remove_acs_entrances(
+    space_id="674e511a-06c6-4734-b4ce-af467496d5fe",
+    acs_entrance_ids=["fd859a36-199b-4c2f-894a-24d52621f6a4"],
+)
 ```
 
 #### Output
@@ -69,7 +83,10 @@ Removes entrances from a specific space.
 #### Code
 
 ```ruby
-seam.spaces.remove_acs_entrances()
+seam.spaces.remove_acs_entrances(
+  space_id: "674e511a-06c6-4734-b4ce-af467496d5fe",
+  acs_entrance_ids: ["fd859a36-199b-4c2f-894a-24d52621f6a4"],
+)
 ```
 
 #### Output
@@ -87,7 +104,10 @@ Removes entrances from a specific space.
 
 ```php
 <?php
-$seam->spaces->remove_acs_entrances();
+$seam->spaces->remove_acs_entrances(
+    space_id: "674e511a-06c6-4734-b4ce-af467496d5fe",
+    acs_entrance_ids: ["fd859a36-199b-4c2f-894a-24d52621f6a4"]
+);
 ```
 
 #### Output
@@ -104,7 +124,7 @@ Removes entrances from a specific space.
 #### Code
 
 ```seam_cli
-seam spaces remove-acs-entrances
+seam spaces remove-acs-entrances --space_id "674e511a-06c6-4734-b4ce-af467496d5fe" --acs_entrance_ids ["fd859a36-199b-4c2f-894a-24d52621f6a4"]
 ```
 
 #### Output

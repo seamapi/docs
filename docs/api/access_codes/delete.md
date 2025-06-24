@@ -14,7 +14,10 @@ Deletes an access code.
 #### Code
 
 ```javascript
-await seam.accessCodes.delete();
+await seam.accessCodes.delete({
+  device_id: "d33f4cc7-2b6a-41a4-ad30-c372ee493589",
+  access_code_id: "275b40a3-6b0b-4c51-8fd2-aafd3de2195c",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Deletes an access code.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "d33f4cc7-2b6a-41a4-ad30-c372ee493589",
+  "access_code_id": "275b40a3-6b0b-4c51-8fd2-aafd3de2195c"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,10 @@ Deletes an access code.
 #### Code
 
 ```python
-seam.access_codes.delete()
+seam.access_codes.delete(
+    device_id="d33f4cc7-2b6a-41a4-ad30-c372ee493589",
+    access_code_id="275b40a3-6b0b-4c51-8fd2-aafd3de2195c",
+)
 ```
 
 #### Output
@@ -66,7 +78,10 @@ Deletes an access code.
 #### Code
 
 ```ruby
-seam.access_codes.delete()
+seam.access_codes.delete(
+  device_id: "d33f4cc7-2b6a-41a4-ad30-c372ee493589",
+  access_code_id: "275b40a3-6b0b-4c51-8fd2-aafd3de2195c",
+)
 ```
 
 #### Output
@@ -84,7 +99,10 @@ Deletes an access code.
 
 ```php
 <?php
-$seam->access_codes->delete();
+$seam->access_codes->delete(
+    device_id: "d33f4cc7-2b6a-41a4-ad30-c372ee493589",
+    access_code_id: "275b40a3-6b0b-4c51-8fd2-aafd3de2195c"
+);
 ```
 
 #### Output
@@ -101,7 +119,7 @@ Deletes an access code.
 #### Code
 
 ```seam_cli
-seam access-codes delete
+seam access-codes delete --device_id "d33f4cc7-2b6a-41a4-ad30-c372ee493589" --access_code_id "275b40a3-6b0b-4c51-8fd2-aafd3de2195c"
 ```
 
 #### Output

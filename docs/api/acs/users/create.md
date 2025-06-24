@@ -14,7 +14,18 @@ Creates a new access system user.
 #### Code
 
 ```javascript
-await seam.acs.users.create();
+await seam.acs.users.create({
+  full_name: "Jane Doe",
+  acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  acs_access_group_ids: ["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+  user_identity_id: "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
+  email_address: "jane@example.com",
+  phone_number: "+15551234567",
+});
 ```
 
 #### Output
@@ -59,7 +70,23 @@ Creates a new access system user.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "full_name": "Jane Doe",
+  "acs_system_id": "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  "acs_access_group_ids": [
+    "bab9962b-708b-4db7-98d5-b242a28c12e9"
+  ],
+  "user_identity_id": "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  "access_schedule": {
+    "starts_at": "2025-06-10T15:00:00.000Z",
+    "ends_at": "2025-06-12T11:00:00.000Z"
+  },
+  "email_address": "jane@example.com",
+  "phone_number": "+15551234567"
+}
+EOF
 ```
 
 #### Output
@@ -105,7 +132,18 @@ Creates a new access system user.
 #### Code
 
 ```python
-seam.acs.users.create()
+seam.acs.users.create(
+    full_name="Jane Doe",
+    acs_system_id="dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+    acs_access_group_ids=["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+    user_identity_id="3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+    access_schedule={
+        "starts_at": "2025-06-10T15:00:00.000Z",
+        "ends_at": "2025-06-12T11:00:00.000Z",
+    },
+    email_address="jane@example.com",
+    phone_number="+15551234567",
+)
 ```
 
 #### Output
@@ -149,7 +187,18 @@ Creates a new access system user.
 #### Code
 
 ```ruby
-seam.acs.users.create()
+seam.acs.users.create(
+  full_name: "Jane Doe",
+  acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  acs_access_group_ids: ["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+  user_identity_id: "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
+  email_address: "jane@example.com",
+  phone_number: "+15551234567",
+)
 ```
 
 #### Output
@@ -194,7 +243,18 @@ Creates a new access system user.
 
 ```php
 <?php
-$seam->acs->users->create();
+$seam->acs->users->create(
+    full_name: "Jane Doe",
+    acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+    acs_access_group_ids: ["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+    user_identity_id: "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+    access_schedule: [
+        "starts_at" => "2025-06-10T15:00:00.000Z",
+        "ends_at" => "2025-06-12T11:00:00.000Z",
+    ],
+    email_address: "jane@example.com",
+    phone_number: "+15551234567"
+);
 ```
 
 #### Output
@@ -239,7 +299,7 @@ Creates a new access system user.
 #### Code
 
 ```seam_cli
-seam acs users create
+seam acs users create --full_name "Jane Doe" --acs_system_id "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46" --acs_access_group_ids ["bab9962b-708b-4db7-98d5-b242a28c12e9"] --user_identity_id "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6" --access_schedule {"starts_at":"2025-06-10T15:00:00.000Z","ends_at":"2025-06-12T11:00:00.000Z"} --email_address "jane@example.com" --phone_number "+15551234567"
 ```
 
 #### Output

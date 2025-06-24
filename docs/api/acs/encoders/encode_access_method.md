@@ -14,7 +14,10 @@ Encodes an existing access method onto a plastic card placed on the specified en
 #### Code
 
 ```javascript
-await seam.acs.encoders.encodeAccessMethod();
+await seam.acs.encoders.encodeAccessMethod({
+  acs_encoder_id: "c49a6fb0-d5a0-4b1e-9553-f32ac550a3c5",
+  access_method_id: "f608c1c7-95df-433d-a449-10becae931be",
+});
 ```
 
 #### Output
@@ -47,7 +50,13 @@ Encodes an existing access method onto a plastic card placed on the specified en
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/encode_access_method" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_encoder_id": "c49a6fb0-d5a0-4b1e-9553-f32ac550a3c5",
+  "access_method_id": "f608c1c7-95df-433d-a449-10becae931be"
+}
+EOF
 ```
 
 #### Output
@@ -81,7 +90,10 @@ Encodes an existing access method onto a plastic card placed on the specified en
 #### Code
 
 ```python
-seam.acs.encoders.encode_access_method()
+seam.acs.encoders.encode_access_method(
+    acs_encoder_id="c49a6fb0-d5a0-4b1e-9553-f32ac550a3c5",
+    access_method_id="f608c1c7-95df-433d-a449-10becae931be",
+)
 ```
 
 #### Output
@@ -113,7 +125,10 @@ Encodes an existing access method onto a plastic card placed on the specified en
 #### Code
 
 ```ruby
-seam.acs.encoders.encode_access_method()
+seam.acs.encoders.encode_access_method(
+  acs_encoder_id: "c49a6fb0-d5a0-4b1e-9553-f32ac550a3c5",
+  access_method_id: "f608c1c7-95df-433d-a449-10becae931be",
+)
 ```
 
 #### Output
@@ -146,7 +161,10 @@ Encodes an existing access method onto a plastic card placed on the specified en
 
 ```php
 <?php
-$seam->acs->encoders->encode_access_method();
+$seam->acs->encoders->encode_access_method(
+    acs_encoder_id: "c49a6fb0-d5a0-4b1e-9553-f32ac550a3c5",
+    access_method_id: "f608c1c7-95df-433d-a449-10becae931be"
+);
 ```
 
 #### Output
@@ -179,7 +197,7 @@ Encodes an existing access method onto a plastic card placed on the specified en
 #### Code
 
 ```seam_cli
-seam acs encoders encode-access-method
+seam acs encoders encode-access-method --acs_encoder_id "c49a6fb0-d5a0-4b1e-9553-f32ac550a3c5" --access_method_id "f608c1c7-95df-433d-a449-10becae931be"
 ```
 
 #### Output

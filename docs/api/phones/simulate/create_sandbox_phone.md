@@ -14,7 +14,24 @@ Creates a new simulated phone in a sandbox workspace.
 #### Code
 
 ```javascript
-await seam.phones.simulate.createSandboxPhone();
+await seam.phones.simulate.createSandboxPhone({
+  custom_sdk_installation_id: "visionline_sdk",
+  user_identity_id: "799f9914-f2c2-4087-ab34-f1ffb44d6a0b",
+  phone_metadata: {
+    operating_system: "android",
+    os_version: 10,
+    device_manufacturer: "Samsung",
+    device_model: "Samsung Galaxy S10",
+  },
+  assa_abloy_metadata: {
+    ble_capability: "true,",
+    hce_capability: "false,",
+    nfc_capability: "false,",
+    application_version: "1.0.0",
+    seos_applet_version: "1.0.0",
+    seos_tsm_endpoint_id: 1,
+  },
+});
 ```
 
 #### Output
@@ -53,7 +70,27 @@ Creates a new simulated phone in a sandbox workspace.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/simulate/create_sandbox_phone" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "custom_sdk_installation_id": "visionline_sdk",
+  "user_identity_id": "799f9914-f2c2-4087-ab34-f1ffb44d6a0b",
+  "phone_metadata": {
+    "operating_system": "android",
+    "os_version": 10,
+    "device_manufacturer": "Samsung",
+    "device_model": "Samsung Galaxy S10"
+  },
+  "assa_abloy_metadata": {
+    "ble_capability": "true,",
+    "hce_capability": "false,",
+    "nfc_capability": "false,",
+    "application_version": "1.0.0",
+    "seos_applet_version": "1.0.0",
+    "seos_tsm_endpoint_id": 1
+  }
+}
+EOF
 ```
 
 #### Output
@@ -93,7 +130,24 @@ Creates a new simulated phone in a sandbox workspace.
 #### Code
 
 ```python
-seam.phones.simulate.create_sandbox_phone()
+seam.phones.simulate.create_sandbox_phone(
+    custom_sdk_installation_id="visionline_sdk",
+    user_identity_id="799f9914-f2c2-4087-ab34-f1ffb44d6a0b",
+    phone_metadata={
+        "operating_system": "android",
+        "os_version": 10,
+        "device_manufacturer": "Samsung",
+        "device_model": "Samsung Galaxy S10",
+    },
+    assa_abloy_metadata={
+        "ble_capability": "true,",
+        "hce_capability": "false,",
+        "nfc_capability": "false,",
+        "application_version": "1.0.0",
+        "seos_applet_version": "1.0.0",
+        "seos_tsm_endpoint_id": 1,
+    },
+)
 ```
 
 #### Output
@@ -131,7 +185,24 @@ Creates a new simulated phone in a sandbox workspace.
 #### Code
 
 ```ruby
-seam.phones.simulate.create_sandbox_phone()
+seam.phones.simulate.create_sandbox_phone(
+  custom_sdk_installation_id: "visionline_sdk",
+  user_identity_id: "799f9914-f2c2-4087-ab34-f1ffb44d6a0b",
+  phone_metadata: {
+    operating_system: "android",
+    os_version: 10,
+    device_manufacturer: "Samsung",
+    device_model: "Samsung Galaxy S10",
+  },
+  assa_abloy_metadata: {
+    ble_capability: "true,",
+    hce_capability: "false,",
+    nfc_capability: "false,",
+    application_version: "1.0.0",
+    seos_applet_version: "1.0.0",
+    seos_tsm_endpoint_id: 1,
+  },
+)
 ```
 
 #### Output
@@ -167,7 +238,24 @@ Creates a new simulated phone in a sandbox workspace.
 
 ```php
 <?php
-$seam->phones->simulate->create_sandbox_phone();
+$seam->phones->simulate->create_sandbox_phone(
+    custom_sdk_installation_id: "visionline_sdk",
+    user_identity_id: "799f9914-f2c2-4087-ab34-f1ffb44d6a0b",
+    phone_metadata: [
+        "operating_system" => "android",
+        "os_version" => 10,
+        "device_manufacturer" => "Samsung",
+        "device_model" => "Samsung Galaxy S10",
+    ],
+    assa_abloy_metadata: [
+        "ble_capability" => "true,",
+        "hce_capability" => "false,",
+        "nfc_capability" => "false,",
+        "application_version" => "1.0.0",
+        "seos_applet_version" => "1.0.0",
+        "seos_tsm_endpoint_id" => 1,
+    ]
+);
 ```
 
 #### Output
@@ -206,7 +294,7 @@ Creates a new simulated phone in a sandbox workspace.
 #### Code
 
 ```seam_cli
-seam phones simulate create-sandbox-phone
+seam phones simulate create-sandbox-phone --custom_sdk_installation_id "visionline_sdk" --user_identity_id "799f9914-f2c2-4087-ab34-f1ffb44d6a0b" --phone_metadata {"operating_system":"android","os_version":10,"device_manufacturer":"Samsung","device_model":"Samsung Galaxy S10"} --assa_abloy_metadata {"ble_capability":"true,","hce_capability":"false,","nfc_capability":"false,","application_version":"1.0.0","seos_applet_version":"1.0.0","seos_tsm_endpoint_id":1}
 ```
 
 #### Output

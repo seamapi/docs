@@ -14,7 +14,9 @@ Deletes a specified credential.
 #### Code
 
 ```javascript
-await seam.acs.credentials.delete();
+await seam.acs.credentials.delete({
+  acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab",
+});
 ```
 
 #### Output
@@ -32,7 +34,12 @@ Deletes a specified credential.
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/delete" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_credential_id": "33bbceea-221e-48bd-8d38-aa72f88a1cab"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +56,7 @@ Deletes a specified credential.
 #### Code
 
 ```python
-seam.acs.credentials.delete()
+seam.acs.credentials.delete(acs_credential_id="33bbceea-221e-48bd-8d38-aa72f88a1cab")
 ```
 
 #### Output
@@ -66,7 +73,7 @@ Deletes a specified credential.
 #### Code
 
 ```ruby
-seam.acs.credentials.delete()
+seam.acs.credentials.delete(acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab")
 ```
 
 #### Output
@@ -84,7 +91,9 @@ Deletes a specified credential.
 
 ```php
 <?php
-$seam->acs->credentials->delete();
+$seam->acs->credentials->delete(
+    acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab"
+);
 ```
 
 #### Output
@@ -101,7 +110,7 @@ Deletes a specified credential.
 #### Code
 
 ```seam_cli
-seam acs credentials delete
+seam acs credentials delete --acs_credential_id "33bbceea-221e-48bd-8d38-aa72f88a1cab"
 ```
 
 #### Output

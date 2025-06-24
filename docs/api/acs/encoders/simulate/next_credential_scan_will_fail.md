@@ -14,7 +14,10 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```javascript
-await seam.acs.encoders.simulate.nextCredentialScanWillFail();
+await seam.acs.encoders.simulate.nextCredentialScanWillFail({
+  acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
+  error_code: "no_credential_on_encoder",
+});
 ```
 
 #### Output
@@ -32,7 +35,13 @@ Simulates that the next attempt to scan a credential using the specified encoder
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/simulate/next_credential_scan_will_fail" \
-  --header "Authorization: Bearer $SEAM_API_KEY"
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_encoder_id": "182ea706-8e14-4921-8e57-ee18d5a7de31",
+  "error_code": "no_credential_on_encoder"
+}
+EOF
 ```
 
 #### Output
@@ -49,7 +58,10 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```python
-seam.acs.encoders.simulate.next_credential_scan_will_fail()
+seam.acs.encoders.simulate.next_credential_scan_will_fail(
+    acs_encoder_id="182ea706-8e14-4921-8e57-ee18d5a7de31",
+    error_code="no_credential_on_encoder",
+)
 ```
 
 #### Output
@@ -66,7 +78,10 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```ruby
-seam.acs.encoders.simulate.next_credential_scan_will_fail()
+seam.acs.encoders.simulate.next_credential_scan_will_fail(
+  acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
+  error_code: "no_credential_on_encoder",
+)
 ```
 
 #### Output
@@ -84,7 +99,10 @@ Simulates that the next attempt to scan a credential using the specified encoder
 
 ```php
 <?php
-$seam->acs->encoders->simulate->next_credential_scan_will_fail();
+$seam->acs->encoders->simulate->next_credential_scan_will_fail(
+    acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
+    error_code: "no_credential_on_encoder"
+);
 ```
 
 #### Output
@@ -101,7 +119,7 @@ Simulates that the next attempt to scan a credential using the specified encoder
 #### Code
 
 ```seam_cli
-seam acs encoders simulate next-credential-scan-will-fail
+seam acs encoders simulate next-credential-scan-will-fail --acs_encoder_id "182ea706-8e14-4921-8e57-ee18d5a7de31" --error_code "no_credential_on_encoder"
 ```
 
 #### Output
