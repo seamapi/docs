@@ -252,8 +252,8 @@ const groupVariants = (
       return !exclude.includes(variantGroupKey)
     })
     .sort((a, b) => {
-      if (a.name == null) return 1
-      if (b.name == null) return -1
+      if (a.variantGroupKey === null || a.name == null) return -1
+      if (a.variantGroupKey === null || b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
 }
@@ -339,8 +339,8 @@ export const groupProperties = (
       return !exclude.includes(propertyGroupKey)
     })
     .sort((a, b) => {
-      if (a.name == null) return 1
-      if (b.name == null) return -1
+      if (a.name == null) return -1
+      if (b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
 }
