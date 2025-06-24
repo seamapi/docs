@@ -300,7 +300,6 @@ Array of [acs\_entrances](./)
 
 ## Examples
 
----
 
 ### List entrances for a credential
 
@@ -539,7 +538,9 @@ seam acs entrances list --acs_credential_id "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List entrances for a space
 
@@ -776,7 +777,9 @@ seam acs entrances list --space_id "3bd2edc0-aae7-440c-98ec-a5ab03664833"
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List entrances for an access grant
 
@@ -1015,7 +1018,9 @@ seam acs entrances list --access_grant_id "6596ea31-f747-4253-950e-dba0de24fedb"
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List entrances for an access method
 

@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Add a user identity to an access group
 

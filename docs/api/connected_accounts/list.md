@@ -293,7 +293,6 @@ Array of [connected\_accounts](./)
 
 ## Examples
 
----
 
 ### List connected accounts for a customer
 
@@ -534,7 +533,9 @@ seam connected-accounts list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List connected accounts with specific custom metadata
 

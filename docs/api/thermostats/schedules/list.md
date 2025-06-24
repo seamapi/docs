@@ -247,7 +247,6 @@ Array of [thermostat\_schedules](./)
 
 ## Examples
 
----
 
 ### List thermostat schedules by user identifier key
 

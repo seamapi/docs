@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Revoke access to all entrances for an access system user
 

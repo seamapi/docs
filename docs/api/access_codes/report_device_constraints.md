@@ -165,7 +165,6 @@ void
 
 ## Examples
 
----
 
 ### Report device constraints (minimum and maximum code lengths)
 

@@ -373,7 +373,6 @@ Array of [acs\_users](./)
 
 ## Examples
 
----
 
 ### List access system users for a user identity phone number
 
@@ -667,7 +666,9 @@ seam acs users list --user_identity_phone_number "+1555551000"
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List access system users for a user identity email address
 
@@ -961,7 +962,9 @@ seam acs users list --user_identity_email_address "jane@example.com"
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List users for an access system
 
@@ -1257,7 +1260,9 @@ seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2"
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List access system users, filtered by a string
 
@@ -1551,7 +1556,9 @@ seam acs users list --search "Jane Doe"
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List access system users, limited to ten per page
 
@@ -1852,7 +1859,9 @@ seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2" --lim
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### List access system users created before a date
 

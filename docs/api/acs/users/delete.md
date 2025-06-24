@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Delete an access system user
 

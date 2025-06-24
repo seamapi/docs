@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Assign a credential to an access system user
 

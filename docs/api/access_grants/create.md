@@ -493,7 +493,6 @@ ID of user identity for whom access is being granted.
 
 ## Examples
 
----
 
 ### Create an access grant using entrances and devices
 
@@ -650,7 +649,9 @@ seam access-grants create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create an access grant including a new user identity
 

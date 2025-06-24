@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Grant an access system user access to an entrance
 

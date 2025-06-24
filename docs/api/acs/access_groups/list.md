@@ -278,7 +278,6 @@ Array of [acs\_access\_groups](./)
 
 ## Examples
 
----
 
 ### List access groups for an access system user
 

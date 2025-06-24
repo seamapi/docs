@@ -297,7 +297,6 @@ Array of [phones](./)
 
 ## Examples
 
----
 
 ### List phones for a credential
 

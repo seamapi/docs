@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Remove an access system user from an access group
 

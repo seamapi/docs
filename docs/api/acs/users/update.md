@@ -209,7 +209,6 @@ void
 
 ## Examples
 
----
 
 ### Update an access system user
 

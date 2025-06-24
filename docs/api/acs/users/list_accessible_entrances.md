@@ -293,7 +293,6 @@ Array of [acs\_entrances](./)
 
 ## Examples
 
----
 
 ### List accessible entrances for an access system user
 

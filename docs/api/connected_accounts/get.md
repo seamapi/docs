@@ -261,7 +261,6 @@ Email address associated with the connected account that you want to get.
 
 ## Examples
 
----
 
 ### Get a connected account for an email address
 

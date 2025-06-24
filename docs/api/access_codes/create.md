@@ -354,7 +354,6 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 ## Examples
 
----
 
 ### Create a time-bound online access code
 
@@ -601,7 +600,9 @@ seam access-codes create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create a time-bound offline access code
 
@@ -848,7 +849,9 @@ seam access-codes create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create a one-time-use offline access code
 
@@ -1095,7 +1098,9 @@ seam access-codes create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create a time-bound online access code with a backup access code pool
 

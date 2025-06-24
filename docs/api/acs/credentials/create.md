@@ -477,7 +477,6 @@ Enum values:
 
 ## Examples
 
----
 
 ### Create a PIN code credential for an access system user
 
@@ -707,7 +706,9 @@ seam acs credentials create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create a card credential for a user identity
 
@@ -931,7 +932,9 @@ seam acs credentials create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create a card credential for an access system user
 
@@ -1155,7 +1158,9 @@ seam acs credentials create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create a mobile key credential for a user identity
 
@@ -1379,7 +1384,9 @@ seam acs credentials create
 {% endtab %}
 
 {% endtabs %}
+
 ---
+
 
 ### Create a mobile key credential for an access system user
 

@@ -226,7 +226,6 @@ ID of the user identity that you want to get.
 
 ## Examples
 
----
 
 ### Get a user identity by user identity key
 

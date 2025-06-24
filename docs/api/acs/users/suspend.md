@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Suspend a user identity
 

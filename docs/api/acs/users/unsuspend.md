@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Unsuspend an access system user
 

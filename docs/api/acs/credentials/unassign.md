@@ -156,7 +156,6 @@ void
 
 ## Examples
 
----
 
 ### Unassign a credential from an access system user
 

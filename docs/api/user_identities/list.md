@@ -226,7 +226,6 @@ Array of [user\_identitys](./)
 
 ## Examples
 
----
 
 ### List user identities for a credential manager
 
