@@ -196,8 +196,7 @@ export const setApiRouteLayoutContext = (
       ...(legacyPropertyGroups == null ? {} : { legacyPropertyGroups }),
       errorGroups,
       warningGroups,
-      hidePreamble:
-        groupOptions.include != null || groupOptions.exclude != null,
+      hidePreamble: route.path !== resource.routePath,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
       resourceSamples: resource.resourceSamples
         .filter(({ title }) => {
