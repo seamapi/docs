@@ -234,6 +234,7 @@ ID of the thermostat device for which you want to set the HVAC mode.
 ## Response
 
 [action\_attempt](./)
+
 **`SET_HVAC_MODE`**
 {% tabs %}
 {% tab title="JSON" %}
@@ -246,7 +247,13 @@ ID of the thermostat device for which you want to set the HVAC mode.
 {% tabs %}
 {% tab title="JSON" %}
 ```json
-[object Object]
+{
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
 ```
 {% endtab %}
 {% endtabs %}

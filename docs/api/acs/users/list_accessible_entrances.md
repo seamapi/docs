@@ -288,6 +288,7 @@ ID of the user identity for whom you want to list accessible entrances. You can 
 
 Array of [acs\_entrances](./)
 
+
 ---
 
 ## Examples

@@ -149,3 +149,4 @@ ID of the thermostat schedule that you want to delete.
 ## Response
 
 void
+

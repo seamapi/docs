@@ -169,6 +169,7 @@ ID of the user identity that you want to remove from an access group. You can on
 
 void
 
+
 ---
 
 ## Examples

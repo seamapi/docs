@@ -30,3 +30,4 @@ ID of the user identity for which you want to retrieve enrollment automations.
 ## Response
 
 Array of [enrollment\_automations](./)
+

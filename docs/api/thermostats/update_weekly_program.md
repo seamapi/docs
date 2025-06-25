@@ -268,6 +268,7 @@ ID of the thermostat daily program to run on Wednesdays.
 ## Response
 
 [action\_attempt](./)
+
 **`PUSH_THERMOSTAT_PROGRAMS`**
 {% tabs %}
 {% tab title="JSON" %}
@@ -280,7 +281,13 @@ ID of the thermostat daily program to run on Wednesdays.
 {% tabs %}
 {% tab title="JSON" %}
 ```json
-[object Object]
+{
+  "action_attempt_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
 ```
 {% endtab %}
 {% endtabs %}

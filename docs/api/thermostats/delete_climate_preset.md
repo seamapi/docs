@@ -161,3 +161,4 @@ ID of the thermostat device for which you want to delete a climate preset.
 ## Response
 
 void
+

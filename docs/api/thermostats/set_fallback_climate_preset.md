@@ -160,3 +160,4 @@ ID of the thermostat device for which you want to set the fallback climate prese
 ## Response
 
 void
+

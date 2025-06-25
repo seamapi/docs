@@ -184,10 +184,17 @@ ID of the space that you want to get.
 ## Response
 
 [space](./)
+
 {% tabs %}
 {% tab title="JSON" %}
 ```json
-[object Object]
+{
+  "created_at": "2025-06-16T16:54:17.946600Z",
+  "display_name": "My Space",
+  "name": "My Space",
+  "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
+  "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+}
 ```
 {% endtab %}
 {% endtabs %}

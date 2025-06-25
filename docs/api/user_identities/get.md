@@ -220,10 +220,22 @@ ID of the user identity that you want to get.
 ## Response
 
 [user\_identity](./)
+
 {% tabs %}
 {% tab title="JSON" %}
 ```json
-[object Object]
+{
+  "created_at": "2025-06-16T16:54:17.946546Z",
+  "display_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "errors": [],
+  "full_name": "Jane Doe",
+  "phone_number": "+1555551002",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "user_identity_key": "jane_doe",
+  "warnings": [],
+  "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+}
 ```
 {% endtab %}
 {% endtabs %}
