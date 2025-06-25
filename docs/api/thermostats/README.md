@@ -3550,63 +3550,15 @@ Metadata for a Wyze device.
 
 ## Errors
 
-**`account_disconnected`**
-
-Indicates that the account is disconnected.
-
----
-
 **`auxiliary_heat_running`**
 
 Indicates that the auxiliary heat is running.
 
 ---
 
-**`bridge_disconnected`**
+**`ttlock_lock_not_paired_to_gateway`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
-
----
-
-**`device_disconnected`**
-
-Indicates that the device is disconnected.
-
----
-
-**`device_offline`**
-
-Indicates that the device is offline.
-
----
-
-**`device_removed`**
-
-Indicates that the device has been removed.
-
----
-
-**`hub_disconnected`**
-
-Indicates that the hub is disconnected.
-
----
-
-**`invalid_credentials`**
-
-Indicates that the credentials provided were invalid.
-
----
-
-**`lockly_missing_wifi_bridge`**
-
-Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
-
----
-
-**`missing_device_credentials`**
-
-Indicates that device credentials are missing.
+Indicates that the lock is not paired with a gateway.
 
 ---
 
@@ -3616,9 +3568,57 @@ Indicates that a subscription is required to connect.
 
 ---
 
-**`ttlock_lock_not_paired_to_gateway`**
+**`missing_device_credentials`**
 
-Indicates that the lock is not paired with a gateway.
+Indicates that device credentials are missing.
+
+---
+
+**`lockly_missing_wifi_bridge`**
+
+Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+---
+
+**`hub_disconnected`**
+
+Indicates that the hub is disconnected.
+
+---
+
+**`device_removed`**
+
+Indicates that the device has been removed.
+
+---
+
+**`device_offline`**
+
+Indicates that the device is offline.
+
+---
+
+**`device_disconnected`**
+
+Indicates that the device is disconnected.
+
+---
+
+**`account_disconnected`**
+
+Indicates that the account is disconnected.
+
+---
+
+**`bridge_disconnected`**
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+**`invalid_credentials`**
+
+Indicates that the credentials provided were invalid.
 
 ---
 

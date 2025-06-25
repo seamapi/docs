@@ -2398,45 +2398,123 @@ Unable to confirm that the access code is set on Kwikset device.
 
 ## Errors
 
-**`account_disconnected`**
+**`wyze_potential_duplicate_code`**
 
-Indicates that the account is disconnected.
+Potential duplicate access code detected.
 
 ---
 
-**`august_device_programming_delay`**
+**`wyze_duplicate_code_name`**
+
+Duplicate access code name detected.
+
+---
+
+**`smartthings_no_free_slots_available`**
+
+No free slots available on the device.
+
+---
+
+**`smartthings_failed_to_set_after_multiple_retries`**
+
+Failed to set code after multiple retries.
+
+---
+
+**`smartthings_failed_to_set_access_code`**
+
+Failed to set code on SmartThings device.
+
+---
+
+**`salto_ks_user_not_subscribed`**
+
+Salto site user is not subscribed.
+
+---
+
+**`no_space_for_access_code_on_device`**
+
+No space for access code on device.
+
+---
+
+**`kwikset_unable_to_confirm_deletion`**
+
+Unable to confirm the deletion of the access code on Kwikset device.
+
+---
+
+**`kwikset_unable_to_confirm_code`**
+
+Unable to confirm that the access code is set on Kwikset device.
+
+---
+
+**`igloohome_offline_access_code_no_variance_available`**
+
+Lock has reached maximum amount of codes.
+
+---
+
+**`igloohome_bridge_too_many_pending_jobs`**
+
+Igloohome bridge has too many pending jobs in the queue.
+
+---
+
+**`igloohome_bridge_offline`**
+
+Igloohome bridge is offline.
+
+---
+
+**`hubitat_no_free_positions_available`**
+
+No free positions available on the device.
+
+---
+
+**`hubitat_device_programming_delay`**
 
 Access code has not yet been fully moved to the device.
 
 ---
 
-**`august_device_slots_full`**
+**`failed_to_set_on_device`**
 
-All access code slots on the device are full.
-
----
-
-**`august_lock_invalid_code_length`**
-
-Invalid code length for August lock.
+Failed to set code on device.
 
 ---
 
-**`august_lock_missing_bridge`**
+**`failed_to_remove_from_device`**
 
-Indicates that the lock is not connected to a bridge.
-
----
-
-**`august_lock_missing_keypad`**
-
-August lock is missing a keypad.
+Failed to remove code from device.
 
 ---
 
-**`august_lock_not_authorized`**
+**`duplicate_code_on_device`**
 
-Indicates that the user is not authorized to use the August lock.
+Duplicate access code detected on device.
+
+---
+
+**`duplicate_code_attempt_prevented`**
+
+An attempt to modify this access code was prevented.
+
+---
+
+**`dormakaba_oracode_no_valid_user_level`**
+
+No valid user level for Oracode.
+
+---
+
+**`code_modified_external_to_seam`**
+
+Code was modified or removed externally after Seam successfully set it on the device.
 
 ---
 
@@ -2446,15 +2524,51 @@ August lock is temporarily offline.
 
 ---
 
-**`bridge_disconnected`**
+**`august_lock_missing_keypad`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+August lock is missing a keypad.
 
 ---
 
-**`code_modified_external_to_seam`**
+**`august_lock_invalid_code_length`**
 
-Code was modified or removed externally after Seam successfully set it on the device.
+Invalid code length for August lock.
+
+---
+
+**`august_device_slots_full`**
+
+All access code slots on the device are full.
+
+---
+
+**`august_device_programming_delay`**
+
+Access code has not yet been fully moved to the device.
+
+---
+
+**`account_disconnected`**
+
+Indicates that the account is disconnected.
+
+---
+
+**`august_lock_missing_bridge`**
+
+Indicates that the lock is not connected to a bridge.
+
+---
+
+**`august_lock_not_authorized`**
+
+Indicates that the user is not authorized to use the August lock.
+
+---
+
+**`bridge_disconnected`**
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -2476,39 +2590,9 @@ Indicates that the device has been removed.
 
 ---
 
-**`dormakaba_oracode_no_valid_user_level`**
-
-No valid user level for Oracode.
-
----
-
-**`duplicate_code_attempt_prevented`**
-
-An attempt to modify this access code was prevented.
-
----
-
-**`duplicate_code_on_device`**
-
-Duplicate access code detected on device.
-
----
-
 **`empty_backup_access_code_pool`**
 
 Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
-
----
-
-**`failed_to_remove_from_device`**
-
-Failed to remove code from device.
-
----
-
-**`failed_to_set_on_device`**
-
-Failed to set code on device.
 
 ---
 
@@ -2518,51 +2602,9 @@ Indicates that the hub is disconnected.
 
 ---
 
-**`hubitat_device_programming_delay`**
-
-Access code has not yet been fully moved to the device.
-
----
-
-**`hubitat_no_free_positions_available`**
-
-No free positions available on the device.
-
----
-
-**`igloohome_bridge_offline`**
-
-Igloohome bridge is offline.
-
----
-
-**`igloohome_bridge_too_many_pending_jobs`**
-
-Igloohome bridge has too many pending jobs in the queue.
-
----
-
-**`igloohome_offline_access_code_no_variance_available`**
-
-Lock has reached maximum amount of codes.
-
----
-
 **`invalid_credentials`**
 
 Indicates that the credentials provided were invalid.
-
----
-
-**`kwikset_unable_to_confirm_code`**
-
-Unable to confirm that the access code is set on Kwikset device.
-
----
-
-**`kwikset_unable_to_confirm_deletion`**
-
-Unable to confirm the deletion of the access code on Kwikset device.
 
 ---
 
@@ -2578,39 +2620,9 @@ Indicates that device credentials are missing.
 
 ---
 
-**`no_space_for_access_code_on_device`**
-
-No space for access code on device.
-
----
-
 **`salto_ks_subscription_limit_exceeded`**
 
 Indicates that the Salto site user limit has been reached.
-
----
-
-**`salto_ks_user_not_subscribed`**
-
-Salto site user is not subscribed.
-
----
-
-**`smartthings_failed_to_set_access_code`**
-
-Failed to set code on SmartThings device.
-
----
-
-**`smartthings_failed_to_set_after_multiple_retries`**
-
-Failed to set code after multiple retries.
-
----
-
-**`smartthings_no_free_slots_available`**
-
-No free slots available on the device.
 
 ---
 
@@ -2623,18 +2635,6 @@ Indicates that a subscription is required to connect.
 **`ttlock_lock_not_paired_to_gateway`**
 
 Indicates that the lock is not paired with a gateway.
-
----
-
-**`wyze_duplicate_code_name`**
-
-Duplicate access code name detected.
-
----
-
-**`wyze_potential_duplicate_code`**
-
-Potential duplicate access code detected.
 
 ---
 
