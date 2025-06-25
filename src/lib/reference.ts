@@ -14,10 +14,12 @@ import {
   setSummaryLayoutContext,
 } from './layout/summary.js'
 import { PathMetadataSchema } from './path-metadata.js'
+import { ResourceSampleDefinitionsSchema } from './resource-sample.js'
 
 interface Metadata {
   blueprint: Blueprint
   pathMetadata: unknown
+  resourceSampleDefinitions: unknown
 }
 
 type File = ApiEndpointLayoutContext &
@@ -39,6 +41,13 @@ export const reference = (
     'pathMetadata' in metadata
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
+
+  const resourceSamples =
+    'resourceSampleDefinitions' in metadata
+      ? ResourceSampleDefinitionsSchema.parse(
+          metadata.resourceSampleDefinitions,
+        )
+      : []
 
   const { blueprint } = metadata
 
@@ -93,13 +102,14 @@ export const reference = (
       files[k] = { contents: Buffer.from('\n') }
       const file = files[k] as unknown as File
       file.layout = 'api-endpoint.hbs'
+
       setEndpointLayoutContext(
         file,
         endpoint,
         blueprint.actionAttempts,
         pathMetadata,
+        resourceSamples,
       )
-      endpoints.push(endpoint)
     }
   }
 

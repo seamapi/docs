@@ -10,6 +10,7 @@ import type {
 import { capitalCase } from 'change-case'
 
 import type { PathMetadata } from '../path-metadata.js'
+import type { ResourceSampleDefinitions } from '../resource-sample.js'
 import {
   type ApiRouteResource,
   groupProperties,
@@ -44,6 +45,7 @@ export interface ApiEndpointLayoutContext {
     responseKey: string | null
     responseType: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
+    resourceSample: ResourceSampleDefinitions[number] | null
   }
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
@@ -96,6 +98,7 @@ export function setEndpointLayoutContext(
   endpoint: Endpoint,
   actionAttempts: ActionAttempt[],
   pathMetadata: PathMetadata,
+  resourceSamples: ResourceSampleDefinitions,
 ): void {
   const { parentPath } = endpoint
   if (parentPath == null) {
@@ -141,6 +144,7 @@ export function setEndpointLayoutContext(
     escapedResourceType: null,
     responseKey: null,
     responseType: null,
+    resourceSample: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
@@ -177,6 +181,11 @@ export function setEndpointLayoutContext(
       ),
     }
   }
+
+  file.response.resourceSample = getResourceSample({
+    response: file.response,
+    resourceSamples,
+  })
 
   const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
@@ -226,4 +235,40 @@ const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
     description: sample.description,
     code,
   }
+}
+
+interface GetResourceSampleParams {
+  response: ApiEndpointLayoutContext['response']
+  resourceSamples: ResourceSampleDefinitions
+}
+
+const getResourceSample = (
+  params: GetResourceSampleParams,
+): ResourceSampleDefinitions[number] | null => {
+  const { response, resourceSamples } = params
+
+  if (response.responseType !== 'resource') {
+    return null
+  }
+
+  if (response.actionAttempt != null) {
+    const actionAttemptSample = resourceSamples.find(
+      (resourceSample) =>
+        resourceSample.resource_type === 'action_attempt' &&
+        resourceSample.properties['action_type'] ===
+          response.actionAttempt?.name,
+    )
+
+    return actionAttemptSample ?? null
+  }
+
+  const firstResourceSample = resourceSamples.find(
+    (resourceSample) => resourceSample.resource_type === response.resourceType,
+  )
+
+  if (firstResourceSample != null) {
+    return firstResourceSample
+  }
+
+  return null
 }
