@@ -255,8 +255,7 @@ const getResourceSample = (
     const actionAttemptSample = resourceSamples.find(
       (resourceSample) =>
         resourceSample.resource_type === 'action_attempt' &&
-        resourceSample.properties.action_type ===
-          response.actionAttempt?.name,
+        resourceSample.properties.action_type === response.actionAttempt?.name,
     )
 
     return actionAttemptSample ?? null
