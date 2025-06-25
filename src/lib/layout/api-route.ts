@@ -91,12 +91,12 @@ interface ApiRouteVariant {
 
 type ApiRouteEndpoint = Pick<Endpoint, 'path' | 'description'>
 
-export function setApiRouteLayoutContext(
+export const setApiRouteLayoutContext = (
   file: Partial<ApiRouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
-): void {
+): void => {
   const metadata = pathMetadata[route.path]
   if (metadata == null) {
     throw new Error(`Missing path metadata for ${route.path}`)
@@ -416,10 +416,10 @@ const groupEventsByRoutePath = (
 const getFirstParagraph = (text: string): string =>
   text.split('\n\n').at(0) ?? text
 
-function findEnumProperty(
+const findEnumProperty = (
   properties: Property[],
   name: string,
-): EnumProperty | null {
+): EnumProperty | null => {
   const prop = properties.find(
     (p) => p.name === name && p.format === 'enum',
   ) as EnumProperty | undefined
@@ -536,10 +536,10 @@ const flattenObjectProperties = (
   return results
 }
 
-function addLinkTargetsToProperties(
+const addLinkTargetsToProperties = (
   properties: ApiRouteProperty[] | undefined,
   sections: { hasErrors: boolean; hasWarnings: boolean },
-): void {
+): void => {
   if (properties == null) return
   const linkableProperties: Record<string, string | undefined> = {
     errors: sections.hasErrors ? './#errors' : undefined,
