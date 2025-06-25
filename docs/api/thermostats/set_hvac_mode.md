@@ -235,15 +235,6 @@ ID of the thermostat device for which you want to set the HVAC mode.
 
 [action\_attempt](./)
 
-**`SET_HVAC_MODE`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
 {% tabs %}
 {% tab title="JSON" %}
 ```json

@@ -545,15 +545,6 @@ ID of the encoder to use for the scan.
 
 [action\_attempt](./)
 
-**`SCAN_CREDENTIAL`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
 {% tabs %}
 {% tab title="JSON" %}
 ```json

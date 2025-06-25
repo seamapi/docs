@@ -380,15 +380,6 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 
 [action\_attempt](./)
 
-**`ENCODE_CREDENTIAL`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
 {% tabs %}
 {% tab title="JSON" %}
 ```json

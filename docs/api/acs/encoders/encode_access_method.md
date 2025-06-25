@@ -255,15 +255,6 @@ ID of the `acs_encoder` to use to encode the `access_method`.
 
 [action\_attempt](./)
 
-**`ENCODE_ACCESS_METHOD`**
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-}
-```
-{% endtab %}
-{% endtabs %}
 {% tabs %}
 {% tab title="JSON" %}
 ```json
