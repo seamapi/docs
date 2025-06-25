@@ -75,6 +75,7 @@ export interface ApiRouteResource {
   propertyGroups: ApiRoutePropertyGroup[]
   legacyPropertyGroups?: ApiRoutePropertyGroup[]
   events: ApiRouteEvent[]
+  hidePreamble: boolean
 }
 
 interface ApiRouteVariantGroup {
@@ -190,6 +191,8 @@ export function setApiRouteLayoutContext(
       ...(legacyPropertyGroups == null ? {} : { legacyPropertyGroups }),
       errorGroups,
       warningGroups,
+      hidePreamble:
+        groupOptions.include != null || groupOptions.exclude != null,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
       resourceSamples: resource.resourceSamples.map(mapResourceSample),
     })
