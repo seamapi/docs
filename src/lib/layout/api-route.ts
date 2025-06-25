@@ -341,7 +341,7 @@ export const groupProperties = (
         return a.name.localeCompare(b.name)
       })
 
-  return propertyGroups
+  const groups = propertyGroups
     .reduce<ApiRoutePropertyGroup[]>(
       (groups, propertyGroup) => [
         ...groups,
@@ -374,6 +374,20 @@ export const groupProperties = (
       if (b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
+
+  if (include != null) {
+    const properties = groups
+      .flatMap((g) => g.properties)
+      .sort((a, b) => a.name.localeCompare(b.name))
+    return [
+      {
+        propertyGroupKey: null,
+        properties,
+      },
+    ]
+  }
+
+  return groups
 }
 
 const groupEventsByRoutePath = (
