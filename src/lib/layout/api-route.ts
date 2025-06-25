@@ -75,6 +75,7 @@ export interface ApiRouteResource {
   propertyGroups: ApiRoutePropertyGroup[]
   legacyPropertyGroups?: ApiRoutePropertyGroup[]
   events: ApiRouteEvent[]
+  hidePreamble: boolean
 }
 
 interface ApiRouteVariantGroup {
@@ -86,16 +87,17 @@ interface ApiRouteVariantGroup {
 interface ApiRouteVariant {
   name: string
   description: string
+  parentResouceType: string | null
 }
 
 type ApiRouteEndpoint = Pick<Endpoint, 'path' | 'description'>
 
-export function setApiRouteLayoutContext(
+export const setApiRouteLayoutContext = (
   file: Partial<ApiRouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
-): void {
+): void => {
   const metadata = pathMetadata[route.path]
   if (metadata == null) {
     throw new Error(`Missing path metadata for ${route.path}`)
@@ -146,9 +148,13 @@ export function setApiRouteLayoutContext(
     const warningsProp = resource.properties.find((p) => p.name === 'warnings')
     const errorsProp = resource.properties.find((p) => p.name === 'errors')
     const warningGroups =
-      warningsProp != null ? groupVariants(warningsProp, groupOptions) : []
+      warningsProp != null
+        ? groupVariants(warningsProp, groupOptions, resourceType, resourceTypes)
+        : []
     const errorGroups =
-      errorsProp != null ? groupVariants(errorsProp, groupOptions) : []
+      errorsProp != null
+        ? groupVariants(errorsProp, groupOptions, resourceType, resourceTypes)
+        : []
 
     const allProperties = resource.properties.filter(
       ({ isUndocumented }) => !isUndocumented,
@@ -190,8 +196,23 @@ export function setApiRouteLayoutContext(
       ...(legacyPropertyGroups == null ? {} : { legacyPropertyGroups }),
       errorGroups,
       warningGroups,
+      hidePreamble: route.path !== resource.routePath,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
-      resourceSamples: resource.resourceSamples.map(mapResourceSample),
+      resourceSamples: resource.resourceSamples
+        .filter(({ title }) => {
+          if (groupOptions.include != null) {
+            return groupOptions.include.some((x) =>
+              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+            )
+          }
+          if (groupOptions.exclude != null) {
+            return !groupOptions.exclude.some((x) =>
+              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+            )
+          }
+          return true
+        })
+        .map(mapResourceSample),
     })
   }
 }
@@ -205,6 +226,8 @@ const groupVariants = (
     include?: string[] | undefined
     exclude?: string[] | undefined
   },
+  resourceType: string,
+  resourceTypes: string[],
 ): ApiRouteVariantGroup[] => {
   if (!isDiscriminatedListProperty(property)) {
     return []
@@ -213,17 +236,20 @@ const groupVariants = (
   const getApiRouteVariants = (
     variantGroupKey: string | null,
   ): ApiRouteVariant[] => {
-    return collectResourceVariants({
-      ...property,
-      variants: property.variants.filter(
-        (v) => v.variantGroupKey === variantGroupKey,
-      ),
-    }).sort((a, b) => {
+    return collectResourceVariants(
+      {
+        ...property,
+        variants: property.variants.filter(
+          (v) => v.variantGroupKey === variantGroupKey,
+        ),
+      },
+      resourceTypes,
+    ).sort((a, b) => {
       return a.name.localeCompare(b.name)
     })
   }
 
-  return property.variantGroups
+  const groups = property.variantGroups
     .reduce<ApiRouteVariantGroup[]>(
       (groups, variantGroup) => [
         ...groups,
@@ -256,6 +282,40 @@ const groupVariants = (
       if (a.variantGroupKey === null || b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
+
+  if (include != null) {
+    const variants = groups
+      .flatMap((g) => g.variants)
+      .sort((a, b) => {
+        if (a.parentResouceType === null && b.parentResouceType === null) {
+          return a.name.localeCompare(b.name)
+        }
+        if (a.parentResouceType === resourceType) {
+          return -1
+        }
+        if (b.parentResouceType === resourceType) {
+          return 1
+        }
+        if (a.parentResouceType === null) {
+          return -1
+        }
+        if (b.parentResouceType === null) {
+          return 1
+        }
+        if (a.parentResouceType !== b.parentResouceType) {
+          return a.parentResouceType.localeCompare(b.parentResouceType)
+        }
+        return a.name.localeCompare(b.name)
+      })
+    return [
+      {
+        variantGroupKey: null,
+        variants,
+      },
+    ]
+  }
+
+  return groups
 }
 
 const isDiscriminatedListProperty = (
@@ -270,6 +330,7 @@ const isDiscriminatedListProperty = (
 
 const collectResourceVariants = (
   property: DiscriminatedListProperty,
+  resourceTypes: string[],
 ): ApiRouteVariant[] => {
   return property.variants
     .map((variant) => {
@@ -284,6 +345,10 @@ const collectResourceVariants = (
       return {
         name: discriminator.values[0].name,
         description: variant.description,
+        parentResouceType: getParentVariantResourceType(
+          variant.properties.map(({ name }) => name),
+          resourceTypes,
+        ),
       }
     })
     .filter((variant): variant is ApiRouteVariant => variant !== null)
@@ -310,7 +375,7 @@ export const groupProperties = (
         return a.name.localeCompare(b.name)
       })
 
-  return propertyGroups
+  const groups = propertyGroups
     .reduce<ApiRoutePropertyGroup[]>(
       (groups, propertyGroup) => [
         ...groups,
@@ -343,6 +408,20 @@ export const groupProperties = (
       if (b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
+
+  if (include != null) {
+    const properties = groups
+      .flatMap((g) => g.properties)
+      .sort((a, b) => a.name.localeCompare(b.name))
+    return [
+      {
+        propertyGroupKey: null,
+        properties,
+      },
+    ]
+  }
+
+  return groups
 }
 
 const groupEventsByRoutePath = (
@@ -371,10 +450,10 @@ const groupEventsByRoutePath = (
 const getFirstParagraph = (text: string): string =>
   text.split('\n\n').at(0) ?? text
 
-function findEnumProperty(
+const findEnumProperty = (
   properties: Property[],
   name: string,
-): EnumProperty | null {
+): EnumProperty | null => {
   const prop = properties.find(
     (p) => p.name === name && p.format === 'enum',
   ) as EnumProperty | undefined
@@ -491,10 +570,10 @@ const flattenObjectProperties = (
   return results
 }
 
-function addLinkTargetsToProperties(
+const addLinkTargetsToProperties = (
   properties: ApiRouteProperty[] | undefined,
   sections: { hasErrors: boolean; hasWarnings: boolean },
-): void {
+): void => {
   if (properties == null) return
   const linkableProperties: Record<string, string | undefined> = {
     errors: sections.hasErrors ? './#errors' : undefined,
@@ -526,4 +605,16 @@ const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
     resourceData: jsonSample.resource_data,
     resourceDataSyntax: jsonSample.resource_data_syntax,
   }
+}
+
+const getParentVariantResourceType = (
+  propertyKeys: string[],
+  resourceTypes: string[],
+): string | null => {
+  const keyMap = Object.fromEntries(
+    resourceTypes.map((k) => [`is_${k}_error`, k]),
+  )
+  const key = propertyKeys.find((k) => Object.keys(keyMap).includes(k))
+  if (key == null) return null
+  return keyMap[key] ?? null
 }

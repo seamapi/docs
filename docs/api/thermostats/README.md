@@ -23,154 +23,8 @@ The Seam API represents a thermostat as a `device` resource that includes both b
 
 ---
 
-## The device Object
-
-- [Properties](./#properties)
-- [device.properties](./#device.properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
-- [Endpoints](./#endpoints)
-
-
-Represents a [device](../../core-concepts/devices/README.md) that has been connected to Seam.
 
 {% tabs %}
-{% tab title="Lock Device" %}
-
-A lock device resource.
-
-```json
-{
-  "can_program_online_access_codes": true,
-  "can_remotely_lock": true,
-  "can_remotely_unlock": true,
-  "capabilities_supported": ["access_code", "lock"],
-  "connected_account_id": "8e3a4f1b-2c7d-4a9e-8b5f-3d2c1a0b9e8f",
-  "created_at": "2025-03-27T02:08:16.418Z",
-  "custom_metadata": { "id": "internalId1" },
-  "device_id": "a69569e1-133b-4a9d-b883-018641bfe543",
-  "device_type": "schlage_lock",
-  "display_name": "FRONT DOOR",
-  "errors": [],
-  "is_managed": true,
-  "location": { "location_name": "Front Door", "timezone": "America/New_York" },
-  "nickname": "Front Door",
-  "properties": {
-    "appearance": { "name": "FRONT DOOR" },
-    "battery": { "level": 0.48, "status": "good" },
-    "battery_level": 0.48,
-    "code_constraints": [{ "constraint_type": "name_length", "max_length": 9 }],
-    "has_native_entry_events": true,
-    "image_alt_text": "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
-    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
-    "locked": false,
-    "manufacturer": "schlage",
-    "model": {
-      "accessory_keypad_supported": false,
-      "can_connect_accessory_keypad": false,
-      "display_name": "Encode",
-      "has_built_in_keypad": true,
-      "manufacturer_display_name": "Schlage",
-      "offline_access_codes_supported": false,
-      "online_access_codes_supported": true
-    },
-    "name": "FRONT DOOR",
-    "offline_access_codes_enabled": false,
-    "online": true,
-    "online_access_codes_enabled": true,
-    "schlage_metadata": {
-      "device_id": "a69569e1-133b-4a9d-b883-018641bfe543",
-      "device_name": "FRONT DOOR",
-      "model": "Encode"
-    },
-    "serial_number": "34000000000531e0",
-    "supported_code_lengths": [4, 5, 6, 7, 8],
-    "supports_backup_access_code_pool": true,
-    "supports_offline_access_codes": false
-  },
-  "warnings": [],
-  "workspace_id": "5d7f2e1a-9c8b-4f3e-8d2c-1a0b9e8f7c6d"
-}
-```
-{% endtab %}
-{% tab title="Noise Sensor Device" %}
-
-A noise sensor device resource.
-
-```json
-{
-  "capabilities_supported": ["noise_detection"],
-  "connected_account_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-  "created_at": "2025-05-16T16:54:17.946049Z",
-  "custom_metadata": { "id": "internalId1" },
-  "device_id": "f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f",
-  "device_type": "minut_sensor",
-  "display_name": "Living Room",
-  "errors": [],
-  "is_managed": true,
-  "location": {
-    "location_name": "Jane's Test Home",
-    "timezone": "America/Los_Angeles"
-  },
-  "nickname": "Living Room",
-  "properties": {
-    "appearance": { "name": "Living Room" },
-    "battery": { "level": 1, "status": "full" },
-    "battery_level": 1,
-    "currently_triggering_noise_threshold_ids": [],
-    "image_alt_text": "Minut Sensor",
-    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128",
-    "manufacturer": "minut",
-    "minut_metadata": {
-      "device_id": "770cd3153deca3dee0fe0614",
-      "device_location": { "latitude": 0, "longitude": 0 },
-      "device_name": "Living Room",
-      "home_address": {
-        "city": "San Francisco",
-        "country": "US",
-        "notes": "string",
-        "post_code": "44210",
-        "region": "San Francisco County",
-        "street_name1": "2258 24th Street",
-        "street_name2": ""
-      },
-      "home_id": "2978b6d5dba395ec08300e46",
-      "home_location": { "latitude": 0, "longitude": 0 },
-      "home_name": "Jane's Test Home",
-      "latest_sensor_values": {
-        "accelerometer_z": {
-          "time": "2025-06-16T16:54:17.946049Z",
-          "value": -1.00390625
-        },
-        "humidity": {
-          "time": "2025-06-16T16:54:17.946049Z",
-          "value": 31.110000610351562
-        },
-        "pressure": { "time": "2025-06-16T16:54:17.946049Z", "value": 101923 },
-        "sound": {
-          "time": "2025-06-16T16:54:17.946049Z",
-          "value": 47.7117919921875
-        },
-        "temperature": {
-          "time": "2025-06-16T16:54:17.946049Z",
-          "value": 21.270000457763672
-        }
-      }
-    },
-    "model": {
-      "display_name": "Noise Sensor",
-      "manufacturer_display_name": "Minut"
-    },
-    "name": "Living Room",
-    "noise_level_decibels": 47.7117919921875,
-    "online": true
-  },
-  "warnings": [],
-  "workspace_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
-}
-```
-{% endtab %}
 {% tab title="Thermostat Device" %}
 
 A thermostat device resource.
@@ -1848,6 +1702,85 @@ Unique identifier for the Seam workspace associated with the device.
 
 ---
 
+**`active_thermostat_schedule`** *Object*
+
+Active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+{% hint style="warning" %}
+**Deprecated**. Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.
+{% endhint %}
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>climate_preset_key</code></strong> <i>String</i>
+  
+    Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+  - <strong><code>created_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
+
+  - <strong><code>device_id</code></strong> <i>UUID</i>
+  
+    ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
+
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+  - <strong><code>errors</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Errors associated with the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
+  - <strong><code>is_override_allowed</code></strong> <i>Boolean</i>
+  
+    Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts.
+
+  - <strong><code>max_override_period_minutes</code></strong> <i>Number</i>
+  
+    Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+
+  - <strong><code>name</code></strong> <i>String</i>
+  
+    User-friendly name to identify the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+  - <strong><code>thermostat_schedule_id</code></strong> <i>UUID</i>
+  
+    ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+  - <strong><code>workspace_id</code></strong> <i>UUID</i>
+  
+    ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat schedule.
+
+</details>
+
+---
+
+**`active_thermostat_schedule_id`** *UUID*
+
+ID of the active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+
+
+
+
+---
+
 **`akiles_metadata`** *Object*
 
 Metadata for an Akiles device.
@@ -1966,6 +1899,107 @@ Metadata for an August device.
 
 ---
 
+**`available_climate_presets`** *List* *of Objects*
+
+Available [climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for the thermostat.
+
+
+
+<details>
+  <summary>Child Object Properties</summary>
+
+  <strong><code>can_delete</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
+
+  <strong><code>can_edit</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
+
+  <strong><code>can_program</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
+
+  <strong><code>climate_preset_key</code></strong> <i>String</i>
+  
+    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  <strong><code>display_name</code></strong> <i>String</i>
+  
+    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
+  
+    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>auto</code>
+      - <code>on</code>
+      - <code>circulate</code>
+  </details>
+
+  <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
+  
+    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>off</code>
+      - <code>heat</code>
+      - <code>cool</code>
+      - <code>heat_cool</code>
+  </details>
+
+  <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
+  
+    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+  
+    {% hint style="warning" %}
+    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+    {% endhint %}
+
+  <strong><code>name</code></strong> <i>String</i>
+  
+    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+</details>
+
+---
+
+**`available_fan_mode_settings`** *List* *of Enums*
+
+Fan mode settings that the thermostat supports.
+
+
+
+
+---
+
+**`available_hvac_mode_settings`** *List* *of Enums*
+
+HVAC mode settings that the thermostat supports.
+
+
+
+
+---
+
 **`avigilon_alta_metadata`** *Object*
 
 Metadata for an Avigilon Alta system.
@@ -2044,6 +2078,176 @@ Metadata for a ControlByWeb device.
   - <strong><code>relay_name</code></strong> <i>String</i>
   
     Relay name for a ControlByWeb device.
+
+</details>
+
+---
+
+**`current_climate_setting`** *Object*
+
+Current climate setting.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>can_delete</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
+
+  - <strong><code>can_edit</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
+
+  - <strong><code>can_program</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
+
+  - <strong><code>climate_preset_key</code></strong> <i>String</i>
+  
+    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>display_name</code></strong> <i>String</i>
+  
+    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
+  
+    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>auto</code>
+      - <code>on</code>
+      - <code>circulate</code>
+  </details>
+
+  - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
+  
+    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>off</code>
+      - <code>heat</code>
+      - <code>cool</code>
+      - <code>heat_cool</code>
+  </details>
+
+  - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
+  
+    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+  
+    {% hint style="warning" %}
+    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+    {% endhint %}
+
+  - <strong><code>name</code></strong> <i>String</i>
+  
+    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+</details>
+
+---
+
+**`default_climate_setting`** *Object*
+
+
+{% hint style="warning" %}
+**Deprecated**. use fallback_climate_preset_key to specify a fallback climate preset instead.
+{% endhint %}
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>can_delete</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
+
+  - <strong><code>can_edit</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
+
+  - <strong><code>can_program</code></strong> <i>Boolean</i>
+  
+    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
+
+  - <strong><code>climate_preset_key</code></strong> <i>String</i>
+  
+    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>display_name</code></strong> <i>String</i>
+  
+    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
+  
+    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>auto</code>
+      - <code>on</code>
+      - <code>circulate</code>
+  </details>
+
+  - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
+  
+    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+  - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
+  
+    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>off</code>
+      - <code>heat</code>
+      - <code>cool</code>
+      - <code>heat_cool</code>
+  </details>
+
+  - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
+  
+    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+  
+    {% hint style="warning" %}
+    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+    {% endhint %}
+
+  - <strong><code>name</code></strong> <i>String</i>
+  
+    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
 </details>
 
@@ -2166,6 +2370,33 @@ Metadata for an ecobee device.
     Device ID for an ecobee device.
 
 </details>
+
+---
+
+**`fallback_climate_preset_key`** *String*
+
+Key of the [fallback climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) for the thermostat.
+
+
+
+
+---
+
+**`fan_mode_setting`** *Enum*
+
+
+{% hint style="warning" %}
+**Deprecated**. Use `current_climate_setting.fan_mode_setting` instead.
+{% endhint %}
+
+<details>
+<summary>Enum values</summary>
+
+- <code>auto</code>
+- <code>on</code>
+- <code>circulate</code>
+</details>
+
 
 ---
 
@@ -2319,6 +2550,42 @@ Metadata for an igloohome device.
 
 ---
 
+**`is_cooling`** *Boolean*
+
+Indicates whether the connected HVAC system is currently cooling, as reported by the thermostat.
+
+
+
+
+---
+
+**`is_fan_running`** *Boolean*
+
+Indicates whether the fan in the connected HVAC system is currently running, as reported by the thermostat.
+
+
+
+
+---
+
+**`is_heating`** *Boolean*
+
+Indicates whether the connected HVAC system is currently heating, as reported by the thermostat.
+
+
+
+
+---
+
+**`is_temporary_manual_override_active`** *Boolean*
+
+Indicates whether the current thermostat settings differ from the most recent active program or schedule that Seam activated. For this condition to occur, `current_climate_setting.manual_override_allowed` must also be `true`.
+
+
+
+
+---
+
 **`kwikset_metadata`** *Object*
 
 Metadata for a Kwikset device.
@@ -2366,6 +2633,96 @@ Metadata for a Lockly device.
     Model for a Lockly device.
 
 </details>
+
+---
+
+**`max_cooling_set_point_celsius`** *Number*
+
+Maximum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
+
+
+
+
+---
+
+**`max_cooling_set_point_fahrenheit`** *Number*
+
+Maximum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °F.
+
+
+
+
+---
+
+**`max_heating_set_point_celsius`** *Number*
+
+Maximum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °C.
+
+
+
+
+---
+
+**`max_heating_set_point_fahrenheit`** *Number*
+
+Maximum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °F.
+
+
+
+
+---
+
+**`min_cooling_set_point_celsius`** *Number*
+
+Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
+
+
+
+
+---
+
+**`min_cooling_set_point_fahrenheit`** *Number*
+
+Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °F.
+
+
+
+
+---
+
+**`min_heating_cooling_delta_celsius`** *Number*
+
+Minimum [temperature difference](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
+
+
+
+
+---
+
+**`min_heating_cooling_delta_fahrenheit`** *Number*
+
+Minimum [temperature difference](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
+
+
+
+
+---
+
+**`min_heating_set_point_celsius`** *Number*
+
+Minimum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °C.
+
+
+
+
+---
+
+**`min_heating_set_point_fahrenheit`** *Number*
+
+Minimum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °F.
+
+
+
 
 ---
 
@@ -2617,6 +2974,15 @@ Metadata for a Nuki device.
 **`online`** *Boolean*
 
 Indicates whether the device is online.
+
+
+
+
+---
+
+**`relative_humidity`** *Number*
+
+Reported relative humidity, as a value between 0 and 1, inclusive.
 
 
 
@@ -2889,6 +3255,144 @@ Metadata for a Tedee device.
 
 ---
 
+**`temperature_celsius`** *Number*
+
+Reported temperature in °C.
+
+
+
+
+---
+
+**`temperature_fahrenheit`** *Number*
+
+Reported temperature in °F.
+
+
+
+
+---
+
+**`temperature_threshold`** *Object*
+
+Current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>lower_limit_celsius</code></strong> <i>Number</i>
+  
+    Lower limit in °C within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+
+  - <strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
+  
+    Lower limit in °F within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+
+  - <strong><code>upper_limit_celsius</code></strong> <i>Number</i>
+  
+    Upper limit in °C within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+
+  - <strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
+  
+    Upper limit in °F within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+
+</details>
+
+---
+
+**`thermostat_daily_programs`** *List* *of Objects*
+
+Configured [daily programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md) for the thermostat.
+
+
+
+<details>
+  <summary>Child Object Properties</summary>
+
+  <strong><code>created_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the thermostat daily program was created.
+
+  <strong><code>device_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat device on which the thermostat daily program is configured.
+
+  <strong><code>name</code></strong> <i>String</i>
+  
+    User-friendly name to identify the thermostat daily program.
+
+  <strong><code>periods</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Array of thermostat daily program periods.
+  
+  - <strong><code>climate_preset_key</code></strong> <i>String</i>
+  
+    Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to activate at the `starts_at_time`.
+  
+  
+  - <strong><code>starts_at_time</code></strong> <i>String</i>
+  
+    Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+  
+
+  <strong><code>thermostat_daily_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program.
+
+  <strong><code>workspace_id</code></strong> <i>UUID</i>
+  
+    ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat daily program.
+</details>
+
+---
+
+**`thermostat_weekly_program`** *Object*
+
+Current [weekly program](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md) for the thermostat.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>created_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the thermostat weekly program was created.
+
+  - <strong><code>friday_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program to run on Fridays.
+
+  - <strong><code>monday_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program to run on Mondays.
+
+  - <strong><code>saturday_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program to run on Saturdays.
+
+  - <strong><code>sunday_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program to run on Sundays.
+
+  - <strong><code>thursday_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program to run on Thursdays.
+
+  - <strong><code>tuesday_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program to run on Tuesdays.
+
+  - <strong><code>wednesday_program_id</code></strong> <i>UUID</i>
+  
+    ID of the thermostat daily program to run on Wednesdays.
+
+</details>
+
+---
+
 **`ttlock_metadata`** *Object*
 
 Metadata for a TTLock device.
@@ -3043,659 +3547,62 @@ Metadata for a Wyze device.
 
 ---
 
-## Thermostats
-**`active_thermostat_schedule`** *Object*
-
-Active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
-{% hint style="warning" %}
-**Deprecated**. Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.
-{% endhint %}
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>climate_preset_key</code></strong> <i>String</i>
-  
-    Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
-  - <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
-
-  - <strong><code>device_id</code></strong> <i>UUID</i>
-  
-    ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
-
-  - <strong><code>ends_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
-  - <strong><code>errors</code></strong> <i>List</i> <i>of Objects</i>
-  
-    Errors associated with the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
-- <strong><code>error_code</code></strong> <i>String</i>
-
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-
-- <strong><code>message</code></strong> <i>String</i>
-
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-
-  - <strong><code>is_override_allowed</code></strong> <i>Boolean</i>
-  
-    Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts.
-
-  - <strong><code>max_override_period_minutes</code></strong> <i>Number</i>
-  
-    Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-
-  - <strong><code>name</code></strong> <i>String</i>
-  
-    User-friendly name to identify the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
-  - <strong><code>starts_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
-  - <strong><code>thermostat_schedule_id</code></strong> <i>UUID</i>
-  
-    ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
-  - <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat schedule.
-
-</details>
-
----
-
-**`active_thermostat_schedule_id`** *UUID*
-
-ID of the active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
-
-
-
-
----
-
-**`available_climate_presets`** *List* *of Objects*
-
-Available [climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for the thermostat.
-
-
-
-<details>
-  <summary>Child Object Properties</summary>
-
-  <strong><code>can_delete</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
-
-  <strong><code>can_edit</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
-
-  <strong><code>can_program</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
-
-  <strong><code>climate_preset_key</code></strong> <i>String</i>
-  
-    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-  <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  <strong><code>display_name</code></strong> <i>String</i>
-  
-    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-  <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>auto</code>
-      - <code>on</code>
-      - <code>circulate</code>
-  </details>
-
-  <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>off</code>
-      - <code>heat</code>
-      - <code>cool</code>
-      - <code>heat_cool</code>
-  </details>
-
-  <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
-  
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-  
-    {% hint style="warning" %}
-    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-    {% endhint %}
-
-  <strong><code>name</code></strong> <i>String</i>
-  
-    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-</details>
-
----
-
-**`available_fan_mode_settings`** *List* *of Enums*
-
-Fan mode settings that the thermostat supports.
-
-
-
-
----
-
-**`available_hvac_mode_settings`** *List* *of Enums*
-
-HVAC mode settings that the thermostat supports.
-
-
-
-
----
-
-**`current_climate_setting`** *Object*
-
-Current climate setting.
-
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>can_delete</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
-
-  - <strong><code>can_edit</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
-
-  - <strong><code>can_program</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
-
-  - <strong><code>climate_preset_key</code></strong> <i>String</i>
-  
-    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-  - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>display_name</code></strong> <i>String</i>
-  
-    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-  - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>auto</code>
-      - <code>on</code>
-      - <code>circulate</code>
-  </details>
-
-  - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>off</code>
-      - <code>heat</code>
-      - <code>cool</code>
-      - <code>heat_cool</code>
-  </details>
-
-  - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
-  
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-  
-    {% hint style="warning" %}
-    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-    {% endhint %}
-
-  - <strong><code>name</code></strong> <i>String</i>
-  
-    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-</details>
-
----
-
-**`default_climate_setting`** *Object*
-
-
-{% hint style="warning" %}
-**Deprecated**. use fallback_climate_preset_key to specify a fallback climate preset instead.
-{% endhint %}
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>can_delete</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
-
-  - <strong><code>can_edit</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
-
-  - <strong><code>can_program</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
-
-  - <strong><code>climate_preset_key</code></strong> <i>String</i>
-  
-    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-  - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>display_name</code></strong> <i>String</i>
-  
-    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-  - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>auto</code>
-      - <code>on</code>
-      - <code>circulate</code>
-  </details>
-
-  - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
-
-  - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>off</code>
-      - <code>heat</code>
-      - <code>cool</code>
-      - <code>heat_cool</code>
-  </details>
-
-  - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
-  
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-  
-    {% hint style="warning" %}
-    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-    {% endhint %}
-
-  - <strong><code>name</code></strong> <i>String</i>
-  
-    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
-
-</details>
-
----
-
-**`fallback_climate_preset_key`** *String*
-
-Key of the [fallback climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) for the thermostat.
-
-
-
-
----
-
-**`fan_mode_setting`** *Enum*
-
-
-{% hint style="warning" %}
-**Deprecated**. Use `current_climate_setting.fan_mode_setting` instead.
-{% endhint %}
-
-<details>
-<summary>Enum values</summary>
-
-- <code>auto</code>
-- <code>on</code>
-- <code>circulate</code>
-</details>
-
-
----
-
-**`is_cooling`** *Boolean*
-
-Indicates whether the connected HVAC system is currently cooling, as reported by the thermostat.
-
-
-
-
----
-
-**`is_fan_running`** *Boolean*
-
-Indicates whether the fan in the connected HVAC system is currently running, as reported by the thermostat.
-
-
-
-
----
-
-**`is_heating`** *Boolean*
-
-Indicates whether the connected HVAC system is currently heating, as reported by the thermostat.
-
-
-
-
----
-
-**`is_temporary_manual_override_active`** *Boolean*
-
-Indicates whether the current thermostat settings differ from the most recent active program or schedule that Seam activated. For this condition to occur, `current_climate_setting.manual_override_allowed` must also be `true`.
-
-
-
-
----
-
-**`max_cooling_set_point_celsius`** *Number*
-
-Maximum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
-
-
-
-
----
-
-**`max_cooling_set_point_fahrenheit`** *Number*
-
-Maximum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °F.
-
-
-
-
----
-
-**`max_heating_set_point_celsius`** *Number*
-
-Maximum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °C.
-
-
-
-
----
-
-**`max_heating_set_point_fahrenheit`** *Number*
-
-Maximum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °F.
-
-
-
-
----
-
-**`min_cooling_set_point_celsius`** *Number*
-
-Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
-
-
-
-
----
-
-**`min_cooling_set_point_fahrenheit`** *Number*
-
-Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °F.
-
-
-
-
----
-
-**`min_heating_cooling_delta_celsius`** *Number*
-
-Minimum [temperature difference](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
-
-
-
-
----
-
-**`min_heating_cooling_delta_fahrenheit`** *Number*
-
-Minimum [temperature difference](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
-
-
-
-
----
-
-**`min_heating_set_point_celsius`** *Number*
-
-Minimum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °C.
-
-
-
-
----
-
-**`min_heating_set_point_fahrenheit`** *Number*
-
-Minimum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °F.
-
-
-
-
----
-
-**`relative_humidity`** *Number*
-
-Reported relative humidity, as a value between 0 and 1, inclusive.
-
-
-
-
----
-
-**`temperature_celsius`** *Number*
-
-Reported temperature in °C.
-
-
-
-
----
-
-**`temperature_fahrenheit`** *Number*
-
-Reported temperature in °F.
-
-
-
-
----
-
-**`temperature_threshold`** *Object*
-
-Current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
-
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>lower_limit_celsius</code></strong> <i>Number</i>
-  
-    Lower limit in °C within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
-
-  - <strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
-  
-    Lower limit in °F within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
-
-  - <strong><code>upper_limit_celsius</code></strong> <i>Number</i>
-  
-    Upper limit in °C within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
-
-  - <strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
-  
-    Upper limit in °F within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
-
-</details>
-
----
-
-**`thermostat_daily_programs`** *List* *of Objects*
-
-Configured [daily programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md) for the thermostat.
-
-
-
-<details>
-  <summary>Child Object Properties</summary>
-
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the thermostat daily program was created.
-
-  <strong><code>device_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat device on which the thermostat daily program is configured.
-
-  <strong><code>name</code></strong> <i>String</i>
-  
-    User-friendly name to identify the thermostat daily program.
-
-  <strong><code>periods</code></strong> <i>List</i> <i>of Objects</i>
-  
-    Array of thermostat daily program periods.
-  
-  - <strong><code>climate_preset_key</code></strong> <i>String</i>
-  
-    Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to activate at the `starts_at_time`.
-  
-  
-  - <strong><code>starts_at_time</code></strong> <i>String</i>
-  
-    Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-  
-
-  <strong><code>thermostat_daily_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program.
-
-  <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat daily program.
-</details>
-
----
-
-**`thermostat_weekly_program`** *Object*
-
-Current [weekly program](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md) for the thermostat.
-
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the thermostat weekly program was created.
-
-  - <strong><code>friday_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program to run on Fridays.
-
-  - <strong><code>monday_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program to run on Mondays.
-
-  - <strong><code>saturday_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program to run on Saturdays.
-
-  - <strong><code>sunday_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program to run on Sundays.
-
-  - <strong><code>thursday_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program to run on Thursdays.
-
-  - <strong><code>tuesday_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program to run on Tuesdays.
-
-  - <strong><code>wednesday_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program to run on Wednesdays.
-
-</details>
-
----
-
 
 ## Errors
+
+**`auxiliary_heat_running`**
+
+Indicates that the auxiliary heat is running.
+
+---
+
+**`ttlock_lock_not_paired_to_gateway`**
+
+Indicates that the lock is not paired with a gateway.
+
+---
+
+**`subscription_required`**
+
+Indicates that a subscription is required to connect.
+
+---
+
+**`missing_device_credentials`**
+
+Indicates that device credentials are missing.
+
+---
+
+**`lockly_missing_wifi_bridge`**
+
+Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+---
+
+**`hub_disconnected`**
+
+Indicates that the hub is disconnected.
+
+---
+
+**`device_removed`**
+
+Indicates that the device has been removed.
+
+---
+
+**`device_offline`**
+
+Indicates that the device is offline.
+
+---
+
+**`device_disconnected`**
+
+Indicates that the device is disconnected.
+
+---
 
 **`account_disconnected`**
 
@@ -3709,64 +3616,9 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
 
 ---
 
-**`device_disconnected`**
-
-Indicates that the device is disconnected.
-
----
-
-**`device_offline`**
-
-Indicates that the device is offline.
-
----
-
-**`device_removed`**
-
-Indicates that the device has been removed.
-
----
-
-**`hub_disconnected`**
-
-Indicates that the hub is disconnected.
-
----
-
 **`invalid_credentials`**
 
 Indicates that the credentials provided were invalid.
-
----
-
-**`lockly_missing_wifi_bridge`**
-
-Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
-
----
-
-**`missing_device_credentials`**
-
-Indicates that device credentials are missing.
-
----
-
-**`subscription_required`**
-
-Indicates that a subscription is required to connect.
-
----
-
-**`ttlock_lock_not_paired_to_gateway`**
-
-Indicates that the lock is not paired with a gateway.
-
----
-
-### Thermostats
-**`auxiliary_heat_running`**
-
-Indicates that the auxiliary heat is running.
 
 ---
 
@@ -3797,6 +3649,12 @@ Indicates that Seam detected that the Lockly device does not have a time zone co
 
 ---
 
+**`nest_thermostat_in_manual_eco_mode`**
+
+Indicates that the Nest thermostat is in manual eco mode.
+
+---
+
 **`salto_ks_office_mode`**
 
 Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
@@ -3821,6 +3679,12 @@ Indicates that a scheduled maintenance window has been detected.
 
 ---
 
+**`temperature_threshold_exceeded`**
+
+Indicates that the temperature threshold has been exceeded.
+
+---
+
 **`third_party_integration_detected`**
 
 Indicates that a third-party integration has been detected.
@@ -3836,19 +3700,6 @@ Indicates that the gateway signal is weak.
 **`wyze_device_missing_gateway`**
 
 Indicates that the Wyze Lock is not connected to a gateway.
-
----
-
-### Thermostats
-**`nest_thermostat_in_manual_eco_mode`**
-
-Indicates that the Nest thermostat is in manual eco mode.
-
----
-
-**`temperature_threshold_exceeded`**
-
-Indicates that the temperature threshold has been exceeded.
 
 ---
 

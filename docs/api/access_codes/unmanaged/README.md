@@ -2258,9 +2258,21 @@ Invalid code length for August lock.
 
 ---
 
+**`august_lock_missing_bridge`**
+
+Indicates that the lock is not connected to a bridge.
+
+---
+
 **`august_lock_missing_keypad`**
 
 August lock is missing a keypad.
+
+---
+
+**`august_lock_not_authorized`**
+
+Indicates that the user is not authorized to use the August lock.
 
 ---
 
@@ -2315,6 +2327,12 @@ An attempt to modify this access code was prevented.
 **`duplicate_code_on_device`**
 
 Duplicate access code detected on device.
+
+---
+
+**`empty_backup_access_code_pool`**
+
+Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
 
 ---
 
@@ -2402,6 +2420,12 @@ No space for access code on device.
 
 ---
 
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the Salto site user limit has been reached.
+
+---
+
 **`salto_ks_user_not_subscribed`**
 
 Salto site user is not subscribed.
@@ -2447,32 +2471,6 @@ Duplicate access code name detected.
 **`wyze_potential_duplicate_code`**
 
 Potential duplicate access code detected.
-
----
-
-### Access Codes
-**`empty_backup_access_code_pool`**
-
-Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
-
----
-
-### Locks
-**`august_lock_missing_bridge`**
-
-Indicates that the lock is not connected to a bridge.
-
----
-
-**`august_lock_not_authorized`**
-
-Indicates that the user is not authorized to use the August lock.
-
----
-
-**`salto_ks_subscription_limit_exceeded`**
-
-Indicates that the Salto site user limit has been reached.
 
 ---
 
