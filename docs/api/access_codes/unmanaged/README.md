@@ -1,5 +1,25 @@
 # Unmanaged Access Codes
 
+## The unmanaged_access_code Object
+
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
+
+Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.
+
+When you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.
+
+Prior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.
+
+Not all providers support unmanaged access codes. The following providers do not support unmanaged access codes:
+
+- [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks)
 
 {% tabs %}
 {% tab title="Unmanaged Access Code" %}
