@@ -45,10 +45,17 @@ export interface ApiEndpointLayoutContext {
     responseKey: string | null
     responseType: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
-    resourceSample: ResourceSampleDefinitions[number] | null
+    resourceSample: ResourceSampleContext | null
   }
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
+}
+
+interface ResourceSampleContext {
+  title: string
+  description: string
+  resource_type: string
+  properties: string
 }
 
 type AuthMethodDisplayName =
@@ -244,7 +251,7 @@ interface GetResourceSampleParams {
 
 const getResourceSample = (
   params: GetResourceSampleParams,
-): ResourceSampleDefinitions[number] | null => {
+): ResourceSampleContext | null => {
   const { response, resourceSamples } = params
 
   if (response.responseType !== 'resource') {
@@ -258,7 +265,20 @@ const getResourceSample = (
         resourceSample.properties.action_type === response.actionAttempt?.name,
     )
 
-    return actionAttemptSample ?? null
+      const { action_type: actionType } = resourceSample.properties
+      return actionType === response.actionAttempt?.name
+    })
+
+    if (actionAttemptSample == null) {
+      return null
+    }
+
+    return (
+      {
+        ...actionAttemptSample,
+        properties: JSON.stringify(actionAttemptSample.properties, null, 2),
+      } ?? null
+    )
   }
 
   const firstResourceSample = resourceSamples.find(
@@ -266,7 +286,10 @@ const getResourceSample = (
   )
 
   if (firstResourceSample != null) {
-    return firstResourceSample
+    return {
+      ...firstResourceSample,
+      properties: JSON.stringify(firstResourceSample.properties, null, 2),
+    }
   }
 
   return null
