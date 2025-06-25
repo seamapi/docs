@@ -57,11 +57,6 @@ seam.UnmanagedDevices.List();
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```java
-seam.devices().unmanaged().list();
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response
@@ -269,50 +264,4 @@ Returns an unmanaged `devices` array, in which each returned unmanaged device (`
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```json
-{
-  "devices": [
-    {
-      "is_managed": false,
-      "device_id": "2339da8d-ce38-4d86-9bb7-573f95af691c",
-      "device_type": "ttlock_lock",
-      "connected_account_id": "1769a182-ec97-4266-ba53-27fdb25d2d96",
-      "capabilities_supported": [
-        "access_code",
-        "lock"
-      ],
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2023-10-30T08:37:28.852Z",
-      "errors": [
-        {
-          "error_code": "account_disconnected",
-          "message": "Account Disconnected, you may need to reconnect the account with a new webview. This may happen if the third-party provider triggered an access token to be revoked (e.g. after a password change)",
-          "created_at": "2023-10-31T15:13:58.768Z",
-          "connected_account_id": "1769a182-ec97-4266-ba53-27fdb25d2d96",
-          "is_connected_account_error": true
-        }
-      ],
-      "warnings": [],
-      "properties": {
-        "name": "Lock 1",
-        "online": false,
-        "manufacturer": "ttlock",
-        "image_url": "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-        "image_alt_text": "Placeholder Lock Image",
-        "model": {
-          "display_name": "Lock",
-          "manufacturer_display_name": "Ttlock",
-          "accessory_keypad_supported": false,
-          "offline_access_codes_supported": false,
-          "online_access_codes_supported": true
-        }
-      }
-    },
-    ...
-  ],
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}

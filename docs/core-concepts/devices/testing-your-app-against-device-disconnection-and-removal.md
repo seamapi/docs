@@ -191,37 +191,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
-
-**Code:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that Seam supports simulated disconnection for the device.
-if (device.getCanSimulateDisconnection())
-{
-  // Perform the simulated disconnection.
-  seam.devices().simulate()
-    .disconnect(DevicesSimulateDisconnectRequest.builder()
-      .deviceId(device.getDeviceId())
-      .build());
-}
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -390,37 +359,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
-
-**Code:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that Seam supports simulated connection for the device.
-if (device.getCanSimulateConnection())
-{
-  // Perform the simulated connection.
-  seam.devices().simulate()
-    .connect(DevicesSimulateConnectRequest.builder()
-      .deviceId(device.getDeviceId())
-      .build());
-}
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -589,37 +527,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
-
-**Code:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that Seam supports simulated removal for the device.
-if (device.getCanSimulateRemoval())
-{
-  // Perform the simulated removal.
-  seam.devices().simulate()
-    .remove(DevicesSimulateRemoveRequest.builder()
-      .deviceId(device.getDeviceId())
-      .build());
-}
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 
 
 {% endtabs %}

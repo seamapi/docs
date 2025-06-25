@@ -67,14 +67,6 @@ seam.Devices.ListDeviceProviders(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```java
-seam.devices().listDeviceProviders(DevicesListDeviceProvidersRequest.builder()
-  .providerCategory(DevicesListDeviceProvidersRequestProviderCategory.STABLE)
-  .build()
-);
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response
@@ -187,23 +179,4 @@ Returns an `device_providers` array, in which each returned `device_provider` co
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```json
-[
-  {
-    "device_provider_name": "august",
-    "display_name": "August",
-    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/august_logo_square.png&q=75&w=128",
-    "provider_categories": [
-      "stable",
-      "consumer_smartlocks"
-    ],
-    "can_remotely_lock": true,
-    "can_remotely_unlock": true,
-    "can_program_online_access_codes": true
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}

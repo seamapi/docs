@@ -9,13 +9,13 @@ Deletes a specified [user identity](https://docs.seam.co/latest/capability-guide
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```javascript
 await seam.userIdentities.delete({
-  user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135",
+  user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3",
 });
 ```
 
@@ -28,7 +28,7 @@ await seam.userIdentities.delete({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
@@ -37,7 +37,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/delet
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+  "user_identity_id": "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 }
 EOF
 ```
@@ -51,12 +51,12 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```python
-seam.user_identities.delete(user_identity_id="44d48b20-0dbe-419d-91ca-ab8bceecd135")
+seam.user_identities.delete(user_identity_id="7ad2566e-6fd8-466d-b8e4-c10a14a74fd3")
 ```
 
 #### Output
@@ -68,12 +68,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```ruby
-seam.user_identities.delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
+seam.user_identities.delete(user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3")
 ```
 
 #### Output
@@ -85,14 +85,14 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```php
 <?php
 $seam->user_identities->delete(
-    user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+    user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 );
 ```
 
@@ -105,12 +105,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+seam user-identities delete --user_identity_id "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 ```
 
 #### Output

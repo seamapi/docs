@@ -6,6 +6,147 @@
 Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates a specified user identity.
+
+#### Code
+
+```javascript
+await seam.userIdentities.update({
+  user_identity_id: "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
+  user_identity_key: "jane_doe",
+  email_address: "jane@example.com",
+  phone_number: "+15551234567",
+  full_name: "Jane Doe",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates a specified user identity.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
+  "user_identity_key": "jane_doe",
+  "email_address": "jane@example.com",
+  "phone_number": "+15551234567",
+  "full_name": "Jane Doe"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates a specified user identity.
+
+#### Code
+
+```python
+seam.user_identities.update(
+    user_identity_id="dc378ea9-358e-4999-b295-d0f3e0d5ff51",
+    user_identity_key="jane_doe",
+    email_address="jane@example.com",
+    phone_number="+15551234567",
+    full_name="Jane Doe",
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates a specified user identity.
+
+#### Code
+
+```ruby
+seam.user_identities.update(
+  user_identity_id: "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
+  user_identity_key: "jane_doe",
+  email_address: "jane@example.com",
+  phone_number: "+15551234567",
+  full_name: "Jane Doe",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates a specified user identity.
+
+#### Code
+
+```php
+<?php
+$seam->user_identities->update(
+    user_identity_id: "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
+    user_identity_key: "jane_doe",
+    email_address: "jane@example.com",
+    phone_number: "+15551234567",
+    full_name: "Jane Doe"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates a specified user identity.
+
+#### Code
+
+```seam_cli
+seam user-identities update --user_identity_id "dc378ea9-358e-4999-b295-d0f3e0d5ff51" --user_identity_key "jane_doe" --email_address "jane@example.com" --phone_number "+15551234567" --full_name "Jane Doe"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

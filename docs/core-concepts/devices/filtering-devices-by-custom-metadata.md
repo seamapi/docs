@@ -181,35 +181,6 @@ foreach (var device in devices)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
-
-var devices = seam.devices().list(DevicesListRequest.builder()
-                .customMetadataHas(customMetadata)
-                .build());
-
-System.out.println(devices);
-```
-
-**Response:**
-
-```json
-[{
-  "device_id" : "f7a7fb02-9277-4354-8dd1-28e2d016a7a9",
-  "device_type" : "schlage_lock",
-  ...
-  "is_managed" : true,
-  "custom_metadata" : {
-    "internal_account_id" : "user-1"
-  }
-},...
-]
-```
-{% endtab %}
 
 
 {% endtabs %}

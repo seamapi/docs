@@ -154,29 +154,6 @@ seam.UnmanagedAccessCodes.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.accessCodes().unmanaged().list(UnmanagedListRequest.builder()
-        .deviceId("11111111-1111-1111-1111-444444444444")
-        .build());
-```
-
-**Response:**
-
-```json
-[
-  {
-    "access_code_id" : "11111111-1111-1111-1111-999999999999",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "is_managed" : "false",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ## Converting Unmanaged Codes into Managed Codes
@@ -298,23 +275,6 @@ Error:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.accessCodes().unmanaged().convertToManaged(UnmanagedConvertToManagedRequest.builder()
-        .accessCodeId("11111111-1111-1111-1111-999999999999")
-        .build());
-```
-
-**Response:**
-
-```json
-{
-  "ok" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 The request returns immediately, but the conversion is an asynchronous process that completes in the background. You can listen to the `access_code.unmanaged.converted_to_managed` and `access_code.unmanaged.failed_to_convert_to_managed` to be notified when conversion succeeds or fails.
@@ -450,24 +410,6 @@ Error:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.accessCodes().unmanaged()
-  .delete(UnmanagedDeleteRequest.builder()
-    .accessCodeId("11111111-1111-1111-1111-999999999999")
-    .build());
-```
-
-**Response:**
-
-```json
-{
-  "ok" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 The request returns an action attempt, similar to the managed code deletion endpoint. See [Delete an access code](../../../api/access_codes/delete.md) for more details.

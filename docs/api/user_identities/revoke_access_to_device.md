@@ -9,14 +9,14 @@ Revokes access to a specified [device](../../core-concepts/devices/README.md) fr
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Revokes access to a specified device from a specified user identity.
 
 #### Code
 
 ```javascript
 await seam.userIdentities.revokeAccessToDevice({
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+  user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+  device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5",
 });
 ```
 
@@ -29,7 +29,7 @@ await seam.userIdentities.revokeAccessToDevice({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Revokes access to a specified device from a specified user identity.
 
 #### Code
 
@@ -38,8 +38,8 @@ curl --include --request POST "https://connect.getseam.com/user_identities/revok
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  "device_id": "054765c8-a2fc-4599-b486-14c19f462c45"
+  "user_identity_id": "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+  "device_id": "92874f9e-a2b5-4d49-a039-0280196ad4d5"
 }
 EOF
 ```
@@ -53,14 +53,14 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Revokes access to a specified device from a specified user identity.
 
 #### Code
 
 ```python
 seam.user_identities.revoke_access_to_device(
-    user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id="054765c8-a2fc-4599-b486-14c19f462c45",
+    user_identity_id="a5a48343-a95e-4f51-a5d9-1e4241b73553",
+    device_id="92874f9e-a2b5-4d49-a039-0280196ad4d5",
 )
 ```
 
@@ -73,14 +73,14 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Revokes access to a specified device from a specified user identity.
 
 #### Code
 
 ```ruby
 seam.user_identities.revoke_access_to_device(
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+  user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+  device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5",
 )
 ```
 
@@ -93,15 +93,15 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Revokes access to a specified device from a specified user identity.
 
 #### Code
 
 ```php
 <?php
 $seam->user_identities->revoke_access_to_device(
-    user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
+    user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+    device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5"
 );
 ```
 
@@ -114,12 +114,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Revokes access to a specified device from a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam user-identities revoke-access-to-device --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf" --device_id "054765c8-a2fc-4599-b486-14c19f462c45"
+seam user-identities revoke-access-to-device --user_identity_id "a5a48343-a95e-4f51-a5d9-1e4241b73553" --device_id "92874f9e-a2b5-4d49-a039-0280196ad4d5"
 ```
 
 #### Output

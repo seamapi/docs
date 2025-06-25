@@ -9,15 +9,15 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired heating set point in °C or °F.
+Sets a specified thermostat to heat-cool ("auto") mode.
 
 #### Code
 
 ```javascript
 await seam.thermostats.heatCool({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  cooling_set_point_celsius: 25,
+  device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
   heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
 });
 ```
 
@@ -25,16 +25,18 @@ await seam.thermostats.heatCool({
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_HEAT_COOL"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the desired heating set point in °C or °F.
+Sets a specified thermostat to heat-cool ("auto") mode.
 
 #### Code
 
@@ -43,9 +45,9 @@ curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "cooling_set_point_celsius": 25,
-  "heating_set_point_celsius": 20
+  "device_id": "32f974cc-e817-4bd7-b7f1-be92c80884a1",
+  "heating_set_point_celsius": 20,
+  "cooling_set_point_celsius": 25
 }
 EOF
 ```
@@ -55,9 +57,11 @@ EOF
 ```curl
 {
   "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "pending",
-    "action_type": "SET_HEAT_COOL"
+    "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type": "SET_HVAC_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
   }
 }
 ```
@@ -65,15 +69,15 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired heating set point in °C or °F.
+Sets a specified thermostat to heat-cool ("auto") mode.
 
 #### Code
 
 ```python
 seam.thermostats.heat_cool(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    cooling_set_point_celsius=25,
+    device_id="32f974cc-e817-4bd7-b7f1-be92c80884a1",
     heating_set_point_celsius=20,
+    cooling_set_point_celsius=25,
 )
 ```
 
@@ -81,24 +85,26 @@ seam.thermostats.heat_cool(
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
-    action_type="SET_HEAT_COOL",
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the desired heating set point in °C or °F.
+Sets a specified thermostat to heat-cool ("auto") mode.
 
 #### Code
 
 ```ruby
 seam.thermostats.heat_cool(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  cooling_set_point_celsius: 25,
+  device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
   heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
 )
 ```
 
@@ -106,25 +112,28 @@ seam.thermostats.heat_cool(
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
-  "action_type" => "SET_HEAT_COOL",
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the desired heating set point in °C or °F.
+Sets a specified thermostat to heat-cool ("auto") mode.
 
 #### Code
 
 ```php
 <?php
 $seam->thermostats->heat_cool(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20
+    device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
+    heating_set_point_celsius: 20,
+    cooling_set_point_celsius: 25
 );
 ```
 
@@ -133,30 +142,34 @@ $seam->thermostats->heat_cool(
 ```php
 <?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
-    "action_type" => "SET_HEAT_COOL",
+    "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type" => "SET_HVAC_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired heating set point in °C or °F.
+Sets a specified thermostat to heat-cool ("auto") mode.
 
 #### Code
 
 ```seam_cli
-seam thermostats heat-cool --device_id "123e4567-e89b-12d3-a456-426614174000" --cooling_set_point_celsius 25 --heating_set_point_celsius 20
+seam thermostats heat-cool --device_id "32f974cc-e817-4bd7-b7f1-be92c80884a1" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_HEAT_COOL"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}

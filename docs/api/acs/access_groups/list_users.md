@@ -9,13 +9,13 @@ Returns a list of all [access system users](https://docs.seam.co/latest/capabili
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+Returns a list of all access system users in an access group.
 
 #### Code
 
 ```javascript
 await seam.acs.accessGroups.listUsers({
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
+  acs_access_group_id: "da76b0a9-97c5-4d7c-8db2-91d13094a940",
 });
 ```
 
@@ -24,24 +24,32 @@ await seam.acs.accessGroups.listUsers({
 ```javascript
 [
   {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email": "jane@example.com",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-05T07:14:28.531Z",
-    "is_suspended": false,
     "access_schedule": {
-      "starts_at": "2024-03-01T10:40:00.000Z",
-      "ends_at": "2024-03-04T10:40:00.000Z"
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "user_identity_id": "22222222-2222-2222-2222-222222222222",
-    "user_identity_full_name": "Jane Doe",
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
     "user_identity_email_address": "jane@example.com",
-    "user_identity_phone_number": "+15555550100"
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
   }
 ]
 ```
@@ -49,7 +57,7 @@ await seam.acs.accessGroups.listUsers({
 
 {% tab title="cURL" %}
 
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+Returns a list of all access system users in an access group.
 
 #### Code
 
@@ -58,7 +66,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/lis
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444"
+  "acs_access_group_id": "da76b0a9-97c5-4d7c-8db2-91d13094a940"
 }
 EOF
 ```
@@ -69,24 +77,32 @@ EOF
 {
   "acs_users": [
     {
-      "acs_user_id": "33333333-3333-3333-3333-333333333333",
-      "display_name": "Jane Doe",
-      "full_name": "Jane Doe",
-      "email": "jane@example.com",
-      "email_address": "jane@example.com",
-      "phone_number": "+15555550100",
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
-      "created_at": "2024-04-05T07:14:28.531Z",
-      "is_suspended": false,
       "access_schedule": {
-        "starts_at": "2024-03-01T10:40:00.000Z",
-        "ends_at": "2024-03-04T10:40:00.000Z"
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z"
       },
-      "user_identity_id": "22222222-2222-2222-2222-222222222222",
-      "user_identity_full_name": "Jane Doe",
+      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+      "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+      "created_at": "2025-06-15T16:54:17.946482Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "external_type": "salto_site_user",
+      "external_type_display_name": "Salto site user",
+      "full_name": "Jane Doe",
+      "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+      "is_managed": true,
+      "is_suspended": false,
+      "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+      "pending_mutations": [],
+      "phone_number": "+1555551000",
       "user_identity_email_address": "jane@example.com",
-      "user_identity_phone_number": "+15555550100"
+      "user_identity_full_name": "Jane Doe",
+      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_phone_number": "+1555551000",
+      "warnings": [],
+      "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
     }
   ]
 }
@@ -95,13 +111,13 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+Returns a list of all access system users in an access group.
 
 #### Code
 
 ```python
 seam.acs.access_groups.list_users(
-    acs_access_group_id="44444444-4444-4444-4444-444444444444"
+    acs_access_group_id="da76b0a9-97c5-4d7c-8db2-91d13094a940"
 )
 ```
 
@@ -110,24 +126,32 @@ seam.acs.access_groups.list_users(
 ```python
 [
     AcsUser(
-        acs_user_id="33333333-3333-3333-3333-333333333333",
-        display_name="Jane Doe",
-        full_name="Jane Doe",
-        email="jane@example.com",
-        email_address="jane@example.com",
-        phone_number="+15555550100",
-        acs_system_id="11111111-1111-1111-1111-111111111111",
-        workspace_id="00000000-0000-0000-0000-000000000000",
-        created_at="2024-04-05T07:14:28.531Z",
-        is_suspended=false,
         access_schedule={
-            "starts_at": "2024-03-01T10:40:00.000Z",
-            "ends_at": "2024-03-04T10:40:00.000Z",
+            "ends_at": "2025-06-12T11:00:00.000Z",
+            "starts_at": "2025-06-10T15:00:00.000Z",
         },
-        user_identity_id="22222222-2222-2222-2222-222222222222",
-        user_identity_full_name="Jane Doe",
+        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+        connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+        created_at="2025-06-15T16:54:17.946482Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        external_type="salto_site_user",
+        external_type_display_name="Salto site user",
+        full_name="Jane Doe",
+        hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+        is_managed=true,
+        is_suspended=false,
+        last_successful_sync_at="2025-06-18T17:45:00.582Z",
+        pending_mutations=[],
+        phone_number="+1555551000",
         user_identity_email_address="jane@example.com",
-        user_identity_phone_number="+15555550100",
+        user_identity_full_name="Jane Doe",
+        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_phone_number="+1555551000",
+        warnings=[],
+        workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
     )
 ]
 ```
@@ -135,12 +159,12 @@ seam.acs.access_groups.list_users(
 
 {% tab title="Ruby" %}
 
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+Returns a list of all access system users in an access group.
 
 #### Code
 
 ```ruby
-seam.acs.access_groups.list_users(acs_access_group_id: "44444444-4444-4444-4444-444444444444")
+seam.acs.access_groups.list_users(acs_access_group_id: "da76b0a9-97c5-4d7c-8db2-91d13094a940")
 ```
 
 #### Output
@@ -148,24 +172,32 @@ seam.acs.access_groups.list_users(acs_access_group_id: "44444444-4444-4444-4444-
 ```ruby
 [
   {
-    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-    "display_name" => "Jane Doe",
-    "full_name" => "Jane Doe",
-    "email" => "jane@example.com",
-    "email_address" => "jane@example.com",
-    "phone_number" => "+15555550100",
-    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
-    "created_at" => "2024-04-05T07:14:28.531Z",
-    "is_suspended" => false,
     "access_schedule" => {
-      starts_at: "2024-03-01T10:40:00.000Z",
-      ends_at: "2024-03-04T10:40:00.000Z",
+      ends_at: "2025-06-12T11:00:00.000Z",
+      starts_at: "2025-06-10T15:00:00.000Z",
     },
-    "user_identity_id" => "22222222-2222-2222-2222-222222222222",
-    "user_identity_full_name" => "Jane Doe",
+    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+1555551000",
     "user_identity_email_address" => "jane@example.com",
-    "user_identity_phone_number" => "+15555550100",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number" => "+1555551000",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
   },
 ]
 ```
@@ -173,14 +205,14 @@ seam.acs.access_groups.list_users(acs_access_group_id: "44444444-4444-4444-4444-
 
 {% tab title="PHP" %}
 
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+Returns a list of all access system users in an access group.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->access_groups->list_users(
-    acs_access_group_id: "44444444-4444-4444-4444-444444444444"
+    acs_access_group_id: "da76b0a9-97c5-4d7c-8db2-91d13094a940"
 );
 ```
 
@@ -190,24 +222,32 @@ $seam->acs->access_groups->list_users(
 <?php
 [
     [
-        "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-        "display_name" => "Jane Doe",
-        "full_name" => "Jane Doe",
-        "email" => "jane@example.com",
-        "email_address" => "jane@example.com",
-        "phone_number" => "+15555550100",
-        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-        "workspace_id" => "00000000-0000-0000-0000-000000000000",
-        "created_at" => "2024-04-05T07:14:28.531Z",
-        "is_suspended" => false,
         "access_schedule" => [
-            "starts_at" => "2024-03-01T10:40:00.000Z",
-            "ends_at" => "2024-03-04T10:40:00.000Z",
+            "ends_at" => "2025-06-12T11:00:00.000Z",
+            "starts_at" => "2025-06-10T15:00:00.000Z",
         ],
-        "user_identity_id" => "22222222-2222-2222-2222-222222222222",
-        "user_identity_full_name" => "Jane Doe",
+        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+        "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+        "created_at" => "2025-06-15T16:54:17.946482Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "external_type" => "salto_site_user",
+        "external_type_display_name" => "Salto site user",
+        "full_name" => "Jane Doe",
+        "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+        "is_managed" => true,
+        "is_suspended" => false,
+        "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+        "pending_mutations" => [],
+        "phone_number" => "+1555551000",
         "user_identity_email_address" => "jane@example.com",
-        "user_identity_phone_number" => "+15555550100",
+        "user_identity_full_name" => "Jane Doe",
+        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_phone_number" => "+1555551000",
+        "warnings" => [],
+        "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
     ],
 ];
 ```
@@ -215,12 +255,12 @@ $seam->acs->access_groups->list_users(
 
 {% tab title="Seam CLI" %}
 
-Specify the `acs_access_group_id` to retrieve all ACS users in an access group.
+Returns a list of all access system users in an access group.
 
 #### Code
 
 ```seam_cli
-seam acs access-groups list-users --acs_access_group_id "44444444-4444-4444-4444-444444444444"
+seam acs access-groups list-users --acs_access_group_id "da76b0a9-97c5-4d7c-8db2-91d13094a940"
 ```
 
 #### Output
@@ -228,24 +268,32 @@ seam acs access-groups list-users --acs_access_group_id "44444444-4444-4444-4444
 ```seam_cli
 [
   {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email": "jane@example.com",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-05T07:14:28.531Z",
-    "is_suspended": false,
     "access_schedule": {
-      "starts_at": "2024-03-01T10:40:00.000Z",
-      "ends_at": "2024-03-04T10:40:00.000Z"
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "user_identity_id": "22222222-2222-2222-2222-222222222222",
-    "user_identity_full_name": "Jane Doe",
+    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+1555551000",
     "user_identity_email_address": "jane@example.com",
-    "user_identity_phone_number": "+15555550100"
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_phone_number": "+1555551000",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
   }
 ]
 ```

@@ -9,6 +9,119 @@
 Deletes a space.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Deletes a space.
+
+#### Code
+
+```javascript
+await seam.spaces.delete({ space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509" });
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Deletes a space.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/spaces/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "space_id": "a7cd0163-4e94-41ae-b5b7-da6040a65509"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Deletes a space.
+
+#### Code
+
+```python
+seam.spaces.delete(space_id="a7cd0163-4e94-41ae-b5b7-da6040a65509")
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Deletes a space.
+
+#### Code
+
+```ruby
+seam.spaces.delete(space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509")
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Deletes a space.
+
+#### Code
+
+```php
+<?php
+$seam->spaces->delete(space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509");
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Deletes a space.
+
+#### Code
+
+```seam_cli
+seam spaces delete --space_id "a7cd0163-4e94-41ae-b5b7-da6040a65509"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

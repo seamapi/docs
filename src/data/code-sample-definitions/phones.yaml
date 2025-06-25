@@ -1,0 +1,122 @@
+---
+- title: Deactivate a phone
+  description: Deactivates a phone, which is useful, for example, if a user has lost their phone.
+  request:
+    path: /phones/deactivate
+    parameters:
+      device_id: 6481cd6a-579f-4d8c-9adb-b42bf9fb697e
+  response:
+    body: null
+- title: Get a phone
+  description: Returns a specified phone.
+  request:
+    path: /phones/get
+    parameters:
+      device_id: 2c39adb7-ba99-4b60-927d-9b796952c8e8
+  response:
+    body:
+      phone:
+        created_at: '2025-06-14T16:54:17.946540Z'
+        custom_metadata:
+          id: internalId1
+        device_id: 2c39adb7-ba99-4b60-927d-9b796952c8e8
+        device_type: ios_phone
+        display_name: My Phone
+        errors: []
+        nickname: My Phone
+        properties:
+          assa_abloy_credential_service_metadata:
+            endpoints:
+              - endpoint_id: c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+                is_active: true
+            has_active_endpoint: true
+        warnings: []
+        workspace_id: da8639a4-28a2-4884-a4f9-b7691f4cf336
+- title: List phones for a user identity
+  description: Returns a list of all phones, using the owner's user identity ID.
+  request:
+    path: /phones/list
+    parameters:
+      owner_user_identity_id: 6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4
+  response:
+    body:
+      phones:
+        - created_at: '2025-06-14T16:54:17.946540Z'
+          custom_metadata:
+            id: internalId1
+          device_id: e452f665-a635-4c65-922b-9feab0e0f84f
+          device_type: ios_phone
+          display_name: My Phone
+          errors: []
+          nickname: My Phone
+          properties:
+            assa_abloy_credential_service_metadata:
+              endpoints:
+                - endpoint_id: c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+                  is_active: true
+              has_active_endpoint: true
+          warnings: []
+          workspace_id: da8639a4-28a2-4884-a4f9-b7691f4cf336
+- title: List phones for a credential
+  description: Returns a list of all phones, using the credential ID.
+  request:
+    path: /phones/list
+    parameters:
+      acs_credential_id: 6617f81a-d601-4e33-9052-f44bf1b4ed2b
+  response:
+    body:
+      phones:
+        - created_at: '2025-06-14T16:54:17.946540Z'
+          custom_metadata:
+            id: internalId1
+          device_id: e452f665-a635-4c65-922b-9feab0e0f84f
+          device_type: ios_phone
+          display_name: My Phone
+          errors: []
+          nickname: My Phone
+          properties:
+            assa_abloy_credential_service_metadata:
+              endpoints:
+                - endpoint_id: c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+                  is_active: true
+              has_active_endpoint: true
+          warnings: []
+          workspace_id: da8639a4-28a2-4884-a4f9-b7691f4cf336
+- title: Simulate creating a sandbox phone
+  description: Creates a new simulated phone in a sandbox workspace.
+  request:
+    path: /phones/simulate/create_sandbox_phone
+    parameters:
+      custom_sdk_installation_id: visionline_sdk
+      user_identity_id: 799f9914-f2c2-4087-ab34-f1ffb44d6a0b
+      phone_metadata:
+        operating_system: android
+        os_version: 10
+        device_manufacturer: Samsung
+        device_model: Samsung Galaxy S10
+      assa_abloy_metadata:
+        ble_capability: true,
+        hce_capability: false,
+        nfc_capability: false,
+        application_version: '1.0.0'
+        seos_applet_version: '1.0.0'
+        seos_tsm_endpoint_id: 1
+  response:
+    body:
+      phone:
+        created_at: '2025-06-14T16:54:17.946540Z'
+        custom_metadata:
+          id: internalId1
+        device_id: e452f665-a635-4c65-922b-9feab0e0f84f
+        device_type: android_phone
+        display_name: My Phone
+        errors: []
+        nickname: My Phone
+        properties:
+          assa_abloy_credential_service_metadata:
+            endpoints:
+              - endpoint_id: c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
+                is_active: true
+            has_active_endpoint: true
+        warnings: []
+        workspace_id: da8639a4-28a2-4884-a4f9-b7691f4cf336

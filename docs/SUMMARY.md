@@ -142,6 +142,7 @@
   * [Delete an Access Code](api/access_codes/delete.md)
   * [Pull a Backup Access Code](api/access_codes/pull_backup_access_code.md)
   * [Report Device Access Code Constraints](api/access_codes/report_device_constraints.md)
+  * [Generate a Code](api/access_codes/generate_code.md)
   * [Unmanaged Access Codes](api/access_codes/unmanaged/README.md)
     * [List Unmanaged Access Codes](api/access_codes/unmanaged/list.md)
     * [Get an Unmanaged Access Code](api/access_codes/unmanaged/get.md)

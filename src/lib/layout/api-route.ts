@@ -243,7 +243,7 @@ const groupVariants = (
     .filter(({ variants }) => variants.length > 0)
     .filter(({ variantGroupKey }) => {
       if (include == null) return true
-      if (variantGroupKey == null) return false
+      if (variantGroupKey == null) return true
       return include.includes(variantGroupKey)
     })
     .filter(({ variantGroupKey }) => {
@@ -252,8 +252,8 @@ const groupVariants = (
       return !exclude.includes(variantGroupKey)
     })
     .sort((a, b) => {
-      if (a.name == null) return 1
-      if (b.name == null) return -1
+      if (a.variantGroupKey === null || a.name == null) return -1
+      if (a.variantGroupKey === null || b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
 }
@@ -330,7 +330,7 @@ export const groupProperties = (
     .filter(({ properties }) => properties.length > 0)
     .filter(({ propertyGroupKey }) => {
       if (include == null) return true
-      if (propertyGroupKey == null) return false
+      if (propertyGroupKey == null) return true
       return include.includes(propertyGroupKey)
     })
     .filter(({ propertyGroupKey }) => {
@@ -339,8 +339,8 @@ export const groupProperties = (
       return !exclude.includes(propertyGroupKey)
     })
     .sort((a, b) => {
-      if (a.name == null) return 1
-      if (b.name == null) return -1
+      if (a.name == null) return -1
+      if (b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
 }

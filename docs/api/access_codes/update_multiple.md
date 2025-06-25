@@ -10,6 +10,143 @@ Specify the `common_code_key` to identify the set of access codes that you want 
 See also [Update Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md#update-linked-access-codes).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```javascript
+await seam.accessCodes.updateMultiple({
+  ends_at: "2025-06-22T05:05:47.000Z",
+  starts_at: "2025-06-18T19:14:13.000Z",
+  name: "My Updated Linked Access Code",
+  common_code_key:
+    "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/update_multiple" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "ends_at": "2025-06-22T05:05:47.000Z",
+  "starts_at": "2025-06-18T19:14:13.000Z",
+  "name": "My Updated Linked Access Code",
+  "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```python
+seam.access_codes.update_multiple(
+    ends_at="2025-06-22T05:05:47.000Z",
+    starts_at="2025-06-18T19:14:13.000Z",
+    name="My Updated Linked Access Code",
+    common_code_key="auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```ruby
+seam.access_codes.update_multiple(
+  ends_at: "2025-06-22T05:05:47.000Z",
+  starts_at: "2025-06-18T19:14:13.000Z",
+  name: "My Updated Linked Access Code",
+  common_code_key: "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->update_multiple(
+    ends_at: "2025-06-22T05:05:47.000Z",
+    starts_at: "2025-06-18T19:14:13.000Z",
+    name: "My Updated Linked Access Code",
+    common_code_key: "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates access codes that share a common code across multiple devices.
+
+#### Code
+
+```seam_cli
+seam access-codes update-multiple --ends_at "2025-06-22T05:05:47.000Z" --starts_at "2025-06-18T19:14:13.000Z" --name "My Updated Linked Access Code" --common_code_key "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

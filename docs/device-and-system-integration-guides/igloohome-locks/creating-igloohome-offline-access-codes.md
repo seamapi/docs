@@ -313,46 +313,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the hourly-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my hourly-bound offline code")
-      .startsAt("2023-11-10T00:00:00Z")
-      .endsAt("2023-11-15T18:00:00Z")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-777777777777",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my hourly-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2023-11-10T00:00:00Z",
-  "ends_at" : "2023-11-15T18:00:00Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -634,47 +594,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the daily-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my daily-bound offline code")
-      .startsAt("2023-11-17T00:00:00Z")
-      .endsAt("2023-12-18T00:00:00Z")
-      .maxTimeRounding("1d")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-888888888888",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my daily-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2023-11-17T00:00:00Z",
-  "ends_at" : "2023-12-18T00:00:00Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

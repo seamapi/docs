@@ -1,0 +1,233 @@
+---
+- title: List noise sensors
+  description: Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
+  request:
+    path: /noise_sensors/list
+    parameters:
+      limit: 10
+  response:
+    body:
+      noise_sensors:
+        - capabilities_supported:
+            - noise_detection
+          connected_account_id: 9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d
+          created_at: '2025-05-16T16:54:17.946049Z'
+          custom_metadata:
+            id: internalId1
+          device_id: f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f
+          device_type: minut_sensor
+          display_name: Living Room
+          errors: []
+          is_managed: true
+          location:
+            location_name: "Jane's Test Home"
+            timezone: America/Los_Angeles
+          nickname: Living Room
+          properties:
+            appearance:
+              name: Living Room
+            battery:
+              level: 1
+              status: full
+            battery_level: 1
+            currently_triggering_noise_threshold_ids: []
+            image_alt_text: Minut Sensor
+            image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128
+            manufacturer: minut
+            minut_metadata:
+              device_id: 770cd3153deca3dee0fe0614
+              device_location:
+                latitude: 0
+                longitude: 0
+              device_name: Living Room
+              home_address:
+                city: San Francisco
+                country: US
+                notes: string
+                post_code: '44210'
+                region: San Francisco County
+                street_name1: 2258 24th Street
+                street_name2: ''
+              home_id: 2978b6d5dba395ec08300e46
+              home_location:
+                latitude: 0
+                longitude: 0
+              home_name: "Jane's Test Home"
+              latest_sensor_values:
+                accelerometer_z:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: -1.00390625
+                humidity:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 31.110000610351562
+                pressure:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 101923
+                sound:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 47.7117919921875
+                temperature:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 21.270000457763672
+            model:
+              display_name: Noise Sensor
+              manufacturer_display_name: Minut
+            name: Living Room
+            noise_level_decibels: 47.7117919921875
+            online: true
+          warnings: []
+          workspace_id: 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+      devices:
+        - capabilities_supported:
+            - noise_detection
+          connected_account_id: 9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d
+          created_at: '2025-05-16T16:54:17.946049Z'
+          custom_metadata:
+            id: internalId1
+          device_id: f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f
+          device_type: minut_sensor
+          display_name: Living Room
+          errors: []
+          is_managed: true
+          location:
+            location_name: "Jane's Test Home"
+            timezone: America/Los_Angeles
+          nickname: Living Room
+          properties:
+            appearance:
+              name: Living Room
+            battery:
+              level: 1
+              status: full
+            battery_level: 1
+            currently_triggering_noise_threshold_ids: []
+            image_alt_text: Minut Sensor
+            image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128
+            manufacturer: minut
+            minut_metadata:
+              device_id: 770cd3153deca3dee0fe0614
+              device_location:
+                latitude: 0
+                longitude: 0
+              device_name: Living Room
+              home_address:
+                city: San Francisco
+                country: US
+                notes: string
+                post_code: '44210'
+                region: San Francisco County
+                street_name1: 2258 24th Street
+                street_name2: ''
+              home_id: 2978b6d5dba395ec08300e46
+              home_location:
+                latitude: 0
+                longitude: 0
+              home_name: "Jane's Test Home"
+              latest_sensor_values:
+                accelerometer_z:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: -1.00390625
+                humidity:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 31.110000610351562
+                pressure:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 101923
+                sound:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 47.7117919921875
+                temperature:
+                  time: '2025-06-16T16:54:17.946049Z'
+                  value: 21.270000457763672
+            model:
+              display_name: Noise Sensor
+              manufacturer_display_name: Minut
+            name: Living Room
+            noise_level_decibels: 47.7117919921875
+            online: true
+          warnings: []
+          workspace_id: 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+- title: Simulate triggering a noise threshold
+  description: Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
+  request:
+    path: /noise_sensors/simulate/trigger_noise_threshold
+    parameters:
+      device_id: c0384c1c-9038-427c-9a72-314d2b168d43
+  response:
+    body: null
+- title: Create a noise threshold
+  description: Creates a new noise threshold for a noise sensor.
+  request:
+    path: /noise_sensors/noise_thresholds/create
+    parameters:
+      device_id: 8282891b-c4da-4239-8f01-56089d44b80d
+      name: My Noise Sensor
+      starts_daily_at: '2025-06-20T18:29:57.000Z'
+      ends_daily_at: '2025-06-19T12:38:44.000Z'
+      noise_threshold_decibels: 50
+      noise_threshold_nrs: 40
+  response:
+    body:
+      noise_threshold:
+        device_id: 8282891b-c4da-4239-8f01-56089d44b80d
+        ends_daily_at: '2025-06-19T12:38:44.000Z'
+        name: My Noise Sensor
+        noise_threshold_decibels: 50
+        noise_threshold_id: f8cef69d-625f-464c-aed4-287c06e0d7fe
+        noise_threshold_nrs: 40
+        starts_daily_at: '2025-06-20T18:29:57.000Z'
+- title: Delete a noise threshold
+  description: Deletes a noise threshold from a noise sensor.
+  request:
+    path: /noise_sensors/noise_thresholds/delete
+    parameters:
+      noise_threshold_id: 00fbac13-6602-4079-b4ae-c89d5dcbed35
+      device_id: 736fc5bf-192d-4416-b879-66ff0195f2f7
+  response:
+    body: null
+- title: Get a noise threshold
+  description: Returns a specified noise threshold for a noise sensor.
+  request:
+    path: /noise_sensors/noise_thresholds/get
+    parameters:
+      noise_threshold_id: 8282891b-c4da-4239-8f01-56089d44b80d
+  response:
+    body:
+      noise_threshold:
+        device_id: 8282891b-c4da-4239-8f01-56089d44b80d
+        ends_daily_at: '2025-06-19T12:38:44.000Z'
+        name: My Noise Sensor
+        noise_threshold_decibels: 50
+        noise_threshold_id: f8cef69d-625f-464c-aed4-287c06e0d7fe
+        noise_threshold_nrs: 40
+        starts_daily_at: '2025-06-20T18:29:57.000Z'
+- title: List noise thresholds
+  description: Returns a list of all noise thresholds for a noise sensor.
+  request:
+    path: /noise_sensors/noise_thresholds/list
+    parameters:
+      device_id: a60d1a44-5727-4223-8b58-9c2455eb57fc
+  response:
+    body:
+      noise_thresholds:
+        - device_id: 8282891b-c4da-4239-8f01-56089d44b80d
+          ends_daily_at: '2025-06-19T12:38:44.000Z'
+          name: My Noise Sensor
+          noise_threshold_decibels: 50
+          noise_threshold_id: f8cef69d-625f-464c-aed4-287c06e0d7fe
+          noise_threshold_nrs: 40
+          starts_daily_at: '2025-06-20T18:29:57.000Z'
+- title: Update a noise threshold
+  description: Updates a noise threshold for a noise sensor.
+  request:
+    path: /noise_sensors/noise_thresholds/update
+    parameters:
+      noise_threshold_id: 2cb09850-4962-4dee-a658-d8a79fcb9aff
+      device_id: c3885398-6794-44a0-a7a2-1f39ff454dc3
+      name: My Updated Noise Sensor
+      starts_daily_at: '2025-06-18T15:13:17.000Z'
+      ends_daily_at: '2025-06-17T21:33:58.000Z'
+      noise_threshold_decibels: 50
+      noise_threshold_nrs: 40
+  response:
+    body: null

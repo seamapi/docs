@@ -10,6 +10,137 @@ An unmanaged access code has a limited set of operations that you can perform on
 Note that not all device providers support converting an unmanaged access code to a managed access code.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```javascript
+await seam.accessCodes.unmanaged.convertToManaged({
+  access_code_id: "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+  is_external_modification_allowed: true,
+  force: true,
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/convert_to_managed" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+  "is_external_modification_allowed": true,
+  "force": true
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```python
+seam.access_codes.unmanaged.convert_to_managed(
+    access_code_id="9ef2af02-e335-4b49-bd51-00e851a83ef6",
+    is_external_modification_allowed=true,
+    force=true,
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```ruby
+seam.access_codes.unmanaged.convert_to_managed(
+  access_code_id: "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+  is_external_modification_allowed: true,
+  force: true,
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->unmanaged->convert_to_managed(
+    access_code_id: "9ef2af02-e335-4b49-bd51-00e851a83ef6",
+    is_external_modification_allowed: true,
+    force: true
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Converts an unmanaged access code to an access code managed through Seam.
+
+#### Code
+
+```seam_cli
+seam access-codes unmanaged convert-to-managed --access_code_id "9ef2af02-e335-4b49-bd51-00e851a83ef6" --is_external_modification_allowed true --force true
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

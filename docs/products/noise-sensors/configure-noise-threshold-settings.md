@@ -135,29 +135,6 @@ Error:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceId = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa";
-ActionAttempt noiseThresholdAttempt = seam.noiseSensors().noiseThresholds().create(NoiseThresholdsCreateRequest.builder()
-                .deviceId(deviceId)
-                .startsDailyAt("20:00:00[America/Los_Angeles]")
-                .endsDailyAt("06:00:00[America/Los_Angeles]")
-                .noiseThresholdDecibels(70.0)
-                .build());
-System.out.println(noiseThresholdAttempt.getPending());
-```
-
-**Response:**
-
-```json
-Optional[{
-  "action_type" : "CREATE_NOISE_THRESHOLD",
-  "action_attempt_id" : "c954a8ec-3c9a-4f26-8966-85de45966d1b"
-}]
-```
-{% endtab %}
 {% endtabs %}
 
 This threshold creates a noise threshold of 70 decibels from 20:00-06:00 PST called `builtin_quiet_hours`.

@@ -9,13 +9,13 @@ Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```javascript
 await seam.thermostats.schedules.delete({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de",
 });
 ```
 
@@ -28,7 +28,7 @@ await seam.thermostats.schedules.delete({
 
 {% tab title="cURL" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
 #### Code
 
@@ -37,7 +37,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+  "thermostat_schedule_id": "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 }
 EOF
 ```
@@ -51,13 +51,13 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```python
 seam.thermostats.schedules.delete(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+    thermostat_schedule_id="0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 )
 ```
 
@@ -70,12 +70,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```ruby
-seam.thermostats.schedules.delete(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
+seam.thermostats.schedules.delete(thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de")
 ```
 
 #### Output
@@ -87,14 +87,14 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```php
 <?php
 $seam->thermostats->schedules->delete(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+    thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 );
 ```
 
@@ -107,12 +107,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```seam_cli
-seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+seam thermostats schedules delete --thermostat_schedule_id "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 ```
 
 #### Output

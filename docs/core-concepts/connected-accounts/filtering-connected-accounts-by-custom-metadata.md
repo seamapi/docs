@@ -201,41 +201,6 @@ foreach (var connectedAccount in connectedAccounts)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
-
-var connectedAccounts = seam.connectedAccounts().list(ConnectedAccountsListRequest.builder()
-                .customMetadataHas(customMetadata)
-                .build());
-
-System.out.println(connectedAccounts);
-```
-
-**Response:**
-
-```json
-[{
-  "connected_account_id" : "c993818b-bf3c-4836-bef4-9a76d89bf1d3",
-  "created_at" : "2024-01-05T07:20:07.692Z",
-  "user_identifier" : {
-    "username" : "jane"
-  },
-  "account_type" : "visionline",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "custom_metadata" : {
-    "internal_account_id" : "user-1"
-  },
-  "account_type_display_name" : "Visionline",
-  "automatically_manage_new_devices" : true
-},...
-]
-```
-{% endtab %}
 
 
 {% endtabs %}

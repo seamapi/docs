@@ -9,14 +9,14 @@ Adds a specified [access system user](https://docs.seam.co/latest/capability-gui
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified access system user to a specified access group.
 
 #### Code
 
 ```javascript
 await seam.acs.users.addToAccessGroup({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
+  acs_user_id: "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+  acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27",
 });
 ```
 
@@ -29,7 +29,7 @@ await seam.acs.users.addToAccessGroup({
 
 {% tab title="cURL" %}
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified access system user to a specified access group.
 
 #### Code
 
@@ -38,8 +38,8 @@ curl --include --request POST "https://connect.getseam.com/acs/users/add_to_acce
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  "acs_access_group_id": "123e4567-e89b-12d3-a456-426614174000"
+  "acs_user_id": "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+  "acs_access_group_id": "58c8b034-e527-4635-a335-afc74dc79b27"
 }
 EOF
 ```
@@ -53,14 +53,14 @@ EOF
 
 {% tab title="Python" %}
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified access system user to a specified access group.
 
 #### Code
 
 ```python
 seam.acs.users.add_to_access_group(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id="123e4567-e89b-12d3-a456-426614174000",
+    acs_user_id="15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+    acs_access_group_id="58c8b034-e527-4635-a335-afc74dc79b27",
 )
 ```
 
@@ -73,14 +73,14 @@ None
 
 {% tab title="Ruby" %}
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified access system user to a specified access group.
 
 #### Code
 
 ```ruby
 seam.acs.users.add_to_access_group(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
+  acs_user_id: "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+  acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27",
 )
 ```
 
@@ -93,15 +93,15 @@ nil
 
 {% tab title="PHP" %}
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified access system user to a specified access group.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->users->add_to_access_group(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000"
+    acs_user_id: "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
+    acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27"
 );
 ```
 
@@ -114,12 +114,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified access system user to a specified access group.
 
 #### Code
 
 ```seam_cli
-seam acs users add-to-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --acs_access_group_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs users add-to-access-group --acs_user_id "15ce02a8-b145-4c02-adc9-d9d84c8a1177" --acs_access_group_id "58c8b034-e527-4635-a335-afc74dc79b27"
 ```
 
 #### Output

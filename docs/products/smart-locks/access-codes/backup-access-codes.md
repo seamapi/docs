@@ -174,37 +174,6 @@ Supports backup access code pool: True
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Device device = seam.devices()
-        .get(DevicesGetRequest.builder()
-                .deviceId("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
-                .build());
-System.out.println(device);
-```
-
-**Response:**
-
-```json
-{
-  "device_id" : "0168fba8-8275-49a3-acf5-b2bced519a2c",
-  .
-  .
-  .
-  "properties" : {
-    .
-    .
-    .
-    "supports_backup_access_code_pool" : true
-  },
-  .
-  .
-  .
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -469,43 +438,6 @@ Is backup access code available: True
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
-
-AccessCode CreatedAccessCode = seam.accessCodes().create(AccessCodesCreateRequest.builder()
-        .deviceId(deviceId)
-        .name("my time-bound code")
-        .startsAt("2025-01-01T16:00:00Z")
-        .endsAt("2025-01-22T12:00:00Z")
-        .useBackupAccessCodePool(true)
-        .build());
-System.out.println(CreatedAccessCode);
-```
-
-**Response:**
-
-```json
-{
-  "is_scheduled_on_device" : false,
-  "type" : "time_bound",
-  "access_code_id" : "206491e0-000f-49cb-8f18-db47a12bc785",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my time-bound code",
-  "code" : "0709",
-  "created_at" : "2023-10-30T07:45:08.138Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "starts_at" : "2025-01-01T16:00:00Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  "status" : "unset",
-  "is_backup_access_code_available" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Detect when an access code has failed to program
@@ -641,24 +573,6 @@ Is backup access code available: True
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-AccessCode accessCode = seam.accessCodes()
-        .get(AccessCodesGetRequest.builder()
-                .accessCodeId("206491e0-000f-49cb-8f18-db47a12bc785")
-                .build());
-System.out.println("Is backup access code available: "
-  + accessCode.getIsBackupAccessCodeAvailable());
-```
-
-**Response:**
-
-```
-Is backup access code available: true
-```
-{% endtab %}
 {% endtabs %}
 
 ### 4. Retrieve a backup access code
@@ -906,37 +820,6 @@ IsExternalModificationAllowed: False
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-ccessCode backupAccessCode = seam.accessCodes().pullBackupAccessCode(AccessCodesPullBackupAccessCodeRequest.builder()
-        .accessCodeId("206491e0-000f-49cb-8f18-db47a12bc785")
-        .build());
-System.out.println(backupAccessCode);
-```
-
-**Response:**
-
-```json
-{
-  "type" : "time_bound",
-  "access_code_id" : "b66ef4c2-d269-4a91-8839-19910a11e776",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "Backup b66ef4c2-d269-4a91-8839-19910a11e776 (Seam)",
-  "code" : "6732",
-  "created_at" : "2023-10-30T07:39:54.738Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "starts_at" : "2023-10-30T08:03:51.962Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  "status" : "set",
-  "is_backup_access_code_available" : false,
-  "is_backup" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

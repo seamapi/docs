@@ -9,13 +9,13 @@ Request a [connected account](../../core-concepts/connected-accounts/README.md) 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
 #### Code
 
 ```javascript
 await seam.connectedAccounts.sync({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279",
 });
 ```
 
@@ -28,7 +28,7 @@ await seam.connectedAccounts.sync({
 
 {% tab title="cURL" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
 #### Code
 
@@ -37,7 +37,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/sy
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+  "connected_account_id": "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 }
 EOF
 ```
@@ -51,13 +51,13 @@ EOF
 
 {% tab title="Python" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
 #### Code
 
 ```python
 seam.connected_accounts.sync(
-    connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id="f886f890-4ca5-4ce5-b248-509cbfb6c279"
 )
 ```
 
@@ -70,12 +70,12 @@ None
 
 {% tab title="Ruby" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
 #### Code
 
 ```ruby
-seam.connected_accounts.sync(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
+seam.connected_accounts.sync(connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279")
 ```
 
 #### Output
@@ -87,14 +87,14 @@ nil
 
 {% tab title="PHP" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
 #### Code
 
 ```php
 <?php
 $seam->connected_accounts->sync(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 );
 ```
 
@@ -107,12 +107,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
 #### Code
 
 ```seam_cli
-seam connected-accounts sync --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
+seam connected-accounts sync --connected_account_id "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 ```
 
 #### Output

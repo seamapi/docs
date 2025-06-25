@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 Unassigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) from a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -9,14 +10,14 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```javascript
 await seam.acs.credentials.unassign({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  user_identity_id: "417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
+  acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
 });
 ```
 
@@ -29,7 +30,7 @@ await seam.acs.credentials.unassign({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
@@ -38,8 +39,8 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/unass
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+  "user_identity_id": "417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
+  "acs_credential_id": "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
 }
 EOF
 ```
@@ -53,14 +54,14 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```python
 seam.acs.credentials.unassign(
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    acs_credential_id="66666666-6666-6666-6666-666666666666",
+    user_identity_id="417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
+    acs_credential_id="b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
 )
 ```
 
@@ -73,14 +74,14 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```ruby
 seam.acs.credentials.unassign(
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  user_identity_id: "417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
+  acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
 )
 ```
 
@@ -93,15 +94,15 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->credentials->unassign(
-    acs_user_id: "33333333-3333-3333-3333-333333333333",
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
+    user_identity_id: "417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
+    acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
 );
 ```
 
@@ -114,12 +115,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to unassign the specified credential from the specified ACS user.
+Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
 #### Code
 
 ```seam_cli
-seam acs credentials unassign --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_credential_id "66666666-6666-6666-6666-666666666666"
+seam acs credentials unassign --user_identity_id "417e9370-d2cc-4b23-b6d5-fbf7fdbda354" --acs_credential_id "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
 ```
 
 #### Output
@@ -168,3 +169,137 @@ ID of the user identity from which you want to unassign a credential. You can on
 
 void
 
+
+---
+
+## Examples
+
+
+### Unassign a credential from an access system user
+
+Unassigns a specified credential from a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.credentials.unassign({
+  acs_user_id: "ae76d550-f2e0-4f61-9380-a64d276f9904",
+  acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "ae76d550-f2e0-4f61-9380-a64d276f9904",
+  "acs_credential_id": "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.credentials.unassign(
+    acs_user_id="ae76d550-f2e0-4f61-9380-a64d276f9904",
+    acs_credential_id="b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.credentials.unassign(
+  acs_user_id: "ae76d550-f2e0-4f61-9380-a64d276f9904",
+  acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->credentials->unassign(
+    acs_user_id: "ae76d550-f2e0-4f61-9380-a64d276f9904",
+    acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs credentials unassign --acs_user_id "ae76d550-f2e0-4f61-9380-a64d276f9904" --acs_credential_id "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

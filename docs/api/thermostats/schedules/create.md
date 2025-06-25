@@ -9,18 +9,19 @@ Creates a new [thermostat schedule](../../../capability-guides/thermostats/creat
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+Creates a new thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```javascript
 await seam.thermostats.schedules.create({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  name: "Reservation 1",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-01T15:00:00Z",
-  ends_at: "2024-11-05T12:00:00Z",
+  device_id: "d710aa35-232d-442b-a817-c28045de1c74",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
   max_override_period_minutes: 90,
+  starts_at: "2025-06-19T15:00:00.000Z",
+  ends_at: "2025-06-22T11:00:00.000Z",
+  is_override_allowed: true,
 });
 ```
 
@@ -28,20 +29,24 @@ await seam.thermostats.schedules.create({
 
 ```javascript
 {
-  "thermostat_schedule_id": "56d29fcf-0674-4db5-8e03-b2370a77460a",
-  "name": "Reservation 1",
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-01T15:00:00.000Z",
-  "ends_at": "2024-11-05T12:00:00.000Z",
-  "max_override_period_minutes": 90
+  "climate_preset_key": "Occupied",
+  "created_at": "2025-06-14T16:54:17.946316Z",
+  "device_id": "d710aa35-232d-442b-a817-c28045de1c74",
+  "ends_at": "2025-06-22T11:00:00.000Z",
+  "errors": [],
+  "is_override_allowed": true,
+  "max_override_period_minutes": 90,
+  "name": "Jane's Stay",
+  "starts_at": "2025-06-22T11:00:00.000Z",
+  "thermostat_schedule_id": "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+  "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+Creates a new thermostat schedule for a specified thermostat.
 
 #### Code
 
@@ -50,12 +55,13 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "name": "Reservation 1",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-01T15:00:00Z",
-  "ends_at": "2024-11-05T12:00:00Z",
-  "max_override_period_minutes": 90
+  "device_id": "d710aa35-232d-442b-a817-c28045de1c74",
+  "name": "Jane's Stay",
+  "climate_preset_key": "Occupied",
+  "max_override_period_minutes": 90,
+  "starts_at": "2025-06-19T15:00:00.000Z",
+  "ends_at": "2025-06-22T11:00:00.000Z",
+  "is_override_allowed": true
 }
 EOF
 ```
@@ -65,13 +71,17 @@ EOF
 ```curl
 {
   "thermostat_schedule": {
-    "thermostat_schedule_id": "56d29fcf-0674-4db5-8e03-b2370a77460a",
-    "name": "Reservation 1",
-    "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-    "climate_preset_key": "occupied",
-    "starts_at": "2024-11-01T15:00:00.000Z",
-    "ends_at": "2024-11-05T12:00:00.000Z",
-    "max_override_period_minutes": 90
+    "climate_preset_key": "Occupied",
+    "created_at": "2025-06-14T16:54:17.946316Z",
+    "device_id": "d710aa35-232d-442b-a817-c28045de1c74",
+    "ends_at": "2025-06-22T11:00:00.000Z",
+    "errors": [],
+    "is_override_allowed": true,
+    "max_override_period_minutes": 90,
+    "name": "Jane's Stay",
+    "starts_at": "2025-06-22T11:00:00.000Z",
+    "thermostat_schedule_id": "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+    "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
   }
 }
 ```
@@ -79,18 +89,19 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+Creates a new thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```python
 seam.thermostats.schedules.create(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    name="Reservation 1",
-    climate_preset_key="occupied",
-    starts_at="2024-11-01T15:00:00Z",
-    ends_at="2024-11-05T12:00:00Z",
+    device_id="d710aa35-232d-442b-a817-c28045de1c74",
+    name="Jane's Stay",
+    climate_preset_key="Occupied",
     max_override_period_minutes=90,
+    starts_at="2025-06-19T15:00:00.000Z",
+    ends_at="2025-06-22T11:00:00.000Z",
+    is_override_allowed=true,
 )
 ```
 
@@ -98,31 +109,36 @@ seam.thermostats.schedules.create(
 
 ```python
 ThermostatSchedule(
-    thermostat_schedule_id="56d29fcf-0674-4db5-8e03-b2370a77460a",
-    name="Reservation 1",
-    device_id="2d488679-6f07-4810-aed2-e726872c1dd5",
-    climate_preset_key="occupied",
-    starts_at="2024-11-01T15:00:00.000Z",
-    ends_at="2024-11-05T12:00:00.000Z",
+    climate_preset_key="Occupied",
+    created_at="2025-06-14T16:54:17.946316Z",
+    device_id="d710aa35-232d-442b-a817-c28045de1c74",
+    ends_at="2025-06-22T11:00:00.000Z",
+    errors=[],
+    is_override_allowed=true,
     max_override_period_minutes=90,
+    name="Jane's Stay",
+    starts_at="2025-06-22T11:00:00.000Z",
+    thermostat_schedule_id="af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+    workspace_id="58419b36-6103-44e5-aa83-2163e90cce01",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+Creates a new thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```ruby
 seam.thermostats.schedules.create(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  name: "Reservation 1",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-01T15:00:00Z",
-  ends_at: "2024-11-05T12:00:00Z",
+  device_id: "d710aa35-232d-442b-a817-c28045de1c74",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
   max_override_period_minutes: 90,
+  starts_at: "2025-06-19T15:00:00.000Z",
+  ends_at: "2025-06-22T11:00:00.000Z",
+  is_override_allowed: true,
 )
 ```
 
@@ -130,32 +146,37 @@ seam.thermostats.schedules.create(
 
 ```ruby
 {
-  "thermostat_schedule_id" => "56d29fcf-0674-4db5-8e03-b2370a77460a",
-  "name" => "Reservation 1",
-  "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key" => "occupied",
-  "starts_at" => "2024-11-01T15:00:00.000Z",
-  "ends_at" => "2024-11-05T12:00:00.000Z",
+  "climate_preset_key" => "Occupied",
+  "created_at" => "2025-06-14T16:54:17.946316Z",
+  "device_id" => "d710aa35-232d-442b-a817-c28045de1c74",
+  "ends_at" => "2025-06-22T11:00:00.000Z",
+  "errors" => [],
+  "is_override_allowed" => true,
   "max_override_period_minutes" => 90,
+  "name" => "Jane's Stay",
+  "starts_at" => "2025-06-22T11:00:00.000Z",
+  "thermostat_schedule_id" => "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+  "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+Creates a new thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```php
 <?php
 $seam->thermostats->schedules->create(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    name: "Reservation 1",
-    climate_preset_key: "occupied",
-    starts_at: "2024-11-01T15:00:00Z",
-    ends_at: "2024-11-05T12:00:00Z",
-    max_override_period_minutes: 90
+    device_id: "d710aa35-232d-442b-a817-c28045de1c74",
+    name: "Jane's Stay",
+    climate_preset_key: "Occupied",
+    max_override_period_minutes: 90,
+    starts_at: "2025-06-19T15:00:00.000Z",
+    ends_at: "2025-06-22T11:00:00.000Z",
+    is_override_allowed: true
 );
 ```
 
@@ -164,38 +185,46 @@ $seam->thermostats->schedules->create(
 ```php
 <?php
 [
-    "thermostat_schedule_id" => "56d29fcf-0674-4db5-8e03-b2370a77460a",
-    "name" => "Reservation 1",
-    "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
-    "climate_preset_key" => "occupied",
-    "starts_at" => "2024-11-01T15:00:00.000Z",
-    "ends_at" => "2024-11-05T12:00:00.000Z",
+    "climate_preset_key" => "Occupied",
+    "created_at" => "2025-06-14T16:54:17.946316Z",
+    "device_id" => "d710aa35-232d-442b-a817-c28045de1c74",
+    "ends_at" => "2025-06-22T11:00:00.000Z",
+    "errors" => [],
+    "is_override_allowed" => true,
     "max_override_period_minutes" => 90,
+    "name" => "Jane's Stay",
+    "starts_at" => "2025-06-22T11:00:00.000Z",
+    "thermostat_schedule_id" => "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+    "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, as well as the desired `starts_at` and `ends_at` times.
+Creates a new thermostat schedule for a specified thermostat.
 
 #### Code
 
 ```seam_cli
-seam thermostats schedules create --device_id "123e4567-e89b-12d3-a456-426614174000" --name "Reservation 1" --climate_preset_key "occupied" --starts_at "2024-11-01T15:00:00Z" --ends_at "2024-11-05T12:00:00Z" --max_override_period_minutes 90
+seam thermostats schedules create --device_id "d710aa35-232d-442b-a817-c28045de1c74" --name "Jane's Stay" --climate_preset_key "Occupied" --max_override_period_minutes 90 --starts_at "2025-06-19T15:00:00.000Z" --ends_at "2025-06-22T11:00:00.000Z" --is_override_allowed true
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "thermostat_schedule_id": "56d29fcf-0674-4db5-8e03-b2370a77460a",
-  "name": "Reservation 1",
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-01T15:00:00.000Z",
-  "ends_at": "2024-11-05T12:00:00.000Z",
-  "max_override_period_minutes": 90
+  "climate_preset_key": "Occupied",
+  "created_at": "2025-06-14T16:54:17.946316Z",
+  "device_id": "d710aa35-232d-442b-a817-c28045de1c74",
+  "ends_at": "2025-06-22T11:00:00.000Z",
+  "errors": [],
+  "is_override_allowed": true,
+  "max_override_period_minutes": 90,
+  "name": "Jane's Stay",
+  "starts_at": "2025-06-22T11:00:00.000Z",
+  "thermostat_schedule_id": "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+  "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
 {% endtab %}

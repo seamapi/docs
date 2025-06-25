@@ -49,9 +49,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -79,32 +77,9 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 
 {% endtabs %}
 
@@ -362,66 +337,6 @@ if (frontDoor.CanRemotelyUnlock == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-import java.io.Console;
-import java.util.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.seam.api.Seam;
-import com.seam.api.core.ObjectMappers;
-import com.seam.api.types.Device;
-import com.seam.api.types.Manufacturer;
-import com.seam.api.types.ActionAttempt;
-import com.seam.api.resources.devices.requests.DevicesListRequest;
-import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
-
-public class Main {
-
-  public static void main(String[] args) {
-
-    Seam seam = Seam.builder()
-      .apiKey(SEAM_API_KEY)
-      .build();
-
-    // Retrieve all devices, filtered by manufacturer,
-    // which is one of several filters that list() supports.
-    var allAugustLocks = seam.devices().list(DevicesListRequest.builder()
-      .manufacturer(Manufacturer.AUGUST)
-      .build());
-    
-    // Select the first device as an example.
-    Device frontDoor = allAugustLocks.get(0);
-    
-    // Confirm that the device can remotely unlock.
-    // You're using a capability flag here!
-    if (frontDoor.getCanRemotelyUnlock())
-    {
-      // Perform the unlock operation
-      // and return an action attempt.
-      ActionAttempt actionAttempt = seam.locks()
-        .unlockDoor(LocksUnlockDoorRequest.builder()
-          .deviceId(frontDoor.getDeviceId())
-          .build());
-    }
-  }
-}
-```
-
-**Output:**
-
-```json
-Optional[
-  {
-    "action_type" : "UNLOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "pending"
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}

@@ -360,48 +360,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the hourly-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my hourly-bound offline code")
-      // Make sure that the validity period matches
-      // a user level for the device.
-      .startsAt("2024-09-10T07:00:00-07:00")
-      .endsAt("2024-09-15T19:00:00-07:00")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-777777777777",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my hourly-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2024-09-10T14:00:00.000Z",
-  "ends_at" : "2024-09-16T02:00:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -699,49 +657,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the daily-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my daily-bound offline code")
-      // Make sure that the validity period matches
-      // a user level for the device.
-      .startsAt("2024-09-16T00:00:00-07:00")
-      .endsAt("2024-09-18T23:59:00-07:00")
-      .maxTimeRounding("1d")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-888888888888",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my daily-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2024-09-16T07:00:00.000Z",
-  "ends_at" : "2024-09-19T06:59:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

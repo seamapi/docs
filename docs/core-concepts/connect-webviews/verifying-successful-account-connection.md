@@ -168,27 +168,6 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "status": "authorized",
-  "login_successful": true,
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

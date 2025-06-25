@@ -13,13 +13,13 @@ For example, if you delete a connected account with a device that has an access 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
 #### Code
 
 ```javascript
 await seam.connectedAccounts.delete({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e",
 });
 ```
 
@@ -32,7 +32,7 @@ await seam.connectedAccounts.delete({
 
 {% tab title="cURL" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
 #### Code
 
@@ -41,7 +41,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/de
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+  "connected_account_id": "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 }
 EOF
 ```
@@ -55,13 +55,13 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
 #### Code
 
 ```python
 seam.connected_accounts.delete(
-    connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id="35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 )
 ```
 
@@ -74,12 +74,12 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
 #### Code
 
 ```ruby
-seam.connected_accounts.delete(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
+seam.connected_accounts.delete(connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e")
 ```
 
 #### Output
@@ -91,14 +91,14 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
 #### Code
 
 ```php
 <?php
 $seam->connected_accounts->delete(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 );
 ```
 
@@ -111,12 +111,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
 #### Code
 
 ```seam_cli
-seam connected-accounts delete --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
+seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 ```
 
 #### Output

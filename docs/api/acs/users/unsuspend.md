@@ -2,6 +2,7 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
+- [Examples](#examples)
 
 [Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an access system user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the access system user restores their access.
 
@@ -9,13 +10,14 @@
 {% tabs %}
 {% tab title="JavaScript" %}
 
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+Unsuspends a specified suspended access system user, using the associated user identity.
 
 #### Code
 
 ```javascript
 await seam.acs.users.unsuspend({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537",
+  acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521",
 });
 ```
 
@@ -28,7 +30,7 @@ await seam.acs.users.unsuspend({
 
 {% tab title="cURL" %}
 
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+Unsuspends a specified suspended access system user, using the associated user identity.
 
 #### Code
 
@@ -37,7 +39,8 @@ curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" 
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+  "user_identity_id": "6a42fbcf-da1a-40f8-8221-596774f97537",
+  "acs_system_id": "264ea3f9-e483-469e-aada-c98c094d5521"
 }
 EOF
 ```
@@ -51,12 +54,15 @@ EOF
 
 {% tab title="Python" %}
 
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+Unsuspends a specified suspended access system user, using the associated user identity.
 
 #### Code
 
 ```python
-seam.acs.users.unsuspend(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.users.unsuspend(
+    user_identity_id="6a42fbcf-da1a-40f8-8221-596774f97537",
+    acs_system_id="264ea3f9-e483-469e-aada-c98c094d5521",
+)
 ```
 
 #### Output
@@ -68,12 +74,15 @@ None
 
 {% tab title="Ruby" %}
 
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+Unsuspends a specified suspended access system user, using the associated user identity.
 
 #### Code
 
 ```ruby
-seam.acs.users.unsuspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.users.unsuspend(
+  user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537",
+  acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521",
+)
 ```
 
 #### Output
@@ -85,14 +94,15 @@ nil
 
 {% tab title="PHP" %}
 
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+Unsuspends a specified suspended access system user, using the associated user identity.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->users->unsuspend(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+    user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537",
+    acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521"
 );
 ```
 
@@ -105,12 +115,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.
+Unsuspends a specified suspended access system user, using the associated user identity.
 
 #### Code
 
 ```seam_cli
-seam acs users unsuspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+seam acs users unsuspend --user_identity_id "6a42fbcf-da1a-40f8-8221-596774f97537" --acs_system_id "264ea3f9-e483-469e-aada-c98c094d5521"
 ```
 
 #### Output
@@ -159,3 +169,128 @@ ID of the user identity that you want to unsuspend. You can only provide acs_use
 
 void
 
+
+---
+
+## Examples
+
+
+### Unsuspend an access system user
+
+Unsuspends a specified suspended access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code
+
+```javascript
+await seam.acs.users.unsuspend({
+  acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "56dd7042-4134-4788-9212-53f25f2939e1"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code
+
+```python
+seam.acs.users.unsuspend(acs_user_id="56dd7042-4134-4788-9212-53f25f2939e1")
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code
+
+```ruby
+seam.acs.users.unsuspend(acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1")
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code
+
+```php
+<?php
+$seam->acs->users->unsuspend(
+    acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code
+
+```seam_cli
+seam acs users unsuspend --acs_user_id "56dd7042-4134-4788-9212-53f25f2939e1"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

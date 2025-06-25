@@ -9,13 +9,13 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired heating and cooling set points in °C or °F.
+Sets the HVAC mode for a specified thermostat.
 
 #### Code
 
 ```javascript
 await seam.thermostats.setHvacMode({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
   hvac_mode_setting: "heat_cool",
   heating_set_point_celsius: 20,
   cooling_set_point_celsius: 25,
@@ -26,16 +26,18 @@ await seam.thermostats.setHvacMode({
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "success",
-  "action_type": "SET_HVAC_MODE"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the desired heating and cooling set points in °C or °F.
+Sets the HVAC mode for a specified thermostat.
 
 #### Code
 
@@ -44,7 +46,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "device_id": "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
   "hvac_mode_setting": "heat_cool",
   "heating_set_point_celsius": 20,
   "cooling_set_point_celsius": 25
@@ -57,9 +59,11 @@ EOF
 ```curl
 {
   "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "success",
-    "action_type": "SET_HVAC_MODE"
+    "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type": "SET_HVAC_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
   }
 }
 ```
@@ -67,13 +71,13 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired heating and cooling set points in °C or °F.
+Sets the HVAC mode for a specified thermostat.
 
 #### Code
 
 ```python
 seam.thermostats.set_hvac_mode(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
+    device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
     hvac_mode_setting="heat_cool",
     heating_set_point_celsius=20,
     cooling_set_point_celsius=25,
@@ -84,22 +88,24 @@ seam.thermostats.set_hvac_mode(
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="success",
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the desired heating and cooling set points in °C or °F.
+Sets the HVAC mode for a specified thermostat.
 
 #### Code
 
 ```ruby
 seam.thermostats.set_hvac_mode(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
   hvac_mode_setting: "heat_cool",
   heating_set_point_celsius: 20,
   cooling_set_point_celsius: 25,
@@ -110,23 +116,26 @@ seam.thermostats.set_hvac_mode(
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "success",
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
   "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the desired heating and cooling set points in °C or °F.
+Sets the HVAC mode for a specified thermostat.
 
 #### Code
 
 ```php
 <?php
 $seam->thermostats->set_hvac_mode(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
     hvac_mode_setting: "heat_cool",
     heating_set_point_celsius: 20,
     cooling_set_point_celsius: 25
@@ -138,30 +147,34 @@ $seam->thermostats->set_hvac_mode(
 ```php
 <?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "success",
+    "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired heating and cooling set points in °C or °F.
+Sets the HVAC mode for a specified thermostat.
 
 #### Code
 
 ```seam_cli
-seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
+seam thermostats set-hvac-mode --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "success",
-  "action_type": "SET_HVAC_MODE"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}

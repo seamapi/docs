@@ -2,7 +2,6 @@
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
-- [Examples](#examples)
 
 Creates a new [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -10,16 +9,22 @@ Creates a new [access system user](https://docs.seam.co/latest/capability-guides
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new access system user.
 
 #### Code
 
 ```javascript
 await seam.acs.users.create({
-  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
   full_name: "Jane Doe",
+  acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  acs_access_group_ids: ["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+  user_identity_id: "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
   email_address: "jane@example.com",
-  phone_number: "+15555550100",
+  phone_number: "+15551234567",
 });
 ```
 
@@ -27,21 +32,39 @@ await seam.acs.users.create({
 
 ```javascript
 {
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
+  "access_schedule": {
+    "ends_at": "2025-06-12T11:00:00.000Z",
+    "starts_at": "2025-06-10T15:00:00.000Z"
+  },
+  "acs_system_id": "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+  "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+  "created_at": "2025-06-15T16:54:17.946482Z",
   "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
   "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
+  "errors": [],
+  "external_type": "salto_site_user",
+  "external_type_display_name": "Salto site user",
+  "full_name": "Jane Doe",
+  "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+  "is_managed": true,
+  "is_suspended": false,
+  "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+  "pending_mutations": [],
+  "phone_number": "+15551234567",
+  "user_identity_email_address": "jane@example.com",
+  "user_identity_full_name": "Jane Doe",
+  "user_identity_id": "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  "user_identity_phone_number": "+15551234567",
+  "warnings": [],
+  "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new access system user.
 
 #### Code
 
@@ -50,10 +73,18 @@ curl --include --request POST "https://connect.getseam.com/acs/users/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
   "full_name": "Jane Doe",
+  "acs_system_id": "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  "acs_access_group_ids": [
+    "bab9962b-708b-4db7-98d5-b242a28c12e9"
+  ],
+  "user_identity_id": "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  "access_schedule": {
+    "starts_at": "2025-06-10T15:00:00.000Z",
+    "ends_at": "2025-06-12T11:00:00.000Z"
+  },
   "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
+  "phone_number": "+15551234567"
 }
 EOF
 ```
@@ -63,14 +94,32 @@ EOF
 ```curl
 {
   "acs_user": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
+    "access_schedule": {
+      "ends_at": "2025-06-12T11:00:00.000Z",
+      "starts_at": "2025-06-10T15:00:00.000Z"
+    },
+    "acs_system_id": "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+    "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at": "2025-06-15T16:54:17.946482Z",
     "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
     "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
+    "errors": [],
+    "external_type": "salto_site_user",
+    "external_type_display_name": "Salto site user",
+    "full_name": "Jane Doe",
+    "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed": true,
+    "is_suspended": false,
+    "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+    "pending_mutations": [],
+    "phone_number": "+15551234567",
+    "user_identity_email_address": "jane@example.com",
+    "user_identity_full_name": "Jane Doe",
+    "user_identity_id": "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+    "user_identity_phone_number": "+15551234567",
+    "warnings": [],
+    "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
   }
 }
 ```
@@ -78,16 +127,22 @@ EOF
 
 {% tab title="Python" %}
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new access system user.
 
 #### Code
 
 ```python
 seam.acs.users.create(
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
     full_name="Jane Doe",
+    acs_system_id="dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+    acs_access_group_ids=["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+    user_identity_id="3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+    access_schedule={
+        "starts_at": "2025-06-10T15:00:00.000Z",
+        "ends_at": "2025-06-12T11:00:00.000Z",
+    },
     email_address="jane@example.com",
-    phone_number="+15555550100",
+    phone_number="+15551234567",
 )
 ```
 
@@ -95,30 +150,54 @@ seam.acs.users.create(
 
 ```python
 AcsUser(
-    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    workspace_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
+    access_schedule={
+        "ends_at": "2025-06-12T11:00:00.000Z",
+        "starts_at": "2025-06-10T15:00:00.000Z",
+    },
+    acs_system_id="dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+    acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
+    connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
+    created_at="2025-06-15T16:54:17.946482Z",
     display_name="Jane Doe",
-    full_name="Jane Doe",
     email_address="jane@example.com",
-    phone_number="+15555550100",
+    errors=[],
+    external_type="salto_site_user",
+    external_type_display_name="Salto site user",
+    full_name="Jane Doe",
+    hid_acs_system_id="2acbe47f-612c-422a-9205-7af292f74e7f",
+    is_managed=true,
+    is_suspended=false,
+    last_successful_sync_at="2025-06-18T17:45:00.582Z",
+    pending_mutations=[],
+    phone_number="+15551234567",
+    user_identity_email_address="jane@example.com",
+    user_identity_full_name="Jane Doe",
+    user_identity_id="3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+    user_identity_phone_number="+15551234567",
+    warnings=[],
+    workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new access system user.
 
 #### Code
 
 ```ruby
 seam.acs.users.create(
-  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
   full_name: "Jane Doe",
+  acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  acs_access_group_ids: ["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+  user_identity_id: "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
   email_address: "jane@example.com",
-  phone_number: "+15555550100",
+  phone_number: "+15551234567",
 )
 ```
 
@@ -126,31 +205,55 @@ seam.acs.users.create(
 
 ```ruby
 {
-  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
+  "access_schedule" => {
+    ends_at: "2025-06-12T11:00:00.000Z",
+    starts_at: "2025-06-10T15:00:00.000Z",
+  },
+  "acs_system_id" => "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+  "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+  "created_at" => "2025-06-15T16:54:17.946482Z",
   "display_name" => "Jane Doe",
-  "full_name" => "Jane Doe",
   "email_address" => "jane@example.com",
-  "phone_number" => "+15555550100",
+  "errors" => [],
+  "external_type" => "salto_site_user",
+  "external_type_display_name" => "Salto site user",
+  "full_name" => "Jane Doe",
+  "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+  "is_managed" => true,
+  "is_suspended" => false,
+  "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+  "pending_mutations" => [],
+  "phone_number" => "+15551234567",
+  "user_identity_email_address" => "jane@example.com",
+  "user_identity_full_name" => "Jane Doe",
+  "user_identity_id" => "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  "user_identity_phone_number" => "+15551234567",
+  "warnings" => [],
+  "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new access system user.
 
 #### Code
 
 ```php
 <?php
 $seam->acs->users->create(
-    acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
     full_name: "Jane Doe",
+    acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+    acs_access_group_ids: ["bab9962b-708b-4db7-98d5-b242a28c12e9"],
+    user_identity_id: "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+    access_schedule: [
+        "starts_at" => "2025-06-10T15:00:00.000Z",
+        "ends_at" => "2025-06-12T11:00:00.000Z",
+    ],
     email_address: "jane@example.com",
-    phone_number: "+15555550100"
+    phone_number: "+15551234567"
 );
 ```
 
@@ -159,40 +262,76 @@ $seam->acs->users->create(
 ```php
 <?php
 [
-    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
+    "access_schedule" => [
+        "ends_at" => "2025-06-12T11:00:00.000Z",
+        "starts_at" => "2025-06-10T15:00:00.000Z",
+    ],
+    "acs_system_id" => "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+    "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
+    "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
+    "created_at" => "2025-06-15T16:54:17.946482Z",
     "display_name" => "Jane Doe",
-    "full_name" => "Jane Doe",
     "email_address" => "jane@example.com",
-    "phone_number" => "+15555550100",
+    "errors" => [],
+    "external_type" => "salto_site_user",
+    "external_type_display_name" => "Salto site user",
+    "full_name" => "Jane Doe",
+    "hid_acs_system_id" => "2acbe47f-612c-422a-9205-7af292f74e7f",
+    "is_managed" => true,
+    "is_suspended" => false,
+    "last_successful_sync_at" => "2025-06-18T17:45:00.582Z",
+    "pending_mutations" => [],
+    "phone_number" => "+15551234567",
+    "user_identity_email_address" => "jane@example.com",
+    "user_identity_full_name" => "Jane Doe",
+    "user_identity_id" => "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+    "user_identity_phone_number" => "+15551234567",
+    "warnings" => [],
+    "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new access system user.
 
 #### Code
 
 ```seam_cli
-seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100"
+seam acs users create --full_name "Jane Doe" --acs_system_id "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46" --acs_access_group_ids ["bab9962b-708b-4db7-98d5-b242a28c12e9"] --user_identity_id "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6" --access_schedule {"starts_at":"2025-06-10T15:00:00.000Z","ends_at":"2025-06-12T11:00:00.000Z"} --email_address "jane@example.com" --phone_number "+15551234567"
 ```
 
 #### Output
 
 ```seam_cli
 {
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
+  "access_schedule": {
+    "ends_at": "2025-06-12T11:00:00.000Z",
+    "starts_at": "2025-06-10T15:00:00.000Z"
+  },
+  "acs_system_id": "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
+  "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
+  "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
+  "created_at": "2025-06-15T16:54:17.946482Z",
   "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
   "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
+  "errors": [],
+  "external_type": "salto_site_user",
+  "external_type_display_name": "Salto site user",
+  "full_name": "Jane Doe",
+  "hid_acs_system_id": "2acbe47f-612c-422a-9205-7af292f74e7f",
+  "is_managed": true,
+  "is_suspended": false,
+  "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
+  "pending_mutations": [],
+  "phone_number": "+15551234567",
+  "user_identity_email_address": "jane@example.com",
+  "user_identity_full_name": "Jane Doe",
+  "user_identity_id": "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  "user_identity_phone_number": "+15551234567",
+  "warnings": [],
+  "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
 {% endtab %}
@@ -285,429 +424,3 @@ ID of the user identity with which you want to associate the new access system u
 
 [acs\_user](./)
 
-
----
-
-## Examples
-
----
-
-### Create a new ACS user
-
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with an access schedule.
-
-{% tabs %}
-{% tab title="JavaScript" %}
-
-
-
-#### Code
-
-```javascript
-await seam.acs.users.create({
-  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  phone_number: "+15555550100",
-  access_schedule: {
-    starts_at: "2024-11-01T15:00:00.000Z",
-    ends_at: "2024-11-04T11:00:00.000Z",
-  },
-});
-```
-
-#### Output
-
-```javascript
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-
-
-
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100",
-  "access_schedule": {
-    "starts_at": "2024-11-01T15:00:00.000Z",
-    "ends_at": "2024-11-04T11:00:00.000Z"
-  }
-}
-EOF
-```
-
-#### Output
-
-```curl
-{
-  "acs_user": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-
-
-
-#### Code
-
-```python
-seam.acs.users.create(
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    full_name="Jane Doe",
-    email_address="jane@example.com",
-    phone_number="+15555550100",
-    access_schedule={
-        "starts_at": "2024-11-01T15:00:00.000Z",
-        "ends_at": "2024-11-04T11:00:00.000Z",
-    },
-)
-```
-
-#### Output
-
-```python
-AcsUser(
-    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    workspace_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
-    display_name="Jane Doe",
-    full_name="Jane Doe",
-    email_address="jane@example.com",
-    phone_number="+15555550100",
-)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-
-
-
-#### Code
-
-```ruby
-seam.acs.users.create(
-  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  phone_number: "+15555550100",
-  access_schedule: {
-    starts_at: "2024-11-01T15:00:00.000Z",
-    ends_at: "2024-11-04T11:00:00.000Z",
-  },
-)
-```
-
-#### Output
-
-```ruby
-{
-  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
-  "display_name" => "Jane Doe",
-  "full_name" => "Jane Doe",
-  "email_address" => "jane@example.com",
-  "phone_number" => "+15555550100",
-}
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-
-
-
-#### Code
-
-```php
-<?php
-$seam->acs->users->create(
-    acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
-    full_name: "Jane Doe",
-    email_address: "jane@example.com",
-    phone_number: "+15555550100",
-    access_schedule: [
-        "starts_at" => "2024-11-01T15:00:00.000Z",
-        "ends_at" => "2024-11-04T11:00:00.000Z",
-    ]
-);
-```
-
-#### Output
-
-```php
-<?php
-[
-    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
-    "display_name" => "Jane Doe",
-    "full_name" => "Jane Doe",
-    "email_address" => "jane@example.com",
-    "phone_number" => "+15555550100",
-];
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-
-
-
-#### Code
-
-```seam_cli
-seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --access_schedule {"starts_at":"2024-11-01T15:00:00.000Z","ends_at":"2024-11-04T11:00:00.000Z"}
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% endtabs %}
----
-
-### Create a new ACS user in an access group
-
-Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and assigns the new user to an [access group](../../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
-
-{% tabs %}
-{% tab title="JavaScript" %}
-
-
-
-#### Code
-
-```javascript
-await seam.acs.users.create({
-  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  phone_number: "+15555550100",
-  acs_access_group_ids: ["123e4567-e89b-12d3-a456-426614174000"],
-});
-```
-
-#### Output
-
-```javascript
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-
-
-
-#### Code
-
-```curl
-curl --include --request POST "https://connect.getseam.com/acs/users/create" \
-  --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
-{
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100",
-  "acs_access_group_ids": [
-    "123e4567-e89b-12d3-a456-426614174000"
-  ]
-}
-EOF
-```
-
-#### Output
-
-```curl
-{
-  "acs_user": {
-    "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "Jane Doe",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    "phone_number": "+15555550100"
-  }
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-
-
-
-#### Code
-
-```python
-seam.acs.users.create(
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    full_name="Jane Doe",
-    email_address="jane@example.com",
-    phone_number="+15555550100",
-    acs_access_group_ids=["123e4567-e89b-12d3-a456-426614174000"],
-)
-```
-
-#### Output
-
-```python
-AcsUser(
-    acs_user_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    workspace_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
-    display_name="Jane Doe",
-    full_name="Jane Doe",
-    email_address="jane@example.com",
-    phone_number="+15555550100",
-)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-
-
-
-#### Code
-
-```ruby
-seam.acs.users.create(
-  acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  phone_number: "+15555550100",
-  acs_access_group_ids: ["123e4567-e89b-12d3-a456-426614174000"],
-)
-```
-
-#### Output
-
-```ruby
-{
-  "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
-  "display_name" => "Jane Doe",
-  "full_name" => "Jane Doe",
-  "email_address" => "jane@example.com",
-  "phone_number" => "+15555550100",
-}
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-
-
-
-#### Code
-
-```php
-<?php
-$seam->acs->users->create(
-    acs_system_id: "123e4567-e89b-12d3-a456-426614174000",
-    full_name: "Jane Doe",
-    email_address: "jane@example.com",
-    phone_number: "+15555550100",
-    acs_access_group_ids: ["123e4567-e89b-12d3-a456-426614174000"]
-);
-```
-
-#### Output
-
-```php
-<?php
-[
-    "acs_user_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "workspace_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
-    "display_name" => "Jane Doe",
-    "full_name" => "Jane Doe",
-    "email_address" => "jane@example.com",
-    "phone_number" => "+15555550100",
-];
-```
-{% endtab %}
-
-{% tab title="Seam CLI" %}
-
-
-
-#### Code
-
-```seam_cli
-seam acs users create --acs_system_id "123e4567-e89b-12d3-a456-426614174000" --full_name "Jane Doe" --email_address "jane@example.com" --phone_number "+15555550100" --acs_access_group_ids ["123e4567-e89b-12d3-a456-426614174000"]
-```
-
-#### Output
-
-```seam_cli
-{
-  "acs_user_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "workspace_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "Jane Doe",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100"
-}
-```
-{% endtab %}
-
-{% endtabs %}

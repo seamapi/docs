@@ -169,26 +169,6 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.locks()
-  .get(LocksGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -471,49 +451,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the time-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my time-bound offline code")
-      .startsAt("2023-11-10T00:00:00Z")
-      .endsAt("2023-11-15T18:00:00Z")
-      // To create a daily-bound code for devices
-      // that support this feature, include
-      // .maxTimeRounding("1d")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-777777777777",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my time-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2023-11-10T00:00:00Z",
-  "ends_at" : "2023-11-15T18:00:00Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -807,49 +744,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the one-time-use offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my one-time-use offline code")
-      .startsAt("2023-11-12T00:00:00Z")
-      // Specify ends_at if your device supports it.
-      .endsAt("2023-11-14T00:00:00Z")
-      .isOfflineAccessCode(true)
-      .isOneTimeUse(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-777777888888",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my one-time-use offline code",
-  "type" : "time_bound",
-  "starts_at" : "2023-11-12T00:00:00Z",
-  "ends_at" : "2023-11-14T00:00:00Z",
-  "is_offline_access_code": true,
-  "is_one_time_use": true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}

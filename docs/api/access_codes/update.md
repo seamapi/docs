@@ -8,6 +8,147 @@ Updates a specified active or upcoming [access code](https://docs.seam.co/latest
 See also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```javascript
+await seam.accessCodes.update({
+  access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  name: "My Updated Access Code",
+  starts_at: "2025-06-19T08:26:41.000Z",
+  ends_at: "2025-06-21T17:38:07.000Z",
+  code: "4444",
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  "name": "My Updated Access Code",
+  "starts_at": "2025-06-19T08:26:41.000Z",
+  "ends_at": "2025-06-21T17:38:07.000Z",
+  "code": "4444"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```python
+seam.access_codes.update(
+    access_code_id="b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+    name="My Updated Access Code",
+    starts_at="2025-06-19T08:26:41.000Z",
+    ends_at="2025-06-21T17:38:07.000Z",
+    code="4444",
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```ruby
+seam.access_codes.update(
+  access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  name: "My Updated Access Code",
+  starts_at: "2025-06-19T08:26:41.000Z",
+  ends_at: "2025-06-21T17:38:07.000Z",
+  code: "4444",
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->update(
+    access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+    name: "My Updated Access Code",
+    starts_at: "2025-06-19T08:26:41.000Z",
+    ends_at: "2025-06-21T17:38:07.000Z",
+    code: "4444"
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code
+
+```seam_cli
+seam access-codes update --access_code_id "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5" --name "My Updated Access Code" --starts_at "2025-06-19T08:26:41.000Z" --ends_at "2025-06-21T17:38:07.000Z" --code "4444"
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

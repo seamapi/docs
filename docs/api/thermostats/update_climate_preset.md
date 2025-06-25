@@ -9,15 +9,19 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+Updates a specified climate preset for a specified thermostat.
 
 #### Code
 
 ```javascript
 await seam.thermostats.updateClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
+  device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
+  climate_preset_key: "Home",
+  name: "Home",
+  fan_mode_setting: "auto",
+  hvac_mode_setting: "heat_cool",
+  cooling_set_point_fahrenheit: 75,
+  heating_set_point_fahrenheit: 65,
   manual_override_allowed: true,
 });
 ```
@@ -31,7 +35,7 @@ await seam.thermostats.updateClimatePreset({
 
 {% tab title="cURL" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+Updates a specified climate preset for a specified thermostat.
 
 #### Code
 
@@ -40,9 +44,13 @@ curl --include --request POST "https://connect.getseam.com/thermostats/update_cl
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "climate_preset_key": "occupied",
-  "cooling_set_point_celsius": 24,
+  "device_id": "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
+  "climate_preset_key": "Home",
+  "name": "Home",
+  "fan_mode_setting": "auto",
+  "hvac_mode_setting": "heat_cool",
+  "cooling_set_point_fahrenheit": 75,
+  "heating_set_point_fahrenheit": 65,
   "manual_override_allowed": true
 }
 EOF
@@ -57,15 +65,19 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+Updates a specified climate preset for a specified thermostat.
 
 #### Code
 
 ```python
 seam.thermostats.update_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key="occupied",
-    cooling_set_point_celsius=24,
+    device_id="a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
+    climate_preset_key="Home",
+    name="Home",
+    fan_mode_setting="auto",
+    hvac_mode_setting="heat_cool",
+    cooling_set_point_fahrenheit=75,
+    heating_set_point_fahrenheit=65,
     manual_override_allowed=true,
 )
 ```
@@ -79,15 +91,19 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+Updates a specified climate preset for a specified thermostat.
 
 #### Code
 
 ```ruby
 seam.thermostats.update_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24,
+  device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
+  climate_preset_key: "Home",
+  name: "Home",
+  fan_mode_setting: "auto",
+  hvac_mode_setting: "heat_cool",
+  cooling_set_point_fahrenheit: 75,
+  heating_set_point_fahrenheit: 65,
   manual_override_allowed: true,
 )
 ```
@@ -101,16 +117,20 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+Updates a specified climate preset for a specified thermostat.
 
 #### Code
 
 ```php
 <?php
 $seam->thermostats->update_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "occupied",
-    cooling_set_point_celsius: 24,
+    device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
+    climate_preset_key: "Home",
+    name: "Home",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
+    cooling_set_point_fahrenheit: 75,
+    heating_set_point_fahrenheit: 65,
     manual_override_allowed: true
 );
 ```
@@ -124,12 +144,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset, along with the desired updated settings for the climate preset, including `manual_override_allowed`.
+Updates a specified climate preset for a specified thermostat.
 
 #### Code
 
 ```seam_cli
-seam thermostats update-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --cooling_set_point_celsius 24 --manual_override_allowed true
+seam thermostats update-climate-preset --device_id "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8" --climate_preset_key "Home" --name "Home" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_fahrenheit 75 --heating_set_point_fahrenheit 65 --manual_override_allowed true
 ```
 
 #### Output

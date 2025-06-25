@@ -36,9 +36,7 @@ Seam provides client libraries for many languages, including JavaScript, Python,
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 First, install a Seam SDK, as follows:
 
@@ -68,32 +66,9 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 
 {% endtabs %}
 
@@ -298,59 +273,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-import java.io.Console;
-import java.util.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.seam.api.Seam;
-import com.seam.api.core.ObjectMappers;
-import com.seam.api.types.ConnectWebview;
-import com.seam.api.types.Device;
-import com.seam.api.types.Manufacturer;
-import com.seam.api.types.ActionAttempt;
-import com.seam.api.types.AccessCode;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
-import com.seam.api.resources.devices.requests.DevicesListRequest;
-import com.seam.api.resources.devices.requests.DevicesGetRequest;
-import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesCreateRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
-
-public class Main {
-
-  public static void main(String[] args) {
-
-    Seam seam = Seam.builder()
-      .apiKey(SEAM_API_KEY)
-      .build();
-
-    ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-      .acceptedProviders(List.of(AcceptedProvider.SMARTTHINGS))
-      .acceptedCapabilities(List.of(AcceptedCapabilities.THERMOSTAT))
-      .build());
-
-    System.out.println(connectWebview.getLoginSuccessful()); // false
-
-    // Use the returned Connect Webview URL to display
-    // the Connect Webview authorization flow to your user.
-    System.out.println(connectWebview.getUrl());
-
-  }
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -486,23 +408,6 @@ True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-
-System.out.println(updatedConnectWebview.getLoginSuccessful()); // true
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -820,19 +725,6 @@ Fan running: false
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1039,19 +931,6 @@ if ($living_room_thermostat->can_hvac_heat) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1195,19 +1074,6 @@ heat
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1682,19 +1548,6 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1996,19 +1849,6 @@ $seam->thermostats->update_weekly_program(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

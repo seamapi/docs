@@ -14,6 +14,260 @@ You can only pull backup access codes for time-bound access codes.
 Before pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Retrieves a backup access code for an access code.
+
+#### Code
+
+```javascript
+await seam.accessCodes.pullBackupAccessCode({
+  access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f",
+});
+```
+
+#### Output
+
+```javascript
+{
+  "access_code_id": "8e525b87-5e4b-48a5-a322-5d45262a735f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "unset",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Retrieves a backup access code for an access code.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/pull_backup_access_code" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "8e525b87-5e4b-48a5-a322-5d45262a735f"
+}
+EOF
+```
+
+#### Output
+
+```curl
+{
+  "access_code": {
+    "access_code_id": "8e525b87-5e4b-48a5-a322-5d45262a735f",
+    "code": "1234",
+    "common_code_key": null,
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "ends_at": "2025-07-04T16:54:17.946049Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": true,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Access Code",
+    "pulled_backup_access_code_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "starts_at": "2025-07-02T16:54:17.946049Z",
+    "status": "unset",
+    "type": "time_bound",
+    "warnings": []
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Retrieves a backup access code for an access code.
+
+#### Code
+
+```python
+seam.access_codes.pull_backup_access_code(
+    access_code_id="8e525b87-5e4b-48a5-a322-5d45262a735f"
+)
+```
+
+#### Output
+
+```python
+AccessCode(
+    access_code_id="8e525b87-5e4b-48a5-a322-5d45262a735f",
+    code="1234",
+    common_code_key=None,
+    created_at="2025-06-14T16:54:17.946242Z",
+    device_id="c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    ends_at="2025-07-04T16:54:17.946049Z",
+    errors=[],
+    is_backup=false,
+    is_backup_access_code_available=true,
+    is_external_modification_allowed=false,
+    is_managed=true,
+    is_offline_access_code=false,
+    is_one_time_use=false,
+    is_scheduled_on_device=true,
+    is_waiting_for_code_assignment=false,
+    name="My Access Code",
+    pulled_backup_access_code_id="6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    starts_at="2025-07-02T16:54:17.946049Z",
+    status="unset",
+    type="time_bound",
+    warnings=[],
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Retrieves a backup access code for an access code.
+
+#### Code
+
+```ruby
+seam.access_codes.pull_backup_access_code(access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f")
+```
+
+#### Output
+
+```ruby
+{
+  "access_code_id" => "8e525b87-5e4b-48a5-a322-5d45262a735f",
+  "code" => "1234",
+  "common_code_key" => nil,
+  "created_at" => "2025-06-14T16:54:17.946242Z",
+  "device_id" => "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at" => "2025-07-04T16:54:17.946049Z",
+  "errors" => [],
+  "is_backup" => false,
+  "is_backup_access_code_available" => true,
+  "is_external_modification_allowed" => false,
+  "is_managed" => true,
+  "is_offline_access_code" => false,
+  "is_one_time_use" => false,
+  "is_scheduled_on_device" => true,
+  "is_waiting_for_code_assignment" => false,
+  "name" => "My Access Code",
+  "pulled_backup_access_code_id" => "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+  "starts_at" => "2025-07-02T16:54:17.946049Z",
+  "status" => "unset",
+  "type" => "time_bound",
+  "warnings" => [],
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Retrieves a backup access code for an access code.
+
+#### Code
+
+```php
+<?php
+$seam->access_codes->pull_backup_access_code(
+    access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f"
+);
+```
+
+#### Output
+
+```php
+<?php
+[
+    "access_code_id" => "8e525b87-5e4b-48a5-a322-5d45262a735f",
+    "code" => "1234",
+    "common_code_key" => null,
+    "created_at" => "2025-06-14T16:54:17.946242Z",
+    "device_id" => "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "ends_at" => "2025-07-04T16:54:17.946049Z",
+    "errors" => [],
+    "is_backup" => false,
+    "is_backup_access_code_available" => true,
+    "is_external_modification_allowed" => false,
+    "is_managed" => true,
+    "is_offline_access_code" => false,
+    "is_one_time_use" => false,
+    "is_scheduled_on_device" => true,
+    "is_waiting_for_code_assignment" => false,
+    "name" => "My Access Code",
+    "pulled_backup_access_code_id" => "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "starts_at" => "2025-07-02T16:54:17.946049Z",
+    "status" => "unset",
+    "type" => "time_bound",
+    "warnings" => [],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Retrieves a backup access code for an access code.
+
+#### Code
+
+```seam_cli
+seam access-codes pull-backup-access-code --access_code_id "8e525b87-5e4b-48a5-a322-5d45262a735f"
+```
+
+#### Output
+
+```seam_cli
+{
+  "access_code_id": "8e525b87-5e4b-48a5-a322-5d45262a735f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "unset",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

@@ -139,19 +139,6 @@ seam.SystemsAcs.List();
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -324,19 +311,6 @@ seam.SystemsAcs.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 
 
 {% endtabs %}

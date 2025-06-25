@@ -9,14 +9,19 @@ Updates a specified [thermostat schedule](../../../capability-guides/thermostats
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+Updates a specified thermostat schedule.
 
 #### Code
 
 ```javascript
 await seam.thermostats.schedules.update({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
+  thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
+  max_override_period_minutes: 90,
+  starts_at: "2025-06-20T03:24:25.000Z",
+  ends_at: "2025-06-22T06:04:21.000Z",
+  is_override_allowed: true,
 });
 ```
 
@@ -29,7 +34,7 @@ await seam.thermostats.schedules.update({
 
 {% tab title="cURL" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+Updates a specified thermostat schedule.
 
 #### Code
 
@@ -38,8 +43,13 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "ends_at": "2024-11-15T15:00:00Z"
+  "thermostat_schedule_id": "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+  "name": "Jane's Stay",
+  "climate_preset_key": "Occupied",
+  "max_override_period_minutes": 90,
+  "starts_at": "2025-06-20T03:24:25.000Z",
+  "ends_at": "2025-06-22T06:04:21.000Z",
+  "is_override_allowed": true
 }
 EOF
 ```
@@ -53,14 +63,19 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+Updates a specified thermostat schedule.
 
 #### Code
 
 ```python
 seam.thermostats.schedules.update(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at="2024-11-15T15:00:00Z",
+    thermostat_schedule_id="f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+    name="Jane's Stay",
+    climate_preset_key="Occupied",
+    max_override_period_minutes=90,
+    starts_at="2025-06-20T03:24:25.000Z",
+    ends_at="2025-06-22T06:04:21.000Z",
+    is_override_allowed=true,
 )
 ```
 
@@ -73,14 +88,19 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+Updates a specified thermostat schedule.
 
 #### Code
 
 ```ruby
 seam.thermostats.schedules.update(
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
+  thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
+  max_override_period_minutes: 90,
+  starts_at: "2025-06-20T03:24:25.000Z",
+  ends_at: "2025-06-22T06:04:21.000Z",
+  is_override_allowed: true,
 )
 ```
 
@@ -93,15 +113,20 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+Updates a specified thermostat schedule.
 
 #### Code
 
 ```php
 <?php
 $seam->thermostats->schedules->update(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at: "2024-11-15T15:00:00Z"
+    thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+    name: "Jane's Stay",
+    climate_preset_key: "Occupied",
+    max_override_period_minutes: 90,
+    starts_at: "2025-06-20T03:24:25.000Z",
+    ends_at: "2025-06-22T06:04:21.000Z",
+    is_override_allowed: true
 );
 ```
 
@@ -114,12 +139,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule, along with the desired updated settings for the thermostat schedule.
+Updates a specified thermostat schedule.
 
 #### Code
 
 ```seam_cli
-seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"
+seam thermostats schedules update --thermostat_schedule_id "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c" --name "Jane's Stay" --climate_preset_key "Occupied" --max_override_period_minutes 90 --starts_at "2025-06-20T03:24:25.000Z" --ends_at "2025-06-22T06:04:21.000Z" --is_override_allowed true
 ```
 
 #### Output

@@ -9,14 +9,14 @@ Adds a specified [access system user](https://docs.seam.co/latest/capability-gui
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Adds a specified access system user to a specified user identity.
 
 #### Code
 
 ```javascript
 await seam.userIdentities.addAcsUser({
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
+  user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c",
 });
 ```
 
@@ -29,7 +29,7 @@ await seam.userIdentities.addAcsUser({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Adds a specified access system user to a specified user identity.
 
 #### Code
 
@@ -38,8 +38,8 @@ curl --include --request POST "https://connect.getseam.com/user_identities/add_a
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  "acs_user_id": "4d223973-0874-4831-8630-bfcb29e6bce0"
+  "user_identity_id": "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  "acs_user_id": "d73f4706-67e3-419d-899e-ec957a75ee0c"
 }
 EOF
 ```
@@ -53,14 +53,14 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Adds a specified access system user to a specified user identity.
 
 #### Code
 
 ```python
 seam.user_identities.add_acs_user(
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id="4d223973-0874-4831-8630-bfcb29e6bce0",
+    user_identity_id="68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+    acs_user_id="d73f4706-67e3-419d-899e-ec957a75ee0c",
 )
 ```
 
@@ -73,14 +73,14 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Adds a specified access system user to a specified user identity.
 
 #### Code
 
 ```ruby
 seam.user_identities.add_acs_user(
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
+  user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c",
 )
 ```
 
@@ -93,15 +93,15 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Adds a specified access system user to a specified user identity.
 
 #### Code
 
 ```php
 <?php
 $seam->user_identities->add_acs_user(
-    user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0"
+    user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+    acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c"
 );
 ```
 
@@ -114,12 +114,12 @@ null
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Adds a specified access system user to a specified user identity.
 
 #### Code
 
 ```seam_cli
-seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a" --acs_user_id "4d223973-0874-4831-8630-bfcb29e6bce0"
+seam user-identities add-acs-user --user_identity_id "68dd3d7e-c90b-4c89-ad70-3e589014ed87" --acs_user_id "d73f4706-67e3-419d-899e-ec957a75ee0c"
 ```
 
 #### Output

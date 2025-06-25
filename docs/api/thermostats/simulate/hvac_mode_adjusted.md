@@ -6,6 +6,137 @@
 Simulates having adjusted the [HVAC mode](../../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) for a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). Only applicable for [sandbox devices](../../../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](../../../capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md).
 
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Simulates having adjusted the HVAC mode for a thermostat.
+
+#### Code
+
+```javascript
+await seam.thermostats.simulate.hvacModeAdjusted({
+  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  hvac_mode: "heat",
+  heating_set_point_fahrenheit: 68,
+});
+```
+
+#### Output
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Simulates having adjusted the HVAC mode for a thermostat.
+
+#### Code
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/simulate/hvac_mode_adjusted" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  "hvac_mode": "heat",
+  "heating_set_point_fahrenheit": 68
+}
+EOF
+```
+
+#### Output
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Simulates having adjusted the HVAC mode for a thermostat.
+
+#### Code
+
+```python
+seam.thermostats.simulate.hvac_mode_adjusted(
+    device_id="278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+    hvac_mode="heat",
+    heating_set_point_fahrenheit=68,
+)
+```
+
+#### Output
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Simulates having adjusted the HVAC mode for a thermostat.
+
+#### Code
+
+```ruby
+seam.thermostats.simulate.hvac_mode_adjusted(
+  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  hvac_mode: "heat",
+  heating_set_point_fahrenheit: 68,
+)
+```
+
+#### Output
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Simulates having adjusted the HVAC mode for a thermostat.
+
+#### Code
+
+```php
+<?php
+$seam->thermostats->simulate->hvac_mode_adjusted(
+    device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+    hvac_mode: "heat",
+    heating_set_point_fahrenheit: 68
+);
+```
+
+#### Output
+
+```php
+null
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Simulates having adjusted the HVAC mode for a thermostat.
+
+#### Code
+
+```seam_cli
+seam thermostats simulate hvac-mode-adjusted --device_id "278a72ba-7deb-45e3-a0c0-573fd360ee7b" --hvac_mode "heat" --heating_set_point_fahrenheit 68
+```
+
+#### Output
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 <details>
 
 <summary>Authentication Methods</summary>

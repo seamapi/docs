@@ -240,40 +240,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
-
-**Code:**
-
-```java
-// Get the device.
-Device thermostat = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-2222-444444444444")
-    .build());
-
-// Confirm that Seam supports the desired HVAC mode for the thermostat.
-// In this example, we're simulating having set the thermostat to heat mode.
-if (thermostat.getCanHvacHeat())
-{
-  // Perform the simulated HVAC mode adjustment.
-  seam.thermostats().simulate()
-    .hvacModeAdjusted(ThermostatsSimulateHvacModeAdjustedRequest.builder()
-      .deviceId(thermostat.getDeviceId())
-      .hvacMode(HvacModeSetting.HEAT)
-      .heatingSetPointFahrenheit(68)
-      .build());
-}
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -446,34 +412,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
-
-**Code:**
-
-```java
-// Get the device.
-Device thermostat = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-2222-444444444444")
-    .build());
-
-// Simulate reaching the specified temperature.
-seam.thermostats().simulate()
-  .temperatureReached(ThermostatsSimulateTemperatureReachedRequest.builder()
-    .deviceId(thermostat.getDeviceId())
-    .temperatureCelsius(25)
-    .build());
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 
 
 {% endtabs %}

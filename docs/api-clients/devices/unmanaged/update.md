@@ -71,16 +71,6 @@ puts unmanaged_device_update.inspect
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-```java
-var deviceId = "882dd63f-db9b-4210-bac2-68372aa0aff7";
-
-seam.devices().unmanaged().update(UnmanagedUpdateRequest.builder()
-        .deviceId(deviceId)
-        .isManaged(true)
-        .build());
-```
-{% endtab %}
 {% endtabs %}
 
 ## Response

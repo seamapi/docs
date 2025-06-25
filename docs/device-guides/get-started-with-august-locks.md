@@ -34,9 +34,7 @@ Seam provides client libraries for many languages, including JavaScript, Python,
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 First, install a Seam SDK, as follows:
 
@@ -66,32 +64,9 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 
 {% endtabs %}
 
@@ -288,58 +263,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-import java.io.Console;
-import java.util.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.seam.api.Seam;
-import com.seam.api.core.ObjectMappers;
-import com.seam.api.types.ConnectWebview;
-import com.seam.api.types.Device;
-import com.seam.api.types.Manufacturer;
-import com.seam.api.types.ActionAttempt;
-import com.seam.api.types.AccessCode;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
-import com.seam.api.resources.devices.requests.DevicesListRequest;
-import com.seam.api.resources.devices.requests.DevicesGetRequest;
-import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesCreateRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
-
-public class Main {
-
-  public static void main(String[] args) {
-
-    Seam seam = Seam.builder()
-      .apiKey(SEAM_API_KEY)
-      .build();
-
-    ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-      .acceptedProviders(List.of(AcceptedProvider.AUGUST))
-      .build());
-
-    System.out.println(connectWebview.getLoginSuccessful()); // false
-
-    // Use the returned Connect Webview URL to display
-    // the Connect Webview authorization flow to your user.
-    System.out.println(connectWebview.getUrl());
-
-  }
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -478,23 +401,6 @@ True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-
-System.out.println(updatedConnectWebview.getLoginSuccessful()); // true
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -794,53 +700,6 @@ True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-var allAugustLocks = seam.devices().list(DevicesListRequest.builder()
-  .manufacturer(Manufacturer.AUGUST)
-  .build());
-
-// Select the first device as an example.
-Device frontDoor = allAugustLocks.get(0);
-
-// Inspect specific properties.
-System.out.println(frontDoor.getProperties().getOnline()); // true
-System.out.println(frontDoor.getProperties().getLocked()); // true
-
-// View the entire returned device object.
-System.out.println(frontDoor);
-```
-
-**Output:**
-
-```json
-true
-true
-{
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "display_name": "Lock 1",
-  "workspace_id" : "00000000-0000-0000-0000-000000000000",
-  "connected_account_id" : "11111111-1111-1111-1111-222222222222",
-  "created_at" : "2024-05-29T20:08:48.878Z",
-  "properties" : {
-    "manufacturer" : "august",
-    "online" : true,
-    "locked" : true,
-    "battery" : {
-      "level" : 0.9999532347993827,
-      "status" : "full"
-    },
-    ...
-  },
-  "can_remotely_unlock" : true,
-  ...
-}
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1028,35 +887,6 @@ if (frontDoor.CanRemotelyUnlock == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if (frontDoor.getCanRemotelyUnlock())
-{
-  // Perform the unlock operation
-  // and return an action attempt.
-  ActionAttempt actionAttempt = seam.locks()
-    .unlockDoor(LocksUnlockDoorRequest.builder()
-      .deviceId(frontDoor.getDeviceId())
-      .build());
-}
-```
-
-**Output:**
-
-```json
-Optional[
-  {
-    "action_type" : "UNLOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "pending"
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1190,26 +1020,6 @@ False
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Get the device by ID.
-Device updatedFrontDoor = seam.devices().get(DevicesGetRequest.builder()
-  .deviceId(frontDoor.getDeviceId())
-  .build());
-
-// Inspect the locked property to confirm
-// that the unlock operation was successful.
-System.out.println(updatedFrontDoor.getProperties().getLocked()); // false
-```
-
-**Output:**
-
-```
-false
-```
-{% endtab %}
 
 
 {% endtabs %}
@@ -1576,64 +1386,6 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if (updatedFrontDoor.getCanProgramOnlineAccessCodes())
-{
-  // Create an ongoing online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .name("my ongoing code")
-      .code("1234")
-      .build());
-  // Create a time-bound online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .name("my time-bound code")
-      .startsAt("2025-01-01T16:00:00Z")
-      .endsAt("2025-01-22T12:00:00Z")
-      .code("2345")
-      .build());
-  // List all access codes for this device.
-  var accessCodes = seam.accessCodes()
-    .list(AccessCodesListRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .build());
-  System.out.println(accessCodes);
-}
-```
-
-**Output:**
-
-```json
-[
-  {
-    "access_code_id" : "11111111-1111-1111-1111-555555555555",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "name" : "my ongoing code",
-    "code" : "1234",
-    "type" : "ongoing",
-    ...
-  },
-  {
-    "access_code_id" : "11111111-1111-1111-1111-666666666666",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "name" : "my time-bound code",
-    "code" : "2345",
-    "type" : "time_bound",
-    "starts_at" : "2025-01-01T16:00:00Z",
-    "ends_at" : "2025-01-22T12:00:00Z",
-    ...
-  }
-]
-```
-{% endtab %}
 
 
 {% endtabs %}
