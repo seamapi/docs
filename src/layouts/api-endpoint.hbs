@@ -70,7 +70,19 @@ None
 ## Response
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
-
+{{#with response.actionAttempt}}
+**`{{name}}`**
+{{> api-response-resource headingOffset=true}}
+{{/with}}
+{{#if response.resourceSample}}
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{{response.resourceSample.properties}}
+```
+{% endtab %}
+{% endtabs %}
+{{/if}}
 {{#if additionalCodeSamples.length}}
 
 ---
