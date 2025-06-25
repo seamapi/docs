@@ -34,16 +34,16 @@ These items are intentionally undocumented.
 - `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/customer/v1/portals`: No undocumented message provided
+- `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
-- `/seam/partner/v1/resources`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
 - `/unstable_partner/building_blocks`: No undocumented message provided
-- `/unstable_partner/resources`: No undocumented message provided
 
 ### Resources
 
@@ -54,7 +54,6 @@ These items are intentionally undocumented.
 - `instant_key`: Unreleased.
 - `location`: Will be removed.
 - `magic_link`: Unreleased.
-- `partner_resource`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
 - `unmanaged_acs_access_group`: Unreleased.
 - `unmanaged_acs_credential`: Unreleased.
@@ -71,11 +70,11 @@ These items are intentionally undocumented.
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
+- `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
 - `/seam/mobile_sdk/v1`: No undocumented message provided
 - `/seam/partner/v1/building_blocks`: No undocumented message provided
-- `/seam/partner/v1`: No undocumented message provided
 - `/unstable_partner`: No undocumented message provided
 
 ### Endpoints
@@ -102,11 +101,12 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
-- `/seam/partner/v1/resources/list`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_access_grants/create`: Unreleased.
 - `/unstable_access_grants/delete`: Unreleased.
@@ -128,7 +128,6 @@ These items are intentionally undocumented.
 - `/unstable_partner/building_blocks/generate_magic_link`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/manage_devices`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/organize_spaces`: Experimental partner building blocks.
-- `/unstable_partner/resources/push`: Experimental partner resources.
 
 ### Endpoint parameters
 
@@ -336,6 +335,9 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/connected_accounts/list`
     - `customer_ids`
+- `/customers/create_portal`
+    - `features`
+    - `customer_data`
 - `/devices/list`
     - `customer_ids`
     - `exclude_if`
@@ -439,6 +441,7 @@ These items are deprecated.
 
 - `acs_credential_pool`: Not used.
 - `acs_credential_provisioning_automation`: Not used.
+- `enrollment_automation`: Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.
 
 ### Resource properties
 
@@ -528,10 +531,13 @@ These items are deprecated.
 - `/bridges/list`: `bridges`
 - `/networks/get`: `network`
 - `/networks/list`: `networks`
+- `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 
 ### Endpoints without code samples
 
+- `/customers/create_portal`
+- `/customers/push_data`
 - `/locks/get`
 - `/user_identities/enrollment_automations/delete`
 - `/user_identities/enrollment_automations/get`
