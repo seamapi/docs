@@ -200,4 +200,19 @@ ID of the thermostat device for which you want to activate a climate preset.
 ## Response
 
 [action\_attempt](./)
-
+**`ACTIVATE_CLIMATE_PRESET`**
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

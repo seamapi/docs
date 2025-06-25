@@ -218,4 +218,10 @@ IDs of the devices that you want to add to the new space.
 ## Response
 
 [space](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

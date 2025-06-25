@@ -377,4 +377,10 @@ ID of access grant to get.
 ## Response
 
 [access\_grant](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

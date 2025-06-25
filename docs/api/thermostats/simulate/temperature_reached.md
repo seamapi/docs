@@ -166,4 +166,3 @@ Temperature in °F that you want simulate the thermostat reaching. You must set 
 ## Response
 
 void
-

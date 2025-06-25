@@ -554,7 +554,13 @@ ID of user identity for whom access is being granted.
 ## Response
 
 [access\_grant](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 

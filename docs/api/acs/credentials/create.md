@@ -521,7 +521,13 @@ Enum values:
 ## Response
 
 [acs\_credential](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 

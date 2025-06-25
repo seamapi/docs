@@ -251,4 +251,10 @@ ID of the entrance that you want to get.
 ## Response
 
 [acs\_entrance](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

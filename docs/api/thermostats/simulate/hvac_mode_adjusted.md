@@ -190,4 +190,3 @@ Heating [set point](../../../capability-guides/thermostats/understanding-thermos
 ## Response
 
 void
-

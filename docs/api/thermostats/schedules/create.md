@@ -292,4 +292,10 @@ Name of the thermostat schedule.
 ## Response
 
 [thermostat\_schedule](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

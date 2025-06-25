@@ -454,4 +454,3 @@ ID of user identity to filter list of access grants by.
 ## Response
 
 Array of [access\_grants](./)
-

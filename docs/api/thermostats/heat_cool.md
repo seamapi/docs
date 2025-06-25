@@ -225,4 +225,19 @@ ID of the thermostat device that you want to set to heat-cool mode.
 ## Response
 
 [action\_attempt](./)
-
+**`SET_HVAC_MODE`**
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

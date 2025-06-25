@@ -145,4 +145,3 @@ ID of the space that you want to delete.
 ## Response
 
 void
-

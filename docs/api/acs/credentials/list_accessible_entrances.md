@@ -268,4 +268,3 @@ ID of the credential for which you want to retrieve all entrances to which the c
 ## Response
 
 Array of [acs\_entrances](./)
-

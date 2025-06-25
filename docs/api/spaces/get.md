@@ -184,4 +184,10 @@ ID of the space that you want to get.
 ## Response
 
 [space](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

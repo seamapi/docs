@@ -169,7 +169,6 @@ ID of the desired user identity that you want to add to an access group. You can
 
 void
 
-
 ---
 
 ## Examples

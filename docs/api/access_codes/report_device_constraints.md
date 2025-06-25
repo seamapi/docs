@@ -192,7 +192,6 @@ Array of supported code lengths as integers between 4 and 20, inclusive. You can
 
 void
 
-
 ---
 
 ## Examples

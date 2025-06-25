@@ -187,4 +187,3 @@ None
 ## Response
 
 Array of [spaces](./)
-

@@ -265,4 +265,10 @@ Unique key for the new user identity.
 ## Response
 
 [user\_identity](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

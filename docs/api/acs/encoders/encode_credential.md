@@ -379,4 +379,19 @@ ID of the `acs_encoder` to use to encode the `acs_credential`.
 ## Response
 
 [action\_attempt](./)
-
+**`ENCODE_CREDENTIAL`**
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

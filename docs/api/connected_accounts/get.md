@@ -255,7 +255,13 @@ Email address associated with the connected account that you want to get.
 ## Response
 
 [connected\_account](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 

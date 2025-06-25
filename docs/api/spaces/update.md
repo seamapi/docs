@@ -199,4 +199,10 @@ Name of the space.
 ## Response
 
 [space](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

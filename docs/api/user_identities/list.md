@@ -221,7 +221,6 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 Array of [user\_identitys](./)
 
-
 ---
 
 ## Examples

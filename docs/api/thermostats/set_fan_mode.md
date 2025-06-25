@@ -205,4 +205,19 @@ ID of the thermostat device for which you want to set the fan mode.
 ## Response
 
 [action\_attempt](./)
-
+**`SET_FAN_MODE`**
+{% tabs %}
+{% tab title="JSON" %}
+```json
+{
+}
+```
+{% endtab %}
+{% endtabs %}
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

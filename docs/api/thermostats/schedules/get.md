@@ -224,4 +224,10 @@ ID of the thermostat schedule that you want to get.
 ## Response
 
 [thermostat\_schedule](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

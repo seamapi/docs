@@ -200,4 +200,10 @@ ID of access method to get.
 ## Response
 
 [access\_method](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

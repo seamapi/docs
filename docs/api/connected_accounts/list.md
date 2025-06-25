@@ -288,7 +288,6 @@ Your user ID for the user by which you want to filter connected accounts.
 
 Array of [connected\_accounts](./)
 
-
 ---
 
 ## Examples

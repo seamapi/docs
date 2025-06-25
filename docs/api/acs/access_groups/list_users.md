@@ -325,4 +325,3 @@ ID of the access group for which you want to retrieve all access system users.
 ## Response
 
 Array of [acs\_users](./)
-

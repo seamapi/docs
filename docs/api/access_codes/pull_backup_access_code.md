@@ -292,4 +292,10 @@ ID of the access code for which you want to pull a backup access code.
 ## Response
 
 [access\_code](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

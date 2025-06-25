@@ -292,7 +292,6 @@ ID of the user identity that represents the owner by which you want to filter th
 
 Array of [phones](./)
 
-
 ---
 
 ## Examples

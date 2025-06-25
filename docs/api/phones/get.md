@@ -268,4 +268,10 @@ Device ID of the phone that you want to get.
 ## Response
 
 [phone](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

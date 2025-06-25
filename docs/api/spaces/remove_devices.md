@@ -166,4 +166,3 @@ ID of the space from which you want to remove devices.
 ## Response
 
 void
-

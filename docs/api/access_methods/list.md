@@ -308,4 +308,3 @@ ID of access grant to list access methods for.
 ## Response
 
 Array of [access\_methods](./)
-

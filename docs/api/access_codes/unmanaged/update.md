@@ -188,4 +188,3 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 ## Response
 
 void
-

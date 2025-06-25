@@ -197,4 +197,10 @@ ID of the encoder that you want to get.
 ## Response
 
 [acs\_encoder](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}

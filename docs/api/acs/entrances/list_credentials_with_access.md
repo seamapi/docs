@@ -294,4 +294,3 @@ Possible enum values:
 ## Response
 
 Array of [acs\_credentials](./)
-

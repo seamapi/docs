@@ -220,7 +220,13 @@ ID of the user identity that you want to get.
 ## Response
 
 [user\_identity](./)
-
+{% tabs %}
+{% tab title="JSON" %}
+```json
+[object Object]
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 
