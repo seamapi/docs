@@ -9,4 +9,6 @@ export const ResourceSampleDefinitionsSchema = z.array(
   }),
 )
 
-export type ResourceSamples = z.infer<typeof ResourceSampleDefinitionsSchema>
+export type ResourceSampleDefinitions = z.infer<
+  typeof ResourceSampleDefinitionsSchema
+>
