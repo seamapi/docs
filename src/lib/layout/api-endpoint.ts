@@ -185,9 +185,11 @@ export function setEndpointLayoutContext(
     }
   }
 
-  file.resourceSamples = getResourceSamples(endpoint, resources).map(
-    mapResourceSample,
-  )
+  file.resourceSamples = getResourceSamples(
+    endpoint,
+    resources,
+    actionAttempts,
+  ).map(mapResourceSample)
 
   const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
@@ -242,6 +244,7 @@ const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
 const getResourceSamples = (
   endpoint: Endpoint,
   resources: Resource[],
+  actionAttempts: ActionAttempt[],
 ): ResourceSample[] => {
   const { response } = endpoint
 
@@ -249,36 +252,30 @@ const getResourceSamples = (
     return []
   }
 
-  const resource = resources.find(
+  let resource: Resource | ActionAttempt | undefined = resources.find(
     ({ resourceType }) => resourceType === response.resourceType,
   )
 
-  if (resource == null) return []
-
   if (
-    response.responseType === 'resource' ||
-    response.responseType === 'resource_list'
+    response.responseType === 'resource' &&
+    response.actionAttemptType != null
   ) {
-    const sample = resource.resourceSamples.find((resourceSample) => {
-      if ('actionAttemptType' in resource) {
-        return (
-          resourceSample.properties['action_type'] ===
-          resource.actionAttemptType
-        )
-      }
-      return true
-    })
-
-    return sample == null
-      ? []
-      : [
-          {
-            ...sample,
-            title: 'JSON',
-            description: '',
-          },
-        ]
+    resource = actionAttempts.find(
+      ({ actionAttemptType }) =>
+        actionAttemptType === response.actionAttemptType,
+    )
   }
 
-  return []
+  if (resource == null) return []
+
+  const sample = resource.resourceSamples[0]
+  if (sample == null) return []
+
+  return [
+    {
+      ...sample,
+      title: 'JSON',
+      description: '',
+    },
+  ]
 }
