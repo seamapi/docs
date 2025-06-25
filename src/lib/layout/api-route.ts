@@ -87,6 +87,7 @@ interface ApiRouteVariantGroup {
 interface ApiRouteVariant {
   name: string
   description: string
+  parentResouceType: string | null
 }
 
 type ApiRouteEndpoint = Pick<Endpoint, 'path' | 'description'>
@@ -147,9 +148,13 @@ export const setApiRouteLayoutContext = (
     const warningsProp = resource.properties.find((p) => p.name === 'warnings')
     const errorsProp = resource.properties.find((p) => p.name === 'errors')
     const warningGroups =
-      warningsProp != null ? groupVariants(warningsProp, groupOptions) : []
+      warningsProp != null
+        ? groupVariants(warningsProp, groupOptions, resourceType, resourceTypes)
+        : []
     const errorGroups =
-      errorsProp != null ? groupVariants(errorsProp, groupOptions) : []
+      errorsProp != null
+        ? groupVariants(errorsProp, groupOptions, resourceType, resourceTypes)
+        : []
 
     const allProperties = resource.properties.filter(
       ({ isUndocumented }) => !isUndocumented,
@@ -222,6 +227,8 @@ const groupVariants = (
     include?: string[] | undefined
     exclude?: string[] | undefined
   },
+  resourceType: string,
+  resourceTypes: string[],
 ): ApiRouteVariantGroup[] => {
   if (!isDiscriminatedListProperty(property)) {
     return []
@@ -230,12 +237,15 @@ const groupVariants = (
   const getApiRouteVariants = (
     variantGroupKey: string | null,
   ): ApiRouteVariant[] => {
-    return collectResourceVariants({
-      ...property,
-      variants: property.variants.filter(
-        (v) => v.variantGroupKey === variantGroupKey,
-      ),
-    }).sort((a, b) => {
+    return collectResourceVariants(
+      {
+        ...property,
+        variants: property.variants.filter(
+          (v) => v.variantGroupKey === variantGroupKey,
+        ),
+      },
+      resourceTypes,
+    ).sort((a, b) => {
       return a.name.localeCompare(b.name)
     })
   }
@@ -277,7 +287,27 @@ const groupVariants = (
   if (include != null) {
     const variants = groups
       .flatMap((g) => g.variants)
-      .sort((a, b) => a.name.localeCompare(b.name))
+      .sort((a, b) => {
+        if (a.parentResouceType === null && b.parentResouceType === null) {
+          return a.name.localeCompare(b.name)
+        }
+        if (a.parentResouceType === resourceType) {
+          return -1
+        }
+        if (b.parentResouceType === resourceType) {
+          return 1
+        }
+        if (a.parentResouceType === null) {
+          return -1
+        }
+        if (b.parentResouceType === null) {
+          return 1
+        }
+        if (a.parentResouceType !== b.parentResouceType) {
+          return a.parentResouceType.localeCompare(b.parentResouceType)
+        }
+        return a.name.localeCompare(b.name)
+      })
     return [
       {
         variantGroupKey: null,
@@ -301,6 +331,7 @@ const isDiscriminatedListProperty = (
 
 const collectResourceVariants = (
   property: DiscriminatedListProperty,
+  resourceTypes: string[],
 ): ApiRouteVariant[] => {
   return property.variants
     .map((variant) => {
@@ -315,6 +346,10 @@ const collectResourceVariants = (
       return {
         name: discriminator.values[0].name,
         description: variant.description,
+        parentResouceType: getParentVariantResourceType(
+          variant.properties.map(({ name }) => name),
+          resourceTypes,
+        ),
       }
     })
     .filter((variant): variant is ApiRouteVariant => variant !== null)
@@ -571,4 +606,16 @@ const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
     resourceData: jsonSample.resource_data,
     resourceDataSyntax: jsonSample.resource_data_syntax,
   }
+}
+
+const getParentVariantResourceType = (
+  propertyKeys: string[],
+  resourceTypes: string[],
+): string | null => {
+  const keyMap = Object.fromEntries(
+    resourceTypes.map((k) => [`is_${k}_error`, k]),
+  )
+  const key = propertyKeys.find((k) => Object.keys(keyMap).includes(k))
+  if (key == null) return null
+  return keyMap[key] ?? null
 }
