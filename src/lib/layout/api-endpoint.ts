@@ -99,8 +99,8 @@ const seamAuthMethodToDisplayNameMap: Record<
 export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
-  actionAttempts: ActionAttempt[],
   resources: Resource[],
+  actionAttempts: ActionAttempt[],
   pathMetadata: PathMetadata,
 ): void {
   const { parentPath } = endpoint
@@ -174,6 +174,7 @@ export function setEndpointLayoutContext(
     file.response.actionAttempt = {
       name: actionAttempt.actionAttemptType,
       description: actionAttempt.description,
+      hidePreamble: false,
       propertyGroups: groupProperties(
         actionAttempt.properties.filter(
           ({ isUndocumented }) => !isUndocumented,
@@ -268,7 +269,15 @@ const getResourceSamples = (
       return true
     })
 
-    return sample == null ? [] : [sample]
+    return sample == null
+      ? []
+      : [
+          {
+            ...sample,
+            title: 'JSON',
+            description: '',
+          },
+        ]
   }
 
   return []
