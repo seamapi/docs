@@ -259,11 +259,10 @@ const getResourceSample = (
   }
 
   if (response.actionAttempt != null) {
-    const actionAttemptSample = resourceSamples.find(
-      (resourceSample) =>
-        resourceSample.resource_type === 'action_attempt' &&
-        resourceSample.properties.action_type === response.actionAttempt?.name,
-    )
+    const actionAttemptSample = resourceSamples.find((resourceSample) => {
+      if (resourceSample.resource_type !== 'action_attempt') {
+        return false
+      }
 
       const { action_type: actionType } = resourceSample.properties
       return actionType === response.actionAttempt?.name
