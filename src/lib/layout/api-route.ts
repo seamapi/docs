@@ -240,7 +240,7 @@ const groupVariants = (
     })
   }
 
-  return property.variantGroups
+  const groups = property.variantGroups
     .reduce<ApiRouteVariantGroup[]>(
       (groups, variantGroup) => [
         ...groups,
@@ -273,6 +273,20 @@ const groupVariants = (
       if (a.variantGroupKey === null || b.name == null) return 1
       return a.name.localeCompare(b.name)
     })
+
+  if (include != null) {
+    const variants = groups
+      .flatMap((g) => g.variants)
+      .sort((a, b) => a.name.localeCompare(b.name))
+    return [
+      {
+        variantGroupKey: null,
+        variants,
+      },
+    ]
+  }
+
+  return groups
 }
 
 const isDiscriminatedListProperty = (
