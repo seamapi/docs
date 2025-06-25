@@ -243,8 +243,12 @@ ID of the device containing the unmanaged access code that you want to get. You 
 
 [unmanaged\_access\_code](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",

@@ -293,8 +293,12 @@ Name of the thermostat schedule.
 
 [thermostat\_schedule](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "climate_preset_key": "eco",

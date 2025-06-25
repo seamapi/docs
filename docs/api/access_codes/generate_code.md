@@ -154,8 +154,12 @@ ID of the device for which you want to generate a code.
 
 [access\_code](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",

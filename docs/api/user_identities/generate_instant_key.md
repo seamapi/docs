@@ -212,8 +212,12 @@ Maximum number of times the instant key can be used. Default: 1.
 
 [instant\_key](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "client_session_id": "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",

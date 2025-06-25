@@ -253,8 +253,12 @@ Name of the simulated unmanaged access code.
 
 [unmanaged\_access\_code](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",

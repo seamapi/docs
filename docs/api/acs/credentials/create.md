@@ -522,8 +522,12 @@ Enum values:
 
 [acs\_credential](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_method": "card",
@@ -547,13 +551,9 @@ Enum values:
   "visionline_metadata": {
     "card_function_type": "guest",
     "card_id": "5",
-    "common_acs_entrance_ids": [
-      "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
-    ],
+    "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
     "credential_id": "15",
-    "guest_acs_entrance_ids": [
-      "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
-    ],
+    "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
     "is_valid": true
   },
   "warnings": [],

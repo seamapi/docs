@@ -424,8 +424,12 @@ ID of the user identity with which you want to associate the new access system u
 
 [acs\_user](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_schedule": {
@@ -448,12 +452,8 @@ ID of the user identity with which you want to associate the new access system u
   "last_successful_sync_at": "2025-06-18T17:45:00.582Z",
   "pending_mutations": [
     {
-      "to": {
-        "acs_access_group_id": "2c0fb4a0-2b42-4651-926e-1a10bedbf6ce"
-      },
-      "from": {
-        "acs_access_group_id": "f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f"
-      },
+      "to": { "acs_access_group_id": "2c0fb4a0-2b42-4651-926e-1a10bedbf6ce" },
+      "from": { "acs_access_group_id": "f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f" },
       "message": "This user's access membership is being updated.",
       "created_at": "2025-06-18T17:57:01.867Z",
       "mutation_code": "updating_group_membership"

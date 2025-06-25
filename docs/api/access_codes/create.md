@@ -378,8 +378,12 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 [access\_code](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",

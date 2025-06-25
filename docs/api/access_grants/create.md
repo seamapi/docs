@@ -555,8 +555,12 @@ ID of user identity for whom access is being granted.
 
 [access\_grant](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
@@ -576,25 +580,19 @@ ID of user identity for whom access is being granted.
       "display_name": "PIN Code Credential",
       "mode": "code",
       "created_at": "2025-06-16T16:54:17.946606Z",
-      "created_access_method_ids": [
-        "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
-      ]
+      "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
     },
     {
       "display_name": "Card Credential",
       "mode": "card",
       "created_at": "2025-06-16T16:54:19.946606Z",
-      "created_access_method_ids": [
-        "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
-      ]
+      "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
     },
     {
       "display_name": "Mobile Key Credential",
       "mode": "mobile_key",
       "created_at": "2025-06-16T16:54:21.946606Z",
-      "created_access_method_ids": [
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-      ]
+      "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
     }
   ],
   "space_ids": [

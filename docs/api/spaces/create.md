@@ -219,8 +219,12 @@ IDs of the devices that you want to add to the new space.
 
 [space](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "created_at": "2025-06-16T16:54:17.946600Z",

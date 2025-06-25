@@ -252,8 +252,12 @@ ID of the entrance that you want to get.
 
 [acs\_entrance](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",

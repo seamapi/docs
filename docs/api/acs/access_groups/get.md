@@ -234,8 +234,12 @@ ID of the access group that you want to get.
 
 [acs\_access\_group](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "access_group_type": "salto_ks_access_group",

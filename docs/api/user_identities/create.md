@@ -266,8 +266,12 @@ Unique key for the new user identity.
 
 [user\_identity](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "created_at": "2025-06-16T16:54:17.946546Z",

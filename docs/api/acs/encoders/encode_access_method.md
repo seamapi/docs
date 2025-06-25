@@ -255,25 +255,3 @@ ID of the `acs_encoder` to use to encode the `access_method`.
 
 [action\_attempt](./)
 
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{
-  "action_attempt_id": "550e8400-e29b-41d4-a716-446655440000",
-  "action_type": "ENCODE_ACCESS_METHOD",
-  "error": null,
-  "result": {
-    "access_method_id": "9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f",
-    "created_at": "2025-06-14T16:54:17.946612Z",
-    "display_name": "My Card",
-    "instant_key_url": "https://se.am/1234",
-    "is_card_encoding_required": true,
-    "issued_at": "2025-06-14T16:54:17.946612Z",
-    "mode": "card",
-    "workspace_id": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-  },
-  "status": "success"
-}
-```
-{% endtab %}
-{% endtabs %}

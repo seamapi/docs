@@ -489,14 +489,16 @@ Mobile operating system version that you want to use for the simulated phone.
 
 [phone](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "created_at": "2025-06-14T16:54:17.946540Z",
-  "custom_metadata": {
-    "id": "internalId1"
-  },
+  "custom_metadata": { "id": "internalId1" },
   "device_id": "e452f665-a635-4c65-922b-9feab0e0f84f",
   "device_type": "ios_phone",
   "display_name": "My Phone",

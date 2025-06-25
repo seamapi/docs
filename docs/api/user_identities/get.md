@@ -221,8 +221,12 @@ ID of the user identity that you want to get.
 
 [user\_identity](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "created_at": "2025-06-16T16:54:17.946546Z",

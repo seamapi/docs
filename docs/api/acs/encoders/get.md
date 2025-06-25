@@ -198,8 +198,12 @@ ID of the encoder that you want to get.
 
 [acs\_encoder](./)
 
+
 {% tabs %}
 {% tab title="JSON" %}
+
+
+
 ```json
 {
   "acs_encoder_id": "681da2d6-4ac6-4b33-8c03-86281b761325",
