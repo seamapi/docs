@@ -194,7 +194,21 @@ export function setApiRouteLayoutContext(
       hidePreamble:
         groupOptions.include != null || groupOptions.exclude != null,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
-      resourceSamples: resource.resourceSamples.map(mapResourceSample),
+      resourceSamples: resource.resourceSamples
+        .filter(({ title }) => {
+          if (groupOptions.include != null) {
+            return groupOptions.include.some((x) =>
+              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+            )
+          }
+          if (groupOptions.exclude != null) {
+            return !groupOptions.exclude.some((x) =>
+              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+            )
+          }
+          return true
+        })
+        .map(mapResourceSample),
     })
   }
 }
