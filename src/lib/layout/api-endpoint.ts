@@ -3,6 +3,8 @@ import type {
   CodeSample,
   Endpoint,
   Parameter,
+  Resource,
+  ResourceSample,
   SdkName,
   SeamAuthMethod,
   SeamWorkspaceScope,
@@ -10,11 +12,12 @@ import type {
 import { capitalCase } from 'change-case'
 
 import type { PathMetadata } from '../path-metadata.js'
-import type { ResourceSampleDefinitions } from '../resource-sample.js'
 import {
   type ApiRouteResource,
   groupProperties,
+  mapResourceSample,
   normalizePropertyFormatForDocs,
+  type ResourceSampleContext,
 } from './api-route.js'
 
 const supportedSdks: SdkName[] = [
@@ -45,17 +48,10 @@ export interface ApiEndpointLayoutContext {
     responseKey: string | null
     responseType: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
-    resourceSample: ResourceSampleContext | null
   }
+  resourceSamples: ResourceSampleContext[]
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
-}
-
-interface ResourceSampleContext {
-  title: string
-  description: string
-  resource_type: string
-  properties: string
 }
 
 type AuthMethodDisplayName =
@@ -104,8 +100,8 @@ export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
   actionAttempts: ActionAttempt[],
+  resources: Resource[],
   pathMetadata: PathMetadata,
-  resourceSamples: ResourceSampleDefinitions,
 ): void {
   const { parentPath } = endpoint
   if (parentPath == null) {
@@ -151,7 +147,6 @@ export function setEndpointLayoutContext(
     escapedResourceType: null,
     responseKey: null,
     responseType: null,
-    resourceSample: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
@@ -189,10 +184,9 @@ export function setEndpointLayoutContext(
     }
   }
 
-  file.response.resourceSample = getResourceSample({
-    response: file.response,
-    resourceSamples,
-  })
+  file.resourceSamples = getResourceSamples(endpoint, resources).map(
+    mapResourceSample,
+  )
 
   const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
@@ -244,52 +238,38 @@ const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
   }
 }
 
-interface GetResourceSampleParams {
-  response: ApiEndpointLayoutContext['response']
-  resourceSamples: ResourceSampleDefinitions
-}
+const getResourceSamples = (
+  endpoint: Endpoint,
+  resources: Resource[],
+): ResourceSample[] => {
+  const { response } = endpoint
 
-const getResourceSample = (
-  params: GetResourceSampleParams,
-): ResourceSampleContext | null => {
-  const { response, resourceSamples } = params
-
-  if (response.responseType !== 'resource') {
-    return null
+  if (response.responseType === 'void') {
+    return []
   }
 
-  if (response.actionAttempt != null) {
-    const actionAttemptSample = resourceSamples.find((resourceSample) => {
-      if (resourceSample.resource_type !== 'action_attempt') {
-        return false
-      }
-
-      const { action_type: actionType } = resourceSample.properties
-      return actionType === response.actionAttempt?.name
-    })
-
-    if (actionAttemptSample == null) {
-      return null
-    }
-
-    return (
-      {
-        ...actionAttemptSample,
-        properties: JSON.stringify(actionAttemptSample.properties, null, 2),
-      } ?? null
-    )
-  }
-
-  const firstResourceSample = resourceSamples.find(
-    (resourceSample) => resourceSample.resource_type === response.resourceType,
+  const resource = resources.find(
+    ({ resourceType }) => resourceType === response.resourceType,
   )
 
-  if (firstResourceSample != null) {
-    return {
-      ...firstResourceSample,
-      properties: JSON.stringify(firstResourceSample.properties, null, 2),
-    }
+  if (resource == null) return []
+
+  if (
+    response.responseType === 'resource' ||
+    response.responseType === 'resource_list'
+  ) {
+    const sample = resource.resourceSamples.find((resourceSample) => {
+      if ('actionAttemptType' in resource) {
+        return (
+          resourceSample.properties['action_type'] ===
+          resource.actionAttemptType
+        )
+      }
+      return true
+    })
+
+    return sample == null ? [] : [sample]
   }
 
-  return null
+  return []
 }

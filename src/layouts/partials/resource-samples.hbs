@@ -1,0 +1,12 @@
+{% tabs %}
+{{#each .}}
+{% tab title="{{title}}" %}
+
+{{description}}
+
+```{{resourceDataSyntax}}
+{{{resourceData}}}
+```
+{% endtab %}
+{{/each}}
+{% endtabs %}

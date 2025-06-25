@@ -37,7 +37,7 @@ interface ApiRouteEvent {
   properties: ApiRouteProperty[]
 }
 
-interface ResourceSampleContext {
+export interface ResourceSampleContext {
   title: string
   description: string
   resourceData: string
@@ -509,7 +509,9 @@ function addLinkTargetsToProperties(
   }
 }
 
-const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
+export const mapResourceSample = (
+  sample: ResourceSample,
+): ResourceSampleContext => {
   const jsonSample = Object.entries(sample.resource).find(
     ([k]) => (k as SdkName) === 'seam_cli',
   )?.[1]

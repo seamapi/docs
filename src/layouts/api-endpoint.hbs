@@ -71,14 +71,10 @@ None
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
 
-{{#if response.resourceSample}}
-{% tabs %}
-{% tab title="JSON" %}
-```json
-{{response.resourceSample.properties}}
-```
-{% endtab %}
-{% endtabs %}
+{{#if resourceSamples.length}}
+
+{{> resource-samples resourceSamples }}
+{{/if}}
 {{/if}}
 {{#if additionalCodeSamples.length}}
 
