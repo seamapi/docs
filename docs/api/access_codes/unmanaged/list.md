@@ -247,3 +247,27 @@ Your user ID for the user by which to filter unmanaged access codes.
 
 Array of [unmanaged\_access\_codes](./)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",
+  "code": "1234",
+  "created_at": "2025-06-16T16:54:17.946283Z",
+  "device_id": "b3439f17-7273-46f3-9e20-9a283d9cb5b4",
+  "ends_at": "2025-06-23T16:54:17.946261Z",
+  "errors": [],
+  "is_managed": false,
+  "name": "My Unmanaged Access Code",
+  "starts_at": "2025-06-21T16:54:17.946261Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}

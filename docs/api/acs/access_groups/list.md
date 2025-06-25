@@ -274,6 +274,31 @@ ID of the user identity for which you want to retrieve all access groups.
 Array of [acs\_access\_groups](./)
 
 
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "access_group_type": "salto_ks_access_group",
+  "access_group_type_display_name": "Salto KS Access Group",
+  "acs_access_group_id": "3f448826-9875-4947-9519-e468090a4f7d",
+  "acs_system_id": "045baa77-6d06-40fe-a2cd-b82eef688f4a",
+  "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+  "created_at": "2025-06-15T16:54:17.946453Z",
+  "display_name": "Main Group",
+  "external_type": "salto_ks_access_group",
+  "external_type_display_name": "Salto KS Access Group",
+  "is_managed": true,
+  "name": "My Access Group",
+  "warnings": [],
+  "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 
 ## Examples

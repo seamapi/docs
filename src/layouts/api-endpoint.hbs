@@ -71,6 +71,10 @@ None
 
 {{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s](./){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
 
+{{#if resourceSamples.length}}
+
+{{> resource-samples resourceSamples }}
+{{/if}}
 {{#if additionalCodeSamples.length}}
 
 ---

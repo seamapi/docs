@@ -3,6 +3,8 @@ import type {
   CodeSample,
   Endpoint,
   Parameter,
+  Resource,
+  ResourceSample,
   SdkName,
   SeamAuthMethod,
   SeamWorkspaceScope,
@@ -13,7 +15,9 @@ import type { PathMetadata } from '../path-metadata.js'
 import {
   type ApiRouteResource,
   groupProperties,
+  mapResourceSample,
   normalizePropertyFormatForDocs,
+  type ResourceSampleContext,
 } from './api-route.js'
 
 const supportedSdks: SdkName[] = [
@@ -45,6 +49,7 @@ export interface ApiEndpointLayoutContext {
     responseType: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
+  resourceSamples: ResourceSampleContext[]
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
 }
@@ -94,6 +99,7 @@ const seamAuthMethodToDisplayNameMap: Record<
 export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
+  resources: Resource[],
   actionAttempts: ActionAttempt[],
   pathMetadata: PathMetadata,
 ): void {
@@ -179,6 +185,10 @@ export function setEndpointLayoutContext(
     }
   }
 
+  file.resourceSamples = getResourceSamples(endpoint, resources).map(
+    mapResourceSample,
+  )
+
   const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
     primaryCodeSample == null ? null : mapCodeSample(primaryCodeSample)
@@ -227,4 +237,48 @@ const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
     description: sample.description,
     code,
   }
+}
+
+const getResourceSamples = (
+  endpoint: Endpoint,
+  resources: Resource[],
+): ResourceSample[] => {
+  const { response } = endpoint
+
+  if (response.responseType === 'void') {
+    return []
+  }
+
+  const resource = resources.find(
+    ({ resourceType }) => resourceType === response.resourceType,
+  )
+
+  if (resource == null) return []
+
+  if (
+    response.responseType === 'resource' ||
+    response.responseType === 'resource_list'
+  ) {
+    const sample = resource.resourceSamples.find((resourceSample) => {
+      if ('actionAttemptType' in resource) {
+        return (
+          resourceSample.properties['action_type'] ===
+          resource.actionAttemptType
+        )
+      }
+      return true
+    })
+
+    return sample == null
+      ? []
+      : [
+          {
+            ...sample,
+            title: 'JSON',
+            description: '',
+          },
+        ]
+  }
+
+  return []
 }

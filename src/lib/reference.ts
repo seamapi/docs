@@ -96,6 +96,7 @@ export const reference = (
       setEndpointLayoutContext(
         file,
         endpoint,
+        resources,
         blueprint.actionAttempts,
         pathMetadata,
       )

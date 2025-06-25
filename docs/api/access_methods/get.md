@@ -201,3 +201,22 @@ ID of access method to get.
 
 [access\_method](./)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
+  "created_at": "2025-06-14T16:54:17.946612Z",
+  "display_name": "My Card",
+  "is_card_encoding_required": true,
+  "issued_at": "2025-06-14T16:54:17.946612Z",
+  "mode": "card",
+  "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+}
+```
+{% endtab %}
+{% endtabs %}
