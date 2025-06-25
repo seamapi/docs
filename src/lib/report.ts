@@ -1,6 +1,8 @@
 import type {
+  ActionAttempt,
   Blueprint,
   Endpoint,
+  EventResource,
   Namespace,
   Parameter,
   Property,
@@ -63,7 +65,7 @@ interface ParameterReportItem {
 }
 
 interface Metadata {
-  blueprint: Pick<Blueprint, 'routes' | 'resources' | 'namespaces'>
+  blueprint: Blueprint
   pathMetadata: unknown
 }
 
@@ -130,6 +132,16 @@ function generateReport(metadata: Metadata): Report {
   const resources = blueprint.resources ?? []
   for (const resource of resources) {
     processResource(resource, routes, report)
+  }
+
+  const events = blueprint.events ?? []
+  for (const event of events) {
+    processEvent(event, report)
+  }
+
+  const actionAttempts = blueprint.actionAttempts ?? []
+  for (const actionAttempt of actionAttempts) {
+    processActionAttempt(actionAttempt, report)
   }
 
   return report
@@ -199,6 +211,26 @@ function processResource(
     report.unusedResources.push({
       name,
     })
+  }
+}
+
+function processActionAttempt(
+  actionAttempt: ActionAttempt,
+  report: Report,
+): void {
+  if (
+    actionAttempt.resourceSamples.length === 0 &&
+    !actionAttempt.isUndocumented
+  ) {
+    report.resourcesWithoutResourceSamples.push(
+      `action_attempt: ${actionAttempt.actionAttemptType}`,
+    )
+  }
+}
+
+function processEvent(event: EventResource, report: Report): void {
+  if (event.resourceSamples.length === 0 && !event.isUndocumented) {
+    report.resourcesWithoutResourceSamples.push(`event: ${event.eventType}`)
   }
 }
 
