@@ -869,7 +869,7 @@ if (frontDoor.CanRemotelyUnlock == true) {
 
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
 
 To query the `locked` status of the device:
 
