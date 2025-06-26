@@ -278,7 +278,8 @@ Email address associated with the connected account that you want to get.
     "phone": "+1555551004",
     "username": "jane_doe"
   },
-  "warnings": []
+  "warnings": [],
+  "accepted_capabilities": ["lock"]
 }
 ```
 {% endtab %}

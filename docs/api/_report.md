@@ -64,7 +64,6 @@ These items are intentionally undocumented.
 - `acs_user.last_successful_sync_at`: Only used internally.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
-- `connect_webview.device_selection_mode`: Not implemented.
 - `unmanaged_acs_user.last_successful_sync_at`: Only used internally.
 
 ### Namespaces
