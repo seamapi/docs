@@ -223,9 +223,6 @@ var createdConnectWebview = seam.ConnectWebviews.Create(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### Connect Webview Response
@@ -239,6 +236,10 @@ The created `connect_webview` object includes a `url` property. You use this URL
 In your app, [open the Connect Webview for your user](embedding-a-connect-webview-in-your-app.md#opening-a-connect-webview), using the Connect Webview `url`.
 
 You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe).
+
+{% hint style="info" %}
+If you choose to embed a Connect Webview in an iframe, it's important to understand that some providers move to a new tab during their authentication flow for security purposes. Seam is not able to abstract away this behavior.
+{% endhint %}
 
 For instructions, see [Embedding a Connect Webview in Your App](embedding-a-connect-webview-in-your-app.md).
 
