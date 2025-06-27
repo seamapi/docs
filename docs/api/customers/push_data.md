@@ -76,6 +76,12 @@ List of short-term rental properties.
 
 ---
 
+**`property_listings`** *Array* *of Objects*
+
+List of property listings.
+
+---
+
 **`reservations`** *Array* *of Objects*
 
 List of reservations.

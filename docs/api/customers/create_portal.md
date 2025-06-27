@@ -134,6 +134,18 @@ List of short-term rental properties.
 
 <details>
 
+<summary><b><code>property_listings</code></b> <i>List</i></summary>
+
+List of property listings.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>reservations</code></b> <i>List</i></summary>
 
 List of reservations.
@@ -263,6 +275,12 @@ Configuration for the organize feature.
 
 ---
 
+
+**`is_embedded`** *Boolean*
+
+Whether the portal is embedded in another application.
+
+---
 
 
 ## Response
