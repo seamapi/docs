@@ -77,4 +77,4 @@ Seam generates an Instant Key and displays the **Instant Key Link** dialog. This
 
 <figure><img src="../../.gitbook/assets/instant-key-link-dialog.png" alt="Share the Instant Key link with your user. With no app install required, your user just taps to unlock." width="563"><figcaption><p>Share the Instant Key link with your user. With no app install required, your user just taps to unlock.</p></figcaption></figure>
 
-For more information about sharing Instant Keys with your users, see **Delivering Instant Keys**.
+For more information about sharing Instant Keys with your users, see [Delivering Instant Keys](delivering-instant-keys.md).
