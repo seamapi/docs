@@ -34,6 +34,8 @@ These items are intentionally undocumented.
 - `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/customer/v1/automation_runs`: No undocumented message provided
+- `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/portals`: No undocumented message provided
 - `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
@@ -100,6 +102,10 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
@@ -240,6 +246,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_simulate_disconnection`
 - `device.can_simulate_removal`
 - `device.can_turn_off_hvac`
+- `device.can_unlock_with_code`
 - `device_provider.can_hvac_cool`
 - `device_provider.can_hvac_heat`
 - `device_provider.can_hvac_heat_cool`
@@ -251,6 +258,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.can_simulate_disconnection`
 - `device_provider.can_simulate_removal`
 - `device_provider.can_turn_off_hvac`
+- `device_provider.can_unlock_with_code`
 - `device_provider.device_provider_name`
 - `device_provider.display_name`
 - `device_provider.image_url`
@@ -276,6 +284,7 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_simulate_disconnection`
 - `unmanaged_device.can_simulate_removal`
 - `unmanaged_device.can_turn_off_hvac`
+- `unmanaged_device.can_unlock_with_code`
 - `unmanaged_device.is_managed`
 - `user_identity.display_name`
 - `user_identity.full_name`
@@ -409,7 +418,6 @@ These items have been marked as draft.
 ### Routes
 
 - `/access_grants`: No draft message provided
-- `/access_methods`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -461,6 +469,12 @@ These items are deprecated.
 
 ### Endpoint parameters
 
+- `/access_codes/create`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/create_multiple`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/update`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
 - `/access_grants/create`
     - `location_ids`: Use `space_ids`.
 - `/access_grants/list`
@@ -530,11 +544,13 @@ These items are deprecated.
 - `/bridges/list`: `bridges`
 - `/networks/get`: `network`
 - `/networks/list`: `networks`
+- `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 
 ### Endpoints without code samples
 
+- `/access_methods/encode`
 - `/customers/create_portal`
 - `/customers/push_data`
 - `/locks/get`

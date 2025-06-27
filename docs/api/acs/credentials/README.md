@@ -26,6 +26,7 @@ An access system card credential resource.
   "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
   "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
   "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+  "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
   "card_number": "164d29dc4a09b65f",
   "created_at": "2025-06-16T16:54:17.946514Z",
   "display_name": "Guest Lock 1, Vingcard Lock 2",
@@ -63,6 +64,7 @@ An access system mobile key credential resource.
   "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
   "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
   "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
   "created_at": "2025-06-16T16:54:17.946514Z",
   "display_name": "Front Door",
   "errors": [],
@@ -84,6 +86,7 @@ An access system PIN code credential resource.
   "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
   "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
   "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
   "code": "123456",
   "created_at": "2025-06-16T16:54:17.946514Z",
   "display_name": "FRONT_DOOR",
@@ -206,6 +209,15 @@ Number of the card associated with the [credential](../../../capability-guides/a
 **`code`** *String*
 
 Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
+
+
+
+
+---
+
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../capability-guides/access-systems/managing-credentials.md#connected-accounts) to which the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
 
 
 

@@ -103,9 +103,9 @@ URL of the Instant Key for mobile key access methods.
 
 ---
 
-**`is_card_encoding_required`** *Boolean*
+**`is_encoding_required`** *Boolean*
 
-Indicates whether card encoding is required for plastic card access methods.
+Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.
 
 
 
@@ -330,6 +330,11 @@ An access method was reissued due to an access grant update.
 [**`/access_methods/delete`**](./delete.md)
 
 Delete an access method.
+
+
+[**`/access_methods/encode`**](./encode.md)
+
+Encodes an existing [credential](../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 [**`/access_methods/get`**](./get.md)
