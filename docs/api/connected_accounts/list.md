@@ -310,7 +310,8 @@ Array of [connected\_accounts](./)
     "phone": "+1555551004",
     "username": "jane_doe"
   },
-  "warnings": []
+  "warnings": [],
+  "accepted_capabilities": ["lock"]
 }
 ```
 {% endtab %}

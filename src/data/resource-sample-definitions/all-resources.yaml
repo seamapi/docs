@@ -487,6 +487,8 @@
       phone: '+1555551004'
       username: jane_doe
     warnings: []
+    accepted_capabilities:
+      - lock
 - title: Device Provider
   description: A device provider resource.
   resource_type: device_provider

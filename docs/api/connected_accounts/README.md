@@ -32,7 +32,8 @@ A connected account resource.
     "phone": "+1555551004",
     "username": "jane_doe"
   },
-  "warnings": []
+  "warnings": [],
+  "accepted_capabilities": ["lock"]
 }
 ```
 {% endtab %}
@@ -40,6 +41,15 @@ A connected account resource.
 
 ---
 ## Properties
+
+**`accepted_capabilities`** *List* *of Enums*
+
+List of capabilities that were accepted during the account connection process.
+
+
+
+
+---
 
 **`account_type`** *String*
 
