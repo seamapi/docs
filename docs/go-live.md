@@ -4,7 +4,7 @@ description: >-
   Webviews.
 ---
 
-# 🚀 Go Live!
+# Go Live!
 
 ## Create a Production Workspace
 

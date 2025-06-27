@@ -27,29 +27,40 @@ Buy and install a Visionline card encoder—specifically, the [ASSA ABLOY RFID e
     {% hint style="info" %}
     To connect through USB, you must use firmware version 2.6.2.4 or higher for the RFID encoder. Visionline 1.22.1 or higher is also required.
     {% endhint %}
-3. Register the card encoder.
-   1. Log in to the Visionline application if you are not already logged in.
-   2. At the bottom of the left navigation pane, click **Lists**.
-   3. In the **System setup** section of the left navigation pane, double-click **Devices**.
-   4. In the **Devices** window, click **Add**.
-   5. In the **Device details** window, type a **Name** for the RFID encoder & updater.
-   6. If desired, type a **Description**.
-   7.  In the **Type** field, select **Network RFID encoder (USB)**.
 
-       <figure><img src="../../../../../.gitbook/assets/visionline-card-encoder-device-details-window.png" alt="Specify the details for the new card encoder device." width="350"><figcaption><p>Specify the details for the new card encoder device.</p></figcaption></figure>
-   8.  Click **...** next to the **S/N** field.
+3\. Register the card encoder.\
+1\. Log in to the Visionline application if you are not already logged in.\
+2\. At the bottom of the left navigation pane, click \*\*Lists\*\*.\
+3\. In the \*\*System setup\*\* section of the left navigation pane, double-click \*\*Devices\*\*.\
+4\. In the \*\*Devices\*\* window, click \*\*Add\*\*.\
+5\. In the \*\*Device details\*\* window, type a \*\*Name\*\* for the RFID encoder & updater.\
+6\. If desired, type a \*\*Description\*\*.\
+7\. In the \*\*Type\*\* field, select \*\*Network RFID encoder (USB)\*\*.
 
-       The list displays all network RFID encoder & updaters that are connected through USB.
-   9.  Make sure that the correct RFID encoder & updater is selected.
+```
+   <figure><img src="../../../../../.gitbook/assets/visionline-card-encoder-device-details-window.png" alt="Specify the details for the new card encoder device." width="350"><figcaption><p>Specify the details for the new card encoder device.</p></figcaption></figure>
+```
 
-       <figure><img src="../../../../../.gitbook/assets/visionline-card-encoder-select-s-n-field.png" alt="Select the correct RFID encoder &#x26; updater." width="354"><figcaption><p>Select the correct RFID encoder &#x26; updater.</p></figcaption></figure>
-   10. Select the correct **Location**.
-   11. If you have selected **Server** or **Computer** as the **Location**, type the **PMS address**, if applicable.
-   12. Click **Save**.
-   13. In the **Device details** window, click **Close**.
-   14. In the **Devices** window, click **Close**.
-4. Select the card encoder to which the Visionline server should send cards.
-   1. Click **File** > **Select encoder**.
-   2.  Select the encoder that you registered in the previous section and then click **OK**.
+8\. Click **...** next to the **S/N** field.
 
-       <figure><img src="../../../../../.gitbook/assets/visionline-select-encoder-window.png" alt="Select the card encoder that you want to use." width="563"><figcaption><p>Select the card encoder that you want to use.</p></figcaption></figure>
+```
+   The list displays all network RFID encoder & updaters that are connected through USB.
+```
+
+9\. Make sure that the correct RFID encoder & updater is selected.
+
+```
+   <figure><img src="../../../../../.gitbook/assets/visionline-card-encoder-select-s-n-field.png" alt="Select the correct RFID encoder &#x26; updater." width="354"><figcaption><p>Select the correct RFID encoder &#x26; updater.</p></figcaption></figure>
+```
+
+10\. Select the correct **Location**.\
+11\. If you have selected **Server** or **Computer** as the **Location**, type the **PMS address**, if applicable.\
+12\. Click **Save**.\
+13\. In the **Device details** window, click **Close**.\
+14\. In the **Devices** window, click **Close**.\
+4\. Select the card encoder to which the Visionline server should send cards.
+
+1. Click **File** > **Select encoder**.
+2.  Select the encoder that you registered in the previous section and then click **OK**.
+
+    <figure><img src="../../../../../.gitbook/assets/visionline-select-encoder-window.png" alt="Select the card encoder that you want to use." width="563"><figcaption><p>Select the card encoder that you want to use.</p></figcaption></figure>

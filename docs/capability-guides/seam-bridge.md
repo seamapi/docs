@@ -2,7 +2,7 @@
 description: Use Seam Bridge to connect on-premises access systems to Seam.
 ---
 
-# 📡 Seam Bridge
+# Seam Bridge
 
 ## Overview
 

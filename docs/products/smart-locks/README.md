@@ -4,7 +4,7 @@ description: >-
   unlock doors and other entry points.
 ---
 
-# 🔒 Smart Locks
+# Smart Locks
 
 {% embed url="https://youtu.be/99ZpSq2Z1-8" %}
 You can control your smart locks easily with the Seam API. In this video, learn how to get started!

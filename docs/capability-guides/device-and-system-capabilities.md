@@ -2,7 +2,7 @@
 description: Learn about device and system capabilities, as well as capability flags.
 ---
 
-# 📋 Device and System Capabilities
+# Device and System Capabilities
 
 <figure><img src="../.gitbook/assets/blog-cover_new-capabilities.png" alt="In the Seam API, capability flags inform your application about what features and behaviors each device supports."><figcaption></figcaption></figure>
 
