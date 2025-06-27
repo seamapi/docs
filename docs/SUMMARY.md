@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Seam Documentation](README.md)
-* [🚲 Quick Start](quickstart.md)
-* [🚀 Go Live!](go-live.md)
+* [Quick Start](quickstart.md)
+* [Go Live!](go-live.md)
 
 ## Core Concepts
 
@@ -41,8 +41,8 @@
 
 ## Capability Guides
 
-* [📋 Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
-* [🔒 Smart Locks](products/smart-locks/README.md)
+* [Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
+* [Smart Locks](products/smart-locks/README.md)
   * [Locking and Unlocking Smart Locks](products/smart-locks/lock-and-unlock.md)
   * [Creating and Managing Smart Lock Access Codes](products/smart-locks/access-codes/README.md)
     * [Creating Access Codes](capability-guides/smart-locks/access-codes/creating-access-codes/README.md)
@@ -58,7 +58,7 @@
     * [Managing Offline Access Codes](products/smart-locks/access-codes/offline-access-codes.md)
     * [Creating and Updating Multiple Linked Access Codes](capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md)
     * [Migrating Existing Unmanaged Access Codes](products/smart-locks/access-codes/migrating-existing-access-codes.md)
-* [🏢 Access Control Systems](products/access-systems/README.md)
+* [Access Control Systems](products/access-systems/README.md)
   * [ACS Quick Starts](capability-guides/access-systems/acs-quick-starts/README.md)
     * [PIN Code Quick Start](capability-guides/access-systems/acs-quick-starts/pin-code-quick-start.md)
     * [Encodable Key Card Quick Start](capability-guides/access-systems/acs-quick-starts/encodable-key-card-quick-start.md)
@@ -78,7 +78,7 @@
     * [Creating and Encoding Card-based Credentials](capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md)
     * [Scanning Encoded Cards](capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards.md)
   * [Troubleshooting Your Access Control System](capability-guides/access-systems/troubleshooting-your-access-control-system.md)
-* [📱 Mobile Access](capability-guides/mobile-access/README.md)
+* [Mobile Access](capability-guides/mobile-access/README.md)
   * [Prepare your Workspace](capability-guides/mobile-access/mobile-access-setup.md)
   * [Managing Mobile App User Accounts with User Identities](capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
   * [Managing Phones for a User Identity](capability-guides/mobile-access/managing-phones-for-a-user-identity.md)
@@ -88,7 +88,7 @@
     * [Initializing the Seam Mobile SDK](capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk.md)
     * [Handling System Permissions](capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions.md)
     * [Using Unlock With Tap](capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap.md)
-* [🌡️ Thermostats](products/thermostats/README.md)
+* [Thermostats](products/thermostats/README.md)
   * [Understanding Thermostat Concepts](capability-guides/thermostats/understanding-thermostat-concepts/README.md)
     * [HVAC Mode](capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md)
     * [Set Points](capability-guides/thermostats/understanding-thermostat-concepts/set-points.md)
@@ -101,13 +101,13 @@
   * [Creating and Managing Thermostat Schedules](capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
   * [Creating and Managing Thermostat Programs](capability-guides/thermostats/creating-and-managing-thermostat-programs.md)
   * [Testing Your Thermostat App with Simulate Endpoints](capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md)
-* [👂 Noise Sensors](products/noise-sensors/README.md)
+* [Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
-* [📡 Seam Bridge](capability-guides/seam-bridge.md)
+* [Seam Bridge](capability-guides/seam-bridge.md)
 
-## 💻 UI Components
+## UI Components
 
-* [🧱 Seam Components](seam-components/overview/README.md)
+* [Seam Components](seam-components/overview/README.md)
   * [Getting Started with Seam Components](seam-components/overview/getting-started-with-seam-components.md)
     * [Get Started with React](seam-components/overview/get-started-with-react-components-and-client-session-tokens.md)
     * [Get started with Angular](seam-components/overview/angular.md)
@@ -126,7 +126,7 @@
   * [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
   * [Using User Identities to Scope Users' Device Access](ui-components/overview/using-user-identities-to-scope-users-device-access.md)
 
-## 📋 API Reference <a href="#api" id="api"></a>
+## API Reference <a href="#api" id="api"></a>
 
 * [Overview](api-overview/overview.md)
 * [Installation](api-overview/installation.md)
@@ -310,7 +310,7 @@
   * [Get Workspace](api-clients/workspaces/get.md)
   * [Reset Workspace](api-clients/workspaces/reset_sandbox.md)
 
-## 🛠️ Developer Tools
+## Developer Tools
 
 * [Webhooks](core-concepts/webhooks.md)
 * [Seam CLI](developer-tools/seam-cli.md)
@@ -355,7 +355,7 @@
   * [Android SDK](developer-tools/mobile-sdks/android-sdk.md)
   * [iOS SDK](developer-tools/mobile-sdks/ios-sdk.md)
 
-## 🎛️ Device and System Integration Guides
+## Device and System Integration Guides
 
 * [Overview](device-and-system-integration-guides/overview.md)
 * [2N Intercom Systems](device-guides/2n-intercom-systems.md)
