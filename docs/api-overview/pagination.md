@@ -7,7 +7,7 @@ description: Learn how to use pagination in the Seam API.
 For endpoints that can return long lists of resources, using pagination makes your app faster and more efficient. The Seam API and our JavaScript, Python, PHP, and Ruby SDKs support pagination for `list` endpoints.
 
 {% hint style="info" %}
-Currently, we support pagination for devices, access codes, access system users, and connected accounts.
+Currently, we support pagination for access codes, access system users, Connect Webviews, connected accounts, and devices.
 {% endhint %}
 
 To fetch and process resources across multiple pages in the Seam API, use the `limit` and `page_cursor` parameters, along with the `pagination` response object. The `pagination` object provides the following information:
@@ -194,9 +194,6 @@ if ($pagination->has_next_page) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -499,9 +496,6 @@ if ($pagination->has_next_page) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -675,9 +669,6 @@ There are 5 devices on this page.
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -842,9 +833,6 @@ foreach ($pages->flatten() as $device) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1046,7 +1034,4 @@ $deviecs = $pages->flattenToArray();
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
