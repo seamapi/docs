@@ -36,21 +36,39 @@ dependencies {
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-To install the Seam iOS SDK, add the `SeamSdk.podspec` to the `target` block of your [Podfile](https://guides.cocoapods.org/using/using-cocoapods.html).
+You can install SeamSDK via CocoaPods or Swift Package Manager (SPM).  
+SeamSDK supports per-lock-provider integration granularity--include only the modules you need to keep your app footprint minimal.
 
 {% code title="Podfile" %}
 ```ruby
 use_frameworks!
-
-platform :ios, '...'
+platform :ios, '15.0'
 
 target 'YourApp' do
-  // ...
-  // Local pod install with file path to SeamSdk.podspec
-  pod 'SeamSdk', :path => './SeamSdk.podspec'
+  # Local pod install with file path to SeamSdk.podspec
+  pod 'SeamSDK', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+  # Optional subspecs for specific providers:
+  pod 'SeamSDK/SeamDormakabaIntegration', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+  pod 'SeamSDK/SeamLatchIntegration', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
 end
 ```
 {% endcode %}
+
+{% tabs %}
+{% tab title="SPM" %}
+```swift
+dependencies: [
+    .package(path: "PATH_TO_SEAM_SDK/SeamSDK")
+],
+targets: [
+    .target(
+        name: "YourApp",
+        dependencies: ["SeamSDK", "SeamSaltoIntegration"]
+    )
+]
+```
+{% endtab %}
+{% endtabs %}
 {% endtab %}
 {% endtabs %}
 
@@ -80,7 +98,7 @@ The use of this method requires a special entitlement from Apple.
 
 A [user identity](../managing-mobile-app-user-accounts-with-user-identities.md) enables the application to request a user's mobile access permissions and use the app to unlock doors.
 
-First, use the Seam API to create a [user identity](../managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that will correspond to the App User Account using your internal user ID or other identifying information.
+First, use the Seam API or Seam Console to create a [user identity](../managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that will correspond to the App User Account using your internal user ID or other identifying information.
 
 Then, using the user identity, create a [client session](../../../core-concepts/authentication/client-session-tokens/) and capture the resulting [client session token](../../../core-concepts/authentication/client-session-tokens/). This token will be used to authenticate the user on your application.
 
@@ -183,17 +201,21 @@ $client_session = $seam->client_sessions->create(
 $token = $client_session->token;
 ```
 {% endtab %}
+
+
 {% endtabs %}
 
 ***
 
 ## 4. Initialize the Mobile SDK with the Client Session Token
 
-Use the client session token generated earlier to initialize the Seam Mobile SDK. This initializes the Mobile SDK for the app user, and retrieves the relevant provider-specific settings. This also launches a background process that will continually poll for any updates to the access permissions.
 
-### Initialization and Handling Configuration Errors
+Use the client session token you generated earlier to bootstrap the Seam SDK on the device. Under the hood, this will set up credential synchronization and start a background sync loop to keep permissions up to date.
 
-The initialization process may fail if the Seam workspace or provider-specific settings are not configured properly. If the initialization process encounters any irrecoverable errors, this block will catch these exceptions, specifically those identified as `SeamError`. These errors point to development errors, and should be addressed by making sure that your Workspace and User Identity is configured properly.
+
+### Initialization and Error Handling
+
+Perform initialization and activation within your app’s asynchronous context (e.g., Swift’s `Task` or Kotlin coroutines) so you can handle errors. The initialization call may fail due to configuration issues (such as an invalid token), and the activation call may fail due to network or runtime errors. Catch these errors and present a user-friendly message or fallback UI as appropriate.
 
 {% tabs %}
 {% tab title="Android Kotlin" %}
@@ -223,94 +245,60 @@ try {
 
 {% tab title="iOS Swift" %}
 ```swift
-import Seam
+import SeamSDK
 
-//  client session token for th user
-let clientSessionToken = 
-
-let seam = SeamClient(
-    clientSessionToken: clientSessionToken,
-    seamEventDelegate: 
-)
-
-try seam.phone.native.initialize(
-    enableUnlockWithTap: true
-)
+// Initialize the Mobile SDK with the Client Session Token (CST)
+Task {
+    do {
+        // Bootstrap the SDK with the CST from your login flow
+        try SeamSDKManager.initialize(clientSessionToken: token)
+        // Start credential sync and background polling
+        try await SeamSDKManager.shared.activate()
+        print("Seam SDK is now active")
+    } catch let error as SeamSDKV2Error {
+        // Handle SDK-specific initialization errors (invalid token, workspace issues)
+        showAlert(title: "Initialization Failed", message: error.localizedDescription)
+    } catch {
+        // Handle any other errors (network, unexpected)
+        showAlert(title: "Unexpected Error", message: error.localizedDescription)
+    }
+}
 ```
 {% endtab %}
 {% endtabs %}
 
-### Handling Provider Initialization Errors from the Background Process
 
-Any failures during the background process will produce errors. These errors can be accessed from the error list, and events will also be emitted. To handle these operational errors, you may log the error in logs or displaying a message to the user.
+### Credential Errors
 
-{% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-fun (
-    seam: Seam,
-    event: SeamEvent
-) {
-    // If the event is under the phone namespace, the phone state may have changed.
-    if event is SeamEvent.Phone {
-        val phone = seam.phone.get().nativeMetadata
-    
-        // Check for the desired state of the phone for all app features to work.
-        if (!phone.isInitialized || !phone.canUnlockWithTap) {
-            // Check errors and display them to the user.
-            phone.errors
-            // For example:
-            // SeamError.Phone.Native.MissingRequiredAndroidPermissions: Missing required permissions.
-            // SeamError.Phone.Native.InternetConnectionRequired: No internet.
-            // SeamError.AuthenticationError: Invalid client session token.
-            // SeamError.Internal.Phone.Native.ProviderInitializationFailure: Invalid provider configuration.
-    	    // SeamError.Internal.Phone.Native.ProviderInitializationFailure: Android version not compatible.
-    
-            // Display error message and disable functionality/access, 
-            // until the user resolves the issue.
-        } else {
-          // Set the UI state to indicate that all app features are working.
-        }
-    }
-}
+Any errors that occur between activation and deactivation surface on individual credential objects via their `errors` property. Observe the `credentials` array to detect and handle these errors:
 
-val seam = SeamClient(
-  seamEventHandler = eventHandler,
-  // ...
-)
-```
-{% endtab %}
-
-{% tab title="iOS Swift" %}
 ```swift
-func (
-    seam: Seam,
-    event: SeamEvent
-) {
-    // If the event is under the phone namespace, the phone state may have changed.
-    switch(event) {
-    case .phone:
-        let phone = seam.phone.get().nativeMetadata // Coming soon!
-        
-        // Check for the desired state of the phone for all app features to work.
-        if (!phone.isInitialized || !phone.canUnlockWithTap) {
-            // check errors and display them to the user.
-            phone.errors
-            // For example:
-            // seam.phone.native.missing_required_ios_permissions: Missing required permissions.
-            // seam.phone.native.internet_connection_required: No internet.
-            // seam.authentication_error: Invalid client session token.
-            // seam.internal.phone.native.provider_initialization_failure: Invalid provider configuration.
-        } else {
-            // Set the UI state to indicate that all app features are working.
-        }
-    }
-}
+import SeamSDK
+import Combine
 
-let seam = SeamClient(
-  seamEventHandler = eventHandler,
-  // ...
-)
+private var credentialErrorsCancellable: AnyCancellable?
+
+func startMonitoringCredentialErrors() {
+    credentialErrorsCancellable = SeamSDKManager.shared.$credentials
+        .sink { credentials in
+            for credential in credentials where !credential.errors.isEmpty {
+                print("Errors for \(credential.displayName):", credential.errors)
+            }
+        }
+}
 ```
-{% endtab %}
-{% endtabs %}
+
+#### Credential Error Types
+
+- `awaitingLocalCredential`: Credential is being prepared locally.
+- `expired`: Credential has expired and cannot be used.
+- `userInteractionRequired(action)`: Additional user interaction required; check the `action` for specifics.
+- `unknown`: An unspecified error occurred.
+
+#### Possible `userInteractionRequired` Actions
+
+- `completeOtpAuthorization(otpUrl:)`: User must complete OTP authorization.
+- `enableInternet`: User must enable internet connectivity.
+- `enableBluetooth`: User must enable Bluetooth.
+- `grantBluetoothPermission`: User must grant Bluetooth permission.
+- `appRestartRequired`: User must restart the app.
