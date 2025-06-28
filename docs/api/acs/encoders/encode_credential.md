@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md). Either provide an `acs_credential_id` or an `access_method_id`
 
 
 {% tabs %}
@@ -363,15 +363,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`acs_credential_id`** *String* (Required)
-
-ID of the `acs_credential` to encode onto a card.
-
----
-
 **`acs_encoder_id`** *String* (Required)
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.
+
+---
+
+**`access_method_id`** *String*
+
+ID of the `access_method` to encode onto a card.
+
+---
+
+**`acs_credential_id`** *String*
+
+ID of the `acs_credential` to encode onto a card.
 
 ---
 

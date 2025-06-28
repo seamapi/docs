@@ -277,6 +277,12 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ---
 
+**`search`** *String*
+
+String for which to search. Filters returned connected accounts to include all records that satisfy a partial match using `connected_account_id`, `account_type`, `customer_key`, `custom_metadata`, `user_identifier.username`, `user_identifier.email` or `user_identifier.phone`.
+
+---
+
 **`user_identifier_key`** *String*
 
 Your user ID for the user by which you want to filter connected accounts.

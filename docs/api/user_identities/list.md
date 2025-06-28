@@ -216,6 +216,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ---
 
+**`search`** *String*
+
+String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.
+
+---
+
 
 ## Response
 
