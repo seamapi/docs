@@ -49,7 +49,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
@@ -164,15 +163,14 @@ After a ControlByWeb account is linked with Seam, you can retrieve devices for t
 
 {% tabs %}
 {% tab title="Python" %}
-````python
-all_locks = seam.locks.list()
+\`\`\`\`python all\_locks = seam.locks.list()
 
-some_lock = all_locks[0]
+some\_lock = all\_locks\[0]
 
-assert some_lock.properties["online"] is True
-assert some_lock.properties["locked"] is True
+assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
 
-print(some_lock)
+print(some\_lock)
+
 ```python
 # Device(
 #   device_id='4a570d13-9704-46e0-b69c-9fea80d6a7aa',
@@ -194,10 +192,12 @@ print(some_lock)
 #   capabilities_supported=['lock'],
 #   errors=[]
 # )
-````
-{% endtab %}
+```
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -234,9 +234,11 @@ console.log(someLock)
 }
 */
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -245,40 +247,46 @@ puts some_lock.properties.locked # true
 
 puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-04-25 14:34:50 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 2", #     }, #       "device_name"=>"Device 2" #       "relay_name"=>"firstRelay", #       "device_id"=>"9997", #     "controlbyweb_metadata"=>{ #     "manufacturer"=>"controlbyweb", #     "online"=>true, #     "locked"=>true, #   properties={ #   device_type="controlbyweb_device" #   device_id="4a570d13-9704-46e0-b69c-9fea80d6a7aa" # <Seam::Device:0x00146639380
 ```
-{% endtab %}
-{% endtabs %}
 
-### 4 — Triggering a ControlByWeb relay
+\{% endtab %\} \{% endtabs %\}
+
+#### 4 — Triggering a ControlByWeb relay
 
 Next, you can perform the basic action of triggering a relay on the device. This action is mapped to an unlock API call in Seam.
 
-## Unlock a door
+### Unlock a door
 
 <mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
-#### Request Body
+**Request Body**
 
 | Name       | Type   | Description |
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-{% tabs %}
-{% tab title="Python" %}
+\{% tabs %\} \{% tab title="Python" %\}
+
 ```python
 # trigger the relay
 seam.locks.unlock_door(some_lock)
 ```
-{% endtab %}
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 // trigger the relay
 await seam.locks.unlockDoor(someLock.device_id)
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
-```ruby
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
+```
+
+ruby
 # trigger the relay
 seam.locks.unlock_door(device_id: some_lock.device_id)
 ```
