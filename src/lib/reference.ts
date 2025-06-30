@@ -68,6 +68,7 @@ export const reference = (
       !path.startsWith('/access_methods') &&
       !path.startsWith('/spaces') &&
       !path.startsWith('/access_codes') &&
+      !path.startsWith('/customers') &&
       !path.startsWith('/action_attempts')
     ) {
       return false
@@ -97,6 +98,7 @@ export const reference = (
       setEndpointLayoutContext(
         file,
         endpoint,
+        resources,
         blueprint.actionAttempts,
         pathMetadata,
       )

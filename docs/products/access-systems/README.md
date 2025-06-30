@@ -4,7 +4,7 @@ description: >-
   access to physical spaces, using credentials.
 ---
 
-# 🏢 Access Control Systems
+# Access Control Systems
 
 <figure><img src="../../.gitbook/assets/building-acs-example.png" alt="With Seam, you can manage your ACS system, granting users access to multiple entrances using credentials."><figcaption><p>With Seam, you can manage your access control system, granting users access to multiple entrances using credentials.</p></figcaption></figure>
 

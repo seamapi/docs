@@ -1,3 +1,4 @@
+{{#unless hidePreamble}}
 ## The {{name}} Object
 
 - [Properties](./#properties)
@@ -13,20 +14,10 @@
 
 {{description}}
 {{/if}}
+{{/unless}}
 {{#if resourceSamples.length}}
 
-{% tabs %}
-{{#each resourceSamples}}
-{% tab title="{{this.title}}" %}
-
-{{this.description}}
-
-```{{this.resourceDataSyntax}}
-{{{this.resourceData}}}
-```
-{% endtab %}
-{{/each}}
-{% endtabs %}
+{{> resource-samples resourceSamples }}
 {{/if}}
 
 ---

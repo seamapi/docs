@@ -4,7 +4,7 @@ description: >-
   platforms.
 ---
 
-# 📱 Mobile Access
+# Mobile Access
 
 <figure><img src="../../.gitbook/assets/sdk-cover-4-3.png" alt=""><figcaption><p>Seam SDK lets you unlock doors using BLE and NFC credentials across a wide variety of access platforms</p></figcaption></figure>
 
@@ -19,7 +19,7 @@ The Seam mobile access solution makes it easy to issue and retrieve mobile crede
 ## Applicable Lock and Access Platforms
 
 The Seam mobile access solution is primarily focused on electronic locks and access hardware that support Bluetooth® or near-field communication (NFC) wireless technology. These groups of devices include a vast array of modern electronic door locks, turnstiles, and gate systems. Before implementation, it is important to verify that the existing hardware can communicate with smartphones through one of these wireless technologies.\
-If you aim to enable mobile access with Wi-Fi or Z-Wave locks, see [Smart Locks](../../products/smart-locks/). This section describes  API endpoints that you can use directly in your mobile application.
+If you aim to enable mobile access with Wi-Fi or Z-Wave locks, see [Smart Locks](../../products/smart-locks/). This section describes API endpoints that you can use directly in your mobile application.
 
 ***
 

@@ -5,7 +5,7 @@ description: >-
   your first device API call.
 ---
 
-# 🚲 Quick Start
+# Quick Start
 
 ## Step 1 — Connect Devices
 
@@ -80,7 +80,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 ## Step 3 — Unlock a Door
@@ -336,9 +335,6 @@ if (frontDoor.CanRemotelyUnlock == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ## Congrats! :tada:

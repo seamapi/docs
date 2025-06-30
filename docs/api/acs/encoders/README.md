@@ -221,14 +221,9 @@ An [access system encoder](../../../capability-guides/access-systems/working-wit
 ## Endpoints
 
 
-[**`/acs/encoders/encode_access_method`**](./encode_access_method.md)
-
-Encodes an existing access method onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
-
-
 [**`/acs/encoders/encode_credential`**](./encode_credential.md)
 
-Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md). Either provide an `acs_credential_id` or an `access_method_id`
 
 
 [**`/acs/encoders/get`**](./get.md)

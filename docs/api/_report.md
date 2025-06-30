@@ -33,6 +33,8 @@ These items are intentionally undocumented.
 - `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/customer/v1/automation_runs`: No undocumented message provided
+- `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/portals`: No undocumented message provided
 - `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
@@ -63,7 +65,6 @@ These items are intentionally undocumented.
 - `acs_user.last_successful_sync_at`: Only used internally.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
-- `connect_webview.device_selection_mode`: Not implemented.
 - `unmanaged_acs_user.last_successful_sync_at`: Only used internally.
 
 ### Namespaces
@@ -100,6 +101,10 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
@@ -240,6 +245,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_simulate_disconnection`
 - `device.can_simulate_removal`
 - `device.can_turn_off_hvac`
+- `device.can_unlock_with_code`
 - `device_provider.can_hvac_cool`
 - `device_provider.can_hvac_heat`
 - `device_provider.can_hvac_heat_cool`
@@ -251,6 +257,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.can_simulate_disconnection`
 - `device_provider.can_simulate_removal`
 - `device_provider.can_turn_off_hvac`
+- `device_provider.can_unlock_with_code`
 - `device_provider.device_provider_name`
 - `device_provider.display_name`
 - `device_provider.image_url`
@@ -276,6 +283,7 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_simulate_disconnection`
 - `unmanaged_device.can_simulate_removal`
 - `unmanaged_device.can_turn_off_hvac`
+- `unmanaged_device.can_unlock_with_code`
 - `unmanaged_device.is_managed`
 - `user_identity.display_name`
 - `user_identity.full_name`
@@ -409,7 +417,6 @@ These items have been marked as draft.
 ### Routes
 
 - `/access_grants`: No draft message provided
-- `/access_methods`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -461,6 +468,12 @@ These items are deprecated.
 
 ### Endpoint parameters
 
+- `/access_codes/create`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/create_multiple`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/update`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
 - `/access_grants/create`
     - `location_ids`: Use `space_ids`.
 - `/access_grants/list`
@@ -530,11 +543,13 @@ These items are deprecated.
 - `/bridges/list`: `bridges`
 - `/networks/get`: `network`
 - `/networks/list`: `networks`
+- `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 
 ### Endpoints without code samples
 
+- `/access_methods/encode`
 - `/customers/create_portal`
 - `/customers/push_data`
 - `/locks/get`
@@ -546,3 +561,99 @@ These items are deprecated.
 ### Resources without resource samples
 
 - `enrollment_automation`
+- `event: access_code.created`
+- `event: access_code.changed`
+- `event: access_code.scheduled_on_device`
+- `event: access_code.set_on_device`
+- `event: access_code.removed_from_device`
+- `event: access_code.delay_in_setting_on_device`
+- `event: access_code.failed_to_set_on_device`
+- `event: access_code.deleted`
+- `event: access_code.delay_in_removing_from_device`
+- `event: access_code.failed_to_remove_from_device`
+- `event: access_code.modified_external_to_seam`
+- `event: access_code.deleted_external_to_seam`
+- `event: access_code.backup_access_code_pulled`
+- `event: access_code.unmanaged.converted_to_managed`
+- `event: access_code.unmanaged.failed_to_convert_to_managed`
+- `event: access_code.unmanaged.created`
+- `event: access_code.unmanaged.removed`
+- `event: access_grant.created`
+- `event: access_grant.deleted`
+- `event: access_grant.access_granted_to_all_doors`
+- `event: access_grant.access_granted_to_door`
+- `event: access_grant.access_to_door_lost`
+- `event: access_method.issued`
+- `event: access_method.revoked`
+- `event: access_method.card_encoding_required`
+- `event: access_method.deleted`
+- `event: access_method.reissued`
+- `event: acs_system.connected`
+- `event: acs_system.added`
+- `event: acs_system.disconnected`
+- `event: acs_credential.deleted`
+- `event: acs_credential.issued`
+- `event: acs_credential.reissued`
+- `event: acs_credential.invalidated`
+- `event: acs_user.created`
+- `event: acs_user.deleted`
+- `event: acs_encoder.added`
+- `event: acs_encoder.removed`
+- `event: acs_access_group.deleted`
+- `event: acs_entrance.added`
+- `event: acs_entrance.removed`
+- `event: client_session.deleted`
+- `event: connected_account.connected`
+- `event: connected_account.created`
+- `event: connected_account.successful_login`
+- `event: connected_account.disconnected`
+- `event: connected_account.completed_first_sync`
+- `event: connected_account.deleted`
+- `event: connected_account.completed_first_sync_after_reconnection`
+- `event: action_attempt.lock_door.succeeded`
+- `event: action_attempt.lock_door.failed`
+- `event: action_attempt.unlock_door.succeeded`
+- `event: action_attempt.unlock_door.failed`
+- `event: connect_webview.login_succeeded`
+- `event: connect_webview.login_failed`
+- `event: device.added`
+- `event: device.converted_to_unmanaged`
+- `event: device.unmanaged.converted_to_managed`
+- `event: device.unmanaged.connected`
+- `event: device.disconnected`
+- `event: device.unmanaged.disconnected`
+- `event: device.tampered`
+- `event: device.low_battery`
+- `event: device.battery_status_changed`
+- `event: device.removed`
+- `event: device.deleted`
+- `event: device.third_party_integration_detected`
+- `event: device.third_party_integration_no_longer_detected`
+- `event: device.salto.privacy_mode_activated`
+- `event: device.salto.privacy_mode_deactivated`
+- `event: device.connection_became_flaky`
+- `event: device.connection_stabilized`
+- `event: device.error.subscription_required`
+- `event: device.error.subscription_required.resolved`
+- `event: device.accessory_keypad_connected`
+- `event: device.accessory_keypad_disconnected`
+- `event: noise_sensor.noise_threshold_triggered`
+- `event: lock.locked`
+- `event: lock.unlocked`
+- `event: lock.access_denied`
+- `event: thermostat.climate_preset_activated`
+- `event: thermostat.manually_adjusted`
+- `event: thermostat.temperature_threshold_exceeded`
+- `event: thermostat.temperature_threshold_no_longer_exceeded`
+- `event: thermostat.temperature_reached_set_point`
+- `event: thermostat.temperature_changed`
+- `event: device.name_changed`
+- `event: enrollment_automation.deleted`
+- `event: phone.deactivated`
+- `action_attempt: SYNC_ACCESS_CODES`
+- `action_attempt: CREATE_ACCESS_CODE`
+- `action_attempt: DELETE_ACCESS_CODE`
+- `action_attempt: UPDATE_ACCESS_CODE`
+- `action_attempt: CREATE_NOISE_THRESHOLD`
+- `action_attempt: DELETE_NOISE_THRESHOLD`
+- `action_attempt: UPDATE_NOISE_THRESHOLD`

@@ -70,7 +70,11 @@ To incorporate a Connect Webview in your app using an HTML [iframe](https://www.
     src="<your connect_webview.url>"
     />
     ```
-3. [Your user completes the Connect Webview authorization flow.](./#id-3.-your-user-completes-the-connect-webview)
+3.  [Your user completes the Connect Webview authorization flow.](./#id-3.-your-user-completes-the-connect-webview)
+
+    {% hint style="info" %}
+    If you choose to embed a Connect Webview in an iframe, it's important to understand that some providers move to a new tab during their authentication flow for security purposes. Seam is not able to abstract away this behavior.
+    {% endhint %}
 4. [Learn when the device or ACS account connection has completed successfully.](./#id-4.-verify-successful-device-account-connection)\
    When the connection completes successfully, you can close the iframe.
 5. [Retrieve the devices or ACS that your user has just connected to Seam.](./#id-5.-retrieve-connected-devices)

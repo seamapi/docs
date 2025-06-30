@@ -103,6 +103,33 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 ---
 
+**`can_unlock_with_card`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with card credentials.
+
+
+
+
+---
+
+**`can_unlock_with_code`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with pin codes.
+
+
+
+
+---
+
+**`can_unlock_with_mobile_key`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with mobile key credentials.
+
+
+
+
+---
+
 **`connected_account_id`** *UUID*
 
 ID of the [connected account](../../../capability-guides/access-systems/retrieving-entrance-details.md) associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).

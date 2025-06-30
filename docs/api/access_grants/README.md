@@ -112,6 +112,15 @@ Date and time at which the access grant ends.
 
 ---
 
+**`instant_key_url`** *String*
+
+Instant Key URL. Only returned if the access grant has a single mobile_key access_method.
+
+
+
+
+---
+
 **`location_ids`** *List* *of UUIDs*
 
 

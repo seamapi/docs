@@ -4,7 +4,7 @@ description: >-
   your users' heating and cooling systems for comfort and cost savings.
 ---
 
-# 🌡️ Thermostats
+# Thermostats
 
 <figure><img src="../../.gitbook/assets/thermostats-cover.png" alt="The Seam API provides flexible and robust functionality that enables you to control your users&#x27; thermostats."><figcaption></figcaption></figure>
 
