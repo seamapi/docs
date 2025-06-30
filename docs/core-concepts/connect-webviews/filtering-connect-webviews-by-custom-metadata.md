@@ -4,7 +4,7 @@ description: When listing Connect Webviews, you can filter by custom metadata.
 
 # Filtering Connect Webviews by Custom Metadata
 
-When you use [List Connect Webviews](../../api-clients/connect_webviews/list.md), you can filter the list by one or more [custom metadata](attaching-custom-data-to-the-connect-webview.md) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
+When you use [List Connect Webviews](../../api/connect_webviews/list.md), you can filter the list by one or more [custom metadata](attaching-custom-data-to-the-connect-webview.md) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
 
 {% tabs %}
 {% tab title="Python" %}
