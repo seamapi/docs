@@ -6,7 +6,7 @@ description: >-
 
 # Action Attempts
 
-As seen in the [Capability Guides](broken-reference) section, you can perform actions against a device. However, devices exist in the physical world. The physical world is intrinsically asynchronous.
+You can perform actions against a device. However, devices exist in the physical world. The physical world is intrinsically asynchronous.
 
 This means that certain actions can take seconds, minutes, or even days to complete. Furthermore, an action can fail, and you may also not find out until later.
 
@@ -20,4 +20,4 @@ This action attempt enables you to keep track of the progress of your action.
 
 Our client libraries do this automatically for you. However, you can also choose not to wait and to check on the action at a later time.
 
-For more information, see the [Action Attempts](../api-clients/action_attempts/) in the Seam API reference.
+For more information, see [Action Attempts](../api/action_attempts/) in the Seam API reference.

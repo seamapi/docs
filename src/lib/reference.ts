@@ -67,8 +67,9 @@ export const reference = (
       !path.startsWith('/access_grants') &&
       !path.startsWith('/access_methods') &&
       !path.startsWith('/spaces') &&
+      !path.startsWith('/access_codes') &&
       !path.startsWith('/customers') &&
-      !path.startsWith('/access_codes')
+      !path.startsWith('/action_attempts')
     ) {
       return false
     }
