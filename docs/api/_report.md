@@ -13,6 +13,7 @@
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
 - `/thermostats/daily_programs`
+- `/user_identities/enrollment_automations`
 - `/webhooks`
 - `/workspaces`
 
