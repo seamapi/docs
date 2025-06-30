@@ -5,7 +5,6 @@
 ### Routes
 
 - `/action_attempts`
-- `/connect_webviews`
 - `/devices`
 - `/devices/simulate`
 - `/devices/unmanaged`
