@@ -104,9 +104,6 @@
 /user_identities:
   title: User Identities
 
-/user_identities/enrollment_automations:
-  title: Enrollment Automations
-
 /access_codes:
   title: Access Codes
   include_groups:
