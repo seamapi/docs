@@ -152,8 +152,3 @@
   * [Remove an ACS User from a User Identity](api/user_identities/remove_acs_user.md)
   * [Revoke Access to a Device from a User Identity](api/user_identities/revoke_access_to_device.md)
   * [Update a User Identity](api/user_identities/update.md)
-  * [Enrollment Automations](api/user_identities/enrollment_automations/README.md)
-    * [Delete an Enrollment Automation](api/user_identities/enrollment_automations/delete.md)
-    * [Get an Enrollment Automation](api/user_identities/enrollment_automations/get.md)
-    * [Launch an Enrollment Automation](api/user_identities/enrollment_automations/launch.md)
-    * [List Enrollment Automations](api/user_identities/enrollment_automations/list.md)
