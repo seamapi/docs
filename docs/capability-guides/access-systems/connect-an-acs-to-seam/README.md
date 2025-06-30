@@ -4,7 +4,7 @@ description: Learn how to connect your access control system to Seam.
 
 # Connect an ACS to Seam
 
-You can use [Seam Console](../../../core-concepts/seam-console/) or the [Seam API](../../../api-clients/connect_webviews/) to connect your access control system to Seam. You use a [Connect Webview](../../../core-concepts/connect-webviews/) to authorize the connection.
+You can use [Seam Console](../../../core-concepts/seam-console/) or the [Seam API](../../../api/connect_webviews/) to connect your access control system to Seam. You use a [Connect Webview](../../../core-concepts/connect-webviews/) to authorize the connection.
 
 ## Connect an ACS Using Seam Console
 

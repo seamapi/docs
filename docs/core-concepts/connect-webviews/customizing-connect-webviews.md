@@ -46,7 +46,7 @@ To customize the look and feel of your Connect Webviews:
 
 ## Customize the Brands to Display in Your Connect Webviews
 
-When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api-clients/connect_webviews/create.md) request, include the desired set of device provider keys in the `accepted_providers` parameter. Seam supports the following device provider keys:
+When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api/connect_webviews/create.md) request, include the desired set of device provider keys in the `accepted_providers` parameter. Seam supports the following device provider keys:
 
 | Provider Name                                                                                                                          | Device Provider Key             |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |

@@ -143,3 +143,6 @@
 
 /client_sessions:
   title: Client Sessions
+
+/connect_webviews:
+  title: Connect Webviews

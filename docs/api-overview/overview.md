@@ -17,7 +17,7 @@ See the following reference topics:
 
 ## Controlling Devices and Systems
 
-* [Connect Webviews](../api-clients/connect_webviews/)
+* [Connect Webviews](../api/connect_webviews/)
 * [Devices](../api-clients/devices/)
   * [Locks](../api-clients/locks/)
     * [Access Codes](../api/access_codes/)
