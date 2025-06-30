@@ -69,6 +69,7 @@ export const reference = (
       !path.startsWith('/spaces') &&
       !path.startsWith('/customers') &&
       !path.startsWith('/client_sessions') &&
+      !path.startsWith('/connect_webviews') &&
       !path.startsWith('/access_codes')
     ) {
       return false
