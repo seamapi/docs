@@ -78,13 +78,13 @@ redirects:
   api-clients/access-control-systems: api/acs/README.md
   api-clients/action-attempt/get-action-attempt: api-clients/action_attempts/get.md
   api-clients/action-attempt: api-clients/action_attempts/README.md
-  api-clients/client-sessions/create-a-client-session: api-clients/client_sessions/create.md
-  api-clients/client-sessions/delete-a-client-session: api-clients/client_sessions/delete.md
-  api-clients/client-sessions/get-a-client-session: api-clients/client_sessions/get.md
-  api-clients/client-sessions/get-or-create-a-client-session: api-clients/client_sessions/get_or_create.md
-  api-clients/client-sessions/grant-access-to-a-client-session: api-clients/client_sessions/grant_access.md
-  api-clients/client-sessions/list-client-sessions: api-clients/client_sessions/list.md
-  api-clients/client-sessions: api-clients/client_sessions/README.md
+  api-clients/client-sessions/create-a-client-session: api/client_sessions/create.md
+  api-clients/client-sessions/delete-a-client-session: api/client_sessions/delete.md
+  api-clients/client-sessions/get-a-client-session: api/client_sessions/get.md
+  api-clients/client-sessions/get-or-create-a-client-session: api/client_sessions/get_or_create.md
+  api-clients/client-sessions/grant-access-to-a-client-session: api/client_sessions/grant_access.md
+  api-clients/client-sessions/list-client-sessions: api/client_sessions/list.md
+  api-clients/client-sessions: api/client_sessions/README.md
   api-clients/connect-webviews/create-a-connect-webview: api/connect_webviews/create.md
   api-clients/connect-webviews/delete-a-connect-webview: api/connect_webviews/delete.md
   api-clients/connect-webviews/get-a-connect-webview: api/connect_webviews/get.md
