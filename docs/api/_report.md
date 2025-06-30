@@ -5,7 +5,6 @@
 ### Routes
 
 - `/action_attempts`
-- `/client_sessions`
 - `/connect_webviews`
 - `/devices`
 - `/devices/simulate`
