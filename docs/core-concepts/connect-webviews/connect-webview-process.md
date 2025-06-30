@@ -14,7 +14,7 @@ This topic describes the basic Connect Webview process. First, you create the Co
 
 The Connect Webview flow begins when your user wants to connect their device or ACS account to Seam through your app.
 
-In your app, [create a Connect Webview](../../api-clients/connect_webviews/create.md). The Seam API represents Connect Webviews as `connect_webview` objects.
+In your app, [create a Connect Webview](../../api/connect_webviews/create.md). The Seam API represents Connect Webviews as `connect_webview` objects.
 
 When creating a Connect Webview, choose which providers to display. Choose one of the following options:
 
