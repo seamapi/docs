@@ -406,7 +406,7 @@ True
 
 ## Step 3: Retrieve ecobee thermostat devices
 
-When you link an ecobee account with Seam, we create a `device` object to represent each ecobee thermostat in your account. You can then retrieve these ecobee devices using the [List Devices](../api-clients/devices/list.md) and [Get Device](../api-clients/devices/get.md) endpoints.
+When you link an ecobee account with Seam, we create a `device` object to represent each ecobee thermostat in your account. You can then retrieve these ecobee devices using the [List Devices](../api/devices/list.md) and [Get Device](../api/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
