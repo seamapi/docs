@@ -146,3 +146,6 @@
 
 /webhooks:
   title: Webhooks
+
+/workspaces:
+  title: Workspaces
