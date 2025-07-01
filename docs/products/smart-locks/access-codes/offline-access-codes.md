@@ -33,7 +33,7 @@ Note the following restrictions on offline access codes:
 
 It is imperative to understand all manufacturer- and device-specific behaviors and constraints. For example, igloohome categorizes time-bound offline access codes as hourly-bound or daily-bound and enforces maximum numbers of each type. Also, you must configure dormakaba Oracode offline access codes to fit into specific predefined time slots called "user levels." Further, some manufacturers support one-time-use offline access codes, while others do not.
 
-For details, see the corresponding device guide. Also, [get the lock](../../../api-clients/devices/get.md) and view any manufacturer-specific properties.
+For details, see the corresponding device guide. Also, [get the lock](../../../api/devices/get.md) and view any manufacturer-specific properties.
 
 * [igloohome Locks device guide](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md)
 * [dormakaba Oracode Locks device guide](../../../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
@@ -47,7 +47,7 @@ Before you attempt to create an offline access code, be sure to confirm that you
 
 * `device.can_program_offline_access_codes`
 
-Use [Get Device](../../../api-clients/devices/get.md) for a specific device to return this capability flag. Then, use an `if` statement or similar check to confirm that this flag is both present and `true` before attempting to create an offline access code.
+Use [Get Device](../../../api/devices/get.md) for a specific device to return this capability flag. Then, use an `if` statement or similar check to confirm that this flag is both present and `true` before attempting to create an offline access code.
 
 {% tabs %}
 {% tab title="Python" %}
