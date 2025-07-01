@@ -359,7 +359,7 @@ Coming soon!
 
 ## Removing a User Identity
 
-To delete a user identity, you must first delete any [ACS credentials](../../api/acs/credentials/delete.md), [ACS users](../../api/acs/users/delete.md), and [enrollment automations](broken-reference) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+To delete a user identity, you must first delete any [ACS credentials](../../api/acs/credentials/delete.md) and [ACS users](../../api/acs/users/delete.md) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -419,26 +419,7 @@ async def delete_user_identity(user_identity_id):
       wait_for_acs_user_deleted(acs_user) for acs_user in acs_users
     ])
 
-  # Step 3: List and delete all enrollment automations 
-  # associated with the user identity.
-  
-  # List the enrollment automations.
-  enrollment_automations = await seam.user_identities.enrollment_automations.list(
-      user_identity_id=user_identity_id
-  )
-
-  # Delete the enrollment automations.
-  for automation in enrollment_automations:
-    await seam.user_identities.enrollment_automations.delete(
-      enrollment_automation_id=automation['enrollment_automation_id']
-    )
-
-  await asyncio.gather(*[
-    wait_for_enrollment_automation_deleted(automation)
-    for automation in enrollment_automations
-  ])
-
-  # Step 4: List and deactivate all phones 
+  # Step 3: List and deactivate all phones 
   # associated with the user identity.
   
   # List the phones.
@@ -456,7 +437,7 @@ async def delete_user_identity(user_identity_id):
     wait_for_phone_deactivated(phone) for phone in phones
   ])
 
-  # Step 5: Delete the user identity.
+  # Step 4: Delete the user identity.
   await seam.user_identities.delete(
     user_identity_id=user_identity_id
   )
@@ -555,26 +536,7 @@ for (const acsUser of acsUsers) {
   
 }
 
-// Step 3: List and delete all enrollment automations 
-// associated with the user identity.
-
-// List the enrollment automations.
-const enrollmentAutomations = await seam.userIdentities.enrollmentAutomations.list({
-  user_identity_id: userIdentityId,
-});
-
-// Delete each returned enrollment automation.
-for (const enrollmentAutomation of enrollmentAutomations) {
-  await seam.userIdentities.enrollmentAutomations.delete({
-    enrollment_automation_id: enrollmentAutomation.enrollment_automation_id,
-  });
-
-  // Wait until each enrollment automation has been deleted.
-  // You can watch for enrollment_automation.deleted events.
-
-}
-
-// Step 4: List and deactivate all phones 
+// Step 3: List and deactivate all phones 
 // associated with the user identity.
 
 // List the phones.
@@ -593,7 +555,7 @@ for (const phone of phones) {
 
 }
 
-// Step 5: Delete the user identity.
+// Step 4: Delete the user identity.
 await seam.userIdentities.delete({
   user_identity_id: userIdentityId,
 });
@@ -662,26 +624,7 @@ acs_users.each do |acs_user|
   
 end
 
-# Step 3: List and delete all enrollment automations 
-# associated with the user identity.
-
-# List the enrollment automations.
-enrollment_automations = seam.user_identities.enrollment_autoations.list(
-  user_identity_id: user_identity_id
-)
-
-# Delete each returned enrollment automation.
-enrollment_automations.each do |enrollment_automation|
-  seam.user_identities.enrollment_automations.delete(
-    enrollment_automation_id: enrollment_automation.enrollment_automation_id
-  )
-
-  # Wait until each enrollment automation has been deleted.
-  # You can watch for enrollment_automation.deleted events.
-
-end
-
-# Step 4: List and deactivate all phones 
+# Step 3: List and deactivate all phones 
 # associated with the user identity.
 
 # List the phones.
@@ -700,7 +643,7 @@ phones.each do |phone|
 
 end
 
-# Step 5: Delete the user identity.
+# Step 4: Delete the user identity.
 seam.user_identities.delete(
   user_identity_id: user_identity_id
 )
@@ -769,26 +712,7 @@ foreach ($acs_users as $acs_user) {
   
 }
 
-// Step 3: List and delete all enrollment automations 
-// associated with the user identity.
-
-// List the enrollment automations.
-$enrollment_automations = $seam->user_identities->enrollment_automations->list(
-  user_identity_id: $user_identity_id
-);
-
-// Delete each returned enrollment automation.
-foreach ($enrollment_automations as $enrollment_automation) {
-  $seam->user_identities->enrollment_automations->delete(
-    enrollment_automation_id: $enrollment_automation->enrollment_automation_id
-  );
-
-  // Wait until each enrollment automation has been deleted.
-  // You can watch for enrollment_automation.deleted events.
-
-}
-
-// Step 4: List and deactivate all phones 
+// Step 3: List and deactivate all phones 
 // associated with the user identity.
 
 // List the phones.
@@ -807,7 +731,7 @@ foreach ($phones as $phone) {
 
 }
 
-// Step 5: Delete the user identity.
+// Step 4: Delete the user identity.
 $seam->user_identities->delete(
   user_identity_id: $user_identity_id
 );
