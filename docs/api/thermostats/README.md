@@ -1907,6 +1907,15 @@ Metadata for an August device.
 
 ---
 
+**`available_climate_preset_modes`** *List* *of Enums*
+
+Climate preset modes that the thermostat supports, such as "home", "away", "wake", "sleep", "occupied", and "unoccupied".
+
+
+
+
+---
+
 **`available_climate_presets`** *List* *of Objects*
 
 Available [climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for the thermostat.
@@ -1931,6 +1940,20 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
   <strong><code>climate_preset_key</code></strong> <i>String</i>
   
     Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
+  
+    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>home</code>
+      - <code>away</code>
+      - <code>wake</code>
+      - <code>sleep</code>
+      - <code>occupied</code>
+      - <code>unoccupied</code>
+  </details>
 
   <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
   
@@ -2116,6 +2139,20 @@ Current climate setting.
   
     Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
+  - <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
+  
+    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>home</code>
+      - <code>away</code>
+      - <code>wake</code>
+      - <code>sleep</code>
+      - <code>occupied</code>
+      - <code>unoccupied</code>
+  </details>
+
   - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
   
     Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
@@ -2201,6 +2238,20 @@ Current climate setting.
   - <strong><code>climate_preset_key</code></strong> <i>String</i>
   
     Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  - <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
+  
+    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>home</code>
+      - <code>away</code>
+      - <code>wake</code>
+      - <code>sleep</code>
+      - <code>occupied</code>
+      - <code>unoccupied</code>
+  </details>
 
   - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
   
