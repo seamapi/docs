@@ -13,7 +13,7 @@ See the following reference topics:
 * [Installation](installation.md)
 * [Authentication](authentication.md)
 * [Client Sessions](../api/client_sessions/)
-* [Workspaces](../api-clients/workspaces/)
+* [Workspaces](../api/workspaces/)
 
 ## Controlling Devices and Systems
 
