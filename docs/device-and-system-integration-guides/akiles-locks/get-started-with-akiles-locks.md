@@ -67,7 +67,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../../core-concepts/authentication/api-keys.md).
@@ -262,9 +261,6 @@ False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -397,9 +393,6 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 True
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -678,9 +671,6 @@ True
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -865,9 +855,6 @@ if (frontDoor.CanRemotelyUnlock == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
@@ -998,9 +985,6 @@ Console.WriteLine(updatedFrontDoor.Properties.Locked); // false
 False
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1360,9 +1344,6 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1396,7 +1377,7 @@ Now that you've completed this getting started guide for Akiles devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../../device-guides/broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](../../core-concepts/overview.md) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\

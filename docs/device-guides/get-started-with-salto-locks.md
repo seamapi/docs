@@ -51,7 +51,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
@@ -228,9 +227,6 @@ False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 #### Authorize Your Workspace
@@ -622,10 +618,10 @@ Now that you've completed this guide, you can try to connect a real Salto device
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Schlage Getting Started Guide](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
+* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
-* [Core Concepts](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
+* [Core Concepts](../core-concepts/overview.md)
 
-If you have any questions or want to report an issue, email us at support@seam.co.
+If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

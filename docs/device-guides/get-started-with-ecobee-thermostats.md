@@ -67,7 +67,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../core-concepts/authentication/api-keys.md).
@@ -262,9 +261,6 @@ False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -397,9 +393,6 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 True
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -719,9 +712,6 @@ Fan running: false
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -925,9 +915,6 @@ if ($living_room_thermostat->can_hvac_heat) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 You can track the status of the operation to confirm that the device was set to heat mode successfully. Query `properties.current_climate_setting.hvac_mode_setting` for the device, [retrieve the action attempt](../api-clients/action_attempts/get.md) by ID, or look for a [`thermostat.manually_adjusted` event](../api-clients/events/#event-types). Further, if you wanted to find out whether the HVAC system was currently heating, you could inspect `properties.is_heating` for the device.
@@ -1068,9 +1055,6 @@ heat
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1552,9 +1536,6 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1853,9 +1834,6 @@ $seam->thermostats->update_weekly_program(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1881,7 +1859,7 @@ Now that you've completed this getting started guide for ecobee devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](broken-reference/) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](../core-concepts/overview.md) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Expand your abilities**\
   Find out what other [thermostat actions](../products/thermostats/) you can perform using the Seam API.
 * [ ] **Use webhooks**\

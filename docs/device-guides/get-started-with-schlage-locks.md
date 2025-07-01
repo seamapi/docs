@@ -51,7 +51,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
@@ -452,6 +451,6 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
-* [Core Concepts](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
+* [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co. If you would like help

@@ -30,7 +30,7 @@ With respect to the ability to program online access codes, as long as a lock ha
 
 <figure><img src="../.gitbook/assets/capability-flags-explained-remote-unlock.png" alt="Capability flags help you to understand why a device cannot currently perform an action." width="563"><figcaption><p>Capability flags help you to understand why a device cannot currently perform an action.</p></figcaption></figure>
 
-Seam recommends adding capability checks before performing specific actions in your app. For example, before performing a [remote unlock](../products/smart-locks/lock-and-unlock.md#unlocking-a-door) operation, you can check to make sure that the target device supports remote unlocking. For details and code samples, see the corresponding [capability guides](broken-reference/).
+Seam recommends adding capability checks before performing specific actions in your app. For example, before performing a [remote unlock](../products/smart-locks/lock-and-unlock.md#unlocking-a-door) operation, you can check to make sure that the target device supports remote unlocking. For details and code samples, see the corresponding capability guides.
 
 {% hint style="info" %}
 In addition to viewing the capabilities for a specific device, you can also view the capabilities for a provider using [List Device Providers](../api/devices/list_device_providers.md). If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.
