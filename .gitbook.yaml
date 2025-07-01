@@ -95,14 +95,14 @@ redirects:
   api-clients/connected-accounts/list-connected-accounts: api/connected_accounts/list.md
   api-clients/connected-accounts/update-a-connected-account: api/connected_accounts/update.md
   api-clients/connected-accounts: api/connected_accounts/README.md
-  api-clients/devices/delete-device: api-clients/devices/delete.md
-  api-clients/devices/get-device-1: api-clients/devices/unmanaged/get.md
-  api-clients/devices/get-device: api-clients/devices/get.md
-  api-clients/devices/list-device-providers: api-clients/devices/list_device_providers.md
-  api-clients/devices/list-devices: api-clients/devices/list.md
-  api-clients/devices/list-unmanaged-devices: api-clients/devices/unmanaged/list.md
-  api-clients/devices/update-device: api-clients/devices/update.md
-  api-clients/devices/update-unmanaged-device: api-clients/devices/unmanaged/update.md
+  api-clients/devices/delete-device: api/devices/delete.md
+  api-clients/devices/get-device-1: api/devices/unmanaged/get.md
+  api-clients/devices/get-device: api/devices/get.md
+  api-clients/devices/list-device-providers: api/devices/list_device_providers.md
+  api-clients/devices/list-devices: api/devices/list.md
+  api-clients/devices/list-unmanaged-devices: api/devices/unmanaged/list.md
+  api-clients/devices/update-device: api/devices/update.md
+  api-clients/devices/update-unmanaged-device: api/devices/unmanaged/update.md
   api-clients/events/get-an-event: api-clients/events/get.md
   api-clients/events/list-events: api-clients/events/list.md
   api-clients/locks/get-lock: api-clients/locks/get.md
