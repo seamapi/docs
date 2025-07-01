@@ -377,6 +377,15 @@ Date and time at which the [credential](../../../capability-guides/access-system
 
 ---
 
+**`user_identity_id`** *UUID*
+
+ID of the [user identity](https://docs.seam.co/latest/api/user_identities) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
+
+
+
+
+---
+
 **`visionline_metadata`** *Object*
 
 Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).

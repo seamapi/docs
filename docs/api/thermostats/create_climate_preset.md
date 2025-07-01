@@ -188,6 +188,12 @@ ID of the thermostat device for which you want create a climate preset.
 
 ---
 
+**`climate_preset_mode`** *String*
+
+The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+
+---
+
 **`cooling_set_point_celsius`** *Number*
 
 Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
