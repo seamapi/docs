@@ -25,7 +25,7 @@ When creating a Connect Webview, choose which providers to display. Choose one o
     * `thermostats`
     * `noise_sensors`
 
-    To list all providers within a category, use the [List Device Providers](../../api-clients/devices/list_device_providers.md) method with the desired `provider_category` filter.
+    To list all providers within a category, use the [List Device Providers](../../api/devices/list_device_providers.md) method with the desired `provider_category` filter.
 * To display a specific, custom set of providers, specify the desired list of `accepted_providers`. For details, see [Customize the Brands to Display in Your Connect Webviews](customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 {% tabs %}

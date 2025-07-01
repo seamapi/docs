@@ -406,7 +406,7 @@ True
 
 ## Step 3: Retrieve Akiles lock devices
 
-When you link an Akiles account with Seam, we create a `device` object to represent each Akiles lock in your account. You can then retrieve these Akiles devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
+When you link an Akiles account with Seam, we create a `device` object to represent each Akiles lock in your account. You can then retrieve these Akiles devices using the [List Devices](../../api/devices/list.md) and [Get Device](../../api/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, capabilities, and so on.
 

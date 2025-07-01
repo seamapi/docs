@@ -28,7 +28,7 @@ Never use a PAT in a web browser or expose it to your users.
 
 To use a PAT for authorization in the Seam API, you must specify the PAT in the `Authorization` header for the Seam HTTP API or in the `seam` constructor for the Seam SDK that you are using. You must also specify the ID of the workspace that you want to access. If you are using the Seam HTTP API, include the `seam-workspace` header with the desired workspace ID. If you are using a Seam SDK, specify the desired workspace ID in the `Seam` constructor.
 
-The following example shows how to use a PAT and workspace ID to [list all devices](../../api-clients/devices/list.md) in a workspace:
+The following example shows how to use a PAT and workspace ID to [list all devices](../../api/devices/list.md) in a workspace:
 
 {% tabs %}
 {% tab title="Python" %}

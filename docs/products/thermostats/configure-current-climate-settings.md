@@ -66,9 +66,9 @@ Before you attempt to set the HVAC or fan mode settings for a thermostat, be sur
 * `device.can_hvac_heat_cool`
 * `device.can_turn_off_hvac`
 
-Use the [`/devices/get`](../../api-clients/devices/get.md) endpoint for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to perform the imperative thermostat action.
+Use the [`/devices/get`](../../api/devices/get.md) endpoint for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to perform the imperative thermostat action.
 
-If the relevant capability flag is `false` or not present, you can view the [properties](../../api/thermostats/#thermostat-properties) of the device, [errors](../../api-clients/devices/#device-error-types) or [warnings](../../api-clients/devices/#device-warning-types) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If the relevant capability flag is `false` or not present, you can view the [properties](../../api/thermostats/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}

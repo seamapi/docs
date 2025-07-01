@@ -149,3 +149,12 @@
 
 /workspaces:
   title: Workspaces
+
+/devices:
+  title: Devices
+
+/devices/unmanaged:
+  title: Unmanaged Devices
+
+/devices/simulate:
+  title: Device Simulations

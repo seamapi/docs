@@ -4,7 +4,7 @@ description: Learn about manufacturer- and device-specific constraints on codes.
 
 # Understanding Code Constraints
 
-When creating access codes, it is important to be aware of any constraints on the `code`. [Get a device](../../../../api-clients/devices/get.md) and review its `device.properties.code_constraints`. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific.
+When creating access codes, it is important to be aware of any constraints on the `code`. [Get a device](../../../../api/devices/get.md) and review its `device.properties.code_constraints`. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific.
 
 The `constraint_type` property can be any of the following enum values:
 

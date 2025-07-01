@@ -13,7 +13,7 @@ To display the health—that is, the online/offline status—of your end users' 
 
 ## Get Device Status Using Device Properties
 
-Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](../../api-clients/devices/#device.properties-properties) property accordingly. Use a [Get Device](../../api-clients/devices/get.md) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
+Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](../../api/devices/#device.properties) property accordingly. Use a [Get Device](../../api/devices/get.md) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
 
 {% hint style="info" %}
 You can also use the prebuilt [device details Seam Component](../../seam-components/react-components/device-details.md), which includes a device status display.

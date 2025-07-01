@@ -23,9 +23,9 @@ Before you attempt to lock or unlock a device, be sure to confirm that your devi
 * `device.can_remotely_lock`
 * `device.can_remotely_unlock`
 
-Use [Get Device](../../api-clients/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
+Use [Get Device](../../api/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
-If either of these capability flags is `false` or not present, you can view the [properties](../../api-clients/devices/#device-properties) of the device, [errors](../../api-clients/devices/#device-error-types) or [warnings](../../api-clients/devices/#device-warning-types) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -825,7 +825,7 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 
 ## Checking the Locked Status of a Lock
 
-To retrieve the locked status of a specific door lock, use the [Get Lock](../../api-clients/locks/get.md) or [Get Device](../../api-clients/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
+To retrieve the locked status of a specific door lock, use the [Get Lock](../../api-clients/locks/get.md) or [Get Device](../../api/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
 
 {% tabs %}
 {% tab title="Python" %}

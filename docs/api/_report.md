@@ -5,9 +5,6 @@
 ### Routes
 
 - `/action_attempts`
-- `/devices`
-- `/devices/simulate`
-- `/devices/unmanaged`
 - `/events`
 - `/locks`
 - `/noise_sensors/noise_thresholds`
