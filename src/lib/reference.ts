@@ -70,6 +70,7 @@ export const reference = (
       !path.startsWith('/customers') &&
       !path.startsWith('/client_sessions') &&
       !path.startsWith('/connect_webviews') &&
+      !path.startsWith('/webhooks') &&
       !path.startsWith('/access_codes')
     ) {
       return false
