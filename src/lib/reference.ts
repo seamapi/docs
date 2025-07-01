@@ -71,6 +71,7 @@ export const reference = (
       !path.startsWith('/client_sessions') &&
       !path.startsWith('/connect_webviews') &&
       !path.startsWith('/webhooks') &&
+      !path.startsWith('/workspaces') &&
       !path.startsWith('/access_codes')
     ) {
       return false
