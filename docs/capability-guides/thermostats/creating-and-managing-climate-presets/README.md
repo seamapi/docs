@@ -272,7 +272,7 @@ void
 
 ## List All Climate Presets for a Thermostat
 
-To list climate presets for a thermostat, issue a [`/devices/get`](../../../api-clients/devices/get.md) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
+To list climate presets for a thermostat, issue a [`/devices/get`](../../../api/devices/get.md) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
 
 {% tabs %}
 {% tab title="Python" %}
