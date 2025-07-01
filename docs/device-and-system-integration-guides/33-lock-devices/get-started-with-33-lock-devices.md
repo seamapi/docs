@@ -406,7 +406,7 @@ True
 
 ## Step 3: Retrieve 33 Lock devices
 
-When you link a TTLock account (for your 33 Lock devices) with Seam, we create a `device` object to represent each 33 Lock lock in your account. You can then retrieve these 33 Lock devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
+When you link a TTLock account (for your 33 Lock devices) with Seam, we create a `device` object to represent each 33 Lock lock in your account. You can then retrieve these 33 Lock devices using the [List Devices](../../api/devices/list.md) and [Get Device](../../api/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
