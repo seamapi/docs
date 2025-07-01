@@ -322,9 +322,12 @@
   * [Get a Webhook](api/webhooks/get.md)
   * [List Webhooks](api/webhooks/list.md)
   * [Update a Webhook](api/webhooks/update.md)
-* [Workspaces](api-clients/workspaces/README.md)
-  * [Get Workspace](api-clients/workspaces/get.md)
-  * [Reset Workspace](api-clients/workspaces/reset_sandbox.md)
+* [Workspaces](api/workspaces/README.md)
+  * [Create a Workspace](api/workspaces/create.md)
+  * [Get a Workspace](api/workspaces/get.md)
+  * [List Workspaces](api/workspaces/list.md)
+  * [Reset a Sandbox Workspace](api/workspaces/reset_sandbox.md)
+  * [Update a Workspace](api/workspaces/update.md)
 
 ## Developer Tools
 
