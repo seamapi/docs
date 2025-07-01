@@ -143,3 +143,6 @@
 
 /connect_webviews:
   title: Connect Webviews
+
+/webhooks:
+  title: Webhooks
