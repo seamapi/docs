@@ -188,9 +188,6 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### 2. Assign an ACS User to the User Identity
@@ -356,16 +353,13 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
 
 ## Removing a User Identity
 
-To delete a user identity, you must first delete any [ACS credentials](../../api/acs/credentials/delete.md), [ACS users](../../api/acs/users/delete.md), and [enrollment automations](../../api/user_identities/enrollment_automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+To delete a user identity, you must first delete any [ACS credentials](../../api/acs/credentials/delete.md), [ACS users](../../api/acs/users/delete.md), and [enrollment automations](broken-reference) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -479,13 +473,6 @@ async def wait_for_acs_user_deleted(acs_user):
     'acs_user.deleted',
     lambda event: 'acs_user_id' in event and
                   event.acs_user_id == acs_user.acs_user_id
-  )
-
-async def wait_for_enrollment_automation_deleted(enrollment_automation):
-  await wait_for_event(
-    'enrollment_automation.deleted',
-    lambda event: 'enrollment_automation_id' in event and
-                  event.enrollment_automation_id == enrollment_automation.enrollment_automation_id
   )
 
 async def wait_for_acs_credential_deleted(acs_credential):
@@ -846,7 +833,4 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

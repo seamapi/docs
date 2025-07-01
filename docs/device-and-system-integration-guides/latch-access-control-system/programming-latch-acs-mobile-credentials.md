@@ -12,13 +12,12 @@ To use the Seam API to create mobile credentials for mobile app users in a Latch
 
     Seam [user identities](../../api/user_identities/) enable you to match your own mobile app users to ACS users that you create using the Seam API.
 2. Retrieve a [credential manager](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) for your Latch ACS.
-3. Set up an [enrollment automation](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
-4. Create an [ACS user](../../products/access-systems/user-management.md) on the Latch ACS or assign an existing ACS user to the user identity.\
+3. Create an [ACS user](../../products/access-systems/user-management.md) on the Latch ACS or assign an existing ACS user to the user identity.\
    The resources that you create for the ACS user are available under the associated user identity.
    * In the ACS user creation command, set the `user_identity_id` property for a new ACS user. Alternately, use the `add_acs_user` command for user identities to assign an existing ACS user to a user identity.
    * If you choose to create a new ACS user, specify the `acs_system_id` of the Latch ACS in the building to which you want to grant the new user access.
    * Specify the details of the ACS user, such as their `full_name`, `email_address`, and so on.
-5.  Create an [ACS credential](../../capability-guides/access-systems/managing-credentials.md) to represent the mobile key.
+4.  Create an [ACS credential](../../capability-guides/access-systems/managing-credentials.md) to represent the mobile key.
 
     * Specify the `acs_user_id`.
     * Set [`is_multi_phone_sync_credential`](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials) to `true`.
@@ -53,14 +52,6 @@ latch_credential_manager = seam.acs.systems.list_compatible_credential_manager_a
   )[0]
 
 # Step 3:
-# Set up an enrollment automation for the user identity, to enable mobile keys.
-seam.user_identities.enrollment_automations.launch(
-  user_identity_id = jane_user.user_identity_id,
-  create_credential_manager_user = True,
-  credential_manager_acs_system_id = latch_credential_manager.acs_system_id
-)
-
-# Step 4:
 # Create an ACS user on the Latch ACS
 # or assign the ACS user to the user identity.
 building_a_resident = seam.acs.users.create(
@@ -74,7 +65,7 @@ building_a_resident = seam.acs.users.create(
   email_address = "jane@example.com"
 )
 
-# Step 5:
+# Step 4:
 # Create a mobile key for the entrances to which
 # you want to grant the ACS user access.
 mobile_key = seam.acs.credentials.create(
@@ -152,19 +143,6 @@ latch_credential_manager=$(curl -X 'POST' \
 }" | jq -r '.acs_systems[0]')
 
 # Step 3:
-# Set up an enrollment automation for the user identity, to enable mobile keys.
-curl -X 'POST' \
-  'https://connect.getseam.com/user_identities/enrollment_automations/launch' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jane_user})\",
-  \"create_credential_manager_user\": true,
-  \"credential_manager_acs_system_id\": \"$(jq -r '.acs_system_id' <<< ${latch_credential_manager})\"
-}"
-
-# Step 4:
 # Create an ACS user on the Latch ACS
 # or assign the ACS user to the user identity.
 
@@ -184,7 +162,7 @@ building_a_resident=$(curl -X 'POST' \
   \"email_address\": \"jane@example.com\"
 }")
 
-# Step 5:
+# Step 4:
 # Create a mobile key for the entrances to which
 # you want to grant the ACS user access.
 # You can include multiple entrances per mobile key.
@@ -271,14 +249,6 @@ const latchCredentialManager = (await seam.acs.systems
   }))[0];
 
 // Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-await seam.userIdentities.enrollmentAutomations.launch({
-  user_identity_id: janeUser.user_identity_id,
-  create_credential_manager_user: true,
-  credential_manager_acs_system_id: latchCredentialManager.acs_system_id
-});
-
-// Step 4:
 // Create an ACS user on the Latch ACS
 // or assign the ACS user to the user identity.
 const buildingAResident = await seam.acs.users.create({
@@ -292,7 +262,7 @@ const buildingAResident = await seam.acs.users.create({
   email_address: "jane@example.com"
 });
 
-// Step 5:
+// Step 4:
 // Create a mobile key for the entrances to which
 // you want to grant the ACS user access.
 const mobileKey = await seam.acs.credentials.create({
@@ -375,14 +345,6 @@ $latch_credential_manager = $seam->acs->systems->list_compatible_credential_mana
 )[0];
 
 // Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-$seam->user_identities->enrollment_automations->launch(
-  user_identity_id: $jane_user->user_identity_id,
-  create_credential_manager_user: true,
-  credential_manager_acs_system_id: $latch_credential_manager->acs_system_id
-);
-
-// Step 4:
 // Create an ACS user on the Latch ACS
 // or assign the ACS user to the user identity.
 $building_a_resident = $seam->acs->users->create(
@@ -396,7 +358,7 @@ $building_a_resident = $seam->acs->users->create(
   email_address: "jane@example.com"
 );
 
-// Step 5:
+// Step 4:
 // Create a mobile key for the entrances to which
 // you want to grant the ACS user access.
 $mobile_key = $seam->acs->credentials->create(
@@ -465,14 +427,6 @@ var latchCredentialManager = seam.SystemsAcs
   )[0];
 
 // Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-seam.UserIdentities.EnrollmentAutomations.Launch(
-  userIdentityId: janeUser.userIdentityId,
-  createCredentialManagerUser: true,
-  credentialManagerAcsSystemId: latchCredentialManager.acsSystemId
-);
-
-// Step 4:
 // Create an ACS user on the Latch ACS
 // or assign the ACS user to the user identity.
 AcsUser buildingAResident = seam.UsersAcs.Create(
@@ -486,7 +440,7 @@ AcsUser buildingAResident = seam.UsersAcs.Create(
   emailAddress: "jane@example.com"
 );
 
-// Step 5:
+// Step 4:
 // Create a mobile key for the entrances to which
 // you want to grant the ACS user access.
 AcsCredential mobileKey = seam.CredentialsAcs.Create(
@@ -535,9 +489,6 @@ seam.CredentialsAcs.ListAccessibleEntrances(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

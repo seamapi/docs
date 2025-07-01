@@ -125,9 +125,6 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -309,18 +306,11 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
 
 ## Retrieving a Phone by ID
-
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
 
 To retrieve a phone by its ID, use the [Get Phone](../../api/phones/get.md) endpoint and include the `device_id` of the phone.
 
@@ -479,7 +469,4 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

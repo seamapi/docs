@@ -31,10 +31,9 @@ Seam currently only supports issuing guest mobile credentials and plastic cards.
 Use the following basic process to grant access in a Visionline ACS:
 
 1. Set up the mobile user account by creating a [user identity](../../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
-2. Turn on the [enrollment automation](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for this user identity and credential manager.
-3. Associate the user identity with an [ACS user](../../../products/access-systems/#what-is-a-user).
-4. Gather the entrances to which the credential should have access.
-5. Create the [guest](./#issuing-guest-mobile-credentials) mobile credential.
+2. Associate the user identity with an [ACS user](../../../products/access-systems/#what-is-a-user).
+3. Gather the entrances to which the credential should have access.
+4. Create the [guest](./#issuing-guest-mobile-credentials) mobile credential.
 
 ***
 
@@ -66,14 +65,6 @@ You can also [verify whether a user identity has a phone that is set up for a cr
 # Set up the mobile user account.
 user_identity = seam.user_identities.create(
     user_identity_key="xxx"
-)
-
-# Turn on the enrollment automation for this user identity
-# and credential manager.
-seam.enrollment_automation.launch(
-    credential_manager_acs_system_id=assa_credential_services.acs_system_id,
-    user_identity_id=guest_user_identity.user_identity_id,
-    create_credential_manager_user=True
 )
 
 # Associate the user identity with the ACS user.
@@ -139,14 +130,6 @@ For instructions on how to retrieve credentials that have overlapping access, se
 # Set up the mobile user account.
 user_identity = seam.user_identities.create(
     user_identity_key="xxx"
-)
-
-# Turn on the enrollment automation for this user identity
-# and credential manager.
-seam.enrollment_automation.launch(
-  credential_manager_acs_system_id=assa_credential_services.acs_system_id,
-  user_identity_id=guest_user_identity.user_identity_id,
-  create_credential_manager_user: true
 )
 
 # Associate the user identity with the ACS user.

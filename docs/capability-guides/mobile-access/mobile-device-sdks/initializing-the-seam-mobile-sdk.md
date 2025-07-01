@@ -183,99 +183,11 @@ $client_session = $seam->client_sessions->create(
 $token = $client_session->token;
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
 ***
 
-## 4. Configure the User Identity for an Access Platform or Lock Brand
-
-To enable a user identity to utilize mobile credentials from different platforms or unlock various lock brands through our SDK, you may need to launch an enrollment automation for each system or brand you wish to include. Please refer to [system integration guides](../../../device-and-system-integration-guides/overview.md#access-control-systems) for more details on how to launch an enrollment automation for a particular system.
-
-To launch an enrollment automation, include the `user_identity_id`, and include the system-specific settings, such as the `credential_manager_acs_system_id`.
-
-{% tabs %}
-{% tab title="Python" %}
-```python
-# Launch the enrollment automation.
-seam.user_identities_enrollment_automations.launch(
-  # Use the acs_system_id for the credential manager.
-  credential_manager_acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172",
-  user_identity_id=user_identity.user_identity_id,
-  # Automatically create a new credential manager user
-  # or specify the desired existing credential_manager_acs_user_id.
-  create_credential_manager_user=True
-)
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-# Get the credential manager ACS system ID.
-# credential_manager_acs_system_id=...
-
-# Launch the enrollment automation.
-curl -X 'POST' \
-  'https://connect.getseam.com/user_identities/enrollment_automations/launch' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-        \"credential_manager_acs_system_id\": \"$credential_manager_acs_system_id\",
-        \"user_identity_id\": \"$user_identity_id\"
-  }"
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-```javascript
-// Launch the enrollment automation.
-await seam.userIdentities.enrollmentAutomations.launch({
-    // Use the acs_system_id for the credential manager.
-    credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
-    user_identity_id: userIdentity.user_identity_id,
-    // Automatically create a new credential manager user
-    // or specify the desired existing credential_manager_acs_user_id.
-    create_credential_manager_user: true
-});
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-```ruby
-# Launch the enrollment automation.
-client.user_identities.enrollment_automations.launch(
-    # Use the acs_system_id for the credential manager.
-    credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
-    user_identity_id: user_identity.user_identity_id,
-    # Automatically create a new credential manager user
-    # or specify the desired existing credential_manager_acs_user_id.
-    create_credential_manager_user: true
-)
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-```php
-// Launch the enrollment automation.
-$seam->user_identities->enrollment_automations->launch(
-  // Use the acs_system_id for the credential manager.
-  credential_manager_acs_system_id: "6737e186-8d54-48ce-a7da-a0be4d252172",
-  user_identity_id: $user_identity->user_identity_id,
-  // Automatically create a new credential manager user
-  // or specify the desired existing credential_manager_acs_user_id.
-  create_credential_manager_user: true
-);
-```
-{% endtab %}
-
-
-{% endtabs %}
-
-***
-
-## 5. Initialize the Mobile SDK with the Client Session Token
+## 4. Initialize the Mobile SDK with the Client Session Token
 
 Use the client session token generated earlier to initialize the Seam Mobile SDK. This initializes the Mobile SDK for the app user, and retrieves the relevant provider-specific settings. This also launches a background process that will continually poll for any updates to the access permissions.
 

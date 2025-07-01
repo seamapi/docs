@@ -12,15 +12,12 @@ To use the Seam API to create mobile credentials for mobile app users in a Salto
 
     Seam user identities enable you to match your own mobile app users to ACS users that you create using the Seam API.
 2. Retrieve a [credential manager](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) for your Salto KS ACS.
-3.  Set up an [enrollment automation](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
-
-    Use the Salto KS Credential Manager for this enrollment automation.
-4. Create an [ACS user](../../products/access-systems/user-management.md) on the Salto KS ACS or assign an existing ACS user to the user identity.\
+3. Create an [ACS user](../../products/access-systems/user-management.md) on the Salto KS ACS or assign an existing ACS user to the user identity.\
    The resources that you create for the ACS user are available under the associated user identity.
    * For Salto KS, you can specify the `access_schedule` for the ACS user. The `access_schedule` consists of `starts_at` and `ends_at` times. In this case, a Salto KS ACS user appears as "unsubscribed" in the ACS until the `starts_at` time. Once the start time arrives, Seam switches the ACS user to "subscribed," which activates their access.
-5. Assign the ACS user to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
+4. Assign the ACS user to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
    * Each access group is preconfigured with the allowed entrances.
-6. Create an [ACS credential](../../capability-guides/access-systems/managing-credentials.md) to represent the mobile key.
+5. Create an [ACS credential](../../capability-guides/access-systems/managing-credentials.md) to represent the mobile key.
    * Specify the ID of the ACS user.
    * Set [`is_multi_phone_sync_credential`](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials) to `true`.
    * Set the `access_method` to `mobile_key`.
@@ -70,14 +67,6 @@ salto_ks_credential_manager = seam.acs.systems.list_compatible_credential_manage
   )[0]
 
 # Step 3:
-# Set up an enrollment automation for the user identity, to enable mobile keys.
-seam.user_identities.enrollment_automations.launch(
-  user_identity_id = jane_user.user_identity_id,
-  create_credential_manager_user = True,
-  credential_manager_acs_system_id = salto_ks_credential_manager.acs_system_id
-)
-
-# Step 4:
 # Create an ACS user on the Salto KS ACS.
 # Specify the access schedule for the user.
 reservation_user = seam.acs.users.create(
@@ -90,7 +79,7 @@ reservation_user = seam.acs.users.create(
   }
 )
 
-# Step 5:
+# Step 4:
 # Add the ACS user to all access groups for the listing.
 for group_id_to_add in listing["seam_access_group_ids"]:
   seam.acs.users.add_to_access_group(
@@ -98,7 +87,7 @@ for group_id_to_add in listing["seam_access_group_ids"]:
     acs_access_group_id = group_id_to_add
   )
   
-# Step 6:
+# Step 5:
 # Create a mobile key for the ACS user.
 reservation_mobile_key = seam.acs.credentials.create(
   acs_user_id = reservation_user.acs_user_id,
@@ -175,19 +164,6 @@ salto_ks_credential_manager=$(curl -X 'POST' \
 }" | jq -r '.acs_systems[0]')
 
 # Step 3:
-# Set up an enrollment automation for the user identity, to enable mobile keys.
-curl -X 'POST' \
-  'https://connect.getseam.com/user_identities/enrollment_automations/launch' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jane_user})\",
-  \"create_credential_manager_user\": true,
-  \"credential_manager_acs_system_id\": \"$(jq -r '.acs_system_id' <<< ${salto_ks_credential_manager})\"
-}"
-
-# Step 4:
 # Create an ACS user on the Salto KS ACS.
 # Specify the access schedule for the user.
 reservation_user=$(curl -X 'POST' \
@@ -205,7 +181,7 @@ reservation_user=$(curl -X 'POST' \
   }
 }")
 
-# Step 5:
+# Step 4:
 # Add the ACS user to all access groups for the listing.
 for group_id_to_add in ${seam_access_group_ids[@]};
 do
@@ -220,7 +196,7 @@ do
   }";
 done
 
-# Step 6:
+# Step 5:
 # Create a mobile key for the ACS user.
 reservation_mobile_key=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/credentials/create' \
@@ -295,14 +271,6 @@ const saltoKsCredentialManager = (await seam.acs.systems
   }))[0];
 
 // Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-await seam.userIdentities.enrollmentAutomations.launch({
-  user_identity_id: janeUser.user_identity_id,
-  create_credential_manager_user: true,
-  credential_manager_acs_system_id: saltoKsCredentialManager.acs_system_id
-});
-
-// Step 4:
 // Create an ACS user on the Salto KS ACS.
 // Specify the access schedule for the user.
 const reservationUser = await seam.acs.users.create({
@@ -315,7 +283,7 @@ const reservationUser = await seam.acs.users.create({
   }
 });
 
-// Step 5:
+// Step 4:
 // Add the ACS user to all access groups for the listing.
 for (const groupIdToAdd of listing.seamAccessGroupIds) {
   await seam.acs.users.addToAccessGroup({
@@ -324,7 +292,7 @@ for (const groupIdToAdd of listing.seamAccessGroupIds) {
   });
 }
 
-// Step 6:
+// Step 5:
 // Create a mobile key for the ACS user.
 const reservationMobileKey = await seam.acs.credentials.create({
   acs_user_id: reservationUser.acs_user_id,
@@ -405,14 +373,6 @@ $salto_ks_credential_manager = $seam->acs->systems->list_compatible_credential_m
 )[0];
 
 // Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-$seam->user_identities->enrollment_automations->launch(
-  user_identity_id: $jane_user->user_identity_id,
-  create_credential_manager_user: true,
-  credential_manager_acs_system_id: $salto_ks_credential_manager->acs_system_id
-);
-
-// Step 4:
 // Create an ACS user on the Salto KS ACS.
 // Specify the access schedule for the user.
 $reservation_user = $seam->acs->users->create(
@@ -425,7 +385,7 @@ $reservation_user = $seam->acs->users->create(
   )
 );
 
-// Step 5:
+// Step 4:
 // Add the ACS user to all access groups for the listing.
 foreach ($listing['seam_access_group_ids'] as $group_id_to_add) {
   $seam->acs->users->add_to_access_group(
@@ -434,7 +394,7 @@ foreach ($listing['seam_access_group_ids'] as $group_id_to_add) {
   );
 };
 
-// Step 6:
+// Step 5:
 // Create a mobile key for the ACS user.
 $reservation_mobile_key = $seam->acs->credentials->create(
   acs_user_id: $reservation_user->acs_user_id,
@@ -472,9 +432,6 @@ echo json_encode($reservation_mobile_key, JSON_PRETTY_PRINT);
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

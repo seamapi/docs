@@ -22,12 +22,11 @@ This quick start walks you through the following basic steps:
 3. Create a [user identity](../../../api/user_identities/).
    * Seam user identities enable you to match your own mobile app users to ACS users.
 4. Identify a [credential manager](../../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) to use for the mobile credential.
-5. Set up an [enrollment automation](../../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
-6. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups.md).
+5. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups.md).
    * Access groups are preconfigured to grant access to specific entrances.\
      While some access control systems use access groups, others specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
-7. Create a mobile key [ACS credential](../managing-credentials.md) for the user identity.
-8. View the list of entrances to which the user now has access.
+6. Create a mobile key [ACS credential](../managing-credentials.md) for the user identity.
+7. View the list of entrances to which the user now has access.
 
 :rocket: Let's get started!
 
@@ -93,12 +92,9 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
-
 {% endtabs %}
 
 2. Create an API key.
@@ -125,7 +121,7 @@ Create a user identity to represent a mobile app user.
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
    2. On the **Access Systems** page, locate the Salto KS Main Site ACS.
    3. In the **acs\_system\_id** column for the Main Site ACS, click the ID to copy it.
-   4. Store this ACS system ID for future use.&#x20;
+   4. Store this ACS system ID for future use.
 2. Create the user identity, as follows:
 
 {% tabs %}
@@ -287,9 +283,6 @@ $jen_doe_user = $seam->user_identities->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -301,159 +294,11 @@ To create mobile keys for mobile app users, you must use a credential manager. W
 1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
 2. On the **Access Systems** page, locate the Salto KS Credential Manager.
 3. In the **acs\_system\_id** column for the Salto KS Credential Manager, click the ID to copy it.
-4. Store this credential manager ID for future use.&#x20;
+4. Store this credential manager ID for future use.
 
 ***
 
-## Step 5: Set up an Enrollment Automation for the User Identity
-
-Once you've identified the the credential manager to use for mobile app users, launch an enrollment automation to initialize the phones for an app user, that is, a user identity. This enrollment automation oversees the registration of each new phone for the user identity with the credential manager.
-
-{% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-seam.user_identities.enrollment_automations.launch(
-  user_identity_id = jen_doe_user.user_identity_id,
-  create_credential_manager_user = True,
-  # Use the credential manager ID that you copied earlier from Seam Console.
-  credential_manager_acs_system_id = credential_manager_acs_system_id
-)
-```
-
-**Output:**
-
-```
-EnrollmentAutomation(
-  user_identity_id='22222222-2222-2222-2222-222222222222',
-  enrollment_automation_id='77777777-8888-7777-7777-888888888888',
-  ...
-)
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-# Use the credential manager ID that you copied earlier from Seam Console.
-curl -X 'POST' \
-  'https://connect.getseam.com/user_identities/enrollment_automations/launch' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jen_doe_user})\",
-  \"create_credential_manager_user\": true,
-  \"credential_manager_acs_system_id\": \"${credential_manager_acs_system_id}\"
-}"
-```
-
-**Output:**
-
-```json
-{
-  "enrollment_automation": {
-    "user_identity_id": "22222222-2222-2222-2222-222222222222",
-    "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
-    ...
-  },
-  "ok": true
-}
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-**Code:**
-
-```javascript
-await seam.userIdentities.enrollmentAutomations.launch({
-  user_identity_id: jenDoeUser.user_identity_id,
-  create_credential_manager_user: true,
-  // Use the credential manager ID that you copied earlier from Seam Console.
-  credential_manager_acs_system_id: credentialManagerAcsSystemId
-});
-```
-
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-**Code:**
-
-```ruby
-seam.user_identities.enrollment_automations.launch(
-  user_identity_id: jen_doe_user.user_identity_id,
-  create_credential_manager_user: true,
-  # Use the credential manager ID that you copied earlier from Seam Console.
-  credential_manager_acs_system_id: credential_manager_acs_system_id
-)
-```
-
-**Output:**
-
-```
-<Seam::Resources::EnrollmentAutomation:0x005f0
-  user_identity_id="22222222-2222-2222-2222-222222222222"
-  enrollment_automation_id="77777777-8888-7777-7777-888888888888"
-  ...
->
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-**Code:**
-
-```php
-$seam->user_identities->enrollment_automations->launch(
-  user_identity_id: $jen_doe_user->user_identity_id,
-  create_credential_manager_user: true,
-  // Use the credential manager ID that you copied earlier from Seam Console.
-  credential_manager_acs_system_id: $credential_manager_acs_system_id
-);
-```
-
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "enrollment_automation_id": "77777777-8888-7777-7777-888888888888",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="C#" %}
-**Code:**
-
-```csharp
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-
-
-{% endtabs %}
-
-***
-
-## Step 6: Assign the User Identity to an Access Group
+## Step 5: Assign the User Identity to an Access Group
 
 Add the user identity to an access group. For Salto KS, access groups specify the entrances to which users have access.
 
@@ -464,7 +309,7 @@ Some other access control systems do not use access groups and, instead, specify
    2. On the **Access Systems** page, click the Salto KS Main Site ACS.
    3. On the **Main Site** page, click the **Access Groups** tab.
    4. Locate the Main Group, click **...**, and click **Copy Id**.
-   5. Store this access group ID for future use.&#x20;
+   5. Store this access group ID for future use.
 2. Assign the user identity to the Main Group, as follows:
 
 {% tabs %}
@@ -577,14 +422,11 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
 
-## Step 7: Create a Mobile Key Credential
+## Step 6: Create a Mobile Key Credential
 
 Create a mobile key credential for the user identity.
 
@@ -729,14 +571,11 @@ $pin_code_credential = $seam->acs->credentials->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
 
-## Step 8: View Your New Credential
+## Step 7: View Your New Credential
 
 You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the list of entrances to which the ACS user now has access.
 
