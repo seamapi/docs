@@ -14,10 +14,10 @@ The first step in controlling connected devices or a connected ACS is to retriev
 
 ## Retrieve Connected Devices
 
-Use this `connected_account_id` in a [List Devices](../../api-clients/devices/list.md) command to retrieve the devices that your user has just connected to Seam.
+Use this `connected_account_id` in a [List Devices](../../api/devices/list.md) command to retrieve the devices that your user has just connected to Seam.
 
 {% hint style="info" %}
-If you set `wait_for_device_creation` to `false` when [creating the Connect Webview](./#id-1.-create-a-connect-webview), you should wait for the [`connected_account.completed_first_sync` event](../../lients/events/#event-types) before retrieving the user's devices. This event indicates that Seam has finished the first sync of the connected account and the devices are now available.
+If you set `wait_for_device_creation` to `false` when [creating the Connect Webview](./#id-1.-create-a-connect-webview), you should wait for the [`connected_account.completed_first_sync` event](../../api-clients/events/#event-types) before retrieving the user's devices. This event indicates that Seam has finished the first sync of the connected account and the devices are now available.
 {% endhint %}
 
 {% tabs %}
