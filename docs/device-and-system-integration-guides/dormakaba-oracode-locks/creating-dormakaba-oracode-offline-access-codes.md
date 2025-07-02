@@ -34,7 +34,7 @@ dormakaba Oracode locks use pre-programmed sets of access code time slots called
 * Whether the access code is a biweekly code (that is, a code that is valid for two weeks)
 * Whether the access code is a master code that exists indefinitely, for example, for site owners
 
-When you create a dormakaba Oracode offline access code, you must set the duration of the code to match—exactly—one of the time slots on the device. To view a list of all available time slots for a specific device, [get the lock](../../api-clients/locks/get.md) and view the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device.
+When you create a dormakaba Oracode offline access code, you must set the duration of the code to match—exactly—one of the time slots on the device. To view a list of all available time slots for a specific device, [get the device](../../api/devices/get.md) and view the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device.
 
 ```json
 "predefined_time_slots": [
@@ -74,7 +74,7 @@ To set an access code that uses this user level, set the times for the `starts_a
 
 #### View the Time Zone of a dormakaba Oracode Lock
 
-To view the local time zone of a dormakaba Oracode lock, [get the lock](../../api-clients/locks/get-lock.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
+To view the local time zone of a dormakaba Oracode lock, [get the device](../../api/devices/get.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
 
 ### Master Codes
 
