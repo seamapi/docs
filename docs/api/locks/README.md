@@ -3,6 +3,7 @@
 ## The device Object for Locks
 
 - [Properties](./#properties)
+- [device.properties](./#device.properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)

@@ -3,11 +3,7 @@
 ## The device Object for Noise Sensors
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
 - [Endpoints](./#endpoints)
-
 
 Represents a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).
 
