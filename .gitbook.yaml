@@ -105,10 +105,10 @@ redirects:
   api-clients/devices/update-unmanaged-device: api/devices/unmanaged/update.md
   api-clients/events/get-an-event: api-clients/events/get.md
   api-clients/events/list-events: api-clients/events/list.md
-  api-clients/locks/get-lock: api-clients/locks/get.md
-  api-clients/locks/list-locks: api-clients/locks/list.md
-  api-clients/locks/lock-a-lock: api-clients/locks/lock_door.md
-  api-clients/locks/unlock-a-lock: api-clients/locks/unlock_door.md
+  api-clients/locks/get-lock: api/locks/get.md
+  api-clients/locks/list-locks: api/locks/list.md
+  api-clients/locks/lock-a-lock: api/locks/lock_door.md
+  api-clients/locks/unlock-a-lock: api/locks/unlock_door.md
   api-clients/noise-sensors/create-noise-threshold: api-clients/noise_sensors/noise_thresholds/create.md
   api-clients/noise-sensors/delete-noise-threshold: api-clients/noise_sensors/noise_thresholds/delete.md
   api-clients/noise-sensors/list-noise-thresholds: api-clients/noise_sensors/noise_thresholds/list.md
