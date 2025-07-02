@@ -109,11 +109,11 @@ redirects:
   api-clients/locks/list-locks: api/locks/list.md
   api-clients/locks/lock-a-lock: api/locks/lock_door.md
   api-clients/locks/unlock-a-lock: api/locks/unlock_door.md
-  api-clients/noise-sensors/create-noise-threshold: api-clients/noise_sensors/noise_thresholds/create.md
-  api-clients/noise-sensors/delete-noise-threshold: api-clients/noise_sensors/noise_thresholds/delete.md
-  api-clients/noise-sensors/list-noise-thresholds: api-clients/noise_sensors/noise_thresholds/list.md
-  api-clients/noise-sensors/update-noise-threshold: api-clients/noise_sensors/noise_thresholds/update.md
-  api-clients/noise-sensors: api-clients/noise_sensors/README.md
+  api-clients/noise-sensors/create-noise-threshold: api/noise_sensors/noise_thresholds/create.md
+  api-clients/noise-sensors/delete-noise-threshold: api/noise_sensors/noise_thresholds/delete.md
+  api-clients/noise-sensors/list-noise-thresholds: api/noise_sensors/noise_thresholds/list.md
+  api-clients/noise-sensors/update-noise-threshold: api/noise_sensors/noise_thresholds/update.md
+  api-clients/noise-sensors: api/noise_sensors/README.md
   api-clients/thermostats/get-thermostat: api/thermostats/get.md
   api-clients/thermostats/list-thermostats: api/thermostats/list.md
   api-clients/thermostats/set-fan-mode: api/thermostats/set_fan_mode.md
