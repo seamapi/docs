@@ -435,7 +435,7 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 ## Response
 
-Array of [access\_codes](./)
+Array of [access\_codes](/access_codes)
 
 
 {% tabs %}

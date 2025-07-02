@@ -186,7 +186,7 @@ None
 
 ## Response
 
-Array of [spaces](./)
+Array of [spaces](/spaces)
 
 
 {% tabs %}

@@ -217,7 +217,7 @@ Number of encoders to return.
 
 ## Response
 
-Array of [acs\_encoders](./)
+Array of [acs\_encoders](/acs/encoders)
 
 
 {% tabs %}

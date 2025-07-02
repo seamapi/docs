@@ -211,7 +211,7 @@ ID of the device for which you want to list noise thresholds.
 
 ## Response
 
-Array of [noise\_thresholds](./)
+Array of [noise\_thresholds](/noise_sensors/noise_thresholds)
 
 
 {% tabs %}

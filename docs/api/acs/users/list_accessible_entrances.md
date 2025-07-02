@@ -286,7 +286,7 @@ ID of the user identity for whom you want to list accessible entrances. You can 
 
 ## Response
 
-Array of [acs\_entrances](./)
+Array of [acs\_entrances](/acs/entrances)
 
 
 {% tabs %}
