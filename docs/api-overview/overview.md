@@ -19,7 +19,7 @@ See the following reference topics:
 
 * [Connect Webviews](../api/connect_webviews/)
 * [Devices](../api/devices/)
-  * [Locks](../api-clients/locks/)
+  * [Locks](../api/locks/)
     * [Access Codes](../api/access_codes/)
   * [Thermostats](../api/thermostats/)
   * [Noise Sensors](../api-clients/noise_sensors/)

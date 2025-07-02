@@ -39,7 +39,7 @@ Before you attempt to create an [online](../../../../products/smart-locks/access
 * `device.can_program_online_access_codes`
 * `device.can_program_offline_access_codes`
 
-Use [Get Device](../../../../api/devices/get.md) (or [Get Lock](../../../../api-clients/locks/get.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
+Use [Get Device](../../../../api/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
 
 If either of these capability flags is `false` or not present, you can view the [properties](../../../../api/devices/#properties) of the device, [errors](../../../../api/devices/#errors) or [warnings](../../../../api/devices/#warnings) for the device, and [events](../../../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
 

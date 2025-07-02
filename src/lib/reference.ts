@@ -73,6 +73,7 @@ export const reference = (
       !path.startsWith('/webhooks') &&
       !path.startsWith('/workspaces') &&
       !path.startsWith('/devices') &&
+      !path.startsWith('/locks') &&
       !path.startsWith('/access_codes')
     ) {
       return false

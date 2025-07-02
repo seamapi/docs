@@ -710,7 +710,7 @@ Try out the following actions on your SmartThings-connected lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../api-clients/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../api/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1010,7 +1010,7 @@ False
 {% endtabs %}
 
 {% hint style="success" %}
-Now that you have successfully unlocked your lock, you can use the [Lock Door](../api-clients/locks/lock_door.md) endpoint to lock it again.
+Now that you have successfully unlocked your lock, you can use the [Lock Door](../api/locks/lock_door.md) endpoint to lock it again.
 {% endhint %}
 
 ***

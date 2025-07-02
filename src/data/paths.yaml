@@ -158,3 +158,31 @@
 
 /devices/simulate:
   title: Device Simulations
+
+/locks:
+  title: Locks
+  resources:
+    - device
+  include_groups:
+    - locks
+    - access_codes
+  overview: |
+    ## The device Object for Locks
+
+    - [Properties](./#properties)
+    - [Errors](./#errors)
+    - [Warnings](./#warnings)
+    - [Events](./#events)
+    - [Endpoints](./#endpoints)
+
+
+    Represents a [lock](https://docs.seam.co/latest/capability-guides/thermostats).
+
+    The Seam API enables you to control connected smart locks from a wide variety of manufacturers, including locks that provide online and offline [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) programming.
+
+    Depending on the smart lock brand and model, actions that you can perform include remote unlock, remote lock, and programming access codes. You can also view a lock's properties, capabilities, and status. Further, you can monitor for unlock and lock events.
+
+    See also [Webhooks](https://docs.seam.co/latest/developer-tools/webhooks).
+
+/locks/simulate:
+  title: Lock Simulations
