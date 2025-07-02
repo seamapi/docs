@@ -553,7 +553,7 @@ ID of user identity for whom access is being granted.
 
 ## Response
 
-[access\_grant](./)
+[access\_grant](..)
 
 
 {% tabs %}

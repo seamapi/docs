@@ -293,7 +293,7 @@ ID of the device containing the access code that you want to get. You must speci
 
 ## Response
 
-[access\_code](./)
+[access\_code](..)
 
 
 {% tabs %}

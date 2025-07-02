@@ -232,7 +232,7 @@ ID of the access group that you want to get.
 
 ## Response
 
-[acs\_access\_group](./)
+[acs\_access\_group](..)
 
 
 {% tabs %}

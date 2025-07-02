@@ -259,7 +259,7 @@ ID of the access system that you want to get.
 
 ## Response
 
-[acs\_system](./)
+[acs\_system](..)
 
 
 {% tabs %}

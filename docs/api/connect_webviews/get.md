@@ -281,7 +281,7 @@ ID of the Connect Webview that you want to get.
 
 ## Response
 
-[connect\_webview](./)
+[connect\_webview](..)
 
 
 {% tabs %}

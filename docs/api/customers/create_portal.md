@@ -285,7 +285,7 @@ Whether the portal is embedded in another application.
 
 ## Response
 
-[magic\_link](./)
+[magic\_link](../../unstable_partner/building_blocks)
 
 
 {% tabs %}

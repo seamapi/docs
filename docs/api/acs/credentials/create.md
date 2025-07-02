@@ -520,7 +520,7 @@ Enum values:
 
 ## Response
 
-[acs\_credential](./)
+[acs\_credential](..)
 
 
 {% tabs %}

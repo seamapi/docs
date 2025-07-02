@@ -174,7 +174,7 @@ ID of the webhook that you want to get.
 
 ## Response
 
-[webhook](./)
+[webhook](..)
 
 
 {% tabs %}

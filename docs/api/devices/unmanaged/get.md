@@ -417,7 +417,7 @@ Name of the unmanaged device that you want to get.
 
 ## Response
 
-[unmanaged\_device](./)
+[unmanaged\_device](..)
 
 
 {% tabs %}

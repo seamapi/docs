@@ -291,7 +291,7 @@ ID of the access code for which you want to pull a backup access code.
 
 ## Response
 
-[access\_code](./)
+[access\_code](..)
 
 
 {% tabs %}
