@@ -3,11 +3,11 @@
 ## The device Object for Locks
 
 - [Properties](./#properties)
+- [device.properties](./#device.properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
-
 
 Represents a [lock](https://docs.seam.co/latest/capability-guides/thermostats).
 

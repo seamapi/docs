@@ -3,11 +3,11 @@
 ## The device Object for Thermostats
 
 - [Properties](./#properties)
+- [device.properties](./#device.properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
-
 
 Represents a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 

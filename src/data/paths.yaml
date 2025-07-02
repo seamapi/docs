@@ -55,11 +55,11 @@
     ## The device Object for Thermostats
 
     - [Properties](./#properties)
+    - [device.properties](./#device.properties)
     - [Errors](./#errors)
     - [Warnings](./#warnings)
     - [Events](./#events)
     - [Endpoints](./#endpoints)
-
 
     Represents a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -83,23 +83,27 @@
 
 /noise_sensors:
   title: Noise Sensors
+  include_groups:
+    - noise_sensors
   overview: |
     ## The device Object for Noise Sensors
 
     - [Properties](./#properties)
-    - [Errors](./#errors)
-    - [Warnings](./#warnings)
-    - [Events](./#events)
     - [Endpoints](./#endpoints)
-
 
     Represents a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).
 
-    Noise sensors are devices that measure that sound level in a given area. You can use noise sensors to monitor noise levels remotely and receive notifications when the noise volume is too loud. The Seam API enables you to configure the noise thresholds of a noise sensor and receive events when a disturbance is detected.
+    Noise sensors are devices that measure that sound level in a given area. You can use noise sensors to monitor noise levels remotely and receive notifications when the noise volume is too loud. The Seam API enables you to configure the [noise thresholds](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) of a noise sensor and receive events when a disturbance is detected. You can also [simulate triggering a noise threshold](https://docs.seam.co/latest/api/noise_sensors/simulate/trigger_noise_threshold.md).
 
     The Seam API represents a noise sensor as a `device` resource that includes both basic device properties and noise sensor-specific properties.
 
     ---
+
+/noise_sensors/noise_thresholds:
+  title: Noise Thresholds
+
+/noise_sensors/simulate:
+  title: Noise Sensor Simulations
 
 /user_identities:
   title: User Identities
@@ -170,11 +174,11 @@
     ## The device Object for Locks
 
     - [Properties](./#properties)
+    - [device.properties](./#device.properties)
     - [Errors](./#errors)
     - [Warnings](./#warnings)
     - [Events](./#events)
     - [Endpoints](./#endpoints)
-
 
     Represents a [lock](https://docs.seam.co/latest/capability-guides/thermostats).
 
