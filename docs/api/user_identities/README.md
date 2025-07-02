@@ -62,22 +62,63 @@ Unique email address for the user identity.
 
 ---
 
-**`errors`** *List* *of Objects*
+[**`errors`**](./#errors) *List* *of Objects*
 
-Array of errors associated with the user identity. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.
+Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.
 
 
 
+
+The specific structure of each object in this list depends on the value of its `error_code` field.
+
+Variants:
 <details>
-  <summary>Child Object Properties</summary>
+<summary><code>issue_with_acs_user</code></summary>
 
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which Seam created the error.
+Indicates that there is an issue with an access system user associated with this user identity.
 
-  <strong><code>message</code></strong> <i>String</i>
+  **`acs_system_id`** *UUID*
   
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  ID of the access system that the user identity is associated with.
+  
+  
+  ---
+
+  **`acs_user_id`** *UUID*
+  
+  
+  ID of the access system user that has an issue.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>issue_with_acs_user</code>
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
 
 ---
@@ -172,6 +213,15 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) that contains th
 ---
 
 
+## Errors
+
+**`issue_with_acs_user`**
+
+Indicates that there is an issue with an access system user associated with this user identity.
+
+---
+
+
 ## Warnings
 
 **`being_deleted`**
@@ -185,66 +235,66 @@ Indicates that the user identity is currently being deleted.
 
 [**`/user_identities/add_acs_user`**](./add_acs_user.md)
 
-Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/create`**](./create.md)
 
-Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Creates a new [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/delete`**](./delete.md)
 
-Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).
+Deletes a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).
 
 
 [**`/user_identities/generate_instant_key`**](./generate_instant_key.md)
 
-Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys) for a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/get`**](./get.md)
 
-Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/grant_access_to_device`**](./grant_access_to_device.md)
 
-Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
+Grants a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
 
 
 [**`/user_identities/list`**](./list.md)
 
-Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [user identities](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/list_accessible_devices`**](./list_accessible_devices.md)
 
-Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/list_acs_systems`**](./list_acs_systems.md)
 
-Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/list_acs_users`**](./list_acs_users.md)
 
-Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/remove_acs_user`**](./remove_acs_user.md)
 
-Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/revoke_access_to_device`**](./revoke_access_to_device.md)
 
-Revokes access to a specified [device](../../core-concepts/devices/README.md) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Revokes access to a specified [device](../../core-concepts/devices/README.md) from a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 [**`/user_identities/update`**](./update.md)
 
-Updates a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Updates a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
