@@ -162,7 +162,7 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 ## Locking a Door
 
-You can lock a door using the [`lock_door`](../../api-clients/locks/lock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can lock a door using the [`lock_door`](../../api/locks/lock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -355,7 +355,7 @@ if (device.CanRemotelyLock == true) {
 
 ## Unlocking a Door
 
-You can unlock a door using the [unlock\_door](../../api-clients/locks/unlock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can unlock a door using the [unlock\_door](../../api/locks/unlock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -825,7 +825,7 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 
 ## Checking the Locked Status of a Lock
 
-To retrieve the locked status of a specific door lock, use the [Get Lock](../../api-clients/locks/get.md) or [Get Device](../../api/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
+To retrieve the locked status of a specific door lock, use the [Get Device](../../api/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
 
 {% tabs %}
 {% tab title="Python" %}
