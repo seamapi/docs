@@ -280,6 +280,12 @@ ID of the access system for which you want to retrieve all entrances.
 
 ---
 
+**`connected_account_id`** *String*
+
+ID of the connected account for which you want to retrieve all entrances.
+
+---
+
 **`location_id`** *String*
 
 ---

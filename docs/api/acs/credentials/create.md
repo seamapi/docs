@@ -383,7 +383,7 @@ Date and time at which the validity of the new credential ends, in [ISO 8601](ht
 
 **`is_multi_phone_sync_credential`** *Boolean*
 
-Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
+Indicates whether the new credential is a [multi-phone sync credential](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
 
 ---
 
