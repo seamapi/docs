@@ -162,7 +162,9 @@ export function setEndpointLayoutContext(
 
     let responsePath = null
     if (responseResource != null) {
-      responsePath = path.relative(endpoint.path, responseResource.routePath)
+      responsePath = path
+        .relative(endpoint.path, responseResource.routePath)
+        .replace('..', './') // gitbook expects first level to be ./
     }
 
     file.response.resourceType = resourceType
