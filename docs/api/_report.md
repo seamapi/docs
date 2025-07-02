@@ -6,7 +6,6 @@
 
 - `/action_attempts`
 - `/events`
-- `/locks`
 - `/noise_sensors/noise_thresholds`
 - `/noise_sensors/simulate`
 - `/thermostats/daily_programs`
