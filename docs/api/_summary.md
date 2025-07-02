@@ -116,6 +116,8 @@
   * [List Locks](api/locks/list.md)
   * [Lock a Lock](api/locks/lock_door.md)
   * [Unlock a Lock](api/locks/unlock_door.md)
+* [Noise Sensors](api/noise_sensors/README.md)
+  * [List Noise Sensors](api/noise_sensors/list.md)
 * [Phones](api/phones/README.md)
   * [Deactivate a Phone](api/phones/deactivate.md)
   * [Get a Phone](api/phones/get.md)
