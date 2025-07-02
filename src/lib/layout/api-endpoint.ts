@@ -47,6 +47,7 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
+    responsePath: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
   resourceSamples: ResourceSampleContext[]
@@ -147,14 +148,21 @@ export function setEndpointLayoutContext(
     escapedResourceType: null,
     responseKey: null,
     responseType: null,
+    responsePath: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
     const { resourceType, responseKey, responseType } = endpoint.response
+
+    const responseResource = resources.find(
+      (r) => r.resourceType === resourceType,
+    )
+
     file.response.resourceType = resourceType
     file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
+    file.response.responsePath = responseResource?.routePath ?? null
   }
 
   if (
