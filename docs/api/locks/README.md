@@ -8,7 +8,6 @@
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
-
 Represents a [lock](https://docs.seam.co/latest/capability-guides/thermostats).
 
 The Seam API enables you to control connected smart locks from a wide variety of manufacturers, including locks that provide online and offline [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) programming.
