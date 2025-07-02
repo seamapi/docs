@@ -74,6 +74,7 @@ export const reference = (
       !path.startsWith('/workspaces') &&
       !path.startsWith('/devices') &&
       !path.startsWith('/locks') &&
+      !path.startsWith('/noise_sensors') &&
       !path.startsWith('/access_codes')
     ) {
       return false
