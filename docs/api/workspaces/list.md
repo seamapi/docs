@@ -237,7 +237,7 @@ None
 
 ## Response
 
-Array of [workspaces](/workspaces)
+Array of [workspaces](..)
 
 
 {% tabs %}

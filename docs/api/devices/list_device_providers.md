@@ -201,7 +201,7 @@ Category for which you want to list providers.
 
 ## Response
 
-Array of [device\_providers](/devices)
+Array of [device\_providers](..)
 
 
 {% tabs %}

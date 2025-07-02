@@ -254,7 +254,7 @@ ID of the access system for which you want to retrieve all compatible credential
 
 ## Response
 
-Array of [acs\_systems](/acs/systems)
+Array of [acs\_systems](..)
 
 
 {% tabs %}
