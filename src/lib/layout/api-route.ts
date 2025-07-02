@@ -75,7 +75,6 @@ export interface ApiRouteResource {
   propertyGroups: ApiRoutePropertyGroup[]
   legacyPropertyGroups?: ApiRoutePropertyGroup[]
   events: ApiRouteEvent[]
-  endpoints: ApiRouteEndpoint[]
   hidePreamble: boolean
 }
 
