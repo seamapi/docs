@@ -6,7 +6,6 @@
 - [Events](./#events)
 
 
-
 Represents a [Connect Webview](../../core-concepts/connect-webviews/README.md).
 
 Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.

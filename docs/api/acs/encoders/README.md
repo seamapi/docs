@@ -6,7 +6,6 @@
 - [Events](./#events)
 
 
-
 Represents a hardware device that encodes [credential](../../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Some access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:

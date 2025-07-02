@@ -9,7 +9,6 @@
 - [Events](./#events)
 
 
-
 Represents an [unmanaged device](../../../core-concepts/devices/managed-and-unmanaged-devices.md). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../../../core-concepts/devices/managed-and-unmanaged-devices.md#convert-an-unmanaged-device-to-managed).
 
 {% tabs %}
