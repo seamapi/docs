@@ -1,3 +1,5 @@
+import path from 'node:path'
+
 import type {
   ActionAttempt,
   CodeSample,
@@ -158,11 +160,16 @@ export function setEndpointLayoutContext(
       (r) => r.resourceType === resourceType,
     )
 
+    let responsePath = null
+    if (responseResource != null) {
+      responsePath = path.relative(endpoint.path, responseResource.routePath)
+    }
+
     file.response.resourceType = resourceType
     file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
-    file.response.responsePath = responseResource?.routePath ?? null
+    file.response.responsePath = responsePath
   }
 
   if (
