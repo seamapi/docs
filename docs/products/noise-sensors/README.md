@@ -35,4 +35,4 @@ While you can theoretically set noise thresholds to any decibel value, we have f
 See the following topics:
 
 * [Configuring Noise Threshold Settings](configure-noise-threshold-settings.md)
-* [Noise Sensors API Reference](../../api-clients/noise_sensors/)
+* [Noise Sensors API Reference](../../api/noise_sensors/)
