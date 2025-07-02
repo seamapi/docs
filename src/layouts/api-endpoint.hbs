@@ -69,7 +69,7 @@ None
 
 ## Response
 
-{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
+{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{else}}[{{response.escapedResourceType}}]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{/if}}{{else}}void{{/if}}
 
 {{#if resourceSamples.length}}
 
