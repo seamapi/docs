@@ -55,11 +55,11 @@
     ## The device Object for Thermostats
 
     - [Properties](./#properties)
+    - [device.properties](./#device.properties)
     - [Errors](./#errors)
     - [Warnings](./#warnings)
     - [Events](./#events)
     - [Endpoints](./#endpoints)
-
 
     Represents a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -89,11 +89,7 @@
     ## The device Object for Noise Sensors
 
     - [Properties](./#properties)
-    - [Errors](./#errors)
-    - [Warnings](./#warnings)
-    - [Events](./#events)
     - [Endpoints](./#endpoints)
-
 
     Represents a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).
 
@@ -178,6 +174,7 @@
     ## The device Object for Locks
 
     - [Properties](./#properties)
+    - [device.properties](./#device.properties)
     - [Errors](./#errors)
     - [Warnings](./#warnings)
     - [Events](./#events)
