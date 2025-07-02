@@ -1118,7 +1118,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users for a user identity phone number
   description: Returns a list of all access system users for a specified user identity phone number.
   request:
@@ -1156,7 +1156,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users for a user identity email address
   description: Returns a list of all access system users for a specified user identity email address.
   request:
@@ -1194,7 +1194,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List users for an access system
   description: Returns a list of all users for a specified access system.
   request:
@@ -1232,7 +1232,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users, filtered by a string
   description: Returns a list of all access system users, filtered by a string.
   request:
@@ -1270,7 +1270,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users, limited to ten per page
   description: Returns a list of all access system users, with a limit of ten per page.
   request:
@@ -1309,7 +1309,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users created before a date
   description: Returns a list of all access system users created before a specified date.
   request:
@@ -1348,7 +1348,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List accessible entrances for a user identity
   description: Lists the entrances to which a specified access system user has access, using the associated user identity.
   request:
