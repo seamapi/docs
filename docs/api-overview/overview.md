@@ -22,7 +22,7 @@ See the following reference topics:
   * [Locks](../api/locks/)
     * [Access Codes](../api/access_codes/)
   * [Thermostats](../api/thermostats/)
-  * [Noise Sensors](../api-clients/noise_sensors/)
+  * [Noise Sensors](../api/noise_sensors/)
 * [Access Control Systems](../api/acs/)
   * [User Identities](../api/user_identities/)
   * [Phones](../api/phones/)
