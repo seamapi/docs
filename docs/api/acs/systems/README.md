@@ -3,7 +3,8 @@
 ## The acs_system Object
 
 - [Properties](./#properties)
-- [Events](./#events)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
 
 
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).

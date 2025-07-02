@@ -3,7 +3,8 @@
 ## The access_code Object
 
 - [Properties](./#properties)
-- [Events](./#events)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
 
 
 Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).

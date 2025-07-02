@@ -6,7 +6,6 @@
 ## The access_grant Object
 
 - [Properties](./#properties)
-- [Events](./#events)
 
 
 Represents an access grant. Access grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an access grant for an existing user identity, or you can create a new user identity *while* creating the new access grant.
