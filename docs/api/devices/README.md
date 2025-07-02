@@ -9,6 +9,7 @@
 - [Events](./#events)
 
 
+
 Represents a [device](../../core-concepts/devices/README.md) that has been connected to Seam.
 
 {% tabs %}
@@ -4266,6 +4267,7 @@ Indicates that the temperature threshold has been exceeded.
 
 - [Properties](./#properties)
 - [Events](./#events)
+
 
 
 {% tabs %}

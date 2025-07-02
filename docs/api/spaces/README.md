@@ -8,6 +8,7 @@
 - [Properties](./#properties)
 
 
+
 Represents a space that is a logical grouping of devices and entrances. You can assign access to an entire space, thereby making granting access more efficient.
 
 {% tabs %}

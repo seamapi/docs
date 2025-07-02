@@ -8,6 +8,7 @@
 - [Events](./#events)
 
 
+
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/latest/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.
