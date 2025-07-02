@@ -6,7 +6,6 @@
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
-- [Endpoints](./#endpoints)
 
 
 Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access system](https://docs.seam.co/latest/capability-guides/access-systems).

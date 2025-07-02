@@ -6,7 +6,6 @@
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
-- [Endpoints](./#endpoints)
 
 
 Represents an [unmanaged smart lock access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).

@@ -4,7 +4,6 @@
 
 - [Properties](./#properties)
 - [Events](./#events)
-- [Endpoints](./#endpoints)
 
 
 Represents a [Connect Webview](../../core-concepts/connect-webviews/README.md).

@@ -5,7 +5,6 @@
 - [Properties](./#properties)
 - [phone.properties](./#phone.properties)
 - [Events](./#events)
-- [Endpoints](./#endpoints)
 
 
 Represents an app user's mobile phone.
