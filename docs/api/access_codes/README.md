@@ -5,6 +5,7 @@
 - [Properties](./#properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
+- [Events](./#events)
 
 
 Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).

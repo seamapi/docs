@@ -5,6 +5,7 @@
 - [Properties](./#properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
+- [Events](./#events)
 
 
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).

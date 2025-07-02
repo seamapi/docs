@@ -3,6 +3,7 @@
 ## The connect_webview Object
 
 - [Properties](./#properties)
+- [Events](./#events)
 
 
 Represents a [Connect Webview](../../core-concepts/connect-webviews/README.md).

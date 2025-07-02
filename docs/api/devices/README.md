@@ -6,6 +6,7 @@
 - [device.properties](./#device.properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
+- [Events](./#events)
 
 
 Represents a [device](../../core-concepts/devices/README.md) that has been connected to Seam.
@@ -4264,6 +4265,7 @@ Indicates that the temperature threshold has been exceeded.
 ## The device_provider Object
 
 - [Properties](./#properties)
+- [Events](./#events)
 
 
 {% tabs %}
