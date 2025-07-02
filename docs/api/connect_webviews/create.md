@@ -630,7 +630,7 @@ Indicates whether Seam should finish syncing all devices in a newly-connected ac
 
 ## Response
 
-[connect\_webview](..)
+[connect\_webview](.)
 
 
 {% tabs %}

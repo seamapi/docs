@@ -404,7 +404,7 @@ Indicates whether the new workspace is a [sandbox workspace](../../core-concepts
 
 ## Response
 
-[workspace](..)
+[workspace](.)
 
 
 {% tabs %}

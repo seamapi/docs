@@ -290,7 +290,7 @@ ID of the user identity that represents the owner by which you want to filter th
 
 ## Response
 
-Array of [phones](..)
+Array of [phones](.)
 
 
 {% tabs %}

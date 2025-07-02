@@ -223,7 +223,7 @@ None
 
 ## Response
 
-[workspace](..)
+[workspace](.)
 
 
 {% tabs %}

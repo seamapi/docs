@@ -152,7 +152,7 @@ ID of the device for which you want to generate a code.
 
 ## Response
 
-[access\_code](..)
+[access\_code](.)
 
 
 {% tabs %}

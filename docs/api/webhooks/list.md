@@ -177,7 +177,7 @@ None
 
 ## Response
 
-Array of [webhooks](..)
+Array of [webhooks](.)
 
 
 {% tabs %}

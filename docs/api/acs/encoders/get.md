@@ -196,7 +196,7 @@ ID of the encoder that you want to get.
 
 ## Response
 
-[acs\_encoder](..)
+[acs\_encoder](.)
 
 
 {% tabs %}

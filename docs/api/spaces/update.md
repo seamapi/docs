@@ -198,7 +198,7 @@ Name of the space.
 
 ## Response
 
-[space](..)
+[space](.)
 
 
 {% tabs %}

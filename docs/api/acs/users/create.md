@@ -422,7 +422,7 @@ ID of the user identity with which you want to associate the new access system u
 
 ## Response
 
-[acs\_user](..)
+[acs\_user](.)
 
 
 {% tabs %}

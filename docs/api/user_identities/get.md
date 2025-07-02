@@ -219,7 +219,7 @@ ID of the user identity that you want to get.
 
 ## Response
 
-[user\_identity](..)
+[user\_identity](.)
 
 
 {% tabs %}

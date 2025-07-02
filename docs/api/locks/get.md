@@ -35,7 +35,7 @@ Name of the lock that you want to get.
 
 ## Response
 
-[device](../../devices)
+[device](./../devices)
 
 
 {% tabs %}

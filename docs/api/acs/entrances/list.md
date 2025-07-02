@@ -299,7 +299,7 @@ ID of the space for which you want to list entrances.
 
 ## Response
 
-Array of [acs\_entrances](..)
+Array of [acs\_entrances](.)
 
 
 {% tabs %}

@@ -292,7 +292,7 @@ Your user ID for the user by which you want to filter connected accounts.
 
 ## Response
 
-Array of [connected\_accounts](..)
+Array of [connected\_accounts](.)
 
 
 {% tabs %}

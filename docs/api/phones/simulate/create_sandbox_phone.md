@@ -487,7 +487,7 @@ Mobile operating system version that you want to use for the simulated phone.
 
 ## Response
 
-[phone](../..)
+[phone](./..)
 
 
 {% tabs %}

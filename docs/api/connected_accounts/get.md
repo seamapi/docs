@@ -254,7 +254,7 @@ Email address associated with the connected account that you want to get.
 
 ## Response
 
-[connected\_account](..)
+[connected\_account](.)
 
 
 {% tabs %}

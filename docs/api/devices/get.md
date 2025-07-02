@@ -1143,7 +1143,7 @@ Name of the device that you want to get.
 
 ## Response
 
-[device](..)
+[device](.)
 
 
 {% tabs %}

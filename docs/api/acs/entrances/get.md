@@ -250,7 +250,7 @@ ID of the entrance that you want to get.
 
 ## Response
 
-[acs\_entrance](..)
+[acs\_entrance](.)
 
 
 {% tabs %}

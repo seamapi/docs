@@ -291,7 +291,7 @@ Name of the thermostat schedule.
 
 ## Response
 
-[thermostat\_schedule](..)
+[thermostat\_schedule](.)
 
 
 {% tabs %}

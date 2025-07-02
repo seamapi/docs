@@ -264,7 +264,7 @@ Unique key for the new user identity.
 
 ## Response
 
-[user\_identity](..)
+[user\_identity](.)
 
 
 {% tabs %}

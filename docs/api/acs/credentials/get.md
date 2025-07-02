@@ -263,7 +263,7 @@ ID of the credential that you want to get.
 
 ## Response
 
-[acs\_credential](..)
+[acs\_credential](.)
 
 
 {% tabs %}

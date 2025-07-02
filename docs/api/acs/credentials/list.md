@@ -297,7 +297,7 @@ ID of the user identity for which you want to retrieve all credentials.
 
 ## Response
 
-Array of [acs\_credentials](..)
+Array of [acs\_credentials](.)
 
 
 {% tabs %}

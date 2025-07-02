@@ -332,7 +332,7 @@ ID of the user identity that you want to get. You can only provide acs_user_id o
 
 ## Response
 
-[acs\_user](..)
+[acs\_user](.)
 
 
 {% tabs %}

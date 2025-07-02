@@ -267,7 +267,7 @@ Device ID of the phone that you want to get.
 
 ## Response
 
-[phone](..)
+[phone](.)
 
 
 {% tabs %}
