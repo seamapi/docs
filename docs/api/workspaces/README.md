@@ -3,10 +3,6 @@
 ## The workspace Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
-- [Endpoints](./#endpoints)
 
 
 Represents a Seam [workspace](../../core-concepts/workspaces/README.md). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](../../core-concepts/workspaces/README.md#production-workspaces).
