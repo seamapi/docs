@@ -6,6 +6,7 @@
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Represents a smart lock [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).

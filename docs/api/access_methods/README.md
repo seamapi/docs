@@ -7,6 +7,7 @@
 
 - [Properties](./#properties)
 - [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Represents an access method for an access grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.

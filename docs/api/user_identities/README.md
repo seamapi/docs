@@ -5,6 +5,7 @@
 - [Properties](./#properties)
 - [Errors](./#errors)
 - [Warnings](./#warnings)
+- [Endpoints](./#endpoints)
 
 
 Represents a [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) associated with an application user account.
