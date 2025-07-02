@@ -182,10 +182,7 @@ export const setApiRouteLayoutContext = (
         ? groupProperties(
             legacyProperty.properties,
             legacyProperty.propertyGroups,
-            {
-              include: metadata.include_groups,
-              exclude: metadata.exclude_groups,
-            },
+            groupOptions,
           )
         : null
 
@@ -199,23 +196,30 @@ export const setApiRouteLayoutContext = (
       hidePreamble: route.path !== resource.routePath,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
       resourceSamples: resource.resourceSamples
-        .filter(({ title }) => {
-          if (groupOptions.include != null) {
-            return groupOptions.include.some((x) =>
-              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
-            )
-          }
-          if (groupOptions.exclude != null) {
-            return !groupOptions.exclude.some((x) =>
-              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
-            )
-          }
-          return true
-        })
+        .filter(resourceSampleFilter(groupOptions))
         .map(mapResourceSample),
     })
   }
 }
+
+export const resourceSampleFilter =
+  (groupOptions: {
+    include: string[] | undefined
+    exclude?: string[] | undefined
+  }) =>
+  ({ title }: ResourceSample): boolean => {
+    if (groupOptions.include != null) {
+      return groupOptions.include.some((x) =>
+        title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+      )
+    }
+    if (groupOptions.exclude != null) {
+      return !groupOptions.exclude.some((x) =>
+        title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+      )
+    }
+    return true
+  }
 
 const groupVariants = (
   property: Property | null,

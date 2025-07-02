@@ -18,6 +18,7 @@ import {
   mapResourceSample,
   normalizePropertyFormatForDocs,
   type ResourceSampleContext,
+  resourceSampleFilter,
 } from './api-route.js'
 
 const supportedSdks: SdkName[] = [
@@ -189,6 +190,7 @@ export function setEndpointLayoutContext(
     endpoint,
     resources,
     actionAttempts,
+    pathMetadata,
   ).map(mapResourceSample)
 
   const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
@@ -245,6 +247,7 @@ const getResourceSamples = (
   endpoint: Endpoint,
   resources: Resource[],
   actionAttempts: ActionAttempt[],
+  pathMetadata: PathMetadata,
 ): ResourceSample[] => {
   const { response } = endpoint
 
@@ -268,7 +271,18 @@ const getResourceSamples = (
 
   if (resource == null) return []
 
-  const sample = resource.resourceSamples[0]
+  const metadata = pathMetadata[resource.routePath]
+  if (metadata == null) {
+    throw new Error(`Missing path metadata for ${resource.routePath}`)
+  }
+
+  const sample = resource.resourceSamples.filter(
+    resourceSampleFilter({
+      include: metadata.include_groups,
+      exclude: metadata.exclude_groups,
+    }),
+  )[0]
+
   if (sample == null) return []
 
   return [
