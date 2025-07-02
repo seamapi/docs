@@ -272,14 +272,11 @@ const getResourceSamples = (
   if (resource == null) return []
 
   const metadata = pathMetadata[resource.routePath]
-  if (metadata == null) {
-    throw new Error(`Missing path metadata for ${resource.routePath}`)
-  }
 
   const sample = resource.resourceSamples.filter(
     resourceSampleFilter({
-      include: metadata.include_groups,
-      exclude: metadata.exclude_groups,
+      include: metadata?.include_groups,
+      exclude: metadata?.exclude_groups,
     }),
   )[0]
 

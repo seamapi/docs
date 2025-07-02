@@ -205,7 +205,7 @@ export const setApiRouteLayoutContext = (
 export const resourceSampleFilter =
   (groupOptions: {
     include: string[] | undefined
-    exclude?: string[] | undefined
+    exclude: string[] | undefined
   }) =>
   ({ title }: ResourceSample): boolean => {
     if (groupOptions.include != null) {
