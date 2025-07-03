@@ -217,7 +217,7 @@ IDs of the devices that you want to add to the new space.
 
 ## Response
 
-[space](./)
+[space](.)
 
 
 {% tabs %}

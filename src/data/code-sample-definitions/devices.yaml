@@ -503,7 +503,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List devices for a Connect Webview
   description: Returns a list of all devices that were connected using a specified Connect Webview.
   request:
@@ -672,7 +672,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List devices for a user identifier key
   description: Returns a list of all devices for a specified user identifier key.
   request:
@@ -841,7 +841,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List devices for a space
   description: Returns a list of all devices for a specified space ID.
   request:
@@ -1010,7 +1010,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List devices with specific custom metadata
   description: Returns a list of all devices containing specified custom metadata.
   request:
@@ -1180,7 +1180,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List devices for a specific manufacturer, created before a specific date
   description: Returns a list of all devices for a specific manufacturer, created (in Seam) before a specific date.
   request:
@@ -1350,7 +1350,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List device providers
   description: Returns a list of all device providers.
   request:
@@ -1879,7 +1879,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: Update an unmanaged device
   description: Updates a specified unmanaged device.
   request:

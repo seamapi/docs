@@ -83,7 +83,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List connected accounts for a customer
   description: Returns a list of all connected accounts for a specified customer ID.
   request:
@@ -112,7 +112,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List connected accounts with specific custom metadata
   description: Returns a list of all connected accounts with specified custom metadata.
   request:
@@ -142,7 +142,7 @@
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
-        next_page_url: https://connect.getseam.com/devices/list?limit=50&next_page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
+        next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: Request a connected account sync attempt
   description: Request a connected account sync attempt for the specified connected account.
   request:

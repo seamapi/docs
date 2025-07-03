@@ -228,7 +228,7 @@ User identifier key associated with the client session that you want to get.
 
 ## Response
 
-[client\_session](./)
+[client\_session](.)
 
 
 {% tabs %}

@@ -251,7 +251,7 @@ Name of the simulated unmanaged access code.
 
 ## Response
 
-[unmanaged\_access\_code](./)
+[unmanaged\_access\_code](./../unmanaged)
 
 
 {% tabs %}

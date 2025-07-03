@@ -198,7 +198,7 @@ ID of the noise threshold that you want to get.
 
 ## Response
 
-[noise\_threshold](./)
+[noise\_threshold](.)
 
 
 {% tabs %}
