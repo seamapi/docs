@@ -86,11 +86,7 @@ See the [device or system integration guide](../../../device-and-system-integrat
 
 ### iOS Requirement
 
-If you are developing an iOS app, add [`requestAutomaticPassPresentationSuppression()`](https://developer.apple.com/documentation/passkit/pkpasslibrary/requestautomaticpasspresentationsuppression\(responsehandler:\)) to your app to prevent the user's phone from displaying Apple Wallet while scanning for Bluetooth low energy (BLE) or similar locks. This method suppresses Apple Wallet while your mobile app is in the foreground.
-
-{% hint style="info" %}
-The use of this method requires a special entitlement from Apple.
-{% endhint %}
+To prevent Apple Wallet from appearing while scanning for Bluetooth low energy (BLE) or similar locks, request the `com.apple.developer.passkit.pass-presentation-suppression` entitlement for your app from the Apple Developer portal.
 
 ***
 
