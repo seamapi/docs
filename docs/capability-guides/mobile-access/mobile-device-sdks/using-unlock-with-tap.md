@@ -1,333 +1,209 @@
 ---
 description: >-
-  This feature enables your app to scan for nearby door readers and unlock
-  authorized doors.
+  This feature enables your app to perform unlock operations using mobile credentials.
 ---
 
-# Using Unlock With Tap
+# Unlocking
 
-Unlock With Tap in mobile apps functions similarly to using a traditional proximity card. The app launches an unlock scanning process. When the user holds their phone close to the lock that they want to open, the phone communicates wirelessly with the lock and transmits an access credential. Once the lock verifies this credential and confirms that access is granted, it unlocks.
+Unlocking with SeamSDK uses proximity to communicate credentials to door readers. When a user initiates an unlock, the SDK performs scanning, error handling, and unlock events via `SeamSDKManager.shared.unlock(using:)`.
 
-In your app, you use `seam.phone.native.unlockWithTap.launch` to initiate this unlock scanning process. Note that `unlockWithTap` automatically starts scanning whenever it is possible to scan and stops scanning whenever it is not possible to scan. That is, when an issue obstructs the phone from scanning, the `can_scan` capability changes to `false`, and Seam adds the resulting error to the error list. Further, the error explains to the user how to fix the causing issue.
+Using this process involves the following steps:
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>A Sample App Flow for launching the Unlock With Tap process.</p></figcaption></figure>
-
-Using the "Unlock With Tap" process involves the following steps:
-
-1. [Retrieve the user's mobile credentials.](using-unlock-with-tap.md#id-1.-retrieve-mobile-credentials)
-2. [Check the System Requirements.](using-unlock-with-tap.md#id-2.-check-the-system-requirements)
-3. [Launch the "Unlock With Tap" Process.](using-unlock-with-tap.md#id-3.-launch-the-unlock-with-tap-process)
-4. [Handle Unlock Status Updates.](using-unlock-with-tap.md#id-4.-handle-unlock-status-updates)
-5. [Stop the "Unlock With Tap" Process](using-unlock-with-tap.md#id-5.-stop-the-unlock-with-tap-process)
+1. Retrieve available mobile credentials.  
+2. Monitor for permission or credential errors unhandled errors will be thrown as `credentialErrors([SeamSDKCredentialError])`  
+3. Perform the unlock operation.  
+4. Handle unlock status events.  
+5. Cancel the unlock operation when needed.
 
 ***
 
 ## 1. Retrieve Mobile Credentials
 
-Before initiating the "Unlock With Tap" process, the user's phone must have the necessary mobile credentials loaded onto it. To verify that the credentials are loaded, these credentials can be retrieved either explicitly or through an event handler.
+Access the current credentials via the published `credentials` array on `SeamSDKManager.shared`:
 
 {% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-// Retrieve mobile credentials explicitly.
-if (seam.phone.get().nativeMetadata.isInitialized) {
-  val credentials = seam.phone.native.credentials.list()
-}
+{% tab title="iOS Swift" %}
+```swift
+// Access credentials
+let credentials = SeamSDKManager.shared.credentials
 
-// Retrieve mobile credentials using an event handler.
-class MyEventHandler implements ISeamEventHandler {
-    handle(event: SeamEvent) = when(event) {
-        is SeamEvent.Phone.Native.Credentials.Refreshed -> {
-            val credentials = seam.phone.native.credentials.list()
-            
-            // Show the credentials in the UI.
+// Observe updates with Combine
+let credentialsSubscription = SeamSDKManager.shared.$credentials
+    .sink { creds in
+        // Update UI with new credentials array
+    }
+```
+{% endtab %}
+{% endtabs %}
+
+## 2. Monitor Credential Errors
+
+Permission or setup issues appear in each credential’s `errors` property. Observe like this:
+
+{% tabs %}
+{% tab title="iOS Swift" %}
+```swift
+let errorSubscription = SeamSDKManager.shared.$credentials
+    .flatMap { creds in creds.publisher }
+    .map { $0.errors }
+    .sink { errors in
+        // Handle errors, e.g. `.userInteractionRequired`, `.expired`, etc.
+    }
+```
+{% endtab %}
+{% endtabs %}
+
+> **Note:** The `.errors` array on credentials represents per-credential issues though some issues may be repeated across several credentials (e.g. bluetooth requirements). SDK- or credential-level errors (such as invalid token or expired credential) are thrown directly by methods like `unlock(using:)` as `SeamSDKV2Error` or `SeamSDKCredentialError` and must be handled via `do/catch`.
+
+## 3. Perform Unlock Operation
+
+The call to `SeamSDKManager.shared.unlock(using:)` may throw:
+- `SeamSDKV2Error`: for SDK-level issues (e.g., invalid token, uninitialized SDK).
+- `SeamSDKCredentialError`: for credential-specific issues (e.g., expired credential, device not eligible).
+Ensure you wrap the call in `do/catch` to handle these errors.
+
+Use Async/Await or Combine to initiate an unlock with a selected credential:
+
+{% tabs %}
+{% tab title="iOS Swift" %}
+```swift
+let credentialID = credentials.first!.id
+
+// Async/Await example
+Task {
+    do {
+        for try await event in SeamSDKManager.shared.unlock(using: credentialID) {
+            switch event {
+            case .grantedAccess:
+                // The lock granted access—show a success indicator.
+            default:
+                // Access wasn't granted, inform the user and offer retry.
+            }
         }
+    } catch {
+        // Handle unlock error, e.g., invalid credential or SDK error
+        print("Unlock error: \(error)")
     }
 }
-```
-{% endtab %}
 
-{% tab title="iOS Swift" %}
-```swift
-// Retrieve mobile credentials explicitly.
-if (seam.phone.get().nativeMetadata.isInitialized) { // Coming soon!
-  let credentials = seam.phone.native.credentials.list()
-}
-
-// Retrieve mobile credentials as soon as when they're refreshed.
-func handleEvent(event: SeamEvent) {
-    switch (event) {
-    case .phone(.native(.credentials(.refreshed))):
-        let credentials = seam.phone.native.credentials.list()
-        // show credentials in the ui
-        
-    }
-}
-```
-{% endtab %}
-{% endtabs %}
-
-***
-
-## 2. Check the System Requirements
-
-Before you launch the "Unlock With Tapping" process, verify that all the required permissions are enabled.
-
-{% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-val requiredPermissions = seam.phone.native.listRequiredAndroidPermissions(
-  enableUnlockWithTap = true
-)
-
-if (requiredPermissions.isNotEmpty()) {
-  // ...
-}
-```
-{% endtab %}
-
-{% tab title="iOS Swift" %}
-```swift
-let requiredPermissions = seam.phone.native.listRequiredIosPermissions( // Coming soon!
-  enableUnlockWithTap: true
-)
-
-if (!requiredPermissions.isEmpty) {
-  // ...
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Check the error list—for example, in an event handler—to identify any current obstructions.
-
-{% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-fun handleEvent(
-  event: SeamEvent
-) {
-  // Check if there's a change in the phone state, under the phone namespace.
-  if (event is SeamEvent.Phone) {
-    val phone = seam.phone.get().nativeMetadata
-
-    if (
-      // Check if unlocking with tap is not possible.
-      !phone.canUnlockWithTap
-    ) {
-      // Gather the missing permissions required for unlocking with tap.
-      if (phone.errors.any {
-        it is SeamError.Phone.Native.MissingRequiredAndroidPermissions
-      }) {
-        val requiredPermissions = seam.phone.native.listRequiredAndroidPermissions(
-          enableUnlockWithTap = true
-        )
-
-        // Here, implement logic to request these permissions from the user.
-      }
-    }
-  }
-}
-```
-{% endtab %}
-
-{% tab title="iOS Swift" %}
-```swift
-fun handleEvent(event: SeamEvent) {
-  // Check for changes in the phone state under the phone namespace.
-  switch (event) {
-  case .phone:
-    let phone = seam.phone.get().nativeMetadata // Coming soon!
-    
-    // Verify if the phone cannot unlock with tap.
-    if(!phone.canUnlockWithTap) {
-    
-      // Gather the missing permissions required for unlocking with tap.
-      if phone.errors.contains(where: {
-        $0 == .phone(.native(.missingRequiredIosPermissions))
-      }) {
-        let requiredPermissions = seam.phone.native
-          .listRequiredIosPermissions(enableUnlockWithTap: true)
-        
-        // Here, implement logic to request these permissions from the user.
-      }
-    }
-    break
-  }
-}
-```
-{% endtab %}
-{% endtabs %}
-
-***
-
-## 3. Launch the "Unlock With Tap" Process
-
-Once the required permissions are enabled, the app can launch the "Unlock With Tap" Process.
-
-{% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-// Launch the "Unlock With Tap" Process.
-if (seam.phone.get().can_unlock_with_tap) {
-  try {
-    seam.phone.native.unlockWithTap.launch(
-      foreground = true,
-      notification = /* Platform-specific notification object */,
+// Combine example
+do {
+    let unlockPublisher = try SeamSDKManager.shared.unlock(using: credentialID)
+    let unlockSubscription = unlockPublisher.sink(
+        receiveCompletion: { completion in
+            if case .failure(let error) = completion {
+                // Show unlock error UI, e.g., "Unlock failed: \(error)"
+            }
+        },
+        receiveValue: { event in
+            switch event {
+            case .grantedAccess:
+                // The lock granted access—show a success indicator.
+            default:
+                // Access wasn't granted, inform the user and offer retry.
+            }
+        }
     )
-  } catch (e: SeamError) {
-    // Handle unrecoverable errors, such as missing permissions.
-  }
-} else {
-  // Process the error list if unlocking with a tap isn't available.
-}
-
-fun handleEvent(event: SeamEvent) {
-  // Check for changes in the phone state, under the phone namespace.
-  if (event is SeamEvent.Phone) {
-    unlockWithTap = seam.phone.native.unlockWithTap.get() // Coming soon!
-
-    if (unlockWithTap.isRunning) {
-      if (!unlockWithTap.isScanning) {
-        // Set the UI state to indicate that the phone is not scanning.
-        // Check the error map because scanning is expected but is not occurring.
-        seam.phone.get().nativeMetadata.errors
-          // Potential errors:
-          // - BluetoothConnectionRequired: Indicates Bluetooth is off.
-          // - NoCredential: Indicates missing credentials.
-      } else {
-        // Update UI to show that the phone is actively scanning.
-      }
-    }
-  }
-}
-```
-
-
-{% endtab %}
-
-{% tab title="iOS Swift" %}
-```swift
-// Launch the "Unlock With Tap" Process.
-if (seam.phone.get().can_unlock_with_tap) {
-  do {
-    try seam.phone.native.unlockWithTap.launch(foreground: true)
-  } catch {
-    // Handle unrecoverable errors, such as missing permissions.
-  }
-} else {
-  // Process the error list if unlocking with a tap isn't available.
-}
-
-func handleEvent(event: SeamEvent) {
-  // Check for changes in the phone state, under the phone namespace.
-  switch(event) {
-  case .phone: 
-    let unlockWithTap = seam.phone.native.unlockWithTap.get() // Coming soon!
-    if unlockWithTap.isRunning {
-      if !unlockWithTap.isScanning {
-        // Set the UI state to indicate that the phone is not scanning.
-        // Check the error map because scanning is expected but is not occurring.
-        let errors = seam.phone.get().nativeMetadata.errors // Coming soon!
-        // Errors to look out for could include:
-        // - BluetoothConnectionRequired: Bluetooth is turned off.
-        // - NoCredential: Missing credentials for operation.
-      } else {
-        // Update UI to show that the phone is actively scanning.
-      }
-    }
-  }
+    // Retain `unlockSubscription` as needed
+} catch {
+    // Handle unlock initialization error
+    print("Unlock initialization error: \(error)")
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-***
+## 4. Handle Unlock Events
 
-## 4. Handle Unlock Status Updates
+Handle each `SeamUnlockEvent` to update your UI and logic. Available events:
 
-Use an event handler to handle unlock-related status updates. Use these events to initiate changes to the user interface.
-
-{% hint style="info" %}
-The `ReaderCommunicationSuccess`/`readerCommunicationSuccess` event indicates that the phone has communicated successfully with the door reader. That is, depending on the events that the underlying ACS API returns, the Seam mobile SDK may not be able to determine whether the door reader granted access. For some ACSs, the Seam API can only determine whether the communication with the reader succeeded. Other underlying ACS APIs may return events that indicate whether the door reader unlocked successfully.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-fun handleEvent(
-  event: SeamEvent
-) =
-  when (event) {
-    is SeamEvent.Phone.Native.ReaderConnected -> {
-      // Set the UI state to indicate that the phone is connected to the reader.
-    }
-
-    is SeamEvent.Phone.Native.ReaderCommunicationSuccess -> {
-      // Set the UI state to indicate that the communication with the
-      // reader or lock was successful.
-      // This indicates either the lock has been successfully unlocked
-      // or the key has been sent to the reader.
-    }
-
-    is SeamEvent.Internal.Phone.Native.ReaderConnectionFailed -> {
-      // Set the UI state to indicate that the phone failed to unlock the reader.
-    }
-
-    // ...
-  }
-```
-{% endtab %}
-
-{% tab title="iOS Swift" %}
-```swift
-func handleEvent(
-  event: SeamEvent
-) {
-  switch(event) {
-  case .phone(.native(.readerConnected)):
-    // Set the UI state to indicate that the phone is connected to the reader.
-    break
-  case .phone(.native(.readerCommunicationSuccess)):
-    // Set the UI state to indicate that the communication with the
-    // reader or lock was successful.
-    // This indicates either the lock has been successfully unlocked
-    // or the key has been sent to the reader.
-    break
-  case .internal(.phone(.native(.readerConnectionFailed))):
-    // Set the UI state to indicate that the phone failed to unlock the reader.
-    break
-  }
-}
-```
-{% endtab %}
-{% endtabs %}
-
-***
-
-## 5. Stop the "Unlock With Tap" Process
-
-`unlockWithTap` continues attempting to scan, until you explicitly stop this function. For example, you may want to disable scanning if the user changes the focus on their phone to a different app. Or after an unlock has been completed successfully.
+- **launched**  
+  Unlock operation has started.
+- **connected**  
+  Connection to the lock hardware was successful.
+- **grantedAccess**  
+  Access was granted by the lock.
+- **timedOut**  
+  Unlock operation timed out without success.
+- **connectionFailed(debugDescription:)**  
+  Unlock operation failed to connect; `debugDescription` may contain additional details.
 
 {% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-seam.phone.native.unlockWithTap.stop()
-```
-{% endtab %}
-
 {% tab title="iOS Swift" %}
+
+Async/Await example:
+
 ```swift
 Task {
-    let response = await seam.phone.native.unlockWithTapping.stop()
-    switch(response) {
-    case .success():
-      //Display unlock stop success message to user.
-      break
-    case .failure(error):
-      // Display unlock stop failure message to user
+    do {
+        for try await event in SeamSDKManager.shared.unlock(using: credentialID) {
+            switch event {
+            case .launched:
+                // Show scanning indicator
+            case .connected:
+                // Show connected indicator
+            case .grantedAccess:
+                // Show access granted
+            case .timedOut:
+                // Show timeout and offer retry
+            case .connectionFailed(let debugDescription):
+                // Show error with debugDescription
+            }
+        }
+    } catch {
+        // Handle thrown errors
     }
-} 
+}
+```
+
+Combine example:
+
+```swift
+do {
+    let unlockPublisher = try SeamSDKManager.shared.unlock(using: credentialID)
+    let unlockSubscription = unlockPublisher
+        .receive(on: RunLoop.main)
+        .sink(
+            receiveCompletion: { completion in
+                if case .failure(let error) = completion {
+                    // Show unlock error UI, e.g., "Unlock failed: \(error)"
+                }
+            },
+            receiveValue: { event in
+                switch event {
+                case .grantedAccess:
+                    // Show success indicator.
+                case .retry:
+                    // Retry scanning or credential presentation.
+                case .deniedAccess:
+                    // Access denied—inform the user.
+                case .timedOut:
+                    // Operation timed out—offer retry.
+                case .connectionFailed(let debugDescription):
+                    // Show debugDescription details.
+                }
+            }
+        )
+    // Retain `unlockSubscription` as a property and cancel when appropriate (e.g., in deinit or viewWillDisappear).
+} catch {
+    // Handle unlock initialization error
+    print("Unlock initialization error: \(error)")
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## 5. Cancel the Unlock Operation
+
+Stop scanning by cancelling your subscription or task:
+
+{% tabs %}
+{% tab title="iOS Swift" %}
+```swift
+// For Combine
+unlockSubscription.cancel()
+
+// For Async/Await, cancel the Task as needed
 ```
 {% endtab %}
 {% endtabs %}
