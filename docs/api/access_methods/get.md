@@ -199,7 +199,7 @@ ID of access method to get.
 
 ## Response
 
-[access\_method](./)
+[access\_method](.)
 
 
 {% tabs %}

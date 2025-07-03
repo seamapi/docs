@@ -183,7 +183,7 @@ ID of the space that you want to get.
 
 ## Response
 
-[space](./)
+[space](.)
 
 
 {% tabs %}
