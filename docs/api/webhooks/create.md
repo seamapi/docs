@@ -195,7 +195,7 @@ Types of events that you want the new webhook to receive.
 
 ## Response
 
-[webhook](./)
+[webhook](.)
 
 
 {% tabs %}

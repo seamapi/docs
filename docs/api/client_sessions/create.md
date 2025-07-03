@@ -301,7 +301,7 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 ## Response
 
-[client\_session](./)
+[client\_session](.)
 
 
 {% tabs %}

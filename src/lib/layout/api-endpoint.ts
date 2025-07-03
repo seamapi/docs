@@ -1,3 +1,5 @@
+import path from 'node:path/posix'
+
 import type {
   ActionAttempt,
   CodeSample,
@@ -47,6 +49,7 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
+    responsePath: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
   resourceSamples: ResourceSampleContext[]
@@ -147,14 +150,28 @@ export function setEndpointLayoutContext(
     escapedResourceType: null,
     responseKey: null,
     responseType: null,
+    responsePath: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
     const { resourceType, responseKey, responseType } = endpoint.response
+
+    const responseResource = resources.find(
+      (r) => r.resourceType === resourceType,
+    )
+
+    let responsePath = null
+    if (responseResource != null) {
+      responsePath = path
+        .relative(endpoint.path, responseResource.routePath)
+        .replace('..', '.') // gitbook expects first level to be .
+    }
+
     file.response.resourceType = resourceType
     file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
+    file.response.responsePath = responsePath
   }
 
   if (

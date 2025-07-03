@@ -18,7 +18,7 @@ You can use Seam Console to issue Instant Keys. This process assumes that you ha
 ## Create a User Identity and Access System User
 
 1. Log in to [Seam Console](https://console.seam.co/).
-2.  In the upper-left corner, click the workspace switcher and select or create a workspace.
+2.  In the upper-left corner, click the workspace switcher and select the production workspace in which your access system is connected.
 
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../.gitbook/assets/workspace-switcher-production.png)
 3. In the top navigation pane, click **ACS Systems**.

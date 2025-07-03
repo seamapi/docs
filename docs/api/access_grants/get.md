@@ -376,7 +376,7 @@ ID of access grant to get.
 
 ## Response
 
-[access\_grant](./)
+[access\_grant](.)
 
 
 {% tabs %}

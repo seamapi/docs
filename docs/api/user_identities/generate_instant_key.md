@@ -210,7 +210,7 @@ Maximum number of times the instant key can be used. Default: 1.
 
 ## Response
 
-[instant\_key](./)
+[instant\_key](.)
 
 
 {% tabs %}
