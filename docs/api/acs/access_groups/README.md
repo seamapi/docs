@@ -3,8 +3,6 @@
 ## The acs_access_group Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 

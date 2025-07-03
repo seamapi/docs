@@ -6,8 +6,6 @@
 ## The access_grant Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 

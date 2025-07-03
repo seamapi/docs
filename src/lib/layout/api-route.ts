@@ -76,6 +76,7 @@ export interface ApiRouteResource {
   legacyPropertyGroups?: ApiRoutePropertyGroup[]
   events: ApiRouteEvent[]
   hidePreamble: boolean
+  endpoints?: ApiRouteEndpoint[]
 }
 
 interface ApiRouteVariantGroup {
@@ -198,6 +199,7 @@ export const setApiRouteLayoutContext = (
       warningGroups,
       hidePreamble: route.path !== resource.routePath,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
+      endpoints: file.endpoints,
       resourceSamples: resource.resourceSamples
         .filter(({ title }) => {
           if (groupOptions.include != null) {

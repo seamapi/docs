@@ -3,9 +3,6 @@
 ## The thermostat_schedule Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
 - [Endpoints](./#endpoints)
 
 

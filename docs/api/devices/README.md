@@ -4336,8 +4336,6 @@ Indicates that the temperature threshold has been exceeded.
 ## The device_provider Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
