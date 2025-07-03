@@ -4,6 +4,7 @@
 
 - [Properties](./#properties)
 - [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Represents a [client session](../../core-concepts/authentication/client-session-tokens/README.md). If you want to restrict your users' access to their own devices, use client sessions.

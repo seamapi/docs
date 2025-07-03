@@ -6,6 +6,7 @@
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Represents a [connected account](../../core-concepts/connected-accounts/README.md). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.

@@ -7,6 +7,7 @@
 - [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 Represents a [device](../../core-concepts/devices/README.md) that has been connected to Seam.
@@ -4336,6 +4337,7 @@ Indicates that the temperature threshold has been exceeded.
 
 - [Properties](./#properties)
 - [Events](./#events)
+- [Endpoints](./#endpoints)
 
 
 {% tabs %}
