@@ -2113,6 +2113,10 @@ Metadata for an igloohome device.
   
     Device name for an igloohome device.
 
+  - <strong><code>is_keypad_linked_to_bridge</code></strong> <i>Boolean</i>
+  
+    Indicates whether a keypad is linked to a bridge for an igloohome device.
+
   - <strong><code>keypad_id</code></strong> <i>String</i>
   
     Keypad ID for an igloohome device.

@@ -115,6 +115,7 @@
   * [Get a Lock](api/locks/get.md)
   * [List Locks](api/locks/list.md)
   * [Lock a Lock](api/locks/lock_door.md)
+  * [Lock Simulations](api/locks/simulate/README.md)
   * [Unlock a Lock](api/locks/unlock_door.md)
 * [Noise Sensors](api/noise_sensors/README.md)
   * [List Noise Sensors](api/noise_sensors/list.md)

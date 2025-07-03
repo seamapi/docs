@@ -9,6 +9,11 @@
 - `/thermostats/daily_programs`
 - `/user_identities/enrollment_automations`
 
+### Endpoints
+
+- `/locks/simulate/keypad_code_entry`
+- `/locks/simulate/manual_lock_via_keypad`
+
 ## Undocumented
 
 These items are intentionally undocumented.
@@ -21,7 +26,6 @@ These items are intentionally undocumented.
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/bridges`: No undocumented message provided
-- `/locks/simulate`: No undocumented message provided
 - `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
@@ -83,8 +87,6 @@ These items are intentionally undocumented.
 - `/bridges/get`: Not yet for customer use.
 - `/bridges/list`: Not yet for customer use.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
-- `/locks/simulate/keypad_code_entry`: Unreleased.
-- `/locks/simulate/manual_lock_via_keypad`: Unreleased.
 - `/networks/get`: Deprecated.
 - `/networks/list`: Deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge client only.
