@@ -2317,6 +2317,10 @@ Metadata for an igloohome device.
   
     Device name for an igloohome device.
 
+  - <strong><code>is_keypad_linked_to_bridge</code></strong> <i>Boolean</i>
+  
+    Indicates whether a keypad is linked to a bridge for an igloohome device.
+
   - <strong><code>keypad_id</code></strong> <i>String</i>
   
     Keypad ID for an igloohome device.
@@ -3483,6 +3487,28 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
   
     Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
+  <strong><code>ecobee_metadata</code></strong> <i>Object</i>
+  
+    Metadata specific to the Ecobee climate, if applicable.
+
+  <strong><code>ecobee_metadata.climate_ref</code></strong> <i>String</i>
+  
+    Reference to the Ecobee climate, if applicable.
+
+  <strong><code>ecobee_metadata.is_optimized</code></strong> <i>Boolean</i>
+  
+    Indicates if the climate preset is optimized by Ecobee.
+
+  <strong><code>ecobee_metadata.owner</code></strong> <i>Enum</i>
+  
+    Indicates whether the climate preset is owned by the user or the system.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>user</code>
+      - <code>system</code>
+  </details>
+
   <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
   
     Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
@@ -3598,6 +3624,28 @@ Current climate setting.
   
     Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
+  - <strong><code>ecobee_metadata</code></strong> <i>Object</i>
+  
+    Metadata specific to the Ecobee climate, if applicable.
+
+  - <strong><code>ecobee_metadata.climate_ref</code></strong> <i>String</i>
+  
+    Reference to the Ecobee climate, if applicable.
+
+  - <strong><code>ecobee_metadata.is_optimized</code></strong> <i>Boolean</i>
+  
+    Indicates if the climate preset is optimized by Ecobee.
+
+  - <strong><code>ecobee_metadata.owner</code></strong> <i>Enum</i>
+  
+    Indicates whether the climate preset is owned by the user or the system.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>user</code>
+      - <code>system</code>
+  </details>
+
   - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
   
     Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
@@ -3697,6 +3745,28 @@ Current climate setting.
   - <strong><code>display_name</code></strong> <i>String</i>
   
     Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
+  - <strong><code>ecobee_metadata</code></strong> <i>Object</i>
+  
+    Metadata specific to the Ecobee climate, if applicable.
+
+  - <strong><code>ecobee_metadata.climate_ref</code></strong> <i>String</i>
+  
+    Reference to the Ecobee climate, if applicable.
+
+  - <strong><code>ecobee_metadata.is_optimized</code></strong> <i>Boolean</i>
+  
+    Indicates if the climate preset is optimized by Ecobee.
+
+  - <strong><code>ecobee_metadata.owner</code></strong> <i>Enum</i>
+  
+    Indicates whether the climate preset is owned by the user or the system.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>user</code>
+      - <code>system</code>
+  </details>
 
   - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
   
@@ -4174,18 +4244,6 @@ Indicates that Seam detected that the Lockly device does not have a time zone co
 
 ---
 
-**`salto_ks_office_mode`**
-
-Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
-
----
-
-**`salto_ks_privacy_mode`**
-
-Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
-
----
-
 **`salto_ks_subscription_limit_almost_reached`**
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
@@ -4226,6 +4284,18 @@ Indicates that there are too many backup codes.
 **`partial_backup_access_code_pool`**
 
 Indicates that the backup access code is unhealthy.
+
+---
+
+**`salto_ks_office_mode`**
+
+Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
+
+---
+
+**`salto_ks_privacy_mode`**
+
+Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
 
 ---
 

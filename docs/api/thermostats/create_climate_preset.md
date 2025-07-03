@@ -206,6 +206,50 @@ Temperature to which the thermostat should cool (in °F). See also [Set Points](
 
 ---
 
+**`ecobee_metadata`** *Object*
+
+Metadata specific to the Ecobee climate, if applicable.
+
+<details>
+
+<summary><b><code>climate_ref</code></b> <i>String</i></summary>
+
+Reference to the Ecobee climate, if applicable.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>is_optimized</code></b> <i>Boolean</i></summary>
+
+Indicates if the climate preset is optimized by Ecobee.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>owner</code></b> <i>Enum</i></summary>
+
+Indicates whether the climate preset is owned by the user or the system.
+
+Enum values:
+
+- <code>user</code>
+- <code>system</code>
+
+</details>
+
+---
+
+
 **`fan_mode_setting`** *String*
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.

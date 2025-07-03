@@ -21,12 +21,11 @@ This quick start walks you through the following basic steps:
 2. Install a Seam SDK and create an API key.
 3. Create a [user identity](../../../api/user_identities/).
    * Seam user identities enable you to match your own mobile app users to ACS users.
-4. Identify a [credential manager](../../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) to use for the mobile credential.
-5. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups.md).
+4. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups.md).
    * Access groups are preconfigured to grant access to specific entrances.\
      While some access control systems use access groups, others specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
-6. Create a mobile key [ACS credential](../managing-credentials.md) for the user identity.
-7. View the list of entrances to which the user now has access.
+5. Create a mobile key [ACS credential](../managing-credentials.md) for the user identity.
+6. View the list of entrances to which the user now has access.
 
 :rocket: Let's get started!
 
@@ -287,18 +286,7 @@ $jen_doe_user = $seam->user_identities->create(
 
 ***
 
-## Step 4: Identify a Credential Manager
-
-To create mobile keys for mobile app users, you must use a credential manager. When you added the virtual Salto KS ACS to your sandbox workspace earlier in this quick start, Seam automatically added a compatible virtual credential manager. Identify the ID of this credential manager.
-
-1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
-2. On the **Access Systems** page, locate the Salto KS Credential Manager.
-3. In the **acs\_system\_id** column for the Salto KS Credential Manager, click the ID to copy it.
-4. Store this credential manager ID for future use.
-
-***
-
-## Step 5: Assign the User Identity to an Access Group
+## Step 4: Assign the User Identity to an Access Group
 
 Add the user identity to an access group. For Salto KS, access groups specify the entrances to which users have access.
 
@@ -426,7 +414,7 @@ void
 
 ***
 
-## Step 6: Create a Mobile Key Credential
+## Step 5: Create a Mobile Key Credential
 
 Create a mobile key credential for the user identity.
 
@@ -575,7 +563,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 
 ***
 
-## Step 7: View Your New Credential
+## Step 6: View Your New Credential
 
 You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the list of entrances to which the ACS user now has access.
 

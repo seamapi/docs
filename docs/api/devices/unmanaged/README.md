@@ -1867,18 +1867,6 @@ Indicates that Seam detected that the Lockly device does not have a time zone co
 
 ---
 
-**`salto_ks_office_mode`**
-
-Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
-
----
-
-**`salto_ks_privacy_mode`**
-
-Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
-
----
-
 **`salto_ks_subscription_limit_almost_reached`**
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
@@ -1919,6 +1907,18 @@ Indicates that there are too many backup codes.
 **`partial_backup_access_code_pool`**
 
 Indicates that the backup access code is unhealthy.
+
+---
+
+**`salto_ks_office_mode`**
+
+Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
+
+---
+
+**`salto_ks_privacy_mode`**
+
+Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
 
 ---
 

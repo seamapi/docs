@@ -198,6 +198,38 @@ Indicates that the user identity is currently being deleted.
   
   
 </details>
+<details>
+<summary><code>acs_user_profile_does_not_match_user_identity</code></summary>
+
+Indicates that the ACS user's profile does not match the user identity's profile
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>acs_user_profile_does_not_match_user_identity</code>
+  
+  
+</details>
 
 ---
 
@@ -221,6 +253,12 @@ Indicates that there is an issue with an access system user associated with this
 
 
 ## Warnings
+
+**`acs_user_profile_does_not_match_user_identity`**
+
+Indicates that the ACS user's profile does not match the user identity's profile
+
+---
 
 **`being_deleted`**
 
