@@ -9,11 +9,6 @@
 - `/thermostats/daily_programs`
 - `/user_identities/enrollment_automations`
 
-### Endpoints
-
-- `/locks/simulate/keypad_code_entry`
-- `/locks/simulate/manual_lock_via_keypad`
-
 ## Undocumented
 
 These items are intentionally undocumented.
