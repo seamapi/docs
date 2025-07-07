@@ -40,6 +40,7 @@ await seam.accessGrants.list({
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
       "ends_at": "2025-06-18T16:54:17.946606Z",
+      "instant_key_url": "https://ik.seam.co/ABCXYZ",
       "requested_access_methods": [
         {
           "display_name": "PIN Code Credential",
@@ -108,6 +109,7 @@ EOF
         "created_at": "2025-06-16T16:54:17.946606Z",
         "display_name": "My Access Grant",
         "ends_at": "2025-06-18T16:54:17.946606Z",
+        "instant_key_url": "https://ik.seam.co/ABCXYZ",
         "requested_access_methods": [
           {
             "display_name": "PIN Code Credential",
@@ -178,6 +180,7 @@ seam.access_grants.list(
             "created_at": "2025-06-16T16:54:17.946606Z",
             "display_name": "My Access Grant",
             "ends_at": "2025-06-18T16:54:17.946606Z",
+            "instant_key_url": "https://ik.seam.co/ABCXYZ",
             "requested_access_methods": [
                 {
                     "display_name": "PIN Code Credential",
@@ -247,6 +250,7 @@ seam.access_grants.list(
       created_at: "2025-06-16T16:54:17.946606Z",
       display_name: "My Access Grant",
       ends_at: "2025-06-18T16:54:17.946606Z",
+      instant_key_url: "https://ik.seam.co/ABCXYZ",
       requested_access_methods: [
         {
           display_name: "PIN Code Credential",
@@ -309,6 +313,7 @@ $seam->access_grants->list(
             "created_at" => "2025-06-16T16:54:17.946606Z",
             "display_name" => "My Access Grant",
             "ends_at" => "2025-06-18T16:54:17.946606Z",
+            "instant_key_url" => "https://ik.seam.co/ABCXYZ",
             "requested_access_methods" => [
                 [
                     "display_name" => "PIN Code Credential",
@@ -373,6 +378,7 @@ seam access-grants list --user_identity_id "f7620fcf-d92f-471e-b97e-3806daeebd40
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
       "ends_at": "2025-06-18T16:54:17.946606Z",
+      "instant_key_url": "https://ik.seam.co/ABCXYZ",
       "requested_access_methods": [
         {
           "display_name": "PIN Code Credential",
