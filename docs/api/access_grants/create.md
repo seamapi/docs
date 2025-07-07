@@ -577,6 +577,7 @@ ID of user identity for whom access is being granted.
   ],
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
+  "ends_at": "2025-06-18T16:54:17.946606Z",
   "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
@@ -602,6 +603,7 @@ ID of user identity for whom access is being granted.
     "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
     "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
   ],
+  "starts_at": "2025-06-16T16:54:17.946606Z",
   "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
