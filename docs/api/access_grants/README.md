@@ -29,10 +29,7 @@ An access grant resource.
   ],
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
-  "location_ids": [
-    "9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f",
-    "f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f"
-  ],
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
