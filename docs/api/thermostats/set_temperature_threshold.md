@@ -102,7 +102,6 @@ Sets a temperature threshold for a specified thermostat.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->set_temperature_threshold(
     device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae",
     lower_limit_fahrenheit: 60,
@@ -113,7 +112,7 @@ $seam->thermostats->set_temperature_threshold(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

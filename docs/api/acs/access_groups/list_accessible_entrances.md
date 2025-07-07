@@ -172,7 +172,6 @@ Returns a list of all accessible entrances for a specified access group.
 #### Code
 
 ```php
-<?php
 $seam->acs->access_groups->list_accessible_entrances(
     acs_access_group_id: "1b02a29f-effd-4ce6-8a58-16ec09fd9b50"
 );
@@ -181,7 +180,6 @@ $seam->acs->access_groups->list_accessible_entrances(
 #### Output
 
 ```php
-<?php
 [
     [
         "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",

@@ -90,7 +90,6 @@ Simulates connecting a device to Seam.
 #### Code
 
 ```php
-<?php
 $seam->devices->simulate->connect(
     device_id: "5d703d4f-523f-42af-9439-618415ca651f"
 );
@@ -99,7 +98,7 @@ $seam->devices->simulate->connect(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

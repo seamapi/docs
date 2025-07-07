@@ -743,14 +743,12 @@ Returns a list of all locks. For additional filter parameters, see /devices/list
 #### Code
 
 ```php
-<?php
 $seam->locks->list(limit: 10);
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,

@@ -93,7 +93,6 @@ Deletes an access method.
 #### Code
 
 ```php
-<?php
 $seam->access_methods->delete(
     access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b71"
 );
@@ -102,7 +101,7 @@ $seam->access_methods->delete(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

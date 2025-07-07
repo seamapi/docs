@@ -749,7 +749,6 @@ Returns a list of all devices associated with a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->list_accessible_devices(
     user_identity_id: "f25d14c2-ea01-4e42-80f8-61a6f719be9d"
 );
@@ -758,7 +757,6 @@ $seam->user_identities->list_accessible_devices(
 #### Output
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,

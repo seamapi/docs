@@ -123,7 +123,6 @@ Updates an existing space.
 #### Code
 
 ```php
-<?php
 $seam->spaces->update(
     space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81",
     name: "My Updated Space"
@@ -133,7 +132,6 @@ $seam->spaces->update(
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946600Z",
     "display_name" => "My Updated Space",

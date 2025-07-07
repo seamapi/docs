@@ -129,7 +129,6 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->heat_cool(
     device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
     heating_set_point_celsius: 20,
@@ -140,7 +139,6 @@ $seam->thermostats->heat_cool(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",

@@ -138,14 +138,12 @@ Returns a list of all user identities.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->list();
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-16T16:54:17.946546Z",
@@ -399,7 +397,6 @@ seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-
 #### Code
 
 ```php
-<?php
 $seam->user_identities->list(
     credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287"
 );
@@ -408,7 +405,6 @@ $seam->user_identities->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-16T16:54:17.946546Z",

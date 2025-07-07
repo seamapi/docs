@@ -117,14 +117,12 @@ Returns a specified space.
 #### Code
 
 ```php
-<?php
 $seam->spaces->get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946600Z",
     "display_name" => "My Space",

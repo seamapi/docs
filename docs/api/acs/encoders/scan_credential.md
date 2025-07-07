@@ -349,7 +349,6 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 #### Code
 
 ```php
-<?php
 $seam->acs->encoders->scan_credential(
     acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36"
 );
@@ -358,7 +357,6 @@ $seam->acs->encoders->scan_credential(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
     "action_type" => "SCAN_CREDENTIAL",

@@ -229,7 +229,6 @@ Creates new access codes that share a common code across multiple devices.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->create_multiple(
     device_ids: [
         "d9717800-fa73-401a-b66b-03f0ef950e2a",
@@ -246,7 +245,6 @@ $seam->access_codes->create_multiple(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",

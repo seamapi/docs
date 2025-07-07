@@ -98,7 +98,6 @@ Removes a specified access system user from a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->remove_acs_user(
     user_identity_id: "802633b6-a66c-4911-b57b-323e900ee531",
     acs_user_id: "faa22878-fa74-4ea0-87f7-2b05c1b06181"
@@ -108,7 +107,7 @@ $seam->user_identities->remove_acs_user(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

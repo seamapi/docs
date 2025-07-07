@@ -131,7 +131,6 @@ Generates a new instant key for a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->generate_instant_key(
     user_identity_id: "d92e0c7b-72a1-4063-9ee8-2acefc240358",
     max_use_count: 10
@@ -141,7 +140,6 @@ $seam->user_identities->generate_instant_key(
 #### Output
 
 ```php
-<?php
 [
     "client_session_id" => "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
     "created_at" => "2025-06-14T16:54:17.946559Z",

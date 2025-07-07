@@ -190,7 +190,6 @@ Retrieves a backup access code for an access code.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->pull_backup_access_code(
     access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f"
 );
@@ -199,7 +198,6 @@ $seam->access_codes->pull_backup_access_code(
 #### Output
 
 ```php
-<?php
 [
     "access_code_id" => "8e525b87-5e4b-48a5-a322-5d45262a735f",
     "code" => "1234",

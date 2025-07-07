@@ -192,7 +192,6 @@ Returns a list of all access codes.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->list(
     device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
     limit: 10
@@ -202,7 +201,6 @@ $seam->access_codes->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",

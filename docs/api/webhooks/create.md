@@ -122,7 +122,6 @@ Creates a new webhook.
 #### Code
 
 ```php
-<?php
 $seam->webhooks->create(
     url: "https://example.com",
     event_types: ["device.connected", "device.disconnected"]
@@ -132,7 +131,6 @@ $seam->webhooks->create(
 #### Output
 
 ```php
-<?php
 [
     "event_types" => ["device.connected", "device.disconnected"],
     "secret" => "mySecret",

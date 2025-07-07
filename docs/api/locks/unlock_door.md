@@ -117,14 +117,12 @@ Unlocks a lock.
 #### Code
 
 ```php
-<?php
 $seam->locks->unlock_door(device_id: "be047431-bf00-4da6-9fc7-0a7796a9b57f");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
     "action_type" => "UNLOCK_DOOR",

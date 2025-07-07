@@ -117,14 +117,12 @@ Sets a specified thermostat to "off" mode.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",

@@ -268,7 +268,6 @@ Returns a specified unmanaged device, using an ID.
 #### Code
 
 ```php
-<?php
 $seam->devices->unmanaged->get(
     device_id: "9f871e41-0ce4-4825-8d99-9653df4cd525"
 );
@@ -277,7 +276,6 @@ $seam->devices->unmanaged->get(
 #### Output
 
 ```php
-<?php
 [
     "can_program_offline_access_codes" => false,
     "can_program_online_access_codes" => true,
@@ -734,14 +732,12 @@ seam.devices.unmanaged.get(name: "My Unmanaged Device")
 #### Code
 
 ```php
-<?php
 $seam->devices->unmanaged->get(name: "My Unmanaged Device");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "can_program_offline_access_codes" => false,
     "can_program_online_access_codes" => true,

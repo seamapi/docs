@@ -159,7 +159,6 @@ Returns a specified connected account, using an ID.
 #### Code
 
 ```php
-<?php
 $seam->connected_accounts->get(
     connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d"
 );
@@ -168,7 +167,6 @@ $seam->connected_accounts->get(
 #### Output
 
 ```php
-<?php
 [
     "account_type" => "salto_space",
     "account_type_display_name" => "Salto Space",
@@ -444,14 +442,12 @@ seam.connected_accounts.get(email: "jane_doe@example.com")
 #### Code
 
 ```php
-<?php
 $seam->connected_accounts->get(email: "jane_doe@example.com");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "account_type" => "salto_space",
     "account_type_display_name" => "Salto Space",

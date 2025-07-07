@@ -90,7 +90,6 @@ Simulates disconnecting a device from Seam.
 #### Code
 
 ```php
-<?php
 $seam->devices->simulate->disconnect(
     device_id: "a60686b8-f401-452d-9f67-53d139cf6160"
 );
@@ -99,7 +98,7 @@ $seam->devices->simulate->disconnect(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

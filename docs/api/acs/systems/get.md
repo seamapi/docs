@@ -167,14 +167,12 @@ Returns a specified access system.
 #### Code
 
 ```php
-<?php
 $seam->acs->systems->get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "acs_access_group_count" => 5,
     "acs_system_id" => "4720a2ac-59b5-4e55-96fc-52b3cbe95907",

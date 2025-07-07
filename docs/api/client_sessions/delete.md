@@ -90,7 +90,6 @@ Deletes a client session.
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->delete(
     client_session_id: "d149de35-cfad-46fe-a78e-f71f649e7a37"
 );
@@ -99,7 +98,7 @@ $seam->client_sessions->delete(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

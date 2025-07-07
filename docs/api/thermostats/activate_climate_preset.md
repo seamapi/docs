@@ -124,7 +124,6 @@ Activates a specified climate preset for a specified thermostat.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->activate_climate_preset(
     device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
     climate_preset_key: "Eco"
@@ -134,7 +133,6 @@ $seam->thermostats->activate_climate_preset(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
     "action_type" => "ACTIVATE_CLIMATE_PRESET",

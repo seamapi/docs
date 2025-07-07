@@ -152,7 +152,6 @@ Returns a list of all unmanaged access codes.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->unmanaged->list(
     device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1"
 );
@@ -161,7 +160,6 @@ $seam->access_codes->unmanaged->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf",

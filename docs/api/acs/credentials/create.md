@@ -203,7 +203,6 @@ Creates a new PIN code credential for a specified access system user, using the 
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->create(
     credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
     user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
@@ -219,7 +218,6 @@ $seam->acs->credentials->create(
 #### Output
 
 ```php
-<?php
 [
     "access_method" => "code",
     "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
@@ -769,7 +767,6 @@ seam.acs.credentials.create(
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->create(
     credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
     acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
@@ -785,7 +782,6 @@ $seam->acs->credentials->create(
 #### Output
 
 ```php
-<?php
 [
     "access_method" => "code",
     "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
@@ -1053,7 +1049,6 @@ seam.acs.credentials.create(
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->create(
     credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
     user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
@@ -1069,7 +1064,6 @@ $seam->acs->credentials->create(
 #### Output
 
 ```php
-<?php
 [
     "access_method" => "card",
     "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
@@ -1335,7 +1329,6 @@ seam.acs.credentials.create(
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->create(
     credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
     acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
@@ -1351,7 +1344,6 @@ $seam->acs->credentials->create(
 #### Output
 
 ```php
-<?php
 [
     "access_method" => "card",
     "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
@@ -1611,7 +1603,6 @@ seam.acs.credentials.create(
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->create(
     credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
     user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
@@ -1627,7 +1618,6 @@ $seam->acs->credentials->create(
 #### Output
 
 ```php
-<?php
 [
     "access_method" => "mobile_key",
     "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
@@ -1887,7 +1877,6 @@ seam.acs.credentials.create(
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->create(
     credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
     acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
@@ -1903,7 +1892,6 @@ $seam->acs->credentials->create(
 #### Output
 
 ```php
-<?php
 [
     "access_method" => "mobile_key",
     "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",

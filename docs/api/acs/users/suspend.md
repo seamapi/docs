@@ -99,7 +99,6 @@ Suspends a specified access system user, using the associated user identity.
 #### Code
 
 ```php
-<?php
 $seam->acs->users->suspend(
     user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c",
     acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d"
@@ -109,7 +108,7 @@ $seam->acs->users->suspend(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -263,14 +262,13 @@ nil
 #### Code
 
 ```php
-<?php
 $seam->acs->users->suspend(acs_user_id: "8f934186-1dbc-4098-9f66-d1b202abec9d");
 ```
 
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

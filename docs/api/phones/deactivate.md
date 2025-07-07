@@ -90,14 +90,13 @@ Deactivates a phone, which is useful, for example, if a user has lost their phon
 #### Code
 
 ```php
-<?php
 $seam->phones->deactivate(device_id: "6481cd6a-579f-4d8c-9adb-b42bf9fb697e");
 ```
 
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

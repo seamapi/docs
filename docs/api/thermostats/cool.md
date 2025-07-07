@@ -124,7 +124,6 @@ Sets a specified thermostat to cool mode.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->cool(
     device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
     cooling_set_point_fahrenheit: 75
@@ -134,7 +133,6 @@ $seam->thermostats->cool(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",

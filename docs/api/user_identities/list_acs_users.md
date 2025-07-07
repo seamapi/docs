@@ -210,7 +210,6 @@ Returns a list of all access system users assigned to a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->list_acs_users(
     user_identity_id: "b0dc10f2-3971-440e-af25-dab964e5c281"
 );
@@ -219,7 +218,6 @@ $seam->user_identities->list_acs_users(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [

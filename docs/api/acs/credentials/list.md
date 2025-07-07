@@ -169,14 +169,12 @@ Returns a list of all credentials.
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->list();
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "access_method" => "code",

@@ -97,7 +97,6 @@ Simulates a thermostat reaching a specified temperature.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->simulate->temperature_reached(
     device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
     temperature_celsius: 25
@@ -107,7 +106,7 @@ $seam->thermostats->simulate->temperature_reached(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

@@ -124,7 +124,6 @@ Simulates the entry of a code on a keypad.
 #### Code
 
 ```php
-<?php
 $seam->locks->simulate->keypad_code_entry(
     device_id: "97a7a706-05a9-405c-91e5-b03e5b9c2003",
     code: "1234"
@@ -134,7 +133,6 @@ $seam->locks->simulate->keypad_code_entry(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
     "action_type" => "SIMULATE_KEYPAD_CODE_ENTRY",

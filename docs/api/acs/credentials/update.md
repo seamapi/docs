@@ -102,7 +102,6 @@ Updates the code and ends at date and time for a specified credential.
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->update(
     acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
     code: "1234",
@@ -113,7 +112,7 @@ $seam->acs->credentials->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

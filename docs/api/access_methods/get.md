@@ -127,7 +127,6 @@ Returns a specified access method.
 #### Code
 
 ```php
-<?php
 $seam->access_methods->get(
     access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
 );
@@ -136,7 +135,6 @@ $seam->access_methods->get(
 #### Output
 
 ```php
-<?php
 [
     "access_method_id" => "7410aea4-6bed-490c-a602-dd417d9cd075",
     "created_at" => "2025-06-14T16:54:17.946612Z",

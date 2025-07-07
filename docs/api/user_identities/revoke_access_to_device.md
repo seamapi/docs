@@ -98,7 +98,6 @@ Revokes access to a specified device from a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->revoke_access_to_device(
     user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
     device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5"
@@ -108,7 +107,7 @@ $seam->user_identities->revoke_access_to_device(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

@@ -181,7 +181,6 @@ Returns a specified Connect Webview.
 #### Code
 
 ```php
-<?php
 $seam->connect_webviews->get(
     connect_webview_id: "c4c30885-ec87-4b31-8d7b-9bc0678fa028"
 );
@@ -190,7 +189,6 @@ $seam->connect_webviews->get(
 #### Output
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],

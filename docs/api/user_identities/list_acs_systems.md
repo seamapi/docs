@@ -177,7 +177,6 @@ Returns a list of all access systems associated with a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->list_acs_systems(
     user_identity_id: "77e0347d-35ac-4a21-962b-e757a446b47f"
 );
@@ -186,7 +185,6 @@ $seam->user_identities->list_acs_systems(
 #### Output
 
 ```php
-<?php
 [
     [
         "acs_access_group_count" => 5,

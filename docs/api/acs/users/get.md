@@ -209,7 +209,6 @@ Returns a specified access system user.
 #### Code
 
 ```php
-<?php
 $seam->acs->users->get(
     user_identity_id: "cde1ec76-5b0d-4b3e-9b85-d80dcc9b599c",
     acs_system_id: "f4d2b3fb-7fa5-47fd-b0d3-aa6da8f5b710"
@@ -219,7 +218,6 @@ $seam->acs->users->get(
 #### Output
 
 ```php
-<?php
 [
     "access_schedule" => [
         "ends_at" => "2025-06-12T11:00:00.000Z",
@@ -584,14 +582,12 @@ seam.acs.users.get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08")
 #### Code
 
 ```php
-<?php
 $seam->acs->users->get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "access_schedule" => [
         "ends_at" => "2025-06-12T11:00:00.000Z",

@@ -112,7 +112,6 @@ Updates a specified active or upcoming access code.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->update(
     access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
     name: "My Updated Access Code",
@@ -125,7 +124,7 @@ $seam->access_codes->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 
