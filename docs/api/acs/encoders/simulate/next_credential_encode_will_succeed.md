@@ -98,7 +98,6 @@ Simulates that the next attempt to encode a credential using the specified encod
 #### Code
 
 ```php
-<?php
 $seam->acs->encoders->simulate->next_credential_encode_will_succeed(
     acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
     scenario: "credential_is_issued"
@@ -108,7 +107,7 @@ $seam->acs->encoders->simulate->next_credential_encode_will_succeed(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

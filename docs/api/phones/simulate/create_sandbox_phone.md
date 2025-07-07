@@ -237,7 +237,6 @@ Creates a new simulated phone in a sandbox workspace.
 #### Code
 
 ```php
-<?php
 $seam->phones->simulate->create_sandbox_phone(
     custom_sdk_installation_id: "visionline_sdk",
     user_identity_id: "799f9914-f2c2-4087-ab34-f1ffb44d6a0b",
@@ -261,7 +260,6 @@ $seam->phones->simulate->create_sandbox_phone(
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-14T16:54:17.946540Z",
     "custom_metadata" => ["id" => "internalId1"],

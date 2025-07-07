@@ -99,7 +99,6 @@ Deletes a specified access system user and invalidates the access system user's 
 #### Code
 
 ```php
-<?php
 $seam->acs->users->delete(
     user_identity_id: "586c225c-b05c-4af4-8679-9c8a46066cce",
     acs_system_id: "1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64"
@@ -109,7 +108,7 @@ $seam->acs->users->delete(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -263,14 +262,13 @@ nil
 #### Code
 
 ```php
-<?php
 $seam->acs->users->delete(acs_user_id: "8d483a94-5cbc-425a-a6ee-bd9825820c26");
 ```
 
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

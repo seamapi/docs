@@ -110,7 +110,6 @@ Updates a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->update(
     user_identity_id: "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
     user_identity_key: "jane_doe",
@@ -123,7 +122,7 @@ $seam->user_identities->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

@@ -137,7 +137,6 @@ Returns a specified user identity, using a user identity ID.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->get(
     user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b"
 );
@@ -146,7 +145,6 @@ $seam->user_identities->get(
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946546Z",
     "display_name" => "Jane Doe",
@@ -381,14 +379,12 @@ seam.user_identities.get(user_identity_key: "jane_doe")
 #### Code
 
 ```php
-<?php
 $seam->user_identities->get(user_identity_key: "jane_doe");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946546Z",
     "display_name" => "Jane Doe",

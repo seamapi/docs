@@ -124,7 +124,6 @@ Sets the fan mode setting for a specified thermostat.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->set_fan_mode(
     device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
     fan_mode_setting: "auto"
@@ -134,7 +133,6 @@ $seam->thermostats->set_fan_mode(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
     "action_type" => "SET_FAN_MODE",

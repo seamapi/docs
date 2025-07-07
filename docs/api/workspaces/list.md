@@ -150,14 +150,12 @@ Returns a list of workspaces associated with the authentication value.
 #### Code
 
 ```php
-<?php
 $seam->workspaces->list();
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "company_name" => "Acme",

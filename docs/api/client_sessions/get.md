@@ -141,7 +141,6 @@ Returns a specified client session by ID.
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->get(
     client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c1"
 );
@@ -150,7 +149,6 @@ $seam->client_sessions->get(
 #### Output
 
 ```php
-<?php
 [
     "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
     "connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],
@@ -396,14 +394,12 @@ seam.client_sessions.get(user_identifier_key: "jane_doe")
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->get(user_identifier_key: "jane_doe");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
     "connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],

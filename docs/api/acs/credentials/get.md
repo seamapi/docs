@@ -168,7 +168,6 @@ Returns a specified credential.
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->get(
     acs_credential_id: "f2b8eaa6-5e6d-433f-87cc-a283f4df688d"
 );
@@ -177,7 +176,6 @@ $seam->acs->credentials->get(
 #### Output
 
 ```php
-<?php
 [
     "access_method" => "code",
     "acs_credential_id" => "f2b8eaa6-5e6d-433f-87cc-a283f4df688d",

@@ -164,7 +164,6 @@ Returns a client session with specific characteristics or creates a new client s
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->get_or_create(
     user_identifier_key: "jane_doe",
     connect_webview_ids: ["5e297cfe-23df-4638-bb87-08c4f0f8233b"],
@@ -177,7 +176,6 @@ $seam->client_sessions->get_or_create(
 #### Output
 
 ```php
-<?php
 [
     "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
     "connect_webview_ids" => ["5e297cfe-23df-4638-bb87-08c4f0f8233b"],

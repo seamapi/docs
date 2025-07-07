@@ -110,7 +110,6 @@ Updates a specified webhook.
 #### Code
 
 ```php
-<?php
 $seam->webhooks->update(
     webhook_id: "e294905f-e7a5-4804-95a6-303f440eb262",
     event_types: [
@@ -124,7 +123,7 @@ $seam->webhooks->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

@@ -182,7 +182,6 @@ Returns a list of all phones, using the owner's user identity ID.
 #### Code
 
 ```php
-<?php
 $seam->phones->list(
     owner_user_identity_id: "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4"
 );
@@ -191,7 +190,6 @@ $seam->phones->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-14T16:54:17.946540Z",
@@ -509,14 +507,12 @@ seam.phones.list(acs_credential_id: "6617f81a-d601-4e33-9052-f44bf1b4ed2b")
 #### Code
 
 ```php
-<?php
 $seam->phones->list(acs_credential_id: "6617f81a-d601-4e33-9052-f44bf1b4ed2b");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-14T16:54:17.946540Z",

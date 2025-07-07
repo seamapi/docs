@@ -182,7 +182,6 @@ Returns a specified access code.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->get(
     access_code_id: "90a114dc-48b5-4b8b-a3d3-972344594401"
 );
@@ -191,7 +190,6 @@ $seam->access_codes->get(
 #### Output
 
 ```php
-<?php
 [
     "access_code_id" => "90a114dc-48b5-4b8b-a3d3-972344594401",
     "code" => "1234",

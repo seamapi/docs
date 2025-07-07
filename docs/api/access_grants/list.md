@@ -288,7 +288,6 @@ Returns a list of all access grants.
 #### Code
 
 ```php
-<?php
 $seam->access_grants->list(
     user_identity_id: "f7620fcf-d92f-471e-b97e-3806daeebd40",
     acs_system_id: "9f169742-048a-4105-84e3-bd1e0f9dc790",
@@ -300,7 +299,6 @@ $seam->access_grants->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_grant" => [

@@ -135,7 +135,6 @@ Creates a new space.
 #### Code
 
 ```php
-<?php
 $seam->spaces->create(
     name: "My Space",
     device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
@@ -146,7 +145,6 @@ $seam->spaces->create(
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946600Z",
     "display_name" => "My Space",

@@ -119,7 +119,6 @@ Simulates a manual lock action using a keypad.
 #### Code
 
 ```php
-<?php
 $seam->locks->simulate->manual_lock_via_keypad(
     device_id: "d0eed522-8c2f-4905-88fd-4fe8b067bedc"
 );
@@ -128,7 +127,6 @@ $seam->locks->simulate->manual_lock_via_keypad(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f",
     "action_type" => "SIMULATE_MANUAL_LOCK_VIA_KEYPAD",

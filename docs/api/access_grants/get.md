@@ -244,7 +244,6 @@ Returns a specified access grant.
 #### Code
 
 ```php
-<?php
 $seam->access_grants->get(
     access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 );
@@ -253,7 +252,6 @@ $seam->access_grants->get(
 #### Output
 
 ```php
-<?php
 [
     "access_grant_id" => "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
     "access_method_ids" => [

@@ -160,7 +160,6 @@ Returns a specified access system entrance.
 #### Code
 
 ```php
-<?php
 $seam->acs->entrances->get(
     acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1"
 );
@@ -169,7 +168,6 @@ $seam->acs->entrances->get(
 #### Output
 
 ```php
-<?php
 [
     "acs_entrance_id" => "c931c953-4a5b-4f66-9189-500d39959ad1",
     "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",

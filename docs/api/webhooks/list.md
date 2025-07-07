@@ -113,14 +113,12 @@ Returns a list of all webhooks.
 #### Code
 
 ```php
-<?php
 $seam->webhooks->list();
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "event_types" => ["device.connected", "device.disconnected"],

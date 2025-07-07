@@ -106,7 +106,6 @@ Updates a specified unmanaged access code.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->unmanaged->update(
     access_code_id: "ebd8e488-db1b-4f4b-9d02-489fbfa6829a",
     is_managed: true,
@@ -118,7 +117,7 @@ $seam->access_codes->unmanaged->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

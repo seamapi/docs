@@ -99,7 +99,6 @@ Removes a specified access system user from a specified access group, using the 
 #### Code
 
 ```php
-<?php
 $seam->acs->access_groups->remove_user(
     acs_access_group_id: "e320069d-59ba-4adb-a465-f4f01a833e07",
     user_identity_id: "3d662a00-5d7c-41b4-aee7-16c385964149"
@@ -109,7 +108,7 @@ $seam->acs->access_groups->remove_user(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -271,7 +270,6 @@ nil
 #### Code
 
 ```php
-<?php
 $seam->acs->access_groups->remove_user(
     acs_access_group_id: "e320069d-59ba-4adb-a465-f4f01a833e07",
     acs_user_id: "64cfac1f-61c0-4c76-8fa2-3e9ab680edc8"
@@ -281,7 +279,7 @@ $seam->acs->access_groups->remove_user(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

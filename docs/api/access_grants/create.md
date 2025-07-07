@@ -292,7 +292,6 @@ Creates a new access grant using space IDs and an existing user identity.
 #### Code
 
 ```php
-<?php
 $seam->access_grants->create(
     user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
     space_ids: [
@@ -312,7 +311,6 @@ $seam->access_grants->create(
 #### Output
 
 ```php
-<?php
 [
     "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
     "access_method_ids" => [
@@ -794,7 +792,6 @@ seam.access_grants.create(
 #### Code
 
 ```php
-<?php
 $seam->access_grants->create(
     user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
     acs_entrance_ids: [
@@ -818,7 +815,6 @@ $seam->access_grants->create(
 #### Output
 
 ```php
-<?php
 [
     "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
     "access_method_ids" => [
@@ -1161,7 +1157,6 @@ seam.access_grants.create(
 #### Code
 
 ```php
-<?php
 $seam->access_grants->create(
     user_identity: [
         "full_name" => "Jane Doe",
@@ -1185,7 +1180,6 @@ $seam->access_grants->create(
 #### Output
 
 ```php
-<?php
 [
     "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
     "access_method_ids" => [

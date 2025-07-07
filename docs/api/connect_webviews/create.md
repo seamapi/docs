@@ -349,7 +349,6 @@ Creates a new Connect Webview that accepts all stable providers.
 #### Code
 
 ```php
-<?php
 $seam->connect_webviews->create(
     custom_redirect_url: "https://example.com/redirect",
     custom_redirect_failure_url: "https://example.com/failure-redirect",
@@ -365,7 +364,6 @@ $seam->connect_webviews->create(
 #### Output
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],
@@ -895,7 +893,6 @@ seam.connect_webviews.create(
 #### Code
 
 ```php
-<?php
 $seam->connect_webviews->create(
     custom_redirect_url: "https://example.com/redirect",
     custom_redirect_failure_url: "https://example.com/failure-redirect",
@@ -912,7 +909,6 @@ $seam->connect_webviews->create(
 #### Output
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],

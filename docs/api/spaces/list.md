@@ -120,14 +120,12 @@ Returns a list of all spaces.
 #### Code
 
 ```php
-<?php
 $seam->spaces->list();
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-16T16:54:17.946600Z",

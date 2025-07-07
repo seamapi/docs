@@ -98,7 +98,6 @@ Deletes a noise threshold from a noise sensor.
 #### Code
 
 ```php
-<?php
 $seam->noise_sensors->noise_thresholds->delete(
     noise_threshold_id: "00fbac13-6602-4079-b4ae-c89d5dcbed35",
     device_id: "736fc5bf-192d-4416-b879-66ff0195f2f7"
@@ -108,7 +107,7 @@ $seam->noise_sensors->noise_thresholds->delete(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

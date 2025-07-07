@@ -103,7 +103,6 @@ Removes entrances from a specific space.
 #### Code
 
 ```php
-<?php
 $seam->spaces->remove_acs_entrances(
     space_id: "674e511a-06c6-4734-b4ce-af467496d5fe",
     acs_entrance_ids: ["fd859a36-199b-4c2f-894a-24d52621f6a4"]
@@ -113,7 +112,7 @@ $seam->spaces->remove_acs_entrances(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

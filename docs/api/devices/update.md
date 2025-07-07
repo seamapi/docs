@@ -112,7 +112,6 @@ Updates a specified device.
 #### Code
 
 ```php
-<?php
 $seam->devices->update(
     device_id: "ccfab465-4838-4ff3-af62-97c78e8bf44b",
     name: "My Updated Device",
@@ -124,7 +123,7 @@ $seam->devices->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

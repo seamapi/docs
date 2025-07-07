@@ -142,14 +142,12 @@ Returns the workspace associated with the authentication value.
 #### Code
 
 ```php
-<?php
 $seam->workspaces->get();
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "company_name" => "Acme",
     "connect_partner_name" => "Acme",

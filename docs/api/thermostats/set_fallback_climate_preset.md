@@ -97,7 +97,6 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 #### Code
 
 ```php
-<?php
 $seam->thermostats->set_fallback_climate_preset(
     device_id: "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
     climate_preset_key: "Eco"
@@ -107,7 +106,7 @@ $seam->thermostats->set_fallback_climate_preset(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

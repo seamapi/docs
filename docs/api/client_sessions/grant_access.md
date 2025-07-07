@@ -114,7 +114,6 @@ Grants a client session access to one or more resources, such as Connect Webview
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->grant_access(
     client_session_id: "3ada79d3-2848-4320-b2ef-a82e1e6dafac",
     user_identifier_key: "jane_doe",
@@ -127,7 +126,7 @@ $seam->client_sessions->grant_access(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

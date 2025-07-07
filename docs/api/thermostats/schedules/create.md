@@ -168,7 +168,6 @@ Creates a new thermostat schedule for a specified thermostat.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->schedules->create(
     device_id: "d710aa35-232d-442b-a817-c28045de1c74",
     name: "Jane's Stay",
@@ -183,7 +182,6 @@ $seam->thermostats->schedules->create(
 #### Output
 
 ```php
-<?php
 [
     "climate_preset_key" => "Occupied",
     "created_at" => "2025-06-14T16:54:17.946316Z",
