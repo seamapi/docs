@@ -28,7 +28,7 @@ await seam.userIdentities.generateInstantKey({
   "created_at": "2025-06-14T16:54:17.946559Z",
   "expires_at": "2025-06-16T16:54:17.946559Z",
   "instant_key_id": "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
-  "instant_key_url": "https://se.am/1234",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "user_identity_id": "d92e0c7b-72a1-4063-9ee8-2acefc240358",
   "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
@@ -61,7 +61,7 @@ EOF
     "created_at": "2025-06-14T16:54:17.946559Z",
     "expires_at": "2025-06-16T16:54:17.946559Z",
     "instant_key_id": "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
-    "instant_key_url": "https://se.am/1234",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
     "user_identity_id": "d92e0c7b-72a1-4063-9ee8-2acefc240358",
     "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
   }
@@ -89,7 +89,7 @@ InstantKey(
     created_at="2025-06-14T16:54:17.946559Z",
     expires_at="2025-06-16T16:54:17.946559Z",
     instant_key_id="1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
-    instant_key_url="https://se.am/1234",
+    instant_key_url="https://ik.seam.co/ABCXYZ",
     user_identity_id="d92e0c7b-72a1-4063-9ee8-2acefc240358",
     workspace_id="4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 )
@@ -117,7 +117,7 @@ seam.user_identities.generate_instant_key(
   "created_at" => "2025-06-14T16:54:17.946559Z",
   "expires_at" => "2025-06-16T16:54:17.946559Z",
   "instant_key_id" => "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
-  "instant_key_url" => "https://se.am/1234",
+  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
   "user_identity_id" => "d92e0c7b-72a1-4063-9ee8-2acefc240358",
   "workspace_id" => "4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 }
@@ -147,7 +147,7 @@ $seam->user_identities->generate_instant_key(
     "created_at" => "2025-06-14T16:54:17.946559Z",
     "expires_at" => "2025-06-16T16:54:17.946559Z",
     "instant_key_id" => "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
-    "instant_key_url" => "https://se.am/1234",
+    "instant_key_url" => "https://ik.seam.co/ABCXYZ",
     "user_identity_id" => "d92e0c7b-72a1-4063-9ee8-2acefc240358",
     "workspace_id" => "4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 ];
@@ -172,7 +172,7 @@ seam user-identities generate-instant-key --user_identity_id "d92e0c7b-72a1-4063
   "created_at": "2025-06-14T16:54:17.946559Z",
   "expires_at": "2025-06-16T16:54:17.946559Z",
   "instant_key_id": "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
-  "instant_key_url": "https://se.am/1234",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "user_identity_id": "d92e0c7b-72a1-4063-9ee8-2acefc240358",
   "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
@@ -224,7 +224,7 @@ Maximum number of times the instant key can be used. Default: 1.
   "created_at": "2025-06-14T16:54:17.946559Z",
   "expires_at": "2025-06-16T16:54:17.946559Z",
   "instant_key_id": "1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9",
-  "instant_key_url": "https://se.am/1234",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "user_identity_id": "e7a94acb-bd8a-4462-b6fb-8612d35cd7c3",
   "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
