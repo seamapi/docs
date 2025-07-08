@@ -104,6 +104,11 @@ Deletes a space.
 Gets a space.
 
 
+[**`/spaces/get_related`**](./get_related.md)
+
+Gets all related resources for one or more Spaces.
+
+
 [**`/spaces/list`**](./list.md)
 
 Returns a list of all spaces.

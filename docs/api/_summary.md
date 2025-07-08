@@ -143,6 +143,7 @@
   * [Create a Space](api/spaces/create.md)
   * [Delete a Space](api/spaces/delete.md)
   * [Get a Space](api/spaces/get.md)
+  * [Get related Space resources](api/spaces/get_related.md)
   * [List Spaces](api/spaces/list.md)
   * [Remove Devices from a Space](api/spaces/remove_devices.md)
   * [Remove Entrances from a Space](api/spaces/remove_acs_entrances.md)

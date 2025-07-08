@@ -368,6 +368,9 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/noise_thresholds/update`
     - `sync`
+- `/spaces/get_related`
+    - `exclude`
+    - `include`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -423,6 +426,7 @@ These items have been marked as draft.
 - `/spaces/create`: Early access.
 - `/spaces/delete`: Early access.
 - `/spaces/get`: Early access.
+- `/spaces/get_related`: Early access.
 - `/spaces/list`: Early access.
 - `/spaces/remove_acs_entrances`: Early access.
 - `/spaces/remove_devices`: Early access.
@@ -535,6 +539,7 @@ These items are deprecated.
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
+- `/spaces/get_related`: `batch`
 
 ### Endpoints without code samples
 
@@ -544,6 +549,7 @@ These items are deprecated.
 - `/devices/simulate/connect_to_hub`
 - `/devices/simulate/disconnect_from_hub`
 - `/locks/get`
+- `/spaces/get_related`
 - `/user_identities/enrollment_automations/delete`
 - `/user_identities/enrollment_automations/get`
 - `/user_identities/enrollment_automations/launch`
