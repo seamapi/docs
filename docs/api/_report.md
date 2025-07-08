@@ -541,6 +541,8 @@ These items are deprecated.
 - `/access_methods/encode`
 - `/customers/create_portal`
 - `/customers/push_data`
+- `/devices/simulate/connect_to_hub`
+- `/devices/simulate/disconnect_from_hub`
 - `/locks/get`
 - `/user_identities/enrollment_automations/delete`
 - `/user_identities/enrollment_automations/get`

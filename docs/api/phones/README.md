@@ -214,6 +214,10 @@ A phone device was deactivated.
 
   Date and time at which the event was created.
 
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device; present when device_id is provided.
+
 <strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the affected phone device.

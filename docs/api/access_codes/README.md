@@ -2744,6 +2744,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2751,6 +2755,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2787,6 +2795,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2794,6 +2806,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2834,6 +2850,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   Code for the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2841,6 +2861,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2881,6 +2905,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   Code for the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2888,6 +2916,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2924,6 +2956,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2931,6 +2967,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2967,6 +3007,10 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2974,6 +3018,10 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3010,6 +3058,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -3017,6 +3069,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3057,6 +3113,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   Code for the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -3064,6 +3124,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3100,6 +3164,10 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -3107,6 +3175,10 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3143,6 +3215,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -3150,6 +3226,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3186,6 +3266,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -3193,6 +3277,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3229,6 +3317,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -3236,6 +3328,10 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3274,6 +3370,10 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 <strong><code>backup_access_code_id</code></strong> <i>String</i>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -3281,6 +3381,10 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 

@@ -592,6 +592,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 
   ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
@@ -630,6 +634,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was crea
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
   ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
@@ -670,6 +678,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) had a su
 
   ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
@@ -704,6 +716,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 <details>
 
 <summary>Properties</summary>
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
@@ -740,6 +756,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
@@ -775,6 +795,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
@@ -809,6 +833,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 <details>
 
 <summary>Properties</summary>
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 

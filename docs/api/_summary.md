@@ -107,6 +107,8 @@
     * [Simulate Device Connection](api/devices/simulate/connect.md)
     * [Simulate Device Disconnection](api/devices/simulate/disconnect.md)
     * [Simulate Device Removal](api/devices/simulate/remove.md)
+    * [Simulate Hub Connection](api/devices/simulate/connect_to_hub.md)
+    * [Simulate Hub Disconnection](api/devices/simulate/disconnect_from_hub.md)
   * [Unmanaged Devices](api/devices/unmanaged/README.md)
     * [Get an Unmanaged Device](api/devices/unmanaged/get.md)
     * [List Unmanaged Devices](api/devices/unmanaged/list.md)
