@@ -3835,6 +3835,10 @@ A thermostat [climate preset](../../capability-guides/thermostats/creating-and-m
 
   Key of the climate preset that was activated.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3842,6 +3846,10 @@ A thermostat [climate preset](../../capability-guides/thermostats/creating-and-m
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3882,6 +3890,10 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3897,6 +3909,10 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3970,6 +3986,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3977,6 +3997,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4033,6 +4057,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4040,6 +4068,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4096,6 +4128,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4111,6 +4147,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 <strong><code>desired_temperature_fahrenheit</code></strong> <i>Number</i>
 
   Desired temperature, in °F, defined by the affected thermostat's cooling or heating set point.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4151,6 +4191,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4158,6 +4202,10 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 

@@ -25,6 +25,7 @@ A user identity resource.
   "phone_number": "+1555551002",
   "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "user_identity_key": "jane_doe",
+  "acs_user_ids": ["0fc82df4-391b-4d00-a234-86378f1c3952"],
   "warnings": [],
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
@@ -34,6 +35,15 @@ A user identity resource.
 
 ---
 ## Properties
+
+**`acs_user_ids`** *List* *of UUIDs*
+
+Array of access system user IDs associated with the user identity.
+
+
+
+
+---
 
 **`created_at`** *Datetime*
 

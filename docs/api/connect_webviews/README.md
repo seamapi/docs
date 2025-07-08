@@ -244,6 +244,10 @@ A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) 
 
   ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account; present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.

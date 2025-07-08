@@ -4551,6 +4551,10 @@ The status of a [device](../../core-concepts/devices/README.md) changed from off
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4558,6 +4562,10 @@ The status of a [device](../../core-concepts/devices/README.md) changed from off
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4590,6 +4598,10 @@ A [device](../../core-concepts/devices/README.md) was added to Seam or was re-ad
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4597,6 +4609,10 @@ A [device](../../core-concepts/devices/README.md) was added to Seam or was re-ad
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4629,6 +4645,10 @@ A managed device was successfully converted to an [unmanaged device](../../core-
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4636,6 +4656,10 @@ A managed device was successfully converted to an [unmanaged device](../../core-
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4668,6 +4692,10 @@ The status of a [device](../../core-concepts/devices/README.md) changed from onl
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4675,6 +4703,10 @@ The status of a [device](../../core-concepts/devices/README.md) changed from onl
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4718,6 +4750,10 @@ A [device](../../core-concepts/devices/README.md) detected that it was tampered 
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4725,6 +4761,10 @@ A [device](../../core-concepts/devices/README.md) detected that it was tampered 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4761,6 +4801,10 @@ A [device](../../core-concepts/devices/README.md) battery level dropped below th
 
   Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4768,6 +4812,10 @@ A [device](../../core-concepts/devices/README.md) battery level dropped below th
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4816,6 +4864,10 @@ A [device](../../core-concepts/devices/README.md) battery status changed since t
     - <code>full</code>
 </details>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4823,6 +4875,10 @@ A [device](../../core-concepts/devices/README.md) battery status changed since t
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4855,6 +4911,10 @@ A [device](../../core-concepts/devices/README.md) was removed externally from th
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4862,6 +4922,10 @@ A [device](../../core-concepts/devices/README.md) was removed externally from th
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4894,6 +4958,10 @@ A [device](../../core-concepts/devices/README.md) was deleted.
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4901,6 +4969,10 @@ A [device](../../core-concepts/devices/README.md) was deleted.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4933,6 +5005,10 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is using a 
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4940,6 +5016,10 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is using a 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -4972,6 +5052,10 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is no longe
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -4979,6 +5063,10 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is no longe
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5011,6 +5099,10 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5018,6 +5110,10 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5050,6 +5146,10 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5057,6 +5157,10 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5089,6 +5193,10 @@ Seam detected a flaky [device](../../core-concepts/devices/README.md) connection
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5096,6 +5204,10 @@ Seam detected a flaky [device](../../core-concepts/devices/README.md) connection
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5128,6 +5240,10 @@ Seam detected that a previously-flaky [device](../../core-concepts/devices/READM
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5135,6 +5251,10 @@ Seam detected that a previously-flaky [device](../../core-concepts/devices/READM
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5167,6 +5287,10 @@ A third-party subscription is required to use all [device](../../core-concepts/d
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5174,6 +5298,10 @@ A third-party subscription is required to use all [device](../../core-concepts/d
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5206,6 +5334,10 @@ A third-party subscription is active or no longer required to use all [device](.
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5213,6 +5345,10 @@ A third-party subscription is active or no longer required to use all [device](.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5245,6 +5381,10 @@ An accessory keypad was connected to a [device](../../core-concepts/devices/READ
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5252,6 +5392,10 @@ An accessory keypad was connected to a [device](../../core-concepts/devices/READ
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5284,6 +5428,10 @@ An accessory keypad was disconnected from a [device](../../core-concepts/devices
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5291,6 +5439,10 @@ An accessory keypad was disconnected from a [device](../../core-concepts/devices
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -5323,6 +5475,10 @@ The name of a [device](../../core-concepts/devices/README.md) was changed.
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -5330,6 +5486,10 @@ The name of a [device](../../core-concepts/devices/README.md) was changed.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 

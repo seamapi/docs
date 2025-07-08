@@ -272,6 +272,12 @@ ID of the credential for which you want to retrieve all entrances.
 
 ---
 
+**`acs_entrance_ids`** *Array* *of UUIDs*
+
+IDs of the entrances for which you want to retrieve all entrances.
+
+---
+
 **`acs_system_id`** *String*
 
 ID of the access system for which you want to retrieve all entrances.

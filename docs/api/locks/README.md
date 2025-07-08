@@ -3147,6 +3147,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.
 
   ID of the action attempt associated with the lock action.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3154,6 +3158,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3207,6 +3215,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 
   ID of the action attempt associated with the unlock action.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3214,6 +3226,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3263,6 +3279,10 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 
   ID of the access code that was used in the unlock attempts.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3270,6 +3290,10 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
