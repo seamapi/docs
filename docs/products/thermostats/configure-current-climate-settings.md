@@ -32,7 +32,7 @@ To set the HVAC mode and set points, issue a thermostat [`heat`](configure-curre
 
 Seam supports the following fan mode settings:
 
-<table><thead><tr><th width="156">Fan mode</th><th>Description</th></tr></thead><tbody><tr><td><code>on</code></td><td>The fan runs all the time, regardless of whether the HVAC system is cooling or heating.</td></tr><tr><td><code>auto</code></td><td>The fan runs whenever the HVAC system is cooling or heating but does not run at other times.</td></tr><tr><td><code>circulate</code></td><td>The fan runs for a specific number of minutes each hour, regardless of whether the HVAC system is cooling or heating. This setting is only supported on certain Honeywell thermostats.</td></tr></tbody></table>
+<table><thead><tr><th width="156">Fan mode</th><th>Description</th></tr></thead><tbody><tr><td><code>on</code></td><td>The fan runs all the time, regardless of whether the HVAC system is cooling or heating.</td></tr><tr><td><code>auto</code></td><td>The fan runs whenever the HVAC system is cooling or heating but does not run at other times.</td></tr><tr><td><code>circulate</code></td><td>The fan runs for a specific number of minutes each hour, regardless of whether the HVAC system is cooling or heating. Some thermostat brands and models support this setting.</td></tr></tbody></table>
 
 ***
 
@@ -199,9 +199,6 @@ $seam->devices->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -399,9 +396,6 @@ if ($thermostat->can_hvac_heat) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -599,9 +593,6 @@ if ($thermostat->can_hvac_cool) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -807,9 +798,6 @@ if ($thermostat->can_hvac_heat_cool) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1002,9 +990,6 @@ if ($thermostat->can_turn_off_hvac) {
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1143,9 +1128,6 @@ $seam->thermostats->set_fan_mode(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1279,7 +1261,4 @@ $seam->action_attempts->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
