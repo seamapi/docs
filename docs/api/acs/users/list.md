@@ -209,7 +209,6 @@ Returns a list of all access system users for a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->acs->users->list(
     user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
 );
@@ -218,7 +217,6 @@ $seam->acs->users->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -624,14 +622,12 @@ seam.acs.users.list(user_identity_phone_number: "+1555551000")
 #### Code
 
 ```php
-<?php
 $seam->acs->users->list(user_identity_phone_number: "+1555551000");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -920,14 +916,12 @@ seam.acs.users.list(user_identity_email_address: "jane@example.com")
 #### Code
 
 ```php
-<?php
 $seam->acs->users->list(user_identity_email_address: "jane@example.com");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -1218,14 +1212,12 @@ seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2")
 #### Code
 
 ```php
-<?php
 $seam->acs->users->list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -1514,14 +1506,12 @@ seam.acs.users.list(search: "Jane Doe")
 #### Code
 
 ```php
-<?php
 $seam->acs->users->list(search: "Jane Doe");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -1814,7 +1804,6 @@ seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2", limit
 #### Code
 
 ```php
-<?php
 $seam->acs->users->list(
     acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
     limit: 10
@@ -1824,7 +1813,6 @@ $seam->acs->users->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -2123,7 +2111,6 @@ seam.acs.users.list(
 #### Code
 
 ```php
-<?php
 $seam->acs->users->list(
     acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
     created_before: "2025-06-19T02:22:45.000Z"
@@ -2133,7 +2120,6 @@ $seam->acs->users->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [

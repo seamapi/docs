@@ -242,7 +242,6 @@ Creates a new access system user.
 #### Code
 
 ```php
-<?php
 $seam->acs->users->create(
     full_name: "Jane Doe",
     acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
@@ -260,7 +259,6 @@ $seam->acs->users->create(
 #### Output
 
 ```php
-<?php
 [
     "access_schedule" => [
         "ends_at" => "2025-06-12T11:00:00.000Z",

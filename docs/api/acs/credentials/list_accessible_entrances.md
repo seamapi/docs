@@ -172,7 +172,6 @@ Returns a list of all entrances to which a credential grants access.
 #### Code
 
 ```php
-<?php
 $seam->acs->credentials->list_accessible_entrances(
     acs_credential_id: "9407e456-b8ac-475a-8431-fee76cedda03"
 );
@@ -181,7 +180,6 @@ $seam->acs->credentials->list_accessible_entrances(
 #### Output
 
 ```php
-<?php
 [
     [
         "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",

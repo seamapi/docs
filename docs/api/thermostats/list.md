@@ -743,14 +743,12 @@ Returns a list of all thermostats. For additional filter parameters, see /device
 #### Code
 
 ```php
-<?php
 $seam->thermostats->list(limit: 10);
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,

@@ -118,7 +118,6 @@ Updates a noise threshold for a noise sensor.
 #### Code
 
 ```php
-<?php
 $seam->noise_sensors->noise_thresholds->update(
     noise_threshold_id: "2cb09850-4962-4dee-a658-d8a79fcb9aff",
     device_id: "c3885398-6794-44a0-a7a2-1f39ff454dc3",
@@ -133,7 +132,7 @@ $seam->noise_sensors->noise_thresholds->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

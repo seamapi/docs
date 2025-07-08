@@ -90,14 +90,13 @@ Deletes a specified webhook.
 #### Code
 
 ```php
-<?php
 $seam->webhooks->delete(webhook_id: "d3fb55d3-8b49-43ed-ac6b-e490be7b4274");
 ```
 
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

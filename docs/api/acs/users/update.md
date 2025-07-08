@@ -135,7 +135,6 @@ Updates the properties of a specified access system user, using the associated u
 #### Code
 
 ```php
-<?php
 $seam->acs->users->update(
     acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
     user_identity_id: "b0bbb463-4fad-4b21-a695-952463ea6e93",
@@ -154,7 +153,7 @@ $seam->acs->users->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -397,7 +396,6 @@ nil
 #### Code
 
 ```php
-<?php
 $seam->acs->users->update(
     acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
     access_schedule: [
@@ -414,7 +412,7 @@ $seam->acs->users->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

@@ -96,7 +96,6 @@ Deletes a specified connected account.
 #### Code
 
 ```php
-<?php
 $seam->connected_accounts->delete(
     connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 );
@@ -105,7 +104,7 @@ $seam->connected_accounts->delete(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

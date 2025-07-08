@@ -91,14 +91,13 @@ Deletes a space.
 #### Code
 
 ```php
-<?php
 $seam->spaces->delete(space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509");
 ```
 
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

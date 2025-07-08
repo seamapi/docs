@@ -106,7 +106,6 @@ Updates a connected account.
 #### Code
 
 ```php
-<?php
 $seam->connected_accounts->update(
     connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
     automatically_manage_new_devices: true,
@@ -117,7 +116,7 @@ $seam->connected_accounts->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

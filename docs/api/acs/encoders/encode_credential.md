@@ -240,7 +240,6 @@ Encodes an existing credential onto a plastic card placed on the specified encod
 #### Code
 
 ```php
-<?php
 $seam->acs->encoders->encode_credential(
     acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
     acs_credential_id: "a383871c-331a-42ae-af66-146824505187"
@@ -250,7 +249,6 @@ $seam->acs->encoders->encode_credential(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
     "action_type" => "ENCODE_CREDENTIAL",

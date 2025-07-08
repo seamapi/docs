@@ -90,7 +90,6 @@ Deletes a specified user identity.
 #### Code
 
 ```php
-<?php
 $seam->user_identities->delete(
     user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 );
@@ -99,7 +98,7 @@ $seam->user_identities->delete(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

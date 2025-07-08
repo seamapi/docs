@@ -400,14 +400,12 @@ Returns a list of all noise sensors. For additional filter parameters, see /devi
 #### Code
 
 ```php
-<?php
 $seam->noise_sensors->list(limit: 10);
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "capabilities_supported" => ["noise_detection"],

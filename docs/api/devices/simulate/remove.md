@@ -90,7 +90,6 @@ Simulates removing a device from Seam.
 #### Code
 
 ```php
-<?php
 $seam->devices->simulate->remove(
     device_id: "46757795-11f7-446a-a6cb-779e9f039d7c"
 );
@@ -99,7 +98,7 @@ $seam->devices->simulate->remove(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

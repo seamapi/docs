@@ -105,7 +105,6 @@ Updates an existing access grant's time window.
 #### Code
 
 ```php
-<?php
 $seam->access_grants->update(
     access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
     starts_at: "2025-06-19T18:01:32.000Z",
@@ -116,7 +115,7 @@ $seam->access_grants->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

@@ -35,6 +35,7 @@ await seam.accessGrants.get({
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
   "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
@@ -96,6 +97,7 @@ EOF
     "created_at": "2025-06-16T16:54:17.946606Z",
     "display_name": "My Access Grant",
     "ends_at": "2025-06-18T16:54:17.946606Z",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
     "requested_access_methods": [
       {
         "display_name": "PIN Code Credential",
@@ -151,6 +153,7 @@ AccessGrant(
     created_at="2025-06-16T16:54:17.946606Z",
     display_name="My Access Grant",
     ends_at="2025-06-18T16:54:17.946606Z",
+    instant_key_url="https://ik.seam.co/ABCXYZ",
     requested_access_methods=[
         {
             "display_name": "PIN Code Credential",
@@ -205,6 +208,7 @@ seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
   "created_at" => "2025-06-16T16:54:17.946606Z",
   "display_name" => "My Access Grant",
   "ends_at" => "2025-06-18T16:54:17.946606Z",
+  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
   "requested_access_methods" => [
     {
       display_name: "PIN Code Credential",
@@ -240,7 +244,6 @@ Returns a specified access grant.
 #### Code
 
 ```php
-<?php
 $seam->access_grants->get(
     access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 );
@@ -249,7 +252,6 @@ $seam->access_grants->get(
 #### Output
 
 ```php
-<?php
 [
     "access_grant_id" => "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
     "access_method_ids" => [
@@ -260,6 +262,7 @@ $seam->access_grants->get(
     "created_at" => "2025-06-16T16:54:17.946606Z",
     "display_name" => "My Access Grant",
     "ends_at" => "2025-06-18T16:54:17.946606Z",
+    "instant_key_url" => "https://ik.seam.co/ABCXYZ",
     "requested_access_methods" => [
         [
             "display_name" => "PIN Code Credential",
@@ -320,6 +323,7 @@ seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
   "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
@@ -394,10 +398,8 @@ ID of access grant to get.
   ],
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
-  "location_ids": [
-    "9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f",
-    "f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f"
-  ],
+  "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
@@ -422,6 +424,7 @@ ID of access grant to get.
     "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
     "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
   ],
+  "starts_at": "2025-06-16T16:54:17.946606Z",
   "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }

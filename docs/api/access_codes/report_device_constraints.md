@@ -113,7 +113,6 @@ Enables you to report access code-related constraints for a device.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->report_device_constraints(
     device_id: "cd17e797-e952-47a1-ba47-46bf72934181",
     supported_code_lengths: [4, 5, 6],
@@ -125,7 +124,7 @@ $seam->access_codes->report_device_constraints(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -298,7 +297,6 @@ nil
 #### Code
 
 ```php
-<?php
 $seam->access_codes->report_device_constraints(
     device_id: "cd17e797-e952-47a1-ba47-46bf72934181",
     min_code_length: 4,
@@ -309,7 +307,7 @@ $seam->access_codes->report_device_constraints(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

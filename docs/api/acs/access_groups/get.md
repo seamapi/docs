@@ -148,7 +148,6 @@ Returns a specified access group.
 #### Code
 
 ```php
-<?php
 $seam->acs->access_groups->get(
     acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae"
 );
@@ -157,7 +156,6 @@ $seam->acs->access_groups->get(
 #### Output
 
 ```php
-<?php
 [
     "access_group_type" => "salto_ks_access_group",
     "access_group_type_display_name" => "Salto KS Access Group",

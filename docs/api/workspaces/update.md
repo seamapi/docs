@@ -132,7 +132,6 @@ Updates the workspace associated with the authentication value.
 #### Code
 
 ```php
-<?php
 $seam->workspaces->update(
     name: "My Workspace",
     connect_partner_name: "Acme",
@@ -152,7 +151,7 @@ $seam->workspaces->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

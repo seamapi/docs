@@ -10,9 +10,8 @@
       - c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
     created_at: '2025-06-16T16:54:17.946606Z'
     display_name: My Access Grant
-    location_ids:
-      - 9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f
-      - f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f
+    ends_at: '2025-06-18T16:54:17.946606Z'
+    instant_key_url: 'https://ik.seam.co/ABCXYZ'
     requested_access_methods:
       - display_name: PIN Code Credential
         mode: code
@@ -32,6 +31,7 @@
     space_ids:
       - 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
       - 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+    starts_at: '2025-06-16T16:54:17.946606Z'
     user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
     workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: ACS Access Group
@@ -231,7 +231,6 @@
       access_method_id: 9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f
       created_at: '2025-06-14T16:54:17.946612Z'
       display_name: My Card
-      instant_key_url: https://se.am/1234
       is_card_encoding_required: true
       issued_at: '2025-06-14T16:54:17.946612Z'
       mode: card
@@ -524,7 +523,7 @@
     created_at: '2025-06-14T16:54:17.946559Z'
     expires_at: '2025-06-16T16:54:17.946559Z'
     instant_key_id: 1d05c2f6-5b6f-4a9c-b80d-1eca26be12b9
-    instant_key_url: https://se.am/1234
+    instant_key_url: https://ik.seam.co/ABCXYZ
     user_identity_id: e7a94acb-bd8a-4462-b6fb-8612d35cd7c3
     workspace_id: 4d1c24b2-781e-4d1a-8d77-15249ad57c8a
 - title: Lock Device
@@ -609,7 +608,7 @@
     access_method_id: 27d8ad77-55c2-4e20-b5b3-43555926f0e8
     created_at: '2025-06-14T16:54:17.946612Z'
     display_name: My Mobile Key
-    instant_key_url: https://se.am/1234
+    instant_key_url: https://ik.seam.co/ABCXYZ
     is_card_encoding_required: false
     mode: mobile_key
     workspace_id: 661025d3-c1d2-403c-83a8-af153aaedfbc

@@ -122,7 +122,6 @@ Creates a climate preset for a specified thermostat.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->create_climate_preset(
     device_id: "ba9b816d-c255-46b9-a16d-971e6f535dd3",
     manual_override_allowed: true,
@@ -138,7 +137,7 @@ $seam->thermostats->create_climate_preset(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

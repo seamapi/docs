@@ -213,7 +213,6 @@ Creates a new sandbox workspace.
 #### Code
 
 ```php
-<?php
 $seam->workspaces->create(
     name: "My Sandbox Workspace",
     company_name: "Acme",
@@ -238,7 +237,6 @@ $seam->workspaces->create(
 #### Output
 
 ```php
-<?php
 [
     "company_name" => "Acme",
     "connect_partner_name" => "Acme",
@@ -647,7 +645,6 @@ seam.workspaces.create(
 #### Code
 
 ```php
-<?php
 $seam->workspaces->create(
     name: "My Production Workspace",
     company_name: "Acme",
@@ -672,7 +669,6 @@ $seam->workspaces->create(
 #### Output
 
 ```php
-<?php
 [
     "company_name" => "Acme",
     "connect_partner_name" => "Acme",

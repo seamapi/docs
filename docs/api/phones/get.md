@@ -171,14 +171,12 @@ Returns a specified phone.
 #### Code
 
 ```php
-<?php
 $seam->phones->get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-14T16:54:17.946540Z",
     "custom_metadata" => ["id" => "internalId1"],

@@ -111,7 +111,6 @@ Updates access codes that share a common code across multiple devices.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->update_multiple(
     ends_at: "2025-06-22T05:05:47.000Z",
     starts_at: "2025-06-18T19:14:13.000Z",
@@ -123,7 +122,7 @@ $seam->access_codes->update_multiple(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

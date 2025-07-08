@@ -149,7 +149,6 @@ Updates the thermostat weekly program for a thermostat device.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->update_weekly_program(
     device_id: "076546e8-966c-47dd-831b-8d98413bf070",
     monday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
@@ -165,7 +164,6 @@ $seam->thermostats->update_weekly_program(
 #### Output
 
 ```php
-<?php
 [
     "action_attempt_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
     "action_type" => "PUSH_THERMOSTAT_PROGRAMS",

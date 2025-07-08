@@ -172,7 +172,6 @@ Creates a new client session.
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->create(
     customer_id: "e387e15f-be27-47ad-881f-4a6fc5460c57",
     customer_key: "My Company",
@@ -187,7 +186,6 @@ $seam->client_sessions->create(
 #### Output
 
 ```php
-<?php
 [
     "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
     "connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],

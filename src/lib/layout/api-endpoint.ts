@@ -254,9 +254,19 @@ const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
   return {
     title: sample.title,
     description: sample.description,
-    code,
+    code: code.map((c) => {
+      return {
+        ...c,
+        request:
+          c.request_syntax === 'php' ? removePhpTag(c.request) : c.request,
+        response:
+          c.response_syntax === 'php' ? removePhpTag(c.response) : c.response,
+      }
+    }),
   }
 }
+
+const removePhpTag = (s: string): string => s.split('\n').slice(1).join('\n')
 
 const getResourceSamples = (
   endpoint: Endpoint,

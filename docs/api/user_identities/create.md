@@ -158,7 +158,6 @@ Creates a new user identity. By specifying the desired acs_system_id, this opera
 #### Code
 
 ```php
-<?php
 $seam->user_identities->create(
     user_identity_key: "61c6c8ec-21ac-4d1d-be02-688889c66d8c",
     email_address: "jane@example.com",
@@ -171,7 +170,6 @@ $seam->user_identities->create(
 #### Output
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946546Z",
     "display_name" => "Jane Doe",

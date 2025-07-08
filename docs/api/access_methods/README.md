@@ -38,7 +38,7 @@ A mobile key access method resource.
   "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
   "created_at": "2025-06-14T16:54:17.946612Z",
   "display_name": "My Mobile Key",
-  "instant_key_url": "https://se.am/1234",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "is_card_encoding_required": false,
   "mode": "mobile_key",
   "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"

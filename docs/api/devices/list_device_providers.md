@@ -127,14 +127,12 @@ Returns a list of all device providers.
 #### Code
 
 ```php
-<?php
 $seam->devices->list_device_providers();
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "can_program_online_access_codes" => true,
@@ -352,14 +350,12 @@ seam.devices.list_device_providers(provider_category: "stable")
 #### Code
 
 ```php
-<?php
 $seam->devices->list_device_providers(provider_category: "stable");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "can_program_online_access_codes" => true,

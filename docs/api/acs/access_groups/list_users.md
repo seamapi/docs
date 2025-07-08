@@ -210,7 +210,6 @@ Returns a list of all access system users in an access group.
 #### Code
 
 ```php
-<?php
 $seam->acs->access_groups->list_users(
     acs_access_group_id: "da76b0a9-97c5-4d7c-8db2-91d13094a940"
 );
@@ -219,7 +218,6 @@ $seam->acs->access_groups->list_users(
 #### Output
 
 ```php
-<?php
 [
     [
         "access_schedule" => [

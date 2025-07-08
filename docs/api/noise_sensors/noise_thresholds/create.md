@@ -148,7 +148,6 @@ Creates a new noise threshold for a noise sensor.
 #### Code
 
 ```php
-<?php
 $seam->noise_sensors->noise_thresholds->create(
     device_id: "8282891b-c4da-4239-8f01-56089d44b80d",
     name: "My Noise Sensor",
@@ -162,7 +161,6 @@ $seam->noise_sensors->noise_thresholds->create(
 #### Output
 
 ```php
-<?php
 [
     "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
     "ends_daily_at" => "2025-06-19T12:38:44.000Z",

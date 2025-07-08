@@ -122,7 +122,6 @@ Updates a specified climate preset for a specified thermostat.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->update_climate_preset(
     device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
     climate_preset_key: "Home",
@@ -138,7 +137,7 @@ $seam->thermostats->update_climate_preset(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

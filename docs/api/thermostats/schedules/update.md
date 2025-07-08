@@ -118,7 +118,6 @@ Updates a specified thermostat schedule.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->schedules->update(
     thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
     name: "Jane's Stay",
@@ -133,7 +132,7 @@ $seam->thermostats->schedules->update(
 #### Output
 
 ```php
-null
+
 ```
 {% endtab %}
 

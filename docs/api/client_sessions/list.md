@@ -149,7 +149,6 @@ Returns a list of all client sessions for a specific client session ID.
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->list(
     client_session_id: "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc"
 );
@@ -158,7 +157,6 @@ $seam->client_sessions->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
@@ -433,14 +431,12 @@ seam.client_sessions.list(user_identifier_key: "jane_doe")
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->list(user_identifier_key: "jane_doe");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
@@ -641,7 +637,6 @@ seam.client_sessions.list(connect_webview_id: "e0f522d4-a7b6-4f65-ba90-11cde67a8
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->list(
     connect_webview_id: "e0f522d4-a7b6-4f65-ba90-11cde67a893a"
 );
@@ -650,7 +645,6 @@ $seam->client_sessions->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
@@ -851,7 +845,6 @@ seam.client_sessions.list(user_identity_id: "b4ce8233-3b35-4d2d-82ec-d48513684f0
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->list(
     user_identity_id: "b4ce8233-3b35-4d2d-82ec-d48513684f0a"
 );
@@ -860,7 +853,6 @@ $seam->client_sessions->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
@@ -1059,14 +1051,12 @@ seam.client_sessions.list(without_user_identifier_key: true)
 #### Code
 
 ```php
-<?php
 $seam->client_sessions->list(without_user_identifier_key: true);
 ```
 
 #### Output
 
 ```php
-<?php
 [
     [
         "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",

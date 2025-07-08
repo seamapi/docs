@@ -185,7 +185,6 @@ Creates a new ongoing online access code.
 #### Code
 
 ```php
-<?php
 $seam->access_codes->create(
     device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
     name: "My Ongoing Online Access Code",
@@ -196,7 +195,6 @@ $seam->access_codes->create(
 #### Output
 
 ```php
-<?php
 [
     "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
     "code" => "1234",
@@ -615,7 +613,6 @@ seam.access_codes.create(
 #### Code
 
 ```php
-<?php
 $seam->access_codes->create(
     device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
     name: "My Time-Bound Online Access Code",
@@ -628,7 +625,6 @@ $seam->access_codes->create(
 #### Output
 
 ```php
-<?php
 [
     "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
     "code" => "1234",
@@ -913,7 +909,6 @@ seam.access_codes.create(
 #### Code
 
 ```php
-<?php
 $seam->access_codes->create(
     device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
     name: "My Time-Bound Offline Access Code",
@@ -930,7 +925,6 @@ $seam->access_codes->create(
 #### Output
 
 ```php
-<?php
 [
     "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
     "code" => "1234",
@@ -1215,7 +1209,6 @@ seam.access_codes.create(
 #### Code
 
 ```php
-<?php
 $seam->access_codes->create(
     device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
     name: "My One-Time-Use Offline Access Code",
@@ -1232,7 +1225,6 @@ $seam->access_codes->create(
 #### Output
 
 ```php
-<?php
 [
     "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
     "code" => "1234",
@@ -1505,7 +1497,6 @@ seam.access_codes.create(
 #### Code
 
 ```php
-<?php
 $seam->access_codes->create(
     device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
     name: "My Time-Bound Access Code",
@@ -1519,7 +1510,6 @@ $seam->access_codes->create(
 #### Output
 
 ```php
-<?php
 [
     "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
     "code" => "1234",

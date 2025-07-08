@@ -134,7 +134,6 @@ Returns a list of all noise thresholds for a noise sensor.
 #### Code
 
 ```php
-<?php
 $seam->noise_sensors->noise_thresholds->list(
     device_id: "a60d1a44-5727-4223-8b58-9c2455eb57fc"
 );
@@ -143,7 +142,6 @@ $seam->noise_sensors->noise_thresholds->list(
 #### Output
 
 ```php
-<?php
 [
     [
         "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",

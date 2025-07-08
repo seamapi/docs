@@ -735,14 +735,12 @@ Returns a specified device, using an ID.
 #### Code
 
 ```php
-<?php
 $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "can_hvac_cool" => true,
     "can_hvac_heat" => true,
@@ -1942,14 +1940,12 @@ seam.devices.get(name: "My Device")
 #### Code
 
 ```php
-<?php
 $seam->devices->get(name: "My Device");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "can_hvac_cool" => true,
     "can_hvac_heat" => true,

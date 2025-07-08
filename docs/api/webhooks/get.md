@@ -110,14 +110,12 @@ Gets a specified webhook.
 #### Code
 
 ```php
-<?php
 $seam->webhooks->get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657");
 ```
 
 #### Output
 
 ```php
-<?php
 [
     "event_types" => ["device.connected", "device.disconnected"],
     "secret" => "mySecret",

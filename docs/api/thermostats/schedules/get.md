@@ -142,7 +142,6 @@ Returns a specified thermostat schedule.
 #### Code
 
 ```php
-<?php
 $seam->thermostats->schedules->get(
     thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218"
 );
@@ -151,7 +150,6 @@ $seam->thermostats->schedules->get(
 #### Output
 
 ```php
-<?php
 [
     "climate_preset_key" => "Occupied",
     "created_at" => "2025-06-14T16:54:17.946316Z",
