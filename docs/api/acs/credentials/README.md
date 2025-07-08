@@ -3,7 +3,6 @@
 ## The acs_credential Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
