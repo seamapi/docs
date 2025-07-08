@@ -1,14 +1,24 @@
 {{#unless hidePreamble}}
 ## The {{name}} Object
 
+{{#if propertyGroups.length}}
 - [Properties](./#properties)
+{{/if}}
 {{#if legacyPropertyGroups}}
 - [{{name}}.properties](./#{{name}}.properties)
 {{/if}}
+{{#if errorGroups}}
 - [Errors](./#errors)
+{{/if}}
+{{#if warningGroups}}
 - [Warnings](./#warnings)
+{{/if}}
+{{#if events}}
 - [Events](./#events)
+{{/if}}
+{{#if endpoints}}
 - [Endpoints](./#endpoints)
+{{/if}}
 
 {{#if description}}
 
