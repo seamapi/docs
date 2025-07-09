@@ -102,8 +102,8 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", true],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+    "available_fan_mode_settings": ["auto", "on"],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",
@@ -286,8 +286,8 @@ EOF
           "heating_set_point_fahrenheit": 64
         }
       ],
-      "available_fan_mode_settings": ["auto", true],
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+      "available_fan_mode_settings": ["auto", "on"],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
       "current_climate_setting": {
         "display_name": "Manual Setting",
         "fan_mode_setting": "auto",
@@ -464,8 +464,8 @@ Device(
                 "heating_set_point_fahrenheit": 64,
             },
         ],
-        "available_fan_mode_settings": ["auto", true],
-        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+        "available_fan_mode_settings": ["auto", "on"],
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
         "current_climate_setting": {
             "display_name": "Manual Setting",
             "fan_mode_setting": "auto",
@@ -642,8 +642,8 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
         heating_set_point_fahrenheit: 64,
       },
     ],
-    available_fan_mode_settings: ["auto", true],
-    available_hvac_mode_settings: ["cool", "heat", "heat_cool", false],
+    available_fan_mode_settings: %w[auto on],
+    available_hvac_mode_settings: %w[cool heat heat_cool off],
     current_climate_setting: {
       display_name: "Manual Setting",
       fan_mode_setting: "auto",
@@ -820,8 +820,8 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
                 "heating_set_point_fahrenheit" => 64,
             ],
         ],
-        "available_fan_mode_settings" => ["auto", true],
-        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", false],
+        "available_fan_mode_settings" => ["auto", "on"],
+        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", "off"],
         "current_climate_setting" => [
             "display_name" => "Manual Setting",
             "fan_mode_setting" => "auto",
@@ -1024,8 +1024,8 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", true],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+    "available_fan_mode_settings": ["auto", "on"],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",
@@ -1307,8 +1307,8 @@ await seam.devices.get({ name: "My Device" });
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", true],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+    "available_fan_mode_settings": ["auto", "on"],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",
@@ -1491,8 +1491,8 @@ EOF
           "heating_set_point_fahrenheit": 64
         }
       ],
-      "available_fan_mode_settings": ["auto", true],
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+      "available_fan_mode_settings": ["auto", "on"],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
       "current_climate_setting": {
         "display_name": "Manual Setting",
         "fan_mode_setting": "auto",
@@ -1669,8 +1669,8 @@ Device(
                 "heating_set_point_fahrenheit": 64,
             },
         ],
-        "available_fan_mode_settings": ["auto", true],
-        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+        "available_fan_mode_settings": ["auto", "on"],
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
         "current_climate_setting": {
             "display_name": "Manual Setting",
             "fan_mode_setting": "auto",
@@ -1847,8 +1847,8 @@ seam.devices.get(name: "My Device")
         heating_set_point_fahrenheit: 64,
       },
     ],
-    available_fan_mode_settings: ["auto", true],
-    available_hvac_mode_settings: ["cool", "heat", "heat_cool", false],
+    available_fan_mode_settings: %w[auto on],
+    available_hvac_mode_settings: %w[cool heat heat_cool off],
     current_climate_setting: {
       display_name: "Manual Setting",
       fan_mode_setting: "auto",
@@ -2025,8 +2025,8 @@ $seam->devices->get(name: "My Device");
                 "heating_set_point_fahrenheit" => 64,
             ],
         ],
-        "available_fan_mode_settings" => ["auto", true],
-        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", false],
+        "available_fan_mode_settings" => ["auto", "on"],
+        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", "off"],
         "current_climate_setting" => [
             "display_name" => "Manual Setting",
             "fan_mode_setting" => "auto",
@@ -2229,8 +2229,8 @@ seam devices get --name "My Device"
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", true],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
+    "available_fan_mode_settings": ["auto", "on"],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",
