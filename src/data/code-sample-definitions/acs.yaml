@@ -9,7 +9,8 @@
   response:
     body: null
 - title: Add a user identity to an access group
-  description: Adds a specified access system user to a specified access group, using
+  description:
+    Adds a specified access system user to a specified access group, using
     the associated user identity.
   request:
     path: /acs/access_groups/add_user
@@ -51,19 +52,19 @@
   response:
     body:
       acs_access_groups:
-      - access_group_type: salto_ks_access_group
-        access_group_type_display_name: Salto KS Access Group
-        acs_access_group_id: 3f448826-9875-4947-9519-e468090a4f7d
-        acs_system_id: 1b529056-1b04-450b-b3da-016b65a5017f
-        connected_account_id: daba7bd0-edb6-4bb9-a70b-f9ae08a0e301
-        created_at: '2025-06-15T16:54:17.946453Z'
-        display_name: Main Group
-        external_type: salto_ks_access_group
-        external_type_display_name: Salto KS Access Group
-        is_managed: true
-        name: My Access Group
-        warnings: []
-        workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
+        - access_group_type: salto_ks_access_group
+          access_group_type_display_name: Salto KS Access Group
+          acs_access_group_id: 3f448826-9875-4947-9519-e468090a4f7d
+          acs_system_id: 1b529056-1b04-450b-b3da-016b65a5017f
+          connected_account_id: daba7bd0-edb6-4bb9-a70b-f9ae08a0e301
+          created_at: '2025-06-15T16:54:17.946453Z'
+          display_name: Main Group
+          external_type: salto_ks_access_group
+          external_type_display_name: Salto KS Access Group
+          is_managed: true
+          name: My Access Group
+          warnings: []
+          workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
 - title: List access groups for an access system user
   description: Returns a list of all access groups, filtered by access system user.
   request:
@@ -74,19 +75,19 @@
   response:
     body:
       acs_access_groups:
-      - access_group_type: salto_ks_access_group
-        access_group_type_display_name: Salto KS Access Group
-        acs_access_group_id: 3f448826-9875-4947-9519-e468090a4f7d
-        acs_system_id: 1b529056-1b04-450b-b3da-016b65a5017f
-        connected_account_id: daba7bd0-edb6-4bb9-a70b-f9ae08a0e301
-        created_at: '2025-06-15T16:54:17.946453Z'
-        display_name: Main Group
-        external_type: salto_ks_access_group
-        external_type_display_name: Salto KS Access Group
-        is_managed: true
-        name: My Access Group
-        warnings: []
-        workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
+        - access_group_type: salto_ks_access_group
+          access_group_type_display_name: Salto KS Access Group
+          acs_access_group_id: 3f448826-9875-4947-9519-e468090a4f7d
+          acs_system_id: 1b529056-1b04-450b-b3da-016b65a5017f
+          connected_account_id: daba7bd0-edb6-4bb9-a70b-f9ae08a0e301
+          created_at: '2025-06-15T16:54:17.946453Z'
+          display_name: Main Group
+          external_type: salto_ks_access_group
+          external_type_display_name: Salto KS Access Group
+          is_managed: true
+          name: My Access Group
+          warnings: []
+          workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
 - title: List accessible entrances for an access group
   description: Returns a list of all accessible entrances for a specified access group.
   request:
@@ -96,18 +97,18 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: List users in an access group
   description: Returns a list of all access system users in an access group.
   request:
@@ -117,33 +118,34 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
 - title: Remove a user identity from an access group
-  description: Removes a specified access system user from a specified access group,
+  description:
+    Removes a specified access system user from a specified access group,
     using the associated user identity.
   request:
     path: /acs/access_groups/remove_user
@@ -162,7 +164,8 @@
   response:
     body: null
 - title: Assign a credential to a user identity
-  description: Assigns a specified credential to a specified access system user, using
+  description:
+    Assigns a specified credential to a specified access system user, using
     the associated user identity.
   request:
     path: /acs/credentials/assign
@@ -181,7 +184,8 @@
   response:
     body: null
 - title: Create a PIN code credential for a user identity
-  description: Creates a new PIN code credential for a specified access system user,
+  description:
+    Creates a new PIN code credential for a specified access system user,
     using the associated user identity.
   request:
     path: /acs/credentials/create
@@ -192,7 +196,7 @@
       access_method: code
       code: '1234'
       allowed_acs_entrance_ids:
-      - 21805570-4706-4c21-99fc-3ed873a5e014
+        - 21805570-4706-4c21-99fc-3ed873a5e014
       starts_at: '2025-06-19T21:08:08.000Z'
       ends_at: '2025-06-23T12:35:01.000Z'
   response:
@@ -227,7 +231,7 @@
       access_method: code
       code: '1234'
       allowed_acs_entrance_ids:
-      - 21805570-4706-4c21-99fc-3ed873a5e014
+        - 21805570-4706-4c21-99fc-3ed873a5e014
       starts_at: '2025-06-19T21:08:08.000Z'
       ends_at: '2025-06-23T12:35:01.000Z'
   response:
@@ -252,7 +256,8 @@
         warnings: []
         workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
 - title: Create a card credential for a user identity
-  description: Creates a new card credential for a specified access system user, using
+  description:
+    Creates a new card credential for a specified access system user, using
     the associated user identity.
   request:
     path: /acs/credentials/create
@@ -262,7 +267,7 @@
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
       access_method: card
       allowed_acs_entrance_ids:
-      - 21805570-4706-4c21-99fc-3ed873a5e014
+        - 21805570-4706-4c21-99fc-3ed873a5e014
       starts_at: '2025-06-19T21:08:08.000Z'
       ends_at: '2025-06-23T12:35:01.000Z'
       visionline_metadata:
@@ -298,7 +303,7 @@
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
       access_method: card
       allowed_acs_entrance_ids:
-      - 21805570-4706-4c21-99fc-3ed873a5e014
+        - 21805570-4706-4c21-99fc-3ed873a5e014
       starts_at: '2025-06-19T21:08:08.000Z'
       ends_at: '2025-06-23T12:35:01.000Z'
       visionline_metadata:
@@ -325,7 +330,8 @@
         warnings: []
         workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
 - title: Create a mobile key credential for a user identity
-  description: Creates a new mobile key credential for a specified access system user,
+  description:
+    Creates a new mobile key credential for a specified access system user,
     using the associated user identity.
   request:
     path: /acs/credentials/create
@@ -335,7 +341,7 @@
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
       access_method: mobile_key
       allowed_acs_entrance_ids:
-      - 21805570-4706-4c21-99fc-3ed873a5e014
+        - 21805570-4706-4c21-99fc-3ed873a5e014
       starts_at: '2025-06-19T21:08:08.000Z'
       ends_at: '2025-06-23T12:35:01.000Z'
       is_multi_phone_sync_credential: true
@@ -369,7 +375,7 @@
       acs_system_id: 7113de29-6130-4153-a6ea-1b7ca0fe3198
       access_method: mobile_key
       allowed_acs_entrance_ids:
-      - 21805570-4706-4c21-99fc-3ed873a5e014
+        - 21805570-4706-4c21-99fc-3ed873a5e014
       starts_at: '2025-06-19T21:08:08.000Z'
       ends_at: '2025-06-23T12:35:01.000Z'
       is_multi_phone_sync_credential: true
@@ -394,7 +400,8 @@
         warnings: []
         workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
 - title: Create an offline code
-  description: Creates a new offline code credential for a specified access system
+  description:
+    Creates a new offline code credential for a specified access system
     user.
   request:
     path: /acs/credentials/create_offline_code
@@ -467,24 +474,24 @@
   response:
     body:
       acs_credentials:
-      - access_method: code
-        acs_credential_id: 73a0a199-024f-454d-a916-9bbda8502c12
-        acs_system_id: b1d03165-2759-474b-a342-e02223f27b39
-        acs_user_id: 0fc82df4-391b-4d00-a234-86378f1c3952
-        code: '123456'
-        created_at: '2025-06-16T16:54:17.946514Z'
-        display_name: FRONT_DOOR
-        errors: []
-        external_type: salto_ks_credential
-        external_type_display_name: Salto KS Credential
-        is_latest_desired_state_synced_with_provider: true
-        is_managed: true
-        is_multi_phone_sync_credential: false
-        is_one_time_use: false
-        latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
-        starts_at: '2025-07-10T16:54:17.946512Z'
-        warnings: []
-        workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
+        - access_method: code
+          acs_credential_id: 73a0a199-024f-454d-a916-9bbda8502c12
+          acs_system_id: b1d03165-2759-474b-a342-e02223f27b39
+          acs_user_id: 0fc82df4-391b-4d00-a234-86378f1c3952
+          code: '123456'
+          created_at: '2025-06-16T16:54:17.946514Z'
+          display_name: FRONT_DOOR
+          errors: []
+          external_type: salto_ks_credential
+          external_type_display_name: Salto KS Credential
+          is_latest_desired_state_synced_with_provider: true
+          is_managed: true
+          is_multi_phone_sync_credential: false
+          is_one_time_use: false
+          latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
+          starts_at: '2025-07-10T16:54:17.946512Z'
+          warnings: []
+          workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
 - title: List accessible entrances for a credential
   description: Returns a list of all entrances to which a credential grants access.
   request:
@@ -494,20 +501,21 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: Unassign a credential from a user identity
-  description: Unassigns a specified credential from a specified access system user,
+  description:
+    Unassigns a specified credential from a specified access system user,
     using the associated user identity ID.
   request:
     path: /acs/credentials/unassign
@@ -536,7 +544,8 @@
   response:
     body: null
 - title: Encode an access method
-  description: Encodes an existing access method onto a plastic card placed on the
+  description:
+    Encodes an existing access method onto a plastic card placed on the
     specified encoder.
   request:
     path: /acs/encoders/encode_access_method
@@ -560,7 +569,8 @@
           workspace_id: 7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f
         status: success
 - title: Encode a credential
-  description: Encodes an existing credential onto a plastic card placed on the specified
+  description:
+    Encodes an existing credential onto a plastic card placed on the specified
     encoder.
   request:
     path: /acs/encoders/encode_credential
@@ -596,10 +606,10 @@
             card_function_type: guest
             card_id: '5'
             common_acs_entrance_ids:
-            - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+              - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
             credential_id: '15'
             guest_acs_entrance_ids:
-            - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+              - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
             is_valid: true
           warnings: []
           workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
@@ -627,15 +637,16 @@
   response:
     body:
       acs_encoders:
-      - acs_encoder_id: 681da2d6-4ac6-4b33-8c03-86281b761325
-        acs_system_id: c85406d2-214f-4e11-8000-a2e5b5a362a4
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97750
-        created_at: '2025-06-16T16:54:17.946527Z'
-        display_name: Encoder 1
-        errors: []
-        workspace_id: f863ac85-2c4e-49ae-8679-3ec2417f1d62
+        - acs_encoder_id: 681da2d6-4ac6-4b33-8c03-86281b761325
+          acs_system_id: c85406d2-214f-4e11-8000-a2e5b5a362a4
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97750
+          created_at: '2025-06-16T16:54:17.946527Z'
+          display_name: Encoder 1
+          errors: []
+          workspace_id: f863ac85-2c4e-49ae-8679-3ec2417f1d62
 - title: Scan a credential
-  description: Scans an encoded acs_credential from a plastic card placed on the specified
+  description:
+    Scans an encoded acs_credential from a plastic card placed on the specified
     encoder.
   request:
     path: /acs/encoders/scan_credential
@@ -660,11 +671,11 @@
               card_holder: Guest
               card_id: '5'
               common_acs_entrance_ids:
-              - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+                - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
               discarded: false
               expired: false
               guest_acs_entrance_ids:
-              - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+                - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
               number_of_issued_cards: 1
               overridden: false
               overwritten: false
@@ -692,17 +703,18 @@
               card_function_type: guest
               card_id: '5'
               common_acs_entrance_ids:
-              - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
+                - 5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
               credential_id: '15'
               guest_acs_entrance_ids:
-              - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+                - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
               is_valid: true
             warnings: []
             workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
           warnings:
-          - warning_code: acs_credential_on_encoder_out_of_sync
-            warning_message: 'The following properties are out of sync between acs_credential_on_encoder
-              and acs_credential_on_seam: ends_at'
+            - warning_code: acs_credential_on_encoder_out_of_sync
+              warning_message:
+                'The following properties are out of sync between acs_credential_on_encoder
+                and acs_credential_on_seam: ends_at'
         status: success
 - title: Get an entrance
   description: Returns a specified access system entrance.
@@ -723,10 +735,11 @@
           door_category: guest
           door_name: Main Entrance
           profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+            - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+              visionline_door_profile_type: BLE
 - title: Grant a user identity access to an entrance
-  description: Grants a specified access system user access to a specified access
+  description:
+    Grants a specified access system user access to a specified access
     system entrance, using the associated user identity.
   request:
     path: /acs/entrances/grant_access
@@ -736,7 +749,8 @@
   response:
     body: null
 - title: Grant an access system user access to an entrance
-  description: Grants a specified access system user access to a specified access
+  description:
+    Grants a specified access system user access to a specified access
     system entrance.
   request:
     path: /acs/entrances/grant_access
@@ -754,18 +768,18 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: d34802da-d8e3-4d0b-98c3-16d6e18ed508
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: d34802da-d8e3-4d0b-98c3-16d6e18ed508
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: List entrances for a credential
   description: Returns a list of all access system entrances for a specified credential.
   request:
@@ -775,18 +789,18 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: List entrances for a space
   description: Returns a list of all access system entrances for a specified space.
   request:
@@ -796,20 +810,21 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: List entrances for an access grant
-  description: Returns a list of all access system entrances for a specified access
+  description:
+    Returns a list of all access system entrances for a specified access
     grant.
   request:
     path: /acs/entrances/list
@@ -818,20 +833,21 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: List entrances for an access method
-  description: Returns a list of all access system entrances for a specified access
+  description:
+    Returns a list of all access system entrances for a specified access
     method.
   request:
     path: /acs/entrances/list
@@ -840,18 +856,18 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: List credentials with access to an entrance
   description: Returns a list of all credentials with access to a specified entrance.
   request:
@@ -861,24 +877,24 @@
   response:
     body:
       acs_credentials:
-      - access_method: code
-        acs_credential_id: 73a0a199-024f-454d-a916-9bbda8502c12
-        acs_system_id: b1d03165-2759-474b-a342-e02223f27b39
-        acs_user_id: 0fc82df4-391b-4d00-a234-86378f1c3952
-        code: '123456'
-        created_at: '2025-06-16T16:54:17.946514Z'
-        display_name: FRONT_DOOR
-        errors: []
-        external_type: salto_ks_credential
-        external_type_display_name: Salto KS Credential
-        is_latest_desired_state_synced_with_provider: true
-        is_managed: true
-        is_multi_phone_sync_credential: false
-        is_one_time_use: false
-        latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
-        starts_at: '2025-07-10T16:54:17.946512Z'
-        warnings: []
-        workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
+        - access_method: code
+          acs_credential_id: 73a0a199-024f-454d-a916-9bbda8502c12
+          acs_system_id: b1d03165-2759-474b-a342-e02223f27b39
+          acs_user_id: 0fc82df4-391b-4d00-a234-86378f1c3952
+          code: '123456'
+          created_at: '2025-06-16T16:54:17.946514Z'
+          display_name: FRONT_DOOR
+          errors: []
+          external_type: salto_ks_credential
+          external_type_display_name: Salto KS Credential
+          is_latest_desired_state_synced_with_provider: true
+          is_managed: true
+          is_multi_phone_sync_credential: false
+          is_one_time_use: false
+          latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
+          starts_at: '2025-07-10T16:54:17.946512Z'
+          warnings: []
+          workspace_id: 005f1e54-5360-40db-8c31-4ef6baaad1fd
 - title: Get an access system
   description: Returns a specified access system.
   request:
@@ -893,7 +909,7 @@
         acs_user_count: 20
         connected_account_id: a94aeed0-1ae0-4e49-9c23-8444c7ceba09
         connected_account_ids:
-        - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+          - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
         created_at: '2025-06-15T16:54:17.946425Z'
         default_credential_manager_acs_system_id: 5dde2def-3507-44f5-9521-7ca96aa4cd18
         errors: []
@@ -916,27 +932,28 @@
   response:
     body:
       acs_systems:
-      - acs_access_group_count: 5
-        acs_system_id: dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7
-        acs_user_count: 20
-        connected_account_id: 2283a842-27c5-474a-bd0e-4c959274efa0
-        connected_account_ids:
-        - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
-        created_at: '2025-06-15T16:54:17.946425Z'
-        default_credential_manager_acs_system_id: 5dde2def-3507-44f5-9521-7ca96aa4cd18
-        errors: []
-        external_type: salto_ks_site
-        external_type_display_name: Salto KS site
-        image_alt_text: Salto KS site Logo
-        image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128
-        is_credential_manager: false
-        location:
-          time_zone: America/New_York
-        name: My Access System
-        warnings: []
-        workspace_id: 172920be-1f4d-45d4-8519-ecc3bdee638f
+        - acs_access_group_count: 5
+          acs_system_id: dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7
+          acs_user_count: 20
+          connected_account_id: 2283a842-27c5-474a-bd0e-4c959274efa0
+          connected_account_ids:
+            - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+          created_at: '2025-06-15T16:54:17.946425Z'
+          default_credential_manager_acs_system_id: 5dde2def-3507-44f5-9521-7ca96aa4cd18
+          errors: []
+          external_type: salto_ks_site
+          external_type_display_name: Salto KS site
+          image_alt_text: Salto KS site Logo
+          image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128
+          is_credential_manager: false
+          location:
+            time_zone: America/New_York
+          name: My Access System
+          warnings: []
+          workspace_id: 172920be-1f4d-45d4-8519-ecc3bdee638f
 - title: List compatible credential managers
-  description: Returns a list of all credential manager systems that are compatible
+  description:
+    Returns a list of all credential manager systems that are compatible
     with a specified access system.
   request:
     path: /acs/systems/list_compatible_credential_manager_acs_systems
@@ -945,21 +962,21 @@
   response:
     body:
       acs_systems:
-      - acs_access_group_count: 5
-        acs_system_id: dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7
-        connected_account_id: a94aeed0-1ae0-4e49-9c23-8444c7ceba09
-        connected_account_ids:
-        - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
-        created_at: '2025-06-15T16:54:17.946425Z'
-        errors: []
-        image_alt_text: Salto KS site Logo
-        image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128
-        is_credential_manager: true
-        location:
-          time_zone: America/New_York
-        name: My Credential Manager
-        warnings: []
-        workspace_id: 172920be-1f4d-45d4-8519-ecc3bdee638f
+        - acs_access_group_count: 5
+          acs_system_id: dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7
+          connected_account_id: a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+          connected_account_ids:
+            - a94aeed0-1ae0-4e49-9c23-8444c7ceba09
+          created_at: '2025-06-15T16:54:17.946425Z'
+          errors: []
+          image_alt_text: Salto KS site Logo
+          image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128
+          is_credential_manager: true
+          location:
+            time_zone: America/New_York
+          name: My Credential Manager
+          warnings: []
+          workspace_id: 172920be-1f4d-45d4-8519-ecc3bdee638f
 - title: Add a access system user to an access group
   description: Adds a specified access system user to a specified access group.
   request:
@@ -977,7 +994,7 @@
       full_name: Jane Doe
       acs_system_id: dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46
       acs_access_group_ids:
-      - bab9962b-708b-4db7-98d5-b242a28c12e9
+        - bab9962b-708b-4db7-98d5-b242a28c12e9
       user_identity_id: 3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6
       access_schedule:
         starts_at: '2025-06-10T15:00:00.000Z'
@@ -1013,7 +1030,8 @@
         warnings: []
         workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
 - title: Delete an access system user, using the associated user identity
-  description: Deletes a specified access system user and invalidates the access system
+  description:
+    Deletes a specified access system user and invalidates the access system
     user's credentials.
   request:
     path: /acs/users/delete
@@ -1023,7 +1041,8 @@
   response:
     body: null
 - title: Delete an access system user
-  description: Deletes a specified access system user and invalidates the access system
+  description:
+    Deletes a specified access system user and invalidates the access system
     user's credentials.
   request:
     path: /acs/users/delete
@@ -1109,37 +1128,38 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: 0dcb435f-0aef-4ae6-8d6e-9c605b78c94e
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: 0dcb435f-0aef-4ae6-8d6e-9c605b78c94e
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
         next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users for a user identity phone number
-  description: Returns a list of all access system users for a specified user identity
+  description:
+    Returns a list of all access system users for a specified user identity
     phone number.
   request:
     path: /acs/users/list
@@ -1148,37 +1168,38 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
         next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users for a user identity email address
-  description: Returns a list of all access system users for a specified user identity
+  description:
+    Returns a list of all access system users for a specified user identity
     email address.
   request:
     path: /acs/users/list
@@ -1187,31 +1208,31 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
@@ -1225,31 +1246,31 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 0e3369a0-1376-46cd-b79c-ebba856701a2
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 0e3369a0-1376-46cd-b79c-ebba856701a2
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
@@ -1263,37 +1284,38 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 62d3384f-267f-4a4a-a946-d35819ec9981
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
         next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users, limited to ten per page
-  description: Returns a list of all access system users, with a limit of ten per
+  description:
+    Returns a list of all access system users, with a limit of ten per
     page.
   request:
     path: /acs/users/list
@@ -1303,37 +1325,38 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 0e3369a0-1376-46cd-b79c-ebba856701a2
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 0e3369a0-1376-46cd-b79c-ebba856701a2
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
         next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List access system users created before a date
-  description: Returns a list of all access system users created before a specified
+  description:
+    Returns a list of all access system users created before a specified
     date.
   request:
     path: /acs/users/list
@@ -1343,37 +1366,38 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: 0e3369a0-1376-46cd-b79c-ebba856701a2
-        acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
-        connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
-        created_at: '2025-06-15T16:54:17.946482Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
-        is_managed: true
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551000'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
-        user_identity_phone_number: '+1555551000'
-        warnings: []
-        workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: 0e3369a0-1376-46cd-b79c-ebba856701a2
+          acs_user_id: 6a5d9697-3cc4-436a-8165-4375ff424870
+          connected_account_id: c0175797-30f0-49f7-a228-2df115443ca7
+          created_at: '2025-06-15T16:54:17.946482Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: 2acbe47f-612c-422a-9205-7af292f74e7f
+          is_managed: true
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551000'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: a23b3e02-e394-4e5f-b21c-b366b8bc0dd3
+          user_identity_phone_number: '+1555551000'
+          warnings: []
+          workspace_id: 8d4868e3-2f95-4f33-8689-19420b3101cd
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
         next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List accessible entrances for a user identity
-  description: Lists the entrances to which a specified access system user has access,
+  description:
+    Lists the entrances to which a specified access system user has access,
     using the associated user identity.
   request:
     path: /acs/users/list_accessible_entrances
@@ -1383,18 +1407,18 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: List accessible entrances for an access system user
   description: Lists the entrances to which a specified access system user has access.
   request:
@@ -1405,20 +1429,21 @@
   response:
     body:
       acs_entrances:
-      - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
-        acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
-        connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
-        created_at: '2025-06-15T16:54:17.946495Z'
-        display_name: Main Entrance
-        errors: []
-        visionline_metadata:
-          door_category: guest
-          door_name: Main Entrance
-          profiles:
-          - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
-            visionline_door_profile_type: BLE
+        - acs_entrance_id: f74e4879-5991-4e2f-a368-888983dcfbfc
+          acs_system_id: 6a74a969-94ea-4383-b5cf-5e7da8c113d1
+          connected_account_id: 1b9a3e0d-443f-4063-b619-4ca7e2a97751
+          created_at: '2025-06-15T16:54:17.946495Z'
+          display_name: Main Entrance
+          errors: []
+          visionline_metadata:
+            door_category: guest
+            door_name: Main Entrance
+            profiles:
+              - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
+                visionline_door_profile_type: BLE
 - title: Remove a user identity from an access group
-  description: Removes a specified access system user from a specified access group,
+  description:
+    Removes a specified access system user from a specified access group,
     using the associated user identity.
   request:
     path: /acs/users/remove_from_access_group
@@ -1437,7 +1462,8 @@
   response:
     body: null
 - title: Revoke access to all entrances for a user identity
-  description: Revokes access to all entrances for a specified access system user,
+  description:
+    Revokes access to all entrances for a specified access system user,
     using the associated user identity.
   request:
     path: /acs/users/revoke_access_to_all_entrances
@@ -1455,7 +1481,8 @@
   response:
     body: null
 - title: Suspend a user identity
-  description: Suspends a specified access system user, using the associated user
+  description:
+    Suspends a specified access system user, using the associated user
     identity.
   request:
     path: /acs/users/suspend
@@ -1465,7 +1492,8 @@
   response:
     body: null
 - title: Suspend a user identity
-  description: Suspends a specified access system user, using the associated user
+  description:
+    Suspends a specified access system user, using the associated user
     identity.
   request:
     path: /acs/users/suspend
@@ -1474,7 +1502,8 @@
   response:
     body: null
 - title: Unsuspend a user identity
-  description: Unsuspends a specified suspended access system user, using the associated
+  description:
+    Unsuspends a specified suspended access system user, using the associated
     user identity.
   request:
     path: /acs/users/unsuspend
@@ -1492,7 +1521,8 @@
   response:
     body: null
 - title: Update an access system user, using the associated user identity
-  description: Updates the properties of a specified access system user, using the
+  description:
+    Updates the properties of a specified access system user, using the
     associated user identity.
   request:
     path: /acs/users/update
@@ -1547,7 +1577,8 @@
         warnings: []
         workspace_id: 8a844fbb-c583-485e-a8d9-94d8e96fb6d4
 - title: List unmanaged access groups for an access system
-  description: Returns a list of all unmanaged access groups for a specified access
+  description:
+    Returns a list of all unmanaged access groups for a specified access
     system.
   request:
     path: /acs/access_groups/unmanaged/list
@@ -1556,21 +1587,22 @@
   response:
     body:
       acs_access_groups:
-      - access_group_type: salto_ks_access_group
-        access_group_type_display_name: Salto KS Access Group
-        acs_access_group_id: 2b15909b-39b9-441c-89d9-584f88fd9baf
-        acs_system_id: dae690eb-af0b-4f87-9cdb-efe7a0e4c703
-        connected_account_id: 17bf5e76-f35c-43e6-ba1c-10b4b079e493
-        created_at: '2025-06-15T16:54:17.946475Z'
-        display_name: Other Group
-        external_type: salto_ks_access_group
-        external_type_display_name: Salto KS Access Group
-        is_managed: false
-        name: My Unmanaged Access Group
-        warnings: []
-        workspace_id: 8a844fbb-c583-485e-a8d9-94d8e96fb6d4
+        - access_group_type: salto_ks_access_group
+          access_group_type_display_name: Salto KS Access Group
+          acs_access_group_id: 2b15909b-39b9-441c-89d9-584f88fd9baf
+          acs_system_id: dae690eb-af0b-4f87-9cdb-efe7a0e4c703
+          connected_account_id: 17bf5e76-f35c-43e6-ba1c-10b4b079e493
+          created_at: '2025-06-15T16:54:17.946475Z'
+          display_name: Other Group
+          external_type: salto_ks_access_group
+          external_type_display_name: Salto KS Access Group
+          is_managed: false
+          name: My Unmanaged Access Group
+          warnings: []
+          workspace_id: 8a844fbb-c583-485e-a8d9-94d8e96fb6d4
 - title: List unmanaged access groups for an access system user
-  description: Returns a list of all unmanaged access groups for a specified access
+  description:
+    Returns a list of all unmanaged access groups for a specified access
     system user.
   request:
     path: /acs/access_groups/unmanaged/list
@@ -1579,19 +1611,19 @@
   response:
     body:
       acs_access_groups:
-      - access_group_type: salto_ks_access_group
-        access_group_type_display_name: Salto KS Access Group
-        acs_access_group_id: 2b15909b-39b9-441c-89d9-584f88fd9baf
-        acs_system_id: e2f31e7b-17a3-417c-9d97-12a6017950e9
-        connected_account_id: 17bf5e76-f35c-43e6-ba1c-10b4b079e493
-        created_at: '2025-06-15T16:54:17.946475Z'
-        display_name: Other Group
-        external_type: salto_ks_access_group
-        external_type_display_name: Salto KS Access Group
-        is_managed: false
-        name: My Unmanaged Access Group
-        warnings: []
-        workspace_id: 8a844fbb-c583-485e-a8d9-94d8e96fb6d4
+        - access_group_type: salto_ks_access_group
+          access_group_type_display_name: Salto KS Access Group
+          acs_access_group_id: 2b15909b-39b9-441c-89d9-584f88fd9baf
+          acs_system_id: e2f31e7b-17a3-417c-9d97-12a6017950e9
+          connected_account_id: 17bf5e76-f35c-43e6-ba1c-10b4b079e493
+          created_at: '2025-06-15T16:54:17.946475Z'
+          display_name: Other Group
+          external_type: salto_ks_access_group
+          external_type_display_name: Salto KS Access Group
+          is_managed: false
+          name: My Unmanaged Access Group
+          warnings: []
+          workspace_id: 8a844fbb-c583-485e-a8d9-94d8e96fb6d4
 - title: Get an unmanaged credential
   description: Returns a specified unmanaged credential.
   request:
@@ -1626,24 +1658,24 @@
   response:
     body:
       acs_credentials:
-      - access_method: code
-        acs_credential_id: 666abb33-e9a9-4c1a-b25d-b4e493d5bc89
-        acs_system_id: f8da38be-bc06-491a-a8bd-67696abf49b1
-        acs_user_id: 6362c5c5-d545-4a7e-a80b-39620030300b
-        code: '123456'
-        created_at: '2025-06-15T16:54:17.946521Z'
-        display_name: Front Door
-        errors: []
-        external_type: salto_ks_credential
-        external_type_display_name: Salto KS Credential
-        is_latest_desired_state_synced_with_provider: true
-        is_managed: false
-        is_multi_phone_sync_credential: false
-        is_one_time_use: false
-        latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
-        starts_at: '2025-07-02T16:54:17.946518Z'
-        warnings: []
-        workspace_id: b8f131e5-73e1-4e23-8b70-978f5d789f3a
+        - access_method: code
+          acs_credential_id: 666abb33-e9a9-4c1a-b25d-b4e493d5bc89
+          acs_system_id: f8da38be-bc06-491a-a8bd-67696abf49b1
+          acs_user_id: 6362c5c5-d545-4a7e-a80b-39620030300b
+          code: '123456'
+          created_at: '2025-06-15T16:54:17.946521Z'
+          display_name: Front Door
+          errors: []
+          external_type: salto_ks_credential
+          external_type_display_name: Salto KS Credential
+          is_latest_desired_state_synced_with_provider: true
+          is_managed: false
+          is_multi_phone_sync_credential: false
+          is_one_time_use: false
+          latest_desired_state_synced_with_provider_at: '2025-06-18T16:54:17.946514Z'
+          starts_at: '2025-07-02T16:54:17.946518Z'
+          warnings: []
+          workspace_id: b8f131e5-73e1-4e23-8b70-978f5d789f3a
 - title: Get an unmanaged access system user
   description: Returns a specified unmanaged access system user.
   request:
@@ -1679,7 +1711,8 @@
         warnings: []
         workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
 - title: List unmanaged access system users for a user identity
-  description: Returns a list of all unmanaged access system users for a specified
+  description:
+    Returns a list of all unmanaged access system users for a specified
     user identity.
   request:
     path: /acs/users/unmanaged/list
@@ -1689,33 +1722,34 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
-        acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
-        connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
-        created_at: '2025-06-15T16:54:17.946488Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
-        is_managed: false
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551001'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: e7ae215a-3fd8-4c1d-99fb-a792bb5839d5
-        user_identity_phone_number: '+1555551001'
-        warnings: []
-        workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
+          acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
+          connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
+          created_at: '2025-06-15T16:54:17.946488Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
+          is_managed: false
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551001'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: e7ae215a-3fd8-4c1d-99fb-a792bb5839d5
+          user_identity_phone_number: '+1555551001'
+          warnings: []
+          workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
 - title: List unmanaged access system users for a user identity phone number
-  description: Returns a list of all unmanaged access system users for a specified
+  description:
+    Returns a list of all unmanaged access system users for a specified
     user identity phone number.
   request:
     path: /acs/users/unmanaged/list
@@ -1724,33 +1758,34 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
-        acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
-        connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
-        created_at: '2025-06-15T16:54:17.946488Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
-        is_managed: false
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551001'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: b84356b2-af8d-4d01-8f99-a4c152c1405c
-        user_identity_phone_number: '+1555551001'
-        warnings: []
-        workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
+          acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
+          connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
+          created_at: '2025-06-15T16:54:17.946488Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
+          is_managed: false
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551001'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: b84356b2-af8d-4d01-8f99-a4c152c1405c
+          user_identity_phone_number: '+1555551001'
+          warnings: []
+          workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
 - title: List unmanaged access system users for a user identity email address
-  description: Returns a list of all unmanaged access system users for a specified
+  description:
+    Returns a list of all unmanaged access system users for a specified
     user identity email address.
   request:
     path: /acs/users/unmanaged/list
@@ -1759,33 +1794,34 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
-        acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
-        connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
-        created_at: '2025-06-15T16:54:17.946488Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
-        is_managed: false
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551001'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: b84356b2-af8d-4d01-8f99-a4c152c1405c
-        user_identity_phone_number: '+1555551001'
-        warnings: []
-        workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
+          acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
+          connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
+          created_at: '2025-06-15T16:54:17.946488Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
+          is_managed: false
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551001'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: b84356b2-af8d-4d01-8f99-a4c152c1405c
+          user_identity_phone_number: '+1555551001'
+          warnings: []
+          workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
 - title: List unmanaged users for an access system
-  description: Returns a list of all unmanaged access system users for a specified
+  description:
+    Returns a list of all unmanaged access system users for a specified
     access system.
   request:
     path: /acs/users/unmanaged/list
@@ -1794,33 +1830,34 @@
   response:
     body:
       acs_users:
-      - access_schedule:
-          ends_at: '2025-06-12T11:00:00.000Z'
-          starts_at: '2025-06-10T15:00:00.000Z'
-        acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
-        acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
-        connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
-        created_at: '2025-06-15T16:54:17.946488Z'
-        display_name: Jane Doe
-        email_address: jane@example.com
-        errors: []
-        external_type: salto_site_user
-        external_type_display_name: Salto site user
-        full_name: Jane Doe
-        hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
-        is_managed: false
-        is_suspended: false
-        last_successful_sync_at: '2025-06-18T17:45:00.582Z'
-        pending_mutations: []
-        phone_number: '+1555551001'
-        user_identity_email_address: jane@example.com
-        user_identity_full_name: Jane Doe
-        user_identity_id: b84356b2-af8d-4d01-8f99-a4c152c1405c
-        user_identity_phone_number: '+1555551001'
-        warnings: []
-        workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
+        - access_schedule:
+            ends_at: '2025-06-12T11:00:00.000Z'
+            starts_at: '2025-06-10T15:00:00.000Z'
+          acs_system_id: c1728baa-4866-4498-a77b-d8bdcb2e7c70
+          acs_user_id: 0c43d2b2-4a88-4ec0-8649-7ff53439a50e
+          connected_account_id: 68130ac8-f798-4661-908b-8ad851cb3c07
+          created_at: '2025-06-15T16:54:17.946488Z'
+          display_name: Jane Doe
+          email_address: jane@example.com
+          errors: []
+          external_type: salto_site_user
+          external_type_display_name: Salto site user
+          full_name: Jane Doe
+          hid_acs_system_id: b7db3208-103a-4cf1-bef4-e9284288d87e
+          is_managed: false
+          is_suspended: false
+          last_successful_sync_at: '2025-06-18T17:45:00.582Z'
+          pending_mutations: []
+          phone_number: '+1555551001'
+          user_identity_email_address: jane@example.com
+          user_identity_full_name: Jane Doe
+          user_identity_id: b84356b2-af8d-4d01-8f99-a4c152c1405c
+          user_identity_phone_number: '+1555551001'
+          warnings: []
+          workspace_id: f8f938d8-ad36-4b59-9686-54804c0a299f
 - title: Simulate that the next credential encoding attempt will fail
-  description: Simulates that the next attempt to encode a credential using the specified
+  description:
+    Simulates that the next attempt to encode a credential using the specified
     encoder will fail.
   request:
     path: /acs/encoders/simulate/next_credential_encode_will_fail
@@ -1830,7 +1867,8 @@
   response:
     body: null
 - title: Simulate that the next credential encoding attempt will succeed
-  description: Simulates that the next attempt to encode a credential using the specified
+  description:
+    Simulates that the next attempt to encode a credential using the specified
     encoder will succeed.
   request:
     path: /acs/encoders/simulate/next_credential_encode_will_succeed
@@ -1840,7 +1878,8 @@
   response:
     body: null
 - title: Simulate that the next credential scan attempt will fail
-  description: Simulates that the next attempt to scan a credential using the specified
+  description:
+    Simulates that the next attempt to scan a credential using the specified
     encoder will fail.
   request:
     path: /acs/encoders/simulate/next_credential_scan_will_fail
@@ -1850,7 +1889,8 @@
   response:
     body: null
 - title: Simulate that the next credential scan attempt will succeed
-  description: Simulates that the next attempt to scan a credential using the specified
+  description:
+    Simulates that the next attempt to scan a credential using the specified
     encoder will succeed.
   request:
     path: /acs/encoders/simulate/next_credential_scan_will_succeed
