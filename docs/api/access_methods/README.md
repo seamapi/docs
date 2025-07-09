@@ -74,6 +74,15 @@ ID of the access method.
 
 ---
 
+**`code`** *String*
+
+The actual PIN code for code access methods.
+
+
+
+
+---
+
 **`created_at`** *Datetime*
 
 Date and time at which the access method was created.

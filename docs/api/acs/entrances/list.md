@@ -294,6 +294,12 @@ ID of the connected account for which you want to retrieve all entrances.
 
 ---
 
+**`search`** *String*
+
+String for which to search. Filters returned entrances to include all records that satisfy a partial match using `display_name`.
+
+---
+
 **`space_id`** *String*
 
 ID of the space for which you want to list entrances.

@@ -302,6 +302,24 @@ ID of access grant to list access methods for.
 
 ---
 
+**`acs_entrance_id`** *String*
+
+ID of the entrance for which you want to retrieve all access methods.
+
+---
+
+**`device_id`** *String*
+
+ID of the device for which you want to retrieve all access methods.
+
+---
+
+**`space_id`** *String*
+
+ID of the space for which you want to retrieve all access methods.
+
+---
+
 
 ## Response
 

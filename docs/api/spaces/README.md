@@ -31,9 +31,27 @@ A space resource.
 ---
 ## Properties
 
+**`acs_entrance_count`** *Number*
+
+Number of entrances in the space.
+
+
+
+
+---
+
 **`created_at`** *Datetime*
 
 Date and time at which the space was created.
+
+
+
+
+---
+
+**`device_count`** *Number*
+
+Number of devices in the space.
 
 
 

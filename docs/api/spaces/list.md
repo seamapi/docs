@@ -179,7 +179,11 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-None
+**`search`** *String*
+
+String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.
+
+---
 
 
 ## Response
