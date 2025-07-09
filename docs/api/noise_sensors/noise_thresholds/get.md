@@ -23,11 +23,11 @@ await seam.noiseSensors.noiseThresholds.get({
 
 ```javascript
 {
-  "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+  "device_id": "736fc5bf-192d-4416-b879-66ff0195f2f7",
   "ends_daily_at": "2025-06-19T12:38:44.000Z",
   "name": "My Noise Sensor",
   "noise_threshold_decibels": 50,
-  "noise_threshold_id": "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+  "noise_threshold_id": "8282891b-c4da-4239-8f01-56089d44b80d",
   "noise_threshold_nrs": 40,
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }
@@ -55,11 +55,11 @@ EOF
 ```curl
 {
   "noise_threshold": {
-    "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+    "device_id": "736fc5bf-192d-4416-b879-66ff0195f2f7",
     "ends_daily_at": "2025-06-19T12:38:44.000Z",
     "name": "My Noise Sensor",
     "noise_threshold_decibels": 50,
-    "noise_threshold_id": "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+    "noise_threshold_id": "8282891b-c4da-4239-8f01-56089d44b80d",
     "noise_threshold_nrs": 40,
     "starts_daily_at": "2025-06-20T18:29:57.000Z"
   }
@@ -83,11 +83,11 @@ seam.noise_sensors.noise_thresholds.get(
 
 ```python
 NoiseThreshold(
-    device_id="8282891b-c4da-4239-8f01-56089d44b80d",
+    device_id="736fc5bf-192d-4416-b879-66ff0195f2f7",
     ends_daily_at="2025-06-19T12:38:44.000Z",
     name="My Noise Sensor",
     noise_threshold_decibels=50,
-    noise_threshold_id="f8cef69d-625f-464c-aed4-287c06e0d7fe",
+    noise_threshold_id="8282891b-c4da-4239-8f01-56089d44b80d",
     noise_threshold_nrs=40,
     starts_daily_at="2025-06-20T18:29:57.000Z",
 )
@@ -108,11 +108,11 @@ seam.noise_sensors.noise_thresholds.get(noise_threshold_id: "8282891b-c4da-4239-
 
 ```ruby
 {
-  "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
+  "device_id" => "736fc5bf-192d-4416-b879-66ff0195f2f7",
   "ends_daily_at" => "2025-06-19T12:38:44.000Z",
   "name" => "My Noise Sensor",
   "noise_threshold_decibels" => 50,
-  "noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+  "noise_threshold_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
   "noise_threshold_nrs" => 40,
   "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 }
@@ -135,11 +135,11 @@ $seam->noise_sensors->noise_thresholds->get(
 
 ```php
 [
-    "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
+    "device_id" => "736fc5bf-192d-4416-b879-66ff0195f2f7",
     "ends_daily_at" => "2025-06-19T12:38:44.000Z",
     "name" => "My Noise Sensor",
     "noise_threshold_decibels" => 50,
-    "noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+    "noise_threshold_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
     "noise_threshold_nrs" => 40,
     "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 ];
@@ -160,11 +160,11 @@ seam noise-sensors noise-thresholds get --noise_threshold_id "8282891b-c4da-4239
 
 ```seam_cli
 {
-  "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+  "device_id": "736fc5bf-192d-4416-b879-66ff0195f2f7",
   "ends_daily_at": "2025-06-19T12:38:44.000Z",
   "name": "My Noise Sensor",
   "noise_threshold_decibels": 50,
-  "noise_threshold_id": "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+  "noise_threshold_id": "8282891b-c4da-4239-8f01-56089d44b80d",
   "noise_threshold_nrs": 40,
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }

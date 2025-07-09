@@ -102,8 +102,8 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", "on"],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+    "available_fan_mode_settings": ["auto", true],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",
@@ -154,7 +154,7 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
     "thermostat_daily_programs": [
       {
         "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekday Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -168,7 +168,7 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
       },
       {
         "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekend Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -286,8 +286,8 @@ EOF
           "heating_set_point_fahrenheit": 64
         }
       ],
-      "available_fan_mode_settings": ["auto", "on"],
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "available_fan_mode_settings": ["auto", true],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
       "current_climate_setting": {
         "display_name": "Manual Setting",
         "fan_mode_setting": "auto",
@@ -338,7 +338,7 @@ EOF
       "thermostat_daily_programs": [
         {
           "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
           "name": "Weekday Program",
           "periods": [
             { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -352,7 +352,7 @@ EOF
         },
         {
           "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
           "name": "Weekend Program",
           "periods": [
             { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -464,8 +464,8 @@ Device(
                 "heating_set_point_fahrenheit": 64,
             },
         ],
-        "available_fan_mode_settings": ["auto", "on"],
-        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+        "available_fan_mode_settings": ["auto", true],
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
         "current_climate_setting": {
             "display_name": "Manual Setting",
             "fan_mode_setting": "auto",
@@ -513,7 +513,7 @@ Device(
         "thermostat_daily_programs": [
             {
                 "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-                "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name": "Weekday Program",
                 "periods": [
                     {"starts_at_time": "00:00:00", "climate_preset_key": "sleep"},
@@ -527,7 +527,7 @@ Device(
             },
             {
                 "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-                "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name": "Weekend Program",
                 "periods": [
                     {"starts_at_time": "00:00:00", "climate_preset_key": "sleep"},
@@ -642,8 +642,8 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
         heating_set_point_fahrenheit: 64,
       },
     ],
-    available_fan_mode_settings: %w[auto on],
-    available_hvac_mode_settings: %w[cool heat heat_cool off],
+    available_fan_mode_settings: ["auto", true],
+    available_hvac_mode_settings: ["cool", "heat", "heat_cool", false],
     current_climate_setting: {
       display_name: "Manual Setting",
       fan_mode_setting: "auto",
@@ -695,7 +695,7 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
     thermostat_daily_programs: [
       {
         thermostat_daily_program_id: "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-        device_id: "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         name: "Weekday Program",
         periods: [
           { starts_at_time: "00:00:00", climate_preset_key: "sleep" },
@@ -709,7 +709,7 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
       },
       {
         thermostat_daily_program_id: "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-        device_id: "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         name: "Weekend Program",
         periods: [
           { starts_at_time: "00:00:00", climate_preset_key: "sleep" },
@@ -820,8 +820,8 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
                 "heating_set_point_fahrenheit" => 64,
             ],
         ],
-        "available_fan_mode_settings" => ["auto", "on"],
-        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", "off"],
+        "available_fan_mode_settings" => ["auto", true],
+        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", false],
         "current_climate_setting" => [
             "display_name" => "Manual Setting",
             "fan_mode_setting" => "auto",
@@ -874,7 +874,7 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
             [
                 "thermostat_daily_program_id" =>
                     "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-                "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id" => "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name" => "Weekday Program",
                 "periods" => [
                     [
@@ -904,7 +904,7 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
             [
                 "thermostat_daily_program_id" =>
                     "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-                "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id" => "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name" => "Weekend Program",
                 "periods" => [
                     [
@@ -1024,8 +1024,8 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", "on"],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+    "available_fan_mode_settings": ["auto", true],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",
@@ -1076,7 +1076,7 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
     "thermostat_daily_programs": [
       {
         "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekday Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -1090,7 +1090,7 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
       },
       {
         "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekend Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -1307,8 +1307,8 @@ await seam.devices.get({ name: "My Device" });
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", "on"],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+    "available_fan_mode_settings": ["auto", true],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",
@@ -1491,8 +1491,8 @@ EOF
           "heating_set_point_fahrenheit": 64
         }
       ],
-      "available_fan_mode_settings": ["auto", "on"],
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "available_fan_mode_settings": ["auto", true],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
       "current_climate_setting": {
         "display_name": "Manual Setting",
         "fan_mode_setting": "auto",
@@ -1669,8 +1669,8 @@ Device(
                 "heating_set_point_fahrenheit": 64,
             },
         ],
-        "available_fan_mode_settings": ["auto", "on"],
-        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+        "available_fan_mode_settings": ["auto", true],
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
         "current_climate_setting": {
             "display_name": "Manual Setting",
             "fan_mode_setting": "auto",
@@ -1847,8 +1847,8 @@ seam.devices.get(name: "My Device")
         heating_set_point_fahrenheit: 64,
       },
     ],
-    available_fan_mode_settings: %w[auto on],
-    available_hvac_mode_settings: %w[cool heat heat_cool off],
+    available_fan_mode_settings: ["auto", true],
+    available_hvac_mode_settings: ["cool", "heat", "heat_cool", false],
     current_climate_setting: {
       display_name: "Manual Setting",
       fan_mode_setting: "auto",
@@ -2025,8 +2025,8 @@ $seam->devices->get(name: "My Device");
                 "heating_set_point_fahrenheit" => 64,
             ],
         ],
-        "available_fan_mode_settings" => ["auto", "on"],
-        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", "off"],
+        "available_fan_mode_settings" => ["auto", true],
+        "available_hvac_mode_settings" => ["cool", "heat", "heat_cool", false],
         "current_climate_setting" => [
             "display_name" => "Manual Setting",
             "fan_mode_setting" => "auto",
@@ -2229,8 +2229,8 @@ seam devices get --name "My Device"
         "heating_set_point_fahrenheit": 64
       }
     ],
-    "available_fan_mode_settings": ["auto", "on"],
-    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+    "available_fan_mode_settings": ["auto", true],
+    "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
     "current_climate_setting": {
       "display_name": "Manual Setting",
       "fan_mode_setting": "auto",

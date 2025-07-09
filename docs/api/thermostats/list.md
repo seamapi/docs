@@ -100,8 +100,8 @@ await seam.thermostats.list({ limit: 10 });
           "heating_set_point_fahrenheit": 64
         }
       ],
-      "available_fan_mode_settings": ["auto", "on"],
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "available_fan_mode_settings": ["auto", true],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
       "current_climate_setting": {
         "display_name": "Manual Setting",
         "fan_mode_setting": "auto",
@@ -286,8 +286,8 @@ EOF
             "heating_set_point_fahrenheit": 64
           }
         ],
-        "available_fan_mode_settings": ["auto", "on"],
-        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+        "available_fan_mode_settings": ["auto", true],
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
         "current_climate_setting": {
           "display_name": "Manual Setting",
           "fan_mode_setting": "auto",
@@ -466,8 +466,8 @@ seam.thermostats.list(limit=10)
                     "heating_set_point_fahrenheit": 64,
                 },
             ],
-            "available_fan_mode_settings": ["auto", "on"],
-            "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+            "available_fan_mode_settings": ["auto", true],
+            "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
             "current_climate_setting": {
                 "display_name": "Manual Setting",
                 "fan_mode_setting": "auto",
@@ -649,8 +649,8 @@ seam.thermostats.list(limit: 10)
           heating_set_point_fahrenheit: 64,
         },
       ],
-      available_fan_mode_settings: %w[auto on],
-      available_hvac_mode_settings: %w[cool heat heat_cool off],
+      available_fan_mode_settings: ["auto", true],
+      available_hvac_mode_settings: ["cool", "heat", "heat_cool", false],
       current_climate_setting: {
         display_name: "Manual Setting",
         fan_mode_setting: "auto",
@@ -829,12 +829,12 @@ $seam->thermostats->list(limit: 10);
                     "heating_set_point_fahrenheit" => 64,
                 ],
             ],
-            "available_fan_mode_settings" => ["auto", "on"],
+            "available_fan_mode_settings" => ["auto", true],
             "available_hvac_mode_settings" => [
                 "cool",
                 "heat",
                 "heat_cool",
-                "off",
+                false,
             ],
             "current_climate_setting" => [
                 "display_name" => "Manual Setting",
@@ -1040,8 +1040,8 @@ seam thermostats list --limit 10
           "heating_set_point_fahrenheit": 64
         }
       ],
-      "available_fan_mode_settings": ["auto", "on"],
-      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "available_fan_mode_settings": ["auto", true],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", false],
       "current_climate_setting": {
         "display_name": "Manual Setting",
         "fan_mode_setting": "auto",

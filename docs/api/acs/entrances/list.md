@@ -26,7 +26,7 @@ await seam.acs.entrances.list({
 [
   {
     "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "acs_system_id": "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
     "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
     "created_at": "2025-06-15T16:54:17.946495Z",
     "display_name": "Main Entrance",
@@ -69,7 +69,7 @@ EOF
   "acs_entrances": [
     {
       "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-      "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+      "acs_system_id": "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
       "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
       "created_at": "2025-06-15T16:54:17.946495Z",
       "display_name": "Main Entrance",
@@ -106,7 +106,7 @@ seam.acs.entrances.list(acs_system_id="d34802da-d8e3-4d0b-98c3-16d6e18ed508")
 [
     AcsEntrance(
         acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
-        acs_system_id="6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+        acs_system_id="d34802da-d8e3-4d0b-98c3-16d6e18ed508",
         connected_account_id="1b9a3e0d-443f-4063-b619-4ca7e2a97751",
         created_at="2025-06-15T16:54:17.946495Z",
         display_name="Main Entrance",
@@ -142,7 +142,7 @@ seam.acs.entrances.list(acs_system_id: "d34802da-d8e3-4d0b-98c3-16d6e18ed508")
 [
   {
     "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "acs_system_id" => "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
     "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
     "created_at" => "2025-06-15T16:54:17.946495Z",
     "display_name" => "Main Entrance",
@@ -180,7 +180,7 @@ $seam->acs->entrances->list(
 [
     [
         "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
-        "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+        "acs_system_id" => "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
         "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
         "created_at" => "2025-06-15T16:54:17.946495Z",
         "display_name" => "Main Entrance",
@@ -217,7 +217,7 @@ seam acs entrances list --acs_system_id "d34802da-d8e3-4d0b-98c3-16d6e18ed508"
 [
   {
     "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "acs_system_id": "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
     "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
     "created_at": "2025-06-15T16:54:17.946495Z",
     "display_name": "Main Entrance",
