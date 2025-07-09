@@ -24,7 +24,7 @@ await seam.noiseSensors.noiseThresholds.list({
 ```javascript
 [
   {
-    "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+    "device_id": "a60d1a44-5727-4223-8b58-9c2455eb57fc",
     "ends_daily_at": "2025-06-19T12:38:44.000Z",
     "name": "My Noise Sensor",
     "noise_threshold_decibels": 50,
@@ -58,7 +58,7 @@ EOF
 {
   "noise_thresholds": [
     {
-      "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+      "device_id": "a60d1a44-5727-4223-8b58-9c2455eb57fc",
       "ends_daily_at": "2025-06-19T12:38:44.000Z",
       "name": "My Noise Sensor",
       "noise_threshold_decibels": 50,
@@ -88,7 +88,7 @@ seam.noise_sensors.noise_thresholds.list(
 ```python
 [
     NoiseThreshold(
-        device_id="8282891b-c4da-4239-8f01-56089d44b80d",
+        device_id="a60d1a44-5727-4223-8b58-9c2455eb57fc",
         ends_daily_at="2025-06-19T12:38:44.000Z",
         name="My Noise Sensor",
         noise_threshold_decibels=50,
@@ -115,7 +115,7 @@ seam.noise_sensors.noise_thresholds.list(device_id: "a60d1a44-5727-4223-8b58-9c2
 ```ruby
 [
   {
-    "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
+    "device_id" => "a60d1a44-5727-4223-8b58-9c2455eb57fc",
     "ends_daily_at" => "2025-06-19T12:38:44.000Z",
     "name" => "My Noise Sensor",
     "noise_threshold_decibels" => 50,
@@ -144,7 +144,7 @@ $seam->noise_sensors->noise_thresholds->list(
 ```php
 [
     [
-        "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
+        "device_id" => "a60d1a44-5727-4223-8b58-9c2455eb57fc",
         "ends_daily_at" => "2025-06-19T12:38:44.000Z",
         "name" => "My Noise Sensor",
         "noise_threshold_decibels" => 50,
@@ -171,7 +171,7 @@ seam noise-sensors noise-thresholds list --device_id "a60d1a44-5727-4223-8b58-9c
 ```seam_cli
 [
   {
-    "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+    "device_id": "a60d1a44-5727-4223-8b58-9c2455eb57fc",
     "ends_daily_at": "2025-06-19T12:38:44.000Z",
     "name": "My Noise Sensor",
     "noise_threshold_decibels": 50,

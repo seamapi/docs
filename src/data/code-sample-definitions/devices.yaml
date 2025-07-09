@@ -141,7 +141,7 @@
             upper_limit_fahrenheit: 80
           thermostat_daily_programs:
             - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
-              device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+              device_id: a75bff05-29a3-4215-a09f-2156c52a4ac7
               name: Weekday Program
               periods:
                 - starts_at_time: 00:00:00
@@ -157,7 +157,7 @@
               workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
               created_at: '2025-05-30T04:01:25.455Z'
             - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
-              device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+              device_id: a75bff05-29a3-4215-a09f-2156c52a4ac7
               name: Weekend Program
               periods:
                 - starts_at_time: 00:00:00
@@ -505,7 +505,9 @@
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
         next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List devices for a Connect Webview
-  description: Returns a list of all devices that were connected using a specified Connect Webview.
+  description:
+    Returns a list of all devices that were connected using a specified
+    Connect Webview.
   request:
     path: /devices/list
     parameters:
@@ -1182,7 +1184,9 @@
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
         next_page_url: https://connect.getseam.com/devices/list?limit=50&page_cursor=WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0%3D
 - title: List devices for a specific manufacturer, created before a specific date
-  description: Returns a list of all devices for a specific manufacturer, created (in Seam) before a specific date.
+  description:
+    Returns a list of all devices for a specific manufacturer, created
+    (in Seam) before a specific date.
   request:
     path: /devices/list
     parameters:
@@ -1664,7 +1668,8 @@
   request:
     path: /devices/unmanaged/list
     parameters:
-      customer_ids: [e387e15f-be27-47ad-881f-4a6fc5460c57]
+      customer_ids:
+        - e387e15f-be27-47ad-881f-4a6fc5460c57
   response:
     body:
       devices:
@@ -1714,7 +1719,9 @@
           warnings: []
           workspace_id: 3cd6ba1c-8a60-4c24-b487-07bf6c0b755b
 - title: List unmanaged devices for a specific connected account
-  description: Returns a list of all unmanaged devices for a specified connected account ID.
+  description:
+    Returns a list of all unmanaged devices for a specified connected account
+    ID.
   request:
     path: /devices/unmanaged/list
     parameters:
@@ -1822,7 +1829,9 @@
           warnings: []
           workspace_id: 3cd6ba1c-8a60-4c24-b487-07bf6c0b755b
 - title: List unmanaged devices created before a specific date
-  description: Returns a list of all unmanaged devices created (in Seam) before a specified date.
+  description:
+    Returns a list of all unmanaged devices created (in Seam) before a
+    specified date.
   request:
     path: /devices/unmanaged/list
     parameters:

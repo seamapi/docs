@@ -27,7 +27,7 @@ await seam.thermostats.schedules.list({
   {
     "climate_preset_key": "Eco",
     "created_at": "2025-06-14T16:54:17.946316Z",
-    "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+    "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea",
     "ends_at": "2025-07-14T16:54:17.946313Z",
     "errors": [],
     "is_override_allowed": true,
@@ -65,7 +65,7 @@ EOF
     {
       "climate_preset_key": "Eco",
       "created_at": "2025-06-14T16:54:17.946316Z",
-      "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+      "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea",
       "ends_at": "2025-07-14T16:54:17.946313Z",
       "errors": [],
       "is_override_allowed": true,
@@ -97,7 +97,7 @@ seam.thermostats.schedules.list(device_id="b5d58842-32be-46d2-b161-26787a0bd5ea"
     ThermostatSchedule(
         climate_preset_key="Eco",
         created_at="2025-06-14T16:54:17.946316Z",
-        device_id="dc1dfc4b-8082-453f-a953-276941af8650",
+        device_id="b5d58842-32be-46d2-b161-26787a0bd5ea",
         ends_at="2025-07-14T16:54:17.946313Z",
         errors=[],
         is_override_allowed=true,
@@ -128,7 +128,7 @@ seam.thermostats.schedules.list(device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea
   {
     "climate_preset_key" => "Eco",
     "created_at" => "2025-06-14T16:54:17.946316Z",
-    "device_id" => "dc1dfc4b-8082-453f-a953-276941af8650",
+    "device_id" => "b5d58842-32be-46d2-b161-26787a0bd5ea",
     "ends_at" => "2025-07-14T16:54:17.946313Z",
     "errors" => [],
     "is_override_allowed" => true,
@@ -161,7 +161,7 @@ $seam->thermostats->schedules->list(
     [
         "climate_preset_key" => "Eco",
         "created_at" => "2025-06-14T16:54:17.946316Z",
-        "device_id" => "dc1dfc4b-8082-453f-a953-276941af8650",
+        "device_id" => "b5d58842-32be-46d2-b161-26787a0bd5ea",
         "ends_at" => "2025-07-14T16:54:17.946313Z",
         "errors" => [],
         "is_override_allowed" => true,
@@ -192,7 +192,7 @@ seam thermostats schedules list --device_id "b5d58842-32be-46d2-b161-26787a0bd5e
   {
     "climate_preset_key": "Eco",
     "created_at": "2025-06-14T16:54:17.946316Z",
-    "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+    "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea",
     "ends_at": "2025-07-14T16:54:17.946313Z",
     "errors": [],
     "is_override_allowed": true,

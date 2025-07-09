@@ -1,6 +1,8 @@
 ---
 - title: List noise sensors
-  description: Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
+  description:
+    Returns a list of all noise sensors. For additional filter parameters,
+    see /devices/list.
   request:
     path: /noise_sensors/list
     parameters:
@@ -20,7 +22,7 @@
           errors: []
           is_managed: true
           location:
-            location_name: "Jane's Test Home"
+            location_name: Jane's Test Home
             timezone: America/Los_Angeles
           nickname: Living Room
           properties:
@@ -52,7 +54,7 @@
               home_location:
                 latitude: 0
                 longitude: 0
-              home_name: "Jane's Test Home"
+              home_name: Jane's Test Home
               latest_sensor_values:
                 accelerometer_z:
                   time: '2025-06-16T16:54:17.946049Z'
@@ -90,7 +92,7 @@
           errors: []
           is_managed: true
           location:
-            location_name: "Jane's Test Home"
+            location_name: Jane's Test Home
             timezone: America/Los_Angeles
           nickname: Living Room
           properties:
@@ -122,7 +124,7 @@
               home_location:
                 latitude: 0
                 longitude: 0
-              home_name: "Jane's Test Home"
+              home_name: Jane's Test Home
               latest_sensor_values:
                 accelerometer_z:
                   time: '2025-06-16T16:54:17.946049Z'
@@ -148,7 +150,9 @@
           warnings: []
           workspace_id: 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
 - title: Simulate triggering a noise threshold
-  description: Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
+  description:
+    Simulates the triggering of a noise threshold for a noise sensor in
+    a sandbox workspace.
   request:
     path: /noise_sensors/simulate/trigger_noise_threshold
     parameters:
@@ -194,11 +198,11 @@
   response:
     body:
       noise_threshold:
-        device_id: 8282891b-c4da-4239-8f01-56089d44b80d
+        device_id: 736fc5bf-192d-4416-b879-66ff0195f2f7
         ends_daily_at: '2025-06-19T12:38:44.000Z'
         name: My Noise Sensor
         noise_threshold_decibels: 50
-        noise_threshold_id: f8cef69d-625f-464c-aed4-287c06e0d7fe
+        noise_threshold_id: 8282891b-c4da-4239-8f01-56089d44b80d
         noise_threshold_nrs: 40
         starts_daily_at: '2025-06-20T18:29:57.000Z'
 - title: List noise thresholds
@@ -210,7 +214,7 @@
   response:
     body:
       noise_thresholds:
-        - device_id: 8282891b-c4da-4239-8f01-56089d44b80d
+        - device_id: a60d1a44-5727-4223-8b58-9c2455eb57fc
           ends_daily_at: '2025-06-19T12:38:44.000Z'
           name: My Noise Sensor
           noise_threshold_decibels: 50

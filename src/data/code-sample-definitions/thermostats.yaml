@@ -1,4 +1,3 @@
----
 - title: Activate a climate preset
   description: Activates a specified climate preset for a specified thermostat.
   request:
@@ -187,7 +186,7 @@
             upper_limit_fahrenheit: 80
           thermostat_daily_programs:
             - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
-              device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+              device_id: 707bc177-6804-4534-a119-08bea346d3c6
               name: Weekday Program
               periods:
                 - starts_at_time: 00:00:00
@@ -203,7 +202,7 @@
               workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
               created_at: '2025-05-30T04:01:25.455Z'
             - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
-              device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+              device_id: 707bc177-6804-4534-a119-08bea346d3c6
               name: Weekend Program
               periods:
                 - starts_at_time: 00:00:00
@@ -413,7 +412,9 @@
         result: {}
         status: success
 - title: List thermostats
-  description: Returns a list of all thermostats. For additional filter parameters, see /devices/list.
+  description:
+    Returns a list of all thermostats. For additional filter parameters,
+    see /devices/list.
   request:
     path: /thermostats/list
     parameters:
@@ -747,7 +748,9 @@
         result: {}
         status: success
 - title: Set the fallback climate preset
-  description: Sets a specified climate preset as the "fallback" preset for a specified thermostat.
+  description:
+    Sets a specified climate preset as the "fallback" preset for a specified
+    thermostat.
   request:
     path: /thermostats/set_fallback_climate_preset
     parameters:
@@ -839,7 +842,7 @@
     path: /thermostats/schedules/create
     parameters:
       device_id: d710aa35-232d-442b-a817-c28045de1c74
-      name: "Jane's Stay"
+      name: Jane's Stay
       climate_preset_key: Occupied
       max_override_period_minutes: 90
       starts_at: '2025-06-19T15:00:00.000Z'
@@ -855,7 +858,7 @@
         errors: []
         is_override_allowed: true
         max_override_period_minutes: 90
-        name: "Jane's Stay"
+        name: Jane's Stay
         starts_at: '2025-06-22T11:00:00.000Z'
         thermostat_schedule_id: af2cb7f7-9f28-40da-a0a0-e7a008ef7a35
         workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
@@ -883,12 +886,14 @@
         errors: []
         is_override_allowed: true
         max_override_period_minutes: 90
-        name: "Jane's Stay"
+        name: Jane's Stay
         starts_at: '2025-07-12T16:54:17.946313Z'
         thermostat_schedule_id: 408f3f85-11ae-4111-bec1-0f2408a2b218
         workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
 - title: List thermostat schedules by device ID
-  description: Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
+  description:
+    Returns a list of all thermostat schedules for a specified thermostat,
+    using a device ID.
   request:
     path: /thermostats/schedules/list
     parameters:
@@ -898,7 +903,7 @@
       thermostat_schedules:
         - climate_preset_key: Eco
           created_at: '2025-06-14T16:54:17.946316Z'
-          device_id: dc1dfc4b-8082-453f-a953-276941af8650
+          device_id: b5d58842-32be-46d2-b161-26787a0bd5ea
           ends_at: '2025-07-14T16:54:17.946313Z'
           errors: []
           is_override_allowed: true
@@ -908,7 +913,9 @@
           thermostat_schedule_id: af2cb7f7-9f28-40da-a0a0-e7a008ef7a35
           workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
 - title: List thermostat schedules by user identifier key
-  description: Returns a list of all thermostat schedules for a specified thermostat, using a user identifier key.
+  description:
+    Returns a list of all thermostat schedules for a specified thermostat,
+    using a user identifier key.
   request:
     path: /thermostats/schedules/list
     parameters:
@@ -933,7 +940,7 @@
     path: /thermostats/schedules/update
     parameters:
       thermostat_schedule_id: f29b8f4d-ef6e-4219-96e5-16fb2151ec6c
-      name: "Jane's Stay"
+      name: Jane's Stay
       climate_preset_key: Occupied
       max_override_period_minutes: 90
       starts_at: '2025-06-20T03:24:25.000Z'
@@ -949,10 +956,14 @@
       device_id: cc2d0fb9-1f5f-410f-80f1-a64b699de82a
       name: Weekday Program
       periods:
-        - { 'starts_at_time': '07:00:00', 'climate_preset_key': 'Home' }
-        - { 'starts_at_time': '09:00:00', 'climate_preset_key': 'Away' }
-        - { 'starts_at_time': '16:00:00', 'climate_preset_key': 'Home' }
-        - { 'starts_at_time': '22:30:00', 'climate_preset_key': 'Sleep' }
+        - starts_at_time: 07:00:00
+          climate_preset_key: Home
+        - starts_at_time: 09:00:00
+          climate_preset_key: Away
+        - starts_at_time: '16:00:00'
+          climate_preset_key: Home
+        - starts_at_time: '22:30:00'
+          climate_preset_key: Sleep
   response:
     body:
       thermostat_daily_program:
@@ -960,10 +971,14 @@
         device_id: cc2d0fb9-1f5f-410f-80f1-a64b699de82a
         name: Weekday Program
         periods:
-          - { 'starts_at_time': '07:00:00', 'climate_preset_key': 'Home' }
-          - { 'starts_at_time': '09:00:00', 'climate_preset_key': 'Away' }
-          - { 'starts_at_time': '16:00:00', 'climate_preset_key': 'Home' }
-          - { 'starts_at_time': '22:30:00', 'climate_preset_key': 'Sleep' }
+          - starts_at_time: 07:00:00
+            climate_preset_key: Home
+          - starts_at_time: 09:00:00
+            climate_preset_key: Away
+          - starts_at_time: '16:00:00'
+            climate_preset_key: Home
+          - starts_at_time: '22:30:00'
+            climate_preset_key: Sleep
         thermostat_daily_program_id: ab8ef74c-c7cd-4100-aa32-0ef960c0080d
         workspace_id: 8da8d923-e55b-45cd-84a3-6c96b3d3d454
 - title: Delete a thermostat daily program
@@ -982,10 +997,14 @@
       thermostat_daily_program_id: 6baf3a53-ba83-4052-8ea5-143584e18f03
       name: Weekday Program
       periods:
-        - { 'starts_at_time': '07:00:00', 'climate_preset_key': 'Home' }
-        - { 'starts_at_time': '09:00:00', 'climate_preset_key': 'Away' }
-        - { 'starts_at_time': '17:00:00', 'climate_preset_key': 'Home' }
-        - { 'starts_at_time': '22:30:00', 'climate_preset_key': 'Sleep' }
+        - starts_at_time: 07:00:00
+          climate_preset_key: Home
+        - starts_at_time: 09:00:00
+          climate_preset_key: Away
+        - starts_at_time: '17:00:00'
+          climate_preset_key: Home
+        - starts_at_time: '22:30:00'
+          climate_preset_key: Sleep
   response:
     body:
       action_attempt:

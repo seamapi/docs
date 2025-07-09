@@ -4,14 +4,18 @@
   request:
     path: /events/get
     parameters:
-      event_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
+      event_id: ed3adbb8-bbe1-4033-a35a-710d44322bd8
   response:
     body:
       event:
         connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
         created_at: '2025-06-15T16:54:18.000000Z'
         device_id: 3febfdb2-de92-43c1-aba4-640ce8a55a22
-        event_description: The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.
+        event_description:
+          The status of a device changed from offline to online.
+          That is, the device.properties.online property changed from false to true.
+          Note that some devices operate entirely in offline mode, so Seam never emits
+          a device.connected event for these devices.
         event_id: ed3adbb8-bbe1-4033-a35a-710d44322bd8
         event_type: device.connected
         occurred_at: '2025-06-15T16:54:17.946329Z'
@@ -28,7 +32,11 @@
         connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
         created_at: '2025-06-15T16:54:18.000000Z'
         device_id: 3febfdb2-de92-43c1-aba4-640ce8a55a22
-        event_description: The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.
+        event_description:
+          The status of a device changed from offline to online.
+          That is, the device.properties.online property changed from false to true.
+          Note that some devices operate entirely in offline mode, so Seam never emits
+          a device.connected event for these devices.
         event_id: ed3adbb8-bbe1-4033-a35a-710d44322bd8
         event_type: device.connected
         occurred_at: '2025-06-15T16:54:17.946329Z'
@@ -45,7 +53,11 @@
         connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
         created_at: '2025-06-15T16:54:18.000000Z'
         device_id: 3febfdb2-de92-43c1-aba4-640ce8a55a22
-        event_description: The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.
+        event_description:
+          The status of a device changed from offline to online.
+          That is, the device.properties.online property changed from false to true.
+          Note that some devices operate entirely in offline mode, so Seam never emits
+          a device.connected event for these devices.
         event_id: ed3adbb8-bbe1-4033-a35a-710d44322bd8
         event_type: device.connected
         occurred_at: '2025-06-15T16:54:17.946329Z'
@@ -64,7 +76,11 @@
         - connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
           created_at: '2025-06-15T16:54:18.000000Z'
           device_id: b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2
-          event_description: The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.
+          event_description:
+            The status of a device changed from offline to online.
+            That is, the device.properties.online property changed from false to true.
+            Note that some devices operate entirely in offline mode, so Seam never emits
+            a device.connected event for these devices.
           event_id: 6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
           event_type: device.connected
           occurred_at: '2025-06-15T16:54:17.946329Z'
@@ -78,8 +94,11 @@
   request:
     path: /events/list
     parameters:
-      customer_ids: [e387e15f-be27-47ad-881f-4a6fc5460c57]
-      between: ['2025-05-15T00:00:00.000Z', '2025-06-20T23:59:59.999Z']
+      customer_ids:
+        - e387e15f-be27-47ad-881f-4a6fc5460c57
+      between:
+        - '2025-05-15T00:00:00.000Z'
+        - '2025-06-20T23:59:59.999Z'
       limit: 10
   response:
     body:
@@ -87,7 +106,11 @@
         - connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
           created_at: '2025-06-15T16:54:18.000000Z'
           device_id: b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2
-          event_description: The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.
+          event_description:
+            The status of a device changed from offline to online.
+            That is, the device.properties.online property changed from false to true.
+            Note that some devices operate entirely in offline mode, so Seam never emits
+            a device.connected event for these devices.
           event_id: 6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
           event_type: device.connected
           occurred_at: '2025-06-15T16:54:17.946329Z'
@@ -157,7 +180,11 @@
         - connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
           created_at: '2025-06-15T16:54:18.000000Z'
           device_id: b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2
-          event_description: The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.
+          event_description:
+            The status of a device changed from offline to online.
+            That is, the device.properties.online property changed from false to true.
+            Note that some devices operate entirely in offline mode, so Seam never emits
+            a device.connected event for these devices.
           event_id: 6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
           event_type: device.connected
           occurred_at: '2025-06-15T16:54:17.946329Z'
@@ -180,7 +207,9 @@
         - connected_account_id: 2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b
           created_at: '2025-06-15T16:54:18.000000Z'
           device_id: b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2
-          event_description: A connected account was connected for the first time or was reconnected after being disconnected.
+          event_description:
+            A connected account was connected for the first time or
+            was reconnected after being disconnected.
           event_id: 6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
           event_type: connected_account.connected
           occurred_at: '2025-06-15T16:54:17.946329Z'
