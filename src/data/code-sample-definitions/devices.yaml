@@ -2078,3 +2078,19 @@
       device_id: 46757795-11f7-446a-a6cb-779e9f039d7c
   response:
     body: null
+- title: Simulate hub connection
+  description: Simulates bringing the Wi-Fi hub (bridge) back online for a device.
+  request:
+    path: /devices/simulate/connect_to_hub
+    parameters:
+      device_id: 5d703d4f-523f-42af-9439-618415ca651f
+  response:
+    body: null
+- title: Simulate hub disconnection
+  description: Simulates taking the Wi-Fi hub (bridge) offline for a device.
+  request:
+    path: /devices/simulate/disconnect_from_hub
+    parameters:
+      device_id: a60686b8-f401-452d-9f67-53d139cf6160
+  response:
+    body: null
