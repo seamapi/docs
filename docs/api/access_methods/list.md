@@ -12,7 +12,7 @@ List all access methods, usually filtered by access grant.
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
 #### Code
 
@@ -57,7 +57,7 @@ await seam.accessMethods.list({
 
 {% tab title="cURL" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
 #### Code
 
@@ -108,7 +108,7 @@ EOF
 
 {% tab title="Python" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
 #### Code
 
@@ -151,7 +151,7 @@ seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
 
 {% tab title="Ruby" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
 #### Code
 
@@ -194,7 +194,7 @@ seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 
 {% tab title="PHP" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
 #### Code
 
@@ -239,7 +239,7 @@ $seam->access_methods->list(
 
 {% tab title="Seam CLI" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
 #### Code
 

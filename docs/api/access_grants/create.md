@@ -13,7 +13,7 @@ Creates a new access grant.
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Creates a new access grant using space IDs and an existing user identity.
+Creates a new Access Grant using space IDs and an existing user identity.
 
 #### Code
 
@@ -81,7 +81,7 @@ await seam.accessGrants.create({
 
 {% tab title="cURL" %}
 
-Creates a new access grant using space IDs and an existing user identity.
+Creates a new Access Grant using space IDs and an existing user identity.
 
 #### Code
 
@@ -161,7 +161,7 @@ EOF
 
 {% tab title="Python" %}
 
-Creates a new access grant using space IDs and an existing user identity.
+Creates a new Access Grant using space IDs and an existing user identity.
 
 #### Code
 
@@ -229,7 +229,7 @@ AccessGrant(
 
 {% tab title="Ruby" %}
 
-Creates a new access grant using space IDs and an existing user identity.
+Creates a new Access Grant using space IDs and an existing user identity.
 
 #### Code
 
@@ -287,7 +287,7 @@ seam.access_grants.create(
 
 {% tab title="PHP" %}
 
-Creates a new access grant using space IDs and an existing user identity.
+Creates a new Access Grant using space IDs and an existing user identity.
 
 #### Code
 
@@ -361,7 +361,7 @@ $seam->access_grants->create(
 
 {% tab title="Seam CLI" %}
 
-Creates a new access grant using space IDs and an existing user identity.
+Creates a new Access Grant using space IDs and an existing user identity.
 
 #### Code
 
@@ -614,9 +614,9 @@ ID of user identity for whom access is being granted.
 ## Examples
 
 
-### Create an access grant using entrances and devices
+### Create an Access Grant using entrances and devices
 
-Creates a new access grant using entrance IDs and device IDs and an existing user identity.
+Creates a new Access Grant using entrance IDs and device IDs and an existing user identity.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -855,9 +855,9 @@ seam access-grants create --user_identity_id "e3d736c1-540d-4d10-83e5-9a4e135453
 ---
 
 
-### Create an access grant including a new user identity
+### Create an Access Grant including a new user identity
 
-Creates a new access grant and create a new user identity as part of the same operation.
+Creates a new Access Grant and create a new user identity as part of the same operation.
 
 {% tabs %}
 {% tab title="JavaScript" %}

@@ -12,7 +12,7 @@ Get an access grant.
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
 #### Code
 
@@ -69,7 +69,7 @@ await seam.accessGrants.get({
 
 {% tab title="cURL" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
 #### Code
 
@@ -132,7 +132,7 @@ EOF
 
 {% tab title="Python" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
 #### Code
 
@@ -187,7 +187,7 @@ AccessGrant(
 
 {% tab title="Ruby" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
 #### Code
 
@@ -239,7 +239,7 @@ seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 
 {% tab title="PHP" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
 #### Code
 
@@ -302,7 +302,7 @@ $seam->access_grants->get(
 
 {% tab title="Seam CLI" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
 #### Code
 
