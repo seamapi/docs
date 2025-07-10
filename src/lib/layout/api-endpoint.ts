@@ -192,6 +192,9 @@ export function setEndpointLayoutContext(
       name: actionAttempt.actionAttemptType,
       description: actionAttempt.description,
       hidePreamble: false,
+      errorGroups: [],
+      warningGroups: [],
+      resourceSamples: [],
       propertyGroups: groupProperties(
         actionAttempt.properties.filter(
           ({ isUndocumented }) => !isUndocumented,

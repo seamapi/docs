@@ -20,13 +20,7 @@ export interface ApiRouteLayoutContext {
   path: string
   isAlpha: boolean
   alphaMessage: string | undefined
-  resources: Array<
-    ApiRouteResource & {
-      warningGroups: ApiRouteVariantGroup[]
-      errorGroups: ApiRouteVariantGroup[]
-      resourceSamples: ResourceSampleContext[]
-    }
-  >
+  resources: ApiRouteResource[]
   endpoints: ApiRouteEndpoint[]
   events: ApiRouteEvent[]
 }
@@ -77,6 +71,9 @@ export interface ApiRouteResource {
   events: ApiRouteEvent[]
   hidePreamble: boolean
   endpoints?: ApiRouteEndpoint[]
+  warningGroups: ApiRouteVariantGroup[]
+  errorGroups: ApiRouteVariantGroup[]
+  resourceSamples: ResourceSampleContext[]
 }
 
 interface ApiRouteVariantGroup {
@@ -628,13 +625,7 @@ const getParentVariantResourceType = (
 
 function processActionAttemptResource(
   blueprint: Blueprint,
-  resources: Array<
-    ApiRouteResource & {
-      warnings: ApiWarning[]
-      errors: ApiError[]
-      resourceSamples: ResourceSampleContext[]
-    }
-  >,
+  resources: ApiRouteResource[],
   eventsByRoutePath: Map<string, ApiRouteEvent[]>,
 ): void {
   const blueprintActionAttemptDef = blueprint.actionAttempts[0]
@@ -700,10 +691,11 @@ function processActionAttemptResource(
   resources.push({
     name: 'action_attempt',
     description: 'Represents an attempt to perform an action against a device.',
-    properties,
-    errors: [],
-    warnings: [],
-    events: eventsByRoutePath.get('/action_attempts') ?? [],
+    propertyGroups: [{ propertyGroupKey: null, properties }],
+    hidePreamble: false,
+    errorGroups: [],
+    warningGroups: [],
     resourceSamples: [],
+    events: eventsByRoutePath.get('/action_attempts') ?? [],
   })
 }
