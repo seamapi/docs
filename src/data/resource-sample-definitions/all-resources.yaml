@@ -1,6 +1,6 @@
 ---
 - title: Access Grant
-  description: An access grant resource.
+  description: An Access Grant resource.
   resource_type: access_grant
   properties:
     access_grant_id: ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b
