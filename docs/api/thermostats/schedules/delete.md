@@ -11,7 +11,7 @@ Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.delete({
@@ -19,7 +19,7 @@ await seam.thermostats.schedules.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.thermostats.schedules.delete({
 
 Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/delete" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,7 +53,7 @@ EOF
 
 Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.delete(
@@ -61,7 +61,7 @@ seam.thermostats.schedules.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -72,13 +72,13 @@ None
 
 Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.delete(thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -89,7 +89,7 @@ nil
 
 Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->schedules->delete(
@@ -97,7 +97,7 @@ $seam->thermostats->schedules->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -108,13 +108,13 @@ $seam->thermostats->schedules->delete(
 
 Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules delete --thermostat_schedule_id "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

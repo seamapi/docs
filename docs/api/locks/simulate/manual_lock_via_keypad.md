@@ -11,7 +11,7 @@ Simulates a manual lock action using a keypad. You can only perform this action 
 
 Simulates a manual lock action using a keypad.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.locks.simulate.manualLockViaKeypad({
@@ -19,7 +19,7 @@ await seam.locks.simulate.manualLockViaKeypad({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -36,7 +36,7 @@ await seam.locks.simulate.manualLockViaKeypad({
 
 Simulates a manual lock action using a keypad.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/locks/simulate/manual_lock_via_keypad" \
@@ -48,7 +48,7 @@ curl --include --request POST "https://connect.getseam.com/locks/simulate/manual
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -67,7 +67,7 @@ EOF
 
 Simulates a manual lock action using a keypad.
 
-#### Code
+#### Code:
 
 ```python
 seam.locks.simulate.manual_lock_via_keypad(
@@ -75,7 +75,7 @@ seam.locks.simulate.manual_lock_via_keypad(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -92,13 +92,13 @@ ActionAttempt(
 
 Simulates a manual lock action using a keypad.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.locks.simulate.manual_lock_via_keypad(device_id: "d0eed522-8c2f-4905-88fd-4fe8b067bedc")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -116,7 +116,7 @@ seam.locks.simulate.manual_lock_via_keypad(device_id: "d0eed522-8c2f-4905-88fd-4
 
 Simulates a manual lock action using a keypad.
 
-#### Code
+#### Code:
 
 ```php
 $seam->locks->simulate->manual_lock_via_keypad(
@@ -124,7 +124,7 @@ $seam->locks->simulate->manual_lock_via_keypad(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -141,13 +141,13 @@ $seam->locks->simulate->manual_lock_via_keypad(
 
 Simulates a manual lock action using a keypad.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam locks simulate manual-lock-via-keypad --device_id "d0eed522-8c2f-4905-88fd-4fe8b067bedc"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

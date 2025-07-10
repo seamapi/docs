@@ -12,7 +12,7 @@ Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 Revokes access to all entrances for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.revokeAccessToAllEntrances({
@@ -21,7 +21,7 @@ await seam.acs.users.revokeAccessToAllEntrances({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.users.revokeAccessToAllEntrances({
 
 Revokes access to all entrances for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/revoke_access_to_all_entrances" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/revoke_acce
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Revokes access to all entrances for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.revoke_access_to_all_entrances(
@@ -65,7 +65,7 @@ seam.acs.users.revoke_access_to_all_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Revokes access to all entrances for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.revoke_access_to_all_entrances(
@@ -85,7 +85,7 @@ seam.acs.users.revoke_access_to_all_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,7 +96,7 @@ nil
 
 Revokes access to all entrances for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->revoke_access_to_all_entrances(
@@ -105,7 +105,7 @@ $seam->acs->users->revoke_access_to_all_entrances(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -116,13 +116,13 @@ $seam->acs->users->revoke_access_to_all_entrances(
 
 Revokes access to all entrances for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users revoke-access-to-all-entrances --user_identity_id "aadb341e-6cd5-4c8b-9561-8f686f84160c" --acs_system_id "d42163f1-ac2d-4c15-a651-5f2e0007b297"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -183,7 +183,7 @@ Revokes access to all entrances for a specified access system user.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.revokeAccessToAllEntrances({
@@ -191,7 +191,7 @@ await seam.acs.users.revokeAccessToAllEntrances({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -202,7 +202,7 @@ await seam.acs.users.revokeAccessToAllEntrances({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/revoke_access_to_all_entrances" \
@@ -214,7 +214,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/revoke_acce
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -225,7 +225,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.revoke_access_to_all_entrances(
@@ -233,7 +233,7 @@ seam.acs.users.revoke_access_to_all_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -244,13 +244,13 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.revoke_access_to_all_entrances(acs_user_id: "2520b7a7-5c5b-482e-9db2-11d02f4ea6ce")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -261,7 +261,7 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->revoke_access_to_all_entrances(
@@ -269,7 +269,7 @@ $seam->acs->users->revoke_access_to_all_entrances(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -280,13 +280,13 @@ $seam->acs->users->revoke_access_to_all_entrances(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users revoke-access-to-all-entrances --acs_user_id "2520b7a7-5c5b-482e-9db2-11d02f4ea6ce"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

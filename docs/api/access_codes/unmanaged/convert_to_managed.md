@@ -15,7 +15,7 @@ Note that not all device providers support converting an unmanaged access code t
 
 Converts an unmanaged access code to an access code managed through Seam.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.unmanaged.convertToManaged({
@@ -25,7 +25,7 @@ await seam.accessCodes.unmanaged.convertToManaged({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -36,7 +36,7 @@ await seam.accessCodes.unmanaged.convertToManaged({
 
 Converts an unmanaged access code to an access code managed through Seam.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/convert_to_managed" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/unmanage
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -61,7 +61,7 @@ EOF
 
 Converts an unmanaged access code to an access code managed through Seam.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.unmanaged.convert_to_managed(
@@ -71,7 +71,7 @@ seam.access_codes.unmanaged.convert_to_managed(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -82,7 +82,7 @@ None
 
 Converts an unmanaged access code to an access code managed through Seam.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.unmanaged.convert_to_managed(
@@ -92,7 +92,7 @@ seam.access_codes.unmanaged.convert_to_managed(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -103,7 +103,7 @@ nil
 
 Converts an unmanaged access code to an access code managed through Seam.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->unmanaged->convert_to_managed(
@@ -113,7 +113,7 @@ $seam->access_codes->unmanaged->convert_to_managed(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -124,13 +124,13 @@ $seam->access_codes->unmanaged->convert_to_managed(
 
 Converts an unmanaged access code to an access code managed through Seam.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes unmanaged convert-to-managed --access_code_id "9ef2af02-e335-4b49-bd51-00e851a83ef6" --is_external_modification_allowed true --force true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

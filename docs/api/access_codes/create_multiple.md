@@ -19,7 +19,7 @@ See also [Creating and Updating Multiple Linked Access Codes](../../capability-g
 
 Creates new access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.createMultiple({
@@ -35,7 +35,7 @@ await seam.accessCodes.createMultiple({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -70,7 +70,7 @@ await seam.accessCodes.createMultiple({
 
 Creates new access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create_multiple" \
@@ -90,7 +90,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create_m
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -127,7 +127,7 @@ EOF
 
 Creates new access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.create_multiple(
@@ -143,7 +143,7 @@ seam.access_codes.create_multiple(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -178,7 +178,7 @@ seam.access_codes.create_multiple(
 
 Creates new access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.create_multiple(
@@ -191,7 +191,7 @@ seam.access_codes.create_multiple(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -226,7 +226,7 @@ seam.access_codes.create_multiple(
 
 Creates new access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->create_multiple(
@@ -242,7 +242,7 @@ $seam->access_codes->create_multiple(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -278,13 +278,13 @@ $seam->access_codes->create_multiple(
 
 Creates new access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes create-multiple --device_ids ["d9717800-fa73-401a-b66b-03f0ef950e2a","550e8400-e29b-41d4-a716-446655440000"] --behavior_when_code_cannot_be_shared "throw" --preferred_code_length 4 --name "My Linked Access Code" --starts_at "2025-06-19T01:41:56.000Z" --ends_at "2025-06-22T16:40:40.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

@@ -11,7 +11,7 @@ Creates a new [thermostat schedule](../../../capability-guides/thermostats/creat
 
 Creates a new thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.create({
@@ -25,7 +25,7 @@ await seam.thermostats.schedules.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -48,7 +48,7 @@ await seam.thermostats.schedules.create({
 
 Creates a new thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/create" \
@@ -66,7 +66,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -91,7 +91,7 @@ EOF
 
 Creates a new thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.create(
@@ -105,7 +105,7 @@ seam.thermostats.schedules.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ThermostatSchedule(
@@ -128,7 +128,7 @@ ThermostatSchedule(
 
 Creates a new thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.create(
@@ -142,7 +142,7 @@ seam.thermostats.schedules.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -165,7 +165,7 @@ seam.thermostats.schedules.create(
 
 Creates a new thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->schedules->create(
@@ -179,7 +179,7 @@ $seam->thermostats->schedules->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -202,13 +202,13 @@ $seam->thermostats->schedules->create(
 
 Creates a new thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules create --device_id "d710aa35-232d-442b-a817-c28045de1c74" --name "Jane's Stay" --climate_preset_key "Occupied" --max_override_period_minutes 90 --starts_at "2025-06-19T15:00:00.000Z" --ends_at "2025-06-22T11:00:00.000Z" --is_override_allowed true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

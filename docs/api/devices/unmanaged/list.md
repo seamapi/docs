@@ -14,7 +14,7 @@ An unmanaged device has a limited set of visible properties and a subset of supp
 
 Returns a list of all unmanaged devices for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.unmanaged.list({
@@ -22,7 +22,7 @@ await seam.devices.unmanaged.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -77,7 +77,7 @@ await seam.devices.unmanaged.list({
 
 Returns a list of all unmanaged devices for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
@@ -91,7 +91,7 @@ curl --include --request POST "https://connect.getseam.com/devices/unmanaged/lis
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -148,13 +148,13 @@ EOF
 
 Returns a list of all unmanaged devices for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.unmanaged.list(customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"])
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -206,13 +206,13 @@ seam.devices.unmanaged.list(customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"
 
 Returns a list of all unmanaged devices for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.unmanaged.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"])
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -276,7 +276,7 @@ seam.devices.unmanaged.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57
 
 Returns a list of all unmanaged devices for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->unmanaged->list(
@@ -284,7 +284,7 @@ $seam->devices->unmanaged->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -344,13 +344,13 @@ $seam->devices->unmanaged->list(
 
 Returns a list of all unmanaged devices for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices unmanaged list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c57"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -628,7 +628,7 @@ Returns a list of all unmanaged devices for a specified connected account ID.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.unmanaged.list({
@@ -636,7 +636,7 @@ await seam.devices.unmanaged.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -691,7 +691,7 @@ await seam.devices.unmanaged.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
@@ -703,7 +703,7 @@ curl --include --request POST "https://connect.getseam.com/devices/unmanaged/lis
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -760,13 +760,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.unmanaged.list(connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -818,13 +818,13 @@ seam.devices.unmanaged.list(connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.unmanaged.list(connected_account_id: "c1a3967f-24a1-4220-a9c7-7fa97c1d5603")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -888,7 +888,7 @@ seam.devices.unmanaged.list(connected_account_id: "c1a3967f-24a1-4220-a9c7-7fa97
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->unmanaged->list(
@@ -896,7 +896,7 @@ $seam->devices->unmanaged->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -956,13 +956,13 @@ $seam->devices->unmanaged->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices unmanaged list --connected_account_id "c1a3967f-24a1-4220-a9c7-7fa97c1d5603"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1027,13 +1027,13 @@ Returns a list of all unmanaged devices for a specified manufacturer.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.unmanaged.list({ manufacturer: "schlage" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1088,7 +1088,7 @@ await seam.devices.unmanaged.list({ manufacturer: "schlage" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
@@ -1100,7 +1100,7 @@ curl --include --request POST "https://connect.getseam.com/devices/unmanaged/lis
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1157,13 +1157,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.unmanaged.list(manufacturer="schlage")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1215,13 +1215,13 @@ seam.devices.unmanaged.list(manufacturer="schlage")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.unmanaged.list(manufacturer: "schlage")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -1285,13 +1285,13 @@ seam.devices.unmanaged.list(manufacturer: "schlage")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->unmanaged->list(manufacturer: "schlage");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1351,13 +1351,13 @@ $seam->devices->unmanaged->list(manufacturer: "schlage");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices unmanaged list --manufacturer "schlage"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1422,7 +1422,7 @@ Returns a list of all unmanaged devices created (in Seam) before a specified dat
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.unmanaged.list({
@@ -1431,7 +1431,7 @@ await seam.devices.unmanaged.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1486,7 +1486,7 @@ await seam.devices.unmanaged.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
@@ -1499,7 +1499,7 @@ curl --include --request POST "https://connect.getseam.com/devices/unmanaged/lis
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1556,13 +1556,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.unmanaged.list(created_before="2025-01-01T00:00:00.000Z", limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1614,13 +1614,13 @@ seam.devices.unmanaged.list(created_before="2025-01-01T00:00:00.000Z", limit=50)
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.unmanaged.list(created_before: "2025-01-01T00:00:00.000Z", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -1684,7 +1684,7 @@ seam.devices.unmanaged.list(created_before: "2025-01-01T00:00:00.000Z", limit: 5
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->unmanaged->list(
@@ -1693,7 +1693,7 @@ $seam->devices->unmanaged->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1753,13 +1753,13 @@ $seam->devices->unmanaged->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices unmanaged list --created_before "2025-01-01T00:00:00.000Z" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

@@ -11,7 +11,7 @@ Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermo
 
 Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.setFanMode({
@@ -20,7 +20,7 @@ await seam.thermostats.setFanMode({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -37,7 +37,7 @@ await seam.thermostats.setFanMode({
 
 Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fan_mode" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/set_fan_m
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -69,7 +69,7 @@ EOF
 
 Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.set_fan_mode(
@@ -77,7 +77,7 @@ seam.thermostats.set_fan_mode(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -94,7 +94,7 @@ ActionAttempt(
 
 Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.set_fan_mode(
@@ -103,7 +103,7 @@ seam.thermostats.set_fan_mode(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -121,7 +121,7 @@ seam.thermostats.set_fan_mode(
 
 Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->set_fan_mode(
@@ -130,7 +130,7 @@ $seam->thermostats->set_fan_mode(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -147,13 +147,13 @@ $seam->thermostats->set_fan_mode(
 
 Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats set-fan-mode --device_id "363e657e-3b07-4670-a290-7fb1f32b8e33" --fan_mode_setting "auto"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

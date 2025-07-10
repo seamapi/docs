@@ -14,7 +14,7 @@ Creates a new space.
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.create({
@@ -24,7 +24,7 @@ await seam.spaces.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -41,7 +41,7 @@ await seam.spaces.create({
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/create" \
@@ -59,7 +59,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/create" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -78,7 +78,7 @@ EOF
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.create(
@@ -88,7 +88,7 @@ seam.spaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Space(
@@ -105,7 +105,7 @@ Space(
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.create(
@@ -115,7 +115,7 @@ seam.spaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -132,7 +132,7 @@ seam.spaces.create(
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```php
 $seam->spaces->create(
@@ -142,7 +142,7 @@ $seam->spaces->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -159,13 +159,13 @@ $seam->spaces->create(
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces create --name "My Space" --device_ids ["b7254403-db91-4e10-bb7b-31d0615d2963"] --acs_entrance_ids ["46a47667-a90b-45cc-9bb6-f0917464f1f3"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

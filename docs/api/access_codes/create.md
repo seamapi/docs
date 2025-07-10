@@ -12,7 +12,7 @@ Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-
 
 Creates a new ongoing online access code.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.create({
@@ -22,7 +22,7 @@ await seam.accessCodes.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -53,7 +53,7 @@ await seam.accessCodes.create({
 
 Creates a new ongoing online access code.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
@@ -67,7 +67,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -100,7 +100,7 @@ EOF
 
 Creates a new ongoing online access code.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.create(
@@ -110,7 +110,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(
@@ -141,7 +141,7 @@ AccessCode(
 
 Creates a new ongoing online access code.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.create(
@@ -151,7 +151,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -182,7 +182,7 @@ seam.access_codes.create(
 
 Creates a new ongoing online access code.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->create(
@@ -192,7 +192,7 @@ $seam->access_codes->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -223,13 +223,13 @@ $seam->access_codes->create(
 
 Creates a new ongoing online access code.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Ongoing Online Access Code" --code "1234"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -424,7 +424,7 @@ Creates a new time-bound online access code.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.create({
@@ -436,7 +436,7 @@ await seam.accessCodes.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -469,7 +469,7 @@ await seam.accessCodes.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
@@ -485,7 +485,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -520,7 +520,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.create(
@@ -532,7 +532,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(
@@ -565,7 +565,7 @@ AccessCode(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.create(
@@ -577,7 +577,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -610,7 +610,7 @@ seam.access_codes.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->create(
@@ -622,7 +622,7 @@ $seam->access_codes->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -655,13 +655,13 @@ $seam->access_codes->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Online Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --code "1234"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -704,7 +704,7 @@ Creates a new time-bound offline access code.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.create({
@@ -720,7 +720,7 @@ await seam.accessCodes.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -753,7 +753,7 @@ await seam.accessCodes.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
@@ -773,7 +773,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -808,7 +808,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.create(
@@ -824,7 +824,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(
@@ -857,7 +857,7 @@ AccessCode(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.create(
@@ -873,7 +873,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -906,7 +906,7 @@ seam.access_codes.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->create(
@@ -922,7 +922,7 @@ $seam->access_codes->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -955,13 +955,13 @@ $seam->access_codes->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Offline Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --attempt_for_offline_device true --preferred_code_length 4 --use_offline_access_code true --is_offline_access_code true --max_time_rounding "1h"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -1004,7 +1004,7 @@ Creates a new one-time-use offline access code.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.create({
@@ -1020,7 +1020,7 @@ await seam.accessCodes.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -1053,7 +1053,7 @@ await seam.accessCodes.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
@@ -1073,7 +1073,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1108,7 +1108,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.create(
@@ -1124,7 +1124,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(
@@ -1157,7 +1157,7 @@ AccessCode(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.create(
@@ -1173,7 +1173,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -1206,7 +1206,7 @@ seam.access_codes.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->create(
@@ -1222,7 +1222,7 @@ $seam->access_codes->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1255,13 +1255,13 @@ $seam->access_codes->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My One-Time-Use Offline Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --attempt_for_offline_device true --preferred_code_length 4 --use_offline_access_code true --is_offline_access_code true --is_one_time_use true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -1304,7 +1304,7 @@ Creates a new time-bound online access code with a backup access code pool.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.create({
@@ -1317,7 +1317,7 @@ await seam.accessCodes.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -1350,7 +1350,7 @@ await seam.accessCodes.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/create" \
@@ -1367,7 +1367,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/create" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1402,7 +1402,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.create(
@@ -1415,7 +1415,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(
@@ -1448,7 +1448,7 @@ AccessCode(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.create(
@@ -1461,7 +1461,7 @@ seam.access_codes.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -1494,7 +1494,7 @@ seam.access_codes.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->create(
@@ -1507,7 +1507,7 @@ $seam->access_codes->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1540,13 +1540,13 @@ $seam->access_codes->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --code "1234" --use_backup_access_code_pool true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

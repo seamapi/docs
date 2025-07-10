@@ -12,7 +12,7 @@ Returns a specified [user identity](../../capability-guides/mobile-access/managi
 
 Returns a specified user identity, using a user identity ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.get({
@@ -20,7 +20,7 @@ await seam.userIdentities.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -42,7 +42,7 @@ await seam.userIdentities.get({
 
 Returns a specified user identity, using a user identity ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/get" \
@@ -54,7 +54,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/get" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -78,13 +78,13 @@ EOF
 
 Returns a specified user identity, using a user identity ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.get(user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b")
 ```
 
-#### Output
+#### Output:
 
 ```python
 UserIdentity(
@@ -106,13 +106,13 @@ UserIdentity(
 
 Returns a specified user identity, using a user identity ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.get(user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -134,7 +134,7 @@ seam.user_identities.get(user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b
 
 Returns a specified user identity, using a user identity ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->get(
@@ -142,7 +142,7 @@ $seam->user_identities->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -164,13 +164,13 @@ $seam->user_identities->get(
 
 Returns a specified user identity, using a user identity ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities get --user_identity_id "43947360-cdc8-4db6-8b22-e079416d1d8b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -257,13 +257,13 @@ Returns a specified user identity, using a user identity key.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.get({ user_identity_key: "jane_doe" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -285,7 +285,7 @@ await seam.userIdentities.get({ user_identity_key: "jane_doe" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/get" \
@@ -297,7 +297,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/get" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -321,13 +321,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.get(user_identity_key="jane_doe")
 ```
 
-#### Output
+#### Output:
 
 ```python
 UserIdentity(
@@ -349,13 +349,13 @@ UserIdentity(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.get(user_identity_key: "jane_doe")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -377,13 +377,13 @@ seam.user_identities.get(user_identity_key: "jane_doe")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->get(user_identity_key: "jane_doe");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -405,13 +405,13 @@ $seam->user_identities->get(user_identity_key: "jane_doe");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities get --user_identity_key "jane_doe"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

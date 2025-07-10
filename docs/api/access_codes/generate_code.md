@@ -11,7 +11,7 @@ Generates a code for an [access code](https://docs.seam.co/latest/capability-gui
 
 Generates a code for an access code, given a device ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.generateCode({
@@ -19,7 +19,7 @@ await seam.accessCodes.generateCode({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 { "device_id": "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code": "1234" }
@@ -30,7 +30,7 @@ await seam.accessCodes.generateCode({
 
 Generates a code for an access code, given a device ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/generate_code" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/generate
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -58,13 +58,13 @@ EOF
 
 Generates a code for an access code, given a device ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.generate_code(device_id="02cd5099-d9f8-45a1-a9c0-f2ecbd334792")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(device_id="02cd5099-d9f8-45a1-a9c0-f2ecbd334792", code="1234")
@@ -75,13 +75,13 @@ AccessCode(device_id="02cd5099-d9f8-45a1-a9c0-f2ecbd334792", code="1234")
 
 Generates a code for an access code, given a device ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.generate_code(device_id: "02cd5099-d9f8-45a1-a9c0-f2ecbd334792")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 { "device_id" => "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code" => "1234" }
@@ -92,7 +92,7 @@ seam.access_codes.generate_code(device_id: "02cd5099-d9f8-45a1-a9c0-f2ecbd334792
 
 Generates a code for an access code, given a device ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->generate_code(
@@ -100,7 +100,7 @@ $seam->access_codes->generate_code(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 ["device_id" => "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code" => "1234"];
@@ -111,13 +111,13 @@ $seam->access_codes->generate_code(
 
 Generates a code for an access code, given a device ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes generate-code --device_id "02cd5099-d9f8-45a1-a9c0-f2ecbd334792"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 { "device_id": "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code": "1234" }

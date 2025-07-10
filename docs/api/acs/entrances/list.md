@@ -12,7 +12,7 @@ Returns a list of all [access system entrances](../../../capability-guides/acces
 
 Returns a list of all entrances for a specified access system.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.list({
@@ -20,7 +20,7 @@ await seam.acs.entrances.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -50,7 +50,7 @@ await seam.acs.entrances.list({
 
 Returns a list of all entrances for a specified access system.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
@@ -62,7 +62,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -94,13 +94,13 @@ EOF
 
 Returns a list of all entrances for a specified access system.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.list(acs_system_id="d34802da-d8e3-4d0b-98c3-16d6e18ed508")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -130,13 +130,13 @@ seam.acs.entrances.list(acs_system_id="d34802da-d8e3-4d0b-98c3-16d6e18ed508")
 
 Returns a list of all entrances for a specified access system.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.list(acs_system_id: "d34802da-d8e3-4d0b-98c3-16d6e18ed508")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -166,7 +166,7 @@ seam.acs.entrances.list(acs_system_id: "d34802da-d8e3-4d0b-98c3-16d6e18ed508")
 
 Returns a list of all entrances for a specified access system.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->list(
@@ -174,7 +174,7 @@ $seam->acs->entrances->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -205,13 +205,13 @@ $seam->acs->entrances->list(
 
 Returns a list of all entrances for a specified access system.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances list --acs_system_id "d34802da-d8e3-4d0b-98c3-16d6e18ed508"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -354,7 +354,7 @@ Returns a list of all access system entrances for a specified credential.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.list({
@@ -362,7 +362,7 @@ await seam.acs.entrances.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -392,7 +392,7 @@ await seam.acs.entrances.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
@@ -404,7 +404,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -436,13 +436,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.list(acs_credential_id="e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -472,13 +472,13 @@ seam.acs.entrances.list(acs_credential_id="e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a"
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.list(acs_credential_id: "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -508,7 +508,7 @@ seam.acs.entrances.list(acs_credential_id: "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->list(
@@ -516,7 +516,7 @@ $seam->acs->entrances->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -547,13 +547,13 @@ $seam->acs->entrances->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances list --acs_credential_id "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -593,7 +593,7 @@ Returns a list of all access system entrances for a specified space.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.list({
@@ -601,7 +601,7 @@ await seam.acs.entrances.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -631,7 +631,7 @@ await seam.acs.entrances.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
@@ -643,7 +643,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -675,13 +675,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.list(space_id="3bd2edc0-aae7-440c-98ec-a5ab03664833")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -711,13 +711,13 @@ seam.acs.entrances.list(space_id="3bd2edc0-aae7-440c-98ec-a5ab03664833")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.list(space_id: "3bd2edc0-aae7-440c-98ec-a5ab03664833")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -747,13 +747,13 @@ seam.acs.entrances.list(space_id: "3bd2edc0-aae7-440c-98ec-a5ab03664833")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->list(space_id: "3bd2edc0-aae7-440c-98ec-a5ab03664833");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -784,13 +784,13 @@ $seam->acs->entrances->list(space_id: "3bd2edc0-aae7-440c-98ec-a5ab03664833");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances list --space_id "3bd2edc0-aae7-440c-98ec-a5ab03664833"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -830,7 +830,7 @@ Returns a list of all access system entrances for a specified access grant.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.list({
@@ -838,7 +838,7 @@ await seam.acs.entrances.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -868,7 +868,7 @@ await seam.acs.entrances.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
@@ -880,7 +880,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -912,13 +912,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.list(access_grant_id="6596ea31-f747-4253-950e-dba0de24fedb")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -948,13 +948,13 @@ seam.acs.entrances.list(access_grant_id="6596ea31-f747-4253-950e-dba0de24fedb")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.list(access_grant_id: "6596ea31-f747-4253-950e-dba0de24fedb")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -984,7 +984,7 @@ seam.acs.entrances.list(access_grant_id: "6596ea31-f747-4253-950e-dba0de24fedb")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->list(
@@ -992,7 +992,7 @@ $seam->acs->entrances->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1023,13 +1023,13 @@ $seam->acs->entrances->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances list --access_grant_id "6596ea31-f747-4253-950e-dba0de24fedb"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1069,7 +1069,7 @@ Returns a list of all access system entrances for a specified access method.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.list({
@@ -1077,7 +1077,7 @@ await seam.acs.entrances.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1107,7 +1107,7 @@ await seam.acs.entrances.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
@@ -1119,7 +1119,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1151,13 +1151,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.list(access_method_id="f838c33b-bc00-47a4-8bde-2aa8ea4258cc")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1187,13 +1187,13 @@ seam.acs.entrances.list(access_method_id="f838c33b-bc00-47a4-8bde-2aa8ea4258cc")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.list(access_method_id: "f838c33b-bc00-47a4-8bde-2aa8ea4258cc")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -1223,7 +1223,7 @@ seam.acs.entrances.list(access_method_id: "f838c33b-bc00-47a4-8bde-2aa8ea4258cc"
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->list(
@@ -1231,7 +1231,7 @@ $seam->acs->entrances->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1262,13 +1262,13 @@ $seam->acs->entrances->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances list --access_method_id "f838c33b-bc00-47a4-8bde-2aa8ea4258cc"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

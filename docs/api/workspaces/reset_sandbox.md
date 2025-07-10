@@ -11,13 +11,13 @@ Resets the [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-
 
 Resets the sandbox workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.workspaces.resetSandbox();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -34,14 +34,14 @@ await seam.workspaces.resetSandbox();
 
 Resets the sandbox workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/workspaces/reset_sandbox" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -60,13 +60,13 @@ curl --include --request POST "https://connect.getseam.com/workspaces/reset_sand
 
 Resets the sandbox workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```python
 seam.workspaces.reset_sandbox()
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -83,13 +83,13 @@ ActionAttempt(
 
 Resets the sandbox workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.workspaces.reset_sandbox()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -107,13 +107,13 @@ seam.workspaces.reset_sandbox()
 
 Resets the sandbox workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```php
 $seam->workspaces->reset_sandbox();
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -130,13 +130,13 @@ $seam->workspaces->reset_sandbox();
 
 Resets the sandbox workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam workspaces reset-sandbox
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

@@ -11,7 +11,7 @@ Returns a specified [access system entrance](../../../capability-guides/access-s
 
 Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.get({
@@ -19,7 +19,7 @@ await seam.acs.entrances.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -47,7 +47,7 @@ await seam.acs.entrances.get({
 
 Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
@@ -59,7 +59,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -89,13 +89,13 @@ EOF
 
 Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.get(acs_entrance_id="c931c953-4a5b-4f66-9189-500d39959ad1")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsEntrance(
@@ -123,13 +123,13 @@ AcsEntrance(
 
 Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.get(acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -157,7 +157,7 @@ seam.acs.entrances.get(acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1")
 
 Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->get(
@@ -165,7 +165,7 @@ $seam->acs->entrances->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -194,13 +194,13 @@ $seam->acs->entrances->get(
 
 Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances get --acs_entrance_id "c931c953-4a5b-4f66-9189-500d39959ad1"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

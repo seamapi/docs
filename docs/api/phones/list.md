@@ -12,7 +12,7 @@ Returns a list of all [phones](../../capability-guides/mobile-access/managing-ph
 
 Returns a list of all phones, using the owner's user identity ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.phones.list({
@@ -20,7 +20,7 @@ await seam.phones.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -54,7 +54,7 @@ await seam.phones.list({
 
 Returns a list of all phones, using the owner's user identity ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/list" \
@@ -66,7 +66,7 @@ curl --include --request POST "https://connect.getseam.com/phones/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -102,13 +102,13 @@ EOF
 
 Returns a list of all phones, using the owner's user identity ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.phones.list(owner_user_identity_id="6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -142,13 +142,13 @@ seam.phones.list(owner_user_identity_id="6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4")
 
 Returns a list of all phones, using the owner's user identity ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.phones.list(owner_user_identity_id: "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -179,7 +179,7 @@ seam.phones.list(owner_user_identity_id: "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4")
 
 Returns a list of all phones, using the owner's user identity ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->phones->list(
@@ -187,7 +187,7 @@ $seam->phones->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -221,13 +221,13 @@ $seam->phones->list(
 
 Returns a list of all phones, using the owner's user identity ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam phones list --owner_user_identity_id "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -337,7 +337,7 @@ Returns a list of all phones, using the credential ID.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.phones.list({
@@ -345,7 +345,7 @@ await seam.phones.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -379,7 +379,7 @@ await seam.phones.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/list" \
@@ -391,7 +391,7 @@ curl --include --request POST "https://connect.getseam.com/phones/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -427,13 +427,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.phones.list(acs_credential_id="6617f81a-d601-4e33-9052-f44bf1b4ed2b")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -467,13 +467,13 @@ seam.phones.list(acs_credential_id="6617f81a-d601-4e33-9052-f44bf1b4ed2b")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.phones.list(acs_credential_id: "6617f81a-d601-4e33-9052-f44bf1b4ed2b")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -504,13 +504,13 @@ seam.phones.list(acs_credential_id: "6617f81a-d601-4e33-9052-f44bf1b4ed2b")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->phones->list(acs_credential_id: "6617f81a-d601-4e33-9052-f44bf1b4ed2b");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -544,13 +544,13 @@ $seam->phones->list(acs_credential_id: "6617f81a-d601-4e33-9052-f44bf1b4ed2b");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam phones list --acs_credential_id "6617f81a-d601-4e33-9052-f44bf1b4ed2b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

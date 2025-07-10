@@ -11,7 +11,7 @@ Removes a specified [access system user](https://docs.seam.co/latest/capability-
 
 Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.removeAcsUser({
@@ -20,7 +20,7 @@ await seam.userIdentities.removeAcsUser({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.userIdentities.removeAcsUser({
 
 Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/remove_acs_user" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/remov
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,7 +55,7 @@ EOF
 
 Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.remove_acs_user(
@@ -64,7 +64,7 @@ seam.user_identities.remove_acs_user(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -75,7 +75,7 @@ None
 
 Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.remove_acs_user(
@@ -84,7 +84,7 @@ seam.user_identities.remove_acs_user(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -95,7 +95,7 @@ nil
 
 Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->remove_acs_user(
@@ -104,7 +104,7 @@ $seam->user_identities->remove_acs_user(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -115,13 +115,13 @@ $seam->user_identities->remove_acs_user(
 
 Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities remove-acs-user --user_identity_id "802633b6-a66c-4911-b57b-323e900ee531" --acs_user_id "faa22878-fa74-4ea0-87f7-2b05c1b06181"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

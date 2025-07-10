@@ -11,7 +11,7 @@ Adds a specified [access system user](https://docs.seam.co/latest/capability-gui
 
 Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.addToAccessGroup({
@@ -20,7 +20,7 @@ await seam.acs.users.addToAccessGroup({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.acs.users.addToAccessGroup({
 
 Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/add_to_access_group" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/add_to_acce
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,7 +55,7 @@ EOF
 
 Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.add_to_access_group(
@@ -64,7 +64,7 @@ seam.acs.users.add_to_access_group(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -75,7 +75,7 @@ None
 
 Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.add_to_access_group(
@@ -84,7 +84,7 @@ seam.acs.users.add_to_access_group(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -95,7 +95,7 @@ nil
 
 Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->add_to_access_group(
@@ -104,7 +104,7 @@ $seam->acs->users->add_to_access_group(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -115,13 +115,13 @@ $seam->acs->users->add_to_access_group(
 
 Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users add-to-access-group --acs_user_id "15ce02a8-b145-4c02-adc9-d9d84c8a1177" --acs_access_group_id "58c8b034-e527-4635-a335-afc74dc79b27"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

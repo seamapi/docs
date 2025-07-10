@@ -13,7 +13,7 @@ You must specify either `access_code_id` or both `device_id` and `code`.
 
 Returns a specified access code.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.get({
@@ -21,7 +21,7 @@ await seam.accessCodes.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -54,7 +54,7 @@ await seam.accessCodes.get({
 
 Returns a specified access code.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/get" \
@@ -66,7 +66,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -101,13 +101,13 @@ EOF
 
 Returns a specified access code.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.get(access_code_id="90a114dc-48b5-4b8b-a3d3-972344594401")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(
@@ -140,13 +140,13 @@ AccessCode(
 
 Returns a specified access code.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.get(access_code_id: "90a114dc-48b5-4b8b-a3d3-972344594401")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -179,7 +179,7 @@ seam.access_codes.get(access_code_id: "90a114dc-48b5-4b8b-a3d3-972344594401")
 
 Returns a specified access code.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->get(
@@ -187,7 +187,7 @@ $seam->access_codes->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -220,13 +220,13 @@ $seam->access_codes->get(
 
 Returns a specified access code.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes get --access_code_id "90a114dc-48b5-4b8b-a3d3-972344594401"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

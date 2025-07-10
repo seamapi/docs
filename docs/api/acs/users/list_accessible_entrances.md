@@ -12,7 +12,7 @@ Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a 
 
 Lists the entrances to which a specified access system user has access, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.listAccessibleEntrances({
@@ -21,7 +21,7 @@ await seam.acs.users.listAccessibleEntrances({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -51,7 +51,7 @@ await seam.acs.users.listAccessibleEntrances({
 
 Lists the entrances to which a specified access system user has access, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list_accessible_entrances" \
@@ -64,7 +64,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list_access
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -96,7 +96,7 @@ EOF
 
 Lists the entrances to which a specified access system user has access, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list_accessible_entrances(
@@ -105,7 +105,7 @@ seam.acs.users.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -135,7 +135,7 @@ seam.acs.users.list_accessible_entrances(
 
 Lists the entrances to which a specified access system user has access, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list_accessible_entrances(
@@ -144,7 +144,7 @@ seam.acs.users.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -174,7 +174,7 @@ seam.acs.users.list_accessible_entrances(
 
 Lists the entrances to which a specified access system user has access, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->list_accessible_entrances(
@@ -183,7 +183,7 @@ $seam->acs->users->list_accessible_entrances(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -214,13 +214,13 @@ $seam->acs->users->list_accessible_entrances(
 
 Lists the entrances to which a specified access system user has access, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list-accessible-entrances --user_identity_id "3b8abf24-21b3-40ee-9c21-6fb2daf97401" --acs_system_id "88d5ae6a-708d-4602-983d-6dd5de07ba1d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -329,7 +329,7 @@ Lists the entrances to which a specified access system user has access.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.listAccessibleEntrances({
@@ -338,7 +338,7 @@ await seam.acs.users.listAccessibleEntrances({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -368,7 +368,7 @@ await seam.acs.users.listAccessibleEntrances({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list_accessible_entrances" \
@@ -381,7 +381,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list_access
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -413,7 +413,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list_accessible_entrances(
@@ -422,7 +422,7 @@ seam.acs.users.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -452,7 +452,7 @@ seam.acs.users.list_accessible_entrances(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list_accessible_entrances(
@@ -461,7 +461,7 @@ seam.acs.users.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -491,7 +491,7 @@ seam.acs.users.list_accessible_entrances(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->list_accessible_entrances(
@@ -500,7 +500,7 @@ $seam->acs->users->list_accessible_entrances(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -531,13 +531,13 @@ $seam->acs->users->list_accessible_entrances(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list-accessible-entrances --acs_user_id "4c84e6d3-e89a-4d85-9363-e9f6e928131a" --acs_system_id "88d5ae6a-708d-4602-983d-6dd5de07ba1d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

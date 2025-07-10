@@ -12,7 +12,7 @@ Removes a specified [access system user](https://docs.seam.co/latest/capability-
 
 Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.accessGroups.removeUser({
@@ -21,7 +21,7 @@ await seam.acs.accessGroups.removeUser({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.accessGroups.removeUser({
 
 Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/remove_user" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/rem
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.access_groups.remove_user(
@@ -65,7 +65,7 @@ seam.acs.access_groups.remove_user(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.access_groups.remove_user(
@@ -85,7 +85,7 @@ seam.acs.access_groups.remove_user(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,7 +96,7 @@ nil
 
 Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->access_groups->remove_user(
@@ -105,7 +105,7 @@ $seam->acs->access_groups->remove_user(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -116,13 +116,13 @@ $seam->acs->access_groups->remove_user(
 
 Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs access-groups remove-user --acs_access_group_id "e320069d-59ba-4adb-a465-f4f01a833e07" --user_identity_id "3d662a00-5d7c-41b4-aee7-16c385964149"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -183,7 +183,7 @@ Removes a specified access system user from a specified access group.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.accessGroups.removeUser({
@@ -192,7 +192,7 @@ await seam.acs.accessGroups.removeUser({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -203,7 +203,7 @@ await seam.acs.accessGroups.removeUser({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/remove_user" \
@@ -216,7 +216,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/rem
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -227,7 +227,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.access_groups.remove_user(
@@ -236,7 +236,7 @@ seam.acs.access_groups.remove_user(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -247,7 +247,7 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.access_groups.remove_user(
@@ -256,7 +256,7 @@ seam.acs.access_groups.remove_user(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -267,7 +267,7 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->access_groups->remove_user(
@@ -276,7 +276,7 @@ $seam->acs->access_groups->remove_user(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -287,13 +287,13 @@ $seam->acs->access_groups->remove_user(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs access-groups remove-user --acs_access_group_id "e320069d-59ba-4adb-a465-f4f01a833e07" --acs_user_id "64cfac1f-61c0-4c76-8fa2-3e9ab680edc8"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

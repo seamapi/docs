@@ -12,7 +12,7 @@ Assigns a specified [credential](../../../capability-guides/access-systems/manag
 
 Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.assign({
@@ -21,7 +21,7 @@ await seam.acs.credentials.assign({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.credentials.assign({
 
 Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/assign" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/assig
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.assign(
@@ -65,7 +65,7 @@ seam.acs.credentials.assign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.assign(
@@ -85,7 +85,7 @@ seam.acs.credentials.assign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,7 +96,7 @@ nil
 
 Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->credentials->assign(
@@ -105,7 +105,7 @@ $seam->acs->credentials->assign(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -116,13 +116,13 @@ $seam->acs->credentials->assign(
 
 Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials assign --user_identity_id "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01" --acs_credential_id "59c9af06-7881-46d2-8d9b-3eda964c058b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -183,7 +183,7 @@ Assigns a specified credential to a specified access system user.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.assign({
@@ -192,7 +192,7 @@ await seam.acs.credentials.assign({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -203,7 +203,7 @@ await seam.acs.credentials.assign({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/assign" \
@@ -216,7 +216,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/assig
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -227,7 +227,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.assign(
@@ -236,7 +236,7 @@ seam.acs.credentials.assign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -247,7 +247,7 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.assign(
@@ -256,7 +256,7 @@ seam.acs.credentials.assign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -267,7 +267,7 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->credentials->assign(
@@ -276,7 +276,7 @@ $seam->acs->credentials->assign(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -287,13 +287,13 @@ $seam->acs->credentials->assign(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials assign --acs_user_id "143f083a-d61c-4d85-923f-d5483fb5a7d4" --acs_credential_id "59c9af06-7881-46d2-8d9b-3eda964c058b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -15,7 +15,7 @@ See also [Update Linked Access Codes](../../capability-guides/smart-locks/access
 
 Updates access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.updateMultiple({
@@ -27,7 +27,7 @@ await seam.accessCodes.updateMultiple({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -38,7 +38,7 @@ await seam.accessCodes.updateMultiple({
 
 Updates access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/update_multiple" \
@@ -53,7 +53,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/update_m
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -64,7 +64,7 @@ EOF
 
 Updates access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.update_multiple(
@@ -75,7 +75,7 @@ seam.access_codes.update_multiple(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -86,7 +86,7 @@ None
 
 Updates access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.update_multiple(
@@ -97,7 +97,7 @@ seam.access_codes.update_multiple(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -108,7 +108,7 @@ nil
 
 Updates access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->update_multiple(
@@ -119,7 +119,7 @@ $seam->access_codes->update_multiple(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -130,13 +130,13 @@ $seam->access_codes->update_multiple(
 
 Updates access codes that share a common code across multiple devices.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes update-multiple --ends_at "2025-06-22T05:05:47.000Z" --starts_at "2025-06-18T19:14:13.000Z" --name "My Updated Linked Access Code" --common_code_key "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

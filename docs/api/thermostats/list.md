@@ -11,13 +11,13 @@ Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guide
 
 Returns a list of all thermostats. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.list({ limit: 10 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -190,7 +190,7 @@ await seam.thermostats.list({ limit: 10 });
 
 Returns a list of all thermostats. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/list" \
@@ -202,7 +202,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -377,13 +377,13 @@ EOF
 
 Returns a list of all thermostats. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.list(limit=10)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -556,13 +556,13 @@ seam.thermostats.list(limit=10)
 
 Returns a list of all thermostats. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.list(limit: 10)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -740,13 +740,13 @@ seam.thermostats.list(limit: 10)
 
 Returns a list of all thermostats. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->list(limit: 10);
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -951,13 +951,13 @@ $seam->thermostats->list(limit: 10);
 
 Returns a list of all thermostats. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats list --limit 10
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

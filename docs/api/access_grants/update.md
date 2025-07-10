@@ -14,7 +14,7 @@ Updates an existing access grant's time window.
 
 Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.update({
@@ -24,7 +24,7 @@ await seam.accessGrants.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -35,7 +35,7 @@ await seam.accessGrants.update({
 
 Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/update" \
@@ -49,7 +49,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/update"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -60,7 +60,7 @@ EOF
 
 Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.update(
@@ -70,7 +70,7 @@ seam.access_grants.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -81,7 +81,7 @@ None
 
 Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.update(
@@ -91,7 +91,7 @@ seam.access_grants.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -102,7 +102,7 @@ nil
 
 Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_grants->update(
@@ -112,7 +112,7 @@ $seam->access_grants->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -123,13 +123,13 @@ $seam->access_grants->update(
 
 Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants update --access_grant_id "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1" --starts_at "2025-06-19T18:01:32.000Z" --ends_at "2025-06-22T13:24:50.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

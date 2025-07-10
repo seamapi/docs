@@ -11,7 +11,7 @@ Updates the [workspace](../../core-concepts/workspaces/README.md) associated wit
 
 Updates the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.workspaces.update({
@@ -29,7 +29,7 @@ await seam.workspaces.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -40,7 +40,7 @@ await seam.workspaces.update({
 
 Updates the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/workspaces/update" \
@@ -61,7 +61,7 @@ curl --include --request POST "https://connect.getseam.com/workspaces/update" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -72,7 +72,7 @@ EOF
 
 Updates the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```python
 seam.workspaces.update(
@@ -89,7 +89,7 @@ seam.workspaces.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -100,7 +100,7 @@ None
 
 Updates the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.workspaces.update(
@@ -118,7 +118,7 @@ seam.workspaces.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -129,7 +129,7 @@ nil
 
 Updates the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```php
 $seam->workspaces->update(
@@ -148,7 +148,7 @@ $seam->workspaces->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -159,13 +159,13 @@ $seam->workspaces->update(
 
 Updates the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam workspaces update --name "My Workspace" --connect_partner_name "Acme" --connect_webview_customization {"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"} --is_suspended true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

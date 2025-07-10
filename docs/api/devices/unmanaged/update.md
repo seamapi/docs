@@ -13,7 +13,7 @@ An unmanaged device has a limited set of visible properties and a subset of supp
 
 Updates a specified unmanaged device.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.unmanaged.update({
@@ -22,7 +22,7 @@ await seam.devices.unmanaged.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -33,7 +33,7 @@ await seam.devices.unmanaged.update({
 
 Updates a specified unmanaged device.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/update" \
@@ -46,7 +46,7 @@ curl --include --request POST "https://connect.getseam.com/devices/unmanaged/upd
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -57,7 +57,7 @@ EOF
 
 Updates a specified unmanaged device.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.unmanaged.update(
@@ -65,7 +65,7 @@ seam.devices.unmanaged.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,13 +76,13 @@ None
 
 Updates a specified unmanaged device.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.unmanaged.update(device_id: "66c3adbf-a0e5-403a-8981-ec5286b5da76", is_managed: true)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -93,7 +93,7 @@ nil
 
 Updates a specified unmanaged device.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->unmanaged->update(
@@ -102,7 +102,7 @@ $seam->devices->unmanaged->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -113,13 +113,13 @@ $seam->devices->unmanaged->update(
 
 Updates a specified unmanaged device.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices unmanaged update --device_id "66c3adbf-a0e5-403a-8981-ec5286b5da76" --is_managed true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

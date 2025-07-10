@@ -12,7 +12,7 @@ Grants a specified [access system user](https://docs.seam.co/latest/capability-g
 
 Grants a specified access system user access to a specified access system entrance, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.grantAccess({
@@ -21,7 +21,7 @@ await seam.acs.entrances.grantAccess({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.entrances.grantAccess({
 
 Grants a specified access system user access to a specified access system entrance, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/grant_access" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/grant_a
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Grants a specified access system user access to a specified access system entrance, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.grant_access(
@@ -65,7 +65,7 @@ seam.acs.entrances.grant_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Grants a specified access system user access to a specified access system entrance, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.grant_access(
@@ -85,7 +85,7 @@ seam.acs.entrances.grant_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,7 +96,7 @@ nil
 
 Grants a specified access system user access to a specified access system entrance, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->grant_access(
@@ -105,7 +105,7 @@ $seam->acs->entrances->grant_access(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -116,13 +116,13 @@ $seam->acs->entrances->grant_access(
 
 Grants a specified access system user access to a specified access system entrance, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances grant-access --acs_entrance_id "d23d7180-c1ee-4bbe-8630-05df5031ce35" --user_identity_id "c6247b75-f1cb-493a-9915-a85a0b9639ae"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -183,7 +183,7 @@ Grants a specified access system user access to a specified access system entran
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.grantAccess({
@@ -192,7 +192,7 @@ await seam.acs.entrances.grantAccess({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -203,7 +203,7 @@ await seam.acs.entrances.grantAccess({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/grant_access" \
@@ -216,7 +216,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/grant_a
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -227,7 +227,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.grant_access(
@@ -236,7 +236,7 @@ seam.acs.entrances.grant_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -247,7 +247,7 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.grant_access(
@@ -256,7 +256,7 @@ seam.acs.entrances.grant_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -267,7 +267,7 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->grant_access(
@@ -276,7 +276,7 @@ $seam->acs->entrances->grant_access(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -287,13 +287,13 @@ $seam->acs->entrances->grant_access(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances grant-access --acs_entrance_id "d23d7180-c1ee-4bbe-8630-05df5031ce35" --acs_user_id "ace1dabe-7a25-4271-8d76-50e74ee4ae1f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

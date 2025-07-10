@@ -11,7 +11,7 @@ Creates a new [user identity](../../capability-guides/mobile-access/managing-mob
 
 Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.create({
@@ -23,7 +23,7 @@ await seam.userIdentities.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -45,7 +45,7 @@ await seam.userIdentities.create({
 
 Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/create" \
@@ -63,7 +63,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/creat
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -87,7 +87,7 @@ EOF
 
 Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.create(
@@ -99,7 +99,7 @@ seam.user_identities.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 UserIdentity(
@@ -121,7 +121,7 @@ UserIdentity(
 
 Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.create(
@@ -133,7 +133,7 @@ seam.user_identities.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -155,7 +155,7 @@ seam.user_identities.create(
 
 Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->create(
@@ -167,7 +167,7 @@ $seam->user_identities->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -189,13 +189,13 @@ $seam->user_identities->create(
 
 Creates a new user identity. By specifying the desired acs_system_id, this operation also creates an access system user for the specified access system if this user does not already exist.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities create --user_identity_key "61c6c8ec-21ac-4d1d-be02-688889c66d8c" --email_address "jane@example.com" --phone_number "+15551234567" --full_name "Jane Doe" --acs_system_ids ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

@@ -12,7 +12,7 @@ Returns a specified [connected account](../../core-concepts/connected-accounts/R
 
 Returns a specified connected account, using an ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.get({
@@ -20,7 +20,7 @@ await seam.connectedAccounts.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -47,7 +47,7 @@ await seam.connectedAccounts.get({
 
 Returns a specified connected account, using an ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
@@ -59,7 +59,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/ge
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -88,13 +88,13 @@ EOF
 
 Returns a specified connected account, using an ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.get(connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectedAccount(
@@ -121,13 +121,13 @@ ConnectedAccount(
 
 Returns a specified connected account, using an ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.get(connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -156,7 +156,7 @@ seam.connected_accounts.get(connected_account_id: "a289aa54-5488-4707-9a4b-eeea4
 
 Returns a specified connected account, using an ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->connected_accounts->get(
@@ -164,7 +164,7 @@ $seam->connected_accounts->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -191,13 +191,13 @@ $seam->connected_accounts->get(
 
 Returns a specified connected account, using an ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts get --connected_account_id "a289aa54-5488-4707-9a4b-eeea4edf311d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -297,13 +297,13 @@ Returns a specified connected account, using an email address.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.get({ email: "jane_doe@example.com" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -330,7 +330,7 @@ await seam.connectedAccounts.get({ email: "jane_doe@example.com" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/get" \
@@ -342,7 +342,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/ge
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -371,13 +371,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.get(email="jane_doe@example.com")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectedAccount(
@@ -404,13 +404,13 @@ ConnectedAccount(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.get(email: "jane_doe@example.com")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -439,13 +439,13 @@ seam.connected_accounts.get(email: "jane_doe@example.com")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->connected_accounts->get(email: "jane_doe@example.com");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -472,13 +472,13 @@ $seam->connected_accounts->get(email: "jane_doe@example.com");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts get --email "jane_doe@example.com"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

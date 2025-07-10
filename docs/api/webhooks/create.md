@@ -11,7 +11,7 @@ Creates a new [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
 
 Creates a new webhook.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.webhooks.create({
@@ -20,7 +20,7 @@ await seam.webhooks.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -36,7 +36,7 @@ await seam.webhooks.create({
 
 Creates a new webhook.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/create" \
@@ -52,7 +52,7 @@ curl --include --request POST "https://connect.getseam.com/webhooks/create" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -70,7 +70,7 @@ EOF
 
 Creates a new webhook.
 
-#### Code
+#### Code:
 
 ```python
 seam.webhooks.create(
@@ -78,7 +78,7 @@ seam.webhooks.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Webhook(
@@ -94,7 +94,7 @@ Webhook(
 
 Creates a new webhook.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.webhooks.create(
@@ -103,7 +103,7 @@ seam.webhooks.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -119,7 +119,7 @@ seam.webhooks.create(
 
 Creates a new webhook.
 
-#### Code
+#### Code:
 
 ```php
 $seam->webhooks->create(
@@ -128,7 +128,7 @@ $seam->webhooks->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -144,13 +144,13 @@ $seam->webhooks->create(
 
 Creates a new webhook.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam webhooks create --url "https://example.com" --event_types ["device.connected","device.disconnected"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

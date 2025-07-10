@@ -11,7 +11,7 @@ Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhoo
 
 Deletes a specified webhook.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.webhooks.delete({
@@ -19,7 +19,7 @@ await seam.webhooks.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.webhooks.delete({
 
 Deletes a specified webhook.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/delete" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/webhooks/delete" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,13 +53,13 @@ EOF
 
 Deletes a specified webhook.
 
-#### Code
+#### Code:
 
 ```python
 seam.webhooks.delete(webhook_id="d3fb55d3-8b49-43ed-ac6b-e490be7b4274")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -70,13 +70,13 @@ None
 
 Deletes a specified webhook.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.webhooks.delete(webhook_id: "d3fb55d3-8b49-43ed-ac6b-e490be7b4274")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -87,13 +87,13 @@ nil
 
 Deletes a specified webhook.
 
-#### Code
+#### Code:
 
 ```php
 $seam->webhooks->delete(webhook_id: "d3fb55d3-8b49-43ed-ac6b-e490be7b4274");
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -104,13 +104,13 @@ $seam->webhooks->delete(webhook_id: "d3fb55d3-8b49-43ed-ac6b-e490be7b4274");
 
 Deletes a specified webhook.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam webhooks delete --webhook_id "d3fb55d3-8b49-43ed-ac6b-e490be7b4274"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -11,13 +11,13 @@ Returns a list of all [noise sensors](https://docs.seam.co/latest/capability-gui
 
 Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.list({ limit: 10 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -102,7 +102,7 @@ await seam.noiseSensors.list({ limit: 10 });
 
 Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/list" \
@@ -114,7 +114,7 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -201,13 +201,13 @@ EOF
 
 Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.list(limit=10)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -292,13 +292,13 @@ seam.noise_sensors.list(limit=10)
 
 Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.list(limit: 10)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -397,13 +397,13 @@ seam.noise_sensors.list(limit: 10)
 
 Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```php
 $seam->noise_sensors->list(limit: 10);
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -489,13 +489,13 @@ $seam->noise_sensors->list(limit: 10);
 
 Returns a list of all noise sensors. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors list --limit 10
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

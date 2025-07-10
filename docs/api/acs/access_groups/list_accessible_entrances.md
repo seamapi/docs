@@ -11,7 +11,7 @@ Returns a list of all accessible entrances for a specified [access group](https:
 
 Returns a list of all accessible entrances for a specified access group.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.accessGroups.listAccessibleEntrances({
@@ -19,7 +19,7 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -49,7 +49,7 @@ await seam.acs.accessGroups.listAccessibleEntrances({
 
 Returns a list of all accessible entrances for a specified access group.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/list_accessible_entrances" \
@@ -61,7 +61,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/lis
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -93,7 +93,7 @@ EOF
 
 Returns a list of all accessible entrances for a specified access group.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.access_groups.list_accessible_entrances(
@@ -101,7 +101,7 @@ seam.acs.access_groups.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -131,7 +131,7 @@ seam.acs.access_groups.list_accessible_entrances(
 
 Returns a list of all accessible entrances for a specified access group.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.access_groups.list_accessible_entrances(
@@ -139,7 +139,7 @@ seam.acs.access_groups.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -169,7 +169,7 @@ seam.acs.access_groups.list_accessible_entrances(
 
 Returns a list of all accessible entrances for a specified access group.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->access_groups->list_accessible_entrances(
@@ -177,7 +177,7 @@ $seam->acs->access_groups->list_accessible_entrances(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -208,13 +208,13 @@ $seam->acs->access_groups->list_accessible_entrances(
 
 Returns a list of all accessible entrances for a specified access group.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs access-groups list-accessible-entrances --acs_access_group_id "1b02a29f-effd-4ce6-8a58-16ec09fd9b50"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

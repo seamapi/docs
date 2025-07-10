@@ -12,7 +12,7 @@ Returns a list of all [access groups](https://docs.seam.co/latest/capability-gui
 
 Returns a list of all access groups, filtered by user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.accessGroups.list({
@@ -22,7 +22,7 @@ await seam.acs.accessGroups.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -49,7 +49,7 @@ await seam.acs.accessGroups.list({
 
 Returns a list of all access groups, filtered by user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/list" \
@@ -63,7 +63,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/lis
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -92,7 +92,7 @@ EOF
 
 Returns a list of all access groups, filtered by user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.access_groups.list(
@@ -102,7 +102,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -129,7 +129,7 @@ seam.acs.access_groups.list(
 
 Returns a list of all access groups, filtered by user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.access_groups.list(
@@ -139,7 +139,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -166,7 +166,7 @@ seam.acs.access_groups.list(
 
 Returns a list of all access groups, filtered by user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->access_groups->list(
@@ -176,7 +176,7 @@ $seam->acs->access_groups->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -203,13 +203,13 @@ $seam->acs->access_groups->list(
 
 Returns a list of all access groups, filtered by user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs access-groups list --acs_system_id "1b529056-1b04-450b-b3da-016b65a5017f" --acs_user_id "ebe506e1-33ba-44e8-892b-2d12c1709cd8" --user_identity_id "9b1deda4-07e2-4e90-acde-5724b6ab7305"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -311,7 +311,7 @@ Returns a list of all access groups, filtered by access system user.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.accessGroups.list({
@@ -320,7 +320,7 @@ await seam.acs.accessGroups.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -347,7 +347,7 @@ await seam.acs.accessGroups.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/list" \
@@ -360,7 +360,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/lis
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -389,7 +389,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.access_groups.list(
@@ -398,7 +398,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -425,7 +425,7 @@ seam.acs.access_groups.list(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.access_groups.list(
@@ -434,7 +434,7 @@ seam.acs.access_groups.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -461,7 +461,7 @@ seam.acs.access_groups.list(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->access_groups->list(
@@ -470,7 +470,7 @@ $seam->acs->access_groups->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -497,13 +497,13 @@ $seam->acs->access_groups->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs access-groups list --acs_system_id "1b529056-1b04-450b-b3da-016b65a5017f" --acs_user_id "ebe506e1-33ba-44e8-892b-2d12c1709cd8"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

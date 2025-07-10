@@ -11,7 +11,7 @@ Simulates the triggering of a [noise threshold](https://docs.seam.co/latest/capa
 
 Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.simulate.triggerNoiseThreshold({
@@ -19,7 +19,7 @@ await seam.noiseSensors.simulate.triggerNoiseThreshold({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.noiseSensors.simulate.triggerNoiseThreshold({
 
 Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/simulate/trigger_noise_threshold" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/simulat
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,7 +53,7 @@ EOF
 
 Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.simulate.trigger_noise_threshold(
@@ -61,7 +61,7 @@ seam.noise_sensors.simulate.trigger_noise_threshold(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -72,7 +72,7 @@ None
 
 Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.simulate.trigger_noise_threshold(
@@ -80,7 +80,7 @@ seam.noise_sensors.simulate.trigger_noise_threshold(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -91,7 +91,7 @@ nil
 
 Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```php
 $seam->noise_sensors->simulate->trigger_noise_threshold(
@@ -99,7 +99,7 @@ $seam->noise_sensors->simulate->trigger_noise_threshold(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -110,13 +110,13 @@ $seam->noise_sensors->simulate->trigger_noise_threshold(
 
 Simulates the triggering of a noise threshold for a noise sensor in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors simulate trigger-noise-threshold --device_id "c0384c1c-9038-427c-9a72-314d2b168d43"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

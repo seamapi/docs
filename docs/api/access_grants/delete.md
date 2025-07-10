@@ -14,7 +14,7 @@ Delete an access grant.
 
 Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.delete({
@@ -22,7 +22,7 @@ await seam.accessGrants.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -33,7 +33,7 @@ await seam.accessGrants.delete({
 
 Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/delete" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/delete"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,13 +56,13 @@ EOF
 
 Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.delete(access_grant_id="403ea27b-af76-4a48-ace9-8f9498f4c25c")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -73,13 +73,13 @@ None
 
 Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.delete(access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -90,7 +90,7 @@ nil
 
 Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_grants->delete(
@@ -98,7 +98,7 @@ $seam->access_grants->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -109,13 +109,13 @@ $seam->access_grants->delete(
 
 Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants delete --access_grant_id "403ea27b-af76-4a48-ace9-8f9498f4c25c"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -11,7 +11,7 @@ Returns a specified [access group](https://docs.seam.co/latest/capability-guides
 
 Returns a specified access group.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.accessGroups.get({
@@ -19,7 +19,7 @@ await seam.acs.accessGroups.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -44,7 +44,7 @@ await seam.acs.accessGroups.get({
 
 Returns a specified access group.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/get" \
@@ -56,7 +56,7 @@ curl --include --request POST "https://connect.getseam.com/acs/access_groups/get
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -83,13 +83,13 @@ EOF
 
 Returns a specified access group.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.access_groups.get(acs_access_group_id="09eb5265-6e3b-4e6d-bf96-736171c547ae")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsAccessGroup(
@@ -114,13 +114,13 @@ AcsAccessGroup(
 
 Returns a specified access group.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.access_groups.get(acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -145,7 +145,7 @@ seam.acs.access_groups.get(acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c
 
 Returns a specified access group.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->access_groups->get(
@@ -153,7 +153,7 @@ $seam->acs->access_groups->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -178,13 +178,13 @@ $seam->acs->access_groups->get(
 
 Returns a specified access group.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs access-groups get --acs_access_group_id "09eb5265-6e3b-4e6d-bf96-736171c547ae"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

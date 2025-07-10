@@ -11,7 +11,7 @@ Returns a list of all [devices](../../core-concepts/devices/README.md) associate
 
 Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.listAccessibleDevices({
@@ -19,7 +19,7 @@ await seam.userIdentities.listAccessibleDevices({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -192,7 +192,7 @@ await seam.userIdentities.listAccessibleDevices({
 
 Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_accessible_devices" \
@@ -204,7 +204,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list_
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -379,7 +379,7 @@ EOF
 
 Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.list_accessible_devices(
@@ -387,7 +387,7 @@ seam.user_identities.list_accessible_devices(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -560,7 +560,7 @@ seam.user_identities.list_accessible_devices(
 
 Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.list_accessible_devices(
@@ -568,7 +568,7 @@ seam.user_identities.list_accessible_devices(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -746,7 +746,7 @@ seam.user_identities.list_accessible_devices(
 
 Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->list_accessible_devices(
@@ -754,7 +754,7 @@ $seam->user_identities->list_accessible_devices(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -959,13 +959,13 @@ $seam->user_identities->list_accessible_devices(
 
 Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities list-accessible-devices --user_identity_id "f25d14c2-ea01-4e42-80f8-61a6f719be9d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

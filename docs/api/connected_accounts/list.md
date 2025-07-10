@@ -12,7 +12,7 @@ Returns a list of all [connected accounts](../../core-concepts/connected-account
 
 Returns a list of all connected accounts for a specified user identifier key.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.list({
@@ -21,7 +21,7 @@ await seam.connectedAccounts.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -50,7 +50,7 @@ await seam.connectedAccounts.list({
 
 Returns a list of all connected accounts for a specified user identifier key.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
@@ -63,7 +63,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/li
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -94,7 +94,7 @@ EOF
 
 Returns a list of all connected accounts for a specified user identifier key.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.list(
@@ -102,7 +102,7 @@ seam.connected_accounts.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -131,13 +131,13 @@ seam.connected_accounts.list(
 
 Returns a list of all connected accounts for a specified user identifier key.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.list(user_identifier_key: "2f393937-1405-4b1a-933f-34c97bfb3c56", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -168,7 +168,7 @@ seam.connected_accounts.list(user_identifier_key: "2f393937-1405-4b1a-933f-34c97
 
 Returns a list of all connected accounts for a specified user identifier key.
 
-#### Code
+#### Code:
 
 ```php
 $seam->connected_accounts->list(
@@ -177,7 +177,7 @@ $seam->connected_accounts->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -206,13 +206,13 @@ $seam->connected_accounts->list(
 
 Returns a list of all connected accounts for a specified user identifier key.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts list --user_identifier_key "2f393937-1405-4b1a-933f-34c97bfb3c56" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -335,7 +335,7 @@ Returns a list of all connected accounts for a specified customer ID.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.list({
@@ -344,7 +344,7 @@ await seam.connectedAccounts.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -373,7 +373,7 @@ await seam.connectedAccounts.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
@@ -388,7 +388,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/li
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -419,7 +419,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.list(
@@ -427,7 +427,7 @@ seam.connected_accounts.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -456,13 +456,13 @@ seam.connected_accounts.list(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"], limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -493,7 +493,7 @@ seam.connected_accounts.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c5
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->connected_accounts->list(
@@ -502,7 +502,7 @@ $seam->connected_accounts->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -531,13 +531,13 @@ $seam->connected_accounts->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c57"] --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -576,7 +576,7 @@ Returns a list of all connected accounts with specified custom metadata.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.list({
@@ -585,7 +585,7 @@ await seam.connectedAccounts.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -614,7 +614,7 @@ await seam.connectedAccounts.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
@@ -629,7 +629,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/li
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -660,13 +660,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.list(custom_metadata_has={"id": "internalId1"}, limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -695,13 +695,13 @@ seam.connected_accounts.list(custom_metadata_has={"id": "internalId1"}, limit=50
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.list(custom_metadata_has: { id: "internalId1" }, limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -732,7 +732,7 @@ seam.connected_accounts.list(custom_metadata_has: { id: "internalId1" }, limit: 
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->connected_accounts->list(
@@ -741,7 +741,7 @@ $seam->connected_accounts->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -770,13 +770,13 @@ $seam->connected_accounts->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts list --custom_metadata_has {"id":"internalId1"} --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

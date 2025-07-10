@@ -11,13 +11,13 @@ Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks)
 
 Gets a specified webhook.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.webhooks.get({ webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -33,7 +33,7 @@ await seam.webhooks.get({ webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657" });
 
 Gets a specified webhook.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/get" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/webhooks/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -63,13 +63,13 @@ EOF
 
 Gets a specified webhook.
 
-#### Code
+#### Code:
 
 ```python
 seam.webhooks.get(webhook_id="e5f1b17c-c67d-469d-a860-9510cf814657")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Webhook(
@@ -85,13 +85,13 @@ Webhook(
 
 Gets a specified webhook.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.webhooks.get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -107,13 +107,13 @@ seam.webhooks.get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657")
 
 Gets a specified webhook.
 
-#### Code
+#### Code:
 
 ```php
 $seam->webhooks->get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -129,13 +129,13 @@ $seam->webhooks->get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657");
 
 Gets a specified webhook.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam webhooks get --webhook_id "e5f1b17c-c67d-469d-a860-9510cf814657"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

@@ -14,13 +14,13 @@ Returns a list of all spaces.
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.list();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -39,14 +39,14 @@ await seam.spaces.list();
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/list" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -67,13 +67,13 @@ curl --include --request POST "https://connect.getseam.com/spaces/list" \
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.list()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -92,13 +92,13 @@ seam.spaces.list()
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.list()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -117,13 +117,13 @@ seam.spaces.list()
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```php
 $seam->spaces->list();
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -142,13 +142,13 @@ $seam->spaces->list();
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces list
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

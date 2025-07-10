@@ -11,7 +11,7 @@ Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capab
 
 Returns a list of all unmanaged access codes.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.unmanaged.list({
@@ -19,7 +19,7 @@ await seam.accessCodes.unmanaged.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -45,7 +45,7 @@ await seam.accessCodes.unmanaged.list({
 
 Returns a list of all unmanaged access codes.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/list" \
@@ -57,7 +57,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/unmanage
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -85,13 +85,13 @@ EOF
 
 Returns a list of all unmanaged access codes.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.unmanaged.list(device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -117,13 +117,13 @@ seam.access_codes.unmanaged.list(device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1
 
 Returns a list of all unmanaged access codes.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.unmanaged.list(device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -149,7 +149,7 @@ seam.access_codes.unmanaged.list(device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b
 
 Returns a list of all unmanaged access codes.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->unmanaged->list(
@@ -157,7 +157,7 @@ $seam->access_codes->unmanaged->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -183,13 +183,13 @@ $seam->access_codes->unmanaged->list(
 
 Returns a list of all unmanaged access codes.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes unmanaged list --device_id "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

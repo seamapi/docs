@@ -16,7 +16,7 @@ You must specify either `device_id` or `name`.
 
 Returns a specified unmanaged device, using an ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.unmanaged.get({
@@ -24,7 +24,7 @@ await seam.devices.unmanaged.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -74,7 +74,7 @@ await seam.devices.unmanaged.get({
 
 Returns a specified unmanaged device, using an ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/get" \
@@ -86,7 +86,7 @@ curl --include --request POST "https://connect.getseam.com/devices/unmanaged/get
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -141,13 +141,13 @@ EOF
 
 Returns a specified unmanaged device, using an ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.unmanaged.get(device_id="9f871e41-0ce4-4825-8d99-9653df4cd525")
 ```
 
-#### Output
+#### Output:
 
 ```python
 UnmanagedDevice(
@@ -197,13 +197,13 @@ UnmanagedDevice(
 
 Returns a specified unmanaged device, using an ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.unmanaged.get(device_id: "9f871e41-0ce4-4825-8d99-9653df4cd525")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -265,7 +265,7 @@ seam.devices.unmanaged.get(device_id: "9f871e41-0ce4-4825-8d99-9653df4cd525")
 
 Returns a specified unmanaged device, using an ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->unmanaged->get(
@@ -273,7 +273,7 @@ $seam->devices->unmanaged->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -331,13 +331,13 @@ $seam->devices->unmanaged->get(
 
 Returns a specified unmanaged device, using an ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices unmanaged get --device_id "9f871e41-0ce4-4825-8d99-9653df4cd525"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -482,13 +482,13 @@ Returns a specified unmanaged device, using a name.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.unmanaged.get({ name: "My Unmanaged Device" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -538,7 +538,7 @@ await seam.devices.unmanaged.get({ name: "My Unmanaged Device" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/get" \
@@ -550,7 +550,7 @@ curl --include --request POST "https://connect.getseam.com/devices/unmanaged/get
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -605,13 +605,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.unmanaged.get(name="My Unmanaged Device")
 ```
 
-#### Output
+#### Output:
 
 ```python
 UnmanagedDevice(
@@ -661,13 +661,13 @@ UnmanagedDevice(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.unmanaged.get(name: "My Unmanaged Device")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -729,13 +729,13 @@ seam.devices.unmanaged.get(name: "My Unmanaged Device")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->unmanaged->get(name: "My Unmanaged Device");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -793,13 +793,13 @@ $seam->devices->unmanaged->get(name: "My Unmanaged Device");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices unmanaged get --name "My Unmanaged Device"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

@@ -11,7 +11,7 @@ Returns a specified [access system](https://docs.seam.co/latest/capability-guide
 
 Returns a specified access system.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.systems.get({
@@ -19,7 +19,7 @@ await seam.acs.systems.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -48,7 +48,7 @@ await seam.acs.systems.get({
 
 Returns a specified access system.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/get" \
@@ -60,7 +60,7 @@ curl --include --request POST "https://connect.getseam.com/acs/systems/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -91,13 +91,13 @@ EOF
 
 Returns a specified access system.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.systems.get(acs_system_id="4720a2ac-59b5-4e55-96fc-52b3cbe95907")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsSystem(
@@ -126,13 +126,13 @@ AcsSystem(
 
 Returns a specified access system.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.systems.get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -164,13 +164,13 @@ seam.acs.systems.get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907")
 
 Returns a specified access system.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->systems->get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -201,13 +201,13 @@ $seam->acs->systems->get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907");
 
 Returns a specified access system.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs systems get --acs_system_id "4720a2ac-59b5-4e55-96fc-52b3cbe95907"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

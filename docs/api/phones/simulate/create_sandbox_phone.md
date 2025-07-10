@@ -11,7 +11,7 @@ Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/wo
 
 Creates a new simulated phone in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.phones.simulate.createSandboxPhone({
@@ -34,7 +34,7 @@ await seam.phones.simulate.createSandboxPhone({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -66,7 +66,7 @@ await seam.phones.simulate.createSandboxPhone({
 
 Creates a new simulated phone in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/simulate/create_sandbox_phone" \
@@ -93,7 +93,7 @@ curl --include --request POST "https://connect.getseam.com/phones/simulate/creat
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -127,7 +127,7 @@ EOF
 
 Creates a new simulated phone in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```python
 seam.phones.simulate.create_sandbox_phone(
@@ -150,7 +150,7 @@ seam.phones.simulate.create_sandbox_phone(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Phone(
@@ -182,7 +182,7 @@ Phone(
 
 Creates a new simulated phone in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.phones.simulate.create_sandbox_phone(
@@ -205,7 +205,7 @@ seam.phones.simulate.create_sandbox_phone(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -234,7 +234,7 @@ seam.phones.simulate.create_sandbox_phone(
 
 Creates a new simulated phone in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```php
 $seam->phones->simulate->create_sandbox_phone(
@@ -257,7 +257,7 @@ $seam->phones->simulate->create_sandbox_phone(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -289,13 +289,13 @@ $seam->phones->simulate->create_sandbox_phone(
 
 Creates a new simulated phone in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam phones simulate create-sandbox-phone --custom_sdk_installation_id "visionline_sdk" --user_identity_id "799f9914-f2c2-4087-ab34-f1ffb44d6a0b" --phone_metadata {"operating_system":"android","os_version":10,"device_manufacturer":"Samsung","device_model":"Samsung Galaxy S10"} --assa_abloy_metadata {"ble_capability":"true,","hce_capability":"false,","nfc_capability":"false,","application_version":"1.0.0","seos_applet_version":"1.0.0","seos_tsm_endpoint_id":1}
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

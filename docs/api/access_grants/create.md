@@ -15,7 +15,7 @@ Creates a new access grant.
 
 Creates a new Access Grant using space IDs and an existing user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.create({
@@ -34,7 +34,7 @@ await seam.accessGrants.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -83,7 +83,7 @@ await seam.accessGrants.create({
 
 Creates a new Access Grant using space IDs and an existing user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
@@ -112,7 +112,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/create"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -163,7 +163,7 @@ EOF
 
 Creates a new Access Grant using space IDs and an existing user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.create(
@@ -182,7 +182,7 @@ seam.access_grants.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessGrant(
@@ -231,7 +231,7 @@ AccessGrant(
 
 Creates a new Access Grant using space IDs and an existing user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.create(
@@ -243,7 +243,7 @@ seam.access_grants.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -289,7 +289,7 @@ seam.access_grants.create(
 
 Creates a new Access Grant using space IDs and an existing user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_grants->create(
@@ -308,7 +308,7 @@ $seam->access_grants->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -363,13 +363,13 @@ $seam->access_grants->create(
 
 Creates a new Access Grant using space IDs and an existing user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants create --user_identity_id "e3d736c1-540d-4d10-83e5-9a4e135453b4" --space_ids ["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"] --requested_access_methods [{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}] --starts_at "2025-06-16T16:54:17.946606Z" --ends_at "2025-06-18T16:54:17.946606Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -623,7 +623,7 @@ Creates a new Access Grant using entrance IDs and device IDs and an existing use
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.create({
@@ -646,7 +646,7 @@ await seam.accessGrants.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -664,7 +664,7 @@ await seam.accessGrants.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
@@ -697,7 +697,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/create"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -717,7 +717,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.create(
@@ -740,7 +740,7 @@ seam.access_grants.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessGrant(
@@ -758,7 +758,7 @@ AccessGrant(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.create(
@@ -771,7 +771,7 @@ seam.access_grants.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -789,7 +789,7 @@ seam.access_grants.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_grants->create(
@@ -812,7 +812,7 @@ $seam->access_grants->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -830,13 +830,13 @@ $seam->access_grants->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants create --user_identity_id "e3d736c1-540d-4d10-83e5-9a4e135453b4" --acs_entrance_ids ["f47ac10b-58cc-4372-a567-0e02b2c3d479","550e8400-e29b-41d4-a716-446655440001"] --device_ids ["6ba7b811-9dad-11d1-80b4-00c04fd430c8","1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"] --requested_access_methods [{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}] --starts_at "2025-06-16T16:54:17.946606Z" --ends_at "2025-06-18T16:54:17.946606Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -864,7 +864,7 @@ Creates a new Access Grant and create a new user identity as part of the same op
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.create({
@@ -887,7 +887,7 @@ await seam.accessGrants.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -936,7 +936,7 @@ await seam.accessGrants.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
@@ -969,7 +969,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/create"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1020,7 +1020,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.create(
@@ -1043,7 +1043,7 @@ seam.access_grants.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessGrant(
@@ -1092,7 +1092,7 @@ AccessGrant(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.create(
@@ -1108,7 +1108,7 @@ seam.access_grants.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -1154,7 +1154,7 @@ seam.access_grants.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_grants->create(
@@ -1177,7 +1177,7 @@ $seam->access_grants->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1232,13 +1232,13 @@ $seam->access_grants->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants create --user_identity {"full_name":"Jane Doe","email_address":"jane.doe@example.com","phone_number":"+1555551003"} --space_ids ["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"] --requested_access_methods [{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}] --starts_at "2025-06-16T16:54:17.946606Z" --ends_at "2025-06-18T16:54:17.946606Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

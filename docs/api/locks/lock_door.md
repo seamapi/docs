@@ -11,7 +11,7 @@ Locks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See a
 
 Locks a lock.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.locks.lockDoor({
@@ -19,7 +19,7 @@ await seam.locks.lockDoor({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -36,7 +36,7 @@ await seam.locks.lockDoor({
 
 Locks a lock.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/locks/lock_door" \
@@ -48,7 +48,7 @@ curl --include --request POST "https://connect.getseam.com/locks/lock_door" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -67,13 +67,13 @@ EOF
 
 Locks a lock.
 
-#### Code
+#### Code:
 
 ```python
 seam.locks.lock_door(device_id="9a31853e-4db0-4d78-b21d-f50c8dbdb9dc")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -90,13 +90,13 @@ ActionAttempt(
 
 Locks a lock.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.locks.lock_door(device_id: "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -114,13 +114,13 @@ seam.locks.lock_door(device_id: "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc")
 
 Locks a lock.
 
-#### Code
+#### Code:
 
 ```php
 $seam->locks->lock_door(device_id: "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -137,13 +137,13 @@ $seam->locks->lock_door(device_id: "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc");
 
 Locks a lock.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam locks lock-door --device_id "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

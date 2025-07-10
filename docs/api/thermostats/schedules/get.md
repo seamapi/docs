@@ -11,7 +11,7 @@ Returns a specified [thermostat schedule](../../../capability-guides/thermostats
 
 Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.get({
@@ -19,7 +19,7 @@ await seam.thermostats.schedules.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -42,7 +42,7 @@ await seam.thermostats.schedules.get({
 
 Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/get" \
@@ -54,7 +54,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -79,7 +79,7 @@ EOF
 
 Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.get(
@@ -87,7 +87,7 @@ seam.thermostats.schedules.get(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ThermostatSchedule(
@@ -110,13 +110,13 @@ ThermostatSchedule(
 
 Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.get(thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -139,7 +139,7 @@ seam.thermostats.schedules.get(thermostat_schedule_id: "408f3f85-11ae-4111-bec1-
 
 Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->schedules->get(
@@ -147,7 +147,7 @@ $seam->thermostats->schedules->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -170,13 +170,13 @@ $seam->thermostats->schedules->get(
 
 Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules get --thermostat_schedule_id "408f3f85-11ae-4111-bec1-0f2408a2b218"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
