@@ -11,7 +11,7 @@ Activates a specified [climate preset](../../capability-guides/thermostats/creat
 
 Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.activateClimatePreset({
@@ -20,7 +20,7 @@ await seam.thermostats.activateClimatePreset({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -37,7 +37,7 @@ await seam.thermostats.activateClimatePreset({
 
 Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/activate_
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -69,7 +69,7 @@ EOF
 
 Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.activate_climate_preset(
@@ -77,7 +77,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -94,7 +94,7 @@ ActionAttempt(
 
 Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.activate_climate_preset(
@@ -103,7 +103,7 @@ seam.thermostats.activate_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -121,7 +121,7 @@ seam.thermostats.activate_climate_preset(
 
 Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->activate_climate_preset(
@@ -130,7 +130,7 @@ $seam->thermostats->activate_climate_preset(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -147,13 +147,13 @@ $seam->thermostats->activate_climate_preset(
 
 Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats activate-climate-preset --device_id "52b88155-5b81-47d2-b04d-28a802bd7395" --climate_preset_key "Eco"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

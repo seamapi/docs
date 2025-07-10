@@ -12,7 +12,7 @@ Creates a new [workspace](../../core-concepts/workspaces/README.md).
 
 Creates a new sandbox workspace.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.workspaces.create({
@@ -36,7 +36,7 @@ await seam.workspaces.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -61,7 +61,7 @@ await seam.workspaces.create({
 
 Creates a new sandbox workspace.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/workspaces/create" \
@@ -87,7 +87,7 @@ curl --include --request POST "https://connect.getseam.com/workspaces/create" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -114,7 +114,7 @@ EOF
 
 Creates a new sandbox workspace.
 
-#### Code
+#### Code:
 
 ```python
 seam.workspaces.create(
@@ -136,7 +136,7 @@ seam.workspaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Workspace(
@@ -161,7 +161,7 @@ Workspace(
 
 Creates a new sandbox workspace.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.workspaces.create(
@@ -184,7 +184,7 @@ seam.workspaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -210,7 +210,7 @@ seam.workspaces.create(
 
 Creates a new sandbox workspace.
 
-#### Code
+#### Code:
 
 ```php
 $seam->workspaces->create(
@@ -234,7 +234,7 @@ $seam->workspaces->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -261,13 +261,13 @@ $seam->workspaces->create(
 
 Creates a new sandbox workspace.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam workspaces create --name "My Sandbox Workspace" --company_name "Acme" --connect_partner_name "Acme" --is_sandbox true --webview_primary_button_color "#232426" --webview_primary_button_text_color "#FFFDE7" --webview_logo_shape "circle" --webview_success_message "Your account has been successfully connected to Acme!" --connect_webview_customization {"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"}
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -444,7 +444,7 @@ Creates a new production workspace.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.workspaces.create({
@@ -468,7 +468,7 @@ await seam.workspaces.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -493,7 +493,7 @@ await seam.workspaces.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/workspaces/create" \
@@ -519,7 +519,7 @@ curl --include --request POST "https://connect.getseam.com/workspaces/create" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -546,7 +546,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.workspaces.create(
@@ -568,7 +568,7 @@ seam.workspaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Workspace(
@@ -593,7 +593,7 @@ Workspace(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.workspaces.create(
@@ -616,7 +616,7 @@ seam.workspaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -642,7 +642,7 @@ seam.workspaces.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->workspaces->create(
@@ -666,7 +666,7 @@ $seam->workspaces->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -693,13 +693,13 @@ $seam->workspaces->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam workspaces create --name "My Production Workspace" --company_name "Acme" --connect_partner_name "Acme" --is_sandbox false --webview_primary_button_color "#232426" --webview_primary_button_text_color "#FFFDE7" --webview_logo_shape "circle" --webview_success_message "Your account has been successfully connected to Acme!" --connect_webview_customization {"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"}
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

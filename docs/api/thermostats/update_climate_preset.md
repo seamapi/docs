@@ -11,7 +11,7 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.updateClimatePreset({
@@ -26,7 +26,7 @@ await seam.thermostats.updateClimatePreset({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -37,7 +37,7 @@ await seam.thermostats.updateClimatePreset({
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/update_climate_preset" \
@@ -56,7 +56,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/update_cl
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -67,7 +67,7 @@ EOF
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.update_climate_preset(
@@ -82,7 +82,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -93,7 +93,7 @@ None
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.update_climate_preset(
@@ -108,7 +108,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -119,7 +119,7 @@ nil
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->update_climate_preset(
@@ -134,7 +134,7 @@ $seam->thermostats->update_climate_preset(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -145,13 +145,13 @@ $seam->thermostats->update_climate_preset(
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats update-climate-preset --device_id "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8" --climate_preset_key "Home" --name "Home" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_fahrenheit 75 --heating_set_point_fahrenheit 65 --manual_override_allowed true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -11,13 +11,13 @@ Returns a list of [workspaces](../../core-concepts/workspaces/README.md) associa
 
 Returns a list of workspaces associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.workspaces.list();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -44,14 +44,14 @@ await seam.workspaces.list();
 
 Returns a list of workspaces associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/workspaces/list" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -80,13 +80,13 @@ curl --include --request POST "https://connect.getseam.com/workspaces/list" \
 
 Returns a list of workspaces associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```python
 seam.workspaces.list()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -113,13 +113,13 @@ seam.workspaces.list()
 
 Returns a list of workspaces associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.workspaces.list()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -147,13 +147,13 @@ seam.workspaces.list()
 
 Returns a list of workspaces associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```php
 $seam->workspaces->list();
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -182,13 +182,13 @@ $seam->workspaces->list();
 
 Returns a list of workspaces associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam workspaces list
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

@@ -11,7 +11,7 @@ Returns a specified [noise threshold](https://docs.seam.co/latest/capability-gui
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.get({
@@ -19,7 +19,7 @@ await seam.noiseSensors.noiseThresholds.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -38,7 +38,7 @@ await seam.noiseSensors.noiseThresholds.get({
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/get" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_t
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -71,7 +71,7 @@ EOF
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.noise_thresholds.get(
@@ -79,7 +79,7 @@ seam.noise_sensors.noise_thresholds.get(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 NoiseThreshold(
@@ -98,13 +98,13 @@ NoiseThreshold(
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.noise_thresholds.get(noise_threshold_id: "8282891b-c4da-4239-8f01-56089d44b80d")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -123,7 +123,7 @@ seam.noise_sensors.noise_thresholds.get(noise_threshold_id: "8282891b-c4da-4239-
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```php
 $seam->noise_sensors->noise_thresholds->get(
@@ -131,7 +131,7 @@ $seam->noise_sensors->noise_thresholds->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -150,13 +150,13 @@ $seam->noise_sensors->noise_thresholds->get(
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors noise-thresholds get --noise_threshold_id "8282891b-c4da-4239-8f01-56089d44b80d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

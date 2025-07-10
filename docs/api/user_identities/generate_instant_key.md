@@ -11,7 +11,7 @@ Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobi
 
 Generates a new instant key for a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.generateInstantKey({
@@ -20,7 +20,7 @@ await seam.userIdentities.generateInstantKey({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -39,7 +39,7 @@ await seam.userIdentities.generateInstantKey({
 
 Generates a new instant key for a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/generate_instant_key" \
@@ -52,7 +52,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/gener
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -73,7 +73,7 @@ EOF
 
 Generates a new instant key for a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.generate_instant_key(
@@ -81,7 +81,7 @@ seam.user_identities.generate_instant_key(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 InstantKey(
@@ -100,7 +100,7 @@ InstantKey(
 
 Generates a new instant key for a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.generate_instant_key(
@@ -109,7 +109,7 @@ seam.user_identities.generate_instant_key(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -128,7 +128,7 @@ seam.user_identities.generate_instant_key(
 
 Generates a new instant key for a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->generate_instant_key(
@@ -137,7 +137,7 @@ $seam->user_identities->generate_instant_key(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -156,13 +156,13 @@ $seam->user_identities->generate_instant_key(
 
 Generates a new instant key for a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities generate-instant-key --user_identity_id "d92e0c7b-72a1-4063-9ee8-2acefc240358" --max_use_count 10
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

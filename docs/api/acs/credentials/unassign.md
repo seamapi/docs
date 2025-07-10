@@ -12,7 +12,7 @@ Unassigns a specified [credential](../../../capability-guides/access-systems/man
 
 Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.unassign({
@@ -21,7 +21,7 @@ await seam.acs.credentials.unassign({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.credentials.unassign({
 
 Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/unass
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.unassign(
@@ -65,7 +65,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.unassign(
@@ -85,7 +85,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,7 +96,7 @@ nil
 
 Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->credentials->unassign(
@@ -105,7 +105,7 @@ $seam->acs->credentials->unassign(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -116,13 +116,13 @@ $seam->acs->credentials->unassign(
 
 Unassigns a specified credential from a specified access system user, using the associated user identity ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials unassign --user_identity_id "417e9370-d2cc-4b23-b6d5-fbf7fdbda354" --acs_credential_id "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -183,7 +183,7 @@ Unassigns a specified credential from a specified access system user.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.unassign({
@@ -192,7 +192,7 @@ await seam.acs.credentials.unassign({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -203,7 +203,7 @@ await seam.acs.credentials.unassign({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
@@ -216,7 +216,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/unass
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -227,7 +227,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.unassign(
@@ -236,7 +236,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -247,7 +247,7 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.unassign(
@@ -256,7 +256,7 @@ seam.acs.credentials.unassign(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -267,7 +267,7 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->credentials->unassign(
@@ -276,7 +276,7 @@ $seam->acs->credentials->unassign(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -287,13 +287,13 @@ $seam->acs->credentials->unassign(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials unassign --acs_user_id "ae76d550-f2e0-4f61-9380-a64d276f9904" --acs_credential_id "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -11,7 +11,7 @@ Deletes a specified [credential](../../../capability-guides/access-systems/manag
 
 Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.delete({
@@ -19,7 +19,7 @@ await seam.acs.credentials.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.acs.credentials.delete({
 
 Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/delete" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/delet
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,13 +53,13 @@ EOF
 
 Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.delete(acs_credential_id="33bbceea-221e-48bd-8d38-aa72f88a1cab")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -70,13 +70,13 @@ None
 
 Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.delete(acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -87,7 +87,7 @@ nil
 
 Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->credentials->delete(
@@ -95,7 +95,7 @@ $seam->acs->credentials->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -106,13 +106,13 @@ $seam->acs->credentials->delete(
 
 Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials delete --acs_credential_id "33bbceea-221e-48bd-8d38-aa72f88a1cab"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

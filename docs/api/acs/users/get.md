@@ -12,7 +12,7 @@ Returns a specified [access system user](https://docs.seam.co/latest/capability-
 
 Returns a specified access system user.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.get({
@@ -21,7 +21,7 @@ await seam.acs.users.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -59,7 +59,7 @@ await seam.acs.users.get({
 
 Returns a specified access system user.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/get" \
@@ -72,7 +72,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -112,7 +112,7 @@ EOF
 
 Returns a specified access system user.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.get(
@@ -121,7 +121,7 @@ seam.acs.users.get(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsUser(
@@ -159,7 +159,7 @@ AcsUser(
 
 Returns a specified access system user.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.get(
@@ -168,7 +168,7 @@ seam.acs.users.get(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -206,7 +206,7 @@ seam.acs.users.get(
 
 Returns a specified access system user.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->get(
@@ -215,7 +215,7 @@ $seam->acs->users->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -253,13 +253,13 @@ $seam->acs->users->get(
 
 Returns a specified access system user.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users get --user_identity_id "cde1ec76-5b0d-4b3e-9b85-d80dcc9b599c" --acs_system_id "f4d2b3fb-7fa5-47fd-b0d3-aa6da8f5b710"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -393,7 +393,7 @@ Returns a specified access system user.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.get({
@@ -401,7 +401,7 @@ await seam.acs.users.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -439,7 +439,7 @@ await seam.acs.users.get({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/get" \
@@ -451,7 +451,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -491,13 +491,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.get(acs_user_id="42968059-0c89-40f3-b39a-fb80398d0d08")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsUser(
@@ -535,13 +535,13 @@ AcsUser(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -579,13 +579,13 @@ seam.acs.users.get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -623,13 +623,13 @@ $seam->acs->users->get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users get --acs_user_id "42968059-0c89-40f3-b39a-fb80398d0d08"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

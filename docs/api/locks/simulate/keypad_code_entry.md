@@ -11,7 +11,7 @@ Simulates the entry of a code on a keypad. You can only perform this action for 
 
 Simulates the entry of a code on a keypad.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.locks.simulate.keypadCodeEntry({
@@ -20,7 +20,7 @@ await seam.locks.simulate.keypadCodeEntry({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -37,7 +37,7 @@ await seam.locks.simulate.keypadCodeEntry({
 
 Simulates the entry of a code on a keypad.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/locks/simulate/keypad_code_entry" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/locks/simulate/keypad
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -69,7 +69,7 @@ EOF
 
 Simulates the entry of a code on a keypad.
 
-#### Code
+#### Code:
 
 ```python
 seam.locks.simulate.keypad_code_entry(
@@ -77,7 +77,7 @@ seam.locks.simulate.keypad_code_entry(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -94,7 +94,7 @@ ActionAttempt(
 
 Simulates the entry of a code on a keypad.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.locks.simulate.keypad_code_entry(
@@ -103,7 +103,7 @@ seam.locks.simulate.keypad_code_entry(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -121,7 +121,7 @@ seam.locks.simulate.keypad_code_entry(
 
 Simulates the entry of a code on a keypad.
 
-#### Code
+#### Code:
 
 ```php
 $seam->locks->simulate->keypad_code_entry(
@@ -130,7 +130,7 @@ $seam->locks->simulate->keypad_code_entry(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -147,13 +147,13 @@ $seam->locks->simulate->keypad_code_entry(
 
 Simulates the entry of a code on a keypad.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam locks simulate keypad-code-entry --device_id "97a7a706-05a9-405c-91e5-b03e5b9c2003" --code "1234"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

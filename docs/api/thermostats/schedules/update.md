@@ -11,7 +11,7 @@ Updates a specified [thermostat schedule](../../../capability-guides/thermostats
 
 Updates a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.update({
@@ -25,7 +25,7 @@ await seam.thermostats.schedules.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -36,7 +36,7 @@ await seam.thermostats.schedules.update({
 
 Updates a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/update" \
@@ -54,7 +54,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -65,7 +65,7 @@ EOF
 
 Updates a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.update(
@@ -79,7 +79,7 @@ seam.thermostats.schedules.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -90,7 +90,7 @@ None
 
 Updates a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.update(
@@ -104,7 +104,7 @@ seam.thermostats.schedules.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -115,7 +115,7 @@ nil
 
 Updates a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->schedules->update(
@@ -129,7 +129,7 @@ $seam->thermostats->schedules->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -140,13 +140,13 @@ $seam->thermostats->schedules->update(
 
 Updates a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules update --thermostat_schedule_id "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c" --name "Jane's Stay" --climate_preset_key "Occupied" --max_override_period_minutes 90 --starts_at "2025-06-20T03:24:25.000Z" --ends_at "2025-06-22T06:04:21.000Z" --is_override_allowed true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

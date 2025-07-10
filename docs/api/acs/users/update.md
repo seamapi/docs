@@ -12,7 +12,7 @@ Updates the properties of a specified [access system user](https://docs.seam.co/
 
 Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.update({
@@ -30,7 +30,7 @@ await seam.acs.users.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -41,7 +41,7 @@ await seam.acs.users.update({
 
 Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/update" \
@@ -63,7 +63,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/update" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -74,7 +74,7 @@ EOF
 
 Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.update(
@@ -92,7 +92,7 @@ seam.acs.users.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -103,7 +103,7 @@ None
 
 Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.update(
@@ -121,7 +121,7 @@ seam.acs.users.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -132,7 +132,7 @@ nil
 
 Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->update(
@@ -150,7 +150,7 @@ $seam->acs->users->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -161,13 +161,13 @@ $seam->acs->users->update(
 
 Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users update --acs_user_id "5db87499-0b3b-4750-a2e8-341b2af64049" --user_identity_id "b0bbb463-4fad-4b21-a695-952463ea6e93" --acs_system_id "88ae7b8b-c406-414b-a745-91d9cea661f7" --access_schedule {"starts_at":"2025-06-10T15:00:00.000Z","ends_at":"2025-06-12T11:00:00.000Z"} --full_name "Jane Doe" --email "jane@example.com" --phone_number "+15551234567" --email_address "jane@example.com"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -281,7 +281,7 @@ Updates the properties of a specified access system user.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.update({
@@ -297,7 +297,7 @@ await seam.acs.users.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -308,7 +308,7 @@ await seam.acs.users.update({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/update" \
@@ -328,7 +328,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/update" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -339,7 +339,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.update(
@@ -355,7 +355,7 @@ seam.acs.users.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -366,7 +366,7 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.update(
@@ -382,7 +382,7 @@ seam.acs.users.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -393,7 +393,7 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->update(
@@ -409,7 +409,7 @@ $seam->acs->users->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -420,13 +420,13 @@ $seam->acs->users->update(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users update --acs_user_id "5db87499-0b3b-4750-a2e8-341b2af64049" --access_schedule {"starts_at":"2025-06-10T15:00:00.000Z","ends_at":"2025-06-12T11:00:00.000Z"} --full_name "Jane Doe" --email "jane@example.com" --phone_number "+15551234567" --email_address "jane@example.com"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

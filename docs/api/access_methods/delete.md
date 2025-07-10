@@ -14,7 +14,7 @@ Delete an access method.
 
 Deletes an access method.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessMethods.delete({
@@ -22,7 +22,7 @@ await seam.accessMethods.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -33,7 +33,7 @@ await seam.accessMethods.delete({
 
 Deletes an access method.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/delete" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/access_methods/delete
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,13 +56,13 @@ EOF
 
 Deletes an access method.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_methods.delete(access_method_id="3f10d86c-526b-4b85-8788-cc1a74411b71")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -73,13 +73,13 @@ None
 
 Deletes an access method.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_methods.delete(access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b71")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -90,7 +90,7 @@ nil
 
 Deletes an access method.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_methods->delete(
@@ -98,7 +98,7 @@ $seam->access_methods->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -109,13 +109,13 @@ $seam->access_methods->delete(
 
 Deletes an access method.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-methods delete --access_method_id "3f10d86c-526b-4b85-8788-cc1a74411b71"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

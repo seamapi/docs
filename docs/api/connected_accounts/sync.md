@@ -11,7 +11,7 @@ Request a [connected account](../../core-concepts/connected-accounts/README.md) 
 
 Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.sync({
@@ -19,7 +19,7 @@ await seam.connectedAccounts.sync({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.connectedAccounts.sync({
 
 Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/sync" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/sy
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,7 +53,7 @@ EOF
 
 Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.sync(
@@ -61,7 +61,7 @@ seam.connected_accounts.sync(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -72,13 +72,13 @@ None
 
 Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.sync(connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -89,7 +89,7 @@ nil
 
 Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```php
 $seam->connected_accounts->sync(
@@ -97,7 +97,7 @@ $seam->connected_accounts->sync(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -108,13 +108,13 @@ $seam->connected_accounts->sync(
 
 Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts sync --connected_account_id "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

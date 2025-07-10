@@ -13,7 +13,7 @@ You do not need to delete a Connect Webview once a user completes it. Instead, y
 
 Deletes a Connect Webview.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectWebviews.delete({
@@ -21,7 +21,7 @@ await seam.connectWebviews.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.connectWebviews.delete({
 
 Deletes a Connect Webview.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/delete" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/connect_webviews/dele
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,13 +55,13 @@ EOF
 
 Deletes a Connect Webview.
 
-#### Code
+#### Code:
 
 ```python
 seam.connect_webviews.delete(connect_webview_id="816f796f-636c-46a9-9fef-7f90ca69e771")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -72,13 +72,13 @@ None
 
 Deletes a Connect Webview.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connect_webviews.delete(connect_webview_id: "816f796f-636c-46a9-9fef-7f90ca69e771")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -89,7 +89,7 @@ nil
 
 Deletes a Connect Webview.
 
-#### Code
+#### Code:
 
 ```php
 $seam->connect_webviews->delete(
@@ -97,7 +97,7 @@ $seam->connect_webviews->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -108,13 +108,13 @@ $seam->connect_webviews->delete(
 
 Deletes a Connect Webview.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connect-webviews delete --connect_webview_id "816f796f-636c-46a9-9fef-7f90ca69e771"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

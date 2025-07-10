@@ -14,7 +14,7 @@ Get an access grant.
 
 Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.get({
@@ -22,7 +22,7 @@ await seam.accessGrants.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -71,7 +71,7 @@ await seam.accessGrants.get({
 
 Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/get" \
@@ -83,7 +83,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -134,13 +134,13 @@ EOF
 
 Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.get(access_grant_id="704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessGrant(
@@ -189,13 +189,13 @@ AccessGrant(
 
 Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -241,7 +241,7 @@ seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 
 Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_grants->get(
@@ -249,7 +249,7 @@ $seam->access_grants->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -304,13 +304,13 @@ $seam->access_grants->get(
 
 Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

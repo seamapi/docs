@@ -13,7 +13,7 @@ Specify either `device_id` or `access_code_ids`.
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.list({
@@ -22,7 +22,7 @@ await seam.accessCodes.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -57,7 +57,7 @@ await seam.accessCodes.list({
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/list" \
@@ -70,7 +70,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -107,13 +107,13 @@ EOF
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=10)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -148,13 +148,13 @@ seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=1
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit: 10)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -189,7 +189,7 @@ seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit:
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->list(
@@ -198,7 +198,7 @@ $seam->access_codes->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -233,13 +233,13 @@ $seam->access_codes->list(
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes list --device_id "f5197f50-839b-4a8e-82f3-e9ef06af93ae" --limit 10
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

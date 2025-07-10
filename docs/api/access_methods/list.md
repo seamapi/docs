@@ -14,7 +14,7 @@ List all access methods, usually filtered by access grant.
 
 Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessMethods.list({
@@ -22,7 +22,7 @@ await seam.accessMethods.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -59,7 +59,7 @@ await seam.accessMethods.list({
 
 Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/list" \
@@ -71,7 +71,7 @@ curl --include --request POST "https://connect.getseam.com/access_methods/list" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -110,13 +110,13 @@ EOF
 
 Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -153,13 +153,13 @@ seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
 
 Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -196,7 +196,7 @@ seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 
 Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_methods->list(
@@ -204,7 +204,7 @@ $seam->access_methods->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -241,13 +241,13 @@ $seam->access_methods->list(
 
 Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-methods list --access_grant_id "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

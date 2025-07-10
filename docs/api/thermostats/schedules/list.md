@@ -12,7 +12,7 @@ Returns a list of all [thermostat schedules](../../../capability-guides/thermost
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.list({
@@ -20,7 +20,7 @@ await seam.thermostats.schedules.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -45,7 +45,7 @@ await seam.thermostats.schedules.list({
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
@@ -57,7 +57,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -84,13 +84,13 @@ EOF
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.list(device_id="b5d58842-32be-46d2-b161-26787a0bd5ea")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -115,13 +115,13 @@ seam.thermostats.schedules.list(device_id="b5d58842-32be-46d2-b161-26787a0bd5ea"
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.list(device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -146,7 +146,7 @@ seam.thermostats.schedules.list(device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->schedules->list(
@@ -154,7 +154,7 @@ $seam->thermostats->schedules->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -179,13 +179,13 @@ $seam->thermostats->schedules->list(
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules list --device_id "b5d58842-32be-46d2-b161-26787a0bd5ea"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -278,7 +278,7 @@ Returns a list of all thermostat schedules for a specified thermostat, using a u
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.list({
@@ -286,7 +286,7 @@ await seam.thermostats.schedules.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -311,7 +311,7 @@ await seam.thermostats.schedules.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
@@ -323,7 +323,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -350,7 +350,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.list(
@@ -358,7 +358,7 @@ seam.thermostats.schedules.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -383,13 +383,13 @@ seam.thermostats.schedules.list(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.list(user_identifier_key: "b5c8bf4e-c231-474f-b4dc-adad38c25d3f")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -414,7 +414,7 @@ seam.thermostats.schedules.list(user_identifier_key: "b5c8bf4e-c231-474f-b4dc-ad
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->schedules->list(
@@ -422,7 +422,7 @@ $seam->thermostats->schedules->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -447,13 +447,13 @@ $seam->thermostats->schedules->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules list --user_identifier_key "b5c8bf4e-c231-474f-b4dc-adad38c25d3f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

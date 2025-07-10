@@ -13,7 +13,7 @@ This will clear the `hub_disconnected` error on the device.
 
 Simulates bringing the Wi-Fi hub (bridge) back online for a device.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.simulate.connectToHub({
@@ -21,7 +21,7 @@ await seam.devices.simulate.connectToHub({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.devices.simulate.connectToHub({
 
 Simulates bringing the Wi-Fi hub (bridge) back online for a device.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/connect_to_hub" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/devices/simulate/conn
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,13 +55,13 @@ EOF
 
 Simulates bringing the Wi-Fi hub (bridge) back online for a device.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.simulate.connect_to_hub(device_id="5d703d4f-523f-42af-9439-618415ca651f")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -72,13 +72,13 @@ None
 
 Simulates bringing the Wi-Fi hub (bridge) back online for a device.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.simulate.connect_to_hub(device_id: "5d703d4f-523f-42af-9439-618415ca651f")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -89,7 +89,7 @@ nil
 
 Simulates bringing the Wi-Fi hub (bridge) back online for a device.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->simulate->connect_to_hub(
@@ -97,7 +97,7 @@ $seam->devices->simulate->connect_to_hub(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -108,13 +108,13 @@ $seam->devices->simulate->connect_to_hub(
 
 Simulates bringing the Wi-Fi hub (bridge) back online for a device.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices simulate connect-to-hub --device_id "5d703d4f-523f-42af-9439-618415ca651f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

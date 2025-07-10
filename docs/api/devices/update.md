@@ -13,7 +13,7 @@ You can add or change [custom metadata](../../core-concepts/devices/adding-custo
 
 Updates a specified device.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.update({
@@ -24,7 +24,7 @@ await seam.devices.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -35,7 +35,7 @@ await seam.devices.update({
 
 Updates a specified device.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/update" \
@@ -52,7 +52,7 @@ curl --include --request POST "https://connect.getseam.com/devices/update" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -63,7 +63,7 @@ EOF
 
 Updates a specified device.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.update(
@@ -74,7 +74,7 @@ seam.devices.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -85,7 +85,7 @@ None
 
 Updates a specified device.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.update(
@@ -98,7 +98,7 @@ seam.devices.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -109,7 +109,7 @@ nil
 
 Updates a specified device.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->update(
@@ -120,7 +120,7 @@ $seam->devices->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -131,13 +131,13 @@ $seam->devices->update(
 
 Updates a specified device.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices update --device_id "ccfab465-4838-4ff3-af62-97c78e8bf44b" --name "My Updated Device" --is_managed true --custom_metadata {"id":"internalId1"}
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

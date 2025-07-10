@@ -11,7 +11,7 @@ Returns a [client session](../../core-concepts/authentication/client-session-tok
 
 Returns a client session with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.getOrCreate({
@@ -23,7 +23,7 @@ await seam.clientSessions.getOrCreate({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -46,7 +46,7 @@ await seam.clientSessions.getOrCreate({
 
 Returns a client session with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/get_or_create" \
@@ -66,7 +66,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/get_o
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -91,7 +91,7 @@ EOF
 
 Returns a client session with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.get_or_create(
@@ -103,7 +103,7 @@ seam.client_sessions.get_or_create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ClientSession(
@@ -126,7 +126,7 @@ ClientSession(
 
 Returns a client session with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.get_or_create(
@@ -138,7 +138,7 @@ seam.client_sessions.get_or_create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -161,7 +161,7 @@ seam.client_sessions.get_or_create(
 
 Returns a client session with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
-#### Code
+#### Code:
 
 ```php
 $seam->client_sessions->get_or_create(
@@ -173,7 +173,7 @@ $seam->client_sessions->get_or_create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -196,13 +196,13 @@ $seam->client_sessions->get_or_create(
 
 Returns a client session with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions get-or-create --user_identifier_key "jane_doe" --connect_webview_ids ["5e297cfe-23df-4638-bb87-08c4f0f8233b"] --connected_account_ids ["f87f0ab7-b8d7-44aa-9e59-3239b209570e"] --user_identity_id "71ff7f71-2cf4-458a-8db4-6ad539c8b66a" --expires_at "2025-06-18T06:10:42.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

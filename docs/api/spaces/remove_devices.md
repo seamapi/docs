@@ -14,7 +14,7 @@ Removes devices from a specific space.
 
 Removes devices from a specific space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.removeDevices({
@@ -23,7 +23,7 @@ await seam.spaces.removeDevices({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -34,7 +34,7 @@ await seam.spaces.removeDevices({
 
 Removes devices from a specific space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/remove_devices" \
@@ -49,7 +49,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/remove_devices
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -60,7 +60,7 @@ EOF
 
 Removes devices from a specific space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.remove_devices(
@@ -69,7 +69,7 @@ seam.spaces.remove_devices(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -80,7 +80,7 @@ None
 
 Removes devices from a specific space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.remove_devices(
@@ -89,7 +89,7 @@ seam.spaces.remove_devices(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -100,7 +100,7 @@ nil
 
 Removes devices from a specific space.
 
-#### Code
+#### Code:
 
 ```php
 $seam->spaces->remove_devices(
@@ -109,7 +109,7 @@ $seam->spaces->remove_devices(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -120,13 +120,13 @@ $seam->spaces->remove_devices(
 
 Removes devices from a specific space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces remove-devices --space_id "6df14344-4114-4d74-9ef4-2e1208378cda" --device_ids ["011460e9-9605-46a5-91f1-6b2a442b70fd"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

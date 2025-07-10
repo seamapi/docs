@@ -11,7 +11,7 @@ Creates a [climate preset](../../capability-guides/thermostats/creating-and-mana
 
 Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.createClimatePreset({
@@ -26,7 +26,7 @@ await seam.thermostats.createClimatePreset({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -37,7 +37,7 @@ await seam.thermostats.createClimatePreset({
 
 Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/create_climate_preset" \
@@ -56,7 +56,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/create_cl
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -67,7 +67,7 @@ EOF
 
 Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.create_climate_preset(
@@ -82,7 +82,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -93,7 +93,7 @@ None
 
 Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.create_climate_preset(
@@ -108,7 +108,7 @@ seam.thermostats.create_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -119,7 +119,7 @@ nil
 
 Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->create_climate_preset(
@@ -134,7 +134,7 @@ $seam->thermostats->create_climate_preset(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -145,13 +145,13 @@ $seam->thermostats->create_climate_preset(
 
 Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats create-climate-preset --device_id "ba9b816d-c255-46b9-a16d-971e6f535dd3" --manual_override_allowed true --climate_preset_key "Occupied" --name "Occupied" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_celsius 25 --heating_set_point_celsius 20
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

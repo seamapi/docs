@@ -11,7 +11,7 @@ Simulates having adjusted the [HVAC mode](../../../capability-guides/thermostats
 
 Simulates having adjusted the HVAC mode for a thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.simulate.hvacModeAdjusted({
@@ -21,7 +21,7 @@ await seam.thermostats.simulate.hvacModeAdjusted({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.thermostats.simulate.hvacModeAdjusted({
 
 Simulates having adjusted the HVAC mode for a thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/simulate/hvac_mode_adjusted" \
@@ -46,7 +46,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/simulate/
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -57,7 +57,7 @@ EOF
 
 Simulates having adjusted the HVAC mode for a thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.simulate.hvac_mode_adjusted(
@@ -67,7 +67,7 @@ seam.thermostats.simulate.hvac_mode_adjusted(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -78,7 +78,7 @@ None
 
 Simulates having adjusted the HVAC mode for a thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.simulate.hvac_mode_adjusted(
@@ -88,7 +88,7 @@ seam.thermostats.simulate.hvac_mode_adjusted(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -99,7 +99,7 @@ nil
 
 Simulates having adjusted the HVAC mode for a thermostat.
 
-#### Code
+#### Code:
 
 ```php
 $seam->thermostats->simulate->hvac_mode_adjusted(
@@ -109,7 +109,7 @@ $seam->thermostats->simulate->hvac_mode_adjusted(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -120,13 +120,13 @@ $seam->thermostats->simulate->hvac_mode_adjusted(
 
 Simulates having adjusted the HVAC mode for a thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats simulate hvac-mode-adjusted --device_id "278a72ba-7deb-45e3-a0c0-573fd360ee7b" --hvac_mode "heat" --heating_set_point_fahrenheit 68
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

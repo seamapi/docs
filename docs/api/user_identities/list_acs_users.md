@@ -11,7 +11,7 @@ Returns a list of all [access system users](https://docs.seam.co/latest/capabili
 
 Returns a list of all access system users assigned to a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.listAcsUsers({
@@ -19,7 +19,7 @@ await seam.userIdentities.listAcsUsers({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -59,7 +59,7 @@ await seam.userIdentities.listAcsUsers({
 
 Returns a list of all access system users assigned to a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_users" \
@@ -71,7 +71,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list_
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -113,7 +113,7 @@ EOF
 
 Returns a list of all access system users assigned to a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.list_acs_users(
@@ -121,7 +121,7 @@ seam.user_identities.list_acs_users(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -161,13 +161,13 @@ seam.user_identities.list_acs_users(
 
 Returns a list of all access system users assigned to a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.list_acs_users(user_identity_id: "b0dc10f2-3971-440e-af25-dab964e5c281")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -207,7 +207,7 @@ seam.user_identities.list_acs_users(user_identity_id: "b0dc10f2-3971-440e-af25-d
 
 Returns a list of all access system users assigned to a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->list_acs_users(
@@ -215,7 +215,7 @@ $seam->user_identities->list_acs_users(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -255,13 +255,13 @@ $seam->user_identities->list_acs_users(
 
 Returns a list of all access system users assigned to a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities list-acs-users --user_identity_id "b0dc10f2-3971-440e-af25-dab964e5c281"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

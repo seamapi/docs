@@ -11,7 +11,7 @@ Deletes a specified [user identity](../../capability-guides/mobile-access/managi
 
 Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.delete({
@@ -19,7 +19,7 @@ await seam.userIdentities.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.userIdentities.delete({
 
 Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/delete" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/delet
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,13 +53,13 @@ EOF
 
 Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.delete(user_identity_id="7ad2566e-6fd8-466d-b8e4-c10a14a74fd3")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -70,13 +70,13 @@ None
 
 Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.delete(user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -87,7 +87,7 @@ nil
 
 Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->delete(
@@ -95,7 +95,7 @@ $seam->user_identities->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -106,13 +106,13 @@ $seam->user_identities->delete(
 
 Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities delete --user_identity_id "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

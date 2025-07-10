@@ -11,7 +11,7 @@ Returns a list of all [noise thresholds](https://docs.seam.co/latest/capability-
 
 Returns a list of all noise thresholds for a noise sensor.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.list({
@@ -19,7 +19,7 @@ await seam.noiseSensors.noiseThresholds.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -40,7 +40,7 @@ await seam.noiseSensors.noiseThresholds.list({
 
 Returns a list of all noise thresholds for a noise sensor.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/list" \
@@ -52,7 +52,7 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_t
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -75,7 +75,7 @@ EOF
 
 Returns a list of all noise thresholds for a noise sensor.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.noise_thresholds.list(
@@ -83,7 +83,7 @@ seam.noise_sensors.noise_thresholds.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -104,13 +104,13 @@ seam.noise_sensors.noise_thresholds.list(
 
 Returns a list of all noise thresholds for a noise sensor.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.noise_thresholds.list(device_id: "a60d1a44-5727-4223-8b58-9c2455eb57fc")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -131,7 +131,7 @@ seam.noise_sensors.noise_thresholds.list(device_id: "a60d1a44-5727-4223-8b58-9c2
 
 Returns a list of all noise thresholds for a noise sensor.
 
-#### Code
+#### Code:
 
 ```php
 $seam->noise_sensors->noise_thresholds->list(
@@ -139,7 +139,7 @@ $seam->noise_sensors->noise_thresholds->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -160,13 +160,13 @@ $seam->noise_sensors->noise_thresholds->list(
 
 Returns a list of all noise thresholds for a noise sensor.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors noise-thresholds list --device_id "a60d1a44-5727-4223-8b58-9c2455eb57fc"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

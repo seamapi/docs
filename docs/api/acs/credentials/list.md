@@ -11,13 +11,13 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 
 Returns a list of all credentials.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.list();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -49,14 +49,14 @@ await seam.acs.credentials.list();
 
 Returns a list of all credentials.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/list" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -90,13 +90,13 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/list"
 
 Returns a list of all credentials.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.list()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -128,13 +128,13 @@ seam.acs.credentials.list()
 
 Returns a list of all credentials.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.list()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -166,13 +166,13 @@ seam.acs.credentials.list()
 
 Returns a list of all credentials.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->credentials->list();
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -205,13 +205,13 @@ $seam->acs->credentials->list();
 
 Returns a list of all credentials.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials list
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

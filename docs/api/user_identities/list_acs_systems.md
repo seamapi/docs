@@ -11,7 +11,7 @@ Returns a list of all [access systems](https://docs.seam.co/latest/capability-gu
 
 Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.listAcsSystems({
@@ -19,7 +19,7 @@ await seam.userIdentities.listAcsSystems({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -50,7 +50,7 @@ await seam.userIdentities.listAcsSystems({
 
 Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_systems" \
@@ -62,7 +62,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list_
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -95,7 +95,7 @@ EOF
 
 Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.list_acs_systems(
@@ -103,7 +103,7 @@ seam.user_identities.list_acs_systems(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -134,13 +134,13 @@ seam.user_identities.list_acs_systems(
 
 Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.list_acs_systems(user_identity_id: "77e0347d-35ac-4a21-962b-e757a446b47f")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -174,7 +174,7 @@ seam.user_identities.list_acs_systems(user_identity_id: "77e0347d-35ac-4a21-962b
 
 Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
 $seam->user_identities->list_acs_systems(
@@ -182,7 +182,7 @@ $seam->user_identities->list_acs_systems(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -215,13 +215,13 @@ $seam->user_identities->list_acs_systems(
 
 Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities list-acs-systems --user_identity_id "77e0347d-35ac-4a21-962b-e757a446b47f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

@@ -12,7 +12,7 @@ Returns a list of all [client sessions](../../core-concepts/authentication/clien
 
 Returns a list of all client sessions for a specific client session ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.list({
@@ -20,7 +20,7 @@ await seam.clientSessions.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -45,7 +45,7 @@ await seam.clientSessions.list({
 
 Returns a list of all client sessions for a specific client session ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
@@ -57,7 +57,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/list"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -84,13 +84,13 @@ EOF
 
 Returns a list of all client sessions for a specific client session ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.list(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -115,13 +115,13 @@ seam.client_sessions.list(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaab
 
 Returns a list of all client sessions for a specific client session ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.list(client_session_id: "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -146,7 +146,7 @@ seam.client_sessions.list(client_session_id: "a083ce0f-8b03-4081-ac9a-1ad2ce6aaa
 
 Returns a list of all client sessions for a specific client session ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->client_sessions->list(
@@ -154,7 +154,7 @@ $seam->client_sessions->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -179,13 +179,13 @@ $seam->client_sessions->list(
 
 Returns a list of all client sessions for a specific client session ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions list --client_session_id "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -296,13 +296,13 @@ Returns a list of all client sessions for a specific user identifier key.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.list({ user_identifier_key: "jane_doe" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -327,7 +327,7 @@ await seam.clientSessions.list({ user_identifier_key: "jane_doe" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
@@ -339,7 +339,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/list"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -366,13 +366,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.list(user_identifier_key="jane_doe")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -397,13 +397,13 @@ seam.client_sessions.list(user_identifier_key="jane_doe")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.list(user_identifier_key: "jane_doe")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -428,13 +428,13 @@ seam.client_sessions.list(user_identifier_key: "jane_doe")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->client_sessions->list(user_identifier_key: "jane_doe");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -459,13 +459,13 @@ $seam->client_sessions->list(user_identifier_key: "jane_doe");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions list --user_identifier_key "jane_doe"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -500,7 +500,7 @@ Returns a list of all client sessions for a specific Connect Webview ID.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.list({
@@ -508,7 +508,7 @@ await seam.clientSessions.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -533,7 +533,7 @@ await seam.clientSessions.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
@@ -545,7 +545,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/list"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -572,13 +572,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.list(connect_webview_id="e0f522d4-a7b6-4f65-ba90-11cde67a893a")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -603,13 +603,13 @@ seam.client_sessions.list(connect_webview_id="e0f522d4-a7b6-4f65-ba90-11cde67a89
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.list(connect_webview_id: "e0f522d4-a7b6-4f65-ba90-11cde67a893a")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -634,7 +634,7 @@ seam.client_sessions.list(connect_webview_id: "e0f522d4-a7b6-4f65-ba90-11cde67a8
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->client_sessions->list(
@@ -642,7 +642,7 @@ $seam->client_sessions->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -667,13 +667,13 @@ $seam->client_sessions->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions list --connect_webview_id "e0f522d4-a7b6-4f65-ba90-11cde67a893a"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -708,7 +708,7 @@ Returns a list of all client sessions for a specific user identity ID.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.list({
@@ -716,7 +716,7 @@ await seam.clientSessions.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -741,7 +741,7 @@ await seam.clientSessions.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
@@ -753,7 +753,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/list"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -780,13 +780,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.list(user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -811,13 +811,13 @@ seam.client_sessions.list(user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.list(user_identity_id: "b4ce8233-3b35-4d2d-82ec-d48513684f0a")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -842,7 +842,7 @@ seam.client_sessions.list(user_identity_id: "b4ce8233-3b35-4d2d-82ec-d48513684f0
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->client_sessions->list(
@@ -850,7 +850,7 @@ $seam->client_sessions->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -875,13 +875,13 @@ $seam->client_sessions->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions list --user_identity_id "b4ce8233-3b35-4d2d-82ec-d48513684f0a"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -916,13 +916,13 @@ Returns a list of all client sessions without a user identifier key.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.list({ without_user_identifier_key: true });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -947,7 +947,7 @@ await seam.clientSessions.list({ without_user_identifier_key: true });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
@@ -959,7 +959,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/list"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -986,13 +986,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.list(without_user_identifier_key=true)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1017,13 +1017,13 @@ seam.client_sessions.list(without_user_identifier_key=true)
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.list(without_user_identifier_key: true)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -1048,13 +1048,13 @@ seam.client_sessions.list(without_user_identifier_key: true)
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->client_sessions->list(without_user_identifier_key: true);
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -1079,13 +1079,13 @@ $seam->client_sessions->list(without_user_identifier_key: true);
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions list --without_user_identifier_key true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

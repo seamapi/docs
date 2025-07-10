@@ -14,13 +14,13 @@ Gets a space.
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.get({ space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -37,7 +37,7 @@ await seam.spaces.get({ space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63" });
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/get" \
@@ -49,7 +49,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -68,13 +68,13 @@ EOF
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.get(space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Space(
@@ -91,13 +91,13 @@ Space(
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -114,13 +114,13 @@ seam.spaces.get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63")
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```php
 $seam->spaces->get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -137,13 +137,13 @@ $seam->spaces->get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63");
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces get --space_id "5f30970d-6ef5-4618-9e91-e701fbca6b63"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

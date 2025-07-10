@@ -14,7 +14,7 @@ Get an access method.
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessMethods.get({
@@ -22,7 +22,7 @@ await seam.accessMethods.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -41,7 +41,7 @@ await seam.accessMethods.get({
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/get" \
@@ -53,7 +53,7 @@ curl --include --request POST "https://connect.getseam.com/access_methods/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -74,13 +74,13 @@ EOF
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_methods.get(access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessMethod(
@@ -99,13 +99,13 @@ AccessMethod(
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_methods.get(access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -124,7 +124,7 @@ seam.access_methods.get(access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_methods->get(
@@ -132,7 +132,7 @@ $seam->access_methods->get(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -151,13 +151,13 @@ $seam->access_methods->get(
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-methods get --access_method_id "7410aea4-6bed-490c-a602-dd417d9cd075"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

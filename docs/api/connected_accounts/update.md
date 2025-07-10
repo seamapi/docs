@@ -11,7 +11,7 @@ Updates a [connected account](../../core-concepts/connected-accounts/README.md).
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.update({
@@ -21,7 +21,7 @@ await seam.connectedAccounts.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.connectedAccounts.update({
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
@@ -48,7 +48,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/up
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -59,7 +59,7 @@ EOF
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.update(
@@ -69,7 +69,7 @@ seam.connected_accounts.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -80,7 +80,7 @@ None
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.update(
@@ -92,7 +92,7 @@ seam.connected_accounts.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -103,7 +103,7 @@ nil
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```php
 $seam->connected_accounts->update(
@@ -113,7 +113,7 @@ $seam->connected_accounts->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -124,13 +124,13 @@ $seam->connected_accounts->update(
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts update --connected_account_id "a289aa54-5488-4707-9a4b-eeea4edf311d" --automatically_manage_new_devices true --custom_metadata {"id":"internalId1"}
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -14,13 +14,13 @@ You must specify either `device_id` or `name`.
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -191,7 +191,7 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/get" \
@@ -203,7 +203,7 @@ curl --include --request POST "https://connect.getseam.com/devices/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -376,13 +376,13 @@ EOF
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.get(device_id="a75bff05-29a3-4215-a09f-2156c52a4ac7")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Device(
@@ -550,13 +550,13 @@ Device(
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -732,13 +732,13 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -936,13 +936,13 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -1219,13 +1219,13 @@ Returns a specified device, using a name.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.get({ name: "My Device" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -1396,7 +1396,7 @@ await seam.devices.get({ name: "My Device" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/get" \
@@ -1408,7 +1408,7 @@ curl --include --request POST "https://connect.getseam.com/devices/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1581,13 +1581,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.get(name="My Device")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Device(
@@ -1755,13 +1755,13 @@ Device(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.get(name: "My Device")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -1937,13 +1937,13 @@ seam.devices.get(name: "My Device")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->get(name: "My Device");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -2141,13 +2141,13 @@ $seam->devices->get(name: "My Device");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices get --name "My Device"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

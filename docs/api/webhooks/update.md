@@ -11,7 +11,7 @@ Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhoo
 
 Updates a specified webhook.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.webhooks.update({
@@ -24,7 +24,7 @@ await seam.webhooks.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -35,7 +35,7 @@ await seam.webhooks.update({
 
 Updates a specified webhook.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/update" \
@@ -52,7 +52,7 @@ curl --include --request POST "https://connect.getseam.com/webhooks/update" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -63,7 +63,7 @@ EOF
 
 Updates a specified webhook.
 
-#### Code
+#### Code:
 
 ```python
 seam.webhooks.update(
@@ -76,7 +76,7 @@ seam.webhooks.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -87,7 +87,7 @@ None
 
 Updates a specified webhook.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.webhooks.update(
@@ -96,7 +96,7 @@ seam.webhooks.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -107,7 +107,7 @@ nil
 
 Updates a specified webhook.
 
-#### Code
+#### Code:
 
 ```php
 $seam->webhooks->update(
@@ -120,7 +120,7 @@ $seam->webhooks->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -131,13 +131,13 @@ $seam->webhooks->update(
 
 Updates a specified webhook.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam webhooks update --webhook_id "e294905f-e7a5-4804-95a6-303f440eb262" --event_types ["device.connected","device.disconnected","device.unmanaged.converted_to_managed"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

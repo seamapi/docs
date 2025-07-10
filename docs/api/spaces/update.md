@@ -14,7 +14,7 @@ Updates an existing space.
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.update({
@@ -23,7 +23,7 @@ await seam.spaces.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -40,7 +40,7 @@ await seam.spaces.update({
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/update" \
@@ -53,7 +53,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/update" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -72,7 +72,7 @@ EOF
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.update(
@@ -80,7 +80,7 @@ seam.spaces.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Space(
@@ -97,13 +97,13 @@ Space(
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.update(space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81", name: "My Updated Space")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -120,7 +120,7 @@ seam.spaces.update(space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81", name: "My U
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```php
 $seam->spaces->update(
@@ -129,7 +129,7 @@ $seam->spaces->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -146,13 +146,13 @@ $seam->spaces->update(
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces update --space_id "d3513c20-dc89-4e19-8713-1c3ab01aec81" --name "My Updated Space"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

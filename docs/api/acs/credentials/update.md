@@ -11,7 +11,7 @@ Updates the code and ends at date and time for a specified [credential](../../..
 
 Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.update({
@@ -21,7 +21,7 @@ await seam.acs.credentials.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.credentials.update({
 
 Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
@@ -46,7 +46,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/updat
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -57,7 +57,7 @@ EOF
 
 Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.update(
@@ -67,7 +67,7 @@ seam.acs.credentials.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -78,7 +78,7 @@ None
 
 Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.update(
@@ -88,7 +88,7 @@ seam.acs.credentials.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -99,7 +99,7 @@ nil
 
 Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->credentials->update(
@@ -109,7 +109,7 @@ $seam->acs->credentials->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -120,13 +120,13 @@ $seam->acs->credentials->update(
 
 Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials update --acs_credential_id "1d4fb22b-743b-492f-ad74-cffcbd63c874" --code "1234" --ends_at "2025-06-18T10:42:53.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

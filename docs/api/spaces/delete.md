@@ -14,13 +14,13 @@ Deletes a space.
 
 Deletes a space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.delete({ space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.spaces.delete({ space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509" });
 
 Deletes a space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/delete" \
@@ -43,7 +43,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/delete" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,13 +54,13 @@ EOF
 
 Deletes a space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.delete(space_id="a7cd0163-4e94-41ae-b5b7-da6040a65509")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -71,13 +71,13 @@ None
 
 Deletes a space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.delete(space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -88,13 +88,13 @@ nil
 
 Deletes a space.
 
-#### Code
+#### Code:
 
 ```php
 $seam->spaces->delete(space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509");
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -105,13 +105,13 @@ $seam->spaces->delete(space_id: "a7cd0163-4e94-41ae-b5b7-da6040a65509");
 
 Deletes a space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces delete --space_id "a7cd0163-4e94-41ae-b5b7-da6040a65509"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

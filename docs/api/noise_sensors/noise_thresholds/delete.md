@@ -11,7 +11,7 @@ Deletes a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-
 
 Deletes a noise threshold from a noise sensor.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.delete({
@@ -20,7 +20,7 @@ await seam.noiseSensors.noiseThresholds.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.noiseSensors.noiseThresholds.delete({
 
 Deletes a noise threshold from a noise sensor.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/delete" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_t
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,7 +55,7 @@ EOF
 
 Deletes a noise threshold from a noise sensor.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.noise_thresholds.delete(
@@ -64,7 +64,7 @@ seam.noise_sensors.noise_thresholds.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -75,7 +75,7 @@ None
 
 Deletes a noise threshold from a noise sensor.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.noise_thresholds.delete(
@@ -84,7 +84,7 @@ seam.noise_sensors.noise_thresholds.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -95,7 +95,7 @@ nil
 
 Deletes a noise threshold from a noise sensor.
 
-#### Code
+#### Code:
 
 ```php
 $seam->noise_sensors->noise_thresholds->delete(
@@ -104,7 +104,7 @@ $seam->noise_sensors->noise_thresholds->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -115,13 +115,13 @@ $seam->noise_sensors->noise_thresholds->delete(
 
 Deletes a noise threshold from a noise sensor.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors noise-thresholds delete --noise_threshold_id "00fbac13-6602-4079-b4ae-c89d5dcbed35" --device_id "736fc5bf-192d-4416-b879-66ff0195f2f7"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

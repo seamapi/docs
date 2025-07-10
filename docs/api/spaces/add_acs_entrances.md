@@ -14,7 +14,7 @@ Adds [entrances](../../capability-guides/access-systems/retrieving-entrance-deta
 
 Adds entrances to a specific space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.addAcsEntrances({
@@ -23,7 +23,7 @@ await seam.spaces.addAcsEntrances({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -34,7 +34,7 @@ await seam.spaces.addAcsEntrances({
 
 Adds entrances to a specific space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/add_acs_entrances" \
@@ -49,7 +49,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/add_acs_entran
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -60,7 +60,7 @@ EOF
 
 Adds entrances to a specific space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.add_acs_entrances(
@@ -69,7 +69,7 @@ seam.spaces.add_acs_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -80,7 +80,7 @@ None
 
 Adds entrances to a specific space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.add_acs_entrances(
@@ -89,7 +89,7 @@ seam.spaces.add_acs_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -100,7 +100,7 @@ nil
 
 Adds entrances to a specific space.
 
-#### Code
+#### Code:
 
 ```php
 $seam->spaces->add_acs_entrances(
@@ -109,7 +109,7 @@ $seam->spaces->add_acs_entrances(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -120,13 +120,13 @@ $seam->spaces->add_acs_entrances(
 
 Adds entrances to a specific space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces add-acs-entrances --space_id "9f930664-c0d8-441b-8d66-2b1d0d2466f4" --acs_entrance_ids ["b127a710-db3e-402c-afdf-5474769b1d83"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

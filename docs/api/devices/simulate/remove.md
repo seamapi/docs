@@ -11,7 +11,7 @@ Simulates removing a device from Seam. Only applicable for [sandbox devices](../
 
 Simulates removing a device from Seam.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.simulate.remove({
@@ -19,7 +19,7 @@ await seam.devices.simulate.remove({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.devices.simulate.remove({
 
 Simulates removing a device from Seam.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/remove" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/devices/simulate/remo
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,13 +53,13 @@ EOF
 
 Simulates removing a device from Seam.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.simulate.remove(device_id="46757795-11f7-446a-a6cb-779e9f039d7c")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -70,13 +70,13 @@ None
 
 Simulates removing a device from Seam.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.simulate.remove(device_id: "46757795-11f7-446a-a6cb-779e9f039d7c")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -87,7 +87,7 @@ nil
 
 Simulates removing a device from Seam.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->simulate->remove(
@@ -95,7 +95,7 @@ $seam->devices->simulate->remove(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -106,13 +106,13 @@ $seam->devices->simulate->remove(
 
 Simulates removing a device from Seam.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices simulate remove --device_id "46757795-11f7-446a-a6cb-779e9f039d7c"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -11,7 +11,7 @@ Returns a list of all [credentials](../../../capability-guides/access-systems/ma
 
 Returns a list of all credentials with access to a specified entrance.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.listCredentialsWithAccess({
@@ -19,7 +19,7 @@ await seam.acs.entrances.listCredentialsWithAccess({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -51,7 +51,7 @@ await seam.acs.entrances.listCredentialsWithAccess({
 
 Returns a list of all credentials with access to a specified entrance.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/list_credentials_with_access" \
@@ -63,7 +63,7 @@ curl --include --request POST "https://connect.getseam.com/acs/entrances/list_cr
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -97,7 +97,7 @@ EOF
 
 Returns a list of all credentials with access to a specified entrance.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.entrances.list_credentials_with_access(
@@ -105,7 +105,7 @@ seam.acs.entrances.list_credentials_with_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -137,7 +137,7 @@ seam.acs.entrances.list_credentials_with_access(
 
 Returns a list of all credentials with access to a specified entrance.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.entrances.list_credentials_with_access(
@@ -145,7 +145,7 @@ seam.acs.entrances.list_credentials_with_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -177,7 +177,7 @@ seam.acs.entrances.list_credentials_with_access(
 
 Returns a list of all credentials with access to a specified entrance.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->entrances->list_credentials_with_access(
@@ -185,7 +185,7 @@ $seam->acs->entrances->list_credentials_with_access(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -218,13 +218,13 @@ $seam->acs->entrances->list_credentials_with_access(
 
 Returns a list of all credentials with access to a specified entrance.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs entrances list-credentials-with-access --acs_entrance_id "afdde789-8684-425a-b421-6031bb3df62e"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

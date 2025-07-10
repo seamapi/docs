@@ -16,13 +16,13 @@ When you create a [Connect Webview](../../core-concepts/connect-webviews/README.
 
 Returns a list of all device providers.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.listDeviceProviders();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -42,14 +42,14 @@ await seam.devices.listDeviceProviders();
 
 Returns a list of all device providers.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list_device_providers" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -71,13 +71,13 @@ curl --include --request POST "https://connect.getseam.com/devices/list_device_p
 
 Returns a list of all device providers.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list_device_providers()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -97,13 +97,13 @@ seam.devices.list_device_providers()
 
 Returns a list of all device providers.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list_device_providers()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -124,13 +124,13 @@ seam.devices.list_device_providers()
 
 Returns a list of all device providers.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->list_device_providers();
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -151,13 +151,13 @@ $seam->devices->list_device_providers();
 
 Returns a list of all device providers.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list-device-providers
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -234,13 +234,13 @@ Returns a list of all device providers for a specified provider category.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.listDeviceProviders({ provider_category: "stable" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -260,7 +260,7 @@ await seam.devices.listDeviceProviders({ provider_category: "stable" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list_device_providers" \
@@ -272,7 +272,7 @@ curl --include --request POST "https://connect.getseam.com/devices/list_device_p
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -294,13 +294,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list_device_providers(provider_category="stable")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -320,13 +320,13 @@ seam.devices.list_device_providers(provider_category="stable")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list_device_providers(provider_category: "stable")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -347,13 +347,13 @@ seam.devices.list_device_providers(provider_category: "stable")
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->list_device_providers(provider_category: "stable");
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -374,13 +374,13 @@ $seam->devices->list_device_providers(provider_category: "stable");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list-device-providers --provider_category "stable"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

@@ -13,7 +13,7 @@ To filter the list of returned access systems by a specific connected account ID
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.systems.list({
@@ -21,7 +21,7 @@ await seam.acs.systems.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -52,7 +52,7 @@ await seam.acs.systems.list({
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
@@ -64,7 +64,7 @@ curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -97,13 +97,13 @@ EOF
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.systems.list(connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -134,13 +134,13 @@ seam.acs.systems.list(connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.systems.list(connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -174,7 +174,7 @@ seam.acs.systems.list(connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->systems->list(
@@ -182,7 +182,7 @@ $seam->acs->systems->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -215,13 +215,13 @@ $seam->acs->systems->list(
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs systems list --connected_account_id "2283a842-27c5-474a-bd0e-4c959274efa0"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

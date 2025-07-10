@@ -11,7 +11,7 @@ Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-loc
 
 Deletes an access code.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.delete({
@@ -20,7 +20,7 @@ await seam.accessCodes.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.accessCodes.delete({
 
 Deletes an access code.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/delete" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/delete" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,7 +55,7 @@ EOF
 
 Deletes an access code.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.delete(
@@ -64,7 +64,7 @@ seam.access_codes.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -75,7 +75,7 @@ None
 
 Deletes an access code.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.delete(
@@ -84,7 +84,7 @@ seam.access_codes.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -95,7 +95,7 @@ nil
 
 Deletes an access code.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->delete(
@@ -104,7 +104,7 @@ $seam->access_codes->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -115,13 +115,13 @@ $seam->access_codes->delete(
 
 Deletes an access code.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes delete --device_id "d33f4cc7-2b6a-41a4-ad30-c372ee493589" --access_code_id "275b40a3-6b0b-4c51-8fd2-aafd3de2195c"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

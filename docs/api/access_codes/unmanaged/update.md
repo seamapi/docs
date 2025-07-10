@@ -11,7 +11,7 @@ Updates a specified [unmanaged access code](https://docs.seam.co/latest/capabili
 
 Updates a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.unmanaged.update({
@@ -22,7 +22,7 @@ await seam.accessCodes.unmanaged.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -33,7 +33,7 @@ await seam.accessCodes.unmanaged.update({
 
 Updates a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/update" \
@@ -48,7 +48,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/unmanage
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -59,7 +59,7 @@ EOF
 
 Updates a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.unmanaged.update(
@@ -70,7 +70,7 @@ seam.access_codes.unmanaged.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -81,7 +81,7 @@ None
 
 Updates a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.unmanaged.update(
@@ -92,7 +92,7 @@ seam.access_codes.unmanaged.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -103,7 +103,7 @@ nil
 
 Updates a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_codes->unmanaged->update(
@@ -114,7 +114,7 @@ $seam->access_codes->unmanaged->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -125,13 +125,13 @@ $seam->access_codes->unmanaged->update(
 
 Updates a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes unmanaged update --access_code_id "ebd8e488-db1b-4f4b-9d02-489fbfa6829a" --is_managed true --is_external_modification_allowed true --force true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

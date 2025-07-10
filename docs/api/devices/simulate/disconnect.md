@@ -11,7 +11,7 @@ Simulates disconnecting a device from Seam. Only applicable for [sandbox devices
 
 Simulates disconnecting a device from Seam.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.simulate.disconnect({
@@ -19,7 +19,7 @@ await seam.devices.simulate.disconnect({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.devices.simulate.disconnect({
 
 Simulates disconnecting a device from Seam.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/disconnect" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/devices/simulate/disc
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,13 +53,13 @@ EOF
 
 Simulates disconnecting a device from Seam.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.simulate.disconnect(device_id="a60686b8-f401-452d-9f67-53d139cf6160")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -70,13 +70,13 @@ None
 
 Simulates disconnecting a device from Seam.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.simulate.disconnect(device_id: "a60686b8-f401-452d-9f67-53d139cf6160")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -87,7 +87,7 @@ nil
 
 Simulates disconnecting a device from Seam.
 
-#### Code
+#### Code:
 
 ```php
 $seam->devices->simulate->disconnect(
@@ -95,7 +95,7 @@ $seam->devices->simulate->disconnect(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -106,13 +106,13 @@ $seam->devices->simulate->disconnect(
 
 Simulates disconnecting a device from Seam.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices simulate disconnect --device_id "a60686b8-f401-452d-9f67-53d139cf6160"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

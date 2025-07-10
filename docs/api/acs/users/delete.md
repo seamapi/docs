@@ -12,7 +12,7 @@ Deletes a specified [access system user](https://docs.seam.co/latest/capability-
 
 Deletes a specified access system user and invalidates the access system user's credentials.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.delete({
@@ -21,7 +21,7 @@ await seam.acs.users.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.users.delete({
 
 Deletes a specified access system user and invalidates the access system user's credentials.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Deletes a specified access system user and invalidates the access system user's credentials.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.delete(
@@ -65,7 +65,7 @@ seam.acs.users.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Deletes a specified access system user and invalidates the access system user's credentials.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.delete(
@@ -85,7 +85,7 @@ seam.acs.users.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,7 +96,7 @@ nil
 
 Deletes a specified access system user and invalidates the access system user's credentials.
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->delete(
@@ -105,7 +105,7 @@ $seam->acs->users->delete(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -116,13 +116,13 @@ $seam->acs->users->delete(
 
 Deletes a specified access system user and invalidates the access system user's credentials.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users delete --user_identity_id "586c225c-b05c-4af4-8679-9c8a46066cce" --acs_system_id "1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -183,7 +183,7 @@ Deletes a specified access system user and invalidates the access system user's 
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.delete({
@@ -191,7 +191,7 @@ await seam.acs.users.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -202,7 +202,7 @@ await seam.acs.users.delete({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
@@ -214,7 +214,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -225,13 +225,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.delete(acs_user_id="8d483a94-5cbc-425a-a6ee-bd9825820c26")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -242,13 +242,13 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.delete(acs_user_id: "8d483a94-5cbc-425a-a6ee-bd9825820c26")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -259,13 +259,13 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
 $seam->acs->users->delete(acs_user_id: "8d483a94-5cbc-425a-a6ee-bd9825820c26");
 ```
 
-#### Output
+#### Output:
 
 ```php
 
@@ -276,13 +276,13 @@ $seam->acs->users->delete(acs_user_id: "8d483a94-5cbc-425a-a6ee-bd9825820c26");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users delete --acs_user_id "8d483a94-5cbc-425a-a6ee-bd9825820c26"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

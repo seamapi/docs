@@ -14,7 +14,7 @@ Get an access grant.
 
 Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.list({
@@ -25,7 +25,7 @@ await seam.accessGrants.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -78,7 +78,7 @@ await seam.accessGrants.list({
 
 Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/list" \
@@ -93,7 +93,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -154,7 +154,7 @@ EOF
 
 Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.list(
@@ -165,7 +165,7 @@ seam.access_grants.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -224,7 +224,7 @@ seam.access_grants.list(
 
 Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.list(
@@ -235,7 +235,7 @@ seam.access_grants.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -285,7 +285,7 @@ seam.access_grants.list(
 
 Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```php
 $seam->access_grants->list(
@@ -296,7 +296,7 @@ $seam->access_grants->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
 [
@@ -355,13 +355,13 @@ $seam->access_grants->list(
 
 Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants list --user_identity_id "f7620fcf-d92f-471e-b97e-3806daeebd40" --acs_system_id "9f169742-048a-4105-84e3-bd1e0f9dc790" --acs_entrance_id "2673b363-4748-4a64-8075-f669c862ec74" --space_id "1d20c47d-3cc0-41ca-9917-bc798d071543"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
