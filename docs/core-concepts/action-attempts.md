@@ -20,4 +20,4 @@ This action attempt enables you to keep track of the progress of your action.
 
 Our client libraries do this automatically for you. However, you can also choose not to wait and to check on the action at a later time.
 
-For more information, see the [Action Attempts](../api-clients/action_attempts/) in the Seam API reference.
+For more information, see the [Action Attempts](../api/action_attempts/) in the Seam API reference.
