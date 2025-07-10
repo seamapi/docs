@@ -1,293 +1,274 @@
 # Action Attempts
 
-## `action_attempt`
+## The action_attempt Object
+
+- [Properties](./#properties)
+- [Events](./#events)
+
 
 Represents an attempt to perform an action against a device.
 
-### `action_attempt_id`
+---
+## Properties
 
-Format: `UUID`
+**`action_attempt_id`** *UUID*
 
 ID of the action attempt.
 
----
 
-### `status`
 
-Format: `Enum`
-
-Possible enum values:
-- `success`
-- `pending`
-- `error`
 
 ---
 
-### `action_type`
+**`status`** *Enum*
 
-Format: `String`
+
+
+<details>
+<summary>Enum values</summary>
+
+- <code>success</code>
+- <code>pending</code>
+- <code>error</code>
+</details>
+
+
+---
+
+**`action_type`** *String*
 
 Type of the action attempt.
 
-Possible enum values:
-- `LOCK_DOOR`
-- `UNLOCK_DOOR`
-- `SCAN_CREDENTIAL`
-- `ENCODE_ACCESS_METHOD`
-- `ENCODE_CREDENTIAL`
-- `RESET_SANDBOX_WORKSPACE`
-- `SET_FAN_MODE`
-- `SET_HVAC_MODE`
-- `ACTIVATE_CLIMATE_PRESET`
-- `SIMULATE_KEYPAD_CODE_ENTRY`
-- `SIMULATE_MANUAL_LOCK_VIA_KEYPAD`
-- `PUSH_THERMOSTAT_PROGRAMS`
-- `SYNC_ACCESS_CODES`
-- `CREATE_ACCESS_CODE`
-- `DELETE_ACCESS_CODE`
-- `UPDATE_ACCESS_CODE`
-- `CREATE_NOISE_THRESHOLD`
-- `DELETE_NOISE_THRESHOLD`
-- `UPDATE_NOISE_THRESHOLD`
+
+<details>
+<summary>Enum values</summary>
+
+- <code>LOCK_DOOR</code>
+- <code>UNLOCK_DOOR</code>
+- <code>SCAN_CREDENTIAL</code>
+- <code>ENCODE_CREDENTIAL</code>
+- <code>RESET_SANDBOX_WORKSPACE</code>
+- <code>SET_FAN_MODE</code>
+- <code>SET_HVAC_MODE</code>
+- <code>ACTIVATE_CLIMATE_PRESET</code>
+- <code>SIMULATE_KEYPAD_CODE_ENTRY</code>
+- <code>SIMULATE_MANUAL_LOCK_VIA_KEYPAD</code>
+- <code>PUSH_THERMOSTAT_PROGRAMS</code>
+- <code>SYNC_ACCESS_CODES</code>
+- <code>CREATE_ACCESS_CODE</code>
+- <code>DELETE_ACCESS_CODE</code>
+- <code>UPDATE_ACCESS_CODE</code>
+- <code>CREATE_NOISE_THRESHOLD</code>
+- <code>DELETE_NOISE_THRESHOLD</code>
+- <code>UPDATE_NOISE_THRESHOLD</code>
+</details>
+
 
 ---
 
-### `error`
-
-Format: `Object`
+**`error`** *Object*
 
 Errors associated with the action attempt. Null for pending action attempts.
 
+
+
+
 ---
 
-### `result`
-
-Format: `Object`
+**`result`** *Object*
 
 Result of the action attempt. Null for pending action attempts.
+
+
+
+
+---
+
+
+## Events
+
+**`action_attempt.lock_door.succeeded`**
+
+A lock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.lock_door.succeeded`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`action_attempt.lock_door.failed`**
+
+A lock door [action attempt](../../core-concepts/action-attempts.md) failed.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.lock_door.failed`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`action_attempt.unlock_door.succeeded`**
+
+An unlock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.unlock_door.succeeded`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`action_attempt.unlock_door.failed`**
+
+An unlock door [action attempt](../../core-concepts/action-attempts.md) failed.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.unlock_door.failed`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
 
 ---
 
 ## Endpoints
 
 
----
+[**`/action_attempts/get`**](./get.md)
 
-## Events
+Returns a specified [action attempt](../../core-concepts/action-attempts.md).
 
-### `action_attempt.lock_door.succeeded`
 
-A lock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
+[**`/action_attempts/list`**](./list.md)
 
-<details>
+Returns a list of the [action attempts](../../core-concepts/action-attempts.md) that you specify as an array of `action_attempt_id`s.
 
-<summary><code>action_attempt_id</code> Format: <code>UUID</code></summary>
-
-ID of the [action attempt](../../core-concepts/action-attempts.md).
-</details>
-<details>
-
-<summary><code>action_type</code> Format: <code>String</code></summary>
-
-Type of action.
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `action_attempt.lock_door.succeeded`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>status</code> Format: <code>String</code></summary>
-
-Status of the action.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../core-concepts/workspaces/README.md).
-</details>
----
-
-### `action_attempt.lock_door.failed`
-
-A lock door [action attempt](../../core-concepts/action-attempts.md) failed.
-
-<details>
-
-<summary><code>action_attempt_id</code> Format: <code>UUID</code></summary>
-
-ID of the [action attempt](../../core-concepts/action-attempts.md).
-</details>
-<details>
-
-<summary><code>action_type</code> Format: <code>String</code></summary>
-
-Type of action.
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `action_attempt.lock_door.failed`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>status</code> Format: <code>String</code></summary>
-
-Status of the action.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../core-concepts/workspaces/README.md).
-</details>
----
-
-### `action_attempt.unlock_door.succeeded`
-
-An unlock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
-
-<details>
-
-<summary><code>action_attempt_id</code> Format: <code>UUID</code></summary>
-
-ID of the [action attempt](../../core-concepts/action-attempts.md).
-</details>
-<details>
-
-<summary><code>action_type</code> Format: <code>String</code></summary>
-
-Type of action.
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `action_attempt.unlock_door.succeeded`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>status</code> Format: <code>String</code></summary>
-
-Status of the action.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../core-concepts/workspaces/README.md).
-</details>
----
-
-### `action_attempt.unlock_door.failed`
-
-An unlock door [action attempt](../../core-concepts/action-attempts.md) failed.
-
-<details>
-
-<summary><code>action_attempt_id</code> Format: <code>UUID</code></summary>
-
-ID of the [action attempt](../../core-concepts/action-attempts.md).
-</details>
-<details>
-
-<summary><code>action_type</code> Format: <code>String</code></summary>
-
-Type of action.
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `action_attempt.unlock_door.failed`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>status</code> Format: <code>String</code></summary>
-
-Status of the action.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../core-concepts/workspaces/README.md).
-</details>
----
 
