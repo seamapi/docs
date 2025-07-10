@@ -13,7 +13,6 @@ import type {
 import { pascalCase } from 'change-case'
 
 import type { PathMetadata } from '../path-metadata.js'
-import { processActionAttemptResource } from './action-attempt-resource.js'
 
 export interface ApiRouteLayoutContext {
   title: string
@@ -32,7 +31,7 @@ export interface ApiRouteLayoutContext {
   events: ApiRouteEvent[]
 }
 
-export interface ApiRouteEvent {
+interface ApiRouteEvent {
   name: string
   description: string
   properties: ApiRouteProperty[]
