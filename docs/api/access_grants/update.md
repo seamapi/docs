@@ -12,7 +12,7 @@ Updates an existing access grant's time window.
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 #### Code
 
@@ -33,7 +33,7 @@ await seam.accessGrants.update({
 
 {% tab title="cURL" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 #### Code
 
@@ -58,7 +58,7 @@ EOF
 
 {% tab title="Python" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 #### Code
 
@@ -79,7 +79,7 @@ None
 
 {% tab title="Ruby" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 #### Code
 
@@ -100,7 +100,7 @@ nil
 
 {% tab title="PHP" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 #### Code
 
@@ -121,7 +121,7 @@ $seam->access_grants->update(
 
 {% tab title="Seam CLI" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 #### Code
 

@@ -12,7 +12,7 @@ Delete an access grant.
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
 #### Code
 
@@ -31,7 +31,7 @@ await seam.accessGrants.delete({
 
 {% tab title="cURL" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
 #### Code
 
@@ -54,7 +54,7 @@ EOF
 
 {% tab title="Python" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
 #### Code
 
@@ -71,7 +71,7 @@ None
 
 {% tab title="Ruby" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
 #### Code
 
@@ -88,7 +88,7 @@ nil
 
 {% tab title="PHP" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
 #### Code
 
@@ -107,7 +107,7 @@ $seam->access_grants->delete(
 
 {% tab title="Seam CLI" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
 #### Code
 

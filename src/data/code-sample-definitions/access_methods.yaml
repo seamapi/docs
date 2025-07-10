@@ -24,7 +24,7 @@
         mode: mobile_key
         workspace_id: 661025d3-c1d2-403c-83a8-af153aaedfbc
 - title: List access methods
-  description: Returns a list of all access methods, filtered by access grant.
+  description: Returns a list of all access methods, filtered by Access Grant.
   request:
     path: /access_methods/list
     parameters:
