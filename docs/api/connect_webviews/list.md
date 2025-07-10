@@ -282,10 +282,6 @@ Custom metadata pairs by which you want to [filter Connect Webviews](../../core-
 
 ---
 
-**`customer_ids`** *Array* *of Strings*
-
----
-
 **`limit`** *Number*
 
 Maximum number of records to return per page.

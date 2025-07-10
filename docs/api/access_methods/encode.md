@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Encodes an existing [credential](../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Encodes an existing access method onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 <details>
@@ -30,7 +30,7 @@ ID of the `access_method` to encode onto a card.
 
 **`acs_encoder_id`** *String* (Required)
 
-ID of the `acs_encoder` to use to encode the `acs_credential`.
+ID of the `acs_encoder` to use to encode the `access_method`.
 
 ---
 

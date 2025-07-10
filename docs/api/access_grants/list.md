@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Get an access grant.
+Gets an Access Grant.
 
 
 {% tabs %}
@@ -426,15 +426,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_grant_key`** *String*
+
+Filter Access Grants by access_grant_key.
+
+---
+
 **`acs_entrance_id`** *String*
 
-ID of entrance to filter list of access grants by.
+ID of the entrance by which you want to filter the list of Access Grants.
 
 ---
 
 **`acs_system_id`** *String*
 
-ID of system to filter list of access grants by.
+ID of the access system by which you want to filter the list of Access Grants.
 
 ---
 
@@ -444,13 +450,13 @@ ID of system to filter list of access grants by.
 
 **`space_id`** *String*
 
-ID of space to filter list of access grants by.
+ID of the space by which you want to filter the list of Access Grants.
 
 ---
 
 **`user_identity_id`** *String*
 
-ID of user identity to filter list of access grants by.
+ID of user identity by which you want to filter the list of Access Grants.
 
 ---
 

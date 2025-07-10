@@ -153,6 +153,15 @@ URL to which the Connect Webview should redirect when the user successfully pair
 
 ---
 
+**`customer_key`** *String*
+
+The customer key associated with this webview, if any.
+
+
+
+
+---
+
 **`device_selection_mode`** *Enum*
 
 
