@@ -126,38 +126,8 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-add, uErr := client.Acs.Users.AddToAccessGroup(
-  context.Background(), &acs.UsersAddToAccessGroupRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AcsAccessGroupId: "44444444-4444-4444-4444-444444444444",
-  },
-)
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -273,36 +243,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-remove, uErr := client.Acs.Users.RemoveFromAccessGroup(
-  context.Background(), &acs.UsersRemoveFromAccessGroupRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AcsAccessGroupId: "44444444-4444-4444-4444-444444444444",
-  },
-)
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}

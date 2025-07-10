@@ -14,14 +14,7 @@ Seam integrates with the Minut sensor to provide [noise monitoring](https://supp
 
 This integration supports the [Minut sensor](https://www.minut.com/product/features).
 
-For detailed information about the Minut devices that Seam supports, see the following table and our [Minut Supported Devices page](https://www.seam.co/manufacturers/minut):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Minut"]'
-/>" %}
+For detailed information about the Minut devices that Seam supports, see our [Minut Supported Devices page](https://www.seam.co/manufacturers/minut).
 
 ***
 
@@ -38,7 +31,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Minut devices to Seam, include the `minut` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Minut devices to Seam, include the `minut` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

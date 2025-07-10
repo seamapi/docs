@@ -1,39 +1,73 @@
 # Update a Credential
 
-```
-PATCH /acs/credentials/update ⇒ void
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
+
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Updates the code and ends at date and time for a specified credential.
+
+#### Code:
 
 ```javascript
 await seam.acs.credentials.update({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-  code: "7890",
+  acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  code: "1234",
+  ends_at: "2025-06-18T10:42:53.000Z",
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 // void
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+Updates the code and ends at date and time for a specified credential.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_credential_id": "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  "code": "1234",
+  "ends_at": "2025-06-18T10:42:53.000Z"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-#### Request
+
+Updates the code and ends at date and time for a specified credential.
+
+#### Code:
 
 ```python
 seam.acs.credentials.update(
-    acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890"
+    acs_credential_id="1d4fb22b-743b-492f-ad74-cffcbd63c874",
+    code="1234",
+    ends_at="2025-06-18T10:42:53.000Z",
 )
 ```
 
-#### Response
+#### Output:
 
 ```python
 None
@@ -41,13 +75,20 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Updates the code and ends at date and time for a specified credential.
+
+#### Code:
 
 ```ruby
-seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
+seam.acs.credentials.update(
+  acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  code: "1234",
+  ends_at: "2025-06-18T10:42:53.000Z",
+)
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 nil
@@ -55,101 +96,79 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Updates the code and ends at date and time for a specified credential.
+
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->update(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666",
-    code: "7890"
+    acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+    code: "1234",
+    ends_at: "2025-06-18T10:42:53.000Z"
 );
 ```
 
-#### Response
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Updates the code and ends at date and time for a specified credential.
+
+#### Code:
 
 ```seam_cli
-seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
+seam acs credentials update --acs_credential_id "1d4fb22b-743b-492f-ad74-cffcbd63c874" --code "1234" --ends_at "2025-06-18T10:42:53.000Z"
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {}
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Update(
-		context.Background(),
-		credentials.CredentialsUpdateRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-			Code:            api.String("7890"),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-nil
-```
-{% endtab %}
-
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `acs_credential_id`
+**`acs_credential_id`** *String* (Required)
 
-Format: `String`
-Required: Yes
+ID of the credential that you want to update.
 
-ID of the desired credential.
+---
 
-***
+**`code`** *String*
 
-### `code`
+Replacement access (PIN) code for the credential that you want to update.
 
-Format: `String`
-Required: No
+---
 
-Replacement access (PIN) code for the credential.
-
-***
-
-### `ends_at`
-
-Format: `Datetime`
-Required: No
+**`ends_at`** *String*
 
 Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential.
 
-***
+---
 
-## Return Type
+
+## Response
 
 void
+

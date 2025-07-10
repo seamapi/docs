@@ -11,15 +11,11 @@ To use the Seam API to create mobile credentials for mobile app users in a Salto
 1.  Create a [user identity](../../api/user_identities/).
 
     Seam user identities enable you to match your own mobile app users to access system users that you create using the Seam API.
-2. Retrieve a [credential manager](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#initialize-the-user-identity-with-a-credential-manager) for your Salto Space access system.
-3.  Set up an [enrollment automation](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md) for the user identity, to enable mobile keys.
-
-    Use the Salto Space Credential Manager for this enrollment automation.
-4. Create an [access system user](../../products/access-systems/user-management.md) on the Salto Space access system or assign an existing access system user to the user identity.\
+2. Create an [access system user](../../products/access-systems/user-management.md) on the Salto Space access system or assign an existing access system user to the user identity.\
    The resources that you create for the access system user are available under the associated user identity.
-5. Assign the access system user to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
+3. Assign the access system user to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
    * Each access group is preconfigured with the allowed entrances.
-6. Create a [credential](../../capability-guides/access-systems/managing-credentials.md) to represent the mobile key.
+4. Create a [credential](../../capability-guides/access-systems/managing-credentials.md) to represent the mobile key.
    * Specify the ID of the access system user.
    * Set [`is_multi_phone_sync_credential`](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials) to `true`.
    * Set the `access_method` to `mobile_key`.
@@ -43,22 +39,6 @@ jane_user = seam.user_identities.create(
 )
 
 # Step 2:
-# Retrieve a credential manager.
-# In your app, find the acs_system_id of the Salto Space Credential Manager
-# and then use this ID to set up an enrollment automation in the next step.
-salto_space_credential_manager = seam.acs.systems.list_compatible_credential_manager_acs_systems(
-    acs_system_id = building_a.acs_system_id
-  )[0]
-
-# Step 3:
-# Set up an enrollment automation for the user identity, to enable mobile keys.
-seam.user_identities.enrollment_automations.launch(
-  user_identity_id = jane_user.user_identity_id,
-  create_credential_manager_user = True,
-  credential_manager_acs_system_id = salto_space_credential_manager.acs_system_id
-)
-
-# Step 4:
 # Create an access system user on the Salto Space access system.
 access_system_user = seam.acs.users.create(
   user_identity_id = jane_user.user_identity_id,
@@ -67,7 +47,7 @@ access_system_user = seam.acs.users.create(
   phone_number = "+15555550100"
 )
 
-# Step 5:
+# Step 3:
 # Add the access system user to all desired access groups.
 access_group_ids = [
   "44444444-4444-4444-4444-333333333333",
@@ -79,7 +59,7 @@ for access_group_id in seam_access_group_ids:
     acs_access_group_id = access_group_id
   )
   
-# Step 6:
+# Step 4:
 # Create a mobile key for the access system user.
 mobile_key = seam.acs.credentials.create(
   acs_user_id = access_system_user.acs_user_id,
@@ -126,32 +106,6 @@ jane_user=$(curl -X 'POST' \
 }')
 
 # Step 2:
-# Retrieve a credential manager.
-# In your app, find the acs_system_id of the Salto Space Credential Manager
-# and then use this ID to set up an enrollment automation in the next step.
-salto_space_credential_manager=$(curl -X 'POST' \
-  'https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"acs_system_id\": \"$(jq -r '.acs_system.acs_system_id' <<< ${building_a})\"
-}" | jq -r '.acs_systems[0]')
-
-# Step 3:
-# Set up an enrollment automation for the user identity, to enable mobile keys.
-curl -X 'POST' \
-  'https://connect.getseam.com/user_identities/enrollment_automations/launch' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jane_user})\",
-  \"create_credential_manager_user\": true,
-  \"credential_manager_acs_system_id\": \"$(jq -r '.acs_system_id' <<< ${salto_space_credential_manager})\"
-}"
-
-# Step 4:
 # Create an access system user on the Salto Space access system.
 access_system_user=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/users/create' \
@@ -165,7 +119,7 @@ access_system_user=$(curl -X 'POST' \
   \"phone_number\": \"+15555550100\"
 }")
 
-# Step 5:
+# Step 3:
 # Add the access system user to all desired access groups.
 declare -a access_group_ids=("44444444-4444-4444-4444-333333333333" "44444444-4444-4444-4444-444444444444")
 for access_group_id in ${access_group_ids[@]};
@@ -181,7 +135,7 @@ do
   }";
 done
 
-# Step 6:
+# Step 4:
 # Create a mobile key for the access system user.
 mobile_key=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/credentials/create' \
@@ -225,23 +179,6 @@ const janeUser = await seam.userIdentities.create({
 });
 
 // Step 2:
-// Retrieve a credential manager.
-// In your app, find the acs_system_id of the Salto Space Credential Manager
-// and then use this ID to set up an enrollment automation in the next step.
-const saltoSpaceCredentialManager = (await seam.acs.systems
-  .listCompatibleCredentialManagerAcsSystems({
-    acs_system_id: buildingA.acs_system_id
-  }))[0];
-
-// Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-await seam.userIdentities.enrollmentAutomations.launch({
-  user_identity_id: janeUser.user_identity_id,
-  create_credential_manager_user: true,
-  credential_manager_acs_system_id: saltoSpaceCredentialManager.acs_system_id
-});
-
-// Step 4:
 // Create an access system user on the Salto Space access system.
 const accessSystemUser = await seam.acs.users.create({
   user_identity_id: janeUser.user_identity_id,
@@ -250,7 +187,7 @@ const accessSystemUser = await seam.acs.users.create({
   phone_number: "+15555550100"
 });
 
-// Step 5:
+// Step 3:
 // Add the access system user to all desired access groups.
 const accessGroupIds = [
   "44444444-4444-4444-4444-333333333333",
@@ -263,7 +200,7 @@ for (const accessGroupId of accessGroupIds) {
   });
 }
 
-// Step 6:
+// Step 4:
 // Create a mobile key for the access system user.
 const mobileKey = await seam.acs.credentials.create({
   acs_user_id: accessSystemUser.acs_user_id,
@@ -300,23 +237,6 @@ jane_user = seam.user_identities.create(
 )
 
 # Step 2:
-# Retrieve a credential manager.
-# In your app, find the acs_system_id of the Salto Space Credential Manager
-# and then use this ID to set up an enrollment automation in the next step.
-salto_space_credential_manager = (seam.acs.systems
-  .list_compatible_credential_manager_acs_systems(
-    acs_system_id: building_a.acs_system_id
-  ))[0]
-
-# Step 3:
-# Set up an enrollment automation for the user identity, to enable mobile keys.
-seam.user_identities.enrollment_automations.launch(
-  user_identity_id: jane_user.user_identity_id,
-  create_credential_manager_user: true,
-  credential_manager_acs_system_id: salto_space_credential_manager.acs_system_id
-)
-
-# Step 4:
 # Create an access system user on the Salto Space access system.
 access_system_user = seam.acs.users.create(
   user_identity_id: jane_user.user_identity_id,
@@ -325,7 +245,7 @@ access_system_user = seam.acs.users.create(
   phone_number: "+15555550100"
 )
 
-# Step 5:
+# Step 3:
 # Add the access system user to all desired access groups.
 access_group_ids = [
   "44444444-4444-4444-4444-333333333333",
@@ -338,7 +258,7 @@ access_group_ids.each do |access_group_id|
   )
 end
 
-# Step 6:
+# Step 4:
 # Create a mobile key for the access system user.
 mobile_key = seam.acs.credentials.create(
   acs_user_id: access_system_user.acs_user_id,
@@ -375,22 +295,6 @@ $jane_user = $seam->user_identities->create(
 );
 
 // Step 2:
-// Retrieve a credential manager.
-// In your app, find the acs_system_id of the Salto Space Credential Manager
-// and then use this ID to set up an enrollment automation in the next step.
-$salto_space_credential_manager = $seam->acs->systems->list_compatible_credential_manager_acs_systems(
-  acs_system_id: $building_a->acs_system_id
-)[0];
-
-// Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-$seam->user_identities->enrollment_automations->launch(
-  user_identity_id: $jane_user->user_identity_id,
-  create_credential_manager_user: true,
-  credential_manager_acs_system_id: $salto_space_credential_manager->acs_system_id
-);
-
-// Step 4:
 // Create an access system user on the Salto Space access system.
 $access_system_user = $seam->acs->users->create(
   user_identity_id: $jane_user->user_identity_id,
@@ -399,7 +303,7 @@ $access_system_user = $seam->acs->users->create(
   phone_number: "+15555550100"
 );
 
-// Step 5:
+// Step 3:
 // Add the access system user to all desired access groups.
 $access_group_ids = array(
   "44444444-4444-4444-4444-333333333333",
@@ -412,7 +316,7 @@ foreach ($access_group_ids as $access_group_id) {
   );
 };
 
-// Step 6:
+// Step 4:
 // Create a mobile key for the access system user.
 $mobile_key = $seam->acs->credentials->create(
   acs_user_id: $access_system_user->acs_user_id,
@@ -444,132 +348,6 @@ $mobile_key = $seam->acs->credentials->create(
 
 ```json
 // Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Get the access system.
-buildingA, err := client.Acs.Systems.Get(
-  context.Background(), &acs.SystemsGetRequest{
-    AcsSystemId: "11111111-1111-1111-1111-111111111111",
-  },
-)
-if err != nil {
-  return err
-}
-
-// Step 1:
-// Create a user identity that corresponds to your user's app account.
-janeUser, err := client.UserIdentities.Create(
-  context.Background(), &api.UserIdentitiesCreateRequest{
-    FullName: api.String("Jane Doe"),
-  },
-)
-if err != nil {
-  return err
-}
-
-// Step 2:
-// Retrieve a credential manager.
-// In your app, find the acs_system_id of the Salto Space Credential Manager
-// and then use this ID to set up an enrollment automation in the next step.
-saltoSpaceCredentialManagers, err := client.Acs.Systems.ListCompatibleCredentialManagerAcsSystems(
-    context.Background(), &acs.SystemsListCompatibleCredentialManagerAcsSystemsRequest{
-      AcsSystemId: buildingA.AcsSystemId,
-    },
-  )
-if err != nil {
-  return err
-}
-saltoSpaceCredentialManager := saltoSpaceCredentialManagers[0]
-
-// Step 3:
-// Set up an enrollment automation for the user identity, to enable mobile keys.
-client.UserIdentities.EnrollmentAutomations.Launch(
-  context.Background(), &useridentities.EnrollmentAutomationsLaunchRequest{
-    UserIdentityId: janeUser.UserIdentityId,
-    CreateCredentialManagerUser: api.Bool(true),
-    CredentialManagerAcsSystemId: saltoSpaceCredentialManager.AcsSystemId,
-  },
-)
-
-// Step 4:
-// Create an access system user on the Salto Space access system.
-accessSystemUser, err := client.Acs.Users.Create(
-  context.Background(), &acs.UsersCreateRequest{
-    UserIdentityId: api.String(janeUser.UserIdentityId),
-    AcsSystemId: buildingA.AcsSystemId,
-    FullName: janeUser.FullName,
-    PhoneNumber: api.String("+15555550100"),
-  },
-)
-if err != nil {
-  return err
-}
-
-// Step 5:
-// Add the access system user to all desired access groups.
-accessGroupIds := [...]string{
-  "44444444-4444-4444-4444-333333333333",
-  "44444444-4444-4444-4444-444444444444",
-}
-for _, accessGroupId := range accessGroupIds {
-  client.Acs.Users.AddToAccessGroup(
-    context.Background(), &acs.UsersAddToAccessGroupRequest{
-      AcsUserId: accessSystemUser.AcsUserId,
-      AcsAccessGroupId: accessGroupId,
-    },
-  )
-  if err != nil {
-    return err
-  }
-}
-
-// Step 6:
-// Create a mobile key for the access system user.
-mobileKey, err := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: accessSystemUser.AcsUserId,
-    IsMultiPhoneSyncCredential: api.Bool(true),
-    AccessMethod: "mobile_key",
-  },
-)
-if err != nil {
-  return err
-}
-
-// View the new credential.
-fmt.Println(mobileKey)
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "access_method": "mobile_key",
-  ...
-}
 ```
 {% endtab %}
 {% endtabs %}

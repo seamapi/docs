@@ -28,14 +28,7 @@ Seam does not currently support integration with the Yale Smart Living app (for 
 
 When purchasing a Yale Lock or a network module separately, always verify the specific compatibility needs for your desired setup.
 
-For detailed information about the Yale devices that Seam supports, see the following table and our [Yale Supported Devices page](https://www.seam.co/manufacturers/yale):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Yale"]'
-/>" %}
+For detailed information about the Yale devices that Seam supports, see our [Yale Supported Devices page](https://www.seam.co/manufacturers/yale).
 
 ***
 
@@ -43,20 +36,20 @@ For detailed information about the Yale devices that Seam supports, see the foll
 
 We support the following features:
 
-* [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
+* [Triggering web unlock actions](../api/locks/unlock_door.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on door locks that have a keypad
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Yale devices to Seam, include the `yale` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Yale devices to Seam, include the `yale` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
-## Brand-Specific Integration Considerations
+## Troubleshooting
 
-### Yale Home & Yale Access-specific Access Code Errors
+### Yale Home and Yale Access-Specific Access Code Errors
 
 Since August and Yale are both using the same app to control the locks, you might see this `august_*` prefix on your errors.
 
@@ -80,7 +73,7 @@ The Yale lock is missing a keypad. You could install an [August keypad](https://
 
 August lock was temporarily offline while setting/removing a code, the code should be set/remove when it comes back online.
 
-### SmartThings Hub-specific Access Code Errors
+### SmartThings Hub-Specific Access Code Errors
 
 `smartthings_failed_to_set_after_multiple_retries`
 

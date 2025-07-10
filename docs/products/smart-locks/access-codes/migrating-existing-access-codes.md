@@ -24,7 +24,7 @@ Strictly speaking, unmanaged codes are any codes on a device that were not creat
 
 ## Viewing Unmanaged Codes on a Device
 
-You can retrieve a list of all unmanaged access codes for a particular device using the [List Unmanaged Access Codes](../../../api-clients/access\_codes/unmanaged/list.md) request, passing in `device_id` as a query parameter. For example:
+You can retrieve a list of all unmanaged access codes for a particular device using the [List Unmanaged Access Codes](../../../api/access_codes/unmanaged/list.md) request, passing in `device_id` as a query parameter. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -154,34 +154,11 @@ seam.UnmanagedAccessCodes.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.accessCodes().unmanaged().list(UnmanagedListRequest.builder()
-        .deviceId("11111111-1111-1111-1111-444444444444")
-        .build());
-```
-
-**Response:**
-
-```json
-[
-  {
-    "access_code_id" : "11111111-1111-1111-1111-999999999999",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "is_managed" : "false",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ## Converting Unmanaged Codes into Managed Codes
 
-You can convert unmanaged access codes into managed ones using the [Convert an Unmanaged Access Code](../../../api-clients/access\_codes/unmanaged/convert\_to\_managed.md) request, passing in `access_code_id` as a query parameter. For example:
+You can convert unmanaged access codes into managed ones using the [Convert an Unmanaged Access Code](../../../api/access_codes/unmanaged/convert_to_managed.md) request, passing in `access_code_id` as a query parameter. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -298,23 +275,6 @@ Error:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.accessCodes().unmanaged().convertToManaged(UnmanagedConvertToManagedRequest.builder()
-        .accessCodeId("11111111-1111-1111-1111-999999999999")
-        .build());
-```
-
-**Response:**
-
-```json
-{
-  "ok" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 The request returns immediately, but the conversion is an asynchronous process that completes in the background. You can listen to the `access_code.unmanaged.converted_to_managed` and `access_code.unmanaged.failed_to_convert_to_managed` to be notified when conversion succeeds or fails.
@@ -333,7 +293,7 @@ For SmartThings devices, you can still see a list of all unmanaged codes on the 
 
 ## Deleting Unmanaged Codes
 
-After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can allow users to delete any remaining unmanaged codes on their device. You can do this by using the [Delete an Unmanaged Access Code](../../../api-clients/access\_codes/unmanaged/delete.md) request and passing in passing in `access_code_id` as a query parameter. For example:
+After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can allow users to delete any remaining unmanaged codes on their device. You can do this by using the [Delete an Unmanaged Access Code](../../../api/access_codes/unmanaged/delete.md) request and passing in passing in `access_code_id` as a query parameter. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -450,24 +410,6 @@ Error:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.accessCodes().unmanaged()
-  .delete(UnmanagedDeleteRequest.builder()
-    .accessCodeId("11111111-1111-1111-1111-999999999999")
-    .build());
-```
-
-**Response:**
-
-```json
-{
-  "ok" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
-The request returns an action attempt, similar to the managed code deletion endpoint. See [Delete an access code](../../../api-clients/access\_codes/delete.md) for more details.
+The request returns an action attempt, similar to the managed code deletion endpoint. See [Delete an access code](../../../api/access_codes/delete.md) for more details.

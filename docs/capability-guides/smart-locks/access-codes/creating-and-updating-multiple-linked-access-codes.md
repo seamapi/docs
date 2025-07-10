@@ -6,7 +6,7 @@ description: >-
 
 # Creating and Updating Multiple Linked Access Codes
 
-Users with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock. In this case, use [`/access_codes/create_multiple`](../../../api-clients/access_codes/create_multiple.md). Specify the `device_id` of each device for which you want to create linked access codes. You can also include additional optional properties, such as the following:
+Users with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock. In this case, use [`/access_codes/create_multiple`](../../../api/access_codes/create_multiple.md). Specify the `device_id` of each device for which you want to create linked access codes. You can also include additional optional properties, such as the following:
 
 * A name to apply to all of the access codes.
 * The `preferred_code_length`.
@@ -15,7 +15,7 @@ Users with more than one door lock in a property may want to create groups of li
 
 When you use `/access_codes/create_multiple`, Seam assigns a `common_code_key` to all of the created access codes and returns this key. The `common_code_key` identifies all the access codes within this linked group.
 
-Then, you can change the starting or ending time for the group of access codes—for example, if a short-term rental guest requests an early check-in or late checkout. To update a group of linked access codes, use [`/access_codes/update_multiple`](../../../api-clients/access_codes/update-multiple-linked-access-codes.md), specifying the `common_code_key` of the linked access code group, along with the replacement starting and ending timestamps.
+Then, you can change the starting or ending time for the group of access codes—for example, if a short-term rental guest requests an early check-in or late checkout. To update a group of linked access codes, use [`/access_codes/update_multiple`](../../../api/access_codes/update_multiple.md), specifying the `common_code_key` of the linked access code group, along with the replacement starting and ending timestamps.
 
 ***
 
@@ -23,7 +23,7 @@ Then, you can change the starting or ending time for the group of access codes�
 
 When you use `/access_codes/create_multiple`, you can specify a custom `code`. Seam assigns this custom `code` to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.
 
-If you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using [`/access_codes/update`](../../../api-clients/access_codes/update.md).
+If you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using [`/access_codes/update`](../../../api/access_codes/update.md).
 
 ***
 
@@ -314,107 +314,8 @@ seam.AccessCodes.CreateMultiple(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Create the group of linked access codes.
-// Each returned access code includes a common_code_key.
-seam.accessCodes()
-  .createMultiple(AccessCodesCreateMultipleRequest.builder()
-    .deviceIds(new ArrayList<>(Arrays.asList(
-      "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
-      "d87eea5d-71c6-4633-a966-396c5ac51177"
-    )))
-    .name("Jane's reservation")
-    .startsAt("2024-11-15T15:00:00Z")
-    .endsAt("2024-11-17T11:00:00Z")
-    .preferredCodeLength(4)
-    .build());
-```
 
-**Response:**
-
-```json
-[
-  {
-    "access_code_id": "a1c682b1-c909-473f-926a-442a4ffc54c2",
-    "name": "Jane's reservation",
-    "device_id": "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
-    "code": "5974",
-    "common_code_key": "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7",
-    "starts_at": "2024-12-15T15:00:00.000Z",
-    "ends_at": "2024-12-17T11:00:00.000Z",
-    ...
-  },
-  {
-    "access_code_id": "49261a24-103c-4880-8e58-d1d98f301ba7",
-    "name": "Jane's reservation",
-    "device_id": "d87eea5d-71c6-4633-a966-396c5ac51177",
-    "code": "5974",
-    "common_code_key": "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7",
-    "starts_at": "2024-12-15T15:00:00.000Z",
-    "ends_at": "2024-12-17T11:00:00.000Z",
-    ...
-  }
-]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Create the group of linked access codes.
-// Each returned access code includes a common_code_key.
-accessCodes, err := client.AccessCodes.CreateMultiple(
-  context.Background(),
-  &api.AccessCodesCreateMultipleRequest{
-    DeviceIds: []string{
-        "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
-        "d87eea5d-71c6-4633-a966-396c5ac51177",
-      },
-    Name: api.String("Jane's reservation"),
-    StartsAt: api.String("2024-11-15T15:00:00Z"),
-    EndsAt: api.String("2024-11-17T11:00:00Z"),
-    PreferredCodeLength: api.Float64(4),
-  },
-)
-
-if err != nil {
-    return err
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-[
-  {
-    "access_code_id": "a1c682b1-c909-473f-926a-442a4ffc54c2",
-    "name": "Jane's reservation",
-    "device_id": "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
-    "code": "5974",
-    "common_code_key": "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7",
-    "starts_at": "2024-12-15T15:00:00.000Z",
-    "ends_at": "2024-12-17T11:00:00.000Z",
-    ...
-  },
-  {
-    "access_code_id": "49261a24-103c-4880-8e58-d1d98f301ba7",
-    "name": "Jane's reservation",
-    "device_id": "d87eea5d-71c6-4633-a966-396c5ac51177",
-    "code": "5974",
-    "common_code_key": "auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7",
-    "starts_at": "2024-12-15T15:00:00.000Z",
-    "ends_at": "2024-12-17T11:00:00.000Z",
-    ...
-  }
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -563,57 +464,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Update the starting and ending times
-// for all these linked access codes,
-// using the common_code_key to identify
-// the group of access codes to update.
-seam.accessCodes()
-  .updateMultiple(AccessCodesUpdateMultipleRequest.builder()
-    .commonCodeKey(commonCodeKey)
-    .startsAt("2024-11-15T12:00:00Z")
-    .endsAt("2024-11-17T15:00:00Z")
-    .build());
-```
 
-**Response:**
-
-```json
-void
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Update the starting and ending times
-// for all these linked access codes,
-// using the common_code_key to identify
-// the group of access codes to update.
-client.AccessCodes.UpdateMultiple(
-  context.Background(),
-  &api.AccessCodesUpdateMultipleRequest{
-    CommonCodeKey: commonCodeKey,
-    StartsAt: api.String("2024-11-15T12:00:00Z"),
-    EndsAt: api.String("2024-11-17T15:00:00Z"),
-  },
-)
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}

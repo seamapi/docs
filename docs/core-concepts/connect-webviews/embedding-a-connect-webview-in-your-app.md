@@ -55,12 +55,12 @@ To incorporate a Connect Webview in your app using redirection:
 
 ### Embed the Connect Webview in an iframe
 
-To incorporate a Connect Webview in your app using an HTML [iframe](https://www.w3schools.com/html/html\_iframe.asp):
+To incorporate a Connect Webview in your app using an HTML [iframe](https://www.w3schools.com/html/html_iframe.asp):
 
 1. [Create the Connect Webview.](./#id-1.-create-a-connect-webview)\
    We recommend setting `wait_for_device_creation` to `true` so that the Connect Webview does not complete until Seam completes the first sync of the connected account and devices or ACS.
 2.  Display the URL for the created Connect Webview in an iframe.\
-    Pass the Connect Webview `url` to the client portion of your app and use an HTML [iframe](https://www.w3schools.com/html/html\_iframe.asp) to display the Connect Webview URL.
+    Pass the Connect Webview `url` to the client portion of your app and use an HTML [iframe](https://www.w3schools.com/html/html_iframe.asp) to display the Connect Webview URL.
 
     For example:
 
@@ -70,7 +70,11 @@ To incorporate a Connect Webview in your app using an HTML [iframe](https://www.
     src="<your connect_webview.url>"
     />
     ```
-3. [Your user completes the Connect Webview authorization flow.](./#id-3.-your-user-completes-the-connect-webview)
+3.  [Your user completes the Connect Webview authorization flow.](./#id-3.-your-user-completes-the-connect-webview)
+
+    {% hint style="info" %}
+    If you choose to embed a Connect Webview in an iframe, it's important to understand that some providers move to a new tab during their authentication flow for security purposes. Seam is not able to abstract away this behavior.
+    {% endhint %}
 4. [Learn when the device or ACS account connection has completed successfully.](./#id-4.-verify-successful-device-account-connection)\
    When the connection completes successfully, you can close the iframe.
 5. [Retrieve the devices or ACS that your user has just connected to Seam.](./#id-5.-retrieve-connected-devices)

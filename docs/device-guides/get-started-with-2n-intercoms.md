@@ -25,9 +25,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -55,36 +53,8 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
-{% endtab %}
-
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
 {% endtab %}
 {% endtabs %}
 
@@ -226,15 +196,14 @@ After a My2N account is linked with Seam, you can retrieve devices for this My2N
 
 {% tabs %}
 {% tab title="Python" %}
-````python
-all_locks = seam.locks.list()
+\`\`\`\`python all\_locks = seam.locks.list()
 
-some_lock = all_locks[0]
+some\_lock = all\_locks\[0]
 
-assert some_lock.properties["online"] is True
-assert some_lock.properties["locked"] is True
+assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
 
-print(some_lock)
+print(some\_lock)
+
 ```python
 # Device(
 #   device_id='f0c074d6-34d0-4910-a16a-dfe078d5d178',
@@ -257,10 +226,12 @@ print(some_lock)
 #   capabilities_supported=['access_code', 'lock'],
 #   errors=[]
 # )
-````
-{% endtab %}
+```
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -295,9 +266,11 @@ console.log(someLock)
 }
 */
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -306,9 +279,11 @@ puts some_lock.properties.locked # true
 
 puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-05-03 18:01:16.965 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 0", #     "supported_code_lengths"=>[4, 5, 6, 7, 8], #     }, #       "device_name"=>"Device 0" #       "device_id"=>1, #     "two_n_metadata"=>{ #     "serial_number"=>"ef730e77-8cc0-4290-a818-14388e9fe84f", #     "manufacturer"=>"two_n", #     "locked"=>true, #     "online"=>true, #   properties={ #   device_type="two_n_intercom" #   device_id="580365be-4f0f-42d9-9336-07f0bba09e28" # <Seam::Device:0x00c8bb8
 ```
-{% endtab %}
 
-{% tab title="PHP" %}
+\{% endtab %\}
+
+\{% tab title="PHP" %\}
+
 ```php
 use Seam\SeamClient;
 
@@ -318,29 +293,27 @@ $locks = $seam->locks->list();
 
 echo json_encode($locks);
 ```
-{% endtab %}
-{% endtabs %}
 
-## 4 — Locking & Unlocking a Door
+\{% endtab %\} \{% endtabs %\}
+
+### 4 — Locking & Unlocking a Door
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
-[openapi.json](../.gitbook/assets/openapi.json)
-{% endswagger %}
+\{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock\_door" method="post" %\} [openapi.json](../.gitbook/assets/openapi.json) \{% endopenapi %\}
 
-## Unlock a door
+### Unlock a door
 
 <mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
-#### Request Body
+**Request Body**
 
 | Name       | Type   | Description |
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-{% tabs %}
-{% tab title="Python" %}
+\{% tabs %\} \{% tab title="Python" %\}
+
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -352,9 +325,11 @@ seam.locks.unlock_door(device_id: some_lock.device_id)
 updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
-{% endtab %}
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -366,9 +341,11 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -380,9 +357,11 @@ seam.locks.unlock_door(device_id: some_lock.device_id)
 updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 ```
-{% endtab %}
 
-{% tab title="PHP" %}
+\{% endtab %\}
+
+\{% tab title="PHP" %\}
+
 ```php
 use Seam\SeamClient;
 
@@ -395,17 +374,17 @@ $seam->locks->unlock_door($lock->device_id);
 # lock the door
 $seam->locks->lock_door($lock->device_id);
 ```
-{% endtab %}
-{% endtabs %}
 
-## 5 — Creating Access Codes on 2N Intercoms
+\{% endtab %\} \{% endtabs %\}
+
+### 5 — Creating Access Codes on 2N Intercoms
 
 2N devices have a directory with residents. These residents can be assigned PIN codes to unlock the door.
 
 Seam maps these residents to [access codes](../products/smart-locks/access-codes/) and allows you to create and manage them through the Seam API.
 
-{% tabs %}
-{% tab title="Python" %}
+\{% tabs %\} \{% tab title="Python" %\}
+
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -439,9 +418,11 @@ seam.access_codes.list(device=some_lock)
 # ]
 
 ```
-{% endtab %}
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -483,9 +464,11 @@ await seam.accessCodes.list({
 ]
 */
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -531,10 +514,14 @@ seam.access_codes.list(device_id: some_lock.device_id)
 #   warnings=[]
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
-{% endtab %}
 
-{% tab title="PHP" %}
-```php
+\{% endtab %\}
+
+\{% tab title="PHP" %\}
+
+```
+
+php
 use Seam\SeamClient;
 
 $seam = new SeamClient("YOUR_API_KEY");

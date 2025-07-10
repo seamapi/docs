@@ -174,49 +174,8 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_entrances, uErr := client.Acs.Credentials.ListAccessibleEntrances(
-  context.Background(), &acs.CredentialsListAccessibleEntrancesRequest{
-    AcsCredentialId: "66666666-6666-6666-6666-666666666666",
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-[
-  {
-    "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "display_name": "Guest Lock 2",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***

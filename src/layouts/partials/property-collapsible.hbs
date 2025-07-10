@@ -1,5 +1,10 @@
 <details>
 
-<summary><code>{{name}}</code> Format: <code>{{format}}</code>{{#if listItemFormat}} Item format: <code>{{listItemFormat}}</code>{{/if}}</summary>
+<summary><b><code>{{name}}</code></b> <i>{{format}}</i>{{#if listItemFormat}} <i>of {{listItemFormat}}s</i>{{/if}}</summary>
 {{> property-content}}
 </details>
+{{#unless isLast}}
+
+---
+{{/unless}}
+

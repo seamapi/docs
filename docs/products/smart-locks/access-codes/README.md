@@ -21,7 +21,7 @@ layout:
 
 ## What Is an Access Code?
 
-An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api-clients/access_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api/access_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
 Seam supports programming two types of access codes: [ongoing](./#ongoing-access-codes) and [time-bound](./#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
@@ -107,7 +107,7 @@ Note that the `name` provided on Seam is used to identify the code on Seam and i
 
 To provide a consistent experience, Seam identifies an access code on Seam by its `name` but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
 
-To help end users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break a name down into components).
+To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break a name down into components).
 
 ***
 

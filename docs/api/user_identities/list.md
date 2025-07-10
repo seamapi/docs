@@ -1,175 +1,456 @@
 # List User Identities
 
-```
-POST /user_identities/list ⇒ { user_identities: [user_identity, …] }
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
-Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [user identities](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
+
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Returns a list of all user identities.
+
+#### Code:
 
 ```javascript
 await seam.userIdentities.list();
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 [
   {
-    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_key": "jean_doe",
-    "email_address": "jean@example.com",
-    "phone_number": "+15555550110",
-    "display_name": "Jean Doe",
-    "full_name": "Jean Doe",
-    "created_at": "2024-01-11T05:37:50.264Z",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+    "created_at": "2025-06-16T16:54:17.946546Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "full_name": "Jane Doe",
+    "phone_number": "+1555551002",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key": "jane_doe",
+    "warnings": [],
+    "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
   }
 ]
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+Returns a list of all user identities.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
+```
+
+#### Output:
+
+```curl
+{
+  "user_identities": [
+    {
+      "created_at": "2025-06-16T16:54:17.946546Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "full_name": "Jane Doe",
+      "phone_number": "+1555551002",
+      "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+      "user_identity_key": "jane_doe",
+      "warnings": [],
+      "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+    }
+  ]
+}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-#### Request
+
+Returns a list of all user identities.
+
+#### Code:
 
 ```python
 seam.user_identities.list()
 ```
 
-#### Response
+#### Output:
 
 ```python
 [
     UserIdentity(
-        user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-        user_identity_key="jean_doe",
-        email_address="jean@example.com",
-        phone_number="+15555550110",
-        display_name="Jean Doe",
-        full_name="Jean Doe",
-        created_at="2024-01-11T05:37:50.264Z",
-        workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+        created_at="2025-06-16T16:54:17.946546Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        full_name="Jane Doe",
+        phone_number="+1555551002",
+        user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+        user_identity_key="jane_doe",
+        warnings=[],
+        workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
     )
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Returns a list of all user identities.
+
+#### Code:
 
 ```ruby
 seam.user_identities.list()
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 [
   {
-    "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_key" => "jean_doe",
-    "email_address" => "jean@example.com",
-    "phone_number" => "+15555550110",
-    "display_name" => "Jean Doe",
-    "full_name" => "Jean Doe",
-    "created_at" => "2024-01-11T05:37:50.264Z",
-    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "created_at" => "2025-06-16T16:54:17.946546Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "full_name" => "Jane Doe",
+    "phone_number" => "+1555551002",
+    "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key" => "jane_doe",
+    "warnings" => [],
+    "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
   },
 ]
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Returns a list of all user identities.
+
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->list();
 ```
 
-#### Response
+#### Output:
 
 ```php
-<?php
 [
     [
-        "user_identity_id" => "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-        "user_identity_key" => "jean_doe",
-        "email_address" => "jean@example.com",
-        "phone_number" => "+15555550110",
-        "display_name" => "Jean Doe",
-        "full_name" => "Jean Doe",
-        "created_at" => "2024-01-11T05:37:50.264Z",
-        "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+        "created_at" => "2025-06-16T16:54:17.946546Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "full_name" => "Jane Doe",
+        "phone_number" => "+1555551002",
+        "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+        "user_identity_key" => "jane_doe",
+        "warnings" => [],
+        "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
     ],
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Returns a list of all user identities.
+
+#### Code:
 
 ```seam_cli
 seam user-identities list
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 [
   {
-    "user_identity_id": "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    "user_identity_key": "jean_doe",
-    "email_address": "jean@example.com",
-    "phone_number": "+15555550110",
-    "display_name": "Jean Doe",
-    "full_name": "Jean Doe",
-    "created_at": "2024-01-11T05:37:50.264Z",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be"
+    "created_at": "2025-06-16T16:54:17.946546Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "full_name": "Jane Doe",
+    "phone_number": "+1555551002",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key": "jane_doe",
+    "warnings": [],
+    "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
   }
 ]
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-func main() {
-	client.UserIdentities.List(context.Background())
-}
-```
-
-#### Response
-
-```go
-[]api.UserIdentity{api.UserIdentity{UserIdentityId: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a", UserIdentityKey: "jean_doe", EmailAddress: "jean@example.com", PhoneNumber: "+15555550110", DisplayName: "Jean Doe", FullName: "Jean Doe", CreatedAt: "2024-01-11T05:37:50.264Z", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be"}}
-```
-{% endtab %}
-
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `credential_manager_acs_system_id`
+**`credential_manager_acs_system_id`** *String*
 
-Format: `UUID`
-Required: No
+`acs_system_id` of the credential manager by which you want to filter the list of user identities.
 
-***
+---
 
-## Return Type
+**`search`** *String*
 
-Array<[user\_identity](./)>
+String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.
+
+---
+
+
+## Response
+
+Array of [user\_identitys](.)
+
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "created_at": "2025-06-16T16:54:17.946546Z",
+  "display_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  "errors": [],
+  "full_name": "Jane Doe",
+  "phone_number": "+1555551002",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "user_identity_key": "jane_doe",
+  "acs_user_ids": ["0fc82df4-391b-4d00-a234-86378f1c3952"],
+  "warnings": [],
+  "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+
+### List user identities for a credential manager
+
+Returns a list of all user identities for a specified credential manager.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.userIdentities.list({
+  credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287",
+});
+```
+
+#### Output:
+
+```javascript
+[
+  {
+    "created_at": "2025-06-16T16:54:17.946546Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "full_name": "Jane Doe",
+    "phone_number": "+1555551002",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key": "jane_doe",
+    "warnings": [],
+    "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "10698917-8527-4137-92ff-f1ce291bc287"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "user_identities": [
+    {
+      "created_at": "2025-06-16T16:54:17.946546Z",
+      "display_name": "Jane Doe",
+      "email_address": "jane@example.com",
+      "errors": [],
+      "full_name": "Jane Doe",
+      "phone_number": "+1555551002",
+      "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+      "user_identity_key": "jane_doe",
+      "warnings": [],
+      "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.user_identities.list(
+    credential_manager_acs_system_id="10698917-8527-4137-92ff-f1ce291bc287"
+)
+```
+
+#### Output:
+
+```python
+[
+    UserIdentity(
+        created_at="2025-06-16T16:54:17.946546Z",
+        display_name="Jane Doe",
+        email_address="jane@example.com",
+        errors=[],
+        full_name="Jane Doe",
+        phone_number="+1555551002",
+        user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+        user_identity_key="jane_doe",
+        warnings=[],
+        workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287")
+```
+
+#### Output:
+
+```ruby
+[
+  {
+    "created_at" => "2025-06-16T16:54:17.946546Z",
+    "display_name" => "Jane Doe",
+    "email_address" => "jane@example.com",
+    "errors" => [],
+    "full_name" => "Jane Doe",
+    "phone_number" => "+1555551002",
+    "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key" => "jane_doe",
+    "warnings" => [],
+    "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->user_identities->list(
+    credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287"
+);
+```
+
+#### Output:
+
+```php
+[
+    [
+        "created_at" => "2025-06-16T16:54:17.946546Z",
+        "display_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+        "errors" => [],
+        "full_name" => "Jane Doe",
+        "phone_number" => "+1555551002",
+        "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+        "user_identity_key" => "jane_doe",
+        "warnings" => [],
+        "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam user-identities list --credential_manager_acs_system_id "10698917-8527-4137-92ff-f1ce291bc287"
+```
+
+#### Output:
+
+```seam_cli
+[
+  {
+    "created_at": "2025-06-16T16:54:17.946546Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "full_name": "Jane Doe",
+    "phone_number": "+1555551002",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key": "jane_doe",
+    "warnings": [],
+    "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}

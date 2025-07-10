@@ -1,8 +1,12 @@
-<code>{{name}}</code> Format: <code>{{format}}</code>{{#if listItemFormat}} Item format: <code>{{listItemFormat}}</code>{{/if}}
+<strong><code>{{name}}</code></strong> <i>{{format}}</i>{{#if listItemFormat}} <i>of {{listItemFormat}}s</i>{{/if}}
+{{#if isList}}
+  {{> property-nested-internal}}
+{{else}}
 {{> property-nested-internal}}
+{{/if}}
 {{#if listProperties}}
 {{#each listProperties}}
 
 - {{> property-nested this}}
 {{/each}}
-{{/if}} 
+{{/if}}

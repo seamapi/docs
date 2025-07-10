@@ -1,25 +1,33 @@
+import path from 'node:path/posix'
+
 import type {
   ActionAttempt,
+  CodeSample,
   Endpoint,
   Parameter,
+  Resource,
+  ResourceSample,
   SdkName,
   SeamAuthMethod,
   SeamWorkspaceScope,
 } from '@seamapi/blueprint'
-import type { CodeSample } from 'node_modules/@seamapi/blueprint/dist/index.cjs'
+import { capitalCase } from 'change-case'
 
+import type { PathMetadata } from '../path-metadata.js'
 import {
   type ApiRouteResource,
-  mapBlueprintPropertyToRouteProperty,
+  groupProperties,
+  mapResourceSample,
   normalizePropertyFormatForDocs,
+  type ResourceSampleContext,
 } from './api-route.js'
 
 const supportedSdks: SdkName[] = [
   'javascript',
+  'curl',
   'python',
-  'php',
   'ruby',
-  'go',
+  'php',
   'seam_cli',
 ]
 
@@ -29,6 +37,8 @@ export interface ApiEndpointLayoutContext {
   path: string
   authMethods: AuthMethodDisplayName[]
   workspaceScope: SeamWorkspaceScope
+  isAlpha: boolean
+  alphaMessage: string | undefined
   request: {
     preferredMethod: string
     parameters: ApiEndpointParameter[]
@@ -39,8 +49,10 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
+    responsePath: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
+  resourceSamples: ResourceSampleContext[]
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
 }
@@ -62,19 +74,17 @@ interface ApiEndpointParameter {
   itemFormat?: string
   itemEnumValues?: string[]
   objectParameters?: ApiEndpointParameter[]
+  jsonType: string
 }
 
 interface CodeSampleContext {
   title: string
   description: string
-  code: Record<
-    string,
-    {
-      title: string
-      request: string
-      response: string
-    }
-  >
+  code: Array<{
+    title: string
+    request: string
+    response: string
+  }>
 }
 
 type PublicSeamAuthMethod = Exclude<SeamAuthMethod, 'console_session_token'>
@@ -92,12 +102,27 @@ const seamAuthMethodToDisplayNameMap: Record<
 export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
+  resources: Resource[],
   actionAttempts: ActionAttempt[],
+  pathMetadata: PathMetadata,
 ): void {
+  const { parentPath } = endpoint
+  if (parentPath == null) {
+    throw new Error(
+      `Expected endpoint ${endpoint.path} to have non-null parentPath`,
+    )
+  }
+  const metadata = pathMetadata[parentPath]
+  if (metadata == null) {
+    throw new Error(`Missing path metadata for ${parentPath}`)
+  }
+
   file.description = endpoint.description
   file.title = endpoint.title
   file.path = endpoint.path
   file.workspaceScope = endpoint.workspaceScope
+  file.isAlpha = (metadata.alpha ?? '').length > 0
+  file.alphaMessage = metadata.alpha
 
   file.authMethods = endpoint.authMethods
     .filter(
@@ -125,14 +150,28 @@ export function setEndpointLayoutContext(
     escapedResourceType: null,
     responseKey: null,
     responseType: null,
+    responsePath: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
     const { resourceType, responseKey, responseType } = endpoint.response
+
+    const responseResource = resources.find(
+      (r) => r.resourceType === resourceType,
+    )
+
+    let responsePath = null
+    if (responseResource != null) {
+      responsePath = path
+        .relative(endpoint.path, responseResource.routePath)
+        .replace('..', '.') // gitbook expects first level to be .
+    }
+
     file.response.resourceType = resourceType
     file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
+    file.response.responsePath = responsePath
   }
 
   if (
@@ -152,11 +191,22 @@ export function setEndpointLayoutContext(
     file.response.actionAttempt = {
       name: actionAttempt.actionAttemptType,
       description: actionAttempt.description,
-      properties: actionAttempt.properties
-        .filter(({ isUndocumented }) => !isUndocumented)
-        .map(mapBlueprintPropertyToRouteProperty),
+      hidePreamble: false,
+      propertyGroups: groupProperties(
+        actionAttempt.properties.filter(
+          ({ isUndocumented }) => !isUndocumented,
+        ),
+        actionAttempt.propertyGroups,
+        {},
+      ),
     }
   }
+
+  file.resourceSamples = getResourceSamples(
+    endpoint,
+    resources,
+    actionAttempts,
+  ).map(mapResourceSample)
 
   const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
@@ -174,6 +224,7 @@ const mapBlueprintParamToEndpointParam = (
     format: normalizePropertyFormatForDocs(param.format),
     isDeprecated: param.isDeprecated,
     deprecationMessage: param.deprecationMessage,
+    jsonType: capitalCase(param.jsonType),
 
     ...(param.format === 'enum' && {
       enumValues: param.values.map(({ name }) => name),
@@ -194,12 +245,64 @@ const mapBlueprintParamToEndpointParam = (
 }
 
 const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
-  const codeEntries = Object.entries(sample.code).filter(([k]) =>
-    supportedSdks.includes(k as SdkName),
-  )
+  const code = supportedSdks.flatMap((sdkName) => {
+    const code = sample.code[sdkName]
+    if (code == null) return []
+    return [code]
+  })
+
   return {
     title: sample.title,
     description: sample.description,
-    code: Object.fromEntries(codeEntries),
+    code: code.map((c) => {
+      return {
+        ...c,
+        request:
+          c.request_syntax === 'php' ? removePhpTag(c.request) : c.request,
+        response:
+          c.response_syntax === 'php' ? removePhpTag(c.response) : c.response,
+      }
+    }),
   }
+}
+
+const removePhpTag = (s: string): string => s.split('\n').slice(1).join('\n')
+
+const getResourceSamples = (
+  endpoint: Endpoint,
+  resources: Resource[],
+  actionAttempts: ActionAttempt[],
+): ResourceSample[] => {
+  const { response } = endpoint
+
+  if (response.responseType === 'void') {
+    return []
+  }
+
+  let resource: Resource | ActionAttempt | undefined = resources.find(
+    ({ resourceType }) => resourceType === response.resourceType,
+  )
+
+  if (
+    response.responseType === 'resource' &&
+    response.actionAttemptType != null
+  ) {
+    resource = actionAttempts.find(
+      ({ actionAttemptType }) =>
+        actionAttemptType === response.actionAttemptType,
+    )
+  }
+
+  if (resource == null) return []
+
+  const sample = resource.resourceSamples[0]
+  if (sample == null) return []
+
+  return [
+    {
+      ...sample,
+      title: 'JSON',
+      description: '',
+    },
+  ]
 }

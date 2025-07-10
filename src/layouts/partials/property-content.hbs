@@ -1,22 +1,38 @@
-{{#if isDeprecated}}
-
-{{> deprecated-warning}}
-{{/if}}
 {{#if description}}
 
 {{description}}
 {{/if}}
+{{#if isDeprecated}}
+
+{{> deprecated-warning}}
+{{/if}}
 {{#if enumValues}}
 
-{{> enum-values}}
-{{/if}}
-{{#if value}}
+Enum values:
 
+{{#each enumValues}}
+- <code>{{this}}</code>
+{{/each}}
+{{/if}}
+
+{{#if value}}
 Value: `{{value}}`
 {{/if}}
 {{#if listProperties}}
-{{#each listProperties}}
 
+{{#each listProperties}}
 - {{> property-nested this}}
 {{/each}}
-{{/if}} 
+{{/if}}
+{{#unless (eq objectProperties undefined)}}
+{{#if (eq objectProperties.length 0)}}
+
+This object has no properties.
+{{else}}
+Child Properties
+
+{{#each objectProperties}}
+- {{> property-nested this isList=true }}
+{{/each}}
+{{/if}}
+{{/unless}}

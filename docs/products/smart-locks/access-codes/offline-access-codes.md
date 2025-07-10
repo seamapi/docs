@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-This guide explains how to create [offline access (PIN) codes](./#offline-access-codes) for smart locks that support these types of codes. Use the [Access Codes](../../../api-clients/access\_codes/) API to generate a [time-bound](./#time-bound-offline-access-codes) or [one-time-use](./#one-time-use-offline-access-codes) offline access code. Note that Seam support for offline access code functions varies depending on the device manufacturer. For details, see the corresponding device guide.
+This guide explains how to create [offline access (PIN) codes](./#offline-access-codes) for smart locks that support these types of codes. Use the [Access Codes](../../../api/access_codes/) API to generate a [time-bound](./#time-bound-offline-access-codes) or [one-time-use](./#one-time-use-offline-access-codes) offline access code. Note that Seam support for offline access code functions varies depending on the device manufacturer. For details, see the corresponding device guide.
 
 * [igloohome Locks device guide](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md)
 * [dormakaba Oracode Locks device guide](../../../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
@@ -33,7 +33,7 @@ Note the following restrictions on offline access codes:
 
 It is imperative to understand all manufacturer- and device-specific behaviors and constraints. For example, igloohome categorizes time-bound offline access codes as hourly-bound or daily-bound and enforces maximum numbers of each type. Also, you must configure dormakaba Oracode offline access codes to fit into specific predefined time slots called "user levels." Further, some manufacturers support one-time-use offline access codes, while others do not.
 
-For details, see the corresponding device guide. Also, [get the lock](../../../api-clients/devices/get.md) and view any manufacturer-specific properties.
+For details, see the corresponding device guide. Also, [get the lock](../../../api/devices/get.md) and view any manufacturer-specific properties.
 
 * [igloohome Locks device guide](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md)
 * [dormakaba Oracode Locks device guide](../../../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
@@ -47,7 +47,7 @@ Before you attempt to create an offline access code, be sure to confirm that you
 
 * `device.can_program_offline_access_codes`
 
-Use [Get Device](../../../api-clients/devices/get.md) for a specific device to return this capability flag. Then, use an `if` statement or similar check to confirm that this flag is both present and `true` before attempting to create an offline access code.
+Use [Get Device](../../../api/devices/get.md) for a specific device to return this capability flag. Then, use an `if` statement or similar check to confirm that this flag is both present and `true` before attempting to create an offline access code.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -169,48 +169,8 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-seam.locks()
-  .get(LocksGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-```
 
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: "11111111-1111-1111-1111-444444444444",
-  })
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -227,7 +187,7 @@ To create a time-bound offline access code, first issue a creation request. Then
 
 ### 1. Create a Time-Bound Offline Access Code
 
-To create a time-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api-clients/access\_codes/create.md).
+To create a time-bound offline access code, provide the `device_id` of the lock for which you want to create the code and set `is_offline_access_code` to `true`. Specify the `starts_at` and `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamps to define the active time window for the offline code. You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -491,101 +451,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
 
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the time-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my time-bound offline code")
-      .startsAt("2023-11-10T00:00:00Z")
-      .endsAt("2023-11-15T18:00:00Z")
-      // To create a daily-bound code for devices
-      // that support this feature, include
-      // .maxTimeRounding("1d")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-777777777777",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my time-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2023-11-10T00:00:00Z",
-  "ends_at" : "2023-11-15T18:00:00Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the time-bound offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my time-bound offline code"),
-        StartsAt: api.String("2023-11-10T00:00:00Z"),
-        EndsAt: api.String("2023-11-15T18:00:00Z"),
-        // To create a daily-bound code for devices
-        // that support this feature, include
-        // MaxTimeRounding: api.String("1d"),
-        IsOfflineAccessCode: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-777777777777",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my time-bound offline code",
-  "type": "time_bound",
-  "starts_at": "2023-11-10T00:00:00.000Z",
-  "ends_at": "2023-11-15T18:00:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Verify Successful Time-Bound Code Registration
@@ -598,8 +465,8 @@ The [lifecycle of a time-bound access code](lifecycle-of-access-codes.md) is mar
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
 
 ***
 
@@ -613,7 +480,7 @@ To create a one-time-use offline access code, first issue a creation request. In
 
 To create a one-time-use offline access code, provide the `device_id` of the lock for which you want to create the code. Set `is_offline_access_code` and `is_one_time_use` to `true`. Specify the `starts_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamp to define the beginning of the active time window for the offline code. If applicable for your device, specify the `ends_at` [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamp to define the end of the active time window for the offline code.
 
-You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api-clients/access\_codes/create.md).
+You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../../api/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -877,101 +744,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
 
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the one-time-use offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my one-time-use offline code")
-      .startsAt("2023-11-12T00:00:00Z")
-      // Specify ends_at if your device supports it.
-      .endsAt("2023-11-14T00:00:00Z")
-      .isOfflineAccessCode(true)
-      .isOneTimeUse(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-777777888888",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my one-time-use offline code",
-  "type" : "time_bound",
-  "starts_at" : "2023-11-12T00:00:00Z",
-  "ends_at" : "2023-11-14T00:00:00Z",
-  "is_offline_access_code": true,
-  "is_one_time_use": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the one-time-use offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my one-time-use offline code"),
-        StartsAt: api.String("2023-11-12T00:00:00Z"),
-        // Specify ends_at if your device supports it.
-        EndsAt: api.String("2023-11-14T00:00:00Z"),
-        IsOfflineAccessCode: api.Bool(true),
-        IsOneTimeUse: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-777777888888",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my one-time-use offline code",
-  "type": "time_bound",
-  "starts_at": "2023-11-12T00:00:00.000Z",
-  "ends_at": "2023-11-14T00:00:00.000Z",
-  "is_offline_access_code": true,
-  "is_one_time_use": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Verify Successful One-Time-Use Code Registration
@@ -984,5 +758,5 @@ The [lifecycle of a one-time-use access code](lifecycle-of-access-codes.md) is m
 
 There are two methods to verify that a one-time-use offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).

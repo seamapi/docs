@@ -24,14 +24,7 @@ TTLock produces both hardware and software for smart locks. Many other manufactu
 
 This integration works with any TTLock locks that are paired with a [TTLock Gateway](https://ttlock.com/#/productionCenter).
 
-For detailed information about the TTLock devices that Seam supports, see the following table and our [TTLock Supported Devices page](https://www.seam.co/manufacturers/ttlock):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["TTLock"]'
-/>" %}
+For detailed information about the TTLock devices that Seam supports, see our [TTLock Supported Devices page](https://www.seam.co/manufacturers/ttlock).
 
 ***
 
@@ -46,7 +39,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their TTLock devices to Seam, include the `ttlock` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their TTLock devices to Seam, include the `ttlock` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -54,17 +47,28 @@ To create a [Connect Webview](../core-concepts/connect-webviews/) that enables y
 
 To control TTLock devices using Seam, you must prompt owners of these devices to perform the following steps:
 
-1. Install your TTLock lock and set it up on the [TTLock app](https://www.ttlock.com/#/lock/app).\
-   Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock on the TTLock app.
-2. Pair the lock with a [TTLock gateway](https://ttlock.com/#/productionCenter).\
-   Follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a Gateway.
-3. In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the Remote Unlock feature.\
+1.  Create an account in the [TTLock app](https://www.ttlock.com/#/lock/app) if you have not done so already.
+
+    {% hint style="info" %}
+    Your users must be the top administrator for each TTLock that they want to connect to Seam.
+    {% endhint %}
+2. Install your TTLock lock and set it up using the TTLock app.\
+   Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock in the TTLock app.
+3. Pair the lock with a [TTLock gateway](https://ttlock.com/#/productionCenter).\
+   Follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a gateway.
+4. In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the Remote Unlock feature.\
    This feature must be enabled to unlock a TTLock device. Note that if Seam detects that this feature is disabled, a warning is added to the device.\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the Remote Unlock setting for each TTLock lock.
+5. Note your login credentials for the TTLock app.
+6. Use your credentials for the TTLock app to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 
 ## Troubleshooting
+
+### Lock Not Appearing in Seam
+
+Your users must be the top administrator for each TTLock that they want to connect to Seam. That is, they must supply the credentials for the top administrator account when completing the [Connect Webview](../core-concepts/connect-webviews/) to connect their TTLocks to Seam.&#x20;
 
 ### Lock Not Paired to Gateway Error
 
@@ -73,6 +77,10 @@ On the device, if you notice a `ttlock_lock_not_paired_to_gateway` error, you wi
 ### Gateway Unlocking Not Enabled Warning
 
 On the device, if you notice a `ttlock_lock_gateway_unlocking_not_enabled` warning, you will need to follow the [set up instructions](ttlock-locks.md#set-up-instructions) to turn on the "Remote Unlock" feature.
+
+### Power-Saving Mode
+
+Certain TTLock Wi-Fi lock models have a power-saving mode. When these locks are in power-saving mode, the Seam API cannot control them remotely. If a TTLock Wi-Fi lock is not completing requested actions successfully, confirm whether the lock is in power-saving mode. If so, prompt your user to turn off power-saving mode, and then retry the operation.
 
 ***
 

@@ -143,42 +143,8 @@ seam.SystemsAcs.List();
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_systems, uErr := client.Acs.Systems.List(
-  context.Background(), &acs.SystemsListRequest{},
-)
-```
-
-**Response:**
-
-```json
-[
-  {
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "name": "Visionline System",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -351,48 +317,8 @@ seam.UsersAcs.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_user, uErr := client.Acs.Users.Create(
-  context.Background(), &acs.UsersCreateRequest{
-    AcsSystemId: "11111111-1111-1111-1111-111111111111",
-    UserIdentityId: api.String("22222222-2222-2222-2222-222222222222"),
-    FullName: api.String("Jane Doe"),
-    EmailAddress: api.String("jane@example.com"),
-    PhoneNumber: api.String("+15555550101")
-  },
-)
-```
-
-**Response:**
-
-```json
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550101",
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -543,45 +469,8 @@ seam.UsersAcs.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_users, uErr := client.Acs.Users.List(
-  context.Background(), &acs.UsersListRequest{
-    AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
-  },
-)
-```
-
-**Response:**
-
-```json
-[
-  {
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "full_name": "Jane Doe",
-    "email_address": "jane@example.com",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -754,49 +643,8 @@ seam.AcsUsers.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_user, uErr := client.Acs.Users.Get(
-  context.Background(), &acs.UsersGetRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-  },
-)
-```
-
-**Response:**
-
-```json
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  "phone_number": "+15555550100",
-  "acs_system_id": "11111111-1111-1111-1111-111111111111",
-  "access_schedule": {
-    "starts_at": "2024-03-01T10:40:00.000Z",
-    "ends_at": "2024-03-04T10:40:00.000Z"
-  },
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -912,38 +760,8 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_user, uErr := client.Acs.Users.Update(
-  context.Background(), &acs.UsersUpdateRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    FullName: api.String("Jack Doe"),
-  },
-)
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1054,35 +872,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-deletion, uErr := client.Acs.Users.Delete(
-  context.Background(), &acs.UsersDeleteRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-  },
-)
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}

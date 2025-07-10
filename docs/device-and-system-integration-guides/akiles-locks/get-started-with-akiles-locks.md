@@ -12,14 +12,7 @@ Seam provides a universal API to connect and control many brands of IoT devices 
 
 This guide gives you a rapid introduction to connecting and controlling your [Akiles lock](./) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Akiles devices that Seam supports, see the following table and our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Akiles"]'
-/>" %}
+For detailed information about the Akiles devices that Seam supports, see our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles).
 
 To learn more about other IoT device and system brands that Seam supports—such as Yale, Schlage, Google Nest, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -41,9 +34,7 @@ Seam provides client libraries for many languages, including JavaScript, Python,
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 First, install a Seam SDK, as follows:
 
@@ -73,36 +64,8 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
-{% endtab %}
-
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
 {% endtab %}
 {% endtabs %}
 
@@ -298,117 +261,6 @@ False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-import java.io.Console;
-import java.util.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.seam.api.Seam;
-import com.seam.api.core.ObjectMappers;
-import com.seam.api.types.ConnectWebview;
-import com.seam.api.types.Device;
-import com.seam.api.types.Manufacturer;
-import com.seam.api.types.ActionAttempt;
-import com.seam.api.types.AccessCode;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
-import com.seam.api.resources.devices.requests.DevicesListRequest;
-import com.seam.api.resources.devices.requests.DevicesGetRequest;
-import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesCreateRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
-
-public class Main {
-
-  public static void main(String[] args) {
-
-    Seam seam = Seam.builder()
-      .apiKey(SEAM_API_KEY)
-      .build();
-
-    ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-      .acceptedProviders(List.of(AcceptedProvider.AKILES))
-      .build());
-
-    System.out.println(connectWebview.getLoginSuccessful()); // false
-
-    // Use the returned Connect Webview URL to display
-    // the Connect Webview authorization flow to your user.
-    System.out.println(connectWebview.getUrl());
-
-  }
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  connectWebview, err := client.ConnectWebviews.Create(
-    context.Background(),
-    &api.ConnectWebviewsCreateRequest{
-      AcceptedProviders: []api.AcceptedProvider{
-        api.AcceptedProviderAkiles,
-      },
-    },
-  )
-
-  if err != nil {
-    return err
-  }
-
-  fmt.Println(connectWebview.LoginSuccessful) // false
-
-  // Use the returned Connect Webview URL to display
-  // the Connect Webview authorization flow to your user.
-  fmt.Println(connectWebview.Url)
-
-  return nil
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -541,58 +393,13 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 True
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-
-System.out.println(updatedConnectWebview.getLoginSuccessful()); // true
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-updatedConnectWebview, err := client.ConnectWebviews.Get(
-  context.Background(),
-  &api.ConnectWebviewsGetRequest{
-    ConnectWebviewId: connectWebview.connectWebviewId,
-  },
-)
-
-if err != nil {
-  return err
-}
-
-fmt.Println(updatedConnectWebview.LoginSuccessful) // true
-
-return nil
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## Step 3: Retrieve Akiles lock devices
 
-When you link an Akiles account with Seam, we create a `device` object to represent each Akiles lock in your account. You can then retrieve these Akiles devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
+When you link an Akiles account with Seam, we create a `device` object to represent each Akiles lock in your account. You can then retrieve these Akiles devices using the [List Devices](../../api/devices/list.md) and [Get Device](../../api/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, capabilities, and so on.
 
@@ -864,104 +671,6 @@ True
 }
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-var allAkilesLocks = seam.devices().list(DevicesListRequest.builder()
-  .manufacturer(Manufacturer.AKILES)
-  .build());
-
-// Select the first device as an example.
-Device frontDoor = allAkilesLocks.get(0);
-
-// Inspect specific properties.
-System.out.println(frontDoor.getProperties().getOnline()); // true
-System.out.println(frontDoor.getProperties().getLocked()); // true
-
-// View the entire returned device object.
-System.out.println(frontDoor);
-```
-
-**Output:**
-
-```json
-true
-true
-{
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "display_name": "Lock 1",
-  "workspace_id" : "00000000-0000-0000-0000-000000000000",
-  "connected_account_id" : "11111111-1111-1111-1111-222222222222",
-  "created_at" : "2024-05-29T20:08:48.878Z",
-  "properties" : {
-    "manufacturer" : "akiles",
-    "online" : true,
-    "locked" : true,
-    ...
-  },
-  "can_remotely_unlock" : true,
-  "can_program_online_access_codes": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-allAkilesLocks, err := client.Devices.List(
-  context.Background(), &api.DevicesListRequest{
-    Manufacturer: api.ManufacturerAkiles.Ptr(),
-  },
-)
-
-// Select the first device as an example.
-frontDoor := allAkilesLocks[0]
-
-if err != nil {
-  return err
-}
-
-// Inspect specific properties.
-fmt.Println(frontDoor.Properties.Online) // true
-fmt.Println(*frontDoor.Properties.Locked) // true
-
-// View the entire returned device object.
-fmt.Println(frontDoor)
-
-return nil
-```
-
-**Output:**
-
-```json
-true
-true
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "display_name": "Lock 1",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  "created_at": "2024-05-29T20:08:48.878Z",
-  "properties": {
-    "manufacturer": "akiles",
-    "online": true,
-    "locked": true,
-    ...
-  },
-  "can_remotely_unlock": true,
-  "can_program_online_access_codes": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -979,7 +688,7 @@ Try out the following actions on your Akiles lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../../api-clients/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](../../api/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1146,74 +855,6 @@ if (frontDoor.CanRemotelyUnlock == true) {
 }
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if (frontDoor.getCanRemotelyUnlock())
-{
-  // Perform the unlock operation
-  // and return an action attempt.
-  ActionAttempt actionAttempt = seam.locks()
-    .unlockDoor(LocksUnlockDoorRequest.builder()
-      .deviceId(frontDoor.getDeviceId())
-      .build());
-}
-```
-
-**Output:**
-
-```json
-Optional[
-  {
-    "action_type" : "UNLOCK_DOOR",
-    "action_attempt_id" : "11111111-2222-3333-4444-555555555555",
-    "status" : "pending"
-  }
-]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if *frontDoor.CanRemotelyUnlock {
-  // Perform the unlock operation.
-  actionAttempt, err := client.Locks.UnlockDoor(
-    context.Background(),
-    &api.LocksUnlockDoorRequest{
-      DeviceId: frontDoor.DeviceId,
-    },
-  )
-
-  if err != nil {
-    return err
-  }
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-&{pending <nil>
-  {
-    "status": "pending",
-    "action_type": "UNLOCK_DOOR",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "result": null,
-    "error": null
-  }
-<nil>} <nil>
-```
-{% endtab %}
 {% endtabs %}
 
 You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../../api-clients/events/#event-types).
@@ -1342,54 +983,6 @@ Console.WriteLine(updatedFrontDoor.Properties.Locked); // false
 
 ```
 False
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Get the device by ID.
-Device updatedFrontDoor = seam.devices().get(DevicesGetRequest.builder()
-  .deviceId(frontDoor.getDeviceId())
-  .build());
-
-// Inspect the locked property to confirm
-// that the unlock operation was successful.
-System.out.println(updatedFrontDoor.getProperties().getLocked()); // false
-```
-
-**Output:**
-
-```
-false
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Get the device by ID.
-updatedFrontDoor, err := client.Devices.Get(
-  context.Background(), &api.DevicesGetRequest{
-    DeviceId: api.String(frontDoor.DeviceId),
-  },
-)
-
-if err != nil {
-  return err
-}
-
-// Inspect the locked property to confirm
-// that the unlock operation was successful.
-fmt.Println(*updatedFrontDoor.Properties.Locked) // false
-```
-
-**Output:**
-
-```
-false
 ```
 {% endtab %}
 {% endtabs %}
@@ -1751,135 +1344,6 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 }
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if (updatedFrontDoor.getCanProgramOnlineAccessCodes())
-{
-  // Create an ongoing online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .name("my ongoing code")
-      .code("1234")
-      .build());
-  // Create a time-bound online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .name("my time-bound code")
-      .startsAt("2025-01-01T16:00:00Z")
-      .endsAt("2025-01-22T12:00:00Z")
-      .code("2345")
-      .build());
-  // List all access codes for this device.
-  var accessCodes = seam.accessCodes()
-    .list(AccessCodesListRequest.builder()
-      .deviceId(updatedFrontDoor.getDeviceId())
-      .build());
-  System.out.println(accessCodes);
-}
-```
-
-**Output:**
-
-```json
-[
-  {
-    "access_code_id" : "11111111-1111-1111-1111-555555555555",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "name" : "my ongoing code",
-    "code" : "1234",
-    "type" : "ongoing",
-    ...
-  },
-  {
-    "access_code_id" : "11111111-1111-1111-1111-666666666666",
-    "device_id" : "11111111-1111-1111-1111-444444444444",
-    "name" : "my time-bound code",
-    "code" : "2345",
-    "type" : "time_bound",
-    "starts_at" : "2025-01-01T16:00:00Z",
-    "ends_at" : "2025-01-22T12:00:00Z",
-    ...
-  }
-]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if *updatedFrontDoor.CanProgramOnlineAccessCodes {
-  // Create an ongoing online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: updatedFrontDoor.DeviceId,
-      Name: api.String("my ongoing code"),
-      Code: api.String("1234"),
-    },
-  )
-  // Create a time-bound online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: updatedFrontDoor.DeviceId,
-      Name: api.String("my time-bound code"),
-      StartsAt: api.String("2025-01-01T16:00:00Z"),
-      EndsAt: api.String("2025-01-22T12:00:00Z"),
-      Code: api.String("2345"),
-    },
-  )
-  // List all access codes for this device.
-  accessCodes, err := client.AccessCodes.List(
-    context.Background(),
-    &api.AccessCodesListRequest{
-      DeviceId: updatedFrontDoor.DeviceId,
-    },
-  )
-  fmt.Println(accessCodes)
-
-  if err != nil {
-      return err
-  }
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-[
-  {
-    "access_code_id": "11111111-1111-1111-1111-555555555555",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my ongoing code",
-    "code": "1234",
-    "type": "ongoing",
-    ...
-  }
-  {
-    "access_code_id": "11111111-1111-1111-1111-666666666666",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my time-bound code",
-    "code": "2345",
-    "type": "time_bound",
-    "starts_at": "2025-01-01T16:00:00.000Z",
-    "ends_at": "2025-01-22T12:00:00.000Z",
-    ...
-  }
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1913,7 +1377,7 @@ Now that you've completed this getting started guide for Akiles devices, you can
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../../device-guides/broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](../../core-concepts/overview.md) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\

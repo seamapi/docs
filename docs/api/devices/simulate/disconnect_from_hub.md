@@ -1,0 +1,152 @@
+# Simulate Hub Disconnection
+
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+
+Simulates taking the Wi-Fi hub (bridge) offline for a device.  
+Only applicable for [sandbox workspaces](../../../core-concepts/workspaces/README.md#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  
+This will set the `hub_disconnected` error on the device.
+
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Simulates taking the Wi-Fi hub (bridge) offline for a device.
+
+#### Code:
+
+```javascript
+await seam.devices.simulate.disconnectFromHub({
+  device_id: "a60686b8-f401-452d-9f67-53d139cf6160",
+});
+```
+
+#### Output:
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Simulates taking the Wi-Fi hub (bridge) offline for a device.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/devices/simulate/disconnect_from_hub" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a60686b8-f401-452d-9f67-53d139cf6160"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Simulates taking the Wi-Fi hub (bridge) offline for a device.
+
+#### Code:
+
+```python
+seam.devices.simulate.disconnect_from_hub(
+    device_id="a60686b8-f401-452d-9f67-53d139cf6160"
+)
+```
+
+#### Output:
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Simulates taking the Wi-Fi hub (bridge) offline for a device.
+
+#### Code:
+
+```ruby
+seam.devices.simulate.disconnect_from_hub(device_id: "a60686b8-f401-452d-9f67-53d139cf6160")
+```
+
+#### Output:
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Simulates taking the Wi-Fi hub (bridge) offline for a device.
+
+#### Code:
+
+```php
+$seam->devices->simulate->disconnect_from_hub(
+    device_id: "a60686b8-f401-452d-9f67-53d139cf6160"
+);
+```
+
+#### Output:
+
+```php
+
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Simulates taking the Wi-Fi hub (bridge) offline for a device.
+
+#### Code:
+
+```seam_cli
+seam devices simulate disconnect-from-hub --device_id "a60686b8-f401-452d-9f67-53d139cf6160"
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`device_id`** *String* (Required)
+
+ID of the device whose hub you want to disconnect.
+
+---
+
+
+## Response
+
+void
+

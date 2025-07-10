@@ -1,207 +1,203 @@
 # Set to Off Mode
 
-```
-POST /thermostats/off ⇒ { action_attempt }
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
+
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Sets a specified thermostat to "off" mode.
+
+#### Code:
 
 ```javascript
 await seam.thermostats.off({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_THERMOSTAT_OFF"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Sets a specified thermostat to "off" mode.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/off" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "5d5c3b30-5fed-47a3-9df1-ed32f32589e5"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type": "SET_HVAC_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+
+Sets a specified thermostat to "off" mode.
+
+#### Code:
 
 ```python
-seam.thermostats.off(device_id="123e4567-e89b-12d3-a456-426614174000")
+seam.thermostats.off(device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
 ```
 
-#### Response
+#### Output:
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
-    action_type="SET_THERMOSTAT_OFF",
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Sets a specified thermostat to "off" mode.
+
+#### Code:
 
 ```ruby
-seam.thermostats.off(device_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.thermostats.off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
-  "action_type" => "SET_THERMOSTAT_OFF",
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Sets a specified thermostat to "off" mode.
+
+#### Code:
 
 ```php
-<?php
-$seam->thermostats->off(device_id: "123e4567-e89b-12d3-a456-426614174000");
+$seam->thermostats->off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5");
 ```
 
-#### Response
+#### Output:
 
 ```php
-<?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
-    "action_type" => "SET_THERMOSTAT_OFF",
+    "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type" => "SET_HVAC_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Sets a specified thermostat to "off" mode.
+
+#### Code:
 
 ```seam_cli
-seam thermostats off --device_id "123e4567-e89b-12d3-a456-426614174000"
+seam thermostats off --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5"
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_THERMOSTAT_OFF"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.Off(
-		context.Background(),
-		api.ThermostatsOffRequest{
-			DeviceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_THERMOSTAT_OFF"}
 ```
 {% endtab %}
 
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `device_id`
+**`device_id`** *String* (Required)
 
-Format: `UUID`
-Required: Yes
+ID of the thermostat device that you want to set to off mode.
 
-ID of the desired thermostat device.
+---
 
-***
 
-## Return Type
+## Response
 
 [action\_attempt](./)
 
-### `SET_HVAC_MODE`
 
-Setting HVAC mode.
+{% tabs %}
+{% tab title="JSON" %}
 
-#### `action_attempt_id`
 
-Format: `UUID`
 
-ID of the action attempt.
-
----
-
-#### `action_type`
-
-Format: `Enum`
-
-Value: `SET_HVAC_MODE`
-
----
-
-#### `error`
-
-Format: `Object`
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>type</code> Format: <code>String</code></summary>
-</details>
-
----
-
-#### `result`
-
-Format: `Object`
-
-This object has no properties.
-
----
-
-#### `status`
-
-Format: `Enum`
-
-Possible enum values:
-- `success`
-- `pending`
-- `error`
-
----
-
+```json
+{
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}

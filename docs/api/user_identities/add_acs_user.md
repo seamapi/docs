@@ -1,40 +1,70 @@
 # Add an ACS User to a User Identity
 
-```
-PUT /user_identities/add_acs_user ⇒ void
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
+
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Adds a specified access system user to a specified user identity.
+
+#### Code:
 
 ```javascript
 await seam.userIdentities.addAcsUser({
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
+  user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c",
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 // void
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+Adds a specified access system user to a specified user identity.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/add_acs_user" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  "acs_user_id": "d73f4706-67e3-419d-899e-ec957a75ee0c"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-#### Request
+
+Adds a specified access system user to a specified user identity.
+
+#### Code:
 
 ```python
 seam.user_identities.add_acs_user(
-    user_identity_id="48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id="4d223973-0874-4831-8630-bfcb29e6bce0",
+    user_identity_id="68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+    acs_user_id="d73f4706-67e3-419d-899e-ec957a75ee0c",
 )
 ```
 
-#### Response
+#### Output:
 
 ```python
 None
@@ -42,16 +72,19 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Adds a specified access system user to a specified user identity.
+
+#### Code:
 
 ```ruby
 seam.user_identities.add_acs_user(
-  user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-  acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0",
+  user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+  acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c",
 )
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 nil
@@ -59,91 +92,72 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Adds a specified access system user to a specified user identity.
+
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->add_acs_user(
-    user_identity_id: "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a",
-    acs_user_id: "4d223973-0874-4831-8630-bfcb29e6bce0"
+    user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
+    acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c"
 );
 ```
 
-#### Response
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Adds a specified access system user to a specified user identity.
+
+#### Code:
 
 ```seam_cli
-seam user-identities add-acs-user --user_identity_id "48500a8e-5e7e-4bde-b7e5-0be97cae5d7a" --acs_user_id "4d223973-0874-4831-8630-bfcb29e6bce0"
+seam user-identities add-acs-user --user_identity_id "68dd3d7e-c90b-4c89-ad70-3e589014ed87" --acs_user_id "d73f4706-67e3-419d-899e-ec957a75ee0c"
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {}
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.AddAcsUser(
-		context.Background(),
-		api.UserIdentitiesAddAcsUserRequest{
-			UserIdentityId: api.String("48500a8e-5e7e-4bde-b7e5-0be97cae5d7a"),
-			AcsUserId:      api.String("4d223973-0874-4831-8630-bfcb29e6bce0"),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-nil
-```
-{% endtab %}
-
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `acs_user_id`
+**`acs_user_id`** *String* (Required)
 
-Format: `UUID`
-Required: Yes
+ID of the access system user that you want to add to the user identity.
 
-ID of the desired ACS user.
+---
 
-***
+**`user_identity_id`** *String* (Required)
 
-### `user_identity_id`
+ID of the user identity to which you want to add an access system user.
 
-Format: `UUID`
-Required: Yes
+---
 
-ID of the desired user identity.
 
-***
-
-## Return Type
+## Response
 
 void
+

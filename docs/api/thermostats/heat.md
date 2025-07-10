@@ -1,235 +1,225 @@
 # Set to Heat Mode
 
-```
-POST /thermostats/heat ⇒ { action_attempt }
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
 
+
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Sets a specified thermostat to heat mode.
+
+#### Code:
 
 ```javascript
 await seam.thermostats.heat({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  heating_set_point_celsius: 20,
+  device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+  heating_set_point_fahrenheit: 65,
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_HEAT"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Sets a specified thermostat to heat mode.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/heat" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+  "heating_set_point_fahrenheit": 65
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type": "SET_HVAC_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+
+Sets a specified thermostat to heat mode.
+
+#### Code:
 
 ```python
 seam.thermostats.heat(
-    device_id="123e4567-e89b-12d3-a456-426614174000", heating_set_point_celsius=20
+    device_id="e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5", heating_set_point_fahrenheit=65
 )
 ```
 
-#### Response
+#### Output:
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
-    action_type="SET_HEAT",
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Sets a specified thermostat to heat mode.
+
+#### Code:
 
 ```ruby
 seam.thermostats.heat(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  heating_set_point_celsius: 20,
+  device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+  heating_set_point_fahrenheit: 65,
 )
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
-  "action_type" => "SET_HEAT",
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Sets a specified thermostat to heat mode.
+
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->heat(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    heating_set_point_celsius: 20
+    device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
+    heating_set_point_fahrenheit: 65
 );
 ```
 
-#### Response
+#### Output:
 
 ```php
-<?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
-    "action_type" => "SET_HEAT",
+    "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type" => "SET_HVAC_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Sets a specified thermostat to heat mode.
+
+#### Code:
 
 ```seam_cli
-seam thermostats heat --device_id "123e4567-e89b-12d3-a456-426614174000" --heating_set_point_celsius 20
+seam thermostats heat --device_id "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5" --heating_set_point_fahrenheit 65
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_HEAT"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.Heat(
-		context.Background(),
-		api.ThermostatsHeatRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			HeatingSetPointCelsius: api.Float64(20),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_HEAT"}
 ```
 {% endtab %}
 
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `device_id`
+**`device_id`** *String* (Required)
 
-Format: `UUID`
-Required: Yes
+ID of the thermostat device that you want to set to heat mode.
 
-ID of the desired thermostat device.
+---
 
-***
+**`heating_set_point_celsius`** *Number*
 
-### `heating_set_point_celsius`
+[Heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.
 
-Format: `Number`
-Required: No
+---
 
-Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
+**`heating_set_point_fahrenheit`** *Number*
 
-***
+[Heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.
 
-### `heating_set_point_fahrenheit`
+---
 
-Format: `Number`
-Required: No
 
-Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
-
-***
-
-## Return Type
+## Response
 
 [action\_attempt](./)
 
-### `SET_HVAC_MODE`
 
-Setting HVAC mode.
+{% tabs %}
+{% tab title="JSON" %}
 
-#### `action_attempt_id`
 
-Format: `UUID`
 
-ID of the action attempt.
-
----
-
-#### `action_type`
-
-Format: `Enum`
-
-Value: `SET_HVAC_MODE`
-
----
-
-#### `error`
-
-Format: `Object`
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>type</code> Format: <code>String</code></summary>
-</details>
-
----
-
-#### `result`
-
-Format: `Object`
-
-This object has no properties.
-
----
-
-#### `status`
-
-Format: `Enum`
-
-Possible enum values:
-- `success`
-- `pending`
-- `error`
-
----
-
+```json
+{
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}

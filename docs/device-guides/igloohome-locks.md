@@ -18,14 +18,7 @@ In addition, the Seam integration supports the generation of [offline access cod
 
 This integration supports a series of igloohome devices for lock, unlock, and customizable access code provisioning actions. In addition, this integration supports a wider set of igloohome devices for offline access code (algoPIN) provisioning.
 
-For detailed information about the igloohome devices that Seam supports, see the following table and our [igloohome Supported Devices page](https://www.seam.co/manufacturers/igloohome):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["igloohome"]'
-/>" %}
+For detailed information about the igloohome devices that Seam supports, see our [igloohome Supported Devices page](https://www.seam.co/manufacturers/igloohome).
 
 ### igloohome Bridge Support
 
@@ -51,7 +44,7 @@ We support customizable access codes for igloohome locks connected through the i
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their igloohome devices to Seam, include the `igloohome` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their igloohome devices to Seam, include the `igloohome` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

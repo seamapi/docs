@@ -14,14 +14,7 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 
 Seam integrates with any site that has Storlogix Cloud installed.
 
-For detailed information about the PTI devices that Seam supports, see the following table and our [PTI Supported Devices page](https://www.seam.co/manufacturers/pti):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["PTI"]'
-/>" %}
+For detailed information about the PTI devices that Seam supports, see our [PTI Supported Devices page](https://www.seam.co/manufacturers/pti).
 
 ***
 
@@ -42,7 +35,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables you to connect your PTI Storlogix Cloud to Seam, include the `pti` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables you to connect your PTI Storlogix Cloud to Seam, include the `pti` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -92,7 +85,7 @@ For example, you could assign them to the "Building A - 3/F" access level and gi
 
 ***
 
-## Brand-Specific Warnings
+## Troubleshooting
 
 The following warning might appear for PTI-related users:
 

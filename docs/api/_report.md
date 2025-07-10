@@ -4,81 +4,10 @@
 
 ### Routes
 
-- `/access_codes`
-- `/access_codes/simulate`
-- `/access_codes/unmanaged`
-- `/bridges`
-- `/client_sessions`
-- `/connect_webviews`
-- `/connected_accounts`
-- `/devices`
-- `/devices/simulate`
-- `/devices/unmanaged`
+- `/action_attempts`
 - `/events`
-- `/locks`
-- `/networks`
-- `/noise_sensors`
-- `/noise_sensors/noise_thresholds`
-- `/noise_sensors/simulate`
-- `/webhooks`
-- `/workspaces`
-
-### Endpoints
-
-- `/access_codes/generate_code`
-- `/action_attempts/get`
-- `/action_attempts/list`
-- `/bridges/get`
-- `/bridges/list`
-- `/client_sessions/create`
-- `/client_sessions/delete`
-- `/client_sessions/get`
-- `/client_sessions/get_or_create`
-- `/client_sessions/grant_access`
-- `/client_sessions/list`
-- `/client_sessions/revoke`
-- `/connect_webviews/create`
-- `/connect_webviews/delete`
-- `/connect_webviews/get`
-- `/connect_webviews/list`
-- `/connected_accounts/delete`
-- `/connected_accounts/get`
-- `/connected_accounts/list`
-- `/connected_accounts/update`
-- `/devices/get`
-- `/devices/list_device_providers`
-- `/devices/update`
-- `/devices/simulate/connect`
-- `/devices/simulate/disconnect`
-- `/devices/simulate/remove`
-- `/devices/unmanaged/get`
-- `/devices/unmanaged/list`
-- `/devices/unmanaged/update`
-- `/events/get`
-- `/events/list`
-- `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/networks/get`
-- `/networks/list`
-- `/noise_sensors/list`
-- `/noise_sensors/noise_thresholds/create`
-- `/noise_sensors/noise_thresholds/delete`
-- `/noise_sensors/noise_thresholds/get`
-- `/noise_sensors/noise_thresholds/list`
-- `/noise_sensors/noise_thresholds/update`
-- `/noise_sensors/simulate/trigger_noise_threshold`
-- `/webhooks/create`
-- `/webhooks/delete`
-- `/webhooks/get`
-- `/webhooks/list`
-- `/webhooks/update`
-- `/workspaces/create`
-- `/workspaces/get`
-- `/workspaces/list`
-- `/workspaces/reset_sandbox`
-- `/workspaces/update`
+- `/thermostats/daily_programs`
+- `/user_identities/enrollment_automations`
 
 ## Undocumented
 
@@ -91,30 +20,53 @@ These items are intentionally undocumented.
 - `/acs/credential_provisioning_automations`: No undocumented message provided
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
-- `/locks/simulate`: No undocumented message provided
+- `/bridges`: No undocumented message provided
+- `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/customer/v1/automation_runs`: No undocumented message provided
+- `/seam/customer/v1/automations`: No undocumented message provided
+- `/seam/customer/v1/portals`: No undocumented message provided
+- `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
-- `/thermostats/daily_programs`: No undocumented message provided
+- `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
+- `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
+- `/unstable_partner/building_blocks`: No undocumented message provided
 
 ### Resources
 
+- `acs_credential_pool`: Deprecated. Will be removed.
+- `acs_credential_provisioning_automation`: Deprecated. Will be removed.
+- `bridge_client_session`: Seam Bridge client only.
+- `bridge_connected_systems`: Seam Bridge client only.
 - `instant_key`: Unreleased.
+- `location`: Will be removed.
+- `magic_link`: Unreleased.
+- `phone_session`: Seam Mobile SDK only.
+- `unmanaged_acs_access_group`: Unreleased.
+- `unmanaged_acs_credential`: Unreleased.
+- `unmanaged_acs_user`: Unreleased.
 
 ### Resource properties
 
 - `acs_user.last_successful_sync_at`: Only used internally.
+- `connect_webview.accepted_devices`: Unused. Will be removed.
+- `connect_webview.any_device_allowed`: Unused. Will be removed.
 - `unmanaged_acs_user.last_successful_sync_at`: Only used internally.
 
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
+- `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
+- `/seam/mobile_sdk/v1`: No undocumented message provided
+- `/seam/partner/v1/building_blocks`: No undocumented message provided
+- `/unstable_partner`: No undocumented message provided
 
 ### Endpoints
 
@@ -127,26 +79,33 @@ These items are intentionally undocumented.
 - `/acs/credentials/unmanaged/list`: No unmanaged credentials are currently implemented.
 - `/acs/users/unmanaged/get`: No unmanaged users are currently implemented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
+- `/bridges/get`: Not yet for customer use.
+- `/bridges/list`: Not yet for customer use.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
-- `/locks/simulate/keypad_code_entry`: Unreleased.
-- `/locks/simulate/manual_lock_via_keypad`: Unreleased.
-- `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge Client only.
+- `/networks/get`: Deprecated.
+- `/networks/list`: Deprecated.
+- `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
-- `/thermostats/activate_weekly_program`: Unreleased.
-- `/thermostats/clear_weekly_program`: Unreleased.
+- `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
+- `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
-- `/thermostats/daily_programs/create`: Unreleased.
-- `/thermostats/daily_programs/delete`: Unreleased.
-- `/thermostats/daily_programs/update`: Unreleased.
 - `/unstable_access_grants/create`: Unreleased.
+- `/unstable_access_grants/delete`: Unreleased.
 - `/unstable_access_grants/get`: Unreleased.
 - `/unstable_access_grants/list`: Unreleased.
+- `/unstable_access_methods/delete`: Unreleased.
 - `/unstable_access_methods/get`: Unreleased.
 - `/unstable_access_methods/list`: Unreleased.
 - `/unstable_locations/add_acs_entrances`: Experimental locations.
@@ -158,6 +117,10 @@ These items are intentionally undocumented.
 - `/unstable_locations/remove_acs_entrances`: Experimental locations.
 - `/unstable_locations/remove_devices`: Experimental locations.
 - `/unstable_locations/update`: Experimental locations.
+- `/unstable_partner/building_blocks/connect_accounts`: Experimental partner building blocks.
+- `/unstable_partner/building_blocks/generate_magic_link`: Experimental partner building blocks.
+- `/unstable_partner/building_blocks/manage_devices`: Experimental partner building blocks.
+- `/unstable_partner/building_blocks/organize_spaces`: Experimental partner building blocks.
 
 ### Endpoint parameters
 
@@ -171,24 +134,34 @@ These items are intentionally undocumented.
     - `sync`: Only used internally.
 - `/access_codes/unmanaged/delete`
     - `sync`: Only used internally.
-- `/acs/entrances/list`
-    - `location_id`: Experimental locations.
+- `/connect_webviews/create`
+    - `device_selection_mode`: Not supported.
+- `/connected_accounts/delete`
+    - `sync`: Only used internally.
 - `/devices/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
 - `/devices/unmanaged/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
 - `/locks/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
+- `/locks/lock_door`
+    - `sync`: Only used internally.
+- `/locks/unlock_door`
+    - `sync`: Only used internally.
 - `/noise_sensors/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
+- `/noise_sensors/noise_thresholds/create`
+    - `sync`: Only used internally.
+- `/noise_sensors/noise_thresholds/delete`
+    - `sync`: Only used internally.
+- `/noise_sensors/noise_thresholds/list`
+    - `is_programmed`: Not sure if this parameter is supported or what it does.
+- `/noise_sensors/noise_thresholds/update`
+    - `sync`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
@@ -198,7 +171,6 @@ These items are intentionally undocumented.
 - `/thermostats/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
-    - `unstable_location_id`: Experimental locations.
 - `/thermostats/off`
     - `sync`: Only used internally.
 - `/thermostats/set_fan_mode`
@@ -213,22 +185,14 @@ Items that are intentionally undocumented are not included in this section.
 
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
-- `client_session`
-- `connect_webview`
-- `connected_account`
-- `device`
 - `device_provider`
 - `event`
-- `instant_key`
-- `network`
-- `noise_threshold`
+- `location`
 - `unmanaged_acs_access_group`
-- `unmanaged_device`
-- `webhook`
-- `workspace`
 
 ### Resource properties
 
+- `access_grant.location_ids`
 - `acs_access_group.access_group_type`
 - `acs_access_group.access_group_type_display_name`
 - `acs_access_group.display_name`
@@ -249,12 +213,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation.workspace_id`
 - `acs_system.acs_access_group_count`
 - `acs_system.acs_user_count`
-- `acs_system.can_create_user`
-- `acs_system.can_delete_user`
-- `acs_system.can_update_user_group_membership`
-- `acs_system.can_update_user_information`
-- `acs_system.can_update_user_schedule`
-- `acs_system.can_update_user_supension_state`
 - `acs_system.location`
 - `acs_system.system_type`
 - `acs_system.system_type_display_name`
@@ -262,44 +220,9 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.email`
 - `acs_user.hid_acs_system_id`
 - `acs_user.is_managed`
-- `client_session.client_session_id`
-- `client_session.connect_webview_ids`
-- `client_session.connected_account_ids`
-- `client_session.created_at`
-- `client_session.device_count`
-- `client_session.expires_at`
-- `client_session.token`
-- `client_session.user_identifier_key`
-- `client_session.user_identity_ids`
-- `client_session.workspace_id`
 - `connect_webview.accepted_devices`
-- `connect_webview.accepted_providers`
 - `connect_webview.any_device_allowed`
-- `connect_webview.any_provider_allowed`
-- `connect_webview.authorized_at`
-- `connect_webview.automatically_manage_new_devices`
-- `connect_webview.connect_webview_id`
-- `connect_webview.connected_account_id`
-- `connect_webview.created_at`
-- `connect_webview.custom_metadata`
-- `connect_webview.custom_redirect_failure_url`
-- `connect_webview.custom_redirect_url`
 - `connect_webview.device_selection_mode`
-- `connect_webview.login_successful`
-- `connect_webview.selected_provider`
-- `connect_webview.status`
-- `connect_webview.url`
-- `connect_webview.wait_for_device_creation`
-- `connect_webview.workspace_id`
-- `connected_account.account_type`
-- `connected_account.account_type_display_name`
-- `connected_account.automatically_manage_new_devices`
-- `connected_account.connected_account_id`
-- `connected_account.created_at`
-- `connected_account.custom_metadata`
-- `connected_account.errors`
-- `connected_account.user_identifier`
-- `connected_account.warnings`
 - `device.can_hvac_cool`
 - `device.can_hvac_heat`
 - `device.can_hvac_heat_cool`
@@ -311,7 +234,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_simulate_disconnection`
 - `device.can_simulate_removal`
 - `device.can_turn_off_hvac`
-- `device.custom_metadata`
+- `device.can_unlock_with_code`
 - `device_provider.can_hvac_cool`
 - `device_provider.can_hvac_heat`
 - `device_provider.can_hvac_heat_cool`
@@ -323,29 +246,12 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.can_simulate_disconnection`
 - `device_provider.can_simulate_removal`
 - `device_provider.can_turn_off_hvac`
+- `device_provider.can_unlock_with_code`
 - `device_provider.device_provider_name`
 - `device_provider.display_name`
 - `device_provider.image_url`
 - `device_provider.provider_categories`
 - `event.event_type`
-- `instant_key.client_session_id`
-- `instant_key.created_at`
-- `instant_key.expires_at`
-- `instant_key.instant_key_id`
-- `instant_key.instant_key_url`
-- `instant_key.user_identity_id`
-- `instant_key.workspace_id`
-- `network.created_at`
-- `network.display_name`
-- `network.network_id`
-- `network.workspace_id`
-- `noise_threshold.device_id`
-- `noise_threshold.ends_daily_at`
-- `noise_threshold.name`
-- `noise_threshold.noise_threshold_decibels`
-- `noise_threshold.noise_threshold_id`
-- `noise_threshold.noise_threshold_nrs`
-- `noise_threshold.starts_daily_at`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
 - `unmanaged_acs_access_group.display_name`
@@ -366,86 +272,17 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_simulate_disconnection`
 - `unmanaged_device.can_simulate_removal`
 - `unmanaged_device.can_turn_off_hvac`
+- `unmanaged_device.can_unlock_with_code`
 - `unmanaged_device.is_managed`
-- `unmanaged_device.properties`
 - `user_identity.display_name`
 - `user_identity.full_name`
-- `webhook.event_types`
-- `webhook.secret`
-- `webhook.url`
-- `webhook.webhook_id`
-- `workspace.company_name`
 - `workspace.connect_partner_name`
 - `workspace.connect_webview_customization`
-- `workspace.is_sandbox`
-- `workspace.name`
-- `workspace.workspace_id`
 
 ### Endpoints
 
-- `/access_codes/generate_code`
-- `/acs/credential_pools/list`
-- `/acs/credential_provisioning_automations/launch`
-- `/acs/entrances/grant_access`
-- `/acs/users/unmanaged/get`
-- `/acs/users/unmanaged/list`
-- `/action_attempts/get`
-- `/action_attempts/list`
-- `/bridges/get`
-- `/bridges/list`
-- `/client_sessions/create`
-- `/client_sessions/delete`
-- `/client_sessions/get`
-- `/client_sessions/get_or_create`
-- `/client_sessions/grant_access`
-- `/client_sessions/list`
-- `/client_sessions/revoke`
-- `/connect_webviews/create`
-- `/connect_webviews/delete`
-- `/connect_webviews/get`
-- `/connect_webviews/list`
-- `/connected_accounts/delete`
-- `/connected_accounts/get`
-- `/connected_accounts/list`
-- `/connected_accounts/update`
-- `/devices/delete`
-- `/devices/get`
-- `/devices/list_device_providers`
-- `/devices/update`
-- `/devices/simulate/connect`
-- `/devices/simulate/disconnect`
-- `/devices/simulate/remove`
-- `/devices/unmanaged/get`
-- `/devices/unmanaged/list`
-- `/devices/unmanaged/update`
-- `/events/get`
-- `/events/list`
-- `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/locks/simulate/keypad_code_entry`
-- `/locks/simulate/manual_lock_via_keypad`
 - `/networks/get`
 - `/networks/list`
-- `/noise_sensors/list`
-- `/noise_sensors/noise_thresholds/create`
-- `/noise_sensors/noise_thresholds/delete`
-- `/noise_sensors/noise_thresholds/get`
-- `/noise_sensors/noise_thresholds/list`
-- `/noise_sensors/noise_thresholds/update`
-- `/noise_sensors/simulate/trigger_noise_threshold`
-- `/user_identities/update`
-- `/webhooks/create`
-- `/webhooks/delete`
-- `/webhooks/get`
-- `/webhooks/list`
-- `/webhooks/update`
-- `/workspaces/create`
-- `/workspaces/get`
-- `/workspaces/list`
-- `/workspaces/reset_sandbox`
-- `/workspaces/update`
 
 ### Endpoint parameters
 
@@ -458,8 +295,8 @@ Items that are intentionally undocumented are not included in this section.
     - `use_offline_access_code`
 - `/access_codes/delete`
     - `sync`
-- `/access_codes/generate_code`
-    - `device_id`
+- `/access_codes/list`
+    - `customer_ids`
 - `/access_codes/update`
     - `attempt_for_offline_device`
     - `sync`
@@ -470,218 +307,70 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/access_codes/unmanaged/update`
     - `is_managed`
-- `/acs/credential_pools/list`
-    - `acs_system_id`
-- `/acs/credential_provisioning_automations/launch`
-    - `acs_credential_pool_id`
-    - `create_credential_manager_user`
-    - `credential_manager_acs_system_id`
-    - `credential_manager_acs_user_id`
-    - `user_identity_id`
+- `/access_grants/create`
+    - `location_ids`
+    - `requested_access_methods`
+- `/access_grants/list`
+    - `location_id`
 - `/acs/encoders/simulate/next_credential_scan_will_fail`
     - `error_code`
     - `acs_credential_id_on_seam`
-- `/acs/entrances/get`
-    - `acs_entrance_id`
-- `/acs/entrances/grant_access`
-    - `acs_entrance_id`
-    - `acs_user_id`
 - `/acs/entrances/list`
-    - `acs_credential_id`
-    - `acs_system_id`
     - `location_id`
-- `/acs/entrances/list_credentials_with_access`
-    - `acs_entrance_id`
-    - `include_if`
 - `/acs/users/create`
     - `email`
-- `/acs/users/list`
-    - `created_before`
 - `/acs/users/update`
     - `email`
     - `hid_acs_system_id`
-- `/acs/users/unmanaged/get`
-    - `acs_user_id`
-- `/acs/users/unmanaged/list`
-    - `acs_system_id`
-    - `limit`
-    - `user_identity_email_address`
-    - `user_identity_id`
-    - `user_identity_phone_number`
-- `/action_attempts/get`
-    - `action_attempt_id`
-- `/action_attempts/list`
-    - `action_attempt_ids`
-- `/bridges/get`
-    - `bridge_id`
-- `/client_sessions/create`
-    - `connect_webview_ids`
-    - `connected_account_ids`
-    - `expires_at`
-    - `user_identifier_key`
-    - `user_identity_ids`
-- `/client_sessions/delete`
-    - `client_session_id`
-- `/client_sessions/get`
-    - `client_session_id`
-    - `user_identifier_key`
-- `/client_sessions/get_or_create`
-    - `connect_webview_ids`
-    - `connected_account_ids`
-    - `expires_at`
-    - `user_identifier_key`
-    - `user_identity_ids`
-- `/client_sessions/grant_access`
-    - `client_session_id`
-    - `connect_webview_ids`
-    - `connected_account_ids`
-    - `user_identifier_key`
-    - `user_identity_ids`
-- `/client_sessions/list`
-    - `client_session_id`
-    - `connect_webview_id`
-    - `user_identifier_key`
-    - `user_identity_id`
-    - `without_user_identifier_key`
-- `/client_sessions/revoke`
-    - `client_session_id`
 - `/connect_webviews/create`
-    - `accepted_providers`
-    - `automatically_manage_new_devices`
-    - `custom_metadata`
-    - `custom_redirect_failure_url`
-    - `custom_redirect_url`
+    - `customer_id`
     - `device_selection_mode`
-    - `provider_category`
-    - `wait_for_device_creation`
-- `/connect_webviews/delete`
-    - `connect_webview_id`
-- `/connect_webviews/get`
-    - `connect_webview_id`
 - `/connect_webviews/list`
-    - `limit`
+    - `customer_ids`
 - `/connected_accounts/delete`
-    - `connected_account_id`
     - `sync`
-- `/connected_accounts/get`
-    - `connected_account_id`
-    - `email`
-- `/connected_accounts/update`
-    - `automatically_manage_new_devices`
-    - `connected_account_id`
-    - `custom_metadata`
-- `/devices/delete`
-    - `device_id`
-- `/devices/get`
-    - `device_id`
-    - `name`
+- `/connected_accounts/list`
+    - `customer_ids`
+- `/customers/create_portal`
+    - `features`
+    - `customer_data`
 - `/devices/list`
+    - `customer_ids`
     - `exclude_if`
     - `include_if`
     - `unstable_location_id`
-- `/devices/list_device_providers`
-    - `provider_category`
 - `/devices/update`
-    - `custom_metadata`
-    - `device_id`
-    - `is_managed`
-    - `name`
     - `properties`
-- `/devices/simulate/connect`
-    - `device_id`
-- `/devices/simulate/disconnect`
-    - `device_id`
-- `/devices/simulate/remove`
-    - `device_id`
-- `/devices/unmanaged/get`
-    - `device_id`
-    - `name`
 - `/devices/unmanaged/list`
+    - `customer_ids`
     - `exclude_if`
     - `include_if`
     - `unstable_location_id`
-- `/devices/unmanaged/update`
-    - `device_id`
-    - `is_managed`
-- `/events/get`
-    - `device_id`
-    - `event_id`
-    - `event_type`
-- `/events/list`
-    - `access_code_id`
-    - `access_code_ids`
-    - `acs_system_id`
-    - `acs_system_ids`
-    - `between`
-    - `connect_webview_id`
-    - `connected_account_id`
-    - `device_id`
-    - `device_ids`
-    - `event_ids`
-    - `event_type`
-    - `event_types`
-    - `limit`
-    - `since`
-    - `unstable_offset`
-- `/locks/get`
-    - `device_id`
-    - `name`
 - `/locks/list`
+    - `customer_ids`
     - `exclude_if`
     - `include_if`
     - `unstable_location_id`
 - `/locks/lock_door`
-    - `device_id`
     - `sync`
 - `/locks/unlock_door`
-    - `device_id`
     - `sync`
-- `/locks/simulate/keypad_code_entry`
-    - `code`
-    - `device_id`
-- `/locks/simulate/manual_lock_via_keypad`
-    - `device_id`
 - `/networks/get`
     - `network_id`
 - `/noise_sensors/list`
+    - `customer_ids`
     - `exclude_if`
     - `include_if`
     - `unstable_location_id`
 - `/noise_sensors/noise_thresholds/create`
-    - `device_id`
-    - `ends_daily_at`
-    - `name`
-    - `noise_threshold_decibels`
-    - `noise_threshold_nrs`
-    - `starts_daily_at`
     - `sync`
 - `/noise_sensors/noise_thresholds/delete`
-    - `device_id`
-    - `noise_threshold_id`
     - `sync`
-- `/noise_sensors/noise_thresholds/get`
-    - `noise_threshold_id`
-- `/noise_sensors/noise_thresholds/list`
-    - `device_id`
-    - `is_programmed`
 - `/noise_sensors/noise_thresholds/update`
-    - `device_id`
-    - `ends_daily_at`
-    - `name`
-    - `noise_threshold_decibels`
-    - `noise_threshold_id`
-    - `noise_threshold_nrs`
-    - `starts_daily_at`
     - `sync`
-- `/noise_sensors/simulate/trigger_noise_threshold`
-    - `device_id`
-- `/seam/bridge/v1/bridge_client_sessions/create`
-    - `bridge_client_machine_identifier_key`
-    - `bridge_client_name`
-    - `bridge_client_time_zone`
-- `/seam/bridge/v1/bridge_client_sessions/report_status`
-    - `is_tailscale_connected`
-    - `tailscale_ip_v4`
+- `/spaces/get_related`
+    - `exclude`
+    - `include`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -689,111 +378,133 @@ Items that are intentionally undocumented are not included in this section.
 - `/thermostats/heat_cool`
     - `sync`
 - `/thermostats/list`
+    - `customer_ids`
     - `exclude_if`
     - `include_if`
     - `unstable_location_id`
 - `/thermostats/off`
     - `sync`
 - `/thermostats/set_fan_mode`
-    - `device_id`
     - `fan_mode`
     - `sync`
 - `/thermostats/set_hvac_mode`
     - `hvac_mode_setting`
 - `/unstable_access_grants/create`
+    - `location_ids`
     - `requested_access_methods`
-- `/unstable_locations/add_acs_entrances`
-    - `acs_entrance_ids`
+- `/unstable_access_grants/list`
     - `location_id`
-- `/unstable_locations/add_devices`
-    - `device_ids`
-    - `location_id`
-- `/unstable_locations/create`
-    - `acs_entrance_ids`
-    - `device_ids`
-    - `geolocation`
-    - `name`
-    - `time_zone`
-- `/unstable_locations/delete`
-    - `location_id`
-- `/unstable_locations/get`
-    - `location_id`
-- `/unstable_locations/remove_acs_entrances`
-    - `acs_entrance_ids`
-    - `location_id`
-- `/unstable_locations/remove_devices`
-    - `device_ids`
-    - `location_id`
-- `/unstable_locations/update`
-    - `geolocation`
-    - `location_id`
-    - `name`
-    - `time_zone`
 - `/user_identities/get`
     - `user_identity_key`
-- `/user_identities/list`
-    - `credential_manager_acs_system_id`
-- `/user_identities/update`
-    - `full_name`
-- `/webhooks/create`
-    - `event_types`
-    - `url`
-- `/webhooks/delete`
-    - `webhook_id`
-- `/webhooks/get`
-    - `webhook_id`
-- `/webhooks/update`
-    - `event_types`
-    - `webhook_id`
 - `/workspaces/create`
-    - `company_name`
-    - `connect_partner_name`
-    - `connect_webview_customization`
-    - `is_sandbox`
-    - `name`
     - `webview_logo_shape`
     - `webview_primary_button_color`
     - `webview_primary_button_text_color`
     - `webview_success_message`
-- `/workspaces/update`
-    - `connect_partner_name`
-    - `connect_webview_customization`
-    - `is_suspended`
-    - `name`
+
+## Draft
+
+These items have been marked as draft.
+
+### Routes
+
+- `/access_grants`: No draft message provided
+- `/spaces`: No draft message provided
+
+### Endpoints
+
+- `/access_grants/create`: Early access.
+- `/access_grants/delete`: Early access.
+- `/access_grants/get`: Early access.
+- `/access_grants/list`: Early access.
+- `/access_grants/update`: Early access.
+- `/access_methods/delete`: Early access.
+- `/access_methods/get`: Early access.
+- `/access_methods/list`: Early access.
+- `/spaces/add_acs_entrances`: Early access.
+- `/spaces/add_devices`: Early access.
+- `/spaces/create`: Early access.
+- `/spaces/delete`: Early access.
+- `/spaces/get`: Early access.
+- `/spaces/get_related`: Early access.
+- `/spaces/list`: Early access.
+- `/spaces/remove_acs_entrances`: Early access.
+- `/spaces/remove_devices`: Early access.
+- `/spaces/update`: Early access.
 
 ## Deprecated
 
 These items are deprecated.
 
+### Resources
+
+- `acs_credential_pool`: Not used.
+- `acs_credential_provisioning_automation`: Not used.
+- `enrollment_automation`: Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.
+
 ### Resource properties
 
+- `access_grant.location_ids`: Use `space_ids`.
 - `acs_access_group.access_group_type`: Use `external_type`.
 - `acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `acs_system.connected_account_ids`: Use `connected_account_id`.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
+- `client_session.user_identity_ids`: Use `user_identity_id` instead.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
 - `unmanaged_acs_access_group.access_group_type`: Use `external_type`.
 - `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `unmanaged_acs_user.email`: use email_address.
-- `workspace.connect_partner_name`: use company_name
+- `workspace.connect_partner_name`: Use `company_name` instead.
 
 ### Endpoint parameters
 
+- `/access_codes/create`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/create_multiple`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/update`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_grants/create`
+    - `location_ids`: Use `space_ids`.
+- `/access_grants/list`
+    - `location_id`: Use `space_id`.
+- `/acs/entrances/list`
+    - `location_id`: Use `space_id`.
 - `/acs/users/create`
     - `email`: use email_address.
 - `/acs/users/update`
     - `email`: use email_address.
+- `/client_sessions/create`
+    - `user_identity_ids`: Use `user_identity_id` instead.
+- `/client_sessions/get_or_create`
+    - `user_identity_ids`: Use `user_identity_id`.
+- `/client_sessions/grant_access`
+    - `user_identity_ids`: Use `user_identity_id`.
+- `/devices/list`
+    - `unstable_location_id`: Use `space_id`.
+- `/devices/unmanaged/list`
+    - `unstable_location_id`: Use `space_id`.
+- `/locks/list`
+    - `unstable_location_id`: Use `space_id`.
+- `/noise_sensors/list`
+    - `unstable_location_id`: Use `space_id`.
 - `/thermostats/create_climate_preset`
     - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
+- `/thermostats/list`
+    - `unstable_location_id`: Use `space_id`.
 - `/thermostats/set_fan_mode`
     - `fan_mode`: Use `fan_mode_setting` instead.
 - `/thermostats/update_climate_preset`
     - `manual_override_allowed`: Use 'thermostat_schedule.is_override_allowed'
+- `/unstable_access_grants/create`
+    - `location_ids`: Use `space_ids`.
+- `/unstable_access_grants/list`
+    - `location_id`: Use `space_id`.
 - `/workspaces/create`
-    - `connect_partner_name`: use company_name
+    - `connect_partner_name`: Use `company_name` instead.
     - `webview_logo_shape`: Use `connect_webview_customization.webview_logo_shape` instead.
     - `webview_primary_button_color`: Use `connect_webview_customization.webview_primary_button_color` instead.
     - `webview_primary_button_text_color`: Use `connect_webview_customization.webview_primary_button_text_color` instead.
@@ -803,16 +514,8 @@ These items are deprecated.
 
 - `/access_codes/create`
     - `action_attempt`
-- `/access_codes/list`
-    - `pagination`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
-- `/acs/users/list`
-    - `pagination`
-- `/connected_accounts/list`
-    - `pagination`
-- `/devices/list`
-    - `pagination`
 - `/events/get`
     - `message`
 - `/locks/get`
@@ -827,134 +530,125 @@ These items are deprecated.
     - `thermostats`
 - `/user_identities/list_accessible_devices`
     - `accessible_devices`
+### Missing resources
+
+- `/bridges/get`: `bridge`
+- `/bridges/list`: `bridges`
+- `/networks/get`: `network`
+- `/networks/list`: `networks`
+- `/seam/customer/v1/automation_runs/list`: `automation_runs`
+- `/seam/customer/v1/portals/get`: `customer_portal`
+- `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
+- `/spaces/get_related`: `batch`
 
 ### Endpoints without code samples
 
-- `/access_codes/create`
-- `/access_codes/create_multiple`
-- `/access_codes/delete`
-- `/access_codes/generate_code`
-- `/access_codes/get`
-- `/access_codes/list`
-- `/access_codes/pull_backup_access_code`
-- `/access_codes/report_device_constraints`
-- `/access_codes/update`
-- `/access_codes/update_multiple`
-- `/access_codes/simulate/create_unmanaged_access_code`
-- `/access_codes/unmanaged/convert_to_managed`
-- `/access_codes/unmanaged/delete`
-- `/access_codes/unmanaged/get`
-- `/access_codes/unmanaged/list`
-- `/access_codes/unmanaged/update`
-- `/acs/credential_pools/list`
-- `/acs/credential_provisioning_automations/launch`
-- `/acs/credentials/create_offline_code`
-- `/acs/credentials/unmanaged/get`
-- `/acs/credentials/unmanaged/list`
-- `/acs/encoders/encode_access_method`
-- `/acs/encoders/encode_credential`
-- `/acs/encoders/get`
-- `/acs/encoders/list`
-- `/acs/encoders/scan_credential`
-- `/acs/encoders/simulate/next_credential_encode_will_fail`
-- `/acs/encoders/simulate/next_credential_encode_will_succeed`
-- `/acs/encoders/simulate/next_credential_scan_will_fail`
-- `/acs/encoders/simulate/next_credential_scan_will_succeed`
-- `/acs/entrances/grant_access`
-- `/acs/users/list_accessible_entrances`
-- `/acs/users/revoke_access_to_all_entrances`
-- `/acs/users/unmanaged/get`
-- `/acs/users/unmanaged/list`
-- `/action_attempts/get`
-- `/action_attempts/list`
-- `/bridges/get`
-- `/bridges/list`
-- `/client_sessions/create`
-- `/client_sessions/delete`
-- `/client_sessions/get`
-- `/client_sessions/get_or_create`
-- `/client_sessions/grant_access`
-- `/client_sessions/list`
-- `/client_sessions/revoke`
-- `/connect_webviews/create`
-- `/connect_webviews/delete`
-- `/connect_webviews/get`
-- `/connect_webviews/list`
-- `/connected_accounts/delete`
-- `/connected_accounts/get`
-- `/connected_accounts/list`
-- `/connected_accounts/update`
-- `/devices/delete`
-- `/devices/get`
-- `/devices/list`
-- `/devices/list_device_providers`
-- `/devices/update`
-- `/devices/simulate/connect`
-- `/devices/simulate/disconnect`
-- `/devices/simulate/remove`
-- `/devices/unmanaged/get`
-- `/devices/unmanaged/list`
-- `/devices/unmanaged/update`
-- `/events/get`
-- `/events/list`
+- `/access_methods/encode`
+- `/customers/create_portal`
+- `/customers/push_data`
 - `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/locks/simulate/keypad_code_entry`
-- `/locks/simulate/manual_lock_via_keypad`
-- `/networks/get`
-- `/networks/list`
-- `/noise_sensors/list`
-- `/noise_sensors/noise_thresholds/create`
-- `/noise_sensors/noise_thresholds/delete`
-- `/noise_sensors/noise_thresholds/get`
-- `/noise_sensors/noise_thresholds/list`
-- `/noise_sensors/noise_thresholds/update`
-- `/noise_sensors/simulate/trigger_noise_threshold`
-- `/phones/deactivate`
-- `/phones/get`
-- `/phones/list`
-- `/phones/simulate/create_sandbox_phone`
-- `/seam/bridge/v1/bridge_client_sessions/create`
-- `/seam/bridge/v1/bridge_client_sessions/get`
-- `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`
-- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
-- `/seam/bridge/v1/bridge_client_sessions/report_status`
-- `/seam/bridge/v1/bridge_connected_systems/list`
-- `/seam/instant_key/v1/client_sessions/exchange_short_code`
-- `/seam/mobile_sdk/v1/acs/credentials/list`
-- `/thermostats/activate_weekly_program`
-- `/thermostats/clear_weekly_program`
-- `/thermostats/get`
-- `/thermostats/daily_programs/create`
-- `/thermostats/daily_programs/delete`
-- `/thermostats/daily_programs/update`
-- `/thermostats/simulate/hvac_mode_adjusted`
-- `/thermostats/simulate/temperature_reached`
-- `/unstable_access_grants/create`
-- `/unstable_access_grants/get`
-- `/unstable_access_grants/list`
-- `/unstable_access_methods/get`
-- `/unstable_access_methods/list`
-- `/unstable_locations/add_acs_entrances`
-- `/unstable_locations/add_devices`
-- `/unstable_locations/create`
-- `/unstable_locations/delete`
-- `/unstable_locations/get`
-- `/unstable_locations/list`
-- `/unstable_locations/remove_acs_entrances`
-- `/unstable_locations/remove_devices`
-- `/unstable_locations/update`
-- `/user_identities/generate_instant_key`
-- `/user_identities/update`
-- `/webhooks/create`
-- `/webhooks/delete`
-- `/webhooks/get`
-- `/webhooks/list`
-- `/webhooks/update`
-- `/workspaces/create`
-- `/workspaces/get`
-- `/workspaces/list`
-- `/workspaces/reset_sandbox`
-- `/workspaces/update`
+- `/spaces/get_related`
+- `/user_identities/enrollment_automations/delete`
+- `/user_identities/enrollment_automations/get`
+- `/user_identities/enrollment_automations/launch`
+- `/user_identities/enrollment_automations/list`
+
+### Resources without resource samples
+
+- `enrollment_automation`
+- `event: access_code.created`
+- `event: access_code.changed`
+- `event: access_code.scheduled_on_device`
+- `event: access_code.set_on_device`
+- `event: access_code.removed_from_device`
+- `event: access_code.delay_in_setting_on_device`
+- `event: access_code.failed_to_set_on_device`
+- `event: access_code.deleted`
+- `event: access_code.delay_in_removing_from_device`
+- `event: access_code.failed_to_remove_from_device`
+- `event: access_code.modified_external_to_seam`
+- `event: access_code.deleted_external_to_seam`
+- `event: access_code.backup_access_code_pulled`
+- `event: access_code.unmanaged.converted_to_managed`
+- `event: access_code.unmanaged.failed_to_convert_to_managed`
+- `event: access_code.unmanaged.created`
+- `event: access_code.unmanaged.removed`
+- `event: access_grant.created`
+- `event: access_grant.deleted`
+- `event: access_grant.access_granted_to_all_doors`
+- `event: access_grant.access_granted_to_door`
+- `event: access_grant.access_to_door_lost`
+- `event: access_method.issued`
+- `event: access_method.revoked`
+- `event: access_method.card_encoding_required`
+- `event: access_method.deleted`
+- `event: access_method.reissued`
+- `event: acs_system.connected`
+- `event: acs_system.added`
+- `event: acs_system.disconnected`
+- `event: acs_credential.deleted`
+- `event: acs_credential.issued`
+- `event: acs_credential.reissued`
+- `event: acs_credential.invalidated`
+- `event: acs_user.created`
+- `event: acs_user.deleted`
+- `event: acs_encoder.added`
+- `event: acs_encoder.removed`
+- `event: acs_access_group.deleted`
+- `event: acs_entrance.added`
+- `event: acs_entrance.removed`
+- `event: client_session.deleted`
+- `event: connected_account.connected`
+- `event: connected_account.created`
+- `event: connected_account.successful_login`
+- `event: connected_account.disconnected`
+- `event: connected_account.completed_first_sync`
+- `event: connected_account.deleted`
+- `event: connected_account.completed_first_sync_after_reconnection`
+- `event: action_attempt.lock_door.succeeded`
+- `event: action_attempt.lock_door.failed`
+- `event: action_attempt.unlock_door.succeeded`
+- `event: action_attempt.unlock_door.failed`
+- `event: connect_webview.login_succeeded`
+- `event: connect_webview.login_failed`
+- `event: device.added`
+- `event: device.converted_to_unmanaged`
+- `event: device.unmanaged.converted_to_managed`
+- `event: device.unmanaged.connected`
+- `event: device.disconnected`
+- `event: device.unmanaged.disconnected`
+- `event: device.tampered`
+- `event: device.low_battery`
+- `event: device.battery_status_changed`
+- `event: device.removed`
+- `event: device.deleted`
+- `event: device.third_party_integration_detected`
+- `event: device.third_party_integration_no_longer_detected`
+- `event: device.salto.privacy_mode_activated`
+- `event: device.salto.privacy_mode_deactivated`
+- `event: device.connection_became_flaky`
+- `event: device.connection_stabilized`
+- `event: device.error.subscription_required`
+- `event: device.error.subscription_required.resolved`
+- `event: device.accessory_keypad_connected`
+- `event: device.accessory_keypad_disconnected`
+- `event: noise_sensor.noise_threshold_triggered`
+- `event: lock.locked`
+- `event: lock.unlocked`
+- `event: lock.access_denied`
+- `event: thermostat.climate_preset_activated`
+- `event: thermostat.manually_adjusted`
+- `event: thermostat.temperature_threshold_exceeded`
+- `event: thermostat.temperature_threshold_no_longer_exceeded`
+- `event: thermostat.temperature_reached_set_point`
+- `event: thermostat.temperature_changed`
+- `event: device.name_changed`
+- `event: enrollment_automation.deleted`
+- `event: phone.deactivated`
+- `action_attempt: SYNC_ACCESS_CODES`
+- `action_attempt: CREATE_ACCESS_CODE`
+- `action_attempt: DELETE_ACCESS_CODE`
+- `action_attempt: UPDATE_ACCESS_CODE`
+- `action_attempt: CREATE_NOISE_THRESHOLD`
+- `action_attempt: DELETE_NOISE_THRESHOLD`
+- `action_attempt: UPDATE_NOISE_THRESHOLD`

@@ -1,6 +1,8 @@
 import type {
+  ActionAttempt,
   Blueprint,
   Endpoint,
+  EventResource,
   Namespace,
   Parameter,
   Property,
@@ -21,8 +23,11 @@ interface Report {
   noDescription: ReportSection
   draft: ReportSection
   deprecated: ReportSection
+  unusedResources: UnusedResourcesReport[]
   extraResponseKeys: MissingResponseKeyReport[]
+  missingResources: MissingResourcesReport[]
   endpointsWithoutCodeSamples: string[]
+  resourcesWithoutResourceSamples: string[]
   noTitle: Pick<ReportSection, 'namespaces' | 'routes' | 'endpoints'>
 }
 
@@ -33,6 +38,15 @@ interface ReportSection {
   namespaces: ReportItem[]
   endpoints: ReportItem[]
   parameters: ParameterReportItem[]
+}
+
+interface MissingResourcesReport {
+  path: string
+  responseKey: string
+}
+
+interface UnusedResourcesReport {
+  name: string
 }
 
 interface MissingResponseKeyReport {
@@ -50,18 +64,16 @@ interface ParameterReportItem {
   params: ReportItem[]
 }
 
-type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
+interface Metadata {
+  blueprint: Blueprint
+  pathMetadata: unknown
+}
 
 export const report = (
   files: Metalsmith.Files,
   metalsmith: Metalsmith,
 ): void => {
-  const metadata = {
-    title: '',
-    routes: [],
-    resources: {},
-    ...(metalsmith.metadata() as Metadata),
-  }
+  const metadata = metalsmith.metadata() as Metadata
 
   const reportData = generateReport(metadata)
 
@@ -70,16 +82,25 @@ export const report = (
     layout: 'report.hbs',
     ...reportData,
   }
+
+  files['api/_blueprint.json'] = {
+    contents: Buffer.from(JSON.stringify(metadata.blueprint, null, 2)),
+    layout: 'default.hbs',
+  }
 }
 
 function generateReport(metadata: Metadata): Report {
+  const { blueprint } = metadata
   const report: Report = {
     undocumented: createEmptyReportSection(),
     noDescription: { ...createEmptyReportSection(), resources: [] },
     draft: { ...createEmptyReportSection(), resourceProperties: [] },
     deprecated: createEmptyReportSection(),
+    missingResources: [],
     extraResponseKeys: [],
+    unusedResources: [],
     endpointsWithoutCodeSamples: [],
+    resourcesWithoutResourceSamples: [],
     noTitle: {
       namespaces: [],
       routes: [],
@@ -87,14 +108,40 @@ function generateReport(metadata: Metadata): Report {
     },
   }
 
-  const resources = metadata.resources ?? {}
-  for (const [resourceName, resource] of Object.entries(resources)) {
-    processResource(resourceName, resource, report)
-  }
+  const pathMetadata =
+    'pathMetadata' in metadata
+      ? PathMetadataSchema.parse(metadata.pathMetadata)
+      : {}
 
-  const routes = metadata.routes ?? []
+  const routes = blueprint.routes ?? []
   for (const route of routes) {
     processRoute(route, report, metadata)
+  }
+
+  for (const namespace of blueprint.namespaces ?? []) {
+    if (
+      !namespace.isUndocumented &&
+      pathMetadata[namespace.path]?.title == null
+    ) {
+      addUntitledNamespaceToReport(namespace.path, report)
+    }
+
+    processNamespace(namespace, report)
+  }
+
+  const resources = blueprint.resources ?? []
+  for (const resource of resources) {
+    processResource(resource, routes, report)
+  }
+
+  const events = blueprint.events ?? []
+  for (const event of events) {
+    processEvent(event, report)
+  }
+
+  const actionAttempts = blueprint.actionAttempts ?? []
+  for (const actionAttempt of actionAttempts) {
+    processActionAttempt(actionAttempt, report)
   }
 
   return report
@@ -112,37 +159,78 @@ function createEmptyReportSection(): ReportSection {
 }
 
 function processResource(
-  resourceName: string,
   resource: Resource,
+  routes: Route[],
   report: Report,
 ): void {
+  const { resourceType: name } = resource
   if (resource.description == null || resource.description.trim() === '') {
-    report.noDescription.resources.push({ name: resourceName })
+    report.noDescription.resources.push({ name })
   }
 
   if (resource.isDeprecated) {
     report.deprecated.resources.push({
-      name: resourceName,
+      name,
       reason: resource.deprecationMessage ?? defaultDeprecatedMessage,
     })
   }
 
   if (resource.isUndocumented) {
     report.undocumented.resources.push({
-      name: resourceName,
+      name,
       reason: resource.undocumentedMessage ?? defaultUndocumentedMessage,
     })
 
     if (resource.isDraft) {
       report.draft.resources.push({
-        name: resourceName,
+        name,
         reason: resource.draftMessage ?? defaultDraftMessage,
       })
     }
   }
 
+  if (resource.resourceSamples.length === 0 && !resource.isUndocumented) {
+    report.resourcesWithoutResourceSamples.push(name)
+  }
+
   for (const property of resource.properties) {
-    processProperty(resourceName, property, report)
+    processProperty(name, property, report)
+  }
+
+  let isResourceUsed = false
+  for (const route of routes) {
+    for (const endpoint of route.endpoints) {
+      if (endpoint.response.responseType === 'void') continue
+      if (endpoint.response.resourceType === name) {
+        isResourceUsed = true
+      }
+    }
+  }
+
+  if (!isResourceUsed) {
+    report.unusedResources.push({
+      name,
+    })
+  }
+}
+
+function processActionAttempt(
+  actionAttempt: ActionAttempt,
+  report: Report,
+): void {
+  if (
+    actionAttempt.resourceSamples.length === 0 &&
+    !actionAttempt.isUndocumented
+  ) {
+    report.resourcesWithoutResourceSamples.push(
+      `action_attempt: ${actionAttempt.actionAttemptType}`,
+    )
+  }
+}
+
+function processEvent(event: EventResource, report: Report): void {
+  if (event.resourceSamples.length === 0 && !event.isUndocumented) {
+    report.resourcesWithoutResourceSamples.push(`event: ${event.eventType}`)
   }
 }
 
@@ -205,21 +293,9 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
     'pathMetadata' in metadata
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
-  const namespace = route.namespace
-  if (
-    namespace != null &&
-    pathMetadata[namespace.path]?.title == null &&
-    !namespace.isUndocumented
-  ) {
-    addUntitledNamespaceToReport(namespace.path, report)
-  }
 
   if (pathMetadata[route.path]?.title == null && !route.isUndocumented) {
     report.noTitle.routes.push({ name: route.path })
-  }
-
-  if (route.namespace != null) {
-    processNamespace(route.namespace, report)
   }
 
   // TODO: route description
@@ -283,7 +359,7 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
     })
   }
 
-  if (endpoint.codeSamples.length === 0) {
+  if (endpoint.codeSamples.length === 0 && !endpoint.isUndocumented) {
     report.endpointsWithoutCodeSamples.push(endpoint.path)
   }
 
@@ -293,7 +369,20 @@ function processEndpoint(endpoint: Endpoint, report: Report): void {
 
   processResponseKeys(endpoint, report)
 
+  processResponseType(endpoint, report)
+
   processParameters(endpoint.path, endpoint.request.parameters, report)
+}
+
+function processResponseType(endpoint: Endpoint, report: Report): void {
+  if (endpoint.response.responseType === 'void') return
+
+  if (endpoint.response.resourceType === 'unknown') {
+    report.missingResources.push({
+      path: endpoint.path,
+      responseKey: endpoint.response.responseKey,
+    })
+  }
 }
 
 function processResponseKeys(endpoint: Endpoint, report: Report): void {
@@ -304,7 +393,7 @@ function processResponseKeys(endpoint: Endpoint, report: Report): void {
 
   const openapiResponsePropKeys = Object.keys(
     openapiResponseSchemaProps,
-  ).filter((key) => key !== 'ok')
+  ).filter((key) => !['ok', 'pagination'].includes(key))
   if (openapiResponsePropKeys.length <= 1) return
 
   const endpointResponseKey = endpoint.response.responseKey

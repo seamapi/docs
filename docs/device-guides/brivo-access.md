@@ -18,14 +18,7 @@ The Brivo Access platform supports the following wireless locks:
 
 <table><thead><tr><th width="210">Lock Brand</th><th>Integration Description</th></tr></thead><tbody><tr><td><a href="https://resources.brivo.com/data-sheets/allegion-ndele-wireless-locks-data-sheet">Allegion</a></td><td>Brivo partners with Allegion to provide AD Series, LE, NDE, and Control® wireless locks for multifamily and commercial real estate uses.</td></tr><tr><td><a href="https://resources.brivo.com/data-sheets/assa-abloy-wireless-locks-data-sheet">ASSA ABLOY Aperio™</a></td><td>Brivo provides a variety of ASSA ABLOY Aperio locks for small, medium, and enterprise uses.</td></tr><tr><td><a href="https://www.brivo.com/lp/request-consultation">Z-Wave</a></td><td>Brivo provides a variety of Z-Wave-supported locks for multifamily residential doors connected to the <a href="https://www.brivo.com/products/smart-home/">Brivo Smart Home</a>.</td></tr><tr><td><a href="https://www.brivo.com/lp/request-consultation">Salto</a></td><td>Brivo supports various Salto wireless locks.</td></tr></tbody></table>
 
-For detailed information about the Brivo-connected devices that Seam supports, see the following table and our [Brivo Supported Devices page](https://www.seam.co/manufacturers/brivo):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Brivo"]'
-/>" %}
+For detailed information about the Brivo-connected devices that Seam supports, see our [Brivo Supported Devices page](https://www.seam.co/manufacturers/brivo).
 
 ***
 
@@ -41,7 +34,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables you to connect your Brivo Access platform and devices to Seam, include the `brivo` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables you to connect your Brivo Access platform and devices to Seam, include the `brivo` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

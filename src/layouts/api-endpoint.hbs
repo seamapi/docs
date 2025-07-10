@@ -1,17 +1,26 @@
 # {{title}}
+{{#if isAlpha}}
+{{> alpha-notice}}
+{{/if}}
 
-```
-{{request.preferredMethod}} {{path}} ⇒ {{#if response.responseKey}}{{#if (eq response.responseType "resource_list")}}{ {{response.responseKey}}: [{{response.resourceType}}, …] }{{else}}{ {{response.responseKey}} }{{/if}}{{else}}void{{/if}}
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+{{#if additionalCodeSamples.length}}
+- [Examples](#examples)
+{{/if}}
 
 {{{description}}}
 
 {{#with primaryCodeSample}}
-{{> code-sample }}
+
+{{> code-sample inlineDescription=description}}
 
 {{/with}}
+
 {{#if authMethods}}
-## Authentication Methods
+<details>
+
+<summary>Authentication Methods</summary>
 
 {{#each authMethods}}
 - {{this}}
@@ -20,29 +29,26 @@
 {{/if}}
 {{/each}}
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
 {{/if}}
+
 ## Request Parameters
 
 {{#if request.parameters.length}}
 {{#each request.parameters}}
-### `{{this.name}}`
-
-Format: `{{this.format}}`
-{{#if this.itemFormat}}
-Item format: `{{this.itemFormat}}`
-{{/if}}
-Required: {{#if this.required}}Yes{{else}}No{{/if}}
+**`{{this.name}}`** {{#if this.jsonType}}*{{this.jsonType}}*{{/if}}{{#if this.itemFormat}} *of {{this.itemFormat}}s*{{/if}}{{#if this.required}} (Required){{/if}}
 {{#if this.description}}
 
 {{this.description}}
 {{/if}}
 {{#if this.itemEnumValues}}
+<details>
+
+<summary>Enum values</summary>
 
 {{> enum-values enumValues=this.itemEnumValues}}
-{{/if}}
-{{#if this.enumValues}}
-
-{{> enum-values}}
+</details>
 {{/if}}
 {{#if this.objectParameters}}
 {{#each this.objectParameters}}
@@ -50,31 +56,42 @@ Required: {{#if this.required}}Yes{{else}}No{{/if}}
 {{> property-collapsible this}}
 
 {{/each}}
+{{else}}
+
+---
+
 {{/if}}
-{{#if this.isDeprecated}}
-
-{{> deprecated-warning}}
-{{/if}}
-
-***
-
 {{/each}}
 {{else}}
 None
 
 {{/if}}
-## Return Type
 
-{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array<[{{response.escapedResourceType}}](./)>{{else}}[{{response.escapedResourceType}}](./){{/if}}{{else}}void{{/if}}
-{{#with response.actionAttempt}}
+## Response
 
-{{> api-resource headingOffset=true}}
-{{/with}}
+{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{else}}[{{response.escapedResourceType}}]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{/if}}{{else}}void{{/if}}
+
+{{#if resourceSamples.length}}
+
+{{> resource-samples resourceSamples }}
+{{/if}}
 {{#if additionalCodeSamples.length}}
 
-## Additional Code Samples
+---
+
+## Examples
 
 {{#each additionalCodeSamples}}
+
+### {{this.title}}
+
+{{this.description}}
+
 {{> code-sample }}
+{{#unless @last}}
+
+---
+
+{{/unless}}
 {{/each}}
 {{/if}}

@@ -1,258 +1,340 @@
 # List Credentials
 
-```
-POST /acs/credentials/list ⇒ { acs_credentials: [acs_credential, …] }
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
 
+
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Returns a list of all credentials.
+
+#### Code:
 
 ```javascript
-await seam.acs.credentials.list({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  user_identity_id: "22222222-2222-2222-2222-222222222222",
-  is_multi_phone_sync_credential: true,
-});
+await seam.acs.credentials.list();
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 [
   {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "access_method": "mobile_key",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential": true
+    "access_method": "code",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "code": "123456",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "FRONT_DOOR",
+    "errors": [],
+    "external_type": "salto_ks_credential",
+    "external_type_display_name": "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": false,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-07-10T16:54:17.946512Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
   }
 ]
 ```
 {% endtab %}
 
-{% tab title="Python" %}
-#### Request
+{% tab title="cURL" %}
 
-```python
-seam.acs.credentials.list(
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    acs_system_id="11111111-1111-1111-1111-111111111111",
-    user_identity_id="22222222-2222-2222-2222-222222222222",
-    is_multi_phone_sync_credential=true,
-)
+Returns a list of all credentials.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Response
+#### Output:
+
+```curl
+{
+  "acs_credentials": [
+    {
+      "access_method": "code",
+      "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+      "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+      "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+      "code": "123456",
+      "created_at": "2025-06-16T16:54:17.946514Z",
+      "display_name": "FRONT_DOOR",
+      "errors": [],
+      "external_type": "salto_ks_credential",
+      "external_type_display_name": "Salto KS Credential",
+      "is_latest_desired_state_synced_with_provider": true,
+      "is_managed": true,
+      "is_multi_phone_sync_credential": false,
+      "is_one_time_use": false,
+      "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+      "starts_at": "2025-07-10T16:54:17.946512Z",
+      "warnings": [],
+      "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Returns a list of all credentials.
+
+#### Code:
+
+```python
+seam.acs.credentials.list()
+```
+
+#### Output:
 
 ```python
 [
     AcsCredential(
-        acs_credential_id="99999999-9999-9999-9999-999999999999",
-        acs_user_id="33333333-3333-3333-3333-333333333333",
-        display_name="Multi Phone Sync Credential",
-        code=None,
-        acs_system_id="11111111-1111-1111-1111-111111111111",
-        access_method="mobile_key",
-        workspace_id="00000000-0000-0000-0000-000000000000",
-        created_at="2024-04-12T03:56:22.396Z",
-        is_multi_phone_sync_credential=true,
+        access_method="code",
+        acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+        acs_system_id="b1d03165-2759-474b-a342-e02223f27b39",
+        acs_user_id="0fc82df4-391b-4d00-a234-86378f1c3952",
+        code="123456",
+        created_at="2025-06-16T16:54:17.946514Z",
+        display_name="FRONT_DOOR",
+        errors=[],
+        external_type="salto_ks_credential",
+        external_type_display_name="Salto KS Credential",
+        is_latest_desired_state_synced_with_provider=true,
+        is_managed=true,
+        is_multi_phone_sync_credential=false,
+        is_one_time_use=false,
+        latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+        starts_at="2025-07-10T16:54:17.946512Z",
+        warnings=[],
+        workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
     )
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Returns a list of all credentials.
+
+#### Code:
 
 ```ruby
-seam.acs.credentials.list(
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  user_identity_id: "22222222-2222-2222-2222-222222222222",
-  is_multi_phone_sync_credential: true,
-)
+seam.acs.credentials.list()
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 [
   {
-    "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-    "display_name" => "Multi Phone Sync Credential",
-    "code" => nil,
-    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-    "access_method" => "mobile_key",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
-    "created_at" => "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential" => true,
+    "access_method" => "code",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id" => "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "code" => "123456",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "FRONT_DOOR",
+    "errors" => [],
+    "external_type" => "salto_ks_credential",
+    "external_type_display_name" => "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
+    "is_multi_phone_sync_credential" => false,
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-07-10T16:54:17.946512Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
   },
 ]
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Returns a list of all credentials.
+
+#### Code:
 
 ```php
-<?php
-$seam->acs->credentials->list(
-    acs_user_id: "33333333-3333-3333-3333-333333333333",
-    acs_system_id: "11111111-1111-1111-1111-111111111111",
-    user_identity_id: "22222222-2222-2222-2222-222222222222",
-    is_multi_phone_sync_credential: true
-);
+$seam->acs->credentials->list();
 ```
 
-#### Response
+#### Output:
 
 ```php
-<?php
 [
     [
-        "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-        "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-        "display_name" => "Multi Phone Sync Credential",
-        "code" => null,
-        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-        "access_method" => "mobile_key",
-        "workspace_id" => "00000000-0000-0000-0000-000000000000",
-        "created_at" => "2024-04-12T03:56:22.396Z",
-        "is_multi_phone_sync_credential" => true,
+        "access_method" => "code",
+        "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+        "acs_system_id" => "b1d03165-2759-474b-a342-e02223f27b39",
+        "acs_user_id" => "0fc82df4-391b-4d00-a234-86378f1c3952",
+        "code" => "123456",
+        "created_at" => "2025-06-16T16:54:17.946514Z",
+        "display_name" => "FRONT_DOOR",
+        "errors" => [],
+        "external_type" => "salto_ks_credential",
+        "external_type_display_name" => "Salto KS Credential",
+        "is_latest_desired_state_synced_with_provider" => true,
+        "is_managed" => true,
+        "is_multi_phone_sync_credential" => false,
+        "is_one_time_use" => false,
+        "latest_desired_state_synced_with_provider_at" =>
+            "2025-06-18T16:54:17.946514Z",
+        "starts_at" => "2025-07-10T16:54:17.946512Z",
+        "warnings" => [],
+        "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
     ],
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Returns a list of all credentials.
+
+#### Code:
 
 ```seam_cli
-seam acs credentials list --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_system_id "11111111-1111-1111-1111-111111111111" --user_identity_id "22222222-2222-2222-2222-222222222222" --is_multi_phone_sync_credential true
+seam acs credentials list
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 [
   {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "access_method": "mobile_key",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential": true
+    "access_method": "code",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "code": "123456",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "FRONT_DOOR",
+    "errors": [],
+    "external_type": "salto_ks_credential",
+    "external_type_display_name": "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": false,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-07-10T16:54:17.946512Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
   }
 ]
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.List(
-		context.Background(),
-		credentials.CredentialsListRequest{
-			AcsUserId:                  api.String("33333333-3333-3333-3333-333333333333"),
-			AcsSystemId:                api.String("11111111-1111-1111-1111-111111111111"),
-			UserIdentityId:             api.String("22222222-2222-2222-2222-222222222222"),
-			IsMultiPhoneSyncCredential: api.Bool(true),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-[]api.AcsCredential{api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "11111111-1111-1111-1111-111111111111", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}}
-```
-{% endtab %}
-
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `acs_system_id`
+**`acs_system_id`** *String*
 
-Format: `UUID`
-Required: No
+ID of the access system for which you want to retrieve all credentials.
 
-ID of the access control system for which you want to retrieve all credentials.
+---
 
-***
+**`acs_user_id`** *String*
 
-### `acs_user_id`
+ID of the access system user for which you want to retrieve all credentials.
 
-Format: `UUID`
-Required: No
+---
 
-ID of the ACS user for which you want to retrieve all credentials.
-
-***
-
-### `created_before`
-
-Format: `Datetime`
-Required: No
+**`created_before`** *String*
 
 Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.
 
-***
+---
 
-### `is_multi_phone_sync_credential`
-
-Format: `Boolean`
-Required: No
+**`is_multi_phone_sync_credential`** *Boolean*
 
 Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.
 
-***
+---
 
-### `limit`
-
-Format: `Number`
-Required: No
+**`limit`** *Number*
 
 Number of credentials to return.
 
-***
+---
 
-### `user_identity_id`
-
-Format: `UUID`
-Required: No
+**`user_identity_id`** *String*
 
 ID of the user identity for which you want to retrieve all credentials.
 
-***
+---
 
-## Return Type
 
-Array<[acs\_credential](./)>
+## Response
+
+Array of [acs\_credentials](.)
+
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "access_method": "card",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+  "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+  "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+  "card_number": "164d29dc4a09b65f",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Guest Lock 1, Vingcard Lock 2",
+  "ends_at": "2025-07-12T16:54:17.946512Z",
+  "errors": [],
+  "external_type": "visionline_card",
+  "external_type_display_name": "Visionline Card",
+  "is_issued": true,
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": false,
+  "issued_at": "2025-06-16T16:54:17.946512Z",
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-07-10T16:54:17.946512Z",
+  "visionline_metadata": {
+    "card_function_type": "guest",
+    "card_id": "5",
+    "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+    "credential_id": "15",
+    "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+    "is_valid": true
+  },
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+{% endtabs %}

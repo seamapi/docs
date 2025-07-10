@@ -14,14 +14,7 @@ description: Guide for using 2N® intercom systems with Seam
 
 This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 
-For detailed information about the 2N devices that Seam supports, see the following table and our [2N Supported Devices page](https://www.seam.co/manufacturers/2n):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["2N"]'
-/>" %}
+For detailed information about the 2N devices that Seam supports, see our [2N Supported Devices page](https://www.seam.co/manufacturers/2n).
 
 ***
 
@@ -36,7 +29,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their 2N devices to Seam, include the `my_2n` [device provider key](../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their 2N devices to Seam, include the `my_2n` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

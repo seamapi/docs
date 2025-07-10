@@ -1,40 +1,85 @@
 # Update a Thermostat Schedule
 
-```
-PATCH /thermostats/schedules/update ⇒ void
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
+
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Updates a specified thermostat schedule.
+
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.update({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
+  thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
+  max_override_period_minutes: 90,
+  starts_at: "2025-06-20T03:24:25.000Z",
+  ends_at: "2025-06-22T06:04:21.000Z",
+  is_override_allowed: true,
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 // void
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+Updates a specified thermostat schedule.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/schedules/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "thermostat_schedule_id": "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+  "name": "Jane's Stay",
+  "climate_preset_key": "Occupied",
+  "max_override_period_minutes": 90,
+  "starts_at": "2025-06-20T03:24:25.000Z",
+  "ends_at": "2025-06-22T06:04:21.000Z",
+  "is_override_allowed": true
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-#### Request
+
+Updates a specified thermostat schedule.
+
+#### Code:
 
 ```python
 seam.thermostats.schedules.update(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at="2024-11-15T15:00:00Z",
+    thermostat_schedule_id="f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+    name="Jane's Stay",
+    climate_preset_key="Occupied",
+    max_override_period_minutes=90,
+    starts_at="2025-06-20T03:24:25.000Z",
+    ends_at="2025-06-22T06:04:21.000Z",
+    is_override_allowed=true,
 )
 ```
 
-#### Response
+#### Output:
 
 ```python
 None
@@ -42,16 +87,24 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Updates a specified thermostat schedule.
+
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.update(
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z",
+  thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+  name: "Jane's Stay",
+  climate_preset_key: "Occupied",
+  max_override_period_minutes: 90,
+  starts_at: "2025-06-20T03:24:25.000Z",
+  ends_at: "2025-06-22T06:04:21.000Z",
+  is_override_allowed: true,
 )
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 nil
@@ -59,138 +112,108 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Updates a specified thermostat schedule.
+
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->schedules->update(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    ends_at: "2024-11-15T15:00:00Z"
+    thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
+    name: "Jane's Stay",
+    climate_preset_key: "Occupied",
+    max_override_period_minutes: 90,
+    starts_at: "2025-06-20T03:24:25.000Z",
+    ends_at: "2025-06-22T06:04:21.000Z",
+    is_override_allowed: true
 );
 ```
 
-#### Response
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Updates a specified thermostat schedule.
+
+#### Code:
 
 ```seam_cli
-seam thermostats schedules update --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4" --ends_at "2024-11-15T15:00:00Z"
+seam thermostats schedules update --thermostat_schedule_id "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c" --name "Jane's Stay" --climate_preset_key "Occupied" --max_override_period_minutes 90 --starts_at "2025-06-20T03:24:25.000Z" --ends_at "2025-06-22T06:04:21.000Z" --is_override_allowed true
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {}
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import schedules "github.com/seamapi/go/schedules"
-
-func main() {
-	client.Thermostats.Schedules.Update(
-		context.Background(),
-		schedules.SchedulesUpdateRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-			EndsAt:               api.String("2024-11-15T15:00:00Z"),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-nil
-```
-{% endtab %}
-
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `thermostat_schedule_id`
+**`thermostat_schedule_id`** *String* (Required)
 
-Format: `UUID`
-Required: Yes
+ID of the thermostat schedule that you want to update.
 
-ID of the desired thermostat schedule.
+---
 
-***
-
-### `climate_preset_key`
-
-Format: `String`
-Required: No
+**`climate_preset_key`** *String*
 
 Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the thermostat schedule.
 
-***
+---
 
-### `ends_at`
-
-Format: `String`
-Required: No
+**`ends_at`** *String*
 
 Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-***
+---
 
-### `is_override_allowed`
-
-Format: `Boolean`
-Required: No
+**`is_override_allowed`** *Boolean*
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
-***
+---
 
-### `max_override_period_minutes`
-
-Format: `Number`
-Required: No
+**`max_override_period_minutes`** *Number*
 
 Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
-***
+---
 
-### `name`
+**`name`** *String*
 
-Format: `String`
-Required: No
+Name of the thermostat schedule.
 
-User-friendly name to identify the thermostat schedule.
+---
 
-***
-
-### `starts_at`
-
-Format: `String`
-Required: No
+**`starts_at`** *String*
 
 Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
-***
+---
 
-## Return Type
+
+## Response
 
 void
+

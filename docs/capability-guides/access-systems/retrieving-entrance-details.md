@@ -130,10 +130,6 @@ $seam->acs->entrances->list();
 ```
 {% endtab %}
 
-{% tab title="Untitled" %}
-
-{% endtab %}
-
 {% tab title="C#" %}
 **Request:**
 
@@ -155,47 +151,8 @@ seam.EntrancesAcs.List();
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_entrances, uErr := client.Acs.Entrances.List(
-  context.Background(), &acs.EntrancesListRequest{},
-)
-```
-
-**Response:**
-
-```json
-{
-  "acs_entrances": [
-    {
-      "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
-      "display_name": "Guest Lock 2",
-      ...
-    },
-    ...
-  ],
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -351,49 +308,8 @@ seam.EntrancesAcs.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_entrances, uErr := client.Acs.Entrances.List(
-  context.Background(), &acs.EntrancesListRequest{
-    AcsSystemId: api.String("11111111-1111-1111-1111-111111111111"),
-  },
-)
-```
-
-**Response:**
-
-```json
-{
-  "acs_entrances": [
-    {
-      "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
-      "display_name": "Guest Lock 2",
-      ...
-    },
-    ...
-  ],
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -579,55 +495,8 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_users, uErr := client.Acs.Entrances.ListCredentialsWithAccess(
-  context.Background(), &acs.UsersListRequest{
-    AcsEntranceId: api.String("55555555-5555-5555-5555-555555555555")
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-{
-  "acs_credentials": [
-    {
-      "acs_credential_id": "77777777-7777-7777-7777-777777777777",
-      "acs_user_id": "33333333-3333-3333-3333-333333333333",
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "access_method": "mobile_key",
-      "starts_at": "2024-04-09T14:30:55.688Z",
-      "ends_at": "2024-03-04T10:40:00.000Z",
-      ...
-    },
-    ...
-  ],
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -776,44 +645,6 @@ seam.EntrancesAcs.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_entrance, uErr := client.Acs.Entrances.Get(
-  context.Background(), &acs.EntrancesGetRequest{
-    AcsEntranceId: "55555555-5555-5555-5555-555555555555",
-  },
-)
-```
-
-**Response:**
-
-```json
-{
-  "acs_entrance": {
-    "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "display_name": "Guest Lock 2",
-    ...
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}

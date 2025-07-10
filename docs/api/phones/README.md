@@ -1,217 +1,259 @@
 # Phones
 
-## `phone`
+## The phone Object
+
+- [Properties](./#properties)
+- [phone.properties](./#phone.properties)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
 
 Represents an app user's mobile phone.
 
-### `created_at`
+{% tabs %}
+{% tab title="Phone" %}
 
-Format: `Datetime`
+A phone resource.
 
-Date and time at which the `phone` was created.
+```json
+{
+  "created_at": "2025-06-14T16:54:17.946540Z",
+  "custom_metadata": { "id": "internalId1" },
+  "device_id": "e452f665-a635-4c65-922b-9feab0e0f84f",
+  "device_type": "ios_phone",
+  "display_name": "My Phone",
+  "errors": [],
+  "nickname": "My Phone",
+  "properties": {
+    "assa_abloy_credential_service_metadata": {
+      "endpoints": [
+        {
+          "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+          "is_active": true
+        }
+      ],
+      "has_active_endpoint": true
+    }
+  },
+  "warnings": [],
+  "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+## Properties
+
+**`created_at`** *Datetime*
+
+Date and time at which the phone was created.
+
+
+
 
 ---
 
-### `custom_metadata`
-
-Format: `Record`
+**`custom_metadata`** *Record*
 
 Optional [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for the phone.
 
----
 
-### `device_id`
 
-Format: `UUID`
-
-ID of the `phone`.
 
 ---
 
-### `device_type`
+**`device_id`** *UUID*
 
-Format: `Enum`
+ID of the phone.
 
-Type of phone.
 
-Possible enum values:
-- `ios_phone`
-- `android_phone`
+
 
 ---
 
-### `display_name`
+**`device_type`** *Enum*
 
-Format: `String`
+Device type for phones.
 
-Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
-
----
-
-### `errors`
-
-Format: `List`
-
-Item format: `Object`
-
-Errors associated with the `phone`.
 
 <details>
+<summary>Enum values</summary>
 
-<summary><code>error_code</code> Format: <code>String</code></summary>
+- <code>ios_phone</code>
+- <code>android_phone</code>
 </details>
 
-<details>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+---
+
+**`display_name`** *String*
+
+Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
+
+
+
+
+---
+
+**`errors`** *List* *of Objects*
+
+Errors associated with the phone.
+
+
+
+<details>
+  <summary>Child Object Properties</summary>
+
+  <strong><code>error_code</code></strong> <i>String</i>
+
+  <strong><code>message</code></strong> <i>String</i>
 </details>
 
 ---
 
-### `nickname`
-
-Format: `String`
+**`nickname`** *String*
 
 Optional nickname to describe the phone, settable through Seam.
 
+
+
+
 ---
 
-### `properties`
+**`warnings`** *List* *of Objects*
 
-Format: `Object`
+Warnings associated with the phone.
 
-Properties of the phone.
+
 
 <details>
+  <summary>Child Object Properties</summary>
 
-<summary><code>assa_abloy_credential_service_metadata</code> Format: <code>Object</code></summary>
+  <strong><code>message</code></strong> <i>String</i>
 
-ASSA ABLOY Credential Service metadata for the phone.
+  <strong><code>warning_code</code></strong> <i>String</i>
 </details>
 
+---
+
+**`workspace_id`** *UUID*
+
+ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the phone.
+
+
+
+
+---
+
+
+## phone.properties
+
+**`assa_abloy_credential_service_metadata`** *Object*
+
+ASSA ABLOY Credential Service metadata for the phone.
+
+
+
 <details>
+  <summary>Child Properties</summary>
 
-<summary><code>assa_abloy_credential_service_metadata.endpoints</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+  - <strong><code>endpoints</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Endpoints associated with the phone.
 
-Endpoints associated with the phone.
-
-- <code>endpoint_id</code> Format: <code>String</code>
+- <strong><code>endpoint_id</code></strong> <i>String</i>
 
   ID of the associated endpoint.
 
 
-- <code>is_active</code> Format: <code>Boolean</code>
+- <strong><code>is_active</code></strong> <i>Boolean</i>
 
   Indicated whether the endpoint is active.
 
+
+  - <strong><code>has_active_endpoint</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential service has active endpoints associated with the phone.
+
 </details>
 
-<details>
+---
 
-<summary><code>assa_abloy_credential_service_metadata.has_active_endpoint</code> Format: <code>Boolean</code></summary>
-
-Indicates whether the credential service has active endpoints associated with the phone.
-</details>
-
-<details>
-
-<summary><code>salto_space_credential_service_metadata</code> Format: <code>Object</code></summary>
+**`salto_space_credential_service_metadata`** *Object*
 
 Salto Space credential service metadata for the phone.
-</details>
+
+
 
 <details>
+  <summary>Child Properties</summary>
 
-<summary><code>salto_space_credential_service_metadata.has_active_phone</code> Format: <code>Boolean</code></summary>
+  - <strong><code>has_active_phone</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential service has an active associated phone.
 
-Indicates whether the credential service has an active associated phone.
 </details>
 
 ---
 
-### `warnings`
-
-Format: `List`
-
-Item format: `Object`
-
-Warnings associated with the `phone`.
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>warning_code</code> Format: <code>String</code></summary>
-</details>
-
----
-
-### `workspace_id`
-
-Format: `UUID`
-
-ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the `phone`.
-
----
-
-## Endpoints
-
-### [`/phones/deactivate`](./deactivate.md)
-
-Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md#app-user-lost-phone-process).
-### [`/phones/get`](./get.md)
-
-Returns a single phone entry matching the provided `device_id`.
-### [`/phones/list`](./list.md)
-
-Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
-
----
 
 ## Events
 
-### `phone.deactivated`
+**`phone.deactivated`**
 
 A phone device was deactivated.
 
 <details>
 
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
+<summary>Properties</summary>
 
-Date and time at which the event was created.
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device; present when device_id is provided.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the affected phone device.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `phone.deactivated`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
-<details>
 
-<summary><code>device_id</code> Format: <code>UUID</code></summary>
-
-ID of the [device](../../core-concepts/devices/README.md).
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `phone.deactivated`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../core-concepts/workspaces/README.md).
-</details>
 ---
+
+## Endpoints
+
+
+[**`/phones/deactivate`**](./deactivate.md)
+
+Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md#app-user-lost-phone-process).
+
+
+[**`/phones/get`**](./get.md)
+
+Returns a specified [phone](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md).
+
+
+[**`/phones/list`**](./list.md)
+
+Returns a list of all [phones](../../capability-guides/mobile-access/managing-phones-for-a-user-identity.md). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
+
 

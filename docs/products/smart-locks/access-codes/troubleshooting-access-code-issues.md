@@ -8,9 +8,28 @@ Seam might encounter issues when programming an access code on a lock. This trou
 
 When scheduling an access code on a device that supports [native scheduling](./#native-scheduling), Seam begins to load it onto the device three days in advance, unless it's a [just-in-time code](./#native-scheduling). Seam records any errors or warnings on the access code when it attempts to set it on the device. This approach ensures that you have ample time to address any issues, using the mitigation steps in this guide. Note that not all device brands support the ability to program codes in advance. See [Native Scheduling—Supported Providers](./#native-scheduling-supported-providers) for details.
 
-## Determine the issue
+## Access Code Error Handling
 
-The first step is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](../../../api-clients/access_codes/get) or [List Access Codes](../../../api-clients/access_codes/list.md) request, and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes, and go to the matching remedy below for next steps.
+Seam provides both generic and more specific access code errors. We recommend that you add error handling logic to your app for each of the following generic errors:
+
+| Error Type                             | Description                                                                                                                                                                                                                                                                                                               |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `failed_to_set_on_device`              | An error occurred when we tried to set the access code on the device. We will continue to try and set the code on the device in case the error was temporary.                                                                                                                                                             |
+| `failed_to_remove_from_device`         | An error occurred when we tried to remove the access code from the device. We will continue to try and remove the code from the device in case the error was temporary.                                                                                                                                                   |
+| `code_modified_external_to_seam`       | We detected that the code was modified or removed externally after Seam successfully set it on the device. We will attempt to set the code on the device again. Please advise the user that Seam will re-set codes they modify or remove manually, and to review other lock integrations that may be modifying the codes. |
+| `conflicting_unmanaged_access_code_id` | An access code called "Foo bar" with the same pin already exists on the device.                                                                                                                                                                                                                                           |
+
+Your app should also include a fallback case if it encounters an unknown generic error code.
+
+When Seam is able to provide more specific information beyond one of the generic errors, your app can display additional context or suggest provider-specific resolutions.
+
+{% hint style="info" %}
+If the device or connected account associated with an access code has an error, it is attached to the access code alongside any other access code errors. Treat these errors as specific errors.
+{% endhint %}
+
+## Determining the Issue
+
+The first step in troubleshooting an access code issue is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](../../../api/access_codes/get.md) or [List Access Codes](../../../api/access_codes/list.md) request and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes. Then, see the matching remedy in [Suggested Access Code Remedies](troubleshooting-access-code-issues.md#suggested-access-code-remedies) for next steps.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -160,36 +179,13 @@ Warnings:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-AccessCode accessCode = seam.accessCodes()
-        .get(AccessCodesGetRequest.builder()
-                .accessCodeId("cd7f5b14-56e3-48b1-a351-9cab819eea6a")
-                .build());
-System.out.println("Errors:");
-System.out.println(accessCode.getErrors());
-System.out.println("Warnings:");
-System.out.println(accessCode.getWarnings());
-```
-
-**Response:**
-
-```json
-Errors:
-Optional[[]]
-Warnings:
-Optional[[]]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
-## How to investigate and fix access code errors
+## Suggested Access Code Remedies
 
-See our list of recommended mitigations for different error codes:
+We recommend the following mitigations for various error codes:
 
 | Error Code                                         | Recommended remedies                                                                                                                                                                                                                                                                                                                                                                                         |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -204,5 +200,5 @@ See our list of recommended mitigations for different error codes:
 | `salto_site_user_not_subscribed`                   | Check the Salto user's subscription and your Salto site's subscription limit.                                                                                                                                                                                                                                                                                                                                |
 | `smartthings_failed_to_set_after_multiple_retries` | Check for duplicate codes caused by third-party software managing the device. RBoy Apps in particular can cause this, so disable these for devices that are managed using Seam if possible.                                                                                                                                                                                                                  |
 | `smartthings_no_free_slots_available`              | Delete existing access codes on the device to free up slots for new access codes. Note that in addition to the codes managed by Seam, there are 3 other codes on the device.                                                                                                                                                                                                                                 |
-| `kwikset_unable_to_confirm_code`                   | This error is usually caused by a duplicate pin code on the device that was set outside of Seam. Try to update this access code's 'code' value through Seam Console or by using our [Update Access Code](../../../api-clients/access_codes/update.md) endpoint                                                                                                                                |
+| `kwikset_unable_to_confirm_code`                   | This error is usually caused by a duplicate pin code on the device that was set outside of Seam. Try to update this access code's 'code' value through Seam Console or by using our [Update Access Code](../../../api/access_codes/update.md) endpoint                                                                                                                                                       |
 | `kwikset_unable_to_confirm_deletion`               | You can see a master list of access codes from the Kwikset mobile app (must be from a mobile device connected to the lock through Bluetooth). If the code is not in the list, it may have already been deleted by a source other than Seam. In this case, contact us, and we will remove our record of the access code. Otherwise, we will continue to attempt and confirm deletion of the code on the lock. |

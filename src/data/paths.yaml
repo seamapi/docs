@@ -1,6 +1,6 @@
 ---
 /acs:
-  title: Access Control Systems
+  title: Access Control Systems (ACS)
   description: Systems for managing and monitoring access to physical spaces
   overview: |
     Access control systems centralize access authorization for buildings, which means that you can use a single system to grant users access to one or more entrances. An access control system manages the following elements:
@@ -20,68 +20,178 @@
 
 /acs/systems:
   title: Systems
-  resources:
-    - acs_system
 
 /acs/users:
   title: ACS Users
-  resources:
-    - acs_user
 
 /acs/entrances:
   title: Entrances
-  resources:
-    - acs_entrance
 
 /acs/access_groups:
   title: Access Groups
-  resources:
-    - acs_access_group
 
 /acs/credentials:
   title: Credentials
-  resources:
-    - acs_credential
 
 /acs/encoders:
   title: Encoders
-  resources:
-    - acs_encoder
 
 /acs/encoders/simulate:
   title: Encoder Simulations
 
 /phones:
   title: Phones
-  resources:
-    - phone
 
 /phones/simulate:
   title: Phone Simulations
 
 /thermostats:
   title: Thermostats
-  resources: []
+  resources:
+    - device
+  include_groups:
+    - thermostats
+  overview: |
+    ## The device Object for Thermostats
+
+    - [Properties](./#properties)
+    - [device.properties](./#device.properties)
+    - [Errors](./#errors)
+    - [Warnings](./#warnings)
+    - [Events](./#events)
+    - [Endpoints](./#endpoints)
+
+    Represents a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+
+    You can use the Seam API to perform the following management and monitoring actions for thermostats:
+
+    - Monitor current thermostat settings and readings.
+    - Configure [temperature thresholds](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). If the thermostat reports a temperature outside these thresholds, Seam automatically alerts you.
+    - Make immediate changes to [thermostat climate settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings), such as the HVAC mode and fan mode.
+    - [Create](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) and [schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) climate presets, including a fallback climate preset.
+    - Create daily and weekly [thermostat programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs).
+
+    The Seam API represents a thermostat as a `device` resource that includes both basic device properties and thermostat-specific properties.
+
+    ---
 
 /thermostats/simulate:
   title: Thermostat Simulations
 
 /thermostats/schedules:
   title: Thermostat Schedules
-  resources:
-    - thermostat_schedule
+
+/noise_sensors:
+  title: Noise Sensors
+  include_groups:
+    - noise_sensors
+  overview: |
+    ## The device Object for Noise Sensors
+
+    - [Properties](./#properties)
+    - [Endpoints](./#endpoints)
+
+    Represents a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).
+
+    Noise sensors are devices that measure that sound level in a given area. You can use noise sensors to monitor noise levels remotely and receive notifications when the noise volume is too loud. The Seam API enables you to configure the [noise thresholds](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) of a noise sensor and receive events when a disturbance is detected. You can also [simulate triggering a noise threshold](https://docs.seam.co/latest/api/noise_sensors/simulate/trigger_noise_threshold.md).
+
+    The Seam API represents a noise sensor as a `device` resource that includes both basic device properties and noise sensor-specific properties.
+
+    ---
+
+/noise_sensors/noise_thresholds:
+  title: Noise Thresholds
+
+/noise_sensors/simulate:
+  title: Noise Sensor Simulations
 
 /user_identities:
   title: User Identities
-  resources:
-    - user_identity
 
-/user_identities/enrollment_automations:
-  title: Enrollment Automations
-  resources:
-    - enrollment_automation
+/access_codes:
+  title: Access Codes
+  include_groups:
+    - locks
+    - access_codes
+
+/access_codes/unmanaged:
+  title: Unmanaged Access Codes
+  include_groups:
+    - locks
+    - access_codes
+
+/access_codes/simulate:
+  title: Access Code Simulations
+
+/access_grants:
+  title: Access Grants
+  alpha: "**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
+
+/access_methods:
+  title: Access Methods
+  alpha: "**Early Access Preview.** The access methods API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
+
+/spaces:
+  title: Spaces
+  alpha: "**Early Access Preview.** The spaces API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
+
+/connected_accounts:
+  title: Connected Accounts
+
+/customers:
+  title: Customers
+  alpha: "**Early Access Preview.** The customers API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
+
+/client_sessions:
+  title: Client Sessions
+
+/connect_webviews:
+  title: Connect Webviews
+
+/webhooks:
+  title: Webhooks
+
+/workspaces:
+  title: Workspaces
+
+/devices:
+  title: Devices
+
+/devices/unmanaged:
+  title: Unmanaged Devices
+
+/devices/simulate:
+  title: Device Simulations
 
 /action_attempts:
   title: Action Attempts
   resources:
     - action_attempt
+
+/locks:
+  title: Locks
+  resources:
+    - device
+  include_groups:
+    - locks
+    - access_codes
+  overview: |
+    ## The device Object for Locks
+
+    - [Properties](./#properties)
+    - [device.properties](./#device.properties)
+    - [Errors](./#errors)
+    - [Warnings](./#warnings)
+    - [Events](./#events)
+    - [Endpoints](./#endpoints)
+
+    Represents a [lock](https://docs.seam.co/latest/capability-guides/thermostats).
+
+    The Seam API enables you to control connected smart locks from a wide variety of manufacturers, including locks that provide online and offline [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) programming.
+
+    Depending on the smart lock brand and model, actions that you can perform include remote unlock, remote lock, and programming access codes. You can also view a lock's properties, capabilities, and status. Further, you can monitor for unlock and lock events.
+
+    See also [Webhooks](https://docs.seam.co/latest/developer-tools/webhooks).
+
+/locks/simulate:
+  title: Lock Simulations

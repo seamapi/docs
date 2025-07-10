@@ -20,7 +20,7 @@ Seam supports backup access codes for [time-bound access codes](./#time-bound-ac
 
 ## Before You Begin
 
-To confirm that Seam supports back up code pools for your device, check the device's `properties` by inspecting the response from [Get Device](../../../api-clients/devices/get.md) or [List Devices](../../../api-clients/devices/list.md). Ensure that the device's `properties.supports_backup_access_code_pool` is `true`.
+To confirm that Seam supports back up code pools for your device, check the device's `properties` by inspecting the response from [Get Device](../../../api/devices/get.md) or [List Devices](../../../api/devices/list.md). Ensure that the device's `properties.supports_backup_access_code_pool` is `true`.
 
 After you've done that, come back here and keep reading.
 
@@ -174,37 +174,6 @@ Supports backup access code pool: True
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Device device = seam.devices()
-        .get(DevicesGetRequest.builder()
-                .deviceId("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
-                .build());
-System.out.println(device);
-```
-
-**Response:**
-
-```json
-{
-  "device_id" : "0168fba8-8275-49a3-acf5-b2bced519a2c",
-  .
-  .
-  .
-  "properties" : {
-    .
-    .
-    .
-    "supports_backup_access_code_pool" : true
-  },
-  .
-  .
-  .
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -213,7 +182,7 @@ System.out.println(device);
 
 ### 1. Activate the backup access code pool
 
-To activate the backup pool, set `use_backup_access_code_pool` to `true` when [creating an access code](../../../api-clients/access_codes/create.md). After activation, the backup access code pool cannot be turned off for that device. However, if you unmanage the device, any backup access codes are removed.
+To activate the backup pool, set `use_backup_access_code_pool` to `true` when [creating an access code](../../../api/access_codes/create.md). After activation, the backup access code pool cannot be turned off for that device. However, if you unmanage the device, any backup access codes are removed.
 
 This activation is a one-time process for each device. Once initiated, Seam consistently maintains a backup code pool for the device. All access codes associated with the device utilize the same backup code pool.
 
@@ -469,43 +438,6 @@ Is backup access code available: True
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
-
-AccessCode CreatedAccessCode = seam.accessCodes().create(AccessCodesCreateRequest.builder()
-        .deviceId(deviceId)
-        .name("my time-bound code")
-        .startsAt("2025-01-01T16:00:00Z")
-        .endsAt("2025-01-22T12:00:00Z")
-        .useBackupAccessCodePool(true)
-        .build());
-System.out.println(CreatedAccessCode);
-```
-
-**Response:**
-
-```json
-{
-  "is_scheduled_on_device" : false,
-  "type" : "time_bound",
-  "access_code_id" : "206491e0-000f-49cb-8f18-db47a12bc785",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my time-bound code",
-  "code" : "0709",
-  "created_at" : "2023-10-30T07:45:08.138Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "starts_at" : "2025-01-01T16:00:00Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  "status" : "unset",
-  "is_backup_access_code_available" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Detect when an access code has failed to program
@@ -516,7 +448,7 @@ You can retrieve a backup access code to use instead.
 
 ### 3. Confirm the availability of a backup access code
 
-To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api-clients/access_codes/get/) or [List Access Codes](../../../api-clients/access_codes/list.md). If the backup code pool has been exhausted, this property returns `false`.
+To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](../../../api/access_codes/get.md) or [List Access Codes](../../../api/access_codes/list.md). If the backup code pool has been exhausted, this property returns `false`.
 
 {% hint style="info" %}
 Note that we only support pulling backup codes for `time_bound` codes at this time.
@@ -641,34 +573,16 @@ Is backup access code available: True
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-AccessCode accessCode = seam.accessCodes()
-        .get(AccessCodesGetRequest.builder()
-                .accessCodeId("206491e0-000f-49cb-8f18-db47a12bc785")
-                .build());
-System.out.println("Is backup access code available: "
-  + accessCode.getIsBackupAccessCodeAvailable());
-```
-
-**Response:**
-
-```
-Is backup access code available: true
-```
-{% endtab %}
 {% endtabs %}
 
 ### 4. Retrieve a backup access code
 
-To retrieve a backup access code for an access code, include the `access_code_id` in the [Pull Backup Access Codes](../../../api-clients/access_codes/pull_backup_access_code.md) request. In the response, you receive the new backup access code. Be sure to share the new backup PIN code with the user of the original access code.
+To retrieve a backup access code for an access code, include the `access_code_id` in the [Pull Backup Access Codes](../../../api/access_codes/pull_backup_access_code.md) request. In the response, you receive the new backup access code. Be sure to share the new backup PIN code with the user of the original access code.
 
 Upon executing this action, Seam performs the following additional actions:
 
 * Mark the backup access code as pulled (`"pulled": true`), meaning that it has been removed from the pool.
-* Associate the backup access code with the original access code, ensuring that any future requests to the [Pull Backup Access Code](../../../api-clients/access_codes/pull_backup_access_code.md) request return the same backup access code.
+* Associate the backup access code with the original access code, ensuring that any future requests to the [Pull Backup Access Code](../../../api/access_codes/pull_backup_access_code.md) request return the same backup access code.
 * Update the `ends_at` date for the backup access code to match that of the original access code.
 * Attempt to refill the backup access code pool with a new backup code.
 
@@ -906,37 +820,6 @@ IsExternalModificationAllowed: False
 {% endcode %}
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-ccessCode backupAccessCode = seam.accessCodes().pullBackupAccessCode(AccessCodesPullBackupAccessCodeRequest.builder()
-        .accessCodeId("206491e0-000f-49cb-8f18-db47a12bc785")
-        .build());
-System.out.println(backupAccessCode);
-```
-
-**Response:**
-
-```json
-{
-  "type" : "time_bound",
-  "access_code_id" : "b66ef4c2-d269-4a91-8839-19910a11e776",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "Backup b66ef4c2-d269-4a91-8839-19910a11e776 (Seam)",
-  "code" : "6732",
-  "created_at" : "2023-10-30T07:39:54.738Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "starts_at" : "2023-10-30T08:03:51.962Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  "status" : "set",
-  "is_backup_access_code_available" : false,
-  "is_backup" : true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

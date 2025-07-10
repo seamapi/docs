@@ -14,9 +14,19 @@ This topic describes the basic Connect Webview process. First, you create the Co
 
 The Connect Webview flow begins when your user wants to connect their device or ACS account to Seam through your app.
 
-In your app, [create a Connect Webview](../../api-clients/connect_webviews/create.md). The Seam API represents Connect Webviews as `connect_webview` objects.
+In your app, [create a Connect Webview](../../api/connect_webviews/create.md). The Seam API represents Connect Webviews as `connect_webview` objects.
 
-The created `connect_webview` object includes a `url` property.
+When creating a Connect Webview, choose which providers to display. Choose one of the following options:
+
+*   To display a preselected group of providers, you can specify the desired `provider_category`. Supported provider categories are as follows:
+
+    * `stable`
+    * `consumer_smartlocks`
+    * `thermostats`
+    * `noise_sensors`
+
+    To list all providers within a category, use the [List Device Providers](../../api/devices/list_device_providers.md) method with the desired `provider_category` filter.
+* To display a specific, custom set of providers, specify the desired list of `accepted_providers`. For details, see [Customize the Brands to Display in Your Connect Webviews](customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -213,88 +223,25 @@ var createdConnectWebview = seam.ConnectWebviews.Create(
 }
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview createdConnectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-  .customRedirectUrl("https://example.com/redirect")
-  .customRedirectFailureUrl("https://example.com/failure-redirect")
-  .providerCategory(ProviderCategory.STABLE)
-  .waitForDeviceCreation(true)
-  .build());
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=9eBKNtzB6ZKkSPPD33MZFshYSbmBcSMz7",
-  "status": "pending",
-  "login_successful": false,
-  "custom_redirect_url": "https://example.com/redirect",
-  "custom_redirect_failure_url": "https://example.com/failure-redirect",
-  "accepted_providers": [
-    ...
-  ],
-  "wait_for_device_creation": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-createdConnectWebview, err := client.ConnectWebviews.Create(
-    context.Background(),
-    &api.ConnectWebviewsCreateRequest{
-      CustomRedirectUrl: api.String("https://example.com/redirect"),
-      CustomRedirectFailureUrl: api.String("https://example.com/failure-redirect"),
-      ProviderCategory: api.ProviderCategoryStable.Ptr(),
-      WaitForDeviceCreation: api.Bool(true),
-    },
-  )
-
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=9eBKNtzB6ZKkSPPD33MZFshYSbmBcSMz7",
-  "status": "pending",
-  "login_successful": false,
-  "custom_redirect_url": "https://example.com/redirect",
-  "custom_redirect_failure_url": "https://example.com/failure-redirect",
-  "accepted_providers": [
-    ...
-  ],
-  "wait_for_device_creation": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
+
+### Connect Webview Response
+
+The created `connect_webview` object includes a `url` property. You use this URL to display the Connect Webview flow to your user.
 
 ***
 
 ## Step 2: Display the Connect Webview
 
-In your app, [open the Connect Webview for your user](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#opening-a-connect-webview), using the Connect Webview `url`.
+In your app, [open the Connect Webview for your user](embedding-a-connect-webview-in-your-app.md#opening-a-connect-webview), using the Connect Webview `url`.
 
-You can [redirect to the Connect Webview URL](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe).
+You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-your-app.md#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe).
 
-For instructions, see [Embedding a Connect Webview in Your App](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md).
+{% hint style="info" %}
+If you choose to embed a Connect Webview in an iframe, it's important to understand that some providers move to a new tab during their authentication flow for security purposes. Seam is not able to abstract away this behavior.
+{% endhint %}
+
+For instructions, see [Embedding a Connect Webview in Your App](embedding-a-connect-webview-in-your-app.md).
 
 ***
 
@@ -362,7 +309,7 @@ If your user wants to connect additional devices or ACS from different brands to
 
 Continue using the Seam API to control your users' connected devices or ACS. For example, if you app user has connected a lock that support remote unlock operations, your app can now unlock the lock.
 
-To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](broken-reference). These guides provide helpful tutorials and code samples, categorized by capability types.
+To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](../../capability-guides/device-and-system-capabilities.md). These guides provide helpful tutorials and code samples, categorized by capability types.
 
 * [Smart locks](../../products/smart-locks/), including [locking/unlocking](../../products/smart-locks/lock-and-unlock.md) and [managing access codes](../../products/smart-locks/access-codes/)
 * [Access control systems](../../products/access-systems/)

@@ -8,7 +8,7 @@ description: >-
 
 Adding Custom Metadata to a Connect Webview enables you to store custom information, like customer details or internal IDs from your application. The `custom_metadata` is then transferred to any connected accounts connected via the connect webview, making it easy to find and filter these resources in your Seam workspace.
 
-The `custom_metadata` property supports up to 50 JSON key:value pairs. Upon an account is  successfully connected via a connect webview, Seam creates a connected account and copies the `custom_metadata` to it.&#x20;
+The `custom_metadata` property supports up to 50 JSON key:value pairs. Upon an account is successfully connected via a connect webview, Seam creates a connected account and copies the `custom_metadata` to it.
 
 {% hint style="info" %}
 If the `custom_metadata` property is left blank, Seam will store an empty set (`{}`) on both the connect webview and connected account resource.
@@ -16,7 +16,7 @@ If the `custom_metadata` property is left blank, Seam will store an empty set (`
 
 To add `custom_metadata` to a Connect Webview:
 
-1. Execute [`/connect_webviews/create`](../../api-clients/connect_webviews/create.md) and specify the internal ID as a key:value pair in the `custom_metadata`.\
+1. Execute [`/connect_webviews/create`](../../api/connect_webviews/create.md) and specify the internal ID as a key:value pair in the `custom_metadata`.\
    For example:
 
 {% tabs %}
@@ -161,53 +161,14 @@ seam.ConnectWebviews.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("id", CustomMetadataValue.of(Optional.of("internalId1")));
-
-seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-    .providerCategory(ProviderCategory.STABLE)
-    .customMetadata(customMetadata)
-    .build());
-```
-
-**Response:**
-
-```json
-{
-  "connect_webview_id" : "72dffd65-71e0-4035-9c85-199dd756a11c",
-  "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=72dffd65-71e0-4035-9c85-199dd756a11c&auth_token=FQea1nN2sMGwLVRsjQXajzNzvven6jbGX",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "device_selection_mode" : "none",
-  "accepted_providers" : [ "august", "avigilon_alta", "brivo", "schlage", "smartthings", "yale", "nuki", "salto", "controlbyweb", "minut", "my_2n", "kwikset", "ttlock", "noiseaware", "igloohome", "ecobee", "four_suites", "dormakaba_oracode", "lockly", "wyze" ],
-  "any_provider_allowed" : false,
-  "any_device_allowed" : false,
-  "created_at" : "2023-11-16T22:53:57.515Z",
-  "login_successful" : false,
-  "status" : "pending",
-  "custom_redirect_url" : null,
-  "wait_for_device_creation" : false,
-  "custom_redirect_failure_url" : null,
-  "automatically_manage_new_devices" : true,
-  "authorized_at" : null,
-  "custom_metadata" : {
-    "id" : "internalId1"
-  },
-  "selected_provider" : null
-}
-```
-{% endtab %}
 {% endtabs %}
 
 2. Your app presents the Connect Webview to your user.
 3. The user completes the Connect Webview.
 4. Seam creates a connected account containing the user's device account information.\
    This connected account includes a `custom_metadata` property that automatically contains the information that you set in the `custom_metadata` property for the Connect Webview.
-5. To retrieve the ID of the connected account associated with the completed Connect Webview, [get the `connect_webview`](../../api-clients/connect_webviews/get.md) and check the `connected_account_id` property.
-6. To retrieve the connected account, [get the `connected_account`](../../api-clients/connected_accounts/get.md) with the ID that you identified in the previous step.
+5. To retrieve the ID of the connected account associated with the completed Connect Webview, [get the `connect_webview`](../../api/connect_webviews/get.md) and check the `connected_account_id` property.
+6. To retrieve the connected account, [get the `connected_account`](../../api/connected_accounts/get.md) with the ID that you identified in the previous step.
 7. Within the returned `connected_account`, view the `custom_metadata`.
 
 {% hint style="info" %}

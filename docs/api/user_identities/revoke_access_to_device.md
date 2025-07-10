@@ -1,40 +1,70 @@
 # Revoke Access to a Device from a User Identity
 
-```
-POST /user_identities/revoke_access_to_device ⇒ void
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Revokes access to a specified [device](../../core-concepts/devices/README.md) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Revokes access to a specified [device](../../core-concepts/devices/README.md) from a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
+
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Revokes access to a specified device from a specified user identity.
+
+#### Code:
 
 ```javascript
 await seam.userIdentities.revokeAccessToDevice({
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+  user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+  device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5",
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 // void
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+Revokes access to a specified device from a specified user identity.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/user_identities/revoke_access_to_device" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity_id": "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+  "device_id": "92874f9e-a2b5-4d49-a039-0280196ad4d5"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
 {% tab title="Python" %}
-#### Request
+
+Revokes access to a specified device from a specified user identity.
+
+#### Code:
 
 ```python
 seam.user_identities.revoke_access_to_device(
-    user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id="054765c8-a2fc-4599-b486-14c19f462c45",
+    user_identity_id="a5a48343-a95e-4f51-a5d9-1e4241b73553",
+    device_id="92874f9e-a2b5-4d49-a039-0280196ad4d5",
 )
 ```
 
-#### Response
+#### Output:
 
 ```python
 None
@@ -42,16 +72,19 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Revokes access to a specified device from a specified user identity.
+
+#### Code:
 
 ```ruby
 seam.user_identities.revoke_access_to_device(
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+  user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+  device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5",
 )
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 nil
@@ -59,91 +92,72 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Revokes access to a specified device from a specified user identity.
+
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->revoke_access_to_device(
-    user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
+    user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+    device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5"
 );
 ```
 
-#### Response
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Revokes access to a specified device from a specified user identity.
+
+#### Code:
 
 ```seam_cli
-seam user-identities revoke-access-to-device --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf" --device_id "054765c8-a2fc-4599-b486-14c19f462c45"
+seam user-identities revoke-access-to-device --user_identity_id "a5a48343-a95e-4f51-a5d9-1e4241b73553" --device_id "92874f9e-a2b5-4d49-a039-0280196ad4d5"
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {}
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.RevokeAccessToDevice(
-		context.Background(),
-		api.UserIdentitiesRevokeAccessToDeviceRequest{
-			UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
-			DeviceId:       api.String("054765c8-a2fc-4599-b486-14c19f462c45"),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-nil
-```
-{% endtab %}
-
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `device_id`
+**`device_id`** *String* (Required)
 
-Format: `UUID`
-Required: Yes
+ID of the managed device to which you want to revoke access from the user identity.
 
-ID of the desired managed device.
+---
 
-***
+**`user_identity_id`** *String* (Required)
 
-### `user_identity_id`
+ID of the user identity from which you want to revoke access to a device.
 
-Format: `UUID`
-Required: Yes
+---
 
-ID of the desired user identity.
 
-***
-
-## Return Type
+## Response
 
 void
+

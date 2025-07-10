@@ -1,57 +1,82 @@
 # {{title}}
+{{#if isAlpha}}
+{{> alpha-notice}}
+{{/if}}
+{{#if overview}}
+
+{{overview}}
+{{/if}}
 
 {{#each resources}}
 {{> api-resource }}
-{{#if errors.length}}
+{{#if errorGroups.length}}
+
 ## Errors
 
-{{#each errors}}
-### `{{name}}`
+{{#each errorGroups}}
+{{#if name}}
+### {{name}}
+{{/if}}
+{{#each variants}}
+**`{{name}}`**
 
 {{description}}
 
 ---
 
 {{/each}}
+{{/each}}
 {{/if}}
-{{#if warnings.length}}
+{{#if warningGroups.length}}
+
 ## Warnings
 
-{{#each warnings}}
-### `{{name}}`
+{{#each warningGroups}}
+{{#if name}}
+### {{name}}
+{{/if}}
+{{#each variants}}
+**`{{name}}`**
 
 {{description}}
 
 ---
 
+{{/each}}
 {{/each}}
 {{/if}}
 {{/each}}
-## Endpoints
-
-{{#each endpoints}}
-### [`{{path}}`](./{{name}}.md)
-
-{{description}}
-{{/each}}
 {{#if events.length}}
-
----
 
 ## Events
 
 {{#each events}}
-### `{{name}}`
+**`{{name}}`**
 
 {{#if description}}
 {{description}}
 
 {{/if}}
-{{#each properties}}
-{{> property-collapsible this}}
+<details>
 
+<summary>Properties</summary>
+{{#each properties}}
+
+{{> property-nested this isLast=@last}}
 {{/each}}
+</details>
+
 ---
 
 {{/each}}
 {{/if}}
+## Endpoints
+
+{{#each endpoints}}
+
+[**`{{path}}`**](./{{name}}.md)
+
+{{description}}
+
+{{/each}}
+

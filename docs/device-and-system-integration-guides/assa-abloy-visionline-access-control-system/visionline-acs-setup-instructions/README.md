@@ -109,21 +109,27 @@ For detailed instructions, see [Developing Your Visionline Mobile Key App](devel
 
 1. Pass the ASSA ABLOY certification process.
 2. Confirm that your production Visionline site meets the system requirements.
-3.  Configure all door locks for use with mobile keys.
+3. Configure all door locks for use with mobile keys.
 
-    {% hint style="info" %}
-    This process can be quite time-consuming because it requires interaction with all locks.
-    {% endhint %}
+{% hint style="info" %}
+```
+This process can be quite time-consuming because it requires interaction with all locks.
+```
+{% endhint %}
 
-    1. Make sure that the BLE module is installed on all locks.
-    2. Set up all door locks with BLE profiles.
-    3. Use Lock Service 3G to program all locks.
-4. Configure Visionline using your production account.
-   1. Make sure that Visionline is configured with an appropriate user account.
-   2. Purchase the following required options from ASSA ABLOY and import them into Visionline:
-      * Callback options
-      * Mobile Service option with your tenant account
-5.  Connect your Visionline production instance to Seam.
+```
+1. Make sure that the BLE module is installed on all locks.
+2. Set up all door locks with BLE profiles.
+3. Use Lock Service 3G to program all locks.
+```
+
+4\. Configure Visionline using your production account.
+
+1. Make sure that Visionline is configured with an appropriate user account.
+2. Purchase the following required options from ASSA ABLOY and import them into Visionline:
+   * Callback options
+   * Mobile Service option with your tenant account
+3.  Connect your Visionline production instance to Seam.
 
     Either create a new production workspace or use your existing production workspace.
 

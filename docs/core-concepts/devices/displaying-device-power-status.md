@@ -19,7 +19,7 @@ Seam polls connected devices and accounts every ten minutes and updates the foll
 
 <table><thead><tr><th width="320">Property</th><th width="137">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>properties.has_direct_power</code></td><td>Boolean</td><td>Indicates whether the device has direct power, that is, whether the device is wired</td></tr><tr><td><code>properties.battery</code></td><td>Object</td><td>Battery information, including <code>level</code> and <code>status</code><br>If the device is offline, Seam does not return this property.</td></tr><tr><td><code>properties.battery.level</code></td><td>Number (0-1)</td><td>Battery level of the device as a decimal value between 0 and 1, inclusive<br>If the device is offline, Seam does not return this property.</td></tr><tr><td><code>properties.battery.status</code></td><td>Enum (string)</td><td><p>Current status of the battery charge level.<br>If the device is offline, Seam does not return this property.</p><p>Values are:</p><p><code>critical</code>: Indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging.</p><p><code>low</code>: Signifies that the battery is under the preferred threshold and should be charged soon.</p><p><code>good</code>: Denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging.</p><p><code>full</code>: Represents a battery that is fully charged, providing the maximum duration of usage.</p></td></tr></tbody></table>
 
-Use a [Get Device](../../api-clients/devices/get.md) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
+Use a [Get Device](../../api/devices/get.md) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
 
 {% hint style="info" %}
 You can also use the prebuilt [device details Seam Component](../../seam-components/react-components/device-details.md), which includes a device power status display.
@@ -172,56 +172,8 @@ Battery Status: Full
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-Device device = seam.devices()
-      .get(DevicesGetRequest.builder()
-              .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-              .build());
-if (device.getProperties().getHasDirectPower() == true)
-{
-  System.out.println("Power Source: Wired");
-} else {
-  System.out.println("Power Source: Battery-powered");
-  System.out.println("Battery Level: " + device.getProperties().getBattery().getLevel());
-  System.out.println("Battery Status: " + device.getProperties().getBattery().getStatus());
-}
-```
 
-**Response:**
-
-```
-Power Source: Battery-powered
-Battery Level: 0.9999532
-Battery Status: Full
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-device, err := client.Devices.Get(
-	context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
-  },
-)
-if err != nil {
-	return err
-}
-fmt.Println("Online:", device.Properties.Online)
-return nil
-```
-
-**Response:**
-
-```
-Online: true
-```
-{% endtab %}
 {% endtabs %}
 
 ## Get Device Power Status Using Battery-Related Events
@@ -407,67 +359,8 @@ foreach (var device_battery_status_changed_event in device_battery_status_change
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-var deviceBatteryStatusChangedEvents = seam.events()
-          .list(EventsListRequest.builder()
-                  .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-                  .eventType(EventsListRequestEventType.DEVICE_BATTERY_STATUS_CHANGED)
-                  .since("2024-01-01T00:00:00Z")
-                  .build());
-System.out.println(deviceBatteryStatusChangedEvents);
-```
 
-**Response:**
-
-```json
-[{
-  "event_id" : "de4314a2-903d-53e9-bb5e-ded5d19ad074",
-  "device_id" : "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type" : "device.battery_status_changed",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" : "2024-01-01T02:25:10.158Z",
-  "occurred_at" : "2024-01-01T02:25:10.158Z",
-  "connected_account_id" : "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-device_battery_status_changed_events, err := client.Events.List(
-	context.Background(),
-  &api.EventsListRequest{
-    DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
-    EventType: api.EventTypeBatteryStatusChanged.Ptr(),
-    Since: api.String("2024-01-01T00:00:00Z"),
-  },
-)
-if err != nil {
-	return err
-}
-fmt.Println(device_battery_status_changed_events)
-return nil
-```
-
-**Response:**
-
-```json
-[{
-  "event_id": "de4314a2-903d-53e9-bb5e-ded5d19ad074",
-  "device_id": "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type": "device.battery_status_changed",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-01-01T02:25:10.158Z",
-  "occurred_at": "2024-01-01T02:25:10.158Z",
-  "connected_account_id": "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}]
-```
-{% endtab %}
 {% endtabs %}
 
 ### Retrieve Battery-Related Events Using a Webhook

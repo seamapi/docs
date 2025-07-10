@@ -14,14 +14,7 @@ Seam integrates seamlessly with the [ASSA ABLOY Visionline Access Control System
 
 This integration supports all readers and wireless locks connected to the Visionline ACS.
 
-For detailed information about the ASSA ABLOY Visionline devices that Seam supports, see the following table and our [ASSA ABLOY Supported Devices page](https://www.seam.co/manufacturers/assa-abloy):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Assa"]'
-/>" %}
+For detailed information about the ASSA ABLOY Visionline devices that Seam supports, see our [ASSA ABLOY Supported Devices page](https://www.seam.co/manufacturers/assa-abloy).
 
 ***
 
@@ -37,11 +30,11 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Visionline ACS to Seam, include the `visionline` [device provider key](../../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Visionline ACS to Seam, include the `visionline` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
-## Brand-Specific Errors
+## Troubleshooting
 
 For information about Visionline ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
 

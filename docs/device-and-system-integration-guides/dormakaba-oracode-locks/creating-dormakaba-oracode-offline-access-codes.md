@@ -34,7 +34,7 @@ dormakaba Oracode locks use pre-programmed sets of access code time slots called
 * Whether the access code is a biweekly code (that is, a code that is valid for two weeks)
 * Whether the access code is a master code that exists indefinitely, for example, for site owners
 
-When you create a dormakaba Oracode offline access code, you must set the duration of the code to match—exactly—one of the time slots on the device. To view a list of all available time slots for a specific device, [get the lock](../../api-clients/locks/get.md) and view the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device.
+When you create a dormakaba Oracode offline access code, you must set the duration of the code to match—exactly—one of the time slots on the device. To view a list of all available time slots for a specific device, [get the device](../../api/devices/get.md) and view the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device.
 
 ```json
 "predefined_time_slots": [
@@ -74,7 +74,7 @@ To set an access code that uses this user level, set the times for the `starts_a
 
 #### View the Time Zone of a dormakaba Oracode Lock
 
-To view the local time zone of a dormakaba Oracode lock, [get the lock](../../api-clients/locks/get-lock.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
+To view the local time zone of a dormakaba Oracode lock, [get the device](../../api/devices/get.md) and see the `check_in_time` and `check_out_time` within each time slot in the `device.properties.dormakaba_oracode_metadata.predefined_time_slots` property for the device. You can also see the local time zone for a dormakaba Oracode lock in the `dormakaba_oracode_device_metadata.iana_timezone` property.
 
 ### Master Codes
 
@@ -145,7 +145,7 @@ AccessCode(
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-#### Request:
+**Request:**
 
 ```sh
 # Get the device.
@@ -180,7 +180,7 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
 fi
 ```
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -360,99 +360,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
 
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the hourly-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my hourly-bound offline code")
-      // Make sure that the validity period matches
-      // a user level for the device.
-      .startsAt("2024-09-10T07:00:00-07:00")
-      .endsAt("2024-09-15T19:00:00-07:00")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-777777777777",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my hourly-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2024-09-10T14:00:00.000Z",
-  "ends_at" : "2024-09-16T02:00:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the hourly-bound offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my hourly-bound offline code"),
-        // Make sure that the validity period matches
-        // a user level for the device.
-        StartsAt: api.String("2024-09-10T07:00:00-07:00"),
-        EndsAt: api.String("2024-09-15T19:00:00-07:00"),
-        IsOfflineAccessCode: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-777777777777",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my hourly-bound offline code",
-  "type": "time_bound",
-  "starts_at": "2024-09-10T14:00:00.000Z",
-  "ends_at": "2024-09-16T02:00:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 #### 2. Verify Successful Time-Bound Code Registration
@@ -465,8 +374,8 @@ The [lifecycle of a time-bound access code](../../products/smart-locks/access-co
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../products/smart-locks/access-codes/creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../products/smart-locks/access-codes/creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
 
 ***
 
@@ -484,7 +393,7 @@ Make sure to set the `starts_at` and `ends_at` times and offsets to match the lo
 
 Because daily-bound offline access codes require day-level duration granularity, you can also set `max_time_rounding` to `1day` (or `1d`), instead of the default `1hour` (or `1h`). Note that the Seam API returns an error if `max_time_rounding` is `1hour` and the necessary rounding amount exceeds one hour.
 
-You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api-clients/access\_codes/create.md).
+You can also assign an optional `name` to the offline access code. For more details, see the [Create Access Code endpoint](../../api/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -528,7 +437,7 @@ AccessCode(
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
-#### Request:
+**Request:**
 
 ```sh
 # Get the device.
@@ -564,7 +473,7 @@ if  $(jq -r '.device.can_program_offline_access_codes' <<< ${device}); then \
 fi
 ```
 
-#### Response:
+**Response:**
 
 ```json
 {
@@ -748,101 +657,8 @@ if (device.CanProgramOfflineAccessCodes == true) {
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
 
-// Confirm that the device supports offline access codes.
-if (device.getCanProgramOfflineAccessCodes())
-{
-  // Create the daily-bound offline access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my daily-bound offline code")
-      // Make sure that the validity period matches
-      // a user level for the device.
-      .startsAt("2024-09-16T00:00:00-07:00")
-      .endsAt("2024-09-18T23:59:00-07:00")
-      .maxTimeRounding("1d")
-      .isOfflineAccessCode(true)
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-888888888888",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my daily-bound offline code",
-  "type" : "time_bound",
-  "starts_at" : "2024-09-16T07:00:00.000Z",
-  "ends_at" : "2024-09-19T06:59:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Get the device.
-device, uErr := client.Locks.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports offline access codes.
-if *device.CanProgramOfflineAccessCodes {
-  // Create the daily-bound offline access code.
-  client.AccessCodes.Create(
-      context.Background(),
-      &api.AccessCodesCreateRequest{
-        DeviceId: device.DeviceId,
-        Name: api.String("my daily-bound offline code"),
-        // Make sure that the validity period matches
-        // a user level for the device.
-        StartsAt: api.String("2024-09-16T00:00:00-07:00"),
-        EndsAt: api.String("2024-09-18T23:59:00-07:00"),
-        MaxTimeRounding: api.String("1d"),
-        IsOfflineAccessCode: api.Bool(true),
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-888888888888",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my daily-bound offline code",
-  "type": "time_bound",
-  "starts_at": "2024-09-16T07:00:00.000Z",
-  "ends_at": "2024-09-19T06:59:00.000Z",
-  "is_offline_access_code": true,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 #### 2. Verify Successful Time-Bound Code Registration
@@ -855,5 +671,5 @@ The [lifecycle of a time-bound access code](../../products/smart-locks/access-co
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../products/smart-locks/access-codes/creating-access-codes.md#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../products/smart-locks/access-codes/creating-access-codes.md#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).

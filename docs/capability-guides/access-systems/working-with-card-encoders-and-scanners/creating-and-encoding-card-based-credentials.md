@@ -302,79 +302,8 @@ AcsCredential credential = seam.CredentialsAcs.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-// Coming soon!
-```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Step 1:
-// Create the new ACS user.
-acs_user, err := client.Acs.Users.Create(
-  context.Background(), &acs.UsersCreateRequest{
-    AcsSystemId: "11111111-1111-1111-1111-111111111111",
-    FullName: api.String("Jane Doe"),
-    EmailAddress: api.String("jane@example.com"),
-  },
-)
-if err != nil {
-  return err
-}
-
-startsAt, err := time.Parse(time.RFC3339, "2024-12-01T15:00:00Z")
-endsAt, err := time.Parse(time.RFC3339, "2024-12-04T12:00:00Z")
-if err != nil {
-  return err
-}
-
-// Step 2:
-// Create a card-based credential for each entrance for the ACS user.
-credential, err := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: acs_user.AcsUserId,
-    AccessMethod: "card",
-    AllowedAcsEntranceIds: []string{
-      // List the IDs of the entrances to which
-      // you want to grant access.
-      room_101.AcsEntranceId,
-    },
-    StartsAt: api.Time(startsAt),
-    EndsAt: api.Time(endsAt),
-  },
-);
-if err != nil {
-  return err
-};
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "access_method": "card",
-  "starts_at": "2024-12-01T15:00:00Z",
-  "ends_at": "2024-12-04T12:00:00Z",
-  "is_issued": false,
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -533,51 +462,8 @@ seam.EncodersAcs.List(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-// Coming soon!
-```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-acs_encoders, err := client.Acs.Encoders.List(
-  context.Background(), &acs.EncodersListRequest{
-    AcsSystemIds: []string{
-      building_system_id,
-    },
-  },
-)
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-[
-  {
-    "acs_encoder_id": "33333333-4444-5555-6666-777777777777",
-    "display_name": "Front Desk",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -734,49 +620,8 @@ actionAttempt encodingActionAttempt = seam.EncodersAcs.EncodeCredential(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-// Coming soon!
-```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-encoding_action_attempt, err := client.Acs.Encoders.EncodeCredential(
-  context.Background(), &acs.EncodersEncodeCredentialRequest{
-    AcsCredentialId: credential.AcsCredentialId,
-    AcsEncoderId: encoder.AcsEncoderId,
-  },
-)
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "status": "pending",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "action_type": "ENCODE_CREDENTIAL",
-  "result": null,
-  "error": null
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -967,54 +812,8 @@ seam.ActionAttempts.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-// Coming soon!
-```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-action_attempt, err := client.ActionAttempts.Get(
-  context.Background(), &api.ActionAttemptsGetRequest{
-    ActionAttemptId: encoding_action_attempt.ActionAttemptId,
-  },
-)
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "action_type": "ENCODE_CREDENTIAL",
-  "result": {
-    "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-    "card_number": "1234abc",
-    "is_issued": true,
-    "issued_at": "2024-10-23T19:46:06.113Z",
-    ...
-  },
-  "error": null
-}
-```
-{% endtab %}
 {% endtabs %}
 
 #### View Credential Properties
@@ -1187,52 +986,8 @@ seam.CredentialsAcs.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-// Coming soon!
-```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-acs_credential, err := client.Acs.Credentials.Get(
-  context.Background(), &acs.CredentialsGetRequest{
-    AcsCredentialId: credential.AcsCredentialId,
-  },
-)
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "access_method": "card",
-  "starts_at": "2024-12-01T15:00:00.000Z",
-  "ends_at": "2024-12-04T12:00:00.000Z",
-  "is_issued": true,
-  "card_number": "1234abc",
-  "issued_at": "2024-10-23T19:46:06.113Z",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

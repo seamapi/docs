@@ -4,10 +4,10 @@ description: When listing connected accounts, you can filter by custom metadata.
 
 # Filtering Connected Accounts by Custom Metadata
 
-When you use [List Connected Accounts](../../api-clients/connected_accounts/list.md), you can filter the list by one or more [custom metadata](./) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
+When you use [List Connected Accounts](../../api/connected_accounts/list.md), you can filter the list by one or more custom metadata pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
 
 {% hint style="info" %}
-If the [Connect Webview](../connect-webviews/) associated with a connected account contains custom metadata, Seam transfers this custom metadata to the connected account. However, you can also use the [Update Connected Account](../../api-clients/connected_accounts/update.md) method with the optional [`custom_metadata` property](../../api-clients/connected_accounts/#connected\_account-properties) to [change or add custom metadata for a connected account](adding-custom-metadata-to-a-connected-account.md).
+If the [Connect Webview](../connect-webviews/) associated with a connected account contains custom metadata, Seam transfers this custom metadata to the connected account. However, you can also use the [Update Connected Account](../../api/connected_accounts/update.md) method with the optional `custom_metadata` property to [change or add custom metadata for a connected account](adding-custom-metadata-to-a-connected-account.md).
 {% endhint %}
 
 {% tabs %}
@@ -201,78 +201,6 @@ foreach (var connectedAccount in connectedAccounts)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
 
-var connectedAccounts = seam.connectedAccounts().list(ConnectedAccountsListRequest.builder()
-                .customMetadataHas(customMetadata)
-                .build());
-
-System.out.println(connectedAccounts);
-```
-
-**Response:**
-
-```json
-[{
-  "connected_account_id" : "c993818b-bf3c-4836-bef4-9a76d89bf1d3",
-  "created_at" : "2024-01-05T07:20:07.692Z",
-  "user_identifier" : {
-    "username" : "jane"
-  },
-  "account_type" : "visionline",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "custom_metadata" : {
-    "internal_account_id" : "user-1"
-  },
-  "account_type_display_name" : "Visionline",
-  "automatically_manage_new_devices" : true
-},...
-]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-connectedAccounts, err := client.ConnectedAccounts.List(
-	context.Background(),
-	&api.ConnectedAccountsListRequest{
-		CustomMetadataHas: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(connectedAccounts)
-return nil
-```
-
-**Response:**
-
-```json
-[{
-  "connected_account_id": "c993818b-bf3c-4836-bef4-9a76d89bf1d3",
-  "created_at": "2024-01-05T07:20:07.692Z",
-  "user_identifier": {
-    "username": "jane"
-  },
-  "account_type": "visionline",
-  "account_type_display_name": "Visionline",
-  "errors": [],
-  "warnings": [],
-  "custom_metadata": {
-    "internal_account_id": "user-1"
-  },
-  "automatically_manage_new_devices": true
-}...
-]
-```
-{% endtab %}
 {% endtabs %}

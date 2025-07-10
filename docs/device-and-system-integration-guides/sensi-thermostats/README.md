@@ -16,14 +16,7 @@ Sensi produces smart thermostats for home and light commercial climate control. 
 
 This integration supports all [Sensi thermostats](https://sensi.copeland.com/en-us/products).
 
-For detailed information about the Sensi devices that Seam supports, see the following table and our [Sensi Supported Devices page](https://www.seam.co/manufacturers/sensi):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["sensi"]'
-/>" %}
+For detailed information about the Sensi devices that Seam supports, see our [Sensi Supported Devices page](https://www.seam.co/manufacturers/sensi).
 
 ***
 
@@ -34,13 +27,14 @@ We support the following features:
 * [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
 * [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
+* [Creating and managing thermostat weekly programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md)
 * [Setting and monitoring temperature thresholds](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Sensi devices to Seam, include the `sensi` [device provider key](../../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Sensi devices to Seam, include the `sensi` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

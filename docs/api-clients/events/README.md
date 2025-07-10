@@ -166,9 +166,3 @@ In addition to the common event properties and common device event properties, t
 | [Get an Event](get.md) | Get data for an individual event |
 
 ***
-
-## Testing Events
-
-Use the Webhooks sandbox in the Seam Console to see the different payloads for each event and test them against your own endpoints!
-
-<figure><img src="../../.gitbook/assets/testing-your-webhooks.png" alt=""><figcaption></figcaption></figure>

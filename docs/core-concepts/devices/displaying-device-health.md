@@ -13,7 +13,7 @@ To display the health—that is, the online/offline status—of your end users' 
 
 ## Get Device Status Using Device Properties
 
-Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](../../api-clients/devices/#device.properties-properties) property accordingly. Use a [Get Device](../../api-clients/devices/get.md) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
+Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](../../api/devices/#device.properties) property accordingly. Use a [Get Device](../../api/devices/get.md) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
 
 {% hint style="info" %}
 You can also use the prebuilt [device details Seam Component](../../seam-components/react-components/device-details.md), which includes a device status display.
@@ -121,47 +121,8 @@ Online: True
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-Device device = seam.devices()
-      .get(DevicesGetRequest.builder()
-              .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-              .build());
-System.out.println("Online: " + device.getProperties().getOnline());
-```
 
-**Response:**
-
-```
-Online: true
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-device, err := client.Devices.Get(
-	context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
-  },
-)
-if err != nil {
-	return err
-}
-fmt.Println("Online:", device.Properties.Online)
-return nil
-```
-
-**Response:**
-
-```
-Online: true
-```
-{% endtab %}
 {% endtabs %}
 
 ## Get Device Status Using Connection-Related Events
@@ -384,83 +345,8 @@ foreach (var device_connected_event in device_connected_events)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-var deviceConnectedEvents = seam.events()
-          .list(EventsListRequest.builder()
-                  .deviceId("36cf1a96-196d-41b0-9804-88154387f1f9")
-                  .eventType(EventsListRequestEventType.DEVICE_CONNECTED)
-                  .since("2024-01-01T00:00:00Z")
-                  .build());
-System.out.println(deviceConnectedEvents);
-```
 
-**Response:**
-
-```json
-[{
-  "event_id" : "ca3114b2-088d-43f9-bb5e-ded5d19ad053",
-  "device_id" : "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type" : "device.connected",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" : "2024-02-04T21:55:09.681Z",
-  "occurred_at" : "2024-02-04T21:55:09.681Z",
-  "connected_account_id" : "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}, {
-  "event_id" : "39fcb512-82a4-431d-969f-3935eeba8929",
-  "device_id" : "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type" : "device.connected",
-  "workspace_id" : "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at" : "2024-02-03T04:54:39.744Z",
-  "occurred_at" : "2024-02-03T04:54:39.744Z",
-  "connected_account_id" : "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-device_connected_events, err := client.Events.List(
-	context.Background(),
-  &api.EventsListRequest{
-    DeviceId: api.String("36cf1a96-196d-41b0-9804-88154387f1f9"),
-    EventType: api.EventTypeDeviceConnected.Ptr(),
-    Since: api.String("2024-01-01T00:00:00Z"),
-  },
-)
-if err != nil {
-	return err
-}
-fmt.Println(device_connected_events)
-return nil
-```
-
-**Response:**
-
-```json
-[{
-  "event_id": "ca3114b2-088d-43f9-bb5e-ded5d19ad053",
-  "device_id": "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type": "device.connected",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-02-04T21:55:09.681Z",
-  "occurred_at": "2024-02-04T21:55:09.681Z",
-  "connected_account_id": "c1413928-f527-4e12-abf9-d5e18d92dd33"
-} {
-  "event_id": "39fcb512-82a4-431d-969f-3935eeba8929",
-  "device_id": "36cf1a96-196d-41b0-9804-88154387f1f9",
-  "event_type": "device.connected",
-  "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-  "created_at": "2024-02-03T04:54:39.744Z",
-  "occurred_at": "2024-02-03T04:54:39.744Z",
-  "connected_account_id": "c1413928-f527-4e12-abf9-d5e18d92dd33"
-}]
-```
-{% endtab %}
 {% endtabs %}
 
 ### Receive Connection-Related Events Using a Webhook

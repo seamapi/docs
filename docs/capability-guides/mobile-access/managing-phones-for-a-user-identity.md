@@ -125,44 +125,6 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Command:**
-
-```go
-_, uErr := client.Phones.Deactivate(
-  context.Background(),
-  &api.PhonesDeactivateRequest{
-    DeviceId: lostPhoneId,
-})
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```
-nil
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -344,70 +306,11 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Command:**
-
-```go
-phones, uErr := client.phones.List(
-  context.Background(), &api.PhonesListRequest{
-    owner_user_identity_id: userIdentity.id,
-})
-
-if uErr != nil {
-    return uErr
-}
-
-for _, phone := range phones {
-  fmt.Println(phone)
-}
-    
-return nil
-```
-
-**Output:**
-
-```json
-[
-  {
-    "device_id": "22222222-2222-2222-2222-444444444444",
-    "device_type": "android_phone",
-    "created_at": "2025-01-01T10:40:00+00:00",
-    ...
-  },
-  {
-    "device_id": "22222222-2222-2222-2222-555555555555",
-    "device_type": "ios_phone",
-    "created_at": "2025-01-02T10:40:00+00:00",
-    ...
-  },
-  ...
-]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## Retrieving a Phone by ID
-
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
 
 To retrieve a phone by its ID, use the [Get Phone](../../api/phones/get.md) endpoint and include the `device_id` of the phone.
 
@@ -564,61 +467,6 @@ Coming soon!
 
 ```json
 Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Command:**
-
-```go
-phones, uErr := client.phones.List(
-  context.Background(), &api.PhonesListRequest{
-    owner_user_identity_id: userIdentity.id,
-})
-
-if uErr != nil {
-    return uErr
-}
-
-for _, phone := range phones {
-  fmt.Println(phone)
-}
-    
-return nil
-```
-
-**Output:**
-
-```json
-[
-  {
-    "device_id": "22222222-2222-2222-2222-444444444444",
-    "device_type": "android_phone",
-    "created_at": "2025-01-01T10:40:00+00:00",
-    ...
-  },
-  {
-    "device_id": "22222222-2222-2222-2222-555555555555",
-    "device_type": "ios_phone",
-    "created_at": "2025-01-02T10:40:00+00:00",
-    ...
-  },
-  ...
-]
 ```
 {% endtab %}
 {% endtabs %}

@@ -2,7 +2,7 @@
 description: Create your own device management dashboards with prebuilt UI components.
 ---
 
-# 🧱 Seam Components
+# Seam Components
 
 [Seam Components](https://github.com/seamapi/react) are a set of prebuilt UI components for building your device management flow.
 

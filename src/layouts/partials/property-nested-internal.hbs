@@ -1,14 +1,19 @@
-{{#if isDeprecated}}
-
-  {{> deprecated-warning}}
-{{/if}}
 {{#if description}}
 
   {{description}}
 {{/if}}
-{{#if enumValues}}
+{{#if isDeprecated}}
 
-{{> enum-values indentationOffset="  "}}
+  {{> deprecated-warning}}
+{{/if}}
+{{#if enumValues}}
+<details>
+    <summary>Enum values:</summary>
+
+    {{#each enumValues}}
+    - <code>{{this}}</code>
+    {{/each}}
+</details>
 {{/if}}
 {{#if value}}
 

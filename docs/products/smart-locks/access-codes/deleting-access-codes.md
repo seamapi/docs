@@ -8,7 +8,7 @@ description: >-
 
 ## 1. Delete the access code using the API
 
-To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](../../../api-clients/access_codes/delete.md) request.
+To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](../../../api/access_codes/delete.md) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -114,41 +114,8 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-seam.accessCodes()
-  .delete(AccessCodesDeleteRequest.builder()
-    .accessCodeId("11111111-1111-1111-1111-555555555555")
-    .build());
-```
 
-**Output:**
-
-```
-void
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-client.AccessCodes.Delete(
-  context.Background(),
-  &api.AccessCodesDeleteRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-  },
-)
-```
-
-**Output:**
-
-```
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***

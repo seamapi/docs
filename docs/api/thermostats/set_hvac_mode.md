@@ -1,277 +1,252 @@
 # Set the HVAC Mode
 
-```
-POST /thermostats/set_hvac_mode ⇒ { action_attempt }
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
+
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Sets the HVAC mode for a specified thermostat.
+
+#### Code:
 
 ```javascript
 await seam.thermostats.setHvacMode({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
   hvac_mode_setting: "heat_cool",
   heating_set_point_celsius: 20,
   cooling_set_point_celsius: 25,
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "success",
-  "action_type": "SET_HVAC_MODE"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Sets the HVAC mode for a specified thermostat.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+  "hvac_mode_setting": "heat_cool",
+  "heating_set_point_celsius": 20,
+  "cooling_set_point_celsius": 25
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    "action_type": "SET_HVAC_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+
+Sets the HVAC mode for a specified thermostat.
+
+#### Code:
 
 ```python
 seam.thermostats.set_hvac_mode(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
+    device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
     hvac_mode_setting="heat_cool",
     heating_set_point_celsius=20,
     cooling_set_point_celsius=25,
 )
 ```
 
-#### Response
+#### Output:
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="success",
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Sets the HVAC mode for a specified thermostat.
+
+#### Code:
 
 ```ruby
 seam.thermostats.set_hvac_mode(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
   hvac_mode_setting: "heat_cool",
   heating_set_point_celsius: 20,
   cooling_set_point_celsius: 25,
 )
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "success",
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
   "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Sets the HVAC mode for a specified thermostat.
+
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->set_hvac_mode(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
     hvac_mode_setting: "heat_cool",
     heating_set_point_celsius: 20,
     cooling_set_point_celsius: 25
 );
 ```
 
-#### Response
+#### Output:
 
 ```php
-<?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "success",
+    "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Sets the HVAC mode for a specified thermostat.
+
+#### Code:
 
 ```seam_cli
-seam thermostats set-hvac-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
+seam thermostats set-hvac-mode --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "success",
-  "action_type": "SET_HVAC_MODE"
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetHvacMode(
-		context.Background(),
-		api.ThermostatsSetHvacModeRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			HvacModeSetting:        api.String("heat_cool"),
-			HeatingSetPointCelsius: api.Float64(20),
-			CoolingSetPointCelsius: api.Float64(25),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "success", ActionType: "SET_HVAC_MODE"}
 ```
 {% endtab %}
 
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `device_id`
+**`device_id`** *String* (Required)
 
-Format: `UUID`
-Required: Yes
+ID of the thermostat device for which you want to set the HVAC mode.
 
-ID of the desired thermostat device.
+---
 
-***
+**`hvac_mode_setting`** *String* (Required)
 
-### `hvac_mode_setting`
+---
 
-Format: `Enum`
-Required: Yes
+**`cooling_set_point_celsius`** *Number*
 
-Possible enum values:
-- `off`
-- `cool`
-- `heat`
-- `heat_cool`
+[Cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.
 
-***
+---
 
-### `cooling_set_point_celsius`
+**`cooling_set_point_fahrenheit`** *Number*
 
-Format: `Number`
-Required: No
+[Cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.
 
-Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `cooling_set_point` parameters.
+---
 
-***
+**`heating_set_point_celsius`** *Number*
 
-### `cooling_set_point_fahrenheit`
+[Heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.
 
-Format: `Number`
-Required: No
+---
 
-Desired [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `cooling_set_point` parameters.
+**`heating_set_point_fahrenheit`** *Number*
 
-***
+[Heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.
 
-### `heating_set_point_celsius`
+---
 
-Format: `Number`
-Required: No
 
-Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °C. You must set one of the `heating_set_point` parameters.
-
-***
-
-### `heating_set_point_fahrenheit`
-
-Format: `Number`
-Required: No
-
-Desired [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in °F. You must set one of the `heating_set_point` parameters.
-
-***
-
-## Return Type
+## Response
 
 [action\_attempt](./)
 
-### `SET_HVAC_MODE`
 
-Setting HVAC mode.
+{% tabs %}
+{% tab title="JSON" %}
 
-#### `action_attempt_id`
 
-Format: `UUID`
 
-ID of the action attempt.
-
----
-
-#### `action_type`
-
-Format: `Enum`
-
-Value: `SET_HVAC_MODE`
-
----
-
-#### `error`
-
-Format: `Object`
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>type</code> Format: <code>String</code></summary>
-</details>
-
----
-
-#### `result`
-
-Format: `Object`
-
-This object has no properties.
-
----
-
-#### `status`
-
-Format: `Enum`
-
-Possible enum values:
-- `success`
-- `pending`
-- `error`
-
----
-
+```json
+{
+  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}

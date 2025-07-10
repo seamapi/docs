@@ -168,58 +168,8 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-```
 
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "status": "authorized",
-  "login_successful": true,
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-updatedConnectWebview, err := client.ConnectWebviews.Get(
-  context.Background(),
-  &api.ConnectWebviewsGetRequest{
-    ConnectWebviewId: connectWebview.connectWebviewId,
-  },
-)
-
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "status": "authorized",
-  "login_successful": true,
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -232,7 +182,7 @@ To avoid polling, use a Seam webhook to monitor for a `connected_account.connect
 
 Note that the `connected_account.connected` event also includes a `connected_account_id` property.
 
-For more information, see [Webhooks](../../core-concepts/webhooks.md).
+For more information, see [Webhooks](../webhooks.md).
 
 ```json
 {
@@ -249,7 +199,7 @@ For more information, see [Webhooks](../../core-concepts/webhooks.md).
 
 ## **Event Listening**
 
-When you [host a Connect Webview in an HTML iframe](../../core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe), the [iframe](https://www.w3schools.com/html/html_iframe.asp) uses `window.parent.postMessage` to send messages to the parent window that is hosting the iframe. `window.parent.postMessage` is a cross-origin communication mechanism available in web browsers.
+When you [host a Connect Webview in an HTML iframe](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe), the [iframe](https://www.w3schools.com/html/html_iframe.asp) uses `window.parent.postMessage` to send messages to the parent window that is hosting the iframe. `window.parent.postMessage` is a cross-origin communication mechanism available in web browsers.
 
 Register an event listener for the parent window containing the iframe to monitor for `message` events. Specifically, listen for a `connect_webview.login_succeeded` event. This event indicates that Seam has successfully established the connection to the user's device or ACS account. A `connect_webview.login_failed` event indicates that the account connection did not complete successfully.
 
@@ -275,8 +225,8 @@ Once you have received a `connect_webview.login_succeeded` event, you can use we
 
 | Event                                    | Description                                                                                                                                                                                                                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `connected_account.created`              | A [connected account](../../core-concepts/connected-accounts/) has been imported into your Seam workspace.                                                                                                                                                                                                               |
-| `connected_account.connected`            | Seam has established connection to or is reconnected to a [connected account](../../core-concepts/connected-accounts/).                                                                                                                                                                                                  |
+| `connected_account.created`              | A [connected account](../connected-accounts/) has been imported into your Seam workspace.                                                                                                                                                                                                                                |
+| `connected_account.connected`            | Seam has established connection to or is reconnected to a [connected account](../connected-accounts/).                                                                                                                                                                                                                   |
 | `connected_account.completed_first_sync` | Seam has finished the first sync of a connected account, and the corresponding devices or systems are now available.                                                                                                                                                                                                     |
 | `device.added`                           | A device was added to Seam or was re-added to Seam after having been removed.                                                                                                                                                                                                                                            |
 | `device.connected`                       | <p>The status of a device changed from offline to online. That is, the <code>device.properties.online</code> property changed from <code>false</code> to <code>true</code>.<br>Note that some devices operate entirely in offline mode, so Seam never emits a <code>device.connected</code> event for these devices.</p> |

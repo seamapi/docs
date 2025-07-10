@@ -20,9 +20,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -50,36 +48,8 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
-{% endtab %}
-
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
 {% endtab %}
 {% endtabs %}
 
@@ -282,9 +252,9 @@ puts some_lock #   warnings=[]> #   errors=[] #   created_at=2022-12-16 00:52:16
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% swagger src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
 [openapi.json](../.gitbook/assets/openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
 ## Unlock a door
 
@@ -484,10 +454,10 @@ Now that you've completed this guide, you can try to connect a real Yale device.
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Schlage Getting Started Guide](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
+* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
-* [Core Concepts](https://github.com/seamapi/api-docs/blob/main/docs/device-guides/broken-reference/README.md)
+* [Core Concepts](../core-concepts/overview.md)
 
-If you have any questions or want to report an issue, email us at support@seam.co.
+If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

@@ -1,16 +1,19 @@
 {% tabs %}
-{{#each this.code}}
-{% tab title="{{this.title}}" %}
-#### Request
+{{#each code}}
+{% tab title="{{title}}" %}
 
-```{{@key}}
-{{this.request}}
+{{../inlineDescription}}
+
+#### Code:
+
+```{{sdkName}}
+{{request}}
 ```
 
-#### Response
+#### Output:
 
-```{{@key}}
-{{this.response}}
+```{{sdkName}}
+{{response}}
 ```
 {% endtab %}
 

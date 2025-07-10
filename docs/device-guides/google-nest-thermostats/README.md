@@ -16,14 +16,7 @@ Google produces Nest smart thermostats as part of the Google smart home product 
 
 This integration supports all [Nest thermostats](https://store.google.com/us/category/nest_thermostats).
 
-For detailed information about the Google Nest devices that Seam supports, see the following table and our [Nest Supported Devices page](https://www.seam.co/manufacturers/nest):
-
-{% @seam-gitbook-plugin-v2/seam-component content="<seam-supported-device-table
-  endpoint="https://connect.getseam.com"
-  publishable-key="seam_pk1J0Bgui_oYEuzDhOqUzSBkrPmrNsUuKL"
-  user-identifier-key="c6e74334-eb31-4719-b679-d84cf1c07d9c"
-  manufacturers='["Nest"]'
-/>" %}
+For detailed information about the Google Nest devices that Seam supports, see our [Nest Supported Devices page](https://www.seam.co/manufacturers/nest).
 
 ***
 
@@ -34,13 +27,14 @@ We support the following features:
 * [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
 * [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
+* [Creating and managing thermostat weekly programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md)
 * [Setting and monitoring temperature thresholds](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Nest devices to Seam, include the `google_nest` [device provider key](../../api-clients/connect_webviews/#device-provider-keys) in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webview](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Nest devices to Seam, include the `google_nest` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -74,7 +68,7 @@ Once you have set up Google Device Access, prompt the owners of these Google Nes
 
 ***
 
-## Brand-Specific Errors
+## Troubleshooting
 
 If you have not yet [obtained Google Commercial Development](obtain-google-nest-device-access-and-commercial-development.md), and your end user attempts to connect a Google Nest thermostat to Seam using a [Connect Webview](../../core-concepts/connect-webviews/), the Connect Webview displays the following error:
 

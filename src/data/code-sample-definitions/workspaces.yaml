@@ -1,0 +1,135 @@
+---
+- title: Create a sandbox workspace
+  description: Creates a new sandbox workspace.
+  request:
+    path: /workspaces/create
+    parameters:
+      name: My Sandbox Workspace
+      company_name: Acme
+      connect_partner_name: Acme
+      is_sandbox: true
+      webview_primary_button_color: '#232426'
+      webview_primary_button_text_color: '#FFFDE7'
+      webview_logo_shape: circle
+      webview_success_message: 'Your account has been successfully connected to Acme!'
+      connect_webview_customization:
+        inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+        logo_shape: circle
+        primary_button_color: '#232426'
+        primary_button_text_color: '#FFFDE7'
+        success_message: Your account has been successfully connected to Acme!
+  response:
+    body:
+      workspace:
+        company_name: Acme
+        connect_partner_name: Acme
+        connect_webview_customization:
+          inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+          logo_shape: circle
+          primary_button_color: '#232426'
+          primary_button_text_color: '#FFFDE7'
+          success_message: Your account has been successfully connected to Acme!
+        is_sandbox: true
+        is_suspended: false
+        name: My Sandbox Workspace
+        workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
+- title: Create a production workspace
+  description: Creates a new production workspace.
+  request:
+    path: /workspaces/create
+    parameters:
+      name: My Production Workspace
+      company_name: Acme
+      connect_partner_name: Acme
+      is_sandbox: false
+      webview_primary_button_color: '#232426'
+      webview_primary_button_text_color: '#FFFDE7'
+      webview_logo_shape: circle
+      webview_success_message: 'Your account has been successfully connected to Acme!'
+      connect_webview_customization:
+        inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+        logo_shape: circle
+        primary_button_color: '#232426'
+        primary_button_text_color: '#FFFDE7'
+        success_message: Your account has been successfully connected to Acme!
+  response:
+    body:
+      workspace:
+        company_name: Acme
+        connect_partner_name: Acme
+        connect_webview_customization:
+          inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+          logo_shape: circle
+          primary_button_color: '#232426'
+          primary_button_text_color: '#FFFDE7'
+          success_message: Your account has been successfully connected to Acme!
+        is_sandbox: true
+        is_suspended: false
+        name: My Sandbox Workspace
+        workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
+- title: Get a workspace
+  description: Returns the workspace associated with the authentication value.
+  request:
+    path: /workspaces/get
+  response:
+    body:
+      workspace:
+        company_name: Acme
+        connect_partner_name: Acme
+        connect_webview_customization:
+          inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+          logo_shape: circle
+          primary_button_color: '#232426'
+          primary_button_text_color: '#FFFDE7'
+          success_message: Your account has been successfully connected to Acme!
+        is_sandbox: true
+        is_suspended: false
+        name: My Sandbox Workspace
+        workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
+- title: List workspacess
+  description: Returns a list of workspaces associated with the authentication value.
+  request:
+    path: /workspaces/list
+  response:
+    body:
+      workspaces:
+        - company_name: Acme
+          connect_partner_name: Acme
+          connect_webview_customization:
+            inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+            logo_shape: circle
+            primary_button_color: '#232426'
+            primary_button_text_color: '#FFFDE7'
+            success_message: Your account has been successfully connected to Acme!
+          is_sandbox: true
+          is_suspended: false
+          name: My Sandbox Workspace
+          workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
+- title: Reset a sandbox workspace
+  description: Resets the sandbox workspace associated with the authentication value.
+  request:
+    path: /workspaces/reset_sandbox
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: f8e7d6c5-4b3a-2c1d-9e0f-8a7b6c5d4e3f
+        action_type: RESET_SANDBOX_WORKSPACE
+        error: null
+        result: {}
+        status: success
+- title: Update a workspace
+  description: Updates the workspace associated with the authentication value.
+  request:
+    path: /workspaces/update
+    parameters:
+      name: My Workspace
+      connect_partner_name: Acme
+      connect_webview_customization:
+        inviter_logo_url: https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c
+        logo_shape: circle
+        primary_button_color: '#232426'
+        primary_button_text_color: '#FFFDE7'
+        success_message: Your account has been successfully connected to Acme!
+      is_suspended: true
+  response:
+    body: null

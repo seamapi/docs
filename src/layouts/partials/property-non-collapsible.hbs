@@ -1,5 +1,4 @@
-**`{{name}}`**
-Format: `{{format}}`{{#if listItemFormat}}, Item format: `{{listItemFormat}}`{{/if}}
+{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
 
 {{> property-content}}
 

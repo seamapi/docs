@@ -4,27 +4,27 @@ import type {
   Endpoint,
   EnumProperty,
   Property,
+  PropertyGroup,
+  ResourceSample,
   Route,
-} from '@seamapi/blueprint'
-import { pascalCase } from 'change-case'
-import type {
   SdkName,
   SyntaxName,
-} from 'node_modules/@seamapi/blueprint/dist/index.cjs'
-import type { ResourceSample } from 'node_modules/@seamapi/blueprint/lib/samples/resource-sample.js'
+} from '@seamapi/blueprint'
+import { pascalCase } from 'change-case'
 
-import type { PathMetadata } from 'lib/path-metadata.js'
-
+import type { PathMetadata } from '../path-metadata.js'
 import { processActionAttemptResource } from './action-attempt-resource.js'
 
 export interface ApiRouteLayoutContext {
   title: string
-  description: string
+  overview: string | undefined
   path: string
+  isAlpha: boolean
+  alphaMessage: string | undefined
   resources: Array<
     ApiRouteResource & {
-      warnings: ApiWarning[]
-      errors: ApiError[]
+      warningGroups: ApiRouteVariantGroup[]
+      errorGroups: ApiRouteVariantGroup[]
       resourceSamples: ResourceSampleContext[]
     }
   >
@@ -40,11 +40,18 @@ export interface ApiRouteEvent {
 
 export interface ResourceSampleContext {
   title: string
+  description: string
   resourceData: string
   resourceDataSyntax: SyntaxName
 }
 
-export type ApiRouteProperty = Pick<
+interface ApiRoutePropertyGroup {
+  name?: string
+  propertyGroupKey: string | null
+  properties: ApiRouteProperty[]
+}
+
+type ApiRouteProperty = Pick<
   Property,
   'name' | 'description' | 'isDeprecated' | 'deprecationMessage'
 > & {
@@ -66,35 +73,43 @@ export type ApiRouteProperty = Pick<
 export interface ApiRouteResource {
   name: string
   description: string
-  properties: ApiRouteProperty[]
+  propertyGroups: ApiRoutePropertyGroup[]
+  legacyPropertyGroups?: ApiRoutePropertyGroup[]
   events: ApiRouteEvent[]
+  hidePreamble: boolean
+  endpoints?: ApiRouteEndpoint[]
 }
 
-export interface ApiWarning {
-  name: string
-  description: string
+interface ApiRouteVariantGroup {
+  name?: string
+  variantGroupKey: string | null
+  variants: ApiRouteVariant[]
 }
 
-export interface ApiError {
+interface ApiRouteVariant {
   name: string
   description: string
+  parentResouceType: string | null
 }
 
 type ApiRouteEndpoint = Pick<Endpoint, 'path' | 'description'>
 
-export function setApiRouteLayoutContext(
+export const setApiRouteLayoutContext = (
   file: Partial<ApiRouteLayoutContext>,
   route: Route,
   blueprint: Blueprint,
   pathMetadata: PathMetadata,
-): void {
+): void => {
   const metadata = pathMetadata[route.path]
   if (metadata == null) {
     throw new Error(`Missing path metadata for ${route.path}`)
   }
 
   file.title = metadata.title
+  file.overview = metadata.overview
   file.path = route.path
+  file.isAlpha = (metadata.alpha ?? '').length > 0
+  file.alphaMessage = metadata.alpha
 
   const eventsByRoutePath = groupEventsByRoutePath(blueprint.events)
   file.events = eventsByRoutePath.get(route.path) ?? []
@@ -109,14 +124,22 @@ export function setApiRouteLayoutContext(
       description: getFirstParagraph(description),
     }))
 
+  const resourceTypes = [
+    ...blueprint.resources
+      .filter((r) => r.routePath === route.path && !r.isUndocumented)
+      .map(({ resourceType }) => resourceType),
+    ...metadata.resources,
+  ]
   file.resources = []
-  for (const resourceType of metadata.resources) {
+  for (const resourceType of resourceTypes) {
+    const resource = blueprint.resources.find(
+      (r) => r.resourceType === resourceType,
+    )
+
     if (resourceType === 'action_attempt') {
       processActionAttemptResource(blueprint, file.resources, eventsByRoutePath)
       continue
     }
-
-    const resource = blueprint.resources[resourceType]
 
     if (resource == null) {
       throw new Error(
@@ -124,32 +147,289 @@ export function setApiRouteLayoutContext(
       )
     }
 
+    const groupOptions = {
+      include: metadata.include_groups,
+      exclude: metadata.exclude_groups,
+    }
+
     const warningsProp = resource.properties.find((p) => p.name === 'warnings')
     const errorsProp = resource.properties.find((p) => p.name === 'errors')
-    const resourceWarnings =
-      warningsProp != null ? collectResourceWarnings(warningsProp) : []
-    const resourceErrors =
-      errorsProp != null ? collectResourceErrors(errorsProp) : []
+    const warningGroups =
+      warningsProp != null
+        ? groupVariants(warningsProp, groupOptions, resourceType, resourceTypes)
+        : []
+    const errorGroups =
+      errorsProp != null
+        ? groupVariants(errorsProp, groupOptions, resourceType, resourceTypes)
+        : []
 
-    const properties = resource.properties
-      .filter(({ isUndocumented }) => !isUndocumented)
-      .map(mapBlueprintPropertyToRouteProperty)
+    const allProperties = resource.properties.filter(
+      ({ isUndocumented }) => !isUndocumented,
+    )
 
-    addLinkTargetsToProperties(properties, {
-      errors: resourceErrors.length > 0,
-      warnings: resourceWarnings.length > 0,
+    const properties = allProperties.filter(({ name }) => name !== 'properties')
+
+    const legacyProperty = allProperties.find(
+      ({ name }) => name === 'properties',
+    )
+
+    const propertyGroups = groupProperties(
+      properties,
+      resource.propertyGroups,
+      groupOptions,
+    )
+
+    addLinkTargetsToProperties(propertyGroups?.[0]?.properties, {
+      hasErrors: errorGroups.length > 0,
+      hasWarnings: warningGroups.length > 0,
     })
+
+    const legacyPropertyGroups =
+      legacyProperty != null && legacyProperty.format === 'object'
+        ? groupProperties(
+            legacyProperty.properties,
+            legacyProperty.propertyGroups,
+            {
+              include: metadata.include_groups,
+              exclude: metadata.exclude_groups,
+            },
+          )
+        : null
 
     file.resources.push({
       name: resource.resourceType,
       description: resource.description,
-      properties,
-      errors: resourceErrors,
-      warnings: resourceWarnings,
+      propertyGroups,
+      ...(legacyPropertyGroups == null ? {} : { legacyPropertyGroups }),
+      errorGroups,
+      warningGroups,
+      hidePreamble: route.path !== resource.routePath,
       events: eventsByRoutePath.get(resource.routePath) ?? [],
-      resourceSamples: resource.resourceSamples.map(mapResourceSample),
+      endpoints: file.endpoints,
+      resourceSamples: resource.resourceSamples
+        .filter(({ title }) => {
+          if (groupOptions.include != null) {
+            return groupOptions.include.some((x) =>
+              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+            )
+          }
+          if (groupOptions.exclude != null) {
+            return !groupOptions.exclude.some((x) =>
+              title.toLowerCase().includes(x.split('_')[0]?.slice(0, -1) ?? ''),
+            )
+          }
+          return true
+        })
+        .map(mapResourceSample),
     })
   }
+}
+
+const groupVariants = (
+  property: Property | null,
+  {
+    include,
+    exclude,
+  }: {
+    include?: string[] | undefined
+    exclude?: string[] | undefined
+  },
+  resourceType: string,
+  resourceTypes: string[],
+): ApiRouteVariantGroup[] => {
+  if (!isDiscriminatedListProperty(property)) {
+    return []
+  }
+
+  const getApiRouteVariants = (
+    variantGroupKey: string | null,
+  ): ApiRouteVariant[] => {
+    return collectResourceVariants(
+      {
+        ...property,
+        variants: property.variants.filter(
+          (v) => v.variantGroupKey === variantGroupKey,
+        ),
+      },
+      resourceTypes,
+    ).sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    })
+  }
+
+  const groups = property.variantGroups
+    .reduce<ApiRouteVariantGroup[]>(
+      (groups, variantGroup) => [
+        ...groups,
+        {
+          name: variantGroup.name,
+          variantGroupKey: variantGroup.variantGroupKey,
+          variants: getApiRouteVariants(variantGroup.variantGroupKey),
+        },
+      ],
+      [
+        {
+          variants: getApiRouteVariants(null),
+          variantGroupKey: null,
+        },
+      ],
+    )
+    .filter(({ variants }) => variants.length > 0)
+    .filter(({ variantGroupKey }) => {
+      if (include == null) return true
+      if (variantGroupKey == null) return true
+      return include.includes(variantGroupKey)
+    })
+    .filter(({ variantGroupKey }) => {
+      if (exclude == null) return true
+      if (variantGroupKey == null) return true
+      return !exclude.includes(variantGroupKey)
+    })
+    .sort((a, b) => {
+      if (a.variantGroupKey === null || a.name == null) return -1
+      if (a.variantGroupKey === null || b.name == null) return 1
+      return a.name.localeCompare(b.name)
+    })
+
+  if (include != null) {
+    const variants = groups
+      .flatMap((g) => g.variants)
+      .sort((a, b) => {
+        if (a.parentResouceType === null && b.parentResouceType === null) {
+          return a.name.localeCompare(b.name)
+        }
+        if (a.parentResouceType === resourceType) {
+          return -1
+        }
+        if (b.parentResouceType === resourceType) {
+          return 1
+        }
+        if (a.parentResouceType === null) {
+          return -1
+        }
+        if (b.parentResouceType === null) {
+          return 1
+        }
+        if (a.parentResouceType !== b.parentResouceType) {
+          return a.parentResouceType.localeCompare(b.parentResouceType)
+        }
+        return a.name.localeCompare(b.name)
+      })
+    return [
+      {
+        variantGroupKey: null,
+        variants,
+      },
+    ]
+  }
+
+  return groups
+}
+
+const isDiscriminatedListProperty = (
+  prop: Property | undefined | null,
+): prop is DiscriminatedListProperty => {
+  return (
+    prop != null &&
+    'itemFormat' in prop &&
+    prop.itemFormat === 'discriminated_object'
+  )
+}
+
+const collectResourceVariants = (
+  property: DiscriminatedListProperty,
+  resourceTypes: string[],
+): ApiRouteVariant[] => {
+  return property.variants
+    .map((variant) => {
+      const discriminator = findEnumProperty(
+        variant.properties,
+        property.discriminator,
+      )
+      if (discriminator?.values?.[0]?.name == null) {
+        return null
+      }
+
+      return {
+        name: discriminator.values[0].name,
+        description: variant.description,
+        parentResouceType: getParentVariantResourceType(
+          variant.properties.map(({ name }) => name),
+          resourceTypes,
+        ),
+      }
+    })
+    .filter((variant): variant is ApiRouteVariant => variant !== null)
+}
+
+export const groupProperties = (
+  properties: Property[],
+  propertyGroups: PropertyGroup[],
+  {
+    include,
+    exclude,
+  }: {
+    include?: string[] | undefined
+    exclude?: string[] | undefined
+  },
+): ApiRoutePropertyGroup[] => {
+  const getApiRouteProperties = (
+    propertyGroupKey: string | null,
+  ): ApiRouteProperty[] =>
+    properties
+      .filter((p) => p.propertyGroupKey === propertyGroupKey)
+      .map(mapBlueprintPropertyToRouteProperty)
+      .sort((a, b) => {
+        return a.name.localeCompare(b.name)
+      })
+
+  const groups = propertyGroups
+    .reduce<ApiRoutePropertyGroup[]>(
+      (groups, propertyGroup) => [
+        ...groups,
+        {
+          name: propertyGroup.name,
+          propertyGroupKey: propertyGroup.propertyGroupKey,
+          properties: getApiRouteProperties(propertyGroup.propertyGroupKey),
+        },
+      ],
+      [
+        {
+          properties: getApiRouteProperties(null),
+          propertyGroupKey: null,
+        },
+      ],
+    )
+    .filter(({ properties }) => properties.length > 0)
+    .filter(({ propertyGroupKey }) => {
+      if (include == null) return true
+      if (propertyGroupKey == null) return true
+      return include.includes(propertyGroupKey)
+    })
+    .filter(({ propertyGroupKey }) => {
+      if (exclude == null) return true
+      if (propertyGroupKey == null) return true
+      return !exclude.includes(propertyGroupKey)
+    })
+    .sort((a, b) => {
+      if (a.name == null) return -1
+      if (b.name == null) return 1
+      return a.name.localeCompare(b.name)
+    })
+
+  if (include != null) {
+    const properties = groups
+      .flatMap((g) => g.properties)
+      .sort((a, b) => a.name.localeCompare(b.name))
+    return [
+      {
+        propertyGroupKey: null,
+        properties,
+      },
+    ]
+  }
+
+  return groups
 }
 
 const groupEventsByRoutePath = (
@@ -176,40 +456,10 @@ const groupEventsByRoutePath = (
 const getFirstParagraph = (text: string): string =>
   text.split('\n\n').at(0) ?? text
 
-function collectResourceWarnings(warnings: Property | undefined): ApiWarning[] {
-  if (!isDiscriminatedObjectProperty(warnings)) {
-    return []
-  }
-
-  return warnings.variants
-    .map((variant) => {
-      const warningCode = findEnumProperty(variant.properties, 'warning_code')
-      if (warningCode?.values?.[0]?.name == null) {
-        return null
-      }
-
-      return {
-        name: warningCode.values[0].name,
-        description: variant.description,
-      }
-    })
-    .filter((warning): warning is ApiWarning => warning !== null)
-}
-
-function isDiscriminatedObjectProperty(
-  prop: Property | undefined,
-): prop is DiscriminatedListProperty {
-  return (
-    prop != null &&
-    'itemFormat' in prop &&
-    prop.itemFormat === 'discriminated_object'
-  )
-}
-
-function findEnumProperty(
+const findEnumProperty = (
   properties: Property[],
   name: string,
-): EnumProperty | null {
+): EnumProperty | null => {
   const prop = properties.find(
     (p) => p.name === name && p.format === 'enum',
   ) as EnumProperty | undefined
@@ -217,33 +467,13 @@ function findEnumProperty(
   return prop ?? null
 }
 
-function collectResourceErrors(errors: Property | undefined): ApiError[] {
-  if (!isDiscriminatedObjectProperty(errors)) {
-    return []
-  }
-
-  return errors.variants
-    .map((variant) => {
-      const errorCode = findEnumProperty(variant.properties, 'error_code')
-      if (errorCode?.values?.[0]?.name == null) {
-        return null
-      }
-
-      return {
-        name: errorCode.values[0].name,
-        description: variant.description,
-      }
-    })
-    .filter((error): error is ApiError => error !== null)
-}
-
-export const mapBlueprintPropertyToRouteProperty = (
+const mapBlueprintPropertyToRouteProperty = (
   prop: Property,
 ): ApiRouteProperty => {
   const { name, description, format, isDeprecated, deprecationMessage } = prop
   const contextRouteProp: ApiRouteProperty = {
     name,
-    description,
+    description: description.trim(),
     isDeprecated,
     deprecationMessage,
     format: normalizePropertyFormatForDocs(format),
@@ -346,13 +576,14 @@ const flattenObjectProperties = (
   return results
 }
 
-function addLinkTargetsToProperties(
-  properties: ApiRouteProperty[],
-  sections: { errors: boolean; warnings: boolean },
-): void {
+const addLinkTargetsToProperties = (
+  properties: ApiRouteProperty[] | undefined,
+  sections: { hasErrors: boolean; hasWarnings: boolean },
+): void => {
+  if (properties == null) return
   const linkableProperties: Record<string, string | undefined> = {
-    errors: sections.errors ? './#errors-1' : undefined,
-    warnings: sections.warnings ? './#warnings-1' : undefined,
+    errors: sections.hasErrors ? './#errors' : undefined,
+    warnings: sections.hasWarnings ? './#warnings' : undefined,
   }
 
   for (const prop of properties) {
@@ -363,7 +594,9 @@ function addLinkTargetsToProperties(
   }
 }
 
-const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
+export const mapResourceSample = (
+  sample: ResourceSample,
+): ResourceSampleContext => {
   const jsonSample = Object.entries(sample.resource).find(
     ([k]) => (k as SdkName) === 'seam_cli',
   )?.[1]
@@ -376,7 +609,102 @@ const mapResourceSample = (sample: ResourceSample): ResourceSampleContext => {
 
   return {
     title: sample.title,
+    description: sample.description,
     resourceData: jsonSample.resource_data,
     resourceDataSyntax: jsonSample.resource_data_syntax,
   }
+}
+
+const getParentVariantResourceType = (
+  propertyKeys: string[],
+  resourceTypes: string[],
+): string | null => {
+  const keyMap = Object.fromEntries(
+    resourceTypes.map((k) => [`is_${k}_error`, k]),
+  )
+  const key = propertyKeys.find((k) => Object.keys(keyMap).includes(k))
+  if (key == null) return null
+  return keyMap[key] ?? null
+}
+
+function processActionAttemptResource(
+  blueprint: Blueprint,
+  resources: Array<
+    ApiRouteResource & {
+      warnings: ApiWarning[]
+      errors: ApiError[]
+      resourceSamples: ResourceSampleContext[]
+    }
+  >,
+  eventsByRoutePath: Map<string, ApiRouteEvent[]>,
+): void {
+  const blueprintActionAttemptDef = blueprint.actionAttempts[0]
+  if (blueprintActionAttemptDef == null) {
+    throw new Error(
+      'Cannot process action attempt resource: blueprint.actionAttempts is empty.',
+    )
+  }
+
+  const idPropKey = 'action_attempt_id'
+  const idPropDef = blueprintActionAttemptDef.properties.find(
+    (p) => p.name === idPropKey,
+  )
+  if (idPropDef == null) {
+    throw new Error(
+      `Blueprint action attempt is missing "${idPropKey}" property.`,
+    )
+  }
+
+  const statusPropKey = 'status'
+  const statusPropDef = blueprintActionAttemptDef.properties.find(
+    (p) => p.name === statusPropKey,
+  )
+  if (statusPropDef == null) {
+    throw new Error(
+      `Blueprint action attempt is missing "${statusPropKey}" property.`,
+    )
+  }
+
+  const actionTypes = blueprint.actionAttempts.map(
+    (attempt) => attempt.actionAttemptType,
+  )
+
+  const properties: ApiRouteProperty[] = [
+    mapBlueprintPropertyToRouteProperty(idPropDef),
+    mapBlueprintPropertyToRouteProperty(statusPropDef),
+    {
+      name: 'action_type',
+      description: 'Type of the action attempt.',
+      format: 'String',
+      isDeprecated: false,
+      deprecationMessage: '',
+      enumValues: actionTypes,
+    },
+    {
+      name: 'error',
+      description:
+        'Errors associated with the action attempt. Null for pending action attempts.',
+      format: 'Object',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'result',
+      description:
+        'Result of the action attempt. Null for pending action attempts.',
+      format: 'Object',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+  ]
+
+  resources.push({
+    name: 'action_attempt',
+    description: 'Represents an attempt to perform an action against a device.',
+    properties,
+    errors: [],
+    warnings: [],
+    events: eventsByRoutePath.get('/action_attempts') ?? [],
+    resourceSamples: [],
+  })
 }

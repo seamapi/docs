@@ -1,398 +1,432 @@
 # Encode a Credential
 
-```
-POST /acs/encoders/encode_credential ⇒ { action_attempt }
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+
+Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md). Either provide an `acs_credential_id` or an `access_method_id`
+
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Encodes an existing credential onto a plastic card placed on the specified encoder.
+
+#### Code:
+
+```javascript
+await seam.acs.encoders.encodeCredential({
+  acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
+  acs_credential_id: "a383871c-331a-42ae-af66-146824505187",
+});
 ```
 
-Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+#### Output:
 
-## Authentication Methods
+```javascript
+{
+  "action_attempt_id": "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+  "action_type": "ENCODE_CREDENTIAL",
+  "error": null,
+  "result": {
+    "access_method": "card",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "card_number": "164d29dc4a09b65f",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Guest Lock 1, Vingcard Lock 2",
+    "ends_at": "2025-07-12T16:54:17.946512Z",
+    "errors": [],
+    "external_type": "visionline_card",
+    "external_type_display_name": "Visionline Card",
+    "is_issued": true,
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": false,
+    "issued_at": "2025-06-16T16:54:17.946512Z",
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-07-10T16:54:17.946512Z",
+    "visionline_metadata": {
+      "card_function_type": "guest",
+      "card_id": "5",
+      "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+      "credential_id": "15",
+      "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+      "is_valid": true
+    },
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  },
+  "status": "success"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Encodes an existing credential onto a plastic card placed on the specified encoder.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/encoders/encode_credential" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_encoder_id": "18ad521a-308e-4182-b1a6-2338b46a2763",
+  "acs_credential_id": "a383871c-331a-42ae-af66-146824505187"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "action_attempt": {
+    "action_attempt_id": "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+    "action_type": "ENCODE_CREDENTIAL",
+    "error": null,
+    "result": {
+      "access_method": "card",
+      "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+      "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+      "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+      "card_number": "164d29dc4a09b65f",
+      "created_at": "2025-06-16T16:54:17.946514Z",
+      "display_name": "Guest Lock 1, Vingcard Lock 2",
+      "ends_at": "2025-07-12T16:54:17.946512Z",
+      "errors": [],
+      "external_type": "visionline_card",
+      "external_type_display_name": "Visionline Card",
+      "is_issued": true,
+      "is_latest_desired_state_synced_with_provider": true,
+      "is_managed": true,
+      "is_multi_phone_sync_credential": false,
+      "issued_at": "2025-06-16T16:54:17.946512Z",
+      "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+      "starts_at": "2025-07-10T16:54:17.946512Z",
+      "visionline_metadata": {
+        "card_function_type": "guest",
+        "card_id": "5",
+        "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+        "credential_id": "15",
+        "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+        "is_valid": true
+      },
+      "warnings": [],
+      "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+    },
+    "status": "success"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Encodes an existing credential onto a plastic card placed on the specified encoder.
+
+#### Code:
+
+```python
+seam.acs.encoders.encode_credential(
+    acs_encoder_id="18ad521a-308e-4182-b1a6-2338b46a2763",
+    acs_credential_id="a383871c-331a-42ae-af66-146824505187",
+)
+```
+
+#### Output:
+
+```python
+ActionAttempt(
+    action_attempt_id="1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+    action_type="ENCODE_CREDENTIAL",
+    error=None,
+    result={
+        "access_method": "card",
+        "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+        "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+        "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+        "card_number": "164d29dc4a09b65f",
+        "created_at": "2025-06-16T16:54:17.946514Z",
+        "display_name": "Guest Lock 1, Vingcard Lock 2",
+        "ends_at": "2025-07-12T16:54:17.946512Z",
+        "errors": [],
+        "external_type": "visionline_card",
+        "external_type_display_name": "Visionline Card",
+        "is_issued": true,
+        "is_latest_desired_state_synced_with_provider": true,
+        "is_managed": true,
+        "is_multi_phone_sync_credential": false,
+        "issued_at": "2025-06-16T16:54:17.946512Z",
+        "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+        "starts_at": "2025-07-10T16:54:17.946512Z",
+        "visionline_metadata": {
+            "card_function_type": "guest",
+            "card_id": "5",
+            "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+            "credential_id": "15",
+            "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+            "is_valid": true,
+        },
+        "warnings": [],
+        "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+    },
+    status="success",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Encodes an existing credential onto a plastic card placed on the specified encoder.
+
+#### Code:
+
+```ruby
+seam.acs.encoders.encode_credential(
+  acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
+  acs_credential_id: "a383871c-331a-42ae-af66-146824505187",
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "action_attempt_id" => "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+  "action_type" => "ENCODE_CREDENTIAL",
+  "error" => nil,
+  "result" => {
+    access_method: "card",
+    acs_credential_id: "73a0a199-024f-454d-a916-9bbda8502c12",
+    acs_system_id: "b1d03165-2759-474b-a342-e02223f27b39",
+    acs_user_id: "0fc82df4-391b-4d00-a234-86378f1c3952",
+    card_number: "164d29dc4a09b65f",
+    created_at: "2025-06-16T16:54:17.946514Z",
+    display_name: "Guest Lock 1, Vingcard Lock 2",
+    ends_at: "2025-07-12T16:54:17.946512Z",
+    errors: [],
+    external_type: "visionline_card",
+    external_type_display_name: "Visionline Card",
+    is_issued: true,
+    is_latest_desired_state_synced_with_provider: true,
+    is_managed: true,
+    is_multi_phone_sync_credential: false,
+    issued_at: "2025-06-16T16:54:17.946512Z",
+    latest_desired_state_synced_with_provider_at: "2025-06-18T16:54:17.946514Z",
+    starts_at: "2025-07-10T16:54:17.946512Z",
+    visionline_metadata: {
+      card_function_type: "guest",
+      card_id: "5",
+      common_acs_entrance_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+      credential_id: "15",
+      guest_acs_entrance_ids: ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+      is_valid: true,
+    },
+    warnings: [],
+    workspace_id: "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+  },
+  "status" => "success",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Encodes an existing credential onto a plastic card placed on the specified encoder.
+
+#### Code:
+
+```php
+$seam->acs->encoders->encode_credential(
+    acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
+    acs_credential_id: "a383871c-331a-42ae-af66-146824505187"
+);
+```
+
+#### Output:
+
+```php
+[
+    "action_attempt_id" => "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+    "action_type" => "ENCODE_CREDENTIAL",
+    "error" => null,
+    "result" => [
+        "access_method" => "card",
+        "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+        "acs_system_id" => "b1d03165-2759-474b-a342-e02223f27b39",
+        "acs_user_id" => "0fc82df4-391b-4d00-a234-86378f1c3952",
+        "card_number" => "164d29dc4a09b65f",
+        "created_at" => "2025-06-16T16:54:17.946514Z",
+        "display_name" => "Guest Lock 1, Vingcard Lock 2",
+        "ends_at" => "2025-07-12T16:54:17.946512Z",
+        "errors" => [],
+        "external_type" => "visionline_card",
+        "external_type_display_name" => "Visionline Card",
+        "is_issued" => true,
+        "is_latest_desired_state_synced_with_provider" => true,
+        "is_managed" => true,
+        "is_multi_phone_sync_credential" => false,
+        "issued_at" => "2025-06-16T16:54:17.946512Z",
+        "latest_desired_state_synced_with_provider_at" =>
+            "2025-06-18T16:54:17.946514Z",
+        "starts_at" => "2025-07-10T16:54:17.946512Z",
+        "visionline_metadata" => [
+            "card_function_type" => "guest",
+            "card_id" => "5",
+            "common_acs_entrance_ids" => [
+                "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+            ],
+            "credential_id" => "15",
+            "guest_acs_entrance_ids" => [
+                "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+            ],
+            "is_valid" => true,
+        ],
+        "warnings" => [],
+        "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+    ],
+    "status" => "success",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Encodes an existing credential onto a plastic card placed on the specified encoder.
+
+#### Code:
+
+```seam_cli
+seam acs encoders encode-credential --acs_encoder_id "18ad521a-308e-4182-b1a6-2338b46a2763" --acs_credential_id "a383871c-331a-42ae-af66-146824505187"
+```
+
+#### Output:
+
+```seam_cli
+{
+  "action_attempt_id": "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+  "action_type": "ENCODE_CREDENTIAL",
+  "error": null,
+  "result": {
+    "access_method": "card",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "card_number": "164d29dc4a09b65f",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Guest Lock 1, Vingcard Lock 2",
+    "ends_at": "2025-07-12T16:54:17.946512Z",
+    "errors": [],
+    "external_type": "visionline_card",
+    "external_type_display_name": "Visionline Card",
+    "is_issued": true,
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": false,
+    "issued_at": "2025-06-16T16:54:17.946512Z",
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-07-10T16:54:17.946512Z",
+    "visionline_metadata": {
+      "card_function_type": "guest",
+      "card_id": "5",
+      "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+      "credential_id": "15",
+      "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+      "is_valid": true
+    },
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  },
+  "status": "success"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `acs_credential_id`
-
-Format: `UUID`
-Required: Yes
-
-ID of the `acs_credential` to encode onto a card.
-
-***
-
-### `acs_encoder_id`
-
-Format: `UUID`
-Required: Yes
+**`acs_encoder_id`** *String* (Required)
 
 ID of the `acs_encoder` to use to encode the `acs_credential`.
 
-***
+---
 
-## Return Type
+**`access_method_id`** *String*
+
+ID of the `access_method` to encode onto a card.
+
+---
+
+**`acs_credential_id`** *String*
+
+ID of the `acs_credential` to encode onto a card.
+
+---
+
+
+## Response
 
 [action\_attempt](./)
 
-### `ENCODE_CREDENTIAL`
 
-Action attempt to track encoding credential data from the physical encoder onto a card.
-
-#### `action_attempt_id`
-
-Format: `UUID`
-
-ID of the action attempt.
-
----
-
-#### `action_type`
-
-Format: `Enum`
-
-Type of action that the action attempt tracks.
-
-Value: `ENCODE_CREDENTIAL`
-
----
-
-#### `error`
-
-Format: `Object`
-
-<details>
-
-<summary><code>message</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>type</code> Format: <code>Enum</code></summary>
-
-Possible enum values:
-- `uncategorized_error`
-- `action_attempt_expired`
-- `no_credential_on_encoder`
-- `incompatible_card_format`
-- `credential_cannot_be_reissued`
-</details>
-
----
-
-#### `result`
-
-Format: `Object`
-
-If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card.
-
-<details>
-
-<summary><code>access_method</code> Format: <code>Enum</code></summary>
-
-Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
-
-Possible enum values:
-- `code`
-- `card`
-- `mobile_key`
-</details>
-
-<details>
-
-<summary><code>acs_credential_id</code> Format: <code>UUID</code></summary>
-
-ID of the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
-<details>
-
-<summary><code>acs_credential_pool_id</code> Format: <code>UUID</code></summary>
-</details>
-
-<details>
-
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
-
-ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
-<details>
-
-<summary><code>acs_user_id</code> Format: <code>UUID</code></summary>
-
-ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to whom the [credential](../../../capability-guides/access-systems/managing-credentials.md) belongs.
-</details>
-
-<details>
-
-<summary><code>assa_abloy_vostio_metadata</code> Format: <code>Object</code></summary>
-
-Vostio-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
-<details>
-
-<summary><code>assa_abloy_vostio_metadata.auto_join</code> Format: <code>Boolean</code></summary>
-</details>
-
-<details>
-
-<summary><code>assa_abloy_vostio_metadata.door_names</code> Format: <code>List</code> Item format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>assa_abloy_vostio_metadata.endpoint_id</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>assa_abloy_vostio_metadata.key_id</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>assa_abloy_vostio_metadata.key_issuing_request_id</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>assa_abloy_vostio_metadata.override_guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>card_number</code> Format: <code>String</code></summary>
-
-Number of the card associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
-<details>
-
-<summary><code>code</code> Format: <code>String</code></summary>
-
-Access (PIN) code for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was created.
-</details>
-
-<details>
-
-<summary><code>display_name</code> Format: <code>String</code></summary>
-
-Display name that corresponds to the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
-</details>
-
-<details>
-
-<summary><code>ends_at</code> Format: <code>String</code></summary>
-
-Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
-</details>
-
-<details>
-
-<summary><code>errors</code> Format: <code>List</code> Item format: <code>Object</code></summary>
-
-Errors associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
-- <code>error_code</code> Format: <code>String</code>
-
-
-- <code>message</code> Format: <code>String</code>
-
-</details>
-
-<details>
-
-<summary><code>external_type</code> Format: <code>Enum</code></summary>
-
-Brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
-
-Possible enum values:
-- `pti_card`
-- `brivo_credential`
-- `hid_credential`
-- `visionline_card`
-- `salto_ks_credential`
-- `assa_abloy_vostio_key`
-- `salto_space_key`
-- `latch_access`
-</details>
-
-<details>
-
-<summary><code>external_type_display_name</code> Format: <code>String</code></summary>
-
-Display name that corresponds to the brand-specific terminology for the [credential](../../../capability-guides/access-systems/managing-credentials.md) type.
-</details>
-
-<details>
-
-<summary><code>is_issued</code> Format: <code>Boolean</code></summary>
-
-Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been encoded onto a card.
-</details>
-
-<details>
-
-<summary><code>is_latest_desired_state_synced_with_provider</code> Format: <code>Boolean</code></summary>
-
-Indicates whether the latest state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) has been synced from Seam to the provider.
-</details>
-
-<details>
-
-<summary><code>is_managed</code> Format: <code>Boolean</code></summary>
-</details>
-
-<details>
-
-<summary><code>is_multi_phone_sync_credential</code> Format: <code>Boolean</code></summary>
-
-Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
-</details>
-
-<details>
-
-<summary><code>is_one_time_use</code> Format: <code>Boolean</code></summary>
-
-Indicates whether the [credential](../../../capability-guides/access-systems/managing-credentials.md) can only be used once. If `true`, the code becomes invalid after the first use.
-</details>
-
-<details>
-
-<summary><code>issued_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) was encoded onto a card.
-</details>
-
-<details>
-
-<summary><code>latest_desired_state_synced_with_provider_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the state of the [credential](../../../capability-guides/access-systems/managing-credentials.md) was most recently synced from Seam to the provider.
-</details>
-
-<details>
-
-<summary><code>parent_acs_credential_id</code> Format: <code>UUID</code></summary>
-
-ID of the parent [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
-<details>
-
-<summary><code>starts_at</code> Format: <code>String</code></summary>
-
-Date and time at which the [credential](../../../capability-guides/access-systems/managing-credentials.md) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-</details>
-
-<details>
-
-<summary><code>visionline_metadata</code> Format: <code>Object</code></summary>
-
-Visionline-specific metadata for the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.auto_join</code> Format: <code>Boolean</code></summary>
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.card_function_type</code> Format: <code>Enum</code></summary>
-
-Possible enum values:
-- `guest`
-- `staff`
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.card_id</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.common_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.credential_id</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.guest_acs_entrance_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.is_valid</code> Format: <code>Boolean</code></summary>
-</details>
-
-<details>
-
-<summary><code>visionline_metadata.joiner_acs_credential_ids</code> Format: <code>List</code> Item format: <code>UUID</code></summary>
-</details>
-
-<details>
-
-<summary><code>warnings</code> Format: <code>List</code> Item format: <code>Object</code></summary>
-
-Warnings associated with the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-
-- <code>created_at</code> Format: <code>Datetime</code>
-
-  Date and time at which Seam created the warning.
-
-
-- <code>message</code> Format: <code>String</code>
-
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
-
-- <code>warning_code</code> Format: <code>Enum</code>
-
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-  Possible enum values:
-  - `waiting_to_be_issued`
-  - `schedule_externally_modified`
-  - `schedule_modified`
-  - `being_deleted`
-  - `unknown_issue_with_acs_credential`
-  - `needs_to_be_reissued`
-
-</details>
-
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [credential](../../../capability-guides/access-systems/managing-credentials.md).
-</details>
-
----
-
-#### `status`
-
-Format: `Enum`
-
-Possible enum values:
-- `success`
-- `pending`
-- `error`
-
----
-
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "action_attempt_id": "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+  "action_type": "ENCODE_CREDENTIAL",
+  "error": null,
+  "result": {
+    "access_method": "card",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+    "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+    "card_number": "164d29dc4a09b65f",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Guest Lock 1, Vingcard Lock 2",
+    "ends_at": "2025-07-12T16:54:17.946512Z",
+    "errors": [],
+    "external_type": "visionline_card",
+    "external_type_display_name": "Visionline Card",
+    "is_issued": true,
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": false,
+    "issued_at": "2025-06-16T16:54:17.946512Z",
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-07-10T16:54:17.946512Z",
+    "visionline_metadata": {
+      "card_function_type": "guest",
+      "card_id": "5",
+      "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+      "credential_id": "15",
+      "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+      "is_valid": true
+    },
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  },
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}

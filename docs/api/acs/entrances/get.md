@@ -1,155 +1,280 @@
 # Get an Entrance
 
-```
-POST /acs/entrances/get ⇒ { acs_entrance }
-```
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
 
 {% tabs %}
 {% tab title="JavaScript" %}
-#### Request
+
+Returns a specified access system entrance.
+
+#### Code:
 
 ```javascript
 await seam.acs.entrances.get({
-  acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000",
+  acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1",
 });
 ```
 
-#### Response
+#### Output:
 
 ```javascript
 {
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "text"
+  "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Returns a specified access system entrance.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "acs_entrance": {
+    "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1",
+    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at": "2025-06-15T16:54:17.946495Z",
+    "display_name": "Main Entrance",
+    "errors": [],
+    "visionline_metadata": {
+      "door_category": "guest",
+      "door_name": "Main Entrance",
+      "profiles": [
+        {
+          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "visionline_door_profile_type": "BLE"
+        }
+      ]
+    }
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-#### Request
+
+Returns a specified access system entrance.
+
+#### Code:
 
 ```python
-seam.acs.entrances.get(acs_entrance_id="123e4567-e89b-12d3-a456-426614174000")
+seam.acs.entrances.get(acs_entrance_id="c931c953-4a5b-4f66-9189-500d39959ad1")
 ```
 
-#### Response
+#### Output:
 
 ```python
 AcsEntrance(
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_entrance_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
-    display_name="text",
+    acs_entrance_id="c931c953-4a5b-4f66-9189-500d39959ad1",
+    acs_system_id="6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    connected_account_id="1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    created_at="2025-06-15T16:54:17.946495Z",
+    display_name="Main Entrance",
+    errors=[],
+    visionline_metadata={
+        "door_category": "guest",
+        "door_name": "Main Entrance",
+        "profiles": [
+            {
+                "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                "visionline_door_profile_type": "BLE",
+            }
+        ],
+    },
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
-#### Request
+
+Returns a specified access system entrance.
+
+#### Code:
 
 ```ruby
-seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.acs.entrances.get(acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1")
 ```
 
-#### Response
+#### Output:
 
 ```ruby
 {
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
-  "display_name" => "text",
+  "acs_entrance_id" => "c931c953-4a5b-4f66-9189-500d39959ad1",
+  "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at" => "2025-06-15T16:54:17.946495Z",
+  "display_name" => "Main Entrance",
+  "errors" => [],
+  "visionline_metadata" => {
+    door_category: "guest",
+    door_name: "Main Entrance",
+    profiles: [
+      {
+        visionline_door_profile_id: "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        visionline_door_profile_type: "BLE",
+      },
+    ],
+  },
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-#### Request
+
+Returns a specified access system entrance.
+
+#### Code:
 
 ```php
-<?php
 $seam->acs->entrances->get(
-    acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000"
+    acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1"
 );
 ```
 
-#### Response
+#### Output:
 
 ```php
-<?php
 [
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
-    "display_name" => "text",
+    "acs_entrance_id" => "c931c953-4a5b-4f66-9189-500d39959ad1",
+    "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at" => "2025-06-15T16:54:17.946495Z",
+    "display_name" => "Main Entrance",
+    "errors" => [],
+    "visionline_metadata" => [
+        "door_category" => "guest",
+        "door_name" => "Main Entrance",
+        "profiles" => [
+            [
+                "visionline_door_profile_id" =>
+                    "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                "visionline_door_profile_type" => "BLE",
+            ],
+        ],
+    ],
 ];
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
-#### Request
+
+Returns a specified access system entrance.
+
+#### Code:
 
 ```seam_cli
-seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs entrances get --acs_entrance_id "c931c953-4a5b-4f66-9189-500d39959ad1"
 ```
 
-#### Response
+#### Output:
 
 ```seam_cli
 {
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "text"
+  "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
 }
-```
-{% endtab %}
-
-{% tab title="Go" %}
-#### Request
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import entrances "github.com/seamapi/go/entrances"
-
-func main() {
-	client.Acs.Entrances.Get(
-		context.Background(),
-		entrances.EntrancesGetRequest{
-			AcsEntranceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Response
-
-```go
-api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}
 ```
 {% endtab %}
 
 {% endtabs %}
 
-## Authentication Methods
+
+<details>
+
+<summary>Authentication Methods</summary>
 
 - API key
 - Client session token
 
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
 ## Request Parameters
 
-### `acs_entrance_id`
+**`acs_entrance_id`** *String* (Required)
 
-Format: `UUID`
-Required: Yes
+ID of the entrance that you want to get.
 
-***
+---
 
-## Return Type
 
-[acs\_entrance](./)
+## Response
+
+[acs\_entrance](.)
+
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
+}
+```
+{% endtab %}
+{% endtabs %}

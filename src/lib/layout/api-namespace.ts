@@ -1,11 +1,13 @@
-import type { Blueprint } from '@seamapi/blueprint'
+import type { Resource } from '@seamapi/blueprint'
 
-import type { PathMetadata } from 'lib/path-metadata.js'
+import type { PathMetadata } from '../path-metadata.js'
 
 export interface ApiNamespaceLayoutContext {
   title: string
   description: string
   overview: string
+  isAlpha: boolean
+  alphaMessage: string | undefined
   resources: Array<{
     name: string
     description: string
@@ -14,47 +16,49 @@ export interface ApiNamespaceLayoutContext {
 }
 
 export function setNamespaceLayoutContext(
-  file: ApiNamespaceLayoutContext,
+  file: Partial<ApiNamespaceLayoutContext>,
   namespace: string,
-  resources: Blueprint['resources'],
+  resources: Resource[],
   pathMetadata: PathMetadata,
 ): void {
-  const namespaceMetadata = pathMetadata[namespace]
-  if (namespaceMetadata == null) {
+  const metadata = pathMetadata[namespace]
+  if (metadata == null) {
     throw new Error(`Namespace metadata for ${namespace} not found`)
   }
 
-  file.title = namespaceMetadata.title
-  file.description = namespaceMetadata.description ?? ''
-  file.overview = namespaceMetadata.overview ?? ''
+  file.title = metadata.title
+  file.description = metadata.description ?? ''
+  file.overview = metadata.overview ?? ''
+  file.isAlpha = (metadata.alpha ?? '').length > 0
+  file.alphaMessage = metadata.alpha
 
   const namespaceRoutes = Object.entries(pathMetadata).filter(([p]) =>
     p.startsWith(namespace),
   )
-  const namespaceResources = namespaceRoutes.flatMap(
-    ([_, metadata]) => metadata.resources,
-  )
-  file.resources = namespaceResources.map((resourceName) => {
-    const resource = resources[resourceName]
+  const namespaceResources = [
+    ...resources
+      .filter((r) => r.routePath.startsWith(namespace) && !r.isUndocumented)
+      .map(({ resourceType }) => resourceType),
+    ...namespaceRoutes.flatMap(([_, metadata]) => metadata.resources),
+  ]
+  file.resources = namespaceResources
+    .map((resourceType) => {
+      const resource = resources.find((r) => r.resourceType === resourceType)
 
-    if (resource == null) {
-      throw new Error(`Resource ${resourceName} not found in blueprint`)
-    }
+      if (resource == null) {
+        throw new Error(`Resource ${resourceType} not found in blueprint`)
+      }
 
-    const resourceRoute = namespaceRoutes.find(([_, metadata]) =>
-      metadata.resources.includes(resourceName),
-    )
-    if (resourceRoute == null) {
-      throw new Error(`Route for resource ${resourceName} not found`)
-    }
-    const [routePath] = resourceRoute
-    const lastPathSegment = routePath.split('/').at(-1)
-    const docLink = `./${lastPathSegment}/README.md#${resourceName}`
+      const lastPathSegment = resource.routePath.split('/').at(-1)
+      const docLink = `./${lastPathSegment}/README.md#${resourceType}`
 
-    return {
-      name: resourceName,
-      description: resource.description,
-      link: docLink,
-    }
-  })
+      return {
+        name: resourceType,
+        description: resource.description,
+        link: docLink,
+      }
+    })
+    .sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    })
 }

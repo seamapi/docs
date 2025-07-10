@@ -1,4 +1,4 @@
-import type { Blueprint, Route } from '@seamapi/blueprint'
+import type { Blueprint, Endpoint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
 import {
@@ -9,13 +9,21 @@ import {
   setEndpointLayoutContext,
   setNamespaceLayoutContext,
 } from './layout/index.js'
+import {
+  type ApiSummaryLayoutContext,
+  setSummaryLayoutContext,
+} from './layout/summary.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
-type Metadata = Partial<Pick<Blueprint, 'routes' | 'resources'>>
+interface Metadata {
+  blueprint: Blueprint
+  pathMetadata: unknown
+}
 
 type File = ApiEndpointLayoutContext &
   ApiRouteLayoutContext &
-  ApiNamespaceLayoutContext & { layout: string }
+  ApiNamespaceLayoutContext &
+  ApiSummaryLayoutContext & { layout: string }
 
 const rootPath = 'api'
 const indexFile = 'README.md'
@@ -32,40 +40,54 @@ export const reference = (
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
 
-  const blueprint: Blueprint = {
-    title: '',
-    routes: [],
-    resources: {},
-    events: [],
-    actionAttempts: [],
-    pagination: null,
-    ...metadata,
-  }
+  const { blueprint } = metadata
 
-  const namespacePaths = getNamespacePaths(blueprint.routes)
-  for (const path of namespacePaths) {
+  const { resources } = blueprint
+
+  const namespaces = blueprint.namespaces.filter(
+    ({ isUndocumented }) => !isUndocumented,
+  )
+  for (const namespace of namespaces) {
+    const { path } = namespace
     const k = `${rootPath}${path}/${indexFile}`
     files[k] = { contents: Buffer.from('\n') }
     const file = files[k] as unknown as File
     file.layout = 'api-namespace.hbs'
 
-    setNamespaceLayoutContext(file, path, blueprint.resources, pathMetadata)
+    setNamespaceLayoutContext(file, path, resources, pathMetadata)
   }
 
-  for (const route of blueprint.routes ?? []) {
+  const routes = blueprint.routes.filter(({ path, isUndocumented }) => {
     if (
-      !route.path.startsWith('/acs') &&
-      !route.path.startsWith('/thermostats') &&
-      !route.path.startsWith('/phones') &&
-      !route.path.startsWith('/user_identities') &&
-      !route.path.startsWith('/action_attempts')
+      !path.startsWith('/acs') &&
+      !path.startsWith('/thermostats') &&
+      !path.startsWith('/phones') &&
+      !path.startsWith('/user_identities') &&
+      !path.startsWith('/connected_accounts') &&
+      !path.startsWith('/access_grants') &&
+      !path.startsWith('/access_methods') &&
+      !path.startsWith('/spaces') &&
+      !path.startsWith('/customers') &&
+      !path.startsWith('/client_sessions') &&
+      !path.startsWith('/connect_webviews') &&
+      !path.startsWith('/webhooks') &&
+      !path.startsWith('/workspaces') &&
+      !path.startsWith('/devices') &&
+      !path.startsWith('/locks') &&
+      !path.startsWith('/noise_sensors') &&
+      !route.path.startsWith('/action_attempts') &&
+      !path.startsWith('/access_codes')
     ) {
-      continue
+      return false
     }
 
-    if (route.isUndocumented) continue
-    if (pathMetadata[route.path]?.title == null) continue
+    if (isUndocumented) return false
+    if (pathMetadata[path]?.title == null) return false
+    return true
+  })
 
+  const endpoints: Endpoint[] = []
+  for (const route of routes) {
     const k = `${rootPath}${route.path}/${indexFile}`
     files[k] = { contents: Buffer.from('\n') }
     const file = files[k] as unknown as File
@@ -80,19 +102,20 @@ export const reference = (
       files[k] = { contents: Buffer.from('\n') }
       const file = files[k] as unknown as File
       file.layout = 'api-endpoint.hbs'
-      setEndpointLayoutContext(file, endpoint, blueprint.actionAttempts)
+      setEndpointLayoutContext(
+        file,
+        endpoint,
+        resources,
+        blueprint.actionAttempts,
+        pathMetadata,
+      )
+      endpoints.push(endpoint)
     }
   }
-}
 
-const getNamespacePaths = (routes: Route[]): string[] => {
-  return Array.from(
-    new Set(
-      routes
-        .filter(({ isUndocumented }) => !isUndocumented)
-        .flatMap((route) =>
-          route.namespace != null ? [route.namespace.path] : [],
-        ),
-    ),
-  )
+  const k = `${rootPath}/_summary.md`
+  files[k] = { contents: Buffer.from('\n') }
+  const file = files[k] as unknown as File
+  file.layout = 'summary.hbs'
+  setSummaryLayoutContext(file, { routes, namespaces, endpoints, pathMetadata })
 }

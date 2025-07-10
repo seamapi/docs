@@ -6,7 +6,7 @@ description: You can add or change custom metadata for a connected account.
 
 You can use custom metadata to store a custom payload or object, tailored to the specific needs of your app. For example, this feature is useful for tracking customer information, internal user IDs, or other internal resources for a [connected account](./). Storing custom metadata in a Seam `connected_account` object enables you to look up an internal resource from directly within your Seam [workspace](../workspaces/). Then, you can [filter connected accounts by the desired metadata](filtering-connected-accounts-by-custom-metadata.md).
 
-If the associated [Connect Webview](../connect-webviews/) contains custom metadata, Seam transfers this custom metadata as the initial value for this property. However, you can use the [Update Connected Account](../../api-clients/connected_accounts/update.md) method with the optional [`custom_metadata` property](../../api-clients/connected_accounts/#connected\_account-properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
+If the associated [Connect Webview](../connect-webviews/) contains custom metadata, Seam transfers this custom metadata as the initial value for this property. However, you can use the [Update Connected Account](../../api/connected_accounts/update.md) method with the optional `custom_metadata` property to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -151,47 +151,6 @@ Console.WriteLine(connectedAccountUpdate);
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
 
-seam.connectedAccounts().update(ConnectedAccountsUpdateRequest.builder()
-        .connectedAccountId("6e1cad57-b244-40ca-b4f3-30a46c8000d4")
-        .custom_metadata(customMetadata)
-        .build());
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-connectedAccountUpdate, err := client.ConnectedAccounts.Update(
-	context.Background(),
-	&api.ConnectedAccountsUpdateRequest{
-		CustomMetadata: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(connectedAccountUpdate)
-return nil
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
 {% endtabs %}

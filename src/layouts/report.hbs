@@ -267,11 +267,33 @@ These items are deprecated.
     {{/each}}
 {{/each}}
 {{/if}}
+{{#if missingResources.length }}
+### Missing resources
+
+{{#each missingResources}}
+- `{{path}}`: `{{responseKey}}`
+{{/each}}
+{{/if}}
+{{#if unusedResources.length }}
+### Unused Resources
+
+{{#each unusedResources}}
+- `{{name}}`
+{{/each}}
+{{/if}}
 {{#if endpointsWithoutCodeSamples.length }}
 
 ### Endpoints without code samples
 
 {{#each endpointsWithoutCodeSamples}}
+- `{{this}}`
+{{/each}}
+{{/if}}
+{{#if resourcesWithoutResourceSamples.length }}
+
+### Resources without resource samples
+
+{{#each resourcesWithoutResourceSamples}}
 - `{{this}}`
 {{/each}}
 {{/if}}

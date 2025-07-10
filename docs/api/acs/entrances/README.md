@@ -1,379 +1,452 @@
 # Entrances
 
-## `acs_entrance`
+## The acs_entrance Object
+
+- [Properties](./#properties)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
 
 Represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
-### `acs_entrance_id`
+{% tabs %}
+{% tab title="ACS Entrance" %}
 
-Format: `UUID`
+An access system entrance resource.
+
+```json
+{
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+## Properties
+
+**`acs_entrance_id`** *UUID*
 
 ID of the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+
+
+
 ---
 
-### `acs_system_id`
-
-Format: `UUID`
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+
+
+
 ---
 
-### `assa_abloy_vostio_metadata`
-
-Format: `Object`
+**`assa_abloy_vostio_metadata`** *Object*
 
 ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-<details>
 
-<summary><code>door_name</code> Format: <code>String</code></summary>
-</details>
 
 <details>
+  <summary>Child Properties</summary>
 
-<summary><code>door_number</code> Format: <code>Number</code></summary>
-</details>
+  - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Vostio access system.
 
-<details>
+  - <strong><code>door_number</code></strong> <i>Number</i>
+  
+    Number of the door in the Vostio access system.
 
-<summary><code>door_type</code> Format: <code>Enum</code></summary>
+  - <strong><code>door_type</code></strong> <i>Enum</i>
+  
+    Type of the door in the Vostio access system.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>CommonDoor</code>
+      - <code>EntranceDoor</code>
+      - <code>GuestDoor</code>
+      - <code>Elevator</code>
+  </details>
 
-Possible enum values:
-- `CommonDoor`
-- `EntranceDoor`
-- `GuestDoor`
-- `Elevator`
-</details>
+  - <strong><code>pms_id</code></strong> <i>String</i>
+  
+    PMS ID of the door in the Vostio access system.
 
-<details>
+  - <strong><code>stand_open</code></strong> <i>Boolean</i>
+  
+    Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.
 
-<summary><code>pms_id</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>stand_open</code> Format: <code>Boolean</code></summary>
 </details>
 
 ---
 
-### `created_at`
+**`can_unlock_with_card`** *Boolean*
 
-Format: `Datetime`
+Indicates whether the ACS entrance can be unlocked with card credentials.
+
+
+
+
+---
+
+**`can_unlock_with_code`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with pin codes.
+
+
+
+
+---
+
+**`can_unlock_with_mobile_key`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with mobile key credentials.
+
+
+
+
+---
+
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../capability-guides/access-systems/retrieving-entrance-details.md) associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+
+
+---
+
+**`created_at`** *Datetime*
 
 Date and time at which the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) was created.
 
+
+
+
 ---
 
-### `display_name`
-
-Format: `String`
+**`display_name`** *String*
 
 Display name for the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+
+
+
 ---
 
-### `dormakaba_community_metadata`
-
-Format: `Object`
+**`dormakaba_community_metadata`** *Object*
 
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-<details>
 
-<summary><code>access_point_name</code> Format: <code>String</code></summary>
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>access_point_name</code></strong> <i>String</i>
+  
+    Name of the access point in the dormakaba Community access system.
+
 </details>
 
 ---
 
-### `errors`
-
-Format: `List`
-
-Item format: `Object`
+**`errors`** *List* *of Objects*
 
 Errors associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-<details>
 
-<summary><code>error_code</code> Format: <code>String</code></summary>
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-</details>
 
 <details>
+  <summary>Child Object Properties</summary>
 
-<summary><code>message</code> Format: <code>String</code></summary>
+  <strong><code>error_code</code></strong> <i>String</i>
+  
+    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  <strong><code>message</code></strong> <i>String</i>
+  
+    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 </details>
 
 ---
 
-### `latch_metadata`
-
-Format: `Object`
+**`latch_metadata`** *Object*
 
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-<details>
 
-<summary><code>accessibility_type</code> Format: <code>String</code></summary>
-</details>
 
 <details>
+  <summary>Child Properties</summary>
 
-<summary><code>door_name</code> Format: <code>String</code></summary>
-</details>
+  - <strong><code>accessibility_type</code></strong> <i>String</i>
+  
+    Accessibility type in the Latch access system.
 
-<details>
+  - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Latch access system.
 
-<summary><code>door_type</code> Format: <code>String</code></summary>
-</details>
+  - <strong><code>door_type</code></strong> <i>String</i>
+  
+    Type of the door in the Latch access system.
 
-<details>
+  - <strong><code>is_connected</code></strong> <i>Boolean</i>
+  
+    Indicates whether the entrance is connected.
 
-<summary><code>is_connected</code> Format: <code>Boolean</code></summary>
 </details>
 
 ---
 
-### `salto_ks_metadata`
-
-Format: `Object`
+**`salto_ks_metadata`** *Object*
 
 Salto KS-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-<details>
 
-<summary><code>battery_level</code> Format: <code>String</code></summary>
-</details>
 
 <details>
+  <summary>Child Properties</summary>
 
-<summary><code>door_name</code> Format: <code>String</code></summary>
-</details>
+  - <strong><code>battery_level</code></strong> <i>String</i>
+  
+    Battery level of the door access device.
 
-<details>
+  - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Salto KS access system.
 
-<summary><code>intrusion_alarm</code> Format: <code>Boolean</code></summary>
-</details>
+  - <strong><code>intrusion_alarm</code></strong> <i>Boolean</i>
+  
+    Indicates whether an intrusion alarm is active on the door.
 
-<details>
+  - <strong><code>left_open_alarm</code></strong> <i>Boolean</i>
+  
+    Indicates whether the door is left open.
 
-<summary><code>left_open_alarm</code> Format: <code>Boolean</code></summary>
-</details>
+  - <strong><code>lock_type</code></strong> <i>String</i>
+  
+    Type of the lock in the Salto KS access system.
 
-<details>
+  - <strong><code>locked_state</code></strong> <i>String</i>
+  
+    Locked state of the door in the Salto KS access system.
 
-<summary><code>lock_type</code> Format: <code>String</code></summary>
-</details>
+  - <strong><code>online</code></strong> <i>Boolean</i>
+  
+    Indicates whether the door access device is online.
 
-<details>
+  - <strong><code>privacy_mode</code></strong> <i>Boolean</i>
+  
+    Indicates whether privacy mode is enabled for the lock.
 
-<summary><code>locked_state</code> Format: <code>String</code></summary>
-</details>
-
-<details>
-
-<summary><code>online</code> Format: <code>Boolean</code></summary>
-</details>
-
-<details>
-
-<summary><code>privacy_mode</code> Format: <code>Boolean</code></summary>
 </details>
 
 ---
 
-### `salto_space_metadata`
-
-Format: `Object`
+**`salto_space_metadata`** *Object*
 
 Salto Space-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-<details>
 
-<summary><code>door_description</code> Format: <code>String</code></summary>
-</details>
 
 <details>
+  <summary>Child Properties</summary>
 
-<summary><code>door_name</code> Format: <code>String</code></summary>
-</details>
+  - <strong><code>door_description</code></strong> <i>String</i>
+  
+    Description of the door in the Salto Space access system.
 
-<details>
+  - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Salto Space access system.
 
-<summary><code>ext_door_id</code> Format: <code>String</code></summary>
+  - <strong><code>ext_door_id</code></strong> <i>String</i>
+  
+    External door ID in the Salto Space access system.
+
 </details>
 
 ---
 
-### `visionline_metadata`
-
-Format: `Object`
+**`visionline_metadata`** *Object*
 
 Visionline-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
+
+
 <details>
+  <summary>Child Properties</summary>
 
-<summary><code>door_category</code> Format: <code>Enum</code></summary>
+  - <strong><code>door_category</code></strong> <i>Enum</i>
+  
+    Category of the door in the Visionline access system.
+  <details>
+      <summary>Enum values:</summary>
+  
+      - <code>entrance</code>
+      - <code>guest</code>
+      - <code>elevator reader</code>
+      - <code>common</code>
+      - <code>common (PMS)</code>
+  </details>
 
-Possible enum values:
-- `entrance`
-- `guest`
-- `elevator reader`
-- `common`
-- `common (PMS)`
+  - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Visionline access system.
+
+  - <strong><code>profiles</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Profile for the door in the Visionline access system.
+
+- <strong><code>visionline_door_profile_id</code></strong> <i>String</i>
+
+  Door profile ID in the Visionline access system.
+
+
+- <strong><code>visionline_door_profile_type</code></strong> <i>Enum</i>
+
+  Door profile type in the Visionline access system.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>BLE</code>
+    - <code>commonDoor</code>
+    - <code>touch</code>
 </details>
 
-<details>
 
-<summary><code>door_name</code> Format: <code>String</code></summary>
 </details>
 
+---
+
+
+## Events
+
+**`acs_entrance.added`**
+
+An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
+
 <details>
 
-<summary><code>profiles</code> Format: <code>List</code> Item format: <code>Object</code></summary>
+<summary>Properties</summary>
 
-- <code>visionline_door_profile_id</code> Format: <code>String</code>
+<strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-- <code>visionline_door_profile_type</code> Format: <code>Enum</code>
+  ID of the access system.
 
-  Possible enum values:
-  - `BLE`
-  - `commonDoor`
-  - `touch`
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
+  ID of the connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `acs_entrance.added`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`acs_entrance.removed`**
+
+An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>acs_entrance_id</code></strong> <i>UUID</i>
+
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
+
+  ID of the access system.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `acs_entrance.removed`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 ## Endpoints
 
-### [`/acs/entrances/get`](./get.md)
 
-Returns a specified [ACS entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-### [`/acs/entrances/grant_access`](./grant_access.md)
+[**`/acs/entrances/get`**](./get.md)
+
+Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
 
-### [`/acs/entrances/list`](./list.md)
+[**`/acs/entrances/grant_access`**](./grant_access.md)
 
-Returns a list of all [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
-### [`/acs/entrances/list_credentials_with_access`](./list_credentials_with_access.md)
+Grants a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access to a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+[**`/acs/entrances/list`**](./list.md)
+
+Returns a list of all [access system entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+[**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access.md)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
----
-
-## Events
-
-### `acs_entrance.added`
-
-An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
-
-<details>
-
-<summary><code>acs_entrance_id</code> Format: <code>UUID</code></summary>
-</details>
-<details>
-
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
-
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-</details>
-<details>
-
-<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
-
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `acs_entrance.added`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
-</details>
----
-
-### `acs_entrance.removed`
-
-An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
-
-<details>
-
-<summary><code>acs_entrance_id</code> Format: <code>UUID</code></summary>
-</details>
-<details>
-
-<summary><code>acs_system_id</code> Format: <code>UUID</code></summary>
-
-ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).
-</details>
-<details>
-
-<summary><code>connected_account_id</code> Format: <code>UUID</code></summary>
-
-ID of the [connected account](../../../core-concepts/connected-accounts/README.md).
-</details>
-<details>
-
-<summary><code>created_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event was created.
-</details>
-<details>
-
-<summary><code>event_id</code> Format: <code>UUID</code></summary>
-
-ID of the event.
-</details>
-<details>
-
-<summary><code>event_type</code> Format: <code>Enum</code></summary>
-
-Value: `acs_entrance.removed`
-</details>
-<details>
-
-<summary><code>occurred_at</code> Format: <code>Datetime</code></summary>
-
-Date and time at which the event occurred.
-</details>
-<details>
-
-<summary><code>workspace_id</code> Format: <code>UUID</code></summary>
-
-ID of the [workspace](../../../core-concepts/workspaces/README.md).
-</details>
----
 

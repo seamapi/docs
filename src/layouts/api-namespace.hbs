@@ -3,13 +3,19 @@ description: {{description}}
 ---
 
 # {{title}}
+{{#if isAlpha}}
+{{> alpha-notice}}
+{{/if}}
 
 {{overview}}
 
 ## Resources
 
+The {{title}} namespace contains the following resources:
+
 {{#each resources}}
 ### [`{{name}}`]({{link}})
 {{description}}
 
+---
 {{/each}}
