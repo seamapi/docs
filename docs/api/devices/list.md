@@ -1151,6 +1151,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_method_id`** *String*
+
+ID of the access method for which you want to retrieve all devices.
+
+---
+
 **`connect_webview_id`** *String*
 
 ID of the Connect Webview for which you want to list devices.
