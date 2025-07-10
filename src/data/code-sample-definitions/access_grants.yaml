@@ -1,6 +1,6 @@
 ---
-- title: Create an access grant using spaces
-  description: Creates a new access grant using space IDs and an existing user identity.
+- title: Create an Access Grant using spaces
+  description: Creates a new Access Grant using space IDs and an existing user identity.
   request:
     path: /access_grants/create
     parameters:
@@ -48,9 +48,9 @@
         starts_at: '2025-06-16T16:54:17.946606Z'
         user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
         workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
-- title: Create an access grant using entrances and devices
+- title: Create an Access Grant using entrances and devices
   description:
-    Creates a new access grant using entrance IDs and device IDs and an
+    Creates a new Access Grant using entrance IDs and device IDs and an
     existing user identity.
   request:
     path: /access_grants/create
@@ -99,9 +99,9 @@
       starts_at: '2025-06-16T16:54:17.946606Z'
       user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
       workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
-- title: Create an access grant including a new user identity
+- title: Create an Access Grant including a new user identity
   description:
-    Creates a new access grant and create a new user identity as part of
+    Creates a new Access Grant and create a new user identity as part of
     the same operation.
   request:
     path: /access_grants/create
@@ -153,16 +153,16 @@
         starts_at: '2025-06-16T16:54:17.946606Z'
         user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
         workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
-- title: Delete an access grant
-  description: Deletes an access grant.
+- title: Delete an Access Grant
+  description: Deletes an Access Grant.
   request:
     path: /access_grants/delete
     parameters:
       access_grant_id: 403ea27b-af76-4a48-ace9-8f9498f4c25c
   response:
     body: null
-- title: Get an access grant
-  description: Returns a specified access grant.
+- title: Get an Access Grant
+  description: Returns a specified Access Grant.
   request:
     path: /access_grants/get
     parameters:
@@ -201,8 +201,8 @@
         starts_at: '2025-06-16T16:54:17.946606Z'
         user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
         workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
-- title: List access grants
-  description: Returns a list of all access grants.
+- title: List Access Grants
+  description: Returns a list of all Access Grants.
   request:
     path: /access_grants/list
     parameters:
@@ -245,8 +245,8 @@
             starts_at: '2025-06-16T16:54:17.946606Z'
             user_identity_id: f7620fcf-d92f-471e-b97e-3806daeebd40
             workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
-- title: Update an access grant
-  description: Updates an existing access grant's time window.
+- title: Update an Access Grant
+  description: Updates an existing Access Grant's time window.
   request:
     path: /access_grants/update
     parameters:
