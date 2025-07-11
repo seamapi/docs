@@ -1,4 +1,3 @@
-import { retry } from '@harisk/retryx'
 import * as prettierPluginPhp from '@prettier/plugin-php/standalone'
 import * as prettierPluginRuby from '@prettier/plugin-ruby'
 import type { SyntaxName } from '@seamapi/blueprint'
@@ -24,7 +23,7 @@ const formatCodeForSyntax = async (
     case 'python':
       return await formatPython(content)
     case 'ruby':
-      return await retry(async () => await formatRuby(content))
+      return await formatRuby(content)
     case 'php':
       return await formatPhp(content)
     case 'go':

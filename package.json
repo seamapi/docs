@@ -42,7 +42,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@harisk/retryx": "^1.0.2",
     "@types/command-exists": "^1.2.3"
   }
 }
