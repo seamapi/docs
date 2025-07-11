@@ -1778,32 +1778,32 @@ Constraints on access codes for the device. Seam represents each constraint as a
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>constraint_type</code></strong> <i>Enum</i>
+<details>
+    <summary>Enum values:</summary>
 
-  <strong><code>constraint_type</code></strong> <i>Enum</i>
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>no_zeros</code>
-      - <code>cannot_start_with_12</code>
-      - <code>no_triple_consecutive_ints</code>
-      - <code>cannot_specify_pin_code</code>
-      - <code>pin_code_matches_existing_set</code>
-      - <code>start_date_in_future</code>
-      - <code>no_ascending_or_descending_sequence</code>
-      - <code>at_least_three_unique_digits</code>
-      - <code>cannot_contain_089</code>
-      - <code>cannot_contain_0789</code>
-      - <code>name_length</code>
-      - <code>name_must_be_unique</code>
-  </details>
+    - <code>no_zeros</code>
+    - <code>cannot_start_with_12</code>
+    - <code>no_triple_consecutive_ints</code>
+    - <code>cannot_specify_pin_code</code>
+    - <code>pin_code_matches_existing_set</code>
+    - <code>start_date_in_future</code>
+    - <code>no_ascending_or_descending_sequence</code>
+    - <code>at_least_three_unique_digits</code>
+    - <code>cannot_contain_089</code>
+    - <code>cannot_contain_0789</code>
+    - <code>name_length</code>
+    - <code>name_must_be_unique</code>
+</details>
 
-  <strong><code>max_length</code></strong> <i>Number</i>
-  
-    Maximum name length constraint for access codes.
+<strong><code>max_length</code></strong> <i>Number</i>
 
-  <strong><code>min_length</code></strong> <i>Number</i>
-  
-    Minimum name length constraint for access codes.
+  Maximum name length constraint for access codes.
+
+<strong><code>min_length</code></strong> <i>Number</i>
+
+  Minimum name length constraint for access codes.
+
 </details>
 
 ---
