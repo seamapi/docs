@@ -163,6 +163,11 @@
 /devices/simulate:
   title: Device Simulations
 
+/action_attempts:
+  title: Action Attempts
+  resources:
+    - action_attempt
+
 /locks:
   title: Locks
   resources:
