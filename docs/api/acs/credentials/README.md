@@ -258,8 +258,10 @@ Errors associated with the [credential](../../../capability-guides/access-system
 
 <details>
   <summary>Child Object Properties</summary>
-<strong><code>error_code</code></strong> <i>String</i>
-<strong><code>message</code></strong> <i>String</i>
+  <strong><code>error_code</code></strong> <i>String</i>
+
+  <strong><code>message</code></strong> <i>String</i>
+
 </details>
 
 ---
