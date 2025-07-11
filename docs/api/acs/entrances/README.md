@@ -180,13 +180,13 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 <details>
   <summary>Child Object Properties</summary>
-  <strong><code>error_code</code></strong> <i>String</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+<strong><code>error_code</code></strong> <i>String</i>
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
 </details>
 

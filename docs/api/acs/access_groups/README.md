@@ -170,22 +170,22 @@ Warnings associated with the `acs_access_group`.
 
 <details>
   <summary>Child Object Properties</summary>
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which Seam created the warning.
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  Date and time at which Seam created the warning.
 
-  <strong><code>warning_code</code></strong> <i>Enum</i>
-  
-    Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>unknown_issue_with_acs_access_group</code>
-  </details>
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+<strong><code>warning_code</code></strong> <i>Enum</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>unknown_issue_with_acs_access_group</code>
+</details>
 
 </details>
 

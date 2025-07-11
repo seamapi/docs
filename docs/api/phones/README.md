@@ -104,9 +104,9 @@ Errors associated with the phone.
 
 <details>
   <summary>Child Object Properties</summary>
-  <strong><code>error_code</code></strong> <i>String</i>
+<strong><code>error_code</code></strong> <i>String</i>
 
-  <strong><code>message</code></strong> <i>String</i>
+<strong><code>message</code></strong> <i>String</i>
 
 </details>
 
@@ -129,9 +129,9 @@ Warnings associated with the phone.
 
 <details>
   <summary>Child Object Properties</summary>
-  <strong><code>message</code></strong> <i>String</i>
+<strong><code>message</code></strong> <i>String</i>
 
-  <strong><code>warning_code</code></strong> <i>String</i>
+<strong><code>warning_code</code></strong> <i>String</i>
 
 </details>
 

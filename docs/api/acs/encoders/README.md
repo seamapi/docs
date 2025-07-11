@@ -97,22 +97,22 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 <details>
   <summary>Child Object Properties</summary>
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which Seam created the error.
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-  <strong><code>error_code</code></strong> <i>Enum</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>acs_encoder_removed</code>
-  </details>
+  Date and time at which Seam created the error.
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+<strong><code>error_code</code></strong> <i>Enum</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>acs_encoder_removed</code>
+</details>
+
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
 
 </details>
 

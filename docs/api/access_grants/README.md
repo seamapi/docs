@@ -146,28 +146,28 @@ Access methods that the user requested for the Access Grant.
 
 <details>
   <summary>Child Object Properties</summary>
-  <strong><code>created_access_method_ids</code></strong> <i>List</i> <i>of UUIDs</i>
-  
-    IDs of the access methods created for the requested access method.
+<strong><code>created_access_method_ids</code></strong> <i>List</i> <i>of UUIDs</i>
 
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the requested access method was added to the Access Grant.
+  IDs of the access methods created for the requested access method.
 
-  <strong><code>display_name</code></strong> <i>String</i>
-  
-    Display name of the access method.
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-  <strong><code>mode</code></strong> <i>Enum</i>
-  
-    Access method mode. Supported values: `code`, `card`, `mobile_key`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>code</code>
-      - <code>card</code>
-      - <code>mobile_key</code>
-  </details>
+  Date and time at which the requested access method was added to the Access Grant.
+
+<strong><code>display_name</code></strong> <i>String</i>
+
+  Display name of the access method.
+
+<strong><code>mode</code></strong> <i>Enum</i>
+
+  Access method mode. Supported values: `code`, `card`, `mobile_key`.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>code</code>
+    - <code>card</code>
+    - <code>mobile_key</code>
+</details>
 
 </details>
 
