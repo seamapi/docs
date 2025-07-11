@@ -97,10 +97,11 @@ const formatBash = async (content: string): Promise<string> => {
 }
 
 const formatPhp = async (content: string): Promise<string> => {
-  return await prettier(content, {
+  const output = await prettier(content, {
     parser: 'php',
     plugins: [prettierPluginPhp.default],
   })
+  return output.split('\n').slice(1).join('\n')
 }
 
 export const formatJson = async (content: string): Promise<string> => {
