@@ -609,7 +609,9 @@ URL that you want to redirect the user to after the provider login is complete.
 
 ---
 
-**`customer_id`** *String*
+**`customer_key`** *String*
+
+Optional unique string key that can be used to identify the customer. If provided, the customer will be created or retrieved based on this key.
 
 ---
 

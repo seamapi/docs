@@ -10,7 +10,7 @@ Seam enables you to lock or unlock your door lock remotely. This guide walks you
 
 When you send a command to a smart lock, it might take a while for Seam to confirm the action's success. To handle this, Seam provides [an "action attempt" object](../../core-concepts/action-attempts.md), which indicates whether the action was successful.
 
-To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
+To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api-clients/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
 
 For those who prefer using webhooks to verify the success of an action, we'll soon introduce events that confirm an action's success.
 
@@ -687,7 +687,7 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
 
-Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
+Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 
 {% tabs %}
 {% tab title="Python" %}

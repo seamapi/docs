@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Delete an access grant.
+Delete an Access Grant.
 
 
 {% tabs %}
@@ -140,7 +140,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String* (Required)
 
-ID of access grant to delete.
+ID of Access Grant to delete.
 
 ---
 

@@ -1134,7 +1134,7 @@ $seam->thermostats->set_fan_mode(
 
 ## Poll the Action Attempt
 
-The imperative HVAC or fan mode setting request returns an [action attempt](../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../api/action_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
+The imperative HVAC or fan mode setting request returns an [action attempt](../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../api-clients/action_attempts/get.md) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}

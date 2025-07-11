@@ -2,17 +2,6 @@
 description: >-
   Access codes are codes for keypad devices. These are used when you want to
   provide access to a lock using a PIN code.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Creating and Managing Smart Lock Access Codes

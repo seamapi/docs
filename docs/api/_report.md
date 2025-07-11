@@ -4,6 +4,7 @@
 
 ### Routes
 
+- `/action_attempts`
 - `/events`
 - `/thermostats/daily_programs`
 - `/user_identities/enrollment_automations`
@@ -322,10 +323,7 @@ Items that are intentionally undocumented are not included in this section.
     - `email`
     - `hid_acs_system_id`
 - `/connect_webviews/create`
-    - `customer_id`
     - `device_selection_mode`
-- `/connect_webviews/list`
-    - `customer_ids`
 - `/connected_accounts/delete`
     - `sync`
 - `/connected_accounts/list`

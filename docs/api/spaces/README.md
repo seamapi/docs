@@ -85,6 +85,15 @@ ID of the space.
 
 ---
 
+**`space_key`** *String*
+
+Unique key for the space within the workspace.
+
+
+
+
+---
+
 **`workspace_id`** *UUID*
 
 ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the space.

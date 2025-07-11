@@ -153,7 +153,7 @@ $seam->thermostats->activate_climate_preset(
 
 ## Poll the Action Attempt
 
-Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../../api/action_attempts/get.md) request. When the activation completes successfully, the `status` of the action attempt changes to `success`.
+Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../../api-clients/action_attempts/get.md) request. When the activation completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}

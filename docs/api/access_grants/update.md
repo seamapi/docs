@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 
 {% tabs %}
@@ -154,7 +154,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String* (Required)
 
-ID of the access grant to update.
+ID of the Access Grant to update.
 
 ---
 

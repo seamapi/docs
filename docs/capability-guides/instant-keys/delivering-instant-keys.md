@@ -6,7 +6,7 @@ description: >-
 
 # Delivering Instant Keys
 
-After [creating an access grant](using-access-grants-to-issue-instant-keys.md#create-an-access-grant) that includes a mobile key, Seam returns the shareable `instant_key_url` as a property of the new access grant. This URL is the Instant Key. You can deliver this key in the following ways, to best match your product flow and guest experience:
+After creating an Access Grant that includes a mobile key through the Seam API or creating an Instant Key through Seam Console, Seam returns the shareable `instant_key_url` as a property of the new Access Grant. This URL is the Instant Key. You can deliver this key in the following ways, to best match your product flow and guest experience:
 
 * [Share through SMS or email.](delivering-instant-keys.md#share-through-sms-or-email)
 * [Embed in a web or mobile app.](delivering-instant-keys.md#embed-in-a-web-or-mobile-app)

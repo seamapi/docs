@@ -3,17 +3,6 @@ description: >-
   Devices are objects like locks, thermostats, or sensors. In the Seam API,
   devices have capabilities that describe the functions that they can perform,
   as well as online and managed status.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Devices

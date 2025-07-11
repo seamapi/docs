@@ -212,6 +212,12 @@ IDs of the devices that you want to add to the new space.
 
 ---
 
+**`space_key`** *String*
+
+Unique key for the space within the workspace.
+
+---
+
 
 ## Response
 
