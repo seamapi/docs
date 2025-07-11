@@ -2017,6 +2017,7 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
     - <code>heat</code>
     - <code>cool</code>
     - <code>heat_cool</code>
+    - <code>eco</code>
 </details>
 
 <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
@@ -2238,6 +2239,7 @@ Current climate setting.
       - <code>heat</code>
       - <code>cool</code>
       - <code>heat_cool</code>
+      - <code>eco</code>
   </details>
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
@@ -2360,6 +2362,7 @@ Current climate setting.
       - <code>heat</code>
       - <code>cool</code>
       - <code>heat_cool</code>
+      - <code>eco</code>
   </details>
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
@@ -3955,6 +3958,7 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
     - <code>heat</code>
     - <code>cool</code>
     - <code>heat_cool</code>
+    - <code>eco</code>
 </details>
 
 <strong><code>method</code></strong> <i>Enum</i>
