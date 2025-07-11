@@ -137,6 +137,11 @@ export const setApiRouteLayoutContext = (
       continue
     }
 
+    if (resourceType === 'event') {
+      processEventResource(blueprint, file.resources, eventsByRoutePath)
+      continue
+    }
+
     if (resource == null) {
       throw new Error(
         `Path metadata for ${route.path} has invalid resource type ${resourceType}`,
@@ -697,5 +702,69 @@ function processActionAttemptResource(
     warningGroups: [],
     resourceSamples: [],
     events: eventsByRoutePath.get('/action_attempts') ?? [],
+  })
+}
+
+function processEventResource(
+  blueprint: Blueprint,
+  resources: ApiRouteResource[],
+  eventsByRoutePath: Map<string, ApiRouteEvent[]>,
+): void {
+  const blueprintEventDef = blueprint.events[0]
+  if (blueprintEventDef == null) {
+    throw new Error('Cannot process event resource: blueprint.events is empty.')
+  }
+
+  const eventTypes = blueprint.events.map((event) => event.eventType)
+
+  const properties: ApiRouteProperty[] = [
+    {
+      name: 'event_id',
+      description: 'ID of the event.',
+      format: 'UUID',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'workspace_id',
+      description:
+        'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+      format: 'UUID',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'created_at',
+      description: 'Date and time at which the event was created.',
+      format: 'String',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'occurred_at',
+      description: 'Date and time at which the event occurred.',
+      format: 'String',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'event_type',
+      description: 'Type of the event.',
+      format: 'String',
+      isDeprecated: false,
+      deprecationMessage: '',
+      enumValues: eventTypes,
+    },
+  ]
+
+  resources.push({
+    name: 'event',
+    description: 'Represents an event that occurred in the system.',
+    propertyGroups: [{ propertyGroupKey: null, properties }],
+    hidePreamble: false,
+    errorGroups: [],
+    warningGroups: [],
+    resourceSamples: [],
+    events: eventsByRoutePath.get('/events') ?? [],
   })
 }
