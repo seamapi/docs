@@ -7,7 +7,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Creates a new access grant.
+Creates a new Access Grant.
 
 
 {% tabs %}
@@ -431,6 +431,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 **`requested_access_methods`** *Array* *of Objects* (Required)
+
+---
+
+**`access_grant_key`** *String*
+
+Unique key for the access grant within the workspace.
 
 ---
 

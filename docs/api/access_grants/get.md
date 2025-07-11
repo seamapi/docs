@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Get an access grant.
+Get an Access Grant.
 
 
 {% tabs %}
@@ -371,9 +371,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** *String*
 
-ID of access grant to get.
+ID of Access Grant to get.
+
+---
+
+**`access_grant_key`** *String*
+
+Unique key of Access Grant to get.
 
 ---
 

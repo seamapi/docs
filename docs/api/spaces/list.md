@@ -185,6 +185,12 @@ String for which to search. Filters returned spaces to include all records that 
 
 ---
 
+**`space_key`** *String*
+
+Filter spaces by space_key.
+
+---
+
 
 ## Response
 

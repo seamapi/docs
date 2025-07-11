@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Get an access method.
+Gets an access method.
 
 
 {% tabs %}

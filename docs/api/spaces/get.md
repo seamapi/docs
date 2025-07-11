@@ -172,9 +172,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`space_id`** *String* (Required)
+**`space_id`** *String*
 
 ID of the space that you want to get.
+
+---
+
+**`space_key`** *String*
+
+Unique key of the space that you want to get.
 
 ---
 

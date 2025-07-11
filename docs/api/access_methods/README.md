@@ -10,7 +10,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents an access method for an access grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.
+Represents an access method for an Access Grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.
 
 {% tabs %}
 {% tab title="Card Access Method" %}
@@ -298,7 +298,7 @@ An access method was deleted.
 
 **`access_method.reissued`**
 
-An access method was reissued due to an access grant update.
+An access method was reissued due to an Access Grant update.
 
 <details>
 
@@ -336,21 +336,21 @@ An access method was reissued due to an access grant update.
 
 [**`/access_methods/delete`**](./delete.md)
 
-Delete an access method.
+Deletes an access method.
 
 
 [**`/access_methods/encode`**](./encode.md)
 
-Encodes an existing [credential](../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Encodes an existing access method onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 [**`/access_methods/get`**](./get.md)
 
-Get an access method.
+Gets an access method.
 
 
 [**`/access_methods/list`**](./list.md)
 
-List all access methods, usually filtered by access grant.
+Lists all access methods, usually filtered by Access Grant.
 
 

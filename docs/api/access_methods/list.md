@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-List all access methods, usually filtered by access grant.
+Lists all access methods, usually filtered by Access Grant.
 
 
 {% tabs %}
@@ -298,7 +298,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String* (Required)
 
-ID of access grant to list access methods for.
+ID of Access Grant to list access methods for.
 
 ---
 

@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Delete an access method.
+Deletes an access method.
 
 
 {% tabs %}
