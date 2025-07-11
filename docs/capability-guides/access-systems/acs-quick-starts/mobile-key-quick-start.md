@@ -55,7 +55,8 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
        3. Click **Log In**.
        4. When prompted to allow application access, click **Yes, Allow**.
        5. In the sites list, select **Main Site** and then click **Continue**.
-       6. Click **Close**.
+       6. When prompted to allow Seam to add a user to the virtual Salto KS Site, click **Allow and Continue**.
+       7. Click **Close**.
 
     The **Access Systems** page now displays the newly-connected virtual Salto KS access control system.
 
