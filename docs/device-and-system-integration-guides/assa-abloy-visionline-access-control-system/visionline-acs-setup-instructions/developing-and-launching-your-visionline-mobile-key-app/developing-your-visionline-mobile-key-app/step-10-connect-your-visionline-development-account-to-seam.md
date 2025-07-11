@@ -19,7 +19,7 @@ To develop your mobile key app, perform the following procedures to connect your
 
 ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../assa-abloy-credential-services-credential-manager.md).
 
-You received a Credential Services development "tenant" account during the [mandatory ASSA ABLOY mobile development course](../../../../assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course.md). To find out the credentials and details for this account, see [Retrieve Your ASSA ABLOY Credential Services Development Account Details](step-10-connect-your-visionline-development-account-to-seam.md#retrieve-your-assa-abloy-credential-services-development-account-details). Then, [connect your development Credential Services account to Seam](step-10-connect-your-visionline-development-account-to-seam.md#connect-credential-services).
+You received a Credential Services development "tenant" account during the [mandatory ASSA ABLOY mobile development course](step-1-complete-the-assa-abloy-mobile-development-course.md). To find out the credentials and details for this account, see [Retrieve Your ASSA ABLOY Credential Services Development Account Details](step-10-connect-your-visionline-development-account-to-seam.md#retrieve-your-assa-abloy-credential-services-development-account-details). Then, [connect your development Credential Services account to Seam](step-10-connect-your-visionline-development-account-to-seam.md#connect-credential-services).
 
 ***
 
@@ -96,15 +96,14 @@ Perform this process for each Visionline site that you want to connect to Seam.
 
     <figure><img src="../../../../../.gitbook/assets/seam-bridge-pairing-code.png" alt="Use the pairing code to pair Seam Bridge with your workspace." width="375"><figcaption><p>Use the pairing code to pair Seam Bridge with your workspace.</p></figcaption></figure>
 10. In the Connect Webview, click **Continue**.
-11. On the **Visionline info** page:
+11. On the **Set up your Seam Bridge** page:
     1. In the **Enter your pairing token** field, paste the pairing code that you copied.
-    2. In the **Name your bridge** field, type a unique name for Seam Bridge.
-    3. Click **Submit**.
+    2. Click **Submit**.
 12. On the **Enter your credentials** page:
     1. In the **Visionline Site Name** field, type a name to identify the Visionline site within your Seam workspace.
     2.  In the **Username** field, type the username for your Visionline development account.
 
-        This account is the one that you [created or identified in Visionline for the connection with Seam](../../../../assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account.md).
+        This account is the one that you [created or identified in Visionline for the connection with Seam](step-4-configure-a-visionline-user-account.md).
     3. In the **Password** field, type the password for your Visionline development account.
     4. Select the **Mobile Keys will be issued in this system** checkbox.
     5. In the **Mobile Access UUID** field, type `1`.

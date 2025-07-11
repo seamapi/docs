@@ -2,24 +2,13 @@
 description: >-
   Learn how to program an access code onto a smart lock with a keypad, and
   ensure the code is successfully set.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Creating Access Codes
 
 ## Overview
 
-This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api/access_codes/README.md) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of online access codes for online door locks:
 
@@ -175,9 +164,6 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -413,9 +399,6 @@ if (device.CanProgramOnlineAccessCodes == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### 2. Verify Successful Ongoing Code Programming
@@ -704,9 +687,6 @@ if (device.CanProgramOnlineAccessCodes == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### 2. Verify Successful Time-Bound Code Programming

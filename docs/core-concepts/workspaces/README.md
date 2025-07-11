@@ -3,17 +3,6 @@ description: >-
   Workspaces are the top-level resource in the Seam ecosystem. They encapsulate
   all other resources, such as devices, events, and connected third-party
   accounts.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Workspaces

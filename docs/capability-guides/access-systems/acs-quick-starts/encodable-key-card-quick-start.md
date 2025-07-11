@@ -58,10 +58,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
     3.  On the **Set up your Seam Bridge** page, click **Continue**.
 
         [Seam Bridge](../../seam-bridge.md) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this quick start uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
-    4. On the **Visionline info** page:
-       1. In the **Enter your pairing token** field, type `123456` (or any six-character string).
-       2. In the **Name your bridge** field, type `My Network` (or any unique string).
-       3. Click **Submit**.
+    4. On the **Seam Bridge Connection** page, click **Submit**.
     5. On the **Enter your credentials** page:
        1. In the **Visionline Site Name** field, type any string to identify this virtual Visionline ACS site, for example, `My Visionline Site`.
        2. In the **Username** field, type `jane`.
@@ -103,12 +100,9 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
-
 {% endtabs %}
 
 2. Create an API key.
@@ -135,7 +129,7 @@ Create an ACS user within the virtual Visionline access control system.
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
    2. On the **Access Systems** page, locate the Visionline ACS, for example, **My Visionline Site**.
    3. In the **acs\_system\_id** column for the Visionline ACS, click the ID to copy it.
-   4. Store this ACS system ID for future use.&#x20;
+   4. Store this ACS system ID for future use.
 2. Create the ACS user, as follows:
 
 {% tabs %}
@@ -287,9 +281,6 @@ $acs_user = $seam->acs->users->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -308,8 +299,6 @@ If this credential were intended for a real Visionline card, you'd need to creat
 
        In this example, the set of entrances includes both a common entrance and a guest room door.
    5.  For each of these entrances, click **...**, click **Copy Id**, and then store this entrance ID for future use.
-
-
 
        <figure><img src="../../../.gitbook/assets/key-card-quick-start-copy-entrance-ids.png" alt="Copy the IDs for the Vingcard Lock 2 and Guest Lock 1 entrances."><figcaption><p>Copy the IDs for the Vingcard Lock 2 and Guest Lock 1 entrances.</p></figcaption></figure>
 2. Create the key card credential, as follows:
@@ -504,9 +493,6 @@ $key_card_credential = $seam->acs->credentials->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -792,9 +778,6 @@ $seam->action_attempts->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
