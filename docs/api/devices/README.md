@@ -3538,6 +3538,7 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
     - <code>heat</code>
     - <code>cool</code>
     - <code>heat_cool</code>
+    - <code>eco</code>
 </details>
 
 <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
@@ -3676,6 +3677,7 @@ Current climate setting.
       - <code>heat</code>
       - <code>cool</code>
       - <code>heat_cool</code>
+      - <code>eco</code>
   </details>
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
@@ -3798,6 +3800,7 @@ Current climate setting.
       - <code>heat</code>
       - <code>cool</code>
       - <code>heat_cool</code>
+      - <code>eco</code>
   </details>
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
