@@ -32,7 +32,7 @@ First, connect your users' thermostats to Seam using the [Seam Console](../../co
 
 Retrieve and monitor your users' thermostats using the [`/thermostats/list`](../../api/thermostats/list.md) and [`/devices/get`](../../api/devices/get.md) endpoints. The Seam API returns robust, up-to-date information about your connected thermostats. In addition, you can use these endpoints to learn the capabilities of each thermostat.
 
-Further, you can use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set_temperature_threshold.md) endpoint to set upper and lower acceptable temperature bounds. If the thermostat reports a temperature outside this range, Seam emits a [`thermostat.temperature_threshold_exceeded` event](../../api-clients/events/#event-types).
+Further, you can use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set_temperature_threshold.md) endpoint to set upper and lower acceptable temperature bounds. If the thermostat reports a temperature outside this range, Seam emits a [`thermostat.temperature_threshold_exceeded` event](../../api/events/#event-types).
 
 ### Perform Remote Management
 

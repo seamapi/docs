@@ -25,7 +25,7 @@ Before you attempt to lock or unlock a device, be sure to confirm that your devi
 
 Use [Get Device](../../api/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
-If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -973,7 +973,7 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 
 ## Lock and Unlock Events
 
-Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](../../api-clients/events/list.md) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
+Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](../../api/events/list.md) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
 
 A lock or unlock event looks like the following:
 
@@ -993,4 +993,4 @@ A lock or unlock event looks like the following:
 }
 ```
 
-For more information about the `lock.locked` and `lock.unlocked` attributes, please see[ Events](../../api-clients/events/).
+For more information about the `lock.locked` and `lock.unlocked` attributes, please see[ Events](../../api/events/).

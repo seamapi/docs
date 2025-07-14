@@ -102,7 +102,7 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 ## Linking Unlock Events and Access Codes
 
-When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](../../../api-clients/events/#event-types). Some device manufacturers include the ID of the access code in [lock-related events](../../../api-clients/events/#lock-events). This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
+When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](../../../api/events/#event-types). Some device manufacturers include the ID of the access code in [lock-related events](../../../api/events/#lock-events). This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
 
 Currently, the following device manufacturers send the `access_code_id` in the `lock.unlocked` event:
 

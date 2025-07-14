@@ -21,7 +21,7 @@ All capability flags share the following behavior:
 * If `true`, the device has this capability, and this capability is functional on this device instance.
 *   If `false`, the device has this capability, but the capability is not currently functional.
 
-    See the device [errors](../api/devices/#errors) and [warnings](../api/devices/#warnings) for more details about the cause of this issue. You can also examine the [properties](../api/devices/#properties) of the device and [events](../api-clients/events/#event-types) related to the device to learn more about the cause of this issue.
+    See the device [errors](../api/devices/#errors) and [warnings](../api/devices/#warnings) for more details about the cause of this issue. You can also examine the [properties](../api/devices/#properties) of the device and [events](../api/events/#event-types) related to the device to learn more about the cause of this issue.
 * If not present, the device does not have this capability.
 
 Reasons why a capability flag might be `false` could include that a required hardware accessory is not connected to the device. For example, if a lock needs a Wi-Fi bridge for connectivity and is currently not connected to a bridge, the lock cannot be remotely unlocked. If a lock is missing an accessory keypad, access codes cannot be programmed on the lock.

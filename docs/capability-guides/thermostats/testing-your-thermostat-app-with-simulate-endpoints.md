@@ -36,7 +36,7 @@ For more information, see [Thermostat Capabilities](../../products/thermostats/#
 
 ## Simulate Adjusting the HVAC Mode
 
-The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the [HVAC mode](understanding-thermostat-concepts/hvac-mode.md) for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.manually_adjusted`.
+The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the [HVAC mode](understanding-thermostat-concepts/hvac-mode.md) for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](../../api/events/) correctly, such as `thermostat.manually_adjusted`.
 
 You can simulate having set the HVAC mode to any of the following settings:
 
@@ -248,7 +248,7 @@ void
 
 ## Simulate Reaching a Desired Temperature
 
-The `/thermostats/simulate/temperature_reached` endpoint enables you to simulate the thermostat reaching a specified temperature. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.temperature_changed` and `thermostat.temperature_reached_set_point`.
+The `/thermostats/simulate/temperature_reached` endpoint enables you to simulate the thermostat reaching a specified temperature. This simulation is helpful for testing that your app is receiving [thermostat events](../../api/events/) correctly, such as `thermostat.temperature_changed` and `thermostat.temperature_reached_set_point`.
 
 Specify the desired temperature that you want to simulate the thermostat reaching using either of the following parameters:
 

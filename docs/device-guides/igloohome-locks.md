@@ -67,11 +67,11 @@ Seam supports the following events and event property values for igloohome devic
 
 ### igloohome Auto-Relock
 
-igloohome devices have an auto-relock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-relock occurrences by emitting a [`lock.locked` event](../api-clients/events/#event-types) with `automatic` as the value for the [`method` property](../api-clients/events/#lock-events).
+igloohome devices have an auto-relock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-relock occurrences by emitting a [`lock.locked` event](../api/events/#event-types) with `automatic` as the value for the [`method` property](../api/events/#lock-events).
 
 ### igloohome Access Denied Event
 
-Each time an igloohome device detects an invalid attempt of entry, Seam emits a [`lock.access_denied` event](../api-clients/events/#event-types). Invalid entry attempts include entering the wrong PIN, exceeding the PIN length, and using an invalid key card. The igloohome lock also flashes red to indicate an invalid attempt. If too many invalid attempts occur, igloohome locks produce a Keypad Security Lockout alarm, accompanied by light and sound indicators. For more information, see the igloohome support articles on [keypad security](https://support.igloohome.co/support/solutions/articles/35000169627-keypad-security-lockout-activated-and-deactivated) and [incorrect PINs](https://support.igloohome.co/support/solutions/articles/35000169625-incorrect-pin).
+Each time an igloohome device detects an invalid attempt of entry, Seam emits a [`lock.access_denied` event](../api/events/#event-types). Invalid entry attempts include entering the wrong PIN, exceeding the PIN length, and using an invalid key card. The igloohome lock also flashes red to indicate an invalid attempt. If too many invalid attempts occur, igloohome locks produce a Keypad Security Lockout alarm, accompanied by light and sound indicators. For more information, see the igloohome support articles on [keypad security](https://support.igloohome.co/support/solutions/articles/35000169627-keypad-security-lockout-activated-and-deactivated) and [incorrect PINs](https://support.igloohome.co/support/solutions/articles/35000169625-incorrect-pin).
 
 ***
 

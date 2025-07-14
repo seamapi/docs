@@ -16,7 +16,7 @@ Note that it's important to check the capabilities of a thermostat before attemp
 
 These imperative operations return an [action attempt](../../core-concepts/action-attempts.md) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
 
-Further, Seam emits a [`thermostat.temperature_reached_set_point` event](../../api-clients/events/#event-types) when the thermostat reports a temperature within 1° Celsius of the heating or cooling temperature that you requested.
+Further, Seam emits a [`thermostat.temperature_reached_set_point` event](../../api/events/#event-types) when the thermostat reports a temperature within 1° Celsius of the heating or cooling temperature that you requested.
 
 ***
 
@@ -68,7 +68,7 @@ Before you attempt to set the HVAC or fan mode settings for a thermostat, be sur
 
 Use the [`/devices/get`](../../api/devices/get.md) endpoint for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to perform the imperative thermostat action.
 
-If the relevant capability flag is `false` or not present, you can view the [properties](../../api/thermostats/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If the relevant capability flag is `false` or not present, you can view the [properties](../../api/thermostats/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}
