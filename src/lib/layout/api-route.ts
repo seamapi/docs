@@ -121,10 +121,12 @@ export const setApiRouteLayoutContext = (
     }))
 
   const resourceTypes = [
-    ...blueprint.resources
-      .filter((r) => r.routePath === route.path && !r.isUndocumented)
-      .map(({ resourceType }) => resourceType),
-    ...metadata.resources,
+    ...new Set([
+      ...blueprint.resources
+        .filter((r) => r.routePath === route.path && !r.isUndocumented)
+        .map(({ resourceType }) => resourceType),
+      ...metadata.resources,
+    ]),
   ]
   file.resources = []
   for (const resourceType of resourceTypes) {
