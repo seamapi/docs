@@ -643,7 +643,7 @@ function processActionAttemptResource(
     {
       name: 'status',
       description: 'Status of the action attempt.',
-      format: 'String',
+      format: 'Enum',
       isDeprecated: false,
       deprecationMessage: '',
       enumValues: ['pending', 'success', 'error'],
