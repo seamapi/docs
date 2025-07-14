@@ -168,6 +168,11 @@
   resources:
     - action_attempt
 
+/events:
+  title: Events
+  resources:
+    - event
+
 /locks:
   title: Locks
   resources:

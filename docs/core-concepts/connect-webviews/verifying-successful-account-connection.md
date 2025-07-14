@@ -176,7 +176,7 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
 
 ## **Webhook**
 
-When Seam successfully establishes the connection to the user's device or ACS account, Seam emits a [`connected_account.connected` event](../../api-clients/events/#event-types). This event includes a `connect_webview_id` property.
+When Seam successfully establishes the connection to the user's device or ACS account, Seam emits a [`connected_account.connected` event](../../api/events/). This event includes a `connect_webview_id` property.
 
 To avoid polling, use a Seam webhook to monitor for a `connected_account.connected` event with a `connect_webview_id` that matches the `connect_webview_id` of the appropriate Connect Webview instance.
 

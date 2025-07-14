@@ -139,7 +139,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 
 ### Get the New Webview
 
-After you complete the login above, you'll get an event for [`connected_account.created`](../api-clients/events/)if you set up a [webhook handler](../core-concepts/webhooks.md). Otherwise you can just poll for the webview until it's status changes, as shown below:
+After you complete the login above, you'll get an event for [`connected_account.created`](../api/events/)if you set up a [webhook handler](../core-concepts/webhooks.md). Otherwise you can just poll for the webview until it's status changes, as shown below:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -498,7 +498,7 @@ echo json_encode($device[0]);
 
 Minut users can define noise thresholds at which noise alerts are sent.
 
-You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api-clients/events/list.md).
+You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../core-concepts/webhooks.md). You can also [poll for events](../api/events/list.md).
 
 {% hint style="info" %}
 Minut has a builtin threshold that can be triggered multiple times. Each Minut notice will trigger a `noise_threshold_triggered` event with the `minut_metadata.event_name` containing the Minut event name, which can be any of the following:

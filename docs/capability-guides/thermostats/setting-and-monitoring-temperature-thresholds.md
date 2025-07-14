@@ -6,7 +6,7 @@ description: >-
 
 # Setting and Monitoring Temperature Thresholds
 
-You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](../../api-clients/events/#event-types) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
+You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](../../api/events/) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
 
 Use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set\_temperature\_threshold.md) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../core-concepts/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
 

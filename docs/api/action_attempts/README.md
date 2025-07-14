@@ -22,20 +22,21 @@ ID of the action attempt.
 
 **`status`** *Enum*
 
+Status of the action attempt.
 
 
 <details>
 <summary>Enum values</summary>
 
-- <code>success</code>
 - <code>pending</code>
+- <code>success</code>
 - <code>error</code>
 </details>
 
 
 ---
 
-**`action_type`** *String*
+**`action_type`** *Enum*
 
 Type of the action attempt.
 
@@ -54,13 +55,6 @@ Type of the action attempt.
 - <code>SIMULATE_KEYPAD_CODE_ENTRY</code>
 - <code>SIMULATE_MANUAL_LOCK_VIA_KEYPAD</code>
 - <code>PUSH_THERMOSTAT_PROGRAMS</code>
-- <code>SYNC_ACCESS_CODES</code>
-- <code>CREATE_ACCESS_CODE</code>
-- <code>DELETE_ACCESS_CODE</code>
-- <code>UPDATE_ACCESS_CODE</code>
-- <code>CREATE_NOISE_THRESHOLD</code>
-- <code>DELETE_NOISE_THRESHOLD</code>
-- <code>UPDATE_NOISE_THRESHOLD</code>
 </details>
 
 
@@ -68,7 +62,7 @@ Type of the action attempt.
 
 **`error`** *Object*
 
-Errors associated with the action attempt. Null for pending action attempts.
+Error associated with the action attempt. Null for pending and successful action attempts.
 
 
 
@@ -77,7 +71,7 @@ Errors associated with the action attempt. Null for pending action attempts.
 
 **`result`** *Object*
 
-Result of the action attempt. Null for pending action attempts.
+Result of the action attempt. Null for pending and errored action attempts.
 
 
 
