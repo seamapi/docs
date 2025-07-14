@@ -44,13 +44,17 @@ Type of the action attempt.
 <details>
 <summary>Enum values</summary>
 
-- <code>SYNC_ACCESS_CODES</code>
-- <code>CREATE_ACCESS_CODE</code>
-- <code>DELETE_ACCESS_CODE</code>
-- <code>UPDATE_ACCESS_CODE</code>
-- <code>CREATE_NOISE_THRESHOLD</code>
-- <code>DELETE_NOISE_THRESHOLD</code>
-- <code>UPDATE_NOISE_THRESHOLD</code>
+- <code>LOCK_DOOR</code>
+- <code>UNLOCK_DOOR</code>
+- <code>SCAN_CREDENTIAL</code>
+- <code>ENCODE_CREDENTIAL</code>
+- <code>RESET_SANDBOX_WORKSPACE</code>
+- <code>SET_FAN_MODE</code>
+- <code>SET_HVAC_MODE</code>
+- <code>ACTIVATE_CLIMATE_PRESET</code>
+- <code>SIMULATE_KEYPAD_CODE_ENTRY</code>
+- <code>SIMULATE_MANUAL_LOCK_VIA_KEYPAD</code>
+- <code>PUSH_THERMOSTAT_PROGRAMS</code>
 </details>
 
 
