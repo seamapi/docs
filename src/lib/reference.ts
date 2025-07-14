@@ -58,30 +58,6 @@ export const reference = (
   }
 
   const routes = blueprint.routes.filter(({ path, isUndocumented }) => {
-    if (
-      !path.startsWith('/acs') &&
-      !path.startsWith('/thermostats') &&
-      !path.startsWith('/phones') &&
-      !path.startsWith('/user_identities') &&
-      !path.startsWith('/connected_accounts') &&
-      !path.startsWith('/access_grants') &&
-      !path.startsWith('/access_methods') &&
-      !path.startsWith('/spaces') &&
-      !path.startsWith('/customers') &&
-      !path.startsWith('/client_sessions') &&
-      !path.startsWith('/connect_webviews') &&
-      !path.startsWith('/webhooks') &&
-      !path.startsWith('/workspaces') &&
-      !path.startsWith('/devices') &&
-      !path.startsWith('/locks') &&
-      !path.startsWith('/noise_sensors') &&
-      !path.startsWith('/action_attempts') &&
-      !path.startsWith('/access_codes') &&
-      !path.startsWith('/events')
-    ) {
-      return false
-    }
-
     if (isUndocumented) return false
     if (pathMetadata[path]?.title == null) return false
     return true
