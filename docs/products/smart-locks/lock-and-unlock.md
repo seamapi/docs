@@ -25,7 +25,7 @@ Before you attempt to lock or unlock a device, be sure to confirm that your devi
 
 Use [Get Device](../../api/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
-If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api/events/) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}

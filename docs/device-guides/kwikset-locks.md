@@ -88,7 +88,7 @@ Kwikset devices have an auto-lock feature that automatically locks the device af
 
 ### Kwikset Access Denied Event
 
-The Seam API emits a [`lock.access_denied` event](../api/events/#event-types) when an incorrect access code is entered three times in a row on a Kwikset device. The Kwikset device also emits warning beeps for approximately 15 seconds, and the keypad is locked during this time. The keypad remains locked for one minute after the warning beeps end.
+The Seam API emits a [`lock.access_denied` event](../api/events/) when an incorrect access code is entered three times in a row on a Kwikset device. The Kwikset device also emits warning beeps for approximately 15 seconds, and the keypad is locked during this time. The keypad remains locked for one minute after the warning beeps end.
 
 ***
 

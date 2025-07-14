@@ -187,7 +187,7 @@ You can retrieve these events using a [List Events](../../api/events/list.md) re
 
 ### Get Battery-Related Events Using a List Events Request
 
-When issuing a [List Events](../../api/events/list.md) request to retrieve [`device.low_battery`](../../api/events/#event-types) or [`device.battery_status_changed`](../../api/events/#event-types) events for a specific device, include the following parameters:
+When issuing a [List Events](../../api/events/list.md) request to retrieve [`device.low_battery`](../../api/events/) or [`device.battery_status_changed`](../../api/events/) events for a specific device, include the following parameters:
 
 <table><thead><tr><th width="162">Parameter</th><th width="161">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String (UUID)</td><td>ID of the device for which you want to retrieve <code>device.connected</code> or <code>device.disconnected</code> events</td></tr><tr><td><code>event_type</code></td><td>String</td><td>Event type that you want to retrieve, that is, <code>device.connected</code> or <code>device.disconnected</code></td></tr><tr><td><code>since</code></td><td>String</td><td>Desired starting event generation date and time<br>You must include <code>since</code> or <code>between</code>.</td></tr><tr><td><code>between</code></td><td>Set of two strings</td><td>Desired starting and ending event generation dates and times<br>For example:<br><code>["2024-01-01T00:00:00Z", "2024-02-01T00:00:00Z"]</code><br>You must include <code>between</code> or <code>since</code>.</td></tr></tbody></table>
 

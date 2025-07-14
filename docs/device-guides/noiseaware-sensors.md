@@ -25,7 +25,7 @@ We support the following features:
 * [Configuring noise threshold settings](../products/noise-sensors/configure-noise-threshold-settings.md)\
   You can configure a maximum of one noise threshold per hour per Noiseaware sensor. You cannot configure thresholds with time periods that overlap.
 * [Receiving noise sensor events when noise events occur](../api/events/)\
-  For more information, see [Noise Sensor Events](../api/events/#noise-sensor-events) and `noise_sensors.noise_threshold_triggered` in [Event Types](../api/events/#event-types).
+  For more information, see the [`noise_sensor.noise_threshold_triggered` event](../api/events/).
 
 ***
 

@@ -12,7 +12,7 @@ To configure webhook endpoints:
 
 1. In the left navigation pane of the [Seam Console](https://console.seam.co/), click **Webhooks**.
 2. Click **+ Add Webhook**.
-3. In the **Create Webhook** dialog, type your webhook URL and select the [event types](../api/events/#event-types) for which you want to receive events.
+3. In the **Create Webhook** dialog, type your webhook URL and select the [event types](../api/events/) for which you want to receive events.
 4. Click **Create**.
 5. Copy your webhook secret and store it somewhere secure. You use this webhook secret to validate the payloads that you receive on your webhook.
 
@@ -24,7 +24,7 @@ You can specify any public URL endpoint to receive webhook events by pasting the
 
 <figure><img src="../.gitbook/assets/create-webhook-dialog.png" alt="You can specify any internet-accessible URL as your webhook URL." width="563"><figcaption><p>You can specify any internet-accessible URL as your webhook URL.</p></figcaption></figure>
 
-Webhook endpoints can receive many different types of events, such as `device.connected` or `device.low_battery`. It's a good idea when getting started with webhooks to review the list of webhook [event types](../api/events/#event-types) and test your endpoint using the Svix sandbox environment.
+Webhook endpoints can receive many different types of events, such as `device.connected` or `device.low_battery`. It's a good idea when getting started with webhooks to review the list of webhook [event types](../api/events/) and test your endpoint using the Svix sandbox environment.
 
 ![The Svix sandbox environment enables you to test sending requests to an endpoint.](<../.gitbook/assets/image (15).png>)
 
