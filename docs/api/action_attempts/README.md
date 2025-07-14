@@ -20,7 +20,7 @@ ID of the action attempt.
 
 ---
 
-**`status`** *String*
+**`status`** *Enum*
 
 Status of the action attempt.
 
