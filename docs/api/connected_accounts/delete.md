@@ -133,6 +133,7 @@ seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-e
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

@@ -127,6 +127,7 @@ seam devices simulate disconnect --device_id "a60686b8-f401-452d-9f67-53d139cf61
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

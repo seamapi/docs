@@ -127,6 +127,7 @@ seam devices simulate remove --device_id "46757795-11f7-446a-a6cb-779e9f039d7c"
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

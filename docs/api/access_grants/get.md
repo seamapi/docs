@@ -363,6 +363,7 @@ seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

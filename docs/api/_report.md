@@ -161,6 +161,8 @@ These items are intentionally undocumented.
     - `is_programmed`: Not sure if this parameter is supported or what it does.
 - `/noise_sensors/noise_thresholds/update`
     - `sync`: Only used internally.
+- `/spaces/list`
+    - `connected_account_id`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
@@ -425,6 +427,11 @@ These items have been marked as draft.
 - `/spaces/remove_acs_entrances`: Early access.
 - `/spaces/remove_devices`: Early access.
 - `/spaces/update`: Early access.
+
+### Endpoint parameters
+
+- `/spaces/list`
+    - `connected_account_id`: Needs review.
 
 ## Deprecated
 

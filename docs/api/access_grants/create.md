@@ -422,6 +422,7 @@ seam access-grants create --user_identity_id "e3d736c1-540d-4d10-83e5-9a4e135453
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

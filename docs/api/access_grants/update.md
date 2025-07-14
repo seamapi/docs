@@ -144,6 +144,7 @@ seam access-grants update --access_grant_id "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

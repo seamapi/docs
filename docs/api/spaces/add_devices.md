@@ -141,6 +141,7 @@ seam spaces add-devices --space_id "4d53b5c0-87cd-4de9-832d-025e075e7cd4" --devi
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
