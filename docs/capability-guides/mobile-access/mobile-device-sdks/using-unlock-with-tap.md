@@ -5,12 +5,12 @@ description: >-
 
 # Unlocking
 
-Unlocking with SeamSDK uses proximity to communicate credentials to door readers. When a user initiates an unlock, the SDK performs scanning, error handling, and unlock events via `Seam.shared.unlock(using:)`.
+Unlocking with SeamSDK uses proximity to communicate credentials to door readers. When a user initiates an unlock, the SDK performs scanning, error handling, and unlock events using `Seam.shared.unlock(using:)`.
 
 Using this process involves the following steps:
 
 1. Retrieve available mobile credentials.  
-2. Monitor for permission or credential errors unhandled errors will be thrown as `credentialErrors([SeamCredentialError])`  
+2. Monitor for permission or credential errors. Unhandled errors are thrown as `credentialErrors([SeamCredentialError])`.  
 3. Perform the unlock operation.  
 4. Handle unlock status events.  
 5. Cancel the unlock operation if needed.
@@ -19,18 +19,21 @@ Using this process involves the following steps:
 
 ## 1. Retrieve Mobile Credentials
 
-Access the current credentials via the published `credentials` array on `Seam.shared`:
+Access the current credentials through the published `credentials` array on `Seam.shared`:
 
 {% tabs %}
 {% tab title="iOS Swift" %}
 ```swift
+import SeamSDK
+import Combine
+
 // Access credentials
 let credentials = Seam.shared.credentials
 
 // Observe updates with Combine
 let credentialsSubscription = Seam.shared.$credentials
     .sink { creds in
-        // Update UI with new credentials array
+        // Update UI with new credentials array.
     }
 ```
 {% endtab %}
@@ -43,30 +46,36 @@ Permission or setup issues appear in each credential’s `errors` property. Obse
 {% tabs %}
 {% tab title="iOS Swift" %}
 ```swift
+import SeamSDK
+import Combine
+
 let errorSubscription = Seam.shared.$credentials
     .flatMap { creds in creds.publisher }
     .map { $0.errors }
     .sink { errors in
-        // Handle errors, e.g. `.userInteractionRequired`, `.expired`, etc.
+        // Handle errors, for example, `.userInteractionRequired`, `.expired`, etc.
     }
 ```
 {% endtab %}
 {% endtabs %}
 
-> **Note:** The `.errors` array on credentials represents per-credential issues though some issues may be repeated across several credentials (e.g. bluetooth requirements). Seam SDK- or credential-level errors (such as invalid token or expired credential) are thrown directly by `unlock(using:)` as `SeamError` and must be handled via `do/catch`.
+> **Note:** The `.errors` array on credentials represents per-credential issues, though some issues may be repeated across several credentials (for example, bluetooth requirements). SDK- or credential-level errors (such as invalid token or expired credential) are thrown directly by methods like `unlock(using:)` because `SeamError` or `SeamCredentialError` and must be handled through `do/catch`.
 
 ## 3. Perform Unlock Operation
 
 The call to `Seam.shared.unlock(using:)` may throw:
-- `SeamError`: for SDK-level issues (e.g., invalid token, uninitialized SDK).
-- `SeamCredentialError`: for credential-specific issues (e.g., expired credential, device not eligible).
-Ensure you wrap the call in `do/catch` to handle these errors.
+- `SeamError`: For SDK-level issues (for example, invalid token, uninitialized SDK).
+- `SeamCredentialError`: For credential-specific issues (for example, expired credential, device not eligible).
+Ensure that you wrap the call in `do/catch` blocks to handle these errors.
 
 Use Async/Await or Combine to initiate an unlock with a selected credential:
 
 {% tabs %}
 {% tab title="iOS Swift" %}
 ```swift
+import SeamSDK
+import Combine
+
 let credentialId = credentials.first!.id
 
 // Async/Await example
@@ -75,14 +84,14 @@ Task {
         for try await event in try Seam.shared.unlock(using: credentialId).values {
             switch event {
             case .grantedAccess:
-                // The lock granted access—show a success indicator.
+                // The lock granted access. Show a success indicator.
             default:
                 print("Unlock event: \(event)")
-                // Access wasn't granted, inform the user and offer retry.
+                // Access wasn't granted. Inform the user and offer retry.
             }
         }
     } catch {
-        // Handle unlock error, e.g., invalid credential or SDK error
+        // Handle unlock error, for example, invalid credential or SDK error
         print("Unlock error: \(error)")
     }
 }
@@ -106,7 +115,7 @@ do {
     )
     // Retain `unlockSubscription`; discarding it will cancel the unlock attempt.
 } catch {
-    // Handle unlock initialization error
+    // Handle unlock initialization error.
     print("Unlock error: \(error)")
 }
 ```
@@ -137,17 +146,17 @@ Task {
         for try await event in Seam.shared.unlock(using: credentialID) {
             switch event {
             case .launched:
-                // Show scanning indicator
+                // Show scanning indicator.
             case .grantedAccess:
-                // Show access granted
+                // Show access granted.
             case .timedOut:
-                // Show timeout and offer retry
+                // Show timeout and offer retry.
             case .connectionFailed(let debugDescription):
-                // Show error with debugDescription
+                // Show error with debugDescription.
             }
         }
     } catch {
-        // Handle thrown errors
+        // Handle thrown errors.
     }
 }
 ```
@@ -176,9 +185,9 @@ do {
                 }           
             }
         )
-    // Retain `unlockSubscription` as a property and cancel when appropriate (e.g., in deinit or viewWillDisappear).
+    // Retain `unlockSubscription` as a property and cancel when appropriate (for example, in deinit or viewWillDisappear).
 } catch {
-    // Handle unlock initialization error
+    // Handle unlock initialization error.
     print("Unlock initialization error: \(error)")
 }
 ```
@@ -195,7 +204,7 @@ Stop scanning by cancelling your subscription or task:
 // For Combine
 unlockSubscription.cancel()
 
-// For Async/Await, cancel the Task as needed
+// For Async/Await, cancel the Task as needed.
 ```
 {% endtab %}
 {% endtabs %}
