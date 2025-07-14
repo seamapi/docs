@@ -186,6 +186,7 @@ seam spaces create --name "My Space" --device_ids ["b7254403-db91-4e10-bb7b-31d0
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

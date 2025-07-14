@@ -91,6 +91,15 @@ IDs of the access methods created for the Access Grant.
 
 ---
 
+**`client_session_token`** *String*
+
+Client Session Token. Only returned if the Access Grant has a mobile_key access method.
+
+
+
+
+---
+
 **`created_at`** *Datetime*
 
 Date and time at which the Access Grant was created.

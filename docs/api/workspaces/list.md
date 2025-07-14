@@ -222,8 +222,6 @@ seam workspaces list
 - Client session token
 - Personal access token
   <br>Can also include the `seam-workspace` header in the request.
-- Personal access token
-  <br>Can also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
 </details>

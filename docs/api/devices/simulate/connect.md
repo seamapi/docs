@@ -127,6 +127,7 @@ seam devices simulate connect --device_id "5d703d4f-523f-42af-9439-618415ca651f"
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

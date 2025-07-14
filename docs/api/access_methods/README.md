@@ -74,6 +74,15 @@ ID of the access method.
 
 ---
 
+**`client_session_token`** *String*
+
+Token of the client session associated with the access method.
+
+
+
+
+---
+
 **`code`** *String*
 
 The actual PIN code for code access methods.

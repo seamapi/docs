@@ -141,6 +141,7 @@ seam spaces add-acs-entrances --space_id "9f930664-c0d8-441b-8d66-2b1d0d2466f4" 
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

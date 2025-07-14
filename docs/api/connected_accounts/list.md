@@ -245,6 +245,7 @@ seam connected-accounts list --user_identifier_key "2f393937-1405-4b1a-933f-34c9
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
