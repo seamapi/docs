@@ -4,7 +4,6 @@
 
 ### Routes
 
-- `/events`
 - `/thermostats/daily_programs`
 - `/user_identities/enrollment_automations`
 
