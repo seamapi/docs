@@ -135,12 +135,12 @@ export const setApiRouteLayoutContext = (
     )
 
     if (resourceType === 'action_attempt') {
-      processActionAttemptResource(file.resources, eventsByRoutePath)
+      processActionAttemptResource(file.resources, eventsByRoutePath, blueprint)
       continue
     }
 
     if (resourceType === 'event') {
-      processEventResource(file.resources)
+      processEventResource(file.resources, blueprint)
       continue
     }
 
@@ -633,6 +633,7 @@ const getParentVariantResourceType = (
 function processActionAttemptResource(
   resources: ApiRouteResource[],
   eventsByRoutePath: Map<string, ApiRouteEvent[]>,
+  blueprint: Blueprint,
 ): void {
   const properties: ApiRouteProperty[] = [
     {
@@ -653,9 +654,21 @@ function processActionAttemptResource(
     {
       name: 'action_type',
       description: 'Type of the action attempt.',
-      format: 'String',
+      format: 'Enum',
       isDeprecated: false,
       deprecationMessage: '',
+      enumValues: blueprint.actionAttempts
+        .filter(
+          ({ isDeprecated, isUndocumented }) =>
+            !(isUndocumented || isDeprecated),
+        )
+        .filter(
+          ({ actionAttemptType }) =>
+            !['CREATE', 'DELETE', 'UPDATE', 'SYNC'].includes(
+              actionAttemptType.split('_')[0] ?? '',
+            ),
+        )
+        .map(({ actionAttemptType }) => actionAttemptType),
     },
     {
       name: 'error',
@@ -687,7 +700,10 @@ function processActionAttemptResource(
   })
 }
 
-function processEventResource(resources: ApiRouteResource[]): void {
+function processEventResource(
+  resources: ApiRouteResource[],
+  blueprint: Blueprint,
+): void {
   const properties: ApiRouteProperty[] = [
     {
       name: 'event_id',
@@ -699,9 +715,15 @@ function processEventResource(resources: ApiRouteResource[]): void {
     {
       name: 'event_type',
       description: 'Type of event.',
-      format: 'String',
+      format: 'Enum',
       isDeprecated: false,
       deprecationMessage: '',
+      enumValues: blueprint.events
+        .filter(
+          ({ isDeprecated, isUndocumented }) =>
+            !(isUndocumented || isDeprecated),
+        )
+        .map(({ eventType }) => eventType),
     },
     {
       name: 'workspace_id',

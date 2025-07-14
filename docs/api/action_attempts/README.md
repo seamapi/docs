@@ -36,11 +36,22 @@ Status of the action attempt.
 
 ---
 
-**`action_type`** *String*
+**`action_type`** *Enum*
 
 Type of the action attempt.
 
 
+<details>
+<summary>Enum values</summary>
+
+- <code>SYNC_ACCESS_CODES</code>
+- <code>CREATE_ACCESS_CODE</code>
+- <code>DELETE_ACCESS_CODE</code>
+- <code>UPDATE_ACCESS_CODE</code>
+- <code>CREATE_NOISE_THRESHOLD</code>
+- <code>DELETE_NOISE_THRESHOLD</code>
+- <code>UPDATE_NOISE_THRESHOLD</code>
+</details>
 
 
 ---
