@@ -1,79 +1,188 @@
 # List Accessible Devices for a User Identity
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [devices](../../core-concepts/devices/README.md) associated with a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.listAccessibleDevices({
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+  user_identity_id: "f25d14c2-ea01-4e42-80f8-61a6f719be9d",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
   {
-    "device_id": "054765c8-a2fc-4599-b486-14c19f462c45",
-    "nickname": "",
-    "display_name": "Seam Thermostat",
-    "device_type": "nest_thermostat",
+    "can_hvac_cool": true,
+    "can_hvac_heat": true,
+    "can_hvac_heat_cool": true,
+    "can_turn_off_hvac": true,
     "capabilities_supported": ["thermostat"],
+    "connected_account_id": "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+    "created_at": "2024-10-03T22:12:15.666Z",
+    "custom_metadata": { "id": "internalId1" },
+    "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+    "device_type": "ecobee_thermostat",
+    "display_name": "Living Room",
+    "errors": [],
+    "is_managed": true,
+    "location": {
+      "location_name": "2948 20th St, San Francisco, CA, 94110, US",
+      "timezone": "America/Los_Angeles"
+    },
+    "nickname": "Living Room",
     "properties": {
-      "online": true,
-      "is_cooling": false,
-      "is_heating": false,
-      "manufacturer": "nest",
-      "nest_metadata": {
-        "custom_name": "",
-        "device_name": "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g",
-        "nest_device_id": "bcca8c5f-1854-4906-9911-c877d513e00a"
-      },
-      "is_fan_running": false,
-      "has_direct_power": true,
-      "relative_humidity": 0.46,
-      "temperature_celsius": 24.64,
-      "temperature_fahrenheit": 76.352,
-      "current_climate_setting": {
+      "active_climate_preset": {
+        "can_delete": true,
+        "can_edit": true,
+        "climate_preset_key": "sleep",
+        "cooling_set_point_celsius": 23.88888888888889,
+        "display_name": "Sleep",
+        "fan_mode_setting": "auto",
+        "heating_set_point_celsius": 17.77777777777778,
         "hvac_mode_setting": "heat_cool",
-        "manual_override_allowed": true,
-        "cooling_set_point_celsius": 21.5,
-        "heating_set_point_celsius": 20,
-        "cooling_set_point_fahrenheit": 70.7,
-        "heating_set_point_fahrenheit": 68
+        "manual_override_allowed": true
       },
-      "available_hvac_mode_settings": ["heat", "cool", "heat_cool", "off"],
+      "appearance": { "name": "Living Room" },
+      "available_climate_presets": [
+        {
+          "climate_preset_key": "sleep",
+          "can_edit": true,
+          "can_delete": true,
+          "can_program": false,
+          "name": "Sleep",
+          "display_name": "Sleep",
+          "fan_mode_setting": "auto",
+          "hvac_mode_setting": "heat_cool",
+          "manual_override_allowed": true,
+          "cooling_set_point_celsius": 23.88888888888889,
+          "heating_set_point_celsius": 17.77777777777778,
+          "cooling_set_point_fahrenheit": 75,
+          "heating_set_point_fahrenheit": 64
+        },
+        {
+          "climate_preset_key": "home",
+          "can_edit": true,
+          "can_delete": true,
+          "can_program": false,
+          "name": "Home",
+          "display_name": "Home",
+          "fan_mode_setting": "auto",
+          "hvac_mode_setting": "heat_cool",
+          "manual_override_allowed": false,
+          "cooling_set_point_celsius": 23.88888888888889,
+          "heating_set_point_celsius": 17.77777777777778,
+          "cooling_set_point_fahrenheit": 75,
+          "heating_set_point_fahrenheit": 64
+        },
+        {
+          "climate_preset_key": "work",
+          "can_edit": true,
+          "can_delete": true,
+          "can_program": false,
+          "name": "Work",
+          "display_name": "Work",
+          "fan_mode_setting": "auto",
+          "hvac_mode_setting": "heat_cool",
+          "manual_override_allowed": false,
+          "cooling_set_point_celsius": 23.88888888888889,
+          "heating_set_point_celsius": 17.77777777777778,
+          "cooling_set_point_fahrenheit": 75,
+          "heating_set_point_fahrenheit": 64
+        }
+      ],
+      "available_fan_mode_settings": ["auto", "on"],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "current_climate_setting": {
+        "display_name": "Manual Setting",
+        "fan_mode_setting": "auto",
+        "heating_set_point_celsius": 25,
+        "heating_set_point_fahrenheit": 77,
+        "hvac_mode_setting": "heat",
+        "manual_override_allowed": true
+      },
+      "ecobee_metadata": {
+        "device_name": "Living Room",
+        "ecobee_device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0"
+      },
+      "fallback_climate_preset_key": "eco",
+      "fan_mode_setting": "auto",
+      "has_direct_power": true,
+      "image_alt_text": "Ecobee 3 Lite Thermostat",
+      "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128",
+      "is_cooling": false,
+      "is_fan_running": false,
+      "is_heating": false,
       "is_temporary_manual_override_active": false,
-      "name": "",
-      "appearance": { "name": "" },
+      "manufacturer": "ecobee",
+      "max_cooling_set_point_celsius": 33.333333333333336,
+      "max_cooling_set_point_fahrenheit": 92,
+      "max_heating_set_point_celsius": 26.11111111111111,
+      "max_heating_set_point_fahrenheit": 79,
+      "min_cooling_set_point_celsius": 18.333333333333336,
+      "min_cooling_set_point_fahrenheit": 65,
+      "min_heating_cooling_delta_celsius": 2.7777777777777777,
+      "min_heating_cooling_delta_fahrenheit": 5,
+      "min_heating_set_point_celsius": 7.222222222222222,
+      "min_heating_set_point_fahrenheit": 45,
       "model": {
         "display_name": "Thermostat",
-        "manufacturer_display_name": "Nest",
-        "accessory_keypad_supported": false
+        "manufacturer_display_name": "Ecobee"
       },
-      "image_url": "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-      "image_alt_text": "Placeholder Lock Image",
-      "is_climate_setting_schedule_active": false
+      "name": "Living Room",
+      "online": true,
+      "relative_humidity": 0.36,
+      "temperature_celsius": 21.11111111111111,
+      "temperature_fahrenheit": 70,
+      "temperature_threshold": {
+        "lower_limit_celsius": 16.66666666666667,
+        "lower_limit_fahrenheit": 62,
+        "upper_limit_celsius": 26.66666666666667,
+        "upper_limit_fahrenheit": 80
+      },
+      "thermostat_daily_programs": [
+        {
+          "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
+          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "name": "Weekday Program",
+          "periods": [
+            { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
+            { "starts_at_time": "07:00:00", "climate_preset_key": "home" },
+            { "starts_at_time": "09:00:00", "climate_preset_key": "work" },
+            { "starts_at_time": "18:00:00", "climate_preset_key": "home" },
+            { "starts_at_time": "22:00:00", "climate_preset_key": "sleep" }
+          ],
+          "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+          "created_at": "2025-05-30T04:01:25.455Z"
+        },
+        {
+          "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "name": "Weekend Program",
+          "periods": [
+            { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
+            { "starts_at_time": "08:00:00", "climate_preset_key": "home" },
+            { "starts_at_time": "23:00:00", "climate_preset_key": "sleep" }
+          ],
+          "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+          "created_at": "2025-05-30T04:02:19.952Z"
+        }
+      ],
+      "thermostat_weekly_program": null
     },
-    "location": null,
-    "connected_account_id": "44284499-a50b-4947-86c1-58264f014be5",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-02-29T21:57:33.397Z",
-    "errors": [],
     "warnings": [],
-    "is_managed": true,
-    "custom_metadata": {}
+    "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab"
   }
 ]
 ```
@@ -81,75 +190,185 @@ await seam.userIdentities.listAccessibleDevices({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_accessible_devices" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
+  "user_identity_id": "f25d14c2-ea01-4e42-80f8-61a6f719be9d"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "devices": [
     {
-      "device_id": "054765c8-a2fc-4599-b486-14c19f462c45",
-      "nickname": "",
-      "display_name": "Seam Thermostat",
-      "device_type": "nest_thermostat",
+      "can_hvac_cool": true,
+      "can_hvac_heat": true,
+      "can_hvac_heat_cool": true,
+      "can_turn_off_hvac": true,
       "capabilities_supported": ["thermostat"],
+      "connected_account_id": "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+      "created_at": "2024-10-03T22:12:15.666Z",
+      "custom_metadata": { "id": "internalId1" },
+      "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+      "device_type": "ecobee_thermostat",
+      "display_name": "Living Room",
+      "errors": [],
+      "is_managed": true,
+      "location": {
+        "location_name": "2948 20th St, San Francisco, CA, 94110, US",
+        "timezone": "America/Los_Angeles"
+      },
+      "nickname": "Living Room",
       "properties": {
-        "online": true,
-        "is_cooling": false,
-        "is_heating": false,
-        "manufacturer": "nest",
-        "nest_metadata": {
-          "custom_name": "",
-          "device_name": "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g",
-          "nest_device_id": "bcca8c5f-1854-4906-9911-c877d513e00a"
-        },
-        "is_fan_running": false,
-        "has_direct_power": true,
-        "relative_humidity": 0.46,
-        "temperature_celsius": 24.64,
-        "temperature_fahrenheit": 76.352,
-        "current_climate_setting": {
+        "active_climate_preset": {
+          "can_delete": true,
+          "can_edit": true,
+          "climate_preset_key": "sleep",
+          "cooling_set_point_celsius": 23.88888888888889,
+          "display_name": "Sleep",
+          "fan_mode_setting": "auto",
+          "heating_set_point_celsius": 17.77777777777778,
           "hvac_mode_setting": "heat_cool",
-          "manual_override_allowed": true,
-          "cooling_set_point_celsius": 21.5,
-          "heating_set_point_celsius": 20,
-          "cooling_set_point_fahrenheit": 70.7,
-          "heating_set_point_fahrenheit": 68
+          "manual_override_allowed": true
         },
-        "available_hvac_mode_settings": ["heat", "cool", "heat_cool", "off"],
+        "appearance": { "name": "Living Room" },
+        "available_climate_presets": [
+          {
+            "climate_preset_key": "sleep",
+            "can_edit": true,
+            "can_delete": true,
+            "can_program": false,
+            "name": "Sleep",
+            "display_name": "Sleep",
+            "fan_mode_setting": "auto",
+            "hvac_mode_setting": "heat_cool",
+            "manual_override_allowed": true,
+            "cooling_set_point_celsius": 23.88888888888889,
+            "heating_set_point_celsius": 17.77777777777778,
+            "cooling_set_point_fahrenheit": 75,
+            "heating_set_point_fahrenheit": 64
+          },
+          {
+            "climate_preset_key": "home",
+            "can_edit": true,
+            "can_delete": true,
+            "can_program": false,
+            "name": "Home",
+            "display_name": "Home",
+            "fan_mode_setting": "auto",
+            "hvac_mode_setting": "heat_cool",
+            "manual_override_allowed": false,
+            "cooling_set_point_celsius": 23.88888888888889,
+            "heating_set_point_celsius": 17.77777777777778,
+            "cooling_set_point_fahrenheit": 75,
+            "heating_set_point_fahrenheit": 64
+          },
+          {
+            "climate_preset_key": "work",
+            "can_edit": true,
+            "can_delete": true,
+            "can_program": false,
+            "name": "Work",
+            "display_name": "Work",
+            "fan_mode_setting": "auto",
+            "hvac_mode_setting": "heat_cool",
+            "manual_override_allowed": false,
+            "cooling_set_point_celsius": 23.88888888888889,
+            "heating_set_point_celsius": 17.77777777777778,
+            "cooling_set_point_fahrenheit": 75,
+            "heating_set_point_fahrenheit": 64
+          }
+        ],
+        "available_fan_mode_settings": ["auto", "on"],
+        "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+        "current_climate_setting": {
+          "display_name": "Manual Setting",
+          "fan_mode_setting": "auto",
+          "heating_set_point_celsius": 25,
+          "heating_set_point_fahrenheit": 77,
+          "hvac_mode_setting": "heat",
+          "manual_override_allowed": true
+        },
+        "ecobee_metadata": {
+          "device_name": "Living Room",
+          "ecobee_device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0"
+        },
+        "fallback_climate_preset_key": "eco",
+        "fan_mode_setting": "auto",
+        "has_direct_power": true,
+        "image_alt_text": "Ecobee 3 Lite Thermostat",
+        "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128",
+        "is_cooling": false,
+        "is_fan_running": false,
+        "is_heating": false,
         "is_temporary_manual_override_active": false,
-        "name": "",
-        "appearance": { "name": "" },
+        "manufacturer": "ecobee",
+        "max_cooling_set_point_celsius": 33.333333333333336,
+        "max_cooling_set_point_fahrenheit": 92,
+        "max_heating_set_point_celsius": 26.11111111111111,
+        "max_heating_set_point_fahrenheit": 79,
+        "min_cooling_set_point_celsius": 18.333333333333336,
+        "min_cooling_set_point_fahrenheit": 65,
+        "min_heating_cooling_delta_celsius": 2.7777777777777777,
+        "min_heating_cooling_delta_fahrenheit": 5,
+        "min_heating_set_point_celsius": 7.222222222222222,
+        "min_heating_set_point_fahrenheit": 45,
         "model": {
           "display_name": "Thermostat",
-          "manufacturer_display_name": "Nest",
-          "accessory_keypad_supported": false
+          "manufacturer_display_name": "Ecobee"
         },
-        "image_url": "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-        "image_alt_text": "Placeholder Lock Image",
-        "is_climate_setting_schedule_active": false
+        "name": "Living Room",
+        "online": true,
+        "relative_humidity": 0.36,
+        "temperature_celsius": 21.11111111111111,
+        "temperature_fahrenheit": 70,
+        "temperature_threshold": {
+          "lower_limit_celsius": 16.66666666666667,
+          "lower_limit_fahrenheit": 62,
+          "upper_limit_celsius": 26.66666666666667,
+          "upper_limit_fahrenheit": 80
+        },
+        "thermostat_daily_programs": [
+          {
+            "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
+            "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+            "name": "Weekday Program",
+            "periods": [
+              { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
+              { "starts_at_time": "07:00:00", "climate_preset_key": "home" },
+              { "starts_at_time": "09:00:00", "climate_preset_key": "work" },
+              { "starts_at_time": "18:00:00", "climate_preset_key": "home" },
+              { "starts_at_time": "22:00:00", "climate_preset_key": "sleep" }
+            ],
+            "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+            "created_at": "2025-05-30T04:01:25.455Z"
+          },
+          {
+            "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+            "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+            "name": "Weekend Program",
+            "periods": [
+              { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
+              { "starts_at_time": "08:00:00", "climate_preset_key": "home" },
+              { "starts_at_time": "23:00:00", "climate_preset_key": "sleep" }
+            ],
+            "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+            "created_at": "2025-05-30T04:02:19.952Z"
+          }
+        ],
+        "thermostat_weekly_program": null
       },
-      "location": null,
-      "connected_account_id": "44284499-a50b-4947-86c1-58264f014be5",
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2024-02-29T21:57:33.397Z",
-      "errors": [],
       "warnings": [],
-      "is_managed": true,
-      "custom_metadata": {}
+      "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab"
     }
   ]
 }
@@ -158,70 +377,180 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.list_accessible_devices(
-    user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf"
+    user_identity_id="f25d14c2-ea01-4e42-80f8-61a6f719be9d"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
     Device(
-        device_id="054765c8-a2fc-4599-b486-14c19f462c45",
-        nickname="",
-        display_name="Seam Thermostat",
-        device_type="nest_thermostat",
+        can_hvac_cool=true,
+        can_hvac_heat=true,
+        can_hvac_heat_cool=true,
+        can_turn_off_hvac=true,
         capabilities_supported=["thermostat"],
+        connected_account_id="a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+        created_at="2024-10-03T22:12:15.666Z",
+        custom_metadata={"id": "internalId1"},
+        device_id="a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        device_type="ecobee_thermostat",
+        display_name="Living Room",
+        errors=[],
+        is_managed=true,
+        location={
+            "location_name": "2948 20th St, San Francisco, CA, 94110, US",
+            "timezone": "America/Los_Angeles",
+        },
+        nickname="Living Room",
         properties={
-            "online": true,
-            "is_cooling": false,
-            "is_heating": false,
-            "manufacturer": "nest",
-            "nest_metadata": {
-                "custom_name": "",
-                "device_name": "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g",
-                "nest_device_id": "bcca8c5f-1854-4906-9911-c877d513e00a",
-            },
-            "is_fan_running": false,
-            "has_direct_power": true,
-            "relative_humidity": 0.46,
-            "temperature_celsius": 24.64,
-            "temperature_fahrenheit": 76.352,
-            "current_climate_setting": {
+            "active_climate_preset": {
+                "can_delete": true,
+                "can_edit": true,
+                "climate_preset_key": "sleep",
+                "cooling_set_point_celsius": 23.88888888888889,
+                "display_name": "Sleep",
+                "fan_mode_setting": "auto",
+                "heating_set_point_celsius": 17.77777777777778,
                 "hvac_mode_setting": "heat_cool",
                 "manual_override_allowed": true,
-                "cooling_set_point_celsius": 21.5,
-                "heating_set_point_celsius": 20,
-                "cooling_set_point_fahrenheit": 70.7,
-                "heating_set_point_fahrenheit": 68,
             },
-            "available_hvac_mode_settings": ["heat", "cool", "heat_cool", "off"],
+            "appearance": {"name": "Living Room"},
+            "available_climate_presets": [
+                {
+                    "climate_preset_key": "sleep",
+                    "can_edit": true,
+                    "can_delete": true,
+                    "can_program": false,
+                    "name": "Sleep",
+                    "display_name": "Sleep",
+                    "fan_mode_setting": "auto",
+                    "hvac_mode_setting": "heat_cool",
+                    "manual_override_allowed": true,
+                    "cooling_set_point_celsius": 23.88888888888889,
+                    "heating_set_point_celsius": 17.77777777777778,
+                    "cooling_set_point_fahrenheit": 75,
+                    "heating_set_point_fahrenheit": 64,
+                },
+                {
+                    "climate_preset_key": "home",
+                    "can_edit": true,
+                    "can_delete": true,
+                    "can_program": false,
+                    "name": "Home",
+                    "display_name": "Home",
+                    "fan_mode_setting": "auto",
+                    "hvac_mode_setting": "heat_cool",
+                    "manual_override_allowed": false,
+                    "cooling_set_point_celsius": 23.88888888888889,
+                    "heating_set_point_celsius": 17.77777777777778,
+                    "cooling_set_point_fahrenheit": 75,
+                    "heating_set_point_fahrenheit": 64,
+                },
+                {
+                    "climate_preset_key": "work",
+                    "can_edit": true,
+                    "can_delete": true,
+                    "can_program": false,
+                    "name": "Work",
+                    "display_name": "Work",
+                    "fan_mode_setting": "auto",
+                    "hvac_mode_setting": "heat_cool",
+                    "manual_override_allowed": false,
+                    "cooling_set_point_celsius": 23.88888888888889,
+                    "heating_set_point_celsius": 17.77777777777778,
+                    "cooling_set_point_fahrenheit": 75,
+                    "heating_set_point_fahrenheit": 64,
+                },
+            ],
+            "available_fan_mode_settings": ["auto", "on"],
+            "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+            "current_climate_setting": {
+                "display_name": "Manual Setting",
+                "fan_mode_setting": "auto",
+                "heating_set_point_celsius": 25,
+                "heating_set_point_fahrenheit": 77,
+                "hvac_mode_setting": "heat",
+                "manual_override_allowed": true,
+            },
+            "ecobee_metadata": {
+                "device_name": "Living Room",
+                "ecobee_device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+            },
+            "fallback_climate_preset_key": "eco",
+            "fan_mode_setting": "auto",
+            "has_direct_power": true,
+            "image_alt_text": "Ecobee 3 Lite Thermostat",
+            "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128",
+            "is_cooling": false,
+            "is_fan_running": false,
+            "is_heating": false,
             "is_temporary_manual_override_active": false,
-            "name": "",
-            "appearance": {"name": ""},
+            "manufacturer": "ecobee",
+            "max_cooling_set_point_celsius": 33.333333333333336,
+            "max_cooling_set_point_fahrenheit": 92,
+            "max_heating_set_point_celsius": 26.11111111111111,
+            "max_heating_set_point_fahrenheit": 79,
+            "min_cooling_set_point_celsius": 18.333333333333336,
+            "min_cooling_set_point_fahrenheit": 65,
+            "min_heating_cooling_delta_celsius": 2.7777777777777777,
+            "min_heating_cooling_delta_fahrenheit": 5,
+            "min_heating_set_point_celsius": 7.222222222222222,
+            "min_heating_set_point_fahrenheit": 45,
             "model": {
                 "display_name": "Thermostat",
-                "manufacturer_display_name": "Nest",
-                "accessory_keypad_supported": false,
+                "manufacturer_display_name": "Ecobee",
             },
-            "image_url": "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-            "image_alt_text": "Placeholder Lock Image",
-            "is_climate_setting_schedule_active": false,
+            "name": "Living Room",
+            "online": true,
+            "relative_humidity": 0.36,
+            "temperature_celsius": 21.11111111111111,
+            "temperature_fahrenheit": 70,
+            "temperature_threshold": {
+                "lower_limit_celsius": 16.66666666666667,
+                "lower_limit_fahrenheit": 62,
+                "upper_limit_celsius": 26.66666666666667,
+                "upper_limit_fahrenheit": 80,
+            },
+            "thermostat_daily_programs": [
+                {
+                    "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
+                    "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                    "name": "Weekday Program",
+                    "periods": [
+                        {"starts_at_time": "00:00:00", "climate_preset_key": "sleep"},
+                        {"starts_at_time": "07:00:00", "climate_preset_key": "home"},
+                        {"starts_at_time": "09:00:00", "climate_preset_key": "work"},
+                        {"starts_at_time": "18:00:00", "climate_preset_key": "home"},
+                        {"starts_at_time": "22:00:00", "climate_preset_key": "sleep"},
+                    ],
+                    "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+                    "created_at": "2025-05-30T04:01:25.455Z",
+                },
+                {
+                    "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+                    "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                    "name": "Weekend Program",
+                    "periods": [
+                        {"starts_at_time": "00:00:00", "climate_preset_key": "sleep"},
+                        {"starts_at_time": "08:00:00", "climate_preset_key": "home"},
+                        {"starts_at_time": "23:00:00", "climate_preset_key": "sleep"},
+                    ],
+                    "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+                    "created_at": "2025-05-30T04:02:19.952Z",
+                },
+            ],
+            "thermostat_weekly_program": null,
         },
-        location=None,
-        connected_account_id="44284499-a50b-4947-86c1-58264f014be5",
-        workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-        created_at="2024-02-29T21:57:33.397Z",
-        errors=[],
         warnings=[],
-        is_managed=true,
-        custom_metadata={},
+        workspace_id="9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
     )
 ]
 ```
@@ -229,74 +558,185 @@ seam.user_identities.list_accessible_devices(
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.list_accessible_devices(
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
+  user_identity_id: "f25d14c2-ea01-4e42-80f8-61a6f719be9d",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
   {
-    "device_id" => "054765c8-a2fc-4599-b486-14c19f462c45",
-    "nickname" => "",
-    "display_name" => "Seam Thermostat",
-    "device_type" => "nest_thermostat",
+    "can_hvac_cool" => true,
+    "can_hvac_heat" => true,
+    "can_hvac_heat_cool" => true,
+    "can_turn_off_hvac" => true,
     "capabilities_supported" => ["thermostat"],
+    "connected_account_id" => "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+    "created_at" => "2024-10-03T22:12:15.666Z",
+    "custom_metadata" => {
+      id: "internalId1",
+    },
+    "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+    "device_type" => "ecobee_thermostat",
+    "display_name" => "Living Room",
+    "errors" => [],
+    "is_managed" => true,
+    "location" => {
+      location_name: "2948 20th St, San Francisco, CA, 94110, US",
+      timezone: "America/Los_Angeles",
+    },
+    "nickname" => "Living Room",
     "properties" => {
-      online: true,
-      is_cooling: false,
-      is_heating: false,
-      manufacturer: "nest",
-      nest_metadata: {
-        custom_name: "",
-        device_name:
-          "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g",
-        nest_device_id: "bcca8c5f-1854-4906-9911-c877d513e00a",
-      },
-      is_fan_running: false,
-      has_direct_power: true,
-      relative_humidity: 0.46,
-      temperature_celsius: 24.64,
-      temperature_fahrenheit: 76.352,
-      current_climate_setting: {
+      active_climate_preset: {
+        can_delete: true,
+        can_edit: true,
+        climate_preset_key: "sleep",
+        cooling_set_point_celsius: 23.88888888888889,
+        display_name: "Sleep",
+        fan_mode_setting: "auto",
+        heating_set_point_celsius: 17.77777777777778,
         hvac_mode_setting: "heat_cool",
         manual_override_allowed: true,
-        cooling_set_point_celsius: 21.5,
-        heating_set_point_celsius: 20,
-        cooling_set_point_fahrenheit: 70.7,
-        heating_set_point_fahrenheit: 68,
       },
-      available_hvac_mode_settings: %w[heat cool heat_cool off],
-      is_temporary_manual_override_active: false,
-      name: "",
       appearance: {
-        name: "",
+        name: "Living Room",
       },
+      available_climate_presets: [
+        {
+          climate_preset_key: "sleep",
+          can_edit: true,
+          can_delete: true,
+          can_program: false,
+          name: "Sleep",
+          display_name: "Sleep",
+          fan_mode_setting: "auto",
+          hvac_mode_setting: "heat_cool",
+          manual_override_allowed: true,
+          cooling_set_point_celsius: 23.88888888888889,
+          heating_set_point_celsius: 17.77777777777778,
+          cooling_set_point_fahrenheit: 75,
+          heating_set_point_fahrenheit: 64,
+        },
+        {
+          climate_preset_key: "home",
+          can_edit: true,
+          can_delete: true,
+          can_program: false,
+          name: "Home",
+          display_name: "Home",
+          fan_mode_setting: "auto",
+          hvac_mode_setting: "heat_cool",
+          manual_override_allowed: false,
+          cooling_set_point_celsius: 23.88888888888889,
+          heating_set_point_celsius: 17.77777777777778,
+          cooling_set_point_fahrenheit: 75,
+          heating_set_point_fahrenheit: 64,
+        },
+        {
+          climate_preset_key: "work",
+          can_edit: true,
+          can_delete: true,
+          can_program: false,
+          name: "Work",
+          display_name: "Work",
+          fan_mode_setting: "auto",
+          hvac_mode_setting: "heat_cool",
+          manual_override_allowed: false,
+          cooling_set_point_celsius: 23.88888888888889,
+          heating_set_point_celsius: 17.77777777777778,
+          cooling_set_point_fahrenheit: 75,
+          heating_set_point_fahrenheit: 64,
+        },
+      ],
+      available_fan_mode_settings: %w[auto on],
+      available_hvac_mode_settings: %w[cool heat heat_cool off],
+      current_climate_setting: {
+        display_name: "Manual Setting",
+        fan_mode_setting: "auto",
+        heating_set_point_celsius: 25,
+        heating_set_point_fahrenheit: 77,
+        hvac_mode_setting: "heat",
+        manual_override_allowed: true,
+      },
+      ecobee_metadata: {
+        device_name: "Living Room",
+        ecobee_device_id: "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+      },
+      fallback_climate_preset_key: "eco",
+      fan_mode_setting: "auto",
+      has_direct_power: true,
+      image_alt_text: "Ecobee 3 Lite Thermostat",
+      image_url:
+        "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128",
+      is_cooling: false,
+      is_fan_running: false,
+      is_heating: false,
+      is_temporary_manual_override_active: false,
+      manufacturer: "ecobee",
+      max_cooling_set_point_celsius: 33.333333333333336,
+      max_cooling_set_point_fahrenheit: 92,
+      max_heating_set_point_celsius: 26.11111111111111,
+      max_heating_set_point_fahrenheit: 79,
+      min_cooling_set_point_celsius: 18.333333333333336,
+      min_cooling_set_point_fahrenheit: 65,
+      min_heating_cooling_delta_celsius: 2.7777777777777777,
+      min_heating_cooling_delta_fahrenheit: 5,
+      min_heating_set_point_celsius: 7.222222222222222,
+      min_heating_set_point_fahrenheit: 45,
       model: {
         display_name: "Thermostat",
-        manufacturer_display_name: "Nest",
-        accessory_keypad_supported: false,
+        manufacturer_display_name: "Ecobee",
       },
-      image_url: "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-      image_alt_text: "Placeholder Lock Image",
-      is_climate_setting_schedule_active: false,
+      name: "Living Room",
+      online: true,
+      relative_humidity: 0.36,
+      temperature_celsius: 21.11111111111111,
+      temperature_fahrenheit: 70,
+      temperature_threshold: {
+        lower_limit_celsius: 16.66666666666667,
+        lower_limit_fahrenheit: 62,
+        upper_limit_celsius: 26.66666666666667,
+        upper_limit_fahrenheit: 80,
+      },
+      thermostat_daily_programs: [
+        {
+          thermostat_daily_program_id: "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
+          device_id: "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          name: "Weekday Program",
+          periods: [
+            { starts_at_time: "00:00:00", climate_preset_key: "sleep" },
+            { starts_at_time: "07:00:00", climate_preset_key: "home" },
+            { starts_at_time: "09:00:00", climate_preset_key: "work" },
+            { starts_at_time: "18:00:00", climate_preset_key: "home" },
+            { starts_at_time: "22:00:00", climate_preset_key: "sleep" },
+          ],
+          workspace_id: "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+          created_at: "2025-05-30T04:01:25.455Z",
+        },
+        {
+          thermostat_daily_program_id: "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+          device_id: "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          name: "Weekend Program",
+          periods: [
+            { starts_at_time: "00:00:00", climate_preset_key: "sleep" },
+            { starts_at_time: "08:00:00", climate_preset_key: "home" },
+            { starts_at_time: "23:00:00", climate_preset_key: "sleep" },
+          ],
+          workspace_id: "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+          created_at: "2025-05-30T04:02:19.952Z",
+        },
+      ],
+      thermostat_weekly_program: null,
     },
-    "location" => nil,
-    "connected_account_id" => "44284499-a50b-4947-86c1-58264f014be5",
-    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at" => "2024-02-29T21:57:33.397Z",
-    "errors" => [],
     "warnings" => [],
-    "is_managed" => true,
-    "custom_metadata" => {
-    },
+    "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
   },
 ]
 ```
@@ -304,176 +744,391 @@ seam.user_identities.list_accessible_devices(
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->list_accessible_devices(
-    user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
+    user_identity_id: "f25d14c2-ea01-4e42-80f8-61a6f719be9d"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
-        "device_id" => "054765c8-a2fc-4599-b486-14c19f462c45",
-        "nickname" => "",
-        "display_name" => "Seam Thermostat",
-        "device_type" => "nest_thermostat",
+        "can_hvac_cool" => true,
+        "can_hvac_heat" => true,
+        "can_hvac_heat_cool" => true,
+        "can_turn_off_hvac" => true,
         "capabilities_supported" => ["thermostat"],
+        "connected_account_id" => "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+        "created_at" => "2024-10-03T22:12:15.666Z",
+        "custom_metadata" => ["id" => "internalId1"],
+        "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_type" => "ecobee_thermostat",
+        "display_name" => "Living Room",
+        "errors" => [],
+        "is_managed" => true,
+        "location" => [
+            "location_name" => "2948 20th St, San Francisco, CA, 94110, US",
+            "timezone" => "America/Los_Angeles",
+        ],
+        "nickname" => "Living Room",
         "properties" => [
-            "online" => true,
-            "is_cooling" => false,
-            "is_heating" => false,
-            "manufacturer" => "nest",
-            "nest_metadata" => [
-                "custom_name" => "",
-                "device_name" =>
-                    "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g",
-                "nest_device_id" => "bcca8c5f-1854-4906-9911-c877d513e00a",
-            ],
-            "is_fan_running" => false,
-            "has_direct_power" => true,
-            "relative_humidity" => 0.46,
-            "temperature_celsius" => 24.64,
-            "temperature_fahrenheit" => 76.352,
-            "current_climate_setting" => [
+            "active_climate_preset" => [
+                "can_delete" => true,
+                "can_edit" => true,
+                "climate_preset_key" => "sleep",
+                "cooling_set_point_celsius" => 23.88888888888889,
+                "display_name" => "Sleep",
+                "fan_mode_setting" => "auto",
+                "heating_set_point_celsius" => 17.77777777777778,
                 "hvac_mode_setting" => "heat_cool",
                 "manual_override_allowed" => true,
-                "cooling_set_point_celsius" => 21.5,
-                "heating_set_point_celsius" => 20,
-                "cooling_set_point_fahrenheit" => 70.7,
-                "heating_set_point_fahrenheit" => 68,
             ],
+            "appearance" => ["name" => "Living Room"],
+            "available_climate_presets" => [
+                [
+                    "climate_preset_key" => "sleep",
+                    "can_edit" => true,
+                    "can_delete" => true,
+                    "can_program" => false,
+                    "name" => "Sleep",
+                    "display_name" => "Sleep",
+                    "fan_mode_setting" => "auto",
+                    "hvac_mode_setting" => "heat_cool",
+                    "manual_override_allowed" => true,
+                    "cooling_set_point_celsius" => 23.88888888888889,
+                    "heating_set_point_celsius" => 17.77777777777778,
+                    "cooling_set_point_fahrenheit" => 75,
+                    "heating_set_point_fahrenheit" => 64,
+                ],
+                [
+                    "climate_preset_key" => "home",
+                    "can_edit" => true,
+                    "can_delete" => true,
+                    "can_program" => false,
+                    "name" => "Home",
+                    "display_name" => "Home",
+                    "fan_mode_setting" => "auto",
+                    "hvac_mode_setting" => "heat_cool",
+                    "manual_override_allowed" => false,
+                    "cooling_set_point_celsius" => 23.88888888888889,
+                    "heating_set_point_celsius" => 17.77777777777778,
+                    "cooling_set_point_fahrenheit" => 75,
+                    "heating_set_point_fahrenheit" => 64,
+                ],
+                [
+                    "climate_preset_key" => "work",
+                    "can_edit" => true,
+                    "can_delete" => true,
+                    "can_program" => false,
+                    "name" => "Work",
+                    "display_name" => "Work",
+                    "fan_mode_setting" => "auto",
+                    "hvac_mode_setting" => "heat_cool",
+                    "manual_override_allowed" => false,
+                    "cooling_set_point_celsius" => 23.88888888888889,
+                    "heating_set_point_celsius" => 17.77777777777778,
+                    "cooling_set_point_fahrenheit" => 75,
+                    "heating_set_point_fahrenheit" => 64,
+                ],
+            ],
+            "available_fan_mode_settings" => ["auto", "on"],
             "available_hvac_mode_settings" => [
-                "heat",
                 "cool",
+                "heat",
                 "heat_cool",
                 "off",
             ],
+            "current_climate_setting" => [
+                "display_name" => "Manual Setting",
+                "fan_mode_setting" => "auto",
+                "heating_set_point_celsius" => 25,
+                "heating_set_point_fahrenheit" => 77,
+                "hvac_mode_setting" => "heat",
+                "manual_override_allowed" => true,
+            ],
+            "ecobee_metadata" => [
+                "device_name" => "Living Room",
+                "ecobee_device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+            ],
+            "fallback_climate_preset_key" => "eco",
+            "fan_mode_setting" => "auto",
+            "has_direct_power" => true,
+            "image_alt_text" => "Ecobee 3 Lite Thermostat",
+            "image_url" =>
+                "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128",
+            "is_cooling" => false,
+            "is_fan_running" => false,
+            "is_heating" => false,
             "is_temporary_manual_override_active" => false,
-            "name" => "",
-            "appearance" => ["name" => ""],
+            "manufacturer" => "ecobee",
+            "max_cooling_set_point_celsius" => 33.333333333333336,
+            "max_cooling_set_point_fahrenheit" => 92,
+            "max_heating_set_point_celsius" => 26.11111111111111,
+            "max_heating_set_point_fahrenheit" => 79,
+            "min_cooling_set_point_celsius" => 18.333333333333336,
+            "min_cooling_set_point_fahrenheit" => 65,
+            "min_heating_cooling_delta_celsius" => 2.7777777777777777,
+            "min_heating_cooling_delta_fahrenheit" => 5,
+            "min_heating_set_point_celsius" => 7.222222222222222,
+            "min_heating_set_point_fahrenheit" => 45,
             "model" => [
                 "display_name" => "Thermostat",
-                "manufacturer_display_name" => "Nest",
-                "accessory_keypad_supported" => false,
+                "manufacturer_display_name" => "Ecobee",
             ],
-            "image_url" =>
-                "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-            "image_alt_text" => "Placeholder Lock Image",
-            "is_climate_setting_schedule_active" => false,
+            "name" => "Living Room",
+            "online" => true,
+            "relative_humidity" => 0.36,
+            "temperature_celsius" => 21.11111111111111,
+            "temperature_fahrenheit" => 70,
+            "temperature_threshold" => [
+                "lower_limit_celsius" => 16.66666666666667,
+                "lower_limit_fahrenheit" => 62,
+                "upper_limit_celsius" => 26.66666666666667,
+                "upper_limit_fahrenheit" => 80,
+            ],
+            "thermostat_daily_programs" => [
+                [
+                    "thermostat_daily_program_id" =>
+                        "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
+                    "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                    "name" => "Weekday Program",
+                    "periods" => [
+                        [
+                            "starts_at_time" => "00:00:00",
+                            "climate_preset_key" => "sleep",
+                        ],
+                        [
+                            "starts_at_time" => "07:00:00",
+                            "climate_preset_key" => "home",
+                        ],
+                        [
+                            "starts_at_time" => "09:00:00",
+                            "climate_preset_key" => "work",
+                        ],
+                        [
+                            "starts_at_time" => "18:00:00",
+                            "climate_preset_key" => "home",
+                        ],
+                        [
+                            "starts_at_time" => "22:00:00",
+                            "climate_preset_key" => "sleep",
+                        ],
+                    ],
+                    "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+                    "created_at" => "2025-05-30T04:01:25.455Z",
+                ],
+                [
+                    "thermostat_daily_program_id" =>
+                        "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+                    "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                    "name" => "Weekend Program",
+                    "periods" => [
+                        [
+                            "starts_at_time" => "00:00:00",
+                            "climate_preset_key" => "sleep",
+                        ],
+                        [
+                            "starts_at_time" => "08:00:00",
+                            "climate_preset_key" => "home",
+                        ],
+                        [
+                            "starts_at_time" => "23:00:00",
+                            "climate_preset_key" => "sleep",
+                        ],
+                    ],
+                    "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+                    "created_at" => "2025-05-30T04:02:19.952Z",
+                ],
+            ],
+            "thermostat_weekly_program" => null,
         ],
-        "location" => null,
-        "connected_account_id" => "44284499-a50b-4947-86c1-58264f014be5",
-        "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-        "created_at" => "2024-02-29T21:57:33.397Z",
-        "errors" => [],
         "warnings" => [],
-        "is_managed" => true,
-        "custom_metadata" => [],
+        "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
     ],
 ];
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.ListAccessibleDevices(
-		context.Background(),
-		api.UserIdentitiesListAccessibleDevicesRequest{
-			UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.Device{api.Device{DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45", Nickname: "", DisplayName: "Seam Thermostat", DeviceType: "nest_thermostat", CapabilitiesSupported: []string{"thermostat"}, Properties: api.DeviceProperties{Online: true, IsCooling: false, IsHeating: false, Manufacturer: "nest", NestMetadata: api.DevicePropertiesNestMetadata{CustomName: "", DeviceName: "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g", NestDeviceId: "bcca8c5f-1854-4906-9911-c877d513e00a"}, IsFanRunning: false, HasDirectPower: true, RelativeHumidity: 0.46, TemperatureCelsius: 24.64, TemperatureFahrenheit: 76.352, CurrentClimateSetting: api.DevicePropertiesCurrentClimateSetting{HvacModeSetting: "heat_cool", ManualOverrideAllowed: true, CoolingSetPointCelsius: 21.5, HeatingSetPointCelsius: 20, CoolingSetPointFahrenheit: 70.7, HeatingSetPointFahrenheit: 68}, AvailableHvacModeSettings: []string{"heat", "cool", "heat_cool", "off"}, IsTemporaryManualOverrideActive: false, Name: "", Appearance: api.DevicePropertiesAppearance{Name: ""}, Model: api.DevicePropertiesModel{DisplayName: "Thermostat", ManufacturerDisplayName: "Nest", AccessoryKeypadSupported: false}, ImageUrl: "https://connect.getseam.com/assets/images/devices/unknown-lock.png", ImageAltText: "Placeholder Lock Image", IsClimateSettingScheduleActive: false}, Location: nil, ConnectedAccountId: "44284499-a50b-4947-86c1-58264f014be5", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-02-29T21:57:33.397Z", Errors: nil, Warnings: nil, IsManaged: true, CustomMetadata: struct{}{}}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all devices associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam user-identities list-accessible-devices --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf"
+seam user-identities list-accessible-devices --user_identity_id "f25d14c2-ea01-4e42-80f8-61a6f719be9d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
   {
-    "device_id": "054765c8-a2fc-4599-b486-14c19f462c45",
-    "nickname": "",
-    "display_name": "Seam Thermostat",
-    "device_type": "nest_thermostat",
+    "can_hvac_cool": true,
+    "can_hvac_heat": true,
+    "can_hvac_heat_cool": true,
+    "can_turn_off_hvac": true,
     "capabilities_supported": ["thermostat"],
+    "connected_account_id": "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+    "created_at": "2024-10-03T22:12:15.666Z",
+    "custom_metadata": { "id": "internalId1" },
+    "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+    "device_type": "ecobee_thermostat",
+    "display_name": "Living Room",
+    "errors": [],
+    "is_managed": true,
+    "location": {
+      "location_name": "2948 20th St, San Francisco, CA, 94110, US",
+      "timezone": "America/Los_Angeles"
+    },
+    "nickname": "Living Room",
     "properties": {
-      "online": true,
-      "is_cooling": false,
-      "is_heating": false,
-      "manufacturer": "nest",
-      "nest_metadata": {
-        "custom_name": "",
-        "device_name": "enterprises/nest_project_id/devices/AVPHwEvjFcX-wRmGdXApyxON24SAI0S9oU13a2GSVFLPVehUKH1ATqlASyKi2N2dbJCVW-B6-VxgbhdjUyyjA-K3Vo5C9g",
-        "nest_device_id": "bcca8c5f-1854-4906-9911-c877d513e00a"
-      },
-      "is_fan_running": false,
-      "has_direct_power": true,
-      "relative_humidity": 0.46,
-      "temperature_celsius": 24.64,
-      "temperature_fahrenheit": 76.352,
-      "current_climate_setting": {
+      "active_climate_preset": {
+        "can_delete": true,
+        "can_edit": true,
+        "climate_preset_key": "sleep",
+        "cooling_set_point_celsius": 23.88888888888889,
+        "display_name": "Sleep",
+        "fan_mode_setting": "auto",
+        "heating_set_point_celsius": 17.77777777777778,
         "hvac_mode_setting": "heat_cool",
-        "manual_override_allowed": true,
-        "cooling_set_point_celsius": 21.5,
-        "heating_set_point_celsius": 20,
-        "cooling_set_point_fahrenheit": 70.7,
-        "heating_set_point_fahrenheit": 68
+        "manual_override_allowed": true
       },
-      "available_hvac_mode_settings": ["heat", "cool", "heat_cool", "off"],
+      "appearance": { "name": "Living Room" },
+      "available_climate_presets": [
+        {
+          "climate_preset_key": "sleep",
+          "can_edit": true,
+          "can_delete": true,
+          "can_program": false,
+          "name": "Sleep",
+          "display_name": "Sleep",
+          "fan_mode_setting": "auto",
+          "hvac_mode_setting": "heat_cool",
+          "manual_override_allowed": true,
+          "cooling_set_point_celsius": 23.88888888888889,
+          "heating_set_point_celsius": 17.77777777777778,
+          "cooling_set_point_fahrenheit": 75,
+          "heating_set_point_fahrenheit": 64
+        },
+        {
+          "climate_preset_key": "home",
+          "can_edit": true,
+          "can_delete": true,
+          "can_program": false,
+          "name": "Home",
+          "display_name": "Home",
+          "fan_mode_setting": "auto",
+          "hvac_mode_setting": "heat_cool",
+          "manual_override_allowed": false,
+          "cooling_set_point_celsius": 23.88888888888889,
+          "heating_set_point_celsius": 17.77777777777778,
+          "cooling_set_point_fahrenheit": 75,
+          "heating_set_point_fahrenheit": 64
+        },
+        {
+          "climate_preset_key": "work",
+          "can_edit": true,
+          "can_delete": true,
+          "can_program": false,
+          "name": "Work",
+          "display_name": "Work",
+          "fan_mode_setting": "auto",
+          "hvac_mode_setting": "heat_cool",
+          "manual_override_allowed": false,
+          "cooling_set_point_celsius": 23.88888888888889,
+          "heating_set_point_celsius": 17.77777777777778,
+          "cooling_set_point_fahrenheit": 75,
+          "heating_set_point_fahrenheit": 64
+        }
+      ],
+      "available_fan_mode_settings": ["auto", "on"],
+      "available_hvac_mode_settings": ["cool", "heat", "heat_cool", "off"],
+      "current_climate_setting": {
+        "display_name": "Manual Setting",
+        "fan_mode_setting": "auto",
+        "heating_set_point_celsius": 25,
+        "heating_set_point_fahrenheit": 77,
+        "hvac_mode_setting": "heat",
+        "manual_override_allowed": true
+      },
+      "ecobee_metadata": {
+        "device_name": "Living Room",
+        "ecobee_device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0"
+      },
+      "fallback_climate_preset_key": "eco",
+      "fan_mode_setting": "auto",
+      "has_direct_power": true,
+      "image_alt_text": "Ecobee 3 Lite Thermostat",
+      "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128",
+      "is_cooling": false,
+      "is_fan_running": false,
+      "is_heating": false,
       "is_temporary_manual_override_active": false,
-      "name": "",
-      "appearance": { "name": "" },
+      "manufacturer": "ecobee",
+      "max_cooling_set_point_celsius": 33.333333333333336,
+      "max_cooling_set_point_fahrenheit": 92,
+      "max_heating_set_point_celsius": 26.11111111111111,
+      "max_heating_set_point_fahrenheit": 79,
+      "min_cooling_set_point_celsius": 18.333333333333336,
+      "min_cooling_set_point_fahrenheit": 65,
+      "min_heating_cooling_delta_celsius": 2.7777777777777777,
+      "min_heating_cooling_delta_fahrenheit": 5,
+      "min_heating_set_point_celsius": 7.222222222222222,
+      "min_heating_set_point_fahrenheit": 45,
       "model": {
         "display_name": "Thermostat",
-        "manufacturer_display_name": "Nest",
-        "accessory_keypad_supported": false
+        "manufacturer_display_name": "Ecobee"
       },
-      "image_url": "https://connect.getseam.com/assets/images/devices/unknown-lock.png",
-      "image_alt_text": "Placeholder Lock Image",
-      "is_climate_setting_schedule_active": false
+      "name": "Living Room",
+      "online": true,
+      "relative_humidity": 0.36,
+      "temperature_celsius": 21.11111111111111,
+      "temperature_fahrenheit": 70,
+      "temperature_threshold": {
+        "lower_limit_celsius": 16.66666666666667,
+        "lower_limit_fahrenheit": 62,
+        "upper_limit_celsius": 26.66666666666667,
+        "upper_limit_fahrenheit": 80
+      },
+      "thermostat_daily_programs": [
+        {
+          "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
+          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "name": "Weekday Program",
+          "periods": [
+            { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
+            { "starts_at_time": "07:00:00", "climate_preset_key": "home" },
+            { "starts_at_time": "09:00:00", "climate_preset_key": "work" },
+            { "starts_at_time": "18:00:00", "climate_preset_key": "home" },
+            { "starts_at_time": "22:00:00", "climate_preset_key": "sleep" }
+          ],
+          "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+          "created_at": "2025-05-30T04:01:25.455Z"
+        },
+        {
+          "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "name": "Weekend Program",
+          "periods": [
+            { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
+            { "starts_at_time": "08:00:00", "climate_preset_key": "home" },
+            { "starts_at_time": "23:00:00", "climate_preset_key": "sleep" }
+          ],
+          "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
+          "created_at": "2025-05-30T04:02:19.952Z"
+        }
+      ],
+      "thermostat_weekly_program": null
     },
-    "location": null,
-    "connected_account_id": "44284499-a50b-4947-86c1-58264f014be5",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-02-29T21:57:33.397Z",
-    "errors": [],
     "warnings": [],
-    "is_managed": true,
-    "custom_metadata": {}
+    "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab"
   }
 ]
 ```
@@ -504,10 +1159,66 @@ ID of the user identity for which you want to retrieve all accessible devices.
 
 ## Response
 
-Array of [devices](./)
+Array of [devices](./../devices)
 
 
----
+{% tabs %}
+{% tab title="JSON" %}
 
-## Examples
 
+
+```json
+{
+  "can_program_online_access_codes": true,
+  "can_remotely_lock": true,
+  "can_remotely_unlock": true,
+  "capabilities_supported": ["access_code", "lock"],
+  "connected_account_id": "8e3a4f1b-2c7d-4a9e-8b5f-3d2c1a0b9e8f",
+  "created_at": "2025-03-27T02:08:16.418Z",
+  "custom_metadata": { "id": "internalId1" },
+  "device_id": "a69569e1-133b-4a9d-b883-018641bfe543",
+  "device_type": "schlage_lock",
+  "display_name": "FRONT DOOR",
+  "errors": [],
+  "is_managed": true,
+  "location": { "location_name": "Front Door", "timezone": "America/New_York" },
+  "nickname": "Front Door",
+  "properties": {
+    "appearance": { "name": "FRONT DOOR" },
+    "battery": { "level": 0.48, "status": "good" },
+    "battery_level": 0.48,
+    "code_constraints": [{ "constraint_type": "name_length", "max_length": 9 }],
+    "has_native_entry_events": true,
+    "image_alt_text": "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+    "locked": false,
+    "manufacturer": "schlage",
+    "model": {
+      "accessory_keypad_supported": false,
+      "can_connect_accessory_keypad": false,
+      "display_name": "Encode",
+      "has_built_in_keypad": true,
+      "manufacturer_display_name": "Schlage",
+      "offline_access_codes_supported": false,
+      "online_access_codes_supported": true
+    },
+    "name": "FRONT DOOR",
+    "offline_access_codes_enabled": false,
+    "online": true,
+    "online_access_codes_enabled": true,
+    "schlage_metadata": {
+      "device_id": "a69569e1-133b-4a9d-b883-018641bfe543",
+      "device_name": "FRONT DOOR",
+      "model": "Encode"
+    },
+    "serial_number": "34000000000531e0",
+    "supported_code_lengths": [4, 5, 6, 7, 8],
+    "supports_backup_access_code_pool": true,
+    "supports_offline_access_codes": false
+  },
+  "warnings": [],
+  "workspace_id": "5d7f2e1a-9c8b-4f3e-8d2c-1a0b9e8f7c6d"
+}
+```
+{% endtab %}
+{% endtabs %}

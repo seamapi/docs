@@ -114,41 +114,8 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-seam.accessCodes()
-  .delete(AccessCodesDeleteRequest.builder()
-    .accessCodeId("11111111-1111-1111-1111-555555555555")
-    .build());
-```
 
-**Output:**
-
-```
-void
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-client.AccessCodes.Delete(
-  context.Background(),
-  &api.AccessCodesDeleteRequest{
-    AccessCodeId: api.String("11111111-1111-1111-1111-555555555555"),
-  },
-)
-```
-
-**Output:**
-
-```
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***

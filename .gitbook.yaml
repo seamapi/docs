@@ -76,15 +76,15 @@ redirects:
   api-clients/access-control-systems/users/update-user: api/acs/users/update.md
   api-clients/access-control-systems/users: api/acs/users/README.md
   api-clients/access-control-systems: api/acs/README.md
-  api-clients/action-attempt/get-action-attempt: api-clients/action_attempts/get.md
-  api-clients/action-attempt: api-clients/action_attempts/README.md
-  api-clients/client-sessions/create-a-client-session: api-clients/client_sessions/create.md
-  api-clients/client-sessions/delete-a-client-session: api-clients/client_sessions/delete.md
-  api-clients/client-sessions/get-a-client-session: api-clients/client_sessions/get.md
-  api-clients/client-sessions/get-or-create-a-client-session: api-clients/client_sessions/get_or_create.md
-  api-clients/client-sessions/grant-access-to-a-client-session: api-clients/client_sessions/grant_access.md
-  api-clients/client-sessions/list-client-sessions: api-clients/client_sessions/list.md
-  api-clients/client-sessions: api-clients/client_sessions/README.md
+  api-clients/action-attempt/get-action-attempt: api/action_attempts/get.md
+  api-clients/action-attempt: api/action_attempts/README.md
+  api-clients/client-sessions/create-a-client-session: api/client_sessions/create.md
+  api-clients/client-sessions/delete-a-client-session: api/client_sessions/delete.md
+  api-clients/client-sessions/get-a-client-session: api/client_sessions/get.md
+  api-clients/client-sessions/get-or-create-a-client-session: api/client_sessions/get_or_create.md
+  api-clients/client-sessions/grant-access-to-a-client-session: api/client_sessions/grant_access.md
+  api-clients/client-sessions/list-client-sessions: api/client_sessions/list.md
+  api-clients/client-sessions: api/client_sessions/README.md
   api-clients/connect-webviews/create-a-connect-webview: api/connect_webviews/create.md
   api-clients/connect-webviews/delete-a-connect-webview: api/connect_webviews/delete.md
   api-clients/connect-webviews/get-a-connect-webview: api/connect_webviews/get.md
@@ -95,25 +95,25 @@ redirects:
   api-clients/connected-accounts/list-connected-accounts: api/connected_accounts/list.md
   api-clients/connected-accounts/update-a-connected-account: api/connected_accounts/update.md
   api-clients/connected-accounts: api/connected_accounts/README.md
-  api-clients/devices/delete-device: api-clients/devices/delete.md
-  api-clients/devices/get-device-1: api-clients/devices/unmanaged/get.md
-  api-clients/devices/get-device: api-clients/devices/get.md
-  api-clients/devices/list-device-providers: api-clients/devices/list_device_providers.md
-  api-clients/devices/list-devices: api-clients/devices/list.md
-  api-clients/devices/list-unmanaged-devices: api-clients/devices/unmanaged/list.md
-  api-clients/devices/update-device: api-clients/devices/update.md
-  api-clients/devices/update-unmanaged-device: api-clients/devices/unmanaged/update.md
+  api-clients/devices/delete-device: api/devices/delete.md
+  api-clients/devices/get-device-1: api/devices/unmanaged/get.md
+  api-clients/devices/get-device: api/devices/get.md
+  api-clients/devices/list-device-providers: api/devices/list_device_providers.md
+  api-clients/devices/list-devices: api/devices/list.md
+  api-clients/devices/list-unmanaged-devices: api/devices/unmanaged/list.md
+  api-clients/devices/update-device: api/devices/update.md
+  api-clients/devices/update-unmanaged-device: api/devices/unmanaged/update.md
   api-clients/events/get-an-event: api-clients/events/get.md
   api-clients/events/list-events: api-clients/events/list.md
-  api-clients/locks/get-lock: api-clients/locks/get.md
-  api-clients/locks/list-locks: api-clients/locks/list.md
-  api-clients/locks/lock-a-lock: api-clients/locks/lock_door.md
-  api-clients/locks/unlock-a-lock: api-clients/locks/unlock_door.md
-  api-clients/noise-sensors/create-noise-threshold: api-clients/noise_sensors/noise_thresholds/create.md
-  api-clients/noise-sensors/delete-noise-threshold: api-clients/noise_sensors/noise_thresholds/delete.md
-  api-clients/noise-sensors/list-noise-thresholds: api-clients/noise_sensors/noise_thresholds/list.md
-  api-clients/noise-sensors/update-noise-threshold: api-clients/noise_sensors/noise_thresholds/update.md
-  api-clients/noise-sensors: api-clients/noise_sensors/README.md
+  api-clients/locks/get-lock: api/locks/get.md
+  api-clients/locks/list-locks: api/locks/list.md
+  api-clients/locks/lock-a-lock: api/locks/lock_door.md
+  api-clients/locks/unlock-a-lock: api/locks/unlock_door.md
+  api-clients/noise-sensors/create-noise-threshold: api/noise_sensors/noise_thresholds/create.md
+  api-clients/noise-sensors/delete-noise-threshold: api/noise_sensors/noise_thresholds/delete.md
+  api-clients/noise-sensors/list-noise-thresholds: api/noise_sensors/noise_thresholds/list.md
+  api-clients/noise-sensors/update-noise-threshold: api/noise_sensors/noise_thresholds/update.md
+  api-clients/noise-sensors: api/noise_sensors/README.md
   api-clients/thermostats/get-thermostat: api/thermostats/get.md
   api-clients/thermostats/list-thermostats: api/thermostats/list.md
   api-clients/thermostats/set-fan-mode: api/thermostats/set_fan_mode.md
@@ -124,11 +124,6 @@ redirects:
   api-clients/user-identities/add-an-acs-user-to-a-user-identity: api/user_identities/add_acs_user.md
   api-clients/user-identities/create-a-user-identity: api/user_identities/create.md
   api-clients/user-identities/delete-a-user-identity: api/user_identities/delete.md
-  api-clients/user-identities/enrollment-automations/delete-an-enrollment-automation: api/user_identities/enrollment_automations/delete.md
-  api-clients/user-identities/enrollment-automations/get-an-enrollment-automation: api/user_identities/enrollment_automations/get.md
-  api-clients/user-identities/enrollment-automations/launch-an-enrollment-automation: api/user_identities/enrollment_automations/launch.md
-  api-clients/user-identities/enrollment-automations/list-enrollment-automations: api/user_identities/enrollment_automations/list.md
-  api-clients/user-identities/enrollment-automations: api/user_identities/enrollment_automations/README.md
   api-clients/user-identities/get-a-user-identity: api/user_identities/get.md
   api-clients/user-identities/grant-a-user-identity-access-to-a-device: api/user_identities/grant_access_to_device.md
   api-clients/user-identities/list-accessible-devices-for-a-user-identity: api/user_identities/list_accessible_devices.md
@@ -138,11 +133,8 @@ redirects:
   api-clients/user-identities/remove-an-acs-user-from-a-user-identity: api/user_identities/remove_acs_user.md
   api-clients/user-identities/revoke-access-to-a-device-from-a-user-identity: api/user_identities/revoke_access_to_device.md
   api-clients/user-identities: api/user_identities/README.md
-  api-clients/workspaces/get-workspace: api-clients/workspaces/get.md
-  api-clients/workspaces/reset-workspace: api-clients/workspaces/reset_sandbox.md
-  api/phones/get-a-phone: api/phones/get.md
-  api/phones/list-phones: api/phones/list.md
-  api/phones/deactivate-a-phone: api/phones/deactivate.md
+  api-clients/workspaces/get-workspace: api/workspaces/get.md
+  api-clients/workspaces/reset-workspace: api/workspaces/reset_sandbox.md
   api-clients/phones/create-a-sandbox-phone: api/phones/simulate/create_sandbox_phone.md
   device-and-system-integration-guides/assa-abloy-credential-services-credential-manager-in-development: device-and-system-integration-guides/assa-abloy-credential-services-credential-manager/README.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md

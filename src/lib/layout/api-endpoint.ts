@@ -1,8 +1,12 @@
+import path from 'node:path/posix'
+
 import type {
   ActionAttempt,
   CodeSample,
   Endpoint,
   Parameter,
+  Resource,
+  ResourceSample,
   SdkName,
   SeamAuthMethod,
   SeamWorkspaceScope,
@@ -12,8 +16,10 @@ import { capitalCase } from 'change-case'
 import type { PathMetadata } from '../path-metadata.js'
 import {
   type ApiRouteResource,
-  mapBlueprintPropertyToRouteProperty,
+  groupProperties,
+  mapResourceSample,
   normalizePropertyFormatForDocs,
+  type ResourceSampleContext,
 } from './api-route.js'
 
 const supportedSdks: SdkName[] = [
@@ -22,7 +28,6 @@ const supportedSdks: SdkName[] = [
   'python',
   'ruby',
   'php',
-  'go',
   'seam_cli',
 ]
 
@@ -44,8 +49,10 @@ export interface ApiEndpointLayoutContext {
     escapedResourceType: string | null
     responseKey: string | null
     responseType: string | null
+    responsePath: string | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
+  resourceSamples: ResourceSampleContext[]
   primaryCodeSample: CodeSampleContext | null
   additionalCodeSamples: CodeSampleContext[]
 }
@@ -95,6 +102,7 @@ const seamAuthMethodToDisplayNameMap: Record<
 export function setEndpointLayoutContext(
   file: Partial<ApiEndpointLayoutContext>,
   endpoint: Endpoint,
+  resources: Resource[],
   actionAttempts: ActionAttempt[],
   pathMetadata: PathMetadata,
 ): void {
@@ -142,14 +150,28 @@ export function setEndpointLayoutContext(
     escapedResourceType: null,
     responseKey: null,
     responseType: null,
+    responsePath: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
     const { resourceType, responseKey, responseType } = endpoint.response
+
+    const responseResource = resources.find(
+      (r) => r.resourceType === resourceType,
+    )
+
+    let responsePath = null
+    if (responseResource != null) {
+      responsePath = path
+        .relative(endpoint.path, responseResource.routePath)
+        .replace('..', '.') // gitbook expects first level to be .
+    }
+
     file.response.resourceType = resourceType
     file.response.escapedResourceType = resourceType.replaceAll('_', '\\_')
     file.response.responseKey = responseKey
     file.response.responseType = responseType
+    file.response.responsePath = responsePath
   }
 
   if (
@@ -169,11 +191,25 @@ export function setEndpointLayoutContext(
     file.response.actionAttempt = {
       name: actionAttempt.actionAttemptType,
       description: actionAttempt.description,
-      properties: actionAttempt.properties
-        .filter(({ isUndocumented }) => !isUndocumented)
-        .map(mapBlueprintPropertyToRouteProperty),
+      hidePreamble: false,
+      errorGroups: [],
+      warningGroups: [],
+      resourceSamples: [],
+      propertyGroups: groupProperties(
+        actionAttempt.properties.filter(
+          ({ isUndocumented }) => !isUndocumented,
+        ),
+        actionAttempt.propertyGroups,
+        {},
+      ),
     }
   }
+
+  file.resourceSamples = getResourceSamples(
+    endpoint,
+    resources,
+    actionAttempts,
+  ).map(mapResourceSample)
 
   const [primaryCodeSample, ...additionalCodeSamples] = endpoint.codeSamples
   file.primaryCodeSample =
@@ -223,4 +259,43 @@ const mapCodeSample = (sample: CodeSample): CodeSampleContext => {
     description: sample.description,
     code,
   }
+}
+
+const getResourceSamples = (
+  endpoint: Endpoint,
+  resources: Resource[],
+  actionAttempts: ActionAttempt[],
+): ResourceSample[] => {
+  const { response } = endpoint
+
+  if (response.responseType === 'void') {
+    return []
+  }
+
+  let resource: Resource | ActionAttempt | undefined = resources.find(
+    ({ resourceType }) => resourceType === response.resourceType,
+  )
+
+  if (
+    response.responseType === 'resource' &&
+    response.actionAttemptType != null
+  ) {
+    resource = actionAttempts.find(
+      ({ actionAttemptType }) =>
+        actionAttemptType === response.actionAttemptType,
+    )
+  }
+
+  if (resource == null) return []
+
+  const sample = resource.resourceSamples[0]
+  if (sample == null) return []
+
+  return [
+    {
+      ...sample,
+      title: 'JSON',
+      description: '',
+    },
+  ]
 }

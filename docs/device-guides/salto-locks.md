@@ -28,7 +28,7 @@ For detailed information about the Salto devices that Seam supports, see our [Sa
 
 We support the following features:
 
-* [Triggering web unlock actions](../api-clients/locks/unlock_door.md)
+* [Triggering web unlock actions](../api/locks/unlock_door.md)
 * [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
 
 ***

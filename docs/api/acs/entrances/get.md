@@ -1,8 +1,7 @@
 # Get an Entrance
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
@@ -10,53 +9,77 @@ Returns a specified [access system entrance](../../../capability-guides/access-s
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.entrances.get({
-  acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000",
+  acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "text"
+  "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000"
+  "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "acs_entrance": {
-    "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-    "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
-    "created_at": "2024-04-05T07:57:05.323Z",
-    "display_name": "text"
+    "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1",
+    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at": "2025-06-15T16:54:17.946495Z",
+    "display_name": "Main Entrance",
+    "errors": [],
+    "visionline_metadata": {
+      "door_category": "guest",
+      "door_name": "Main Entrance",
+      "profiles": [
+        {
+          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "visionline_door_profile_type": "BLE"
+        }
+      ]
+    }
   }
 }
 ```
@@ -64,121 +87,139 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```python
-seam.acs.entrances.get(acs_entrance_id="123e4567-e89b-12d3-a456-426614174000")
+seam.acs.entrances.get(acs_entrance_id="c931c953-4a5b-4f66-9189-500d39959ad1")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsEntrance(
-    acs_system_id="123e4567-e89b-12d3-a456-426614174000",
-    acs_entrance_id="123e4567-e89b-12d3-a456-426614174000",
-    created_at="2024-04-05T07:57:05.323Z",
-    display_name="text",
+    acs_entrance_id="c931c953-4a5b-4f66-9189-500d39959ad1",
+    acs_system_id="6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    connected_account_id="1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    created_at="2025-06-15T16:54:17.946495Z",
+    display_name="Main Entrance",
+    errors=[],
+    visionline_metadata={
+        "door_category": "guest",
+        "door_name": "Main Entrance",
+        "profiles": [
+            {
+                "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                "visionline_door_profile_type": "BLE",
+            }
+        ],
+    },
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.acs.entrances.get(acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000")
+seam.acs.entrances.get(acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
-  "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "created_at" => "2024-04-05T07:57:05.323Z",
-  "display_name" => "text",
+  "acs_entrance_id" => "c931c953-4a5b-4f66-9189-500d39959ad1",
+  "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at" => "2025-06-15T16:54:17.946495Z",
+  "display_name" => "Main Entrance",
+  "errors" => [],
+  "visionline_metadata" => {
+    door_category: "guest",
+    door_name: "Main Entrance",
+    profiles: [
+      {
+        visionline_door_profile_id: "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        visionline_door_profile_type: "BLE",
+      },
+    ],
+  },
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->entrances->get(
-    acs_entrance_id: "123e4567-e89b-12d3-a456-426614174000"
+    acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
-    "acs_system_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "acs_entrance_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "created_at" => "2024-04-05T07:57:05.323Z",
-    "display_name" => "text",
+    "acs_entrance_id" => "c931c953-4a5b-4f66-9189-500d39959ad1",
+    "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at" => "2025-06-15T16:54:17.946495Z",
+    "display_name" => "Main Entrance",
+    "errors" => [],
+    "visionline_metadata" => [
+        "door_category" => "guest",
+        "door_name" => "Main Entrance",
+        "profiles" => [
+            [
+                "visionline_door_profile_id" =>
+                    "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                "visionline_door_profile_type" => "BLE",
+            ],
+        ],
+    ],
 ];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import entrances "github.com/seamapi/go/entrances"
-
-func main() {
-	client.Acs.Entrances.Get(
-		context.Background(),
-		entrances.EntrancesGetRequest{
-			AcsEntranceId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsEntrance{AcsSystemId: "123e4567-e89b-12d3-a456-426614174000", AcsEntranceId: "123e4567-e89b-12d3-a456-426614174000", CreatedAt: "2024-04-05T07:57:05.323Z", DisplayName: "text"}
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `acs_entrance_id` of the entrance that you want to retrieve.
+Returns a specified access system entrance.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs entrances get --acs_entrance_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs entrances get --acs_entrance_id "c931c953-4a5b-4f66-9189-500d39959ad1"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
-  "acs_system_id": "123e4567-e89b-12d3-a456-426614174000",
-  "acs_entrance_id": "123e4567-e89b-12d3-a456-426614174000",
-  "created_at": "2024-04-05T07:57:05.323Z",
-  "display_name": "text"
+  "acs_entrance_id": "c931c953-4a5b-4f66-9189-500d39959ad1",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
 }
 ```
 {% endtab %}
@@ -207,10 +248,33 @@ ID of the entrance that you want to get.
 
 ## Response
 
-[acs\_entrance](./)
+[acs\_entrance](.)
 
 
----
+{% tabs %}
+{% tab title="JSON" %}
 
-## Examples
 
+
+```json
+{
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
+}
+```
+{% endtab %}
+{% endtabs %}

@@ -14,7 +14,7 @@ Once you create climate presets, you can [activate them](../../../api/thermostat
 
 Each climate preset can contain the following properties, depending on the [capabilities](../../../products/thermostats/#thermostat-capabilities) of the thermostat:
 
-<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>climate_preset_key</code></td><td>(Required) Key to identify the climate preset.</td></tr><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the climate preset.</td></tr><tr><td><code>fan_mode_setting</code></td><td>Desired fan mode setting, such as <code>on</code>, <code>auto</code>, or <code>circulate</code>.</td></tr><tr><td><code>hvac_mode_setting</code></td><td>Desired <a href="../understanding-thermostat-concepts/hvac-mode.md">HVAC mode</a> setting, such as <code>heat</code>, <code>cool</code>, <code>heat_cool</code>, or <code>off</code>.</td></tr><tr><td><code>cooling_set_point_celsius</code></td><td>Temperature to which the thermostat should cool (in °C). See also <a href="../understanding-thermostat-concepts/set-points.md">Set Points</a>.</td></tr><tr><td><code>cooling_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should cool (in °F).</td></tr><tr><td><code>heating_set_point_celsius</code></td><td>Temperature to which the thermostat should heat (in °C).</td></tr><tr><td><code>heating_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should heat (in °F).</td></tr><tr><td><code>manual_override_allowed</code></td><td>(Optional) Indicates whether a person at the thermostat or using the API can change the thermostat's settings.<br>Deprecated. Use <code>thermostat_schedule.is_override_allowed</code> instead.</td></tr><tr><td><code>can_edit</code></td><td>Indicates whether the climate preset can be edited. There are some cases in which Seam syncs in climate presets (from the device) that cannot be modified.</td></tr><tr><td><code>can_delete</code></td><td>Indicates whether the climate preset can be deleted. There are some cases in which Seam syncs in climate presets (from the device) that cannot be deleted.</td></tr></tbody></table>
+<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>climate_preset_key</code></td><td>(Required) Key to identify the climate preset.</td></tr><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the climate preset.</td></tr><tr><td><code>fan_mode_setting</code></td><td>Desired fan mode setting, such as <code>on</code>, <code>auto</code>, or <code>circulate</code>.</td></tr><tr><td><code>hvac_mode_setting</code></td><td>Desired <a href="../understanding-thermostat-concepts/hvac-mode.md">HVAC mode</a> setting, such as <code>heat</code>, <code>cool</code>, <code>heat_cool</code>, or <code>off</code>.</td></tr><tr><td><code>cooling_set_point_celsius</code></td><td>Temperature to which the thermostat should cool (in °C). See also <a href="../understanding-thermostat-concepts/set-points.md">Set Points</a>.</td></tr><tr><td><code>cooling_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should cool (in °F).</td></tr><tr><td><code>heating_set_point_celsius</code></td><td>Temperature to which the thermostat should heat (in °C).</td></tr><tr><td><code>heating_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should heat (in °F).</td></tr><tr><td><del><code>manual_override_allowed</code></del></td><td>(Optional) Indicates whether a person at the thermostat or using the API can change the thermostat's settings.<br><br>Deprecated. Use <code>thermostat_schedule.is_override_allowed</code> instead.</td></tr><tr><td><code>can_edit</code></td><td>Indicates whether the climate preset can be edited. There are some cases in which Seam syncs in climate presets (from the device) that cannot be modified.</td></tr><tr><td><code>can_delete</code></td><td>Indicates whether the climate preset can be deleted. There are some cases in which Seam syncs in climate presets (from the device) that cannot be deleted.</td></tr></tbody></table>
 
 ***
 
@@ -266,41 +266,13 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## List All Climate Presets for a Thermostat
 
-To list climate presets for a thermostat, issue a [`/devices/get`](../../../api-clients/devices/get.md) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
+To list climate presets for a thermostat, issue a [`/devices/get`](../../../api/devices/get.md) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -566,34 +538,6 @@ $seam->devices->get(
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -713,34 +657,6 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -843,34 +759,6 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
 **Request:**
 
 ```java

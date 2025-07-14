@@ -4,20 +4,8 @@
 
 ### Routes
 
-- `/action_attempts`
-- `/client_sessions`
-- `/connect_webviews`
-- `/devices`
-- `/devices/simulate`
-- `/devices/unmanaged`
-- `/events`
-- `/locks`
-- `/noise_sensors`
-- `/noise_sensors/noise_thresholds`
-- `/noise_sensors/simulate`
 - `/thermostats/daily_programs`
-- `/webhooks`
-- `/workspaces`
+- `/user_identities/enrollment_automations`
 
 ## Undocumented
 
@@ -31,26 +19,35 @@ These items are intentionally undocumented.
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/bridges`: No undocumented message provided
-- `/locks/simulate`: No undocumented message provided
 - `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/customer/v1/automation_runs`: No undocumented message provided
+- `/seam/customer/v1/automations`: No undocumented message provided
+- `/seam/customer/v1/portals`: No undocumented message provided
+- `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
-- `/seam/partner/v1/resources`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
 - `/unstable_partner/building_blocks`: No undocumented message provided
-- `/unstable_partner/resources`: No undocumented message provided
 
 ### Resources
 
+- `acs_credential_pool`: Deprecated. Will be removed.
+- `acs_credential_provisioning_automation`: Deprecated. Will be removed.
+- `bridge_client_session`: Seam Bridge client only.
+- `bridge_connected_systems`: Seam Bridge client only.
 - `instant_key`: Unreleased.
+- `location`: Will be removed.
 - `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
+- `unmanaged_acs_access_group`: Unreleased.
+- `unmanaged_acs_credential`: Unreleased.
+- `unmanaged_acs_user`: Unreleased.
 
 ### Resource properties
 
@@ -62,11 +59,11 @@ These items are intentionally undocumented.
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
+- `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
 - `/seam/mobile_sdk/v1`: No undocumented message provided
 - `/seam/partner/v1/building_blocks`: No undocumented message provided
-- `/seam/partner/v1`: No undocumented message provided
 - `/unstable_partner`: No undocumented message provided
 
 ### Endpoints
@@ -83,8 +80,6 @@ These items are intentionally undocumented.
 - `/bridges/get`: Not yet for customer use.
 - `/bridges/list`: Not yet for customer use.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
-- `/locks/simulate/keypad_code_entry`: Unreleased.
-- `/locks/simulate/manual_lock_via_keypad`: Unreleased.
 - `/networks/get`: Deprecated.
 - `/networks/list`: Deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge client only.
@@ -93,11 +88,16 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
-- `/seam/partner/v1/resources/list`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_access_grants/create`: Unreleased.
 - `/unstable_access_grants/delete`: Unreleased.
@@ -119,7 +119,6 @@ These items are intentionally undocumented.
 - `/unstable_partner/building_blocks/generate_magic_link`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/manage_devices`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/organize_spaces`: Experimental partner building blocks.
-- `/unstable_partner/resources/push`: Experimental partner resources.
 
 ### Endpoint parameters
 
@@ -161,6 +160,8 @@ These items are intentionally undocumented.
     - `is_programmed`: Not sure if this parameter is supported or what it does.
 - `/noise_sensors/noise_thresholds/update`
     - `sync`: Only used internally.
+- `/spaces/list`
+    - `connected_account_id`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
@@ -182,18 +183,12 @@ Items that are intentionally undocumented are not included in this section.
 
 ### Resources
 
-- `access_grant`
-- `access_method`
 - `acs_credential_pool`
 - `acs_credential_provisioning_automation`
 - `device_provider`
 - `event`
-- `instant_key`
-- `magic_link`
-- `phone_session`
-- `space`
+- `location`
 - `unmanaged_acs_access_group`
-- `webhook`
 
 ### Resource properties
 
@@ -225,17 +220,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.email`
 - `acs_user.hid_acs_system_id`
 - `acs_user.is_managed`
-- `client_session.client_session_id`
-- `client_session.connect_webview_ids`
-- `client_session.connected_account_ids`
-- `client_session.created_at`
-- `client_session.customer_id`
-- `client_session.device_count`
-- `client_session.expires_at`
-- `client_session.token`
-- `client_session.user_identifier_key`
-- `client_session.user_identity_id`
-- `client_session.workspace_id`
 - `connect_webview.accepted_devices`
 - `connect_webview.any_device_allowed`
 - `connect_webview.device_selection_mode`
@@ -250,6 +234,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_simulate_disconnection`
 - `device.can_simulate_removal`
 - `device.can_turn_off_hvac`
+- `device.can_unlock_with_code`
 - `device_provider.can_hvac_cool`
 - `device_provider.can_hvac_heat`
 - `device_provider.can_hvac_heat_cool`
@@ -261,25 +246,12 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.can_simulate_disconnection`
 - `device_provider.can_simulate_removal`
 - `device_provider.can_turn_off_hvac`
+- `device_provider.can_unlock_with_code`
 - `device_provider.device_provider_name`
 - `device_provider.display_name`
 - `device_provider.image_url`
 - `device_provider.provider_categories`
 - `event.event_type`
-- `instant_key.client_session_id`
-- `instant_key.created_at`
-- `instant_key.expires_at`
-- `instant_key.instant_key_id`
-- `instant_key.instant_key_url`
-- `instant_key.user_identity_id`
-- `instant_key.workspace_id`
-- `magic_link.building_block_type`
-- `magic_link.created_at`
-- `magic_link.customer_key`
-- `magic_link.expires_at`
-- `magic_link.url`
-- `magic_link.workspace_id`
-- `phone_session.provider_sessions`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
 - `unmanaged_acs_access_group.display_name`
@@ -300,19 +272,12 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_simulate_disconnection`
 - `unmanaged_device.can_simulate_removal`
 - `unmanaged_device.can_turn_off_hvac`
+- `unmanaged_device.can_unlock_with_code`
 - `unmanaged_device.is_managed`
 - `user_identity.display_name`
 - `user_identity.full_name`
-- `webhook.event_types`
-- `webhook.secret`
-- `webhook.url`
-- `webhook.webhook_id`
-- `workspace.company_name`
 - `workspace.connect_partner_name`
 - `workspace.connect_webview_customization`
-- `workspace.is_sandbox`
-- `workspace.name`
-- `workspace.workspace_id`
 
 ### Endpoints
 
@@ -357,18 +322,13 @@ Items that are intentionally undocumented are not included in this section.
 - `/acs/users/update`
     - `email`
     - `hid_acs_system_id`
-- `/client_sessions/create`
-    - `customer_id`
-    - `customer_key`
 - `/connect_webviews/create`
-    - `customer_id`
     - `device_selection_mode`
-- `/connect_webviews/list`
-    - `customer_ids`
 - `/connected_accounts/delete`
     - `sync`
-- `/connected_accounts/list`
-    - `customer_ids`
+- `/customers/create_portal`
+    - `features`
+    - `customer_data`
 - `/devices/list`
     - `customer_ids`
     - `exclude_if`
@@ -403,6 +363,9 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/noise_thresholds/update`
     - `sync`
+- `/spaces/get_related`
+    - `exclude`
+    - `include`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -426,16 +389,6 @@ Items that are intentionally undocumented are not included in this section.
     - `requested_access_methods`
 - `/unstable_access_grants/list`
     - `location_id`
-- `/unstable_partner/resources/push`
-    - `custom_metadata`
-    - `description`
-    - `email_address`
-    - `ends_at`
-    - `location_keys`
-    - `name`
-    - `phone_number`
-    - `starts_at`
-    - `user_identity_key`
 - `/user_identities/get`
     - `user_identity_key`
 - `/workspaces/create`
@@ -451,7 +404,6 @@ These items have been marked as draft.
 ### Routes
 
 - `/access_grants`: No draft message provided
-- `/access_methods`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -460,6 +412,7 @@ These items have been marked as draft.
 - `/access_grants/delete`: Early access.
 - `/access_grants/get`: Early access.
 - `/access_grants/list`: Early access.
+- `/access_grants/update`: Early access.
 - `/access_methods/delete`: Early access.
 - `/access_methods/get`: Early access.
 - `/access_methods/list`: Early access.
@@ -468,14 +421,26 @@ These items have been marked as draft.
 - `/spaces/create`: Early access.
 - `/spaces/delete`: Early access.
 - `/spaces/get`: Early access.
+- `/spaces/get_related`: Early access.
 - `/spaces/list`: Early access.
 - `/spaces/remove_acs_entrances`: Early access.
 - `/spaces/remove_devices`: Early access.
 - `/spaces/update`: Early access.
 
+### Endpoint parameters
+
+- `/spaces/list`
+    - `connected_account_id`: Needs review.
+
 ## Deprecated
 
 These items are deprecated.
+
+### Resources
+
+- `acs_credential_pool`: Not used.
+- `acs_credential_provisioning_automation`: Not used.
+- `enrollment_automation`: Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.
 
 ### Resource properties
 
@@ -486,15 +451,22 @@ These items are deprecated.
 - `acs_system.system_type`: Use `external_type`.
 - `acs_system.system_type_display_name`: Use `external_type_display_name`.
 - `acs_user.email`: use email_address.
+- `client_session.user_identity_ids`: Use `user_identity_id` instead.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
 - `unmanaged_acs_access_group.access_group_type`: Use `external_type`.
 - `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `unmanaged_acs_user.email`: use email_address.
-- `workspace.connect_partner_name`: use company_name
+- `workspace.connect_partner_name`: Use `company_name` instead.
 
 ### Endpoint parameters
 
+- `/access_codes/create`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/create_multiple`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
+- `/access_codes/update`
+    - `use_offline_access_code`: Use `is_offline_access_code` instead.
 - `/access_grants/create`
     - `location_ids`: Use `space_ids`.
 - `/access_grants/list`
@@ -506,7 +478,7 @@ These items are deprecated.
 - `/acs/users/update`
     - `email`: use email_address.
 - `/client_sessions/create`
-    - `user_identity_ids`: Use `user_identity_id`.
+    - `user_identity_ids`: Use `user_identity_id` instead.
 - `/client_sessions/get_or_create`
     - `user_identity_ids`: Use `user_identity_id`.
 - `/client_sessions/grant_access`
@@ -532,7 +504,7 @@ These items are deprecated.
 - `/unstable_access_grants/list`
     - `location_id`: Use `space_id`.
 - `/workspaces/create`
-    - `connect_partner_name`: use company_name
+    - `connect_partner_name`: Use `company_name` instead.
     - `webview_logo_shape`: Use `connect_webview_customization.webview_logo_shape` instead.
     - `webview_primary_button_color`: Use `connect_webview_customization.webview_primary_button_color` instead.
     - `webview_primary_button_text_color`: Use `connect_webview_customization.webview_primary_button_text_color` instead.
@@ -542,16 +514,8 @@ These items are deprecated.
 
 - `/access_codes/create`
     - `action_attempt`
-- `/access_codes/list`
-    - `pagination`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
-- `/acs/users/list`
-    - `pagination`
-- `/connected_accounts/list`
-    - `pagination`
-- `/devices/list`
-    - `pagination`
 - `/events/get`
     - `message`
 - `/locks/get`
@@ -566,155 +530,125 @@ These items are deprecated.
     - `thermostats`
 - `/user_identities/list_accessible_devices`
     - `accessible_devices`
+### Missing resources
+
+- `/bridges/get`: `bridge`
+- `/bridges/list`: `bridges`
+- `/networks/get`: `network`
+- `/networks/list`: `networks`
+- `/seam/customer/v1/automation_runs/list`: `automation_runs`
+- `/seam/customer/v1/portals/get`: `customer_portal`
+- `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
+- `/spaces/get_related`: `batch`
 
 ### Endpoints without code samples
 
-- `/access_codes/create`
-- `/access_codes/create_multiple`
-- `/access_codes/delete`
-- `/access_codes/generate_code`
-- `/access_codes/get`
-- `/access_codes/list`
-- `/access_codes/pull_backup_access_code`
-- `/access_codes/report_device_constraints`
-- `/access_codes/update`
-- `/access_codes/update_multiple`
-- `/access_codes/simulate/create_unmanaged_access_code`
-- `/access_codes/unmanaged/convert_to_managed`
-- `/access_codes/unmanaged/delete`
-- `/access_codes/unmanaged/get`
-- `/access_codes/unmanaged/list`
-- `/access_codes/unmanaged/update`
-- `/access_grants/create`
-- `/access_grants/delete`
-- `/access_grants/get`
-- `/access_grants/list`
-- `/access_methods/delete`
-- `/access_methods/get`
-- `/access_methods/list`
-- `/acs/credential_pools/list`
-- `/acs/credential_provisioning_automations/launch`
-- `/acs/credentials/create_offline_code`
-- `/acs/credentials/unmanaged/get`
-- `/acs/credentials/unmanaged/list`
-- `/acs/encoders/encode_access_method`
-- `/acs/encoders/encode_credential`
-- `/acs/encoders/get`
-- `/acs/encoders/list`
-- `/acs/encoders/scan_credential`
-- `/acs/encoders/simulate/next_credential_encode_will_fail`
-- `/acs/encoders/simulate/next_credential_encode_will_succeed`
-- `/acs/encoders/simulate/next_credential_scan_will_fail`
-- `/acs/encoders/simulate/next_credential_scan_will_succeed`
-- `/acs/entrances/grant_access`
-- `/acs/users/list_accessible_entrances`
-- `/acs/users/revoke_access_to_all_entrances`
-- `/acs/users/unmanaged/get`
-- `/acs/users/unmanaged/list`
-- `/action_attempts/get`
-- `/action_attempts/list`
-- `/bridges/get`
-- `/bridges/list`
-- `/client_sessions/create`
-- `/client_sessions/delete`
-- `/client_sessions/get`
-- `/client_sessions/get_or_create`
-- `/client_sessions/grant_access`
-- `/client_sessions/list`
-- `/client_sessions/revoke`
-- `/connect_webviews/create`
-- `/connect_webviews/delete`
-- `/connect_webviews/get`
-- `/connect_webviews/list`
-- `/devices/delete`
-- `/devices/get`
-- `/devices/list`
-- `/devices/list_device_providers`
-- `/devices/update`
-- `/devices/simulate/connect`
-- `/devices/simulate/disconnect`
-- `/devices/simulate/remove`
-- `/devices/unmanaged/get`
-- `/devices/unmanaged/list`
-- `/devices/unmanaged/update`
-- `/events/get`
-- `/events/list`
+- `/access_methods/encode`
+- `/customers/create_portal`
+- `/customers/push_data`
 - `/locks/get`
-- `/locks/list`
-- `/locks/lock_door`
-- `/locks/unlock_door`
-- `/locks/simulate/keypad_code_entry`
-- `/locks/simulate/manual_lock_via_keypad`
-- `/networks/get`
-- `/networks/list`
-- `/noise_sensors/list`
-- `/noise_sensors/noise_thresholds/create`
-- `/noise_sensors/noise_thresholds/delete`
-- `/noise_sensors/noise_thresholds/get`
-- `/noise_sensors/noise_thresholds/list`
-- `/noise_sensors/noise_thresholds/update`
-- `/noise_sensors/simulate/trigger_noise_threshold`
-- `/phones/deactivate`
-- `/phones/get`
-- `/phones/list`
-- `/phones/simulate/create_sandbox_phone`
-- `/seam/bridge/v1/bridge_client_sessions/create`
-- `/seam/bridge/v1/bridge_client_sessions/get`
-- `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`
-- `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`
-- `/seam/bridge/v1/bridge_client_sessions/report_status`
-- `/seam/bridge/v1/bridge_connected_systems/list`
-- `/seam/instant_key/v1/client_sessions/exchange_short_code`
-- `/seam/mobile_sdk/v1/acs/credentials/list`
-- `/seam/mobile_sdk/v1/phone_sessions/get_or_create`
-- `/seam/partner/v1/building_blocks/spaces/auto_map`
-- `/seam/partner/v1/resources/list`
-- `/spaces/add_acs_entrances`
-- `/spaces/add_devices`
-- `/spaces/create`
-- `/spaces/delete`
-- `/spaces/get`
-- `/spaces/list`
-- `/spaces/remove_acs_entrances`
-- `/spaces/remove_devices`
-- `/spaces/update`
-- `/thermostats/get`
-- `/thermostats/update_weekly_program`
-- `/thermostats/daily_programs/create`
-- `/thermostats/daily_programs/delete`
-- `/thermostats/daily_programs/update`
-- `/thermostats/simulate/hvac_mode_adjusted`
-- `/thermostats/simulate/temperature_reached`
-- `/unstable_access_grants/create`
-- `/unstable_access_grants/delete`
-- `/unstable_access_grants/get`
-- `/unstable_access_grants/list`
-- `/unstable_access_methods/delete`
-- `/unstable_access_methods/get`
-- `/unstable_access_methods/list`
-- `/unstable_locations/add_acs_entrances`
-- `/unstable_locations/add_devices`
-- `/unstable_locations/create`
-- `/unstable_locations/delete`
-- `/unstable_locations/get`
-- `/unstable_locations/list`
-- `/unstable_locations/remove_acs_entrances`
-- `/unstable_locations/remove_devices`
-- `/unstable_locations/update`
-- `/unstable_partner/building_blocks/connect_accounts`
-- `/unstable_partner/building_blocks/generate_magic_link`
-- `/unstable_partner/building_blocks/manage_devices`
-- `/unstable_partner/building_blocks/organize_spaces`
-- `/unstable_partner/resources/push`
-- `/user_identities/generate_instant_key`
-- `/user_identities/update`
-- `/webhooks/create`
-- `/webhooks/delete`
-- `/webhooks/get`
-- `/webhooks/list`
-- `/webhooks/update`
-- `/workspaces/create`
-- `/workspaces/get`
-- `/workspaces/list`
-- `/workspaces/reset_sandbox`
-- `/workspaces/update`
+- `/spaces/get_related`
+- `/user_identities/enrollment_automations/delete`
+- `/user_identities/enrollment_automations/get`
+- `/user_identities/enrollment_automations/launch`
+- `/user_identities/enrollment_automations/list`
+
+### Resources without resource samples
+
+- `enrollment_automation`
+- `event: access_code.created`
+- `event: access_code.changed`
+- `event: access_code.scheduled_on_device`
+- `event: access_code.set_on_device`
+- `event: access_code.removed_from_device`
+- `event: access_code.delay_in_setting_on_device`
+- `event: access_code.failed_to_set_on_device`
+- `event: access_code.deleted`
+- `event: access_code.delay_in_removing_from_device`
+- `event: access_code.failed_to_remove_from_device`
+- `event: access_code.modified_external_to_seam`
+- `event: access_code.deleted_external_to_seam`
+- `event: access_code.backup_access_code_pulled`
+- `event: access_code.unmanaged.converted_to_managed`
+- `event: access_code.unmanaged.failed_to_convert_to_managed`
+- `event: access_code.unmanaged.created`
+- `event: access_code.unmanaged.removed`
+- `event: access_grant.created`
+- `event: access_grant.deleted`
+- `event: access_grant.access_granted_to_all_doors`
+- `event: access_grant.access_granted_to_door`
+- `event: access_grant.access_to_door_lost`
+- `event: access_method.issued`
+- `event: access_method.revoked`
+- `event: access_method.card_encoding_required`
+- `event: access_method.deleted`
+- `event: access_method.reissued`
+- `event: acs_system.connected`
+- `event: acs_system.added`
+- `event: acs_system.disconnected`
+- `event: acs_credential.deleted`
+- `event: acs_credential.issued`
+- `event: acs_credential.reissued`
+- `event: acs_credential.invalidated`
+- `event: acs_user.created`
+- `event: acs_user.deleted`
+- `event: acs_encoder.added`
+- `event: acs_encoder.removed`
+- `event: acs_access_group.deleted`
+- `event: acs_entrance.added`
+- `event: acs_entrance.removed`
+- `event: client_session.deleted`
+- `event: connected_account.connected`
+- `event: connected_account.created`
+- `event: connected_account.successful_login`
+- `event: connected_account.disconnected`
+- `event: connected_account.completed_first_sync`
+- `event: connected_account.deleted`
+- `event: connected_account.completed_first_sync_after_reconnection`
+- `event: action_attempt.lock_door.succeeded`
+- `event: action_attempt.lock_door.failed`
+- `event: action_attempt.unlock_door.succeeded`
+- `event: action_attempt.unlock_door.failed`
+- `event: connect_webview.login_succeeded`
+- `event: connect_webview.login_failed`
+- `event: device.added`
+- `event: device.converted_to_unmanaged`
+- `event: device.unmanaged.converted_to_managed`
+- `event: device.unmanaged.connected`
+- `event: device.disconnected`
+- `event: device.unmanaged.disconnected`
+- `event: device.tampered`
+- `event: device.low_battery`
+- `event: device.battery_status_changed`
+- `event: device.removed`
+- `event: device.deleted`
+- `event: device.third_party_integration_detected`
+- `event: device.third_party_integration_no_longer_detected`
+- `event: device.salto.privacy_mode_activated`
+- `event: device.salto.privacy_mode_deactivated`
+- `event: device.connection_became_flaky`
+- `event: device.connection_stabilized`
+- `event: device.error.subscription_required`
+- `event: device.error.subscription_required.resolved`
+- `event: device.accessory_keypad_connected`
+- `event: device.accessory_keypad_disconnected`
+- `event: noise_sensor.noise_threshold_triggered`
+- `event: lock.locked`
+- `event: lock.unlocked`
+- `event: lock.access_denied`
+- `event: thermostat.climate_preset_activated`
+- `event: thermostat.manually_adjusted`
+- `event: thermostat.temperature_threshold_exceeded`
+- `event: thermostat.temperature_threshold_no_longer_exceeded`
+- `event: thermostat.temperature_reached_set_point`
+- `event: thermostat.temperature_changed`
+- `event: device.name_changed`
+- `event: enrollment_automation.deleted`
+- `event: phone.deactivated`
+- `action_attempt: SYNC_ACCESS_CODES`
+- `action_attempt: CREATE_ACCESS_CODE`
+- `action_attempt: DELETE_ACCESS_CODE`
+- `action_attempt: UPDATE_ACCESS_CODE`
+- `action_attempt: CREATE_NOISE_THRESHOLD`
+- `action_attempt: DELETE_NOISE_THRESHOLD`
+- `action_attempt: UPDATE_NOISE_THRESHOLD`

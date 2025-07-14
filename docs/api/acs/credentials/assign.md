@@ -1,8 +1,8 @@
 # Assign a Credential to an ACS User
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Assigns a specified [credential](../../../capability-guides/access-systems/managing-credentials.md) to a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -10,18 +10,18 @@ Assigns a specified [credential](../../../capability-guides/access-systems/manag
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
+Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.assign({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  user_identity_id: "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
+  acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +30,22 @@ await seam.acs.credentials.assign({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
+Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/assign" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+  "user_identity_id": "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
+  "acs_credential_id": "59c9af06-7881-46d2-8d9b-3eda964c058b"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,18 +54,18 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
+Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.assign(
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    acs_credential_id="66666666-6666-6666-6666-666666666666",
+    user_identity_id="1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
+    acs_credential_id="59c9af06-7881-46d2-8d9b-3eda964c058b",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,18 +74,18 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
+Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.assign(
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  user_identity_id: "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
+  acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,66 +94,35 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
+Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->assign(
-    acs_user_id: "33333333-3333-3333-3333-333333333333",
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
+    user_identity_id: "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
+    acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Assign(
-		context.Background(),
-		credentials.CredentialsAssignRequest{
-			AcsUserId:       api.String("33333333-3333-3333-3333-333333333333"),
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_user_id` and `acs_credential_id` to assign a credential to an ACS user.
+Assigns a specified credential to a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs credentials assign --acs_user_id "33333333-3333-3333-3333-333333333333" --acs_credential_id "66666666-6666-6666-6666-666666666666"
+seam acs credentials assign --user_identity_id "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01" --acs_credential_id "59c9af06-7881-46d2-8d9b-3eda964c058b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -204,3 +173,131 @@ void
 
 ## Examples
 
+
+### Assign a credential to an access system user
+
+Assigns a specified credential to a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.credentials.assign({
+  acs_user_id: "143f083a-d61c-4d85-923f-d5483fb5a7d4",
+  acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
+});
+```
+
+#### Output:
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/assign" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "143f083a-d61c-4d85-923f-d5483fb5a7d4",
+  "acs_credential_id": "59c9af06-7881-46d2-8d9b-3eda964c058b"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.credentials.assign(
+    acs_user_id="143f083a-d61c-4d85-923f-d5483fb5a7d4",
+    acs_credential_id="59c9af06-7881-46d2-8d9b-3eda964c058b",
+)
+```
+
+#### Output:
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.credentials.assign(
+  acs_user_id: "143f083a-d61c-4d85-923f-d5483fb5a7d4",
+  acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
+)
+```
+
+#### Output:
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->credentials->assign(
+    acs_user_id: "143f083a-d61c-4d85-923f-d5483fb5a7d4",
+    acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b"
+);
+```
+
+#### Output:
+
+```php
+
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs credentials assign --acs_user_id "143f083a-d61c-4d85-923f-d5483fb5a7d4" --acs_credential_id "59c9af06-7881-46d2-8d9b-3eda964c058b"
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

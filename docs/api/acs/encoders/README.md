@@ -3,8 +3,6 @@
 ## The acs_encoder Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -20,9 +18,28 @@ Some access control systems require credentials to be encoded onto plastic key c
 
 Separately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.
 
- See [Working with Card Encoders and Scanners](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+See [Working with Card Encoders and Scanners](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 To verify if your access control system requires a card encoder, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
+
+{% tabs %}
+{% tab title="ACS Encoder" %}
+
+An access system encoder resource.
+
+```json
+{
+  "acs_encoder_id": "681da2d6-4ac6-4b33-8c03-86281b761325",
+  "acs_system_id": "c85406d2-214f-4e11-8000-a2e5b5a362a4",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97750",
+  "created_at": "2025-06-16T16:54:17.946527Z",
+  "display_name": "Encoder 1",
+  "errors": [],
+  "workspace_id": "f863ac85-2c4e-49ae-8679-3ec2417f1d62"
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 ## Properties
@@ -80,23 +97,23 @@ Errors associated with the [encoder](../../../capability-guides/access-systems/w
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which Seam created the error.
+  Date and time at which Seam created the error.
 
-  <strong><code>error_code</code></strong> <i>Enum</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>acs_encoder_removed</code>
-  </details>
+<strong><code>error_code</code></strong> <i>Enum</i>
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>acs_encoder_removed</code>
+</details>
+
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 </details>
 
 ---
@@ -115,7 +132,7 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 **`acs_encoder.added`**
 
-An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was added.
+An [access system encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was added.
 
 <details>
 
@@ -151,14 +168,14 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 **`acs_encoder.removed`**
 
-An [ACS encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was removed.
+An [access system encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md) was removed.
 
 <details>
 
@@ -194,7 +211,7 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -202,14 +219,9 @@ An [ACS encoder](../../../capability-guides/access-systems/working-with-card-enc
 ## Endpoints
 
 
-[**`/acs/encoders/encode_access_method`**](./encode_access_method.md)
-
-Encodes an existing access method onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
-
-
 [**`/acs/encoders/encode_credential`**](./encode_credential.md)
 
-Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md). Either provide an `acs_credential_id` or an `access_method_id`
 
 
 [**`/acs/encoders/get`**](./get.md)

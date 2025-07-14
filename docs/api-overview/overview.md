@@ -12,23 +12,23 @@ See the following reference topics:
 
 * [Installation](installation.md)
 * [Authentication](authentication.md)
-* [Client Sessions](../api-clients/client_sessions/)
-* [Workspaces](../api-clients/workspaces/)
+* [Client Sessions](../api/client_sessions/)
+* [Workspaces](../api/workspaces/)
 
 ## Controlling Devices and Systems
 
-* [Connect Webviews](../api-clients/connect_webviews/)
-* [Devices](../api-clients/devices/)
-  * [Locks](../api-clients/locks/)
+* [Connect Webviews](../api/connect_webviews/)
+* [Devices](../api/devices/)
+  * [Locks](../api/locks/)
     * [Access Codes](../api/access_codes/)
   * [Thermostats](../api/thermostats/)
-  * [Noise Sensors](../api-clients/noise_sensors/)
+  * [Noise Sensors](../api/noise_sensors/)
 * [Access Control Systems](../api/acs/)
   * [User Identities](../api/user_identities/)
   * [Phones](../api/phones/)
 
 ## Monitoring
 
-* [Events](../api-clients/events/)
-* [Action Attempts](../api-clients/action_attempts/)
+* [Events](../api/events/)
+* [Action Attempts](../api/action_attempts/)
 * [Connected Accounts](../api/connected_accounts/)

@@ -108,35 +108,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-_, uErr := client.Acs.Credentials.Delete(
-  context.Background(), &acs.CredentialsDeleteRequest{
-    acsCredentialId: "66666666-6666-6666-6666-666666666666",
-  },
-);
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}

@@ -168,65 +168,15 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-```
 
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "status": "authorized",
-  "login_successful": true,
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-updatedConnectWebview, err := client.ConnectWebviews.Get(
-  context.Background(),
-  &api.ConnectWebviewsGetRequest{
-    ConnectWebviewId: connectWebview.connectWebviewId,
-  },
-)
-
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "connect_webview_id": "12345678-1234-1234-1234-123456789012",
-  "status": "authorized",
-  "login_successful": true,
-  "connected_account_id": "11111111-1111-1111-1111-222222222222",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## **Webhook**
 
-When Seam successfully establishes the connection to the user's device or ACS account, Seam emits a [`connected_account.connected` event](../../api-clients/events/#event-types). This event includes a `connect_webview_id` property.
+When Seam successfully establishes the connection to the user's device or ACS account, Seam emits a [`connected_account.connected` event](../../api/events/). This event includes a `connect_webview_id` property.
 
 To avoid polling, use a Seam webhook to monitor for a `connected_account.connected` event with a `connect_webview_id` that matches the `connect_webview_id` of the appropriate Connect Webview instance.
 

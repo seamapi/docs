@@ -1,27 +1,26 @@
 # Remove an ACS User from a User Identity
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.removeAcsUser({
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
+  user_identity_id: "802633b6-a66c-4911-b57b-323e900ee531",
+  acs_user_id: "faa22878-fa74-4ea0-87f7-2b05c1b06181",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +29,22 @@ await seam.userIdentities.removeAcsUser({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/remove_acs_user" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  "acs_user_id": "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
+  "user_identity_id": "802633b6-a66c-4911-b57b-323e900ee531",
+  "acs_user_id": "faa22878-fa74-4ea0-87f7-2b05c1b06181"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,18 +53,18 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.remove_acs_user(
-    user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    acs_user_id="c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
+    user_identity_id="802633b6-a66c-4911-b57b-323e900ee531",
+    acs_user_id="faa22878-fa74-4ea0-87f7-2b05c1b06181",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,18 +73,18 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.remove_acs_user(
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-  acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe",
+  user_identity_id: "802633b6-a66c-4911-b57b-323e900ee531",
+  acs_user_id: "faa22878-fa74-4ea0-87f7-2b05c1b06181",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,65 +93,35 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->remove_acs_user(
-    user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
-    acs_user_id: "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
+    user_identity_id: "802633b6-a66c-4911-b57b-323e900ee531",
+    acs_user_id: "faa22878-fa74-4ea0-87f7-2b05c1b06181"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `acs_user_id` and `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.RemoveAcsUser(
-		context.Background(),
-		api.UserIdentitiesRemoveAcsUserRequest{
-			UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
-			AcsUserId:      api.String("c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_user_id` and `user_identity_id`.
+Removes a specified access system user from a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam user-identities remove-acs-user --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f" --acs_user_id "c0184e54-0d93-4bca-8a4e-47bbd2ee3bfe"
+seam user-identities remove-acs-user --user_identity_id "802633b6-a66c-4911-b57b-323e900ee531" --acs_user_id "faa22878-fa74-4ea0-87f7-2b05c1b06181"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -191,9 +160,4 @@ ID of the user identity from which you want to remove an access system user.
 ## Response
 
 void
-
-
----
-
-## Examples
 

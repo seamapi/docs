@@ -1,39 +1,46 @@
 # List ACS Systems Associated with a User Identity
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.listAcsSystems({
-  user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f",
+  user_identity_id: "77e0347d-35ac-4a21-962b-e757a446b47f",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
   {
-    "acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
-    "name": "Assa Abloy Credential Service",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-05T07:16:51.971Z",
-    "system_type": "assa_abloy_credential_service",
-    "system_type_display_name": "Assa Abloy Credential Service",
-    "external_type": "assa_abloy_credential_service",
-    "external_type_display_name": "Assa Abloy Credential Service",
-    "connected_account_ids": ["dc08066f-d9b8-42f0-9c4b-c781cd900153"]
+    "acs_access_group_count": 5,
+    "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+    "acs_user_count": 20,
+    "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+    "created_at": "2025-06-15T16:54:17.946425Z",
+    "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+    "errors": [],
+    "external_type": "salto_ks_site",
+    "external_type_display_name": "Salto KS site",
+    "image_alt_text": "Salto KS site Logo",
+    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+    "is_credential_manager": false,
+    "location": { "time_zone": "America/New_York" },
+    "name": "My Access System",
+    "warnings": [],
+    "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
   }
 ]
 ```
@@ -41,35 +48,43 @@ await seam.userIdentities.listAcsSystems({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list_acs_systems" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+  "user_identity_id": "77e0347d-35ac-4a21-962b-e757a446b47f"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "acs_systems": [
     {
-      "acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
-      "name": "Assa Abloy Credential Service",
-      "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-      "created_at": "2024-01-05T07:16:51.971Z",
-      "system_type": "assa_abloy_credential_service",
-      "system_type_display_name": "Assa Abloy Credential Service",
-      "external_type": "assa_abloy_credential_service",
-      "external_type_display_name": "Assa Abloy Credential Service",
-      "connected_account_ids": ["dc08066f-d9b8-42f0-9c4b-c781cd900153"]
+      "acs_access_group_count": 5,
+      "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+      "acs_user_count": 20,
+      "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+      "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+      "created_at": "2025-06-15T16:54:17.946425Z",
+      "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+      "errors": [],
+      "external_type": "salto_ks_site",
+      "external_type_display_name": "Salto KS site",
+      "image_alt_text": "Salto KS site Logo",
+      "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+      "is_credential_manager": false,
+      "location": { "time_zone": "America/New_York" },
+      "name": "My Access System",
+      "warnings": [],
+      "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
     }
   ]
 }
@@ -78,30 +93,38 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.list_acs_systems(
-    user_identity_id="5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+    user_identity_id="77e0347d-35ac-4a21-962b-e757a446b47f"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
     AcsSystem(
-        acs_system_id="6737e186-8d54-48ce-a7da-a0be4d252172",
-        name="Assa Abloy Credential Service",
-        workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-        created_at="2024-01-05T07:16:51.971Z",
-        system_type="assa_abloy_credential_service",
-        system_type_display_name="Assa Abloy Credential Service",
-        external_type="assa_abloy_credential_service",
-        external_type_display_name="Assa Abloy Credential Service",
-        connected_account_ids=["dc08066f-d9b8-42f0-9c4b-c781cd900153"],
+        acs_access_group_count=5,
+        acs_system_id="dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+        acs_user_count=20,
+        connected_account_id="a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+        connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+        created_at="2025-06-15T16:54:17.946425Z",
+        default_credential_manager_acs_system_id="5dde2def-3507-44f5-9521-7ca96aa4cd18",
+        errors=[],
+        external_type="salto_ks_site",
+        external_type_display_name="Salto KS site",
+        image_alt_text="Salto KS site Logo",
+        image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+        is_credential_manager=false,
+        location={"time_zone": "America/New_York"},
+        name="My Access System",
+        warnings=[],
+        workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f",
     )
 ]
 ```
@@ -109,28 +132,39 @@ seam.user_identities.list_acs_systems(
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f")
+seam.user_identities.list_acs_systems(user_identity_id: "77e0347d-35ac-4a21-962b-e757a446b47f")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
   {
-    "acs_system_id" => "6737e186-8d54-48ce-a7da-a0be4d252172",
-    "name" => "Assa Abloy Credential Service",
-    "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at" => "2024-01-05T07:16:51.971Z",
-    "system_type" => "assa_abloy_credential_service",
-    "system_type_display_name" => "Assa Abloy Credential Service",
-    "external_type" => "assa_abloy_credential_service",
-    "external_type_display_name" => "Assa Abloy Credential Service",
-    "connected_account_ids" => ["dc08066f-d9b8-42f0-9c4b-c781cd900153"],
+    "acs_access_group_count" => 5,
+    "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+    "acs_user_count" => 20,
+    "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+    "created_at" => "2025-06-15T16:54:17.946425Z",
+    "default_credential_manager_acs_system_id" => "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+    "errors" => [],
+    "external_type" => "salto_ks_site",
+    "external_type_display_name" => "Salto KS site",
+    "image_alt_text" => "Salto KS site Logo",
+    "image_url" =>
+      "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+    "is_credential_manager" => false,
+    "location" => {
+      time_zone: "America/New_York",
+    },
+    "name" => "My Access System",
+    "warnings" => [],
+    "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
   },
 ]
 ```
@@ -138,89 +172,77 @@ seam.user_identities.list_acs_systems(user_identity_id: "5c945ab5-c75e-4bcb-8e5f
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->list_acs_systems(
-    user_identity_id: "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+    user_identity_id: "77e0347d-35ac-4a21-962b-e757a446b47f"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
-        "acs_system_id" => "6737e186-8d54-48ce-a7da-a0be4d252172",
-        "name" => "Assa Abloy Credential Service",
-        "workspace_id" => "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-        "created_at" => "2024-01-05T07:16:51.971Z",
-        "system_type" => "assa_abloy_credential_service",
-        "system_type_display_name" => "Assa Abloy Credential Service",
-        "external_type" => "assa_abloy_credential_service",
-        "external_type_display_name" => "Assa Abloy Credential Service",
-        "connected_account_ids" => ["dc08066f-d9b8-42f0-9c4b-c781cd900153"],
+        "acs_access_group_count" => 5,
+        "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+        "acs_user_count" => 20,
+        "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+        "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+        "created_at" => "2025-06-15T16:54:17.946425Z",
+        "default_credential_manager_acs_system_id" =>
+            "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+        "errors" => [],
+        "external_type" => "salto_ks_site",
+        "external_type_display_name" => "Salto KS site",
+        "image_alt_text" => "Salto KS site Logo",
+        "image_url" =>
+            "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+        "is_credential_manager" => false,
+        "location" => ["time_zone" => "America/New_York"],
+        "name" => "My Access System",
+        "warnings" => [],
+        "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
     ],
 ];
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.ListAcsSystems(
-		context.Background(),
-		api.UserIdentitiesListAcsSystemsRequest{
-			UserIdentityId: api.String("5c945ab5-c75e-4bcb-8e5f-9410061c401f"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsSystem{api.AcsSystem{AcsSystemId: "6737e186-8d54-48ce-a7da-a0be4d252172", Name: "Assa Abloy Credential Service", WorkspaceId: "398d80b7-3f96-47c2-b85a-6f8ba21d07be", CreatedAt: "2024-01-05T07:16:51.971Z", SystemType: "assa_abloy_credential_service", SystemTypeDisplayName: "Assa Abloy Credential Service", ExternalType: "assa_abloy_credential_service", ExternalTypeDisplayName: "Assa Abloy Credential Service", ConnectedAccountIds: []string{"dc08066f-d9b8-42f0-9c4b-c781cd900153"}}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id`.
+Returns a list of all access systems associated with a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam user-identities list-acs-systems --user_identity_id "5c945ab5-c75e-4bcb-8e5f-9410061c401f"
+seam user-identities list-acs-systems --user_identity_id "77e0347d-35ac-4a21-962b-e757a446b47f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
   {
-    "acs_system_id": "6737e186-8d54-48ce-a7da-a0be4d252172",
-    "name": "Assa Abloy Credential Service",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-05T07:16:51.971Z",
-    "system_type": "assa_abloy_credential_service",
-    "system_type_display_name": "Assa Abloy Credential Service",
-    "external_type": "assa_abloy_credential_service",
-    "external_type_display_name": "Assa Abloy Credential Service",
-    "connected_account_ids": ["dc08066f-d9b8-42f0-9c4b-c781cd900153"]
+    "acs_access_group_count": 5,
+    "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+    "acs_user_count": 20,
+    "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+    "created_at": "2025-06-15T16:54:17.946425Z",
+    "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+    "errors": [],
+    "external_type": "salto_ks_site",
+    "external_type_display_name": "Salto KS site",
+    "image_alt_text": "Salto KS site Logo",
+    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+    "is_credential_manager": false,
+    "location": { "time_zone": "America/New_York" },
+    "name": "My Access System",
+    "warnings": [],
+    "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
   }
 ]
 ```
@@ -252,10 +274,34 @@ ID of the user identity for which you want to retrieve all access systems.
 
 ## Response
 
-Array of [acs\_systems](./)
+Array of [acs\_systems](./../acs/systems)
 
 
----
+{% tabs %}
+{% tab title="JSON" %}
 
-## Examples
 
+
+```json
+{
+  "acs_access_group_count": 5,
+  "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
+  "acs_user_count": 20,
+  "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+  "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+  "created_at": "2025-06-15T16:54:17.946425Z",
+  "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+  "errors": [],
+  "external_type": "salto_ks_site",
+  "external_type_display_name": "Salto KS site",
+  "image_alt_text": "Salto KS site Logo",
+  "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+  "is_credential_manager": false,
+  "location": { "time_zone": "America/New_York" },
+  "name": "My ACS System",
+  "warnings": [],
+  "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
+}
+```
+{% endtab %}
+{% endtabs %}

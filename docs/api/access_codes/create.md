@@ -1,10 +1,262 @@
 # Create an Access Code
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Creates a new ongoing online access code.
+
+#### Code:
+
+```javascript
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Ongoing Online Access Code",
+  code: "1234",
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Ongoing Online Access Code",
+  "pulled_backup_access_code_id": null,
+  "status": "set",
+  "type": "ongoing",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Creates a new ongoing online access code.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Ongoing Online Access Code",
+  "code": "1234"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "access_code": {
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": null,
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Ongoing Online Access Code",
+    "pulled_backup_access_code_id": null,
+    "status": "set",
+    "type": "ongoing",
+    "warnings": []
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Creates a new ongoing online access code.
+
+#### Code:
+
+```python
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Ongoing Online Access Code",
+    code="1234",
+)
+```
+
+#### Output:
+
+```python
+AccessCode(
+    access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    code="1234",
+    common_code_key=None,
+    created_at="2025-06-14T16:54:17.946242Z",
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    errors=[],
+    is_backup=false,
+    is_backup_access_code_available=false,
+    is_external_modification_allowed=false,
+    is_managed=true,
+    is_offline_access_code=false,
+    is_one_time_use=false,
+    is_scheduled_on_device=true,
+    is_waiting_for_code_assignment=false,
+    name="My Ongoing Online Access Code",
+    pulled_backup_access_code_id=None,
+    status="set",
+    type="ongoing",
+    warnings=[],
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Creates a new ongoing online access code.
+
+#### Code:
+
+```ruby
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Ongoing Online Access Code",
+  code: "1234",
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code" => "1234",
+  "common_code_key" => nil,
+  "created_at" => "2025-06-14T16:54:17.946242Z",
+  "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "errors" => [],
+  "is_backup" => false,
+  "is_backup_access_code_available" => false,
+  "is_external_modification_allowed" => false,
+  "is_managed" => true,
+  "is_offline_access_code" => false,
+  "is_one_time_use" => false,
+  "is_scheduled_on_device" => true,
+  "is_waiting_for_code_assignment" => false,
+  "name" => "My Ongoing Online Access Code",
+  "pulled_backup_access_code_id" => nil,
+  "status" => "set",
+  "type" => "ongoing",
+  "warnings" => [],
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Creates a new ongoing online access code.
+
+#### Code:
+
+```php
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Ongoing Online Access Code",
+    code: "1234"
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code" => "1234",
+    "common_code_key" => null,
+    "created_at" => "2025-06-14T16:54:17.946242Z",
+    "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "errors" => [],
+    "is_backup" => false,
+    "is_backup_access_code_available" => false,
+    "is_external_modification_allowed" => false,
+    "is_managed" => true,
+    "is_offline_access_code" => false,
+    "is_one_time_use" => false,
+    "is_scheduled_on_device" => true,
+    "is_waiting_for_code_assignment" => false,
+    "name" => "My Ongoing Online Access Code",
+    "pulled_backup_access_code_id" => null,
+    "status" => "set",
+    "type" => "ongoing",
+    "warnings" => [],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Creates a new ongoing online access code.
+
+#### Code:
+
+```seam_cli
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Ongoing Online Access Code" --code "1234"
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Ongoing Online Access Code",
+  "pulled_backup_access_code_id": null,
+  "status": "set",
+  "type": "ongoing",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% endtabs %}
 
 
 <details>
@@ -81,7 +333,13 @@ Maximum rounding adjustment. To create a daily-bound [offline access code](https
 
 **`name`** *String*
 
-Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`. To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints. To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
+Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+
+Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+
+To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+
+To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
 
 ---
 
@@ -116,5 +374,1205 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 ## Response
 
-[access\_code](./)
+[access\_code](.)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": true,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Examples
+
+
+### Create a time-bound online access code
+
+Creates a new time-bound online access code.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Online Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Time-Bound Online Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Time-Bound Online Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "code": "1234"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "access_code": {
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": null,
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at": "2025-06-22T12:08:26.000Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Time-Bound Online Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-06-20T06:49:21.000Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Time-Bound Online Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    code="1234",
+)
+```
+
+#### Output:
+
+```python
+AccessCode(
+    access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    code="1234",
+    common_code_key=None,
+    created_at="2025-06-14T16:54:17.946242Z",
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    ends_at="2025-06-22T12:08:26.000Z",
+    errors=[],
+    is_backup=false,
+    is_backup_access_code_available=false,
+    is_external_modification_allowed=false,
+    is_managed=true,
+    is_offline_access_code=false,
+    is_one_time_use=false,
+    is_scheduled_on_device=true,
+    is_waiting_for_code_assignment=false,
+    name="My Time-Bound Online Access Code",
+    pulled_backup_access_code_id=None,
+    starts_at="2025-06-20T06:49:21.000Z",
+    status="set",
+    type="time_bound",
+    warnings=[],
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Online Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code" => "1234",
+  "common_code_key" => nil,
+  "created_at" => "2025-06-14T16:54:17.946242Z",
+  "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at" => "2025-06-22T12:08:26.000Z",
+  "errors" => [],
+  "is_backup" => false,
+  "is_backup_access_code_available" => false,
+  "is_external_modification_allowed" => false,
+  "is_managed" => true,
+  "is_offline_access_code" => false,
+  "is_one_time_use" => false,
+  "is_scheduled_on_device" => true,
+  "is_waiting_for_code_assignment" => false,
+  "name" => "My Time-Bound Online Access Code",
+  "pulled_backup_access_code_id" => nil,
+  "starts_at" => "2025-06-20T06:49:21.000Z",
+  "status" => "set",
+  "type" => "time_bound",
+  "warnings" => [],
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Time-Bound Online Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    code: "1234"
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code" => "1234",
+    "common_code_key" => null,
+    "created_at" => "2025-06-14T16:54:17.946242Z",
+    "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at" => "2025-06-22T12:08:26.000Z",
+    "errors" => [],
+    "is_backup" => false,
+    "is_backup_access_code_available" => false,
+    "is_external_modification_allowed" => false,
+    "is_managed" => true,
+    "is_offline_access_code" => false,
+    "is_one_time_use" => false,
+    "is_scheduled_on_device" => true,
+    "is_waiting_for_code_assignment" => false,
+    "name" => "My Time-Bound Online Access Code",
+    "pulled_backup_access_code_id" => null,
+    "starts_at" => "2025-06-20T06:49:21.000Z",
+    "status" => "set",
+    "type" => "time_bound",
+    "warnings" => [],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Online Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --code "1234"
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Time-Bound Online Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+
+### Create a time-bound offline access code
+
+Creates a new time-bound offline access code.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  max_time_rounding: "1h",
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Time-Bound Offline Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Time-Bound Offline Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "attempt_for_offline_device": true,
+  "preferred_code_length": 4,
+  "use_offline_access_code": true,
+  "is_offline_access_code": true,
+  "max_time_rounding": "1h"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "access_code": {
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": null,
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at": "2025-06-22T12:08:26.000Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": true,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Time-Bound Offline Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-06-20T06:49:21.000Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Time-Bound Offline Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device=true,
+    preferred_code_length=4,
+    use_offline_access_code=true,
+    is_offline_access_code=true,
+    max_time_rounding="1h",
+)
+```
+
+#### Output:
+
+```python
+AccessCode(
+    access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    code="1234",
+    common_code_key=None,
+    created_at="2025-06-14T16:54:17.946242Z",
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    ends_at="2025-06-22T12:08:26.000Z",
+    errors=[],
+    is_backup=false,
+    is_backup_access_code_available=false,
+    is_external_modification_allowed=false,
+    is_managed=true,
+    is_offline_access_code=true,
+    is_one_time_use=false,
+    is_scheduled_on_device=true,
+    is_waiting_for_code_assignment=false,
+    name="My Time-Bound Offline Access Code",
+    pulled_backup_access_code_id=None,
+    starts_at="2025-06-20T06:49:21.000Z",
+    status="set",
+    type="time_bound",
+    warnings=[],
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  max_time_rounding: "1h",
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code" => "1234",
+  "common_code_key" => nil,
+  "created_at" => "2025-06-14T16:54:17.946242Z",
+  "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at" => "2025-06-22T12:08:26.000Z",
+  "errors" => [],
+  "is_backup" => false,
+  "is_backup_access_code_available" => false,
+  "is_external_modification_allowed" => false,
+  "is_managed" => true,
+  "is_offline_access_code" => true,
+  "is_one_time_use" => false,
+  "is_scheduled_on_device" => true,
+  "is_waiting_for_code_assignment" => false,
+  "name" => "My Time-Bound Offline Access Code",
+  "pulled_backup_access_code_id" => nil,
+  "starts_at" => "2025-06-20T06:49:21.000Z",
+  "status" => "set",
+  "type" => "time_bound",
+  "warnings" => [],
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Time-Bound Offline Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device: true,
+    preferred_code_length: 4,
+    use_offline_access_code: true,
+    is_offline_access_code: true,
+    max_time_rounding: "1h"
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code" => "1234",
+    "common_code_key" => null,
+    "created_at" => "2025-06-14T16:54:17.946242Z",
+    "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at" => "2025-06-22T12:08:26.000Z",
+    "errors" => [],
+    "is_backup" => false,
+    "is_backup_access_code_available" => false,
+    "is_external_modification_allowed" => false,
+    "is_managed" => true,
+    "is_offline_access_code" => true,
+    "is_one_time_use" => false,
+    "is_scheduled_on_device" => true,
+    "is_waiting_for_code_assignment" => false,
+    "name" => "My Time-Bound Offline Access Code",
+    "pulled_backup_access_code_id" => null,
+    "starts_at" => "2025-06-20T06:49:21.000Z",
+    "status" => "set",
+    "type" => "time_bound",
+    "warnings" => [],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Offline Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --attempt_for_offline_device true --preferred_code_length 4 --use_offline_access_code true --is_offline_access_code true --max_time_rounding "1h"
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Time-Bound Offline Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+
+### Create a one-time-use offline access code
+
+Creates a new one-time-use offline access code.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My One-Time-Use Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  is_one_time_use: true,
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": true,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My One-Time-Use Offline Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My One-Time-Use Offline Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "attempt_for_offline_device": true,
+  "preferred_code_length": 4,
+  "use_offline_access_code": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": true
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "access_code": {
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": null,
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at": "2025-06-22T12:08:26.000Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": true,
+    "is_one_time_use": true,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My One-Time-Use Offline Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-06-20T06:49:21.000Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My One-Time-Use Offline Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device=true,
+    preferred_code_length=4,
+    use_offline_access_code=true,
+    is_offline_access_code=true,
+    is_one_time_use=true,
+)
+```
+
+#### Output:
+
+```python
+AccessCode(
+    access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    code="1234",
+    common_code_key=None,
+    created_at="2025-06-14T16:54:17.946242Z",
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    ends_at="2025-06-22T12:08:26.000Z",
+    errors=[],
+    is_backup=false,
+    is_backup_access_code_available=false,
+    is_external_modification_allowed=false,
+    is_managed=true,
+    is_offline_access_code=true,
+    is_one_time_use=true,
+    is_scheduled_on_device=true,
+    is_waiting_for_code_assignment=false,
+    name="My One-Time-Use Offline Access Code",
+    pulled_backup_access_code_id=None,
+    starts_at="2025-06-20T06:49:21.000Z",
+    status="set",
+    type="time_bound",
+    warnings=[],
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My One-Time-Use Offline Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  attempt_for_offline_device: true,
+  preferred_code_length: 4,
+  use_offline_access_code: true,
+  is_offline_access_code: true,
+  is_one_time_use: true,
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code" => "1234",
+  "common_code_key" => nil,
+  "created_at" => "2025-06-14T16:54:17.946242Z",
+  "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at" => "2025-06-22T12:08:26.000Z",
+  "errors" => [],
+  "is_backup" => false,
+  "is_backup_access_code_available" => false,
+  "is_external_modification_allowed" => false,
+  "is_managed" => true,
+  "is_offline_access_code" => true,
+  "is_one_time_use" => true,
+  "is_scheduled_on_device" => true,
+  "is_waiting_for_code_assignment" => false,
+  "name" => "My One-Time-Use Offline Access Code",
+  "pulled_backup_access_code_id" => nil,
+  "starts_at" => "2025-06-20T06:49:21.000Z",
+  "status" => "set",
+  "type" => "time_bound",
+  "warnings" => [],
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My One-Time-Use Offline Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    attempt_for_offline_device: true,
+    preferred_code_length: 4,
+    use_offline_access_code: true,
+    is_offline_access_code: true,
+    is_one_time_use: true
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code" => "1234",
+    "common_code_key" => null,
+    "created_at" => "2025-06-14T16:54:17.946242Z",
+    "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at" => "2025-06-22T12:08:26.000Z",
+    "errors" => [],
+    "is_backup" => false,
+    "is_backup_access_code_available" => false,
+    "is_external_modification_allowed" => false,
+    "is_managed" => true,
+    "is_offline_access_code" => true,
+    "is_one_time_use" => true,
+    "is_scheduled_on_device" => true,
+    "is_waiting_for_code_assignment" => false,
+    "name" => "My One-Time-Use Offline Access Code",
+    "pulled_backup_access_code_id" => null,
+    "starts_at" => "2025-06-20T06:49:21.000Z",
+    "status" => "set",
+    "type" => "time_bound",
+    "warnings" => [],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My One-Time-Use Offline Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --attempt_for_offline_device true --preferred_code_length 4 --use_offline_access_code true --is_offline_access_code true --is_one_time_use true
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": true,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My One-Time-Use Offline Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+
+### Create a time-bound online access code with a backup access code pool
+
+Creates a new time-bound online access code with a backup access code pool.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.accessCodes.create({
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+  use_backup_access_code_pool: true,
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Time-Bound Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "name": "My Time-Bound Access Code",
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "code": "1234",
+  "use_backup_access_code_pool": true
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "access_code": {
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": null,
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at": "2025-06-22T12:08:26.000Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": true,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Time-Bound Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-06-20T06:49:21.000Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.access_codes.create(
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name="My Time-Bound Access Code",
+    starts_at="2025-06-20T06:49:21.000Z",
+    ends_at="2025-06-22T12:08:26.000Z",
+    code="1234",
+    use_backup_access_code_pool=true,
+)
+```
+
+#### Output:
+
+```python
+AccessCode(
+    access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    code="1234",
+    common_code_key=None,
+    created_at="2025-06-14T16:54:17.946242Z",
+    device_id="a5036385-adcb-41b5-88c2-dd8a702a0730",
+    ends_at="2025-06-22T12:08:26.000Z",
+    errors=[],
+    is_backup=false,
+    is_backup_access_code_available=true,
+    is_external_modification_allowed=false,
+    is_managed=true,
+    is_offline_access_code=false,
+    is_one_time_use=false,
+    is_scheduled_on_device=true,
+    is_waiting_for_code_assignment=false,
+    name="My Time-Bound Access Code",
+    pulled_backup_access_code_id=None,
+    starts_at="2025-06-20T06:49:21.000Z",
+    status="set",
+    type="time_bound",
+    warnings=[],
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.access_codes.create(
+  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  name: "My Time-Bound Access Code",
+  starts_at: "2025-06-20T06:49:21.000Z",
+  ends_at: "2025-06-22T12:08:26.000Z",
+  code: "1234",
+  use_backup_access_code_pool: true,
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code" => "1234",
+  "common_code_key" => nil,
+  "created_at" => "2025-06-14T16:54:17.946242Z",
+  "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at" => "2025-06-22T12:08:26.000Z",
+  "errors" => [],
+  "is_backup" => false,
+  "is_backup_access_code_available" => true,
+  "is_external_modification_allowed" => false,
+  "is_managed" => true,
+  "is_offline_access_code" => false,
+  "is_one_time_use" => false,
+  "is_scheduled_on_device" => true,
+  "is_waiting_for_code_assignment" => false,
+  "name" => "My Time-Bound Access Code",
+  "pulled_backup_access_code_id" => nil,
+  "starts_at" => "2025-06-20T06:49:21.000Z",
+  "status" => "set",
+  "type" => "time_bound",
+  "warnings" => [],
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->access_codes->create(
+    device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    name: "My Time-Bound Access Code",
+    starts_at: "2025-06-20T06:49:21.000Z",
+    ends_at: "2025-06-22T12:08:26.000Z",
+    code: "1234",
+    use_backup_access_code_pool: true
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code" => "1234",
+    "common_code_key" => null,
+    "created_at" => "2025-06-14T16:54:17.946242Z",
+    "device_id" => "a5036385-adcb-41b5-88c2-dd8a702a0730",
+    "ends_at" => "2025-06-22T12:08:26.000Z",
+    "errors" => [],
+    "is_backup" => false,
+    "is_backup_access_code_available" => true,
+    "is_external_modification_allowed" => false,
+    "is_managed" => true,
+    "is_offline_access_code" => false,
+    "is_one_time_use" => false,
+    "is_scheduled_on_device" => true,
+    "is_waiting_for_code_assignment" => false,
+    "name" => "My Time-Bound Access Code",
+    "pulled_backup_access_code_id" => null,
+    "starts_at" => "2025-06-20T06:49:21.000Z",
+    "status" => "set",
+    "type" => "time_bound",
+    "warnings" => [],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --name "My Time-Bound Access Code" --starts_at "2025-06-20T06:49:21.000Z" --ends_at "2025-06-22T12:08:26.000Z" --code "1234" --use_backup_access_code_pool true
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "a5036385-adcb-41b5-88c2-dd8a702a0730",
+  "ends_at": "2025-06-22T12:08:26.000Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Time-Bound Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-06-20T06:49:21.000Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+
+{% endtabs %}

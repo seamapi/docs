@@ -1,8 +1,7 @@
 # Get a Thermostat Schedule
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
 
@@ -10,59 +9,67 @@ Returns a specified [thermostat schedule](../../../capability-guides/thermostats
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.get({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "name": "Reservation 2",
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-10T15:00:00.000Z",
-  "ends_at": "2024-11-15T12:00:00.000Z",
-  "max_override_period_minutes": 90
+  "climate_preset_key": "Occupied",
+  "created_at": "2025-06-14T16:54:17.946316Z",
+  "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+  "ends_at": "2025-07-14T16:54:17.946313Z",
+  "errors": [],
+  "is_override_allowed": true,
+  "max_override_period_minutes": 90,
+  "name": "Jane's Stay",
+  "starts_at": "2025-07-12T16:54:17.946313Z",
+  "thermostat_schedule_id": "408f3f85-11ae-4111-bec1-0f2408a2b218",
+  "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+  "thermostat_schedule_id": "408f3f85-11ae-4111-bec1-0f2408a2b218"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "thermostat_schedule": {
-    "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    "name": "Reservation 2",
-    "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-    "climate_preset_key": "occupied",
-    "starts_at": "2024-11-10T15:00:00.000Z",
-    "ends_at": "2024-11-15T12:00:00.000Z",
-    "max_override_period_minutes": 90
+    "climate_preset_key": "Occupied",
+    "created_at": "2025-06-14T16:54:17.946316Z",
+    "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+    "ends_at": "2025-07-14T16:54:17.946313Z",
+    "errors": [],
+    "is_override_allowed": true,
+    "max_override_period_minutes": 90,
+    "name": "Jane's Stay",
+    "starts_at": "2025-07-12T16:54:17.946313Z",
+    "thermostat_schedule_id": "408f3f85-11ae-4111-bec1-0f2408a2b218",
+    "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
   }
 }
 ```
@@ -70,135 +77,120 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.get(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+    thermostat_schedule_id="408f3f85-11ae-4111-bec1-0f2408a2b218"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ThermostatSchedule(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    name="Reservation 2",
-    device_id="2d488679-6f07-4810-aed2-e726872c1dd5",
-    climate_preset_key="occupied",
-    starts_at="2024-11-10T15:00:00.000Z",
-    ends_at="2024-11-15T12:00:00.000Z",
+    climate_preset_key="Occupied",
+    created_at="2025-06-14T16:54:17.946316Z",
+    device_id="dc1dfc4b-8082-453f-a953-276941af8650",
+    ends_at="2025-07-14T16:54:17.946313Z",
+    errors=[],
+    is_override_allowed=true,
     max_override_period_minutes=90,
+    name="Jane's Stay",
+    starts_at="2025-07-12T16:54:17.946313Z",
+    thermostat_schedule_id="408f3f85-11ae-4111-bec1-0f2408a2b218",
+    workspace_id="58419b36-6103-44e5-aa83-2163e90cce01",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.thermostats.schedules.get(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
+seam.thermostats.schedules.get(thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
-  "thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "name" => "Reservation 2",
-  "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key" => "occupied",
-  "starts_at" => "2024-11-10T15:00:00.000Z",
-  "ends_at" => "2024-11-15T12:00:00.000Z",
+  "climate_preset_key" => "Occupied",
+  "created_at" => "2025-06-14T16:54:17.946316Z",
+  "device_id" => "dc1dfc4b-8082-453f-a953-276941af8650",
+  "ends_at" => "2025-07-14T16:54:17.946313Z",
+  "errors" => [],
+  "is_override_allowed" => true,
   "max_override_period_minutes" => 90,
+  "name" => "Jane's Stay",
+  "starts_at" => "2025-07-12T16:54:17.946313Z",
+  "thermostat_schedule_id" => "408f3f85-11ae-4111-bec1-0f2408a2b218",
+  "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->schedules->get(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+    thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
-    "thermostat_schedule_id" => "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-    "name" => "Reservation 2",
-    "device_id" => "2d488679-6f07-4810-aed2-e726872c1dd5",
-    "climate_preset_key" => "occupied",
-    "starts_at" => "2024-11-10T15:00:00.000Z",
-    "ends_at" => "2024-11-15T12:00:00.000Z",
+    "climate_preset_key" => "Occupied",
+    "created_at" => "2025-06-14T16:54:17.946316Z",
+    "device_id" => "dc1dfc4b-8082-453f-a953-276941af8650",
+    "ends_at" => "2025-07-14T16:54:17.946313Z",
+    "errors" => [],
+    "is_override_allowed" => true,
     "max_override_period_minutes" => 90,
+    "name" => "Jane's Stay",
+    "starts_at" => "2025-07-12T16:54:17.946313Z",
+    "thermostat_schedule_id" => "408f3f85-11ae-4111-bec1-0f2408a2b218",
+    "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 ];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import schedules "github.com/seamapi/go/schedules"
-
-func main() {
-	client.Thermostats.Schedules.Get(
-		context.Background(),
-		schedules.SchedulesGetRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ThermostatSchedule{ThermostatScheduleId: "89d3507e-60e3-4101-bd1b-ba066ec30ad4", Name: "Reservation 2", DeviceId: "2d488679-6f07-4810-aed2-e726872c1dd5", ClimatePresetKey: "occupied", StartsAt: "2024-11-10T15:00:00.000Z", EndsAt: "2024-11-15T12:00:00.000Z", MaxOverridePeriodMinutes: 90}
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Returns a specified thermostat schedule.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam thermostats schedules get --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+seam thermostats schedules get --thermostat_schedule_id "408f3f85-11ae-4111-bec1-0f2408a2b218"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  "name": "Reservation 2",
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
-  "climate_preset_key": "occupied",
-  "starts_at": "2024-11-10T15:00:00.000Z",
-  "ends_at": "2024-11-15T12:00:00.000Z",
-  "max_override_period_minutes": 90
+  "climate_preset_key": "Occupied",
+  "created_at": "2025-06-14T16:54:17.946316Z",
+  "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+  "ends_at": "2025-07-14T16:54:17.946313Z",
+  "errors": [],
+  "is_override_allowed": true,
+  "max_override_period_minutes": 90,
+  "name": "Jane's Stay",
+  "starts_at": "2025-07-12T16:54:17.946313Z",
+  "thermostat_schedule_id": "408f3f85-11ae-4111-bec1-0f2408a2b218",
+  "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
 {% endtab %}
@@ -229,10 +221,28 @@ ID of the thermostat schedule that you want to get.
 
 ## Response
 
-[thermostat\_schedule](./)
+[thermostat\_schedule](.)
 
 
----
+{% tabs %}
+{% tab title="JSON" %}
 
-## Examples
 
+
+```json
+{
+  "climate_preset_key": "eco",
+  "created_at": "2025-06-14T16:54:17.946316Z",
+  "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+  "ends_at": "2025-07-14T16:54:17.946313Z",
+  "errors": [],
+  "is_override_allowed": true,
+  "max_override_period_minutes": 90,
+  "name": "My Thermostat Schedule",
+  "starts_at": "2025-07-12T16:54:17.946313Z",
+  "thermostat_schedule_id": "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+  "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
+}
+```
+{% endtab %}
+{% endtabs %}

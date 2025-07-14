@@ -15,7 +15,7 @@ HVAC mode (`hvac_mode_setting`) governs the operation of your heating, ventilati
 
 ## HVAC Mode Constraints
 
-Some models of thermostats have specific requirements and constraints related to setting the HVAC mode. You can retrieve these requirements by issuing a [Get Device](../../../api-clients/devices/get.md) or [List Devices](../../../api-clients/devices/list.md) request.
+Some models of thermostats have specific requirements and constraints related to setting the HVAC mode. You can retrieve these requirements by issuing a [Get Device](../../../api/devices/get.md) or [List Devices](../../../api/devices/list.md) request.
 
 The following example shows a set of thermostat HVAC mode requirements:
 

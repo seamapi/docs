@@ -1,10 +1,217 @@
 # List Unmanaged Access Codes
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Returns a list of all unmanaged access codes.
+
+#### Code:
+
+```javascript
+await seam.accessCodes.unmanaged.list({
+  device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+});
+```
+
+#### Output:
+
+```javascript
+[
+  {
+    "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",
+    "code": "1234",
+    "created_at": "2025-06-16T16:54:17.946283Z",
+    "device_id": "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+    "ends_at": "2025-06-23T16:54:17.946261Z",
+    "errors": [],
+    "is_managed": false,
+    "name": "My Unmanaged Access Code",
+    "starts_at": "2025-06-21T16:54:17.946261Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+]
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Returns a list of all unmanaged access codes.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/list" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "device_id": "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "access_codes": [
+    {
+      "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",
+      "code": "1234",
+      "created_at": "2025-06-16T16:54:17.946283Z",
+      "device_id": "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+      "ends_at": "2025-06-23T16:54:17.946261Z",
+      "errors": [],
+      "is_managed": false,
+      "name": "My Unmanaged Access Code",
+      "starts_at": "2025-06-21T16:54:17.946261Z",
+      "status": "set",
+      "type": "time_bound",
+      "warnings": []
+    }
+  ]
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Returns a list of all unmanaged access codes.
+
+#### Code:
+
+```python
+seam.access_codes.unmanaged.list(device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1")
+```
+
+#### Output:
+
+```python
+[
+    UnmanagedAccessCode(
+        access_code_id="88fa1812-bef8-4108-9fb4-4855376c3edf",
+        code="1234",
+        created_at="2025-06-16T16:54:17.946283Z",
+        device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+        ends_at="2025-06-23T16:54:17.946261Z",
+        errors=[],
+        is_managed=false,
+        name="My Unmanaged Access Code",
+        starts_at="2025-06-21T16:54:17.946261Z",
+        status="set",
+        type="time_bound",
+        warnings=[],
+    )
+]
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Returns a list of all unmanaged access codes.
+
+#### Code:
+
+```ruby
+seam.access_codes.unmanaged.list(device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1")
+```
+
+#### Output:
+
+```ruby
+[
+  {
+    "access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf",
+    "code" => "1234",
+    "created_at" => "2025-06-16T16:54:17.946283Z",
+    "device_id" => "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+    "ends_at" => "2025-06-23T16:54:17.946261Z",
+    "errors" => [],
+    "is_managed" => false,
+    "name" => "My Unmanaged Access Code",
+    "starts_at" => "2025-06-21T16:54:17.946261Z",
+    "status" => "set",
+    "type" => "time_bound",
+    "warnings" => [],
+  },
+]
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Returns a list of all unmanaged access codes.
+
+#### Code:
+
+```php
+$seam->access_codes->unmanaged->list(
+    device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1"
+);
+```
+
+#### Output:
+
+```php
+[
+    [
+        "access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf",
+        "code" => "1234",
+        "created_at" => "2025-06-16T16:54:17.946283Z",
+        "device_id" => "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+        "ends_at" => "2025-06-23T16:54:17.946261Z",
+        "errors" => [],
+        "is_managed" => false,
+        "name" => "My Unmanaged Access Code",
+        "starts_at" => "2025-06-21T16:54:17.946261Z",
+        "status" => "set",
+        "type" => "time_bound",
+        "warnings" => [],
+    ],
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Returns a list of all unmanaged access codes.
+
+#### Code:
+
+```seam_cli
+seam access-codes unmanaged list --device_id "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1"
+```
+
+#### Output:
+
+```seam_cli
+[
+  {
+    "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",
+    "code": "1234",
+    "created_at": "2025-06-16T16:54:17.946283Z",
+    "device_id": "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+    "ends_at": "2025-06-23T16:54:17.946261Z",
+    "errors": [],
+    "is_managed": false,
+    "name": "My Unmanaged Access Code",
+    "starts_at": "2025-06-21T16:54:17.946261Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": []
+  }
+]
+```
+{% endtab %}
+
+{% endtabs %}
 
 
 <details>
@@ -36,5 +243,29 @@ Your user ID for the user by which to filter unmanaged access codes.
 
 ## Response
 
-Array of [unmanaged\_access\_codes](./)
+Array of [unmanaged\_access\_codes](.)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",
+  "code": "1234",
+  "created_at": "2025-06-16T16:54:17.946283Z",
+  "device_id": "b3439f17-7273-46f3-9e20-9a283d9cb5b4",
+  "ends_at": "2025-06-23T16:54:17.946261Z",
+  "errors": [],
+  "is_managed": false,
+  "name": "My Unmanaged Access Code",
+  "starts_at": "2025-06-21T16:54:17.946261Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}

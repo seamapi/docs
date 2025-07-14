@@ -1,8 +1,7 @@
 # Create a Climate Preset
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Creates a [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -10,24 +9,24 @@ Creates a [climate preset](../../capability-guides/thermostats/creating-and-mana
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
+Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.createClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
+  device_id: "ba9b816d-c255-46b9-a16d-971e6f535dd3",
+  manual_override_allowed: true,
+  climate_preset_key: "Occupied",
   name: "Occupied",
   fan_mode_setting: "auto",
   hvac_mode_setting: "heat_cool",
   cooling_set_point_celsius: 25,
   heating_set_point_celsius: 20,
-  manual_override_allowed: true,
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -36,28 +35,28 @@ await seam.thermostats.createClimatePreset({
 
 {% tab title="cURL" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
+Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/create_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "climate_preset_key": "occupied",
+  "device_id": "ba9b816d-c255-46b9-a16d-971e6f535dd3",
+  "manual_override_allowed": true,
+  "climate_preset_key": "Occupied",
   "name": "Occupied",
   "fan_mode_setting": "auto",
   "hvac_mode_setting": "heat_cool",
   "cooling_set_point_celsius": 25,
-  "heating_set_point_celsius": 20,
-  "manual_override_allowed": true
+  "heating_set_point_celsius": 20
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -66,24 +65,24 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
+Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.create_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key="occupied",
+    device_id="ba9b816d-c255-46b9-a16d-971e6f535dd3",
+    manual_override_allowed=true,
+    climate_preset_key="Occupied",
     name="Occupied",
     fan_mode_setting="auto",
     hvac_mode_setting="heat_cool",
     cooling_set_point_celsius=25,
     heating_set_point_celsius=20,
-    manual_override_allowed=true,
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -92,24 +91,24 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
+Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.create_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
+  device_id: "ba9b816d-c255-46b9-a16d-971e6f535dd3",
+  manual_override_allowed: true,
+  climate_preset_key: "Occupied",
   name: "Occupied",
   fan_mode_setting: "auto",
   hvac_mode_setting: "heat_cool",
   cooling_set_point_celsius: 25,
   heating_set_point_celsius: 20,
-  manual_override_allowed: true,
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -118,77 +117,41 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
+Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->create_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "occupied",
+    device_id: "ba9b816d-c255-46b9-a16d-971e6f535dd3",
+    manual_override_allowed: true,
+    climate_preset_key: "Occupied",
     name: "Occupied",
     fan_mode_setting: "auto",
     hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20,
-    manual_override_allowed: true
+    heating_set_point_celsius: 20
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.CreateClimatePreset(
-		context.Background(),
-		api.ThermostatsCreateClimatePresetRequest{
-			DeviceId:               api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey:       api.String("occupied"),
-			Name:                   api.String("Occupied"),
-			FanModeSetting:         api.String("auto"),
-			HvacModeSetting:        api.String("heat_cool"),
-			CoolingSetPointCelsius: api.Float64(25),
-			HeatingSetPointCelsius: api.Float64(20),
-			ManualOverrideAllowed:  api.Bool(true),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired settings for the climate preset, including `manual_override_allowed`.
+Creates a climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam thermostats create-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied" --name "Occupied" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_celsius 25 --heating_set_point_celsius 20 --manual_override_allowed true
+seam thermostats create-climate-preset --device_id "ba9b816d-c255-46b9-a16d-971e6f535dd3" --manual_override_allowed true --climate_preset_key "Occupied" --name "Occupied" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_celsius 25 --heating_set_point_celsius 20
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -224,6 +187,12 @@ ID of the thermostat device for which you want create a climate preset.
 
 ---
 
+**`climate_preset_mode`** *String*
+
+The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+
+---
+
 **`cooling_set_point_celsius`** *Number*
 
 Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
@@ -235,6 +204,50 @@ Temperature to which the thermostat should cool (in °C). See also [Set Points](
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ---
+
+**`ecobee_metadata`** *Object*
+
+Metadata specific to the Ecobee climate, if applicable.
+
+<details>
+
+<summary><b><code>climate_ref</code></b> <i>String</i></summary>
+
+Reference to the Ecobee climate, if applicable.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>is_optimized</code></b> <i>Boolean</i></summary>
+
+Indicates if the climate preset is optimized by Ecobee.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>owner</code></b> <i>Enum</i></summary>
+
+Indicates whether the climate preset is owned by the user or the system.
+
+Enum values:
+
+- <code>user</code>
+- <code>system</code>
+
+</details>
+
+---
+
 
 **`fan_mode_setting`** *String*
 
@@ -276,9 +289,4 @@ User-friendly name to identify the [climate preset](../../capability-guides/ther
 ## Response
 
 void
-
-
----
-
-## Examples
 

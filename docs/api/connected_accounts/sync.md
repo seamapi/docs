@@ -1,8 +1,7 @@
 # Sync a Connected Account
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Request a [connected account](../../core-concepts/connected-accounts/README.md) sync attempt for the specified `connected_account_id`.
 
@@ -10,17 +9,17 @@ Request a [connected account](../../core-concepts/connected-accounts/README.md) 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.sync({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -29,21 +28,21 @@ await seam.connectedAccounts.sync({
 
 {% tab title="cURL" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/sync" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+  "connected_account_id": "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -52,17 +51,17 @@ EOF
 
 {% tab title="Python" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.sync(
-    connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id="f886f890-4ca5-4ce5-b248-509cbfb6c279"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -71,15 +70,15 @@ None
 
 {% tab title="Ruby" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.connected_accounts.sync(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
+seam.connected_accounts.sync(connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -88,63 +87,34 @@ nil
 
 {% tab title="PHP" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connected_accounts->sync(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Request an on-demand sync of the devices and systems in a connected account.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Sync(
-		context.Background(),
-		api.ConnectedAccountsSyncRequest{
-			ConnectedAccountId: api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Request an on-demand sync of the devices and systems in a connected account.
+Request a connected account sync attempt for the specified connected account.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam connected-accounts sync --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
+seam connected-accounts sync --connected_account_id "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -177,9 +147,4 @@ ID of the connected account that you want to sync.
 ## Response
 
 void
-
-
----
-
-## Examples
 

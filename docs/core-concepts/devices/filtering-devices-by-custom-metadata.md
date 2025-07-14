@@ -4,7 +4,7 @@ description: When listing devices, you can filter by custom metadata.
 
 # Filtering Devices by Custom Metadata
 
-When you use [List Devices](../../api-clients/devices/list.md), you can filter the list by one or more [custom metadata](../../api-clients/devices/#device-properties) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
+When you use [List Devices](../../api/devices/list.md), you can filter the list by one or more [custom metadata](../../api/devices/#properties) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
 
 {% hint style="info" %}
 You can use the [Update Connected Account](../../api/connected_accounts/update.md) method with the optional `custom_metadata` property to [add custom metadata for a device](adding-custom-metadata-to-a-device.md).
@@ -181,66 +181,6 @@ foreach (var device in devices)
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
 
-var devices = seam.devices().list(DevicesListRequest.builder()
-                .customMetadataHas(customMetadata)
-                .build());
-
-System.out.println(devices);
-```
-
-**Response:**
-
-```json
-[{
-  "device_id" : "f7a7fb02-9277-4354-8dd1-28e2d016a7a9",
-  "device_type" : "schlage_lock",
-  ...
-  "is_managed" : true,
-  "custom_metadata" : {
-    "internal_account_id" : "user-1"
-  }
-},...
-]
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-devices, err := client.Devices.List(
-	context.Background(),
-	&api.DevicesListRequest{
-		CustomMetadataHas: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(devices)
-return nil
-```
-
-**Response:**
-
-```json
-[{
-  "device_id": "f7a7fb02-9277-4354-8dd1-28e2d016a7a9",
-  "device_type": "schlage_lock",
-  ...
-  "is_managed": true,
-  "custom_metadata": {
-    "internal_account_id": "user-1"
-  }
-}...
-]
-```
-{% endtab %}
 {% endtabs %}

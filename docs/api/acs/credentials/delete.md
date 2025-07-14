@@ -1,8 +1,7 @@
 # Delete a Credential
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -10,17 +9,17 @@ Deletes a specified [credential](../../../capability-guides/access-systems/manag
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.delete({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -29,21 +28,21 @@ await seam.acs.credentials.delete({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+  "acs_credential_id": "33bbceea-221e-48bd-8d38-aa72f88a1cab"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -52,15 +51,15 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```python
-seam.acs.credentials.delete(acs_credential_id="66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.delete(acs_credential_id="33bbceea-221e-48bd-8d38-aa72f88a1cab")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -69,15 +68,15 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.acs.credentials.delete(acs_credential_id: "66666666-6666-6666-6666-666666666666")
+seam.acs.credentials.delete(acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -86,64 +85,34 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->delete(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
+    acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `acs_credential_id` to delete the specified credential.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Delete(
-		context.Background(),
-		credentials.CredentialsDeleteRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_credential_id` to delete the specified credential.
+Deletes a specified credential.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs credentials delete --acs_credential_id "66666666-6666-6666-6666-666666666666"
+seam acs credentials delete --acs_credential_id "33bbceea-221e-48bd-8d38-aa72f88a1cab"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -176,9 +145,4 @@ ID of the credential that you want to delete.
 ## Response
 
 void
-
-
----
-
-## Examples
 

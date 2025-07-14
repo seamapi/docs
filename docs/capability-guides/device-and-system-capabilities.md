@@ -2,7 +2,7 @@
 description: Learn about device and system capabilities, as well as capability flags.
 ---
 
-# 📋 Device and System Capabilities
+# Device and System Capabilities
 
 <figure><img src="../.gitbook/assets/blog-cover_new-capabilities.png" alt="In the Seam API, capability flags inform your application about what features and behaviors each device supports."><figcaption></figcaption></figure>
 
@@ -21,14 +21,16 @@ All capability flags share the following behavior:
 * If `true`, the device has this capability, and this capability is functional on this device instance.
 *   If `false`, the device has this capability, but the capability is not currently functional.
 
-    See the device [errors](../api-clients/devices/#device-error-types) and [warnings](../api-clients/devices/#device-warning-types) for more details about the cause of this issue. You can also examine the [properties](../api-clients/devices/#device-properties) of the device and [events](../api-clients/events/#event-types) related to the device to learn more about the cause of this issue.
+    See the device [errors](../api/devices/#errors) and [warnings](../api/devices/#warnings) for more details about the cause of this issue. You can also examine the [properties](../api/devices/#properties) of the device and [events](../api/events/) related to the device to learn more about the cause of this issue.
 * If not present, the device does not have this capability.
 
-Reasons why a capability flag might be `false` could include that the device is currently offline or that a required hardware accessory is not connected to the device.
+Reasons why a capability flag might be `false` could include that a required hardware accessory is not connected to the device. For example, if a lock needs a Wi-Fi bridge for connectivity and is currently not connected to a bridge, the lock cannot be remotely unlocked. If a lock is missing an accessory keypad, access codes cannot be programmed on the lock.
+
+With respect to the ability to program online access codes, as long as a lock has the required hardware, Seam assumes that any offline status is temporary and will be resolved before [it's time to set the access code on the device](../products/smart-locks/access-codes/lifecycle-of-access-codes.md). Consequently, in this case, Seam maintains `can_program_online_access_codes` as `true`.
 
 <figure><img src="../.gitbook/assets/capability-flags-explained-remote-unlock.png" alt="Capability flags help you to understand why a device cannot currently perform an action." width="563"><figcaption><p>Capability flags help you to understand why a device cannot currently perform an action.</p></figcaption></figure>
 
-Seam recommends adding capability checks before performing specific actions in your app. For example, before performing a [remote unlock](../products/smart-locks/lock-and-unlock.md#unlocking-a-door) operation, you can check to make sure that the target device supports remote unlocking. For details and code samples, see the corresponding [capability guides](broken-reference/).
+Seam recommends adding capability checks before performing specific actions in your app. For example, before performing a [remote unlock](../products/smart-locks/lock-and-unlock.md#unlocking-a-door) operation, you can check to make sure that the target device supports remote unlocking. For details and code samples, see the corresponding capability guides.
 
 {% hint style="info" %}
 In addition to viewing the capabilities for a specific device, you can also view the capabilities for a provider using [List Device Providers](../api/devices/list_device_providers.md). If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.

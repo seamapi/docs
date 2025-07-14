@@ -6,11 +6,11 @@ description: >-
 
 # Setting and Monitoring Temperature Thresholds
 
-You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](../../api-clients/events/#event-types) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
+You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](../../api/events/) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
 
 Use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set\_temperature\_threshold.md) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../core-concepts/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
 
-When the thermostat reports a temperature outside the threshold range, Seam also adds a warning on the thermostat. You can use the [`/devices/get`](../../api-clients/devices/get.md) endpoint to get the thermostat and then inspect its `device.warnings` property.
+When the thermostat reports a temperature outside the threshold range, Seam also adds a warning on the thermostat. You can use the [`/devices/get`](../../api/devices/get.md) endpoint to get the thermostat and then inspect its `device.warnings` property.
 
 ***
 
@@ -129,40 +129,15 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## View a Temperature Threshold
 
-The temperature threshold range that you set for a thermostat is a property of the [`thermostat`](../../api/thermostats/) resource itself. To view the threshold values, use the [`/devices/get`](../../api-clients/devices/get.md) endpoint and inspect the `thermostat.temperature_threshold`.
+The temperature threshold range that you set for a thermostat is a property of the [`thermostat`](../../api/thermostats/) resource itself. To view the threshold values, use the [`/devices/get`](../../api/devices/get.md) endpoint and inspect the `thermostat.temperature_threshold`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -302,33 +277,8 @@ $seam->devices->get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -501,31 +451,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```java
-// Coming soon!
-```
-
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}

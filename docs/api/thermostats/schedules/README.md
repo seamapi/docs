@@ -3,13 +3,33 @@
 ## The thermostat_schedule Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
 - [Endpoints](./#endpoints)
 
 
 Represents a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that activates a configured [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
+
+{% tabs %}
+{% tab title="Thermostat Schedule" %}
+
+A thermostat schedule resource.
+
+```json
+{
+  "climate_preset_key": "eco",
+  "created_at": "2025-06-14T16:54:17.946316Z",
+  "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+  "ends_at": "2025-07-14T16:54:17.946313Z",
+  "errors": [],
+  "is_override_allowed": true,
+  "max_override_period_minutes": 90,
+  "name": "My Thermostat Schedule",
+  "starts_at": "2025-07-12T16:54:17.946313Z",
+  "thermostat_schedule_id": "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+  "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 ## Properties
@@ -58,14 +78,14 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>error_code</code></strong> <i>String</i>
 
-  <strong><code>error_code</code></strong> <i>String</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 </details>
 
 ---

@@ -179,29 +179,6 @@ Warnings:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-AccessCode accessCode = seam.accessCodes()
-        .get(AccessCodesGetRequest.builder()
-                .accessCodeId("cd7f5b14-56e3-48b1-a351-9cab819eea6a")
-                .build());
-System.out.println("Errors:");
-System.out.println(accessCode.getErrors());
-System.out.println("Warnings:");
-System.out.println(accessCode.getWarnings());
-```
-
-**Response:**
-
-```json
-Errors:
-Optional[[]]
-Warnings:
-Optional[[]]
-```
-{% endtab %}
 {% endtabs %}
 
 ***

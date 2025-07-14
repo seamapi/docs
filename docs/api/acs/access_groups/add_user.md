@@ -1,8 +1,8 @@
 # Add an ACS User to an Access Group
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
@@ -10,18 +10,18 @@ Adds a specified [access system user](https://docs.seam.co/latest/capability-gui
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
+Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.accessGroups.addUser({
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +30,22 @@ await seam.acs.accessGroups.addUser({
 
 {% tab title="cURL" %}
 
-Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
+Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/add_user" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_access_group_id": "44444444-4444-4444-4444-444444444444",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+  "acs_access_group_id": "55efa954-2b84-42af-8d05-fc1f892df51c",
+  "acs_user_id": "ebf54c67-746c-471f-a03f-86665148a84c"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,18 +54,18 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
+Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.access_groups.add_user(
-    acs_access_group_id="44444444-4444-4444-4444-444444444444",
-    acs_user_id="33333333-3333-3333-3333-333333333333",
+    acs_access_group_id="55efa954-2b84-42af-8d05-fc1f892df51c",
+    acs_user_id="ebf54c67-746c-471f-a03f-86665148a84c",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,18 +74,18 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
+Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.access_groups.add_user(
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444",
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,66 +94,35 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
+Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->access_groups->add_user(
-    acs_access_group_id: "44444444-4444-4444-4444-444444444444",
-    acs_user_id: "33333333-3333-3333-3333-333333333333"
+    acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+    acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import accessgroups "github.com/seamapi/go/accessgroups"
-
-func main() {
-	client.Acs.AccessGroups.AddUser(
-		context.Background(),
-		accessgroups.AccessGroupsAddUserRequest{
-			AcsAccessGroupId: api.String("44444444-4444-4444-4444-444444444444"),
-			AcsUserId:        api.String("33333333-3333-3333-3333-333333333333"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `acs_access_group_id` and `acs_user_id` to add an ACS user to an access group.
+Adds a specified access system user to a specified access group.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs access-groups add-user --acs_access_group_id "44444444-4444-4444-4444-444444444444" --acs_user_id "33333333-3333-3333-3333-333333333333"
+seam acs access-groups add-user --acs_access_group_id "55efa954-2b84-42af-8d05-fc1f892df51c" --acs_user_id "ebf54c67-746c-471f-a03f-86665148a84c"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -204,3 +173,131 @@ void
 
 ## Examples
 
+
+### Add a user identity to an access group
+
+Adds a specified access system user to a specified access group, using the associated user identity.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.accessGroups.addUser({
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf",
+});
+```
+
+#### Output:
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/access_groups/add_user" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_access_group_id": "55efa954-2b84-42af-8d05-fc1f892df51c",
+  "user_identity_id": "522d1368-973f-430f-92df-4ff3583ebccf"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.access_groups.add_user(
+    acs_access_group_id="55efa954-2b84-42af-8d05-fc1f892df51c",
+    user_identity_id="522d1368-973f-430f-92df-4ff3583ebccf",
+)
+```
+
+#### Output:
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.access_groups.add_user(
+  acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+  user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf",
+)
+```
+
+#### Output:
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->access_groups->add_user(
+    acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
+    user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf"
+);
+```
+
+#### Output:
+
+```php
+
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs access-groups add-user --acs_access_group_id "55efa954-2b84-42af-8d05-fc1f892df51c" --user_identity_id "522d1368-973f-430f-92df-4ff3583ebccf"
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

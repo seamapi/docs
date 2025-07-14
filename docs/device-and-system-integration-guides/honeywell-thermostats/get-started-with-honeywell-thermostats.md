@@ -36,9 +36,7 @@ Seam provides client libraries for many languages, including JavaScript, Python,
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 First, install a Seam SDK, as follows:
 
@@ -68,36 +66,8 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
-{% endtab %}
-
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
 {% endtab %}
 {% endtabs %}
 
@@ -293,117 +263,6 @@ False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-import java.io.Console;
-import java.util.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.seam.api.Seam;
-import com.seam.api.core.ObjectMappers;
-import com.seam.api.types.ConnectWebview;
-import com.seam.api.types.Device;
-import com.seam.api.types.Manufacturer;
-import com.seam.api.types.ActionAttempt;
-import com.seam.api.types.AccessCode;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsCreateRequest;
-import com.seam.api.resources.connectwebviews.requests.ConnectWebviewsGetRequest;
-import com.seam.api.resources.devices.requests.DevicesListRequest;
-import com.seam.api.resources.devices.requests.DevicesGetRequest;
-import com.seam.api.resources.locks.requests.LocksUnlockDoorRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesCreateRequest;
-import com.seam.api.resources.accesscodes.requests.AccessCodesListRequest;
-
-public class Main {
-
-  public static void main(String[] args) {
-
-    Seam seam = Seam.builder()
-      .apiKey(SEAM_API_KEY)
-      .build();
-
-    ConnectWebview connectWebview = seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-      .acceptedProviders(List.of(AcceptedProvider.ECOBEE))
-      .build());
-
-    System.out.println(connectWebview.getLoginSuccessful()); // false
-
-    // Use the returned Connect Webview URL to display
-    // the Connect Webview authorization flow to your user.
-    System.out.println(connectWebview.getUrl());
-
-  }
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  connectWebview, err := client.ConnectWebviews.Create(
-    context.Background(),
-    &api.ConnectWebviewsCreateRequest{
-      AcceptedProviders: []api.AcceptedProvider{
-        api.AcceptedProviderEcobee,
-      },
-    },
-  )
-
-  if err != nil {
-    return err
-  }
-
-  fmt.Println(connectWebview.LoginSuccessful) // false
-
-  // Use the returned Connect Webview URL to display
-  // the Connect Webview authorization flow to your user.
-  fmt.Println(connectWebview.Url)
-
-  return nil
-}
-```
-
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -536,58 +395,13 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 True
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-ConnectWebview updatedConnectWebview = seam.connectWebviews().get(ConnectWebviewsGetRequest.builder()
-  .connectWebviewId(connectWebview.getConnectWebviewId())
-  .build());
-
-System.out.println(updatedConnectWebview.getLoginSuccessful()); // true
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-updatedConnectWebview, err := client.ConnectWebviews.Get(
-  context.Background(),
-  &api.ConnectWebviewsGetRequest{
-    ConnectWebviewId: connectWebview.connectWebviewId,
-  },
-)
-
-if err != nil {
-  return err
-}
-
-fmt.Println(updatedConnectWebview.LoginSuccessful) // true
-
-return nil
-```
-
-**Output:**
-
-```
-true
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## Step 3: Retrieve Honeywell Resideo thermostat devices
 
-When you link a Honeywell Resideo account with Seam, we create a `device` object to represent each Honeywell Resideo thermostat in your account. You can then retrieve these Honeywell Resideo devices using the [List Devices](../../api-clients/devices/list.md) and [Get Device](../../api-clients/devices/get.md) endpoints.
+When you link a Honeywell Resideo account with Seam, we create a `device` object to represent each Honeywell Resideo thermostat in your account. You can then retrieve these Honeywell Resideo devices using the [List Devices](../../api/devices/list.md) and [Get Device](../../api/devices/get.md) endpoints.
 
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
@@ -900,34 +714,6 @@ Fan running: false
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1131,37 +917,9 @@ if ($living_room_thermostat->can_hvac_heat) {
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
-You can track the status of the operation to confirm that the device was set to heat mode successfully. Query `properties.current_climate_setting.hvac_mode_setting` for the device, [retrieve the action attempt](../../api-clients/action_attempts/get.md) by ID, or look for a [`thermostat.manually_adjusted` event](../../api-clients/events/#event-types). Further, if you wanted to find out whether the HVAC system was currently heating, you could inspect `properties.is_heating` for the device.
+You can track the status of the operation to confirm that the device was set to heat mode successfully. Query `properties.current_climate_setting.hvac_mode_setting` for the device, [retrieve the action attempt](../../api/action_attempts/get.md) by ID, or look for a [`thermostat.manually_adjusted` event](../../api/events/). Further, if you wanted to find out whether the HVAC system was currently heating, you could inspect `properties.is_heating` for the device.
 
 To query `properties.current_climate_setting.hvac_mode_setting` for the device:
 
@@ -1290,34 +1048,6 @@ heat
 **Code:**
 
 ```csharp
-// Coming soon!
-```
-
-**Output:**
-
-```
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
 // Coming soon!
 ```
 
@@ -1808,34 +1538,6 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -2134,34 +1836,6 @@ $seam->thermostats->update_weekly_program(
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -2187,7 +1861,7 @@ Now that you've completed this getting started guide for Honeywell Resideo devic
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../../device-guides/broken-reference/) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](../../core-concepts/overview.md) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Expand your abilities**\
   Find out what other [thermostat actions](../../products/thermostats/) you can perform using the Seam API.
 * [ ] **Use webhooks**\

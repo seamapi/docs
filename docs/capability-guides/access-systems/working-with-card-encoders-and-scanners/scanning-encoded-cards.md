@@ -220,62 +220,8 @@ actionAttempt scanningActionAttempt = seam.EncodersAcs.ScanCredential(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-// Coming soon!
-```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Retrieve a list of all available encoders in a building, 
-// that is, connected to a single acs_system.
-acs_encoders, err := client.Acs.Encoders.List(
-  context.Background(), &acs.EncodersListRequest{
-    AcsSystemIds: []string{
-      building_system_id,
-    },
-  },
-)
-if err != nil {
-  return err
-}
-
-// Scan the card using the desired encoder.
-scanning_action_attempt, err := client.Acs.Encoders.ScanCredential(
-  context.Background(), &acs.EncodersScanCredentialRequest{
-    AcsEncoderId: encoder.AcsEncoderId,
-  },
-)
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "status": "pending",
-  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-  "action_type": "SCAN_CREDENTIAL",
-  "result": null,
-  "error": null
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -438,50 +384,8 @@ seam.ActionAttempts.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Code:**
 
-```java
-// Coming soon!
-```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-action_attempt, err := client.ActionAttempts.Get(
-  context.Background(), &api.ActionAttemptsGetRequest{
-    ActionAttemptId: scanning_action_attempt.ActionAttemptId,
-  },
-)
-if err != nil {
-  return err
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-  "action_type": "SCAN_CREDENTIAL",
-  "result": {
-    ...
-  },
-  "error": null
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

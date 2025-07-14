@@ -1,8 +1,8 @@
 # Create a Credential for an ACS User
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -10,81 +10,97 @@ Creates a new [credential](../../../capability-guides/access-systems/managing-cr
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+Creates a new PIN code credential for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.create({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  access_method: "mobile_key",
-  allowed_acs_entrance_ids: [
-    "55555555-5555-5555-5555-555555555555",
-    "55555555-5555-5555-5555-000000000000",
-  ],
-  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-  is_multi_phone_sync_credential: true,
-  starts_at: "2024-03-01T10:40:00Z",
-  ends_at: "2024-03-04T10:40:00Z",
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
-  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "display_name": "Multi Phone Sync Credential",
-  "code": null,
-  "acs_system_id": "88888888-8888-8888-8888-888888888888",
-  "access_method": "mobile_key",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential": true
+  "access_method": "code",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "code": "1234",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Salto KS Credential",
+  "errors": [],
+  "external_type": "salto_ks_credential",
+  "external_type_display_name": "Salto KS Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+Creates a new PIN code credential for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "access_method": "mobile_key",
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "user_identity_id": "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "code",
+  "code": "1234",
   "allowed_acs_entrance_ids": [
-    "55555555-5555-5555-5555-555555555555",
-    "55555555-5555-5555-5555-000000000000"
+    "21805570-4706-4c21-99fc-3ed873a5e014"
   ],
-  "credential_manager_acs_system_id": "88888888-8888-8888-8888-888888888888",
-  "is_multi_phone_sync_credential": true,
-  "starts_at": "2024-03-01T10:40:00Z",
-  "ends_at": "2024-03-04T10:40:00Z"
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "acs_credential": {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "88888888-8888-8888-8888-888888888888",
-    "access_method": "mobile_key",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential": true
+    "access_method": "code",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "code": "1234",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Salto KS Credential",
+    "errors": [],
+    "external_type": "salto_ks_credential",
+    "external_type_display_name": "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": true,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-06-19T21:08:08.000Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
   }
 }
 ```
@@ -92,178 +108,172 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+Creates a new PIN code credential for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.create(
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    access_method="mobile_key",
-    allowed_acs_entrance_ids=[
-        "55555555-5555-5555-5555-555555555555",
-        "55555555-5555-5555-5555-000000000000",
-    ],
-    credential_manager_acs_system_id="88888888-8888-8888-8888-888888888888",
-    is_multi_phone_sync_credential=true,
-    starts_at="2024-03-01T10:40:00Z",
-    ends_at="2024-03-04T10:40:00Z",
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id="4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="code",
+    code="1234",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsCredential(
-    acs_credential_id="99999999-9999-9999-9999-999999999999",
-    acs_user_id="33333333-3333-3333-3333-333333333333",
-    display_name="Multi Phone Sync Credential",
-    code=None,
-    acs_system_id="88888888-8888-8888-8888-888888888888",
-    access_method="mobile_key",
-    workspace_id="00000000-0000-0000-0000-000000000000",
-    created_at="2024-04-12T03:56:22.396Z",
+    access_method="code",
+    acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    code="1234",
+    created_at="2025-06-16T16:54:17.946514Z",
+    display_name="Salto KS Credential",
+    errors=[],
+    external_type="salto_ks_credential",
+    external_type_display_name="Salto KS Credential",
+    is_latest_desired_state_synced_with_provider=true,
+    is_managed=true,
     is_multi_phone_sync_credential=true,
+    is_one_time_use=false,
+    latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+    starts_at="2025-06-19T21:08:08.000Z",
+    warnings=[],
+    workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+Creates a new PIN code credential for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.create(
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  access_method: "mobile_key",
-  allowed_acs_entrance_ids: %w[
-    55555555-5555-5555-5555-555555555555
-    55555555-5555-5555-5555-000000000000
-  ],
-  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-  is_multi_phone_sync_credential: true,
-  starts_at: "2024-03-01T10:40:00Z",
-  ends_at: "2024-03-04T10:40:00Z",
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
-  "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-  "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-  "display_name" => "Multi Phone Sync Credential",
-  "code" => nil,
-  "acs_system_id" => "88888888-8888-8888-8888-888888888888",
-  "access_method" => "mobile_key",
-  "workspace_id" => "00000000-0000-0000-0000-000000000000",
-  "created_at" => "2024-04-12T03:56:22.396Z",
+  "access_method" => "code",
+  "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "code" => "1234",
+  "created_at" => "2025-06-16T16:54:17.946514Z",
+  "display_name" => "Salto KS Credential",
+  "errors" => [],
+  "external_type" => "salto_ks_credential",
+  "external_type_display_name" => "Salto KS Credential",
+  "is_latest_desired_state_synced_with_provider" => true,
+  "is_managed" => true,
   "is_multi_phone_sync_credential" => true,
+  "is_one_time_use" => false,
+  "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+  "starts_at" => "2025-06-19T21:08:08.000Z",
+  "warnings" => [],
+  "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+Creates a new PIN code credential for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->create(
-    acs_user_id: "33333333-3333-3333-3333-333333333333",
-    access_method: "mobile_key",
-    allowed_acs_entrance_ids: [
-        "55555555-5555-5555-5555-555555555555",
-        "55555555-5555-5555-5555-000000000000",
-    ],
-    credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-    is_multi_phone_sync_credential: true,
-    starts_at: "2024-03-01T10:40:00Z",
-    ends_at: "2024-03-04T10:40:00Z"
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "code",
+    code: "1234",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
-    "acs_credential_id" => "99999999-9999-9999-9999-999999999999",
-    "acs_user_id" => "33333333-3333-3333-3333-333333333333",
-    "display_name" => "Multi Phone Sync Credential",
-    "code" => null,
-    "acs_system_id" => "88888888-8888-8888-8888-888888888888",
-    "access_method" => "mobile_key",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
-    "created_at" => "2024-04-12T03:56:22.396Z",
+    "access_method" => "code",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "code" => "1234",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "Salto KS Credential",
+    "errors" => [],
+    "external_type" => "salto_ks_credential",
+    "external_type_display_name" => "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
     "is_multi_phone_sync_credential" => true,
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" =>
+        "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-06-19T21:08:08.000Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
 ];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Create(
-		context.Background(),
-		credentials.CredentialsCreateRequest{
-			AcsUserId:                    api.String("33333333-3333-3333-3333-333333333333"),
-			AccessMethod:                 api.String("mobile_key"),
-			AllowedAcsEntranceIds:        [2]string{api.String("55555555-5555-5555-5555-555555555555"), api.String("55555555-5555-5555-5555-000000000000")},
-			CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
-			IsMultiPhoneSyncCredential:   api.Bool(true),
-			StartsAt:                     api.String("2024-03-01T10:40:00Z"),
-			EndsAt:                       api.String("2024-03-04T10:40:00Z"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.AcsCredential{AcsCredentialId: "99999999-9999-9999-9999-999999999999", AcsUserId: "33333333-3333-3333-3333-333333333333", DisplayName: "Multi Phone Sync Credential", Code: nil, AcsSystemId: "88888888-8888-8888-8888-888888888888", AccessMethod: "mobile_key", WorkspaceId: "00000000-0000-0000-0000-000000000000", CreatedAt: "2024-04-12T03:56:22.396Z", IsMultiPhoneSyncCredential: true}
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `acs_user_id` and `access_method` to create a new credential. You can also specify additional parameters, depending on the `access_method`.
+Creates a new PIN code credential for a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs credentials create --acs_user_id "33333333-3333-3333-3333-333333333333" --access_method "mobile_key" --allowed_acs_entrance_ids ["55555555-5555-5555-5555-555555555555","55555555-5555-5555-5555-000000000000"] --credential_manager_acs_system_id "88888888-8888-8888-8888-888888888888" --is_multi_phone_sync_credential true --starts_at "2024-03-01T10:40:00Z" --ends_at "2024-03-04T10:40:00Z"
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --user_identity_id "4b6ec19d-ba68-46ca-80fd-55247684c2bb" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "code" --code "1234" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
-  "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "display_name": "Multi Phone Sync Credential",
-  "code": null,
-  "acs_system_id": "88888888-8888-8888-8888-888888888888",
-  "access_method": "mobile_key",
-  "workspace_id": "00000000-0000-0000-0000-000000000000",
-  "created_at": "2024-04-12T03:56:22.396Z",
-  "is_multi_phone_sync_credential": true
+  "access_method": "code",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "code": "1234",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Salto KS Credential",
+  "errors": [],
+  "external_type": "salto_ks_credential",
+  "external_type_display_name": "Salto KS Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
 }
 ```
 {% endtab %}
@@ -371,7 +381,7 @@ Date and time at which the validity of the new credential ends, in [ISO 8601](ht
 
 **`is_multi_phone_sync_credential`** *Boolean*
 
-Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
+Indicates whether the new credential is a [multi-phone sync credential](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
 
 ---
 
@@ -508,10 +518,1436 @@ Enum values:
 
 ## Response
 
-[acs\_credential](./)
+[acs\_credential](.)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "access_method": "card",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "b1d03165-2759-474b-a342-e02223f27b39",
+  "acs_user_id": "0fc82df4-391b-4d00-a234-86378f1c3952",
+  "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+  "card_number": "164d29dc4a09b65f",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Guest Lock 1, Vingcard Lock 2",
+  "ends_at": "2025-07-12T16:54:17.946512Z",
+  "errors": [],
+  "external_type": "visionline_card",
+  "external_type_display_name": "Visionline Card",
+  "is_issued": true,
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": false,
+  "issued_at": "2025-06-16T16:54:17.946512Z",
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-07-10T16:54:17.946512Z",
+  "visionline_metadata": {
+    "card_function_type": "guest",
+    "card_id": "5",
+    "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+    "credential_id": "15",
+    "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+    "is_valid": true
+  },
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 
 ## Examples
 
+
+### Create a PIN code credential for an access system user
+
+Creates a new PIN code credential for a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_method": "code",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "code": "1234",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Salto KS Credential",
+  "errors": [],
+  "external_type": "salto_ks_credential",
+  "external_type_display_name": "Salto KS Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "code",
+  "code": "1234",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "acs_credential": {
+    "access_method": "code",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "code": "1234",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Salto KS Credential",
+    "errors": [],
+    "external_type": "salto_ks_credential",
+    "external_type_display_name": "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": true,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-06-19T21:08:08.000Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="code",
+    code="1234",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+)
+```
+
+#### Output:
+
+```python
+AcsCredential(
+    access_method="code",
+    acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    code="1234",
+    created_at="2025-06-16T16:54:17.946514Z",
+    display_name="Salto KS Credential",
+    errors=[],
+    external_type="salto_ks_credential",
+    external_type_display_name="Salto KS Credential",
+    is_latest_desired_state_synced_with_provider=true,
+    is_managed=true,
+    is_multi_phone_sync_credential=true,
+    is_one_time_use=false,
+    latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+    starts_at="2025-06-19T21:08:08.000Z",
+    warnings=[],
+    workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "code",
+  code: "1234",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_method" => "code",
+  "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "code" => "1234",
+  "created_at" => "2025-06-16T16:54:17.946514Z",
+  "display_name" => "Salto KS Credential",
+  "errors" => [],
+  "external_type" => "salto_ks_credential",
+  "external_type_display_name" => "Salto KS Credential",
+  "is_latest_desired_state_synced_with_provider" => true,
+  "is_managed" => true,
+  "is_multi_phone_sync_credential" => true,
+  "is_one_time_use" => false,
+  "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+  "starts_at" => "2025-06-19T21:08:08.000Z",
+  "warnings" => [],
+  "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "code",
+    code: "1234",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z"
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_method" => "code",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "code" => "1234",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "Salto KS Credential",
+    "errors" => [],
+    "external_type" => "salto_ks_credential",
+    "external_type_display_name" => "Salto KS Credential",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
+    "is_multi_phone_sync_credential" => true,
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" =>
+        "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-06-19T21:08:08.000Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --acs_user_id "53f39f90-5113-4bdd-8432-acf328ce508c" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "code" --code "1234" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z"
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_method": "code",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "code": "1234",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Salto KS Credential",
+  "errors": [],
+  "external_type": "salto_ks_credential",
+  "external_type_display_name": "Salto KS Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+
+### Create a card credential for a user identity
+
+Creates a new card credential for a specified access system user, using the associated user identity.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: { card_format: "rfid48", override: true },
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_method": "card",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Visionline Credential",
+  "errors": [],
+  "external_type": "visionline_card",
+  "external_type_display_name": "Visionline Card",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "user_identity_id": "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "card",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "visionline_metadata": {
+    "card_format": "rfid48",
+    "override": true
+  }
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "acs_credential": {
+    "access_method": "card",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Visionline Credential",
+    "errors": [],
+    "external_type": "visionline_card",
+    "external_type_display_name": "Visionline Card",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": true,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-06-19T21:08:08.000Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id="4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="card",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    visionline_metadata={"card_format": "rfid48", "override": true},
+)
+```
+
+#### Output:
+
+```python
+AcsCredential(
+    access_method="card",
+    acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    created_at="2025-06-16T16:54:17.946514Z",
+    display_name="Visionline Credential",
+    errors=[],
+    external_type="visionline_card",
+    external_type_display_name="Visionline Card",
+    is_latest_desired_state_synced_with_provider=true,
+    is_managed=true,
+    is_multi_phone_sync_credential=true,
+    is_one_time_use=false,
+    latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+    starts_at="2025-06-19T21:08:08.000Z",
+    warnings=[],
+    workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: {
+    card_format: "rfid48",
+    override: true,
+  },
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_method" => "card",
+  "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at" => "2025-06-16T16:54:17.946514Z",
+  "display_name" => "Visionline Credential",
+  "errors" => [],
+  "external_type" => "visionline_card",
+  "external_type_display_name" => "Visionline Card",
+  "is_latest_desired_state_synced_with_provider" => true,
+  "is_managed" => true,
+  "is_multi_phone_sync_credential" => true,
+  "is_one_time_use" => false,
+  "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+  "starts_at" => "2025-06-19T21:08:08.000Z",
+  "warnings" => [],
+  "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "card",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    visionline_metadata: ["card_format" => "rfid48", "override" => true]
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_method" => "card",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "Visionline Credential",
+    "errors" => [],
+    "external_type" => "visionline_card",
+    "external_type_display_name" => "Visionline Card",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
+    "is_multi_phone_sync_credential" => true,
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" =>
+        "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-06-19T21:08:08.000Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --user_identity_id "4b6ec19d-ba68-46ca-80fd-55247684c2bb" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "card" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --visionline_metadata {"card_format":"rfid48","override":true}
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_method": "card",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Visionline Credential",
+  "errors": [],
+  "external_type": "visionline_card",
+  "external_type_display_name": "Visionline Card",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+
+### Create a card credential for an access system user
+
+Creates a new card credential for a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: { card_format: "rfid48", override: true },
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_method": "card",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Visionline Credential",
+  "errors": [],
+  "external_type": "visionline_card",
+  "external_type_display_name": "Visionline Card",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "card",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "visionline_metadata": {
+    "card_format": "rfid48",
+    "override": true
+  }
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "acs_credential": {
+    "access_method": "card",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Visionline Credential",
+    "errors": [],
+    "external_type": "visionline_card",
+    "external_type_display_name": "Visionline Card",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": true,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-06-19T21:08:08.000Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="card",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    visionline_metadata={"card_format": "rfid48", "override": true},
+)
+```
+
+#### Output:
+
+```python
+AcsCredential(
+    access_method="card",
+    acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    created_at="2025-06-16T16:54:17.946514Z",
+    display_name="Visionline Credential",
+    errors=[],
+    external_type="visionline_card",
+    external_type_display_name="Visionline Card",
+    is_latest_desired_state_synced_with_provider=true,
+    is_managed=true,
+    is_multi_phone_sync_credential=true,
+    is_one_time_use=false,
+    latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+    starts_at="2025-06-19T21:08:08.000Z",
+    warnings=[],
+    workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "card",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  visionline_metadata: {
+    card_format: "rfid48",
+    override: true,
+  },
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_method" => "card",
+  "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at" => "2025-06-16T16:54:17.946514Z",
+  "display_name" => "Visionline Credential",
+  "errors" => [],
+  "external_type" => "visionline_card",
+  "external_type_display_name" => "Visionline Card",
+  "is_latest_desired_state_synced_with_provider" => true,
+  "is_managed" => true,
+  "is_multi_phone_sync_credential" => true,
+  "is_one_time_use" => false,
+  "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+  "starts_at" => "2025-06-19T21:08:08.000Z",
+  "warnings" => [],
+  "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "card",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    visionline_metadata: ["card_format" => "rfid48", "override" => true]
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_method" => "card",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "Visionline Credential",
+    "errors" => [],
+    "external_type" => "visionline_card",
+    "external_type_display_name" => "Visionline Card",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
+    "is_multi_phone_sync_credential" => true,
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" =>
+        "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-06-19T21:08:08.000Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --acs_user_id "53f39f90-5113-4bdd-8432-acf328ce508c" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "card" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --visionline_metadata {"card_format":"rfid48","override":true}
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_method": "card",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Visionline Credential",
+  "errors": [],
+  "external_type": "visionline_card",
+  "external_type_display_name": "Visionline Card",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+
+### Create a mobile key credential for a user identity
+
+Creates a new mobile key credential for a specified access system user, using the associated user identity.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_method": "mobile_key",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Multi Phone Sync Credential",
+  "errors": [],
+  "external_type": "multi_phone_sync_credential",
+  "external_type_display_name": "Multi Phone Sync Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "user_identity_id": "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "mobile_key",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "is_multi_phone_sync_credential": true
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "acs_credential": {
+    "access_method": "mobile_key",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Multi Phone Sync Credential",
+    "errors": [],
+    "external_type": "multi_phone_sync_credential",
+    "external_type_display_name": "Multi Phone Sync Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": true,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-06-19T21:08:08.000Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id="4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="mobile_key",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential=true,
+)
+```
+
+#### Output:
+
+```python
+AcsCredential(
+    access_method="mobile_key",
+    acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    created_at="2025-06-16T16:54:17.946514Z",
+    display_name="Multi Phone Sync Credential",
+    errors=[],
+    external_type="multi_phone_sync_credential",
+    external_type_display_name="Multi Phone Sync Credential",
+    is_latest_desired_state_synced_with_provider=true,
+    is_managed=true,
+    is_multi_phone_sync_credential=true,
+    is_one_time_use=false,
+    latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+    starts_at="2025-06-19T21:08:08.000Z",
+    warnings=[],
+    workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_method" => "mobile_key",
+  "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at" => "2025-06-16T16:54:17.946514Z",
+  "display_name" => "Multi Phone Sync Credential",
+  "errors" => [],
+  "external_type" => "multi_phone_sync_credential",
+  "external_type_display_name" => "Multi Phone Sync Credential",
+  "is_latest_desired_state_synced_with_provider" => true,
+  "is_managed" => true,
+  "is_multi_phone_sync_credential" => true,
+  "is_one_time_use" => false,
+  "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+  "starts_at" => "2025-06-19T21:08:08.000Z",
+  "warnings" => [],
+  "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    user_identity_id: "4b6ec19d-ba68-46ca-80fd-55247684c2bb",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "mobile_key",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential: true
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_method" => "mobile_key",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "Multi Phone Sync Credential",
+    "errors" => [],
+    "external_type" => "multi_phone_sync_credential",
+    "external_type_display_name" => "Multi Phone Sync Credential",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
+    "is_multi_phone_sync_credential" => true,
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" =>
+        "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-06-19T21:08:08.000Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --user_identity_id "4b6ec19d-ba68-46ca-80fd-55247684c2bb" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "mobile_key" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --is_multi_phone_sync_credential true
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_method": "mobile_key",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Multi Phone Sync Credential",
+  "errors": [],
+  "external_type": "multi_phone_sync_credential",
+  "external_type_display_name": "Multi Phone Sync Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+---
+
+
+### Create a mobile key credential for an access system user
+
+Creates a new mobile key credential for a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.credentials.create({
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+});
+```
+
+#### Output:
+
+```javascript
+{
+  "access_method": "mobile_key",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Multi Phone Sync Credential",
+  "errors": [],
+  "external_type": "multi_phone_sync_credential",
+  "external_type_display_name": "Multi Phone Sync Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/credentials/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "credential_manager_acs_system_id": "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "access_method": "mobile_key",
+  "allowed_acs_entrance_ids": [
+    "21805570-4706-4c21-99fc-3ed873a5e014"
+  ],
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "ends_at": "2025-06-23T12:35:01.000Z",
+  "is_multi_phone_sync_credential": true
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{
+  "acs_credential": {
+    "access_method": "mobile_key",
+    "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at": "2025-06-16T16:54:17.946514Z",
+    "display_name": "Multi Phone Sync Credential",
+    "errors": [],
+    "external_type": "multi_phone_sync_credential",
+    "external_type_display_name": "Multi Phone Sync Credential",
+    "is_latest_desired_state_synced_with_provider": true,
+    "is_managed": true,
+    "is_multi_phone_sync_credential": true,
+    "is_one_time_use": false,
+    "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+    "starts_at": "2025-06-19T21:08:08.000Z",
+    "warnings": [],
+    "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.credentials.create(
+    credential_manager_acs_system_id="bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method="mobile_key",
+    allowed_acs_entrance_ids=["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at="2025-06-19T21:08:08.000Z",
+    ends_at="2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential=true,
+)
+```
+
+#### Output:
+
+```python
+AcsCredential(
+    access_method="mobile_key",
+    acs_credential_id="73a0a199-024f-454d-a916-9bbda8502c12",
+    acs_system_id="7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    acs_user_id="53f39f90-5113-4bdd-8432-acf328ce508c",
+    created_at="2025-06-16T16:54:17.946514Z",
+    display_name="Multi Phone Sync Credential",
+    errors=[],
+    external_type="multi_phone_sync_credential",
+    external_type_display_name="Multi Phone Sync Credential",
+    is_latest_desired_state_synced_with_provider=true,
+    is_managed=true,
+    is_multi_phone_sync_credential=true,
+    is_one_time_use=false,
+    latest_desired_state_synced_with_provider_at="2025-06-18T16:54:17.946514Z",
+    starts_at="2025-06-19T21:08:08.000Z",
+    warnings=[],
+    workspace_id="005f1e54-5360-40db-8c31-4ef6baaad1fd",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.credentials.create(
+  credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+  acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+  acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  access_method: "mobile_key",
+  allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+  starts_at: "2025-06-19T21:08:08.000Z",
+  ends_at: "2025-06-23T12:35:01.000Z",
+  is_multi_phone_sync_credential: true,
+)
+```
+
+#### Output:
+
+```ruby
+{
+  "access_method" => "mobile_key",
+  "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at" => "2025-06-16T16:54:17.946514Z",
+  "display_name" => "Multi Phone Sync Credential",
+  "errors" => [],
+  "external_type" => "multi_phone_sync_credential",
+  "external_type_display_name" => "Multi Phone Sync Credential",
+  "is_latest_desired_state_synced_with_provider" => true,
+  "is_managed" => true,
+  "is_multi_phone_sync_credential" => true,
+  "is_one_time_use" => false,
+  "latest_desired_state_synced_with_provider_at" => "2025-06-18T16:54:17.946514Z",
+  "starts_at" => "2025-06-19T21:08:08.000Z",
+  "warnings" => [],
+  "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+}
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->credentials->create(
+    credential_manager_acs_system_id: "bccb0d23-5107-498b-87a6-6a8aa929eeb2",
+    acs_user_id: "53f39f90-5113-4bdd-8432-acf328ce508c",
+    acs_system_id: "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    access_method: "mobile_key",
+    allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
+    starts_at: "2025-06-19T21:08:08.000Z",
+    ends_at: "2025-06-23T12:35:01.000Z",
+    is_multi_phone_sync_credential: true
+);
+```
+
+#### Output:
+
+```php
+[
+    "access_method" => "mobile_key",
+    "acs_credential_id" => "73a0a199-024f-454d-a916-9bbda8502c12",
+    "acs_system_id" => "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+    "acs_user_id" => "53f39f90-5113-4bdd-8432-acf328ce508c",
+    "created_at" => "2025-06-16T16:54:17.946514Z",
+    "display_name" => "Multi Phone Sync Credential",
+    "errors" => [],
+    "external_type" => "multi_phone_sync_credential",
+    "external_type_display_name" => "Multi Phone Sync Credential",
+    "is_latest_desired_state_synced_with_provider" => true,
+    "is_managed" => true,
+    "is_multi_phone_sync_credential" => true,
+    "is_one_time_use" => false,
+    "latest_desired_state_synced_with_provider_at" =>
+        "2025-06-18T16:54:17.946514Z",
+    "starts_at" => "2025-06-19T21:08:08.000Z",
+    "warnings" => [],
+    "workspace_id" => "005f1e54-5360-40db-8c31-4ef6baaad1fd",
+];
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs credentials create --credential_manager_acs_system_id "bccb0d23-5107-498b-87a6-6a8aa929eeb2" --acs_user_id "53f39f90-5113-4bdd-8432-acf328ce508c" --acs_system_id "7113de29-6130-4153-a6ea-1b7ca0fe3198" --access_method "mobile_key" --allowed_acs_entrance_ids ["21805570-4706-4c21-99fc-3ed873a5e014"] --starts_at "2025-06-19T21:08:08.000Z" --ends_at "2025-06-23T12:35:01.000Z" --is_multi_phone_sync_credential true
+```
+
+#### Output:
+
+```seam_cli
+{
+  "access_method": "mobile_key",
+  "acs_credential_id": "73a0a199-024f-454d-a916-9bbda8502c12",
+  "acs_system_id": "7113de29-6130-4153-a6ea-1b7ca0fe3198",
+  "acs_user_id": "53f39f90-5113-4bdd-8432-acf328ce508c",
+  "created_at": "2025-06-16T16:54:17.946514Z",
+  "display_name": "Multi Phone Sync Credential",
+  "errors": [],
+  "external_type": "multi_phone_sync_credential",
+  "external_type_display_name": "Multi Phone Sync Credential",
+  "is_latest_desired_state_synced_with_provider": true,
+  "is_managed": true,
+  "is_multi_phone_sync_credential": true,
+  "is_one_time_use": false,
+  "latest_desired_state_synced_with_provider_at": "2025-06-18T16:54:17.946514Z",
+  "starts_at": "2025-06-19T21:08:08.000Z",
+  "warnings": [],
+  "workspace_id": "005f1e54-5360-40db-8c31-4ef6baaad1fd"
+}
+```
+{% endtab %}
+
+{% endtabs %}

@@ -1,26 +1,25 @@
 # Delete a User Identity
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.
+Deletes a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.delete({
-  user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135",
+  user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -29,21 +28,21 @@ await seam.userIdentities.delete({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+  "user_identity_id": "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -52,15 +51,15 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
-seam.user_identities.delete(user_identity_id="44d48b20-0dbe-419d-91ca-ab8bceecd135")
+seam.user_identities.delete(user_identity_id="7ad2566e-6fd8-466d-b8e4-c10a14a74fd3")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -69,15 +68,15 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.user_identities.delete(user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135")
+seam.user_identities.delete(user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -86,63 +85,34 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->delete(
-    user_identity_id: "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+    user_identity_id: "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.Delete(
-		context.Background(),
-		api.UserIdentitiesDeleteRequest{
-			UserIdentityId: api.String("44d48b20-0dbe-419d-91ca-ab8bceecd135"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id`.
+Deletes a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam user-identities delete --user_identity_id "44d48b20-0dbe-419d-91ca-ab8bceecd135"
+seam user-identities delete --user_identity_id "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -175,9 +145,4 @@ ID of the user identity that you want to delete.
 ## Response
 
 void
-
-
----
-
-## Examples
 

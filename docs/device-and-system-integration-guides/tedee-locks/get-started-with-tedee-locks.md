@@ -20,9 +20,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -50,36 +48,8 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
-{% endtab %}
-
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
 {% endtab %}
 {% endtabs %}
 
@@ -510,7 +480,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](../../device-guides/get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](../../device-guides/get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](../../device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../../core-concepts/webhooks.md) for [device events](../../api-clients/events/list.md)
-* [Core Concepts](https://github.com/seamapi/api-docs/blob/main/docs/device-and-system-integration-guides/tedee-locks/broken-reference/README.md)
+* [Receiving webhook](../../core-concepts/webhooks.md) for [device events](../../api/events/list.md)
+* [Core Concepts](../../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

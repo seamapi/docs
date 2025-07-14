@@ -1,8 +1,7 @@
 # Update a Credential
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Updates the code and ends at date and time for a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
 
@@ -10,18 +9,19 @@ Updates the code and ends at date and time for a specified [credential](../../..
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.update({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
-  code: "7890",
+  acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  code: "1234",
+  ends_at: "2025-06-18T10:42:53.000Z",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +30,23 @@ await seam.acs.credentials.update({
 
 {% tab title="cURL" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "code": "7890"
+  "acs_credential_id": "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  "code": "1234",
+  "ends_at": "2025-06-18T10:42:53.000Z"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,17 +55,19 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.update(
-    acs_credential_id="66666666-6666-6666-6666-666666666666", code="7890"
+    acs_credential_id="1d4fb22b-743b-492f-ad74-cffcbd63c874",
+    code="1234",
+    ends_at="2025-06-18T10:42:53.000Z",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -73,15 +76,19 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.acs.credentials.update(acs_credential_id: "66666666-6666-6666-6666-666666666666", code: "7890")
+seam.acs.credentials.update(
+  acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+  code: "1234",
+  ends_at: "2025-06-18T10:42:53.000Z",
+)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -90,66 +97,36 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->update(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666",
-    code: "7890"
+    acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
+    code: "1234",
+    ends_at: "2025-06-18T10:42:53.000Z"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.Update(
-		context.Background(),
-		credentials.CredentialsUpdateRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-			Code:            api.String("7890"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `acs_credential_id` and updated `code` to update the credential.
+Updates the code and ends at date and time for a specified credential.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs credentials update --acs_credential_id "66666666-6666-6666-6666-666666666666" --code "7890"
+seam acs credentials update --acs_credential_id "1d4fb22b-743b-492f-ad74-cffcbd63c874" --code "1234" --ends_at "2025-06-18T10:42:53.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -194,9 +171,4 @@ Replacement date and time at which the validity of the credential ends, in [ISO 
 ## Response
 
 void
-
-
----
-
-## Examples
 

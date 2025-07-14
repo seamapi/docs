@@ -1,8 +1,8 @@
 # Update an ACS User
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
@@ -10,18 +10,27 @@ Updates the properties of a specified [access system user](https://docs.seam.co/
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.update({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
+  acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
+  user_identity_id: "b0bbb463-4fad-4b21-a695-952463ea6e93",
+  acs_system_id: "88ae7b8b-c406-414b-a745-91d9cea661f7",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
+  full_name: "Jane Doe",
+  email: "jane@example.com",
+  phone_number: "+15551234567",
+  email_address: "jane@example.com",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +39,31 @@ await seam.acs.users.update({
 
 {% tab title="cURL" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  "phone_number": "+15555550222"
+  "acs_user_id": "5db87499-0b3b-4750-a2e8-341b2af64049",
+  "user_identity_id": "b0bbb463-4fad-4b21-a695-952463ea6e93",
+  "acs_system_id": "88ae7b8b-c406-414b-a745-91d9cea661f7",
+  "access_schedule": {
+    "starts_at": "2025-06-10T15:00:00.000Z",
+    "ends_at": "2025-06-12T11:00:00.000Z"
+  },
+  "full_name": "Jane Doe",
+  "email": "jane@example.com",
+  "phone_number": "+15551234567",
+  "email_address": "jane@example.com"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,17 +72,27 @@ EOF
 
 {% tab title="Python" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.update(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33", phone_number="+15555550222"
+    acs_user_id="5db87499-0b3b-4750-a2e8-341b2af64049",
+    user_identity_id="b0bbb463-4fad-4b21-a695-952463ea6e93",
+    acs_system_id="88ae7b8b-c406-414b-a745-91d9cea661f7",
+    access_schedule={
+        "starts_at": "2025-06-10T15:00:00.000Z",
+        "ends_at": "2025-06-12T11:00:00.000Z",
+    },
+    full_name="Jane Doe",
+    email="jane@example.com",
+    phone_number="+15551234567",
+    email_address="jane@example.com",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -73,18 +101,27 @@ None
 
 {% tab title="Ruby" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.update(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  phone_number: "+15555550222",
+  acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
+  user_identity_id: "b0bbb463-4fad-4b21-a695-952463ea6e93",
+  acs_system_id: "88ae7b8b-c406-414b-a745-91d9cea661f7",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
+  full_name: "Jane Doe",
+  email: "jane@example.com",
+  phone_number: "+15551234567",
+  email_address: "jane@example.com",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -93,66 +130,44 @@ nil
 
 {% tab title="PHP" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->update(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    phone_number: "+15555550222"
+    acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
+    user_identity_id: "b0bbb463-4fad-4b21-a695-952463ea6e93",
+    acs_system_id: "88ae7b8b-c406-414b-a745-91d9cea661f7",
+    access_schedule: [
+        "starts_at" => "2025-06-10T15:00:00.000Z",
+        "ends_at" => "2025-06-12T11:00:00.000Z",
+    ],
+    full_name: "Jane Doe",
+    email: "jane@example.com",
+    phone_number: "+15551234567",
+    email_address: "jane@example.com"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Update(
-		context.Background(),
-		users.UsersUpdateRequest{
-			AcsUserId:   api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			PhoneNumber: api.String("+15555550222"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Update the properties of a specific [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Updates the properties of a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs users update --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --phone_number "+15555550222"
+seam acs users update --acs_user_id "5db87499-0b3b-4750-a2e8-341b2af64049" --user_identity_id "b0bbb463-4fad-4b21-a695-952463ea6e93" --acs_system_id "88ae7b8b-c406-414b-a745-91d9cea661f7" --access_schedule {"starts_at":"2025-06-10T15:00:00.000Z","ends_at":"2025-06-12T11:00:00.000Z"} --full_name "Jane Doe" --email "jane@example.com" --phone_number "+15551234567" --email_address "jane@example.com"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -220,13 +235,13 @@ ID of the access system user that you want to update. You can only provide acs_u
 
 **`email_address`** *String*
 
-Email address of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
 **`full_name`** *String*
 
-Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
@@ -236,7 +251,7 @@ Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access
 
 **`phone_number`** *String*
 
-Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ---
 
@@ -256,3 +271,166 @@ void
 
 ## Examples
 
+
+### Update an access system user
+
+Updates the properties of a specified access system user.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.users.update({
+  acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
+  full_name: "Jane Doe",
+  email: "jane@example.com",
+  phone_number: "+15551234567",
+  email_address: "jane@example.com",
+});
+```
+
+#### Output:
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "5db87499-0b3b-4750-a2e8-341b2af64049",
+  "access_schedule": {
+    "starts_at": "2025-06-10T15:00:00.000Z",
+    "ends_at": "2025-06-12T11:00:00.000Z"
+  },
+  "full_name": "Jane Doe",
+  "email": "jane@example.com",
+  "phone_number": "+15551234567",
+  "email_address": "jane@example.com"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.users.update(
+    acs_user_id="5db87499-0b3b-4750-a2e8-341b2af64049",
+    access_schedule={
+        "starts_at": "2025-06-10T15:00:00.000Z",
+        "ends_at": "2025-06-12T11:00:00.000Z",
+    },
+    full_name="Jane Doe",
+    email="jane@example.com",
+    phone_number="+15551234567",
+    email_address="jane@example.com",
+)
+```
+
+#### Output:
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.users.update(
+  acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
+  access_schedule: {
+    starts_at: "2025-06-10T15:00:00.000Z",
+    ends_at: "2025-06-12T11:00:00.000Z",
+  },
+  full_name: "Jane Doe",
+  email: "jane@example.com",
+  phone_number: "+15551234567",
+  email_address: "jane@example.com",
+)
+```
+
+#### Output:
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->users->update(
+    acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
+    access_schedule: [
+        "starts_at" => "2025-06-10T15:00:00.000Z",
+        "ends_at" => "2025-06-12T11:00:00.000Z",
+    ],
+    full_name: "Jane Doe",
+    email: "jane@example.com",
+    phone_number: "+15551234567",
+    email_address: "jane@example.com"
+);
+```
+
+#### Output:
+
+```php
+
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs users update --acs_user_id "5db87499-0b3b-4750-a2e8-341b2af64049" --access_schedule {"starts_at":"2025-06-10T15:00:00.000Z","ends_at":"2025-06-12T11:00:00.000Z"} --full_name "Jane Doe" --email "jane@example.com" --phone_number "+15551234567" --email_address "jane@example.com"
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

@@ -1,8 +1,8 @@
 # Suspend an ACS User
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 [Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an access system user revokes their access temporarily. To restore an access system user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
 
@@ -10,17 +10,18 @@
 {% tabs %}
 {% tab title="JavaScript" %}
 
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
+Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.suspend({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
+  user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c",
+  acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -29,21 +30,22 @@ await seam.acs.users.suspend({
 
 {% tab title="cURL" %}
 
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
+Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+  "user_identity_id": "73fac667-bd93-4548-add2-e75161d69c7c",
+  "acs_system_id": "f2240088-0bc7-4edb-80d1-485bd956ba7d"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -52,15 +54,18 @@ EOF
 
 {% tab title="Python" %}
 
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
+Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
-seam.acs.users.suspend(acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.users.suspend(
+    user_identity_id="73fac667-bd93-4548-add2-e75161d69c7c",
+    acs_system_id="f2240088-0bc7-4edb-80d1-485bd956ba7d",
+)
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -69,15 +74,18 @@ None
 
 {% tab title="Ruby" %}
 
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
+Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.acs.users.suspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33")
+seam.acs.users.suspend(
+  user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c",
+  acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d",
+)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -86,62 +94,35 @@ nil
 
 {% tab title="PHP" %}
 
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
+Suspends a specified access system user, using the associated user identity.
 
-#### Code
-
-```php
-<?php
-$seam->acs->users->suspend(acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33");
-```
-
-#### Output
+#### Code:
 
 ```php
-null
-```
-{% endtab %}
-
-{% tab title="Go" %}
-
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.Suspend(
-		context.Background(),
-		users.UsersSuspendRequest{
-			AcsUserId: api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-		},
-	)
-}
+$seam->acs->users->suspend(
+    user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c",
+    acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d"
+);
 ```
 
-#### Output
+#### Output:
 
-```go
-nil
+```php
+
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.
+Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs users suspend --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33"
+seam acs users suspend --user_identity_id "73fac667-bd93-4548-add2-e75161d69c7c" --acs_system_id "f2240088-0bc7-4edb-80d1-485bd956ba7d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -192,3 +173,120 @@ void
 
 ## Examples
 
+
+### Suspend a user identity
+
+Suspends a specified access system user, using the associated user identity.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.users.suspend({
+  acs_user_id: "8f934186-1dbc-4098-9f66-d1b202abec9d",
+});
+```
+
+#### Output:
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "8f934186-1dbc-4098-9f66-d1b202abec9d"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.users.suspend(acs_user_id="8f934186-1dbc-4098-9f66-d1b202abec9d")
+```
+
+#### Output:
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.users.suspend(acs_user_id: "8f934186-1dbc-4098-9f66-d1b202abec9d")
+```
+
+#### Output:
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->users->suspend(acs_user_id: "8f934186-1dbc-4098-9f66-d1b202abec9d");
+```
+
+#### Output:
+
+```php
+
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs users suspend --acs_user_id "8f934186-1dbc-4098-9f66-d1b202abec9d"
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

@@ -139,45 +139,8 @@ seam.SystemsAcs.List();
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_systems, uErr := client.Acs.Systems.List(
-  context.Background(), &acs.SystemsListRequest{},
-)
-```
-
-**Response:**
-
-```json
-{
-  "acs_systems": [
-    {
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "name": "Visionline System",
-      ...
-    },
-    ...
-  ],
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -348,50 +311,6 @@ seam.SystemsAcs.Get(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_system, uErr := client.Acs.Systems.Get(
-  context.Background(), &acs.SystemsGetRequest{
-    AcsSystemId: "11111111-1111-1111-1111-111111111111",
-  },
-)
-```
-
-**Response:**
-
-```json
-{
-  "acs_system": {
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "name": "Example Inc",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2023-11-30T06:27:14.961Z",
-    "external_type": "pti_site",
-    "external_type_display_name": "PTI site",
-    "connected_account_ids": [
-      "11111111-1111-1111-1111-222222222222"
-    ],
-    "image_url": "https://connect.getseam.com/assets/images/acs_systems/pti_site.png",
-    "image_alt_text": "PTI site Logo"
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}

@@ -1,8 +1,7 @@
 # Set a Temperature Threshold
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
 
@@ -10,19 +9,19 @@ Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-m
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  lower_limit_celsius: 4,
-  upper_limit_celsius: 30,
+  device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae",
+  lower_limit_fahrenheit: 60,
+  upper_limit_fahrenheit: 80,
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,23 +30,23 @@ await seam.thermostats.setTemperatureThreshold({
 
 {% tab title="cURL" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "lower_limit_celsius": 4,
-  "upper_limit_celsius": 30
+  "device_id": "a9b52627-e6e2-4beb-9168-964749f7bbae",
+  "lower_limit_fahrenheit": 60,
+  "upper_limit_fahrenheit": 80
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,19 +55,19 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.set_temperature_threshold(
-    device_id="123e4567-e89b-12d3-a456-426614174000",
-    lower_limit_celsius=4,
-    upper_limit_celsius=30,
+    device_id="a9b52627-e6e2-4beb-9168-964749f7bbae",
+    lower_limit_fahrenheit=60,
+    upper_limit_fahrenheit=80,
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -77,19 +76,19 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.set_temperature_threshold(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  lower_limit_celsius: 4,
-  upper_limit_celsius: 30,
+  device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae",
+  lower_limit_fahrenheit: 60,
+  upper_limit_fahrenheit: 80,
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -98,67 +97,36 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->set_temperature_threshold(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    lower_limit_celsius: 4,
-    upper_limit_celsius: 30
+    device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae",
+    lower_limit_fahrenheit: 60,
+    upper_limit_fahrenheit: 80
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetTemperatureThreshold(
-		context.Background(),
-		api.ThermostatsSetTemperatureThresholdRequest{
-			DeviceId:          api.String("123e4567-e89b-12d3-a456-426614174000"),
-			LowerLimitCelsius: api.Float64(4),
-			UpperLimitCelsius: api.Float64(30),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `device_id` of the desired thermostat, along with the desired upper and lower limits in °C or °F.
+Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam thermostats set-temperature-threshold --device_id "123e4567-e89b-12d3-a456-426614174000" --lower_limit_celsius 4 --upper_limit_celsius 30
+seam thermostats set-temperature-threshold --device_id "a9b52627-e6e2-4beb-9168-964749f7bbae" --lower_limit_fahrenheit 60 --upper_limit_fahrenheit 80
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -215,9 +183,4 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 ## Response
 
 void
-
-
----
-
-## Examples
 

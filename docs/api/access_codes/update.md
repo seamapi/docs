@@ -1,12 +1,151 @@
 # Update an Access Code
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Updates a specified active or upcoming [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 See also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).
+
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code:
+
+```javascript
+await seam.accessCodes.update({
+  access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  name: "My Updated Access Code",
+  starts_at: "2025-06-19T08:26:41.000Z",
+  ends_at: "2025-06-21T17:38:07.000Z",
+  code: "4444",
+});
+```
+
+#### Output:
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_codes/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_code_id": "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  "name": "My Updated Access Code",
+  "starts_at": "2025-06-19T08:26:41.000Z",
+  "ends_at": "2025-06-21T17:38:07.000Z",
+  "code": "4444"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code:
+
+```python
+seam.access_codes.update(
+    access_code_id="b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+    name="My Updated Access Code",
+    starts_at="2025-06-19T08:26:41.000Z",
+    ends_at="2025-06-21T17:38:07.000Z",
+    code="4444",
+)
+```
+
+#### Output:
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code:
+
+```ruby
+seam.access_codes.update(
+  access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+  name: "My Updated Access Code",
+  starts_at: "2025-06-19T08:26:41.000Z",
+  ends_at: "2025-06-21T17:38:07.000Z",
+  code: "4444",
+)
+```
+
+#### Output:
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code:
+
+```php
+$seam->access_codes->update(
+    access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
+    name: "My Updated Access Code",
+    starts_at: "2025-06-19T08:26:41.000Z",
+    ends_at: "2025-06-21T17:38:07.000Z",
+    code: "4444"
+);
+```
+
+#### Output:
+
+```php
+
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+Updates a specified active or upcoming access code.
+
+#### Code:
+
+```seam_cli
+seam access-codes update --access_code_id "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5" --name "My Updated Access Code" --starts_at "2025-06-19T08:26:41.000Z" --ends_at "2025-06-21T17:38:07.000Z" --code "4444"
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}
 
 
 <details>
@@ -89,7 +228,13 @@ Maximum rounding adjustment. To create a daily-bound [offline access code](https
 
 **`name`** *String*
 
-Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`. To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints. To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
+Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
+
+Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.
+
+To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.
+
+To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).
 
 ---
 

@@ -3,8 +3,6 @@
 ## The acs_access_group Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -14,6 +12,31 @@ Group that defines the entrances to which a set of users has access and, in some
 Some access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.
 
 To learn whether your access control system supports access groups, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
+
+{% tabs %}
+{% tab title="ACS Access Group" %}
+
+An access group resource.
+
+```json
+{
+  "access_group_type": "salto_ks_access_group",
+  "access_group_type_display_name": "Salto KS Access Group",
+  "acs_access_group_id": "3f448826-9875-4947-9519-e468090a4f7d",
+  "acs_system_id": "045baa77-6d06-40fe-a2cd-b82eef688f4a",
+  "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
+  "created_at": "2025-06-15T16:54:17.946453Z",
+  "display_name": "Main Group",
+  "external_type": "salto_ks_access_group",
+  "external_type_display_name": "Salto KS Access Group",
+  "is_managed": true,
+  "name": "My Access Group",
+  "warnings": [],
+  "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 ## Properties
@@ -147,23 +170,23 @@ Warnings associated with the `acs_access_group`.
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which Seam created the warning.
+  Date and time at which Seam created the warning.
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+<strong><code>message</code></strong> <i>String</i>
 
-  <strong><code>warning_code</code></strong> <i>Enum</i>
-  
-    Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>unknown_issue_with_acs_access_group</code>
-  </details>
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+<strong><code>warning_code</code></strong> <i>Enum</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>unknown_issue_with_acs_access_group</code>
+</details>
+
 </details>
 
 ---
@@ -218,7 +241,7 @@ An ACS access group was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

@@ -58,10 +58,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
     3.  On the **Set up your Seam Bridge** page, click **Continue**.
 
         [Seam Bridge](../../seam-bridge.md) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this quick start uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
-    4. On the **Visionline info** page:
-       1. In the **Enter your pairing token** field, type `123456` (or any six-character string).
-       2. In the **Name your bridge** field, type `My Network` (or any unique string).
-       3. Click **Submit**.
+    4. On the **Seam Bridge Connection** page, click **Submit**.
     5. On the **Enter your credentials** page:
        1. In the **Visionline Site Name** field, type any string to identify this virtual Visionline ACS site, for example, `My Visionline Site`.
        2. In the **Username** field, type `jane`.
@@ -103,36 +100,8 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
-{% endtab %}
-
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
 {% endtab %}
 {% endtabs %}
 
@@ -160,7 +129,7 @@ Create an ACS user within the virtual Visionline access control system.
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
    2. On the **Access Systems** page, locate the Visionline ACS, for example, **My Visionline Site**.
    3. In the **acs\_system\_id** column for the Visionline ACS, click the ID to copy it.
-   4. Store this ACS system ID for future use.&#x20;
+   4. Store this ACS system ID for future use.
 2. Create the ACS user, as follows:
 
 {% tabs %}
@@ -312,75 +281,6 @@ $acs_user = $seam->acs->users->create(
 // Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "os"
-  "time"
-
-  api "github.com/seamapi/go"
-  seam "github.com/seamapi/go/client"
-  acs "github.com/seamapi/go/acs"
-)
-
-func main() {
-  if err := run(); err != nil {
-    _, _ = fmt.Fprintln(os.Stderr, err.Error())
-    os.Exit(1)
-  }
-}
-
-func run() error {
-  client := seam.NewClient(
-    seam.WithApiKey(SEAM_API_KEY),
-  )
-
-  acsUser, err := client.Acs.Users.Create(
-    context.Background(), &acs.UsersCreateRequest{
-      FullName: api.String("Jim Doe"),
-      // Use the ACS system ID that you copied earlier from Seam Console.
-      AcsSystemId: acsSystemId,
-    },
-  )
-  if err != nil {
-    return err
-  }
-  
-  return nil
-}
-```
-
-**Output:**
-
-```json
-{
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "full_name": "Jim Doe",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -399,8 +299,6 @@ If this credential were intended for a real Visionline card, you'd need to creat
 
        In this example, the set of entrances includes both a common entrance and a guest room door.
    5.  For each of these entrances, click **...**, click **Copy Id**, and then store this entrance ID for future use.
-
-
 
        <figure><img src="../../../.gitbook/assets/key-card-quick-start-copy-entrance-ids.png" alt="Copy the IDs for the Vingcard Lock 2 and Guest Lock 1 entrances."><figcaption><p>Copy the IDs for the Vingcard Lock 2 and Guest Lock 1 entrances.</p></figcaption></figure>
 2. Create the key card credential, as follows:
@@ -593,68 +491,6 @@ $key_card_credential = $seam->acs->credentials->create(
 
 ```json
 // Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-startsAt, err := time.Parse(time.RFC3339, "2025-02-10T15:00:00Z")
-endsAt, err := time.Parse(time.RFC3339, "2025-02-12T11:00:00Z")
-if err != nil {
-  return err
-}
-
-keyCardCredential, err := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: acsUser.AcsUserId,
-    AccessMethod: "card",
-    AllowedAcsEntranceIds: []string{
-      vingcardLock2EntranceId,
-      guestLock1EntranceId,
-    },
-    StartsAt: api.Time(startsAt),
-    EndsAt: api.Time(endsAt),
-    VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
-      CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
-      Override: api.Bool(true),
-    },
-  },
-);
-if err != nil {
-  return err
-};
-
-fmt.Println(keyCardCredential)
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-  "acs_user_id": "33333333-3333-3333-3333-333333333333",
-  "access_method": "card",
-  "starts_at": "2025-02-10T15:00:00Z",
-  "ends_at": "2025-02-12T11:00:00Z",
-  ...
-}
 ```
 {% endtab %}
 {% endtabs %}
@@ -940,85 +776,6 @@ $seam->action_attempts->get(
 
 ```json
 // Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Code:**
-
-```java
-// Coming soon!
-```
-
-**Output:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Code:**
-
-```go
-// Get the encoder that you want to use.
-encoders, err := client.Acs.Encoders.List(
-  context.Background(), &acs.EncodersListRequest{
-    AcsSystemIds: []string{
-      acsSystemId,
-    },
-  },
-)
-if err != nil {
-  return err
-}
-encoder := encoders[0]
-
-// Encode the card.
-encodingActionAttempt, err := client.Acs.Encoders.EncodeCredential(
-  context.Background(), &acs.EncodersEncodeCredentialRequest{
-    AcsCredentialId: keyCardCredential.AcsCredentialId,
-    AcsEncoderId: encoder.AcsEncoderId,
-  },
-)
-if err != nil {
-  return err
-}
-
-// Confirm that the encoding succeeded by 
-// polling the returned action attempt
-// until its status is success.
-// You can also use a webhook.
-actionAttempt, err := client.ActionAttempts.Get(
-  context.Background(), &api.ActionAttemptsGetRequest{
-    ActionAttemptId: encodingActionAttempt.ActionAttemptId,
-  },
-)
-if err != nil {
-  return err
-}
-
-fmt.Println(actionAttempt)
-
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "action_type": "ENCODE_CREDENTIAL",
-  "result": {
-    "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-    "card_number": "1234abc",
-    "is_issued": true,
-    "issued_at": "2025-02-10T12:00:00.000Z",
-    ...
-  },
-  "error": null
-}
 ```
 {% endtab %}
 {% endtabs %}

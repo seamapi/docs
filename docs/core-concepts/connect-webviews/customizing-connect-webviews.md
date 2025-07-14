@@ -46,7 +46,7 @@ To customize the look and feel of your Connect Webviews:
 
 ## Customize the Brands to Display in Your Connect Webviews
 
-When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api-clients/connect_webviews/create.md) request, include the desired set of device provider keys in the `accepted_providers` parameter. Seam supports the following device provider keys:
+When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api/connect_webviews/create.md) request, include the desired set of device provider keys in the `accepted_providers` parameter. Seam supports the following device provider keys:
 
 | Provider Name                                                                                                                          | Device Provider Key             |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
@@ -236,32 +236,6 @@ seam.ConnectWebviews.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.connectWebviews().create(ConnectWebviewsCreateRequest.builder()
-  .acceptedProviders(List.of(
-    AcceptedProvider.AUGUST,
-    AcceptedProvider.SCHLAGE))
-  .build());
-```
-
-**Response:**
-
-```json
-{
-  "connect_webview_id" : "172c1d65-8904-4d43-9eee-099780ba6558",
-  "status": "pending",
-  "url" : "https://connect.getseam.com/connect_webviews/view?connect_webview_id=172c1d65-8904-4d43-9eee-099780ba6558&auth_token=7hpz4wGsaphJmBcs2TKr4H3ZkGgmqpPma",
-  "accepted_providers" : [
-    "august",
-    "schlage"
-  ],
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***

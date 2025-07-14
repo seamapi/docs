@@ -2,24 +2,13 @@
 description: >-
   Learn how to program an access code onto a smart lock with a keypad, and
   ensure the code is successfully set.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Creating Access Codes
 
 ## Overview
 
-This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api/access_codes/README.md) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
+This guide explains how to create online access codes on an online smart lock. With the [Access Codes](../../../../api/access_codes/) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.
 
 Seam supports programming two types of online access codes for online door locks:
 
@@ -39,9 +28,9 @@ Before you attempt to create an [online](../../../../products/smart-locks/access
 * `device.can_program_online_access_codes`
 * `device.can_program_offline_access_codes`
 
-Use [Get Device](../../../../api-clients/devices/get.md) (or [Get Lock](../../../../api-clients/locks/get.md)) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
+Use [Get Device](../../../../api/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to create an access code.
 
-If either of these capability flags is `false` or not present, you can view the [properties](../../../../api-clients/devices/#device-properties) of the device, [errors](../../../../api-clients/devices/#device-error-types) or [warnings](../../../../api-clients/devices/#device-warning-types) for the device, and [events](../../../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
+If either of these capability flags is `false` or not present, you can view the [properties](../../../../api/devices/#properties) of the device, [errors](../../../../api/devices/#errors) or [warnings](../../../../api/devices/#warnings) for the device, and [events](../../../../api/events/) related to the device to learn more about the cause of these issues. For example, you could examine the following device properties:
 
 * `device.properties.model.has_built_in_keypad`
 * `device.properties.model.can_connect_accessory_keypad`
@@ -167,51 +156,6 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 **Response:**
 
 ```
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_online_access_codes": true,  // You can create online access codes for this device.
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Request:**
-
-```java
-seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-```
-
-**Response:**
-
-```json
-{
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "can_program_online_access_codes": true,  // You can create online access codes for this device.
-  "can_program_offline_access_codes": true, // You can create offline access codes for this device.
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: "11111111-1111-1111-1111-444444444444",
-  })
-```
-
-**Response:**
-
-```json
 {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "can_program_online_access_codes": true,  // You can create online access codes for this device.
@@ -451,88 +395,6 @@ if (device.CanProgramOnlineAccessCodes == true) {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "name": "my ongoing code",
   "code": "1234",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports online access codes.
-if (device.getCanProgramOnlineAccessCodes())
-{
-  // Create the ongoing online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my ongoing code")
-      .code("1234")
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-555555555555",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my ongoing code",
-  "code" : "1234",
-  "type" : "ongoing",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports online access codes.
-if *device.CanProgramOnlineAccessCodes {
-  // Create the ongoing online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: device.DeviceId,
-      Name: api.String("my ongoing code"),
-      Code: api.String("1234"),
-    },
-  )
-}
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-555555555555",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my ongoing code",
-  "code": "1234",
-  "type": "ongoing",
   ...
 }
 ```
@@ -821,96 +683,6 @@ if (device.CanProgramOnlineAccessCodes == true) {
   "starts_at": "2025-01-01T16:00:00Z",
   "ends_at": "2025-01-22T12:00:00Z",
   "code": "2345",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Request:**
-
-```java
-// Get the device.
-Device device = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-1111-444444444444")
-    .build());
-
-// Confirm that the device supports online access codes.
-if (device.getCanProgramOnlineAccessCodes())
-{
-  // Create the time-bound online access code.
-  seam.accessCodes()
-    .create(AccessCodesCreateRequest.builder()
-      .deviceId(device.getDeviceId())
-      .name("my time-bound code")
-      .startsAt("2025-01-01T16:00:00Z")
-      .endsAt("2025-01-22T12:00:00Z")
-      .code("2345")
-      .build());
-}
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id" : "11111111-1111-1111-1111-666666666666",
-  "device_id" : "11111111-1111-1111-1111-444444444444",
-  "name" : "my time-bound code",
-  "code" : "2345",
-  "type" : "time_bound",
-  "starts_at" : "2025-01-01T16:00:00Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-// Get the device.
-device, uErr := client.Devices.Get(
-  context.Background(),
-  &api.LocksGetRequest{
-    DeviceId: api.String("11111111-1111-1111-1111-444444444444"),
-  })
-
-// Confirm that the device supports online access codes.
-if *device.CanProgramOnlineAccessCodes {
-  // Create the time-bound online access code.
-  client.AccessCodes.Create(
-    context.Background(),
-    &api.AccessCodesCreateRequest{
-      DeviceId: device.DeviceId,
-      Name: api.String("my time-bound code"),
-      StartsAt: api.String("2025-01-01T16:00:00Z"),
-      EndsAt: api.String("2025-01-22T12:00:00Z"),
-      Code: api.String("2345"),
-    },
-  )
-}
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Response:**
-
-```json
-{
-  "access_code_id": "11111111-1111-1111-1111-666666666666",
-  "device_id": "11111111-1111-1111-1111-444444444444",
-  "name": "my time-bound code",
-  "code": "2345",
-  "type": "time_bound",
-  "starts_at": "2025-01-01T16:00:00.000Z",
-  "ends_at": "2025-01-22T12:00:00.000Z",
   ...
 }
 ```

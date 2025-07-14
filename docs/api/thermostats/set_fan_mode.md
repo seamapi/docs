@@ -1,8 +1,7 @@
 # Set the Fan Mode Setting
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -10,53 +9,57 @@ Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermo
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.setFanMode({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
   fan_mode_setting: "auto",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_FAN_MODE"
+  "action_attempt_id": "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
+  "action_type": "SET_FAN_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fan_mode" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
+  "device_id": "363e657e-3b07-4670-a290-7fb1f32b8e33",
   "fan_mode_setting": "auto"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "action_attempt": {
-    "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-    "status": "pending",
-    "action_type": "SET_FAN_MODE"
+    "action_attempt_id": "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
+    "action_type": "SET_FAN_MODE",
+    "error": null,
+    "result": {},
+    "status": "success"
   }
 }
 ```
@@ -64,123 +67,101 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.set_fan_mode(
-    device_id="123e4567-e89b-12d3-a456-426614174000", fan_mode_setting="auto"
+    device_id="363e657e-3b07-4670-a290-7fb1f32b8e33", fan_mode_setting="auto"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
-    action_attempt_id="123e4567-e89b-12d3-a456-426614174000",
-    status="pending",
+    action_attempt_id="2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
     action_type="SET_FAN_MODE",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.set_fan_mode(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
+  device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
   fan_mode_setting: "auto",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
-  "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-  "status" => "pending",
+  "action_attempt_id" => "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
   "action_type" => "SET_FAN_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->set_fan_mode(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
+    device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
     fan_mode_setting: "auto"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
-    "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
-    "status" => "pending",
+    "action_attempt_id" => "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
     "action_type" => "SET_FAN_MODE",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-
-Specify the desired fan mode setting.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.SetFanMode(
-		context.Background(),
-		api.ThermostatsSetFanModeRequest{
-			DeviceId:       api.String("123e4567-e89b-12d3-a456-426614174000"),
-			FanModeSetting: api.String("auto"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ActionAttempt{ActionAttemptId: "123e4567-e89b-12d3-a456-426614174000", Status: "pending", ActionType: "SET_FAN_MODE"}
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired fan mode setting.
+Sets the fan mode setting for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam thermostats set-fan-mode --device_id "123e4567-e89b-12d3-a456-426614174000" --fan_mode_setting "auto"
+seam thermostats set-fan-mode --device_id "363e657e-3b07-4670-a290-7fb1f32b8e33" --fan_mode_setting "auto"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
-  "action_attempt_id": "123e4567-e89b-12d3-a456-426614174000",
-  "status": "pending",
-  "action_type": "SET_FAN_MODE"
+  "action_attempt_id": "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
+  "action_type": "SET_FAN_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
@@ -224,7 +205,19 @@ ID of the thermostat device for which you want to set the fan mode.
 [action\_attempt](./)
 
 
----
+{% tabs %}
+{% tab title="JSON" %}
 
-## Examples
 
+
+```json
+{
+  "action_attempt_id": "2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d",
+  "action_type": "SET_FAN_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}

@@ -17,6 +17,129 @@ Seam supports programming two types of access codes: [ongoing](https://docs.seam
 
 In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
+{% tabs %}
+{% tab title="One-Time-Use Offline Access Code" %}
+
+A one-time-use offline access code resource.
+
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": true,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% tab title="Ongoing Online Access Code" %}
+
+An ongoing online access code resource.
+
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": null,
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": true,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": null,
+  "status": "set",
+  "type": "ongoing",
+  "warnings": []
+}
+```
+{% endtab %}
+{% tab title="Time-bound Online Access Code" %}
+
+A time-bound online access code resource.
+
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": true,
+  "is_external_modification_allowed": true,
+  "is_managed": true,
+  "is_offline_access_code": false,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% tab title="Time-bound Offline Access Code" %}
+
+A time-bound offline access code resource.
+
+```json
+{
+  "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+  "code": "1234",
+  "common_code_key": null,
+  "created_at": "2025-06-14T16:54:17.946242Z",
+  "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+  "ends_at": "2025-07-04T16:54:17.946049Z",
+  "errors": [],
+  "is_backup": false,
+  "is_backup_access_code_available": false,
+  "is_external_modification_allowed": false,
+  "is_managed": true,
+  "is_offline_access_code": true,
+  "is_one_time_use": false,
+  "is_scheduled_on_device": true,
+  "is_waiting_for_code_assignment": false,
+  "name": "My Access Code",
+  "pulled_backup_access_code_id": null,
+  "starts_at": "2025-07-02T16:54:17.946049Z",
+  "status": "set",
+  "type": "time_bound",
+  "warnings": []
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 ## Properties
 
@@ -1087,10 +1210,12 @@ No valid user level for Oracode.
 <details>
 <summary><code>account_disconnected</code></summary>
 
-Account is disconnected
+Indicates that the account is disconnected.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1110,11 +1235,15 @@ Account is disconnected
   **`is_connected_account_error`** *Boolean*
   
   
+  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  
   
   ---
 
   **`is_device_error`** *Boolean*
   
+  
+  Indicates that the error is not a device error.
   
   
   ---
@@ -1122,15 +1251,19 @@ Account is disconnected
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
 
-Salto site user limit reached.
+Indicates that the Salto site user limit has been reached.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1150,11 +1283,15 @@ Salto site user limit reached.
   **`is_connected_account_error`** *Boolean*
   
   
+  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  
   
   ---
 
   **`is_device_error`** *Boolean*
   
+  
+  Indicates that the error is not a device error.
   
   
   ---
@@ -1162,15 +1299,19 @@ Salto site user limit reached.
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>device_offline</code></summary>
 
-Device is offline
+Indicates that the device is offline.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1190,21 +1331,27 @@ Device is offline
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>device_removed</code></summary>
 
-Device has been removed
+Indicates that the device has been removed.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1224,21 +1371,27 @@ Device has been removed
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>hub_disconnected</code></summary>
 
-Hub is disconnected
+Indicates that the hub is disconnected.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1258,21 +1411,27 @@ Hub is disconnected
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>device_disconnected</code></summary>
 
-Device is disconnected
+Indicates that the device is disconnected.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1292,21 +1451,27 @@ Device is disconnected
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-The backup access code pool is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1326,21 +1491,27 @@ The backup access code pool is empty.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>august_lock_not_authorized</code></summary>
 
-User is not authorized to use the August Lock.
+Indicates that the user is not authorized to use the August lock.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1360,21 +1531,27 @@ User is not authorized to use the August Lock.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>august_lock_missing_bridge</code></summary>
 
-Lock is not connected to the Seam Bridge.
+Indicates that the lock is not connected to a bridge.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1394,21 +1571,27 @@ Lock is not connected to the Seam Bridge.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>ttlock_lock_not_paired_to_gateway</code></summary>
 
-Lock is not paired with a Gateway.
+Indicates that the lock is not paired with a gateway.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1428,21 +1611,27 @@ Lock is not paired with a Gateway.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>missing_device_credentials</code></summary>
 
-Missing device credentials.
+Indicates that device credentials are missing.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1462,21 +1651,27 @@ Missing device credentials.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>auxiliary_heat_running</code></summary>
 
-The auxiliary heat is running.
+Indicates that the auxiliary heat is running.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1496,21 +1691,27 @@ The auxiliary heat is running.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>subscription_required</code></summary>
 
-Subscription required to connect.
+Indicates that a subscription is required to connect.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1530,21 +1731,27 @@ Subscription required to connect.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>lockly_missing_wifi_bridge</code></summary>
 
-Lockly lock is not connected to a Wi-Fi bridge.
+Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 
   **`created_at`** *Datetime*
   
+  
+  Date and time at which Seam created the error.
   
   
   ---
@@ -1564,18 +1771,22 @@ Lockly lock is not connected to a Wi-Fi bridge.
   **`is_device_error`** *Boolean*
   
   
+  Indicates that the error is a device error.
+  
   
   ---
 
   **`message`** *String*
   
   
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
   
 </details>
 <details>
 <summary><code>invalid_credentials</code></summary>
 
-Credentials provided were invalid.
+Indicates that the credentials provided were invalid.
 
   **`created_at`** *Datetime*
   
@@ -1600,7 +1811,7 @@ Credentials provided were invalid.
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -1623,7 +1834,7 @@ Credentials provided were invalid.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1648,7 +1859,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to Seam Bridge.
+  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
   
   
   ---
@@ -1790,7 +2001,7 @@ Current status of the access code within the operational lifecycle. Values are `
 
 **`type`** *Enum*
 
-Nature of the access code. Values are `ongoing` for access codes that are active continuously until deactivated manually or `time_bound` for access codes that have a specific duration.
+Type of the access code. `ongoing` access codes are active continuously until deactivated manually. `time_bound` access codes have a specific duration.
 
 
 <details>
@@ -2203,9 +2414,21 @@ Unable to confirm that the access code is set on Kwikset device.
 
 ## Errors
 
-**`smartthings_failed_to_set_access_code`**
+**`wyze_potential_duplicate_code`**
 
-Failed to set code on SmartThings device.
+Potential duplicate access code detected.
+
+---
+
+**`wyze_duplicate_code_name`**
+
+Duplicate access code name detected.
+
+---
+
+**`smartthings_no_free_slots_available`**
+
+No free slots available on the device.
 
 ---
 
@@ -2215,9 +2438,63 @@ Failed to set code after multiple retries.
 
 ---
 
-**`smartthings_no_free_slots_available`**
+**`smartthings_failed_to_set_access_code`**
 
-No free slots available on the device.
+Failed to set code on SmartThings device.
+
+---
+
+**`salto_ks_user_not_subscribed`**
+
+Salto site user is not subscribed.
+
+---
+
+**`no_space_for_access_code_on_device`**
+
+No space for access code on device.
+
+---
+
+**`kwikset_unable_to_confirm_deletion`**
+
+Unable to confirm the deletion of the access code on Kwikset device.
+
+---
+
+**`kwikset_unable_to_confirm_code`**
+
+Unable to confirm that the access code is set on Kwikset device.
+
+---
+
+**`igloohome_offline_access_code_no_variance_available`**
+
+Lock has reached maximum amount of codes.
+
+---
+
+**`igloohome_bridge_too_many_pending_jobs`**
+
+Igloohome bridge has too many pending jobs in the queue.
+
+---
+
+**`igloohome_bridge_offline`**
+
+Igloohome bridge is offline.
+
+---
+
+**`hubitat_no_free_positions_available`**
+
+No free positions available on the device.
+
+---
+
+**`hubitat_device_programming_delay`**
+
+Access code has not yet been fully moved to the device.
 
 ---
 
@@ -2245,39 +2522,9 @@ An attempt to modify this access code was prevented.
 
 ---
 
-**`no_space_for_access_code_on_device`**
+**`dormakaba_oracode_no_valid_user_level`**
 
-No space for access code on device.
-
----
-
-**`igloohome_bridge_too_many_pending_jobs`**
-
-Igloohome bridge has too many pending jobs in the queue.
-
----
-
-**`igloohome_bridge_offline`**
-
-Igloohome bridge is offline.
-
----
-
-**`igloohome_offline_access_code_no_variance_available`**
-
-Lock has reached maximum amount of codes.
-
----
-
-**`kwikset_unable_to_confirm_code`**
-
-Unable to confirm that the access code is set on Kwikset device.
-
----
-
-**`kwikset_unable_to_confirm_deletion`**
-
-Unable to confirm the deletion of the access code on Kwikset device.
+No valid user level for Oracode.
 
 ---
 
@@ -2287,21 +2534,9 @@ Code was modified or removed externally after Seam successfully set it on the de
 
 ---
 
-**`august_lock_invalid_code_length`**
+**`august_lock_temporarily_offline`**
 
-Invalid code length for August lock.
-
----
-
-**`august_device_programming_delay`**
-
-Access code has not yet been fully moved to the device.
-
----
-
-**`august_device_slots_full`**
-
-All access code slots on the device are full.
+August lock is temporarily offline.
 
 ---
 
@@ -2311,188 +2546,116 @@ August lock is missing a keypad.
 
 ---
 
-**`august_lock_temporarily_offline`**
+**`august_lock_invalid_code_length`**
 
-August lock is temporarily offline.
-
----
-
-**`salto_ks_user_not_subscribed`**
-
-Salto site user is not subscribed.
+Invalid code length for August lock.
 
 ---
 
-**`hubitat_device_programming_delay`**
+**`august_device_slots_full`**
+
+All access code slots on the device are full.
+
+---
+
+**`august_device_programming_delay`**
 
 Access code has not yet been fully moved to the device.
 
 ---
 
-**`hubitat_no_free_positions_available`**
-
-No free positions available on the device.
-
----
-
-**`wyze_duplicate_code_name`**
-
-Duplicate access code name detected.
-
----
-
-**`wyze_potential_duplicate_code`**
-
-Potential duplicate access code detected.
-
----
-
-**`dormakaba_oracode_no_valid_user_level`**
-
-No valid user level for Oracode.
-
----
-
 **`account_disconnected`**
 
-Account is disconnected
-
----
-
-**`salto_ks_subscription_limit_exceeded`**
-
-Salto site user limit reached.
-
----
-
-**`device_offline`**
-
-Device is offline
-
----
-
-**`device_removed`**
-
-Device has been removed
-
----
-
-**`hub_disconnected`**
-
-Hub is disconnected
-
----
-
-**`device_disconnected`**
-
-Device is disconnected
-
----
-
-**`empty_backup_access_code_pool`**
-
-The backup access code pool is empty.
-
----
-
-**`august_lock_not_authorized`**
-
-User is not authorized to use the August Lock.
+Indicates that the account is disconnected.
 
 ---
 
 **`august_lock_missing_bridge`**
 
-Lock is not connected to the Seam Bridge.
+Indicates that the lock is not connected to a bridge.
 
 ---
 
-**`ttlock_lock_not_paired_to_gateway`**
+**`august_lock_not_authorized`**
 
-Lock is not paired with a Gateway.
-
----
-
-**`missing_device_credentials`**
-
-Missing device credentials.
-
----
-
-**`auxiliary_heat_running`**
-
-The auxiliary heat is running.
-
----
-
-**`subscription_required`**
-
-Subscription required to connect.
-
----
-
-**`lockly_missing_wifi_bridge`**
-
-Lockly lock is not connected to a Wi-Fi bridge.
-
----
-
-**`invalid_credentials`**
-
-Credentials provided were invalid.
+Indicates that the user is not authorized to use the August lock.
 
 ---
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+**`device_disconnected`**
+
+Indicates that the device is disconnected.
+
+---
+
+**`device_offline`**
+
+Indicates that the device is offline.
+
+---
+
+**`device_removed`**
+
+Indicates that the device has been removed.
+
+---
+
+**`empty_backup_access_code_pool`**
+
+Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+
+---
+
+**`hub_disconnected`**
+
+Indicates that the hub is disconnected.
+
+---
+
+**`invalid_credentials`**
+
+Indicates that the credentials provided were invalid.
+
+---
+
+**`lockly_missing_wifi_bridge`**
+
+Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+---
+
+**`missing_device_credentials`**
+
+Indicates that device credentials are missing.
+
+---
+
+**`salto_ks_subscription_limit_exceeded`**
+
+Indicates that the Salto site user limit has been reached.
+
+---
+
+**`subscription_required`**
+
+Indicates that a subscription is required to connect.
+
+---
+
+**`ttlock_lock_not_paired_to_gateway`**
+
+Indicates that the lock is not paired with a gateway.
 
 ---
 
 
 ## Warnings
-
-**`smartthings_failed_to_set_access_code`**
-
-Failed to set code on SmartThings device.
-
----
-
-**`schlage_detected_duplicate`**
-
-Duplicate access code detected.
-
----
-
-**`schlage_creation_outage`**
-
-Received an error when attempting to create this code.
-
----
-
-**`code_modified_external_to_seam`**
-
-Code was modified or removed externally after Seam successfully set it on the device.
-
----
-
-**`delay_in_setting_on_device`**
-
-Delay in setting code on device.
-
----
-
-**`delay_in_removing_from_device`**
-
-Delay in removing code from device.
-
----
-
-**`third_party_integration_detected`**
-
-Third-party integration detected that may cause access codes to fail.
-
----
 
 **`august_device_programming_delay`**
 
@@ -2506,9 +2669,33 @@ August lock is temporarily offline.
 
 ---
 
+**`code_modified_external_to_seam`**
+
+Code was modified or removed externally after Seam successfully set it on the device.
+
+---
+
+**`delay_in_removing_from_device`**
+
+Delay in removing code from device.
+
+---
+
+**`delay_in_setting_on_device`**
+
+Delay in setting code on device.
+
+---
+
 **`igloo_algopin_must_be_used_within_24_hours`**
 
 Algopins must be used within 24 hours.
+
+---
+
+**`kwikset_unable_to_confirm_code`**
+
+Unable to confirm that the access code is set on Kwikset device.
 
 ---
 
@@ -2518,9 +2705,27 @@ Management was transferred to another workspace.
 
 ---
 
-**`kwikset_unable_to_confirm_code`**
+**`schlage_creation_outage`**
 
-Unable to confirm that the access code is set on Kwikset device.
+Received an error when attempting to create this code.
+
+---
+
+**`schlage_detected_duplicate`**
+
+Duplicate access code detected.
+
+---
+
+**`smartthings_failed_to_set_access_code`**
+
+Failed to set code on SmartThings device.
+
+---
+
+**`third_party_integration_detected`**
+
+Third-party integration detected that may cause access codes to fail.
 
 ---
 
@@ -2539,13 +2744,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2565,7 +2778,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2582,13 +2795,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2608,7 +2829,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2629,13 +2850,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   Code for the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2655,7 +2884,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2676,13 +2905,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   Code for the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2702,7 +2939,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2719,13 +2956,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2745,7 +2990,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2762,13 +3007,21 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2788,7 +3041,7 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2805,13 +3058,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2831,7 +3092,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2852,13 +3113,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   Code for the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2878,7 +3147,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2895,13 +3164,21 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2921,7 +3198,7 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2938,13 +3215,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2964,7 +3249,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -2981,13 +3266,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3007,7 +3300,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -3024,13 +3317,21 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3050,7 +3351,7 @@ An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/acces
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
@@ -3069,13 +3370,21 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 <strong><code>backup_access_code_id</code></strong> <i>String</i>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the connected account associated with the affected access codes.
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3095,7 +3404,7 @@ A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

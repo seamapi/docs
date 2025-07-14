@@ -1,112 +1,56 @@
-{{#if headingOffset}}
-### The {{name}} Object
-{{else}}
+{{#unless hidePreamble}}
 ## The {{name}} Object
-{{/if}}
 
+{{#if propertyGroups.length}}
 - [Properties](./#properties)
+{{/if}}
+{{#if legacyPropertyGroups}}
+- [{{name}}.properties](./#{{name}}.properties)
+{{/if}}
+{{#if errorGroups}}
 - [Errors](./#errors)
+{{/if}}
+{{#if warningGroups}}
 - [Warnings](./#warnings)
+{{/if}}
+{{#if events}}
 - [Events](./#events)
+{{/if}}
+{{#if endpoints}}
 - [Endpoints](./#endpoints)
+{{/if}}
 
 {{#if description}}
 
 {{description}}
-{{/if}}
-{{#if resourceSamples.length}}
-
-{% tabs %}
-{{#each resourceSamples}}
-{% tab title="{{#if (eq this.resourceDataSyntax 'json')}}JSON{{else}}{{toCapitalCase this.resourceDataSyntax}}{{/if}}" %}
-```{{this.resourceDataSyntax}}
-{{{this.resourceData}}}
-```
-{% endtab %}
-{{/each}}
-{% endtabs %}
-{{/if}}
-
----
-{{#if headingOffset}}
-### Properties
-{{else}}
-## Properties
-{{/if}}
-
-{{#each properties}}
-{{#if linkTarget}}[**`{{name}}`**]({{linkTarget}}){{else}}**`{{name}}`**{{/if}} *{{format}}*{{#if listItemFormat}} *of {{listItemFormat}}s*{{/if}}
-
-{{#if description}}
-{{description}}
-{{/if}}
-
-{{#if isDeprecated}}
-{{> deprecated-warning}}
-{{/if}}
-
-{{#if enumValues}}
-<details>
-<summary>Enum values</summary>
-
-{{#each enumValues}}
-- <code>{{this}}</code>
-{{/each}}
-</details>
-{{/if}}
-
-{{#if value}}
-
-Value: <code>{{value}}</code>
-{{/if}}
-{{#unless (eq objectProperties undefined)}}
-{{#if (eq objectProperties.length 0)}}
-
-This object has no properties.
-{{else}}
-<details>
-  <summary>Child Properties</summary>
-
-  {{#each objectProperties}}
-  - {{> property-nested this isList=true}}
-  {{/each}}
-</details>
 {{/if}}
 {{/unless}}
-{{#if discriminatorVariants}}
+{{#if resourceSamples.length}}
 
-The specific structure of each object in this list depends on the value of its `{{discriminator}}` field.
-
-Variants:
-  {{#each discriminatorVariants}}
-<details>
-<summary><code>{{this.name}}</code></summary>
-{{#if this.description}}
-
-{{this.description}}
-{{/if}}
-{{#if this.properties.length}}
-  {{#each this.properties}}
-
-  {{> property-non-collapsible this isLast=@last}}
-  {{/each}}
-{{else}}
-
-This variant has no additional specific properties.
-{{/if}}
-</details>
-  {{/each}}
-{{/if}}
-{{#if listProperties}}
-<details>
-  <summary>Child Object Properties</summary>
-  {{#each listProperties}}
-
-  {{> property-nested this}}
-  {{/each}}
-</details>
+{{> resource-samples resourceSamples }}
 {{/if}}
 
 ---
+## Properties
 
+{{#each propertyGroups}}
+{{#if name}}
+## {{name}}
+{{/if}}
+{{#each properties}}
+{{> api-resource-property }}
 {{/each}}
+{{/each}}
+{{#if legacyPropertyGroups}}
+
+## {{name}}.properties
+
+{{#each legacyPropertyGroups}}
+{{#if name}}
+## {{name}}
+{{/if}}
+{{#each properties}}
+{{> api-resource-property }}
+{{/each}}
+{{/each}}
+{{/if}}

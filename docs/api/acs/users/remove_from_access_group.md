@@ -1,8 +1,8 @@
 # Remove an ACS User from an Access Group
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+- [Examples](#examples)
 
 Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
@@ -10,18 +10,18 @@ Removes a specified [access system user](https://docs.seam.co/latest/capability-
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.removeFromAccessGroup({
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
+  user_identity_id: "00ff2781-cce8-4b63-8c65-2b97647d790c",
+  acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +30,22 @@ await seam.acs.users.removeFromAccessGroup({
 
 {% tab title="cURL" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/remove_from_access_group" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_user_id": "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  "acs_access_group_id": "123e4567-e89b-12d3-a456-426614174000"
+  "user_identity_id": "00ff2781-cce8-4b63-8c65-2b97647d790c",
+  "acs_access_group_id": "d192f395-4c68-4c33-af41-97a7df5be576"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,18 +54,18 @@ EOF
 
 {% tab title="Python" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.remove_from_access_group(
-    acs_user_id="8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id="123e4567-e89b-12d3-a456-426614174000",
+    user_identity_id="00ff2781-cce8-4b63-8c65-2b97647d790c",
+    acs_access_group_id="d192f395-4c68-4c33-af41-97a7df5be576",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,18 +74,18 @@ None
 
 {% tab title="Ruby" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.remove_from_access_group(
-  acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-  acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000",
+  user_identity_id: "00ff2781-cce8-4b63-8c65-2b97647d790c",
+  acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,66 +94,35 @@ nil
 
 {% tab title="PHP" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->remove_from_access_group(
-    acs_user_id: "8d7e0b3a-b889-49a7-9164-4b71a0506a33",
-    acs_access_group_id: "123e4567-e89b-12d3-a456-426614174000"
+    user_identity_id: "00ff2781-cce8-4b63-8c65-2b97647d790c",
+    acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import users "github.com/seamapi/go/users"
-
-func main() {
-	client.Acs.Users.RemoveFromAccessGroup(
-		context.Background(),
-		users.UsersRemoveFromAccessGroupRequest{
-			AcsUserId:        api.String("8d7e0b3a-b889-49a7-9164-4b71a0506a33"),
-			AcsAccessGroupId: api.String("123e4567-e89b-12d3-a456-426614174000"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified access system user from a specified access group, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs users remove-from-access-group --acs_user_id "8d7e0b3a-b889-49a7-9164-4b71a0506a33" --acs_access_group_id "123e4567-e89b-12d3-a456-426614174000"
+seam acs users remove-from-access-group --user_identity_id "00ff2781-cce8-4b63-8c65-2b97647d790c" --acs_access_group_id "d192f395-4c68-4c33-af41-97a7df5be576"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -204,3 +173,131 @@ void
 
 ## Examples
 
+
+### Remove an access system user from an access group
+
+Removes a specified access system user from a specified access group.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+
+
+
+#### Code:
+
+```javascript
+await seam.acs.users.removeFromAccessGroup({
+  acs_user_id: "6808e2d9-b4eb-4ad8-b200-503877cd1057",
+  acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
+});
+```
+
+#### Output:
+
+```javascript
+// void
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/acs/users/remove_from_access_group" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "acs_user_id": "6808e2d9-b4eb-4ad8-b200-503877cd1057",
+  "acs_access_group_id": "d192f395-4c68-4c33-af41-97a7df5be576"
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+
+
+#### Code:
+
+```python
+seam.acs.users.remove_from_access_group(
+    acs_user_id="6808e2d9-b4eb-4ad8-b200-503877cd1057",
+    acs_access_group_id="d192f395-4c68-4c33-af41-97a7df5be576",
+)
+```
+
+#### Output:
+
+```python
+None
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+
+
+#### Code:
+
+```ruby
+seam.acs.users.remove_from_access_group(
+  acs_user_id: "6808e2d9-b4eb-4ad8-b200-503877cd1057",
+  acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
+)
+```
+
+#### Output:
+
+```ruby
+nil
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+
+
+#### Code:
+
+```php
+$seam->acs->users->remove_from_access_group(
+    acs_user_id: "6808e2d9-b4eb-4ad8-b200-503877cd1057",
+    acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576"
+);
+```
+
+#### Output:
+
+```php
+
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+
+#### Code:
+
+```seam_cli
+seam acs users remove-from-access-group --acs_user_id "6808e2d9-b4eb-4ad8-b200-503877cd1057" --acs_access_group_id "d192f395-4c68-4c33-af41-97a7df5be576"
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+{% endtab %}
+
+{% endtabs %}

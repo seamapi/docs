@@ -4,7 +4,7 @@ description: >-
   configured thresholds in specific areas.
 ---
 
-# 👂 Noise Sensors
+# Noise Sensors
 
 ## What Is a Noise Sensor?
 
@@ -17,7 +17,7 @@ Thresholds represent the limits of noise tolerated at a property, which can be c
 ## Use Cases
 
 * You can configure noise threshold default settings for a customer's portfolio or on a property-by-property basis. When a new noise sensor is added, you can use the Seam API to configure its noise thresholds automatically according to these defaults.
-* You can react to noise disturbances by sending notifications to your users when a `noise_sensor.disturbance_detected` event occurs. Seam notifies you when the noise event has been resolved.
+* You can react to noise disturbances by sending notifications to your users when a `noise_sensor.noise_threshold_triggered` event occurs.
 * Seam provides prebuilt UI components for displaying information for a noise sensor. You can show the noise level, ways to configure noise thresholds, and the activity log of any noise events.
 
 ## **Best Practices**
@@ -35,4 +35,4 @@ While you can theoretically set noise thresholds to any decibel value, we have f
 See the following topics:
 
 * [Configuring Noise Threshold Settings](configure-noise-threshold-settings.md)
-* [Noise Sensors API Reference](../../api-clients/noise\_sensors/)
+* [Noise Sensors API Reference](../../api/noise_sensors/)

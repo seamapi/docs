@@ -1,27 +1,26 @@
 # Grant a User Identity Access to a Device
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
-Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
+Grants a specified [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) access to a specified [device](../../core-concepts/devices/README.md).
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Grants a specified user identity access to a specified device.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.grantAccessToDevice({
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+  user_identity_id: "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+  device_id: "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +29,22 @@ await seam.userIdentities.grantAccessToDevice({
 
 {% tab title="cURL" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Grants a specified user identity access to a specified device.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/grant_access_to_device" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "user_identity_id": "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  "device_id": "054765c8-a2fc-4599-b486-14c19f462c45"
+  "user_identity_id": "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+  "device_id": "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,18 +53,18 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Grants a specified user identity access to a specified device.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.grant_access_to_device(
-    user_identity_id="f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id="054765c8-a2fc-4599-b486-14c19f462c45",
+    user_identity_id="4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+    device_id="6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8",
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,18 +73,18 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Grants a specified user identity access to a specified device.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.grant_access_to_device(
-  user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-  device_id: "054765c8-a2fc-4599-b486-14c19f462c45",
+  user_identity_id: "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+  device_id: "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,65 +93,35 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Grants a specified user identity access to a specified device.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->grant_access_to_device(
-    user_identity_id: "f3a328b4-dd04-4370-9000-d52b7a01b0bf",
-    device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
+    user_identity_id: "4e9b7099-bcad-4af6-bb78-88b96cc347bd",
+    device_id: "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the desired `user_identity_id` and `device_id`.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.UserIdentities.GrantAccessToDevice(
-		context.Background(),
-		api.UserIdentitiesGrantAccessToDeviceRequest{
-			UserIdentityId: api.String("f3a328b4-dd04-4370-9000-d52b7a01b0bf"),
-			DeviceId:       api.String("054765c8-a2fc-4599-b486-14c19f462c45"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the desired `user_identity_id` and `device_id`.
+Grants a specified user identity access to a specified device.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam user-identities grant-access-to-device --user_identity_id "f3a328b4-dd04-4370-9000-d52b7a01b0bf" --device_id "054765c8-a2fc-4599-b486-14c19f462c45"
+seam user-identities grant-access-to-device --user_identity_id "4e9b7099-bcad-4af6-bb78-88b96cc347bd" --device_id "6de31c5d-c8a3-4b25-a86b-a9c5075a5eb8"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -191,9 +160,4 @@ ID of the user identity that you want to grant access to a device.
 ## Response
 
 void
-
-
----
-
-## Examples
 

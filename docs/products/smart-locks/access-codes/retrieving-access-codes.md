@@ -323,51 +323,6 @@ Code: 1234
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```javascript
-var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
-
-List<AccessCode> accessCodes = seam.accessCodes().list(AccessCodesListRequest.builder()
-        .deviceId(deviceId)
-        .build());
-System.out.println(accessCodes);
-```
-
-**Response:**
-
-```json
-[{
-  "is_scheduled_on_device" : false,
-  "type" : "time_bound",
-  "access_code_id" : "48e8f0e3-11a4-49a4-b589-27a1baf7aee4",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my time-bound code",
-  "code" : "2345",
-  "created_at" : "2023-10-30T03:50:17.802Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "starts_at" : "2025-01-01T16:00:00Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  "status" : "unset",
-  "is_backup_access_code_available" : false
-}, {
-  "type" : "ongoing",
-  "access_code_id" : "aff0c858-22f6-4587-9aac-1f5d550be560",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my ongoing code",
-  "code" : "1234",
-  "created_at" : "2023-10-30T03:43:13.403Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "status" : "set",
-  "is_backup_access_code_available" : false
-}]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -653,56 +608,6 @@ Code: 1234
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
-List<String> accessCodeIds = new ArrayList<>(Arrays.asList(
-  "48e8f0e3-11a4-49a4-b589-27a1baf7aee4",
-  "aff0c858-22f6-4587-9aac-1f5d550be560"
-));
-
-List<AccessCode> accessCodes = seam.accessCodes().list(AccessCodesListRequest.builder()
-        .deviceId(deviceId)
-        .accessCodeIds(accessCodeIds)
-        .build());
-System.out.println(accessCodes);
-```
-
-**Response:**
-
-```json
-[{
-  "is_scheduled_on_device" : false,
-  "type" : "time_bound",
-  "access_code_id" : "48e8f0e3-11a4-49a4-b589-27a1baf7aee4",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my time-bound code",
-  "code" : "2345",
-  "created_at" : "2023-10-30T03:50:17.802Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "starts_at" : "2025-01-01T16:00:00Z",
-  "ends_at" : "2025-01-22T12:00:00Z",
-  "status" : "unset",
-  "is_backup_access_code_available" : false
-}, {
-  "type" : "ongoing",
-  "access_code_id" : "aff0c858-22f6-4587-9aac-1f5d550be560",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my ongoing code",
-  "code" : "1234",
-  "created_at" : "2023-10-30T03:43:13.403Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "status" : "set",
-  "is_backup_access_code_available" : false
-}]
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -914,33 +819,4 @@ Code: 1234
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-AccessCode accessCode = seam.accessCodes()
-        .get(AccessCodesGetRequest.builder()
-                .accessCodeId("aff0c858-22f6-4587-9aac-1f5d550be560")
-                .build());
-System.out.println(accessCode);
-```
-
-**Response:**
-
-```json
-{
-  "type" : "ongoing",
-  "access_code_id" : "aff0c858-22f6-4587-9aac-1f5d550be560",
-  "device_id" : "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name" : "my ongoing code",
-  "code" : "1234",
-  "created_at" : "2023-10-30T03:43:13.403Z",
-  "errors" : [ ],
-  "warnings" : [ ],
-  "is_managed" : "true",
-  "status" : "set",
-  "is_backup_access_code_available" : false
-}
-```
-{% endtab %}
 {% endtabs %}

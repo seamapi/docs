@@ -1,8 +1,7 @@
 # Activate a Climate Preset
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Activates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -10,53 +9,57 @@ Activates a specified [climate preset](../../capability-guides/thermostats/creat
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.activateClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
+  device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+  climate_preset_key: "Eco",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
-  "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
-  "status": "pending",
-  "action_type": "ACTIVATE_CLIMATE_PRESET"
+  "action_attempt_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "action_type": "ACTIVATE_CLIMATE_PRESET",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "climate_preset_key": "occupied"
+  "device_id": "52b88155-5b81-47d2-b04d-28a802bd7395",
+  "climate_preset_key": "Eco"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "action_attempt": {
-    "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
-    "status": "pending",
-    "action_type": "ACTIVATE_CLIMATE_PRESET"
+    "action_attempt_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "action_type": "ACTIVATE_CLIMATE_PRESET",
+    "error": null,
+    "result": {},
+    "status": "success"
   }
 }
 ```
@@ -64,123 +67,101 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.activate_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="occupied"
+    device_id="52b88155-5b81-47d2-b04d-28a802bd7395", climate_preset_key="Eco"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
-    action_attempt_id="05de2295-d1dc-4748-aae3-9931658bde20",
-    status="pending",
+    action_attempt_id="f47ac10b-58cc-4372-a567-0e02b2c3d479",
     action_type="ACTIVATE_CLIMATE_PRESET",
+    error=None,
+    result={},
+    status="success",
 )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.activate_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
+  device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+  climate_preset_key: "Eco",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
-  "action_attempt_id" => "05de2295-d1dc-4748-aae3-9931658bde20",
-  "status" => "pending",
+  "action_attempt_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
   "action_type" => "ACTIVATE_CLIMATE_PRESET",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
 }
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->activate_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "occupied"
+    device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+    climate_preset_key: "Eco"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
-    "action_attempt_id" => "05de2295-d1dc-4748-aae3-9931658bde20",
-    "status" => "pending",
+    "action_attempt_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
     "action_type" => "ACTIVATE_CLIMATE_PRESET",
+    "error" => null,
+    "result" => [],
+    "status" => "success",
 ];
-```
-{% endtab %}
-
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.ActivateClimatePreset(
-		context.Background(),
-		api.ThermostatsActivateClimatePresetRequest{
-			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey: api.String("occupied"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-api.ActionAttempt{ActionAttemptId: "05de2295-d1dc-4748-aae3-9931658bde20", Status: "pending", ActionType: "ACTIVATE_CLIMATE_PRESET"}
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Activates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam thermostats activate-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
+seam thermostats activate-climate-preset --device_id "52b88155-5b81-47d2-b04d-28a802bd7395" --climate_preset_key "Eco"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
-  "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
-  "status": "pending",
-  "action_type": "ACTIVATE_CLIMATE_PRESET"
+  "action_attempt_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "action_type": "ACTIVATE_CLIMATE_PRESET",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
 {% endtab %}
@@ -219,7 +200,19 @@ ID of the thermostat device for which you want to activate a climate preset.
 [action\_attempt](./)
 
 
----
+{% tabs %}
+{% tab title="JSON" %}
 
-## Examples
 
+
+```json
+{
+  "action_attempt_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "action_type": "ACTIVATE_CLIMATE_PRESET",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}

@@ -189,48 +189,8 @@ seam.CredentialsAcs.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-credential, uErr := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AccessMethod: "code",
-    Code: api.String("824759"),
-  },
-);
-```
-
-**Response:**
-
-```json
-{
-  "acs_credential": {
-    "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "code": "824759",
-    "access_method": "code",
-    ...
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -377,47 +337,8 @@ seam.CredentialsAcs.Create(
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-credential, uErr := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AccessMethod: "card",
-    Code: api.String("123456"),
-  },
-);
-```
-
-**Response:**
-
-```json
-{
-  "acs_credential": {
-    "acs_credential_id": "77777777-7777-7777-7777-777777777777",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "access_method": "card",
-    ...
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -650,70 +571,8 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-{% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```go
-startsAt, err := time.Parse(time.RFC3339, "2024-03-01T10:40:00Z")
-endsAt, err := time.Parse(time.RFC3339, "2024-03-04T10:40:00Z")
-if err != nil {
-  return err
-}
-
-credential, uErr := client.Acs.Credentials.Create(
-  context.Background(), &acs.CredentialsCreateRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AllowedAcsEntranceIds: {
-        "55555555-5555-5555-5555-555555555555",
-        "55555555-5555-5555-5555-000000000000",
-      },
-    CredentialManagerAcsSystemId: api.String("88888888-8888-8888-8888-888888888888"),
-    AccessMethod: "mobile_key",
-    IsMultiPhoneSyncCredential: api.Bool(true),
-    StartsAt: api.Time(startsAt),
-    EndsAt: api.Time(endsAt),
-    ...
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-{
-  "acs_user": {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "access_method": "mobile_key",
-    "is_multi_phone_sync_credential": true,
-    ...
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -883,51 +742,8 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_credentials, uErr := client.Acs.Credentials.List(
-  context.Background(), &acs.CredentialsListRequest{
-    AcsUserId: api.String("33333333-3333-3333-3333-333333333333"),
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-{
-  "acs_credentials": [
-    {
-      "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-      "acs_user_id": "33333333-3333-3333-3333-333333333333",
-      ...
-    }
-    ...
-  ],
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### List Credentials by User Identity
@@ -1091,51 +907,8 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_credentials, uErr := client.Acs.Credentials.List(
-  context.Background(), &acs.CredentialsListRequest{
-    UserIdentityId: api.String("22222222-2222-2222-2222-222222222222"),
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-{
-  "acs_credentials": [
-    {
-      "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-      "acs_user_id": "33333333-3333-3333-3333-333333333333",
-      ...
-    }
-    ...
-  ],
-  "ok": true
-}ACS
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1296,50 +1069,8 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_credential, uErr := client.Acs.Credentials.Get(
-  context.Background(), &acs.CredentialsGetRequest{
-    AcsCredentialId: "66666666-6666-6666-6666-66666666",
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-{
-  "acs_credential": {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "access_method": "mobile_key",
-    ...
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -1450,35 +1181,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-_, uErr := client.Acs.Credentials.Delete(
-  context.Background(), &acs.CredentialsDeleteRequest{
-    acsCredentialId: "66666666-6666-6666-6666-666666666666",
-  },
-);
-```
-
-**Response:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}

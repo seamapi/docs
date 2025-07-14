@@ -8,7 +8,7 @@ Seam enables you to configure the [noise thresholds](./#what-is-a-threshold) of 
 
 ## Set Up Noise Thresholds
 
-First, create a threshold using the [Create Noise Thresholds](../../api-clients/noise_sensors/noise_thresholds/create.md) endpoint. For example:
+First, create a threshold using the [Create a Noise Threshold](../../api/noise_sensors/noise_thresholds/create.md) endpoint. For example:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -135,29 +135,6 @@ Error:
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
-
-```java
-var deviceId = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa";
-ActionAttempt noiseThresholdAttempt = seam.noiseSensors().noiseThresholds().create(NoiseThresholdsCreateRequest.builder()
-                .deviceId(deviceId)
-                .startsDailyAt("20:00:00[America/Los_Angeles]")
-                .endsDailyAt("06:00:00[America/Los_Angeles]")
-                .noiseThresholdDecibels(70.0)
-                .build());
-System.out.println(noiseThresholdAttempt.getPending());
-```
-
-**Response:**
-
-```json
-Optional[{
-  "action_type" : "CREATE_NOISE_THRESHOLD",
-  "action_attempt_id" : "c954a8ec-3c9a-4f26-8966-85de45966d1b"
-}]
-```
-{% endtab %}
 {% endtabs %}
 
 This threshold creates a noise threshold of 70 decibels from 20:00-06:00 PST called `builtin_quiet_hours`.
@@ -204,4 +181,4 @@ Once you have configured your thresholds and webhooks, you can monitor events wi
 
 ```
 
-For a detailed reference of event parameters, see [Events](../../api-clients/events/).
+For a detailed reference of event parameters, see [Events](../../api/events/).

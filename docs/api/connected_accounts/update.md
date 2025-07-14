@@ -1,8 +1,7 @@
 # Update a Connected Account
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Updates a [connected account](../../core-concepts/connected-accounts/README.md).
 
@@ -10,18 +9,19 @@ Updates a [connected account](../../core-concepts/connected-accounts/README.md).
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+Updates a connected account.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.update({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
   automatically_manage_new_devices: true,
+  custom_metadata: { id: "internalId1" },
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +30,25 @@ await seam.connectedAccounts.update({
 
 {% tab title="cURL" %}
 
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+Updates a connected account.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c",
-  "automatically_manage_new_devices": true
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "automatically_manage_new_devices": true,
+  "custom_metadata": {
+    "id": "internalId1"
+  }
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,18 +57,19 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+Updates a connected account.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.update(
-    connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c",
+    connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
     automatically_manage_new_devices=true,
+    custom_metadata={"id": "internalId1"},
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,18 +78,21 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+Updates a connected account.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.update(
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
   automatically_manage_new_devices: true,
+  custom_metadata: {
+    id: "internalId1",
+  },
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,65 +101,36 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+Updates a connected account.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connected_accounts->update(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
-    automatically_manage_new_devices: true
+    connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    automatically_manage_new_devices: true,
+    custom_metadata: ["id" => "internalId1"]
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Update(
-		context.Background(),
-		api.ConnectedAccountsUpdateRequest{
-			ConnectedAccountId:            api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-			AutomaticallyManageNewDevices: api.Bool(true),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `connected_account_id` of the connected account that you want to update, as well as the properties that you want to update.
+Updates a connected account.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam connected-accounts update --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c" --automatically_manage_new_devices true
+seam connected-accounts update --connected_account_id "a289aa54-5488-4707-9a4b-eeea4edf311d" --automatically_manage_new_devices true --custom_metadata {"id":"internalId1"}
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -181,6 +159,22 @@ ID of the connected account that you want to update.
 
 ---
 
+**`accepted_capabilities`** *Array* *of Enums*
+
+List of accepted device capabilities that restrict the types of devices that can be connected through this connected account. Valid values are `lock`, `thermostat`, `noise_sensor`, and `access_control`.
+<details>
+
+<summary>Enum values</summary>
+
+Possible enum values:
+- <code>lock</code>
+- <code>thermostat</code>
+- <code>noise_sensor</code>
+- <code>access_control</code>
+</details>
+
+---
+
 **`automatically_manage_new_devices`** *Boolean*
 
 Indicates whether newly-added devices should appear as [managed devices](../../core-concepts/devices/managed-and-unmanaged-devices.md).
@@ -197,9 +191,4 @@ Custom metadata that you want to associate with the connected account. Supports 
 ## Response
 
 void
-
-
----
-
-## Examples
 

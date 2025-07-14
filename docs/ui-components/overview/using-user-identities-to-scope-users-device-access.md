@@ -128,39 +128,5 @@ $token = $client_session->token;
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-```go
-// Create the user identity.
-response, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
-    UserIdentityKey: api.String("user-1"),
-})
 
-if uErr != nil {
-    return uErr
-}
-
-// Grant the user identity access to a specific device.
-_, uErr := client.UserIdentities.GrantAccessToDevice(context.Background(), &api.UserIdentitiesGrantAccessToDeviceRequest{
-    UserIdentityId: response.UserIdentity.UserIdentityId,
-    // Specify the ID of the device that you want your
-    // user to be able to access.
-    DeviceId: "054765c8-a2fc-4599-b486-14c19f462c45",
-})
-
-if uErr != nil {
-    return uErr
-}
-
-// Create the client session.
-clientSession, uErr := client.ClientSessions.Create(context.Background(), &api.ClientSessionsCreateRequest{
-  UserIdentityIds: []string{response.UserIdentity.UserIdentityId},
-})
-
-// Use this token in your app.
-token := clientSession.Token
-fmt.Println("Token:", token)
-
-return nil
-```
-{% endtab %}
 {% endtabs %}

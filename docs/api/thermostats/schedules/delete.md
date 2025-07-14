@@ -1,8 +1,7 @@
 # Delete a Thermostat Schedule
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -10,17 +9,17 @@ Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.delete({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -29,21 +28,21 @@ await seam.thermostats.schedules.delete({
 
 {% tab title="cURL" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "thermostat_schedule_id": "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+  "thermostat_schedule_id": "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -52,17 +51,17 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.delete(
-    thermostat_schedule_id="89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+    thermostat_schedule_id="0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -71,15 +70,15 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.thermostats.schedules.delete(thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4")
+seam.thermostats.schedules.delete(thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -88,64 +87,34 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->schedules->delete(
-    thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+    thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import schedules "github.com/seamapi/go/schedules"
-
-func main() {
-	client.Thermostats.Schedules.Delete(
-		context.Background(),
-		schedules.SchedulesDeleteRequest{
-			ThermostatScheduleId: api.String("89d3507e-60e3-4101-bd1b-ba066ec30ad4"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `thermostat_schedule_id` of the desired thermostat schedule.
+Deletes a thermostat schedule for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam thermostats schedules delete --thermostat_schedule_id "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+seam thermostats schedules delete --thermostat_schedule_id "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -179,9 +148,4 @@ ID of the thermostat schedule that you want to delete.
 ## Response
 
 void
-
-
----
-
-## Examples
 

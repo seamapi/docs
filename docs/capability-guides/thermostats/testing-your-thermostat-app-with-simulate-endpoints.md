@@ -36,7 +36,7 @@ For more information, see [Thermostat Capabilities](../../products/thermostats/#
 
 ## Simulate Adjusting the HVAC Mode
 
-The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the [HVAC mode](understanding-thermostat-concepts/hvac-mode.md) for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.manually_adjusted`.
+The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the [HVAC mode](understanding-thermostat-concepts/hvac-mode.md) for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](../../api/events/) correctly, such as `thermostat.manually_adjusted`.
 
 You can simulate having set the HVAC mode to any of the following settings:
 
@@ -240,90 +240,15 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
 
-**Code:**
 
-```java
-// Get the device.
-Device thermostat = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-2222-444444444444")
-    .build());
-
-// Confirm that Seam supports the desired HVAC mode for the thermostat.
-// In this example, we're simulating having set the thermostat to heat mode.
-if (thermostat.getCanHvacHeat())
-{
-  // Perform the simulated HVAC mode adjustment.
-  seam.thermostats().simulate()
-    .hvacModeAdjusted(ThermostatsSimulateHvacModeAdjustedRequest.builder()
-      .deviceId(thermostat.getDeviceId())
-      .hvacMode(HvacModeSetting.HEAT)
-      .heatingSetPointFahrenheit(68)
-      .build());
-}
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
-
-{% tab title="Go" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
-
-**Code:**
-
-```go
-// Get the device.
-thermostat, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-2222-444444444444"),
-  })
-
-// Confirm that Seam supports the desired HVAC mode for the thermostat.
-// In this example, we're simulating having set the thermostat to heat mode.
-if *thermostat.CanHvacHeat {
-  // Perform the simulated HVAC mode adjustment.
-  client.Thermostats.Simulate.HvacModeAdjusted(
-      context.Background(),
-      &api.ThermostatsSimulateHvacModeAdjustedRequest{
-        DeviceId: thermostat.DeviceId,
-        HvacMode: api.HvacModeSettingHeat.Ptr(),
-        HeatingSetPointFahrenheit: 68,
-      },
-    )
-  }
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## Simulate Reaching a Desired Temperature
 
-The `/thermostats/simulate/temperature_reached` endpoint enables you to simulate the thermostat reaching a specified temperature. This simulation is helpful for testing that your app is receiving [thermostat events](../../api-clients/events/) correctly, such as `thermostat.temperature_changed` and `thermostat.temperature_reached_set_point`.
+The `/thermostats/simulate/temperature_reached` endpoint enables you to simulate the thermostat reaching a specified temperature. This simulation is helpful for testing that your app is receiving [thermostat events](../../api/events/) correctly, such as `thermostat.temperature_changed` and `thermostat.temperature_reached_set_point`.
 
 Specify the desired temperature that you want to simulate the thermostat reaching using either of the following parameters:
 
@@ -487,69 +412,6 @@ void
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
 
-**Code:**
 
-```java
-// Get the device.
-Device thermostat = seam.devices()
-  .get(DevicesGetRequest.builder()
-    .deviceId("11111111-1111-1111-2222-444444444444")
-    .build());
-
-// Simulate reaching the specified temperature.
-seam.thermostats().simulate()
-  .temperatureReached(ThermostatsSimulateTemperatureReachedRequest.builder()
-    .deviceId(thermostat.getDeviceId())
-    .temperatureCelsius(25)
-    .build());
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
-
-{% tab title="Go" %}
-{% hint style="info" %}
-Coming soon!
-{% endhint %}
-
-**Code:**
-
-```go
-// Get the device.
-thermostat, uErr := client.Devices.Get(
-  context.Background(),
-  &api.DevicesGetRequest{
-    DeviceId: api.String("11111111-1111-1111-2222-444444444444"),
-  })
-
-// Simulate reaching the specified temperature.
-client.Thermostats.Simulate.TemperatureReached(
-  context.Background(),
-  &api.ThermostatsSimulateTemperatureReachedRequest{
-    DeviceId: thermostat.DeviceId,
-    TemperatureCelsius: 25,
-  })
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```json
-void
-```
-{% endtab %}
 {% endtabs %}

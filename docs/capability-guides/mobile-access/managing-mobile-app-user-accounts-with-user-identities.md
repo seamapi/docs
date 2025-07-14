@@ -188,54 +188,6 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Command:**
-
-```go
-userIdentity, uErr := client.UserIdentities.Create(context.Background(), &api.UserIdentitiesCreateRequest{
-  UserIdentityKey: api.String("jean_doe"),
-  EmailAddress: api.String("jean@example.com"),
-  PhoneNumber: api.String("+15555550110"),
-  FullName: api.String("Jean Doe"),
-})
-
-if uErr != nil {
-    return uErr
-}
-
-fmt.Println(userIdentity)
-return nil
-```
-
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "display_name": "Jean Doe",
-  "full_name": "Jean Doe",
-  ...
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ### 2. Assign an ACS User to the User Identity
@@ -401,66 +353,13 @@ Coming soon!
 Coming soon!
 ```
 {% endtab %}
-
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Command:**
-
-```go
-userIdentity, uErr := client.UserIdentities.Get(context.Background(), &api.UserIdentitiesGetRequest{
-  EmailAddress: api.String("jean@example.com"),
-})
-
-if uErr != nil {
-    return uErr
-}
-
-acsUser, uErr := client.Acs.Users.Get(context.Background(), &acs.UsersGetRequest{
-  EmailAddress: api.String("jean@example.com"),
-})
-
-if uErr != nil {
-    return uErr
-}
-
-_, uErr := client.UserIdentities.AddAcsUser(context.Background(), &useridentities.UserIdentitiesAddAcsUserRequest{
-    UserIdentityId: acs_user.UserIdentityId,
-    AcsUserId: acs_user.AcsUserId,
-})
-
-if uErr != nil {
-    return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```
-nil
-```
-{% endtab %}
 {% endtabs %}
 
 ***
 
 ## Removing a User Identity
 
-To delete a user identity, you must first delete any [ACS credentials](../../api/acs/credentials/delete.md), [ACS users](../../api/acs/users/delete.md), and [enrollment automations](../../api/user_identities/enrollment_automations/) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+To delete a user identity, you must first delete any [ACS credentials](../../api/acs/credentials/delete.md) and [ACS users](../../api/acs/users/delete.md) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -520,26 +419,7 @@ async def delete_user_identity(user_identity_id):
       wait_for_acs_user_deleted(acs_user) for acs_user in acs_users
     ])
 
-  # Step 3: List and delete all enrollment automations 
-  # associated with the user identity.
-  
-  # List the enrollment automations.
-  enrollment_automations = await seam.user_identities.enrollment_automations.list(
-      user_identity_id=user_identity_id
-  )
-
-  # Delete the enrollment automations.
-  for automation in enrollment_automations:
-    await seam.user_identities.enrollment_automations.delete(
-      enrollment_automation_id=automation['enrollment_automation_id']
-    )
-
-  await asyncio.gather(*[
-    wait_for_enrollment_automation_deleted(automation)
-    for automation in enrollment_automations
-  ])
-
-  # Step 4: List and deactivate all phones 
+  # Step 3: List and deactivate all phones 
   # associated with the user identity.
   
   # List the phones.
@@ -557,7 +437,7 @@ async def delete_user_identity(user_identity_id):
     wait_for_phone_deactivated(phone) for phone in phones
   ])
 
-  # Step 5: Delete the user identity.
+  # Step 4: Delete the user identity.
   await seam.user_identities.delete(
     user_identity_id=user_identity_id
   )
@@ -574,13 +454,6 @@ async def wait_for_acs_user_deleted(acs_user):
     'acs_user.deleted',
     lambda event: 'acs_user_id' in event and
                   event.acs_user_id == acs_user.acs_user_id
-  )
-
-async def wait_for_enrollment_automation_deleted(enrollment_automation):
-  await wait_for_event(
-    'enrollment_automation.deleted',
-    lambda event: 'enrollment_automation_id' in event and
-                  event.enrollment_automation_id == enrollment_automation.enrollment_automation_id
   )
 
 async def wait_for_acs_credential_deleted(acs_credential):
@@ -663,26 +536,7 @@ for (const acsUser of acsUsers) {
   
 }
 
-// Step 3: List and delete all enrollment automations 
-// associated with the user identity.
-
-// List the enrollment automations.
-const enrollmentAutomations = await seam.userIdentities.enrollmentAutomations.list({
-  user_identity_id: userIdentityId,
-});
-
-// Delete each returned enrollment automation.
-for (const enrollmentAutomation of enrollmentAutomations) {
-  await seam.userIdentities.enrollmentAutomations.delete({
-    enrollment_automation_id: enrollmentAutomation.enrollment_automation_id,
-  });
-
-  // Wait until each enrollment automation has been deleted.
-  // You can watch for enrollment_automation.deleted events.
-
-}
-
-// Step 4: List and deactivate all phones 
+// Step 3: List and deactivate all phones 
 // associated with the user identity.
 
 // List the phones.
@@ -701,7 +555,7 @@ for (const phone of phones) {
 
 }
 
-// Step 5: Delete the user identity.
+// Step 4: Delete the user identity.
 await seam.userIdentities.delete({
   user_identity_id: userIdentityId,
 });
@@ -770,26 +624,7 @@ acs_users.each do |acs_user|
   
 end
 
-# Step 3: List and delete all enrollment automations 
-# associated with the user identity.
-
-# List the enrollment automations.
-enrollment_automations = seam.user_identities.enrollment_autoations.list(
-  user_identity_id: user_identity_id
-)
-
-# Delete each returned enrollment automation.
-enrollment_automations.each do |enrollment_automation|
-  seam.user_identities.enrollment_automations.delete(
-    enrollment_automation_id: enrollment_automation.enrollment_automation_id
-  )
-
-  # Wait until each enrollment automation has been deleted.
-  # You can watch for enrollment_automation.deleted events.
-
-end
-
-# Step 4: List and deactivate all phones 
+# Step 3: List and deactivate all phones 
 # associated with the user identity.
 
 # List the phones.
@@ -808,7 +643,7 @@ phones.each do |phone|
 
 end
 
-# Step 5: Delete the user identity.
+# Step 4: Delete the user identity.
 seam.user_identities.delete(
   user_identity_id: user_identity_id
 )
@@ -877,26 +712,7 @@ foreach ($acs_users as $acs_user) {
   
 }
 
-// Step 3: List and delete all enrollment automations 
-// associated with the user identity.
-
-// List the enrollment automations.
-$enrollment_automations = $seam->user_identities->enrollment_automations->list(
-  user_identity_id: $user_identity_id
-);
-
-// Delete each returned enrollment automation.
-foreach ($enrollment_automations as $enrollment_automation) {
-  $seam->user_identities->enrollment_automations->delete(
-    enrollment_automation_id: $enrollment_automation->enrollment_automation_id
-  );
-
-  // Wait until each enrollment automation has been deleted.
-  // You can watch for enrollment_automation.deleted events.
-
-}
-
-// Step 4: List and deactivate all phones 
+// Step 3: List and deactivate all phones 
 // associated with the user identity.
 
 // List the phones.
@@ -915,7 +731,7 @@ foreach ($phones as $phone) {
 
 }
 
-// Step 5: Delete the user identity.
+// Step 4: Delete the user identity.
 $seam->user_identities->delete(
   user_identity_id: $user_identity_id
 );
@@ -939,169 +755,6 @@ Coming soon!
 
 ```json
 Coming soon!
-```
-{% endtab %}
-
-{% tab title="Java" %}
-**Command:**
-
-```java
-Coming soon!
-```
-
-**Output:**
-
-```json
-Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Command:**
-
-```go
-userIdentityID := "22222222-2222-2222-2222-222222222222"
-
-// Step 1: List and delete all client sessions 
-// associated with the user identity.
-
-// List the client sessions.
-clientSessions, uErr := seam.ClientSessions.List(
-  context.Background(),
-  userIdentityID
-)
-if uErr != nil {
-  return uErr
-}
-
-// Delete each returned client session.
-for _, clientSession := range clientSessions {
-  uErr := seam.ClientSessions.Delete(
-    context.Background(),
-    clientSession.ClientSessionID
-  )
-  if uErr != nil {
-    return uErr
-  }
-}
-
-// Step 2: List and delete all ACS users and credentials 
-// associated with the user identity.
-
-// List the ACS users.
-acsUsers, uErr := seam.ACS.Users.List(
-  context.Background(),
-  userIdentityID
-)
-if uErr != nil {
-  return uErr
-}
-
-for _, acsUser := range acsUsers {
-  // For each returned ACS user, list the associated credentials.
-  credentials, uErr := seam.ACS.Credentials.List(
-    context.Background(),
-    acsUser.ACSUserID
-  )
-  if uErr != nil {
-    return uErr
-  }
-  
-  // Delete each returned credential.
-  for _, credential := range credentials {
-    uErr := seam.ACS.Credentials.Delete(
-      context.Background(),
-      credential.ACSCredentialID
-    )
-    if uErr != nil {
-      return uErr
-    }
-
-    // Wait until each credential has been deleted.
-    // You can watch for acs_credential.deleted events.
-  }
-    
-  // Delete each ACS user returned previously.
-  uErr = seam.ACS.Users.Delete(
-    context.Background(),
-    acsUser.ACSUserID
-  )
-  if uErr != nil {
-    return uErr
-  }
-
-  // Wait until each ACS user has been deleted.
-  // You can watch for acs_user.deleted events.
-}
-
-// Step 3: List and delete all enrollment automations 
-// associated with the user identity.
-
-// List the enrollment automations.
-enrollmentAutomations, uErr := seam.UserIdentities.EnrollmentAutomations.List(
-  context.Background(),
-  userIdentityID
-)
-if uErr != nil {
-  return uErr
-}
-
-// Delete each returned enrollment automation.
-for _, enrollmentAutomation := range enrollmentAutomations {
-  uErr := seam.UserIdentities.EnrollmentAutomations.Delete(
-    context.Background(),
-    enrollmentAutomation.EnrollmentAutomationID
-  )
-  if uErr != nil {
-    return uErr
-  }
-
-  // Wait until each enrollment automation has been deleted.
-  // You can watch for enrollment_automation.deleted events.
-}
-
-// Step 4: List and deactivate all phones 
-// associated with the user identity.
-
-// List the phones.
-phones, uErr := seam.Phones.List(
-  context.Background(),
-  userIdentityID
-)
-if uErr != nil {
-  return uErr
-}
-
-// Deactivate each returned phone.
-for _, phone := range phones {
-  uErr := seam.Phones.Deactivate(
-    context.Background(),
-    phone.DeviceID
-  )
-  if uErr != nil {
-    return uErr
-  }
-
-  // Wait until each phone has been deactivated.
-  // You can watch for phone.deactivated events.
-}
-
-// Step 5: Delete the user identity.
-uErr = seam.UserIdentities.Delete(
-  context.Background(),
-  userIdentityID
-)
-if uErr != nil {
-  return uErr
-}
-
-return nil
-```
-
-**Output:**
-
-```
-nil
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,8 +1,7 @@
 # List Accessible Entrances
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.
 
@@ -10,37 +9,37 @@ Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.listAccessibleEntrances({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  acs_credential_id: "9407e456-b8ac-475a-8431-fee76cedda03",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
   {
-    "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at": "2025-06-15T16:54:17.946495Z",
+    "display_name": "Main Entrance",
+    "errors": [],
     "visionline_metadata": {
+      "door_category": "guest",
+      "door_name": "Main Entrance",
       "profiles": [
         {
-          "visionline_door_profile_id": "Guest Door",
+          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
           "visionline_door_profile_type": "BLE"
         }
-      ],
-      "door_name": "Guest Lock 2",
-      "door_category": "guest"
-    },
-    "latch_metadata": null,
-    "display_name": "Guest Lock 2",
-    "created_at": "2024-03-26T14:31:18.979Z"
+      ]
+    }
   }
 ]
 ```
@@ -48,42 +47,42 @@ await seam.acs.credentials.listAccessibleEntrances({
 
 {% tab title="cURL" %}
 
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/list_accessible_entrances" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "acs_credential_id": "66666666-6666-6666-6666-666666666666"
+  "acs_credential_id": "9407e456-b8ac-475a-8431-fee76cedda03"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "acs_entrances": [
     {
-      "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
-      "acs_system_id": "11111111-1111-1111-1111-111111111111",
-      "workspace_id": "00000000-0000-0000-0000-000000000000",
+      "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+      "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+      "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+      "created_at": "2025-06-15T16:54:17.946495Z",
+      "display_name": "Main Entrance",
+      "errors": [],
       "visionline_metadata": {
+        "door_category": "guest",
+        "door_name": "Main Entrance",
         "profiles": [
           {
-            "visionline_door_profile_id": "Guest Door",
+            "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
             "visionline_door_profile_type": "BLE"
           }
-        ],
-        "door_name": "Guest Lock 2",
-        "door_category": "guest"
-      },
-      "latch_metadata": null,
-      "display_name": "Guest Lock 2",
-      "created_at": "2024-03-26T14:31:18.979Z"
+        ]
+      }
     }
   ]
 }
@@ -92,37 +91,37 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.list_accessible_entrances(
-    acs_credential_id="66666666-6666-6666-6666-666666666666"
+    acs_credential_id="9407e456-b8ac-475a-8431-fee76cedda03"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
     AcsEntrance(
-        acs_entrance_id="55555555-5555-5555-5555-555555555555",
-        acs_system_id="11111111-1111-1111-1111-111111111111",
-        workspace_id="00000000-0000-0000-0000-000000000000",
+        acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
+        acs_system_id="6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+        connected_account_id="1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+        created_at="2025-06-15T16:54:17.946495Z",
+        display_name="Main Entrance",
+        errors=[],
         visionline_metadata={
+            "door_category": "guest",
+            "door_name": "Main Entrance",
             "profiles": [
                 {
-                    "visionline_door_profile_id": "Guest Door",
+                    "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
                     "visionline_door_profile_type": "BLE",
                 }
             ],
-            "door_name": "Guest Lock 2",
-            "door_category": "guest",
         },
-        latch_metadata=None,
-        display_name="Guest Lock 2",
-        created_at="2024-03-26T14:31:18.979Z",
     )
 ]
 ```
@@ -130,32 +129,37 @@ seam.acs.credentials.list_accessible_entrances(
 
 {% tab title="Ruby" %}
 
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.list_accessible_entrances(
-  acs_credential_id: "66666666-6666-6666-6666-666666666666",
+  acs_credential_id: "9407e456-b8ac-475a-8431-fee76cedda03",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
   {
-    "acs_entrance_id" => "55555555-5555-5555-5555-555555555555",
-    "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-    "workspace_id" => "00000000-0000-0000-0000-000000000000",
+    "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at" => "2025-06-15T16:54:17.946495Z",
+    "display_name" => "Main Entrance",
+    "errors" => [],
     "visionline_metadata" => {
-      profiles: [{ visionline_door_profile_id: "Guest Door", visionline_door_profile_type: "BLE" }],
-      door_name: "Guest Lock 2",
       door_category: "guest",
+      door_name: "Main Entrance",
+      profiles: [
+        {
+          visionline_door_profile_id: "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          visionline_door_profile_type: "BLE",
+        },
+      ],
     },
-    "latch_metadata" => nil,
-    "display_name" => "Guest Lock 2",
-    "created_at" => "2024-03-26T14:31:18.979Z",
   },
 ]
 ```
@@ -163,104 +167,74 @@ seam.acs.credentials.list_accessible_entrances(
 
 {% tab title="PHP" %}
 
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->list_accessible_entrances(
-    acs_credential_id: "66666666-6666-6666-6666-666666666666"
+    acs_credential_id: "9407e456-b8ac-475a-8431-fee76cedda03"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
-        "acs_entrance_id" => "55555555-5555-5555-5555-555555555555",
-        "acs_system_id" => "11111111-1111-1111-1111-111111111111",
-        "workspace_id" => "00000000-0000-0000-0000-000000000000",
+        "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
+        "acs_system_id" => "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+        "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+        "created_at" => "2025-06-15T16:54:17.946495Z",
+        "display_name" => "Main Entrance",
+        "errors" => [],
         "visionline_metadata" => [
+            "door_category" => "guest",
+            "door_name" => "Main Entrance",
             "profiles" => [
                 [
-                    "visionline_door_profile_id" => "Guest Door",
+                    "visionline_door_profile_id" =>
+                        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
                     "visionline_door_profile_type" => "BLE",
                 ],
             ],
-            "door_name" => "Guest Lock 2",
-            "door_category" => "guest",
         ],
-        "latch_metadata" => null,
-        "display_name" => "Guest Lock 2",
-        "created_at" => "2024-03-26T14:31:18.979Z",
     ],
 ];
 ```
 {% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-import credentials "github.com/seamapi/go/credentials"
-
-func main() {
-	client.Acs.Credentials.ListAccessibleEntrances(
-		context.Background(),
-		credentials.CredentialsListAccessibleEntrancesRequest{
-			AcsCredentialId: api.String("66666666-6666-6666-6666-666666666666"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-[]api.AcsEntrance{api.AcsEntrance{AcsEntranceId: "55555555-5555-5555-5555-555555555555", AcsSystemId: "11111111-1111-1111-1111-111111111111", WorkspaceId: "00000000-0000-0000-0000-000000000000", VisionlineMetadata: api.AcsEntranceVisionlineMetadata{Profiles: []AcsEntranceVisionlineMetadataProfiles{api.AcsEntranceVisionlineMetadataProfilesProfiles{VisionlineDoorProfileId: "Guest Door", VisionlineDoorProfileType: "BLE"}}, DoorName: "Guest Lock 2", DoorCategory: "guest"}, LatchMetadata: nil, DisplayName: "Guest Lock 2", CreatedAt: "2024-03-26T14:31:18.979Z"}}
-```
-{% endtab %}
-
 {% tab title="Seam CLI" %}
 
-Specify the `acs_credential_id` for which you want to retrieve all entrances to which the credential grants access.
+Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam acs credentials list-accessible-entrances --acs_credential_id "66666666-6666-6666-6666-666666666666"
+seam acs credentials list-accessible-entrances --acs_credential_id "9407e456-b8ac-475a-8431-fee76cedda03"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
   {
-    "acs_entrance_id": "55555555-5555-5555-5555-555555555555",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at": "2025-06-15T16:54:17.946495Z",
+    "display_name": "Main Entrance",
+    "errors": [],
     "visionline_metadata": {
+      "door_category": "guest",
+      "door_name": "Main Entrance",
       "profiles": [
         {
-          "visionline_door_profile_id": "Guest Door",
+          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
           "visionline_door_profile_type": "BLE"
         }
-      ],
-      "door_name": "Guest Lock 2",
-      "door_category": "guest"
-    },
-    "latch_metadata": null,
-    "display_name": "Guest Lock 2",
-    "created_at": "2024-03-26T14:31:18.979Z"
+      ]
+    }
   }
 ]
 ```
@@ -291,10 +265,33 @@ ID of the credential for which you want to retrieve all entrances to which the c
 
 ## Response
 
-Array of [acs\_entrances](./)
+Array of [acs\_entrances](./../entrances)
 
 
----
+{% tabs %}
+{% tab title="JSON" %}
 
-## Examples
 
+
+```json
+{
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
+}
+```
+{% endtab %}
+{% endtabs %}

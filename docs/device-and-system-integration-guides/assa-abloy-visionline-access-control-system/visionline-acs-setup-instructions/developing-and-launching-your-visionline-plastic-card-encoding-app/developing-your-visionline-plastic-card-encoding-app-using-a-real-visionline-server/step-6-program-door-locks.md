@@ -18,10 +18,10 @@ This process consists of the following basic steps:
 
 ## Install Lock Service 3G
 
-Install the Lock Service 3G on a Windows laptop or tablet that you can move to each door lock. You use a USB-to-lock interface cable to connect this laptop or tablet to each door lock.
+Install the Lock Service 3G on a Windows laptop or tablet that you can move to each door lock. You use an [RJ12 service cable](https://estore.assaabloyglobalsolutions.com/us/marine/service-cable-rj12-for-3g-rfid-lcu-e-cylinder.html) with an [RJ12 to USB adapter cable](https://estore.assaabloyglobalsolutions.com/us/marine/cable-rj12-to-usb-adapter-for-3g.html) to connect this laptop or tablet to each door lock.
 
 {% hint style="info" %}
-If the USB-to-lock interface cable does not work correctly, you may need to install the following driver:
+If the service cable with adapter cable does not work correctly, you may need to install the following driver:
 
 `CDM v2.12.xx WHQL Certified.exe`
 {% endhint %}
@@ -31,7 +31,7 @@ If the USB-to-lock interface cable does not work correctly, you may need to inst
 ## Configure Visionline for Lock Service 3G
 
 1. Log in to the Visionline application if you are not already logged in.
-2.  Add a  device.
+2.  Add a device.
 
     1. At the bottom of the left navigation pane, click **Lists**.
     2. In the **System setup** section of the left navigation pane, double-click **Devices**.
@@ -122,20 +122,18 @@ Perform the following steps on each lock:
    1. Open the Lock Service 3G application if you have not done so already.
    2. In the **Initiation** section of the left navigation pane, click **Upload firmware**.
    3. At the right of the **Lock Service 3G** window, in the lower field in the **Serial port and host** area, select the name of the Visionline server connection.
-   4.  In the **Upload firmware** area, click **Browse**.\
-
+   4.  In the **Upload firmware** area, click **Browse**.\\
 
        <figure><img src="../../../../../.gitbook/assets/lock-service-3g-upload-firmware.png" alt="Select the Lock Control Unit firmware to upload."><figcaption><p>Select the Lock Control Unit firmware to upload.</p></figcaption></figure>
    5. Select the firmware that ASSA ABLOY has sent to you and then click **Open**.
-   6.  In the **Available versions** table, right-click the appropriate firmware version and select **Save to database**.\
-
+   6.  In the **Available versions** table, right-click the appropriate firmware version and select **Save to database**.\\
 
        <figure><img src="../../../../../.gitbook/assets/lock-service-3g-upload-fw-save-to-db.png" alt="Save the firmware to the database." width="362"><figcaption><p>Save the firmware to the database.</p></figcaption></figure>
    7. In the **Available versions** table, select the appropriate firmware version.
    8.  At the right of the **Lock Service 3G** window, in the upper field in the **Serial port and host** area, select the serial port that you want to use to connect to the lock.
 
        <figure><img src="../../../../../.gitbook/assets/lock-service-3g-select-port.png" alt="Select the port." width="139"><figcaption><p>Select the port.</p></figcaption></figure>
-   9. Connect the cable from the laptop or tablet running Lock Service 3G to the lock.
+   9. Connect the service cable with adapter cable from the laptop or tablet running Lock Service 3G to the lock.
    10. At the bottom of the **Upload firmware** area, click **Upload**.
 2. Open the Lock Service 3G application if you have not done so already.
 3. Initialize the lock.
@@ -144,6 +142,6 @@ Perform the following steps on each lock:
    3. In the **Initialize lock** area, expand the appropriate door area and select the lock that you want to initialize.
    4. Select the **Read parameters after successful initialization** checkbox.
    5. At the right of the **Lock Service 3G** window, in the upper field in the **Serial port and host** area, select the serial port that you want to use to connect to the lock.
-   6.  Connect the cable from the laptop or tablet running Lock Service 3G to the lock and then click **Initialize**.
+   6.  Connect the service cable with adapter cable from the laptop or tablet running Lock Service 3G to the lock and then click **Initialize**.
 
        <figure><img src="../../../../../.gitbook/assets/lock-service-3g-initialize-lock.png" alt="Connect Lock Service 3G to each lock and initialize it."><figcaption><p>Connect Lock Service 3G to each lock and initialize it.</p></figcaption></figure>

@@ -1,8 +1,7 @@
 # Delete a Connected Account
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes a specified [connected account](../../core-concepts/connected-accounts/README.md).
 
@@ -14,17 +13,17 @@ For example, if you delete a connected account with a device that has an access 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.delete({
-  connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c",
+  connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -33,21 +32,21 @@ await seam.connectedAccounts.delete({
 
 {% tab title="cURL" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "connected_account_id": "23e4eb21-6e93-48c4-a077-bf503246d47c"
+  "connected_account_id": "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,17 +55,17 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.delete(
-    connected_account_id="23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id="35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -75,15 +74,15 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```ruby
-seam.connected_accounts.delete(connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c")
+seam.connected_accounts.delete(connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -92,63 +91,34 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connected_accounts->delete(
-    connected_account_id: "23e4eb21-6e93-48c4-a077-bf503246d47c"
+    connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `connected_account_id` of the connected account that you want to delete.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.ConnectedAccounts.Delete(
-		context.Background(),
-		api.ConnectedAccountsDeleteRequest{
-			ConnectedAccountId: api.String("23e4eb21-6e93-48c4-a077-bf503246d47c"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `connected_account_id` of the connected account that you want to delete.
+Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam connected-accounts delete --connected_account_id "23e4eb21-6e93-48c4-a077-bf503246d47c"
+seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -163,6 +133,7 @@ seam connected-accounts delete --connected_account_id "23e4eb21-6e93-48c4-a077-b
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -181,9 +152,4 @@ ID of the connected account that you want to delete.
 ## Response
 
 void
-
-
----
-
-## Examples
 

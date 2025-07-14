@@ -6,7 +6,7 @@ description: You can add or change custom metadata for a device.
 
 You can use custom metadata to store a custom payload or object, tailored to the specific needs of your app. For example, this feature is useful for tracking customer information, internal user IDs, or other internal resources for a [device](./). Storing custom metadata in a Seam `device` object enables you to look up an internal resource from directly within your Seam [workspace](../workspaces/). Then, you can [filter devices by the desired metadata](filtering-devices-by-custom-metadata.md).
 
-Use the [Update Device](../../api-clients/devices/update.md) method with the optional [`custom_metadata` property](../../api-clients/devices/#device-properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
+Use the [Update Device](../../api/devices/update.md) method with the optional [`custom_metadata` property](../../api/devices/#properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -148,48 +148,6 @@ Console.WriteLine(deviceUpdate);
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
 
-seam.devices().update(DevicesUpdateRequest.builder()
-        .deviceId("30fd243b-3054-4384-a713-5487076a3826")
-        .custom_metadata(customMetadata)
-        .build());
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-deviceUpdate, err := client.Devices.Update(
-	context.Background(),
-	&api.DevicesUpdateRequest{
-		DeviceId: "30fd243b-3054-4384-a713-5487076a3826",
-		CustomMetadata: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(deviceUpdate)
-return nil
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
 {% endtabs %}

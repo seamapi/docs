@@ -28,9 +28,7 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -58,36 +56,8 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Gradle:**
-
-```gradle
-// build.gradle
-dependencies {
-    implementation 'io.github.seamapi:java:0.x.x'
-}
-```
-
-**Maven:**
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>io.github.seamapi</groupId>
-    <artifactId>java</artifactId>
-    <version>0.x.x</version>
-</dependency>
-```
-{% endtab %}
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
-{% endtab %}
-
-{% tab title="Go" %}
-```bash
-go get github.com/seamapi/go
-```
 {% endtab %}
 {% endtabs %}
 
@@ -213,15 +183,14 @@ After a Kwikset account is linked with Seam, you can retrieve devices for this K
 
 {% tabs %}
 {% tab title="Python" %}
-````python
-all_locks = seam.locks.list()
+\`\`\`\`python all\_locks = seam.locks.list()
 
-some_lock = all_locks[0]
+some\_lock = all\_locks\[0]
 
-assert some_lock.properties["online"] is True
-assert some_lock.properties["locked"] is True
+assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
 
-print(some_lock)
+print(some\_lock)
+
 ```python
 # Device(
 #     device_id='10891c43-29e0-4b93-b071-34749025a123',
@@ -247,10 +216,12 @@ print(some_lock)
 #     },
 #     capabilities_supported=['lock']
 # )
-````
-{% endtab %}
+```
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -289,9 +260,11 @@ console.log(someLock)
 }
 */
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -316,29 +289,27 @@ puts some_lock.inspect
 >
 
 ```
-{% endtab %}
-{% endtabs %}
 
-### 4 — Locking & Unlocking a Door
+\{% endtab %\} \{% endtabs %\}
+
+#### 4 — Locking & Unlocking a Door
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
-{% endopenapi %}
+\{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %\} [openapi (1).json](../.gitbook/assets/openapi%20\(1\).json) \{% endopenapi %\}
 
-## Unlock a door
+### Unlock a door
 
 <mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
-#### Request Body
+**Request Body**
 
 | Name       | Type   | Description |
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-{% tabs %}
-{% tab title="Python" %}
+\{% tabs %\} \{% tab title="Python" %\}
+
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -350,9 +321,11 @@ seam.locks.unlock_door(device_id: some_lock.device_id)
 updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
-{% endtab %}
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -364,9 +337,11 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -378,16 +353,14 @@ seam.locks.unlock_door(device_id: some_lock.device_id)
 updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 ```
-{% endtab %}
-{% endtabs %}
 
-### 5 — Setting Access Code on Kwikset Lock
+\{% endtab %\} \{% endtabs %\}
 
-{% hint style="info" %}
-In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
+#### 5 — Setting Access Code on Kwikset Lock
 
-If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ shows the access codes that you have set from the app itself and not the codes set from Seam.
-{% endhint %}
+\{% hint style="info" %\} In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
+
+If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ shows the access codes that you have set from the app itself and not the codes set from Seam. \{% endhint %\}
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
@@ -404,8 +377,8 @@ Kwikset locks place the following constraints on access code attributes:
 * A `timebound` code requires both a `starts_at` timestamp and an `ends_at` timestamp.
 * A `timebound` code's `starts_at` timestamp must be greater than the current time. For best results, set `starts_at` at least 15 minutes ahead of the current time.
 
-{% tabs %}
-{% tab title="Python" %}
+\{% tabs %\} \{% tab title="Python" %\}
+
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -439,9 +412,11 @@ seam.access_codes.list(device=some_lock)
 # ]
 
 ```
-{% endtab %}
 
-{% tab title="Javascript" %}
+\{% endtab %\}
+
+\{% tab title="Javascript" %\}
+
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -483,9 +458,11 @@ await seam.accessCodes.list({
 ]
 */
 ```
-{% endtab %}
 
-{% tab title="Ruby" %}
+\{% endtab %\}
+
+\{% tab title="Ruby" %\}
+
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -531,10 +508,14 @@ seam.access_codes.list(device_id: some_lock.device_id)
 #   warnings=[]
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
-{% endtab %}
 
-{% tab title="PHP" %}
-```php
+\{% endtab %\}
+
+\{% tab title="PHP" %\}
+
+```
+
+php
 use Seam\SeamClient;
 
 $seam = new SeamClient("YOUR_API_KEY");
@@ -566,7 +547,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api-clients/events/list.md)
+* [Receiving webhook](../core-concepts/webhooks.md) for [device events](../api/events/list.md)
 * [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

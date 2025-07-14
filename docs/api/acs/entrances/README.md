@@ -3,8 +3,6 @@
 ## The acs_entrance Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -12,6 +10,34 @@
 Represents an [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
+
+{% tabs %}
+{% tab title="ACS Entrance" %}
+
+An access system entrance resource.
+
+```json
+{
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 ## Properties
@@ -44,10 +70,16 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
   <summary>Child Properties</summary>
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Vostio access system.
 
   - <strong><code>door_number</code></strong> <i>Number</i>
+  
+    Number of the door in the Vostio access system.
 
   - <strong><code>door_type</code></strong> <i>Enum</i>
+  
+    Type of the door in the Vostio access system.
   <details>
       <summary>Enum values:</summary>
   
@@ -58,10 +90,50 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
   </details>
 
   - <strong><code>pms_id</code></strong> <i>String</i>
+  
+    PMS ID of the door in the Vostio access system.
 
   - <strong><code>stand_open</code></strong> <i>Boolean</i>
+  
+    Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.
 
 </details>
+
+---
+
+**`can_unlock_with_card`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with card credentials.
+
+
+
+
+---
+
+**`can_unlock_with_code`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with pin codes.
+
+
+
+
+---
+
+**`can_unlock_with_mobile_key`** *Boolean*
+
+Indicates whether the ACS entrance can be unlocked with mobile key credentials.
+
+
+
+
+---
+
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../capability-guides/access-systems/retrieving-entrance-details.md) associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+
 
 ---
 
@@ -93,6 +165,8 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
   <summary>Child Properties</summary>
 
   - <strong><code>access_point_name</code></strong> <i>String</i>
+  
+    Name of the access point in the dormakaba Community access system.
 
 </details>
 
@@ -106,14 +180,14 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>error_code</code></strong> <i>String</i>
 
-  <strong><code>error_code</code></strong> <i>String</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 </details>
 
 ---
@@ -128,12 +202,20 @@ Latch-specific metadata associated with the [entrance](../../../capability-guide
   <summary>Child Properties</summary>
 
   - <strong><code>accessibility_type</code></strong> <i>String</i>
+  
+    Accessibility type in the Latch access system.
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Latch access system.
 
   - <strong><code>door_type</code></strong> <i>String</i>
+  
+    Type of the door in the Latch access system.
 
   - <strong><code>is_connected</code></strong> <i>Boolean</i>
+  
+    Indicates whether the entrance is connected.
 
 </details>
 
@@ -149,20 +231,36 @@ Salto KS-specific metadata associated with the [entrance](../../../capability-gu
   <summary>Child Properties</summary>
 
   - <strong><code>battery_level</code></strong> <i>String</i>
+  
+    Battery level of the door access device.
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Salto KS access system.
 
   - <strong><code>intrusion_alarm</code></strong> <i>Boolean</i>
+  
+    Indicates whether an intrusion alarm is active on the door.
 
   - <strong><code>left_open_alarm</code></strong> <i>Boolean</i>
+  
+    Indicates whether the door is left open.
 
   - <strong><code>lock_type</code></strong> <i>String</i>
+  
+    Type of the lock in the Salto KS access system.
 
   - <strong><code>locked_state</code></strong> <i>String</i>
+  
+    Locked state of the door in the Salto KS access system.
 
   - <strong><code>online</code></strong> <i>Boolean</i>
+  
+    Indicates whether the door access device is online.
 
   - <strong><code>privacy_mode</code></strong> <i>Boolean</i>
+  
+    Indicates whether privacy mode is enabled for the lock.
 
 </details>
 
@@ -178,10 +276,16 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
   <summary>Child Properties</summary>
 
   - <strong><code>door_description</code></strong> <i>String</i>
+  
+    Description of the door in the Salto Space access system.
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Salto Space access system.
 
   - <strong><code>ext_door_id</code></strong> <i>String</i>
+  
+    External door ID in the Salto Space access system.
 
 </details>
 
@@ -197,6 +301,8 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
   <summary>Child Properties</summary>
 
   - <strong><code>door_category</code></strong> <i>Enum</i>
+  
+    Category of the door in the Visionline access system.
   <details>
       <summary>Enum values:</summary>
   
@@ -208,13 +314,21 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
   </details>
 
   - <strong><code>door_name</code></strong> <i>String</i>
+  
+    Name of the door in the Visionline access system.
 
   - <strong><code>profiles</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Profile for the door in the Visionline access system.
 
 - <strong><code>visionline_door_profile_id</code></strong> <i>String</i>
 
+  Door profile ID in the Visionline access system.
+
 
 - <strong><code>visionline_door_profile_type</code></strong> <i>Enum</i>
+
+  Door profile type in the Visionline access system.
 <details>
     <summary>Enum values:</summary>
 
@@ -233,7 +347,7 @@ Visionline-specific metadata associated with the [entrance](../../../capability-
 
 **`acs_entrance.added`**
 
-An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
 
 <details>
 
@@ -267,14 +381,14 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---
 
 **`acs_entrance.removed`**
 
-An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
 
 <details>
 
@@ -308,7 +422,7 @@ An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entra
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the workspace associated with the event.
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
 ---

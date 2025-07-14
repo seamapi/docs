@@ -196,56 +196,8 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_credential, uErr := client.Acs.Credentials.Assign(
-  context.Background(), &acs.CredentialsAssignRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AcsCredentialId: "66666666-6666-6666-6666-66666666",
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-{
-  "acs_credential": {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "access_method": "mobile_key",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential": true,
-    # manufacturer-specific metadata
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -436,54 +388,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-// Coming soon!
-```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-acs_credential, uErr := client.Acs.Credentials.Unassign(
-  context.Background(), &acs.CredentialsUnassignRequest{
-    AcsUserId: "33333333-3333-3333-3333-333333333333",
-    AcsCredentialId: "66666666-6666-6666-6666-66666666",
-  },
-)
-```
-
-**Response:**
-
-{% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
-{% endhint %}
-
-```json
-{
-  "acs_credential": {
-    "acs_credential_id": "99999999-9999-9999-9999-999999999999",
-    "acs_user_id": "33333333-3333-3333-3333-333333333333",
-    "display_name": "Multi Phone Sync Credential",
-    "code": null,
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "access_method": "mobile_key",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-04-12T03:56:22.396Z",
-    "is_multi_phone_sync_credential": true,
-    # manufacturer-specific metadata
-  },
-  "ok": true
-}
-```
-{% endtab %}
 {% endtabs %}

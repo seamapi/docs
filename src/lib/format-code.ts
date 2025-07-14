@@ -1,3 +1,5 @@
+import { env } from 'node:process'
+
 import * as prettierPluginPhp from '@prettier/plugin-php/standalone'
 import * as prettierPluginRuby from '@prettier/plugin-ruby'
 import type { SyntaxName } from '@seamapi/blueprint'
@@ -64,6 +66,7 @@ const formatRuby = async (content: string): Promise<string> => {
     )
     return content
   }
+  env['PRETTIER_RUBY_TIMEOUT_MS'] = String(20_000)
   return await prettier(content, {
     parser: 'ruby',
     plugins: [prettierPluginRuby.default],
@@ -97,10 +100,11 @@ const formatBash = async (content: string): Promise<string> => {
 }
 
 const formatPhp = async (content: string): Promise<string> => {
-  return await prettier(content, {
+  const output = await prettier(content, {
     parser: 'php',
     plugins: [prettierPluginPhp.default],
   })
+  return output.split('\n').slice(1).join('\n')
 }
 
 export const formatJson = async (content: string): Promise<string> => {

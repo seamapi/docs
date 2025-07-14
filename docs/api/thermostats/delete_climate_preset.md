@@ -1,8 +1,7 @@
 # Delete a Climate Preset
 
-- [Request Parameters](./#request-parameters)
-- [Response](./#response)
-- [Examples](./#examples)
+- [Request Parameters](#request-parameters)
+- [Response](#response)
 
 Deletes a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
@@ -10,18 +9,18 @@ Deletes a specified [climate preset](../../capability-guides/thermostats/creatin
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.deleteClimatePreset({
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
+  device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+  climate_preset_key: "Eco",
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,22 +29,22 @@ await seam.thermostats.deleteClimatePreset({
 
 {% tab title="cURL" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/delete_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
 {
-  "device_id": "123e4567-e89b-12d3-a456-426614174000",
-  "climate_preset_key": "occupied"
+  "device_id": "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+  "climate_preset_key": "Eco"
 }
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,17 +53,17 @@ EOF
 
 {% tab title="Python" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.delete_climate_preset(
-    device_id="123e4567-e89b-12d3-a456-426614174000", climate_preset_key="occupied"
+    device_id="88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5", climate_preset_key="Eco"
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -73,18 +72,18 @@ None
 
 {% tab title="Ruby" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.delete_climate_preset(
-  device_id: "123e4567-e89b-12d3-a456-426614174000",
-  climate_preset_key: "occupied",
+  device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+  climate_preset_key: "Eco",
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -93,65 +92,35 @@ nil
 
 {% tab title="PHP" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->delete_climate_preset(
-    device_id: "123e4567-e89b-12d3-a456-426614174000",
-    climate_preset_key: "occupied"
+    device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
+    climate_preset_key: "Eco"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
-```
-{% endtab %}
 
-{% tab title="Go" %}
-
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
-
-#### Code
-
-```go
-package main
-
-import api "github.com/seamapi/go"
-
-func main() {
-	client.Thermostats.DeleteClimatePreset(
-		context.Background(),
-		api.ThermostatsDeleteClimatePresetRequest{
-			DeviceId:         api.String("123e4567-e89b-12d3-a456-426614174000"),
-			ClimatePresetKey: api.String("occupied"),
-		},
-	)
-}
-```
-
-#### Output
-
-```go
-nil
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Specify the `device_id` of the desired thermostat and the `climate_preset_key` of the desired climate preset.
+Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
-seam thermostats delete-climate-preset --device_id "123e4567-e89b-12d3-a456-426614174000" --climate_preset_key "occupied"
+seam thermostats delete-climate-preset --device_id "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5" --climate_preset_key "Eco"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -191,9 +160,4 @@ ID of the thermostat device for which you want to delete a climate preset.
 ## Response
 
 void
-
-
----
-
-## Examples
 

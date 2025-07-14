@@ -67,7 +67,17 @@ export const reference = (
       !path.startsWith('/access_grants') &&
       !path.startsWith('/access_methods') &&
       !path.startsWith('/spaces') &&
-      !path.startsWith('/access_codes')
+      !path.startsWith('/customers') &&
+      !path.startsWith('/client_sessions') &&
+      !path.startsWith('/connect_webviews') &&
+      !path.startsWith('/webhooks') &&
+      !path.startsWith('/workspaces') &&
+      !path.startsWith('/devices') &&
+      !path.startsWith('/locks') &&
+      !path.startsWith('/noise_sensors') &&
+      !path.startsWith('/action_attempts') &&
+      !path.startsWith('/access_codes') &&
+      !path.startsWith('/events')
     ) {
       return false
     }
@@ -96,6 +106,7 @@ export const reference = (
       setEndpointLayoutContext(
         file,
         endpoint,
+        resources,
         blueprint.actionAttempts,
         pathMetadata,
       )

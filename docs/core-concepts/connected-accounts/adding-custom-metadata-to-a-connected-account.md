@@ -151,47 +151,6 @@ Console.WriteLine(connectedAccountUpdate);
 ```
 {% endtab %}
 
-{% tab title="Java" %}
-**Request:**
 
-```java
-Map<String, CustomMetadataValue> customMetadata =
-    Map.of("internal_account_id", CustomMetadataValue.of(Optional.of("user-1")));
 
-seam.connectedAccounts().update(ConnectedAccountsUpdateRequest.builder()
-        .connectedAccountId("6e1cad57-b244-40ca-b4f3-30a46c8000d4")
-        .custom_metadata(customMetadata)
-        .build());
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
-
-{% tab title="Go" %}
-**Request:**
-
-```go
-connectedAccountUpdate, err := client.ConnectedAccounts.Update(
-	context.Background(),
-	&api.ConnectedAccountsUpdateRequest{
-		CustomMetadata: {"internal_account_id":"user-1"},
-	},
-)
-if err != nil {
-	return err
-}
-fmt.Println(connectedAccountUpdate)
-return nil
-```
-
-**Response:**
-
-```json
-true
-```
-{% endtab %}
 {% endtabs %}
