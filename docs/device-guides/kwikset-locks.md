@@ -84,7 +84,7 @@ Seam supports the following events and event property values for Kwikset devices
 
 ### Kwikset Auto-Lock
 
-Kwikset devices have an auto-lock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-lock occurrences by emitting a [`lock.locked` event](../api/events/#event-types) with `automatic` as the value for the [`method` property](../api/events/#lock-events).
+Kwikset devices have an auto-lock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-lock occurrences by emitting a [`lock.locked` event](../api/events/) with `automatic` as the value for the `method` property.
 
 ### Kwikset Access Denied Event
 
