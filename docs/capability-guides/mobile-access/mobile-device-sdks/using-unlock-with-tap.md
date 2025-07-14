@@ -37,18 +37,6 @@ let credentialsSubscription = Seam.shared.$credentials
     }
 ```
 {% endtab %}
-
-{% tab title="Android Kotlin" %}
-```kotlin
-import co.seam.core.api.SeamCredential
-import co.seam.core.api.SeamSDK
-
-// Collect credentials
-SeamSDK.getInstance().credentials.collect { credentials ->
-    // Update UI with new credentials array.
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ## 2. Monitor Credential Errors
@@ -67,38 +55,6 @@ let errorSubscription = Seam.shared.$credentials
     .sink { errors in
         // Handle errors, for example, `.userInteractionRequired`, `.expired`, etc.
     }
-```
-{% endtab %}
-{% tab title="Android Kotlin" %}
-```kotlin
-import co.seam.core.api.SeamCredential
-import co.seam.core.api.SeamSDK
-import co.seam.core.sdkerrors.SeamCredentialError
-import co.seam.core.sdkerrors.SeamError
-import co.seam.core.sdkerrors.SeamRequiredUserInteraction
-
-SeamSDK.getInstance().credentials.collect { credentialsList ->
-    val errors = credentialsList.flatMap { it.errors }
-    errors.forEach { error ->
-        when (error) {
-            is SeamCredentialError.Expired -> { /* handle credential expiration error */}
-            is SeamCredentialError.Loading -> { /* handle not loaded yet */ }
-            is SeamCredentialError.Unknown -> { /* handle unknown error */}
-            is SeamCredentialError.UserInteractionRequired -> {
-                handleUserInteractionRequired(error.interaction)
-            }
-        }
-    }
-}
-
-fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
-    when (interaction) {
-        is SeamRequiredUserInteraction.CompleteOtpAuthorization -> { /* handle OTP authorization */ }
-        is SeamRequiredUserInteraction.EnableBluetooth -> { /* handle Bluetooth error */ }
-        is SeamRequiredUserInteraction.EnableInternet -> { /* handle Internet connection error*/ }
-        is SeamRequiredUserInteraction.GrantPermissions -> { /* handle permissions error*/ }
-    }
-}
 ```
 {% endtab %}
 {% endtabs %}
@@ -162,82 +118,6 @@ do {
     // Handle unlock initialization error.
     print("Unlock error: \(error)")
 }
-```
-{% endtab %}
-{% tab title="Android Kotlin" %}
-```kotlin
-import co.seam.core.api.SeamCredential
-import co.seam.core.api.SeamSDK
-import co.seam.core.events.SeamUnlockEvent
-import co.seam.core.sdkerrors.SeamCredentialError
-import co.seam.core.sdkerrors.SeamError
-import co.seam.core.sdkerrors.SeamRequiredUserInteraction
-
-val seamSDK = SeamSDK.getInstance()
-
-// Perform unlock
-try {
-    val credentialId = credential.id
-    // Timeout is optional
-    seamSDK.unlock(
-        credentialId = credentialId,
-        timeout = 30.seconds
-    )
-} catch (seamError: SeamError) {
-    when (seamError) {
-        is SeamError.ActivationRequired -> {
-            // handle error when SDK is not activated
-        }
-        is SeamError.CredentialErrors -> {
-            val credentialErrors = seamError.errors
-            handleCredentialErrors(credentialErrors)
-            // handle error when there are credential errors
-        }
-        is SeamError.InitializationRequired -> {
-            // handle error when SDK is not initialized
-        }
-        is SeamError.IntegrationNotFound -> {
-            // handle error when integration is not found, Such as Assa Abloy, Latch and Salto
-        }
-        is SeamError.InternetConnectionRequired -> {
-            // handle error when internet connection is required
-        }
-        is SeamError.InvalidClientSessionToken -> {
-            // handle error when client session token is invalid
-        }
-        else -> {
-            // handle other errors
-        }
-    }
-}
-
-// Handle credential errors on unlock
-fun handleCredentialErrors(credentialErrors: List<SeamCredentialError>) {
-    credentialErrors.forEach { credentialError ->
-        when (credentialError) {
-            is SeamCredentialError.Invalid -> {
-                // handle error when credential is invalid
-            }
-
-            is SeamCredentialError.Expired -> {
-                // handle error when credential is expired
-            }
-
-            is SeamCredentialError.Loading -> {
-                // handle error when credential is not loaded yet
-            }
-
-            is SeamCredentialError.UserInteractionRequired -> {
-                // handle user interaction required credential error
-            }
-
-            is SeamCredentialError.Unknown -> {
-                // handle unknown credential error
-            }
-        }
-    }
-}
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -311,22 +191,6 @@ do {
     print("Unlock initialization error: \(error)")
 }
 ```
-{% endtab %}
-
-{% tab title="Android Kotlin" %}
-// Start collecting unlock events before unlock
-coroutineScope.launch {
-    seamSDK.unlockStatus.collect { event ->
-        when (event) {
-            is SeamUnlockEvent.ScanningStarted -> { /* handle scanning started */}
-            is SeamUnlockEvent.Connecting -> { /* handle connecting */}
-            is SeamUnlockEvent.AccessGranted -> { /* handle access granted */}
-            is SeamUnlockEvent.Timeout -> { /* handle timeout */}
-            is SeamUnlockEvent.ReaderError -> { /* handle reader error */}
-            else -> { /* handle other events */}
-        }
-    }
-}
 {% endtab %}
 {% endtabs %}
 
