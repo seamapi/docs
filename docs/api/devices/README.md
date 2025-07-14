@@ -3063,32 +3063,32 @@ Constraints on access codes for the device. Seam represents each constraint as a
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>constraint_type</code></strong> <i>Enum</i>
+<details>
+    <summary>Enum values:</summary>
 
-  <strong><code>constraint_type</code></strong> <i>Enum</i>
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>no_zeros</code>
-      - <code>cannot_start_with_12</code>
-      - <code>no_triple_consecutive_ints</code>
-      - <code>cannot_specify_pin_code</code>
-      - <code>pin_code_matches_existing_set</code>
-      - <code>start_date_in_future</code>
-      - <code>no_ascending_or_descending_sequence</code>
-      - <code>at_least_three_unique_digits</code>
-      - <code>cannot_contain_089</code>
-      - <code>cannot_contain_0789</code>
-      - <code>name_length</code>
-      - <code>name_must_be_unique</code>
-  </details>
+    - <code>no_zeros</code>
+    - <code>cannot_start_with_12</code>
+    - <code>no_triple_consecutive_ints</code>
+    - <code>cannot_specify_pin_code</code>
+    - <code>pin_code_matches_existing_set</code>
+    - <code>start_date_in_future</code>
+    - <code>no_ascending_or_descending_sequence</code>
+    - <code>at_least_three_unique_digits</code>
+    - <code>cannot_contain_089</code>
+    - <code>cannot_contain_0789</code>
+    - <code>name_length</code>
+    - <code>name_must_be_unique</code>
+</details>
 
-  <strong><code>max_length</code></strong> <i>Number</i>
-  
-    Maximum name length constraint for access codes.
+<strong><code>max_length</code></strong> <i>Number</i>
 
-  <strong><code>min_length</code></strong> <i>Number</i>
-  
-    Minimum name length constraint for access codes.
+  Maximum name length constraint for access codes.
+
+<strong><code>min_length</code></strong> <i>Number</i>
+
+  Minimum name length constraint for access codes.
+
 </details>
 
 ---
@@ -3445,113 +3445,114 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>can_delete</code></strong> <i>Boolean</i>
 
-  <strong><code>can_delete</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
+  Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
 
-  <strong><code>can_edit</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
+<strong><code>can_edit</code></strong> <i>Boolean</i>
 
-  <strong><code>can_program</code></strong> <i>Boolean</i>
-  
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
+  Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
 
-  <strong><code>climate_preset_key</code></strong> <i>String</i>
-  
-    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+<strong><code>can_program</code></strong> <i>Boolean</i>
 
-  <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
-  
-    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>home</code>
-      - <code>away</code>
-      - <code>wake</code>
-      - <code>sleep</code>
-      - <code>occupied</code>
-      - <code>unoccupied</code>
-  </details>
+  Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
 
-  <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+<strong><code>climate_preset_key</code></strong> <i>String</i>
 
-  <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+  Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
-  <strong><code>display_name</code></strong> <i>String</i>
-  
-    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+<strong><code>climate_preset_mode</code></strong> <i>Enum</i>
 
-  <strong><code>ecobee_metadata</code></strong> <i>Object</i>
-  
-    Metadata specific to the Ecobee climate, if applicable.
+  The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+<details>
+    <summary>Enum values:</summary>
 
-  <strong><code>ecobee_metadata.climate_ref</code></strong> <i>String</i>
-  
-    Reference to the Ecobee climate, if applicable.
+    - <code>home</code>
+    - <code>away</code>
+    - <code>wake</code>
+    - <code>sleep</code>
+    - <code>occupied</code>
+    - <code>unoccupied</code>
+</details>
 
-  <strong><code>ecobee_metadata.is_optimized</code></strong> <i>Boolean</i>
-  
-    Indicates if the climate preset is optimized by Ecobee.
+<strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
 
-  <strong><code>ecobee_metadata.owner</code></strong> <i>Enum</i>
-  
-    Indicates whether the climate preset is owned by the user or the system.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>user</code>
-      - <code>system</code>
-  </details>
+  Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-  <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>auto</code>
-      - <code>on</code>
-      - <code>circulate</code>
-  </details>
+<strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
 
-  <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+  Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
-  <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
-  
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+<strong><code>display_name</code></strong> <i>String</i>
 
-  <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
-  
-    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>off</code>
-      - <code>heat</code>
-      - <code>cool</code>
-      - <code>heat_cool</code>
-  </details>
+  Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
 
-  <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
-  
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
-  
-    {% hint style="warning" %}
-    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-    {% endhint %}
+<strong><code>ecobee_metadata</code></strong> <i>Object</i>
 
-  <strong><code>name</code></strong> <i>String</i>
-  
-    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+  Metadata specific to the Ecobee climate, if applicable.
+
+<strong><code>ecobee_metadata.climate_ref</code></strong> <i>String</i>
+
+  Reference to the Ecobee climate, if applicable.
+
+<strong><code>ecobee_metadata.is_optimized</code></strong> <i>Boolean</i>
+
+  Indicates if the climate preset is optimized by Ecobee.
+
+<strong><code>ecobee_metadata.owner</code></strong> <i>Enum</i>
+
+  Indicates whether the climate preset is owned by the user or the system.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>user</code>
+    - <code>system</code>
+</details>
+
+<strong><code>fan_mode_setting</code></strong> <i>Enum</i>
+
+  Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>auto</code>
+    - <code>on</code>
+    - <code>circulate</code>
+</details>
+
+<strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
+
+  Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+<strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
+
+  Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+
+<strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
+
+  Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>off</code>
+    - <code>heat</code>
+    - <code>cool</code>
+    - <code>heat_cool</code>
+    - <code>eco</code>
+</details>
+
+<strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
+
+  Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+
+  {% hint style="warning" %}
+  **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+  {% endhint %}
+
+<strong><code>name</code></strong> <i>String</i>
+
+  User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+
 </details>
 
 ---
@@ -3676,6 +3677,7 @@ Current climate setting.
       - <code>heat</code>
       - <code>cool</code>
       - <code>heat_cool</code>
+      - <code>eco</code>
   </details>
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
@@ -3798,6 +3800,7 @@ Current climate setting.
       - <code>heat</code>
       - <code>cool</code>
       - <code>heat_cool</code>
+      - <code>eco</code>
   </details>
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
@@ -4033,40 +4036,40 @@ Configured [daily programs](../../capability-guides/thermostats/creating-and-man
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-  <strong><code>created_at</code></strong> <i>Datetime</i>
-  
-    Date and time at which the thermostat daily program was created.
+  Date and time at which the thermostat daily program was created.
 
-  <strong><code>device_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat device on which the thermostat daily program is configured.
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-  <strong><code>name</code></strong> <i>String</i>
-  
-    User-friendly name to identify the thermostat daily program.
+  ID of the thermostat device on which the thermostat daily program is configured.
 
-  <strong><code>periods</code></strong> <i>List</i> <i>of Objects</i>
-  
-    Array of thermostat daily program periods.
-  
-  - <strong><code>climate_preset_key</code></strong> <i>String</i>
-  
-    Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to activate at the `starts_at_time`.
-  
-  
-  - <strong><code>starts_at_time</code></strong> <i>String</i>
-  
-    Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-  
+<strong><code>name</code></strong> <i>String</i>
 
-  <strong><code>thermostat_daily_program_id</code></strong> <i>UUID</i>
-  
-    ID of the thermostat daily program.
+  User-friendly name to identify the thermostat daily program.
 
-  <strong><code>workspace_id</code></strong> <i>UUID</i>
-  
-    ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat daily program.
+<strong><code>periods</code></strong> <i>List</i> <i>of Objects</i>
+
+  Array of thermostat daily program periods.
+
+- <strong><code>climate_preset_key</code></strong> <i>String</i>
+
+  Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to activate at the `starts_at_time`.
+
+
+- <strong><code>starts_at_time</code></strong> <i>String</i>
+
+  Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+
+<strong><code>thermostat_daily_program_id</code></strong> <i>UUID</i>
+
+  ID of the thermostat daily program.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat daily program.
+
 </details>
 
 ---

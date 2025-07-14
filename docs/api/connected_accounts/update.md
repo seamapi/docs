@@ -159,6 +159,22 @@ ID of the connected account that you want to update.
 
 ---
 
+**`accepted_capabilities`** *Array* *of Enums*
+
+List of accepted device capabilities that restrict the types of devices that can be connected through this connected account. Valid values are `lock`, `thermostat`, `noise_sensor`, and `access_control`.
+<details>
+
+<summary>Enum values</summary>
+
+Possible enum values:
+- <code>lock</code>
+- <code>thermostat</code>
+- <code>noise_sensor</code>
+- <code>access_control</code>
+</details>
+
+---
+
 **`automatically_manage_new_devices`** *Boolean*
 
 Indicates whether newly-added devices should appear as [managed devices](../../core-concepts/devices/managed-and-unmanaged-devices.md).

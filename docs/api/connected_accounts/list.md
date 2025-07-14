@@ -259,7 +259,9 @@ Custom metadata pairs by which you want to filter connected accounts. Returns co
 
 ---
 
-**`customer_ids`** *Array* *of UUIDs*
+**`customer_key`** *String*
+
+Customer key by which you want to filter connected accounts.
 
 ---
 
