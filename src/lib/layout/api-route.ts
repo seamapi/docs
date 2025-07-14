@@ -133,7 +133,12 @@ export const setApiRouteLayoutContext = (
     )
 
     if (resourceType === 'action_attempt') {
-      processActionAttemptResource(blueprint, file.resources, eventsByRoutePath)
+      processActionAttemptResource(file.resources, eventsByRoutePath)
+      continue
+    }
+
+    if (resourceType === 'event') {
+      processEventResource(file.resources)
       continue
     }
 
@@ -624,56 +629,36 @@ const getParentVariantResourceType = (
 }
 
 function processActionAttemptResource(
-  blueprint: Blueprint,
   resources: ApiRouteResource[],
   eventsByRoutePath: Map<string, ApiRouteEvent[]>,
 ): void {
-  const blueprintActionAttemptDef = blueprint.actionAttempts[0]
-  if (blueprintActionAttemptDef == null) {
-    throw new Error(
-      'Cannot process action attempt resource: blueprint.actionAttempts is empty.',
-    )
-  }
-
-  const idPropKey = 'action_attempt_id'
-  const idPropDef = blueprintActionAttemptDef.properties.find(
-    (p) => p.name === idPropKey,
-  )
-  if (idPropDef == null) {
-    throw new Error(
-      `Blueprint action attempt is missing "${idPropKey}" property.`,
-    )
-  }
-
-  const statusPropKey = 'status'
-  const statusPropDef = blueprintActionAttemptDef.properties.find(
-    (p) => p.name === statusPropKey,
-  )
-  if (statusPropDef == null) {
-    throw new Error(
-      `Blueprint action attempt is missing "${statusPropKey}" property.`,
-    )
-  }
-
-  const actionTypes = blueprint.actionAttempts.map(
-    (attempt) => attempt.actionAttemptType,
-  )
-
   const properties: ApiRouteProperty[] = [
-    mapBlueprintPropertyToRouteProperty(idPropDef),
-    mapBlueprintPropertyToRouteProperty(statusPropDef),
+    {
+      name: 'action_attempt_id',
+      description: 'ID of the action attempt.',
+      format: 'UUID',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'status',
+      description: 'Status of the action attempt.',
+      format: 'String',
+      isDeprecated: false,
+      deprecationMessage: '',
+      enumValues: ['pending', 'success', 'error'],
+    },
     {
       name: 'action_type',
       description: 'Type of the action attempt.',
       format: 'String',
       isDeprecated: false,
       deprecationMessage: '',
-      enumValues: actionTypes,
     },
     {
       name: 'error',
       description:
-        'Errors associated with the action attempt. Null for pending action attempts.',
+        'Error associated with the action attempt. Null for pending and successful action attempts.',
       format: 'Object',
       isDeprecated: false,
       deprecationMessage: '',
@@ -681,7 +666,7 @@ function processActionAttemptResource(
     {
       name: 'result',
       description:
-        'Result of the action attempt. Null for pending action attempts.',
+        'Result of the action attempt. Null for pending and errored action attempts.',
       format: 'Object',
       isDeprecated: false,
       deprecationMessage: '',
@@ -697,5 +682,59 @@ function processActionAttemptResource(
     warningGroups: [],
     resourceSamples: [],
     events: eventsByRoutePath.get('/action_attempts') ?? [],
+  })
+}
+
+function processEventResource(
+  resources: ApiRouteResource[],
+): void {
+  const properties: ApiRouteProperty[] = [
+    {
+      name: 'event_id',
+      description: 'ID of the event.',
+      format: 'UUID',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'event_type',
+      description: 'Type of event.',
+      format: 'String',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'workspace_id',
+      description:
+        'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.',
+      format: 'UUID',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'created_at',
+      description: 'Date and time at which the event was created.',
+      format: 'DateTime',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+    {
+      name: 'occurred_at',
+      description: 'Date and time at which the event occurred.',
+      format: 'DateTime',
+      isDeprecated: false,
+      deprecationMessage: '',
+    },
+  ]
+
+  resources.push({
+    name: 'event',
+    description: 'Represents an event that occurred in your workspace.',
+    propertyGroups: [{ propertyGroupKey: null, properties }],
+    hidePreamble: false,
+    errorGroups: [],
+    warningGroups: [],
+    resourceSamples: [],
+    events: [],
   })
 }
