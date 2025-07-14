@@ -37,7 +37,7 @@ dependencies {
 
 {% tab title="iOS Swift" %}
 You can install SeamSDK via CocoaPods or Swift Package Manager (SPM).  
-SeamSDK supports per-lock-provider integration granularity--include only the modules you need to minimize your app's footprint.
+SeamSDK supports per-lock-provider integration granularity. Include only the modules you need to keep your app footprint minimal.
 
 {% code title="Podfile" %}
 ```ruby
@@ -206,12 +206,11 @@ $token = $client_session->token;
 ## 4. Initialize the Mobile SDK with the Client Session Token
 
 
-Use the client session token you generated earlier to bootstrap the Seam SDK on the device. Under the hood, this will set up credential synchronization and start a background sync loop to keep credentials up to date.
-
+Use the client session token that you generated earlier to bootstrap the Seam SDK on the device. Under the hood, this action sets up credential synchronization and starts a background sync loop to keep permissions up to date.
 
 ### Initialization and Error Handling
 
-Perform initialization and activation within your app’s asynchronous context (e.g., Swift’s `Task` or Kotlin coroutines) so you can handle errors. The initialization call may fail due to configuration issues (such as an invalid token), and the activation call may fail due to network or runtime errors. Catch these errors and present a user-friendly message or fallback UI as appropriate.
+Perform initialization and activation within your app’s asynchronous context (for example, Swift’s `Task` or Kotlin coroutines) so that you can handle errors. The initialization call may fail due to configuration issues (such as an invalid token), and the activation call may fail due to network or runtime errors. Catch these errors and present a user-friendly message or fallback UI as appropriate.
 
 {% tabs %}
 {% tab title="Android Kotlin" %}
@@ -243,16 +242,16 @@ try {
 ```swift
 import SeamSDK
 
-// Initialize the Mobile SDK with the Client Session Token (CST)
+// Initialize the Mobile SDK with the client session token (CST).
 Task {
     do {
-        // Bootstrap the SDK with the CST from your login flow
+        // Bootstrap the SDK with the CST from your login flow.
         try Seam.initialize(clientSessionToken: token)
-        // Start credential sync and background polling
+        // Start credential sync and background polling.
         try await Seam.shared.activate()
-        print("Seam SDK is now active")
+        print("Seam SDK is now active.")
     } catch let error as SeamError {
-        // Handle SDK-specific initialization errors (invalid token, etc)
+        // Handle SDK-specific initialization errors (invalid token, etc).
         showAlert(title: "Initialization Failed", message: error.localizedDescription)
     }
 }
@@ -263,7 +262,7 @@ Task {
 
 ### Credential Errors
 
-Any errors that occur between activation and deactivation surface on individual credential objects via their `errors` property. Observe the `credentials` array to detect and handle these errors:
+Any errors that occur between activation and deactivation surface on individual credential objects through their `errors` property. Observe the `credentials` array to detect and handle these errors:
 
 ```swift
 import SeamSDK
