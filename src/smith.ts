@@ -15,6 +15,7 @@ import {
   postprocess,
   reference,
   report,
+  summary,
 } from './lib/index.js'
 
 const rootDir = dirname(fileURLToPath(import.meta.url))
@@ -54,6 +55,7 @@ Metalsmith(rootDir)
     }),
   )
   .use(postprocess)
+  .use(summary)
   .build((err) => {
     if (err != null) throw err
   })
