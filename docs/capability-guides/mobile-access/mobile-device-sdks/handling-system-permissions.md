@@ -2,23 +2,17 @@
 
 Missing or required system permissions (Bluetooth, internet connectivity, etc.) are surfaced as `CredentialError.userInteractionRequired(action)` entries on each credential’s `errors` array. Observe these errors after activation and handle the specified actions. Errors are automatically updated to reflect current requirements.
 
-```swift
-import SeamSDK
-import Combine
-
-private var permissionCancellable: AnyCancellable?
-```
-
 ## Monitoring Permission Errors
-
-Use Combine to watch the published credentials array and handle permission-related errors:
 
 {% tabs %}
 {% tab title="iOS Swift" %}
 
+Use Combine to watch the published credentials array and handle permission-related errors:
+
+
 ```swift
 func startMonitoringPermissionErrors() {
-    permissionCancellable = SeamSDKManager.shared.$credentials
+    permissionCancellable = Seam.shared.$credentials
         .map { credentials in
             credentials.flatMap { credential in
                 credential.errors.compactMap { error in
@@ -37,7 +31,7 @@ func startMonitoringPermissionErrors() {
 {% endtabs %}
 
 
-The SDK automatically clears resolved permission errors once the required permission is granted, reflecting the updated credential state.
+The Seam SDK automatically clears resolved permission errors once the required permission is granted, reflecting the updated credential state.
 
 ## Handling Permission Actions
 
