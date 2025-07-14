@@ -37,7 +37,7 @@ dependencies {
 
 {% tab title="iOS Swift" %}
 You can install SeamSDK via CocoaPods or Swift Package Manager (SPM).  
-SeamSDK supports per-lock-provider integration granularity--include only the modules you need to keep your app footprint minimal.
+SeamSDK supports per-lock-provider integration granularity--include only the modules you need to minimize your app's footprint.
 
 {% code title="Podfile" %}
 ```ruby
@@ -86,7 +86,7 @@ See the [device or system integration guide](../../../device-and-system-integrat
 
 ### iOS Requirement
 
-To prevent Apple Wallet from appearing while scanning for Bluetooth low energy (BLE) or similar locks, request the `com.apple.developer.passkit.pass-presentation-suppression` entitlement for your app from the Apple Developer portal.
+While not required, you can optionally request the `com.apple.developer.passkit.pass-presentation-suppression` entitlement from the Apple Developer portal. This entitlement prevents Apple Wallet from appearing when scanning for Bluetooth low energy (BLE) or similar locks, improving the unlock experience.
 
 ***
 
@@ -206,7 +206,7 @@ $token = $client_session->token;
 ## 4. Initialize the Mobile SDK with the Client Session Token
 
 
-Use the client session token you generated earlier to bootstrap the Seam SDK on the device. Under the hood, this will set up credential synchronization and start a background sync loop to keep permissions up to date.
+Use the client session token you generated earlier to bootstrap the Seam SDK on the device. Under the hood, this will set up credential synchronization and start a background sync loop to keep credentials up to date.
 
 
 ### Initialization and Error Handling
@@ -247,16 +247,13 @@ import SeamSDK
 Task {
     do {
         // Bootstrap the SDK with the CST from your login flow
-        try SeamSDKManager.initialize(clientSessionToken: token)
+        try Seam.initialize(clientSessionToken: token)
         // Start credential sync and background polling
-        try await SeamSDKManager.shared.activate()
+        try await Seam.shared.activate()
         print("Seam SDK is now active")
-    } catch let error as SeamSDKV2Error {
-        // Handle SDK-specific initialization errors (invalid token, workspace issues)
+    } catch let error as SeamError {
+        // Handle SDK-specific initialization errors (invalid token, etc)
         showAlert(title: "Initialization Failed", message: error.localizedDescription)
-    } catch {
-        // Handle any other errors (network, unexpected)
-        showAlert(title: "Unexpected Error", message: error.localizedDescription)
     }
 }
 ```
@@ -275,7 +272,7 @@ import Combine
 private var credentialErrorsCancellable: AnyCancellable?
 
 func startMonitoringCredentialErrors() {
-    credentialErrorsCancellable = SeamSDKManager.shared.$credentials
+    credentialErrorsCancellable = Seam.shared.$credentials
         .sink { credentials in
             for credential in credentials where !credential.errors.isEmpty {
                 print("Errors for \(credential.displayName):", credential.errors)
@@ -286,15 +283,17 @@ func startMonitoringCredentialErrors() {
 
 #### Credential Error Types
 
-- `awaitingLocalCredential`: Credential is being prepared locally.
-- `expired`: Credential has expired and cannot be used.
-- `userInteractionRequired(action)`: Additional user interaction required; check the `action` for specifics.
-- `unknown`: An unspecified error occurred.
+- `awaitingLocalCredential`: The system is waiting for a local credential to become available.
+- `expired`: The credential has expired and is no longer valid.
+- `userInteractionRequired(action)`: User interaction is required to resolve the credential issue; check the action for specifics.
+- `contactSeamSupport`: Configuration error requiring developer attention.
+- `unsupportedDevice`: The current device is not supported.
+- `unknown`: An unclassified or unexpected credential error occurred.
 
 #### Possible `userInteractionRequired` Actions
 
-- `completeOtpAuthorization(otpUrl:)`: User must complete OTP authorization.
-- `enableInternet`: User must enable internet connectivity.
-- `enableBluetooth`: User must enable Bluetooth.
-- `grantBluetoothPermission`: User must grant Bluetooth permission.
-- `appRestartRequired`: User must restart the app.
+- `completeOtpAuthorization(otpUrl:)`: The user must complete OTP authorization via the provided URL.
+- `enableInternet`: The user must enable internet connectivity.
+- `enableBluetooth`: The user must enable Bluetooth on the device.
+- `grantBluetoothPermission`: The user must grant Bluetooth permission to the app.
+- `appRestartRequired`: The user must restart the app to resolve the issue.
