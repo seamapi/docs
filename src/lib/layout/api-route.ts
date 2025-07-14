@@ -685,9 +685,7 @@ function processActionAttemptResource(
   })
 }
 
-function processEventResource(
-  resources: ApiRouteResource[],
-): void {
+function processEventResource(resources: ApiRouteResource[]): void {
   const properties: ApiRouteProperty[] = [
     {
       name: 'event_id',
