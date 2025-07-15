@@ -506,6 +506,12 @@ Name of the location.
 
 ---
 
+**`name`** *String*
+
+Name for the access grant.
+
+---
+
 **`space_ids`** *Array* *of UUIDs*
 
 Set of IDs of existing spaces to which access is being granted.
