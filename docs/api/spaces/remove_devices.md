@@ -141,6 +141,7 @@ seam spaces remove-devices --space_id "6df14344-4114-4d74-9ef4-2e1208378cda" --d
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

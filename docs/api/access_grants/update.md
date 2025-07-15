@@ -165,6 +165,12 @@ Date and time at which the validity of the grant ends, in [ISO 8601](https://www
 
 ---
 
+**`name`** *String*
+
+Display name for the access grant.
+
+---
+
 **`starts_at`** *String*
 
 Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
