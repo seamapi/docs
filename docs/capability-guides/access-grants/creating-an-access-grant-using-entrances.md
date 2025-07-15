@@ -17,8 +17,6 @@ An Access Grant defines the following characteristics:
 * Access schedule: The starting and ending times for access.
 * Access methods: The modes of access, including key cards, PIN codes, mobile keys, and [Instant Keys](../instant-keys/).
 
-<figure><img src="../../.gitbook/assets/access-grant-using-entrances.png" alt="When creating an Access Grant, you can specify the entrances to which you want to grant access."><figcaption><p>When creating an Access Grant, you can specify the entrances to which you want to grant access.</p></figcaption></figure>
-
 It is important to note that you can specify the set of entrances to which you want to grant access using the IDs of the entrances themselves. Alternately, before creating an Access Grant, you can organize sets of entrances into spaces. Then, when you create an Access Grant, you specify the IDs of the spaces to which you want to grant access. Seam grants the user access to all entrances included in these spaces.
 
 This topic describes how to create an Access Grant using entrances. To learn how to create an Access Grant using spaces, see [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md).
