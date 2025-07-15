@@ -147,6 +147,15 @@ Instant Key URL. Only returned if the Access Grant has a single mobile_key acces
 
 ---
 
+**`name`** *String*
+
+Name of the Access Grant. If not provided, the display name will be computed.
+
+
+
+
+---
+
 **`requested_access_methods`** *List* *of Objects*
 
 Access methods that the user requested for the Access Grant.

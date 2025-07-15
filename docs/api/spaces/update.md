@@ -173,6 +173,7 @@ seam spaces update --space_id "d3513c20-dc89-4e19-8713-1c3ab01aec81" --name "My 
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -181,15 +182,33 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`space_id`** *String* (Required)
+**`acs_entrance_ids`** *Array* *of UUIDs*
 
-ID of the space that you want to update.
+IDs of the entrances that you want to set for the space. If specified, this will replace all existing entrances.
+
+---
+
+**`device_ids`** *Array* *of UUIDs*
+
+IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.
 
 ---
 
 **`name`** *String*
 
 Name of the space.
+
+---
+
+**`space_id`** *String*
+
+ID of the space that you want to update.
+
+---
+
+**`space_key`** *String*
+
+Unique key of the space that you want to update.
 
 ---
 

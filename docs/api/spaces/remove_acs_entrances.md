@@ -141,6 +141,7 @@ seam spaces remove-acs-entrances --space_id "674e511a-06c6-4734-b4ce-af467496d5f
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
