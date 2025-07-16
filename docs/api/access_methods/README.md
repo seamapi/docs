@@ -128,6 +128,15 @@ Indicates whether encoding with an card encoder is required to issue or reissue 
 
 ---
 
+**`is_issued`** *Boolean*
+
+Indicates whether the access method has been issued.
+
+
+
+
+---
+
 **`issued_at`** *Datetime*
 
 Date and time at which the access method was issued.
@@ -356,6 +365,11 @@ Encodes an existing access method onto a plastic card placed on the specified [e
 [**`/access_methods/get`**](./get.md)
 
 Gets an access method.
+
+
+[**`/access_methods/get_related`**](./get_related.md)
+
+Gets all related resources for one or more Access Methods.
 
 
 [**`/access_methods/list`**](./list.md)
