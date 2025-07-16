@@ -310,6 +310,9 @@ Items that are intentionally undocumented are not included in this section.
 - `/access_grants/create`
     - `location_ids`
     - `requested_access_methods`
+- `/access_grants/get_related`
+    - `exclude`
+    - `include`
 - `/access_grants/list`
     - `location_id`
 - `/acs/encoders/simulate/next_credential_scan_will_fail`
@@ -411,6 +414,7 @@ These items have been marked as draft.
 - `/access_grants/create`: Early access.
 - `/access_grants/delete`: Early access.
 - `/access_grants/get`: Early access.
+- `/access_grants/get_related`: Early access.
 - `/access_grants/list`: Early access.
 - `/access_grants/update`: Early access.
 - `/access_methods/delete`: Early access.
@@ -532,6 +536,7 @@ These items are deprecated.
     - `accessible_devices`
 ### Missing resources
 
+- `/access_grants/get_related`: `batch`
 - `/bridges/get`: `bridge`
 - `/bridges/list`: `bridges`
 - `/networks/get`: `network`
@@ -543,6 +548,7 @@ These items are deprecated.
 
 ### Endpoints without code samples
 
+- `/access_grants/get_related`
 - `/access_methods/encode`
 - `/customers/create_portal`
 - `/customers/push_data`

@@ -234,6 +234,18 @@ ID of the device for which you want to list unmanaged access codes.
 
 ---
 
+**`limit`** *Number*
+
+Numerical limit on the number of unmanaged access codes to return.
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
 **`user_identifier_key`** *String*
 
 Your user ID for the user by which to filter unmanaged access codes.

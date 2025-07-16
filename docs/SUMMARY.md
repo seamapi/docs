@@ -220,6 +220,7 @@
   * [Create an Access Grant](api/access_grants/create.md)
   * [Delete an Access Grant](api/access_grants/delete.md)
   * [Get an Access Grant](api/access_grants/get.md)
+  * [Get related Access Grant resources](api/access_grants/get_related.md)
   * [List Access Grants](api/access_grants/list.md)
   * [Update an Access Grant](api/access_grants/update.md)
 * [Access Methods](api/access_methods/README.md)
