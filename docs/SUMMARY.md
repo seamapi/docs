@@ -227,6 +227,7 @@
   * [Delete an Access Method](api/access_methods/delete.md)
   * [Encode an Access Method](api/access_methods/encode.md)
   * [Get an Access Method](api/access_methods/get.md)
+  * [Get related Access Method resources](api/access_methods/get_related.md)
   * [List Access Methods](api/access_methods/list.md)
 * [Action Attempts](api/action_attempts/README.md)
   * [Get an Action Attempt](api/action_attempts/get.md)
