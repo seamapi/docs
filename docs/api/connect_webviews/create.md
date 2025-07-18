@@ -567,7 +567,6 @@ Possible enum values:
 - <code>seam_passport</code>
 - <code>visionline</code>
 - <code>assa_abloy_credential_service</code>
-- <code>seam_bridge</code>
 - <code>tedee</code>
 - <code>honeywell_resideo</code>
 - <code>latch</code>
@@ -578,6 +577,7 @@ Possible enum values:
 - <code>salto_space</code>
 - <code>sensi</code>
 - <code>kwikset2</code>
+- <code>keynest</code>
 - <code>yale_access</code>
 - <code>hid_cm</code>
 - <code>google_nest</code>
