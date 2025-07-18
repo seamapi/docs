@@ -279,13 +279,27 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
   
     Description of the door in the Salto Space access system.
 
+  - <strong><code>door_id</code></strong> <i>String</i>
+  
+    Door ID in the Salto Space access system.
+
   - <strong><code>door_name</code></strong> <i>String</i>
   
     Name of the door in the Salto Space access system.
 
   - <strong><code>ext_door_id</code></strong> <i>String</i>
   
-    External door ID in the Salto Space access system.
+    {% hint style="warning" %}
+    **Deprecated**. use door_id.
+    {% endhint %}
+
+  - <strong><code>room_description</code></strong> <i>String</i>
+  
+    Description of the room in the Salto Space access system.
+
+  - <strong><code>room_name</code></strong> <i>String</i>
+  
+    Name of the room in the Salto Space access system.
 
 </details>
 
