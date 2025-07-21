@@ -11,7 +11,7 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 
 Sets a specified thermostat to heat-cool ("auto") mode.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.heatCool({
@@ -21,7 +21,7 @@ await seam.thermostats.heatCool({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -38,7 +38,7 @@ await seam.thermostats.heatCool({
 
 Sets a specified thermostat to heat-cool ("auto") mode.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool" \
@@ -52,7 +52,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -71,7 +71,7 @@ EOF
 
 Sets a specified thermostat to heat-cool ("auto") mode.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.heat_cool(
@@ -81,7 +81,7 @@ seam.thermostats.heat_cool(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -98,7 +98,7 @@ ActionAttempt(
 
 Sets a specified thermostat to heat-cool ("auto") mode.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.heat_cool(
@@ -108,7 +108,7 @@ seam.thermostats.heat_cool(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -126,10 +126,9 @@ seam.thermostats.heat_cool(
 
 Sets a specified thermostat to heat-cool ("auto") mode.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->heat_cool(
     device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
     heating_set_point_celsius: 20,
@@ -137,10 +136,9 @@ $seam->thermostats->heat_cool(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",
@@ -155,13 +153,13 @@ $seam->thermostats->heat_cool(
 
 Sets a specified thermostat to heat-cool ("auto") mode.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats heat-cool --device_id "32f974cc-e817-4bd7-b7f1-be92c80884a1" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

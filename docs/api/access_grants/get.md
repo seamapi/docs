@@ -1,20 +1,20 @@
 # Get an Access Grant
 {% hint style="info" %}
-**Early Access Preview.** The access grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
+**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
 {% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Get an access grant.
+Get an Access Grant.
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.get({
@@ -22,7 +22,7 @@ await seam.accessGrants.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -35,6 +35,7 @@ await seam.accessGrants.get({
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
   "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
@@ -68,9 +69,9 @@ await seam.accessGrants.get({
 
 {% tab title="cURL" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/get" \
@@ -82,7 +83,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -96,6 +97,7 @@ EOF
     "created_at": "2025-06-16T16:54:17.946606Z",
     "display_name": "My Access Grant",
     "ends_at": "2025-06-18T16:54:17.946606Z",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
     "requested_access_methods": [
       {
         "display_name": "PIN Code Credential",
@@ -130,15 +132,15 @@ EOF
 
 {% tab title="Python" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.get(access_grant_id="704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessGrant(
@@ -151,6 +153,7 @@ AccessGrant(
     created_at="2025-06-16T16:54:17.946606Z",
     display_name="My Access Grant",
     ends_at="2025-06-18T16:54:17.946606Z",
+    instant_key_url="https://ik.seam.co/ABCXYZ",
     requested_access_methods=[
         {
             "display_name": "PIN Code Credential",
@@ -184,15 +187,15 @@ AccessGrant(
 
 {% tab title="Ruby" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -205,6 +208,7 @@ seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
   "created_at" => "2025-06-16T16:54:17.946606Z",
   "display_name" => "My Access Grant",
   "ends_at" => "2025-06-18T16:54:17.946606Z",
+  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
   "requested_access_methods" => [
     {
       display_name: "PIN Code Credential",
@@ -235,21 +239,19 @@ seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 
 {% tab title="PHP" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_grants->get(
     access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "access_grant_id" => "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
     "access_method_ids" => [
@@ -260,6 +262,7 @@ $seam->access_grants->get(
     "created_at" => "2025-06-16T16:54:17.946606Z",
     "display_name" => "My Access Grant",
     "ends_at" => "2025-06-18T16:54:17.946606Z",
+    "instant_key_url" => "https://ik.seam.co/ABCXYZ",
     "requested_access_methods" => [
         [
             "display_name" => "PIN Code Credential",
@@ -299,15 +302,15 @@ $seam->access_grants->get(
 
 {% tab title="Seam CLI" %}
 
-Returns a specified access grant.
+Returns a specified Access Grant.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -320,6 +323,7 @@ seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
   "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
@@ -359,6 +363,7 @@ seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -367,16 +372,22 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** *String*
 
-ID of access grant to get.
+ID of Access Grant to get.
+
+---
+
+**`access_grant_key`** *String*
+
+Unique key of Access Grant to get.
 
 ---
 
 
 ## Response
 
-[access\_grant](./)
+[access\_grant](.)
 
 
 {% tabs %}
@@ -394,10 +405,8 @@ ID of access grant to get.
   ],
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
-  "location_ids": [
-    "9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f",
-    "f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f"
-  ],
+  "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
@@ -422,6 +431,7 @@ ID of access grant to get.
     "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
     "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
   ],
+  "starts_at": "2025-06-16T16:54:17.946606Z",
   "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }

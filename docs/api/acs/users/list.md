@@ -12,7 +12,7 @@ Returns a list of all [access system users](https://docs.seam.co/latest/capabili
 
 Returns a list of all access system users for a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.list({
@@ -20,7 +20,7 @@ await seam.acs.users.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -47,7 +47,7 @@ await seam.acs.users.list({
     "phone_number": "+1555551000",
     "user_identity_email_address": "jane@example.com",
     "user_identity_full_name": "Jane Doe",
-    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_id": "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
     "user_identity_phone_number": "+1555551000",
     "warnings": [],
     "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
@@ -60,7 +60,7 @@ await seam.acs.users.list({
 
 Returns a list of all access system users for a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -72,7 +72,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -100,7 +100,7 @@ EOF
       "phone_number": "+1555551000",
       "user_identity_email_address": "jane@example.com",
       "user_identity_full_name": "Jane Doe",
-      "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+      "user_identity_id": "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
       "user_identity_phone_number": "+1555551000",
       "warnings": [],
       "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
@@ -114,13 +114,13 @@ EOF
 
 Returns a list of all access system users for a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list(user_identity_id="0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -147,7 +147,7 @@ seam.acs.users.list(user_identity_id="0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
         phone_number="+1555551000",
         user_identity_email_address="jane@example.com",
         user_identity_full_name="Jane Doe",
-        user_identity_id="a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        user_identity_id="0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
         user_identity_phone_number="+1555551000",
         warnings=[],
         workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
@@ -160,13 +160,13 @@ seam.acs.users.list(user_identity_id="0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
 
 Returns a list of all access system users for a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list(user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -193,7 +193,7 @@ seam.acs.users.list(user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
     "phone_number" => "+1555551000",
     "user_identity_email_address" => "jane@example.com",
     "user_identity_full_name" => "Jane Doe",
-    "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_id" => "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
     "user_identity_phone_number" => "+1555551000",
     "warnings" => [],
     "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
@@ -206,19 +206,17 @@ seam.acs.users.list(user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e")
 
 Returns a list of all access system users for a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->list(
     user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -243,7 +241,7 @@ $seam->acs->users->list(
         "phone_number" => "+1555551000",
         "user_identity_email_address" => "jane@example.com",
         "user_identity_full_name" => "Jane Doe",
-        "user_identity_id" => "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+        "user_identity_id" => "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
         "user_identity_phone_number" => "+1555551000",
         "warnings" => [],
         "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
@@ -256,13 +254,13 @@ $seam->acs->users->list(
 
 Returns a list of all access system users for a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list --user_identity_id "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -289,7 +287,7 @@ seam acs users list --user_identity_id "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
     "phone_number": "+1555551000",
     "user_identity_email_address": "jane@example.com",
     "user_identity_full_name": "Jane Doe",
-    "user_identity_id": "a23b3e02-e394-4e5f-b21c-b366b8bc0dd3",
+    "user_identity_id": "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
     "user_identity_phone_number": "+1555551000",
     "warnings": [],
     "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
@@ -366,7 +364,7 @@ Phone number of the user identity for which you want to retrieve all access syst
 
 ## Response
 
-Array of [acs\_users](./)
+Array of [acs\_users](.)
 
 
 {% tabs %}
@@ -429,13 +427,13 @@ Returns a list of all access system users for a specified user identity phone nu
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.list({ user_identity_phone_number: "+1555551000" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -475,7 +473,7 @@ await seam.acs.users.list({ user_identity_phone_number: "+1555551000" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -487,7 +485,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -529,13 +527,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list(user_identity_phone_number="+1555551000")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -575,13 +573,13 @@ seam.acs.users.list(user_identity_phone_number="+1555551000")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list(user_identity_phone_number: "+1555551000")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -621,17 +619,15 @@ seam.acs.users.list(user_identity_phone_number: "+1555551000")
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->list(user_identity_phone_number: "+1555551000");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -669,13 +665,13 @@ $seam->acs->users->list(user_identity_phone_number: "+1555551000");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list --user_identity_phone_number "+1555551000"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -725,13 +721,13 @@ Returns a list of all access system users for a specified user identity email ad
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.list({ user_identity_email_address: "jane@example.com" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -771,7 +767,7 @@ await seam.acs.users.list({ user_identity_email_address: "jane@example.com" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -783,7 +779,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -825,13 +821,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list(user_identity_email_address="jane@example.com")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -871,13 +867,13 @@ seam.acs.users.list(user_identity_email_address="jane@example.com")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list(user_identity_email_address: "jane@example.com")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -917,17 +913,15 @@ seam.acs.users.list(user_identity_email_address: "jane@example.com")
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->list(user_identity_email_address: "jane@example.com");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -965,13 +959,13 @@ $seam->acs->users->list(user_identity_email_address: "jane@example.com");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list --user_identity_email_address "jane@example.com"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1021,7 +1015,7 @@ Returns a list of all users for a specified access system.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.list({
@@ -1029,7 +1023,7 @@ await seam.acs.users.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1038,7 +1032,7 @@ await seam.acs.users.list({
       "ends_at": "2025-06-12T11:00:00.000Z",
       "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at": "2025-06-15T16:54:17.946482Z",
@@ -1069,7 +1063,7 @@ await seam.acs.users.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -1081,7 +1075,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1091,7 +1085,7 @@ EOF
         "ends_at": "2025-06-12T11:00:00.000Z",
         "starts_at": "2025-06-10T15:00:00.000Z"
       },
-      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
       "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
       "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
       "created_at": "2025-06-15T16:54:17.946482Z",
@@ -1123,13 +1117,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1138,7 +1132,7 @@ seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2")
             "ends_at": "2025-06-12T11:00:00.000Z",
             "starts_at": "2025-06-10T15:00:00.000Z",
         },
-        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2",
         acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
         connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
         created_at="2025-06-15T16:54:17.946482Z",
@@ -1169,13 +1163,13 @@ seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -1184,7 +1178,7 @@ seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2")
       ends_at: "2025-06-12T11:00:00.000Z",
       starts_at: "2025-06-10T15:00:00.000Z",
     },
-    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id" => "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at" => "2025-06-15T16:54:17.946482Z",
@@ -1215,24 +1209,22 @@ seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2")
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
             "ends_at" => "2025-06-12T11:00:00.000Z",
             "starts_at" => "2025-06-10T15:00:00.000Z",
         ],
-        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_system_id" => "0e3369a0-1376-46cd-b79c-ebba856701a2",
         "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
         "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
         "created_at" => "2025-06-15T16:54:17.946482Z",
@@ -1263,13 +1255,13 @@ $seam->acs->users->list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1278,7 +1270,7 @@ seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2"
       "ends_at": "2025-06-12T11:00:00.000Z",
       "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at": "2025-06-15T16:54:17.946482Z",
@@ -1319,13 +1311,13 @@ Returns a list of all access system users, filtered by a string.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.list({ search: "Jane Doe" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1365,7 +1357,7 @@ await seam.acs.users.list({ search: "Jane Doe" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -1377,7 +1369,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1419,13 +1411,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list(search="Jane Doe")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1465,13 +1457,13 @@ seam.acs.users.list(search="Jane Doe")
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list(search: "Jane Doe")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -1511,17 +1503,15 @@ seam.acs.users.list(search: "Jane Doe")
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->list(search: "Jane Doe");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
@@ -1559,13 +1549,13 @@ $seam->acs->users->list(search: "Jane Doe");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list --search "Jane Doe"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1615,7 +1605,7 @@ Returns a list of all access system users, with a limit of ten per page.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.list({
@@ -1624,7 +1614,7 @@ await seam.acs.users.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1633,7 +1623,7 @@ await seam.acs.users.list({
       "ends_at": "2025-06-12T11:00:00.000Z",
       "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at": "2025-06-15T16:54:17.946482Z",
@@ -1664,7 +1654,7 @@ await seam.acs.users.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -1677,7 +1667,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1687,7 +1677,7 @@ EOF
         "ends_at": "2025-06-12T11:00:00.000Z",
         "starts_at": "2025-06-10T15:00:00.000Z"
       },
-      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
       "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
       "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
       "created_at": "2025-06-15T16:54:17.946482Z",
@@ -1719,13 +1709,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2", limit=10)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1734,7 +1724,7 @@ seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2", limit=
             "ends_at": "2025-06-12T11:00:00.000Z",
             "starts_at": "2025-06-10T15:00:00.000Z",
         },
-        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2",
         acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
         connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
         created_at="2025-06-15T16:54:17.946482Z",
@@ -1765,13 +1755,13 @@ seam.acs.users.list(acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2", limit=
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2", limit: 10)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -1780,7 +1770,7 @@ seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2", limit
       ends_at: "2025-06-12T11:00:00.000Z",
       starts_at: "2025-06-10T15:00:00.000Z",
     },
-    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id" => "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at" => "2025-06-15T16:54:17.946482Z",
@@ -1811,27 +1801,25 @@ seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2", limit
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->list(
     acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
     limit: 10
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
             "ends_at" => "2025-06-12T11:00:00.000Z",
             "starts_at" => "2025-06-10T15:00:00.000Z",
         ],
-        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_system_id" => "0e3369a0-1376-46cd-b79c-ebba856701a2",
         "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
         "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
         "created_at" => "2025-06-15T16:54:17.946482Z",
@@ -1862,13 +1850,13 @@ $seam->acs->users->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2" --limit 10
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1877,7 +1865,7 @@ seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2" --lim
       "ends_at": "2025-06-12T11:00:00.000Z",
       "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at": "2025-06-15T16:54:17.946482Z",
@@ -1918,7 +1906,7 @@ Returns a list of all access system users created before a specified date.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.list({
@@ -1927,7 +1915,7 @@ await seam.acs.users.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1936,7 +1924,7 @@ await seam.acs.users.list({
       "ends_at": "2025-06-12T11:00:00.000Z",
       "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at": "2025-06-15T16:54:17.946482Z",
@@ -1967,7 +1955,7 @@ await seam.acs.users.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/list" \
@@ -1980,7 +1968,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1990,7 +1978,7 @@ EOF
         "ends_at": "2025-06-12T11:00:00.000Z",
         "starts_at": "2025-06-10T15:00:00.000Z"
       },
-      "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+      "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
       "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
       "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
       "created_at": "2025-06-15T16:54:17.946482Z",
@@ -2022,7 +2010,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.list(
@@ -2031,7 +2019,7 @@ seam.acs.users.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -2040,7 +2028,7 @@ seam.acs.users.list(
             "ends_at": "2025-06-12T11:00:00.000Z",
             "starts_at": "2025-06-10T15:00:00.000Z",
         },
-        acs_system_id="62d3384f-267f-4a4a-a946-d35819ec9981",
+        acs_system_id="0e3369a0-1376-46cd-b79c-ebba856701a2",
         acs_user_id="6a5d9697-3cc4-436a-8165-4375ff424870",
         connected_account_id="c0175797-30f0-49f7-a228-2df115443ca7",
         created_at="2025-06-15T16:54:17.946482Z",
@@ -2071,7 +2059,7 @@ seam.acs.users.list(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.list(
@@ -2080,7 +2068,7 @@ seam.acs.users.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -2089,7 +2077,7 @@ seam.acs.users.list(
       ends_at: "2025-06-12T11:00:00.000Z",
       starts_at: "2025-06-10T15:00:00.000Z",
     },
-    "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id" => "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at" => "2025-06-15T16:54:17.946482Z",
@@ -2120,27 +2108,25 @@ seam.acs.users.list(
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->list(
     acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
     created_before: "2025-06-19T02:22:45.000Z"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_schedule" => [
             "ends_at" => "2025-06-12T11:00:00.000Z",
             "starts_at" => "2025-06-10T15:00:00.000Z",
         ],
-        "acs_system_id" => "62d3384f-267f-4a4a-a946-d35819ec9981",
+        "acs_system_id" => "0e3369a0-1376-46cd-b79c-ebba856701a2",
         "acs_user_id" => "6a5d9697-3cc4-436a-8165-4375ff424870",
         "connected_account_id" => "c0175797-30f0-49f7-a228-2df115443ca7",
         "created_at" => "2025-06-15T16:54:17.946482Z",
@@ -2171,13 +2157,13 @@ $seam->acs->users->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2" --created_before "2025-06-19T02:22:45.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -2186,7 +2172,7 @@ seam acs users list --acs_system_id "0e3369a0-1376-46cd-b79c-ebba856701a2" --cre
       "ends_at": "2025-06-12T11:00:00.000Z",
       "starts_at": "2025-06-10T15:00:00.000Z"
     },
-    "acs_system_id": "62d3384f-267f-4a4a-a946-d35819ec9981",
+    "acs_system_id": "0e3369a0-1376-46cd-b79c-ebba856701a2",
     "acs_user_id": "6a5d9697-3cc4-436a-8165-4375ff424870",
     "connected_account_id": "c0175797-30f0-49f7-a228-2df115443ca7",
     "created_at": "2025-06-15T16:54:17.946482Z",

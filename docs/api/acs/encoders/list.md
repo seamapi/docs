@@ -11,13 +11,13 @@ Returns a list of all [encoders](../../../capability-guides/access-systems/worki
 
 Returns a list of all encoders.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.encoders.list();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -38,14 +38,14 @@ await seam.acs.encoders.list();
 
 Returns a list of all encoders.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/list" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -68,13 +68,13 @@ curl --include --request POST "https://connect.getseam.com/acs/encoders/list" \
 
 Returns a list of all encoders.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.encoders.list()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -95,13 +95,13 @@ seam.acs.encoders.list()
 
 Returns a list of all encoders.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.encoders.list()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -122,17 +122,15 @@ seam.acs.encoders.list()
 
 Returns a list of all encoders.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->encoders->list();
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "acs_encoder_id" => "681da2d6-4ac6-4b33-8c03-86281b761325",
@@ -151,13 +149,13 @@ $seam->acs->encoders->list();
 
 Returns a list of all encoders.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs encoders list
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -217,7 +215,7 @@ Number of encoders to return.
 
 ## Response
 
-Array of [acs\_encoders](./)
+Array of [acs\_encoders](.)
 
 
 {% tabs %}

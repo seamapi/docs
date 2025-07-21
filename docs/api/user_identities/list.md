@@ -12,13 +12,13 @@ Returns a list of all [user identities](../../capability-guides/mobile-access/ma
 
 Returns a list of all user identities.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.list();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -42,14 +42,14 @@ await seam.userIdentities.list();
 
 Returns a list of all user identities.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -75,13 +75,13 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list"
 
 Returns a list of all user identities.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.list()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -105,13 +105,13 @@ seam.user_identities.list()
 
 Returns a list of all user identities.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.list()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -135,17 +135,15 @@ seam.user_identities.list()
 
 Returns a list of all user identities.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->list();
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-16T16:54:17.946546Z",
@@ -167,13 +165,13 @@ $seam->user_identities->list();
 
 Returns a list of all user identities.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities list
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -225,7 +223,7 @@ String for which to search. Filters returned user identities to include all reco
 
 ## Response
 
-Array of [user\_identitys](./)
+Array of [user\_identitys](.)
 
 
 {% tabs %}
@@ -243,6 +241,7 @@ Array of [user\_identitys](./)
   "phone_number": "+1555551002",
   "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "user_identity_key": "jane_doe",
+  "acs_user_ids": ["0fc82df4-391b-4d00-a234-86378f1c3952"],
   "warnings": [],
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
@@ -264,7 +263,7 @@ Returns a list of all user identities for a specified credential manager.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.list({
@@ -272,7 +271,7 @@ await seam.userIdentities.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -296,7 +295,7 @@ await seam.userIdentities.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list" \
@@ -308,7 +307,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -334,7 +333,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.list(
@@ -342,7 +341,7 @@ seam.user_identities.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -366,13 +365,13 @@ seam.user_identities.list(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -396,19 +395,17 @@ seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->list(
     credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-16T16:54:17.946546Z",
@@ -430,13 +427,13 @@ $seam->user_identities->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities list --credential_manager_acs_system_id "10698917-8527-4137-92ff-f1ce291bc287"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

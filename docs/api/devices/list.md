@@ -12,7 +12,7 @@ Returns a list of all [devices](../../core-concepts/devices/README.md).
 
 Returns a list of all devices for a specified connected account ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.list({
@@ -21,7 +21,7 @@ await seam.devices.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -194,7 +194,7 @@ await seam.devices.list({
 
 Returns a list of all devices for a specified connected account ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list" \
@@ -207,7 +207,7 @@ curl --include --request POST "https://connect.getseam.com/devices/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -382,13 +382,13 @@ EOF
 
 Returns a list of all devices for a specified connected account ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list(connected_account_id="a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d", limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -561,13 +561,13 @@ seam.devices.list(connected_account_id="a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d", l
 
 Returns a list of all devices for a specified connected account ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list(connected_account_id: "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -745,20 +745,18 @@ seam.devices.list(connected_account_id: "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d", 
 
 Returns a list of all devices for a specified connected account ID.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->list(
     connected_account_id: "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
     limit: 50
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,
@@ -961,13 +959,13 @@ $seam->devices->list(
 
 Returns a list of all devices for a specified connected account ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list --connected_account_id "a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1153,6 +1151,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_method_id`** *String*
+
+ID of the access method for which you want to retrieve all devices.
+
+---
+
 **`connect_webview_id`** *String*
 
 ID of the Connect Webview for which you want to list devices.
@@ -1291,7 +1295,7 @@ Your own internal user ID for the user for which you want to list devices.
 
 ## Response
 
-Array of [devices](./)
+Array of [devices](.)
 
 
 {% tabs %}
@@ -1369,7 +1373,7 @@ Returns a list of all devices that were connected using a specified Connect Webv
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.list({
@@ -1378,7 +1382,7 @@ await seam.devices.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -1551,7 +1555,7 @@ await seam.devices.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list" \
@@ -1564,7 +1568,7 @@ curl --include --request POST "https://connect.getseam.com/devices/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1739,13 +1743,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list(connect_webview_id="0a310a44-6c0a-485d-99b7-9529058a6383", limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -1918,13 +1922,13 @@ seam.devices.list(connect_webview_id="0a310a44-6c0a-485d-99b7-9529058a6383", lim
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list(connect_webview_id: "0a310a44-6c0a-485d-99b7-9529058a6383", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -2102,20 +2106,18 @@ seam.devices.list(connect_webview_id: "0a310a44-6c0a-485d-99b7-9529058a6383", li
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->list(
     connect_webview_id: "0a310a44-6c0a-485d-99b7-9529058a6383",
     limit: 50
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,
@@ -2318,13 +2320,13 @@ $seam->devices->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list --connect_webview_id "0a310a44-6c0a-485d-99b7-9529058a6383" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -2507,7 +2509,7 @@ Returns a list of all devices for a specified user identifier key.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.list({
@@ -2516,7 +2518,7 @@ await seam.devices.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -2689,7 +2691,7 @@ await seam.devices.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list" \
@@ -2702,7 +2704,7 @@ curl --include --request POST "https://connect.getseam.com/devices/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -2877,13 +2879,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list(user_identifier_key="62c370ea-2c94-4856-8ee2-370429d84023", limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -3056,13 +3058,13 @@ seam.devices.list(user_identifier_key="62c370ea-2c94-4856-8ee2-370429d84023", li
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list(user_identifier_key: "62c370ea-2c94-4856-8ee2-370429d84023", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -3240,20 +3242,18 @@ seam.devices.list(user_identifier_key: "62c370ea-2c94-4856-8ee2-370429d84023", l
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->list(
     user_identifier_key: "62c370ea-2c94-4856-8ee2-370429d84023",
     limit: 50
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,
@@ -3456,13 +3456,13 @@ $seam->devices->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list --user_identifier_key "62c370ea-2c94-4856-8ee2-370429d84023" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -3645,7 +3645,7 @@ Returns a list of all devices for a specified space ID.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.list({
@@ -3654,7 +3654,7 @@ await seam.devices.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -3827,7 +3827,7 @@ await seam.devices.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list" \
@@ -3840,7 +3840,7 @@ curl --include --request POST "https://connect.getseam.com/devices/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -4015,13 +4015,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list(space_id="96560123-9fd4-48ce-a300-b40d5d18a122", limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -4194,13 +4194,13 @@ seam.devices.list(space_id="96560123-9fd4-48ce-a300-b40d5d18a122", limit=50)
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list(space_id: "96560123-9fd4-48ce-a300-b40d5d18a122", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -4378,20 +4378,18 @@ seam.devices.list(space_id: "96560123-9fd4-48ce-a300-b40d5d18a122", limit: 50)
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->list(
     space_id: "96560123-9fd4-48ce-a300-b40d5d18a122",
     limit: 50
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,
@@ -4594,13 +4592,13 @@ $seam->devices->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list --space_id "96560123-9fd4-48ce-a300-b40d5d18a122" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -4783,7 +4781,7 @@ Returns a list of all devices containing specified custom metadata.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.list({
@@ -4792,7 +4790,7 @@ await seam.devices.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -4965,7 +4963,7 @@ await seam.devices.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list" \
@@ -4980,7 +4978,7 @@ curl --include --request POST "https://connect.getseam.com/devices/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -5155,13 +5153,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list(custom_metadata_has={"id": "internalId1"}, limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -5334,13 +5332,13 @@ seam.devices.list(custom_metadata_has={"id": "internalId1"}, limit=50)
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list(custom_metadata_has: { id: "internalId1" }, limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -5518,17 +5516,15 @@ seam.devices.list(custom_metadata_has: { id: "internalId1" }, limit: 50)
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->list(custom_metadata_has: ["id" => "internalId1"], limit: 50);
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,
@@ -5731,13 +5727,13 @@ $seam->devices->list(custom_metadata_has: ["id" => "internalId1"], limit: 50);
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list --custom_metadata_has {"id":"internalId1"} --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -5920,7 +5916,7 @@ Returns a list of all devices for a specific manufacturer, created (in Seam) bef
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.list({
@@ -5930,7 +5926,7 @@ await seam.devices.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -6103,7 +6099,7 @@ await seam.devices.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list" \
@@ -6117,7 +6113,7 @@ curl --include --request POST "https://connect.getseam.com/devices/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -6292,7 +6288,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.list(
@@ -6300,7 +6296,7 @@ seam.devices.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -6473,13 +6469,13 @@ seam.devices.list(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.list(manufacturer: "ecobee", created_before: "2025-05-20T00:00:00.000Z", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -6657,10 +6653,9 @@ seam.devices.list(manufacturer: "ecobee", created_before: "2025-05-20T00:00:00.0
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->list(
     manufacturer: "ecobee",
     created_before: "2025-05-20T00:00:00.000Z",
@@ -6668,10 +6663,9 @@ $seam->devices->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,
@@ -6874,13 +6868,13 @@ $seam->devices->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices list --manufacturer "ecobee" --created_before "2025-05-20T00:00:00.000Z" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

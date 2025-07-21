@@ -11,7 +11,7 @@ Returns a specified [credential](../../../capability-guides/access-systems/manag
 
 Returns a specified credential.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.get({
@@ -19,7 +19,7 @@ await seam.acs.credentials.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -49,7 +49,7 @@ await seam.acs.credentials.get({
 
 Returns a specified credential.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/get" \
@@ -61,7 +61,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/get" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -93,13 +93,13 @@ EOF
 
 Returns a specified credential.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.get(acs_credential_id="f2b8eaa6-5e6d-433f-87cc-a283f4df688d")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsCredential(
@@ -129,13 +129,13 @@ AcsCredential(
 
 Returns a specified credential.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.get(acs_credential_id: "f2b8eaa6-5e6d-433f-87cc-a283f4df688d")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -165,19 +165,17 @@ seam.acs.credentials.get(acs_credential_id: "f2b8eaa6-5e6d-433f-87cc-a283f4df688
 
 Returns a specified credential.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->get(
     acs_credential_id: "f2b8eaa6-5e6d-433f-87cc-a283f4df688d"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "access_method" => "code",
     "acs_credential_id" => "f2b8eaa6-5e6d-433f-87cc-a283f4df688d",
@@ -206,13 +204,13 @@ $seam->acs->credentials->get(
 
 Returns a specified credential.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials get --acs_credential_id "f2b8eaa6-5e6d-433f-87cc-a283f4df688d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -263,7 +261,7 @@ ID of the credential that you want to get.
 
 ## Response
 
-[acs\_credential](./)
+[acs\_credential](.)
 
 
 {% tabs %}

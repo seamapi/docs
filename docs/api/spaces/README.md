@@ -6,9 +6,6 @@
 ## The space Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
 - [Endpoints](./#endpoints)
 
 
@@ -34,9 +31,27 @@ A space resource.
 ---
 ## Properties
 
+**`acs_entrance_count`** *Number*
+
+Number of entrances in the space.
+
+
+
+
+---
+
 **`created_at`** *Datetime*
 
 Date and time at which the space was created.
+
+
+
+
+---
+
+**`device_count`** *Number*
+
+Number of devices in the space.
 
 
 
@@ -64,6 +79,15 @@ Name of the space.
 **`space_id`** *UUID*
 
 ID of the space.
+
+
+
+
+---
+
+**`space_key`** *String*
+
+Unique key for the space within the workspace.
 
 
 
@@ -105,6 +129,11 @@ Deletes a space.
 [**`/spaces/get`**](./get.md)
 
 Gets a space.
+
+
+[**`/spaces/get_related`**](./get_related.md)
+
+Gets all related resources for one or more Spaces.
 
 
 [**`/spaces/list`**](./list.md)

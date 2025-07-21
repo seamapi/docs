@@ -11,13 +11,13 @@ Returns a specified [phone](../../capability-guides/mobile-access/managing-phone
 
 Returns a specified phone.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.phones.get({ device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -49,7 +49,7 @@ await seam.phones.get({ device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8" });
 
 Returns a specified phone.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/get" \
@@ -61,7 +61,7 @@ curl --include --request POST "https://connect.getseam.com/phones/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -95,13 +95,13 @@ EOF
 
 Returns a specified phone.
 
-#### Code
+#### Code:
 
 ```python
 seam.phones.get(device_id="2c39adb7-ba99-4b60-927d-9b796952c8e8")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Phone(
@@ -133,13 +133,13 @@ Phone(
 
 Returns a specified phone.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.phones.get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -168,17 +168,15 @@ seam.phones.get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8")
 
 Returns a specified phone.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->phones->get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "created_at" => "2025-06-14T16:54:17.946540Z",
     "custom_metadata" => ["id" => "internalId1"],
@@ -208,13 +206,13 @@ $seam->phones->get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8");
 
 Returns a specified phone.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam phones get --device_id "2c39adb7-ba99-4b60-927d-9b796952c8e8"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -267,7 +265,7 @@ Device ID of the phone that you want to get.
 
 ## Response
 
-[phone](./)
+[phone](.)
 
 
 {% tabs %}

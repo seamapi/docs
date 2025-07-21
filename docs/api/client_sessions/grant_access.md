@@ -11,7 +11,7 @@ Grants a [client session](../../core-concepts/authentication/client-session-toke
 
 Grants a client session access to one or more resources, such as Connect Webviews, user identities, and so on.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.grantAccess({
@@ -23,7 +23,7 @@ await seam.clientSessions.grantAccess({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -34,7 +34,7 @@ await seam.clientSessions.grantAccess({
 
 Grants a client session access to one or more resources, such as Connect Webviews, user identities, and so on.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/grant_access" \
@@ -54,7 +54,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/grant
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -65,7 +65,7 @@ EOF
 
 Grants a client session access to one or more resources, such as Connect Webviews, user identities, and so on.
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.grant_access(
@@ -77,7 +77,7 @@ seam.client_sessions.grant_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -88,7 +88,7 @@ None
 
 Grants a client session access to one or more resources, such as Connect Webviews, user identities, and so on.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.grant_access(
@@ -100,7 +100,7 @@ seam.client_sessions.grant_access(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -111,10 +111,9 @@ nil
 
 Grants a client session access to one or more resources, such as Connect Webviews, user identities, and so on.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->client_sessions->grant_access(
     client_session_id: "3ada79d3-2848-4320-b2ef-a82e1e6dafac",
     user_identifier_key: "jane_doe",
@@ -124,10 +123,10 @@ $seam->client_sessions->grant_access(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -135,13 +134,13 @@ null
 
 Grants a client session access to one or more resources, such as Connect Webviews, user identities, and so on.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions grant-access --client_session_id "3ada79d3-2848-4320-b2ef-a82e1e6dafac" --user_identifier_key "jane_doe" --connected_account_ids ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"] --connect_webview_ids ["dad03fb2-f801-449c-ab88-0529728c7c38"] --user_identity_id "bde98963-3615-4e92-943e-17de3017232b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -181,4 +181,4 @@ Once you have configured your thresholds and webhooks, you can monitor events wi
 
 ```
 
-For a detailed reference of event parameters, see [Events](../../api-clients/events/).
+For a detailed reference of event parameters, see [Events](../../api/events/).

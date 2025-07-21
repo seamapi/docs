@@ -12,12 +12,10 @@
     "name": "Seam Labs, Inc.",
     "email": "devops@getseam.com"
   },
-  "files": [
-    "src"
-  ],
+  "files": [],
   "scripts": {
-    "build": "tsx src/smith.ts",
-    "postbuild": "npm run format",
+    "codegen": "tsx codegen/smith.ts",
+    "postcodegen": "npm run format",
     "typecheck": "tsc",
     "lint": "eslint --ignore-path .prettierignore .",
     "prelint": "prettier --check --ignore-path .prettierignore .",
@@ -28,20 +26,18 @@
     "node": ">=22.11.0",
     "npm": ">=10.9.0"
   },
-  "dependencies": {
+  "devDependencies": {
     "@metalsmith/metadata": "^0.3.0",
-    "@prettier/plugin-php": "^0.22.2",
+    "@prettier/plugin-php": "^0.23.0",
     "@prettier/plugin-ruby": "^4.0.4",
-    "@seamapi/blueprint": "^0.50.6",
+    "@seamapi/blueprint": "^0.51.3",
     "@seamapi/smith": "^0.4.4",
-    "@seamapi/types": "^1.433.0",
+    "@seamapi/types": "^1.460.0",
+    "@types/command-exists": "^1.2.3",
     "change-case": "^5.4.4",
     "command-exists": "^1.2.9",
     "execa": "^9.3.1",
     "prettier": "^3.0.0",
     "zod": "^3.23.8"
-  },
-  "devDependencies": {
-    "@types/command-exists": "^1.2.3"
   }
 }

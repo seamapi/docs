@@ -29,6 +29,6 @@ See the following reference topics:
 
 ## Monitoring
 
-* [Events](../api-clients/events/)
-* [Action Attempts](../api-clients/action_attempts/)
+* [Events](../api/events/)
+* [Action Attempts](../api/action_attempts/)
 * [Connected Accounts](../api/connected_accounts/)

@@ -11,13 +11,13 @@ Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/web
 
 Returns a list of all webhooks.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.webhooks.list();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -35,14 +35,14 @@ await seam.webhooks.list();
 
 Returns a list of all webhooks.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/list" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -62,13 +62,13 @@ curl --include --request POST "https://connect.getseam.com/webhooks/list" \
 
 Returns a list of all webhooks.
 
-#### Code
+#### Code:
 
 ```python
 seam.webhooks.list()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -86,13 +86,13 @@ seam.webhooks.list()
 
 Returns a list of all webhooks.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.webhooks.list()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -110,17 +110,15 @@ seam.webhooks.list()
 
 Returns a list of all webhooks.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->webhooks->list();
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "event_types" => ["device.connected", "device.disconnected"],
@@ -136,13 +134,13 @@ $seam->webhooks->list();
 
 Returns a list of all webhooks.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam webhooks list
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -177,7 +175,7 @@ None
 
 ## Response
 
-Array of [webhooks](./)
+Array of [webhooks](.)
 
 
 {% tabs %}

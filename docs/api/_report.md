@@ -4,8 +4,6 @@
 
 ### Routes
 
-- `/action_attempts`
-- `/events`
 - `/thermostats/daily_programs`
 - `/user_identities/enrollment_automations`
 
@@ -21,10 +19,9 @@ These items are intentionally undocumented.
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/bridges`: No undocumented message provided
-- `/locks/simulate`: No undocumented message provided
-- `/networks`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/console/v1`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
 - `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/portals`: No undocumented message provided
@@ -62,6 +59,7 @@ These items are intentionally undocumented.
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
+- `/seam/console`: No undocumented message provided
 - `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
@@ -83,16 +81,13 @@ These items are intentionally undocumented.
 - `/bridges/get`: Not yet for customer use.
 - `/bridges/list`: Not yet for customer use.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
-- `/locks/simulate/keypad_code_entry`: Unreleased.
-- `/locks/simulate/manual_lock_via_keypad`: Unreleased.
-- `/networks/get`: Deprecated.
-- `/networks/list`: Deprecated.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/console/v1/get_resource_type`: Internal endpoint for Console
 - `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
@@ -124,6 +119,7 @@ These items are intentionally undocumented.
 - `/unstable_partner/building_blocks/generate_magic_link`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/manage_devices`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/organize_spaces`: Experimental partner building blocks.
+- `/workspaces/find_resources`: Unreleased.
 
 ### Endpoint parameters
 
@@ -165,6 +161,8 @@ These items are intentionally undocumented.
     - `is_programmed`: Not sure if this parameter is supported or what it does.
 - `/noise_sensors/noise_thresholds/update`
     - `sync`: Only used internally.
+- `/spaces/list`
+    - `connected_account_id`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
@@ -282,11 +280,6 @@ Items that are intentionally undocumented are not included in this section.
 - `workspace.connect_partner_name`
 - `workspace.connect_webview_customization`
 
-### Endpoints
-
-- `/networks/get`
-- `/networks/list`
-
 ### Endpoint parameters
 
 - `/access_codes/create`
@@ -313,8 +306,14 @@ Items that are intentionally undocumented are not included in this section.
 - `/access_grants/create`
     - `location_ids`
     - `requested_access_methods`
+- `/access_grants/get_related`
+    - `exclude`
+    - `include`
 - `/access_grants/list`
     - `location_id`
+- `/access_methods/get_related`
+    - `exclude`
+    - `include`
 - `/acs/encoders/simulate/next_credential_scan_will_fail`
     - `error_code`
     - `acs_credential_id_on_seam`
@@ -326,14 +325,9 @@ Items that are intentionally undocumented are not included in this section.
     - `email`
     - `hid_acs_system_id`
 - `/connect_webviews/create`
-    - `customer_id`
     - `device_selection_mode`
-- `/connect_webviews/list`
-    - `customer_ids`
 - `/connected_accounts/delete`
     - `sync`
-- `/connected_accounts/list`
-    - `customer_ids`
 - `/customers/create_portal`
     - `features`
     - `customer_data`
@@ -358,8 +352,6 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/locks/unlock_door`
     - `sync`
-- `/networks/get`
-    - `network_id`
 - `/noise_sensors/list`
     - `customer_ids`
     - `exclude_if`
@@ -371,6 +363,9 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/noise_thresholds/update`
     - `sync`
+- `/spaces/get_related`
+    - `exclude`
+    - `include`
 - `/thermostats/cool`
     - `sync`
 - `/thermostats/heat`
@@ -416,20 +411,28 @@ These items have been marked as draft.
 - `/access_grants/create`: Early access.
 - `/access_grants/delete`: Early access.
 - `/access_grants/get`: Early access.
+- `/access_grants/get_related`: Early access.
 - `/access_grants/list`: Early access.
 - `/access_grants/update`: Early access.
 - `/access_methods/delete`: Early access.
 - `/access_methods/get`: Early access.
+- `/access_methods/get_related`: Early access.
 - `/access_methods/list`: Early access.
 - `/spaces/add_acs_entrances`: Early access.
 - `/spaces/add_devices`: Early access.
 - `/spaces/create`: Early access.
 - `/spaces/delete`: Early access.
 - `/spaces/get`: Early access.
+- `/spaces/get_related`: Early access.
 - `/spaces/list`: Early access.
 - `/spaces/remove_acs_entrances`: Early access.
 - `/spaces/remove_devices`: Early access.
 - `/spaces/update`: Early access.
+
+### Endpoint parameters
+
+- `/spaces/list`
+    - `connected_account_id`: Needs review.
 
 ## Deprecated
 
@@ -531,20 +534,26 @@ These items are deprecated.
     - `accessible_devices`
 ### Missing resources
 
+- `/access_grants/get_related`: `batch`
+- `/access_methods/get_related`: `batch`
 - `/bridges/get`: `bridge`
 - `/bridges/list`: `bridges`
-- `/networks/get`: `network`
-- `/networks/list`: `networks`
+- `/seam/console/v1/get_resource_type`: `resource_type`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
+- `/spaces/get_related`: `batch`
+- `/workspaces/find_resources`: `batch`
 
 ### Endpoints without code samples
 
+- `/access_grants/get_related`
 - `/access_methods/encode`
+- `/access_methods/get_related`
 - `/customers/create_portal`
 - `/customers/push_data`
 - `/locks/get`
+- `/spaces/get_related`
 - `/user_identities/enrollment_automations/delete`
 - `/user_identities/enrollment_automations/get`
 - `/user_identities/enrollment_automations/launch`

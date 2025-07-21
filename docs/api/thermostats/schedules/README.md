@@ -3,9 +3,6 @@
 ## The thermostat_schedule Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
 - [Endpoints](./#endpoints)
 
 
@@ -81,14 +78,14 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>error_code</code></strong> <i>String</i>
 
-  <strong><code>error_code</code></strong> <i>String</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 </details>
 
 ---

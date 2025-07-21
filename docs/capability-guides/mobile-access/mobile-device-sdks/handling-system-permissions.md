@@ -1,103 +1,98 @@
 # Handling System Permissions
 
-This guide demonstrates how to request necessary system permissions, such as Bluetooth or Location Access. The SDK enables your application to identify and request the necessary permissions for specific features. Additionally, it details how to display warnings or banners within your application when required permissions are not enabled.
+The mobile SDK surfaces missing or required system permissions (Bluetooth, internet connectivity, and so on) as `CredentialError.userInteractionRequired(action)` entries in each credential’s `errors` array. After activation, observe these errors and handle the specified actions. Errors update automatically as requirements change.
 
-## Retrieving and Requesting Required Permissions at Start Up
-
-Upon launch, the application needs to request the necessary permissions from the user. To retrieve the obtain the list of required permissions, use the `listRequiredAndroidPermissions` or `listRequiredIosPermissions` methods, and specify the features the application will be using.
+## Monitoring Permission Errors
 
 {% tabs %}
+
 {% tab title="Android Kotlin" %}
 ```kotlin
-val requiredPermissions = seam.phone.native.listRequiredAndroidPermissions(
-  enableUnlockWithTap = true
-)
+coroutineScope.launch {
+    SeamSDK.getInstance().credentials.collect { credentialsList ->
+        val errors = credentialsList.flatMap { it.errors }
+        errors.forEach { error ->
+            when (error) {
+                is SeamCredentialError.Expired -> { /* handle credential expiration error */}
+                is SeamCredentialError.Loading -> { /* handle not loaded yet */ }
+                is SeamCredentialError.Unknown -> { /* handle unknown error */}
+                is SeamCredentialError.UserInteractionRequired -> {
+                    handleUserInteractionRequired(error.interaction)
+                }
+            }
+        }
+    }
+}
+```
+{% endtab %}
 
-if (requiredPermissions.isNotEmpty()) {
-  // Request required permissions from the user.
+{% tab title="iOS Swift" %}
+
+Use Combine to watch the published credentials array and handle permission-related errors:
+
+
+```swift
+import SeamSDK
+import Combine
+
+func startMonitoringPermissionErrors() {
+    permissionCancellable = Seam.shared.$credentials
+        .map { credentials in
+            credentials.flatMap { credential in
+                credential.errors.compactMap { error in
+                    guard case .userInteractionRequired(let action) = error else { return nil }
+                    return action
+                }
+            }
+        }
+        .receive(on: RunLoop.main)
+        .sink { actions in
+            actions.forEach { handlePermissionAction($0) }
+        }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+
+The mobile SDK automatically clears resolved permission errors once the required permission is granted, reflecting the updated credential state.
+
+## Handling Permission Actions
+
+Implement your handler for each action:
+
+{% tabs %}
+
+{% tab title="Android Kotlin" %}
+```kotlin
+fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
+    when (interaction) {
+        is SeamRequiredUserInteraction.CompleteOtpAuthorization -> { /* handle OTP authorization */ }
+        is SeamRequiredUserInteraction.EnableBluetooth -> { /* handle Bluetooth error */ }
+        is SeamRequiredUserInteraction.EnableInternet -> { /* handle Internet connection error*/ }
+        is SeamRequiredUserInteraction.GrantPermissions -> { /* handle permissions error*/ }
+    }
 }
 ```
 {% endtab %}
 
 {% tab title="iOS Swift" %}
 ```swift
-let requiredPermissions = seam.phone.native.listRequiredIosPermissions( // Coming soon!
-  enableUnlockWithTap: true
-)
-
-if (!requiredPermissions.isEmpty) {
-  // Request required permissions from the user.
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Once you've acquired the list of required permissions, please refer to relevant Android and iOS documentation for guidance on adding system permissions.&#x20;
-
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Requesting Required System Permissions for your App</p></figcaption></figure>
-
-***
-
-## Perform a System Check and Display Warnings
-
-An app user may choose to deny the application's permission requests. Before launching any features, your application must perform a system check. If the required permissions are not enabled, the app must inform the user, and instruct the user to enable them.
-
-{% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-fun handleEvent(
-  event: SeamEvent
-) {
-  // Check whether the phone state has changed.
-  // Note that these events are located under the phone namespace.
-  if (event is SeamEvent.Phone) {
-    val phone = seam.phone.get().nativeMetadata
-
-    if (
-      // The desired state has not been met.
-      !phone.canUnlockWithTap
-    ) {
-      if (phone.errors.any { it is SeamError.Phone.Native.MissingRequiredAndroidPermissions }) {
-        // Need to update the required permissions.
-        val requiredPermissions = seam.phone.native.listRequiredAndroidPermissions(
-          enableUnlockWithTap = true
-        )
-
-        // Request the requiredPermissions or prompt the user to do so.
-      }
-    }
-  }
-}
-```
-{% endtab %}
-
-{% tab title="iOS Swift" %}
-```swift
-func eventDelegate(
-    event: SeamEvent
-) {
-    // Check whether the phone state has changed.
-    // Note that these events are located under the phone namespace.
-    switch (event) {
-    case .phone: 
-       let phone = seam.phone.get().nativeMetadata // Coming soon!
-       
-       // The desired state has not been met.
-       if(!phone.canUnlockWithTap) {
-         if (phone.errors.contains(where: $0 == {.phone(.native(.missingRequiredIosPermissions)))}) {
-           // Need to update the required permissions.
-           let requiredPermissions = seam.phone.native.listRequiredIosPermissions( // Coming soon!
-             enableUnlockWithTap: true
-           )
-           // Request the requiredPermissions or prompt the user to do so.
-         }
-       }
-       break
+func handlePermissionAction(_ action: CredentialUserAction) {
+    switch action {
+    case .enableInternet:
+        // Prompt the user to enable network connectivity.
+    case .enableBluetooth:
+        // Prompt the user to turn on Bluetooth.
+    case .grantBluetoothPermission:
+        // Prompt the user to grant Bluetooth permission in Settings.
     }
 }
 ```
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Inform the user to enable required system permissions.</p></figcaption></figure>
 
+## See also
+
+For a complete SwiftUI-based implementation of credential error handling for iOS, see `SeamUnlockCardView` in the SeamComponents library, which demonstrates observing credential errors and updating the UI accordingly.

@@ -3,8 +3,6 @@
 ## The connect_webview Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -155,6 +153,15 @@ URL to which the Connect Webview should redirect when the user successfully pair
 
 ---
 
+**`customer_key`** *String*
+
+The customer key associated with this webview, if any.
+
+
+
+
+---
+
 **`device_selection_mode`** *Enum*
 
 
@@ -245,6 +252,10 @@ A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
   ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account; present when connected_account_id is provided.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 

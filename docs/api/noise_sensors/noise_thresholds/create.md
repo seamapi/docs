@@ -11,7 +11,7 @@ Creates a new [noise threshold](https://docs.seam.co/latest/capability-guides/no
 
 Creates a new noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.create({
@@ -24,7 +24,7 @@ await seam.noiseSensors.noiseThresholds.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -43,7 +43,7 @@ await seam.noiseSensors.noiseThresholds.create({
 
 Creates a new noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/create" \
@@ -60,7 +60,7 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_t
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -81,7 +81,7 @@ EOF
 
 Creates a new noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.noise_thresholds.create(
@@ -94,7 +94,7 @@ seam.noise_sensors.noise_thresholds.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 NoiseThreshold(
@@ -113,7 +113,7 @@ NoiseThreshold(
 
 Creates a new noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.noise_thresholds.create(
@@ -126,7 +126,7 @@ seam.noise_sensors.noise_thresholds.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -145,10 +145,9 @@ seam.noise_sensors.noise_thresholds.create(
 
 Creates a new noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->noise_sensors->noise_thresholds->create(
     device_id: "8282891b-c4da-4239-8f01-56089d44b80d",
     name: "My Noise Sensor",
@@ -159,10 +158,9 @@ $seam->noise_sensors->noise_thresholds->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
     "ends_daily_at" => "2025-06-19T12:38:44.000Z",
@@ -179,13 +177,13 @@ $seam->noise_sensors->noise_thresholds->create(
 
 Creates a new noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors noise-thresholds create --device_id "8282891b-c4da-4239-8f01-56089d44b80d" --name "My Noise Sensor" --starts_daily_at "2025-06-20T18:29:57.000Z" --ends_daily_at "2025-06-19T12:38:44.000Z" --noise_threshold_decibels 50 --noise_threshold_nrs 40
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -255,7 +253,7 @@ Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. Th
 
 ## Response
 
-[noise\_threshold](./)
+[noise\_threshold](.)
 
 
 {% tabs %}

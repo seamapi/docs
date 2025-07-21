@@ -11,7 +11,7 @@ Deletes a specified [climate preset](../../capability-guides/thermostats/creatin
 
 Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.deleteClimatePreset({
@@ -20,7 +20,7 @@ await seam.thermostats.deleteClimatePreset({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.thermostats.deleteClimatePreset({
 
 Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/delete_climate_preset" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/delete_cl
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,7 +55,7 @@ EOF
 
 Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.delete_climate_preset(
@@ -63,7 +63,7 @@ seam.thermostats.delete_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,7 +74,7 @@ None
 
 Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.delete_climate_preset(
@@ -83,7 +83,7 @@ seam.thermostats.delete_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,20 +94,19 @@ nil
 
 Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->delete_climate_preset(
     device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
     climate_preset_key: "Eco"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -115,13 +114,13 @@ null
 
 Deletes a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats delete-climate-preset --device_id "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5" --climate_preset_key "Eco"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

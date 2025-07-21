@@ -1,23 +1,23 @@
 ---
 description: >-
-  Learn how to create a card-based credential and then encode this credential on
-  a plastic card.
+  Learn how to create a card-based credential and then encode this credential
+  onto a plastic card.
 ---
 
 # Creating and Encoding Card-based Credentials
 
 <figure><img src="../../../.gitbook/assets/encode-card.png" alt=""><figcaption></figcaption></figure>
 
-Some access control systems require encoding a plastic card credential with the data necessary to enable access. This process involves creating a credential with the required access permissions and then using a card encoder to write the credential to the card.
+Some access control systems require encoding a plastic card with the data necessary to enable access. This process involves creating a credential with the required access permissions and then using a card encoder to write the credential onto the card.
 
 This process consists of the following basic steps:
 
-1. Set up an [ACS user](../../../products/access-systems/user-management.md) and create a [credential](../managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card`.\
-   See the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS provider to learn specific requirements, such as configuring entrances and access schedules.\
-   See [Set Up an ACS User and Card Credential](creating-and-encoding-card-based-credentials.md#id-1.-set-up-an-acs-user-and-card-credential).
-2. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential to the card.\
+1. Set up an [access system user](../../../products/access-systems/user-management.md) and create a [credential](../managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card`.\
+   See the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system provider to learn specific requirements, such as configuring entrances and access schedules.\
+   See [Set Up an Access System User and Card Credential](creating-and-encoding-card-based-credentials.md#id-1.-set-up-an-access-syseuser-and-card-credential).
+2. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential onto the card.\
    See [Retrieve Encoders](creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
-3. Use the `/acs/encoders/encode_credential` endpoint to encode the credential on the card, using the encoder that you have chosen.\
+3. Use the `/acs/encoders/encode_credential` endpoint to encode the credential onto the card, using the encoder that you have chosen.\
    See [Encode the Card](creating-and-encoding-card-based-credentials.md#id-3.-encode-the-card).
 4. Confirm that the card was encoded successfully using polling or a [webhook](../../../core-concepts/webhooks.md).\
    See [Confirm Successful Encoding](creating-and-encoding-card-based-credentials.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-based-credentials.md#common-encoding-errors).
@@ -26,12 +26,12 @@ Once you have written a credential to a card, you cannot reuse the credential fo
 
 ***
 
-## 1. **Set Up an ACS User and Card Credential**
+## 1. **Set Up an Access System User and Card Credential**
 
-This example shows how to create an ACS user and card-based credential. Note that the `is_issued` property of the resulting credential is `false`, which means the the credential is ready to be written to a card and has not yet been used to encode a card.
+This example shows how to create an access system user and card-based credential. Note that the `is_issued` property of the resulting credential is `false`, which means that the credential is ready to be written to a card and has not yet been used to encode a card.
 
 {% hint style="info" %}
-Depending on your specific access control system, creating an ACS user or credential may require additional parameters. For details, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+Depending on your specific access control system, creating an access system user or credential may require additional parameters. For details, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system.
 {% endhint %}
 
 {% tabs %}
@@ -40,7 +40,7 @@ Depending on your specific access control system, creating an ACS user or creden
 
 ```python
 # Step 1:
-# Create the new ACS user.
+# Create the new access system user.
 acs_user = seam.acs.users.create(
   acs_system_id = "11111111-1111-1111-1111-111111111111",
   full_name = "Jane Doe",
@@ -48,7 +48,7 @@ acs_user = seam.acs.users.create(
 )
 
 # Step 2:
-# Create a card-based credential for each entrance for the ACS user.
+# Create a card-based credential for each entrance for the access system user.
 credential = seam.acs.credentials.create(
   acs_user_id = acs_user.acs_user_id,
   access_method = "card",
@@ -82,7 +82,7 @@ AcsCredential(
 
 ```bash
 # Step 1:
-# Create the new ACS user.
+# Create the new access system user.
 acs_user=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/users/create' \
   -H 'accept: application/json' \
@@ -95,7 +95,7 @@ acs_user=$(curl -X 'POST' \
 }")
 
 # Step 2:
-# Create a card-based credential for each entrance for the ACS user.
+# Create a card-based credential for each entrance for the access system user.
 # In allowed_entrance_ids, list the IDs of the entrances to
 # which you want to grant access.
 credential=$(curl -X 'POST' \
@@ -138,7 +138,7 @@ credential=$(curl -X 'POST' \
 
 ```javascript
 // Step 1:
-// Create the new ACS user.
+// Create the new access system user.
 const acsUser = await seam.acs.users.create({
   acs_system_id: "11111111-1111-1111-1111-111111111111",
   full_name: "Jane Doe",
@@ -146,7 +146,7 @@ const acsUser = await seam.acs.users.create({
 });
 
 // Step 2:
-// Create a card-based credential for each entrance for the ACS user.
+// Create a card-based credential for each entrance for the access system user.
 const credential = await seam.acs.credentials.create({
   acs_user_id: acsUser.acs_user_id,
   access_method: "card",
@@ -180,7 +180,7 @@ const credential = await seam.acs.credentials.create({
 
 ```ruby
 # Step 1:
-# Create the new ACS user.
+# Create the new access system user.
 acs_user = seam.acs.users.create(
   acs_system_id: "11111111-1111-1111-1111-111111111111",
   full_name: "Jane Doe",
@@ -188,7 +188,7 @@ acs_user = seam.acs.users.create(
 )
 
 # Step 2:
-# Create a card-based credential for each entrance for the ACS user.
+# Create a card-based credential for each entrance for the access system user.
 credential = seam.acs.credentials.create(
   acs_user_id: acs_user.acs_user_id,
   access_method: "card",
@@ -222,7 +222,7 @@ credential = seam.acs.credentials.create(
 
 ```php
 // Step 1:
-// Create the new ACS user.
+// Create the new access system user.
 $acs_user = $seam->acs->users->create(
   acs_system_id: "11111111-1111-1111-1111-111111111111",
   full_name: "Jane Doe",
@@ -230,7 +230,7 @@ $acs_user = $seam->acs->users->create(
 );
 
 // Step 2:
-// Create a card-based credential for each entrance for the ACS user.
+// Create a card-based credential for each entrance for the access system user.
 $credential = $seam->acs->credentials->create(
   acs_user_id: $acs_user->acs_user_id,
   access_method: "card",
@@ -264,7 +264,7 @@ $credential = $seam->acs->credentials->create(
 
 ```csharp
 // Step 1:
-// Create the new ACS user.
+// Create the new access system user.
 AcsUser acsUser = seam.UsersAcs.Create(
   acsSystemId: "11111111-1111-1111-1111-111111111111",
   fullName: "Jane Doe",
@@ -272,7 +272,7 @@ AcsUser acsUser = seam.UsersAcs.Create(
 );
 
 // Step 2:
-// Create a card-based credential for each entrance for the ACS user.
+// Create a card-based credential for each entrance for the access system user.
 AcsCredential credential = seam.CredentialsAcs.Create(
   acsUserId: acsUser.acsUserId,
   accessMethod: "card",
@@ -301,9 +301,6 @@ AcsCredential credential = seam.CredentialsAcs.Create(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -312,7 +309,7 @@ AcsCredential credential = seam.CredentialsAcs.Create(
 
 There may be multiple encoders at a location, so it’s important to select the right one to encode the credential.
 
-This example shows how to retrieve all encoders in a building connected to a single ACS system. Once you've identified the encoder you'd like to use, save the `acs_encoder_id` of the chosen encoder for the next step.
+This example shows how to retrieve all encoders in a building connected to a single access system. Once you've identified the encoder you'd like to use, save the `acs_encoder_id` of the chosen encoder for the next step.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -461,9 +458,6 @@ seam.EncodersAcs.List(
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -619,9 +613,6 @@ actionAttempt encodingActionAttempt = seam.EncodersAcs.EncodeCredential(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -811,9 +802,6 @@ seam.ActionAttempts.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 #### View Credential Properties
@@ -985,9 +973,6 @@ seam.CredentialsAcs.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -998,15 +983,15 @@ To confirm successful encoding, you can use a [webhook](../../../core-concepts/w
 
 ```json
 {
-    "event_id": "22222222-3333-4444-5555-666666666666",
-    "event_description": "An ACS credential was issued.",
-    "event_type": "acs_credential.issued",
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "created_at": "2024-10-23T19:47:35.375Z",
-    "occurred_at": "2024-10-23T19:47:35.356Z",
-    "acs_system_id": "11111111-1111-1111-1111-111111111111",
-    "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-    "connected_account_id": "11111111-1111-1111-1111-222222222222"
+  "event_id": "22222222-3333-4444-5555-666666666666",
+  "event_description": "An ACS credential was issued.",
+  "event_type": "acs_credential.issued",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2024-10-23T19:47:35.375Z",
+  "occurred_at": "2024-10-23T19:47:35.356Z",
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "acs_credential_id": "66666666-6666-6666-6666-666666666666",
+  "connected_account_id": "11111111-1111-1111-1111-222222222222"
 }
 ```
 

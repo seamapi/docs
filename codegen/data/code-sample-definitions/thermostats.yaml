@@ -1,0 +1,1034 @@
+- title: Activate a climate preset
+  description: Activates a specified climate preset for a specified thermostat.
+  request:
+    path: /thermostats/activate_climate_preset
+    parameters:
+      device_id: 52b88155-5b81-47d2-b04d-28a802bd7395
+      climate_preset_key: Eco
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        action_type: ACTIVATE_CLIMATE_PRESET
+        error: null
+        result: {}
+        status: success
+- title: Set a thermostat to cool mode
+  description: Sets a specified thermostat to cool mode.
+  request:
+    path: /thermostats/cool
+    parameters:
+      device_id: 408641ab-d0f5-475c-b8a5-9b9096405f9a
+      cooling_set_point_fahrenheit: 75
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d
+        action_type: SET_HVAC_MODE
+        error: null
+        result: {}
+        status: success
+- title: Create a climate preset for a thermostat
+  description: Creates a climate preset for a specified thermostat.
+  request:
+    path: /thermostats/create_climate_preset
+    parameters:
+      device_id: ba9b816d-c255-46b9-a16d-971e6f535dd3
+      manual_override_allowed: true
+      climate_preset_key: Occupied
+      name: Occupied
+      fan_mode_setting: auto
+      hvac_mode_setting: heat_cool
+      cooling_set_point_celsius: 25
+      heating_set_point_celsius: 20
+  response:
+    body: null
+- title: Delete a climate preset for a thermostat
+  description: Deletes a specified climate preset for a specified thermostat.
+  request:
+    path: /thermostats/delete_climate_preset
+    parameters:
+      device_id: 88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5
+      climate_preset_key: Eco
+  response:
+    body: null
+- title: Get a thermostat by ID
+  description: Returns a specified thermostat, using an ID.
+  request:
+    path: /thermostats/get
+    parameters:
+      device_id: 707bc177-6804-4534-a119-08bea346d3c6
+  response:
+    body:
+      thermostat:
+        can_hvac_cool: true
+        can_hvac_heat: true
+        can_hvac_heat_cool: true
+        can_turn_off_hvac: true
+        capabilities_supported:
+          - thermostat
+        connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
+        created_at: '2024-10-03T22:12:15.666Z'
+        custom_metadata:
+          id: internalId1
+        device_id: 707bc177-6804-4534-a119-08bea346d3c6
+        device_type: ecobee_thermostat
+        display_name: Living Room
+        errors: []
+        is_managed: true
+        location:
+          location_name: 2948 20th St, San Francisco, CA, 94110, US
+          timezone: America/Los_Angeles
+        nickname: Living Room
+        properties:
+          active_climate_preset:
+            can_delete: true
+            can_edit: true
+            climate_preset_key: sleep
+            cooling_set_point_celsius: 23.88888888888889
+            display_name: Sleep
+            fan_mode_setting: auto
+            heating_set_point_celsius: 17.77777777777778
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: true
+          appearance:
+            name: My Thermostat
+          available_climate_presets:
+            - climate_preset_key: sleep
+              can_edit: true
+              can_delete: true
+              can_program: false
+              name: Sleep
+              display_name: Sleep
+              fan_mode_setting: auto
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: true
+              cooling_set_point_celsius: 23.88888888888889
+              heating_set_point_celsius: 17.77777777777778
+              cooling_set_point_fahrenheit: 75
+              heating_set_point_fahrenheit: 64
+            - climate_preset_key: home
+              can_edit: true
+              can_delete: true
+              can_program: false
+              name: Home
+              display_name: Home
+              fan_mode_setting: auto
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: false
+              cooling_set_point_celsius: 23.88888888888889
+              heating_set_point_celsius: 17.77777777777778
+              cooling_set_point_fahrenheit: 75
+              heating_set_point_fahrenheit: 64
+            - climate_preset_key: work
+              can_edit: true
+              can_delete: true
+              can_program: false
+              name: Work
+              display_name: Work
+              fan_mode_setting: auto
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: false
+              cooling_set_point_celsius: 23.88888888888889
+              heating_set_point_celsius: 17.77777777777778
+              cooling_set_point_fahrenheit: 75
+              heating_set_point_fahrenheit: 64
+          available_fan_mode_settings:
+            - auto
+            - on
+          available_hvac_mode_settings:
+            - cool
+            - heat
+            - heat_cool
+            - off
+          current_climate_setting:
+            display_name: Manual Setting
+            fan_mode_setting: auto
+            heating_set_point_celsius: 25
+            heating_set_point_fahrenheit: 77
+            hvac_mode_setting: heat
+            manual_override_allowed: true
+          ecobee_metadata:
+            device_name: Living Room
+            ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          fallback_climate_preset_key: eco
+          fan_mode_setting: auto
+          has_direct_power: true
+          image_alt_text: Ecobee 3 Lite Thermostat
+          image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
+          is_cooling: false
+          is_fan_running: false
+          is_heating: false
+          is_temporary_manual_override_active: false
+          manufacturer: ecobee
+          max_cooling_set_point_celsius: 33.333333333333336
+          max_cooling_set_point_fahrenheit: 92
+          max_heating_set_point_celsius: 26.11111111111111
+          max_heating_set_point_fahrenheit: 79
+          min_cooling_set_point_celsius: 18.333333333333336
+          min_cooling_set_point_fahrenheit: 65
+          min_heating_cooling_delta_celsius: 2.7777777777777777
+          min_heating_cooling_delta_fahrenheit: 5
+          min_heating_set_point_celsius: 7.222222222222222
+          min_heating_set_point_fahrenheit: 45
+          model:
+            display_name: Thermostat
+            manufacturer_display_name: Ecobee
+          name: My Thermostat
+          online: true
+          relative_humidity: 0.36
+          temperature_celsius: 21.11111111111111
+          temperature_fahrenheit: 70
+          temperature_threshold:
+            lower_limit_celsius: 16.66666666666667
+            lower_limit_fahrenheit: 62
+            upper_limit_celsius: 26.66666666666667
+            upper_limit_fahrenheit: 80
+          thermostat_daily_programs:
+            - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+              device_id: 707bc177-6804-4534-a119-08bea346d3c6
+              name: Weekday Program
+              periods:
+                - starts_at_time: 00:00:00
+                  climate_preset_key: sleep
+                - starts_at_time: 07:00:00
+                  climate_preset_key: home
+                - starts_at_time: 09:00:00
+                  climate_preset_key: work
+                - starts_at_time: '18:00:00'
+                  climate_preset_key: home
+                - starts_at_time: '22:00:00'
+                  climate_preset_key: sleep
+              workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+              created_at: '2025-05-30T04:01:25.455Z'
+            - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+              device_id: 707bc177-6804-4534-a119-08bea346d3c6
+              name: Weekend Program
+              periods:
+                - starts_at_time: 00:00:00
+                  climate_preset_key: sleep
+                - starts_at_time: 08:00:00
+                  climate_preset_key: home
+                - starts_at_time: '23:00:00'
+                  climate_preset_key: sleep
+              workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+              created_at: '2025-05-30T04:02:19.952Z'
+          thermostat_weekly_program: null
+        warnings: []
+        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+- title: Get a thermostat by name
+  description: Returns a specified thermostat, using a name.
+  request:
+    path: /thermostats/get
+    parameters:
+      name: My Thermostat
+  response:
+    body:
+      thermostat:
+        can_hvac_cool: true
+        can_hvac_heat: true
+        can_hvac_heat_cool: true
+        can_turn_off_hvac: true
+        capabilities_supported:
+          - thermostat
+        connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
+        created_at: '2024-10-03T22:12:15.666Z'
+        custom_metadata:
+          id: internalId1
+        device_id: 707bc177-6804-4534-a119-08bea346d3c6
+        device_type: ecobee_thermostat
+        display_name: Living Room
+        errors: []
+        is_managed: true
+        location:
+          location_name: 2948 20th St, San Francisco, CA, 94110, US
+          timezone: America/Los_Angeles
+        nickname: Living Room
+        properties:
+          active_climate_preset:
+            can_delete: true
+            can_edit: true
+            climate_preset_key: sleep
+            cooling_set_point_celsius: 23.88888888888889
+            display_name: Sleep
+            fan_mode_setting: auto
+            heating_set_point_celsius: 17.77777777777778
+            hvac_mode_setting: heat_cool
+            manual_override_allowed: true
+          appearance:
+            name: My Thermostat
+          available_climate_presets:
+            - climate_preset_key: sleep
+              can_edit: true
+              can_delete: true
+              can_program: false
+              name: Sleep
+              display_name: Sleep
+              fan_mode_setting: auto
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: true
+              cooling_set_point_celsius: 23.88888888888889
+              heating_set_point_celsius: 17.77777777777778
+              cooling_set_point_fahrenheit: 75
+              heating_set_point_fahrenheit: 64
+            - climate_preset_key: home
+              can_edit: true
+              can_delete: true
+              can_program: false
+              name: Home
+              display_name: Home
+              fan_mode_setting: auto
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: false
+              cooling_set_point_celsius: 23.88888888888889
+              heating_set_point_celsius: 17.77777777777778
+              cooling_set_point_fahrenheit: 75
+              heating_set_point_fahrenheit: 64
+            - climate_preset_key: work
+              can_edit: true
+              can_delete: true
+              can_program: false
+              name: Work
+              display_name: Work
+              fan_mode_setting: auto
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: false
+              cooling_set_point_celsius: 23.88888888888889
+              heating_set_point_celsius: 17.77777777777778
+              cooling_set_point_fahrenheit: 75
+              heating_set_point_fahrenheit: 64
+          available_fan_mode_settings:
+            - auto
+            - on
+          available_hvac_mode_settings:
+            - cool
+            - heat
+            - heat_cool
+            - off
+          current_climate_setting:
+            display_name: Manual Setting
+            fan_mode_setting: auto
+            heating_set_point_celsius: 25
+            heating_set_point_fahrenheit: 77
+            hvac_mode_setting: heat
+            manual_override_allowed: true
+          ecobee_metadata:
+            device_name: Living Room
+            ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          fallback_climate_preset_key: eco
+          fan_mode_setting: auto
+          has_direct_power: true
+          image_alt_text: Ecobee 3 Lite Thermostat
+          image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
+          is_cooling: false
+          is_fan_running: false
+          is_heating: false
+          is_temporary_manual_override_active: false
+          manufacturer: ecobee
+          max_cooling_set_point_celsius: 33.333333333333336
+          max_cooling_set_point_fahrenheit: 92
+          max_heating_set_point_celsius: 26.11111111111111
+          max_heating_set_point_fahrenheit: 79
+          min_cooling_set_point_celsius: 18.333333333333336
+          min_cooling_set_point_fahrenheit: 65
+          min_heating_cooling_delta_celsius: 2.7777777777777777
+          min_heating_cooling_delta_fahrenheit: 5
+          min_heating_set_point_celsius: 7.222222222222222
+          min_heating_set_point_fahrenheit: 45
+          model:
+            display_name: Thermostat
+            manufacturer_display_name: Ecobee
+          name: My Thermostat
+          online: true
+          relative_humidity: 0.36
+          temperature_celsius: 21.11111111111111
+          temperature_fahrenheit: 70
+          temperature_threshold:
+            lower_limit_celsius: 16.66666666666667
+            lower_limit_fahrenheit: 62
+            upper_limit_celsius: 26.66666666666667
+            upper_limit_fahrenheit: 80
+          thermostat_daily_programs:
+            - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+              device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+              name: Weekday Program
+              periods:
+                - starts_at_time: 00:00:00
+                  climate_preset_key: sleep
+                - starts_at_time: 07:00:00
+                  climate_preset_key: home
+                - starts_at_time: 09:00:00
+                  climate_preset_key: work
+                - starts_at_time: '18:00:00'
+                  climate_preset_key: home
+                - starts_at_time: '22:00:00'
+                  climate_preset_key: sleep
+              workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+              created_at: '2025-05-30T04:01:25.455Z'
+            - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+              device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+              name: Weekend Program
+              periods:
+                - starts_at_time: 00:00:00
+                  climate_preset_key: sleep
+                - starts_at_time: 08:00:00
+                  climate_preset_key: home
+                - starts_at_time: '23:00:00'
+                  climate_preset_key: sleep
+              workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+              created_at: '2025-05-30T04:02:19.952Z'
+          thermostat_weekly_program: null
+        warnings: []
+        workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+- title: Set a thermostat to heat mode
+  description: Sets a specified thermostat to heat mode.
+  request:
+    path: /thermostats/heat
+    parameters:
+      device_id: e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5
+      heating_set_point_fahrenheit: 65
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d
+        action_type: SET_HVAC_MODE
+        error: null
+        result: {}
+        status: success
+- title: Set a thermostat to heat-cool mode
+  description: Sets a specified thermostat to heat-cool ("auto") mode.
+  request:
+    path: /thermostats/heat_cool
+    parameters:
+      device_id: 32f974cc-e817-4bd7-b7f1-be92c80884a1
+      heating_set_point_celsius: 20
+      cooling_set_point_celsius: 25
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d
+        action_type: SET_HVAC_MODE
+        error: null
+        result: {}
+        status: success
+- title: List thermostats
+  description:
+    Returns a list of all thermostats. For additional filter parameters,
+    see /devices/list.
+  request:
+    path: /thermostats/list
+    parameters:
+      limit: 10
+  response:
+    body:
+      thermostats:
+        - can_hvac_cool: true
+          can_hvac_heat: true
+          can_hvac_heat_cool: true
+          can_turn_off_hvac: true
+          capabilities_supported:
+            - thermostat
+          connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
+          created_at: '2024-10-03T22:12:15.666Z'
+          custom_metadata:
+            id: internalId1
+          device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          device_type: ecobee_thermostat
+          display_name: Living Room
+          errors: []
+          is_managed: true
+          location:
+            location_name: 2948 20th St, San Francisco, CA, 94110, US
+            timezone: America/Los_Angeles
+          nickname: Living Room
+          properties:
+            active_climate_preset:
+              can_delete: true
+              can_edit: true
+              climate_preset_key: sleep
+              cooling_set_point_celsius: 23.88888888888889
+              display_name: Sleep
+              fan_mode_setting: auto
+              heating_set_point_celsius: 17.77777777777778
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: true
+            appearance:
+              name: Living Room
+            available_climate_presets:
+              - climate_preset_key: sleep
+                can_edit: true
+                can_delete: true
+                can_program: false
+                name: Sleep
+                display_name: Sleep
+                fan_mode_setting: auto
+                hvac_mode_setting: heat_cool
+                manual_override_allowed: true
+                cooling_set_point_celsius: 23.88888888888889
+                heating_set_point_celsius: 17.77777777777778
+                cooling_set_point_fahrenheit: 75
+                heating_set_point_fahrenheit: 64
+              - climate_preset_key: home
+                can_edit: true
+                can_delete: true
+                can_program: false
+                name: Home
+                display_name: Home
+                fan_mode_setting: auto
+                hvac_mode_setting: heat_cool
+                manual_override_allowed: false
+                cooling_set_point_celsius: 23.88888888888889
+                heating_set_point_celsius: 17.77777777777778
+                cooling_set_point_fahrenheit: 75
+                heating_set_point_fahrenheit: 64
+              - climate_preset_key: work
+                can_edit: true
+                can_delete: true
+                can_program: false
+                name: Work
+                display_name: Work
+                fan_mode_setting: auto
+                hvac_mode_setting: heat_cool
+                manual_override_allowed: false
+                cooling_set_point_celsius: 23.88888888888889
+                heating_set_point_celsius: 17.77777777777778
+                cooling_set_point_fahrenheit: 75
+                heating_set_point_fahrenheit: 64
+            available_fan_mode_settings:
+              - auto
+              - on
+            available_hvac_mode_settings:
+              - cool
+              - heat
+              - heat_cool
+              - off
+            current_climate_setting:
+              display_name: Manual Setting
+              fan_mode_setting: auto
+              heating_set_point_celsius: 25
+              heating_set_point_fahrenheit: 77
+              hvac_mode_setting: heat
+              manual_override_allowed: true
+            ecobee_metadata:
+              device_name: Living Room
+              ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+            fallback_climate_preset_key: eco
+            fan_mode_setting: auto
+            has_direct_power: true
+            image_alt_text: Ecobee 3 Lite Thermostat
+            image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
+            is_cooling: false
+            is_fan_running: false
+            is_heating: false
+            is_temporary_manual_override_active: false
+            manufacturer: ecobee
+            max_cooling_set_point_celsius: 33.333333333333336
+            max_cooling_set_point_fahrenheit: 92
+            max_heating_set_point_celsius: 26.11111111111111
+            max_heating_set_point_fahrenheit: 79
+            min_cooling_set_point_celsius: 18.333333333333336
+            min_cooling_set_point_fahrenheit: 65
+            min_heating_cooling_delta_celsius: 2.7777777777777777
+            min_heating_cooling_delta_fahrenheit: 5
+            min_heating_set_point_celsius: 7.222222222222222
+            min_heating_set_point_fahrenheit: 45
+            model:
+              display_name: Thermostat
+              manufacturer_display_name: Ecobee
+            name: Living Room
+            online: true
+            relative_humidity: 0.36
+            temperature_celsius: 21.11111111111111
+            temperature_fahrenheit: 70
+            temperature_threshold:
+              lower_limit_celsius: 16.66666666666667
+              lower_limit_fahrenheit: 62
+              upper_limit_celsius: 26.66666666666667
+              upper_limit_fahrenheit: 80
+            thermostat_daily_programs:
+              - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+                name: Weekday Program
+                periods:
+                  - starts_at_time: 00:00:00
+                    climate_preset_key: sleep
+                  - starts_at_time: 07:00:00
+                    climate_preset_key: home
+                  - starts_at_time: 09:00:00
+                    climate_preset_key: work
+                  - starts_at_time: '18:00:00'
+                    climate_preset_key: home
+                  - starts_at_time: '22:00:00'
+                    climate_preset_key: sleep
+                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+                created_at: '2025-05-30T04:01:25.455Z'
+              - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+                name: Weekend Program
+                periods:
+                  - starts_at_time: 00:00:00
+                    climate_preset_key: sleep
+                  - starts_at_time: 08:00:00
+                    climate_preset_key: home
+                  - starts_at_time: '23:00:00'
+                    climate_preset_key: sleep
+                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+                created_at: '2025-05-30T04:02:19.952Z'
+            thermostat_weekly_program: null
+          warnings: []
+          workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+      devices:
+        - can_hvac_cool: true
+          can_hvac_heat: true
+          can_hvac_heat_cool: true
+          can_turn_off_hvac: true
+          capabilities_supported:
+            - thermostat
+          connected_account_id: a0b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d
+          created_at: '2024-10-03T22:12:15.666Z'
+          custom_metadata:
+            id: internalId1
+          device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+          device_type: ecobee_thermostat
+          display_name: Living Room
+          errors: []
+          is_managed: true
+          location:
+            location_name: 2948 20th St, San Francisco, CA, 94110, US
+            timezone: America/Los_Angeles
+          nickname: Living Room
+          properties:
+            active_climate_preset:
+              can_delete: true
+              can_edit: true
+              climate_preset_key: sleep
+              cooling_set_point_celsius: 23.88888888888889
+              display_name: Sleep
+              fan_mode_setting: auto
+              heating_set_point_celsius: 17.77777777777778
+              hvac_mode_setting: heat_cool
+              manual_override_allowed: true
+            appearance:
+              name: Living Room
+            available_climate_presets:
+              - climate_preset_key: sleep
+                can_edit: true
+                can_delete: true
+                can_program: false
+                name: Sleep
+                display_name: Sleep
+                fan_mode_setting: auto
+                hvac_mode_setting: heat_cool
+                manual_override_allowed: true
+                cooling_set_point_celsius: 23.88888888888889
+                heating_set_point_celsius: 17.77777777777778
+                cooling_set_point_fahrenheit: 75
+                heating_set_point_fahrenheit: 64
+              - climate_preset_key: home
+                can_edit: true
+                can_delete: true
+                can_program: false
+                name: Home
+                display_name: Home
+                fan_mode_setting: auto
+                hvac_mode_setting: heat_cool
+                manual_override_allowed: false
+                cooling_set_point_celsius: 23.88888888888889
+                heating_set_point_celsius: 17.77777777777778
+                cooling_set_point_fahrenheit: 75
+                heating_set_point_fahrenheit: 64
+              - climate_preset_key: work
+                can_edit: true
+                can_delete: true
+                can_program: false
+                name: Work
+                display_name: Work
+                fan_mode_setting: auto
+                hvac_mode_setting: heat_cool
+                manual_override_allowed: false
+                cooling_set_point_celsius: 23.88888888888889
+                heating_set_point_celsius: 17.77777777777778
+                cooling_set_point_fahrenheit: 75
+                heating_set_point_fahrenheit: 64
+            available_fan_mode_settings:
+              - auto
+              - on
+            available_hvac_mode_settings:
+              - cool
+              - heat
+              - heat_cool
+              - off
+            current_climate_setting:
+              display_name: Manual Setting
+              fan_mode_setting: auto
+              heating_set_point_celsius: 25
+              heating_set_point_fahrenheit: 77
+              hvac_mode_setting: heat
+              manual_override_allowed: true
+            ecobee_metadata:
+              device_name: Living Room
+              ecobee_device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+            fallback_climate_preset_key: eco
+            fan_mode_setting: auto
+            has_direct_power: true
+            image_alt_text: Ecobee 3 Lite Thermostat
+            image_url: https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/ecobee_3-lite_front.png&q=75&w=128
+            is_cooling: false
+            is_fan_running: false
+            is_heating: false
+            is_temporary_manual_override_active: false
+            manufacturer: ecobee
+            max_cooling_set_point_celsius: 33.333333333333336
+            max_cooling_set_point_fahrenheit: 92
+            max_heating_set_point_celsius: 26.11111111111111
+            max_heating_set_point_fahrenheit: 79
+            min_cooling_set_point_celsius: 18.333333333333336
+            min_cooling_set_point_fahrenheit: 65
+            min_heating_cooling_delta_celsius: 2.7777777777777777
+            min_heating_cooling_delta_fahrenheit: 5
+            min_heating_set_point_celsius: 7.222222222222222
+            min_heating_set_point_fahrenheit: 45
+            model:
+              display_name: Thermostat
+              manufacturer_display_name: Ecobee
+            name: Living Room
+            online: true
+            relative_humidity: 0.36
+            temperature_celsius: 21.11111111111111
+            temperature_fahrenheit: 70
+            temperature_threshold:
+              lower_limit_celsius: 16.66666666666667
+              lower_limit_fahrenheit: 62
+              upper_limit_celsius: 26.66666666666667
+              upper_limit_fahrenheit: 80
+            thermostat_daily_programs:
+              - thermostat_daily_program_id: 1a2b3c4d-5e6f-7890-1234-56789abcdef1
+                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+                name: Weekday Program
+                periods:
+                  - starts_at_time: 00:00:00
+                    climate_preset_key: sleep
+                  - starts_at_time: 07:00:00
+                    climate_preset_key: home
+                  - starts_at_time: 09:00:00
+                    climate_preset_key: work
+                  - starts_at_time: '18:00:00'
+                    climate_preset_key: home
+                  - starts_at_time: '22:00:00'
+                    climate_preset_key: sleep
+                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+                created_at: '2025-05-30T04:01:25.455Z'
+              - thermostat_daily_program_id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+                device_id: a1b2c3d4-e5f6-7890-1234-56789abcdef0
+                name: Weekend Program
+                periods:
+                  - starts_at_time: 00:00:00
+                    climate_preset_key: sleep
+                  - starts_at_time: 08:00:00
+                    climate_preset_key: home
+                  - starts_at_time: '23:00:00'
+                    climate_preset_key: sleep
+                workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+                created_at: '2025-05-30T04:02:19.952Z'
+            thermostat_weekly_program: null
+          warnings: []
+          workspace_id: 9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab
+- title: Set a thermostat to off mode
+  description: Sets a specified thermostat to "off" mode.
+  request:
+    path: /thermostats/off
+    parameters:
+      device_id: 5d5c3b30-5fed-47a3-9df1-ed32f32589e5
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d
+        action_type: SET_HVAC_MODE
+        error: null
+        result: {}
+        status: success
+- title: Set the fallback climate preset
+  description:
+    Sets a specified climate preset as the "fallback" preset for a specified
+    thermostat.
+  request:
+    path: /thermostats/set_fallback_climate_preset
+    parameters:
+      device_id: 9a21ddcb-8eeb-4351-8770-1835c3db8b2e
+      climate_preset_key: Eco
+  response:
+    body: null
+- title: Set the fan mode for a thermostat
+  description: Sets the fan mode setting for a specified thermostat.
+  request:
+    path: /thermostats/set_fan_mode
+    parameters:
+      device_id: 363e657e-3b07-4670-a290-7fb1f32b8e33
+      fan_mode_setting: auto
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: 2a3b4c5d-6e7f-8a9b-acbd-1e2f3a4b5c6d
+        action_type: SET_FAN_MODE
+        error: null
+        result: {}
+        status: success
+- title: Set the HVAC mode for a thermostat
+  description: Sets the HVAC mode for a specified thermostat.
+  request:
+    path: /thermostats/set_hvac_mode
+    parameters:
+      device_id: 5d5c3b30-5fed-47a3-9df1-ed32f32589e5
+      hvac_mode_setting: heat_cool
+      heating_set_point_celsius: 20
+      cooling_set_point_celsius: 25
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d
+        action_type: SET_HVAC_MODE
+        error: null
+        result: {}
+        status: success
+- title: Set a temperature threshold for a thermostat
+  description: Sets a temperature threshold for a specified thermostat.
+  request:
+    path: /thermostats/set_temperature_threshold
+    parameters:
+      device_id: a9b52627-e6e2-4beb-9168-964749f7bbae
+      lower_limit_fahrenheit: 60
+      upper_limit_fahrenheit: 80
+  response:
+    body: null
+- title: Update a climate preset for a thermostat
+  description: Updates a specified climate preset for a specified thermostat.
+  request:
+    path: /thermostats/update_climate_preset
+    parameters:
+      device_id: a2495670-80a5-4c98-b8c0-8b0c9d49c3b8
+      climate_preset_key: Home
+      name: Home
+      fan_mode_setting: auto
+      hvac_mode_setting: heat_cool
+      cooling_set_point_fahrenheit: 75
+      heating_set_point_fahrenheit: 65
+      manual_override_allowed: true
+  response:
+    body: null
+- title: Update the weekly program for a thermostat
+  description: Updates the thermostat weekly program for a thermostat device.
+  request:
+    path: /thermostats/update_weekly_program
+    parameters:
+      device_id: 076546e8-966c-47dd-831b-8d98413bf070
+      monday_program_id: a36dccaa-aeb9-47da-bf1d-43a08ba5c870
+      tuesday_program_id: a36dccaa-aeb9-47da-bf1d-43a08ba5c870
+      wednesday_program_id: a36dccaa-aeb9-47da-bf1d-43a08ba5c870
+      thursday_program_id: a36dccaa-aeb9-47da-bf1d-43a08ba5c870
+      friday_program_id: a36dccaa-aeb9-47da-bf1d-43a08ba5c870
+      saturday_program_id: 3bf5a788-caf8-40c5-a7d5-78b72e9b3a28
+      sunday_program_id: 3bf5a788-caf8-40c5-a7d5-78b72e9b3a28
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+        action_type: PUSH_THERMOSTAT_PROGRAMS
+        error: null
+        result: {}
+        status: success
+- title: Create a thermostat schedule
+  description: Creates a new thermostat schedule for a specified thermostat.
+  request:
+    path: /thermostats/schedules/create
+    parameters:
+      device_id: d710aa35-232d-442b-a817-c28045de1c74
+      name: Jane's Stay
+      climate_preset_key: Occupied
+      max_override_period_minutes: 90
+      starts_at: '2025-06-19T15:00:00.000Z'
+      ends_at: '2025-06-22T11:00:00.000Z'
+      is_override_allowed: true
+  response:
+    body:
+      thermostat_schedule:
+        climate_preset_key: Occupied
+        created_at: '2025-06-14T16:54:17.946316Z'
+        device_id: d710aa35-232d-442b-a817-c28045de1c74
+        ends_at: '2025-06-22T11:00:00.000Z'
+        errors: []
+        is_override_allowed: true
+        max_override_period_minutes: 90
+        name: Jane's Stay
+        starts_at: '2025-06-22T11:00:00.000Z'
+        thermostat_schedule_id: af2cb7f7-9f28-40da-a0a0-e7a008ef7a35
+        workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
+- title: Delete a thermostat schedule
+  description: Deletes a thermostat schedule for a specified thermostat.
+  request:
+    path: /thermostats/schedules/delete
+    parameters:
+      thermostat_schedule_id: 0d42131f-ceb2-4fdf-b44e-3cc1143f98de
+  response:
+    body: null
+- title: Get a thermostat schedule
+  description: Returns a specified thermostat schedule.
+  request:
+    path: /thermostats/schedules/get
+    parameters:
+      thermostat_schedule_id: 408f3f85-11ae-4111-bec1-0f2408a2b218
+  response:
+    body:
+      thermostat_schedule:
+        climate_preset_key: Occupied
+        created_at: '2025-06-14T16:54:17.946316Z'
+        device_id: dc1dfc4b-8082-453f-a953-276941af8650
+        ends_at: '2025-07-14T16:54:17.946313Z'
+        errors: []
+        is_override_allowed: true
+        max_override_period_minutes: 90
+        name: Jane's Stay
+        starts_at: '2025-07-12T16:54:17.946313Z'
+        thermostat_schedule_id: 408f3f85-11ae-4111-bec1-0f2408a2b218
+        workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
+- title: List thermostat schedules by device ID
+  description:
+    Returns a list of all thermostat schedules for a specified thermostat,
+    using a device ID.
+  request:
+    path: /thermostats/schedules/list
+    parameters:
+      device_id: b5d58842-32be-46d2-b161-26787a0bd5ea
+  response:
+    body:
+      thermostat_schedules:
+        - climate_preset_key: Eco
+          created_at: '2025-06-14T16:54:17.946316Z'
+          device_id: b5d58842-32be-46d2-b161-26787a0bd5ea
+          ends_at: '2025-07-14T16:54:17.946313Z'
+          errors: []
+          is_override_allowed: true
+          max_override_period_minutes: 90
+          name: Unoccupied
+          starts_at: '2025-07-12T16:54:17.946313Z'
+          thermostat_schedule_id: af2cb7f7-9f28-40da-a0a0-e7a008ef7a35
+          workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
+- title: List thermostat schedules by user identifier key
+  description:
+    Returns a list of all thermostat schedules for a specified thermostat,
+    using a user identifier key.
+  request:
+    path: /thermostats/schedules/list
+    parameters:
+      user_identifier_key: b5c8bf4e-c231-474f-b4dc-adad38c25d3f
+  response:
+    body:
+      thermostat_schedules:
+        - climate_preset_key: Eco
+          created_at: '2025-06-14T16:54:17.946316Z'
+          device_id: dc1dfc4b-8082-453f-a953-276941af8650
+          ends_at: '2025-07-14T16:54:17.946313Z'
+          errors: []
+          is_override_allowed: true
+          max_override_period_minutes: 90
+          name: Unoccupied
+          starts_at: '2025-07-12T16:54:17.946313Z'
+          thermostat_schedule_id: af2cb7f7-9f28-40da-a0a0-e7a008ef7a35
+          workspace_id: 58419b36-6103-44e5-aa83-2163e90cce01
+- title: Update a thermostat schedule
+  description: Updates a specified thermostat schedule.
+  request:
+    path: /thermostats/schedules/update
+    parameters:
+      thermostat_schedule_id: f29b8f4d-ef6e-4219-96e5-16fb2151ec6c
+      name: Jane's Stay
+      climate_preset_key: Occupied
+      max_override_period_minutes: 90
+      starts_at: '2025-06-20T03:24:25.000Z'
+      ends_at: '2025-06-22T06:04:21.000Z'
+      is_override_allowed: true
+  response:
+    body: null
+- title: Create a thermostat daily program
+  description: Creates a new thermostat daily program.
+  request:
+    path: /thermostats/daily_programs/create
+    parameters:
+      device_id: cc2d0fb9-1f5f-410f-80f1-a64b699de82a
+      name: Weekday Program
+      periods:
+        - starts_at_time: 07:00:00
+          climate_preset_key: Home
+        - starts_at_time: 09:00:00
+          climate_preset_key: Away
+        - starts_at_time: '16:00:00'
+          climate_preset_key: Home
+        - starts_at_time: '22:30:00'
+          climate_preset_key: Sleep
+  response:
+    body:
+      thermostat_daily_program:
+        created_at: '2025-06-14T16:54:17.946642Z'
+        device_id: cc2d0fb9-1f5f-410f-80f1-a64b699de82a
+        name: Weekday Program
+        periods:
+          - starts_at_time: 07:00:00
+            climate_preset_key: Home
+          - starts_at_time: 09:00:00
+            climate_preset_key: Away
+          - starts_at_time: '16:00:00'
+            climate_preset_key: Home
+          - starts_at_time: '22:30:00'
+            climate_preset_key: Sleep
+        thermostat_daily_program_id: ab8ef74c-c7cd-4100-aa32-0ef960c0080d
+        workspace_id: 8da8d923-e55b-45cd-84a3-6c96b3d3d454
+- title: Delete a thermostat daily program
+  description: Deletes a thermostat daily program.
+  request:
+    path: /thermostats/daily_programs/delete
+    parameters:
+      thermostat_daily_program_id: a8665859-629e-4696-88b1-1eda1976250a
+  response:
+    body: null
+- title: Update a thermostat daily program
+  description: Updates a specified thermostat daily program.
+  request:
+    path: /thermostats/daily_programs/update
+    parameters:
+      thermostat_daily_program_id: 6baf3a53-ba83-4052-8ea5-143584e18f03
+      name: Weekday Program
+      periods:
+        - starts_at_time: 07:00:00
+          climate_preset_key: Home
+        - starts_at_time: 09:00:00
+          climate_preset_key: Away
+        - starts_at_time: '17:00:00'
+          climate_preset_key: Home
+        - starts_at_time: '22:30:00'
+          climate_preset_key: Sleep
+  response:
+    body:
+      action_attempt:
+        action_attempt_id: a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+        action_type: PUSH_THERMOSTAT_PROGRAMS
+        error: null
+        result: {}
+        status: success
+- title: Simulate adjusting the HVAC mode
+  description: Simulates having adjusted the HVAC mode for a thermostat.
+  request:
+    path: /thermostats/simulate/hvac_mode_adjusted
+    parameters:
+      device_id: 278a72ba-7deb-45e3-a0c0-573fd360ee7b
+      hvac_mode: heat
+      heating_set_point_fahrenheit: 68
+  response:
+    body: null
+- title: Simulate reaching a desired temperature
+  description: Simulates a thermostat reaching a specified temperature.
+  request:
+    path: /thermostats/simulate/temperature_reached
+    parameters:
+      device_id: 278a72ba-7deb-45e3-a0c0-573fd360ee7b
+      temperature_celsius: 25
+  response:
+    body: null

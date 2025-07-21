@@ -11,7 +11,7 @@ Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/c
 
 Sets the HVAC mode for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.setHvacMode({
@@ -22,7 +22,7 @@ await seam.thermostats.setHvacMode({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -39,7 +39,7 @@ await seam.thermostats.setHvacMode({
 
 Sets the HVAC mode for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
@@ -54,7 +54,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -73,7 +73,7 @@ EOF
 
 Sets the HVAC mode for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.set_hvac_mode(
@@ -84,7 +84,7 @@ seam.thermostats.set_hvac_mode(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -101,7 +101,7 @@ ActionAttempt(
 
 Sets the HVAC mode for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.set_hvac_mode(
@@ -112,7 +112,7 @@ seam.thermostats.set_hvac_mode(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -130,10 +130,9 @@ seam.thermostats.set_hvac_mode(
 
 Sets the HVAC mode for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->set_hvac_mode(
     device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
     hvac_mode_setting: "heat_cool",
@@ -142,10 +141,9 @@ $seam->thermostats->set_hvac_mode(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",
@@ -160,13 +158,13 @@ $seam->thermostats->set_hvac_mode(
 
 Sets the HVAC mode for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats set-hvac-mode --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5" --hvac_mode_setting "heat_cool" --heating_set_point_celsius 20 --cooling_set_point_celsius 25
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

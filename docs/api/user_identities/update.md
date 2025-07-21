@@ -11,7 +11,7 @@ Updates a specified [user identity](../../capability-guides/mobile-access/managi
 
 Updates a specified user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.userIdentities.update({
@@ -23,7 +23,7 @@ await seam.userIdentities.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -34,7 +34,7 @@ await seam.userIdentities.update({
 
 Updates a specified user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/update" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/user_identities/updat
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -61,7 +61,7 @@ EOF
 
 Updates a specified user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.user_identities.update(
@@ -73,7 +73,7 @@ seam.user_identities.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -84,7 +84,7 @@ None
 
 Updates a specified user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.user_identities.update(
@@ -96,7 +96,7 @@ seam.user_identities.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -107,10 +107,9 @@ nil
 
 Updates a specified user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->user_identities->update(
     user_identity_id: "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
     user_identity_key: "jane_doe",
@@ -120,10 +119,10 @@ $seam->user_identities->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -131,13 +130,13 @@ null
 
 Updates a specified user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam user-identities update --user_identity_id "dc378ea9-358e-4999-b295-d0f3e0d5ff51" --user_identity_key "jane_doe" --email_address "jane@example.com" --phone_number "+15551234567" --full_name "Jane Doe"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

@@ -11,7 +11,7 @@ Deletes a [client session](../../core-concepts/authentication/client-session-tok
 
 Deletes a client session.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.delete({
@@ -19,7 +19,7 @@ await seam.clientSessions.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.clientSessions.delete({
 
 Deletes a client session.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/delete" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/delet
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,13 +53,13 @@ EOF
 
 Deletes a client session.
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.delete(client_session_id="d149de35-cfad-46fe-a78e-f71f649e7a37")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -70,13 +70,13 @@ None
 
 Deletes a client session.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.delete(client_session_id: "d149de35-cfad-46fe-a78e-f71f649e7a37")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -87,19 +87,18 @@ nil
 
 Deletes a client session.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->client_sessions->delete(
     client_session_id: "d149de35-cfad-46fe-a78e-f71f649e7a37"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -107,13 +106,13 @@ null
 
 Deletes a client session.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions delete --client_session_id "d149de35-cfad-46fe-a78e-f71f649e7a37"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

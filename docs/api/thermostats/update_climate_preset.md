@@ -11,7 +11,7 @@ Updates a specified [climate preset](../../capability-guides/thermostats/creatin
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.updateClimatePreset({
@@ -26,7 +26,7 @@ await seam.thermostats.updateClimatePreset({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -37,7 +37,7 @@ await seam.thermostats.updateClimatePreset({
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/update_climate_preset" \
@@ -56,7 +56,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/update_cl
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -67,7 +67,7 @@ EOF
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.update_climate_preset(
@@ -82,7 +82,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -93,7 +93,7 @@ None
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.update_climate_preset(
@@ -108,7 +108,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -119,10 +119,9 @@ nil
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->update_climate_preset(
     device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
     climate_preset_key: "Home",
@@ -135,10 +134,10 @@ $seam->thermostats->update_climate_preset(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -146,13 +145,13 @@ null
 
 Updates a specified climate preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats update-climate-preset --device_id "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8" --climate_preset_key "Home" --name "Home" --fan_mode_setting "auto" --hvac_mode_setting "heat_cool" --cooling_set_point_fahrenheit 75 --heating_set_point_fahrenheit 65 --manual_override_allowed true
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -205,6 +204,50 @@ Temperature to which the thermostat should cool (in °C). See also [Set Points](
 Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 ---
+
+**`ecobee_metadata`** *Object*
+
+Metadata specific to the Ecobee climate, if applicable.
+
+<details>
+
+<summary><b><code>climate_ref</code></b> <i>String</i></summary>
+
+Reference to the Ecobee climate, if applicable.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>is_optimized</code></b> <i>Boolean</i></summary>
+
+Indicates if the climate preset is optimized by Ecobee.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>owner</code></b> <i>Enum</i></summary>
+
+Indicates whether the climate preset is owned by the user or the system.
+
+Enum values:
+
+- <code>user</code>
+- <code>system</code>
+
+</details>
+
+---
+
 
 **`fan_mode_setting`** *String*
 

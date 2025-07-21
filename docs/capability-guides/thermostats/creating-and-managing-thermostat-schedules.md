@@ -24,7 +24,7 @@ In the Seam API, use the `starts_at` and `ends_at` parameters to define the time
 
 `starts_at` is required and must be unique within all the schedules for the thermostat. However, if you want to schedule a climate preset that starts immediately, set `start_at` to a time in the past. Alternately, you can [activate a climate preset](creating-and-managing-climate-presets/activating-a-climate-preset.md) immediately.
 
-After a scheduled climate preset starts, Seam emits a [`thermostat.temperature_reached_set_point` event](../../api-clients/events/#event-types) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](understanding-thermostat-concepts/set-points.md) specified in this climate preset. You can configure a [webhook](../../core-concepts/webhooks.md) to watch for this event.
+After a scheduled climate preset starts, Seam emits a [`thermostat.temperature_reached_set_point` event](../../api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](understanding-thermostat-concepts/set-points.md) specified in this climate preset. You can configure a [webhook](../../core-concepts/webhooks.md) to watch for this event.
 
 ***
 

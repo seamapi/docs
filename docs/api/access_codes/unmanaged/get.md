@@ -13,7 +13,7 @@ You must specify either `access_code_id` or both `device_id` and `code`.
 
 Returns a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.unmanaged.get({
@@ -21,7 +21,7 @@ await seam.accessCodes.unmanaged.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -45,7 +45,7 @@ await seam.accessCodes.unmanaged.get({
 
 Returns a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/get" \
@@ -57,7 +57,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/unmanage
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -83,13 +83,13 @@ EOF
 
 Returns a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.unmanaged.get(access_code_id="41b984ec-1b74-48cd-ba68-16660cd792b6")
 ```
 
-#### Output
+#### Output:
 
 ```python
 UnmanagedAccessCode(
@@ -113,13 +113,13 @@ UnmanagedAccessCode(
 
 Returns a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.unmanaged.get(access_code_id: "41b984ec-1b74-48cd-ba68-16660cd792b6")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -143,19 +143,17 @@ seam.access_codes.unmanaged.get(access_code_id: "41b984ec-1b74-48cd-ba68-16660cd
 
 Returns a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_codes->unmanaged->get(
     access_code_id: "41b984ec-1b74-48cd-ba68-16660cd792b6"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "access_code_id" => "41b984ec-1b74-48cd-ba68-16660cd792b6",
     "code" => "1234",
@@ -177,13 +175,13 @@ $seam->access_codes->unmanaged->get(
 
 Returns a specified unmanaged access code.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes unmanaged get --access_code_id "41b984ec-1b74-48cd-ba68-16660cd792b6"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -241,7 +239,7 @@ ID of the device containing the unmanaged access code that you want to get. You 
 
 ## Response
 
-[unmanaged\_access\_code](./)
+[unmanaged\_access\_code](.)
 
 
 {% tabs %}

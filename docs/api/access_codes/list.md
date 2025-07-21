@@ -13,7 +13,7 @@ Specify either `device_id` or `access_code_ids`.
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.list({
@@ -22,7 +22,7 @@ await seam.accessCodes.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -31,7 +31,7 @@ await seam.accessCodes.list({
     "code": "1234",
     "common_code_key": null,
     "created_at": "2025-06-14T16:54:17.946242Z",
-    "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "device_id": "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
     "ends_at": "2025-07-04T16:54:17.946049Z",
     "errors": [],
     "is_backup": false,
@@ -57,7 +57,7 @@ await seam.accessCodes.list({
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/list" \
@@ -70,7 +70,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -80,7 +80,7 @@ EOF
       "code": "1234",
       "common_code_key": null,
       "created_at": "2025-06-14T16:54:17.946242Z",
-      "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+      "device_id": "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
       "ends_at": "2025-07-04T16:54:17.946049Z",
       "errors": [],
       "is_backup": false,
@@ -107,13 +107,13 @@ EOF
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=10)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -122,7 +122,7 @@ seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=1
         code="1234",
         common_code_key=None,
         created_at="2025-06-14T16:54:17.946242Z",
-        device_id="c9cd621d-ef0c-45c8-b608-026ebdb74615",
+        device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae",
         ends_at="2025-07-04T16:54:17.946049Z",
         errors=[],
         is_backup=false,
@@ -148,13 +148,13 @@ seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=1
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit: 10)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -163,7 +163,7 @@ seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit:
     "code" => "1234",
     "common_code_key" => nil,
     "created_at" => "2025-06-14T16:54:17.946242Z",
-    "device_id" => "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "device_id" => "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
     "ends_at" => "2025-07-04T16:54:17.946049Z",
     "errors" => [],
     "is_backup" => false,
@@ -189,27 +189,25 @@ seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit:
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_codes->list(
     device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
     limit: 10
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
         "code" => "1234",
         "common_code_key" => null,
         "created_at" => "2025-06-14T16:54:17.946242Z",
-        "device_id" => "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+        "device_id" => "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
         "ends_at" => "2025-07-04T16:54:17.946049Z",
         "errors" => [],
         "is_backup" => false,
@@ -235,13 +233,13 @@ $seam->access_codes->list(
 
 Returns a list of all access codes.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes list --device_id "f5197f50-839b-4a8e-82f3-e9ef06af93ae" --limit 10
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -250,7 +248,7 @@ seam access-codes list --device_id "f5197f50-839b-4a8e-82f3-e9ef06af93ae" --limi
     "code": "1234",
     "common_code_key": null,
     "created_at": "2025-06-14T16:54:17.946242Z",
-    "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "device_id": "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
     "ends_at": "2025-07-04T16:54:17.946049Z",
     "errors": [],
     "is_backup": false,
@@ -326,7 +324,7 @@ Your user ID for the user by which to filter access codes.
 
 ## Response
 
-Array of [access\_codes](./)
+Array of [access\_codes](.)
 
 
 {% tabs %}

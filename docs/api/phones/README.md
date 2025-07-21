@@ -4,8 +4,6 @@
 
 - [Properties](./#properties)
 - [phone.properties](./#phone.properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -106,10 +104,10 @@ Errors associated with the phone.
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>error_code</code></strong> <i>String</i>
 
-  <strong><code>error_code</code></strong> <i>String</i>
+<strong><code>message</code></strong> <i>String</i>
 
-  <strong><code>message</code></strong> <i>String</i>
 </details>
 
 ---
@@ -131,10 +129,10 @@ Warnings associated with the phone.
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>message</code></strong> <i>String</i>
 
-  <strong><code>message</code></strong> <i>String</i>
+<strong><code>warning_code</code></strong> <i>String</i>
 
-  <strong><code>warning_code</code></strong> <i>String</i>
 </details>
 
 ---
@@ -213,6 +211,10 @@ A phone device was deactivated.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device; present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 

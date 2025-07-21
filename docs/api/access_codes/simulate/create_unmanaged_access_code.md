@@ -11,7 +11,7 @@ Simulates the creation of an [unmanaged access code](https://docs.seam.co/latest
 
 Simulates the creation of an unmanaged access code in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.simulate.createUnmanagedAccessCode({
@@ -21,7 +21,7 @@ await seam.accessCodes.simulate.createUnmanagedAccessCode({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -45,7 +45,7 @@ await seam.accessCodes.simulate.createUnmanagedAccessCode({
 
 Simulates the creation of an unmanaged access code in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/simulate/create_unmanaged_access_code" \
@@ -59,7 +59,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/simulate
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -85,7 +85,7 @@ EOF
 
 Simulates the creation of an unmanaged access code in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.simulate.create_unmanaged_access_code(
@@ -93,7 +93,7 @@ seam.access_codes.simulate.create_unmanaged_access_code(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 UnmanagedAccessCode(
@@ -117,7 +117,7 @@ UnmanagedAccessCode(
 
 Simulates the creation of an unmanaged access code in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.simulate.create_unmanaged_access_code(
@@ -127,7 +127,7 @@ seam.access_codes.simulate.create_unmanaged_access_code(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -151,10 +151,9 @@ seam.access_codes.simulate.create_unmanaged_access_code(
 
 Simulates the creation of an unmanaged access code in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_codes->simulate->create_unmanaged_access_code(
     device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
     name: "My Access Code",
@@ -162,10 +161,9 @@ $seam->access_codes->simulate->create_unmanaged_access_code(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf",
     "code" => "1234",
@@ -187,13 +185,13 @@ $seam->access_codes->simulate->create_unmanaged_access_code(
 
 Simulates the creation of an unmanaged access code in a sandbox workspace.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes simulate create-unmanaged-access-code --device_id "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963" --name "My Access Code" --code "1234"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -251,7 +249,7 @@ Name of the simulated unmanaged access code.
 
 ## Response
 
-[unmanaged\_access\_code](./)
+[unmanaged\_access\_code](./../unmanaged)
 
 
 {% tabs %}

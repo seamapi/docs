@@ -18,7 +18,7 @@ See also: [Connect Webview Process](../../core-concepts/connect-webviews/connect
 
 Creates a new Connect Webview that accepts all stable providers.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectWebviews.create({
@@ -33,7 +33,7 @@ await seam.connectWebviews.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -96,7 +96,7 @@ await seam.connectWebviews.create({
 
 Creates a new Connect Webview that accepts all stable providers.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/create" \
@@ -120,7 +120,7 @@ curl --include --request POST "https://connect.getseam.com/connect_webviews/crea
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -185,7 +185,7 @@ EOF
 
 Creates a new Connect Webview that accepts all stable providers.
 
-#### Code
+#### Code:
 
 ```python
 seam.connect_webviews.create(
@@ -200,7 +200,7 @@ seam.connect_webviews.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectWebview(
@@ -263,7 +263,7 @@ ConnectWebview(
 
 Creates a new Connect Webview that accepts all stable providers.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connect_webviews.create(
@@ -280,7 +280,7 @@ seam.connect_webviews.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -346,10 +346,9 @@ seam.connect_webviews.create(
 
 Creates a new Connect Webview that accepts all stable providers.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connect_webviews->create(
     custom_redirect_url: "https://example.com/redirect",
     custom_redirect_failure_url: "https://example.com/failure-redirect",
@@ -362,10 +361,9 @@ $seam->connect_webviews->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],
@@ -427,13 +425,13 @@ $seam->connect_webviews->create(
 
 Creates a new Connect Webview that accepts all stable providers.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connect-webviews create --custom_redirect_url "https://example.com/redirect" --custom_redirect_failure_url "https://example.com/failure-redirect" --customer_id "8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0" --provider_category "stable" --custom_metadata {"id":"internalId1"} --automatically_manage_new_devices true --wait_for_device_creation true --accepted_capabilities ["lock","thermostat"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -569,7 +567,6 @@ Possible enum values:
 - <code>seam_passport</code>
 - <code>visionline</code>
 - <code>assa_abloy_credential_service</code>
-- <code>seam_bridge</code>
 - <code>tedee</code>
 - <code>honeywell_resideo</code>
 - <code>latch</code>
@@ -580,6 +577,7 @@ Possible enum values:
 - <code>salto_space</code>
 - <code>sensi</code>
 - <code>kwikset2</code>
+- <code>keynest</code>
 - <code>yale_access</code>
 - <code>hid_cm</code>
 - <code>google_nest</code>
@@ -611,7 +609,9 @@ URL that you want to redirect the user to after the provider login is complete.
 
 ---
 
-**`customer_id`** *String*
+**`customer_key`** *String*
+
+Optional unique string key that can be used to identify the customer. If provided, the customer will be created or retrieved based on this key.
 
 ---
 
@@ -630,7 +630,7 @@ Indicates whether Seam should finish syncing all devices in a newly-connected ac
 
 ## Response
 
-[connect\_webview](./)
+[connect\_webview](.)
 
 
 {% tabs %}
@@ -679,7 +679,7 @@ Creates a new Connect Webview that accepts specific providers.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectWebviews.create({
@@ -695,7 +695,7 @@ await seam.connectWebviews.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -727,7 +727,7 @@ await seam.connectWebviews.create({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/create" \
@@ -757,7 +757,7 @@ curl --include --request POST "https://connect.getseam.com/connect_webviews/crea
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -791,7 +791,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.connect_webviews.create(
@@ -807,7 +807,7 @@ seam.connect_webviews.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectWebview(
@@ -839,7 +839,7 @@ ConnectWebview(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connect_webviews.create(
@@ -857,7 +857,7 @@ seam.connect_webviews.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -892,10 +892,9 @@ seam.connect_webviews.create(
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connect_webviews->create(
     custom_redirect_url: "https://example.com/redirect",
     custom_redirect_failure_url: "https://example.com/failure-redirect",
@@ -909,10 +908,9 @@ $seam->connect_webviews->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],
@@ -943,13 +941,13 @@ $seam->connect_webviews->create(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connect-webviews create --custom_redirect_url "https://example.com/redirect" --custom_redirect_failure_url "https://example.com/failure-redirect" --customer_id "8d7a8cc0-2e69-4bc6-85c8-545036fdd5c0" --accepted_providers ["kwikset","schlage","smartthings","yale"] --provider_category "stable" --custom_metadata {"id":"internalId1"} --automatically_manage_new_devices true --wait_for_device_creation true --accepted_capabilities ["lock","thermostat"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

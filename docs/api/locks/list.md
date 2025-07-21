@@ -11,13 +11,13 @@ Returns a list of all [locks](https://docs.seam.co/latest/capability-guides/smar
 
 Returns a list of all locks. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.locks.list({ limit: 10 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -190,7 +190,7 @@ await seam.locks.list({ limit: 10 });
 
 Returns a list of all locks. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/locks/list" \
@@ -202,7 +202,7 @@ curl --include --request POST "https://connect.getseam.com/locks/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -377,13 +377,13 @@ EOF
 
 Returns a list of all locks. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```python
 seam.locks.list(limit=10)
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -556,13 +556,13 @@ seam.locks.list(limit=10)
 
 Returns a list of all locks. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.locks.list(limit: 10)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -740,17 +740,15 @@ seam.locks.list(limit: 10)
 
 Returns a list of all locks. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->locks->list(limit: 10);
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "can_hvac_cool" => true,
@@ -953,13 +951,13 @@ $seam->locks->list(limit: 10);
 
 Returns a list of all locks. For additional filter parameters, see /devices/list.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam locks list --limit 10
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -1145,6 +1143,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_method_id`** *String*
+
+ID of the access method for which you want to retrieve all devices.
+
+---
+
 **`connect_webview_id`** *String*
 
 ID of the Connect Webview for which you want to list devices.
@@ -1273,7 +1277,7 @@ Your own internal user ID for the user for which you want to list devices.
 
 ## Response
 
-Array of [devices](./)
+Array of [devices](./../devices)
 
 
 {% tabs %}

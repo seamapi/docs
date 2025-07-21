@@ -13,7 +13,7 @@ To filter the list of returned access systems by a specific connected account ID
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.systems.list({
@@ -21,7 +21,7 @@ await seam.acs.systems.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -29,7 +29,7 @@ await seam.acs.systems.list({
     "acs_access_group_count": 5,
     "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
     "acs_user_count": 20,
-    "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_id": "2283a842-27c5-474a-bd0e-4c959274efa0",
     "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
     "created_at": "2025-06-15T16:54:17.946425Z",
     "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
@@ -52,7 +52,7 @@ await seam.acs.systems.list({
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
@@ -64,7 +64,7 @@ curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -73,7 +73,7 @@ EOF
       "acs_access_group_count": 5,
       "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
       "acs_user_count": 20,
-      "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+      "connected_account_id": "2283a842-27c5-474a-bd0e-4c959274efa0",
       "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
       "created_at": "2025-06-15T16:54:17.946425Z",
       "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
@@ -97,13 +97,13 @@ EOF
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.systems.list(connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -111,7 +111,7 @@ seam.acs.systems.list(connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0
         acs_access_group_count=5,
         acs_system_id="dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
         acs_user_count=20,
-        connected_account_id="a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+        connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0",
         connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
         created_at="2025-06-15T16:54:17.946425Z",
         default_credential_manager_acs_system_id="5dde2def-3507-44f5-9521-7ca96aa4cd18",
@@ -134,13 +134,13 @@ seam.acs.systems.list(connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.systems.list(connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -148,7 +148,7 @@ seam.acs.systems.list(connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa
     "acs_access_group_count" => 5,
     "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
     "acs_user_count" => 20,
-    "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_id" => "2283a842-27c5-474a-bd0e-4c959274efa0",
     "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
     "created_at" => "2025-06-15T16:54:17.946425Z",
     "default_credential_manager_acs_system_id" => "5dde2def-3507-44f5-9521-7ca96aa4cd18",
@@ -174,25 +174,23 @@ seam.acs.systems.list(connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->systems->list(
     connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "acs_access_group_count" => 5,
         "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
         "acs_user_count" => 20,
-        "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+        "connected_account_id" => "2283a842-27c5-474a-bd0e-4c959274efa0",
         "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
         "created_at" => "2025-06-15T16:54:17.946425Z",
         "default_credential_manager_acs_system_id" =>
@@ -217,13 +215,13 @@ $seam->acs->systems->list(
 
 Returns a list of all access systems.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs systems list --connected_account_id "2283a842-27c5-474a-bd0e-4c959274efa0"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -231,7 +229,7 @@ seam acs systems list --connected_account_id "2283a842-27c5-474a-bd0e-4c959274ef
     "acs_access_group_count": 5,
     "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
     "acs_user_count": 20,
-    "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    "connected_account_id": "2283a842-27c5-474a-bd0e-4c959274efa0",
     "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
     "created_at": "2025-06-15T16:54:17.946425Z",
     "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
@@ -276,7 +274,7 @@ ID of the connected account by which you want to filter the list of access syste
 
 ## Response
 
-Array of [acs\_systems](./)
+Array of [acs\_systems](.)
 
 
 {% tabs %}

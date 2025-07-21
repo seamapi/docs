@@ -12,7 +12,7 @@
 
 Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.suspend({
@@ -21,7 +21,7 @@ await seam.acs.users.suspend({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.users.suspend({
 
 Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.suspend(
@@ -65,7 +65,7 @@ seam.acs.users.suspend(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.suspend(
@@ -85,7 +85,7 @@ seam.acs.users.suspend(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,20 +96,19 @@ nil
 
 Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->suspend(
     user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c",
     acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -117,13 +116,13 @@ null
 
 Suspends a specified access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users suspend --user_identity_id "73fac667-bd93-4548-add2-e75161d69c7c" --acs_system_id "f2240088-0bc7-4edb-80d1-485bd956ba7d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -184,7 +183,7 @@ Suspends a specified access system user, using the associated user identity.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.suspend({
@@ -192,7 +191,7 @@ await seam.acs.users.suspend({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -203,7 +202,7 @@ await seam.acs.users.suspend({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
@@ -215,7 +214,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -226,13 +225,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.suspend(acs_user_id="8f934186-1dbc-4098-9f66-d1b202abec9d")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -243,13 +242,13 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.suspend(acs_user_id: "8f934186-1dbc-4098-9f66-d1b202abec9d")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -260,17 +259,16 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->suspend(acs_user_id: "8f934186-1dbc-4098-9f66-d1b202abec9d");
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -278,13 +276,13 @@ null
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users suspend --acs_user_id "8f934186-1dbc-4098-9f66-d1b202abec9d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

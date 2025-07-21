@@ -1,20 +1,20 @@
 # Update an Access Grant
 {% hint style="info" %}
-**Early Access Preview.** The access grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
+**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
 {% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.update({
@@ -24,7 +24,7 @@ await seam.accessGrants.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -33,9 +33,9 @@ await seam.accessGrants.update({
 
 {% tab title="cURL" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/update" \
@@ -49,7 +49,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/update"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -58,9 +58,9 @@ EOF
 
 {% tab title="Python" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.update(
@@ -70,7 +70,7 @@ seam.access_grants.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -79,9 +79,9 @@ None
 
 {% tab title="Ruby" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.update(
@@ -91,7 +91,7 @@ seam.access_grants.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -100,12 +100,11 @@ nil
 
 {% tab title="PHP" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_grants->update(
     access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
     starts_at: "2025-06-19T18:01:32.000Z",
@@ -113,24 +112,24 @@ $seam->access_grants->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Updates an existing access grant's time window.
+Updates an existing Access Grant's time window.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants update --access_grant_id "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1" --starts_at "2025-06-19T18:01:32.000Z" --ends_at "2025-06-22T13:24:50.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -145,6 +144,7 @@ seam access-grants update --access_grant_id "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -155,13 +155,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String* (Required)
 
-ID of the access grant to update.
+ID of the Access Grant to update.
 
 ---
 
 **`ends_at`** *String*
 
 Date and time at which the validity of the grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
+
+---
+
+**`name`** *String*
+
+Display name for the access grant.
 
 ---
 

@@ -12,7 +12,7 @@ Returns a list of all [thermostat schedules](../../../capability-guides/thermost
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.list({
@@ -20,14 +20,14 @@ await seam.thermostats.schedules.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
   {
     "climate_preset_key": "Eco",
     "created_at": "2025-06-14T16:54:17.946316Z",
-    "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+    "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea",
     "ends_at": "2025-07-14T16:54:17.946313Z",
     "errors": [],
     "is_override_allowed": true,
@@ -45,7 +45,7 @@ await seam.thermostats.schedules.list({
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
@@ -57,7 +57,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -65,7 +65,7 @@ EOF
     {
       "climate_preset_key": "Eco",
       "created_at": "2025-06-14T16:54:17.946316Z",
-      "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+      "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea",
       "ends_at": "2025-07-14T16:54:17.946313Z",
       "errors": [],
       "is_override_allowed": true,
@@ -84,20 +84,20 @@ EOF
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.list(device_id="b5d58842-32be-46d2-b161-26787a0bd5ea")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
     ThermostatSchedule(
         climate_preset_key="Eco",
         created_at="2025-06-14T16:54:17.946316Z",
-        device_id="dc1dfc4b-8082-453f-a953-276941af8650",
+        device_id="b5d58842-32be-46d2-b161-26787a0bd5ea",
         ends_at="2025-07-14T16:54:17.946313Z",
         errors=[],
         is_override_allowed=true,
@@ -115,20 +115,20 @@ seam.thermostats.schedules.list(device_id="b5d58842-32be-46d2-b161-26787a0bd5ea"
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.list(device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
   {
     "climate_preset_key" => "Eco",
     "created_at" => "2025-06-14T16:54:17.946316Z",
-    "device_id" => "dc1dfc4b-8082-453f-a953-276941af8650",
+    "device_id" => "b5d58842-32be-46d2-b161-26787a0bd5ea",
     "ends_at" => "2025-07-14T16:54:17.946313Z",
     "errors" => [],
     "is_override_allowed" => true,
@@ -146,24 +146,22 @@ seam.thermostats.schedules.list(device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->schedules->list(
     device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "climate_preset_key" => "Eco",
         "created_at" => "2025-06-14T16:54:17.946316Z",
-        "device_id" => "dc1dfc4b-8082-453f-a953-276941af8650",
+        "device_id" => "b5d58842-32be-46d2-b161-26787a0bd5ea",
         "ends_at" => "2025-07-14T16:54:17.946313Z",
         "errors" => [],
         "is_override_allowed" => true,
@@ -181,20 +179,20 @@ $seam->thermostats->schedules->list(
 
 Returns a list of all thermostat schedules for a specified thermostat, using a device ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules list --device_id "b5d58842-32be-46d2-b161-26787a0bd5ea"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
   {
     "climate_preset_key": "Eco",
     "created_at": "2025-06-14T16:54:17.946316Z",
-    "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+    "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea",
     "ends_at": "2025-07-14T16:54:17.946313Z",
     "errors": [],
     "is_override_allowed": true,
@@ -240,7 +238,7 @@ User identifier key by which to filter the list of returned thermostat schedules
 
 ## Response
 
-Array of [thermostat\_schedules](./)
+Array of [thermostat\_schedules](.)
 
 
 {% tabs %}
@@ -280,7 +278,7 @@ Returns a list of all thermostat schedules for a specified thermostat, using a u
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.schedules.list({
@@ -288,7 +286,7 @@ await seam.thermostats.schedules.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -313,7 +311,7 @@ await seam.thermostats.schedules.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
@@ -325,7 +323,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/schedules
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -352,7 +350,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.schedules.list(
@@ -360,7 +358,7 @@ seam.thermostats.schedules.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -385,13 +383,13 @@ seam.thermostats.schedules.list(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.schedules.list(user_identifier_key: "b5c8bf4e-c231-474f-b4dc-adad38c25d3f")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -416,19 +414,17 @@ seam.thermostats.schedules.list(user_identifier_key: "b5c8bf4e-c231-474f-b4dc-ad
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->schedules->list(
     user_identifier_key: "b5c8bf4e-c231-474f-b4dc-adad38c25d3f"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "climate_preset_key" => "Eco",
@@ -451,13 +447,13 @@ $seam->thermostats->schedules->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats schedules list --user_identifier_key "b5c8bf4e-c231-474f-b4dc-adad38c25d3f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [

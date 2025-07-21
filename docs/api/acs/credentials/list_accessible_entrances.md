@@ -11,7 +11,7 @@ Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances)
 
 Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.credentials.listAccessibleEntrances({
@@ -19,7 +19,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -49,7 +49,7 @@ await seam.acs.credentials.listAccessibleEntrances({
 
 Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/list_accessible_entrances" \
@@ -61,7 +61,7 @@ curl --include --request POST "https://connect.getseam.com/acs/credentials/list_
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -93,7 +93,7 @@ EOF
 
 Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.credentials.list_accessible_entrances(
@@ -101,7 +101,7 @@ seam.acs.credentials.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -131,7 +131,7 @@ seam.acs.credentials.list_accessible_entrances(
 
 Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.credentials.list_accessible_entrances(
@@ -139,7 +139,7 @@ seam.acs.credentials.list_accessible_entrances(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -169,19 +169,17 @@ seam.acs.credentials.list_accessible_entrances(
 
 Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->credentials->list_accessible_entrances(
     acs_credential_id: "9407e456-b8ac-475a-8431-fee76cedda03"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
@@ -210,13 +208,13 @@ $seam->acs->credentials->list_accessible_entrances(
 
 Returns a list of all entrances to which a credential grants access.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs credentials list-accessible-entrances --acs_credential_id "9407e456-b8ac-475a-8431-fee76cedda03"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -267,7 +265,7 @@ ID of the credential for which you want to retrieve all entrances to which the c
 
 ## Response
 
-Array of [acs\_entrances](./)
+Array of [acs\_entrances](./../entrances)
 
 
 {% tabs %}

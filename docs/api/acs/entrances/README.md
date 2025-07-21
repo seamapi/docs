@@ -3,8 +3,6 @@
 ## The acs_entrance Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -182,14 +180,14 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>error_code</code></strong> <i>String</i>
 
-  <strong><code>error_code</code></strong> <i>String</i>
-  
-    Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
 
-  <strong><code>message</code></strong> <i>String</i>
-  
-    Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+<strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
 </details>
 
 ---
@@ -281,13 +279,27 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
   
     Description of the door in the Salto Space access system.
 
+  - <strong><code>door_id</code></strong> <i>String</i>
+  
+    Door ID in the Salto Space access system.
+
   - <strong><code>door_name</code></strong> <i>String</i>
   
     Name of the door in the Salto Space access system.
 
   - <strong><code>ext_door_id</code></strong> <i>String</i>
   
-    External door ID in the Salto Space access system.
+    {% hint style="warning" %}
+    **Deprecated**. use door_id.
+    {% endhint %}
+
+  - <strong><code>room_description</code></strong> <i>String</i>
+  
+    Description of the room in the Salto Space access system.
+
+  - <strong><code>room_name</code></strong> <i>String</i>
+  
+    Name of the room in the Salto Space access system.
 
 </details>
 

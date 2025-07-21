@@ -11,7 +11,7 @@ Updates a [noise threshold](https://docs.seam.co/latest/capability-guides/noise-
 
 Updates a noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.update({
@@ -25,7 +25,7 @@ await seam.noiseSensors.noiseThresholds.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -36,7 +36,7 @@ await seam.noiseSensors.noiseThresholds.update({
 
 Updates a noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/update" \
@@ -54,7 +54,7 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_t
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -65,7 +65,7 @@ EOF
 
 Updates a noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.noise_thresholds.update(
@@ -79,7 +79,7 @@ seam.noise_sensors.noise_thresholds.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -90,7 +90,7 @@ None
 
 Updates a noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.noise_thresholds.update(
@@ -104,7 +104,7 @@ seam.noise_sensors.noise_thresholds.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -115,10 +115,9 @@ nil
 
 Updates a noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->noise_sensors->noise_thresholds->update(
     noise_threshold_id: "2cb09850-4962-4dee-a658-d8a79fcb9aff",
     device_id: "c3885398-6794-44a0-a7a2-1f39ff454dc3",
@@ -130,10 +129,10 @@ $seam->noise_sensors->noise_thresholds->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -141,13 +140,13 @@ null
 
 Updates a noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors noise-thresholds update --noise_threshold_id "2cb09850-4962-4dee-a658-d8a79fcb9aff" --device_id "c3885398-6794-44a0-a7a2-1f39ff454dc3" --name "My Updated Noise Sensor" --starts_daily_at "2025-06-18T15:13:17.000Z" --ends_daily_at "2025-06-17T21:33:58.000Z" --noise_threshold_decibels 50 --noise_threshold_nrs 40
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

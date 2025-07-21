@@ -11,7 +11,7 @@ Returns a specified [noise threshold](https://docs.seam.co/latest/capability-gui
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.get({
@@ -19,15 +19,15 @@ await seam.noiseSensors.noiseThresholds.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
-  "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+  "device_id": "736fc5bf-192d-4416-b879-66ff0195f2f7",
   "ends_daily_at": "2025-06-19T12:38:44.000Z",
   "name": "My Noise Sensor",
   "noise_threshold_decibels": 50,
-  "noise_threshold_id": "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+  "noise_threshold_id": "8282891b-c4da-4239-8f01-56089d44b80d",
   "noise_threshold_nrs": 40,
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }
@@ -38,7 +38,7 @@ await seam.noiseSensors.noiseThresholds.get({
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/get" \
@@ -50,16 +50,16 @@ curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_t
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
   "noise_threshold": {
-    "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+    "device_id": "736fc5bf-192d-4416-b879-66ff0195f2f7",
     "ends_daily_at": "2025-06-19T12:38:44.000Z",
     "name": "My Noise Sensor",
     "noise_threshold_decibels": 50,
-    "noise_threshold_id": "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+    "noise_threshold_id": "8282891b-c4da-4239-8f01-56089d44b80d",
     "noise_threshold_nrs": 40,
     "starts_daily_at": "2025-06-20T18:29:57.000Z"
   }
@@ -71,7 +71,7 @@ EOF
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```python
 seam.noise_sensors.noise_thresholds.get(
@@ -79,15 +79,15 @@ seam.noise_sensors.noise_thresholds.get(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 NoiseThreshold(
-    device_id="8282891b-c4da-4239-8f01-56089d44b80d",
+    device_id="736fc5bf-192d-4416-b879-66ff0195f2f7",
     ends_daily_at="2025-06-19T12:38:44.000Z",
     name="My Noise Sensor",
     noise_threshold_decibels=50,
-    noise_threshold_id="f8cef69d-625f-464c-aed4-287c06e0d7fe",
+    noise_threshold_id="8282891b-c4da-4239-8f01-56089d44b80d",
     noise_threshold_nrs=40,
     starts_daily_at="2025-06-20T18:29:57.000Z",
 )
@@ -98,21 +98,21 @@ NoiseThreshold(
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.noise_sensors.noise_thresholds.get(noise_threshold_id: "8282891b-c4da-4239-8f01-56089d44b80d")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
-  "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
+  "device_id" => "736fc5bf-192d-4416-b879-66ff0195f2f7",
   "ends_daily_at" => "2025-06-19T12:38:44.000Z",
   "name" => "My Noise Sensor",
   "noise_threshold_decibels" => 50,
-  "noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+  "noise_threshold_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
   "noise_threshold_nrs" => 40,
   "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 }
@@ -123,25 +123,23 @@ seam.noise_sensors.noise_thresholds.get(noise_threshold_id: "8282891b-c4da-4239-
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->noise_sensors->noise_thresholds->get(
     noise_threshold_id: "8282891b-c4da-4239-8f01-56089d44b80d"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
-    "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
+    "device_id" => "736fc5bf-192d-4416-b879-66ff0195f2f7",
     "ends_daily_at" => "2025-06-19T12:38:44.000Z",
     "name" => "My Noise Sensor",
     "noise_threshold_decibels" => 50,
-    "noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+    "noise_threshold_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
     "noise_threshold_nrs" => 40,
     "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 ];
@@ -152,21 +150,21 @@ $seam->noise_sensors->noise_thresholds->get(
 
 Returns a specified noise threshold for a noise sensor.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam noise-sensors noise-thresholds get --noise_threshold_id "8282891b-c4da-4239-8f01-56089d44b80d"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
-  "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
+  "device_id": "736fc5bf-192d-4416-b879-66ff0195f2f7",
   "ends_daily_at": "2025-06-19T12:38:44.000Z",
   "name": "My Noise Sensor",
   "noise_threshold_decibels": 50,
-  "noise_threshold_id": "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+  "noise_threshold_id": "8282891b-c4da-4239-8f01-56089d44b80d",
   "noise_threshold_nrs": 40,
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }
@@ -198,7 +196,7 @@ ID of the noise threshold that you want to get.
 
 ## Response
 
-[noise\_threshold](./)
+[noise\_threshold](.)
 
 
 {% tabs %}

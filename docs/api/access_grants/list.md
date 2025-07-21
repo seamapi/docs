@@ -1,20 +1,20 @@
 # List Access Grants
 {% hint style="info" %}
-**Early Access Preview.** The access grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
+**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
 {% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Get an access grant.
+Gets an Access Grant.
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Returns a list of all access grants.
+Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.list({
@@ -25,7 +25,7 @@ await seam.accessGrants.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -40,6 +40,7 @@ await seam.accessGrants.list({
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
       "ends_at": "2025-06-18T16:54:17.946606Z",
+      "instant_key_url": "https://ik.seam.co/ABCXYZ",
       "requested_access_methods": [
         {
           "display_name": "PIN Code Credential",
@@ -65,7 +66,7 @@ await seam.accessGrants.list({
         "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
-      "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+      "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
       "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
   }
@@ -75,9 +76,9 @@ await seam.accessGrants.list({
 
 {% tab title="cURL" %}
 
-Returns a list of all access grants.
+Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/list" \
@@ -92,7 +93,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/list" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -108,6 +109,7 @@ EOF
         "created_at": "2025-06-16T16:54:17.946606Z",
         "display_name": "My Access Grant",
         "ends_at": "2025-06-18T16:54:17.946606Z",
+        "instant_key_url": "https://ik.seam.co/ABCXYZ",
         "requested_access_methods": [
           {
             "display_name": "PIN Code Credential",
@@ -139,7 +141,7 @@ EOF
           "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
         ],
         "starts_at": "2025-06-16T16:54:17.946606Z",
-        "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+        "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
         "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
       }
     }
@@ -150,9 +152,9 @@ EOF
 
 {% tab title="Python" %}
 
-Returns a list of all access grants.
+Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.list(
@@ -163,7 +165,7 @@ seam.access_grants.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -178,6 +180,7 @@ seam.access_grants.list(
             "created_at": "2025-06-16T16:54:17.946606Z",
             "display_name": "My Access Grant",
             "ends_at": "2025-06-18T16:54:17.946606Z",
+            "instant_key_url": "https://ik.seam.co/ABCXYZ",
             "requested_access_methods": [
                 {
                     "display_name": "PIN Code Credential",
@@ -209,7 +212,7 @@ seam.access_grants.list(
                 "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
             ],
             "starts_at": "2025-06-16T16:54:17.946606Z",
-            "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+            "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
             "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
         }
     )
@@ -219,9 +222,9 @@ seam.access_grants.list(
 
 {% tab title="Ruby" %}
 
-Returns a list of all access grants.
+Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.list(
@@ -232,7 +235,7 @@ seam.access_grants.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -247,6 +250,7 @@ seam.access_grants.list(
       created_at: "2025-06-16T16:54:17.946606Z",
       display_name: "My Access Grant",
       ends_at: "2025-06-18T16:54:17.946606Z",
+      instant_key_url: "https://ik.seam.co/ABCXYZ",
       requested_access_methods: [
         {
           display_name: "PIN Code Credential",
@@ -269,7 +273,7 @@ seam.access_grants.list(
       ],
       space_ids: %w[1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a],
       starts_at: "2025-06-16T16:54:17.946606Z",
-      user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+      user_identity_id: "f7620fcf-d92f-471e-b97e-3806daeebd40",
       workspace_id: "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     },
   },
@@ -279,12 +283,11 @@ seam.access_grants.list(
 
 {% tab title="PHP" %}
 
-Returns a list of all access grants.
+Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_grants->list(
     user_identity_id: "f7620fcf-d92f-471e-b97e-3806daeebd40",
     acs_system_id: "9f169742-048a-4105-84e3-bd1e0f9dc790",
@@ -293,10 +296,9 @@ $seam->access_grants->list(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_grant" => [
@@ -309,6 +311,7 @@ $seam->access_grants->list(
             "created_at" => "2025-06-16T16:54:17.946606Z",
             "display_name" => "My Access Grant",
             "ends_at" => "2025-06-18T16:54:17.946606Z",
+            "instant_key_url" => "https://ik.seam.co/ABCXYZ",
             "requested_access_methods" => [
                 [
                     "display_name" => "PIN Code Credential",
@@ -340,7 +343,7 @@ $seam->access_grants->list(
                 "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
             ],
             "starts_at" => "2025-06-16T16:54:17.946606Z",
-            "user_identity_id" => "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+            "user_identity_id" => "f7620fcf-d92f-471e-b97e-3806daeebd40",
             "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
         ],
     ],
@@ -350,15 +353,15 @@ $seam->access_grants->list(
 
 {% tab title="Seam CLI" %}
 
-Returns a list of all access grants.
+Returns a list of all Access Grants.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants list --user_identity_id "f7620fcf-d92f-471e-b97e-3806daeebd40" --acs_system_id "9f169742-048a-4105-84e3-bd1e0f9dc790" --acs_entrance_id "2673b363-4748-4a64-8075-f669c862ec74" --space_id "1d20c47d-3cc0-41ca-9917-bc798d071543"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -373,6 +376,7 @@ seam access-grants list --user_identity_id "f7620fcf-d92f-471e-b97e-3806daeebd40
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
       "ends_at": "2025-06-18T16:54:17.946606Z",
+      "instant_key_url": "https://ik.seam.co/ABCXYZ",
       "requested_access_methods": [
         {
           "display_name": "PIN Code Credential",
@@ -398,7 +402,7 @@ seam access-grants list --user_identity_id "f7620fcf-d92f-471e-b97e-3806daeebd40
         "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
-      "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+      "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
       "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
   }
@@ -414,6 +418,7 @@ seam access-grants list --user_identity_id "f7620fcf-d92f-471e-b97e-3806daeebd40
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -422,15 +427,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_grant_key`** *String*
+
+Filter Access Grants by access_grant_key.
+
+---
+
 **`acs_entrance_id`** *String*
 
-ID of entrance to filter list of access grants by.
+ID of the entrance by which you want to filter the list of Access Grants.
 
 ---
 
 **`acs_system_id`** *String*
 
-ID of system to filter list of access grants by.
+ID of the access system by which you want to filter the list of Access Grants.
 
 ---
 
@@ -440,20 +451,20 @@ ID of system to filter list of access grants by.
 
 **`space_id`** *String*
 
-ID of space to filter list of access grants by.
+ID of the space by which you want to filter the list of Access Grants.
 
 ---
 
 **`user_identity_id`** *String*
 
-ID of user identity to filter list of access grants by.
+ID of user identity by which you want to filter the list of Access Grants.
 
 ---
 
 
 ## Response
 
-Array of [access\_grants](./)
+Array of [access\_grants](.)
 
 
 {% tabs %}
@@ -471,10 +482,8 @@ Array of [access\_grants](./)
   ],
   "created_at": "2025-06-16T16:54:17.946606Z",
   "display_name": "My Access Grant",
-  "location_ids": [
-    "9e8d7c6b-5a4b-3c2d-1e0f-9a8b7c6d5e4f",
-    "f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f"
-  ],
+  "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "requested_access_methods": [
     {
       "display_name": "PIN Code Credential",
@@ -499,6 +508,7 @@ Array of [access\_grants](./)
     "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
     "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
   ],
+  "starts_at": "2025-06-16T16:54:17.946606Z",
   "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }

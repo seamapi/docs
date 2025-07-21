@@ -11,7 +11,7 @@ Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-m
 
 Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
@@ -21,7 +21,7 @@ await seam.thermostats.setTemperatureThreshold({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.thermostats.setTemperatureThreshold({
 
 Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
@@ -46,7 +46,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/set_tempe
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -57,7 +57,7 @@ EOF
 
 Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.set_temperature_threshold(
@@ -67,7 +67,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -78,7 +78,7 @@ None
 
 Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.set_temperature_threshold(
@@ -88,7 +88,7 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -99,10 +99,9 @@ nil
 
 Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->set_temperature_threshold(
     device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae",
     lower_limit_fahrenheit: 60,
@@ -110,10 +109,10 @@ $seam->thermostats->set_temperature_threshold(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -121,13 +120,13 @@ null
 
 Sets a temperature threshold for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats set-temperature-threshold --device_id "a9b52627-e6e2-4beb-9168-964749f7bbae" --lower_limit_fahrenheit 60 --upper_limit_fahrenheit 80
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

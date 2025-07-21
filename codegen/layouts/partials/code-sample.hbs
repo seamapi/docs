@@ -1,0 +1,21 @@
+{% tabs %}
+{{#each code}}
+{% tab title="{{title}}" %}
+
+{{../inlineDescription}}
+
+#### Code:
+
+```{{sdkName}}
+{{request}}
+```
+
+#### Output:
+
+```{{sdkName}}
+{{response}}
+```
+{% endtab %}
+
+{{/each}}
+{% endtabs %}

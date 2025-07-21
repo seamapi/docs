@@ -14,7 +14,7 @@ Creates a new space.
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.create({
@@ -24,7 +24,7 @@ await seam.spaces.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -41,7 +41,7 @@ await seam.spaces.create({
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/create" \
@@ -59,7 +59,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/create" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -78,7 +78,7 @@ EOF
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.create(
@@ -88,7 +88,7 @@ seam.spaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Space(
@@ -105,7 +105,7 @@ Space(
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.create(
@@ -115,7 +115,7 @@ seam.spaces.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -132,10 +132,9 @@ seam.spaces.create(
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->spaces->create(
     name: "My Space",
     device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
@@ -143,10 +142,9 @@ $seam->spaces->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946600Z",
     "display_name" => "My Space",
@@ -161,13 +159,13 @@ $seam->spaces->create(
 
 Creates a new space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces create --name "My Space" --device_ids ["b7254403-db91-4e10-bb7b-31d0615d2963"] --acs_entrance_ids ["46a47667-a90b-45cc-9bb6-f0917464f1f3"]
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -188,6 +186,7 @@ seam spaces create --name "My Space" --device_ids ["b7254403-db91-4e10-bb7b-31d0
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -214,10 +213,16 @@ IDs of the devices that you want to add to the new space.
 
 ---
 
+**`space_key`** *String*
+
+Unique key for the space within the workspace.
+
+---
+
 
 ## Response
 
-[space](./)
+[space](.)
 
 
 {% tabs %}

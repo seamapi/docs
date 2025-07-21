@@ -11,7 +11,7 @@ Updates a [connected account](../../core-concepts/connected-accounts/README.md).
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.update({
@@ -21,7 +21,7 @@ await seam.connectedAccounts.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.connectedAccounts.update({
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
@@ -48,7 +48,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/up
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -59,7 +59,7 @@ EOF
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.update(
@@ -69,7 +69,7 @@ seam.connected_accounts.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -80,7 +80,7 @@ None
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.update(
@@ -92,7 +92,7 @@ seam.connected_accounts.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -103,10 +103,9 @@ nil
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connected_accounts->update(
     connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
     automatically_manage_new_devices: true,
@@ -114,10 +113,10 @@ $seam->connected_accounts->update(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -125,13 +124,13 @@ null
 
 Updates a connected account.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts update --connected_account_id "a289aa54-5488-4707-9a4b-eeea4edf311d" --automatically_manage_new_devices true --custom_metadata {"id":"internalId1"}
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -157,6 +156,22 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 **`connected_account_id`** *String* (Required)
 
 ID of the connected account that you want to update.
+
+---
+
+**`accepted_capabilities`** *Array* *of Enums*
+
+List of accepted device capabilities that restrict the types of devices that can be connected through this connected account. Valid values are `lock`, `thermostat`, `noise_sensor`, and `access_control`.
+<details>
+
+<summary>Enum values</summary>
+
+Possible enum values:
+- <code>lock</code>
+- <code>thermostat</code>
+- <code>noise_sensor</code>
+- <code>access_control</code>
+</details>
 
 ---
 

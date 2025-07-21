@@ -11,7 +11,7 @@ Sets a specified [climate preset](../../capability-guides/thermostats/creating-a
 
 Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.setFallbackClimatePreset({
@@ -20,7 +20,7 @@ await seam.thermostats.setFallbackClimatePreset({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.thermostats.setFallbackClimatePreset({
 
 Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fallback_climate_preset" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/set_fallb
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,7 +55,7 @@ EOF
 
 Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.set_fallback_climate_preset(
@@ -63,7 +63,7 @@ seam.thermostats.set_fallback_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -74,7 +74,7 @@ None
 
 Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.set_fallback_climate_preset(
@@ -83,7 +83,7 @@ seam.thermostats.set_fallback_climate_preset(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -94,20 +94,19 @@ nil
 
 Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->set_fallback_climate_preset(
     device_id: "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
     climate_preset_key: "Eco"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -115,13 +114,13 @@ null
 
 Sets a specified climate preset as the "fallback" preset for a specified thermostat.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats set-fallback-climate-preset --device_id "9a21ddcb-8eeb-4351-8770-1835c3db8b2e" --climate_preset_key "Eco"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

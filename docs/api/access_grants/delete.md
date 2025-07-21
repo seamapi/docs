@@ -1,20 +1,20 @@
 # Delete an Access Grant
 {% hint style="info" %}
-**Early Access Preview.** The access grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
+**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
 {% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Delete an access grant.
+Delete an Access Grant.
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessGrants.delete({
@@ -22,7 +22,7 @@ await seam.accessGrants.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,9 +31,9 @@ await seam.accessGrants.delete({
 
 {% tab title="cURL" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/delete" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/delete"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -54,15 +54,15 @@ EOF
 
 {% tab title="Python" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_grants.delete(access_grant_id="403ea27b-af76-4a48-ace9-8f9498f4c25c")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -71,15 +71,15 @@ None
 
 {% tab title="Ruby" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_grants.delete(access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -88,35 +88,34 @@ nil
 
 {% tab title="PHP" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_grants->delete(
     access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
 {% tab title="Seam CLI" %}
 
-Deletes an access grant.
+Deletes an Access Grant.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-grants delete --access_grant_id "403ea27b-af76-4a48-ace9-8f9498f4c25c"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -131,6 +130,7 @@ seam access-grants delete --access_grant_id "403ea27b-af76-4a48-ace9-8f9498f4c25
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -141,7 +141,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String* (Required)
 
-ID of access grant to delete.
+ID of Access Grant to delete.
 
 ---
 

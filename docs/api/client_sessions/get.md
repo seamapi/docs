@@ -12,7 +12,7 @@ Returns a specified [client session](../../core-concepts/authentication/client-s
 
 Returns a specified client session by ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.get({
@@ -20,7 +20,7 @@ await seam.clientSessions.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -43,7 +43,7 @@ await seam.clientSessions.get({
 
 Returns a specified client session by ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/get" \
@@ -55,7 +55,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/get" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -80,13 +80,13 @@ EOF
 
 Returns a specified client session by ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.get(client_session_id="c2cbd177-1ace-414b-bb1e-9f129e4a05c1")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ClientSession(
@@ -109,13 +109,13 @@ ClientSession(
 
 Returns a specified client session by ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.get(client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c1")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -138,19 +138,17 @@ seam.client_sessions.get(client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c
 
 Returns a specified client session by ID.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->client_sessions->get(
     client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c1"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
     "connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],
@@ -171,13 +169,13 @@ $seam->client_sessions->get(
 
 Returns a specified client session by ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions get --client_session_id "c2cbd177-1ace-414b-bb1e-9f129e4a05c1"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -228,7 +226,7 @@ User identifier key associated with the client session that you want to get.
 
 ## Response
 
-[client\_session](./)
+[client\_session](.)
 
 
 {% tabs %}
@@ -269,13 +267,13 @@ Returns a specified client session, using a user identifier key.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.get({ user_identifier_key: "jane_doe" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -298,7 +296,7 @@ await seam.clientSessions.get({ user_identifier_key: "jane_doe" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/get" \
@@ -310,7 +308,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/get" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -335,13 +333,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.get(user_identifier_key="jane_doe")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ClientSession(
@@ -364,13 +362,13 @@ ClientSession(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.get(user_identifier_key: "jane_doe")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -393,17 +391,15 @@ seam.client_sessions.get(user_identifier_key: "jane_doe")
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->client_sessions->get(user_identifier_key: "jane_doe");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
     "connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],
@@ -424,13 +420,13 @@ $seam->client_sessions->get(user_identifier_key: "jane_doe");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions get --user_identifier_key "jane_doe"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

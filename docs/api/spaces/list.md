@@ -14,13 +14,13 @@ Returns a list of all spaces.
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.list();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -39,14 +39,14 @@ await seam.spaces.list();
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/list" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -67,13 +67,13 @@ curl --include --request POST "https://connect.getseam.com/spaces/list" \
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.list()
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -92,13 +92,13 @@ seam.spaces.list()
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.list()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -117,17 +117,15 @@ seam.spaces.list()
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->spaces->list();
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "created_at" => "2025-06-16T16:54:17.946600Z",
@@ -144,13 +142,13 @@ $seam->spaces->list();
 
 Returns a list of all spaces.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces list
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -173,6 +171,7 @@ seam spaces list
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -181,12 +180,22 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-None
+**`search`** *String*
+
+String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.
+
+---
+
+**`space_key`** *String*
+
+Filter spaces by space_key.
+
+---
 
 
 ## Response
 
-Array of [spaces](./)
+Array of [spaces](.)
 
 
 {% tabs %}

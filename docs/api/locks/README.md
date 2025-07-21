@@ -1778,32 +1778,32 @@ Constraints on access codes for the device. Seam represents each constraint as a
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>constraint_type</code></strong> <i>Enum</i>
+<details>
+    <summary>Enum values:</summary>
 
-  <strong><code>constraint_type</code></strong> <i>Enum</i>
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>no_zeros</code>
-      - <code>cannot_start_with_12</code>
-      - <code>no_triple_consecutive_ints</code>
-      - <code>cannot_specify_pin_code</code>
-      - <code>pin_code_matches_existing_set</code>
-      - <code>start_date_in_future</code>
-      - <code>no_ascending_or_descending_sequence</code>
-      - <code>at_least_three_unique_digits</code>
-      - <code>cannot_contain_089</code>
-      - <code>cannot_contain_0789</code>
-      - <code>name_length</code>
-      - <code>name_must_be_unique</code>
-  </details>
+    - <code>no_zeros</code>
+    - <code>cannot_start_with_12</code>
+    - <code>no_triple_consecutive_ints</code>
+    - <code>cannot_specify_pin_code</code>
+    - <code>pin_code_matches_existing_set</code>
+    - <code>start_date_in_future</code>
+    - <code>no_ascending_or_descending_sequence</code>
+    - <code>at_least_three_unique_digits</code>
+    - <code>cannot_contain_089</code>
+    - <code>cannot_contain_0789</code>
+    - <code>name_length</code>
+    - <code>name_must_be_unique</code>
+</details>
 
-  <strong><code>max_length</code></strong> <i>Number</i>
-  
-    Maximum name length constraint for access codes.
+<strong><code>max_length</code></strong> <i>Number</i>
 
-  <strong><code>min_length</code></strong> <i>Number</i>
-  
-    Minimum name length constraint for access codes.
+  Maximum name length constraint for access codes.
+
+<strong><code>min_length</code></strong> <i>Number</i>
+
+  Minimum name length constraint for access codes.
+
 </details>
 
 ---
@@ -2113,9 +2113,106 @@ Metadata for an igloohome device.
   
     Device name for an igloohome device.
 
+  - <strong><code>is_keypad_linked_to_bridge</code></strong> <i>Boolean</i>
+  
+    Indicates whether a keypad is linked to a bridge for an igloohome device.
+
   - <strong><code>keypad_id</code></strong> <i>String</i>
   
     Keypad ID for an igloohome device.
+
+</details>
+
+---
+
+**`keynest_metadata`** *Object*
+
+Metadata for a KeyNest device.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>address</code></strong> <i>String</i>
+  
+    Address for a KeyNest device.
+
+  - <strong><code>current_or_last_store_id</code></strong> <i>Number</i>
+  
+    Current or last store ID for a KeyNest device.
+
+  - <strong><code>current_status</code></strong> <i>String</i>
+  
+    Current status for a KeyNest device.
+
+  - <strong><code>current_user_company</code></strong> <i>String</i>
+  
+    Current user company for a KeyNest device.
+
+  - <strong><code>current_user_email</code></strong> <i>String</i>
+  
+    Current user email for a KeyNest device.
+
+  - <strong><code>current_user_name</code></strong> <i>String</i>
+  
+    Current user name for a KeyNest device.
+
+  - <strong><code>current_user_phone_number</code></strong> <i>String</i>
+  
+    Current user phone number for a KeyNest device.
+
+  - <strong><code>default_office_id</code></strong> <i>Number</i>
+  
+    Default office ID for a KeyNest device.
+
+  - <strong><code>device_name</code></strong> <i>String</i>
+  
+    Device name for a KeyNest device.
+
+  - <strong><code>fob_id</code></strong> <i>Number</i>
+  
+    Fob ID for a KeyNest device.
+
+  - <strong><code>handover_method</code></strong> <i>String</i>
+  
+    Handover method for a KeyNest device.
+
+  - <strong><code>has_photo</code></strong> <i>Boolean</i>
+  
+    Whether the KeyNest device has a photo.
+
+  - <strong><code>key_id</code></strong> <i>String</i>
+  
+    Key ID for a KeyNest device.
+
+  - <strong><code>key_notes</code></strong> <i>String</i>
+  
+    Key notes for a KeyNest device.
+
+  - <strong><code>keynest_app_user</code></strong> <i>String</i>
+  
+    KeyNest app user for a KeyNest device.
+
+  - <strong><code>last_movement</code></strong> <i>String</i>
+  
+    Last movement timestamp for a KeyNest device.
+
+  - <strong><code>property_id</code></strong> <i>String</i>
+  
+    Property ID for a KeyNest device.
+
+  - <strong><code>property_postcode</code></strong> <i>String</i>
+  
+    Property postcode for a KeyNest device.
+
+  - <strong><code>status_type</code></strong> <i>String</i>
+  
+    Status type for a KeyNest device.
+
+  - <strong><code>subscription_plan</code></strong> <i>String</i>
+  
+    Subscription plan for a KeyNest device.
 
 </details>
 
@@ -3143,6 +3240,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.
 
   ID of the action attempt associated with the lock action.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3150,6 +3251,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3203,6 +3308,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 
   ID of the action attempt associated with the unlock action.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3210,6 +3319,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -3259,6 +3372,10 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 
   ID of the access code that was used in the unlock attempts.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -3266,6 +3383,10 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 

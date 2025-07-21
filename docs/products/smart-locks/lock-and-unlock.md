@@ -10,7 +10,7 @@ Seam enables you to lock or unlock your door lock remotely. This guide walks you
 
 When you send a command to a smart lock, it might take a while for Seam to confirm the action's success. To handle this, Seam provides [an "action attempt" object](../../core-concepts/action-attempts.md), which indicates whether the action was successful.
 
-To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api-clients/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
+To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
 
 For those who prefer using webhooks to verify the success of an action, we'll soon introduce events that confirm an action's success.
 
@@ -25,7 +25,7 @@ Before you attempt to lock or unlock a device, be sure to confirm that your devi
 
 Use [Get Device](../../api/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
-If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api-clients/events/#event-types) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api/events/) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -687,7 +687,7 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
 
-Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api-clients/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
+Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -973,7 +973,7 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 
 ## Lock and Unlock Events
 
-Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](../../api-clients/events/list.md) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
+Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](../../api/events/list.md) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
 
 A lock or unlock event looks like the following:
 
@@ -993,4 +993,4 @@ A lock or unlock event looks like the following:
 }
 ```
 
-For more information about the `lock.locked` and `lock.unlocked` attributes, please see[ Events](../../api-clients/events/).
+For more information about the `lock.locked` and `lock.unlocked` attributes, please see[ Events](../../api/events/).

@@ -11,13 +11,13 @@ Returns the [workspace](../../core-concepts/workspaces/README.md) associated wit
 
 Returns the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.workspaces.get();
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -42,14 +42,14 @@ await seam.workspaces.get();
 
 Returns the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/workspaces/get" \
   --header "Authorization: Bearer $SEAM_API_KEY"
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -76,13 +76,13 @@ curl --include --request POST "https://connect.getseam.com/workspaces/get" \
 
 Returns the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```python
 seam.workspaces.get()
 ```
 
-#### Output
+#### Output:
 
 ```python
 Workspace(
@@ -107,13 +107,13 @@ Workspace(
 
 Returns the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.workspaces.get()
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -139,17 +139,15 @@ seam.workspaces.get()
 
 Returns the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->workspaces->get();
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "company_name" => "Acme",
     "connect_partner_name" => "Acme",
@@ -174,13 +172,13 @@ $seam->workspaces->get();
 
 Returns the workspace associated with the authentication value.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam workspaces get
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -223,7 +221,7 @@ None
 
 ## Response
 
-[workspace](./)
+[workspace](.)
 
 
 {% tabs %}

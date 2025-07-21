@@ -12,7 +12,7 @@ Returns a list of all [Connect Webviews](../../core-concepts/connect-webviews/RE
 
 Returns a list of all Connect Webviews for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectWebviews.list({
@@ -21,7 +21,7 @@ await seam.connectWebviews.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -53,7 +53,7 @@ await seam.connectWebviews.list({
 
 Returns a list of all Connect Webviews for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/list" \
@@ -68,7 +68,7 @@ curl --include --request POST "https://connect.getseam.com/connect_webviews/list
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -102,7 +102,7 @@ EOF
 
 Returns a list of all Connect Webviews for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.connect_webviews.list(
@@ -110,7 +110,7 @@ seam.connect_webviews.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectWebview(
@@ -142,13 +142,13 @@ ConnectWebview(
 
 Returns a list of all Connect Webviews for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connect_webviews.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"], limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -183,20 +183,18 @@ seam.connect_webviews.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"
 
 Returns a list of all Connect Webviews for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connect_webviews->list(
     customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
     limit: 50
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],
@@ -227,13 +225,13 @@ $seam->connect_webviews->list(
 
 Returns a list of all Connect Webviews for a specified customer ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connect-webviews list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c57"] --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -284,10 +282,6 @@ Custom metadata pairs by which you want to [filter Connect Webviews](../../core-
 
 ---
 
-**`customer_ids`** *Array* *of Strings*
-
----
-
 **`limit`** *Number*
 
 Maximum number of records to return per page.
@@ -309,7 +303,7 @@ Your user ID for the user by which you want to filter Connect Webviews.
 
 ## Response
 
-Array of [connect\_webviews](./)
+Array of [connect\_webviews](.)
 
 
 {% tabs %}
@@ -358,7 +352,7 @@ Returns a list of all Connect Webviews for a specified user identifier key.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectWebviews.list({
@@ -367,7 +361,7 @@ await seam.connectWebviews.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -399,7 +393,7 @@ await seam.connectWebviews.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/list" \
@@ -412,7 +406,7 @@ curl --include --request POST "https://connect.getseam.com/connect_webviews/list
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -446,7 +440,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.connect_webviews.list(
@@ -454,7 +448,7 @@ seam.connect_webviews.list(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectWebview(
@@ -486,13 +480,13 @@ ConnectWebview(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connect_webviews.list(user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b19597", limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -527,20 +521,18 @@ seam.connect_webviews.list(user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connect_webviews->list(
     user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b19597",
     limit: 50
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],
@@ -571,13 +563,13 @@ $seam->connect_webviews->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connect-webviews list --user_identifier_key "7bf74090-25cc-4235-a2f8-aea277b19597" --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -619,7 +611,7 @@ Returns a list of all Connect Webviews containing specified custom metadata.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectWebviews.list({
@@ -628,7 +620,7 @@ await seam.connectWebviews.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -660,7 +652,7 @@ await seam.connectWebviews.list({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/list" \
@@ -675,7 +667,7 @@ curl --include --request POST "https://connect.getseam.com/connect_webviews/list
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -709,13 +701,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.connect_webviews.list(custom_metadata_has={"id": "internalId1"}, limit=50)
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectWebview(
@@ -747,13 +739,13 @@ ConnectWebview(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connect_webviews.list(custom_metadata_has: { id: "internalId1" }, limit: 50)
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -788,20 +780,18 @@ seam.connect_webviews.list(custom_metadata_has: { id: "internalId1" }, limit: 50
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connect_webviews->list(
     custom_metadata_has: ["id" => "internalId1"],
     limit: 50
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],
@@ -832,13 +822,13 @@ $seam->connect_webviews->list(
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connect-webviews list --custom_metadata_has {"id":"internalId1"} --limit 50
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

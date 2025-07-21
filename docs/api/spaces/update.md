@@ -14,7 +14,7 @@ Updates an existing space.
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.update({
@@ -23,7 +23,7 @@ await seam.spaces.update({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -40,7 +40,7 @@ await seam.spaces.update({
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/update" \
@@ -53,7 +53,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/update" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -72,7 +72,7 @@ EOF
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.update(
@@ -80,7 +80,7 @@ seam.spaces.update(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 Space(
@@ -97,13 +97,13 @@ Space(
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.update(space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81", name: "My Updated Space")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -120,20 +120,18 @@ seam.spaces.update(space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81", name: "My U
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->spaces->update(
     space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81",
     name: "My Updated Space"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946600Z",
     "display_name" => "My Updated Space",
@@ -148,13 +146,13 @@ $seam->spaces->update(
 
 Updates an existing space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces update --space_id "d3513c20-dc89-4e19-8713-1c3ab01aec81" --name "My Updated Space"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -175,6 +173,7 @@ seam spaces update --space_id "d3513c20-dc89-4e19-8713-1c3ab01aec81" --name "My 
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -183,9 +182,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`space_id`** *String* (Required)
+**`acs_entrance_ids`** *Array* *of UUIDs*
 
-ID of the space that you want to update.
+IDs of the entrances that you want to set for the space. If specified, this will replace all existing entrances.
+
+---
+
+**`device_ids`** *Array* *of UUIDs*
+
+IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.
 
 ---
 
@@ -195,10 +200,22 @@ Name of the space.
 
 ---
 
+**`space_id`** *String*
+
+ID of the space that you want to update.
+
+---
+
+**`space_key`** *String*
+
+Unique key of the space that you want to update.
+
+---
+
 
 ## Response
 
-[space](./)
+[space](.)
 
 
 {% tabs %}

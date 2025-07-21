@@ -11,7 +11,7 @@ Returns a specified [encoder](../../../capability-guides/access-systems/working-
 
 Returns a specified encoder.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.encoders.get({
@@ -19,7 +19,7 @@ await seam.acs.encoders.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -38,7 +38,7 @@ await seam.acs.encoders.get({
 
 Returns a specified encoder.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/get" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/acs/encoders/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -71,13 +71,13 @@ EOF
 
 Returns a specified encoder.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.encoders.get(acs_encoder_id="4bccf994-21a6-4a6d-bc6d-5b0311d1686a")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AcsEncoder(
@@ -96,13 +96,13 @@ AcsEncoder(
 
 Returns a specified encoder.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.encoders.get(acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -121,19 +121,17 @@ seam.acs.encoders.get(acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a")
 
 Returns a specified encoder.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->encoders->get(
     acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "acs_encoder_id" => "4bccf994-21a6-4a6d-bc6d-5b0311d1686a",
     "acs_system_id" => "c85406d2-214f-4e11-8000-a2e5b5a362a4",
@@ -150,13 +148,13 @@ $seam->acs->encoders->get(
 
 Returns a specified encoder.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs encoders get --acs_encoder_id "4bccf994-21a6-4a6d-bc6d-5b0311d1686a"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -196,7 +194,7 @@ ID of the encoder that you want to get.
 
 ## Response
 
-[acs\_encoder](./)
+[acs\_encoder](.)
 
 
 {% tabs %}

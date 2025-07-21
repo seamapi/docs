@@ -11,7 +11,7 @@ Scans an encoded [acs_credential](../../../capability-guides/access-systems/mana
 
 Scans an encoded acs_credential from a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.encoders.scanCredential({
@@ -19,7 +19,7 @@ await seam.acs.encoders.scanCredential({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -94,7 +94,7 @@ await seam.acs.encoders.scanCredential({
 
 Scans an encoded acs_credential from a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/scan_credential" \
@@ -106,7 +106,7 @@ curl --include --request POST "https://connect.getseam.com/acs/encoders/scan_cre
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -183,13 +183,13 @@ EOF
 
 Scans an encoded acs_credential from a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.encoders.scan_credential(acs_encoder_id="b062df92-91c6-482c-a3f9-6e578f062d36")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -264,13 +264,13 @@ ActionAttempt(
 
 Scans an encoded acs_credential from a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.encoders.scan_credential(acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -346,19 +346,17 @@ seam.acs.encoders.scan_credential(acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578
 
 Scans an encoded acs_credential from a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->encoders->scan_credential(
     acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "action_attempt_id" => "123e4567-e89b-12d3-a456-426614174000",
     "action_type" => "SCAN_CREDENTIAL",
@@ -441,13 +439,13 @@ $seam->acs->encoders->scan_credential(
 
 Scans an encoded acs_credential from a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs encoders scan-credential --acs_encoder_id "b062df92-91c6-482c-a3f9-6e578f062d36"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

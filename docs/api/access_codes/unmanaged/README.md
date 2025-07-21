@@ -2564,6 +2564,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2571,6 +2575,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2607,6 +2615,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2614,6 +2626,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2650,6 +2666,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2657,6 +2677,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2693,6 +2717,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
   ID of the affected access code.
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
@@ -2700,6 +2728,10 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 

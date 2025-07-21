@@ -11,7 +11,7 @@ Encodes an existing [credential](../../../capability-guides/access-systems/manag
 
 Encodes an existing credential onto a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.encoders.encodeCredential({
@@ -20,7 +20,7 @@ await seam.acs.encoders.encodeCredential({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -66,7 +66,7 @@ await seam.acs.encoders.encodeCredential({
 
 Encodes an existing credential onto a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/encode_credential" \
@@ -79,7 +79,7 @@ curl --include --request POST "https://connect.getseam.com/acs/encoders/encode_c
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -127,7 +127,7 @@ EOF
 
 Encodes an existing credential onto a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.encoders.encode_credential(
@@ -136,7 +136,7 @@ seam.acs.encoders.encode_credential(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -182,7 +182,7 @@ ActionAttempt(
 
 Encodes an existing credential onto a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.encoders.encode_credential(
@@ -191,7 +191,7 @@ seam.acs.encoders.encode_credential(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -237,20 +237,18 @@ seam.acs.encoders.encode_credential(
 
 Encodes an existing credential onto a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->encoders->encode_credential(
     acs_encoder_id: "18ad521a-308e-4182-b1a6-2338b46a2763",
     acs_credential_id: "a383871c-331a-42ae-af66-146824505187"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "action_attempt_id" => "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
     "action_type" => "ENCODE_CREDENTIAL",
@@ -299,13 +297,13 @@ $seam->acs->encoders->encode_credential(
 
 Encodes an existing credential onto a plastic card placed on the specified encoder.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs encoders encode-credential --acs_encoder_id "18ad521a-308e-4182-b1a6-2338b46a2763" --acs_credential_id "a383871c-331a-42ae-af66-146824505187"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

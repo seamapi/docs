@@ -6,13 +6,11 @@
 ## The access_method Object
 
 - [Properties](./#properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
 
-Represents an access method for an access grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.
+Represents an access method for an Access Grant. Access methods describe the modes of access, such as PIN codes, plastic cards, and mobile keys. For a mobile key, the access method also stores the URL for the associated Instant Key.
 
 {% tabs %}
 {% tab title="Card Access Method" %}
@@ -40,7 +38,7 @@ A mobile key access method resource.
   "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
   "created_at": "2025-06-14T16:54:17.946612Z",
   "display_name": "My Mobile Key",
-  "instant_key_url": "https://se.am/1234",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "is_card_encoding_required": false,
   "mode": "mobile_key",
   "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
@@ -70,6 +68,24 @@ A PIN code access method resource.
 **`access_method_id`** *UUID*
 
 ID of the access method.
+
+
+
+
+---
+
+**`client_session_token`** *String*
+
+Token of the client session associated with the access method.
+
+
+
+
+---
+
+**`code`** *String*
+
+The actual PIN code for code access methods.
 
 
 
@@ -106,6 +122,15 @@ URL of the Instant Key for mobile key access methods.
 **`is_encoding_required`** *Boolean*
 
 Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.
+
+
+
+
+---
+
+**`is_issued`** *Boolean*
+
+Indicates whether the access method has been issued.
 
 
 
@@ -291,7 +316,7 @@ An access method was deleted.
 
 **`access_method.reissued`**
 
-An access method was reissued due to an access grant update.
+An access method was reissued due to an Access Grant update.
 
 <details>
 
@@ -329,21 +354,26 @@ An access method was reissued due to an access grant update.
 
 [**`/access_methods/delete`**](./delete.md)
 
-Delete an access method.
+Deletes an access method.
 
 
 [**`/access_methods/encode`**](./encode.md)
 
-Encodes an existing [credential](../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Encodes an existing access method onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
 
 
 [**`/access_methods/get`**](./get.md)
 
-Get an access method.
+Gets an access method.
+
+
+[**`/access_methods/get_related`**](./get_related.md)
+
+Gets all related resources for one or more Access Methods.
 
 
 [**`/access_methods/list`**](./list.md)
 
-List all access methods, usually filtered by access grant.
+Lists all access methods, usually filtered by Access Grant.
 
 

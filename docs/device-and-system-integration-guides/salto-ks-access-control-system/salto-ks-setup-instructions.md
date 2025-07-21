@@ -32,7 +32,7 @@ Make sure that your installer has released your Salto KS sites. Seam cannot perf
 
 To connect the Salto KS ACS to Seam:
 
-1. Create a [Connect Webview](../../core-concepts/connect-webviews/), including `salto_ks` in the set of [`accepted_providers`](../../api/connect_webviews).
+1. Create a [Connect Webview](../../core-concepts/connect-webviews/), including `salto_ks` in the set of [`accepted_providers`](../../api/connect_webviews/).
 2. Display the Connect Webview and perform the following steps:
    1. If the Connect Webview displays multiple brand options, select **Salto KS**.
    2. In the **Enter your credentials** dialog, type your username and password for the Salto KS web app.
@@ -42,3 +42,4 @@ To connect the Salto KS ACS to Seam:
        {% hint style="warning" %}
        Do not suspend or remove the Seam Integration admin user from your Salto KS site.
        {% endhint %}
+   5. Click **Close**.

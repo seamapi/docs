@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Get an access method.
+Gets an access method.
 
 
 {% tabs %}
@@ -14,7 +14,7 @@ Get an access method.
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessMethods.get({
@@ -22,14 +22,14 @@ await seam.accessMethods.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
   "access_method_id": "7410aea4-6bed-490c-a602-dd417d9cd075",
   "created_at": "2025-06-14T16:54:17.946612Z",
   "display_name": "My Mobile Key",
-  "instant_key_url": "https://se.am/1234",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "is_card_encoding_required": false,
   "mode": "mobile_key",
   "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
@@ -41,7 +41,7 @@ await seam.accessMethods.get({
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/get" \
@@ -53,7 +53,7 @@ curl --include --request POST "https://connect.getseam.com/access_methods/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -61,7 +61,7 @@ EOF
     "access_method_id": "7410aea4-6bed-490c-a602-dd417d9cd075",
     "created_at": "2025-06-14T16:54:17.946612Z",
     "display_name": "My Mobile Key",
-    "instant_key_url": "https://se.am/1234",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
     "is_card_encoding_required": false,
     "mode": "mobile_key",
     "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
@@ -74,20 +74,20 @@ EOF
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_methods.get(access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075")
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessMethod(
     access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075",
     created_at="2025-06-14T16:54:17.946612Z",
     display_name="My Mobile Key",
-    instant_key_url="https://se.am/1234",
+    instant_key_url="https://ik.seam.co/ABCXYZ",
     is_card_encoding_required=false,
     mode="mobile_key",
     workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
@@ -99,20 +99,20 @@ AccessMethod(
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_methods.get(access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
   "access_method_id" => "7410aea4-6bed-490c-a602-dd417d9cd075",
   "created_at" => "2025-06-14T16:54:17.946612Z",
   "display_name" => "My Mobile Key",
-  "instant_key_url" => "https://se.am/1234",
+  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
   "is_card_encoding_required" => false,
   "mode" => "mobile_key",
   "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
@@ -124,24 +124,22 @@ seam.access_methods.get(access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_methods->get(
     access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "access_method_id" => "7410aea4-6bed-490c-a602-dd417d9cd075",
     "created_at" => "2025-06-14T16:54:17.946612Z",
     "display_name" => "My Mobile Key",
-    "instant_key_url" => "https://se.am/1234",
+    "instant_key_url" => "https://ik.seam.co/ABCXYZ",
     "is_card_encoding_required" => false,
     "mode" => "mobile_key",
     "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
@@ -153,20 +151,20 @@ $seam->access_methods->get(
 
 Returns a specified access method.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-methods get --access_method_id "7410aea4-6bed-490c-a602-dd417d9cd075"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
   "access_method_id": "7410aea4-6bed-490c-a602-dd417d9cd075",
   "created_at": "2025-06-14T16:54:17.946612Z",
   "display_name": "My Mobile Key",
-  "instant_key_url": "https://se.am/1234",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   "is_card_encoding_required": false,
   "mode": "mobile_key",
   "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
@@ -199,7 +197,7 @@ ID of access method to get.
 
 ## Response
 
-[access\_method](./)
+[access\_method](.)
 
 
 {% tabs %}

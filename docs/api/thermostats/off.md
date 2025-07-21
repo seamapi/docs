@@ -11,7 +11,7 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 
 Sets a specified thermostat to "off" mode.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.off({
@@ -19,7 +19,7 @@ await seam.thermostats.off({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -36,7 +36,7 @@ await seam.thermostats.off({
 
 Sets a specified thermostat to "off" mode.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/off" \
@@ -48,7 +48,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/off" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -67,13 +67,13 @@ EOF
 
 Sets a specified thermostat to "off" mode.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.off(device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -90,13 +90,13 @@ ActionAttempt(
 
 Sets a specified thermostat to "off" mode.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -114,17 +114,15 @@ seam.thermostats.off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
 
 Sets a specified thermostat to "off" mode.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",
@@ -139,13 +137,13 @@ $seam->thermostats->off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5");
 
 Sets a specified thermostat to "off" mode.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats off --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

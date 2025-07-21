@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # TTLock Locks
 
 ## Overview
@@ -22,7 +8,7 @@ TTLock produces both hardware and software for smart locks. Many other manufactu
 
 ## Supported Devices
 
-This integration works with any TTLock locks that are paired with a [TTLock Gateway](https://ttlock.com/#/productionCenter).
+This integration works with any TTLock locks that are paired with a [TTLock Gateway](https://ttlock.eu/shop/tag/ttlock+gateway/).
 
 For detailed information about the TTLock devices that Seam supports, see our [TTLock Supported Devices page](https://www.seam.co/manufacturers/ttlock).
 
@@ -54,7 +40,7 @@ To control TTLock devices using Seam, you must prompt owners of these devices to
     {% endhint %}
 2. Install your TTLock lock and set it up using the TTLock app.\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock in the TTLock app.
-3. Pair the lock with a [TTLock gateway](https://ttlock.com/#/productionCenter).\
+3. Pair the lock with a [TTLock gateway](https://ttlock.eu/shop/tag/ttlock+gateway/).\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a gateway.
 4. In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the Remote Unlock feature.\
    This feature must be enabled to unlock a TTLock device. Note that if Seam detects that this feature is disabled, a warning is added to the device.\
@@ -72,7 +58,7 @@ Your users must be the top administrator for each TTLock that they want to conne
 
 ### Lock Not Paired to Gateway Error
 
-On the device, if you notice a `ttlock_lock_not_paired_to_gateway` error, you will need to purchase [a compatible gateway](ttlock-locks.md#compatible-ttlock-gateways) and pair it to the lock. Follow the [set up instructions](ttlock-locks.md#set-up-instructions) to configure the door lock.
+On the device, if you notice a `ttlock_lock_not_paired_to_gateway` error, you will need to purchase [a compatible gateway](https://ttlock.eu/shop/tag/ttlock+gateway/) and pair it to the lock. Follow the [set up instructions](ttlock-locks.md#set-up-instructions) to configure the door lock.
 
 ### Gateway Unlocking Not Enabled Warning
 

@@ -1868,18 +1868,6 @@ Indicates that Seam detected that the Lockly device does not have a time zone co
 
 ---
 
-**`salto_ks_office_mode`**
-
-Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
-
----
-
-**`salto_ks_privacy_mode`**
-
-Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
-
----
-
 **`salto_ks_subscription_limit_almost_reached`**
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
@@ -1920,6 +1908,18 @@ Indicates that there are too many backup codes.
 **`partial_backup_access_code_pool`**
 
 Indicates that the backup access code is unhealthy.
+
+---
+
+**`salto_ks_office_mode`**
+
+Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
+
+---
+
+**`salto_ks_privacy_mode`**
+
+Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
 
 ---
 
@@ -1967,6 +1967,10 @@ An [unmanaged device](../../../core-concepts/devices/managed-and-unmanaged-devic
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -1974,6 +1978,10 @@ An [unmanaged device](../../../core-concepts/devices/managed-and-unmanaged-devic
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2006,6 +2014,10 @@ The status of an [unmanaged device](../../../core-concepts/devices/managed-and-u
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -2013,6 +2025,10 @@ The status of an [unmanaged device](../../../core-concepts/devices/managed-and-u
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 
@@ -2045,6 +2061,10 @@ The status of an [unmanaged device](../../../core-concepts/devices/managed-and-u
 
 <summary>Properties</summary>
 
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the event.
@@ -2052,6 +2072,10 @@ The status of an [unmanaged device](../../../core-concepts/devices/managed-and-u
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
 
 <strong><code>device_id</code></strong> <i>UUID</i>
 

@@ -11,7 +11,7 @@ Simulates that the next attempt to encode a [credential](../../../../capability-
 
 Simulates that the next attempt to encode a credential using the specified encoder will fail.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.encoders.simulate.nextCredentialEncodeWillFail({
@@ -20,7 +20,7 @@ await seam.acs.encoders.simulate.nextCredentialEncodeWillFail({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -31,7 +31,7 @@ await seam.acs.encoders.simulate.nextCredentialEncodeWillFail({
 
 Simulates that the next attempt to encode a credential using the specified encoder will fail.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/simulate/next_credential_encode_will_fail" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/acs/encoders/simulate
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,7 +55,7 @@ EOF
 
 Simulates that the next attempt to encode a credential using the specified encoder will fail.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.encoders.simulate.next_credential_encode_will_fail(
@@ -64,7 +64,7 @@ seam.acs.encoders.simulate.next_credential_encode_will_fail(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -75,7 +75,7 @@ None
 
 Simulates that the next attempt to encode a credential using the specified encoder will fail.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.encoders.simulate.next_credential_encode_will_fail(
@@ -84,7 +84,7 @@ seam.acs.encoders.simulate.next_credential_encode_will_fail(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -95,20 +95,19 @@ nil
 
 Simulates that the next attempt to encode a credential using the specified encoder will fail.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->encoders->simulate->next_credential_encode_will_fail(
     acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
     error_code: "no_credential_on_encoder"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -116,13 +115,13 @@ null
 
 Simulates that the next attempt to encode a credential using the specified encoder will fail.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs encoders simulate next-credential-encode-will-fail --acs_encoder_id "182ea706-8e14-4921-8e57-ee18d5a7de31" --error_code "no_credential_on_encoder"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

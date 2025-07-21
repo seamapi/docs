@@ -1,22 +1,24 @@
 ---
-description: Learn how to create an access grant that issues an Instant Key.
+description: Learn how to create an Access Grant that issues an Instant Key.
 ---
 
 # Using Access Grants to Issue Instant Keys
 
-An access grant defines the "who, where, when, and how" for assigning a user access to entrances, including the following characteristics:
+An Access Grant defines the "who, where, when, and how" for assigning a user access to entrances, including the following characteristics:
 
-<table><thead><tr><th width="239.5999755859375">Characteristic</th><th>Description</th></tr></thead><tbody><tr><td><code>user_identity_id</code> or <code>user_identity</code></td><td>The user to whom to grant access. You can either create a user identity separately and specify the ID to the access grant or create a new user identity as part of the access grant creation action.</td></tr><tr><td><code>acs_entrance_ids</code></td><td>The entrances to which to grant access. You can specify one or more entrances by ID.</td></tr><tr><td><code>starts_at</code> and <code>ends_at</code></td><td>The access schedule.</td></tr><tr><td><code>requested_access_methods</code> and <code>mode</code></td><td>The access methods that you want to grant for the user. In each <code>requested_access_method</code>, specify the desired <code>mode</code> of access, such as a PIN code, key card, or mobile key (with an Instant Key).</td></tr></tbody></table>
+<table><thead><tr><th width="148.39999389648438">Characteristic</th><th>Creation Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Who</td><td><code>user_identity_id</code> or <code>user_identity</code></td><td>The user to whom to grant access. You can either create a user identity separately and specify the ID to the access grant or create a new user identity as part of the Access Grant creation action.</td></tr><tr><td>Where</td><td><code>acs_entrance_ids</code> </td><td>The entrances to which to grant access. You can specify one or more entrances by ID.</td></tr><tr><td>When</td><td><code>starts_at</code> and <code>ends_at</code></td><td>The access schedule.</td></tr><tr><td>How</td><td><code>requested_access_methods</code> and <code>mode</code></td><td>The access methods that you want to grant for the user. In each <code>requested_access_method</code>, specify the desired <code>mode</code> of access, such as a PIN code, key card, or mobile key (with an Instant Key).</td></tr></tbody></table>
 
-Once you have identified the entrances to which you want to grant a user access, create an access grant to assign the specified access to the user. Specify `mobile_key` as the mode for a requested access method, and the resulting mobile key also includes an Instant Key.
+
+
+Once you have identified the entrances to which you want to grant a user access, create an Access Grant to assign the specified access to the user. Specify `mobile_key` as the mode for a requested access method, and the resulting mobile key also includes an Instant Key.
 
 To create an Instant Key:
 
 1. [Identify the entrances](using-access-grants-to-issue-instant-keys.md#identify-entrances) to which you want to grant the user access.
-2. [Create a user identity](using-access-grants-to-issue-instant-keys.md#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the access grant creation action.
-3. [Create an access grant](using-access-grants-to-issue-instant-keys.md#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, including a mobile key.
+2. [Create a user identity](using-access-grants-to-issue-instant-keys.md#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
+3. [Create an Access Grant](using-access-grants-to-issue-instant-keys.md#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, including a mobile key.
 
-The action returns an access grant that includes the Instant Key URL. You can then share this Instant Key URL with your user.
+The action returns an Access Grant that includes the Instant Key URL. You can then share this Instant Key URL with your user.
 
 ***
 
@@ -155,7 +157,6 @@ seam.acs.entrances.list(
 **Code**
 
 ```php
-<?php
 $seam->acs->entrances->list(
   acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
 );
@@ -164,7 +165,6 @@ $seam->acs->entrances->list(
 **Output**
 
 ```php
-<?php
 [
   [
     "acs_entrance_id" => "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
@@ -214,7 +214,7 @@ seam acs entrances list --acs_system_id "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
 
 ## **Create a User Identity**
 
-You can create a user identity before creating the access grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the access grant creation action](../../api/access_grants/create.md#create-an-access-grant-including-a-new-user-identity).
+You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](../../api/access_grants/create.md#create-an-access-grant-including-a-new-user-identity).
 
 To create a user identity, specify the unique `user_identity_key`,  `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
 
@@ -323,7 +323,6 @@ seam.user_identities.create(
 **Code**
 
 ```php
-<?php
 $seam->user_identities->create(
   full_name: "Jane Doe",
   email_address: "jane@example.com",
@@ -334,7 +333,6 @@ $seam->user_identities->create(
 **Output**
 
 ```php
-<?php
 [
   "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "full_name" => "Jane Doe",
@@ -368,7 +366,7 @@ seam user-identities create --email_address "jane@example.com" --full_name "Jane
 
 ## **Create an Access Grant**
 
-To create an access grant, specify the user identity, entrance IDs, starting and ending times, and requested access methods. To issue an Instant Key, specify `mobile_key` as the mode for a requested access method.
+To create an Access Grant, specify the user identity, entrance IDs, starting and ending times, and requested access methods. To issue an Instant Key, specify `mobile_key` as the mode for a requested access method.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -566,7 +564,6 @@ seam.access_grants.create(
 **Code**
 
 ```php
-<?php
 $seam->access_grants->create(
   user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   // Alternately, to create a new user identity, use the
@@ -590,7 +587,6 @@ $seam->access_grants->create(
 **Output**
 
 ```php
-<?php
 [
   "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   "display_name" => "My Access Grant",

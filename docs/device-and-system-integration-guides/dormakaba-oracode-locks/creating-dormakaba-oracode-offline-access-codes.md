@@ -102,7 +102,7 @@ To create an hourly-bound offline access code, provide the `device_id` of the lo
 Make sure to set the `starts_at` and `ends_at` times and offsets to match the local time zone of the lock, as configured when the corresponding [dormakaba Oracode site was connected to Seam](../../device-guides/dormakaba-oracode-locks.md#setup-instructions).
 {% endhint %}
 
-For more details, see the [Create Access Code endpoint](../../api-clients/access-codes/create-an-access-code.md).
+For more details, see the [Create Access Code endpoint](../../api/access_codes/create.md).
 
 {% tabs %}
 {% tab title="Python" %}

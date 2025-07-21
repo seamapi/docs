@@ -14,13 +14,13 @@ Gets a space.
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.spaces.get({ space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -37,7 +37,7 @@ await seam.spaces.get({ space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63" });
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/get" \
@@ -49,7 +49,7 @@ curl --include --request POST "https://connect.getseam.com/spaces/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -68,13 +68,13 @@ EOF
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```python
 seam.spaces.get(space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Space(
@@ -91,13 +91,13 @@ Space(
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.spaces.get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -114,17 +114,15 @@ seam.spaces.get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63")
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->spaces->get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "created_at" => "2025-06-16T16:54:17.946600Z",
     "display_name" => "My Space",
@@ -139,13 +137,13 @@ $seam->spaces->get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63");
 
 Returns a specified space.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam spaces get --space_id "5f30970d-6ef5-4618-9e91-e701fbca6b63"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -174,16 +172,22 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`space_id`** *String* (Required)
+**`space_id`** *String*
 
 ID of the space that you want to get.
+
+---
+
+**`space_key`** *String*
+
+Unique key of the space that you want to get.
 
 ---
 
 
 ## Response
 
-[space](./)
+[space](.)
 
 
 {% tabs %}

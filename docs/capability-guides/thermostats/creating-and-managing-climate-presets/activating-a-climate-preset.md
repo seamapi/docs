@@ -8,7 +8,7 @@ In addition to [scheduling](../creating-and-managing-thermostat-schedules.md) cl
 
 Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
 
-Further, Seam emits a [`thermostat.temperature_reached_set_point` event](../../../api-clients/events/#event-types) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](../understanding-thermostat-concepts/set-points.md) specified in the climate preset that you've activated. You can configure a [webhook](../../../core-concepts/webhooks.md) to watch for this event.
+Further, Seam emits a [`thermostat.temperature_reached_set_point` event](../../../api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](../understanding-thermostat-concepts/set-points.md) specified in the climate preset that you've activated. You can configure a [webhook](../../../core-concepts/webhooks.md) to watch for this event.
 
 ***
 
@@ -153,7 +153,7 @@ $seam->thermostats->activate_climate_preset(
 
 ## Poll the Action Attempt
 
-Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../../api-clients/action_attempts/get.md) request. When the activation completes successfully, the `status` of the action attempt changes to `success`.
+Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](../../../api/action_attempts/get.md) request. When the activation completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
 {% tab title="Python" %}

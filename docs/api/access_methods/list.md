@@ -6,15 +6,15 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-List all access methods, usually filtered by access grant.
+Lists all access methods, usually filtered by Access Grant.
 
 
 {% tabs %}
 {% tab title="JavaScript" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessMethods.list({
@@ -22,7 +22,7 @@ await seam.accessMethods.list({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -46,7 +46,7 @@ await seam.accessMethods.list({
     "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
     "created_at": "2025-06-16T16:54:21.946606Z",
     "display_name": "Mobile Key Credential",
-    "instant_key_url": "https://se.am/1234",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
     "is_card_encoding_required": false,
     "mode": "mobile_key",
     "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
@@ -57,9 +57,9 @@ await seam.accessMethods.list({
 
 {% tab title="cURL" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/list" \
@@ -71,7 +71,7 @@ curl --include --request POST "https://connect.getseam.com/access_methods/list" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -96,7 +96,7 @@ EOF
       "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
       "created_at": "2025-06-16T16:54:21.946606Z",
       "display_name": "Mobile Key Credential",
-      "instant_key_url": "https://se.am/1234",
+      "instant_key_url": "https://ik.seam.co/ABCXYZ",
       "is_card_encoding_required": false,
       "mode": "mobile_key",
       "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
@@ -108,15 +108,15 @@ EOF
 
 {% tab title="Python" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -140,7 +140,7 @@ seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
         access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
         created_at="2025-06-16T16:54:21.946606Z",
         display_name="Mobile Key Credential",
-        instant_key_url="https://se.am/1234",
+        instant_key_url="https://ik.seam.co/ABCXYZ",
         is_card_encoding_required=false,
         mode="mobile_key",
         workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
@@ -151,15 +151,15 @@ seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
 
 {% tab title="Ruby" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -183,7 +183,7 @@ seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
     "access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
     "created_at" => "2025-06-16T16:54:21.946606Z",
     "display_name" => "Mobile Key Credential",
-    "instant_key_url" => "https://se.am/1234",
+    "instant_key_url" => "https://ik.seam.co/ABCXYZ",
     "is_card_encoding_required" => false,
     "mode" => "mobile_key",
     "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
@@ -194,21 +194,19 @@ seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 
 {% tab title="PHP" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_methods->list(
     access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "access_method_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
@@ -230,7 +228,7 @@ $seam->access_methods->list(
         "access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
         "created_at" => "2025-06-16T16:54:21.946606Z",
         "display_name" => "Mobile Key Credential",
-        "instant_key_url" => "https://se.am/1234",
+        "instant_key_url" => "https://ik.seam.co/ABCXYZ",
         "is_card_encoding_required" => false,
         "mode" => "mobile_key",
         "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
@@ -241,15 +239,15 @@ $seam->access_methods->list(
 
 {% tab title="Seam CLI" %}
 
-Returns a list of all access methods, filtered by access grant.
+Returns a list of all access methods, filtered by Access Grant.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-methods list --access_grant_id "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -273,7 +271,7 @@ seam access-methods list --access_grant_id "9072ebcd-95f3-4e4b-8f2f-10053911533b
     "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
     "created_at": "2025-06-16T16:54:21.946606Z",
     "display_name": "Mobile Key Credential",
-    "instant_key_url": "https://se.am/1234",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
     "is_card_encoding_required": false,
     "mode": "mobile_key",
     "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
@@ -300,14 +298,32 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_grant_id`** *String* (Required)
 
-ID of access grant to list access methods for.
+ID of Access Grant to list access methods for.
+
+---
+
+**`acs_entrance_id`** *String*
+
+ID of the entrance for which you want to retrieve all access methods.
+
+---
+
+**`device_id`** *String*
+
+ID of the device for which you want to retrieve all access methods.
+
+---
+
+**`space_id`** *String*
+
+ID of the space for which you want to retrieve all access methods.
 
 ---
 
 
 ## Response
 
-Array of [access\_methods](./)
+Array of [access\_methods](.)
 
 
 {% tabs %}

@@ -13,7 +13,7 @@ Note that [deleting a client session](https://docs.seam.co/latest/api/client_ses
 
 Revokes a client session.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.revoke({
@@ -21,7 +21,7 @@ await seam.clientSessions.revoke({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.clientSessions.revoke({
 
 Revokes a client session.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/revoke" \
@@ -44,7 +44,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/revok
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -55,13 +55,13 @@ EOF
 
 Revokes a client session.
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.revoke(client_session_id="4271352c-6894-4367-8f52-41d565c48f13")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -72,13 +72,13 @@ None
 
 Revokes a client session.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.revoke(client_session_id: "4271352c-6894-4367-8f52-41d565c48f13")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -89,19 +89,18 @@ nil
 
 Revokes a client session.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->client_sessions->revoke(
     client_session_id: "4271352c-6894-4367-8f52-41d565c48f13"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -109,13 +108,13 @@ null
 
 Revokes a client session.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions revoke --client_session_id "4271352c-6894-4367-8f52-41d565c48f13"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

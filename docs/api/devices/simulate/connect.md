@@ -11,7 +11,7 @@ Simulates connecting a device to Seam. Only applicable for [sandbox devices](../
 
 Simulates connecting a device to Seam.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.simulate.connect({
@@ -19,7 +19,7 @@ await seam.devices.simulate.connect({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -30,7 +30,7 @@ await seam.devices.simulate.connect({
 
 Simulates connecting a device to Seam.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/connect" \
@@ -42,7 +42,7 @@ curl --include --request POST "https://connect.getseam.com/devices/simulate/conn
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -53,13 +53,13 @@ EOF
 
 Simulates connecting a device to Seam.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.simulate.connect(device_id="5d703d4f-523f-42af-9439-618415ca651f")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -70,13 +70,13 @@ None
 
 Simulates connecting a device to Seam.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.simulate.connect(device_id: "5d703d4f-523f-42af-9439-618415ca651f")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -87,19 +87,18 @@ nil
 
 Simulates connecting a device to Seam.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->simulate->connect(
     device_id: "5d703d4f-523f-42af-9439-618415ca651f"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -107,13 +106,13 @@ null
 
 Simulates connecting a device to Seam.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices simulate connect --device_id "5d703d4f-523f-42af-9439-618415ca651f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -128,6 +127,7 @@ seam devices simulate connect --device_id "5d703d4f-523f-42af-9439-618415ca651f"
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

@@ -13,7 +13,7 @@ Unless you're using a `custom_redirect_url`, you should poll a newly-created `co
 
 Returns a specified Connect Webview.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectWebviews.get({
@@ -21,7 +21,7 @@ await seam.connectWebviews.get({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -53,7 +53,7 @@ await seam.connectWebviews.get({
 
 Returns a specified Connect Webview.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/get" \
@@ -65,7 +65,7 @@ curl --include --request POST "https://connect.getseam.com/connect_webviews/get"
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -99,13 +99,13 @@ EOF
 
 Returns a specified Connect Webview.
 
-#### Code
+#### Code:
 
 ```python
 seam.connect_webviews.get(connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028")
 ```
 
-#### Output
+#### Output:
 
 ```python
 ConnectWebview(
@@ -137,13 +137,13 @@ ConnectWebview(
 
 Returns a specified Connect Webview.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connect_webviews.get(connect_webview_id: "c4c30885-ec87-4b31-8d7b-9bc0678fa028")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -178,19 +178,17 @@ seam.connect_webviews.get(connect_webview_id: "c4c30885-ec87-4b31-8d7b-9bc0678fa
 
 Returns a specified Connect Webview.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connect_webviews->get(
     connect_webview_id: "c4c30885-ec87-4b31-8d7b-9bc0678fa028"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "accepted_capabilities" => ["lock", "thermostat"],
     "accepted_devices" => [],
@@ -221,13 +219,13 @@ $seam->connect_webviews->get(
 
 Returns a specified Connect Webview.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connect-webviews get --connect_webview_id "c4c30885-ec87-4b31-8d7b-9bc0678fa028"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -281,7 +279,7 @@ ID of the Connect Webview that you want to get.
 
 ## Response
 
-[connect\_webview](./)
+[connect\_webview](.)
 
 
 {% tabs %}

@@ -14,7 +14,7 @@ Specify either `supported_code_lengths` or `min_code_length`/`max_code_length`.
 
 Enables you to report access code-related constraints for a device.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.reportDeviceConstraints({
@@ -25,7 +25,7 @@ await seam.accessCodes.reportDeviceConstraints({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -36,7 +36,7 @@ await seam.accessCodes.reportDeviceConstraints({
 
 Enables you to report access code-related constraints for a device.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/report_device_constraints" \
@@ -55,7 +55,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/report_d
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -66,7 +66,7 @@ EOF
 
 Enables you to report access code-related constraints for a device.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.report_device_constraints(
@@ -77,7 +77,7 @@ seam.access_codes.report_device_constraints(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -88,7 +88,7 @@ None
 
 Enables you to report access code-related constraints for a device.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.report_device_constraints(
@@ -99,7 +99,7 @@ seam.access_codes.report_device_constraints(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -110,10 +110,9 @@ nil
 
 Enables you to report access code-related constraints for a device.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_codes->report_device_constraints(
     device_id: "cd17e797-e952-47a1-ba47-46bf72934181",
     supported_code_lengths: [4, 5, 6],
@@ -122,10 +121,10 @@ $seam->access_codes->report_device_constraints(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -133,13 +132,13 @@ null
 
 Enables you to report access code-related constraints for a device.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes report-device-constraints --device_id "cd17e797-e952-47a1-ba47-46bf72934181" --supported_code_lengths [4,5,6] --min_code_length 42 --max_code_length 42
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -207,7 +206,7 @@ Enables you to report access code-related constraints for a device.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.reportDeviceConstraints({
@@ -217,7 +216,7 @@ await seam.accessCodes.reportDeviceConstraints({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -228,7 +227,7 @@ await seam.accessCodes.reportDeviceConstraints({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/report_device_constraints" \
@@ -242,7 +241,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/report_d
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -253,7 +252,7 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.report_device_constraints(
@@ -263,7 +262,7 @@ seam.access_codes.report_device_constraints(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -274,7 +273,7 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.report_device_constraints(
@@ -284,7 +283,7 @@ seam.access_codes.report_device_constraints(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -295,10 +294,9 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_codes->report_device_constraints(
     device_id: "cd17e797-e952-47a1-ba47-46bf72934181",
     min_code_length: 4,
@@ -306,10 +304,10 @@ $seam->access_codes->report_device_constraints(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -317,13 +315,13 @@ null
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes report-device-constraints --device_id "cd17e797-e952-47a1-ba47-46bf72934181" --min_code_length 4 --max_code_length 6
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

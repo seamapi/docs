@@ -15,7 +15,7 @@ For example, if you delete a connected account with a device that has an access 
 
 Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.connectedAccounts.delete({
@@ -23,7 +23,7 @@ await seam.connectedAccounts.delete({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -34,7 +34,7 @@ await seam.connectedAccounts.delete({
 
 Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/delete" \
@@ -46,7 +46,7 @@ curl --include --request POST "https://connect.getseam.com/connected_accounts/de
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -57,7 +57,7 @@ EOF
 
 Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```python
 seam.connected_accounts.delete(
@@ -65,7 +65,7 @@ seam.connected_accounts.delete(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,13 +76,13 @@ None
 
 Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.connected_accounts.delete(connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -93,19 +93,18 @@ nil
 
 Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->connected_accounts->delete(
     connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -113,13 +112,13 @@ null
 
 Deletes a specified connected account.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -134,6 +133,7 @@ seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-e
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

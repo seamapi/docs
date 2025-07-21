@@ -76,8 +76,8 @@ redirects:
   api-clients/access-control-systems/users/update-user: api/acs/users/update.md
   api-clients/access-control-systems/users: api/acs/users/README.md
   api-clients/access-control-systems: api/acs/README.md
-  api-clients/action-attempt/get-action-attempt: api-clients/action_attempts/get.md
-  api-clients/action-attempt: api-clients/action_attempts/README.md
+  api-clients/action-attempt/get-action-attempt: api/action_attempts/get.md
+  api-clients/action-attempt: api/action_attempts/README.md
   api-clients/client-sessions/create-a-client-session: api/client_sessions/create.md
   api-clients/client-sessions/delete-a-client-session: api/client_sessions/delete.md
   api-clients/client-sessions/get-a-client-session: api/client_sessions/get.md
@@ -135,9 +135,6 @@ redirects:
   api-clients/user-identities: api/user_identities/README.md
   api-clients/workspaces/get-workspace: api/workspaces/get.md
   api-clients/workspaces/reset-workspace: api/workspaces/reset_sandbox.md
-  api/phones/get-a-phone: api/phones/get.md
-  api/phones/list-phones: api/phones/list.md
-  api/phones/deactivate-a-phone: api/phones/deactivate.md
   api-clients/phones/create-a-sandbox-phone: api/phones/simulate/create_sandbox_phone.md
   device-and-system-integration-guides/assa-abloy-credential-services-credential-manager-in-development: device-and-system-integration-guides/assa-abloy-credential-services-credential-manager/README.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md

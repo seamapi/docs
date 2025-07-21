@@ -31,15 +31,14 @@ If you already connected your Visionline ACS to Seam during the development phas
 
     <figure><img src="../../../../../.gitbook/assets/seam-bridge-pairing-code.png" alt="Use the pairing code to pair Seam Bridge with your workspace." width="375"><figcaption><p>Use the pairing code to pair Seam Bridge with your workspace.</p></figcaption></figure>
 11. In the Connect Webview, click **Continue**.
-12. On the **Visionline info** page:
+12. On the **Set up your Seam Bridge** page:
     1. In the **Enter your pairing token** field, paste the pairing code that you copied.
-    2. In the **Name your bridge** field, type a unique name for Seam Bridge.
-    3. Click **Submit**.
+    2. Click **Submit**.
 13. On the **Enter your credentials** page:
     1. In the **Visionline Site Name** field, type a name to identify the Visionline site within your Seam workspace.
     2.  In the **Username** field, type the username for your Visionline production account.
 
-        This account is the one that you [created or identified in Visionline for the connection with Seam](../../../../assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account.md).
+        This account is the one that you [created or identified in Visionline for the connection with Seam](step-2-configure-a-visionline-user-account.md).
     3. In the **Password** field, type the password for your Visionline production account.
     4. If Seam Bridge is not installed on the same computer as Visionline, select **Seam Bridge and Visionline server are installed on different computers** and then type the local IP address of the on-premises computer running Seam Bridge.
     5. Click **Submit**.

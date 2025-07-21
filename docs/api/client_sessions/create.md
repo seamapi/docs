@@ -11,7 +11,7 @@ Creates a new [client session](../../core-concepts/authentication/client-session
 
 Creates a new client session.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.clientSessions.create({
@@ -25,7 +25,7 @@ await seam.clientSessions.create({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -48,7 +48,7 @@ await seam.clientSessions.create({
 
 Creates a new client session.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/create" \
@@ -70,7 +70,7 @@ curl --include --request POST "https://connect.getseam.com/client_sessions/creat
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -95,7 +95,7 @@ EOF
 
 Creates a new client session.
 
-#### Code
+#### Code:
 
 ```python
 seam.client_sessions.create(
@@ -109,7 +109,7 @@ seam.client_sessions.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ClientSession(
@@ -132,7 +132,7 @@ ClientSession(
 
 Creates a new client session.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.client_sessions.create(
@@ -146,7 +146,7 @@ seam.client_sessions.create(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -169,10 +169,9 @@ seam.client_sessions.create(
 
 Creates a new client session.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->client_sessions->create(
     customer_id: "e387e15f-be27-47ad-881f-4a6fc5460c57",
     customer_key: "My Company",
@@ -184,10 +183,9 @@ $seam->client_sessions->create(
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
     "connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],
@@ -208,13 +206,13 @@ $seam->client_sessions->create(
 
 Creates a new client session.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam client-sessions create --customer_id "e387e15f-be27-47ad-881f-4a6fc5460c57" --customer_key "My Company" --user_identifier_key "jane_doe" --connect_webview_ids ["dafe6400-7484-4fd1-8c17-1c901b444250"] --connected_account_ids ["8062d457-e28e-481f-aecc-509905627511"] --user_identity_id "89765fd3-6193-4d63-8605-e77f75356555" --expires_at "2025-06-19T15:22:40.000Z"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -301,7 +299,7 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 ## Response
 
-[client\_session](./)
+[client\_session](.)
 
 
 {% tabs %}

@@ -11,7 +11,7 @@ Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/ther
 
 Sets a specified thermostat to cool mode.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.thermostats.cool({
@@ -20,7 +20,7 @@ await seam.thermostats.cool({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -37,7 +37,7 @@ await seam.thermostats.cool({
 
 Sets a specified thermostat to cool mode.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/cool" \
@@ -50,7 +50,7 @@ curl --include --request POST "https://connect.getseam.com/thermostats/cool" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -69,7 +69,7 @@ EOF
 
 Sets a specified thermostat to cool mode.
 
-#### Code
+#### Code:
 
 ```python
 seam.thermostats.cool(
@@ -77,7 +77,7 @@ seam.thermostats.cool(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 ActionAttempt(
@@ -94,7 +94,7 @@ ActionAttempt(
 
 Sets a specified thermostat to cool mode.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.thermostats.cool(
@@ -103,7 +103,7 @@ seam.thermostats.cool(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -121,20 +121,18 @@ seam.thermostats.cool(
 
 Sets a specified thermostat to cool mode.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->thermostats->cool(
     device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
     cooling_set_point_fahrenheit: 75
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
     "action_type" => "SET_HVAC_MODE",
@@ -149,13 +147,13 @@ $seam->thermostats->cool(
 
 Sets a specified thermostat to cool mode.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam thermostats cool --device_id "408641ab-d0f5-475c-b8a5-9b9096405f9a" --cooling_set_point_fahrenheit 75
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

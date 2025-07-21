@@ -14,13 +14,13 @@ You must specify either `device_id` or `name`.
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -154,7 +154,7 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
     "thermostat_daily_programs": [
       {
         "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekday Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -168,7 +168,7 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
       },
       {
         "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekend Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -191,7 +191,7 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/get" \
@@ -203,7 +203,7 @@ curl --include --request POST "https://connect.getseam.com/devices/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -338,7 +338,7 @@ EOF
       "thermostat_daily_programs": [
         {
           "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
           "name": "Weekday Program",
           "periods": [
             { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -352,7 +352,7 @@ EOF
         },
         {
           "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-          "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+          "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
           "name": "Weekend Program",
           "periods": [
             { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -376,13 +376,13 @@ EOF
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.get(device_id="a75bff05-29a3-4215-a09f-2156c52a4ac7")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Device(
@@ -513,7 +513,7 @@ Device(
         "thermostat_daily_programs": [
             {
                 "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-                "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name": "Weekday Program",
                 "periods": [
                     {"starts_at_time": "00:00:00", "climate_preset_key": "sleep"},
@@ -527,7 +527,7 @@ Device(
             },
             {
                 "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-                "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name": "Weekend Program",
                 "periods": [
                     {"starts_at_time": "00:00:00", "climate_preset_key": "sleep"},
@@ -550,13 +550,13 @@ Device(
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -695,7 +695,7 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
     thermostat_daily_programs: [
       {
         thermostat_daily_program_id: "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-        device_id: "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         name: "Weekday Program",
         periods: [
           { starts_at_time: "00:00:00", climate_preset_key: "sleep" },
@@ -709,7 +709,7 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
       },
       {
         thermostat_daily_program_id: "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-        device_id: "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         name: "Weekend Program",
         periods: [
           { starts_at_time: "00:00:00", climate_preset_key: "sleep" },
@@ -732,17 +732,15 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "can_hvac_cool" => true,
     "can_hvac_heat" => true,
@@ -876,7 +874,7 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
             [
                 "thermostat_daily_program_id" =>
                     "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-                "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id" => "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name" => "Weekday Program",
                 "periods" => [
                     [
@@ -906,7 +904,7 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
             [
                 "thermostat_daily_program_id" =>
                     "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-                "device_id" => "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+                "device_id" => "a75bff05-29a3-4215-a09f-2156c52a4ac7",
                 "name" => "Weekend Program",
                 "periods" => [
                     [
@@ -938,13 +936,13 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
 
 Returns a specified device, using an ID.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -1078,7 +1076,7 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
     "thermostat_daily_programs": [
       {
         "thermostat_daily_program_id": "1a2b3c4d-5e6f-7890-1234-56789abcdef1",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekday Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -1092,7 +1090,7 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
       },
       {
         "thermostat_daily_program_id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90",
-        "device_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+        "device_id": "a75bff05-29a3-4215-a09f-2156c52a4ac7",
         "name": "Weekend Program",
         "periods": [
           { "starts_at_time": "00:00:00", "climate_preset_key": "sleep" },
@@ -1143,7 +1141,7 @@ Name of the device that you want to get.
 
 ## Response
 
-[device](./)
+[device](.)
 
 
 {% tabs %}
@@ -1221,13 +1219,13 @@ Returns a specified device, using a name.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.devices.get({ name: "My Device" });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -1398,7 +1396,7 @@ await seam.devices.get({ name: "My Device" });
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/get" \
@@ -1410,7 +1408,7 @@ curl --include --request POST "https://connect.getseam.com/devices/get" \
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -1583,13 +1581,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.devices.get(name="My Device")
 ```
 
-#### Output
+#### Output:
 
 ```python
 Device(
@@ -1757,13 +1755,13 @@ Device(
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.devices.get(name: "My Device")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -1939,17 +1937,15 @@ seam.devices.get(name: "My Device")
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->devices->get(name: "My Device");
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "can_hvac_cool" => true,
     "can_hvac_heat" => true,
@@ -2145,13 +2141,13 @@ $seam->devices->get(name: "My Device");
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam devices get --name "My Device"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {

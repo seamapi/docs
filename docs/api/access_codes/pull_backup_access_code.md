@@ -19,7 +19,7 @@ Before pulling a backup access code, make sure that the device's `properties.sup
 
 Retrieves a backup access code for an access code.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.accessCodes.pullBackupAccessCode({
@@ -27,7 +27,7 @@ await seam.accessCodes.pullBackupAccessCode({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 {
@@ -60,7 +60,7 @@ await seam.accessCodes.pullBackupAccessCode({
 
 Retrieves a backup access code for an access code.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/pull_backup_access_code" \
@@ -72,7 +72,7 @@ curl --include --request POST "https://connect.getseam.com/access_codes/pull_bac
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -107,7 +107,7 @@ EOF
 
 Retrieves a backup access code for an access code.
 
-#### Code
+#### Code:
 
 ```python
 seam.access_codes.pull_backup_access_code(
@@ -115,7 +115,7 @@ seam.access_codes.pull_backup_access_code(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 AccessCode(
@@ -148,13 +148,13 @@ AccessCode(
 
 Retrieves a backup access code for an access code.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.access_codes.pull_backup_access_code(access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 {
@@ -187,19 +187,17 @@ seam.access_codes.pull_backup_access_code(access_code_id: "8e525b87-5e4b-48a5-a3
 
 Retrieves a backup access code for an access code.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->access_codes->pull_backup_access_code(
     access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     "access_code_id" => "8e525b87-5e4b-48a5-a322-5d45262a735f",
     "code" => "1234",
@@ -230,13 +228,13 @@ $seam->access_codes->pull_backup_access_code(
 
 Retrieves a backup access code for an access code.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam access-codes pull-backup-access-code --access_code_id "8e525b87-5e4b-48a5-a322-5d45262a735f"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {
@@ -291,7 +289,7 @@ ID of the access code for which you want to pull a backup access code.
 
 ## Response
 
-[access\_code](./)
+[access\_code](.)
 
 
 {% tabs %}

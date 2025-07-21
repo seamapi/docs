@@ -12,7 +12,7 @@
 
 Unsuspends a specified suspended access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.unsuspend({
@@ -21,7 +21,7 @@ await seam.acs.users.unsuspend({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -32,7 +32,7 @@ await seam.acs.users.unsuspend({
 
 Unsuspends a specified suspended access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" \
@@ -45,7 +45,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -56,7 +56,7 @@ EOF
 
 Unsuspends a specified suspended access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.unsuspend(
@@ -65,7 +65,7 @@ seam.acs.users.unsuspend(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -76,7 +76,7 @@ None
 
 Unsuspends a specified suspended access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.unsuspend(
@@ -85,7 +85,7 @@ seam.acs.users.unsuspend(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -96,20 +96,19 @@ nil
 
 Unsuspends a specified suspended access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->unsuspend(
     user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537",
     acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -117,13 +116,13 @@ null
 
 Unsuspends a specified suspended access system user, using the associated user identity.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users unsuspend --user_identity_id "6a42fbcf-da1a-40f8-8221-596774f97537" --acs_system_id "264ea3f9-e483-469e-aada-c98c094d5521"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}
@@ -184,7 +183,7 @@ Unsuspends a specified suspended access system user.
 
 
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.users.unsuspend({
@@ -192,7 +191,7 @@ await seam.acs.users.unsuspend({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 // void
@@ -203,7 +202,7 @@ await seam.acs.users.unsuspend({
 
 
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" \
@@ -215,7 +214,7 @@ curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" 
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {}
@@ -226,13 +225,13 @@ EOF
 
 
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.users.unsuspend(acs_user_id="56dd7042-4134-4788-9212-53f25f2939e1")
 ```
 
-#### Output
+#### Output:
 
 ```python
 None
@@ -243,13 +242,13 @@ None
 
 
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.users.unsuspend(acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1")
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 nil
@@ -260,19 +259,18 @@ nil
 
 
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->users->unsuspend(
     acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-null
+
 ```
 {% endtab %}
 
@@ -280,13 +278,13 @@ null
 
 
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs users unsuspend --acs_user_id "56dd7042-4134-4788-9212-53f25f2939e1"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 {}

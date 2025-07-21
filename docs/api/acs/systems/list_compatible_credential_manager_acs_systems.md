@@ -13,7 +13,7 @@ Specify the access system for which you want to retrieve all compatible credenti
 
 Returns a list of all credential manager systems that are compatible with a specified access system.
 
-#### Code
+#### Code:
 
 ```javascript
 await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
@@ -21,7 +21,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 });
 ```
 
-#### Output
+#### Output:
 
 ```javascript
 [
@@ -48,7 +48,7 @@ await seam.acs.systems.listCompatibleCredentialManagerAcsSystems({
 
 Returns a list of all credential manager systems that are compatible with a specified access system.
 
-#### Code
+#### Code:
 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems" \
@@ -60,7 +60,7 @@ curl --include --request POST "https://connect.getseam.com/acs/systems/list_comp
 EOF
 ```
 
-#### Output
+#### Output:
 
 ```curl
 {
@@ -89,7 +89,7 @@ EOF
 
 Returns a list of all credential manager systems that are compatible with a specified access system.
 
-#### Code
+#### Code:
 
 ```python
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -97,7 +97,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 )
 ```
 
-#### Output
+#### Output:
 
 ```python
 [
@@ -124,7 +124,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 
 Returns a list of all credential manager systems that are compatible with a specified access system.
 
-#### Code
+#### Code:
 
 ```ruby
 seam.acs.systems.list_compatible_credential_manager_acs_systems(
@@ -132,7 +132,7 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 )
 ```
 
-#### Output
+#### Output:
 
 ```ruby
 [
@@ -162,19 +162,17 @@ seam.acs.systems.list_compatible_credential_manager_acs_systems(
 
 Returns a list of all credential manager systems that are compatible with a specified access system.
 
-#### Code
+#### Code:
 
 ```php
-<?php
 $seam->acs->systems->list_compatible_credential_manager_acs_systems(
     acs_system_id: "82456f4c-9627-4a27-a426-1b3c50c9871b"
 );
 ```
 
-#### Output
+#### Output:
 
 ```php
-<?php
 [
     [
         "acs_access_group_count" => 5,
@@ -200,13 +198,13 @@ $seam->acs->systems->list_compatible_credential_manager_acs_systems(
 
 Returns a list of all credential manager systems that are compatible with a specified access system.
 
-#### Code
+#### Code:
 
 ```seam_cli
 seam acs systems list-compatible-credential-manager-acs-systems --acs_system_id "82456f4c-9627-4a27-a426-1b3c50c9871b"
 ```
 
-#### Output
+#### Output:
 
 ```seam_cli
 [
@@ -254,7 +252,7 @@ ID of the access system for which you want to retrieve all compatible credential
 
 ## Response
 
-Array of [acs\_systems](./)
+Array of [acs\_systems](.)
 
 
 {% tabs %}
