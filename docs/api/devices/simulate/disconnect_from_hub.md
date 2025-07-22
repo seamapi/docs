@@ -3,9 +3,11 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Simulates taking the Wi-Fi hub (bridge) offline for a device.  
-Only applicable for [sandbox workspaces](../../../core-concepts/workspaces/README.md#sandbox-workspaces) and August locks today, but designed so we can extend to other providers later.  
-This will set the `hub_disconnected` error on the device.
+Simulates taking the Wi‑Fi hub (bridge) offline for a device.
+Only applicable for sandbox workspaces and currently
+implemented for August and TTLock locks.
+This will set the corresponding `hub_disconnected` or
+`ttlock_lock_not_paired_to_gateway` error on the device.
 
 
 {% tabs %}

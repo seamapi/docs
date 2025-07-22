@@ -37,6 +37,8 @@ Possible enum values:
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
+- <code>connected_accounts</code>
+- <code>acs_systems</code>
 </details>
 
 ---
@@ -50,6 +52,8 @@ Possible enum values:
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
+- <code>connected_accounts</code>
+- <code>acs_systems</code>
 </details>
 
 ---

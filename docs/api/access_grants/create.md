@@ -518,6 +518,12 @@ Set of IDs of existing spaces to which access is being granted.
 
 ---
 
+**`space_keys`** *Array* *of Strings*
+
+Set of keys of existing spaces to which access is being granted.
+
+---
+
 **`starts_at`** *String*
 
 Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
@@ -555,6 +561,18 @@ Unique email address for the user identity.
 <summary><b><code>phone_number</code></b> <i>String</i></summary>
 
 Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>user_identity_key</code></b> <i>String</i></summary>
+
+Unique key for the user identity.
 
 </details>
 
