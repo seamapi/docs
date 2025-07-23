@@ -4,7 +4,6 @@
 
 ### Routes
 
-- `/instant_keys`
 - `/thermostats/daily_programs`
 - `/user_identities/enrollment_automations`
 
