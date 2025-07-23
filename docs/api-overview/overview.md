@@ -14,21 +14,3 @@ See the following reference topics:
 * [Authentication](authentication.md)
 * [Client Sessions](../api/client_sessions/)
 * [Workspaces](../api/workspaces/)
-
-## Controlling Devices and Systems
-
-* [Connect Webviews](../api/connect_webviews/)
-* [Devices](../api/devices/)
-  * [Locks](../api/locks/)
-    * [Access Codes](../api/access_codes/)
-  * [Thermostats](../api/thermostats/)
-  * [Noise Sensors](../api/noise_sensors/)
-* [Access Control Systems](../api/acs/)
-  * [User Identities](../api/user_identities/)
-  * [Phones](../api/phones/)
-
-## Monitoring
-
-* [Events](../api/events/)
-* [Action Attempts](../api/action_attempts/)
-* [Connected Accounts](../api/connected_accounts/)
