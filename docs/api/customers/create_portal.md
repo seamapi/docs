@@ -243,6 +243,18 @@ List of users.
 
 <details>
 
+<summary><b><code>configure</code></b> <i>Object</i></summary>
+
+Configuration for the configure feature.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>connect</code></b> <i>Object</i></summary>
 
 Configuration for the connect accounts feature.
