@@ -4,6 +4,7 @@
 
 ### Routes
 
+- `/instant_keys`
 - `/thermostats/daily_programs`
 - `/user_identities/enrollment_automations`
 
@@ -87,7 +88,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
-- `/seam/console/v1/get_resource_type`: Internal endpoint for Console
+- `/seam/console/v1/get_resource_locator`: Internal endpoint for Console
 - `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
@@ -538,7 +539,7 @@ These items are deprecated.
 - `/access_methods/get_related`: `batch`
 - `/bridges/get`: `bridge`
 - `/bridges/list`: `bridges`
-- `/seam/console/v1/get_resource_type`: `resource_type`
+- `/seam/console/v1/get_resource_locator`: `resource_locator`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
@@ -552,6 +553,8 @@ These items are deprecated.
 - `/access_methods/get_related`
 - `/customers/create_portal`
 - `/customers/push_data`
+- `/instant_keys/get`
+- `/instant_keys/list`
 - `/locks/get`
 - `/spaces/get_related`
 - `/user_identities/enrollment_automations/delete`
