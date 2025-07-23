@@ -1,4 +1,3 @@
-
 import { retry } from '@harisk/retryx'
 import * as prettierPluginPhp from '@prettier/plugin-php/standalone'
 import * as prettierPluginRuby from '@prettier/plugin-ruby'
