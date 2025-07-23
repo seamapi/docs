@@ -1,12 +1,11 @@
-import { env } from 'node:process'
 
+import { retry } from '@harisk/retryx'
 import * as prettierPluginPhp from '@prettier/plugin-php/standalone'
 import * as prettierPluginRuby from '@prettier/plugin-ruby'
 import type { SyntaxName } from '@seamapi/blueprint'
 import commandExists from 'command-exists'
 import { execa } from 'execa'
 import { format as prettier } from 'prettier'
-import { retry } from '@harisk/retryx'
 
 export const formatCode = async (
   content: string,
@@ -67,13 +66,14 @@ const formatRuby = async (content: string): Promise<string> => {
     )
     return content
   }
-  return await retry(async () =>
-    await prettier(content, {
-      parser: 'ruby',
-      plugins: [prettierPluginRuby.default],
-      printWidth: 100,
-      trailingComma: 'all',
-    }),
+  return await retry(
+    async () =>
+      await prettier(content, {
+        parser: 'ruby',
+        plugins: [prettierPluginRuby.default],
+        printWidth: 100,
+        trailingComma: 'all',
+      }),
   )
 }
 
