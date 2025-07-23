@@ -52,12 +52,12 @@ jobs:
         run: gem install syntax_tree -v 6.2.0
       - name: Normalize package-lock.json
         run: npm install
-
       - name: Generate docs
         uses: nick-fields/retry@v3
         with:
           max_attempts: 3
           retry_wait_seconds: 1
+          timeout_minutes: 2
           command: npm run codegen
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
