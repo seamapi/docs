@@ -11,7 +11,7 @@ jobs:
     name: Get changes
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    if: (github.actor == 'dependabot[bot]') || (github.actor == 'seambot')
+    if: github.actor == 'dependabot[bot]' || github.event.pull_request.user.login == 'seambot'
     permissions:
       checks: read
     outputs:
