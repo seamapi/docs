@@ -6,6 +6,7 @@ import type { SyntaxName } from '@seamapi/blueprint'
 import commandExists from 'command-exists'
 import { execa } from 'execa'
 import { format as prettier } from 'prettier'
+import { retry } from '@harisk/retryx'
 
 export const formatCode = async (
   content: string,
@@ -66,13 +67,14 @@ const formatRuby = async (content: string): Promise<string> => {
     )
     return content
   }
-  env['PRETTIER_RUBY_TIMEOUT_MS'] = String(20_000)
-  return await prettier(content, {
-    parser: 'ruby',
-    plugins: [prettierPluginRuby.default],
-    printWidth: 100,
-    trailingComma: 'all',
-  })
+  return await retry(async () =>
+    await prettier(content, {
+      parser: 'ruby',
+      plugins: [prettierPluginRuby.default],
+      printWidth: 100,
+      trailingComma: 'all',
+    }),
+  )
 }
 
 const formatGo = async (content: string): Promise<string> => {

@@ -27,6 +27,7 @@
     "npm": ">=10.9.0"
   },
   "devDependencies": {
+    "@harisk/retryx": "^1.0.2",
     "@metalsmith/metadata": "^0.3.0",
     "@prettier/plugin-php": "^0.23.0",
     "@prettier/plugin-ruby": "^4.0.4",
