@@ -377,6 +377,7 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 - <code>assa_abloy_credential_service</code>
 - <code>latch_building</code>
 - <code>dormakaba_community_site</code>
+- <code>dormakaba_ambiance_site</code>
 - <code>legic_connect_credential_service</code>
 - <code>assa_abloy_vostio</code>
 - <code>assa_abloy_vostio_credential_service</code>
@@ -466,6 +467,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 - <code>assa_abloy_credential_service</code>
 - <code>latch_building</code>
 - <code>dormakaba_community_site</code>
+- <code>dormakaba_ambiance_site</code>
 - <code>legic_connect_credential_service</code>
 - <code>assa_abloy_vostio</code>
 - <code>assa_abloy_vostio_credential_service</code>
