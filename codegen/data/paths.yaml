@@ -200,3 +200,6 @@
 
 /locks/simulate:
   title: Lock Simulations
+
+/instant_keys:
+  title: Instant Keys
