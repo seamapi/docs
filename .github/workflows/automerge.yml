@@ -50,15 +50,3 @@ jobs:
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  close:
-    name: Close
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    needs: changes
-    if: needs.changes.outputs.has_changes == 'false' && needs.changes.outputs.is_generation_successful == 'true'
-    steps:
-      - name: Close pull request
-        run: gh pr close "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
