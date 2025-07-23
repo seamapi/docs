@@ -553,6 +553,7 @@ These items are deprecated.
 - `/access_methods/get_related`
 - `/customers/create_portal`
 - `/customers/push_data`
+- `/instant_keys/delete`
 - `/instant_keys/get`
 - `/instant_keys/list`
 - `/locks/get`
