@@ -1,5 +1,11 @@
 # Documentation Report
 
+## Untitled
+
+### Routes
+
+- `/thermostats/daily_programs`
+
 ## Undocumented
 
 These items are intentionally undocumented.
@@ -24,7 +30,6 @@ These items are intentionally undocumented.
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
-- `/thermostats/daily_programs`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
@@ -42,7 +47,6 @@ These items are intentionally undocumented.
 - `location`: Will be removed.
 - `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
-- `thermostat_daily_program`: Unreleased.
 - `unmanaged_acs_access_group`: Unreleased.
 - `unmanaged_acs_credential`: Unreleased.
 - `unmanaged_acs_user`: Unreleased.
@@ -99,10 +103,6 @@ These items are intentionally undocumented.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
-- `/thermostats/update_weekly_program`: Unreleased.
-- `/thermostats/daily_programs/create`: Unreleased.
-- `/thermostats/daily_programs/delete`: Unreleased.
-- `/thermostats/daily_programs/update`: Unreleased.
 - `/unstable_access_grants/create`: Unreleased.
 - `/unstable_access_grants/delete`: Unreleased.
 - `/unstable_access_grants/get`: Unreleased.
