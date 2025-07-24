@@ -1,27 +1,5 @@
 # Documentation Report
 
-## Untitled
-
-### Routes
-
-- `/acs/access_groups`
-- `/acs/credentials`
-- `/acs/encoders`
-- `/acs/entrances`
-- `/acs/systems`
-- `/client_sessions`
-- `/connect_webviews`
-- `/connected_accounts`
-- `/devices`
-- `/instant_keys`
-- `/noise_sensors/noise_thresholds`
-- `/phones`
-- `/thermostats/daily_programs`
-- `/user_identities`
-- `/user_identities/enrollment_automations`
-- `/webhooks`
-- `/workspaces`
-
 ## Undocumented
 
 These items are intentionally undocumented.
@@ -45,10 +23,12 @@ These items are intentionally undocumented.
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
+- `/thermostats/daily_programs`: No undocumented message provided
 - `/unstable_access_grants`: No undocumented message provided
 - `/unstable_access_methods`: No undocumented message provided
 - `/unstable_locations`: No undocumented message provided
 - `/unstable_partner/building_blocks`: No undocumented message provided
+- `/user_identities/enrollment_automations`: No undocumented message provided
 
 ### Resources
 
@@ -56,10 +36,12 @@ These items are intentionally undocumented.
 - `acs_credential_provisioning_automation`: Deprecated. Will be removed.
 - `bridge_client_session`: Seam Bridge client only.
 - `bridge_connected_systems`: Seam Bridge client only.
+- `enrollment_automation`: Will be removed.
 - `instant_key`: Unreleased.
 - `location`: Will be removed.
 - `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
+- `thermostat_daily_program`: Unreleased.
 - `unmanaged_acs_access_group`: Unreleased.
 - `unmanaged_acs_credential`: Unreleased.
 - `unmanaged_acs_user`: Unreleased.
@@ -114,6 +96,10 @@ These items are intentionally undocumented.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
+- `/thermostats/update_weekly_program`: Unreleased.
+- `/thermostats/daily_programs/create`: Unreleased.
+- `/thermostats/daily_programs/delete`: Unreleased.
+- `/thermostats/daily_programs/update`: Unreleased.
 - `/unstable_access_grants/create`: Unreleased.
 - `/unstable_access_grants/delete`: Unreleased.
 - `/unstable_access_grants/get`: Unreleased.
@@ -134,6 +120,10 @@ These items are intentionally undocumented.
 - `/unstable_partner/building_blocks/generate_magic_link`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/manage_devices`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/organize_spaces`: Experimental partner building blocks.
+- `/user_identities/enrollment_automations/delete`: Will be removed.
+- `/user_identities/enrollment_automations/get`: Will be removed.
+- `/user_identities/enrollment_automations/launch`: Will be removed.
+- `/user_identities/enrollment_automations/list`: Will be removed.
 - `/workspaces/find_resources`: Unreleased.
 
 ### Endpoint parameters
@@ -457,7 +447,6 @@ These items are deprecated.
 
 - `acs_credential_pool`: Not used.
 - `acs_credential_provisioning_automation`: Not used.
-- `enrollment_automation`: Will be removed. Instead, link the `user_identity` to the `acs_user` in the access system in which you want to issue credentials.
 
 ### Resource properties
 
@@ -572,14 +561,9 @@ These items are deprecated.
 - `/instant_keys/list`
 - `/locks/get`
 - `/spaces/get_related`
-- `/user_identities/enrollment_automations/delete`
-- `/user_identities/enrollment_automations/get`
-- `/user_identities/enrollment_automations/launch`
-- `/user_identities/enrollment_automations/list`
 
 ### Resources without resource samples
 
-- `enrollment_automation`
 - `event: access_code.created`
 - `event: access_code.changed`
 - `event: access_code.scheduled_on_device`
