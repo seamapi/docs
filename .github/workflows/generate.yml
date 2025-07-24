@@ -58,7 +58,7 @@ jobs:
           max_attempts: 3
           retry_wait_seconds: 1
           timeout_minutes: 2
-          command: npm run codegen
+          command: npm run generate
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
