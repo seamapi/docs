@@ -53,7 +53,12 @@ jobs:
       - name: Normalize package-lock.json
         run: npm install
       - name: Generate docs
-        run: npm run codegen
+        uses: nick-fields/retry@v3
+        with:
+          max_attempts: 3
+          retry_wait_seconds: 1
+          timeout_minutes: 2
+          command: npm run codegen
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

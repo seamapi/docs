@@ -578,6 +578,7 @@ Possible enum values:
 - <code>sensi</code>
 - <code>kwikset2</code>
 - <code>keynest</code>
+- <code>dormakaba_ambiance</code>
 - <code>yale_access</code>
 - <code>hid_cm</code>
 - <code>google_nest</code>

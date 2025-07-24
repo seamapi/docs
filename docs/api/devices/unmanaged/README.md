@@ -1111,38 +1111,6 @@ Indicates that a third-party integration has been detected.
   
 </details>
 <details>
-<summary><code>nest_thermostat_in_manual_eco_mode</code></summary>
-
-Indicates that the Nest thermostat is in manual eco mode.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>nest_thermostat_in_manual_eco_mode</code>
-  
-  
-</details>
-<details>
 <summary><code>ttlock_lock_gateway_unlocking_not_enabled</code></summary>
 
 Indicates that the Remote Unlock feature is not enabled in the settings."
@@ -1944,12 +1912,6 @@ Indicates that an unknown issue occurred while syncing the state of the phone wi
 ---
 
 ### Thermostats
-**`nest_thermostat_in_manual_eco_mode`**
-
-Indicates that the Nest thermostat is in manual eco mode.
-
----
-
 **`temperature_threshold_exceeded`**
 
 Indicates that the temperature threshold has been exceeded.
