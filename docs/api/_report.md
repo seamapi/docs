@@ -4,8 +4,23 @@
 
 ### Routes
 
+- `/acs/access_groups`
+- `/acs/credentials`
+- `/acs/encoders`
+- `/acs/entrances`
+- `/acs/systems`
+- `/client_sessions`
+- `/connect_webviews`
+- `/connected_accounts`
+- `/devices`
+- `/instant_keys`
+- `/noise_sensors/noise_thresholds`
+- `/phones`
 - `/thermostats/daily_programs`
+- `/user_identities`
 - `/user_identities/enrollment_automations`
+- `/webhooks`
+- `/workspaces`
 
 ## Undocumented
 
