@@ -119,13 +119,6 @@ function generateReport(metadata: Metadata): Report {
   }
 
   for (const namespace of blueprint.namespaces ?? []) {
-    if (
-      !namespace.isUndocumented &&
-      pathMetadata[namespace.path]?.title == null
-    ) {
-      addUntitledNamespaceToReport(namespace.path, report)
-    }
-
     processNamespace(namespace, report)
   }
 
@@ -294,23 +287,9 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
       ? PathMetadataSchema.parse(metadata.pathMetadata)
       : {}
 
-  if (pathMetadata[route.path]?.title == null && !route.isUndocumented) {
-    report.noTitle.routes.push({ name: route.path })
-  }
-
-  // TODO: route description
-
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
   }
-}
-
-const addUntitledNamespaceToReport = (
-  namespace: string,
-  report: Report,
-): void => {
-  if (report.noTitle.namespaces.some((n) => n.name === namespace)) return
-  report.noTitle.namespaces.push({ name: namespace })
 }
 
 function processNamespace(namespace: Namespace, report: Report): void {
