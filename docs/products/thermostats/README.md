@@ -18,7 +18,7 @@ The Seam API's thermostat features enable you to satisfy a variety of scenarios,
 * You can set unoccupied units' thermostats to energy saving settings and also schedule comfortable climates when units are occupied. Further, you can pass control of a unit's thermostats to the new residents.
 * You can configure Seam to help you monitor your thermostats proactively. In this way, reported temperatures outside acceptable thresholds automatically alert you to potential HVAC system issues.
 
-{% embed url="https://www.youtube.com/watch?amp;ab_channel=Seam&amp;t=102s&v=3CYvoJtAGNc" %}
+{% embed url="https://www.youtube.com/watch?amp;ab_channel=Seam&t=102s&v=3CYvoJtAGNc" %}
 You can control your thermostats easily with the Seam API. In this video, learn how to get started!
 {% endembed %}
 
@@ -36,7 +36,7 @@ Further, you can use the [`/thermostats/set_temperature_threshold`](../../api/th
 
 ### Perform Remote Management
 
-Manage your users' thermostats remotely using "imperative" endpoints. That is, depending on the capabilities of a thermostat, you can use the Seam API to set the thermostat to heat mode, cool mode, heat/cool (auto) mode, or off. In addition, you can set the thermostat's fan mode setting to `on`, `auto`, or `circulate`.
+Manage your users' thermostats remotely using "imperative" endpoints. That is, depending on the capabilities of a thermostat, you can use the Seam API to set the thermostat to heat mode, cool mode, heat/cool (auto) mode, eco mode (for Google Nest), or off. In addition, you can set the thermostat's fan mode setting to `on`, `auto`, or `circulate`.
 
 ### Create Climate Presets
 
@@ -80,7 +80,7 @@ For detailed information about these capabilities, see [Device and System Capabi
 
 Seam supports integration with the following smart thermostat manufacturers:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/ecobee-thermostats.md">ecobee-thermostats.md</a></td><td><a href="../../.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr><tr><td></td><td><strong>Google Nest Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/google-nest-thermostats/">google-nest-thermostats</a></td><td><a href="../../.gitbook/assets/nest-logo.png">nest-logo.png</a></td></tr><tr><td></td><td><strong>Honeywell Resideo Thermostats</strong></td><td></td><td></td><td><a href="../../device-and-system-integration-guides/honeywell-thermostats/">honeywell-thermostats</a></td><td><a href="../../.gitbook/assets/honeywell_logo.png">honeywell_logo.png</a></td></tr><tr><td></td><td><strong>Sensi Thermostats</strong></td><td></td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href="../../.gitbook/assets/sensi-logo.png">sensi-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/ecobee-thermostats.md">ecobee-thermostats.md</a></td><td><a href="../../.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr><tr><td></td><td><strong>Google Nest Thermostats</strong></td><td></td><td></td><td><a href="../../device-guides/google-nest-thermostats/">google-nest-thermostats</a></td><td><a href="../../.gitbook/assets/nest-logo.png">nest-logo.png</a></td></tr><tr><td></td><td><strong>Honeywell Resideo Thermostats</strong></td><td></td><td></td><td><a href="../../device-and-system-integration-guides/honeywell-thermostats/">honeywell-thermostats</a></td><td><a href="../../.gitbook/assets/honeywell_logo.png">honeywell_logo.png</a></td></tr><tr><td></td><td><strong>Sensi Thermostats</strong></td><td></td><td></td><td><a href="broken-reference/">broken-reference</a></td><td><a href="../../.gitbook/assets/sensi-logo.png">sensi-logo.png</a></td></tr></tbody></table>
 
 ***
 
