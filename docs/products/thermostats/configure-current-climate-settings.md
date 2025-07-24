@@ -12,6 +12,10 @@ You can use the following Seam API "imperative" endpoints to set the current HVA
 * [`/thermostats/off`](../../api/thermostats/off.md)
 * [`/thermostats/set_fan_mode`](../../api/thermostats/set_fan_mode.md)
 
+{% hint style="info" %}
+You can also use the [`/thermostats/set_hvac_mode`](../../api/thermostats/set_hvac_mode.md) endpoint to set a thermostat to the desired HVAC mode, including `heat`, `cool`, `heat_cool`, `eco` (for Google Nest), or `off`, depending on the capabilities of the device. For `heat`, `cool`, and `heat_cool`, also specify the desired heating and cooling set points, as appropriate.
+{% endhint %}
+
 Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](./#thermostat-capabilities).
 
 These imperative operations return an [action attempt](../../core-concepts/action-attempts.md) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
@@ -24,7 +28,7 @@ Further, Seam emits a [`thermostat.temperature_reached_set_point` event](../../a
 
 When you use an imperative endpoint to set the HVAC settings for a thermostat, you specify the [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) and the desired [set points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) in Fahrenheit or Celsius.
 
-To set the HVAC mode and set points, issue a thermostat [`heat`](configure-current-climate-settings.md#set-a-thermostat-to-heat-mode), [`cool`](configure-current-climate-settings.md#set-a-thermostat-to-cool-mode), [`heat_cool`](configure-current-climate-settings.md#set-a-thermostat-to-heat-cool-mode), or [`off`](configure-current-climate-settings.md#turn-off-heating-and-cooling) request and include the desired set points in the body of the request.
+To set the HVAC mode and set points, issue a thermostat [`heat`](configure-current-climate-settings.md#set-a-thermostat-to-heat-mode), [`cool`](configure-current-climate-settings.md#set-a-thermostat-to-cool-mode), [`heat_cool`](configure-current-climate-settings.md#set-a-thermostat-to-heat-cool-mode), `eco` (for Google Nest), or [`off`](configure-current-climate-settings.md#turn-off-heating-and-cooling) request and include the desired set points in the body of the request.
 
 ***
 
@@ -205,7 +209,7 @@ $seam->devices->get(
 
 ## Set a Thermostat to Heat Mode
 
-You can [set a thermostat to heat mode](../../api/thermostats/heat.md) and specify a desired heating [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
+You can [set a thermostat to heat mode](../../api/thermostats/heat.md) or use the [`/thermostats/set_hvac_mode`](../../api/thermostats/set_hvac_mode.md) endpoint, and specify a desired heating [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated heating system to maintain the specified temperature.
 
 Issue the thermostat `heat` request, providing the `device_id` of the thermostat and the `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
@@ -402,7 +406,7 @@ if ($thermostat->can_hvac_heat) {
 
 ## Set a Thermostat to Cool Mode
 
-You can [set a thermostat to cool mode](../../api/thermostats/cool.md) and specify a desired cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
+You can [set a thermostat to cool mode](../../api/thermostats/cool.md) or use the [`/thermostats/set_hvac_mode`](../../api/thermostats/set_hvac_mode.md) endpoint, and specify a desired cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperature. By establishing the set point, the thermostat activates the associated cooling system to maintain the specified temperature.
 
 Issue the thermostat `cool` request, providing the `device_id` of the thermostat and the `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
@@ -599,7 +603,7 @@ if ($thermostat->can_hvac_cool) {
 
 ## Set a Thermostat to Heat-Cool Mode
 
-You can [set a thermostat to heat-cool (also known as "auto") mode](../../api/thermostats/heat_cool.md) and specify desired [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
+You can [set a thermostat to heat-cool (also known as "auto") mode](../../api/thermostats/heat_cool.md) or use the [`/thermostats/set_hvac_mode`](../../api/thermostats/set_hvac_mode.md) endpoint, and specify desired [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) temperatures for both heating and cooling. By establishing the set points, the thermostat activates the associated heating and cooling systems as needed to maintain the specified temperature range.
 
 Issue the thermostat `heat_cool` request, providing the `device_id` of the thermostat and the following set points:
 
@@ -804,7 +808,7 @@ if ($thermostat->can_hvac_heat_cool) {
 
 ## Turn off Heating and Cooling
 
-You can [set a thermostat to "off" mode](../../api/thermostats/off.md), which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
+You can [set a thermostat to "off" mode](../../api/thermostats/off.md) or use the [`/thermostats/set_hvac_mode`](../../api/thermostats/set_hvac_mode.md) endpoint, which deactivates the associated heating and cooling systems. In this state, the thermostat does not regulate indoor temperatures.
 
 Issue the thermostat `off` request, providing the `device_id` of the thermostat.
 
