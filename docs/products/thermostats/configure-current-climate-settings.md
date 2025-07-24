@@ -12,10 +12,6 @@ You can use the following Seam API "imperative" endpoints to set the current HVA
 * [`/thermostats/off`](../../api/thermostats/off.md)
 * [`/thermostats/set_fan_mode`](../../api/thermostats/set_fan_mode.md)
 
-{% hint style="info" %}
-You can also use the [`/thermostats/set_hvac_mode`](../../api/thermostats/set_hvac_mode.md) endpoint to set a thermostat to the desired HVAC mode, including `heat`, `cool`, `heat_cool`, `eco` (for Google Nest), or `off`, depending on the capabilities of the device. For `heat`, `cool`, and `heat_cool`, also specify the desired heating and cooling set points, as appropriate.
-{% endhint %}
-
 Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](./#thermostat-capabilities).
 
 These imperative operations return an [action attempt](../../core-concepts/action-attempts.md) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
