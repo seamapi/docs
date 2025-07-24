@@ -108,7 +108,7 @@ function generateReport(metadata: Metadata): Report {
 
   const routes = blueprint.routes ?? []
   for (const route of routes) {
-    processRoute(route, report, metadata)
+    processRoute(route, report)
   }
 
   for (const namespace of blueprint.namespaces ?? []) {
