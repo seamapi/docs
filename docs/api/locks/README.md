@@ -138,6 +138,14 @@ A lock device resource.
 
 ---
 
+**`can_run_thermostat_programs`** *Boolean*
+
+
+
+
+
+---
+
 **`can_simulate_connection`** *Boolean*
 
 
