@@ -1,11 +1,5 @@
 # Documentation Report
 
-## Untitled
-
-### Routes
-
-- `/thermostats/daily_programs`
-
 ## Undocumented
 
 These items are intentionally undocumented.
