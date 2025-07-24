@@ -4391,3 +4391,8 @@ Sets a [temperature threshold](../../capability-guides/thermostats/setting-and-m
 Updates a specified [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 
+[**`/thermostats/update_weekly_program`**](./update_weekly_program.md)
+
+Updates the thermostat weekly program for a thermostat device. To configure a weekly program, specify the ID of the daily program that you want to use for each day of the week. When you update a weekly program, the set of programs that you specify overwrites any previous weekly program for the thermostat.
+
+
