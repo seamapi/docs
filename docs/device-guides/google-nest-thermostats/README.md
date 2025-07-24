@@ -68,6 +68,12 @@ Once you have set up Google Device Access, prompt the owners of these Google Nes
 
 ***
 
+## Brand-Specific Features
+
+Google Nest thermostats support an eco HVAC mode. To set a Google Nest thermostat to eco mode, use the [`/thermostats/set_hvac_mode`](../../api/thermostats/set_hvac_mode.md) endpoint. For details, see [HVAC Mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) and [Setting the Current HVAC and Fan Mode Settings](../../products/thermostats/configure-current-climate-settings.md).
+
+***
+
 ## Troubleshooting
 
 If you have not yet [obtained Google Commercial Development](obtain-google-nest-device-access-and-commercial-development.md), and your end user attempts to connect a Google Nest thermostat to Seam using a [Connect Webview](../../core-concepts/connect-webviews/), the Connect Webview displays the following error:

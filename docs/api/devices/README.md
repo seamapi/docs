@@ -377,6 +377,14 @@ A thermostat device resource.
 
 ---
 
+**`can_run_thermostat_programs`** *Boolean*
+
+
+
+
+
+---
+
 **`can_simulate_connection`** *Boolean*
 
 
@@ -3979,6 +3987,15 @@ Maximum [heating set point](../../capability-guides/thermostats/understanding-th
 
 ---
 
+**`max_thermostat_daily_program_periods_per_day`** *Number*
+
+Maximum number of periods that the thermostat can support per day. For example, if the thermostat supports 4 periods per day, this value is 4.
+
+
+
+
+---
+
 **`min_cooling_set_point_celsius`** *Number*
 
 Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
@@ -4086,6 +4103,15 @@ Current [temperature threshold](../../capability-guides/thermostats/setting-and-
     Upper limit in °F within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
 
 </details>
+
+---
+
+**`thermostat_daily_program_period_precision_minutes`** *Number*
+
+Precision of the thermostat's period in minutes. For example, if the thermostat supports 15-minute periods, this value is 15. All values are relative to the top of the hour, so for 15 minutes, the periods would be 0, 15, 30, and 45 minutes past the hour.
+
+
+
 
 ---
 
@@ -4468,6 +4494,14 @@ A device provider resource.
 ---
 
 **`can_remotely_unlock`** *Boolean*
+
+
+
+
+
+---
+
+**`can_run_thermostat_programs`** *Boolean*
 
 
 

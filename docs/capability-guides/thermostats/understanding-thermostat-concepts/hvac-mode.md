@@ -10,6 +10,7 @@ HVAC mode (`hvac_mode_setting`) governs the operation of your heating, ventilati
 * **Cool (`cool`):** In this mode, the thermostat activates only the cooling system when the room temperature rises above the cooling set point temperature.
 * **Heat-Cool** or **Auto (`heat_cool`):** In this dual mode, the thermostat automatically switches between heating and cooling to maintain a temperature between the heating and cooling set point temperatures for maximum comfort.
 * **Off (`off`):** In this mode, the thermostat is off, which turns off both the heating and cooling systems for the space.
+* **Eco (`eco`):** This setting represents Google Nest's eco mode.
 
 ***
 
