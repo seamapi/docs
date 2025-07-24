@@ -325,6 +325,7 @@
   * [Set to Heat-Cool (Auto) Mode](api/thermostats/heat_cool.md)
   * [Set to Off Mode](api/thermostats/off.md)
   * [Update a Climate Preset](api/thermostats/update_climate_preset.md)
+  * [Update the Thermostat Weekly Program](api/thermostats/update_weekly_program.md)
   * [Thermostat Schedules](api/thermostats/schedules/README.md)
     * [Create a Thermostat Schedule](api/thermostats/schedules/create.md)
     * [Delete a Thermostat Schedule](api/thermostats/schedules/delete.md)
