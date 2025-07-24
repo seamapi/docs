@@ -236,6 +236,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_program_online_access_codes`
 - `device.can_remotely_lock`
 - `device.can_remotely_unlock`
+- `device.can_run_thermostat_programs`
 - `device.can_simulate_connection`
 - `device.can_simulate_disconnection`
 - `device.can_simulate_removal`
@@ -248,6 +249,7 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.can_program_online_access_codes`
 - `device_provider.can_remotely_lock`
 - `device_provider.can_remotely_unlock`
+- `device_provider.can_run_thermostat_programs`
 - `device_provider.can_simulate_connection`
 - `device_provider.can_simulate_disconnection`
 - `device_provider.can_simulate_removal`
@@ -274,6 +276,7 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_program_online_access_codes`
 - `unmanaged_device.can_remotely_lock`
 - `unmanaged_device.can_remotely_unlock`
+- `unmanaged_device.can_run_thermostat_programs`
 - `unmanaged_device.can_simulate_connection`
 - `unmanaged_device.can_simulate_disconnection`
 - `unmanaged_device.can_simulate_removal`
