@@ -1,25 +1,5 @@
 # Documentation Report
 
-## Untitled
-
-### Routes
-
-- `/acs/access_groups`
-- `/acs/credentials`
-- `/acs/encoders`
-- `/acs/entrances`
-- `/acs/systems`
-- `/client_sessions`
-- `/connect_webviews`
-- `/connected_accounts`
-- `/devices`
-- `/instant_keys`
-- `/noise_sensors/noise_thresholds`
-- `/phones`
-- `/user_identities`
-- `/webhooks`
-- `/workspaces`
-
 ## Undocumented
 
 These items are intentionally undocumented.
