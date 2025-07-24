@@ -12,8 +12,6 @@ import type {
 import { openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
-import { PathMetadataSchema } from './path-metadata.js'
-
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
 const defaultUndocumentedMessage = 'No undocumented message provided'
@@ -107,11 +105,6 @@ function generateReport(metadata: Metadata): Report {
       endpoints: [],
     },
   }
-
-  const pathMetadata =
-    'pathMetadata' in metadata
-      ? PathMetadataSchema.parse(metadata.pathMetadata)
-      : {}
 
   const routes = blueprint.routes ?? []
   for (const route of routes) {
@@ -260,7 +253,7 @@ function processProperty(
   }
 }
 
-function processRoute(route: Route, report: Report, metadata: Metadata): void {
+function processRoute(route: Route, report: Report): void {
   if (route.isUndocumented) {
     report.undocumented.routes.push({
       name: route.path,
@@ -281,11 +274,6 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
       reason: defaultDraftMessage, // TODO: draftMessage
     })
   }
-
-  const pathMetadata =
-    'pathMetadata' in metadata
-      ? PathMetadataSchema.parse(metadata.pathMetadata)
-      : {}
 
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
