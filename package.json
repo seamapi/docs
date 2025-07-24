@@ -14,8 +14,8 @@
   },
   "files": [],
   "scripts": {
-    "codegen": "tsx codegen/smith.ts",
-    "postcodegen": "npm run format",
+    "generate": "tsx codegen/smith.ts",
+    "postgenerate": "npm run format",
     "typecheck": "tsc",
     "lint": "eslint --ignore-path .prettierignore .",
     "prelint": "prettier --check --ignore-path .prettierignore .",

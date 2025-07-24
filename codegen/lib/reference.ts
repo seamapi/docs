@@ -1,6 +1,8 @@
 import type { Blueprint, Endpoint } from '@seamapi/blueprint'
 import type Metalsmith from 'metalsmith'
 
+import { toCapitalCase } from 'lib/handlebars/helpers.js'
+
 import {
   type ApiEndpointLayoutContext,
   type ApiNamespaceLayoutContext,
@@ -41,6 +43,13 @@ export const reference = (
       : {}
 
   const { blueprint } = metadata
+
+  for (const { path, name } of [...blueprint.routes, ...blueprint.namespaces]) {
+    if (path in pathMetadata) continue
+    pathMetadata[path] = PathMetadataSchema.valueSchema.parse({
+      title: toCapitalCase(name),
+    })
+  }
 
   const { resources } = blueprint
 

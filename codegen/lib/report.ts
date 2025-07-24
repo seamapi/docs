@@ -12,8 +12,6 @@ import type {
 import { openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
-import { PathMetadataSchema } from './path-metadata.js'
-
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
 const defaultUndocumentedMessage = 'No undocumented message provided'
@@ -108,24 +106,12 @@ function generateReport(metadata: Metadata): Report {
     },
   }
 
-  const pathMetadata =
-    'pathMetadata' in metadata
-      ? PathMetadataSchema.parse(metadata.pathMetadata)
-      : {}
-
   const routes = blueprint.routes ?? []
   for (const route of routes) {
-    processRoute(route, report, metadata)
+    processRoute(route, report)
   }
 
   for (const namespace of blueprint.namespaces ?? []) {
-    if (
-      !namespace.isUndocumented &&
-      pathMetadata[namespace.path]?.title == null
-    ) {
-      addUntitledNamespaceToReport(namespace.path, report)
-    }
-
     processNamespace(namespace, report)
   }
 
@@ -267,7 +253,7 @@ function processProperty(
   }
 }
 
-function processRoute(route: Route, report: Report, metadata: Metadata): void {
+function processRoute(route: Route, report: Report): void {
   if (route.isUndocumented) {
     report.undocumented.routes.push({
       name: route.path,
@@ -289,28 +275,9 @@ function processRoute(route: Route, report: Report, metadata: Metadata): void {
     })
   }
 
-  const pathMetadata =
-    'pathMetadata' in metadata
-      ? PathMetadataSchema.parse(metadata.pathMetadata)
-      : {}
-
-  if (pathMetadata[route.path]?.title == null && !route.isUndocumented) {
-    report.noTitle.routes.push({ name: route.path })
-  }
-
-  // TODO: route description
-
   for (const endpoint of route.endpoints) {
     processEndpoint(endpoint, report)
   }
-}
-
-const addUntitledNamespaceToReport = (
-  namespace: string,
-  report: Report,
-): void => {
-  if (report.noTitle.namespaces.some((n) => n.name === namespace)) return
-  report.noTitle.namespaces.push({ name: namespace })
 }
 
 function processNamespace(namespace: Namespace, report: Report): void {

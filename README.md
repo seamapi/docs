@@ -67,7 +67,7 @@ $ git clone https://github.com/seamapi/docs.git
 $ cd docs
 $ nvm install
 $ npm install
-$ npm run codegen
+$ npm run generate
 ```
 
 Primary development tasks are defined under `scripts` in `package.json`
