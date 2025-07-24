@@ -17,6 +17,7 @@ These items are intentionally undocumented.
 - `/seam/console/v1`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
 - `/seam/customer/v1/automations`: No undocumented message provided
+- `/seam/customer/v1/events`: No undocumented message provided
 - `/seam/customer/v1/portals`: No undocumented message provided
 - `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
@@ -89,7 +90,9 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/settings/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
@@ -548,6 +551,7 @@ These items are deprecated.
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
+- `/seam/customer/v1/settings/get`: `business_vertical`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 - `/spaces/get_related`: `batch`
 - `/workspaces/find_resources`: `batch`
