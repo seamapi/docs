@@ -1562,14 +1562,6 @@ Unique identifier for the Seam workspace associated with the device.
 
 ## device.properties
 
-**`_experimental_supported_code_from_access_codes_lengths`** *List* *of Numbers*
-
-
-
-
-
----
-
 **`akiles_metadata`** *Object*
 
 Metadata for an Akiles device.
