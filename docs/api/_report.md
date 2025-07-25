@@ -24,7 +24,6 @@ These items are intentionally undocumented.
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
-- `/unstable_locations`: No undocumented message provided
 - `/unstable_partner/building_blocks`: No undocumented message provided
 - `/user_identities/enrollment_automations`: No undocumented message provided
 
@@ -35,7 +34,6 @@ These items are intentionally undocumented.
 - `bridge_client_session`: Seam Bridge client only.
 - `bridge_connected_systems`: Seam Bridge client only.
 - `enrollment_automation`: Will be removed.
-- `location`: Will be removed.
 - `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
 - `unmanaged_acs_access_group`: Unreleased.
@@ -94,15 +92,6 @@ These items are intentionally undocumented.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
-- `/unstable_locations/add_acs_entrances`: Experimental locations.
-- `/unstable_locations/add_devices`: Experimental locations.
-- `/unstable_locations/create`: Experimental locations.
-- `/unstable_locations/delete`: Experimental locations.
-- `/unstable_locations/get`: Experimental locations.
-- `/unstable_locations/list`: Experimental locations.
-- `/unstable_locations/remove_acs_entrances`: Experimental locations.
-- `/unstable_locations/remove_devices`: Experimental locations.
-- `/unstable_locations/update`: Experimental locations.
 - `/unstable_partner/building_blocks/connect_accounts`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/generate_magic_link`: Experimental partner building blocks.
 - `/unstable_partner/building_blocks/manage_devices`: Experimental partner building blocks.
@@ -180,7 +169,6 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_credential_provisioning_automation`
 - `device_provider`
 - `event`
-- `location`
 - `unmanaged_acs_access_group`
 
 ### Resource properties
