@@ -28,7 +28,7 @@ ID of the user identity by which you want to filter the list of Instant Keys.
 
 ## Response
 
-Array of [instant\_keys](./../user_identities)
+Array of [instant\_keys](.)
 
 
 {% tabs %}
