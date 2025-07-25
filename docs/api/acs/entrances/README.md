@@ -155,6 +155,23 @@ Display name for the [entrance](../../../capability-guides/access-systems/retrie
 
 ---
 
+**`dormakaba_ambiance_metadata`** *Object*
+
+dormakaba Ambiance-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>access_point_name</code></strong> <i>String</i>
+  
+    Name of the access point in the dormakaba Ambiance access system.
+
+</details>
+
+---
+
 **`dormakaba_community_metadata`** *Object*
 
 dormakaba Community-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
