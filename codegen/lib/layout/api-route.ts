@@ -423,6 +423,7 @@ export const groupProperties = (
   if (include != null) {
     const properties = groups
       .flatMap((g) => g.properties)
+      .filter((p) => !p.name.startsWith('_'))
       .sort((a, b) => a.name.localeCompare(b.name))
     return [
       {
