@@ -28,7 +28,7 @@ ID of the instant key to get.
 
 ## Response
 
-[instant\_key](./../user_identities)
+[instant\_key](.)
 
 
 {% tabs %}

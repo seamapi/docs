@@ -35,7 +35,6 @@ These items are intentionally undocumented.
 - `bridge_client_session`: Seam Bridge client only.
 - `bridge_connected_systems`: Seam Bridge client only.
 - `enrollment_automation`: Will be removed.
-- `instant_key`: Unreleased.
 - `location`: Will be removed.
 - `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
