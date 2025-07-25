@@ -2119,9 +2119,9 @@ Metadata for a dormakaba Oracode device.
   
     Site ID for a dormakaba Oracode device.
   
-    {% hint style="warning" %}
-    **Deprecated**. Previously marked as "@DEPRECATED."
-    {% endhint %}
+  {% hint style="warning" %}
+  **Deprecated**. Previously marked as "@DEPRECATED."
+  {% endhint %}
 
   - <strong><code>site_name</code></strong> <i>String</i>
   
@@ -2545,9 +2545,9 @@ Device model-related properties.
 
   - <strong><code>accessory_keypad_supported</code></strong> <i>Boolean</i>
   
-    {% hint style="warning" %}
-    **Deprecated**. use device.properties.model.can_connect_accessory_keypad
-    {% endhint %}
+  {% hint style="warning" %}
+  **Deprecated**. use device.properties.model.can_connect_accessory_keypad
+  {% endhint %}
 
   - <strong><code>can_connect_accessory_keypad</code></strong> <i>Boolean</i>
   
@@ -2567,15 +2567,15 @@ Device model-related properties.
 
   - <strong><code>offline_access_codes_supported</code></strong> <i>Boolean</i>
   
-    {% hint style="warning" %}
-    **Deprecated**. use device.can_program_offline_access_codes.
-    {% endhint %}
+  {% hint style="warning" %}
+  **Deprecated**. use device.can_program_offline_access_codes.
+  {% endhint %}
 
   - <strong><code>online_access_codes_supported</code></strong> <i>Boolean</i>
   
-    {% hint style="warning" %}
-    **Deprecated**. use device.can_program_online_access_codes.
-    {% endhint %}
+  {% hint style="warning" %}
+  **Deprecated**. use device.can_program_online_access_codes.
+  {% endhint %}
 
 </details>
 
@@ -3614,9 +3614,9 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
 
   Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
-  {% hint style="warning" %}
-  **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-  {% endhint %}
+{% hint style="warning" %}
+**Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+{% endhint %}
 
 <strong><code>name</code></strong> <i>String</i>
 
@@ -3753,9 +3753,9 @@ Current climate setting.
   
     Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
   
-    {% hint style="warning" %}
-    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-    {% endhint %}
+  {% hint style="warning" %}
+  **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+  {% endhint %}
 
   - <strong><code>name</code></strong> <i>String</i>
   
@@ -3876,9 +3876,9 @@ Current climate setting.
   
     Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
   
-    {% hint style="warning" %}
-    **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-    {% endhint %}
+  {% hint style="warning" %}
+  **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+  {% endhint %}
 
   - <strong><code>name</code></strong> <i>String</i>
   

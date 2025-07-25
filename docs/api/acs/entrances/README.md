@@ -306,9 +306,9 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 
   - <strong><code>ext_door_id</code></strong> <i>String</i>
   
-    {% hint style="warning" %}
-    **Deprecated**. use door_id.
-    {% endhint %}
+  {% hint style="warning" %}
+  **Deprecated**. use door_id.
+  {% endhint %}
 
   - <strong><code>room_description</code></strong> <i>String</i>
   
