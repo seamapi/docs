@@ -225,6 +225,22 @@ export const setApiRouteLayoutContext = (
         })
         .map(mapResourceSample),
     })
+
+    if (route.path === '/noise_thresholds') {
+      // eslint-disable-next-line no-console
+      console.log('PATH')
+      // eslint-disable-next-line no-console
+      console.log(route.path)
+      // eslint-disable-next-line no-console
+      console.log('ACTUAL')
+      // eslint-disable-next-line no-console
+      console.log(JSON.stringify(propertyGroups, null, 2))
+      // eslint-disable-next-line no-console
+      console.log('LEGACY')
+      // eslint-disable-next-line no-console
+      console.log(JSON.stringify(legacyPropertyGroups, null, 2))
+      throw new Error('done')
+    }
   }
 }
 
