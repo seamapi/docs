@@ -226,7 +226,7 @@ export const setApiRouteLayoutContext = (
         .map(mapResourceSample),
     })
 
-    if (route.path === '/noise_thresholds') {
+    if (route.path === '/noise_sensors') {
       // eslint-disable-next-line no-console
       console.log('PATH')
       // eslint-disable-next-line no-console
