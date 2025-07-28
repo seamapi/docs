@@ -101,6 +101,7 @@ These items are intentionally undocumented.
 - `/user_identities/enrollment_automations/launch`: Will be removed.
 - `/user_identities/enrollment_automations/list`: Will be removed.
 - `/workspaces/find_resources`: Unreleased.
+- `/workspaces/customization_profiles/upload_images`: Internal endpoint for customer portals.
 
 ### Endpoint parameters
 
@@ -374,6 +375,15 @@ Items that are intentionally undocumented are not included in this section.
     - `webview_primary_button_color`
     - `webview_primary_button_text_color`
     - `webview_success_message`
+- `/workspaces/customization_profiles/create`
+    - `primary_color`
+    - `secondary_color`
+- `/workspaces/customization_profiles/get`
+    - `customization_profile_id`
+- `/workspaces/customization_profiles/update`
+    - `customization_profile_id`
+    - `primary_color`
+    - `secondary_color`
 
 ## Draft
 
@@ -518,6 +528,9 @@ These items are deprecated.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 - `/spaces/get_related`: `batch`
 - `/workspaces/find_resources`: `batch`
+- `/workspaces/customization_profiles/create`: `customization_profile`
+- `/workspaces/customization_profiles/get`: `customization_profile`
+- `/workspaces/customization_profiles/list`: `customization_profiles`
 
 ### Endpoints without code samples
 
@@ -531,6 +544,10 @@ These items are deprecated.
 - `/instant_keys/list`
 - `/locks/get`
 - `/spaces/get_related`
+- `/workspaces/customization_profiles/create`
+- `/workspaces/customization_profiles/get`
+- `/workspaces/customization_profiles/list`
+- `/workspaces/customization_profiles/update`
 
 ### Resources without resource samples
 
