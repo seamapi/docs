@@ -3146,6 +3146,7 @@ Constraints on access codes for the device. Seam represents each constraint as a
     - <code>at_least_three_unique_digits</code>
     - <code>cannot_contain_089</code>
     - <code>cannot_contain_0789</code>
+    - <code>unique_first_four_digits</code>
     - <code>name_length</code>
     - <code>name_must_be_unique</code>
 </details>
