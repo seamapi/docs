@@ -26,6 +26,7 @@ These items are intentionally undocumented.
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
 - `/unstable_partner/building_blocks`: No undocumented message provided
 - `/user_identities/enrollment_automations`: No undocumented message provided
+- `/workspaces/customization_profiles`: No undocumented message provided
 
 ### Resources
 
@@ -101,7 +102,11 @@ These items are intentionally undocumented.
 - `/user_identities/enrollment_automations/launch`: Will be removed.
 - `/user_identities/enrollment_automations/list`: Will be removed.
 - `/workspaces/find_resources`: Unreleased.
-- `/workspaces/customization_profiles/upload_images`: Internal endpoint for customer portals.
+- `/workspaces/customization_profiles/create`: Unreleased.
+- `/workspaces/customization_profiles/get`: Unreleased.
+- `/workspaces/customization_profiles/list`: Unreleased.
+- `/workspaces/customization_profiles/update`: Unreleased.
+- `/workspaces/customization_profiles/upload_images`: Internal form-data endpoint for Console and Customer Portal.
 
 ### Endpoint parameters
 
@@ -544,10 +549,6 @@ These items are deprecated.
 - `/instant_keys/list`
 - `/locks/get`
 - `/spaces/get_related`
-- `/workspaces/customization_profiles/create`
-- `/workspaces/customization_profiles/get`
-- `/workspaces/customization_profiles/list`
-- `/workspaces/customization_profiles/update`
 
 ### Resources without resource samples
 
