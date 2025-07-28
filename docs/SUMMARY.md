@@ -365,6 +365,11 @@
   * [List Workspaces](api/workspaces/list.md)
   * [Reset a Sandbox Workspace](api/workspaces/reset_sandbox.md)
   * [Udpate a Workspace](api/workspaces/update.md)
+  * [Customization Profiles](api/workspaces/customization_profiles/README.md)
+    * [Get Customization Profile](api/workspaces/customization_profiles/get.md)
+    * [Get Customization Profile](api/workspaces/customization_profiles/list.md)
+    * [Update Customization Profile](api/workspaces/customization_profiles/create.md)
+    * [Update Customization Profile](api/workspaces/customization_profiles/update.md)
 <!-- end api -->
 
 ## Developer Tools
