@@ -190,7 +190,9 @@ export const setApiRouteLayoutContext = (
     const legacyPropertyGroups =
       legacyProperty != null && legacyProperty.format === 'object'
         ? groupProperties(
-            legacyProperty.properties,
+            legacyProperty.properties.filter(
+              ({ isUndocumented }) => !isUndocumented,
+            ),
             legacyProperty.propertyGroups,
             {
               include: metadata.include_groups,
