@@ -381,12 +381,14 @@ Items that are intentionally undocumented are not included in this section.
     - `webview_primary_button_text_color`
     - `webview_success_message`
 - `/workspaces/customization_profiles/create`
+    - `name`
     - `primary_color`
     - `secondary_color`
 - `/workspaces/customization_profiles/get`
     - `customization_profile_id`
 - `/workspaces/customization_profiles/update`
     - `customization_profile_id`
+    - `name`
     - `primary_color`
     - `secondary_color`
 
