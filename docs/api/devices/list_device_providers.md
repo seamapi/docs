@@ -202,24 +202,6 @@ Category for which you want to list providers.
 Array of [device\_providers](.)
 
 
-{% tabs %}
-{% tab title="JSON" %}
-
-
-
-```json
-{
-  "can_program_online_access_codes": true,
-  "can_remotely_unlock": true,
-  "device_provider_name": "akiles",
-  "display_name": "Akiles",
-  "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
-  "provider_categories": ["stable", "consumer_smartlocks"]
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ---
 
 ## Examples

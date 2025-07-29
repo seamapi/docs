@@ -306,38 +306,6 @@ Your user ID for the user by which you want to filter Connect Webviews.
 Array of [connect\_webviews](.)
 
 
-{% tabs %}
-{% tab title="JSON" %}
-
-
-
-```json
-{
-  "accepted_capabilities": ["lock", "thermostat"],
-  "accepted_devices": [],
-  "accepted_providers": ["schlage", "kwikset", "yale", "smartthings"],
-  "any_device_allowed": false,
-  "any_provider_allowed": false,
-  "authorized_at": "2025-06-14T16:54:17.946323Z",
-  "automatically_manage_new_devices": true,
-  "connect_webview_id": "c4c30885-ec87-4b31-8d7b-9bc0678fa028",
-  "connected_account_id": "5d2fe05f-4f5b-4b91-909c-96e2601dccbe",
-  "created_at": "2025-06-14T16:54:17.946323Z",
-  "custom_metadata": { "id": "internalId1" },
-  "custom_redirect_failure_url": "https://example.com/failure-redirect",
-  "custom_redirect_url": "https://example.com/redirect",
-  "device_selection_mode": "single",
-  "login_successful": true,
-  "selected_provider": "schlage",
-  "status": "authorized",
-  "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=2r2Rn8V5QUtxE79gNsTmLK58KkuqrwU8d",
-  "wait_for_device_creation": true,
-  "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ---
 
 ## Examples

@@ -177,19 +177,3 @@ None
 
 Array of [webhooks](.)
 
-
-{% tabs %}
-{% tab title="JSON" %}
-
-
-
-```json
-{
-  "event_types": ["device.connected", "device.disconnected"],
-  "secret": "mySecret",
-  "url": "https://example.com/webhook",
-  "webhook_id": "ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1"
-}
-```
-{% endtab %}
-{% endtabs %}

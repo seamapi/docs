@@ -215,26 +215,6 @@ Type of the event that you want to get.
 [event](.)
 
 
-{% tabs %}
-{% tab title="JSON" %}
-
-
-
-```json
-{
-  "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-  "created_at": "2025-06-15T16:54:18.000000Z",
-  "device_id": "b3c4d5e6-f7a8-49bc-def1-23456789abcd",
-  "event_description": "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
-  "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-  "event_type": "device.connected",
-  "occurred_at": "2025-06-15T16:54:17.946329Z",
-  "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ---
 
 ## Examples

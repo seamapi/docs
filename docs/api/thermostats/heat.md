@@ -206,20 +206,3 @@ ID of the thermostat device that you want to set to heat mode.
 
 [action\_attempt](./)
 
-
-{% tabs %}
-{% tab title="JSON" %}
-
-
-
-```json
-{
-  "action_attempt_id": "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
-  "action_type": "SET_HVAC_MODE",
-  "error": null,
-  "result": {},
-  "status": "success"
-}
-```
-{% endtab %}
-{% endtabs %}

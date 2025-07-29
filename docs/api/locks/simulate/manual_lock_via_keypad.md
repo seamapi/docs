@@ -187,20 +187,3 @@ ID of the device for which you want to simulate a manual lock action using a key
 
 [action\_attempt](./)
 
-
-{% tabs %}
-{% tab title="JSON" %}
-
-
-
-```json
-{
-  "action_attempt_id": "f0e1d2c3-b4a5-6d7e-8f90-1a2b3c4d5e6f",
-  "action_type": "SIMULATE_MANUAL_LOCK_VIA_KEYPAD",
-  "error": null,
-  "result": {},
-  "status": "success"
-}
-```
-{% endtab %}
-{% endtabs %}

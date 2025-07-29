@@ -255,22 +255,3 @@ Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. Th
 
 [noise\_threshold](.)
 
-
-{% tabs %}
-{% tab title="JSON" %}
-
-
-
-```json
-{
-  "device_id": "69b9e908-039b-413a-904e-5edee653ca27",
-  "ends_daily_at": "09:00:00[America/Los_Angeles]",
-  "name": "My Noise Threshold",
-  "noise_threshold_decibels": 21,
-  "noise_threshold_id": "f8cef69d-625f-464c-aed4-287c06e0d7fe",
-  "noise_threshold_nrs": 5,
-  "starts_daily_at": "07:00:00[America/Los_Angeles]"
-}
-```
-{% endtab %}
-{% endtabs %}
