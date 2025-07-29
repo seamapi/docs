@@ -1678,14 +1678,6 @@ Unique identifier for the Seam workspace associated with the device.
 
 ## device.properties
 
-**`_experimental_supported_code_from_access_codes_lengths`** *List* *of Numbers*
-
-
-
-
-
----
-
 **`active_thermostat_schedule`** *Object*
 
 Active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
