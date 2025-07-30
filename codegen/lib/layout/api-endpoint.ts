@@ -291,32 +291,24 @@ const getResourceSamples = (
 
   if (resource == null) return []
 
-  let metadata: PathMetadata[string] | undefined
-
   const endpointMetadata = pathMetadata[resource.routePath]
-  if (
-    endpointMetadata?.include_groups != null ||
-    endpointMetadata?.exclude_groups != null
-  ) {
-    metadata = endpointMetadata
-  }
+  const endpointSample = resource.resourceSamples.filter(
+    resourceSampleFilter({
+      include: endpointMetadata?.include_groups,
+      exclude: endpointMetadata?.exclude_groups,
+    }),
+  )[0]
 
   const parentMetadata =
     endpoint.parentPath != null ? pathMetadata[endpoint.parentPath] : undefined
-
-  if (
-    parentMetadata?.include_groups != null ||
-    parentMetadata?.exclude_groups != null
-  ) {
-    metadata = parentMetadata
-  }
-
-  const sample = resource.resourceSamples.filter(
+  const parentSample = resource.resourceSamples.filter(
     resourceSampleFilter({
-      include: metadata?.include_groups,
-      exclude: metadata?.exclude_groups,
+      include: parentMetadata?.include_groups,
+      exclude: parentMetadata?.exclude_groups,
     }),
   )[0]
+
+  const sample = parentSample ?? endpointSample
 
   if (sample == null) return []
 
