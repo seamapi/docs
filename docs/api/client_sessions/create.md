@@ -290,7 +290,7 @@ ID of the [user identity](../../capability-guides/mobile-access/managing-mobile-
 
 ---
 
-**`user_identity_ids`** *Array* *of Strings*
+**`user_identity_ids`** *Array* *of UUIDs*
 
 IDs of the [user identities](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.
 
