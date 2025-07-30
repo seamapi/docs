@@ -258,6 +258,30 @@ Indicates whether to retrieve only client sessions without associated user ident
 Array of [client\_sessions](.)
 
 
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "client_session_id": "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
+  "connect_webview_ids": ["550e8400-e29b-41d4-a716-446655440000"],
+  "connected_account_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+  "created_at": "2025-06-15T16:54:17.946309Z",
+  "customer_id": "77eccc4e-c8bc-4c7d-b83c-cb853ed3bade",
+  "device_count": 1,
+  "expires_at": "2025-06-17T16:54:17.946309Z",
+  "token": "seam_cst1891oqCmB_6dBwV8PJ2Fsoe9dWYVyMfVHq",
+  "user_identifier_key": "user_id_1",
+  "user_identity_id": "a6e93f84-565e-47d7-8908-1ca71ada373c",
+  "user_identity_ids": ["a6e93f84-565e-47d7-8908-1ca71ada373c"],
+  "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 
 ## Examples

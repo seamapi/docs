@@ -267,3 +267,35 @@ Device ID of the phone that you want to get.
 
 [phone](.)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "created_at": "2025-06-14T16:54:17.946540Z",
+  "custom_metadata": { "id": "internalId1" },
+  "device_id": "e452f665-a635-4c65-922b-9feab0e0f84f",
+  "device_type": "ios_phone",
+  "display_name": "My Phone",
+  "errors": [],
+  "nickname": "My Phone",
+  "properties": {
+    "assa_abloy_credential_service_metadata": {
+      "endpoints": [
+        {
+          "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+          "is_active": true
+        }
+      ],
+      "has_active_endpoint": true
+    }
+  },
+  "warnings": [],
+  "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
+}
+```
+{% endtab %}
+{% endtabs %}

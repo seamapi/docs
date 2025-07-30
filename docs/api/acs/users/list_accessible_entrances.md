@@ -287,6 +287,34 @@ ID of the user identity for whom you want to list accessible entrances. You can 
 Array of [acs\_entrances](./../entrances)
 
 
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+  "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+  "created_at": "2025-06-15T16:54:17.946495Z",
+  "display_name": "Main Entrance",
+  "errors": [],
+  "visionline_metadata": {
+    "door_category": "guest",
+    "door_name": "Main Entrance",
+    "profiles": [
+      {
+        "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "visionline_door_profile_type": "BLE"
+      }
+    ]
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 
 ## Examples

@@ -199,3 +199,20 @@ ID of the device for which you want to simulate a keypad code entry.
 
 [action\_attempt](./)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "action_attempt_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  "action_type": "SIMULATE_KEYPAD_CODE_ENTRY",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}

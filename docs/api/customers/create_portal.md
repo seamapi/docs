@@ -287,3 +287,21 @@ Whether the portal is embedded in another application.
 
 [magic\_link](./../unstable_partner/building_blocks)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "building_block_type": "connect_accounts",
+  "created_at": "2025-06-16T16:54:17.946594Z",
+  "customer_key": "My Company",
+  "expires_at": "2025-06-17T16:54:17.946594Z",
+  "url": "https://se.am/1234",
+  "workspace_id": "67c58f1f-f148-4415-a63c-dc6c145c6b91"
+}
+```
+{% endtab %}
+{% endtabs %}

@@ -255,6 +255,34 @@ Email address associated with the connected account that you want to get.
 [connected\_account](.)
 
 
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "account_type": "salto_space",
+  "account_type_display_name": "Salto Space",
+  "automatically_manage_new_devices": true,
+  "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  "created_at": "2025-06-15T16:54:17.946329Z",
+  "custom_metadata": { "id": "internalId1" },
+  "errors": [],
+  "user_identifier": {
+    "api_url": "https://example.com/api",
+    "email": "jane_doe@example.com",
+    "exclusive": true,
+    "phone": "+1555551004",
+    "username": "jane_doe"
+  },
+  "warnings": [],
+  "accepted_capabilities": ["lock"]
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ---
 
 ## Examples

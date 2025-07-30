@@ -223,3 +223,28 @@ None
 
 [workspace](.)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "company_name": "Acme",
+  "connect_partner_name": "Acme",
+  "connect_webview_customization": {
+    "inviter_logo_url": "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+    "logo_shape": "circle",
+    "primary_button_color": "#232426",
+    "primary_button_text_color": "#FFFDE7",
+    "success_message": "Your account has been successfully connected to Acme!"
+  },
+  "is_sandbox": false,
+  "is_suspended": false,
+  "name": "My Production Workspace",
+  "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
+}
+```
+{% endtab %}
+{% endtabs %}

@@ -172,3 +172,20 @@ None
 
 [action\_attempt](./)
 
+
+{% tabs %}
+{% tab title="JSON" %}
+
+
+
+```json
+{
+  "action_attempt_id": "f8e7d6c5-4b3a-2c1d-9e0f-8a7b6c5d4e3f",
+  "action_type": "RESET_SANDBOX_WORKSPACE",
+  "error": null,
+  "result": {},
+  "status": "success"
+}
+```
+{% endtab %}
+{% endtabs %}
