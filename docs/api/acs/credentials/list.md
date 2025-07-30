@@ -286,6 +286,12 @@ Number of credentials to return.
 
 ---
 
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
 **`user_identity_id`** *String*
 
 ID of the user identity for which you want to retrieve all credentials.
