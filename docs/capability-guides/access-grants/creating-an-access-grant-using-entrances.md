@@ -227,7 +227,7 @@ $seam->acs->entrances->list(
 
 You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](creating-an-access-grant-using-entrances.md#create-an-access-grant).
 
-To create a user identity, specify the unique `user_identity_key`,  `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
+To create a user identity, specify the unique `user_identity_key`, `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -448,7 +448,7 @@ AccessGrant(
 #  "email_address": "jane.doe@example.com",
 # },
 curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
+  'https://connect.getseam.com/access_grants/create' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
@@ -868,7 +868,7 @@ Watch for the following Access Grant and access method events that include the I
 
 * `access_grant.access_granted_to_door`
 * `access_grant.access_granted_to_all_doors`
-* `access_method.card_encoding_required`&#x20;
+* `access_method.card_encoding_required`
 * `access_method.issued`
 
 These events tell you what to do next. For example, if you've created a card access method, `access_method.card_encoding_required` lets you know that you need to encode the access method onto a plastic card. `access_grant.access_granted_to_all_doors` tells you that Seam has successfully created all the access methods that you requested through an Access Grant. `access_method.issued` indicates that you can now deliver the access method to your user.

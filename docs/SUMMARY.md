@@ -37,6 +37,7 @@
   * [Adding Custom Metadata to a Connected Account](core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md)
   * [Filtering Connected Accounts by Custom Metadata](core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata.md)
   * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
+* [Mapping Your Resources to Seam Resources](core-concepts/mapping-your-resources-to-seam-resources.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 
 ## Capability Guides
@@ -148,7 +149,6 @@
 * [Installation](api-overview/installation.md)
 * [Authentication](api-overview/authentication.md)
 * [Pagination](api-overview/pagination.md)
-<!-- begin api -->
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
   * [Create Multiple Linked Access Codes](api/access_codes/create_multiple.md)
@@ -365,7 +365,6 @@
   * [List Workspaces](api/workspaces/list.md)
   * [Reset a Sandbox Workspace](api/workspaces/reset_sandbox.md)
   * [Udpate a Workspace](api/workspaces/update.md)
-<!-- end api -->
 
 ## Developer Tools
 

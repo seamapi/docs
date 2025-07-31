@@ -6,12 +6,16 @@ description: >-
 
 # Attaching Custom Metadata to the Connect Webview
 
-Adding Custom Metadata to a Connect Webview enables you to store custom information, like customer details or internal IDs from your application. The `custom_metadata` is then transferred to any connected accounts connected via the connect webview, making it easy to find and filter these resources in your Seam workspace.
-
-The `custom_metadata` property supports up to 50 JSON key:value pairs. Upon an account is successfully connected via a connect webview, Seam creates a connected account and copies the `custom_metadata` to it.
+Adding Custom Metadata to a Connect Webview enables you to store custom information, like customer details or internal IDs from your application. The `custom_metadata` is then transferred to any connected accounts connected through the connect webview, making it easy to find and filter these resources in your Seam workspace.
 
 {% hint style="info" %}
-If the `custom_metadata` property is left blank, Seam will store an empty set (`{}`) on both the connect webview and connected account resource.
+You can also use unique resource keys as an easy way to link your resources to Seam resources. For details, see [Mapping Your Resources to Seam Resources](../mapping-your-resources-to-seam-resources.md).
+{% endhint %}
+
+The `custom_metadata` property supports up to 50 JSON key:value pairs. When an account is successfully connected through a Connect Webview, Seam creates a connected account and copies the `custom_metadata` to it.
+
+{% hint style="info" %}
+If the `custom_metadata` property is left blank, Seam stores an empty set (`{}`) on both the Connect Webview and connected account resource.
 {% endhint %}
 
 To add `custom_metadata` to a Connect Webview:
@@ -160,7 +164,6 @@ seam.ConnectWebviews.Create(
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 2. Your app presents the Connect Webview to your user.
