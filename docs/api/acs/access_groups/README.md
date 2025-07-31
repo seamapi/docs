@@ -57,6 +57,7 @@ An access group resource.
 - <code>brivo_group</code>
 - <code>salto_space_group</code>
 - <code>dormakaba_community_access_group</code>
+- <code>dormakaba_ambiance_access_group</code>
 </details>
 
 
@@ -131,6 +132,7 @@ Brand-specific terminology for the access group type.
 - <code>brivo_group</code>
 - <code>salto_space_group</code>
 - <code>dormakaba_community_access_group</code>
+- <code>dormakaba_ambiance_access_group</code>
 </details>
 
 
