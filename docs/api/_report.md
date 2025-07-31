@@ -101,7 +101,7 @@ These items are intentionally undocumented.
 - `/user_identities/enrollment_automations/get`: Will be removed.
 - `/user_identities/enrollment_automations/launch`: Will be removed.
 - `/user_identities/enrollment_automations/list`: Will be removed.
-- `/workspaces/find_resources`: Unreleased.
+- `/workspaces/find_anything`: Unreleased.
 - `/workspaces/customization_profiles/create`: Unreleased.
 - `/workspaces/customization_profiles/get`: Unreleased.
 - `/workspaces/customization_profiles/list`: Unreleased.
@@ -534,7 +534,7 @@ These items are deprecated.
 - `/seam/customer/v1/settings/get`: `business_vertical`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 - `/spaces/get_related`: `batch`
-- `/workspaces/find_resources`: `batch`
+- `/workspaces/find_anything`: `batch`
 - `/workspaces/customization_profiles/create`: `customization_profile`
 - `/workspaces/customization_profiles/get`: `customization_profile`
 - `/workspaces/customization_profiles/list`: `customization_profiles`
