@@ -373,6 +373,8 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/thermostats/set_hvac_mode`
     - `hvac_mode_setting`
+- `/user_identities/generate_instant_key`
+    - `customization_profile_id`
 - `/user_identities/get`
     - `user_identity_key`
 - `/workspaces/create`

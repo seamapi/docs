@@ -50,6 +50,40 @@ Date and time at which the Instant Key was created.
 
 ---
 
+**`customization_profile`** *Object*
+
+Customization profile associated with the Instant Key.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>logo_url</code></strong> <i>String</i>
+  
+    URL of the logo associated with the customization profile.
+
+  - <strong><code>primary_color</code></strong> <i>String</i>
+  
+    Primary color of the customization profile.
+
+  - <strong><code>secondary_color</code></strong> <i>String</i>
+  
+    Secondary color of the customization profile.
+
+</details>
+
+---
+
+**`customization_profile_id`** *UUID*
+
+ID of the customization profile associated with the Instant Key.
+
+
+
+
+---
+
 **`expires_at`** *Datetime*
 
 Date and time at which the Instant Key expires.

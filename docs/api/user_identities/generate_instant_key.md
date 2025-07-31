@@ -199,6 +199,10 @@ ID of the user identity for which you want to generate an instant key.
 
 ---
 
+**`customization_profile_id`** *String*
+
+---
+
 **`max_use_count`** *Number*
 
 Maximum number of times the instant key can be used. Default: 1.
