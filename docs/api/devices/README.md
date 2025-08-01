@@ -2323,85 +2323,9 @@ Metadata for a KeyNest device.
 <details>
   <summary>Child Properties</summary>
 
-  - <strong><code>address</code></strong> <i>String</i>
-  
-    Address for a KeyNest device.
-
-  - <strong><code>current_or_last_store_id</code></strong> <i>Number</i>
-  
-    Current or last store ID for a KeyNest device.
-
-  - <strong><code>current_status</code></strong> <i>String</i>
-  
-    Current status for a KeyNest device.
-
-  - <strong><code>current_user_company</code></strong> <i>String</i>
-  
-    Current user company for a KeyNest device.
-
-  - <strong><code>current_user_email</code></strong> <i>String</i>
-  
-    Current user email for a KeyNest device.
-
-  - <strong><code>current_user_name</code></strong> <i>String</i>
-  
-    Current user name for a KeyNest device.
-
-  - <strong><code>current_user_phone_number</code></strong> <i>String</i>
-  
-    Current user phone number for a KeyNest device.
-
-  - <strong><code>default_office_id</code></strong> <i>Number</i>
-  
-    Default office ID for a KeyNest device.
-
   - <strong><code>device_name</code></strong> <i>String</i>
   
     Device name for a KeyNest device.
-
-  - <strong><code>fob_id</code></strong> <i>Number</i>
-  
-    Fob ID for a KeyNest device.
-
-  - <strong><code>handover_method</code></strong> <i>String</i>
-  
-    Handover method for a KeyNest device.
-
-  - <strong><code>has_photo</code></strong> <i>Boolean</i>
-  
-    Whether the KeyNest device has a photo.
-
-  - <strong><code>key_id</code></strong> <i>String</i>
-  
-    Key ID for a KeyNest device.
-
-  - <strong><code>key_notes</code></strong> <i>String</i>
-  
-    Key notes for a KeyNest device.
-
-  - <strong><code>keynest_app_user</code></strong> <i>String</i>
-  
-    KeyNest app user for a KeyNest device.
-
-  - <strong><code>last_movement</code></strong> <i>String</i>
-  
-    Last movement timestamp for a KeyNest device.
-
-  - <strong><code>property_id</code></strong> <i>String</i>
-  
-    Property ID for a KeyNest device.
-
-  - <strong><code>property_postcode</code></strong> <i>String</i>
-  
-    Property postcode for a KeyNest device.
-
-  - <strong><code>status_type</code></strong> <i>String</i>
-  
-    Status type for a KeyNest device.
-
-  - <strong><code>subscription_plan</code></strong> <i>String</i>
-  
-    Subscription plan for a KeyNest device.
 
 </details>
 
