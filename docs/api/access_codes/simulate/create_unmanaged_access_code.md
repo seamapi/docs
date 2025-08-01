@@ -36,7 +36,8 @@ await seam.accessCodes.simulate.createUnmanagedAccessCode({
   "starts_at": "2025-06-21T16:54:17.946261Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -75,7 +76,8 @@ EOF
     "starts_at": "2025-06-21T16:54:17.946261Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -109,6 +111,7 @@ UnmanagedAccessCode(
     status="set",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -143,6 +146,7 @@ seam.access_codes.simulate.create_unmanaged_access_code(
   "status" => "set",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -177,6 +181,7 @@ $seam->access_codes->simulate->create_unmanaged_access_code(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -206,7 +211,8 @@ seam access-codes simulate create-unmanaged-access-code --device_id "5db6ef75-2e
   "starts_at": "2025-06-21T16:54:17.946261Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -270,7 +276,8 @@ Name of the simulated unmanaged access code.
   "starts_at": "2025-06-21T16:54:17.946261Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}

@@ -51,7 +51,8 @@ await seam.accessCodes.pullBackupAccessCode({
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "unset",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -97,7 +98,8 @@ EOF
     "starts_at": "2025-07-02T16:54:17.946049Z",
     "status": "unset",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -140,6 +142,7 @@ AccessCode(
     status="unset",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -179,6 +182,7 @@ seam.access_codes.pull_backup_access_code(access_code_id: "8e525b87-5e4b-48a5-a3
   "status" => "unset",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -220,6 +224,7 @@ $seam->access_codes->pull_backup_access_code(
     "status" => "unset",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -258,7 +263,8 @@ seam access-codes pull-backup-access-code --access_code_id "8e525b87-5e4b-48a5-a
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "unset",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -319,7 +325,8 @@ ID of the access code for which you want to pull a backup access code.
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}

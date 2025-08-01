@@ -44,7 +44,8 @@ A one-time-use offline access code resource.
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -74,7 +75,8 @@ An ongoing online access code resource.
   "starts_at": null,
   "status": "set",
   "type": "ongoing",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -104,7 +106,8 @@ A time-bound online access code resource.
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -134,7 +137,8 @@ A time-bound offline access code resource.
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -2408,6 +2412,15 @@ Unable to confirm that the access code is set on Kwikset device.
   
   
 </details>
+
+---
+
+**`workspace_id`** *UUID*
+
+Unique identifier for the Seam workspace associated with the access code.
+
+
+
 
 ---
 

@@ -180,7 +180,8 @@ ID of the device for which you want to generate a code.
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}

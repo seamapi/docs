@@ -60,7 +60,8 @@ await seam.accessCodes.createMultiple({
     "starts_at": "2025-07-02T16:54:17.946049Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 ]
 ```
@@ -116,7 +117,8 @@ EOF
       "starts_at": "2025-07-02T16:54:17.946049Z",
       "status": "set",
       "type": "time_bound",
-      "warnings": []
+      "warnings": [],
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
   ]
 }
@@ -169,6 +171,7 @@ seam.access_codes.create_multiple(
         status="set",
         type="time_bound",
         warnings=[],
+        workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     )
 ]
 ```
@@ -217,6 +220,7 @@ seam.access_codes.create_multiple(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
   },
 ]
 ```
@@ -269,6 +273,7 @@ $seam->access_codes->create_multiple(
         "status" => "set",
         "type" => "time_bound",
         "warnings" => [],
+        "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     ],
 ];
 ```
@@ -309,7 +314,8 @@ seam access-codes create-multiple --device_ids ["d9717800-fa73-401a-b66b-03f0ef9
     "starts_at": "2025-07-02T16:54:17.946049Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 ]
 ```
@@ -463,7 +469,8 @@ Array of [access\_codes](.)
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}

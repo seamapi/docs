@@ -44,7 +44,8 @@ await seam.accessCodes.create({
   "pulled_backup_access_code_id": null,
   "status": "set",
   "type": "ongoing",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -90,7 +91,8 @@ EOF
     "pulled_backup_access_code_id": null,
     "status": "set",
     "type": "ongoing",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -133,6 +135,7 @@ AccessCode(
     status="set",
     type="ongoing",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -174,6 +177,7 @@ seam.access_codes.create(
   "status" => "set",
   "type" => "ongoing",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -215,6 +219,7 @@ $seam->access_codes->create(
     "status" => "set",
     "type" => "ongoing",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -251,7 +256,8 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "pulled_backup_access_code_id": null,
   "status": "set",
   "type": "ongoing",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -404,7 +410,8 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -460,7 +467,8 @@ await seam.accessCodes.create({
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -510,7 +518,8 @@ EOF
     "starts_at": "2025-06-20T06:49:21.000Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -557,6 +566,7 @@ AccessCode(
     status="set",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -602,6 +612,7 @@ seam.access_codes.create(
   "status" => "set",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -647,6 +658,7 @@ $seam->access_codes->create(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -685,7 +697,8 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -744,7 +757,8 @@ await seam.accessCodes.create({
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -798,7 +812,8 @@ EOF
     "starts_at": "2025-06-20T06:49:21.000Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -849,6 +864,7 @@ AccessCode(
     status="set",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -898,6 +914,7 @@ seam.access_codes.create(
   "status" => "set",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -947,6 +964,7 @@ $seam->access_codes->create(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -985,7 +1003,8 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -1044,7 +1063,8 @@ await seam.accessCodes.create({
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -1098,7 +1118,8 @@ EOF
     "starts_at": "2025-06-20T06:49:21.000Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -1149,6 +1170,7 @@ AccessCode(
     status="set",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -1198,6 +1220,7 @@ seam.access_codes.create(
   "status" => "set",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -1247,6 +1270,7 @@ $seam->access_codes->create(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -1285,7 +1309,8 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -1341,7 +1366,8 @@ await seam.accessCodes.create({
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -1392,7 +1418,8 @@ EOF
     "starts_at": "2025-06-20T06:49:21.000Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -1440,6 +1467,7 @@ AccessCode(
     status="set",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -1486,6 +1514,7 @@ seam.access_codes.create(
   "status" => "set",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -1532,6 +1561,7 @@ $seam->access_codes->create(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -1570,7 +1600,8 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "starts_at": "2025-06-20T06:49:21.000Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
