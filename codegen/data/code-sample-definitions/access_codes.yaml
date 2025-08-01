@@ -29,6 +29,7 @@
         status: set
         type: ongoing
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Create a time-bound online access code
   description: Creates a new time-bound online access code.
   request:
@@ -63,6 +64,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Create a time-bound offline access code
   description: Creates a new time-bound offline access code.
   request:
@@ -101,6 +103,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Create a one-time-use offline access code
   description: Creates a new one-time-use offline access code.
   request:
@@ -139,6 +142,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Create a time-bound online access code with a backup access code pool
   description:
     Creates a new time-bound online access code with a backup access code
@@ -176,6 +180,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Create multiple linked access codes
   description: Creates new access codes that share a common code across multiple devices.
   request:
@@ -213,6 +218,7 @@
           status: set
           type: time_bound
           warnings: []
+          workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Delete an access code
   description: Deletes an access code.
   request:
@@ -263,6 +269,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: List access codes
   description: Returns a list of all access codes.
   request:
@@ -294,6 +301,7 @@
           status: set
           type: time_bound
           warnings: []
+          workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
       pagination:
         has_next_page: true
         next_page_cursor: WyIyNTk0NTA5ODZhYmVkYmJmMWMxZTExOTU2OTI2MTk5NGE1ZDkzNDg5OTk5ZWZlMDJjZmI4YWVjOWVkYTViNjk5Iix7ImNyZWF0ZWRfYXQiOiIyMDI1LTA2LTE4VDE3OjMyOjAxLjgyN1oiLCJkZXZpY2VfaWQiOiI1MmM0YzFdYi02ODZhLTQxMzUtYWYwOS0wMzllZjE3ZTk0OTAifV0=
@@ -328,6 +336,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
       access_code:
         access_code_id: 8e525b87-5e4b-48a5-a322-5d45262a735f
         code: '1234'
@@ -350,6 +359,7 @@
         status: unset
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Report device constraints (supported code lengths)
   description: Enables you to report access code-related constraints for a device.
   request:
@@ -420,6 +430,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Convert an unmanaged access code to a managed access code
   description:
     Converts an unmanaged access code to an access code managed through
@@ -461,6 +472,7 @@
         status: set
         type: time_bound
         warnings: []
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: List unmanaged access codes
   description: Returns a list of all unmanaged access codes.
   request:
@@ -482,6 +494,7 @@
           status: set
           type: time_bound
           warnings: []
+          workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Update an unmanaged access code
   description: Updates a specified unmanaged access code.
   request:
