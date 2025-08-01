@@ -34,6 +34,7 @@ These items are intentionally undocumented.
 - `acs_credential_provisioning_automation`: Deprecated. Will be removed.
 - `bridge_client_session`: Seam Bridge client only.
 - `bridge_connected_systems`: Seam Bridge client only.
+- `customization_profile`: Unreleased.
 - `enrollment_automation`: Will be removed.
 - `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
@@ -210,6 +211,13 @@ Items that are intentionally undocumented are not included in this section.
 - `connect_webview.accepted_devices`
 - `connect_webview.any_device_allowed`
 - `connect_webview.device_selection_mode`
+- `customization_profile.created_at`
+- `customization_profile.customization_profile_id`
+- `customization_profile.logo_url`
+- `customization_profile.name`
+- `customization_profile.primary_color`
+- `customization_profile.secondary_color`
+- `customization_profile.workspace_id`
 - `device.can_hvac_cool`
 - `device.can_hvac_heat`
 - `device.can_hvac_heat_cool`
@@ -545,9 +553,6 @@ These items are deprecated.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 - `/spaces/get_related`: `batch`
 - `/workspaces/find_anything`: `batch`
-- `/workspaces/customization_profiles/create`: `customization_profile`
-- `/workspaces/customization_profiles/get`: `customization_profile`
-- `/workspaces/customization_profiles/list`: `customization_profiles`
 
 ### Endpoints without code samples
 
