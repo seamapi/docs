@@ -149,6 +149,7 @@
 * [Installation](api-overview/installation.md)
 * [Authentication](api-overview/authentication.md)
 * [Pagination](api-overview/pagination.md)
+<!-- begin api -->
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
   * [Create Multiple Linked Access Codes](api/access_codes/create_multiple.md)
@@ -365,6 +366,7 @@
   * [List Workspaces](api/workspaces/list.md)
   * [Reset a Sandbox Workspace](api/workspaces/reset_sandbox.md)
   * [Udpate a Workspace](api/workspaces/update.md)
+<!-- end api -->
 
 ## Developer Tools
 
