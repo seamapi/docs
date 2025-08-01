@@ -50,9 +50,9 @@ Date and time at which the Instant Key was created.
 
 ---
 
-**`customization_profile`** *Object*
+**`customization`** *Object*
 
-Customization profile associated with the Instant Key.
+Customization applied to the Instant Key UI.
 
 
 
@@ -61,15 +61,15 @@ Customization profile associated with the Instant Key.
 
   - <strong><code>logo_url</code></strong> <i>String</i>
   
-    URL of the logo associated with the customization profile.
+    URL of the logo displayed on the Instant Key.
 
   - <strong><code>primary_color</code></strong> <i>String</i>
   
-    Primary color of the customization profile.
+    Primary color used in the Instant Key UI.
 
   - <strong><code>secondary_color</code></strong> <i>String</i>
   
-    Secondary color of the customization profile.
+    Secondary color used in the Instant Key UI.
 
 </details>
 
