@@ -382,6 +382,8 @@ Items that are intentionally undocumented are not included in this section.
     - `webview_primary_button_color`
     - `webview_primary_button_text_color`
     - `webview_success_message`
+- `/workspaces/find_anything`
+    - `search`
 - `/workspaces/customization_profiles/create`
     - `name`
     - `primary_color`
