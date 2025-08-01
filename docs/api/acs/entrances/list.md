@@ -290,7 +290,19 @@ ID of the connected account for which you want to retrieve all entrances.
 
 ---
 
+**`limit`** *Number*
+
+Maximum number of records to return per page.
+
+---
+
 **`location_id`** *String*
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
