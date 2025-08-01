@@ -220,6 +220,8 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_run_thermostat_programs`
 - `device.can_simulate_connection`
 - `device.can_simulate_disconnection`
+- `device.can_simulate_hub_connection`
+- `device.can_simulate_hub_disconnection`
 - `device.can_simulate_removal`
 - `device.can_turn_off_hvac`
 - `device.can_unlock_with_code`
@@ -233,6 +235,8 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.can_run_thermostat_programs`
 - `device_provider.can_simulate_connection`
 - `device_provider.can_simulate_disconnection`
+- `device_provider.can_simulate_hub_connection`
+- `device_provider.can_simulate_hub_disconnection`
 - `device_provider.can_simulate_removal`
 - `device_provider.can_turn_off_hvac`
 - `device_provider.can_unlock_with_code`
@@ -260,6 +264,8 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_run_thermostat_programs`
 - `unmanaged_device.can_simulate_connection`
 - `unmanaged_device.can_simulate_disconnection`
+- `unmanaged_device.can_simulate_hub_connection`
+- `unmanaged_device.can_simulate_hub_disconnection`
 - `unmanaged_device.can_simulate_removal`
 - `unmanaged_device.can_turn_off_hvac`
 - `unmanaged_device.can_unlock_with_code`
