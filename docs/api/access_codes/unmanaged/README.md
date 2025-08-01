@@ -39,7 +39,8 @@ An unmanaged access code resource.
   "starts_at": "2025-06-21T16:54:17.946261Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -2228,6 +2229,15 @@ Unable to confirm that the access code is set on Kwikset device.
   
   
 </details>
+
+---
+
+**`workspace_id`** *UUID*
+
+Unique identifier for the Seam workspace associated with the access code.
+
+
+
 
 ---
 

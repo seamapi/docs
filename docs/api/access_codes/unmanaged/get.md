@@ -36,7 +36,8 @@ await seam.accessCodes.unmanaged.get({
   "starts_at": "2025-06-21T16:54:17.946261Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -73,7 +74,8 @@ EOF
     "starts_at": "2025-06-21T16:54:17.946261Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -105,6 +107,7 @@ UnmanagedAccessCode(
     status="set",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -135,6 +138,7 @@ seam.access_codes.unmanaged.get(access_code_id: "41b984ec-1b74-48cd-ba68-16660cd
   "status" => "set",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -167,6 +171,7 @@ $seam->access_codes->unmanaged->get(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -196,7 +201,8 @@ seam access-codes unmanaged get --access_code_id "41b984ec-1b74-48cd-ba68-16660c
   "starts_at": "2025-06-21T16:54:17.946261Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -260,7 +266,8 @@ ID of the device containing the unmanaged access code that you want to get. You 
   "starts_at": "2025-06-21T16:54:17.946261Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}

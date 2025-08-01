@@ -721,6 +721,7 @@
     status: set
     type: time_bound
     warnings: []
+    workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Ongoing Online Access Code
   description: An ongoing online access code resource.
   resource_type: access_code
@@ -746,6 +747,7 @@
     status: set
     type: ongoing
     warnings: []
+    workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Pagination
   description: A pagination resource.
   resource_type: pagination
@@ -1057,6 +1059,7 @@
     status: set
     type: time_bound
     warnings: []
+    workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Time-bound Offline Access Code
   description: A time-bound offline access code resource.
   resource_type: access_code
@@ -1082,6 +1085,7 @@
     status: set
     type: time_bound
     warnings: []
+    workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Unmanaged Access Code
   description: An unmanaged access code resource.
   resource_type: unmanaged_access_code
@@ -1098,6 +1102,7 @@
     status: set
     type: time_bound
     warnings: []
+    workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Unmanaged ACS Access Group
   description: An unmanaged access group resource.
   resource_type: unmanaged_acs_access_group

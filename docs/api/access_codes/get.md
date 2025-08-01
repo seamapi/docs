@@ -45,7 +45,8 @@ await seam.accessCodes.get({
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -91,7 +92,8 @@ EOF
     "starts_at": "2025-07-02T16:54:17.946049Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 }
 ```
@@ -132,6 +134,7 @@ AccessCode(
     status="set",
     type="time_bound",
     warnings=[],
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
 {% endtab %}
@@ -171,6 +174,7 @@ seam.access_codes.get(access_code_id: "90a114dc-48b5-4b8b-a3d3-972344594401")
   "status" => "set",
   "type" => "time_bound",
   "warnings" => [],
+  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
 {% endtab %}
@@ -212,6 +216,7 @@ $seam->access_codes->get(
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
 {% endtab %}
@@ -250,7 +255,8 @@ seam access-codes get --access_code_id "90a114dc-48b5-4b8b-a3d3-972344594401"
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
@@ -321,7 +327,8 @@ ID of the device containing the access code that you want to get. You must speci
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}

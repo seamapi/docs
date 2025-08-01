@@ -47,7 +47,8 @@ await seam.accessCodes.list({
     "starts_at": "2025-07-02T16:54:17.946049Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 ]
 ```
@@ -96,7 +97,8 @@ EOF
       "starts_at": "2025-07-02T16:54:17.946049Z",
       "status": "set",
       "type": "time_bound",
-      "warnings": []
+      "warnings": [],
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
   ]
 }
@@ -139,6 +141,7 @@ seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=1
         status="set",
         type="time_bound",
         warnings=[],
+        workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     )
 ]
 ```
@@ -180,6 +183,7 @@ seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit:
     "status" => "set",
     "type" => "time_bound",
     "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
   },
 ]
 ```
@@ -224,6 +228,7 @@ $seam->access_codes->list(
         "status" => "set",
         "type" => "time_bound",
         "warnings" => [],
+        "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     ],
 ];
 ```
@@ -264,7 +269,8 @@ seam access-codes list --device_id "f5197f50-839b-4a8e-82f3-e9ef06af93ae" --limi
     "starts_at": "2025-07-02T16:54:17.946049Z",
     "status": "set",
     "type": "time_bound",
-    "warnings": []
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
   }
 ]
 ```
@@ -354,7 +360,8 @@ Array of [access\_codes](.)
   "starts_at": "2025-07-02T16:54:17.946049Z",
   "status": "set",
   "type": "time_bound",
-  "warnings": []
+  "warnings": [],
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
 {% endtab %}
