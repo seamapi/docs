@@ -359,118 +359,16 @@ Coming soon!
 
 ## Removing a User Identity
 
-To delete a user identity, you must first delete any [ACS credentials](../../api/acs/credentials/delete.md) and [ACS users](../../api/acs/users/delete.md) associated with the user identity. You must also deactivate any associated phones. Then, delete the user identity.
+When you [delete a user identity](../../api/user_identities/delete.md), Seam automatically cleans up all other associated resources.
 
 {% tabs %}
 {% tab title="Python" %}
 **Command:**
 
 ```python
-import asyncio
-
-user_identity_id = "22222222-2222-2222-2222-222222222222"
-
-async def delete_user_identity(user_identity_id):
-  # Step 1: List and delete all client sessions 
-  # associated with the user identity.
-  
-  # List the client sessions.
-  client_sessions = await seam.client_sessions.list(
-    user_identity_id = user_identity_id
-  )
-
-  # Delete the client sessions.
-  for session in client_sessions:
-    await seam.client_sessions.delete(
-      session_id=session['client_session_id']
-    )
-
-  # Step 2: List and delete all ACS users and credentials 
-  # associated with the user identity.
-  
-  # List the ACS users.
-  acs_users = await seam.acs.users.list(
-    user_identity_id=user_identity_id
-  )
-
-  for acs_user in acs_users:
-    # List the credentials for each ACS user.
-    credentials = await seam.acs.credentials.list(
-      acs_user_id=acs_user['acs_user_id']
-    )
-
-    # Delete the credentials.
-    for credential in credentials:
-      await seam.acs.credentials.delete(
-        acs_credential_id=credential['acs_credential_id']
-      )
-    
-      await asyncio.gather(*[
-        wait_for_acs_credential_deleted(credential)
-        for credential in credentials
-      ])
-    
-    # Delete the ACS users.
-    await seam.acs.users.delete(
-      acs_user_id=acs_user['acs_user_id']
-    )
-
-    await asyncio.gather(*[
-      wait_for_acs_user_deleted(acs_user) for acs_user in acs_users
-    ])
-
-  # Step 3: List and deactivate all phones 
-  # associated with the user identity.
-  
-  # List the phones.
-  phones = await seam.phones.list(
-    owner_user_identity_id=user_identity_id
-  )
-
-  # Deactivate the phones.
-  for phone in phones:
-    await seam.phones.deactivate(
-      device_id=phone['device_id']
-    )
-
-  await asyncio.gather(*[
-    wait_for_phone_deactivated(phone) for phone in phones
-  ])
-
-  # Step 4: Delete the user identity.
-  await seam.user_identities.delete(
-    user_identity_id=user_identity_id
-  )
-
-# Helper functions for waiting on deletion events
-async def wait_for_event(event_type, event_filter):
-  while True:
-    events = await seam.events.list(event_type=event_type)
-    if any(event_filter(event) for event in events):
-      break
-
-async def wait_for_acs_user_deleted(acs_user):
-  await wait_for_event(
-    'acs_user.deleted',
-    lambda event: 'acs_user_id' in event and
-                  event.acs_user_id == acs_user.acs_user_id
-  )
-
-async def wait_for_acs_credential_deleted(acs_credential):
-  await wait_for_event(
-    'acs_credential.deleted',
-    lambda event: 'acs_credential_id' in event and
-                  event.acs_credential_id == acs_credential.acs_credential_id
-  )
-
-async def wait_for_phone_deactivated(phone):
-  await wait_for_event(
-    'phone.deactivated',
-    lambda event: 'device_id' in event and
-                  event.device_id == phone.device_id
-  )
-
-await delete_user_identity(user_identity_id)
+seam.user_identities.delete(
+    user_identity_id = "22222222-2222-2222-2222-222222222222"
+)
 ```
 
 **Output:**
@@ -480,84 +378,35 @@ None
 ```
 {% endtab %}
 
+{% tab title="cURL (bash)" %}
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/user_identities/delete' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "ok": true
+}
+```
+{% endtab %}
+
 {% tab title="JavaScript" %}
 **Command:**
 
 ```javascript
-const userIdentityId = "22222222-2222-2222-2222-222222222222";
-
-// Step 1: List and delete all client sessions 
-// associated with the user identity.
-
-// List the client sessions.
-const clientSessions = await seam.clientSessions.list({
-  user_identity_id: userIdentityId,
-});
-
-// Delete each returned client session.
-for (const clientSession of clientSessions) {
-  await seam.clientSessions.delete({
-    client_session_id: clientSession.client_session_id,
-  });
-}
-
-// Step 2: List and delete all ACS users and credentials 
-// associated with the user identity.
-
-// List the ACS users.
-const acsUsers = await seam.acs.users.list({
-  user_identity_id: userIdentityId,
-});
-
-for (const acsUser of acsUsers) {
-  // For each returned ACS user, list the associated credentials.
-  const credentials = await seam.acs.credentials.list({
-    acs_user_id: acsUser.acs_user_id,
-  });
-  
-  // Delete each returned credential.
-  for (const credential of credentials) {
-    await seam.acs.credentials.delete({
-      acs_credential_id: credential.acs_credential_id,
-    });
-  
-    // Wait until each credential has been deleted.
-    // You can watch for acs_credential.deleted events.
-  
-  }
-    
-  // Delete each ACS user returned previously.
-  await seam.acs.users.delete({
-    acs_user_id: acsUser.acs_user_id,
-  });
-
-  // Wait until each ACS user has been deleted.
-  // You can watch for acs_user.deleted events.
-  
-}
-
-// Step 3: List and deactivate all phones 
-// associated with the user identity.
-
-// List the phones.
-const phones = await seam.phones.list({
-  owner_user_identity_id: userIdentityId,
-});
-
-// Deactivate each returned phone.
-for (const phone of phones) {
-  await seam.phones.deactivate({
-    device_id: phone.device_id,
-  });
-
-  // Wait until each phone has been deactivated.
-  // You can watch for phone.deactivated events.
-
-}
-
-// Step 4: Delete the user identity.
 await seam.userIdentities.delete({
-  user_identity_id: userIdentityId,
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
 });
 ```
 
@@ -572,80 +421,8 @@ await seam.userIdentities.delete({
 **Command:**
 
 ```ruby
-user_identity_id = "22222222-2222-2222-2222-222222222222"
-
-# Step 1: List and delete all client sessions 
-# associated with the user identity.
-
-# List the client sessions.
-client_sessions = seam.client_sessions.list(
-  user_identity_id: user_identity_id
-)
-
-# Delete each returned client session.
-client_sessions.each do |client_session|
-  seam.client_sessions.delete(
-    client_session_id: client_session.client_session_id
-  )
-end
-
-# Step 2: List and delete all ACS users and credentials 
-# associated with the user identity.
-
-# List the ACS users.
-acs_users = seam.acs.users.list(
-  user_identity_id: user_identity_id
-)
-
-acs_users.each do |acs_user|
-  # For each returned ACS user, list the associated credentials.
-  credentials = seam.acs.credentials.list(
-    acs_user_id: acs_user.acs_user_id
-  )
-  
-  # Delete each returned credential.
-  credentials.each do |credential|
-    seam.acs.credentials.delete(
-      acs_credential_id: credential.acs_credential_id
-    )
-  
-    # Wait until each credential has been deleted.
-    # You can watch for acs_credential.deleted events.
-  
-  end
-    
-  # Delete each ACS user returned previously.
-  seam.acs.users.delete(
-      acs_user_id: acs_user.acs_user_id
-  )
-
-  # Wait until each ACS user has been deleted.
-  # You can watch for acs_user.deleted events.
-  
-end
-
-# Step 3: List and deactivate all phones 
-# associated with the user identity.
-
-# List the phones.
-phones = seam.phones.list(
-  owner_user_identity_id: user_identity_id
-)
-
-# Deactivate each returned phone.
-phones.each do |phone|
-  seam.phones.deactivate(
-    device_id: phone.device_id
-  )
-
-  # Wait until each phone has been deactivated.
-  # You can watch for phone.deactivated events.
-
-end
-
-# Step 4: Delete the user identity.
 seam.user_identities.delete(
-  user_identity_id: user_identity_id
+  user_identity_id: "22222222-2222-2222-2222-222222222222"
 )
 ```
 
@@ -660,80 +437,8 @@ nil
 **Command:**
 
 ```php
-$user_identity_id = "22222222-2222-2222-2222-222222222222";
-
-// Step 1: List and delete all client sessions 
-// associated with the user identity.
-
-// List the client sessions.
-$client_sessions = $seam->client_sessions->list(
-  user_identity_id: $user_identity_id
-);
-
-// Delete each returned client session.
-foreach ($client_sessions as $client_session) {
-  $seam->client_sessions->delete(
-      client_session_id: $client_session->client_session_id
-  );
-}
-
-// Step 2: List and delete all ACS users and credentials 
-// associated with the user identity.
-
-// List the ACS users.
-$acs_users = $seam->acs->users->list(
-  user_identity_id: $user_identity_id
-);
-
-foreach ($acs_users as $acs_user) {
-  // For each returned ACS user, list the associated credentials.
-  $credentials = $seam->acs->credentials->list(
-    acs_user_id: $acs_user->acs_user_id
-  );
-  
-  // Delete each returned credential.
-  foreach ($credentials as $credential) {
-    $seam->acs->credentials->delete(
-      acs_credential_id: $credential->acs_credential_id
-    );
-  
-    // Wait until each credential has been deleted.
-    // You can watch for acs_credential.deleted events.
-  
-  }
-    
-  // Delete each ACS user returned previously.
-  $seam->acs->users->delete(
-      acs_user_id: $acs_user->acs_user_id
-  );
-
-  // Wait until each ACS user has been deleted.
-  // You can watch for acs_user.deleted events.
-  
-}
-
-// Step 3: List and deactivate all phones 
-// associated with the user identity.
-
-// List the phones.
-$phones = $seam->phones->list(
-  owner_user_identity_id: $user_identity_id
-);
-
-// Deactivate each returned phone.
-foreach ($phones as $phone) {
-  $seam->phones->deactivate(
-    device_id: $phone->device_id
-  );
-
-  // Wait until each phone has been deactivated.
-  // You can watch for phone.deactivated events.
-
-}
-
-// Step 4: Delete the user identity.
 $seam->user_identities->delete(
-  user_identity_id: $user_identity_id
+  user_identity_id: "22222222-2222-2222-2222-222222222222"
 );
 ```
 
