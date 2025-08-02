@@ -86,7 +86,7 @@
   * [Managing Phones for a User Identity](capability-guides/mobile-access/managing-phones-for-a-user-identity.md)
   * [Issuing Mobile Credentials from an Access Control System](capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md)
   * [Developing in a Sandbox Workspace](capability-guides/mobile-access/developing-in-a-sandbox-workspace.md)
-  * [Integrating into your Mobile Application](capability-guides/mobile-access/mobile-device-sdks/README.md)
+  * [Integrating into Your Mobile Application](capability-guides/mobile-access/mobile-device-sdks/README.md)
     * [Initializing the Seam Mobile SDK](capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk.md)
     * [Handling System Permissions](capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions.md)
     * [Using Unlock With Tap](capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap.md)
@@ -149,7 +149,6 @@
 * [Installation](api-overview/installation.md)
 * [Authentication](api-overview/authentication.md)
 * [Pagination](api-overview/pagination.md)
-<!-- begin api -->
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
   * [Create Multiple Linked Access Codes](api/access_codes/create_multiple.md)
@@ -366,7 +365,6 @@
   * [List Workspaces](api/workspaces/list.md)
   * [Reset a Sandbox Workspace](api/workspaces/reset_sandbox.md)
   * [Udpate a Workspace](api/workspaces/update.md)
-<!-- end api -->
 
 ## Developer Tools
 
@@ -412,6 +410,17 @@
 * [Mobile SDKs](developer-tools/mobile-sdks/README.md)
   * [Android SDK](developer-tools/mobile-sdks/android-sdk.md)
   * [iOS SDK](developer-tools/mobile-sdks/ios-sdk.md)
+
+## Industry Guides
+
+* [Hospitality Industry Guide](industry-guides/hospitality-industry-guide/README.md)
+  * [Feature Overview](industry-guides/hospitality-industry-guide/feature-overview.md)
+  * [Seam API Overview](industry-guides/hospitality-industry-guide/seam-api-overview.md)
+  * [Setting Up the Hotel Site](industry-guides/hospitality-industry-guide/setting-up-the-hotel-site.md)
+  * [Granting Access Using Seam Instant Keys](industry-guides/hospitality-industry-guide/granting-access-using-seam-instant-keys.md)
+  * [Granting Access Using Mobile Keys](industry-guides/hospitality-industry-guide/granting-access-using-mobile-keys.md)
+  * [Granting Access Using Encoded Plastic Key Cards](industry-guides/hospitality-industry-guide/granting-access-using-encoded-plastic-key-cards.md)
+  * [Additional Guest Access Actions](industry-guides/hospitality-industry-guide/additional-guest-access-actions.md)
 
 ## Device and System Integration Guides
 

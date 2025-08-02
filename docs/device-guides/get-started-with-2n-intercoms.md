@@ -296,13 +296,13 @@ echo json_encode($locks);
 
 \{% endtab %\} \{% endtabs %\}
 
-### 4 — Locking & Unlocking a Door
+#### 4 — Locking & Unlocking a Door
 
 Next, you can perform the basic action of locking and unlocking the door.
 
 \{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock\_door" method="post" %\} [openapi.json](../.gitbook/assets/openapi.json) \{% endopenapi %\}
 
-### Unlock a door
+#### Unlock a door
 
 <mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
@@ -377,7 +377,7 @@ $seam->locks->lock_door($lock->device_id);
 
 \{% endtab %\} \{% endtabs %\}
 
-### 5 — Creating Access Codes on 2N Intercoms
+#### 5 — Creating Access Codes on 2N Intercoms
 
 2N devices have a directory with residents. These residents can be assigned PIN codes to unlock the door.
 

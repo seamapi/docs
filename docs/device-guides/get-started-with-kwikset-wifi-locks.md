@@ -292,13 +292,13 @@ puts some_lock.inspect
 
 \{% endtab %\} \{% endtabs %\}
 
-#### 4 — Locking & Unlocking a Door
+**4 — Locking & Unlocking a Door**
 
 Next, you can perform the basic action of locking and unlocking the door.
 
 \{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %\} [openapi (1).json](../.gitbook/assets/openapi%20\(1\).json) \{% endopenapi %\}
 
-### Unlock a door
+#### Unlock a door
 
 <mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
@@ -356,7 +356,7 @@ puts updated_lock.properties.locked # false
 
 \{% endtab %\} \{% endtabs %\}
 
-#### 5 — Setting Access Code on Kwikset Lock
+**5 — Setting Access Code on Kwikset Lock**
 
 \{% hint style="info" %\} In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
 

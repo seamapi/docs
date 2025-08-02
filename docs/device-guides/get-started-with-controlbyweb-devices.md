@@ -250,11 +250,11 @@ puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-04-
 
 \{% endtab %\} \{% endtabs %\}
 
-#### 4 — Triggering a ControlByWeb relay
+**4 — Triggering a ControlByWeb relay**
 
 Next, you can perform the basic action of triggering a relay on the device. This action is mapped to an unlock API call in Seam.
 
-### Unlock a door
+#### Unlock a door
 
 <mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
