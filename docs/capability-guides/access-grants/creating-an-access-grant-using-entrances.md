@@ -258,7 +258,7 @@ UserIdentity(
 
 ```curl
 curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
+  'https://connect.getseam.com/user_identities/create' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
