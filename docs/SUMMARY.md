@@ -365,7 +365,7 @@
   * [Get a Workspace](api/workspaces/get.md)
   * [List Workspaces](api/workspaces/list.md)
   * [Reset a Sandbox Workspace](api/workspaces/reset_sandbox.md)
-  * [Udpate a Workspace](api/workspaces/update.md)
+  * [Update a Workspace](api/workspaces/update.md)
 
 ## Developer Tools
 
