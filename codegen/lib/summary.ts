@@ -30,13 +30,13 @@ const getUpdatedSummary = (summary: string, apiSummary: string): string => {
   const lines = summary.split('\n')
 
   const startIdx = lines.findIndex(
-    (line) => line.trim() === '<!-- begin api -->',
+    (line) => line.trim() === '* [Pagination](api-overview/pagination.md)',
   )
   if (startIdx === -1) {
     throw new Error('Could not find start of API summary')
   }
 
-  const endIdx = lines.findIndex((line) => line.trim() === '<!-- end api -->')
+  const endIdx = lines.findIndex((line) => line.trim() === '## Developer Tools')
   if (endIdx === -1) {
     throw new Error('Could not find end of API summary')
   }
@@ -44,5 +44,5 @@ const getUpdatedSummary = (summary: string, apiSummary: string): string => {
   const start = lines.slice(0, startIdx + 1)
   const end = lines.slice(endIdx, -1)
 
-  return [...start, ...apiSummary.trim().split('\n'), ...end].join('\n')
+  return [...start, ...apiSummary.trim().split('\n'), '', ...end].join('\n')
 }
