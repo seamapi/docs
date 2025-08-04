@@ -22,12 +22,6 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`space_ids`** *Array* *of UUIDs* (Required)
-
-IDs of the spaces that you want to get along with their related resources.
-
----
-
 **`exclude`** *Array* *of Enums*
 <details>
 
@@ -55,6 +49,18 @@ Possible enum values:
 - <code>connected_accounts</code>
 - <code>acs_systems</code>
 </details>
+
+---
+
+**`space_ids`** *Array* *of UUIDs*
+
+IDs of the spaces that you want to get along with their related resources.
+
+---
+
+**`space_keys`** *Array* *of Strings*
+
+Keys of the spaces that you want to get along with their related resources.
 
 ---
 
