@@ -253,6 +253,7 @@
   * [Update a Connected Account](api/connected_accounts/update.md)
 * [Customers](api/customers/README.md)
   * [Create Customer Portal](api/customers/create_portal.md)
+  * [Delete Customer Data](api/customers/delete_data.md)
   * [Push Customer Data](api/customers/push_data.md)
 * [Devices](api/devices/README.md)
   * [Get a Device](api/devices/get.md)
