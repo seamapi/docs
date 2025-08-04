@@ -1,4 +1,4 @@
-# Udpate a Workspace
+# Update a Workspace
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
