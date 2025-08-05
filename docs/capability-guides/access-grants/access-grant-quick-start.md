@@ -31,7 +31,7 @@ Before you begin this quick start, perform the following steps:
     For instructions, see [Connect an Access System to Seam](../access-systems/connect-an-acs-to-seam/).
 2.  Install a Seam SDK and create an API key.
 
-    For instructions, see [Installation](../../api-overview/installation.md) and [API Keys](../../core-concepts/authentication/api-keys.md).
+    For instructions, see [Installation](../../api/installation.md) and [API Keys](../../core-concepts/authentication/api-keys.md).
 
 ***
 
