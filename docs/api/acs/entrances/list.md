@@ -290,6 +290,12 @@ ID of the connected account for which you want to retrieve all entrances.
 
 ---
 
+**`customer_key`** *String*
+
+Customer key for which you want to list entrances.
+
+---
+
 **`limit`** *Number*
 
 Maximum number of records to return per page.
