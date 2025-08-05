@@ -271,6 +271,12 @@ ID of the connected account by which you want to filter the list of access syste
 
 ---
 
+**`customer_key`** *String*
+
+Customer key for which you want to list access systems.
+
+---
+
 
 ## Response
 
