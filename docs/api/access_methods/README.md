@@ -101,6 +101,15 @@ Date and time at which the access method was created.
 
 ---
 
+**`customization_profile_id`** *UUID*
+
+ID of the customization profile associated with the access method.
+
+
+
+
+---
+
 **`display_name`** *String*
 
 Display name of the access method.

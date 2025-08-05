@@ -447,6 +447,12 @@ Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) 
 
 ---
 
+**`customization_profile_id`** *String*
+
+ID of the customization profile to apply to the Access Grant and its access methods.
+
+---
+
 **`device_ids`** *Array* *of UUIDs*
 
 Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to which access is being granted.

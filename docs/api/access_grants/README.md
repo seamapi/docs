@@ -109,6 +109,15 @@ Date and time at which the Access Grant was created.
 
 ---
 
+**`customization_profile_id`** *UUID*
+
+ID of the customization profile associated with the Access Grant.
+
+
+
+
+---
+
 **`display_name`** *String*
 
 Display name of the Access Grant.
