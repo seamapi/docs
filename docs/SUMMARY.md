@@ -145,10 +145,10 @@
 
 ## API Reference <a href="#api" id="api"></a>
 
-* [Overview](api-overview/overview.md)
-* [Installation](api-overview/installation.md)
-* [Authentication](api-overview/authentication.md)
-* [Pagination](api-overview/pagination.md)
+* [Overview](api/README.md)
+* [Installation](api/installation.md)
+* [Authentication](api/authentication.md)
+* [Pagination](api/pagination.md)
 * [Access Codes](api/access_codes/README.md)
   * [Create an Access Code](api/access_codes/create.md)
   * [Create Multiple Linked Access Codes](api/access_codes/create_multiple.md)

@@ -5,7 +5,7 @@
 The Seam SDK is [available for download on request](mailto:support@seam.co) and is fully documented. See the Seam [Android](https://android.seam.vc/) and [iOS](https://ios.seam.vc/documentation/seamsdk/seam) SDK reference documentation.
 
 {% hint style="info" %}
-You must also use the Seam API to perform server-side actions. Consequently, [install a Seam server-side SDK](../../../api-overview/installation.md) in the language of your choice if you have not done so already.
+You must also use the Seam API to perform server-side actions. Consequently, [install a Seam server-side SDK](../../../api/installation.md) in the language of your choice if you have not done so already.
 {% endhint %}
 
 {% tabs %}
