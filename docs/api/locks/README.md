@@ -2461,6 +2461,9 @@ Metadata for a Nuki device.
 
 Indicates whether it is currently possible to use offline access codes for the device.
 
+{% hint style="warning" %}
+**Deprecated**. use device.can_program_offline_access_codes
+{% endhint %}
 
 
 
@@ -2479,6 +2482,9 @@ Indicates whether the device is online.
 
 Indicates whether it is currently possible to use online access codes for the device.
 
+{% hint style="warning" %}
+**Deprecated**. use device.can_program_online_access_codes
+{% endhint %}
 
 
 
