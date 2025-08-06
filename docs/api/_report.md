@@ -15,6 +15,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/console/v1`: No undocumented message provided
+- `/seam/console/v1/timelines`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
 - `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/events`: No undocumented message provided
@@ -81,6 +82,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/seam/console/v1/get_resource_locator`: Internal endpoint for Console
+- `/seam/console/v1/timelines/get`: Internal endpoint for Console
 - `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
@@ -547,6 +549,7 @@ These items are deprecated.
 - `/bridges/get`: `bridge`
 - `/bridges/list`: `bridges`
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
+- `/seam/console/v1/timelines/get`: `timeline`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/customer/v1/settings/get`: `business_vertical`
