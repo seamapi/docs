@@ -19,9 +19,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`instant_key_id`** *String* (Required)
+**`instant_key_id`** *String*
 
 ID of the instant key to get.
+
+---
+
+**`instant_key_url`** *String*
+
+URL of the instant key to get.
 
 ---
 
