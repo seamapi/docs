@@ -282,6 +282,7 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 - <code>assa_abloy_vostio_key</code>
 - <code>salto_space_key</code>
 - <code>latch_access</code>
+- <code>dormakaba_ambiance_credential</code>
 </details>
 
 
