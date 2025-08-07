@@ -1179,10 +1179,6 @@ Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-met
 
 ---
 
-**`customer_ids`** *Array* *of UUIDs*
-
----
-
 **`customer_key`** *String*
 
 Customer key for which you want to list devices.
