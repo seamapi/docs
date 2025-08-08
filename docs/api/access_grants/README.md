@@ -173,6 +173,10 @@ Access methods that the user requested for the Access Grant.
 
 <details>
   <summary>Child Object Properties</summary>
+<strong><code>code</code></strong> <i>String</i>
+
+  Specific PIN code to use for this access method. Only applicable when mode is 'code'.
+
 <strong><code>created_access_method_ids</code></strong> <i>List</i> <i>of UUIDs</i>
 
   IDs of the access methods created for the requested access method.
