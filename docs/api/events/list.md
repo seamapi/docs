@@ -263,9 +263,9 @@ ID of the connected account for which you want to list events.
 
 ---
 
-**`customer_ids`** *Array* *of UUIDs*
+**`customer_key`** *String*
 
-IDs of the customers for which you want to list events.
+Customer key for which you want to list events.
 
 ---
 
