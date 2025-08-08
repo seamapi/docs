@@ -445,6 +445,12 @@ ID of the access system by which you want to filter the list of Access Grants.
 
 ---
 
+**`customer_key`** *String*
+
+Customer key for which you want to list access grants.
+
+---
+
 **`location_id`** *String*
 
 ---
