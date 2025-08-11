@@ -212,6 +212,12 @@ Number of encoders to return.
 
 ---
 
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
 
 ## Response
 
