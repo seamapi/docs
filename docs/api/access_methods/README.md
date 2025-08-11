@@ -191,6 +191,14 @@ An access method was issued.
 
 <summary>Properties</summary>
 
+<strong><code>access_grant_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of the access grants associated with this access method.
+
+<strong><code>access_grant_keys</code></strong> <i>List</i> <i>of Strings</i>
+
+  Keys of the access grants associated with this access method (if present).
+
 <strong><code>access_method_id</code></strong> <i>UUID</i>
 
   ID of the affected access method.
@@ -225,6 +233,14 @@ An access method was revoked.
 <details>
 
 <summary>Properties</summary>
+
+<strong><code>access_grant_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of the access grants associated with this access method.
+
+<strong><code>access_grant_keys</code></strong> <i>List</i> <i>of Strings</i>
+
+  Keys of the access grants associated with this access method (if present).
 
 <strong><code>access_method_id</code></strong> <i>UUID</i>
 
@@ -261,6 +277,14 @@ An access method representing a physical card requires encoding.
 
 <summary>Properties</summary>
 
+<strong><code>access_grant_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of the access grants associated with this access method.
+
+<strong><code>access_grant_keys</code></strong> <i>List</i> <i>of Strings</i>
+
+  Keys of the access grants associated with this access method (if present).
+
 <strong><code>access_method_id</code></strong> <i>UUID</i>
 
   ID of the affected access method.
@@ -296,6 +320,14 @@ An access method was deleted.
 
 <summary>Properties</summary>
 
+<strong><code>access_grant_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of the access grants associated with this access method.
+
+<strong><code>access_grant_keys</code></strong> <i>List</i> <i>of Strings</i>
+
+  Keys of the access grants associated with this access method (if present).
+
 <strong><code>access_method_id</code></strong> <i>UUID</i>
 
   ID of the affected access method.
@@ -330,6 +362,14 @@ An access method was reissued due to an Access Grant update.
 <details>
 
 <summary>Properties</summary>
+
+<strong><code>access_grant_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of the access grants associated with this access method.
+
+<strong><code>access_grant_keys</code></strong> <i>List</i> <i>of Strings</i>
+
+  Keys of the access grants associated with this access method (if present).
 
 <strong><code>access_method_id</code></strong> <i>UUID</i>
 
