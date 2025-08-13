@@ -47,6 +47,12 @@ List of common area keys to delete.
 
 ---
 
+**`customer_keys`** *Array* *of Strings*
+
+List of customer keys to delete all data for.
+
+---
+
 **`facility_keys`** *Array* *of Strings*
 
 List of facility keys to delete.
