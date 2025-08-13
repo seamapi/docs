@@ -1746,6 +1746,10 @@ Metadata for a Brivo device.
 <details>
   <summary>Child Properties</summary>
 
+  - <strong><code>activation_enabled</code></strong> <i>Boolean</i>
+  
+    Indicates whether the Brivo access point has activation (remote unlock) enabled.
+
   - <strong><code>device_name</code></strong> <i>String</i>
   
     Device name for a Brivo device.
