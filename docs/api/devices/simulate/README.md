@@ -32,6 +32,13 @@ This will set the corresponding `hub_disconnected` or
 IglooHome bridge offline in sandbox.
 
 
+[**`/devices/simulate/paid_subscription`**](./paid_subscription.md)
+
+Toggle the simulated Nuki Smart Hosting subscription for a device (sandbox only).
+Send `is_expired: true` to simulate an expired subscription, or `false` to simulate an active subscription.
+The actual device error is created/cleared by the poller after this state change.
+
+
 [**`/devices/simulate/remove`**](./remove.md)
 
 Simulates removing a device from Seam. Only applicable for [sandbox devices](../../../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](../../../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).
