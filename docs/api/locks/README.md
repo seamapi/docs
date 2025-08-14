@@ -178,6 +178,14 @@ A lock device resource.
 
 ---
 
+**`can_simulate_paid_subscription`** *Boolean*
+
+
+
+
+
+---
+
 **`can_simulate_removal`** *Boolean*
 
 

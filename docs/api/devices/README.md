@@ -417,6 +417,14 @@ A thermostat device resource.
 
 ---
 
+**`can_simulate_paid_subscription`** *Boolean*
+
+
+
+
+
+---
+
 **`can_simulate_removal`** *Boolean*
 
 
@@ -4477,6 +4485,14 @@ A device provider resource.
 ---
 
 **`can_simulate_hub_disconnection`** *Boolean*
+
+
+
+
+
+---
+
+**`can_simulate_paid_subscription`** *Boolean*
 
 
 
