@@ -345,6 +345,9 @@ Items that are intentionally undocumented are not included in this section.
     - `unstable_location_id`
 - `/devices/update`
     - `properties`
+- `/devices/simulate/paid_subscription`
+    - `device_id`
+    - `is_expired`
 - `/devices/unmanaged/list`
     - `exclude_if`
     - `include_if`
@@ -563,6 +566,7 @@ These items are deprecated.
 - `/customers/create_portal`
 - `/customers/delete_data`
 - `/customers/push_data`
+- `/devices/simulate/paid_subscription`
 - `/instant_keys/delete`
 - `/instant_keys/get`
 - `/instant_keys/list`
