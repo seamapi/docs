@@ -433,7 +433,34 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`requested_access_methods`** *Array* *of Objects* (Required)
 
+<details>
+
+<summary><b><code>code</code></b> <i>String</i></summary>
+
+Specific PIN code to use for this access method. Only applicable when mode is 'code'.
+
+</details>
+
 ---
+
+
+
+<details>
+
+<summary><b><code>mode</code></b> <i>Enum</i></summary>
+
+Access method mode. Supported values: `code`, `card`, `mobile_key`.
+
+Enum values:
+
+- <code>code</code>
+- <code>card</code>
+- <code>mobile_key</code>
+
+</details>
+
+---
+
 
 **`access_grant_key`** *String*
 

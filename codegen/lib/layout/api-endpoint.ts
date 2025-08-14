@@ -246,6 +246,13 @@ const mapBlueprintParamToEndpointParam = (
     ...(param.format === 'object' && {
       objectParameters: param.parameters.map(mapBlueprintParamToEndpointParam),
     }),
+
+    ...(param.format === 'list' &&
+      param.itemFormat === 'object' && {
+        objectParameters: param.itemParameters.map(
+          mapBlueprintParamToEndpointParam,
+        ),
+      }),
   }
 }
 

@@ -277,7 +277,28 @@ Name of the thermostat daily program.
 
 Array of thermostat daily program periods.
 
+<details>
+
+<summary><b><code>climate_preset_key</code></b> <i>String</i></summary>
+
+Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to activate at the `starts_at_time`.
+
+</details>
+
 ---
+
+
+
+<details>
+
+<summary><b><code>starts_at_time</code></b> <i>String</i></summary>
+
+Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+</details>
+
+---
+
 
 
 ## Response
