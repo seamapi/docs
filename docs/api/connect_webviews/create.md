@@ -531,6 +531,7 @@ Accepted device provider keys as an alternative to `provider_category`. Use this
 <summary>Enum values</summary>
 
 Possible enum values:
+- <code>hotek</code>
 - <code>dormakaba_community</code>
 - <code>legic_connect</code>
 - <code>akuvox</code>

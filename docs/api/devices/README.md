@@ -4531,6 +4531,7 @@ A device provider resource.
 <details>
 <summary>Enum values</summary>
 
+- <code>hotek</code>
 - <code>dormakaba_community</code>
 - <code>legic_connect</code>
 - <code>akuvox</code>

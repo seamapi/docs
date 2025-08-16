@@ -588,6 +588,7 @@ Array of [unmanaged\_devices](.)
   "errors": [],
   "is_managed": false,
   "location": { "location_name": "Front Door", "timezone": "America/New_York" },
+  "custom_metadata": { "id": "internalId1" },
   "properties": {
     "accessory_keypad": { "battery": { "level": 1 }, "is_connected": true },
     "battery": { "level": 1, "status": "full" },
