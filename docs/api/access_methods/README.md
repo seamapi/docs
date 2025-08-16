@@ -379,6 +379,10 @@ An access method was reissued due to an Access Grant update.
 
   ID of the affected access method.
 
+<strong><code>code</code></strong> <i>String</i>
+
+  The actual PIN code for code access methods (only present when mode is 'code').
+
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
