@@ -209,6 +209,23 @@ Errors associated with the [entrance](../../../capability-guides/access-systems/
 
 ---
 
+**`hotek_metadata`** *Object*
+
+Hotek-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>room_number</code></strong> <i>String</i>
+  
+    Room number of the entrance.
+
+</details>
+
+---
+
 **`latch_metadata`** *Object*
 
 Latch-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).

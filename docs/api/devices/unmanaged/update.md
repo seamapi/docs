@@ -148,7 +148,13 @@ ID of the unmanaged device that you want to update.
 
 ---
 
-**`is_managed`** *Boolean* (Required)
+**`custom_metadata`** *Object*
+
+Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs.
+
+---
+
+**`is_managed`** *Boolean*
 
 Indicates whether the device is managed. Set this parameter to `true` to convert an unmanaged device to managed.
 

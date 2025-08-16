@@ -34,6 +34,7 @@ An unmanaged device resource.
   "errors": [],
   "is_managed": false,
   "location": { "location_name": "Front Door", "timezone": "America/New_York" },
+  "custom_metadata": { "id": "internalId1" },
   "properties": {
     "accessory_keypad": { "battery": { "level": 1 }, "is_connected": true },
     "battery": { "level": 1, "status": "full" },
@@ -214,6 +215,15 @@ Unique identifier for the account associated with the device.
 **`created_at`** *Datetime*
 
 Date and time at which the device object was created.
+
+
+
+
+---
+
+**`custom_metadata`** *Record*
+
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](../../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), [connected account](../../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md), or [device](../../../core-concepts/devices/adding-custom-metadata-to-a-device.md), enables you to store custom information, like customer details or internal IDs from your application.
 
 
 
