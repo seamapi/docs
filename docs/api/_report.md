@@ -22,6 +22,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/portals`: No undocumented message provided
 - `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
+- `/seam/instant_key/v1/preview`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
@@ -92,6 +93,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/settings/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
+- `/seam/instant_key/v1/preview/get`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
@@ -287,6 +289,10 @@ Items that are intentionally undocumented are not included in this section.
 - `user_identity.full_name`
 - `workspace.connect_partner_name`
 - `workspace.connect_webview_customization`
+
+### Endpoints
+
+- `/seam/instant_key/v1/preview/get`
 
 ### Endpoint parameters
 
@@ -554,6 +560,7 @@ These items are deprecated.
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/customer/v1/settings/get`: `business_vertical`
+- `/seam/instant_key/v1/preview/get`: `instant_key_preview`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 - `/spaces/get_related`: `batch`
 - `/workspaces/find_anything`: `batch`
