@@ -305,8 +305,6 @@ Items that are intentionally undocumented are not included in this section.
     - `use_offline_access_code`
 - `/access_codes/delete`
     - `sync`
-- `/access_codes/list`
-    - `customer_ids`
 - `/access_codes/update`
     - `attempt_for_offline_device`
     - `sync`
