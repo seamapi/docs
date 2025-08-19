@@ -17,10 +17,10 @@
     "generate": "tsx codegen/smith.ts",
     "postgenerate": "npm run format",
     "typecheck": "tsc",
-    "lint": "eslint --ignore-path .prettierignore .",
+    "lint": "eslint .",
     "postlint": "prettier --check --ignore-path .prettierignore .",
     "format": "prettier --write --ignore-path .prettierignore .",
-    "preformat": "eslint --ignore-path .prettierignore --fix ."
+    "preformat": "eslint --fix ."
   },
   "engines": {
     "node": ">=22.11.0",

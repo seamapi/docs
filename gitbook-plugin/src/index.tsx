@@ -1,8 +1,8 @@
 import {
-  createIntegration,
   createComponent,
-  FetchEventCallback,
-  RuntimeContext,
+  createIntegration,
+  type FetchEventCallback,
+  type RuntimeContext,
 } from "@gitbook/runtime"
 
 type IntegrationContext = {} & RuntimeContext
@@ -11,8 +11,8 @@ type IntegrationBlockState = { content: string }
 type IntegrationAction = {}
 
 const handleFetchEvent: FetchEventCallback<IntegrationContext> = async (
-  request,
-  context
+  _request,
+  _context
 ) => {
   return new Response(
     `
@@ -82,7 +82,7 @@ const seamComponentBlock = createComponent<
 />`.trim(),
     }
   },
-  action: async (element, action, context) => {
+  action: async (_element, _action, _context) => {
     return {}
   },
   render: async (element, context) => {
