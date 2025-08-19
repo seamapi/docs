@@ -46,7 +46,7 @@ const formatJavascript = async (content: string): Promise<string> => {
 const formatPython = async (content: string): Promise<string> => {
   try {
     await commandExists('ruff')
-  } catch (err) {
+  } catch {
     // eslint-disable-next-line no-console
     console.warn('Skipping python formatting: ruff is not installed')
     return content
@@ -78,7 +78,7 @@ const formatRuby = async (content: string): Promise<string> => {
 const formatGo = async (content: string): Promise<string> => {
   try {
     await commandExists('gofmt')
-  } catch (err) {
+  } catch {
     // eslint-disable-next-line no-console
     console.warn('Skipping go formatting: gofmt is not installed')
     return content
