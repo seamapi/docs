@@ -294,7 +294,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 **`search`** *String*
 
-String for which to search. Filters returned credentials to include all records that satisfy a partial match using `code`, `card_number`, `acs_user_id` or `acs_credential_id`.
+String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.
 
 ---
 
