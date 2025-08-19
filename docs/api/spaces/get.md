@@ -164,6 +164,7 @@ seam spaces get --space_id "5f30970d-6ef5-4618-9e91-e701fbca6b63"
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
