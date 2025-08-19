@@ -294,6 +294,19 @@ Whether the portal is embedded in another application.
 
 ---
 
+**`landing_page`** *Object*
+
+Configuration for the landing page when the portal loads.
+
+<details>
+
+<summary><b><code>manage</code></b> <i>Object</i></summary>
+
+</details>
+
+---
+
+
 
 ## Response
 
