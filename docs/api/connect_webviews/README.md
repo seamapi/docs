@@ -265,6 +265,10 @@ A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) 
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with this connect webview, if any.
+
 <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.

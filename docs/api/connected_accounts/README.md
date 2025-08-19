@@ -604,6 +604,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with this connected account, if any.
+
 <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
