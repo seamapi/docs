@@ -1,4 +1,0 @@
-{
-  "root": true,
-  "extends": ["./node_modules/@seamapi/smith/dist/eslint.cjs"]
-}
