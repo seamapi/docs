@@ -37,6 +37,10 @@ Possible enum values:
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
+- <code>access_grants</code>
+- <code>access_methods</code>
+- <code>instant_keys</code>
+- <code>client_sessions</code>
 </details>
 
 ---
@@ -50,6 +54,10 @@ Possible enum values:
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
+- <code>access_grants</code>
+- <code>access_methods</code>
+- <code>instant_keys</code>
+- <code>client_sessions</code>
 </details>
 
 ---
