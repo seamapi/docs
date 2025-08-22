@@ -80,9 +80,9 @@ Date and time at which the [client session](../../core-concepts/authentication/c
 
 ---
 
-**`customer_id`** *UUID*
+**`customer_key`** *String*
 
-Customer ID associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Customer key associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
 
 
 
