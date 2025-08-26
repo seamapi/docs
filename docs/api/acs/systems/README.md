@@ -381,6 +381,7 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 - <code>legic_connect_credential_service</code>
 - <code>assa_abloy_vostio</code>
 - <code>assa_abloy_vostio_credential_service</code>
+- <code>hotek_site</code>
 </details>
 
 
@@ -471,6 +472,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 - <code>legic_connect_credential_service</code>
 - <code>assa_abloy_vostio</code>
 - <code>assa_abloy_vostio_credential_service</code>
+- <code>hotek_site</code>
 </details>
 
 
