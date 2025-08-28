@@ -283,6 +283,7 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 - <code>salto_space_key</code>
 - <code>latch_access</code>
 - <code>dormakaba_ambiance_credential</code>
+- <code>hotek_card</code>
 </details>
 
 
