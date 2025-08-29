@@ -142,6 +142,14 @@
     * [Connect Account Button](seam-components/react-components/connect-account-button.md)
   * [Make a Supported Devices Page](seam-components/make-a-supported-devices-page.md)
   * [Using User Identities to Scope Users' Device Access](ui-components/overview/using-user-identities-to-scope-users-device-access.md)
+* [Seam Mobile Components](ui-components/seam-mobile-components/README.md)
+  * [Seam Mobile Components for iOS](ui-components/seam-mobile-components/seam-mobile-components-for-ios/README.md)
+    * [Theming](ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/README.md)
+      * [Colors](ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/colors.md)
+      * [Fonts](ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/fonts.md)
+      * [Keycard styles](ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/keycard-styles.md)
+      * [Toast styles](ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/toast-styles.md)
+      * [UnlockCard styles](ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/unlockcard-styles.md)
 
 ## API Reference <a href="#api" id="api"></a>
 
