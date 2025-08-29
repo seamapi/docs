@@ -125,6 +125,8 @@ These items are intentionally undocumented.
     - `sync`: Only used internally.
 - `/access_codes/unmanaged/delete`
     - `sync`: Only used internally.
+- `/acs/credentials/create`
+    - `hotek_metadata`: in development
 - `/connect_webviews/create`
     - `device_selection_mode`: Not supported.
 - `/connected_accounts/delete`
@@ -326,6 +328,8 @@ Items that are intentionally undocumented are not included in this section.
 - `/access_methods/get_related`
     - `exclude`
     - `include`
+- `/acs/credentials/create`
+    - `hotek_metadata`
 - `/acs/encoders/simulate/next_credential_scan_will_fail`
     - `error_code`
     - `acs_credential_id_on_seam`
