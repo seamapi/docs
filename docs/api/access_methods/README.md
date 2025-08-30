@@ -219,6 +219,10 @@ An access method was issued.
 
   Value: `access_method.issued`
 
+<strong><code>is_backup_code</code></strong> <i>Boolean</i>
+
+  Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).
+
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
@@ -394,6 +398,10 @@ An access method was reissued due to an Access Grant update.
 <strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `access_method.reissued`
+
+<strong><code>is_backup_code</code></strong> <i>Boolean</i>
+
+  Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
