@@ -4,7 +4,7 @@ description: >-
   and Android devices and platforms.
 ---
 
-# Integrating into your Mobile Application
+# Integrating into Your Mobile Application
 
 ## Overview
 
@@ -16,5 +16,4 @@ We have designed the Seam mobile SDKs to provide the flexibility to support a ra
 4. The lock verifies the mobile key, confirms that the key can access this lock, and sends a success response back to the app.
 5. The lock successfully unlocks!
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Example of Unlock sequence in a Mobile App</p></figcaption></figure>
-
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption><p>Example of Unlock sequence in a Mobile App</p></figcaption></figure>
