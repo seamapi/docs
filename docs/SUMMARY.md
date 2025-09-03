@@ -121,10 +121,10 @@
 * [Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
 * [Seam Bridge](capability-guides/seam-bridge.md)
-* [Customer Portals](capability-guides/customer-management/README.md)
-  * [Customers](capability-guides/customer-management/customers.md)
-  * [Preview the customer portal in Console](capability-guides/customer-management/preview-the-customer-portal-in-console.md)
-  * [Integrate customer portal into your application](capability-guides/customer-management/integrate-customer-portal-into-your-application.md)
+* [Customer Portals](capability-guides/customer-portals/README.md)
+  * [Customers](capability-guides/customer-portals/customers.md)
+  * [Preview the customer portal in Console](capability-guides/customer-portals/preview-the-customer-portal-in-console.md)
+  * [Integrate customer portal into your application](capability-guides/customer-portals/integrate-customer-portal-into-your-application.md)
 * [Automations](capability-guides/automations.md)
 
 ## UI Components

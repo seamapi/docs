@@ -31,14 +31,14 @@ Automations rely on two core endpoints:
 
 Set up these resources in your Seam workspace:
 
-* [Customer](customer-management/) – identify who the automation belongs to with a `customer_key`.
+* [Customer](customer-portals/) – identify who the automation belongs to with a `customer_key`.
 * [Spaces](../core-concepts/mapping-your-resources-to-seam-resources.md) – represent the real-world units your customer manages (for example, _Room 101_ in a hotel, _Unit A_ in an apartment building, or _Studio 3_ in a gym). Automations should reference these spaces.
 * Devices or entrances – connect locks, thermostats, or other devices to each Space. For example, assign the door lock on _Room 101_ to the _Room 101_ Space.
 
 Automations use these resources to decide where and how to apply settings.
 
 {% hint style="success" %}
-Let customer configure their own accounts, Spaces, and devices with  [Customer Portals](customer-management/).
+Let customer configure their own accounts, Spaces, and devices with  [Customer Portals](customer-portals/).
 {% endhint %}
 
 ***
