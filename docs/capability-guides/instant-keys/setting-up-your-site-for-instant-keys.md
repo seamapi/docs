@@ -56,16 +56,20 @@ To use mobile keys with your access system, you may need to purchase licenses or
 
 ### **ASSA ABLOY Visionline**
 
-To use mobile keys with Visionline, you need the following licenses:
+To use Instant Keys with Visionline, please reach out to your local installer to purchase the following from Assa Abloy:
 
-* Mobile Key license
-* Web Services option code
+* A mobile key license linked to Seam's Assa Abloy tenant account: `SeamLabs-tenant.` Provide this account username when completing your purchase.
+* A web services option code.
+
+After you have purchased the items above from Assa Abloy, please reach out to Seam at [support@seam.co](mailto:support@seam.co). Include the Seam workspace ID you'll be using, so we can help finish setting up your workspace for Visionline Instant Keys.
 
 ### **ASSA ABLOY Vostio**
 
-To use mobile keys with Vostio, you need the following license:
+To use mobile keys with Vostio, you will need to purchase the following from Assa Abloy:
 
-* Mobile Key license
+* A mobile Key license for Seam's Assa Abloy tenant account called `SeamLabs-tenant`  — please provide this account name to Assa Abloy when completing your purchase&#x20;
+
+After you have purchased the items above from Assa Abloy, please reach out to Seam at [support@seam.co](mailto:support@seam.co). Include the Seam workspace ID you'll be using, so we can help finish setting up your workspace for Visionline Instant Keys.
 
 ### **Salto KS**
 
