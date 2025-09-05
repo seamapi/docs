@@ -426,6 +426,53 @@ Access to a particular door that was requested as part of an Access Grant was lo
 
 ---
 
+**`access_grant.access_times_changed`**
+
+An Access Grant's start or end time was changed.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>access_grant_id</code></strong> <i>UUID</i>
+
+  ID of the affected Access Grant.
+
+<strong><code>access_grant_key</code></strong> <i>String</i>
+
+  Key of the affected Access Grant (if present).
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>ends_at</code></strong> <i>String</i>
+
+  The new end time for the access grant.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `access_grant.access_times_changed`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>starts_at</code></strong> <i>String</i>
+
+  The new start time for the access grant.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
 ## Endpoints
 
 

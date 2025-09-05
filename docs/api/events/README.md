@@ -49,11 +49,13 @@ Type of event.
 - <code>access_grant.access_granted_to_all_doors</code>
 - <code>access_grant.access_granted_to_door</code>
 - <code>access_grant.access_to_door_lost</code>
+- <code>access_grant.access_times_changed</code>
 - <code>access_method.issued</code>
 - <code>access_method.revoked</code>
 - <code>access_method.card_encoding_required</code>
 - <code>access_method.deleted</code>
 - <code>access_method.reissued</code>
+- <code>access_method.code_changed</code>
 - <code>acs_system.connected</code>
 - <code>acs_system.added</code>
 - <code>acs_system.disconnected</code>
