@@ -329,7 +329,6 @@ Possible enum values:
 - <code>access_method.card_encoding_required</code>
 - <code>access_method.deleted</code>
 - <code>access_method.reissued</code>
-- <code>access_method.code_changed</code>
 - <code>acs_system.connected</code>
 - <code>acs_system.added</code>
 - <code>acs_system.disconnected</code>
