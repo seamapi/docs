@@ -606,11 +606,13 @@ These items are deprecated.
 - `event: access_grant.access_granted_to_all_doors`
 - `event: access_grant.access_granted_to_door`
 - `event: access_grant.access_to_door_lost`
+- `event: access_grant.access_times_changed`
 - `event: access_method.issued`
 - `event: access_method.revoked`
 - `event: access_method.card_encoding_required`
 - `event: access_method.deleted`
 - `event: access_method.reissued`
+- `event: access_method.code_changed`
 - `event: acs_system.connected`
 - `event: acs_system.added`
 - `event: acs_system.disconnected`
