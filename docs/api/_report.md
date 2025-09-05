@@ -612,7 +612,6 @@ These items are deprecated.
 - `event: access_method.card_encoding_required`
 - `event: access_method.deleted`
 - `event: access_method.reissued`
-- `event: access_method.code_changed`
 - `event: acs_system.connected`
 - `event: acs_system.added`
 - `event: acs_system.disconnected`

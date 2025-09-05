@@ -420,7 +420,7 @@ An access method was deleted.
 
 **`access_method.reissued`**
 
-An access method was reissued due to an Access Grant update.
+An access method was reissued.
 
 <details>
 
@@ -457,53 +457,6 @@ An access method was reissued due to an Access Grant update.
 <strong><code>is_backup_code</code></strong> <i>Boolean</i>
 
   Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).
-
-<strong><code>occurred_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event occurred.
-
-<strong><code>workspace_id</code></strong> <i>UUID</i>
-
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
-</details>
-
----
-
-**`access_method.code_changed`**
-
-An access method's PIN code was changed.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong><code>access_grant_ids</code></strong> <i>List</i> <i>of UUIDs</i>
-
-  IDs of the access grants associated with this access method.
-
-<strong><code>access_grant_keys</code></strong> <i>List</i> <i>of Strings</i>
-
-  Keys of the access grants associated with this access method (if present).
-
-<strong><code>access_method_id</code></strong> <i>UUID</i>
-
-  ID of the affected access method.
-
-<strong><code>code</code></strong> <i>String</i>
-
-  The new PIN code for code access methods (only present when mode is 'code').
-
-<strong><code>created_at</code></strong> <i>Datetime</i>
-
-  Date and time at which the event was created.
-
-<strong><code>event_id</code></strong> <i>UUID</i>
-
-  ID of the event.
-
-<strong><code>event_type</code></strong> <i>Enum</i>
-
-  Value: `access_method.code_changed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
