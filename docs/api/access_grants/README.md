@@ -6,6 +6,7 @@
 ## The access_grant Object
 
 - [Properties](./#properties)
+- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -231,12 +232,66 @@ ID of user identity to which the Access Grant gives access.
 
 ---
 
+[**`warnings`**](./#warnings) *List* *of Objects*
+
+Warnings associated with the [access grant](../../capability-guides/access-grants/README.md).
+
+
+
+
+The specific structure of each object in this list depends on the value of its `warning_code` field.
+
+Variants:
+<details>
+<summary><code>being_deleted</code></summary>
+
+Indicates that the [access grant](../../capability-guides/access-grants/README.md) is being deleted.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>being_deleted</code>
+  
+  
+</details>
+
+---
+
 **`workspace_id`** *UUID*
 
 ID of the Seam workspace associated with the Access Grant.
 
 
 
+
+---
+
+
+## Warnings
+
+**`being_deleted`**
+
+Indicates that the [access grant](../../capability-guides/access-grants/README.md) is being deleted.
 
 ---
 
