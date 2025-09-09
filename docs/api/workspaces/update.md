@@ -250,6 +250,12 @@ Success message for [Connect Webviews](../../core-concepts/connect-webviews/READ
 ---
 
 
+**`is_publishable_key_auth_enabled`** *Boolean*
+
+Indicates whether publishable key authentication is enabled for this workspace.
+
+---
+
 **`is_suspended`** *Boolean*
 
 Indicates whether the workspace is suspended.
