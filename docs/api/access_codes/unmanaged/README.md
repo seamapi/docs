@@ -1681,54 +1681,6 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
   
 </details>
 <details>
-<summary><code>invalid_credentials</code></summary>
-
-Indicates that the credentials provided were invalid.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>invalid_credentials</code>
-  
-  
-  ---
-
-  **`is_bridge_error`** *Boolean*
-  
-  
-  Indicates whether the error is related to [Seam Bridge](../../../capability-guides/seam-bridge.md).
-  
-  
-  ---
-
-  **`is_connected_account_error`** *Boolean*
-  
-  
-  Indicates whether the error is related specifically to the connected account.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>bridge_disconnected</code></summary>
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
@@ -2391,12 +2343,6 @@ Igloohome bridge has too many pending jobs in the queue.
 **`igloohome_offline_access_code_no_variance_available`**
 
 Lock has reached maximum amount of codes.
-
----
-
-**`invalid_credentials`**
-
-Indicates that the credentials provided were invalid.
 
 ---
 
