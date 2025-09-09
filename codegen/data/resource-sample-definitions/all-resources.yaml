@@ -815,6 +815,8 @@
       success_message: Your account has been successfully connected to Acme!
     is_sandbox: false
     is_suspended: false
+    is_publishable_key_auth_enabled: true
+    publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
     name: My Production Workspace
     workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
 - title: Sandbox Workspace
@@ -831,6 +833,8 @@
       success_message: Your account has been successfully connected to Acme!
     is_sandbox: true
     is_suspended: false
+    is_publishable_key_auth_enabled: true
+    publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
     name: My Sandbox Workspace
     workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
 - title: Space
@@ -1263,5 +1267,7 @@
       success_message: Your account has been successfully connected to Acme!
     is_sandbox: true
     is_suspended: false
+    is_publishable_key_auth_enabled: true
+    publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
     name: My Sandbox Workspace
     workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
