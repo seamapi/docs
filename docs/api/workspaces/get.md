@@ -32,6 +32,8 @@ await seam.workspaces.get();
   },
   "is_sandbox": true,
   "is_suspended": false,
+  "is_publishable_key_auth_enabled": true,
+  "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Sandbox Workspace",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
@@ -65,6 +67,8 @@ curl --include --request POST "https://connect.getseam.com/workspaces/get" \
     },
     "is_sandbox": true,
     "is_suspended": false,
+    "is_publishable_key_auth_enabled": true,
+    "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
     "name": "My Sandbox Workspace",
     "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
   }
@@ -97,6 +101,8 @@ Workspace(
     },
     is_sandbox=true,
     is_suspended=false,
+    is_publishable_key_auth_enabled=true,
+    publishable_key="seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
     name="My Sandbox Workspace",
     workspace_id="6a0b6282-6a98-4fef-811e-0904c485ac7a",
 )
@@ -129,6 +135,8 @@ seam.workspaces.get()
   },
   "is_sandbox" => true,
   "is_suspended" => false,
+  "is_publishable_key_auth_enabled" => true,
+  "publishable_key" => "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name" => "My Sandbox Workspace",
   "workspace_id" => "6a0b6282-6a98-4fef-811e-0904c485ac7a",
 }
@@ -162,6 +170,8 @@ $seam->workspaces->get();
     ],
     "is_sandbox" => true,
     "is_suspended" => false,
+    "is_publishable_key_auth_enabled" => true,
+    "publishable_key" => "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
     "name" => "My Sandbox Workspace",
     "workspace_id" => "6a0b6282-6a98-4fef-811e-0904c485ac7a",
 ];
@@ -193,6 +203,8 @@ seam workspaces get
   },
   "is_sandbox": true,
   "is_suspended": false,
+  "is_publishable_key_auth_enabled": true,
+  "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Sandbox Workspace",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
@@ -242,6 +254,8 @@ None
   },
   "is_sandbox": false,
   "is_suspended": false,
+  "is_publishable_key_auth_enabled": true,
+  "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Production Workspace",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }

@@ -8,6 +8,8 @@
       company_name: Acme
       connect_partner_name: Acme
       is_sandbox: true
+      is_publishable_key_auth_enabled: true
+      publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
       webview_primary_button_color: '#232426'
       webview_primary_button_text_color: '#FFFDE7'
       webview_logo_shape: circle
@@ -30,6 +32,8 @@
           primary_button_text_color: '#FFFDE7'
           success_message: Your account has been successfully connected to Acme!
         is_sandbox: true
+        is_publishable_key_auth_enabled: true
+        publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
         is_suspended: false
         name: My Sandbox Workspace
         workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
@@ -42,6 +46,8 @@
       company_name: Acme
       connect_partner_name: Acme
       is_sandbox: false
+      is_publishable_key_auth_enabled: true
+      publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
       webview_primary_button_color: '#232426'
       webview_primary_button_text_color: '#FFFDE7'
       webview_logo_shape: circle
@@ -65,6 +71,8 @@
           success_message: Your account has been successfully connected to Acme!
         is_sandbox: true
         is_suspended: false
+        is_publishable_key_auth_enabled: true
+        publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
         name: My Sandbox Workspace
         workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
 - title: Get a workspace
@@ -84,6 +92,8 @@
           success_message: Your account has been successfully connected to Acme!
         is_sandbox: true
         is_suspended: false
+        is_publishable_key_auth_enabled: true
+        publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
         name: My Sandbox Workspace
         workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
 - title: List workspacess
@@ -103,6 +113,8 @@
             success_message: Your account has been successfully connected to Acme!
           is_sandbox: true
           is_suspended: false
+          is_publishable_key_auth_enabled: true
+          publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE'
           name: My Sandbox Workspace
           workspace_id: 6a0b6282-6a98-4fef-811e-0904c485ac7a
 - title: Reset a sandbox workspace

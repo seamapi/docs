@@ -26,6 +26,8 @@ A production workspace resource.
   },
   "is_sandbox": false,
   "is_suspended": false,
+  "is_publishable_key_auth_enabled": true,
+  "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Production Workspace",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
@@ -48,6 +50,8 @@ A sandbox workspace resource.
   },
   "is_sandbox": true,
   "is_suspended": false,
+  "is_publishable_key_auth_enabled": true,
+  "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Sandbox Workspace",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
@@ -70,6 +74,8 @@ A workspace resource.
   },
   "is_sandbox": true,
   "is_suspended": false,
+  "is_publishable_key_auth_enabled": true,
+  "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Sandbox Workspace",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
@@ -138,6 +144,15 @@ Company name associated with the [workspace](../../core-concepts/workspaces/READ
 
 ---
 
+**`is_publishable_key_auth_enabled`** *Boolean*
+
+Indicates whether publishable key authentication is enabled for this workspace.
+
+
+
+
+---
+
 **`is_sandbox`** *Boolean*
 
 Indicates whether the workspace is a [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-workspaces).
@@ -159,6 +174,15 @@ Indicates whether the [sandbox workspace](../../core-concepts/workspaces/README.
 **`name`** *String*
 
 Name of the [workspace](../../core-concepts/workspaces/README.md).
+
+
+
+
+---
+
+**`publishable_key`** *String*
+
+Publishable key for the [workspace](../../core-concepts/workspaces/README.md). This key is used to identify the workspace in client-side applications.
 
 
 
