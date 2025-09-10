@@ -1105,6 +1105,46 @@ No valid user level for Oracode.
   
 </details>
 <details>
+<summary><code>kwikset_insufficient_permissions</code></summary>
+
+Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>kwikset_insufficient_permissions</code>
+  
+  
+  ---
+
+  **`is_access_code_error`** *Boolean*
+  
+  
+  Indicates that this is an access code error.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
 <summary><code>account_disconnected</code></summary>
 
 Indicates that the account is disconnected.
@@ -2343,6 +2383,12 @@ Igloohome bridge has too many pending jobs in the queue.
 **`igloohome_offline_access_code_no_variance_available`**
 
 Lock has reached maximum amount of codes.
+
+---
+
+**`kwikset_insufficient_permissions`**
+
+Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.
 
 ---
 
