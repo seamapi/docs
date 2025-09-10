@@ -91,6 +91,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/reservations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
@@ -563,6 +564,7 @@ These items are deprecated.
 - `/seam/console/v1/timelines/get`: `timeline`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/portals/get`: `customer_portal`
+- `/seam/customer/v1/reservations/get`: `reservation`
 - `/seam/customer/v1/reservations/list`: `reservations`
 - `/seam/customer/v1/settings/get`: `business_vertical`
 - `/seam/instant_key/v1/preview/get`: `instant_key_preview`
