@@ -639,6 +639,7 @@ These items are deprecated.
 - `event: connected_account.completed_first_sync`
 - `event: connected_account.deleted`
 - `event: connected_account.completed_first_sync_after_reconnection`
+- `event: connected_account.reauthorization_requested`
 - `event: action_attempt.lock_door.succeeded`
 - `event: action_attempt.lock_door.failed`
 - `event: action_attempt.unlock_door.succeeded`

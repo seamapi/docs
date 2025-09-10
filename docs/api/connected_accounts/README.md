@@ -478,6 +478,38 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   
   
 </details>
+<details>
+<summary><code>account_reauthorization_requested</code></summary>
+
+Indicates that the Connected Account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>account_reauthorization_requested</code>
+  
+  
+</details>
 
 ---
 
@@ -504,6 +536,12 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 
 ## Warnings
+
+**`account_reauthorization_requested`**
+
+Indicates that the Connected Account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+
+---
 
 **`salto_ks_subscription_limit_almost_reached`**
 
@@ -803,6 +841,45 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 <strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `connected_account.completed_first_sync_after_reconnection`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`connected_account.reauthorization_requested`**
+
+A [connected account](../../core-concepts/connected-accounts/README.md) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `connected_account.reauthorization_requested`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 

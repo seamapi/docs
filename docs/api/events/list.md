@@ -351,6 +351,7 @@ Possible enum values:
 - <code>connected_account.completed_first_sync</code>
 - <code>connected_account.deleted</code>
 - <code>connected_account.completed_first_sync_after_reconnection</code>
+- <code>connected_account.reauthorization_requested</code>
 - <code>action_attempt.lock_door.succeeded</code>
 - <code>action_attempt.lock_door.failed</code>
 - <code>action_attempt.unlock_door.succeeded</code>
