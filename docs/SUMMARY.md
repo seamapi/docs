@@ -125,7 +125,7 @@
   * [Customers](capability-guides/customer-portals/customers.md)
   * [Preview the customer portal in Console](capability-guides/customer-portals/preview-the-customer-portal-in-console.md)
   * [Integrate customer portal into your application](capability-guides/customer-portals/integrate-customer-portal-into-your-application.md)
-* [Automations](capability-guides/automations.md)
+* [Reservation Automations](capability-guides/automations.md)
 
 ## UI Components
 
