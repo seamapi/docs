@@ -31,6 +31,7 @@ A lock device resource.
   "capabilities_supported": ["access_code", "lock"],
   "connected_account_id": "8e3a4f1b-2c7d-4a9e-8b5f-3d2c1a0b9e8f",
   "created_at": "2025-03-27T02:08:16.418Z",
+  "space_ids": [],
   "custom_metadata": { "id": "internalId1" },
   "device_id": "a69569e1-133b-4a9d-b883-018641bfe543",
   "device_type": "schlage_lock",

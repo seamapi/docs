@@ -264,6 +264,7 @@ ID of the entrance that you want to get.
   "created_at": "2025-06-15T16:54:17.946495Z",
   "display_name": "Main Entrance",
   "errors": [],
+  "space_ids": [],
   "visionline_metadata": {
     "door_category": "guest",
     "door_name": "Main Entrance",

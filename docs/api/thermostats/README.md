@@ -44,6 +44,7 @@ A thermostat device resource.
   "display_name": "Living Room",
   "errors": [],
   "is_managed": true,
+  "space_ids": [],
   "location": {
     "location_name": "2948 20th St, San Francisco, CA, 94110, US",
     "timezone": "America/Los_Angeles"

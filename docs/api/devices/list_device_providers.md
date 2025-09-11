@@ -214,6 +214,7 @@ Array of [device\_providers](.)
   "device_provider_name": "akiles",
   "display_name": "Akiles",
   "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
+  "space_ids": [],
   "provider_categories": ["stable", "consumer_smartlocks"]
 }
 ```
