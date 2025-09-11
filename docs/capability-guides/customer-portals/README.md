@@ -12,7 +12,7 @@ description: Allow your customers to manage their own devices and systems.
 
 Provide self-service functions to your customers by setting up a customer portal. You can configure it entirely in the Console, or use our API to automate generating the portal.
 
-You can extend the portal experience with [Seam access and climate automations](../automations.md). When a customer books a stay, reserves a gym slot, or schedules a visit, automations automatically issue and revoke access or adjust climate settings. You create and manage them in the Console.
+You can extend the portal experience with [Seam access and climate automations](../reservation-automations.md). When a customer books a stay, reserves a gym slot, or schedules a visit, automations automatically issue and revoke access or adjust climate settings. You create and manage them in the Console.
 
 ### Get started with the customer portal
 
