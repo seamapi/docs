@@ -18,11 +18,11 @@ You should already have a Seam workspace and API key set up. If you’re new to 
 
 ### Installation
 
-Add the Seam Mobile Components package via Swift Package Manager:
+Add the [Seam Mobile Components](https://github.com/seamapi/ios) package via Swift Package Manager:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/seamapi/SeamComponents", from: "1.0.0")
+    .package(url: "https://github.com/seamapi/iOS", from: "1.0.0")
 ]
 ```
 
