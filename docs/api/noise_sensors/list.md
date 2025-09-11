@@ -717,6 +717,7 @@ Array of [devices](./../devices)
   "display_name": "Living Room",
   "errors": [],
   "is_managed": true,
+  "space_ids": [],
   "location": {
     "location_name": "Jane's Test Home",
     "timezone": "America/Los_Angeles"
