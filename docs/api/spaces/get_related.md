@@ -14,7 +14,6 @@ Gets all related resources for one or more Spaces.
 <summary>Authentication Methods</summary>
 
 - API key
-- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
