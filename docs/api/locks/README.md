@@ -971,6 +971,15 @@ Optional nickname to describe the device, settable through Seam.
 
 ---
 
+**`space_ids`** *List* *of UUIDs*
+
+IDs of the spaces the device is in.
+
+
+
+
+---
+
 [**`warnings`**](./#warnings) *List* *of Objects*
 
 Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.
