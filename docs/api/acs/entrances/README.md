@@ -182,10 +182,6 @@ dormakaba Community-specific metadata associated with the [entrance](../../../ca
 <details>
   <summary>Child Properties</summary>
 
-  - <strong><code>access_point_name</code></strong> <i>String</i>
-  
-    Name of the access point in the dormakaba Community access system.
-
   - <strong><code>access_point_profile</code></strong> <i>String</i>
   
     Type of access point profile in the dormakaba Community access system.
