@@ -150,9 +150,15 @@ ID of the access system user that you want to add to the user identity.
 
 ---
 
-**`user_identity_id`** *String* (Required)
+**`user_identity_id`** *String*
 
 ID of the user identity to which you want to add an access system user.
+
+---
+
+**`user_identity_key`** *String*
+
+Key of the user identity to which you want to add an access system user.
 
 ---
 
