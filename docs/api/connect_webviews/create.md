@@ -617,6 +617,12 @@ Optional unique string key that can be used to identify the customer. If provide
 
 ---
 
+**`excluded_providers`** *Array* *of Strings*
+
+List of provider keys to exclude from the Connect Webview. These providers will not be shown when the user tries to connect an account.
+
+---
+
 **`provider_category`** *String*
 
 Specifies the category of providers that you want to include. To list all providers within a category, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with the desired `provider_category` filter.
