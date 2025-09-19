@@ -106,6 +106,30 @@ An unmanaged device resource.
 
 ---
 
+**`can_program_thermostat_programs_as_different_each_day`** *Boolean*
+
+
+
+
+
+---
+
+**`can_program_thermostat_programs_as_same_each_day`** *Boolean*
+
+
+
+
+
+---
+
+**`can_program_thermostat_programs_as_weekday_weekend`** *Boolean*
+
+
+
+
+
+---
+
 **`can_remotely_lock`** *Boolean*
 
 
