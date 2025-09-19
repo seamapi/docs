@@ -2865,6 +2865,15 @@ Maximum number of periods that the thermostat can support per day. For example, 
 
 ---
 
+**`max_unique_climate_presets_per_thermostat_weekly_program`** *Number*
+
+Maximum number of climate presets that the thermostat can support for weekly programming.
+
+
+
+
+---
+
 **`min_cooling_set_point_celsius`** *Number*
 
 Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
