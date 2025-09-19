@@ -232,6 +232,9 @@ Items that are intentionally undocumented are not included in this section.
 - `device.can_hvac_heat_cool`
 - `device.can_program_offline_access_codes`
 - `device.can_program_online_access_codes`
+- `device.can_program_thermostat_programs_as_different_each_day`
+- `device.can_program_thermostat_programs_as_same_each_day`
+- `device.can_program_thermostat_programs_as_weekday_weekend`
 - `device.can_remotely_lock`
 - `device.can_remotely_unlock`
 - `device.can_run_thermostat_programs`
@@ -248,6 +251,9 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.can_hvac_heat_cool`
 - `device_provider.can_program_offline_access_codes`
 - `device_provider.can_program_online_access_codes`
+- `device_provider.can_program_thermostat_programs_as_different_each_day`
+- `device_provider.can_program_thermostat_programs_as_same_each_day`
+- `device_provider.can_program_thermostat_programs_as_weekday_weekend`
 - `device_provider.can_remotely_lock`
 - `device_provider.can_remotely_unlock`
 - `device_provider.can_run_thermostat_programs`
@@ -278,6 +284,9 @@ Items that are intentionally undocumented are not included in this section.
 - `unmanaged_device.can_hvac_heat_cool`
 - `unmanaged_device.can_program_offline_access_codes`
 - `unmanaged_device.can_program_online_access_codes`
+- `unmanaged_device.can_program_thermostat_programs_as_different_each_day`
+- `unmanaged_device.can_program_thermostat_programs_as_same_each_day`
+- `unmanaged_device.can_program_thermostat_programs_as_weekday_weekend`
 - `unmanaged_device.can_remotely_lock`
 - `unmanaged_device.can_remotely_unlock`
 - `unmanaged_device.can_run_thermostat_programs`
