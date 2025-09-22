@@ -745,46 +745,6 @@ Access code has not yet been fully moved to the device.
   
 </details>
 <details>
-<summary><code>august_device_slots_full</code></summary>
-
-All access code slots on the device are full.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>august_device_slots_full</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>august_lock_missing_keypad</code></summary>
 
 August lock is missing a keypad.
@@ -2245,12 +2205,6 @@ Indicates that the account is disconnected.
 **`august_device_programming_delay`**
 
 Access code has not yet been fully moved to the device.
-
----
-
-**`august_device_slots_full`**
-
-All access code slots on the device are full.
 
 ---
 
