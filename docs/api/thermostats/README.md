@@ -68,7 +68,7 @@ A thermostat device resource.
         "climate_preset_key": "sleep",
         "can_edit": true,
         "can_delete": true,
-        "can_program": false,
+        "can_use_with_thermostat_daily_programs": false,
         "name": "Sleep",
         "display_name": "Sleep",
         "fan_mode_setting": "auto",
@@ -83,7 +83,7 @@ A thermostat device resource.
         "climate_preset_key": "home",
         "can_edit": true,
         "can_delete": true,
-        "can_program": false,
+        "can_use_with_thermostat_daily_programs": false,
         "name": "Home",
         "display_name": "Home",
         "fan_mode_setting": "auto",
@@ -98,7 +98,7 @@ A thermostat device resource.
         "climate_preset_key": "work",
         "can_edit": true,
         "can_delete": true,
-        "can_program": false,
+        "can_use_with_thermostat_daily_programs": false,
         "name": "Work",
         "display_name": "Work",
         "fan_mode_setting": "auto",
@@ -1911,7 +1911,7 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
 
   Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
 
-<strong><code>can_program</code></strong> <i>Boolean</i>
+<strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
 
   Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
 
@@ -2137,7 +2137,7 @@ Current climate setting.
   
     Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
 
-  - <strong><code>can_program</code></strong> <i>Boolean</i>
+  - <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
   
     Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
 
@@ -2260,7 +2260,7 @@ Current climate setting.
   
     Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
 
-  - <strong><code>can_program</code></strong> <i>Boolean</i>
+  - <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
   
     Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
 

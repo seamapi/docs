@@ -909,7 +909,7 @@
         - climate_preset_key: sleep
           can_edit: true
           can_delete: true
-          can_program: false
+          can_use_with_thermostat_daily_programs: false
           name: Sleep
           display_name: Sleep
           fan_mode_setting: auto
@@ -922,7 +922,7 @@
         - climate_preset_key: home
           can_edit: true
           can_delete: true
-          can_program: false
+          can_use_with_thermostat_daily_programs: false
           name: Home
           display_name: Home
           fan_mode_setting: auto
@@ -935,7 +935,7 @@
         - climate_preset_key: work
           can_edit: true
           can_delete: true
-          can_program: false
+          can_use_with_thermostat_daily_programs: false
           name: Work
           display_name: Work
           fan_mode_setting: auto
