@@ -440,6 +440,8 @@ These items have been marked as draft.
 ### Routes
 
 - `/access_grants`: No draft message provided
+- `/access_grants/unmanaged`: No draft message provided
+- `/access_methods/unmanaged`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -450,10 +452,14 @@ These items have been marked as draft.
 - `/access_grants/get_related`: Early access.
 - `/access_grants/list`: Early access.
 - `/access_grants/update`: Early access.
+- `/access_grants/unmanaged/get`: Early access.
+- `/access_grants/unmanaged/list`: Early access.
 - `/access_methods/delete`: Early access.
 - `/access_methods/get`: Early access.
 - `/access_methods/get_related`: Early access.
 - `/access_methods/list`: Early access.
+- `/access_methods/unmanaged/get`: Early access.
+- `/access_methods/unmanaged/list`: Early access.
 - `/spaces/add_acs_entrances`: Early access.
 - `/spaces/add_devices`: Early access.
 - `/spaces/create`: Early access.
@@ -566,7 +572,11 @@ These items are deprecated.
 ### Missing resources
 
 - `/access_grants/get_related`: `batch`
+- `/access_grants/unmanaged/get`: `access_grant`
+- `/access_grants/unmanaged/list`: `access_grants`
 - `/access_methods/get_related`: `batch`
+- `/access_methods/unmanaged/get`: `access_method`
+- `/access_methods/unmanaged/list`: `access_methods`
 - `/bridges/get`: `bridge`
 - `/bridges/list`: `bridges`
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
@@ -579,13 +589,19 @@ These items are deprecated.
 - `/seam/instant_key/v1/preview/get`: `instant_key_preview`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 - `/spaces/get_related`: `batch`
+- `/user_identities/unmanaged/get`: `user_identity`
+- `/user_identities/unmanaged/list`: `user_identities`
 - `/workspaces/find_anything`: `batch`
 
 ### Endpoints without code samples
 
 - `/access_grants/get_related`
+- `/access_grants/unmanaged/get`
+- `/access_grants/unmanaged/list`
 - `/access_methods/encode`
 - `/access_methods/get_related`
+- `/access_methods/unmanaged/get`
+- `/access_methods/unmanaged/list`
 - `/customers/create_portal`
 - `/customers/delete_data`
 - `/customers/push_data`
@@ -595,6 +611,8 @@ These items are deprecated.
 - `/instant_keys/list`
 - `/locks/get`
 - `/spaces/get_related`
+- `/user_identities/unmanaged/get`
+- `/user_identities/unmanaged/list`
 
 ### Resources without resource samples
 
