@@ -207,6 +207,12 @@ IDs of the entrances that you want to add to the new space.
 
 ---
 
+**`customer_key`** *String*
+
+Customer key for which you want to create the space.
+
+---
+
 **`device_ids`** *Array* *of UUIDs*
 
 IDs of the devices that you want to add to the new space.
