@@ -189,7 +189,7 @@ Custom metadata that you want to associate with the connected account. Entirely 
 
 **`customer_key`** *String*
 
-The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer.
+The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer.
 
 ---
 

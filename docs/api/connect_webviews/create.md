@@ -613,7 +613,7 @@ URL that you want to redirect the user to after the provider login is complete.
 
 **`customer_key`** *String*
 
-Optional unique string key that can be used to identify the customer. If provided, the customer will be created or retrieved based on this key.
+Associate the Connect Webview, the connected account, and all resources under the connected account with a customer. If the connected account already exists, it will be associated with the customer. If the connected account already exists, but is already associated with a customer, the Connect Webview will show an error.
 
 ---
 
