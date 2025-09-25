@@ -50,13 +50,14 @@ These items are intentionally undocumented.
 - `acs_user.last_successful_sync_at`: Only used internally.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
+- `space.parent_space_id`: Only used internally.
+- `space.parent_space_key`: Only used internally.
 - `unmanaged_acs_user.last_successful_sync_at`: Only used internally.
 
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
 - `/seam/console`: No undocumented message provided
-- `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
 - `/seam/mobile_sdk/v1`: No undocumented message provided
@@ -270,6 +271,8 @@ Items that are intentionally undocumented are not included in this section.
 - `device_provider.image_url`
 - `device_provider.provider_categories`
 - `event.event_type`
+- `space.parent_space_id`
+- `space.parent_space_key`
 - `unmanaged_acs_access_group.access_group_type`
 - `unmanaged_acs_access_group.access_group_type_display_name`
 - `unmanaged_acs_access_group.display_name`
@@ -442,6 +445,7 @@ These items have been marked as draft.
 - `/access_grants`: No draft message provided
 - `/access_grants/unmanaged`: No draft message provided
 - `/access_methods/unmanaged`: No draft message provided
+- `/seam/customer/v1/spaces`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -460,6 +464,7 @@ These items have been marked as draft.
 - `/access_methods/list`: Early access.
 - `/access_methods/unmanaged/get`: Early access.
 - `/access_methods/unmanaged/list`: Early access.
+- `/seam/customer/v1/spaces/create`: Early access.
 - `/spaces/add_acs_entrances`: Early access.
 - `/spaces/add_devices`: Early access.
 - `/spaces/create`: Early access.
@@ -610,6 +615,7 @@ These items are deprecated.
 - `/instant_keys/get`
 - `/instant_keys/list`
 - `/locks/get`
+- `/seam/customer/v1/spaces/create`
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
