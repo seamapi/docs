@@ -520,6 +520,18 @@ Your display name for this location resource.
 ---
 
 
+
+<details>
+
+<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+
+Your unique identifier for the site.
+
+</details>
+
+---
+
+
 **`facilities`** *Array* *of Objects*
 
 List of gym or fitness facilities.
@@ -967,9 +979,48 @@ Your display name for this location resource.
 
 <details>
 
+<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+
+Your unique identifier for the site.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>room_key</code></b> <i>String</i></summary>
 
 Your unique identifier for the room.
+
+</details>
+
+---
+
+
+**`sites`** *Array* *of Objects*
+
+List of general sites or areas.
+
+<details>
+
+<summary><b><code>name</code></b> <i>String</i></summary>
+
+Your display name for this location resource.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>site_key</code></b> <i>String</i></summary>
+
+Your unique identifier for the site.
 
 </details>
 
@@ -1063,6 +1114,18 @@ List of multi-family residential units.
 <summary><b><code>name</code></b> <i>String</i></summary>
 
 Your display name for this location resource.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+
+Your unique identifier for the site.
 
 </details>
 

@@ -182,6 +182,18 @@ List of hotel or hospitality rooms.
 
 <details>
 
+<summary><b><code>sites</code></b> <i>List</i></summary>
+
+List of general sites or areas.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>spaces</code></b> <i>List</i></summary>
 
 List of general spaces or areas.
