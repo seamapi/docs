@@ -159,6 +159,8 @@ These items are intentionally undocumented.
     - `is_programmed`: Not sure if this parameter is supported or what it does.
 - `/noise_sensors/noise_thresholds/update`
     - `sync`: Only used internally.
+- `/seam/customer/v1/spaces/list`
+    - `connected_account_id`: Only used internally.
 - `/spaces/list`
     - `connected_account_id`: Only used internally.
 - `/thermostats/cool`
@@ -465,6 +467,7 @@ These items have been marked as draft.
 - `/access_methods/unmanaged/get`: Early access.
 - `/access_methods/unmanaged/list`: Early access.
 - `/seam/customer/v1/spaces/create`: Early access.
+- `/seam/customer/v1/spaces/list`: Early access.
 - `/spaces/add_acs_entrances`: Early access.
 - `/spaces/add_devices`: Early access.
 - `/spaces/create`: Early access.
@@ -478,6 +481,8 @@ These items have been marked as draft.
 
 ### Endpoint parameters
 
+- `/seam/customer/v1/spaces/list`
+    - `connected_account_id`: Needs review.
 - `/spaces/list`
     - `connected_account_id`: Needs review.
 
@@ -616,6 +621,7 @@ These items are deprecated.
 - `/instant_keys/list`
 - `/locks/get`
 - `/seam/customer/v1/spaces/create`
+- `/seam/customer/v1/spaces/list`
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
