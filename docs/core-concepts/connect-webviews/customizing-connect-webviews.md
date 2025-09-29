@@ -38,9 +38,7 @@ To customize the look and feel of your Connect Webviews:
 3. On the **Webviews** page, click **Configure your webview**.
 4.  In the **Customize your Webview** pane, configure any of the following features:
 
-    <table><thead><tr><th width="229">Feature</th><th>Instructions</th></tr></thead><tbody><tr><td>Inviter name</td><td><ol><li>In the <strong>Inviter Name</strong> area, click <strong>Edit</strong>.</li><li>Type the desired inviter name and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Logo</td><td><ol><li>In the <strong>Logo</strong> area, click <strong>Upload new logo</strong>.</li><li>Navigate to and select the image file that contains the desired logo.<br>The image file size cannot exceed 1 MB.</li><li>Click <strong>Open</strong>.</li></ol></td></tr><tr><td>Logo shape</td><td><ol><li>In the <strong>Logo Shape</strong> area, click <strong>Edit</strong>.</li><li>Select <strong>Circle</strong> or <strong>Square</strong> and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Primary button style</td><td><ol><li>In the <strong>Primary Button Style</strong> area, click <strong>Edit</strong>.</li><li>Click the <strong>Button Background Color</strong> field and specify the desired color. Default:  <code>#232426</code> (almost black).</li><li>Click the <strong>Button Text Color</strong> field and specify the desired color. Default: <code>#ffffff</code> (white).</li><li>Click <strong>Save</strong>.</li></ol></td></tr><tr><td>Success message</td><td><ol><li>In the <strong>Success Message</strong> area, click <strong>Edit</strong>.</li><li><p>In the <strong>Message</strong> field, type the desired success message.</p><p>To reset the success message, click <strong>Clear</strong>.</p></li><li>Click <strong>Save</strong>.</li></ol></td></tr></tbody></table>
-
-
+    <table><thead><tr><th width="229">Feature</th><th>Instructions</th></tr></thead><tbody><tr><td>Inviter name</td><td><ol><li>In the <strong>Inviter Name</strong> area, click <strong>Edit</strong>.</li><li>Type the desired inviter name and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Logo</td><td><ol><li>In the <strong>Logo</strong> area, click <strong>Upload new logo</strong>.</li><li>Navigate to and select the image file that contains the desired logo.<br>The image file size cannot exceed 1 MB.</li><li>Click <strong>Open</strong>.</li></ol></td></tr><tr><td>Logo shape</td><td><ol><li>In the <strong>Logo Shape</strong> area, click <strong>Edit</strong>.</li><li>Select <strong>Circle</strong> or <strong>Square</strong> and then click <strong>Save</strong>.</li></ol></td></tr><tr><td>Primary button style</td><td><ol><li>In the <strong>Primary Button Style</strong> area, click <strong>Edit</strong>.</li><li>Click the <strong>Button Background Color</strong> field and specify the desired color. Default: <code>#232426</code> (almost black).</li><li>Click the <strong>Button Text Color</strong> field and specify the desired color. Default: <code>#ffffff</code> (white).</li><li>Click <strong>Save</strong>.</li></ol></td></tr><tr><td>Success message</td><td><ol><li>In the <strong>Success Message</strong> area, click <strong>Edit</strong>.</li><li><p>In the <strong>Message</strong> field, type the desired success message.</p><p>To reset the success message, click <strong>Clear</strong>.</p></li><li>Click <strong>Save</strong>.</li></ol></td></tr></tbody></table>
 
 ***
 
@@ -61,13 +59,14 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Brivo](../../device-guides/brivo-access.md)                                                                                           | `brivo`                         |
 | [ControlByWeb](../../device-guides/get-started-with-controlbyweb-devices.md)                                                           | `controlbyweb`                  |
 | [DoorKing](https://www.doorking.com/)                                                                                                  | `doorking`                      |
-| [dormakaba Oracode](../../device-guides/dormakaba-oracode-locks.md)                                                                    | `dormakaba_oracode`             |
+| [Dormakaba Community](../../device-and-system-integration-guides/latch-access-control-system/)                                         | `dormakaba_community`           |
+| [Dormakaba Oracode](../../device-guides/dormakaba-oracode-locks.md)                                                                    | `dormakaba_oracode`             |
 | [ecobee](../../device-guides/ecobee-thermostats.md)                                                                                    | `ecobee`                        |
 | [Genie Aladdin Connect](https://www.geniecompany.com/aladdin-connect-by-genie)                                                         | `genie`                         |
 | [Honeywell Resideo](../../device-and-system-integration-guides/honeywell-thermostats/)                                                 | `honeywell_resideo`             |
 | [igloohome](../../device-guides/igloohome-locks.md)                                                                                    | `igloohome`                     |
 | [Kwikset](../../device-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
-| [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                                       | `latch`                         |
+| [Latch](../../device-and-system-integration-guides/latch-access-control-system-1/)                                                     | `latch`                         |
 | [Linear](https://linear-solutions.com/)                                                                                                | `linear`                        |
 | [Lockly](../../device-and-system-integration-guides/lockly-locks/)                                                                     | `lockly`                        |
 | [Minut](../../device-guides/minut-sensors.md)                                                                                          | `minut`                         |
@@ -235,7 +234,6 @@ seam.ConnectWebviews.Create(
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ***
@@ -250,7 +248,7 @@ Some providers support multiple device types, like smart locks and thermostats. 
 
 * `lock`
 * `thermostat`
-* `noise_sensor`&#x20;
+* `noise_sensor`
 
 Seam maintains a default value for this parameter for each provider. For example, for SmartThings, the default value for `accepted_capabilities` is `["locks"]`. To begin accepting SmartThings-connected thermostats, as well as locks, set `accepted_capabilities` to `["locks", "thermostats"]`. For Honeywell Resideo, the default value is `["thermostats"]`.
 

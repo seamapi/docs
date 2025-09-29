@@ -194,10 +194,6 @@ print(some\_lock)
 # )
 ```
 
-\{% endtab %\}
-
-\{% tab title="Javascript" %\}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -235,9 +231,7 @@ console.log(someLock)
 */
 ```
 
-\{% endtab %\}
 
-\{% tab title="Ruby" %\}
 
 ```ruby
 some_lock = seam.locks.list.first
@@ -290,6 +284,14 @@ ruby
 # trigger the relay
 seam.locks.unlock_door(device_id: some_lock.device_id)
 ```
+{% endtab %}
+
+{% tab title="Javascript" %}
+
+{% endtab %}
+
+{% tab title="Ruby" %}
+
 {% endtab %}
 {% endtabs %}
 

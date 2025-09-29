@@ -1,81 +1,64 @@
 ---
-description: Guide for using the Latch Access Control System with Seam
+description: Guide for using the Dormakaba Community Access Control System with Seam
 ---
 
-# Latch Access Control System
+# Dormakaba Community Access Control System
 
-<figure><picture><source srcset="../../.gitbook/assets/latch-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/latch-manufacturer-page-cover-light.png" alt="Connect and control your Latch ACS using the Seam API."></picture><figcaption><p>Connect and control your Latch ACS using the Seam API.</p></figcaption></figure>
-
-## Overview
-
-Seam integrates seamlessly with the [Latch](https://www.latch.com/) management platform. Property managers and owners use the Latch [access control system](../../products/access-systems/) (ACS) to control access across their properties. Latch enables them to manage who has access to which spaces and when, view access history, and set up and manage multiple users and guests.
-
-The Seam integration for Latch enables you to automate the creation of residents and the issuing of credentials to these residents. Within these credentials, you specify the entrances to which the residents have access and the access schedules.
-
-Latch enables you to install wireless door locks and intercom systems in your building. This low-cost solution does not require the hard-wired [Latch hub](https://marketing.latch.com/latch-hub) to provision and use mobile keys. However, if you want to provision PIN codes remotely, you do need to install the Latch hub.
+<figure><img src="../../.gitbook/assets/dk comm (1).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-## Latch ACS Resources
+## Overview
 
-The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Latch ACS in a logical, efficient manner. Latch is a [credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-access-control-systems), so you [create ACS users](../../products/access-systems/user-management.md#create-an-acs-user) and then grant them access permissions using credentials. When you create a credential, you specify the ACS user to which to assign the credential, as well as the allowed entrances and the start and end times for the access schedule.
+Connect your Dormakaba Community system to Seam to automate access and enable mobile credentials across your properties. Seam provides a single API and management layer, so you can integrate Community directly into your PMS, resident app, or hospitality platform.
 
-The following diagram shows the Seam resources for a Latch ACS and the relationships between these resources:
+This integration automates access for new visitors and residents, making it easy to issue Bluetooth mobile keys, encode cards, or deliver wallet-based keys without manual steps. Credentials can be set to automatically expire, keeping building access secure.
 
-<figure><img src="../../.gitbook/assets/latch-acs.png" alt="Seam resources enable you to manage your Latch ACS intuitively."><figcaption><p>Seam resources enable you to manage your Latch ACS intuitively.</p></figcaption></figure>
+In multifamily settings, property managers often use this integration to streamline move-ins and guest access. When a new resident is added in your property management system, Seam can automatically create their profile in Dormakaba Community and provision the right credentials. Visitors can also be issued temporary mobile keys that work instantly and expire once their visit is over. This reduces operational overhead while creating a smoother, more welcoming experience for residents and guests.
 
-The following table provides a brief description of each of the Seam resources for the Latch ACS:
+***
 
-<table><thead><tr><th width="233">Seam Resource</th><th>Description</th></tr></thead><tbody><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-user_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-user_light.png" alt="" data-size="line"></picture></p><p> <a href="../../api/acs/users/"><code>acs_user</code></a></p></td><td>Individual who has been granted access to specific entrances within a building. A user could be a resident or temporary guest.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-entrance_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-entrance_light.png" alt="" data-size="line"></picture></p><p> <a href="../../api/acs/entrances/"><code>acs_entrance</code></a></p></td><td>Physical points of entry within a property that are secured with Latch's smart access devices.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-credential_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-credential_light.png" alt="" data-size="line"></picture></p><p> <a href="../../api/acs/credentials/"><code>acs_credential</code></a></p></td><td>PIN codes or mobile keys. You can only assign one entrance to a key code-based credential. You can assign multiple entrances to mobile keys.</td></tr></tbody></table>
+## Key Benefits
 
-For more information about managing your Latch ACS through Seam, see the following topics:
-
-* [Programming Code-Based Latch Credentials](programming-code-based-latch-credentials.md)
-* [Programming Latch ACS Mobile Credentials](programming-latch-acs-mobile-credentials.md)
-* [Credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-acs)
-* [Access Control Systems](../../products/access-systems/)
-* [Mobile Access](../../capability-guides/mobile-access/)
+* Automated access – Issue Bluetooth, card, or wallet-based keys without manual steps.
+* Secure credentials – Set keys to automatically expire after move-out or visit end.
+* Faster move-ins – Seam creates resident profiles and provisions credentials directly from your PMS.
+* Streamlined visitor access – Provide visitors with instant, temporary mobile keys that expire automatically.
+* Reduced overhead – Eliminate manual key management while improving the resident and guest experience.
 
 ***
 
 ## Supported Devices
 
-This integration supports all wireless locks and readers connected to the Latch ACS.
+This integration supports all wireless locks and readers connected to the Dormakaba Community system.
 
 ***
 
-## Supported Features
+## Related Features
 
-We support the following features:
-
-* [Managing access systems](../../products/access-systems/)
-* [Issuing mobile access credentials](../../capability-guides/mobile-access/)
+* [**Access Grants**](../../capability-guides/access-grants/) – The universal way to manage access in Seam. Integrate once, and your access model works consistently across all providers, including Dormakaba Community. For advanced, low-level control, you can still work directly with the ACS API.
+* [**Mobile Keys**](../../capability-guides/mobile-access/) – Provision and revoke Bluetooth and wallet-based credentials directly from your PMS or app.
+* [**Instant Keys**](../../capability-guides/instant-keys/) - Instantly issue temporary mobile pass that is shareable via an email or text.
+* [**Plastic Card Encoding**](../../api/acs/encoders/encode_credential.md) – Encode and issue physical access cards using Seam’s card management API.
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Latch ACS to Seam, include the `latch` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Community ACS to Seam, include the `dormakaba_community` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
 ## Brand-Specific Restrictions
 
-Note the following restrictions on using Seam to manage your Latch ACS:
+Note the following restrictions on the Community system:
 
-* The Latch ACS does not support remote unlock functionality. Unlock operations must occur through a mobile app.
-* You cannot sync in existing users and access permissions from a Latch ACS. You can only use Seam to manage the ACS users and credentials that you create through Seam.
-
-***
-
-## Troubleshooting
-
-For information about Latch ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
+* Dormakaba Community locks do not support remote web unlock. Unlock operations must occur through a mobile app or using a plastic card.
 
 ***
 
 ## Where to Order
 
-To purchase the Latch ACS and devices, contact Latch Sales.
+To purchase the Dormakaba Community access system, locate an installer near the property.
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Latch Sales Contact Page</strong></td><td></td><td><a href="https://www.latch.com/pages/contact">https://www.latch.com/pages/contact</a></td><td><a href="../../.gitbook/assets/latch-logo.png">latch-logo.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><strong>Certified Installers Page</strong></td><td>Find an installer for Community products at your property.</td><td></td><td><a href="https://www.dormakaba.com/us-en/certified-installers">https://www.dormakaba.com/us-en/certified-installers</a></td><td><a href="../../.gitbook/assets/Screenshot 2025-09-28 at 5.44.01 PM.png">Screenshot 2025-09-28 at 5.44.01 PM.png</a></td></tr></tbody></table>
