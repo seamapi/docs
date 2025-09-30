@@ -556,6 +556,11 @@ Gets all related resources for one or more Access Grants.
 Gets an Access Grant.
 
 
+[**`/access_grants/request_access_methods`**](./request_access_methods.md)
+
+Adds additional requested access methods to an existing Access Grant.
+
+
 [**`/access_grants/update`**](./update.md)
 
 Updates an existing Access Grant's time window.

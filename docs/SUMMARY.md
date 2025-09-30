@@ -230,6 +230,7 @@
     * [List ACS Systems](api/acs/systems/list.md)
     * [List Compatible Credential Manager ACS Systems](api/acs/systems/list_compatible_credential_manager_acs_systems.md)
 * [Access Grants](api/access_grants/README.md)
+  * [Add Requested Access Methods to Access Grant](api/access_grants/request_access_methods.md)
   * [Create an Access Grant](api/access_grants/create.md)
   * [Delete an Access Grant](api/access_grants/delete.md)
   * [Get an Access Grant](api/access_grants/get.md)
