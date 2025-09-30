@@ -3070,6 +3070,23 @@ Metadata for a 2N device.
 
 ---
 
+**`ultraloq_metadata`** *Object*
+
+Metadata for a Ultraloq device.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>device_id</code></strong> <i>String</i>
+  
+    Device ID for a Ultraloq device.
+
+</details>
+
+---
+
 **`visionline_metadata`** *Object*
 
 Metadata for an ASSA ABLOY Visionline system.
@@ -4673,6 +4690,7 @@ A device provider resource.
 - <code>kwikset2</code>
 - <code>keynest</code>
 - <code>dormakaba_ambiance</code>
+- <code>ultraloq</code>
 </details>
 
 
