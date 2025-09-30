@@ -457,6 +457,7 @@ These items have been marked as draft.
 - `/access_grants/get`: Early access.
 - `/access_grants/get_related`: Early access.
 - `/access_grants/list`: Early access.
+- `/access_grants/request_access_methods`: Early access.
 - `/access_grants/update`: Early access.
 - `/access_grants/unmanaged/get`: Early access.
 - `/access_grants/unmanaged/list`: Early access.
@@ -606,6 +607,7 @@ These items are deprecated.
 ### Endpoints without code samples
 
 - `/access_grants/get_related`
+- `/access_grants/request_access_methods`
 - `/access_grants/unmanaged/get`
 - `/access_grants/unmanaged/list`
 - `/access_methods/encode`
