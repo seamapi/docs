@@ -461,6 +461,7 @@ These items have been marked as draft.
 - `/access_grants/update`: Early access.
 - `/access_grants/unmanaged/get`: Early access.
 - `/access_grants/unmanaged/list`: Early access.
+- `/access_grants/unmanaged/update`: Early access.
 - `/access_methods/delete`: Early access.
 - `/access_methods/get`: Early access.
 - `/access_methods/get_related`: Early access.
@@ -610,6 +611,7 @@ These items are deprecated.
 - `/access_grants/request_access_methods`
 - `/access_grants/unmanaged/get`
 - `/access_grants/unmanaged/list`
+- `/access_grants/unmanaged/update`
 - `/access_methods/encode`
 - `/access_methods/get_related`
 - `/access_methods/unmanaged/get`
@@ -627,6 +629,7 @@ These items are deprecated.
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
+- `/user_identities/unmanaged/update`
 
 ### Resources without resource samples
 
