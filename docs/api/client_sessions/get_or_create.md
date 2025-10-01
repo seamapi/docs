@@ -252,7 +252,7 @@ IDs of the [connected accounts](https://docs.seam.co/latest/api/connected_accoun
 
 **`expires_at`** *String*
 
-Date and time at which the client session should expire (or at which the existing client session expires), in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the client session should expire in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. If the client session already exists, this will update the expiration before returning it.
 
 ---
 
