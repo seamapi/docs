@@ -291,6 +291,18 @@ Configuration for the manage devices feature.
 
 <details>
 
+<summary><b><code>manage_reservations</code></b> <i>Object</i></summary>
+
+Configuration for the manage reservations feature.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>organize</code></b> <i>Object</i></summary>
 
 Configuration for the organize feature.
