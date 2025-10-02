@@ -594,6 +594,8 @@ These items are deprecated.
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
 - `/seam/console/v1/timelines/get`: `timeline`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
+- `/seam/customer/v1/connectors/create`: `connector`
+- `/seam/customer/v1/connectors/sync`: `connector_sync`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/customer/v1/reservations/get`: `reservation`
 - `/seam/customer/v1/reservations/list`: `reservations`
@@ -624,8 +626,11 @@ These items are deprecated.
 - `/instant_keys/get`
 - `/instant_keys/list`
 - `/locks/get`
+- `/seam/customer/v1/connectors/create`
+- `/seam/customer/v1/connectors/sync`
 - `/seam/customer/v1/spaces/create`
 - `/seam/customer/v1/spaces/list`
+- `/seam/customer/v1/webhooks/connectors/[workspace_id]/[connector_id]`
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
