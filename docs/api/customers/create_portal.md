@@ -279,9 +279,9 @@ Configuration for the connect accounts feature.
 
 <details>
 
-<summary><b><code>manage_devices</code></b> <i>Object</i></summary>
+<summary><b><code>manage</code></b> <i>Object</i></summary>
 
-Configuration for the manage devices feature.
+Configuration for the manage feature.
 
 </details>
 
@@ -291,9 +291,12 @@ Configuration for the manage devices feature.
 
 <details>
 
-<summary><b><code>manage_reservations</code></b> <i>Object</i></summary>
+<summary><b><code>manage_devices</code></b> <i>Object</i></summary>
 
-Configuration for the manage reservations feature.
+Configuration for the manage devices feature.
+---
+deprecated: Use `manage` instead.
+---
 
 </details>
 
