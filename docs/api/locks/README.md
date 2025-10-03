@@ -315,6 +315,7 @@ Type of the device.
 - <code>dormakaba_oracode_door</code>
 - <code>tedee_lock</code>
 - <code>akiles_lock</code>
+- <code>ultraloq_lock</code>
 - <code>keynest_key</code>
 - <code>noiseaware_activity_zone</code>
 - <code>minut_sensor</code>
@@ -2965,7 +2966,7 @@ Metadata for a 2N device.
 
 **`ultraloq_metadata`** *Object*
 
-Metadata for a Ultraloq device.
+Metadata for an Ultraloq device.
 
 
 
@@ -2974,7 +2975,11 @@ Metadata for a Ultraloq device.
 
   - <strong><code>device_id</code></strong> <i>String</i>
   
-    Device ID for a Ultraloq device.
+    Device ID for an Ultraloq device.
+
+  - <strong><code>device_name</code></strong> <i>String</i>
+  
+    Device name for an Ultraloq device.
 
 </details>
 

@@ -1226,6 +1226,7 @@ Possible enum values:
 - <code>dormakaba_oracode_door</code>
 - <code>tedee_lock</code>
 - <code>akiles_lock</code>
+- <code>ultraloq_lock</code>
 </details>
 
 ---
