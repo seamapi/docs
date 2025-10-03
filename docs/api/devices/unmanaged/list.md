@@ -500,6 +500,7 @@ Possible enum values:
 - <code>dormakaba_oracode_door</code>
 - <code>tedee_lock</code>
 - <code>akiles_lock</code>
+- <code>ultraloq_lock</code>
 - <code>keynest_key</code>
 - <code>noiseaware_activity_zone</code>
 - <code>minut_sensor</code>
