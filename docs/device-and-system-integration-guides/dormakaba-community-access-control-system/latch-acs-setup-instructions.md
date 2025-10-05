@@ -9,7 +9,7 @@ To connect a Dormakaba Community system to Seam, the system administrator must p
 The setup process has three parts:
 
 1. [**Prepare Community**](latch-acs-setup-instructions.md#prepare-community-for-seam-integration) – Install the Seam Bridge, enable the Community API, turn on API authentication, and create a dedicated Operator Administrator account.
-2. [**Enable Mobile Keys**](latch-acs-setup-instructions.md#enable-mobile-keys-in-community) – Work with Dormakaba Technical Support to license mobile keys and link your property to Seam’s LEGIC Parent account.
+2. [**Enable Mobile Keys**](latch-acs-setup-instructions.md#enable-mobile-keys-in-community) – Work with Dormakaba Technical Support to purchase a mobile keys license and link your property to Seam’s LEGIC account.
 3. [**Connect Community to Seam**](latch-acs-setup-instructions.md#connect-community-to-seam) – Use the Seam Connect Webview to pair the Seam Bridge, enter Operator Administrator login credentials, and establish the API connection.
 
 ***
