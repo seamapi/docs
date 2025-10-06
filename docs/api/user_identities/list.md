@@ -208,9 +208,27 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`created_before`** *String*
+
+Timestamp by which to limit returned user identities. Returns user identities created before this timestamp.
+
+---
+
 **`credential_manager_acs_system_id`** *String*
 
 `acs_system_id` of the credential manager by which you want to filter the list of user identities.
+
+---
+
+**`limit`** *Number*
+
+Maximum number of records to return per page.
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 

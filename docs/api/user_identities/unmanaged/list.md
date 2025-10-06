@@ -20,6 +20,24 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`created_before`** *String*
+
+Timestamp by which to limit returned unmanaged user identities. Returns user identities created before this timestamp.
+
+---
+
+**`limit`** *Number*
+
+Maximum number of records to return per page.
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
 **`search`** *String*
 
 String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.
