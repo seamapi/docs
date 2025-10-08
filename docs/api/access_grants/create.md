@@ -545,6 +545,12 @@ Name for the access grant.
 
 ---
 
+**`reservation_key`** *String*
+
+Reservation key for the access grant.
+
+---
+
 **`space_ids`** *Array* *of UUIDs*
 
 Set of IDs of existing spaces to which access is being granted.
