@@ -1054,6 +1054,69 @@ Your unique identifier for the space.
 ---
 
 
+**`staff_members`** *Array* *of Objects*
+
+List of staff members.
+
+<details>
+
+<summary><b><code>email_address</code></b> <i>String</i></summary>
+
+Email address associated with the user identity.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>name</code></b> <i>String</i></summary>
+
+Your display name for this user identity resource.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>phone_number</code></b> <i>String</i></summary>
+
+Phone number associated with the user identity.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>site_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the sites the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>staff_member_key</code></b> <i>String</i></summary>
+
+Your unique identifier for the staff.
+
+</details>
+
+---
+
+
 **`tenants`** *Array* *of Objects*
 
 List of tenants.

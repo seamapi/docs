@@ -22,6 +22,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/portals`: No undocumented message provided
 - `/seam/customer/v1/reservations`: No undocumented message provided
 - `/seam/customer/v1/settings`: No undocumented message provided
+- `/seam/customer/v1/staff_members`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/instant_key/v1/preview`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
@@ -96,6 +97,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/reservations/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/staff_members/list`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/instant_key/v1/preview/get`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
@@ -639,6 +641,7 @@ These items are deprecated.
 
 ### Resources without resource samples
 
+- `staff_member`
 - `event: access_code.created`
 - `event: access_code.changed`
 - `event: access_code.scheduled_on_device`

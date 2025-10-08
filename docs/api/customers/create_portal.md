@@ -206,6 +206,18 @@ List of general spaces or areas.
 
 <details>
 
+<summary><b><code>staff_members</code></b> <i>List</i></summary>
+
+List of staff members.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>tenants</code></b> <i>List</i></summary>
 
 List of tenants.
