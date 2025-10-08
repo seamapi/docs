@@ -205,6 +205,15 @@ Access methods that the user requested for the Access Grant.
 
 ---
 
+**`reservation_key`** *String*
+
+Reservation key for the access grant.
+
+
+
+
+---
+
 **`space_ids`** *List* *of UUIDs*
 
 IDs of the spaces to which the Access Grant gives access.
