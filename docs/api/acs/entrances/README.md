@@ -219,19 +219,13 @@ Hotek-specific metadata associated with the [entrance](../../../capability-guide
 <details>
   <summary>Child Properties</summary>
 
-  - <strong><code>display_name</code></strong> <i>String</i>
+  - <strong><code>common_area_name</code></strong> <i>String</i>
   
     Display name of the entrance.
 
-  - <strong><code>door_type</code></strong> <i>Enum</i>
+  - <strong><code>common_area_number</code></strong> <i>String</i>
   
-    Type of door.
-  <details>
-      <summary>Enum values:</summary>
-  
-      - <code>common_area</code>
-      - <code>guest</code>
-  </details>
+    Display name of the entrance.
 
   - <strong><code>room_number</code></strong> <i>String</i>
   
