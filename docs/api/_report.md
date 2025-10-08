@@ -618,6 +618,7 @@ These items are deprecated.
 - `/access_methods/get_related`
 - `/access_methods/unmanaged/get`
 - `/access_methods/unmanaged/list`
+- `/acs/systems/report_devices`
 - `/customers/create_portal`
 - `/customers/delete_data`
 - `/customers/push_data`
