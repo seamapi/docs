@@ -6,8 +6,6 @@ description: >-
 
 # Reservation Access Grants
 
-***
-
 ## Overview
 
 In hotel or multifamily buildings, many locks aren’t always connected to the internet. Instead, they make decisions locally using information stored on cards, fobs, or mobile keys. When someone issues a new credential for a room or unit, the lock uses an override model, where the new credential replaces or invalidates previous ones, like from a past guest or tenant.
@@ -78,7 +76,7 @@ When a single Access Grant includes a mix of entrances, Seam applies reservation
 ```tsx
 await seam.accessGrants.create({
   user_identity_id: "guest-1",
-  space_ids: ["room-101", "gym", "lobby"],
+  acs_entrance_ids: ["room-101-id", "gym-id", "lobby-id"],
   starts_at: "2025-05-10T15:00:00Z",
   ends_at:   "2025-05-14T11:00:00Z",
   requested_access_methods: [{"mode": "card"}],
@@ -100,7 +98,7 @@ Pass the `reservation_key` to group related grants and let Seam apply override/j
 ```
 await seam.accessGrants.create({
   user_identity_id: "guest-1",
-  space_ids: ["room-101"],
+  acs_entrance_ids: ["room-101-id"],
   starts_at: "2025-05-10T15:00:00Z",
   ends_at: "2025-05-14T11:00:00Z",
   requested_access_methods: [{ mode: "card" }],
@@ -133,14 +131,14 @@ If **none** of the targeted entrances support reservations, creation fails.
 ```tsx
 await seam.accessGrants.create({
   user_identity_id: "guest-1",
-  space_ids: ["gym", "pool"],
+  acs_entrance_ids: ["gym-id", "pool-id"],
   starts_at, ends_at,
   requested_access_methods: [{"mode": "card"}],
   reservation_key: "stay-1",
 })
 /*
 HTTP 400 VALIDATION_ERROR
-code: "reservation_key_not_supported"
+title: "reservation_key not supported."
 message: "No targeted entrances support reservation behavior. Remove reservation_key or include at least one reservation-capable entrance."
 */
 ```
@@ -164,7 +162,7 @@ await seam.accessGrants.create({
 })
 /*
 HTTP 409 CONFLICT
-code: "reservation_entrance_change_requires_cleanup"
+title: "Reservation entrance change requires cleanup."
 message: "To change the doors for this reservation, delete the existing access
 grants first."
 */
@@ -216,7 +214,7 @@ await seam.accessGrants.create({
 })
 /*
 HTTP 409 CONFLICT
-code: "reservation_joiner_entrance_set_conflict"
+title: "Reservation joiner entrance set conflict."
 message: "Joiner access grants must use the same or a subset of the
 reservation-capable doors."
 */
@@ -260,7 +258,7 @@ await seam.accessGrants.create({
 })
 /*
 HTTP 409 CONFLICT
-code: "reservation_time_frames_must_overlap"
+title: "Reservation time frames must overlap."
 message: "Access grants in the same reservation must have overlapping time
 frames."
 */
@@ -399,4 +397,4 @@ await seam.acs.encoders.encode_card({
 
 This section lists common validation and conflict errors you may encounter when creating Access Grants with `reservation_key`, along with what they mean and how to resolve them.
 
-<table data-header-hidden><thead><tr><th width="120.4228515625">HTTP Code</th><th>Error Code</th><th>When it happens</th><th>How to fix</th></tr></thead><tbody><tr><td>400</td><td>reservation_key_not_supported</td><td>You passed a <code>reservation_key</code> but none of the targeted entrances support reservations.</td><td>Remove <code>reservation_key</code> or include at least one reservation-capable entrance.</td></tr><tr><td>400</td><td>reservation_key_required_for_guest_cards</td><td>The targeted provider requires a reservation for guest credentials (e.g., Visionline) but none was provided.</td><td>Add a <code>reservation_key</code> when issuing guest credentials for these entrances.</td></tr><tr><td>409</td><td>reservation_entrance_change_requires_cleanup</td><td>You tried to issue an access grant with a different door set for an existing reservation.</td><td>List and delete existing access grants for that <code>reservation_key</code>, then reissue with the new door set.</td></tr><tr><td>409</td><td>reservation_joiner_entrance_set_conflict</td><td>A joiner grant includes a superset of the reservation-capable doors.</td><td>Joiners must use the same or a subset of the reservation-capable doors. Adjust the door set or clear/reissue.</td></tr><tr><td>409</td><td>reservation_time_frames_must_overlap</td><td>A new access grant’s time frame doesn’t overlap with existing grants for the same reservation.</td><td>Either adjust the time frame to overlap or use a new reservation_key for the separate stay.</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="120.4228515625">HTTP Code</th><th width="185.884765625">Error title</th><th>When it happens</th><th>How to fix</th></tr></thead><tbody><tr><td>400</td><td><code>reservation_key</code> not supported.</td><td>You passed a <code>reservation_key</code> but none of the targeted entrances support reservations.</td><td>Remove <code>reservation_key</code> or include at least one reservation-capable entrance.</td></tr><tr><td>400</td><td><code>reservation_key</code> required for guest cards.</td><td>The targeted provider requires a reservation for guest credentials (e.g., Visionline) but none was provided.</td><td>Add a <code>reservation_key</code> when issuing guest credentials for these entrances.</td></tr><tr><td>409</td><td>Reservation entrance change requires cleanup.</td><td>You tried to issue an access grant with a different door set for an existing reservation.</td><td>List and delete existing access grants for that <code>reservation_key</code>, then reissue with the new door set.</td></tr><tr><td>409</td><td>Reservation joiner entrance set conflict.</td><td>A joiner grant includes a superset of the reservation-capable doors.</td><td>Joiners must use the same or a subset of the reservation-capable doors. Adjust the door set or clear/reissue.</td></tr><tr><td>409</td><td>Reservation time frames must overlap.</td><td>A new access grant’s time frame doesn’t overlap with existing grants for the same reservation.</td><td>Either adjust the time frame to overlap or use a new <code>reservation_key</code> for the separate stay.</td></tr></tbody></table>
