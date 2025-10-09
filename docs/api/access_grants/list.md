@@ -455,6 +455,12 @@ Customer key for which you want to list access grants.
 
 ---
 
+**`reservation_key`** *String*
+
+Filter Access Grants by reservation_key.
+
+---
+
 **`space_id`** *String*
 
 ID of the space by which you want to filter the list of Access Grants.
