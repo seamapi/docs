@@ -40,7 +40,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 **`search`** *String*
 
-String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.
+String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`,  `user_identity_id` or `acs_system_id`.
 
 ---
 
