@@ -12,7 +12,7 @@ description: >-
 
 In hotel or multifamily buildings, many locks aren’t always connected to the internet. Instead, they make decisions locally using information stored on cards, fobs, or mobile keys. When someone issues a new credential for a room or unit, the lock uses an override model, where the new credential replaces or invalidates previous ones, like from a past guest or tenant.
 
-For these systems, you need to use the **reservation** model to manage override behavior. This scope includes Dormakaba Community and Ambiance, Salto Space, Visionline, and Vostio. This differs from fully online systems like Brivo or Avigilon Alta, where access decisions happen in real time through the cloud.
+For these systems, you need to use the **reservation** model to manage override behavior. This scope includes Dormakaba Community and Ambiance, Visionline, and Vostio. This differs from fully online systems like Brivo or Avigilon Alta, where access decisions happen in real time through the cloud.
 
 ***
 
