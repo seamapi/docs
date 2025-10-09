@@ -102,6 +102,15 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 ---
 
+**`can_belong_to_reservation`** *Boolean*
+
+Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.
+
+
+
+
+---
+
 **`can_unlock_with_card`** *Boolean*
 
 Indicates whether the ACS entrance can be unlocked with card credentials.
