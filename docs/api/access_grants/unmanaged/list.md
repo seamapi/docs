@@ -32,6 +32,12 @@ ID of the access system by which you want to filter the list of unmanaged Access
 
 ---
 
+**`reservation_key`** *String*
+
+Filter unmanaged Access Grants by reservation_key.
+
+---
+
 **`user_identity_id`** *String*
 
 ID of user identity by which you want to filter the list of unmanaged Access Grants.
