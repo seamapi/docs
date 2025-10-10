@@ -844,4 +844,4 @@ There are no more back up codes available in the pool. This can happen when you'
 
 ## Supported Brands
 
-All door locks with the `access_code` capability are expected to support this feature, with the exception of Lockly and Salto locks.
+All door locks with the `access_code` capability are expected to support this feature, with the exception of Salto locks.
