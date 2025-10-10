@@ -481,6 +481,46 @@ Seam is in the process of pushing a user deletion to the integrated access syste
   
 </details>
 <details>
+<summary><code>deferring_creation</code></summary>
+
+User exists in Seam but has not been pushed to the provider yet. Will be created when a credential is issued.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is intentionally deferring the creation of the user on the access control system until the appropriate time.
+  
+  Enum values:
+  
+  - <code>deferring_creation</code>
+  
+  
+  ---
+
+  **`scheduled_at`** *Datetime*
+  
+  
+  Optional: When the user creation is scheduled to occur.
+  
+  
+</details>
+<details>
 <summary><code>updating_user_information</code></summary>
 
   **`created_at`** *Datetime*
