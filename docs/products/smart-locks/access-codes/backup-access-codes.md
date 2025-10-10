@@ -173,7 +173,6 @@ Supports backup access code pool: True
 ```
 {% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
 ***
@@ -437,7 +436,6 @@ Is backup access code available: True
 ```
 {% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
 ### 2. Detect when an access code has failed to program
@@ -572,7 +570,6 @@ Is backup access code available: True
 ```
 {% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
 ### 4. Retrieve a backup access code
@@ -819,7 +816,6 @@ IsExternalModificationAllowed: False
 ```
 {% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
 ***
@@ -844,4 +840,4 @@ There are no more back up codes available in the pool. This can happen when you'
 
 ## Supported Brands
 
-All door locks with the `access_code` capability are expected to support this feature, with the exception of Lockly and Salto locks.
+All door locks with the `access_code` capability are expected to support this feature, with the exception of Salto locks.
