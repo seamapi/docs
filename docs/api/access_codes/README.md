@@ -1212,6 +1212,46 @@ Admin role required—insufficient permissions to manage PINs on this Kwikset de
   
 </details>
 <details>
+<summary><code>keynest_unsupported_third_party_locker</code></summary>
+
+KeyNest locker is not supported.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>keynest_unsupported_third_party_locker</code>
+  
+  
+  ---
+
+  **`is_access_code_error`** *Boolean*
+  
+  
+  Indicates that this is an access code error.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
 <summary><code>account_disconnected</code></summary>
 
 Indicates that the account is disconnected.
@@ -2436,6 +2476,12 @@ Unable to confirm that the access code is set on Kwikset device.
 **`kwikset_insufficient_permissions`**
 
 Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.
+
+---
+
+**`keynest_unsupported_third_party_locker`**
+
+KeyNest locker is not supported.
 
 ---
 
