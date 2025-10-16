@@ -602,12 +602,16 @@ These items are deprecated.
 - `/seam/customer/v1/reservations/get`: `reservation`
 - `/seam/customer/v1/reservations/list`: `reservations`
 - `/seam/customer/v1/settings/get`: `business_vertical`
+- `/seam/customer/v1/staff_members/list`: `staff_members`
 - `/seam/instant_key/v1/preview/get`: `instant_key_preview`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
 - `/spaces/get_related`: `batch`
 - `/user_identities/unmanaged/get`: `user_identity`
 - `/user_identities/unmanaged/list`: `user_identities`
 - `/workspaces/find_anything`: `batch`
+### Unused Resources
+
+- `staff_member`
 
 ### Endpoints without code samples
 

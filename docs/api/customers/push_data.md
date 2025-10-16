@@ -1060,9 +1060,57 @@ List of staff members.
 
 <details>
 
+<summary><b><code>building_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the buildings the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>common_area_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the common areas the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>email_address</code></b> <i>String</i></summary>
 
 Email address associated with the user identity.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>facility_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the facilities the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>listing_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the listings the staff member is associated with.
 
 </details>
 
@@ -1096,6 +1144,42 @@ Phone number associated with the user identity.
 
 <details>
 
+<summary><b><code>property_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the properties the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>property_listing_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the property listings the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>room_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the rooms the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>site_keys</code></b> <i>List</i></summary>
 
 List of unique identifiers for the sites the staff member is associated with.
@@ -1108,9 +1192,33 @@ List of unique identifiers for the sites the staff member is associated with.
 
 <details>
 
+<summary><b><code>space_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the spaces the staff member is associated with.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>staff_member_key</code></b> <i>String</i></summary>
 
 Your unique identifier for the staff.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>unit_keys</code></b> <i>List</i></summary>
+
+List of unique identifiers for the units the staff member is associated with.
 
 </details>
 
