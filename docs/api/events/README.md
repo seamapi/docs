@@ -118,6 +118,7 @@ Type of event.
 - <code>device.name_changed</code>
 - <code>enrollment_automation.deleted</code>
 - <code>phone.deactivated</code>
+- <code>space.device_membership_changed</code>
 </details>
 
 
