@@ -107,6 +107,12 @@ List of space keys to delete.
 
 ---
 
+**`staff_member_keys`** *Array* *of Strings*
+
+List of staff member keys to delete.
+
+---
+
 **`tenant_keys`** *Array* *of Strings*
 
 List of tenant keys to delete.

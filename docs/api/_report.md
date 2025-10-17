@@ -737,6 +737,7 @@ These items are deprecated.
 - `event: device.name_changed`
 - `event: enrollment_automation.deleted`
 - `event: phone.deactivated`
+- `event: space.device_membership_changed`
 - `action_attempt: SYNC_ACCESS_CODES`
 - `action_attempt: CREATE_ACCESS_CODE`
 - `action_attempt: DELETE_ACCESS_CODE`

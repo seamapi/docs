@@ -6,6 +6,7 @@
 ## The space Object
 
 - [Properties](./#properties)
+- [Events](./#events)
 - [Endpoints](./#endpoints)
 
 
@@ -100,6 +101,58 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) associated with 
 
 
 
+
+---
+
+
+## Events
+
+**`space.device_membership_changed`**
+
+A device was added or removed from a space.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>acs_entrance_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of all ACS entrances currently attached to the space.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of all devices currently attached to the space.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Type of the event.
+
+  Value: `space.device_membership_changed`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>space_id</code></strong> <i>UUID</i>
+
+  ID of the affected space.
+
+<strong><code>space_key</code></strong> <i>String</i>
+
+  Unique key for the space within the workspace.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
 
 ---
 
