@@ -53,6 +53,16 @@ Instance-specific configuration for the connector
 
 <details>
 
+<summary><b><code>enterprise_id</code></b> <i>UUID</i></summary>
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>enterprise_ids</code></b> <i>List</i></summary>
 
 </details>

@@ -637,7 +637,6 @@ These items are deprecated.
 - `/seam/customer/v1/connectors/sync`
 - `/seam/customer/v1/spaces/create`
 - `/seam/customer/v1/spaces/list`
-- `/seam/customer/v1/webhooks/connectors/[workspace_id]/[connector_id]`
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
