@@ -99,6 +99,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/reservations/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/staff_members/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/list`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
 - `/seam/instant_key/v1/preview/get`: Seam Instant Key only.
@@ -581,6 +582,9 @@ These items are deprecated.
     - `noise_sensors`
 - `/noise_sensors/noise_thresholds/create`
     - `action_attempt`
+- `/seam/customer/v1/staff_members/get`
+    - `access_grant`
+    - `spaces`
 - `/thermostats/list`
     - `thermostats`
 - `/user_identities/list_accessible_devices`
@@ -605,6 +609,7 @@ These items are deprecated.
 - `/seam/customer/v1/reservations/get`: `reservation`
 - `/seam/customer/v1/reservations/list`: `reservations`
 - `/seam/customer/v1/settings/get`: `business_vertical`
+- `/seam/customer/v1/staff_members/get`: `staff_member`
 - `/seam/customer/v1/staff_members/list`: `staff_members`
 - `/seam/instant_key/v1/preview/get`: `instant_key_preview`
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: `spaces`
