@@ -91,6 +91,8 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/connectors/create`: Internal endpoint for Console.
+- `/seam/customer/v1/connectors/list`: Internal endpoint for Console.
 - `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/get`: Internal endpoint for customer portals.
@@ -597,6 +599,7 @@ These items are deprecated.
 - `/seam/console/v1/timelines/get`: `timeline`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/connectors/create`: `connector`
+- `/seam/customer/v1/connectors/list`: `connectors`
 - `/seam/customer/v1/connectors/sync`: `connector_sync`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/customer/v1/reservations/get`: `reservation`
@@ -632,7 +635,6 @@ These items are deprecated.
 - `/instant_keys/get`
 - `/instant_keys/list`
 - `/locks/get`
-- `/seam/customer/v1/connectors/create`
 - `/seam/customer/v1/connectors/sync`
 - `/seam/customer/v1/spaces/create`
 - `/seam/customer/v1/spaces/list`
