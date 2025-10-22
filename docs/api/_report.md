@@ -18,10 +18,12 @@ These items are intentionally undocumented.
 - `/seam/console/v1/timelines`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
 - `/seam/customer/v1/automations`: No undocumented message provided
+- `/seam/customer/v1/connectors`: No undocumented message provided
 - `/seam/customer/v1/events`: No undocumented message provided
 - `/seam/customer/v1/portals`: No undocumented message provided
 - `/seam/customer/v1/reservations`: No undocumented message provided
 - `/seam/customer/v1/settings`: No undocumented message provided
+- `/seam/customer/v1/spaces`: No undocumented message provided
 - `/seam/customer/v1/staff_members`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/instant_key/v1/preview`: No undocumented message provided
@@ -59,6 +61,7 @@ These items are intentionally undocumented.
 
 - `/seam/bridge/v1`: No undocumented message provided
 - `/seam/console`: No undocumented message provided
+- `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs`: No undocumented message provided
 - `/seam/mobile_sdk/v1`: No undocumented message provided
@@ -93,12 +96,15 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/connectors/create`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/list`: Internal endpoint for Console.
+- `/seam/customer/v1/connectors/sync`: Only used internally.
 - `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/spaces/create`: Only used internally.
+- `/seam/customer/v1/spaces/list`: Only used internally.
 - `/seam/customer/v1/staff_members/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/list`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
@@ -640,9 +646,6 @@ These items are deprecated.
 - `/instant_keys/get`
 - `/instant_keys/list`
 - `/locks/get`
-- `/seam/customer/v1/connectors/sync`
-- `/seam/customer/v1/spaces/create`
-- `/seam/customer/v1/spaces/list`
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
