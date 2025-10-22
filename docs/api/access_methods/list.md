@@ -288,6 +288,7 @@ seam access-methods list --access_grant_id "9072ebcd-95f3-4e4b-8f2f-10053911533b
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
