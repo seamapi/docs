@@ -16,6 +16,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/console/v1`: No undocumented message provided
 - `/seam/console/v1/timelines`: No undocumented message provided
+- `/seam/customer/v1/access_grants`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
 - `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/connectors`: No undocumented message provided
@@ -90,6 +91,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/seam/console/v1/get_resource_locator`: Internal endpoint for Console
 - `/seam/console/v1/timelines/get`: Internal endpoint for Console
+- `/seam/customer/v1/access_grants/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automation_runs/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
