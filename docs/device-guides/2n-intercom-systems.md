@@ -44,9 +44,13 @@ To control 2N devices using Seam, ask device owners to follow these steps:
 1. [Create a My2N account](https://my2n.com/2n-remote-configuration)  if you don’t already have one.
 2. In My2N, add your 2N IP devices to the sites in which the devices are located.
 3. Make sure that Remote API Access (RAA) is enabled for your My2N company. Contact [integrations@2n.com](mailto:integrations@2n.com) to activate RAA.
-4. In the [Seam Connect Webview](../core-concepts/connect-webviews/), log in with your admin My2N email and password.
+4.  In the [Seam Connect Webview](../core-concepts/connect-webviews/), log in with your admin My2N email and password.
+
+    <figure><img src="../.gitbook/assets/Screenshot 2025-10-16 at 3.41.49 PM.png" alt=""><figcaption><p>Use the login credentials for the My2N.com page.</p></figcaption></figure>
 5. Select the devices you want to connect.&#x20;
-6. For each device, enter its admin username and password.
+6.  For each device, enter its admin username and password.
+
+    <figure><img src="../.gitbook/assets/Screenshot 2025-10-16 at 3.44.40 PM.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
