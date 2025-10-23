@@ -196,6 +196,7 @@ seam user-identities get --user_identity_id "43947360-cdc8-4db6-8b22-e079416d1d8
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
