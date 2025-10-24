@@ -1559,6 +1559,38 @@ Indicates that Seam detected that the Lockly device does not have a time zone co
   
   
 </details>
+<details>
+<summary><code>hub_required_for_addtional_capabilities</code></summary>
+
+Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>hub_required_for_addtional_capabilities</code>
+  
+  
+</details>
 
 ---
 
@@ -3152,6 +3184,12 @@ Indicates that the device has a flaky connection.
 **`functional_offline_device`**
 
 Indicates that the device is offline but has some functionality available.
+
+---
+
+**`hub_required_for_addtional_capabilities`**
+
+Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
 
 ---
 
