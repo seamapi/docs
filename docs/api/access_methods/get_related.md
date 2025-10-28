@@ -42,6 +42,7 @@ Possible enum values:
 - <code>access_methods</code>
 - <code>instant_keys</code>
 - <code>client_sessions</code>
+- <code>acs_credentials</code>
 </details>
 
 ---
@@ -59,6 +60,7 @@ Possible enum values:
 - <code>access_methods</code>
 - <code>instant_keys</code>
 - <code>client_sessions</code>
+- <code>acs_credentials</code>
 </details>
 
 ---

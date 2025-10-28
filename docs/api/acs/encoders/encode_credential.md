@@ -353,6 +353,7 @@ seam acs encoders encode-credential --acs_encoder_id "18ad521a-308e-4182-b1a6-23
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
