@@ -136,6 +136,7 @@ seam acs encoders simulate next-credential-encode-will-succeed --acs_encoder_id 
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
