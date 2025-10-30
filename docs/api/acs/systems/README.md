@@ -814,6 +814,6 @@ Returns a list of all credential manager systems that are compatible with a spec
 
 [**`/acs/systems/report_devices`**](./report_devices.md)
 
-Reports ACS system resources including encoders and entrances with their metadata.
+Reports ACS system device status including encoders and entrances.
 
 
