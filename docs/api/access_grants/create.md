@@ -537,6 +537,10 @@ Name of the location.
 
 **`location_ids`** *Array* *of UUIDs*
 
+{% hint style="warning" %}
+**Deprecated**. Use `space_ids`.
+{% endhint %}
+
 ---
 
 **`name`** *String*

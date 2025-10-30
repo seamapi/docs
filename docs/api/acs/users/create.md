@@ -397,6 +397,10 @@ Array of access group IDs to indicate the access groups to which you want to add
 
 **`email`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. use email_address.
+{% endhint %}
+
 ---
 
 **`email_address`** *String*

@@ -277,6 +277,10 @@ Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat
 
 Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
 
+{% hint style="warning" %}
+**Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+{% endhint %}
+
 ---
 
 **`name`** *String*

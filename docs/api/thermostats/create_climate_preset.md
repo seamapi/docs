@@ -277,6 +277,10 @@ Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings.
 
+{% hint style="warning" %}
+**Deprecated**. Use 'thermostat_schedule.is_override_allowed'
+{% endhint %}
+
 ---
 
 **`name`** *String*

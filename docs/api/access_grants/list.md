@@ -453,6 +453,10 @@ Customer key for which you want to list access grants.
 
 **`location_id`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. Use `space_id`.
+{% endhint %}
+
 ---
 
 **`reservation_key`** *String*

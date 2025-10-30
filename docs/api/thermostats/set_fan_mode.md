@@ -191,6 +191,10 @@ ID of the thermostat device for which you want to set the fan mode.
 
 **`fan_mode`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. Use `fan_mode_setting` instead.
+{% endhint %}
+
 ---
 
 **`fan_mode_setting`** *String*
