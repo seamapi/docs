@@ -292,6 +292,10 @@ Maximum number of records to return per page.
 
 **`location_id`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. Use `space_id`.
+{% endhint %}
+
 ---
 
 **`page_cursor`** *String*

@@ -231,6 +231,10 @@ ID of the access system user that you want to update. You can only provide acs_u
 
 **`email`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. use email_address.
+{% endhint %}
+
 ---
 
 **`email_address`** *String*

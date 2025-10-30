@@ -1282,6 +1282,10 @@ ID of the space for which you want to list devices.
 
 **`unstable_location_id`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. Use `space_id`.
+{% endhint %}
+
 ---
 
 **`user_identifier_key`** *String*
