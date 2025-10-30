@@ -42,6 +42,10 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 {{this.description}}
 {{/if}}
+{{#if this.isDeprecated}}
+
+{{> deprecated-warning}}
+{{/if}}
 {{#if this.itemEnumValues}}
 <details>
 
