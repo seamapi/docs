@@ -249,9 +249,27 @@ const mapBlueprintParamToEndpointParam = (
 
     ...(param.format === 'list' &&
       param.itemFormat === 'object' && {
-        objectParameters: param.itemParameters.map(
-          mapBlueprintParamToEndpointParam,
-        ),
+        objectParameters: param.itemParameters.flatMap((nestedParam) => {
+          const mappedNestedParam =
+            mapBlueprintParamToEndpointParam(nestedParam)
+
+          if (mappedNestedParam.format !== 'Object') {
+            return [mappedNestedParam]
+          }
+
+          const nestedObjectParameters =
+            mapBlueprintParamToEndpointParam(nestedParam).objectParameters
+
+          if (nestedObjectParameters == null) {
+            return [mappedNestedParam]
+          }
+
+          const prefixedNestedObjectParameters = nestedObjectParameters.map(
+            (p) => ({ ...p, name: `${mappedNestedParam.name}.${p.name}` }),
+          )
+
+          return [mappedNestedParam, ...prefixedNestedObjectParameters]
+        }),
       }),
   }
 }
