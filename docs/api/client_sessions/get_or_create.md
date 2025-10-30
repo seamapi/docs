@@ -272,6 +272,10 @@ ID of the [user identity](../../capability-guides/mobile-access/managing-mobile-
 
 IDs of the [user identities](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.
 
+{% hint style="warning" %}
+**Deprecated**. Use `user_identity_id`.
+{% endhint %}
+
 ---
 
 

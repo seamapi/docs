@@ -341,6 +341,10 @@ Company name for the new workspace.
 
 Connect partner name for the new workspace.
 
+{% hint style="warning" %}
+**Deprecated**. Use `company_name` instead.
+{% endhint %}
+
 ---
 
 **`connect_webview_customization`** *Object*
@@ -407,17 +411,33 @@ Indicates whether the new workspace is a [sandbox workspace](../../core-concepts
 
 **`webview_logo_shape`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. Use `connect_webview_customization.webview_logo_shape` instead.
+{% endhint %}
+
 ---
 
 **`webview_primary_button_color`** *String*
+
+{% hint style="warning" %}
+**Deprecated**. Use `connect_webview_customization.webview_primary_button_color` instead.
+{% endhint %}
 
 ---
 
 **`webview_primary_button_text_color`** *String*
 
+{% hint style="warning" %}
+**Deprecated**. Use `connect_webview_customization.webview_primary_button_text_color` instead.
+{% endhint %}
+
 ---
 
 **`webview_success_message`** *String*
+
+{% hint style="warning" %}
+**Deprecated**. Use `connect_webview_customization.webview_success_message` instead.
+{% endhint %}
 
 ---
 

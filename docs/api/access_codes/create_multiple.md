@@ -434,6 +434,10 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 **`use_offline_access_code`** *Boolean*
 
+{% hint style="warning" %}
+**Deprecated**. Use `is_offline_access_code` instead.
+{% endhint %}
+
 ---
 
 
