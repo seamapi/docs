@@ -571,6 +571,7 @@
 * [Schlage Locks](device-and-system-integration-guides/schlage-locks/README.md)
   * [Schlage Locks Setup Instructions](device-and-system-integration-guides/schlage-locks/schlage-locks-setup-instructions.md)
   * [Get started with Schlage Locks](device-guides/get-started-with-schlage-locks.md)
+  * [Schlage Locks - Daylight Savings time adjustments](device-and-system-integration-guides/schlage-locks/schlage-locks-daylight-savings-time-adjustments.md)
 * [Sensi Thermostats](device-and-system-integration-guides/sensi-thermostats/README.md)
   * [Get Started with Sensi Thermostats](device-and-system-integration-guides/sensi-thermostats/get-started-with-sensi-thermostats.md)
 * [SmartThings Hubs + Devices](device-and-system-integration-guides/smartthings-hubs-+-devices/README.md)
