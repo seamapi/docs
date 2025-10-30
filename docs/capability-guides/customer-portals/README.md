@@ -4,10 +4,6 @@ description: Allow your customers to manage their own devices and systems.
 
 # Customer Portals
 
-{% hint style="warning" %}
-**Early Access Preview** - The customer portal feature is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 <figure><img src="../../.gitbook/assets/portal.webp" alt=""><figcaption></figcaption></figure>
 
 Provide self-service functions to your customers by setting up a customer portal. You can configure it entirely in the Console, or use our API to automate generating the portal.

@@ -4,10 +4,6 @@ description: Learn how to automate access and climate around reservations.
 
 # Reservation Automations
 
-{% hint style="warning" %}
-**Early Access Preview** - Reservation Automations are currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 Reservation Automations sync reservation and guest data with your access and climate systems. Instead of building custom workflows for check-in, mid-stay changes, and checkout, you send reservation data to Seam and device settings update automatically.&#x20;
 
 Built for short-term bookings—whether hotel stays, gym classes, coworking rooms, or event rentals—Reservation Automations ensure access and climate settings apply only during the reserved time.
