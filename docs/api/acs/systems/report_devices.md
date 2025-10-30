@@ -238,6 +238,18 @@ Array of ACS encoders to report
 
 <details>
 
+<summary><b><code>hotek_metadata.encoder_number</code></b> <i>String</i></summary>
+
+The encoder number determined by the USB port connection.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>is_removed</code></b> <i>Boolean</i></summary>
 
 Whether the encoder is removed
@@ -256,6 +268,42 @@ Array of ACS entrances to report
 <summary><b><code>hotek_metadata</code></b> <i>Object</i></summary>
 
 Hotek-specific metadata associated with the entrance.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>hotek_metadata.common_area_name</code></b> <i>String</i></summary>
+
+The common area name
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>hotek_metadata.common_area_number</code></b> <i>String</i></summary>
+
+The room number identifier
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>hotek_metadata.room_number</code></b> <i>String</i></summary>
+
+The room number identifier
 
 </details>
 
