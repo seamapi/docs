@@ -1,13 +1,9 @@
-# Report ACS Resources
+# Report Devices
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Reports ACS system resources including encoders and entrances with their metadata.
-
-This endpoint allows reporting of:
-- ACS encoders with removal status and encoder port metadata
-- ACS entrances with room number metadata
+Reports ACS system device status including encoders and entrances.
 
 
 {% tabs %}
