@@ -230,6 +230,8 @@ Array of ACS encoders to report
 
 <summary><b><code>hotek_metadata</code></b> <i>Object</i></summary>
 
+Hotek-specific metadata associated with the entrance.
+
 </details>
 
 ---
