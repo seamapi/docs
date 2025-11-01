@@ -20,7 +20,7 @@ The setup process has three parts:
    1. Install the [Seam Bridge](../../capability-guides/seam-bridge.md) on the computer hosting the Community System.
 2. Enable Community API
    1. Go to **System Settings** > **Community API**.\
-      ![](../../.gitbook/assets/unknown.png)
+      ![](<../../.gitbook/assets/unknown (1).png>)
    2. **Enable Community REST API**.
    3. Create a **Client ID** (max 32 characters) and **Secret Key** (max 512 characters).
    4. Enter these values in the Community API settings, and save these settings.
@@ -28,7 +28,7 @@ The setup process has three parts:
 3. **Enable API Authentication**
    1. Go to **System Settings** > **Security** > **API Integration**.
    2. **Enable API Authentication**.\
-      ![](<../../.gitbook/assets/unknown (1).png>)
+      ![](<../../.gitbook/assets/unknown (1) (1).png>)
 4. **Set up a New Operator Administrator User for Seam Integration**
    1. Under the top dropdown next to the dormakaba logo, select **Staff/Vendor Management**.
    2. Click **New Staff Member**.

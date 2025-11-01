@@ -455,6 +455,7 @@
 
 * [Overview](device-and-system-integration-guides/overview.md)
 * [2N Intercom Systems](device-guides/2n-intercom-systems.md)
+  * [2N System Set Up Instructions](device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions.md)
   * [Get started with 2N Intercoms](device-guides/get-started-with-2n-intercoms.md)
 * [33 Lock Devices](device-and-system-integration-guides/33-lock-devices/README.md)
   * [Get started with 33 Lock devices](device-and-system-integration-guides/33-lock-devices/get-started-with-33-lock-devices.md)

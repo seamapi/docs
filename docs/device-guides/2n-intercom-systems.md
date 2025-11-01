@@ -8,49 +8,43 @@ description: Guide for using 2N® intercom systems with Seam
 
 2N produces Internet Protocol (IP) access control systems and elevator communications. Seam integrates with 2N IP intercoms that combine secure audio and video intercoms with an access reader. These standalone devices support direct Session Initiation Protocol (SIP) calls.
 
+2N produces Internet Protocol (IP) intercoms used for access control and communication in residential and commercial properties.
+
+Seam integrates directly with 2N IP-enabled devices to support:
+
+* Secure door lock and unlock actions through Seam’s API
+* PIN code programming on devices with keypads
+
 ***
 
 ## Supported Devices
 
 This integration supports all [2N IP intercoms](https://wiki.2n.com/is/en).
 
-For detailed information about the 2N devices that Seam supports, see our [2N Supported Devices page](https://www.seam.co/manufacturers/2n).
+For a complete compatibility list, see [2N Supported Devices](https://www.seam.co/manufacturers/2n)![Attachment.tiff](file:///Attachment.tiff).
 
 ***
 
-## Supported Features
+## Setup and Integration
 
-We support the following features:
+Follow the step-by-step [System Setup Instructions](../device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions.md)![Attachment.tiff](file:///Attachment.tiff) to connect your My2N company and devices to Seam.
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) on intercoms that have a PIN pad
+The setup guide covers:
+
+* Preparing your My2N account
+* Enabling HTTP API for each device
+* Creating API credentials
+* Connecting to Seam through the Connect Webview
+
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>System Set Up Guide</strong></td><td><a href="../.gitbook/assets/image.png">image.png</a></td><td><a href="../device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions.md">2n-system-set-up-instructions.md</a></td></tr></tbody></table>
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their 2N devices to Seam, include the `my_2n` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To enable 2N device connections in your app’s Connect Webview, add the provider key `my_2n` to your `accepted_providers` list.
 
-***
-
-## Setup Instructions
-
-{% hint style="warning" %}
-You'll need to use a Company Admin account, where the **multi-factor authentication (MFA) is turned off**. If your company admin account requires MFA for security reasons, please create a separate account without MFA enable for dedicated API communication.
-{% endhint %}
-
-To control 2N devices using Seam, ask device owners to follow these steps:
-
-1. [Create a My2N account](https://my2n.com/2n-remote-configuration)  if you don’t already have one.
-2. In My2N, add your 2N IP devices to the sites in which the devices are located.
-3. Make sure that Remote API Access (RAA) is enabled for your My2N company. Contact [integrations@2n.com](mailto:integrations@2n.com) to activate RAA.
-4.  In the [Seam Connect Webview](../core-concepts/connect-webviews/), log in with your admin My2N email and password.
-
-    <figure><img src="../.gitbook/assets/Screenshot 2025-10-16 at 3.41.49 PM.png" alt=""><figcaption><p>Use the login credentials for the My2N.com page.</p></figcaption></figure>
-5. Select the devices you want to connect.&#x20;
-6.  For each device, enter its admin username and password.
-
-    <figure><img src="../.gitbook/assets/Screenshot 2025-10-16 at 3.44.40 PM.png" alt=""><figcaption></figcaption></figure>
+For more details, see [Customize Brands in Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews)![Attachment.tiff](file:///Attachment.tiff).
 
 ***
 
