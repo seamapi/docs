@@ -239,6 +239,7 @@ Items that are intentionally undocumented are not included in this section.
 - `connect_webview.any_device_allowed`
 - `connect_webview.device_selection_mode`
 - `customization_profile.created_at`
+- `customization_profile.customer_portal_theme`
 - `customization_profile.customization_profile_id`
 - `customization_profile.logo_url`
 - `customization_profile.name`
@@ -442,12 +443,14 @@ Items that are intentionally undocumented are not included in this section.
 - `/workspaces/find_anything`
     - `search`
 - `/workspaces/customization_profiles/create`
+    - `customer_portal_theme`
     - `name`
     - `primary_color`
     - `secondary_color`
 - `/workspaces/customization_profiles/get`
     - `customization_profile_id`
 - `/workspaces/customization_profiles/update`
+    - `customer_portal_theme`
     - `customization_profile_id`
     - `name`
     - `primary_color`
