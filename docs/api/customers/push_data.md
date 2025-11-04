@@ -70,7 +70,7 @@ Common area keys associated with the access grant.
 
 <details>
 
-<summary><b><code>ends_at</code></b> <i>String</i></summary>
+<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
 
 Ending date and time for the access grant.
 
@@ -190,7 +190,7 @@ Space keys associated with the access grant.
 
 <details>
 
-<summary><b><code>starts_at</code></b> <i>String</i></summary>
+<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
 
 Starting date and time for the access grant.
 
@@ -289,7 +289,7 @@ Common area keys associated with the access grant.
 
 <details>
 
-<summary><b><code>ends_at</code></b> <i>String</i></summary>
+<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
 
 Ending date and time for the access grant.
 
@@ -409,7 +409,7 @@ Space keys associated with the access grant.
 
 <details>
 
-<summary><b><code>starts_at</code></b> <i>String</i></summary>
+<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
 
 Starting date and time for the access grant.
 
@@ -721,7 +721,7 @@ Common area keys associated with the access grant.
 
 <details>
 
-<summary><b><code>ends_at</code></b> <i>String</i></summary>
+<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
 
 Ending date and time for the access grant.
 
@@ -853,7 +853,7 @@ Space keys associated with the access grant.
 
 <details>
 
-<summary><b><code>starts_at</code></b> <i>String</i></summary>
+<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
 
 Starting date and time for the access grant.
 
