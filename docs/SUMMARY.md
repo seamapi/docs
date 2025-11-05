@@ -274,6 +274,8 @@
   * [List Connected Accounts](api/connected_accounts/list.md)
   * [Sync a Connected Account](api/connected_accounts/sync.md)
   * [Update a Connected Account](api/connected_accounts/update.md)
+  * [Simulate](api/connected_accounts/simulate/README.md)
+    * [Simulate Connected Account Disconnection](api/connected_accounts/simulate/disconnect.md)
 * [Customers](api/customers/README.md)
   * [Create Customer Portal](api/customers/create_portal.md)
   * [Delete Customer Data](api/customers/delete_data.md)
