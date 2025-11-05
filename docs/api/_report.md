@@ -30,6 +30,7 @@ These items are intentionally undocumented.
 - `/seam/instant_key/v1/preview`: No undocumented message provided
 - `/seam/mobile_sdk/v1/acs/credentials`: No undocumented message provided
 - `/seam/mobile_sdk/v1/phone_sessions`: No undocumented message provided
+- `/seam/mobile_sdk/v1`: No undocumented message provided
 - `/seam/partner/v1/building_blocks/spaces`: No undocumented message provided
 - `/unstable_partner/building_blocks`: No undocumented message provided
 - `/user_identities/enrollment_automations`: No undocumented message provided
@@ -64,8 +65,7 @@ These items are intentionally undocumented.
 - `/seam/console`: No undocumented message provided
 - `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
-- `/seam/mobile_sdk/v1/acs`: No undocumented message provided
-- `/seam/mobile_sdk/v1`: No undocumented message provided
+- `/seam/mobile_sdk`: No undocumented message provided
 - `/seam/partner/v1/building_blocks`: No undocumented message provided
 - `/unstable_partner`: No undocumented message provided
 
@@ -116,6 +116,7 @@ These items are intentionally undocumented.
 - `/seam/instant_key/v1/preview/get`: Seam Instant Key only.
 - `/seam/mobile_sdk/v1/acs/credentials/list`: Mobile SDK only.
 - `/seam/mobile_sdk/v1/phone_sessions/get_or_create`: Mobile SDK only.
+- `/seam/mobile_sdk/v1/report_salto_space_audit_trail`: Mobile SDK only.
 - `/seam/partner/v1/building_blocks/spaces/auto_map`: Partner building blocks/UI only.
 - `/thermostats/get`: Will be removed.
 - `/unstable_partner/building_blocks/connect_accounts`: Experimental partner building blocks.
@@ -414,6 +415,9 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/noise_thresholds/update`
     - `sync`
+- `/seam/mobile_sdk/v1/report_salto_space_audit_trail`
+    - `acs_system_id`
+    - `salto_space_metadata`
 - `/spaces/get_related`
     - `exclude`
     - `include`
