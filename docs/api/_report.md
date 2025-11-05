@@ -378,6 +378,8 @@ Items that are intentionally undocumented are not included in this section.
     - `device_selection_mode`
 - `/connected_accounts/delete`
     - `sync`
+- `/connected_accounts/simulate/disconnect`
+    - `connected_account_id`
 - `/customers/create_portal`
     - `features`
     - `customer_data`
@@ -649,6 +651,7 @@ These items are deprecated.
 - `/access_methods/get_related`
 - `/access_methods/unmanaged/get`
 - `/access_methods/unmanaged/list`
+- `/connected_accounts/simulate/disconnect`
 - `/customers/create_portal`
 - `/customers/delete_data`
 - `/customers/push_data`
