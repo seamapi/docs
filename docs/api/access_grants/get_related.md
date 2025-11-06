@@ -39,7 +39,7 @@ Possible enum values:
 - <code>acs_entrances</code>
 - <code>connected_accounts</code>
 - <code>acs_systems</code>
-- <code>user_identity</code>
+- <code>user_identities</code>
 - <code>acs_access_groups</code>
 </details>
 
@@ -56,7 +56,7 @@ Possible enum values:
 - <code>acs_entrances</code>
 - <code>connected_accounts</code>
 - <code>acs_systems</code>
-- <code>user_identity</code>
+- <code>user_identities</code>
 - <code>acs_access_groups</code>
 </details>
 
