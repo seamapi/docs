@@ -409,6 +409,7 @@ seam devices unmanaged list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c5
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
