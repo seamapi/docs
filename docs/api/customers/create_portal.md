@@ -263,6 +263,12 @@ List of users.
 ---
 
 
+**`customization_profile_id`** *String*
+
+The ID of the customization profile to use for the portal.
+
+---
+
 **`features`** *Object*
 
 <details>
@@ -345,6 +351,12 @@ Configuration for the landing page when the portal loads.
 
 ---
 
+
+**`locale`** *String*
+
+The locale to use for the portal.
+
+---
 
 
 ## Response
