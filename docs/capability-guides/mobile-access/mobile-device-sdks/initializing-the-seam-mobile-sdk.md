@@ -10,34 +10,166 @@ You must also use the Seam API to perform server-side actions. Consequently, [in
 
 {% tabs %}
 {% tab title="Android Kotlin" %}
-To install the Seam Android SDK:
+### Configure Gradle to use Seam GitHub Packages
 
-1. Copy the Seam Android SDK `.aar` file (for example, `seam-phone-sdk-android.aar`) into the `libs` directory for your project.
-2.  Add the Android Archive (AAR) name (for example, `seam-phone-sdk-android`) to the `dependencies` block of the [`app/build.gradle`](https://developer.android.com/studio/build/dependencies) file for your app.
+This project retrieves the Seam Mobile SDK artifacts from GitHub Packages.
 
-    There may be additional dependencies required for your specific access control system. For details, see the appropriate [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
+To build successfully, you need valid credentials and must configure Gradle to fetch dependencies from Seam’s private package repository.
 
-{% code title="build.gradle.kts" %}
-```gradle
-plugins {
-    id("com.android.application")
+#### If you're using Kotlin Script (settings.gradle.kts):
+
+{% code title="settings.gradle.kts" %}
+```kotlin
+// getPropertyOrNull is a helper function defined in settings.gradle.kts
+// to safely read properties from local.properties
+fun getPropertyOrNull(propertyName: String): String? {
+    val propertiesFile = file("local.properties")
+    if (!propertiesFile.exists()) return null
+
+    val properties = Properties()
+    properties.load(propertiesFile.inputStream())
+    return properties.getProperty(propertyName, null)
 }
 
-android { ... }
+// settings.gradle.kts
+repositories {
+    // ... other repositories
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/seampkg/seam-mobile-sdk")
+        credentials {
+            username = getPropertyOrNull("seamUsername")
+            password = getPropertyOrNull("seamPat")
+        }
+    }
+}
+```
+{% endcode %}
+
+#### if you're using Groovy:
+
+{% code title="settings.gradle" %}
+```groovy
+// getPropertyOrNull is a helper function defined in settings.gradle
+// to safely read properties from local.properties
+String getPropertyOrNull(String propertyName) {
+    def propertiesFile = file("local.properties")
+    if (!propertiesFile.exists()) return null
+
+    def properties = new Properties()
+    properties.load(propertiesFile.inputStream())
+    return properties.getProperty(propertyName, null)
+}
+
+// settings.gradle
+repositories {
+    // ... other repositories
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/seampkg/seam-mobile-sdk")
+        credentials {
+            username = getPropertyOrNull("githubUsername")
+            password = getPropertyOrNull("githubPat")
+        }
+    }
+}
+```
+{% endcode %}
+
+***
+
+### Add your GitHub credentials
+
+Gradle requires two credentials to download the Seam SDK packages from GitHub:
+
+<table><thead><tr><th width="152.2001953125">Credential</th><th>Description</th><th>Where to get it</th></tr></thead><tbody><tr><td><code>githubUsername</code></td><td>Your GitHub username.</td><td>Use the same username you use to log in to GitHub.</td></tr><tr><td><code>githubPat</code></td><td>Personal Access Token (PAT) with the <code>read:packages</code> scope</td><td>Follow the steps below to generate it.</td></tr></tbody></table>
+
+#### **To retrieve your credentials**
+
+1.  Ask Seam to add your GitHub account as a collaborator to the private repository:
+
+    [https://github.com/seampkg/seam-mobile-sdk](https://github.com/seampkg/seam-mobile-sdk)![Attachment.tiff](file:///Attachment.tiff)
+2.  Once you’ve been added, go to your GitHub account:
+
+    **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
+3. Select **Generate new token (classic)** and choose:
+   * Expiration: as needed (e.g., 90 days or “No expiration” if permitted)
+   * Scopes: check only `read:packages`
+4. Copy the generated token. This is your `githubPat` value.
+
+Once you have both values, create a `local.properties` file in your project root:
+
+{% code title="local.properties" %}
+```properties
+# local.properties (DO NOT COMMIT THIS FILE)
+githubUsername=YOUR_GITHUB_USERNAME
+githubPat=YOUR_GITHUB_CLASSIC_PAT
+```
+{% endcode %}
+
+{% hint style="info" %}
+Important:
+
+* &#x20;`local.properties` is listed in `.gitignore` by default. Never commit this file to version control.
+* PATs are private credentials--treat them like passwords.
+* If your token expires or you lose access,&#x20;
+{% endhint %}
+
+***
+
+### Add Seam SDK dependencies
+
+Include the required Seam SDK components in your `app/build.gradle.kts`.
+
+The `seam-phone-sdk-android-core` module provides the core functionality and must be included for all other components to work.
+
+Each additional dependency enables support for a specific lock or credential integration. For example, to use **Salto Space**, add the `seam-phone-sdk-android-saltospace` module. You can include as many integration modules as your app requires.
+
+#### Kotlin script (build.gradle.kts):
+
+{% code title="app/build.gradle.kts" %}
+```kotlin
+val seamVersion = "3.1.6" // Or the desired version
 
 dependencies {
+    // ... other dependencies
+    implementation("co.seam:seam-phone-sdk-android-core:$seamVersion")
+    implementation("co.seam:seam-phone-sdk-android-saltoks:$seamVersion")
+    implementation("co.seam:seam-phone-sdk-android-saltospace:$seamVersion")
+    implementation("co.seam:seam-phone-sdk-android-latch:$seamVersion")
+    implementation("co.seam:seam-phone-sdk-android-assaabloy:$seamVersion")
+    implementation("co.seam:seam-phone-sdk-android-legic:$seamVersion")
     // ...
+}
+```
+{% endcode %}
 
-    // Add the Seam Android SDK.
-    implementation(project(":seam-phone-sdk-android"))
+#### Groovy script (build.gradle):
+
+{% code title="app/build.gradle" %}
+```groovy
+// app/build.gradle.kts
+def seamVersion = "3.1.6" // Or the desired version
+
+dependencies {
+    // ... other dependencies
+    implementation "co.seam:seam-phone-sdk-android-core:$seamVersion"
+    implementation "co.seam:seam-phone-sdk-android-saltoks:$seamVersion"
+    implementation "co.seam:seam-phone-sdk-android-saltospace:$seamVersion"
+    implementation "co.seam:seam-phone-sdk-android-latch:$seamVersion"
+    implementation "co.seam:seam-phone-sdk-android-assaabloy:$seamVersion"
+    implementation "co.seam:seam-phone-sdk-android-legic:$seamVersion"
+    // ...
 }
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-You can install SeamSDK via CocoaPods or Swift Package Manager (SPM).  
+You can install SeamSDK via CocoaPods or Swift Package Manager (SPM).\
 SeamSDK supports per-lock-provider integration granularity. Include only the modules you need to keep your app footprint minimal.
+
+#### CocoaPods:
 
 {% code title="Podfile" %}
 ```ruby
@@ -54,8 +186,9 @@ end
 ```
 {% endcode %}
 
-{% tabs %}
-{% tab title="SPM" %}
+#### Swift Package Manager:
+
+{% code title="Package.swift" %}
 ```swift
 dependencies: [
     .package(path: "PATH_TO_SEAM_SDK/SeamSDK")
@@ -67,8 +200,7 @@ targets: [
     )
 ]
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -197,14 +329,11 @@ $client_session = $seam->client_sessions->create(
 $token = $client_session->token;
 ```
 {% endtab %}
-
-
 {% endtabs %}
 
 ***
 
 ## 4. Initialize the Mobile SDK with the Client Session Token
-
 
 Use the client session token that you generated earlier to bootstrap the Seam SDK on the device. Under the hood, this action sets up credential synchronization and starts a background sync loop to keep permissions up to date.
 
@@ -213,31 +342,6 @@ Use the client session token that you generated earlier to bootstrap the Seam SD
 Perform initialization and activation within your app’s asynchronous context (for example, Swift’s `Task` or Kotlin coroutines) so that you can handle errors. The initialization call may fail due to configuration issues (such as an invalid token), and the activation call may fail due to network or runtime errors. Catch these errors and present a user-friendly message or fallback UI as appropriate.
 
 {% tabs %}
-{% tab title="Android Kotlin" %}
-```kotlin
-import co.seam.sdk.Seam
-import co.seam.sdk.SeamError
-
-
-// Initialize the Seam client with the client session token. nclude the
-// Android activity context and a .
-val seam = SeamClient(
-    clientSessionToken = seamClientSessionToken,
-    androidContext = activityContext,
-    seamEventHandler = 
-)
-
-try {
-    seam.phone.native.initialize(
-        // Opt into features with these options
-        enableUnlockWithTap = true
-    )
-} catch (e: SeamError) {
-    // Handle unrecoverable initialization errors.
-}
-```
-{% endtab %}
-
 {% tab title="iOS Swift" %}
 ```swift
 import SeamSDK
@@ -257,12 +361,42 @@ Task {
 }
 ```
 {% endtab %}
-{% endtabs %}
 
+{% tab title="Android Kotlin" %}
+```kotlin
+try {
+    SeamSDK.initialize(context, "seam_cst_...")
+    SeamSDK.getInstance().activate()
+} catch (seamError: SeamError) {
+    when (seamError) {
+        is SeamError.AlreadyInitialized -> {
+            // handle error when SDK is already initialized
+        }
+        is SeamError.DeactivationInProgress -> {
+            // handle error when app is being deactivated
+        }
+        is SeamError.InternetConnectionRequired -> {
+            // handle error when internet connection is required
+        }
+        is SeamError.InvalidClientSessionToken ->  {
+            // handle error when client session token is invalid
+        }
+        else -> {
+            // handle other errors
+        }
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### Credential Errors
 
-Any errors that occur between activation and deactivation surface on individual credential objects through their `errors` property. Observe the `credentials` array to detect and handle these errors:
+Any errors that occur between activation and deactivation surface on individual credential objects through their `errors` property. You can observe the `credentials` list to detect and handle these issues in real time.
+
+{% tabs %}
+{% tab title="iOS Swift" %}
+#### Observe credential errors
 
 ```swift
 import SeamSDK
@@ -280,19 +414,69 @@ func startMonitoringCredentialErrors() {
 }
 ```
 
-#### Credential Error Types
+#### Credential error types
 
-- `awaitingLocalCredential`: The system is waiting for a local credential to become available.
-- `expired`: The credential has expired and is no longer valid.
-- `userInteractionRequired(action)`: User interaction is required to resolve the credential issue; check the action for specifics.
-- `contactSeamSupport`: Configuration error requiring developer attention.
-- `unsupportedDevice`: The current device is not supported.
-- `unknown`: An unclassified or unexpected credential error occurred.
+* `awaitingLocalCredential`: Waiting for a local credential to become available.
+* `expired`: The credential has expired and is no longer valid.
+* `userInteractionRequired(action)`: User interaction is required to resolve the issue; inspect action for details.
+* `unsupportedDevice`: The current device is not supported.
+* `contactSeamSupport`: Configuration error requiring developer attention.
+* `unknown`: An unclassified or unexpected credential error occurred.
 
-#### Possible `userInteractionRequired` Actions
+#### userInteractionRequired actions
 
-- `completeOtpAuthorization(otpUrl:)`: The user must complete OTP authorization via the provided URL.
-- `enableInternet`: The user must enable internet connectivity.
-- `enableBluetooth`: The user must enable Bluetooth on the device.
-- `grantBluetoothPermission`: The user must grant Bluetooth permission to the app.
-- `appRestartRequired`: The user must restart the app to resolve the issue.
+* `completeOtpAuthorization(otpUrl:)`: The user must complete OTP authorization via the provided URL.
+* `enableInternet`: The user must enable internet connectivity.
+* `enableBluetooth`: The user must enable Bluetooth on the device.
+* `grantBluetoothPermission`: The user must grant Bluetooth permission to the app.
+* `appRestartRequired`: The user must restart the app to resolve the issue.
+{% endtab %}
+
+{% tab title="Android Kotlin" %}
+#### Observe credential errors
+
+```kotlin
+// One of the attributes of the credential is a list of errors of type `SeamCredentialError`
+coroutineScope.launch {
+    SeamSDK.getInstance().credentials.collect { credentialsList ->
+        val errors = credentialsList.flatMap { it.errors }
+        errors.forEach { error ->
+            when (error) {
+                is SeamCredentialError.Expired -> { /* handle credential expiration error */}
+                is SeamCredentialError.Loading -> { /* handle not loaded yet */ }
+                is SeamCredentialError.Unknown -> { /* handle unknown error */}
+                is SeamCredentialError.UserInteractionRequired -> {
+                    handleUserInteractionRequired(error.interaction)
+                }
+            }
+        }
+    }
+}
+
+fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
+    when (interaction) {
+        is SeamRequiredUserInteraction.CompleteOtpAuthorization -> { /* handle OTP authorization */ }
+        is SeamRequiredUserInteraction.EnableBluetooth -> { /* handle Bluetooth error */ }
+        is SeamRequiredUserInteraction.EnableInternet -> { /* handle Internet connection error*/ }
+        is SeamRequiredUserInteraction.GrantPermissions -> { /* handle permissions error*/ }
+    }
+}
+
+```
+
+#### Credential error types
+
+* `Loading`: The system is waiting for a local credential to become available.
+* `Expired`: The credential has expired and is no longer valid.
+* `UserInteractionRequired(val interaction: SeamRequiredUserInteraction)`: User interaction is required to resolve the issue; check interaction for specifics.
+* `Unknown`: An unclassified or unexpected credential error occurred.
+
+#### userInteractionRequired actions
+
+* `CompleteOtpAuthorization(val otpUrl: String)`: The user must complete OTP authorization via the provided URL.
+* `EnableInternet`: The user must enable internet connectivity.
+* `EnableBluetooth`: The user must enable Bluetooth on the device.
+* `GrantPermissions(val permissions: List<String>)`: The user must grant the required permissions.
+* `AppRestartRequired`: The user must restart the app to resolve the issue.
+{% endtab %}
+{% endtabs %}
