@@ -5,7 +5,6 @@ The mobile SDK surfaces missing or required system permissions (Bluetooth, inter
 ## Monitoring Permission Errors
 
 {% tabs %}
-
 {% tab title="Android Kotlin" %}
 ```kotlin
 coroutineScope.launch {
@@ -13,13 +12,21 @@ coroutineScope.launch {
         val errors = credentialsList.flatMap { it.errors }
         errors.forEach { error ->
             when (error) {
-                is SeamCredentialError.Expired -> { /* handle credential expiration error */}
-                is SeamCredentialError.Loading -> { /* handle not loaded yet */ }
-                is SeamCredentialError.Unknown -> { /* handle unknown error */}
                 is SeamCredentialError.UserInteractionRequired -> {
                     handleUserInteractionRequired(error.interaction)
                 }
+                else -> { /* handle other errors */ }
             }
+        }
+    }
+
+    fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
+        when (interaction) {
+            is SeamRequiredUserInteraction.GrantPermissions -> {
+                 /* handle permissions error */
+                 // interaction.permissions contains the list of required permissions
+            }
+            else -> { /* handle other errors */ }
         }
     }
 }
@@ -27,9 +34,7 @@ coroutineScope.launch {
 {% endtab %}
 
 {% tab title="iOS Swift" %}
-
 Use Combine to watch the published credentials array and handle permission-related errors:
-
 
 ```swift
 import SeamSDK
@@ -54,7 +59,6 @@ func startMonitoringPermissionErrors() {
 {% endtab %}
 {% endtabs %}
 
-
 The mobile SDK automatically clears resolved permission errors once the required permission is granted, reflecting the updated credential state.
 
 ## Handling Permission Actions
@@ -62,7 +66,6 @@ The mobile SDK automatically clears resolved permission errors once the required
 Implement your handler for each action:
 
 {% tabs %}
-
 {% tab title="Android Kotlin" %}
 ```kotlin
 fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
@@ -91,7 +94,6 @@ func handlePermissionAction(_ action: CredentialUserAction) {
 ```
 {% endtab %}
 {% endtabs %}
-
 
 ## See also
 

@@ -339,6 +339,15 @@ coroutineScope.launch {
 Stop scanning by canceling your active task or subscription.
 
 {% tabs %}
+{% tab title="iOS Swift" %}
+```swift
+// For Combine
+unlockSubscription.cancel()
+
+// For Async/Await, cancel the Task as needed.
+```
+{% endtab %}
+
 {% tab title="Android Kotlin" %}
 ```kotlin
 val seamSDK = SeamSDK.getInstance()
@@ -350,15 +359,6 @@ val job = seamSDK.unlock(
 
 // Canceling the job stops the unlock process
 job.cancel()
-```
-{% endtab %}
-
-{% tab title="iOS Swift" %}
-```swift
-// For Combine
-unlockSubscription.cancel()
-
-// For Async/Await, cancel the Task as needed.
 ```
 {% endtab %}
 {% endtabs %}
