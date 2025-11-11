@@ -86,9 +86,8 @@ Gradle requires two credentials to download the Seam SDK packages from GitHub:
 
 #### **To retrieve your credentials**
 
-1.  Ask Seam to add your GitHub account as a collaborator to the private repository:
-
-    [https://github.com/seampkg/seam-mobile-sdk](https://github.com/seampkg/seam-mobile-sdk)![Attachment.tiff](file:///Attachment.tiff)
+1. Ask Seam to add your GitHub account as a collaborator to the private repository:\
+   [https://github.com/seampkg/seam-mobile-sdk](https://github.com/seampkg/seam-mobile-sdk)
 2.  Once you’ve been added, go to your GitHub account:
 
     **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
