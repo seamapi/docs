@@ -1,18 +1,19 @@
 ---
 description: >-
-  This feature enables your app to perform unlock operations using mobile credentials.
+  This feature enables your app to perform unlock operations using mobile
+  credentials.
 ---
 
-# Unlocking
+# Using Unlock With Tap
 
 Unlocking with SeamSDK uses proximity to communicate credentials to door readers. When a user initiates an unlock, the SDK performs scanning, error handling, and unlock events using `Seam.shared.unlock(using:)`.
 
 Using this process involves the following steps:
 
-1. Retrieve available mobile credentials.  
-2. Monitor for permission or credential errors. Unhandled errors are thrown as `credentialErrors([SeamCredentialError])`.  
-3. Perform the unlock operation.  
-4. Handle unlock status events.  
+1. Retrieve available mobile credentials.
+2. Monitor for permission or credential errors. Unhandled errors are thrown as `credentialErrors([SeamCredentialError])`.
+3. Perform the unlock operation.
+4. Handle unlock status events.
 5. Cancel the unlock operation if needed.
 
 ***
@@ -69,6 +70,7 @@ let errorSubscription = Seam.shared.$credentials
     }
 ```
 {% endtab %}
+
 {% tab title="Android Kotlin" %}
 ```kotlin
 import co.seam.core.api.SeamCredential
@@ -108,9 +110,9 @@ fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
 ## 3. Perform Unlock Operation
 
 The call to `Seam.shared.unlock(using:)` may throw:
-- `SeamError`: For SDK-level issues (for example, invalid token, uninitialized SDK).
-- `SeamCredentialError`: For credential-specific issues (for example, expired credential, device not eligible).
-Ensure that you wrap the call in `do/catch` blocks to handle these errors.
+
+* `SeamError`: For SDK-level issues (for example, invalid token, uninitialized SDK).
+* `SeamCredentialError`: For credential-specific issues (for example, expired credential, device not eligible). Ensure that you wrap the call in `do/catch` blocks to handle these errors.
 
 Use Async/Await or Combine to initiate an unlock with a selected credential:
 
@@ -164,6 +166,7 @@ do {
 }
 ```
 {% endtab %}
+
 {% tab title="Android Kotlin" %}
 ```kotlin
 import co.seam.core.api.SeamCredential
@@ -246,18 +249,17 @@ fun handleCredentialErrors(credentialErrors: List<SeamCredentialError>) {
 
 Handle each `SeamUnlockEvent` to update your UI and logic. Available events:
 
-- **launched**  
+* **launched**\
   Unlock operation has started.
-- **grantedAccess**  
+* **grantedAccess**\
   Access was granted by the lock.
-- **timedOut**  
+* **timedOut**\
   Unlock operation timed out without success.
-- **connectionFailed(debugDescription:)**  
+* **connectionFailed(debugDescription:)**\
   Unlock operation failed to connect; `debugDescription` may contain additional details.
 
 {% tabs %}
 {% tab title="iOS Swift" %}
-
 Async/Await example:
 
 ```swift
@@ -334,9 +336,23 @@ coroutineScope.launch {
 
 ## 5. Cancel the Unlock Operation
 
-Stop scanning by cancelling your subscription or task:
+Stop scanning by canceling your active task or subscription.
 
 {% tabs %}
+{% tab title="Android Kotlin" %}
+```kotlin
+val seamSDK = SeamSDK.getInstance()
+// The unlock function returns a Job
+val job = seamSDK.unlock(
+    credentialId = credentialId,
+    timeout = 30.seconds
+)
+
+// Canceling the job stops the unlock process
+job.cancel()
+```
+{% endtab %}
+
 {% tab title="iOS Swift" %}
 ```swift
 // For Combine

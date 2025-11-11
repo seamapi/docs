@@ -298,8 +298,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking a door.
 
-{% openapi src="../../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
-[openapi.json](../../.gitbook/assets/openapi.json)
+{% openapi src="../../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
+[openapi (1).json](<../../.gitbook/assets/openapi (1).json>)
 {% endopenapi %}
 
 ## Unlock a door
