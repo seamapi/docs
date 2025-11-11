@@ -16,7 +16,7 @@ This project retrieves the Seam Mobile SDK artifacts from GitHub Packages.
 
 To build successfully, you need valid credentials and must configure Gradle to fetch dependencies from Seam’s private package repository.
 
-#### If you're using Kotlin Script (settings.gradle.kts):
+#### Using Kotlin Script (settings.gradle.kts):
 
 {% code title="settings.gradle.kts" %}
 ```kotlin
@@ -46,7 +46,7 @@ repositories {
 ```
 {% endcode %}
 
-#### if you're using Groovy:
+#### Using Groovy (settings.gradle):
 
 {% code title="settings.gradle" %}
 ```groovy
