@@ -3,6 +3,10 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
+{% hint style="warning" %}
+**Deprecated**. Use `/devices/get` instead.
+{% endhint %}
+
 Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
 
 
