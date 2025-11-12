@@ -350,7 +350,7 @@ Scans an encoded acs_credential from a plastic card placed on the specified enco
 
 ```php
 $seam->acs->encoders->scan_credential(
-    acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36"
+    acs_encoder_id: "b062df92-91c6-482c-a3f9-6e578f062d36",
 );
 ```
 

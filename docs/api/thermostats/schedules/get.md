@@ -143,7 +143,7 @@ Returns a specified thermostat schedule.
 
 ```php
 $seam->thermostats->schedules->get(
-    thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218"
+    thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218",
 );
 ```
 

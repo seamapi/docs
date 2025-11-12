@@ -91,7 +91,7 @@ Simulates connecting a device to Seam.
 
 ```php
 $seam->devices->simulate->connect(
-    device_id: "5d703d4f-523f-42af-9439-618415ca651f"
+    device_id: "5d703d4f-523f-42af-9439-618415ca651f",
 );
 ```
 

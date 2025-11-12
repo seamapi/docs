@@ -97,7 +97,7 @@ Deletes a specified connected account.
 
 ```php
 $seam->connected_accounts->delete(
-    connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e"
+    connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e",
 );
 ```
 

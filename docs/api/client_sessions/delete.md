@@ -91,7 +91,7 @@ Deletes a client session.
 
 ```php
 $seam->client_sessions->delete(
-    client_session_id: "d149de35-cfad-46fe-a78e-f71f649e7a37"
+    client_session_id: "d149de35-cfad-46fe-a78e-f71f649e7a37",
 );
 ```
 

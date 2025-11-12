@@ -101,7 +101,7 @@ Assigns a specified credential to a specified access system user, using the asso
 ```php
 $seam->acs->credentials->assign(
     user_identity_id: "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
-    acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b"
+    acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
 );
 ```
 
@@ -276,7 +276,7 @@ nil
 ```php
 $seam->acs->credentials->assign(
     acs_user_id: "143f083a-d61c-4d85-923f-d5483fb5a7d4",
-    acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b"
+    acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
 );
 ```
 

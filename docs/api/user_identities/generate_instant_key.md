@@ -133,7 +133,7 @@ Generates a new instant key for a specified user identity.
 ```php
 $seam->user_identities->generate_instant_key(
     user_identity_id: "d92e0c7b-72a1-4063-9ee8-2acefc240358",
-    max_use_count: 10
+    max_use_count: 10,
 );
 ```
 

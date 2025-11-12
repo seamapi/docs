@@ -101,7 +101,7 @@ Grants a specified access system user access to a specified access system entran
 ```php
 $seam->acs->entrances->grant_access(
     acs_entrance_id: "d23d7180-c1ee-4bbe-8630-05df5031ce35",
-    user_identity_id: "c6247b75-f1cb-493a-9915-a85a0b9639ae"
+    user_identity_id: "c6247b75-f1cb-493a-9915-a85a0b9639ae",
 );
 ```
 
@@ -276,7 +276,7 @@ nil
 ```php
 $seam->acs->entrances->grant_access(
     acs_entrance_id: "d23d7180-c1ee-4bbe-8630-05df5031ce35",
-    acs_user_id: "ace1dabe-7a25-4271-8d76-50e74ee4ae1f"
+    acs_user_id: "ace1dabe-7a25-4271-8d76-50e74ee4ae1f",
 );
 ```
 

@@ -161,7 +161,7 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 $seam->access_codes->simulate->create_unmanaged_access_code(
     device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
     name: "My Access Code",
-    code: "1234"
+    code: "1234",
 );
 ```
 

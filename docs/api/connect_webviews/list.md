@@ -188,7 +188,7 @@ Returns a list of all Connect Webviews for a specified customer ID.
 ```php
 $seam->connect_webviews->list(
     customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
-    limit: 50
+    limit: 50,
 );
 ```
 
@@ -536,7 +536,7 @@ seam.connect_webviews.list(user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b
 ```php
 $seam->connect_webviews->list(
     user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b19597",
-    limit: 50
+    limit: 50,
 );
 ```
 
@@ -795,7 +795,7 @@ seam.connect_webviews.list(custom_metadata_has: { id: "internalId1" }, limit: 50
 ```php
 $seam->connect_webviews->list(
     custom_metadata_has: ["id" => "internalId1"],
-    limit: 50
+    limit: 50,
 );
 ```
 

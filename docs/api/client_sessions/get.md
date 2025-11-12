@@ -142,7 +142,7 @@ Returns a specified client session by ID.
 
 ```php
 $seam->client_sessions->get(
-    client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c1"
+    client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
 );
 ```
 

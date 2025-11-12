@@ -172,7 +172,7 @@ Returns a list of all access groups, filtered by user identity.
 $seam->acs->access_groups->list(
     acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f",
     acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8",
-    user_identity_id: "9b1deda4-07e2-4e90-acde-5724b6ab7305"
+    user_identity_id: "9b1deda4-07e2-4e90-acde-5724b6ab7305",
 );
 ```
 
@@ -470,7 +470,7 @@ seam.acs.access_groups.list(
 ```php
 $seam->acs->access_groups->list(
     acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f",
-    acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8"
+    acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8",
 );
 ```
 

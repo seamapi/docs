@@ -173,7 +173,7 @@ Returns a list of all accessible entrances for a specified access group.
 
 ```php
 $seam->acs->access_groups->list_accessible_entrances(
-    acs_access_group_id: "1b02a29f-effd-4ce6-8a58-16ec09fd9b50"
+    acs_access_group_id: "1b02a29f-effd-4ce6-8a58-16ec09fd9b50",
 );
 ```
 

@@ -182,7 +182,7 @@ Returns a specified Connect Webview.
 
 ```php
 $seam->connect_webviews->get(
-    connect_webview_id: "c4c30885-ec87-4b31-8d7b-9bc0678fa028"
+    connect_webview_id: "c4c30885-ec87-4b31-8d7b-9bc0678fa028",
 );
 ```
 

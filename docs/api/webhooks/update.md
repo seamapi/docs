@@ -116,7 +116,7 @@ $seam->webhooks->update(
         "device.connected",
         "device.disconnected",
         "device.unmanaged.converted_to_managed",
-    ]
+    ],
 );
 ```
 

@@ -126,7 +126,7 @@ Sets a specified thermostat to cool mode.
 ```php
 $seam->thermostats->cool(
     device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
-    cooling_set_point_fahrenheit: 75
+    cooling_set_point_fahrenheit: 75,
 );
 ```
 

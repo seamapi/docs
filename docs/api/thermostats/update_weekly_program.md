@@ -157,7 +157,7 @@ $seam->thermostats->update_weekly_program(
     thursday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
     friday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
     saturday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
-    sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28"
+    sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
 );
 ```
 

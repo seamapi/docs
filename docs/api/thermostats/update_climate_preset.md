@@ -130,7 +130,7 @@ $seam->thermostats->update_climate_preset(
     hvac_mode_setting: "heat_cool",
     cooling_set_point_fahrenheit: 75,
     heating_set_point_fahrenheit: 65,
-    manual_override_allowed: true
+    manual_override_allowed: true,
 );
 ```
 

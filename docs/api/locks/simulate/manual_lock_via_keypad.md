@@ -120,7 +120,7 @@ Simulates a manual lock action using a keypad.
 
 ```php
 $seam->locks->simulate->manual_lock_via_keypad(
-    device_id: "d0eed522-8c2f-4905-88fd-4fe8b067bedc"
+    device_id: "d0eed522-8c2f-4905-88fd-4fe8b067bedc",
 );
 ```
 

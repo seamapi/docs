@@ -126,7 +126,7 @@ Simulates the entry of a code on a keypad.
 ```php
 $seam->locks->simulate->keypad_code_entry(
     device_id: "97a7a706-05a9-405c-91e5-b03e5b9c2003",
-    code: "1234"
+    code: "1234",
 );
 ```
 

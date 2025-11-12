@@ -269,7 +269,7 @@ Returns a specified unmanaged device, using an ID.
 
 ```php
 $seam->devices->unmanaged->get(
-    device_id: "9f871e41-0ce4-4825-8d99-9653df4cd525"
+    device_id: "9f871e41-0ce4-4825-8d99-9653df4cd525",
 );
 ```
 

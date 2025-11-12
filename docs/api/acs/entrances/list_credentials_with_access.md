@@ -181,7 +181,7 @@ Returns a list of all credentials with access to a specified entrance.
 
 ```php
 $seam->acs->entrances->list_credentials_with_access(
-    acs_entrance_id: "afdde789-8684-425a-b421-6031bb3df62e"
+    acs_entrance_id: "afdde789-8684-425a-b421-6031bb3df62e",
 );
 ```
 

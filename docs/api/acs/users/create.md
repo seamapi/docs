@@ -252,7 +252,7 @@ $seam->acs->users->create(
         "ends_at" => "2025-06-12T11:00:00.000Z",
     ],
     email_address: "jane@example.com",
-    phone_number: "+15551234567"
+    phone_number: "+15551234567",
 );
 ```
 

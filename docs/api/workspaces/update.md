@@ -144,7 +144,7 @@ $seam->workspaces->update(
         "success_message" =>
             "Your account has been successfully connected to Acme!",
     ],
-    is_suspended: true
+    is_suspended: true,
 );
 ```
 

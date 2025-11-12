@@ -179,7 +179,7 @@ $seam->client_sessions->create(
     connect_webview_ids: ["dafe6400-7484-4fd1-8c17-1c901b444250"],
     connected_account_ids: ["8062d457-e28e-481f-aecc-509905627511"],
     user_identity_id: "89765fd3-6193-4d63-8605-e77f75356555",
-    expires_at: "2025-06-19T15:22:40.000Z"
+    expires_at: "2025-06-19T15:22:40.000Z",
 );
 ```
 
