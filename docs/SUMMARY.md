@@ -532,7 +532,7 @@
 * [Get started with ControlByWeb Devices](device-guides/get-started-with-controlbyweb-devices.md)
 * [Dormakaba Community Access Control System](device-and-system-integration-guides/dormakaba-community-access-control-system/README.md)
   * [System Setup Instructions](device-and-system-integration-guides/dormakaba-community-access-control-system/latch-acs-setup-instructions.md)
-* [dormakaba Oracode Locks](device-guides/dormakaba-oracode-locks.md)
+* [Dormakaba Oracode Locks](device-guides/dormakaba-oracode-locks.md)
   * [Get started with dormakaba Oracode Locks](device-guides/get-started-with-dormakaba-oracode-locks.md)
   * [Creating dormakaba Oracode Offline Access Codes](device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
 * [ecobee Thermostats](device-guides/ecobee-thermostats.md)

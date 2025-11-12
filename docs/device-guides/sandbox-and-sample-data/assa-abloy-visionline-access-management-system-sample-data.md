@@ -8,9 +8,9 @@ To use the virtual Visionline Access Control System (ACS) to issue mobile keys i
 
 ## Sandbox Seam Bridge Connection Credentials
 
-| Pairing Token                        | Bridge Name                       |
-| ------------------------------------ | --------------------------------- |
-| 123456 (or any six-character string) | My Network (or any unique string) |
+| Pairing Token |
+| ------------- |
+| prefilled     |
 
 ## Visionline Credentials
 
@@ -26,4 +26,5 @@ If you plan to create mobile keys, select the **Mobile Keys will be issued in th
 
 ## Seam Bridge Connection Information
 
-Normally, leave the **Seam Bridge and Visionline server are installed on different computers** field unchecked. If you choose to select this field, type `192.168.1.100` in the **IP Address of Computer running Visionline server** field.
+Normally, leave the **Seam Bridge and Visionline server are installed on different computers** field unchecked. \
+If you choose to select this field, type `https://192.168.1.100` in the **LAN URL of the Visionline server** field.
