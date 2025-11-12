@@ -10,13 +10,13 @@ You must also use the Seam API to perform server-side actions. Consequently, [in
 
 {% tabs %}
 {% tab title="Android Kotlin" %}
-### Configure Gradle to use Seam GitHub Packages
+#### Configure Gradle to use Seam GitHub Packages
 
 This project retrieves the Seam Mobile SDK artifacts from GitHub Packages.
 
 To build successfully, you need valid credentials and must configure Gradle to fetch dependencies from Seam’s private package repository.
 
-#### Using Kotlin Script (settings.gradle.kts):
+**Using Kotlin Script (settings.gradle.kts):**
 
 {% code title="settings.gradle.kts" %}
 ```kotlin
@@ -46,7 +46,7 @@ repositories {
 ```
 {% endcode %}
 
-#### Using Groovy (settings.gradle):
+**Using Groovy (settings.gradle):**
 
 {% code title="settings.gradle" %}
 ```groovy
@@ -78,13 +78,13 @@ repositories {
 
 ***
 
-### Add your GitHub credentials
+#### Add your GitHub credentials
 
 Gradle requires two credentials to download the Seam SDK packages from GitHub:
 
 <table><thead><tr><th width="152.2001953125">Credential</th><th>Description</th><th>Where to get it</th></tr></thead><tbody><tr><td><code>githubUsername</code></td><td>Your GitHub username.</td><td>Use the same username you use to log in to GitHub.</td></tr><tr><td><code>githubPat</code></td><td>Personal Access Token (PAT) with the <code>read:packages</code> scope</td><td>Follow the steps below to generate it.</td></tr></tbody></table>
 
-#### **To retrieve your credentials**
+**To retrieve your credentials**
 
 1. Ask Seam to add your GitHub account as a collaborator to the private repository:\
    [https://github.com/seampkg/seam-mobile-sdk](https://github.com/seampkg/seam-mobile-sdk)
@@ -109,14 +109,14 @@ githubPat=YOUR_GITHUB_CLASSIC_PAT
 {% hint style="info" %}
 Important:
 
-* &#x20;`local.properties` is listed in `.gitignore` by default. Never commit this file to version control.
+* `local.properties` is listed in `.gitignore` by default. Never commit this file to version control.
 * PATs are private credentials--treat them like passwords.
-* If your token expires or you lose access,&#x20;
+* If your token expires or you lose access,
 {% endhint %}
 
 ***
 
-### Add Seam SDK dependencies
+#### Add Seam SDK dependencies
 
 Include the required Seam SDK components in your `app/build.gradle.kts`.
 
@@ -124,7 +124,7 @@ The `seam-phone-sdk-android-core` module provides the core functionality and mus
 
 Each additional dependency enables support for a specific lock or credential integration. For example, to use **Salto Space**, add the `seam-phone-sdk-android-saltospace` module. You can include as many integration modules as your app requires.
 
-#### Kotlin script (build.gradle.kts):
+**Kotlin script (build.gradle.kts):**
 
 {% code title="app/build.gradle.kts" %}
 ```kotlin
@@ -143,7 +143,7 @@ dependencies {
 ```
 {% endcode %}
 
-#### Groovy script (build.gradle):
+**Groovy script (build.gradle):**
 
 {% code title="app/build.gradle" %}
 ```groovy
@@ -168,7 +168,7 @@ dependencies {
 You can install SeamSDK via CocoaPods or Swift Package Manager (SPM).\
 SeamSDK supports per-lock-provider integration granularity. Include only the modules you need to keep your app footprint minimal.
 
-#### CocoaPods:
+**CocoaPods:**
 
 {% code title="Podfile" %}
 ```ruby
@@ -185,7 +185,7 @@ end
 ```
 {% endcode %}
 
-#### Swift Package Manager:
+**Swift Package Manager:**
 
 {% code title="Package.swift" %}
 ```swift
@@ -395,7 +395,7 @@ Any errors that occur between activation and deactivation surface on individual 
 
 {% tabs %}
 {% tab title="iOS Swift" %}
-#### Observe credential errors
+**Observe credential errors**
 
 ```swift
 import SeamSDK
@@ -413,7 +413,7 @@ func startMonitoringCredentialErrors() {
 }
 ```
 
-#### Credential error types
+**Credential error types**
 
 * `awaitingLocalCredential`: Waiting for a local credential to become available.
 * `expired`: The credential has expired and is no longer valid.
@@ -422,7 +422,7 @@ func startMonitoringCredentialErrors() {
 * `contactSeamSupport`: Configuration error requiring developer attention.
 * `unknown`: An unclassified or unexpected credential error occurred.
 
-#### userInteractionRequired actions
+**userInteractionRequired actions**
 
 * `completeOtpAuthorization(otpUrl:)`: The user must complete OTP authorization via the provided URL.
 * `enableInternet`: The user must enable internet connectivity.
@@ -432,7 +432,7 @@ func startMonitoringCredentialErrors() {
 {% endtab %}
 
 {% tab title="Android Kotlin" %}
-#### Observe credential errors
+**Observe credential errors**
 
 ```kotlin
 // One of the attributes of the credential is a list of errors of type `SeamCredentialError`
@@ -463,14 +463,14 @@ fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
 
 ```
 
-#### Credential error types
+**Credential error types**
 
 * `Loading`: The system is waiting for a local credential to become available.
 * `Expired`: The credential has expired and is no longer valid.
 * `UserInteractionRequired(val interaction: SeamRequiredUserInteraction)`: User interaction is required to resolve the issue; check interaction for specifics.
 * `Unknown`: An unclassified or unexpected credential error occurred.
 
-#### userInteractionRequired actions
+**userInteractionRequired actions**
 
 * `CompleteOtpAuthorization(val otpUrl: String)`: The user must complete OTP authorization via the provided URL.
 * `EnableInternet`: The user must enable internet connectivity.
