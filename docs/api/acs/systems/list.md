@@ -280,7 +280,11 @@ Customer key for which you want to list access systems.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [acs\_systems](.)
+
+{% endhint %}
 
 
 {% tabs %}

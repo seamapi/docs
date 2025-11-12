@@ -222,7 +222,11 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [acs\_encoders](.)
+
+{% endhint %}
 
 
 {% tabs %}

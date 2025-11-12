@@ -288,7 +288,11 @@ ID of the user identity that represents the owner by which you want to filter th
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [phones](.)
+
+{% endhint %}
 
 
 {% tabs %}

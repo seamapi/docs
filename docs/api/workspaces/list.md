@@ -245,7 +245,11 @@ None
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [workspaces](.)
+
+{% endhint %}
 
 
 {% tabs %}

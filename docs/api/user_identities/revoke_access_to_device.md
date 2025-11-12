@@ -159,5 +159,9 @@ ID of the user identity from which you want to revoke access to a device.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

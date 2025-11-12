@@ -68,5 +68,9 @@ Keys of the spaces that you want to get along with their related resources.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [unknown](./)
+
+{% endhint %}
 

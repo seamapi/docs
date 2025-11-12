@@ -192,5 +192,9 @@ Unique key for the user identity.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

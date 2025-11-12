@@ -261,7 +261,11 @@ Your user ID for the user by which to filter unmanaged access codes.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [unmanaged\_access\_codes](.)
+
+{% endhint %}
 
 
 {% tabs %}

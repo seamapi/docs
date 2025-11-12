@@ -180,5 +180,9 @@ Date and time at which the validity of the grant starts, in [ISO 8601](https://w
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

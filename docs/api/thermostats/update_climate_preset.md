@@ -292,5 +292,9 @@ User-friendly name to identify the [climate preset](../../capability-guides/ther
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

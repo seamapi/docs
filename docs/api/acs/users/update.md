@@ -268,7 +268,11 @@ ID of the user identity that you want to update. You can only provide acs_user_i
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 
 
 ---

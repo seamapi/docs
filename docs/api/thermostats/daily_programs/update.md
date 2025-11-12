@@ -268,7 +268,11 @@ ID of the thermostat daily program that you want to update.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [action\_attempt](./)
+
+{% endhint %}
 
 
 {% tabs %}

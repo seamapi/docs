@@ -169,5 +169,9 @@ Key of the user identity to which you want to add an access system user.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

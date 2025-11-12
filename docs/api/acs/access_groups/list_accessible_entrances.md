@@ -265,7 +265,11 @@ ID of the access group for which you want to retrieve all accessible entrances.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [acs\_entrances](./../entrances)
+
+{% endhint %}
 
 
 {% tabs %}

@@ -194,7 +194,11 @@ ID of the encoder that you want to get.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [acs\_encoder](.)
+
+{% endhint %}
 
 
 {% tabs %}

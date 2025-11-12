@@ -28,5 +28,9 @@ ID of the unmanaged user identity that you want to get.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [unknown](./)
+
+{% endhint %}
 

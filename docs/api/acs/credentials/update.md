@@ -170,5 +170,9 @@ Replacement date and time at which the validity of the credential ends, in [ISO 
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

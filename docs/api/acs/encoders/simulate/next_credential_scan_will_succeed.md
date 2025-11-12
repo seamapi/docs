@@ -170,5 +170,9 @@ Scenario to simulate.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

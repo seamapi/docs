@@ -265,7 +265,11 @@ ID of the thermostat daily program to run on Wednesdays.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [action\_attempt](./)
+
+{% endhint %}
 
 
 {% tabs %}

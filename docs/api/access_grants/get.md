@@ -387,7 +387,11 @@ Unique key of Access Grant to get.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [access\_grant](.)
+
+{% endhint %}
 
 
 {% tabs %}

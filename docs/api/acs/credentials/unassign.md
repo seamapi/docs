@@ -166,7 +166,11 @@ ID of the user identity from which you want to unassign a credential. You can on
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 
 
 ---

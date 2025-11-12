@@ -146,5 +146,9 @@ ID of the connected account that you want to sync.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

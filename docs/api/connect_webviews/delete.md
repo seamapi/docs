@@ -146,5 +146,9 @@ ID of the Connect Webview that you want to delete.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

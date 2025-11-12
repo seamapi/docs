@@ -293,7 +293,11 @@ Your user ID for the user by which you want to filter connected accounts.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [connected\_accounts](.)
+
+{% endhint %}
 
 
 {% tabs %}

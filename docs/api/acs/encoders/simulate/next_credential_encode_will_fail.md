@@ -165,5 +165,9 @@ Code of the error to simulate.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

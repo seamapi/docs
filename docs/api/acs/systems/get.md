@@ -257,7 +257,11 @@ ID of the access system that you want to get.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [acs\_system](.)
+
+{% endhint %}
 
 
 {% tabs %}

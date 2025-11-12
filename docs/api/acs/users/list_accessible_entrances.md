@@ -284,7 +284,11 @@ ID of the user identity for whom you want to list accessible entrances. You can 
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [acs\_entrances](./../entrances)
+
+{% endhint %}
 
 
 {% tabs %}

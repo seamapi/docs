@@ -182,7 +182,11 @@ ID of the lock that you want to unlock.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [action\_attempt](./)
+
+{% endhint %}
 
 
 {% tabs %}

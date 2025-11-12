@@ -185,7 +185,11 @@ ID of the device for which you want to simulate a manual lock action using a key
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [action\_attempt](./)
+
+{% endhint %}
 
 
 {% tabs %}

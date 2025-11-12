@@ -166,7 +166,11 @@ ID of the user identity for whom you want to revoke access. You can only provide
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 
 
 ---

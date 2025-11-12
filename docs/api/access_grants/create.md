@@ -631,7 +631,11 @@ ID of user identity for whom access is being granted.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [access\_grant](.)
+
+{% endhint %}
 
 
 {% tabs %}

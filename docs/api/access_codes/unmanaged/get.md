@@ -245,7 +245,11 @@ ID of the device containing the unmanaged access code that you want to get. You 
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [unmanaged\_access\_code](.)
+
+{% endhint %}
 
 
 {% tabs %}

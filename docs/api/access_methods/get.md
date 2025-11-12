@@ -197,7 +197,11 @@ ID of access method to get.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [access\_method](.)
+
+{% endhint %}
 
 
 {% tabs %}

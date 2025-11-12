@@ -485,7 +485,11 @@ Mobile operating system version that you want to use for the simulated phone.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [phone](./..)
+
+{% endhint %}
 
 
 {% tabs %}

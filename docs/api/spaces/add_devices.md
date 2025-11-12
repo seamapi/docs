@@ -165,5 +165,9 @@ ID of the space to which you want to add devices.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

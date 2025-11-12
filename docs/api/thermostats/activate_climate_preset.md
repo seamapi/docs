@@ -197,7 +197,11 @@ ID of the thermostat device for which you want to activate a climate preset.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [action\_attempt](./)
+
+{% endhint %}
 
 
 {% tabs %}

@@ -307,7 +307,11 @@ ID of the user identity for which you want to retrieve all credentials.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [acs\_credentials](.)
+
+{% endhint %}
 
 
 {% tabs %}

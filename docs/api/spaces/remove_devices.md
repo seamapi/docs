@@ -165,5 +165,9 @@ ID of the space from which you want to remove devices.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

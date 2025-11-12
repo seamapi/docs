@@ -230,7 +230,11 @@ ID of the access group that you want to get.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [acs\_access\_group](.)
+
+{% endhint %}
 
 
 {% tabs %}

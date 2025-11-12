@@ -33,5 +33,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

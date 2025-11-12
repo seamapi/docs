@@ -541,7 +541,11 @@ ID of the encoder to use for the scan.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [action\_attempt](./)
+
+{% endhint %}
 
 
 {% tabs %}

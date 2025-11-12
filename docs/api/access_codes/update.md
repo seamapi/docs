@@ -279,5 +279,9 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 

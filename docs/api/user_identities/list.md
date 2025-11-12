@@ -241,7 +241,11 @@ String for which to search. Filters returned user identities to include all reco
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 Array of [user\_identitys](.)
+
+{% endhint %}
 
 
 {% tabs %}

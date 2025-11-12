@@ -221,7 +221,11 @@ ID of the thermostat schedule that you want to get.
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 [thermostat\_schedule](.)
+
+{% endhint %}
 
 
 {% tabs %}

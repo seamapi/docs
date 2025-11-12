@@ -188,5 +188,9 @@ Heating [set point](../../../capability-guides/thermostats/understanding-thermos
 
 ## Response
 
+{% hint style="success" %}
+**Returns:**
 void
+
+{% endhint %}
 
