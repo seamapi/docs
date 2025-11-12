@@ -40,6 +40,8 @@ export interface ApiEndpointLayoutContext {
   workspaceScope: SeamWorkspaceScope
   isAlpha: boolean
   alphaMessage: string | undefined
+  isDeprecated: boolean
+  deprecationMessage: string
   request: {
     preferredMethod: string
     parameters: ApiEndpointParameter[]
@@ -124,6 +126,8 @@ export function setEndpointLayoutContext(
   file.workspaceScope = endpoint.workspaceScope
   file.isAlpha = (metadata.alpha ?? '').length > 0
   file.alphaMessage = metadata.alpha
+  file.isDeprecated = endpoint.isDeprecated
+  file.deprecationMessage = endpoint.deprecationMessage
 
   file.authMethods = endpoint.authMethods
     .filter(

@@ -9,6 +9,10 @@
 - [Examples](#examples)
 {{/if}}
 
+{{#if this.isDeprecated}}
+{{> deprecated-warning}}
+
+{{/if}}
 {{{description}}}
 
 {{#with primaryCodeSample}}
