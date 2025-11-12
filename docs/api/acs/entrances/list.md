@@ -320,8 +320,8 @@ ID of the space for which you want to list entrances.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [acs\_entrances](.)
+Returns:
+**Array of [acs\_entrances](.)**
 
 {% endhint %}
 

@@ -164,8 +164,8 @@ Indicates whether the device is managed. Set this parameter to `true` to convert
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

@@ -444,8 +444,8 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [access\_codes](.)
+Returns:
+**Array of [access\_codes](.)**
 
 {% endhint %}
 

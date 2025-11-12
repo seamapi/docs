@@ -149,8 +149,8 @@ ID of Access Grant to delete.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

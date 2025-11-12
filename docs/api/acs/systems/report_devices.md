@@ -324,8 +324,8 @@ Whether the entrance is removed
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

@@ -253,8 +253,8 @@ ID of the access system for which you want to retrieve all compatible credential
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [acs\_systems](.)
+Returns:
+**Array of [acs\_systems](.)**
 
 {% endhint %}
 

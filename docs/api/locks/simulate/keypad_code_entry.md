@@ -198,8 +198,8 @@ ID of the device for which you want to simulate a keypad code entry.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[action\_attempt](./)
+Returns:
+**[action\_attempt](./)**
 
 {% endhint %}
 

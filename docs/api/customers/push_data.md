@@ -1421,8 +1421,8 @@ Your unique identifier for the user.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

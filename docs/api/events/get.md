@@ -213,8 +213,8 @@ Type of the event that you want to get.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[event](.)
+Returns:
+**[event](.)**
 
 {% endhint %}
 

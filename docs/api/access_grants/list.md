@@ -481,8 +481,8 @@ ID of user identity by which you want to filter the list of Access Grants.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [access\_grants](.)
+Returns:
+**Array of [access\_grants](.)**
 
 {% endhint %}
 

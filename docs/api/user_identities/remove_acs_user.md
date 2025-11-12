@@ -160,8 +160,8 @@ ID of the user identity from which you want to remove an access system user.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

@@ -213,8 +213,8 @@ Maximum number of times the instant key can be used. Default: 1.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[instant\_key](./../instant_keys)
+Returns:
+**[instant\_key](./../instant_keys)**
 
 {% endhint %}
 

@@ -145,8 +145,8 @@ ID of the credential that you want to delete.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

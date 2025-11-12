@@ -38,8 +38,8 @@ ID of the `acs_encoder` to use to encode the `access_method`.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[action\_attempt](./)
+Returns:
+**[action\_attempt](./)**
 
 {% endhint %}
 

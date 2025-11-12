@@ -148,8 +148,8 @@ ID of the unmanaged access code that you want to delete.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

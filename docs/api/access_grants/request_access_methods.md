@@ -66,8 +66,8 @@ Enum values:
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[access\_grant](.)
+Returns:
+**[access\_grant](.)**
 
 {% endhint %}
 

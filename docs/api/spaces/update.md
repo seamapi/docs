@@ -222,8 +222,8 @@ Unique key of the space that you want to update.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[space](.)
+Returns:
+**[space](.)**
 
 {% endhint %}
 

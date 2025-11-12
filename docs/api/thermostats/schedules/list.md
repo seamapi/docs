@@ -239,8 +239,8 @@ User identifier key by which to filter the list of returned thermostat schedules
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [thermostat\_schedules](.)
+Returns:
+**Array of [thermostat\_schedules](.)**
 
 {% endhint %}
 

@@ -266,8 +266,8 @@ Device ID of the phone that you want to get.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[phone](.)
+Returns:
+**[phone](.)**
 
 {% endhint %}
 

@@ -227,8 +227,8 @@ User identifier key associated with the client session that you want to get.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[client\_session](.)
+Returns:
+**[client\_session](.)**
 
 {% endhint %}
 

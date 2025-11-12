@@ -144,8 +144,8 @@ Device ID of the phone that you want to deactivate.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

@@ -167,8 +167,8 @@ ID of the user identity that you want to suspend. You can only provide acs_user_
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

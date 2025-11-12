@@ -266,8 +266,8 @@ ID of the credential for which you want to retrieve all entrances to which the c
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [acs\_entrances](./../entrances)
+Returns:
+**Array of [acs\_entrances](./../entrances)**
 
 {% endhint %}
 

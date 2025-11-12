@@ -425,8 +425,8 @@ ID of the user identity with which you want to associate the new access system u
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[acs\_user](.)
+Returns:
+**[acs\_user](.)**
 
 {% endhint %}
 

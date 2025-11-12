@@ -210,8 +210,8 @@ ID of the device for which you want to list noise thresholds.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [noise\_thresholds](.)
+Returns:
+**Array of [noise\_thresholds](.)**
 
 {% endhint %}
 

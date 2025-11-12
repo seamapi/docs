@@ -200,8 +200,8 @@ Category for which you want to list providers.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [device\_providers](.)
+Returns:
+**Array of [device\_providers](.)**
 
 {% endhint %}
 

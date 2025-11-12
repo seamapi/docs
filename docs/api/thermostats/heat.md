@@ -205,8 +205,8 @@ ID of the thermostat device that you want to set to heat mode.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[action\_attempt](./)
+Returns:
+**[action\_attempt](./)**
 
 {% endhint %}
 

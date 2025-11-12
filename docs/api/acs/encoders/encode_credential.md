@@ -384,8 +384,8 @@ ID of the `acs_credential` to encode onto a card.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[action\_attempt](./)
+Returns:
+**[action\_attempt](./)**
 
 {% endhint %}
 

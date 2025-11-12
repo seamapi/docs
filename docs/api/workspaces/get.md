@@ -234,8 +234,8 @@ None
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[workspace](.)
+Returns:
+**[workspace](.)**
 
 {% endhint %}
 

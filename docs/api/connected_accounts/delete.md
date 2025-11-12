@@ -152,8 +152,8 @@ ID of the connected account that you want to delete.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

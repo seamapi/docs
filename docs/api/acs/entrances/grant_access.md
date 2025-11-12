@@ -167,8 +167,8 @@ ID of the user identity to whom you want to grant access to an entrance. You can
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

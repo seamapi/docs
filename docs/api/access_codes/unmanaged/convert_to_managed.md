@@ -182,8 +182,8 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

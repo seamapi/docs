@@ -310,8 +310,8 @@ Your user ID for the user by which you want to filter Connect Webviews.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [connect\_webviews](.)
+Returns:
+**Array of [connect\_webviews](.)**
 
 {% endhint %}
 

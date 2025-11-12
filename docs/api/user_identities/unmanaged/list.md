@@ -48,8 +48,8 @@ String for which to search. Filters returned unmanaged user identities to includ
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [unknowns](./)
+Returns:
+**Array of [unknowns](./)**
 
 {% endhint %}
 

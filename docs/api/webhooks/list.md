@@ -176,8 +176,8 @@ None
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [webhooks](.)
+Returns:
+**Array of [webhooks](.)**
 
 {% endhint %}
 

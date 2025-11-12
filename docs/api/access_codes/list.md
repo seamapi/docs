@@ -333,8 +333,8 @@ Your user ID for the user by which to filter access codes.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [access\_codes](.)
+Returns:
+**Array of [access\_codes](.)**
 
 {% endhint %}
 

@@ -197,8 +197,8 @@ ID of the noise threshold that you want to get.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[noise\_threshold](.)
+Returns:
+**[noise\_threshold](.)**
 
 {% endhint %}
 

@@ -1298,8 +1298,8 @@ Your own internal user ID for the user for which you want to list devices.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [devices](.)
+Returns:
+**Array of [devices](.)**
 
 {% endhint %}
 

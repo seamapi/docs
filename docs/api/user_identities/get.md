@@ -219,8 +219,8 @@ ID of the user identity that you want to get.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[user\_identity](.)
+Returns:
+**[user\_identity](.)**
 
 {% endhint %}
 

@@ -229,8 +229,8 @@ Unique key for the space within the workspace.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[space](.)
+Returns:
+**[space](.)**
 
 {% endhint %}
 

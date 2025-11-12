@@ -44,8 +44,8 @@ Unique key for the user identity. If not provided, the existing key will be pres
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

@@ -292,8 +292,8 @@ Possible enum values:
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [acs\_credentials](./../credentials)
+Returns:
+**Array of [acs\_credentials](./../credentials)**
 
 {% endhint %}
 

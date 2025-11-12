@@ -296,8 +296,8 @@ ID of the access code for which you want to pull a backup access code.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[access\_code](.)
+Returns:
+**[access\_code](.)**
 
 {% endhint %}
 

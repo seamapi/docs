@@ -173,8 +173,8 @@ ID of the webhook that you want to get.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[webhook](.)
+Returns:
+**[webhook](.)**
 
 {% endhint %}
 

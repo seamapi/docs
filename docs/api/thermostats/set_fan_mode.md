@@ -207,8 +207,8 @@ ID of the thermostat device for which you want to set the fan mode.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[action\_attempt](./)
+Returns:
+**[action\_attempt](./)**
 
 {% endhint %}
 

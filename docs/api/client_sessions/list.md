@@ -256,8 +256,8 @@ Indicates whether to retrieve only client sessions without associated user ident
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [client\_sessions](.)
+Returns:
+**Array of [client\_sessions](.)**
 
 {% endhint %}
 

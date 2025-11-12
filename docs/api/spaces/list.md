@@ -202,8 +202,8 @@ Filter spaces by space_key.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [spaces](.)
+Returns:
+**Array of [spaces](.)**
 
 {% endhint %}
 

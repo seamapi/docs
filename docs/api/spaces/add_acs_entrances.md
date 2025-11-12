@@ -166,8 +166,8 @@ ID of the space to which you want to add entrances.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

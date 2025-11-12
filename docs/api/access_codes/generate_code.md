@@ -151,8 +151,8 @@ ID of the device for which you want to generate a code.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[access\_code](.)
+Returns:
+**[access\_code](.)**
 
 {% endhint %}
 

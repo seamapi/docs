@@ -253,8 +253,8 @@ Email address associated with the connected account that you want to get.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-[connected\_account](.)
+Returns:
+**[connected\_account](.)**
 
 {% endhint %}
 

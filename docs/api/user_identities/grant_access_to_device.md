@@ -160,8 +160,8 @@ ID of the user identity that you want to grant access to a device.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 

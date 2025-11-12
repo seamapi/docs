@@ -29,8 +29,8 @@ ID of the user identity by which you want to filter the list of Instant Keys.
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-Array of [instant\_keys](.)
+Returns:
+**Array of [instant\_keys](.)**
 
 {% endhint %}
 

@@ -167,8 +167,8 @@ ID of the user identity to whom you want to assign a credential. You can only pr
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-void
+Returns:
+**void**
 
 {% endhint %}
 
