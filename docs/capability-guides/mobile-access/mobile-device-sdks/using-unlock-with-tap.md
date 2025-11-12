@@ -118,6 +118,10 @@ Use Async/Await or Combine to initiate an unlock with a selected credential:
 
 {% tabs %}
 {% tab title="iOS Swift" %}
+{% hint style="info" %}
+If the Apple Wallet dialog appears when using the BLE unlock, see [Handling System Permissions](handling-system-permissions.md#platform-setup-requirements) for steps to prevent it and ensure a smoother unlockWithTap experience.
+{% endhint %}
+
 ```swift
 import SeamSDK
 import Combine
@@ -244,6 +248,8 @@ fun handleCredentialErrors(credentialErrors: List<SeamCredentialError>) {
 ```
 {% endtab %}
 {% endtabs %}
+
+***
 
 ## 4. Handle Unlock Events
 
