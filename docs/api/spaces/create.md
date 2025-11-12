@@ -228,7 +228,11 @@ Unique key for the space within the workspace.
 
 ## Response
 
-[space](.)
+{% hint style="success" %}
+Returns:
+**[space](.)**
+
+{% endhint %}
 
 
 {% tabs %}

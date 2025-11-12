@@ -323,5 +323,9 @@ Whether the entrance is removed
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

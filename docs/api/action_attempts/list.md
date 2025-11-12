@@ -254,5 +254,9 @@ IDs of the action attempts that you want to retrieve.
 
 ## Response
 
-Array of [action\_attempts](./)
+{% hint style="success" %}
+Returns:
+**Array of [action\_attempts](./)**
+
+{% endhint %}
 

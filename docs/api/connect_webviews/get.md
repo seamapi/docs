@@ -279,7 +279,11 @@ ID of the Connect Webview that you want to get.
 
 ## Response
 
-[connect\_webview](.)
+{% hint style="success" %}
+Returns:
+**[connect\_webview](.)**
+
+{% endhint %}
 
 
 {% tabs %}

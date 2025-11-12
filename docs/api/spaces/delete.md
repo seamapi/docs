@@ -144,5 +144,9 @@ ID of the space that you want to delete.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

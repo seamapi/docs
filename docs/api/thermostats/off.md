@@ -182,7 +182,11 @@ ID of the thermostat device that you want to set to off mode.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

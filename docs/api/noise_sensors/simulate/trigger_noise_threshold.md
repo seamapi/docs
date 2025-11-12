@@ -148,5 +148,9 @@ ID of the device for which you want to simulate the triggering of a noise thresh
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

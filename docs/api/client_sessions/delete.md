@@ -144,5 +144,9 @@ ID of the client session that you want to delete.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

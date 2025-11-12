@@ -145,5 +145,9 @@ ID of the device that you want to simulate disconnecting from Seam.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

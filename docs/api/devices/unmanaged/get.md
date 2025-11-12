@@ -415,7 +415,11 @@ Name of the unmanaged device that you want to get.
 
 ## Response
 
-[unmanaged\_device](.)
+{% hint style="success" %}
+Returns:
+**[unmanaged\_device](.)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -221,7 +221,11 @@ Unique key of the space that you want to update.
 
 ## Response
 
-[space](.)
+{% hint style="success" %}
+Returns:
+**[space](.)**
+
+{% endhint %}
 
 
 {% tabs %}

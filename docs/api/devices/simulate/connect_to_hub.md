@@ -149,5 +149,9 @@ ID of the device whose hub you want to reconnect.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

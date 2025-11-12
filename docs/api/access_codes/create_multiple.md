@@ -443,7 +443,11 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 ## Response
 
-Array of [access\_codes](.)
+{% hint style="success" %}
+Returns:
+**Array of [access\_codes](.)**
+
+{% endhint %}
 
 
 {% tabs %}

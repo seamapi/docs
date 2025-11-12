@@ -159,5 +159,9 @@ ID of the user identity that you want to grant access to a device.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

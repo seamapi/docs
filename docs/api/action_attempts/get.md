@@ -184,5 +184,9 @@ ID of the action attempt that you want to get.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 

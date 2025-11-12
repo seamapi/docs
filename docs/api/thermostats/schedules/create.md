@@ -289,7 +289,11 @@ Name of the thermostat schedule.
 
 ## Response
 
-[thermostat\_schedule](.)
+{% hint style="success" %}
+Returns:
+**[thermostat\_schedule](.)**
+
+{% endhint %}
 
 
 {% tabs %}

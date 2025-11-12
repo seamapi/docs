@@ -201,5 +201,9 @@ Name for the device.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -518,7 +518,11 @@ Enum values:
 
 ## Response
 
-[acs\_credential](.)
+{% hint style="success" %}
+Returns:
+**[acs\_credential](.)**
+
+{% endhint %}
 
 
 {% tabs %}

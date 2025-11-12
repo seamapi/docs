@@ -35,7 +35,11 @@ Name of the lock that you want to get.
 
 ## Response
 
-[device](./../devices)
+{% hint style="success" %}
+Returns:
+**[device](./../devices)**
+
+{% endhint %}
 
 
 {% tabs %}

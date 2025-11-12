@@ -262,7 +262,11 @@ Unique key for the new user identity.
 
 ## Response
 
-[user\_identity](.)
+{% hint style="success" %}
+Returns:
+**[user\_identity](.)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -222,7 +222,11 @@ ID of the thermostat device that you want to set to heat-cool mode.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

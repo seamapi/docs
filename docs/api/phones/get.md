@@ -265,7 +265,11 @@ Device ID of the phone that you want to get.
 
 ## Response
 
-[phone](.)
+{% hint style="success" %}
+Returns:
+**[phone](.)**
+
+{% endhint %}
 
 
 {% tabs %}

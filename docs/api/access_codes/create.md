@@ -384,7 +384,11 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 ## Response
 
-[access\_code](.)
+{% hint style="success" %}
+Returns:
+**[access\_code](.)**
+
+{% endhint %}
 
 
 {% tabs %}

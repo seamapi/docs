@@ -45,5 +45,9 @@ Unique key for the access grant. If not provided, the existing key will be prese
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

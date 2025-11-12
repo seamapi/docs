@@ -218,7 +218,11 @@ ID of the user identity that you want to get.
 
 ## Response
 
-[user\_identity](.)
+{% hint style="success" %}
+Returns:
+**[user\_identity](.)**
+
+{% endhint %}
 
 
 {% tabs %}

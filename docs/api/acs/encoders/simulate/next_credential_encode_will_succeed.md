@@ -160,5 +160,9 @@ Scenario to simulate.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

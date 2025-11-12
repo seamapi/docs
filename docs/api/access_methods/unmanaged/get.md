@@ -28,5 +28,9 @@ ID of unmanaged access method to get.
 
 ## Response
 
-[unknown](./)
+{% hint style="success" %}
+Returns:
+**[unknown](./)**
+
+{% endhint %}
 

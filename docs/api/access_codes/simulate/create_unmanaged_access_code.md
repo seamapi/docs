@@ -255,7 +255,11 @@ Name of the simulated unmanaged access code.
 
 ## Response
 
-[unmanaged\_access\_code](./../unmanaged)
+{% hint style="success" %}
+Returns:
+**[unmanaged\_access\_code](./../unmanaged)**
+
+{% endhint %}
 
 
 {% tabs %}

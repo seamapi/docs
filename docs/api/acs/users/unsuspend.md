@@ -166,7 +166,11 @@ ID of the user identity that you want to unsuspend. You can only provide acs_use
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 
 
 ---

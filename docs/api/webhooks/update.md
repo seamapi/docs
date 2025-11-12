@@ -175,5 +175,9 @@ ID of the webhook that you want to update.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -245,7 +245,11 @@ None
 
 ## Response
 
-Array of [workspaces](.)
+{% hint style="success" %}
+Returns:
+**Array of [workspaces](.)**
+
+{% endhint %}
 
 
 {% tabs %}

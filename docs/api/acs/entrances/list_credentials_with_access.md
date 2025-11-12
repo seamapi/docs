@@ -291,7 +291,11 @@ Possible enum values:
 
 ## Response
 
-Array of [acs\_credentials](./../credentials)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_credentials](./../credentials)**
+
+{% endhint %}
 
 
 {% tabs %}

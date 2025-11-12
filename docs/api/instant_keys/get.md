@@ -34,7 +34,11 @@ URL of the instant key to get.
 
 ## Response
 
-[instant\_key](.)
+{% hint style="success" %}
+Returns:
+**[instant\_key](.)**
+
+{% endhint %}
 
 
 {% tabs %}

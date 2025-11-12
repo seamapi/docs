@@ -324,7 +324,11 @@ ID of the space for which you want to retrieve all access methods.
 
 ## Response
 
-Array of [access\_methods](.)
+{% hint style="success" %}
+Returns:
+**Array of [access\_methods](.)**
+
+{% endhint %}
 
 
 {% tabs %}

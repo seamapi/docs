@@ -152,5 +152,9 @@ ID of the device whose hub you want to disconnect.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

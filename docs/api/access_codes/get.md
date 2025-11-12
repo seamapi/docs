@@ -297,7 +297,11 @@ ID of the device containing the access code that you want to get. You must speci
 
 ## Response
 
-[access\_code](.)
+{% hint style="success" %}
+Returns:
+**[access\_code](.)**
+
+{% endhint %}
 
 
 {% tabs %}

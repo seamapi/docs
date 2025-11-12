@@ -193,7 +193,11 @@ Types of events that you want the new webhook to receive.
 
 ## Response
 
-[webhook](.)
+{% hint style="success" %}
+Returns:
+**[webhook](.)**
+
+{% endhint %}
 
 
 {% tabs %}

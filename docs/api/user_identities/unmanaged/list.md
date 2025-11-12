@@ -47,5 +47,9 @@ String for which to search. Filters returned unmanaged user identities to includ
 
 ## Response
 
-Array of [unknowns](./)
+{% hint style="success" %}
+Returns:
+**Array of [unknowns](./)**
+
+{% endhint %}
 

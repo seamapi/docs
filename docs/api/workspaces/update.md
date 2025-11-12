@@ -271,5 +271,9 @@ Name of the workspace.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

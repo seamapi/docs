@@ -148,5 +148,9 @@ ID of Access Grant to delete.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

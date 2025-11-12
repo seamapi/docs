@@ -419,7 +419,11 @@ Offset for the events that you want to list.
 
 ## Response
 
-Array of [events](.)
+{% hint style="success" %}
+Returns:
+**Array of [events](.)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -186,5 +186,9 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

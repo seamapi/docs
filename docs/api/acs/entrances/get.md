@@ -248,7 +248,11 @@ ID of the entrance that you want to get.
 
 ## Response
 
-[acs\_entrance](.)
+{% hint style="success" %}
+Returns:
+**[acs\_entrance](.)**
+
+{% endhint %}
 
 
 {% tabs %}

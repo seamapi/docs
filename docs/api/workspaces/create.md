@@ -444,7 +444,11 @@ Indicates whether the new workspace is a [sandbox workspace](../../core-concepts
 
 ## Response
 
-[workspace](.)
+{% hint style="success" %}
+Returns:
+**[workspace](.)**
+
+{% endhint %}
 
 
 {% tabs %}

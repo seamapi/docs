@@ -226,7 +226,11 @@ User identifier key associated with the client session that you want to get.
 
 ## Response
 
-[client\_session](.)
+{% hint style="success" %}
+Returns:
+**[client\_session](.)**
+
+{% endhint %}
 
 
 {% tabs %}

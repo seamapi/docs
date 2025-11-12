@@ -146,5 +146,9 @@ ID of the client session that you want to revoke.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

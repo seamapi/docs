@@ -46,5 +46,9 @@ ID of the space for which you want to retrieve all unmanaged access methods.
 
 ## Response
 
-Array of [unknowns](./)
+{% hint style="success" %}
+Returns:
+**Array of [unknowns](./)**
+
+{% endhint %}
 

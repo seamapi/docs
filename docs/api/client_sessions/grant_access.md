@@ -206,5 +206,9 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

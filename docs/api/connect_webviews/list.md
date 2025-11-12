@@ -309,7 +309,11 @@ Your user ID for the user by which you want to filter Connect Webviews.
 
 ## Response
 
-Array of [connect\_webviews](.)
+{% hint style="success" %}
+Returns:
+**Array of [connect\_webviews](.)**
+
+{% endhint %}
 
 
 {% tabs %}

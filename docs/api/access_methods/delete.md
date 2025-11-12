@@ -147,5 +147,9 @@ ID of access method to get.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -214,5 +214,9 @@ Time at which the noise threshold should become active daily.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

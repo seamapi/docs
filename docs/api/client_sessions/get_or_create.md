@@ -281,7 +281,11 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 ## Response
 
-[client\_session](.)
+{% hint style="success" %}
+Returns:
+**[client\_session](.)**
+
+{% endhint %}
 
 
 {% tabs %}
