@@ -74,8 +74,8 @@ None
 ## Response
 
 {% hint style="success" %}
-**Returns:**
-{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{else}}[{{response.escapedResourceType}}]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{/if}}{{else}}void{{/if}}
+Returns:
+**{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{else}}[{{response.escapedResourceType}}]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{/if}}{{else}}void{{/if}}**
 
 {% endhint %}
 
