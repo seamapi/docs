@@ -517,6 +517,11 @@ These items have been marked as draft.
 
 These items are deprecated.
 
+### Routes
+
+- `/acs/credential_pools`: No deprecated message provided
+- `/acs/credential_provisioning_automations`: No deprecated message provided
+
 ### Resources
 
 - `acs_credential_pool`: Not used.
@@ -538,6 +543,14 @@ These items are deprecated.
 - `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `unmanaged_acs_user.email`: use email_address.
 - `workspace.connect_partner_name`: Use `company_name` instead.
+
+### Endpoints
+
+- `/acs/credential_pools/list`: Use `/user_identities/enrollment_automations/list` instead.
+- `/acs/credential_provisioning_automations/launch`: Use `/user_identities/enrollment_automations/launch` instead.
+- `/devices/delete`: Deleting a device is no longer supported and will be removed.
+- `/locks/get`: Use `/devices/get` instead.
+- `/thermostats/get`: Use `/devices/get` instead.
 
 ### Endpoint parameters
 
