@@ -3460,7 +3460,7 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 
 [**`/locks/get`**](./get.md)
 
-Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**
+Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
 
 
 [**`/locks/list`**](./list.md)

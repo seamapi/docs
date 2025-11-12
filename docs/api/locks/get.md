@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**
+Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
 
 
 <details>
