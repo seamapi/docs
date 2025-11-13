@@ -22,21 +22,21 @@
    3. Click **Allow**.
 4. The Seam Bridge app will launch.
 
-### Setting up the Seam Bridge app
+***
+
+### Complete Seam Bridge setup
 
 1. Accept the **Terms of Service.**
 2.  Enter a name for the site that you are connecting using Seam Bridge—for example, `My Site`—and then click **Start pairing**.
 
     ![](<../../.gitbook/assets/Screenshot 2025-11-13 at 11.07.19 AM.png>)
-3. The Seam Bridge app displays a **Pairing code** that you can use to pair Seam Bridge with your workspace. You should come back to this application window to retrieve the latest pairing code when requested.\
-   ![](../../.gitbook/assets/bridge.png)
-4. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge—for example, `My Site`—and then click **Start pairing**.
-5. The Seam Bridge app displays a **Pairing code** that you can use to pair Seam Bridge with your workspace. You should come back to this application window to retrieve the latest pairing code when requested.\
-   ![](../../.gitbook/assets/bridge.png)
+3.  Seam Bridge displays a **Pairing code.** Use this code when connecting Seam Bridge to your workspace. Return to this window whenever a new pairing code is requested.
+
+    ![](../../.gitbook/assets/bridge.png)
 
 ***
 
-## Set up Seam Bridge to Reboot on Restart
+### Set up Seam Bridge to Reboot on Restart
 
 Use Task Scheduler to auto-start your app and restart it if it fails.
 

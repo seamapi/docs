@@ -1,6 +1,6 @@
 # Seam Bridge Setup for Linux
 
-### System Requirements
+## System Requirements
 
 * **Operating System:** Linux
 * **Memory:** At least 1 GB of RAM
@@ -10,26 +10,47 @@
 
 ## Run Seam Bridge
 
-1. Open the downloaded executable file.
-2. If you are using a Windows computer running Microsoft Defender, you may need to allow Windows to run the Seam Bridge app.
-   1. In the **Windows protected your PC** dialog, click **More info**.
-   2. Click **Run anyway**.
-3.  If you are using a Windows computer, you may need to allow public networks to access the Seam Bridge app.
+### Launch the app and allow required permissions
 
-    1. In the **Do you want to allow public and private networks to access this app?** dialog, click **Show more**.
-    2. Make sure that the **Public networks** and **Private networks** checkboxes are selected.
-    3. Click **Allow**.
+1. Open the downloaded Seam Bridge file.
+2.  If it does not open, you may need to mark it as executable.
 
-    The Seam Bridge app displays the **Welcome to Seam Bridge** window.
+    ```bash
+    chmod +x ./seambridge
+    ```
+3.  Launch the app:
 
-    <figure><img src="../../.gitbook/assets/seam-bridge-welcome.png" alt="Welcome to Seam Bridge window" width="375"><figcaption><p><strong>Welcome to Seam Bridge</strong> window</p></figcaption></figure>
-4. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge—for example, `My Site`—and then click **Start pairing**.
-5. The Seam Bridge app displays a **Pairing code** that you can use to pair Seam Bridge with your workspace. You should come back to this application window to retrieve the latest pairing code when requested.\
-   ![](../../.gitbook/assets/bridge.png)
+    ```
+    ./seambridge
+    ```
+4.  If the app does not start due to permissions, you may need to allow it through your system’s security settings:
+
+    * Some Linux distributions block files downloaded from the internet.
+    *   If this happens, remove the quarantine attribute (if present):
+
+        ```bash
+        xattr -d com.apple.quarantine ./seambridge
+        ```
+
+    _(On most Linux systems this won’t appear, but it’s safe to run.)_
+5. If your Linux system prompts you to allow the app to access the network, approve the request so Seam Bridge can connect to your on-premises system.
+6. Seam Bridge will launch.
 
 ***
 
-## Set up Seam Bridge to Reboot on Restart
+### Complete Seam Bridge setup
+
+1. Accept the **Terms of Service.**
+2.  Enter a name for the site that you are connecting using Seam Bridge—for example, `My Site`—and then click **Start pairing**.
+
+    ![](<../../.gitbook/assets/Screenshot 2025-11-13 at 11.07.19 AM.png>)
+3.  Seam Bridge displays a **Pairing code.** Use this code when connecting Seam Bridge to your workspace. Return to this window whenever a new pairing code is requested.
+
+    ![](../../.gitbook/assets/bridge.png)
+
+***
+
+### Set up Seam Bridge to reboot on restart
 
 Use `systemd` to keep an app running on Linux. It supervises the process, restarts it on crash, and handles boot startup.
 
@@ -77,7 +98,7 @@ sudo systemctl start SeamBridge.service
 1. Run the following command in Terminal to confirm that the service is running:
 
 ```
-systemctl status myapp.service
+systemctl status SeamBridge.service
 ```
 
 You should see the service running and supervised.
