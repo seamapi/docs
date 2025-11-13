@@ -2,8 +2,12 @@
 
 ### System Requirements
 
-* **Operating System:** macOS
-* **Memory:** At least 1 GB of RAM
+* **Supported versions:**
+  * macOS 10.13 High Sierra or later
+  * Intel and Apple Silicon supported
+* **Minimum hardware**
+  * 1 GB RAM
+  * \~200–300 MB disk space depending on bundle size
 * **Network:** LAN connection required
 
 ***

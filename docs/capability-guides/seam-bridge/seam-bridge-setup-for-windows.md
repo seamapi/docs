@@ -2,8 +2,12 @@
 
 ### System Requirements
 
-* **Operating System:** Window 7 or later
-* **Memory:** At least 1 GB of RAM
+* **Supported versions:**
+  * Windows 10/11 AMD64/ARM64
+* **Minimum hardware:**
+  * 1 GB RAM
+  * \~150 MB disk space
+  * x64 architecture
 * **Network:** LAN connection required
 
 ***

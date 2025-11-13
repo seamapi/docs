@@ -32,19 +32,13 @@ In a web browser, go to [the Seam Bridge repo](https://www.seam.co/seam-bridge/r
 
 <figure><img src="../.gitbook/assets/seam-bridge-download-area.png" alt="Download the Seam Bridge application for your operating system."><figcaption><p>Download the Seam Bridge application for your operating system.</p></figcaption></figure>
 
-### System Requirements
-
-* **Operating System:** Window 7 or later, macOS, or Linux
-* **Memory:** At least 1 GB of RAM
-* **Network:** LAN connection required
-
 ***
 
-## System Set Up Guides
+## System Setup Guides
 
 Please refer to these guides to set up the Seam Bridge application.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><strong>Windows Set Up</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-windows.md">seam-bridge-setup-for-windows.md</a></td><td><a href="../.gitbook/assets/image (38).png">image (38).png</a></td></tr><tr><td><strong>macOS Set Up</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-macos.md">seam-bridge-setup-for-macos.md</a></td><td><a href="../.gitbook/assets/image (45).png">image (45).png</a></td></tr><tr><td><strong>Linux Set Up</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-linux.md">seam-bridge-setup-for-linux.md</a></td><td><a href="../.gitbook/assets/image (46).png">image (46).png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><strong>Windows Setup</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-windows.md">seam-bridge-setup-for-windows.md</a></td><td><a href="../.gitbook/assets/image (38).png">image (38).png</a></td></tr><tr><td><strong>macOS Setup</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-macos.md">seam-bridge-setup-for-macos.md</a></td><td><a href="../.gitbook/assets/image (45).png">image (45).png</a></td></tr><tr><td><strong>Linux Setup</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-linux.md">seam-bridge-setup-for-linux.md</a></td><td><a href="../.gitbook/assets/image (46).png">image (46).png</a></td></tr></tbody></table>
 
 ***
 

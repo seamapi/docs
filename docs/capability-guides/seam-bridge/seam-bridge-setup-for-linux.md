@@ -2,9 +2,42 @@
 
 ## System Requirements
 
-* **Operating System:** Linux
-* **Memory:** At least 1 GB of RAM
-* **Network:** LAN connection required
+### Supported distributions
+
+Ubuntu, Debian, Fedora, Arch, OpenSUSE, and most Linux desktops that include WebKitGTK.
+
+### Runtime dependencies
+
+WebKitGTK 3 or 4
+
+1.  Check if installed:
+
+    ```bash
+    ldd ./seambridge | grep webkit
+    ```
+2. If not installed, the user must install (depending on distro):
+   *   **Ubuntu/Debian**
+
+       ```bash
+       sudo apt install libwebkit2gtk-4.0-37
+       ```
+   *   **Fedora**
+
+       ```bash
+       sudo dnf install webkit2gtk3
+       ```
+   *   **Arch**
+
+       ```bash
+       sudo pacman -S webkit2gtk
+       ```
+
+### Minimum hardware
+
+* 1 GB RAM
+* \~150 MB disk space
+* x64 architecture
+* LAN Network access
 
 ***
 
