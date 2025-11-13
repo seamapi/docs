@@ -49,7 +49,7 @@ To connect the access system to Seam, we recommend embedding a [Connect Webview]
 
 ### Connecting On-Premises Access Systems
 
-For on-premises access systems, Seam offers the lightweight [Seam Bridge](../../capability-guides/seam-bridge/) app. This software-only component runs on a computer within the same local network as the access system and creates a secure tunnel between Seam Cloud and the access system. Seam Bridge manages encryption, handles authentication, and removes the need to expose local ports to the internet.
+For on-premises access systems, Seam offers the lightweight [Seam Bridge](../../capability-guides/seam-bridge.md) app. This software-only component runs on a computer within the same local network as the access system and creates a secure tunnel between Seam Cloud and the access system. Seam Bridge manages encryption, handles authentication, and removes the need to expose local ports to the internet.
 
 <figure><img src="../../.gitbook/assets/seam-bridge-client.png" alt="Use Seam Bridge to connect on-premises access systems to Seam."><figcaption><p>Use Seam Bridge to connect on-premises access systems to Seam.</p></figcaption></figure>
 

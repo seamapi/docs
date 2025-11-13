@@ -12,7 +12,7 @@ description: Guide for using the Salto ProAccess Space Access System with Seam
 
 The Seam integration for Salto Space enables you to create access system users and assign access permissions to them. In the Salto Space model, you assign users to access groups that grant access to specific sets of entrances. Then, you create credentials to define the access mechanisms for the users' access grants.
 
-This integration requires [Seam Bridge](../../capability-guides/seam-bridge/) to connect the on-premises Salto Space access system with Seam.
+This integration requires [Seam Bridge](../../capability-guides/seam-bridge.md) to connect the on-premises Salto Space access system with Seam.
 
 ***
 

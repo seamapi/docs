@@ -10,7 +10,7 @@
 
 ## Run Seam Bridge
 
-### Launch the app and configure t
+### Launch the app and allow required permissions
 
 1. Open the downloaded executable file.
 2. If you are using a Windows computer running Microsoft Defender, you may need to allow Windows to run the Seam Bridge app.

@@ -100,7 +100,7 @@ Variants:
 
 <summary><code>seam_bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge/), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 **`created_at`** _Datetime_
 
@@ -128,7 +128,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge/), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 **`created_at`** _Datetime_
 
@@ -160,7 +160,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 <summary><code>visionline_instance_unreachable</code></summary>
 
-Indicates that [Seam Bridge](../../../capability-guides/seam-bridge/) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/). For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/). For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
 **`created_at`** _Datetime_
 
@@ -416,7 +416,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 
 *   **`lan_address`** _String_
 
-    IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge/) on the local network.
+    IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
 *   **`mobile_access_uuid`** _String_
 
     Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
@@ -524,7 +524,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge/), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ***
 
@@ -542,13 +542,13 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 **`seam_bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge/), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ***
 
 **`visionline_instance_unreachable`**
 
-Indicates that [Seam Bridge](../../../capability-guides/seam-bridge/) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/). For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/). For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
 ***
 

@@ -121,7 +121,7 @@
   * [Testing Your Thermostat App with Simulate Endpoints](capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md)
 * [Noise Sensors](products/noise-sensors/README.md)
   * [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
-* [Seam Bridge](capability-guides/seam-bridge/README.md)
+* [Seam Bridge](capability-guides/seam-bridge.md)
   * [Seam Bridge Setup for Windows](capability-guides/seam-bridge/seam-bridge-setup-for-windows.md)
   * [Seam Bridge Setup for macOS](capability-guides/seam-bridge/seam-bridge-setup-for-macos.md)
   * [Seam Bridge Setup for Linux](capability-guides/seam-bridge/seam-bridge-setup-for-linux.md)

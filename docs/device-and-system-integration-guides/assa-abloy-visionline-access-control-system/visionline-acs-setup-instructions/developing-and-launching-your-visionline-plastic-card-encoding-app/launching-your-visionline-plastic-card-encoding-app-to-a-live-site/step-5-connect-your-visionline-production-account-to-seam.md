@@ -20,10 +20,10 @@ If you already connected your Visionline ACS to Seam during the development phas
 4. If the Connect Webview displays multiple brand options, click **Visionline**.
 5.  On the **Set up your Seam Bridge** page, click [**latest Seam Bridge client**](https://www.seam.co/seam-bridge/releases/latest).
 
-    [Seam Bridge](../../../../../capability-guides/seam-bridge/) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for Visionline systems.
+    [Seam Bridge](../../../../../capability-guides/seam-bridge.md) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for Visionline systems.
 6.  Download the Seam Bridge executable onto the on-premises computer that is running Visionline or onto a computer on the same network.
 
-    For systems requirements, see [Seam Bridge](../../../../../capability-guides/seam-bridge/).
+    For systems requirements, see [Seam Bridge](../../../../../capability-guides/seam-bridge.md).
 7.
 8. Run the downloaded Seam Bridge app.
 9. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge and then click **Start pairing**.

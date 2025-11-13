@@ -17,7 +17,7 @@ The setup process has three parts:
 ## Prepare Community for Seam Integration
 
 1. Install Seam Bridge
-   1. Install the [Seam Bridge](../../capability-guides/seam-bridge/) on the computer hosting the Community System.
+   1. Install the [Seam Bridge](../../capability-guides/seam-bridge.md) on the computer hosting the Community System.
 2. Enable Community API
    1. Go to **System Settings** > **Community API**.\
       ![](<../../.gitbook/assets/unknown (1).png>)

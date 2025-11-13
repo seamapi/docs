@@ -1462,7 +1462,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge/), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 **`created_at`** _Datetime_
 
@@ -1482,7 +1482,7 @@ Enum values:
 
 **`is_bridge_error`** _Boolean_
 
-Indicates whether the error is related to [Seam Bridge](../../../capability-guides/seam-bridge/).
+Indicates whether the error is related to [Seam Bridge](../../../capability-guides/seam-bridge.md).
 
 ***
 
@@ -1945,7 +1945,7 @@ August lock is temporarily offline.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge/), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
 ***
 

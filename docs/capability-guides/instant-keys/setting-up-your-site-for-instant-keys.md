@@ -94,7 +94,7 @@ To connect your access system to Seam, we recommend embedding a [Connect Webview
 
 <figure><img src="../../.gitbook/assets/salto webview.webp.png" alt="Example: Connect Webview for Salto systems"><figcaption><p>Example: Connect Webview for Salto systems</p></figcaption></figure>
 
-For on-premises access systems, such as Salto Space and Visionline, Seam offers the lightweight [Seam Bridge](../seam-bridge/) app, at no extra cost. This software-only component runs on a computer within the same local network and creates a secure tunnel between Seam Cloud and the access system. Seam Bridge manages encryption, handles authentication, and removes the need to expose local ports to the internet.
+For on-premises access systems, such as Salto Space and Visionline, Seam offers the lightweight [Seam Bridge](../seam-bridge.md) app, at no extra cost. This software-only component runs on a computer within the same local network and creates a secure tunnel between Seam Cloud and the access system. Seam Bridge manages encryption, handles authentication, and removes the need to expose local ports to the internet.
 
 <figure><img src="../../.gitbook/assets/image (9) (2).png" alt="Seam Bridge"><figcaption><p>Seam Bridge</p></figcaption></figure>
 
