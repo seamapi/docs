@@ -17,7 +17,7 @@ The setup process has three parts:
 ## Prepare Community for Seam Integration
 
 1. Install Seam Bridge
-   1. Install the [Seam Bridge](../../capability-guides/seam-bridge.md) on the computer hosting the Community System.
+   1. Install the [Seam Bridge](../../capability-guides/seam-bridge/) on the computer hosting the Community System.
 2. Enable Community API
    1. Go to **System Settings** > **Community API**.\
       ![](<../../.gitbook/assets/unknown (1).png>)
@@ -50,11 +50,9 @@ The setup process has three parts:
 1. Contact Dormakaba Technical Support at **+1 (800) 999-6213** to begin the Mobile Key License procurement and setup process.
    1. After selecting your language, follow the menu prompts: **Technical Support** → **Product Support** → **Multihousing** → **Community**.
 2. Inform them you are utilizing **Seam’s integration for Dormakaba Community Mobile Keys**.
-3. Dormakaba will connect your Community property to Seam’s LEGIC  account and provide you with a **Project ID** and **API Key**.
+3. Dormakaba will connect your Community property to Seam’s LEGIC account and provide you with a **Project ID** and **API Key**.
 4. In Community, go to **System Settings** > **Advanced** > **Mobile Keys** > **LEGIC Configuration Settings** and enter the **Project ID** and **API Key**.
 5.  Enter **"https://integration.legicconnect.com"** as the **Endpoint address**.
-
-
 
     <figure><img src="../../.gitbook/assets/Screenshot 2025-09-28 at 5.22.31 PM.png" alt=""><figcaption></figcaption></figure>
 6. Click **Test LEGIC connection settings** to confirm that the settings were set correctly.

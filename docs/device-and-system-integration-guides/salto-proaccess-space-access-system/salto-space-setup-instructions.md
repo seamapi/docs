@@ -62,7 +62,7 @@ To identify this URL:
 4.  Prepend `http://` and append the port number `8100` to the IP address to form the LAN URL.
 
     For example, if the computer's IP address is `192.168.1.101`, the LAN URL is `http://192.168.1.101:8100`.
-5. &#x20;If you want to use HTTP(S) when connecting your Salto Space access system to Seam, note the LAN URL. If you want to use Salto Transport Protocol (STP) when connecting your Salto Space access system to Seam, note the IP address that identifies the host of the Salto Space server.
+5. If you want to use HTTP(S) when connecting your Salto Space access system to Seam, note the LAN URL. If you want to use Salto Transport Protocol (STP) when connecting your Salto Space access system to Seam, note the IP address that identifies the host of the Salto Space server.
 
 ***
 
@@ -80,10 +80,10 @@ Perform the following process for each Salto Space site that you want to integra
 4. If the Connect Webview displays multiple brand options, click **Salto Space**.
 5.  On the **Set up your Seam Bridge** page, click [**latest Seam Bridge**](https://www.seam.co/seam-bridge/releases/latest).
 
-    [Seam Bridge](../../capability-guides/seam-bridge.md) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Salto Space is an on-premises access system, Seam Bridge is required for Salto Space systems.
+    [Seam Bridge](../../capability-guides/seam-bridge/) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Salto Space is an on-premises access system, Seam Bridge is required for Salto Space systems.
 6.  Download the Seam Bridge executable onto the on-premises computer that is running Salto Space or onto a computer on the same network.
 
-    For systems requirements, see [Seam Bridge](../../capability-guides/seam-bridge.md).
+    For systems requirements, see [Seam Bridge](../../capability-guides/seam-bridge/).
 7. Run the downloaded Seam Bridge app.
 8. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge and then click **Start pairing**.
 9.  Copy the pairing code.

@@ -19,7 +19,7 @@ Once you've created a sandbox workspace, add a virtual Visionline ACS to start d
    2. If the Connect Webview displays multiple brand options, click **Visionline**.
    3.  On the **Set up your Seam Bridge** page, click **Continue**.
 
-       [Seam Bridge](../../../../../capability-guides/seam-bridge.md) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this option uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
+       [Seam Bridge](../../../../../capability-guides/seam-bridge/) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this option uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
    4. On the **Set up your Seam Bridge** page, click **Submit**.
    5. On the **Enter your credentials** page:
       1. In the **Visionline Site Name** field, type any string to identify this virtual Visionline ACS site, for example, `My Visionline Site`.

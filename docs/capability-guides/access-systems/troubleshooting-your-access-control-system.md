@@ -12,12 +12,12 @@ These errors alert you to issues involving the connection between your on-premis
 
 ### `acs_system.errors.seam_bridge_disconnected`
 
-This error indicates that the Seam API cannot communicate with your [Seam Bridge](../seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if your Seam Bridge is connected to the wrong [workspace](../../core-concepts/workspaces/).
+This error indicates that the Seam API cannot communicate with your [Seam Bridge](../seam-bridge/), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if your Seam Bridge is connected to the wrong [workspace](../../core-concepts/workspaces/).
 
 To troubleshoot this error:
 
-* Make sure that you are running the [latest version of the Seam Bridge](https://www.seam.co/seam-bridge/releases/latest). If not, reinstall and then start the Seam Bridge executable. See the [Seam Bridge installation instructions](../seam-bridge.md#installation-instructions).
-* Reconnect the Seam Bridge. To reconnect, you can go to your ACS in the **Access Systems** area of the [Seam Console](https://console.seam.co/) or use a [Connect Webview](../../api/connect_webviews/). For more information, see [Pairing the Seam Bridge with Your Workspace](../seam-bridge.md#pairing-the-seam-bridge-with-your-workspace).
+* Make sure that you are running the [latest version of the Seam Bridge](https://www.seam.co/seam-bridge/releases/latest). If not, reinstall and then start the Seam Bridge executable. See the [Seam Bridge installation instructions](../seam-bridge/#installation-instructions).
+* Reconnect the Seam Bridge. To reconnect, you can go to your ACS in the **Access Systems** area of the [Seam Console](https://console.seam.co/) or use a [Connect Webview](../../api/connect_webviews/). For more information, see [Pairing the Seam Bridge with Your Workspace](../seam-bridge/#pairing-the-seam-bridge-with-your-workspace).
 * Restart the Seam Bridge executable.
 
 ***

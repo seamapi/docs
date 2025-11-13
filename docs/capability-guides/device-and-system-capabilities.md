@@ -53,4 +53,4 @@ To learn about the actions that you can perform using the Seam API, see the Seam
 * [Thermostats](../products/thermostats/)
 * [Noise sensors](../products/noise-sensors/)
 * [Mobile access](mobile-access/)
-* [Seam Bridge](seam-bridge.md)
+* [Seam Bridge](seam-bridge/)
