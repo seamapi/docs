@@ -3013,6 +3013,10 @@ Metadata for an Ultraloq device.
   
     Device name for an Ultraloq device.
 
+  - <strong><code>device_type</code></strong> <i>String</i>
+  
+    Device type for an Ultraloq device.
+
 </details>
 
 ---
