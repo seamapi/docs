@@ -357,7 +357,7 @@ $seam->connect_webviews->create(
     custom_metadata: ["id" => "internalId1"],
     automatically_manage_new_devices: true,
     wait_for_device_creation: true,
-    accepted_capabilities: ["lock", "thermostat"]
+    accepted_capabilities: ["lock", "thermostat"],
 );
 ```
 
@@ -917,7 +917,7 @@ $seam->connect_webviews->create(
     custom_metadata: ["id" => "internalId1"],
     automatically_manage_new_devices: true,
     wait_for_device_creation: true,
-    accepted_capabilities: ["lock", "thermostat"]
+    accepted_capabilities: ["lock", "thermostat"],
 );
 ```
 

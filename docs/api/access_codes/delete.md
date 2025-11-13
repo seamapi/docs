@@ -100,7 +100,7 @@ Deletes an access code.
 ```php
 $seam->access_codes->delete(
     device_id: "d33f4cc7-2b6a-41a4-ad30-c372ee493589",
-    access_code_id: "275b40a3-6b0b-4c51-8fd2-aafd3de2195c"
+    access_code_id: "275b40a3-6b0b-4c51-8fd2-aafd3de2195c",
 );
 ```
 

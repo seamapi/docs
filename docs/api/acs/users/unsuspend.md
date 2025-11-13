@@ -101,7 +101,7 @@ Unsuspends a specified suspended access system user, using the associated user i
 ```php
 $seam->acs->users->unsuspend(
     user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537",
-    acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521"
+    acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521",
 );
 ```
 
@@ -267,7 +267,7 @@ nil
 
 ```php
 $seam->acs->users->unsuspend(
-    acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1"
+    acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1",
 );
 ```
 

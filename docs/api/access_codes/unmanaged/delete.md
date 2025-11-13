@@ -93,7 +93,7 @@ Deletes an unmanaged access code.
 
 ```php
 $seam->access_codes->unmanaged->delete(
-    access_code_id: "95d54d42-477b-49d6-bd3a-5e8a40a5a78f"
+    access_code_id: "95d54d42-477b-49d6-bd3a-5e8a40a5a78f",
 );
 ```
 

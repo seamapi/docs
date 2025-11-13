@@ -104,7 +104,7 @@ Adds a specified access system user to a specified user identity.
 ```php
 $seam->user_identities->add_acs_user(
     user_identity_id: "68dd3d7e-c90b-4c89-ad70-3e589014ed87",
-    acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c"
+    acs_user_id: "d73f4706-67e3-419d-899e-ec957a75ee0c",
 );
 ```
 

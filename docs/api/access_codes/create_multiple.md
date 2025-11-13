@@ -242,7 +242,7 @@ $seam->access_codes->create_multiple(
     preferred_code_length: 4,
     name: "My Linked Access Code",
     starts_at: "2025-06-19T01:41:56.000Z",
-    ends_at: "2025-06-22T16:40:40.000Z"
+    ends_at: "2025-06-22T16:40:40.000Z",
 );
 ```
 

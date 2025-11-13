@@ -105,7 +105,7 @@ Simulates having adjusted the HVAC mode for a thermostat.
 $seam->thermostats->simulate->hvac_mode_adjusted(
     device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
     hvac_mode: "heat",
-    heating_set_point_fahrenheit: 68
+    heating_set_point_fahrenheit: 68,
 );
 ```
 

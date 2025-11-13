@@ -192,7 +192,7 @@ Creates a new ongoing online access code.
 $seam->access_codes->create(
     device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
     name: "My Ongoing Online Access Code",
-    code: "1234"
+    code: "1234",
 );
 ```
 
@@ -637,7 +637,7 @@ $seam->access_codes->create(
     name: "My Time-Bound Online Access Code",
     starts_at: "2025-06-20T06:49:21.000Z",
     ends_at: "2025-06-22T12:08:26.000Z",
-    code: "1234"
+    code: "1234",
 );
 ```
 
@@ -943,7 +943,7 @@ $seam->access_codes->create(
     preferred_code_length: 4,
     use_offline_access_code: true,
     is_offline_access_code: true,
-    max_time_rounding: "1h"
+    max_time_rounding: "1h",
 );
 ```
 
@@ -1249,7 +1249,7 @@ $seam->access_codes->create(
     preferred_code_length: 4,
     use_offline_access_code: true,
     is_offline_access_code: true,
-    is_one_time_use: true
+    is_one_time_use: true,
 );
 ```
 
@@ -1540,7 +1540,7 @@ $seam->access_codes->create(
     starts_at: "2025-06-20T06:49:21.000Z",
     ends_at: "2025-06-22T12:08:26.000Z",
     code: "1234",
-    use_backup_access_code_pool: true
+    use_backup_access_code_pool: true,
 );
 ```
 

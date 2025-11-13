@@ -130,7 +130,7 @@ $seam->thermostats->create_climate_preset(
     fan_mode_setting: "auto",
     hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20
+    heating_set_point_celsius: 20,
 );
 ```
 

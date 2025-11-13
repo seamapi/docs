@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@metalsmith/metadata": "^0.3.0",
-    "@prettier/plugin-php": "^0.23.0",
+    "@prettier/plugin-php": "^0.24.0",
     "@prettier/plugin-ruby": "^4.0.4",
     "@seamapi/blueprint": "^0.51.4",
     "@seamapi/smith": "^0.5.2",

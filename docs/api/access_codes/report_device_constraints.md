@@ -117,7 +117,7 @@ $seam->access_codes->report_device_constraints(
     device_id: "cd17e797-e952-47a1-ba47-46bf72934181",
     supported_code_lengths: [4, 5, 6],
     min_code_length: 42,
-    max_code_length: 42
+    max_code_length: 42,
 );
 ```
 
@@ -304,7 +304,7 @@ nil
 $seam->access_codes->report_device_constraints(
     device_id: "cd17e797-e952-47a1-ba47-46bf72934181",
     min_code_length: 4,
-    max_code_length: 6
+    max_code_length: 6,
 );
 ```
 

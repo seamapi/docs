@@ -101,7 +101,7 @@ Removes a specified access system user from a specified access group, using the 
 ```php
 $seam->acs->users->remove_from_access_group(
     user_identity_id: "00ff2781-cce8-4b63-8c65-2b97647d790c",
-    acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576"
+    acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
 );
 ```
 
@@ -276,7 +276,7 @@ nil
 ```php
 $seam->acs->users->remove_from_access_group(
     acs_user_id: "6808e2d9-b4eb-4ad8-b200-503877cd1057",
-    acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576"
+    acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
 );
 ```
 

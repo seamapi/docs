@@ -126,7 +126,7 @@ Activates a specified climate preset for a specified thermostat.
 ```php
 $seam->thermostats->activate_climate_preset(
     device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
-    climate_preset_key: "Eco"
+    climate_preset_key: "Eco",
 );
 ```
 

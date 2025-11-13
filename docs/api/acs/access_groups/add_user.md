@@ -101,7 +101,7 @@ Adds a specified access system user to a specified access group.
 ```php
 $seam->acs->access_groups->add_user(
     acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
-    acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c"
+    acs_user_id: "ebf54c67-746c-471f-a03f-86665148a84c",
 );
 ```
 
@@ -276,7 +276,7 @@ nil
 ```php
 $seam->acs->access_groups->add_user(
     acs_access_group_id: "55efa954-2b84-42af-8d05-fc1f892df51c",
-    user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf"
+    user_identity_id: "522d1368-973f-430f-92df-4ff3583ebccf",
 );
 ```
 

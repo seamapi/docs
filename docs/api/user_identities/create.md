@@ -163,7 +163,7 @@ $seam->user_identities->create(
     email_address: "jane@example.com",
     phone_number: "+15551234567",
     full_name: "Jane Doe",
-    acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"]
+    acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
 );
 ```
 

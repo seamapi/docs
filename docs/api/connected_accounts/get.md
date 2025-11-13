@@ -160,7 +160,7 @@ Returns a specified connected account, using an ID.
 
 ```php
 $seam->connected_accounts->get(
-    connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d"
+    connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
 );
 ```
 

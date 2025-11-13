@@ -108,7 +108,7 @@ Updates an existing Access Grant's time window.
 $seam->access_grants->update(
     access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
     starts_at: "2025-06-19T18:01:32.000Z",
-    ends_at: "2025-06-22T13:24:50.000Z"
+    ends_at: "2025-06-22T13:24:50.000Z",
 );
 ```
 

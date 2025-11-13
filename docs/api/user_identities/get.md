@@ -138,7 +138,7 @@ Returns a specified user identity, using a user identity ID.
 
 ```php
 $seam->user_identities->get(
-    user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b"
+    user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
 );
 ```
 

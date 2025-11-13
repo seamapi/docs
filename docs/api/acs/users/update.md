@@ -146,7 +146,7 @@ $seam->acs->users->update(
     full_name: "Jane Doe",
     email: "jane@example.com",
     phone_number: "+15551234567",
-    email_address: "jane@example.com"
+    email_address: "jane@example.com",
 );
 ```
 
@@ -413,7 +413,7 @@ $seam->acs->users->update(
     full_name: "Jane Doe",
     email: "jane@example.com",
     phone_number: "+15551234567",
-    email_address: "jane@example.com"
+    email_address: "jane@example.com",
 );
 ```
 

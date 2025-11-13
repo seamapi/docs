@@ -183,7 +183,7 @@ Returns a list of all phones, using the owner's user identity ID.
 
 ```php
 $seam->phones->list(
-    owner_user_identity_id: "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4"
+    owner_user_identity_id: "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4",
 );
 ```
 

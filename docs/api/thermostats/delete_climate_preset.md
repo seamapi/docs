@@ -99,7 +99,7 @@ Deletes a specified climate preset for a specified thermostat.
 ```php
 $seam->thermostats->delete_climate_preset(
     device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
-    climate_preset_key: "Eco"
+    climate_preset_key: "Eco",
 );
 ```
 

@@ -421,7 +421,7 @@ seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-
 
 ```php
 $seam->user_identities->list(
-    credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287"
+    credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287",
 );
 ```
 

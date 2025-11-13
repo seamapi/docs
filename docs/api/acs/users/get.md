@@ -211,7 +211,7 @@ Returns a specified access system user.
 ```php
 $seam->acs->users->get(
     user_identity_id: "cde1ec76-5b0d-4b3e-9b85-d80dcc9b599c",
-    acs_system_id: "f4d2b3fb-7fa5-47fd-b0d3-aa6da8f5b710"
+    acs_system_id: "f4d2b3fb-7fa5-47fd-b0d3-aa6da8f5b710",
 );
 ```
 

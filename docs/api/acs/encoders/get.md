@@ -125,7 +125,7 @@ Returns a specified encoder.
 
 ```php
 $seam->acs->encoders->get(
-    acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a"
+    acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a",
 );
 ```
 

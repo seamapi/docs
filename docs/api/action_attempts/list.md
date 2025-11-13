@@ -171,7 +171,7 @@ $seam->action_attempts->list(
     action_attempt_ids: [
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
         "3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f",
-    ]
+    ],
 );
 ```
 

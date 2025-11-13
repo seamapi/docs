@@ -292,7 +292,7 @@ $seam->access_grants->list(
     user_identity_id: "f7620fcf-d92f-471e-b97e-3806daeebd40",
     acs_system_id: "9f169742-048a-4105-84e3-bd1e0f9dc790",
     acs_entrance_id: "2673b363-4748-4a64-8075-f669c862ec74",
-    space_id: "1d20c47d-3cc0-41ca-9917-bc798d071543"
+    space_id: "1d20c47d-3cc0-41ca-9917-bc798d071543",
 );
 ```
 

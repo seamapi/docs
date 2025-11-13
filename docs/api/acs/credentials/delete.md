@@ -91,7 +91,7 @@ Deletes a specified credential.
 
 ```php
 $seam->acs->credentials->delete(
-    acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab"
+    acs_credential_id: "33bbceea-221e-48bd-8d38-aa72f88a1cab",
 );
 ```
 

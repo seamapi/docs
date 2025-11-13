@@ -101,7 +101,7 @@ Unassigns a specified credential from a specified access system user, using the 
 ```php
 $seam->acs->credentials->unassign(
     user_identity_id: "417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
-    acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
+    acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
 );
 ```
 
@@ -276,7 +276,7 @@ nil
 ```php
 $seam->acs->credentials->unassign(
     acs_user_id: "ae76d550-f2e0-4f61-9380-a64d276f9904",
-    acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
+    acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
 );
 ```
 

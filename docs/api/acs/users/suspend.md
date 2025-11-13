@@ -101,7 +101,7 @@ Suspends a specified access system user, using the associated user identity.
 ```php
 $seam->acs->users->suspend(
     user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c",
-    acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d"
+    acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d",
 );
 ```
 

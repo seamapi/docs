@@ -750,7 +750,7 @@ Returns a list of all devices associated with a specified user identity.
 
 ```php
 $seam->user_identities->list_accessible_devices(
-    user_identity_id: "f25d14c2-ea01-4e42-80f8-61a6f719be9d"
+    user_identity_id: "f25d14c2-ea01-4e42-80f8-61a6f719be9d",
 );
 ```
 

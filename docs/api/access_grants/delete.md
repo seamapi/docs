@@ -94,7 +94,7 @@ Deletes an Access Grant.
 
 ```php
 $seam->access_grants->delete(
-    access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c"
+    access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c",
 );
 ```
 

@@ -98,7 +98,7 @@ Updates a specified unmanaged device.
 ```php
 $seam->devices->unmanaged->update(
     device_id: "66c3adbf-a0e5-403a-8981-ec5286b5da76",
-    is_managed: true
+    is_managed: true,
 );
 ```
 

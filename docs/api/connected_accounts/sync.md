@@ -93,7 +93,7 @@ Request a connected account sync attempt for the specified connected account.
 
 ```php
 $seam->connected_accounts->sync(
-    connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279"
+    connected_account_id: "f886f890-4ca5-4ce5-b248-509cbfb6c279",
 );
 ```
 

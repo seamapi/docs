@@ -248,7 +248,7 @@ $seam->workspaces->create(
         "primary_button_text_color" => "#FFFDE7",
         "success_message" =>
             "Your account has been successfully connected to Acme!",
-    ]
+    ],
 );
 ```
 
@@ -728,7 +728,7 @@ $seam->workspaces->create(
         "primary_button_text_color" => "#FFFDE7",
         "success_message" =>
             "Your account has been successfully connected to Acme!",
-    ]
+    ],
 );
 ```
 

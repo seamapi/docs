@@ -91,7 +91,7 @@ Simulates removing a device from Seam.
 
 ```php
 $seam->devices->simulate->remove(
-    device_id: "46757795-11f7-446a-a6cb-779e9f039d7c"
+    device_id: "46757795-11f7-446a-a6cb-779e9f039d7c",
 );
 ```
 

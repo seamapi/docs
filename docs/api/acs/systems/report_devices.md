@@ -168,7 +168,7 @@ $seam->acs->systems->report_devices(
                 "common_area_number" => "2",
             ],
         ],
-    ]
+    ],
 );
 ```
 

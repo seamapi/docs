@@ -150,7 +150,7 @@ Returns a list of all thermostat schedules for a specified thermostat, using a d
 
 ```php
 $seam->thermostats->schedules->list(
-    device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea"
+    device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea",
 );
 ```
 
@@ -422,7 +422,7 @@ seam.thermostats.schedules.list(user_identifier_key: "b5c8bf4e-c231-474f-b4dc-ad
 
 ```php
 $seam->thermostats->schedules->list(
-    user_identifier_key: "b5c8bf4e-c231-474f-b4dc-adad38c25d3f"
+    user_identifier_key: "b5c8bf4e-c231-474f-b4dc-adad38c25d3f",
 );
 ```
 

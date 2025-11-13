@@ -93,7 +93,7 @@ Revokes a client session.
 
 ```php
 $seam->client_sessions->revoke(
-    client_session_id: "4271352c-6894-4367-8f52-41d565c48f13"
+    client_session_id: "4271352c-6894-4367-8f52-41d565c48f13",
 );
 ```
 
