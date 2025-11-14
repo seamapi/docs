@@ -1,3 +1,9 @@
+---
+description: >-
+  Step-by-step instructions for installing, launching, and configuring Seam
+  Bridge on Linux.
+---
+
 # Seam Bridge Setup for Linux
 
 ## System Requirements
@@ -90,8 +96,7 @@ Use `systemd` to keep an app running on Linux. It supervises the process, restar
 #### Create a systemd service file
 
 1. Open Terminal.
-2.  Create the service file:\
-
+2.  Create the service file:\\
 
     ```bash
     sudo nano /etc/systemd/system/SeamBridge.service
@@ -140,4 +145,3 @@ You should see the service running and supervised.
 
 1. Kill the process manually with `pkill SeamBridge`.
 2. `systemd` should restart it immediately.
-

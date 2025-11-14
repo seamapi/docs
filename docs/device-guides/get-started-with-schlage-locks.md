@@ -166,7 +166,7 @@ After a Schlage account is linked with Seam, you can retrieve devices for this S
 
 {% tabs %}
 {% tab title="Python" %}
-\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\`python all\\\\\\\\\\\\\\\_locks = seam.locks.list()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`python all\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_locks = seam.locks.list()
 
 some\_lock = all\_locks\[0]
 

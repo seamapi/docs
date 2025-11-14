@@ -1,3 +1,9 @@
+---
+description: >-
+  Step-by-step instructions for installing, launching, and configuring Seam
+  Bridge on macOS.
+---
+
 # Seam Bridge Setup for macOS
 
 ### System Requirements
