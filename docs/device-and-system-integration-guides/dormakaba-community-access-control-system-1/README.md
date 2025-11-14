@@ -36,7 +36,7 @@ This integration supports all wireless locks and readers connected to the Dormak
 
 ## Related Features
 
-* [**Access Grants**](../../capability-guides/access-grants/) – The universal way to manage access in Seam. Integrate once, and your access model works consistently across all providers, including Dormakaba Community. For advanced, low-level control, you can still work directly with the ACS API.
+* [**Access Grants**](../../capability-guides/access-grants/reservation-access-grants.md) – The universal way to manage access in Seam. Integrate once, and your access model works consistently across all providers, including Dormakaba Community. For advanced, low-level control, you can still work directly with the ACS API.
 * [**Mobile Keys**](../../capability-guides/mobile-access/) – Provision and revoke Bluetooth and wallet-based credentials directly from your PMS or app.
 * [**Instant Keys**](../../capability-guides/instant-keys/) - Instantly issue temporary mobile pass that is shareable via an email or text.
 * [**Plastic Card Encoding**](../../api/acs/encoders/encode_credential.md) – Encode and issue physical access cards using Seam’s card management API.
