@@ -110,6 +110,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/spaces/create`: Only used internally.
 - `/seam/customer/v1/spaces/list`: Only used internally.
+- `/seam/customer/v1/spaces/list_reservations`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/list`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
@@ -470,7 +471,6 @@ These items have been marked as draft.
 - `/access_grants`: No draft message provided
 - `/access_grants/unmanaged`: No draft message provided
 - `/access_methods/unmanaged`: No draft message provided
-- `/seam/customer/v1/spaces`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -643,6 +643,7 @@ These items are deprecated.
 - `/seam/customer/v1/reservations/get`: `reservation`
 - `/seam/customer/v1/reservations/list`: `reservations`
 - `/seam/customer/v1/settings/get`: `business_vertical`
+- `/seam/customer/v1/spaces/list_reservations`: `reservations`
 - `/seam/customer/v1/staff_members/get`: `staff_member`
 - `/seam/customer/v1/staff_members/list`: `staff_members`
 - `/seam/instant_key/v1/preview/get`: `instant_key_preview`
