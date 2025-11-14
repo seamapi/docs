@@ -790,6 +790,23 @@ Phone number of the [access system user](https://docs.seam.co/latest/capability-
 
 ---
 
+**`salto_space_metadata`** *Object*
+
+Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>audit_openings</code></strong> <i>Boolean</i>
+  
+    Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.
+
+</details>
+
+---
+
 **`user_identity_email_address`** *String*
 
 Email address of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).

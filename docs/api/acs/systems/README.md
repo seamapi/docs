@@ -1,12 +1,13 @@
 # Systems
 
-## The acs\_system Object
+## The acs_system Object
 
-* [Properties](./#properties)
-* [Errors](./#errors)
-* [Warnings](./#warnings)
-* [Events](./#events)
-* [Endpoints](./#endpoints)
+- [Properties](./#properties)
+- [Errors](./#errors)
+- [Warnings](./#warnings)
+- [Events](./#events)
+- [Endpoints](./#endpoints)
+
 
 Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
@@ -16,6 +17,7 @@ For details about the resources associated with an access control system, see th
 
 {% tabs %}
 {% tab title="ACS System" %}
+
 An access system resource.
 
 ```json
@@ -42,471 +44,571 @@ An access system resource.
 {% endtab %}
 {% endtabs %}
 
-***
-
+---
 ## Properties
 
-**`acs_access_group_count`** _Number_
+**`acs_access_group_count`** *Number*
 
-***
 
-**`acs_system_id`** _UUID_
+
+
+
+---
+
+**`acs_system_id`** *UUID*
 
 ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-***
 
-**`acs_user_count`** _Number_
 
-***
 
-**`connected_account_id`** _UUID_
+---
 
-ID of the [connected account](../../../core-concepts/connected-accounts/) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+**`acs_user_count`** *Number*
 
-***
 
-**`connected_account_ids`** _List_ _of UUIDs_
 
-IDs of the [connected accounts](../../../core-concepts/connected-accounts/) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+---
+
+**`connected_account_id`** *UUID*
+
+ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+
+
+---
+
+**`connected_account_ids`** *List* *of UUIDs*
+
+IDs of the [connected accounts](../../../core-concepts/connected-accounts/README.md) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 {% hint style="warning" %}
 **Deprecated**. Use `connected_account_id`.
 {% endhint %}
 
-***
 
-**`created_at`** _Datetime_
+
+---
+
+**`created_at`** *Datetime*
 
 Date and time at which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) was created.
 
-***
 
-**`default_credential_manager_acs_system_id`** _UUID_
+
+
+---
+
+**`default_credential_manager_acs_system_id`** *UUID*
 
 ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-***
 
-[**`errors`**](./#errors) _List_ _of Objects_
+
+
+---
+
+[**`errors`**](./#errors) *List* *of Objects*
 
 Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+
 
 The specific structure of each object in this list depends on the value of its `error_code` field.
 
 Variants:
-
 <details>
-
 <summary><code>seam_bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
 
-Date and time at which Seam created the error.
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>seam_bridge_disconnected</code>
+  
+  
+  ---
 
-***
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `seam_bridge_disconnected`
-
-***
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
-
 <details>
-
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
 
-Date and time at which Seam created the error.
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>bridge_disconnected</code>
+  
+  
+  ---
 
-***
+  **`is_bridge_error`** *Boolean*
+  
+  
+  
+  ---
 
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `bridge_disconnected`
-
-***
-
-**`is_bridge_error`** _Boolean_
-
-***
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
-
 <details>
-
 <summary><code>visionline_instance_unreachable</code></summary>
 
-Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/). For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
+  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
 
-Date and time at which Seam created the error.
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>visionline_instance_unreachable</code>
+  
+  
+  ---
 
-***
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `visionline_instance_unreachable`
-
-***
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
-
 <details>
-
 <summary><code>salto_ks_subscription_limit_exceeded</code></summary>
 
 Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
 
-Date and time at which Seam created the error.
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_subscription_limit_exceeded</code>
+  
+  
+  ---
 
-***
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `salto_ks_subscription_limit_exceeded`
-
-***
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
-
 <details>
-
 <summary><code>acs_system_disconnected</code></summary>
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
 
-Date and time at which Seam created the error.
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>acs_system_disconnected</code>
+  
+  
+  ---
 
-***
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `acs_system_disconnected`
-
-***
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
-
 <details>
-
 <summary><code>account_disconnected</code></summary>
 
 Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
 
-Date and time at which Seam created the error.
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>account_disconnected</code>
+  
+  
+  ---
 
-***
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `account_disconnected`
-
-***
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
-
 <details>
-
 <summary><code>salto_ks_certification_expired</code></summary>
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
 
-Date and time at which Seam created the error.
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_certification_expired</code>
+  
+  
+  ---
 
-***
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `salto_ks_certification_expired`
-
-***
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
 </details>
 
-***
+---
 
-**`external_type`** _Enum_
+**`external_type`** *Enum*
 
 Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
-<details>
 
+<details>
 <summary>Enum values</summary>
 
-* `pti_site`
-* `alta_org`
-* `salto_ks_site`
-* `salto_space_system`
-* `brivo_account`
-* `hid_credential_manager_organization`
-* `visionline_system`
-* `assa_abloy_credential_service`
-* `latch_building`
-* `dormakaba_community_site`
-* `dormakaba_ambiance_site`
-* `legic_connect_credential_service`
-* `assa_abloy_vostio`
-* `assa_abloy_vostio_credential_service`
-* `hotek_site`
-
+- <code>pti_site</code>
+- <code>alta_org</code>
+- <code>salto_ks_site</code>
+- <code>salto_space_system</code>
+- <code>brivo_account</code>
+- <code>hid_credential_manager_organization</code>
+- <code>visionline_system</code>
+- <code>assa_abloy_credential_service</code>
+- <code>latch_building</code>
+- <code>dormakaba_community_site</code>
+- <code>dormakaba_ambiance_site</code>
+- <code>legic_connect_credential_service</code>
+- <code>assa_abloy_vostio</code>
+- <code>assa_abloy_vostio_credential_service</code>
+- <code>hotek_site</code>
 </details>
 
-***
 
-**`external_type_display_name`** _String_
+---
+
+**`external_type_display_name`** *String*
 
 Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
 
-***
 
-**`image_alt_text`** _String_
+
+
+---
+
+**`image_alt_text`** *String*
 
 Alternative text for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) image.
 
-***
 
-**`image_url`** _String_
+
+
+---
+
+**`image_url`** *String*
 
 URL for the image that represents the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-***
 
-**`is_credential_manager`** _Boolean_
+
+
+---
+
+**`is_credential_manager`** *Boolean*
 
 Indicates whether the `acs_system` is a credential manager.
 
-***
 
-**`location`** _Object_
+
+
+---
+
+**`location`** *Object*
+
+
+
 
 <details>
+  <summary>Child Properties</summary>
 
-<summary>Child Properties</summary>
-
-*   **`time_zone`** _String_
-
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
     Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
 
 </details>
 
-***
+---
 
-**`name`** _String_
+**`name`** *String*
 
 Name of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-***
 
-**`system_type`** _Enum_
+
+
+---
+
+**`system_type`** *Enum*
+
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type`.
 {% endhint %}
 
 <details>
-
 <summary>Enum values</summary>
 
-* `pti_site`
-* `alta_org`
-* `salto_ks_site`
-* `salto_space_system`
-* `brivo_account`
-* `hid_credential_manager_organization`
-* `visionline_system`
-* `assa_abloy_credential_service`
-* `latch_building`
-* `dormakaba_community_site`
-* `dormakaba_ambiance_site`
-* `legic_connect_credential_service`
-* `assa_abloy_vostio`
-* `assa_abloy_vostio_credential_service`
-* `hotek_site`
-
+- <code>pti_site</code>
+- <code>alta_org</code>
+- <code>salto_ks_site</code>
+- <code>salto_space_system</code>
+- <code>brivo_account</code>
+- <code>hid_credential_manager_organization</code>
+- <code>visionline_system</code>
+- <code>assa_abloy_credential_service</code>
+- <code>latch_building</code>
+- <code>dormakaba_community_site</code>
+- <code>dormakaba_ambiance_site</code>
+- <code>legic_connect_credential_service</code>
+- <code>assa_abloy_vostio</code>
+- <code>assa_abloy_vostio_credential_service</code>
+- <code>hotek_site</code>
 </details>
 
-***
 
-**`system_type_display_name`** _String_
+---
+
+**`system_type_display_name`** *String*
+
 
 {% hint style="warning" %}
 **Deprecated**. Use `external_type_display_name`.
 {% endhint %}
 
-***
 
-**`visionline_metadata`** _Object_
+
+---
+
+**`visionline_metadata`** *Object*
+
+
+
 
 <details>
+  <summary>Child Properties</summary>
 
-<summary>Child Properties</summary>
-
-*   **`lan_address`** _String_
-
+  - <strong><code>lan_address</code></strong> <i>String</i>
+  
     IP address or hostname of the main Visionline server relative to [Seam Bridge](../../../capability-guides/seam-bridge.md) on the local network.
-*   **`mobile_access_uuid`** _String_
 
+  - <strong><code>mobile_access_uuid</code></strong> <i>String</i>
+  
     Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
-*   **`system_id`** _String_
 
+  - <strong><code>system_id</code></strong> <i>String</i>
+  
     Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
 
 </details>
 
-***
+---
 
-[**`warnings`**](./#warnings) _List_ _of Objects_
+[**`warnings`**](./#warnings) *List* *of Objects*
 
 Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+
+
 
 The specific structure of each object in this list depends on the value of its `warning_code` field.
 
 Variants:
-
 <details>
-
 <summary><code>salto_ks_subscription_limit_almost_reached</code></summary>
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
 
-Date and time at which Seam created the warning.
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
 
-***
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
-***
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `salto_ks_subscription_limit_almost_reached`
-
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_subscription_limit_almost_reached</code>
+  
+  
 </details>
-
 <details>
-
 <summary><code>time_zone_does_not_match_location</code></summary>
 
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-**`created_at`** _Datetime_
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
 
-Date and time at which Seam created the warning.
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
 
-***
+  **`misconfigured_acs_entrance_ids`** *List* *of UUIDs*
+  
+  
+  {% hint style="warning" %}
+  **Deprecated**. this field is deprecated.
+  {% endhint %}
+  
+  
+  ---
 
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
-***
-
-**`misconfigured_acs_entrance_ids`** _List_ _of UUIDs_
-
-{% hint style="warning" %}
-**Deprecated**. this field is deprecated.
-{% endhint %}
-
-***
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-* `time_zone_does_not_match_location`
-
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>time_zone_does_not_match_location</code>
+  
+  
 </details>
 
-***
+---
 
-**`workspace_id`** _UUID_
+**`workspace_id`** *UUID*
 
-ID of the [workspace](../../../core-concepts/workspaces/) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-***
+
+
+
+---
+
 
 ## Errors
 
@@ -514,43 +616,49 @@ ID of the [workspace](../../../core-concepts/workspaces/) that contains the [acc
 
 Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
 
-***
+---
 
 **`acs_system_disconnected`**
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md) to resolve the issue.
 
-***
+---
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-***
+---
 
 **`salto_ks_certification_expired`**
 
 Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
-***
+---
 
 **`salto_ks_subscription_limit_exceeded`**
 
 Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
 
-***
+---
 
 **`seam_bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if Seam Bridge is connected to the wrong [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
 
-***
+---
 
 **`visionline_instance_unreachable`**
 
-Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/). For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/). See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](../../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md).
+  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](../../../core-concepts/workspaces/README.md).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
-***
+---
+
 
 ## Warnings
 
@@ -558,13 +666,14 @@ Indicates that [Seam Bridge](../../../capability-guides/seam-bridge.md) is funct
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
 
-***
+---
 
 **`time_zone_does_not_match_location`**
 
 Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
 
-***
+---
+
 
 ## Events
 
@@ -576,37 +685,36 @@ An [access system](https://docs.seam.co/latest/capability-guides/access-systems)
 
 <summary>Properties</summary>
 
-**`acs_system_id`** _UUID_
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-ID of the access system.
+  ID of the access system.
 
-**`connected_account_id`** _UUID_
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account.
+  ID of the connected account.
 
-**`created_at`** _Datetime_
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-**`event_id`** _UUID_
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-**`event_type`** _Enum_
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `acs_system.connected`
+  Value: `acs_system.connected`
 
-**`occurred_at`** _Datetime_
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-**`workspace_id`** _UUID_
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](../../../core-concepts/workspaces/) associated with the event.
-
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
-***
+---
 
 **`acs_system.added`**
 
@@ -616,37 +724,36 @@ An [access system](https://docs.seam.co/latest/capability-guides/access-systems)
 
 <summary>Properties</summary>
 
-**`acs_system_id`** _UUID_
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-ID of the access system.
+  ID of the access system.
 
-**`connected_account_id`** _UUID_
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account.
+  ID of the connected account.
 
-**`created_at`** _Datetime_
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-**`event_id`** _UUID_
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-**`event_type`** _Enum_
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `acs_system.added`
+  Value: `acs_system.added`
 
-**`occurred_at`** _Datetime_
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-**`workspace_id`** _UUID_
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](../../../core-concepts/workspaces/) associated with the event.
-
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
-***
+---
 
 **`acs_system.disconnected`**
 
@@ -656,52 +763,57 @@ An [access system](https://docs.seam.co/latest/capability-guides/access-systems)
 
 <summary>Properties</summary>
 
-**`acs_system_id`** _UUID_
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
 
-ID of the access system.
+  ID of the access system.
 
-**`connected_account_id`** _UUID_
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account.
+  ID of the connected account.
 
-**`created_at`** _Datetime_
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-**`event_id`** _UUID_
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-**`event_type`** _Enum_
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `acs_system.disconnected`
+  Value: `acs_system.disconnected`
 
-**`occurred_at`** _Datetime_
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-**`workspace_id`** _UUID_
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](../../../core-concepts/workspaces/) associated with the event.
-
+  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
 </details>
 
-***
+---
 
 ## Endpoints
 
-[**`/acs/systems/get`**](get.md)
+
+[**`/acs/systems/get`**](./get.md)
 
 Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-[**`/acs/systems/list`**](list.md)
+
+[**`/acs/systems/list`**](./list.md)
 
 Returns a list of all [access systems](https://docs.seam.co/latest/capability-guides/access-systems).
 
-[**`/acs/systems/list_compatible_credential_manager_acs_systems`**](list_compatible_credential_manager_acs_systems.md)
+
+[**`/acs/systems/list_compatible_credential_manager_acs_systems`**](./list_compatible_credential_manager_acs_systems.md)
 
 Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).
 
-[**`/acs/systems/report_devices`**](report_devices.md)
+
+[**`/acs/systems/report_devices`**](./report_devices.md)
 
 Reports ACS system device status including encoders and entrances.
+
+
