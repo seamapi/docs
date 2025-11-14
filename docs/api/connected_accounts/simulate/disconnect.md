@@ -11,6 +11,7 @@ Simulates a connected account becoming disconnected from Seam. Only applicable f
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
@@ -20,6 +21,8 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 ## Request Parameters
 
 **`connected_account_id`** *String* (Required)
+
+ID of the connected account you want to simulate as disconnected.
 
 ---
 

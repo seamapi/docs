@@ -379,8 +379,6 @@ Items that are intentionally undocumented are not included in this section.
     - `device_selection_mode`
 - `/connected_accounts/delete`
     - `sync`
-- `/connected_accounts/simulate/disconnect`
-    - `connected_account_id`
 - `/customers/create_portal`
     - `features`
     - `customer_data`
