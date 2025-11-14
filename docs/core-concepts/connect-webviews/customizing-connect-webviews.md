@@ -59,7 +59,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Brivo](../../device-guides/brivo-access.md)                                                                                           | `brivo`                         |
 | [ControlByWeb](../../device-guides/get-started-with-controlbyweb-devices.md)                                                           | `controlbyweb`                  |
 | [DoorKing](https://www.doorking.com/)                                                                                                  | `doorking`                      |
-| [Dormakaba Community](../../device-and-system-integration-guides/dormakaba-community-access-control-system/)                           | `dormakaba_community`           |
+| [Dormakaba Community](../../device-and-system-integration-guides/dormakaba-community-access-control-system-1/)                         | `dormakaba_community`           |
 | [Dormakaba Oracode](../../device-guides/dormakaba-oracode-locks.md)                                                                    | `dormakaba_oracode`             |
 | [ecobee](../../device-guides/ecobee-thermostats.md)                                                                                    | `ecobee`                        |
 | [Genie Aladdin Connect](https://www.geniecompany.com/aladdin-connect-by-genie)                                                         | `genie`                         |
