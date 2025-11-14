@@ -1,3 +1,9 @@
+---
+description: >-
+  Step-by-step instructions for installing, launching, and configuring Seam
+  Bridge on Windows.
+---
+
 # Seam Bridge Setup for Windows
 
 ### System Requirements
