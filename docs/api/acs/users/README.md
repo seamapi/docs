@@ -803,6 +803,10 @@ Salto Space-specific metadata associated with the [access system user](https://d
   
     Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.
 
+  - <strong><code>user_id</code></strong> <i>String</i>
+  
+    User ID in the Salto Space access system.
+
 </details>
 
 ---
