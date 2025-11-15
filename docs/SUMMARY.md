@@ -560,6 +560,7 @@
   * [Programming Code-Based Latch Credentials](device-and-system-integration-guides/latch-access-control-system-1/programming-code-based-latch-credentials.md)
   * [Programming Latch ACS Mobile Credentials](device-and-system-integration-guides/latch-access-control-system-1/programming-latch-acs-mobile-credentials.md)
 * [Lockly Locks](device-and-system-integration-guides/lockly-locks/README.md)
+  * [Lockly Setup Guide](device-and-system-integration-guides/lockly-locks/lockly-setup-guide.md)
   * [Creating Lockly Offline Access Codes](device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes.md)
 * [Minut Sensors](device-guides/minut-sensors.md)
   * [Get started with Minut Sensors](device-guides/get-started-with-minut-sensors.md)

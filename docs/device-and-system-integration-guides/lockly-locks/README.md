@@ -10,11 +10,19 @@ description: Guide for using Lockly smart locks with Seam
 
 Seam integrates with Lockly smart locks. With a focus on security, Lockly smart locks work with a vast array of door types, such as traditional deadbolts, latch bolts, and patio doors. In addition, Lockly smart locks support time-bound and one-time-use [offline access codes](creating-lockly-offline-access-codes.md) that you can issue when you are not connected to your Lockly lock.
 
+{% hint style="info" %}
+**Before you begin**
+
+Follow the [Lockly Setup Guide](lockly-setup-guide.md) to configure your Lockly account, and connect it to Seam.
+{% endhint %}
+
 ***
 
 ## Supported Devices
 
-This integration supports [all Lockly smart locks](https://lockly.com/collections/door-lock). Note that for Lockly devices that do not have integrated Wi-Fi connectivity, you must also install the [Secure Link Wi-Fi Hub](https://lockly.com/products/secure-link-wifi-hub?bvstate=pg:4/ct:r\&g_campaign_id=16972321320\&g_adgroup_id=\&utm_source=google\&utm_medium=pmax\&utm_campaign=pfmx-20230201MCV\&gclid=Cj0KCQjwvL-oBhCxARIsAHkOiu0hV67HkcUG7buEnk3odH5k8_I0JqFMU0r5V9Pp7gdGWgBYUQlCIr4aAq8jEALw_wcB).
+All Lockly smart locks are supported.
+
+For models without built-in Wi-Fi, a [Secure Link Wi-Fi Hub](https://lockly.com/products/secure-link-wifi-hub) is required.
 
 For detailed information about the Lockly devices that Seam supports, see our [Lockly Supported Devices page](https://www.seam.co/manufacturers/lockly).
 
@@ -24,63 +32,48 @@ For detailed information about the Lockly devices that Seam supports, see our [L
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)
-* [Programming online access codes](../../products/smart-locks/access-codes/) on locks that have a keypad
-* [Programming offline access codes](../../products/smart-locks/access-codes/offline-access-codes.md) on locks that have a keypad
+#### Device control
+
+* Lock and unlock actions (online)
+
+#### Access code management
+
+* Online access codes (for Wi-Fi–connected locks)
+* Offline, time-bound, and one-time-use PIN codes (for keypad models)
+* Custom code lengths between 6 and 8 digits (Lockly requirement)
+
+#### Device monitoring
+
+* Lock status
+* Online/offline state
+* Battery level (where supported)
 
 ***
 
-### Device Provider Key
+## Connecting Lockly to Seam
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Lockly devices to Seam, include the `lockly` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To enable your users to [connect Lockly devices through Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews), include the Lockly provider:
 
-***
+```json
+{
+  "accepted_providers": ["lockly"]
+}
+```
 
-## Setup Instructions
+After the Lockly owner completes the LAP setup steps, they can enter their programmatic credentials into the Seam Connect form to complete the connection.
 
-To control Lockly devices using Seam, you must prompt owners of these devices to perform the following steps:
-
-1. Download and create an account for the [Lockly mobile app](https://lockly.com/pages/download-lockly-app) if you have not done so already.
-2. In the Lockly mobile app, set up each of your Lockly locks as follows:
-   1. Click the card for the lock.
-   2. In the lower, right corner, click **Settings**.
-   3. Click **Sync with LocklyOS**, and then enable **Sync with LocklyOS**.
-3. In a web browser, navigate to the [Lockly Access Portal](https://lap.lockly.com/lap/index.html#/login) (LAP) and log in with your Lockly mobile app credentials.
-4. Purchase a Lockly plan that suits your needs.
-5. Email [support@lockly.com](mailto:support@lockly.com) to enable API access for your LAP account.
-6. In the left-hand navigation pane of the Lockly Access Portal, click **Account** > **User Management**.
-7. Click **Add Account**.
-8.  Specify the following values to configure the new user account:
-
-    1. In the **Credential Type** field, select **Access Key - Programmatic access**.
-    2. In the **User Name** field, type a descriptive name, such as **Seam Integration**.
-    3. In the **Property** field, select all the properties to which you want the Seam application to have access.
-    4. In the **Role** field, select **Property And Room (Read & Write)**, **Doorlock (Read & Write)**, and **API EBadge Admin**.
-    5. In the **Validity Period** field, select **Permanent**.
-
-    <figure><img src="../../.gitbook/assets/lockly-access-portal-add-account.png" alt="Create a user account in the Lockly Access portal." width="563"><figcaption></figcaption></figure>
-9.  Click **Confirm**.\
-    The Lockly Access Portal creates the new account and displays the following information:
-
-    <figure><img src="../../.gitbook/assets/lockly-access-portal-account-created-successfully.png" alt="Note the information for the newly-created user account." width="563"><figcaption></figcaption></figure>
-10. Note the client ID, access key ID, access key secret, token ID, and token secret.
+[→ See: Lockly Setup Guide](lockly-setup-guide.md)
 
 ***
 
-## Brand-Specific Restrictions
+## Brand-specific notes
 
-Note the following Lockly-specific restrictions:
-
-### Access Codes
-
-Lockly supports creating custom access codes. These custom codes must be six to eight digits long.
+* **Access codes:** Lockly requires access codes to be 6–8 digits.
+* **Hubs:** Some models require the Lockly Secure Link Wi-Fi Hub.
+* **API access:** Lockly Access Portal users must request API enablement from Lockly support.
 
 ***
 
-## Where to Order
+## Next Steps
 
-Order Lockly locks directly from the Lockly website.
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Lockly</strong></td><td></td><td><a href="https://lockly.com/collections/door-lock">https://lockly.com/collections/door-lock</a></td><td><a href="../../.gitbook/assets/lockly-logo.png">lockly-logo.png</a></td></tr></tbody></table>
-
-***
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><strong>Connect Lockly to Seam</strong></td><td>Follow the setup guide to prepare your Lockly account and enable API access.</td><td><a href="lockly-setup-guide.md">lockly-setup-guide.md</a></td><td><a href="../../.gitbook/assets/image.png">image.png</a></td></tr><tr><td><strong>Order Locks</strong></td><td>Purchase Lockly locks directly from their website.</td><td><a href="https://lockly.com/collections/door-lock">https://lockly.com/collections/door-lock</a></td><td><a href="../../.gitbook/assets/lockly-logo.png">lockly-logo.png</a></td></tr></tbody></table>

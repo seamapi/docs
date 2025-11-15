@@ -4,7 +4,7 @@ description: Automating physical key hand‑offs with KeyNest lockers
 
 # Keynest Key Lockers
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Overview
 
