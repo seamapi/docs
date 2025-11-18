@@ -614,6 +614,8 @@ These items are deprecated.
     - `noise_sensors`
 - `/noise_sensors/noise_thresholds/create`
     - `action_attempt`
+- `/seam/customer/v1/settings/get`
+    - `slug`
 - `/seam/customer/v1/staff_members/get`
     - `access_grant`
     - `spaces`
