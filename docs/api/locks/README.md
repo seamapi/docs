@@ -3352,6 +3352,24 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 
   ID of the access code that was used to unlock the affected device.
 
+<strong><code>acs_entrance_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS entrance associated with the unlock event.
+
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS system associated with the unlock event.
+
+<strong><code>acs_user_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS user associated with the unlock event.
+
 <strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
   ID of the action attempt associated with the unlock action.
@@ -3400,6 +3418,12 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
+
+<strong><code>user_identity_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the user identity associated with the unlock event.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
