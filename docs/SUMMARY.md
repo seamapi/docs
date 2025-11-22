@@ -601,13 +601,14 @@
 
 ## Device Manufacturer Guidance
 
+* [Building a Seam-Compatible Smart Lock API](device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/README.md)
+  * [Implementing Authentication](device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-authentication.md)
+  * [Implementing your Device Model & Discovery](device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-your-device-model-and-discovery.md)
+  * [Implementing Lock Actions](device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-lock-actions.md)
+  * [Implementing Access Codes](device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-access-codes.md)
+  * [Webhooks & Events](device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/webhooks-and-events.md)
 * [Creating a Seam-Compatible Intercom API](for-device-manufacturers/creating-a-seam-compatible-intercom-api/README.md)
   * [Creating OAuth Endpoints](for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-oauth-endpoints.md)
   * [Creating Intercom CRUD Endpoints](for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-intercom-crud-endpoints.md)
   * [Creating Access Code CRUD Endpoints](for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-access-code-crud-endpoints.md)
   * [Creating the Health Endpoint](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-the-health-endpoint.md)
-* [Creating a Seam-Compatible Door Locks API](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/README.md)
-  * [Creating OAuth Endpoints](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-oauth-endpoints.md)
-  * [Creating Door Lock CRUD Endpoints](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-door-lock-crud-endpoints.md)
-  * [Creating Access Code CRUD Endpoints](for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-access-code-crud-endpoints.md)
-  * [Creating the Health Endpoint](for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-the-health-endpoint.md)

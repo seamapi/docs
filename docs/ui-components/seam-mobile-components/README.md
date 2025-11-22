@@ -6,7 +6,7 @@ description: >-
 
 # Seam Mobile Components
 
-<div data-full-width="false"><figure><img src="../../.gitbook/assets/Untitled (1).png" alt="" width="188"><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/Untitled_2 (1).png" alt="" width="188"><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="broken-reference" alt="" width="188"><figcaption></figcaption></figure> <figure><img src="broken-reference" alt="" width="188"><figcaption></figcaption></figure></div>
 
 Seam Mobile Components are pre-built views that let you deliver end-user access flows in your mobile app with minimal effort. Instead of manually wiring together the Seam Mobile SDK, you can drop in a component like `SeamAccessView` to provide a fully functional access experience, including unlock interactions, credential error handling, haptics, and more.
 
@@ -24,4 +24,4 @@ Seam Mobile Components are pre-built views that let you deliver end-user access 
 
 ### Platform Guides
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>iOS Guide</strong><br>Integrate Seam Mobile Components into your iOS app</td><td><a href="../../.gitbook/assets/image (35).png">image (35).png</a></td><td><a href="seam-mobile-components-for-ios/">seam-mobile-components-for-ios</a></td></tr><tr><td><p><strong>Android Guide</strong></p><p>Coming soon!</p></td><td><a href="../../.gitbook/assets/image (31) (1).png">image (31) (1).png</a></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>iOS Guide</strong><br>Integrate Seam Mobile Components into your iOS app</td><td><a href="../../.gitbook/assets/image (35).png">image (35).png</a></td><td><a href="seam-mobile-components-for-ios/">seam-mobile-components-for-ios</a></td></tr><tr><td><p><strong>Android Guide</strong></p><p>Coming soon!</p></td><td><a href="broken-reference">Broken link</a></td><td></td></tr></tbody></table>
