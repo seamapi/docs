@@ -190,7 +190,7 @@ Heating [set point](../../../capability-guides/thermostats/understanding-thermos
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

@@ -148,7 +148,7 @@ ID of the connected account that you want to sync.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

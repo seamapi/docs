@@ -264,7 +264,7 @@ Unique key for the new user identity.
 
 {% hint style="success" %}
 Returns:
-[user\_identity](.)**
+**[user\_identity](.)**
 
 {% endhint %}
 

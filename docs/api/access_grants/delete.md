@@ -150,7 +150,7 @@ ID of Access Grant to delete.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

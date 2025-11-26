@@ -445,7 +445,7 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 {% hint style="success" %}
 Returns:
-Array of [access\_codes](.)**
+**Array of [access\_codes](.)**
 
 {% endhint %}
 

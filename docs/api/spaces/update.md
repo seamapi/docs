@@ -223,7 +223,7 @@ Unique key of the space that you want to update.
 
 {% hint style="success" %}
 Returns:
-[space](.)**
+**[space](.)**
 
 {% endhint %}
 

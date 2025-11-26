@@ -190,7 +190,7 @@ Unique key of the space that you want to get.
 
 {% hint style="success" %}
 Returns:
-[space](.)**
+**[space](.)**
 
 {% endhint %}
 

@@ -281,7 +281,7 @@ ID of the Connect Webview that you want to get.
 
 {% hint style="success" %}
 Returns:
-[connect\_webview](.)**
+**[connect\_webview](.)**
 
 {% endhint %}
 

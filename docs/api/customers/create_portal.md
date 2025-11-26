@@ -363,7 +363,7 @@ The locale to use for the portal.
 
 {% hint style="success" %}
 Returns:
-[magic\_link](./../unstable_partner/building_blocks)**
+**[magic\_link](./../unstable_partner/building_blocks)**
 
 {% endhint %}
 

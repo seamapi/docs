@@ -220,7 +220,7 @@ ID of the user identity that you want to get.
 
 {% hint style="success" %}
 Returns:
-[user\_identity](.)**
+**[user\_identity](.)**
 
 {% endhint %}
 

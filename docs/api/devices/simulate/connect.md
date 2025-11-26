@@ -147,7 +147,7 @@ ID of the device that you want to simulate connecting to Seam.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

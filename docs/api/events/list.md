@@ -421,7 +421,7 @@ Offset for the events that you want to list.
 
 {% hint style="success" %}
 Returns:
-Array of [events](.)**
+**Array of [events](.)**
 
 {% endhint %}
 

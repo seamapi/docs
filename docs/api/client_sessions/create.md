@@ -305,7 +305,7 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 {% hint style="success" %}
 Returns:
-[client\_session](.)**
+**[client\_session](.)**
 
 {% endhint %}
 

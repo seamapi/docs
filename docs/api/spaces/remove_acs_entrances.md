@@ -167,7 +167,7 @@ ID of the space from which you want to remove entrances.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

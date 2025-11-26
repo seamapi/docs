@@ -191,7 +191,7 @@ Array of supported code lengths as integers between 4 and 20, inclusive. You can
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

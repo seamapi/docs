@@ -291,7 +291,7 @@ Name of the thermostat schedule.
 
 {% hint style="success" %}
 Returns:
-[thermostat\_schedule](.)**
+**[thermostat\_schedule](.)**
 
 {% endhint %}
 

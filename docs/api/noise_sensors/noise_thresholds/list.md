@@ -211,7 +211,7 @@ ID of the device for which you want to list noise thresholds.
 
 {% hint style="success" %}
 Returns:
-Array of [noise\_thresholds](.)**
+**Array of [noise\_thresholds](.)**
 
 {% endhint %}
 

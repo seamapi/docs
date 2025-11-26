@@ -259,7 +259,7 @@ ID of the access system that you want to get.
 
 {% hint style="success" %}
 Returns:
-[acs\_system](.)**
+**[acs\_system](.)**
 
 {% endhint %}
 

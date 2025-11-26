@@ -295,7 +295,7 @@ Your user ID for the user by which you want to filter connected accounts.
 
 {% hint style="success" %}
 Returns:
-Array of [connected\_accounts](.)**
+**Array of [connected\_accounts](.)**
 
 {% endhint %}
 

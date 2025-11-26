@@ -177,7 +177,7 @@ ID of the webhook that you want to update.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

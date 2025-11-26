@@ -149,7 +149,7 @@ ID of access method to get.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

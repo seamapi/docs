@@ -233,7 +233,7 @@ ID of the thermostat device for which you want to set the HVAC mode.
 
 {% hint style="success" %}
 Returns:
-[action\_attempt](./)**
+**[action\_attempt](./)**
 
 {% endhint %}
 

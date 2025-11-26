@@ -235,7 +235,7 @@ None
 
 {% hint style="success" %}
 Returns:
-[workspace](.)**
+**[workspace](.)**
 
 {% endhint %}
 

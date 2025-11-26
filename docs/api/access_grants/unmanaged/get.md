@@ -31,7 +31,7 @@ ID of unmanaged Access Grant to get.
 
 {% hint style="success" %}
 Returns:
-[unknown](./)**
+**[unknown](./)**
 
 {% endhint %}
 

@@ -203,7 +203,7 @@ Name for the device.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

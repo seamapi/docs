@@ -281,7 +281,7 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

@@ -149,7 +149,7 @@ ID of the unmanaged access code that you want to delete.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

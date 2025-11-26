@@ -195,7 +195,7 @@ Date and time at which the validity of the new access code starts, in [ISO 8601]
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

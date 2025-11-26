@@ -543,7 +543,7 @@ ID of the encoder to use for the scan.
 
 {% hint style="success" %}
 Returns:
-[action\_attempt](./)**
+**[action\_attempt](./)**
 
 {% endhint %}
 

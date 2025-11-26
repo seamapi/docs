@@ -165,7 +165,7 @@ Indicates whether the device is managed. Set this parameter to `true` to convert
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

@@ -161,7 +161,7 @@ ID of the access system user that you want to add to an access group.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

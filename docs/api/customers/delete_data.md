@@ -142,7 +142,7 @@ List of user keys to delete.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

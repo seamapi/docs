@@ -67,14 +67,7 @@ Possible enum values:
 
 {% hint style="success" %}
 Returns:
-batch response
-- `spaces`: Array of [spaces](./../spaces)
-- `devices`: Array of [devices](./../devices)
-- `acs_entrances`: Array of [acs\_entrances](./../acs/entrances)
-- `connected_accounts`: Array of [connected\_accounts](./../connected_accounts)
-- `acs_systems`: Array of [acs\_systems](./../acs/systems)
-- `user_identities`: Array of [user\_identitys](./../user_identities)
-- `acs_access_groups`: Array of [acs\_access\_groups](./../acs/access_groups)**
+**[unknown](./)**
 
 {% endhint %}
 

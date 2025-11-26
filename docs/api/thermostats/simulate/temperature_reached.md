@@ -166,7 +166,7 @@ Temperature in °F that you want simulate the thermostat reaching. You must set 
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

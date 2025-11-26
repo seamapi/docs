@@ -144,7 +144,7 @@ ID of the webhook that you want to delete.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

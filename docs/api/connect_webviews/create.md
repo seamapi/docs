@@ -641,7 +641,7 @@ Indicates whether Seam should finish syncing all devices in a newly-connected ac
 
 {% hint style="success" %}
 Returns:
-[connect\_webview](.)**
+**[connect\_webview](.)**
 
 {% endhint %}
 

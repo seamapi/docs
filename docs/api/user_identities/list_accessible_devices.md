@@ -1161,7 +1161,7 @@ ID of the user identity for which you want to retrieve all accessible devices.
 
 {% hint style="success" %}
 Returns:
-Array of [devices](./../devices)**
+**Array of [devices](./../devices)**
 
 {% endhint %}
 

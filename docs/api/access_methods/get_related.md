@@ -70,15 +70,7 @@ Possible enum values:
 
 {% hint style="success" %}
 Returns:
-batch response
-- `spaces`: Array of [spaces](./../spaces)
-- `devices`: Array of [devices](./../devices)
-- `acs_entrances`: Array of [acs\_entrances](./../acs/entrances)
-- `access_grants`: Array of [access\_grants](./../access_grants)
-- `access_methods`: Array of [access\_methods](.)
-- `instant_keys`: Array of [instant\_keys](./../instant_keys)
-- `client_sessions`: Array of [client\_sessions](./../client_sessions)
-- `acs_credentials`: Array of [acs\_credentials](./../acs/credentials)**
+**[unknown](./)**
 
 {% endhint %}
 

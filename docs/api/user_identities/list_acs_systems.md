@@ -276,7 +276,7 @@ ID of the user identity for which you want to retrieve all access systems.
 
 {% hint style="success" %}
 Returns:
-Array of [acs\_systems](./../acs/systems)**
+**Array of [acs\_systems](./../acs/systems)**
 
 {% endhint %}
 

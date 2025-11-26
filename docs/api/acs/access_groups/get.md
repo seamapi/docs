@@ -232,7 +232,7 @@ ID of the access group that you want to get.
 
 {% hint style="success" %}
 Returns:
-[acs\_access\_group](.)**
+**[acs\_access\_group](.)**
 
 {% endhint %}
 

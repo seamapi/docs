@@ -195,7 +195,7 @@ Types of events that you want the new webhook to receive.
 
 {% hint style="success" %}
 Returns:
-[webhook](.)**
+**[webhook](.)**
 
 {% endhint %}
 

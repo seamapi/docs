@@ -184,7 +184,7 @@ ID of the lock that you want to unlock.
 
 {% hint style="success" %}
 Returns:
-[action\_attempt](./)**
+**[action\_attempt](./)**
 
 {% endhint %}
 

@@ -271,7 +271,7 @@ ID of the user identity for which you want to retrieve all access groups.
 
 {% hint style="success" %}
 Returns:
-Array of [acs\_access\_groups](.)**
+**Array of [acs\_access\_groups](.)**
 
 {% endhint %}
 

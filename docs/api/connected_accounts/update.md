@@ -198,7 +198,7 @@ The customer key to associate with this connected account. If provided, the conn
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

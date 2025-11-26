@@ -324,7 +324,7 @@ ID of the user identity for which you want to retrieve all access system users.
 
 {% hint style="success" %}
 Returns:
-Array of [acs\_users](./../acs/users)**
+**Array of [acs\_users](./../acs/users)**
 
 {% endhint %}
 

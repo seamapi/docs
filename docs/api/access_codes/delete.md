@@ -162,7 +162,7 @@ ID of the device for which you want to delete the access code.
 
 {% hint style="success" %}
 Returns:
-void**
+**void**
 
 {% endhint %}
 

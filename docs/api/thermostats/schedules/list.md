@@ -240,7 +240,7 @@ User identifier key by which to filter the list of returned thermostat schedules
 
 {% hint style="success" %}
 Returns:
-Array of [thermostat\_schedules](.)**
+**Array of [thermostat\_schedules](.)**
 
 {% endhint %}
 

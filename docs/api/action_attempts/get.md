@@ -186,7 +186,7 @@ ID of the action attempt that you want to get.
 
 {% hint style="success" %}
 Returns:
-[action\_attempt](./)**
+**[action\_attempt](./)**
 
 {% endhint %}
 

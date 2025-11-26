@@ -256,7 +256,7 @@ IDs of the action attempts that you want to retrieve.
 
 {% hint style="success" %}
 Returns:
-Array of [action\_attempts](./)**
+**Array of [action\_attempts](./)**
 
 {% endhint %}
 

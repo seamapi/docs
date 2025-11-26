@@ -36,7 +36,7 @@ URL of the instant key to get.
 
 {% hint style="success" %}
 Returns:
-[instant\_key](.)**
+**[instant\_key](.)**
 
 {% endhint %}
 

@@ -230,7 +230,7 @@ Unique key for the space within the workspace.
 
 {% hint style="success" %}
 Returns:
-[space](.)**
+**[space](.)**
 
 {% endhint %}
 

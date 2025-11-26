@@ -267,7 +267,7 @@ ID of the access group for which you want to retrieve all accessible entrances.
 
 {% hint style="success" %}
 Returns:
-Array of [acs\_entrances](./../entrances)**
+**Array of [acs\_entrances](./../entrances)**
 
 {% endhint %}
 
