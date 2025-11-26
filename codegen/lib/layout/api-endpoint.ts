@@ -53,12 +53,12 @@ export interface ApiEndpointLayoutContext {
     responseKey: string | null
     responseType: string | null
     responsePath: string | null
-    batchResourceTypes?: Array<{
+    batchResources: Array<{
       batchKey: string
       resourceType: string
       escapedResourceType: string
       responsePath: string | null
-    }>
+    }> | null
     actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
   resourceSamples: ResourceSampleContext[]
@@ -162,7 +162,7 @@ export function setEndpointLayoutContext(
     responseKey: null,
     responseType: null,
     responsePath: null,
-    batchResourceTypes: undefined,
+    batchResources: null,
   }
 
   if (endpoint.response.responseType !== 'void') {
@@ -186,9 +186,12 @@ export function setEndpointLayoutContext(
     file.response.responsePath = responsePath
 
     // Handle batch resource types
-    if (endpoint.response.batchResourceTypes != null) {
-      file.response.batchResourceTypes =
-        endpoint.response.batchResourceTypes.map((batchResource) => {
+    if (
+      'batchResourceTypes' in endpoint.response &&
+      endpoint.response.batchResourceTypes != null
+    ) {
+      file.response.batchResources = endpoint.response.batchResourceTypes.map(
+        (batchResource) => {
           const batchResourceDef = resources.find(
             (r) => r.resourceType === batchResource.resourceType,
           )
@@ -201,13 +204,14 @@ export function setEndpointLayoutContext(
           return {
             batchKey: batchResource.batchKey,
             resourceType: batchResource.resourceType,
+            responsePath: batchResponsePath,
             escapedResourceType: batchResource.resourceType.replaceAll(
               '_',
               '\\_',
             ),
-            responsePath: batchResponsePath,
           }
-        })
+        },
+      )
     }
   }
 
@@ -350,56 +354,39 @@ const getResourceSamples = (
     )
   }
 
+  // Manually build sample for batch resources by fetching each resource's sample
+  // and then combining them in a batch with the correct batch keys.
   if (
     response.responseType === 'resource' &&
     response.batchResourceTypes != null
   ) {
-    const batchResourceData: Record<string, any> = {}
+    const batchResourceSamples = getBatchResourceSamples(
+      response,
+      resources,
+      endpoint,
+      pathMetadata,
+    )
 
-    for (const batchResourceType of response.batchResourceTypes) {
-      const batchResource = resources.find(
-        (r) => r.resourceType === batchResourceType.resourceType,
-      )
-
-      if (batchResource == null) {
-        continue
-      }
-
-      const sample = getResourceSample(batchResource, endpoint, pathMetadata)
-      if (sample == null) {
-        continue
-      }
-
-      // Get the seam_cli resource data for this batch resource
-      const jsonSample = Object.entries(sample.resource).find(
-        ([k]) => (k as SdkName) === 'seam_cli',
-      )?.[1]
-
-      if (jsonSample != null) {
-        // Parse the resource_data to get the actual object
-        const resourceData = JSON.parse(jsonSample.resource_data)
-        // Wrap in array since batch responses contain arrays
-        batchResourceData[batchResourceType.batchKey] = [resourceData]
-      }
-    }
-
-    // Return the batch resource sample
-    if (Object.keys(batchResourceData).length > 0) {
-      const batchResourceDataString = JSON.stringify(batchResourceData, null, 2)
-      return [
-        {
-          title: 'JSON',
-          description: '',
-          resource_type: 'batch',
-          resource: {
-            seam_cli: {
-              resource_data: batchResourceDataString,
-              resource_data_syntax: 'json' as const,
-            },
+    const batchResourceSamplesString = JSON.stringify(
+      batchResourceSamples,
+      null,
+      2,
+    )
+    return [
+      {
+        title: 'JSON',
+        description: '',
+        resource_type: 'batch',
+        resource: {
+          seam_cli: {
+            title: 'JSON',
+            resource_data: batchResourceSamplesString,
+            resource_data_syntax: 'json' as const,
           },
         },
-      ]
-    }
+        properties: batchResourceSamples,
+      },
+    ]
   }
 
   if (resource == null) {
@@ -454,4 +441,48 @@ function getResourceSample(
     title: 'JSON',
     description: '',
   }
+}
+
+function getBatchResourceSamples(
+  response: Extract<Endpoint['response'], { responseType: 'resource' }>,
+  resources: Resource[],
+  endpoint: Endpoint,
+  pathMetadata: PathMetadata,
+): Record<string, Array<any>> {
+  // 'any' is inevitable here since the data is being parsed from a string
+  // and every sample data is different.
+  const batchResourceSamples: Record<string, Array<any>> = {}
+
+  if (response.batchResourceTypes == null) {
+    return batchResourceSamples
+  }
+
+  for (const batchResourceType of response.batchResourceTypes) {
+    const batchResource = resources.find(
+      (r) => r.resourceType === batchResourceType.resourceType,
+    )
+
+    if (batchResource == null) {
+      continue
+    }
+
+    const sample = getResourceSample(batchResource, endpoint, pathMetadata)
+    if (sample == null) {
+      continue
+    }
+
+    // Get the seam_cli resource data (sample object) for this batch resource
+    const jsonSample = Object.entries(sample.resource).find(
+      ([k]) => (k as SdkName) === 'seam_cli',
+    )?.[1]
+
+    if (jsonSample != null) {
+      // Parse the resource_data to get the actual object
+      const resourceData = JSON.parse(jsonSample.resource_data)
+      // Wrap in array since batch responses contain arrays
+      batchResourceSamples[batchResourceType.batchKey] = [resourceData]
+    }
+  }
+
+  return batchResourceSamples
 }
