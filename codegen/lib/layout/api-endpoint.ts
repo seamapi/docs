@@ -354,7 +354,7 @@ const getResourceSamples = (
     response.responseType === 'resource' &&
     response.batchResourceTypes != null
   ) {
-    const batchResourceProperties: ResourceSample['properties'] = {}
+    const batchResourceData: Record<string, any> = {}
 
     for (const batchResourceType of response.batchResourceTypes) {
       const batchResource = resources.find(
@@ -370,16 +370,27 @@ const getResourceSamples = (
         continue
       }
 
-      batchResourceProperties[batchResourceType.batchKey] = sample.properties
+      // Get the seam_cli resource data for this batch resource
+      const jsonSample = Object.entries(sample.resource).find(
+        ([k]) => (k as SdkName) === 'seam_cli',
+      )?.[1]
+
+      if (jsonSample != null) {
+        // Parse the resource_data to get the actual object
+        const resourceData = JSON.parse(jsonSample.resource_data)
+        // Wrap in array since batch responses contain arrays
+        batchResourceData[batchResourceType.batchKey] = [resourceData]
+      }
     }
 
     // Return the batch resource sample
-    if (Object.keys(batchResourceProperties).length > 0) {
+    if (Object.keys(batchResourceData).length > 0) {
       return [
         {
-          properties: batchResourceProperties,
           title: 'JSON',
           description: '',
+          resourceData: JSON.stringify(batchResourceData, null, 2),
+          resourceDataSyntax: 'json',
         },
       ]
     }
