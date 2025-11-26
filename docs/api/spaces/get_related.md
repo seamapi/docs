@@ -70,7 +70,12 @@ Keys of the spaces that you want to get along with their related resources.
 
 {% hint style="success" %}
 Returns:
-**[unknown](./)**
+**Batch response containing:
+- `spaces`: Array of [spaces](.)
+- `devices`: Array of [devices](./../devices)
+- `acs_entrances`: Array of [acs\_entrances](./../acs/entrances)
+- `connected_accounts`: Array of [connected\_accounts](./../connected_accounts)
+- `acs_systems`: Array of [acs\_systems](./../acs/systems)**
 
 {% endhint %}
 

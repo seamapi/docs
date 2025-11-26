@@ -79,7 +79,8 @@ None
 
 {% hint style="success" %}
 Returns:
-**{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{else}}[{{response.escapedResourceType}}]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{/if}}{{else}}void{{/if}}**
+**{{#if response.batchResourceTypes}}Batch response containing:{{#each response.batchResourceTypes}}
+- `{{this.batchKey}}`: Array of [{{this.escapedResourceType}}s]({{#if this.responsePath}}{{this.responsePath}}{{else}}./{{/if}}){{/each}}{{else}}{{#if response.resourceType}}{{#if (eq response.responseType "resource_list")}}Array of [{{response.escapedResourceType}}s]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{else}}[{{response.escapedResourceType}}]({{#if response.responsePath}}{{response.responsePath}}{{else}}./{{/if}}){{/if}}{{else}}void{{/if}}{{/if}}**
 
 {% endhint %}
 

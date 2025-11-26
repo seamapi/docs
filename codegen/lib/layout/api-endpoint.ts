@@ -53,6 +53,12 @@ export interface ApiEndpointLayoutContext {
     responseKey: string | null
     responseType: string | null
     responsePath: string | null
+    batchResourceTypes?: Array<{
+      batchKey: string
+      resourceType: string
+      escapedResourceType: string
+      responsePath: string | null
+    }>
     actionAttempt?: Omit<ApiRouteResource, 'events'>
   }
   resourceSamples: ResourceSampleContext[]
@@ -156,6 +162,7 @@ export function setEndpointLayoutContext(
     responseKey: null,
     responseType: null,
     responsePath: null,
+    batchResourceTypes: undefined,
   }
 
   if (endpoint.response.responseType !== 'void') {
@@ -177,6 +184,31 @@ export function setEndpointLayoutContext(
     file.response.responseKey = responseKey
     file.response.responseType = responseType
     file.response.responsePath = responsePath
+
+    // Handle batch resource types
+    if (endpoint.response.batchResourceTypes != null) {
+      file.response.batchResourceTypes =
+        endpoint.response.batchResourceTypes.map((batchResource) => {
+          const batchResourceDef = resources.find(
+            (r) => r.resourceType === batchResource.resourceType,
+          )
+          let batchResponsePath = null
+          if (batchResourceDef != null) {
+            batchResponsePath = path
+              .relative(endpoint.path, batchResourceDef.routePath)
+              .replace('..', '.')
+          }
+          return {
+            batchKey: batchResource.batchKey,
+            resourceType: batchResource.resourceType,
+            escapedResourceType: batchResource.resourceType.replaceAll(
+              '_',
+              '\\_',
+            ),
+            responsePath: batchResponsePath,
+          }
+        })
+    }
   }
 
   if (
