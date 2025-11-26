@@ -372,6 +372,17 @@ const getResourceSamples = (
 
       batchResourceProperties[batchResourceType.batchKey] = sample.properties
     }
+
+    // Return the batch resource sample
+    if (Object.keys(batchResourceProperties).length > 0) {
+      return [
+        {
+          properties: batchResourceProperties,
+          title: 'JSON',
+          description: '',
+        },
+      ]
+    }
   }
 
   if (resource == null) {
