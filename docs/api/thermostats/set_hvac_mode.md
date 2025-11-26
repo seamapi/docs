@@ -137,7 +137,7 @@ $seam->thermostats->set_hvac_mode(
     device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
     hvac_mode_setting: "heat_cool",
     heating_set_point_celsius: 20,
-    cooling_set_point_celsius: 25
+    cooling_set_point_celsius: 25,
 );
 ```
 
@@ -231,7 +231,11 @@ ID of the thermostat device for which you want to set the HVAC mode.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

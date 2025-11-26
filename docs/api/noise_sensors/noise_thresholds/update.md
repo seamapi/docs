@@ -125,7 +125,7 @@ $seam->noise_sensors->noise_thresholds->update(
     starts_daily_at: "2025-06-18T15:13:17.000Z",
     ends_daily_at: "2025-06-17T21:33:58.000Z",
     noise_threshold_decibels: 50,
-    noise_threshold_nrs: 40
+    noise_threshold_nrs: 40,
 );
 ```
 
@@ -214,5 +214,9 @@ Time at which the noise threshold should become active daily.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

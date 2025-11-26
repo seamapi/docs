@@ -179,7 +179,7 @@ Lists the entrances to which a specified access system user has access, using th
 ```php
 $seam->acs->users->list_accessible_entrances(
     user_identity_id: "3b8abf24-21b3-40ee-9c21-6fb2daf97401",
-    acs_system_id: "88d5ae6a-708d-4602-983d-6dd5de07ba1d"
+    acs_system_id: "88d5ae6a-708d-4602-983d-6dd5de07ba1d",
 );
 ```
 
@@ -284,7 +284,11 @@ ID of the user identity for whom you want to list accessible entrances. You can 
 
 ## Response
 
-Array of [acs\_entrances](./../entrances)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_entrances](./../entrances)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -497,7 +501,7 @@ seam.acs.users.list_accessible_entrances(
 ```php
 $seam->acs->users->list_accessible_entrances(
     acs_user_id: "4c84e6d3-e89a-4d85-9363-e9f6e928131a",
-    acs_system_id: "88d5ae6a-708d-4602-983d-6dd5de07ba1d"
+    acs_system_id: "88d5ae6a-708d-4602-983d-6dd5de07ba1d",
 );
 ```
 

@@ -160,7 +160,7 @@ Returns a specified connected account, using an ID.
 
 ```php
 $seam->connected_accounts->get(
-    connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d"
+    connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
 );
 ```
 
@@ -252,7 +252,11 @@ Email address associated with the connected account that you want to get.
 
 ## Response
 
-[connected\_account](.)
+{% hint style="success" %}
+Returns:
+**[connected\_account](.)**
+
+{% endhint %}
 
 
 {% tabs %}

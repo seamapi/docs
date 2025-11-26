@@ -170,7 +170,11 @@ None
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

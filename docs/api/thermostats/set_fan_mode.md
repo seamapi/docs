@@ -126,7 +126,7 @@ Sets the fan mode setting for a specified thermostat.
 ```php
 $seam->thermostats->set_fan_mode(
     device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
-    fan_mode_setting: "auto"
+    fan_mode_setting: "auto",
 );
 ```
 
@@ -206,7 +206,11 @@ ID of the thermostat device for which you want to set the fan mode.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

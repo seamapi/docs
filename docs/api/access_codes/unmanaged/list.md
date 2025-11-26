@@ -157,7 +157,7 @@ Returns a list of all unmanaged access codes.
 
 ```php
 $seam->access_codes->unmanaged->list(
-    device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1"
+    device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
 );
 ```
 
@@ -261,7 +261,11 @@ Your user ID for the user by which to filter unmanaged access codes.
 
 ## Response
 
-Array of [unmanaged\_access\_codes](.)
+{% hint style="success" %}
+Returns:
+**Array of [unmanaged\_access\_codes](.)**
+
+{% endhint %}
 
 
 {% tabs %}

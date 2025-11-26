@@ -124,7 +124,7 @@ Creates a new webhook.
 ```php
 $seam->webhooks->create(
     url: "https://example.com",
-    event_types: ["device.connected", "device.disconnected"]
+    event_types: ["device.connected", "device.disconnected"],
 );
 ```
 
@@ -193,7 +193,11 @@ Types of events that you want the new webhook to receive.
 
 ## Response
 
-[webhook](.)
+{% hint style="success" %}
+Returns:
+**[webhook](.)**
+
+{% endhint %}
 
 
 {% tabs %}

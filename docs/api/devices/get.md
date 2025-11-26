@@ -1141,7 +1141,11 @@ Name of the device that you want to get.
 
 ## Response
 
-[device](.)
+{% hint style="success" %}
+Returns:
+**[device](.)**
+
+{% endhint %}
 
 
 {% tabs %}

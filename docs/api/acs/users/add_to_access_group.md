@@ -100,7 +100,7 @@ Adds a specified access system user to a specified access group.
 ```php
 $seam->acs->users->add_to_access_group(
     acs_user_id: "15ce02a8-b145-4c02-adc9-d9d84c8a1177",
-    acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27"
+    acs_access_group_id: "58c8b034-e527-4635-a335-afc74dc79b27",
 );
 ```
 
@@ -159,5 +159,9 @@ ID of the access system user that you want to add to an access group.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

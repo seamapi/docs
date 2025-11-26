@@ -105,7 +105,7 @@ Updates the code and ends at date and time for a specified credential.
 $seam->acs->credentials->update(
     acs_credential_id: "1d4fb22b-743b-492f-ad74-cffcbd63c874",
     code: "1234",
-    ends_at: "2025-06-18T10:42:53.000Z"
+    ends_at: "2025-06-18T10:42:53.000Z",
 );
 ```
 
@@ -170,5 +170,9 @@ Replacement date and time at which the validity of the credential ends, in [ISO 
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

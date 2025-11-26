@@ -1,6 +1,6 @@
 # Sandbox Latch Access Control System
 
-You do not need to specify any credentials to add a virtual [Latch access control system](../../device-and-system-integration-guides/latch-access-control-system-1/) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces).
+You do not need to specify any credentials to add a virtual [Latch access control system](../../device-and-system-integration-guides/latch-access-control-system/) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces).
 
 To add a sandbox Latch access control system using the Seam Console:
 

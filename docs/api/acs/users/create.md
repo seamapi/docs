@@ -252,7 +252,7 @@ $seam->acs->users->create(
         "ends_at" => "2025-06-12T11:00:00.000Z",
     ],
     email_address: "jane@example.com",
-    phone_number: "+15551234567"
+    phone_number: "+15551234567",
 );
 ```
 
@@ -424,7 +424,11 @@ ID of the user identity with which you want to associate the new access system u
 
 ## Response
 
-[acs\_user](.)
+{% hint style="success" %}
+Returns:
+**[acs\_user](.)**
+
+{% endhint %}
 
 
 {% tabs %}

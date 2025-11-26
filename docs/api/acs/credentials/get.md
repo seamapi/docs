@@ -169,7 +169,7 @@ Returns a specified credential.
 
 ```php
 $seam->acs->credentials->get(
-    acs_credential_id: "f2b8eaa6-5e6d-433f-87cc-a283f4df688d"
+    acs_credential_id: "f2b8eaa6-5e6d-433f-87cc-a283f4df688d",
 );
 ```
 
@@ -261,7 +261,11 @@ ID of the credential that you want to get.
 
 ## Response
 
-[acs\_credential](.)
+{% hint style="success" %}
+Returns:
+**[acs\_credential](.)**
+
+{% endhint %}
 
 
 {% tabs %}

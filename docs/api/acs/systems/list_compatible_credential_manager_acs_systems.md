@@ -166,7 +166,7 @@ Returns a list of all credential manager systems that are compatible with a spec
 
 ```php
 $seam->acs->systems->list_compatible_credential_manager_acs_systems(
-    acs_system_id: "82456f4c-9627-4a27-a426-1b3c50c9871b"
+    acs_system_id: "82456f4c-9627-4a27-a426-1b3c50c9871b",
 );
 ```
 
@@ -252,7 +252,11 @@ ID of the access system for which you want to retrieve all compatible credential
 
 ## Response
 
-Array of [acs\_systems](.)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_systems](.)**
+
+{% endhint %}
 
 
 {% tabs %}

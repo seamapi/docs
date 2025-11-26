@@ -154,7 +154,7 @@ $seam->noise_sensors->noise_thresholds->create(
     starts_daily_at: "2025-06-20T18:29:57.000Z",
     ends_daily_at: "2025-06-19T12:38:44.000Z",
     noise_threshold_decibels: 50,
-    noise_threshold_nrs: 40
+    noise_threshold_nrs: 40,
 );
 ```
 
@@ -253,7 +253,11 @@ Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. Th
 
 ## Response
 
-[noise\_threshold](.)
+{% hint style="success" %}
+Returns:
+**[noise\_threshold](.)**
+
+{% endhint %}
 
 
 {% tabs %}

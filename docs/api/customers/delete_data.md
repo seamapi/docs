@@ -140,5 +140,9 @@ List of user keys to delete.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

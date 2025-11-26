@@ -1832,6 +1832,38 @@ Indicates that a hub or relay must be connected to unlock additional capabilitie
   
   
 </details>
+<details>
+<summary><code>keynest_unsupported_locker</code></summary>
+
+Indicates that the key is in a locker that does not support the access codes API.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>keynest_unsupported_locker</code>
+  
+  
+</details>
 
 ---
 
@@ -2404,6 +2436,10 @@ Metadata for a KeyNest device.
   - <strong><code>has_photo</code></strong> <i>Boolean</i>
   
     Whether the KeyNest device has a photo.
+
+  - <strong><code>is_quadient_locker</code></strong> <i>Boolean</i>
+  
+    Whether the key is in a locker that does not support the access codes API.
 
   - <strong><code>key_id</code></strong> <i>String</i>
   
@@ -3119,6 +3155,10 @@ Metadata for an Ultraloq device.
   - <strong><code>device_name</code></strong> <i>String</i>
   
     Device name for an Ultraloq device.
+
+  - <strong><code>device_type</code></strong> <i>String</i>
+  
+    Device type for an Ultraloq device.
 
 </details>
 
@@ -4467,6 +4507,12 @@ Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unloc
 **`hub_required_for_addtional_capabilities`**
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
+
+---
+
+**`keynest_unsupported_locker`**
+
+Indicates that the key is in a locker that does not support the access codes API.
 
 ---
 

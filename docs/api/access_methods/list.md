@@ -200,7 +200,7 @@ Returns a list of all access methods, filtered by Access Grant.
 
 ```php
 $seam->access_methods->list(
-    access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
+    access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b",
 );
 ```
 
@@ -324,7 +324,11 @@ ID of the space for which you want to retrieve all access methods.
 
 ## Response
 
-Array of [access\_methods](.)
+{% hint style="success" %}
+Returns:
+**Array of [access\_methods](.)**
+
+{% endhint %}
 
 
 {% tabs %}

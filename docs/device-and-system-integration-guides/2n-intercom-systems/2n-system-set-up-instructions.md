@@ -27,8 +27,7 @@ Repeat the following steps for each 2N device you want to control through Seam.
 
 1. **Open device configuration**
    * In My2N, go to **Devices** in the left sidebar.
-   *   Click the **three-dot icon** next to your device and choose **Open configuration**.\
-
+   *   Click the **three-dot icon** next to your device and choose **Open configuration**.\\
 
        <figure><img src="../../.gitbook/assets/Screenshot 2025-10-31 at 4.56.29 PM.png" alt=""><figcaption></figcaption></figure>
    * When prompted, log in with the device’s credentials:
@@ -43,7 +42,7 @@ Repeat the following steps for each 2N device you want to control through Seam.
 
         **Connection Type** set to **Secure (TLS)** and **Authentication** set to **Digest.**
 
-    <figure><img src="../../.gitbook/assets/Screenshot 2025-10-31 at 9.44.42 AM (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 3. **Create API credentials**
    * In the top toolbar, click on **Account 1**, or another available account.
    * Enable the account.
@@ -72,8 +71,6 @@ This connection lets Seam manage and update your 2N intercom devices.
     * Enter the Company Admin My2N email and password for your property’s My2N account, then click **Submit**.
     * **Note:** Use an account with multi-factor authentication (MFA) turned off. If your main admin account requires MFA, create a separate account without MFA for this connection.
 
-
-
     <figure><img src="../../.gitbook/assets/Screenshot 2025-10-31 at 11.36.44 AM.png" alt="" width="411"><figcaption></figcaption></figure>
 3.  **Choose which devices to connect**\
     The Webview will show all 2N devices under your My2N company.
@@ -81,8 +78,6 @@ This connection lets Seam manage and update your 2N intercom devices.
     If a device doesn’t appear, check that it’s been added and that the HTTP API is enabled.
 
     Select the devices you want to link to Seam, then click **Submit**.
-
-
 
     <figure><img src="../../.gitbook/assets/Screenshot 2025-10-31 at 5.43.46 PM.png" alt="" width="304"><figcaption></figcaption></figure>
 4.  **Authorize device access**\

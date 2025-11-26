@@ -93,7 +93,7 @@ Deletes a thermostat schedule for a specified thermostat.
 
 ```php
 $seam->thermostats->schedules->delete(
-    thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de"
+    thermostat_schedule_id: "0d42131f-ceb2-4fdf-b44e-3cc1143f98de",
 );
 ```
 
@@ -147,5 +147,9 @@ ID of the thermostat schedule that you want to delete.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

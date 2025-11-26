@@ -199,7 +199,11 @@ Category for which you want to list providers.
 
 ## Response
 
-Array of [device\_providers](.)
+{% hint style="success" %}
+Returns:
+**Array of [device\_providers](.)**
+
+{% endhint %}
 
 
 {% tabs %}

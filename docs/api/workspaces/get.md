@@ -233,7 +233,11 @@ None
 
 ## Response
 
-[workspace](.)
+{% hint style="success" %}
+Returns:
+**[workspace](.)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -195,7 +195,7 @@ Retrieves a backup access code for an access code.
 
 ```php
 $seam->access_codes->pull_backup_access_code(
-    access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f"
+    access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f",
 );
 ```
 
@@ -295,7 +295,11 @@ ID of the access code for which you want to pull a backup access code.
 
 ## Response
 
-[access\_code](.)
+{% hint style="success" %}
+Returns:
+**[access\_code](.)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -1420,5 +1420,9 @@ Your unique identifier for the user.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

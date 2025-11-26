@@ -253,7 +253,7 @@ $seam->phones->simulate->create_sandbox_phone(
         "application_version" => "1.0.0",
         "seos_applet_version" => "1.0.0",
         "seos_tsm_endpoint_id" => 1,
-    ]
+    ],
 );
 ```
 
@@ -485,7 +485,11 @@ Mobile operating system version that you want to use for the simulated phone.
 
 ## Response
 
-[phone](./..)
+{% hint style="success" %}
+Returns:
+**[phone](./..)**
+
+{% endhint %}
 
 
 {% tabs %}

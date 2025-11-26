@@ -105,7 +105,7 @@ Removes devices from a specific space.
 ```php
 $seam->spaces->remove_devices(
     space_id: "6df14344-4114-4d74-9ef4-2e1208378cda",
-    device_ids: ["011460e9-9605-46a5-91f1-6b2a442b70fd"]
+    device_ids: ["011460e9-9605-46a5-91f1-6b2a442b70fd"],
 );
 ```
 
@@ -165,5 +165,9 @@ ID of the space from which you want to remove devices.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

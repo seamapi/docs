@@ -170,7 +170,7 @@ Returns a list of all entrances for a specified access system.
 
 ```php
 $seam->acs->entrances->list(
-    acs_system_id: "d34802da-d8e3-4d0b-98c3-16d6e18ed508"
+    acs_system_id: "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
 );
 ```
 
@@ -319,7 +319,11 @@ ID of the space for which you want to list entrances.
 
 ## Response
 
-Array of [acs\_entrances](.)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_entrances](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -523,7 +527,7 @@ seam.acs.entrances.list(acs_credential_id: "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a
 
 ```php
 $seam->acs->entrances->list(
-    acs_credential_id: "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a"
+    acs_credential_id: "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a",
 );
 ```
 
@@ -999,7 +1003,7 @@ seam.acs.entrances.list(access_grant_id: "6596ea31-f747-4253-950e-dba0de24fedb")
 
 ```php
 $seam->acs->entrances->list(
-    access_grant_id: "6596ea31-f747-4253-950e-dba0de24fedb"
+    access_grant_id: "6596ea31-f747-4253-950e-dba0de24fedb",
 );
 ```
 
@@ -1238,7 +1242,7 @@ seam.acs.entrances.list(access_method_id: "f838c33b-bc00-47a4-8bde-2aa8ea4258cc"
 
 ```php
 $seam->acs->entrances->list(
-    access_method_id: "f838c33b-bc00-47a4-8bde-2aa8ea4258cc"
+    access_method_id: "f838c33b-bc00-47a4-8bde-2aa8ea4258cc",
 );
 ```
 

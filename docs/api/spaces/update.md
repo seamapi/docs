@@ -125,7 +125,7 @@ Updates an existing space.
 ```php
 $seam->spaces->update(
     space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81",
-    name: "My Updated Space"
+    name: "My Updated Space",
 );
 ```
 
@@ -221,7 +221,11 @@ Unique key of the space that you want to update.
 
 ## Response
 
-[space](.)
+{% hint style="success" %}
+Returns:
+**[space](.)**
+
+{% endhint %}
 
 
 {% tabs %}

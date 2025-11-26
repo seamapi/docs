@@ -68,5 +68,9 @@ Possible enum values:
 
 ## Response
 
-[unknown](./)
+{% hint style="success" %}
+Returns:
+**[unknown](./)**
+
+{% endhint %}
 

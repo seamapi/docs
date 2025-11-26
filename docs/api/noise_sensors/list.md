@@ -702,7 +702,11 @@ Your own internal user ID for the user for which you want to list devices.
 
 ## Response
 
-Array of [devices](./../devices)
+{% hint style="success" %}
+Returns:
+**Array of [devices](./../devices)**
+
+{% endhint %}
 
 
 {% tabs %}

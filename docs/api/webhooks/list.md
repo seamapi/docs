@@ -175,7 +175,11 @@ None
 
 ## Response
 
-Array of [webhooks](.)
+{% hint style="success" %}
+Returns:
+**Array of [webhooks](.)**
+
+{% endhint %}
 
 
 {% tabs %}

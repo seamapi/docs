@@ -132,7 +132,7 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 $seam->thermostats->heat_cool(
     device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
     heating_set_point_celsius: 20,
-    cooling_set_point_celsius: 25
+    cooling_set_point_celsius: 25,
 );
 ```
 
@@ -222,7 +222,11 @@ ID of the thermostat device that you want to set to heat-cool mode.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -138,7 +138,7 @@ Creates a new space.
 $seam->spaces->create(
     name: "My Space",
     device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
-    acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"]
+    acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"],
 );
 ```
 
@@ -228,7 +228,11 @@ Unique key for the space within the workspace.
 
 ## Response
 
-[space](.)
+{% hint style="success" %}
+Returns:
+**[space](.)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -178,7 +178,7 @@ Returns a list of all access systems associated with a specified user identity.
 
 ```php
 $seam->user_identities->list_acs_systems(
-    user_identity_id: "77e0347d-35ac-4a21-962b-e757a446b47f"
+    user_identity_id: "77e0347d-35ac-4a21-962b-e757a446b47f",
 );
 ```
 
@@ -274,7 +274,11 @@ ID of the user identity for which you want to retrieve all access systems.
 
 ## Response
 
-Array of [acs\_systems](./../acs/systems)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_systems](./../acs/systems)**
+
+{% endhint %}
 
 
 {% tabs %}

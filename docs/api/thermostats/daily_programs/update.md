@@ -169,7 +169,7 @@ $seam->thermostats->daily_programs->update(
         ["starts_at_time" => "09:00:00", "climate_preset_key" => "Away"],
         ["starts_at_time" => "17:00:00", "climate_preset_key" => "Home"],
         ["starts_at_time" => "22:30:00", "climate_preset_key" => "Sleep"],
-    ]
+    ],
 );
 ```
 
@@ -268,7 +268,11 @@ ID of the thermostat daily program that you want to update.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

@@ -210,7 +210,7 @@ Returns a list of all access system users for a specified user identity.
 
 ```php
 $seam->acs->users->list(
-    user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e"
+    user_identity_id: "0dcb435f-0aef-4ae6-8d6e-9c605b78c94e",
 );
 ```
 
@@ -364,7 +364,11 @@ Phone number of the user identity for which you want to retrieve all access syst
 
 ## Response
 
-Array of [acs\_users](.)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_users](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -1806,7 +1810,7 @@ seam.acs.users.list(acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2", limit
 ```php
 $seam->acs->users->list(
     acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -2113,7 +2117,7 @@ seam.acs.users.list(
 ```php
 $seam->acs->users->list(
     acs_system_id: "0e3369a0-1376-46cd-b79c-ebba856701a2",
-    created_before: "2025-06-19T02:22:45.000Z"
+    created_before: "2025-06-19T02:22:45.000Z",
 );
 ```
 

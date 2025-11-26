@@ -6,7 +6,7 @@ description: >-
 
 # Seam Mobile Components
 
-<div data-full-width="false"><figure><img src="../../.gitbook/assets/Untitled (1).png" alt="" width="188"><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/Untitled_2 (1).png" alt="" width="188"><figcaption></figcaption></figure></div>
+<div data-full-width="false"><figure><img src="broken-reference" alt="" width="188"><figcaption></figcaption></figure> <figure><img src="broken-reference" alt="" width="188"><figcaption></figcaption></figure></div>
 
 Seam Mobile Components are pre-built views that let you deliver end-user access flows in your mobile app with minimal effort. Instead of manually wiring together the Seam Mobile SDK, you can drop in a component like `SeamAccessView` to provide a fully functional access experience, including unlock interactions, credential error handling, haptics, and more.
 

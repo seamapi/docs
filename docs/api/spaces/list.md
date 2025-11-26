@@ -201,7 +201,11 @@ Filter spaces by space_key.
 
 ## Response
 
-Array of [spaces](.)
+{% hint style="success" %}
+Returns:
+**Array of [spaces](.)**
+
+{% endhint %}
 
 
 {% tabs %}

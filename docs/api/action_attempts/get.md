@@ -118,7 +118,7 @@ Returns a specified action attempt.
 
 ```php
 $seam->action_attempts->get(
-    action_attempt_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+    action_attempt_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
 );
 ```
 
@@ -184,5 +184,9 @@ ID of the action attempt that you want to get.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 

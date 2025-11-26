@@ -304,7 +304,7 @@ $seam->access_grants->create(
         ["mode" => "mobile_key"],
     ],
     starts_at: "2025-06-16T16:54:17.946606Z",
-    ends_at: "2025-06-18T16:54:17.946606Z"
+    ends_at: "2025-06-18T16:54:17.946606Z",
 );
 ```
 
@@ -631,7 +631,11 @@ ID of user identity for whom access is being granted.
 
 ## Response
 
-[access\_grant](.)
+{% hint style="success" %}
+Returns:
+**[access\_grant](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -882,7 +886,7 @@ $seam->access_grants->create(
         ["mode" => "mobile_key"],
     ],
     starts_at: "2025-06-16T16:54:17.946606Z",
-    ends_at: "2025-06-18T16:54:17.946606Z"
+    ends_at: "2025-06-18T16:54:17.946606Z",
 );
 ```
 
@@ -1247,7 +1251,7 @@ $seam->access_grants->create(
         ["mode" => "mobile_key"],
     ],
     starts_at: "2025-06-16T16:54:17.946606Z",
-    ends_at: "2025-06-18T16:54:17.946606Z"
+    ends_at: "2025-06-18T16:54:17.946606Z",
 );
 ```
 

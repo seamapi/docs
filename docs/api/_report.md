@@ -96,6 +96,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/connectors/authorize`: Internal endpoint for OAuth authorization.
 - `/seam/customer/v1/connectors/connector_types`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/create`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/delete`: Internal endpoint for Console.
@@ -110,6 +111,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/settings/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/spaces/create`: Only used internally.
 - `/seam/customer/v1/spaces/list`: Only used internally.
+- `/seam/customer/v1/spaces/list_reservations`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/list`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
@@ -379,8 +381,6 @@ Items that are intentionally undocumented are not included in this section.
     - `device_selection_mode`
 - `/connected_accounts/delete`
     - `sync`
-- `/connected_accounts/simulate/disconnect`
-    - `connected_account_id`
 - `/customers/create_portal`
     - `features`
     - `customer_data`
@@ -472,7 +472,6 @@ These items have been marked as draft.
 - `/access_grants`: No draft message provided
 - `/access_grants/unmanaged`: No draft message provided
 - `/access_methods/unmanaged`: No draft message provided
-- `/seam/customer/v1/spaces`: No draft message provided
 - `/spaces`: No draft message provided
 
 ### Endpoints
@@ -517,6 +516,11 @@ These items have been marked as draft.
 
 These items are deprecated.
 
+### Routes
+
+- `/acs/credential_pools`: No deprecated message provided
+- `/acs/credential_provisioning_automations`: No deprecated message provided
+
 ### Resources
 
 - `acs_credential_pool`: Not used.
@@ -538,6 +542,14 @@ These items are deprecated.
 - `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `unmanaged_acs_user.email`: use email_address.
 - `workspace.connect_partner_name`: Use `company_name` instead.
+
+### Endpoints
+
+- `/acs/credential_pools/list`: Use `/user_identities/enrollment_automations/list` instead.
+- `/acs/credential_provisioning_automations/launch`: Use `/user_identities/enrollment_automations/launch` instead.
+- `/devices/delete`: Deleting a device is no longer supported and will be removed.
+- `/locks/get`: Use `/devices/get` instead.
+- `/thermostats/get`: Use `/devices/get` instead.
 
 ### Endpoint parameters
 
@@ -602,6 +614,8 @@ These items are deprecated.
     - `noise_sensors`
 - `/noise_sensors/noise_thresholds/create`
     - `action_attempt`
+- `/seam/customer/v1/settings/get`
+    - `slug`
 - `/seam/customer/v1/staff_members/get`
     - `access_grant`
     - `spaces`
@@ -622,6 +636,7 @@ These items are deprecated.
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
 - `/seam/console/v1/timelines/get`: `timeline`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
+- `/seam/customer/v1/connectors/authorize`: `connector_authorize`
 - `/seam/customer/v1/connectors/connector_types`: `connector_types`
 - `/seam/customer/v1/connectors/create`: `connector`
 - `/seam/customer/v1/connectors/delete`: `connector`
@@ -632,6 +647,7 @@ These items are deprecated.
 - `/seam/customer/v1/reservations/get`: `reservation`
 - `/seam/customer/v1/reservations/list`: `reservations`
 - `/seam/customer/v1/settings/get`: `business_vertical`
+- `/seam/customer/v1/spaces/list_reservations`: `reservations`
 - `/seam/customer/v1/staff_members/get`: `staff_member`
 - `/seam/customer/v1/staff_members/list`: `staff_members`
 - `/seam/instant_key/v1/preview/get`: `instant_key_preview`

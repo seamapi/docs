@@ -327,6 +327,10 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
 <details>
   <summary>Child Properties</summary>
 
+  - <strong><code>audit_on_keys</code></strong> <i>Boolean</i>
+  
+    Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.
+
   - <strong><code>door_description</code></strong> <i>String</i>
   
     Description of the door in the Salto Space access system.

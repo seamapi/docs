@@ -151,7 +151,7 @@ Returns a specified unmanaged access code.
 
 ```php
 $seam->access_codes->unmanaged->get(
-    access_code_id: "41b984ec-1b74-48cd-ba68-16660cd792b6"
+    access_code_id: "41b984ec-1b74-48cd-ba68-16660cd792b6",
 );
 ```
 
@@ -245,7 +245,11 @@ ID of the device containing the unmanaged access code that you want to get. You 
 
 ## Response
 
-[unmanaged\_access\_code](.)
+{% hint style="success" %}
+Returns:
+**[unmanaged\_access\_code](.)**
+
+{% endhint %}
 
 
 {% tabs %}

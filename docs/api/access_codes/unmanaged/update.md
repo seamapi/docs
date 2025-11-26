@@ -110,7 +110,7 @@ $seam->access_codes->unmanaged->update(
     access_code_id: "ebd8e488-db1b-4f4b-9d02-489fbfa6829a",
     is_managed: true,
     is_external_modification_allowed: true,
-    force: true
+    force: true,
 );
 ```
 
@@ -186,5 +186,9 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

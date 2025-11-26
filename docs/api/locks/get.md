@@ -3,7 +3,11 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**
+{% hint style="warning" %}
+**Deprecated**. Use `/devices/get` instead.
+{% endhint %}
+
+Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
 
 
 <details>
@@ -35,7 +39,11 @@ Name of the lock that you want to get.
 
 ## Response
 
-[device](./../devices)
+{% hint style="success" %}
+Returns:
+**[device](./../devices)**
+
+{% endhint %}
 
 
 {% tabs %}

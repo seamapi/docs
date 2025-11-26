@@ -115,7 +115,7 @@ $seam->user_identities->update(
     user_identity_key: "jane_doe",
     email_address: "jane@example.com",
     phone_number: "+15551234567",
-    full_name: "Jane Doe"
+    full_name: "Jane Doe",
 );
 ```
 
@@ -192,5 +192,9 @@ Unique key for the user identity.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -98,7 +98,7 @@ Simulates taking the Wi-Fi hub (bridge) offline for a device.
 
 ```php
 $seam->devices->simulate->disconnect_from_hub(
-    device_id: "a60686b8-f401-452d-9f67-53d139cf6160"
+    device_id: "a60686b8-f401-452d-9f67-53d139cf6160",
 );
 ```
 
@@ -152,5 +152,9 @@ ID of the device whose hub you want to disconnect.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

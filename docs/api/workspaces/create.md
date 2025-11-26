@@ -248,7 +248,7 @@ $seam->workspaces->create(
         "primary_button_text_color" => "#FFFDE7",
         "success_message" =>
             "Your account has been successfully connected to Acme!",
-    ]
+    ],
 );
 ```
 
@@ -444,7 +444,11 @@ Indicates whether the new workspace is a [sandbox workspace](../../core-concepts
 
 ## Response
 
-[workspace](.)
+{% hint style="success" %}
+Returns:
+**[workspace](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -724,7 +728,7 @@ $seam->workspaces->create(
         "primary_button_text_color" => "#FFFDE7",
         "success_message" =>
             "Your account has been successfully connected to Acme!",
-    ]
+    ],
 );
 ```
 

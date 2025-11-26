@@ -101,7 +101,7 @@ Revokes access to all entrances for a specified access system user, using the as
 ```php
 $seam->acs->users->revoke_access_to_all_entrances(
     user_identity_id: "aadb341e-6cd5-4c8b-9561-8f686f84160c",
-    acs_system_id: "d42163f1-ac2d-4c15-a651-5f2e0007b297"
+    acs_system_id: "d42163f1-ac2d-4c15-a651-5f2e0007b297",
 );
 ```
 
@@ -166,7 +166,11 @@ ID of the user identity for whom you want to revoke access. You can only provide
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 
 
 ---
@@ -265,7 +269,7 @@ nil
 
 ```php
 $seam->acs->users->revoke_access_to_all_entrances(
-    acs_user_id: "2520b7a7-5c5b-482e-9db2-11d02f4ea6ce"
+    acs_user_id: "2520b7a7-5c5b-482e-9db2-11d02f4ea6ce",
 );
 ```
 

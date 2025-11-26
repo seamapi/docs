@@ -115,7 +115,7 @@ $seam->access_codes->update_multiple(
     ends_at: "2025-06-22T05:05:47.000Z",
     starts_at: "2025-06-18T19:14:13.000Z",
     name: "My Updated Linked Access Code",
-    common_code_key: "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000"
+    common_code_key: "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
 );
 ```
 
@@ -193,5 +193,9 @@ Date and time at which the validity of the new access code starts, in [ISO 8601]
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -280,7 +280,7 @@ Returns a list of all unmanaged devices for a specified customer ID.
 
 ```php
 $seam->devices->unmanaged->list(
-    customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"]
+    customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
 );
 ```
 
@@ -564,7 +564,11 @@ Your own internal user ID for the user for which you want to list devices.
 
 ## Response
 
-Array of [unmanaged\_devices](.)
+{% hint style="success" %}
+Returns:
+**Array of [unmanaged\_devices](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -896,7 +900,7 @@ seam.devices.unmanaged.list(connected_account_id: "c1a3967f-24a1-4220-a9c7-7fa97
 
 ```php
 $seam->devices->unmanaged->list(
-    connected_account_id: "c1a3967f-24a1-4220-a9c7-7fa97c1d5603"
+    connected_account_id: "c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
 );
 ```
 
@@ -1693,7 +1697,7 @@ seam.devices.unmanaged.list(created_before: "2025-01-01T00:00:00.000Z", limit: 5
 ```php
 $seam->devices->unmanaged->list(
     created_before: "2025-01-01T00:00:00.000Z",
-    limit: 50
+    limit: 50,
 );
 ```
 

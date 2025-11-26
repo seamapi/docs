@@ -109,7 +109,7 @@ Updates a connected account.
 $seam->connected_accounts->update(
     connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
     automatically_manage_new_devices: true,
-    custom_metadata: ["id" => "internalId1"]
+    custom_metadata: ["id" => "internalId1"],
 );
 ```
 
@@ -196,5 +196,9 @@ The customer key to associate with this connected account. If provided, the conn
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

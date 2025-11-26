@@ -117,7 +117,7 @@ $seam->access_codes->update(
     name: "My Updated Access Code",
     starts_at: "2025-06-19T08:26:41.000Z",
     ends_at: "2025-06-21T17:38:07.000Z",
-    code: "4444"
+    code: "4444",
 );
 ```
 
@@ -279,5 +279,9 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -96,7 +96,7 @@ Generates a code for an access code, given a device ID.
 
 ```php
 $seam->access_codes->generate_code(
-    device_id: "02cd5099-d9f8-45a1-a9c0-f2ecbd334792"
+    device_id: "02cd5099-d9f8-45a1-a9c0-f2ecbd334792",
 );
 ```
 
@@ -150,7 +150,11 @@ ID of the device for which you want to generate a code.
 
 ## Response
 
-[access\_code](.)
+{% hint style="success" %}
+Returns:
+**[access\_code](.)**
+
+{% endhint %}
 
 
 {% tabs %}

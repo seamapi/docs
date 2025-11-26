@@ -161,7 +161,7 @@ Returns a specified access system entrance.
 
 ```php
 $seam->acs->entrances->get(
-    acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1"
+    acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1",
 );
 ```
 
@@ -248,7 +248,11 @@ ID of the entrance that you want to get.
 
 ## Response
 
-[acs\_entrance](.)
+{% hint style="success" %}
+Returns:
+**[acs\_entrance](.)**
+
+{% endhint %}
 
 
 {% tabs %}

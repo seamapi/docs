@@ -126,7 +126,7 @@ Sets a specified thermostat to heat mode.
 ```php
 $seam->thermostats->heat(
     device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
-    heating_set_point_fahrenheit: 65
+    heating_set_point_fahrenheit: 65,
 );
 ```
 
@@ -204,7 +204,11 @@ ID of the thermostat device that you want to set to heat mode.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

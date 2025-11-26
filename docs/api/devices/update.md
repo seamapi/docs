@@ -116,7 +116,7 @@ $seam->devices->update(
     device_id: "ccfab465-4838-4ff3-af62-97c78e8bf44b",
     name: "My Updated Device",
     is_managed: true,
-    custom_metadata: ["id" => "internalId1"]
+    custom_metadata: ["id" => "internalId1"],
 );
 ```
 
@@ -201,5 +201,9 @@ Name for the device.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

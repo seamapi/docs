@@ -95,7 +95,7 @@ Deletes a thermostat daily program.
 
 ```php
 $seam->thermostats->daily_programs->delete(
-    thermostat_daily_program_id: "a8665859-629e-4696-88b1-1eda1976250a"
+    thermostat_daily_program_id: "a8665859-629e-4696-88b1-1eda1976250a",
 );
 ```
 
@@ -149,5 +149,9 @@ ID of the thermostat daily program that you want to delete.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

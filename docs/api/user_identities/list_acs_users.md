@@ -211,7 +211,7 @@ Returns a list of all access system users assigned to a specified user identity.
 
 ```php
 $seam->user_identities->list_acs_users(
-    user_identity_id: "b0dc10f2-3971-440e-af25-dab964e5c281"
+    user_identity_id: "b0dc10f2-3971-440e-af25-dab964e5c281",
 );
 ```
 
@@ -322,7 +322,11 @@ ID of the user identity for which you want to retrieve all access system users.
 
 ## Response
 
-Array of [acs\_users](./../acs/users)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_users](./../acs/users)**
+
+{% endhint %}
 
 
 {% tabs %}

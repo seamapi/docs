@@ -169,7 +169,7 @@ $seam->client_sessions->get_or_create(
     connect_webview_ids: ["5e297cfe-23df-4638-bb87-08c4f0f8233b"],
     connected_account_ids: ["f87f0ab7-b8d7-44aa-9e59-3239b209570e"],
     user_identity_id: "71ff7f71-2cf4-458a-8db4-6ad539c8b66a",
-    expires_at: "2025-06-18T06:10:42.000Z"
+    expires_at: "2025-06-18T06:10:42.000Z",
 );
 ```
 
@@ -281,7 +281,11 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 ## Response
 
-[client\_session](.)
+{% hint style="success" %}
+Returns:
+**[client\_session](.)**
+
+{% endhint %}
 
 
 {% tabs %}

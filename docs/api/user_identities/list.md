@@ -241,7 +241,11 @@ String for which to search. Filters returned user identities to include all reco
 
 ## Response
 
-Array of [user\_identitys](.)
+{% hint style="success" %}
+Returns:
+**Array of [user\_identitys](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -417,7 +421,7 @@ seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-
 
 ```php
 $seam->user_identities->list(
-    credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287"
+    credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287",
 );
 ```
 

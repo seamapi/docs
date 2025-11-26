@@ -62,7 +62,7 @@ To identify this URL:
 4.  Prepend `http://` and append the port number `8100` to the IP address to form the LAN URL.
 
     For example, if the computer's IP address is `192.168.1.101`, the LAN URL is `http://192.168.1.101:8100`.
-5. &#x20;If you want to use HTTP(S) when connecting your Salto Space access system to Seam, note the LAN URL. If you want to use Salto Transport Protocol (STP) when connecting your Salto Space access system to Seam, note the IP address that identifies the host of the Salto Space server.
+5. If you want to use HTTP(S) when connecting your Salto Space access system to Seam, note the LAN URL. If you want to use Salto Transport Protocol (STP) when connecting your Salto Space access system to Seam, note the IP address that identifies the host of the Salto Space server.
 
 ***
 

@@ -357,7 +357,7 @@ $seam->connect_webviews->create(
     custom_metadata: ["id" => "internalId1"],
     automatically_manage_new_devices: true,
     wait_for_device_creation: true,
-    accepted_capabilities: ["lock", "thermostat"]
+    accepted_capabilities: ["lock", "thermostat"],
 );
 ```
 
@@ -639,7 +639,11 @@ Indicates whether Seam should finish syncing all devices in a newly-connected ac
 
 ## Response
 
-[connect\_webview](.)
+{% hint style="success" %}
+Returns:
+**[connect\_webview](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -913,7 +917,7 @@ $seam->connect_webviews->create(
     custom_metadata: ["id" => "internalId1"],
     automatically_manage_new_devices: true,
     wait_for_device_creation: true,
-    accepted_capabilities: ["lock", "thermostat"]
+    accepted_capabilities: ["lock", "thermostat"],
 );
 ```
 

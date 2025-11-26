@@ -101,7 +101,7 @@ Deletes a specified access system user and invalidates the access system user's 
 ```php
 $seam->acs->users->delete(
     user_identity_id: "586c225c-b05c-4af4-8679-9c8a46066cce",
-    acs_system_id: "1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64"
+    acs_system_id: "1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64",
 );
 ```
 
@@ -166,7 +166,11 @@ ID of the user identity that you want to delete. You must provide either acs_use
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 
 
 ---

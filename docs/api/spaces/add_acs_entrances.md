@@ -105,7 +105,7 @@ Adds entrances to a specific space.
 ```php
 $seam->spaces->add_acs_entrances(
     space_id: "9f930664-c0d8-441b-8d66-2b1d0d2466f4",
-    acs_entrance_ids: ["b127a710-db3e-402c-afdf-5474769b1d83"]
+    acs_entrance_ids: ["b127a710-db3e-402c-afdf-5474769b1d83"],
 );
 ```
 
@@ -165,5 +165,9 @@ ID of the space to which you want to add entrances.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

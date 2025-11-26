@@ -168,7 +168,7 @@ $seam->acs->systems->report_devices(
                 "common_area_number" => "2",
             ],
         ],
-    ]
+    ],
 );
 ```
 
@@ -323,5 +323,9 @@ Whether the entrance is removed
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -109,7 +109,7 @@ Converts an unmanaged access code to an access code managed through Seam.
 $seam->access_codes->unmanaged->convert_to_managed(
     access_code_id: "9ef2af02-e335-4b49-bd51-00e851a83ef6",
     is_external_modification_allowed: true,
-    force: true
+    force: true,
 );
 ```
 
@@ -181,5 +181,9 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

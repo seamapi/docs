@@ -125,7 +125,7 @@ $seam->thermostats->schedules->update(
     max_override_period_minutes: 90,
     starts_at: "2025-06-20T03:24:25.000Z",
     ends_at: "2025-06-22T06:04:21.000Z",
-    is_override_allowed: true
+    is_override_allowed: true,
 );
 ```
 
@@ -215,5 +215,9 @@ Date and time at which the thermostat schedule starts, in [ISO 8601](https://www
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

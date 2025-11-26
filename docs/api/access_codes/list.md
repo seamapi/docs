@@ -198,7 +198,7 @@ Returns a list of all access codes.
 ```php
 $seam->access_codes->list(
     device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -332,7 +332,11 @@ Your user ID for the user by which to filter access codes.
 
 ## Response
 
-Array of [access\_codes](.)
+{% hint style="success" %}
+Returns:
+**Array of [access\_codes](.)**
+
+{% endhint %}
 
 
 {% tabs %}

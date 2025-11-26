@@ -37,7 +37,11 @@ ID of the `acs_encoder` to use to encode the `access_method`.
 
 ## Response
 
-[action\_attempt](./)
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
 
 
 {% tabs %}

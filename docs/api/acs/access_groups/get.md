@@ -149,7 +149,7 @@ Returns a specified access group.
 
 ```php
 $seam->acs->access_groups->get(
-    acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae"
+    acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae",
 );
 ```
 
@@ -230,7 +230,11 @@ ID of the access group that you want to get.
 
 ## Response
 
-[acs\_access\_group](.)
+{% hint style="success" %}
+Returns:
+**[acs\_access\_group](.)**
+
+{% endhint %}
 
 
 {% tabs %}

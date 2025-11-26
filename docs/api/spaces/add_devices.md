@@ -105,7 +105,7 @@ Adds devices to a specific space.
 ```php
 $seam->spaces->add_devices(
     space_id: "4d53b5c0-87cd-4de9-832d-025e075e7cd4",
-    device_ids: ["22fb4992-463c-4ccd-b568-50fcea243665"]
+    device_ids: ["22fb4992-463c-4ccd-b568-50fcea243665"],
 );
 ```
 
@@ -165,5 +165,9 @@ ID of the space to which you want to add devices.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -128,7 +128,7 @@ Returns a specified access method.
 
 ```php
 $seam->access_methods->get(
-    access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
+    access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075",
 );
 ```
 
@@ -197,7 +197,11 @@ ID of access method to get.
 
 ## Response
 
-[access\_method](.)
+{% hint style="success" %}
+Returns:
+**[access\_method](.)**
+
+{% endhint %}
 
 
 {% tabs %}

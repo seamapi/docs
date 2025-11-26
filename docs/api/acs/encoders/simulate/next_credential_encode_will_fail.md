@@ -100,7 +100,7 @@ Simulates that the next attempt to encode a credential using the specified encod
 ```php
 $seam->acs->encoders->simulate->next_credential_encode_will_fail(
     acs_encoder_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
-    error_code: "no_credential_on_encoder"
+    error_code: "no_credential_on_encoder",
 );
 ```
 
@@ -165,5 +165,9 @@ Code of the error to simulate.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

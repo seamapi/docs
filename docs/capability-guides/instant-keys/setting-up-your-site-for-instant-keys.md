@@ -67,7 +67,7 @@ After you have purchased the items above from Assa Abloy, please reach out to Se
 
 To use mobile keys with Vostio, you will need to purchase the following from Assa Abloy:
 
-* A mobile Key license for Seam's Assa Abloy tenant account called `SeamLabs-tenant`  — please provide this account name to Assa Abloy when completing your purchase&#x20;
+* A mobile Key license for Seam's Assa Abloy tenant account called `SeamLabs-tenant` — please provide this account name to Assa Abloy when completing your purchase
 
 After you have purchased the items above from Assa Abloy, please reach out to Seam at [support@seam.co](mailto:support@seam.co). Include the Seam workspace ID you'll be using, so we can help finish setting up your workspace for Visionline Instant Keys.
 

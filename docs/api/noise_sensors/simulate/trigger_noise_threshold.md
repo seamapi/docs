@@ -95,7 +95,7 @@ Simulates the triggering of a noise threshold for a noise sensor in a sandbox wo
 
 ```php
 $seam->noise_sensors->simulate->trigger_noise_threshold(
-    device_id: "c0384c1c-9038-427c-9a72-314d2b168d43"
+    device_id: "c0384c1c-9038-427c-9a72-314d2b168d43",
 );
 ```
 
@@ -148,5 +148,9 @@ ID of the device for which you want to simulate the triggering of a noise thresh
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

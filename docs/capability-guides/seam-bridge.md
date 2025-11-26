@@ -22,7 +22,7 @@ It is important to understand the difference between Seam Bridge and smart lock 
 
 Download the Seam Bridge application onto an on-premises computer. Then, pair Seam Bridge with your Seam [workspace](../core-concepts/workspaces/) and connect the on-premises access system to Seam. You install and pair Seam Bridge while you are connecting your on-premises access system to Seam. That is, the [Connect Webview](../core-concepts/connect-webviews/) that you use to connect your on-premises access system to Seam walks you through the process of downloading and pairing Seam Bridge.
 
-For detailed information, see the setup instructions within the [system integration guide](../device-and-system-integration-guides/overview.md#access-control-systems) for your on-premises access system.&#x20;
+For detailed information, see the setup instructions within the [system integration guide](../device-and-system-integration-guides/overview.md#access-control-systems) for your on-premises access system.
 
 ***
 
@@ -32,40 +32,13 @@ In a web browser, go to [the Seam Bridge repo](https://www.seam.co/seam-bridge/r
 
 <figure><img src="../.gitbook/assets/seam-bridge-download-area.png" alt="Download the Seam Bridge application for your operating system."><figcaption><p>Download the Seam Bridge application for your operating system.</p></figcaption></figure>
 
-### System Requirements
-
-* **Operating System:** Window 7 or later, macOS, or Linux
-* **Memory:** At least 1 GB of RAM
-* **Network:** LAN connection required
-
 ***
 
-## Run Seam Bridge
+## System Setup Guides
 
-1. Open the downloaded executable file.
-2. If you are using a Windows computer running Microsoft Defender, you may need to allow Windows to run the Seam Bridge app.
-   1. In the **Windows protected your PC** dialog, click **More info**.
-   2. Click **Run anyway**.
-3.  If you are using a Windows computer, you may need to allow public networks to access the Seam Bridge app.
+Please refer to these guides to set up the Seam Bridge application.
 
-    1. In the **Do you want to allow public and private networks to access this app?** dialog, click **Show more**.
-    2. Make sure that the **Public networks** and **Private networks** checkboxes are selected.
-    3. Click **Allow**.
-
-    The Seam Bridge app displays the **Welcome to Seam Bridge** window.
-
-    <figure><img src="../.gitbook/assets/seam-bridge-welcome.png" alt="Welcome to Seam Bridge window" width="375"><figcaption><p><strong>Welcome to Seam Bridge</strong> window</p></figcaption></figure>
-4. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge—for example, `My Site`—and then click **Start pairing**.
-
-The Seam Bridge app displays a pairing code that you can use to pair Seam Bridge with your workspace.
-
-<figure><img src="../.gitbook/assets/seam-bridge-pairing-code.png" alt="Use the pairing code to pair Seam Bridge with your workspace." width="375"><figcaption><p>Use the pairing code to pair Seam Bridge with your workspace.</p></figcaption></figure>
-
-***
-
-## Next Steps
-
-Go to the setup instructions within the [system integration guide](../device-and-system-integration-guides/overview.md#access-control-systems) for your on-premises access system. These instructions describe how to pair Seam Bridge with your workspace and then connect your on-premises access system to Seam through Seam Bridge.
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><strong>Windows Setup</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-windows.md">seam-bridge-setup-for-windows.md</a></td><td><a href="../.gitbook/assets/image (38).png">image (38).png</a></td></tr><tr><td><strong>macOS Setup</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-macos.md">seam-bridge-setup-for-macos.md</a></td><td><a href="../.gitbook/assets/image (45).png">image (45).png</a></td></tr><tr><td><strong>Linux Setup</strong></td><td><a href="seam-bridge/seam-bridge-setup-for-linux.md">seam-bridge-setup-for-linux.md</a></td><td><a href="../.gitbook/assets/image (46).png">image (46).png</a></td></tr></tbody></table>
 
 ***
 
@@ -78,3 +51,9 @@ The **Connected Systems** area displays the status of each connection. A green c
 The Seam Bridge app also displays communication errors at the top of the window.
 
 <figure><img src="../.gitbook/assets/seam-bridge-connected-systems-info.png" alt="Seam Bridge displays information about the connections to on-premises access systems." width="375"><figcaption><p>Seam Bridge displays information about the connections to on-premises access systems.</p></figcaption></figure>
+
+***
+
+## Next Steps
+
+Go to the setup instructions within the [system integration guide](../device-and-system-integration-guides/overview.md#access-control-systems) for your on-premises access system. These instructions describe how to pair Seam Bridge with your workspace and then connect your on-premises access system to Seam through Seam Bridge.

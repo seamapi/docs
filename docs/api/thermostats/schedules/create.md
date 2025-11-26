@@ -175,7 +175,7 @@ $seam->thermostats->schedules->create(
     max_override_period_minutes: 90,
     starts_at: "2025-06-19T15:00:00.000Z",
     ends_at: "2025-06-22T11:00:00.000Z",
-    is_override_allowed: true
+    is_override_allowed: true,
 );
 ```
 
@@ -289,7 +289,11 @@ Name of the thermostat schedule.
 
 ## Response
 
-[thermostat\_schedule](.)
+{% hint style="success" %}
+Returns:
+**[thermostat\_schedule](.)**
+
+{% endhint %}
 
 
 {% tabs %}

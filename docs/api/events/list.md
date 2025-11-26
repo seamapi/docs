@@ -153,7 +153,7 @@ Returns a list of events for a specified device.
 $seam->events->list(
     device_id: "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
     since: "2025-05-15T00:00:00.000Z",
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -419,7 +419,11 @@ Offset for the events that you want to list.
 
 ## Response
 
-Array of [events](.)
+{% hint style="success" %}
+Returns:
+**Array of [events](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -602,7 +606,7 @@ seam.events.list(
 $seam->events->list(
     customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
     between: ["2025-05-15T00:00:00.000Z", "2025-06-20T23:59:59.999Z"],
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -807,7 +811,7 @@ seam.events.list(
 $seam->events->list(
     acs_system_id: "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
     since: "2025-05-15T00:00:00.000Z",
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -1015,7 +1019,7 @@ seam.events.list(
 $seam->events->list(
     access_code_id: "37ba4a46-c9a7-47a2-b761-f63d02acbea4",
     since: "2025-05-15T00:00:00.000Z",
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -1216,7 +1220,7 @@ seam.events.list(event_type: "device.connected", since: "2025-05-15T00:00:00.000
 $seam->events->list(
     event_type: "device.connected",
     since: "2025-05-15T00:00:00.000Z",
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -1422,7 +1426,7 @@ seam.events.list(
 $seam->events->list(
     connected_account_id: "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
     since: "2025-05-15T00:00:00.000Z",
-    limit: 10
+    limit: 10,
 );
 ```
 
@@ -1627,7 +1631,7 @@ seam.events.list(
 $seam->events->list(
     connect_webview_id: "775bc894-c51a-47e8-b7ac-f92292c62d63",
     since: "2025-05-15T00:00:00.000Z",
-    limit: 10
+    limit: 10,
 );
 ```
 

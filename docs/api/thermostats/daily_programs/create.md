@@ -192,7 +192,7 @@ $seam->thermostats->daily_programs->create(
         ["starts_at_time" => "09:00:00", "climate_preset_key" => "Away"],
         ["starts_at_time" => "16:00:00", "climate_preset_key" => "Home"],
         ["starts_at_time" => "22:30:00", "climate_preset_key" => "Sleep"],
-    ]
+    ],
 );
 ```
 
@@ -303,7 +303,11 @@ Time at which the thermostat daily program period starts, in [ISO 8601](https://
 
 ## Response
 
-[thermostat\_daily\_program](.)
+{% hint style="success" %}
+Returns:
+**[thermostat\_daily\_program](.)**
+
+{% endhint %}
 
 
 {% tabs %}

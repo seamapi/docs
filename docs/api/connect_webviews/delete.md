@@ -93,7 +93,7 @@ Deletes a Connect Webview.
 
 ```php
 $seam->connect_webviews->delete(
-    connect_webview_id: "816f796f-636c-46a9-9fef-7f90ca69e771"
+    connect_webview_id: "816f796f-636c-46a9-9fef-7f90ca69e771",
 );
 ```
 
@@ -146,5 +146,9 @@ ID of the Connect Webview that you want to delete.
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 

@@ -128,7 +128,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **password:** 1234
 * **2-factor-auth:** 123456
 
-<figure><img src="../.gitbook/assets/connect-flow-screens (1) (1).png" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
+<figure><img src="broken-reference" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -166,7 +166,7 @@ After a Schlage account is linked with Seam, you can retrieve devices for this S
 
 {% tabs %}
 {% tab title="Python" %}
-\\\`\\\`\\\`\\\`python all\\\_locks = seam.locks.list()
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`python all\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_locks = seam.locks.list()
 
 some\_lock = all\_locks\[0]
 

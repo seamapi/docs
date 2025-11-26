@@ -146,7 +146,7 @@ $seam->acs->users->update(
     full_name: "Jane Doe",
     email: "jane@example.com",
     phone_number: "+15551234567",
-    email_address: "jane@example.com"
+    email_address: "jane@example.com",
 );
 ```
 
@@ -268,7 +268,11 @@ ID of the user identity that you want to update. You can only provide acs_user_i
 
 ## Response
 
-void
+{% hint style="success" %}
+Returns:
+**void**
+
+{% endhint %}
 
 
 ---
@@ -409,7 +413,7 @@ $seam->acs->users->update(
     full_name: "Jane Doe",
     email: "jane@example.com",
     phone_number: "+15551234567",
-    email_address: "jane@example.com"
+    email_address: "jane@example.com",
 );
 ```
 

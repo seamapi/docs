@@ -1591,6 +1591,38 @@ Indicates that a hub or relay must be connected to unlock additional capabilitie
   
   
 </details>
+<details>
+<summary><code>keynest_unsupported_locker</code></summary>
+
+Indicates that the key is in a locker that does not support the access codes API.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>keynest_unsupported_locker</code>
+  
+  
+</details>
 
 ---
 
@@ -2198,6 +2230,10 @@ Metadata for a KeyNest device.
   - <strong><code>has_photo</code></strong> <i>Boolean</i>
   
     Whether the KeyNest device has a photo.
+
+  - <strong><code>is_quadient_locker</code></strong> <i>Boolean</i>
+  
+    Whether the key is in a locker that does not support the access codes API.
 
   - <strong><code>key_id</code></strong> <i>String</i>
   
@@ -3013,6 +3049,10 @@ Metadata for an Ultraloq device.
   
     Device name for an Ultraloq device.
 
+  - <strong><code>device_type</code></strong> <i>String</i>
+  
+    Device type for an Ultraloq device.
+
 </details>
 
 ---
@@ -3193,6 +3233,12 @@ Indicates that a hub or relay must be connected to unlock additional capabilitie
 
 ---
 
+**`keynest_unsupported_locker`**
+
+Indicates that the key is in a locker that does not support the access codes API.
+
+---
+
 **`lockly_time_zone_not_configured`**
 
 Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.
@@ -3348,6 +3394,24 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 
   ID of the access code that was used to unlock the affected device.
 
+<strong><code>acs_entrance_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS entrance associated with the unlock event.
+
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS system associated with the unlock event.
+
+<strong><code>acs_user_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS user associated with the unlock event.
+
 <strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
   ID of the action attempt associated with the unlock action.
@@ -3396,6 +3460,12 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
+
+<strong><code>user_identity_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the user identity associated with the unlock event.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
@@ -3460,7 +3530,7 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 
 [**`/locks/get`**](./get.md)
 
-Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks). **Use `/devices/get` instead.**
+Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
 
 
 [**`/locks/list`**](./list.md)

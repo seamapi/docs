@@ -66,7 +66,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Honeywell Resideo](../../device-and-system-integration-guides/honeywell-thermostats/)                                                 | `honeywell_resideo`             |
 | [igloohome](../../device-guides/igloohome-locks.md)                                                                                    | `igloohome`                     |
 | [Kwikset](../../device-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
-| [Latch](../../device-and-system-integration-guides/latch-access-control-system-1/)                                                     | `latch`                         |
+| [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                                       | `latch`                         |
 | [Linear](https://linear-solutions.com/)                                                                                                | `linear`                        |
 | [Lockly](../../device-and-system-integration-guides/lockly-locks/)                                                                     | `lockly`                        |
 | [Minut](../../device-guides/minut-sensors.md)                                                                                          | `minut`                         |

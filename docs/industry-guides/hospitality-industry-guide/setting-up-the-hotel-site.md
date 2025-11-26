@@ -57,7 +57,7 @@ For on-premises access systems, Seam offers the lightweight [Seam Bridge](../../
 
 ## Guest Room Access Settings
 
-In the access system dashboard, the property manager configures each guest room with access to the room's door and to any relevant common access points, such as the main entrance, nearest elevator, gym, and so on. This mapping is critical to ensure that each guest has the proper access to the necessary access points at the start of their reservation.&#x20;
+In the access system dashboard, the property manager configures each guest room with access to the room's door and to any relevant common access points, such as the main entrance, nearest elevator, gym, and so on. This mapping is critical to ensure that each guest has the proper access to the necessary access points at the start of their reservation.
 
 Seam resources enable you to set a custom unique key on each object. Use this to map your own data, such as rooms, listings, or reservations, to the corresponding Seam resources. This makes it easier to cross-reference and sync information between your systems and Seam.
 

@@ -178,7 +178,7 @@ Returns a list of all access systems.
 
 ```php
 $seam->acs->systems->list(
-    connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0"
+    connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa0",
 );
 ```
 
@@ -280,7 +280,11 @@ Customer key for which you want to list access systems.
 
 ## Response
 
-Array of [acs\_systems](.)
+{% hint style="success" %}
+Returns:
+**Array of [acs\_systems](.)**
+
+{% endhint %}
 
 
 {% tabs %}

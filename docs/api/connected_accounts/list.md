@@ -173,7 +173,7 @@ Returns a list of all connected accounts for a specified user identifier key.
 ```php
 $seam->connected_accounts->list(
     user_identifier_key: "2f393937-1405-4b1a-933f-34c97bfb3c56",
-    limit: 50
+    limit: 50,
 );
 ```
 
@@ -293,7 +293,11 @@ Your user ID for the user by which you want to filter connected accounts.
 
 ## Response
 
-Array of [connected\_accounts](.)
+{% hint style="success" %}
+Returns:
+**Array of [connected\_accounts](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -501,7 +505,7 @@ seam.connected_accounts.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c5
 ```php
 $seam->connected_accounts->list(
     customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
-    limit: 50
+    limit: 50,
 );
 ```
 
@@ -740,7 +744,7 @@ seam.connected_accounts.list(custom_metadata_has: { id: "internalId1" }, limit: 
 ```php
 $seam->connected_accounts->list(
     custom_metadata_has: ["id" => "internalId1"],
-    limit: 50
+    limit: 50,
 );
 ```
 

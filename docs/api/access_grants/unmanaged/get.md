@@ -29,5 +29,9 @@ ID of unmanaged Access Grant to get.
 
 ## Response
 
-[unknown](./)
+{% hint style="success" %}
+Returns:
+**[unknown](./)**
+
+{% endhint %}
 

@@ -211,7 +211,7 @@ $seam->acs->credentials->create(
     code: "1234",
     allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
     starts_at: "2025-06-19T21:08:08.000Z",
-    ends_at: "2025-06-23T12:35:01.000Z"
+    ends_at: "2025-06-23T12:35:01.000Z",
 );
 ```
 
@@ -518,7 +518,11 @@ Enum values:
 
 ## Response
 
-[acs\_credential](.)
+{% hint style="success" %}
+Returns:
+**[acs\_credential](.)**
+
+{% endhint %}
 
 
 {% tabs %}
@@ -775,7 +779,7 @@ $seam->acs->credentials->create(
     code: "1234",
     allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
     starts_at: "2025-06-19T21:08:08.000Z",
-    ends_at: "2025-06-23T12:35:01.000Z"
+    ends_at: "2025-06-23T12:35:01.000Z",
 );
 ```
 
@@ -1057,7 +1061,7 @@ $seam->acs->credentials->create(
     allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
     starts_at: "2025-06-19T21:08:08.000Z",
     ends_at: "2025-06-23T12:35:01.000Z",
-    visionline_metadata: ["card_format" => "rfid48", "override" => true]
+    visionline_metadata: ["card_format" => "rfid48", "override" => true],
 );
 ```
 
@@ -1337,7 +1341,7 @@ $seam->acs->credentials->create(
     allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
     starts_at: "2025-06-19T21:08:08.000Z",
     ends_at: "2025-06-23T12:35:01.000Z",
-    visionline_metadata: ["card_format" => "rfid48", "override" => true]
+    visionline_metadata: ["card_format" => "rfid48", "override" => true],
 );
 ```
 
@@ -1611,7 +1615,7 @@ $seam->acs->credentials->create(
     allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
     starts_at: "2025-06-19T21:08:08.000Z",
     ends_at: "2025-06-23T12:35:01.000Z",
-    is_multi_phone_sync_credential: true
+    is_multi_phone_sync_credential: true,
 );
 ```
 
@@ -1885,7 +1889,7 @@ $seam->acs->credentials->create(
     allowed_acs_entrance_ids: ["21805570-4706-4c21-99fc-3ed873a5e014"],
     starts_at: "2025-06-19T21:08:08.000Z",
     ends_at: "2025-06-23T12:35:01.000Z",
-    is_multi_phone_sync_credential: true
+    is_multi_phone_sync_credential: true,
 );
 ```
 

@@ -65,7 +65,11 @@ Enum values:
 
 ## Response
 
-[access\_grant](.)
+{% hint style="success" %}
+Returns:
+**[access\_grant](.)**
+
+{% endhint %}
 
 
 {% tabs %}

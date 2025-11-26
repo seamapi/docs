@@ -57,7 +57,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
@@ -256,8 +255,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
+{% openapi src="broken-reference" path="/locks/lock_door" method="post" %}
+[Broken link](broken-reference)
 {% endopenapi %}
 
 ## Unlock a door
