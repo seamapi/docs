@@ -783,10 +783,6 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 
 <summary>Properties</summary>
 
-<strong><code>account_type</code></strong> <i>String</i>
-
-  Type of connected account.
-
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the connected account, present when connected_account_id is provided.
@@ -794,6 +790,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+
+<strong><code>connected_account_type</code></strong> <i>String</i>
+
+  undocumented: Unreleased.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
