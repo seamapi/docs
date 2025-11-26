@@ -332,83 +332,98 @@ const getResourceSamples = (
 ): ResourceSample[] => {
   const { response } = endpoint
 
-  let foundResources: Array<Resource | ActionAttempt> = []
-
   if (response.responseType === 'void') {
     return []
   }
 
-  const target = resources.find(
+  let resource: Resource | ActionAttempt | undefined = resources.find(
     ({ resourceType }) => resourceType === response.resourceType,
   )
-
-  if (target != null) {
-    foundResources.push(target)
-  }
 
   if (
     response.responseType === 'resource' &&
     response.actionAttemptType != null
   ) {
-    const actionAttempt = actionAttempts.find(
+    resource = actionAttempts.find(
       ({ actionAttemptType }) =>
         actionAttemptType === response.actionAttemptType,
     )
-
-    if (actionAttempt != null) {
-      foundResources = [actionAttempt]
-    }
   }
 
   if (
     response.responseType === 'resource' &&
     response.batchResourceTypes != null
   ) {
-    for (const batchResource of response.batchResourceTypes) {
-      const resourceDef = resources.find(
-        (r) => r.resourceType === batchResource.resourceType,
+    const batchResourceProperties: ResourceSample['properties'] = {}
+
+    for (const batchResourceType of response.batchResourceTypes) {
+      const batchResource = resources.find(
+        (r) => r.resourceType === batchResourceType.resourceType,
       )
 
-      if (resourceDef != null) {
-        foundResources.push(resourceDef)
+      if (batchResource == null) {
+        continue
       }
+
+      const sample = getResourceSample(batchResource, endpoint, pathMetadata)
+      if (sample == null) {
+        continue
+      }
+
+      batchResourceProperties[batchResourceType.batchKey] = sample.properties
     }
   }
 
-  if (foundResources.length === 0) {
+  if (resource == null) {
     return []
   }
 
-  return foundResources.flatMap((resource) => {
-    const endpointMetadata = pathMetadata[resource.routePath]
-    const endpointSample = resource.resourceSamples.filter(
-      resourceSampleFilter({
-        include: endpointMetadata?.include_groups,
-        exclude: endpointMetadata?.exclude_groups,
-      }),
-    )[0]
+  const sample = getResourceSample(resource, endpoint, pathMetadata)
 
-    const parentMetadata =
-      endpoint.parentPath != null
-        ? pathMetadata[endpoint.parentPath]
-        : undefined
-    const parentSample = resource.resourceSamples.filter(
-      resourceSampleFilter({
-        include: parentMetadata?.include_groups,
-        exclude: parentMetadata?.exclude_groups,
-      }),
-    )[0]
+  if (sample == null) {
+    return []
+  }
 
-    const sample = parentSample ?? endpointSample
+  return [
+    {
+      ...sample,
+      title: 'JSON',
+      description: '',
+    },
+  ]
+}
 
-    if (sample == null) return []
+function getResourceSample(
+  resource: Resource | ActionAttempt,
+  endpoint: Endpoint,
+  pathMetadata: PathMetadata,
+): ResourceSample | null {
+  const endpointMetadata = pathMetadata[resource.routePath]
+  const endpointSample = resource.resourceSamples.filter(
+    resourceSampleFilter({
+      include: endpointMetadata?.include_groups,
+      exclude: endpointMetadata?.exclude_groups,
+    }),
+  )[0]
 
-    return [
-      {
-        ...sample,
-        title: 'JSON',
-        description: '',
-      },
-    ]
-  })
+  const parentMetadata =
+    endpoint.parentPath != null ? pathMetadata[endpoint.parentPath] : undefined
+  const parentSample = resource.resourceSamples.filter(
+    resourceSampleFilter({
+      include: parentMetadata?.include_groups,
+      exclude: parentMetadata?.exclude_groups,
+    }),
+  )[0]
+
+  const sample = parentSample ?? endpointSample
+
+  if (sample == null) {
+    return null
+  }
+
+  return {
+    ...sample,
+    title: 'JSON',
+    description: '',
+  }
 }
