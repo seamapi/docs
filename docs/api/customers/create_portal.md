@@ -361,7 +361,11 @@ The locale to use for the portal.
 
 ## Response
 
-[magic\_link](./../unstable_partner/building_blocks)
+{% hint style="success" %}
+Returns:
+**[magic\_link](./../unstable_partner/building_blocks)**
+
+{% endhint %}
 
 
 {% tabs %}
