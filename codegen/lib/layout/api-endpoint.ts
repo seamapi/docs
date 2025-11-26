@@ -385,12 +385,18 @@ const getResourceSamples = (
 
     // Return the batch resource sample
     if (Object.keys(batchResourceData).length > 0) {
+      const batchResourceDataString = JSON.stringify(batchResourceData, null, 2)
       return [
         {
           title: 'JSON',
           description: '',
-          resourceData: JSON.stringify(batchResourceData, null, 2),
-          resourceDataSyntax: 'json',
+          resource_type: 'batch',
+          resource: {
+            seam_cli: {
+              resource_data: batchResourceDataString,
+              resource_data_syntax: 'json' as const,
+            },
+          },
         },
       ]
     }
