@@ -48,7 +48,7 @@ Updates the thermostat weekly program for a thermostat device.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/update_weekly_program" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "076546e8-966c-47dd-831b-8d98413bf070",
   "monday_program_id": "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
@@ -84,13 +84,28 @@ Updates the thermostat weekly program for a thermostat device.
 #### Code:
 
 ```python
-seam.thermostats.update_weekly_program(device_id="076546e8-966c-47dd-831b-8d98413bf070", monday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870", tuesday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870", wednesday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870", thursday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870", friday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870", saturday_program_id="3bf5a788-caf8-40c5-a7d5-78b72e9b3a28", sunday_program_id="3bf5a788-caf8-40c5-a7d5-78b72e9b3a28")
+seam.thermostats.update_weekly_program(
+    device_id="076546e8-966c-47dd-831b-8d98413bf070",
+    monday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    tuesday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    wednesday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    thursday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    friday_program_id="a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+    saturday_program_id="3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+    sunday_program_id="3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+)
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(action_attempt_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d", action_type="PUSH_THERMOSTAT_PROGRAMS", error=None, result={}, status="success")
+ActionAttempt(
+    action_attempt_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+    action_type="PUSH_THERMOSTAT_PROGRAMS",
+    error=None,
+    result={},
+    status="success",
+)
 ```
 {% endtab %}
 
@@ -101,13 +116,29 @@ Updates the thermostat weekly program for a thermostat device.
 #### Code:
 
 ```ruby
-seam.thermostats.update_weekly_program(device_id: "076546e8-966c-47dd-831b-8d98413bf070", monday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870", tuesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870", wednesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870", thursday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870", friday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870", saturday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28", sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28")
+seam.thermostats.update_weekly_program(
+  device_id: "076546e8-966c-47dd-831b-8d98413bf070",
+  monday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  tuesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  wednesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  thursday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  friday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  saturday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+  sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+)
 ```
 
 #### Output:
 
 ```ruby
-{"action_attempt_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","action_type" => "PUSH_THERMOSTAT_PROGRAMS","error" => nil,"result" => {},"status" => "success"}
+{
+  "action_attempt_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+  "action_type" => "PUSH_THERMOSTAT_PROGRAMS",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
+}
 ```
 {% endtab %}
 

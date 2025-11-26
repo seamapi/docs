@@ -54,7 +54,7 @@ Returns a specified phone.
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "2c39adb7-ba99-4b60-927d-9b796952c8e8"
 }
@@ -104,7 +104,28 @@ seam.phones.get(device_id="2c39adb7-ba99-4b60-927d-9b796952c8e8")
 #### Output:
 
 ```python
-Phone(created_at="2025-06-14T16:54:17.946540Z", custom_metadata={"id":"internalId1"}, device_id="2c39adb7-ba99-4b60-927d-9b796952c8e8", device_type="ios_phone", display_name="My Phone", errors=[], nickname="My Phone", properties={"assa_abloy_credential_service_metadata":{"endpoints":[{"endpoint_id":"c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f","is_active":true}],"has_active_endpoint":true}}, warnings=[], workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336")
+Phone(
+    created_at="2025-06-14T16:54:17.946540Z",
+    custom_metadata={"id": "internalId1"},
+    device_id="2c39adb7-ba99-4b60-927d-9b796952c8e8",
+    device_type="ios_phone",
+    display_name="My Phone",
+    errors=[],
+    nickname="My Phone",
+    properties={
+        "assa_abloy_credential_service_metadata": {
+            "endpoints": [
+                {
+                    "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+                    "is_active": true,
+                }
+            ],
+            "has_active_endpoint": true,
+        }
+    },
+    warnings=[],
+    workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336",
+)
 ```
 {% endtab %}
 
@@ -121,7 +142,25 @@ seam.phones.get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8")
 #### Output:
 
 ```ruby
-{"created_at" => "2025-06-14T16:54:17.946540Z","custom_metadata" => {"id":"internalId1"},"device_id" => "2c39adb7-ba99-4b60-927d-9b796952c8e8","device_type" => "ios_phone","display_name" => "My Phone","errors" => [],"nickname" => "My Phone","properties" => {"assa_abloy_credential_service_metadata":{"endpoints":[{"endpoint_id":"c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f","is_active":true}],"has_active_endpoint":true}},"warnings" => [],"workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336"}
+{
+  "created_at" => "2025-06-14T16:54:17.946540Z",
+  "custom_metadata" => {
+    id: "internalId1",
+  },
+  "device_id" => "2c39adb7-ba99-4b60-927d-9b796952c8e8",
+  "device_type" => "ios_phone",
+  "display_name" => "My Phone",
+  "errors" => [],
+  "nickname" => "My Phone",
+  "properties" => {
+    assa_abloy_credential_service_metadata: {
+      endpoints: [{ endpoint_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f", is_active: true }],
+      has_active_endpoint: true,
+    },
+  },
+  "warnings" => [],
+  "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
+}
 ```
 {% endtab %}
 

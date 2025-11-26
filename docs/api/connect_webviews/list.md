@@ -58,7 +58,7 @@ Returns a list of all Connect Webviews for a specified customer ID.
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "customer_ids": [
     "e387e15f-be27-47ad-881f-4a6fc5460c57"
@@ -105,13 +105,36 @@ Returns a list of all Connect Webviews for a specified customer ID.
 #### Code:
 
 ```python
-seam.connect_webviews.list(customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"], limit=50)
+seam.connect_webviews.list(
+    customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"], limit=50
+)
 ```
 
 #### Output:
 
 ```python
-ConnectWebview(accepted_capabilities=["lock","thermostat"], accepted_devices=[], accepted_providers=["kwikset","schlage","smartthings","yale"], any_device_allowed=true, any_provider_allowed=false, authorized_at=None, automatically_manage_new_devices=true, connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028", connected_account_id=None, created_at="2025-06-14T16:54:17.946323Z", custom_metadata={"id":"internalId1"}, custom_redirect_failure_url="https://example.com/failure-redirect", custom_redirect_url="https://example.com/redirect", device_selection_mode="none", login_successful=false, selected_provider=None, status="pending", url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d", wait_for_device_creation=true, workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0")
+ConnectWebview(
+    accepted_capabilities=["lock", "thermostat"],
+    accepted_devices=[],
+    accepted_providers=["kwikset", "schlage", "smartthings", "yale"],
+    any_device_allowed=true,
+    any_provider_allowed=false,
+    authorized_at=None,
+    automatically_manage_new_devices=true,
+    connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028",
+    connected_account_id=None,
+    created_at="2025-06-14T16:54:17.946323Z",
+    custom_metadata={"id": "internalId1"},
+    custom_redirect_failure_url="https://example.com/failure-redirect",
+    custom_redirect_url="https://example.com/redirect",
+    device_selection_mode="none",
+    login_successful=false,
+    selected_provider=None,
+    status="pending",
+    url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
+    wait_for_device_creation=true,
+    workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0",
+)
 ```
 {% endtab %}
 
@@ -128,7 +151,31 @@ seam.connect_webviews.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"
 #### Output:
 
 ```ruby
-{"accepted_capabilities" => ["lock","thermostat"],"accepted_devices" => [],"accepted_providers" => ["kwikset","schlage","smartthings","yale"],"any_device_allowed" => true,"any_provider_allowed" => false,"authorized_at" => nil,"automatically_manage_new_devices" => true,"connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028","connected_account_id" => nil,"created_at" => "2025-06-14T16:54:17.946323Z","custom_metadata" => {"id":"internalId1"},"custom_redirect_failure_url" => "https://example.com/failure-redirect","custom_redirect_url" => "https://example.com/redirect","device_selection_mode" => "none","login_successful" => false,"selected_provider" => nil,"status" => "pending","url" => "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d","wait_for_device_creation" => true,"workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0"}
+{
+  "accepted_capabilities" => %w[lock thermostat],
+  "accepted_devices" => [],
+  "accepted_providers" => %w[kwikset schlage smartthings yale],
+  "any_device_allowed" => true,
+  "any_provider_allowed" => false,
+  "authorized_at" => nil,
+  "automatically_manage_new_devices" => true,
+  "connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028",
+  "connected_account_id" => nil,
+  "created_at" => "2025-06-14T16:54:17.946323Z",
+  "custom_metadata" => {
+    id: "internalId1",
+  },
+  "custom_redirect_failure_url" => "https://example.com/failure-redirect",
+  "custom_redirect_url" => "https://example.com/redirect",
+  "device_selection_mode" => "none",
+  "login_successful" => false,
+  "selected_provider" => nil,
+  "status" => "pending",
+  "url" =>
+    "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
+  "wait_for_device_creation" => true,
+  "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
+}
 ```
 {% endtab %}
 
@@ -361,7 +408,7 @@ await seam.connectWebviews.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "user_identifier_key": "7bf74090-25cc-4235-a2f8-aea277b19597",
   "limit": 50
@@ -406,13 +453,36 @@ EOF
 #### Code:
 
 ```python
-seam.connect_webviews.list(user_identifier_key="7bf74090-25cc-4235-a2f8-aea277b19597", limit=50)
+seam.connect_webviews.list(
+    user_identifier_key="7bf74090-25cc-4235-a2f8-aea277b19597", limit=50
+)
 ```
 
 #### Output:
 
 ```python
-ConnectWebview(accepted_capabilities=["lock","thermostat"], accepted_devices=[], accepted_providers=["kwikset","schlage","smartthings","yale"], any_device_allowed=true, any_provider_allowed=false, authorized_at=None, automatically_manage_new_devices=true, connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028", connected_account_id=None, created_at="2025-06-14T16:54:17.946323Z", custom_metadata={"id":"internalId1"}, custom_redirect_failure_url="https://example.com/failure-redirect", custom_redirect_url="https://example.com/redirect", device_selection_mode="none", login_successful=false, selected_provider=None, status="pending", url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d", wait_for_device_creation=true, workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0")
+ConnectWebview(
+    accepted_capabilities=["lock", "thermostat"],
+    accepted_devices=[],
+    accepted_providers=["kwikset", "schlage", "smartthings", "yale"],
+    any_device_allowed=true,
+    any_provider_allowed=false,
+    authorized_at=None,
+    automatically_manage_new_devices=true,
+    connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028",
+    connected_account_id=None,
+    created_at="2025-06-14T16:54:17.946323Z",
+    custom_metadata={"id": "internalId1"},
+    custom_redirect_failure_url="https://example.com/failure-redirect",
+    custom_redirect_url="https://example.com/redirect",
+    device_selection_mode="none",
+    login_successful=false,
+    selected_provider=None,
+    status="pending",
+    url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
+    wait_for_device_creation=true,
+    workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0",
+)
 ```
 {% endtab %}
 
@@ -429,7 +499,31 @@ seam.connect_webviews.list(user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b
 #### Output:
 
 ```ruby
-{"accepted_capabilities" => ["lock","thermostat"],"accepted_devices" => [],"accepted_providers" => ["kwikset","schlage","smartthings","yale"],"any_device_allowed" => true,"any_provider_allowed" => false,"authorized_at" => nil,"automatically_manage_new_devices" => true,"connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028","connected_account_id" => nil,"created_at" => "2025-06-14T16:54:17.946323Z","custom_metadata" => {"id":"internalId1"},"custom_redirect_failure_url" => "https://example.com/failure-redirect","custom_redirect_url" => "https://example.com/redirect","device_selection_mode" => "none","login_successful" => false,"selected_provider" => nil,"status" => "pending","url" => "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d","wait_for_device_creation" => true,"workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0"}
+{
+  "accepted_capabilities" => %w[lock thermostat],
+  "accepted_devices" => [],
+  "accepted_providers" => %w[kwikset schlage smartthings yale],
+  "any_device_allowed" => true,
+  "any_provider_allowed" => false,
+  "authorized_at" => nil,
+  "automatically_manage_new_devices" => true,
+  "connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028",
+  "connected_account_id" => nil,
+  "created_at" => "2025-06-14T16:54:17.946323Z",
+  "custom_metadata" => {
+    id: "internalId1",
+  },
+  "custom_redirect_failure_url" => "https://example.com/failure-redirect",
+  "custom_redirect_url" => "https://example.com/redirect",
+  "device_selection_mode" => "none",
+  "login_successful" => false,
+  "selected_provider" => nil,
+  "status" => "pending",
+  "url" =>
+    "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
+  "wait_for_device_creation" => true,
+  "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
+}
 ```
 {% endtab %}
 
@@ -573,7 +667,7 @@ await seam.connectWebviews.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "custom_metadata_has": {
     "id": "internalId1"
@@ -620,13 +714,34 @@ EOF
 #### Code:
 
 ```python
-seam.connect_webviews.list(custom_metadata_has={"id":"internalId1"}, limit=50)
+seam.connect_webviews.list(custom_metadata_has={"id": "internalId1"}, limit=50)
 ```
 
 #### Output:
 
 ```python
-ConnectWebview(accepted_capabilities=["lock","thermostat"], accepted_devices=[], accepted_providers=["kwikset","schlage","smartthings","yale"], any_device_allowed=true, any_provider_allowed=false, authorized_at=None, automatically_manage_new_devices=true, connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028", connected_account_id=None, created_at="2025-06-14T16:54:17.946323Z", custom_metadata={"id":"internalId1"}, custom_redirect_failure_url="https://example.com/failure-redirect", custom_redirect_url="https://example.com/redirect", device_selection_mode="none", login_successful=false, selected_provider=None, status="pending", url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d", wait_for_device_creation=true, workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0")
+ConnectWebview(
+    accepted_capabilities=["lock", "thermostat"],
+    accepted_devices=[],
+    accepted_providers=["kwikset", "schlage", "smartthings", "yale"],
+    any_device_allowed=true,
+    any_provider_allowed=false,
+    authorized_at=None,
+    automatically_manage_new_devices=true,
+    connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028",
+    connected_account_id=None,
+    created_at="2025-06-14T16:54:17.946323Z",
+    custom_metadata={"id": "internalId1"},
+    custom_redirect_failure_url="https://example.com/failure-redirect",
+    custom_redirect_url="https://example.com/redirect",
+    device_selection_mode="none",
+    login_successful=false,
+    selected_provider=None,
+    status="pending",
+    url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
+    wait_for_device_creation=true,
+    workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0",
+)
 ```
 {% endtab %}
 
@@ -637,13 +752,37 @@ ConnectWebview(accepted_capabilities=["lock","thermostat"], accepted_devices=[],
 #### Code:
 
 ```ruby
-seam.connect_webviews.list(custom_metadata_has: {"id":"internalId1"}, limit: 50)
+seam.connect_webviews.list(custom_metadata_has: { id: "internalId1" }, limit: 50)
 ```
 
 #### Output:
 
 ```ruby
-{"accepted_capabilities" => ["lock","thermostat"],"accepted_devices" => [],"accepted_providers" => ["kwikset","schlage","smartthings","yale"],"any_device_allowed" => true,"any_provider_allowed" => false,"authorized_at" => nil,"automatically_manage_new_devices" => true,"connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028","connected_account_id" => nil,"created_at" => "2025-06-14T16:54:17.946323Z","custom_metadata" => {"id":"internalId1"},"custom_redirect_failure_url" => "https://example.com/failure-redirect","custom_redirect_url" => "https://example.com/redirect","device_selection_mode" => "none","login_successful" => false,"selected_provider" => nil,"status" => "pending","url" => "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d","wait_for_device_creation" => true,"workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0"}
+{
+  "accepted_capabilities" => %w[lock thermostat],
+  "accepted_devices" => [],
+  "accepted_providers" => %w[kwikset schlage smartthings yale],
+  "any_device_allowed" => true,
+  "any_provider_allowed" => false,
+  "authorized_at" => nil,
+  "automatically_manage_new_devices" => true,
+  "connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028",
+  "connected_account_id" => nil,
+  "created_at" => "2025-06-14T16:54:17.946323Z",
+  "custom_metadata" => {
+    id: "internalId1",
+  },
+  "custom_redirect_failure_url" => "https://example.com/failure-redirect",
+  "custom_redirect_url" => "https://example.com/redirect",
+  "device_selection_mode" => "none",
+  "login_successful" => false,
+  "selected_provider" => nil,
+  "status" => "pending",
+  "url" =>
+    "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
+  "wait_for_device_creation" => true,
+  "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
+}
 ```
 {% endtab %}
 

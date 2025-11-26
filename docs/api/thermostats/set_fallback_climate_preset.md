@@ -36,7 +36,7 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_fallback_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
   "climate_preset_key": "Eco"
@@ -58,7 +58,9 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 #### Code:
 
 ```python
-seam.thermostats.set_fallback_climate_preset(device_id="9a21ddcb-8eeb-4351-8770-1835c3db8b2e", climate_preset_key="Eco")
+seam.thermostats.set_fallback_climate_preset(
+    device_id="9a21ddcb-8eeb-4351-8770-1835c3db8b2e", climate_preset_key="Eco"
+)
 ```
 
 #### Output:
@@ -75,7 +77,10 @@ Sets a specified climate preset as the "fallback" preset for a specified thermos
 #### Code:
 
 ```ruby
-seam.thermostats.set_fallback_climate_preset(device_id: "9a21ddcb-8eeb-4351-8770-1835c3db8b2e", climate_preset_key: "Eco")
+seam.thermostats.set_fallback_climate_preset(
+  device_id: "9a21ddcb-8eeb-4351-8770-1835c3db8b2e",
+  climate_preset_key: "Eco",
+)
 ```
 
 #### Output:

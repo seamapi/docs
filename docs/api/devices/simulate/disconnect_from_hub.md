@@ -40,7 +40,7 @@ Simulates taking the Wi-Fi hub (bridge) offline for a device.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/disconnect_from_hub" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "a60686b8-f401-452d-9f67-53d139cf6160"
 }
@@ -61,7 +61,9 @@ Simulates taking the Wi-Fi hub (bridge) offline for a device.
 #### Code:
 
 ```python
-seam.devices.simulate.disconnect_from_hub(device_id="a60686b8-f401-452d-9f67-53d139cf6160")
+seam.devices.simulate.disconnect_from_hub(
+    device_id="a60686b8-f401-452d-9f67-53d139cf6160"
+)
 ```
 
 #### Output:

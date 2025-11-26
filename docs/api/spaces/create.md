@@ -46,7 +46,7 @@ Creates a new space.
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "name": "My Space",
   "device_ids": [
@@ -81,13 +81,23 @@ Creates a new space.
 #### Code:
 
 ```python
-seam.spaces.create(name="My Space", device_ids=["b7254403-db91-4e10-bb7b-31d0615d2963"], acs_entrance_ids=["46a47667-a90b-45cc-9bb6-f0917464f1f3"])
+seam.spaces.create(
+    name="My Space",
+    device_ids=["b7254403-db91-4e10-bb7b-31d0615d2963"],
+    acs_entrance_ids=["46a47667-a90b-45cc-9bb6-f0917464f1f3"],
+)
 ```
 
 #### Output:
 
 ```python
-Space(created_at="2025-06-16T16:54:17.946600Z", display_name="My Space", name="My Space", space_id="5afeb047-3277-4102-b8c4-99edf05b91d2", workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9")
+Space(
+    created_at="2025-06-16T16:54:17.946600Z",
+    display_name="My Space",
+    name="My Space",
+    space_id="5afeb047-3277-4102-b8c4-99edf05b91d2",
+    workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
+)
 ```
 {% endtab %}
 
@@ -98,13 +108,23 @@ Creates a new space.
 #### Code:
 
 ```ruby
-seam.spaces.create(name: "My Space", device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"], acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"])
+seam.spaces.create(
+  name: "My Space",
+  device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
+  acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"],
+)
 ```
 
 #### Output:
 
 ```ruby
-{"created_at" => "2025-06-16T16:54:17.946600Z","display_name" => "My Space","name" => "My Space","space_id" => "5afeb047-3277-4102-b8c4-99edf05b91d2","workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9"}
+{
+  "created_at" => "2025-06-16T16:54:17.946600Z",
+  "display_name" => "My Space",
+  "name" => "My Space",
+  "space_id" => "5afeb047-3277-4102-b8c4-99edf05b91d2",
+  "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
+}
 ```
 {% endtab %}
 

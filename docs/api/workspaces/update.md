@@ -45,7 +45,7 @@ Updates the workspace associated with the authentication value.
 ```curl
 curl --include --request POST "https://connect.getseam.com/workspaces/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "name": "My Workspace",
   "connect_partner_name": "Acme",
@@ -75,7 +75,18 @@ Updates the workspace associated with the authentication value.
 #### Code:
 
 ```python
-seam.workspaces.update(name="My Workspace", connect_partner_name="Acme", connect_webview_customization={"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"}, is_suspended=true)
+seam.workspaces.update(
+    name="My Workspace",
+    connect_partner_name="Acme",
+    connect_webview_customization={
+        "inviter_logo_url": "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+        "logo_shape": "circle",
+        "primary_button_color": "#232426",
+        "primary_button_text_color": "#FFFDE7",
+        "success_message": "Your account has been successfully connected to Acme!",
+    },
+    is_suspended=true,
+)
 ```
 
 #### Output:
@@ -92,7 +103,19 @@ Updates the workspace associated with the authentication value.
 #### Code:
 
 ```ruby
-seam.workspaces.update(name: "My Workspace", connect_partner_name: "Acme", connect_webview_customization: {"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"}, is_suspended: true)
+seam.workspaces.update(
+  name: "My Workspace",
+  connect_partner_name: "Acme",
+  connect_webview_customization: {
+    inviter_logo_url:
+      "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+    logo_shape: "circle",
+    primary_button_color: "#232426",
+    primary_button_text_color: "#FFFDE7",
+    success_message: "Your account has been successfully connected to Acme!",
+  },
+  is_suspended: true,
+)
 ```
 
 #### Output:

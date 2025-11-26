@@ -48,7 +48,7 @@ Updates a specified thermostat daily program.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/daily_programs/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "thermostat_daily_program_id": "6baf3a53-ba83-4052-8ea5-143584e18f03",
   "name": "Weekday Program",
@@ -96,13 +96,28 @@ Updates a specified thermostat daily program.
 #### Code:
 
 ```python
-seam.thermostats.daily_programs.update(thermostat_daily_program_id="6baf3a53-ba83-4052-8ea5-143584e18f03", name="Weekday Program", periods=[{"starts_at_time":"07:00:00","climate_preset_key":"Home"},{"starts_at_time":"09:00:00","climate_preset_key":"Away"},{"starts_at_time":"17:00:00","climate_preset_key":"Home"},{"starts_at_time":"22:30:00","climate_preset_key":"Sleep"}])
+seam.thermostats.daily_programs.update(
+    thermostat_daily_program_id="6baf3a53-ba83-4052-8ea5-143584e18f03",
+    name="Weekday Program",
+    periods=[
+        {"starts_at_time": "07:00:00", "climate_preset_key": "Home"},
+        {"starts_at_time": "09:00:00", "climate_preset_key": "Away"},
+        {"starts_at_time": "17:00:00", "climate_preset_key": "Home"},
+        {"starts_at_time": "22:30:00", "climate_preset_key": "Sleep"},
+    ],
+)
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(action_attempt_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d", action_type="PUSH_THERMOSTAT_PROGRAMS", error=None, result={}, status="success")
+ActionAttempt(
+    action_attempt_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+    action_type="PUSH_THERMOSTAT_PROGRAMS",
+    error=None,
+    result={},
+    status="success",
+)
 ```
 {% endtab %}
 
@@ -113,13 +128,29 @@ Updates a specified thermostat daily program.
 #### Code:
 
 ```ruby
-seam.thermostats.daily_programs.update(thermostat_daily_program_id: "6baf3a53-ba83-4052-8ea5-143584e18f03", name: "Weekday Program", periods: [{"starts_at_time":"07:00:00","climate_preset_key":"Home"},{"starts_at_time":"09:00:00","climate_preset_key":"Away"},{"starts_at_time":"17:00:00","climate_preset_key":"Home"},{"starts_at_time":"22:30:00","climate_preset_key":"Sleep"}])
+seam.thermostats.daily_programs.update(
+  thermostat_daily_program_id: "6baf3a53-ba83-4052-8ea5-143584e18f03",
+  name: "Weekday Program",
+  periods: [
+    { starts_at_time: "07:00:00", climate_preset_key: "Home" },
+    { starts_at_time: "09:00:00", climate_preset_key: "Away" },
+    { starts_at_time: "17:00:00", climate_preset_key: "Home" },
+    { starts_at_time: "22:30:00", climate_preset_key: "Sleep" },
+  ],
+)
 ```
 
 #### Output:
 
 ```ruby
-{"action_attempt_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","action_type" => "PUSH_THERMOSTAT_PROGRAMS","error" => nil,"result" => {},"status" => "success"}
+{
+  "action_attempt_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+  "action_type" => "PUSH_THERMOSTAT_PROGRAMS",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
+}
 ```
 {% endtab %}
 

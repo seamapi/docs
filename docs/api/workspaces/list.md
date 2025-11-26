@@ -93,7 +93,25 @@ seam.workspaces.list()
 #### Output:
 
 ```python
-[Workspace(company_name="Acme", connect_partner_name="Acme", connect_webview_customization={"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"}, is_sandbox=true, is_suspended=false, is_publishable_key_auth_enabled=true, publishable_key="seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE", name="My Sandbox Workspace", workspace_id="6a0b6282-6a98-4fef-811e-0904c485ac7a")]
+[
+    Workspace(
+        company_name="Acme",
+        connect_partner_name="Acme",
+        connect_webview_customization={
+            "inviter_logo_url": "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+            "logo_shape": "circle",
+            "primary_button_color": "#232426",
+            "primary_button_text_color": "#FFFDE7",
+            "success_message": "Your account has been successfully connected to Acme!",
+        },
+        is_sandbox=true,
+        is_suspended=false,
+        is_publishable_key_auth_enabled=true,
+        publishable_key="seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
+        name="My Sandbox Workspace",
+        workspace_id="6a0b6282-6a98-4fef-811e-0904c485ac7a",
+    )
+]
 ```
 {% endtab %}
 
@@ -110,7 +128,26 @@ seam.workspaces.list()
 #### Output:
 
 ```ruby
-[{"company_name" => "Acme","connect_partner_name" => "Acme","connect_webview_customization" => {"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"},"is_sandbox" => true,"is_suspended" => false,"is_publishable_key_auth_enabled" => true,"publishable_key" => "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE","name" => "My Sandbox Workspace","workspace_id" => "6a0b6282-6a98-4fef-811e-0904c485ac7a"}]
+[
+  {
+    "company_name" => "Acme",
+    "connect_partner_name" => "Acme",
+    "connect_webview_customization" => {
+      inviter_logo_url:
+        "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+      logo_shape: "circle",
+      primary_button_color: "#232426",
+      primary_button_text_color: "#FFFDE7",
+      success_message: "Your account has been successfully connected to Acme!",
+    },
+    "is_sandbox" => true,
+    "is_suspended" => false,
+    "is_publishable_key_auth_enabled" => true,
+    "publishable_key" => "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
+    "name" => "My Sandbox Workspace",
+    "workspace_id" => "6a0b6282-6a98-4fef-811e-0904c485ac7a",
+  },
+]
 ```
 {% endtab %}
 

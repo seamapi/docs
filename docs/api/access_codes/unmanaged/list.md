@@ -51,7 +51,7 @@ Returns a list of all unmanaged access codes.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1"
 }
@@ -96,7 +96,23 @@ seam.access_codes.unmanaged.list(device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1
 #### Output:
 
 ```python
-[UnmanagedAccessCode(access_code_id="88fa1812-bef8-4108-9fb4-4855376c3edf", code="1234", created_at="2025-06-16T16:54:17.946283Z", device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1", ends_at="2025-06-23T16:54:17.946261Z", errors=[], is_managed=false, name="My Unmanaged Access Code", starts_at="2025-06-21T16:54:17.946261Z", status="set", type="time_bound", warnings=[], workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7")]
+[
+    UnmanagedAccessCode(
+        access_code_id="88fa1812-bef8-4108-9fb4-4855376c3edf",
+        code="1234",
+        created_at="2025-06-16T16:54:17.946283Z",
+        device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+        ends_at="2025-06-23T16:54:17.946261Z",
+        errors=[],
+        is_managed=false,
+        name="My Unmanaged Access Code",
+        starts_at="2025-06-21T16:54:17.946261Z",
+        status="set",
+        type="time_bound",
+        warnings=[],
+        workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+    )
+]
 ```
 {% endtab %}
 
@@ -113,7 +129,23 @@ seam.access_codes.unmanaged.list(device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b
 #### Output:
 
 ```ruby
-[{"access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf","code" => "1234","created_at" => "2025-06-16T16:54:17.946283Z","device_id" => "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1","ends_at" => "2025-06-23T16:54:17.946261Z","errors" => [],"is_managed" => false,"name" => "My Unmanaged Access Code","starts_at" => "2025-06-21T16:54:17.946261Z","status" => "set","type" => "time_bound","warnings" => [],"workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"}]
+[
+  {
+    "access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf",
+    "code" => "1234",
+    "created_at" => "2025-06-16T16:54:17.946283Z",
+    "device_id" => "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
+    "ends_at" => "2025-06-23T16:54:17.946261Z",
+    "errors" => [],
+    "is_managed" => false,
+    "name" => "My Unmanaged Access Code",
+    "starts_at" => "2025-06-21T16:54:17.946261Z",
+    "status" => "set",
+    "type" => "time_bound",
+    "warnings" => [],
+    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+  },
+]
 ```
 {% endtab %}
 

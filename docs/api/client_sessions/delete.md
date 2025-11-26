@@ -35,7 +35,7 @@ Deletes a client session.
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "client_session_id": "d149de35-cfad-46fe-a78e-f71f649e7a37"
 }
