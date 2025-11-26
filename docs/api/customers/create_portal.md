@@ -182,9 +182,33 @@ List of hotel or hospitality rooms.
 
 <details>
 
+<summary><b><code>sites</code></b> <i>List</i></summary>
+
+List of general sites or areas.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>spaces</code></b> <i>List</i></summary>
 
 List of general spaces or areas.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>staff_members</code></b> <i>List</i></summary>
+
+List of staff members.
 
 </details>
 
@@ -239,7 +263,25 @@ List of users.
 ---
 
 
+**`customization_profile_id`** *String*
+
+The ID of the customization profile to use for the portal.
+
+---
+
 **`features`** *Object*
+
+<details>
+
+<summary><b><code>configure</code></b> <i>Object</i></summary>
+
+Configuration for the configure feature.
+
+</details>
+
+---
+
+
 
 <details>
 
@@ -255,9 +297,24 @@ Configuration for the connect accounts feature.
 
 <details>
 
+<summary><b><code>manage</code></b> <i>Object</i></summary>
+
+Configuration for the manage feature.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>manage_devices</code></b> <i>Object</i></summary>
 
 Configuration for the manage devices feature.
+---
+deprecated: Use `manage` instead.
+---
 
 </details>
 
@@ -279,6 +336,25 @@ Configuration for the organize feature.
 **`is_embedded`** *Boolean*
 
 Whether the portal is embedded in another application.
+
+---
+
+**`landing_page`** *Object*
+
+Configuration for the landing page when the portal loads.
+
+<details>
+
+<summary><b><code>manage</code></b> <i>Object</i></summary>
+
+</details>
+
+---
+
+
+**`locale`** *String*
+
+The locale to use for the portal.
 
 ---
 
