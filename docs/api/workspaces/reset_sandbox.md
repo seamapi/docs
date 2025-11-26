@@ -69,13 +69,7 @@ seam.workspaces.reset_sandbox()
 #### Output:
 
 ```python
-ActionAttempt(
-    action_attempt_id="f8e7d6c5-4b3a-2c1d-9e0f-8a7b6c5d4e3f",
-    action_type="RESET_SANDBOX_WORKSPACE",
-    error=None,
-    result={},
-    status="success",
-)
+ActionAttempt(action_attempt_id="f8e7d6c5-4b3a-2c1d-9e0f-8a7b6c5d4e3f", action_type="RESET_SANDBOX_WORKSPACE", error=None, result={}, status="success")
 ```
 {% endtab %}
 
@@ -92,14 +86,7 @@ seam.workspaces.reset_sandbox()
 #### Output:
 
 ```ruby
-{
-  "action_attempt_id" => "f8e7d6c5-4b3a-2c1d-9e0f-8a7b6c5d4e3f",
-  "action_type" => "RESET_SANDBOX_WORKSPACE",
-  "error" => nil,
-  "result" => {
-  },
-  "status" => "success",
-}
+{"action_attempt_id" => "f8e7d6c5-4b3a-2c1d-9e0f-8a7b6c5d4e3f","action_type" => "RESET_SANDBOX_WORKSPACE","error" => nil,"result" => {},"status" => "success"}
 ```
 {% endtab %}
 

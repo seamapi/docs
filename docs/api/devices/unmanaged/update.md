@@ -38,7 +38,7 @@ Updates a specified unmanaged device.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "66c3adbf-a0e5-403a-8981-ec5286b5da76",
   "is_managed": true
@@ -60,9 +60,7 @@ Updates a specified unmanaged device.
 #### Code:
 
 ```python
-seam.devices.unmanaged.update(
-    device_id="66c3adbf-a0e5-403a-8981-ec5286b5da76", is_managed=true
-)
+seam.devices.unmanaged.update(device_id="66c3adbf-a0e5-403a-8981-ec5286b5da76", is_managed=true)
 ```
 
 #### Output:

@@ -53,6 +53,10 @@ These items are intentionally undocumented.
 ### Resource properties
 
 - `acs_user.last_successful_sync_at`: Only used internally.
+- `batch.customization_profiles`: Unreleased.
+- `batch.unmanaged_acs_access_groups`: Unreleased.
+- `batch.unmanaged_acs_credentials`: Unreleased.
+- `batch.unmanaged_acs_users`: Unreleased.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
 - `space.parent_space_id`: Only used internally.
@@ -239,6 +243,7 @@ Items that are intentionally undocumented are not included in this section.
 - `acs_user.email`
 - `acs_user.hid_acs_system_id`
 - `acs_user.is_managed`
+- `batch.unmanaged_acs_access_groups`
 - `connect_webview.accepted_devices`
 - `connect_webview.any_device_allowed`
 - `connect_webview.device_selection_mode`
@@ -474,6 +479,12 @@ These items have been marked as draft.
 - `/access_methods/unmanaged`: No draft message provided
 - `/spaces`: No draft message provided
 
+### Resource properties
+
+- `batch.access_grants`: Early access.
+- `batch.access_methods`: Early access.
+- `batch.spaces`: Early access.
+
 ### Endpoints
 
 - `/access_grants/create`: Early access.
@@ -658,6 +669,7 @@ These items are deprecated.
 - `/workspaces/find_anything`: `batch`
 ### Unused Resources
 
+- `batch`
 - `staff_member`
 
 ### Endpoints without code samples
@@ -687,6 +699,7 @@ These items are deprecated.
 
 ### Resources without resource samples
 
+- `batch`
 - `staff_member`
 - `event: access_code.created`
 - `event: access_code.changed`

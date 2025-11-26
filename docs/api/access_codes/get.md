@@ -60,7 +60,7 @@ Returns a specified access code.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_code_id": "90a114dc-48b5-4b8b-a3d3-972344594401"
 }
@@ -112,30 +112,7 @@ seam.access_codes.get(access_code_id="90a114dc-48b5-4b8b-a3d3-972344594401")
 #### Output:
 
 ```python
-AccessCode(
-    access_code_id="90a114dc-48b5-4b8b-a3d3-972344594401",
-    code="1234",
-    common_code_key=None,
-    created_at="2025-06-14T16:54:17.946242Z",
-    device_id="7bce4bcc-6c35-4cc0-bbae-1c8bc5b4a5b5",
-    ends_at="2025-07-04T16:54:17.946049Z",
-    errors=[],
-    is_backup=false,
-    is_backup_access_code_available=false,
-    is_external_modification_allowed=false,
-    is_managed=true,
-    is_offline_access_code=false,
-    is_one_time_use=false,
-    is_scheduled_on_device=true,
-    is_waiting_for_code_assignment=false,
-    name="My Access Code",
-    pulled_backup_access_code_id=None,
-    starts_at="2025-07-02T16:54:17.946049Z",
-    status="set",
-    type="time_bound",
-    warnings=[],
-    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-)
+AccessCode(access_code_id="90a114dc-48b5-4b8b-a3d3-972344594401", code="1234", common_code_key=None, created_at="2025-06-14T16:54:17.946242Z", device_id="7bce4bcc-6c35-4cc0-bbae-1c8bc5b4a5b5", ends_at="2025-07-04T16:54:17.946049Z", errors=[], is_backup=false, is_backup_access_code_available=false, is_external_modification_allowed=false, is_managed=true, is_offline_access_code=false, is_one_time_use=false, is_scheduled_on_device=true, is_waiting_for_code_assignment=false, name="My Access Code", pulled_backup_access_code_id=None, starts_at="2025-07-02T16:54:17.946049Z", status="set", type="time_bound", warnings=[], workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7")
 ```
 {% endtab %}
 
@@ -152,30 +129,7 @@ seam.access_codes.get(access_code_id: "90a114dc-48b5-4b8b-a3d3-972344594401")
 #### Output:
 
 ```ruby
-{
-  "access_code_id" => "90a114dc-48b5-4b8b-a3d3-972344594401",
-  "code" => "1234",
-  "common_code_key" => nil,
-  "created_at" => "2025-06-14T16:54:17.946242Z",
-  "device_id" => "7bce4bcc-6c35-4cc0-bbae-1c8bc5b4a5b5",
-  "ends_at" => "2025-07-04T16:54:17.946049Z",
-  "errors" => [],
-  "is_backup" => false,
-  "is_backup_access_code_available" => false,
-  "is_external_modification_allowed" => false,
-  "is_managed" => true,
-  "is_offline_access_code" => false,
-  "is_one_time_use" => false,
-  "is_scheduled_on_device" => true,
-  "is_waiting_for_code_assignment" => false,
-  "name" => "My Access Code",
-  "pulled_backup_access_code_id" => nil,
-  "starts_at" => "2025-07-02T16:54:17.946049Z",
-  "status" => "set",
-  "type" => "time_bound",
-  "warnings" => [],
-  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-}
+{"access_code_id" => "90a114dc-48b5-4b8b-a3d3-972344594401","code" => "1234","common_code_key" => nil,"created_at" => "2025-06-14T16:54:17.946242Z","device_id" => "7bce4bcc-6c35-4cc0-bbae-1c8bc5b4a5b5","ends_at" => "2025-07-04T16:54:17.946049Z","errors" => [],"is_backup" => false,"is_backup_access_code_available" => false,"is_external_modification_allowed" => false,"is_managed" => true,"is_offline_access_code" => false,"is_one_time_use" => false,"is_scheduled_on_device" => true,"is_waiting_for_code_assignment" => false,"name" => "My Access Code","pulled_backup_access_code_id" => nil,"starts_at" => "2025-07-02T16:54:17.946049Z","status" => "set","type" => "time_bound","warnings" => [],"workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"}
 ```
 {% endtab %}
 

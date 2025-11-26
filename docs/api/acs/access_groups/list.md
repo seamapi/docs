@@ -54,7 +54,7 @@ Returns a list of all access groups, filtered by user identity.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_system_id": "1b529056-1b04-450b-b3da-016b65a5017f",
   "acs_user_id": "ebe506e1-33ba-44e8-892b-2d12c1709cd8",
@@ -95,33 +95,13 @@ Returns a list of all access groups, filtered by user identity.
 #### Code:
 
 ```python
-seam.acs.access_groups.list(
-    acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f",
-    acs_user_id="ebe506e1-33ba-44e8-892b-2d12c1709cd8",
-    user_identity_id="9b1deda4-07e2-4e90-acde-5724b6ab7305",
-)
+seam.acs.access_groups.list(acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f", acs_user_id="ebe506e1-33ba-44e8-892b-2d12c1709cd8", user_identity_id="9b1deda4-07e2-4e90-acde-5724b6ab7305")
 ```
 
 #### Output:
 
 ```python
-[
-    AcsAccessGroup(
-        access_group_type="salto_ks_access_group",
-        access_group_type_display_name="Salto KS Access Group",
-        acs_access_group_id="3f448826-9875-4947-9519-e468090a4f7d",
-        acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f",
-        connected_account_id="daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-        created_at="2025-06-15T16:54:17.946453Z",
-        display_name="Main Group",
-        external_type="salto_ks_access_group",
-        external_type_display_name="Salto KS Access Group",
-        is_managed=true,
-        name="My Access Group",
-        warnings=[],
-        workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
-    )
-]
+[AcsAccessGroup(access_group_type="salto_ks_access_group", access_group_type_display_name="Salto KS Access Group", acs_access_group_id="3f448826-9875-4947-9519-e468090a4f7d", acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f", connected_account_id="daba7bd0-edb6-4bb9-a70b-f9ae08a0e301", created_at="2025-06-15T16:54:17.946453Z", display_name="Main Group", external_type="salto_ks_access_group", external_type_display_name="Salto KS Access Group", is_managed=true, name="My Access Group", warnings=[], workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0")]
 ```
 {% endtab %}
 
@@ -132,33 +112,13 @@ Returns a list of all access groups, filtered by user identity.
 #### Code:
 
 ```ruby
-seam.acs.access_groups.list(
-  acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f",
-  acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8",
-  user_identity_id: "9b1deda4-07e2-4e90-acde-5724b6ab7305",
-)
+seam.acs.access_groups.list(acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f", acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8", user_identity_id: "9b1deda4-07e2-4e90-acde-5724b6ab7305")
 ```
 
 #### Output:
 
 ```ruby
-[
-  {
-    "access_group_type" => "salto_ks_access_group",
-    "access_group_type_display_name" => "Salto KS Access Group",
-    "acs_access_group_id" => "3f448826-9875-4947-9519-e468090a4f7d",
-    "acs_system_id" => "1b529056-1b04-450b-b3da-016b65a5017f",
-    "connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-    "created_at" => "2025-06-15T16:54:17.946453Z",
-    "display_name" => "Main Group",
-    "external_type" => "salto_ks_access_group",
-    "external_type_display_name" => "Salto KS Access Group",
-    "is_managed" => true,
-    "name" => "My Access Group",
-    "warnings" => [],
-    "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
-  },
-]
+[{"access_group_type" => "salto_ks_access_group","access_group_type_display_name" => "Salto KS Access Group","acs_access_group_id" => "3f448826-9875-4947-9519-e468090a4f7d","acs_system_id" => "1b529056-1b04-450b-b3da-016b65a5017f","connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301","created_at" => "2025-06-15T16:54:17.946453Z","display_name" => "Main Group","external_type" => "salto_ks_access_group","external_type_display_name" => "Salto KS Access Group","is_managed" => true,"name" => "My Access Group","warnings" => [],"workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0"}]
 ```
 {% endtab %}
 
@@ -356,7 +316,7 @@ await seam.acs.accessGroups.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_system_id": "1b529056-1b04-450b-b3da-016b65a5017f",
   "acs_user_id": "ebe506e1-33ba-44e8-892b-2d12c1709cd8"
@@ -396,32 +356,13 @@ EOF
 #### Code:
 
 ```python
-seam.acs.access_groups.list(
-    acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f",
-    acs_user_id="ebe506e1-33ba-44e8-892b-2d12c1709cd8",
-)
+seam.acs.access_groups.list(acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f", acs_user_id="ebe506e1-33ba-44e8-892b-2d12c1709cd8")
 ```
 
 #### Output:
 
 ```python
-[
-    AcsAccessGroup(
-        access_group_type="salto_ks_access_group",
-        access_group_type_display_name="Salto KS Access Group",
-        acs_access_group_id="3f448826-9875-4947-9519-e468090a4f7d",
-        acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f",
-        connected_account_id="daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-        created_at="2025-06-15T16:54:17.946453Z",
-        display_name="Main Group",
-        external_type="salto_ks_access_group",
-        external_type_display_name="Salto KS Access Group",
-        is_managed=true,
-        name="My Access Group",
-        warnings=[],
-        workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
-    )
-]
+[AcsAccessGroup(access_group_type="salto_ks_access_group", access_group_type_display_name="Salto KS Access Group", acs_access_group_id="3f448826-9875-4947-9519-e468090a4f7d", acs_system_id="1b529056-1b04-450b-b3da-016b65a5017f", connected_account_id="daba7bd0-edb6-4bb9-a70b-f9ae08a0e301", created_at="2025-06-15T16:54:17.946453Z", display_name="Main Group", external_type="salto_ks_access_group", external_type_display_name="Salto KS Access Group", is_managed=true, name="My Access Group", warnings=[], workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0")]
 ```
 {% endtab %}
 
@@ -432,32 +373,13 @@ seam.acs.access_groups.list(
 #### Code:
 
 ```ruby
-seam.acs.access_groups.list(
-  acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f",
-  acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8",
-)
+seam.acs.access_groups.list(acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f", acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8")
 ```
 
 #### Output:
 
 ```ruby
-[
-  {
-    "access_group_type" => "salto_ks_access_group",
-    "access_group_type_display_name" => "Salto KS Access Group",
-    "acs_access_group_id" => "3f448826-9875-4947-9519-e468090a4f7d",
-    "acs_system_id" => "1b529056-1b04-450b-b3da-016b65a5017f",
-    "connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-    "created_at" => "2025-06-15T16:54:17.946453Z",
-    "display_name" => "Main Group",
-    "external_type" => "salto_ks_access_group",
-    "external_type_display_name" => "Salto KS Access Group",
-    "is_managed" => true,
-    "name" => "My Access Group",
-    "warnings" => [],
-    "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
-  },
-]
+[{"access_group_type" => "salto_ks_access_group","access_group_type_display_name" => "Salto KS Access Group","acs_access_group_id" => "3f448826-9875-4947-9519-e468090a4f7d","acs_system_id" => "1b529056-1b04-450b-b3da-016b65a5017f","connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301","created_at" => "2025-06-15T16:54:17.946453Z","display_name" => "Main Group","external_type" => "salto_ks_access_group","external_type_display_name" => "Salto KS Access Group","is_managed" => true,"name" => "My Access Group","warnings" => [],"workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0"}]
 ```
 {% endtab %}
 

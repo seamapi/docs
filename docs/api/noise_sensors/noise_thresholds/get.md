@@ -43,7 +43,7 @@ Returns a specified noise threshold for a noise sensor.
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "noise_threshold_id": "8282891b-c4da-4239-8f01-56089d44b80d"
 }
@@ -74,23 +74,13 @@ Returns a specified noise threshold for a noise sensor.
 #### Code:
 
 ```python
-seam.noise_sensors.noise_thresholds.get(
-    noise_threshold_id="8282891b-c4da-4239-8f01-56089d44b80d"
-)
+seam.noise_sensors.noise_thresholds.get(noise_threshold_id="8282891b-c4da-4239-8f01-56089d44b80d")
 ```
 
 #### Output:
 
 ```python
-NoiseThreshold(
-    device_id="736fc5bf-192d-4416-b879-66ff0195f2f7",
-    ends_daily_at="2025-06-19T12:38:44.000Z",
-    name="My Noise Sensor",
-    noise_threshold_decibels=50,
-    noise_threshold_id="8282891b-c4da-4239-8f01-56089d44b80d",
-    noise_threshold_nrs=40,
-    starts_daily_at="2025-06-20T18:29:57.000Z",
-)
+NoiseThreshold(device_id="736fc5bf-192d-4416-b879-66ff0195f2f7", ends_daily_at="2025-06-19T12:38:44.000Z", name="My Noise Sensor", noise_threshold_decibels=50, noise_threshold_id="8282891b-c4da-4239-8f01-56089d44b80d", noise_threshold_nrs=40, starts_daily_at="2025-06-20T18:29:57.000Z")
 ```
 {% endtab %}
 
@@ -107,15 +97,7 @@ seam.noise_sensors.noise_thresholds.get(noise_threshold_id: "8282891b-c4da-4239-
 #### Output:
 
 ```ruby
-{
-  "device_id" => "736fc5bf-192d-4416-b879-66ff0195f2f7",
-  "ends_daily_at" => "2025-06-19T12:38:44.000Z",
-  "name" => "My Noise Sensor",
-  "noise_threshold_decibels" => 50,
-  "noise_threshold_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
-  "noise_threshold_nrs" => 40,
-  "starts_daily_at" => "2025-06-20T18:29:57.000Z",
-}
+{"device_id" => "736fc5bf-192d-4416-b879-66ff0195f2f7","ends_daily_at" => "2025-06-19T12:38:44.000Z","name" => "My Noise Sensor","noise_threshold_decibels" => 50,"noise_threshold_id" => "8282891b-c4da-4239-8f01-56089d44b80d","noise_threshold_nrs" => 40,"starts_daily_at" => "2025-06-20T18:29:57.000Z"}
 ```
 {% endtab %}
 

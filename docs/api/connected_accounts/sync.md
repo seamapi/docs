@@ -35,7 +35,7 @@ Request a connected account sync attempt for the specified connected account.
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/sync" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "connected_account_id": "f886f890-4ca5-4ce5-b248-509cbfb6c279"
 }
@@ -56,9 +56,7 @@ Request a connected account sync attempt for the specified connected account.
 #### Code:
 
 ```python
-seam.connected_accounts.sync(
-    connected_account_id="f886f890-4ca5-4ce5-b248-509cbfb6c279"
-)
+seam.connected_accounts.sync(connected_account_id="f886f890-4ca5-4ce5-b248-509cbfb6c279")
 ```
 
 #### Output:

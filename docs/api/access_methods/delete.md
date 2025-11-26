@@ -38,7 +38,7 @@ Deletes an access method.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_method_id": "3f10d86c-526b-4b85-8788-cc1a74411b71"
 }

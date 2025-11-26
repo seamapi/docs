@@ -42,7 +42,7 @@ Returns a specified space.
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "space_id": "5f30970d-6ef5-4618-9e91-e701fbca6b63"
 }
@@ -77,13 +77,7 @@ seam.spaces.get(space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63")
 #### Output:
 
 ```python
-Space(
-    created_at="2025-06-16T16:54:17.946600Z",
-    display_name="My Space",
-    name="My Space",
-    space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63",
-    workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
-)
+Space(created_at="2025-06-16T16:54:17.946600Z", display_name="My Space", name="My Space", space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63", workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9")
 ```
 {% endtab %}
 
@@ -100,13 +94,7 @@ seam.spaces.get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63")
 #### Output:
 
 ```ruby
-{
-  "created_at" => "2025-06-16T16:54:17.946600Z",
-  "display_name" => "My Space",
-  "name" => "My Space",
-  "space_id" => "5f30970d-6ef5-4618-9e91-e701fbca6b63",
-  "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
-}
+{"created_at" => "2025-06-16T16:54:17.946600Z","display_name" => "My Space","name" => "My Space","space_id" => "5f30970d-6ef5-4618-9e91-e701fbca6b63","workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9"}
 ```
 {% endtab %}
 

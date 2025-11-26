@@ -45,7 +45,7 @@ Returns a list of all noise thresholds for a noise sensor.
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "a60d1a44-5727-4223-8b58-9c2455eb57fc"
 }
@@ -78,25 +78,13 @@ Returns a list of all noise thresholds for a noise sensor.
 #### Code:
 
 ```python
-seam.noise_sensors.noise_thresholds.list(
-    device_id="a60d1a44-5727-4223-8b58-9c2455eb57fc"
-)
+seam.noise_sensors.noise_thresholds.list(device_id="a60d1a44-5727-4223-8b58-9c2455eb57fc")
 ```
 
 #### Output:
 
 ```python
-[
-    NoiseThreshold(
-        device_id="a60d1a44-5727-4223-8b58-9c2455eb57fc",
-        ends_daily_at="2025-06-19T12:38:44.000Z",
-        name="My Noise Sensor",
-        noise_threshold_decibels=50,
-        noise_threshold_id="f8cef69d-625f-464c-aed4-287c06e0d7fe",
-        noise_threshold_nrs=40,
-        starts_daily_at="2025-06-20T18:29:57.000Z",
-    )
-]
+[NoiseThreshold(device_id="a60d1a44-5727-4223-8b58-9c2455eb57fc", ends_daily_at="2025-06-19T12:38:44.000Z", name="My Noise Sensor", noise_threshold_decibels=50, noise_threshold_id="f8cef69d-625f-464c-aed4-287c06e0d7fe", noise_threshold_nrs=40, starts_daily_at="2025-06-20T18:29:57.000Z")]
 ```
 {% endtab %}
 
@@ -113,17 +101,7 @@ seam.noise_sensors.noise_thresholds.list(device_id: "a60d1a44-5727-4223-8b58-9c2
 #### Output:
 
 ```ruby
-[
-  {
-    "device_id" => "a60d1a44-5727-4223-8b58-9c2455eb57fc",
-    "ends_daily_at" => "2025-06-19T12:38:44.000Z",
-    "name" => "My Noise Sensor",
-    "noise_threshold_decibels" => 50,
-    "noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe",
-    "noise_threshold_nrs" => 40,
-    "starts_daily_at" => "2025-06-20T18:29:57.000Z",
-  },
-]
+[{"device_id" => "a60d1a44-5727-4223-8b58-9c2455eb57fc","ends_daily_at" => "2025-06-19T12:38:44.000Z","name" => "My Noise Sensor","noise_threshold_decibels" => 50,"noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe","noise_threshold_nrs" => 40,"starts_daily_at" => "2025-06-20T18:29:57.000Z"}]
 ```
 {% endtab %}
 

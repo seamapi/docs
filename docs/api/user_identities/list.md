@@ -84,20 +84,7 @@ seam.user_identities.list()
 #### Output:
 
 ```python
-[
-    UserIdentity(
-        created_at="2025-06-16T16:54:17.946546Z",
-        display_name="Jane Doe",
-        email_address="jane@example.com",
-        errors=[],
-        full_name="Jane Doe",
-        phone_number="+1555551002",
-        user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-        user_identity_key="jane_doe",
-        warnings=[],
-        workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-    )
-]
+[UserIdentity(created_at="2025-06-16T16:54:17.946546Z", display_name="Jane Doe", email_address="jane@example.com", errors=[], full_name="Jane Doe", phone_number="+1555551002", user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b", user_identity_key="jane_doe", warnings=[], workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f")]
 ```
 {% endtab %}
 
@@ -114,20 +101,7 @@ seam.user_identities.list()
 #### Output:
 
 ```ruby
-[
-  {
-    "created_at" => "2025-06-16T16:54:17.946546Z",
-    "display_name" => "Jane Doe",
-    "email_address" => "jane@example.com",
-    "errors" => [],
-    "full_name" => "Jane Doe",
-    "phone_number" => "+1555551002",
-    "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
-    "user_identity_key" => "jane_doe",
-    "warnings" => [],
-    "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-  },
-]
+[{"created_at" => "2025-06-16T16:54:17.946546Z","display_name" => "Jane Doe","email_address" => "jane@example.com","errors" => [],"full_name" => "Jane Doe","phone_number" => "+1555551002","user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b","user_identity_key" => "jane_doe","warnings" => [],"workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"}]
 ```
 {% endtab %}
 
@@ -322,7 +296,7 @@ await seam.userIdentities.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "credential_manager_acs_system_id": "10698917-8527-4137-92ff-f1ce291bc287"
 }
@@ -358,28 +332,13 @@ EOF
 #### Code:
 
 ```python
-seam.user_identities.list(
-    credential_manager_acs_system_id="10698917-8527-4137-92ff-f1ce291bc287"
-)
+seam.user_identities.list(credential_manager_acs_system_id="10698917-8527-4137-92ff-f1ce291bc287")
 ```
 
 #### Output:
 
 ```python
-[
-    UserIdentity(
-        created_at="2025-06-16T16:54:17.946546Z",
-        display_name="Jane Doe",
-        email_address="jane@example.com",
-        errors=[],
-        full_name="Jane Doe",
-        phone_number="+1555551002",
-        user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-        user_identity_key="jane_doe",
-        warnings=[],
-        workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-    )
-]
+[UserIdentity(created_at="2025-06-16T16:54:17.946546Z", display_name="Jane Doe", email_address="jane@example.com", errors=[], full_name="Jane Doe", phone_number="+1555551002", user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b", user_identity_key="jane_doe", warnings=[], workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f")]
 ```
 {% endtab %}
 
@@ -396,20 +355,7 @@ seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-
 #### Output:
 
 ```ruby
-[
-  {
-    "created_at" => "2025-06-16T16:54:17.946546Z",
-    "display_name" => "Jane Doe",
-    "email_address" => "jane@example.com",
-    "errors" => [],
-    "full_name" => "Jane Doe",
-    "phone_number" => "+1555551002",
-    "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
-    "user_identity_key" => "jane_doe",
-    "warnings" => [],
-    "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-  },
-]
+[{"created_at" => "2025-06-16T16:54:17.946546Z","display_name" => "Jane Doe","email_address" => "jane@example.com","errors" => [],"full_name" => "Jane Doe","phone_number" => "+1555551002","user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b","user_identity_key" => "jane_doe","warnings" => [],"workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"}]
 ```
 {% endtab %}
 

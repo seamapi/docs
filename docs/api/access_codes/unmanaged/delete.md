@@ -35,7 +35,7 @@ Deletes an unmanaged access code.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_code_id": "95d54d42-477b-49d6-bd3a-5e8a40a5a78f"
 }
@@ -56,9 +56,7 @@ Deletes an unmanaged access code.
 #### Code:
 
 ```python
-seam.access_codes.unmanaged.delete(
-    access_code_id="95d54d42-477b-49d6-bd3a-5e8a40a5a78f"
-)
+seam.access_codes.unmanaged.delete(access_code_id="95d54d42-477b-49d6-bd3a-5e8a40a5a78f")
 ```
 
 #### Output:

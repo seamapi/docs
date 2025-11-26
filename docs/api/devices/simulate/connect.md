@@ -35,7 +35,7 @@ Simulates connecting a device to Seam.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/connect" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "5d703d4f-523f-42af-9439-618415ca651f"
 }

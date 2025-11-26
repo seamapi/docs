@@ -37,7 +37,7 @@ Unsuspends a specified suspended access system user, using the associated user i
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "6a42fbcf-da1a-40f8-8221-596774f97537",
   "acs_system_id": "264ea3f9-e483-469e-aada-c98c094d5521"
@@ -59,10 +59,7 @@ Unsuspends a specified suspended access system user, using the associated user i
 #### Code:
 
 ```python
-seam.acs.users.unsuspend(
-    user_identity_id="6a42fbcf-da1a-40f8-8221-596774f97537",
-    acs_system_id="264ea3f9-e483-469e-aada-c98c094d5521",
-)
+seam.acs.users.unsuspend(user_identity_id="6a42fbcf-da1a-40f8-8221-596774f97537", acs_system_id="264ea3f9-e483-469e-aada-c98c094d5521")
 ```
 
 #### Output:
@@ -79,10 +76,7 @@ Unsuspends a specified suspended access system user, using the associated user i
 #### Code:
 
 ```ruby
-seam.acs.users.unsuspend(
-  user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537",
-  acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521",
-)
+seam.acs.users.unsuspend(user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537", acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521")
 ```
 
 #### Output:
@@ -211,7 +205,7 @@ await seam.acs.users.unsuspend({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/unsuspend" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_user_id": "56dd7042-4134-4788-9212-53f25f2939e1"
 }

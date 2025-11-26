@@ -37,7 +37,7 @@ Removes a specified access system user from a specified access group, using the 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/remove_from_access_group" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "00ff2781-cce8-4b63-8c65-2b97647d790c",
   "acs_access_group_id": "d192f395-4c68-4c33-af41-97a7df5be576"
@@ -59,10 +59,7 @@ Removes a specified access system user from a specified access group, using the 
 #### Code:
 
 ```python
-seam.acs.users.remove_from_access_group(
-    user_identity_id="00ff2781-cce8-4b63-8c65-2b97647d790c",
-    acs_access_group_id="d192f395-4c68-4c33-af41-97a7df5be576",
-)
+seam.acs.users.remove_from_access_group(user_identity_id="00ff2781-cce8-4b63-8c65-2b97647d790c", acs_access_group_id="d192f395-4c68-4c33-af41-97a7df5be576")
 ```
 
 #### Output:
@@ -79,10 +76,7 @@ Removes a specified access system user from a specified access group, using the 
 #### Code:
 
 ```ruby
-seam.acs.users.remove_from_access_group(
-  user_identity_id: "00ff2781-cce8-4b63-8c65-2b97647d790c",
-  acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
-)
+seam.acs.users.remove_from_access_group(user_identity_id: "00ff2781-cce8-4b63-8c65-2b97647d790c", acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576")
 ```
 
 #### Output:
@@ -212,7 +206,7 @@ await seam.acs.users.removeFromAccessGroup({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/remove_from_access_group" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_user_id": "6808e2d9-b4eb-4ad8-b200-503877cd1057",
   "acs_access_group_id": "d192f395-4c68-4c33-af41-97a7df5be576"
@@ -234,10 +228,7 @@ EOF
 #### Code:
 
 ```python
-seam.acs.users.remove_from_access_group(
-    acs_user_id="6808e2d9-b4eb-4ad8-b200-503877cd1057",
-    acs_access_group_id="d192f395-4c68-4c33-af41-97a7df5be576",
-)
+seam.acs.users.remove_from_access_group(acs_user_id="6808e2d9-b4eb-4ad8-b200-503877cd1057", acs_access_group_id="d192f395-4c68-4c33-af41-97a7df5be576")
 ```
 
 #### Output:
@@ -254,10 +245,7 @@ None
 #### Code:
 
 ```ruby
-seam.acs.users.remove_from_access_group(
-  acs_user_id: "6808e2d9-b4eb-4ad8-b200-503877cd1057",
-  acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576",
-)
+seam.acs.users.remove_from_access_group(acs_user_id: "6808e2d9-b4eb-4ad8-b200-503877cd1057", acs_access_group_id: "d192f395-4c68-4c33-af41-97a7df5be576")
 ```
 
 #### Output:

@@ -47,7 +47,7 @@ Returns a specified user identity, using a user identity ID.
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b"
 }
@@ -87,18 +87,7 @@ seam.user_identities.get(user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b"
 #### Output:
 
 ```python
-UserIdentity(
-    created_at="2025-06-16T16:54:17.946546Z",
-    display_name="Jane Doe",
-    email_address="jane@example.com",
-    errors=[],
-    full_name="Jane Doe",
-    phone_number="+1555551002",
-    user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-    user_identity_key="jane_doe",
-    warnings=[],
-    workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-)
+UserIdentity(created_at="2025-06-16T16:54:17.946546Z", display_name="Jane Doe", email_address="jane@example.com", errors=[], full_name="Jane Doe", phone_number="+1555551002", user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b", user_identity_key="jane_doe", warnings=[], workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f")
 ```
 {% endtab %}
 
@@ -115,18 +104,7 @@ seam.user_identities.get(user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b
 #### Output:
 
 ```ruby
-{
-  "created_at" => "2025-06-16T16:54:17.946546Z",
-  "display_name" => "Jane Doe",
-  "email_address" => "jane@example.com",
-  "errors" => [],
-  "full_name" => "Jane Doe",
-  "phone_number" => "+1555551002",
-  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "user_identity_key" => "jane_doe",
-  "warnings" => [],
-  "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-}
+{"created_at" => "2025-06-16T16:54:17.946546Z","display_name" => "Jane Doe","email_address" => "jane@example.com","errors" => [],"full_name" => "Jane Doe","phone_number" => "+1555551002","user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b","user_identity_key" => "jane_doe","warnings" => [],"workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"}
 ```
 {% endtab %}
 
@@ -295,7 +273,7 @@ await seam.userIdentities.get({ user_identity_key: "jane_doe" });
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_key": "jane_doe"
 }
@@ -335,18 +313,7 @@ seam.user_identities.get(user_identity_key="jane_doe")
 #### Output:
 
 ```python
-UserIdentity(
-    created_at="2025-06-16T16:54:17.946546Z",
-    display_name="Jane Doe",
-    email_address="jane@example.com",
-    errors=[],
-    full_name="Jane Doe",
-    phone_number="+1555551002",
-    user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-    user_identity_key="jane_doe",
-    warnings=[],
-    workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-)
+UserIdentity(created_at="2025-06-16T16:54:17.946546Z", display_name="Jane Doe", email_address="jane@example.com", errors=[], full_name="Jane Doe", phone_number="+1555551002", user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b", user_identity_key="jane_doe", warnings=[], workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f")
 ```
 {% endtab %}
 
@@ -363,18 +330,7 @@ seam.user_identities.get(user_identity_key: "jane_doe")
 #### Output:
 
 ```ruby
-{
-  "created_at" => "2025-06-16T16:54:17.946546Z",
-  "display_name" => "Jane Doe",
-  "email_address" => "jane@example.com",
-  "errors" => [],
-  "full_name" => "Jane Doe",
-  "phone_number" => "+1555551002",
-  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "user_identity_key" => "jane_doe",
-  "warnings" => [],
-  "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
-}
+{"created_at" => "2025-06-16T16:54:17.946546Z","display_name" => "Jane Doe","email_address" => "jane@example.com","errors" => [],"full_name" => "Jane Doe","phone_number" => "+1555551002","user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b","user_identity_key" => "jane_doe","warnings" => [],"workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"}
 ```
 {% endtab %}
 

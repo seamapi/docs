@@ -58,7 +58,7 @@ Returns a specified Connect Webview.
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "connect_webview_id": "c4c30885-ec87-4b31-8d7b-9bc0678fa028"
 }
@@ -108,28 +108,7 @@ seam.connect_webviews.get(connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa0
 #### Output:
 
 ```python
-ConnectWebview(
-    accepted_capabilities=["lock", "thermostat"],
-    accepted_devices=[],
-    accepted_providers=["kwikset", "schlage", "smartthings", "yale"],
-    any_device_allowed=true,
-    any_provider_allowed=false,
-    authorized_at=None,
-    automatically_manage_new_devices=true,
-    connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028",
-    connected_account_id=None,
-    created_at="2025-06-14T16:54:17.946323Z",
-    custom_metadata={"id": "internalId1"},
-    custom_redirect_failure_url="https://example.com/failure-redirect",
-    custom_redirect_url="https://example.com/redirect",
-    device_selection_mode="none",
-    login_successful=false,
-    selected_provider=None,
-    status="pending",
-    url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
-    wait_for_device_creation=true,
-    workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0",
-)
+ConnectWebview(accepted_capabilities=["lock","thermostat"], accepted_devices=[], accepted_providers=["kwikset","schlage","smartthings","yale"], any_device_allowed=true, any_provider_allowed=false, authorized_at=None, automatically_manage_new_devices=true, connect_webview_id="c4c30885-ec87-4b31-8d7b-9bc0678fa028", connected_account_id=None, created_at="2025-06-14T16:54:17.946323Z", custom_metadata={"id":"internalId1"}, custom_redirect_failure_url="https://example.com/failure-redirect", custom_redirect_url="https://example.com/redirect", device_selection_mode="none", login_successful=false, selected_provider=None, status="pending", url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d", wait_for_device_creation=true, workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0")
 ```
 {% endtab %}
 
@@ -146,31 +125,7 @@ seam.connect_webviews.get(connect_webview_id: "c4c30885-ec87-4b31-8d7b-9bc0678fa
 #### Output:
 
 ```ruby
-{
-  "accepted_capabilities" => %w[lock thermostat],
-  "accepted_devices" => [],
-  "accepted_providers" => %w[kwikset schlage smartthings yale],
-  "any_device_allowed" => true,
-  "any_provider_allowed" => false,
-  "authorized_at" => nil,
-  "automatically_manage_new_devices" => true,
-  "connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028",
-  "connected_account_id" => nil,
-  "created_at" => "2025-06-14T16:54:17.946323Z",
-  "custom_metadata" => {
-    id: "internalId1",
-  },
-  "custom_redirect_failure_url" => "https://example.com/failure-redirect",
-  "custom_redirect_url" => "https://example.com/redirect",
-  "device_selection_mode" => "none",
-  "login_successful" => false,
-  "selected_provider" => nil,
-  "status" => "pending",
-  "url" =>
-    "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d",
-  "wait_for_device_creation" => true,
-  "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
-}
+{"accepted_capabilities" => ["lock","thermostat"],"accepted_devices" => [],"accepted_providers" => ["kwikset","schlage","smartthings","yale"],"any_device_allowed" => true,"any_provider_allowed" => false,"authorized_at" => nil,"automatically_manage_new_devices" => true,"connect_webview_id" => "c4c30885-ec87-4b31-8d7b-9bc0678fa028","connected_account_id" => nil,"created_at" => "2025-06-14T16:54:17.946323Z","custom_metadata" => {"id":"internalId1"},"custom_redirect_failure_url" => "https://example.com/failure-redirect","custom_redirect_url" => "https://example.com/redirect","device_selection_mode" => "none","login_successful" => false,"selected_provider" => nil,"status" => "pending","url" => "https://connect.getseam.com/connect_webviews/view?connect_webview_id=c4c30885-ec87-4b31-8d7b-9bc0678fa028&auth_token=2r2Rn8V5QUtxE79gMsTmLK58KkuqrwU8d","wait_for_device_creation" => true,"workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0"}
 ```
 {% endtab %}
 

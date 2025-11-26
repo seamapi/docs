@@ -35,7 +35,7 @@ Deletes a thermostat daily program.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/daily_programs/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "thermostat_daily_program_id": "a8665859-629e-4696-88b1-1eda1976250a"
 }
@@ -56,9 +56,7 @@ Deletes a thermostat daily program.
 #### Code:
 
 ```python
-seam.thermostats.daily_programs.delete(
-    thermostat_daily_program_id="a8665859-629e-4696-88b1-1eda1976250a"
-)
+seam.thermostats.daily_programs.delete(thermostat_daily_program_id="a8665859-629e-4696-88b1-1eda1976250a")
 ```
 
 #### Output:
@@ -75,9 +73,7 @@ Deletes a thermostat daily program.
 #### Code:
 
 ```ruby
-seam.thermostats.daily_programs.delete(
-  thermostat_daily_program_id: "a8665859-629e-4696-88b1-1eda1976250a",
-)
+seam.thermostats.daily_programs.delete(thermostat_daily_program_id: "a8665859-629e-4696-88b1-1eda1976250a")
 ```
 
 #### Output:

@@ -42,7 +42,7 @@ Sets a specified thermostat to cool mode.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/cool" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "408641ab-d0f5-475c-b8a5-9b9096405f9a",
   "cooling_set_point_fahrenheit": 75
@@ -72,21 +72,13 @@ Sets a specified thermostat to cool mode.
 #### Code:
 
 ```python
-seam.thermostats.cool(
-    device_id="408641ab-d0f5-475c-b8a5-9b9096405f9a", cooling_set_point_fahrenheit=75
-)
+seam.thermostats.cool(device_id="408641ab-d0f5-475c-b8a5-9b9096405f9a", cooling_set_point_fahrenheit=75)
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(
-    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
-    action_type="SET_HVAC_MODE",
-    error=None,
-    result={},
-    status="success",
-)
+ActionAttempt(action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d", action_type="SET_HVAC_MODE", error=None, result={}, status="success")
 ```
 {% endtab %}
 
@@ -97,23 +89,13 @@ Sets a specified thermostat to cool mode.
 #### Code:
 
 ```ruby
-seam.thermostats.cool(
-  device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
-  cooling_set_point_fahrenheit: 75,
-)
+seam.thermostats.cool(device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a", cooling_set_point_fahrenheit: 75)
 ```
 
 #### Output:
 
 ```ruby
-{
-  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
-  "action_type" => "SET_HVAC_MODE",
-  "error" => nil,
-  "result" => {
-  },
-  "status" => "success",
-}
+{"action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d","action_type" => "SET_HVAC_MODE","error" => nil,"result" => {},"status" => "success"}
 ```
 {% endtab %}
 

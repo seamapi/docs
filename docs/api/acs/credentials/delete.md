@@ -35,7 +35,7 @@ Deletes a specified credential.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_credential_id": "33bbceea-221e-48bd-8d38-aa72f88a1cab"
 }

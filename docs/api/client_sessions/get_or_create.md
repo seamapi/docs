@@ -51,7 +51,7 @@ Returns a client session with specific characteristics or creates a new client s
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/get_or_create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identifier_key": "jane_doe",
   "connect_webview_ids": [
@@ -94,31 +94,13 @@ Returns a client session with specific characteristics or creates a new client s
 #### Code:
 
 ```python
-seam.client_sessions.get_or_create(
-    user_identifier_key="jane_doe",
-    connect_webview_ids=["5e297cfe-23df-4638-bb87-08c4f0f8233b"],
-    connected_account_ids=["f87f0ab7-b8d7-44aa-9e59-3239b209570e"],
-    user_identity_id="71ff7f71-2cf4-458a-8db4-6ad539c8b66a",
-    expires_at="2025-06-18T06:10:42.000Z",
-)
+seam.client_sessions.get_or_create(user_identifier_key="jane_doe", connect_webview_ids=["5e297cfe-23df-4638-bb87-08c4f0f8233b"], connected_account_ids=["f87f0ab7-b8d7-44aa-9e59-3239b209570e"], user_identity_id="71ff7f71-2cf4-458a-8db4-6ad539c8b66a", expires_at="2025-06-18T06:10:42.000Z")
 ```
 
 #### Output:
 
 ```python
-ClientSession(
-    client_session_id="c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
-    connect_webview_ids=["5e297cfe-23df-4638-bb87-08c4f0f8233b"],
-    connected_account_ids=["f87f0ab7-b8d7-44aa-9e59-3239b209570e"],
-    created_at="2025-06-15T16:54:17.946309Z",
-    customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-    device_count=1,
-    expires_at="2025-06-18T06:10:42.000Z",
-    token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    user_identifier_key="jane_doe",
-    user_identity_id="71ff7f71-2cf4-458a-8db4-6ad539c8b66a",
-    workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
-)
+ClientSession(client_session_id="c2cbd177-1ace-414b-bb1e-9f129e4a05c1", connect_webview_ids=["5e297cfe-23df-4638-bb87-08c4f0f8233b"], connected_account_ids=["f87f0ab7-b8d7-44aa-9e59-3239b209570e"], created_at="2025-06-15T16:54:17.946309Z", customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", device_count=1, expires_at="2025-06-18T06:10:42.000Z", token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq", user_identifier_key="jane_doe", user_identity_id="71ff7f71-2cf4-458a-8db4-6ad539c8b66a", workspace_id="b887bf84-9849-4454-a562-cf84293d9781")
 ```
 {% endtab %}
 
@@ -129,31 +111,13 @@ Returns a client session with specific characteristics or creates a new client s
 #### Code:
 
 ```ruby
-seam.client_sessions.get_or_create(
-  user_identifier_key: "jane_doe",
-  connect_webview_ids: ["5e297cfe-23df-4638-bb87-08c4f0f8233b"],
-  connected_account_ids: ["f87f0ab7-b8d7-44aa-9e59-3239b209570e"],
-  user_identity_id: "71ff7f71-2cf4-458a-8db4-6ad539c8b66a",
-  expires_at: "2025-06-18T06:10:42.000Z",
-)
+seam.client_sessions.get_or_create(user_identifier_key: "jane_doe", connect_webview_ids: ["5e297cfe-23df-4638-bb87-08c4f0f8233b"], connected_account_ids: ["f87f0ab7-b8d7-44aa-9e59-3239b209570e"], user_identity_id: "71ff7f71-2cf4-458a-8db4-6ad539c8b66a", expires_at: "2025-06-18T06:10:42.000Z")
 ```
 
 #### Output:
 
 ```ruby
-{
-  "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
-  "connect_webview_ids" => ["5e297cfe-23df-4638-bb87-08c4f0f8233b"],
-  "connected_account_ids" => ["f87f0ab7-b8d7-44aa-9e59-3239b209570e"],
-  "created_at" => "2025-06-15T16:54:17.946309Z",
-  "customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57",
-  "device_count" => 1,
-  "expires_at" => "2025-06-18T06:10:42.000Z",
-  "token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-  "user_identifier_key" => "jane_doe",
-  "user_identity_id" => "71ff7f71-2cf4-458a-8db4-6ad539c8b66a",
-  "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
-}
+{"client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1","connect_webview_ids" => ["5e297cfe-23df-4638-bb87-08c4f0f8233b"],"connected_account_ids" => ["f87f0ab7-b8d7-44aa-9e59-3239b209570e"],"created_at" => "2025-06-15T16:54:17.946309Z","customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57","device_count" => 1,"expires_at" => "2025-06-18T06:10:42.000Z","token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq","user_identifier_key" => "jane_doe","user_identity_id" => "71ff7f71-2cf4-458a-8db4-6ad539c8b66a","workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781"}
 ```
 {% endtab %}
 
