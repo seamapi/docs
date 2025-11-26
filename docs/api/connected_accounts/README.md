@@ -783,6 +783,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 
 <summary>Properties</summary>
 
+<strong><code>account_type</code></strong> <i>String</i>
+
+  Type of connected account.
+
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the connected account, present when connected_account_id is provided.
@@ -794,6 +798,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with this connected account, if any.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
