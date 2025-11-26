@@ -55,7 +55,7 @@ Returns a list of all connected accounts for a specified user identifier key.
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "user_identifier_key": "2f393937-1405-4b1a-933f-34c97bfb3c56",
   "limit": 50
@@ -97,13 +97,33 @@ Returns a list of all connected accounts for a specified user identifier key.
 #### Code:
 
 ```python
-seam.connected_accounts.list(user_identifier_key="2f393937-1405-4b1a-933f-34c97bfb3c56", limit=50)
+seam.connected_accounts.list(
+    user_identifier_key="2f393937-1405-4b1a-933f-34c97bfb3c56", limit=50
+)
 ```
 
 #### Output:
 
 ```python
-[ConnectedAccount(account_type="salto_space", account_type_display_name="Salto Space", automatically_manage_new_devices=true, connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d", created_at="2025-06-15T16:54:17.946329Z", custom_metadata={"id":"internalId1"}, errors=[], user_identifier={"api_url":"https://example.com/api","email":"jane_doe@example.com","exclusive":true,"phone":"+1555551004","username":"jane_doe"}, warnings=[])]
+[
+    ConnectedAccount(
+        account_type="salto_space",
+        account_type_display_name="Salto Space",
+        automatically_manage_new_devices=true,
+        connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
+        created_at="2025-06-15T16:54:17.946329Z",
+        custom_metadata={"id": "internalId1"},
+        errors=[],
+        user_identifier={
+            "api_url": "https://example.com/api",
+            "email": "jane_doe@example.com",
+            "exclusive": true,
+            "phone": "+1555551004",
+            "username": "jane_doe",
+        },
+        warnings=[],
+    )
+]
 ```
 {% endtab %}
 
@@ -120,7 +140,27 @@ seam.connected_accounts.list(user_identifier_key: "2f393937-1405-4b1a-933f-34c97
 #### Output:
 
 ```ruby
-[{"account_type" => "salto_space","account_type_display_name" => "Salto Space","automatically_manage_new_devices" => true,"connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d","created_at" => "2025-06-15T16:54:17.946329Z","custom_metadata" => {"id":"internalId1"},"errors" => [],"user_identifier" => {"api_url":"https://example.com/api","email":"jane_doe@example.com","exclusive":true,"phone":"+1555551004","username":"jane_doe"},"warnings" => []}]
+[
+  {
+    "account_type" => "salto_space",
+    "account_type_display_name" => "Salto Space",
+    "automatically_manage_new_devices" => true,
+    "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    "created_at" => "2025-06-15T16:54:17.946329Z",
+    "custom_metadata" => {
+      id: "internalId1",
+    },
+    "errors" => [],
+    "user_identifier" => {
+      api_url: "https://example.com/api",
+      email: "jane_doe@example.com",
+      exclusive: true,
+      phone: "+1555551004",
+      username: "jane_doe",
+    },
+    "warnings" => [],
+  },
+]
 ```
 {% endtab %}
 
@@ -345,7 +385,7 @@ await seam.connectedAccounts.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "customer_ids": [
     "e387e15f-be27-47ad-881f-4a6fc5460c57"
@@ -389,13 +429,33 @@ EOF
 #### Code:
 
 ```python
-seam.connected_accounts.list(customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"], limit=50)
+seam.connected_accounts.list(
+    customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"], limit=50
+)
 ```
 
 #### Output:
 
 ```python
-[ConnectedAccount(account_type="salto_space", account_type_display_name="Salto Space", automatically_manage_new_devices=true, connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d", created_at="2025-06-15T16:54:17.946329Z", custom_metadata={"id":"internalId1"}, errors=[], user_identifier={"api_url":"https://example.com/api","email":"jane_doe@example.com","exclusive":true,"phone":"+1555551004","username":"jane_doe"}, warnings=[])]
+[
+    ConnectedAccount(
+        account_type="salto_space",
+        account_type_display_name="Salto Space",
+        automatically_manage_new_devices=true,
+        connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
+        created_at="2025-06-15T16:54:17.946329Z",
+        custom_metadata={"id": "internalId1"},
+        errors=[],
+        user_identifier={
+            "api_url": "https://example.com/api",
+            "email": "jane_doe@example.com",
+            "exclusive": true,
+            "phone": "+1555551004",
+            "username": "jane_doe",
+        },
+        warnings=[],
+    )
+]
 ```
 {% endtab %}
 
@@ -412,7 +472,27 @@ seam.connected_accounts.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c5
 #### Output:
 
 ```ruby
-[{"account_type" => "salto_space","account_type_display_name" => "Salto Space","automatically_manage_new_devices" => true,"connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d","created_at" => "2025-06-15T16:54:17.946329Z","custom_metadata" => {"id":"internalId1"},"errors" => [],"user_identifier" => {"api_url":"https://example.com/api","email":"jane_doe@example.com","exclusive":true,"phone":"+1555551004","username":"jane_doe"},"warnings" => []}]
+[
+  {
+    "account_type" => "salto_space",
+    "account_type_display_name" => "Salto Space",
+    "automatically_manage_new_devices" => true,
+    "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    "created_at" => "2025-06-15T16:54:17.946329Z",
+    "custom_metadata" => {
+      id: "internalId1",
+    },
+    "errors" => [],
+    "user_identifier" => {
+      api_url: "https://example.com/api",
+      email: "jane_doe@example.com",
+      exclusive: true,
+      phone: "+1555551004",
+      username: "jane_doe",
+    },
+    "warnings" => [],
+  },
+]
 ```
 {% endtab %}
 
@@ -546,7 +626,7 @@ await seam.connectedAccounts.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "custom_metadata_has": {
     "id": "internalId1"
@@ -590,13 +670,31 @@ EOF
 #### Code:
 
 ```python
-seam.connected_accounts.list(custom_metadata_has={"id":"internalId1"}, limit=50)
+seam.connected_accounts.list(custom_metadata_has={"id": "internalId1"}, limit=50)
 ```
 
 #### Output:
 
 ```python
-[ConnectedAccount(account_type="salto_space", account_type_display_name="Salto Space", automatically_manage_new_devices=true, connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d", created_at="2025-06-15T16:54:17.946329Z", custom_metadata={"id":"internalId1"}, errors=[], user_identifier={"api_url":"https://example.com/api","email":"jane_doe@example.com","exclusive":true,"phone":"+1555551004","username":"jane_doe"}, warnings=[])]
+[
+    ConnectedAccount(
+        account_type="salto_space",
+        account_type_display_name="Salto Space",
+        automatically_manage_new_devices=true,
+        connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
+        created_at="2025-06-15T16:54:17.946329Z",
+        custom_metadata={"id": "internalId1"},
+        errors=[],
+        user_identifier={
+            "api_url": "https://example.com/api",
+            "email": "jane_doe@example.com",
+            "exclusive": true,
+            "phone": "+1555551004",
+            "username": "jane_doe",
+        },
+        warnings=[],
+    )
+]
 ```
 {% endtab %}
 
@@ -607,13 +705,33 @@ seam.connected_accounts.list(custom_metadata_has={"id":"internalId1"}, limit=50)
 #### Code:
 
 ```ruby
-seam.connected_accounts.list(custom_metadata_has: {"id":"internalId1"}, limit: 50)
+seam.connected_accounts.list(custom_metadata_has: { id: "internalId1" }, limit: 50)
 ```
 
 #### Output:
 
 ```ruby
-[{"account_type" => "salto_space","account_type_display_name" => "Salto Space","automatically_manage_new_devices" => true,"connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d","created_at" => "2025-06-15T16:54:17.946329Z","custom_metadata" => {"id":"internalId1"},"errors" => [],"user_identifier" => {"api_url":"https://example.com/api","email":"jane_doe@example.com","exclusive":true,"phone":"+1555551004","username":"jane_doe"},"warnings" => []}]
+[
+  {
+    "account_type" => "salto_space",
+    "account_type_display_name" => "Salto Space",
+    "automatically_manage_new_devices" => true,
+    "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
+    "created_at" => "2025-06-15T16:54:17.946329Z",
+    "custom_metadata" => {
+      id: "internalId1",
+    },
+    "errors" => [],
+    "user_identifier" => {
+      api_url: "https://example.com/api",
+      email: "jane_doe@example.com",
+      exclusive: true,
+      phone: "+1555551004",
+      username: "jane_doe",
+    },
+    "warnings" => [],
+  },
+]
 ```
 {% endtab %}
 

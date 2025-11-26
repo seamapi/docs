@@ -38,7 +38,7 @@ Deletes an Access Grant.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "access_grant_id": "403ea27b-af76-4a48-ace9-8f9498f4c25c"
 }

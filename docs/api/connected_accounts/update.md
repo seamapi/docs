@@ -37,7 +37,7 @@ Updates a connected account.
 ```curl
 curl --include --request POST "https://connect.getseam.com/connected_accounts/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
   "automatically_manage_new_devices": true,
@@ -62,7 +62,11 @@ Updates a connected account.
 #### Code:
 
 ```python
-seam.connected_accounts.update(connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d", automatically_manage_new_devices=true, custom_metadata={"id":"internalId1"})
+seam.connected_accounts.update(
+    connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
+    automatically_manage_new_devices=true,
+    custom_metadata={"id": "internalId1"},
+)
 ```
 
 #### Output:
@@ -79,7 +83,13 @@ Updates a connected account.
 #### Code:
 
 ```ruby
-seam.connected_accounts.update(connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d", automatically_manage_new_devices: true, custom_metadata: {"id":"internalId1"})
+seam.connected_accounts.update(
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
+  automatically_manage_new_devices: true,
+  custom_metadata: {
+    id: "internalId1",
+  },
+)
 ```
 
 #### Output:

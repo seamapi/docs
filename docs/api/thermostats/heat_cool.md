@@ -43,7 +43,7 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/heat_cool" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "32f974cc-e817-4bd7-b7f1-be92c80884a1",
   "heating_set_point_celsius": 20,
@@ -74,13 +74,23 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 #### Code:
 
 ```python
-seam.thermostats.heat_cool(device_id="32f974cc-e817-4bd7-b7f1-be92c80884a1", heating_set_point_celsius=20, cooling_set_point_celsius=25)
+seam.thermostats.heat_cool(
+    device_id="32f974cc-e817-4bd7-b7f1-be92c80884a1",
+    heating_set_point_celsius=20,
+    cooling_set_point_celsius=25,
+)
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d", action_type="SET_HVAC_MODE", error=None, result={}, status="success")
+ActionAttempt(
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
+)
 ```
 {% endtab %}
 
@@ -91,13 +101,24 @@ Sets a specified thermostat to heat-cool ("auto") mode.
 #### Code:
 
 ```ruby
-seam.thermostats.heat_cool(device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1", heating_set_point_celsius: 20, cooling_set_point_celsius: 25)
+seam.thermostats.heat_cool(
+  device_id: "32f974cc-e817-4bd7-b7f1-be92c80884a1",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
+)
 ```
 
 #### Output:
 
 ```ruby
-{"action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d","action_type" => "SET_HVAC_MODE","error" => nil,"result" => {},"status" => "success"}
+{
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
+}
 ```
 {% endtab %}
 

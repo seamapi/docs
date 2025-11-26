@@ -49,7 +49,7 @@ Returns a list of events for a specified device.
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
   "since": "2025-05-15T00:00:00.000Z",
@@ -85,13 +85,28 @@ Returns a list of events for a specified device.
 #### Code:
 
 ```python
-seam.events.list(device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2", since="2025-05-15T00:00:00.000Z", limit=10)
+seam.events.list(
+    device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+    since="2025-05-15T00:00:00.000Z",
+    limit=10,
+)
 ```
 
 #### Output:
 
 ```python
-[SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2", event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.", event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a", event_type="device.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")]
+[
+    SeamEvent(
+        connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+        created_at="2025-06-15T16:54:18.000000Z",
+        device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+        event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+        event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        event_type="device.connected",
+        occurred_at="2025-06-15T16:54:17.946329Z",
+        workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    )
+]
 ```
 {% endtab %}
 
@@ -102,13 +117,29 @@ Returns a list of events for a specified device.
 #### Code:
 
 ```ruby
-seam.events.list(device_id: "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2", since: "2025-05-15T00:00:00.000Z", limit: 10)
+seam.events.list(
+  device_id: "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+  since: "2025-05-15T00:00:00.000Z",
+  limit: 10,
+)
 ```
 
 #### Output:
 
 ```ruby
-[{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2","event_description" => "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.","event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a","event_type" => "device.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}]
+[
+  {
+    "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    "created_at" => "2025-06-15T16:54:18.000000Z",
+    "device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+    "event_description" =>
+      "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+    "event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    "event_type" => "device.connected",
+    "occurred_at" => "2025-06-15T16:54:17.946329Z",
+    "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  },
+]
 ```
 {% endtab %}
 
@@ -466,7 +497,7 @@ await seam.events.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "customer_ids": [
     "e387e15f-be27-47ad-881f-4a6fc5460c57"
@@ -507,13 +538,28 @@ EOF
 #### Code:
 
 ```python
-seam.events.list(customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"], between=["2025-05-15T00:00:00.000Z","2025-06-20T23:59:59.999Z"], limit=10)
+seam.events.list(
+    customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"],
+    between=["2025-05-15T00:00:00.000Z", "2025-06-20T23:59:59.999Z"],
+    limit=10,
+)
 ```
 
 #### Output:
 
 ```python
-[SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2", event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.", event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a", event_type="device.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")]
+[
+    SeamEvent(
+        connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+        created_at="2025-06-15T16:54:18.000000Z",
+        device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+        event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+        event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        event_type="device.connected",
+        occurred_at="2025-06-15T16:54:17.946329Z",
+        workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    )
+]
 ```
 {% endtab %}
 
@@ -524,13 +570,29 @@ seam.events.list(customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"], between=
 #### Code:
 
 ```ruby
-seam.events.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"], between: ["2025-05-15T00:00:00.000Z","2025-06-20T23:59:59.999Z"], limit: 10)
+seam.events.list(
+  customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
+  between: %w[2025-05-15T00:00:00.000Z 2025-06-20T23:59:59.999Z],
+  limit: 10,
+)
 ```
 
 #### Output:
 
 ```ruby
-[{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2","event_description" => "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.","event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a","event_type" => "device.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}]
+[
+  {
+    "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    "created_at" => "2025-06-15T16:54:18.000000Z",
+    "device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+    "event_description" =>
+      "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+    "event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    "event_type" => "device.connected",
+    "occurred_at" => "2025-06-15T16:54:17.946329Z",
+    "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  },
+]
 ```
 {% endtab %}
 
@@ -646,7 +708,7 @@ await seam.events.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "acs_system_id": "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
   "since": "2025-05-15T00:00:00.000Z",
@@ -682,13 +744,28 @@ EOF
 #### Code:
 
 ```python
-seam.events.list(acs_system_id="5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099", since="2025-05-15T00:00:00.000Z", limit=10)
+seam.events.list(
+    acs_system_id="5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
+    since="2025-05-15T00:00:00.000Z",
+    limit=10,
+)
 ```
 
 #### Output:
 
 ```python
-[SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", acs_system_id="5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099", event_description="An access system was connected.", event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a", event_type="acs_system.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")]
+[
+    SeamEvent(
+        connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+        created_at="2025-06-15T16:54:18.000000Z",
+        acs_system_id="5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
+        event_description="An access system was connected.",
+        event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        event_type="acs_system.connected",
+        occurred_at="2025-06-15T16:54:17.946329Z",
+        workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    )
+]
 ```
 {% endtab %}
 
@@ -699,13 +776,28 @@ seam.events.list(acs_system_id="5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099", since="20
 #### Code:
 
 ```ruby
-seam.events.list(acs_system_id: "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099", since: "2025-05-15T00:00:00.000Z", limit: 10)
+seam.events.list(
+  acs_system_id: "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
+  since: "2025-05-15T00:00:00.000Z",
+  limit: 10,
+)
 ```
 
 #### Output:
 
 ```ruby
-[{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","acs_system_id" => "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099","event_description" => "An access system was connected.","event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a","event_type" => "acs_system.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}]
+[
+  {
+    "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    "created_at" => "2025-06-15T16:54:18.000000Z",
+    "acs_system_id" => "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
+    "event_description" => "An access system was connected.",
+    "event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    "event_type" => "acs_system.connected",
+    "occurred_at" => "2025-06-15T16:54:17.946329Z",
+    "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  },
+]
 ```
 {% endtab %}
 
@@ -821,7 +913,7 @@ await seam.events.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "access_code_id": "37ba4a46-c9a7-47a2-b761-f63d02acbea4",
   "since": "2025-05-15T00:00:00.000Z",
@@ -858,13 +950,29 @@ EOF
 #### Code:
 
 ```python
-seam.events.list(access_code_id="37ba4a46-c9a7-47a2-b761-f63d02acbea4", since="2025-05-15T00:00:00.000Z", limit=10)
+seam.events.list(
+    access_code_id="37ba4a46-c9a7-47a2-b761-f63d02acbea4",
+    since="2025-05-15T00:00:00.000Z",
+    limit=10,
+)
 ```
 
 #### Output:
 
 ```python
-[SeamEvent(access_code_id="37ba4a46-c9a7-47a2-b761-f63d02acbea4", connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2", event_description="An access code was created.", event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a", event_type="access_code.created", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")]
+[
+    SeamEvent(
+        access_code_id="37ba4a46-c9a7-47a2-b761-f63d02acbea4",
+        connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+        created_at="2025-06-15T16:54:18.000000Z",
+        device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+        event_description="An access code was created.",
+        event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        event_type="access_code.created",
+        occurred_at="2025-06-15T16:54:17.946329Z",
+        workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    )
+]
 ```
 {% endtab %}
 
@@ -875,13 +983,29 @@ seam.events.list(access_code_id="37ba4a46-c9a7-47a2-b761-f63d02acbea4", since="2
 #### Code:
 
 ```ruby
-seam.events.list(access_code_id: "37ba4a46-c9a7-47a2-b761-f63d02acbea4", since: "2025-05-15T00:00:00.000Z", limit: 10)
+seam.events.list(
+  access_code_id: "37ba4a46-c9a7-47a2-b761-f63d02acbea4",
+  since: "2025-05-15T00:00:00.000Z",
+  limit: 10,
+)
 ```
 
 #### Output:
 
 ```ruby
-[{"access_code_id" => "37ba4a46-c9a7-47a2-b761-f63d02acbea4","connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2","event_description" => "An access code was created.","event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a","event_type" => "access_code.created","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}]
+[
+  {
+    "access_code_id" => "37ba4a46-c9a7-47a2-b761-f63d02acbea4",
+    "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    "created_at" => "2025-06-15T16:54:18.000000Z",
+    "device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+    "event_description" => "An access code was created.",
+    "event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    "event_type" => "access_code.created",
+    "occurred_at" => "2025-06-15T16:54:17.946329Z",
+    "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  },
+]
 ```
 {% endtab %}
 
@@ -998,7 +1122,7 @@ await seam.events.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "event_type": "device.connected",
   "since": "2025-05-15T00:00:00.000Z",
@@ -1034,13 +1158,26 @@ EOF
 #### Code:
 
 ```python
-seam.events.list(event_type="device.connected", since="2025-05-15T00:00:00.000Z", limit=10)
+seam.events.list(
+    event_type="device.connected", since="2025-05-15T00:00:00.000Z", limit=10
+)
 ```
 
 #### Output:
 
 ```python
-[SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2", event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.", event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a", event_type="device.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")]
+[
+    SeamEvent(
+        connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+        created_at="2025-06-15T16:54:18.000000Z",
+        device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+        event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+        event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        event_type="device.connected",
+        occurred_at="2025-06-15T16:54:17.946329Z",
+        workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    )
+]
 ```
 {% endtab %}
 
@@ -1057,7 +1194,19 @@ seam.events.list(event_type: "device.connected", since: "2025-05-15T00:00:00.000
 #### Output:
 
 ```ruby
-[{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2","event_description" => "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.","event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a","event_type" => "device.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}]
+[
+  {
+    "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    "created_at" => "2025-06-15T16:54:18.000000Z",
+    "device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+    "event_description" =>
+      "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+    "event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    "event_type" => "device.connected",
+    "occurred_at" => "2025-06-15T16:54:17.946329Z",
+    "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  },
+]
 ```
 {% endtab %}
 
@@ -1173,7 +1322,7 @@ await seam.events.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
   "since": "2025-05-15T00:00:00.000Z",
@@ -1209,13 +1358,28 @@ EOF
 #### Code:
 
 ```python
-seam.events.list(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", since="2025-05-15T00:00:00.000Z", limit=10)
+seam.events.list(
+    connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    since="2025-05-15T00:00:00.000Z",
+    limit=10,
+)
 ```
 
 #### Output:
 
 ```python
-[SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2", event_description="A connected account was connected for the first time or was reconnected after being disconnected.", event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a", event_type="connected_account.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")]
+[
+    SeamEvent(
+        connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+        created_at="2025-06-15T16:54:18.000000Z",
+        device_id="b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+        event_description="A connected account was connected for the first time or was reconnected after being disconnected.",
+        event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        event_type="connected_account.connected",
+        occurred_at="2025-06-15T16:54:17.946329Z",
+        workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    )
+]
 ```
 {% endtab %}
 
@@ -1226,13 +1390,29 @@ seam.events.list(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", si
 #### Code:
 
 ```ruby
-seam.events.list(connected_account_id: "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", since: "2025-05-15T00:00:00.000Z", limit: 10)
+seam.events.list(
+  connected_account_id: "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+  since: "2025-05-15T00:00:00.000Z",
+  limit: 10,
+)
 ```
 
 #### Output:
 
 ```ruby
-[{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2","event_description" => "A connected account was connected for the first time or was reconnected after being disconnected.","event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a","event_type" => "connected_account.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}]
+[
+  {
+    "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    "created_at" => "2025-06-15T16:54:18.000000Z",
+    "device_id" => "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
+    "event_description" =>
+      "A connected account was connected for the first time or was reconnected after being disconnected.",
+    "event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    "event_type" => "connected_account.connected",
+    "occurred_at" => "2025-06-15T16:54:17.946329Z",
+    "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  },
+]
 ```
 {% endtab %}
 
@@ -1348,7 +1528,7 @@ await seam.events.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "connect_webview_id": "775bc894-c51a-47e8-b7ac-f92292c62d63",
   "since": "2025-05-15T00:00:00.000Z",
@@ -1384,13 +1564,28 @@ EOF
 #### Code:
 
 ```python
-seam.events.list(connect_webview_id="775bc894-c51a-47e8-b7ac-f92292c62d63", since="2025-05-15T00:00:00.000Z", limit=10)
+seam.events.list(
+    connect_webview_id="775bc894-c51a-47e8-b7ac-f92292c62d63",
+    since="2025-05-15T00:00:00.000Z",
+    limit=10,
+)
 ```
 
 #### Output:
 
 ```python
-[SeamEvent(connect_webview_id="775bc894-c51a-47e8-b7ac-f92292c62d63", connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", event_description="A Connect Webview login succeeded.", event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a", event_type="connect_webview.login_succeeded", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")]
+[
+    SeamEvent(
+        connect_webview_id="775bc894-c51a-47e8-b7ac-f92292c62d63",
+        connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+        created_at="2025-06-15T16:54:18.000000Z",
+        event_description="A Connect Webview login succeeded.",
+        event_id="6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        event_type="connect_webview.login_succeeded",
+        occurred_at="2025-06-15T16:54:17.946329Z",
+        workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    )
+]
 ```
 {% endtab %}
 
@@ -1401,13 +1596,28 @@ seam.events.list(connect_webview_id="775bc894-c51a-47e8-b7ac-f92292c62d63", sinc
 #### Code:
 
 ```ruby
-seam.events.list(connect_webview_id: "775bc894-c51a-47e8-b7ac-f92292c62d63", since: "2025-05-15T00:00:00.000Z", limit: 10)
+seam.events.list(
+  connect_webview_id: "775bc894-c51a-47e8-b7ac-f92292c62d63",
+  since: "2025-05-15T00:00:00.000Z",
+  limit: 10,
+)
 ```
 
 #### Output:
 
 ```ruby
-[{"connect_webview_id" => "775bc894-c51a-47e8-b7ac-f92292c62d63","connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","event_description" => "A Connect Webview login succeeded.","event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a","event_type" => "connect_webview.login_succeeded","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}]
+[
+  {
+    "connect_webview_id" => "775bc894-c51a-47e8-b7ac-f92292c62d63",
+    "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    "created_at" => "2025-06-15T16:54:18.000000Z",
+    "event_description" => "A Connect Webview login succeeded.",
+    "event_id" => "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    "event_type" => "connect_webview.login_succeeded",
+    "occurred_at" => "2025-06-15T16:54:17.946329Z",
+    "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+  },
+]
 ```
 {% endtab %}
 
