@@ -16,4 +16,4 @@ We have designed the Seam mobile SDKs to provide the flexibility to support a ra
 4. The lock verifies the mobile key, confirms that the key can access this lock, and sends a success response back to the app.
 5. The lock successfully unlocks!
 
-<figure><img src="broken-reference" alt=""><figcaption><p>Example of Unlock sequence in a Mobile App</p></figcaption></figure>
+<figure><img src="/broken/files/NFYFPnU5qryxLx39zMJo" alt=""><figcaption><p>Example of Unlock sequence in a Mobile App</p></figcaption></figure>

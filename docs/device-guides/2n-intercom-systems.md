@@ -36,7 +36,7 @@ The setup guide covers:
 * Creating API credentials
 * Connecting to Seam through the Connect Webview
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>System Set Up Guide</strong></td><td><a href="broken-reference">Broken link</a></td><td><a href="../device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions.md">2n-system-set-up-instructions.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>System Set Up Guide</strong></td><td><a href="/broken/files/8ok3QS0mVbZ7KmKxRE1K">Broken link</a></td><td><a href="../device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions.md">2n-system-set-up-instructions.md</a></td></tr></tbody></table>
 
 ***
 

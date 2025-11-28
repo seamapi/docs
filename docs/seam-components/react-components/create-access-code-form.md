@@ -10,7 +10,7 @@ The create access code form component allows you to create an access code.
 
 ### Size: Mobile
 
-<figure><img src="broken-reference" alt="" width="327"><figcaption></figcaption></figure>
+<figure><img src="/broken/files/SGn91AOd1QNniIfcv0JX" alt="" width="327"><figcaption></figcaption></figure>
 
 ### Props
 

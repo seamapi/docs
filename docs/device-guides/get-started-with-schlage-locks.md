@@ -128,7 +128,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **password:** 1234
 * **2-factor-auth:** 123456
 
-<figure><img src="broken-reference" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
+<figure><img src="/broken/files/2llSG6h6titiJvWOkoFF" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
