@@ -42,7 +42,7 @@ Repeat the following steps for each 2N device you want to control through Seam.
 
         **Connection Type** set to **Secure (TLS)** and **Authentication** set to **Digest.**
 
-    <figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+    <figure><img src="/broken/files/LyVSu1qc7QgvYX5dLrt7" alt=""><figcaption></figcaption></figure>
 3. **Create API credentials**
    * In the top toolbar, click on **Account 1**, or another available account.
    * Enable the account.

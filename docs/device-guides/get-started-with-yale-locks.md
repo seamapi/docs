@@ -132,7 +132,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **password:** 1234
 * **2-factor-auth:** 123456
 
-<figure><img src="broken-reference" alt=""><figcaption><p>Seam Connect Webview flow to connect Yale account with Seam</p></figcaption></figure>
+<figure><img src="/broken/files/q0JwRjGd0oOZWNjmJTg7" alt=""><figcaption><p>Seam Connect Webview flow to connect Yale account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -252,8 +252,8 @@ puts some_lock #   warnings=[]> #   errors=[] #   created_at=2022-12-16 00:52:16
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src="broken-reference" path="/locks/lock_door" method="post" %}
-[Broken link](broken-reference)
+{% openapi src="/broken/files/REtfAjUeordq37tIvoEr" path="/locks/lock_door" method="post" %}
+[Broken link](/broken/files/REtfAjUeordq37tIvoEr)
 {% endopenapi %}
 
 ## Unlock a door

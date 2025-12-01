@@ -385,8 +385,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking a door. Note that Salto disables this functionality by default and requires a special pass-through waiver via Seam. Seam automatically configures your IQ hubs to enable this functionality. Please contact us if you need to disable it.
 
-{% openapi src="broken-reference" path="/locks/lock_door" method="post" %}
-[Broken link](broken-reference)
+{% openapi src="/broken/files/REtfAjUeordq37tIvoEr" path="/locks/lock_door" method="post" %}
+[Broken link](/broken/files/REtfAjUeordq37tIvoEr)
 {% endopenapi %}
 
 ## Unlock a door

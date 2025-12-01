@@ -1,6 +1,6 @@
-# Sandbox dormakaba Oracode Locks
+# Sandbox Dormakaba Oracode Locks
 
-Use the following set of credentials to add virtual [dormakaba Oracode locks](../dormakaba-oracode-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [Dormakaba Oracode locks](../dormakaba-oracode-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Username | Site                  | Time Zone |
 | -------- | --------------------- | --------- |

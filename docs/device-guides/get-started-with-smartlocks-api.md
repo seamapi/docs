@@ -244,8 +244,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door as most devices will support the `locks` capability.
 
-{% openapi src="broken-reference" path="/locks/lock_door" method="post" %}
-[Broken link](broken-reference)
+{% openapi src="/broken/files/REtfAjUeordq37tIvoEr" path="/locks/lock_door" method="post" %}
+[Broken link](/broken/files/REtfAjUeordq37tIvoEr)
 {% endopenapi %}
 
 ## Unlock a door
@@ -323,7 +323,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Many smartlocks have a built-in keypad or an external one that can be paired over bluetooth. This lets you program access codes that a user can then enter at a later time to unlock a door.
 
-![](broken-reference)
+![](/broken/files/2EOKJDoeOjkTR9caQ4lG)
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
 

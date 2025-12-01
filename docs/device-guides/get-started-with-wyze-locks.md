@@ -255,8 +255,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src="broken-reference" path="/locks/lock_door" method="post" %}
-[Broken link](broken-reference)
+{% openapi src="/broken/files/REtfAjUeordq37tIvoEr" path="/locks/lock_door" method="post" %}
+[Broken link](/broken/files/REtfAjUeordq37tIvoEr)
 {% endopenapi %}
 
 ## Unlock a door

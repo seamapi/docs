@@ -6,4 +6,5 @@ Use the following set of credentials to add virtual [ASSA ABLOY Credential Servi
 Use the virtual ASSA ABLOY Credential Services with a [virtual Visionline ACS](assa-abloy-visionline-access-management-system-sample-data.md) to issue mobile keys in a sandbox workspace.
 {% endhint %}
 
-<table><thead><tr><th width="248">Username</th><th width="225">Password</th><th>Credential Services URL</th></tr></thead><tbody><tr><td>jane</td><td>1234</td><td>https://example.com</td></tr></tbody></table>
+<table><thead><tr><th width="272.73046875">Field</th><th>Value</th></tr></thead><tbody><tr><td>Username</td><td><code>jane</code></td></tr><tr><td>Password</td><td><code>1234</code></td></tr><tr><td>Credential Services URL</td><td><code>https://example.com</code></td></tr></tbody></table>
+
