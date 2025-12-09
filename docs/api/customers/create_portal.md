@@ -358,6 +358,12 @@ The locale to use for the portal.
 
 ---
 
+**`property_listing_filter`** *Object*
+
+Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.
+
+---
+
 
 ## Response
 
