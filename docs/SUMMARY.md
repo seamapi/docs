@@ -545,6 +545,7 @@
 * [Dormakaba Oracode Locks](device-guides/dormakaba-oracode-locks.md)
   * [Get started with dormakaba Oracode Locks](device-guides/get-started-with-dormakaba-oracode-locks.md)
   * [Creating dormakaba Oracode Offline Access Codes](device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
+  * [Programming Offline Access Codes on Dormakaba Oracode Locks](device-and-system-integration-guides/dormakaba-oracode-locks/programming-offline-access-codes-on-dormakaba-oracode-locks.md)
 * [ecobee Thermostats](device-guides/ecobee-thermostats.md)
   * [Get Started with ecobee Thermostats](device-guides/get-started-with-ecobee-thermostats.md)
 * [Google Nest Thermostats](device-guides/google-nest-thermostats/README.md)
