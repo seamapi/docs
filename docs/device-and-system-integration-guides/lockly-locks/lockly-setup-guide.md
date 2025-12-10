@@ -105,10 +105,10 @@ If you've completed all the steps above and devices still aren't showing up, con
 
 **Include the following information:**
 
-* Your Lockly Access Portal account email
+* Your [Lockly Access Portal](https://lap.lockly.com/#/dashboard) account email
 * The Client ID you're using for the integration
 * A description of the issue (devices not appearing in Seam)
-* Confirmation that Sync with LocklyOS is enabled and subscription is active
+* Confirmation that **Sync with LocklyOS** is enabled and subscription is active
 
 Lockly support can investigate account-specific issues and ensure your API access is properly configured.
 
