@@ -2651,6 +2651,10 @@ Metadata for a Salto KS device.
   
     Customer reference for a Salto KS device.
 
+  - <strong><code>has_custom_pin_subscription</code></strong> <i>Boolean</i>
+  
+    Indicates whether the site has a Salto KS subscription that supports custom PINs.
+
   - <strong><code>lock_id</code></strong> <i>String</i>
   
     Lock ID for a Salto KS device.
