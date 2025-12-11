@@ -3160,6 +3160,10 @@ Metadata for an Ultraloq device.
   
     Device type for an Ultraloq device.
 
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
+    IANA timezone for the Ultraloq device.
+
 </details>
 
 ---
@@ -5803,6 +5807,11 @@ Returns a list of all [devices](../../core-concepts/devices/README.md).
 [**`/devices/list_device_providers`**](./list_device_providers.md)
 
 Returns a list of all device providers.
+
+
+[**`/devices/report_provider_metadata`**](./report_provider_metadata.md)
+
+Updates provider-specific metadata for devices.
 
 
 [**`/devices/update`**](./update.md)
