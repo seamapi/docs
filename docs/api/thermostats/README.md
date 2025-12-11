@@ -3810,6 +3810,10 @@ Metadata for an Ultraloq device.
   
     Device type for an Ultraloq device.
 
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
+    IANA timezone for the Ultraloq device.
+
 </details>
 
 ---

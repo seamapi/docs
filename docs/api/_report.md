@@ -687,6 +687,7 @@ These items are deprecated.
 - `/customers/create_portal`
 - `/customers/delete_data`
 - `/customers/push_data`
+- `/devices/report_provider_metadata`
 - `/devices/simulate/paid_subscription`
 - `/instant_keys/delete`
 - `/instant_keys/get`
