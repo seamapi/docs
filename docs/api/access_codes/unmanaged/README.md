@@ -1025,9 +1025,9 @@ Potential duplicate access code detected.
   
 </details>
 <details>
-<summary><code>dormakaba_oracode_no_valid_user_level</code></summary>
+<summary><code>dormakaba_oracode_invalid_time_range</code></summary>
 
-No valid user level for Oracode.
+No Dormakaba Oracode user levels configured for the requested time range.
 
   **`created_at`** *Datetime*
   
@@ -1044,7 +1044,7 @@ No valid user level for Oracode.
   
   Enum values:
   
-  - <code>dormakaba_oracode_no_valid_user_level</code>
+  - <code>dormakaba_oracode_invalid_time_range</code>
   
   
   ---
@@ -2340,9 +2340,9 @@ Indicates that the device has been removed.
 
 ---
 
-**`dormakaba_oracode_no_valid_user_level`**
+**`dormakaba_oracode_invalid_time_range`**
 
-No valid user level for Oracode.
+No Dormakaba Oracode user levels configured for the requested time range.
 
 ---
 
