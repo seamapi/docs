@@ -75,7 +75,7 @@ batch response
 - `devices`: Array of [devices](./../devices)
 - `acs_entrances`: Array of [acs\_entrances](./../acs/entrances)
 - `connected_accounts`: Array of [connected\_accounts](./../connected_accounts)
-- `acs_systems`: Array of [acs\_systems](./../acs/systems)**
+- `acs_systems`: Array of [acs\_systems](./../acs/systems)
 
 {% endhint %}
 
