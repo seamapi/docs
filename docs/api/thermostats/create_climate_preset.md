@@ -42,7 +42,7 @@ Creates a climate preset for a specified thermostat.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/create_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "ba9b816d-c255-46b9-a16d-971e6f535dd3",
   "manual_override_allowed": true,
@@ -70,16 +70,7 @@ Creates a climate preset for a specified thermostat.
 #### Code:
 
 ```python
-seam.thermostats.create_climate_preset(
-    device_id="ba9b816d-c255-46b9-a16d-971e6f535dd3",
-    manual_override_allowed=true,
-    climate_preset_key="Occupied",
-    name="Occupied",
-    fan_mode_setting="auto",
-    hvac_mode_setting="heat_cool",
-    cooling_set_point_celsius=25,
-    heating_set_point_celsius=20,
-)
+seam.thermostats.create_climate_preset(device_id="ba9b816d-c255-46b9-a16d-971e6f535dd3", manual_override_allowed=true, climate_preset_key="Occupied", name="Occupied", fan_mode_setting="auto", hvac_mode_setting="heat_cool", cooling_set_point_celsius=25, heating_set_point_celsius=20)
 ```
 
 #### Output:
@@ -96,16 +87,7 @@ Creates a climate preset for a specified thermostat.
 #### Code:
 
 ```ruby
-seam.thermostats.create_climate_preset(
-  device_id: "ba9b816d-c255-46b9-a16d-971e6f535dd3",
-  manual_override_allowed: true,
-  climate_preset_key: "Occupied",
-  name: "Occupied",
-  fan_mode_setting: "auto",
-  hvac_mode_setting: "heat_cool",
-  cooling_set_point_celsius: 25,
-  heating_set_point_celsius: 20,
-)
+seam.thermostats.create_climate_preset(device_id: "ba9b816d-c255-46b9-a16d-971e6f535dd3", manual_override_allowed: true, climate_preset_key: "Occupied", name: "Occupied", fan_mode_setting: "auto", hvac_mode_setting: "heat_cool", cooling_set_point_celsius: 25, heating_set_point_celsius: 20)
 ```
 
 #### Output:
@@ -294,7 +276,7 @@ User-friendly name to identify the [climate preset](../../capability-guides/ther
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

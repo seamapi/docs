@@ -53,7 +53,7 @@ Returns a list of all credential manager systems that are compatible with a spec
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/list_compatible_credential_manager_acs_systems" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_system_id": "82456f4c-9627-4a27-a426-1b3c50c9871b"
 }
@@ -92,31 +92,13 @@ Returns a list of all credential manager systems that are compatible with a spec
 #### Code:
 
 ```python
-seam.acs.systems.list_compatible_credential_manager_acs_systems(
-    acs_system_id="82456f4c-9627-4a27-a426-1b3c50c9871b"
-)
+seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id="82456f4c-9627-4a27-a426-1b3c50c9871b")
 ```
 
 #### Output:
 
 ```python
-[
-    AcsSystem(
-        acs_access_group_count=5,
-        acs_system_id="dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
-        connected_account_id="a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
-        connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
-        created_at="2025-06-15T16:54:17.946425Z",
-        errors=[],
-        image_alt_text="Salto KS site Logo",
-        image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
-        is_credential_manager=true,
-        location={"time_zone": "America/New_York"},
-        name="My Credential Manager",
-        warnings=[],
-        workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f",
-    )
-]
+[AcsSystem(acs_access_group_count=5, acs_system_id="dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7", connected_account_id="a94aeed0-1ae0-4e49-9c23-8444c7ceba09", connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"], created_at="2025-06-15T16:54:17.946425Z", errors=[], image_alt_text="Salto KS site Logo", image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128", is_credential_manager=true, location={"time_zone":"America/New_York"}, name="My Credential Manager", warnings=[], workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f")]
 ```
 {% endtab %}
 
@@ -127,34 +109,13 @@ Returns a list of all credential manager systems that are compatible with a spec
 #### Code:
 
 ```ruby
-seam.acs.systems.list_compatible_credential_manager_acs_systems(
-  acs_system_id: "82456f4c-9627-4a27-a426-1b3c50c9871b",
-)
+seam.acs.systems.list_compatible_credential_manager_acs_systems(acs_system_id: "82456f4c-9627-4a27-a426-1b3c50c9871b")
 ```
 
 #### Output:
 
 ```ruby
-[
-  {
-    "acs_access_group_count" => 5,
-    "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
-    "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
-    "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
-    "created_at" => "2025-06-15T16:54:17.946425Z",
-    "errors" => [],
-    "image_alt_text" => "Salto KS site Logo",
-    "image_url" =>
-      "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
-    "is_credential_manager" => true,
-    "location" => {
-      time_zone: "America/New_York",
-    },
-    "name" => "My Credential Manager",
-    "warnings" => [],
-    "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
-  },
-]
+[{"acs_access_group_count" => 5,"acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7","connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09","connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],"created_at" => "2025-06-15T16:54:17.946425Z","errors" => [],"image_alt_text" => "Salto KS site Logo","image_url" => "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128","is_credential_manager" => true,"location" => {"time_zone":"America/New_York"},"name" => "My Credential Manager","warnings" => [],"workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f"}]
 ```
 {% endtab %}
 
@@ -254,7 +215,7 @@ ID of the access system for which you want to retrieve all compatible credential
 
 {% hint style="success" %}
 Returns:
-**Array of [acs\_systems](.)**
+**Array of [acs\_systems](.)
 
 {% endhint %}
 

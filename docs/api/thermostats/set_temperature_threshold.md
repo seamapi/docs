@@ -37,7 +37,7 @@ Sets a temperature threshold for a specified thermostat.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_temperature_threshold" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "a9b52627-e6e2-4beb-9168-964749f7bbae",
   "lower_limit_fahrenheit": 60,
@@ -60,11 +60,7 @@ Sets a temperature threshold for a specified thermostat.
 #### Code:
 
 ```python
-seam.thermostats.set_temperature_threshold(
-    device_id="a9b52627-e6e2-4beb-9168-964749f7bbae",
-    lower_limit_fahrenheit=60,
-    upper_limit_fahrenheit=80,
-)
+seam.thermostats.set_temperature_threshold(device_id="a9b52627-e6e2-4beb-9168-964749f7bbae", lower_limit_fahrenheit=60, upper_limit_fahrenheit=80)
 ```
 
 #### Output:
@@ -81,11 +77,7 @@ Sets a temperature threshold for a specified thermostat.
 #### Code:
 
 ```ruby
-seam.thermostats.set_temperature_threshold(
-  device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae",
-  lower_limit_fahrenheit: 60,
-  upper_limit_fahrenheit: 80,
-)
+seam.thermostats.set_temperature_threshold(device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae", lower_limit_fahrenheit: 60, upper_limit_fahrenheit: 80)
 ```
 
 #### Output:
@@ -184,7 +176,7 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

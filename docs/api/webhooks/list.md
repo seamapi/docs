@@ -71,14 +71,7 @@ seam.webhooks.list()
 #### Output:
 
 ```python
-[
-    Webhook(
-        event_types=["device.connected", "device.disconnected"],
-        secret="mySecret",
-        url="https://example.com/webhook",
-        webhook_id="ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1",
-    )
-]
+[Webhook(event_types=["device.connected","device.disconnected"], secret="mySecret", url="https://example.com/webhook", webhook_id="ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1")]
 ```
 {% endtab %}
 
@@ -95,14 +88,7 @@ seam.webhooks.list()
 #### Output:
 
 ```ruby
-[
-  {
-    "event_types" => %w[device.connected device.disconnected],
-    "secret" => "mySecret",
-    "url" => "https://example.com/webhook",
-    "webhook_id" => "ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1",
-  },
-]
+[{"event_types" => ["device.connected","device.disconnected"],"secret" => "mySecret","url" => "https://example.com/webhook","webhook_id" => "ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1"}]
 ```
 {% endtab %}
 
@@ -177,7 +163,7 @@ None
 
 {% hint style="success" %}
 Returns:
-**Array of [webhooks](.)**
+**Array of [webhooks](.)
 
 {% endhint %}
 

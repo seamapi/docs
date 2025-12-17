@@ -36,7 +36,7 @@ Deletes a specified climate preset for a specified thermostat.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/delete_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
   "climate_preset_key": "Eco"
@@ -58,9 +58,7 @@ Deletes a specified climate preset for a specified thermostat.
 #### Code:
 
 ```python
-seam.thermostats.delete_climate_preset(
-    device_id="88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5", climate_preset_key="Eco"
-)
+seam.thermostats.delete_climate_preset(device_id="88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5", climate_preset_key="Eco")
 ```
 
 #### Output:
@@ -77,10 +75,7 @@ Deletes a specified climate preset for a specified thermostat.
 #### Code:
 
 ```ruby
-seam.thermostats.delete_climate_preset(
-  device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5",
-  climate_preset_key: "Eco",
-)
+seam.thermostats.delete_climate_preset(device_id: "88cb2f5b-b01b-43f2-b84f-81e2fa1d09c5", climate_preset_key: "Eco")
 ```
 
 #### Output:
@@ -161,7 +156,7 @@ ID of the thermostat device for which you want to delete a climate preset.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

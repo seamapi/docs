@@ -37,7 +37,7 @@ Deletes a Connect Webview.
 ```curl
 curl --include --request POST "https://connect.getseam.com/connect_webviews/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "connect_webview_id": "816f796f-636c-46a9-9fef-7f90ca69e771"
 }
@@ -148,7 +148,7 @@ ID of the Connect Webview that you want to delete.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

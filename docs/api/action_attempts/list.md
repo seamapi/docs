@@ -53,7 +53,7 @@ Returns a list of the action attempts that you specify as an array of `action_at
 ```curl
 curl --include --request POST "https://connect.getseam.com/action_attempts/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "action_attempt_ids": [
     "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
@@ -94,33 +94,13 @@ Returns a list of the action attempts that you specify as an array of `action_at
 #### Code:
 
 ```python
-seam.action_attempts.list(
-    action_attempt_ids=[
-        "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f",
-    ]
-)
+seam.action_attempts.list(action_attempt_ids=["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f"])
 ```
 
 #### Output:
 
 ```python
-[
-    ActionAttempt(
-        action_attempt_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        action_type="UNLOCK_DOOR",
-        error=None,
-        result={},
-        status="success",
-    ),
-    ActionAttempt(
-        action_attempt_id="3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f",
-        action_type="LOCK_DOOR",
-        error=None,
-        result={},
-        status="success",
-    ),
-]
+[ActionAttempt(action_attempt_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f", action_type="UNLOCK_DOOR", error=None, result={}, status="success"), ActionAttempt(action_attempt_id="3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f", action_type="LOCK_DOOR", error=None, result={}, status="success")]
 ```
 {% endtab %}
 
@@ -131,32 +111,14 @@ Returns a list of the action attempts that you specify as an array of `action_at
 #### Code:
 
 ```ruby
-seam.action_attempts.list(
-  action_attempt_ids: %w[5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f 3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f],
-)
+seam.action_attempts.list(action_attempt_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f"])
 ```
 
 #### Output:
 
 ```ruby
-[
-  {
-    "action_attempt_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-    "action_type" => "UNLOCK_DOOR",
-    "error" => nil,
-    "result" => {
-    },
-    "status" => "success",
-  },
-  {
-    "action_attempt_id" => "3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f",
-    "action_type" => "LOCK_DOOR",
-    "error" => nil,
-    "result" => {
-    },
-    "status" => "success",
-  },
-]
+[{"action_attempt_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","action_type" => "UNLOCK_DOOR","error" => nil,"result" => {},"status" => "success"},
+{"action_attempt_id" => "3f2b1c8d-1b5e-4f8c-9c7d-9a8b7c6d5e4f","action_type" => "LOCK_DOOR","error" => nil,"result" => {},"status" => "success"}]
 ```
 {% endtab %}
 
@@ -245,27 +207,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`action_attempt_ids`** *Array* *of UUIDs*
+**`action_attempt_ids`** *Array* *of UUIDs* (Required)
 
 IDs of the action attempts that you want to retrieve.
-
----
-
-**`device_id`** *String*
-
-ID of the device to filter action attempts by.
-
----
-
-**`limit`** *Number*
-
-Maximum number of records to return per page.
-
----
-
-**`page_cursor`** *String*
-
-Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
@@ -274,7 +218,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 {% hint style="success" %}
 Returns:
-**Array of [action\_attempts](./)**
+**Array of [action\_attempts](./)
 
 {% endhint %}
 

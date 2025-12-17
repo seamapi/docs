@@ -39,7 +39,7 @@ Updates a specified user identity.
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
   "user_identity_key": "jane_doe",
@@ -64,13 +64,7 @@ Updates a specified user identity.
 #### Code:
 
 ```python
-seam.user_identities.update(
-    user_identity_id="dc378ea9-358e-4999-b295-d0f3e0d5ff51",
-    user_identity_key="jane_doe",
-    email_address="jane@example.com",
-    phone_number="+15551234567",
-    full_name="Jane Doe",
-)
+seam.user_identities.update(user_identity_id="dc378ea9-358e-4999-b295-d0f3e0d5ff51", user_identity_key="jane_doe", email_address="jane@example.com", phone_number="+15551234567", full_name="Jane Doe")
 ```
 
 #### Output:
@@ -87,13 +81,7 @@ Updates a specified user identity.
 #### Code:
 
 ```ruby
-seam.user_identities.update(
-  user_identity_id: "dc378ea9-358e-4999-b295-d0f3e0d5ff51",
-  user_identity_key: "jane_doe",
-  email_address: "jane@example.com",
-  phone_number: "+15551234567",
-  full_name: "Jane Doe",
-)
+seam.user_identities.update(user_identity_id: "dc378ea9-358e-4999-b295-d0f3e0d5ff51", user_identity_key: "jane_doe", email_address: "jane@example.com", phone_number: "+15551234567", full_name: "Jane Doe")
 ```
 
 #### Output:
@@ -194,7 +182,7 @@ Unique key for the user identity.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

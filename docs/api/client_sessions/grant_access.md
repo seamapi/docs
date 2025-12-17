@@ -39,7 +39,7 @@ Grants a client session access to one or more resources, such as Connect Webview
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/grant_access" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "client_session_id": "3ada79d3-2848-4320-b2ef-a82e1e6dafac",
   "user_identifier_key": "jane_doe",
@@ -68,13 +68,7 @@ Grants a client session access to one or more resources, such as Connect Webview
 #### Code:
 
 ```python
-seam.client_sessions.grant_access(
-    client_session_id="3ada79d3-2848-4320-b2ef-a82e1e6dafac",
-    user_identifier_key="jane_doe",
-    connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    connect_webview_ids=["dad03fb2-f801-449c-ab88-0529728c7c38"],
-    user_identity_id="bde98963-3615-4e92-943e-17de3017232b",
-)
+seam.client_sessions.grant_access(client_session_id="3ada79d3-2848-4320-b2ef-a82e1e6dafac", user_identifier_key="jane_doe", connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"], connect_webview_ids=["dad03fb2-f801-449c-ab88-0529728c7c38"], user_identity_id="bde98963-3615-4e92-943e-17de3017232b")
 ```
 
 #### Output:
@@ -91,13 +85,7 @@ Grants a client session access to one or more resources, such as Connect Webview
 #### Code:
 
 ```ruby
-seam.client_sessions.grant_access(
-  client_session_id: "3ada79d3-2848-4320-b2ef-a82e1e6dafac",
-  user_identifier_key: "jane_doe",
-  connected_account_ids: ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-  connect_webview_ids: ["dad03fb2-f801-449c-ab88-0529728c7c38"],
-  user_identity_id: "bde98963-3615-4e92-943e-17de3017232b",
-)
+seam.client_sessions.grant_access(client_session_id: "3ada79d3-2848-4320-b2ef-a82e1e6dafac", user_identifier_key: "jane_doe", connected_account_ids: ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"], connect_webview_ids: ["dad03fb2-f801-449c-ab88-0529728c7c38"], user_identity_id: "bde98963-3615-4e92-943e-17de3017232b")
 ```
 
 #### Output:
@@ -208,7 +196,7 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

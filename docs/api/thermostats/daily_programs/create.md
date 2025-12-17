@@ -54,7 +54,7 @@ Creates a new thermostat daily program.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/daily_programs/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "cc2d0fb9-1f5f-410f-80f1-a64b699de82a",
   "name": "Weekday Program",
@@ -108,34 +108,13 @@ Creates a new thermostat daily program.
 #### Code:
 
 ```python
-seam.thermostats.daily_programs.create(
-    device_id="cc2d0fb9-1f5f-410f-80f1-a64b699de82a",
-    name="Weekday Program",
-    periods=[
-        {"starts_at_time": "07:00:00", "climate_preset_key": "Home"},
-        {"starts_at_time": "09:00:00", "climate_preset_key": "Away"},
-        {"starts_at_time": "16:00:00", "climate_preset_key": "Home"},
-        {"starts_at_time": "22:30:00", "climate_preset_key": "Sleep"},
-    ],
-)
+seam.thermostats.daily_programs.create(device_id="cc2d0fb9-1f5f-410f-80f1-a64b699de82a", name="Weekday Program", periods=[{"starts_at_time":"07:00:00","climate_preset_key":"Home"},{"starts_at_time":"09:00:00","climate_preset_key":"Away"},{"starts_at_time":"16:00:00","climate_preset_key":"Home"},{"starts_at_time":"22:30:00","climate_preset_key":"Sleep"}])
 ```
 
 #### Output:
 
 ```python
-ThermostatDailyProgram(
-    created_at="2025-06-14T16:54:17.946642Z",
-    device_id="cc2d0fb9-1f5f-410f-80f1-a64b699de82a",
-    name="Weekday Program",
-    periods=[
-        {"starts_at_time": "07:00:00", "climate_preset_key": "Home"},
-        {"starts_at_time": "09:00:00", "climate_preset_key": "Away"},
-        {"starts_at_time": "16:00:00", "climate_preset_key": "Home"},
-        {"starts_at_time": "22:30:00", "climate_preset_key": "Sleep"},
-    ],
-    thermostat_daily_program_id="ab8ef74c-c7cd-4100-aa32-0ef960c0080d",
-    workspace_id="8da8d923-e55b-45cd-84a3-6c96b3d3d454",
-)
+ThermostatDailyProgram(created_at="2025-06-14T16:54:17.946642Z", device_id="cc2d0fb9-1f5f-410f-80f1-a64b699de82a", name="Weekday Program", periods=[{"starts_at_time":"07:00:00","climate_preset_key":"Home"},{"starts_at_time":"09:00:00","climate_preset_key":"Away"},{"starts_at_time":"16:00:00","climate_preset_key":"Home"},{"starts_at_time":"22:30:00","climate_preset_key":"Sleep"}], thermostat_daily_program_id="ab8ef74c-c7cd-4100-aa32-0ef960c0080d", workspace_id="8da8d923-e55b-45cd-84a3-6c96b3d3d454")
 ```
 {% endtab %}
 
@@ -146,34 +125,13 @@ Creates a new thermostat daily program.
 #### Code:
 
 ```ruby
-seam.thermostats.daily_programs.create(
-  device_id: "cc2d0fb9-1f5f-410f-80f1-a64b699de82a",
-  name: "Weekday Program",
-  periods: [
-    { starts_at_time: "07:00:00", climate_preset_key: "Home" },
-    { starts_at_time: "09:00:00", climate_preset_key: "Away" },
-    { starts_at_time: "16:00:00", climate_preset_key: "Home" },
-    { starts_at_time: "22:30:00", climate_preset_key: "Sleep" },
-  ],
-)
+seam.thermostats.daily_programs.create(device_id: "cc2d0fb9-1f5f-410f-80f1-a64b699de82a", name: "Weekday Program", periods: [{"starts_at_time":"07:00:00","climate_preset_key":"Home"},{"starts_at_time":"09:00:00","climate_preset_key":"Away"},{"starts_at_time":"16:00:00","climate_preset_key":"Home"},{"starts_at_time":"22:30:00","climate_preset_key":"Sleep"}])
 ```
 
 #### Output:
 
 ```ruby
-{
-  "created_at" => "2025-06-14T16:54:17.946642Z",
-  "device_id" => "cc2d0fb9-1f5f-410f-80f1-a64b699de82a",
-  "name" => "Weekday Program",
-  "periods" => [
-    { starts_at_time: "07:00:00", climate_preset_key: "Home" },
-    { starts_at_time: "09:00:00", climate_preset_key: "Away" },
-    { starts_at_time: "16:00:00", climate_preset_key: "Home" },
-    { starts_at_time: "22:30:00", climate_preset_key: "Sleep" },
-  ],
-  "thermostat_daily_program_id" => "ab8ef74c-c7cd-4100-aa32-0ef960c0080d",
-  "workspace_id" => "8da8d923-e55b-45cd-84a3-6c96b3d3d454",
-}
+{"created_at" => "2025-06-14T16:54:17.946642Z","device_id" => "cc2d0fb9-1f5f-410f-80f1-a64b699de82a","name" => "Weekday Program","periods" => [{"starts_at_time":"07:00:00","climate_preset_key":"Home"},{"starts_at_time":"09:00:00","climate_preset_key":"Away"},{"starts_at_time":"16:00:00","climate_preset_key":"Home"},{"starts_at_time":"22:30:00","climate_preset_key":"Sleep"}],"thermostat_daily_program_id" => "ab8ef74c-c7cd-4100-aa32-0ef960c0080d","workspace_id" => "8da8d923-e55b-45cd-84a3-6c96b3d3d454"}
 ```
 {% endtab %}
 
@@ -305,7 +263,7 @@ Time at which the thermostat daily program period starts, in [ISO 8601](https://
 
 {% hint style="success" %}
 Returns:
-**[thermostat\_daily\_program](.)**
+**[thermostat\_daily\_program](.)
 
 {% endhint %}
 

@@ -36,7 +36,7 @@ Revokes access to a specified device from a specified user identity.
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/revoke_access_to_device" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "a5a48343-a95e-4f51-a5d9-1e4241b73553",
   "device_id": "92874f9e-a2b5-4d49-a039-0280196ad4d5"
@@ -58,10 +58,7 @@ Revokes access to a specified device from a specified user identity.
 #### Code:
 
 ```python
-seam.user_identities.revoke_access_to_device(
-    user_identity_id="a5a48343-a95e-4f51-a5d9-1e4241b73553",
-    device_id="92874f9e-a2b5-4d49-a039-0280196ad4d5",
-)
+seam.user_identities.revoke_access_to_device(user_identity_id="a5a48343-a95e-4f51-a5d9-1e4241b73553", device_id="92874f9e-a2b5-4d49-a039-0280196ad4d5")
 ```
 
 #### Output:
@@ -78,10 +75,7 @@ Revokes access to a specified device from a specified user identity.
 #### Code:
 
 ```ruby
-seam.user_identities.revoke_access_to_device(
-  user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
-  device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5",
-)
+seam.user_identities.revoke_access_to_device(user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553", device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5")
 ```
 
 #### Output:
@@ -161,7 +155,7 @@ ID of the user identity from which you want to revoke access to a device.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

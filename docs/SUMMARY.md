@@ -287,7 +287,6 @@
   * [Get a Device](api/devices/get.md)
   * [List Device Providers](api/devices/list_device_providers.md)
   * [List Devices](api/devices/list.md)
-  * [Report Provider Metadata](api/devices/report_provider_metadata.md)
   * [Update a Device](api/devices/update.md)
   * [Device Simulations](api/devices/simulate/README.md)
     * [Simulate Device Connection](api/devices/simulate/connect.md)

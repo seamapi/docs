@@ -53,7 +53,7 @@ Creates a new client session.
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "customer_id": "e387e15f-be27-47ad-881f-4a6fc5460c57",
   "customer_key": "My Company",
@@ -98,33 +98,13 @@ Creates a new client session.
 #### Code:
 
 ```python
-seam.client_sessions.create(
-    customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-    customer_key="My Company",
-    user_identifier_key="jane_doe",
-    connect_webview_ids=["dafe6400-7484-4fd1-8c17-1c901b444250"],
-    connected_account_ids=["8062d457-e28e-481f-aecc-509905627511"],
-    user_identity_id="89765fd3-6193-4d63-8605-e77f75356555",
-    expires_at="2025-06-19T15:22:40.000Z",
-)
+seam.client_sessions.create(customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", customer_key="My Company", user_identifier_key="jane_doe", connect_webview_ids=["dafe6400-7484-4fd1-8c17-1c901b444250"], connected_account_ids=["8062d457-e28e-481f-aecc-509905627511"], user_identity_id="89765fd3-6193-4d63-8605-e77f75356555", expires_at="2025-06-19T15:22:40.000Z")
 ```
 
 #### Output:
 
 ```python
-ClientSession(
-    client_session_id="c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
-    connect_webview_ids=["dafe6400-7484-4fd1-8c17-1c901b444250"],
-    connected_account_ids=["8062d457-e28e-481f-aecc-509905627511"],
-    created_at="2025-06-15T16:54:17.946309Z",
-    customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-    device_count=1,
-    expires_at="2025-06-19T15:22:40.000Z",
-    token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    user_identifier_key="jane_doe",
-    user_identity_id="89765fd3-6193-4d63-8605-e77f75356555",
-    workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
-)
+ClientSession(client_session_id="c2cbd177-1ace-414b-bb1e-9f129e4a05c1", connect_webview_ids=["dafe6400-7484-4fd1-8c17-1c901b444250"], connected_account_ids=["8062d457-e28e-481f-aecc-509905627511"], created_at="2025-06-15T16:54:17.946309Z", customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", device_count=1, expires_at="2025-06-19T15:22:40.000Z", token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq", user_identifier_key="jane_doe", user_identity_id="89765fd3-6193-4d63-8605-e77f75356555", workspace_id="b887bf84-9849-4454-a562-cf84293d9781")
 ```
 {% endtab %}
 
@@ -135,33 +115,13 @@ Creates a new client session.
 #### Code:
 
 ```ruby
-seam.client_sessions.create(
-  customer_id: "e387e15f-be27-47ad-881f-4a6fc5460c57",
-  customer_key: "My Company",
-  user_identifier_key: "jane_doe",
-  connect_webview_ids: ["dafe6400-7484-4fd1-8c17-1c901b444250"],
-  connected_account_ids: ["8062d457-e28e-481f-aecc-509905627511"],
-  user_identity_id: "89765fd3-6193-4d63-8605-e77f75356555",
-  expires_at: "2025-06-19T15:22:40.000Z",
-)
+seam.client_sessions.create(customer_id: "e387e15f-be27-47ad-881f-4a6fc5460c57", customer_key: "My Company", user_identifier_key: "jane_doe", connect_webview_ids: ["dafe6400-7484-4fd1-8c17-1c901b444250"], connected_account_ids: ["8062d457-e28e-481f-aecc-509905627511"], user_identity_id: "89765fd3-6193-4d63-8605-e77f75356555", expires_at: "2025-06-19T15:22:40.000Z")
 ```
 
 #### Output:
 
 ```ruby
-{
-  "client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
-  "connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],
-  "connected_account_ids" => ["8062d457-e28e-481f-aecc-509905627511"],
-  "created_at" => "2025-06-15T16:54:17.946309Z",
-  "customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57",
-  "device_count" => 1,
-  "expires_at" => "2025-06-19T15:22:40.000Z",
-  "token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-  "user_identifier_key" => "jane_doe",
-  "user_identity_id" => "89765fd3-6193-4d63-8605-e77f75356555",
-  "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
-}
+{"client_session_id" => "c2cbd177-1ace-414b-bb1e-9f129e4a05c1","connect_webview_ids" => ["dafe6400-7484-4fd1-8c17-1c901b444250"],"connected_account_ids" => ["8062d457-e28e-481f-aecc-509905627511"],"created_at" => "2025-06-15T16:54:17.946309Z","customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57","device_count" => 1,"expires_at" => "2025-06-19T15:22:40.000Z","token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq","user_identifier_key" => "jane_doe","user_identity_id" => "89765fd3-6193-4d63-8605-e77f75356555","workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781"}
 ```
 {% endtab %}
 
@@ -305,7 +265,7 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 {% hint style="success" %}
 Returns:
-**[client\_session](.)**
+**[client\_session](.)
 
 {% endhint %}
 

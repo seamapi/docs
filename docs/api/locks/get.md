@@ -41,7 +41,7 @@ Name of the lock that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[device](./../devices)**
+**[device](./../devices)
 
 {% endhint %}
 

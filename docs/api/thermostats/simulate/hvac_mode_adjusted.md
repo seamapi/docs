@@ -37,7 +37,7 @@ Simulates having adjusted the HVAC mode for a thermostat.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/simulate/hvac_mode_adjusted" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
   "hvac_mode": "heat",
@@ -60,11 +60,7 @@ Simulates having adjusted the HVAC mode for a thermostat.
 #### Code:
 
 ```python
-seam.thermostats.simulate.hvac_mode_adjusted(
-    device_id="278a72ba-7deb-45e3-a0c0-573fd360ee7b",
-    hvac_mode="heat",
-    heating_set_point_fahrenheit=68,
-)
+seam.thermostats.simulate.hvac_mode_adjusted(device_id="278a72ba-7deb-45e3-a0c0-573fd360ee7b", hvac_mode="heat", heating_set_point_fahrenheit=68)
 ```
 
 #### Output:
@@ -81,11 +77,7 @@ Simulates having adjusted the HVAC mode for a thermostat.
 #### Code:
 
 ```ruby
-seam.thermostats.simulate.hvac_mode_adjusted(
-  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
-  hvac_mode: "heat",
-  heating_set_point_fahrenheit: 68,
-)
+seam.thermostats.simulate.hvac_mode_adjusted(device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b", hvac_mode: "heat", heating_set_point_fahrenheit: 68)
 ```
 
 #### Output:
@@ -190,7 +182,7 @@ Heating [set point](../../../capability-guides/thermostats/understanding-thermos
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

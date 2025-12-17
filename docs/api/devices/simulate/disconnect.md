@@ -35,7 +35,7 @@ Simulates disconnecting a device from Seam.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/disconnect" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "a60686b8-f401-452d-9f67-53d139cf6160"
 }
@@ -147,7 +147,7 @@ ID of the device that you want to simulate disconnecting from Seam.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

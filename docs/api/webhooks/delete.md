@@ -35,7 +35,7 @@ Deletes a specified webhook.
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "webhook_id": "d3fb55d3-8b49-43ed-ac6b-e490be7b4274"
 }
@@ -144,7 +144,7 @@ ID of the webhook that you want to delete.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

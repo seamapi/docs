@@ -50,7 +50,7 @@ Returns a list of all client sessions for a specific client session ID.
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "client_session_id": "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc"
 }
@@ -93,21 +93,7 @@ seam.client_sessions.list(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaab
 #### Output:
 
 ```python
-[
-    ClientSession(
-        client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-        connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-        connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-        created_at="2025-06-15T16:54:17.946309Z",
-        customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-        device_count=1,
-        expires_at="2025-06-18T06:10:42.000Z",
-        token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-        user_identifier_key="jane_doe",
-        user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-        workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
-    )
-]
+[ClientSession(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc", connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"], connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"], created_at="2025-06-15T16:54:17.946309Z", customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", device_count=1, expires_at="2025-06-18T06:10:42.000Z", token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq", user_identifier_key="jane_doe", user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a", workspace_id="b887bf84-9849-4454-a562-cf84293d9781")]
 ```
 {% endtab %}
 
@@ -124,21 +110,7 @@ seam.client_sessions.list(client_session_id: "a083ce0f-8b03-4081-ac9a-1ad2ce6aaa
 #### Output:
 
 ```ruby
-[
-  {
-    "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at" => "2025-06-15T16:54:17.946309Z",
-    "customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count" => 1,
-    "expires_at" => "2025-06-18T06:10:42.000Z",
-    "token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key" => "jane_doe",
-    "user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
-  },
-]
+[{"client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc","connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],"connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],"created_at" => "2025-06-15T16:54:17.946309Z","customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57","device_count" => 1,"expires_at" => "2025-06-18T06:10:42.000Z","token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq","user_identifier_key" => "jane_doe","user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a","workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781"}]
 ```
 {% endtab %}
 
@@ -257,7 +229,7 @@ Indicates whether to retrieve only client sessions without associated user ident
 
 {% hint style="success" %}
 Returns:
-**Array of [client\_sessions](.)**
+**Array of [client\_sessions](.)
 
 {% endhint %}
 
@@ -336,7 +308,7 @@ await seam.clientSessions.list({ user_identifier_key: "jane_doe" });
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identifier_key": "jane_doe"
 }
@@ -379,21 +351,7 @@ seam.client_sessions.list(user_identifier_key="jane_doe")
 #### Output:
 
 ```python
-[
-    ClientSession(
-        client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-        connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-        connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-        created_at="2025-06-15T16:54:17.946309Z",
-        customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-        device_count=1,
-        expires_at="2025-06-18T06:10:42.000Z",
-        token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-        user_identifier_key="jane_doe",
-        user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-        workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
-    )
-]
+[ClientSession(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc", connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"], connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"], created_at="2025-06-15T16:54:17.946309Z", customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", device_count=1, expires_at="2025-06-18T06:10:42.000Z", token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq", user_identifier_key="jane_doe", user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a", workspace_id="b887bf84-9849-4454-a562-cf84293d9781")]
 ```
 {% endtab %}
 
@@ -410,21 +368,7 @@ seam.client_sessions.list(user_identifier_key: "jane_doe")
 #### Output:
 
 ```ruby
-[
-  {
-    "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at" => "2025-06-15T16:54:17.946309Z",
-    "customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count" => 1,
-    "expires_at" => "2025-06-18T06:10:42.000Z",
-    "token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key" => "jane_doe",
-    "user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
-  },
-]
+[{"client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc","connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],"connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],"created_at" => "2025-06-15T16:54:17.946309Z","customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57","device_count" => 1,"expires_at" => "2025-06-18T06:10:42.000Z","token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq","user_identifier_key" => "jane_doe","user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a","workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781"}]
 ```
 {% endtab %}
 
@@ -542,7 +486,7 @@ await seam.clientSessions.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "connect_webview_id": "e0f522d4-a7b6-4f65-ba90-11cde67a893a"
 }
@@ -585,21 +529,7 @@ seam.client_sessions.list(connect_webview_id="e0f522d4-a7b6-4f65-ba90-11cde67a89
 #### Output:
 
 ```python
-[
-    ClientSession(
-        client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-        connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-        connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-        created_at="2025-06-15T16:54:17.946309Z",
-        customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-        device_count=1,
-        expires_at="2025-06-18T06:10:42.000Z",
-        token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-        user_identifier_key="jane_doe",
-        user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-        workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
-    )
-]
+[ClientSession(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc", connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"], connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"], created_at="2025-06-15T16:54:17.946309Z", customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", device_count=1, expires_at="2025-06-18T06:10:42.000Z", token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq", user_identifier_key="jane_doe", user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a", workspace_id="b887bf84-9849-4454-a562-cf84293d9781")]
 ```
 {% endtab %}
 
@@ -616,21 +546,7 @@ seam.client_sessions.list(connect_webview_id: "e0f522d4-a7b6-4f65-ba90-11cde67a8
 #### Output:
 
 ```ruby
-[
-  {
-    "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at" => "2025-06-15T16:54:17.946309Z",
-    "customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count" => 1,
-    "expires_at" => "2025-06-18T06:10:42.000Z",
-    "token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key" => "jane_doe",
-    "user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
-  },
-]
+[{"client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc","connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],"connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],"created_at" => "2025-06-15T16:54:17.946309Z","customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57","device_count" => 1,"expires_at" => "2025-06-18T06:10:42.000Z","token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq","user_identifier_key" => "jane_doe","user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a","workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781"}]
 ```
 {% endtab %}
 
@@ -750,7 +666,7 @@ await seam.clientSessions.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "b4ce8233-3b35-4d2d-82ec-d48513684f0a"
 }
@@ -793,21 +709,7 @@ seam.client_sessions.list(user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a
 #### Output:
 
 ```python
-[
-    ClientSession(
-        client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-        connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-        connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-        created_at="2025-06-15T16:54:17.946309Z",
-        customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-        device_count=1,
-        expires_at="2025-06-18T06:10:42.000Z",
-        token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-        user_identifier_key="jane_doe",
-        user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-        workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
-    )
-]
+[ClientSession(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc", connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"], connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"], created_at="2025-06-15T16:54:17.946309Z", customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", device_count=1, expires_at="2025-06-18T06:10:42.000Z", token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq", user_identifier_key="jane_doe", user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a", workspace_id="b887bf84-9849-4454-a562-cf84293d9781")]
 ```
 {% endtab %}
 
@@ -824,21 +726,7 @@ seam.client_sessions.list(user_identity_id: "b4ce8233-3b35-4d2d-82ec-d48513684f0
 #### Output:
 
 ```ruby
-[
-  {
-    "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at" => "2025-06-15T16:54:17.946309Z",
-    "customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count" => 1,
-    "expires_at" => "2025-06-18T06:10:42.000Z",
-    "token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key" => "jane_doe",
-    "user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
-  },
-]
+[{"client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc","connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],"connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],"created_at" => "2025-06-15T16:54:17.946309Z","customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57","device_count" => 1,"expires_at" => "2025-06-18T06:10:42.000Z","token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq","user_identifier_key" => "jane_doe","user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a","workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781"}]
 ```
 {% endtab %}
 
@@ -956,7 +844,7 @@ await seam.clientSessions.list({ without_user_identifier_key: true });
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "without_user_identifier_key": true
 }
@@ -999,21 +887,7 @@ seam.client_sessions.list(without_user_identifier_key=true)
 #### Output:
 
 ```python
-[
-    ClientSession(
-        client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-        connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-        connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-        created_at="2025-06-15T16:54:17.946309Z",
-        customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57",
-        device_count=1,
-        expires_at="2025-06-18T06:10:42.000Z",
-        token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-        user_identifier_key=None,
-        user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-        workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
-    )
-]
+[ClientSession(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc", connect_webview_ids=["e0f522d4-a7b6-4f65-ba90-11cde67a893a"], connected_account_ids=["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"], created_at="2025-06-15T16:54:17.946309Z", customer_id="e387e15f-be27-47ad-881f-4a6fc5460c57", device_count=1, expires_at="2025-06-18T06:10:42.000Z", token="seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq", user_identifier_key=None, user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a", workspace_id="b887bf84-9849-4454-a562-cf84293d9781")]
 ```
 {% endtab %}
 
@@ -1030,21 +904,7 @@ seam.client_sessions.list(without_user_identifier_key: true)
 #### Output:
 
 ```ruby
-[
-  {
-    "client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at" => "2025-06-15T16:54:17.946309Z",
-    "customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count" => 1,
-    "expires_at" => "2025-06-18T06:10:42.000Z",
-    "token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key" => nil,
-    "user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
-  },
-]
+[{"client_session_id" => "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc","connect_webview_ids" => ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],"connected_account_ids" => ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],"created_at" => "2025-06-15T16:54:17.946309Z","customer_id" => "e387e15f-be27-47ad-881f-4a6fc5460c57","device_count" => 1,"expires_at" => "2025-06-18T06:10:42.000Z","token" => "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq","user_identifier_key" => nil,"user_identity_id" => "b4ce8233-3b35-4d2d-82ec-d48513684f0a","workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781"}]
 ```
 {% endtab %}
 

@@ -51,7 +51,7 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/simulate/create_unmanaged_access_code" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
   "name": "My Access Code",
@@ -90,29 +90,13 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 #### Code:
 
 ```python
-seam.access_codes.simulate.create_unmanaged_access_code(
-    device_id="5db6ef75-2e0d-4491-bf7e-c3eb01d5c963", name="My Access Code", code="1234"
-)
+seam.access_codes.simulate.create_unmanaged_access_code(device_id="5db6ef75-2e0d-4491-bf7e-c3eb01d5c963", name="My Access Code", code="1234")
 ```
 
 #### Output:
 
 ```python
-UnmanagedAccessCode(
-    access_code_id="88fa1812-bef8-4108-9fb4-4855376c3edf",
-    code="1234",
-    created_at="2025-06-16T16:54:17.946283Z",
-    device_id="5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
-    ends_at="2025-06-23T16:54:17.946261Z",
-    errors=[],
-    is_managed=false,
-    name="My Access Code",
-    starts_at="2025-06-21T16:54:17.946261Z",
-    status="set",
-    type="time_bound",
-    warnings=[],
-    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-)
+UnmanagedAccessCode(access_code_id="88fa1812-bef8-4108-9fb4-4855376c3edf", code="1234", created_at="2025-06-16T16:54:17.946283Z", device_id="5db6ef75-2e0d-4491-bf7e-c3eb01d5c963", ends_at="2025-06-23T16:54:17.946261Z", errors=[], is_managed=false, name="My Access Code", starts_at="2025-06-21T16:54:17.946261Z", status="set", type="time_bound", warnings=[], workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7")
 ```
 {% endtab %}
 
@@ -123,31 +107,13 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 #### Code:
 
 ```ruby
-seam.access_codes.simulate.create_unmanaged_access_code(
-  device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
-  name: "My Access Code",
-  code: "1234",
-)
+seam.access_codes.simulate.create_unmanaged_access_code(device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963", name: "My Access Code", code: "1234")
 ```
 
 #### Output:
 
 ```ruby
-{
-  "access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf",
-  "code" => "1234",
-  "created_at" => "2025-06-16T16:54:17.946283Z",
-  "device_id" => "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
-  "ends_at" => "2025-06-23T16:54:17.946261Z",
-  "errors" => [],
-  "is_managed" => false,
-  "name" => "My Access Code",
-  "starts_at" => "2025-06-21T16:54:17.946261Z",
-  "status" => "set",
-  "type" => "time_bound",
-  "warnings" => [],
-  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-}
+{"access_code_id" => "88fa1812-bef8-4108-9fb4-4855376c3edf","code" => "1234","created_at" => "2025-06-16T16:54:17.946283Z","device_id" => "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963","ends_at" => "2025-06-23T16:54:17.946261Z","errors" => [],"is_managed" => false,"name" => "My Access Code","starts_at" => "2025-06-21T16:54:17.946261Z","status" => "set","type" => "time_bound","warnings" => [],"workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"}
 ```
 {% endtab %}
 
@@ -257,7 +223,7 @@ Name of the simulated unmanaged access code.
 
 {% hint style="success" %}
 Returns:
-**[unmanaged\_access\_code](./../unmanaged)**
+**[unmanaged\_access\_code](./../unmanaged)
 
 {% endhint %}
 

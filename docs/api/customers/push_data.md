@@ -670,18 +670,6 @@ List of property listings.
 
 <details>
 
-<summary><b><code>custom_metadata</code></b> <i>Record</i></summary>
-
-Set key:value pairs. Accepts string or Boolean values. Adding custom metadata to a property listing enables you to store custom information, like customer details or internal IDs from your application.
-
-</details>
-
----
-
-
-
-<details>
-
 <summary><b><code>name</code></b> <i>String</i></summary>
 
 Your display name for this location resource.
@@ -1434,7 +1422,7 @@ Your unique identifier for the user.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

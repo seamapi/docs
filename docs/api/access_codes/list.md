@@ -63,7 +63,7 @@ Returns a list of all access codes.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
   "limit": 10
@@ -118,32 +118,7 @@ seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=1
 #### Output:
 
 ```python
-[
-    AccessCode(
-        access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
-        code="1234",
-        common_code_key=None,
-        created_at="2025-06-14T16:54:17.946242Z",
-        device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae",
-        ends_at="2025-07-04T16:54:17.946049Z",
-        errors=[],
-        is_backup=false,
-        is_backup_access_code_available=false,
-        is_external_modification_allowed=false,
-        is_managed=true,
-        is_offline_access_code=false,
-        is_one_time_use=false,
-        is_scheduled_on_device=true,
-        is_waiting_for_code_assignment=false,
-        name="My Access Code",
-        pulled_backup_access_code_id=None,
-        starts_at="2025-07-02T16:54:17.946049Z",
-        status="set",
-        type="time_bound",
-        warnings=[],
-        workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-    )
-]
+[AccessCode(access_code_id="e9cf6dd6-89aa-477f-a701-c08f3de13c1f", code="1234", common_code_key=None, created_at="2025-06-14T16:54:17.946242Z", device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", ends_at="2025-07-04T16:54:17.946049Z", errors=[], is_backup=false, is_backup_access_code_available=false, is_external_modification_allowed=false, is_managed=true, is_offline_access_code=false, is_one_time_use=false, is_scheduled_on_device=true, is_waiting_for_code_assignment=false, name="My Access Code", pulled_backup_access_code_id=None, starts_at="2025-07-02T16:54:17.946049Z", status="set", type="time_bound", warnings=[], workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7")]
 ```
 {% endtab %}
 
@@ -160,32 +135,7 @@ seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit:
 #### Output:
 
 ```ruby
-[
-  {
-    "access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
-    "code" => "1234",
-    "common_code_key" => nil,
-    "created_at" => "2025-06-14T16:54:17.946242Z",
-    "device_id" => "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
-    "ends_at" => "2025-07-04T16:54:17.946049Z",
-    "errors" => [],
-    "is_backup" => false,
-    "is_backup_access_code_available" => false,
-    "is_external_modification_allowed" => false,
-    "is_managed" => true,
-    "is_offline_access_code" => false,
-    "is_one_time_use" => false,
-    "is_scheduled_on_device" => true,
-    "is_waiting_for_code_assignment" => false,
-    "name" => "My Access Code",
-    "pulled_backup_access_code_id" => nil,
-    "starts_at" => "2025-07-02T16:54:17.946049Z",
-    "status" => "set",
-    "type" => "time_bound",
-    "warnings" => [],
-    "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-  },
-]
+[{"access_code_id" => "e9cf6dd6-89aa-477f-a701-c08f3de13c1f","code" => "1234","common_code_key" => nil,"created_at" => "2025-06-14T16:54:17.946242Z","device_id" => "f5197f50-839b-4a8e-82f3-e9ef06af93ae","ends_at" => "2025-07-04T16:54:17.946049Z","errors" => [],"is_backup" => false,"is_backup_access_code_available" => false,"is_external_modification_allowed" => false,"is_managed" => true,"is_offline_access_code" => false,"is_one_time_use" => false,"is_scheduled_on_device" => true,"is_waiting_for_code_assignment" => false,"name" => "My Access Code","pulled_backup_access_code_id" => nil,"starts_at" => "2025-07-02T16:54:17.946049Z","status" => "set","type" => "time_bound","warnings" => [],"workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"}]
 ```
 {% endtab %}
 
@@ -334,7 +284,7 @@ Your user ID for the user by which to filter access codes.
 
 {% hint style="success" %}
 Returns:
-**Array of [access\_codes](.)**
+**Array of [access\_codes](.)
 
 {% endhint %}
 

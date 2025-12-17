@@ -41,7 +41,7 @@ Updates a specified thermostat schedule.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "thermostat_schedule_id": "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
   "name": "Jane's Stay",
@@ -68,15 +68,7 @@ Updates a specified thermostat schedule.
 #### Code:
 
 ```python
-seam.thermostats.schedules.update(
-    thermostat_schedule_id="f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
-    name="Jane's Stay",
-    climate_preset_key="Occupied",
-    max_override_period_minutes=90,
-    starts_at="2025-06-20T03:24:25.000Z",
-    ends_at="2025-06-22T06:04:21.000Z",
-    is_override_allowed=true,
-)
+seam.thermostats.schedules.update(thermostat_schedule_id="f29b8f4d-ef6e-4219-96e5-16fb2151ec6c", name="Jane's Stay", climate_preset_key="Occupied", max_override_period_minutes=90, starts_at="2025-06-20T03:24:25.000Z", ends_at="2025-06-22T06:04:21.000Z", is_override_allowed=true)
 ```
 
 #### Output:
@@ -93,15 +85,7 @@ Updates a specified thermostat schedule.
 #### Code:
 
 ```ruby
-seam.thermostats.schedules.update(
-  thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c",
-  name: "Jane's Stay",
-  climate_preset_key: "Occupied",
-  max_override_period_minutes: 90,
-  starts_at: "2025-06-20T03:24:25.000Z",
-  ends_at: "2025-06-22T06:04:21.000Z",
-  is_override_allowed: true,
-)
+seam.thermostats.schedules.update(thermostat_schedule_id: "f29b8f4d-ef6e-4219-96e5-16fb2151ec6c", name: "Jane's Stay", climate_preset_key: "Occupied", max_override_period_minutes: 90, starts_at: "2025-06-20T03:24:25.000Z", ends_at: "2025-06-22T06:04:21.000Z", is_override_allowed: true)
 ```
 
 #### Output:
@@ -217,7 +201,7 @@ Date and time at which the thermostat schedule starts, in [ISO 8601](https://www
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

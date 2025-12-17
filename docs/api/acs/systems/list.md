@@ -57,7 +57,7 @@ Returns a list of all access systems.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "connected_account_id": "2283a842-27c5-474a-bd0e-4c959274efa0"
 }
@@ -106,27 +106,7 @@ seam.acs.systems.list(connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0
 #### Output:
 
 ```python
-[
-    AcsSystem(
-        acs_access_group_count=5,
-        acs_system_id="dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
-        acs_user_count=20,
-        connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0",
-        connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
-        created_at="2025-06-15T16:54:17.946425Z",
-        default_credential_manager_acs_system_id="5dde2def-3507-44f5-9521-7ca96aa4cd18",
-        errors=[],
-        external_type="salto_ks_site",
-        external_type_display_name="Salto KS site",
-        image_alt_text="Salto KS site Logo",
-        image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
-        is_credential_manager=false,
-        location={"time_zone": "America/New_York"},
-        name="My Access System",
-        warnings=[],
-        workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f",
-    )
-]
+[AcsSystem(acs_access_group_count=5, acs_system_id="dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7", acs_user_count=20, connected_account_id="2283a842-27c5-474a-bd0e-4c959274efa0", connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"], created_at="2025-06-15T16:54:17.946425Z", default_credential_manager_acs_system_id="5dde2def-3507-44f5-9521-7ca96aa4cd18", errors=[], external_type="salto_ks_site", external_type_display_name="Salto KS site", image_alt_text="Salto KS site Logo", image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128", is_credential_manager=false, location={"time_zone":"America/New_York"}, name="My Access System", warnings=[], workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f")]
 ```
 {% endtab %}
 
@@ -143,30 +123,7 @@ seam.acs.systems.list(connected_account_id: "2283a842-27c5-474a-bd0e-4c959274efa
 #### Output:
 
 ```ruby
-[
-  {
-    "acs_access_group_count" => 5,
-    "acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
-    "acs_user_count" => 20,
-    "connected_account_id" => "2283a842-27c5-474a-bd0e-4c959274efa0",
-    "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
-    "created_at" => "2025-06-15T16:54:17.946425Z",
-    "default_credential_manager_acs_system_id" => "5dde2def-3507-44f5-9521-7ca96aa4cd18",
-    "errors" => [],
-    "external_type" => "salto_ks_site",
-    "external_type_display_name" => "Salto KS site",
-    "image_alt_text" => "Salto KS site Logo",
-    "image_url" =>
-      "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
-    "is_credential_manager" => false,
-    "location" => {
-      time_zone: "America/New_York",
-    },
-    "name" => "My Access System",
-    "warnings" => [],
-    "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
-  },
-]
+[{"acs_access_group_count" => 5,"acs_system_id" => "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7","acs_user_count" => 20,"connected_account_id" => "2283a842-27c5-474a-bd0e-4c959274efa0","connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],"created_at" => "2025-06-15T16:54:17.946425Z","default_credential_manager_acs_system_id" => "5dde2def-3507-44f5-9521-7ca96aa4cd18","errors" => [],"external_type" => "salto_ks_site","external_type_display_name" => "Salto KS site","image_alt_text" => "Salto KS site Logo","image_url" => "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128","is_credential_manager" => false,"location" => {"time_zone":"America/New_York"},"name" => "My Access System","warnings" => [],"workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f"}]
 ```
 {% endtab %}
 
@@ -282,7 +239,7 @@ Customer key for which you want to list access systems.
 
 {% hint style="success" %}
 Returns:
-**Array of [acs\_systems](.)**
+**Array of [acs\_systems](.)
 
 {% endhint %}
 

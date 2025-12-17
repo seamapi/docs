@@ -1025,9 +1025,9 @@ Potential duplicate access code detected.
   
 </details>
 <details>
-<summary><code>dormakaba_oracode_invalid_time_range</code></summary>
+<summary><code>dormakaba_oracode_no_valid_user_level</code></summary>
 
-No Dormakaba Oracode user levels configured for the requested time range.
+No valid user level for Oracode.
 
   **`created_at`** *Datetime*
   
@@ -1044,7 +1044,7 @@ No Dormakaba Oracode user levels configured for the requested time range.
   
   Enum values:
   
-  - <code>dormakaba_oracode_invalid_time_range</code>
+  - <code>dormakaba_oracode_no_valid_user_level</code>
   
   
   ---
@@ -2221,38 +2221,6 @@ Unable to confirm that the access code is set on Kwikset device.
   
   
 </details>
-<details>
-<summary><code>ultraloq_access_code_disabled</code></summary>
-
-Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>ultraloq_access_code_disabled</code>
-  
-  
-</details>
 
 ---
 
@@ -2340,9 +2308,9 @@ Indicates that the device has been removed.
 
 ---
 
-**`dormakaba_oracode_invalid_time_range`**
+**`dormakaba_oracode_no_valid_user_level`**
 
-No Dormakaba Oracode user levels configured for the requested time range.
+No valid user level for Oracode.
 
 ---
 
@@ -2580,12 +2548,6 @@ Failed to set code on SmartThings device.
 **`third_party_integration_detected`**
 
 Third-party integration detected that may cause access codes to fail.
-
----
-
-**`ultraloq_access_code_disabled`**
-
-Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.
 
 ---
 

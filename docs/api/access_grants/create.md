@@ -88,7 +88,7 @@ Creates a new Access Grant using space IDs and an existing user identity.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   "space_ids": [
@@ -166,64 +166,13 @@ Creates a new Access Grant using space IDs and an existing user identity.
 #### Code:
 
 ```python
-seam.access_grants.create(
-    user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4",
-    space_ids=[
-        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    ],
-    requested_access_methods=[
-        {"mode": "code"},
-        {"mode": "card"},
-        {"mode": "mobile_key"},
-    ],
-    starts_at="2025-06-16T16:54:17.946606Z",
-    ends_at="2025-06-18T16:54:17.946606Z",
-)
+seam.access_grants.create(user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4", space_ids=["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"], requested_access_methods=[{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}], starts_at="2025-06-16T16:54:17.946606Z", ends_at="2025-06-18T16:54:17.946606Z")
 ```
 
 #### Output:
 
 ```python
-AccessGrant(
-    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-    access_method_ids=[
-        "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-        "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-    ],
-    created_at="2025-06-16T16:54:17.946606Z",
-    display_name="My Access Grant",
-    ends_at="2025-06-18T16:54:17.946606Z",
-    instant_key_url="https://ik.seam.co/ABCXYZ",
-    requested_access_methods=[
-        {
-            "display_name": "PIN Code Credential",
-            "mode": "code",
-            "created_at": "2025-06-16T16:54:17.946606Z",
-            "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
-        },
-        {
-            "display_name": "Card Credential",
-            "mode": "card",
-            "created_at": "2025-06-16T16:54:19.946606Z",
-            "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-        },
-        {
-            "display_name": "Mobile Key Credential",
-            "mode": "mobile_key",
-            "created_at": "2025-06-16T16:54:21.946606Z",
-            "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-        },
-    ],
-    space_ids=[
-        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    ],
-    starts_at="2025-06-16T16:54:17.946606Z",
-    user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4",
-    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-)
+AccessGrant(access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b", access_method_ids=["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"], created_at="2025-06-16T16:54:17.946606Z", display_name="My Access Grant", ends_at="2025-06-18T16:54:17.946606Z", instant_key_url="https://ik.seam.co/ABCXYZ", requested_access_methods=[{"display_name":"PIN Code Credential","mode":"code","created_at":"2025-06-16T16:54:17.946606Z","created_access_method_ids":["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]},{"display_name":"Card Credential","mode":"card","created_at":"2025-06-16T16:54:19.946606Z","created_access_method_ids":["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]},{"display_name":"Mobile Key Credential","mode":"mobile_key","created_at":"2025-06-16T16:54:21.946606Z","created_access_method_ids":["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]}], space_ids=["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"], starts_at="2025-06-16T16:54:17.946606Z", user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4", workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7")
 ```
 {% endtab %}
 
@@ -234,54 +183,13 @@ Creates a new Access Grant using space IDs and an existing user identity.
 #### Code:
 
 ```ruby
-seam.access_grants.create(
-  user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
-  space_ids: %w[1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a],
-  requested_access_methods: [{ mode: "code" }, { mode: "card" }, { mode: "mobile_key" }],
-  starts_at: "2025-06-16T16:54:17.946606Z",
-  ends_at: "2025-06-18T16:54:17.946606Z",
-)
+seam.access_grants.create(user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4", space_ids: ["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"], requested_access_methods: [{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}], starts_at: "2025-06-16T16:54:17.946606Z", ends_at: "2025-06-18T16:54:17.946606Z")
 ```
 
 #### Output:
 
 ```ruby
-{
-  "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "access_method_ids" => %w[
-    a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
-    5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
-    c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
-  ],
-  "created_at" => "2025-06-16T16:54:17.946606Z",
-  "display_name" => "My Access Grant",
-  "ends_at" => "2025-06-18T16:54:17.946606Z",
-  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
-  "requested_access_methods" => [
-    {
-      display_name: "PIN Code Credential",
-      mode: "code",
-      created_at: "2025-06-16T16:54:17.946606Z",
-      created_access_method_ids: ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
-    },
-    {
-      display_name: "Card Credential",
-      mode: "card",
-      created_at: "2025-06-16T16:54:19.946606Z",
-      created_access_method_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-    },
-    {
-      display_name: "Mobile Key Credential",
-      mode: "mobile_key",
-      created_at: "2025-06-16T16:54:21.946606Z",
-      created_access_method_ids: ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-    },
-  ],
-  "space_ids" => %w[1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a],
-  "starts_at" => "2025-06-16T16:54:17.946606Z",
-  "user_identity_id" => "e3d736c1-540d-4d10-83e5-9a4e135453b4",
-  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-}
+{"access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b","access_method_ids" => ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],"created_at" => "2025-06-16T16:54:17.946606Z","display_name" => "My Access Grant","ends_at" => "2025-06-18T16:54:17.946606Z","instant_key_url" => "https://ik.seam.co/ABCXYZ","requested_access_methods" => [{"display_name":"PIN Code Credential","mode":"code","created_at":"2025-06-16T16:54:17.946606Z","created_access_method_ids":["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]},{"display_name":"Card Credential","mode":"card","created_at":"2025-06-16T16:54:19.946606Z","created_access_method_ids":["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]},{"display_name":"Mobile Key Credential","mode":"mobile_key","created_at":"2025-06-16T16:54:21.946606Z","created_access_method_ids":["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]}],"space_ids" => ["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"],"starts_at" => "2025-06-16T16:54:17.946606Z","user_identity_id" => "e3d736c1-540d-4d10-83e5-9a4e135453b4","workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"}
 ```
 {% endtab %}
 
@@ -633,7 +541,7 @@ ID of user identity for whom access is being granted.
 
 {% hint style="success" %}
 Returns:
-**[access\_grant](.)**
+**[access\_grant](.)
 
 {% endhint %}
 
@@ -747,7 +655,7 @@ await seam.accessGrants.create({
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   "acs_entrance_ids": [
@@ -798,37 +706,13 @@ EOF
 #### Code:
 
 ```python
-seam.access_grants.create(
-    user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4",
-    acs_entrance_ids=[
-        "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-        "550e8400-e29b-41d4-a716-446655440001",
-    ],
-    device_ids=[
-        "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
-        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-    ],
-    requested_access_methods=[
-        {"mode": "code"},
-        {"mode": "card"},
-        {"mode": "mobile_key"},
-    ],
-    starts_at="2025-06-16T16:54:17.946606Z",
-    ends_at="2025-06-18T16:54:17.946606Z",
-)
+seam.access_grants.create(user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4", acs_entrance_ids=["f47ac10b-58cc-4372-a567-0e02b2c3d479","550e8400-e29b-41d4-a716-446655440001"], device_ids=["6ba7b811-9dad-11d1-80b4-00c04fd430c8","1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"], requested_access_methods=[{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}], starts_at="2025-06-16T16:54:17.946606Z", ends_at="2025-06-18T16:54:17.946606Z")
 ```
 
 #### Output:
 
 ```python
-AccessGrant(
-    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-    access_method_ids=[
-        "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-        "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-    ],
-)
+AccessGrant(access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b", access_method_ids=["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"])
 ```
 {% endtab %}
 
@@ -839,27 +723,13 @@ AccessGrant(
 #### Code:
 
 ```ruby
-seam.access_grants.create(
-  user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
-  acs_entrance_ids: %w[f47ac10b-58cc-4372-a567-0e02b2c3d479 550e8400-e29b-41d4-a716-446655440001],
-  device_ids: %w[6ba7b811-9dad-11d1-80b4-00c04fd430c8 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d],
-  requested_access_methods: [{ mode: "code" }, { mode: "card" }, { mode: "mobile_key" }],
-  starts_at: "2025-06-16T16:54:17.946606Z",
-  ends_at: "2025-06-18T16:54:17.946606Z",
-)
+seam.access_grants.create(user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4", acs_entrance_ids: ["f47ac10b-58cc-4372-a567-0e02b2c3d479","550e8400-e29b-41d4-a716-446655440001"], device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8","1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"], requested_access_methods: [{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}], starts_at: "2025-06-16T16:54:17.946606Z", ends_at: "2025-06-18T16:54:17.946606Z")
 ```
 
 #### Output:
 
 ```ruby
-{
-  "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "access_method_ids" => %w[
-    a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
-    5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
-    c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
-  ],
-}
+{"access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b","access_method_ids" => ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]}
 ```
 {% endtab %}
 
@@ -1019,7 +889,7 @@ await seam.accessGrants.create({
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity": {
     "full_name": "Jane Doe",
@@ -1101,68 +971,13 @@ EOF
 #### Code:
 
 ```python
-seam.access_grants.create(
-    user_identity={
-        "full_name": "Jane Doe",
-        "email_address": "jane.doe@example.com",
-        "phone_number": "+1555551003",
-    },
-    space_ids=[
-        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    ],
-    requested_access_methods=[
-        {"mode": "code"},
-        {"mode": "card"},
-        {"mode": "mobile_key"},
-    ],
-    starts_at="2025-06-16T16:54:17.946606Z",
-    ends_at="2025-06-18T16:54:17.946606Z",
-)
+seam.access_grants.create(user_identity={"full_name":"Jane Doe","email_address":"jane.doe@example.com","phone_number":"+1555551003"}, space_ids=["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"], requested_access_methods=[{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}], starts_at="2025-06-16T16:54:17.946606Z", ends_at="2025-06-18T16:54:17.946606Z")
 ```
 
 #### Output:
 
 ```python
-AccessGrant(
-    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-    access_method_ids=[
-        "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-        "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-    ],
-    created_at="2025-06-16T16:54:17.946606Z",
-    display_name="My Access Grant",
-    ends_at="2025-06-18T16:54:17.946606Z",
-    instant_key_url="https://ik.seam.co/ABCXYZ",
-    requested_access_methods=[
-        {
-            "display_name": "PIN Code Credential",
-            "mode": "code",
-            "created_at": "2025-06-16T16:54:17.946606Z",
-            "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
-        },
-        {
-            "display_name": "Card Credential",
-            "mode": "card",
-            "created_at": "2025-06-16T16:54:19.946606Z",
-            "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-        },
-        {
-            "display_name": "Mobile Key Credential",
-            "mode": "mobile_key",
-            "created_at": "2025-06-16T16:54:21.946606Z",
-            "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-        },
-    ],
-    space_ids=[
-        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    ],
-    starts_at="2025-06-16T16:54:17.946606Z",
-    user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4",
-    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-)
+AccessGrant(access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b", access_method_ids=["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"], created_at="2025-06-16T16:54:17.946606Z", display_name="My Access Grant", ends_at="2025-06-18T16:54:17.946606Z", instant_key_url="https://ik.seam.co/ABCXYZ", requested_access_methods=[{"display_name":"PIN Code Credential","mode":"code","created_at":"2025-06-16T16:54:17.946606Z","created_access_method_ids":["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]},{"display_name":"Card Credential","mode":"card","created_at":"2025-06-16T16:54:19.946606Z","created_access_method_ids":["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]},{"display_name":"Mobile Key Credential","mode":"mobile_key","created_at":"2025-06-16T16:54:21.946606Z","created_access_method_ids":["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]}], space_ids=["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"], starts_at="2025-06-16T16:54:17.946606Z", user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4", workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7")
 ```
 {% endtab %}
 
@@ -1173,58 +988,13 @@ AccessGrant(
 #### Code:
 
 ```ruby
-seam.access_grants.create(
-  user_identity: {
-    full_name: "Jane Doe",
-    email_address: "jane.doe@example.com",
-    phone_number: "+1555551003",
-  },
-  space_ids: %w[1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a],
-  requested_access_methods: [{ mode: "code" }, { mode: "card" }, { mode: "mobile_key" }],
-  starts_at: "2025-06-16T16:54:17.946606Z",
-  ends_at: "2025-06-18T16:54:17.946606Z",
-)
+seam.access_grants.create(user_identity: {"full_name":"Jane Doe","email_address":"jane.doe@example.com","phone_number":"+1555551003"}, space_ids: ["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"], requested_access_methods: [{"mode":"code"},{"mode":"card"},{"mode":"mobile_key"}], starts_at: "2025-06-16T16:54:17.946606Z", ends_at: "2025-06-18T16:54:17.946606Z")
 ```
 
 #### Output:
 
 ```ruby
-{
-  "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "access_method_ids" => %w[
-    a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
-    5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
-    c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f
-  ],
-  "created_at" => "2025-06-16T16:54:17.946606Z",
-  "display_name" => "My Access Grant",
-  "ends_at" => "2025-06-18T16:54:17.946606Z",
-  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
-  "requested_access_methods" => [
-    {
-      display_name: "PIN Code Credential",
-      mode: "code",
-      created_at: "2025-06-16T16:54:17.946606Z",
-      created_access_method_ids: ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
-    },
-    {
-      display_name: "Card Credential",
-      mode: "card",
-      created_at: "2025-06-16T16:54:19.946606Z",
-      created_access_method_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-    },
-    {
-      display_name: "Mobile Key Credential",
-      mode: "mobile_key",
-      created_at: "2025-06-16T16:54:21.946606Z",
-      created_access_method_ids: ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-    },
-  ],
-  "space_ids" => %w[1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a],
-  "starts_at" => "2025-06-16T16:54:17.946606Z",
-  "user_identity_id" => "e3d736c1-540d-4d10-83e5-9a4e135453b4",
-  "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-}
+{"access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b","access_method_ids" => ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],"created_at" => "2025-06-16T16:54:17.946606Z","display_name" => "My Access Grant","ends_at" => "2025-06-18T16:54:17.946606Z","instant_key_url" => "https://ik.seam.co/ABCXYZ","requested_access_methods" => [{"display_name":"PIN Code Credential","mode":"code","created_at":"2025-06-16T16:54:17.946606Z","created_access_method_ids":["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]},{"display_name":"Card Credential","mode":"card","created_at":"2025-06-16T16:54:19.946606Z","created_access_method_ids":["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]},{"display_name":"Mobile Key Credential","mode":"mobile_key","created_at":"2025-06-16T16:54:21.946606Z","created_access_method_ids":["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]}],"space_ids" => ["1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d","7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"],"starts_at" => "2025-06-16T16:54:17.946606Z","user_identity_id" => "e3d736c1-540d-4d10-83e5-9a4e135453b4","workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"}
 ```
 {% endtab %}
 

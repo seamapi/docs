@@ -35,7 +35,7 @@ Generates a code for an access code, given a device ID.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/generate_code" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "02cd5099-d9f8-45a1-a9c0-f2ecbd334792"
 }
@@ -84,7 +84,7 @@ seam.access_codes.generate_code(device_id: "02cd5099-d9f8-45a1-a9c0-f2ecbd334792
 #### Output:
 
 ```ruby
-{ "device_id" => "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code" => "1234" }
+{"device_id" => "02cd5099-d9f8-45a1-a9c0-f2ecbd334792","code" => "1234"}
 ```
 {% endtab %}
 
@@ -152,7 +152,7 @@ ID of the device for which you want to generate a code.
 
 {% hint style="success" %}
 Returns:
-**[access\_code](.)**
+**[access\_code](.)
 
 {% endhint %}
 

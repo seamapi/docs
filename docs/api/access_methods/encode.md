@@ -39,7 +39,7 @@ ID of the `acs_encoder` to use to encode the `access_method`.
 
 {% hint style="success" %}
 Returns:
-**[action\_attempt](./)**
+**[action\_attempt](./)
 
 {% endhint %}
 

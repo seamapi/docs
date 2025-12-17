@@ -59,7 +59,7 @@ Returns a list of all phones, using the owner's user identity ID.
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "owner_user_identity_id": "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4"
 }
@@ -111,30 +111,7 @@ seam.phones.list(owner_user_identity_id="6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4")
 #### Output:
 
 ```python
-[
-    Phone(
-        created_at="2025-06-14T16:54:17.946540Z",
-        custom_metadata={"id": "internalId1"},
-        device_id="e452f665-a635-4c65-922b-9feab0e0f84f",
-        device_type="ios_phone",
-        display_name="My Phone",
-        errors=[],
-        nickname="My Phone",
-        properties={
-            "assa_abloy_credential_service_metadata": {
-                "endpoints": [
-                    {
-                        "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-                        "is_active": true,
-                    }
-                ],
-                "has_active_endpoint": true,
-            }
-        },
-        warnings=[],
-        workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336",
-    )
-]
+[Phone(created_at="2025-06-14T16:54:17.946540Z", custom_metadata={"id":"internalId1"}, device_id="e452f665-a635-4c65-922b-9feab0e0f84f", device_type="ios_phone", display_name="My Phone", errors=[], nickname="My Phone", properties={"assa_abloy_credential_service_metadata":{"endpoints":[{"endpoint_id":"c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f","is_active":true}],"has_active_endpoint":true}}, warnings=[], workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336")]
 ```
 {% endtab %}
 
@@ -151,27 +128,7 @@ seam.phones.list(owner_user_identity_id: "6bc848b0-0e7f-4d4c-8ea1-004ccda0b0a4")
 #### Output:
 
 ```ruby
-[
-  {
-    "created_at" => "2025-06-14T16:54:17.946540Z",
-    "custom_metadata" => {
-      id: "internalId1",
-    },
-    "device_id" => "e452f665-a635-4c65-922b-9feab0e0f84f",
-    "device_type" => "ios_phone",
-    "display_name" => "My Phone",
-    "errors" => [],
-    "nickname" => "My Phone",
-    "properties" => {
-      assa_abloy_credential_service_metadata: {
-        endpoints: [{ endpoint_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f", is_active: true }],
-        has_active_endpoint: true,
-      },
-    },
-    "warnings" => [],
-    "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
-  },
-]
+[{"created_at" => "2025-06-14T16:54:17.946540Z","custom_metadata" => {"id":"internalId1"},"device_id" => "e452f665-a635-4c65-922b-9feab0e0f84f","device_type" => "ios_phone","display_name" => "My Phone","errors" => [],"nickname" => "My Phone","properties" => {"assa_abloy_credential_service_metadata":{"endpoints":[{"endpoint_id":"c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f","is_active":true}],"has_active_endpoint":true}},"warnings" => [],"workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336"}]
 ```
 {% endtab %}
 
@@ -290,7 +247,7 @@ ID of the user identity that represents the owner by which you want to filter th
 
 {% hint style="success" %}
 Returns:
-**Array of [phones](.)**
+**Array of [phones](.)
 
 {% endhint %}
 
@@ -388,7 +345,7 @@ await seam.phones.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/phones/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_credential_id": "6617f81a-d601-4e33-9052-f44bf1b4ed2b"
 }
@@ -440,30 +397,7 @@ seam.phones.list(acs_credential_id="6617f81a-d601-4e33-9052-f44bf1b4ed2b")
 #### Output:
 
 ```python
-[
-    Phone(
-        created_at="2025-06-14T16:54:17.946540Z",
-        custom_metadata={"id": "internalId1"},
-        device_id="e452f665-a635-4c65-922b-9feab0e0f84f",
-        device_type="ios_phone",
-        display_name="My Phone",
-        errors=[],
-        nickname="My Phone",
-        properties={
-            "assa_abloy_credential_service_metadata": {
-                "endpoints": [
-                    {
-                        "endpoint_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-                        "is_active": true,
-                    }
-                ],
-                "has_active_endpoint": true,
-            }
-        },
-        warnings=[],
-        workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336",
-    )
-]
+[Phone(created_at="2025-06-14T16:54:17.946540Z", custom_metadata={"id":"internalId1"}, device_id="e452f665-a635-4c65-922b-9feab0e0f84f", device_type="ios_phone", display_name="My Phone", errors=[], nickname="My Phone", properties={"assa_abloy_credential_service_metadata":{"endpoints":[{"endpoint_id":"c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f","is_active":true}],"has_active_endpoint":true}}, warnings=[], workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336")]
 ```
 {% endtab %}
 
@@ -480,27 +414,7 @@ seam.phones.list(acs_credential_id: "6617f81a-d601-4e33-9052-f44bf1b4ed2b")
 #### Output:
 
 ```ruby
-[
-  {
-    "created_at" => "2025-06-14T16:54:17.946540Z",
-    "custom_metadata" => {
-      id: "internalId1",
-    },
-    "device_id" => "e452f665-a635-4c65-922b-9feab0e0f84f",
-    "device_type" => "ios_phone",
-    "display_name" => "My Phone",
-    "errors" => [],
-    "nickname" => "My Phone",
-    "properties" => {
-      assa_abloy_credential_service_metadata: {
-        endpoints: [{ endpoint_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f", is_active: true }],
-        has_active_endpoint: true,
-      },
-    },
-    "warnings" => [],
-    "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
-  },
-]
+[{"created_at" => "2025-06-14T16:54:17.946540Z","custom_metadata" => {"id":"internalId1"},"device_id" => "e452f665-a635-4c65-922b-9feab0e0f84f","device_type" => "ios_phone","display_name" => "My Phone","errors" => [],"nickname" => "My Phone","properties" => {"assa_abloy_credential_service_metadata":{"endpoints":[{"endpoint_id":"c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f","is_active":true}],"has_active_endpoint":true}},"warnings" => [],"workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336"}]
 ```
 {% endtab %}
 

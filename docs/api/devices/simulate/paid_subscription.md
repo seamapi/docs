@@ -35,7 +35,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

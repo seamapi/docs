@@ -37,7 +37,7 @@ Revokes a client session.
 ```curl
 curl --include --request POST "https://connect.getseam.com/client_sessions/revoke" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "client_session_id": "4271352c-6894-4367-8f52-41d565c48f13"
 }
@@ -148,7 +148,7 @@ ID of the client session that you want to revoke.
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

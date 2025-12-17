@@ -49,7 +49,7 @@ Returns a specified access group.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/access_groups/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_access_group_id": "09eb5265-6e3b-4e6d-bf96-736171c547ae"
 }
@@ -92,21 +92,7 @@ seam.acs.access_groups.get(acs_access_group_id="09eb5265-6e3b-4e6d-bf96-736171c5
 #### Output:
 
 ```python
-AcsAccessGroup(
-    access_group_type="salto_ks_access_group",
-    access_group_type_display_name="Salto KS Access Group",
-    acs_access_group_id="09eb5265-6e3b-4e6d-bf96-736171c547ae",
-    acs_system_id="045baa77-6d06-40fe-a2cd-b82eef688f4a",
-    connected_account_id="daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-    created_at="2025-06-15T16:54:17.946453Z",
-    display_name="Main Group",
-    external_type="salto_ks_access_group",
-    external_type_display_name="Salto KS Access Group",
-    is_managed=true,
-    name="My Access Group",
-    warnings=[],
-    workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
-)
+AcsAccessGroup(access_group_type="salto_ks_access_group", access_group_type_display_name="Salto KS Access Group", acs_access_group_id="09eb5265-6e3b-4e6d-bf96-736171c547ae", acs_system_id="045baa77-6d06-40fe-a2cd-b82eef688f4a", connected_account_id="daba7bd0-edb6-4bb9-a70b-f9ae08a0e301", created_at="2025-06-15T16:54:17.946453Z", display_name="Main Group", external_type="salto_ks_access_group", external_type_display_name="Salto KS Access Group", is_managed=true, name="My Access Group", warnings=[], workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0")
 ```
 {% endtab %}
 
@@ -123,21 +109,7 @@ seam.acs.access_groups.get(acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c
 #### Output:
 
 ```ruby
-{
-  "access_group_type" => "salto_ks_access_group",
-  "access_group_type_display_name" => "Salto KS Access Group",
-  "acs_access_group_id" => "09eb5265-6e3b-4e6d-bf96-736171c547ae",
-  "acs_system_id" => "045baa77-6d06-40fe-a2cd-b82eef688f4a",
-  "connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-  "created_at" => "2025-06-15T16:54:17.946453Z",
-  "display_name" => "Main Group",
-  "external_type" => "salto_ks_access_group",
-  "external_type_display_name" => "Salto KS Access Group",
-  "is_managed" => true,
-  "name" => "My Access Group",
-  "warnings" => [],
-  "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
-}
+{"access_group_type" => "salto_ks_access_group","access_group_type_display_name" => "Salto KS Access Group","acs_access_group_id" => "09eb5265-6e3b-4e6d-bf96-736171c547ae","acs_system_id" => "045baa77-6d06-40fe-a2cd-b82eef688f4a","connected_account_id" => "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301","created_at" => "2025-06-15T16:54:17.946453Z","display_name" => "Main Group","external_type" => "salto_ks_access_group","external_type_display_name" => "Salto KS Access Group","is_managed" => true,"name" => "My Access Group","warnings" => [],"workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0"}
 ```
 {% endtab %}
 
@@ -232,7 +204,7 @@ ID of the access group that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[acs\_access\_group](.)**
+**[acs\_access\_group](.)
 
 {% endhint %}
 

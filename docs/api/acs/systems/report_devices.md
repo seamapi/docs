@@ -44,7 +44,7 @@ Inform Seam that devices are connected to the ACS system or were removed.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/report_devices" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_system_id": "182ea706-8e14-4921-8e57-ee18d5a7de31",
   "acs_encoders": [
@@ -97,18 +97,7 @@ Inform Seam that devices are connected to the ACS system or were removed.
 #### Code:
 
 ```python
-seam.acs.systems.report_devices(
-    acs_system_id="182ea706-8e14-4921-8e57-ee18d5a7de31",
-    acs_encoders=[
-        {"hotek_metadata": {"encoder_number": "1"}},
-        {"is_removed": true, "hotek_metadata": {"encoder_number": "2"}},
-    ],
-    acs_entrances=[
-        {"hotek_metadata": {"room_number": "203"}},
-        {"is_removed": true, "hotek_metadata": {"room_number": "500"}},
-        {"hotek_metadata": {"common_area_name": "Gym", "common_area_number": "2"}},
-    ],
-)
+seam.acs.systems.report_devices(acs_system_id="182ea706-8e14-4921-8e57-ee18d5a7de31", acs_encoders=[{"hotek_metadata":{"encoder_number":"1"}},{"is_removed":true,"hotek_metadata":{"encoder_number":"2"}}], acs_entrances=[{"hotek_metadata":{"room_number":"203"}},{"is_removed":true,"hotek_metadata":{"room_number":"500"}},{"hotek_metadata":{"common_area_name":"Gym","common_area_number":"2"}}])
 ```
 
 #### Output:
@@ -125,18 +114,7 @@ Inform Seam that devices are connected to the ACS system or were removed.
 #### Code:
 
 ```ruby
-seam.acs.systems.report_devices(
-  acs_system_id: "182ea706-8e14-4921-8e57-ee18d5a7de31",
-  acs_encoders: [
-    { hotek_metadata: { encoder_number: "1" } },
-    { is_removed: true, hotek_metadata: { encoder_number: "2" } },
-  ],
-  acs_entrances: [
-    { hotek_metadata: { room_number: "203" } },
-    { is_removed: true, hotek_metadata: { room_number: "500" } },
-    { hotek_metadata: { common_area_name: "Gym", common_area_number: "2" } },
-  ],
-)
+seam.acs.systems.report_devices(acs_system_id: "182ea706-8e14-4921-8e57-ee18d5a7de31", acs_encoders: [{"hotek_metadata":{"encoder_number":"1"}},{"is_removed":true,"hotek_metadata":{"encoder_number":"2"}}], acs_entrances: [{"hotek_metadata":{"room_number":"203"}},{"is_removed":true,"hotek_metadata":{"room_number":"500"}},{"hotek_metadata":{"common_area_name":"Gym","common_area_number":"2"}}])
 ```
 
 #### Output:
@@ -325,7 +303,7 @@ Whether the entrance is removed
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 

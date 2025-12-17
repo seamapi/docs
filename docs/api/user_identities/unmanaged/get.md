@@ -30,7 +30,7 @@ ID of the unmanaged user identity that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[unknown](./)**
+**[unknown](./)
 
 {% endhint %}
 

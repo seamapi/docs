@@ -43,7 +43,7 @@ Returns a specified encoder.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/encoders/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_encoder_id": "4bccf994-21a6-4a6d-bc6d-5b0311d1686a"
 }
@@ -80,15 +80,7 @@ seam.acs.encoders.get(acs_encoder_id="4bccf994-21a6-4a6d-bc6d-5b0311d1686a")
 #### Output:
 
 ```python
-AcsEncoder(
-    acs_encoder_id="4bccf994-21a6-4a6d-bc6d-5b0311d1686a",
-    acs_system_id="c85406d2-214f-4e11-8000-a2e5b5a362a4",
-    connected_account_id="1b9a3e0d-443f-4063-b619-4ca7e2a97750",
-    created_at="2025-06-16T16:54:17.946527Z",
-    display_name="Encoder 1",
-    errors=[],
-    workspace_id="f863ac85-2c4e-49ae-8679-3ec2417f1d62",
-)
+AcsEncoder(acs_encoder_id="4bccf994-21a6-4a6d-bc6d-5b0311d1686a", acs_system_id="c85406d2-214f-4e11-8000-a2e5b5a362a4", connected_account_id="1b9a3e0d-443f-4063-b619-4ca7e2a97750", created_at="2025-06-16T16:54:17.946527Z", display_name="Encoder 1", errors=[], workspace_id="f863ac85-2c4e-49ae-8679-3ec2417f1d62")
 ```
 {% endtab %}
 
@@ -105,15 +97,7 @@ seam.acs.encoders.get(acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a")
 #### Output:
 
 ```ruby
-{
-  "acs_encoder_id" => "4bccf994-21a6-4a6d-bc6d-5b0311d1686a",
-  "acs_system_id" => "c85406d2-214f-4e11-8000-a2e5b5a362a4",
-  "connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97750",
-  "created_at" => "2025-06-16T16:54:17.946527Z",
-  "display_name" => "Encoder 1",
-  "errors" => [],
-  "workspace_id" => "f863ac85-2c4e-49ae-8679-3ec2417f1d62",
-}
+{"acs_encoder_id" => "4bccf994-21a6-4a6d-bc6d-5b0311d1686a","acs_system_id" => "c85406d2-214f-4e11-8000-a2e5b5a362a4","connected_account_id" => "1b9a3e0d-443f-4063-b619-4ca7e2a97750","created_at" => "2025-06-16T16:54:17.946527Z","display_name" => "Encoder 1","errors" => [],"workspace_id" => "f863ac85-2c4e-49ae-8679-3ec2417f1d62"}
 ```
 {% endtab %}
 
@@ -196,7 +180,7 @@ ID of the encoder that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[acs\_encoder](.)**
+**[acs\_encoder](.)
 
 {% endhint %}
 

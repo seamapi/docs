@@ -37,7 +37,7 @@ Grants a specified access system user access to a specified access system entran
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/grant_access" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_entrance_id": "d23d7180-c1ee-4bbe-8630-05df5031ce35",
   "user_identity_id": "c6247b75-f1cb-493a-9915-a85a0b9639ae"
@@ -59,10 +59,7 @@ Grants a specified access system user access to a specified access system entran
 #### Code:
 
 ```python
-seam.acs.entrances.grant_access(
-    acs_entrance_id="d23d7180-c1ee-4bbe-8630-05df5031ce35",
-    user_identity_id="c6247b75-f1cb-493a-9915-a85a0b9639ae",
-)
+seam.acs.entrances.grant_access(acs_entrance_id="d23d7180-c1ee-4bbe-8630-05df5031ce35", user_identity_id="c6247b75-f1cb-493a-9915-a85a0b9639ae")
 ```
 
 #### Output:
@@ -79,10 +76,7 @@ Grants a specified access system user access to a specified access system entran
 #### Code:
 
 ```ruby
-seam.acs.entrances.grant_access(
-  acs_entrance_id: "d23d7180-c1ee-4bbe-8630-05df5031ce35",
-  user_identity_id: "c6247b75-f1cb-493a-9915-a85a0b9639ae",
-)
+seam.acs.entrances.grant_access(acs_entrance_id: "d23d7180-c1ee-4bbe-8630-05df5031ce35", user_identity_id: "c6247b75-f1cb-493a-9915-a85a0b9639ae")
 ```
 
 #### Output:
@@ -168,7 +162,7 @@ ID of the user identity to whom you want to grant access to an entrance. You can
 
 {% hint style="success" %}
 Returns:
-**void**
+**void
 
 {% endhint %}
 
@@ -212,7 +206,7 @@ await seam.acs.entrances.grantAccess({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/entrances/grant_access" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_entrance_id": "d23d7180-c1ee-4bbe-8630-05df5031ce35",
   "acs_user_id": "ace1dabe-7a25-4271-8d76-50e74ee4ae1f"
@@ -234,10 +228,7 @@ EOF
 #### Code:
 
 ```python
-seam.acs.entrances.grant_access(
-    acs_entrance_id="d23d7180-c1ee-4bbe-8630-05df5031ce35",
-    acs_user_id="ace1dabe-7a25-4271-8d76-50e74ee4ae1f",
-)
+seam.acs.entrances.grant_access(acs_entrance_id="d23d7180-c1ee-4bbe-8630-05df5031ce35", acs_user_id="ace1dabe-7a25-4271-8d76-50e74ee4ae1f")
 ```
 
 #### Output:
@@ -254,10 +245,7 @@ None
 #### Code:
 
 ```ruby
-seam.acs.entrances.grant_access(
-  acs_entrance_id: "d23d7180-c1ee-4bbe-8630-05df5031ce35",
-  acs_user_id: "ace1dabe-7a25-4271-8d76-50e74ee4ae1f",
-)
+seam.acs.entrances.grant_access(acs_entrance_id: "d23d7180-c1ee-4bbe-8630-05df5031ce35", acs_user_id: "ace1dabe-7a25-4271-8d76-50e74ee4ae1f")
 ```
 
 #### Output:
