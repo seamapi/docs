@@ -24,18 +24,14 @@ Buy and install a Visionline card encoder—specifically, the [ASSA ABLOY RFID e
        If the RFID encoder & updater is correctly connected to the PC and correctly uses the USBXpress driver, the serial number of the RFID encoder & updater displays in the **USB** area at the upper-left of the window.
 2.  Connect the card encoder to the Visionline server using USB.
 
-    {% hint style="info" %}
-    To connect through USB, you must use firmware version 2.6.2.4 or higher for the RFID encoder. Visionline 1.22.1 or higher is also required.
-    {% endhint %}
-
-3\. Register the card encoder.\
-1\. Log in to the Visionline application if you are not already logged in.\
-2\. At the bottom of the left navigation pane, click \*\*Lists\*\*.\
-3\. In the \*\*System setup\*\* section of the left navigation pane, double-click \*\*Devices\*\*.\
-4\. In the \*\*Devices\*\* window, click \*\*Add\*\*.\
-5\. In the \*\*Device details\*\* window, type a \*\*Name\*\* for the RFID encoder & updater.\
-6\. If desired, type a \*\*Description\*\*.\
-7\. In the \*\*Type\*\* field, select \*\*Network RFID encoder (USB)\*\*.
+    \{% hint style="info" %\} To connect through USB, you must use firmware version 2.6.2.4 or higher for the RFID encoder. Visionline 1.22.1 or higher is also required. \{% endhint %\}3. Register the card encoder.\
+    1\. Log in to the Visionline application if you are not already logged in.\
+    2\. At the bottom of the left navigation pane, click \*\*Lists\*\*.\
+    3\. In the \*\*System setup\*\* section of the left navigation pane, double-click \*\*Devices\*\*.\
+    4\. In the \*\*Devices\*\* window, click \*\*Add\*\*.\
+    5\. In the \*\*Device details\*\* window, type a \*\*Name\*\* for the RFID encoder & updater.\
+    6\. If desired, type a \*\*Description\*\*.\
+    7\. In the \*\*Type\*\* field, select \*\*Network RFID encoder (USB)\*\*.
 
 ```
    <figure><img src="../../../../../.gitbook/assets/visionline-card-encoder-device-details-window.png" alt="Specify the details for the new card encoder device." width="350"><figcaption><p>Specify the details for the new card encoder device.</p></figcaption></figure>
