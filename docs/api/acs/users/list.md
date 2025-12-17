@@ -366,7 +366,7 @@ Phone number of the user identity for which you want to retrieve all access syst
 
 {% hint style="success" %}
 Returns:
-**Array of [acs\_users](.)
+**Array of [acs\_users](.)**
 
 {% endhint %}
 

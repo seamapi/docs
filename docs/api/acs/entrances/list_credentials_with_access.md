@@ -293,7 +293,7 @@ Possible enum values:
 
 {% hint style="success" %}
 Returns:
-**Array of [acs\_credentials](./../credentials)
+**Array of [acs\_credentials](./../credentials)**
 
 {% endhint %}
 

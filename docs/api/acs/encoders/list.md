@@ -224,7 +224,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 {% hint style="success" %}
 Returns:
-**Array of [acs\_encoders](.)
+**Array of [acs\_encoders](.)**
 
 {% endhint %}
 

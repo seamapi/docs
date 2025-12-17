@@ -263,7 +263,7 @@ ID of the credential that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[acs\_credential](.)
+**[acs\_credential](.)**
 
 {% endhint %}
 

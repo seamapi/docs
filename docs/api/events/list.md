@@ -439,7 +439,7 @@ ID of the user identity for which you want to list events.
 
 {% hint style="success" %}
 Returns:
-**Array of [events](.)
+**Array of [events](.)**
 
 {% endhint %}
 

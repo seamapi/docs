@@ -168,7 +168,7 @@ ID of the desired user identity that you want to add to an access group. You can
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

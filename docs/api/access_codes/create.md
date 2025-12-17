@@ -386,7 +386,7 @@ Indicates whether to use a [backup access code pool](https://docs.seam.co/latest
 
 {% hint style="success" %}
 Returns:
-**[access\_code](.)
+**[access\_code](.)**
 
 {% endhint %}
 

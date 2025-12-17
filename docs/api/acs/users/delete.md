@@ -168,7 +168,7 @@ ID of the user identity that you want to delete. You must provide either acs_use
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

@@ -297,7 +297,7 @@ ID of the access code for which you want to pull a backup access code.
 
 {% hint style="success" %}
 Returns:
-**[access\_code](.)
+**[access\_code](.)**
 
 {% endhint %}
 

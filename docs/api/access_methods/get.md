@@ -199,7 +199,7 @@ ID of access method to get.
 
 {% hint style="success" %}
 Returns:
-**[access\_method](.)
+**[access\_method](.)**
 
 {% endhint %}
 

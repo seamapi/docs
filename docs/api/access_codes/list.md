@@ -334,7 +334,7 @@ Your user ID for the user by which to filter access codes.
 
 {% hint style="success" %}
 Returns:
-**Array of [access\_codes](.)
+**Array of [access\_codes](.)**
 
 {% endhint %}
 

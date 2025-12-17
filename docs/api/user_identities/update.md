@@ -194,7 +194,7 @@ Unique key for the user identity.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

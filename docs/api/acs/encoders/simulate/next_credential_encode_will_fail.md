@@ -167,7 +167,7 @@ Code of the error to simulate.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

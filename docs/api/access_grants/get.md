@@ -389,7 +389,7 @@ Unique key of Access Grant to get.
 
 {% hint style="success" %}
 Returns:
-**[access\_grant](.)
+**[access\_grant](.)**
 
 {% endhint %}
 

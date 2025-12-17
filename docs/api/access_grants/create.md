@@ -633,7 +633,7 @@ ID of user identity for whom access is being granted.
 
 {% hint style="success" %}
 Returns:
-**[access\_grant](.)
+**[access\_grant](.)**
 
 {% endhint %}
 

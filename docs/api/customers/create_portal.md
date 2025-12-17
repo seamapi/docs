@@ -369,7 +369,7 @@ Filter configuration for property listings based on their custom_metadata. Keys 
 
 {% hint style="success" %}
 Returns:
-**[magic\_link](./../unstable_partner/building_blocks)
+**[magic\_link](./../unstable_partner/building_blocks)**
 
 {% endhint %}
 

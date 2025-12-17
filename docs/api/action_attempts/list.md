@@ -274,7 +274,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 {% hint style="success" %}
 Returns:
-**Array of [action\_attempts](./)
+**Array of [action\_attempts](./)**
 
 {% endhint %}
 

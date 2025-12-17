@@ -183,7 +183,7 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

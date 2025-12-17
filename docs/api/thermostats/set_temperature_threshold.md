@@ -184,7 +184,7 @@ Upper temperature limit in in °C. Seam alerts you if the reported temperature i
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

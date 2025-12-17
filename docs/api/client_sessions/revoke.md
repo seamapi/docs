@@ -148,7 +148,7 @@ ID of the client session that you want to revoke.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

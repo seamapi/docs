@@ -520,7 +520,7 @@ Enum values:
 
 {% hint style="success" %}
 Returns:
-**[acs\_credential](.)
+**[acs\_credential](.)**
 
 {% endhint %}
 

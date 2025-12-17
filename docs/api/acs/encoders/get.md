@@ -196,7 +196,7 @@ ID of the encoder that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[acs\_encoder](.)
+**[acs\_encoder](.)**
 
 {% endhint %}
 

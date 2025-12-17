@@ -214,7 +214,7 @@ Type of the event that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[event](.)
+**[event](.)**
 
 {% endhint %}
 

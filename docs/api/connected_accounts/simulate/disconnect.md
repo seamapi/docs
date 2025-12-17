@@ -31,7 +31,7 @@ ID of the connected account you want to simulate as disconnected.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

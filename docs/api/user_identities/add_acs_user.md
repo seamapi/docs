@@ -171,7 +171,7 @@ Key of the user identity to which you want to add an access system user.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

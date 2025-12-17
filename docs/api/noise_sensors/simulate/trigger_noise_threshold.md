@@ -150,7 +150,7 @@ ID of the device for which you want to simulate the triggering of a noise thresh
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

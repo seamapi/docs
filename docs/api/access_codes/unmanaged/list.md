@@ -263,7 +263,7 @@ Your user ID for the user by which to filter unmanaged access codes.
 
 {% hint style="success" %}
 Returns:
-**Array of [unmanaged\_access\_codes](.)
+**Array of [unmanaged\_access\_codes](.)**
 
 {% endhint %}
 

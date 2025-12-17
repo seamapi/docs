@@ -254,7 +254,7 @@ ID of the access system for which you want to retrieve all compatible credential
 
 {% hint style="success" %}
 Returns:
-**Array of [acs\_systems](.)
+**Array of [acs\_systems](.)**
 
 {% endhint %}
 

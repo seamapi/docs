@@ -177,7 +177,7 @@ None
 
 {% hint style="success" %}
 Returns:
-**Array of [webhooks](.)
+**Array of [webhooks](.)**
 
 {% endhint %}
 

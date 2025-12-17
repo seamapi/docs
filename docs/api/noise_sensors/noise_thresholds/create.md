@@ -255,7 +255,7 @@ Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. Th
 
 {% hint style="success" %}
 Returns:
-**[noise\_threshold](.)
+**[noise\_threshold](.)**
 
 {% endhint %}
 

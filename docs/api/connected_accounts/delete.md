@@ -153,7 +153,7 @@ ID of the connected account that you want to delete.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

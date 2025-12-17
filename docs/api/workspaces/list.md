@@ -247,7 +247,7 @@ None
 
 {% hint style="success" %}
 Returns:
-**Array of [workspaces](.)
+**Array of [workspaces](.)**
 
 {% endhint %}
 

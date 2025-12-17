@@ -201,7 +201,7 @@ Category for which you want to list providers.
 
 {% hint style="success" %}
 Returns:
-**Array of [device\_providers](.)
+**Array of [device\_providers](.)**
 
 {% endhint %}
 

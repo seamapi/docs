@@ -203,7 +203,7 @@ Filter spaces by space_key.
 
 {% hint style="success" %}
 Returns:
-**Array of [spaces](.)
+**Array of [spaces](.)**
 
 {% endhint %}
 

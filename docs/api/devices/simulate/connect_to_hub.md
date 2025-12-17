@@ -151,7 +151,7 @@ ID of the device whose hub you want to reconnect.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

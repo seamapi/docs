@@ -160,7 +160,7 @@ ID of the thermostat device for which you want to set the fallback climate prese
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

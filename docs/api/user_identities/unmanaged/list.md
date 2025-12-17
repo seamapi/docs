@@ -49,7 +49,7 @@ String for which to search. Filters returned unmanaged user identities to includ
 
 {% hint style="success" %}
 Returns:
-**Array of [unknowns](./)
+**Array of [unknowns](./)**
 
 {% endhint %}
 

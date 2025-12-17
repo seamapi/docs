@@ -223,7 +223,7 @@ ID of the thermostat schedule that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[thermostat\_schedule](.)
+**[thermostat\_schedule](.)**
 
 {% endhint %}
 

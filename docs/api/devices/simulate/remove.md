@@ -147,7 +147,7 @@ ID of the device that you want to simulate removing from Seam.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

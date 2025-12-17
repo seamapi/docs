@@ -305,7 +305,7 @@ Time at which the thermostat daily program period starts, in [ISO 8601](https://
 
 {% hint style="success" %}
 Returns:
-**[thermostat\_daily\_program](.)
+**[thermostat\_daily\_program](.)**
 
 {% endhint %}
 

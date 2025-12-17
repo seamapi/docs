@@ -1434,7 +1434,7 @@ Your unique identifier for the user.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

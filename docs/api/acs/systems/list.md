@@ -282,7 +282,7 @@ Customer key for which you want to list access systems.
 
 {% hint style="success" %}
 Returns:
-**Array of [acs\_systems](.)
+**Array of [acs\_systems](.)**
 
 {% endhint %}
 

@@ -152,7 +152,7 @@ ID of the device for which you want to generate a code.
 
 {% hint style="success" %}
 Returns:
-**[access\_code](.)
+**[access\_code](.)**
 
 {% endhint %}
 

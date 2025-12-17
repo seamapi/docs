@@ -325,7 +325,7 @@ Whether the entrance is removed
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

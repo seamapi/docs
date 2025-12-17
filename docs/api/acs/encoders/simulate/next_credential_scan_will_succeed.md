@@ -172,7 +172,7 @@ Scenario to simulate.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

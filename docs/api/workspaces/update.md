@@ -273,7 +273,7 @@ Name of the workspace.
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

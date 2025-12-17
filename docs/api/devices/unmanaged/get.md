@@ -417,7 +417,7 @@ Name of the unmanaged device that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[unmanaged\_device](.)
+**[unmanaged\_device](.)**
 
 {% endhint %}
 

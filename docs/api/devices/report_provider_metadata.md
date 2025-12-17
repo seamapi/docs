@@ -495,7 +495,7 @@ Enum values:
 
 {% hint style="success" %}
 Returns:
-**void
+**void**
 
 {% endhint %}
 

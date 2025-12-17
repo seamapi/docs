@@ -49,7 +49,7 @@ ID of user identity by which you want to filter the list of unmanaged Access Gra
 
 {% hint style="success" %}
 Returns:
-**Array of [unknowns](./)
+**Array of [unknowns](./)**
 
 {% endhint %}
 

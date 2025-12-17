@@ -250,7 +250,7 @@ ID of the entrance that you want to get.
 
 {% hint style="success" %}
 Returns:
-**[acs\_entrance](.)
+**[acs\_entrance](.)**
 
 {% endhint %}
 

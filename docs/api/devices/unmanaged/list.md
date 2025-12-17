@@ -566,7 +566,7 @@ Your own internal user ID for the user for which you want to list devices.
 
 {% hint style="success" %}
 Returns:
-**Array of [unmanaged\_devices](.)
+**Array of [unmanaged\_devices](.)**
 
 {% endhint %}
 
