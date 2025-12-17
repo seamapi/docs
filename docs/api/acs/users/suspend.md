@@ -37,7 +37,7 @@ Suspends a specified access system user, using the associated user identity.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "user_identity_id": "73fac667-bd93-4548-add2-e75161d69c7c",
   "acs_system_id": "f2240088-0bc7-4edb-80d1-485bd956ba7d"
@@ -59,7 +59,10 @@ Suspends a specified access system user, using the associated user identity.
 #### Code:
 
 ```python
-seam.acs.users.suspend(user_identity_id="73fac667-bd93-4548-add2-e75161d69c7c", acs_system_id="f2240088-0bc7-4edb-80d1-485bd956ba7d")
+seam.acs.users.suspend(
+    user_identity_id="73fac667-bd93-4548-add2-e75161d69c7c",
+    acs_system_id="f2240088-0bc7-4edb-80d1-485bd956ba7d",
+)
 ```
 
 #### Output:
@@ -76,7 +79,10 @@ Suspends a specified access system user, using the associated user identity.
 #### Code:
 
 ```ruby
-seam.acs.users.suspend(user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c", acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d")
+seam.acs.users.suspend(
+  user_identity_id: "73fac667-bd93-4548-add2-e75161d69c7c",
+  acs_system_id: "f2240088-0bc7-4edb-80d1-485bd956ba7d",
+)
 ```
 
 #### Output:
@@ -205,7 +211,7 @@ await seam.acs.users.suspend({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/suspend" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "acs_user_id": "8f934186-1dbc-4098-9f66-d1b202abec9d"
 }

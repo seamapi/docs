@@ -50,7 +50,7 @@ Returns a list of all thermostat schedules for a specified thermostat, using a d
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea"
 }
@@ -93,7 +93,21 @@ seam.thermostats.schedules.list(device_id="b5d58842-32be-46d2-b161-26787a0bd5ea"
 #### Output:
 
 ```python
-[ThermostatSchedule(climate_preset_key="Eco", created_at="2025-06-14T16:54:17.946316Z", device_id="b5d58842-32be-46d2-b161-26787a0bd5ea", ends_at="2025-07-14T16:54:17.946313Z", errors=[], is_override_allowed=true, max_override_period_minutes=90, name="Unoccupied", starts_at="2025-07-12T16:54:17.946313Z", thermostat_schedule_id="af2cb7f7-9f28-40da-a0a0-e7a008ef7a35", workspace_id="58419b36-6103-44e5-aa83-2163e90cce01")]
+[
+    ThermostatSchedule(
+        climate_preset_key="Eco",
+        created_at="2025-06-14T16:54:17.946316Z",
+        device_id="b5d58842-32be-46d2-b161-26787a0bd5ea",
+        ends_at="2025-07-14T16:54:17.946313Z",
+        errors=[],
+        is_override_allowed=true,
+        max_override_period_minutes=90,
+        name="Unoccupied",
+        starts_at="2025-07-12T16:54:17.946313Z",
+        thermostat_schedule_id="af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+        workspace_id="58419b36-6103-44e5-aa83-2163e90cce01",
+    )
+]
 ```
 {% endtab %}
 
@@ -110,7 +124,21 @@ seam.thermostats.schedules.list(device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea
 #### Output:
 
 ```ruby
-[{"climate_preset_key" => "Eco","created_at" => "2025-06-14T16:54:17.946316Z","device_id" => "b5d58842-32be-46d2-b161-26787a0bd5ea","ends_at" => "2025-07-14T16:54:17.946313Z","errors" => [],"is_override_allowed" => true,"max_override_period_minutes" => 90,"name" => "Unoccupied","starts_at" => "2025-07-12T16:54:17.946313Z","thermostat_schedule_id" => "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35","workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01"}]
+[
+  {
+    "climate_preset_key" => "Eco",
+    "created_at" => "2025-06-14T16:54:17.946316Z",
+    "device_id" => "b5d58842-32be-46d2-b161-26787a0bd5ea",
+    "ends_at" => "2025-07-14T16:54:17.946313Z",
+    "errors" => [],
+    "is_override_allowed" => true,
+    "max_override_period_minutes" => 90,
+    "name" => "Unoccupied",
+    "starts_at" => "2025-07-12T16:54:17.946313Z",
+    "thermostat_schedule_id" => "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+    "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
+  },
+]
 ```
 {% endtab %}
 
@@ -292,7 +320,7 @@ await seam.thermostats.schedules.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/schedules/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "user_identifier_key": "b5c8bf4e-c231-474f-b4dc-adad38c25d3f"
 }
@@ -329,13 +357,29 @@ EOF
 #### Code:
 
 ```python
-seam.thermostats.schedules.list(user_identifier_key="b5c8bf4e-c231-474f-b4dc-adad38c25d3f")
+seam.thermostats.schedules.list(
+    user_identifier_key="b5c8bf4e-c231-474f-b4dc-adad38c25d3f"
+)
 ```
 
 #### Output:
 
 ```python
-[ThermostatSchedule(climate_preset_key="Eco", created_at="2025-06-14T16:54:17.946316Z", device_id="dc1dfc4b-8082-453f-a953-276941af8650", ends_at="2025-07-14T16:54:17.946313Z", errors=[], is_override_allowed=true, max_override_period_minutes=90, name="Unoccupied", starts_at="2025-07-12T16:54:17.946313Z", thermostat_schedule_id="af2cb7f7-9f28-40da-a0a0-e7a008ef7a35", workspace_id="58419b36-6103-44e5-aa83-2163e90cce01")]
+[
+    ThermostatSchedule(
+        climate_preset_key="Eco",
+        created_at="2025-06-14T16:54:17.946316Z",
+        device_id="dc1dfc4b-8082-453f-a953-276941af8650",
+        ends_at="2025-07-14T16:54:17.946313Z",
+        errors=[],
+        is_override_allowed=true,
+        max_override_period_minutes=90,
+        name="Unoccupied",
+        starts_at="2025-07-12T16:54:17.946313Z",
+        thermostat_schedule_id="af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+        workspace_id="58419b36-6103-44e5-aa83-2163e90cce01",
+    )
+]
 ```
 {% endtab %}
 
@@ -352,7 +396,21 @@ seam.thermostats.schedules.list(user_identifier_key: "b5c8bf4e-c231-474f-b4dc-ad
 #### Output:
 
 ```ruby
-[{"climate_preset_key" => "Eco","created_at" => "2025-06-14T16:54:17.946316Z","device_id" => "dc1dfc4b-8082-453f-a953-276941af8650","ends_at" => "2025-07-14T16:54:17.946313Z","errors" => [],"is_override_allowed" => true,"max_override_period_minutes" => 90,"name" => "Unoccupied","starts_at" => "2025-07-12T16:54:17.946313Z","thermostat_schedule_id" => "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35","workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01"}]
+[
+  {
+    "climate_preset_key" => "Eco",
+    "created_at" => "2025-06-14T16:54:17.946316Z",
+    "device_id" => "dc1dfc4b-8082-453f-a953-276941af8650",
+    "ends_at" => "2025-07-14T16:54:17.946313Z",
+    "errors" => [],
+    "is_override_allowed" => true,
+    "max_override_period_minutes" => 90,
+    "name" => "Unoccupied",
+    "starts_at" => "2025-07-12T16:54:17.946313Z",
+    "thermostat_schedule_id" => "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+    "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
+  },
+]
 ```
 {% endtab %}
 

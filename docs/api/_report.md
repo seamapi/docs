@@ -20,6 +20,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
 - `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/connectors`: No undocumented message provided
+- `/seam/customer/v1/customers`: No undocumented message provided
 - `/seam/customer/v1/events`: No undocumented message provided
 - `/seam/customer/v1/portals`: No undocumented message provided
 - `/seam/customer/v1/reservations`: No undocumented message provided
@@ -42,6 +43,7 @@ These items are intentionally undocumented.
 - `acs_credential_provisioning_automation`: Deprecated. Will be removed.
 - `bridge_client_session`: Seam Bridge client only.
 - `bridge_connected_systems`: Seam Bridge client only.
+- `customer`: Internal resource.
 - `customization_profile`: Unreleased.
 - `enrollment_automation`: Will be removed.
 - `magic_link`: Unreleased.
@@ -107,6 +109,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/connectors/list`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/sync`: Only used internally.
 - `/seam/customer/v1/connectors/update`: Internal endpoint for Console.
+- `/seam/customer/v1/customers/list`: Internal endpoint for Console.
 - `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/get`: Internal endpoint for customer portals.
@@ -687,6 +690,7 @@ These items are deprecated.
 - `/customers/create_portal`
 - `/customers/delete_data`
 - `/customers/push_data`
+- `/devices/report_provider_metadata`
 - `/devices/simulate/paid_subscription`
 - `/instant_keys/delete`
 - `/instant_keys/get`

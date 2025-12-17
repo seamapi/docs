@@ -44,7 +44,7 @@ Sets the HVAC mode for a specified thermostat.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/set_hvac_mode" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
   "hvac_mode_setting": "heat_cool",
@@ -76,13 +76,24 @@ Sets the HVAC mode for a specified thermostat.
 #### Code:
 
 ```python
-seam.thermostats.set_hvac_mode(device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5", hvac_mode_setting="heat_cool", heating_set_point_celsius=20, cooling_set_point_celsius=25)
+seam.thermostats.set_hvac_mode(
+    device_id="5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+    hvac_mode_setting="heat_cool",
+    heating_set_point_celsius=20,
+    cooling_set_point_celsius=25,
+)
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d", action_type="SET_HVAC_MODE", error=None, result={}, status="success")
+ActionAttempt(
+    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+    action_type="SET_HVAC_MODE",
+    error=None,
+    result={},
+    status="success",
+)
 ```
 {% endtab %}
 
@@ -93,13 +104,25 @@ Sets the HVAC mode for a specified thermostat.
 #### Code:
 
 ```ruby
-seam.thermostats.set_hvac_mode(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5", hvac_mode_setting: "heat_cool", heating_set_point_celsius: 20, cooling_set_point_celsius: 25)
+seam.thermostats.set_hvac_mode(
+  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
+  hvac_mode_setting: "heat_cool",
+  heating_set_point_celsius: 20,
+  cooling_set_point_celsius: 25,
+)
 ```
 
 #### Output:
 
 ```ruby
-{"action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d","action_type" => "SET_HVAC_MODE","error" => nil,"result" => {},"status" => "success"}
+{
+  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
+  "action_type" => "SET_HVAC_MODE",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
+}
 ```
 {% endtab %}
 

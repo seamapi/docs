@@ -3301,6 +3301,10 @@ Metadata for a Salto KS device.
   
     Customer reference for a Salto KS device.
 
+  - <strong><code>has_custom_pin_subscription</code></strong> <i>Boolean</i>
+  
+    Indicates whether the site has a Salto KS subscription that supports custom PINs.
+
   - <strong><code>lock_id</code></strong> <i>String</i>
   
     Lock ID for a Salto KS device.
@@ -3809,6 +3813,10 @@ Metadata for an Ultraloq device.
   - <strong><code>device_type</code></strong> <i>String</i>
   
     Device type for an Ultraloq device.
+
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
+    IANA timezone for the Ultraloq device.
 
 </details>
 

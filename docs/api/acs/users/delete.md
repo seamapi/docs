@@ -37,7 +37,7 @@ Deletes a specified access system user and invalidates the access system user's 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "user_identity_id": "586c225c-b05c-4af4-8679-9c8a46066cce",
   "acs_system_id": "1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64"
@@ -59,7 +59,10 @@ Deletes a specified access system user and invalidates the access system user's 
 #### Code:
 
 ```python
-seam.acs.users.delete(user_identity_id="586c225c-b05c-4af4-8679-9c8a46066cce", acs_system_id="1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64")
+seam.acs.users.delete(
+    user_identity_id="586c225c-b05c-4af4-8679-9c8a46066cce",
+    acs_system_id="1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64",
+)
 ```
 
 #### Output:
@@ -76,7 +79,10 @@ Deletes a specified access system user and invalidates the access system user's 
 #### Code:
 
 ```ruby
-seam.acs.users.delete(user_identity_id: "586c225c-b05c-4af4-8679-9c8a46066cce", acs_system_id: "1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64")
+seam.acs.users.delete(
+  user_identity_id: "586c225c-b05c-4af4-8679-9c8a46066cce",
+  acs_system_id: "1c655fbd-ecd7-49fc-a57e-b6fb67bd8d64",
+)
 ```
 
 #### Output:
@@ -205,7 +211,7 @@ await seam.acs.users.delete({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/users/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "acs_user_id": "8d483a94-5cbc-425a-a6ee-bd9825820c26"
 }

@@ -53,7 +53,7 @@ Returns a specified access system.
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/systems/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "acs_system_id": "4720a2ac-59b5-4e55-96fc-52b3cbe95907"
 }
@@ -100,7 +100,25 @@ seam.acs.systems.get(acs_system_id="4720a2ac-59b5-4e55-96fc-52b3cbe95907")
 #### Output:
 
 ```python
-AcsSystem(acs_access_group_count=5, acs_system_id="4720a2ac-59b5-4e55-96fc-52b3cbe95907", acs_user_count=20, connected_account_id="a94aeed0-1ae0-4e49-9c23-8444c7ceba09", connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"], created_at="2025-06-15T16:54:17.946425Z", default_credential_manager_acs_system_id="5dde2def-3507-44f5-9521-7ca96aa4cd18", errors=[], external_type="salto_ks_site", external_type_display_name="Salto KS site", image_alt_text="Salto KS site Logo", image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128", is_credential_manager=false, location={"time_zone":"America/New_York"}, name="My Access System", warnings=[], workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f")
+AcsSystem(
+    acs_access_group_count=5,
+    acs_system_id="4720a2ac-59b5-4e55-96fc-52b3cbe95907",
+    acs_user_count=20,
+    connected_account_id="a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+    connected_account_ids=["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+    created_at="2025-06-15T16:54:17.946425Z",
+    default_credential_manager_acs_system_id="5dde2def-3507-44f5-9521-7ca96aa4cd18",
+    errors=[],
+    external_type="salto_ks_site",
+    external_type_display_name="Salto KS site",
+    image_alt_text="Salto KS site Logo",
+    image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+    is_credential_manager=false,
+    location={"time_zone": "America/New_York"},
+    name="My Access System",
+    warnings=[],
+    workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f",
+)
 ```
 {% endtab %}
 
@@ -117,7 +135,28 @@ seam.acs.systems.get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907")
 #### Output:
 
 ```ruby
-{"acs_access_group_count" => 5,"acs_system_id" => "4720a2ac-59b5-4e55-96fc-52b3cbe95907","acs_user_count" => 20,"connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09","connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],"created_at" => "2025-06-15T16:54:17.946425Z","default_credential_manager_acs_system_id" => "5dde2def-3507-44f5-9521-7ca96aa4cd18","errors" => [],"external_type" => "salto_ks_site","external_type_display_name" => "Salto KS site","image_alt_text" => "Salto KS site Logo","image_url" => "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128","is_credential_manager" => false,"location" => {"time_zone":"America/New_York"},"name" => "My Access System","warnings" => [],"workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f"}
+{
+  "acs_access_group_count" => 5,
+  "acs_system_id" => "4720a2ac-59b5-4e55-96fc-52b3cbe95907",
+  "acs_user_count" => 20,
+  "connected_account_id" => "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
+  "connected_account_ids" => ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+  "created_at" => "2025-06-15T16:54:17.946425Z",
+  "default_credential_manager_acs_system_id" => "5dde2def-3507-44f5-9521-7ca96aa4cd18",
+  "errors" => [],
+  "external_type" => "salto_ks_site",
+  "external_type_display_name" => "Salto KS site",
+  "image_alt_text" => "Salto KS site Logo",
+  "image_url" =>
+    "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/acs_systems/salto_ks_site.png&q=75&w=128",
+  "is_credential_manager" => false,
+  "location" => {
+    time_zone: "America/New_York",
+  },
+  "name" => "My Access System",
+  "warnings" => [],
+  "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
+}
 ```
 {% endtab %}
 

@@ -42,7 +42,7 @@ Activates a specified climate preset for a specified thermostat.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/activate_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "52b88155-5b81-47d2-b04d-28a802bd7395",
   "climate_preset_key": "Eco"
@@ -72,13 +72,21 @@ Activates a specified climate preset for a specified thermostat.
 #### Code:
 
 ```python
-seam.thermostats.activate_climate_preset(device_id="52b88155-5b81-47d2-b04d-28a802bd7395", climate_preset_key="Eco")
+seam.thermostats.activate_climate_preset(
+    device_id="52b88155-5b81-47d2-b04d-28a802bd7395", climate_preset_key="Eco"
+)
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(action_attempt_id="f47ac10b-58cc-4372-a567-0e02b2c3d479", action_type="ACTIVATE_CLIMATE_PRESET", error=None, result={}, status="success")
+ActionAttempt(
+    action_attempt_id="f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    action_type="ACTIVATE_CLIMATE_PRESET",
+    error=None,
+    result={},
+    status="success",
+)
 ```
 {% endtab %}
 
@@ -89,13 +97,23 @@ Activates a specified climate preset for a specified thermostat.
 #### Code:
 
 ```ruby
-seam.thermostats.activate_climate_preset(device_id: "52b88155-5b81-47d2-b04d-28a802bd7395", climate_preset_key: "Eco")
+seam.thermostats.activate_climate_preset(
+  device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+  climate_preset_key: "Eco",
+)
 ```
 
 #### Output:
 
 ```ruby
-{"action_attempt_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479","action_type" => "ACTIVATE_CLIMATE_PRESET","error" => nil,"result" => {},"status" => "success"}
+{
+  "action_attempt_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "action_type" => "ACTIVATE_CLIMATE_PRESET",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
+}
 ```
 {% endtab %}
 

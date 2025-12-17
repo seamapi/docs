@@ -41,7 +41,7 @@ Returns a specified action attempt.
 ```curl
 curl --include --request POST "https://connect.getseam.com/action_attempts/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "action_attempt_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
 }
@@ -76,7 +76,13 @@ seam.action_attempts.get(action_attempt_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f
 #### Output:
 
 ```python
-ActionAttempt(action_attempt_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f", action_type="UNLOCK_DOOR", error=None, result={}, status="success")
+ActionAttempt(
+    action_attempt_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+    action_type="UNLOCK_DOOR",
+    error=None,
+    result={},
+    status="success",
+)
 ```
 {% endtab %}
 
@@ -93,7 +99,14 @@ seam.action_attempts.get(action_attempt_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0
 #### Output:
 
 ```ruby
-{"action_attempt_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","action_type" => "UNLOCK_DOOR","error" => nil,"result" => {},"status" => "success"}
+{
+  "action_attempt_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+  "action_type" => "UNLOCK_DOOR",
+  "error" => nil,
+  "result" => {
+  },
+  "status" => "success",
+}
 ```
 {% endtab %}
 

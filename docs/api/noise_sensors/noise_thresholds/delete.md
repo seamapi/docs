@@ -36,7 +36,7 @@ Deletes a noise threshold from a noise sensor.
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "noise_threshold_id": "00fbac13-6602-4079-b4ae-c89d5dcbed35",
   "device_id": "736fc5bf-192d-4416-b879-66ff0195f2f7"
@@ -58,7 +58,10 @@ Deletes a noise threshold from a noise sensor.
 #### Code:
 
 ```python
-seam.noise_sensors.noise_thresholds.delete(noise_threshold_id="00fbac13-6602-4079-b4ae-c89d5dcbed35", device_id="736fc5bf-192d-4416-b879-66ff0195f2f7")
+seam.noise_sensors.noise_thresholds.delete(
+    noise_threshold_id="00fbac13-6602-4079-b4ae-c89d5dcbed35",
+    device_id="736fc5bf-192d-4416-b879-66ff0195f2f7",
+)
 ```
 
 #### Output:
@@ -75,7 +78,10 @@ Deletes a noise threshold from a noise sensor.
 #### Code:
 
 ```ruby
-seam.noise_sensors.noise_thresholds.delete(noise_threshold_id: "00fbac13-6602-4079-b4ae-c89d5dcbed35", device_id: "736fc5bf-192d-4416-b879-66ff0195f2f7")
+seam.noise_sensors.noise_thresholds.delete(
+  noise_threshold_id: "00fbac13-6602-4079-b4ae-c89d5dcbed35",
+  device_id: "736fc5bf-192d-4416-b879-66ff0195f2f7",
+)
 ```
 
 #### Output:

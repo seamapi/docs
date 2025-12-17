@@ -43,7 +43,7 @@ Returns a specified event by ID.
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "event_id": "ed3adbb8-bbe1-4033-a35a-710d44322bd8"
 }
@@ -81,7 +81,16 @@ seam.events.get(event_id="ed3adbb8-bbe1-4033-a35a-710d44322bd8")
 #### Output:
 
 ```python
-SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="3febfdb2-de92-43c1-aba4-640ce8a55a22", event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.", event_id="ed3adbb8-bbe1-4033-a35a-710d44322bd8", event_type="device.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")
+SeamEvent(
+    connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    created_at="2025-06-15T16:54:18.000000Z",
+    device_id="3febfdb2-de92-43c1-aba4-640ce8a55a22",
+    event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+    event_id="ed3adbb8-bbe1-4033-a35a-710d44322bd8",
+    event_type="device.connected",
+    occurred_at="2025-06-15T16:54:17.946329Z",
+    workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+)
 ```
 {% endtab %}
 
@@ -98,7 +107,17 @@ seam.events.get(event_id: "ed3adbb8-bbe1-4033-a35a-710d44322bd8")
 #### Output:
 
 ```ruby
-{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "3febfdb2-de92-43c1-aba4-640ce8a55a22","event_description" => "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.","event_id" => "ed3adbb8-bbe1-4033-a35a-710d44322bd8","event_type" => "device.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}
+{
+  "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+  "created_at" => "2025-06-15T16:54:18.000000Z",
+  "device_id" => "3febfdb2-de92-43c1-aba4-640ce8a55a22",
+  "event_description" =>
+    "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+  "event_id" => "ed3adbb8-bbe1-4033-a35a-710d44322bd8",
+  "event_type" => "device.connected",
+  "occurred_at" => "2025-06-15T16:54:17.946329Z",
+  "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+}
 ```
 {% endtab %}
 
@@ -265,7 +284,7 @@ await seam.events.get({ event_type: "device.connected" });
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "event_type": "device.connected"
 }
@@ -303,7 +322,16 @@ seam.events.get(event_type="device.connected")
 #### Output:
 
 ```python
-SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="3febfdb2-de92-43c1-aba4-640ce8a55a22", event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.", event_id="ed3adbb8-bbe1-4033-a35a-710d44322bd8", event_type="device.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")
+SeamEvent(
+    connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    created_at="2025-06-15T16:54:18.000000Z",
+    device_id="3febfdb2-de92-43c1-aba4-640ce8a55a22",
+    event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+    event_id="ed3adbb8-bbe1-4033-a35a-710d44322bd8",
+    event_type="device.connected",
+    occurred_at="2025-06-15T16:54:17.946329Z",
+    workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+)
 ```
 {% endtab %}
 
@@ -320,7 +348,17 @@ seam.events.get(event_type: "device.connected")
 #### Output:
 
 ```ruby
-{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "3febfdb2-de92-43c1-aba4-640ce8a55a22","event_description" => "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.","event_id" => "ed3adbb8-bbe1-4033-a35a-710d44322bd8","event_type" => "device.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}
+{
+  "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+  "created_at" => "2025-06-15T16:54:18.000000Z",
+  "device_id" => "3febfdb2-de92-43c1-aba4-640ce8a55a22",
+  "event_description" =>
+    "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+  "event_id" => "ed3adbb8-bbe1-4033-a35a-710d44322bd8",
+  "event_type" => "device.connected",
+  "occurred_at" => "2025-06-15T16:54:17.946329Z",
+  "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+}
 ```
 {% endtab %}
 
@@ -422,7 +460,7 @@ await seam.events.get({ device_id: "3febfdb2-de92-43c1-aba4-640ce8a55a22" });
 ```curl
 curl --include --request POST "https://connect.getseam.com/events/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "3febfdb2-de92-43c1-aba4-640ce8a55a22"
 }
@@ -460,7 +498,16 @@ seam.events.get(device_id="3febfdb2-de92-43c1-aba4-640ce8a55a22")
 #### Output:
 
 ```python
-SeamEvent(connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b", created_at="2025-06-15T16:54:18.000000Z", device_id="3febfdb2-de92-43c1-aba4-640ce8a55a22", event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.", event_id="ed3adbb8-bbe1-4033-a35a-710d44322bd8", event_type="device.connected", occurred_at="2025-06-15T16:54:17.946329Z", workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d")
+SeamEvent(
+    connected_account_id="2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+    created_at="2025-06-15T16:54:18.000000Z",
+    device_id="3febfdb2-de92-43c1-aba4-640ce8a55a22",
+    event_description="The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+    event_id="ed3adbb8-bbe1-4033-a35a-710d44322bd8",
+    event_type="device.connected",
+    occurred_at="2025-06-15T16:54:17.946329Z",
+    workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+)
 ```
 {% endtab %}
 
@@ -477,7 +524,17 @@ seam.events.get(device_id: "3febfdb2-de92-43c1-aba4-640ce8a55a22")
 #### Output:
 
 ```ruby
-{"connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b","created_at" => "2025-06-15T16:54:18.000000Z","device_id" => "3febfdb2-de92-43c1-aba4-640ce8a55a22","event_description" => "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.","event_id" => "ed3adbb8-bbe1-4033-a35a-710d44322bd8","event_type" => "device.connected","occurred_at" => "2025-06-15T16:54:17.946329Z","workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"}
+{
+  "connected_account_id" => "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+  "created_at" => "2025-06-15T16:54:18.000000Z",
+  "device_id" => "3febfdb2-de92-43c1-aba4-640ce8a55a22",
+  "event_description" =>
+    "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
+  "event_id" => "ed3adbb8-bbe1-4033-a35a-710d44322bd8",
+  "event_type" => "device.connected",
+  "occurred_at" => "2025-06-15T16:54:17.946329Z",
+  "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+}
 ```
 {% endtab %}
 

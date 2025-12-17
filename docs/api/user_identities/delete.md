@@ -35,7 +35,7 @@ Deletes a specified user identity.
 ```curl
 curl --include --request POST "https://connect.getseam.com/user_identities/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "user_identity_id": "7ad2566e-6fd8-466d-b8e4-c10a14a74fd3"
 }

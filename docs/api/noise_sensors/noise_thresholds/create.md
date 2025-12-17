@@ -48,7 +48,7 @@ Creates a new noise threshold for a noise sensor.
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/noise_thresholds/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "8282891b-c4da-4239-8f01-56089d44b80d",
   "name": "My Noise Sensor",
@@ -84,13 +84,28 @@ Creates a new noise threshold for a noise sensor.
 #### Code:
 
 ```python
-seam.noise_sensors.noise_thresholds.create(device_id="8282891b-c4da-4239-8f01-56089d44b80d", name="My Noise Sensor", starts_daily_at="2025-06-20T18:29:57.000Z", ends_daily_at="2025-06-19T12:38:44.000Z", noise_threshold_decibels=50, noise_threshold_nrs=40)
+seam.noise_sensors.noise_thresholds.create(
+    device_id="8282891b-c4da-4239-8f01-56089d44b80d",
+    name="My Noise Sensor",
+    starts_daily_at="2025-06-20T18:29:57.000Z",
+    ends_daily_at="2025-06-19T12:38:44.000Z",
+    noise_threshold_decibels=50,
+    noise_threshold_nrs=40,
+)
 ```
 
 #### Output:
 
 ```python
-NoiseThreshold(device_id="8282891b-c4da-4239-8f01-56089d44b80d", ends_daily_at="2025-06-19T12:38:44.000Z", name="My Noise Sensor", noise_threshold_decibels=50, noise_threshold_id="f8cef69d-625f-464c-aed4-287c06e0d7fe", noise_threshold_nrs=40, starts_daily_at="2025-06-20T18:29:57.000Z")
+NoiseThreshold(
+    device_id="8282891b-c4da-4239-8f01-56089d44b80d",
+    ends_daily_at="2025-06-19T12:38:44.000Z",
+    name="My Noise Sensor",
+    noise_threshold_decibels=50,
+    noise_threshold_id="f8cef69d-625f-464c-aed4-287c06e0d7fe",
+    noise_threshold_nrs=40,
+    starts_daily_at="2025-06-20T18:29:57.000Z",
+)
 ```
 {% endtab %}
 
@@ -101,13 +116,28 @@ Creates a new noise threshold for a noise sensor.
 #### Code:
 
 ```ruby
-seam.noise_sensors.noise_thresholds.create(device_id: "8282891b-c4da-4239-8f01-56089d44b80d", name: "My Noise Sensor", starts_daily_at: "2025-06-20T18:29:57.000Z", ends_daily_at: "2025-06-19T12:38:44.000Z", noise_threshold_decibels: 50, noise_threshold_nrs: 40)
+seam.noise_sensors.noise_thresholds.create(
+  device_id: "8282891b-c4da-4239-8f01-56089d44b80d",
+  name: "My Noise Sensor",
+  starts_daily_at: "2025-06-20T18:29:57.000Z",
+  ends_daily_at: "2025-06-19T12:38:44.000Z",
+  noise_threshold_decibels: 50,
+  noise_threshold_nrs: 40,
+)
 ```
 
 #### Output:
 
 ```ruby
-{"device_id" => "8282891b-c4da-4239-8f01-56089d44b80d","ends_daily_at" => "2025-06-19T12:38:44.000Z","name" => "My Noise Sensor","noise_threshold_decibels" => 50,"noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe","noise_threshold_nrs" => 40,"starts_daily_at" => "2025-06-20T18:29:57.000Z"}
+{
+  "device_id" => "8282891b-c4da-4239-8f01-56089d44b80d",
+  "ends_daily_at" => "2025-06-19T12:38:44.000Z",
+  "name" => "My Noise Sensor",
+  "noise_threshold_decibels" => 50,
+  "noise_threshold_id" => "f8cef69d-625f-464c-aed4-287c06e0d7fe",
+  "noise_threshold_nrs" => 40,
+  "starts_daily_at" => "2025-06-20T18:29:57.000Z",
+}
 ```
 {% endtab %}
 

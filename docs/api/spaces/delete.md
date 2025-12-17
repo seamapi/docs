@@ -36,7 +36,7 @@ Deletes a space.
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "space_id": "a7cd0163-4e94-41ae-b5b7-da6040a65509"
 }
