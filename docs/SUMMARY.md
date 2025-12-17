@@ -188,6 +188,7 @@
 * [Access Control Systems (ACS)](api/acs/README.md)
   * [Access Groups](api/acs/access_groups/README.md)
     * [Add an ACS User to an Access Group](api/acs/access_groups/add_user.md)
+    * [Delete an Access Group](api/acs/access_groups/delete.md)
     * [Get an Access Group](api/acs/access_groups/get.md)
     * [List Access Groups](api/acs/access_groups/list.md)
     * [List ACS Users in an Access Group](api/acs/access_groups/list_users.md)
