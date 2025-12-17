@@ -187,6 +187,7 @@ Warnings associated with the `acs_access_group`.
     <summary>Enum values:</summary>
 
     - <code>unknown_issue_with_acs_access_group</code>
+    - <code>being_deleted</code>
 </details>
 
 </details>
@@ -254,6 +255,11 @@ An ACS access group was deleted.
 [**`/acs/access_groups/add_user`**](./add_user.md)
 
 Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+
+
+[**`/acs/access_groups/delete`**](./delete.md)
+
+Deletes a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
 
 
 [**`/acs/access_groups/get`**](./get.md)

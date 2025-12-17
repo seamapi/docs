@@ -686,6 +686,7 @@ These items are deprecated.
 - `/access_methods/get_related`
 - `/access_methods/unmanaged/get`
 - `/access_methods/unmanaged/list`
+- `/acs/access_groups/delete`
 - `/connected_accounts/simulate/disconnect`
 - `/customers/create_portal`
 - `/customers/delete_data`
