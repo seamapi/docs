@@ -1067,38 +1067,6 @@ Indicates that the Wyze Lock is not connected to a gateway.
   
 </details>
 <details>
-<summary><code>functional_offline_device</code></summary>
-
-Indicates that the device is offline but has some functionality available.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>functional_offline_device</code>
-  
-  
-</details>
-<details>
 <summary><code>third_party_integration_detected</code></summary>
 
 Indicates that a third-party integration has been detected.
@@ -1905,12 +1873,6 @@ Indicates that the device appears to be unresponsive.
 **`device_has_flaky_connection`**
 
 Indicates that the device has a flaky connection.
-
----
-
-**`functional_offline_device`**
-
-Indicates that the device is offline but has some functionality available.
 
 ---
 
