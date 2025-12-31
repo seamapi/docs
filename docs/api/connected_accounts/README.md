@@ -20,6 +20,7 @@ A connected account resource.
 {
   "account_type": "salto_space",
   "account_type_display_name": "Salto Space",
+  "display_name": "j**n@example.com",
   "automatically_manage_new_devices": true,
   "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
   "created_at": "2025-06-15T16:54:17.946329Z",
@@ -108,6 +109,15 @@ Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect
 **`customer_key`** *String*
 
 Your unique key for the customer associated with this connected account.
+
+
+
+
+---
+
+**`display_name`** *String*
+
+Display name for the connected account.
 
 
 
@@ -309,6 +319,9 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 User identifier associated with the connected account.
 
+{% hint style="warning" %}
+**Deprecated**. Use `display_name` instead.
+{% endhint %}
 
 
 <details>
