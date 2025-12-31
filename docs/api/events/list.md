@@ -233,6 +233,12 @@ IDs of the access codes for which you want to list events.
 
 ---
 
+**`acs_entrance_id`** *String*
+
+ID of the ACS entrance for which you want to list events.
+
+---
+
 **`acs_system_id`** *String*
 
 ID of the access system for which you want to list events.
@@ -242,6 +248,12 @@ ID of the access system for which you want to list events.
 **`acs_system_ids`** *Array* *of UUIDs*
 
 IDs of the access systems for which you want to list events.
+
+---
+
+**`acs_user_id`** *String*
+
+ID of the ACS user for which you want to list events.
 
 ---
 
@@ -413,6 +425,12 @@ Timestamp to indicate the beginning generation time for the events that you want
 **`unstable_offset`** *Number*
 
 Offset for the events that you want to list.
+
+---
+
+**`user_identity_id`** *String*
+
+ID of the user identity for which you want to list events.
 
 ---
 

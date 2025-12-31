@@ -37,8 +37,7 @@ To incorporate a Connect Webview in your app using redirection:
    * We recommend setting `wait_for_device_creation` to `true` so that the Connect Webview does not complete until Seam completes the first sync of the connected account and devices or ACS.
 2.  Redirect your app to the URL for the created Connect Webview.\
     Pass the Connect Webview `url` to the client portion of your app and redirect your app to this URL.\
-    The resulting page displays the [authorization flow](./#connect-webview-process) through which your app user can link their device or ACS account to Seam.\
-
+    The resulting page displays the [authorization flow](./#connect-webview-process) through which your app user can link their device or ACS account to Seam.\\
 
     <figure><img src="../../.gitbook/assets/connect-webview-user-flow.png" alt="The page to which you redirect your app displays the authorization flow."><figcaption></figcaption></figure>
 
@@ -72,9 +71,7 @@ To incorporate a Connect Webview in your app using an HTML [iframe](https://www.
     ```
 3.  [Your user completes the Connect Webview authorization flow.](./#id-3.-your-user-completes-the-connect-webview)
 
-    {% hint style="info" %}
-    If you choose to embed a Connect Webview in an iframe, it's important to understand that some providers move to a new tab during their authentication flow for security purposes. Seam is not able to abstract away this behavior.
-    {% endhint %}
+    \{% hint style="info" %\} If you choose to embed a Connect Webview in an iframe, it's important to understand that some providers move to a new tab during their authentication flow for security purposes. Seam is not able to abstract away this behavior. \{% endhint %\}
 4. [Learn when the device or ACS account connection has completed successfully.](./#id-4.-verify-successful-device-account-connection)\
    When the connection completes successfully, you can close the iframe.
 5. [Retrieve the devices or ACS that your user has just connected to Seam.](./#id-5.-retrieve-connected-devices)

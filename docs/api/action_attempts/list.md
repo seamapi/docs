@@ -245,9 +245,27 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`action_attempt_ids`** *Array* *of UUIDs* (Required)
+**`action_attempt_ids`** *Array* *of UUIDs*
 
 IDs of the action attempts that you want to retrieve.
+
+---
+
+**`device_id`** *String*
+
+ID of the device to filter action attempts by.
+
+---
+
+**`limit`** *Number*
+
+Maximum number of records to return per page.
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 

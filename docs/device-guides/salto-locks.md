@@ -78,11 +78,7 @@ To control Salto KS devices using Seam, you must prompt owners of these devices 
    4. Select the Salto KS sites that you want to integrate with Seam and then click **Continue**.
    5.  Click **Allow and Continue** to confirm that you allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
 
-       {% hint style="warning" %}
-       Do not suspend or remove the Seam Integration admin user from your Salto KS site.
-       {% endhint %}
-
-***
+       \{% hint style="warning" %\} Do not suspend or remove the Seam Integration admin user from your Salto KS site. \{% endhint %\}\*\*\*
 
 ## Brand-Specific Integration Considerations
 

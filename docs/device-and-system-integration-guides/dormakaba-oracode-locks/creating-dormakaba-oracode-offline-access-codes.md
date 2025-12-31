@@ -2,6 +2,7 @@
 description: >-
   Learn how to create dormakaba Oracode offline access codes, including
   understanding manufacturer-specific requirements.
+hidden: true
 ---
 
 # Creating dormakaba Oracode Offline Access Codes
@@ -359,9 +360,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 #### 2. Verify Successful Time-Bound Code Registration
@@ -656,9 +654,6 @@ if (device.CanProgramOfflineAccessCodes == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 #### 2. Verify Successful Time-Bound Code Registration

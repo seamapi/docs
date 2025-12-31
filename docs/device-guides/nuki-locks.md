@@ -19,7 +19,7 @@ Seam also supports the Nuki Keypad accessory for access code-based entry. In add
 This integration supports all Nuki Smart Lock and Nuki Opener models that are connected to Wi-Fi, either through built-in Wi-Fi or using the [Nuki Bridge](https://nuki.io/en/bridge/). Seam also supports the addition of the optional [Nuki Keypad](https://nuki.io/en/keypad-code/) to enable entering access codes to control the lock or opener.
 
 {% hint style="info" %}
-You must purchase [Nuki Smart Hosting](https://nuki.io/en/smart-hosting/) for each of your Nuki locks to enable you to program access codes on these Nuki locks through Seam.
+You must purchase [Nuki Smart Hosting](https://nuki.io/en-us/products/smart-hosting-service) for each of your Nuki locks to enable you to program access codes on these Nuki locks through Seam.
 {% endhint %}
 
 The following table details the requirements for compatibility with this Seam integration:

@@ -78,7 +78,7 @@ batch response
 - `access_methods`: Array of [access\_methods](.)
 - `instant_keys`: Array of [instant\_keys](./../instant_keys)
 - `client_sessions`: Array of [client\_sessions](./../client_sessions)
-- `acs_credentials`: Array of [acs\_credentials](./../acs/credentials)**
+- `acs_credentials`: Array of [acs\_credentials](./../acs/credentials)
 
 {% endhint %}
 

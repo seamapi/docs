@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Seam Connect OpenAPI",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/connect_webviews/create": {
+      "post": {
+        "description": "Create a Connect Webview to allow user login",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_selection_mode": {
+                    "description": "Inside webview, how device selection should be displayed to user,\nor if it should be displayed at all\n",
+                    "type": "string",
+                    "enum": ["none", "single", "multiple"]
+                  },
+                  "custom_redirect_url": {
+                    "type": "string",
+                    "description": "Where the Webview should redirect the user after a\nsuccessful login.\n"
+                  },
+                  "accepted_providers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "Device provider, the service to log into",
+                      "enum": ["noiseaware", "august"]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns a pending action result"
+          }
+        }
+      }
+    },
+    "/locks/lock_door": {
+      "post": {
+        "description": "Lock a Door",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "device_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns a pending action result"
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}

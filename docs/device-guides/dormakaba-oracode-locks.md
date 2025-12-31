@@ -2,7 +2,7 @@
 description: Guide for using dormakaba Oracode locks with Seam
 ---
 
-# dormakaba Oracode Locks
+# Dormakaba Oracode Locks
 
 ## Overview
 
@@ -62,7 +62,7 @@ To control dormakaba Oracode devices using Seam, you must prompt **the owners or
    * For each site that you have listed, select the time zone in which the site is located.\
      All time zone configuration and display for dormakaba Oracode locks occur in the local time zone of the lock, itself. Consequently, when you configure an access code for a dormakaba Oracode lock, you must set the starting and ending times to match the relative local time zone of the lock.\
      When connecting a dormakaba Oracode site to Seam, it is imperative to specify the correct time zone for each site to ensure that access codes for the devices in the site start and end at the correct times. For example, if you select `America/New York` as the time zone for your site, but your building is actually in `America/Los Angeles`, your access code validity periods will be off by three hours.
-4. Contact [support@getseam.co](mailto:support@getseam.co) to request approval and activation of your dormakaba Oracode integration with Seam.
+4. Contact [support@getseam.com](mailto:support@getseam.com) to request approval and activation of your dormakaba Oracode integration with Seam.
 
 {% hint style="info" %}
 It is important to understand that the developer presents the Connect Webview to the device owner or manager, and the device owner or manager types the requested information in the Connect Webview to authorize Seam to control their devices.

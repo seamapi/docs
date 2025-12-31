@@ -134,6 +134,4 @@ Perform the following steps on each lock:
 
        <figure><img src="../../../../../.gitbook/assets/lock-service-3g-initialize-lock-ble-config.png" alt="Connect Lock Service 3G to each lock and initialize it."><figcaption><p>Connect Lock Service 3G to each lock and initialize it.</p></figcaption></figure>
 
-       {% hint style="info" %}
-       The lock and cable connection times out after 30 seconds. If programming the lock results in an error, try unplugging the cable from the lock and reconnecting it. Then, try initializing the lock again.
-       {% endhint %}
+       \{% hint style="info" %\} The lock and cable connection times out after 30 seconds. If programming the lock results in an error, try unplugging the cable from the lock and reconnecting it. Then, try initializing the lock again. \{% endhint %\}

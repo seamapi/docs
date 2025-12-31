@@ -1228,38 +1228,6 @@ Indicates that the Wyze Lock is not connected to a gateway.
   
 </details>
 <details>
-<summary><code>functional_offline_device</code></summary>
-
-Indicates that the device is offline but has some functionality available.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>functional_offline_device</code>
-  
-  
-</details>
-<details>
 <summary><code>third_party_integration_detected</code></summary>
 
 Indicates that a third-party integration has been detected.
@@ -3301,6 +3269,10 @@ Metadata for a Salto KS device.
   
     Customer reference for a Salto KS device.
 
+  - <strong><code>has_custom_pin_subscription</code></strong> <i>Boolean</i>
+  
+    Indicates whether the site has a Salto KS subscription that supports custom PINs.
+
   - <strong><code>lock_id</code></strong> <i>String</i>
   
     Lock ID for a Salto KS device.
@@ -3810,6 +3782,10 @@ Metadata for an Ultraloq device.
   
     Device type for an Ultraloq device.
 
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
+    IANA timezone for the Ultraloq device.
+
 </details>
 
 ---
@@ -3957,12 +3933,6 @@ Indicates that the device appears to be unresponsive.
 **`device_has_flaky_connection`**
 
 Indicates that the device has a flaky connection.
-
----
-
-**`functional_offline_device`**
-
-Indicates that the device is offline but has some functionality available.
 
 ---
 

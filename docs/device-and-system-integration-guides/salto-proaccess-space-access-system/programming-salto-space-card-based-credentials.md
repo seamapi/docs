@@ -23,9 +23,7 @@ To use the Seam API to create card credentials for a Salto Space access system:
        * To update a user's card with changed access permissions, set `salto_space_metadata.assign_new_key` to `false`. For example, this option is applicable if a user's access group assignment has changed or if the set of entrances for an access group has changed.
 4.  Encode the credential onto a card.
 
-    {% hint style="info" %}
-    Make sure that each of your Salto Space sites is equipped with a supported card encoder. The [NCoder card encoder](https://saltosystems.com/en-us/products/ncoder/) is compatible with the Seam integration.
-    {% endhint %}
+    \{% hint style="info" %\} Make sure that each of your Salto Space sites is equipped with a supported card encoder. The [NCoder card encoder](https://saltosystems.com/en-us/products/ncoder/) is compatible with the Seam integration. \{% endhint %\}
 
     1. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential to the card.\
        See [Retrieve Encoders](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
@@ -538,9 +536,6 @@ $seam->action_attempts->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
