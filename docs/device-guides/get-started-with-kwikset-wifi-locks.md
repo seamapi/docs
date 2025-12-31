@@ -183,15 +183,18 @@ After a Kwikset account is linked with Seam, you can retrieve devices for this K
 
 {% tabs %}
 {% tab title="Python" %}
-\`\`\`\`python all\_locks = seam.locks.list()
-
-some\_lock = all\_locks\[0]
-
-assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
-
-print(some\_lock)
-
 ```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+
+assert some_lock.properties["locked"] is True
+
+print(some_lock)
+
+
 # Device(
 #     device_id='10891c43-29e0-4b93-b071-34749025a123',
 #     device_type='kwikset_lock',
@@ -218,9 +221,9 @@ print(some\_lock)
 # )
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Javascript" %\}
+{% tab title="Javascript" %}
 
 ```javascript
 const allLocks = await seam.locks.list()
@@ -261,9 +264,9 @@ console.log(someLock)
 */
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Ruby" %\}
+{% tab title="Ruby" %}
 
 ```ruby
 some_lock = seam.locks.list.first
@@ -290,13 +293,13 @@ puts some_lock.inspect
 
 ```
 
-\{% endtab %\} \{% endtabs %\}
+{% endtab %} {% endtabs %}
 
 **4 — Locking & Unlocking a Door**
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-\{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %\} [openapi (1).json](../.gitbook/assets/openapi%20\(1\).json) \{% endopenapi %\}
+{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %} [openapi (1).json](../.gitbook/assets/openapi%20\(1\).json) {% endopenapi %}
 
 #### Unlock a door
 
@@ -308,7 +311,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-\{% tabs %\} \{% tab title="Python" %\}
+{% tabs %} {% tab title="Python" %}
 
 ```python
 # lock the door
@@ -322,9 +325,9 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Javascript" %\}
+{% tab title="Javascript" %}
 
 ```javascript
 // lock the door
@@ -338,9 +341,9 @@ updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Ruby" %\}
+{% tab title="Ruby" %}
 
 ```ruby
 # lock the door
@@ -354,13 +357,13 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 ```
 
-\{% endtab %\} \{% endtabs %\}
+{% endtab %} {% endtabs %}
 
 **5 — Setting Access Code on Kwikset Lock**
 
-\{% hint style="info" %\} In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
+{% hint style="info" %} In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
 
-If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ shows the access codes that you have set from the app itself and not the codes set from Seam. \{% endhint %\}
+If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ shows the access codes that you have set from the app itself and not the codes set from Seam. {% endhint %}
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
@@ -377,7 +380,7 @@ Kwikset locks place the following constraints on access code attributes:
 * A `timebound` code requires both a `starts_at` timestamp and an `ends_at` timestamp.
 * A `timebound` code's `starts_at` timestamp must be greater than the current time. For best results, set `starts_at` at least 15 minutes ahead of the current time.
 
-\{% tabs %\} \{% tab title="Python" %\}
+{% tabs %} {% tab title="Python" %}
 
 ```python
 # create an ongoing code
@@ -413,9 +416,9 @@ seam.access_codes.list(device=some_lock)
 
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Javascript" %\}
+{% tab title="Javascript" %}
 
 ```javascript
 // create an ongoing code
@@ -459,9 +462,9 @@ await seam.accessCodes.list({
 */
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Ruby" %\}
+{% tab title="Ruby" %}
 
 ```ruby
 # create an ongoing code
@@ -509,9 +512,9 @@ seam.access_codes.list(device_id: some_lock.device_id)
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="PHP" %\}
+{% tab title="PHP" %}
 
 ```
 
