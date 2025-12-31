@@ -28,6 +28,7 @@ await seam.connectedAccounts.list({
   {
     "account_type": "salto_space",
     "account_type_display_name": "Salto Space",
+    "display_name": "j**n@example.com",
     "automatically_manage_new_devices": true,
     "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
     "created_at": "2025-06-15T16:54:17.946329Z",
@@ -71,6 +72,7 @@ EOF
     {
       "account_type": "salto_space",
       "account_type_display_name": "Salto Space",
+      "display_name": "j**n@example.com",
       "automatically_manage_new_devices": true,
       "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
       "created_at": "2025-06-15T16:54:17.946329Z",
@@ -109,6 +111,7 @@ seam.connected_accounts.list(
     ConnectedAccount(
         account_type="salto_space",
         account_type_display_name="Salto Space",
+        display_name="j**n@example.com",
         automatically_manage_new_devices=true,
         connected_account_id="a289aa54-5488-4707-9a4b-eeea4edf311d",
         created_at="2025-06-15T16:54:17.946329Z",
@@ -144,6 +147,7 @@ seam.connected_accounts.list(user_identifier_key: "2f393937-1405-4b1a-933f-34c97
   {
     "account_type" => "salto_space",
     "account_type_display_name" => "Salto Space",
+    "display_name" => "j**n@example.com",
     "automatically_manage_new_devices" => true,
     "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
     "created_at" => "2025-06-15T16:54:17.946329Z",
@@ -184,6 +188,7 @@ $seam->connected_accounts->list(
     [
         "account_type" => "salto_space",
         "account_type_display_name" => "Salto Space",
+        "display_name" => "j**n@example.com",
         "automatically_manage_new_devices" => true,
         "connected_account_id" => "a289aa54-5488-4707-9a4b-eeea4edf311d",
         "created_at" => "2025-06-15T16:54:17.946329Z",
@@ -219,6 +224,7 @@ seam connected-accounts list --user_identifier_key "2f393937-1405-4b1a-933f-34c9
   {
     "account_type": "salto_space",
     "account_type_display_name": "Salto Space",
+    "display_name": "j**n@example.com",
     "automatically_manage_new_devices": true,
     "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
     "created_at": "2025-06-15T16:54:17.946329Z",
@@ -309,6 +315,7 @@ Returns:
 {
   "account_type": "salto_space",
   "account_type_display_name": "Salto Space",
+  "display_name": "j**n@example.com",
   "automatically_manage_new_devices": true,
   "connected_account_id": "a289aa54-5488-4707-9a4b-eeea4edf311d",
   "created_at": "2025-06-15T16:54:17.946329Z",
