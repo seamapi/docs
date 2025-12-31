@@ -552,6 +552,7 @@ These items are deprecated.
 - `client_session.user_identity_ids`: Use `user_identity_id` instead.
 - `connect_webview.accepted_devices`: Unused. Will be removed.
 - `connect_webview.any_device_allowed`: Unused. Will be removed.
+- `connected_account.user_identifier`: Use `display_name` instead.
 - `unmanaged_acs_access_group.access_group_type`: Use `external_type`.
 - `unmanaged_acs_access_group.access_group_type_display_name`: Use `external_type_display_name`.
 - `unmanaged_acs_user.email`: use email_address.
