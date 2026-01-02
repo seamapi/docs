@@ -6,7 +6,7 @@ description: Learn how to retrieve all thermostats or a specific thermostat by I
 
 When you use the [`/thermostats/list`](../../api/thermostats/list.md) and [`/devices/get`](../../api/devices/get.md) endpoints to retrieve information about your connected thermostats, the Seam API returns the following categories of information:
 
-<table><thead><tr><th width="250">Category</th><th>Details</th></tr></thead><tbody><tr><td>Current conditions</td><td>Current temperature in Fahrenheit and Celsius, current relative humidity, and so on.</td></tr><tr><td>Current operational status</td><td>Whether the associated HVAC system is currently heating or cooling, whether the fan is currently running.</td></tr><tr><td>Available HVAC modes for the thermostat</td><td><code>heat</code>, <code>cool</code>, <code>heat_cool</code>, and <code>off</code>.</td></tr><tr><td>Available fan modes for the thermostat</td><td><code>on</code>, <code>auto</code>, and <code>circulate</code>.</td></tr><tr><td>Thermostat <a href="./#thermostat-capabilities">capability flags</a></td><td><p>Capabilities of the thermostat—at a granular level.</p><p>These capability flags include the following:</p><ul><li><code>device.can_hvac_heat</code></li><li><code>device.can_hvac_cool</code></li><li><code>device.can_hvac_heat_cool</code></li><li><code>device.can_turn_off_hvac</code></li></ul></td></tr><tr><td>Available climate presets</td><td>Climate presets that you can activate and schedule on the thermostat.</td></tr><tr><td>Climate preset constraints</td><td>Constraints related to climate presets for the specific thermostat brand or model.<br>For example, a thermostat might have a minimum or maximum cooling or heating <a href="../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md">set point</a> or a <a href="../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta">minimum delta</a> between the cooling and heating set points.</td></tr></tbody></table>
+<table><thead><tr><th width="250">Category</th><th>Details</th></tr></thead><tbody><tr><td>Current conditions </td><td>Current temperature in Fahrenheit and Celsius, current relative humidity, and so on. This includes such properties as <code>temperature_celsius</code>, <code>temperature_fahrenheit</code>, <code>is_cooling</code>, <code>is_heating</code>, <code>is_fan_running</code>, <code>relative_humidity</code>    </td></tr><tr><td>Current operational status</td><td>Whether the associated HVAC system is currently heating or cooling, whether the fan is currently running. These properties are named <code>current_climate_setting</code> and reflect what the thermostat is set to 'achieve'.</td></tr><tr><td>Available HVAC modes for the thermostat</td><td><code>heat</code>, <code>cool</code>, <code>heat_cool</code>, and <code>off</code>.</td></tr><tr><td>Available fan modes for the thermostat</td><td><code>on</code>, <code>auto</code>, and <code>circulate</code>.</td></tr><tr><td>Thermostat <a href="./#thermostat-capabilities">capability flags</a></td><td><p>Capabilities of the thermostat—at a granular level.</p><p>These capability flags include the following:</p><ul><li><code>device.can_hvac_heat</code></li><li><code>device.can_hvac_cool</code></li><li><code>device.can_hvac_heat_cool</code></li><li><code>device.can_turn_off_hvac</code></li></ul></td></tr><tr><td>Available climate presets</td><td>Climate presets that you can schedule on the thermostat.</td></tr><tr><td>Climate preset constraints</td><td>Constraints related to climate presets for the specific thermostat brand or model.<br>For example, a thermostat might have a minimum or maximum cooling or heating <a href="../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md">set point</a> or a <a href="../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta">minimum delta</a> between the cooling and heating set points.</td></tr></tbody></table>
 
 ## List All Thermostats
 
@@ -306,9 +306,6 @@ $seam->thermostats->list(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -555,7 +552,4 @@ $seam->devices->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -6,9 +6,9 @@ description: >-
 
 # Setting the Fallback Climate Preset
 
-Once you have created climate presets for a thermostat, you can set one of them as the "fallback" preset. Seam applies this fallback preset whenever no other climate preset is active. The fallback climate preset works with the Seam API's [scheduling mechanism](../creating-and-managing-thermostat-schedules.md). For example, you could set a fallback "eco" climate preset for the thermostat in your short-term rental property. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay. Whenever your property is unoccupied—that is, whenever there is no scheduled climate preset—Seam activates the fallback "eco" climate preset.
+Once you have created climate presets for a thermostat, you can set one of them as the "fallback" preset. Seam applies this fallback preset whenever no other climate preset is active. It works with the Seam API's [scheduling mechanism](../creating-and-managing-thermostat-schedules.md). The fallback climate preset is only applied once, after a thermostat schedule ends. If settings are changed while the fallback climate preset is active, the thermostat will override the fallback preset with the new settings. For example, you could set a fallback "eco" climate preset for the thermostat in your short-term rental property. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay. Whenever your property is unoccupied—that is, whenever there is no scheduled climate preset—Seam activates the fallback "eco" climate preset.
 
-To set the fallback climate preset for a device, issue a [`/thermostats/set_fallback_climate_preset`](../../../api/thermostats/set\_fallback\_climate\_preset.md) request and specify the `climate_preset_key` of the desired climate preset.
+To set the fallback climate preset for a device, issue a [`/thermostats/set_fallback_climate_preset`](../../../api/thermostats/set_fallback_climate_preset.md) request and specify the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -113,7 +113,4 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
