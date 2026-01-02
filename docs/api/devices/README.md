@@ -1832,6 +1832,38 @@ Indicates that the key is in a locker that does not support the access codes API
   
   
 </details>
+<details>
+<summary><code>accessory_keypad_setup_required</code></summary>
+
+Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>accessory_keypad_setup_required</code>
+  
+  
+</details>
 
 ---
 
@@ -4474,6 +4506,12 @@ Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unloc
 ---
 
 ### Locks
+**`accessory_keypad_setup_required`**
+
+Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.
+
+---
+
 **`hub_required_for_addtional_capabilities`**
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
