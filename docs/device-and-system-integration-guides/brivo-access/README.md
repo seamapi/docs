@@ -26,40 +26,20 @@ For detailed information about the Brivo-connected devices that Seam supports, s
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) for readers and locks that have a keypad
-* [Managing access systems](../products/access-systems/)
+* [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)
+* [Programming access codes](../../products/smart-locks/access-codes/) for readers and locks that have a keypad
+* [Managing access systems](../../products/access-systems/)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables you to connect your Brivo Access platform and devices to Seam, include the `brivo` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Brivo Access platform and devices to Seam, include the `brivo` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
-## Setup Instructions
+## Next Steps
 
-To control Brivo-connected devices using Seam, you must prompt owners of these devices to perform the following steps:
-
-1.  Use the **Brivo API Service Access Authorization Agreement Form** to ask your Brivo vendor to enable API access.
-
-    When completing this form, supply the following information:
-
-    * In the **Which solution(s) will be using the API?** field, type `Seam`.
-    * In the **If applicable, please provide the Developer Account Username** field, type `seamapi`.
-
-    <figure><img src="../.gitbook/assets/brivo-api-service-access-auth-agreement-form.png" alt="Brivo API Service Access Authorization Agreement Form" width="563"><figcaption></figcaption></figure>
-2. This form must be signed by an active administrator on your account and a representative from the Brivo vendor.\
-   Brivo then provides the API key to you securely.
-3. Specify this API key in the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your Brivo devices to Seam.
-
-***
-
-## Where to Order
-
-Contact the Brivo Sales team using the contact information on the Brivo **Contact Us** page.
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Brivo Contact Us Page</strong></td><td></td><td><a href="https://www.brivo.com/about/contact-us/">https://www.brivo.com/about/contact-us/</a></td><td><a href="../.gitbook/assets/brivo-logo.png">brivo-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><strong>Order Brivo Devices</strong></td><td>Submit a request on the Brivo Contact Us Page</td><td><a href="https://www.brivo.com/about/contact-us/">https://www.brivo.com/about/contact-us/</a></td><td><a href="../../.gitbook/assets/brivo-logo.png">brivo-logo.png</a></td></tr><tr><td><strong>Setup your Brivo account</strong></td><td>See this guide for how to connect your Brivo account with Seam</td><td><a href="brivo-access-setup-guide.md">brivo-access-setup-guide.md</a></td><td><a href="../../.gitbook/assets/setup tile.png">setup tile.png</a></td></tr></tbody></table>
 
 ***

@@ -56,7 +56,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [ASSA ABLOY Visionline Access Control System](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/) | `visionline`                    |
 | [August Home](../../device-guides/august-locks.md)                                                                                     | `august`                        |
 | [Avigilon Alta](../../device-guides/avigilon-alta-access-system.md)                                                                    | `avigilon_alta`                 |
-| [Brivo](../../device-guides/brivo-access.md)                                                                                           | `brivo`                         |
+| [Brivo](../../device-and-system-integration-guides/brivo-access/)                                                                      | `brivo`                         |
 | [ControlByWeb](../../device-guides/get-started-with-controlbyweb-devices.md)                                                           | `controlbyweb`                  |
 | [DoorKing](https://www.doorking.com/)                                                                                                  | `doorking`                      |
 | [Dormakaba Community](../../device-and-system-integration-guides/dormakaba-community-access-control-system/)                           | `dormakaba_community`           |
