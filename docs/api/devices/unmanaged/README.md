@@ -1483,6 +1483,38 @@ Indicates that Seam detected that the Lockly device does not have a time zone co
   
 </details>
 <details>
+<summary><code>ultraloq_time_zone_unknown</code></summary>
+
+Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>ultraloq_time_zone_unknown</code>
+  
+  
+</details>
+<details>
 <summary><code>hub_required_for_addtional_capabilities</code></summary>
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
@@ -1935,6 +1967,12 @@ Indicates that a third-party integration has been detected.
 **`ttlock_weak_gateway_signal`**
 
 Indicates that the gateway signal is weak.
+
+---
+
+**`ultraloq_time_zone_unknown`**
+
+Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
 
 ---
 
