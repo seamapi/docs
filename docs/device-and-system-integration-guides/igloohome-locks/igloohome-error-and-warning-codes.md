@@ -10,6 +10,10 @@ description: >-
 
 IglooHome devices can generate errors and warnings related to device connectivity, bridge status, and access code management. Understanding these codes helps you quickly diagnose and resolve issues.
 
+{% hint style="info" %}
+**Note:** Error and warning codes may change over time as we improve our error handling. Use these codes as a reference for troubleshooting, but avoid building logic that depends on specific code keys remaining static.
+{% endhint %}
+
 ### Device Errors
 
 Device errors indicate critical issues that prevent normal operation.
