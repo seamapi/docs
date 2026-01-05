@@ -27,7 +27,7 @@ For a complete compatibility list, see [2N Supported Devices](https://www.seam.c
 
 ## Setup and Integration
 
-Follow the step-by-step [System Setup Instructions](../device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions.md)![Attachment.tiff](file:///Attachment.tiff) to connect your My2N company and devices to Seam.
+Follow the step-by-step [System Setup Instructions](../device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions.md) to connect your My2N company and devices to Seam.
 
 The setup guide covers:
 

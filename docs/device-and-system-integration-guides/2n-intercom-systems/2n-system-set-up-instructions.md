@@ -17,7 +17,7 @@ If MFA is required for your admin account, create a separate account without MFA
 2. **Add your 2N devices**\
    In My2N, add your 2N IP devices to the account.
 3. **Enable Remote API Access (RAA)**\
-   Make sure Remote API Access (RAA) is enabled for your company. If it's not, contact [integrations@2n.com](mailto:integrations@2n.com) to activate it. Provide the company ID, which is locatd in the URL.
+   Make sure Remote API Access (RAA) is enabled for your company. If it's not, contact [integrations@2n.com](mailto:integrations@2n.com) to activate it. Provide the company ID, which is located in the URL.
 
 ***
 
