@@ -325,4 +325,4 @@ for device in devices:
 
 * For time slot configuration: Contact your Dormakaba installer
 * For Seam API questions: [support@getseam.com](mailto:support@getseam.com)
-* For detailed time slot guidance: See our [Time Slot Configuration Guide](https://seam-knowledge-base.help.usepylon.com/articles/3198102890-dormakaba-oracode-time-slot-configuration)
+* For detailed time slot guidance: See our [Time Slot Configuration Guide](https://help.getseam.com/articles/3198102890-dormakaba-oracode-time-slot-configuration)
