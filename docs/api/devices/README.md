@@ -1801,7 +1801,7 @@ Indicates that Seam does not know the time zone of the Ultraloq device. Set a ti
   
 </details>
 <details>
-<summary><code>hub_required_for_addtional_capabilities</code></summary>
+<summary><code>hub_required_for_additional_capabilities</code></summary>
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
 
@@ -1828,7 +1828,7 @@ Indicates that a hub or relay must be connected to unlock additional capabilitie
   
   Enum values:
   
-  - <code>hub_required_for_addtional_capabilities</code>
+  - <code>hub_required_for_additional_capabilities</code>
   
   
 </details>
@@ -4550,7 +4550,7 @@ Indicates that the accessory keypad exists, but is not linked to the Igloohome B
 
 ---
 
-**`hub_required_for_addtional_capabilities`**
+**`hub_required_for_additional_capabilities`**
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
 
