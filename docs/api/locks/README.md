@@ -3372,6 +3372,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.
 
   ID of the access code that was used to lock the device.
 
+<strong><code>access_code_is_managed</code></strong> <i>Boolean</i>
+
+  Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.
+
 <strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
   ID of the action attempt associated with the lock action.
@@ -3439,6 +3443,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
   ID of the access code that was used to unlock the affected device.
+
+<strong><code>access_code_is_managed</code></strong> <i>Boolean</i>
+
+  Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
