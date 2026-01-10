@@ -110,6 +110,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/connectors/sync`: Only used internally.
 - `/seam/customer/v1/connectors/update`: Internal endpoint for Console.
 - `/seam/customer/v1/customers/list`: Internal endpoint for Console.
+- `/seam/customer/v1/customers/open_portal`: Internal endpoint for Console.
 - `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/get`: Internal endpoint for customer portals.
