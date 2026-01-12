@@ -805,6 +805,8 @@ These items are deprecated.
 - `event: enrollment_automation.deleted`
 - `event: phone.deactivated`
 - `event: space.device_membership_changed`
+- `event: space.created`
+- `event: space.deleted`
 - `action_attempt: SYNC_ACCESS_CODES`
 - `action_attempt: CREATE_ACCESS_CODE`
 - `action_attempt: DELETE_ACCESS_CODE`
