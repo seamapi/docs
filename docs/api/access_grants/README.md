@@ -6,6 +6,7 @@
 ## The access_grant Object
 
 - [Properties](./#properties)
+- [Errors](./#errors)
 - [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
@@ -134,6 +135,49 @@ Date and time at which the Access Grant ends.
 
 
 
+
+---
+
+[**`errors`**](./#errors) *List* *of Objects*
+
+Errors associated with the [access grant](../../capability-guides/access-grants/README.md).
+
+
+
+
+The specific structure of each object in this list depends on the value of its `error_code` field.
+
+Variants:
+<details>
+<summary><code>cannot_create_requested_access_methods</code></summary>
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>cannot_create_requested_access_methods</code>
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
 
 ---
 
@@ -290,6 +334,15 @@ Indicates that the [access grant](../../capability-guides/access-grants/README.m
 
 ID of the Seam workspace associated with the Access Grant.
 
+
+
+
+---
+
+
+## Errors
+
+**`cannot_create_requested_access_methods`**
 
 
 
