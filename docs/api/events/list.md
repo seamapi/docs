@@ -406,6 +406,8 @@ Possible enum values:
 - <code>enrollment_automation.deleted</code>
 - <code>phone.deactivated</code>
 - <code>space.device_membership_changed</code>
+- <code>space.created</code>
+- <code>space.deleted</code>
 </details>
 
 ---
