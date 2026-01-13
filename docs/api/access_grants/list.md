@@ -451,11 +451,23 @@ Customer key for which you want to list access grants.
 
 ---
 
+**`limit`** *Number*
+
+Numerical limit on the number of access grants to return.
+
+---
+
 **`location_id`** *String*
 
 {% hint style="warning" %}
 **Deprecated**. Use `space_id`.
 {% endhint %}
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
