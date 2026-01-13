@@ -505,46 +505,6 @@ Igloohome bridge is offline.
   
 </details>
 <details>
-<summary><code>igloohome_offline_access_code_no_variance_available</code></summary>
-
-Lock has reached maximum amount of codes.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>igloohome_offline_access_code_no_variance_available</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>kwikset_unable_to_confirm_code</code></summary>
 
 Unable to confirm that the access code is set on Kwikset device.
@@ -2403,12 +2363,6 @@ Igloohome bridge is offline.
 **`igloohome_bridge_too_many_pending_jobs`**
 
 Igloohome bridge has too many pending jobs in the queue.
-
----
-
-**`igloohome_offline_access_code_no_variance_available`**
-
-Lock has reached maximum amount of codes.
 
 ---
 
