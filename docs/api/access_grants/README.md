@@ -590,6 +590,45 @@ An Access Grant's start or end time was changed.
 
 ---
 
+**`access_grant.could_not_create_requested_access_methods`**
+
+One or more requested access methods could not be created for an Access Grant.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>access_grant_id</code></strong> <i>UUID</i>
+
+  ID of the affected Access Grant.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>error_message</code></strong> <i>String</i>
+
+  Description of why the access methods could not be created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `access_grant.could_not_create_requested_access_methods`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
 ## Endpoints
 
 

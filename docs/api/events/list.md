@@ -336,6 +336,7 @@ Possible enum values:
 - <code>access_grant.access_granted_to_door</code>
 - <code>access_grant.access_to_door_lost</code>
 - <code>access_grant.access_times_changed</code>
+- <code>access_grant.could_not_create_requested_access_methods</code>
 - <code>access_method.issued</code>
 - <code>access_method.revoked</code>
 - <code>access_method.card_encoding_required</code>
