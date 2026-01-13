@@ -532,46 +532,6 @@ No space for access code on device.
   
 </details>
 <details>
-<summary><code>igloohome_bridge_too_many_pending_jobs</code></summary>
-
-Igloohome bridge has too many pending jobs in the queue.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>igloohome_bridge_too_many_pending_jobs</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>kwikset_unable_to_confirm_code</code></summary>
 
 Unable to confirm that the access code is set on Kwikset device.
@@ -2434,12 +2394,6 @@ Admin role required—insufficient permissions to manage PINs on this Kwikset de
 **`keynest_unsupported_third_party_locker`**
 
 KeyNest locker is not supported.
-
----
-
-**`igloohome_bridge_too_many_pending_jobs`**
-
-Igloohome bridge has too many pending jobs in the queue.
 
 ---
 
