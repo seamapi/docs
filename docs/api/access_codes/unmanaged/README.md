@@ -465,46 +465,6 @@ Igloohome bridge has too many pending jobs in the queue.
   
 </details>
 <details>
-<summary><code>igloohome_bridge_offline</code></summary>
-
-Igloohome bridge is offline.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>igloohome_bridge_offline</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>kwikset_unable_to_confirm_code</code></summary>
 
 Unable to confirm that the access code is set on Kwikset device.
@@ -2351,12 +2311,6 @@ Access code has not yet been fully moved to the device.
 **`hubitat_no_free_positions_available`**
 
 No free positions available on the device.
-
----
-
-**`igloohome_bridge_offline`**
-
-Igloohome bridge is offline.
 
 ---
 
