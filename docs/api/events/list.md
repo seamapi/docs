@@ -233,6 +233,48 @@ IDs of the access codes for which you want to list events.
 
 ---
 
+**`access_grant_id`** *String*
+
+ID of the access grant for which you want to list events.
+
+---
+
+**`access_grant_ids`** *Array* *of UUIDs*
+
+IDs of the access grants for which you want to list events.
+
+---
+
+**`access_method_id`** *String*
+
+ID of the access method for which you want to list events.
+
+---
+
+**`access_method_ids`** *Array* *of UUIDs*
+
+IDs of the access methods for which you want to list events.
+
+---
+
+**`acs_access_group_id`** *String*
+
+ID of the ACS access group for which you want to list events.
+
+---
+
+**`acs_credential_id`** *String*
+
+ID of the ACS credential for which you want to list events.
+
+---
+
+**`acs_encoder_id`** *String*
+
+ID of the ACS encoder for which you want to list events.
+
+---
+
 **`acs_entrance_id`** *String*
 
 ID of the ACS entrance for which you want to list events.
@@ -422,6 +464,18 @@ Numerical limit on the number of events to return.
 **`since`** *String*
 
 Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`.
+
+---
+
+**`space_id`** *String*
+
+ID of the space for which you want to list events.
+
+---
+
+**`space_ids`** *Array* *of UUIDs*
+
+IDs of the spaces for which you want to list events.
 
 ---
 
