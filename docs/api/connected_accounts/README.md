@@ -315,6 +315,15 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ---
 
+**`image_url`** *String*
+
+Logo URL for the connected account provider.
+
+
+
+
+---
+
 **`user_identifier`** *Object*
 
 User identifier associated with the connected account.
