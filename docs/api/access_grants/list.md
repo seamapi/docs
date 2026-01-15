@@ -427,6 +427,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_grant_id`** *String*
+
+ID of the access grant to retrieve.
+
+---
+
 **`access_grant_key`** *String*
 
 Filter Access Grants by access_grant_key.
