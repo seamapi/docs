@@ -1909,6 +1909,60 @@ Unique identifier for the Seam workspace associated with the device.
 ---
 
 ## Hardware
+**`device_manufacturer`** *Object*
+
+Manufacturer of the device. Represents the hardware brand, which may differ from the provider.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>display_name</code></strong> <i>String</i>
+  
+    Display name for the manufacturer, such as `August`, `Yale`, `Salto`, and so on.
+
+  - <strong><code>image_url</code></strong> <i>String</i>
+  
+    Image URL for the manufacturer logo.
+
+  - <strong><code>manufacturer</code></strong> <i>String</i>
+  
+    Manufacturer identifier, such as `august`, `yale`, `salto`, and so on.
+
+</details>
+
+---
+
+**`device_provider`** *Object*
+
+Provider of the device. Represents the third-party service through which the device is controlled.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>device_provider_name</code></strong> <i>String</i>
+  
+    Device provider name. Corresponds to the integration type, such as `august`, `schlage`, `yale_access`, and so on.
+
+  - <strong><code>display_name</code></strong> <i>String</i>
+  
+    Display name for the device provider type.
+
+  - <strong><code>image_url</code></strong> <i>String</i>
+  
+    Image URL for the device provider.
+
+  - <strong><code>provider_category</code></strong> <i>String</i>
+  
+    Provider category. Indicates the third-party provider type, such as `stable`, for stable integrations, or `internal`, for internal integrations.
+
+</details>
+
+---
+
 **`location`** *Object*
 
 Location information for the device.
