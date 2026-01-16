@@ -19,6 +19,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/access_grants`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
 - `/seam/customer/v1/automations`: No undocumented message provided
+- `/seam/customer/v1/connector_customers`: No undocumented message provided
 - `/seam/customer/v1/connectors`: No undocumented message provided
 - `/seam/customer/v1/customers`: No undocumented message provided
 - `/seam/customer/v1/events`: No undocumented message provided
@@ -102,6 +103,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations/delete`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/automations/update`: Internal endpoint for customer portals.
+- `/seam/customer/v1/connector_customers/list`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/authorize`: Internal endpoint for OAuth authorization.
 - `/seam/customer/v1/connectors/connector_types`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/create`: Internal endpoint for Console.
@@ -657,6 +659,7 @@ These items are deprecated.
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
 - `/seam/console/v1/timelines/get`: `timeline`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
+- `/seam/customer/v1/connector_customers/list`: `connector_customers`
 - `/seam/customer/v1/connectors/authorize`: `connector_authorize`
 - `/seam/customer/v1/connectors/connector_types`: `connector_types`
 - `/seam/customer/v1/connectors/create`: `connector`
