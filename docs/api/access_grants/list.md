@@ -427,9 +427,9 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_grant_id`** *String*
+**`access_grant_ids`** *Array* *of UUIDs*
 
-ID of the access grant to retrieve.
+IDs of the access grants to retrieve.
 
 ---
 
