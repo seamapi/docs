@@ -130,6 +130,7 @@ seam access-methods delete --access_method_id "3f10d86c-526b-4b85-8788-cc1a74411
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 
