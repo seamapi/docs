@@ -704,6 +704,7 @@ These items are deprecated.
 - `/instant_keys/get`
 - `/instant_keys/list`
 - `/locks/get`
+- `/seam/v1/customers/push_data`
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
