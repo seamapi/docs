@@ -731,6 +731,10 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
