@@ -352,7 +352,6 @@ Items that are intentionally undocumented are not included in this section.
     - `use_offline_access_code`
 - `/access_codes/create_multiple`
     - `attempt_for_offline_device`
-    - `use_offline_access_code`
 - `/access_codes/delete`
     - `sync`
 - `/access_codes/update`
@@ -577,8 +576,6 @@ These items are deprecated.
 ### Endpoint parameters
 
 - `/access_codes/create`
-    - `use_offline_access_code`: Use `is_offline_access_code` instead.
-- `/access_codes/create_multiple`
     - `use_offline_access_code`: Use `is_offline_access_code` instead.
 - `/access_codes/update`
     - `use_offline_access_code`: Use `is_offline_access_code` instead.
