@@ -378,24 +378,6 @@ Indicates whether [external modification](https://docs.seam.co/latest/capability
 
 ---
 
-**`is_offline_access_code`** *Boolean*
-
-Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).
-
----
-
-**`is_one_time_use`** *Boolean*
-
-Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.
-
----
-
-**`max_time_rounding`** *String*
-
-Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.
-
----
-
 **`name`** *String*
 
 Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
@@ -416,27 +398,13 @@ Indicates whether [native scheduling](https://docs.seam.co/latest/capability-gui
 
 **`preferred_code_length`** *Number*
 
-Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.
+Preferred code length. If the affected devices do not support the preferred code length, Seam reverts to using the shortest supported code length.
 
 ---
 
 **`starts_at`** *String*
 
 Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
-
----
-
-**`use_backup_access_code_pool`** *Boolean*
-
-Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
-
----
-
-**`use_offline_access_code`** *Boolean*
-
-{% hint style="warning" %}
-**Deprecated**. Use `is_offline_access_code` instead.
-{% endhint %}
 
 ---
 
