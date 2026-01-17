@@ -316,6 +316,7 @@ Type of the device.
 - <code>tedee_lock</code>
 - <code>akiles_lock</code>
 - <code>ultraloq_lock</code>
+- <code>korelock_lock</code>
 - <code>keynest_key</code>
 - <code>noiseaware_activity_zone</code>
 - <code>minut_sensor</code>
@@ -2315,6 +2316,43 @@ Keypad battery status.
   - <strong><code>level</code></strong> <i>Number</i>
   
     Keypad battery charge level.
+
+</details>
+
+---
+
+**`korelock_metadata`** *Object*
+
+Metadata for a Korelock device.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>device_id</code></strong> <i>String</i>
+  
+    Device ID for a Korelock device.
+
+  - <strong><code>device_name</code></strong> <i>String</i>
+  
+    Device name for a Korelock device.
+
+  - <strong><code>firmware_version</code></strong> <i>String</i>
+  
+    Firmware version for a Korelock device.
+
+  - <strong><code>model_code</code></strong> <i>String</i>
+  
+    Model code for a Korelock device.
+
+  - <strong><code>serial_number</code></strong> <i>String</i>
+  
+    Serial number for a Korelock device.
+
+  - <strong><code>wifi_signal_strength</code></strong> <i>Number</i>
+  
+    WiFi signal strength (0-1) for a Korelock device.
 
 </details>
 
