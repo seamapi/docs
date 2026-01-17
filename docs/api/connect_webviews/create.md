@@ -579,6 +579,7 @@ Possible enum values:
 - <code>sensi</code>
 - <code>kwikset2</code>
 - <code>keynest</code>
+- <code>korelock</code>
 - <code>dormakaba_ambiance</code>
 - <code>ultraloq</code>
 - <code>yale_access</code>
