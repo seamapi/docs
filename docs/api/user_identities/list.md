@@ -238,6 +238,12 @@ String for which to search. Filters returned user identities to include all reco
 
 ---
 
+**`user_identity_ids`** *Array* *of UUIDs*
+
+Array of user identity IDs by which to filter the list of user identities.
+
+---
+
 
 ## Response
 
