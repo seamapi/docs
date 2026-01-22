@@ -2455,7 +2455,7 @@ Metadata for an igloohome device.
   
     Device name for an igloohome device.
 
-  - <strong><code>is_keypad_linked_to_bridge</code></strong> <i>Boolean</i>
+  - <strong><code>is_accessory_keypad_linked_to_bridge</code></strong> <i>Boolean</i>
   
     Indicates whether a keypad is linked to a bridge for an igloohome device.
 
