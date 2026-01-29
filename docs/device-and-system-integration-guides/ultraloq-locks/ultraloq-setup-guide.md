@@ -799,12 +799,645 @@ echo $device | jq '.device.warnings'
 
 ## Next Steps
 
-Now that your Ultraloq devices are connected and configured, you can:
+Now that your Ultraloq devices are connected and configured, you can perform common operations:
 
-* **Create access codes:** See [Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)
-* **Lock and unlock devices:** Use `seam.locks.lock_door()` and `seam.locks.unlock_door()`
-* **Monitor device status:** Check battery level, lock status, and online/offline state
-* **Learn more about timezones:** See [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)
+### Lock and Unlock Devices
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Lock the door
+seam.locks.lock_door(device_id="your-device-id")
+print("Door locked")
+
+# Unlock the door
+seam.locks.unlock_door(device_id="your-device-id")
+print("Door unlocked")
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+// Lock the door
+await seam.locks.lockDoor({ device_id: "your-device-id" });
+console.log("Door locked");
+
+// Unlock the door
+await seam.locks.unlockDoor({ device_id: "your-device-id" });
+console.log("Door unlocked");
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "seam"
+
+seam = Seam.new()
+
+# Lock the door
+seam.locks.lock_door(device_id: "your-device-id")
+puts "Door locked"
+
+# Unlock the door
+seam.locks.unlock_door(device_id: "your-device-id")
+puts "Door unlocked"
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Seam\SeamClient;
+
+$seam = new SeamClient();
+
+// Lock the door
+$seam->locks->lock_door(device_id: "your-device-id");
+echo "Door locked\n";
+
+// Unlock the door
+$seam->locks->unlock_door(device_id: "your-device-id");
+echo "Door unlocked\n";
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```csharp
+using Seam.Client;
+
+var seam = new SeamClient();
+
+// Lock the door
+seam.Locks.LockDoor(deviceId: "your-device-id");
+Console.WriteLine("Door locked");
+
+// Unlock the door
+seam.Locks.UnlockDoor(deviceId: "your-device-id");
+Console.WriteLine("Door unlocked");
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+import com.seam.api.Seam;
+
+Seam seam = Seam.builder().build();
+
+// Lock the door
+seam.locks().lockDoor(LocksLockDoorRequest.builder()
+  .deviceId("your-device-id")
+  .build());
+System.out.println("Door locked");
+
+// Unlock the door
+seam.locks().unlockDoor(LocksUnlockDoorRequest.builder()
+  .deviceId("your-device-id")
+  .build());
+System.out.println("Door unlocked");
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+```bash
+# Lock the door
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/lock_door' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"your-device-id\"}"
+
+# Unlock the door
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/unlock_door' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"your-device-id\"}"
+```
+{% endtab %}
+{% endtabs %}
+
+### Create Permanent Access Codes
+
+Permanent access codes work indefinitely and do not require timezone configuration:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Create permanent access code
+access_code = seam.access_codes.create(
+  device_id="your-device-id",
+  name="Maintenance Team",
+  code="1234"  # Optional: auto-generated if omitted
+)
+
+print(f"Created permanent code: {access_code.code}")
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+// Create permanent access code
+const accessCode = await seam.accessCodes.create({
+  device_id: "your-device-id",
+  name: "Maintenance Team",
+  code: "1234"  // Optional: auto-generated if omitted
+});
+
+console.log(`Created permanent code: ${accessCode.code}`);
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "seam"
+
+seam = Seam.new()
+
+# Create permanent access code
+access_code = seam.access_codes.create(
+  device_id: "your-device-id",
+  name: "Maintenance Team",
+  code: "1234"  # Optional: auto-generated if omitted
+)
+
+puts "Created permanent code: #{access_code.code}"
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Seam\SeamClient;
+
+$seam = new SeamClient();
+
+// Create permanent access code
+$accessCode = $seam->access_codes->create(
+  device_id: "your-device-id",
+  name: "Maintenance Team",
+  code: "1234"  // Optional: auto-generated if omitted
+);
+
+echo "Created permanent code: " . $accessCode->code . "\n";
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```csharp
+using Seam.Client;
+
+var seam = new SeamClient();
+
+// Create permanent access code
+var accessCode = seam.AccessCodes.Create(
+  deviceId: "your-device-id",
+  name: "Maintenance Team",
+  code: "1234"  // Optional: auto-generated if omitted
+);
+
+Console.WriteLine($"Created permanent code: {accessCode.Code}");
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+import com.seam.api.Seam;
+import com.seam.api.types.AccessCode;
+
+Seam seam = Seam.builder().build();
+
+// Create permanent access code
+AccessCode accessCode = seam.accessCodes().create(
+  AccessCodesCreateRequest.builder()
+    .deviceId("your-device-id")
+    .name("Maintenance Team")
+    .code("1234")  // Optional: auto-generated if omitted
+    .build()
+);
+
+System.out.println("Created permanent code: " + accessCode.getCode());
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "device_id": "your-device-id",
+    "name": "Maintenance Team",
+    "code": "1234"
+  }'
+```
+{% endtab %}
+{% endtabs %}
+
+### Create Time-Bound Access Codes
+
+Time-bound access codes require timezone configuration (completed in Step 5):
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+from seam import Seam
+from datetime import datetime, timedelta
+
+seam = Seam()
+
+# Define time range
+starts_at = datetime.utcnow() + timedelta(days=1)
+ends_at = starts_at + timedelta(days=2)
+
+# Create time-bound access code
+access_code = seam.access_codes.create(
+  device_id="your-device-id",
+  name="Weekend Guest",
+  starts_at=starts_at.isoformat() + "Z",
+  ends_at=ends_at.isoformat() + "Z"
+)
+
+print(f"Created time-bound code: {access_code.code}")
+print(f"Active from {access_code.starts_at} to {access_code.ends_at}")
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+// Define time range
+const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
+const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000);
+
+// Create time-bound access code
+const accessCode = await seam.accessCodes.create({
+  device_id: "your-device-id",
+  name: "Weekend Guest",
+  starts_at: startsAt.toISOString(),
+  ends_at: endsAt.toISOString()
+});
+
+console.log(`Created time-bound code: ${accessCode.code}`);
+console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`);
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "seam"
+require "time"
+
+seam = Seam.new()
+
+# Define time range
+starts_at = Time.now.utc + (24 * 60 * 60)
+ends_at = starts_at + (2 * 24 * 60 * 60)
+
+# Create time-bound access code
+access_code = seam.access_codes.create(
+  device_id: "your-device-id",
+  name: "Weekend Guest",
+  starts_at: starts_at.iso8601,
+  ends_at: ends_at.iso8601
+)
+
+puts "Created time-bound code: #{access_code.code}"
+puts "Active from #{access_code.starts_at} to #{access_code.ends_at}"
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Seam\SeamClient;
+
+$seam = new SeamClient();
+
+// Define time range
+$startsAt = new DateTime('+1 day', new DateTimeZone('UTC'));
+$endsAt = (clone $startsAt)->add(new DateInterval('P2D'));
+
+// Create time-bound access code
+$accessCode = $seam->access_codes->create(
+  device_id: "your-device-id",
+  name: "Weekend Guest",
+  starts_at: $startsAt->format(DateTime::ATOM),
+  ends_at: $endsAt->format(DateTime::ATOM)
+);
+
+echo "Created time-bound code: " . $accessCode->code . "\n";
+echo "Active from " . $accessCode->starts_at . " to " . $accessCode->ends_at . "\n";
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```csharp
+using Seam.Client;
+using System;
+
+var seam = new SeamClient();
+
+// Define time range
+var startsAt = DateTime.UtcNow.AddDays(1);
+var endsAt = startsAt.AddDays(2);
+
+// Create time-bound access code
+var accessCode = seam.AccessCodes.Create(
+  deviceId: "your-device-id",
+  name: "Weekend Guest",
+  startsAt: startsAt,
+  endsAt: endsAt
+);
+
+Console.WriteLine($"Created time-bound code: {accessCode.Code}");
+Console.WriteLine($"Active from {accessCode.StartsAt} to {accessCode.EndsAt}");
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+import com.seam.api.Seam;
+import com.seam.api.types.AccessCode;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+
+Seam seam = Seam.builder().build();
+
+// Define time range
+Instant startsAt = Instant.now().plus(1, ChronoUnit.DAYS);
+Instant endsAt = startsAt.plus(2, ChronoUnit.DAYS);
+
+// Create time-bound access code
+AccessCode accessCode = seam.accessCodes().create(
+  AccessCodesCreateRequest.builder()
+    .deviceId("your-device-id")
+    .name("Weekend Guest")
+    .startsAt(startsAt.toString())
+    .endsAt(endsAt.toString())
+    .build()
+);
+
+System.out.println("Created time-bound code: " + accessCode.getCode());
+System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCode.getEndsAt());
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+```bash
+# Calculate timestamps
+STARTS_AT=$(date -u -d '+1 day' '+%Y-%m-%dT%H:%M:%SZ')
+ENDS_AT=$(date -u -d '+3 days' '+%Y-%m-%dT%H:%M:%SZ')
+
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"your-device-id\",
+    \"name\": \"Weekend Guest\",
+    \"starts_at\": \"${STARTS_AT}\",
+    \"ends_at\": \"${ENDS_AT}\"
+  }"
+```
+{% endtab %}
+{% endtabs %}
+
+### Monitor Device Status
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+from seam import Seam
+
+seam = Seam()
+
+device = seam.devices.get(device_id="your-device-id")
+
+# Check lock status
+print(f"Lock status: {device.properties['locked']}")
+
+# Check online status
+print(f"Online: {device.properties['online']}")
+
+# Check battery level (if available)
+if 'battery_level' in device.properties:
+  print(f"Battery level: {device.properties['battery_level']}")
+
+# Check for warnings
+if device.warnings:
+  print(f"Warnings: {[w.warning_code for w in device.warnings]}")
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+const device = await seam.devices.get({ device_id: "your-device-id" });
+
+// Check lock status
+console.log(`Lock status: ${device.properties.locked}`);
+
+// Check online status
+console.log(`Online: ${device.properties.online}`);
+
+// Check battery level (if available)
+if (device.properties.battery_level) {
+  console.log(`Battery level: ${device.properties.battery_level}`);
+}
+
+// Check for warnings
+if (device.warnings.length > 0) {
+  console.log(`Warnings: ${device.warnings.map(w => w.warning_code)}`);
+}
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "seam"
+
+seam = Seam.new()
+
+device = seam.devices.get(device_id: "your-device-id")
+
+# Check lock status
+puts "Lock status: #{device.properties['locked']}"
+
+# Check online status
+puts "Online: #{device.properties['online']}"
+
+# Check battery level (if available)
+if device.properties['battery_level']
+  puts "Battery level: #{device.properties['battery_level']}"
+end
+
+# Check for warnings
+if device.warnings.any?
+  puts "Warnings: #{device.warnings.map(&:warning_code)}"
+end
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Seam\SeamClient;
+
+$seam = new SeamClient();
+
+$device = $seam->devices->get(device_id: "your-device-id");
+
+// Check lock status
+echo "Lock status: " . ($device->properties->locked ? "locked" : "unlocked") . "\n";
+
+// Check online status
+echo "Online: " . ($device->properties->online ? "yes" : "no") . "\n";
+
+// Check battery level (if available)
+if (isset($device->properties->battery_level)) {
+  echo "Battery level: " . $device->properties->battery_level . "\n";
+}
+
+// Check for warnings
+if (count($device->warnings) > 0) {
+  $warningCodes = array_map(fn($w) => $w->warning_code, $device->warnings);
+  echo "Warnings: " . implode(", ", $warningCodes) . "\n";
+}
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```csharp
+using Seam.Client;
+using System.Linq;
+
+var seam = new SeamClient();
+
+var device = seam.Devices.Get(deviceId: "your-device-id");
+
+// Check lock status
+Console.WriteLine($"Lock status: {device.Properties.Locked}");
+
+// Check online status
+Console.WriteLine($"Online: {device.Properties.Online}");
+
+// Check battery level (if available)
+if (device.Properties.BatteryLevel.HasValue)
+{
+  Console.WriteLine($"Battery level: {device.Properties.BatteryLevel}");
+}
+
+// Check for warnings
+if (device.Warnings.Any())
+{
+  var warningCodes = string.Join(", ", device.Warnings.Select(w => w.WarningCode));
+  Console.WriteLine($"Warnings: {warningCodes}");
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+import com.seam.api.Seam;
+import com.seam.api.types.Device;
+import java.util.stream.Collectors;
+
+Seam seam = Seam.builder().build();
+
+Device device = seam.devices().get(
+  DevicesGetRequest.builder()
+    .deviceId("your-device-id")
+    .build()
+);
+
+// Check lock status
+System.out.println("Lock status: " + device.getProperties().getLocked());
+
+// Check online status
+System.out.println("Online: " + device.getProperties().getOnline());
+
+// Check battery level (if available)
+if (device.getProperties().getBatteryLevel() != null) {
+  System.out.println("Battery level: " + device.getProperties().getBatteryLevel());
+}
+
+// Check for warnings
+if (!device.getWarnings().isEmpty()) {
+  String warningCodes = device.getWarnings().stream()
+    .map(w -> w.getWarningCode())
+    .collect(Collectors.joining(", "));
+  System.out.println("Warnings: " + warningCodes);
+}
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+```bash
+device=$(curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"your-device-id\"}")
+
+# Check lock status
+echo $device | jq '.device.properties.locked'
+
+# Check online status
+echo $device | jq '.device.properties.online'
+
+# Check battery level
+echo $device | jq '.device.properties.battery_level'
+
+# Check warnings
+echo $device | jq '.device.warnings'
+```
+{% endtab %}
+{% endtabs %}
+
+***
+
+## Related Resources
+
+* **[Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)** - Detailed guide on permanent and time-bound access codes
+* **[Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)** - Complete timezone configuration reference
+* **[Lock and Unlock Operations](../../products/smart-locks/lock-and-unlock.md)** - General smart lock control documentation
+* **[Access Codes Overview](../../products/smart-locks/access-codes/)** - Understanding access code management
 
 ***
 
