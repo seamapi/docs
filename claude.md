@@ -25,9 +25,11 @@ This document provides a comprehensive overview of the Seam API documentation re
 The documentation is organized into **7 main sections**, each serving a distinct purpose:
 
 ### 1. Core Concepts (Foundation)
+
 **Purpose:** Foundational knowledge for understanding Seam's architecture and key concepts
 
 **Topics:**
+
 - Overview
 - Seam Console
 - Workspaces
@@ -42,9 +44,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Location:** `/docs/core-concepts/`
 
 ### 2. Capability Guides (Feature-focused)
+
 **Purpose:** Feature-specific implementation guides organized by what devices can DO
 
 **Topics:**
+
 - Smart Locks
 - Access Control Systems
 - Mobile Access
@@ -58,9 +62,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Location:** `/docs/capability-guides/`
 
 ### 3. API Reference (Technical Specifications)
+
 **Purpose:** Complete API endpoint documentation (appears to be auto-generated from OpenAPI specs)
 
 **Topics:**
+
 - Installation
 - Authentication
 - Pagination
@@ -76,18 +82,22 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Location:** `/docs/api/`
 
 ### 4. UI Components
+
 **Purpose:** Frontend component libraries and SDKs
 
 **Topics:**
+
 - Seam Components (React, Angular, Vue)
 - Seam Mobile Components (iOS)
 
 **Location:** `/docs/seam-components/`, `/docs/ui-components/`
 
 ### 5. Device & System Integration Guides
+
 **Purpose:** Manufacturer and system-specific setup instructions
 
 **Coverage:** 40+ device manufacturers including:
+
 - Smart locks (August, Yale, Schlage, Kwikset, etc.)
 - Access control systems (ASSA ABLOY, Salto, Brivo, etc.)
 - Thermostats (Ecobee, Honeywell)
@@ -96,9 +106,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Location:** `/docs/device-and-system-integration-guides/`, `/docs/device-guides/`
 
 ### 6. Developer Tools
+
 **Purpose:** Development workflow and tooling documentation
 
 **Topics:**
+
 - Webhooks
 - Seam CLI
 - Sandbox Devices
@@ -108,6 +120,7 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Location:** `/docs/developer-tools/`
 
 ### 7. Industry Guides
+
 **Purpose:** Vertical-specific use cases and implementation guides
 
 **Current coverage:** Hospitality Industry
@@ -119,6 +132,7 @@ The documentation is organized into **7 main sections**, each serving a distinct
 ## File Structure
 
 ### Root Level Files
+
 ```
 /docs/
 ├── README.md           # Landing page / home
@@ -128,6 +142,7 @@ The documentation is organized into **7 main sections**, each serving a distinct
 ```
 
 ### Directory Organization
+
 ```
 /docs/
 ├── core-concepts/                           (9 subdirectories)
@@ -150,11 +165,13 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Location:** `/docs/.gitbook/assets/`
 
 **Naming conventions:**
+
 - Descriptive names with hyphens: `august_connect-flow-screens_light.png`
 - Dark/light mode variants: `_dark.png` and `_light.png` suffixes
 - Manufacturer logos, screenshots, diagrams, cover images
 
 **Asset types:**
+
 - Device screenshots
 - UI flow diagrams
 - Timeline visualizations
@@ -166,12 +183,14 @@ The documentation is organized into **7 main sections**, each serving a distinct
 ## Writing Style & Tone
 
 ### Tone Characteristics
+
 - **Professional but approachable** - Technical without being overly formal
 - **Direct and action-oriented** - Uses imperatives ("Create", "Install", "Confirm")
 - **Helpful and encouraging** - Includes success hints and congratulatory messages
 - **Developer-first** - Assumes technical audience, provides code-first examples
 
 ### Voice & Perspective
+
 - **Second person:** Consistently uses "you" and "your"
 - **Active voice:** Preferred throughout
 - **Present tense:** For describing functionality and actions
@@ -185,6 +204,7 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Code emphasis:** Heavy use of inline code formatting with backticks
 
 **Examples:**
+
 ```markdown
 ✓ "You can create an access code by making a request to the `access_codes.create` endpoint."
 ✗ "An access code can be created through the utilization of the access codes creation endpoint."
@@ -195,9 +215,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 ## Content Types
 
 ### 1. Conceptual Documentation
+
 **Purpose:** Explain what something is and why it matters
 
 **Characteristics:**
+
 - Short (typically 50-200 lines)
 - High-level overviews
 - Architecture explanations
@@ -206,9 +228,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Example:** [core-concepts/overview.md](docs/core-concepts/overview.md)
 
 ### 2. Getting Started Guides
+
 **Purpose:** Onboard new users quickly
 
 **Structure:**
+
 1. Prerequisites
 2. Install SDK
 3. Connect device
@@ -220,9 +244,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Example:** [quickstart.md](docs/quickstart.md)
 
 ### 3. How-To Guides (Capability Guides)
+
 **Purpose:** Task-oriented instructions for specific features
 
 **Structure:**
+
 1. Overview
 2. Before You Begin (prerequisites)
 3. Step-by-step instructions
@@ -235,9 +261,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Example:** [capability-guides/creating-access-codes/README.md](docs/capability-guides/creating-access-codes/README.md)
 
 ### 4. API Reference
+
 **Purpose:** Complete technical specifications for API endpoints
 
 **Structure:**
+
 1. Endpoint description
 2. Request parameters (with types and constraints)
 3. Response schema
@@ -247,6 +275,7 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Length:** 1,000-2,000 lines
 
 **Characteristics:**
+
 - Appears to be auto-generated
 - Consistent formatting across all endpoints
 - Comprehensive parameter documentation
@@ -254,9 +283,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Example:** [api/access_codes/create.md](docs/api/access_codes/create.md)
 
 ### 5. Integration Guides
+
 **Purpose:** Manufacturer-specific setup and configuration
 
 **Structure:**
+
 1. Device/system overview
 2. Requirements
 3. Setup workflow (often 5-10 steps)
@@ -269,9 +300,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Example:** [device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/](docs/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/)
 
 ### 6. Tutorials
+
 **Purpose:** End-to-end implementation guides for specific use cases
 
 **Characteristics:**
+
 - Industry-specific workflows
 - Complete working examples
 - Production considerations
@@ -279,9 +312,11 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Example:** [industry-guides/hospitality-industry-guide/](docs/industry-guides/hospitality-industry-guide/)
 
 ### 7. Reference Materials
+
 **Purpose:** Quick lookup tables and specifications
 
 **Types:**
+
 - Device requirements tables
 - Sandbox credentials
 - Error code references
@@ -296,6 +331,7 @@ The documentation is organized into **7 main sections**, each serving a distinct
 **Root directory:** `./docs/`
 
 **Structure files:**
+
 - `README.md` - Landing page
 - `SUMMARY.md` - Table of contents
 
@@ -304,6 +340,7 @@ The documentation is organized into **7 main sections**, each serving a distinct
 The configuration includes **198+ redirects** maintaining backward compatibility:
 
 **Common redirect patterns:**
+
 ```yaml
 # API client paths → Unified API paths
 api-clients/access-codes/create: api/access_codes/create
@@ -324,6 +361,7 @@ old/path/with-dashes: new-path/with-underscores
 ### 1. Frontmatter
 
 **Standard format:**
+
 ```yaml
 ---
 description: >-
@@ -372,36 +410,44 @@ Content...
 
 **Pattern:** Use GitBook tabs for showing code in multiple languages
 
-```markdown
+````markdown
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 seam.access_codes.create(
     device_id="...",
     code="1234"
 )
 ```
+````
+
 {% endtab %}
 
 {% tab title="JavaScript" %}
+
 ```javascript
 await seam.accessCodes.create({
-  deviceId: "...",
-  code: "1234"
-});
+  deviceId: '...',
+  code: '1234',
+})
 ```
+
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 seam.access_codes.create(
   device_id: "...",
   code: "1234"
 )
 ```
+
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 $seam->access_codes->create(
@@ -409,18 +455,22 @@ $seam->access_codes->create(
   code: "1234"
 );
 ```
+
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 seam.AccessCodes.Create(
   deviceId: "...",
   code: "1234"
 );
 ```
+
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 seam.accessCodes().create(
   AccessCodesCreateRequest.builder()
@@ -429,9 +479,11 @@ seam.accessCodes().create(
     .build()
 );
 ```
+
 {% endtab %}
 
 {% tab title="cURL (bash)" %}
+
 ```bash
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/create' \
@@ -439,9 +491,11 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{"device_id": "...", "code": "1234"}'
 ```
+
 {% endtab %}
 {% endtabs %}
-```
+
+````
 
 **Required languages (in this order):**
 1. **Python** - Always first
@@ -475,9 +529,10 @@ if device.can_program_online_access_codes:
         device_id=device.device_id,
         code="1234"
     )
-```
+````
 
 **Best practices:**
+
 - Always check capabilities before actions
 - Use descriptive variable names
 - Include inline comments for clarity
@@ -526,6 +581,7 @@ End most guides with actionable next steps:
 ### 6. Callout Boxes (GitBook Hints)
 
 **Success hints** (tips, alternatives, helpful info):
+
 ```markdown
 {% hint style="success" %}
 You can also use the Seam CLI to create access codes quickly during development.
@@ -533,6 +589,7 @@ You can also use the Seam CLI to create access codes quickly during development.
 ```
 
 **Warning hints** (important caveats, deprecated features):
+
 ```markdown
 {% hint style="warning" %}
 This feature is deprecated. Use the new Access Grants API instead.
@@ -540,6 +597,7 @@ This feature is deprecated. Use the new Access Grants API instead.
 ```
 
 **Info hints** (additional context, sandbox notes):
+
 ```markdown
 {% hint style="info" %}
 In the sandbox environment, access codes are created instantly without delay.
@@ -584,6 +642,7 @@ See the [Access Codes API Reference](../../api/access_codes/create.md) for detai
 ```
 
 **External links:**
+
 - Seam Console: Link to specific console pages
 - GitHub: Link to SDK repositories
 - Package managers: Direct install links
@@ -601,19 +660,21 @@ See the [Access Codes API Reference](../../api/access_codes/create.md) for detai
 ### 9. Tables
 
 **Parameter tables:**
+
 ```markdown
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `device_id` | string | Yes | ID of the device |
-| `code` | string | No | Custom access code (4-8 digits) |
+| Parameter   | Type   | Required | Description                     |
+| ----------- | ------ | -------- | ------------------------------- |
+| `device_id` | string | Yes      | ID of the device                |
+| `code`      | string | No       | Custom access code (4-8 digits) |
 ```
 
 **Comparison tables:**
+
 ```markdown
-| Feature | Basic Plan | Pro Plan |
-|---------|------------|----------|
-| Access codes | ✓ | ✓ |
-| Mobile access | - | ✓ |
+| Feature       | Basic Plan | Pro Plan |
+| ------------- | ---------- | -------- |
+| Access codes  | ✓          | ✓        |
+| Mobile access | -          | ✓        |
 ```
 
 ### 10. Prerequisites Sections
@@ -678,6 +739,7 @@ When creating or updating documentation:
 ### Common Terminology
 
 **Preferred terms:**
+
 - "Device" (not "smart lock" generically)
 - "Access code" (not "PIN code")
 - "Connected account" (not "integration" or "connection")
@@ -688,15 +750,19 @@ When creating or updating documentation:
 ### Tone Examples
 
 **Good:**
+
 > "Create an access code by calling the `access_codes.create` endpoint. You'll need to provide the `device_id` and optionally specify a custom code."
 
 **Avoid:**
+
 > "The access code creation functionality can be accessed through the utilization of the access codes creation API endpoint, which requires authentication and accepts various parameters."
 
 **Good:**
+
 > "The device must support online access code programming. Check the `can_program_online_access_codes` capability before proceeding."
 
 **Avoid:**
+
 > "Please note that it is important to verify whether or not the device has the necessary capabilities to support the programming of online access codes prior to attempting to create one."
 
 ---
