@@ -5,6 +5,10 @@
 
 Updates provider-specific metadata for devices.
 
+{% hint style="info" %}
+**Timezone Configuration for Ultraloq Devices:** This endpoint is primarily used to configure device timezones for Ultraloq locks. Setting the timezone is required before creating time-bound access codes on Ultraloq devices. For detailed instructions, see the [Ultraloq Timezone Configuration Guide](../../device-and-system-integration-guides/ultraloq-locks/configuring-ultraloq-device-timezones.md).
+{% endhint %}
+
 
 <details>
 
@@ -16,6 +20,151 @@ Updates provider-specific metadata for devices.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
 </details>
+
+## Example Usage
+
+The following example demonstrates configuring the timezone for an Ultraloq device:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+from seam import Seam
+
+seam = Seam()
+
+seam.devices.report_provider_metadata(
+  devices=[
+    {
+      "device_id": "11111111-2222-3333-4444-555555555555",
+      "ultraloq_metadata": {
+        "time_zone": "America/New_York"
+      }
+    }
+  ]
+)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+await seam.devices.reportProviderMetadata({
+  devices: [
+    {
+      device_id: "11111111-2222-3333-4444-555555555555",
+      ultraloq_metadata: {
+        time_zone: "America/New_York"
+      }
+    }
+  ]
+});
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```ruby
+require "seam"
+
+seam = Seam.new()
+
+seam.devices.report_provider_metadata(
+  devices: [
+    {
+      device_id: "11111111-2222-3333-4444-555555555555",
+      ultraloq_metadata: {
+        time_zone: "America/New_York"
+      }
+    }
+  ]
+)
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Seam\SeamClient;
+
+$seam = new SeamClient();
+
+$seam->devices->report_provider_metadata(
+  devices: [
+    [
+      "device_id" => "11111111-2222-3333-4444-555555555555",
+      "ultraloq_metadata" => [
+        "time_zone" => "America/New_York"
+      ]
+    ]
+  ]
+);
+```
+{% endtab %}
+
+{% tab title="C#" %}
+```csharp
+using Seam.Client;
+
+var seam = new SeamClient();
+
+seam.Devices.ReportProviderMetadata(
+  devices: new[] {
+    new DeviceMetadata {
+      DeviceId = "11111111-2222-3333-4444-555555555555",
+      UltraloqMetadata = new UltraloqMetadata {
+        TimeZone = "America/New_York"
+      }
+    }
+  }
+);
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+import com.seam.api.Seam;
+
+Seam seam = Seam.builder().build();
+
+seam.devices().reportProviderMetadata(
+  DevicesReportProviderMetadataRequest.builder()
+    .devices(List.of(
+      DeviceMetadata.builder()
+        .deviceId("11111111-2222-3333-4444-555555555555")
+        .ultraloqMetadata(UltraloqMetadata.builder()
+          .timeZone("America/New_York")
+          .build())
+        .build()
+    ))
+    .build()
+);
+```
+{% endtab %}
+
+{% tab title="cURL (bash)" %}
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/report_provider_metadata' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "devices": [
+      {
+        "device_id": "11111111-2222-3333-4444-555555555555",
+        "ultraloq_metadata": {
+          "time_zone": "America/New_York"
+        }
+      }
+    ]
+  }'
+```
+{% endtab %}
+{% endtabs %}
 
 ## Request Parameters
 
