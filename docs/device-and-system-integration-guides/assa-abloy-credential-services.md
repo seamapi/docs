@@ -1,5 +1,6 @@
 ---
 description: Guide for using ASSA ABLOY Credential Services with Seam
+hidden: true
 ---
 
 # ASSA ABLOY Credential Services
