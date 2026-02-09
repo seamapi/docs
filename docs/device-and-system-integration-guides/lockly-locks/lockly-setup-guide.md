@@ -23,8 +23,9 @@ After turning on **Sync with LocklyOS** for each door lock, you can complete the
 
 If devices don't appear after connecting your account:
 
-1. Verify that **Sync with LocklyOS** is enabled for each lock in the Lockly mobile app
-2. Confirm your [Lockly Access Portal](https://lap.lockly.com/) subscription is active
+* Verify that **Sync with LocklyOS** is enabled for each lock in the Lockly mobile app
 
-For additional troubleshooting steps, see [our Knowledge Base article](https://seam-knowledge-base.help.usepylon.com/articles/4083431005-troubleshooting-lockly-devices-not-appearing-in-seam) or contact Lockly support at [support@lockly.com](mailto:support@lockly.com) with your account details.
+If your devices are offline:
+
+* Check that your locks are online in the Lockly mobile app. If they're offline, contact [Lockly support](https://www.support.lockly.com/contact-us/) for assistance.
 
