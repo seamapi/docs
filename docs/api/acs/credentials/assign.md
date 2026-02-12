@@ -37,7 +37,7 @@ Assigns a specified credential to a specified access system user, using the asso
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/assign" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "user_identity_id": "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
   "acs_credential_id": "59c9af06-7881-46d2-8d9b-3eda964c058b"
@@ -59,7 +59,10 @@ Assigns a specified credential to a specified access system user, using the asso
 #### Code:
 
 ```python
-seam.acs.credentials.assign(user_identity_id="1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01", acs_credential_id="59c9af06-7881-46d2-8d9b-3eda964c058b")
+seam.acs.credentials.assign(
+    user_identity_id="1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
+    acs_credential_id="59c9af06-7881-46d2-8d9b-3eda964c058b",
+)
 ```
 
 #### Output:
@@ -76,7 +79,10 @@ Assigns a specified credential to a specified access system user, using the asso
 #### Code:
 
 ```ruby
-seam.acs.credentials.assign(user_identity_id: "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01", acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b")
+seam.acs.credentials.assign(
+  user_identity_id: "1082e2e8-ecbd-4ef1-aa61-a805f7ae2f01",
+  acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
+)
 ```
 
 #### Output:
@@ -206,7 +212,7 @@ await seam.acs.credentials.assign({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/assign" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "acs_user_id": "143f083a-d61c-4d85-923f-d5483fb5a7d4",
   "acs_credential_id": "59c9af06-7881-46d2-8d9b-3eda964c058b"
@@ -228,7 +234,10 @@ EOF
 #### Code:
 
 ```python
-seam.acs.credentials.assign(acs_user_id="143f083a-d61c-4d85-923f-d5483fb5a7d4", acs_credential_id="59c9af06-7881-46d2-8d9b-3eda964c058b")
+seam.acs.credentials.assign(
+    acs_user_id="143f083a-d61c-4d85-923f-d5483fb5a7d4",
+    acs_credential_id="59c9af06-7881-46d2-8d9b-3eda964c058b",
+)
 ```
 
 #### Output:
@@ -245,7 +254,10 @@ None
 #### Code:
 
 ```ruby
-seam.acs.credentials.assign(acs_user_id: "143f083a-d61c-4d85-923f-d5483fb5a7d4", acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b")
+seam.acs.credentials.assign(
+  acs_user_id: "143f083a-d61c-4d85-923f-d5483fb5a7d4",
+  acs_credential_id: "59c9af06-7881-46d2-8d9b-3eda964c058b",
+)
 ```
 
 #### Output:

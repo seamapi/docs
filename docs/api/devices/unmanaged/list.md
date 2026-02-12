@@ -82,7 +82,7 @@ Returns a list of all unmanaged devices for a specified customer ID.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "customer_ids": [
     "e387e15f-be27-47ad-881f-4a6fc5460c57"
@@ -157,7 +157,48 @@ seam.devices.unmanaged.list(customer_ids=["e387e15f-be27-47ad-881f-4a6fc5460c57"
 #### Output:
 
 ```python
-[UnmanagedDevice(can_program_offline_access_codes=false, can_program_online_access_codes=true, can_remotely_lock=true, can_remotely_unlock=true, can_simulate_connection=false, can_simulate_disconnection=true, can_simulate_removal=true, capabilities_supported=["access_code","lock"], connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603", created_at="2025-06-16T16:54:17.946342Z", device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf", device_type="schlage_lock", errors=[], is_managed=false, location={"location_name":"Front Door","timezone":"America/New_York"}, properties={"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true}, warnings=[], workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b")]
+[
+    UnmanagedDevice(
+        can_program_offline_access_codes=false,
+        can_program_online_access_codes=true,
+        can_remotely_lock=true,
+        can_remotely_unlock=true,
+        can_simulate_connection=false,
+        can_simulate_disconnection=true,
+        can_simulate_removal=true,
+        capabilities_supported=["access_code", "lock"],
+        connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+        created_at="2025-06-16T16:54:17.946342Z",
+        device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+        device_type="schlage_lock",
+        errors=[],
+        is_managed=false,
+        location={"location_name": "Front Door", "timezone": "America/New_York"},
+        properties={
+            "accessory_keypad": {"battery": {"level": 1}, "is_connected": true},
+            "battery": {"level": 1, "status": "full"},
+            "battery_level": 1,
+            "image_alt_text": "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+            "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+            "manufacturer": "schlage",
+            "model": {
+                "accessory_keypad_supported": true,
+                "can_connect_accessory_keypad": true,
+                "display_name": "Front Door",
+                "has_built_in_keypad": false,
+                "manufacturer_display_name": "Schlage",
+                "offline_access_codes_supported": false,
+                "online_access_codes_supported": true,
+            },
+            "name": "Front Door",
+            "offline_access_codes_enabled": false,
+            "online": true,
+            "online_access_codes_enabled": true,
+        },
+        warnings=[],
+        workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+    )
+]
 ```
 {% endtab %}
 
@@ -174,7 +215,60 @@ seam.devices.unmanaged.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57
 #### Output:
 
 ```ruby
-[{"can_program_offline_access_codes" => false,"can_program_online_access_codes" => true,"can_remotely_lock" => true,"can_remotely_unlock" => true,"can_simulate_connection" => false,"can_simulate_disconnection" => true,"can_simulate_removal" => true,"capabilities_supported" => ["access_code","lock"],"connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603","created_at" => "2025-06-16T16:54:17.946342Z","device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf","device_type" => "schlage_lock","errors" => [],"is_managed" => false,"location" => {"location_name":"Front Door","timezone":"America/New_York"},"properties" => {"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true},"warnings" => [],"workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"}]
+[
+  {
+    "can_program_offline_access_codes" => false,
+    "can_program_online_access_codes" => true,
+    "can_remotely_lock" => true,
+    "can_remotely_unlock" => true,
+    "can_simulate_connection" => false,
+    "can_simulate_disconnection" => true,
+    "can_simulate_removal" => true,
+    "capabilities_supported" => %w[access_code lock],
+    "connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+    "created_at" => "2025-06-16T16:54:17.946342Z",
+    "device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+    "device_type" => "schlage_lock",
+    "errors" => [],
+    "is_managed" => false,
+    "location" => {
+      location_name: "Front Door",
+      timezone: "America/New_York",
+    },
+    "properties" => {
+      accessory_keypad: {
+        battery: {
+          level: 1,
+        },
+        is_connected: true,
+      },
+      battery: {
+        level: 1,
+        status: "full",
+      },
+      battery_level: 1,
+      image_alt_text: "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+      image_url:
+        "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+      manufacturer: "schlage",
+      model: {
+        accessory_keypad_supported: true,
+        can_connect_accessory_keypad: true,
+        display_name: "Front Door",
+        has_built_in_keypad: false,
+        manufacturer_display_name: "Schlage",
+        offline_access_codes_supported: false,
+        online_access_codes_supported: true,
+      },
+      name: "Front Door",
+      offline_access_codes_enabled: false,
+      online: true,
+      online_access_codes_enabled: true,
+    },
+    "warnings" => [],
+    "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+  },
+]
 ```
 {% endtab %}
 
@@ -611,7 +705,7 @@ await seam.devices.unmanaged.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "connected_account_id": "c1a3967f-24a1-4220-a9c7-7fa97c1d5603"
 }
@@ -684,7 +778,48 @@ seam.devices.unmanaged.list(connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c
 #### Output:
 
 ```python
-[UnmanagedDevice(can_program_offline_access_codes=false, can_program_online_access_codes=true, can_remotely_lock=true, can_remotely_unlock=true, can_simulate_connection=false, can_simulate_disconnection=true, can_simulate_removal=true, capabilities_supported=["access_code","lock"], connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603", created_at="2025-06-16T16:54:17.946342Z", device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf", device_type="schlage_lock", errors=[], is_managed=false, location={"location_name":"Front Door","timezone":"America/New_York"}, properties={"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true}, warnings=[], workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b")]
+[
+    UnmanagedDevice(
+        can_program_offline_access_codes=false,
+        can_program_online_access_codes=true,
+        can_remotely_lock=true,
+        can_remotely_unlock=true,
+        can_simulate_connection=false,
+        can_simulate_disconnection=true,
+        can_simulate_removal=true,
+        capabilities_supported=["access_code", "lock"],
+        connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+        created_at="2025-06-16T16:54:17.946342Z",
+        device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+        device_type="schlage_lock",
+        errors=[],
+        is_managed=false,
+        location={"location_name": "Front Door", "timezone": "America/New_York"},
+        properties={
+            "accessory_keypad": {"battery": {"level": 1}, "is_connected": true},
+            "battery": {"level": 1, "status": "full"},
+            "battery_level": 1,
+            "image_alt_text": "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+            "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+            "manufacturer": "schlage",
+            "model": {
+                "accessory_keypad_supported": true,
+                "can_connect_accessory_keypad": true,
+                "display_name": "Front Door",
+                "has_built_in_keypad": false,
+                "manufacturer_display_name": "Schlage",
+                "offline_access_codes_supported": false,
+                "online_access_codes_supported": true,
+            },
+            "name": "Front Door",
+            "offline_access_codes_enabled": false,
+            "online": true,
+            "online_access_codes_enabled": true,
+        },
+        warnings=[],
+        workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+    )
+]
 ```
 {% endtab %}
 
@@ -701,7 +836,60 @@ seam.devices.unmanaged.list(connected_account_id: "c1a3967f-24a1-4220-a9c7-7fa97
 #### Output:
 
 ```ruby
-[{"can_program_offline_access_codes" => false,"can_program_online_access_codes" => true,"can_remotely_lock" => true,"can_remotely_unlock" => true,"can_simulate_connection" => false,"can_simulate_disconnection" => true,"can_simulate_removal" => true,"capabilities_supported" => ["access_code","lock"],"connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603","created_at" => "2025-06-16T16:54:17.946342Z","device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf","device_type" => "schlage_lock","errors" => [],"is_managed" => false,"location" => {"location_name":"Front Door","timezone":"America/New_York"},"properties" => {"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true},"warnings" => [],"workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"}]
+[
+  {
+    "can_program_offline_access_codes" => false,
+    "can_program_online_access_codes" => true,
+    "can_remotely_lock" => true,
+    "can_remotely_unlock" => true,
+    "can_simulate_connection" => false,
+    "can_simulate_disconnection" => true,
+    "can_simulate_removal" => true,
+    "capabilities_supported" => %w[access_code lock],
+    "connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+    "created_at" => "2025-06-16T16:54:17.946342Z",
+    "device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+    "device_type" => "schlage_lock",
+    "errors" => [],
+    "is_managed" => false,
+    "location" => {
+      location_name: "Front Door",
+      timezone: "America/New_York",
+    },
+    "properties" => {
+      accessory_keypad: {
+        battery: {
+          level: 1,
+        },
+        is_connected: true,
+      },
+      battery: {
+        level: 1,
+        status: "full",
+      },
+      battery_level: 1,
+      image_alt_text: "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+      image_url:
+        "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+      manufacturer: "schlage",
+      model: {
+        accessory_keypad_supported: true,
+        can_connect_accessory_keypad: true,
+        display_name: "Front Door",
+        has_built_in_keypad: false,
+        manufacturer_display_name: "Schlage",
+        offline_access_codes_supported: false,
+        online_access_codes_supported: true,
+      },
+      name: "Front Door",
+      offline_access_codes_enabled: false,
+      online: true,
+      online_access_codes_enabled: true,
+    },
+    "warnings" => [],
+    "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+  },
+]
 ```
 {% endtab %}
 
@@ -914,7 +1102,7 @@ await seam.devices.unmanaged.list({ manufacturer: "schlage" });
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "manufacturer": "schlage"
 }
@@ -987,7 +1175,48 @@ seam.devices.unmanaged.list(manufacturer="schlage")
 #### Output:
 
 ```python
-[UnmanagedDevice(can_program_offline_access_codes=false, can_program_online_access_codes=true, can_remotely_lock=true, can_remotely_unlock=true, can_simulate_connection=false, can_simulate_disconnection=true, can_simulate_removal=true, capabilities_supported=["access_code","lock"], connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603", created_at="2025-06-16T16:54:17.946342Z", device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf", device_type="schlage_lock", errors=[], is_managed=false, location={"location_name":"Front Door","timezone":"America/New_York"}, properties={"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true}, warnings=[], workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b")]
+[
+    UnmanagedDevice(
+        can_program_offline_access_codes=false,
+        can_program_online_access_codes=true,
+        can_remotely_lock=true,
+        can_remotely_unlock=true,
+        can_simulate_connection=false,
+        can_simulate_disconnection=true,
+        can_simulate_removal=true,
+        capabilities_supported=["access_code", "lock"],
+        connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+        created_at="2025-06-16T16:54:17.946342Z",
+        device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+        device_type="schlage_lock",
+        errors=[],
+        is_managed=false,
+        location={"location_name": "Front Door", "timezone": "America/New_York"},
+        properties={
+            "accessory_keypad": {"battery": {"level": 1}, "is_connected": true},
+            "battery": {"level": 1, "status": "full"},
+            "battery_level": 1,
+            "image_alt_text": "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+            "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+            "manufacturer": "schlage",
+            "model": {
+                "accessory_keypad_supported": true,
+                "can_connect_accessory_keypad": true,
+                "display_name": "Front Door",
+                "has_built_in_keypad": false,
+                "manufacturer_display_name": "Schlage",
+                "offline_access_codes_supported": false,
+                "online_access_codes_supported": true,
+            },
+            "name": "Front Door",
+            "offline_access_codes_enabled": false,
+            "online": true,
+            "online_access_codes_enabled": true,
+        },
+        warnings=[],
+        workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+    )
+]
 ```
 {% endtab %}
 
@@ -1004,7 +1233,60 @@ seam.devices.unmanaged.list(manufacturer: "schlage")
 #### Output:
 
 ```ruby
-[{"can_program_offline_access_codes" => false,"can_program_online_access_codes" => true,"can_remotely_lock" => true,"can_remotely_unlock" => true,"can_simulate_connection" => false,"can_simulate_disconnection" => true,"can_simulate_removal" => true,"capabilities_supported" => ["access_code","lock"],"connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603","created_at" => "2025-06-16T16:54:17.946342Z","device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf","device_type" => "schlage_lock","errors" => [],"is_managed" => false,"location" => {"location_name":"Front Door","timezone":"America/New_York"},"properties" => {"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true},"warnings" => [],"workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"}]
+[
+  {
+    "can_program_offline_access_codes" => false,
+    "can_program_online_access_codes" => true,
+    "can_remotely_lock" => true,
+    "can_remotely_unlock" => true,
+    "can_simulate_connection" => false,
+    "can_simulate_disconnection" => true,
+    "can_simulate_removal" => true,
+    "capabilities_supported" => %w[access_code lock],
+    "connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+    "created_at" => "2025-06-16T16:54:17.946342Z",
+    "device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+    "device_type" => "schlage_lock",
+    "errors" => [],
+    "is_managed" => false,
+    "location" => {
+      location_name: "Front Door",
+      timezone: "America/New_York",
+    },
+    "properties" => {
+      accessory_keypad: {
+        battery: {
+          level: 1,
+        },
+        is_connected: true,
+      },
+      battery: {
+        level: 1,
+        status: "full",
+      },
+      battery_level: 1,
+      image_alt_text: "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+      image_url:
+        "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+      manufacturer: "schlage",
+      model: {
+        accessory_keypad_supported: true,
+        can_connect_accessory_keypad: true,
+        display_name: "Front Door",
+        has_built_in_keypad: false,
+        manufacturer_display_name: "Schlage",
+        offline_access_codes_supported: false,
+        online_access_codes_supported: true,
+      },
+      name: "Front Door",
+      offline_access_codes_enabled: false,
+      online: true,
+      online_access_codes_enabled: true,
+    },
+    "warnings" => [],
+    "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+  },
+]
 ```
 {% endtab %}
 
@@ -1218,7 +1500,7 @@ await seam.devices.unmanaged.list({
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/unmanaged/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "created_before": "2025-01-01T00:00:00.000Z",
   "limit": 50
@@ -1292,7 +1574,48 @@ seam.devices.unmanaged.list(created_before="2025-01-01T00:00:00.000Z", limit=50)
 #### Output:
 
 ```python
-[UnmanagedDevice(can_program_offline_access_codes=false, can_program_online_access_codes=true, can_remotely_lock=true, can_remotely_unlock=true, can_simulate_connection=false, can_simulate_disconnection=true, can_simulate_removal=true, capabilities_supported=["access_code","lock"], connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603", created_at="2024-06-16T16:54:17.946342Z", device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf", device_type="schlage_lock", errors=[], is_managed=false, location={"location_name":"Front Door","timezone":"America/New_York"}, properties={"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true}, warnings=[], workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b")]
+[
+    UnmanagedDevice(
+        can_program_offline_access_codes=false,
+        can_program_online_access_codes=true,
+        can_remotely_lock=true,
+        can_remotely_unlock=true,
+        can_simulate_connection=false,
+        can_simulate_disconnection=true,
+        can_simulate_removal=true,
+        capabilities_supported=["access_code", "lock"],
+        connected_account_id="c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+        created_at="2024-06-16T16:54:17.946342Z",
+        device_id="f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+        device_type="schlage_lock",
+        errors=[],
+        is_managed=false,
+        location={"location_name": "Front Door", "timezone": "America/New_York"},
+        properties={
+            "accessory_keypad": {"battery": {"level": 1}, "is_connected": true},
+            "battery": {"level": 1, "status": "full"},
+            "battery_level": 1,
+            "image_alt_text": "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+            "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+            "manufacturer": "schlage",
+            "model": {
+                "accessory_keypad_supported": true,
+                "can_connect_accessory_keypad": true,
+                "display_name": "Front Door",
+                "has_built_in_keypad": false,
+                "manufacturer_display_name": "Schlage",
+                "offline_access_codes_supported": false,
+                "online_access_codes_supported": true,
+            },
+            "name": "Front Door",
+            "offline_access_codes_enabled": false,
+            "online": true,
+            "online_access_codes_enabled": true,
+        },
+        warnings=[],
+        workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+    )
+]
 ```
 {% endtab %}
 
@@ -1309,7 +1632,60 @@ seam.devices.unmanaged.list(created_before: "2025-01-01T00:00:00.000Z", limit: 5
 #### Output:
 
 ```ruby
-[{"can_program_offline_access_codes" => false,"can_program_online_access_codes" => true,"can_remotely_lock" => true,"can_remotely_unlock" => true,"can_simulate_connection" => false,"can_simulate_disconnection" => true,"can_simulate_removal" => true,"capabilities_supported" => ["access_code","lock"],"connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603","created_at" => "2024-06-16T16:54:17.946342Z","device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf","device_type" => "schlage_lock","errors" => [],"is_managed" => false,"location" => {"location_name":"Front Door","timezone":"America/New_York"},"properties" => {"accessory_keypad":{"battery":{"level":1},"is_connected":true},"battery":{"level":1,"status":"full"},"battery_level":1,"image_alt_text":"Schlage Sense Smart Deadbolt with Camelot Trim, Front","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128","manufacturer":"schlage","model":{"accessory_keypad_supported":true,"can_connect_accessory_keypad":true,"display_name":"Front Door","has_built_in_keypad":false,"manufacturer_display_name":"Schlage","offline_access_codes_supported":false,"online_access_codes_supported":true},"name":"Front Door","offline_access_codes_enabled":false,"online":true,"online_access_codes_enabled":true},"warnings" => [],"workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"}]
+[
+  {
+    "can_program_offline_access_codes" => false,
+    "can_program_online_access_codes" => true,
+    "can_remotely_lock" => true,
+    "can_remotely_unlock" => true,
+    "can_simulate_connection" => false,
+    "can_simulate_disconnection" => true,
+    "can_simulate_removal" => true,
+    "capabilities_supported" => %w[access_code lock],
+    "connected_account_id" => "c1a3967f-24a1-4220-a9c7-7fa97c1d5603",
+    "created_at" => "2024-06-16T16:54:17.946342Z",
+    "device_id" => "f4f40e75-86fc-4896-b958-e1c7e092b2cf",
+    "device_type" => "schlage_lock",
+    "errors" => [],
+    "is_managed" => false,
+    "location" => {
+      location_name: "Front Door",
+      timezone: "America/New_York",
+    },
+    "properties" => {
+      accessory_keypad: {
+        battery: {
+          level: 1,
+        },
+        is_connected: true,
+      },
+      battery: {
+        level: 1,
+        status: "full",
+      },
+      battery_level: 1,
+      image_alt_text: "Schlage Sense Smart Deadbolt with Camelot Trim, Front",
+      image_url:
+        "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/schlage_sense-smart-deadbolt-with-camelot-trim_front.png&q=75&w=128",
+      manufacturer: "schlage",
+      model: {
+        accessory_keypad_supported: true,
+        can_connect_accessory_keypad: true,
+        display_name: "Front Door",
+        has_built_in_keypad: false,
+        manufacturer_display_name: "Schlage",
+        offline_access_codes_supported: false,
+        online_access_codes_supported: true,
+      },
+      name: "Front Door",
+      offline_access_codes_enabled: false,
+      online: true,
+      online_access_codes_enabled: true,
+    },
+    "warnings" => [],
+    "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
+  },
+]
 ```
 {% endtab %}
 

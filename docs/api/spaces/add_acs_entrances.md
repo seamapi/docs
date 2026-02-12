@@ -36,7 +36,7 @@ Adds entrances to a specific space.
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/add_acs_entrances" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "space_id": "9f930664-c0d8-441b-8d66-2b1d0d2466f4",
   "acs_entrance_ids": [
@@ -60,7 +60,10 @@ Adds entrances to a specific space.
 #### Code:
 
 ```python
-seam.spaces.add_acs_entrances(space_id="9f930664-c0d8-441b-8d66-2b1d0d2466f4", acs_entrance_ids=["b127a710-db3e-402c-afdf-5474769b1d83"])
+seam.spaces.add_acs_entrances(
+    space_id="9f930664-c0d8-441b-8d66-2b1d0d2466f4",
+    acs_entrance_ids=["b127a710-db3e-402c-afdf-5474769b1d83"],
+)
 ```
 
 #### Output:
@@ -77,7 +80,10 @@ Adds entrances to a specific space.
 #### Code:
 
 ```ruby
-seam.spaces.add_acs_entrances(space_id: "9f930664-c0d8-441b-8d66-2b1d0d2466f4", acs_entrance_ids: ["b127a710-db3e-402c-afdf-5474769b1d83"])
+seam.spaces.add_acs_entrances(
+  space_id: "9f930664-c0d8-441b-8d66-2b1d0d2466f4",
+  acs_entrance_ids: ["b127a710-db3e-402c-afdf-5474769b1d83"],
+)
 ```
 
 #### Output:

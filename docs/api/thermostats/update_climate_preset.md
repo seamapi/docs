@@ -42,7 +42,7 @@ Updates a specified climate preset for a specified thermostat.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/update_climate_preset" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
   "climate_preset_key": "Home",
@@ -70,7 +70,16 @@ Updates a specified climate preset for a specified thermostat.
 #### Code:
 
 ```python
-seam.thermostats.update_climate_preset(device_id="a2495670-80a5-4c98-b8c0-8b0c9d49c3b8", climate_preset_key="Home", name="Home", fan_mode_setting="auto", hvac_mode_setting="heat_cool", cooling_set_point_fahrenheit=75, heating_set_point_fahrenheit=65, manual_override_allowed=true)
+seam.thermostats.update_climate_preset(
+    device_id="a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
+    climate_preset_key="Home",
+    name="Home",
+    fan_mode_setting="auto",
+    hvac_mode_setting="heat_cool",
+    cooling_set_point_fahrenheit=75,
+    heating_set_point_fahrenheit=65,
+    manual_override_allowed=true,
+)
 ```
 
 #### Output:
@@ -87,7 +96,16 @@ Updates a specified climate preset for a specified thermostat.
 #### Code:
 
 ```ruby
-seam.thermostats.update_climate_preset(device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8", climate_preset_key: "Home", name: "Home", fan_mode_setting: "auto", hvac_mode_setting: "heat_cool", cooling_set_point_fahrenheit: 75, heating_set_point_fahrenheit: 65, manual_override_allowed: true)
+seam.thermostats.update_climate_preset(
+  device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
+  climate_preset_key: "Home",
+  name: "Home",
+  fan_mode_setting: "auto",
+  hvac_mode_setting: "heat_cool",
+  cooling_set_point_fahrenheit: 75,
+  heating_set_point_fahrenheit: 65,
+  manual_override_allowed: true,
+)
 ```
 
 #### Output:

@@ -40,7 +40,7 @@ Updates a specified device.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- << EOF
+  --json @- <<EOF
 {
   "device_id": "ccfab465-4838-4ff3-af62-97c78e8bf44b",
   "name": "My Updated Device",
@@ -66,7 +66,12 @@ Updates a specified device.
 #### Code:
 
 ```python
-seam.devices.update(device_id="ccfab465-4838-4ff3-af62-97c78e8bf44b", name="My Updated Device", is_managed=true, custom_metadata={"id":"internalId1"})
+seam.devices.update(
+    device_id="ccfab465-4838-4ff3-af62-97c78e8bf44b",
+    name="My Updated Device",
+    is_managed=true,
+    custom_metadata={"id": "internalId1"},
+)
 ```
 
 #### Output:
@@ -83,7 +88,14 @@ Updates a specified device.
 #### Code:
 
 ```ruby
-seam.devices.update(device_id: "ccfab465-4838-4ff3-af62-97c78e8bf44b", name: "My Updated Device", is_managed: true, custom_metadata: {"id":"internalId1"})
+seam.devices.update(
+  device_id: "ccfab465-4838-4ff3-af62-97c78e8bf44b",
+  name: "My Updated Device",
+  is_managed: true,
+  custom_metadata: {
+    id: "internalId1",
+  },
+)
 ```
 
 #### Output:
