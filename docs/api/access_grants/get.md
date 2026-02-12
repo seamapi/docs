@@ -1,7 +1,4 @@
 # Get an Access Grant
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)

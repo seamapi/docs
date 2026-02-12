@@ -8,10 +8,6 @@ description: >-
 
 <figure><img src="../../../.gitbook/assets/encode-card.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants and access methods APIs are currently in Alpha. We're actively developing them and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 Some access control systems require encoding a plastic card with the data necessary to enable access. This process involves creating an access grant that requests a card access method with the required access permissions and then using a card encoder to write the access method onto the card.
 
 This process consists of the following basic steps:

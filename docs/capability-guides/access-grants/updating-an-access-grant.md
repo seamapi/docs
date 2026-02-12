@@ -4,10 +4,6 @@ description: Learn how to update the time window for an Access Grant
 
 # Updating an Access Grant
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 You can update the starting and ending times for an Access Grant.
 
 Note that you cannot update the access methods, entrances, or spaces associated with an Access Grant. To change these access characteristics, delete the Access Grant and recreate it.

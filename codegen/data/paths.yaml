@@ -101,19 +101,15 @@
 
 /access_grants:
   title: Access Grants
-  alpha: "**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
 
 /access_methods:
   title: Access Methods
-  alpha: "**Early Access Preview.** The access methods API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
 
 /spaces:
   title: Spaces
-  alpha: "**Early Access Preview.** The spaces API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
 
 /customers:
   title: Customers
-  alpha: "**Early Access Preview.** The customers API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design."
 
 /devices/unmanaged:
   title: Unmanaged Devices
