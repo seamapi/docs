@@ -40,7 +40,7 @@ Updates a specified webhook.
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "webhook_id": "e294905f-e7a5-4804-95a6-303f440eb262",
   "event_types": [
@@ -66,14 +66,7 @@ Updates a specified webhook.
 #### Code:
 
 ```python
-seam.webhooks.update(
-    webhook_id="e294905f-e7a5-4804-95a6-303f440eb262",
-    event_types=[
-        "device.connected",
-        "device.disconnected",
-        "device.unmanaged.converted_to_managed",
-    ],
-)
+seam.webhooks.update(webhook_id="e294905f-e7a5-4804-95a6-303f440eb262", event_types=["device.connected","device.disconnected","device.unmanaged.converted_to_managed"])
 ```
 
 #### Output:
@@ -90,10 +83,7 @@ Updates a specified webhook.
 #### Code:
 
 ```ruby
-seam.webhooks.update(
-  webhook_id: "e294905f-e7a5-4804-95a6-303f440eb262",
-  event_types: %w[device.connected device.disconnected device.unmanaged.converted_to_managed],
-)
+seam.webhooks.update(webhook_id: "e294905f-e7a5-4804-95a6-303f440eb262", event_types: ["device.connected","device.disconnected","device.unmanaged.converted_to_managed"])
 ```
 
 #### Output:

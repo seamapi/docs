@@ -35,7 +35,7 @@ Simulates removing a device from Seam.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/remove" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "46757795-11f7-446a-a6cb-779e9f039d7c"
 }

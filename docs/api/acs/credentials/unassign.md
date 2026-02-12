@@ -37,7 +37,7 @@ Unassigns a specified credential from a specified access system user, using the 
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "user_identity_id": "417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
   "acs_credential_id": "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
@@ -59,10 +59,7 @@ Unassigns a specified credential from a specified access system user, using the 
 #### Code:
 
 ```python
-seam.acs.credentials.unassign(
-    user_identity_id="417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
-    acs_credential_id="b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
-)
+seam.acs.credentials.unassign(user_identity_id="417e9370-d2cc-4b23-b6d5-fbf7fdbda354", acs_credential_id="b1833efd-0669-4a88-81b5-2f2d5fd5c02f")
 ```
 
 #### Output:
@@ -79,10 +76,7 @@ Unassigns a specified credential from a specified access system user, using the 
 #### Code:
 
 ```ruby
-seam.acs.credentials.unassign(
-  user_identity_id: "417e9370-d2cc-4b23-b6d5-fbf7fdbda354",
-  acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
-)
+seam.acs.credentials.unassign(user_identity_id: "417e9370-d2cc-4b23-b6d5-fbf7fdbda354", acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f")
 ```
 
 #### Output:
@@ -212,7 +206,7 @@ await seam.acs.credentials.unassign({
 ```curl
 curl --include --request POST "https://connect.getseam.com/acs/credentials/unassign" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "acs_user_id": "ae76d550-f2e0-4f61-9380-a64d276f9904",
   "acs_credential_id": "b1833efd-0669-4a88-81b5-2f2d5fd5c02f"
@@ -234,10 +228,7 @@ EOF
 #### Code:
 
 ```python
-seam.acs.credentials.unassign(
-    acs_user_id="ae76d550-f2e0-4f61-9380-a64d276f9904",
-    acs_credential_id="b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
-)
+seam.acs.credentials.unassign(acs_user_id="ae76d550-f2e0-4f61-9380-a64d276f9904", acs_credential_id="b1833efd-0669-4a88-81b5-2f2d5fd5c02f")
 ```
 
 #### Output:
@@ -254,10 +245,7 @@ None
 #### Code:
 
 ```ruby
-seam.acs.credentials.unassign(
-  acs_user_id: "ae76d550-f2e0-4f61-9380-a64d276f9904",
-  acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f",
-)
+seam.acs.credentials.unassign(acs_user_id: "ae76d550-f2e0-4f61-9380-a64d276f9904", acs_credential_id: "b1833efd-0669-4a88-81b5-2f2d5fd5c02f")
 ```
 
 #### Output:

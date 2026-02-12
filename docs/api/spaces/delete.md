@@ -1,7 +1,4 @@
 # Delete a Space
-{% hint style="info" %}
-**Early Access Preview.** The spaces API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
@@ -36,7 +33,7 @@ Deletes a space.
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "space_id": "a7cd0163-4e94-41ae-b5b7-da6040a65509"
 }

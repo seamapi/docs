@@ -107,7 +107,7 @@ Returns a list of all noise sensors. For additional filter parameters, see /devi
 ```curl
 curl --include --request POST "https://connect.getseam.com/noise_sensors/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "limit": 10
 }
@@ -210,81 +210,7 @@ seam.noise_sensors.list(limit=10)
 #### Output:
 
 ```python
-[
-    Device(
-        capabilities_supported=["noise_detection"],
-        connected_account_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-        created_at="2025-05-16T16:54:17.946049Z",
-        custom_metadata={"id": "internalId1"},
-        device_id="f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f",
-        device_type="minut_sensor",
-        display_name="Living Room",
-        errors=[],
-        is_managed=true,
-        location={
-            "location_name": "Jane's Test Home",
-            "timezone": "America/Los_Angeles",
-        },
-        nickname="Living Room",
-        properties={
-            "appearance": {"name": "Living Room"},
-            "battery": {"level": 1, "status": "full"},
-            "battery_level": 1,
-            "currently_triggering_noise_threshold_ids": [],
-            "image_alt_text": "Minut Sensor",
-            "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128",
-            "manufacturer": "minut",
-            "minut_metadata": {
-                "device_id": "770cd3153deca3dee0fe0614",
-                "device_location": {"latitude": 0, "longitude": 0},
-                "device_name": "Living Room",
-                "home_address": {
-                    "city": "San Francisco",
-                    "country": "US",
-                    "notes": "string",
-                    "post_code": "44210",
-                    "region": "San Francisco County",
-                    "street_name1": "2258 24th Street",
-                    "street_name2": "",
-                },
-                "home_id": "2978b6d5dba395ec08300e46",
-                "home_location": {"latitude": 0, "longitude": 0},
-                "home_name": "Jane's Test Home",
-                "latest_sensor_values": {
-                    "accelerometer_z": {
-                        "time": "2025-06-16T16:54:17.946049Z",
-                        "value": -1.00390625,
-                    },
-                    "humidity": {
-                        "time": "2025-06-16T16:54:17.946049Z",
-                        "value": 31.110000610351562,
-                    },
-                    "pressure": {
-                        "time": "2025-06-16T16:54:17.946049Z",
-                        "value": 101923,
-                    },
-                    "sound": {
-                        "time": "2025-06-16T16:54:17.946049Z",
-                        "value": 47.7117919921875,
-                    },
-                    "temperature": {
-                        "time": "2025-06-16T16:54:17.946049Z",
-                        "value": 21.270000457763672,
-                    },
-                },
-            },
-            "model": {
-                "display_name": "Noise Sensor",
-                "manufacturer_display_name": "Minut",
-            },
-            "name": "Living Room",
-            "noise_level_decibels": 47.7117919921875,
-            "online": true,
-        },
-        warnings=[],
-        workspace_id="1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-    )
-]
+[Device(capabilities_supported=["noise_detection"], connected_account_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d", created_at="2025-05-16T16:54:17.946049Z", custom_metadata={"id":"internalId1"}, device_id="f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f", device_type="minut_sensor", display_name="Living Room", errors=[], is_managed=true, location={"location_name":"Jane's Test Home","timezone":"America/Los_Angeles"}, nickname="Living Room", properties={"appearance":{"name":"Living Room"},"battery":{"level":1,"status":"full"},"battery_level":1,"currently_triggering_noise_threshold_ids":[],"image_alt_text":"Minut Sensor","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128","manufacturer":"minut","minut_metadata":{"device_id":"770cd3153deca3dee0fe0614","device_location":{"latitude":0,"longitude":0},"device_name":"Living Room","home_address":{"city":"San Francisco","country":"US","notes":"string","post_code":"44210","region":"San Francisco County","street_name1":"2258 24th Street","street_name2":""},"home_id":"2978b6d5dba395ec08300e46","home_location":{"latitude":0,"longitude":0},"home_name":"Jane's Test Home","latest_sensor_values":{"accelerometer_z":{"time":"2025-06-16T16:54:17.946049Z","value":-1.00390625},"humidity":{"time":"2025-06-16T16:54:17.946049Z","value":31.110000610351562},"pressure":{"time":"2025-06-16T16:54:17.946049Z","value":101923},"sound":{"time":"2025-06-16T16:54:17.946049Z","value":47.7117919921875},"temperature":{"time":"2025-06-16T16:54:17.946049Z","value":21.270000457763672}}},"model":{"display_name":"Noise Sensor","manufacturer_display_name":"Minut"},"name":"Living Room","noise_level_decibels":47.7117919921875,"online":true}, warnings=[], workspace_id="1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d")]
 ```
 {% endtab %}
 
@@ -301,95 +227,7 @@ seam.noise_sensors.list(limit: 10)
 #### Output:
 
 ```ruby
-[
-  {
-    "capabilities_supported" => ["noise_detection"],
-    "connected_account_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-    "created_at" => "2025-05-16T16:54:17.946049Z",
-    "custom_metadata" => {
-      id: "internalId1",
-    },
-    "device_id" => "f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f",
-    "device_type" => "minut_sensor",
-    "display_name" => "Living Room",
-    "errors" => [],
-    "is_managed" => true,
-    "location" => {
-      location_name: "Jane's Test Home",
-      timezone: "America/Los_Angeles",
-    },
-    "nickname" => "Living Room",
-    "properties" => {
-      appearance: {
-        name: "Living Room",
-      },
-      battery: {
-        level: 1,
-        status: "full",
-      },
-      battery_level: 1,
-      currently_triggering_noise_threshold_ids: [],
-      image_alt_text: "Minut Sensor",
-      image_url:
-        "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128",
-      manufacturer: "minut",
-      minut_metadata: {
-        device_id: "770cd3153deca3dee0fe0614",
-        device_location: {
-          latitude: 0,
-          longitude: 0,
-        },
-        device_name: "Living Room",
-        home_address: {
-          city: "San Francisco",
-          country: "US",
-          notes: "string",
-          post_code: "44210",
-          region: "San Francisco County",
-          street_name1: "2258 24th Street",
-          street_name2: "",
-        },
-        home_id: "2978b6d5dba395ec08300e46",
-        home_location: {
-          latitude: 0,
-          longitude: 0,
-        },
-        home_name: "Jane's Test Home",
-        latest_sensor_values: {
-          accelerometer_z: {
-            time: "2025-06-16T16:54:17.946049Z",
-            value: -1.00390625,
-          },
-          humidity: {
-            time: "2025-06-16T16:54:17.946049Z",
-            value: 31.110000610351562,
-          },
-          pressure: {
-            time: "2025-06-16T16:54:17.946049Z",
-            value: 101_923,
-          },
-          sound: {
-            time: "2025-06-16T16:54:17.946049Z",
-            value: 47.7117919921875,
-          },
-          temperature: {
-            time: "2025-06-16T16:54:17.946049Z",
-            value: 21.270000457763672,
-          },
-        },
-      },
-      model: {
-        display_name: "Noise Sensor",
-        manufacturer_display_name: "Minut",
-      },
-      name: "Living Room",
-      noise_level_decibels: 47.7117919921875,
-      online: true,
-    },
-    "warnings" => [],
-    "workspace_id" => "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-  },
-]
+[{"capabilities_supported" => ["noise_detection"],"connected_account_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d","created_at" => "2025-05-16T16:54:17.946049Z","custom_metadata" => {"id":"internalId1"},"device_id" => "f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f","device_type" => "minut_sensor","display_name" => "Living Room","errors" => [],"is_managed" => true,"location" => {"location_name":"Jane's Test Home","timezone":"America/Los_Angeles"},"nickname" => "Living Room","properties" => {"appearance":{"name":"Living Room"},"battery":{"level":1,"status":"full"},"battery_level":1,"currently_triggering_noise_threshold_ids":[],"image_alt_text":"Minut Sensor","image_url":"https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128","manufacturer":"minut","minut_metadata":{"device_id":"770cd3153deca3dee0fe0614","device_location":{"latitude":0,"longitude":0},"device_name":"Living Room","home_address":{"city":"San Francisco","country":"US","notes":"string","post_code":"44210","region":"San Francisco County","street_name1":"2258 24th Street","street_name2":""},"home_id":"2978b6d5dba395ec08300e46","home_location":{"latitude":0,"longitude":0},"home_name":"Jane's Test Home","latest_sensor_values":{"accelerometer_z":{"time":"2025-06-16T16:54:17.946049Z","value":-1.00390625},"humidity":{"time":"2025-06-16T16:54:17.946049Z","value":31.110000610351562},"pressure":{"time":"2025-06-16T16:54:17.946049Z","value":101923},"sound":{"time":"2025-06-16T16:54:17.946049Z","value":47.7117919921875},"temperature":{"time":"2025-06-16T16:54:17.946049Z","value":21.270000457763672}}},"model":{"display_name":"Noise Sensor","manufacturer_display_name":"Minut"},"name":"Living Room","noise_level_decibels":47.7117919921875,"online":true},"warnings" => [],"workspace_id" => "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"}]
 ```
 {% endtab %}
 

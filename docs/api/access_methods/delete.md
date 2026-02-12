@@ -1,7 +1,4 @@
 # Delete an Access Method
-{% hint style="info" %}
-**Early Access Preview.** The access methods API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
@@ -38,7 +35,7 @@ Deletes an access method.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_method_id": "3f10d86c-526b-4b85-8788-cc1a74411b71"
 }

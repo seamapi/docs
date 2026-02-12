@@ -1,7 +1,4 @@
 # List Access Methods
-{% hint style="info" %}
-**Early Access Preview.** The access methods API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
@@ -64,7 +61,7 @@ Returns a list of all access methods, filtered by Access Grant.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/list" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_grant_id": "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 }
@@ -119,33 +116,7 @@ seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
 #### Output:
 
 ```python
-[
-    AccessMethod(
-        access_method_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-        created_at="2025-06-16T16:54:17.946606Z",
-        display_name="PIN Code Credential",
-        is_card_encoding_required=false,
-        mode="code",
-        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-    ),
-    AccessMethod(
-        access_method_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        created_at="2025-06-16T16:54:19.946606Z",
-        display_name="Card Credential",
-        is_card_encoding_required=true,
-        mode="card",
-        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-    ),
-    AccessMethod(
-        access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-        created_at="2025-06-16T16:54:21.946606Z",
-        display_name="Mobile Key Credential",
-        instant_key_url="https://ik.seam.co/ABCXYZ",
-        is_card_encoding_required=false,
-        mode="mobile_key",
-        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-    ),
-]
+[AccessMethod(access_method_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d", created_at="2025-06-16T16:54:17.946606Z", display_name="PIN Code Credential", is_card_encoding_required=false, mode="code", workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc"), AccessMethod(access_method_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f", created_at="2025-06-16T16:54:19.946606Z", display_name="Card Credential", is_card_encoding_required=true, mode="card", workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc"), AccessMethod(access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f", created_at="2025-06-16T16:54:21.946606Z", display_name="Mobile Key Credential", instant_key_url="https://ik.seam.co/ABCXYZ", is_card_encoding_required=false, mode="mobile_key", workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc")]
 ```
 {% endtab %}
 
@@ -162,33 +133,9 @@ seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 #### Output:
 
 ```ruby
-[
-  {
-    "access_method_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-    "created_at" => "2025-06-16T16:54:17.946606Z",
-    "display_name" => "PIN Code Credential",
-    "is_card_encoding_required" => false,
-    "mode" => "code",
-    "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
-  },
-  {
-    "access_method_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-    "created_at" => "2025-06-16T16:54:19.946606Z",
-    "display_name" => "Card Credential",
-    "is_card_encoding_required" => true,
-    "mode" => "card",
-    "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
-  },
-  {
-    "access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-    "created_at" => "2025-06-16T16:54:21.946606Z",
-    "display_name" => "Mobile Key Credential",
-    "instant_key_url" => "https://ik.seam.co/ABCXYZ",
-    "is_card_encoding_required" => false,
-    "mode" => "mobile_key",
-    "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
-  },
-]
+[{"access_method_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d","created_at" => "2025-06-16T16:54:17.946606Z","display_name" => "PIN Code Credential","is_card_encoding_required" => false,"mode" => "code","workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc"},
+{"access_method_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f","created_at" => "2025-06-16T16:54:19.946606Z","display_name" => "Card Credential","is_card_encoding_required" => true,"mode" => "card","workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc"},
+{"access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f","created_at" => "2025-06-16T16:54:21.946606Z","display_name" => "Mobile Key Credential","instant_key_url" => "https://ik.seam.co/ABCXYZ","is_card_encoding_required" => false,"mode" => "mobile_key","workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc"}]
 ```
 {% endtab %}
 

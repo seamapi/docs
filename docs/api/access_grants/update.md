@@ -1,7 +1,4 @@
 # Update an Access Grant
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
@@ -40,7 +37,7 @@ Updates an existing Access Grant's time window.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_grant_id": "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
   "starts_at": "2025-06-19T18:01:32.000Z",
@@ -63,11 +60,7 @@ Updates an existing Access Grant's time window.
 #### Code:
 
 ```python
-seam.access_grants.update(
-    access_grant_id="4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
-    starts_at="2025-06-19T18:01:32.000Z",
-    ends_at="2025-06-22T13:24:50.000Z",
-)
+seam.access_grants.update(access_grant_id="4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1", starts_at="2025-06-19T18:01:32.000Z", ends_at="2025-06-22T13:24:50.000Z")
 ```
 
 #### Output:
@@ -84,11 +77,7 @@ Updates an existing Access Grant's time window.
 #### Code:
 
 ```ruby
-seam.access_grants.update(
-  access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
-  starts_at: "2025-06-19T18:01:32.000Z",
-  ends_at: "2025-06-22T13:24:50.000Z",
-)
+seam.access_grants.update(access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1", starts_at: "2025-06-19T18:01:32.000Z", ends_at: "2025-06-22T13:24:50.000Z")
 ```
 
 #### Output:

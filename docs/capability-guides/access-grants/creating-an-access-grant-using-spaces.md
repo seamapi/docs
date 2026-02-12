@@ -6,10 +6,6 @@ description: >-
 
 # Creating an Access Grant Using Spaces
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 An Access Grant defines the following characteristics:
 
 * User identity: The user to whom you want to grant access.

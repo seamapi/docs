@@ -1,7 +1,4 @@
 # Update a Space
-{% hint style="info" %}
-**Early Access Preview.** The spaces API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
@@ -45,7 +42,7 @@ Updates an existing space.
 ```curl
 curl --include --request POST "https://connect.getseam.com/spaces/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "space_id": "d3513c20-dc89-4e19-8713-1c3ab01aec81",
   "name": "My Updated Space"
@@ -75,21 +72,13 @@ Updates an existing space.
 #### Code:
 
 ```python
-seam.spaces.update(
-    space_id="d3513c20-dc89-4e19-8713-1c3ab01aec81", name="My Updated Space"
-)
+seam.spaces.update(space_id="d3513c20-dc89-4e19-8713-1c3ab01aec81", name="My Updated Space")
 ```
 
 #### Output:
 
 ```python
-Space(
-    created_at="2025-06-16T16:54:17.946600Z",
-    display_name="My Updated Space",
-    name="My Updated Space",
-    space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63",
-    workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
-)
+Space(created_at="2025-06-16T16:54:17.946600Z", display_name="My Updated Space", name="My Updated Space", space_id="5f30970d-6ef5-4618-9e91-e701fbca6b63", workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9")
 ```
 {% endtab %}
 
@@ -106,13 +95,7 @@ seam.spaces.update(space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81", name: "My U
 #### Output:
 
 ```ruby
-{
-  "created_at" => "2025-06-16T16:54:17.946600Z",
-  "display_name" => "My Updated Space",
-  "name" => "My Updated Space",
-  "space_id" => "5f30970d-6ef5-4618-9e91-e701fbca6b63",
-  "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
-}
+{"created_at" => "2025-06-16T16:54:17.946600Z","display_name" => "My Updated Space","name" => "My Updated Space","space_id" => "5f30970d-6ef5-4618-9e91-e701fbca6b63","workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9"}
 ```
 {% endtab %}
 

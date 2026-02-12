@@ -38,7 +38,7 @@ Gets a specified webhook.
 ```curl
 curl --include --request POST "https://connect.getseam.com/webhooks/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "webhook_id": "e5f1b17c-c67d-469d-a860-9510cf814657"
 }
@@ -72,12 +72,7 @@ seam.webhooks.get(webhook_id="e5f1b17c-c67d-469d-a860-9510cf814657")
 #### Output:
 
 ```python
-Webhook(
-    event_types=["device.connected", "device.disconnected"],
-    secret="mySecret",
-    url="https://example.com/webhook",
-    webhook_id="e5f1b17c-c67d-469d-a860-9510cf814657",
-)
+Webhook(event_types=["device.connected","device.disconnected"], secret="mySecret", url="https://example.com/webhook", webhook_id="e5f1b17c-c67d-469d-a860-9510cf814657")
 ```
 {% endtab %}
 
@@ -94,12 +89,7 @@ seam.webhooks.get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657")
 #### Output:
 
 ```ruby
-{
-  "event_types" => %w[device.connected device.disconnected],
-  "secret" => "mySecret",
-  "url" => "https://example.com/webhook",
-  "webhook_id" => "e5f1b17c-c67d-469d-a860-9510cf814657",
-}
+{"event_types" => ["device.connected","device.disconnected"],"secret" => "mySecret","url" => "https://example.com/webhook","webhook_id" => "e5f1b17c-c67d-469d-a860-9510cf814657"}
 ```
 {% endtab %}
 

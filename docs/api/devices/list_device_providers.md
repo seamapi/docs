@@ -80,16 +80,7 @@ seam.devices.list_device_providers()
 #### Output:
 
 ```python
-[
-    DeviceProvider(
-        can_program_online_access_codes=true,
-        can_remotely_unlock=true,
-        device_provider_name="akiles",
-        display_name="Akiles",
-        image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
-        provider_categories=["stable", "consumer_smartlocks"],
-    )
-]
+[DeviceProvider(can_program_online_access_codes=true, can_remotely_unlock=true, device_provider_name="akiles", display_name="Akiles", image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128", provider_categories=["stable","consumer_smartlocks"])]
 ```
 {% endtab %}
 
@@ -106,17 +97,7 @@ seam.devices.list_device_providers()
 #### Output:
 
 ```ruby
-[
-  {
-    "can_program_online_access_codes" => true,
-    "can_remotely_unlock" => true,
-    "device_provider_name" => "akiles",
-    "display_name" => "Akiles",
-    "image_url" =>
-      "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
-    "provider_categories" => %w[stable consumer_smartlocks],
-  },
-]
+[{"can_program_online_access_codes" => true,"can_remotely_unlock" => true,"device_provider_name" => "akiles","display_name" => "Akiles","image_url" => "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128","provider_categories" => ["stable","consumer_smartlocks"]}]
 ```
 {% endtab %}
 
@@ -270,7 +251,7 @@ await seam.devices.listDeviceProviders({ provider_category: "stable" });
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/list_device_providers" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "provider_category": "stable"
 }
@@ -308,16 +289,7 @@ seam.devices.list_device_providers(provider_category="stable")
 #### Output:
 
 ```python
-[
-    DeviceProvider(
-        can_program_online_access_codes=true,
-        can_remotely_unlock=true,
-        device_provider_name="akiles",
-        display_name="Akiles",
-        image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
-        provider_categories=["stable", "consumer_smartlocks"],
-    )
-]
+[DeviceProvider(can_program_online_access_codes=true, can_remotely_unlock=true, device_provider_name="akiles", display_name="Akiles", image_url="https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128", provider_categories=["stable","consumer_smartlocks"])]
 ```
 {% endtab %}
 
@@ -334,17 +306,7 @@ seam.devices.list_device_providers(provider_category: "stable")
 #### Output:
 
 ```ruby
-[
-  {
-    "can_program_online_access_codes" => true,
-    "can_remotely_unlock" => true,
-    "device_provider_name" => "akiles",
-    "display_name" => "Akiles",
-    "image_url" =>
-      "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
-    "provider_categories" => %w[stable consumer_smartlocks],
-  },
-]
+[{"can_program_online_access_codes" => true,"can_remotely_unlock" => true,"device_provider_name" => "akiles","display_name" => "Akiles","image_url" => "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128","provider_categories" => ["stable","consumer_smartlocks"]}]
 ```
 {% endtab %}
 

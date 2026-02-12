@@ -38,7 +38,7 @@ Updates a specified unmanaged access code.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_codes/unmanaged/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_code_id": "ebd8e488-db1b-4f4b-9d02-489fbfa6829a",
   "is_managed": true,
@@ -62,12 +62,7 @@ Updates a specified unmanaged access code.
 #### Code:
 
 ```python
-seam.access_codes.unmanaged.update(
-    access_code_id="ebd8e488-db1b-4f4b-9d02-489fbfa6829a",
-    is_managed=true,
-    is_external_modification_allowed=true,
-    force=true,
-)
+seam.access_codes.unmanaged.update(access_code_id="ebd8e488-db1b-4f4b-9d02-489fbfa6829a", is_managed=true, is_external_modification_allowed=true, force=true)
 ```
 
 #### Output:
@@ -84,12 +79,7 @@ Updates a specified unmanaged access code.
 #### Code:
 
 ```ruby
-seam.access_codes.unmanaged.update(
-  access_code_id: "ebd8e488-db1b-4f4b-9d02-489fbfa6829a",
-  is_managed: true,
-  is_external_modification_allowed: true,
-  force: true,
-)
+seam.access_codes.unmanaged.update(access_code_id: "ebd8e488-db1b-4f4b-9d02-489fbfa6829a", is_managed: true, is_external_modification_allowed: true, force: true)
 ```
 
 #### Output:

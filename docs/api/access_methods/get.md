@@ -1,7 +1,4 @@
 # Get an Access Method
-{% hint style="info" %}
-**Early Access Preview.** The access methods API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
@@ -46,7 +43,7 @@ Returns a specified access method.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_methods/get" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_method_id": "7410aea4-6bed-490c-a602-dd417d9cd075"
 }
@@ -83,15 +80,7 @@ seam.access_methods.get(access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075")
 #### Output:
 
 ```python
-AccessMethod(
-    access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075",
-    created_at="2025-06-14T16:54:17.946612Z",
-    display_name="My Mobile Key",
-    instant_key_url="https://ik.seam.co/ABCXYZ",
-    is_card_encoding_required=false,
-    mode="mobile_key",
-    workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-)
+AccessMethod(access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075", created_at="2025-06-14T16:54:17.946612Z", display_name="My Mobile Key", instant_key_url="https://ik.seam.co/ABCXYZ", is_card_encoding_required=false, mode="mobile_key", workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc")
 ```
 {% endtab %}
 
@@ -108,15 +97,7 @@ seam.access_methods.get(access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
 #### Output:
 
 ```ruby
-{
-  "access_method_id" => "7410aea4-6bed-490c-a602-dd417d9cd075",
-  "created_at" => "2025-06-14T16:54:17.946612Z",
-  "display_name" => "My Mobile Key",
-  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
-  "is_card_encoding_required" => false,
-  "mode" => "mobile_key",
-  "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
-}
+{"access_method_id" => "7410aea4-6bed-490c-a602-dd417d9cd075","created_at" => "2025-06-14T16:54:17.946612Z","display_name" => "My Mobile Key","instant_key_url" => "https://ik.seam.co/ABCXYZ","is_card_encoding_required" => false,"mode" => "mobile_key","workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc"}
 ```
 {% endtab %}
 

@@ -1,7 +1,4 @@
 # Delete an Access Grant
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
@@ -38,7 +35,7 @@ Deletes an Access Grant.
 ```curl
 curl --include --request POST "https://connect.getseam.com/access_grants/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "access_grant_id": "403ea27b-af76-4a48-ace9-8f9498f4c25c"
 }

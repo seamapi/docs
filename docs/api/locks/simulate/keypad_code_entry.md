@@ -42,7 +42,7 @@ Simulates the entry of a code on a keypad.
 ```curl
 curl --include --request POST "https://connect.getseam.com/locks/simulate/keypad_code_entry" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "97a7a706-05a9-405c-91e5-b03e5b9c2003",
   "code": "1234"
@@ -72,21 +72,13 @@ Simulates the entry of a code on a keypad.
 #### Code:
 
 ```python
-seam.locks.simulate.keypad_code_entry(
-    device_id="97a7a706-05a9-405c-91e5-b03e5b9c2003", code="1234"
-)
+seam.locks.simulate.keypad_code_entry(device_id="97a7a706-05a9-405c-91e5-b03e5b9c2003", code="1234")
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(
-    action_attempt_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-    action_type="SIMULATE_KEYPAD_CODE_ENTRY",
-    error=None,
-    result={},
-    status="success",
-)
+ActionAttempt(action_attempt_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d", action_type="SIMULATE_KEYPAD_CODE_ENTRY", error=None, result={}, status="success")
 ```
 {% endtab %}
 
@@ -97,23 +89,13 @@ Simulates the entry of a code on a keypad.
 #### Code:
 
 ```ruby
-seam.locks.simulate.keypad_code_entry(
-  device_id: "97a7a706-05a9-405c-91e5-b03e5b9c2003",
-  code: "1234",
-)
+seam.locks.simulate.keypad_code_entry(device_id: "97a7a706-05a9-405c-91e5-b03e5b9c2003", code: "1234")
 ```
 
 #### Output:
 
 ```ruby
-{
-  "action_attempt_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-  "action_type" => "SIMULATE_KEYPAD_CODE_ENTRY",
-  "error" => nil,
-  "result" => {
-  },
-  "status" => "success",
-}
+{"action_attempt_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d","action_type" => "SIMULATE_KEYPAD_CODE_ENTRY","error" => nil,"result" => {},"status" => "success"}
 ```
 {% endtab %}
 

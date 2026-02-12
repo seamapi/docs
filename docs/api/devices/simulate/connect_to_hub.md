@@ -39,7 +39,7 @@ Simulates bringing the Wi-Fi hub (bridge) back online for a device.
 ```curl
 curl --include --request POST "https://connect.getseam.com/devices/simulate/connect_to_hub" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "5d703d4f-523f-42af-9439-618415ca651f"
 }

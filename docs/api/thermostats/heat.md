@@ -42,7 +42,7 @@ Sets a specified thermostat to heat mode.
 ```curl
 curl --include --request POST "https://connect.getseam.com/thermostats/heat" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
-  --json @- <<EOF
+  --json @- << EOF
 {
   "device_id": "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
   "heating_set_point_fahrenheit": 65
@@ -72,21 +72,13 @@ Sets a specified thermostat to heat mode.
 #### Code:
 
 ```python
-seam.thermostats.heat(
-    device_id="e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5", heating_set_point_fahrenheit=65
-)
+seam.thermostats.heat(device_id="e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5", heating_set_point_fahrenheit=65)
 ```
 
 #### Output:
 
 ```python
-ActionAttempt(
-    action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
-    action_type="SET_HVAC_MODE",
-    error=None,
-    result={},
-    status="success",
-)
+ActionAttempt(action_attempt_id="b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d", action_type="SET_HVAC_MODE", error=None, result={}, status="success")
 ```
 {% endtab %}
 
@@ -97,23 +89,13 @@ Sets a specified thermostat to heat mode.
 #### Code:
 
 ```ruby
-seam.thermostats.heat(
-  device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5",
-  heating_set_point_fahrenheit: 65,
-)
+seam.thermostats.heat(device_id: "e4b111b8-e2bd-4f49-a9c8-96ed5390e1d5", heating_set_point_fahrenheit: 65)
 ```
 
 #### Output:
 
 ```ruby
-{
-  "action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d",
-  "action_type" => "SET_HVAC_MODE",
-  "error" => nil,
-  "result" => {
-  },
-  "status" => "success",
-}
+{"action_attempt_id" => "b0e1d2c3-4f5e-6a7b-8c9d-0e1f2a3b4c5d","action_type" => "SET_HVAC_MODE","error" => nil,"result" => {},"status" => "success"}
 ```
 {% endtab %}
 
