@@ -35,15 +35,16 @@ To control TTLock devices using Seam, you must prompt owners of these devices to
 
 1.  Create an account in the [TTLock app](https://www.ttlock.com/#/lock/app) if you have not done so already.
 
-    \{% hint style="info" %\} Your users must be the top administrator for each TTLock that they want to connect to Seam. \{% endhint %\}2. Install your TTLock lock and set it up using the TTLock app.\
-    Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock in the TTLock app.
-2. Pair the lock with a [TTLock gateway](https://ttlock.eu/shop/tag/ttlock+gateway/).\
+    **Note:** Your users must be the top administrator for each TTLock that they want to connect to Seam.
+2. Install your TTLock lock and set it up using the TTLock app.\
+   Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) to set up your door lock in the TTLock app.
+3. Pair the lock with a [TTLock gateway](https://ttlock.eu/shop/tag/ttlock+gateway/).\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) to pair your lock with a gateway.
-3. In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the Remote Unlock feature.\
+4. In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the **Remote Unlock** feature.\
    This feature must be enabled to unlock a TTLock device. Note that if Seam detects that this feature is disabled, a warning is added to the device.\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the Remote Unlock setting for each TTLock lock.
-4. Note your login credentials for the TTLock app.
-5. Use your credentials for the TTLock app to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+5. Note your login credentials for the TTLock app.
+6. Use your credentials for the TTLock app to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
 
 ***
 
