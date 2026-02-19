@@ -8,7 +8,7 @@ description: >-
 
 ## Add XML File with ASSA ABLOY AID
 
-To develop an Android mobile app that integrates with the ASSA ABLOY Visionline ACS, you must register for the ASSA ABLOY partnership program. Note that if you plan to integrate with the [ASSA ABLOY Visionline credential manager](../assa-abloy-credential-services.md), you must also register for this program. For details, see [https://www.abloy.com/global/en/partnership-and-integrations](https://www.abloy.com/global/en/partnership-and-integrations).
+To develop an Android mobile app that integrates with the ASSA ABLOY Visionline ACS, you must register for the ASSA ABLOY partnership program. Note that if you plan to integrate with the [ASSA ABLOY Visionline credential manager](../assa-abloy-access-credential-services.md), you must also register for this program. For details, see [https://www.abloy.com/global/en/partnership-and-integrations](https://www.abloy.com/global/en/partnership-and-integrations).
 
 After you register for the ASSA ABLOY partnership program, ASSA ABLOY provides a Host-based Card Emulation application ID (HCE AID).
 

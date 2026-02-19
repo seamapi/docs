@@ -20,10 +20,6 @@ You can connect and work with virtual devices and systems in a [sandbox workspac
 [sandbox-akiles-locks.md](../../developer-tools/sandbox-and-sample-data/sandbox-akiles-locks.md)
 {% endcontent-ref %}
 
-{% content-ref url="assa-abloy-credential-service-sample-data.md" %}
-[assa-abloy-credential-service-sample-data.md](assa-abloy-credential-service-sample-data.md)
-{% endcontent-ref %}
-
 {% content-ref url="assa-abloy-visionline-access-management-system-sample-data.md" %}
 [assa-abloy-visionline-access-management-system-sample-data.md](assa-abloy-visionline-access-management-system-sample-data.md)
 {% endcontent-ref %}

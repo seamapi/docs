@@ -1,6 +1,8 @@
 ---
 description: Guide for using ASSA ABLOY Credential Services with Seam
 hidden: true
+noIndex: true
+noRobotsIndex: true
 ---
 
 # ASSA ABLOY Credential Services

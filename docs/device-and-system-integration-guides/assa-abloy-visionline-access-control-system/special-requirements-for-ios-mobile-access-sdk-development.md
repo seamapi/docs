@@ -8,7 +8,7 @@ description: >-
 
 ## Register for ASSA ABLOY Partnership Program
 
-To develop an iOS mobile app that integrates with the ASSA ABLOY Visionline ACS, you must register for the ASSA ABLOY partnership program. Note that if you plan to integrate with the [ASSA ABLOY Visionline credential manager](../assa-abloy-credential-services.md), you must also register for this program. For details, see [https://www.abloy.com/global/en/partnership-and-integrations](https://www.abloy.com/global/en/partnership-and-integrations).
+To develop an iOS mobile app that integrates with the ASSA ABLOY Visionline ACS, you must register for the ASSA ABLOY partnership program. Note that if you plan to integrate with the [ASSA ABLOY Visionline credential manager](../assa-abloy-access-credential-services.md), you must also register for this program. For details, see [https://www.abloy.com/global/en/partnership-and-integrations](https://www.abloy.com/global/en/partnership-and-integrations).
 
 ***
 
