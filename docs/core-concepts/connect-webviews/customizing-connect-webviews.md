@@ -52,7 +52,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [4SUITES](../../device-and-system-integration-guides/4suites-locks/)                                                                   | `four_suites`                   |
 | [Akiles](../../device-and-system-integration-guides/akiles-locks/)                                                                     | `akiles`                        |
 | [Akuvox](https://akuvox.com/)                                                                                                          | `akuvox`                        |
-| [ASSA ABLOY Credential Service](../../device-and-system-integration-guides/assa-abloy-access-credential-services.md)                   | `assa_abloy_credential_service` |
+| [ASSA ABLOY Credential Service](/broken/pages/E3681tQ6WZ6d1IId3ygF)                                                                    | `assa_abloy_credential_service` |
 | [ASSA ABLOY Visionline Access Control System](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/) | `visionline`                    |
 | [August Home](../../device-guides/august-locks.md)                                                                                     | `august`                        |
 | [Avigilon Alta](../../device-guides/avigilon-alta-access-system.md)                                                                    | `avigilon_alta`                 |

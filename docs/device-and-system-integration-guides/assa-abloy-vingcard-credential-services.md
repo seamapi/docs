@@ -2,10 +2,9 @@
 description: Guide for using ASSA ABLOY Credential Services with Seam
 hidden: true
 noIndex: true
-noRobotsIndex: true
 ---
 
-# ASSA ABLOY Credential Services
+# ASSA ABLOY Vingcard Credential Services
 
 ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. To add mobile key support for your [Visionline ACS](assa-abloy-visionline-access-control-system/), you must obtain an ASSA ABLOY Credential Services account. You must also register for the ASSA ABLOY partnership program by sending an email to either of the following addresses:
 
