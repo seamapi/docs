@@ -410,7 +410,7 @@
   * [Sandbox 2N Intercoms](device-guides/sandbox-and-sample-data/2n-intercoms-sample-data.md)
   * [Sandbox 4SUITES Locks](device-guides/sandbox-and-sample-data/4suites-locks-sample-data.md)
   * [Sandbox Akiles Locks](developer-tools/sandbox-and-sample-data/sandbox-akiles-locks.md)
-  * [Sandbox ASSA ABLOY Credential Services](device-guides/sandbox-and-sample-data/assa-abloy-credential-service-sample-data.md)
+  * [Sandbox ASSA ABLOY Vingcard Credential Services](developer-tools/sandbox-and-sample-data/sandbox-assa-abloy-vingcard-credential-services.md)
   * [Sandbox Assa Abloy Visionline Access Control System](device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data.md)
   * [Sandbox Assa Abloy Vostio Access Control System](developer-tools/sandbox-and-sample-data/sandbox-assa-abloy-vostio-access-control-system.md)
   * [Sandbox August Locks](device-guides/sandbox-and-sample-data/august-locks-sample-data.md)
