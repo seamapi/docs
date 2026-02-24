@@ -311,9 +311,19 @@ The locale to use for the portal.
 
 ***
 
-**`property_listing_filter`** _Object_
+**`customer_resources_filters`** _List_
 
-Filter configuration for property listings based on their custom\_metadata. Keys and values must match the custom\_metadata stored on property listings.
+Filter configuration for resources based on their `custom_metadata`. Each filter specifies a field, operation, and value to match against resource `custom_metadata`. When multiple filters are provided, a resource must match all of them (AND logic). Applies to both property listings and reservations.
+
+<details>
+
+<summary>Filter object structure</summary>
+
+* **`field`** _String_ — The `custom_metadata` field name to filter on. Must start with a letter or underscore and contain only alphanumeric characters and underscores.
+* **`operation`** _String_ — The comparison operation. Currently only `"="` is supported.
+* **`value`** _String or Boolean_ — The value to compare against.
+
+</details>
 
 ***
 
