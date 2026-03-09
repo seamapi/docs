@@ -383,7 +383,11 @@ echo json_encode($locks);
 
 ### 4 — Locking & Unlocking a Door
 
-Next, you can perform the basic action of locking and unlocking a door. Note that Salto disables this functionality by default and requires a special pass-through waiver via Seam. Seam automatically configures your IQ hubs to enable this functionality. Please contact us if you need to disable it.
+Next, you can perform the basic action of locking and unlocking a door.
+
+{% hint style="warning" %}
+Note that Salto KS disables this functionality by default and requires a special pass-through waiver via Seam. Please contact Seam to configure your IQ hubs to enable this functionality.
+{% endhint %}
 
 {% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
 [openapi (1).json](<../.gitbook/assets/openapi (1).json>)
