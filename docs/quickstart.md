@@ -7,6 +7,10 @@ description: >-
 
 # Quick Start
 
+{% hint style="info" %}
+**Building with an AI coding assistant?** Connect the [Seam MCP Server](developer-tools/seam-mcp.md) to give your assistant direct access to Seam documentation — setup takes under a minute, no API keys needed.
+{% endhint %}
+
 ## Step 1 — Connect Devices
 
 To get started with Seam, first connect a set of devices.
