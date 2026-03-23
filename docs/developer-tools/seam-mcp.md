@@ -97,32 +97,16 @@ url = "https://mcp.seam.co/mcp"
 
 {% tab title="ChatGPT" %}
 1. Open ChatGPT Desktop
-2. Go to **Settings** → **Apps** and enable **Developer Mode**
-3. Click **Create** to add a new connector
-4. Enter the URL: `https://mcp.seam.co/mcp`
+2. Go to **Settings** → **Apps & Connectors** → **Advanced settings** and enable **Developer Mode**
+3. Go to **Settings** → **Connectors** and click **Create**
+4. Enter a name (e.g., "Seam") and the URL: `https://mcp.seam.co/mcp`
 {% endtab %}
 
 {% tab title="Claude Desktop" %}
 1. Open Claude Desktop
 2. Go to **Settings** → **Connectors**
-3. Click **Add Connector**
+3. Click **Add custom connector**
 4. Enter: `https://mcp.seam.co/mcp`
-
-Alternatively, add to your config file:
-
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "seam": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.seam.co/mcp"]
-    }
-  }
-}
-```
 {% endtab %}
 {% endtabs %}
 
