@@ -14,7 +14,7 @@ Built for short-term bookings—whether hotel stays, gym classes, coworking room
 
 Reservation Automations follow the lifecycle of a reservation:
 
-1. You enable Automations in [Console](https://console.getseam.com/).
+1. You create spaces and assign devices using [`/spaces/create`](../api/spaces/create.md).
 2. You send reservation and guest data with `push_data`.
 3. Seam applies the right access and climate settings at the right times.
 4. Webhooks notify you when settings are issued, updated, or revoked.
@@ -22,15 +22,18 @@ Reservation Automations follow the lifecycle of a reservation:
 
 ***
 
-### Before you begin![](https://b.stripecdn.com/docs-statics-srv/assets/fcc3a1c24df6fcffface6110ca4963de.svg) <a href="#before-you-begin" id="before-you-begin"></a>
+### Before you begin <a href="#before-you-begin" id="before-you-begin"></a>
 
 Set up these resources in your Seam workspace:
 
 * [Customer](customer-portals/) – identify who the automation belongs to with a `customer_key`.
-* [Spaces](../core-concepts/mapping-your-resources-to-seam-resources.md) – represent the real-world units your customer manages (i.e. _Room 101_ in a hotel, _Studio 3_ in a gym). Reservations should reference these spaces.
-* Devices or entrances – connect locks, thermostats, or other devices to each Space (e.g., assign the lock in Room 101 to the _Room 101_ space)
+* [Spaces](../core-concepts/mapping-your-resources-to-seam-resources.md) – represent the real-world units your customer manages (i.e. _Room 101_ in a hotel, _Studio 3_ in a gym). Each space must be created via [`/spaces/create`](../api/spaces/create.md) with a `space_key` and assigned `device_ids` **before** you call `push_data`. Reservations reference these spaces by `space_key`.
+* Devices or entrances – connect locks, thermostats, or other devices to each space (e.g., assign the lock in Room 101 to the _Room 101_ space).
+* Unique user identity emails – each `user_identity` you push must have a unique `email_address`. If an email already exists from a previous call, the reservation is silently skipped.
 
-Reservation Automations use these resources to decide where and how to apply settings.
+{% hint style="warning" %}
+`push_data` does **not** create spaces. If you reference a `space_key` that does not exist, the call returns `ok: true` but no access codes are generated. Always create spaces first using [`/spaces/create`](../api/spaces/create.md).
+{% endhint %}
 
 {% hint style="success" %}
 You can also let customers configure their own accounts, spaces, and devices with [Customer Portals](customer-portals/).
@@ -38,11 +41,23 @@ You can also let customers configure their own accounts, spaces, and devices wit
 
 ***
 
-### 1. Enable Reservation Automations in Console.
+### 1. Create spaces with devices
 
-Go to **Console** → **Developer** → **Automations** and turn on an Automations for your workspace.
+Before pushing reservation data, create a space for each bookable unit using the [`/spaces/create`](../api/spaces/create.md) endpoint. Each space must have a `space_key` (your identifier) and at least one assigned device.
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-01 at 5.25.53 PM (1).png" alt=""><figcaption></figcaption></figure>
+```bash
+curl -X POST \
+  https://connect.getseam.com/spaces/create \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Room 101",
+    "space_key": "unit-101-key",
+    "device_ids": ["YOUR_LOCK_DEVICE_ID"]
+  }'
+```
+
+The `space_key` is what you reference in `push_data` reservations. Without it, `push_data` cannot match reservations to devices.
 
 ***
 
@@ -50,14 +65,12 @@ Go to **Console** → **Developer** → **Automations** and turn on an Automatio
 
 Use the `push_data` endpoint to send customer, user, and reservation data to Seam. Automations use this information to configure devices at the right times.
 
-A **reservation** represents a time-bound assignment of a user to a space. This can be a hotel stay, a gym day pass, or a coworking member’s conference room booking. Each reservation must include a unique `reservation_key`, which can be your system’s identifier for that record. Seam uses this key to know whether it should create a new reservation, update an existing one, or remove it later with `delete_data`.
-
-Use the `push_data` endpoint to provide Seam your customer, guest, and reservation data. Seam uses this to issue access credentials and configure devices at the right times.
+A **reservation** represents a time-bound assignment of a user to a space. This can be a hotel stay, a gym day pass, or a coworking member's conference room booking. Each reservation must include a unique `reservation_key`, which can be your system's identifier for that record. Seam uses this key to know whether it should create a new reservation, update an existing one, or remove it later with `delete_data`.
 
 ```bash
 curl -X POST \
-  https://api.seam.co/customers/push_data \
-  -H "Authorization: Bearer $YOUR_API_KEY" \
+  https://connect.getseam.com/customers/push_data \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "customer_key": "sample_customer_key",
@@ -82,6 +95,10 @@ curl -X POST \
 
 * Call `push_data` with a new `reservation_key` to create a reservation.
 * Call it again with the same `reservation_key` to update times or other details—Seam automatically reconfigures the device settings.
+
+{% hint style="info" %}
+The `push_data` [API reference](../api/customers/push_data.md) also documents an `access_grants` parameter. Both `reservations` and `access_grants` work as top-level keys in the `push_data` payload and function equivalently for time-bound access.
+{% endhint %}
 
 ***
 
@@ -112,8 +129,8 @@ Calling `delete_data` removes the underlying reservation records, which tells au
 
 ```bash
 curl -X POST \
-  https://api.seam.co/customers/delete_data \
-  -H "Authorization: Bearer $YOUR_API_KEY" \
+  https://connect.getseam.com/customers/delete_data \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "reservation_keys": ["res_456"],
@@ -126,5 +143,22 @@ curl -X POST \
 * Pass a `customer_key` to offboard an entire customer and clear all their spaces, users, and settings.
 
 ***
+
+### Troubleshooting
+
+#### I called `push_data` and got `ok: true` but no access code was created
+
+`push_data` returns a success response even when automations cannot act on the data. Check these common causes:
+
+| Symptom | Cause | Fix |
+| ------- | ----- | --- |
+| No access code created | Space does not exist or is missing a `space_key` | Create the space via [`/spaces/create`](../api/spaces/create.md) with a `space_key` and `device_ids` before calling `push_data` |
+| No access code created | No devices assigned to the space | Add `device_ids` when creating the space, or update the space to include devices |
+| Reservation silently skipped | Duplicate `email_address` on a `user_identity` | Each user identity must have a unique email. Check **Console** → **Automation Runs** for `user_identity_email_or_phone_conflict` errors |
+| Automation did not run | Automations not enabled | Go to **Console** → **Developer** → **Automations** and verify automations are enabled for your workspace |
+
+{% hint style="info" %}
+Check **Console** → **Automation Runs** for detailed error information. Errors like `user_identity_email_or_phone_conflict` are only visible there — they do not appear in the `push_data` response.
+{% endhint %}
 
 ***
