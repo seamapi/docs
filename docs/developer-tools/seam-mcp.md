@@ -73,7 +73,13 @@ Add to `.vscode/mcp.json` in your project:
 {% endtab %}
 
 {% tab title="Codex" %}
-Add to `~/.codex/config.toml`:
+Run this command in your terminal:
+
+```bash
+codex mcp add seam --url https://mcp.seam.co/mcp
+```
+
+Or add to `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.seam]
