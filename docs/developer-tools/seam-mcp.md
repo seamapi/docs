@@ -72,6 +72,22 @@ Add to `.vscode/mcp.json` in your project:
 ```
 {% endtab %}
 
+{% tab title="Codex" %}
+Add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.seam]
+url = "https://mcp.seam.co/mcp"
+```
+{% endtab %}
+
+{% tab title="ChatGPT" %}
+1. Open ChatGPT Desktop
+2. Go to **Settings** → **Apps** and enable **Developer Mode**
+3. Click **Create** to add a new connector
+4. Enter the URL: `https://mcp.seam.co/mcp`
+{% endtab %}
+
 {% tab title="Claude Desktop" %}
 1. Open Claude Desktop
 2. Go to **Settings** → **Connectors**
