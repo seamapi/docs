@@ -12,6 +12,14 @@ The Seam MCP server gives your AI coding assistant direct access to the entire S
 **No API keys or authentication required.** The server is free and public — just add the URL and start coding.
 {% endhint %}
 
+## Server URL
+
+```
+https://mcp.seam.co/mcp
+```
+
+Use this URL in any MCP-compatible client. Editor-specific instructions are below.
+
 ## One-Click Install
 
 [**Install in Cursor**](cursor://anysphere.cursor-deeplink/mcp/install?name=seam\&config=eyJ1cmwiOiJodHRwczovL21jcC5zZWFtLmNvL21jcCJ9)
@@ -133,3 +141,9 @@ After setup, try asking your AI assistant:
 * "How do I create an API key in Seam?"
 * "Show me how to unlock a door with the Seam API"
 * "What access control systems does Seam support?"
+
+## Troubleshooting
+
+* **Tools not showing up?** Restart your editor or reload the window after adding the MCP configuration.
+* **Connection errors?** Make sure you're using `https://mcp.seam.co/mcp` — the `/mcp` path is required.
+* **Slow first response?** The first query may take a few seconds while the server warms up. Subsequent queries are fast.
