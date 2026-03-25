@@ -171,6 +171,7 @@ Possible enum values:
 - <code>thermostat</code>
 - <code>noise_sensor</code>
 - <code>access_control</code>
+- <code>camera</code>
 </details>
 
 ---

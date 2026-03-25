@@ -296,7 +296,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_method`** *String* (Required)
 
-Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.
+Access method for the new credential. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 
 ---
 

@@ -47,6 +47,18 @@ Specific PIN code to use for this access method. Only applicable when mode is 'c
 
 <details>
 
+<summary><b><code>instant_key_max_use_count</code></b> <i>Number</i></summary>
+
+Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>mode</code></b> <i>Enum</i></summary>
 
 Access method mode. Supported values: `code`, `card`, `mobile_key`.

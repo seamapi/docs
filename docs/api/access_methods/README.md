@@ -147,6 +147,15 @@ Indicates whether the access method has been issued.
 
 ---
 
+**`is_ready_for_encoding`** *Boolean*
+
+Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.
+
+
+
+
+---
+
 **`issued_at`** *Datetime*
 
 Date and time at which the access method was issued.
@@ -169,6 +178,207 @@ Access method mode. Supported values: `code`, `card`, `mobile_key`.
 - <code>mobile_key</code>
 </details>
 
+
+---
+
+**`pending_mutations`** *List* *of Objects*
+
+Pending mutations for the [access method](../../capability-guides/access-grants/delivering-access-methods.md). Indicates operations that are in progress.
+
+
+
+
+The specific structure of each object in this list depends on the value of its `mutation_code` field.
+
+Variants:
+<details>
+<summary><code>provisioning_access</code></summary>
+
+Seam is in the process of provisioning access for this access method on new devices.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous device configuration.
+  
+  Child Properties
+  
+  - <strong><code>device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+    
+      Previous device IDs where access was provisioned.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices.
+  
+  Enum values:
+  
+  - <code>provisioning_access</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New device configuration.
+  
+  Child Properties
+  
+  - <strong><code>device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+    
+      New device IDs where access is being provisioned.
+  
+  
+</details>
+<details>
+<summary><code>revoking_access</code></summary>
+
+Seam is in the process of revoking access for this access method from devices.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous device configuration.
+  
+  Child Properties
+  
+  - <strong><code>device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+    
+      Previous device IDs where access existed.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of revoking access for this access method from devices.
+  
+  Enum values:
+  
+  - <code>revoking_access</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New device configuration.
+  
+  Child Properties
+  
+  - <strong><code>device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+    
+      New device IDs where access should remain.
+  
+  
+</details>
+<details>
+<summary><code>updating_access_times</code></summary>
+
+Seam is in the process of updating the access times for this access method.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous access time configuration.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      Previous end time for access.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      Previous start time for access.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of updating the access times for this access method.
+  
+  Enum values:
+  
+  - <code>updating_access_times</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New access time configuration.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      New end time for access.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      New start time for access.
+  
+  
+</details>
 
 ---
 
@@ -214,6 +424,78 @@ Indicates that the [access method](../../capability-guides/access-grants/deliver
   
   
 </details>
+<details>
+<summary><code>updating_access_times</code></summary>
+
+Indicates that the access times for this [access method](../../capability-guides/access-grants/delivering-access-methods.md) are being updated.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>updating_access_times</code>
+  
+  
+</details>
+<details>
+<summary><code>pulled_backup_access_code</code></summary>
+
+Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`original_access_method_id`** *UUID*
+  
+  
+  ID of the original access method from which this backup access method was split, if applicable.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>pulled_backup_access_code</code>
+  
+  
+</details>
 
 ---
 
@@ -232,6 +514,18 @@ ID of the Seam workspace associated with the access method.
 **`being_deleted`**
 
 Indicates that the [access method](../../capability-guides/access-grants/delivering-access-methods.md) is being deleted.
+
+---
+
+**`pulled_backup_access_code`**
+
+Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.
+
+---
+
+**`updating_access_times`**
+
+Indicates that the access times for this [access method](../../capability-guides/access-grants/delivering-access-methods.md) are being updated.
 
 ---
 
@@ -457,6 +751,49 @@ An access method was reissued.
 <strong><code>is_backup_code</code></strong> <i>Boolean</i>
 
   Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`access_method.created`**
+
+An access method was created.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>access_grant_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of the access grants associated with this access method.
+
+<strong><code>access_grant_keys</code></strong> <i>List</i> <i>of Strings</i>
+
+  Keys of the access grants associated with this access method (if present).
+
+<strong><code>access_method_id</code></strong> <i>UUID</i>
+
+  ID of the affected access method.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `access_method.created`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 

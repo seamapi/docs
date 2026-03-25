@@ -763,13 +763,89 @@ An [access system](https://docs.seam.co/latest/capability-guides/access-systems)
 
 <summary>Properties</summary>
 
+<strong><code>acs_system_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the access control system.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the access system.
 
+<strong><code>acs_system_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the access control system.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the connected account.
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 

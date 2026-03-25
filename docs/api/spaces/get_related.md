@@ -34,6 +34,7 @@ Possible enum values:
 - <code>acs_entrances</code>
 - <code>connected_accounts</code>
 - <code>acs_systems</code>
+- <code>access_methods</code>
 </details>
 
 ---
@@ -49,6 +50,7 @@ Possible enum values:
 - <code>acs_entrances</code>
 - <code>connected_accounts</code>
 - <code>acs_systems</code>
+- <code>access_methods</code>
 </details>
 
 ---
@@ -76,6 +78,7 @@ batch response
 - `acs_entrances`: Array of [acs\_entrances](./../acs/entrances)
 - `connected_accounts`: Array of [connected\_accounts](./../connected_accounts)
 - `acs_systems`: Array of [acs\_systems](./../acs/systems)
+- `access_methods`: Array of [access\_methods](./../access_methods)
 
 {% endhint %}
 
@@ -243,6 +246,17 @@ batch response
       "name": "My ACS System",
       "warnings": [],
       "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
+    }
+  ],
+  "access_methods": [
+    {
+      "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
+      "created_at": "2025-06-14T16:54:17.946612Z",
+      "display_name": "My Card",
+      "is_card_encoding_required": true,
+      "issued_at": "2025-06-14T16:54:17.946612Z",
+      "mode": "card",
+      "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
     }
   ]
 }

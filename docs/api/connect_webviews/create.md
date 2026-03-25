@@ -519,6 +519,7 @@ Possible enum values:
 - <code>thermostat</code>
 - <code>noise_sensor</code>
 - <code>access_control</code>
+- <code>camera</code>
 </details>
 
 ---
@@ -551,7 +552,6 @@ Possible enum values:
 - <code>linear</code>
 - <code>noiseaware</code>
 - <code>nuki</code>
-- <code>seam_relay_admin</code>
 - <code>igloo</code>
 - <code>kwikset</code>
 - <code>minut</code>
@@ -560,7 +560,6 @@ Possible enum values:
 - <code>nest</code>
 - <code>igloohome</code>
 - <code>ecobee</code>
-- <code>hubitat</code>
 - <code>four_suites</code>
 - <code>dormakaba_oracode</code>
 - <code>pti</code>
@@ -577,11 +576,11 @@ Possible enum values:
 - <code>tado</code>
 - <code>salto_space</code>
 - <code>sensi</code>
-- <code>kwikset2</code>
 - <code>keynest</code>
 - <code>korelock</code>
 - <code>dormakaba_ambiance</code>
 - <code>ultraloq</code>
+- <code>ring</code>
 - <code>yale_access</code>
 - <code>hid_cm</code>
 - <code>google_nest</code>

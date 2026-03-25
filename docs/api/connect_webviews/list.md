@@ -300,6 +300,12 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ---
 
+**`search`** *String*
+
+String for which to search. Filters returned Connect Webviews to include all records that satisfy a partial match using `connect_webview_id`, `accepted_providers`, `custom_metadata`, or `customer_key`.
+
+---
+
 **`user_identifier_key`** *String*
 
 Your user ID for the user by which you want to filter Connect Webviews.

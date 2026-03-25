@@ -102,6 +102,31 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](../../../capa
 
 ---
 
+**`brivo_metadata`** *Object*
+
+Brivo-specific metadata associated with the [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>access_point_id</code></strong> <i>String</i>
+  
+    ID of the access point in the Brivo access system.
+
+  - <strong><code>site_id</code></strong> <i>Number</i>
+  
+    ID of the site that the access point belongs to.
+
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Name of the site that the access point belongs to.
+
+</details>
+
+---
+
 **`can_belong_to_reservation`** *Boolean*
 
 Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.
@@ -114,6 +139,15 @@ Indicates whether the ACS entrance can belong to a reservation via an access_gra
 **`can_unlock_with_card`** *Boolean*
 
 Indicates whether the ACS entrance can be unlocked with card credentials.
+
+
+
+
+---
+
+**`can_unlock_with_cloud_key`** *Boolean*
+
+Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.
 
 
 
@@ -343,12 +377,6 @@ Salto Space-specific metadata associated with the [entrance](../../../capability
   
     Name of the door in the Salto Space access system.
 
-  - <strong><code>ext_door_id</code></strong> <i>String</i>
-  
-  {% hint style="warning" %}
-  **Deprecated**. use door_id.
-  {% endhint %}
-
   - <strong><code>room_description</code></strong> <i>String</i>
   
     Description of the room in the Salto Space access system.
@@ -527,5 +555,10 @@ Returns a list of all [access system entrances](../../../capability-guides/acces
 [**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access.md)
 
 Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md) with access to a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+
+
+[**`/acs/entrances/unlock`**](./unlock.md)
+
+Remotely unlocks a specified [entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
 
 

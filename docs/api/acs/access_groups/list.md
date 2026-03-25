@@ -38,6 +38,7 @@ await seam.acs.accessGroups.list({
     "external_type_display_name": "Salto KS Access Group",
     "is_managed": true,
     "name": "My Access Group",
+    "pending_mutations": [],
     "warnings": [],
     "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
   }
@@ -80,6 +81,7 @@ EOF
       "external_type_display_name": "Salto KS Access Group",
       "is_managed": true,
       "name": "My Access Group",
+      "pending_mutations": [],
       "warnings": [],
       "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
     }
@@ -118,6 +120,7 @@ seam.acs.access_groups.list(
         external_type_display_name="Salto KS Access Group",
         is_managed=true,
         name="My Access Group",
+        pending_mutations=[],
         warnings=[],
         workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
     )
@@ -155,6 +158,7 @@ seam.acs.access_groups.list(
     "external_type_display_name" => "Salto KS Access Group",
     "is_managed" => true,
     "name" => "My Access Group",
+    "pending_mutations" => [],
     "warnings" => [],
     "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
   },
@@ -192,6 +196,7 @@ $seam->acs->access_groups->list(
         "external_type_display_name" => "Salto KS Access Group",
         "is_managed" => true,
         "name" => "My Access Group",
+        "pending_mutations" => [],
         "warnings" => [],
         "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
     ],
@@ -225,6 +230,7 @@ seam acs access-groups list --acs_system_id "1b529056-1b04-450b-b3da-016b65a5017
     "external_type_display_name": "Salto KS Access Group",
     "is_managed": true,
     "name": "My Access Group",
+    "pending_mutations": [],
     "warnings": [],
     "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
   }
@@ -257,6 +263,12 @@ ID of the access system for which you want to retrieve all access groups.
 **`acs_user_id`** *String*
 
 ID of the access system user for which you want to retrieve all access groups.
+
+---
+
+**`search`** *String*
+
+String for which to search. Filters returned access groups to include all records that satisfy a partial match using `name` or `acs_access_group_id`.
 
 ---
 
@@ -294,6 +306,7 @@ Returns:
   "external_type_display_name": "Salto KS Access Group",
   "is_managed": true,
   "name": "My Access Group",
+  "pending_mutations": [],
   "warnings": [],
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
@@ -340,6 +353,7 @@ await seam.acs.accessGroups.list({
     "external_type_display_name": "Salto KS Access Group",
     "is_managed": true,
     "name": "My Access Group",
+    "pending_mutations": [],
     "warnings": [],
     "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
   }
@@ -381,6 +395,7 @@ EOF
       "external_type_display_name": "Salto KS Access Group",
       "is_managed": true,
       "name": "My Access Group",
+      "pending_mutations": [],
       "warnings": [],
       "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
     }
@@ -418,6 +433,7 @@ seam.acs.access_groups.list(
         external_type_display_name="Salto KS Access Group",
         is_managed=true,
         name="My Access Group",
+        pending_mutations=[],
         warnings=[],
         workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
     )
@@ -454,6 +470,7 @@ seam.acs.access_groups.list(
     "external_type_display_name" => "Salto KS Access Group",
     "is_managed" => true,
     "name" => "My Access Group",
+    "pending_mutations" => [],
     "warnings" => [],
     "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
   },
@@ -490,6 +507,7 @@ $seam->acs->access_groups->list(
         "external_type_display_name" => "Salto KS Access Group",
         "is_managed" => true,
         "name" => "My Access Group",
+        "pending_mutations" => [],
         "warnings" => [],
         "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
     ],
@@ -523,6 +541,7 @@ seam acs access-groups list --acs_system_id "1b529056-1b04-450b-b3da-016b65a5017
     "external_type_display_name": "Salto KS Access Group",
     "is_managed": true,
     "name": "My Access Group",
+    "pending_mutations": [],
     "warnings": [],
     "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
   }

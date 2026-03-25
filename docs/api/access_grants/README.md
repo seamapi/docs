@@ -210,6 +210,159 @@ Name of the Access Grant. If not provided, the display name will be computed.
 
 ---
 
+**`pending_mutations`** *List* *of Objects*
+
+List of pending mutations for the access grant. This shows updates that are in progress.
+
+
+
+
+The specific structure of each object in this list depends on the value of its `mutation_code` field.
+
+Variants:
+<details>
+<summary><code>updating_spaces</code></summary>
+
+Seam is in the process of updating the devices/spaces associated with this access grant.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous location configuration.
+  
+  Child Properties
+  
+  - <strong><code>device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+    
+      Previous device IDs where access codes existed.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of updating the spaces (devices) associated with this access grant.
+  
+  Enum values:
+  
+  - <code>updating_spaces</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New location configuration.
+  
+  Child Properties
+  
+  - <strong><code>common_code_key</code></strong> <i>String</i>
+    
+      Common code key to ensure PIN code reuse across devices.
+  
+  - <strong><code>device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+    
+      New device IDs where access codes should be created.
+  
+  
+</details>
+<details>
+<summary><code>updating_access_times</code></summary>
+
+Seam is in the process of updating the access times for this access grant.
+
+  **`access_method_ids`** *List* *of UUIDs*
+  
+  
+  IDs of the access methods being updated.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous access time configuration.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      Previous end time for access.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      Previous start time for access.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of updating the access times for this access grant.
+  
+  Enum values:
+  
+  - <code>updating_access_times</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New access time configuration.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      New end time for access.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      New start time for access.
+  
+  
+</details>
+
+---
+
 **`requested_access_methods`** *List* *of Objects*
 
 Access methods that the user requested for the Access Grant.
@@ -233,6 +386,10 @@ Access methods that the user requested for the Access Grant.
 <strong><code>display_name</code></strong> <i>String</i>
 
   Display name of the access method.
+
+<strong><code>instant_key_max_use_count</code></strong> <i>Number</i>
+
+  Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.
 
 <strong><code>mode</code></strong> <i>Enum</i>
 
@@ -327,6 +484,206 @@ Indicates that the [access grant](../../capability-guides/access-grants/README.m
   
   
 </details>
+<details>
+<summary><code>underprovisioned_access</code></summary>
+
+Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>underprovisioned_access</code>
+  
+  
+</details>
+<details>
+<summary><code>overprovisioned_access</code></summary>
+
+Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>overprovisioned_access</code>
+  
+  
+</details>
+<details>
+<summary><code>updating_access_times</code></summary>
+
+Indicates that the access times for this [access grant](../../capability-guides/access-grants/README.md) are being updated.
+
+  **`access_method_ids`** *List* *of UUIDs*
+  
+  
+  IDs of the access methods being updated.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>updating_access_times</code>
+  
+  
+</details>
+<details>
+<summary><code>requested_code_unavailable</code></summary>
+
+Indicates that the requested PIN code was already in use on a device, so a different code was assigned.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`device_id`** *UUID*
+  
+  
+  ID of the device where the requested code was unavailable.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`new_code`** *String*
+  
+  
+  The new PIN code that was assigned instead.
+  
+  
+  ---
+
+  **`original_code`** *String*
+  
+  
+  The originally requested PIN code that was unavailable.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>requested_code_unavailable</code>
+  
+  
+</details>
+<details>
+<summary><code>device_does_not_support_access_codes</code></summary>
+
+Indicates that a device in the access grant does not support access codes and was excluded from code materialization.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`device_id`** *UUID*
+  
+  
+  ID of the device that does not support access codes.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>device_does_not_support_access_codes</code>
+  
+  
+</details>
 
 ---
 
@@ -354,6 +711,36 @@ ID of the Seam workspace associated with the Access Grant.
 **`being_deleted`**
 
 Indicates that the [access grant](../../capability-guides/access-grants/README.md) is being deleted.
+
+---
+
+**`device_does_not_support_access_codes`**
+
+Indicates that a device in the access grant does not support access codes and was excluded from code materialization.
+
+---
+
+**`overprovisioned_access`**
+
+Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.
+
+---
+
+**`requested_code_unavailable`**
+
+Indicates that the requested PIN code was already in use on a device, so a different code was assigned.
+
+---
+
+**`underprovisioned_access`**
+
+Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.
+
+---
+
+**`updating_access_times`**
+
+Indicates that the access times for this [access grant](../../capability-guides/access-grants/README.md) are being updated.
 
 ---
 
