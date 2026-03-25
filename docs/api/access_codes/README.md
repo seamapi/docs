@@ -3873,11 +3873,6 @@ Generates a code for an [access code](https://docs.seam.co/latest/capability-gui
 Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
-[**`/access_codes/get_timeline`**](./get_timeline.md)
-
-Returns a chronological timeline of events for an access code.
-
-
 [**`/access_codes/list`**](./list.md)
 
 Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).

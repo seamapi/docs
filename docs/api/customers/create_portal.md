@@ -312,34 +312,6 @@ The ID of the customization profile to use for the portal.
 
 ---
 
-**`deep_link`** *Object*
-
-Deep link target resource for initial redirect. When set, the portal will navigate directly to the specified resource.
-
-<details>
-
-<summary><b><code>resource_key</code></b> <i>String</i></summary>
-
-</details>
-
----
-
-
-
-<details>
-
-<summary><b><code>resource_type</code></b> <i>Enum</i></summary>
-
-Enum values:
-
-- <code>reservation</code>
-- <code>space</code>
-
-</details>
-
----
-
-
 **`exclude_locale_picker`** *Boolean*
 
 Whether to exclude the option to select a locale within the portal UI.

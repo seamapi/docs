@@ -12,6 +12,7 @@ These items are intentionally undocumented.
 - `/acs/credentials/unmanaged`: No undocumented message provided
 - `/acs/users/unmanaged`: No undocumented message provided
 - `/bridges`: No undocumented message provided
+- `/customers/reservations`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/console/v1`: No undocumented message provided
@@ -22,6 +23,8 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/connector_customers`: No undocumented message provided
 - `/seam/customer/v1/connectors`: No undocumented message provided
+- `/seam/customer/v1/customers/automations`: No undocumented message provided
+- `/seam/customer/v1/customers`: No undocumented message provided
 - `/seam/customer/v1/encoders`: No undocumented message provided
 - `/seam/customer/v1/events`: No undocumented message provided
 - `/seam/customer/v1/portals`: No undocumented message provided
@@ -29,6 +32,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/settings/business_verticals`: No undocumented message provided
 - `/seam/customer/v1/settings`: No undocumented message provided
 - `/seam/customer/v1/settings/vertical_resource_aliases`: No undocumented message provided
+- `/seam/customer/v1/spaces`: No undocumented message provided
 - `/seam/customer/v1/staff_members`: No undocumented message provided
 - `/seam/instant_key/v1/client_sessions`: No undocumented message provided
 - `/seam/instant_key/v1/preview`: No undocumented message provided
@@ -51,6 +55,7 @@ These items are intentionally undocumented.
 - `enrollment_automation`: Will be removed.
 - `magic_link`: Unreleased.
 - `phone_session`: Seam Mobile SDK only.
+- `staff_member`: Internal resource for customer portals.
 - `unmanaged_acs_access_group`: Unreleased.
 - `unmanaged_acs_credential`: Unreleased.
 - `unmanaged_acs_user`: Unreleased.
@@ -72,6 +77,7 @@ These items are intentionally undocumented.
 
 - `/seam/bridge/v1`: No undocumented message provided
 - `/seam/console`: No undocumented message provided
+- `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
 - `/seam/mobile_sdk`: No undocumented message provided
 - `/seam/partner/v1/building_blocks`: No undocumented message provided
@@ -79,6 +85,7 @@ These items are intentionally undocumented.
 
 ### Endpoints
 
+- `/access_codes/get_timeline`: Unreleased.
 - `/acs/access_groups/unmanaged/get`: No unmanaged access groups are currently implemented.
 - `/acs/access_groups/unmanaged/list`: No unmanaged access groups are currently implemented.
 - `/acs/credential_pools/list`: Replaced by enrollment automations.
@@ -90,6 +97,7 @@ These items are intentionally undocumented.
 - `/acs/users/unmanaged/list`: No unmanaged users are currently implemented.
 - `/bridges/get`: Not yet for customer use.
 - `/bridges/list`: Not yet for customer use.
+- `/customers/reservations/create_deep_link`: Internal endpoint for customer portals.
 - `/devices/delete`: Deleting a device is no longer supported and will be removed.
 - `/seam/bridge/v1/bridge_client_sessions/create`: Seam Bridge client only.
 - `/seam/bridge/v1/bridge_client_sessions/get`: Seam Bridge Client only.
@@ -115,7 +123,10 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/connectors/list`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/sync`: Only used internally.
 - `/seam/customer/v1/connectors/update`: Internal endpoint for Console.
+- `/seam/customer/v1/customers/automations/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/customers/automations/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/customers/list`: Internal endpoint for Console.
+- `/seam/customer/v1/customers/me`: Internal endpoint for customer portals.
 - `/seam/customer/v1/customers/open_portal`: Internal endpoint for Console.
 - `/seam/customer/v1/encoders/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
@@ -130,6 +141,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/spaces/create`: Only used internally.
 - `/seam/customer/v1/spaces/list`: Only used internally.
 - `/seam/customer/v1/spaces/list_reservations`: Internal endpoint for customer portals.
+- `/seam/customer/v1/spaces/push_common_areas`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/staff_members/list`: Internal endpoint for customer portals.
 - `/seam/instant_key/v1/client_sessions/exchange_short_code`: Seam Instant Key only.
@@ -174,6 +186,7 @@ These items are intentionally undocumented.
     - `sync`: Only used internally.
 - `/customers/create_portal`
     - `_dev`: Internal developer mode flag.
+    - `deep_link`: Internal endpoint for customer portals.
 - `/devices/list`
     - `exclude_if`: Only used internally.
     - `include_if`: Only used internally.
@@ -705,7 +718,6 @@ These items are deprecated.
 
 ### Endpoints without code samples
 
-- `/access_codes/get_timeline`
 - `/access_grants/get_related`
 - `/access_grants/request_access_methods`
 - `/access_grants/unmanaged/get`
@@ -721,7 +733,6 @@ These items are deprecated.
 - `/customers/create_portal`
 - `/customers/delete_data`
 - `/customers/push_data`
-- `/customers/reservations/create_deep_link`
 - `/devices/report_provider_metadata`
 - `/devices/simulate/paid_subscription`
 - `/instant_keys/delete`
@@ -729,10 +740,6 @@ These items are deprecated.
 - `/instant_keys/list`
 - `/locks/configure_auto_lock`
 - `/locks/get`
-- `/seam/customer/v1/customers/automations/get`
-- `/seam/customer/v1/customers/automations/update`
-- `/seam/customer/v1/customers/me`
-- `/seam/customer/v1/spaces/push_common_areas`
 - `/spaces/get_related`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
@@ -741,7 +748,6 @@ These items are deprecated.
 ### Resources without resource samples
 
 - `batch`
-- `staff_member`
 - `event: access_code.created`
 - `event: access_code.changed`
 - `event: access_code.scheduled_on_device`
