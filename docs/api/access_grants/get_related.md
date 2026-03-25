@@ -22,9 +22,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_grant_ids`** *Array* *of UUIDs* (Required)
+**`access_grant_ids`** *Array* *of UUIDs*
 
 IDs of the access grants that you want to get along with their related resources.
+
+---
+
+**`access_grant_keys`** *Array* *of Strings*
+
+Keys of the access grants that you want to get along with their related resources.
 
 ---
 
@@ -41,6 +47,7 @@ Possible enum values:
 - <code>acs_systems</code>
 - <code>user_identities</code>
 - <code>acs_access_groups</code>
+- <code>access_methods</code>
 </details>
 
 ---
@@ -58,6 +65,7 @@ Possible enum values:
 - <code>acs_systems</code>
 - <code>user_identities</code>
 - <code>acs_access_groups</code>
+- <code>access_methods</code>
 </details>
 
 ---
@@ -75,6 +83,7 @@ batch response
 - `acs_systems`: Array of [acs\_systems](./../acs/systems)
 - `user_identities`: Array of [user\_identitys](./../user_identities)
 - `acs_access_groups`: Array of [acs\_access\_groups](./../acs/access_groups)
+- `access_methods`: Array of [access\_methods](./../access_methods)
 
 {% endhint %}
 
@@ -274,8 +283,20 @@ batch response
       "external_type_display_name": "Salto KS Access Group",
       "is_managed": true,
       "name": "My Access Group",
+      "pending_mutations": [],
       "warnings": [],
       "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
+    }
+  ],
+  "access_methods": [
+    {
+      "access_method_id": "27d8ad77-55c2-4e20-b5b3-43555926f0e8",
+      "created_at": "2025-06-14T16:54:17.946612Z",
+      "display_name": "My Card",
+      "is_card_encoding_required": true,
+      "issued_at": "2025-06-14T16:54:17.946612Z",
+      "mode": "card",
+      "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
     }
   ]
 }

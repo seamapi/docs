@@ -34,6 +34,7 @@ await seam.acs.accessGroups.get({
   "external_type_display_name": "Salto KS Access Group",
   "is_managed": true,
   "name": "My Access Group",
+  "pending_mutations": [],
   "warnings": [],
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
@@ -72,6 +73,7 @@ EOF
     "external_type_display_name": "Salto KS Access Group",
     "is_managed": true,
     "name": "My Access Group",
+    "pending_mutations": [],
     "warnings": [],
     "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
   }
@@ -104,6 +106,7 @@ AcsAccessGroup(
     external_type_display_name="Salto KS Access Group",
     is_managed=true,
     name="My Access Group",
+    pending_mutations=[],
     warnings=[],
     workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
 )
@@ -135,6 +138,7 @@ seam.acs.access_groups.get(acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c
   "external_type_display_name" => "Salto KS Access Group",
   "is_managed" => true,
   "name" => "My Access Group",
+  "pending_mutations" => [],
   "warnings" => [],
   "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
 }
@@ -168,6 +172,7 @@ $seam->acs->access_groups->get(
     "external_type_display_name" => "Salto KS Access Group",
     "is_managed" => true,
     "name" => "My Access Group",
+    "pending_mutations" => [],
     "warnings" => [],
     "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
 ];
@@ -199,6 +204,7 @@ seam acs access-groups get --acs_access_group_id "09eb5265-6e3b-4e6d-bf96-736171
   "external_type_display_name": "Salto KS Access Group",
   "is_managed": true,
   "name": "My Access Group",
+  "pending_mutations": [],
   "warnings": [],
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
@@ -255,6 +261,7 @@ Returns:
   "external_type_display_name": "Salto KS Access Group",
   "is_managed": true,
   "name": "My Access Group",
+  "pending_mutations": [],
   "warnings": [],
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }

@@ -32,6 +32,18 @@ ID of the access system by which you want to filter the list of unmanaged Access
 
 ---
 
+**`limit`** *Number*
+
+Numerical limit on the number of unmanaged access grants to return.
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
 **`reservation_key`** *String*
 
 Filter unmanaged Access Grants by reservation_key.

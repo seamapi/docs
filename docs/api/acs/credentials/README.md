@@ -110,7 +110,7 @@ An access system PIN code credential resource.
 
 **`access_method`** *Enum*
 
-Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`.
+Access method for the [credential](../../../capability-guides/access-systems/managing-credentials.md). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 
 
 <details>
@@ -119,6 +119,7 @@ Access method for the [credential](../../../capability-guides/access-systems/man
 - <code>code</code>
 - <code>card</code>
 - <code>mobile_key</code>
+- <code>cloud_key</code>
 </details>
 
 
@@ -276,6 +277,7 @@ Brand-specific terminology for the [credential](../../../capability-guides/acces
 
 - <code>pti_card</code>
 - <code>brivo_credential</code>
+- <code>brivo_digital_credential</code>
 - <code>hid_credential</code>
 - <code>visionline_card</code>
 - <code>salto_ks_credential</code>

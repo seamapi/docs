@@ -66,6 +66,14 @@ An unmanaged device resource.
 ---
 ## Properties
 
+**`can_configure_auto_lock`** *Boolean*
+
+
+
+
+
+---
+
 **`can_hvac_cool`** *Boolean*
 
 
@@ -285,7 +293,6 @@ Type of the device.
 - <code>nuki_lock</code>
 - <code>salto_lock</code>
 - <code>schlage_lock</code>
-- <code>seam_relay</code>
 - <code>smartthings_lock</code>
 - <code>wyze_lock</code>
 - <code>yale_lock</code>
@@ -293,7 +300,6 @@ Type of the device.
 - <code>controlbyweb_device</code>
 - <code>ttlock_lock</code>
 - <code>igloohome_lock</code>
-- <code>hubitat_lock</code>
 - <code>four_suites_door</code>
 - <code>dormakaba_oracode_door</code>
 - <code>tedee_lock</code>
@@ -311,6 +317,7 @@ Type of the device.
 - <code>smartthings_thermostat</code>
 - <code>ios_phone</code>
 - <code>android_phone</code>
+- <code>ring_camera</code>
 </details>
 
 
@@ -1516,6 +1523,38 @@ Indicates that Seam does not know the time zone of the Ultraloq device. Set a ti
   
 </details>
 <details>
+<summary><code>two_n_device_missing_timezone</code></summary>
+
+Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>two_n_device_missing_timezone</code>
+  
+  
+</details>
+<details>
 <summary><code>hub_required_for_additional_capabilities</code></summary>
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
@@ -1608,6 +1647,86 @@ Indicates that the accessory keypad exists, but is not linked to the Igloohome B
   Enum values:
   
   - <code>accessory_keypad_setup_required</code>
+  
+  
+</details>
+<details>
+<summary><code>unreliable_online_status</code></summary>
+
+Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>unreliable_online_status</code>
+  
+  
+</details>
+<details>
+<summary><code>max_access_codes_reached</code></summary>
+
+Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
+
+  **`active_access_code_count`** *Number*
+  
+  
+  Number of active access codes on the device when the warning was set.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`max_active_access_code_count`** *Number*
+  
+  
+  Maximum number of active access codes supported by the device.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>max_access_codes_reached</code>
   
   
 </details>
@@ -1971,6 +2090,12 @@ Indicates that the gateway signal is weak.
 
 ---
 
+**`two_n_device_missing_timezone`**
+
+Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+
+---
+
 **`ultraloq_time_zone_unknown`**
 
 Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
@@ -1987,6 +2112,12 @@ Indicates that the Wyze Lock is not connected to a gateway.
 **`many_active_backup_codes`**
 
 Indicates that there are too many backup codes.
+
+---
+
+**`max_access_codes_reached`**
+
+Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
 
 ---
 
@@ -2039,6 +2170,12 @@ Indicates that the Remote Unlock feature is not enabled in the settings."
 
 ---
 
+**`unreliable_online_status`**
+
+Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
+
+---
+
 ### Phones
 **`unknown_issue_with_phone`**
 
@@ -2075,6 +2212,10 @@ An [unmanaged device](../../../core-concepts/devices/managed-and-unmanaged-devic
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -2123,6 +2264,10 @@ The status of an [unmanaged device](../../../core-concepts/devices/managed-and-u
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -2162,21 +2307,101 @@ The status of an [unmanaged device](../../../core-concepts/devices/managed-and-u
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the event.
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
 
+<strong><code>device_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the affected device.
+
+<strong><code>device_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>error_code</code></strong> <i>Enum</i>
 

@@ -49,6 +49,7 @@
     external_type_display_name: Salto KS Access Group
     is_managed: true
     name: My Access Group
+    pending_mutations: []
     warnings: []
     workspace_id: ac19352c-869a-4209-9ce7-44c740a8b5d0
 - title: ACS Card Credential
@@ -1128,6 +1129,7 @@
     external_type_display_name: Salto KS Access Group
     is_managed: false
     name: My Unmanaged Access Group
+    pending_mutations: []
     warnings: []
     workspace_id: 8a844fbb-c583-485e-a8d9-94d8e96fb6d4
 - title: Unmanaged ACS Credential

@@ -675,7 +675,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 **`search`** *String*
 
-String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.
+String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.
 
 ---
 

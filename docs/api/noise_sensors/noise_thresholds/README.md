@@ -117,6 +117,10 @@ Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.

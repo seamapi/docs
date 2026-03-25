@@ -277,6 +277,12 @@ Customer key for which you want to list access systems.
 
 ---
 
+**`search`** *String*
+
+String for which to search. Filters returned access systems to include all records that satisfy a partial match using `name` or `acs_system_id`.
+
+---
+
 
 ## Response
 

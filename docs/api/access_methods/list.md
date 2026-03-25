@@ -297,9 +297,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** *String*
 
 ID of Access Grant to list access methods for.
+
+---
+
+**`access_grant_key`** *String*
+
+Key of Access Grant to list access methods for.
 
 ---
 

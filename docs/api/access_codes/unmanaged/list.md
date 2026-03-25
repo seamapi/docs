@@ -252,6 +252,12 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 ---
 
+**`search`** *String*
+
+String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.
+
+---
+
 **`user_identifier_key`** *String*
 
 Your user ID for the user by which to filter unmanaged access codes.

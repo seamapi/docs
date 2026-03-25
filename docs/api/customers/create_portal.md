@@ -263,9 +263,58 @@ List of users.
 ---
 
 
+**`customer_resources_filters`** *Array* *of Objects*
+
+Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.
+
+<details>
+
+<summary><b><code>field</code></b> <i>String</i></summary>
+
+The custom_metadata field name to filter on.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>operation</code></b> <i>Enum</i></summary>
+
+The comparison operation. Currently only '=' is supported.
+
+Enum values:
+
+- <code>=</code>
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>value</code></b> <i>Object</i></summary>
+
+The value to compare against.
+
+</details>
+
+---
+
+
 **`customization_profile_id`** *String*
 
 The ID of the customization profile to use for the portal.
+
+---
+
+**`exclude_locale_picker`** *Boolean*
+
+Whether to exclude the option to select a locale within the portal UI.
 
 ---
 
@@ -358,9 +407,9 @@ The locale to use for the portal.
 
 ---
 
-**`property_listing_filter`** *Object*
+**`navigation_mode`** *String*
 
-Filter configuration for property listings based on their custom_metadata. Keys and values must match the custom_metadata stored on property listings.
+Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.
 
 ---
 

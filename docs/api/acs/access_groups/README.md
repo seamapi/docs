@@ -31,6 +31,7 @@ An access group resource.
   "external_type_display_name": "Salto KS Access Group",
   "is_managed": true,
   "name": "My Access Group",
+  "pending_mutations": [],
   "warnings": [],
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
@@ -71,6 +72,27 @@ An access group resource.
 {% endhint %}
 
 
+
+---
+
+**`access_schedule`** *Object*
+
+`starts_at` and `ends_at` timestamps for the access group's access.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+  
+    Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+
+</details>
 
 ---
 
@@ -161,6 +183,416 @@ Name of the access group.
 
 
 
+
+---
+
+**`pending_mutations`** *List* *of Objects*
+
+Collection of pending mutations for the access group. Represents operations that have been requested but not yet completed on the integrated access system.
+
+
+
+
+The specific structure of each object in this list depends on the value of its `mutation_code` field.
+
+Variants:
+<details>
+<summary><code>creating</code></summary>
+
+Seam is in the process of pushing an access group creation to the integrated access system.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing an access group creation to the integrated access system.
+  
+  Enum values:
+  
+  - <code>creating</code>
+  
+  
+</details>
+<details>
+<summary><code>deleting</code></summary>
+
+Seam is in the process of pushing an access group deletion to the integrated access system.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing an access group deletion to the integrated access system.
+  
+  Enum values:
+  
+  - <code>deleting</code>
+  
+  
+</details>
+<details>
+<summary><code>deferring_deletion</code></summary>
+
+This access group is scheduled for automatic deletion when its access window expires.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that this access group is scheduled for automatic deletion when its access window expires.
+  
+  Enum values:
+  
+  - <code>deferring_deletion</code>
+  
+  
+</details>
+<details>
+<summary><code>updating_group_information</code></summary>
+
+Seam is in the process of pushing an access group information update to the integrated access system.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Old access group information.
+  
+  Child Properties
+  
+  - <strong><code>name</code></strong> <i>String</i>
+    
+      Name of the access group.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing updated access group information to the integrated access system.
+  
+  Enum values:
+  
+  - <code>updating_group_information</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New access group information.
+  
+  Child Properties
+  
+  - <strong><code>name</code></strong> <i>String</i>
+    
+      Name of the access group.
+  
+  
+</details>
+<details>
+<summary><code>updating_access_schedule</code></summary>
+
+Seam is in the process of pushing an access schedule update to the integrated access system.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Old access schedule information.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      Ending time for the access schedule.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      Starting time for the access schedule.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing updated access schedule information to the integrated access system.
+  
+  Enum values:
+  
+  - <code>updating_access_schedule</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New access schedule information.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      Ending time for the access schedule.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      Starting time for the access schedule.
+  
+  
+</details>
+<details>
+<summary><code>updating_user_membership</code></summary>
+
+Seam is in the process of pushing a user membership update to the integrated access system.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Old user membership.
+  
+  Child Properties
+  
+  - <strong><code>acs_user_id</code></strong> <i>UUID</i>
+    
+      Old user ID.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing updated user membership information to the integrated access system.
+  
+  Enum values:
+  
+  - <code>updating_user_membership</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New user membership.
+  
+  Child Properties
+  
+  - <strong><code>acs_user_id</code></strong> <i>UUID</i>
+    
+      New user ID.
+  
+  
+</details>
+<details>
+<summary><code>updating_entrance_membership</code></summary>
+
+Seam is in the process of pushing an entrance membership update to the integrated access system.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Old entrance membership.
+  
+  Child Properties
+  
+  - <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
+    
+      Old entrance ID.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing updated entrance membership information to the integrated access system.
+  
+  Enum values:
+  
+  - <code>updating_entrance_membership</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New entrance membership.
+  
+  Child Properties
+  
+  - <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
+    
+      New entrance ID.
+  
+  
+</details>
+<details>
+<summary><code>deferring_user_membership_update</code></summary>
+
+A scheduled user membership change is pending for this access group.
+
+  **`acs_user_id`** *UUID*
+  
+  
+  ID of the user involved in the scheduled change.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that a scheduled user membership change is pending for this access group.
+  
+  Enum values:
+  
+  - <code>deferring_user_membership_update</code>
+  
+  
+  ---
+
+  **`variant`** *Enum*
+  
+  
+  Whether the user is scheduled to be added to or removed from this access group.
+  
+  Enum values:
+  
+  - <code>adding</code>
+  - <code>removing</code>
+  
+  
+</details>
 
 ---
 

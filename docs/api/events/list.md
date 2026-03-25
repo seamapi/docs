@@ -384,6 +384,7 @@ Possible enum values:
 - <code>access_method.card_encoding_required</code>
 - <code>access_method.deleted</code>
 - <code>access_method.reissued</code>
+- <code>access_method.created</code>
 - <code>acs_system.connected</code>
 - <code>acs_system.added</code>
 - <code>acs_system.disconnected</code>
@@ -411,6 +412,10 @@ Possible enum values:
 - <code>action_attempt.lock_door.failed</code>
 - <code>action_attempt.unlock_door.succeeded</code>
 - <code>action_attempt.unlock_door.failed</code>
+- <code>action_attempt.simulate_keypad_code_entry.succeeded</code>
+- <code>action_attempt.simulate_keypad_code_entry.failed</code>
+- <code>action_attempt.simulate_manual_lock_via_keypad.succeeded</code>
+- <code>action_attempt.simulate_manual_lock_via_keypad.failed</code>
 - <code>connect_webview.login_succeeded</code>
 - <code>connect_webview.login_failed</code>
 - <code>device.connected</code>
@@ -446,6 +451,8 @@ Possible enum values:
 - <code>thermostat.temperature_reached_set_point</code>
 - <code>thermostat.temperature_changed</code>
 - <code>device.name_changed</code>
+- <code>camera.activated</code>
+- <code>device.doorbell_rang</code>
 - <code>enrollment_automation.deleted</code>
 - <code>phone.deactivated</code>
 - <code>space.device_membership_changed</code>

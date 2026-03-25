@@ -85,6 +85,51 @@ Unique identifier for the device associated with the access code.
 
 ---
 
+**`dormakaba_oracode_metadata`** *Object*
+
+Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>is_cancellable</code></strong> <i>Boolean</i>
+  
+    Indicates whether the stay can be cancelled via the Dormakaba Oracode API.
+
+  - <strong><code>is_early_checkin_able</code></strong> <i>Boolean</i>
+  
+    Indicates whether early check-in is available for this stay.
+
+  - <strong><code>is_extendable</code></strong> <i>Boolean</i>
+  
+    Indicates whether the stay can be extended via the Dormakaba Oracode API.
+
+  - <strong><code>is_overridable</code></strong> <i>Boolean</i>
+  
+    Indicates whether the access code can be overridden. When false, the maximum number of overrides has been reached.
+
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Dormakaba Oracode site name associated with this access code.
+
+  - <strong><code>stay_id</code></strong> <i>Number</i>
+  
+    Dormakaba Oracode stay ID associated with this access code.
+
+  - <strong><code>user_level_id</code></strong> <i>String</i>
+  
+    Dormakaba Oracode user level ID associated with this access code.
+
+  - <strong><code>user_level_name</code></strong> <i>String</i>
+  
+    Dormakaba Oracode user level name associated with this access code.
+
+</details>
+
+---
+
 **`ends_at`** *Datetime*
 
 Date and time after which the time-bound access code becomes inactive.
@@ -745,86 +790,6 @@ Salto site user is not subscribed.
   
 </details>
 <details>
-<summary><code>hubitat_device_programming_delay</code></summary>
-
-Access code has not yet been fully moved to the device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>hubitat_device_programming_delay</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>hubitat_no_free_positions_available</code></summary>
-
-No free positions available on the device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>hubitat_no_free_positions_available</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>wyze_duplicate_code_name</code></summary>
 
 Duplicate access code name detected.
@@ -1005,6 +970,46 @@ KeyNest locker is not supported.
   Enum values:
   
   - <code>keynest_unsupported_third_party_locker</code>
+  
+  
+  ---
+
+  **`is_access_code_error`** *Boolean*
+  
+  
+  Indicates that this is an access code error.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
+<summary><code>replaced_by_newer_access_code</code></summary>
+
+This access code was overridden on the device by a newer access code programmed to the same slot.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>replaced_by_newer_access_code</code>
   
   
   ---
@@ -2133,6 +2138,70 @@ Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobil
   
   
 </details>
+<details>
+<summary><code>using_backup_access_code</code></summary>
+
+A backup access code has been pulled and is being used in place of this access code.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>using_backup_access_code</code>
+  
+  
+</details>
+<details>
+<summary><code>being_deleted</code></summary>
+
+Access code is being deleted.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>being_deleted</code>
+  
+  
+</details>
 
 ---
 
@@ -2262,18 +2331,6 @@ Indicates that the hub is disconnected.
 
 ---
 
-**`hubitat_device_programming_delay`**
-
-Access code has not yet been fully moved to the device.
-
----
-
-**`hubitat_no_free_positions_available`**
-
-No free positions available on the device.
-
----
-
 **`keynest_unsupported_third_party_locker`**
 
 KeyNest locker is not supported.
@@ -2313,6 +2370,12 @@ Indicates that device credentials are missing.
 **`no_space_for_access_code_on_device`**
 
 No space for access code on device.
+
+---
+
+**`replaced_by_newer_access_code`**
+
+This access code was overridden on the device by a newer access code programmed to the same slot.
 
 ---
 
@@ -2385,6 +2448,12 @@ August lock is temporarily offline.
 
 ---
 
+**`being_deleted`**
+
+Access code is being deleted.
+
+---
+
 **`code_modified_external_to_seam`**
 
 Code was modified or removed externally after Seam successfully set it on the device.
@@ -2451,6 +2520,12 @@ Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobil
 
 ---
 
+**`using_backup_access_code`**
+
+A backup access code has been pulled and is being used in place of this access code.
+
+---
+
 
 ## Events
 
@@ -2513,17 +2588,93 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <summary>Properties</summary>
 
+<strong><code>access_code_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the access code.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>access_code_id</code></strong> <i>UUID</i>
 
   ID of the affected access code.
+
+<strong><code>access_code_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the access code.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2533,9 +2684,47 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
   Custom metadata of the device, present when device_id is provided.
 
+<strong><code>device_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the device associated with the affected access code.
+
+<strong><code>device_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
