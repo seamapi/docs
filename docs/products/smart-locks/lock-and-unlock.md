@@ -12,7 +12,7 @@ When you send a command to a smart lock, it might take a while for Seam to confi
 
 To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
 
-For those who prefer using webhooks to verify the success of an action, we'll soon introduce events that confirm an action's success.
+Some providers and device models cannot confirm whether the physical lock or unlock happened in a reasonable time or at all. In those cases, a successful action attempt can still include `action_attempt.result.was_confirmed_by_device = false`.
 
 ***
 
@@ -401,7 +401,7 @@ device=$(
   }')
 
 # Confirm that the device can remotely unlock.
-if  $(jq -r '.device.can_remotely_lock' <<< ${device}); then \
+if  $(jq -r '.device.can_remotely_unlock' <<< ${device}); then \
   # Perform the unlock operation.
   curl -X 'POST' \
     'https://connect.getseam.com/locks/unlock_door' \
@@ -456,7 +456,9 @@ if (device.can_remotely_unlock) {
     status: 'success',
     action_attempt_id: '11111111-2222-3333-4444-555555555555',
     action_type: 'UNLOCK_DOOR',
-    result: {},
+    result: {
+      was_confirmed_by_device: false
+    },
     error: null
   }
 }
@@ -509,7 +511,9 @@ if ($device->can_remotely_unlock) {
   "action_attempt_id":"11111111-2222-3333-4444-555555555555",
   "action_type":"UNLOCK_DOOR",
   "error":null,
-  "result":{},
+  "result":{
+    "was_confirmed_by_device":false
+  },
   "status":"success"
 }
 ```
@@ -689,6 +693,10 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 
 Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 
+{% hint style="info" %}
+Some providers and device models do not confirm whether a lock or unlock completed on the physical device. In those cases, the action attempt can still succeed while `action_attempt.result.was_confirmed_by_device` is `false`. Use this property to set the right expectation in your UI, especially for unlock flows.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
@@ -703,7 +711,7 @@ seam.action_attempts.get(action_attempt_id="11111111-2222-3333-4444-555555555555
 ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
               action_type='LOCK_DOOR',
               status='success',
-              result={},
+              result={'was_confirmed_by_device': True},
               error=None)
 ```
 {% endtab %}
@@ -731,7 +739,9 @@ curl -X 'GET' \
     "status": "success",
     "action_attempt_id": "11111111-2222-3333-4444-555555555555",
     "action_type": "LOCK_DOOR",
-    "result": {},
+    "result": {
+      "was_confirmed_by_device": true
+    },
     "error": null
   },
   "ok": true
@@ -753,7 +763,9 @@ await seam.actionAttempts.get({action_attempt_id: "11111111-2222-3333-4444-55555
   status: 'success',
   action_attempt_id: '11111111-2222-3333-4444-555555555555',
   action_type: 'LOCK_DOOR',
-  result: {},
+  result: {
+    was_confirmed_by_device: true
+  },
   error: null
 }
 ```
@@ -773,7 +785,7 @@ client.action_attempts.get(action_attempt_id: "11111111-2222-3333-4444-555555555
   status="success"
   action_attempt_id="11111111-2222-3333-4444-555555555555"
   action_type="LOCK_DOOR"
-  result={}>
+  result={"was_confirmed_by_device"=>true}>
 ```
 {% endtab %}
 
@@ -791,7 +803,9 @@ $seam->action_attempts->get(action_attempt_id: "11111111-2222-3333-4444-55555555
   "action_attempt_id":"11111111-2222-3333-4444-555555555555",
   "action_type":"LOCK_DOOR",
   "error":null,
-  "result":{},
+  "result":{
+    "was_confirmed_by_device":true
+  },
   "status":"success"
 }
 ```
@@ -811,7 +825,9 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
   "status": "success",
   "action_type": "LOCK_DOOR",
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "result": {},
+  "result": {
+    "was_confirmed_by_device": true
+  },
   "error": null
 }
 ```
