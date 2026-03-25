@@ -1213,7 +1213,6 @@ Possible enum values:
 - <code>nuki_lock</code>
 - <code>salto_lock</code>
 - <code>schlage_lock</code>
-- <code>seam_relay</code>
 - <code>smartthings_lock</code>
 - <code>wyze_lock</code>
 - <code>yale_lock</code>
@@ -1221,7 +1220,6 @@ Possible enum values:
 - <code>controlbyweb_device</code>
 - <code>ttlock_lock</code>
 - <code>igloohome_lock</code>
-- <code>hubitat_lock</code>
 - <code>four_suites_door</code>
 - <code>dormakaba_oracode_door</code>
 - <code>tedee_lock</code>
@@ -1252,7 +1250,7 @@ Identifies the specific page of results to return, obtained from the previous pa
 
 **`search`** *String*
 
-String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id`, `display_name`, `custom_metadata` or `location.location_name`.
+String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.
 
 ---
 

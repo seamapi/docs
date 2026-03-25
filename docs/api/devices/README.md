@@ -324,6 +324,14 @@ A thermostat device resource.
 ---
 ## Properties
 
+**`can_configure_auto_lock`** *Boolean*
+
+
+
+
+
+---
+
 **`can_hvac_cool`** *Boolean*
 
 
@@ -543,7 +551,6 @@ Type of the device.
 - <code>nuki_lock</code>
 - <code>salto_lock</code>
 - <code>schlage_lock</code>
-- <code>seam_relay</code>
 - <code>smartthings_lock</code>
 - <code>wyze_lock</code>
 - <code>yale_lock</code>
@@ -551,7 +558,6 @@ Type of the device.
 - <code>controlbyweb_device</code>
 - <code>ttlock_lock</code>
 - <code>igloohome_lock</code>
-- <code>hubitat_lock</code>
 - <code>four_suites_door</code>
 - <code>dormakaba_oracode_door</code>
 - <code>tedee_lock</code>
@@ -569,6 +575,7 @@ Type of the device.
 - <code>smartthings_thermostat</code>
 - <code>ios_phone</code>
 - <code>android_phone</code>
+- <code>ring_camera</code>
 </details>
 
 
@@ -1802,6 +1809,38 @@ Indicates that Seam does not know the time zone of the Ultraloq device. Set a ti
   
 </details>
 <details>
+<summary><code>two_n_device_missing_timezone</code></summary>
+
+Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>two_n_device_missing_timezone</code>
+  
+  
+</details>
+<details>
 <summary><code>hub_required_for_additional_capabilities</code></summary>
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
@@ -1894,6 +1933,86 @@ Indicates that the accessory keypad exists, but is not linked to the Igloohome B
   Enum values:
   
   - <code>accessory_keypad_setup_required</code>
+  
+  
+</details>
+<details>
+<summary><code>unreliable_online_status</code></summary>
+
+Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>unreliable_online_status</code>
+  
+  
+</details>
+<details>
+<summary><code>max_access_codes_reached</code></summary>
+
+Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
+
+  **`active_access_code_count`** *Number*
+  
+  
+  Number of active access codes on the device when the warning was set.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`max_active_access_code_count`** *Number*
+  
+  
+  Maximum number of active access codes supported by the device.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>max_access_codes_reached</code>
   
   
 </details>
@@ -2241,7 +2360,7 @@ Metadata for a dormakaba Oracode device.
   ID of a user level for a dormakaba Oracode device.
 
 
-- <strong><code>ext_dormakaba_oracode_user_level_prefix</code></strong> <i>Number</i>
+- <strong><code>dormakaba_oracode_user_level_prefix</code></strong> <i>Number</i>
 
   Prefix for a user level for a dormakaba Oracode device.
 
@@ -2375,31 +2494,6 @@ Metadata for a Honeywell Resideo device.
   - <strong><code>honeywell_resideo_device_id</code></strong> <i>String</i>
   
     Device ID for a Honeywell Resideo device.
-
-</details>
-
----
-
-**`hubitat_metadata`** *Object*
-
-Metadata for a Hubitat device.
-
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>device_id</code></strong> <i>String</i>
-  
-    Device ID for a Hubitat device.
-
-  - <strong><code>device_label</code></strong> <i>String</i>
-  
-    Device label for a Hubitat device.
-
-  - <strong><code>device_name</code></strong> <i>String</i>
-  
-    Device name for a Hubitat device.
 
 </details>
 
@@ -2584,6 +2678,10 @@ Metadata for a Korelock device.
   - <strong><code>firmware_version</code></strong> <i>String</i>
   
     Firmware version for a Korelock device.
+
+  - <strong><code>location_id</code></strong> <i>String</i>
+  
+    Location ID for a Korelock device. Required for timebound access codes.
 
   - <strong><code>model_code</code></strong> <i>String</i>
   
@@ -2905,6 +3003,27 @@ Indicates whether the device is online.
 
 ---
 
+**`ring_metadata`** *Object*
+
+Metadata for a Ring device.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>device_id</code></strong> <i>String</i>
+  
+    Device ID for a Ring device.
+
+  - <strong><code>device_name</code></strong> <i>String</i>
+  
+    Device name for a Ring device.
+
+</details>
+
+---
+
 **`salto_ks_metadata`** *Object*
 
 Metadata for a Salto KS device.
@@ -2941,6 +3060,14 @@ Metadata for a Salto KS device.
   - <strong><code>model</code></strong> <i>String</i>
   
     Model for a Salto KS device.
+
+  - <strong><code>site_id</code></strong> <i>String</i>
+  
+    Site ID for the Salto KS site to which the device belongs.
+
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Site name for the Salto KS site to which the device belongs.
 
 </details>
 
@@ -2981,6 +3108,14 @@ Metada for a Salto device.
   - <strong><code>model</code></strong> <i>String</i>
   
     Model for a Salto device.
+
+  - <strong><code>site_id</code></strong> <i>String</i>
+  
+    Site ID for the Salto KS site to which the device belongs.
+
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Site name for the Salto KS site to which the device belongs.
 
 </details>
 
@@ -3075,6 +3210,10 @@ Metadata for a Sensi device.
   - <strong><code>device_name</code></strong> <i>String</i>
   
     Device name for a Sensi device.
+
+  - <strong><code>dual_setpoints_not_supported</code></strong> <i>Boolean</i>
+  
+    Set to true when the device does not support the /dual-setpoints API endpoint.
 
   - <strong><code>product_type</code></strong> <i>String</i>
   
@@ -3191,6 +3330,10 @@ Metadata for a TTLock device.
   - <strong><code>features</code></strong> <i>Object</i>
   
     Features for a TTLock device.
+
+  - <strong><code>features.auto_lock_time_config</code></strong> <i>Boolean</i>
+  
+    Indicates whether a TTLock device supports auto-lock time configuration.
 
   - <strong><code>features.incomplete_keyboard_passcode</code></strong> <i>Boolean</i>
   
@@ -3623,6 +3766,24 @@ Serial number of the device.
 ---
 
 ## Locks
+**`auto_lock_delay_seconds`** *Number*
+
+The delay in seconds before the lock automatically locks after being unlocked.
+
+
+
+
+---
+
+**`auto_lock_enabled`** *Boolean*
+
+Indicates whether automatic locking is enabled.
+
+
+
+
+---
+
 **`door_open`** *Boolean*
 
 Indicates whether the door is open.
@@ -4599,6 +4760,12 @@ Indicates that the gateway signal is weak.
 
 ---
 
+**`two_n_device_missing_timezone`**
+
+Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+
+---
+
 **`ultraloq_time_zone_unknown`**
 
 Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
@@ -4615,6 +4782,12 @@ Indicates that the Wyze Lock is not connected to a gateway.
 **`many_active_backup_codes`**
 
 Indicates that there are too many backup codes.
+
+---
+
+**`max_access_codes_reached`**
+
+Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
 
 ---
 
@@ -4667,6 +4840,12 @@ Indicates that the Remote Unlock feature is not enabled in the settings."
 
 ---
 
+**`unreliable_online_status`**
+
+Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
+
+---
+
 ### Phones
 **`unknown_issue_with_phone`**
 
@@ -4709,6 +4888,14 @@ A device provider resource.
 
 ---
 ## Properties
+
+**`can_configure_auto_lock`** *Boolean*
+
+
+
+
+
+---
 
 **`can_hvac_cool`** *Boolean*
 
@@ -4889,7 +5076,6 @@ A device provider resource.
 - <code>linear</code>
 - <code>noiseaware</code>
 - <code>nuki</code>
-- <code>seam_relay_admin</code>
 - <code>igloo</code>
 - <code>kwikset</code>
 - <code>minut</code>
@@ -4898,7 +5084,6 @@ A device provider resource.
 - <code>nest</code>
 - <code>igloohome</code>
 - <code>ecobee</code>
-- <code>hubitat</code>
 - <code>four_suites</code>
 - <code>dormakaba_oracode</code>
 - <code>pti</code>
@@ -4915,11 +5100,11 @@ A device provider resource.
 - <code>tado</code>
 - <code>salto_space</code>
 - <code>sensi</code>
-- <code>kwikset2</code>
 - <code>keynest</code>
 - <code>korelock</code>
 - <code>dormakaba_ambiance</code>
 - <code>ultraloq</code>
+- <code>ring</code>
 </details>
 
 
@@ -4972,6 +5157,10 @@ The status of a [device](../../core-concepts/devices/README.md) changed from off
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5018,6 +5207,10 @@ A [device](../../core-concepts/devices/README.md) was added to Seam or was re-ad
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -5066,6 +5259,10 @@ A managed device was successfully converted to an [unmanaged device](../../core-
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5105,21 +5302,101 @@ The status of a [device](../../core-concepts/devices/README.md) changed from onl
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
 
+<strong><code>device_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the affected device.
+
+<strong><code>device_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>error_code</code></strong> <i>Enum</i>
 
@@ -5171,6 +5448,10 @@ A [device](../../core-concepts/devices/README.md) detected that it was tampered 
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5221,6 +5502,10 @@ A [device](../../core-concepts/devices/README.md) battery level dropped below th
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -5285,6 +5570,10 @@ A [device](../../core-concepts/devices/README.md) battery status changed since t
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5331,6 +5620,10 @@ A [device](../../core-concepts/devices/README.md) was removed externally from th
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -5379,6 +5672,10 @@ A [device](../../core-concepts/devices/README.md) was deleted.
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5425,6 +5722,10 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is using a 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -5473,6 +5774,10 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is no longe
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5519,6 +5824,10 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -5567,6 +5876,10 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5606,21 +5919,101 @@ Seam detected a flaky [device](../../core-concepts/devices/README.md) connection
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
 
+<strong><code>device_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the affected device.
+
+<strong><code>device_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -5661,6 +6054,10 @@ Seam detected that a previously-flaky [device](../../core-concepts/devices/READM
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5700,21 +6097,101 @@ A third-party subscription is required to use all [device](../../core-concepts/d
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
 
+<strong><code>device_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the affected device.
+
+<strong><code>device_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -5754,6 +6231,10 @@ A third-party subscription is active or no longer required to use all [device](.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -5802,6 +6283,10 @@ An accessory keypad was connected to a [device](../../core-concepts/devices/READ
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5841,21 +6326,101 @@ An accessory keypad was disconnected from a [device](../../core-concepts/devices
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
 
+<strong><code>device_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>device_id</code></strong> <i>UUID</i>
 
   ID of the affected device.
+
+<strong><code>device_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the device.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -5896,6 +6461,10 @@ The name of a [device](../../core-concepts/devices/README.md) was changed.
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -5919,6 +6488,145 @@ The name of a [device](../../core-concepts/devices/README.md) was changed.
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`camera.activated`**
+
+A [camera](../../core-concepts/devices/README.md) was activated, for example, by motion detection.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>activation_reason</code></strong> <i>Enum</i>
+
+  The reason the camera was activated.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>motion_detected</code>
+</details>
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the affected device.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `camera.activated`
+
+<strong><code>image_url</code></strong> <i>String</i>
+
+  URL to a thumbnail image captured at the time of activation.
+
+<strong><code>motion_sub_type</code></strong> <i>Enum</i>
+
+  Sub-type of motion detected, if available.
+<details>
+    <summary>Enum values:</summary>
+
+    - <code>human</code>
+    - <code>vehicle</code>
+    - <code>package</code>
+    - <code>other</code>
+</details>
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>video_url</code></strong> <i>String</i>
+
+  URL to a short video clip captured at the time of activation.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`device.doorbell_rang`**
+
+A doorbell button was pressed on a [device](../../core-concepts/devices/README.md).
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the affected device.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `device.doorbell_rang`
+
+<strong><code>image_url</code></strong> <i>String</i>
+
+  URL to a thumbnail image captured at the time the doorbell was pressed.
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>video_url</code></strong> <i>String</i>
+
+  URL to a short video clip captured at the time the doorbell was pressed.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 

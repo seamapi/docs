@@ -778,6 +778,59 @@ Seam is in the process of pushing an access group membership update to the integ
   
   
 </details>
+<details>
+<summary><code>deferring_group_membership_update</code></summary>
+
+A scheduled access group membership change is pending for this user.
+
+  **`acs_access_group_id`** *UUID*
+  
+  
+  ID of the access group involved in the scheduled change.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that a scheduled access group membership change is pending for this user.
+  
+  Enum values:
+  
+  - <code>deferring_group_membership_update</code>
+  
+  
+  ---
+
+  **`variant`** *Enum*
+  
+  
+  Whether the user is scheduled to be added to or removed from the access group.
+  
+  Enum values:
+  
+  - <code>adding</code>
+  - <code>removing</code>
+  
+  
+</details>
 
 ---
 

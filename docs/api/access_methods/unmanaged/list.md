@@ -11,6 +11,7 @@ Lists all unmanaged access methods (where is_managed = false), usually filtered 
 <summary>Authentication Methods</summary>
 
 - API key
+- Client session token
 - Personal access token
   <br>Must also include the `seam-workspace` header in the request.
 

@@ -532,6 +532,38 @@ Indicates that the Connected Account requires reauthorization using a new Connec
   
   
 </details>
+<details>
+<summary><code>being_deleted</code></summary>
+
+Indicates that the connected account is currently being deleted. All devices, access codes, and other resources associated with this account are in the process of being removed from Seam.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>being_deleted</code>
+  
+  
+</details>
 
 ---
 
@@ -562,6 +594,12 @@ Indicates that the maximum number of users allowed for the site has been reached
 **`account_reauthorization_requested`**
 
 Indicates that the Connected Account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+
+---
+
+**`being_deleted`**
+
+Indicates that the connected account is currently being deleted. All devices, access codes, and other resources associated with this account are in the process of being removed from Seam.
 
 ---
 
@@ -735,9 +773,43 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 
   Errors associated with the connected account.
 
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -899,9 +971,47 @@ A [connected account](../../core-concepts/connected-accounts/README.md) requires
 
   Custom metadata of the connected account, present when connected_account_id is provided.
 
+<strong><code>connected_account_errors</code></strong> <i>List</i> <i>of Objects</i>
+
+  Errors associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the error.
+
+
+- <strong><code>error_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+
+<strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
+
+  Warnings associated with the connected account.
+
+- <strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which Seam created the warning.
+
+
+- <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+
+
+- <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 

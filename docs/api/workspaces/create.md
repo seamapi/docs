@@ -409,6 +409,12 @@ Indicates whether the new workspace is a [sandbox workspace](../../core-concepts
 
 ---
 
+**`organization_id`** *String*
+
+ID of the organization to associate with the new workspace.
+
+---
+
 **`webview_logo_shape`** *String*
 
 {% hint style="warning" %}

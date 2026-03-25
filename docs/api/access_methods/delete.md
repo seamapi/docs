@@ -139,9 +139,21 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_method_id`** *String* (Required)
+**`access_grant_id`** *String*
 
-ID of access method to get.
+ID of access grant whose access methods should be deleted.
+
+---
+
+**`access_method_id`** *String*
+
+ID of access method to delete.
+
+---
+
+**`reservation_key`** *String*
+
+Reservation key of the access grant whose access methods should be deleted.
 
 ---
 

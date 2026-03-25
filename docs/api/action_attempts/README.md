@@ -55,6 +55,7 @@ Type of the action attempt.
 - <code>SIMULATE_KEYPAD_CODE_ENTRY</code>
 - <code>SIMULATE_MANUAL_LOCK_VIA_KEYPAD</code>
 - <code>PUSH_THERMOSTAT_PROGRAMS</code>
+- <code>CONFIGURE_AUTO_LOCK</code>
 </details>
 
 
@@ -97,9 +98,17 @@ A lock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
 
   Type of the action.
 
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -140,9 +149,17 @@ A lock door [action attempt](../../core-concepts/action-attempts.md) failed.
 
   Type of the action.
 
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -183,9 +200,17 @@ An unlock door [action attempt](../../core-concepts/action-attempts.md) succeede
 
   Type of the action.
 
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -226,9 +251,17 @@ An unlock door [action attempt](../../core-concepts/action-attempts.md) failed.
 
   Type of the action.
 
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
 
 <strong><code>event_id</code></strong> <i>UUID</i>
 
@@ -237,6 +270,210 @@ An unlock door [action attempt](../../core-concepts/action-attempts.md) failed.
 <strong><code>event_type</code></strong> <i>Enum</i>
 
   Value: `action_attempt.unlock_door.failed`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`action_attempt.simulate_keypad_code_entry.succeeded`**
+
+A simulate keypad code entry [action attempt](../../core-concepts/action-attempts.md) succeeded.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.simulate_keypad_code_entry.succeeded`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`action_attempt.simulate_keypad_code_entry.failed`**
+
+A simulate keypad code entry [action attempt](../../core-concepts/action-attempts.md) failed.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.simulate_keypad_code_entry.failed`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`action_attempt.simulate_manual_lock_via_keypad.succeeded`**
+
+A simulate manual lock via keypad [action attempt](../../core-concepts/action-attempts.md) succeeded.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.simulate_manual_lock_via_keypad.succeeded`
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>status</code></strong> <i>String</i>
+
+  Status of the action.
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+</details>
+
+---
+
+**`action_attempt.simulate_manual_lock_via_keypad.failed`**
+
+A simulate manual lock via keypad [action attempt](../../core-concepts/action-attempts.md) failed.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
+
+  ID of the affected action attempt.
+
+<strong><code>action_type</code></strong> <i>String</i>
+
+  Type of the action.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the connected account associated with the action attempt, if applicable.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the action attempt, if applicable.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `action_attempt.simulate_manual_lock_via_keypad.failed`
 
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 

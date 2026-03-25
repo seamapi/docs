@@ -83,6 +83,14 @@ A lock device resource.
 ---
 ## Properties
 
+**`can_configure_auto_lock`** *Boolean*
+
+
+
+
+
+---
+
 **`can_hvac_cool`** *Boolean*
 
 
@@ -302,7 +310,6 @@ Type of the device.
 - <code>nuki_lock</code>
 - <code>salto_lock</code>
 - <code>schlage_lock</code>
-- <code>seam_relay</code>
 - <code>smartthings_lock</code>
 - <code>wyze_lock</code>
 - <code>yale_lock</code>
@@ -310,7 +317,6 @@ Type of the device.
 - <code>controlbyweb_device</code>
 - <code>ttlock_lock</code>
 - <code>igloohome_lock</code>
-- <code>hubitat_lock</code>
 - <code>four_suites_door</code>
 - <code>dormakaba_oracode_door</code>
 - <code>tedee_lock</code>
@@ -328,6 +334,7 @@ Type of the device.
 - <code>smartthings_thermostat</code>
 - <code>ios_phone</code>
 - <code>android_phone</code>
+- <code>ring_camera</code>
 </details>
 
 
@@ -1561,6 +1568,38 @@ Indicates that Seam does not know the time zone of the Ultraloq device. Set a ti
   
 </details>
 <details>
+<summary><code>two_n_device_missing_timezone</code></summary>
+
+Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>two_n_device_missing_timezone</code>
+  
+  
+</details>
+<details>
 <summary><code>hub_required_for_additional_capabilities</code></summary>
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
@@ -1653,6 +1692,86 @@ Indicates that the accessory keypad exists, but is not linked to the Igloohome B
   Enum values:
   
   - <code>accessory_keypad_setup_required</code>
+  
+  
+</details>
+<details>
+<summary><code>unreliable_online_status</code></summary>
+
+Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>unreliable_online_status</code>
+  
+  
+</details>
+<details>
+<summary><code>max_access_codes_reached</code></summary>
+
+Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
+
+  **`active_access_code_count`** *Number*
+  
+  
+  Number of active access codes on the device when the warning was set.
+  
+  
+  ---
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`max_active_access_code_count`** *Number*
+  
+  
+  Maximum number of active access codes supported by the device.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>max_access_codes_reached</code>
   
   
 </details>
@@ -1786,6 +1905,24 @@ Metadata for an August device.
     Model for an August device.
 
 </details>
+
+---
+
+**`auto_lock_delay_seconds`** *Number*
+
+The delay in seconds before the lock automatically locks after being unlocked.
+
+
+
+
+---
+
+**`auto_lock_enabled`** *Boolean*
+
+Indicates whether automatic locking is enabled.
+
+
+
 
 ---
 
@@ -1973,7 +2110,7 @@ Metadata for a dormakaba Oracode device.
   ID of a user level for a dormakaba Oracode device.
 
 
-- <strong><code>ext_dormakaba_oracode_user_level_prefix</code></strong> <i>Number</i>
+- <strong><code>dormakaba_oracode_user_level_prefix</code></strong> <i>Number</i>
 
   Prefix for a user level for a dormakaba Oracode device.
 
@@ -2116,31 +2253,6 @@ Metadata for a Honeywell Resideo device.
   - <strong><code>honeywell_resideo_device_id</code></strong> <i>String</i>
   
     Device ID for a Honeywell Resideo device.
-
-</details>
-
----
-
-**`hubitat_metadata`** *Object*
-
-Metadata for a Hubitat device.
-
-
-
-<details>
-  <summary>Child Properties</summary>
-
-  - <strong><code>device_id</code></strong> <i>String</i>
-  
-    Device ID for a Hubitat device.
-
-  - <strong><code>device_label</code></strong> <i>String</i>
-  
-    Device label for a Hubitat device.
-
-  - <strong><code>device_name</code></strong> <i>String</i>
-  
-    Device name for a Hubitat device.
 
 </details>
 
@@ -2342,6 +2454,10 @@ Metadata for a Korelock device.
   - <strong><code>firmware_version</code></strong> <i>String</i>
   
     Firmware version for a Korelock device.
+
+  - <strong><code>location_id</code></strong> <i>String</i>
+  
+    Location ID for a Korelock device. Required for timebound access codes.
 
   - <strong><code>model_code</code></strong> <i>String</i>
   
@@ -2705,6 +2821,27 @@ Indicates whether it is currently possible to use online access codes for the de
 
 ---
 
+**`ring_metadata`** *Object*
+
+Metadata for a Ring device.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>device_id</code></strong> <i>String</i>
+  
+    Device ID for a Ring device.
+
+  - <strong><code>device_name</code></strong> <i>String</i>
+  
+    Device name for a Ring device.
+
+</details>
+
+---
+
 **`salto_ks_metadata`** *Object*
 
 Metadata for a Salto KS device.
@@ -2741,6 +2878,14 @@ Metadata for a Salto KS device.
   - <strong><code>model</code></strong> <i>String</i>
   
     Model for a Salto KS device.
+
+  - <strong><code>site_id</code></strong> <i>String</i>
+  
+    Site ID for the Salto KS site to which the device belongs.
+
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Site name for the Salto KS site to which the device belongs.
 
 </details>
 
@@ -2781,6 +2926,14 @@ Metada for a Salto device.
   - <strong><code>model</code></strong> <i>String</i>
   
     Model for a Salto device.
+
+  - <strong><code>site_id</code></strong> <i>String</i>
+  
+    Site ID for the Salto KS site to which the device belongs.
+
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Site name for the Salto KS site to which the device belongs.
 
 </details>
 
@@ -2875,6 +3028,10 @@ Metadata for a Sensi device.
   - <strong><code>device_name</code></strong> <i>String</i>
   
     Device name for a Sensi device.
+
+  - <strong><code>dual_setpoints_not_supported</code></strong> <i>Boolean</i>
+  
+    Set to true when the device does not support the /dual-setpoints API endpoint.
 
   - <strong><code>product_type</code></strong> <i>String</i>
   
@@ -3031,6 +3188,10 @@ Metadata for a TTLock device.
   - <strong><code>features</code></strong> <i>Object</i>
   
     Features for a TTLock device.
+
+  - <strong><code>features.auto_lock_time_config</code></strong> <i>Boolean</i>
+  
+    Indicates whether a TTLock device supports auto-lock time configuration.
 
   - <strong><code>features.incomplete_keyboard_passcode</code></strong> <i>Boolean</i>
   
@@ -3330,6 +3491,12 @@ Indicates that there are too many backup codes.
 
 ---
 
+**`max_access_codes_reached`**
+
+Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
+
+---
+
 **`partial_backup_access_code_pool`**
 
 Indicates that the backup access code is unhealthy.
@@ -3384,9 +3551,21 @@ Indicates that the gateway signal is weak.
 
 ---
 
+**`two_n_device_missing_timezone`**
+
+Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+
+---
+
 **`ultraloq_time_zone_unknown`**
 
 Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
+
+---
+
+**`unreliable_online_status`**
+
+Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
 
 ---
 
@@ -3430,6 +3609,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event was created.
+
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
 
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
@@ -3521,6 +3704,10 @@ A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -3591,6 +3778,10 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 
   Date and time at which the event was created.
 
+<strong><code>customer_key</code></strong> <i>String</i>
+
+  The customer key associated with the device, if any.
+
 <strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the device, present when device_id is provided.
@@ -3619,6 +3810,11 @@ The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied acc
 ---
 
 ## Endpoints
+
+
+[**`/locks/configure_auto_lock`**](./configure_auto_lock.md)
+
+Configures the auto-lock setting for a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
 
 
 [**`/locks/get`**](./get.md)

@@ -5,7 +5,7 @@
 
 Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-Specify either `device_id` or `access_code_ids`.
+Specify `device_id`, `access_code_ids`, or `access_method_id`.
 
 
 {% tabs %}
@@ -295,7 +295,13 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_code_ids`** *Array* *of UUIDs*
 
-IDs of the access codes that you want to retrieve. Specify either `device_id` or `access_code_ids`.
+IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, or `access_method_id`.
+
+---
+
+**`access_method_id`** *String*
+
+ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.
 
 ---
 
@@ -307,7 +313,7 @@ Customer key for which you want to list access codes.
 
 **`device_id`** *String*
 
-ID of the device for which you want to list access codes. Specify either `device_id` or `access_code_ids`.
+ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.
 
 ---
 
@@ -320,6 +326,12 @@ Numerical limit on the number of access codes to return.
 **`page_cursor`** *String*
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
+**`search`** *String*
+
+String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.
 
 ---
 

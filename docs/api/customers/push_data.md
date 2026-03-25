@@ -733,6 +733,18 @@ Common area keys associated with the access grant.
 
 <details>
 
+<summary><b><code>custom_metadata</code></b> <i>Record</i></summary>
+
+Set key:value pairs for filtering reservations by custom criteria.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
 
 Ending date and time for the access grant.
