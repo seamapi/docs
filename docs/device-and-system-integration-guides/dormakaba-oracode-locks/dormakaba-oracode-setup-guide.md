@@ -32,3 +32,11 @@ To control Dormakaba Oracode devices using Seam, you must prompt the owners or m
 4. **Request activation from Seam**\
    Contact [support@getseam.com](mailto:support@getseam.com) to request approval and activation of your Dormakaba Oracode integration.
 
+***
+
+### **Fixing an incorrect time zone**
+
+If you connected a site with the wrong time zone:
+
+1. Start a new Connect Webview.
+2. Re-enter your username and site name, then select the correct time zone.
