@@ -393,13 +393,14 @@ Access methods that the user requested for the Access Grant.
 
 <strong><code>mode</code></strong> <i>Enum</i>
 
-  Access method mode. Supported values: `code`, `card`, `mobile_key`.
+  Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 <details>
     <summary>Enum values:</summary>
 
     - <code>code</code>
     - <code>card</code>
     - <code>mobile_key</code>
+    - <code>cloud_key</code>
 </details>
 
 </details>
