@@ -26,7 +26,7 @@ await seam.actionAttempts.get({
   "action_attempt_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
   "action_type": "UNLOCK_DOOR",
   "error": null,
-  "result": {},
+  "result": { "was_confirmed_by_device": false },
   "status": "success"
 }
 ```
@@ -56,7 +56,7 @@ EOF
     "action_attempt_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
     "action_type": "UNLOCK_DOOR",
     "error": null,
-    "result": {},
+    "result": { "was_confirmed_by_device": false },
     "status": "success"
   }
 }
@@ -80,7 +80,7 @@ ActionAttempt(
     action_attempt_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
     action_type="UNLOCK_DOOR",
     error=None,
-    result={},
+    result={"was_confirmed_by_device": false},
     status="success",
 )
 ```
@@ -104,6 +104,7 @@ seam.action_attempts.get(action_attempt_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0
   "action_type" => "UNLOCK_DOOR",
   "error" => nil,
   "result" => {
+    was_confirmed_by_device: false,
   },
   "status" => "success",
 }
@@ -129,7 +130,7 @@ $seam->action_attempts->get(
     "action_attempt_id" => "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
     "action_type" => "UNLOCK_DOOR",
     "error" => null,
-    "result" => [],
+    "result" => ["was_confirmed_by_device" => false],
     "status" => "success",
 ];
 ```
@@ -152,7 +153,7 @@ seam action-attempts get --action_attempt_id "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e
   "action_attempt_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
   "action_type": "UNLOCK_DOOR",
   "error": null,
-  "result": {},
+  "result": { "was_confirmed_by_device": false },
   "status": "success"
 }
 ```
