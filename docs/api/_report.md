@@ -23,6 +23,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/connector_customers`: No undocumented message provided
 - `/seam/customer/v1/connectors`: No undocumented message provided
+- `/seam/customer/v1/connectors/ical`: No undocumented message provided
 - `/seam/customer/v1/customers/automations`: No undocumented message provided
 - `/seam/customer/v1/customers`: No undocumented message provided
 - `/seam/customer/v1/encoders`: No undocumented message provided
@@ -123,6 +124,8 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/connectors/list`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/sync`: Only used internally.
 - `/seam/customer/v1/connectors/update`: Internal endpoint for Console.
+- `/seam/customer/v1/connectors/ical/generate-config`: Only used internally.
+- `/seam/customer/v1/connectors/ical/validate-config`: Only used internally.
 - `/seam/customer/v1/customers/automations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/customers/automations/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/customers/list`: Internal endpoint for Console.
@@ -131,6 +134,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/encoders/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/events/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/portals/get`: Internal endpoint for customer portals.
+- `/seam/customer/v1/portals/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/reservations/list_access_grants`: Internal endpoint for customer portals.
@@ -695,6 +699,8 @@ These items are deprecated.
 - `/seam/customer/v1/connectors/list`: `connectors`
 - `/seam/customer/v1/connectors/sync`: `connector_sync`
 - `/seam/customer/v1/connectors/update`: `connector`
+- `/seam/customer/v1/connectors/ical/generate-config`: `generated_config`
+- `/seam/customer/v1/connectors/ical/validate-config`: `validation_result`
 - `/seam/customer/v1/customers/automations/get`: `automation`
 - `/seam/customer/v1/portals/get`: `customer_portal`
 - `/seam/customer/v1/reservations/get`: `reservation`

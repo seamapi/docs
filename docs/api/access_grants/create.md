@@ -461,13 +461,14 @@ Maximum number of times the instant key can be used. Only applicable when mode i
 
 <summary><b><code>mode</code></b> <i>Enum</i></summary>
 
-Access method mode. Supported values: `code`, `card`, `mobile_key`.
+Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 
 Enum values:
 
 - <code>code</code>
 - <code>card</code>
 - <code>mobile_key</code>
+- <code>cloud_key</code>
 
 </details>
 

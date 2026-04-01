@@ -147,7 +147,7 @@ Indicates whether the ACS entrance can be unlocked with card credentials.
 
 **`can_unlock_with_cloud_key`** *Boolean*
 
-Indicates whether the ACS entrance can be remotely unlocked using a cloud_key credential.
+Indicates whether the ACS entrance can be unlocked with cloud key credentials.
 
 
 

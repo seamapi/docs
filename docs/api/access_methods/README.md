@@ -167,7 +167,7 @@ Date and time at which the access method was issued.
 
 **`mode`** *Enum*
 
-Access method mode. Supported values: `code`, `card`, `mobile_key`.
+Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 
 
 <details>
@@ -176,6 +176,7 @@ Access method mode. Supported values: `code`, `card`, `mobile_key`.
 - <code>code</code>
 - <code>card</code>
 - <code>mobile_key</code>
+- <code>cloud_key</code>
 </details>
 
 

@@ -1756,9 +1756,17 @@ Location information for the device.
   
     Name of the device location.
 
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
+    Time zone of the device location.
+
   - <strong><code>timezone</code></strong> <i>String</i>
   
     Time zone of the device location.
+  
+  {% hint style="warning" %}
+  **Deprecated**. Use `time_zone` instead.
+  {% endhint %}
 
 </details>
 
