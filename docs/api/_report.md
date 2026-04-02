@@ -17,6 +17,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/console/v1`: No undocumented message provided
 - `/seam/console/v1/timelines`: No undocumented message provided
+- `/seam/console/v1/workspace/feature_flags`: No undocumented message provided
 - `/seam/customer/v1/access_grants`: No undocumented message provided
 - `/seam/customer/v1/access_methods`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
@@ -109,6 +110,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
 - `/seam/console/v1/get_resource_locator`: Internal endpoint for Console
 - `/seam/console/v1/timelines/get`: Internal endpoint for Console
+- `/seam/console/v1/workspace/feature_flags/list`: Internal endpoint for Console
 - `/seam/customer/v1/access_grants/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/access_grants/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/access_methods/encode`: Internal endpoint for customer portals.
@@ -690,6 +692,7 @@ These items are deprecated.
 - `/customers/reservations/create_deep_link`: `deep_link`
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
 - `/seam/console/v1/timelines/get`: `timeline`
+- `/seam/console/v1/workspace/feature_flags/list`: `feature_flags`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/connector_customers/list`: `connector_customers`
 - `/seam/customer/v1/connectors/authorize`: `connector_authorize`
