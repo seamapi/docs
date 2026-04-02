@@ -4,7 +4,7 @@ description: Learn how to automate access and climate around reservations.
 
 # Reservation Automations
 
-Reservation Automations sync reservation and guest data with your access and climate systems. Instead of building custom workflows for check-in, mid-stay changes, and checkout, you send reservation data to Seam and device settings update automatically.&#x20;
+Reservation Automations sync reservation and guest data with your access and climate systems. Instead of building custom workflows for check-in, mid-stay changes, and checkout, you send reservation data to Seam and device settings update automatically.
 
 Built for short-term bookings—whether hotel stays, gym classes, coworking rooms, or event rentals—Reservation Automations ensure access and climate settings apply only during the reserved time.
 
@@ -46,7 +46,59 @@ Go to **Console** → **Developer** → **Automations** and turn on an Automatio
 
 ***
 
-### 2. Push reservation data
+### 2. Customize automation settings
+
+After enabling automations, you can configure how access credentials are issued for each reservation. These settings are available in **Console** > **Developer** > **Automations** under the access automation section.
+
+**Access methods**
+
+Choose which credential types to issue when a reservation is created. You must enable at least one.
+
+| Method           | Description                                   |
+| ---------------- | --------------------------------------------- |
+| **PIN code**     | A numeric code the guest enters on a keypad.  |
+| **Plastic card** | A physical card encoded for the lock.         |
+| **Mobile key**   | A digital key delivered to the guest's phone. |
+
+**Access method creation strategy**
+
+Controls how many access methods are created per device when multiple types are enabled:
+
+| Strategy                      | Behavior                                                |
+| ----------------------------- | ------------------------------------------------------- |
+| **First available** (default) | Creates only the first supported method on each device. |
+| **First two available**       | Creates up to two supported methods on each device.     |
+| **All available**             | Creates every supported method on each device.          |
+
+**Card count**
+
+The number of plastic cards to create per reservation. Only applies when the plastic card access method is enabled.
+
+**Instant key max use count**
+
+The maximum number of times a mobile key can be used. Only applies when the mobile key access method is enabled.
+
+**Use guest phone last 4 digits as code**
+
+When enabled, Seam will attempt to use the last 4 digits of the guest's phone number as the PIN code instead of generating a random one. The phone number is looked up from the user identity data you provide via `push_data`.
+
+PIN code priority:
+
+1. An explicit `preferred_code` on the reservation always takes precedence.
+2. If no `preferred_code` is set and this option is enabled, Seam uses the last 4 digits of the guest's phone number.
+3. If the phone number is unavailable or has fewer than 4 digits, Seam falls back to an auto-generated code.
+
+{% hint style="info" %}
+The derived code is a best-effort preference, not a guarantee. If the code conflicts with a device's PIN constraints (for example, the code is already in use on that lock) Seam assigns an auto-generated code for that device and adds a relevant warning to the access grant.
+{% endhint %}
+
+**Allow shared email and phone across guests**
+
+When enabled, multiple guests can share the same email address or phone number. This is useful when the same person has multiple reservations or holds different roles.
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-31 at 23.46.11.png" alt=""><figcaption></figcaption></figure>
+
+### 3. Push reservation data
 
 Use the `push_data` endpoint to send customer, user, and reservation data to Seam. Automations use this information to configure devices at the right times.
 
@@ -85,7 +137,7 @@ curl -X POST \
 
 ***
 
-### 3.  Use webhooks to listen for updates
+### 4. Use webhooks to listen for updates
 
 Configure webhooks in **Console** > **Developer** > **Webhooks** to get notified when automations apply or revoke settings.
 
@@ -99,7 +151,7 @@ Webhook payloads include the keys that triggered the event, letting you sync sta
 
 ***
 
-### 4. Delete data
+### 5. Delete data
 
 The `delete_data` endpoint is optional but important. Use it when access or device settings should no longer apply—such as when:
 

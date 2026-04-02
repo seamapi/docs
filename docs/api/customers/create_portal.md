@@ -1,433 +1,374 @@
 # Create Customer Portal
+
 {% hint style="info" %}
 **Early Access Preview.** The customers API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
 {% endhint %}
 
-- [Request Parameters](#request-parameters)
-- [Response](#response)
+* [Request Parameters](create_portal.md#request-parameters)
+* [Response](create_portal.md#response)
 
 Creates a new customer portal magic link with configurable features.
-
 
 <details>
 
 <summary>Authentication Methods</summary>
 
-- API key
-- Personal access token
-  <br>Must also include the `seam-workspace` header in the request.
+* API key
+* Personal access token\
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`customer_data`** *Object*
+**`customer_data`** _Object_
 
 <details>
 
-<summary><b><code>access_grants</code></b> <i>List</i></summary>
+<summary><code>access_grants</code> <em>List</em></summary>
 
 List of access grants.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>bookings</code></b> <i>List</i></summary>
+<summary><code>bookings</code> <em>List</em></summary>
 
 List of bookings.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>buildings</code></b> <i>List</i></summary>
+<summary><code>buildings</code> <em>List</em></summary>
 
 List of buildings.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>common_areas</code></b> <i>List</i></summary>
+<summary><code>common_areas</code> <em>List</em></summary>
 
 List of shared common areas.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>customer_key</code></b> <i>String</i></summary>
+<summary><code>customer_key</code> <em>String</em></summary>
 
 Your unique identifier for the customer.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>facilities</code></b> <i>List</i></summary>
+<summary><code>facilities</code> <em>List</em></summary>
 
 List of gym or fitness facilities.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>guests</code></b> <i>List</i></summary>
+<summary><code>guests</code> <em>List</em></summary>
 
 List of guests.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>listings</code></b> <i>List</i></summary>
+<summary><code>listings</code> <em>List</em></summary>
 
 List of property listings.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>properties</code></b> <i>List</i></summary>
+<summary><code>properties</code> <em>List</em></summary>
 
 List of short-term rental properties.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>property_listings</code></b> <i>List</i></summary>
+<summary><code>property_listings</code> <em>List</em></summary>
 
 List of property listings.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>reservations</code></b> <i>List</i></summary>
+<summary><code>reservations</code> <em>List</em></summary>
 
 List of reservations.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>residents</code></b> <i>List</i></summary>
+<summary><code>residents</code> <em>List</em></summary>
 
 List of residents.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>rooms</code></b> <i>List</i></summary>
+<summary><code>rooms</code> <em>List</em></summary>
 
 List of hotel or hospitality rooms.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>sites</code></b> <i>List</i></summary>
+<summary><code>sites</code> <em>List</em></summary>
 
 List of general sites or areas.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>spaces</code></b> <i>List</i></summary>
+<summary><code>spaces</code> <em>List</em></summary>
 
 List of general spaces or areas.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>staff_members</code></b> <i>List</i></summary>
+<summary><code>staff_members</code> <em>List</em></summary>
 
 List of staff members.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>tenants</code></b> <i>List</i></summary>
+<summary><code>tenants</code> <em>List</em></summary>
 
 List of tenants.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>units</code></b> <i>List</i></summary>
+<summary><code>units</code> <em>List</em></summary>
 
 List of multi-family residential units.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>user_identities</code></b> <i>List</i></summary>
+<summary><code>user_identities</code> <em>List</em></summary>
 
 List of user identities.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>users</code></b> <i>List</i></summary>
+<summary><code>users</code> <em>List</em></summary>
 
 List of users.
 
 </details>
 
----
+***
 
+**`customer_resources_filters`** _Array_ _of Objects_
 
-**`customer_resources_filters`** *Array* *of Objects*
-
-Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.
+Filter configuration for resources based on their custom\_metadata. Each filter specifies a field, operation, and value to match against resource custom\_metadata.
 
 <details>
 
-<summary><b><code>field</code></b> <i>String</i></summary>
+<summary><code>field</code> <em>String</em></summary>
 
-The custom_metadata field name to filter on.
+The custom\_metadata field name to filter on.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>operation</code></b> <i>Enum</i></summary>
+<summary><code>operation</code> <em>Enum</em></summary>
 
 The comparison operation. Currently only '=' is supported.
 
 Enum values:
 
-- <code>=</code>
+* `=`
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>value</code></b> <i>Object</i></summary>
+<summary><code>value</code> <em>Object</em></summary>
 
 The value to compare against.
 
 </details>
 
----
+***
 
-
-**`customization_profile_id`** *String*
+**`customization_profile_id`** _String_
 
 The ID of the customization profile to use for the portal.
 
----
+***
 
-**`exclude_locale_picker`** *Boolean*
+**`exclude_locale_picker`** _Boolean_
 
 Whether to exclude the option to select a locale within the portal UI.
 
----
+***
 
-**`features`** *Object*
+**`features`** _Object_
 
 <details>
 
-<summary><b><code>configure</code></b> <i>Object</i></summary>
+<summary><code>configure</code> <em>Object</em></summary>
 
 Configuration for the configure feature.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>connect</code></b> <i>Object</i></summary>
+<summary><code>connect</code> <em>Object</em></summary>
 
 Configuration for the connect accounts feature.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>manage</code></b> <i>Object</i></summary>
+<summary><code>manage</code> <em>Object</em></summary>
 
 Configuration for the manage feature.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>manage_devices</code></b> <i>Object</i></summary>
+<summary><code>manage_devices</code> <em>Object</em></summary>
 
-Configuration for the manage devices feature.
----
-deprecated: Use `manage` instead.
----
+### Configuration for the manage devices feature.
+
+### deprecated: Use `manage` instead.
 
 </details>
 
----
-
-
+***
 
 <details>
 
-<summary><b><code>organize</code></b> <i>Object</i></summary>
+<summary><code>organize</code> <em>Object</em></summary>
 
 Configuration for the organize feature.
 
 </details>
 
----
+***
 
-
-**`is_embedded`** *Boolean*
+**`is_embedded`** _Boolean_
 
 Whether the portal is embedded in another application.
 
----
+***
 
-**`landing_page`** *Object*
+**`landing_page`** _Object_
 
 Configuration for the landing page when the portal loads.
 
 <details>
 
-<summary><b><code>manage</code></b> <i>Object</i></summary>
+<summary><code>manage</code> <em>Object</em></summary>
+
+
 
 </details>
 
----
+***
 
-
-**`locale`** *String*
+**`locale`** _String_
 
 The locale to use for the portal.
 
----
+***
 
-**`navigation_mode`** *String*
+**`navigation_mode`** _String_
 
 Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.
 
----
-
+***
 
 ## Response
 
 {% hint style="success" %}
-Returns:
-**[magic\_link](./../unstable_partner/building_blocks)**
-
+Returns: [**magic\_link**](../unstable_partner/building_blocks/)
 {% endhint %}
-
 
 {% tabs %}
 {% tab title="JSON" %}
-
-
-
 ```json
 {
   "building_block_type": "connect_accounts",
