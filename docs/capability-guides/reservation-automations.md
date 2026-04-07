@@ -27,12 +27,12 @@ Reservation Automations follow the lifecycle of a reservation:
 Set up these resources in your Seam workspace:
 
 * [Customer](customer-portals/) – identify who the automation belongs to with a `customer_key`.
-* [Spaces](../core-concepts/mapping-your-resources-to-seam-resources.md) – represent the real-world units your customer manages (i.e. _Room 101_ in a hotel, _Studio 3_ in a gym). Each space must be created via [`/spaces/create`](../api/spaces/create.md) with a `space_key` and assigned `device_ids` **before** you call `push_data`. Reservations reference these spaces by `space_key`.
-* Devices or entrances – connect locks, thermostats, or other devices to each space (e.g., assign the lock in Room 101 to the _Room 101_ space).
+* [Spaces](../core-concepts/mapping-your-resources-to-seam-resources.md) – represent the real-world units your customer manages (i.e. _Room 101_ in a hotel, _Studio 3_ in a gym). Each space must be created via [`/spaces/create`](../api/spaces/create.md) with a `space_key` and assigned devices or entrances **before** you call `push_data`. Reservations reference these spaces by `space_key`.
+* Devices or entrances – connect locks, thermostats, or ACS entrances to each space (e.g., assign the lock in Room 101 to the _Room 101_ space). Use `device_ids` for smart locks and thermostats, or `acs_entrance_ids` for access control system entrances.
 * Unique user identity emails – each `user_identity` you push must have a unique `email_address`. If an email already exists from a previous call, the reservation is silently skipped.
 
 {% hint style="warning" %}
-`push_data` does **not** create spaces. If you reference a `space_key` that does not exist, the call returns `ok: true` but no access codes are generated. Always create spaces first using [`/spaces/create`](../api/spaces/create.md).
+Although `push_data` accepts a `spaces` array, it only creates a lightweight resource reference — it does **not** assign devices or entrances to the space. If you skip [`/spaces/create`](../api/spaces/create.md), the space will have no devices and automations will have nothing to configure. The call still returns `ok: true`, making this a silent failure. Always create spaces with device or entrance assignments first using `/spaces/create`.
 {% endhint %}
 
 {% hint style="success" %}
@@ -43,7 +43,7 @@ You can also let customers configure their own accounts, spaces, and devices wit
 
 ### 1. Create spaces with devices
 
-Before pushing reservation data, create a space for each bookable unit using the [`/spaces/create`](../api/spaces/create.md) endpoint. Each space must have a `space_key` (your identifier) and at least one assigned device.
+Before pushing reservation data, create a space for each bookable unit using the [`/spaces/create`](../api/spaces/create.md) endpoint. Each space must have a `space_key` (your identifier) and at least one assigned device or entrance.
 
 ```bash
 curl -X POST \
@@ -57,7 +57,9 @@ curl -X POST \
   }'
 ```
 
-The `space_key` is what you reference in `push_data` reservations. Without it, `push_data` cannot match reservations to devices.
+Use `device_ids` for smart locks and thermostats, or `acs_entrance_ids` for access control system entrances. You can include both if the space has multiple access points.
+
+The `space_key` is what you reference in `push_data` reservations. Without it, `push_data` cannot match reservations to the space.
 
 ***
 
@@ -97,7 +99,7 @@ curl -X POST \
 * Call it again with the same `reservation_key` to update times or other details—Seam automatically reconfigures the device settings.
 
 {% hint style="info" %}
-The `push_data` [API reference](../api/customers/push_data.md) also documents an `access_grants` parameter. Both `reservations` and `access_grants` work as top-level keys in the `push_data` payload and function equivalently for time-bound access.
+The `push_data` [API reference](../api/customers/push_data.md) also documents `access_grants` and `bookings` as alternative top-level keys. This guide uses `reservations`, which is the recommended key for short-term booking workflows. If you use `access_grants` instead, use `access_grant_keys` (not `reservation_keys`) when calling [`delete_data`](../api/customers/delete_data.md).
 {% endhint %}
 
 ***
@@ -152,8 +154,8 @@ curl -X POST \
 
 | Symptom | Cause | Fix |
 | ------- | ----- | --- |
-| No access code created | Space does not exist or is missing a `space_key` | Create the space via [`/spaces/create`](../api/spaces/create.md) with a `space_key` and `device_ids` before calling `push_data` |
-| No access code created | No devices assigned to the space | Add `device_ids` when creating the space, or update the space to include devices |
+| No access code created | Space does not exist or is missing a `space_key` | Create the space via [`/spaces/create`](../api/spaces/create.md) with a `space_key` and `device_ids` or `acs_entrance_ids` before calling `push_data` |
+| No access code created | No devices or entrances assigned to the space | Add `device_ids` or `acs_entrance_ids` when creating the space, or update the space to include them |
 | Reservation silently skipped | Duplicate `email_address` on a `user_identity` | Each user identity must have a unique email. Check **Console** → **Automation Runs** for `user_identity_email_or_phone_conflict` errors |
 | Automation did not run | Automations not enabled | Go to **Console** → **Developer** → **Automations** and verify automations are enabled for your workspace |
 
