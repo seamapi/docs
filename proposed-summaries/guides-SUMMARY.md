@@ -40,9 +40,47 @@
 - [Mapping Your Resources to Seam Resources](core-concepts/mapping-your-resources-to-seam-resources.md)
 - [Action Attempts](core-concepts/action-attempts.md)
 
-## Smart Locks
+## Connectors & Automations
 
-- [Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
+- [Connectors](capability-guides/device-and-system-capabilities.md)
+- [Customer Portals](capability-guides/customer-portals/README.md)
+  - [Customers](capability-guides/customer-portals/customers.md)
+  - [Preview the customer portal in Console](capability-guides/customer-portals/preview-the-customer-portal-in-console.md)
+  - [Integrate customer portal into your application](capability-guides/customer-portals/integrate-customer-portal-into-your-application.md)
+  - [Filtering Portal Resources by Custom Metadata](capability-guides/customer-portals/filtering-portal-resources-by-custom-metadata.md)
+- [Reservation Automations](capability-guides/reservation-automations.md)
+
+## Access Grants & Identity
+
+- [Access Grants](capability-guides/access-grants/README.md)
+  - [Access Grant Quick Start](capability-guides/access-grants/access-grant-quick-start.md)
+  - [Creating an Access Grant Using Entrances](capability-guides/access-grants/creating-an-access-grant-using-entrances.md)
+  - [Creating an Access Grant Using Spaces](capability-guides/access-grants/creating-an-access-grant-using-spaces.md)
+  - [Delivering Access Methods](capability-guides/access-grants/delivering-access-methods.md)
+  - [Reservation Access Grants](capability-guides/access-grants/reservation-access-grants.md)
+  - [Retrieving Access Grants and Access Methods](capability-guides/access-grants/retrieving-access-grants-and-access-methods.md)
+  - [Updating an Access Grant](capability-guides/access-grants/updating-an-access-grant.md)
+  - [Revoking an Access Method](capability-guides/access-grants/revoking-an-access-method.md)
+  - [Deleting an Access Grant](capability-guides/access-grants/deleting-an-access-grant.md)
+- [Instant Keys](capability-guides/instant-keys/README.md)
+  - [How Instant Keys Work](capability-guides/instant-keys/how-instant-keys-work.md)
+  - [Setting Up Your Site for Instant Keys](capability-guides/instant-keys/setting-up-your-site-for-instant-keys.md)
+  - [Using Access Grants to Issue Instant Keys](capability-guides/instant-keys/using-access-grants-to-issue-instant-keys.md)
+  - [Using Seam Console to Issue Instant Keys](capability-guides/instant-keys/using-seam-console-to-issue-instant-keys.md)
+  - [Delivering Instant Keys](capability-guides/instant-keys/delivering-instant-keys.md)
+- [Mobile Access](capability-guides/mobile-access/README.md)
+  - [Prepare your Workspace](capability-guides/mobile-access/mobile-access-setup.md)
+  - [Managing Mobile App User Accounts with User Identities](capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
+  - [Managing Phones for a User Identity](capability-guides/mobile-access/managing-phones-for-a-user-identity.md)
+  - [Issuing Mobile Credentials from an Access Control System](capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md)
+  - [Developing in a Sandbox Workspace](capability-guides/mobile-access/developing-in-a-sandbox-workspace.md)
+- [Integrating into Your Mobile Application](capability-guides/mobile-access/mobile-device-sdks/README.md)
+  - [Initializing the Seam Mobile SDK](capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk.md)
+  - [Handling System Permissions](capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions.md)
+  - [Using Unlock With Tap](capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap.md)
+
+## Device & System APIs
+
 - [Smart Locks](products/smart-locks/README.md)
   - [Locking and Unlocking Smart Locks](products/smart-locks/lock-and-unlock.md)
 - [Creating and Managing Access Codes](products/smart-locks/access-codes/README.md)
@@ -59,9 +97,6 @@
   - [Managing Offline Access Codes](products/smart-locks/access-codes/offline-access-codes.md)
   - [Creating and Updating Multiple Linked Access Codes](capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md)
   - [Migrating Existing Unmanaged Access Codes](products/smart-locks/access-codes/migrating-existing-access-codes.md)
-
-## Access Control Systems
-
 - [Access Control Systems](products/access-systems/README.md)
   - [PIN Code Quick Start](capability-guides/access-systems/acs-quick-starts/pin-code-quick-start.md)
   - [Encodable Key Card Quick Start](capability-guides/access-systems/acs-quick-starts/encodable-key-card-quick-start.md)
@@ -81,42 +116,11 @@
   - [Creating and Encoding Card-based Credentials](capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md)
   - [Creating and Encoding Card Access Methods](capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods.md)
   - [Scanning Encoded Cards](capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards.md)
+- [Seam Bridge](capability-guides/seam-bridge.md)
+  - [Seam Bridge Setup for Windows](capability-guides/seam-bridge/seam-bridge-setup-for-windows.md)
+  - [Seam Bridge Setup for macOS](capability-guides/seam-bridge/seam-bridge-setup-for-macos.md)
+  - [Seam Bridge Setup for Linux](capability-guides/seam-bridge/seam-bridge-setup-for-linux.md)
 - [Troubleshooting Your Access Control System](capability-guides/access-systems/troubleshooting-your-access-control-system.md)
-
-## Mobile Access
-
-- [Mobile Access](capability-guides/mobile-access/README.md)
-  - [Prepare your Workspace](capability-guides/mobile-access/mobile-access-setup.md)
-  - [Managing Mobile App User Accounts with User Identities](capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
-  - [Managing Phones for a User Identity](capability-guides/mobile-access/managing-phones-for-a-user-identity.md)
-  - [Issuing Mobile Credentials from an Access Control System](capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md)
-  - [Developing in a Sandbox Workspace](capability-guides/mobile-access/developing-in-a-sandbox-workspace.md)
-- [Integrating into Your Mobile Application](capability-guides/mobile-access/mobile-device-sdks/README.md)
-  - [Initializing the Seam Mobile SDK](capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk.md)
-  - [Handling System Permissions](capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions.md)
-  - [Using Unlock With Tap](capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap.md)
-
-## Access Grants & Instant Keys
-
-- [Access Grants](capability-guides/access-grants/README.md)
-  - [Access Grant Quick Start](capability-guides/access-grants/access-grant-quick-start.md)
-  - [Creating an Access Grant Using Entrances](capability-guides/access-grants/creating-an-access-grant-using-entrances.md)
-  - [Creating an Access Grant Using Spaces](capability-guides/access-grants/creating-an-access-grant-using-spaces.md)
-  - [Delivering Access Methods](capability-guides/access-grants/delivering-access-methods.md)
-  - [Reservation Access Grants](capability-guides/access-grants/reservation-access-grants.md)
-  - [Retrieving Access Grants and Access Methods](capability-guides/access-grants/retrieving-access-grants-and-access-methods.md)
-  - [Updating an Access Grant](capability-guides/access-grants/updating-an-access-grant.md)
-  - [Revoking an Access Method](capability-guides/access-grants/revoking-an-access-method.md)
-  - [Deleting an Access Grant](capability-guides/access-grants/deleting-an-access-grant.md)
-- [Instant Keys](capability-guides/instant-keys/README.md)
-  - [How Instant Keys Work](capability-guides/instant-keys/how-instant-keys-work.md)
-  - [Setting Up Your Site for Instant Keys](capability-guides/instant-keys/setting-up-your-site-for-instant-keys.md)
-  - [Using Access Grants to Issue Instant Keys](capability-guides/instant-keys/using-access-grants-to-issue-instant-keys.md)
-  - [Using Seam Console to Issue Instant Keys](capability-guides/instant-keys/using-seam-console-to-issue-instant-keys.md)
-  - [Delivering Instant Keys](capability-guides/instant-keys/delivering-instant-keys.md)
-
-## Thermostats & Sensors
-
 - [Thermostats](products/thermostats/README.md)
   - [Understanding Thermostat Concepts](capability-guides/thermostats/understanding-thermostat-concepts/README.md)
     - [HVAC Mode](capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md)
@@ -132,19 +136,6 @@
   - [Testing Your Thermostat App with Simulate Endpoints](capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints.md)
 - [Noise Sensors](products/noise-sensors/README.md)
   - [Configuring Noise Threshold Settings](products/noise-sensors/configure-noise-threshold-settings.md)
-
-## Platform Features
-
-- [Seam Bridge](capability-guides/seam-bridge.md)
-  - [Seam Bridge Setup for Windows](capability-guides/seam-bridge/seam-bridge-setup-for-windows.md)
-  - [Seam Bridge Setup for macOS](capability-guides/seam-bridge/seam-bridge-setup-for-macos.md)
-  - [Seam Bridge Setup for Linux](capability-guides/seam-bridge/seam-bridge-setup-for-linux.md)
-- [Customer Portals](capability-guides/customer-portals/README.md)
-  - [Customers](capability-guides/customer-portals/customers.md)
-  - [Preview the customer portal in Console](capability-guides/customer-portals/preview-the-customer-portal-in-console.md)
-  - [Integrate customer portal into your application](capability-guides/customer-portals/integrate-customer-portal-into-your-application.md)
-  - [Filtering Portal Resources by Custom Metadata](capability-guides/customer-portals/filtering-portal-resources-by-custom-metadata.md)
-- [Reservation Automations](capability-guides/reservation-automations.md)
 
 ## Developer Tools
 

@@ -26,6 +26,16 @@ See: [`proposed-summaries/guides-SUMMARY.md`](proposed-summaries/guides-SUMMARY.
 **Audience:** Developers learning Seam or implementing specific features.
 **Approx. pages:** ~120
 
+**Organized by product layer.** Seam Connect has 3 abstraction layers, and the Guides sidebar reflects this top-to-bottom:
+
+| Layer | Section | What it covers |
+|---|---|---|
+| 1 (highest) | **Connectors & Automations** | Connectors, Reservation Automations, Customer Portals |
+| 2 (middle) | **Access Grants & Identity** | Access Grants, Access Methods, Instant Keys, Spaces/Locations, User Identities, Mobile Access |
+| 3 (lowest) | **Device & System APIs** | Smart Locks (lock/unlock, access codes), Access Control Systems (users, credentials, encoders, Seam Bridge), Thermostats, Noise Sensors |
+
+A developer reading top-to-bottom moves from high-level orchestration down to direct device control. Cross-cutting concerns (Webhooks, CLI, rate limits) stay in Developer Tools.
+
 ### Section 2: API Reference
 
 Purely endpoint documentation. Developers come here to check parameters, response schemas, and code examples.
