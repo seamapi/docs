@@ -57,14 +57,14 @@ See: [`proposed-summaries/ui-components-SUMMARY.md`](proposed-summaries/ui-compo
 
 ## What Changes
 
-| Before | After |
-|---|---|
-| 1 sidebar, ~633 pages | 4 sidebars, ~30-240 pages each |
-| API Reference buried mid-sidebar | API Reference is its own top-level section |
+| Before                                                                      | After                                                                    |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 1 sidebar, ~633 pages                                                       | 4 sidebars, ~30-240 pages each                                           |
+| API Reference buried mid-sidebar                                            | API Reference is its own top-level section                               |
 | `device-guides/` + `device-and-system-integration-guides/` as separate dirs | Consolidated into one Integrations section, organized by device category |
-| Sandbox data under Developer Tools (40 entries) | Sandbox data lives alongside each manufacturer in Integrations |
-| UI Components mixed into main sidebar | Dedicated section for frontend developers |
-| Deep nesting (up to 7 levels) | Max 4 levels of nesting |
+| Sandbox data under Developer Tools (40 entries)                             | Sandbox data lives alongside each manufacturer in Integrations           |
+| UI Components mixed into main sidebar                                       | Dedicated section for frontend developers                                |
+| Deep nesting (up to 7 levels)                                               | Max 4 levels of nesting                                                  |
 
 ## What Doesn't Change
 
@@ -83,12 +83,12 @@ See: [`proposed-summaries/ui-components-SUMMARY.md`](proposed-summaries/ui-compo
 
 ## Trade-offs
 
-| Pro | Con |
-|---|---|
-| Each audience gets a focused sidebar | Requires Ultimate plan ($249/mo) |
-| Global search across all sections | Cross-section links use absolute URLs |
+| Pro                                            | Con                                               |
+| ---------------------------------------------- | ------------------------------------------------- |
+| Each audience gets a focused sidebar           | Requires Ultimate plan ($249/mo)                  |
+| Global search across all sections              | Cross-section links use absolute URLs             |
 | Manufacturer content consolidated in one place | ~200+ redirects needed for backward compatibility |
-| Room to grow without sidebar bloat | Initial migration effort |
+| Room to grow without sidebar bloat             | Initial migration effort                          |
 
 ## Open Questions
 
