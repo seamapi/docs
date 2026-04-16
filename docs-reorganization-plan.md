@@ -81,5 +81,5 @@ Per-manufacturer setup, configuration, getting started guides, and sandbox data 
 
 - [ ] Are we on GitBook Ultimate, or willing to upgrade?
 - [ ] Should Device Manufacturer Guidance (building Seam-compatible APIs) live in Integrations or in its own section?
-- [ ] Should UI Components live in Guides or Developer Reference?
+- [ ] SDKs and UI component libraries should have content in both Guides (setup, usage, tutorials) and Developer Reference (API surface, parameters, methods). Need to define the split for each.
 - [ ] Do we want to consolidate `products/` and `capability-guides/` file paths while we're at it?
