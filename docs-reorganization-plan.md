@@ -56,7 +56,7 @@ Per-manufacturer setup, configuration, getting started guides, and sandbox data 
 | Before                                                                      | After                                                                    |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | 1 sidebar, ~633 pages                                                       | 3 sidebars, focused by audience                                          |
-| API Reference buried mid-sidebar                                            | API Reference is its own top-level section                         |
+| API Reference buried mid-sidebar                                            | API Reference is its own top-level section                               |
 | `device-guides/` + `device-and-system-integration-guides/` as separate dirs | Consolidated into one Integrations section, organized by device category |
 | Sandbox data under Developer Tools (40 entries)                             | Sandbox data lives alongside each manufacturer in Integrations           |
 | Guides organized by abstraction layer                                       | Guides organized by product type (Access, Thermostats, Noise Sensors)    |
