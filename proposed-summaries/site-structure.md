@@ -46,7 +46,7 @@ Guides
 ├── Noise Sensors
 │   ├── Overview
 │   └── Configuring Noise Thresholds
-├── Connectors & Automations
+├── Connectors & Automations (TBD — location may change)
 │   ├── Connectors
 │   ├── Customer Portals (customers, preview, integrate, filtering)
 │   └── Reservation Automations
