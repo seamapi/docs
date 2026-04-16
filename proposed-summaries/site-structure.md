@@ -61,10 +61,10 @@ Guides
     └── Hospitality
 ```
 
-## Developer Reference
+## API Reference
 
 ```
-Developer Reference
+API Reference
 ├── Overview
 ├── Installation
 ├── Authentication

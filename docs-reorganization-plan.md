@@ -35,7 +35,7 @@ The default entry point. Conceptual docs and how-to guides for developers buildi
 
 Cross-product features (Connectors & Automations, Customer Portals, Reservation Automations) have their own section. Developer workflow tools (Webhooks, CLI, MCP, Mobile SDKs) live in Developer Tools. UI Components (Seam Components, Seam Mobile Components) are in their own section for now.
 
-### Section 2: Developer Reference
+### Section 2: API Reference
 
 Endpoint documentation, SDK installation, authentication, and API behavior reference. Endpoints mirror the Guides product structure (Access, Thermostats, Noise Sensors, Connectors & Automations).
 
@@ -56,7 +56,7 @@ Per-manufacturer setup, configuration, getting started guides, and sandbox data 
 | Before                                                                      | After                                                                    |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | 1 sidebar, ~633 pages                                                       | 3 sidebars, focused by audience                                          |
-| API Reference buried mid-sidebar                                            | Developer Reference is its own top-level section                         |
+| API Reference buried mid-sidebar                                            | API Reference is its own top-level section                         |
 | `device-guides/` + `device-and-system-integration-guides/` as separate dirs | Consolidated into one Integrations section, organized by device category |
 | Sandbox data under Developer Tools (40 entries)                             | Sandbox data lives alongside each manufacturer in Integrations           |
 | Guides organized by abstraction layer                                       | Guides organized by product type (Access, Thermostats, Noise Sensors)    |
@@ -81,5 +81,5 @@ Per-manufacturer setup, configuration, getting started guides, and sandbox data 
 
 - [ ] Are we on GitBook Ultimate, or willing to upgrade?
 - [ ] Should Device Manufacturer Guidance (building Seam-compatible APIs) live in Integrations or in its own section?
-- [ ] SDKs and UI component libraries should have content in both Guides (setup, usage, tutorials) and Developer Reference (API surface, parameters, methods). Need to define the split for each.
+- [ ] SDKs and UI component libraries should have content in both Guides (setup, usage, tutorials) and API Reference (API surface, parameters, methods). Need to define the split for each.
 - [ ] How do we maintain backward compatibility for existing page URLs during the migration? (redirects strategy TBD)
