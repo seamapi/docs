@@ -27,11 +27,11 @@ The default entry point. Conceptual docs and how-to guides for developers buildi
 
 **Organized by product type.** The Guides sidebar groups content by product vertical:
 
-| Product | What it covers |
-|---|---|
-| **Access** | Access Grants & Identity (high-level), Smart Locks & Access Codes (low-level), Access Control Systems (low-level) |
-| **Thermostats** | HVAC modes, climate presets, schedules, programs |
-| **Noise Sensors** | Noise threshold configuration |
+| Product           | What it covers                                                                                                    |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Access**        | Access Grants & Identity (high-level), Smart Locks & Access Codes (low-level), Access Control Systems (low-level) |
+| **Thermostats**   | HVAC modes, climate presets, schedules, programs                                                                  |
+| **Noise Sensors** | Noise threshold configuration                                                                                     |
 
 Cross-product features (Connectors & Automations, Customer Portals, Reservation Automations) have their own section. Developer workflow tools (Webhooks, CLI, MCP, Mobile SDKs) live in Developer Tools. UI Components (Seam Components, Seam Mobile Components) are in their own section for now.
 
