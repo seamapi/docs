@@ -54,8 +54,7 @@ Guides
 │   ├── Webhooks
 │   ├── Seam CLI
 │   ├── Seam MCP Server
-│   └── Mobile SDKs (Android, iOS)
-├── UI Components (TBD — guide content here, API reference content in Developer Reference)
+│   ├── Mobile SDKs (Android, iOS)
 │   ├── Seam Components (React, Angular, Vue)
 │   └── Seam Mobile Components (iOS)
 └── Industry Guides
