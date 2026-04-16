@@ -32,7 +32,7 @@ Guides
 │       ├── Retrieving Entrance Details
 │       ├── Card Encoders & Scanners
 │       ├── Mobile Access (setup, phones, issuing credentials, mobile SDKs)
-│       ├── Seam Bridge (Windows, macOS, Linux)
+│       ├── Seam Bridge (Windows, macOS, Linux) (TBD — may move closer to Connected Accounts)
 │       └── Troubleshooting
 ├── Thermostats
 │   ├── Concepts (HVAC modes, set points)
