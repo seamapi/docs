@@ -64,7 +64,7 @@ Brand Guides
 │   ├── Latch (setup + sandbox)
 │   ├── Salto KS (setup + sandbox)
 │   ├── Salto ProAccess Space (setup + sandbox)
-│   └── ... 
+│   └── ...
 ├── Thermostats
 │   ├── ecobee (setup + sandbox)
 │   ├── Google Nest (setup + sandbox)
