@@ -65,6 +65,8 @@ Pages that will need link updates:
 - Brand Guides link back to Capability Guides (e.g., "see the Access Codes guide")
 - API Reference links to Guides for conceptual context
 
+**Mitigating URL sprawl:** GitBook has no variable/macro support for URLs. However, ~638 of the existing `docs.seam.co` references are in auto-generated API pages — the codegen's `postprocess.ts` already rewrites URLs and can read the base URL from a config value (e.g., in `paths.yaml` or an env var). Hand-written guide pages rarely link to other sections, so the volume of hardcoded absolute URLs in manually maintained files is small.
+
 ### 3. Codegen pipeline needs updating
 
 The current codegen (`npm run generate` → `codegen/smith.ts`) assumes a single `docs/` root:
