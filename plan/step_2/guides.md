@@ -1,6 +1,58 @@
-# Proposed Site Structure
+# Step 2: Guides Reorganization
 
-## Guides
+## Before (current structure after step 1)
+
+```
+Guides
+├── Seam Documentation
+├── Quick Start
+├── Go Live
+├── Core Concepts
+│   ├── Overview
+│   ├── Seam Console
+│   ├── Workspaces
+│   ├── Authentication
+│   ├── Connect Webviews
+│   ├── Devices
+│   ├── Providers
+│   ├── Connected Accounts
+│   ├── Mapping Resources
+│   └── Action Attempts
+├── Capability Guides
+│   ├── Device and System Capabilities
+│   ├── Smart Locks
+│   │   ├── Locking and Unlocking
+│   │   └── Access Codes (create, retrieve, modify, delete, lifecycle, ...)
+│   ├── Access Control Systems
+│   │   ├── Quick Starts (PIN, Key Card, Mobile Key)
+│   │   ├── Connect an ACS to Seam
+│   │   ├── Managing ACS Users
+│   │   ├── Managing Credentials
+│   │   ├── Card Encoders & Scanners
+│   │   └── Troubleshooting
+│   ├── Mobile Access
+│   ├── Access Grants
+│   ├── Instant Keys
+│   ├── Thermostats
+│   ├── Noise Sensors
+│   ├── Seam Bridge
+│   ├── Customer Portals
+│   └── Reservation Automations
+├── UI Components
+│   ├── Seam Components (React, Angular, Vue)
+│   └── Seam Mobile Components (iOS)
+├── Developer Tools
+│   ├── Webhooks
+│   ├── Seam CLI
+│   ├── Seam MCP Server
+│   ├── Rate Limits
+│   ├── Mobile SDKs (Android, iOS)
+│   └── Sandbox Devices and Systems (40 entries)
+└── Industry Guides
+    └── Hospitality
+```
+
+## After (proposed)
 
 ```
 Guides
@@ -61,57 +113,13 @@ Guides
     └── Hospitality
 ```
 
-## API Reference
+## Key changes
 
-```
-API Reference
-├── Overview
-├── Installation
-├── Authentication
-├── Pagination
-├── Rate Limits
-├── Access
-│   ├── Access Grants & Identity
-│   │   ├── Access Grants (+ unmanaged)
-│   │   ├── Access Methods (+ unmanaged)
-│   │   ├── User Identities (+ unmanaged)
-│   │   └── Instant Keys
-│   ├── Smart Locks
-│   │   ├── Access Codes (+ simulations, unmanaged)
-│   │   └── Locks (+ simulations)
-│   └── Access Control Systems
-│       ├── Systems
-│       ├── Access Groups
-│       ├── Users
-│       ├── Credentials
-│       ├── Encoders (+ simulations)
-│       └── Entrances
-├── Thermostats
-│   └── Thermostats (+ daily programs, schedules, simulations)
-├── Noise Sensors
-│   └── Noise Sensors (+ noise thresholds, simulations)
-├── Connectors & Automations
-│   ├── Customers
-│   └── Spaces
-└── Platform (TBD)
-    ├── Action Attempts
-    ├── Client Sessions
-    ├── Connect Webviews
-    ├── Connected Accounts (+ simulate)
-    ├── Devices (+ simulations, unmanaged)
-    ├── Events
-    ├── Phones (+ simulations)
-    ├── Webhooks
-    └── Workspaces
-```
-
-## Integrations
-
-```
-Integrations
-├── Smart Locks (each with setup + sandbox)
-├── Access Control Systems (each with setup + sandbox)
-├── Thermostats (each with setup + sandbox)
-├── Other Devices & Systems
-└── Device Manufacturer Guidance
-```
+- **Capability Guides** is replaced by product-type sections: **Access**, **Thermostats**, **Noise Sensors**
+- Access is split into two tiers: **Access Grants & Identity** (high-level) and **Smart Locks / ACS** (low-level)
+- Mobile Access moves under ACS (low-level device credentials)
+- User Identities moves up to Access Grants & Identity (high-level)
+- Seam Bridge moves under ACS
+- UI Components moves under Developer Tools
+- Rate Limits and Sandbox data removed (Rate Limits → API Reference, Sandbox → Brand Guides)
+- Connectors & Automations becomes its own section (cross-product)

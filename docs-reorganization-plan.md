@@ -17,7 +17,7 @@ Split the documentation into **3 GitBook site sections**, each backed by its own
 
 > **Requirement:** GitBook Ultimate plan ($249/site/mo) is needed for site sections.
 
-See: [`proposed-summaries/site-structure.md`](proposed-summaries/site-structure.md) for the full proposed sidebar tree.
+See: [`plan/`](plan/) for the full proposed sidebar trees (step 1: sectioning, step 2: reorganization).
 
 ### Section 1: Guides (main landing space)
 
