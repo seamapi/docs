@@ -60,6 +60,7 @@ This means files must physically move into separate directories — even for ste
 Within a GitBook space, links use relative markdown paths. Between spaces, links must use absolute URLs (e.g., `https://docs.seam.co/api-reference/access_codes/create`). GitBook's broken link detection does not work across spaces.
 
 Pages that will need link updates:
+
 - Guides link heavily to API Reference endpoints (e.g., "see the `access_codes.create` endpoint")
 - Brand Guides link back to Capability Guides (e.g., "see the Access Codes guide")
 - API Reference links to Guides for conceptual context
@@ -67,11 +68,13 @@ Pages that will need link updates:
 ### 3. Codegen pipeline needs updating
 
 The current codegen (`npm run generate` → `codegen/smith.ts`) assumes a single `docs/` root:
+
 - `summary.ts` splices generated API content into the single SUMMARY.md between anchors (`[Pagination]` and `## Developer Tools`)
 - `postprocess.ts` converts absolute URLs to relative paths (assumes single-space structure)
 - Generated files are written to `docs/api/`
 
 For step 1, the codegen needs to:
+
 - Write API files to `api-reference/` instead of `docs/api/`
 - Generate a standalone SUMMARY.md for the API Reference space
 - Update `postprocess.ts` to handle cross-space links (keep absolute URLs for links to Guides/Brand Guides)
@@ -81,6 +84,7 @@ For step 1, the codegen needs to:
 GitBook spaces cannot share assets. Currently all images live in `docs/.gitbook/assets/` and reusable snippets in `docs/.gitbook/includes/`. Each space would need its own copy of any shared assets.
 
 Options:
+
 - Duplicate assets into each space that uses them
 - Use a build step to copy shared assets into each space directory
 - Audit which assets are used by which section and split accordingly
@@ -92,6 +96,7 @@ Sandbox pages are currently scattered across `device-guides/sandbox-and-sample-d
 ### 6. Files referenced across sections
 
 Some files currently live in one directory but are listed in a different sidebar section:
+
 - `device-guides/reconnecting-an-account.md` is listed under Core Concepts > Connected Accounts
 - `device-guides/rate-limits-and-guardrails.md` is listed under Developer Tools
 - Various `products/` files appear in Capability Guides
