@@ -1,0 +1,5 @@
+---
+root: ./
+structure:
+  readme: api/README.md
+  summary: SUMMARY.md
