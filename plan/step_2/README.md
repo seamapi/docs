@@ -3,6 +3,7 @@
 After step 1 splits the docs into 3 GitBook site sections, step 2 reorganizes the sidebar structure within each section.
 
 See the before/after trees for each section:
+
 - [Guides](guides.md)
 - [API Reference](api-reference.md)
 - [Brand Guides](brand-guides.md)
