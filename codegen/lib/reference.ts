@@ -3,6 +3,7 @@ import type Metalsmith from 'metalsmith'
 
 import { toCapitalCase } from 'lib/handlebars/helpers.js'
 
+import { apiReferenceRoot } from './config.js'
 import {
   type ApiEndpointLayoutContext,
   type ApiNamespaceLayoutContext,
@@ -27,7 +28,7 @@ type File = ApiEndpointLayoutContext &
   ApiNamespaceLayoutContext &
   ApiSummaryLayoutContext & { layout: string }
 
-const rootPath = 'api-reference'
+const rootPath = apiReferenceRoot
 const indexFile = 'README.md'
 
 export const reference = (

@@ -12,6 +12,8 @@ import type {
 import { openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
+import { apiReferenceRoot } from './config.js'
+
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
 const defaultUndocumentedMessage = 'No undocumented message provided'
@@ -75,13 +77,13 @@ export const report = (
 
   const reportData = generateReport(metadata)
 
-  files['api-reference/_report.md'] = {
+  files[`${apiReferenceRoot}/_report.md`] = {
     contents: Buffer.from('\n'),
     layout: 'report.hbs',
     ...reportData,
   }
 
-  files['api-reference/_blueprint.json'] = {
+  files[`${apiReferenceRoot}/_blueprint.json`] = {
     contents: Buffer.from(JSON.stringify(metadata.blueprint, null, 2)),
     layout: 'default.hbs',
   }
