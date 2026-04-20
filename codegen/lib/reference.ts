@@ -3,6 +3,7 @@ import type Metalsmith from 'metalsmith'
 
 import { toCapitalCase } from 'lib/handlebars/helpers.js'
 
+import { apiReferenceRoot } from './config.js'
 import {
   type ApiEndpointLayoutContext,
   type ApiNamespaceLayoutContext,
@@ -15,7 +16,6 @@ import {
   type ApiSummaryLayoutContext,
   setSummaryLayoutContext,
 } from './layout/summary.js'
-import { apiReferenceRoot } from './config.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
 interface Metadata {
