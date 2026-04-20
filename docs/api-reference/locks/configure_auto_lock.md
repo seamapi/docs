@@ -1,0 +1,49 @@
+# Configure Auto-Lock
+
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+
+Configures the auto-lock setting for a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
+
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+</details>
+
+## Request Parameters
+
+**`auto_lock_enabled`** *Boolean* (Required)
+
+Whether to enable or disable auto-lock.
+
+---
+
+**`device_id`** *String* (Required)
+
+ID of the lock for which you want to configure the auto-lock.
+
+---
+
+**`auto_lock_delay_seconds`** *Number*
+
+Delay in seconds before the lock automatically locks. Required when enabling auto-lock. Must be between 1 and 60.
+
+---
+
+
+## Response
+
+{% hint style="success" %}
+Returns:
+**[action\_attempt](./)**
+
+{% endhint %}
+
