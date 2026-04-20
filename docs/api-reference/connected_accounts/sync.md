@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Request a [connected account](../../core-concepts/connected-accounts/README.md) sync attempt for the specified `connected_account_id`.
+Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified `connected_account_id`.
 
 
 {% tabs %}

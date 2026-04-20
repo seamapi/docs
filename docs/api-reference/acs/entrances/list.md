@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [access system entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a list of all [access system entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 {% tabs %}

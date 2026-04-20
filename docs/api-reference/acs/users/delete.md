@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).
 
 
 {% tabs %}

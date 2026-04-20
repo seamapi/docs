@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes a specified [Instant Key](../../capability-guides/instant-keys/README.md).
+Deletes a specified [Instant Key](https://docs.seam.co/latest/capability-guides/instant-keys).
 
 
 <details>

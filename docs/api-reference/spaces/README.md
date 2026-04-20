@@ -97,7 +97,7 @@ Unique key for the space within the workspace.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the space.
+ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the space.
 
 
 
@@ -151,7 +151,7 @@ A device was added or removed from a space.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -200,7 +200,7 @@ A space was created.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -249,7 +249,7 @@ A space was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -259,7 +259,7 @@ A space was deleted.
 
 [**`/spaces/add_acs_entrances`**](./add_acs_entrances.md)
 
-Adds [entrances](../../capability-guides/access-systems/retrieving-entrance-details.md) to a specific space.
+Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific space.
 
 
 [**`/spaces/add_devices`**](./add_devices.md)
@@ -294,7 +294,7 @@ Returns a list of all spaces.
 
 [**`/spaces/remove_acs_entrances`**](./remove_acs_entrances.md)
 
-Removes [entrances](../../capability-guides/access-systems/retrieving-entrance-details.md) from a specific space.
+Removes [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) from a specific space.
 
 
 [**`/spaces/remove_devices`**](./remove_devices.md)

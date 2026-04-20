@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [Connect Webview](../../core-concepts/connect-webviews/README.md).
+Returns a specified [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 Unless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.
 

@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a specified [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Returns a specified [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 {% tabs %}

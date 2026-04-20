@@ -9,7 +9,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a [connected account](../../core-concepts/connected-accounts/README.md). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
+Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
 
 {% tabs %}
 {% tab title="Connected Account" %}
@@ -72,7 +72,7 @@ Display name for the connected account type.
 
 **`automatically_manage_new_devices`** *Boolean*
 
-Indicates whether Seam should [import all new devices](../../core-concepts/connect-webviews/customizing-connect-webviews.md#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.
+Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.
 
 
 
@@ -99,7 +99,7 @@ Date and time at which the connected account was created.
 
 **`custom_metadata`** *Record*
 
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), [connected account](../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md), or [device](../../core-concepts/devices/adding-custom-metadata-to-a-device.md), enables you to store custom information, like customer details or internal IDs from your application.
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 
 
 
@@ -162,7 +162,7 @@ Indicates that the account is disconnected.
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
   
   
   ---
@@ -185,7 +185,7 @@ Indicates that the account is disconnected.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -210,7 +210,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
   
   
   ---
@@ -258,7 +258,7 @@ Indicates that the maximum number of users allowed for the site has been reached
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
   
   
   ---
@@ -578,7 +578,7 @@ Indicates that the account is disconnected.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -626,7 +626,7 @@ Indicates that an unknown issue occurred while syncing the state of the connecte
 
 **`connected_account.connected`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) was connected for the first time or was reconnected after being disconnected.
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.
 
 <details>
 
@@ -634,7 +634,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
+  ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -642,7 +642,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -666,14 +666,14 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was conn
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connected_account.created`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) was created.
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was created.
 
 <details>
 
@@ -681,7 +681,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was crea
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
+  ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -689,7 +689,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was crea
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -709,14 +709,14 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was crea
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connected_account.successful_login`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
 
 <details>
 
@@ -724,7 +724,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) had a su
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the [Connect Webview](../../core-concepts/connect-webviews/README.md) associated with the event.
+  ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the event.
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -732,7 +732,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) had a su
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -752,14 +752,14 @@ A [connected account](../../core-concepts/connected-accounts/README.md) had a su
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connected_account.disconnected`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) was disconnected.
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was disconnected.
 
 <details>
 
@@ -790,7 +790,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -829,14 +829,14 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was disc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connected_account.completed_first_sync`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) completed the first sync with Seam, and the corresponding devices or systems are now available.
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.
 
 <details>
 
@@ -848,7 +848,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -868,14 +868,14 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connected_account.deleted`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) was deleted.
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.
 
 <details>
 
@@ -887,7 +887,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>connected_account_type</code></strong> <i>String</i>
 
@@ -915,14 +915,14 @@ A [connected account](../../core-concepts/connected-accounts/README.md) was dele
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connected_account.completed_first_sync_after_reconnection`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
 
 <details>
 
@@ -934,7 +934,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -954,14 +954,14 @@ A [connected account](../../core-concepts/connected-accounts/README.md) complete
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connected_account.reauthorization_requested`**
 
-A [connected account](../../core-concepts/connected-accounts/README.md) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
 
 <details>
 
@@ -992,7 +992,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) requires
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](../../core-concepts/connected-accounts/README.md).
+  ID of the affected [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -1031,7 +1031,7 @@ A [connected account](../../core-concepts/connected-accounts/README.md) requires
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -1041,26 +1041,26 @@ A [connected account](../../core-concepts/connected-accounts/README.md) requires
 
 [**`/connected_accounts/delete`**](./delete.md)
 
-Deletes a specified [connected account](../../core-concepts/connected-accounts/README.md).
+Deletes a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 
 [**`/connected_accounts/get`**](./get.md)
 
-Returns a specified [connected account](../../core-concepts/connected-accounts/README.md).
+Returns a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 
 [**`/connected_accounts/list`**](./list.md)
 
-Returns a list of all [connected accounts](../../core-concepts/connected-accounts/README.md).
+Returns a list of all [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 
 [**`/connected_accounts/sync`**](./sync.md)
 
-Request a [connected account](../../core-concepts/connected-accounts/README.md) sync attempt for the specified `connected_account_id`.
+Request a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) sync attempt for the specified `connected_account_id`.
 
 
 [**`/connected_accounts/update`**](./update.md)
 
-Updates a [connected account](../../core-concepts/connected-accounts/README.md).
+Updates a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 

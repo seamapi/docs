@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [devices](../../core-concepts/devices/README.md).
+Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices).
 
 
 {% tabs %}
@@ -1177,7 +1177,7 @@ Timestamp by which to limit returned devices. Returns devices created before thi
 
 **`custom_metadata_has`** *Object*
 
-Set of key:value [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) pairs for which you want to list devices.
+Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.
 
 ---
 

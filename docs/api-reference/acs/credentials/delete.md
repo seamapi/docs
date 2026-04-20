@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes a specified [credential](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).
 
 
 {% tabs %}

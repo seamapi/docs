@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [connected accounts](../../core-concepts/connected-accounts/README.md).
+Returns a list of all [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 
 {% tabs %}

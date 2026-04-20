@@ -3,9 +3,9 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Updates a specified [device](../../core-concepts/devices/README.md).
+Updates a specified [device](https://docs.seam.co/latest/core-concepts/devices).
 
-You can add or change [custom metadata](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) for a device, change the device's name, or [convert a managed device to unmanaged](../../core-concepts/devices/managed-and-unmanaged-devices.md).
+You can add or change [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for a device, change the device's name, or [convert a managed device to unmanaged](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
 
 
 {% tabs %}
@@ -169,7 +169,7 @@ ID of the device that you want to update.
 
 **`custom_metadata`** *Object*
 
-Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a device](../../core-concepts/devices/adding-custom-metadata-to-a-device.md) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter devices by the desired metadata](../../core-concepts/devices/filtering-devices-by-custom-metadata.md).
+Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter devices by the desired metadata](https://docs.seam.co/latest/core-concepts/devices/filtering-devices-by-custom-metadata).
 
 ---
 

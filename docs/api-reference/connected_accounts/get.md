@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a specified [connected account](../../core-concepts/connected-accounts/README.md).
+Returns a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 
 {% tabs %}

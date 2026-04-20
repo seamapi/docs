@@ -6,7 +6,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that activates a configured [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
+Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
 
 {% tabs %}
 {% tab title="Thermostat Schedule" %}
@@ -36,7 +36,7 @@ A thermostat schedule resource.
 
 **`climate_preset_key`** *String*
 
-Key of the [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 
 
@@ -45,7 +45,7 @@ Key of the [climate preset](../../../capability-guides/thermostats/creating-and-
 
 **`created_at`** *Datetime*
 
-Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
+Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
 
 
 
@@ -63,7 +63,7 @@ ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/the
 
 **`ends_at`** *Datetime*
 
-Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 
@@ -72,7 +72,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 **`errors`** *List* *of Objects*
 
-Errors associated with the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 
 
@@ -92,7 +92,7 @@ Errors associated with the [thermostat schedule](../../../capability-guides/ther
 
 **`is_override_allowed`** *Boolean*
 
-Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts.
+Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
 
 
 
@@ -101,7 +101,7 @@ Indicates whether a person at the thermostat can change the thermostat's setting
 
 **`max_override_period_minutes`** *Number*
 
-Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
 
 
@@ -110,7 +110,7 @@ Number of minutes for which a person at the thermostat can change the thermostat
 
 **`name`** *String*
 
-User-friendly name to identify the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 
 
@@ -119,7 +119,7 @@ User-friendly name to identify the [thermostat schedule](../../../capability-gui
 
 **`starts_at`** *Datetime*
 
-Date and time at which the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 
@@ -128,7 +128,7 @@ Date and time at which the [thermostat schedule](../../../capability-guides/ther
 
 **`thermostat_schedule_id`** *UUID*
 
-ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 
 
@@ -137,7 +137,7 @@ ID of the [thermostat schedule](../../../capability-guides/thermostats/creating-
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the thermostat schedule.
+ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.
 
 
 
@@ -149,26 +149,26 @@ ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains
 
 [**`/thermostats/schedules/create`**](./create.md)
 
-Creates a new [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Creates a new [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 
 [**`/thermostats/schedules/delete`**](./delete.md)
 
-Deletes a [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Deletes a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 
 [**`/thermostats/schedules/get`**](./get.md)
 
-Returns a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+Returns a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 
 [**`/thermostats/schedules/list`**](./list.md)
 
-Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Returns a list of all [thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 
 [**`/thermostats/schedules/update`**](./update.md)
 
-Updates a specified [thermostat schedule](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+Updates a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 

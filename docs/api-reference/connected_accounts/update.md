@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Updates a [connected account](../../core-concepts/connected-accounts/README.md).
+Updates a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 
 {% tabs %}
@@ -178,13 +178,13 @@ Possible enum values:
 
 **`automatically_manage_new_devices`** *Boolean*
 
-Indicates whether newly-added devices should appear as [managed devices](../../core-concepts/devices/managed-and-unmanaged-devices.md).
+Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
 
 ---
 
 **`custom_metadata`** *Object*
 
-Custom metadata that you want to associate with the connected account. Entirely replaces the existing custom metadata object. If a new Connect Webview contains custom metadata and is used to reconnect a connected account, the custom metadata from the Connect Webview will entirely replace the entire custom metadata object on the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](../../core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata.md).
+Custom metadata that you want to associate with the connected account. Entirely replaces the existing custom metadata object. If a new Connect Webview contains custom metadata and is used to reconnect a connected account, the custom metadata from the Connect Webview will entirely replace the entire custom metadata object on the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/latest/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata).
 
 ---
 

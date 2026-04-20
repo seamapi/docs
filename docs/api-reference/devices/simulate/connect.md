@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Simulates connecting a device to Seam. Only applicable for [sandbox devices](../../../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](../../../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).
+Simulates connecting a device to Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
 
 
 {% tabs %}

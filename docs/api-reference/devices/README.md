@@ -10,7 +10,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a [device](../../core-concepts/devices/README.md) that has been connected to Seam.
+Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.
 
 {% tabs %}
 {% tab title="Lock Device" %}
@@ -486,7 +486,7 @@ A thermostat device resource.
 
 **`capabilities_supported`** *List* *of Enums*
 
-Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags).
+Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).
 
 
 
@@ -513,7 +513,7 @@ Date and time at which the device object was created.
 
 **`custom_metadata`** *Record*
 
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md), [connected account](../../core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md), or [device](../../core-concepts/devices/adding-custom-metadata-to-a-device.md), enables you to store custom information, like customer details or internal IDs from your application.
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 
 
 
@@ -1179,7 +1179,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1204,7 +1204,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to [Seam Bridge](../../capability-guides/seam-bridge.md).
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
   
   
   ---
@@ -1229,7 +1229,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../capabili
 
 **`is_managed`** *Boolean*
 
-Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](../../core-concepts/devices/managed-and-unmanaged-devices.md).
+Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
 
 
 
@@ -3832,7 +3832,7 @@ Indicates current noise level in decibels, if the device supports noise detectio
 ## Thermostats
 **`active_thermostat_schedule`** *Object*
 
-Active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 {% hint style="warning" %}
 **Deprecated**. Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.
@@ -3844,11 +3844,11 @@ Active [thermostat schedule](../../capability-guides/thermostats/creating-and-ma
 
   - <strong><code>climate_preset_key</code></strong> <i>String</i>
   
-    Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to use for the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+    Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
   - <strong><code>created_at</code></strong> <i>Datetime</i>
   
-    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) was created.
+    Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
 
   - <strong><code>device_id</code></strong> <i>UUID</i>
   
@@ -3856,11 +3856,11 @@ Active [thermostat schedule](../../capability-guides/thermostats/creating-and-ma
 
   - <strong><code>ends_at</code></strong> <i>Datetime</i>
   
-    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+    Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
   - <strong><code>errors</code></strong> <i>List</i> <i>of Objects</i>
   
-    Errors associated with the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+    Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 - <strong><code>error_code</code></strong> <i>String</i>
 
@@ -3874,27 +3874,27 @@ Active [thermostat schedule](../../capability-guides/thermostats/creating-and-ma
 
   - <strong><code>is_override_allowed</code></strong> <i>Boolean</i>
   
-    Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts.
+    Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
 
   - <strong><code>max_override_period_minutes</code></strong> <i>Number</i>
   
-    Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md). See also [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+    Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
   - <strong><code>name</code></strong> <i>String</i>
   
-    User-friendly name to identify the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+    User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
   - <strong><code>starts_at</code></strong> <i>Datetime</i>
   
-    Date and time at which the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+    Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
   - <strong><code>thermostat_schedule_id</code></strong> <i>UUID</i>
   
-    ID of the [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+    ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
   - <strong><code>workspace_id</code></strong> <i>UUID</i>
   
-    ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat schedule.
+    ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.
 
 </details>
 
@@ -3902,7 +3902,7 @@ Active [thermostat schedule](../../capability-guides/thermostats/creating-and-ma
 
 **`active_thermostat_schedule_id`** *UUID*
 
-ID of the active [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md).
+ID of the active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 
 
@@ -3920,7 +3920,7 @@ Climate preset modes that the thermostat supports, such as "home", "away", "wake
 
 **`available_climate_presets`** *List* *of Objects*
 
-Available [climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for the thermostat.
+Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
 
 
 
@@ -3928,19 +3928,19 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
   <summary>Child Object Properties</summary>
 <strong><code>can_delete</code></strong> <i>Boolean</i>
 
-  Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
+  Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
 
 <strong><code>can_edit</code></strong> <i>Boolean</i>
 
-  Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
+  Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
 
 <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
 
-  Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
+  Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
 
 <strong><code>climate_preset_key</code></strong> <i>String</i>
 
-  Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+  Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
 
@@ -3958,15 +3958,15 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
 
 <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+  Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+  Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>display_name</code></strong> <i>String</i>
 
-  Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+  Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 <strong><code>ecobee_metadata</code></strong> <i>Object</i>
 
@@ -4003,15 +4003,15 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
 
 <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+  Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+  Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
 
-  Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+  Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 <details>
     <summary>Enum values:</summary>
 
@@ -4024,7 +4024,7 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
 
 <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
 
-  Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+  Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
 {% hint style="warning" %}
 **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
@@ -4032,7 +4032,7 @@ Available [climate presets](../../capability-guides/thermostats/creating-and-man
 
 <strong><code>name</code></strong> <i>String</i>
 
-  User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+  User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 </details>
 
@@ -4067,19 +4067,19 @@ Current climate setting.
 
   - <strong><code>can_delete</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
+    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
 
   - <strong><code>can_edit</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
+    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
 
   - <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
+    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
 
   - <strong><code>climate_preset_key</code></strong> <i>String</i>
   
-    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+    Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
   
@@ -4097,15 +4097,15 @@ Current climate setting.
 
   - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>display_name</code></strong> <i>String</i>
   
-    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+    Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>ecobee_metadata</code></strong> <i>Object</i>
   
@@ -4142,15 +4142,15 @@ Current climate setting.
 
   - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
   
-    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+    Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
   <details>
       <summary>Enum values:</summary>
   
@@ -4163,7 +4163,7 @@ Current climate setting.
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
   
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
   
   {% hint style="warning" %}
   **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
@@ -4171,7 +4171,7 @@ Current climate setting.
 
   - <strong><code>name</code></strong> <i>String</i>
   
-    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+    User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 </details>
 
@@ -4190,19 +4190,19 @@ Current climate setting.
 
   - <strong><code>can_delete</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be deleted.
+    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
 
   - <strong><code>can_edit</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be edited.
+    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
 
   - <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) key can be programmed in a thermostat daily program.
+    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
 
   - <strong><code>climate_preset_key</code></strong> <i>String</i>
   
-    Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+    Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
   
@@ -4220,15 +4220,15 @@ Current climate setting.
 
   - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>display_name</code></strong> <i>String</i>
   
-    Display name for the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+    Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>ecobee_metadata</code></strong> <i>Object</i>
   
@@ -4265,15 +4265,15 @@ Current climate setting.
 
   - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+    Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
   
-    Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+    Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
   <details>
       <summary>Enum values:</summary>
   
@@ -4286,7 +4286,7 @@ Current climate setting.
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
   
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions).
+    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
   
   {% hint style="warning" %}
   **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
@@ -4294,7 +4294,7 @@ Current climate setting.
 
   - <strong><code>name</code></strong> <i>String</i>
   
-    User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+    User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 </details>
 
@@ -4302,7 +4302,7 @@ Current climate setting.
 
 **`fallback_climate_preset_key`** *String*
 
-Key of the [fallback climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) for the thermostat.
+Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
 
 
 
@@ -4365,7 +4365,7 @@ Indicates whether the current thermostat settings differ from the most recent ac
 
 **`max_cooling_set_point_celsius`** *Number*
 
-Maximum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
+Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
 
 
 
@@ -4374,7 +4374,7 @@ Maximum [cooling set point](../../capability-guides/thermostats/understanding-th
 
 **`max_cooling_set_point_fahrenheit`** *Number*
 
-Maximum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °F.
+Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
 
 
 
@@ -4383,7 +4383,7 @@ Maximum [cooling set point](../../capability-guides/thermostats/understanding-th
 
 **`max_heating_set_point_celsius`** *Number*
 
-Maximum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °C.
+Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
 
 
 
@@ -4392,7 +4392,7 @@ Maximum [heating set point](../../capability-guides/thermostats/understanding-th
 
 **`max_heating_set_point_fahrenheit`** *Number*
 
-Maximum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °F.
+Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
 
 
 
@@ -4419,7 +4419,7 @@ Maximum number of climate presets that the thermostat can support for weekly pro
 
 **`min_cooling_set_point_celsius`** *Number*
 
-Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °C.
+Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
 
 
 
@@ -4428,7 +4428,7 @@ Minimum [cooling set point](../../capability-guides/thermostats/understanding-th
 
 **`min_cooling_set_point_fahrenheit`** *Number*
 
-Minimum [cooling set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#cooling-set-point) in °F.
+Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
 
 
 
@@ -4437,7 +4437,7 @@ Minimum [cooling set point](../../capability-guides/thermostats/understanding-th
 
 **`min_heating_cooling_delta_celsius`** *Number*
 
-Minimum [temperature difference](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
+Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
 
 
 
@@ -4446,7 +4446,7 @@ Minimum [temperature difference](../../capability-guides/thermostats/understandi
 
 **`min_heating_cooling_delta_fahrenheit`** *Number*
 
-Minimum [temperature difference](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
+Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
 
 
 
@@ -4455,7 +4455,7 @@ Minimum [temperature difference](../../capability-guides/thermostats/understandi
 
 **`min_heating_set_point_celsius`** *Number*
 
-Minimum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °C.
+Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
 
 
 
@@ -4464,7 +4464,7 @@ Minimum [heating set point](../../capability-guides/thermostats/understanding-th
 
 **`min_heating_set_point_fahrenheit`** *Number*
 
-Minimum [heating set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md#heating-set-point) in °F.
+Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
 
 
 
@@ -4500,7 +4500,7 @@ Reported temperature in °F.
 
 **`temperature_threshold`** *Object*
 
-Current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+Current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
 
 
@@ -4509,19 +4509,19 @@ Current [temperature threshold](../../capability-guides/thermostats/setting-and-
 
   - <strong><code>lower_limit_celsius</code></strong> <i>Number</i>
   
-    Lower limit in °C within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+    Lower limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
   - <strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
   
-    Lower limit in °F within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+    Lower limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
   - <strong><code>upper_limit_celsius</code></strong> <i>Number</i>
   
-    Upper limit in °C within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+    Upper limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
   - <strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
   
-    Upper limit in °F within the current [temperature threshold](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md) set for the thermostat.
+    Upper limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
 </details>
 
@@ -4538,7 +4538,7 @@ Precision of the thermostat's period in minutes. For example, if the thermostat 
 
 **`thermostat_daily_programs`** *List* *of Objects*
 
-Configured [daily programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md) for the thermostat.
+Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
 
 
 
@@ -4562,7 +4562,7 @@ Configured [daily programs](../../capability-guides/thermostats/creating-and-man
 
 - <strong><code>climate_preset_key</code></strong> <i>String</i>
 
-  Key of the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) to activate at the `starts_at_time`.
+  Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
 
 
 - <strong><code>starts_at_time</code></strong> <i>String</i>
@@ -4576,7 +4576,7 @@ Configured [daily programs](../../capability-guides/thermostats/creating-and-man
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) that contains the thermostat daily program.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.
 
 </details>
 
@@ -4584,7 +4584,7 @@ Configured [daily programs](../../capability-guides/thermostats/creating-and-man
 
 **`thermostat_weekly_program`** *Object*
 
-Current [weekly program](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md) for the thermostat.
+Current [weekly program](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
 
 
 
@@ -4638,7 +4638,7 @@ Indicates that the account is disconnected.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -5147,7 +5147,7 @@ A device provider resource.
 
 **`device.connected`**
 
-The status of a [device](../../core-concepts/devices/README.md) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
+The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
 
 <details>
 
@@ -5159,7 +5159,7 @@ The status of a [device](../../core-concepts/devices/README.md) changed from off
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5191,14 +5191,14 @@ The status of a [device](../../core-concepts/devices/README.md) changed from off
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.added`**
 
-A [device](../../core-concepts/devices/README.md) was added to Seam or was re-added to Seam after having been removed.
+A [device](https://docs.seam.co/latest/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
 
 <details>
 
@@ -5210,7 +5210,7 @@ A [device](../../core-concepts/devices/README.md) was added to Seam or was re-ad
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5242,14 +5242,14 @@ A [device](../../core-concepts/devices/README.md) was added to Seam or was re-ad
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.converted_to_unmanaged`**
 
-A managed device was successfully converted to an [unmanaged device](../../core-concepts/devices/managed-and-unmanaged-devices.md).
+A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
 
 <details>
 
@@ -5261,7 +5261,7 @@ A managed device was successfully converted to an [unmanaged device](../../core-
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5293,14 +5293,14 @@ A managed device was successfully converted to an [unmanaged device](../../core-
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.disconnected`**
 
-The status of a [device](../../core-concepts/devices/README.md) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
+The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
 
 <details>
 
@@ -5331,7 +5331,7 @@ The status of a [device](../../core-concepts/devices/README.md) changed from onl
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -5431,14 +5431,14 @@ The status of a [device](../../core-concepts/devices/README.md) changed from onl
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.tampered`**
 
-A [device](../../core-concepts/devices/README.md) detected that it was tampered with, for example, opened or moved.
+A [device](https://docs.seam.co/latest/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
 
 <details>
 
@@ -5450,7 +5450,7 @@ A [device](../../core-concepts/devices/README.md) detected that it was tampered 
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5482,14 +5482,14 @@ A [device](../../core-concepts/devices/README.md) detected that it was tampered 
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.low_battery`**
 
-A [device](../../core-concepts/devices/README.md) battery level dropped below the low threshold.
+A [device](https://docs.seam.co/latest/core-concepts/devices) battery level dropped below the low threshold.
 
 <details>
 
@@ -5505,7 +5505,7 @@ A [device](../../core-concepts/devices/README.md) battery level dropped below th
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5537,14 +5537,14 @@ A [device](../../core-concepts/devices/README.md) battery level dropped below th
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.battery_status_changed`**
 
-A [device](../../core-concepts/devices/README.md) battery status changed since the last `battery_status_changed` event.
+A [device](https://docs.seam.co/latest/core-concepts/devices) battery status changed since the last `battery_status_changed` event.
 
 <details>
 
@@ -5572,7 +5572,7 @@ A [device](../../core-concepts/devices/README.md) battery status changed since t
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5604,14 +5604,14 @@ A [device](../../core-concepts/devices/README.md) battery status changed since t
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.removed`**
 
-A [device](../../core-concepts/devices/README.md) was removed externally from the [connected account](../../core-concepts/connected-accounts/README.md).
+A [device](https://docs.seam.co/latest/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 <details>
 
@@ -5623,7 +5623,7 @@ A [device](../../core-concepts/devices/README.md) was removed externally from th
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5655,14 +5655,14 @@ A [device](../../core-concepts/devices/README.md) was removed externally from th
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.deleted`**
 
-A [device](../../core-concepts/devices/README.md) was deleted.
+A [device](https://docs.seam.co/latest/core-concepts/devices) was deleted.
 
 <details>
 
@@ -5674,7 +5674,7 @@ A [device](../../core-concepts/devices/README.md) was deleted.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5706,14 +5706,14 @@ A [device](../../core-concepts/devices/README.md) was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.third_party_integration_detected`**
 
-Seam detected that a [device](../../core-concepts/devices/README.md) is using a third-party integration that will interfere with Seam device management.
+Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
 
 <details>
 
@@ -5725,7 +5725,7 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is using a 
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5757,14 +5757,14 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is using a 
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.third_party_integration_no_longer_detected`**
 
-Seam detected that a [device](../../core-concepts/devices/README.md) is no longer using a third-party integration that was interfering with Seam device management.
+Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
 
 <details>
 
@@ -5776,7 +5776,7 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is no longe
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5808,7 +5808,7 @@ Seam detected that a [device](../../core-concepts/devices/README.md) is no longe
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -5827,7 +5827,7 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5859,7 +5859,7 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -5878,7 +5878,7 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5910,14 +5910,14 @@ A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guide
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.connection_became_flaky`**
 
-Seam detected a flaky [device](../../core-concepts/devices/README.md) connection.
+Seam detected a flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection.
 
 <details>
 
@@ -5948,7 +5948,7 @@ Seam detected a flaky [device](../../core-concepts/devices/README.md) connection
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -6037,14 +6037,14 @@ Seam detected a flaky [device](../../core-concepts/devices/README.md) connection
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.connection_stabilized`**
 
-Seam detected that a previously-flaky [device](../../core-concepts/devices/README.md) connection stabilized.
+Seam detected that a previously-flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection stabilized.
 
 <details>
 
@@ -6056,7 +6056,7 @@ Seam detected that a previously-flaky [device](../../core-concepts/devices/READM
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6088,14 +6088,14 @@ Seam detected that a previously-flaky [device](../../core-concepts/devices/READM
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.error.subscription_required`**
 
-A third-party subscription is required to use all [device](../../core-concepts/devices/README.md) features.
+A third-party subscription is required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.
 
 <details>
 
@@ -6126,7 +6126,7 @@ A third-party subscription is required to use all [device](../../core-concepts/d
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -6215,14 +6215,14 @@ A third-party subscription is required to use all [device](../../core-concepts/d
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.error.subscription_required.resolved`**
 
-A third-party subscription is active or no longer required to use all [device](../../core-concepts/devices/README.md) features.
+A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.
 
 <details>
 
@@ -6234,7 +6234,7 @@ A third-party subscription is active or no longer required to use all [device](.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6266,14 +6266,14 @@ A third-party subscription is active or no longer required to use all [device](.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.accessory_keypad_connected`**
 
-An accessory keypad was connected to a [device](../../core-concepts/devices/README.md).
+An accessory keypad was connected to a [device](https://docs.seam.co/latest/core-concepts/devices).
 
 <details>
 
@@ -6285,7 +6285,7 @@ An accessory keypad was connected to a [device](../../core-concepts/devices/READ
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6317,14 +6317,14 @@ An accessory keypad was connected to a [device](../../core-concepts/devices/READ
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.accessory_keypad_disconnected`**
 
-An accessory keypad was disconnected from a [device](../../core-concepts/devices/README.md).
+An accessory keypad was disconnected from a [device](https://docs.seam.co/latest/core-concepts/devices).
 
 <details>
 
@@ -6355,7 +6355,7 @@ An accessory keypad was disconnected from a [device](../../core-concepts/devices
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -6444,14 +6444,14 @@ An accessory keypad was disconnected from a [device](../../core-concepts/devices
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.name_changed`**
 
-The name of a [device](../../core-concepts/devices/README.md) was changed.
+The name of a [device](https://docs.seam.co/latest/core-concepts/devices) was changed.
 
 <details>
 
@@ -6463,7 +6463,7 @@ The name of a [device](../../core-concepts/devices/README.md) was changed.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6499,14 +6499,14 @@ The name of a [device](../../core-concepts/devices/README.md) was changed.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`camera.activated`**
 
-A [camera](../../core-concepts/devices/README.md) was activated, for example, by motion detection.
+A [camera](https://docs.seam.co/latest/core-concepts/devices) was activated, for example, by motion detection.
 
 <details>
 
@@ -6527,7 +6527,7 @@ A [camera](../../core-concepts/devices/README.md) was activated, for example, by
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6579,14 +6579,14 @@ A [camera](../../core-concepts/devices/README.md) was activated, for example, by
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.doorbell_rang`**
 
-A doorbell button was pressed on a [device](../../core-concepts/devices/README.md).
+A doorbell button was pressed on a [device](https://docs.seam.co/latest/core-concepts/devices).
 
 <details>
 
@@ -6598,7 +6598,7 @@ A doorbell button was pressed on a [device](../../core-concepts/devices/README.m
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6638,7 +6638,7 @@ A doorbell button was pressed on a [device](../../core-concepts/devices/README.m
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -6648,12 +6648,12 @@ A doorbell button was pressed on a [device](../../core-concepts/devices/README.m
 
 [**`/devices/get`**](./get.md)
 
-Returns a specified [device](../../core-concepts/devices/README.md).
+Returns a specified [device](https://docs.seam.co/latest/core-concepts/devices).
 
 
 [**`/devices/list`**](./list.md)
 
-Returns a list of all [devices](../../core-concepts/devices/README.md).
+Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices).
 
 
 [**`/devices/list_device_providers`**](./list_device_providers.md)
@@ -6668,6 +6668,6 @@ Updates provider-specific metadata for devices.
 
 [**`/devices/update`**](./update.md)
 
-Updates a specified [device](../../core-concepts/devices/README.md).
+Updates a specified [device](https://docs.seam.co/latest/core-concepts/devices).
 
 

@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes a specified [connected account](../../core-concepts/connected-accounts/README.md).
+Deletes a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
 
 Deleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.
 

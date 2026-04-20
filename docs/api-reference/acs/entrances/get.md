@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [access system entrance](../../../capability-guides/access-systems/retrieving-entrance-details.md).
+Returns a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 {% tabs %}

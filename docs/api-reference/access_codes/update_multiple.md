@@ -7,7 +7,7 @@ Updates [access codes](https://docs.seam.co/latest/capability-guides/smart-locks
 
 Specify the `common_code_key` to identify the set of access codes that you want to update.
 
-See also [Update Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md#update-linked-access-codes).
+See also [Update Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes#update-linked-access-codes).
 
 
 {% tabs %}
