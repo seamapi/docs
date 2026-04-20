@@ -9,6 +9,7 @@ import * as types from '@seamapi/types/connect'
 import { deleteAsync } from 'del'
 import Metalsmith from 'metalsmith'
 
+import { apiReferenceRoot } from './lib/config.js'
 import {
   formatCode,
   helpers,
@@ -22,17 +23,17 @@ const rootDir = dirname(fileURLToPath(import.meta.url))
 
 await Promise.all([
   deleteAsync([
-    './docs/api-reference/**',
-    '!./docs/api-reference/SUMMARY.md',
-    '!./docs/api-reference/.gitbook.yaml',
+    `./${apiReferenceRoot}/**`,
+    `!./${apiReferenceRoot}/SUMMARY.md`,
+    `!./${apiReferenceRoot}/.gitbook.yaml`,
   ]),
 ])
 
 const partials = await getHandlebarsPartials(`${rootDir}/layouts/partials`)
 
 Metalsmith(rootDir)
-  .source('./docs')
-  .destination('../docs')
+  .source('./source')
+  .destination('../')
   .clean(false)
   .use(
     metadata({

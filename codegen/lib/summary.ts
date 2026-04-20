@@ -1,29 +1,28 @@
 import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
 
 import type Metalsmith from 'metalsmith'
 
-const summaryPath = join('docs', 'api-reference', 'SUMMARY.md')
+import { apiReferenceRoot, apiReferenceSummaryPath } from './config.js'
 
 export const summary = async (
   files: Metalsmith.Files,
   _metalsmith: Metalsmith,
 ): Promise<void> => {
-  const apiSummary =
-    files['api-reference/_summary.md']?.contents?.toString('utf-8')
+  const summaryKey = `${apiReferenceRoot}/_summary.md`
+  const apiSummary = files[summaryKey]?.contents?.toString('utf-8')
   if (apiSummary == null) {
-    throw new Error('Missing api-reference/_summary.md')
+    throw new Error(`Missing ${summaryKey}`)
   }
 
-  const k = 'api-reference/SUMMARY.md'
+  const k = `${apiReferenceRoot}/SUMMARY.md`
   const summary = await readSummary()
   const contents = getUpdatedSummary(summary, apiSummary)
   files[k] = { contents: Buffer.from(`${contents}\n`) }
-  delete files['api-reference/_summary.md']
+  delete files[summaryKey]
 }
 
 const readSummary = async (): Promise<string> => {
-  const buf = await readFile(summaryPath)
+  const buf = await readFile(apiReferenceSummaryPath)
   return buf.toString('utf-8')
 }
 

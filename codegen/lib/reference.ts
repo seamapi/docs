@@ -15,6 +15,7 @@ import {
   type ApiSummaryLayoutContext,
   setSummaryLayoutContext,
 } from './layout/summary.js'
+import { apiReferenceRoot } from './config.js'
 import { PathMetadataSchema } from './path-metadata.js'
 
 interface Metadata {
@@ -27,7 +28,7 @@ type File = ApiEndpointLayoutContext &
   ApiNamespaceLayoutContext &
   ApiSummaryLayoutContext & { layout: string }
 
-const rootPath = 'api-reference'
+const rootPath = apiReferenceRoot
 const indexFile = 'README.md'
 
 export const reference = (

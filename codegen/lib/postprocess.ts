@@ -3,10 +3,12 @@ import { dirname, join, relative, sep } from 'node:path'
 
 import type Metalsmith from 'metalsmith'
 
-const baseUrl = 'https://docs.seam.co/latest/'
-const urlPrefix = '/latest'
-const apiUrlPrefix = '/api'
-const apiReferenceRoot = join('docs', 'api-reference')
+import {
+  apiReferenceRoot,
+  apiReferenceUrlPrefix,
+  baseUrl,
+  siteUrlPrefix,
+} from './config.js'
 
 export const postprocess = (
   files: Metalsmith.Files,
@@ -18,13 +20,13 @@ export const postprocess = (
       contents.replaceAll(new RegExp(`(${baseUrl}[^)]+)`, 'g'), ($1, $2) => {
         if (typeof $2 !== 'string') return $1
         const url = new URL($2)
-        url.pathname = url.pathname.replace(urlPrefix, '')
+        url.pathname = url.pathname.replace(siteUrlPrefix, '')
 
         // Only relativize links to pages within the api-reference space.
-        // The site section uses /api as its URL prefix.
+        // The site section uses apiReferenceUrlPrefix as its URL prefix.
         // Cross-section links (to guides) stay as absolute URLs.
-        if (!url.pathname.startsWith(apiUrlPrefix + '/')) return $1
-        const apiPath = url.pathname.replace(apiUrlPrefix, '')
+        if (!url.pathname.startsWith(apiReferenceUrlPrefix + '/')) return $1
+        const apiPath = url.pathname.replace(apiReferenceUrlPrefix, '')
         const targetRoot = join(apiReferenceRoot, apiPath)
 
         const target = `${targetRoot}.md`
