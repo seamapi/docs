@@ -131,4 +131,4 @@ cred = seam.acs.credentials.create({
 
 * [Update guest mobile credentials.](credential-types/updating-guest-mobile-credentials.md)
 * [Revoke a mobile credential.](credential-types/revoking-mobile-credentials.md)
-* [Remove a user identity.](../../api/user_identities/delete.md)
+* [Remove a user identity.](https://docs.seam.co/latest/api/user_identities/delete)

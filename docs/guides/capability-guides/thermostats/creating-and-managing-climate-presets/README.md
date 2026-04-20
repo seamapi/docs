@@ -6,7 +6,7 @@ description: Learn how to create, list, update, and delete climate presets for t
 
 You create a set of climate presets for each thermostat, customized for your—and your users'—needs. Each climate preset is a predefined configuration for a thermostat that specifies settings, such as HVAC mode, fan mode, and temperature set points. These presets make it quick and efficient for users to apply consistent climate settings tailored to different scenarios, enhancing both comfort and energy efficiency.
 
-Once you create climate presets, you can [activate them](../../../api/thermostats/activate_climate_preset.md), add them to thermostat [schedules](../creating-and-managing-thermostat-schedules.md) and [programs](../creating-and-managing-thermostat-programs.md), and set them as the [fallback climate preset](setting-the-fallback-climate-preset.md).
+Once you create climate presets, you can [activate them](https://docs.seam.co/latest/api/thermostats/activate_climate_preset), add them to thermostat [schedules](../creating-and-managing-thermostat-schedules.md) and [programs](../creating-and-managing-thermostat-programs.md), and set them as the [fallback climate preset](setting-the-fallback-climate-preset.md).
 
 ***
 
@@ -20,7 +20,7 @@ Each climate preset can contain the following properties, depending on the [capa
 
 ## Create a Climate Preset
 
-To create a climate preset, issue a [`/thermostats/create_climate_preset`](../../../api/thermostats/create_climate_preset.md) request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name.
+To create a climate preset, issue a [`/thermostats/create_climate_preset`](https://docs.seam.co/latest/api/thermostats/create_climate_preset) request, providing the `device_id` of the desired thermostat. Also, include the desired settings for the climate preset and, optionally, a name.
 
 The following example creates two climate presets with the keys `occupied` and `unoccupied`:
 
@@ -272,7 +272,7 @@ void
 
 ## List All Climate Presets for a Thermostat
 
-To list climate presets for a thermostat, issue a [`/devices/get`](../../../api/devices/get.md) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
+To list climate presets for a thermostat, issue a [`/devices/get`](https://docs.seam.co/latest/api/devices/get) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -544,7 +544,7 @@ $seam->devices->get(
 
 ## Update a Climate Preset
 
-To update a climate preset, issue a [`/thermostats/update_climate_preset`](../../../api/thermostats/update_climate_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset.
+To update a climate preset, issue a [`/thermostats/update_climate_preset`](https://docs.seam.co/latest/api/thermostats/update_climate_preset) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -663,7 +663,7 @@ void
 
 ## Delete a Climate Preset
 
-To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](../../../api/thermostats/delete_climate_preset.md) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
+To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](https://docs.seam.co/latest/api/thermostats/delete_climate_preset) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
 {% tab title="Python" %}

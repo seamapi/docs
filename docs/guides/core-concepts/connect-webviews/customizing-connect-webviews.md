@@ -44,7 +44,7 @@ To customize the look and feel of your Connect Webviews:
 
 ## Customize the Brands to Display in Your Connect Webviews
 
-When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](../../api/connect_webviews/create.md) request, include the desired set of device provider keys in the `accepted_providers` parameter. Seam supports the following device provider keys:
+When you create a Connect Webview, you can customize the providers—that is, the brands—that it displays. In the [Create Connect Webview](https://docs.seam.co/latest/api/connect_webviews/create) request, include the desired set of device provider keys in the `accepted_providers` parameter. Seam supports the following device provider keys:
 
 | Provider Name                                                                                                                          | Device Provider Key             |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
@@ -85,7 +85,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Wyze](../../device-guides/wyze-locks.md)                                                                                              | `wyze`                          |
 | [Yale](../../device-guides/yale-locks.md)                                                                                              | `yale`                          |
 
-To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](../../api/devices/list_device_providers.md) method to learn about each provider. The information that this method returns for each provider includes a set of [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.
+To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](https://docs.seam.co/latest/api/devices/list_device_providers) method to learn about each provider. The information that this method returns for each provider includes a set of [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.
 
 {% hint style="info" %}
 If you omit the `accepted_providers` parameter, the Connect Webview displays all of the stable providers that Seam supports, by default. For more information about provider categories, see [Step 1: Create a Connect Webview](connect-webview-process.md#step-1-create-a-connect-webview).

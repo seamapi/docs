@@ -6,7 +6,7 @@ description: >-
 
 # Access Code Requirements for Door Locks
 
-Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](../../../api/devices/get.md) or [List Devices](../../../api/devices/list.md) (or [List Locks](../../../api/locks/list.md)) request.
+Some models of door locks have specific requirements and constraints when it comes to setting PIN codes. It's essential to be aware of these to ensure seamless functionality and security. The requirements can be fetched by making a [Get Device](https://docs.seam.co/latest/api/devices/get) or [List Devices](https://docs.seam.co/latest/api/devices/list) (or [List Locks](https://docs.seam.co/latest/api/locks/list)) request.
 
 Sample set of access code requirements:
 

@@ -10,7 +10,7 @@ description: >-
 
 ## What Is an Access Code?
 
-An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](../../../api/access_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](https://docs.seam.co/latest/api/access_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
 Seam supports programming two types of access codes: [ongoing](./#ongoing-access-codes) and [time-bound](./#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
@@ -102,7 +102,7 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 ## Linking Unlock Events and Access Codes
 
-When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](../../../api/events/). Some device manufacturers include the ID of the access code in lock-related events. This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
+When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](https://docs.seam.co/latest/api/events/). Some device manufacturers include the ID of the access code in lock-related events. This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
 
 Currently, the following device manufacturers send the `access_code_id` in the `lock.unlocked` event:
 

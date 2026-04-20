@@ -130,7 +130,7 @@ To help you test your app against eventsâ€”like device disconnection or removalâ
 
 Sandbox workspace are unique in that you can reset them to the original starting state. For example, if you need to run complex continuous integration (CI) testing for an app, you can reset the sandbox workspace after each individual test run.
 
-You can reset a sandbox workspace either manually through [Seam Console](./#reset-a-sandbox-workspace-using-the-seam-console) or programmatically using the [Seam API](./#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset a Sandbox Workspace](../../api/workspaces/reset_sandbox.md) API reference.
+You can reset a sandbox workspace either manually through [Seam Console](./#reset-a-sandbox-workspace-using-the-seam-console) or programmatically using the [Seam API](./#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset a Sandbox Workspace](https://docs.seam.co/latest/api/workspaces/reset_sandbox) API reference.
 
 #### Reset a Sandbox Workspace Using Seam Console
 

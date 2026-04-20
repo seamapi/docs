@@ -31,7 +31,7 @@ Before you begin this quick start, perform the following steps:
     For instructions, see [Connect an Access System to Seam](../access-systems/connect-an-acs-to-seam/).
 2.  Install a Seam SDK and create an API key.
 
-    For instructions, see [Installation](../../api/installation.md) and [API Keys](../../core-concepts/authentication/api-keys.md).
+    For instructions, see [Installation](https://docs.seam.co/latest/api/installation) and [API Keys](../../core-concepts/authentication/api-keys.md).
 
 ***
 
@@ -803,5 +803,5 @@ Now that you've created your first Access Grant, learn more about Access Grants.
 * [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
 * [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md)
 * [Delivering Access Methods](delivering-access-methods.md)
-* [Access Grants API Reference](../../api/access_grants/)
-* [Access Methods API Reference](../../api/access_methods/)
+* [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
+* [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

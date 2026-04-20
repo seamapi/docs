@@ -4,10 +4,10 @@ description: When listing devices, you can filter by custom metadata.
 
 # Filtering Devices by Custom Metadata
 
-When you use [List Devices](../../api/devices/list.md), you can filter the list by one or more [custom metadata](../../api/devices/#properties) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
+When you use [List Devices](https://docs.seam.co/latest/api/devices/list), you can filter the list by one or more [custom metadata](https://docs.seam.co/latest/api/devices/#properties) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
 
 {% hint style="info" %}
-You can use the [Update Connected Account](../../api/connected_accounts/update.md) method with the optional `custom_metadata` property to [add custom metadata for a device](adding-custom-metadata-to-a-device.md).
+You can use the [Update Connected Account](https://docs.seam.co/latest/api/connected_accounts/update) method with the optional `custom_metadata` property to [add custom metadata for a device](adding-custom-metadata-to-a-device.md).
 {% endhint %}
 
 {% tabs %}

@@ -382,7 +382,7 @@ $seam->access_grants->update(
 {% endtab %}
 {% endtabs %}
 
-Mobile keys update automatically to match the new time window. If a Seam Instant Key is within its validity period, it also updates automatically to match the new time window. If the Instant Key has expired, you can [generate a new one](../../api/user_identities/generate_instant_key.md) and share the new Instant Key link with the guest. Note that, for some access systems with encoded plastic cards, the guest must tap the card on an online reader to apply the changes.
+Mobile keys update automatically to match the new time window. If a Seam Instant Key is within its validity period, it also updates automatically to match the new time window. If the Instant Key has expired, you can [generate a new one](https://docs.seam.co/latest/api/user_identities/generate_instant_key) and share the new Instant Key link with the guest. Note that, for some access systems with encoded plastic cards, the guest must tap the card on an online reader to apply the changes.
 
 ***
 

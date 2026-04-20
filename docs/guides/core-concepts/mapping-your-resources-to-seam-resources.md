@@ -10,10 +10,10 @@ Resource keys make it easier to cross-reference and sync information between you
 
 Each resource includes a `<resource>_key` property in which you can store your own identifier. For example:
 
-* `space_key` for [Spaces](../api/spaces/)
-* `user_identity_key` for [User Identities](../api/user_identities/)
-* `access_grant_key` for [Access Grants](../api/access_grants/)
-* `customer_key` for [Connect Webviews](../api/connect_webviews/) and [Connected Accounts](../api/connected_accounts/)
+* `space_key` for [Spaces](https://docs.seam.co/latest/api/spaces/)
+* `user_identity_key` for [User Identities](https://docs.seam.co/latest/api/user_identities/)
+* `access_grant_key` for [Access Grants](https://docs.seam.co/latest/api/access_grants/)
+* `customer_key` for [Connect Webviews](https://docs.seam.co/latest/api/connect_webviews/) and [Connected Accounts](https://docs.seam.co/latest/api/connected_accounts/)
 
 Resource keys of each type generally need to be unique within your workspace. For example, if you save a Space with the `space_key` `room-101-id`, you cannot create another Space with this key.
 

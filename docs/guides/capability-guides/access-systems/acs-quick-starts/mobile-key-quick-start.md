@@ -19,7 +19,7 @@ This quick start walks you through the following basic steps:
 1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
    * To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
-3. Create a [user identity](../../../api/user_identities/).
+3. Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
    * Seam user identities enable you to match your own mobile app users to ACS users.
 4. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups.md).
    * Access groups are preconfigured to grant access to specific entrances.\
@@ -609,7 +609,7 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 2. Create user identities.
    * [Managing Mobile App User Accounts with User Identities](../../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
 3. For relevant access control systems, assign user identities to access groups.
-   * [Adding User Identities to Access Groups](../../../api/acs/access_groups/add_user.md)
+   * [Adding User Identities to Access Groups](https://docs.seam.co/latest/api/acs/access_groups/add_user)
 4. Learn about available entrances.
    * [Retrieving Entrance Details](../retrieving-entrance-details.md)
 5. Create credentials for ACS users.
@@ -617,4 +617,4 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 6. Learn more about the Seam mobile access solution.
    * [Mobile Access](../../mobile-access/)
    * [Integrating into your mobile application](../../mobile-access/mobile-device-sdks/)
-7. See the Seam [Access Control Systems API reference](../../../api/acs/).
+7. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).

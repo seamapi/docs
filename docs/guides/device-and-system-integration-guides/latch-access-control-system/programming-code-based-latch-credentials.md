@@ -399,5 +399,5 @@ To learn more about using the Seam API with your Latch ACS, see the following to
 * [Managing ACS Users](../../products/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../capability-guides/mobile-access/)
-* [Access Control Systems](../../api/acs/) in the Seam API reference
-* [User Identities](../../api/user_identities/) in the Seam API reference
+* [Access Control Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference
+* [User Identities](https://docs.seam.co/latest/api/user_identities/) in the Seam API reference

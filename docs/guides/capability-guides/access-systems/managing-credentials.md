@@ -18,7 +18,7 @@ You can assign a credential to an ACS user when you create the credential. You c
 
 ## Create a Credential for an ACS User
 
-To [create a credential for an ACS user](../../api/acs/credentials/create.md), provide the `acs_user_id` and the desired `access_method`. Seam supports the following access methods:
+To [create a credential for an ACS user](https://docs.seam.co/latest/api/acs/credentials/create), provide the `acs_user_id` and the desired `access_method`. Seam supports the following access methods:
 
 * `code` for a PIN code-based credential
 * `card` for a plastic key card-based credential
@@ -579,11 +579,11 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## List Credentials
 
-You can [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](../../api/acs/credentials/list.md).
+You can [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](https://docs.seam.co/latest/api/acs/credentials/list).
 
 ### List Credentials by ACS User
 
-To [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [ACS user](../../products/access-systems/user-management.md), provide the `acs_user_id`.
+To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../products/access-systems/user-management.md), provide the `acs_user_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -748,7 +748,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ### List Credentials by User Identity
 
-To [list all ACS credentials](../../api/acs/credentials/list.md) for a specific [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
+To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -915,7 +915,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## Get a Credential
 
-To [get a credential](../../api/acs/credentials/get.md), provide the `acs_credential_id` of the credential that you want to retrieve. These details include the user associated with the credential, the access method, the schedule for the credential, if applicable, and so on.
+To [get a credential](https://docs.seam.co/latest/api/acs/credentials/get), provide the `acs_credential_id` of the credential that you want to retrieve. These details include the user associated with the credential, the access method, the schedule for the credential, if applicable, and so on.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1077,7 +1077,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## Delete a Credential
 
-To [delete a credential](../../api/acs/credentials/delete.md), provide the `acs_credential_id`.
+To [delete a credential](https://docs.seam.co/latest/api/acs/credentials/delete), provide the `acs_credential_id`.
 
 {% tabs %}
 {% tab title="Python" %}

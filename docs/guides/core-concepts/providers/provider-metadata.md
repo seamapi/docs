@@ -20,7 +20,7 @@ Do not use `[provider]_metadata.model` because it is being deprecated and is lik
 
 ## Getting Provider Metadata
 
-To access provider metadata, make any call that returns device properties, such as [`/devices/get`](../../api/devices/get.md) or [`/devices/list`](../../api/devices/list.md).
+To access provider metadata, make any call that returns device properties, such as [`/devices/get`](https://docs.seam.co/latest/api/devices/get) or [`/devices/list`](https://docs.seam.co/latest/api/devices/list).
 
 {% hint style="info" %}
 Provider metadata is also available in [sandbox workspaces](../workspaces/#sandbox-workspaces), so if you want to see typical examples of provider metadata, you can just create a webview and connect devices in a sandbox workspace to read the properties.
