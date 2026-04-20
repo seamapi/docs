@@ -19,8 +19,6 @@ interface Context {
   pathMetadata: PathMetadata
 }
 
-const pathPrefix = 'api'
-
 export function setSummaryLayoutContext(
   file: Partial<ApiSummaryLayoutContext>,
   context: Context,
@@ -48,7 +46,7 @@ const getNode = (path: string, context: Context): Node => {
   if (endpoint != null) {
     return {
       title: endpoint.title,
-      path: `${pathPrefix}${endpoint.path}.md`,
+      path: `${endpoint.path.slice(1)}.md`,
       nodes: [],
     }
   }
@@ -63,7 +61,7 @@ const getNode = (path: string, context: Context): Node => {
 
     return {
       title: routeMetadata.title,
-      path: `${pathPrefix}${route.path}/README.md`,
+      path: `${route.path.slice(1)}/README.md`,
       nodes: getNodes(paths, context),
     }
   }
@@ -78,7 +76,7 @@ const getNode = (path: string, context: Context): Node => {
 
     return {
       title: namespaceMetadata.title,
-      path: `${pathPrefix}${namespace.path}/README.md`,
+      path: `${namespace.path.slice(1)}/README.md`,
       nodes: getNodes(paths, context),
     }
   }
