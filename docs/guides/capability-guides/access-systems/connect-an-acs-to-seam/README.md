@@ -4,7 +4,7 @@ description: Learn how to connect your access system to Seam.
 
 # Connect an Access System to Seam
 
-You can use [Seam Console](../../../core-concepts/seam-console/) or the [Seam API](../../../api/connect_webviews/) to connect your access system to Seam. You use a [Connect Webview](../../../core-concepts/connect-webviews/) to authorize the connection.
+You can use [Seam Console](../../../core-concepts/seam-console/) or the [Seam API](https://docs.seam.co/latest/api/connect_webviews/) to connect your access system to Seam. You use a [Connect Webview](../../../core-concepts/connect-webviews/) to authorize the connection.
 
 ## Connect an Access System Using Seam Console
 
@@ -32,6 +32,6 @@ The **Access Systems** page now displays the newly-connected access control syst
 
 ## Connect an Access System Using the Seam API
 
-First, use the Seam API to [create a Connect Webview](../../../api/connect_webviews/create.md). Then, display this Connect Webview to your user. You user completes the Connect Webview to authorize the access system connection to Seam.
+First, use the Seam API to [create a Connect Webview](https://docs.seam.co/latest/api/connect_webviews/create). Then, display this Connect Webview to your user. You user completes the Connect Webview to authorize the access system connection to Seam.
 
 For detailed instructions, see [Connect Webview Process](../../../core-concepts/connect-webviews/connect-webview-process.md).

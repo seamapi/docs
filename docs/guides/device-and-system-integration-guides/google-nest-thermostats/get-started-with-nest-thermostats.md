@@ -401,7 +401,7 @@ True
 
 ## Step 3: Retrieve Google Nest thermostat devices
 
-When you link a Google Nest account with Seam, we create a `device` object to represent each Google Nest thermostat in your account. You can then retrieve these Google Nest devices using the [List Devices](../../api/devices/list.md) and [Get Device](../../api/devices/get.md) endpoints.
+When you link a Google Nest account with Seam, we create a `device` object to represent each Google Nest thermostat in your account. You can then retrieve these Google Nest devices using the [List Devices](https://docs.seam.co/latest/api/devices/list) and [Get Device](https://docs.seam.co/latest/api/devices/get) endpoints.
 
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
@@ -919,7 +919,7 @@ if ($living_room_thermostat->can_hvac_heat) {
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the operation to confirm that the device was set to heat mode successfully. Query `properties.current_climate_setting.hvac_mode_setting` for the device, [retrieve the action attempt](../../api/action_attempts/get.md) by ID, or look for a [`thermostat.manually_adjusted` event](../../api/events/). Further, if you wanted to find out whether the HVAC system was currently heating, you could inspect `properties.is_heating` for the device.
+You can track the status of the operation to confirm that the device was set to heat mode successfully. Query `properties.current_climate_setting.hvac_mode_setting` for the device, [retrieve the action attempt](https://docs.seam.co/latest/api/action_attempts/get) by ID, or look for a [`thermostat.manually_adjusted` event](https://docs.seam.co/latest/api/events/). Further, if you wanted to find out whether the HVAC system was currently heating, you could inspect `properties.is_heating` for the device.
 
 To query `properties.current_climate_setting.hvac_mode_setting` for the device:
 

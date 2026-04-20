@@ -6,7 +6,7 @@ description: >-
 
 # Creating and Managing Thermostat Schedules
 
-Once you have created a set of [climate presets](creating-and-managing-climate-presets/) for a thermostat, you can define schedules using the [`/thermostats/schedules/create`](../../api/thermostats/schedules/create.md) endpoint. The Seam API's scheduling mechanism is flexible and intelligent. It can prioritize and handle multiple scheduled climate presets. For example, you could [set a fallback](creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) energy-saving climate preset for whenever a short-term rental property is unoccupied. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay.
+Once you have created a set of [climate presets](creating-and-managing-climate-presets/) for a thermostat, you can define schedules using the [`/thermostats/schedules/create`](https://docs.seam.co/latest/api/thermostats/schedules/create) endpoint. The Seam API's scheduling mechanism is flexible and intelligent. It can prioritize and handle multiple scheduled climate presets. For example, you could [set a fallback](creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) energy-saving climate preset for whenever a short-term rental property is unoccupied. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay.
 
 ***
 
@@ -24,7 +24,7 @@ In the Seam API, use the `starts_at` and `ends_at` parameters to define the time
 
 `starts_at` is required and must be unique within all the schedules for the thermostat. However, if you want to schedule a climate preset that starts immediately, set `start_at` to a time in the past. Alternately, you can [activate a climate preset](creating-and-managing-climate-presets/activating-a-climate-preset.md) immediately.
 
-After a scheduled climate preset starts, Seam emits a [`thermostat.temperature_reached_set_point` event](../../api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](understanding-thermostat-concepts/set-points.md) specified in this climate preset. You can configure a [webhook](../../core-concepts/webhooks.md) to watch for this event.
+After a scheduled climate preset starts, Seam emits a [`thermostat.temperature_reached_set_point` event](https://docs.seam.co/latest/api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](understanding-thermostat-concepts/set-points.md) specified in this climate preset. You can configure a [webhook](../../core-concepts/webhooks.md) to watch for this event.
 
 ***
 
@@ -40,7 +40,7 @@ To allow complete control at the thermostat, set `is_override_allowed` to `true`
 
 ## Create a Thermostat Schedule
 
-To create a thermostat schedule, issue a [`/thermostats/schedules/create`](../../api/thermostats/schedules/create.md) request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `is_override_allowed` and `max_override_period_minutes` values.
+To create a thermostat schedule, issue a [`/thermostats/schedules/create`](https://docs.seam.co/latest/api/thermostats/schedules/create) request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `is_override_allowed` and `max_override_period_minutes` values.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -620,7 +620,7 @@ $seam->thermostats->schedules->create(
 
 ## List All Thermostat Schedules for a Thermostat
 
-To retrieve all thermostat schedules for a thermostat, issue a [`/thermostats/schedules/list`](../../api/thermostats/schedules/list.md) request, specifying the `device_id` of the desired thermostat.
+To retrieve all thermostat schedules for a thermostat, issue a [`/thermostats/schedules/list`](https://docs.seam.co/latest/api/thermostats/schedules/list) request, specifying the `device_id` of the desired thermostat.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -848,7 +848,7 @@ $seam->thermostats->schedules->list(
 
 ## Get an Individual Thermostat Schedule
 
-To get a specific thermostat schedule, issue a [`/thermostats/schedules/get`](../../api/thermostats/schedules/get.md) request, including the `thermostat_schedule_id` of the desired thermostat schedule.
+To get a specific thermostat schedule, issue a [`/thermostats/schedules/get`](https://docs.seam.co/latest/api/thermostats/schedules/get) request, including the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1011,7 +1011,7 @@ $seam->thermostats->schedules->get(
 
 ## Update a Thermostat Schedule
 
-To update a thermostat schedule, issue a [`/thermostats/schedules/update`](../../api/thermostats/schedules/update.md) request, providing the `thermostat_schedule_id` of the desired thermostat schedule and the desired updated settings.
+To update a thermostat schedule, issue a [`/thermostats/schedules/update`](https://docs.seam.co/latest/api/thermostats/schedules/update) request, providing the `thermostat_schedule_id` of the desired thermostat schedule and the desired updated settings.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1128,7 +1128,7 @@ void
 
 ## Delete a Thermostat Schedule
 
-To delete a thermostat schedule, issue a [`/thermostats/schedules/delete`](../../api/thermostats/schedules/delete.md) request, providing the `thermostat_schedule_id` of the desired thermostat schedule.
+To delete a thermostat schedule, issue a [`/thermostats/schedules/delete`](https://docs.seam.co/latest/api/thermostats/schedules/delete) request, providing the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
 {% tab title="Python" %}

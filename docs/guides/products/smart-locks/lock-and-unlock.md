@@ -10,7 +10,7 @@ Seam enables you to lock or unlock your door lock remotely. This guide walks you
 
 When you send a command to a smart lock, it might take a while for Seam to confirm the action's success. To handle this, Seam provides [an "action attempt" object](../../core-concepts/action-attempts.md), which indicates whether the action was successful.
 
-To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](../../api/action_attempts/get.md). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
+To ensure that the action has been successfully executed, we advise checking the status of the action attempt object by polling the ["Get Action Attempt" request](https://docs.seam.co/latest/api/action_attempts/get). Once Seam has successfully confirmed the action, the action attempt's `status` will indicate `success`.
 
 Some providers and device models cannot confirm whether the physical lock or unlock happened in a reasonable time or at all. In those cases, a successful action attempt can still include `action_attempt.result.was_confirmed_by_device = false`.
 
@@ -23,9 +23,9 @@ Before you attempt to lock or unlock a device, be sure to confirm that your devi
 * `device.can_remotely_lock`
 * `device.can_remotely_unlock`
 
-Use [Get Device](../../api/devices/get.md) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
+Use [Get Device](https://docs.seam.co/latest/api/devices/get) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
-If either of these capability flags is `false` or not present, you can view the [properties](../../api/devices/#properties) of the device, [errors](../../api/devices/#errors) or [warnings](../../api/devices/#warnings) for the device, and [events](../../api/events/) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
+If either of these capability flags is `false` or not present, you can view the [properties](https://docs.seam.co/latest/api/devices/#properties) of the device, [errors](https://docs.seam.co/latest/api/devices/#errors) or [warnings](https://docs.seam.co/latest/api/devices/#warnings) for the device, and [events](https://docs.seam.co/latest/api/events/) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -162,7 +162,7 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 ## Locking a Door
 
-You can lock a door using the [`lock_door`](../../api/locks/lock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can lock a door using the [`lock_door`](https://docs.seam.co/latest/api/locks/lock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -355,7 +355,7 @@ if (device.CanRemotelyLock == true) {
 
 ## Unlocking a Door
 
-You can unlock a door using the [unlock\_door](../../api/locks/unlock_door.md) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can unlock a door using the [unlock\_door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -691,7 +691,7 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
 
-Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](../../api/action_attempts/get.md). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
+Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](https://docs.seam.co/latest/api/action_attempts/get). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 
 {% hint style="info" %}
 Some providers and device models do not confirm whether a lock or unlock completed on the physical device. In those cases, the action attempt can still succeed while `action_attempt.result.was_confirmed_by_device` is `false`. Use this property to set the right expectation in your UI, especially for unlock flows.
@@ -841,7 +841,7 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 
 ## Checking the Locked Status of a Lock
 
-To retrieve the locked status of a specific door lock, use the [Get Device](../../api/devices/get.md) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
+To retrieve the locked status of a specific door lock, use the [Get Device](https://docs.seam.co/latest/api/devices/get) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -989,7 +989,7 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 
 ## Lock and Unlock Events
 
-Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](../../api/events/list.md) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
+Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](https://docs.seam.co/latest/api/events/list) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
 
 A lock or unlock event looks like the following:
 
@@ -1009,4 +1009,4 @@ A lock or unlock event looks like the following:
 }
 ```
 
-For more information about the `lock.locked` and `lock.unlocked` attributes, please see[ Events](../../api/events/).
+For more information about the `lock.locked` and `lock.unlocked` attributes, please see[ Events](https://docs.seam.co/latest/api/events/).

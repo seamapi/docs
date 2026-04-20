@@ -214,7 +214,7 @@ seam acs entrances list --acs_system_id "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
 
 ## **Create a User Identity**
 
-You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](../../api/access_grants/create.md#create-an-access-grant-including-a-new-user-identity).
+You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](https://docs.seam.co/latest/api/access_grants/create#create-an-access-grant-including-a-new-user-identity).
 
 To create a user identity, specify the unique `user_identity_key`,  `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
 

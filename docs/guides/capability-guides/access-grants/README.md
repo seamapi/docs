@@ -45,5 +45,5 @@ To create your first Access Grant, see the [Access Grant Quick Start](access-gra
 * [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
 * [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md)
 * [Delivering Access Methods](delivering-access-methods.md)
-* [Access Grants API Reference](../../api/access_grants/)
-* [Access Methods API Reference](../../api/access_methods/)
+* [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
+* [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

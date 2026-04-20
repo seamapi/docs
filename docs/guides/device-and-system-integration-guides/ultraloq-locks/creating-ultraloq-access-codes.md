@@ -841,10 +841,10 @@ If you receive validation errors when creating codes:
 
 For complete API documentation, see:
 
-* [POST /access_codes/create](../../api/access_codes/create.md)
-* [GET /access_codes/get](../../api/access_codes/get.md)
-* [GET /access_codes/list](../../api/access_codes/list.md)
-* [POST /access_codes/delete](../../api/access_codes/delete.md)
+* [POST /access_codes/create](https://docs.seam.co/latest/api/access_codes/create)
+* [GET /access_codes/get](https://docs.seam.co/latest/api/access_codes/get)
+* [GET /access_codes/list](https://docs.seam.co/latest/api/access_codes/list)
+* [POST /access_codes/delete](https://docs.seam.co/latest/api/access_codes/delete)
 
 ***
 

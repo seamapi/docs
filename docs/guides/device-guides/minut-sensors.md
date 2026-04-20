@@ -24,8 +24,8 @@ We support the following features:
 
 * [Configuring noise threshold settings](../products/noise-sensors/configure-noise-threshold-settings.md)\
   You can configure a maximum of two noise thresholds per Minut sensor. The first threshold is required and represents the regular threshold for the whole day. The second threshold is optional and represents the threshold for the quiet hours timeframe.
-* [Receiving noise sensor events when noise events occur](../api/events/)\
-  For more information, see the [`noise_sensor.noise_threshold_triggered` event](../api/events/).
+* [Receiving noise sensor events when noise events occur](https://docs.seam.co/latest/api/events/)\
+  For more information, see the [`noise_sensor.noise_threshold_triggered` event](https://docs.seam.co/latest/api/events/).
 
 ***
 

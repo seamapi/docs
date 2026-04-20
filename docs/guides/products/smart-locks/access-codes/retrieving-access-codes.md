@@ -8,7 +8,7 @@ description: >-
 
 ## Retrieving All Access Codes for a Device
 
-To retrieve all access codes for a device, include the `device_id` in the [List Access Codes](../../../api/access_codes/list.md) request.
+To retrieve all access codes for a device, include the `device_id` in the [List Access Codes](https://docs.seam.co/latest/api/access_codes/list) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -329,7 +329,7 @@ Code: 1234
 
 ## Retrieving Access Codes Using Access Code IDs
 
-To retrieve access codes by IDs, include the desired `access_code_ids` in the [List Access Codes](../../../api/access_codes/list.md) request.
+To retrieve access codes by IDs, include the desired `access_code_ids` in the [List Access Codes](https://docs.seam.co/latest/api/access_codes/list) request.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -614,7 +614,7 @@ Code: 1234
 
 ## Retrieving Individual Access Codes
 
-To retrieve a specific access code, include the desired `access_code_id` in the [Get Access Code](../../../api/access_codes/get.md) request.
+To retrieve a specific access code, include the desired `access_code_id` in the [Get Access Code](https://docs.seam.co/latest/api/access_codes/get) request.
 
 {% tabs %}
 {% tab title="Python" %}

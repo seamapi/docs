@@ -71,4 +71,4 @@ Find out more about using Seam to manage access control system resources. See th
    * [Retrieving Entrance Details](../../capability-guides/access-systems/retrieving-entrance-details.md)
 7. Create credentials for ACS users.
    * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
-8. See the Seam [Access Control Systems API reference](../../api/acs/).
+8. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).

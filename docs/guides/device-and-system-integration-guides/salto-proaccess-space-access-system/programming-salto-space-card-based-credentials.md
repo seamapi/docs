@@ -555,4 +555,4 @@ To find out more about using the Seam API with your Salto Space access system, s
 * [Managing Access System Users](../../products/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Working with Card Encoders and Scanners](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/)
-* [Access Systems](../../api/acs/) in the Seam API reference
+* [Access Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference

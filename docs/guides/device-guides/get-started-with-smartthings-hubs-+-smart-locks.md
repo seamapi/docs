@@ -403,7 +403,7 @@ True
 
 ## Step 3: Retrieve SmartThings-connected lock devices
 
-When you link an SmartThings account with Seam, we create a `device` object to represent each SmartThings-connected lock in your account. You can then retrieve these SmartThings devices using the [List Devices](../api/devices/list.md) and [Get Device](../api/devices/get.md) endpoints.
+When you link an SmartThings account with Seam, we create a `device` object to represent each SmartThings-connected lock in your account. You can then retrieve these SmartThings devices using the [List Devices](https://docs.seam.co/latest/api/devices/list) and [Get Device](https://docs.seam.co/latest/api/devices/get) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
@@ -710,7 +710,7 @@ Try out the following actions on your SmartThings-connected lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](../api/locks/unlock_door.md) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -879,7 +879,7 @@ if (frontDoor.CanRemotelyUnlock == true) {
 {% endtab %}
 {% endtabs %}
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](../api/action_attempts/get.md) by ID, or look for a [`lock.unlocked` event](../api/events/).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](https://docs.seam.co/latest/api/action_attempts/get) by ID, or look for a [`lock.unlocked` event](https://docs.seam.co/latest/api/events/).
 
 To query the `locked` status of the device:
 
@@ -1010,7 +1010,7 @@ False
 {% endtabs %}
 
 {% hint style="success" %}
-Now that you have successfully unlocked your lock, you can use the [Lock Door](../api/locks/lock_door.md) endpoint to lock it again.
+Now that you have successfully unlocked your lock, you can use the [Lock Door](https://docs.seam.co/latest/api/locks/lock_door) endpoint to lock it again.
 {% endhint %}
 
 ***

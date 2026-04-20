@@ -1184,7 +1184,7 @@ In your application UI, guide users to select the correct timezone:
 
 For complete API documentation, see:
 
-* [POST /devices/report_provider_metadata](../../api/devices/report_provider_metadata.md)
+* [POST /devices/report_provider_metadata](https://docs.seam.co/latest/api/devices/report_provider_metadata)
 
 ***
 

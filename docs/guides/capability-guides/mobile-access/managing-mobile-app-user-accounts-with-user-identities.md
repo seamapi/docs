@@ -22,7 +22,7 @@ User identities can be linked to one [ACS user](../../products/access-systems/#w
 
 ### 1. Create a User Identity
 
-To [create a user identity](../../api/user_identities/create.md), you can specify any of the following characteristics:
+To [create a user identity](https://docs.seam.co/latest/api/user_identities/create), you can specify any of the following characteristics:
 
 * Unique user identity key (`user_identity_key`)
 * Unique email address (`email_address`)
@@ -192,7 +192,7 @@ Coming soon!
 
 ### 2. Assign an ACS User to the User Identity
 
-To [link an ACS user with a user identity](../../api/user_identities/add_acs_user.md), provide the ID of the user identity and the ID of the ACS user.
+To [link an ACS user with a user identity](https://docs.seam.co/latest/api/user_identities/add_acs_user), provide the ID of the user identity and the ID of the ACS user.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -359,7 +359,7 @@ Coming soon!
 
 ## Removing a User Identity
 
-When you [delete a user identity](../../api/user_identities/delete.md), Seam automatically cleans up all other associated resources.
+When you [delete a user identity](https://docs.seam.co/latest/api/user_identities/delete), Seam automatically cleans up all other associated resources.
 
 {% tabs %}
 {% tab title="Python" %}

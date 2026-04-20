@@ -8,7 +8,7 @@ You can create mobile credentials that enable your mobile app users to unlock en
 
 To use the Seam API to create mobile credentials for mobile app users in a Salto KS ACS:
 
-1.  Create a [user identity](../../api/user_identities/).
+1.  Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
 
     Seam user identities enable you to match your own mobile app users to ACS users that you create using the Seam API.
 2. Create an [ACS user](../../products/access-systems/user-management.md) on the Salto KS ACS or assign an existing ACS user to the user identity.\
@@ -477,5 +477,5 @@ To learn more about using the Seam API with your Salto KS ACS, see the following
 * [Managing ACS Users](../../products/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../capability-guides/mobile-access/)
-* [Access Control Systems](../../api/acs/) in the Seam API reference
-* [User Identities](../../api/user_identities/) in the Seam API reference
+* [Access Control Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference
+* [User Identities](https://docs.seam.co/latest/api/user_identities/) in the Seam API reference

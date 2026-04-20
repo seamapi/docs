@@ -8,7 +8,7 @@ You can create mobile credentials that enable your mobile app users to unlock en
 
 To use the Seam API to create mobile credentials for mobile app users in a Salto Space access system:
 
-1.  Create a [user identity](../../api/user_identities/).
+1.  Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
 
     Seam user identities enable you to match your own mobile app users to access system users that you create using the Seam API.
 2. Create an [access system user](../../products/access-systems/user-management.md) on the Salto Space access system or assign an existing access system user to the user identity.\
@@ -364,5 +364,5 @@ To find out more about using the Seam API with your Salto Space access system, s
 * [Managing Access System Users](../../products/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../capability-guides/mobile-access/)
-* [Access Systems](../../api/acs/) in the Seam API reference
-* [User Identities](../../api/user_identities/) in the Seam API reference
+* [Access Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference
+* [User Identities](https://docs.seam.co/latest/api/user_identities/) in the Seam API reference

@@ -18,6 +18,6 @@ Seam exposes each capability as a set of APIs that are standardized across brand
 In addition, Seam provides the following three sets of device-related features:
 
 * **Actions:** Commands that you can issue to the device, such as unlock. For more information, see the [Capability Guides](../../capability-guides/device-and-system-capabilities.md).
-* **Properties:** The current state of the device, such as the locked, online, and managed statuses. For details, see [`device` Properties](../../api/devices/#properties).
-* **Events:** Notifications related to changes in the state of the device, such as an unlocking operation performed with an access code. For details, see [Events](../../api/events/).\
+* **Properties:** The current state of the device, such as the locked, online, and managed statuses. For details, see [`device` Properties](https://docs.seam.co/latest/api/devices/#properties).
+* **Events:** Notifications related to changes in the state of the device, such as an unlocking operation performed with an access code. For details, see [Events](https://docs.seam.co/latest/api/events/).\
   To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](../workspaces/#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](testing-your-app-against-device-disconnection-and-removal.md).

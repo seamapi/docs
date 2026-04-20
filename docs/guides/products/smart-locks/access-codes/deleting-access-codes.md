@@ -8,7 +8,7 @@ description: >-
 
 ## 1. Delete the access code using the API
 
-To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](../../../api/access_codes/delete.md) request.
+To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](https://docs.seam.co/latest/api/access_codes/delete) request.
 
 {% tabs %}
 {% tab title="Python" %}

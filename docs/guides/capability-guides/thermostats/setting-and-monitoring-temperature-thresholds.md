@@ -6,17 +6,17 @@ description: >-
 
 # Setting and Monitoring Temperature Thresholds
 
-You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](../../api/events/) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
+You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](https://docs.seam.co/latest/api/events/) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
 
-Use the [`/thermostats/set_temperature_threshold`](../../api/thermostats/set\_temperature\_threshold.md) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../core-concepts/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
+Use the [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../core-concepts/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
 
-When the thermostat reports a temperature outside the threshold range, Seam also adds a warning on the thermostat. You can use the [`/devices/get`](../../api/devices/get.md) endpoint to get the thermostat and then inspect its `device.warnings` property.
+When the thermostat reports a temperature outside the threshold range, Seam also adds a warning on the thermostat. You can use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint to get the thermostat and then inspect its `device.warnings` property.
 
 ***
 
 ## Set a Temperature Threshold
 
-To set a temperature threshold for a thermostat, issue a [`/thermostats/set_temperature_threshold`](../../api/thermostats/set\_temperature\_threshold.md) request, providing the `device_id` of the desired thermostat. Also, include the following parameters:
+To set a temperature threshold for a thermostat, issue a [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) request, providing the `device_id` of the desired thermostat. Also, include the following parameters:
 
 * `lower_limit_celsius` or `lower_limit_fahrenheit`
 * `upper_limit_celsius` or `upper_limit_fahrenheit`
@@ -137,7 +137,7 @@ void
 
 ## View a Temperature Threshold
 
-The temperature threshold range that you set for a thermostat is a property of the [`thermostat`](../../api/thermostats/) resource itself. To view the threshold values, use the [`/devices/get`](../../api/devices/get.md) endpoint and inspect the `thermostat.temperature_threshold`.
+The temperature threshold range that you set for a thermostat is a property of the [`thermostat`](https://docs.seam.co/latest/api/thermostats/) resource itself. To view the threshold values, use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint and inspect the `thermostat.temperature_threshold`.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -285,7 +285,7 @@ $seam->devices->get(
 
 ## Change a Temperature Threshold
 
-To change the temperature threshold range for a thermostat, issue a new [`/thermostats/set_temperature_threshold`](../../api/thermostats/set\_temperature\_threshold.md) request. The new threshold values replace the previous ones.
+To change the temperature threshold range for a thermostat, issue a new [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) request. The new threshold values replace the previous ones.
 
 ***
 

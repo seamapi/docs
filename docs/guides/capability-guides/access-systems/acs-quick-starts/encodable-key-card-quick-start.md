@@ -810,4 +810,4 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
    * [Managing Credentials](../managing-credentials.md)
 6. For relevant access control systems, encode credentials onto key cards.
    * [Working with Card Encoders and Scanners](../working-with-card-encoders-and-scanners/)
-7. See the Seam [Access Control Systems API reference](../../../api/acs/).
+7. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).
