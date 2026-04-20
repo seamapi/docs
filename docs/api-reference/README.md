@@ -9,24 +9,24 @@ See the following reference topics:
 
 * [Installation](installation.md)
 * [Authentication](authentication.md)
-* [Client Sessions](../api/client_sessions/)
-* [Workspaces](../api/workspaces/)
+* [Client Sessions](client_sessions/)
+* [Workspaces](workspaces/)
 
 ## Controlling Devices and Systems
 
-* [Connect Webviews](../api/connect_webviews/)
-* [Devices](../api/devices/)
-  * [Locks](../api/locks/)
-    * [Access Codes](../api/access_codes/)
-  * [Thermostats](../api/thermostats/)
-  * [Noise Sensors](../api/noise_sensors/)
-* [Access Control Systems](../api/acs/)
-  * [User Identities](../api/user_identities/)
-  * [Phones](../api/phones/)
+* [Connect Webviews](connect_webviews/)
+* [Devices](devices/)
+  * [Locks](locks/)
+    * [Access Codes](access_codes/)
+  * [Thermostats](thermostats/)
+  * [Noise Sensors](noise_sensors/)
+* [Access Control Systems](acs/)
+  * [User Identities](user_identities/)
+  * [Phones](phones/)
 
 ## Monitoring
 
-* [Events](../api/events/)
-* [Action Attempts](../api/action_attempts/)
-* [Connected Accounts](../api/connected_accounts/)
+* [Events](events/)
+* [Action Attempts](action_attempts/)
+* [Connected Accounts](connected_accounts/)
 
