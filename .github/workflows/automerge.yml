@@ -30,8 +30,8 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: |
-            docs/api/**
-            docs/SUMMARY.md
+            docs/guides/api/**
+            docs/guides/SUMMARY.md
   merge:
     name: Merge
     runs-on: ubuntu-latest

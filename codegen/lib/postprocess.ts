@@ -5,7 +5,7 @@ import type Metalsmith from 'metalsmith'
 
 const baseUrl = 'https://docs.seam.co/latest/'
 const urlPrefix = '/latest'
-const docsRoot = 'docs'
+const docsRoot = join('docs', 'guides')
 
 export const postprocess = (
   files: Metalsmith.Files,
@@ -18,7 +18,7 @@ export const postprocess = (
         if (typeof $2 !== 'string') return $1
         const url = new URL($2)
         url.pathname = url.pathname.replace(urlPrefix, '')
-        const targetRoot = join('docs', url.pathname)
+        const targetRoot = join(docsRoot, url.pathname)
 
         const target = `${targetRoot}.md`
         if (existsSync(target)) {

@@ -3,7 +3,7 @@ import { join } from 'node:path'
 
 import type Metalsmith from 'metalsmith'
 
-const summaryPath = join('docs', 'SUMMARY.md')
+const summaryPath = join('docs', 'guides', 'SUMMARY.md')
 
 export const summary = async (
   files: Metalsmith.Files,
