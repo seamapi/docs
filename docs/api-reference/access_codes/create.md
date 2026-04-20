@@ -303,7 +303,7 @@ Code to be used for access.
 
 **`common_code_key`** *String*
 
-Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md).
+Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
 
 ---
 

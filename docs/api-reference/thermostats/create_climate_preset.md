@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Creates a [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Creates a [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 
 {% tabs %}
@@ -177,7 +177,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`climate_preset_key`** *String* (Required)
 
-Unique key to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 ---
 
@@ -195,13 +195,13 @@ The climate preset mode for the thermostat, based on the available climate prese
 
 **`cooling_set_point_celsius`** *Number*
 
-Temperature to which the thermostat should cool (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
 **`cooling_set_point_fahrenheit`** *Number*
 
-Temperature to which the thermostat should cool (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
@@ -257,19 +257,19 @@ Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermos
 
 **`heating_set_point_celsius`** *Number*
 
-Temperature to which the thermostat should heat (in °C). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
 **`heating_set_point_fahrenheit`** *Number*
 
-Temperature to which the thermostat should heat (in °F). See also [Set Points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
 **`hvac_mode_setting`** *String*
 
-Desired [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 
 ---
 
@@ -285,7 +285,7 @@ Indicates whether a person at the thermostat or using the API can change the the
 
 **`name`** *String*
 
-User-friendly name to identify the [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md).
+User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 ---
 

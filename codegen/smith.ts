@@ -21,15 +21,18 @@ import {
 const rootDir = dirname(fileURLToPath(import.meta.url))
 
 await Promise.all([
-  deleteAsync('./docs/guides/api'),
-  deleteAsync('./docs/guides/sdk'),
+  deleteAsync([
+    './docs/api-reference/**',
+    '!./docs/api-reference/SUMMARY.md',
+    '!./docs/api-reference/.gitbook.yaml',
+  ]),
 ])
 
 const partials = await getHandlebarsPartials(`${rootDir}/layouts/partials`)
 
 Metalsmith(rootDir)
   .source('./docs')
-  .destination('../docs/guides')
+  .destination('../docs')
   .clean(false)
   .use(
     metadata({

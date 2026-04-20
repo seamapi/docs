@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [thermostat schedules](../../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Returns a list of all [thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
 
 
 {% tabs %}

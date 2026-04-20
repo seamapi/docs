@@ -75,13 +75,13 @@ export const report = (
 
   const reportData = generateReport(metadata)
 
-  files['api/_report.md'] = {
+  files['api-reference/_report.md'] = {
     contents: Buffer.from('\n'),
     layout: 'report.hbs',
     ...reportData,
   }
 
-  files['api/_blueprint.json'] = {
+  files['api-reference/_blueprint.json'] = {
     contents: Buffer.from(JSON.stringify(metadata.blueprint, null, 2)),
     layout: 'default.hbs',
   }

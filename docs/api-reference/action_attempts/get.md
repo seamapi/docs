@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [action attempt](../../core-concepts/action-attempts.md).
+Returns a specified [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).
 
 
 {% tabs %}

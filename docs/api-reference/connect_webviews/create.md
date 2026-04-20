@@ -4,13 +4,13 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Creates a new [Connect Webview](../../core-concepts/connect-webviews/README.md).
+Creates a new [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 To enable a user to connect their devices or systems to Seam, they must sign in to their device or system account. To enable a user to sign in, you create a `connect_webview`. After creating the Connect Webview, you receive a URL that you can use to display the visual component of this Connect Webview for your user. You can open an iframe or new window to display the Connect Webview.
 
 You should make a new `connect_webview` for each unique login request. Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.
 
-See also: [Connect Webview Process](../../core-concepts/connect-webviews/connect-webview-process.md).
+See also: [Connect Webview Process](https://docs.seam.co/latest/core-concepts/connect-webviews/connect-webview-process).
 
 
 {% tabs %}
@@ -526,7 +526,7 @@ Possible enum values:
 
 **`accepted_providers`** *Array* *of Enums*
 
-Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.
+Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/latest/api/devices/list_device_providers) with no filters.
 <details>
 
 <summary>Enum values</summary>
@@ -590,13 +590,13 @@ Possible enum values:
 
 **`automatically_manage_new_devices`** *Boolean*
 
-Indicates whether newly-added devices should appear as [managed devices](../../core-concepts/devices/managed-and-unmanaged-devices.md). See also: [Customize the Behavior Settings of Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-behavior-settings-of-your-connect-webviews).
+Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).
 
 ---
 
 **`custom_metadata`** *Object*
 
-Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a Connect Webview](../../core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview.md) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](../../core-concepts/connected-accounts/README.md) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](../../core-concepts/workspaces/README.md). You can also [filter Connect Webviews by custom metadata](../../core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata.md).
+Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](https://docs.seam.co/latest/core-concepts/workspaces). You can also [filter Connect Webviews by custom metadata](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata).
 
 ---
 
@@ -632,7 +632,7 @@ Specifies the category of providers that you want to include. To list all provid
 
 **`wait_for_device_creation`** *Boolean*
 
-Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-behavior-settings-of-your-connect-webviews).
+Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).
 
 ---
 

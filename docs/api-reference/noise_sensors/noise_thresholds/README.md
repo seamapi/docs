@@ -111,7 +111,7 @@ Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the event.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -167,7 +167,7 @@ Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---

@@ -84,7 +84,7 @@ Result of the action attempt. Null for pending and errored action attempts.
 
 **`action_attempt.lock_door.succeeded`**
 
-A lock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
+A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.
 
 <details>
 
@@ -128,14 +128,14 @@ A lock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`action_attempt.lock_door.failed`**
 
-A lock door [action attempt](../../core-concepts/action-attempts.md) failed.
+A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.
 
 <details>
 
@@ -179,14 +179,14 @@ A lock door [action attempt](../../core-concepts/action-attempts.md) failed.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`action_attempt.unlock_door.succeeded`**
 
-An unlock door [action attempt](../../core-concepts/action-attempts.md) succeeded.
+An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.
 
 <details>
 
@@ -230,14 +230,14 @@ An unlock door [action attempt](../../core-concepts/action-attempts.md) succeede
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`action_attempt.unlock_door.failed`**
 
-An unlock door [action attempt](../../core-concepts/action-attempts.md) failed.
+An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.
 
 <details>
 
@@ -281,14 +281,14 @@ An unlock door [action attempt](../../core-concepts/action-attempts.md) failed.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`action_attempt.simulate_keypad_code_entry.succeeded`**
 
-A simulate keypad code entry [action attempt](../../core-concepts/action-attempts.md) succeeded.
+A simulate keypad code entry [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.
 
 <details>
 
@@ -332,14 +332,14 @@ A simulate keypad code entry [action attempt](../../core-concepts/action-attempt
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`action_attempt.simulate_keypad_code_entry.failed`**
 
-A simulate keypad code entry [action attempt](../../core-concepts/action-attempts.md) failed.
+A simulate keypad code entry [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.
 
 <details>
 
@@ -383,14 +383,14 @@ A simulate keypad code entry [action attempt](../../core-concepts/action-attempt
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`action_attempt.simulate_manual_lock_via_keypad.succeeded`**
 
-A simulate manual lock via keypad [action attempt](../../core-concepts/action-attempts.md) succeeded.
+A simulate manual lock via keypad [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.
 
 <details>
 
@@ -434,14 +434,14 @@ A simulate manual lock via keypad [action attempt](../../core-concepts/action-at
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`action_attempt.simulate_manual_lock_via_keypad.failed`**
 
-A simulate manual lock via keypad [action attempt](../../core-concepts/action-attempts.md) failed.
+A simulate manual lock via keypad [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.
 
 <details>
 
@@ -485,7 +485,7 @@ A simulate manual lock via keypad [action attempt](../../core-concepts/action-at
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -495,11 +495,11 @@ A simulate manual lock via keypad [action attempt](../../core-concepts/action-at
 
 [**`/action_attempts/get`**](./get.md)
 
-Returns a specified [action attempt](../../core-concepts/action-attempts.md).
+Returns a specified [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).
 
 
 [**`/action_attempts/list`**](./list.md)
 
-Returns a list of the [action attempts](../../core-concepts/action-attempts.md) that you specify as an array of `action_attempt_id`s.
+Returns a list of the [action attempts](https://docs.seam.co/latest/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.
 
 

@@ -5,6 +5,6 @@
 
 [**`/phones/simulate/create_sandbox_phone`**](./create_sandbox_phone.md)
 
-Creates a new simulated phone in a [sandbox workspace](../../../core-concepts/workspaces/README.md#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](../../../capability-guides/mobile-access/developing-in-a-sandbox-workspace.md#creating-a-simulated-phone-for-a-user-identity).
+Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](https://docs.seam.co/latest/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).
 
 

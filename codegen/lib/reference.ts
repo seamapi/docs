@@ -27,7 +27,7 @@ type File = ApiEndpointLayoutContext &
   ApiNamespaceLayoutContext &
   ApiSummaryLayoutContext & { layout: string }
 
-const rootPath = 'api'
+const rootPath = 'api-reference'
 const indexFile = 'README.md'
 
 export const reference = (

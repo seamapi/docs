@@ -5,7 +5,8 @@ import type Metalsmith from 'metalsmith'
 
 const baseUrl = 'https://docs.seam.co/latest/'
 const urlPrefix = '/latest'
-const docsRoot = join('docs', 'guides')
+const apiUrlPrefix = '/api'
+const apiReferenceRoot = join('docs', 'api-reference')
 
 export const postprocess = (
   files: Metalsmith.Files,
@@ -18,7 +19,13 @@ export const postprocess = (
         if (typeof $2 !== 'string') return $1
         const url = new URL($2)
         url.pathname = url.pathname.replace(urlPrefix, '')
-        const targetRoot = join(docsRoot, url.pathname)
+
+        // Only relativize links to pages within the api-reference space.
+        // The site section uses /api as its URL prefix.
+        // Cross-section links (to guides) stay as absolute URLs.
+        if (!url.pathname.startsWith(apiUrlPrefix + '/')) return $1
+        const apiPath = url.pathname.replace(apiUrlPrefix, '')
+        const targetRoot = join(apiReferenceRoot, apiPath)
 
         const target = `${targetRoot}.md`
         if (existsSync(target)) {
@@ -30,11 +37,6 @@ export const postprocess = (
           return getRelativeLink(name, readmeTarget, url)
         }
 
-        // eslint-disable-next-line no-console
-        console.warn(
-          `Could not find a matching file for ${$1} at ${targetRoot}.md or ${targetRoot}/README.md.`,
-        )
-
         return $1
       }),
     )
@@ -42,7 +44,7 @@ export const postprocess = (
 }
 
 const getRelativeLink = (name: string, target: string, url: URL): string => {
-  const src = join(docsRoot, name)
+  const src = join(apiReferenceRoot, name)
   const relativePath = relative(dirname(src), target)
   const urlPath = relativePath.split(sep).join('/')
   return `${urlPath}${url.hash}`

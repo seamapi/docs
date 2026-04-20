@@ -184,7 +184,7 @@ Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 
 **`pending_mutations`** *List* *of Objects*
 
-Pending mutations for the [access method](../../capability-guides/access-grants/delivering-access-methods.md). Indicates operations that are in progress.
+Pending mutations for the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods). Indicates operations that are in progress.
 
 
 
@@ -385,7 +385,7 @@ Seam is in the process of updating the access times for this access method.
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [access method](../../capability-guides/access-grants/delivering-access-methods.md).
+Warnings associated with the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods).
 
 
 
@@ -396,7 +396,7 @@ Variants:
 <details>
 <summary><code>being_deleted</code></summary>
 
-Indicates that the [access method](../../capability-guides/access-grants/delivering-access-methods.md) is being deleted.
+Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.
 
   **`created_at`** *Datetime*
   
@@ -428,7 +428,7 @@ Indicates that the [access method](../../capability-guides/access-grants/deliver
 <details>
 <summary><code>updating_access_times</code></summary>
 
-Indicates that the access times for this [access method](../../capability-guides/access-grants/delivering-access-methods.md) are being updated.
+Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.
 
   **`created_at`** *Datetime*
   
@@ -514,7 +514,7 @@ ID of the Seam workspace associated with the access method.
 
 **`being_deleted`**
 
-Indicates that the [access method](../../capability-guides/access-grants/delivering-access-methods.md) is being deleted.
+Indicates that the [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) is being deleted.
 
 ---
 
@@ -526,7 +526,7 @@ Indicates that all attempts to create an access code on this device before the s
 
 **`updating_access_times`**
 
-Indicates that the access times for this [access method](../../capability-guides/access-grants/delivering-access-methods.md) are being updated.
+Indicates that the access times for this [access method](https://docs.seam.co/latest/capability-guides/access-grants/delivering-access-methods) are being updated.
 
 ---
 
@@ -579,7 +579,7 @@ An access method was issued.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -622,7 +622,7 @@ An access method was revoked.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -665,7 +665,7 @@ An access method representing a physical card requires encoding.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -708,7 +708,7 @@ An access method was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -759,7 +759,7 @@ An access method was reissued.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -802,7 +802,7 @@ An access method was created.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -817,7 +817,7 @@ Deletes an access method.
 
 [**`/access_methods/encode`**](./encode.md)
 
-Encodes an existing access method onto a plastic card placed on the specified [encoder](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+Encodes an existing access method onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 
 
 [**`/access_methods/get`**](./get.md)

@@ -7,7 +7,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a [client session](../../core-concepts/authentication/client-session-tokens/README.md). If you want to restrict your users' access to their own devices, use client sessions.
+Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
 
 You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
 
@@ -46,7 +46,7 @@ A client session resource.
 
 **`client_session_id`** *UUID*
 
-ID of the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -55,7 +55,7 @@ ID of the [client session](../../core-concepts/authentication/client-session-tok
 
 **`connect_webview_ids`** *List* *of UUIDs*
 
-IDs of the [Connect Webviews](../../core-concepts/connect-webviews/README.md) associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -64,7 +64,7 @@ IDs of the [Connect Webviews](../../core-concepts/connect-webviews/README.md) as
 
 **`connected_account_ids`** *List* *of UUIDs*
 
-IDs of the [connected accounts](../../core-concepts/connected-accounts/README.md) associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -73,7 +73,7 @@ IDs of the [connected accounts](../../core-concepts/connected-accounts/README.md
 
 **`created_at`** *Datetime*
 
-Date and time at which the [client session](../../core-concepts/authentication/client-session-tokens/README.md) was created.
+Date and time at which the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) was created.
 
 
 
@@ -82,7 +82,7 @@ Date and time at which the [client session](../../core-concepts/authentication/c
 
 **`customer_key`** *String*
 
-Customer key associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Customer key associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -91,7 +91,7 @@ Customer key associated with the [client session](../../core-concepts/authentica
 
 **`device_count`** *Number*
 
-Number of devices associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Number of devices associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -100,7 +100,7 @@ Number of devices associated with the [client session](../../core-concepts/authe
 
 **`expires_at`** *Datetime*
 
-Date and time at which the [client session](../../core-concepts/authentication/client-session-tokens/README.md) expires.
+Date and time at which the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) expires.
 
 
 
@@ -109,7 +109,7 @@ Date and time at which the [client session](../../core-concepts/authentication/c
 
 **`token`** *String*
 
-Client session token associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Client session token associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -118,7 +118,7 @@ Client session token associated with the [client session](../../core-concepts/au
 
 **`user_identifier_key`** *String*
 
-Your user ID for the user associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Your user ID for the user associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -127,7 +127,7 @@ Your user ID for the user associated with the [client session](../../core-concep
 
 **`user_identity_id`** *UUID*
 
-ID of the [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) associated with the client session.
+ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.
 
 
 
@@ -136,7 +136,7 @@ ID of the [user identity](../../capability-guides/mobile-access/managing-mobile-
 
 **`user_identity_ids`** *List* *of UUIDs*
 
-IDs of the [user identities](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) associated with the client session.
+IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.
 
 {% hint style="warning" %}
 **Deprecated**. Use `user_identity_id` instead.
@@ -148,7 +148,7 @@ IDs of the [user identities](../../capability-guides/mobile-access/managing-mobi
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 
@@ -160,7 +160,7 @@ ID of the [workspace](../../core-concepts/workspaces/README.md) associated with 
 
 **`client_session.deleted`**
 
-A [client session](../../core-concepts/authentication/client-session-tokens/README.md) was deleted.
+A [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) was deleted.
 
 <details>
 
@@ -188,7 +188,7 @@ A [client session](../../core-concepts/authentication/client-session-tokens/READ
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -198,36 +198,36 @@ A [client session](../../core-concepts/authentication/client-session-tokens/READ
 
 [**`/client_sessions/create`**](./create.md)
 
-Creates a new [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Creates a new [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 [**`/client_sessions/delete`**](./delete.md)
 
-Deletes a [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Deletes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 [**`/client_sessions/get`**](./get.md)
 
-Returns a specified [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Returns a specified [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 [**`/client_sessions/get_or_create`**](./get_or_create.md)
 
-Returns a [client session](../../core-concepts/authentication/client-session-tokens/README.md) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
+Returns a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
 
 [**`/client_sessions/grant_access`**](./grant_access.md)
 
-Grants a [client session](../../core-concepts/authentication/client-session-tokens/README.md) access to one or more resources, such as [Connect Webviews](../../core-concepts/connect-webviews/README.md), [user identities](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), and so on.
+Grants a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) access to one or more resources, such as [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews), [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity), and so on.
 
 
 [**`/client_sessions/list`**](./list.md)
 
-Returns a list of all [client sessions](../../core-concepts/authentication/client-session-tokens/README.md).
+Returns a list of all [client sessions](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 
 [**`/client_sessions/revoke`**](./revoke.md)
 
-Revokes a [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Revokes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 

@@ -136,7 +136,7 @@ Type of event.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](../../core-concepts/workspaces/README.md) associated with the event.
+ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 
 
 

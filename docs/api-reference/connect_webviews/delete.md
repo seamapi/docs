@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes a [Connect Webview](../../core-concepts/connect-webviews/README.md).
+Deletes a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 You do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.
 

@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Encodes an existing [credential](../../../capability-guides/access-systems/managing-credentials.md) onto a plastic card placed on the specified [encoder](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md). Either provide an `acs_credential_id` or an `access_method_id`
+Encodes an existing [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). Either provide an `acs_credential_id` or an `access_method_id`
 
 
 {% tabs %}

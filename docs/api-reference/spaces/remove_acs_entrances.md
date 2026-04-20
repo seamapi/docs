@@ -6,7 +6,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Removes [entrances](../../capability-guides/access-systems/retrieving-entrance-details.md) from a specific space.
+Removes [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) from a specific space.
 
 
 {% tabs %}

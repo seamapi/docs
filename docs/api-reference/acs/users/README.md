@@ -13,7 +13,7 @@ Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems
 
 An access system user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
-For details about how to configure users in your access system, see the corresponding [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
+For details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
 
 {% tabs %}
 {% tab title="ACS User" %}
@@ -105,7 +105,7 @@ ID of the [access system user](https://docs.seam.co/latest/capability-guides/acc
 
 **`connected_account_id`** *UUID*
 
-The ID of the [connected account](../../../core-concepts/connected-accounts/README.md) that is associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 
@@ -1035,7 +1035,7 @@ Indicates that the [access system user](https://docs.seam.co/latest/capability-g
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](../../../core-concepts/workspaces/README.md) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 
@@ -1147,7 +1147,7 @@ An [access system user](https://docs.seam.co/latest/capability-guides/access-sys
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -1188,7 +1188,7 @@ An [access system user](https://docs.seam.co/latest/capability-guides/access-sys
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -1208,7 +1208,7 @@ Creates a new [access system user](https://docs.seam.co/latest/capability-guides
 
 [**`/acs/users/delete`**](./delete.md)
 
-Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Deletes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the access system user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).
 
 
 [**`/acs/users/get`**](./get.md)

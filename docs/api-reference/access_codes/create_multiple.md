@@ -11,7 +11,7 @@ If you specify a custom code, Seam assigns this custom code to each of the resul
 
 If you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.
 
-See also [Creating and Updating Multiple Linked Access Codes](../../capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes.md).
+See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
 
 
 {% tabs %}

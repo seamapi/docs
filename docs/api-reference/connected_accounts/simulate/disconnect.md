@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Simulates a connected account becoming disconnected from Seam. Only applicable for [sandbox workspaces](../../../core-concepts/workspaces/README.md#sandbox-workspaces).
+Simulates a connected account becoming disconnected from Seam. Only applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
 
 
 <details>

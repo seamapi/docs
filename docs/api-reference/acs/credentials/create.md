@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Creates a new [credential](../../../capability-guides/access-systems/managing-credentials.md) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 {% tabs %}
@@ -314,7 +314,7 @@ ID of the access system user to whom the new credential belongs. You must provid
 
 **`allowed_acs_entrance_ids`** *Array* *of UUIDs*
 
-Set of IDs of the [entrances](../../../capability-guides/access-systems/retrieving-entrance-details.md) for which the new credential grants access.
+Set of IDs of the [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for which the new credential grants access.
 
 ---
 
@@ -363,7 +363,7 @@ Vostio-specific metadata for the new credential.
 
 **`code`** *String*
 
-Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](../../../device-and-system-integration-guides/overview.md).
+Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview).
 
 ---
 
@@ -381,7 +381,7 @@ Date and time at which the validity of the new credential ends, in [ISO 8601](ht
 
 **`is_multi_phone_sync_credential`** *Boolean*
 
-Indicates whether the new credential is a [multi-phone sync credential](../../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
+Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 ---
 
@@ -393,7 +393,7 @@ Salto Space-specific metadata for the new credential.
 
 <summary><b><code>assign_new_key</code></b> <i>Boolean</i></summary>
 
-Indicates whether to assign a first, new card to a user. See also [Programming Salto Space Card-based Credentials](../../../device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials.md).
+Indicates whether to assign a first, new card to a user. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).
 
 </details>
 
@@ -405,7 +405,7 @@ Indicates whether to assign a first, new card to a user. See also [Programming S
 
 <summary><b><code>update_current_key</code></b> <i>Boolean</i></summary>
 
-Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](../../../device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials.md).
+Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).
 
 </details>
 

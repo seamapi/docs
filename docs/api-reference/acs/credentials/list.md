@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [credentials](../../../capability-guides/access-systems/managing-credentials.md).
+Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).
 
 
 {% tabs %}

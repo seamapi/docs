@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a [client session](../../core-concepts/authentication/client-session-tokens/README.md) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
+Returns a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
 
 
 {% tabs %}
@@ -240,7 +240,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`connect_webview_ids`** *Array* *of Strings*
 
-IDs of the [Connect Webviews](../../core-concepts/connect-webviews/README.md) that you want to associate with the client session (or that are already associated with the existing client session).
+IDs of the [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) that you want to associate with the client session (or that are already associated with the existing client session).
 
 ---
 
@@ -264,13 +264,13 @@ Your user ID for the user that you want to associate with the client session (or
 
 **`user_identity_id`** *String*
 
-ID of the [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).
+ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).
 
 ---
 
 **`user_identity_ids`** *Array* *of UUIDs*
 
-IDs of the [user identities](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) that you want to associate with the client session.
+IDs of the [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.
 
 {% hint style="warning" %}
 **Deprecated**. Use `user_identity_id`.

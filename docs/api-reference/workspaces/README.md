@@ -50,7 +50,7 @@ Group that defines the entrances to which a set of users has access and, in some
 
 Some access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.
 
-To learn whether your access control system supports access groups, see the corresponding [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
+To learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
 
 
 
@@ -59,7 +59,7 @@ To learn whether your access control system supports access groups, see the corr
 
 **`acs_credentials`** *Record*
 
-Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](../../capability-guides/access-systems/retrieving-entrance-details.md). The `acs_credential` object represents a [credential](../../capability-guides/access-systems/managing-credentials.md) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
 
@@ -72,7 +72,7 @@ For each `acs_credential`, you define the access method. You can also specify ad
 
 **`acs_encoders`** *Record*
 
-Represents a hardware device that encodes [credential](../../capability-guides/access-systems/managing-credentials.md) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Represents a hardware device that encodes [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Some access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:
 
@@ -83,9 +83,9 @@ Some access control systems require credentials to be encoded onto plastic key c
 
 Separately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.
 
-See [Working with Card Encoders and Scanners](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/README.md).
+See [Working with Card Encoders and Scanners](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 
-To verify if your access control system requires a card encoder, see the corresponding [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
+To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
 
 
 
@@ -94,7 +94,7 @@ To verify if your access control system requires a card encoder, see the corresp
 
 **`acs_entrances`** *Record*
 
-Represents an [entrance](../../capability-guides/access-systems/retrieving-entrance-details.md) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
@@ -122,7 +122,7 @@ Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems
 
 An access system user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
-For details about how to configure users in your access system, see the corresponding [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems).
+For details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
 
 
 
@@ -135,7 +135,7 @@ Represents an action attempt that enables you to keep track of the progress of y
 
 When you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.
 
-See also [Action Attempts](../../core-concepts/action-attempts.md).
+See also [Action Attempts](https://docs.seam.co/latest/core-concepts/action-attempts).
 
 
 
@@ -144,7 +144,7 @@ See also [Action Attempts](../../core-concepts/action-attempts.md).
 
 **`client_sessions`** *Record*
 
-Represents a [client session](../../core-concepts/authentication/client-session-tokens/README.md). If you want to restrict your users' access to their own devices, use client sessions.
+Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
 
 You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
 
@@ -161,7 +161,7 @@ See also [Get Started with React](https://docs.seam.co/latest/ui-components/over
 
 **`connect_webviews`** *Record*
 
-Represents a [Connect Webview](../../core-concepts/connect-webviews/README.md).
+Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.
 
@@ -180,7 +180,7 @@ To list all providers within a category, use `/devices/list_device_providers` wi
 
 **`connected_accounts`** *Record*
 
-Represents a [connected account](../../core-concepts/connected-accounts/README.md). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
+Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
 
 
 
@@ -189,7 +189,7 @@ Represents a [connected account](../../core-concepts/connected-accounts/README.m
 
 **`devices`** *Record*
 
-Represents a [device](../../core-concepts/devices/README.md) that has been connected to Seam.
+Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.
 
 
 
@@ -247,7 +247,7 @@ Represents a thermostat daily program, consisting of a set of periods, each of w
 
 **`thermostat_schedules`** *Record*
 
-Represents a [thermostat schedule](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) that activates a configured [climate preset](../../capability-guides/thermostats/creating-and-managing-climate-presets/README.md) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
+Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
 
 
 
@@ -275,7 +275,7 @@ Not all providers support unmanaged access codes. The following providers do not
 
 **`unmanaged_devices`** *Record*
 
-Represents an [unmanaged device](../../core-concepts/devices/managed-and-unmanaged-devices.md). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](../../core-concepts/devices/managed-and-unmanaged-devices.md#convert-an-unmanaged-device-to-managed).
+Represents an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).
 
 
 
@@ -284,7 +284,7 @@ Represents an [unmanaged device](../../core-concepts/devices/managed-and-unmanag
 
 **`user_identities`** *Record*
 
-Represents a [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) associated with an application user account.
+Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.
 
 
 
@@ -293,7 +293,7 @@ Represents a [user identity](../../capability-guides/mobile-access/managing-mobi
 
 **`workspaces`** *Record*
 
-Represents a Seam [workspace](../../core-concepts/workspaces/README.md). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](../../core-concepts/workspaces/README.md#production-workspaces).
+Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces).
 
 
 
@@ -306,7 +306,7 @@ Represents a Seam [workspace](../../core-concepts/workspaces/README.md). A works
 - [Endpoints](./#endpoints)
 
 
-Represents a Seam [workspace](../../core-concepts/workspaces/README.md). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](../../core-concepts/workspaces/README.md#production-workspaces).
+Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces).
 
 {% tabs %}
 {% tab title="Production Workspace" %}
@@ -388,7 +388,7 @@ A workspace resource.
 
 **`company_name`** *String*
 
-Company name associated with the [workspace](../../core-concepts/workspaces/README.md).
+Company name associated with the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
 
 
 
@@ -416,11 +416,11 @@ Company name associated with the [workspace](../../core-concepts/workspaces/READ
 
   - <strong><code>inviter_logo_url</code></strong> <i>String</i>
   
-    URL of the inviter logo for [Connect Webviews](../../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).
+    URL of the inviter logo for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
   - <strong><code>logo_shape</code></strong> <i>Enum</i>
   
-    Logo shape for [Connect Webviews](../../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).
+    Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
   <details>
       <summary>Enum values:</summary>
   
@@ -430,15 +430,15 @@ Company name associated with the [workspace](../../core-concepts/workspaces/READ
 
   - <strong><code>primary_button_color</code></strong> <i>String</i>
   
-    Primary button color for [Connect Webviews](../../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).
+    Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
   - <strong><code>primary_button_text_color</code></strong> <i>String</i>
   
-    Primary button text color for [Connect Webviews](../../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).
+    Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
   - <strong><code>success_message</code></strong> <i>String</i>
   
-    Success message for [Connect Webviews](../../core-concepts/connect-webviews/README.md) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews).
+    Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
 </details>
 
@@ -455,7 +455,7 @@ Indicates whether publishable key authentication is enabled for this workspace.
 
 **`is_sandbox`** *Boolean*
 
-Indicates whether the workspace is a [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-workspaces).
+Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
 
 
 
@@ -464,7 +464,7 @@ Indicates whether the workspace is a [sandbox workspace](../../core-concepts/wor
 
 **`is_suspended`** *Boolean*
 
-Indicates whether the [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.
+Indicates whether the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.
 
 
 
@@ -473,7 +473,7 @@ Indicates whether the [sandbox workspace](../../core-concepts/workspaces/README.
 
 **`name`** *String*
 
-Name of the [workspace](../../core-concepts/workspaces/README.md).
+Name of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
 
 
 
@@ -482,7 +482,7 @@ Name of the [workspace](../../core-concepts/workspaces/README.md).
 
 **`publishable_key`** *String*
 
-Publishable key for the [workspace](../../core-concepts/workspaces/README.md). This key is used to identify the workspace in client-side applications.
+Publishable key for the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.
 
 
 
@@ -491,7 +491,7 @@ Publishable key for the [workspace](../../core-concepts/workspaces/README.md). T
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](../../core-concepts/workspaces/README.md).
+ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
 
 
 
@@ -503,26 +503,26 @@ ID of the [workspace](../../core-concepts/workspaces/README.md).
 
 [**`/workspaces/create`**](./create.md)
 
-Creates a new [workspace](../../core-concepts/workspaces/README.md).
+Creates a new [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
 
 
 [**`/workspaces/get`**](./get.md)
 
-Returns the [workspace](../../core-concepts/workspaces/README.md) associated with the authentication value.
+Returns the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.
 
 
 [**`/workspaces/list`**](./list.md)
 
-Returns a list of [workspaces](../../core-concepts/workspaces/README.md) associated with the authentication value.
+Returns a list of [workspaces](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.
 
 
 [**`/workspaces/reset_sandbox`**](./reset_sandbox.md)
 
-Resets the [sandbox workspace](../../core-concepts/workspaces/README.md#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.
+Resets the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.
 
 
 [**`/workspaces/update`**](./update.md)
 
-Updates the [workspace](../../core-concepts/workspaces/README.md) associated with the authentication value.
+Updates the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.
 
 

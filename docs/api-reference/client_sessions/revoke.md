@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Revokes a [client session](../../core-concepts/authentication/client-session-tokens/README.md).
+Revokes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
 Note that [deleting a client session](https://docs.seam.co/latest/api/client_sessions/delete) is a separate action.
 

@@ -1608,7 +1608,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1633,7 +1633,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capab
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to [Seam Bridge](../../../capability-guides/seam-bridge.md).
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
   
   
   ---
@@ -2261,7 +2261,7 @@ August lock is temporarily offline.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](../../../capability-guides/seam-bridge.md), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](../../../capability-guides/access-systems/troubleshooting-your-access-control-system.md#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -2547,7 +2547,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2575,7 +2575,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -2655,7 +2655,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -2740,7 +2740,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -2763,7 +2763,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2791,7 +2791,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -2814,7 +2814,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](../../../core-concepts/connected-accounts/README.md) associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2842,7 +2842,7 @@ An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-l
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](../../../core-concepts/workspaces/README.md) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
