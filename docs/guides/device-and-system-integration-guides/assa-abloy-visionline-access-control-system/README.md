@@ -22,7 +22,7 @@ For detailed information about the ASSA ABLOY Visionline devices that Seam suppo
 
 We support the following features:
 
-* [Managing access systems](../../products/access-systems/)
+* [Managing access systems](../../capability-guides/access-systems/)
 * [Issuing plastic card credentials](../../capability-guides/access-systems/managing-credentials.md#create-a-key-card-based-credential)
 * [Issuing mobile access credentials](../../capability-guides/mobile-access/)
 

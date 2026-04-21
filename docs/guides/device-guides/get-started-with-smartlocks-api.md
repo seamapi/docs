@@ -325,7 +325,7 @@ Many smartlocks have a built-in keypad or an external one that can be paired ove
 
 ![](<../.gitbook/assets/code_unlock (1).gif>)
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](../capability-guides/smart-locks/access-codes/)
 
 {% tabs %}
 {% tab title="Python" %}
@@ -487,5 +487,5 @@ Now that you've completed this guide, you can try to build a real application to
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../core-concepts/overview.md)

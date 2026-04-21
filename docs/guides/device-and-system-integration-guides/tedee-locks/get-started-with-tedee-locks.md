@@ -375,7 +375,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Tedee locks also have a keypad paired to them to program access codes. These codes can then be entered to unlock a Tedee lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Tedee lock. You can find out more about Tedee lock access code in our [core concept section on access codes.](../../products/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Tedee lock. You can find out more about Tedee lock access code in our [core concept section on access codes.](../../capability-guides/smart-locks/access-codes/)
 
 {% hint style="info" %}
 For Tedee-specific access code restrictions, see [Access (PIN) Code Requirements](./#access-pin-code-requirements).
@@ -480,7 +480,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](../../device-guides/get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](../../device-guides/get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](../../device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../../core-concepts/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

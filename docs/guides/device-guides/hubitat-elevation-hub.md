@@ -16,8 +16,8 @@ For detailed information about the Hubitat-connected devices that Seam supports,
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md) for devices with this capability
-* [Programming access codes](../products/smart-locks/access-codes/) on devices with this capability
+* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md) for devices with this capability
+* [Programming access codes](../capability-guides/smart-locks/access-codes/) on devices with this capability
 
 ***
 

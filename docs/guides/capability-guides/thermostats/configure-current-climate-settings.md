@@ -57,7 +57,7 @@ To configure and then verify a climate setting on a thermostat, perform the foll
 3. Poll the action attempt.\
    See [Poll the Action Attempt](configure-current-climate-settings.md#poll-the-action-attempt).
 4. If desired, configure a webhook to watch for a `thermostat.temperature_reached_set_point` event that indicates that the thermostat has reported a temperature within 1° Celsius of the heating or cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) that you requested.\
-   See [Webhooks](../../core-concepts/webhooks.md).
+   See [Webhooks](../../developer-tools/webhooks.md).
 
 ***
 

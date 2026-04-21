@@ -12,7 +12,7 @@ Seam Console enables you to manage all resources associated with your Seam accou
 * Create and manage [workspaces](../workspaces/).
 * Create and manage [API keys](../authentication/api-keys.md).
 * Add and manage [devices](../devices/).
-* Add and manage [access control systems](../../products/access-systems/).
+* Add and manage [access control systems](../../capability-guides/access-systems/).
 * Create, customize, and manage [Connect Webviews](../connect-webviews/).
 * Add and manage [webhooks](../webhooks.md).
 * Use the [Seam Online CLI](seam-online-cli.md).

@@ -11,7 +11,7 @@ To use the Seam API to create mobile credentials for mobile app users in a Salto
 1.  Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
 
     Seam user identities enable you to match your own mobile app users to access system users that you create using the Seam API.
-2. Create an [access system user](../../products/access-systems/user-management.md) on the Salto Space access system or assign an existing access system user to the user identity.\
+2. Create an [access system user](../../capability-guides/access-systems/user-management.md) on the Salto Space access system or assign an existing access system user to the user identity.\
    The resources that you create for the access system user are available under the associated user identity.
 3. Assign the access system user to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
    * Each access group is preconfigured with the allowed entrances.
@@ -359,9 +359,9 @@ $mobile_key = $seam->acs->credentials->create(
 To find out more about using the Seam API with your Salto Space access system, see the following topics:
 
 * [Programming Salto Space Card-based Credentials](programming-salto-space-card-based-credentials.md)
-* [Access Systems](../../products/access-systems/)
+* [Access Systems](../../capability-guides/access-systems/)
 * [Access Group-Based Access Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
-* [Managing Access System Users](../../products/access-systems/user-management.md)
+* [Managing Access System Users](../../capability-guides/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../capability-guides/mobile-access/)
 * [Access Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference

@@ -679,7 +679,7 @@ True
 
 Next, you can use the Seam API to control your lock.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../../products/smart-locks/lock-and-unlock.md), [programming access codes](../../products/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md), [programming access codes](../../capability-guides/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Try out the following actions on your 4SUITES lock:
 
@@ -1022,9 +1022,9 @@ Now that you've completed this getting started guide for 4SUITES devices, you ca
 * [ ] **Use Seam Components**\
   Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\
-  Learn how to use [webhooks](../../core-concepts/webhooks.md) as an efficient way to receive device events.
+  Learn how to use [webhooks](../../developer-tools/webhooks.md) as an efficient way to receive device events.
 * [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [access control systems](../../products/access-systems/), [thermostats](../../products/thermostats/), and [noise sensors](../../products/noise-sensors/).
+  Explore the other types of devices and systems that you can control with Seam, including [access control systems](../../capability-guides/access-systems/), [thermostats](../../capability-guides/thermostats/), and [noise sensors](../../capability-guides/noise-sensors/).
 * [ ] **Develop for mobile access**\
   Learn about Seam's [mobile access solution](../../capability-guides/mobile-access/).
 

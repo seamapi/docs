@@ -466,7 +466,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Salto locks and access points will have a keypad available to program access codes. These codes can then be entered to unlock the door.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Salto lock. You can find out more about Salto lock access code in our [core concept section on access codes.](../products/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Salto lock. You can find out more about Salto lock access code in our [core concept section on access codes.](../capability-guides/smart-locks/access-codes/)
 
 {% hint style="info" %}
 Salto does not let you specify a code for an access code. Instead Salto generates a 6-digit code, which the Seam API returns.
@@ -625,7 +625,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

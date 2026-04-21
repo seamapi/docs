@@ -30,8 +30,8 @@ For detailed information about the Wyze devices that Seam supports, see our [Wyz
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) on locks that have an installed Wyze Lock Keypad
+* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md)
+* [Programming access codes](../capability-guides/smart-locks/access-codes/) on locks that have an installed Wyze Lock Keypad
 
 {% hint style="info" %}
 The Seam platform cannot determine the PIN codes for access codes that were created outside of the Seam platform.

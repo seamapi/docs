@@ -16,7 +16,7 @@ The Seam integration for Salto KS enables you to create ACS users and assign acc
 
 ## Salto KS Resources
 
-The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto KS ACS in a logical, efficient manner. Salto KS is an [access group-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create ACS users](../../products/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access. You can also configure access schedules for ACS users.
+The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto KS ACS in a logical, efficient manner. Salto KS is an [access group-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create ACS users](../../capability-guides/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access. You can also configure access schedules for ACS users.
 
 The following diagram shows the Seam resources for a Salto KS ACS and the relationships between these resources:
 
@@ -31,7 +31,7 @@ For more information about managing your Salto KS ACS through Seam, see the foll
 * [Programming Salto KS PIN Code Credentials](programming-code-based-salto-ks-credentials.md)
 * [Programming Salto KS Mobile Credentials](programming-salto-ks-mobile-credentials.md)
 * [Access Group-Based Access Control Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
-* [Access Control Systems](../../products/access-systems/)
+* [Access Control Systems](../../capability-guides/access-systems/)
 * [Mobile Access](../../capability-guides/mobile-access/)
 
 ***
@@ -46,7 +46,7 @@ This integration supports all Salto locks connected to the Salto KS ACS.
 
 We support the following features:
 
-* [Managing access systems](../../products/access-systems/)
+* [Managing access systems](../../capability-guides/access-systems/)
 * [Issuing code-based credentials](programming-code-based-salto-ks-credentials.md)
 * [Issuing mobile access credentials](../../capability-guides/mobile-access/)
 

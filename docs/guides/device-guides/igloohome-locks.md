@@ -32,9 +32,9 @@ Each igloohome Bridge supports up to five compatible igloohome locks.
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md) for igloohome smart locks connected through the igloohome Bridge
-* [Programming online access codes](../products/smart-locks/access-codes/)
-* [Programming offline access codes](../products/smart-locks/access-codes/offline-access-codes.md)
+* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md) for igloohome smart locks connected through the igloohome Bridge
+* [Programming online access codes](../capability-guides/smart-locks/access-codes/)
+* [Programming offline access codes](../capability-guides/smart-locks/access-codes/offline-access-codes.md)
 
 {% hint style="info" %}
 We support customizable access codes for igloohome locks connected through the igloohome Bridge. We support offline algoPIN codes for all igloohome locks, without the need for a bridge.

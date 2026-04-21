@@ -18,7 +18,7 @@ This integration requires [Seam Bridge](../../capability-guides/seam-bridge.md) 
 
 ## Salto Space Resources
 
-The Seam access system schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto Space access system in a logical, efficient manner. Salto Space is an [access group-based access system](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create access system users](../../products/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access.
+The Seam access system schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto Space access system in a logical, efficient manner. Salto Space is an [access group-based access system](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create access system users](../../capability-guides/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access.
 
 The following diagram shows the Seam resources for a Salto Space access system and the relationships between these resources:
 
@@ -33,7 +33,7 @@ For more information about managing your Salto Space access system through Seam,
 * [Programming Salto Space Card-based Credentials](programming-salto-space-card-based-credentials.md)
 * [Programming Salto Space Mobile Credentials](programming-salto-space-mobile-credentials.md)
 * [Access Group-Based Access Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
-* [Access Systems](../../products/access-systems/)
+* [Access Systems](../../capability-guides/access-systems/)
 * [Mobile Access](../../capability-guides/mobile-access/)
 
 ***
@@ -48,7 +48,7 @@ This integration supports all Salto locks connected to the Salto Space ACS.
 
 We support the following features:
 
-* [Managing access systems](../../products/access-systems/)
+* [Managing access systems](../../capability-guides/access-systems/)
 * [Issuing card-based credentials](programming-salto-space-card-based-credentials.md)
 * [Issuing mobile access credentials](../../capability-guides/mobile-access/)
 

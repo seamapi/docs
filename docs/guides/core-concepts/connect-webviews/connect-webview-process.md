@@ -311,8 +311,8 @@ Continue using the Seam API to control your users' connected devices or ACS. For
 
 To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](../../capability-guides/device-and-system-capabilities.md). These guides provide helpful tutorials and code samples, categorized by capability types.
 
-* [Smart locks](../../products/smart-locks/), including [locking/unlocking](../../products/smart-locks/lock-and-unlock.md) and [managing access codes](../../products/smart-locks/access-codes/)
-* [Access control systems](../../products/access-systems/)
-* [Thermostats](../../products/thermostats/)
-* [Noise sensors](../../products/noise-sensors/)
+* [Smart locks](../../capability-guides/smart-locks/), including [locking/unlocking](../../capability-guides/smart-locks/lock-and-unlock.md) and [managing access codes](../../capability-guides/smart-locks/access-codes/)
+* [Access control systems](../../capability-guides/access-systems/)
+* [Thermostats](../../capability-guides/thermostats/)
+* [Noise sensors](../../capability-guides/noise-sensors/)
 * [Mobile access](../../capability-guides/mobile-access/)

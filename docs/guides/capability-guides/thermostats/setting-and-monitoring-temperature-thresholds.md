@@ -8,7 +8,7 @@ description: >-
 
 You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](https://docs.seam.co/latest/api/events/) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
 
-Use the [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../core-concepts/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
+Use the [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../developer-tools/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
 
 When the thermostat reports a temperature outside the threshold range, Seam also adds a warning on the thermostat. You can use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint to get the thermostat and then inspect its `device.warnings` property.
 
@@ -291,7 +291,7 @@ To change the temperature threshold range for a thermostat, issue a new [`/therm
 
 ## Monitor a Temperature Threshold
 
-To monitor a thermostat for temperatures outside the bounds of the configured threshold range, you can configure a [webhook](../../core-concepts/webhooks.md) to receive `thermostat.temperature_threshold_exceeded` events. This event includes the `device_id` of the affected thermostat, as well as the configured threshold values and the reported temperature that exceeded this threshold range.
+To monitor a thermostat for temperatures outside the bounds of the configured threshold range, you can configure a [webhook](../../developer-tools/webhooks.md) to receive `thermostat.temperature_threshold_exceeded` events. This event includes the `device_id` of the affected thermostat, as well as the configured threshold values and the reported temperature that exceeded this threshold range.
 
 When the reported temperature for a thermostat returns to within the configured threshold range, Seam emits a `thermostat.temperature_threshold_no_longer_exceeded` event.
 

@@ -30,7 +30,7 @@ The following device properties show the relevant capabilities of a thermostat:
 * `device.can_hvac_heat_cool`
 * `device.can_turn_off_hvac`
 
-For more information, see [Thermostat Capabilities](../../products/thermostats/#thermostat-capabilities).
+For more information, see [Thermostat Capabilities](../../capability-guides/thermostats/#thermostat-capabilities).
 
 ***
 

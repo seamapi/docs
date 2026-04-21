@@ -76,8 +76,8 @@ Working Seam supported device table copied from above in Markdown file, pasted i
 
 We support the following features:
 
-- [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-- [Programming access codes](../products/smart-locks/access-codes/) on locks that have an installed August Smart Keypad
+- [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md)
+- [Programming access codes](../capability-guides/smart-locks/access-codes/) on locks that have an installed August Smart Keypad
 
 ---
 

@@ -8,7 +8,7 @@ For each access system user in a [Salto Space access system](./), you can create
 
 To use the Seam API to create card credentials for a Salto Space access system:
 
-1. Create an [access system user](../../products/access-systems/user-management.md).
+1. Create an [access system user](../../capability-guides/access-systems/user-management.md).
 2. Assign access permissions to the user by assigning them to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
    * Each access group is preconfigured with specific entrances.
 3. Create a [credential](../../capability-guides/access-systems/managing-credentials.md).
@@ -29,7 +29,7 @@ To use the Seam API to create card credentials for a Salto Space access system:
        See [Retrieve Encoders](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
     2. Use the `/acs/encoders/encode_credential` endpoint to encode the credential onto the card, using the encoder that you have chosen.\
        See [Encode the Card](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-3.-encode-the-card).
-    3. Confirm that the card was encoded successfully using polling or a [webhook](../../core-concepts/webhooks.md).\
+    3. Confirm that the card was encoded successfully using polling or a [webhook](../../developer-tools/webhooks.md).\
        See [Confirm Successful Encoding](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#common-encoding-errors).
 
 The following example walks you through this process:
@@ -550,9 +550,9 @@ You can use an encoder to scan a plastic key card to read its encoded parameters
 
 To find out more about using the Seam API with your Salto Space access system, see the following topics:
 
-* [Access Systems](../../products/access-systems/)
+* [Access Systems](../../capability-guides/access-systems/)
 * [Access Group-Based Access Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
-* [Managing Access System Users](../../products/access-systems/user-management.md)
+* [Managing Access System Users](../../capability-guides/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Working with Card Encoders and Scanners](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/)
 * [Access Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference

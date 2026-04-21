@@ -6,7 +6,7 @@ description: Learn how to create Salto KS PIN codes.
 
 To use the Seam API to program codes for users in a [Salto KS ACS](./):
 
-1. Create an [ACS user](../../products/access-systems/user-management.md).
+1. Create an [ACS user](../../capability-guides/access-systems/user-management.md).
    * For Salto KS, you can specify the `access_schedule` for the new ACS user. An `access_schedule` consists of `starts_at` and `ends_at` times. In this case, a Salto KS ACS user appears as "unsubscribed" in the ACS until the `starts_at` time. Once the start time arrives, Seam switches the ACS user to "subscribed," which activates their access.
 2. Assign access permissions to the ACS user by assigning them to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
    * Each access group is preconfigured with specific entrances and schedules.
@@ -317,9 +317,9 @@ echo json_encode($pin_code, JSON_PRETTY_PRINT);
 
 To learn more about using the Seam API with your Salto KS ACS, see the following topics:
 
-* [Access Control Systems](../../products/access-systems/)
+* [Access Control Systems](../../capability-guides/access-systems/)
 * [Access Group-Based Access Control Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
-* [Managing ACS Users](../../products/access-systems/user-management.md)
+* [Managing ACS Users](../../capability-guides/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../capability-guides/mobile-access/)
 * [Access Control Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference

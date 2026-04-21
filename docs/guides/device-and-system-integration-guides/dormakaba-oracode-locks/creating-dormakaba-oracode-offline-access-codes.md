@@ -7,15 +7,15 @@ hidden: true
 
 # Creating dormakaba Oracode Offline Access Codes
 
-The Seam integration for dormakaba Oracode enables you to manage [offline access codes](../../products/smart-locks/access-codes/offline-access-codes.md) for dormakaba Oracode locks. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device.
+The Seam integration for dormakaba Oracode enables you to manage [offline access codes](../../capability-guides/smart-locks/access-codes/offline-access-codes.md) for dormakaba Oracode locks. You generate offline access (PIN) codes remotely, and the manufacturer maintains a server-based registry of synchronized encryption keys (tokens) to enable these offline codes. Then, owners or managers can share these codes with users through messaging or other similar applications, and the users do not need to install a special application to unlock the device.
 
-To learn about the special requirements regarding offline access codes for dormakaba Oracode locks, see [Offline Access Code Requirements](creating-dormakaba-oracode-offline-access-codes.md#offline-access-code-requirements). For more information about using offline access codes, see [Offline Access Codes](../../products/smart-locks/access-codes/#offline-access-codes) and [Managing Offline Access Codes](../../products/smart-locks/access-codes/offline-access-codes.md).
+To learn about the special requirements regarding offline access codes for dormakaba Oracode locks, see [Offline Access Code Requirements](creating-dormakaba-oracode-offline-access-codes.md#offline-access-code-requirements). For more information about using offline access codes, see [Offline Access Codes](../../capability-guides/smart-locks/access-codes/#offline-access-codes) and [Managing Offline Access Codes](../../capability-guides/smart-locks/access-codes/offline-access-codes.md).
 
 ***
 
 ## Offline Access Code Requirements
 
-Seam supports daily-bound and hourly-bound [offline access codes](../../products/smart-locks/access-codes/offline-access-codes.md) for dormakaba Oracode locks. Note the following dormakaba Oracode-specific restrictions and requirements for offline access codes:
+Seam supports daily-bound and hourly-bound [offline access codes](../../capability-guides/smart-locks/access-codes/offline-access-codes.md) for dormakaba Oracode locks. Note the following dormakaba Oracode-specific restrictions and requirements for offline access codes:
 
 ### Duration
 
@@ -93,7 +93,7 @@ You can create hourly- and daily-bound offline access codes for dormakaba Oracod
 
 ### Hourly-Bound Offline Access Codes
 
-To [create an hourly-bound offline access code](../../products/smart-locks/access-codes/offline-access-codes.md#creating-time-bound-offline-access-codes), issue an access code creation request. Then, poll or use a webhook to confirm that the code was registered successfully in the dormakaba Oracode offline access code server.
+To [create an hourly-bound offline access code](../../capability-guides/smart-locks/access-codes/offline-access-codes.md#creating-time-bound-offline-access-codes), issue an access code creation request. Then, poll or use a webhook to confirm that the code was registered successfully in the dormakaba Oracode offline access code server.
 
 #### 1. Create an Hourly-Bound Offline Access Code
 
@@ -364,7 +364,7 @@ if (device.CanProgramOfflineAccessCodes == true) {
 
 #### 2. Verify Successful Time-Bound Code Registration
 
-The [lifecycle of a time-bound access code](../../products/smart-locks/access-codes/lifecycle-of-access-codes.md) is marked by distinct phases:
+The [lifecycle of a time-bound access code](../../capability-guides/smart-locks/access-codes/lifecycle-of-access-codes.md) is marked by distinct phases:
 
 1. `Unset`: When initially created on Seam, the offline access code remains in an `unset` state, indicating that it is not yet available for use on the lock due to a configured future activation time.
 2. `Setting`: As the scheduled `starts_at` time approaches, Seam initiates the process of readying the code for use on the lock, transitioning the `status` of the offline code to `setting`.
@@ -379,7 +379,7 @@ There are two methods to verify that an time-bound offline access code has been 
 
 ### Daily-Bound Offline Access Codes
 
-To [create a daily-bound offline access code](../../products/smart-locks/access-codes/offline-access-codes.md#creating-time-bound-offline-access-codes), first issue a creation request. Then, poll or use a webhook to confirm that the code was registered successfully in the dormakaba Oracode offline access code server.
+To [create a daily-bound offline access code](../../capability-guides/smart-locks/access-codes/offline-access-codes.md#creating-time-bound-offline-access-codes), first issue a creation request. Then, poll or use a webhook to confirm that the code was registered successfully in the dormakaba Oracode offline access code server.
 
 #### 1. Create a Daily-Bound Access Code
 
@@ -658,7 +658,7 @@ if (device.CanProgramOfflineAccessCodes == true) {
 
 #### 2. Verify Successful Time-Bound Code Registration
 
-The [lifecycle of a time-bound access code](../../products/smart-locks/access-codes/lifecycle-of-access-codes.md) is marked by distinct phases:
+The [lifecycle of a time-bound access code](../../capability-guides/smart-locks/access-codes/lifecycle-of-access-codes.md) is marked by distinct phases:
 
 1. `Unset`: When initially created on Seam, the offline access code remains in an `unset` state, indicating that it is not yet available for use on the lock due to a configured future activation time.
 2. `Setting`: As the scheduled `starts_at` time approaches, Seam initiates the process of readying the code for use on the lock, transitioning the `status` of the offline code to `setting`.

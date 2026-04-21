@@ -151,7 +151,7 @@ After authorization, the user is redirected to your `custom_redirect_url` with t
 
 ## Step 3: Verify Connection
 
-Wait for the Connect Webview status to change to `authorized`, indicating that the connection was successful. You can either poll the Connect Webview or use [webhooks](../../core-concepts/webhooks.md) to be notified when the status changes.
+Wait for the Connect Webview status to change to `authorized`, indicating that the connection was successful. You can either poll the Connect Webview or use [webhooks](../../developer-tools/webhooks.md) to be notified when the status changes.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1436,8 +1436,8 @@ echo $device | jq '.device.warnings'
 
 * **[Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)** - Detailed guide on permanent and time-bound access codes
 * **[Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)** - Complete timezone configuration reference
-* **[Lock and Unlock Operations](../../products/smart-locks/lock-and-unlock.md)** - General smart lock control documentation
-* **[Access Codes Overview](../../products/smart-locks/access-codes/)** - Understanding access code management
+* **[Lock and Unlock Operations](../../capability-guides/smart-locks/lock-and-unlock.md)** - General smart lock control documentation
+* **[Access Codes Overview](../../capability-guides/smart-locks/access-codes/)** - Understanding access code management
 
 ***
 

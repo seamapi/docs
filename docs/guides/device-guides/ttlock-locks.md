@@ -18,8 +18,8 @@ For detailed information about the TTLock devices that Seam supports, see our [T
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../products/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
+* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md)
+* [Programming access codes](../capability-guides/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
 
 ***
 

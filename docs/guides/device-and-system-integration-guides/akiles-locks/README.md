@@ -28,8 +28,8 @@ For detailed information about the Akiles devices that Seam supports, see our [A
 
 We support the following features:
 
-* [Triggering web unlock actions](../../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../../products/smart-locks/access-codes/) on devices that have an integrated keypad or Akiles Pinpad
+* [Triggering web unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md)
+* [Programming access codes](../../capability-guides/smart-locks/access-codes/) on devices that have an integrated keypad or Akiles Pinpad
 
 ***
 

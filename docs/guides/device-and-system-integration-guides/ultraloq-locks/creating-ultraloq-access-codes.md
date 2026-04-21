@@ -853,6 +853,6 @@ For complete API documentation, see:
 * **Learn about timezone configuration:** See [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)
 * **Understand code constraints:** See [Understanding Code Constraints](../../capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints.md)
 * **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide.md)
-* **Explore access code webhooks:** See [Webhooks](../../core-concepts/webhooks.md)
+* **Explore access code webhooks:** See [Webhooks](../../developer-tools/webhooks.md)
 
 ***
