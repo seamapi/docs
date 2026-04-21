@@ -54,7 +54,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Akuvox](https://akuvox.com/)                                                                                                          | `akuvox`                        |
 | [ASSA ABLOY Credential Service](/broken/pages/E3681tQ6WZ6d1IId3ygF)                                                                    | `assa_abloy_credential_service` |
 | [ASSA ABLOY Visionline Access Control System](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/) | `visionline`                    |
-| [August Home](../../device-guides/august-locks.md)                                                                                     | `august`                        |
+| [August Home](../../device-and-system-integration-guides/august-locks.md)                                                                                     | `august`                        |
 | [Avigilon Alta](../../device-guides/avigilon-alta-access-system.md)                                                                    | `avigilon_alta`                 |
 | [Brivo](../../device-and-system-integration-guides/brivo-access/)                                                                      | `brivo`                         |
 | [ControlByWeb](../../device-guides/get-started-with-controlbyweb-devices.md)                                                           | `controlbyweb`                  |
@@ -65,17 +65,17 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Genie Aladdin Connect](https://www.geniecompany.com/aladdin-connect-by-genie)                                                         | `genie`                         |
 | [Honeywell Resideo](../../device-and-system-integration-guides/honeywell-thermostats/)                                                 | `honeywell_resideo`             |
 | [igloohome](../../device-guides/igloohome-locks.md)                                                                                    | `igloohome`                     |
-| [Kwikset](../../device-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
+| [Kwikset](../../device-and-system-integration-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
 | [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                                       | `latch`                         |
 | [Linear](https://linear-solutions.com/)                                                                                                | `linear`                        |
 | [Lockly](../../device-and-system-integration-guides/lockly-locks/)                                                                     | `lockly`                        |
 | [Minut](../../device-guides/minut-sensors.md)                                                                                          | `minut`                         |
 | [Nest](../../device-guides/google-nest-thermostats/)                                                                                   | `google_nest`                   |
-| [NoiseAware](../../device-guides/noiseaware-sensors.md)                                                                                | `noiseaware`                    |
+| [NoiseAware](../../device-and-system-integration-guides/noiseaware-sensors.md)                                                                                | `noiseaware`                    |
 | [Nuki](../../device-guides/nuki-locks.md)                                                                                              | `nuki`                          |
 | [PTI Storlogix Cloud](../../device-guides/pti-storlogix-cloud.md)                                                                      | `pti`                           |
 | [Salto KS Access System](../../device-and-system-integration-guides/salto-ks-access-control-system/)                                   | `salto_ks`                      |
-| [Salto KS Locks](../../device-guides/salto-locks.md)                                                                                   | `salto_ks`                      |
+| [Salto KS Locks](../../device-and-system-integration-guides/salto-locks.md)                                                                                   | `salto_ks`                      |
 | [Salto ProAccess Space Access System](../../device-and-system-integration-guides/salto-proaccess-space-access-system/)                 | `salto_space`                   |
 | [Schlage](../../device-and-system-integration-guides/schlage-locks/)                                                                   | `schlage`                       |
 | [Sensi](../../device-and-system-integration-guides/sensi-thermostats/)                                                                 | `sensi`                         |
