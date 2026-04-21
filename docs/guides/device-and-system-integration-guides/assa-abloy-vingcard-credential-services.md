@@ -15,9 +15,9 @@ ASSA ABLOY Credential Services stores all the mobile credentials that your appli
 
 Before connecting your ASSA ABLOY Credential Services to Seam, you must first identify your ASSA ABLOY credentials.
 
-While you are in the development phase of your application, you can find your [development credentials](assa-abloy-credential-services-credential-manager.md#retrieve-your-assa-abloy-development-credentials) in the ASSA ABLOY Global Solutions Technology Partner Portal. You cannot use this preliminary application ID to connect to live sites.
+While you are in the development phase of your application, you can find your [development credentials](assa-abloy-vingcard-credential-services.md#retrieve-your-assa-abloy-development-credentials) in the ASSA ABLOY Global Solutions Technology Partner Portal. You cannot use this preliminary application ID to connect to live sites.
 
-Once you have received certification through the ASSA ABLOY partnership program, ASSA ABLOY provides a set of [production credentials](assa-abloy-credential-services-credential-manager.md#retrieve-your-assa-abloy-production-credentials).
+Once you have received certification through the ASSA ABLOY partnership program, ASSA ABLOY provides a set of [production credentials](assa-abloy-vingcard-credential-services.md#retrieve-your-assa-abloy-production-credentials).
 
 ### Retrieve Your ASSA ABLOY Development Credentials
 
