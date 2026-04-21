@@ -989,7 +989,7 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 
 ## Lock and Unlock Events
 
-Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](https://docs.seam.co/latest/api/events/list) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../core-concepts/webhooks.md).
+Whenever a lock is locked or unlocked, Seam emits a `lock.locked` or `lock.unlocked` event. You can see these events by making a [List Events request](https://docs.seam.co/latest/api/events/list) or by setting up a webhook. For more information on how to set up webhooks, see the [Webhooks guide](../../developer-tools/webhooks.md).
 
 A lock or unlock event looks like the following:
 

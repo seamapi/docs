@@ -22,11 +22,11 @@ For detailed information about the Kwikset devices that Seam supports, see our [
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../products/smart-locks/access-codes/)
+* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md)
+* [Programming access codes](../capability-guides/smart-locks/access-codes/)
 
 {% hint style="info" %}
-Seam does not support [unmanaged access codes](../products/smart-locks/access-codes/migrating-existing-access-codes.md) for Kwikset.
+Seam does not support [unmanaged access codes](../capability-guides/smart-locks/access-codes/migrating-existing-access-codes.md) for Kwikset.
 {% endhint %}
 
 ***

@@ -24,7 +24,7 @@ For detailed information about the Google Nest devices that Seam supports, see o
 
 We support the following features:
 
-* [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
+* [Configuring current thermostat settings](../../capability-guides/thermostats/configure-current-climate-settings.md)
 * [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
 * [Creating and managing thermostat weekly programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md)
@@ -70,7 +70,7 @@ Once you have set up Google Device Access, prompt the owners of these Google Nes
 
 ## Brand-Specific Features
 
-Google Nest thermostats support an eco HVAC mode. To set a Google Nest thermostat to eco mode, use the [`/thermostats/set_hvac_mode`](https://docs.seam.co/latest/api/thermostats/set_hvac_mode) endpoint. For details, see [HVAC Mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) and [Setting the Current HVAC and Fan Mode Settings](../../products/thermostats/configure-current-climate-settings.md).
+Google Nest thermostats support an eco HVAC mode. To set a Google Nest thermostat to eco mode, use the [`/thermostats/set_hvac_mode`](https://docs.seam.co/latest/api/thermostats/set_hvac_mode) endpoint. For details, see [HVAC Mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode.md) and [Setting the Current HVAC and Fan Mode Settings](../../capability-guides/thermostats/configure-current-climate-settings.md).
 
 ***
 

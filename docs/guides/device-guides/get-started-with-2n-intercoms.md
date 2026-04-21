@@ -381,7 +381,7 @@ $seam->locks->lock_door($lock->device_id);
 
 2N devices have a directory with residents. These residents can be assigned PIN codes to unlock the door.
 
-Seam maps these residents to [access codes](../products/smart-locks/access-codes/) and allows you to create and manage them through the Seam API.
+Seam maps these residents to [access codes](../capability-guides/smart-locks/access-codes/) and allows you to create and manage them through the Seam API.
 
 \{% tabs %\} \{% tab title="Python" %\}
 
@@ -556,7 +556,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Minut Getting Started Guide](get-started-with-minut-sensors.md)
-* [Receiving webhook](../core-concepts/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

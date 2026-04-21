@@ -12,14 +12,14 @@ Some access control systems require encoding a plastic card with the data necess
 
 This process consists of the following basic steps:
 
-1. Set up an [access system user](../../../products/access-systems/user-management.md) and create a [credential](../managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card`.\
+1. Set up an [access system user](../../../capability-guides/access-systems/user-management.md) and create a [credential](../managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card`.\
    See the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system provider to learn specific requirements, such as configuring entrances and access schedules.\
    See [Set Up an Access System User and Card Credential](creating-and-encoding-card-based-credentials.md#id-1.-set-up-an-access-syseuser-and-card-credential).
 2. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential onto the card.\
    See [Retrieve Encoders](creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
 3. Use the `/acs/encoders/encode_credential` endpoint to encode the credential onto the card, using the encoder that you have chosen.\
    See [Encode the Card](creating-and-encoding-card-based-credentials.md#id-3.-encode-the-card).
-4. Confirm that the card was encoded successfully using polling or a [webhook](../../../core-concepts/webhooks.md).\
+4. Confirm that the card was encoded successfully using polling or a [webhook](../../../developer-tools/webhooks.md).\
    See [Confirm Successful Encoding](creating-and-encoding-card-based-credentials.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-based-credentials.md#common-encoding-errors).
 
 Once you have written a credential to a card, you cannot reuse the credential for another card. That is, you must create a separate credential for each card. However, you can reuse a card by re-encoding the card with a new credential.
@@ -619,7 +619,7 @@ actionAttempt encodingActionAttempt = seam.EncodersAcs.EncodeCredential(
 
 ## 4. Confirm Successful Encoding
 
-Once you issue a request to encode the credential onto the card, it is important to confirm that the encoding process completes successfully. You can use polling or a [webhook](../../../core-concepts/webhooks.md).
+Once you issue a request to encode the credential onto the card, it is important to confirm that the encoding process completes successfully. You can use polling or a [webhook](../../../developer-tools/webhooks.md).
 
 ### Confirm Successful Encoding by Polling
 
@@ -979,7 +979,7 @@ seam.CredentialsAcs.Get(
 
 ### Confirm Successful Encoding by Using a Webhook
 
-To confirm successful encoding, you can use a [webhook](../../../core-concepts/webhooks.md) to listen for an `acs_credential.issued` event that contains the `acs_credential_id` in the payload. If you are re-encoding a card, listen for `acs_credential.reissued` instead of `acs_credential.issued`.
+To confirm successful encoding, you can use a [webhook](../../../developer-tools/webhooks.md) to listen for an `acs_credential.issued` event that contains the `acs_credential_id` in the payload. If you are re-encoding a card, listen for `acs_credential.reissued` instead of `acs_credential.issued`.
 
 ```json
 {

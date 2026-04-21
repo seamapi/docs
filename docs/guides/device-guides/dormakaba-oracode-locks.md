@@ -26,7 +26,7 @@ For detailed information about the dormakaba Oracode devices that Seam supports,
 
 We support the following features:
 
-* [Programming offline access codes](../products/smart-locks/access-codes/offline-access-codes.md)
+* [Programming offline access codes](../capability-guides/smart-locks/access-codes/offline-access-codes.md)
 
 ***
 

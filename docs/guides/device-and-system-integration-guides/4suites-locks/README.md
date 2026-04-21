@@ -22,8 +22,8 @@ For detailed information about the 4SUITES devices that Seam supports, see our [
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../../products/smart-locks/access-codes/)
+* [Triggering web lock and unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md)
+* [Programming access codes](../../capability-guides/smart-locks/access-codes/)
 
 ***
 

@@ -23,7 +23,7 @@ This process consists of the following basic steps:
    See [Retrieve Encoders](creating-and-encoding-card-access-methods.md#id-2.-retrieve-encoders).
 3. Use the `/access_methods/encode` endpoint to encode the access method onto the card, using the encoder that you have chosen.\
    See [Encode the Card](creating-and-encoding-card-access-methods.md#id-3.-encode-the-card).
-4. Confirm that the card was encoded successfully using polling or a [webhook](../../../core-concepts/webhooks.md).\
+4. Confirm that the card was encoded successfully using polling or a [webhook](../../../developer-tools/webhooks.md).\
    See [Confirm Successful Encoding](creating-and-encoding-card-access-methods.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-access-methods.md#common-encoding-errors).
 
 Once you have written an access method to a card, you cannot reuse the access method for another card. That is, you must create a separate access method for each card. However, you can reuse a card by re-encoding the card with a new access method.
@@ -648,7 +648,7 @@ $encoding_action_attempt = $seam->access_methods->encode(
 
 ## 4. Confirm Successful Encoding
 
-Once you issue a request to encode the access method onto the card, it is important to confirm that the encoding process completes successfully. You can use polling or a [webhook](../../../core-concepts/webhooks.md).
+Once you issue a request to encode the access method onto the card, it is important to confirm that the encoding process completes successfully. You can use polling or a [webhook](../../../developer-tools/webhooks.md).
 
 ### Confirm Successful Encoding by Polling
 
@@ -951,7 +951,7 @@ $seam->access_methods->get(
 
 ### Confirm Successful Encoding by Using a Webhook
 
-To confirm successful encoding, you can use a [webhook](../../../core-concepts/webhooks.md) to listen for an `access_method.issued` event that contains the `access_method_id` in the payload. If you are re-encoding a card, listen for `access_method.reissued` instead of `access_method.issued`.
+To confirm successful encoding, you can use a [webhook](../../../developer-tools/webhooks.md) to listen for an `access_method.issued` event that contains the `access_method_id` in the payload. If you are re-encoding a card, listen for `access_method.reissued` instead of `access_method.issued`.
 
 ```json
 {

@@ -19,7 +19,7 @@ Some access control systems require credentials to be [encoded onto plastic key 
 
 Separately, the Seam API also supports [card scanning](scanning-encoded-cards.md), which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with ACS records or diagnose discrepancies if needed.
 
-To verify if your ACS requires a card encoder, see the [system integration guide](../../../products/access-systems/) for your ACS.
+To verify if your ACS requires a card encoder, see the [system integration guide](../../../capability-guides/access-systems/) for your ACS.
 
 ***
 

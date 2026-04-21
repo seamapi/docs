@@ -6,7 +6,7 @@ description: Guide for using the PTI Storlogix Cloud with Seam
 
 ## Overview
 
-This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlogixcloudplatform/) to create [users](../products/access-systems/#what-is-a-user), [generate PIN codes](../capability-guides/access-systems/managing-credentials.md#create-a-pin-code-based-credential), and [grant users access](../products/access-systems/#what-is-an-access-group) to different access areas within storage rental unit facilities.
+This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlogixcloudplatform/) to create [users](../capability-guides/access-systems/#what-is-a-user), [generate PIN codes](../capability-guides/access-systems/managing-credentials.md#create-a-pin-code-based-credential), and [grant users access](../capability-guides/access-systems/#what-is-an-access-group) to different access areas within storage rental unit facilities.
 
 ***
 
@@ -22,9 +22,9 @@ For detailed information about the PTI devices that Seam supports, see our [PTI 
 
 We support the following features:
 
-*   [**User Management**](../products/access-systems/user-management.md)
+*   [**User Management**](../capability-guides/access-systems/user-management.md)
 
-    You can administer individual [users](../products/access-systems/#what-is-a-user) and add them to [access groups](../products/access-systems/#what-is-an-access-group) as needed.
+    You can administer individual [users](../capability-guides/access-systems/#what-is-a-user) and add them to [access groups](../capability-guides/access-systems/#what-is-an-access-group) as needed.
 
     To authorize a user, [add the user to a `pti_access_level` access group](../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md). If you wish to document that a user has rented a specific unit, include them in a `pti_unit` access group using the same endpoint. Note that certain access levels mandate a user be part of a `pti_unit` linked to that access area before they can enter those zones.
 *   [**Manage ACS Credentials**](../capability-guides/access-systems/managing-credentials.md)
@@ -79,7 +79,7 @@ The PIN code value must be an integer in the range 1-4294967296.
 
 ## Assigning Access Permissions to Users
 
-For PTI Storlogix Cloud, you must add the [users](../products/access-systems/#what-is-a-user) to `pti_access_level` and `pti_unit` [access groups](../products/access-systems/#what-is-an-access-group) to give them access to their storage unit.
+For PTI Storlogix Cloud, you must add the [users](../capability-guides/access-systems/#what-is-a-user) to `pti_access_level` and `pti_unit` [access groups](../capability-guides/access-systems/#what-is-an-access-group) to give them access to their storage unit.
 
 For example, you could assign them to the "Building A - 3/F" access level and give them access to the "A301" unit. For details, see [Assigning Users to Access Groups](../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
 

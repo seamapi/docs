@@ -24,7 +24,7 @@ For detailed information about the Sensi devices that Seam supports, see our [Se
 
 We support the following features:
 
-* [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md)
+* [Configuring current thermostat settings](../../capability-guides/thermostats/configure-current-climate-settings.md)
 * [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
 * [Creating and managing thermostat weekly programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md)
@@ -64,7 +64,7 @@ The Sensi API does not communicate the battery state of Sensi devices, so Seam c
 
 ### Heat-Cool Mode
 
-Some Sensi models do not support heat-cool mode, such as the Sensi Classic and Sensi One Touch thermostats. To check whether a thermostat supports heat-cool mode, [get the device](../../products/thermostats/retrieving-thermostats.md) and look for a `device.can_hvac_heat_cool` capability flag. For more information about thermostat-related capability flags, see [Thermostat Capabilities](../../products/thermostats/#thermostat-capabilities).
+Some Sensi models do not support heat-cool mode, such as the Sensi Classic and Sensi One Touch thermostats. To check whether a thermostat supports heat-cool mode, [get the device](../../capability-guides/thermostats/retrieving-thermostats.md) and look for a `device.can_hvac_heat_cool` capability flag. For more information about thermostat-related capability flags, see [Thermostat Capabilities](../../capability-guides/thermostats/#thermostat-capabilities).
 
 ***
 

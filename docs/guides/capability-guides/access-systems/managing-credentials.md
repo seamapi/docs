@@ -4,7 +4,7 @@ description: Learn how to manage credentials and assign them to users.
 
 # Managing Credentials
 
-An ACS generally uses digital means of access to authorize an [ACS user](../../products/access-systems/user-management.md) trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+An ACS generally uses digital means of access to authorize an [ACS user](../../capability-guides/access-systems/user-management.md) trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
 
 <figure><img src="../../.gitbook/assets/acs-credential-types.png" alt="Examples of ACS user credentials"><figcaption><p>Examples of ACS user credentials</p></figcaption></figure>
 
@@ -579,11 +579,11 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## List Credentials
 
-You can [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../products/access-systems/user-management.md) or [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](https://docs.seam.co/latest/api/acs/credentials/list).
+You can [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../capability-guides/access-systems/user-management.md) or [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](https://docs.seam.co/latest/api/acs/credentials/list).
 
 ### List Credentials by ACS User
 
-To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../products/access-systems/user-management.md), provide the `acs_user_id`.
+To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../capability-guides/access-systems/user-management.md), provide the `acs_user_id`.
 
 {% tabs %}
 {% tab title="Python" %}

@@ -10,7 +10,7 @@ If you want the easiest, most efficient way to grant access, use the [Access Gra
 
 This unified approach means that you can build access workflows once and rely on them to work everywhere.
 
-If you need more granular control, the Seam API provides lower-level API resources and endpoints as well. In this case, use the Seam [access control system](../../products/access-systems/) (ACS) API.
+If you need more granular control, the Seam API provides lower-level API resources and endpoints as well. In this case, use the Seam [access control system](../../capability-guides/access-systems/) (ACS) API.
 
 ***
 

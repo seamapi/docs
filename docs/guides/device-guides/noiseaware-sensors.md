@@ -22,7 +22,7 @@ For detailed information about the NoiseAware devices that Seam supports, see ou
 
 We support the following features:
 
-* [Configuring noise threshold settings](../products/noise-sensors/configure-noise-threshold-settings.md)\
+* [Configuring noise threshold settings](../capability-guides/noise-sensors/configure-noise-threshold-settings.md)\
   You can configure a maximum of one noise threshold per hour per Noiseaware sensor. You cannot configure thresholds with time periods that overlap.
 * [Receiving noise sensor events when noise events occur](https://docs.seam.co/latest/api/events/)\
   For more information, see the [`noise_sensor.noise_threshold_triggered` event](https://docs.seam.co/latest/api/events/).

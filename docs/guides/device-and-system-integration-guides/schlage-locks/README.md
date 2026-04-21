@@ -28,8 +28,8 @@ For detailed information about the Schlage devices that Seam supports, see our [
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)
-* [Programming online access codes](../../products/smart-locks/access-codes/) on locks that have a connected keypad
+* [Triggering web lock and unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md)
+* [Programming online access codes](../../capability-guides/smart-locks/access-codes/) on locks that have a connected keypad
 
 ***
 

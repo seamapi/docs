@@ -16,7 +16,7 @@ Alternately, you can update entrances manually using the [Latch Manager App](htt
 
 To use the Seam API to program codes for users in a [Latch ACS](./):
 
-1. Create an [ACS user](../../products/access-systems/user-management.md).
+1. Create an [ACS user](../../capability-guides/access-systems/user-management.md).
    * Specify the `acs_system_id` of the Latch ACS in the building to which you want to grant the new user access.
    * Specify the details of the new ACS user, such as their `full_name`, `email_address`, and so on.
 2.  Create an [ACS credential](../../capability-guides/access-systems/managing-credentials.md).
@@ -394,9 +394,9 @@ foreach (AcsEntrance entrance in entrances)
 To learn more about using the Seam API with your Latch ACS, see the following topics:
 
 * [Programming Latch ACS Mobile Keys for App Users](programming-latch-acs-mobile-credentials.md)
-* [Access Control Systems](../../products/access-systems/)
+* [Access Control Systems](../../capability-guides/access-systems/)
 * [Credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-acs)
-* [Managing ACS Users](../../products/access-systems/user-management.md)
+* [Managing ACS Users](../../capability-guides/access-systems/user-management.md)
 * [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
 * [Mobile Access](../../capability-guides/mobile-access/)
 * [Access Control Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference

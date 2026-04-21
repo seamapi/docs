@@ -28,8 +28,8 @@ For detailed information about the Tedee devices that Seam supports, see our [Te
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../../products/smart-locks/access-codes/) on locks and openers that have an installed Tedee keypad
+* [Triggering web lock and unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md)
+* [Programming access codes](../../capability-guides/smart-locks/access-codes/) on locks and openers that have an installed Tedee keypad
 
 ***
 

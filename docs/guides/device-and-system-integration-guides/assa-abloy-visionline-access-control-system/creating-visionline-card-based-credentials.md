@@ -6,7 +6,7 @@ description: Learn how to create a card-based credential for Visionline.
 
 To create a credential to encode onto a plastic key card for a Visionline ACS:
 
-1. Set up an [ACS user](../../products/access-systems/user-management.md).
+1. Set up an [ACS user](../../capability-guides/access-systems/user-management.md).
 2.  Create a [credential](../../capability-guides/access-systems/managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card` and the appropriate [`visionline_metadata`](mobile-credential-related-properties.md#acs_credential.visionline_metadata-properties), such as the card format.
 
     * To issue the first credential for a reservation—that is, an "override" credential—make sure to set `visionline_metadata.override` to `true`.
@@ -18,7 +18,7 @@ To create a credential to encode onto a plastic key card for a Visionline ACS:
       See [Retrieve Encoders](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
    2. Use the `/acs/encoders/encode_credential` endpoint to encode the credential onto the card, using the encoder that you have chosen.\
       See [Encode the Card](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-3.-encode-the-card).
-   3. Confirm that the card was encoded successfully using polling or a [webhook](../../core-concepts/webhooks.md).\
+   3. Confirm that the card was encoded successfully using polling or a [webhook](../../developer-tools/webhooks.md).\
       See [Confirm Successful Encoding](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#common-encoding-errors).
 
 The following example shows how to create a card-based override credential for Visionline and encode it onto a plastic card:

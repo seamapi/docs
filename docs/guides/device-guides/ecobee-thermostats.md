@@ -24,7 +24,7 @@ For detailed information about the ecobee devices that Seam supports, see our [e
 
 We support the following features:
 
-* [Configuring current thermostat settings](../products/thermostats/configure-current-climate-settings.md)
+* [Configuring current thermostat settings](../capability-guides/thermostats/configure-current-climate-settings.md)
 * [Creating and managing climate presets](../capability-guides/thermostats/creating-and-managing-climate-presets/)
 * [Creating and managing thermostat schedules](../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
 * [Creating and managing thermostat weekly programs](../capability-guides/thermostats/creating-and-managing-thermostat-programs.md)

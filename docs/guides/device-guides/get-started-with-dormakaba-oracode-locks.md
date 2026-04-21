@@ -258,7 +258,7 @@ In addition, if you'd like to explore other aspects of Seam, check out the follo
 * [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Configuring webhooks](../core-concepts/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Configuring webhooks](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

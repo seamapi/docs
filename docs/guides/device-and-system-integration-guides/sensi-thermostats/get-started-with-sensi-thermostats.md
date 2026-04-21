@@ -715,7 +715,7 @@ Fan running: false
 
 Next, you can use the Seam API to control your Sensi thermostat.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../../products/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../../capability-guides/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Seam provides additional actions for thermostats, such as setting the fan mode, creating and scheduling climate presets, setting temperature thresholds, and configuring weekly thermostat programs. You can also monitor for Seam thermostat-related events, such as reported temperatures outside your set thresholds.
 
@@ -1846,11 +1846,11 @@ Now that you've completed this getting started guide for Sensi devices, you can 
 * [ ] **Learn**\
   Read about Seam [concepts](../../core-concepts/overview.md) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Expand your abilities**\
-  Find out what other [thermostat actions](../../products/thermostats/) you can perform using the Seam API.
+  Find out what other [thermostat actions](../../capability-guides/thermostats/) you can perform using the Seam API.
 * [ ] **Use webhooks**\
-  Learn how to use [webhooks](../../core-concepts/webhooks.md) as an efficient way to receive device events.
+  Learn how to use [webhooks](../../developer-tools/webhooks.md) as an efficient way to receive device events.
 * [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [smart locks](../../products/smart-locks/), [access control systems](../../products/access-systems/), and [noise sensors](../../products/noise-sensors/).
+  Explore the other types of devices and systems that you can control with Seam, including [smart locks](../../capability-guides/smart-locks/), [access control systems](../../capability-guides/access-systems/), and [noise sensors](../../capability-guides/noise-sensors/).
 * [ ] **Develop for mobile access**\
   Learn about Seam's [mobile access solution](../../capability-guides/mobile-access/).
 

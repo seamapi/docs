@@ -24,9 +24,9 @@ For detailed information about the SmartThings devices that Seam supports, see o
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../../products/smart-locks/lock-and-unlock.md) on smart locks
-* [Programming online access codes](../../products/smart-locks/access-codes/) on smart locks that have a connected keypad
-* [Configuring current thermostat settings](../../products/thermostats/configure-current-climate-settings.md) on thermostats
+* [Triggering web lock and unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md) on smart locks
+* [Programming online access codes](../../capability-guides/smart-locks/access-codes/) on smart locks that have a connected keypad
+* [Configuring current thermostat settings](../../capability-guides/thermostats/configure-current-climate-settings.md) on thermostats
 * [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/) on thermostats
 * [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md) on thermostats
 * [Creating and managing thermostat weekly programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md) on thermostats

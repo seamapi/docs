@@ -22,8 +22,8 @@ For detailed information about the SmartThings hubs that Seam supports, see our 
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../products/smart-locks/lock-and-unlock.md) on paired smart locks that support this feature
-* [Programming access codes](../products/smart-locks/access-codes/) on paired smart locks that support this feature
+* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md) on paired smart locks that support this feature
+* [Programming access codes](../capability-guides/smart-locks/access-codes/) on paired smart locks that support this feature
 
 ***
 

@@ -19,7 +19,7 @@ This quick start walks you through the following basic steps:
 1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
    * To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
-3. Create an [ACS user](../../../products/access-systems/user-management.md).
+3. Create an [ACS user](../../../capability-guides/access-systems/user-management.md).
    * Also, specify the access schedule for this user.
 4. Assign the ACS user to an [access group](../user-management/assigning-users-to-access-groups.md).
    * Access groups are preconfigured to grant access to specific entrances.\
@@ -656,7 +656,7 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
    * [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources.md)
    * [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences.md)
 2. Create ACS users.
-   * [Managing ACS Users](../../../products/access-systems/user-management.md)
+   * [Managing ACS Users](../../../capability-guides/access-systems/user-management.md)
 3. For relevant access control systems, assign ACS users to access groups.
    * [Assigning ACS Users to Access Groups](../user-management/assigning-users-to-access-groups.md)
 4. Learn about available entrances.
