@@ -219,6 +219,7 @@
   * [Get a User Identity](user_identities/get.md)
   * [Grant a User Identity Access to a Device](user_identities/grant_access_to_device.md)
   * [List Accessible Devices for a User Identity](user_identities/list_accessible_devices.md)
+  * [List Accessible Entrances for a User Identity](user_identities/list_accessible_entrances.md)
   * [List ACS Systems Associated with a User Identity](user_identities/list_acs_systems.md)
   * [List ACS Users Associated with a User Identity](user_identities/list_acs_users.md)
   * [List User Identities](user_identities/list.md)

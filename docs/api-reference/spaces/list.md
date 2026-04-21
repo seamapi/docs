@@ -186,9 +186,21 @@ Customer key for which you want to list spaces.
 
 ---
 
+**`limit`** *Number*
+
+Maximum number of records to return per page.
+
+---
+
+**`page_cursor`** *String*
+
+Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
+
+---
+
 **`search`** *String*
 
-String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`.
+String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`, `space_key`, or `customer_key`.
 
 ---
 

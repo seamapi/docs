@@ -50,6 +50,15 @@ Date and time at which the space was created.
 
 ---
 
+**`customer_key`** *String*
+
+Customer key associated with the space.
+
+
+
+
+---
+
 **`device_count`** *Number*
 
 Number of devices in the space.

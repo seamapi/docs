@@ -427,6 +427,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_code_id`** *String*
+
+ID of the access code by which you want to filter the list of Access Grants.
+
+---
+
 **`access_grant_ids`** *Array* *of UUIDs*
 
 IDs of the access grants to retrieve.
@@ -435,7 +441,7 @@ IDs of the access grants to retrieve.
 
 **`access_grant_key`** *String*
 
-Filter Access Grants by access_grant_key.
+Filter Access Grants by access_grant_key. Use null to filter for Access Grants without an access_grant_key.
 
 ---
 

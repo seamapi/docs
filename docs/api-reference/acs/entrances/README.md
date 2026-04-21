@@ -454,7 +454,7 @@ Visionline-specific metadata associated with the [entrance](https://docs.seam.co
 
 **`acs_entrance.added`**
 
-An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was added.
 
 <details>
 
@@ -495,7 +495,7 @@ An [access system entrance](https://docs.seam.co/latest/capability-guides/retrie
 
 **`acs_entrance.removed`**
 
-An [access system entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was removed.
 
 <details>
 

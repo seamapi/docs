@@ -243,7 +243,7 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that
 
 **`connect_webview.login_succeeded`**
 
-A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login succeeded.
+A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login succeeded.
 
 <details>
 
@@ -251,7 +251,7 @@ A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) 
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
+  ID of the affected [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -290,7 +290,7 @@ A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) 
 
 **`connect_webview.login_failed`**
 
-A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login failed.
+A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login failed.
 
 <details>
 
@@ -298,7 +298,7 @@ A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) 
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the affected [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
+  ID of the affected [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 

@@ -297,6 +297,12 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
+**`access_code_id`** *String*
+
+ID of the access code for which you want to retrieve all access methods.
+
+---
+
 **`access_grant_id`** *String*
 
 ID of Access Grant to list access methods for.

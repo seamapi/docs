@@ -5,7 +5,7 @@
 
 Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
-Specify `device_id`, `access_code_ids`, or `access_method_id`.
+Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 
 {% tabs %}
@@ -295,13 +295,19 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`access_code_ids`** *Array* *of UUIDs*
 
-IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, or `access_method_id`.
+IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
+
+---
+
+**`access_grant_id`** *String*
+
+ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 ---
 
 **`access_method_id`** *String*
 
-ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.
+ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 ---
 
@@ -313,7 +319,7 @@ Customer key for which you want to list access codes.
 
 **`device_id`** *String*
 
-ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, or `access_method_id`.
+ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 ---
 
@@ -365,6 +371,7 @@ Returns:
   "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
   "ends_at": "2025-07-04T16:54:17.946049Z",
   "errors": [],
+  "pending_mutations": [],
   "is_backup": false,
   "is_backup_access_code_available": false,
   "is_external_modification_allowed": false,

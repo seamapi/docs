@@ -5113,6 +5113,7 @@ A device provider resource.
 - <code>dormakaba_ambiance</code>
 - <code>ultraloq</code>
 - <code>ring</code>
+- <code>ical</code>
 </details>
 
 

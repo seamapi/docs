@@ -581,6 +581,7 @@ Possible enum values:
 - <code>dormakaba_ambiance</code>
 - <code>ultraloq</code>
 - <code>ring</code>
+- <code>ical</code>
 - <code>yale_access</code>
 - <code>hid_cm</code>
 - <code>google_nest</code>

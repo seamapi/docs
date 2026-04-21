@@ -530,6 +530,27 @@ Indicates that the access grant has access to locations it should not have. Acce
   
   ---
 
+  **`failed_devices`** *List* *of Objects*
+  
+  
+  Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).
+  
+  
+  - <strong><code>device_id</code></strong> <i>UUID</i>
+  
+    Device whose access code could not be revoked.
+  
+  - <strong><code>error_code</code></strong> <i>String</i>
+  
+    Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).
+  
+  - <strong><code>message</code></strong> <i>String</i>
+  
+    Human-readable description of why revocation failed.
+  
+  
+  ---
+
   **`message`** *String*
   
   
@@ -867,7 +888,7 @@ Access requested as part of an Access Grant to a particular door was successfull
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
-  ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).
+  ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -906,7 +927,7 @@ Access to a particular door that was requested as part of an Access Grant was lo
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
-  ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details).
+  ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 

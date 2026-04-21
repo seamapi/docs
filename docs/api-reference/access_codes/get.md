@@ -318,6 +318,7 @@ Returns:
   "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
   "ends_at": "2025-07-04T16:54:17.946049Z",
   "errors": [],
+  "pending_mutations": [],
   "is_backup": false,
   "is_backup_access_code_available": false,
   "is_external_modification_allowed": false,

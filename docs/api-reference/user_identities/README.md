@@ -292,12 +292,12 @@ Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobi
 
 [**`/user_identities/delete`**](./delete.md)
 
-Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/access-control-systems/credentials), [acs users](https://docs.seam.co/latest/api/access-control-systems/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).
+Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/latest/api/acs/credentials), [acs users](https://docs.seam.co/latest/api/acs/users) and [client sessions](https://docs.seam.co/latest/api/client_sessions).
 
 
 [**`/user_identities/generate_instant_key`**](./generate_instant_key.md)
 
-Generates a new [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Generates a new [instant key](https://docs.seam.co/latest/capability-guides/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 [**`/user_identities/get`**](./get.md)
@@ -317,7 +317,12 @@ Returns a list of all [user identities](https://docs.seam.co/latest/capability-g
 
 [**`/user_identities/list_accessible_devices`**](./list_accessible_devices.md)
 
-Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes devices derived from the access grants assigned to the user identity and devices directly linked to the user identity.
+
+
+[**`/user_identities/list_accessible_entrances`**](./list_accessible_entrances.md)
+
+Returns a list of all [ACS entrances](https://docs.seam.co/latest/api/acs/entrances) accessible to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.
 
 
 [**`/user_identities/list_acs_systems`**](./list_acs_systems.md)

@@ -1069,6 +1069,18 @@ Your display name for this location resource.
 
 <details>
 
+<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+
+Your unique identifier for the site.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>space_key</code></b> <i>String</i></summary>
 
 Your unique identifier for the space.

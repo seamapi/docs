@@ -369,7 +369,7 @@ Date and time at which the validity of the new access code starts, in [ISO 8601]
 
 **`use_backup_access_code_pool`** *Boolean*
 
-Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/core-concepts/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
+Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
 
 ---
 
@@ -405,6 +405,7 @@ Returns:
   "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
   "ends_at": "2025-07-04T16:54:17.946049Z",
   "errors": [],
+  "pending_mutations": [],
   "is_backup": false,
   "is_backup_access_code_available": false,
   "is_external_modification_allowed": false,
