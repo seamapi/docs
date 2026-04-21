@@ -86,7 +86,7 @@ Then import the custom elements bundle in your application entrypoint:
 import "@seamapi/react/elements.js"
 ```
 
-Add the components where your framework renders HTML. Some frameworks may require additional configuration to enable web component support, e.g., [Angular](overview/angular.md) or [Vue](overview/vue.md).
+Add the components where your framework renders HTML. Some frameworks may require additional configuration to enable web component support, e.g., [Angular](getting-started-with-seam-components/angular.md) or [Vue](getting-started-with-seam-components/vue.md).
 
 ```html
 <seam-supported-device-table publishable-key="your_publishable_key"></seam-supported-device-table>
