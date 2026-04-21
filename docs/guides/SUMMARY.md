@@ -207,7 +207,7 @@
   * [Sandbox TTLock Locks](device-guides/sandbox-and-sample-data/ttlock-sample-data.md)
   * [Sandbox Wyze Locks](device-guides/sandbox-and-sample-data/wyze-sample-data.md)
   * [Sandbox Yale Locks](device-guides/sandbox-and-sample-data/yale-sample-data.md)
-* [Rate Limits and Guardrails](device-guides/rate-limits-and-guardrails.md)
+* [Rate Limits and Guardrails](developer-tools/rate-limits-and-guardrails.md)
 * [Mobile SDKs](developer-tools/mobile-sdks/README.md)
   * [Android SDK](developer-tools/mobile-sdks/android-sdk.md)
   * [iOS SDK](developer-tools/mobile-sdks/ios-sdk.md)
