@@ -1,26 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-import { apiReferenceRoot, guidesRoot } from './lib/config.js'
-
-interface SiteSection {
-  name: string
-  root: string
-  summaryPath: string
-}
-
-const siteSections: SiteSection[] = [
-  {
-    name: 'Guides',
-    root: guidesRoot,
-    summaryPath: join(guidesRoot, 'SUMMARY.md'),
-  },
-  {
-    name: 'API Reference',
-    root: apiReferenceRoot,
-    summaryPath: join(apiReferenceRoot, 'SUMMARY.md'),
-  },
-]
+import { siteSections } from './lib/config.js'
 
 // Matches markdown links in SUMMARY.md: * [Title](path/to/file.md)
 const summaryLinkPattern = /\[([^\]]*)\]\(([^)]+)\)/g
@@ -37,11 +18,6 @@ function slugify(heading: string): string {
     .trim()
 }
 
-// Groups listed here contain files from multiple subdirectories by design,
-// so we only check that referenced files exist (not that their path prefix
-// matches the group slug).
-const exemptGroups = new Set<string>([])
-
 interface PathMismatch {
   section: string
   line: number
@@ -53,9 +29,10 @@ interface PathMismatch {
 const mismatches: PathMismatch[] = []
 
 for (const section of siteSections) {
-  if (!existsSync(section.summaryPath)) continue
+  const summaryPath = join(section.root, 'SUMMARY.md')
+  if (!existsSync(summaryPath)) continue
 
-  const contents = readFileSync(section.summaryPath, 'utf-8')
+  const contents = readFileSync(summaryPath, 'utf-8')
   const lines = contents.split('\n')
 
   let currentGroup: string | null = null
@@ -93,11 +70,7 @@ for (const section of siteSections) {
       }
 
       // Check 2: file path starts with the group slug
-      if (
-        currentGroup != null &&
-        !exemptGroups.has(currentGroup) &&
-        !linkPath.startsWith(currentGroup + '/')
-      ) {
+      if (currentGroup != null && !linkPath.startsWith(currentGroup + '/')) {
         mismatches.push({
           section: section.name,
           line: i + 1,
