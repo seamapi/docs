@@ -477,9 +477,9 @@ Now that you've completed this guide, you can try to connect a real Tedee device
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Schlage Getting Started Guide](../../device-guides/get-started-with-schlage-locks.md)
-* [Yale Getting Started Guide](../../device-guides/get-started-with-yale-locks.md)
-* [SmartThings Getting Started Guide](../../device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
+* [Yale Getting Started Guide](../get-started-with-yale-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../../core-concepts/overview.md)
 

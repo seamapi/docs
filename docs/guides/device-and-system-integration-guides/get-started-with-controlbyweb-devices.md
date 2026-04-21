@@ -120,7 +120,7 @@ puts webview.url
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the ControlByWeb [sandbox test account](https://docs.seam.co/latest/device-guides/sandbox-and-sample-data) credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the ControlByWeb [sandbox test account](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data) credentials below:
 
 * **username:** jane
 * **password:** 1234

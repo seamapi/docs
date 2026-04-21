@@ -11,7 +11,7 @@ Seam's suite of `simulate` endpoints help you to test your thermostat app agains
 * [`/thermostats/simulate/hvac_mode_adjusted`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-adjusting-the-hvac-mode)
 * [`/thermostats/simulate/temperature_reached`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-reaching-a-desired-temperature)
 
-Seam supports these endpoints for all thermostat [sandbox devices](../../device-guides/sandbox-and-sample-data/).
+Seam supports these endpoints for all thermostat [sandbox devices](../../developer-tools/sandbox-and-sample-data/).
 
 {% hint style="info" %}
 Seam provides additional `simulate` endpoints to help you [test your app against device disconnection and removal](../../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).

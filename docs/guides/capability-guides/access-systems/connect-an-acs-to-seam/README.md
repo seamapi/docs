@@ -11,7 +11,7 @@ You can use [Seam Console](../../../core-concepts/seam-console/) or the [Seam AP
 1. Log in to [Seam Console](https://console.seam.co/).
 2.  In the upper-left corner, click the workspace switcher and select or create a [workspace](../../../core-concepts/workspaces/).
 
-    To connect a real access system to Seam, use a production workspace. To use one of Seam's [virtual access systems](../../../device-guides/sandbox-and-sample-data/), use a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
+    To connect a real access system to Seam, use a production workspace. To use one of Seam's [virtual access systems](../../../developer-tools/sandbox-and-sample-data/), use a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
 
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../../.gitbook/assets/workspace-switcher.png)
 3. In the top navigation pane, click **ACS Systems**.
@@ -22,7 +22,7 @@ You can use [Seam Console](../../../core-concepts/seam-console/) or the [Seam AP
 
     <figure><img src="../../../.gitbook/assets/salto webview.webp.png" alt="Use a Connect Webview to connect your access system to Seam."><figcaption><p>Use a Connect Webview to connect your access system to Seam.</p></figcaption></figure>
 
-    If you want to connect a virtual access system to a sandbox workspace, use the corresponding [sandbox access system credentials](../../../device-guides/sandbox-and-sample-data/).
+    If you want to connect a virtual access system to a sandbox workspace, use the corresponding [sandbox access system credentials](../../../developer-tools/sandbox-and-sample-data/).
 
     To connect a real access system, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS to learn any brand- or system-specific prerequisites, requirements, and restrictions.
 

@@ -30,7 +30,7 @@ Time-bound access codes are suitable for temporary access, like guest visits or 
 
 ### Offline Access Codes
 
-Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. Currently, Seam supports offline access codes for [igloohome locks](../../../device-guides/igloohome-locks.md), [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md), and [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/). For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
+Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. Currently, Seam supports offline access codes for [igloohome locks](../../../device-and-system-integration-guides/igloohome-locks/), [dormakaba Oracode locks](../../../device-and-system-integration-guides/dormakaba-oracode-locks/), and [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/). For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
 {% hint style="info" %}
 You cannot modify a created offline access code. In addition, you cannot revoke a created offline access code before the configured expiration date for the code. To invalidate an offline access code before the expiration date, you must either perform a factory reset on the device or re-pair your smartphone with the device.
@@ -38,13 +38,13 @@ You cannot modify a created offline access code. In addition, you cannot revoke 
 
 Seam supports two types of offline access codes: [time-bound](./#time-bound-offline-access-codes) and [one-time-use](./#one-time-use-offline-access-codes). Note that this support varies based on the device manufacturer. Before creating an offline access code, it is imperative to understand any manufacturer- or device-specific constraints, such as the maximum number of access codes, any time slot or activation requirements, and so on. For details, see the corresponding device guide.
 
-* [igloohome Locks device guide](../../../device-guides/igloohome-locks.md)
-* [dormakaba Oracode Locks device guide](../../../device-guides/dormakaba-oracode-locks.md)
+* [igloohome Locks device guide](../../../device-and-system-integration-guides/igloohome-locks/)
+* [dormakaba Oracode Locks device guide](../../../device-and-system-integration-guides/dormakaba-oracode-locks/)
 * [Lockly Locks device guide](../../../device-and-system-integration-guides/lockly-locks/)
 
 #### Time-Bound Offline Access Codes
 
-For [igloohome locks](../../../device-guides/igloohome-locks.md) and [dormakaba Oracode locks](../../../device-guides/dormakaba-oracode-locks.md), you can create time-bound offline access codes with validity durations at either the hour level or the day level. For [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/), you can create generic time-bound offline access codes that do not differentiate between hourly-bound and daily-bound codes.
+For [igloohome locks](../../../device-and-system-integration-guides/igloohome-locks/) and [dormakaba Oracode locks](../../../device-and-system-integration-guides/dormakaba-oracode-locks/), you can create time-bound offline access codes with validity durations at either the hour level or the day level. For [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/), you can create generic time-bound offline access codes that do not differentiate between hourly-bound and daily-bound codes.
 
 Hourly-bound offline access codes are intended for shorter durations, while daily-bound offline codes are intended for longer durations. Device manufacturers set the bounds for these short- and long-term access codes, and some device manufacturers enforce a maximum duration for hourly-bound offline access codes. See the corresponding device guide for more information.
 
@@ -52,7 +52,7 @@ To [create a time-bound offline access code](offline-access-codes.md#creating-ti
 
 #### One-Time-Use Offline Access Codes
 
-For [igloohome locks](../../../device-guides/igloohome-locks.md) and [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/), you can create [one-time-use offline access codes](offline-access-codes.md#creating-one-time-use-offline-access-codes). igloohome one-time-use offline access codes are valid for 24 hours from the `starts_at` timestamp that you configure. Lockly offline access codes are valid for the time period that you specify using the `starts_at` and `ends_at` timestamps. These codes expire after a single use.
+For [igloohome locks](../../../device-and-system-integration-guides/igloohome-locks/) and [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/), you can create [one-time-use offline access codes](offline-access-codes.md#creating-one-time-use-offline-access-codes). igloohome one-time-use offline access codes are valid for 24 hours from the `starts_at` timestamp that you configure. Lockly offline access codes are valid for the time period that you specify using the `starts_at` and `ends_at` timestamps. These codes expire after a single use.
 
 ***
 

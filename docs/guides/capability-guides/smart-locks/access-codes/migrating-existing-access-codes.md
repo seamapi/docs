@@ -285,9 +285,9 @@ Once an unmanaged code is successfully converted to a managed code, all of the n
 
 Some third-party device providers strictly limit the information available about existing access codes on a device. Thus, for devices connected using these providers, we cannot convert unmanaged codes to managed ones. The following providers currently do not support conversion:
 
-* [igloohome](../../../device-guides/igloohome-locks.md)
+* [igloohome](../../../device-and-system-integration-guides/igloohome-locks/)
 * [Kwikset](../../../device-and-system-integration-guides/kwikset-locks.md)
-* [SmartThings](../../../device-guides/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [SmartThings](../../../device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
 
 For SmartThings devices, you can still see a list of all unmanaged codes on the devices using the `GET /access_codes/unmanaged/list` endpoint, but you cannot see the actual PIN code for the access codes (the `code` property is not present).
 

@@ -274,10 +274,10 @@ In a web browser, go to the URL that the Connect Webview object returned.
 For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../ui-components/overview/react-components/connect-account-button.md) within our suite of [Seam Components](../../ui-components/overview/) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test Google Nest account. We provide [virtual devices](../../device-guides/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test Google Nest account. We provide [virtual devices](../../developer-tools/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [Google Nest sandbox account](../../device-guides/sandbox-and-sample-data/google-nest-thermostats-sample-data.md) credentials:
+Complete the Connect Webview authorization flow by entering the following [Google Nest sandbox account](../../developer-tools/sandbox-and-sample-data/google-nest-thermostats-sample-data.md) credentials:
 
 * **Email:** jane@example.com
 * **Password:** 1234
@@ -1844,7 +1844,7 @@ $seam->thermostats->update_weekly_program(
 
 Now that you have learned the basics of using the Seam API, you can connect and control a real Google Nest device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
 
-For more details about setting up your real Google Nest thermostat, see the [Google Nest thermostats integration guide](../../device-guides/google-nest-thermostats/).
+For more details about setting up your real Google Nest thermostat, see the [Google Nest thermostats integration guide](../).
 
 ***
 

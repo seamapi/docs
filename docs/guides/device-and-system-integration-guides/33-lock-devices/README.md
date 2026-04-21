@@ -60,7 +60,7 @@ To control 33 Lock devices using Seam, you must prompt owners of these devices t
 
 ## Troubleshooting
 
-For errors and warnings that are relevant to 33 Lock devices, see [Troubleshooting](../../device-guides/ttlock-locks.md#troubleshooting) in the TTLock device integration guide.
+For errors and warnings that are relevant to 33 Lock devices, see [Troubleshooting](../ttlock-locks.md#troubleshooting) in the TTLock device integration guide.
 
 ***
 
