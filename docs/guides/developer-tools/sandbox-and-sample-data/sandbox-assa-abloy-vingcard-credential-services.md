@@ -5,7 +5,7 @@ noIndex: true
 
 # Sandbox ASSA ABLOY Vingcard Credential Services
 
-Use the following set of credentials to add virtual [ASSA ABLOY Credential Services](/broken/pages/E3681tQ6WZ6d1IId3ygF) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [ASSA ABLOY Credential Services](../../device-and-system-integration-guides/assa-abloy-vingcard-credential-services.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 {% hint style="info" %}
 Use the virtual ASSA ABLOY Credential Services with a [virtual Visionline ACS](../../device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data.md) to issue mobile keys in a sandbox workspace.

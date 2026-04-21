@@ -3,7 +3,7 @@
 Use the following set of credentials to add virtual Assa Abloy Vingcard Vostio locks to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 {% hint style="info" %}
-To use the virtual Visionline Access Control System (ACS) to issue mobile keys in a sandbox workspace, you must also connect the [virtual ASSA ABLOY Credential Services](/broken/pages/grFDq7ngzXxrhkYvBSQr).
+To use the virtual Visionline Access Control System (ACS) to issue mobile keys in a sandbox workspace, you must also connect the [virtual ASSA ABLOY Credential Services](../../device-and-system-integration-guides/assa-abloy-vingcard-credential-services.md).
 {% endhint %}
 
 ## Vostio Credentials
