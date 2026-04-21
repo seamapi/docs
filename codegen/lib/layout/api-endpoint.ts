@@ -173,7 +173,7 @@ export function setEndpointLayoutContext(
     )
 
     let responsePath = null
-    if (responseResource != null) {
+    if (responseResource != null && !responseResource.isUndocumented) {
       responsePath = path
         .relative(endpoint.path, responseResource.routePath)
         .replace('..', '.') // gitbook expects first level to be .
@@ -196,7 +196,7 @@ export function setEndpointLayoutContext(
             (r) => r.resourceType === batchResource.resourceType,
           )
           let batchResponsePath = null
-          if (batchResourceDef != null) {
+          if (batchResourceDef != null && !batchResourceDef.isUndocumented) {
             batchResponsePath = path
               .relative(endpoint.path, batchResourceDef.routePath)
               .replace('..', '.')
