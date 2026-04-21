@@ -269,7 +269,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 
 In a web browser, go to the URL that the Connect Webview object returned.
 
-For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../seam-components/react-components/connect-account-button.md) within our suite of [Seam Components](../../seam-components/overview/) that help you build your device management flow.
+For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../ui-components/overview/react-components/connect-account-button.md) within our suite of [Seam Components](../../ui-components/overview/) that help you build your device management flow.
 
 {% hint style="success" %}
 Because you're using a sandbox workspace, you can connect Seam's test TTLock account. We provide [virtual devices](../../device-guides/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
@@ -1381,15 +1381,15 @@ For more details about setting up your real 33 Lock device, see the [33 Lock loc
 
 ## Step 6: Build your application!
 
-Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](../../seam-components/overview/). These prebuilt UI components help you to build your device management flow.
+Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](../../ui-components/overview/). These prebuilt UI components help you to build your device management flow.
 
 <figure><img src="../../.gitbook/assets/Lock Detail.png" alt="Seam Components make it easy to develop your application!" width="280"><figcaption><p>Seam Components make it easy to develop your application!</p></figcaption></figure>
 
-For example, you can use the [Device Table Seam Component](../../seam-components/react-components/device-table.md) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](../../seam-components/react-components/device-details.md) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](../../seam-components/react-components/access-code-details.md) provides a similar display and actions for access codes.
+For example, you can use the [Device Table Seam Component](../../ui-components/overview/react-components/device-table.md) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](../../ui-components/overview/react-components/device-details.md) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](../../ui-components/overview/react-components/access-code-details.md) provides a similar display and actions for access codes.
 
 Seam Components use a responsive design to fit seamlessly on any screen size. They also provide device debugging flows to help your users.
 
-To learn about all the Seam Components that we provide, see [Seam Components](../../seam-components/overview/).
+To learn about all the Seam Components that we provide, see [Seam Components](../../ui-components/overview/).
 
 ***
 
@@ -1402,7 +1402,7 @@ Now that you've completed this getting started guide for 33 Lock devices, you ca
 * [ ] **Learn**\
   Read about Seam [concepts](../../core-concepts/overview.md) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Use Seam Components**\
-  Find out about [Seam Components](../../seam-components/overview/), which are prebuilt UI components for building your device management flow.
+  Find out about [Seam Components](../../ui-components/overview/), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\
   Learn how to use [webhooks](../../developer-tools/webhooks.md) as an efficient way to receive device events.
 * [ ] **Find out more**\

@@ -22,7 +22,7 @@ Seam polls connected devices and accounts every ten minutes and updates the foll
 Use a [Get Device](https://docs.seam.co/latest/api/devices/get) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
 
 {% hint style="info" %}
-You can also use the prebuilt [device details Seam Component](../../seam-components/react-components/device-details.md), which includes a device power status display.
+You can also use the prebuilt [device details Seam Component](../../ui-components/overview/react-components/device-details.md), which includes a device power status display.
 {% endhint %}
 
 {% tabs %}
