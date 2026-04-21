@@ -127,7 +127,7 @@ Online: True
 
 ## Get Device Status Using Connection-Related Events
 
-When a device connection or disconnection occurs, Seam generates a [`device.connected`](https://docs.seam.co/latest/api/events/) or [`device.disconnected`](https://docs.seam.co/latest/api/events/) event, respectively. You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../webhooks.md) and then display the corresponding status in your app.
+When a device connection or disconnection occurs, Seam generates a [`device.connected`](https://docs.seam.co/latest/api/events/) or [`device.disconnected`](https://docs.seam.co/latest/api/events/) event, respectively. You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../../developer-tools/webhooks.md) and then display the corresponding status in your app.
 
 {% hint style="info" %}
 To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](../workspaces/#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](testing-your-app-against-device-disconnection-and-removal.md).
@@ -351,4 +351,4 @@ foreach (var device_connected_event in device_connected_events)
 
 ### Receive Connection-Related Events Using a Webhook
 
-You can set up webhook endpoints to receive `device.connected` and `device.disconnected` events. Then, you can use the receipt of these events to display the corresponding device status in your app. For more information about configuring webhooks, see [Webhooks](../webhooks.md).
+You can set up webhook endpoints to receive `device.connected` and `device.disconnected` events. Then, you can use the receipt of these events to display the corresponding device status in your app. For more information about configuring webhooks, see [Webhooks](../../developer-tools/webhooks.md).

@@ -183,7 +183,7 @@ Seam generates the following battery-related events:
 * `device.low_battery`
 * `device.battery_status_changed`
 
-You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../webhooks.md) and then display the corresponding status in your app.
+You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../../developer-tools/webhooks.md) and then display the corresponding status in your app.
 
 ### Get Battery-Related Events Using a List Events Request
 
@@ -365,4 +365,4 @@ foreach (var device_battery_status_changed_event in device_battery_status_change
 
 ### Retrieve Battery-Related Events Using a Webhook
 
-You can set up webhook endpoints to receive `device.battery_status_changed` and `device.low_battery` events. Then, you can use the receipt of these events to display the corresponding device status in your app. For more information about configuring webhooks, see [Webhooks](../webhooks.md).
+You can set up webhook endpoints to receive `device.battery_status_changed` and `device.low_battery` events. Then, you can use the receipt of these events to display the corresponding device status in your app. For more information about configuring webhooks, see [Webhooks](../../developer-tools/webhooks.md).
