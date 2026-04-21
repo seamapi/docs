@@ -12,7 +12,7 @@ To create a credential to encode onto a plastic key card for a Visionline ACS:
     * To issue the first credential for a reservation—that is, an "override" credential—make sure to set `visionline_metadata.override` to `true`.
     * To issue subsequent credentials for a reservation, set the `visionline_metadata.joiner_acs_credential_ids`.
 
-    For more information about Visionline credential types, see [Credential Types for Visionline](credential-types/#credential-types-for-visionline) and [Guest Mobile Credential Types](credential-types/#guest-mobile-credential-types).
+    For more information about Visionline credential types, see [Credential Types for Visionline](configuring-visionline-mobile-credentials/#credential-types-for-visionline) and [Guest Mobile Credential Types](configuring-visionline-mobile-credentials/#guest-mobile-credential-types).
 3. Encode the credential onto a plastic card.
    1. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential to the card.\
       See [Retrieve Encoders](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
