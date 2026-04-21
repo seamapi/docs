@@ -36,7 +36,7 @@
 * [Connected Accounts](core-concepts/connected-accounts/README.md)
   * [Adding Custom Metadata to a Connected Account](core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account.md)
   * [Filtering Connected Accounts by Custom Metadata](core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata.md)
-  * [Reconnecting an Account](device-guides/reconnecting-an-account.md)
+  * [Reconnecting an Account](core-concepts/connected-accounts/reconnecting-an-account.md)
 * [Mapping Your Resources to Seam Resources](core-concepts/mapping-your-resources-to-seam-resources.md)
 * [Action Attempts](core-concepts/action-attempts.md)
 
