@@ -1,19 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 
-import {
-  apiReferenceRoot,
-  apiReferenceUrlPrefix,
-  baseUrl,
-  guidesRoot,
-  siteUrlPrefix,
-} from './lib/config.js'
-
-// Maps published URL prefixes to their site section root on disk.
-const siteSections: Array<{ urlPrefix: string; root: string }> = [
-  { urlPrefix: apiReferenceUrlPrefix, root: apiReferenceRoot },
-  { urlPrefix: '', root: guidesRoot },
-]
+import { baseUrl, siteSections, siteUrlPrefix } from './lib/config.js'
 
 const absoluteUrlPattern = new RegExp(
   `${baseUrl.replaceAll('.', '\\.')}[^)\\s]+`,
