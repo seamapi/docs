@@ -10,7 +10,7 @@ description: Learn how to connect and control August locks with the Seam API.
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including smart locks, access control systems (ACSs), thermostats, and noise sensors.
 
-This guide gives you a rapid introduction to connecting and controlling your [August lock](august-locks.md) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
+This guide gives you a rapid introduction to connecting and controlling your [August lock](../device-and-system-integration-guides/august-locks.md) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
 For detailed information about the August devices that Seam supports, see our [August Supported Devices page](https://www.seam.co/manufacturers/august).
 
@@ -1377,7 +1377,7 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 
 Now that you have learned the basics of using the Seam API, you can connect and control a real August device. To do so, make sure to switch to a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and [API key](../core-concepts/authentication/api-keys.md).
 
-For more details about setting up your real August lock, see the [August locks integration guide](august-locks.md).
+For more details about setting up your real August lock, see the [August locks integration guide](../device-and-system-integration-guides/august-locks.md).
 
 ***
 
