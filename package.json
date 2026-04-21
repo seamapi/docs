@@ -16,6 +16,7 @@
   "scripts": {
     "generate": "tsx codegen/smith.ts",
     "postgenerate": "npm run format",
+    "validate-paths": "tsx codegen/validate-paths.ts",
     "validate-links": "tsx codegen/validate-links.ts",
     "typecheck": "tsc",
     "lint": "eslint .",
