@@ -182,7 +182,7 @@ To avoid polling, use a Seam webhook to monitor for a `connected_account.connect
 
 Note that the `connected_account.connected` event also includes a `connected_account_id` property.
 
-For more information, see [Webhooks](../webhooks.md).
+For more information, see [Webhooks](../../developer-tools/webhooks.md).
 
 ```json
 {
