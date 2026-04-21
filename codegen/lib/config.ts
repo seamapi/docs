@@ -16,13 +16,15 @@ export interface SiteSection {
   urlPrefix: string
 }
 
+// Order matters: more-specific prefixes must come first so that URL matching
+// picks the longest prefix (e.g., '/api' before the catch-all '').
 export const siteSections: SiteSection[] = [
-  { name: 'Guides', root: join('docs', 'guides'), urlPrefix: '' },
   {
     name: 'API Reference',
     root: join('docs', 'api-reference'),
     urlPrefix: '/api',
   },
+  { name: 'Guides', root: join('docs', 'guides'), urlPrefix: '' },
 ]
 
 // Convenience accessors (used by codegen)
