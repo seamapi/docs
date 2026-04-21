@@ -26,9 +26,16 @@ export const siteSections: SiteSection[] = [
 ]
 
 // Convenience accessors (used by codegen)
-export const guidesRoot = siteSections[0]!.root
-export const apiReferenceRoot = siteSections[1]!.root
-export const apiReferenceUrlPrefix = siteSections[1]!.urlPrefix
+const guides = siteSections.find((s) => s.name === 'Guides')
+const apiReference = siteSections.find((s) => s.name === 'API Reference')
+
+if (guides == null || apiReference == null) {
+  throw new Error('Missing required site section in config')
+}
+
+export const guidesRoot = guides.root
+export const apiReferenceRoot = apiReference.root
+export const apiReferenceUrlPrefix = apiReference.urlPrefix
 
 // Derived paths
 export const apiReferenceSummaryPath = join(apiReferenceRoot, 'SUMMARY.md')
