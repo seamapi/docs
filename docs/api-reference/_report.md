@@ -670,6 +670,8 @@ These items are deprecated.
     - `action_attempt`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
+- `/customers/create_portal`
+    - `magic_link`
 - `/events/get`
     - `message`
 - `/locks/get`
@@ -700,6 +702,7 @@ These items are deprecated.
 - `/access_methods/unmanaged/list`: `access_methods`
 - `/bridges/get`: `bridge`
 - `/bridges/list`: `bridges`
+- `/customers/create_portal`: `customer_portal`
 - `/customers/reservations/create_deep_link`: `deep_link`
 - `/seam/connect_webview/v1/reset`: `ok`
 - `/seam/connect_webview/v1/submit`: `ok`
