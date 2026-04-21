@@ -15,8 +15,10 @@ These items are intentionally undocumented.
 - `/customers/reservations`: No undocumented message provided
 - `/seam/bridge/v1/bridge_client_sessions`: No undocumented message provided
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
+- `/seam/connect_webview/v1`: No undocumented message provided
 - `/seam/console/v1`: No undocumented message provided
 - `/seam/console/v1/timelines`: No undocumented message provided
+- `/seam/console/v1/workspace/feature_flags`: No undocumented message provided
 - `/seam/customer/v1/access_grants`: No undocumented message provided
 - `/seam/customer/v1/access_methods`: No undocumented message provided
 - `/seam/customer/v1/automation_runs`: No undocumented message provided
@@ -77,6 +79,7 @@ These items are intentionally undocumented.
 ### Namespaces
 
 - `/seam/bridge/v1`: No undocumented message provided
+- `/seam/connect_webview`: No undocumented message provided
 - `/seam/console`: No undocumented message provided
 - `/seam/customer/v1`: No undocumented message provided
 - `/seam/instant_key/v1`: No undocumented message provided
@@ -107,8 +110,12 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_client_sessions/report_status`: Seam Bridge Client only.
 - `/seam/bridge/v1/bridge_connected_systems/list`: Seam Bridge Client only.
+- `/seam/connect_webview/v1/get_current_pane`: Internal endpoint for driving Connect Webview flows programmatically.
+- `/seam/connect_webview/v1/reset`: Internal endpoint for driving Connect Webview flows programmatically.
+- `/seam/connect_webview/v1/submit`: Internal endpoint for driving Connect Webview flows programmatically.
 - `/seam/console/v1/get_resource_locator`: Internal endpoint for Console
 - `/seam/console/v1/timelines/get`: Internal endpoint for Console
+- `/seam/console/v1/workspace/feature_flags/list`: Internal endpoint for Console
 - `/seam/customer/v1/access_grants/list`: Internal endpoint for customer portals.
 - `/seam/customer/v1/access_grants/update`: Internal endpoint for customer portals.
 - `/seam/customer/v1/access_methods/encode`: Internal endpoint for customer portals.
@@ -455,6 +462,12 @@ Items that are intentionally undocumented are not included in this section.
     - `sync`
 - `/noise_sensors/noise_thresholds/update`
     - `sync`
+- `/seam/connect_webview/v1/get_current_pane`
+    - `connect_webview_id`
+- `/seam/connect_webview/v1/reset`
+    - `connect_webview_id`
+- `/seam/connect_webview/v1/submit`
+    - `connect_webview_id`
 - `/seam/customer/v1/connectors/delete`
     - `connector_customer_id`
     - `customer_id`
@@ -688,8 +701,11 @@ These items are deprecated.
 - `/bridges/get`: `bridge`
 - `/bridges/list`: `bridges`
 - `/customers/reservations/create_deep_link`: `deep_link`
+- `/seam/connect_webview/v1/reset`: `ok`
+- `/seam/connect_webview/v1/submit`: `ok`
 - `/seam/console/v1/get_resource_locator`: `resource_locator`
 - `/seam/console/v1/timelines/get`: `timeline`
+- `/seam/console/v1/workspace/feature_flags/list`: `feature_flags`
 - `/seam/customer/v1/automation_runs/list`: `automation_runs`
 - `/seam/customer/v1/connector_customers/list`: `connector_customers`
 - `/seam/customer/v1/connectors/authorize`: `connector_authorize`
@@ -747,6 +763,7 @@ These items are deprecated.
 - `/locks/configure_auto_lock`
 - `/locks/get`
 - `/spaces/get_related`
+- `/user_identities/list_accessible_entrances`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
 - `/user_identities/unmanaged/update`

@@ -1819,6 +1819,38 @@ Received an error when attempting to create this code.
   
 </details>
 <details>
+<summary><code>schlage_access_code_ambiguous_timezone_dst_risk</code></summary>
+
+The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>schlage_access_code_ambiguous_timezone_dst_risk</code>
+  
+  
+</details>
+<details>
 <summary><code>code_modified_external_to_seam</code></summary>
 
 Code was modified or removed externally after Seam successfully set it on the device.
@@ -2487,6 +2519,12 @@ Unable to confirm that the access code is set on Kwikset device.
 **`management_transferred`**
 
 Management was transferred to another workspace.
+
+---
+
+**`schlage_access_code_ambiguous_timezone_dst_risk`**
+
+The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.
 
 ---
 

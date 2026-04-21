@@ -1198,7 +1198,7 @@ An [access system user](https://docs.seam.co/latest/capability-guides/access-sys
 
 [**`/acs/users/add_to_access_group`**](./add_to_access_group.md)
 
-Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Adds a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/users/create`**](./create.md)
@@ -1228,7 +1228,7 @@ Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a 
 
 [**`/acs/users/remove_from_access_group`**](./remove_from_access_group.md)
 
-Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/users/revoke_access_to_all_entrances`**](./revoke_access_to_all_entrances.md)

@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Removes a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
 
 
 {% tabs %}

@@ -31,6 +31,7 @@ A one-time-use offline access code resource.
   "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
   "ends_at": "2025-07-04T16:54:17.946049Z",
   "errors": [],
+  "pending_mutations": [],
   "is_backup": false,
   "is_backup_access_code_available": false,
   "is_external_modification_allowed": false,
@@ -62,6 +63,7 @@ An ongoing online access code resource.
   "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
   "ends_at": null,
   "errors": [],
+  "pending_mutations": [],
   "is_backup": false,
   "is_backup_access_code_available": true,
   "is_external_modification_allowed": true,
@@ -93,6 +95,7 @@ A time-bound online access code resource.
   "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
   "ends_at": "2025-07-04T16:54:17.946049Z",
   "errors": [],
+  "pending_mutations": [],
   "is_backup": false,
   "is_backup_access_code_available": true,
   "is_external_modification_allowed": true,
@@ -124,6 +127,7 @@ A time-bound offline access code resource.
   "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
   "ends_at": "2025-07-04T16:54:17.946049Z",
   "errors": [],
+  "pending_mutations": [],
   "is_backup": false,
   "is_backup_access_code_available": false,
   "is_external_modification_allowed": false,
@@ -1844,6 +1848,311 @@ Name of the access code. Enables administrators and users to identify the access
 
 ---
 
+**`pending_mutations`** *List* *of Objects*
+
+Collection of pending mutations for the access code. Indicates changes that Seam is in the process of pushing to the device.
+
+
+
+
+The specific structure of each object in this list depends on the value of its `mutation_code` field.
+
+Variants:
+<details>
+<summary><code>creating</code></summary>
+
+Seam is in the process of setting an access code on the device.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of setting an access code on the device.
+  
+  Enum values:
+  
+  - <code>creating</code>
+  
+  
+</details>
+<details>
+<summary><code>deferring_creation</code></summary>
+
+Seam is waiting until closer to the access code's start time before programming it on the device.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is waiting until closer to the access code's start time before programming it on the device.
+  
+  Enum values:
+  
+  - <code>deferring_creation</code>
+  
+  
+  ---
+
+  **`scheduled_at`** *Datetime*
+  
+  
+  Date and time at which Seam will attempt to program this access code on the device.
+  
+  
+</details>
+<details>
+<summary><code>deleting</code></summary>
+
+Seam is in the process of removing an access code from the device.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of removing an access code from the device.
+  
+  Enum values:
+  
+  - <code>deleting</code>
+  
+  
+</details>
+<details>
+<summary><code>updating_code</code></summary>
+
+Seam is in the process of pushing an updated PIN code to the device.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous code configuration.
+  
+  Child Properties
+  
+  - <strong><code>code</code></strong> <i>String</i>
+    
+      Previous PIN code.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing an updated PIN code to the device.
+  
+  Enum values:
+  
+  - <code>updating_code</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New code configuration.
+  
+  Child Properties
+  
+  - <strong><code>code</code></strong> <i>String</i>
+    
+      New PIN code.
+  
+  
+</details>
+<details>
+<summary><code>updating_name</code></summary>
+
+Seam is in the process of pushing an updated access code name to the device.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous name configuration.
+  
+  Child Properties
+  
+  - <strong><code>name</code></strong> <i>String</i>
+    
+      Previous access code name.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing an updated access code name to the device.
+  
+  Enum values:
+  
+  - <code>updating_name</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New name configuration.
+  
+  Child Properties
+  
+  - <strong><code>name</code></strong> <i>String</i>
+    
+      New access code name.
+  
+  
+</details>
+<details>
+<summary><code>updating_time_frame</code></summary>
+
+Seam is in the process of pushing an updated time frame to the device.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous time frame configuration.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      Previous end time for the access code.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      Previous start time for the access code.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of pushing updated access code time frame to the device.
+  
+  Enum values:
+  
+  - <code>updating_time_frame</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New time frame configuration.
+  
+  Child Properties
+  
+  - <strong><code>ends_at</code></strong> <i>Datetime</i>
+    
+      New end time for the access code.
+  
+  - <strong><code>starts_at</code></strong> <i>Datetime</i>
+    
+      New start time for the access code.
+  
+  
+</details>
+
+---
+
 **`pulled_backup_access_code_id`** *UUID*
 
 Identifier of the pulled backup access code. Used to associate the pulled backup access code with the original access code.
@@ -1998,6 +2307,38 @@ Received an error when attempting to create this code.
   Enum values:
   
   - <code>schlage_creation_outage</code>
+  
+  
+</details>
+<details>
+<summary><code>schlage_access_code_ambiguous_timezone_dst_risk</code></summary>
+
+The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>schlage_access_code_ambiguous_timezone_dst_risk</code>
   
   
 </details>
@@ -2670,6 +3011,12 @@ Unable to confirm that the access code is set on Kwikset device.
 **`management_transferred`**
 
 Management was transferred to another workspace.
+
+---
+
+**`schlage_access_code_ambiguous_timezone_dst_risk`**
+
+The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.
 
 ---
 

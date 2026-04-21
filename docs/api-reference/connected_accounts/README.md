@@ -716,7 +716,7 @@ A [connected account](https://docs.seam.co/latest/core-concepts/connected-accoun
 
 **`connected_account.successful_login`**
 
-A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).
+A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 <details>
 

@@ -199,7 +199,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 
 Indicates that [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
   **`created_at`** *Datetime*
   
@@ -295,7 +295,7 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
 <details>
 <summary><code>account_disconnected</code></summary>
 
-Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
+Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to restore access.
 
   **`created_at`** *Datetime*
   
@@ -614,7 +614,7 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that
 
 **`account_disconnected`**
 
-Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.
+Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to restore access.
 
 ---
 
@@ -655,7 +655,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 
 Indicates that [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
 ---
 

@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).
+Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
 
 
 {% tabs %}
@@ -302,6 +302,7 @@ Returns:
   "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
   "created_at": "2025-06-15T16:54:17.946453Z",
   "display_name": "Main Group",
+  "errors": [],
   "external_type": "salto_ks_access_group",
   "external_type_display_name": "Salto KS Access Group",
   "is_managed": true,

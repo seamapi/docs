@@ -139,11 +139,11 @@ Deletes a specified [Instant Key](https://docs.seam.co/latest/capability-guides/
 
 [**`/instant_keys/get`**](./get.md)
 
-Gets an [instant key](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).
+Gets an [instant key](https://docs.seam.co/latest/capability-guides/instant-keys).
 
 
 [**`/instant_keys/list`**](./list.md)
 
-Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/mobile-access/instant-keys).
+Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/instant-keys).
 
 
