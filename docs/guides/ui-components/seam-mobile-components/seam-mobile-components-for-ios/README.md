@@ -12,7 +12,7 @@ description: >-
 * Xcode 15+
 * iOS 16+ target
 
-You should already have a Seam workspace and API key set up. If you’re new to Seam, start with the [Seam Mobile SDK](https://docs.seam.co/latest/mobile/ios/quickstart).
+You should already have a Seam workspace and API key set up. If you’re new to Seam, start with the [Seam Mobile SDK](https://docs.seam.co/latest/developer-tools/mobile-sdks/ios-sdk).
 
 ***
 
@@ -92,4 +92,4 @@ By default, components are styled with Seam’s design system, but theming lets 
 
 ### See Also
 
-* Explore [Seam Mobile SDK](https://docs.seam.co/latest/mobile/ios/quickstart)
+* Explore [Seam Mobile SDK](https://docs.seam.co/latest/developer-tools/mobile-sdks/ios-sdk)
