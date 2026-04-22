@@ -60,7 +60,7 @@ To control 33 Lock devices using Seam, you must prompt owners of these devices t
 
 ## Troubleshooting
 
-For errors and warnings that are relevant to 33 Lock devices, see [Troubleshooting](../ttlock-locks.md#troubleshooting) in the TTLock device integration guide.
+For errors and warnings that are relevant to 33 Lock devices, see [Troubleshooting](../ttlock-locks/#troubleshooting) in the TTLock device integration guide.
 
 ***
 
@@ -68,4 +68,4 @@ For errors and warnings that are relevant to 33 Lock devices, see [Troubleshooti
 
 To purchase 33 Lock devices, contact the 33 Lock sales team..
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>33 Lock Contact Page</strong></td><td></td><td><a href="https://www.33lock.com/contact">https://www.33lock.com/contact</a></td><td><a href="../../.gitbook/assets/33-lock-logo.png">33-lock-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>33 Lock Contact Page</strong></td><td></td><td><a href="https://www.33lock.com/contact">https://www.33lock.com/contact</a></td><td><a href="../.gitbook/assets/33-lock-logo.png">33-lock-logo.png</a></td></tr></tbody></table>

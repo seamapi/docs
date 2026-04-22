@@ -10,7 +10,7 @@ description: Learn how to connect and control TTLock locks with the Seam API.
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including smart locks, access control systems (ACSs), thermostats, and noise sensors.
 
-This guide gives you a rapid introduction to connecting and controlling your [TTLock lock](ttlock-locks.md) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
+This guide gives you a rapid introduction to connecting and controlling your [TTLock lock](../ttlock-locks/) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
 For detailed information about the TTLock devices that Seam supports, see our [TTLock Supported Devices page](https://www.seam.co/manufacturers/ttlock).
 
@@ -1375,7 +1375,7 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 
 Now that you have learned the basics of using the Seam API, you can connect and control a real TTLock device. To do so, make sure to switch to a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
 
-For more details about setting up your real TTLock lock, see the [TTLock locks integration guide](ttlock-locks.md).
+For more details about setting up your real TTLock lock, see the [TTLock locks integration guide](../ttlock-locks/).
 
 ***
 
@@ -1418,4 +1418,4 @@ If you have any questions or want to report an issue, email us at [support@seam.
 
 ## Quick links
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../../guides/.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>

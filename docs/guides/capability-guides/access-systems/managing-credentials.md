@@ -11,7 +11,7 @@ An ACS generally uses digital means of access to authorize an [ACS user](../../c
 This guide provides instructions for creating and deleting various types of credentials.
 
 {% hint style="info" %}
-You can assign a credential to an ACS user when you create the credential. You can also [assign an existing credential to an ACS user](assigning-credentials-to-users.md#assign-a-credential-to-a-user). Further, you can [unassign a credential from an ACS user](assigning-credentials-to-users.md#unassign-a-credential-from-a-user) without deleting the credential.
+You can assign a credential to an ACS user when you create the credential. You can also [assign an existing credential to an ACS user](managing-credentials/assigning-credentials-to-users.md#assign-a-credential-to-a-user). Further, you can [unassign a credential from an ACS user](managing-credentials/assigning-credentials-to-users.md#unassign-a-credential-from-a-user) without deleting the credential.
 {% endhint %}
 
 ***

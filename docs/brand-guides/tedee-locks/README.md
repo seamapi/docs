@@ -71,6 +71,6 @@ Tedee imposes the following PIN code requirements:
 
 To purchase Tedee devices, visit the Tedee online store.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Tedee Online Store</strong></td><td></td><td><a href="https://tedee.com/shop/">https://tedee.com/shop/</a></td><td><a href="../../.gitbook/assets/tedee-logo.png">tedee-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Tedee Online Store</strong></td><td></td><td><a href="https://tedee.com/shop/">https://tedee.com/shop/</a></td><td><a href="../.gitbook/assets/tedee-logo.png">tedee-logo.png</a></td></tr></tbody></table>
 
 ***

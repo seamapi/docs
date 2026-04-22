@@ -57,6 +57,6 @@ For SmartThings-connected devices, you can report the set of supported access co
 
 To order SmartThings hubs, see the Aeotec **Where to buy** page.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Aeotec Where to buy page</strong></td><td></td><td><a href="https://aeotec.com/where-to-buy/">https://aeotec.com/where-to-buy/</a></td><td><a href="../.gitbook/assets/smartthings-logo.png">smartthings-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Aeotec Where to buy page</strong></td><td></td><td><a href="https://aeotec.com/where-to-buy/">https://aeotec.com/where-to-buy/</a></td><td><a href=".gitbook/assets/smartthings-logo.png">smartthings-logo.png</a></td></tr></tbody></table>
 
 ***

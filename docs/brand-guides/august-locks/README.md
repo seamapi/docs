@@ -65,6 +65,6 @@ The following access code errors might appear for an August lock:
 
 Order August locks and accessories directly from the August website or from Amazon.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>August</strong></td><td></td><td><a href="https://august.com/">https://august.com/</a></td><td><a href="../.gitbook/assets/august-logo.png">august-logo.png</a></td></tr><tr><td></td><td><strong>August Products on Amazon</strong></td><td></td><td><a href="https://amzn.to/3sVFNTl">https://amzn.to/3sVFNTl</a></td><td><a href="../.gitbook/assets/august-on-amazon.png">august-on-amazon.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>August</strong></td><td></td><td><a href="https://august.com/">https://august.com/</a></td><td><a href="../../guides/.gitbook/assets/august-logo.png">august-logo.png</a></td></tr><tr><td></td><td><strong>August Products on Amazon</strong></td><td></td><td><a href="https://amzn.to/3sVFNTl">https://amzn.to/3sVFNTl</a></td><td><a href="../../guides/.gitbook/assets/august-on-amazon.png">august-on-amazon.png</a></td></tr></tbody></table>
 
 ***
