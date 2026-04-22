@@ -1,42 +1,22 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
+import YAML from 'yaml'
+
 import { siteSections } from './lib/config.js'
 
-// Parse the redirects section from .gitbook.yaml.
-// Each redirect line is: "  source-path: target-path"
-const gitbookYaml = readFileSync('.gitbook.yaml', 'utf-8')
-const lines = gitbookYaml.split('\n')
+const gitbookConfig = YAML.parse(readFileSync('.gitbook.yaml', 'utf-8')) as {
+  redirects?: Record<string, string>
+}
 
 interface Redirect {
-  line: number
   source: string
   target: string
 }
 
-const redirects: Redirect[] = []
-let inRedirects = false
-
-for (let i = 0; i < lines.length; i++) {
-  const line = lines[i] ?? ''
-
-  if (line === 'redirects:') {
-    inRedirects = true
-    continue
-  }
-
-  // A non-indented, non-empty line ends the redirects section
-  if (inRedirects && line !== '' && !line.startsWith(' ')) {
-    break
-  }
-
-  if (!inRedirects) continue
-
-  const match = line.match(/^\s+(.+?):\s+(.+)$/)
-  if (match?.[1] != null && match[2] != null) {
-    redirects.push({ line: i + 1, source: match[1], target: match[2] })
-  }
-}
+const redirects: Redirect[] = Object.entries(
+  gitbookConfig.redirects ?? {},
+).map(([source, target]) => ({ source, target }))
 
 // Check if a path resolves to a page as a file, URL slug, or directory index.
 function pageExists(fullPath: string): boolean {
@@ -77,28 +57,16 @@ function resolveTarget(target: string): boolean {
   return pageExists(join(guidesSection.root, target))
 }
 
-interface BrokenRedirect {
-  line: number
-  source: string
-  target: string
-}
-
-const broken: BrokenRedirect[] = []
-
-for (const redirect of redirects) {
-  if (!resolveTarget(redirect.target)) {
-    broken.push(redirect)
-  }
-}
+const broken: Redirect[] = redirects.filter((r) => !resolveTarget(r.target))
 
 if (broken.length > 0) {
   // eslint-disable-next-line no-console
   console.error(
     `Found ${broken.length} redirect(s) with missing target(s) in .gitbook.yaml:\n`,
   )
-  for (const { line, source, target } of broken) {
+  for (const { source, target } of broken) {
     // eslint-disable-next-line no-console
-    console.error(`  line ${line}: ${source}`)
+    console.error(`  ${source}`)
     // eslint-disable-next-line no-console
     console.error(`    target: ${target}\n`)
   }
