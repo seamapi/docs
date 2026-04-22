@@ -6,7 +6,7 @@ description: >-
 
 # Get started with dormakaba Oracode Locks
 
-<figure><img src="../.gitbook/assets/guides/dormakaba-oracode-getting-started-seo-cover.jpg" alt=""><figcaption><p>Dormakaba Locks</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/guides/dormakaba-oracode-getting-started-seo-cover.jpg" alt=""><figcaption><p>Dormakaba Locks</p></figcaption></figure>
 
 ## Overview
 
@@ -64,15 +64,15 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 {% hint style="info" %}
-This guide uses a sandbox [workspace](../core-concepts/workspaces/). You can only connect virtual devices to a sandbox workspace. If you need to connect real Oracode devices, use a non-sandbox workspace and API key.
+This guide uses a sandbox [workspace](../../core-concepts/workspaces/). You can only connect virtual devices to a sandbox workspace. If you need to connect real Oracode devices, use a non-sandbox workspace and API key.
 {% endhint %}
 
 ## 2 — Link Your dormakaba Oracode Account with Seam
 
-To control your dormakaba Oracode locks using the Seam API, the owner or manager of these locks must first authorize your Seam workspace to access their dormakaba Oracode account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/), which are pre-built UX flows that walk the device owner or manager through authorizing your application to control Oracode locks.
+To control your dormakaba Oracode locks using the Seam API, the owner or manager of these locks must first authorize your Seam workspace to access their dormakaba Oracode account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/), which are pre-built UX flows that walk the device owner or manager through authorizing your application to control Oracode locks.
 
 {% hint style="info" %}
-This guide discusses using a Seam sandbox workspace with virtual devices. However, to connect real devices to Seam, some manufacturers may require additional prerequisite setup steps. For dormakaba Oracode-specific instructions, see the [dormakaba Oracode device integration guide](dormakaba-oracode-locks.md#setup-instructions).
+This guide discusses using a Seam sandbox workspace with virtual devices. However, to connect real devices to Seam, some manufacturers may require additional prerequisite setup steps. For dormakaba Oracode-specific instructions, see the [dormakaba Oracode device integration guide](./README.md#setup-instructions).
 {% endhint %}
 
 #### Request a Connect Webview
@@ -140,13 +140,13 @@ $webview = $seam->connect_webviews->create(
 
 #### Authorize Your Workspace
 
-Navigate to the URL that the Connect Webview object returned. Because you are using a sandbox workspace, complete the login flow by entering the following dormakaba Oracode [sandbox test account ](sandbox-and-sample-data/dormakaba-oracode-sample-data.md)credentials:
+Navigate to the URL that the Connect Webview object returned. Because you are using a sandbox workspace, complete the login flow by entering the following dormakaba Oracode [sandbox test account ](../../developer-tools/sandbox-and-sample-data/dormakaba-oracode-sample-data.md)credentials:
 
 * **username:** jane
 * **site:** Ocean Beach Vacations
 * **time zone:** (Any)
 
-<figure><img src="../.gitbook/assets/dormakaba-oracode_connect-flow-screens.png" alt="Seam Connect Webview flow to connect dormakaba Oracode account with Seam"><figcaption><p>Seam Connect Webview flow to connect dormakaba Oracode account with Seam</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dormakaba-oracode_connect-flow-screens.png" alt="Seam Connect Webview flow to connect dormakaba Oracode account with Seam"><figcaption><p>Seam Connect Webview flow to connect dormakaba Oracode account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying the status.
 
@@ -243,7 +243,7 @@ echo json_encode($locks);
 
 ### 4 — Programming Access Codes on a dormakaba Oracode Lock
 
-The Seam API enables you to create offline access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. For detailed instructions, see [Creating dormakaba Oracode Offline Access Codes](../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md).
+The Seam API enables you to create offline access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. For detailed instructions, see [Creating dormakaba Oracode Offline Access Codes](./creating-dormakaba-oracode-offline-access-codes.md).
 
 {% hint style="info" %}
 dormakaba Oracode does not let you specify a code for an access code. Instead it auto-generates a six-digit code, which the Seam API returns. If you try to pass the `code` argument to the access code `create` function, the Seam API returns an error.
@@ -255,10 +255,10 @@ Now that you've completed this guide, you can try to connect a real dormakaba Or
 
 In addition, if you'd like to explore other aspects of Seam, check out the following helpful resources:
 
-* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-* [Yale Getting Started Guide](get-started-with-yale-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Configuring webhooks](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../core-concepts/overview.md)
+* [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
+* [Yale Getting Started Guide](../get-started-with-yale-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Configuring webhooks](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](../../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

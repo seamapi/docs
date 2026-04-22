@@ -1,6 +1,6 @@
 # Sandbox Wyze Locks
 
-Use the following set of credentials to add virtual [Wyze locks](../wyze-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [Wyze locks](../../device-and-system-integration-guides/wyze-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Field           | Value                                                           |
 | --------------- | --------------------------------------------------------------- |

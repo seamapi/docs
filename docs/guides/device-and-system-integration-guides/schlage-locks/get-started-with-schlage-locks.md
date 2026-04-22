@@ -4,11 +4,11 @@ description: Learn how to connect and control your Schlage lock with the Seam AP
 
 # Get started with Schlage Locks
 
-<figure><img src="../.gitbook/assets/schlage-getting-started-guide-cover.jpg" alt=""><figcaption><p>Schlage Smart Locks</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/schlage-getting-started-guide-cover.jpg" alt=""><figcaption><p>Schlage Smart Locks</p></figcaption></figure>
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Schlage](https://www.seam.co/manufacturers/schlage) lock using the Seam API. Note that this guide is intended for Schlage Sense locks and Schlage Encode locks that connect to wifi. For Z-Wave Schlage locks such as Schlage Connect, head over to [our guide for SmartThings](get-started-with-smartthings-hubs-+-smart-locks.md).
+Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Schlage](https://www.seam.co/manufacturers/schlage) lock using the Seam API. Note that this guide is intended for Schlage Sense locks and Schlage Encode locks that connect to wifi. For Z-Wave Schlage locks such as Schlage Connect, head over to [our guide for SmartThings](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md).
 
 To learn more about other smart lock brands supported by Seam such as August, Yale, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -65,7 +65,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Schlage Account with Seam
 
-To control your Schlage lock via the Seam API, you must first authorize your Seam workspace against your Schlage account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Schlage lock.
+To control your Schlage lock via the Seam API, you must first authorize your Seam workspace against your Schlage account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Schlage lock.
 
 #### Request a Connect Webview
 
@@ -128,7 +128,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **password:** 1234
 * **2-factor-auth:** 123456
 
-<figure><img src="../.gitbook/assets/connect-flow-screens (1) (1).png" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-flow-screens (1) (1).png" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -253,7 +253,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 <div data-gb-custom-block data-tag="openapi" data-src='../.gitbook/assets/openapi.json' data-path='/locks/lock_door' data-method='post'>
 
-[openapi.json](../.gitbook/assets/openapi.json)
+[openapi.json](../../.gitbook/assets/openapi.json)
 
 </div>
 
@@ -323,7 +323,7 @@ puts updated_lock.properties.locked # false
 
 All Schlage wifi locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Schlage lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](../capability-guides/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](../../capability-guides/smart-locks/access-codes/)
 
 <div data-gb-custom-block data-tag="tabs">
 
@@ -471,11 +471,11 @@ Now that you've completed this guide, you can try to connect a real Schlage devi
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Yale Getting Started Guide](get-started-with-yale-locks.md)
-* [August Getting Started Guide](get-started-with-august-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../core-concepts/overview.md)
+* [Yale Getting Started Guide](../get-started-with-yale-locks.md)
+* [August Getting Started Guide](../get-started-with-august-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](../../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co. If you would like help
 ````

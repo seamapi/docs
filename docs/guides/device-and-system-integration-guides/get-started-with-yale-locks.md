@@ -8,7 +8,7 @@ description: Learn how to connect and control your Yale lock with the Seam API.
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Yale](https://www.seam.co/manufacturers/yale) lock using the Seam API. Note that this guide is intended for Yale locks connected via the Yale wifi bridge and Yale access app. For Z-Wave Yale devices, head over to [our guide for SmartThings](get-started-with-smartthings-hubs-+-smart-locks.md).
+Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Yale](https://www.seam.co/manufacturers/yale) lock using the Seam API. Note that this guide is intended for Yale locks connected via the Yale wifi bridge and Yale access app. For Z-Wave Yale devices, head over to [our guide for SmartThings](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md).
 
 To learn more about other smart lock brands supported by Seam such as August, Schlage, and Salto, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
@@ -454,9 +454,9 @@ Now that you've completed this guide, you can try to connect a real Yale device.
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
+* [Schlage Getting Started Guide](schlage-locks/get-started-with-schlage-locks.md)
 * [August Getting Started Guide](get-started-with-august-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+* [SmartThings Getting Started Guide](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../core-concepts/overview.md)
 

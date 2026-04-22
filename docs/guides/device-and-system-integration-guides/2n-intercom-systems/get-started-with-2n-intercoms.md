@@ -7,7 +7,7 @@ description: >-
 
 # Get started with 2N Intercoms
 
-<figure><img src="../.gitbook/assets/guides/2n-getting-started-seo-cover.png" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/guides/2n-getting-started-seo-cover.png" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
 
 ## Overview
 
@@ -70,7 +70,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link My2N Account with Seam
 
-To control your 2N intercom via the Seam API, you must first authorize your Seam workspace against your My2N account. To do so, Seam provides [Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your 2N intercom.
+To control your 2N intercom via the Seam API, you must first authorize your Seam workspace against your My2N account. To do so, Seam provides [Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your 2N intercom.
 
 #### Request a Connect Webview
 
@@ -141,7 +141,7 @@ echo json_encode($webview)
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](sandbox-and-sample-data/2n-intercoms-sample-data.md) credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](../../developer-tools/sandbox-and-sample-data/2n-intercoms-sample-data.md) credentials below:
 
 * **email:** jane@example.com
 * **password:** 1234
@@ -151,7 +151,7 @@ After entering the credentials for My2N, you'll have to enter the credentials of
 * **username:** jane
 * **password:** 1234
 
-<figure><img src="../.gitbook/assets/guides/2n-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/guides/2n-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -300,7 +300,7 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-\{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock\_door" method="post" %\} [openapi.json](../.gitbook/assets/openapi.json) \{% endopenapi %\}
+\{% openapi src="../../.gitbook/assets/openapi.json" path="/locks/lock\_door" method="post" %\} [openapi.json](../../.gitbook/assets/openapi.json) \{% endopenapi %\}
 
 #### Unlock a door
 
@@ -381,7 +381,7 @@ $seam->locks->lock_door($lock->device_id);
 
 2N devices have a directory with residents. These residents can be assigned PIN codes to unlock the door.
 
-Seam maps these residents to [access codes](../capability-guides/smart-locks/access-codes/) and allows you to create and manage them through the Seam API.
+Seam maps these residents to [access codes](../../capability-guides/smart-locks/access-codes/) and allows you to create and manage them through the Seam API.
 
 \{% tabs %\} \{% tab title="Python" %\}
 
@@ -551,12 +551,12 @@ Now that you've completed this guide, you can try to connect a real 2N device. T
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Yale Getting Started Guide](get-started-with-yale-locks.md)
-* [August Getting Started Guide](get-started-with-august-locks.md)
-* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Minut Getting Started Guide](get-started-with-minut-sensors.md)
-* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../core-concepts/overview.md)
+* [Yale Getting Started Guide](../get-started-with-yale-locks.md)
+* [August Getting Started Guide](../get-started-with-august-locks.md)
+* [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Minut Getting Started Guide](../get-started-with-minut-sensors.md)
+* [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](../../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

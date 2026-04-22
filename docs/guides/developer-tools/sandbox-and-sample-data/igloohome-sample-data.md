@@ -1,6 +1,6 @@
 # Sandbox igloohome Locks
 
-Use the following set of credentials to add virtual [igloohome locks](../igloohome-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [igloohome locks](../../device-and-system-integration-guides/igloohome-locks/README.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Email Address                                                   | Password |
 | --------------------------------------------------------------- | -------- |

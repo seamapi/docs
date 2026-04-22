@@ -4,7 +4,7 @@ description: Learn how to connect and control your Igloohome locks with the Seam
 
 # Get started with igloohome Locks
 
-<figure><img src="../.gitbook/assets/guides/igloo-getting-seo-cover.png" alt=""><figcaption><p>Igloohome Locks</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/guides/igloo-getting-seo-cover.png" alt=""><figcaption><p>Igloohome Locks</p></figcaption></figure>
 
 ## Overview
 
@@ -63,7 +63,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Your Igloohome Account with Seam
 
-To control your Igloohome locks via the Seam API, you must first authorize your Seam workspace against your Igloohome account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Igloohome devices.
+To control your Igloohome locks via the Seam API, you must first authorize your Seam workspace against your Igloohome account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Igloohome devices.
 
 #### Request a Connect Webview
 
@@ -140,7 +140,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **email:** jane@example.com
 * **password:** 1234
 
-<figure><img src="../.gitbook/assets/guides/igloo-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Igloohome account with Seam</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/guides/igloo-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Igloohome account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -273,8 +273,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking a door.
 
-{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
-[openapi.json](../.gitbook/assets/openapi.json)
+{% openapi src="../../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+[openapi.json](../../.gitbook/assets/openapi.json)
 {% endopenapi %}
 
 ## Unlock a door
@@ -350,7 +350,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Most Igloohome locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Igloohome lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Igloohome lock. You can find out more about Igloohome lock access code in our [core concept section on access codes.](../capability-guides/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Igloohome lock. You can find out more about Igloohome lock access code in our [core concept section on access codes.](../../capability-guides/smart-locks/access-codes/)
 
 {% hint style="info" %}
 Igloohome pins have to be 4-6 digits long, and for time bound access codes, start date can't be on the past.
@@ -456,10 +456,10 @@ Now that you've completed this guide, you can try to connect a real Igloohome de
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-* [Yale Getting Started Guide](get-started-with-yale-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../core-concepts/overview.md)
+* [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
+* [Yale Getting Started Guide](../get-started-with-yale-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](../../core-concepts/overview.md)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

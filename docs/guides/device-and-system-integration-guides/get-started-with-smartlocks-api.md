@@ -485,7 +485,7 @@ Now that you've completed this guide, you can try to build a real application to
 
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [August Getting Started Guide](get-started-with-august-locks.md)
-* [Schlage Getting Started Guide](get-started-with-schlage-locks.md)
-* [SmartThings Getting Started Guide](get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Schlage Getting Started Guide](schlage-locks/get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](../core-concepts/overview.md)

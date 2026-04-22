@@ -1,6 +1,6 @@
 # Hubitat Elevation Hub Sample Data
 
-Use the following set of credentials to add virtual [Hubitat Elevation Hub](../hubitat-elevation-hub.md)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [Hubitat Elevation Hub](../../device-guides/hubitat-elevation-hub.md)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Maker API Cloud URL                                                |
 | ------------------------------------------------------------------ |
