@@ -46,6 +46,12 @@ function pageExists(fullPath: string): boolean {
   if (existsSync(join(fullPath, 'README.md'))) return true
   // URL-style target without .md extension (e.g., api/devices → api/devices.md)
   if (!fullPath.endsWith('.md') && existsSync(fullPath + '.md')) return true
+  // README.md targets resolve as directory URLs in GitBook, so check if the
+  // parent path resolves as a page (e.g., foo/README.md → foo.md).
+  if (fullPath.endsWith('/README.md')) {
+    const parentPath = fullPath.slice(0, -'/README.md'.length)
+    if (existsSync(parentPath + '.md')) return true
+  }
   return false
 }
 
