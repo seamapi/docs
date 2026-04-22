@@ -196,15 +196,15 @@ After a My2N account is linked with Seam, you can retrieve devices for this My2N
 
 {% tabs %}
 {% tab title="Python" %}
-\`\`\`\`python all\_locks = seam.locks.list()
-
-some\_lock = all\_locks\[0]
-
-assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
-
-print(some\_lock)
-
 ```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["locked"] is True
+
+print(some_lock)
 # Device(
 #   device_id='f0c074d6-34d0-4910-a16a-dfe078d5d178',
 #   device_type='two_n_intercom',
@@ -228,9 +228,9 @@ print(some\_lock)
 # )
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Javascript" %\}
+{% tab title="Javascript" %}
 
 ```javascript
 const allLocks = await seam.locks.list()
@@ -267,9 +267,9 @@ console.log(someLock)
 */
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Ruby" %\}
+{% tab title="Ruby" %}
 
 ```ruby
 some_lock = seam.locks.list.first
@@ -277,12 +277,32 @@ some_lock = seam.locks.list.first
 puts some_lock.properties.online # true
 puts some_lock.properties.locked # true
 
-puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-05-03 18:01:16.965 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 0", #     "supported_code_lengths"=>[4, 5, 6, 7, 8], #     }, #       "device_name"=>"Device 0" #       "device_id"=>1, #     "two_n_metadata"=>{ #     "serial_number"=>"ef730e77-8cc0-4290-a818-14388e9fe84f", #     "manufacturer"=>"two_n", #     "locked"=>true, #     "online"=>true, #   properties={ #   device_type="two_n_intercom" #   device_id="580365be-4f0f-42d9-9336-07f0bba09e28" # <Seam::Device:0x00c8bb8
+puts some_lock.inspect
+# <Seam::Device:0x00c8bb8
+#   device_id="580365be-4f0f-42d9-9336-07f0bba09e28"
+#   device_type="two_n_intercom"
+#   properties={
+#     "online"=>true,
+#     "locked"=>true,
+#     "manufacturer"=>"two_n",
+#     "serial_number"=>"ef730e77-8cc0-4290-a818-14388e9fe84f",
+#     "two_n_metadata"=>{
+#       "device_id"=>1,
+#       "device_name"=>"Device 0"
+#     },
+#     "supported_code_lengths"=>[4, 5, 6, 7, 8],
+#     "name"=>"Device 0",
+#     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png",
+#     "image_alt_text"=>"Placeholder Lock Image"
+#   }
+#   created_at=2023-05-03 18:01:16.965 UTC
+#   errors=[]
+#   warnings=[]
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="PHP" %\}
+{% tab title="PHP" %}
 
 ```php
 use Seam\SeamClient;
@@ -294,13 +314,15 @@ $locks = $seam->locks->list();
 echo json_encode($locks);
 ```
 
-\{% endtab %\} \{% endtabs %\}
+{% endtab %} {% endtabs %}
 
 #### 4 — Locking & Unlocking a Door
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-\{% openapi src="../../.gitbook/assets/openapi.json" path="/locks/lock\_door" method="post" %\} [openapi.json](../../.gitbook/assets/openapi.json) \{% endopenapi %\}
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+[openapi.json](../.gitbook/assets/openapi.json)
+{% endopenapi %}
 
 #### Unlock a door
 
@@ -312,7 +334,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-\{% tabs %\} \{% tab title="Python" %\}
+{% tabs %} {% tab title="Python" %}
 
 ```python
 # lock the door
@@ -326,9 +348,9 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Javascript" %\}
+{% tab title="Javascript" %}
 
 ```javascript
 // lock the door
@@ -342,9 +364,9 @@ updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Ruby" %\}
+{% tab title="Ruby" %}
 
 ```ruby
 # lock the door
@@ -358,9 +380,9 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="PHP" %\}
+{% tab title="PHP" %}
 
 ```php
 use Seam\SeamClient;
@@ -375,7 +397,7 @@ $seam->locks->unlock_door($lock->device_id);
 $seam->locks->lock_door($lock->device_id);
 ```
 
-\{% endtab %\} \{% endtabs %\}
+{% endtab %} {% endtabs %}
 
 #### 5 — Creating Access Codes on 2N Intercoms
 
@@ -383,7 +405,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Seam maps these residents to [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) and allows you to create and manage them through the Seam API.
 
-\{% tabs %\} \{% tab title="Python" %\}
+{% tabs %} {% tab title="Python" %}
 
 ```python
 # create an ongoing code
@@ -419,9 +441,9 @@ seam.access_codes.list(device=some_lock)
 
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Javascript" %\}
+{% tab title="Javascript" %}
 
 ```javascript
 // create an ongoing code
@@ -465,9 +487,9 @@ await seam.accessCodes.list({
 */
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="Ruby" %\}
+{% tab title="Ruby" %}
 
 ```ruby
 # create an ongoing code
@@ -515,9 +537,9 @@ seam.access_codes.list(device_id: some_lock.device_id)
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
 
-\{% endtab %\}
+{% endtab %}
 
-\{% tab title="PHP" %\}
+{% tab title="PHP" %}
 
 ```
 
