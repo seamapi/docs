@@ -14,9 +14,9 @@ interface Redirect {
   target: string
 }
 
-const redirects: Redirect[] = Object.entries(
-  gitbookConfig.redirects ?? {},
-).map(([source, target]) => ({ source, target }))
+const redirects: Redirect[] = Object.entries(gitbookConfig.redirects ?? {}).map(
+  ([source, target]) => ({ source, target }),
+)
 
 // Check if a path resolves to a page as a file, URL slug, or directory index.
 function pageExists(fullPath: string): boolean {
