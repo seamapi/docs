@@ -19,8 +19,9 @@ const absoluteUrlPattern = new RegExp(
 
 // Matches markdown links like [text](path) but not images ![text](path),
 // absolute URLs, anchors-only, GitBook template tags, or angle-bracket paths.
+// The capture group handles escaped parens \( and \) inside the link target.
 const relativeLinkPattern =
-  /(?<!!)\]\((?!https?:\/\/|mailto:|#|{%|<|cursor:|file:)([^)]+)\)/g
+  /(?<!!)\]\((?!https?:\/\/|mailto:|#|{%|<|cursor:|file:)((?:[^)\\]|\\.)+)\)/g
 
 interface BrokenLink {
   file: string

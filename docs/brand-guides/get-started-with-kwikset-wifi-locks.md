@@ -299,7 +299,7 @@ puts some_lock.inspect
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %} [openapi (1).json](../.gitbook/assets/openapi%20\(1\).json) {% endopenapi %}
+{% openapi src=".gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %} [openapi (1).json](.gitbook/assets/openapi%20\(1\).json) {% endopenapi %}
 
 #### Unlock a door
 

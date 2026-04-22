@@ -11,10 +11,10 @@ Create a Seam production workspace to connect your Visionline account to Seam. Y
 1. Log in to [Seam Console](https://console.seam.co/).
 2.  In the upper-left corner, click the workspace switcher.
 
-    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../../../../.gitbook/assets/workspace-switcher.png)
+    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../../../.gitbook/assets/workspace-switcher.png)
 3. Click **New Workspace**.
 4. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
 5.  Disable **Sandbox mode**.
 
-    ![To create a production workspace, disable sandbox mode.](../../../../../.gitbook/assets/add-production-workspace.png)
+    ![To create a production workspace, disable sandbox mode.](../../../../.gitbook/assets/add-production-workspace.png)
 6. Click **Create Workspace**.
