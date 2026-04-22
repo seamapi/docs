@@ -19,13 +19,15 @@ function slugify(heading: string): string {
 }
 
 function slugFromPath(linkPath: string): string {
-  return linkPath
-    .replace(/README\.md$/, '')
-    .replace(/\.md$/, '')
-    .replace(/\/$/, '')
-    .split('/')
-    .filter(Boolean)
-    .pop() ?? ''
+  return (
+    linkPath
+      .replace(/README\.md$/, '')
+      .replace(/\.md$/, '')
+      .replace(/\/$/, '')
+      .split('/')
+      .filter(Boolean)
+      .pop() ?? ''
+  )
 }
 
 interface PathMismatch {
@@ -115,9 +117,7 @@ for (const section of siteSections) {
 
       const slug = slugFromPath(linkPath)
       const parent =
-        parentStack.length > 0
-          ? parentStack[parentStack.length - 1]
-          : undefined
+        parentStack.length > 0 ? parentStack[parentStack.length - 1] : undefined
 
       if (parent != null) {
         // The parent's path determines the expected directory prefix.
