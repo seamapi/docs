@@ -13,7 +13,7 @@ function findSiteSection(filePath: string): SiteSection | undefined {
 }
 
 const absoluteUrlPattern = new RegExp(
-  `${baseUrl.replaceAll('.', '\\.')}[^)\\s]+`,
+  `${baseUrl.replaceAll('.', '\\.')}[^)"\\s]+`,
   'g',
 )
 
@@ -22,6 +22,15 @@ const absoluteUrlPattern = new RegExp(
 // The capture group handles escaped parens \( and \) inside the link target.
 const relativeLinkPattern =
   /(?<!!)\]\((?!https?:\/\/|mailto:|#|{%|<|cursor:|file:)((?:[^)\\]|\\.)+)\)/g
+
+// Matches HTML links like <a href="path"> but not external URLs or anchors.
+const htmlRelativeLinkPattern = /<a\s+href="(?!https?:\/\/|mailto:|#)([^"]+)"/g
+
+// Matches HTML links with absolute docs.seam.co URLs.
+const htmlAbsoluteUrlPattern = new RegExp(
+  `<a\\s+href="(${baseUrl.replaceAll('.', '\\.')}[^"]+)"`,
+  'g',
+)
 
 interface BrokenLink {
   file: string
@@ -159,6 +168,20 @@ for (const file of files) {
       const rawLink = match[1]
       if (rawLink == null) continue
       checkRelativeLink(file, i + 1, rawLink)
+    }
+
+    // Check HTML href links (relative)
+    for (const match of lineText.matchAll(htmlRelativeLinkPattern)) {
+      const rawLink = match[1]
+      if (rawLink == null) continue
+      checkRelativeLink(file, i + 1, rawLink)
+    }
+
+    // Check HTML href links (absolute docs.seam.co URLs)
+    for (const match of lineText.matchAll(htmlAbsoluteUrlPattern)) {
+      const rawUrl = match[1]
+      if (rawUrl == null) continue
+      checkAbsoluteUrl(file, i + 1, rawUrl)
     }
   }
 }
