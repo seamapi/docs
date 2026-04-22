@@ -418,7 +418,7 @@ Navigation mode for the portal. 'restricted' tells frontend to hide navigation U
 
 {% hint style="success" %}
 Returns:
-**[magic\_link](./../unstable_partner/building_blocks)**
+**[customer\_portal](.)**
 
 {% endhint %}
 
@@ -430,7 +430,6 @@ Returns:
 
 ```json
 {
-  "building_block_type": "connect_accounts",
   "created_at": "2025-06-16T16:54:17.946594Z",
   "customer_key": "My Company",
   "expires_at": "2025-06-17T16:54:17.946594Z",
