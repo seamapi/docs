@@ -1,25 +1,25 @@
 ---
-description: Learn how to connect and control Google Nest thermostats with the Seam API.
+description: Learn how to connect and control ecobee thermostats with the Seam API.
 ---
 
-# Get Started with Nest Thermostats
+# Get Started with ecobee Thermostats
 
-<figure><picture><source srcset="../../.gitbook/assets/nest-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/nest-manufacturer-page-cover-light.png" alt="Google Nest Thermostats"></picture><figcaption><p>Google Nest Thermostats</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/ecobee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/ecobee-manufacturer-page-cover-light.png" alt=""></picture><figcaption><p>ecobee Thermostats</p></figcaption></figure>
 
 ## Overview
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including thermostats, smart locks, access control systems (ACSs), and noise sensors.
 
-This guide gives you a rapid introduction to connecting and controlling your [Google Nest](https://www.seam.co/manufacturers/nest) thermostats using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
+This guide gives you a rapid introduction to connecting and controlling your [ecobee](https://www.seam.co/manufacturers/ecobee) thermostats using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Google Nest devices that Seam supports, see our [Google Nest Supported Devices page](https://www.seam.co/manufacturers/nest).
+For detailed information about the ecobee devices that Seam supports, see our [ecobee Supported Devices page](https://www.seam.co/manufacturers/ecobee).
 
-To learn more about other IoT device and system brands that Seam supports—such as Honeywell Resideo, ecobee, Yale, Schlage, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
+To learn more about other IoT device and system brands that Seam supports—such as Honeywell Resideo, Google Nest, Yale, Schlage, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="success" %}
-This guide shows you how to install a Seam SDK and then control your Google Nest thermostat using the Seam API.
+This guide shows you how to install a Seam SDK and then control your ecobee thermostat using the Seam API.
 
-Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../../core-concepts/seam-console/).
+Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../core-concepts/seam-console/).
 
 :arrow\_forward: [Go to the Seam Console!](https://console.seam.co/)
 {% endhint %}
@@ -34,9 +34,7 @@ Seam provides client libraries for many languages, including JavaScript, Python,
 * Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
 * Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
 * PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* Java ([GitHub](https://github.com/seamapi/java))
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
-* Go ([GitHub](https://github.com/seamapi/go))
 
 First, install a Seam SDK, as follows:
 
@@ -71,7 +69,7 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
 
-Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../../core-concepts/authentication/api-keys.md).
+Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../core-concepts/authentication/api-keys.md).
 
 Then, export your API key as an environment variable.
 
@@ -80,25 +78,25 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
 {% hint style="info" %}
-This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real Google Nest thermostat, use a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and API key.
+This guide uses a [sandbox workspace](../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real ecobee thermostat, use a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and API key.
 {% endhint %}
 
 ***
 
-## Step 2: Link your Google Nest account with Seam
+## Step 2: Link your ecobee account with Seam
 
-To control your Google Nest thermostat using the Seam API, you must first authorize your Seam workspace to connect to your Google Nest account. If your application needs to connect to your users' Google Nest accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Google Nest thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their Google Nest account.
+To control your ecobee thermostat using the Seam API, you must first authorize your Seam workspace to connect to your ecobee account. If your application needs to connect to your users' ecobee accounts, Seam provides fully-embedded, [customizable](../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their ecobee thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their ecobee account.
 
-In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox Google Nest account.
+In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox ecobee account.
 
 {% hint style="success" %}
 This guide shows you how to create a Connect Webview programmatically using the Seam API.
 
-The [Seam Console](../../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
+The [Seam Console](../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-nest-thermostats.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-ecobee-thermostats.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
-<img src="../../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
+<img src="../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
 {% endhint %}
 
 ### Create a Connect Webview
@@ -114,7 +112,7 @@ from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-connect_webview = seam.connect_webviews.create(accepted_providers=["nest"])
+connect_webview = seam.connect_webviews.create(accepted_providers=["ecobee"])
 
 assert connect_webview.login_successful is False
 
@@ -140,7 +138,7 @@ curl -X 'POST' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "accepted_providers": ["nest"]
+  "accepted_providers": ["ecobee"]
 }' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
@@ -164,7 +162,7 @@ import { Seam } from "seam";
 const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
 const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ['nest']
+  accepted_providers: ['ecobee']
 });
 
 console.log(connectWebview.login_successful); // false
@@ -191,7 +189,7 @@ require "seam"
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
-  accepted_providers: ["nest"]
+  accepted_providers: ["ecobee"]
 )
 
 puts connect_webview.login_successful # false
@@ -219,7 +217,7 @@ require 'vendor/autoload.php';
 $seam = new Seam\SeamClient(); // Seam automatically uses your exported SEAM_API_KEY.
 
 $connect_webview = $seam->connect_webviews->create(
-  accepted_providers: ["nest"]
+  accepted_providers: ["ecobee"]
 );
 
 echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
@@ -246,7 +244,7 @@ using Seam.Client;
 var seam = new SeamClient(apiToken: SEAM_API_KEY);
 
 var connectWebview = seam.ConnectWebviews.Create(
-  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Nest}
+  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Ecobee}
 );
 
 Console.WriteLine(connectWebview.LoginSuccessful); // False
@@ -271,18 +269,18 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 
 In a web browser, go to the URL that the Connect Webview object returned.
 
-For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../ui-components/overview/react-components/connect-account-button.md) within our suite of [Seam Components](../../ui-components/overview/) that help you build your device management flow.
+For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../ui-components/overview/react-components/connect-account-button.md) within our suite of [Seam Components](../ui-components/overview/) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test Google Nest account. We provide [virtual devices](../../developer-tools/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test ecobee account. We provide [virtual devices](../developer-tools/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [Google Nest sandbox account](../../developer-tools/sandbox-and-sample-data/google-nest-thermostats-sample-data.md) credentials:
+Complete the Connect Webview authorization flow by entering the following [ecobee sandbox account](../developer-tools/sandbox-and-sample-data/ecobee-sample-data.md) credentials:
 
 * **Email:** jane@example.com
 * **Password:** 1234
 
-<figure><picture><source srcset="../../.gitbook/assets/nest_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/nest_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a Google Nest account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a Google Nest account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/ecobee_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/ecobee_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -399,9 +397,9 @@ True
 
 ***
 
-## Step 3: Retrieve Google Nest thermostat devices
+## Step 3: Retrieve ecobee thermostat devices
 
-When you link a Google Nest account with Seam, we create a `device` object to represent each Google Nest thermostat in your account. You can then retrieve these Google Nest devices using the [List Devices](https://docs.seam.co/latest/api/devices/list) and [Get Device](https://docs.seam.co/latest/api/devices/get) endpoints.
+When you link an ecobee account with Seam, we create a `device` object to represent each ecobee thermostat in your account. You can then retrieve these ecobee devices using the [List Devices](https://docs.seam.co/latest/api/devices/list) and [Get Device](https://docs.seam.co/latest/api/devices/get) endpoints.
 
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
@@ -412,10 +410,10 @@ The Seam API exposes each device's properties, such as the current temperature r
 ```python
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_google_nest_thermostats = seam.devices.list(manufacturer="nest")
+all_ecobee_thermostats = seam.devices.list(manufacturer="ecobee")
 
 # Select the first device as an example.
-living_room_thermostat = all_google_nest_thermostats[0]
+living_room_thermostat = all_ecobee_thermostats[0]
 
 # Inspect specific properties.
 pprint("Current temperature: " + str(living_room_thermostat.properties["temperature_fahrenheit"]))
@@ -436,7 +434,7 @@ Device(
   connected_account_id='11111111-1111-1111-1111-222222222222',
   created_at='2024-10-03T22:12:15.666Z',
   properties={
-    'manufacturer': 'nest',
+    'manufacturer': 'ecobee',
     'online': True,
     'temperature_celsius': 21.11111111111111,
     'temperature_fahrenheit': 70,
@@ -469,7 +467,7 @@ Device(
 ```bash
 # Retrieve all devices, filtered by manufacturer, which is
 # one of several filters that the list endpoint supports.
-all_google_nest_thermostats=$(
+all_ecobee_thermostats=$(
   # Use GET or POST.
   curl -X 'GET' \
     'https://connect.getseam.com/devices/list' \
@@ -477,11 +475,11 @@ all_google_nest_thermostats=$(
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d '{
-    "manufacturer": "nest"
+    "manufacturer": "ecobee"
   }')
 
 # Select the first device as an example.
-living_room_thermostat=$(jq -r '.devices[0]' <<< ${all_google_nest_thermostats})
+living_room_thermostat=$(jq -r '.devices[0]' <<< ${all_ecobee_thermostats})
 
 # Inspect specific properties.
 echo $(jq -r '"Current temperature: " + (.properties.temperature_fahrenheit | tostring)' <<< ${living_room_thermostat})
@@ -502,7 +500,7 @@ Fan running: false
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-10-03T22:12:15.666Z",
   "properties": {
-    "manufacturer": "nest",
+    "manufacturer": "ecobee",
     "online": true,
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
@@ -535,10 +533,10 @@ Fan running: false
 ```javascript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-const allGoogleNestThermostats = await seam.devices.list({manufacturer: "nest"});
+const allEcobeeThermostats = await seam.devices.list({manufacturer: "ecobee"});
 
 // Select the first device as an example.
-const livingRoomThermostat = allGoogleNestThermostats [0];
+const livingRoomThermostat = allEcobeeThermostats[0];
 
 // Inspect specific properties.
 console.log("Current temperature: " + livingRoomThermostat.properties.temperature_fahrenheit);
@@ -559,7 +557,7 @@ Fan running: false
   connected_account_id: '11111111-1111-1111-1111-222222222222',
   created_at: '2024-10-03T22:12:15.666Z',
   properties: {
-    manufacturer: 'nest',
+    manufacturer: 'ecobee',
     online: true,
     temperature_celsius: 21.11111111111111,
     temperature_fahrenheit: 70,
@@ -592,10 +590,10 @@ Fan running: false
 ```ruby
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_google_nest_thermostats = seam.devices.list(manufacturer: "nest")
+all_ecobee_thermostats = seam.devices.list(manufacturer: "ecobee")
 
 # Select the first device as an example.
-living_room_thermostat = all_google_nest_thermostats [0]
+living_room_thermostat = all_ecobee_thermostats[0]
 
 # Inspect specific properties.
 puts "Current temperature: " + living_room_thermostat.properties.temperature_fahrenheit.to_s
@@ -616,7 +614,7 @@ Fan running: false
   connected_account_id="11111111-1111-1111-1111-222222222222"
   created_at=2024-10-03 22:12:15.666 UTC
   properties=#<Seam::DeepHashAccessor:0x0000016b1791f068 @data={
-    "manufacturer"=>"nest",
+    "manufacturer"=>"ecobee",
     "online"=>true,
     "temperature_celsius"=>21.11111111111111,
     "temperature_fahrenheit"=>70,
@@ -649,10 +647,10 @@ Fan running: false
 ```php
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-$all_google_nest_thermostats = $seam->devices->list(manufacturer: "nest");
+$all_ecobee_thermostats = $seam->devices->list(manufacturer: "ecobee");
 
 // Select the first device as an example.
-$living_room_thermostat = $all_google_nest_thermostats [0];
+$living_room_thermostat = $all_ecobee_thermostats[0];
 
 // Inspect specific properties.
 echo "Current temperature: ", $living_room_thermostat->properties->temperature_fahrenheit, "\n";
@@ -673,7 +671,7 @@ Fan running: false
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-10-03T22:12:15.666Z",
   "properties": {
-    "manufacturer": "nest",
+    "manufacturer": "ecobee",
     "online": true,
     "temperature_celsius": 21.11111111111111,
     "temperature_fahrenheit": 70,
@@ -718,19 +716,19 @@ Fan running: false
 
 ***
 
-## Step 4: Control your Google Nest thermostat
+## Step 4: Control your ecobee thermostat
 
-Next, you can use the Seam API to control your Google Nest thermostat.
+Next, you can use the Seam API to control your ecobee thermostat.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../../capability-guides/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../capability-guides/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Seam provides additional actions for thermostats, such as setting the fan mode, creating and scheduling climate presets, setting temperature thresholds, and configuring weekly thermostat programs. You can also monitor for Seam thermostat-related events, such as reported temperatures outside your set thresholds.
 
-Try out the following actions on your Google Nest thermostat:
+Try out the following actions on your ecobee thermostat:
 
-* [ ] [Set the HVAC mode](get-started-with-nest-thermostats.md#set-the-hvac-mode)
-* [ ] [Create and schedule climate presets](get-started-with-nest-thermostats.md#create-and-schedule-climate-presets)
-* [ ] [Configure a weekly thermostat program](get-started-with-nest-thermostats.md#configure-a-weekly-thermostat-program)
+* [ ] [Set the HVAC mode](get-started-with-ecobee-thermostats.md#set-the-hvac-mode)
+* [ ] [Create and schedule climate presets](get-started-with-ecobee-thermostats.md#create-and-schedule-climate-presets)
+* [ ] [Configure a weekly thermostat program](get-started-with-ecobee-thermostats.md#configure-a-weekly-thermostat-program)
 
 ### Set the HVAC mode
 
@@ -744,11 +742,11 @@ To set the HVAC mode, use any of the following endpoints or their equivalents in
 
     This endpoint is a consolidated version of the other four endpoints.
 
-Specify the thermostat that you want to control by including the `device_id` in the request body. Also, include the desired temperature [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+Specify the thermostat that you want to control by including the `device_id` in the request body. Also, include the desired temperature [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
 
 In this example, set the HVAC mode to `heat` and the desired heating set point to 68 °F.
 
-Each of these HVAC mode endpoints returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the operation.
+Each of these HVAC mode endpoints returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1063,7 +1061,7 @@ heat
 
 ### Create and schedule climate presets
 
-You can use the Seam API to create climate presets for Google Nest thermostats. Each climate preset is a saved group of settings, such as HVAC mode, fan mode, and temperature set points. Climate presets make it quick and easy to apply consistent climate settings for different scenarios. For example, you could create two climate presets: a comfort preset for when a vacation rental is occupied and an eco preset for when the vacation rental is empty.
+You can use the Seam API to create climate presets for ecobee thermostats. Each climate preset is a saved group of settings, such as HVAC mode, fan mode, and temperature set points. Climate presets make it quick and easy to apply consistent climate settings for different scenarios. For example, you could create two climate presets: a comfort preset for when a vacation rental is occupied and an eco preset for when the vacation rental is empty.
 
 You can schedule climate presets to start and stop whenever you'd like. You can even set a fallback climate preset, such as eco.
 
@@ -1544,7 +1542,7 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
 
 ### Configure a weekly thermostat program
 
-You can use the Seam API to create a thermostat weekly program for your Google Nest thermostat. This standard feature of smart thermostats enables you to define full-week programs that are made up of reusable daily programs. Each daily program consists of a set of thermostat daily program periods, that is, time blocks with associated climate presets.
+You can use the Seam API to create a thermostat weekly program for your ecobee thermostat. This standard feature of smart thermostats enables you to define full-week programs that are made up of reusable daily programs. Each daily program consists of a set of thermostat daily program periods, that is, time blocks with associated climate presets.
 
 In this example, create a weekday daily program and a weekend daily program. Then, combine these daily programs into a weekly program by assigning a daily program to each day of the week.
 
@@ -1840,11 +1838,11 @@ $seam->thermostats->update_weekly_program(
 
 ***
 
-## Step 5: Connect a real Google Nest thermostat
+## Step 5: Connect a real ecobee thermostat
 
-Now that you have learned the basics of using the Seam API, you can connect and control a real Google Nest device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
+Now that you have learned the basics of using the Seam API, you can connect and control a real ecobee device. To do so, make sure to switch to a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and [API key](../core-concepts/authentication/api-keys.md).
 
-For more details about setting up your real Google Nest thermostat, see the [Google Nest thermostats integration guide](../).
+For more details about setting up your real ecobee thermostat, see the [ecobee thermostats integration guide](ecobee-thermostats.md).
 
 ***
 
@@ -1856,20 +1854,20 @@ Seam makes it easy to develop your application. The robust Seam API and Seam SDK
 
 ## Next steps
 
-Now that you've completed this getting started guide for Google Nest thermostats, you can learn more about what you can do with the Seam API.
+Now that you've completed this getting started guide for ecobee devices, you can learn more about what you can do with the Seam API.
 
 * [ ] **Explore**\
-  See the [other devices and system integrations](../overview.md) that Seam supports.
+  See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../../core-concepts/overview.md) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](../core-concepts/overview.md) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
 * [ ] **Expand your abilities**\
-  Find out what other [thermostat actions](../../capability-guides/thermostats/) you can perform using the Seam API.
+  Find out what other [thermostat actions](../capability-guides/thermostats/) you can perform using the Seam API.
 * [ ] **Use webhooks**\
-  Learn how to use [webhooks](../../developer-tools/webhooks.md) as an efficient way to receive device events.
+  Learn how to use [webhooks](../developer-tools/webhooks.md) as an efficient way to receive device events.
 * [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [smart locks](../../capability-guides/smart-locks/), [access control systems](../../capability-guides/access-systems/), and [noise sensors](../../capability-guides/noise-sensors/).
+  Explore the other types of devices and systems that you can control with Seam, including [smart locks](../capability-guides/smart-locks/), [access control systems](../capability-guides/access-systems/), and [noise sensors](../capability-guides/noise-sensors/).
 * [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](../../capability-guides/mobile-access/).
+  Learn about Seam's [mobile access solution](../capability-guides/mobile-access/).
 
 {% hint style="info" %}
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
@@ -1879,4 +1877,4 @@ If you have any questions or want to report an issue, email us at [support@seam.
 
 ## Quick links
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>

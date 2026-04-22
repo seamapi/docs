@@ -1,23 +1,25 @@
 ---
-description: Learn how to connect and control Akiles locks with the Seam API.
+description: >-
+  Learn how to connect and control SmartThings-connected locks with the Seam
+  API.
 ---
 
-# Get started with Akiles locks
+# Get Started with SmartThings Hubs + Smart Locks
 
-<figure><picture><source srcset="../../.gitbook/assets/akiles-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/akiles-manufacturer-page-cover-light.png" alt="Akiles smart locks"></picture><figcaption><p>Akiles smart locks</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/smartthings-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/smartthings-manufacturer-page-cover-light.png" alt="SmartThings Hub + Devices"></picture><figcaption><p>SmartThings Hub + Devices</p></figcaption></figure>
 
 ## Overview
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including smart locks, access control systems (ACSs), thermostats, and noise sensors.
 
-This guide gives you a rapid introduction to connecting and controlling your [Akiles lock](./) using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
+This guide gives you a rapid introduction to connecting and controlling your [SmartThings](https://www.seam.co/manufacturers/smartthings)-connected locks using the Seam API. For application developers, you can use the Seam API in your app, and your users can authorize your app to control their devices using Seam.
 
-For detailed information about the Akiles devices that Seam supports, see our [Akiles Supported Devices page](https://www.seam.co/manufacturers/akiles).
+You connect your locks to Seam through a SmartThings Hub. These hubs use Zigbee or Z-Wave to communicate with your locks. SmartThings Hubs are connected to your local network using Wi-Fi or Ethernet. For detailed information about the SmatThings Hubs that Seam supports, see our [SmartThings Supported Devices page](https://www.seam.co/manufacturers/smartthings).
 
 To learn more about other IoT device and system brands that Seam supports—such as Yale, Schlage, Google Nest, and many more—visit our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 {% hint style="success" %}
-This guide shows you how to install a Seam SDK and then control your Akiles lock using the Seam API.
+This guide shows you how to install a Seam SDK and then control your SmartThings-connected lock using the Seam API.
 
 Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../../core-concepts/seam-console/).
 
@@ -78,23 +80,23 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
 {% hint style="info" %}
-This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real Akiles lock, use a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and API key.
+This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real SmartThings-connected lock, use a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and API key.
 {% endhint %}
 
 ***
 
-## Step 2: Link your Akiles account with Seam
+## Step 2: Link your SmartThings account with Seam
 
-To control your Akiles lock using the Seam API, you must first authorize your Seam workspace to connect to your Akiles account. If your application needs to connect to your users' Akiles accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Akiles locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their Akiles account.
+To control your SmartThings-connected lock using the Seam API, you must first authorize your Seam workspace to connect to your SmartThings account. If your application needs to connect to your users' SmartThings accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their SmartThings-connected locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their SmartThings account.
 
-In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox Akiles account.
+In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox SmartThings account.
 
 {% hint style="success" %}
 This guide shows you how to create a Connect Webview programmatically using the Seam API.
 
 The [Seam Console](../../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-akiles-locks.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-smartthings-hubs-+-smart-locks.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
 <img src="../../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
 {% endhint %}
@@ -112,7 +114,9 @@ from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-connect_webview = seam.connect_webviews.create(accepted_providers=["akiles"])
+connect_webview = seam.connect_webviews.create(
+  accepted_providers=["smartthings"]
+)
 
 assert connect_webview.login_successful is False
 
@@ -138,7 +142,7 @@ curl -X 'POST' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "accepted_providers": ["akiles"]
+  "accepted_providers": ["smartthings"]
 }' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
@@ -162,7 +166,7 @@ import { Seam } from "seam";
 const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
 const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ['akiles']
+  accepted_providers: ['smartthings']
 });
 
 console.log(connectWebview.login_successful); // false
@@ -189,7 +193,7 @@ require "seam"
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
-  accepted_providers: ["akiles"]
+  accepted_providers: ["smartthings"]
 )
 
 puts connect_webview.login_successful # false
@@ -217,7 +221,7 @@ require 'vendor/autoload.php';
 $seam = new Seam\SeamClient(); // Seam automatically uses your exported SEAM_API_KEY.
 
 $connect_webview = $seam->connect_webviews->create(
-  accepted_providers: ["akiles"]
+  accepted_providers: ["smartthings"]
 );
 
 echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
@@ -244,7 +248,7 @@ using Seam.Client;
 var seam = new SeamClient(apiToken: SEAM_API_KEY);
 
 var connectWebview = seam.ConnectWebviews.Create(
-  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Akiles}
+  acceptedProviders: new() {Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Smartthings}
 );
 
 Console.WriteLine(connectWebview.LoginSuccessful); // False
@@ -272,15 +276,15 @@ In a web browser, go to the URL that the Connect Webview object returned.
 For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../ui-components/overview/react-components/connect-account-button.md) within our suite of [Seam Components](../../ui-components/overview/) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test Akiles account. We provide [virtual devices](../../developer-tools/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test SmartThings account. We provide [virtual devices](../../developer-tools/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [Akiles sandbox account](../../developer-tools/sandbox-and-sample-data/sandbox-akiles-locks.md) credentials:
+Complete the Connect Webview authorization flow by entering the following [SmartThings sandbox account](../../developer-tools/sandbox-and-sample-data/smartthings-sample-data.md) credentials:
 
 * **Email:** jane@example.com
 * **Password:** 1234
 
-<figure><picture><source srcset="../../.gitbook/assets/akiles_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/akiles_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an Akiles account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an Akiles account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/smartthings_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/smartthings_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a SmartThings account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a SmartThings account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -397,11 +401,11 @@ True
 
 ***
 
-## Step 3: Retrieve Akiles lock devices
+## Step 3: Retrieve SmartThings-connected lock devices
 
-When you link an Akiles account with Seam, we create a `device` object to represent each Akiles lock in your account. You can then retrieve these Akiles devices using the [List Devices](https://docs.seam.co/latest/api/devices/list) and [Get Device](https://docs.seam.co/latest/api/devices/get) endpoints.
+When you link an SmartThings account with Seam, we create a `device` object to represent each SmartThings-connected lock in your account. You can then retrieve these SmartThings devices using the [List Devices](https://docs.seam.co/latest/api/devices/list) and [Get Device](https://docs.seam.co/latest/api/devices/get) endpoints.
 
-The Seam API exposes each device's properties, such as the door lock status, capabilities, and so on.
+The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -410,10 +414,10 @@ The Seam API exposes each device's properties, such as the door lock status, cap
 ```python
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_akiles_locks = seam.devices.list(manufacturer="akiles")
+all_smartthings_locks = seam.devices.list(manufacturer="smartthings")
 
 # Select the first device as an example.
-front_door = all_akiles_locks[0]
+front_door = all_smartthings_locks[0]
 
 # Inspect specific properties.
 assert front_door.properties["online"] is True # True
@@ -433,13 +437,16 @@ Device(
   connected_account_id='11111111-1111-1111-1111-222222222222',
   created_at='2024-05-29T20:08:48.878Z',
   properties={
-    'manufacturer': 'akiles',
+    'manufacturer': 'smartthings',
     'online': True,
     'locked': True,
+    'battery': {
+      'level': 0.9999532347993827,
+      'status': 'full'
+    },
     ...
   }
   can_remotely_unlock=True,
-  can_program_online_access_codes=True,
   ...
 )
 ```
@@ -451,7 +458,7 @@ Device(
 ```bash
 # Retrieve all devices, filtered by manufacturer, which is
 # one of several filters that the list endpoint supports.
-all_akiles_locks=$(
+all_smartthings_locks=$(
   # Use GET or POST.
   curl -X 'GET' \
     'https://connect.getseam.com/devices/list' \
@@ -459,11 +466,11 @@ all_akiles_locks=$(
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d '{
-    "manufacturer": "akiles"
+    "manufacturer": "smartthings"
   }')
 
 # Select the first device as an example.
-front_door=$(jq -r '.devices[0]' <<< ${all_akiles_locks})
+front_door=$(jq -r '.devices[0]' <<< ${all_smartthings_locks})
 
 # Inspect specific properties.
 echo $(jq -r '"Online (true): " + (.properties.online | tostring)' <<< ${front_door})
@@ -485,13 +492,16 @@ Locked (true): true
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-05-29T20:08:48.878Z",
   "properties": {
-    "manufacturer": "akiles",
+    "manufacturer": "smartthings",
     "locked": true,
     "online": true,
+    "battery": {
+      "level": 0.9999532347993827,
+      "status": "full"
+    },
     ...
   },
   "can_remotely_unlock": true,
-  "can_program_online_access_codes": true,
   ...
 }
 ```
@@ -503,10 +513,10 @@ Locked (true): true
 ```javascript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-const allAkilesLocks = await seam.devices.list({manufacturer: "akiles"});
+const allSmartThingsLocks = await seam.devices.list({manufacturer: "smartthings"});
 
 // Select the first device as an example.
-const frontDoor = allAkilesLocks[0];
+const frontDoor = allSmartThingsLocks[0];
 
 // Inspect specific properties.
 console.log(frontDoor.properties.online); // true
@@ -528,13 +538,16 @@ true
   connected_account_id: '11111111-1111-1111-1111-222222222222',
   created_at: '2024-05-29T20:08:48.878Z',
   properties: {
-    manufacturer: 'akiles',
+    manufacturer: 'smartthings',
     online: true,
     locked: true,
+    battery: {
+      level: 0.9999532347993827,
+      status: 'full'
+    },
     ...
   },
   can_remotely_unlock: true,
-  can_program_online_access_codes: true,
   ...
 }
 ```
@@ -546,10 +559,10 @@ true
 ```ruby
 # Retrieve all devices, filtered by manufacturer,
 # which is one of several filters that list() supports.
-all_akiles_locks = seam.devices.list(manufacturer: "akiles")
+all_smartthings_locks = seam.devices.list(manufacturer: "smartthings")
 
 # Select the first device as an example.
-front_door = all_akiles_locks[0]
+front_door = all_smartthings_locks[0]
 
 # Inspect specific properties.
 puts front_door.properties.online # true
@@ -572,13 +585,16 @@ true
     connected_account_id="11111111-1111-1111-1111-222222222222"
     created_at=2024-05-29 20:08:48.878 UTC
     properties={
-      "manufacturer"=>"akiles",
+      "manufacturer"=>"smartthings",
       "online"=>true,
       "locked"=>true,
+      "battery"=>{
+        "level"=>0.9999532347993827,
+        "status"=>"full"
+      },
       ...
     }
     can_remotely_unlock=true
-    can_program_online_access_codes=true
     ...
 >
 ```
@@ -590,10 +606,10 @@ true
 ```php
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-$all_akiles_locks = $seam->devices->list(manufacturer: "akiles");
+$all_smartthings_locks = $seam->devices->list(manufacturer: "smartthings");
 
 // Select the first device as an example.
-$front_door = $all_akiles_locks[0];
+$front_door = $all_smartthings_locks[0];
 
 // Inspect specific properties.
 echo $front_door->properties->online ? 'true' : 'false', "\n"; // true
@@ -615,13 +631,16 @@ true
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-05-29T20:08:48.878Z",
   "properties": {
-    "manufacturer": "akiles",
+    "manufacturer": "smartthings",
     "online": true,
     "locked": true,
+    "battery": {
+      "level": 0.9999532347993827,
+      "status": "full"
+    },
     ...
   },
   "can_remotely_unlock": true,
-  "can_program_online_access_codes": true,
   ...
 }
 ```
@@ -633,12 +652,12 @@ true
 ```csharp
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-var allAkilesLocks = seam.Devices.List(
-  manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.Akiles
+var allSmartThingsLocks = seam.Devices.List(
+  manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.Smartthings
 );
 
 // Select the first device as an example.
-Device frontDoor = allAkilesLocks[0];
+Device frontDoor = allSmartThingsLocks[0];
 
 // Inspect specific properties.
 Console.WriteLine(frontDoor.Properties.Online); // true
@@ -660,13 +679,16 @@ True
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "created_at": "2024-05-29T20:08:48.878Z",
   "properties": {
-    "manufacturer": "akiles",
+    "manufacturer": "smartthings",
     "online": true,
     "locked": true,
+    "battery": {
+      "level": 0.9999532,
+      "status": "full"
+    },
     ...
   },
   "can_remotely_unlock": true,
-  "can_program_online_access_codes": true,
   ...
 }
 ```
@@ -675,16 +697,16 @@ True
 
 ***
 
-## Step 4: Control your Akiles lock
+## Step 4: Control your SmartThings-connected lock
 
 Next, you can use the Seam API to control your lock.
 
 Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md), [programming access codes](../../capability-guides/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
-Try out the following actions on your Akiles lock:
+Try out the following actions on your SmartThings-connected lock:
 
-* [ ] [Unlock your lock](get-started-with-akiles-locks.md#unlock-your-lock)
-* [ ] [Program access codes on your lock](get-started-with-akiles-locks.md#program-access-codes-on-your-lock)
+* [ ] [Unlock your lock](get-started-with-smartthings-hubs-+-smart-locks.md#unlock-your-lock)
+* [ ] [Program access codes on your lock](get-started-with-smartthings-hubs-+-smart-locks.md#program-access-codes-on-your-lock)
 
 ### Unlock your lock
 
@@ -917,7 +939,7 @@ const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id}
 
 // Inspect the locked property to confirm
 // that the unlock operation was successful.
-<strong>console.log(updatedFrontDoor.properties.locked); // false
+<strong>console.log(updatedFrontDoor.properties.locked) // false
 </strong></code></pre>
 
 **Output:**
@@ -987,11 +1009,15 @@ False
 {% endtab %}
 {% endtabs %}
 
+{% hint style="success" %}
+Now that you have successfully unlocked your lock, you can use the [Lock Door](https://docs.seam.co/latest/api/locks/lock_door) endpoint to lock it again.
+{% endhint %}
+
 ***
 
 ### Program access codes on your lock
 
-You can use the Seam API to program [online access codes](../../capability-guides/smart-locks/access-codes/) on Akiles locks that have an integrated keypad or an Akiles Pinpad. Lock users can then enter these access codes using the keypad or Pinpad to unlock the lock.
+You can use the Seam API to program [online access codes](../../capability-guides/smart-locks/access-codes/) on SmartThings-connected locks that have an integrated or accessory keypad. Lock users can then enter these access codes using the keypad to unlock the lock.
 
 The Seam API makes it easy to program both [ongoing](../../capability-guides/smart-locks/access-codes/#ongoing-access-codes) and [time-bound](../../capability-guides/smart-locks/access-codes/#time-bound-access-codes) online access codes.
 
@@ -1348,11 +1374,11 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 
 ***
 
-## Step 5: Connect a real Akiles lock
+## Step 5: Connect a real SmartThings-connected lock
 
-Now that you have learned the basics of using the Seam API, you can connect and control a real Akiles device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
+Now that you have learned the basics of using the Seam API, you can connect and control a real SmartThings-connected device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
 
-For more details about setting up your real Akiles lock, see the [Akiles locks integration guide](./).
+For more details about setting up your real SmartThings-connected lock, see the [SmartThings Hubs + devices integration guide](../smartthings-hubs-+-devices/).
 
 ***
 
@@ -1372,7 +1398,7 @@ To learn about all the Seam Components that we provide, see [Seam Components](..
 
 ## Next steps
 
-Now that you've completed this getting started guide for Akiles devices, you can learn more about what you can do with the Seam API.
+Now that you've completed this getting started guide for SmartThings-connected devices, you can learn more about what you can do with the Seam API.
 
 * [ ] **Explore**\
   See the [other devices and system integrations](../overview.md) that Seam supports.
