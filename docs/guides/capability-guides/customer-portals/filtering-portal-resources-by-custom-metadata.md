@@ -49,7 +49,7 @@ Create property listings with a `region` field in `custom_metadata`, then filter
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const { magic_link } = await seam.customers.createPortal({
+const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: "customer_123",
     property_listings: [
@@ -71,7 +71,7 @@ const { magic_link } = await seam.customers.createPortal({
 });
 
 // The portal will only show "Lisbon Apartment"
-console.log(magic_link.url);
+console.log(customer_portal.url);
 ```
 {% endtab %}
 
@@ -112,7 +112,7 @@ When you provide multiple filters, a resource must match all of them. Here, only
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const { magic_link } = await seam.customers.createPortal({
+const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: "customer_123",
     property_listings: [
@@ -140,7 +140,7 @@ const { magic_link } = await seam.customers.createPortal({
 });
 
 // Only "Premium Villa" is visible in the portal
-console.log(magic_link.url);
+console.log(customer_portal.url);
 ```
 {% endtab %}
 
@@ -187,7 +187,7 @@ Filter by a boolean `custom_metadata` value, such as showing only premium listin
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const { magic_link } = await seam.customers.createPortal({
+const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: "customer_123",
     property_listings: [
@@ -209,7 +209,7 @@ const { magic_link } = await seam.customers.createPortal({
 });
 
 // Only "Premium Villa" is visible
-console.log(magic_link.url);
+console.log(customer_portal.url);
 ```
 {% endtab %}
 
@@ -250,7 +250,7 @@ Filters also apply to reservations. Here, only reservations that are both premiu
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const { magic_link } = await seam.customers.createPortal({
+const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: "customer_123",
     property_listings: [
@@ -287,7 +287,7 @@ const { magic_link } = await seam.customers.createPortal({
 });
 
 // Only "Premium EU Reservation" is visible in the portal
-console.log(magic_link.url);
+console.log(customer_portal.url);
 ```
 {% endtab %}
 
