@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
 import YAML from 'yaml'
@@ -20,8 +20,8 @@ const redirects: Redirect[] = Object.entries(gitbookConfig.redirects ?? {}).map(
 
 // Check if a path resolves to a page as a file, URL slug, or directory index.
 function pageExists(fullPath: string): boolean {
-  // Exact file match (e.g., quickstart.md)
-  if (existsSync(fullPath)) return true
+  // Exact file match (e.g., quickstart.md) — must be a file, not a directory
+  if (existsSync(fullPath) && statSync(fullPath).isFile()) return true
   // URL-style target without .md extension (e.g., api/devices → api/devices.md)
   if (!fullPath.endsWith('.md') && existsSync(fullPath + '.md')) return true
   // README.md targets resolve as directory URLs in GitBook, so check if the
