@@ -19,8 +19,9 @@ const absoluteUrlPattern = new RegExp(
 
 // Matches markdown links like [text](path) but not images ![text](path),
 // absolute URLs, anchors-only, GitBook template tags, or angle-bracket paths.
+// The capture group handles escaped parens \( and \) inside the link target.
 const relativeLinkPattern =
-  /(?<!!)\]\((?!https?:\/\/|mailto:|#|{%|<|cursor:|file:)([^)]+)\)/g
+  /(?<!!)\]\((?!https?:\/\/|mailto:|#|{%|<|cursor:|file:)((?:[^)\\]|\\.)+)\)/g
 
 interface BrokenLink {
   file: string
@@ -88,9 +89,6 @@ function checkRelativeLink(file: string, line: number, rawLink: string): void {
   const linkPath = rawLink.replace(/ "mention"$/, '').split('#')[0]
   if (linkPath == null || linkPath === '') return
 
-  // Skip asset references
-  if (linkPath.includes('.gitbook/assets')) return
-
   // Strip GitBook markdown escapes and decode URL encoding
   const cleanPath = decodeURIComponent(
     linkPath.replaceAll('\\(', '(').replaceAll('\\)', ')').replaceAll('\\', ''),
@@ -98,6 +96,19 @@ function checkRelativeLink(file: string, line: number, rawLink: string): void {
 
   const fileDir = dirname(file)
   const resolved = resolve(fileDir, cleanPath)
+
+  // Check asset references exist
+  if (linkPath.includes('.gitbook/assets')) {
+    if (!existsSync(resolved)) {
+      brokenLinks.push({
+        file,
+        line,
+        url: rawLink,
+        reason: `Asset not found: ${resolved}`,
+      })
+    }
+    return
+  }
 
   // Check if target exists as file, as README.md in directory, or as directory
   if (!existsSync(resolved) && !existsSync(join(resolved, 'README.md'))) {
