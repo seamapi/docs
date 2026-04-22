@@ -11,10 +11,10 @@ Seam enables you to control a wide variety of devices and systems, from differen
 
 To find the integration guide for each of your devices or systems, see the following categories:
 
-* [Smart locks](overview.md#smart-locks)
-* [Access control systems](overview.md#access-control-systems)
-* [Thermostats](overview.md#thermostats)
-* [Noise sensors](overview.md#noise-sensors)
+* [Smart locks](README.md#smart-locks)
+* [Access control systems](README.md#access-control-systems)
+* [Thermostats](README.md#thermostats)
+* [Noise sensors](README.md#noise-sensors)
 
 ***
 
