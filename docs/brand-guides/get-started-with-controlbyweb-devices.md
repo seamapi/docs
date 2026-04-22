@@ -163,15 +163,15 @@ After a ControlByWeb account is linked with Seam, you can retrieve devices for t
 
 {% tabs %}
 {% tab title="Python" %}
-\`\`\`\`python all\_locks = seam.locks.list()
-
-some\_lock = all\_locks\[0]
-
-assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
-
-print(some\_lock)
-
 ```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["locked"] is True
+
+print(some_lock)
 # Device(
 #   device_id='4a570d13-9704-46e0-b69c-9fea80d6a7aa',
 #   device_type='controlbyweb_device',
@@ -193,7 +193,9 @@ print(some\_lock)
 #   errors=[]
 # )
 ```
+{% endtab %}
 
+{% tab title="Javascript" %}
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -230,19 +232,38 @@ console.log(someLock)
 }
 */
 ```
+{% endtab %}
 
-
-
+{% tab title="Ruby" %}
 ```ruby
 some_lock = seam.locks.list.first
 
 puts some_lock.properties.online # true
 puts some_lock.properties.locked # true
 
-puts some_lock.inspect # > #   warnings=[] #   errors=[] #   created_at=2023-04-25 14:34:50 UTC #   } #     "image_alt_text"=>"Placeholder Lock Image" #     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png", #     "name"=>"Device 2", #     }, #       "device_name"=>"Device 2" #       "relay_name"=>"firstRelay", #       "device_id"=>"9997", #     "controlbyweb_metadata"=>{ #     "manufacturer"=>"controlbyweb", #     "online"=>true, #     "locked"=>true, #   properties={ #   device_type="controlbyweb_device" #   device_id="4a570d13-9704-46e0-b69c-9fea80d6a7aa" # <Seam::Device:0x00146639380
+puts some_lock.inspect
+# <Seam::Device:0x00146639380
+#   device_id="4a570d13-9704-46e0-b69c-9fea80d6a7aa"
+#   device_type="controlbyweb_device"
+#   properties={
+#     "locked"=>true,
+#     "online"=>true,
+#     "manufacturer"=>"controlbyweb",
+#     "controlbyweb_metadata"=>{
+#       "device_id"=>"9997",
+#       "relay_name"=>"firstRelay",
+#       "device_name"=>"Device 2"
+#     },
+#     "name"=>"Device 2",
+#     "image_url"=>"https://connect.getseam.com/assets/images/devices/unknown-lock.png",
+#     "image_alt_text"=>"Placeholder Lock Image"
+#   }
+#   created_at=2023-04-25 14:34:50 UTC
+#   errors=[]
+#   warnings=[]
 ```
-
-\{% endtab %\} \{% endtabs %\}
+{% endtab %}
+{% endtabs %}
 
 **4 — Triggering a ControlByWeb relay**
 
@@ -258,40 +279,26 @@ Next, you can perform the basic action of triggering a relay on the device. This
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-\{% tabs %\} \{% tab title="Python" %\}
-
+{% tabs %}
+{% tab title="Python" %}
 ```python
 # trigger the relay
 seam.locks.unlock_door(some_lock)
 ```
+{% endtab %}
 
-\{% endtab %\}
-
-\{% tab title="Javascript" %\}
-
+{% tab title="Javascript" %}
 ```javascript
 // trigger the relay
 await seam.locks.unlockDoor(someLock.device_id)
 ```
-
-\{% endtab %\}
-
-\{% tab title="Ruby" %\}
-
-```
-
-ruby
-# trigger the relay
-seam.locks.unlock_door(device_id: some_lock.device_id)
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
-
 {% endtab %}
 
 {% tab title="Ruby" %}
-
+```ruby
+# trigger the relay
+seam.locks.unlock_door(device_id: some_lock.device_id)
+```
 {% endtab %}
 {% endtabs %}
 
