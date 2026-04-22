@@ -8,7 +8,9 @@ description: >-
 Use Material 3 to customize colors. Here is a suggestion of how to customize your app colors.
 
 ### Define a data class to hold the colors values:
+
 {% code title="AppColors.kt" %}
+
 ```kotlin
 data class AppColors(
     val background: Color,
@@ -25,13 +27,15 @@ data class AppColors(
     val cardBackgroundGradient: List<Color>,
 )
 ```
+
 {% endcode %}
 
 ### Create instances of `AppColors` for light and dark modes:
 
 {% code title="ColorConstants.kt" %}
+
 ```kotlin
-// 
+//
 val lightAppColors = AppColors(
     background = Color(0xFFF8FAFC),
     headerBackground = Color(0xFFDADCDE),
@@ -62,11 +66,13 @@ val darkAppColors = AppColors(
     cardBackgroundGradient = listOf(Color(0xFF1E293B), Color(0xFF334155))
 )
 ```
+
 {% endcode %}
 
 ### Set the color scheme to `SeamComponentsTheme`
 
 {% code title="MainActivity.kt" %}
+
 ```kotlin
 @Composable
 fun MyApp() {
@@ -77,7 +83,7 @@ fun MyApp() {
         darkTheme -> darkAppColors
         else -> lightAppColors
     }
-    
+
     // Create the color scheme
     val colorScheme = when {
         darkTheme -> darkColorScheme(
@@ -108,4 +114,5 @@ fun MyApp() {
     }
 }
 ```
+
 {% endcode %}

@@ -55,14 +55,14 @@ Seam's official backup access code pool can be enabled by adding `use_backup_acc
 ```javascript
 // Time of Creation
 await seam.accessCodes.create({
-  name: "My Access Code",
-  code: "1234",
+  name: 'My Access Code',
+  code: '1234',
   use_backup_access_code_pool: true,
 })
 
 // Time of Reservation
 async function getGuestMessage() {
-  const access_code = await seam.accessCodes.get({ name: "My Access Code" })
+  const access_code = await seam.accessCodes.get({ name: 'My Access Code' })
   if (access_code.errors.length === 0) {
     return `Hello Guest! Your access code is: ${access_code.code}`
   } else {

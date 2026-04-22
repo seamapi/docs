@@ -27,10 +27,10 @@ Go to [console.seam.co](https://console.seam.co) and select "Client Sessions" fr
 ## 3 — Import and Drop In the [\<SupportedDeviceTable /> Component](https://react.seam.co/?path=/docs/components-supporteddevicetable--docs)
 
 ```javascript
-import { SeamProvider, SupportedDeviceTable } from "@seamapi/react"
+import { SeamProvider, SupportedDeviceTable } from '@seamapi/react'
 
 export const App = () => (
-  <SeamProvider publishableKey="YOUR_PUBLISHABLE_KEY">
+  <SeamProvider publishableKey='YOUR_PUBLISHABLE_KEY'>
     <SupportedDeviceTable />
   </SeamProvider>
 )
@@ -40,11 +40,9 @@ You should see a list of device models like what's shown below:
 
 <figure><img src="https://3624860916-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FxnN2A67918om1UthYWsF%2Fuploads%2FyvmI7GxNyxhebqR99ZwF%2FScreen%20Shot%202023-06-30%20at%209.46.33%20AM.png?alt=media&#x26;token=18a6ad74-0f9f-4e18-8c15-57371c461044" alt=""><figcaption></figcaption></figure>
 
-
-
 ## Next Steps
 
-* View and play with other components in the [interactive storybook component library](https://react.seam.co/)
-* Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
+- View and play with other components in the [interactive storybook component library](https://react.seam.co/)
+- Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

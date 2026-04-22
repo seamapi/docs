@@ -7,6 +7,7 @@ description: Set typography roles with Material 3 Typography.
 You can integrate custom typography with Material 3's typography system:
 
 {% code title="MainActivity.kt" %}
+
 ```kotlin
 @Composable
 fun MyApp() {
@@ -40,4 +41,5 @@ fun MyApp() {
     }
 }
 ```
+
 {% endcode %}
