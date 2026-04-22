@@ -66,8 +66,8 @@ jobs:
           commit_user_name: ${{ secrets.GIT_USER_NAME }}
           commit_user_email: ${{ secrets.GIT_USER_EMAIL }}
           commit_author: ${{ secrets.GIT_USER_NAME }} <${{ secrets.GIT_USER_EMAIL }}>
-  validate-paths:
-    name: Validate paths
+  validate:
+    name: Validate paths and links
     needs: commit
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -80,17 +80,5 @@ jobs:
         uses: ./.github/actions/setup
       - name: Validate SUMMARY.md paths
         run: npm run validate-paths
-  validate-links:
-    name: Validate links
-    needs: commit
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-      - name: Setup
-        uses: ./.github/actions/setup
       - name: Validate cross-site links
         run: npm run validate-links

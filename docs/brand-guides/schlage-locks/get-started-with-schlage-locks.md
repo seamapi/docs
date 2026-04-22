@@ -253,7 +253,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 <div data-gb-custom-block data-tag="openapi" data-src='../.gitbook/assets/openapi.json' data-path='/locks/lock_door' data-method='post'>
 
-[openapi.json](../../.gitbook/assets/openapi.json)
+[openapi.json](../.gitbook/assets/openapi.json)
 
 </div>
 
