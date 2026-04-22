@@ -20,7 +20,6 @@ const redirects: Redirect[] = Object.entries(gitbookConfig.redirects ?? {}).map(
 
 function pageExists(fullPath: string): boolean {
   if (existsSync(fullPath) && statSync(fullPath).isFile()) return true
-  if (!fullPath.endsWith('.md') && existsSync(fullPath + '.md')) return true
   if (fullPath.endsWith('/README.md')) {
     const parentPath = fullPath.slice(0, -'/README.md'.length)
     if (existsSync(parentPath + '.md')) return true
