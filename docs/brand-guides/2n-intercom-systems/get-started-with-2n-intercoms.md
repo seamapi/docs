@@ -28,16 +28,16 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
 
 {% tabs %}
-{% tab title="JavaScript" %}
-```bash
-npm i seam
-```
-{% endtab %}
-
 {% tab title="Python" %}
 ```bash
 pip install seam
 # For some development environments, use pip3 in this command instead of pip.
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```bash
+npm i seam
 ```
 {% endtab %}
 
