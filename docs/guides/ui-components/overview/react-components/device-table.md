@@ -14,11 +14,7 @@ The devices table shows a list of devices and their statuses.
 
 ### Size: Desktop
 
-<figure><img src="../../.gitbook/assets/device-table.png" alt=""><figcaption></figcaption></figure>
-
 ### Size: Modal
-
-<figure><img src="../../.gitbook/assets/Mod - Device List (1) (1).png" alt="" width="420"><figcaption></figcaption></figure>
 
 ## Props
 

@@ -188,8 +188,6 @@ export const App = () => {
 
 You should see a list of devices like what's shown below:
 
-<figure><img src="../../.gitbook/assets/device-table.png" alt=""><figcaption><p>Device Table React Component</p></figcaption></figure>
-
 ## Next Steps
 
 * [Minimal sample apps](https://github.com/seamapi/seam-components-sample-apps) running Seam Components in various frameworks.

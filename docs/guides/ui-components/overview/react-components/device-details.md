@@ -16,13 +16,9 @@ The `DeviceDetails` will display varying views based on the device type.
 
 The "Lock" detail view displays a button leading to the list of access codes, along with various lock properties.
 
-<figure><img src="../../.gitbook/assets/Lock Detail.png" alt="" width="420"><figcaption></figcaption></figure>
-
 #### Thermostat details
 
 The "Thermostat" detail view provides a button to view the list of scheduled climates and buttons to adjust the thermostat settings.
-
-<figure><img src="../../.gitbook/assets/ThermostatDetail.png" alt="" width="420"><figcaption></figcaption></figure>
 
 ### Props
 

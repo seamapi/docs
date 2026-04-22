@@ -14,8 +14,6 @@ To access the Seam API, you'll need a publishable key. This key identifies your 
 
 Go to [console.seam.co](https://console.seam.co) and select "Client Sessions" from the sidebar. You should then see a "Publishable Key" that you can copy.
 
-<figure><img src="../../.gitbook/assets/publishable-key-copy.png" alt="Publishable key" width="375"><figcaption></figcaption></figure>
-
 ## 2 - Install `@seamapi/react` in your Vue application
 
 Install the npm package
@@ -42,7 +40,6 @@ From the [Vue Docs](https://vuejs.org/guide/extras/web-components.html#skipping-
 
 {% tabs %}
 {% tab title="Vue 3 In-Browser Config" %}
-
 ```javascript
 // Only works if using in-browser compilation.
 // If using build tools, see config examples below.
@@ -51,7 +48,6 @@ app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('seam-')
 {% endtab %}
 
 {% tab title="Vue 3 Vite Config" %}
-
 ```javascript
 // vite.config.js
 import vue from '@vitejs/plugin-vue'
@@ -68,11 +64,9 @@ export default {
   ]
 }
 ```
-
 {% endtab %}
 
 {% tab title="Vue 3 CLI Config" %}
-
 ```javascript
 // vue.config.js
 module.exports = {
@@ -89,18 +83,14 @@ module.exports = {
   }
 }
 ```
-
 {% endtab %}
 
 {% tab title="Vue 2 Config" %}
-
 ```javascript
 // Before calling new Vue(...)
 Vue.config.ignoredElements = [/^seam-/]
 ```
-
 {% endtab %}
-
 {% endtabs %}
 
 ## 4 - Use the component
@@ -116,8 +106,6 @@ Use the components in `App.vue`:
 ```
 
 You should see a list of device models like what's shown below:
-
-<figure><img src="../../.gitbook/assets/supported-device-table.png" alt="Supported devices" width="375"><figcaption></figcaption></figure>
 
 ## Next Steps
 

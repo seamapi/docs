@@ -41,7 +41,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../../.gitbook/assets/workspace-switcher.png)
 3.  In the top navigation pane, click **ACS Systems**.
 
-    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab (1).png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
 4.  On the **Access Systems** page, click **New Access System**.
 
     Seam Console displays a Connect Webview that enables you to connect a virtual ACS to Seam.

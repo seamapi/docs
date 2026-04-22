@@ -8,8 +8,6 @@ The update access code form component allows you to modify an access code.
 <UpdateAccessCodeForm accessCodeId={accessCodeId}/>
 ```
 
-<figure><img src="../../.gitbook/assets/Edit code 01 (1) (1).png" alt="" width="327"><figcaption></figcaption></figure>
-
 ### Props
 
 | Name           | Type     | Description                                                                                                                                                                           |

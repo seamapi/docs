@@ -19,7 +19,7 @@ This quick start walks you through the following basic steps:
 1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
    * To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
-3. Create an [ACS user](../../../capability-guides/access-systems/user-management.md).
+3. Create an [ACS user](../user-management.md).
    * Also, specify the access schedule for this user.
 4. Assign the ACS user to an [access group](../user-management/assigning-users-to-access-groups.md).
    * Access groups are preconfigured to grant access to specific entrances.\
@@ -44,7 +44,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../../.gitbook/assets/workspace-switcher.png)
 3.  In the top navigation pane, click **ACS Systems**.
 
-    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab (1).png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
 4.  On the **Access Systems** page, click **New Access System**.
 
     Seam Console displays a Connect Webview that enables you to connect a virtual ACS to Seam.
@@ -94,12 +94,9 @@ composer require seamapi/seam
 ```
 {% endtab %}
 
-
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
-
 {% endtabs %}
 
 2. Create an API key.
@@ -126,7 +123,7 @@ Create an ACS user within the virtual Salto KS access control system, and specif
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
    2. On the **Access Systems** page, locate the Salto KS Main Site ACS.
    3. In the **acs\_system\_id** column for the Main Site ACS, click the ID to copy it.
-   4. Store this ACS system ID for future use.&#x20;
+   4. Store this ACS system ID for future use.
 2. Create the ACS user, as follows:
 
 {% tabs %}
@@ -318,9 +315,6 @@ $acs_user = $seam->acs->users->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -336,7 +330,7 @@ Some other access control systems do not use access groups and, instead, specify
    2. On the **Access Systems** page, click the Salto KS Main Site ACS.
    3. On the **Main Site** page, click the **Access Groups** tab.
    4. Locate the Main Group, click **...**, and click **Copy Id**.
-   5. Store this access group ID for future use.&#x20;
+   5. Store this access group ID for future use.
 2. Assign the ACS user to the Main Group, as follows:
 
 {% tabs %}
@@ -449,9 +443,6 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -600,9 +591,6 @@ $pin_code_credential = $seam->acs->credentials->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -656,7 +644,7 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
    * [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources.md)
    * [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences.md)
 2. Create ACS users.
-   * [Managing ACS Users](../../../capability-guides/access-systems/user-management.md)
+   * [Managing ACS Users](../user-management.md)
 3. For relevant access control systems, assign ACS users to access groups.
    * [Assigning ACS Users to Access Groups](../user-management/assigning-users-to-access-groups.md)
 4. Learn about available entrances.

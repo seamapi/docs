@@ -12,8 +12,6 @@ The connect account button opens a new Connect Webview. Accounts connected from 
 
 ### [See Live Preview](https://react.seam.co/?path=/docs/components-connectaccountbutton--docs)
 
-<figure><img src="../../.gitbook/assets/react-connect-account-button.png" alt="Connect Account Button"><figcaption></figcaption></figure>
-
 ### Props
 
 | Name      | Type   | Description                                                                |

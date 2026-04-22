@@ -16,8 +16,6 @@ To access the Seam API, you'll need a publishable key. This key identifies your 
 
 Go to [console.seam.co](https://console.seam.co) and select "Client Sessions" from the sidebar. You should then see a "Publishable Key" that you can copy.
 
-<figure><img src="../../.gitbook/assets/publishable-key-copy.png" alt="Publishable key" width="375"><figcaption></figcaption></figure>
-
 ## 2 — Add Seam Components
 
 {% tabs %}
@@ -103,8 +101,6 @@ Add the components where your framework renders HTML. Some frameworks may requir
 You should see a page with an empty list of devices and a button to connect an account.
 
 You could press the button now, but before you add some devices, there is one more step to complete to enable persisting and resuming the client session.
-
-<figure><img src="../../.gitbook/assets/seam-components-empty-device-list.png" alt="Empty device list" width="375"><figcaption></figcaption></figure>
 
 ## 3 — Select a User Identifier Key
 
@@ -192,8 +188,6 @@ export const App = () => {
 {% endtabs %}
 
 Now, press the Connect Account button to open a Seam Connect Webview where you can login with your device provider. After logging in, you will be redirected back to this page where you should see your devices.
-
-<figure><img src="../../.gitbook/assets/seam-components-full-device-list.png" alt="Device list" width="375"><figcaption></figcaption></figure>
 
 ## Next Steps
 
