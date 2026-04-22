@@ -670,6 +670,8 @@ These items are deprecated.
     - `action_attempt`
 - `/access_codes/pull_backup_access_code`
     - `backup_access_code`
+- `/customers/create_portal`
+    - `magic_link`
 - `/events/get`
     - `message`
 - `/locks/get`
