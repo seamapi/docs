@@ -56,6 +56,6 @@ Make sure that you're authenticating with the user to whom the devices are regis
 
 To purchase ecobee thermostats, visit the ecobee online store.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Online Store</strong></td><td></td><td><a href="https://www.ecobee.com/en-us/smart-thermostats/">https://www.ecobee.com/en-us/smart-thermostats/</a></td><td><a href="../.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>ecobee Online Store</strong></td><td></td><td><a href="https://www.ecobee.com/en-us/smart-thermostats/">https://www.ecobee.com/en-us/smart-thermostats/</a></td><td><a href="../../guides/.gitbook/assets/ecobee-logo.png">ecobee-logo.png</a></td></tr></tbody></table>
 
 ***

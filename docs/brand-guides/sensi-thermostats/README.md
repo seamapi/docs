@@ -72,4 +72,4 @@ Some Sensi models do not support heat-cool mode, such as the Sensi Classic and S
 
 To purchase Sensi thermostats, visit the Sensi online store.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Sensi Online Store</strong></td><td></td><td><a href="https://sensi.copeland.com/en-us/products">https://sensi.copeland.com/en-us/products</a></td><td><a href="../../.gitbook/assets/sensi-logo.png">sensi-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Sensi Online Store</strong></td><td></td><td><a href="https://sensi.copeland.com/en-us/products">https://sensi.copeland.com/en-us/products</a></td><td><a href="../../guides/.gitbook/assets/sensi-logo.png">sensi-logo.png</a></td></tr></tbody></table>

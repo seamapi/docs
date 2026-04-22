@@ -45,6 +45,6 @@ To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-
 
 Purchase KeyNest services or get more details about KeyNest locations directly from the KeyNest website:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>KeyNest</strong></td><td></td><td><a href="https://keynest.com/">https://keynest.com/</a></td><td><a href="../../.gitbook/assets/keynest logo transparent.png">keynest logo transparent.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>KeyNest</strong></td><td></td><td><a href="https://keynest.com/">https://keynest.com/</a></td><td><a href="../.gitbook/assets/keynest logo transparent.png">keynest logo transparent.png</a></td></tr></tbody></table>
 
 ***

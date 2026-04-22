@@ -36,7 +36,7 @@ The setup guide covers:
 * Creating API credentials
 * Connecting to Seam through the Connect Webview
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>System Set Up Guide</strong></td><td><a href="../../.gitbook/assets/image (29).png">image (29).png</a></td><td><a href="./2n-system-set-up-instructions.md">2n-system-set-up-instructions.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>System Set Up Guide</strong></td><td><a href="../.gitbook/assets/image (29).png">image (29).png</a></td><td><a href="./2n-system-set-up-instructions.md">2n-system-set-up-instructions.md</a></td></tr></tbody></table>
 
 ***
 
@@ -52,4 +52,4 @@ For more details, see [Customize Brands in Connect Webviews](https://docs.seam.c
 
 Find your local 2N distributor using the following page:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Locate Your 2N Distributor</strong></td><td></td><td><a href="https://www.2n.com/en_GB/how-to-buy/where-to-buy">https://www.2n.com/en_GB/how-to-buy/where-to-buy</a></td><td><a href="../../.gitbook/assets/2n-logo.png">2n-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Locate Your 2N Distributor</strong></td><td></td><td><a href="https://www.2n.com/en_GB/how-to-buy/where-to-buy">https://www.2n.com/en_GB/how-to-buy/where-to-buy</a></td><td><a href="../.gitbook/assets/2n-logo.png">2n-logo.png</a></td></tr></tbody></table>

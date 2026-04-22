@@ -93,6 +93,6 @@ Use your credentials for the Akiles app to log in to the [Seam Connect Webview](
 
 To purchase Akiles devices, contact the Akiles sales team.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Akiles Contact Page</strong></td><td></td><td><a href="https://akiles.app/en/contact">https://akiles.app/en/contact</a></td><td><a href="../../.gitbook/assets/akiles-logo.png">akiles-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Akiles Contact Page</strong></td><td></td><td><a href="https://akiles.app/en/contact">https://akiles.app/en/contact</a></td><td><a href="../.gitbook/assets/akiles-logo.png">akiles-logo.png</a></td></tr></tbody></table>
 
 ***

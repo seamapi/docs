@@ -6,7 +6,7 @@ description: >-
 
 # Assigning Credentials to ACS Users
 
-This guide explains how to assign existing [credentials](managing-credentials.md) to [ACS users](../../capability-guides/access-systems/user-management.md) and unassign credentials from users. Once you assign credentials to ACS users, these users can use the credentials to access areas and resources according to their permissions. When you unassign credentials from ACS users, these users can no longer use these specific credentials to access areas or resources.
+This guide explains how to assign existing [credentials](./) to [ACS users](../user-management.md) and unassign credentials from users. Once you assign credentials to ACS users, these users can use the credentials to access areas and resources according to their permissions. When you unassign credentials from ACS users, these users can no longer use these specific credentials to access areas or resources.
 
 ***
 

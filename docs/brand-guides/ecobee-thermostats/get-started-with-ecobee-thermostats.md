@@ -1842,7 +1842,7 @@ $seam->thermostats->update_weekly_program(
 
 Now that you have learned the basics of using the Seam API, you can connect and control a real ecobee device. To do so, make sure to switch to a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
 
-For more details about setting up your real ecobee thermostat, see the [ecobee thermostats integration guide](ecobee-thermostats.md).
+For more details about setting up your real ecobee thermostat, see the [ecobee thermostats integration guide](../ecobee-thermostats/).
 
 ***
 
@@ -1877,4 +1877,4 @@ If you have any questions or want to report an issue, email us at [support@seam.
 
 ## Quick links
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../../guides/.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>

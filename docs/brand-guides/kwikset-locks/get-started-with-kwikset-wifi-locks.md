@@ -299,7 +299,7 @@ puts some_lock.inspect
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src=".gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %} [openapi (1).json](.gitbook/assets/openapi%20\(1\).json) {% endopenapi %}
+{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %} [openapi (1).json](../.gitbook/assets/openapi%20\(1\).json) {% endopenapi %}
 
 #### Unlock a door
 
@@ -546,10 +546,10 @@ Now that you've completed this guide, you can try to connect a real Kwikset Halo
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Yale Getting Started Guide](get-started-with-yale-locks.md)
-* [August Getting Started Guide](get-started-with-august-locks.md)
-* [Schlage Getting Started Guide](schlage-locks/get-started-with-schlage-locks.md)
-* [SmartThings Getting Started Guide](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Yale Getting Started Guide](../yale-locks/get-started-with-yale-locks.md)
+* [August Getting Started Guide](../august-locks/get-started-with-august-locks.md)
+* [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 

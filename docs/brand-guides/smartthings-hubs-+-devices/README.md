@@ -69,4 +69,4 @@ Different devices connected to SmartThings Hubs may have different levels of sup
 
 To purchase SmartThings Hubs, visit the Aeotek **Where to Buy?** page.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Aeotek Where to Buy? Page</strong></td><td></td><td><a href="https://aeotec.com/where-to-buy/">https://aeotec.com/where-to-buy/</a></td><td><a href="../../.gitbook/assets/smartthings-logo.png">smartthings-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Aeotek Where to Buy? Page</strong></td><td></td><td><a href="https://aeotec.com/where-to-buy/">https://aeotec.com/where-to-buy/</a></td><td><a href="../.gitbook/assets/smartthings-logo.png">smartthings-logo.png</a></td></tr></tbody></table>

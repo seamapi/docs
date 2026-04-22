@@ -256,7 +256,7 @@ Now that you've completed this guide, you can try to connect a real dormakaba Or
 In addition, if you'd like to explore other aspects of Seam, check out the following helpful resources:
 
 * [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
-* [Yale Getting Started Guide](../get-started-with-yale-locks.md)
+* [Yale Getting Started Guide](../yale-locks/get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Configuring webhooks](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
