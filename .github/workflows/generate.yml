@@ -84,3 +84,5 @@ jobs:
         run: npm run validate-links
       - name: Validate all pages are in SUMMARY.md
         run: npm run validate-orphan-pages
+      - name: Validate redirect targets
+        run: npm run validate-redirects
