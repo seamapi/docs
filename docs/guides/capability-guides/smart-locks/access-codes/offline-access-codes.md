@@ -10,9 +10,9 @@ description: >-
 
 This guide explains how to create [offline access (PIN) codes](./#offline-access-codes) for smart locks that support these types of codes. Use the [Access Codes](https://docs.seam.co/latest/api/access_codes/) API to generate a [time-bound](./#time-bound-offline-access-codes) or [one-time-use](./#one-time-use-offline-access-codes) offline access code. Note that Seam support for offline access code functions varies depending on the device manufacturer. For details, see the corresponding device guide.
 
-* [igloohome Locks device guide](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md)
-* [dormakaba Oracode Locks device guide](../../../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
-* [Lockly Locks device guide](../../../device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes.md)
+* [igloohome Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes)
+* [dormakaba Oracode Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes)
+* [Lockly Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes)
 
 {% hint style="info" %}
 For information about online access codes, see [Managing Access Codes](./).
@@ -35,9 +35,9 @@ It is imperative to understand all manufacturer- and device-specific behaviors a
 
 For details, see the corresponding device guide. Also, [get the lock](https://docs.seam.co/latest/api/devices/get) and view any manufacturer-specific properties.
 
-* [igloohome Locks device guide](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md)
-* [dormakaba Oracode Locks device guide](../../../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md)
-* [Lockly Locks device guide](../../../device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes.md)
+* [igloohome Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes)
+* [dormakaba Oracode Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes)
+* [Lockly Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes)
 
 ***
 
@@ -177,10 +177,10 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 ## Creating Time-Bound Offline Access Codes
 
-For [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes.md), you can create time-bound offline access codes that define a validity period using `starts_at` and `ends_at` timestamps. For [igloohome locks](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md) and [dormakaba Oracode locks](../../../device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes.md), you can create time-bound offline access codes with validity durations at either the hour level or the day level.
+For [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes), you can create time-bound offline access codes that define a validity period using `starts_at` and `ends_at` timestamps. For [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes) and [dormakaba Oracode locks](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes), you can create time-bound offline access codes with validity durations at either the hour level or the day level.
 
 {% hint style="info" %}
-Make sure to learn any manufacturer-specific behavior and restrictions regarding time-bound offline access codes. For details, see the corresponding [device guide](../../../device-and-system-integration-guides/overview.md#smart-locks).
+Make sure to learn any manufacturer-specific behavior and restrictions regarding time-bound offline access codes. For details, see the corresponding [device guide](https://docs.seam.co/latest/device-and-system-integration-guides#smart-locks).
 {% endhint %}
 
 To create a time-bound offline access code, first issue a creation request. Then, poll or use a webhook to confirm that the code was registered successfully in the device manufacturer's offline access code server.
@@ -472,7 +472,7 @@ There are two methods to verify that an time-bound offline access code has been 
 
 ## Creating One-Time-Use Offline Access Codes
 
-For [igloohome locks](../../../device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes.md) and [Lockly locks](../../../device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes.md), you can create one-time-use offline access codes. These codes expire after a single use. To confirm whether your device supports one-time-use offline access codes and to learn any manufacturer- and device-specific restrictions, see the corresponding [device guide](../../../device-and-system-integration-guides/overview.md#smart-locks).
+For [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes) and [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes), you can create one-time-use offline access codes. These codes expire after a single use. To confirm whether your device supports one-time-use offline access codes and to learn any manufacturer- and device-specific restrictions, see the corresponding [device guide](https://docs.seam.co/latest/device-and-system-integration-guides#smart-locks).
 
 To create a one-time-use offline access code, first issue a creation request. In this request, set `is_offline_access_code` and `is_one_time_use` to `true`, and specify the desired `starts_at` and `ends_at` timestamps, as applicable for your device. Then, poll or use a webhook to confirm that the code was registered successfully in the offline access code server that the device manufacturer maintains.
 

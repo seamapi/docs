@@ -98,4 +98,4 @@ For on-premises access systems, such as Salto Space and Visionline, Seam offers 
 
 <figure><img src="../../.gitbook/assets/image (9) (2).png" alt="Seam Bridge"><figcaption><p>Seam Bridge</p></figcaption></figure>
 
-For detailed connection instructions, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system.
+For detailed connection instructions, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.

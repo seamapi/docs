@@ -15,6 +15,6 @@ description: >-
   Create your first mobile key credential to grant an access system user scheduled access to a virtual entrance that accepts Bluetooth low energy (BLE)-powered keys within mobile apps.
 
 {% hint style="info" %}
-These quick starts introduce you to the Seam access system resources and processes using specific supported access control systems as examples. Note that there are often differences between access control systems. Once you've completed the quick starts, learn how to work with your access system using Seam, by reading the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system.
+These quick starts introduce you to the Seam access system resources and processes using specific supported access control systems as examples. Note that there are often differences between access control systems. Once you've completed the quick starts, learn how to work with your access system using Seam, by reading the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.
 {% endhint %}
 

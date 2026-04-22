@@ -211,7 +211,7 @@ Note the following manufacturer- and OS-specific requirements:
 
 ### Manufacturer-Specific Requirements
 
-See the [device or system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for the access control system or device for which you are planning to develop. Further, you may need to register for developer access with the ACS that you have chosen to use.
+See the [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for the access control system or device for which you are planning to develop. Further, you may need to register for developer access with the ACS that you have chosen to use.
 
 ***
 

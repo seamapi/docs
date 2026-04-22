@@ -29,7 +29,7 @@ To issue mobile credentials, you must configure a multi-phone sync credential. T
 Seam configures the card details that you include in the request across all the credentials that it creates for each phone. Include only common card details, such as the [facility code](https://www.idwholesaler.com/learning-center/26-bit-proximity-card/), and omit any unique card details, such as the card number. For more information about specific card properties, see the user guide for the access control system or credential manager.
 
 {% hint style="info" %}
-The code samples in this section contain manufacturer-specific metadata that may vary by ACS. For details, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+The code samples in this section contain manufacturer-specific metadata that may vary by ACS. For details, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
 {% endhint %}
 
 {% tabs %}

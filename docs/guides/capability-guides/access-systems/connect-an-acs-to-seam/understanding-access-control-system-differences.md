@@ -12,7 +12,7 @@ Seam's universal API provides the flexibility to manage a variety of [ACSs](../.
 * The specific licenses, if any, that each ACS manufacturer requires you to purchase
 * The manufacturer-specific ACS properties and metadata that you must configure to create and assign credentials to ACS users
 
-To understand the manufacturer-specific nuances of your ACS, see the relevant [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems).
+To understand the manufacturer-specific nuances of your ACS, see the relevant [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 ***
 
@@ -56,7 +56,7 @@ The following process describes the configuration steps for your application to 
     * ID of the `acs_user` to associate with this credential
     * Access method for the credential, such as `code`, `card`, or `mobile_key`
 
-    Depending on the access method and specific ACS, your application can also configure additional credential properties. For more information about manufacturer-specific variations, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+    Depending on the access method and specific ACS, your application can also configure additional credential properties. For more information about manufacturer-specific variations, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
 
 You can also perform other management actions, as needed, such as [adding ACS users to](../user-management/assigning-users-to-access-groups.md#add-an-acs-user-to-an-access-group) and [removing ACS users from access groups](../user-management/assigning-users-to-access-groups.md#remove-an-acs-user-from-an-access-group), [assigning](../assigning-credentials-to-users.md#assign-a-credential-to-a-user) and [unassigning](../assigning-credentials-to-users.md#unassign-a-credential-from-a-user) existing credentials, [suspending](../../../capability-guides/access-systems/user-management/suspending-and-unsuspending-users.md#suspend-an-acs-user) and [unsuspending](../../../capability-guides/access-systems/user-management/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) ACS users, [updating ACS users](../../../capability-guides/access-systems/user-management.md#update-a-user) and [credentials](https://docs.seam.co/latest/api/acs/credentials/update), and [deleting ACS users](../../../capability-guides/access-systems/user-management.md#delete-a-user) and [credentials](../managing-credentials.md#delete-a-credential).
 
@@ -81,7 +81,7 @@ The following process describes the configuration steps for your application to 
     * Set of entrances to which this credential grants access
     * Start and end date and time during which this credential grants access
 
-    Depending on the access method and specific ACS, your application can also configure additional credential properties. For more information about manufacturer-specific variations, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+    Depending on the access method and specific ACS, your application can also configure additional credential properties. For more information about manufacturer-specific variations, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
 
 You can also perform other management actions, as needed, such as [assigning](../assigning-credentials-to-users.md#assign-a-credential-to-a-user) and [unassigning](../assigning-credentials-to-users.md#unassign-a-credential-from-a-user) existing credentials, [suspending](../../../capability-guides/access-systems/user-management/suspending-and-unsuspending-users.md#suspend-an-acs-user) and [unsuspending](../../../capability-guides/access-systems/user-management/suspending-and-unsuspending-users.md#unsuspend-an-acs-user) ACS users, [updating ACS users](../../../capability-guides/access-systems/user-management.md#update-a-user) and [credentials](https://docs.seam.co/latest/api/acs/credentials/update), and [deleting ACS users](../../../capability-guides/access-systems/user-management.md#delete-a-user) and [credentials](../managing-credentials.md#delete-a-credential).
 
@@ -89,4 +89,4 @@ You can also perform other management actions, as needed, such as [assigning](..
 
 ## Next Steps
 
-To learn about the manufacturer-specific variations for ACSs, see the corresponding [system integration guides](../../../device-and-system-integration-guides/overview.md#access-control-systems).
+To learn about the manufacturer-specific variations for ACSs, see the corresponding [system integration guides](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).

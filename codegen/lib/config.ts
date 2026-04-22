@@ -24,6 +24,11 @@ export const siteSections: SiteSection[] = [
     root: join('docs', 'api-reference'),
     urlPrefix: '/api',
   },
+  {
+    name: 'Brand Guides',
+    root: join('docs', 'brand-guides'),
+    urlPrefix: '/device-and-system-integration-guides',
+  },
   { name: 'Guides', root: join('docs', 'guides'), urlPrefix: '' },
 ]
 

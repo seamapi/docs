@@ -6,10 +6,10 @@ description: >-
 
 # PIN Code Quick Start
 
-In this quick start, create an ACS user for a virtual [Salto KS](../../../device-and-system-integration-guides/salto-ks-access-control-system/) access control system. Then, grant the user access to an entrance using a PIN code credential.
+In this quick start, create an ACS user for a virtual [Salto KS](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a PIN code credential.
 
 {% hint style="info" %}
-This quick start walks you through the process that applies specifically to the Salto KS ACS. There are often differences between access control systems. Once you've completed this quick start, learn how to work with your ACS using Seam, by reading the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+This quick start walks you through the process that applies specifically to the Salto KS ACS. There are often differences between access control systems. Once you've completed this quick start, learn how to work with your ACS using Seam, by reading the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
 {% endhint %}
 
 ## Overview

@@ -15,7 +15,7 @@ To grant access using the Seam access control system API, use the following basi
 
 1. Create `acs_user`s.
 2. Configure access for these users.
-   For some access control systems, configure the allowed entrances and access schedule. For other systems, use `acs_access_group`s. For details, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems) for your access control system.
+   For some access control systems, configure the allowed entrances and access schedule. For other systems, use `acs_access_group`s. For details, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access control system.
 3. Create `acs_credential`s, which are the digital means of granting access to users, such as PIN codes, mobile keys, and plastic (RFID) cards.
    If you are developing a mobile app to provide access for your users, you can also use [Seam's iOS and Android SDKs](https://docs.seam.co/latest/capability-guides/mobile-access/mobile-device-sdks) that pair with the Seam API to create and manage mobile keys.
 
@@ -28,7 +28,7 @@ Group that defines the entrances to which a set of users has access and, in some
 
 Some access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.
 
-To learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
+To learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 ---
 ### [`acs_credential`](./credentials/README.md#acs_credential)
@@ -53,7 +53,7 @@ Separately, the Seam API also supports card scanning, which enables you to scan 
 
 See [Working with Card Encoders and Scanners](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 
-To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
+To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 ---
 ### [`acs_entrance`](./entrances/README.md#acs_entrance)
@@ -75,6 +75,6 @@ Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems
 
 An access system user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
-For details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems).
+For details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 ---
