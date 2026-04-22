@@ -314,7 +314,8 @@ $locks = $seam->locks->list();
 echo json_encode($locks);
 ```
 
-{% endtab %} {% endtabs %}
+{% endtab %}
+{% endtabs %}
 
 #### 4 — Locking & Unlocking a Door
 
@@ -334,7 +335,8 @@ Next, you can perform the basic action of locking and unlocking the door.
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-{% tabs %} {% tab title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
 
 ```python
 # lock the door
@@ -397,7 +399,8 @@ $seam->locks->unlock_door($lock->device_id);
 $seam->locks->lock_door($lock->device_id);
 ```
 
-{% endtab %} {% endtabs %}
+{% endtab %}
+{% endtabs %}
 
 #### 5 — Creating Access Codes on 2N Intercoms
 
@@ -405,7 +408,8 @@ $seam->locks->lock_door($lock->device_id);
 
 Seam maps these residents to [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) and allows you to create and manage them through the Seam API.
 
-{% tabs %} {% tab title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
 
 ```python
 # create an ongoing code
