@@ -18,14 +18,9 @@ const redirects: Redirect[] = Object.entries(gitbookConfig.redirects ?? {}).map(
   ([source, target]) => ({ source, target }),
 )
 
-// Check if a path resolves to a page as a file, URL slug, or directory index.
 function pageExists(fullPath: string): boolean {
-  // Exact file match (e.g., quickstart.md) — must be a file, not a directory
   if (existsSync(fullPath) && statSync(fullPath).isFile()) return true
-  // URL-style target without .md extension (e.g., api/devices → api/devices.md)
   if (!fullPath.endsWith('.md') && existsSync(fullPath + '.md')) return true
-  // README.md targets resolve as directory URLs in GitBook, so check if the
-  // parent path resolves as a page (e.g., foo/README.md → foo.md).
   if (fullPath.endsWith('/README.md')) {
     const parentPath = fullPath.slice(0, -'/README.md'.length)
     if (existsSync(parentPath + '.md')) return true
@@ -33,11 +28,7 @@ function pageExists(fullPath: string): boolean {
   return false
 }
 
-// Resolve a redirect target to check it points to a real page.
-// Targets may reference other site sections via URL prefix.
 function resolveTarget(target: string): boolean {
-  // Try matching against site sections by URL prefix (most specific first).
-  // The siteSections array is already ordered with more-specific prefixes first.
   for (const section of siteSections) {
     if (section.urlPrefix === '') continue
 
@@ -48,7 +39,6 @@ function resolveTarget(target: string): boolean {
     }
   }
 
-  // Fall back to the default section (Guides, urlPrefix '')
   const guidesSection = siteSections.find((s) => s.urlPrefix === '')
   if (guidesSection == null) return false
 
