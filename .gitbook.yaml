@@ -4,7 +4,7 @@ root: ./docs/guides/
   readme: README.md
   summary: SUMMARY.md
 redirects:
-  latest/quickstart/get-api-key: latest/quickstart.md
+  latest/quickstart/get-api-key: quickstart.md
   quickstart/get-api-key: quickstart.md
   quickstart/installation: quickstart.md
   quickstart/authentication: quickstart.md
@@ -16,18 +16,18 @@ redirects:
   core-concepts/workspaces/personal-access-tokens: core-concepts/authentication/personal-access-tokens.md
   core-concepts/workspaces/client-session-tokens: core-concepts/authentication/client-session-tokens/README.md
   core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend: core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend.md
-  products/access-systems/user-management: capability-guides/access-systems/user-management/README.md
-  capability-guides/access-systems/managing-credentials: capability-guides/access-systems/managing-credentials/README.md
+  products/access-systems/user-management: capability-guides/access-systems/user-management.md
+  capability-guides/access-systems/managing-credentials: capability-guides/access-systems/managing-credentials.md
   capability-guides/access-systems/assigning-credentials-to-users: capability-guides/access-systems/managing-credentials/assigning-credentials-to-users.md
   products/access-systems/suspending-and-unsuspending-users: capability-guides/access-systems/user-management/suspending-and-unsuspending-users.md
   products/seam-bridge-in-development: capability-guides/seam-bridge.md
   core-concepts/connect-webviews: core-concepts/connect-webviews/README.md
   device-guides/4suites-locks: device-and-system-integration-guides/4suites-locks/README.md
   device-guides/assa-abloy-visionline-access-control-system-in-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md
-  device-guides/assa-abloy-visionline-access-control-system-in-development/credential-types: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-credential-metadata: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-credential-metadata.md
+  device-guides/assa-abloy-visionline-access-control-system-in-development/credential-types: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-credential-metadata: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
   device-guides/assa-abloy-visionline-access-control-system-in-development/common-use-cases: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/common-use-cases.md
-  capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems/understanding-access-control-system-differences.md
+  capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems
   capability-guides/thermostats/creating-and-managing-climate-schedules: capability-guides/thermostats/creating-and-managing-thermostat-schedules.md
   device-guides/get-started-with-schlage-locks: device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks.md
   api-clients/access-codes/convert-an-unmanaged-access-code: api/access_codes/unmanaged/convert_to_managed.md
@@ -95,7 +95,7 @@ redirects:
   api-clients/connected-accounts/list-connected-accounts: api/connected_accounts/list.md
   api-clients/connected-accounts/update-a-connected-account: api/connected_accounts/update.md
   api-clients/connected-accounts: api/connected_accounts/README.md
-  api-clients/devices/delete-device: api/devices/delete.md
+  api-clients/devices/delete-device: api/devices
   api-clients/devices/get-device-1: api/devices/unmanaged/get.md
   api-clients/devices/get-device: api/devices/get.md
   api-clients/devices/list-device-providers: api/devices/list_device_providers.md
@@ -103,8 +103,8 @@ redirects:
   api-clients/devices/list-unmanaged-devices: api/devices/unmanaged/list.md
   api-clients/devices/update-device: api/devices/update.md
   api-clients/devices/update-unmanaged-device: api/devices/unmanaged/update.md
-  api-clients/events/get-an-event: api-clients/events/get.md
-  api-clients/events/list-events: api-clients/events/list.md
+  api-clients/events/get-an-event: api/events/get.md
+  api-clients/events/list-events: api/events/list.md
   api-clients/locks/get-lock: api/locks/get.md
   api-clients/locks/list-locks: api/locks/list.md
   api-clients/locks/lock-a-lock: api/locks/lock_door.md
@@ -114,7 +114,7 @@ redirects:
   api-clients/noise-sensors/list-noise-thresholds: api/noise_sensors/noise_thresholds/list.md
   api-clients/noise-sensors/update-noise-threshold: api/noise_sensors/noise_thresholds/update.md
   api-clients/noise-sensors: api/noise_sensors/README.md
-  api-clients/thermostats/get-thermostat: api/thermostats/get.md
+  api-clients/thermostats/get-thermostat: api/thermostats
   api-clients/thermostats/list-thermostats: api/thermostats/list.md
   api-clients/thermostats/set-fan-mode: api/thermostats/set_fan_mode.md
   api-clients/thermostats/set-to-cool-mode: api/thermostats/cool.md
@@ -136,7 +136,7 @@ redirects:
   api-clients/workspaces/get-workspace: api/workspaces/get.md
   api-clients/workspaces/reset-workspace: api/workspaces/reset_sandbox.md
   api-clients/phones/create-a-sandbox-phone: api/phones/simulate/create_sandbox_phone.md
-  device-and-system-integration-guides/assa-abloy-credential-services-credential-manager-in-development: device-and-system-integration-guides/assa-abloy-credential-services-credential-manager/README.md
+  device-and-system-integration-guides/assa-abloy-credential-services-credential-manager-in-development: device-and-system-integration-guides/assa-abloy-vingcard-credential-services.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/README.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/README.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/README.md
@@ -183,13 +183,13 @@ redirects:
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/README.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/issuing-various-types-of-guest-mobile-credentials.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-joiner-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/issuing-various-types-of-guest-joiner-mobile-credentials.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/retrieving-guest-and-common-entrances: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/retrieving-guest-and-common-entrances.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/updating-guest-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/updating-guest-mobile-credentials.md
-  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/revoking-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/credential-types/revoking-mobile-credentials.md
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-joiner-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/retrieving-guest-and-common-entrances: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/updating-guest-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
+  device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/revoking-mobile-credentials: device-and-system-integration-guides/assa-abloy-visionline-access-control-system
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/mobile-credential-related-properties: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/mobile-credential-related-properties.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/common-use-cases: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/common-use-cases.md
   device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-android-mobile-access-sdk-development: device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development.md

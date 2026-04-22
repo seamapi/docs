@@ -19,6 +19,7 @@
     "validate-paths": "tsx codegen/validate-paths.ts",
     "validate-links": "tsx codegen/validate-links.ts",
     "validate-orphan-pages": "tsx codegen/validate-orphan-pages.ts",
+    "validate-redirects": "tsx codegen/validate-redirects.ts",
     "typecheck": "tsc",
     "lint": "eslint .",
     "postlint": "prettier --check --ignore-path .prettierignore .",
