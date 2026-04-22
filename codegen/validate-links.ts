@@ -1,7 +1,16 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 
-import { baseUrl, siteSections, siteUrlPrefix } from './lib/config.js'
+import {
+  baseUrl,
+  type SiteSection,
+  siteSections,
+  siteUrlPrefix,
+} from './lib/config.js'
+
+function findSiteSection(filePath: string): SiteSection | undefined {
+  return siteSections.find(({ root }) => filePath.startsWith(root + '/'))
+}
 
 const absoluteUrlPattern = new RegExp(
   `${baseUrl.replaceAll('.', '\\.')}[^)\\s]+`,
@@ -97,6 +106,23 @@ function checkRelativeLink(file: string, line: number, rawLink: string): void {
       line,
       url: rawLink,
       reason: `File not found: ${resolved}`,
+    })
+    return
+  }
+
+  // Check that relative links don't cross site section boundaries
+  const sourceSection = findSiteSection(file)
+  const targetSection = findSiteSection(resolved)
+  if (
+    sourceSection != null &&
+    targetSection != null &&
+    sourceSection.root !== targetSection.root
+  ) {
+    brokenLinks.push({
+      file,
+      line,
+      url: rawLink,
+      reason: `Cross-section relative link: "${sourceSection.name}" -> "${targetSection.name}". Use an absolute URL instead`,
     })
   }
 }
