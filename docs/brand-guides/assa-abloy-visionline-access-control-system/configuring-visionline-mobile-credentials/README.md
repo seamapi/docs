@@ -10,7 +10,7 @@ This guide describes how to issue guest and staff mobile credentials on the Visi
 
 ## Access Permission Assignment for Visionline
 
-Visionline is a [credential-based access control system](../../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-access-control-systems). That is, you create ACS users and credentials. Within these credentials, you specify the set of entrances to which you want to grant access and the schedules for this access.
+Visionline is a [credential-based access control system](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#credential-based-access-control-systems). That is, you create ACS users and credentials. Within these credentials, you specify the set of entrances to which you want to grant access and the schedules for this access.
 
 <figure><img src="../../../.gitbook/assets/acs-arch-credential-based.png" alt="Seam resource relationships for a credential-based ACS"><figcaption><p>Seam resource relationships for a credential-based ACS</p></figcaption></figure>
 
@@ -30,8 +30,8 @@ Seam currently only supports issuing guest mobile credentials and plastic cards.
 
 Use the following basic process to grant access in a Visionline ACS:
 
-1. Set up the mobile user account by creating a [user identity](../../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity).
-2. Associate the user identity with an [ACS user](../../../capability-guides/access-systems/#what-is-a-user).
+1. Set up the mobile user account by creating a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+2. Associate the user identity with an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems#what-is-a-user).
 3. Gather the entrances to which the credential should have access.
 4. Create the [guest](./#issuing-guest-mobile-credentials) mobile credential.
 

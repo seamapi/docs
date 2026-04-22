@@ -22,7 +22,7 @@ Some device providers require you to configure the device's timezone before crea
 
 **Providers requiring timezone configuration:**
 
-* **Ultraloq** — Must configure timezone using `/devices/report_provider_metadata` before creating time-bound access codes. See [Configuring Ultraloq Device Timezones](../../../../device-and-system-integration-guides/ultraloq-locks/configuring-ultraloq-device-timezones.md).
+* **Ultraloq** — Must configure timezone using `/devices/report_provider_metadata` before creating time-bound access codes. See [Configuring Ultraloq Device Timezones](https://docs.seam.co/latest/device-and-system-integration-guides/ultraloq-locks/configuring-ultraloq-device-timezones).
 
 {% hint style="info" %}
 Permanent access codes (codes without `starts_at` and `ends_at`) do not require timezone configuration, even on providers that require it for time-bound codes.

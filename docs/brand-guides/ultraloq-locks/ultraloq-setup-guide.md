@@ -15,14 +15,14 @@ To follow this guide, you need:
 * An Ultraloq account with at least one lock configured
 
 {% hint style="info" %}
-If you're testing the integration, you can use a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces) with test Ultraloq devices.
+If you're testing the integration, you can use a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) with test Ultraloq devices.
 {% endhint %}
 
 ***
 
 ## Step 1: Create a Connect Webview
 
-Create a [Connect Webview](../../core-concepts/connect-webviews/) to enable the Ultraloq device owner to authorize Seam to access their Ultraloq account.
+Create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to enable the Ultraloq device owner to authorize Seam to access their Ultraloq account.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -151,7 +151,7 @@ After authorization, the user is redirected to your `custom_redirect_url` with t
 
 ## Step 3: Verify Connection
 
-Wait for the Connect Webview status to change to `authorized`, indicating that the connection was successful. You can either poll the Connect Webview or use [webhooks](../../developer-tools/webhooks.md) to be notified when the status changes.
+Wait for the Connect Webview status to change to `authorized`, indicating that the connection was successful. You can either poll the Connect Webview or use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) to be notified when the status changes.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1436,8 +1436,8 @@ echo $device | jq '.device.warnings'
 
 * **[Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)** - Detailed guide on permanent and time-bound access codes
 * **[Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)** - Complete timezone configuration reference
-* **[Lock and Unlock Operations](../../capability-guides/smart-locks/lock-and-unlock.md)** - General smart lock control documentation
-* **[Access Codes Overview](../../capability-guides/smart-locks/access-codes/)** - Understanding access code management
+* **[Lock and Unlock Operations](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)** - General smart lock control documentation
+* **[Access Codes Overview](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)** - Understanding access code management
 
 ***
 

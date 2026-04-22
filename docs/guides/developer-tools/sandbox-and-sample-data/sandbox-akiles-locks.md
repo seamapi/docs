@@ -1,6 +1,6 @@
 # Sandbox Akiles Locks
 
-Use the following set of credentials to add virtual [Akiles locks](../../device-and-system-integration-guides/akiles-locks/) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [Akiles locks](https://docs.seam.co/latest/device-and-system-integration-guides/akiles-locks) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Email Address    | Password |
 | ---------------- | -------- |

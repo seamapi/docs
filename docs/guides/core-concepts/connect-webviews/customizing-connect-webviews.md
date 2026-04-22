@@ -48,42 +48,42 @@ When you create a Connect Webview, you can customize the providers—that is, th
 
 | Provider Name                                                                                                                          | Device Provider Key             |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| [2N](../../device-and-system-integration-guides/2n-intercom-systems/)                                                                  | `my_2n`                         |
-| [4SUITES](../../device-and-system-integration-guides/4suites-locks/)                                                                   | `four_suites`                   |
-| [Akiles](../../device-and-system-integration-guides/akiles-locks/)                                                                     | `akiles`                        |
+| [2N](https://docs.seam.co/latest/device-and-system-integration-guides/2n-intercom-systems)                                                                  | `my_2n`                         |
+| [4SUITES](https://docs.seam.co/latest/device-and-system-integration-guides/4suites-locks)                                                                   | `four_suites`                   |
+| [Akiles](https://docs.seam.co/latest/device-and-system-integration-guides/akiles-locks)                                                                     | `akiles`                        |
 | [Akuvox](https://akuvox.com/)                                                                                                          | `akuvox`                        |
-| [ASSA ABLOY Credential Service](../../device-and-system-integration-guides/assa-abloy-vingcard-credential-services.md)                                                                    | `assa_abloy_credential_service` |
-| [ASSA ABLOY Visionline Access Control System](../../device-and-system-integration-guides/assa-abloy-visionline-access-control-system/) | `visionline`                    |
-| [August Home](../../device-and-system-integration-guides/august-locks.md)                                                                                     | `august`                        |
-| [Avigilon Alta](../../device-and-system-integration-guides/avigilon-alta-access-system.md)                                              | `avigilon_alta`                 |
-| [Brivo](../../device-and-system-integration-guides/brivo-access/)                                                                      | `brivo`                         |
-| [ControlByWeb](../../device-and-system-integration-guides/get-started-with-controlbyweb-devices.md)                                     | `controlbyweb`                  |
+| [ASSA ABLOY Credential Service](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-vingcard-credential-services)                                                                    | `assa_abloy_credential_service` |
+| [ASSA ABLOY Visionline Access Control System](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system) | `visionline`                    |
+| [August Home](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks)                                                                                     | `august`                        |
+| [Avigilon Alta](https://docs.seam.co/latest/device-and-system-integration-guides/avigilon-alta-access-system)                                              | `avigilon_alta`                 |
+| [Brivo](https://docs.seam.co/latest/device-and-system-integration-guides/brivo-access)                                                                      | `brivo`                         |
+| [ControlByWeb](https://docs.seam.co/latest/device-and-system-integration-guides/get-started-with-controlbyweb-devices)                                     | `controlbyweb`                  |
 | [DoorKing](https://www.doorking.com/)                                                                                                  | `doorking`                      |
-| [Dormakaba Community](../../device-and-system-integration-guides/dormakaba-community-access-control-system/)                           | `dormakaba_community`           |
-| [Dormakaba Oracode](../../device-and-system-integration-guides/dormakaba-oracode-locks/)                                                | `dormakaba_oracode`             |
-| [ecobee](../../device-and-system-integration-guides/ecobee-thermostats.md)                                                              | `ecobee`                        |
+| [Dormakaba Community](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-community-access-control-system)                           | `dormakaba_community`           |
+| [Dormakaba Oracode](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks)                                                | `dormakaba_oracode`             |
+| [ecobee](https://docs.seam.co/latest/device-and-system-integration-guides/ecobee-thermostats)                                                              | `ecobee`                        |
 | [Genie Aladdin Connect](https://www.geniecompany.com/aladdin-connect-by-genie)                                                         | `genie`                         |
-| [Honeywell Resideo](../../device-and-system-integration-guides/honeywell-thermostats/)                                                 | `honeywell_resideo`             |
-| [igloohome](../../device-and-system-integration-guides/igloohome-locks/)                                                                | `igloohome`                     |
-| [Kwikset](../../device-and-system-integration-guides/kwikset-locks.md)                                                                                        | `kwikset`                       |
-| [Latch](../../device-and-system-integration-guides/latch-access-control-system/)                                                       | `latch`                         |
+| [Honeywell Resideo](https://docs.seam.co/latest/device-and-system-integration-guides/honeywell-thermostats)                                                 | `honeywell_resideo`             |
+| [igloohome](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks)                                                                | `igloohome`                     |
+| [Kwikset](https://docs.seam.co/latest/device-and-system-integration-guides/kwikset-locks)                                                                                        | `kwikset`                       |
+| [Latch](https://docs.seam.co/latest/device-and-system-integration-guides/latch-access-control-system)                                                       | `latch`                         |
 | [Linear](https://linear-solutions.com/)                                                                                                | `linear`                        |
-| [Lockly](../../device-and-system-integration-guides/lockly-locks/)                                                                     | `lockly`                        |
-| [Minut](../../device-and-system-integration-guides/minut-sensors.md)                                                                    | `minut`                         |
-| [Nest](../../device-and-system-integration-guides/google-nest-thermostats/)                                                             | `google_nest`                   |
-| [NoiseAware](../../device-and-system-integration-guides/noiseaware-sensors.md)                                                                                | `noiseaware`                    |
-| [Nuki](../../device-and-system-integration-guides/nuki-locks.md)                                                                        | `nuki`                          |
-| [PTI Storlogix Cloud](../../device-and-system-integration-guides/pti-storlogix-cloud.md)                                                | `pti`                           |
-| [Salto KS Access System](../../device-and-system-integration-guides/salto-ks-access-control-system/)                                   | `salto_ks`                      |
-| [Salto KS Locks](../../device-and-system-integration-guides/salto-locks.md)                                                                                   | `salto_ks`                      |
-| [Salto ProAccess Space Access System](../../device-and-system-integration-guides/salto-proaccess-space-access-system/)                 | `salto_space`                   |
-| [Schlage](../../device-and-system-integration-guides/schlage-locks/)                                                                   | `schlage`                       |
-| [Sensi](../../device-and-system-integration-guides/sensi-thermostats/)                                                                 | `sensi`                         |
-| [SmartThings](../../device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)  | `smartthings`                   |
-| [Tedee](../../device-and-system-integration-guides/tedee-locks/)                                                                       | `tedee`                         |
-| [TTLock](../../device-and-system-integration-guides/ttlock-locks.md)                                                                    | `ttlock`                        |
-| [Wyze](../../device-and-system-integration-guides/wyze-locks.md)                                                                        | `wyze`                          |
-| [Yale](../../device-and-system-integration-guides/yale-locks.md)                                                                        | `yale`                          |
+| [Lockly](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks)                                                                     | `lockly`                        |
+| [Minut](https://docs.seam.co/latest/device-and-system-integration-guides/minut-sensors)                                                                    | `minut`                         |
+| [Nest](https://docs.seam.co/latest/device-and-system-integration-guides/google-nest-thermostats)                                                             | `google_nest`                   |
+| [NoiseAware](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors)                                                                                | `noiseaware`                    |
+| [Nuki](https://docs.seam.co/latest/device-and-system-integration-guides/nuki-locks)                                                                        | `nuki`                          |
+| [PTI Storlogix Cloud](https://docs.seam.co/latest/device-and-system-integration-guides/pti-storlogix-cloud)                                                | `pti`                           |
+| [Salto KS Access System](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system)                                   | `salto_ks`                      |
+| [Salto KS Locks](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks)                                                                                   | `salto_ks`                      |
+| [Salto ProAccess Space Access System](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system)                 | `salto_space`                   |
+| [Schlage](https://docs.seam.co/latest/device-and-system-integration-guides/schlage-locks)                                                                   | `schlage`                       |
+| [Sensi](https://docs.seam.co/latest/device-and-system-integration-guides/sensi-thermostats)                                                                 | `sensi`                         |
+| [SmartThings](https://docs.seam.co/latest/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks)  | `smartthings`                   |
+| [Tedee](https://docs.seam.co/latest/device-and-system-integration-guides/tedee-locks)                                                                       | `tedee`                         |
+| [TTLock](https://docs.seam.co/latest/device-and-system-integration-guides/ttlock-locks)                                                                    | `ttlock`                        |
+| [Wyze](https://docs.seam.co/latest/device-and-system-integration-guides/wyze-locks)                                                                        | `wyze`                          |
+| [Yale](https://docs.seam.co/latest/device-and-system-integration-guides/yale-locks)                                                                        | `yale`                          |
 
 To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](https://docs.seam.co/latest/api/devices/list_device_providers) method to learn about each provider. The information that this method returns for each provider includes a set of [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.
 

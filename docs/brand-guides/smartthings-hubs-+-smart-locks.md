@@ -22,14 +22,14 @@ For detailed information about the SmartThings hubs that Seam supports, see our 
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md) on paired smart locks that support this feature
-* [Programming access codes](../capability-guides/smart-locks/access-codes/) on paired smart locks that support this feature
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock) on paired smart locks that support this feature
+* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on paired smart locks that support this feature
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their August devices to Seam, include the `smartthings` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their August devices to Seam, include the `smartthings` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -39,7 +39,7 @@ To control SmartThings-connected devices using Seam, you must prompt owners of t
 
 1. Create an account in the [SmartThings app](https://www.samsung.com/us/support/owners/app/smartthings) if you have not done so already.
 2. Follow [these instructions](https://www.samsung.com/ca/support/mobile-devices/smartthings-how-to-set-up-your-hub/) to pair your devices to the SmartThings hub.
-3. Note your login credentials for the SmartThings app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+3. Note your login credentials for the SmartThings app, and use these credentials to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
 
 ***
 

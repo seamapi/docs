@@ -26,15 +26,15 @@ For detailed information about the Brivo-connected devices that Seam supports, s
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../../capability-guides/smart-locks/access-codes/) for readers and locks that have a keypad
-* [Managing access systems](../../capability-guides/access-systems/)
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)
+* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) for readers and locks that have a keypad
+* [Managing access systems](https://docs.seam.co/latest/capability-guides/access-systems)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Brivo Access platform and devices to Seam, include the `brivo` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables you to connect your Brivo Access platform and devices to Seam, include the `brivo` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 

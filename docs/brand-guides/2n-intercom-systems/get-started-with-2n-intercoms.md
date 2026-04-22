@@ -70,7 +70,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link My2N Account with Seam
 
-To control your 2N intercom via the Seam API, you must first authorize your Seam workspace against your My2N account. To do so, Seam provides [Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your 2N intercom.
+To control your 2N intercom via the Seam API, you must first authorize your Seam workspace against your My2N account. To do so, Seam provides [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your 2N intercom.
 
 #### Request a Connect Webview
 
@@ -141,7 +141,7 @@ echo json_encode($webview)
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](../../developer-tools/sandbox-and-sample-data/2n-intercoms-sample-data.md) credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the My2N [sandbox test account](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data/2n-intercoms-sample-data) credentials below:
 
 * **email:** jane@example.com
 * **password:** 1234
@@ -381,7 +381,7 @@ $seam->locks->lock_door($lock->device_id);
 
 2N devices have a directory with residents. These residents can be assigned PIN codes to unlock the door.
 
-Seam maps these residents to [access codes](../../capability-guides/smart-locks/access-codes/) and allows you to create and manage them through the Seam API.
+Seam maps these residents to [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) and allows you to create and manage them through the Seam API.
 
 \{% tabs %\} \{% tab title="Python" %\}
 
@@ -556,7 +556,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
 * [Minut Getting Started Guide](../get-started-with-minut-sensors.md)
-* [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../../core-concepts/overview.md)
+* [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

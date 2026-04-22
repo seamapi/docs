@@ -40,7 +40,7 @@ Seam enables you to manage your ACS in a logical, efficient manner.
 
 Seam's universal API provides the flexibility to manage a variety of [access control systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md), each of which may have manufacturer-specific differences. For example, depending on your ACS, you configure access permissions by [assigning ACS users to access groups](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems) or by [specifying access permissions for each ACS user or credential](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-access-control-systems).
 
-For details specific to your access control system, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+For details specific to your access control system, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
 
 ***
 

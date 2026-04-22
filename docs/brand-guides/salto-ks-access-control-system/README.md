@@ -16,7 +16,7 @@ The Seam integration for Salto KS enables you to create ACS users and assign acc
 
 ## Salto KS Resources
 
-The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto KS ACS in a logical, efficient manner. Salto KS is an [access group-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create ACS users](../../capability-guides/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access. You can also configure access schedules for ACS users.
+The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto KS ACS in a logical, efficient manner. Salto KS is an [access group-based ACS](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#access-group-based-access-control-systems), so you [create ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access. You can also configure access schedules for ACS users.
 
 The following diagram shows the Seam resources for a Salto KS ACS and the relationships between these resources:
 
@@ -30,9 +30,9 @@ For more information about managing your Salto KS ACS through Seam, see the foll
 
 * [Programming Salto KS PIN Code Credentials](programming-code-based-salto-ks-credentials.md)
 * [Programming Salto KS Mobile Credentials](programming-salto-ks-mobile-credentials.md)
-* [Access Group-Based Access Control Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
-* [Access Control Systems](../../capability-guides/access-systems/)
-* [Mobile Access](../../capability-guides/mobile-access/)
+* [Access Group-Based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#access-group-based-access-control-systems)
+* [Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems)
+* [Mobile Access](https://docs.seam.co/latest/capability-guides/mobile-access)
 
 ***
 
@@ -46,15 +46,15 @@ This integration supports all Salto locks connected to the Salto KS ACS.
 
 We support the following features:
 
-* [Managing access systems](../../capability-guides/access-systems/)
+* [Managing access systems](https://docs.seam.co/latest/capability-guides/access-systems)
 * [Issuing code-based credentials](programming-code-based-salto-ks-credentials.md)
-* [Issuing mobile access credentials](../../capability-guides/mobile-access/)
+* [Issuing mobile access credentials](https://docs.seam.co/latest/capability-guides/mobile-access)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Salto KS ACS to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables you to connect your Salto KS ACS to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -113,7 +113,7 @@ Unit door locks within a Salto KS access system must first be woken up, and then
 
 ## Troubleshooting
 
-For information about Salto KS ACS-related errors, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
+For information about Salto KS ACS-related errors, see [Troubleshooting Your ACS](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system).
 
 ***
 

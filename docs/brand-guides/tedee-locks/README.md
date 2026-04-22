@@ -28,14 +28,14 @@ For detailed information about the Tedee devices that Seam supports, see our [Te
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../../capability-guides/smart-locks/access-codes/) on locks and openers that have an installed Tedee keypad
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)
+* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on locks and openers that have an installed Tedee keypad
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `tedee` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their Tedee devices to Seam, include the `tedee` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -51,7 +51,7 @@ You must add your Tedee devices through the Tedee mobile app. You cannot add dev
 {% endhint %}
 
 3. Note your login credentials for the Tedee app.
-4. Use your credentials for the Tedee app to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
+4. Use your credentials for the Tedee app to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
 
 ***
 

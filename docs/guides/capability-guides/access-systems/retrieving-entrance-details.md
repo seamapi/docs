@@ -12,7 +12,7 @@ In an ACS, an entrance is a secured door, gate, zone, or other method of entry. 
 
 ## List All Entrances
 
-You can [list all `acs_entrance` resources](https://docs.seam.co/latest/api/acs/entrances/list) in your workspace. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+You can [list all `acs_entrance` resources](https://docs.seam.co/latest/api/acs/entrances/list) in your workspace. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -159,7 +159,7 @@ seam.EntrancesAcs.List();
 
 ## List Entrances in an ACS
 
-To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filter in the [List Entrances](https://docs.seam.co/latest/api/acs/entrances/list) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filter in the [List Entrances](https://docs.seam.co/latest/api/acs/entrances/list) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -331,7 +331,7 @@ seam.acs.entrances.list_credentials_with_access(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```
@@ -368,7 +368,7 @@ curl -X 'GET' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -402,7 +402,7 @@ await seam.acs.entrances.list_credentials_with_access({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -447,7 +447,7 @@ $seam->acs->entrances->list_credentials_with_access(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -478,7 +478,7 @@ seam.EntrancesAcs.ListCredentialsWithAccess(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -509,7 +509,7 @@ To [list the entrances to which a specific credential grants access](https://doc
 
 ## Get an Entrance
 
-You can [get the details of a specific `acs_entrance`](https://docs.seam.co/latest/api/acs/entrances/get). Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+You can [get the details of a specific `acs_entrance`](https://docs.seam.co/latest/api/acs/entrances/get). Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 {% tabs %}
 {% tab title="Python" %}

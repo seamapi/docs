@@ -4,21 +4,21 @@ description: Learn how to create mobile credentials in the Salto KS ACS.
 
 # Programming Salto KS Mobile Credentials
 
-You can create mobile credentials that enable your mobile app users to unlock entrances in your [Salto KS ACS](./). For more information about Seam mobile keys, see [Mobile Access](../../capability-guides/mobile-access/).
+You can create mobile credentials that enable your mobile app users to unlock entrances in your [Salto KS ACS](./). For more information about Seam mobile keys, see [Mobile Access](https://docs.seam.co/latest/capability-guides/mobile-access).
 
 To use the Seam API to create mobile credentials for mobile app users in a Salto KS ACS:
 
 1.  Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
 
     Seam user identities enable you to match your own mobile app users to ACS users that you create using the Seam API.
-2. Create an [ACS user](../../capability-guides/access-systems/user-management.md) on the Salto KS ACS or assign an existing ACS user to the user identity.\
+2. Create an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) on the Salto KS ACS or assign an existing ACS user to the user identity.\
    The resources that you create for the ACS user are available under the associated user identity.
    * For Salto KS, you can specify the `access_schedule` for the ACS user. The `access_schedule` consists of `starts_at` and `ends_at` times. In this case, a Salto KS ACS user appears as "unsubscribed" in the ACS until the `starts_at` time. Once the start time arrives, Seam switches the ACS user to "subscribed," which activates their access.
-3. Assign the ACS user to one or more [access groups](../../capability-guides/access-systems/user-management/assigning-users-to-access-groups.md).
+3. Assign the ACS user to one or more [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
    * Each access group is preconfigured with the allowed entrances.
-4. Create an [ACS credential](../../capability-guides/access-systems/managing-credentials.md) to represent the mobile key.
+4. Create an [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to represent the mobile key.
    * Specify the ID of the ACS user.
-   * Set [`is_multi_phone_sync_credential`](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials) to `true`.
+   * Set [`is_multi_phone_sync_credential`](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials) to `true`.
    * Set the `access_method` to `mobile_key`.
 
 The following example walks you through this process:
@@ -472,10 +472,10 @@ echo json_encode($reservation_mobile_key, JSON_PRETTY_PRINT);
 To learn more about using the Seam API with your Salto KS ACS, see the following topics:
 
 * [Programming Code-Based Salto KS Credentials](programming-code-based-salto-ks-credentials.md)
-* [Access Control Systems](../../capability-guides/access-systems/)
-* [Credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-acs)
-* [Managing ACS Users](../../capability-guides/access-systems/user-management.md)
-* [Managing Credentials](../../capability-guides/access-systems/managing-credentials.md)
-* [Mobile Access](../../capability-guides/mobile-access/)
+* [Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems)
+* [Credential-based ACS](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#credential-based-acs)
+* [Managing ACS Users](https://docs.seam.co/latest/capability-guides/access-systems/user-management)
+* [Managing Credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials)
+* [Mobile Access](https://docs.seam.co/latest/capability-guides/mobile-access)
 * [Access Control Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference
 * [User Identities](https://docs.seam.co/latest/api/user_identities/) in the Seam API reference

@@ -24,17 +24,17 @@ For detailed information about the Sensi devices that Seam supports, see our [Se
 
 We support the following features:
 
-* [Configuring current thermostat settings](../../capability-guides/thermostats/configure-current-climate-settings.md)
-* [Creating and managing climate presets](../../capability-guides/thermostats/creating-and-managing-climate-presets/)
-* [Creating and managing thermostat schedules](../../capability-guides/thermostats/creating-and-managing-thermostat-schedules.md)
-* [Creating and managing thermostat weekly programs](../../capability-guides/thermostats/creating-and-managing-thermostat-programs.md)
-* [Setting and monitoring temperature thresholds](../../capability-guides/thermostats/setting-and-monitoring-temperature-thresholds.md)
+* [Configuring current thermostat settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings)
+* [Creating and managing climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets)
+* [Creating and managing thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules)
+* [Creating and managing thermostat weekly programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs)
+* [Setting and monitoring temperature thresholds](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Sensi devices to Seam, include the `sensi` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their Sensi devices to Seam, include the `sensi` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -46,7 +46,7 @@ To control Sensi devices using Seam, you must prompt owners of these devices to 
 2.  In the Sensi app, add your Sensi thermostats.
 
     The Sensi app walks you through the process of installing your Sensi thermostats and connecting them to Wi-Fi. For details, see the [Sensi installation manual](https://sensi.copeland.com/en-us/support/sensi-manuals) for your thermostat.
-3. Note your login credentials for the Sensi app, and use these credentials to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
+3. Note your login credentials for the Sensi app, and use these credentials to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
 
 {% hint style="info" %}
 Make sure that you're authenticating with the user to whom the devices are registered. Sensi devices can only be registered to a single user.
@@ -64,7 +64,7 @@ The Sensi API does not communicate the battery state of Sensi devices, so Seam c
 
 ### Heat-Cool Mode
 
-Some Sensi models do not support heat-cool mode, such as the Sensi Classic and Sensi One Touch thermostats. To check whether a thermostat supports heat-cool mode, [get the device](../../capability-guides/thermostats/retrieving-thermostats.md) and look for a `device.can_hvac_heat_cool` capability flag. For more information about thermostat-related capability flags, see [Thermostat Capabilities](../../capability-guides/thermostats/#thermostat-capabilities).
+Some Sensi models do not support heat-cool mode, such as the Sensi Classic and Sensi One Touch thermostats. To check whether a thermostat supports heat-cool mode, [get the device](https://docs.seam.co/latest/capability-guides/thermostats/retrieving-thermostats) and look for a `device.can_hvac_heat_cool` capability flag. For more information about thermostat-related capability flags, see [Thermostat Capabilities](https://docs.seam.co/latest/capability-guides/thermostats#thermostat-capabilities).
 
 ***
 

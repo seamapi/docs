@@ -73,7 +73,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Kwikset Account with Seam
 
-To control your Kwikset Halo lock via the Seam API, you must first authorize your Seam workspace against your Kwikset account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Kwikset Halo lock.
+To control your Kwikset Halo lock via the Seam API, you must first authorize your Seam workspace against your Kwikset account. To do so, Seam provides[ Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your Kwikset Halo lock.
 
 #### Request a Connect Webview
 
@@ -367,7 +367,7 @@ If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ show
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](../capability-guides/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
 
 **Access Code Constraints**
 
@@ -550,7 +550,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [August Getting Started Guide](get-started-with-august-locks.md)
 * [Schlage Getting Started Guide](schlage-locks/get-started-with-schlage-locks.md)
 * [SmartThings Getting Started Guide](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../core-concepts/overview.md)
+* [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

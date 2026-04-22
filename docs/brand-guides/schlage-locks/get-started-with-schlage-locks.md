@@ -65,7 +65,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Schlage Account with Seam
 
-To control your Schlage lock via the Seam API, you must first authorize your Seam workspace against your Schlage account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Schlage lock.
+To control your Schlage lock via the Seam API, you must first authorize your Seam workspace against your Schlage account. To do so, Seam provides[ Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your Schlage lock.
 
 #### Request a Connect Webview
 
@@ -323,7 +323,7 @@ puts updated_lock.properties.locked # false
 
 All Schlage wifi locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Schlage lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](../../capability-guides/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
 
 <div data-gb-custom-block data-tag="tabs">
 
@@ -474,8 +474,8 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Yale Getting Started Guide](../get-started-with-yale-locks.md)
 * [August Getting Started Guide](../get-started-with-august-locks.md)
 * [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../../core-concepts/overview.md)
+* [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co. If you would like help
 ````

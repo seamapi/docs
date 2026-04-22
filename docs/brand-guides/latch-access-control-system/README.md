@@ -8,7 +8,7 @@ description: Guide for using the Latch Access Control System with Seam
 
 ## Overview
 
-Seam integrates seamlessly with the [Latch](https://www.latch.com/) management platform. Property managers and owners use the Latch [access control system](../../capability-guides/access-systems/) (ACS) to control access across their properties. Latch enables them to manage who has access to which spaces and when, view access history, and set up and manage multiple users and guests.
+Seam integrates seamlessly with the [Latch](https://www.latch.com/) management platform. Property managers and owners use the Latch [access control system](https://docs.seam.co/latest/capability-guides/access-systems) (ACS) to control access across their properties. Latch enables them to manage who has access to which spaces and when, view access history, and set up and manage multiple users and guests.
 
 The Seam integration for Latch enables you to automate the creation of residents and the issuing of credentials to these residents. Within these credentials, you specify the entrances to which the residents have access and the access schedules.
 
@@ -18,7 +18,7 @@ Latch enables you to install wireless door locks and intercom systems in your bu
 
 ## Latch ACS Resources
 
-The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Latch ACS in a logical, efficient manner. Latch is a [credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-access-control-systems), so you [create ACS users](../../capability-guides/access-systems/user-management.md#create-an-acs-user) and then grant them access permissions using credentials. When you create a credential, you specify the ACS user to which to assign the credential, as well as the allowed entrances and the start and end times for the access schedule.
+The Seam ACS schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Latch ACS in a logical, efficient manner. Latch is a [credential-based ACS](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#credential-based-access-control-systems), so you [create ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management#create-an-acs-user) and then grant them access permissions using credentials. When you create a credential, you specify the ACS user to which to assign the credential, as well as the allowed entrances and the start and end times for the access schedule.
 
 The following diagram shows the Seam resources for a Latch ACS and the relationships between these resources:
 
@@ -32,9 +32,9 @@ For more information about managing your Latch ACS through Seam, see the followi
 
 * [Programming Code-Based Latch Credentials](programming-code-based-latch-credentials.md)
 * [Programming Latch ACS Mobile Credentials](programming-latch-acs-mobile-credentials.md)
-* [Credential-based ACS](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#credential-based-acs)
-* [Access Control Systems](../../capability-guides/access-systems/)
-* [Mobile Access](../../capability-guides/mobile-access/)
+* [Credential-based ACS](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#credential-based-acs)
+* [Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems)
+* [Mobile Access](https://docs.seam.co/latest/capability-guides/mobile-access)
 
 ***
 
@@ -48,14 +48,14 @@ This integration supports all wireless locks and readers connected to the Latch 
 
 We support the following features:
 
-* [Managing access systems](../../capability-guides/access-systems/)
-* [Issuing mobile access credentials](../../capability-guides/mobile-access/)
+* [Managing access systems](https://docs.seam.co/latest/capability-guides/access-systems)
+* [Issuing mobile access credentials](https://docs.seam.co/latest/capability-guides/mobile-access)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Latch ACS to Seam, include the `latch` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables you to connect your Latch ACS to Seam, include the `latch` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -70,7 +70,7 @@ Note the following restrictions on using Seam to manage your Latch ACS:
 
 ## Troubleshooting
 
-For information about Latch ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
+For information about Latch ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system).
 
 ***
 

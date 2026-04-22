@@ -18,14 +18,14 @@ For detailed information about the TTLock devices that Seam supports, see our [T
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../capability-guides/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)
+* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on door locks and card readers that have a PIN pad
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their TTLock devices to Seam, include the `ttlock` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their TTLock devices to Seam, include the `ttlock` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -44,7 +44,7 @@ To control TTLock devices using Seam, you must prompt owners of these devices to
    This feature must be enabled to unlock a TTLock device. Note that if Seam detects that this feature is disabled, a warning is added to the device.\
    Follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) to turn on the Remote Unlock setting for each TTLock lock.
 5. Note your login credentials for the TTLock app.
-6. Use your credentials for the TTLock app to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+6. Use your credentials for the TTLock app to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
 
 ***
 
@@ -52,7 +52,7 @@ To control TTLock devices using Seam, you must prompt owners of these devices to
 
 ### Lock Not Appearing in Seam
 
-Your users must be the top administrator for each TTLock that they want to connect to Seam. That is, they must supply the credentials for the top administrator account when completing the [Connect Webview](../core-concepts/connect-webviews/) to connect their TTLocks to Seam.
+Your users must be the top administrator for each TTLock that they want to connect to Seam. That is, they must supply the credentials for the top administrator account when completing the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to connect their TTLocks to Seam.
 
 ### Lock Not Paired to Gateway Error
 

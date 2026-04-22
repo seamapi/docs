@@ -1194,6 +1194,6 @@ Now that you understand timezone configuration, you can:
 
 * **Create time-bound access codes:** See [Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)
 * **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide.md)
-* **Learn about access code constraints:** See [Understanding Code Constraints](../../capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints.md)
+* **Learn about access code constraints:** See [Understanding Code Constraints](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints)
 
 ***

@@ -10,7 +10,7 @@ Seam's Visionline ACS integration enables you to create the following two types 
 * Mobile apps that issue Visionline mobile keys
 
 {% hint style="info" %}
-For information about Seam mobile keys, see [Mobile Access](../../../capability-guides/mobile-access/).
+For information about Seam mobile keys, see [Mobile Access](https://docs.seam.co/latest/capability-guides/mobile-access).
 {% endhint %}
 
 Integrating Visionline with Seam consists of a development phase and a production phase. The setup processes and requirements differ between these two phases.

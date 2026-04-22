@@ -52,7 +52,7 @@ We support the following features:
 
 ## Connecting Lockly to Seam
 
-To enable your users to [connect Lockly devices through Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews), include the Lockly provider:
+To enable your users to [connect Lockly devices through Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews), include the Lockly provider:
 
 ```json
 {

@@ -6,8 +6,8 @@ description: Learn how to create a card-based credential for Visionline.
 
 To create a credential to encode onto a plastic key card for a Visionline ACS:
 
-1. Set up an [ACS user](../../capability-guides/access-systems/user-management.md).
-2.  Create a [credential](../../capability-guides/access-systems/managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card` and the appropriate [`visionline_metadata`](mobile-credential-related-properties.md#acs_credential.visionline_metadata-properties), such as the card format.
+1. Set up an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+2.  Create a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#create-a-card-based-credential) with the `access_method` set to `card` and the appropriate [`visionline_metadata`](mobile-credential-related-properties.md#acs_credential.visionline_metadata-properties), such as the card format.
 
     * To issue the first credential for a reservation—that is, an "override" credential—make sure to set `visionline_metadata.override` to `true`.
     * To issue subsequent credentials for a reservation, set the `visionline_metadata.joiner_acs_credential_ids`.
@@ -15,11 +15,11 @@ To create a credential to encode onto a plastic key card for a Visionline ACS:
     For more information about Visionline credential types, see [Credential Types for Visionline](configuring-visionline-mobile-credentials/#credential-types-for-visionline) and [Guest Mobile Credential Types](configuring-visionline-mobile-credentials/#guest-mobile-credential-types).
 3. Encode the credential onto a plastic card.
    1. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential to the card.\
-      See [Retrieve Encoders](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
+      See [Retrieve Encoders](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials#id-2.-retrieve-encoders).
    2. Use the `/acs/encoders/encode_credential` endpoint to encode the credential onto the card, using the encoder that you have chosen.\
-      See [Encode the Card](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-3.-encode-the-card).
-   3. Confirm that the card was encoded successfully using polling or a [webhook](../../developer-tools/webhooks.md).\
-      See [Confirm Successful Encoding](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md#common-encoding-errors).
+      See [Encode the Card](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials#id-3.-encode-the-card).
+   3. Confirm that the card was encoded successfully using polling or a [webhook](https://docs.seam.co/latest/developer-tools/webhooks).\
+      See [Confirm Successful Encoding](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials#common-encoding-errors).
 
 The following example shows how to create a card-based override credential for Visionline and encode it onto a plastic card:
 
@@ -476,4 +476,4 @@ $seam->action_attempts->get(
 
 ## Next Steps
 
-You can use an encoder to scan a plastic key card to read its encoded parameters. The scan result includes the card's properties, such as its card number, serial number, and other useful details. For more information, see [Scanning Encoded Cards](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards.md).
+You can use an encoder to scan a plastic key card to read its encoded parameters. The scan result includes the card's properties, such as its card number, serial number, and other useful details. For more information, see [Scanning Encoded Cards](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards).

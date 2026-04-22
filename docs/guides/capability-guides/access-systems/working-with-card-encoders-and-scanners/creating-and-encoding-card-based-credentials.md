@@ -13,7 +13,7 @@ Some access control systems require encoding a plastic card with the data necess
 This process consists of the following basic steps:
 
 1. Set up an [access system user](../../../capability-guides/access-systems/user-management.md) and create a [credential](../managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card`.\
-   See the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system provider to learn specific requirements, such as configuring entrances and access schedules.\
+   See the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system provider to learn specific requirements, such as configuring entrances and access schedules.\
    See [Set Up an Access System User and Card Credential](creating-and-encoding-card-based-credentials.md#id-1.-set-up-an-access-syseuser-and-card-credential).
 2. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential onto the card.\
    See [Retrieve Encoders](creating-and-encoding-card-based-credentials.md#id-2.-retrieve-encoders).
@@ -31,7 +31,7 @@ Once you have written a credential to a card, you cannot reuse the credential fo
 This example shows how to create an access system user and card-based credential. Note that the `is_issued` property of the resulting credential is `false`, which means that the credential is ready to be written to a card and has not yet been used to encode a card.
 
 {% hint style="info" %}
-Depending on your specific access control system, creating an access system user or credential may require additional parameters. For details, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system.
+Depending on your specific access control system, creating an access system user or credential may require additional parameters. For details, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.
 {% endhint %}
 
 {% tabs %}

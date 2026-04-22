@@ -851,8 +851,8 @@ For complete API documentation, see:
 ## Next Steps
 
 * **Learn about timezone configuration:** See [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)
-* **Understand code constraints:** See [Understanding Code Constraints](../../capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints.md)
+* **Understand code constraints:** See [Understanding Code Constraints](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints)
 * **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide.md)
-* **Explore access code webhooks:** See [Webhooks](../../developer-tools/webhooks.md)
+* **Explore access code webhooks:** See [Webhooks](https://docs.seam.co/latest/developer-tools/webhooks)
 
 ***

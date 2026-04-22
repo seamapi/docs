@@ -12,13 +12,13 @@ description: Guide for using the Salto ProAccess Space Access System with Seam
 
 The Seam integration for Salto Space enables you to create access system users and assign access permissions to them. In the Salto Space model, you assign users to access groups that grant access to specific sets of entrances. Then, you create credentials to define the access mechanisms for the users' access grants.
 
-This integration requires [Seam Bridge](../../capability-guides/seam-bridge.md) to connect the on-premises Salto Space access system with Seam.
+This integration requires [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) to connect the on-premises Salto Space access system with Seam.
 
 ***
 
 ## Salto Space Resources
 
-The Seam access system schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto Space access system in a logical, efficient manner. Salto Space is an [access group-based access system](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems), so you [create access system users](../../capability-guides/access-systems/user-management.md#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access.
+The Seam access system schema consists of a series of resources that interact intuitively, enabling you to use the Seam API to manage your Salto Space access system in a logical, efficient manner. Salto Space is an [access group-based access system](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#access-group-based-access-control-systems), so you [create access system users](https://docs.seam.co/latest/capability-guides/access-systems/user-management#create-an-acs-user) and then assign them to access groups to specify the entrances to which these users have access.
 
 The following diagram shows the Seam resources for a Salto Space access system and the relationships between these resources:
 
@@ -32,9 +32,9 @@ For more information about managing your Salto Space access system through Seam,
 
 * [Programming Salto Space Card-based Credentials](programming-salto-space-card-based-credentials.md)
 * [Programming Salto Space Mobile Credentials](programming-salto-space-mobile-credentials.md)
-* [Access Group-Based Access Systems](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-group-based-access-control-systems)
-* [Access Systems](../../capability-guides/access-systems/)
-* [Mobile Access](../../capability-guides/mobile-access/)
+* [Access Group-Based Access Systems](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#access-group-based-access-control-systems)
+* [Access Systems](https://docs.seam.co/latest/capability-guides/access-systems)
+* [Mobile Access](https://docs.seam.co/latest/capability-guides/mobile-access)
 
 ***
 
@@ -48,15 +48,15 @@ This integration supports all Salto locks connected to the Salto Space ACS.
 
 We support the following features:
 
-* [Managing access systems](../../capability-guides/access-systems/)
+* [Managing access systems](https://docs.seam.co/latest/capability-guides/access-systems)
 * [Issuing card-based credentials](programming-salto-space-card-based-credentials.md)
-* [Issuing mobile access credentials](../../capability-guides/mobile-access/)
+* [Issuing mobile access credentials](https://docs.seam.co/latest/capability-guides/mobile-access)
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables you to connect your Salto Space access system to Seam, include the `salto_space` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables you to connect your Salto Space access system to Seam, include the `salto_space` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -85,7 +85,7 @@ To enable or disable far opening:
 
 ## Troubleshooting
 
-For information about Salto Space access system-related errors, see [Troubleshooting Your Access System](../../capability-guides/access-systems/troubleshooting-your-access-control-system.md).
+For information about Salto Space access system-related errors, see [Troubleshooting Your Access System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system).
 
 ***
 

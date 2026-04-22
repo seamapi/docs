@@ -64,12 +64,12 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 {% hint style="info" %}
-This guide uses a sandbox [workspace](../../core-concepts/workspaces/). You can only connect virtual devices to a sandbox workspace. If you need to connect real Oracode devices, use a non-sandbox workspace and API key.
+This guide uses a sandbox [workspace](https://docs.seam.co/latest/core-concepts/workspaces). You can only connect virtual devices to a sandbox workspace. If you need to connect real Oracode devices, use a non-sandbox workspace and API key.
 {% endhint %}
 
 ## 2 — Link Your dormakaba Oracode Account with Seam
 
-To control your dormakaba Oracode locks using the Seam API, the owner or manager of these locks must first authorize your Seam workspace to access their dormakaba Oracode account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/), which are pre-built UX flows that walk the device owner or manager through authorizing your application to control Oracode locks.
+To control your dormakaba Oracode locks using the Seam API, the owner or manager of these locks must first authorize your Seam workspace to access their dormakaba Oracode account. To do so, Seam provides[ Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews), which are pre-built UX flows that walk the device owner or manager through authorizing your application to control Oracode locks.
 
 {% hint style="info" %}
 This guide discusses using a Seam sandbox workspace with virtual devices. However, to connect real devices to Seam, some manufacturers may require additional prerequisite setup steps. For dormakaba Oracode-specific instructions, see the [dormakaba Oracode device integration guide](./README.md#setup-instructions).
@@ -140,7 +140,7 @@ $webview = $seam->connect_webviews->create(
 
 #### Authorize Your Workspace
 
-Navigate to the URL that the Connect Webview object returned. Because you are using a sandbox workspace, complete the login flow by entering the following dormakaba Oracode [sandbox test account ](../../developer-tools/sandbox-and-sample-data/dormakaba-oracode-sample-data.md)credentials:
+Navigate to the URL that the Connect Webview object returned. Because you are using a sandbox workspace, complete the login flow by entering the following dormakaba Oracode [sandbox test account ](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data/dormakaba-oracode-sample-data)credentials:
 
 * **username:** jane
 * **site:** Ocean Beach Vacations
@@ -258,7 +258,7 @@ In addition, if you'd like to explore other aspects of Seam, check out the follo
 * [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](../get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Configuring webhooks](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../../core-concepts/overview.md)
+* [Configuring webhooks](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

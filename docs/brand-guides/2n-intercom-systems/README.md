@@ -44,7 +44,7 @@ The setup guide covers:
 
 To enable 2N device connections in your app’s Connect Webview, add the provider key `my_2n` to your `accepted_providers` list.
 
-For more details, see [Customize Brands in Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews)![Attachment.tiff](file:///Attachment.tiff).
+For more details, see [Customize Brands in Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews)![Attachment.tiff](file:///Attachment.tiff).
 
 ***
 

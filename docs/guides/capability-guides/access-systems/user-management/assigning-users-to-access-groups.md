@@ -9,7 +9,7 @@ description: >-
 Some ACSs use access groups, which are sets of ACS users, combined with sets of permissions. These permissions include both the set of areas or assets that the ACS users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each ACS user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of ACS users, especially in bigger organizations or complexes.
 
 {% hint style="info" %}
-To learn whether your ACS supports access groups, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+To learn whether your ACS supports access groups, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
 {% endhint %}
 
 This guide explains how to grant access permissions to ACS users by adding them to the appropriate access groups.

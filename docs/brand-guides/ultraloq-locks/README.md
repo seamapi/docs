@@ -69,7 +69,7 @@ For complete instructions, see [Configuring Ultraloq Device Timezones](configuri
 
 ## Connecting Ultraloq to Seam
 
-To enable your users to [connect Ultraloq devices through Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews), include the Ultraloq provider:
+To enable your users to [connect Ultraloq devices through Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews), include the Ultraloq provider:
 
 ```json
 {

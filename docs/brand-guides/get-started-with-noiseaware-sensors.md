@@ -66,7 +66,7 @@ This guide uses a Sandbox Workspace. Only virtual activity zones can be connecte
 
 ## 2. Link NoiseAware Account with Seam
 
-To control your NoiseAware device via the Seam API, you must first authorize your Seam workspace against your NoiseAware account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your NoiseAware device.
+To control your NoiseAware device via the Seam API, you must first authorize your Seam workspace against your NoiseAware account. To do so, Seam provides[ Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your NoiseAware device.
 
 ### Create a Connect Webview
 
@@ -148,7 +148,7 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 
 ### Get the New Webview
 
-After you complete the login above, you'll get an event for [`connected_account.created`](https://docs.seam.co/latest/api/events/)if you set up a [webhook handler](../developer-tools/webhooks.md). Otherwise you can just poll for the webview until it's status changes, as shown below:
+After you complete the login above, you'll get an event for [`connected_account.created`](https://docs.seam.co/latest/api/events/)if you set up a [webhook handler](https://docs.seam.co/latest/developer-tools/webhooks). Otherwise you can just poll for the webview until it's status changes, as shown below:
 
 {% tabs %}
 {% tab title="Python" %}
@@ -327,7 +327,7 @@ echo json_encode($device[0]);
 
 NoiseAware users can define noise thresholds at which noise alerts are sent.
 
-You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](../developer-tools/webhooks.md). You can also [poll for events](https://docs.seam.co/latest/api/events/list).
+You'll get an event for `noise_threshold.noise_threshold_triggered` when you set up a [webhook handler](https://docs.seam.co/latest/developer-tools/webhooks). You can also [poll for events](https://docs.seam.co/latest/api/events/list).
 
 {% hint style="info" %}
 NoiseAware has three distinct noise alerts: `newNoise`, `continuedNoise`, and `resolvedNoise`. It is essential to keep in mind that Seam will solely trigger the `noise_threshold.noise_threshold_triggered` event for `newNoise`.

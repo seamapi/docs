@@ -33,7 +33,7 @@ Depending on the ACS and the type of credential you are issuing, you can also sp
 * Manufacturer-specific data.
 
 {% hint style="info" %}
-Make sure to note any manufacturer-specific metadata and restrictions. For details, see the applicable [device or system integration guide](../../device-and-system-integration-guides/overview.md).
+Make sure to note any manufacturer-specific metadata and restrictions. For details, see the applicable [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides).
 {% endhint %}
 
 The response includes the `acs_credential_id` of the newly-created credential, the `acs_user_id` associated with the credential, and additional attributes of the credential.
@@ -197,7 +197,7 @@ seam.CredentialsAcs.Create(
 
 ### Create a Card-based Credential
 
-To create a plastic key card-based credential, set the `access_method` to `card`. Once you've created a credential, some access control systems require you to encode the card with the credential. To learn whether your ACS requires card encoding, see the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For card encoding instructions, see [Creating and Encoding Card-based Credentials](working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md).
+To create a plastic key card-based credential, set the `access_method` to `card`. Once you've created a credential, some access control systems require you to encode the card with the credential. To learn whether your ACS requires card encoding, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS. For card encoding instructions, see [Creating and Encoding Card-based Credentials](working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -345,14 +345,14 @@ seam.CredentialsAcs.Create(
 
 ### Create a Seam Mobile Key
 
-Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../mobile-access/) and [Issuing Mobile Credentials from an Access Control System](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md).
+Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../mobile-access/) and [Issuing Mobile Credentials from an Access Control System](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md).
 
 {% tabs %}
 {% tab title="Python" %}
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```python
@@ -374,7 +374,7 @@ seam.acs.credentials.create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```
@@ -392,7 +392,7 @@ AcsCredential(
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```bash
@@ -419,7 +419,7 @@ curl -X 'POST' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -440,7 +440,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```javascript
@@ -462,7 +462,7 @@ await seam.acs.credentials.create({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -494,7 +494,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```php
@@ -516,7 +516,7 @@ $seam->acs->credentials->create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -534,7 +534,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 **Request:**
 
 {% hint style="info" %}
-This request contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This request contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```csharp
@@ -557,7 +557,7 @@ seam.CredentialsAcs.Create(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -598,7 +598,7 @@ seam.acs.credentials.list(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```
@@ -631,7 +631,7 @@ curl -X 'GET' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -661,7 +661,7 @@ await seam.acs.credentials.list({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -702,7 +702,7 @@ $seam->acs->credentials->list(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -729,7 +729,7 @@ seam.CredentialsAcs.List(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -763,7 +763,7 @@ seam.acs.credentials.list(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```
@@ -796,7 +796,7 @@ curl -X 'GET' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -826,7 +826,7 @@ await seam.acs.credentials.list({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -867,7 +867,7 @@ $seam->acs->credentials->list(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -894,7 +894,7 @@ seam.CredentialsAcs.List(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -930,7 +930,7 @@ seam.acs.credentials.get(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```
@@ -960,7 +960,7 @@ curl -X 'POST' \
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -989,7 +989,7 @@ await seam.acs.credentials.get({
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```json
@@ -1029,7 +1029,7 @@ $seam->acs->credentials->get(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```
@@ -1055,7 +1055,7 @@ seam.CredentialsAcs.Get(
 **Response:**
 
 {% hint style="info" %}
-This response contains manufacturer-specific metadata that may vary by [manufacturer](../../device-and-system-integration-guides/overview.md#access-control-systems).
+This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
 ```

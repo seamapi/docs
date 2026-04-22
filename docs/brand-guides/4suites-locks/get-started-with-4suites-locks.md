@@ -19,7 +19,7 @@ To learn more about other IoT device and system brands that Seam supports—such
 {% hint style="success" %}
 This guide shows you how to install a Seam SDK and then control your 4SUITES lock using the Seam API.
 
-Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../../core-concepts/seam-console/).
+Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](https://docs.seam.co/latest/core-concepts/seam-console/seam-online-cli), which you can access from directly within the [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console).
 
 :arrow\_forward: [Go to the Seam Console!](https://console.seam.co/)
 {% endhint %}
@@ -69,7 +69,7 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
 
-Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../../core-concepts/authentication/api-keys.md).
+Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](https://docs.seam.co/latest/core-concepts/seam-console#create-a-seam-account) to get your [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
 
 Then, export your API key as an environment variable.
 
@@ -78,21 +78,21 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
 {% hint style="info" %}
-This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real 4SUITES lock, use a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and API key.
+This guide uses a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real 4SUITES lock, use a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and API key.
 {% endhint %}
 
 ***
 
 ## Step 2: Link your 4SUITES account with Seam
 
-To control your 4SUITES lock using the Seam API, you must first authorize your Seam workspace to connect to your 4SUITES account. If your application needs to connect to your users' 4SUITES accounts, Seam provides fully-embedded, [customizable](../../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their 4SUITES locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their 4SUITES account.
+To control your 4SUITES lock using the Seam API, you must first authorize your Seam workspace to connect to your 4SUITES account. If your application needs to connect to your users' 4SUITES accounts, Seam provides fully-embedded, [customizable](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews) client-side [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their 4SUITES locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their 4SUITES account.
 
 In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox 4SUITES account.
 
 {% hint style="success" %}
 This guide shows you how to create a Connect Webview programmatically using the Seam API.
 
-The [Seam Console](../../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
+The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provides another easy way to connect devices to your Seam workspace.
 
 Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-4suites-locks.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
@@ -269,13 +269,13 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 
 In a web browser, go to the URL that the Connect Webview object returned.
 
-For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../../ui-components/overview/react-components/connect-account-button.md) within our suite of [Seam Components](../../ui-components/overview/) that help you build your device management flow.
+For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](https://docs.seam.co/latest/ui-components/overview/react-components/connect-account-button) within our suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test 4SUITES account. We provide [virtual devices](../../developer-tools/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test 4SUITES account. We provide [virtual devices](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [4SUITES sandbox account](../../developer-tools/sandbox-and-sample-data/4suites-locks-sample-data.md) credentials:
+Complete the Connect Webview authorization flow by entering the following [4SUITES sandbox account](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data/4suites-locks-sample-data) credentials:
 
 * **Email:** jane@example.com
 * **Password:** 1234
@@ -679,7 +679,7 @@ True
 
 Next, you can use the Seam API to control your lock.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md), [programming access codes](../../capability-guides/smart-locks/access-codes/), and so on. Seam's intuitive and granular [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock), [programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), and so on. Seam's intuitive and granular [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Try out the following actions on your 4SUITES lock:
 
@@ -687,7 +687,7 @@ Try out the following actions on your 4SUITES lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](../../core-concepts/action-attempts.md) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) to track the progress of the unlock operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -991,7 +991,7 @@ False
 
 ## Step 5: Connect a real 4SUITES lock
 
-Now that you have learned the basics of using the Seam API, you can connect and control a real 4SUITES device. To do so, make sure to switch to a [non-sandbox workspace](../../core-concepts/workspaces/#production-workspaces) and [API key](../../core-concepts/authentication/api-keys.md).
+Now that you have learned the basics of using the Seam API, you can connect and control a real 4SUITES device. To do so, make sure to switch to a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
 
 For more details about setting up your real 4SUITES lock, see the [4SUITES locks integration guide](./).
 
@@ -999,15 +999,15 @@ For more details about setting up your real 4SUITES lock, see the [4SUITES locks
 
 ## Step 6: Build your application!
 
-Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](../../ui-components/overview/). These prebuilt UI components help you to build your device management flow.
+Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview). These prebuilt UI components help you to build your device management flow.
 
 <figure><img src="../../.gitbook/assets/Lock Detail.png" alt="Seam Components make it easy to develop your application!" width="280"><figcaption><p>Seam Components make it easy to develop your application!</p></figcaption></figure>
 
-For example, you can use the [Device Table Seam Component](../../ui-components/overview/react-components/device-table.md) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](../../ui-components/overview/react-components/device-details.md) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](../../ui-components/overview/react-components/access-code-details.md) provides a similar display and actions for access codes.
+For example, you can use the [Device Table Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/device-table) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/device-details) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/access-code-details) provides a similar display and actions for access codes.
 
 Seam Components use a responsive design to fit seamlessly on any screen size. They also provide device debugging flows to help your users.
 
-To learn about all the Seam Components that we provide, see [Seam Components](../../ui-components/overview/).
+To learn about all the Seam Components that we provide, see [Seam Components](https://docs.seam.co/latest/ui-components/overview).
 
 ***
 
@@ -1016,17 +1016,17 @@ To learn about all the Seam Components that we provide, see [Seam Components](..
 Now that you've completed this getting started guide for 4SUITES devices, you can learn more about what you can do with the Seam API.
 
 * [ ] **Explore**\
-  See the [other devices and system integrations](../overview.md) that Seam supports.
+  See the [other devices and system integrations](https://docs.seam.co/latest/device-and-system-integration-guides) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../../core-concepts/overview.md) and the [device and system capabilities ](../../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](https://docs.seam.co/latest/core-concepts/overview) and the [device and system capabilities ](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities)that Seam supports.
 * [ ] **Use Seam Components**\
-  Find out about [Seam Components](../../ui-components/overview/), which are prebuilt UI components for building your device management flow.
+  Find out about [Seam Components](https://docs.seam.co/latest/ui-components/overview), which are prebuilt UI components for building your device management flow.
 * [ ] **Use webhooks**\
-  Learn how to use [webhooks](../../developer-tools/webhooks.md) as an efficient way to receive device events.
+  Learn how to use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) as an efficient way to receive device events.
 * [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [access control systems](../../capability-guides/access-systems/), [thermostats](../../capability-guides/thermostats/), and [noise sensors](../../capability-guides/noise-sensors/).
+  Explore the other types of devices and systems that you can control with Seam, including [access control systems](https://docs.seam.co/latest/capability-guides/access-systems), [thermostats](https://docs.seam.co/latest/capability-guides/thermostats), and [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
 * [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](../../capability-guides/mobile-access/).
+  Learn about Seam's [mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access).
 
 {% hint style="info" %}
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

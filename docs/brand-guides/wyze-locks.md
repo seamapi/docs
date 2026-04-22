@@ -30,8 +30,8 @@ For detailed information about the Wyze devices that Seam supports, see our [Wyz
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](../capability-guides/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../capability-guides/smart-locks/access-codes/) on locks that have an installed Wyze Lock Keypad
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)
+* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on locks that have an installed Wyze Lock Keypad
 
 {% hint style="info" %}
 The Seam platform cannot determine the PIN codes for access codes that were created outside of the Seam platform.
@@ -41,7 +41,7 @@ The Seam platform cannot determine the PIN codes for access codes that were crea
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Wyze devices to Seam, include the `wyze` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their Wyze devices to Seam, include the `wyze` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -54,7 +54,7 @@ To control Wyze devices using Seam, you must prompt owners of these devices to p
 3. Log in to the [Wyze online portal](https://developer-api-console.wyze.com/#/apikey/view).
 4. In the Wyze online portal, click **Create an API key**.
 5. Click **view** and note the API key.
-6. Use your credentials for the Wyze app and the noted API key to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your Wyze devices to Seam.
+6. Use your credentials for the Wyze app and the noted API key to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your Wyze devices to Seam.
 
 ***
 

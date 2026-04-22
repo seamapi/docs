@@ -65,7 +65,7 @@ This guide uses a Sandbox Workspace. Only virtual devices can be connected. If y
 
 ## 2 — Link Your Salto KS Account with Seam
 
-To control your Salto locks via the Seam API, you must first authorize your Seam workspace against your Salto KS account. To do so, Seam provides[ Connect Webviews](../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Salto sites.
+To control your Salto locks via the Seam API, you must first authorize your Seam workspace against your Salto KS account. To do so, Seam provides[ Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your Salto sites.
 
 #### Create a Connect Webview
 
@@ -466,7 +466,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Salto locks and access points will have a keypad available to program access codes. These codes can then be entered to unlock the door.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Salto lock. You can find out more about Salto lock access code in our [core concept section on access codes.](../capability-guides/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Salto lock. You can find out more about Salto lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
 
 {% hint style="info" %}
 Salto does not let you specify a code for an access code. Instead Salto generates a 6-digit code, which the Seam API returns.
@@ -625,7 +625,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](schlage-locks/get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../core-concepts/overview.md)
+* [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

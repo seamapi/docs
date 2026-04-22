@@ -28,14 +28,14 @@ For detailed information about the Akiles devices that Seam supports, see our [A
 
 We support the following features:
 
-* [Triggering web unlock actions](../../capability-guides/smart-locks/lock-and-unlock.md)
-* [Programming access codes](../../capability-guides/smart-locks/access-codes/) on devices that have an integrated keypad or Akiles Pinpad
+* [Triggering web unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)
+* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on devices that have an integrated keypad or Akiles Pinpad
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../../core-concepts/connect-webviews/) that enables your users to connect their Tedee devices to Seam, include the `akiles` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their Tedee devices to Seam, include the `akiles` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -85,7 +85,7 @@ To control Akiles devices using Seam, you must prompt owners of these devices to
 
 ### Connect Akiles Devices to Seam
 
-Use your credentials for the Akiles app to log in to the [Seam Connect Webview](../../core-concepts/connect-webviews/) to add your devices to Seam.
+Use your credentials for the Akiles app to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
 
 ***
 

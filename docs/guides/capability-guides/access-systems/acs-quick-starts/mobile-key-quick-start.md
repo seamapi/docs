@@ -6,10 +6,10 @@ description: >-
 
 # Mobile Key Quick Start
 
-In this quick start, create a user identity for a virtual [Salto KS](../../../device-and-system-integration-guides/salto-ks-access-control-system/) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](../../mobile-access/).
+In this quick start, create a user identity for a virtual [Salto KS](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](../../mobile-access/).
 
 {% hint style="info" %}
-This quick start walks you through the process that applies specifically to the Salto KS ACS. There are often differences between access control systems. Once you've completed this quick start, learn how to work with your ACS using Seam, by reading the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS.
+This quick start walks you through the process that applies specifically to the Salto KS ACS. There are often differences between access control systems. Once you've completed this quick start, learn how to work with your ACS using Seam, by reading the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
 {% endhint %}
 
 ## Overview

@@ -1,6 +1,6 @@
 # Sandbox August Locks
 
-Use any of the following sets of credentials to add virtual [August locks](../../device-and-system-integration-guides/august-locks.md) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use any of the following sets of credentials to add virtual [August locks](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 <table><thead><tr><th>Device Region</th><th width="224">Email Address</th><th width="150">Password</th><th>Two Factor or Verification Code</th></tr></thead><tbody><tr><td>North America or Others</td><td>jane@example.com</td><td>1234</td><td>123456</td></tr><tr><td>North America or Others</td><td>john@example.com</td><td>1234</td><td>123456</td></tr><tr><td>North America or Others</td><td>sam@example.com</td><td>1234</td><td>123456</td></tr><tr><td>North America or Others</td><td>frodo@example.com</td><td>1234</td><td>123456</td></tr></tbody></table>
 

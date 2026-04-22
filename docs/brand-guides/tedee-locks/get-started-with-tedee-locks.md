@@ -53,19 +53,19 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
 
-Once installed, [sign up for Seam](https://console.seam.co/) to get your [API key](../../core-concepts/authentication/api-keys.md) and export it as an environment variable.
+Once installed, [sign up for Seam](https://console.seam.co/) to get your [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys) and export it as an environment variable.
 
 ```
 $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 {% hint style="info" %}
-This guide uses a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices in a sandbox workspace. If you need to connect a real Tedee device, use a non-sandbox workspace and API key.
+This guide uses a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). You can only connect virtual devices in a sandbox workspace. If you need to connect a real Tedee device, use a non-sandbox workspace and API key.
 {% endhint %}
 
 ## 2 — Link Your Tedee Account with Seam
 
-To control your Tedee locks using the Seam API, you must first authorize your Seam workspace against your Tedee account. To do so, Seam provides[ Connect Webviews](../../core-concepts/connect-webviews/): pre-built UX flows that walk you through authorizing your application to control your Tedee sites.
+To control your Tedee locks using the Seam API, you must first authorize your Seam workspace against your Tedee account. To do so, Seam provides[ Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your Tedee sites.
 
 ### Request a Connect Webview
 
@@ -131,7 +131,7 @@ print($connect_webview->url);
 
 ### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Tedee [sandbox test accounts ](../../developer-tools/sandbox-and-sample-data/sandbox-tedee-locks.md)credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Tedee [sandbox test accounts ](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data/sandbox-tedee-locks)credentials below:
 
 * **email:** jane@example.com
 * **password:** 1234
@@ -375,7 +375,7 @@ $seam->locks->lock_door($lock->device_id);
 
 Some Tedee locks also have a keypad paired to them to program access codes. These codes can then be entered to unlock a Tedee lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Tedee lock. You can find out more about Tedee lock access code in our [core concept section on access codes.](../../capability-guides/smart-locks/access-codes/)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Tedee lock. You can find out more about Tedee lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
 
 {% hint style="info" %}
 For Tedee-specific access code restrictions, see [Access (PIN) Code Requirements](./#access-pin-code-requirements).
@@ -480,7 +480,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
 * [Yale Getting Started Guide](../get-started-with-yale-locks.md)
 * [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Receiving webhook](../../developer-tools/webhooks.md) for [device events](https://docs.seam.co/latest/api/events/list)
-* [Core Concepts](../../core-concepts/overview.md)
+* [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

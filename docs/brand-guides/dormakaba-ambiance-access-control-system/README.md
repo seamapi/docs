@@ -40,16 +40,16 @@ This integration supports all wireless locks and readers connected to the Dormak
 
 ## Related Features
 
-* [**Access Grants**](../../capability-guides/access-grants/reservation-access-grants.md) – The universal way to manage access in Seam. Integrate once, and your access model works consistently across all providers, including Dormakaba Ambiance. For advanced, low-level control, you can still work directly with the ACS API.
-* [**Mobile Keys**](../../capability-guides/mobile-access/) – Provision and revoke Bluetooth and wallet-based credentials directly from your PMS or app.
-* [**Instant Keys**](../../capability-guides/instant-keys/) - Instantly issue temporary mobile pass that is shareable via an email or text.
+* [**Access Grants**](https://docs.seam.co/latest/capability-guides/access-grants/reservation-access-grants) – The universal way to manage access in Seam. Integrate once, and your access model works consistently across all providers, including Dormakaba Ambiance. For advanced, low-level control, you can still work directly with the ACS API.
+* [**Mobile Keys**](https://docs.seam.co/latest/capability-guides/mobile-access) – Provision and revoke Bluetooth and wallet-based credentials directly from your PMS or app.
+* [**Instant Keys**](https://docs.seam.co/latest/capability-guides/instant-keys) - Instantly issue temporary mobile pass that is shareable via an email or text.
 * [**Plastic Card Encoding**](https://docs.seam.co/latest/api/acs/encoders/encode_credential) – Encode and issue physical access cards using Seam’s card management API.
 
 ***
 
 ## Connecting Dormakaba Ambiance to Seam
 
-To enable your users to [connect an Ambiance system through Connect Webviews](../../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews), include the Dormakaba Ambiance provider:
+To enable your users to [connect an Ambiance system through Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews), include the Dormakaba Ambiance provider:
 
 ```json
 {

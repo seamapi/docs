@@ -42,7 +42,7 @@ If you've created an Access Grant that includes an mobile key, the returned Acce
 
 ## Before You Begin
 
-To create an Access Grant, first [connect](../../core-concepts/workspaces/#connecting-virtual-devices) an access system to Seam. You may also need to set up your access system and confirm that it has the required licenses. For details, see [Setting Up Your Site for Instant Keys](../instant-keys/setting-up-your-site-for-instant-keys.md) and the [system integration guide](../../device-and-system-integration-guides/overview.md#access-control-systems) for your access system.
+To create an Access Grant, first [connect](../../core-concepts/workspaces/#connecting-virtual-devices) an access system to Seam. You may also need to set up your access system and confirm that it has the required licenses. For details, see [Setting Up Your Site for Instant Keys](../instant-keys/setting-up-your-site-for-instant-keys.md) and the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.
 
 Create one or more spaces to group the entrances to which you want to grant access. For details, see [Spaces](https://docs.seam.co/latest/api/spaces/) and [Create a Space](https://docs.seam.co/latest/api/spaces/create).
 

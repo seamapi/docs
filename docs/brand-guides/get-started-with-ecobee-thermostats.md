@@ -19,7 +19,7 @@ To learn more about other IoT device and system brands that Seam supports—such
 {% hint style="success" %}
 This guide shows you how to install a Seam SDK and then control your ecobee thermostat using the Seam API.
 
-Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](../core-concepts/seam-console/seam-online-cli.md), which you can access from directly within the [Seam Console](../core-concepts/seam-console/).
+Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](https://docs.seam.co/latest/core-concepts/seam-console/seam-online-cli), which you can access from directly within the [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console).
 
 :arrow\_forward: [Go to the Seam Console!](https://console.seam.co/)
 {% endhint %}
@@ -69,7 +69,7 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
 
-Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](../core-concepts/seam-console/#create-a-seam-account) to get your [API key](../core-concepts/authentication/api-keys.md).
+Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](https://docs.seam.co/latest/core-concepts/seam-console#create-a-seam-account) to get your [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
 
 Then, export your API key as an environment variable.
 
@@ -78,21 +78,21 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
 {% hint style="info" %}
-This guide uses a [sandbox workspace](../core-concepts/workspaces/#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real ecobee thermostat, use a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and API key.
+This guide uses a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real ecobee thermostat, use a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and API key.
 {% endhint %}
 
 ***
 
 ## Step 2: Link your ecobee account with Seam
 
-To control your ecobee thermostat using the Seam API, you must first authorize your Seam workspace to connect to your ecobee account. If your application needs to connect to your users' ecobee accounts, Seam provides fully-embedded, [customizable](../core-concepts/connect-webviews/customizing-connect-webviews.md) client-side [Connect Webviews](../core-concepts/connect-webviews/) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their ecobee thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their ecobee account.
+To control your ecobee thermostat using the Seam API, you must first authorize your Seam workspace to connect to your ecobee account. If your application needs to connect to your users' ecobee accounts, Seam provides fully-embedded, [customizable](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews) client-side [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their ecobee thermostats. The Connect Webview presents a flow that prompts your users to enter their credentials for their ecobee account.
 
 In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox ecobee account.
 
 {% hint style="success" %}
 This guide shows you how to create a Connect Webview programmatically using the Seam API.
 
-The [Seam Console](../core-concepts/seam-console/) provides another easy way to connect devices to your Seam workspace.
+The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provides another easy way to connect devices to your Seam workspace.
 
 Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-ecobee-thermostats.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
@@ -269,13 +269,13 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 
 In a web browser, go to the URL that the Connect Webview object returned.
 
-For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](../ui-components/overview/react-components/connect-account-button.md) within our suite of [Seam Components](../ui-components/overview/) that help you build your device management flow.
+For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](https://docs.seam.co/latest/ui-components/overview/react-components/connect-account-button) within our suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test ecobee account. We provide [virtual devices](../developer-tools/sandbox-and-sample-data/) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test ecobee account. We provide [virtual devices](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [ecobee sandbox account](../developer-tools/sandbox-and-sample-data/ecobee-sample-data.md) credentials:
+Complete the Connect Webview authorization flow by entering the following [ecobee sandbox account](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data/ecobee-sample-data) credentials:
 
 * **Email:** jane@example.com
 * **Password:** 1234
@@ -720,7 +720,7 @@ Fan running: false
 
 Next, you can use the Seam API to control your ecobee thermostat.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](../capability-guides/thermostats/configure-current-climate-settings.md) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](../capability-guides/device-and-system-capabilities.md#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For thermostats, device-specific capabilities include whether you can [set the HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) to `heat`, `cool`, or `heat_cool`. Seam's intuitive and granular [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Seam provides additional actions for thermostats, such as setting the fan mode, creating and scheduling climate presets, setting temperature thresholds, and configuring weekly thermostat programs. You can also monitor for Seam thermostat-related events, such as reported temperatures outside your set thresholds.
 
@@ -742,11 +742,11 @@ To set the HVAC mode, use any of the following endpoints or their equivalents in
 
     This endpoint is a consolidated version of the other four endpoints.
 
-Specify the thermostat that you want to control by including the `device_id` in the request body. Also, include the desired temperature [set point](../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md).
+Specify the thermostat that you want to control by including the `device_id` in the request body. Also, include the desired temperature [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 In this example, set the HVAC mode to `heat` and the desired heating set point to 68 °F.
 
-Each of these HVAC mode endpoints returns an [action attempt](../core-concepts/action-attempts.md) to track the progress of the operation.
+Each of these HVAC mode endpoints returns an [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) to track the progress of the operation.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -1840,7 +1840,7 @@ $seam->thermostats->update_weekly_program(
 
 ## Step 5: Connect a real ecobee thermostat
 
-Now that you have learned the basics of using the Seam API, you can connect and control a real ecobee device. To do so, make sure to switch to a [non-sandbox workspace](../core-concepts/workspaces/#production-workspaces) and [API key](../core-concepts/authentication/api-keys.md).
+Now that you have learned the basics of using the Seam API, you can connect and control a real ecobee device. To do so, make sure to switch to a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
 
 For more details about setting up your real ecobee thermostat, see the [ecobee thermostats integration guide](ecobee-thermostats.md).
 
@@ -1857,17 +1857,17 @@ Seam makes it easy to develop your application. The robust Seam API and Seam SDK
 Now that you've completed this getting started guide for ecobee devices, you can learn more about what you can do with the Seam API.
 
 * [ ] **Explore**\
-  See the [other devices and system integrations](../device-and-system-integration-guides/overview.md) that Seam supports.
+  See the [other devices and system integrations](https://docs.seam.co/latest/device-and-system-integration-guides) that Seam supports.
 * [ ] **Learn**\
-  Read about Seam [concepts](../core-concepts/overview.md) and the [device and system capabilities ](../capability-guides/device-and-system-capabilities.md)that Seam supports.
+  Read about Seam [concepts](https://docs.seam.co/latest/core-concepts/overview) and the [device and system capabilities ](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities)that Seam supports.
 * [ ] **Expand your abilities**\
-  Find out what other [thermostat actions](../capability-guides/thermostats/) you can perform using the Seam API.
+  Find out what other [thermostat actions](https://docs.seam.co/latest/capability-guides/thermostats) you can perform using the Seam API.
 * [ ] **Use webhooks**\
-  Learn how to use [webhooks](../developer-tools/webhooks.md) as an efficient way to receive device events.
+  Learn how to use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) as an efficient way to receive device events.
 * [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [smart locks](../capability-guides/smart-locks/), [access control systems](../capability-guides/access-systems/), and [noise sensors](../capability-guides/noise-sensors/).
+  Explore the other types of devices and systems that you can control with Seam, including [smart locks](https://docs.seam.co/latest/capability-guides/smart-locks), [access control systems](https://docs.seam.co/latest/capability-guides/access-systems), and [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
 * [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](../capability-guides/mobile-access/).
+  Learn about Seam's [mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access).
 
 {% hint style="info" %}
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

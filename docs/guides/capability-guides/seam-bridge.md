@@ -22,7 +22,7 @@ It is important to understand the difference between Seam Bridge and smart lock 
 
 Download the Seam Bridge application onto an on-premises computer. Then, pair Seam Bridge with your Seam [workspace](../core-concepts/workspaces/) and connect the on-premises access system to Seam. You install and pair Seam Bridge while you are connecting your on-premises access system to Seam. That is, the [Connect Webview](../core-concepts/connect-webviews/) that you use to connect your on-premises access system to Seam walks you through the process of downloading and pairing Seam Bridge.
 
-For detailed information, see the setup instructions within the [system integration guide](../device-and-system-integration-guides/overview.md#access-control-systems) for your on-premises access system.
+For detailed information, see the setup instructions within the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your on-premises access system.
 
 ***
 
@@ -56,4 +56,4 @@ The Seam Bridge app also displays communication errors at the top of the window.
 
 ## Next Steps
 
-Go to the setup instructions within the [system integration guide](../device-and-system-integration-guides/overview.md#access-control-systems) for your on-premises access system. These instructions describe how to pair Seam Bridge with your workspace and then connect your on-premises access system to Seam through Seam Bridge.
+Go to the setup instructions within the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your on-premises access system. These instructions describe how to pair Seam Bridge with your workspace and then connect your on-premises access system to Seam through Seam Bridge.

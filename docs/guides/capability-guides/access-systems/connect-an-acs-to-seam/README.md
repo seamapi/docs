@@ -24,7 +24,7 @@ You can use [Seam Console](../../../core-concepts/seam-console/) or the [Seam AP
 
     If you want to connect a virtual access system to a sandbox workspace, use the corresponding [sandbox access system credentials](../../../developer-tools/sandbox-and-sample-data/).
 
-    To connect a real access system, see the [system integration guide](../../../device-and-system-integration-guides/overview.md#access-control-systems) for your ACS to learn any brand- or system-specific prerequisites, requirements, and restrictions.
+    To connect a real access system, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS to learn any brand- or system-specific prerequisites, requirements, and restrictions.
 
 The **Access Systems** page now displays the newly-connected access control system.
 

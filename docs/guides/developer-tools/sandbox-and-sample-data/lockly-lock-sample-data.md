@@ -1,6 +1,6 @@
 # Sandbox Lockly Locks
 
-Use the following set of credentials to add virtual [Lockly locks](../../device-and-system-integration-guides/lockly-locks/) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
 | Field                  | Value            |
 | ---------------------- | ---------------- |

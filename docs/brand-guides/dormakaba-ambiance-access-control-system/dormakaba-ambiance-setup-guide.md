@@ -75,7 +75,7 @@ You’ll enter all six in the next step.
 ## 2. Connect Ambiance to Seam
 
 {% hint style="info" %}
-If your Ambiance server is on-premises, [install Seam Bridge](../../capability-guides/seam-bridge.md) before continuing.\
+If your Ambiance server is on-premises, [install Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) before continuing.\
 Seam Bridge provides the secure outbound connection Seam uses to reach your Ambiance REST and SOAP APIs.\
 Install it on the same computer as Ambiance or on a machine with network access to Ambiance and verify it’s running.
 {% endhint %}

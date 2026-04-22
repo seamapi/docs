@@ -11,7 +11,7 @@ description: Guide for using Salto KS door locks with Seam
 Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials; their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
 
 {% hint style="info" %}
-Seam supports two integrations for Salto KS. We recommend using the [Salto KS access control system integration](../device-and-system-integration-guides/salto-ks-access-control-system/) because it provides more robust functionality, such as managing ACS users and credentials. However, if you want to connect a single or just a few Salto KS locks, you can choose the Salto KS lock integration that this topic describes.
+Seam supports two integrations for Salto KS. We recommend using the [Salto KS access control system integration](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) because it provides more robust functionality, such as managing ACS users and credentials. However, if you want to connect a single or just a few Salto KS locks, you can choose the Salto KS lock integration that this topic describes.
 {% endhint %}
 
 ***
@@ -29,13 +29,13 @@ For detailed information about the Salto devices that Seam supports, see our [Sa
 We support the following features:
 
 * [Triggering web unlock actions](https://docs.seam.co/latest/api/locks/unlock_door)
-* [Programming access codes](../capability-guides/smart-locks/access-codes/) on door locks and card readers that have a PIN pad
+* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on door locks and card readers that have a PIN pad
 
 ***
 
 ### Device Provider Key
 
-To create a [Connect Webview](../core-concepts/connect-webviews/) that enables your users to connect their Salto devices to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](../core-concepts/connect-webviews/customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their Salto devices to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ***
 
@@ -71,7 +71,7 @@ To control Salto KS devices using Seam, you must prompt owners of these devices 
 
 1. Create an account in the [Salto KS app](https://app.saltoks.com/) if you have not done so already.
 2. In the Salto KS app, add your Salto KS devices.
-3. Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](../core-concepts/connect-webviews/) to add your devices to Seam.
+3. Note your login credentials for the Salto KS app, and use these credentials to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
    1. If the Connect Webview displays multiple brand options, select **Salto KS**.
    2. In the **Enter your credentials** dialog, type your username and password for the Salto KS web app and then click **Log In**.
    3. Select **Full Access** and then click **Yes, Allow**.
