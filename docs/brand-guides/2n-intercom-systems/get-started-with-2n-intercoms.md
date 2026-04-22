@@ -569,8 +569,6 @@ $seam->access_codes->create(
 {% endtab %}
 {% endtabs %}
 
-###
-
 ## Next Steps
 
 Now that you've completed this guide, you can try to connect a real 2N device. To do so, make sure to switch to a non-sandbox workspace and API key as real devices cannot be connected to sandbox workspaces.
