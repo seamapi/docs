@@ -56,7 +56,7 @@ The Seam Customer Portal is a hosted, pre-authenticated interface for managing d
 
 ### How it works
 
-When you create a customer portal via the API, Seam returns a `magic_link` URL. This URL can be loaded in a standard HTML `<iframe>`. The portal is fully authenticated through a token embedded in the URL — no additional login is required from the end-user.
+When you create a customer portal via the API, Seam returns a `customer_portal` URL. This URL can be loaded in a standard HTML `<iframe>`. The portal is fully authenticated through a token embedded in the URL — no additional login is required from the end-user.
 
 Portal links expire after **7 days**. Your backend should generate a fresh link when rendering the page, or when the current link is close to expiring.
 
@@ -92,11 +92,11 @@ curl -X POST https://connect.getseam.com/customers/create_portal \
   }'
 ```
 
-The response includes a `magic_link` object:
+The response includes a `customer_portal` object:
 
 ```json
 {
-  "magic_link": {
+  "customer_portal": {
     "url": "https://partner-ui.seam.vc/portals/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?token=seam_cst_...",
     "customer_key": "my-customer-123",
     "expires_at": "2026-03-25T12:00:00.000Z",
@@ -108,7 +108,7 @@ The response includes a `magic_link` object:
 
 ### Step 2: Embed the URL in an iFrame
 
-Use the `magic_link.url` as the `src` attribute of an iFrame in your frontend. The portal handles authentication automatically via the token in the URL.
+Use the `customer_portal.url` as the `src` attribute of an iFrame in your frontend. The portal handles authentication automatically via the token in the URL.
 
 ```html
 <iframe
@@ -121,7 +121,7 @@ Use the `magic_link.url` as the `src` attribute of an iFrame in your frontend. T
 ></iframe>
 ```
 
-In practice, your backend generates the `magic_link.url` and passes it to your frontend, which sets it as the iFrame `src`. Don't hardcode the URL — it contains a session token that expires.
+In practice, your backend generates the `customer_portal.url` and passes it to your frontend, which sets it as the iFrame `src`. Don't hardcode the URL — it contains a session token that expires.
 
 ### Step 3: Refresh the link before it expires
 
