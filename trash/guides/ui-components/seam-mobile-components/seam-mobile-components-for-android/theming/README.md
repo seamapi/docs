@@ -11,7 +11,7 @@ description: >-
 
 Seam Mobile Components are fully customizable using Material 3 theming integrated with Seam's component-specific styling system. You can customize colors, typography, and detailed component styles to match your brand.
 
-***
+---
 
 ### How theming works
 

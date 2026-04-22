@@ -82,3 +82,5 @@ jobs:
         run: npm run validate-paths
       - name: Validate cross-site links
         run: npm run validate-links
+      - name: Validate all pages are in SUMMARY.md
+        run: npm run validate-orphan-pages

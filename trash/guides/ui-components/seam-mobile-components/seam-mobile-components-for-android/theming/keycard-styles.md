@@ -29,6 +29,7 @@ data class SeamKeyCardStyle(
 Check [colors](./colors.md) section to understand how to create `darkAppColors` and `lightAppColors` objects.
 
 {% code title="MainActivity.kt" %}
+
 ```kotlin
 @Composable
 fun MyApp() {
@@ -39,7 +40,7 @@ fun MyApp() {
         darkTheme -> darkAppColors
         else -> lightAppColors
     }
-    
+
     // Create the color scheme
     val colorScheme = when {
         darkTheme -> darkColorScheme(
@@ -85,4 +86,5 @@ fun MyApp() {
     }
 }
 ```
+
 {% endcode %}

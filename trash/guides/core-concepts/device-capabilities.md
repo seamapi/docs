@@ -8,23 +8,21 @@ For example, a battery-powered door lock with a pin-pad such as Yale Assure woul
 
 Seam exposes each capability as a set of APIs. Furthermore, those APIs are standardized across brands for ease of integration.
 
-
-
 ![](<../.gitbook/assets/image (10).png>)
 
 ### Capabilities -> Actions, Properties, and Events
 
 Each device capability decomposes into 3 sets of affordances:&#x20;
 
-* **Actions** — things you can do to it.&#x20;
-* **Properties** — the current state of the device.
-* **Events** — reports from the device describing state transitions.&#x20;
+- **Actions** — things you can do to it.&#x20;
+- **Properties** — the current state of the device.
+- **Events** — reports from the device describing state transitions.&#x20;
 
 For example, the `lock` capability decomposes in the following manner:
 
-* **Actions:** `UNLOCK` and `LOCK`
-* **Properties:**  a `locked` status to determine the lock's current status
-* **Events:** a list of lock/unlock events logging all of the lock's transitions.
+- **Actions:** `UNLOCK` and `LOCK`
+- **Properties:** a `locked` status to determine the lock's current status
+- **Events:** a list of lock/unlock events logging all of the lock's transitions.
 
 ### Standardizing Capabilities Across Device Brands
 
@@ -36,9 +34,4 @@ For example, some door locks with the `access_codes` capability require differen
 
 In those instances, we attempt to handle these differences for you. For example, we will generate and set a pin code of the appropriate length. However, you may wish to set your own code. We let you do so, but it must meet the constraints set by the device.
 
-
-
-
-
 \[1] This device interaction model leans heavily on the wonderful work done by the [W3C WoT](https://www.w3.org/TR/wot-architecture/#sec-interaction-model).
-
