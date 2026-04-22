@@ -22,8 +22,6 @@ const redirects: Redirect[] = Object.entries(gitbookConfig.redirects ?? {}).map(
 function pageExists(fullPath: string): boolean {
   // Exact file match (e.g., quickstart.md)
   if (existsSync(fullPath)) return true
-  // Directory with README.md (e.g., core-concepts/ → core-concepts/README.md)
-  if (existsSync(join(fullPath, 'README.md'))) return true
   // URL-style target without .md extension (e.g., api/devices → api/devices.md)
   if (!fullPath.endsWith('.md') && existsSync(fullPath + '.md')) return true
   // README.md targets resolve as directory URLs in GitBook, so check if the
