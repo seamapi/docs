@@ -1,6 +1,6 @@
 # Sandbox Yale Locks
 
-Use any of the following set of credentials to add virtual [Yale locks](https://docs.seam.co/latest/device-and-system-integration-guides/yale-locks) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use any of the following set of credentials to add virtual [Yale locks](https://docs.seam.co/latest/device-and-system-integration-guides/yale-locks) to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 | Email Address     | Password | Two Factor Code |
 | ----------------- | -------- | --------------- |

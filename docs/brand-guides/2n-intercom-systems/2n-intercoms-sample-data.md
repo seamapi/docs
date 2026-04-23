@@ -1,6 +1,6 @@
 # Sandbox 2N Intercoms
 
-Use the following sets of account and then device credentials to add virtual [2N intercoms](https://docs.seam.co/latest/device-and-system-integration-guides/2n-intercom-systems) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following sets of account and then device credentials to add virtual [2N intercoms](https://docs.seam.co/latest/device-and-system-integration-guides/2n-intercom-systems) to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 ## Account Credentials
 

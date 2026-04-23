@@ -54,6 +54,6 @@ To control Avigilon Alta-connected devices using Seam, you must prompt owners of
 
 To purchase the Avigilon Alta access system and devices, request a quote from Avigilon.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Avigilon Quote Request</strong></td><td></td><td><a href="https://www.avigilon.com/quote">https://www.avigilon.com/quote</a></td><td><a href=".gitbook/assets/avigilon-alta-logo.png">avigilon-alta-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Avigilon Quote Request</strong></td><td></td><td><a href="https://www.avigilon.com/quote">https://www.avigilon.com/quote</a></td><td><a href="../.gitbook/assets/avigilon-alta-logo.png">avigilon-alta-logo.png</a></td></tr></tbody></table>
 
 ***

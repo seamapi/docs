@@ -1,6 +1,6 @@
 # Doorking Callboxes Sample Data
 
-Use the following set of credentials to add virtual Doorking callboxes to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual Doorking callboxes to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 | Serial Number | Phone Number | Master Code | Tone Open Number |
 | ------------- | ------------ | ----------- | ---------------- |

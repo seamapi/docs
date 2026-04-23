@@ -120,7 +120,7 @@ puts webview.url
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the ControlByWeb [sandbox test account](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data) credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the ControlByWeb [sandbox test account](controlbyweb-relays-sample-data.md) credentials below:
 
 * **username:** jane
 * **password:** 1234
@@ -308,11 +308,11 @@ Now that you've completed this guide, you can try to connect a real ControlByWeb
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-* [Yale Getting Started Guide](yale-locks/get-started-with-yale-locks.md)
-* [August Getting Started Guide](august-locks/get-started-with-august-locks.md)
-* [Schlage Getting Started Guide](schlage-locks/get-started-with-schlage-locks.md)
-* [SmartThings Getting Started Guide](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
-* [Minut Getting Started Guide](minut-sensors/get-started-with-minut-sensors.md)
+* [Yale Getting Started Guide](../yale-locks/get-started-with-yale-locks.md)
+* [August Getting Started Guide](../august-locks/get-started-with-august-locks.md)
+* [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Minut Getting Started Guide](../minut-sensors/get-started-with-minut-sensors.md)
 * [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 

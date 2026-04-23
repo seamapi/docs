@@ -1,6 +1,6 @@
 # NoiseAware Sensors Sample Data
 
-Use either of the following sets of credentials to add virtual [NoiseAware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use either of the following sets of credentials to add virtual [NoiseAware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors) to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 | Email Address    | Password |
 | ---------------- | -------- |

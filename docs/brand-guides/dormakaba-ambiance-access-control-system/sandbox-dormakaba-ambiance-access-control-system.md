@@ -1,6 +1,6 @@
 # Sandbox Dormakaba Ambiance Access Control System
 
-Use the following set of credentials to add virtual [Dormakaba Ambiance Access Control System](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-ambiance-access-control-system)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [Dormakaba Ambiance Access Control System](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-ambiance-access-control-system)-connected devices to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 {% hint style="info" %}
 To use the virtual Ambiance Access Control System (ACS) to issue mobile keys in a sandbox workspace, you must also connect a LEGIC Connect account.

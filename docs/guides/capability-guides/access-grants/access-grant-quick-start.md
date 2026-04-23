@@ -22,7 +22,7 @@ Before you begin this quick start, perform the following steps:
 
 1.  [Connect](../../core-concepts/workspaces/#connecting-virtual-devices) an access system to Seam.
 
-    In this quick start, you can use a Seam virtual access system in a sandbox workspace, for example, the [virtual Salto Space access system](../../developer-tools/sandbox-and-sample-data/sandbox-salto-space-access-control-system.md).
+    In this quick start, you can use a Seam virtual access system in a sandbox workspace, for example, the [virtual Salto Space access system](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/sandbox-salto-space-access-control-system).
 
     For instructions, see [Connect an Access System to Seam](../access-systems/connect-an-acs-to-seam/).
 2.  Install a Seam SDK and create an API key.

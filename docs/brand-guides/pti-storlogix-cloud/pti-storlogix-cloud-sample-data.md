@@ -1,6 +1,6 @@
 # PTI Storlogix Cloud Sample Data
 
-Use the following set of credentials to add virtual [PTI Storlogix Cloud](https://docs.seam.co/latest/device-and-system-integration-guides/pti-storlogix-cloud)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [PTI Storlogix Cloud](https://docs.seam.co/latest/device-and-system-integration-guides/pti-storlogix-cloud)-connected devices to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 | Field                   | Value                           |
 | ----------------------- | ------------------------------- |

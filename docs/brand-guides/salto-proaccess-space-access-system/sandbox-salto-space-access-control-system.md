@@ -1,6 +1,6 @@
 # Sandbox Salto Space Access System
 
-Use the following set of credentials to add the virtual Salto Space access system to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add the virtual Salto Space access system to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 ## Sandbox Seam Bridge Connection Credentials
 

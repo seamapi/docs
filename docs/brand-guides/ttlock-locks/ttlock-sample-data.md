@@ -1,6 +1,6 @@
 # Sandbox TTLock Locks
 
-Use the following set of credentials to add virtual [TTLock locks](https://docs.seam.co/latest/device-and-system-integration-guides/ttlock-locks) to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [TTLock locks](https://docs.seam.co/latest/device-and-system-integration-guides/ttlock-locks) to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 | Email Address    | Password |
 | ---------------- | -------- |

@@ -67,7 +67,7 @@ When contacting a PTI Security Systems Customer Support agent, have your PTI Sup
 Make sure that you obtain the appropriate credentials specifically for Storlogix Cloud dashboard access.
 {% endhint %}
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support"><strong>PTI Security Systems Customer Support</strong></a></td><td></td><td><a href=".gitbook/assets/pti-help-center.png">pti-help-center.png</a></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support">https://ptisecurity.my.salesforce-sites.com/apex/Support</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support"><strong>PTI Security Systems Customer Support</strong></a></td><td></td><td><a href="../.gitbook/assets/pti-help-center.png">pti-help-center.png</a></td><td><a href="https://ptisecurity.my.salesforce-sites.com/apex/Support">https://ptisecurity.my.salesforce-sites.com/apex/Support</a></td></tr></tbody></table>
 
 ***
 
@@ -97,4 +97,4 @@ The following warning might appear for PTI-related users:
 
 To find a local PTI Security Systems installer, contact the PTI Security Systems Sales team. You can find the contact information for this team on the [PTI Security Systems Sales Contact Us Page](https://ptisecurity.com/contact-us-sales/).
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>PTI Security Systems Sales Contact Us Page</strong></td><td></td><td><a href="https://ptisecurity.com/contact-us-sales/">https://ptisecurity.com/contact-us-sales/</a></td><td><a href=".gitbook/assets/contact-pti-sales.png">contact-pti-sales.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>PTI Security Systems Sales Contact Us Page</strong></td><td></td><td><a href="https://ptisecurity.com/contact-us-sales/">https://ptisecurity.com/contact-us-sales/</a></td><td><a href="../.gitbook/assets/contact-pti-sales.png">contact-pti-sales.png</a></td></tr></tbody></table>

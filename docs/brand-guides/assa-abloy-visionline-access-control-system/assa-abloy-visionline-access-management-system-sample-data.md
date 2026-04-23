@@ -1,6 +1,6 @@
 # Sandbox Assa Abloy Visionline Access Control System
 
-Use the following set of credentials to add virtual [ASSA ABLOY Visionline Access Control System](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Use the following set of credentials to add virtual [ASSA ABLOY Visionline Access Control System](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system)-connected devices to your Seam [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces):
 
 {% hint style="info" %}
 To use the virtual Vostio Access System to issue mobile keys in a sandbox workspace, you must also connect a [virtual ASSA ABLOY Credential Services](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-vingcard-credential-services).
