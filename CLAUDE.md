@@ -367,7 +367,7 @@ See the [Architecture](#architecture) section above for the three GitBook site c
 
 ### Redirect Management
 
-There are two ways to handle redirects. Always use one of these explicitly — do not rely on GitBook's automatic redirects, as they are unreliable.
+There are two ways to handle redirects. Always use one of these explicitly — do not rely on GitBook's automatic redirects, as they are opaque.
 
 - **Within the same site:** Add redirects manually in the site's `.gitbook.yaml`.
 - **Across site sections:** `.gitbook.yaml` redirects are scoped to their own site and cannot point to pages in a different site. Cross-site redirects must be configured at the site level from within the GitBook UI.
@@ -730,7 +730,7 @@ To follow this guide, you need:
 
 7. **Real-world focus:** Include sandbox credentials, troubleshooting guides, and production checklists. Developers need practical, actionable information.
 
-8. **Link maintenance:** When restructuring within a site, add redirects in `.gitbook.yaml`. For cross-site moves, configure redirects in the GitBook UI. Do not rely on GitBook's automatic redirects.
+8. **Link maintenance:** When restructuring within a site, add redirects in `.gitbook.yaml`. For cross-site moves, configure redirects in the GitBook UI. Do not rely on GitBook's automatic redirects, as they are opaque.
 
 9. **Do not modify file URLs in SUMMARY.md.** Renaming or moving page URLs via SUMMARY.md can break GitBook sync. Use the GitBook UI to rename or move pages instead.
 
