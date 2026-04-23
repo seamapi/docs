@@ -6,10 +6,6 @@ description: >-
 
 # Access Grants
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Beta. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 Seam Access Grants provide a unified, intuitive, and streamlined way to grant and manage user access across multiple access system providers. With a single command you can define the "who, where, when, and how" for assigning a user access to entrances and other access points. Access Grants support plastic cards, PIN codes, and mobile keys, including Instant Keys. You can even create multiple access methods using a single command.
 
 <figure><img src="../../.gitbook/assets/access-grant-using-entrances.png" alt="Use Access Grants to specify the characteristics of access."><figcaption><p>Use Access Grants to specify the characteristics of access.</p></figcaption></figure>

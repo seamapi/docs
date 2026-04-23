@@ -4,10 +4,6 @@ description: Learn how to revoke an access method so that a user can no longer u
 
 # Revoking an Access Method
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 To revoke an access method, delete it.
 
 {% tabs %}

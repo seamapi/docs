@@ -4,10 +4,6 @@ description: Learn how to list and get Access Grants and access methods.
 
 # Retrieving Access Grants and Access Methods
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 You can list all Access Grants, and you can also filter the list by one or more of the following properties:
 
 * `acs_entrance_id`

@@ -6,10 +6,6 @@ description: >-
 
 # Delivering Access Methods
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 The `access_method.is_issued` property and event let you know when an access method is ready to deliver to your user. Once an access method is ready to deliver, retrieve the access method by ID. Remember, the returned Access Grant includes the IDs of all the requested access methods. Then, deliver the access method to your user. The delivery mechanism varies for different access method modes.
 
 {% hint style="info" %}
