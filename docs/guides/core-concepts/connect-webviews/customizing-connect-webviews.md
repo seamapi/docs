@@ -57,7 +57,7 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [August Home](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks)                                                                                     | `august`                        |
 | [Avigilon Alta](https://docs.seam.co/latest/device-and-system-integration-guides/avigilon-alta-access-system)                                              | `avigilon_alta`                 |
 | [Brivo](https://docs.seam.co/latest/device-and-system-integration-guides/brivo-access)                                                                      | `brivo`                         |
-| [ControlByWeb](https://docs.seam.co/latest/device-and-system-integration-guides/get-started-with-controlbyweb-devices)                                     | `controlbyweb`                  |
+| [ControlByWeb](https://docs.seam.co/latest/device-and-system-integration-guides/controlbyweb-relays)                                     | `controlbyweb`                  |
 | [DoorKing](https://www.doorking.com/)                                                                                                  | `doorking`                      |
 | [Dormakaba Community](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-community-access-control-system)                           | `dormakaba_community`           |
 | [Dormakaba Oracode](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks)                                                | `dormakaba_oracode`             |

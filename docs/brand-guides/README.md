@@ -44,4 +44,4 @@ To find the integration guide for each of your devices or systems, see the follo
 
 ## Relays
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>ControlByWeb Relays</strong></td><td></td><td></td><td><a href=".gitbook/assets/controlbyweb-logo.png">controlbyweb-logo.png</a></td><td><a href="get-started-with-controlbyweb-devices/">get-started-with-controlbyweb-devices.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>ControlByWeb Relays</strong></td><td></td><td></td><td><a href=".gitbook/assets/controlbyweb-logo.png">controlbyweb-logo.png</a></td><td><a href="controlbyweb-relays/">controlbyweb-relays</a></td></tr></tbody></table>
