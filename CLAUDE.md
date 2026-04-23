@@ -22,6 +22,8 @@ npm run validate-redirects        # Validate .gitbook.yaml redirects
 
 **Always run `npm run format` before committing.** CI auto-commits formatting fixes on non-main branches, but formatting locally avoids noise.
 
+**Use semantic naming for commits, branches, and PRs.** Prefix commit messages with a type (`feat:`, `fix:`, `docs:`, `chore:`, `ci:`, `refactor:`, `test:`). Use the same style for branch names (e.g., `docs/update-sandbox-credentials`) and PR titles.
+
 Optional external tools used during `npm run generate` for code sample formatting: `ruff` (Python), `shfmt` (shell), `gofmt` (Go), `stree` from `syntax_tree` gem (Ruby).
 
 ## Architecture
