@@ -727,9 +727,11 @@ To follow this guide, you need:
 
 8. **Link maintenance:** When restructuring, always add redirects in `.gitbook.yaml` to maintain backward compatibility.
 
-9. **Visual aids:** Use screenshots, diagrams, and videos generously. IoT integrations benefit from visual guidance.
+9. **Do not modify file URLs in SUMMARY.md.** Renaming or moving page URLs via SUMMARY.md can break GitBook sync. Use the GitBook UI to rename or move pages instead.
 
-10. **Accessibility:** Provide alt text for images, use semantic HTML, and ensure code examples are properly formatted.
+10. **Visual aids:** Use screenshots, diagrams, and videos generously. IoT integrations benefit from visual guidance.
+
+11. **Accessibility:** Provide alt text for images, use semantic HTML, and ensure code examples are properly formatted.
 
 ### Writing Checklist
 
