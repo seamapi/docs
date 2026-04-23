@@ -167,8 +167,6 @@
   * [Get started with Schlage Locks](schlage-locks/get-started-with-schlage-locks.md)
   * [Schlage Locks - Daylight Savings time adjustments](schlage-locks/schlage-locks-daylight-savings-time-adjustments.md)
   * [Sandbox Schlage Encode Locks](schlage-locks/schlage-encode-sample-data.md)
-* [Seam Bridge](seam-bridge/README.md)
-  * [Sandbox Seam Bridge](seam-bridge/seam-bridge-sample-data.md)
 * [Sensi Thermostats](sensi-thermostats/README.md)
   * [Get Started with Sensi Thermostats](sensi-thermostats/get-started-with-sensi-thermostats.md)
   * [Sandbox Sensi Thermostats](sensi-thermostats/sandbox-sensi-thermostats.md)

@@ -1,5 +1,7 @@
 ---
 description: Guide for using Doorking callboxes with Seam
+hidden: true
+noIndex: true
 ---
 
 # Doorking Callboxes
