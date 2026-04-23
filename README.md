@@ -13,8 +13,9 @@ This repository hosts both the documentation source along with supporting tools.
 
 The entire documentation site is hosted by [GitBook] under `/docs`.
 
-- Changes made though GitBook are synced back here to `/docs`.
-- Changes made here on GitHub to files under `/docs` are synced back to GitBook.
+- All documentation updates must be made via Git, not through the GitBook UI.
+- Changes made here on GitHub to files under `/docs` are synced to GitBook.
+- GitBook previews are available for all open PRs.
 
 [Seam Docs]: https://docs.seam.co/
 [GitBook]: https://www.gitbook.com/
