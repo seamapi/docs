@@ -14,7 +14,7 @@ When developing an app to control IoT devices—before moving to production—it
 * [`/devices/simulate/remove`](testing-your-app-against-device-disconnection-and-removal.md#simulate-removing-a-device)
 
 {% hint style="info" %}
-Currently, Seam supports these endpoints for [August](../../developer-tools/sandbox-and-sample-data/august-locks-sample-data.md) and [Yale](../../developer-tools/sandbox-and-sample-data/yale-sample-data.md) sandbox devices.
+Currently, Seam supports these endpoints for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks/august-locks-sample-data) and [Yale](https://docs.seam.co/latest/device-and-system-integration-guides/yale-locks/yale-sample-data) sandbox devices.
 {% endhint %}
 
 ***
@@ -538,7 +538,7 @@ void
 You can also use the [Seam Console](https://console.seam.co/) to simulate disconnecting, connecting, and removing a device.
 
 {% hint style="info" %}
-Currently, Seam supports these actions for [August](../../developer-tools/sandbox-and-sample-data/august-locks-sample-data.md) and [Yale](../../developer-tools/sandbox-and-sample-data/yale-sample-data.md) sandbox devices.
+Currently, Seam supports these actions for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks/august-locks-sample-data) and [Yale](https://docs.seam.co/latest/device-and-system-integration-guides/yale-locks/yale-sample-data) sandbox devices.
 {% endhint %}
 
 1. In the upper-right corner of the Seam Console, click the down arrow to display the workspace list and select a sandbox workspace.

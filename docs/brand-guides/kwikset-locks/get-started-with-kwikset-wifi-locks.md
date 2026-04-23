@@ -130,7 +130,7 @@ puts webview.url
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Kwikset [sandbox test accounts ](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data)credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Kwikset [sandbox test accounts ](kwikset-locks-sample-data.md)credentials below:
 
 * **email:** jane@example.com
 * **password:** 1234

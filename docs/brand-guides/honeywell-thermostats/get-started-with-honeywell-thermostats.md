@@ -274,10 +274,10 @@ In a web browser, go to the URL that the Connect Webview object returned.
 For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](https://docs.seam.co/latest/ui-components/overview/react-components/connect-account-button) within our suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview) that help you build your device management flow.
 
 {% hint style="success" %}
-Because you're using a sandbox workspace, you can connect Seam's test Honeywell Resideo account. We provide [virtual devices](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+Because you're using a sandbox workspace, you can connect Seam's test Honeywell Resideo account. We provide [virtual devices](sandbox-honeywell-thermostats.md) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
 {% endhint %}
 
-Complete the Connect Webview authorization flow by entering the following [Honeywell Resideo sandbox account](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats) credentials:
+Complete the Connect Webview authorization flow by entering the following [Honeywell Resideo sandbox account](sandbox-honeywell-thermostats.md) credentials:
 
 * **Email:** jane@example.com
 * **Password:** 1234

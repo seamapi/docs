@@ -140,7 +140,7 @@ $webview = $seam->connect_webviews->create(
 
 #### Authorize Your Workspace
 
-Navigate to the URL that the Connect Webview object returned. Because you are using a sandbox workspace, complete the login flow by entering the following dormakaba Oracode [sandbox test account ](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data/dormakaba-oracode-sample-data)credentials:
+Navigate to the URL that the Connect Webview object returned. Because you are using a sandbox workspace, complete the login flow by entering the following dormakaba Oracode [sandbox test account ](dormakaba-oracode-sample-data.md)credentials:
 
 * **username:** jane
 * **site:** Ocean Beach Vacations

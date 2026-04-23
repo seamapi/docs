@@ -1,8 +1,0 @@
-# Avigilon Alta Access System Sample Data
-
-Use the following set of credentials to add virtual [Avigilon Alta access system](https://docs.seam.co/latest/device-and-system-integration-guides/avigilon-alta-access-system)-connected devices to your Seam [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
-
-| Email Address    | Password |
-| ---------------- | -------- |
-| jane@example.com | 1234     |
-

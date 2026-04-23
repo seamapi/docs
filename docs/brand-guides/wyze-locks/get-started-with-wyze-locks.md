@@ -150,7 +150,7 @@ $webview = $seam->connect_webviews->create(
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Wyze [sandbox test account](https://docs.seam.co/latest/developer-tools/sandbox-and-sample-data)credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Wyze [sandbox test account](wyze-sample-data.md)credentials below:
 
 * **Wyze API Key ID:** ABC123ABC
 * **Wyze API Key** ABC123ABC
