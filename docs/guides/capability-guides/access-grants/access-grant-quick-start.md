@@ -6,10 +6,6 @@ description: >-
 
 # Access Grant Quick Start
 
-{% hint style="info" %}
-**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
-{% endhint %}
-
 In this quick start, create an Access Grant to give a user access to a set of entrances. Access Grants provide a unified, intuitive, and streamlined way to grant and manage user access across multiple access system providers. With a single command you can define the "who, where, when, and how" for assigning a user access to entrances and other access points.
 
 In addition, this quick start shows you that, with Access Grants, it's easy to issue users access through multiple types of access methods, such as key cards, PIN codes, mobile keys, and Instant Keys.
