@@ -528,13 +528,6 @@ Items that are intentionally undocumented are not included in this section.
 
 These items have been marked as draft.
 
-### Routes
-
-- `/access_grants`: No draft message provided
-- `/access_grants/unmanaged`: No draft message provided
-- `/access_methods/unmanaged`: No draft message provided
-- `/spaces`: No draft message provided
-
 ### Resource properties
 
 - `batch.access_grants`: Early access.
@@ -543,34 +536,8 @@ These items have been marked as draft.
 
 ### Endpoints
 
-- `/access_grants/create`: Early access.
-- `/access_grants/delete`: Early access.
-- `/access_grants/get`: Early access.
-- `/access_grants/get_related`: Early access.
-- `/access_grants/list`: Early access.
-- `/access_grants/request_access_methods`: Early access.
-- `/access_grants/update`: Early access.
-- `/access_grants/unmanaged/get`: Early access.
-- `/access_grants/unmanaged/list`: Early access.
-- `/access_grants/unmanaged/update`: Early access.
-- `/access_methods/delete`: Early access.
-- `/access_methods/get`: Early access.
-- `/access_methods/get_related`: Early access.
-- `/access_methods/list`: Early access.
-- `/access_methods/unmanaged/get`: Early access.
-- `/access_methods/unmanaged/list`: Early access.
 - `/seam/customer/v1/spaces/create`: Early access.
 - `/seam/customer/v1/spaces/list`: Early access.
-- `/spaces/add_acs_entrances`: Early access.
-- `/spaces/add_devices`: Early access.
-- `/spaces/create`: Early access.
-- `/spaces/delete`: Early access.
-- `/spaces/get`: Early access.
-- `/spaces/get_related`: Early access.
-- `/spaces/list`: Early access.
-- `/spaces/remove_acs_entrances`: Early access.
-- `/spaces/remove_devices`: Early access.
-- `/spaces/update`: Early access.
 
 ### Endpoint parameters
 
