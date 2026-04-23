@@ -5,7 +5,11 @@ structure:
   summary: SUMMARY.md
 redirects:
   assa-abloy-visionline-access-control-system-in-development/visionline-credential-metadata: assa-abloy-visionline-access-control-system/README.md
-  assa-abloy-credential-services-credential-manager-in-development: assa-abloy-vingcard-credential-services.md
+  assa-abloy-credential-services-credential-manager-in-development: assa-abloy-vingcard-credential-services/README.md
+  assa-abloy-vingcard-credential-services: assa-abloy-vingcard-credential-services/README.md
+  avigilon-alta-access-system: avigilon-alta-access-system/README.md
+  get-started-with-controlbyweb-devices: get-started-with-controlbyweb-devices/README.md
+  pti-storlogix-cloud: pti-storlogix-cloud/README.md
   assa-abloy-visionline-access-control-system-in-development: assa-abloy-visionline-access-control-system/README.md
   assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions: assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/README.md
   assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app: assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/README.md
