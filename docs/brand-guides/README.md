@@ -9,6 +9,8 @@ description: >-
 
 Seam enables you to control a wide variety of devices and systems, from different manufacturers, using the universal Seam API. This section provides a set of device and system integration guides that show you which devices Seam supports from each manufacturer, explain how to set up these devices and systems, and provide any manufacturer-specific requirements or restrictions.
 
+Each brand guide includes sandbox credentials that you can use to connect virtual devices in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces/#sandbox-workspaces), so you can test your integration without owning physical devices.
+
 To find the integration guide for each of your devices or systems, see the following categories:
 
 * [Smart locks](README.md#smart-locks)
