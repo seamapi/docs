@@ -8,7 +8,7 @@ description: Learn how to connect and control your ControlByWeb device with the 
 
 ## Overview
 
-Seam provides a universal API to connect and control many brands of smart devices. This guide provides a rapid introduction to connecting and controlling your [ControlByWeb](https://www.seam.co/manufacturers/control-by-web) relay device using the Seam API. To learn more about other smart device brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+Seam provides a universal API to connect and control many brands of smart devices. This guide provides a rapid introduction to connecting and controlling your [ControlByWeb](https://www.seam.co/manufacturers/controlbyweb) relay device using the Seam API. To learn more about other smart device brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
 
 ## 1 — Install Seam SDK
 
