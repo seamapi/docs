@@ -24,65 +24,68 @@ When you create a credential for a Salto KS ACS, you cannot specify a custom cod
 The following example walks you through this process:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the ACS system.
-building_a = seam.acs.systems.get(
-  acs_system_id="11111111-1111-1111-1111-111111111111"
-)
+```javascript
+// Get the ACS system.
+const buildingA = await seam.acs.systems.get({
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+});
 
-# Step 1:
-# Create the new ACS user, including the
-# desired access schedule.
-acs_user = seam.acs.users.create(
-  full_name = "Jane Doe",
-  acs_system_id = building_a.acs_system_id,
-  access_schedule = {
+// Step 1:
+// Create the new ACS user, including the
+// desired access schedule.
+const acsUser = await seam.acs.users.create({
+  full_name: "Jane Doe",
+  acs_system_id: buildingA.acs_system_id,
+  access_schedule: {
     "starts_at": "2024-11-01T15:00:00.000Z",
     "ends_at": "2024-11-04T11:00:00.000Z"
   }
-)
+});
 
-# Step 2:
-# Add the ACS user to all desired access groups.
-access_group_ids = [
+// Step 2:
+// Add the ACS user to all desired access groups.
+const accessGroupIds = [
   "44444444-4444-4444-4444-333333333333",
   "44444444-4444-4444-4444-444444444444"
-]
-for access_group_id in access_group_ids:
-  seam.acs.users.add_to_access_group(
-    acs_user_id = acs_user.acs_user_id,
-    acs_access_group_id = access_group_id
-  )
+];
+for (const accessGroupId of accessGroupIds) {
+  await seam.acs.users.addToAccessGroup({
+    acs_user_id: acsUser.acs_user_id,
+    acs_access_group_id: accessGroupId
+  });
+}
 
-# Step 3:
-# Create a PIN code for the ACS user.
-pin_code = seam.acs.credentials.create(
-  acs_user_id = acs_user.acs_user_id,
-  access_method = "code"
-)
+// Step 3:
+// Create a PIN code for the ACS user.
+const pinCode = await seam.acs.credentials.create({
+  acs_user_id: acsUser.acs_user_id,
+  access_method: "code"
+});
 
-# View the new credential.
-pprint(pin_code)
+// View the new credential.
+console.log(pinCode);
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  code='123456',
-  access_method='code',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  code: '123456',
+  access_method: 'code',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -161,66 +164,67 @@ echo $pin_code
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the ACS system.
-const buildingA = await seam.acs.systems.get({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+```python
+# Get the ACS system.
+building_a = seam.acs.systems.get(
+  acs_system_id="11111111-1111-1111-1111-111111111111"
+)
 
-// Step 1:
-// Create the new ACS user, including the
-// desired access schedule.
-const acsUser = await seam.acs.users.create({
-  full_name: "Jane Doe",
-  acs_system_id: buildingA.acs_system_id,
-  access_schedule: {
+# Step 1:
+# Create the new ACS user, including the
+# desired access schedule.
+acs_user = seam.acs.users.create(
+  full_name = "Jane Doe",
+  acs_system_id = building_a.acs_system_id,
+  access_schedule = {
     "starts_at": "2024-11-01T15:00:00.000Z",
     "ends_at": "2024-11-04T11:00:00.000Z"
   }
-});
+)
 
-// Step 2:
-// Add the ACS user to all desired access groups.
-const accessGroupIds = [
+# Step 2:
+# Add the ACS user to all desired access groups.
+access_group_ids = [
   "44444444-4444-4444-4444-333333333333",
   "44444444-4444-4444-4444-444444444444"
-];
-for (const accessGroupId of accessGroupIds) {
-  await seam.acs.users.addToAccessGroup({
-    acs_user_id: acsUser.acs_user_id,
-    acs_access_group_id: accessGroupId
-  });
-}
+]
+for access_group_id in access_group_ids:
+  seam.acs.users.add_to_access_group(
+    acs_user_id = acs_user.acs_user_id,
+    acs_access_group_id = access_group_id
+  )
 
-// Step 3:
-// Create a PIN code for the ACS user.
-const pinCode = await seam.acs.credentials.create({
-  acs_user_id: acsUser.acs_user_id,
-  access_method: "code"
-});
+# Step 3:
+# Create a PIN code for the ACS user.
+pin_code = seam.acs.credentials.create(
+  acs_user_id = acs_user.acs_user_id,
+  access_method = "code"
+)
 
-// View the new credential.
-console.log(pinCode);
+# View the new credential.
+pprint(pin_code)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  code: '123456',
-  access_method: 'code',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  code='123456',
+  access_method='code',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -235,6 +239,7 @@ console.log(pinCode);
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -294,6 +299,7 @@ echo json_encode($pin_code, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -306,9 +312,6 @@ echo json_encode($pin_code, JSON_PRETTY_PRINT);
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

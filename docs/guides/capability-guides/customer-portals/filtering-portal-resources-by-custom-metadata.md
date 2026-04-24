@@ -48,6 +48,7 @@ Create property listings with a `region` field in `custom_metadata`, then filter
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
@@ -75,7 +76,8 @@ console.log(customer_portal.url);
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 ```bash
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \
@@ -111,6 +113,7 @@ When you provide multiple filters, a resource must match all of them. Here, only
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
@@ -144,7 +147,8 @@ console.log(customer_portal.url);
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 ```bash
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \
@@ -186,6 +190,7 @@ Filter by a boolean `custom_metadata` value, such as showing only premium listin
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
@@ -213,7 +218,8 @@ console.log(customer_portal.url);
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 ```bash
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \
@@ -249,6 +255,7 @@ Filters also apply to reservations. Here, only reservations that are both premiu
 
 {% tabs %}
 {% tab title="JavaScript" %}
+
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
@@ -291,7 +298,8 @@ console.log(customer_portal.url);
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 ```bash
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \

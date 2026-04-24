@@ -25,22 +25,8 @@ If you're testing the integration, you can use a [sandbox workspace](https://doc
 Create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to enable the Ultraloq device owner to authorize Seam to access their Ultraloq account.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-webview = seam.connect_webviews.create(
-  accepted_providers=["ultraloq"],
-  custom_redirect_url="https://your-app.com/oauth/callback"
-)
-
-print(webview.url)
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -55,7 +41,39 @@ console.log(webview.url);
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "accepted_providers": ["ultraloq"],
+    "custom_redirect_url": "https://your-app.com/oauth/callback"
+  }'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(
+  accepted_providers=["ultraloq"],
+  custom_redirect_url="https://your-app.com/oauth/callback"
+)
+
+print(webview.url)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -71,6 +89,7 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -89,6 +108,7 @@ echo $webview->url;
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -104,6 +124,7 @@ Console.WriteLine(webview.Url);
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.ConnectWebview;
@@ -118,20 +139,6 @@ ConnectWebview webview = seam.connectWebviews().create(
 );
 
 System.out.println(webview.getUrl());
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/connect_webviews/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "accepted_providers": ["ultraloq"],
-    "custom_redirect_url": "https://your-app.com/oauth/callback"
-  }'
 ```
 {% endtab %}
 {% endtabs %}
@@ -154,24 +161,8 @@ After authorization, the user is redirected to your `custom_redirect_url` with t
 Wait for the Connect Webview status to change to `authorized`, indicating that the connection was successful. You can either poll the Connect Webview or use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) to be notified when the status changes.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-# Poll until authorized
-webview = seam.connect_webviews.get(
-  connect_webview_id=webview.connect_webview_id
-)
-
-if webview.status == "authorized":
-  print("Connection successful!")
-  print(f"Connected account ID: {webview.connected_account_id}")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -189,7 +180,40 @@ if (webview.status === "authorized") {
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"connect_webview_id\": \"${CONNECT_WEBVIEW_ID}\"
+  }"
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Poll until authorized
+webview = seam.connect_webviews.get(
+  connect_webview_id=webview.connect_webview_id
+)
+
+if webview.status == "authorized":
+  print("Connection successful!")
+  print(f"Connected account ID: {webview.connected_account_id}")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -208,6 +232,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -229,6 +254,7 @@ if ($webview->status === "authorized") {
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -248,6 +274,7 @@ if (webview.Status == "authorized")
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.ConnectWebview;
@@ -267,19 +294,6 @@ if (webview.getStatus().equals("authorized")) {
 }
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/connect_webviews/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"connect_webview_id\": \"${CONNECT_WEBVIEW_ID}\"
-  }"
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -289,25 +303,8 @@ curl -X 'POST' \
 Once the connection is authorized, retrieve the list of Ultraloq devices associated with the connected account.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-devices = seam.devices.list(
-  connected_account_id=webview.connected_account_id
-)
-
-for device in devices:
-  print(f"Device: {device.properties['name']}")
-  print(f"Device ID: {device.device_id}")
-  print(f"Warnings: {device.warnings}")
-  print()
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -326,7 +323,41 @@ for (const device of devices) {
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"connected_account_id\": \"${CONNECTED_ACCOUNT_ID}\"
+  }"
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+devices = seam.devices.list(
+  connected_account_id=webview.connected_account_id
+)
+
+for device in devices:
+  print(f"Device: {device.properties['name']}")
+  print(f"Device ID: {device.device_id}")
+  print(f"Warnings: {device.warnings}")
+  print()
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -346,6 +377,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -367,6 +399,7 @@ foreach ($devices as $device) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -387,6 +420,7 @@ foreach (var device in devices)
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
@@ -405,19 +439,6 @@ for (Device device : devices) {
   System.out.println("Warnings: " + device.getWarnings());
   System.out.println();
 }
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/list' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"connected_account_id\": \"${CONNECTED_ACCOUNT_ID}\"
-  }"
 ```
 {% endtab %}
 {% endtabs %}
@@ -458,29 +479,8 @@ When you first list Ultraloq devices, they will have the `ultraloq_time_zone_unk
 This is a **required step** for Ultraloq devices. You must configure each device's timezone before you can create time-bound access codes.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-# Configure timezone for one or more devices
-seam.devices.report_provider_metadata(
-  devices=[
-    {
-      "device_id": device.device_id,
-      "ultraloq_metadata": {
-        "time_zone": "America/New_York"
-      }
-    }
-  ]
-)
-
-print("Timezone configured successfully!")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -502,7 +502,52 @@ console.log("Timezone configured successfully!");
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/report_provider_metadata' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"devices\": [
+      {
+        \"device_id\": \"${DEVICE_ID}\",
+        \"ultraloq_metadata\": {
+          \"time_zone\": \"America/New_York\"
+        }
+      }
+    ]
+  }"
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Configure timezone for one or more devices
+seam.devices.report_provider_metadata(
+  devices=[
+    {
+      "device_id": device.device_id,
+      "ultraloq_metadata": {
+        "time_zone": "America/New_York"
+      }
+    }
+  ]
+)
+
+print("Timezone configured successfully!")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -525,6 +570,7 @@ puts "Timezone configured successfully!"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -550,6 +596,7 @@ echo "Timezone configured successfully!";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -572,6 +619,7 @@ Console.WriteLine("Timezone configured successfully!");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 
@@ -594,26 +642,6 @@ seam.devices().reportProviderMetadata(
 System.out.println("Timezone configured successfully!");
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/report_provider_metadata' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"devices\": [
-      {
-        \"device_id\": \"${DEVICE_ID}\",
-        \"ultraloq_metadata\": {
-          \"time_zone\": \"America/New_York\"
-        }
-      }
-    ]
-  }"
-```
-{% endtab %}
 {% endtabs %}
 
 {% hint style="success" %}
@@ -631,29 +659,8 @@ For detailed information about timezone configuration, including best practices 
 After configuring the timezone, verify that the warning has been cleared and the timezone is set correctly.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-device = seam.devices.get(device_id=device.device_id)
-
-# Check that timezone is configured
-assert device.properties["ultraloq_metadata"]["time_zone"] == "America/New_York"
-
-# Check that warning is cleared
-has_warning = any(
-  w.warning_code == "ultraloq_time_zone_unknown"
-  for w in device.warnings
-)
-assert not has_warning, "Timezone warning should be cleared"
-
-print("✓ Device is ready to create time-bound access codes!")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -679,7 +686,51 @@ console.log("✓ Device is ready to create time-bound access codes!");
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+device=$(curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"${DEVICE_ID}\"
+  }")
+
+# Check timezone is set
+echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
+
+# Check warnings are cleared
+echo $device | jq '.device.warnings'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+device = seam.devices.get(device_id=device.device_id)
+
+# Check that timezone is configured
+assert device.properties["ultraloq_metadata"]["time_zone"] == "America/New_York"
+
+# Check that warning is cleared
+has_warning = any(
+  w.warning_code == "ultraloq_time_zone_unknown"
+  for w in device.warnings
+)
+assert not has_warning, "Timezone warning should be cleared"
+
+print("✓ Device is ready to create time-bound access codes!")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -699,6 +750,7 @@ puts "✓ Device is ready to create time-bound access codes!"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -727,6 +779,7 @@ echo "✓ Device is ready to create time-bound access codes!";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -751,6 +804,7 @@ Console.WriteLine("✓ Device is ready to create time-bound access codes!");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
@@ -774,25 +828,6 @@ assert !hasWarning : "Timezone warning should be cleared";
 System.out.println("✓ Device is ready to create time-bound access codes!");
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-device=$(curl -X 'POST' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"device_id\": \"${DEVICE_ID}\"
-  }")
-
-# Check timezone is set
-echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
-
-# Check warnings are cleared
-echo $device | jq '.device.warnings'
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -804,23 +839,8 @@ Now that your Ultraloq devices are connected and configured, you can perform com
 ### Lock and Unlock Devices
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-# Lock the door
-seam.locks.lock_door(device_id="your-device-id")
-print("Door locked")
-
-# Unlock the door
-seam.locks.unlock_door(device_id="your-device-id")
-print("Door unlocked")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -836,7 +856,46 @@ console.log("Door unlocked");
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+# Lock the door
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/lock_door' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"your-device-id\"}"
+
+# Unlock the door
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/unlock_door' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"your-device-id\"}"
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Lock the door
+seam.locks.lock_door(device_id="your-device-id")
+print("Door locked")
+
+# Unlock the door
+seam.locks.unlock_door(device_id="your-device-id")
+print("Door unlocked")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -853,6 +912,7 @@ puts "Door unlocked"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -872,6 +932,7 @@ echo "Door unlocked\n";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -888,6 +949,7 @@ Console.WriteLine("Door unlocked");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 
@@ -906,26 +968,6 @@ seam.locks().unlockDoor(LocksUnlockDoorRequest.builder()
 System.out.println("Door unlocked");
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-# Lock the door
-curl -X 'POST' \
-  'https://connect.getseam.com/locks/lock_door' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{\"device_id\": \"your-device-id\"}"
-
-# Unlock the door
-curl -X 'POST' \
-  'https://connect.getseam.com/locks/unlock_door' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{\"device_id\": \"your-device-id\"}"
-```
-{% endtab %}
 {% endtabs %}
 
 ### Create Permanent Access Codes
@@ -933,24 +975,8 @@ curl -X 'POST' \
 Permanent access codes work indefinitely and do not require timezone configuration:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-# Create permanent access code
-access_code = seam.access_codes.create(
-  device_id="your-device-id",
-  name="Maintenance Team",
-  code="1234"  # Optional: auto-generated if omitted
-)
-
-print(f"Created permanent code: {access_code.code}")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -967,7 +993,42 @@ console.log(`Created permanent code: ${accessCode.code}`);
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "device_id": "your-device-id",
+    "name": "Maintenance Team",
+    "code": "1234"
+  }'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Create permanent access code
+access_code = seam.access_codes.create(
+  device_id="your-device-id",
+  name="Maintenance Team",
+  code="1234"  # Optional: auto-generated if omitted
+)
+
+print(f"Created permanent code: {access_code.code}")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -985,6 +1046,7 @@ puts "Created permanent code: #{access_code.code}"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -1005,6 +1067,7 @@ echo "Created permanent code: " . $accessCode->code . "\n";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -1022,6 +1085,7 @@ Console.WriteLine($"Created permanent code: {accessCode.Code}");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
@@ -1040,21 +1104,6 @@ AccessCode accessCode = seam.accessCodes().create(
 System.out.println("Created permanent code: " + accessCode.getCode());
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_codes/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "device_id": "your-device-id",
-    "name": "Maintenance Team",
-    "code": "1234"
-  }'
-```
-{% endtab %}
 {% endtabs %}
 
 ### Create Time-Bound Access Codes
@@ -1062,7 +1111,53 @@ curl -X 'POST' \
 Time-bound access codes require timezone configuration (completed in Step 5):
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+// Define time range
+const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
+const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000);
+
+// Create time-bound access code
+const accessCode = await seam.accessCodes.create({
+  device_id: "your-device-id",
+  name: "Weekend Guest",
+  starts_at: startsAt.toISOString(),
+  ends_at: endsAt.toISOString()
+});
+
+console.log(`Created time-bound code: ${accessCode.code}`);
+console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`);
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+```bash
+# Calculate timestamps
+STARTS_AT=$(date -u -d '+1 day' '+%Y-%m-%dT%H:%M:%SZ')
+ENDS_AT=$(date -u -d '+3 days' '+%Y-%m-%dT%H:%M:%SZ')
+
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"your-device-id\",
+    \"name\": \"Weekend Guest\",
+    \"starts_at\": \"${STARTS_AT}\",
+    \"ends_at\": \"${ENDS_AT}\"
+  }"
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```python
 from seam import Seam
 from datetime import datetime, timedelta
@@ -1086,30 +1181,8 @@ print(f"Active from {access_code.starts_at} to {access_code.ends_at}")
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```javascript
-import { Seam } from "seam";
-
-const seam = new Seam();
-
-// Define time range
-const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
-const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000);
-
-// Create time-bound access code
-const accessCode = await seam.accessCodes.create({
-  device_id: "your-device-id",
-  name: "Weekend Guest",
-  starts_at: startsAt.toISOString(),
-  ends_at: endsAt.toISOString()
-});
-
-console.log(`Created time-bound code: ${accessCode.code}`);
-console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`);
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 require "time"
@@ -1134,6 +1207,7 @@ puts "Active from #{access_code.starts_at} to #{access_code.ends_at}"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -1160,6 +1234,7 @@ echo "Active from " . $accessCode->starts_at . " to " . $accessCode->ends_at . "
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 using System;
@@ -1184,6 +1259,7 @@ Console.WriteLine($"Active from {accessCode.StartsAt} to {accessCode.EndsAt}");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
@@ -1210,56 +1286,13 @@ System.out.println("Created time-bound code: " + accessCode.getCode());
 System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCode.getEndsAt());
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-# Calculate timestamps
-STARTS_AT=$(date -u -d '+1 day' '+%Y-%m-%dT%H:%M:%SZ')
-ENDS_AT=$(date -u -d '+3 days' '+%Y-%m-%dT%H:%M:%SZ')
-
-curl -X 'POST' \
-  'https://connect.getseam.com/access_codes/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"device_id\": \"your-device-id\",
-    \"name\": \"Weekend Guest\",
-    \"starts_at\": \"${STARTS_AT}\",
-    \"ends_at\": \"${ENDS_AT}\"
-  }"
-```
-{% endtab %}
 {% endtabs %}
 
 ### Monitor Device Status
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-device = seam.devices.get(device_id="your-device-id")
-
-# Check lock status
-print(f"Lock status: {device.properties['locked']}")
-
-# Check online status
-print(f"Online: {device.properties['online']}")
-
-# Check battery level (if available)
-if 'battery_level' in device.properties:
-  print(f"Battery level: {device.properties['battery_level']}")
-
-# Check for warnings
-if device.warnings:
-  print(f"Warnings: {[w.warning_code for w in device.warnings]}")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -1285,7 +1318,57 @@ if (device.warnings.length > 0) {
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+device=$(curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"your-device-id\"}")
+
+# Check lock status
+echo $device | jq '.device.properties.locked'
+
+# Check online status
+echo $device | jq '.device.properties.online'
+
+# Check battery level
+echo $device | jq '.device.properties.battery_level'
+
+# Check warnings
+echo $device | jq '.device.warnings'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+device = seam.devices.get(device_id="your-device-id")
+
+# Check lock status
+print(f"Lock status: {device.properties['locked']}")
+
+# Check online status
+print(f"Online: {device.properties['online']}")
+
+# Check battery level (if available)
+if 'battery_level' in device.properties:
+  print(f"Battery level: {device.properties['battery_level']}")
+
+# Check for warnings
+if device.warnings:
+  print(f"Warnings: {[w.warning_code for w in device.warnings]}")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -1312,6 +1395,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -1342,6 +1426,7 @@ if (count($device->warnings) > 0) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 using System.Linq;
@@ -1372,6 +1457,7 @@ if (device.Warnings.Any())
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
@@ -1403,29 +1489,6 @@ if (!device.getWarnings().isEmpty()) {
     .collect(Collectors.joining(", "));
   System.out.println("Warnings: " + warningCodes);
 }
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-device=$(curl -X 'POST' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{\"device_id\": \"your-device-id\"}")
-
-# Check lock status
-echo $device | jq '.device.properties.locked'
-
-# Check online status
-echo $device | jq '.device.properties.online'
-
-# Check battery level
-echo $device | jq '.device.properties.battery_level'
-
-# Check warnings
-echo $device | jq '.device.warnings'
 ```
 {% endtab %}
 {% endtabs %}

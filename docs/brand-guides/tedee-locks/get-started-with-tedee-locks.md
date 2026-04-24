@@ -141,15 +141,8 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+{% tab title="JavaScript" %}
 
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id
@@ -159,7 +152,17 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -168,6 +171,7 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -180,21 +184,8 @@ echo json_encode($webview);
 After a Tedee account is linked with Seam, you can retrieve devices for this Tedee account. The Seam API exposes most of the device's properties such as battery level.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-all_locks = seam.locks.list()
-
-some_lock = all_locks[0]
-
-assert some_lock.properties["online"] is True
-assert some_lock.properties["battery_level"] is True
-
-print(some_lock)
-# Device(device_id='ffc4d67f-e3a6-4ef8-ac84-f3770750422a', device_type='tedee_lock', location=None, properties={'locked': True, 'online': True, 'manufacturer': 'tedee', 'battery_level': 1, 'tedee_metadata': {'bridge_id': 1, 'device_id': 1, 'bridge_name': "Jane's Bridge", 'device_name': 'Front Door', 'device_model': 'Lock PRO', 'serial_number': '111111-11111'}, 'supported_code_lengths': [5, 6, 7, 8], 'online_access_codes_enabled': True, 'offline_access_codes_enabled': True, 'supports_offline_access_codes': True, 'name': 'Front Door', 'model': {'display_name': 'Lock PRO', 'manufacturer_display_name': 'Tedee', 'accessory_keypad_supported': False, 'offline_access_codes_supported': False, 'online_access_codes_supported': True}, 'battery': {'level': 1, 'status': 'full'}, 'image_url': 'https://connect.getseam.com/assets/images/devices/unknown-lock.png', 'image_alt_text': 'Placeholder Lock Image', 'code_constraints': [{'constraint_type': 'no_ascending_or_descending_sequence'}, {'constraint_type': 'at_least_three_unique_digits'}], 'supports_backup_access_code_pool': True}, capabilities_supported=['access_code', 'battery', 'lock'], errors=[], warnings=[], connected_account_id='f1e093d9-7a11-4d04-8c7e-619a037bd11a', workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be', created_at='2024-02-08T19:47:43.810Z', is_managed=True)
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -253,7 +244,23 @@ console.log(someLock)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["battery_level"] is True
+
+print(some_lock)
+# Device(device_id='ffc4d67f-e3a6-4ef8-ac84-f3770750422a', device_type='tedee_lock', location=None, properties={'locked': True, 'online': True, 'manufacturer': 'tedee', 'battery_level': 1, 'tedee_metadata': {'bridge_id': 1, 'device_id': 1, 'bridge_name': "Jane's Bridge", 'device_name': 'Front Door', 'device_model': 'Lock PRO', 'serial_number': '111111-11111'}, 'supported_code_lengths': [5, 6, 7, 8], 'online_access_codes_enabled': True, 'offline_access_codes_enabled': True, 'supports_offline_access_codes': True, 'name': 'Front Door', 'model': {'display_name': 'Lock PRO', 'manufacturer_display_name': 'Tedee', 'accessory_keypad_supported': False, 'offline_access_codes_supported': False, 'online_access_codes_supported': True}, 'battery': {'level': 1, 'status': 'full'}, 'image_url': 'https://connect.getseam.com/assets/images/devices/unknown-lock.png', 'image_alt_text': 'Placeholder Lock Image', 'code_constraints': [{'constraint_type': 'no_ascending_or_descending_sequence'}, {'constraint_type': 'at_least_three_unique_digits'}], 'supports_backup_access_code_pool': True}, capabilities_supported=['access_code', 'battery', 'lock'], errors=[], warnings=[], connected_account_id='f1e093d9-7a11-4d04-8c7e-619a037bd11a', workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be', created_at='2024-02-08T19:47:43.810Z', is_managed=True)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -277,6 +284,7 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
+
 {% code overflow="wrap" %}
 ```php
 use Seam\SeamClient;
@@ -313,21 +321,8 @@ Next, you can perform the basic action of locking and unlocking a door.
 | device\_id | String |             |
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# lock the door
-seam.locks.lock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is True
-
-# Now unlock the door
-seam.locks.unlock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is False
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -341,7 +336,23 @@ console.log(updatedLock.properties.locked) // false
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# lock the door
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is True
+
+# Now unlock the door
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is False
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -356,6 +367,7 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -382,28 +394,8 @@ For Tedee-specific access code restrictions, see [Access (PIN) Code Requirements
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# create an ongoing code
-seam.access_codes.create(
-  device=some_lock,
-  code="492332",
-  name="Personal Access Code")
-
-# create a timebound code
-seam.access_codes.create(
-  device=some_lock,
-  code="498882",
-  name="My Temp Access Code",
-  starts_at="2028-08-12T19:23:42+0000",
-  ends_at="2028-08-13T19:23:42+0000")
-
-# you can use a device or a device_id as the "device" parameter
-seam.access_codes.list(device=some_lock)
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -428,7 +420,30 @@ await seam.accessCodes.list({
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# create an ongoing code
+seam.access_codes.create(
+  device=some_lock,
+  code="492332",
+  name="Personal Access Code")
+
+# create a timebound code
+seam.access_codes.create(
+  device=some_lock,
+  code="498882",
+  name="My Temp Access Code",
+  starts_at="2028-08-12T19:23:42+0000",
+  ends_at="2028-08-13T19:23:42+0000")
+
+# you can use a device or a device_id as the "device" parameter
+seam.access_codes.list(device=some_lock)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -449,6 +464,7 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 

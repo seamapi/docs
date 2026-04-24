@@ -31,32 +31,8 @@ To use a PAT for authorization in the Seam API, you must specify the PAT in the 
 The following example shows how to use a PAT and workspace ID to [list all devices](https://docs.seam.co/latest/api/devices/list) in a workspace:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-seam = Seam(
-    # Specify PAT.
-    api_key=pat,
-    # Specify workspace ID.
-    workspace_id=workspaceId
-)
-
-pprint(seam.devices.list())
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/list' \
-  -H 'accept: application/json' \
-  -H 'seam-workspace: ${WORKSPACE_ID}' \
-  -H 'Authorization: Bearer ${PAT}' \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 const seam = new Seam({
   // Specify PAT.
@@ -69,7 +45,35 @@ console.log(await seam.devices.list())
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/list' \
+  -H 'accept: application/json' \
+  -H 'seam-workspace: ${WORKSPACE_ID}' \
+  -H 'Authorization: Bearer ${PAT}' \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+seam = Seam(
+    # Specify PAT.
+    api_key=pat,
+    # Specify workspace ID.
+    workspace_id=workspaceId
+)
+
+pprint(seam.devices.list())
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 client = Seam.new(
   # Specify PAT.
@@ -83,6 +87,7 @@ puts client.devices.list().inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $seam = new Seam\SeamClient(
   // Specify PAT.
@@ -96,6 +101,7 @@ print_r($seam->devices->list());
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 var seam = new SeamClient(
     // Specify PAT.
@@ -111,7 +117,6 @@ foreach (var device in devices)
 }
 ```
 {% endtab %}
-
 {% endtabs %}
 
 {% hint style="info" %}

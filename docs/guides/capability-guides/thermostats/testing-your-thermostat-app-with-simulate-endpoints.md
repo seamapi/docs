@@ -57,34 +57,37 @@ When you set the HVAC mode to `heat`, `cool`, or `heat_cool`, you must also set 
 To simulate having adjusted the HVAC mode for a thermostat:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the device.
-thermostat = seam.devices.get(
-  device_id="11111111-1111-1111-2222-444444444444"
-)
+```javascript
+// Get the device.
+const thermostat = await seam.devices.get({
+  device_id: "11111111-1111-1111-2222-444444444444"
+});
 
-# Confirm that Seam supports the desired HVAC mode for the thermostat.
-# In this example, we're simulating having set the thermostat to heat mode.
-if thermostat.can_hvac_heat:
-  # Perform the simulated HVAC mode adjustment.
-  seam.thermostats.simulate.hvac_mode_adjusted(
-    device_id = thermostat.device_id,
-    hvac_mode = "heat",
-    heating_set_point_fahrenheit = 68
-  )
+// Confirm that Seam supports the desired HVAC mode for the thermostat.
+// In this example, we're simulating having set the thermostat to heat mode.
+if (thermostat.can_hvac_heat) {
+  // Perform the simulated HVAC mode adjustment.
+  await seam.thermostats.simulate.hvacModeAdjusted({
+    device_id: thermostat.device_id,
+    hvac_mode: "heat",
+    heating_set_point_fahrenheit: 68
+  })
+};
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -126,35 +129,36 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the device.
-const thermostat = await seam.devices.get({
-  device_id: "11111111-1111-1111-2222-444444444444"
-});
+```python
+# Get the device.
+thermostat = seam.devices.get(
+  device_id="11111111-1111-1111-2222-444444444444"
+)
 
-// Confirm that Seam supports the desired HVAC mode for the thermostat.
-// In this example, we're simulating having set the thermostat to heat mode.
-if (thermostat.can_hvac_heat) {
-  // Perform the simulated HVAC mode adjustment.
-  await seam.thermostats.simulate.hvacModeAdjusted({
-    device_id: thermostat.device_id,
-    hvac_mode: "heat",
-    heating_set_point_fahrenheit: 68
-  })
-};
+# Confirm that Seam supports the desired HVAC mode for the thermostat.
+# In this example, we're simulating having set the thermostat to heat mode.
+if thermostat.can_hvac_heat:
+  # Perform the simulated HVAC mode adjustment.
+  seam.thermostats.simulate.hvac_mode_adjusted(
+    device_id = thermostat.device_id,
+    hvac_mode = "heat",
+    heating_set_point_fahrenheit = 68
+  )
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -185,6 +189,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -211,6 +216,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -239,9 +245,6 @@ if (thermostat.CanHvacHeat == true) {
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -258,30 +261,32 @@ Specify the desired temperature that you want to simulate the thermostat reachin
 To simulate reaching a desired temperature:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the device.
-thermostat = seam.devices.get(
-  device_id="11111111-1111-1111-2222-444444444444"
-)
+```javascript
+// Get the device.
+const thermostat = await seam.devices.get({
+  device_id: "11111111-1111-1111-2222-444444444444"
+});
 
-# Simulate reaching the specified temperature.
-seam.thermostats.simulate.temperature_reached(
-  device_id = thermostat.device_id,
-  temperature_celsius = 25
-)
+// Simulate reaching the specified temperature.
+await seam.thermostats.simulate.temperatureReached({
+  device_id: thermostat.device_id,
+  temperature_celsius: 25
+});
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -318,30 +323,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the device.
-const thermostat = await seam.devices.get({
-  device_id: "11111111-1111-1111-2222-444444444444"
-});
+```python
+# Get the device.
+thermostat = seam.devices.get(
+  device_id="11111111-1111-1111-2222-444444444444"
+)
 
-// Simulate reaching the specified temperature.
-await seam.thermostats.simulate.temperatureReached({
-  device_id: thermostat.device_id,
-  temperature_celsius: 25
-});
+# Simulate reaching the specified temperature.
+seam.thermostats.simulate.temperature_reached(
+  device_id = thermostat.device_id,
+  temperature_celsius = 25
+)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -367,6 +374,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -388,6 +396,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -411,7 +420,4 @@ seam.Thermostats.Simulate.TemperatureReached(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

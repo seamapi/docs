@@ -33,39 +33,41 @@ The code samples in this section contain manufacturer-specific metadata that may
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-seam.acs.credentials.create(
-  is_multi_phone_sync_credential=True,
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  access_method="mobile_key",
-  credential_manager_acs_system_id="88888888-8888-8888-8888-888888888888",
-  # ACS manufacturer-specific properties
-  visionline_metadata={
+```javascript
+await seam.acs.credentials.create({
+  is_multi_phone_sync_credential: true,
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  access_method: "mobile_key",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  // ACS manufacturer-specific properties
+  visionline_metadata: {
     "cardFormat": "rfid48",
     "label": "%ROOMNUM% - %SITENAME%",
-    "override": True
+    "override": true
   },
   ...
-)
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='99999999-9999-9999-9999-999999999999',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='mobile_key',
-  is_multi_phone_sync_credential=True,
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'mobile_key',
+  is_multi_phone_sync_credential: true,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -105,39 +107,41 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-await seam.acs.credentials.create({
-  is_multi_phone_sync_credential: true,
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  access_method: "mobile_key",
-  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-  // ACS manufacturer-specific properties
-  visionline_metadata: {
+```python
+seam.acs.credentials.create(
+  is_multi_phone_sync_credential=True,
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  access_method="mobile_key",
+  credential_manager_acs_system_id="88888888-8888-8888-8888-888888888888",
+  # ACS manufacturer-specific properties
+  visionline_metadata={
     "cardFormat": "rfid48",
     "label": "%ROOMNUM% - %SITENAME%",
-    "override": true
+    "override": True
   },
   ...
-});
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '99999999-9999-9999-9999-999999999999',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'mobile_key',
-  is_multi_phone_sync_credential: true,
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='mobile_key',
+  is_multi_phone_sync_credential=True,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -170,6 +174,7 @@ seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -202,6 +207,7 @@ $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp

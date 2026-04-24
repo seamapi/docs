@@ -20,22 +20,24 @@ You can also use the prebuilt [device details Seam Component](../../ui-component
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device = seam.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
-pprint("Online: " + str(device.properties.online))
+```javascript
+const device = await seam.devices.get({device_id: "36cf1a96-196d-41b0-9804-88154387f1f9"});
+console.log("Online:", device.properties.online);
 ```
 
 **Response:**
 
 ```
-'Online: True'
+Online: true
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -57,22 +59,24 @@ Online: true
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const device = await seam.devices.get({device_id: "36cf1a96-196d-41b0-9804-88154387f1f9"});
-console.log("Online:", device.properties.online);
+```python
+device = seam.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
+pprint("Online: " + str(device.properties.online))
 ```
 
 **Response:**
 
 ```
-Online: true
+'Online: True'
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -88,6 +92,7 @@ Online: true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -107,6 +112,7 @@ Online: true
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -120,9 +126,6 @@ Console.WriteLine("Online: " + device.Properties.Online);
 Online: True
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ## Get Device Status Using Connection-Related Events
@@ -142,45 +145,53 @@ When issuing a [List Events](https://docs.seam.co/latest/api/events/list) reques
 The following example uses the List Events request to retrieve all `device.connected` events for a specific device since January 1, 2024:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device_connected_events = seam.events.list(
-    device_id = "36cf1a96-196d-41b0-9804-88154387f1f9",
-    event_type = "device.connected",
-    since = "2024-01-01T00:00:00Z"
-)
-pprint(device_connected_events)
+```javascript
+const device_connected_events = await seam.events.list({
+  device_id: "36cf1a96-196d-41b0-9804-88154387f1f9",
+  event_type: "device.connected",
+  since: "2024-01-01T00:00:00Z"
+})
+console.log(device_connected_events)
 ```
 
 **Response:**
 
-```
-[{'connected_account_id': 'c1413928-f527-4e12-abf9-d5e18d92dd33',
-  'created_at': '2024-02-04T21:55:09.681Z',
-  'device_id': '36cf1a96-196d-41b0-9804-88154387f1f9',
-  'event_id': 'ca3114b2-088d-43f9-bb5e-ded5d19ad053',
-  'event_type': 'device.connected',
-  'occurred_at': '2024-02-04T21:55:09.681Z',
-  'workspace_id': '398d80b7-3f96-47c2-b85a-6f8ba21d07be'},
- {'connected_account_id': 'c1413928-f527-4e12-abf9-d5e18d92dd33',
-  'created_at': '2024-02-03T04:54:39.744Z',
-  'device_id': '36cf1a96-196d-41b0-9804-88154387f1f9',
-  'event_id': '39fcb512-82a4-431d-969f-3935eeba8929',
-  'event_type': 'device.connected',
-  'occurred_at': '2024-02-03T04:54:39.744Z',
-  'workspace_id': '398d80b7-3f96-47c2-b85a-6f8ba21d07be'}]
+```json
+[
+  {
+    event_id: 'ca3114b2-088d-43f9-bb5e-ded5d19ad053',
+    device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
+    event_type: 'device.connected',
+    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+    created_at: '2024-02-04T21:55:09.681Z',
+    occurred_at: '2024-02-04T21:55:09.681Z',
+    connected_account_id: 'c1413928-f527-4e12-abf9-d5e18d92dd33'
+  },
+  {
+    event_id: '39fcb512-82a4-431d-969f-3935eeba8929',
+    device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
+    event_type: 'device.connected',
+    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+    created_at: '2024-02-03T04:54:39.744Z',
+    occurred_at: '2024-02-03T04:54:39.744Z',
+    connected_account_id: 'c1413928-f527-4e12-abf9-d5e18d92dd33'
+  }
+]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/devices/list' \
+  'https://connect.getseam.com/events/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
@@ -220,45 +231,41 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const device_connected_events = await seam.events.list({
-  device_id: "36cf1a96-196d-41b0-9804-88154387f1f9",
-  event_type: "device.connected",
-  since: "2024-01-01T00:00:00Z"
-})
-console.log(device_connected_events)
+```python
+device_connected_events = seam.events.list(
+    device_id = "36cf1a96-196d-41b0-9804-88154387f1f9",
+    event_type = "device.connected",
+    since = "2024-01-01T00:00:00Z"
+)
+pprint(device_connected_events)
 ```
 
 **Response:**
 
-```json
-[
-  {
-    event_id: 'ca3114b2-088d-43f9-bb5e-ded5d19ad053',
-    device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
-    event_type: 'device.connected',
-    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at: '2024-02-04T21:55:09.681Z',
-    occurred_at: '2024-02-04T21:55:09.681Z',
-    connected_account_id: 'c1413928-f527-4e12-abf9-d5e18d92dd33'
-  },
-  {
-    event_id: '39fcb512-82a4-431d-969f-3935eeba8929',
-    device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
-    event_type: 'device.connected',
-    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at: '2024-02-03T04:54:39.744Z',
-    occurred_at: '2024-02-03T04:54:39.744Z',
-    connected_account_id: 'c1413928-f527-4e12-abf9-d5e18d92dd33'
-  }
-]
+```
+[{'connected_account_id': 'c1413928-f527-4e12-abf9-d5e18d92dd33',
+  'created_at': '2024-02-04T21:55:09.681Z',
+  'device_id': '36cf1a96-196d-41b0-9804-88154387f1f9',
+  'event_id': 'ca3114b2-088d-43f9-bb5e-ded5d19ad053',
+  'event_type': 'device.connected',
+  'occurred_at': '2024-02-04T21:55:09.681Z',
+  'workspace_id': '398d80b7-3f96-47c2-b85a-6f8ba21d07be'},
+ {'connected_account_id': 'c1413928-f527-4e12-abf9-d5e18d92dd33',
+  'created_at': '2024-02-03T04:54:39.744Z',
+  'device_id': '36cf1a96-196d-41b0-9804-88154387f1f9',
+  'event_id': '39fcb512-82a4-431d-969f-3935eeba8929',
+  'event_type': 'device.connected',
+  'occurred_at': '2024-02-03T04:54:39.744Z',
+  'workspace_id': '398d80b7-3f96-47c2-b85a-6f8ba21d07be'}]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -288,6 +295,7 @@ puts device_connected_events.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -309,6 +317,7 @@ echo json_encode($device_connected_events), "\n";
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -344,9 +353,6 @@ foreach (var device_connected_event in device_connected_events)
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### Receive Connection-Related Events Using a Webhook

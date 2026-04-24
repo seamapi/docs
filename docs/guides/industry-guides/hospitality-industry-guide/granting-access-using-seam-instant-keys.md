@@ -17,30 +17,32 @@ This section details the steps in this process and provides accompanying Seam AP
 Use the Seam API to create a `user_identity`. A user identity represents the hotel guest.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Create a user identity for your user.
-jane_user = seam.user_identities.create(
-  full_name = "Jane Doe",
-  phone_number = "+15555550100"
-)
+```javascript
+// Create a user identity for your user.
+const janeUser = await seam.userIdentities.create({
+  full_name: "Jane Doe",
+  phone_number: "+15555550100"
+});
 ```
 
 **Output:**
 
-```
-UserIdentity(
-  user_identity_id='43947360-cdc8-4db6-8b22-e079416d1d8b',
-  full_name='Jane Doe',
-  phone_number='+15555550100',
+```json
+{
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name": "Jane Doe",
+  "phone_number": "+15555550100",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -71,30 +73,32 @@ jane_user=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Create a user identity for your user.
-const janeUser = await seam.userIdentities.create({
-  full_name: "Jane Doe",
-  phone_number: "+15555550100"
-});
+```python
+# Create a user identity for your user.
+jane_user = seam.user_identities.create(
+  full_name = "Jane Doe",
+  phone_number = "+15555550100"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "full_name": "Jane Doe",
-  "phone_number": "+15555550100",
+```
+UserIdentity(
+  user_identity_id='43947360-cdc8-4db6-8b22-e079416d1d8b',
+  full_name='Jane Doe',
+  phone_number='+15555550100',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -118,6 +122,7 @@ jane_user = seam.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -141,6 +146,7 @@ $jane_user = $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -162,90 +168,8 @@ $jane_user = $seam->user_identities->create(
 To create an Access Grant, specify the user identity, entrance or space IDs, and starting and ending times. Include `mobile_key` as a requested access method.
 
 {% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-seam.access_grants.create(
-  # You can specify the ID of an existing user identity or
-  # use the user_identity parameter to create a new one.
-  user_identity_id=jane_user.user_identity_id,
-  # You can specify acs_entrance_ids, space_ids, or both.
-  acs_entrance_ids=[
-    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
-    "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],  
-  requested_access_methods=[
-    {"mode": "mobile_key"}
-  ],
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z"
-)
-```
-
-**Output:**
-
-```python
-AccessGrant(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  display_name="My Access Grant",
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z",
-  instant_key_url="https://ik.seam.co/ABCXYZ",
-  ...
-)
-
-# Share the instant_key_url with your user.
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-# You can specify the ID of an existing user identity or
-# use the user_identity parameter to create a new one.
-# Also, you can specify acs_entrance_ids, space_ids, or both.
-curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jane_user})\"
-    \"acs_entrance_ids\": [
-      \"48ebfb50-c531-43c5-b9ea-409f26dabbd7\",
-      \"f74e4879-5991-4e2f-a368-888983dcfbfc\"
-    ],
-    \"requested_access_methods\": [
-      {\"mode\": \"mobile_key\"}
-    ],
-    \"starts_at\": \"2025-07-13T15:00:00.000Z\",
-    \"ends_at\": \"2025-07-16T11:00:00.000Z\"
-}"
-```
-
-**Output:**
-
-```json
-{
-  "access_grant": {
-    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-    "display_name": "My Access Grant",
-    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-    "starts_at": "2025-07-13T15:00:00.000Z",
-    "ends_at": "2025-07-16T11:00:00.000Z",
-    "instant_key_url": "https://ik.seam.co/ABCXYZ",
-    ...
-  }
-}
-
-# Share the instant_key_url with your user.
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 **Code:**
 
 ```javascript
@@ -283,7 +207,93 @@ await seam.accessGrants.create({
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+**Code:**
+
+```bash
+# You can specify the ID of an existing user identity or
+# use the user_identity parameter to create a new one.
+# Also, you can specify acs_entrance_ids, space_ids, or both.
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jane_user})\",
+    \"acs_entrance_ids\": [
+      \"48ebfb50-c531-43c5-b9ea-409f26dabbd7\",
+      \"f74e4879-5991-4e2f-a368-888983dcfbfc\"
+    ],
+    \"requested_access_methods\": [
+      {\"mode\": \"mobile_key\"}
+    ],
+    \"starts_at\": \"2025-07-13T15:00:00.000Z\",
+    \"ends_at\": \"2025-07-16T11:00:00.000Z\"
+}"
+```
+
+**Output:**
+
+```json
+{
+  "access_grant": {
+    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    "display_name": "My Access Grant",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "starts_at": "2025-07-13T15:00:00.000Z",
+    "ends_at": "2025-07-16T11:00:00.000Z",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
+    ...
+  }
+}
+
+# Share the instant_key_url with your user.
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+**Code:**
+
+```python
+seam.access_grants.create(
+  # You can specify the ID of an existing user identity or
+  # use the user_identity parameter to create a new one.
+  user_identity_id=jane_user.user_identity_id,
+  # You can specify acs_entrance_ids, space_ids, or both.
+  acs_entrance_ids=[
+    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "f74e4879-5991-4e2f-a368-888983dcfbfc"
+  ],  
+  requested_access_methods=[
+    {"mode": "mobile_key"}
+  ],
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
+```
+
+**Output:**
+
+```python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z",
+  instant_key_url="https://ik.seam.co/ABCXYZ",
+  ...
+)
+
+# Share the instant_key_url with your user.
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -319,6 +329,7 @@ seam.access_grants.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -357,6 +368,7 @@ $seam->access_grants->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

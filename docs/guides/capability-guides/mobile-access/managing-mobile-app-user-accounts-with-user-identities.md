@@ -32,34 +32,36 @@ To [create a user identity](https://docs.seam.co/latest/api/user_identities/crea
 Note that if you specify one or more of the `user_identity_key`, `email_address`, or `phone_number`, each of these values must be unique within your [workspace](../../core-concepts/workspaces/).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-seam.user_identities.create(
-  user_identity_key = "jean_doe",
-  email_address = "jean@example.com",
-  phone_number = "+15555550110",
-  full_name = "Jean Doe"
-)
+```javascript
+await seam.userIdentities.create({
+  user_identity_key: "jean_doe",
+  email_address: "jean@example.com",
+  phone_number: "+15555550110",
+  full_name: "Jean Doe",
+});
 ```
 
 **Output:**
 
-```
-UserIdentity(
-  user_identity_id='22222222-2222-2222-2222-222222222222',
-  user_identity_key='jean_doe',
-  email_address='jean@example.com',
-  phone_number='+15555550110',
-  display_name='Jean Doe',
-  full_name='Jean Doe',
+```json
+{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "user_identity_key": "jean_doe",
+  "email_address": "jean@example.com",
+  "phone_number": "+15555550110",
+  "display_name": "Jean Doe",
+  "full_name": "Jean Doe",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -94,34 +96,36 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-await seam.userIdentities.create({
-  user_identity_key: "jean_doe",
-  email_address: "jean@example.com",
-  phone_number: "+15555550110",
-  full_name: "Jean Doe",
-});
+```python
+seam.user_identities.create(
+  user_identity_key = "jean_doe",
+  email_address = "jean@example.com",
+  phone_number = "+15555550110",
+  full_name = "Jean Doe"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "display_name": "Jean Doe",
-  "full_name": "Jean Doe",
+```
+UserIdentity(
+  user_identity_id='22222222-2222-2222-2222-222222222222',
+  user_identity_key='jean_doe',
+  email_address='jean@example.com',
+  phone_number='+15555550110',
+  display_name='Jean Doe',
+  full_name='Jean Doe',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -149,6 +153,7 @@ seam.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -176,6 +181,7 @@ $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp
@@ -195,32 +201,34 @@ Coming soon!
 To [link an ACS user with a user identity](https://docs.seam.co/latest/api/user_identities/add_acs_user), provide the ID of the user identity and the ID of the ACS user.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-user_identity = seam.user_identities.get(
-  email_address = "jean@example.com"
-)
+```javascript
+const userIdentity = await seam.userIdentities.get({
+  email_address: "jean@example.com",
+});
 
-acs_user = seam.acs.users.get(
-  email_address = "jean@example.com"
-)
+const acsUser = await seam.acs.users.get({
+  email_address: "jean@example.com",
+});
 
-seam.user_identities.add_acs_user(
-  user_identity_id = user_identity.user_identity_id,
-  acs_user_id = acs_user.acs_user_id
-)
+await seam.userIdentities.addAcsUser({
+  user_identity_id: userIdentity.user_identity_id,
+  acs_user_id: acsUser.acs_user_id,
+});
 ```
 
 **Output:**
 
 ```
-None
+// void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -265,32 +273,34 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-const userIdentity = await seam.userIdentities.get({
-  email_address: "jean@example.com",
-});
+```python
+user_identity = seam.user_identities.get(
+  email_address = "jean@example.com"
+)
 
-const acsUser = await seam.acs.users.get({
-  email_address: "jean@example.com",
-});
+acs_user = seam.acs.users.get(
+  email_address = "jean@example.com"
+)
 
-await seam.userIdentities.addAcsUser({
-  user_identity_id: userIdentity.user_identity_id,
-  acs_user_id: acsUser.acs_user_id,
-});
+seam.user_identities.add_acs_user(
+  user_identity_id = user_identity.user_identity_id,
+  acs_user_id = acs_user.acs_user_id
+)
 ```
 
 **Output:**
 
 ```
-// void
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -316,6 +326,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -341,6 +352,7 @@ null
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp
@@ -362,23 +374,25 @@ Coming soon!
 When you [delete a user identity](https://docs.seam.co/latest/api/user_identities/delete), Seam automatically cleans up all other associated resources.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-seam.user_identities.delete(
-    user_identity_id = "22222222-2222-2222-2222-222222222222"
-)
+```javascript
+await seam.userIdentities.delete({
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+});
 ```
 
 **Output:**
 
 ```
-None
+// void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -401,23 +415,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-await seam.userIdentities.delete({
-  user_identity_id: "22222222-2222-2222-2222-222222222222",
-});
+```python
+seam.user_identities.delete(
+    user_identity_id = "22222222-2222-2222-2222-222222222222"
+)
 ```
 
 **Output:**
 
 ```
-// void
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -434,6 +450,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -450,6 +467,7 @@ null
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp

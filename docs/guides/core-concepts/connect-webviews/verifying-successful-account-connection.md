@@ -29,27 +29,31 @@ Use the `connect_webview_id` to retrieve the Connect Webview instance. You can c
 Also, once the connection is successful, the `connect_webview` object includes a `connected_account_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-updated_connect_webview = seam.connect_webviews.get(created_connect_webview.connect_webview_id)
+```javascript
+const updatedConnectWebview = await seam.connectWebviews.get({
+  connect_webview_id: connectWebview.connect_webview_id
+});
 ```
 
 **Output:**
 
-```
-ConnectWebview(
-  connect_webview_id='12345678-1234-1234-1234-123456789012',
-  status='authorized',
-  login_successful=True,
-  connected_account_id='11111111-1111-1111-1111-222222222222',
+```json
+{
+  connect_webview_id: '12345678-1234-1234-1234-123456789012',
+  status: 'authorized',
+  login_successful: true,
+  connected_account_id: '11111111-1111-1111-1111-222222222222',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -79,29 +83,29 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const updatedConnectWebview = await seam.connectWebviews.get({
-  connect_webview_id: connectWebview.connect_webview_id
-});
+```python
+updated_connect_webview = seam.connect_webviews.get(created_connect_webview.connect_webview_id)
 ```
 
 **Output:**
 
-```json
-{
-  connect_webview_id: '12345678-1234-1234-1234-123456789012',
-  status: 'authorized',
-  login_successful: true,
-  connected_account_id: '11111111-1111-1111-1111-222222222222',
+```
+ConnectWebview(
+  connect_webview_id='12345678-1234-1234-1234-123456789012',
+  status='authorized',
+  login_successful=True,
+  connected_account_id='11111111-1111-1111-1111-222222222222',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -125,6 +129,7 @@ updated_connect_webview = seam.connect_webviews.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -147,6 +152,7 @@ $updated_connect_webview = $seam->connect_webviews->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -167,9 +173,6 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

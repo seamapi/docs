@@ -7,37 +7,39 @@ description: When listing Connect Webviews, you can filter by custom metadata.
 When you use [List Connect Webviews](https://docs.seam.co/latest/api/connect_webviews/list), you can filter the list by one or more [custom metadata](attaching-custom-data-to-the-connect-webview.md) pairs. Include the `custom_metadata_has` parameter with a JSON string that specifies the desired key:value pairs.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-connect_webviews = seam.connect_webviews.list(
-  custom_metadata_has = {
+```javascript
+const connect_webviews = await seam.connectWebviews.list({
+  custom_metadata_has: {
     "internal_account_id": "user-1"
   }
-)
+});
 
-pprint(connect_webviews)
+console.log(connect_webviews);
 ```
 
 **Response:**
 
-```
+```json
 [
-  ConnectWebview(
-    workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    connect_webview_id='3c3f4c15-e7db-47c6-bc5a-1bf206ff269c',
-    status='pending',
-    url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=xxxx&auth_token=yyyy',
-    custom_metadata={"internal_account_id": "user-1"},
+  {
+    connect_webview_id: '3c3f4c15-e7db-47c6-bc5a-1bf206ff269c',
+    url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot',
+    status: 'pending',
+    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+    custom_metadata: { internal_account_id: 'user-1' },
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -75,37 +77,39 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const connect_webviews = await seam.connectWebviews.list({
-  custom_metadata_has: {
+```python
+connect_webviews = seam.connect_webviews.list(
+  custom_metadata_has = {
     "internal_account_id": "user-1"
   }
-});
+)
 
-console.log(connect_webviews);
+pprint(connect_webviews)
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    connect_webview_id: '3c3f4c15-e7db-47c6-bc5a-1bf206ff269c',
-    url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot',
-    status: 'pending',
-    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    custom_metadata: { internal_account_id: 'user-1' },
+  ConnectWebview(
+    workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+    connect_webview_id='3c3f4c15-e7db-47c6-bc5a-1bf206ff269c',
+    status='pending',
+    url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=xxxx&auth_token=yyyy',
+    custom_metadata={"internal_account_id": "user-1"},
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -136,6 +140,7 @@ puts connect_webviews.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -151,11 +156,11 @@ echo json_encode($webviews);
 ```json
 [
   {
-    "connect_webview_id":"3c3f4c15-e7db-47c6-bc5a-1bf206ff269c",
-    "url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=xxxx&auth_token=yyyy",
-    "status"="pending",
-    "workspace_id"="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "custom_metadata"={"internal_account_id"=>"user-1"},
+    "connect_webview_id": "3c3f4c15-e7db-47c6-bc5a-1bf206ff269c",
+    "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=xxxx&auth_token=yyyy",
+    "status": "pending",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "custom_metadata": {"internal_account_id": "user-1"},
     ...
   },
   ...
@@ -164,6 +169,7 @@ echo json_encode($webviews);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -190,7 +196,4 @@ seam.ConnectWebviews.List(
 }...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -11,32 +11,38 @@ You can use the [Update Connected Account](https://docs.seam.co/latest/api/conne
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-devices = seam.devices.list(
-  custom_metadata_has = {
+```javascript
+const devices = await seam.devices.list({
+  custom_metadata_has: {
     "internal_account_id": "user-1"
   }
-)
+});
 
-pprint(devices)
+console.log(devices);
 ```
 
 **Response:**
 
-```
-[Device(device_id='f7a7fb02-9277-4354-8dd1-28e2d016a7a9',
-        device_type='schlage_lock',
-        ...
-        is_managed=True,
-        custom_metadata={"internal_account_id": "user-1"}),
-...]
+```json
+[
+  {
+    device_id: 'f7a7fb02-9277-4354-8dd1-28e2d016a7a9',
+    device_type: 'schlage_lock',
+    ...
+    is_managed: true,
+    custom_metadata: { internal_account_id: 'user-1' }
+  },
+  ...
+]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -72,36 +78,34 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const devices = await seam.devices.list({
-  custom_metadata_has: {
+```python
+devices = seam.devices.list(
+  custom_metadata_has = {
     "internal_account_id": "user-1"
   }
-});
+)
 
-console.log(devices);
+pprint(devices)
 ```
 
 **Response:**
 
-```json
-[
-  {
-    device_id: 'f7a7fb02-9277-4354-8dd1-28e2d016a7a9',
-    device_type: 'schlage_lock',
-    ...
-    is_managed: true,
-    custom_metadata: { internal_account_id: 'user-1' }
-  },
-  ...
-]
+```
+[Device(device_id='f7a7fb02-9277-4354-8dd1-28e2d016a7a9',
+        device_type='schlage_lock',
+        ...
+        is_managed=True,
+        custom_metadata={"internal_account_id": "user-1"}),
+...]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -127,6 +131,7 @@ puts devices.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -147,6 +152,7 @@ echo json_encode($devices);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -180,7 +186,4 @@ foreach (var device in devices)
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -36,68 +36,71 @@ When you create a credential for a Latch ACS, you cannot specify a custom code. 
 The following example walks you through this process:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Step 1:
-# Create the new user on the Latch ACS.
-# jane_user is a user_identity that represents
-# a user within your set of app users.
-building_a_resident = seam.acs.users.create(
-  acs_system_id = "11111111-1111-1111-1111-111111111111",
-  user_identity_id = jane_user.user_identity_id,
-  full_name = "Jane Doe",
-  email_address = "jane@example.com"
-)
+```javascript
+// Step 1:
+// Create the new user on the Latch ACS.
+// janeUser is a user_identity that represents
+// a user within your set of app users.
+const buildingAResident = await seam.acs.users.create({
+  acs_system_id: "11111111-1111-1111-1111-111111111111",
+  user_identity_id: janeUser.user_identity_id,
+  full_name: "Jane Doe",
+  email_address: "jane@example.com"
+});
 
-# Step 2:
-# Create a PIN code for each door for the ACS user.
-for entrance in entrances:
-  credential = seam.acs.credentials.create(
-    acs_user_id = building_a_resident.acs_user_id,
-    access_method = "code",
-    allowed_acs_entrance_ids = [
-      # You must specify only one entrance per PIN code.
+// Step 2:
+// Create a PIN code for each door for the ACS user.
+for (const entrance of entrances) {
+  const credential = await seam.acs.credentials.create({
+    acs_user_id: buildingAResident.acs_user_id,
+    access_method: "code",
+    allowed_acs_entrance_ids: [
+      // You must specify only one entrance per PIN code.
       entrance.acs_entrance_id
     ],
-    starts_at = "2024-07-13T16:50:42.072Z",
-    ends_at = "2024-07-18T16:50:42.072Z"
-  )
+    starts_at: "2024-07-13T16:50:42.072Z",
+    ends_at: "2024-07-18T16:50:42.072Z"
+  });
 
-  pprint(credential)
+  console.log(credential);
 
-  # View the list of entrances to which the credential
-  # grants access.
-  seam.acs.credentials.list_accessible_entrances(
-    acs_credential_id = credential.acs_credential_id
-  )
+  // It is also useful to list the entrances
+  // to which the mobile key grants access.
+  await seam.acs.credentials.listAccessibleEntrances({
+    acs_credential_id: credential.acs_credential_id
+  });
+}
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  code='1234567',
-  access_method='code',
-  starts_at='2024-07-13T16:50:42.072Z',
-  ends_at='2024-07-18T16:50:42.072Z',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  code: '1234567',
+  access_method: 'code',
+  starts_at: '2024-07-13T16:50:42.072Z',
+  ends_at: '2024-07-18T16:50:42.072Z',
   ...
-)
+}
 [
-  AcsEntrance(
-    acs_entrance_id='55555555-5555-5555-5555-555555555555',
-    display_name='Room Entrance',
+  {
+    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
+    display_name: 'Room Entrance',
     ...
-  )
+  }
 ]
 ...
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -183,69 +186,70 @@ done
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Step 1:
-// Create the new user on the Latch ACS.
-// janeUser is a user_identity that represents
-// a user within your set of app users.
-const buildingAResident = await seam.acs.users.create({
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  user_identity_id: janeUser.user_identity_id,
-  full_name: "Jane Doe",
-  email_address: "jane@example.com"
-});
+```python
+# Step 1:
+# Create the new user on the Latch ACS.
+# jane_user is a user_identity that represents
+# a user within your set of app users.
+building_a_resident = seam.acs.users.create(
+  acs_system_id = "11111111-1111-1111-1111-111111111111",
+  user_identity_id = jane_user.user_identity_id,
+  full_name = "Jane Doe",
+  email_address = "jane@example.com"
+)
 
-// Step 2:
-// Create a PIN code for each door for the ACS user.
-for (const entrance of entrances) {
-  const credential = await seam.acs.credentials.create({
-    acs_user_id: buildingAResident.acs_user_id,
-    access_method: "code",
-    allowed_acs_entrance_ids: [
-      // You must specify only one entrance per PIN code.
+# Step 2:
+# Create a PIN code for each door for the ACS user.
+for entrance in entrances:
+  credential = seam.acs.credentials.create(
+    acs_user_id = building_a_resident.acs_user_id,
+    access_method = "code",
+    allowed_acs_entrance_ids = [
+      # You must specify only one entrance per PIN code.
       entrance.acs_entrance_id
     ],
-    starts_at: "2024-07-13T16:50:42.072Z",
-    ends_at: "2024-07-18T16:50:42.072Z"
-  });
+    starts_at = "2024-07-13T16:50:42.072Z",
+    ends_at = "2024-07-18T16:50:42.072Z"
+  )
 
-  console.log(credential);
+  pprint(credential)
 
-  // It is also useful to list the entrances
-  // to which the mobile key grants access.
-  await seam.acs.credentials.listAccessibleEntrances({
-    acs_credential_id: credential.acs_credential_id
-  });
-}
+  # View the list of entrances to which the credential
+  # grants access.
+  seam.acs.credentials.list_accessible_entrances(
+    acs_credential_id = credential.acs_credential_id
+  )
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  code: '1234567',
-  access_method: 'code',
-  starts_at: '2024-07-13T16:50:42.072Z',
-  ends_at: '2024-07-18T16:50:42.072Z',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  code='1234567',
+  access_method='code',
+  starts_at='2024-07-13T16:50:42.072Z',
+  ends_at='2024-07-18T16:50:42.072Z',
   ...
-}
+)
 [
-  {
-    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
-    display_name: 'Room Entrance',
+  AcsEntrance(
+    acs_entrance_id='55555555-5555-5555-5555-555555555555',
+    display_name='Room Entrance',
     ...
-  }
+  )
 ]
 ...
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -260,6 +264,7 @@ for (const entrance of entrances) {
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -322,6 +327,7 @@ foreach ($entrances as $entrance) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -382,9 +388,6 @@ foreach (AcsEntrance entrance in entrances)
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

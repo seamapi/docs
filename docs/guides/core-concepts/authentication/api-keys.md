@@ -55,60 +55,8 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 Then, run the following code to test the API key:
 
 {% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-from seam import Seam
-
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
-
-workspace = seam.workspaces.get()
-pprint(workspace)
-```
-
-**Output:**
-
-```
-Workspace(
-  workspace_id='00000000-0000-0000-0000-000000000000',
-  name='Sandbox',
-  company_name='Acme',
-  connect_partner_name='Acme',
-  is_sandbox=True
-)
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/workspaces/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-```
-
-**Output:**
-
-```json
-{
-  "workspace": {
-    "workspace_id": "00000000-0000-0000-0000-000000000000",
-    "name": "Sandbox",
-    "company_name": "Acme",
-    "connect_partner_name": "Acme",
-    "is_sandbox": true
-  },
-  "ok": true
-}
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 **Code:**
 
 ```javascript
@@ -137,7 +85,63 @@ checkAuth();
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/workspaces/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+
+**Output:**
+
+```json
+{
+  "workspace": {
+    "workspace_id": "00000000-0000-0000-0000-000000000000",
+    "name": "Sandbox",
+    "company_name": "Acme",
+    "connect_partner_name": "Acme",
+    "is_sandbox": true
+  },
+  "ok": true
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+**Code:**
+
+```python
+from seam import Seam
+
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+
+workspace = seam.workspaces.get()
+pprint(workspace)
+```
+
+**Output:**
+
+```
+Workspace(
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  name='Sandbox',
+  company_name='Acme',
+  connect_partner_name='Acme',
+  is_sandbox=True
+)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -165,6 +169,7 @@ puts workspace.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -192,6 +197,7 @@ echo json_encode($workspace, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -216,7 +222,4 @@ Console.WriteLine(workspace);
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -32,28 +32,30 @@ When you create an instance of a Connect Webview, you can tag it with a customer
 ### Create a Connect Webview for a Specific Customer
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.connect_webviews.create(
-  accepted_providers = your_list_of_providers,
-  customer_key = "customer-id" # Your unique identifier for the customer
-)
+```javascript
+await seam.connectWebviews.create({
+  accepted_providers: "",
+  customer_key: "customer-id" // Your unique identifier for the customer
+})
 ```
 
 **Output:**
 
-```
-ConnectWebview(
-  connect_webview_id='12345678-1234-1234-1234-123456789012',
-  customer_key='customer-id',
+```json
+{
+  connect_webview_id: '12345678-1234-1234-1234-123456789012',
+  customer_key: 'customer-id',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -83,28 +85,30 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.connectWebviews.create({
-  accepted_providers: "",
-  customer_key: "customer-id" // Your unique identifier for the customer
-})
+```python
+seam.connect_webviews.create(
+  accepted_providers = your_list_of_providers,
+  customer_key = "customer-id" # Your unique identifier for the customer
+)
 ```
 
 **Output:**
 
-```json
-{
-  connect_webview_id: '12345678-1234-1234-1234-123456789012',
-  customer_key: 'customer-id',
+```
+ConnectWebview(
+  connect_webview_id='12345678-1234-1234-1234-123456789012',
+  customer_key='customer-id',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -126,6 +130,7 @@ client.connect_webviews.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -147,6 +152,7 @@ $created_connect_webview = $seam->connect_webviews->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -166,48 +172,50 @@ $created_connect_webview = $seam->connect_webviews->create(
 Once your customer has completed the Connect Webview authentication flow, and Seam has copied the `customer_key` to the resulting Connected Account, you can list all Connected Accounts associated with a specific `customer_key` tag. Then, you can also list all devices or systems associated with the customer, using the retrieved Connected Account ID.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-connected_accounts = seam.connected_accounts.list(
-  customer_key="customer-id"
-)
+```javascript
+const connected_accounts = await seam.connected_accounts.list({
+  customer_key: "customer-id"
+})
 
-customer_systems = []
+let customerSystems = []
 
-for account in connected_accounts:
-  systems = seam.acs.systems.list(
-    connected_account_id=account.connected_account_id
-  )
-  
-  customer_systems.extend(systems)
-    
-pprint(customer_systems)
+for (const account of connected_accounts) {
+  const systems = await seam.acs.systems.list({
+    connected_account_id: account.connected_account_id
+  });
+  customerSystems.push(...systems);
+}
+
+console.log(customerSystems)
 ```
 
 **Output:**
 
-```
+```json
 [
-  AcsSystem(
-    connected_account_id="11111111-1111-1111-1111-111111111111",
-    acs_system_id="22222222-2222-2222-2222-222222222222",
-    name="Salto KS Site",
+  {
+    connected_account_id: '11111111-1111-1111-1111-111111111111',
+    acs_system_id: '22222222-2222-2222-2222-222222222222',
+    name: 'Salto KS Site',
     ...
-  ),
-  AcsSystem(
-    connected_account_id="11111111-1111-1111-1111-111111111111",
-    acs_system_id="33333333-3333-3333-3333-333333333333",
-    name="Salto Space Site",
+  },
+  {
+    connected_account_id: '11111111-1111-1111-1111-111111111111',
+    acs_system_id: '33333333-3333-3333-3333-333333333333',
+    name: 'Salto Space Site',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -262,48 +270,50 @@ echo $customer_systems
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const connected_accounts = await seam.connected_accounts.list({
-  customer_key: "customer-id"
-})
+```python
+connected_accounts = seam.connected_accounts.list(
+  customer_key="customer-id"
+)
 
-let customerSystems = []
+customer_systems = []
 
-for (const account of connectedAccounts) {
-  const systems = await seam.acs.systems.list({
-    connected_account_id: account.connected_account_id
-  });
-  customerSystems.push(...systems);
-}
-
-console.log(customerSystems)
+for account in connected_accounts:
+  systems = seam.acs.systems.list(
+    connected_account_id=account.connected_account_id
+  )
+  
+  customer_systems.extend(systems)
+    
+pprint(customer_systems)
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    connected_account_id: '11111111-1111-1111-1111-111111111111',
-    acs_system_id: '22222222-2222-2222-2222-222222222222',
-    name: 'Salto KS Site',
+  AcsSystem(
+    connected_account_id="11111111-1111-1111-1111-111111111111",
+    acs_system_id="22222222-2222-2222-2222-222222222222",
+    name="Salto KS Site",
     ...
-  },
-  {
-    connected_account_id: '11111111-1111-1111-1111-111111111111',
-    acs_system_id: '33333333-3333-3333-3333-333333333333',
-    name: 'Salto Space Site',
+  ),
+  AcsSystem(
+    connected_account_id="11111111-1111-1111-1111-111111111111",
+    acs_system_id="33333333-3333-3333-3333-333333333333",
+    name="Salto Space Site",
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -345,6 +355,7 @@ puts customer_systems.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -388,6 +399,7 @@ echo json_encode($customer_systems);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -411,30 +423,32 @@ Any accounts that your customer sets up also carry this `customer_key`, so you c
 When you create a Seam space resource, you can include your own ID as the value for the `space_key`. Some examples of resources that you could tie to a Space include hotel rooms, apartments, or common area amenities.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.spaces.create(
-  name = "Valley Grove - Room 104",
-  acs_entrance_ids = [unit_104_entrance.acs_entrance_id],
-  space_key = "room-104-id" # Your room ID
-)
+```javascript
+await seam.spaces.create({
+  name: "Valley Grove - Room 104",
+  acs_entrance_ids: [unit104Entrance.acs_entrance_id],
+  space_key: "room-104-id" // Your room ID
+})
 ```
 
 **Output:**
 
-```
-Space(
-  space_id='44444444-4444-4444-4444-444444444444',
-  name='Valley Grove - Room 104',
-  space_key='room-104-id',
+```json
+{
+  space_id: '44444444-4444-4444-4444-444444444444',
+  name: 'Valley Grove - Room 104',
+  space_key: 'room-104-id',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -466,30 +480,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.spaces.create({
-  name: "Valley Grove - Room 104",
-  acs_entrance_ids: [unit104Entrance.acs_entrance_id],
-  space_key: "room-104-id" // Your room ID
-})
+```python
+seam.spaces.create(
+  name = "Valley Grove - Room 104",
+  acs_entrance_ids = [unit_104_entrance.acs_entrance_id],
+  space_key = "room-104-id" # Your room ID
+)
 ```
 
 **Output:**
 
-```json
-{
-  space_id: '44444444-4444-4444-4444-444444444444',
-  name: 'Valley Grove - Room 104',
-  space_key: 'room-104-id',
+```
+Space(
+  space_id='44444444-4444-4444-4444-444444444444',
+  name='Valley Grove - Room 104',
+  space_key='room-104-id',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -513,6 +529,7 @@ client.spaces.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -536,6 +553,7 @@ $seam->spaces->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -557,29 +575,31 @@ $seam->spaces->create(
 You can use the `user_identity_key` to link a Seam User Identity with your ID for a user, such as a hotel guest, resident, and so on.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.user_identities.create(
-  full_name = "Jane Doe",
-  user_identity_key = "user-123-id" # Your end user ID
-)
+```javascript
+await seam.userIdentities.create({
+  full_name: "Jane Doe",
+  user_identity_key: "user-123-id" // Your end user ID
+})
 ```
 
 **Output:**
 
-```
-UserIdentity(
-  user_identity_id='55555555-5555-5555-5555-555555555555',
-  full_name='Jane Doe',
-  user_identity_key='user-123-id',
+```json
+{
+  user_identity_id: '55555555-5555-5555-5555-555555555555',
+  full_name: 'Jane Doe',
+  user_identity_key: 'user-123-id',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -610,29 +630,31 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.userIdentities.create({
-  full_name: "Jane Doe",
-  user_identity_key: "user-123-id" // Your end user ID
-})
+```python
+seam.user_identities.create(
+  full_name = "Jane Doe",
+  user_identity_key = "user-123-id" # Your end user ID
+)
 ```
 
 **Output:**
 
-```json
-{
-  user_identity_id: '55555555-5555-5555-5555-555555555555',
-  full_name: 'Jane Doe',
-  user_identity_key: 'user-123-id',
+```
+UserIdentity(
+  user_identity_id='55555555-5555-5555-5555-555555555555',
+  full_name='Jane Doe',
+  user_identity_key='user-123-id',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -655,6 +677,7 @@ client.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -677,6 +700,7 @@ $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -698,33 +722,34 @@ $seam->user_identities->create(
 You can add your own booking or lease reference to a Seam Access Grant as an `access_grant_key`. Some examples of resources that you could tie to an Access Grant include a guest booking, apartment lease, or gym day pass.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.create(
-  user_identity_id=user_identity.user_identity_id,
-  starts_at="2025-08-13T15:00:00.000Z",
-  ends_at="2025-08-16T11:00:00.000Z",
-  requested_access_methods=[
+```javascript
+await seam.accessGrants.create({
+  user_identity_id: userIdentity.user_identity_id,
+  starts_at: "2025-08-13T15:00:00.000Z",
+  ends_at: "2025-08-16T11:00:00.000Z",
+  requested_access_methods: [
     {"mode": "mobile_key"}
   ],
-  space_ids=[room_104_id],
-  access_grant_key="booking-789-id" # Your booking or lease reference
-)
+  space_ids: [room104Id],
+  access_grant_key: "booking-789-id" // Your booking or lease reference
+});
 ```
 
 **Output:**
 
-```python
-AccessGrant(
-  access_grant_id="66666666-6666-6666-6666-666666666666",
-  access_grant_key="booking-789-id",
-  starts_at="2025-08-13T15:00:00.000Z",
-  ends_at="2025-08-16T11:00:00.000Z",
-  user_identity_id="55555555-5555-5555-5555-555555555555",
-  space_ids=[ "44444444-4444-4444-4444-444444444444" ],
-  requested_access_methods=[
+```json
+{
+  "access_grant_id": "66666666-6666-6666-6666-666666666666",
+  "access_grant_key": "booking-789-id",
+  "starts_at": "2025-08-13T15:00:00.000Z",
+  "ends_at": "2025-08-16T11:00:00.000Z",
+  "user_identity_id": "55555555-5555-5555-5555-555555555555",
+  "space_ids": [ "44444444-4444-4444-4444-444444444444" ],
+  "requested_access_methods": [
     {
       "display_name": "Mobile Key",
       "mode": "mobile_key",
@@ -732,13 +757,14 @@ AccessGrant(
       ...
     }
   ],
-  instant_key_url="https://ik.seam.co/ABCXYZ",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -786,33 +812,34 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.create({
-  user_identity_id: userIdentity.user_identity_id,
-  starts_at: "2025-08-13T15:00:00.000Z",
-  ends_at: "2025-08-16T11:00:00.000Z",
-  requested_access_methods: [
+```python
+seam.access_grants.create(
+  user_identity_id=user_identity.user_identity_id,
+  starts_at="2025-08-13T15:00:00.000Z",
+  ends_at="2025-08-16T11:00:00.000Z",
+  requested_access_methods=[
     {"mode": "mobile_key"}
   ],
-  space_ids: [room104Id],
-  access_grant_key: "booking-789-id" // Your booking or lease reference
-});
+  space_ids=[room_104_id],
+  access_grant_key="booking-789-id" # Your booking or lease reference
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_grant_id": "66666666-6666-6666-6666-666666666666",
-  "access_grant_key": "booking-789-id",
-  "starts_at": "2025-08-13T15:00:00.000Z",
-  "ends_at": "2025-08-16T11:00:00.000Z",
-  "user_identity_id": "55555555-5555-5555-5555-555555555555",
-  "space_ids": [ "44444444-4444-4444-4444-444444444444" ],
-  "requested_access_methods": [
+```python
+AccessGrant(
+  access_grant_id="66666666-6666-6666-6666-666666666666",
+  access_grant_key="booking-789-id",
+  starts_at="2025-08-13T15:00:00.000Z",
+  ends_at="2025-08-16T11:00:00.000Z",
+  user_identity_id="55555555-5555-5555-5555-555555555555",
+  space_ids=[ "44444444-4444-4444-4444-444444444444" ],
+  requested_access_methods=[
     {
       "display_name": "Mobile Key",
       "mode": "mobile_key",
@@ -820,13 +847,14 @@ await seam.accessGrants.create({
       ...
     }
   ],
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+  instant_key_url="https://ik.seam.co/ABCXYZ",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -867,13 +895,14 @@ seam.access_grants.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
 $seam->access_grants->create(
   user_identity_id: $user_identity->user_identity_id,
   starts_at: "2025-08-13T15:00:00.000Z",
-  ends_at: "2025-08-16T11:00:00.000Z"
+  ends_at: "2025-08-16T11:00:00.000Z",
   requested_access_methods: [
     ["mode" => "mobile_key"]
   ],
@@ -907,6 +936,7 @@ $seam->access_grants->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -930,28 +960,30 @@ Once you have linked your resources to Seam resources using resource keys, you c
 The following example retrieves a Seam Space using a `space_key`:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.spaces.get(
-  space_key = "room-104-id"
-)
+```javascript
+await seam.spaces.get({
+  space_key: "room-104-id"
+})
 ```
 
 **Output:**
 
-```
-Space(
-  space_id='44444444-4444-4444-4444-444444444444',
-  name='Valley Grove - Room 104',
-  space_key='room-104-id',
+```json
+{
+  space_id: '44444444-4444-4444-4444-444444444444',
+  name: 'Valley Grove - Room 104',
+  space_key: 'room-104-id',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -980,28 +1012,30 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.spaces.get({
-  space_key: "room-104-id"
-})
+```python
+seam.spaces.get(
+  space_key = "room-104-id"
+)
 ```
 
 **Output:**
 
-```json
-{
-  space_id: '44444444-4444-4444-4444-444444444444',
-  name: 'Valley Grove - Room 104',
-  space_key: 'room-104-id',
+```
+Space(
+  space_id='44444444-4444-4444-4444-444444444444',
+  name='Valley Grove - Room 104',
+  space_key='room-104-id',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1023,6 +1057,7 @@ client.spaces.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1044,6 +1079,7 @@ $seam->spaces->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1061,26 +1097,27 @@ $seam->spaces->get(
 The following example retrieves a Seam Access Grant using an `access_grant_key`:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.get(
-  access_grant_key = "booking-789-id"
-)
+```javascript
+await seam.accessGrants.get({
+  access_grant_key: "booking-789-id"
+})
 ```
 
 **Output:**
 
-```
-AccessGrant(
-  access_grant_id="66666666-6666-6666-6666-666666666666",
-  access_grant_key="booking-789-id",
-  starts_at="2025-08-13T15:00:00.000Z",
-  ends_at="2025-08-16T11:00:00.000Z",
-  user_identity_id="55555555-5555-5555-5555-555555555555",
-  space_ids=[ "44444444-4444-4444-4444-444444444444" ],
-  requested_access_methods=[
+```json
+{
+  "access_grant_id": "66666666-6666-6666-6666-666666666666",
+  "access_grant_key": "booking-789-id",
+  "starts_at": "2025-08-13T15:00:00.000Z",
+  "ends_at": "2025-08-16T11:00:00.000Z",
+  "user_identity_id": "55555555-5555-5555-5555-555555555555",
+  "space_ids": [ "44444444-4444-4444-4444-444444444444" ],
+  "requested_access_methods": [
     {
       "display_name": "Mobile Key",
       "mode": "mobile_key",
@@ -1088,13 +1125,14 @@ AccessGrant(
       ...
     }
   ],
-  instant_key_url="https://ik.seam.co/ABCXYZ",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -1134,26 +1172,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.get({
-  access_grant_key: "booking-789-id"
-})
+```python
+seam.access_grants.get(
+  access_grant_key = "booking-789-id"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_grant_id": "66666666-6666-6666-6666-666666666666",
-  "access_grant_key": "booking-789-id",
-  "starts_at": "2025-08-13T15:00:00.000Z",
-  "ends_at": "2025-08-16T11:00:00.000Z",
-  "user_identity_id": "55555555-5555-5555-5555-555555555555",
-  "space_ids": [ "44444444-4444-4444-4444-444444444444" ],
-  "requested_access_methods": [
+```
+AccessGrant(
+  access_grant_id="66666666-6666-6666-6666-666666666666",
+  access_grant_key="booking-789-id",
+  starts_at="2025-08-13T15:00:00.000Z",
+  ends_at="2025-08-16T11:00:00.000Z",
+  user_identity_id="55555555-5555-5555-5555-555555555555",
+  space_ids=[ "44444444-4444-4444-4444-444444444444" ],
+  requested_access_methods=[
     {
       "display_name": "Mobile Key",
       "mode": "mobile_key",
@@ -1161,13 +1200,14 @@ await seam.accessGrants.get({
       ...
     }
   ],
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+  instant_key_url="https://ik.seam.co/ABCXYZ",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1201,6 +1241,7 @@ client.access_grants.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1234,6 +1275,7 @@ $seam->access_grants->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

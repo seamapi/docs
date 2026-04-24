@@ -15,30 +15,32 @@ In an ACS, an entrance is a secured door, gate, zone, or other method of entry. 
 You can [list all `acs_entrance` resources](https://docs.seam.co/latest/api/acs/entrances/list) in your workspace. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.entrances.list()
+```javascript
+await seam.acs.entrances.list();
 ```
 
 **Response:**
 
-```
+```json
 [
-  AcsEntrance(
-    acs_entrance_id='55555555-5555-5555-5555-555555555555',
-    acs_system_id='11111111-1111-1111-1111-111111111111',
-    workspace_id='00000000-0000-0000-0000-000000000000',
-    display_name='Guest Lock 2',
-    ....
-  ),
+  {
+    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    workspace_id: '00000000-0000-0000-0000-000000000000',
+    display_name: 'Guest Lock 2',
+    ...
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -70,30 +72,32 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.entrances.list();
+```python
+seam.acs.entrances.list()
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    workspace_id: '00000000-0000-0000-0000-000000000000',
-    display_name: 'Guest Lock 2',
-    ...
-  },
+  AcsEntrance(
+    acs_entrance_id='55555555-5555-5555-5555-555555555555',
+    acs_system_id='11111111-1111-1111-1111-111111111111',
+    workspace_id='00000000-0000-0000-0000-000000000000',
+    display_name='Guest Lock 2',
+    ....
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -108,6 +112,7 @@ await seam.acs.entrances.list();
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -131,6 +136,7 @@ $seam->acs->entrances->list();
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -150,9 +156,6 @@ seam.EntrancesAcs.List();
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -162,32 +165,34 @@ seam.EntrancesAcs.List();
 To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filter in the [List Entrances](https://docs.seam.co/latest/api/acs/entrances/list) request. Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.entrances.list(
-  acs_system_id="11111111-1111-1111-1111-111111111111"
-)
+```javascript
+await seam.acs.entrances.list({
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+});
 ```
 
 **Response:**
 
-```
+```json
 [
-  AcsEntrance(
-    acs_entrance_id='55555555-5555-5555-5555-555555555555',
-    acs_system_id='11111111-1111-1111-1111-111111111111',
-    workspace_id='00000000-0000-0000-0000-000000000000',
-    display_name='Guest Lock 2',
-    ....
-  ),
+  {
+    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    workspace_id: '00000000-0000-0000-0000-000000000000',
+    display_name: 'Guest Lock 2',
+    ...
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -221,32 +226,34 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.entrances.list({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+```python
+seam.acs.entrances.list(
+  acs_system_id="11111111-1111-1111-1111-111111111111"
+)
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    workspace_id: '00000000-0000-0000-0000-000000000000',
-    display_name: 'Guest Lock 2',
-    ...
-  },
+  AcsEntrance(
+    acs_entrance_id='55555555-5555-5555-5555-555555555555',
+    acs_system_id='11111111-1111-1111-1111-111111111111',
+    workspace_id='00000000-0000-0000-0000-000000000000',
+    display_name='Guest Lock 2',
+    ....
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -261,6 +268,7 @@ await seam.acs.entrances.list({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -286,6 +294,7 @@ $seam->acs->entrances->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -307,9 +316,6 @@ seam.EntrancesAcs.List(
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -319,13 +325,14 @@ seam.EntrancesAcs.List(
 To [list the credentials that grant access to a specific entrance](https://docs.seam.co/latest/api/acs/entrances/list_credentials_with_access), use `list_credentials_with_access` method for the `acs_entrance` object and provide the `acs_entrance_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.entrances.list_credentials_with_access(
-  acs_entrance_id="55555555-5555-5555-5555-555555555555"
-)
+```javascript
+await seam.acs.entrances.list_credentials_with_access({
+  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
+});
 ```
 
 **Response:**
@@ -334,23 +341,24 @@ seam.acs.entrances.list_credentials_with_access(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
+```json
 [
-  AcsCredential(
-    acs_credential_id='77777777-7777-7777-7777-777777777777',
-    acs_user_id='33333333-3333-3333-3333-333333333333',
-    acs_system_id='11111111-1111-1111-1111-111111111111',
-    access_method='mobile_key',
-    starts_at='2024-04-09T14:30:55.688Z',
-    ends_at='2024-03-04T10:40:00.000Z',
+  {
+    acs_credential_id: '77777777-7777-7777-7777-777777777777',
+    acs_user_id: '33333333-3333-3333-3333-333333333333',
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    access_method: 'mobile_key',
+    starts_at: '2024-04-09T14:30:55.688Z',
+    ends_at: '2024-03-04T10:40:00.000Z',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -390,13 +398,14 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.entrances.list_credentials_with_access({
-  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
-});
+```python
+seam.acs.entrances.list_credentials_with_access(
+  acs_entrance_id="55555555-5555-5555-5555-555555555555"
+)
 ```
 
 **Response:**
@@ -405,23 +414,24 @@ await seam.acs.entrances.list_credentials_with_access({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
+```
 [
-  {
-    acs_credential_id: '77777777-7777-7777-7777-777777777777',
-    acs_user_id: '33333333-3333-3333-3333-333333333333',
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    access_method: 'mobile_key',
-    starts_at: '2024-04-09T14:30:55.688Z',
-    ends_at: '2024-03-04T10:40:00.000Z',
+  AcsCredential(
+    acs_credential_id='77777777-7777-7777-7777-777777777777',
+    acs_user_id='33333333-3333-3333-3333-333333333333',
+    acs_system_id='11111111-1111-1111-1111-111111111111',
+    access_method='mobile_key',
+    starts_at='2024-04-09T14:30:55.688Z',
+    ends_at='2024-03-04T10:40:00.000Z',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -436,6 +446,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -467,6 +478,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -494,9 +506,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -512,29 +521,31 @@ To [list the entrances to which a specific credential grants access](https://doc
 You can [get the details of a specific `acs_entrance`](https://docs.seam.co/latest/api/acs/entrances/get). Note that entrance details include manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.entrances.get(
-  acs_entrance_id="55555555-5555-5555-5555-555555555555"
-)
+```javascript
+await seam.acs.entrances.get({
+  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
+});
 ```
 
 **Response:**
 
-```
-AcsEntrance(
+```json
+{
   acs_entrance_id: '55555555-5555-5555-5555-555555555555',
   acs_system_id: '11111111-1111-1111-1111-111111111111',
   workspace_id: '00000000-0000-0000-0000-000000000000',
   display_name: 'Guest Lock 2',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -565,29 +576,31 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.entrances.get({
-  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
-});
+```python
+seam.acs.entrances.get(
+  acs_entrance_id="55555555-5555-5555-5555-555555555555"
+)
 ```
 
 **Response:**
 
-```json
-{
+```
+AcsEntrance(
   acs_entrance_id: '55555555-5555-5555-5555-555555555555',
   acs_system_id: '11111111-1111-1111-1111-111111111111',
   workspace_id: '00000000-0000-0000-0000-000000000000',
   display_name: 'Guest Lock 2',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -602,6 +615,7 @@ await seam.acs.entrances.get({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -624,6 +638,7 @@ $seam->acs->entrances->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -644,7 +659,4 @@ seam.EntrancesAcs.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

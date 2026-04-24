@@ -37,65 +37,66 @@ This example shows how to create a card access method as part of an Access Grant
 For more details about creating Access Grants, see [Creating an Access Grant Using Entrances](../../access-grants/creating-an-access-grant-using-entrances.md) and [Creating an Access Grant Using Spaces](../../access-grants/creating-an-access-grant-using-spaces.md).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code**
 
-```python
-# Identify the IDs of the entrances to which
-# you want to grant access.
-entrances = seam.acs.entrances.list(
-  # Use the access system ID that you copied in the previous step.
-  acs_system_id=acs_system_id
-)
+```javascript
+// Identify the IDs of the entrances to which
+// you want to grant access.
+const entrances = await seam.acs.entrances.list({
+  // Use the access system ID that you copied in the previous step.
+  acs_system_id: acsSystemId
+});
 
-# Create the Access Grant.
-access_grant = seam.access_grants.create(
-  # Create a new user identity to represent your user.
-  user_identity={
-   "full_name": "Jane Doe",
-   "email_address": "jane.doe@example.com",
-   "phone_number": "+15555551000"
+// Create the Access Grant.
+const accessGrant = await seam.accessGrants.create({
+  // Create a new user identity to represent your user.
+  user_identity: {
+    full_name: "Jane Doe",
+    email_address: "jane.doe@example.com",
+    phone_number: "+15555551000"    
   },
-  # Specify the IDs of the entrances to which you want to grant access.
-  acs_entrance_ids=[
+  // Specify the IDs of the entrances to which you want to grant access.
+  acs_entrance_ids: [
     entrances[0].acs_entrance_id,
     entrances[1].acs_entrance_id
   ],
-
-  # Specify that you want to issue a card access method.
-  requested_access_methods=[
+  // Specify that you want to issue a card access method.
+  requested_access_methods: [
     {"mode": "card"}
   ],
-  # Specify the access schedule.
-  starts_at="2025-08-01T15:00:00.000Z",
-  ends_at="2025-08-04T11:00:00.000Z"
-)
+  // Specify the access schedule.
+  starts_at: "2025-08-01T15:00:00.000Z",
+  ends_at: "2025-08-04T11:00:00.000Z"
+});
 ```
 
 **Output**
 
-```python
-AccessGrant(
-  access_grant_id='6d74aefc-5712-4a8b-82c1-73a51ae60b87',
-  user_identity_id='8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
-  starts_at='2025-08-01T15:00:00.000Z',
-  ends_at='2025-08-04T11:00:00.000Z',
-  instant_key_url='https://ik.seam.co/ABCXYZ',
-  requested_access_methods=[
+```json
+{
+  access_grant_id: '6d74aefc-5712-4a8b-82c1-73a51ae60b87',
+  user_identity_id: '8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
+  starts_at: '2025-08-01T15:00:00.000Z',
+  ends_at: '2025-08-04T11:00:00.000Z'
+  instant_key_url: 'https://ik.seam.co/ABCXYZ',
+  requested_access_methods: [
     {
-      "display_name": "Plastic Card",
-      "mode": "card",
-      "created_at": "2025-06-16T16:54:19.946606Z",
-      # Note the access_method_id of the created card access method.
-      "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+      display_name: 'Plastic card',
+      mode: 'card',
+      // Note the access_method_id of the created card access method.
+      created_access_method_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+      created_at: '2025-06-16T16:54:19.946606Z'
     }
   ],
   ...
-)
+}
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
+
 **Code**
 
 ```curl
@@ -165,64 +166,67 @@ access_grant=$(curl --include --request POST "https://connect.getseam.com/access
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code**
 
-```javascript
-// Identify the IDs of the entrances to which
-// you want to grant access.
-const entrances = await seam.acs.entrances.list({
-  // Use the access system ID that you copied in the previous step.
-  acs_system_id: acsSystemId
-});
+```python
+# Identify the IDs of the entrances to which
+# you want to grant access.
+entrances = seam.acs.entrances.list(
+  # Use the access system ID that you copied in the previous step.
+  acs_system_id=acs_system_id
+)
 
-// Create the Access Grant.
-const accessGrant = await seam.accessGrants.create({
-  // Create a new user identity to represent your user.
-  user_identity: {
-    full_name: "Jane Doe",
-    email_address: "jane.doe@example.com",
-    phone_number: "+15555551000"    
+# Create the Access Grant.
+access_grant = seam.access_grants.create(
+  # Create a new user identity to represent your user.
+  user_identity={
+   "full_name": "Jane Doe",
+   "email_address": "jane.doe@example.com",
+   "phone_number": "+15555551000"
   },
-  // Specify the IDs of the entrances to which you want to grant access.
-  acs_entrance_ids: [
+  # Specify the IDs of the entrances to which you want to grant access.
+  acs_entrance_ids=[
     entrances[0].acs_entrance_id,
     entrances[1].acs_entrance_id
   ],
-  // Specify that you want to issue a card access method.
-  requested_access_methods: [
+
+  # Specify that you want to issue a card access method.
+  requested_access_methods=[
     {"mode": "card"}
   ],
-  // Specify the access schedule.
-  starts_at: "2025-08-01T15:00:00.000Z",
-  ends_at: "2025-08-04T11:00:00.000Z"
-});
+  # Specify the access schedule.
+  starts_at="2025-08-01T15:00:00.000Z",
+  ends_at="2025-08-04T11:00:00.000Z"
+)
 ```
 
 **Output**
 
-```json
-{
-  access_grant_id: '6d74aefc-5712-4a8b-82c1-73a51ae60b87',
-  user_identity_id: '8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
-  starts_at: '2025-08-01T15:00:00.000Z',
-  ends_at: '2025-08-04T11:00:00.000Z'
-  instant_key_url: 'https://ik.seam.co/ABCXYZ',
-  requested_access_methods: [
+```python
+AccessGrant(
+  access_grant_id='6d74aefc-5712-4a8b-82c1-73a51ae60b87',
+  user_identity_id='8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
+  starts_at='2025-08-01T15:00:00.000Z',
+  ends_at='2025-08-04T11:00:00.000Z',
+  instant_key_url='https://ik.seam.co/ABCXYZ',
+  requested_access_methods=[
     {
-      display_name: 'Plastic card',
-      mode: 'card',
-      // Note the access_method_id of the created card access method.
-      created_access_method_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-      created_at: '2025-06-16T16:54:19.946606Z'
+      "display_name": "Plastic Card",
+      "mode": "card",
+      "created_at": "2025-06-16T16:54:19.946606Z",
+      # Note the access_method_id of the created card access method.
+      "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
     }
   ],
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code**
 
 ```ruby
@@ -280,6 +284,7 @@ access_grant = seam.access_grants.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code**
 
 ```php
@@ -337,6 +342,7 @@ $access_grant = $seam->access_grants->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code**
 
 ```csharp
@@ -360,30 +366,32 @@ There may be multiple encoders at a location, so it’s important to select the 
 This example shows how to retrieve all encoders in a building connected to a single access system. Once you've identified the encoder you'd like to use, save the `acs_encoder_id` of the chosen encoder for the next step.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.acs.encoders.list(
-  acs_system_ids = [building_system_id]
-)
+```javascript
+await seam.acs.encoders.list({
+  acs_system_ids: [buildingSystemId]
+});
 ```
 
 **Output:**
 
-```
+```json
 [
-  AcsEncoder(
-    acs_encoder_id='33333333-4444-5555-6666-777777777777',
-    display_name='Front Desk',
+  {
+    acs_encoder_id: '33333333-4444-5555-6666-777777777777',
+    display_name: 'Front Desk',
     ...
-  )
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -414,30 +422,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.acs.encoders.list({
-  acs_system_ids: [buildingSystemId]
-});
+```python
+seam.acs.encoders.list(
+  acs_system_ids = [building_system_id]
+)
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    acs_encoder_id: '33333333-4444-5555-6666-777777777777',
-    display_name: 'Front Desk',
+  AcsEncoder(
+    acs_encoder_id='33333333-4444-5555-6666-777777777777',
+    display_name='Front Desk',
     ...
-  },
+  )
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -461,6 +471,7 @@ seam.acs.encoders.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -484,6 +495,7 @@ $seam->acs->encoders->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -505,30 +517,32 @@ $seam->acs->encoders->list(
 Use `/acs/encoders/encode_credential` to start the card writing procedure that stores the access method data on the plastic key card.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-encoding_action_attempt = seam.access_methods.encode(
-  access_method_id = access_method_id,
-  acs_encoder_id = encoder.acs_encoder_id
-)
+```javascript
+const encodingActionAttempt = await seam.accessMethods.encode({
+  access_method_id: accessMethodId,
+  acs_encoder_id: encoder.acs_encoder_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='pending',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='ENCODE_ACCESS_METHOD',
-  result=null,
-  error=null
-)
+```json
+{
+  status: 'pending',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_ACCESS_METHOD',
+  result: null,
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -560,30 +574,32 @@ encoding_action_attempt=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const encodingActionAttempt = await seam.accessMethods.encode({
-  access_method_id: accessMethodId,
-  acs_encoder_id: encoder.acs_encoder_id
-});
+```python
+encoding_action_attempt = seam.access_methods.encode(
+  access_method_id = access_method_id,
+  acs_encoder_id = encoder.acs_encoder_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'pending',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_ACCESS_METHOD',
-  result: null,
-  error: null
-}
+```
+ActionAttempt(
+  status='pending',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_ACCESS_METHOD',
+  result=null,
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -607,6 +623,7 @@ encoding_action_attempt = seam.access_methods.encode(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -630,6 +647,7 @@ $encoding_action_attempt = $seam->access_methods->encode(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -655,35 +673,37 @@ Once you issue a request to encode the access method onto the card, it is import
 When you make an `/access_methods/encode` request, Seam returns an [action attempt](../../../core-concepts/action-attempts.md). To confirm that the card encoding was successful, you can poll this action attempt, until its `status` becomes `success`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.action_attempts.get(
-  action_attempt_id = encoding_action_attempt.action_attempt_id
-)
+```javascript
+await seam.actionAttempts.get({
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='success',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='ENCODE_ACCESS_METHOD',
-  result={
-    access_method_id='5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f',
-    card_number='1234abc',
-    is_issued=True,
-    issued_at='2025-06-16T16:56:00.000000Z',
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_ACCESS_METHOD',
+  result: {
+    access_method_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f',
+    card_number: '1234abc',
+    is_issued: true,
+    issued_at: '2025-06-16T16:56:00.000000Z',
     ...
   },
-  error=null
-)
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -720,35 +740,37 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id
-});
+```python
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_ACCESS_METHOD',
-  result: {
-    access_method_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f',
-    card_number: '1234abc',
-    is_issued: true,
-    issued_at: '2025-06-16T16:56:00.000000Z',
+```
+ActionAttempt(
+  status='success',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_ACCESS_METHOD',
+  result={
+    access_method_id='5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2025-06-16T16:56:00.000000Z',
     ...
   },
-  error: null
-}
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -777,6 +799,7 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -805,6 +828,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -824,27 +848,29 @@ $seam->action_attempts->get(
 It is also useful to note that Seam assigns values to various card-related properties on the access method when the encoder has finished encoding the card. For example, `access_method.issued_at` receives a value. You can retrieve the access method to view these properties.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code**
 
-```python
-seam.access_methods.get(
-  access_method_id=access_method_id
-)
+```javascript
+await seam.accessMethods.get({
+  access_method_id: accessMethodId
+});
 ```
 
 **Output**
 
-```python
-AccessMethod(
-  access_method_id='5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f',
-  issued_at='2025-06-16T16:56:00.000000Z',
+```javascript
+{
+  "access_method_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+  "issued_at": "2025-06-16T16:56:00.000000Z",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code**
 
 ```curl
@@ -872,27 +898,29 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code**
 
-```javascript
-await seam.accessMethods.get({
-  access_method_id: accessMethodId
-});
+```python
+seam.access_methods.get(
+  access_method_id=access_method_id
+)
 ```
 
 **Output**
 
-```javascript
-{
-  "access_method_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-  "issued_at": "2025-06-16T16:56:00.000000Z",
+```python
+AccessMethod(
+  access_method_id='5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f',
+  issued_at='2025-06-16T16:56:00.000000Z',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code**
 
 ```ruby
@@ -913,6 +941,7 @@ seam.access_methods.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code**
 
 ```php
@@ -933,6 +962,7 @@ $seam->access_methods->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

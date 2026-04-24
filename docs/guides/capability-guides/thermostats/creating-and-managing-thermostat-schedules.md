@@ -43,39 +43,41 @@ To allow complete control at the thermostat, set `is_override_allowed` to `true`
 To create a thermostat schedule, issue a [`/thermostats/schedules/create`](https://docs.seam.co/latest/api/thermostats/schedules/create) request, providing the `device_id` of the desired thermostat, as well as the `climate_preset_key`, and the `starts_at` and `ends_at` timestamps. You can also specify a `name` for the thermostat schedule and the desired `is_override_allowed` and `max_override_period_minutes` values.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.schedules.create(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
-  name = "Jim's stay",
-  climate_preset_key = "occupied",
-  starts_at = "2024-11-01T15:00:00Z",
-  ends_at = "2024-11-05T12:00:00Z",
-  is_override_allowed = True,
-  max_override_period_minutes = 90
-)
+```javascript
+await seam.thermostats.schedules.create({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  name: "Jim's stay",
+  climate_preset_key: "occupied",
+  starts_at: "2024-11-01T15:00:00Z",
+  ends_at: "2024-11-05T12:00:00Z",
+  is_override_allowed: true,
+  max_override_period_minutes: 90
+});
 ```
 
 **Response:**
 
-```
-ThermostatSchedule(
-  thermostat_schedule_id='56d29fcf-0674-4db5-8e03-b2370a77460a',
-  name="Jim's stay",
-  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key='occupied',
-  starts_at='2024-11-01T15:00:00.000Z',
-  ends_at='2024-11-05T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
+```json
+{
+  thermostat_schedule_id: '4a5bd61f-b402-41a5-9757-d92ba1e20708',
+  name: "Jim's stay",
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key: 'occupied',
+  starts_at: '2024-11-01T15:00:00.000Z',
+  ends_at: '2024-11-05T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -115,39 +117,41 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.schedules.create({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
-  name: "Jim's stay",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-01T15:00:00Z",
-  ends_at: "2024-11-05T12:00:00Z",
-  is_override_allowed: true,
-  max_override_period_minutes: 90
-});
+```python
+seam.thermostats.schedules.create(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+  name = "Jim's stay",
+  climate_preset_key = "occupied",
+  starts_at = "2024-11-01T15:00:00Z",
+  ends_at = "2024-11-05T12:00:00Z",
+  is_override_allowed = True,
+  max_override_period_minutes = 90
+)
 ```
 
 **Response:**
 
-```json
-{
-  thermostat_schedule_id: '4a5bd61f-b402-41a5-9757-d92ba1e20708',
-  name: "Jim's stay",
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key: 'occupied',
-  starts_at: '2024-11-01T15:00:00.000Z',
-  ends_at: '2024-11-05T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
+```
+ThermostatSchedule(
+  thermostat_schedule_id='56d29fcf-0674-4db5-8e03-b2370a77460a',
+  name="Jim's stay",
+  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key='occupied',
+  starts_at='2024-11-01T15:00:00.000Z',
+  ends_at='2024-11-05T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -180,6 +184,7 @@ seam.thermostats.schedules.create({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -212,6 +217,7 @@ $seam->thermostats->schedules->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -224,9 +230,6 @@ $seam->thermostats->schedules->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -240,73 +243,75 @@ Suppose a short-term rental host wants to set a fallback "unoccupied" climate pr
 The following example shows how to set up these schedules:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the thermostat.
-thermostat = seam.devices.get(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
+```javascript
+// Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 
-# Set the fallback climate preset.
-seam.thermostats.set_fallback_climate_preset(
-  device_id = thermostat.device_id,
-  climate_preset_key = "unoccupied"
-)
+// Set the fallback climate preset.
+await seam.thermostats.setFallbackClimatePreset({
+  device_id: thermostat.device_id,
+  climate_preset_key: "unoccupied"
+});
 
-# Create the thermostat schedule for the first reservation.
-seam.thermostats.schedules.create(
-  device_id = thermostat.device_id,
-  name = "Joe's stay",
-  climate_preset_key = "occupied",
-  starts_at = "2024-11-10T15:00:00Z",
-  ends_at = "2024-11-15T12:00:00Z",
-  is_override_allowed = True,
-  max_override_period_minutes = 90
-)
+// Create the thermostat schedule for the first reservation.
+await seam.thermostats.schedules.create({
+  device_id: thermostat.device_id,
+  name: "Joe's stay",
+  climate_preset_key: "occupied",
+  starts_at: "2024-11-10T15:00:00Z",
+  ends_at: "2024-11-15T12:00:00Z",
+  is_override_allowed: true,
+  max_override_period_minutes: 90
+});
 
-# Create the thermostat schedule for the second reservation.
-seam.thermostats.schedules.create(
-  device_id = thermostat.device_id,
-  name = "Jane's stay",
-  climate_preset_key = "occupied",
-  starts_at = "2024-11-16T15:00:00Z",
-  ends_at = "2024-11-18T12:00:00Z",
-  is_override_allowed = True,
-  max_override_period_minutes = 90
-)
+// Create the thermostat schedule for the second reservation.
+await seam.thermostats.schedules.create({
+  device_id: thermostat.device_id,
+  name: "Jane's stay",
+  climate_preset_key: "occupied",
+  starts_at: "2024-11-16T15:00:00Z",
+  ends_at: "2024-11-18T12:00:00Z",
+  is_override_allowed: true,
+  max_override_period_minutes: 90
+});
 ```
 
 **Response:**
 
-```
-ThermostatSchedule(
-  thermostat_schedule_id='c02a3cc5-87f2-409d-b21d-164f2c94d37c'
-  name="Joe's stay",
-  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key='occupied',
-  starts_at='2024-11-10T15:00:00.000Z',
-  ends_at='2024-11-15T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
+```json
+{
+  thermostat_schedule_id: '4082a585-cf6e-4f6c-889d-d208fde226d0',
+  name: "Joe's stay",
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key: 'occupied',
+  starts_at: '2024-11-10T15:00:00.000Z',
+  ends_at: '2024-11-15T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
   ...
-)
-ThermostatSchedule(
-  thermostat_schedule_id='ed14ed8d-c012-4d89-af96-053e0c16197d',
-  name="Jane's stay",
-  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key='occupied',
-  starts_at='2024-11-16T15:00:00.000Z',
-  ends_at='2024-11-18T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
+}
+{
+  thermostat_schedule_id: '9d2b1c55-68cc-4c86-8478-dea3249e26b7',
+  name: "Jane's stay",
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key: 'occupied',
+  starts_at: '2024-11-16T15:00:00.000Z',
+  ends_at: '2024-11-18T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -400,73 +405,75 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the thermostat.
-const thermostat = await seam.devices.get({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+```python
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 
-// Set the fallback climate preset.
-await seam.thermostats.setFallbackClimatePreset({
-  device_id: thermostat.device_id,
-  climate_preset_key: "unoccupied"
-});
+# Set the fallback climate preset.
+seam.thermostats.set_fallback_climate_preset(
+  device_id = thermostat.device_id,
+  climate_preset_key = "unoccupied"
+)
 
-// Create the thermostat schedule for the first reservation.
-await seam.thermostats.schedules.create({
-  device_id: thermostat.device_id,
-  name: "Joe's stay",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-10T15:00:00Z",
-  ends_at: "2024-11-15T12:00:00Z",
-  is_override_allowed: true,
-  max_override_period_minutes: 90
-});
+# Create the thermostat schedule for the first reservation.
+seam.thermostats.schedules.create(
+  device_id = thermostat.device_id,
+  name = "Joe's stay",
+  climate_preset_key = "occupied",
+  starts_at = "2024-11-10T15:00:00Z",
+  ends_at = "2024-11-15T12:00:00Z",
+  is_override_allowed = True,
+  max_override_period_minutes = 90
+)
 
-// Create the thermostat schedule for the second reservation.
-await seam.thermostats.schedules.create({
-  device_id: thermostat.device_id,
-  name: "Jane's stay",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-16T15:00:00Z",
-  ends_at: "2024-11-18T12:00:00Z",
-  is_override_allowed: true,
-  max_override_period_minutes: 90
-});
+# Create the thermostat schedule for the second reservation.
+seam.thermostats.schedules.create(
+  device_id = thermostat.device_id,
+  name = "Jane's stay",
+  climate_preset_key = "occupied",
+  starts_at = "2024-11-16T15:00:00Z",
+  ends_at = "2024-11-18T12:00:00Z",
+  is_override_allowed = True,
+  max_override_period_minutes = 90
+)
 ```
 
 **Response:**
 
-```json
-{
-  thermostat_schedule_id: '4082a585-cf6e-4f6c-889d-d208fde226d0',
-  name: "Joe's stay",
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key: 'occupied',
-  starts_at: '2024-11-10T15:00:00.000Z',
-  ends_at: '2024-11-15T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
+```
+ThermostatSchedule(
+  thermostat_schedule_id='c02a3cc5-87f2-409d-b21d-164f2c94d37c'
+  name="Joe's stay",
+  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key='occupied',
+  starts_at='2024-11-10T15:00:00.000Z',
+  ends_at='2024-11-15T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
   ...
-}
-{
-  thermostat_schedule_id: '9d2b1c55-68cc-4c86-8478-dea3249e26b7',
-  name: "Jane's stay",
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key: 'occupied',
-  starts_at: '2024-11-16T15:00:00.000Z',
-  ends_at: '2024-11-18T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
+)
+ThermostatSchedule(
+  thermostat_schedule_id='ed14ed8d-c012-4d89-af96-053e0c16197d',
+  name="Jane's stay",
+  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key='occupied',
+  starts_at='2024-11-16T15:00:00.000Z',
+  ends_at='2024-11-18T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -533,6 +540,7 @@ seam.thermostats.schedules.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -599,6 +607,7 @@ $seam->thermostats->schedules->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -611,9 +620,6 @@ $seam->thermostats->schedules->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -623,46 +629,48 @@ $seam->thermostats->schedules->create(
 To retrieve all thermostat schedules for a thermostat, issue a [`/thermostats/schedules/list`](https://docs.seam.co/latest/api/thermostats/schedules/list) request, specifying the `device_id` of the desired thermostat.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.schedules.list(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
+```javascript
+await seam.thermostats.schedules.list({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 ```
 
 **Response:**
 
-```
+```json
 [
-  ThermostatSchedule(
-    thermostat_schedule_id='89d3507e-60e3-4101-bd1b-ba066ec30ad4',
-    name="Joe's stay",
-    device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
-    climate_preset_key='occupied',
-    starts_at='2024-11-10T15:00:00.000Z',
-    ends_at='2024-11-15T12:00:00.000Z',
-    is_override_allowed=True,
-    max_override_period_minutes=90,
+  {
+    thermostat_schedule_id: '89d3507e-60e3-4101-bd1b-ba066ec30ad4',
+    name: "Joe's stay",
+    device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+    climate_preset_key: 'occupied',
+    starts_at: '2024-11-10T15:00:00.000Z',
+    ends_at: '2024-11-15T12:00:00.000Z',
+    is_override_allowed: true,
+    max_override_period_minutes: 90,
     ...
-  ),
-  ThermostatSchedule(
-    thermostat_schedule_id='665553d1-94f9-4e92-9739-06ac6362c959',
-    name="Jane's stay",
-    device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
-    climate_preset_key='occupied',
-    starts_at='2024-11-16T15:00:00.000Z',
-    ends_at='2024-11-18T12:00:00.000Z',
-    is_override_allowed=True,
-    max_override_period_minutes=90,
+  },
+  {
+    thermostat_schedule_id: '665553d1-94f9-4e92-9739-06ac6362c959',
+    name: "Jane's stay",
+    device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+    climate_preset_key: 'occupied',
+    starts_at: '2024-11-16T15:00:00.000Z',
+    ends_at: '2024-11-18T12:00:00.000Z',
+    is_override_allowed: true,
+    max_override_period_minutes: 90,
     ...
-  )
+  }
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -709,46 +717,48 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.schedules.list({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+```python
+seam.thermostats.schedules.list(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    thermostat_schedule_id: '89d3507e-60e3-4101-bd1b-ba066ec30ad4',
-    name: "Joe's stay",
-    device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-    climate_preset_key: 'occupied',
-    starts_at: '2024-11-10T15:00:00.000Z',
-    ends_at: '2024-11-15T12:00:00.000Z',
-    is_override_allowed: true,
-    max_override_period_minutes: 90,
+  ThermostatSchedule(
+    thermostat_schedule_id='89d3507e-60e3-4101-bd1b-ba066ec30ad4',
+    name="Joe's stay",
+    device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
+    climate_preset_key='occupied',
+    starts_at='2024-11-10T15:00:00.000Z',
+    ends_at='2024-11-15T12:00:00.000Z',
+    is_override_allowed=True,
+    max_override_period_minutes=90,
     ...
-  },
-  {
-    thermostat_schedule_id: '665553d1-94f9-4e92-9739-06ac6362c959',
-    name: "Jane's stay",
-    device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-    climate_preset_key: 'occupied',
-    starts_at: '2024-11-16T15:00:00.000Z',
-    ends_at: '2024-11-18T12:00:00.000Z',
-    is_override_allowed: true,
-    max_override_period_minutes: 90,
+  ),
+  ThermostatSchedule(
+    thermostat_schedule_id='665553d1-94f9-4e92-9739-06ac6362c959',
+    name="Jane's stay",
+    device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
+    climate_preset_key='occupied',
+    starts_at='2024-11-16T15:00:00.000Z',
+    ends_at='2024-11-18T12:00:00.000Z',
+    is_override_allowed=True,
+    max_override_period_minutes=90,
     ...
-  }
+  )
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -788,6 +798,7 @@ seam.thermostats.schedules.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -827,6 +838,7 @@ $seam->thermostats->schedules->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -839,9 +851,6 @@ $seam->thermostats->schedules->list(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -851,33 +860,35 @@ $seam->thermostats->schedules->list(
 To get a specific thermostat schedule, issue a [`/thermostats/schedules/get`](https://docs.seam.co/latest/api/thermostats/schedules/get) request, including the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.schedules.get(
-  thermostat_schedule_id = "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-)
+```javascript
+await seam.thermostats.schedules.get({
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+});
 ```
 
 **Response:**
 
-```
-ThermostatSchedule(
-  thermostat_schedule_id='89d3507e-60e3-4101-bd1b-ba066ec30ad4',
-  name="Joe's stay",
-  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key='occupied',
-  starts_at='2024-11-10T15:00:00.000Z',
-  ends_at='2024-11-15T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
+```json
+{
+  thermostat_schedule_id: '89d3507e-60e3-4101-bd1b-ba066ec30ad4',
+  name: "Joe's stay",
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key: 'occupied',
+  starts_at: '2024-11-10T15:00:00.000Z',
+  ends_at: '2024-11-15T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -911,33 +922,35 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.schedules.get({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-});
+```python
+seam.thermostats.schedules.get(
+  thermostat_schedule_id = "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
+)
 ```
 
 **Response:**
 
-```json
-{
-  thermostat_schedule_id: '89d3507e-60e3-4101-bd1b-ba066ec30ad4',
-  name: "Joe's stay",
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key: 'occupied',
-  starts_at: '2024-11-10T15:00:00.000Z',
-  ends_at: '2024-11-15T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
+```
+ThermostatSchedule(
+  thermostat_schedule_id='89d3507e-60e3-4101-bd1b-ba066ec30ad4',
+  name="Joe's stay",
+  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
+  climate_preset_key='occupied',
+  starts_at='2024-11-10T15:00:00.000Z',
+  ends_at='2024-11-15T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -964,6 +977,7 @@ seam.thermostats.schedules.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -990,6 +1004,7 @@ $seam->thermostats->schedules->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -1002,9 +1017,6 @@ $seam->thermostats->schedules->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1014,24 +1026,26 @@ $seam->thermostats->schedules->get(
 To update a thermostat schedule, issue a [`/thermostats/schedules/update`](https://docs.seam.co/latest/api/thermostats/schedules/update) request, providing the `thermostat_schedule_id` of the desired thermostat schedule and the desired updated settings.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.schedules.update(
-  thermostat_schedule_id = "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at = "2024-11-15T15:00:00Z"
-)
+```javascript
+await seam.thermostats.schedules.update({
+  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at: "2024-11-15T15:00:00Z"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -1055,24 +1069,26 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.schedules.update({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z"
-});
+```python
+seam.thermostats.schedules.update(
+  thermostat_schedule_id = "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
+  ends_at = "2024-11-15T15:00:00Z"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -1090,6 +1106,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -1107,6 +1124,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -1119,9 +1137,6 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1131,23 +1146,25 @@ void
 To delete a thermostat schedule, issue a [`/thermostats/schedules/delete`](https://docs.seam.co/latest/api/thermostats/schedules/delete) request, providing the `thermostat_schedule_id` of the desired thermostat schedule.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.schedules.delete(
-  thermostat_schedule_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
+```javascript
+await seam.thermostats.schedules.delete({
+  thermostat_schedule_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -1170,23 +1187,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.schedules.delete({
-  thermostat_schedule_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+```python
+seam.thermostats.schedules.delete(
+  thermostat_schedule_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -1203,6 +1222,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -1219,6 +1239,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -1231,7 +1252,4 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

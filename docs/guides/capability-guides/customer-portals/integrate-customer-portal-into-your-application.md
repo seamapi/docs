@@ -15,7 +15,7 @@ Use the `create_portal` endpoint to generate Customer Portals programmatically.
 
     ```bash
     curl -X POST \
-      https://connect.getseam.com/customers/create_portal> \
+      https://connect.getseam.com/customers/create_portal \
       -H "Authorization: Bearer $SEAM_API_KEY" \
       -H "Content-Type: application/json" \
       -d '{

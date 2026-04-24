@@ -28,32 +28,37 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```bash
+npm i seam
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```bash
 pip install seam
 # For some development environments, use pip3 in this command instead of pip.
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```bash
-npm i seam
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```bash
 bundle add seam
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```bash
 composer require seamapi/seam
 ```
 {% endtab %}
 
 {% tab title="C#" %}
+
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
@@ -75,22 +80,8 @@ To control your 2N intercom via the Seam API, you must first authorize your Seam
 #### Request a Connect Webview
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
+{% tab title="JavaScript" %}
 
-seam = Seam()
-
-webview = seam.connect_webviews.create(accepted_providers=["my_2n"])
-
-assert webview.login_successful is False
-
-# Send the webview URL to your user
-print(webview.url)
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 import { Seam } from 'seam'
 
@@ -107,7 +98,24 @@ console.log(connectWebview.url)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["my_2n"])
+
+assert webview.login_successful is False
+
+# Send the webview URL to your user
+print(webview.url)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -125,6 +133,7 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -156,15 +165,8 @@ After entering the credentials for My2N, you'll have to enter the credentials of
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+{% tab title="JavaScript" %}
 
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -174,7 +176,17 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -183,6 +195,7 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -195,42 +208,8 @@ echo json_encode($webview);
 After a My2N account is linked with Seam, you can retrieve devices for this My2N account. 2N devices are represented as locks.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-all_locks = seam.locks.list()
+{% tab title="JavaScript" %}
 
-some_lock = all_locks[0]
-
-assert some_lock.properties["online"] is True
-assert some_lock.properties["locked"] is True
-
-print(some_lock)
-# Device(
-#   device_id='f0c074d6-34d0-4910-a16a-dfe078d5d178',
-#   device_type='two_n_intercom',
-#   location=None,
-#   properties={
-#     'locked': True,
-#     'online': True,
-#     'manufacturer': 'two_n',
-#     'serial_number': '4c0e6e72-81da-48af-8825-ed92a6fb8186',
-#     'two_n_metadata': {
-#       'device_id': 1,
-#       'device_name': 'Device 0'
-#     },
-#     'supported_code_lengths': [4, 5, 6, 7, 8],
-#     'name': 'Device 0',
-#     'image_url': 'http://localhost:3020/assets/images/devices/unknown-lock.png',
-#     'image_alt_text': 'Placeholder Lock Image'
-#   },
-#   capabilities_supported=['access_code', 'lock'],
-#   errors=[]
-# )
-```
-
-{% endtab %}
-
-{% tab title="Javascript" %}
 
 ```javascript
 const allLocks = await seam.locks.list()
@@ -266,10 +245,45 @@ console.log(someLock)
 }
 */
 ```
+{% endtab %}
 
+{% tab title="Python" %}
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["locked"] is True
+
+print(some_lock)
+# Device(
+#   device_id='f0c074d6-34d0-4910-a16a-dfe078d5d178',
+#   device_type='two_n_intercom',
+#   location=None,
+#   properties={
+#     'locked': True,
+#     'online': True,
+#     'manufacturer': 'two_n',
+#     'serial_number': '4c0e6e72-81da-48af-8825-ed92a6fb8186',
+#     'two_n_metadata': {
+#       'device_id': 1,
+#       'device_name': 'Device 0'
+#     },
+#     'supported_code_lengths': [4, 5, 6, 7, 8],
+#     'name': 'Device 0',
+#     'image_url': 'http://localhost:3020/assets/images/devices/unknown-lock.png',
+#     'image_alt_text': 'Placeholder Lock Image'
+#   },
+#   capabilities_supported=['access_code', 'lock'],
+#   errors=[]
+# )
+```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 
 ```ruby
 some_lock = seam.locks.list.first
@@ -299,10 +313,10 @@ puts some_lock.inspect
 #   errors=[]
 #   warnings=[]
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
+
 
 ```php
 use Seam\SeamClient;
@@ -313,7 +327,6 @@ $locks = $seam->locks->list();
 
 echo json_encode($locks);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -336,23 +349,8 @@ Next, you can perform the basic action of locking and unlocking the door.
 | device\_id | String |             |
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
 
-```python
-# lock the door
-seam.locks.lock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is True
-
-# Now unlock the door
-seam.locks.unlock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is False
-```
-
-{% endtab %}
-
-{% tab title="Javascript" %}
 
 ```javascript
 // lock the door
@@ -365,10 +363,26 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
+{% endtab %}
 
+{% tab title="Python" %}
+
+
+```python
+# lock the door
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is True
+
+# Now unlock the door
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is False
+```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 
 ```ruby
 # lock the door
@@ -381,10 +395,10 @@ seam.locks.unlock_door(device_id: some_lock.device_id)
 updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
+
 
 ```php
 use Seam\SeamClient;
@@ -398,7 +412,6 @@ $seam->locks->unlock_door($lock->device_id);
 # lock the door
 $seam->locks->lock_door($lock->device_id);
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -409,45 +422,8 @@ $seam->locks->lock_door($lock->device_id);
 Seam maps these residents to [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) and allows you to create and manage them through the Seam API.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
 
-```python
-# create an ongoing code
-seam.access_codes.create(
-    device=some_lock, code="123456", name="Personal Access Code"
-)
-
-# create a timebound code
-seam.access_codes.create(
-    device=some_lock,
-    code="888888",
-    name="My Temp Access Code",
-    starts_at="2028-08-12T19:23:42+0000",
-    ends_at="2028-08-13T19:23:42+0000"
-)
-
-# you can use a device or a device_id as the "device" parameter
-seam.access_codes.list(device=some_lock)
-# [
-#   AccessCode(
-#     access_code_id='af5272b1-2a49-4eb5-9388-2447fc7b5bd1',
-#     type='ongoing',
-#     code='123459'
-#   ),
-#   AccessCode(
-#     access_code_id='8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
-#     type='timebound',
-#     code='888888',
-#     starts_at='2028-08-12T19:24:00.000Z',
-#     ends_at='2028-08-13T19:24:00.000Z',
-#   )
-# ]
-
-```
-
-{% endtab %}
-
-{% tab title="Javascript" %}
 
 ```javascript
 // create an ongoing code
@@ -490,10 +466,48 @@ await seam.accessCodes.list({
 ]
 */
 ```
+{% endtab %}
 
+{% tab title="Python" %}
+
+
+```python
+# create an ongoing code
+seam.access_codes.create(
+    device=some_lock, code="123456", name="Personal Access Code"
+)
+
+# create a timebound code
+seam.access_codes.create(
+    device=some_lock,
+    code="888888",
+    name="My Temp Access Code",
+    starts_at="2028-08-12T19:23:42+0000",
+    ends_at="2028-08-13T19:23:42+0000"
+)
+
+# you can use a device or a device_id as the "device" parameter
+seam.access_codes.list(device=some_lock)
+# [
+#   AccessCode(
+#     access_code_id='af5272b1-2a49-4eb5-9388-2447fc7b5bd1',
+#     type='ongoing',
+#     code='123459'
+#   ),
+#   AccessCode(
+#     access_code_id='8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
+#     type='timebound',
+#     code='888888',
+#     starts_at='2028-08-12T19:24:00.000Z',
+#     ends_at='2028-08-13T19:24:00.000Z',
+#   )
+# ]
+
+```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 
 ```ruby
 # create an ongoing code
@@ -540,10 +554,10 @@ seam.access_codes.list(device_id: some_lock.device_id)
 #   warnings=[]
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
-
 {% endtab %}
 
 {% tab title="PHP" %}
+
 
 ```
 

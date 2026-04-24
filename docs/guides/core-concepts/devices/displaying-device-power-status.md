@@ -26,29 +26,32 @@ You can also use the prebuilt [device details Seam Component](../../ui-component
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device = seam.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
-if device.properties.has_direct_power == True:
-  pprint("Power Source: Wired")
-else:
-  pprint("Power Source: Battery-powered")
-  pprint("Battery Level: " + str(device.properties.battery.level))
-  pprint("Battery Status: " + device.properties.battery.status)
+```javascript
+const device = await seam.devices.get({device_id: "36cf1a96-196d-41b0-9804-88154387f1f9"});
+if (device.properties.has_direct_power == true) {
+  console.log("Power Source: Wired");
+} else {
+  console.log("Power Source: Battery-powered");
+  console.log("Battery Level: " + device.properties.battery.level.toString());
+  console.log("Battery Status: " + device.properties.battery.status);
+}
 ```
 
 **Response:**
 
 ```
-'Power Source: Battery-powered'
-'Battery Level: 0.9999532347993827'
-'Battery Status: full'
+Power Source: Battery-powered
+Battery Level: 0.9999532347993827
+Battery Status: full
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -75,30 +78,31 @@ Power Source: Battery Status: full
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const device = await seam.devices.get({device_id: "36cf1a96-196d-41b0-9804-88154387f1f9"});
-if (device.properties.has_direct_power == true) {
-  console.log("Power Source: Wired");
-} else {
-  console.log("Power Source: Battery-powered");
-  console.log("Battery Level: " + device.properties.battery.level.toString());
-  console.log("Battery Status: " + device.properties.battery.status);
-}
+```python
+device = seam.devices.get("36cf1a96-196d-41b0-9804-88154387f1f9")
+if device.properties.has_direct_power == True:
+  pprint("Power Source: Wired")
+else:
+  pprint("Power Source: Battery-powered")
+  pprint("Battery Level: " + str(device.properties.battery.level))
+  pprint("Battery Status: " + device.properties.battery.status)
 ```
 
 **Response:**
 
 ```
-Power Source: Battery-powered
-Battery Level: 0.9999532347993827
-Battery Status: full
+'Power Source: Battery-powered'
+'Battery Level: 0.9999532347993827'
+'Battery Status: full'
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -122,6 +126,7 @@ Battery Status: full
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -146,6 +151,7 @@ Battery Status: full
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -171,9 +177,6 @@ Battery Level: 0.9999532
 Battery Status: Full
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ## Get Device Power Status Using Battery-Related Events
@@ -194,32 +197,38 @@ When issuing a [List Events](https://docs.seam.co/latest/api/events/list) reques
 The following example uses the List Events request to retrieve all `device.battery_status_changed` events for a specific device since January 1, 2024:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device_battery_status_changed_events = seam.events.list(
-    device_id = "36cf1a96-196d-41b0-9804-88154387f1f9",
-    event_type = "device.battery_status_changed",
-    since = "2024-01-01T00:00:00Z"
-)
-pprint(device_battery_status_changed_events)
+```javascript
+const device_battery_status_changed_events = await seam.events.list({
+  device_id: "36cf1a96-196d-41b0-9804-88154387f1f9",
+  event_type: "device.battery_status_changed",
+  since: "2024-01-01T00:00:00Z"
+})
+console.log(device_battery_status_changed_events)
 ```
 
 **Response:**
 
-```
-[{'connected_account_id': 'c1413928-f527-4e12-abf9-d5e18d92dd33',
-  'created_at': '2024-01-01T02:25:10.158Z',
-  'device_id': '36cf1a96-196d-41b0-9804-88154387f1f9',
-  'event_id': 'de4314a2-903d-53e9-bb5e-ded5d19ad074',
-  'event_type': 'device.battery_status_changed',
-  'occurred_at': '2024-01-01T02:25:10.158Z',
-  'workspace_id': '398d80b7-3f96-47c2-b85a-6f8ba21d07be'}]
+```json
+[
+  {
+    event_id: 'de4314a2-903d-53e9-bb5e-ded5d19ad074',
+    device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
+    event_type: 'device.battery_status_changed',
+    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+    created_at: '2024-01-01T02:25:10.158Z',
+    occurred_at: '2024-01-01T02:25:10.158Z',
+    connected_account_id: 'c1413928-f527-4e12-abf9-d5e18d92dd33'
+  }
+]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -256,36 +265,34 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const device_battery_status_changed_events = await seam.events.list({
-  device_id: "36cf1a96-196d-41b0-9804-88154387f1f9",
-  event_type: "device.battery_status_changed",
-  since: "2024-01-01T00:00:00Z"
-})
-console.log(device_battery_status_changed_events)
+```python
+device_battery_status_changed_events = seam.events.list(
+    device_id = "36cf1a96-196d-41b0-9804-88154387f1f9",
+    event_type = "device.battery_status_changed",
+    since = "2024-01-01T00:00:00Z"
+)
+pprint(device_battery_status_changed_events)
 ```
 
 **Response:**
 
-```json
-[
-  {
-    event_id: 'de4314a2-903d-53e9-bb5e-ded5d19ad074',
-    device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
-    event_type: 'device.battery_status_changed',
-    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-    created_at: '2024-01-01T02:25:10.158Z',
-    occurred_at: '2024-01-01T02:25:10.158Z',
-    connected_account_id: 'c1413928-f527-4e12-abf9-d5e18d92dd33'
-  }
-]
+```
+[{'connected_account_id': 'c1413928-f527-4e12-abf9-d5e18d92dd33',
+  'created_at': '2024-01-01T02:25:10.158Z',
+  'device_id': '36cf1a96-196d-41b0-9804-88154387f1f9',
+  'event_id': 'de4314a2-903d-53e9-bb5e-ded5d19ad074',
+  'event_type': 'device.battery_status_changed',
+  'occurred_at': '2024-01-01T02:25:10.158Z',
+  'workspace_id': '398d80b7-3f96-47c2-b85a-6f8ba21d07be'}]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -310,6 +317,7 @@ puts device_battery_status_changed_events.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -331,6 +339,7 @@ echo json_encode($device_battery_status_changed_events), "\n";
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -358,9 +367,6 @@ foreach (var device_battery_status_changed_event in device_battery_status_change
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### Retrieve Battery-Related Events Using a Webhook

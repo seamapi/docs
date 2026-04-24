@@ -27,31 +27,33 @@ Strictly speaking, unmanaged codes are any codes on a device that were not creat
 You can retrieve a list of all unmanaged access codes for a particular device using the [List Unmanaged Access Codes](https://docs.seam.co/latest/api/access_codes/unmanaged/list) request, passing in `device_id` as a query parameter. For example:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.access_codes.unmanaged.list(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+await seam.accessCodes.unmanaged.list({
+  device_id: "11111111-1111-1111-1111-444444444444"
+})
 ```
 
 **Response:**
 
-```
+```json
 [
-  UnmanagedAccessCode(
-    access_code_id='11111111-1111-1111-1111-999999999999',
-    device_id='11111111-1111-1111-1111-444444444444',
-    is_managed=False,
+  {
+    access_code_id: '11111111-1111-1111-1111-999999999999',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    is_managed: false,
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -84,31 +86,33 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.accessCodes.unmanaged.list({
-  device_id: "11111111-1111-1111-1111-444444444444"
-})
+```python
+seam.access_codes.unmanaged.list(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    access_code_id: '11111111-1111-1111-1111-999999999999',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    is_managed: false,
+  UnmanagedAccessCode(
+    access_code_id='11111111-1111-1111-1111-999999999999',
+    device_id='11111111-1111-1111-1111-444444444444',
+    is_managed=False,
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -133,6 +137,7 @@ client.unmanaged_access_codes.list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -153,7 +158,6 @@ seam.UnmanagedAccessCodes.List(
 ...
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ## Converting Unmanaged Codes into Managed Codes
@@ -161,27 +165,33 @@ seam.UnmanagedAccessCodes.List(
 You can convert unmanaged access codes into managed ones using the [Convert an Unmanaged Access Code](https://docs.seam.co/latest/api/access_codes/unmanaged/convert_to_managed) request, passing in `access_code_id` as a query parameter. For example:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.access_codes.unmanaged.convert_to_managed(
-  access_code_id = "11111111-1111-1111-1111-999999999999"
-)
+```javascript
+await seam.accessCodes.unmanaged.convertToManaged({
+  access_code_id: "11111111-1111-1111-1111-999999999999"
+})
 ```
 
 **Response:**
 
-```
-ActionAttempt(action_attempt_id='721b51b7-6ab9-41cf-b09d-a5e97d355208',
-              action_type='CONVERT_ACCESS_CODE_TO_MANAGED',
-              status='success',
-              result={},
-              error=None)
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '721b51b7-6ab9-41cf-b09d-a5e97d355208',
+    action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -211,31 +221,29 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.accessCodes.unmanaged.convertToManaged({
-  access_code_id: "11111111-1111-1111-1111-999999999999"
-})
+```python
+seam.access_codes.unmanaged.convert_to_managed(
+  access_code_id = "11111111-1111-1111-1111-999999999999"
+)
 ```
 
 **Response:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '721b51b7-6ab9-41cf-b09d-a5e97d355208',
-    action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED',
-    result: {},
-    error: null
-  }
-}
+```
+ActionAttempt(action_attempt_id='721b51b7-6ab9-41cf-b09d-a5e97d355208',
+              action_type='CONVERT_ACCESS_CODE_TO_MANAGED',
+              status='success',
+              result={},
+              error=None)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -256,6 +264,7 @@ client.unmanaged_access_codes.convert_to_managed(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -274,7 +283,6 @@ Result:
 Error:
 ```
 {% endtab %}
-
 {% endtabs %}
 
 The request returns immediately, but the conversion is an asynchronous process that completes in the background. You can listen to the `access_code.unmanaged.converted_to_managed` and `access_code.unmanaged.failed_to_convert_to_managed` to be notified when conversion succeeds or fails.
@@ -296,27 +304,33 @@ For SmartThings devices, you can still see a list of all unmanaged codes on the 
 After you have converted unmanaged codes to managed codes, or replaced them with new ones, you can allow users to delete any remaining unmanaged codes on their device. You can do this by using the [Delete an Unmanaged Access Code](https://docs.seam.co/latest/api/access_codes/unmanaged/delete) request and passing in passing in `access_code_id` as a query parameter. For example:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.access_codes.unmanaged.delete(
-  access_code_id = "11111111-1111-1111-1111-999999999999"
-)
+```javascript
+await seam.accessCodes.unmanaged.delete({
+  access_code_id: "11111111-1111-1111-1111-999999999999"
+});
 ```
 
 **Response:**
 
-```
-ActionAttempt(action_attempt_id='364e747f-9631-4eb1-bc9e-24cd1f11cf3b',
-              action_type='DELETE_UNMANAGED_ACCESS_CODE',
-              status='success',
-              result={},
-              error=None)
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '364e747f-9631-4eb1-bc9e-24cd1f11cf3b',
+    action_type: 'DELETE_UNMANAGED_ACCESS_CODE',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -346,31 +360,29 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.accessCodes.unmanaged.delete({
-  access_code_id: "11111111-1111-1111-1111-999999999999"
-});
+```python
+seam.access_codes.unmanaged.delete(
+  access_code_id = "11111111-1111-1111-1111-999999999999"
+)
 ```
 
 **Response:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '364e747f-9631-4eb1-bc9e-24cd1f11cf3b',
-    action_type: 'DELETE_UNMANAGED_ACCESS_CODE',
-    result: {},
-    error: null
-  }
-}
+```
+ActionAttempt(action_attempt_id='364e747f-9631-4eb1-bc9e-24cd1f11cf3b',
+              action_type='DELETE_UNMANAGED_ACCESS_CODE',
+              status='success',
+              result={},
+              error=None)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -391,6 +403,7 @@ client.unmanaged_access_codes.delete(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -409,7 +422,6 @@ Result:
 Error:
 ```
 {% endtab %}
-
 {% endtabs %}
 
 The request returns an action attempt, similar to the managed code deletion endpoint. See [Delete an access code](https://docs.seam.co/latest/api/access_codes/delete) for more details.

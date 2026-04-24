@@ -33,27 +33,8 @@ Permanent access codes (codes without `starts_at` and `ends_at`) do not require 
 Check for the provider-specific timezone warning in `device.warnings`:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-device = seam.devices.get(device_id="your-device-id")
-
-# Check for timezone warnings
-timezone_warnings = [
-  w for w in device.warnings
-  if "time_zone" in w.warning_code.lower()
-]
-
-if timezone_warnings:
-  print("⚠️ Timezone configuration required for time-bound codes")
-  print(f"Warning: {timezone_warnings[0].message}")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -75,7 +56,46 @@ if (timezoneWarnings.length > 0) {
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+device=$(curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"your-device-id\"
+  }")
+
+# Check for timezone warnings
+echo $device | jq '.device.warnings[] | select(.warning_code | test("time_zone"; "i"))'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+device = seam.devices.get(device_id="your-device-id")
+
+# Check for timezone warnings
+timezone_warnings = [
+  w for w in device.warnings
+  if "time_zone" in w.warning_code.lower()
+]
+
+if timezone_warnings:
+  print("⚠️ Timezone configuration required for time-bound codes")
+  print(f"Warning: {timezone_warnings[0].message}")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -96,6 +116,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -119,6 +140,7 @@ if (count($timezoneWarnings) > 0) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 using System.Linq;
@@ -141,6 +163,7 @@ if (timezoneWarnings.Any())
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
@@ -163,22 +186,6 @@ if (!timezoneWarnings.isEmpty()) {
   System.out.println("⚠️ Timezone configuration required for time-bound codes");
   System.out.println("Warning: " + timezoneWarnings.get(0).getMessage());
 }
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-device=$(curl -X 'POST' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"device_id\": \"your-device-id\"
-  }")
-
-# Check for timezone warnings
-echo $device | jq '.device.warnings[] | select(.warning_code | test("time_zone"; "i"))'
 ```
 {% endtab %}
 {% endtabs %}

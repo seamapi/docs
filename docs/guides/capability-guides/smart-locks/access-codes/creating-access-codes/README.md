@@ -40,26 +40,28 @@ If either of these capability flags is `false` or not present, you can view the 
 In addition, you could look for a `device.accessory_keypad_disconnected` event.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
+```javascript
+await seam.devices.get({device_id: "11111111-1111-1111-1111-444444444444"});
 ```
 
 **Response:**
 
-```
-Device(
-  device_id='11111111-1111-1111-1111-444444444444',
-  can_program_online_access_codes=True,  // You can create online access codes for this device.
-  can_program_offline_access_codes=True, // You can create offline access codes for this device.
+```json
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  can_program_online_access_codes: true,  // You can create online access codes for this device.
+  can_program_offline_access_codes: true, // You can create offline access codes for this device.
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -89,26 +91,28 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.devices.get({device_id: "11111111-1111-1111-1111-444444444444"});
+```python
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
 
-```json
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  can_program_online_access_codes: true,  // You can create online access codes for this device.
-  can_program_offline_access_codes: true, // You can create offline access codes for this device.
+```
+Device(
+  device_id='11111111-1111-1111-1111-444444444444',
+  can_program_online_access_codes=True,  // You can create online access codes for this device.
+  can_program_offline_access_codes=True, // You can create offline access codes for this device.
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -128,6 +132,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -147,6 +152,7 @@ $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -181,40 +187,43 @@ Set an ongoing online access code by providing the `device_id` of the smart lock
 To customize the PIN code, specify a desired PIN for the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See [Access Code Requirements for Door Locks](../../../../capability-guides/smart-locks/access-codes/access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 
-# Confirm that the device supports online access codes.
-if device.can_program_online_access_codes:
-  # Create the ongoing online access code.
-  seam.access_codes.create(
-    device_id = device.device_id,
-    name = "my ongoing code",
-    code = "1234"
-  )
+// Confirm that the device supports online access codes.
+if (device.can_program_online_access_codes) {
+  // Create the ongoing online access code.
+  await seam.accessCodes.create({
+    device_id: device.device_id,
+    name: "my ongoing code",
+    code: "1234"
+  })
+};
 ```
 
 **Response:**
 
-```
-AccessCode(
-  access_code_id='11111111-1111-1111-1111-555555555555',
-  device_id='11111111-1111-1111-1111-444444444444',
-  type='ongoing',
-  code='1234',
-  name='my ongoing code',
+```json
+{
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  device_id: '11111111-1111-1111-1111-444444444444',
+  name: 'my ongoing code',
+  code: '1234',
+  type: 'ongoing',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -270,41 +279,42 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 
-// Confirm that the device supports online access codes.
-if (device.can_program_online_access_codes) {
-  // Create the ongoing online access code.
-  await seam.accessCodes.create({
-    device_id: device.device_id,
-    name: "my ongoing code",
-    code: "1234"
-  })
-};
+# Confirm that the device supports online access codes.
+if device.can_program_online_access_codes:
+  # Create the ongoing online access code.
+  seam.access_codes.create(
+    device_id = device.device_id,
+    name = "my ongoing code",
+    code = "1234"
+  )
 ```
 
 **Response:**
 
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-555555555555',
-  device_id: '11111111-1111-1111-1111-444444444444',
-  name: 'my ongoing code',
-  code: '1234',
-  type: 'ongoing',
+```
+AccessCode(
+  access_code_id='11111111-1111-1111-1111-555555555555',
+  device_id='11111111-1111-1111-1111-444444444444',
+  type='ongoing',
+  code='1234',
+  name='my ongoing code',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -337,6 +347,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -369,6 +380,7 @@ if ($device->can_program_online_access_codes) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -446,44 +458,47 @@ As with ongoing codes, you can assign an optional `name` to the access code. A c
 Similarly, to customize the PIN code, specify a desired PIN in the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See the [Access Code Requirements for Door Locks](../../../../capability-guides/smart-locks/access-codes/access-code-requirements-for-door-locks.md) to understand any requirements specific to the door lock brand.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 
-# Confirm that the device supports online access codes.
-if device.can_program_online_access_codes:
-  # Create the time-bound online access code.
-  seam.access_codes.create(
-    device_id = device.device_id,
-    name = "my time-bound code",
-    starts_at = "2025-01-01T16:00:00Z",
-    ends_at = "2025-01-22T12:00:00Z",
-    code = "2345"
-  )
+// Confirm that the device supports online access codes.
+if (device.can_program_online_access_codes) {
+  // Create the time-bound online access code.
+  await seam.accessCodes.create({
+    device_id: device.device_id,
+    name: "my time-bound code",
+    starts_at: "2025-01-01T16:00:00Z",
+    ends_at: "2025-01-22T12:00:00Z",
+    code: "2345"
+  })
+};
 ```
 
 **Response:**
 
-```
-AccessCode(
-  access_code_id='11111111-1111-1111-1111-666666666666',
-  device_id='11111111-1111-1111-1111-444444444444',
-  type='time_bound',
-  code='2345',
-  starts_at='2025-01-01T16:00:00.000Z',
-  ends_at='2025-01-22T12:00:00.000Z',
-  name='my time-bound code',
+```json
+{
+  access_code_id: '11111111-1111-1111-1111-666666666666',
+  device_id: '11111111-1111-1111-1111-444444444444',
+  name: 'my time-bound code',
+  code: '2345',
+  type: 'time_bound',
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```sh
@@ -543,45 +558,46 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 
-// Confirm that the device supports online access codes.
-if (device.can_program_online_access_codes) {
-  // Create the time-bound online access code.
-  await seam.accessCodes.create({
-    device_id: device.device_id,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  })
-};
+# Confirm that the device supports online access codes.
+if device.can_program_online_access_codes:
+  # Create the time-bound online access code.
+  seam.access_codes.create(
+    device_id = device.device_id,
+    name = "my time-bound code",
+    starts_at = "2025-01-01T16:00:00Z",
+    ends_at = "2025-01-22T12:00:00Z",
+    code = "2345"
+  )
 ```
 
 **Response:**
 
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-666666666666',
-  device_id: '11111111-1111-1111-1111-444444444444',
-  name: 'my time-bound code',
-  code: '2345',
-  type: 'time_bound',
-  starts_at: '2025-01-01T16:00:00.000Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
+```
+AccessCode(
+  access_code_id='11111111-1111-1111-1111-666666666666',
+  device_id='11111111-1111-1111-1111-444444444444',
+  type='time_bound',
+  code='2345',
+  starts_at='2025-01-01T16:00:00.000Z',
+  ends_at='2025-01-22T12:00:00.000Z',
+  name='my time-bound code',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -618,6 +634,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -653,6 +670,7 @@ if ($device->can_program_online_access_codes) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp

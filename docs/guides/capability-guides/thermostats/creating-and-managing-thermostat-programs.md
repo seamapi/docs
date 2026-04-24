@@ -66,41 +66,43 @@ To define a daily program, use `/thermostats/daily_programs/create`, specifying 
 The following example creates a weekday daily program with four period, each of which is linked to a configured climate preset:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.daily_programs.create(
-  device_id = "11111111-1111-1111-2222-444444444444",
-  name = "Weekday Program",
-  periods = [
+```javascript
+await seam.thermostats.dailyPrograms.create({
+  device_id: "11111111-1111-1111-2222-444444444444",
+  name: "Weekday Program",
+  periods: [
     { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
     { "starts_at_time": "16:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
   ]
-)
+});
 ```
 
 **Response:**
 
-```
-ThermostatDailyProgram(
-  thermostat_daily_program_id='99999999-1111-1111-1111-111111111111',
-  device_id='11111111-1111-1111-2222-444444444444',
-  name="Weekday Program",
-  periods=[
-    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
-    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
-    { "starts_at_time": "16:00:00", "climate_preset_key": "Home" },
-    { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
-  ],
+```json
+{
+  thermostat_daily_program_id: '99999999-1111-1111-1111-111111111111',
+  device_id: '11111111-1111-1111-2222-444444444444',
+  name: 'Weekday Program',
+  periods: [
+      {'starts_at_time': '07:00:00', 'climate_preset_key': 'Home'},
+      {'starts_at_time': '09:00:00', 'climate_preset_key': 'Away'},
+      {'starts_at_time': '16:00:00', 'climate_preset_key': 'Home'},
+      {'starts_at_time': '22:30:00', 'climate_preset_key': 'Sleep'}
+    ],
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -142,41 +144,43 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.dailyPrograms.create({
-  device_id: "11111111-1111-1111-2222-444444444444",
-  name: "Weekday Program",
-  periods: [
+```python
+seam.thermostats.daily_programs.create(
+  device_id = "11111111-1111-1111-2222-444444444444",
+  name = "Weekday Program",
+  periods = [
     { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
     { "starts_at_time": "16:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
   ]
-});
+)
 ```
 
 **Response:**
 
-```json
-{
-  thermostat_daily_program_id: '99999999-1111-1111-1111-111111111111',
-  device_id: '11111111-1111-1111-2222-444444444444',
-  name: 'Weekday Program',
-  periods: [
-      {'starts_at_time': '07:00:00', 'climate_preset_key': 'Home'},
-      {'starts_at_time': '09:00:00', 'climate_preset_key': 'Away'},
-      {'starts_at_time': '16:00:00', 'climate_preset_key': 'Home'},
-      {'starts_at_time': '22:30:00', 'climate_preset_key': 'Sleep'}
-    ],
+```
+ThermostatDailyProgram(
+  thermostat_daily_program_id='99999999-1111-1111-1111-111111111111',
+  device_id='11111111-1111-1111-2222-444444444444',
+  name="Weekday Program",
+  periods=[
+    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
+    { "starts_at_time": "16:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
+  ],
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -211,6 +215,7 @@ seam.thermostats.daily_programs.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -245,6 +250,7 @@ $seam->thermostats->daily_programs->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -257,9 +263,6 @@ $seam->thermostats->daily_programs->create(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -273,36 +276,38 @@ Updating a daily program returns an [action attempt](../../core-concepts/action-
 The following example changes the climate preset for the second period and the starting time of the third period:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.daily_programs.update(
-  thermostat_daily_program_id = "99999999-1111-1111-1111-111111111111",
-  name = "Weekday Program",
-  periods = [
+```javascript
+await seam.thermostats.dailyPrograms.update({
+  thermostat_daily_program_id: "99999999-1111-1111-1111-111111111111",
+  name: "Weekday Program",
+  periods: [
     { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "09:00:00", "climate_preset_key": "Eco" },
     { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
   ]
-)
+});
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='PUSH_THERMOSTAT_PROGRAMS',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -339,36 +344,38 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.dailyPrograms.update({
-  thermostat_daily_program_id: "99999999-1111-1111-1111-111111111111",
-  name: "Weekday Program",
-  periods: [
+```python
+seam.thermostats.daily_programs.update(
+  thermostat_daily_program_id = "99999999-1111-1111-1111-111111111111",
+  name = "Weekday Program",
+  periods = [
     { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "09:00:00", "climate_preset_key": "Eco" },
     { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
   ]
-});
+)
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555',
-  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='PUSH_THERMOSTAT_PROGRAMS',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -397,6 +404,7 @@ seam.thermostats.daily_programs.update(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -426,6 +434,7 @@ $seam->thermostats->daily_programs->update(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -438,9 +447,6 @@ $seam->thermostats->daily_programs->update(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -450,23 +456,25 @@ $seam->thermostats->daily_programs->update(
 To delete a daily program, use `/thermostats/daily_programs/delete`, specifying the ID of the daily program that you want to delete. You cannot delete a daily program that's currently assigned to a weekly program.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.daily_programs.delete(
-  thermostat_daily_program_id = "99999999-1111-1111-1111-111111111111"
-)
+```javascript
+await seam.thermostats.dailyPrograms.delete({
+  thermostat_daily_program_id: "99999999-1111-1111-1111-111111111111"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -489,23 +497,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.dailyPrograms.delete({
-  thermostat_daily_program_id: "99999999-1111-1111-1111-111111111111"
-});
+```python
+seam.thermostats.daily_programs.delete(
+  thermostat_daily_program_id = "99999999-1111-1111-1111-111111111111"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -522,6 +532,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -538,6 +549,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -550,9 +562,6 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -568,36 +577,38 @@ Updating the weekly program returns an [action attempt](../../core-concepts/acti
 The following example assigns the same weekday program to each weekday and the same weekend program to each weekend day:&#x20;
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.update_weekly_program(
-  device_id = "11111111-1111-1111-2222-444444444444",
-  monday_program_id = "99999999-1111-1111-1111-111111111111",
-  tuesday_program_id = "99999999-1111-1111-1111-111111111111",
-  wednesday_program_id = "99999999-1111-1111-1111-111111111111",
-  thursday_program_id = "99999999-1111-1111-1111-111111111111",
-  friday_program_id = "99999999-1111-1111-1111-111111111111",
-  saturday_program_id = "99999999-1111-1111-1111-222222222222",
-  sunday_program_id = "99999999-1111-1111-1111-222222222222"
-)
+```javascript
+await seam.thermostats.updateWeeklyProgram({
+  device_id: "11111111-1111-1111-2222-444444444444",
+  monday_program_id: "99999999-1111-1111-1111-111111111111",
+  tuesday_program_id: "99999999-1111-1111-1111-111111111111",
+  wednesday_program_id: "99999999-1111-1111-1111-111111111111",
+  thursday_program_id: "99999999-1111-1111-1111-111111111111",
+  friday_program_id: "99999999-1111-1111-1111-111111111111",
+  saturday_program_id: "99999999-1111-1111-1111-222222222222",
+  sunday_program_id: "99999999-1111-1111-1111-222222222222"
+});
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='11111111-2222-3333-4444-666666666666',
-  action_type='PUSH_THERMOSTAT_PROGRAMS',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -634,36 +645,38 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.updateWeeklyProgram({
-  device_id: "11111111-1111-1111-2222-444444444444",
-  monday_program_id: "99999999-1111-1111-1111-111111111111",
-  tuesday_program_id: "99999999-1111-1111-1111-111111111111",
-  wednesday_program_id: "99999999-1111-1111-1111-111111111111",
-  thursday_program_id: "99999999-1111-1111-1111-111111111111",
-  friday_program_id: "99999999-1111-1111-1111-111111111111",
-  saturday_program_id: "99999999-1111-1111-1111-222222222222",
-  sunday_program_id: "99999999-1111-1111-1111-222222222222"
-});
+```python
+seam.thermostats.update_weekly_program(
+  device_id = "11111111-1111-1111-2222-444444444444",
+  monday_program_id = "99999999-1111-1111-1111-111111111111",
+  tuesday_program_id = "99999999-1111-1111-1111-111111111111",
+  wednesday_program_id = "99999999-1111-1111-1111-111111111111",
+  thursday_program_id = "99999999-1111-1111-1111-111111111111",
+  friday_program_id = "99999999-1111-1111-1111-111111111111",
+  saturday_program_id = "99999999-1111-1111-1111-222222222222",
+  sunday_program_id = "99999999-1111-1111-1111-222222222222"
+)
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-666666666666',
-  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='11111111-2222-3333-4444-666666666666',
+  action_type='PUSH_THERMOSTAT_PROGRAMS',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -692,6 +705,7 @@ seam.thermostats.update_weekly_program(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -721,6 +735,7 @@ $seam->thermostats->update_weekly_program(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -733,7 +748,4 @@ $seam->thermostats->update_weekly_program(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

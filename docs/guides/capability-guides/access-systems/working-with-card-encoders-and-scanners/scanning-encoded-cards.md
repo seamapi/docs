@@ -29,36 +29,38 @@ The scanning process consists of the following basic steps:
 To scan a card, first, identify the `acs_encoder_id` of the encoder that you want to use to scan the card. Then, initiate the scan using the `/acs/encoders/scan_credential` endpoint.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Retrieve a list of all available encoders in a building, 
-# that is, connected to a single acs_system.
-seam.acs.encoders.list(
-  acs_system_ids = [building_system_id]
-)
+```javascript
+// Retrieve a list of all available encoders in a building, 
+// that is, connected to a single acs_system.
+await seam.acs.encoders.list({
+  acs_system_ids: [buildingSystemId]
+});
 
-# Scan the card using the desired encoder.
-scanning_action_attempt = seam.acs.encoders.scan_credential(
-  acs_encoder_id = encoder.acs_encoder_id
-)
+// Scan the card using the desired encoder.
+const scanningActionAttempt = await seam.acs.encoders.scanCredential({
+  acs_encoder_id: encoder.acs_encoder_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='pending',
-  action_attempt_id='11111111-2222-3333-4444-666666666666',
-  action_type='SCAN_CREDENTIAL',
-  result=null,
-  error=null
-)
+```json
+{
+  status: 'pending',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666',
+  action_type: 'SCAN_CREDENTIAL',
+  result: null,
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -101,36 +103,38 @@ scanning_action_attempt=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Retrieve a list of all available encoders in a building, 
-// that is, connected to a single acs_system.
-await seam.acs.encoders.list({
-  acs_system_ids: [buildingSystemId]
-});
+```python
+# Retrieve a list of all available encoders in a building, 
+# that is, connected to a single acs_system.
+seam.acs.encoders.list(
+  acs_system_ids = [building_system_id]
+)
 
-// Scan the card using the desired encoder.
-const scanningActionAttempt = await seam.acs.encoders.scanCredential({
-  acs_encoder_id: encoder.acs_encoder_id
-});
+# Scan the card using the desired encoder.
+scanning_action_attempt = seam.acs.encoders.scan_credential(
+  acs_encoder_id = encoder.acs_encoder_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'pending',
-  action_attempt_id: '11111111-2222-3333-4444-666666666666',
-  action_type: 'SCAN_CREDENTIAL',
-  result: null,
-  error: null
-}
+```
+ActionAttempt(
+  status='pending',
+  action_attempt_id='11111111-2222-3333-4444-666666666666',
+  action_type='SCAN_CREDENTIAL',
+  result=null,
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -160,6 +164,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -189,6 +194,7 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -219,9 +225,6 @@ actionAttempt scanningActionAttempt = seam.EncodersAcs.ScanCredential(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -231,31 +234,33 @@ actionAttempt scanningActionAttempt = seam.EncodersAcs.ScanCredential(
 When you make an `/acs/encoders/scan_credential` request, Seam returns an [action attempt](../../../core-concepts/action-attempts.md). To identify when the scan has completed and to confirm that the scan was successful, poll this action attempt, until its `status` becomes `success`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.action_attempts.get(
-  action_attempt_id = scanning_action_attempt.action_attempt_id
-)
+```javascript
+await seam.actionAttempts.get({
+  action_attempt_id: scanningActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='success',
-  action_attempt_id='11111111-2222-3333-4444-666666666666',
-  action_type='SCAN_CREDENTIAL',
-  result={
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666",
+  action_type: 'SCAN_CREDENTIAL',
+  result: {
     ...
   },
-  error=null
-)
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -288,31 +293,33 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.actionAttempts.get({
-  action_attempt_id: scanningActionAttempt.action_attempt_id
-});
+```python
+seam.action_attempts.get(
+  action_attempt_id = scanning_action_attempt.action_attempt_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-666666666666",
-  action_type: 'SCAN_CREDENTIAL',
-  result: {
+```
+ActionAttempt(
+  status='success',
+  action_attempt_id='11111111-2222-3333-4444-666666666666',
+  action_type='SCAN_CREDENTIAL',
+  result={
     ...
   },
-  error: null
-}
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -337,6 +344,7 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -361,6 +369,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -383,9 +392,6 @@ seam.ActionAttempts.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

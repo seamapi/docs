@@ -11,33 +11,42 @@ If the [Connect Webview](../connect-webviews/) associated with a connected accou
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-connected_accounts = seam.connected_accounts.list(
-  custom_metadata_has = {
+```javascript
+const connected_accounts = await seam.connectedAccounts.list({
+  custom_metadata_has: {
     "internal_account_id": "user-1"
   }
-)
+});
 
-pprint(connected_accounts)
+console.log(connected_accounts);
 ```
 
 **Response:**
 
-```
-[ConnectedAccount(connected_account_id='c993818b-bf3c-4836-bef4-9a76d89bf1d3',
-                  created_at='2024-01-05T07:20:07.692Z',
-                  user_identifier={'username': 'jane'},
-                  account_type='visionline',
-                  errors=[],
-                  custom_metadata={"internal_account_id": "user-1"}),
-...]
+```json
+[
+  {
+    connected_account_id: 'c993818b-bf3c-4836-bef4-9a76d89bf1d3',
+    created_at: '2024-01-05T07:20:07.692Z',
+    user_identifier: { username: 'jane' },
+    account_type: 'visionline',
+    account_type_display_name: 'Visionline',
+    errors: [],
+    warnings: [],
+    custom_metadata: { internal_account_id: 'user-1' },
+    automatically_manage_new_devices: true
+  },
+  ...
+]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -80,40 +89,35 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const connected_accounts = await seam.connectedAccounts.list({
-  custom_metadata_has: {
+```python
+connected_accounts = seam.connected_accounts.list(
+  custom_metadata_has = {
     "internal_account_id": "user-1"
   }
-});
+)
 
-console.log(connected_accounts);
+pprint(connected_accounts)
 ```
 
 **Response:**
 
-```json
-[
-  {
-    connected_account_id: 'c993818b-bf3c-4836-bef4-9a76d89bf1d3',
-    created_at: '2024-01-05T07:20:07.692Z',
-    user_identifier: { username: 'jane' },
-    account_type: 'visionline',
-    account_type_display_name: 'Visionline',
-    errors: [],
-    warnings: [],
-    custom_metadata: { internal_account_id: 'user-1' },
-    automatically_manage_new_devices: true
-  },
-  ...
-]
+```
+[ConnectedAccount(connected_account_id='c993818b-bf3c-4836-bef4-9a76d89bf1d3',
+                  created_at='2024-01-05T07:20:07.692Z',
+                  user_identifier={'username': 'jane'},
+                  account_type='visionline',
+                  errors=[],
+                  custom_metadata={"internal_account_id": "user-1"}),
+...]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -141,6 +145,7 @@ puts connected_accounts.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -161,6 +166,7 @@ echo json_encode($accounts);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -200,7 +206,4 @@ foreach (var connectedAccount in connectedAccounts)
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

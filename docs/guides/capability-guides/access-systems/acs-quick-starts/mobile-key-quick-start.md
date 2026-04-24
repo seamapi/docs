@@ -125,35 +125,37 @@ Create a user identity to represent a mobile app user.
 2. Create the user identity, as follows:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-from seam import Seam
+```javascript
+import { Seam } from "seam";
 
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
-jen_doe_user = seam.user_identities.create(
+const jenDoeUser = await seam.userIdentities.create({
   full_name: "Jen Doe",
-  email_address = "jen.doe@example.com",
-  # Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_ids = [acs_system_id]
-)
+  email_address: "jen.doe@example.com",
+  // Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id: acsSystemId,
+});
 ```
 
 **Output:**
 
-```
-UserIdentity(
-  user_identity_id='22222222-2222-2222-2222-222222222222',
-  full_name='Jen Doe',
-  email_address='jen.doe@example.com',
+```json
+{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "full_name": "Jen Doe",
+  "email_address": "jen.doe@example.com",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -185,35 +187,37 @@ jen_doe_user=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-import { Seam } from "seam";
+```python
+from seam import Seam
 
-const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-const jenDoeUser = await seam.userIdentities.create({
-  full_name: "Jen Doe",
-  email_address: "jen.doe@example.com",
-  // Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id: acsSystemId,
-});
+jen_doe_user = seam.user_identities.create(
+  full_name="Jen Doe",
+  email_address="jen.doe@example.com",
+  # Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_ids=[acs_system_id]
+)
 ```
 
 **Output:**
 
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "full_name": "Jen Doe",
-  "email_address": "jen.doe@example.com",
+```
+UserIdentity(
+  user_identity_id='22222222-2222-2222-2222-222222222222',
+  full_name='Jen Doe',
+  email_address='jen.doe@example.com',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -242,6 +246,7 @@ jen_doe_user = seam.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -271,6 +276,7 @@ $jen_doe_user = $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -302,25 +308,27 @@ Some other access control systems do not use access groups and, instead, specify
 2. Assign the user identity to the Main Group, as follows:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.acs.access_groups.add_user(
-  # Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id = access_group_id,
-  user_identity_id = jen_doe_user.user_identity_id
-)
+```javascript
+await seam.acs.accessGroups.addUser({
+  // Use the access group ID that you copied earlier from Seam Console.
+  acs_access_group_id: accessGroupId,
+  user_identity_id: jenDoeUser.user_identity_id
+});
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -344,25 +352,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.acs.accessGroups.addUser({
-  // Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id: accessGroupId,
-  user_identity_id: jenDoeUser.user_identity_id
-});
+```python
+seam.acs.access_groups.add_user(
+  # Use the access group ID that you copied earlier from Seam Console.
+  acs_access_group_id = access_group_id,
+  user_identity_id = jen_doe_user.user_identity_id
+)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -381,6 +391,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -399,6 +410,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -420,31 +432,33 @@ void
 Create a mobile key credential for the user identity.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-mobile_key = seam.acs.credentials.create(
-  user_identity_id = jen_doe_user.user_identity_id,
-  is_multi_phone_sync_credential = True,
-  access_method = "mobile_key"
-)
+```javascript
+const mobileKey = await seam.acs.credentials.create({
+  user_identity_id: jenDoeUser.user_identity_id,
+  is_multi_phone_sync_credential: true,
+  access_method: "mobile_key"
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  user_identity_id='22222222-2222-2222-2222-222222222222',
-  access_method='mobile_key',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  user_identity_id: '22222222-2222-2222-2222-222222222222',
+  access_method: 'mobile_key',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -475,31 +489,33 @@ mobile_key=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const mobileKey = await seam.acs.credentials.create({
-  user_identity_id: jenDoeUser.user_identity_id,
-  is_multi_phone_sync_credential: true,
-  access_method: "mobile_key"
-});
+```python
+mobile_key = seam.acs.credentials.create(
+  user_identity_id = jen_doe_user.user_identity_id,
+  is_multi_phone_sync_credential = True,
+  access_method = "mobile_key"
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  user_identity_id: '22222222-2222-2222-2222-222222222222',
-  access_method: 'mobile_key',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  user_identity_id='22222222-2222-2222-2222-222222222222',
+  access_method='mobile_key',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -524,6 +540,7 @@ mobile_key = seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -548,6 +565,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

@@ -25,32 +25,39 @@ You can specify the number of records per page and the desired page of results. 
 The following example gets the first page of 20 devices and then the second page of 20 devices:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-paginator = seam.create_paginator(seam.devices.list, {"limit": 20})
+```javascript
+const pages = seam.createPaginator(
+  seam.devices.list({
+    limit: 20,
+  }),
+)
 
-devices, pagination = paginator.first_page()
+const [devices, { hasNextPage, nextPageCursor }] = await pages.firstPage()
 
-if pagination.has_next_page:
-    more_devices, _ = paginator.next_page(pagination.next_page_cursor)
+if (hasNextPage) {
+  const [moreDevices] = await pages.nextPage(nextPageCursor)
+}
 ```
 
 **Output:**
 
-```
+```json
 [
-  Device(
-    device_id='11111111-1111-1111-1111-444444444444',
+  {
+    device_id: '11111111-1111-1111-1111-444444444444',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -96,37 +103,34 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const pages = seam.createPaginator(
-  seam.devices.list({
-    limit: 20,
-  }),
-)
+```python
+paginator = seam.create_paginator(seam.devices.list, {"limit": 20})
 
-const [devices, { hasNextPage, nextPageCursor }] = await pages.firstPage()
+devices, pagination = paginator.first_page()
 
-if (hasNextPage) {
-  const [moreDevices] = await pages.nextPage(nextPageCursor)
-}
+if pagination.has_next_page:
+    more_devices, _ = paginator.next_page(pagination.next_page_cursor)
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    device_id: '11111111-1111-1111-1111-444444444444',
+  Device(
+    device_id='11111111-1111-1111-1111-444444444444',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -153,6 +157,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -182,6 +187,7 @@ if ($pagination->has_next_page) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -205,60 +211,54 @@ You can get the first page on initial load, store the state, and then get the ne
 The following example gets the first page of 20 records from the list of devices and, later, gets the next page of 20 devices:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the first page.
-params = {"limit": 20}
-paginator = seam.create_paginator(seam.devices.list, params)
+```javascript
+// Get the first page of devices.
+const params = { limit: 20 }
 
-devices, pagination = paginator.first_page()
+const pages = seam.createPaginator(seam.devices.list(params))
 
-# Store the state, for example, in memory, a file, or a database.
-pagination_state = {
-    "params": params,
-    "next_page_cursor": pagination.next_page_cursor,
-    "has_next_page": pagination.has_next_page,
+const [devices, pagination] = await pages.firstPage()
+
+// Store the state, for example, in memory, a file, or a database.
+localStorage.setItem('/seam/devices/list', JSON.stringify([params, pagination]))
+
+// Later, get the next page of devices.
+const [params = {}, { hasNextPage = false, nextPageCursor = null } = {}] =
+  JSON.parse(localStorage.getItem('/seam/devices/list') ?? '[]')
+
+if (hasNextPage) {
+  const pages = seam.createPaginator(seam.devices.list(params))
+  const [moreDevices] = await pages.nextPage(nextPageCursor)
 }
-with open("/tmp/seam_devices_list.json", "w") as f:
-    json.dump(pagination_state, f)
-    
-# Get the next page at a later time using the stored state.
-with open("/tmp/seam_devices_list.json", "r") as f:
-    pagination_state = json.load(f)
-
-if pagination_state.get("has_next_page"):
-    paginator = seam.create_paginator(
-        seam.devices.list, pagination_state["params"]
-    )
-    more_devices, _ = paginator.next_page(
-        pagination_state["next_page_cursor"]
-    )
 ```
 
 **Output:**
 
-```
+```json
 [
-  Device(
-    device_id='11111111-1111-1111-1111-444444444444',
+  {
+    device_id: '11111111-1111-1111-1111-444444444444',
     ...
-  ),
+  },
   ...
 ]
 
 [
-  Device(
-    device_id='11111111-1111-1111-2222-444444444444',
+  {
+    device_id: '11111111-1111-1111-2222-444444444444',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -325,52 +325,62 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the first page of devices.
-const params = { limit: 20 }
+```python
+# Get the first page.
+params = {"limit": 20}
+paginator = seam.create_paginator(seam.devices.list, params)
 
-const pages = seam.createPaginator(seam.devices.list(params))
+devices, pagination = paginator.first_page()
 
-const [devices, pagination] = await pages.firstPage()
-
-// Store the state, for example, in memory, a file, or a database.
-localStorage.setItem('/seam/devices/list', JSON.stringify([params, pagination]))
-
-// Later, get the next page of devices.
-const [params = {}, { hasNextPage = false, nextPageCursor = null } = {}] =
-  JSON.parse(localStorage.getItem('/seam/devices/list') ?? '[]')
-
-if (hasNextPage) {
-  const pages = seam.createPaginator(seam.devices.list(params))
-  const [moreDevices] = await pages.nextPage(nextPageCursor)
+# Store the state, for example, in memory, a file, or a database.
+pagination_state = {
+    "params": params,
+    "next_page_cursor": pagination.next_page_cursor,
+    "has_next_page": pagination.has_next_page,
 }
+with open("/tmp/seam_devices_list.json", "w") as f:
+    json.dump(pagination_state, f)
+    
+# Get the next page at a later time using the stored state.
+with open("/tmp/seam_devices_list.json", "r") as f:
+    pagination_state = json.load(f)
+
+if pagination_state.get("has_next_page"):
+    paginator = seam.create_paginator(
+        seam.devices.list, pagination_state["params"]
+    )
+    more_devices, _ = paginator.next_page(
+        pagination_state["next_page_cursor"]
+    )
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    device_id: '11111111-1111-1111-1111-444444444444',
+  Device(
+    device_id='11111111-1111-1111-1111-444444444444',
     ...
-  },
+  ),
   ...
 ]
 
 [
-  {
-    device_id: '11111111-1111-1111-2222-444444444444',
+  Device(
+    device_id='11111111-1111-1111-2222-444444444444',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -423,6 +433,7 @@ if pagination_state["has_next_page"]
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -484,6 +495,7 @@ if ($pagination->has_next_page) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -507,18 +519,20 @@ You can iterate over all pages of records.
 The following example uses a loop to get all pages of records for a list of 65 devices, at 20 records per page:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-pages = seam.create_paginator(
-  seam.devices.list(
-    limit=20
-  )
+```javascript
+const pages = seam.createPaginator(
+  seam.devices.list({
+    limit: 20,
+  }),
 )
 
-for devices in pages:
-  pprint(f"There are {len(devices)} devices on this page.")
+for await (const devices of pages) {
+  console.log(`There are ${devices.length} devices on this page.`)
+}
 ```
 
 **Output:**
@@ -531,7 +545,8 @@ There are 5 devices on this page.
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -582,19 +597,19 @@ There are 5 devices on this page.
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const pages = seam.createPaginator(
-  seam.devices.list({
-    limit: 20,
-  }),
+```python
+pages = seam.create_paginator(
+  seam.devices.list(
+    limit=20
+  )
 )
 
-for await (const devices of pages) {
-  console.log(`There are ${devices.length} devices on this page.`)
-}
+for devices in pages:
+  pprint(f"There are {len(devices)} devices on this page.")
 ```
 
 **Output:**
@@ -608,6 +623,7 @@ There are 5 devices on this page.
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -630,6 +646,7 @@ There are 5 devices on this page.
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -657,6 +674,7 @@ There are 5 devices on this page.
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -680,14 +698,20 @@ You can iterate over all resources within all pages.
 The following example uses a loop to get all records for a list of devices, at 20 records per page, and then prints out the device ID for each record:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-paginator = seam.create_paginator(seam.devices.list, {"limit": 20})
+```javascript
+const pages = seam.createPaginator(
+  seam.devices.list({
+    limit: 20,
+  }),
+)
 
-for device in paginator.flatten():
-    print(device.device_id)
+for await (const device of pages.flatten()) {
+  console.log(device.device_id)
+}
 ```
 
 **Output:**
@@ -699,7 +723,8 @@ for device in paginator.flatten():
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -753,19 +778,15 @@ done
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const pages = seam.createPaginator(
-  seam.devices.list({
-    limit: 20,
-  }),
-)
+```python
+paginator = seam.create_paginator(seam.devices.list, {"limit": 20})
 
-for await (const device of pages.flatten()) {
-  console.log(device.device_id)
-}
+for device in paginator.flatten():
+    print(device.device_id)
 ```
 
 **Output:**
@@ -778,6 +799,7 @@ for await (const device of pages.flatten()) {
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -798,6 +820,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -821,6 +844,7 @@ foreach ($pages->flatten() as $device) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -844,33 +868,39 @@ You can iterate over all resources within all pages and return a single array or
 The following example returns an array containing all devices:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-paginator = seam.create_paginator(seam.devices.list, {"limit": 20})
+```javascript
+const pages = seam.createPaginator(
+  seam.devices.list({
+    limit: 20,
+  }),
+)
 
-all_devices = paginator.flatten_to_list()
+const devices = await pages.flattenToArray()
 ```
 
 **Output:**
 
-```
+```json
 [
-  Device(
-    device_id='11111111-1111-1111-1111-444444444444',
+  {
+    device_id: '11111111-1111-1111-1111-444444444444',
     ...
-  ),
-  Device(
-    device_id='11111111-1111-1111-2222-444444444444',
+  },
+  {
+    device_id: '11111111-1111-1111-2222-444444444444',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -936,37 +966,35 @@ done
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const pages = seam.createPaginator(
-  seam.devices.list({
-    limit: 20,
-  }),
-)
+```python
+paginator = seam.create_paginator(seam.devices.list, {"limit": 20})
 
-const devices = await pages.flattenToArray()
+all_devices = paginator.flatten_to_list()
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    device_id: '11111111-1111-1111-1111-444444444444',
+  Device(
+    device_id='11111111-1111-1111-1111-444444444444',
     ...
-  },
-  {
-    device_id: '11111111-1111-1111-2222-444444444444',
+  ),
+  Device(
+    device_id='11111111-1111-1111-2222-444444444444',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -993,6 +1021,7 @@ all_devices = paginator.flatten_to_list
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1022,6 +1051,7 @@ $deviecs = $pages->flattenToArray();
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

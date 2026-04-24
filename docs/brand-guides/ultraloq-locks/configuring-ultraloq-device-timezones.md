@@ -63,31 +63,8 @@ If you attempt to create a time-bound access code without configuring the timezo
 When you first connect an Ultraloq device, it will have the `ultraloq_time_zone_unknown` warning:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-device = seam.devices.get(device_id="your-device-id")
-
-# Check for timezone warning
-has_timezone_warning = any(
-  w.warning_code == "ultraloq_time_zone_unknown"
-  for w in device.warnings
-)
-
-if has_timezone_warning:
-  print("⚠️ Timezone not configured")
-  print("Configure timezone before creating time-bound access codes")
-
-# Check timezone value
-timezone = device.properties.get("ultraloq_metadata", {}).get("time_zone")
-print(f"Current timezone: {timezone}")  # Will be None if not configured
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -113,7 +90,53 @@ console.log(`Current timezone: ${timezone}`);  // Will be null if not configured
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+device=$(curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"your-device-id\"
+  }")
+
+# Check for timezone warning
+echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_zone_unknown")'
+
+# Check timezone value
+echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+device = seam.devices.get(device_id="your-device-id")
+
+# Check for timezone warning
+has_timezone_warning = any(
+  w.warning_code == "ultraloq_time_zone_unknown"
+  for w in device.warnings
+)
+
+if has_timezone_warning:
+  print("⚠️ Timezone not configured")
+  print("Configure timezone before creating time-bound access codes")
+
+# Check timezone value
+timezone = device.properties.get("ultraloq_metadata", {}).get("time_zone")
+print(f"Current timezone: {timezone}")  # Will be None if not configured
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -138,6 +161,7 @@ puts "Current timezone: #{timezone}"  # Will be nil if not configured
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -169,6 +193,7 @@ echo "Current timezone: " . ($timezone ?? "not set") . "\n";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -194,6 +219,7 @@ Console.WriteLine($"Current timezone: {timezone ?? "not set"}");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
@@ -220,25 +246,6 @@ String timezone = device.getProperties().getUltraloqMetadata().getTimeZone();
 System.out.println("Current timezone: " + (timezone != null ? timezone : "not set"));
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-device=$(curl -X 'POST' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"device_id\": \"your-device-id\"
-  }")
-
-# Check for timezone warning
-echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_zone_unknown")'
-
-# Check timezone value
-echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -250,29 +257,8 @@ echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
 To configure the timezone for a single device, use the `/devices/report_provider_metadata` endpoint:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-# Configure timezone for one device
-seam.devices.report_provider_metadata(
-  devices=[
-    {
-      "device_id": "your-device-id",
-      "ultraloq_metadata": {
-        "time_zone": "America/New_York"
-      }
-    }
-  ]
-)
-
-print("✓ Timezone configured successfully!")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -294,7 +280,52 @@ console.log("✓ Timezone configured successfully!");
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/report_provider_metadata' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "devices": [
+      {
+        "device_id": "your-device-id",
+        "ultraloq_metadata": {
+          "time_zone": "America/New_York"
+        }
+      }
+    ]
+  }'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Configure timezone for one device
+seam.devices.report_provider_metadata(
+  devices=[
+    {
+      "device_id": "your-device-id",
+      "ultraloq_metadata": {
+        "time_zone": "America/New_York"
+      }
+    }
+  ]
+)
+
+print("✓ Timezone configured successfully!")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -317,6 +348,7 @@ puts "✓ Timezone configured successfully!"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -342,6 +374,7 @@ echo "✓ Timezone configured successfully!";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -364,6 +397,7 @@ Console.WriteLine("✓ Timezone configured successfully!");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 
@@ -386,26 +420,6 @@ seam.devices().reportProviderMetadata(
 System.out.println("✓ Timezone configured successfully!");
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/report_provider_metadata' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "devices": [
-      {
-        "device_id": "your-device-id",
-        "ultraloq_metadata": {
-          "time_zone": "America/New_York"
-        }
-      }
-    ]
-  }'
-```
-{% endtab %}
 {% endtabs %}
 
 ### Multiple Devices (Batch Configuration)
@@ -413,7 +427,65 @@ curl -X 'POST' \
 You can configure timezones for multiple devices in a single API call:
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+// Get all Ultraloq devices
+const devices = await seam.devices.list({
+  device_type: "ultraloq_lock"
+});
+
+// Configure timezone for all devices
+await seam.devices.reportProviderMetadata({
+  devices: devices.map(device => ({
+    device_id: device.device_id,
+    ultraloq_metadata: {
+      time_zone: "America/Los_Angeles"  // Or get from user
+    }
+  }))
+});
+
+console.log(`✓ Configured timezone for ${devices.length} devices`);
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+```bash
+# Get all Ultraloq devices
+devices=$(curl -X 'POST' \
+  'https://connect.getseam.com/devices/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "device_type": "ultraloq_lock"
+  }')
+
+# Configure timezone for all devices
+# (Requires jq to construct the request)
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/report_provider_metadata' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "$(echo $devices | jq '{
+    devices: [.devices[] | {
+      device_id: .device_id,
+      ultraloq_metadata: {
+        time_zone: "America/Los_Angeles"
+      }
+    }]
+  }')"
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```python
 from seam import Seam
 
@@ -439,32 +511,8 @@ print(f"✓ Configured timezone for {len(devices)} devices")
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```javascript
-import { Seam } from "seam";
-
-const seam = new Seam();
-
-// Get all Ultraloq devices
-const devices = await seam.devices.list({
-  device_type: "ultraloq_lock"
-});
-
-// Configure timezone for all devices
-await seam.devices.reportProviderMetadata({
-  devices: devices.map(device => ({
-    device_id: device.device_id,
-    ultraloq_metadata: {
-      time_zone: "America/Los_Angeles"  // Or get from user
-    }
-  }))
-});
-
-console.log(`✓ Configured timezone for ${devices.length} devices`);
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -490,6 +538,7 @@ puts "✓ Configured timezone for #{devices.length} devices"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -518,6 +567,7 @@ echo "✓ Configured timezone for " . count($devices) . " devices";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 using System.Linq;
@@ -542,6 +592,7 @@ Console.WriteLine($"✓ Configured timezone for {devices.Count()} devices");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
@@ -571,36 +622,6 @@ seam.devices().reportProviderMetadata(
 );
 
 System.out.println("✓ Configured timezone for " + devices.size() + " devices");
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-# Get all Ultraloq devices
-devices=$(curl -X 'POST' \
-  'https://connect.getseam.com/devices/list' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "device_type": "ultraloq_lock"
-  }')
-
-# Configure timezone for all devices
-# (Requires jq to construct the request)
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/report_provider_metadata' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "$(echo $devices | jq '{
-    devices: [.devices[] | {
-      device_id: .device_id,
-      ultraloq_metadata: {
-        time_zone: "America/Los_Angeles"
-      }
-    }]
-  }')"
 ```
 {% endtab %}
 {% endtabs %}
@@ -638,7 +659,23 @@ For a complete list of valid IANA timezones, see:
 Most programming languages also provide timezone lookup utilities:
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```javascript
+// Using Intl API (built-in)
+const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+console.log(`User's timezone: ${userTimezone}`);
+// Example: "America/Los_Angeles"
+
+// Or using moment-timezone library
+const moment = require('moment-timezone');
+const allTimezones = moment.tz.names();
+console.log(`Available timezones: ${allTimezones.length}`);
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```python
 import pytz
 
@@ -653,21 +690,8 @@ print(ny_timezones)
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```javascript
-// Using Intl API (built-in)
-const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-console.log(`User's timezone: ${userTimezone}`);
-// Example: "America/Los_Angeles"
-
-// Or using moment-timezone library
-const moment = require('moment-timezone');
-const allTimezones = moment.tz.names();
-console.log(`Available timezones: ${allTimezones.length}`);
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```ruby
 require 'tzinfo'
 
@@ -690,33 +714,8 @@ puts ny_timezones
 After configuring the timezone, verify that the configuration was successful:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-device = seam.devices.get(device_id="your-device-id")
-
-# Verify timezone is set
-timezone = device.properties["ultraloq_metadata"]["time_zone"]
-print(f"Device timezone: {timezone}")
-
-# Verify warning is cleared
-has_warning = any(
-  w.warning_code == "ultraloq_time_zone_unknown"
-  for w in device.warnings
-)
-
-if not has_warning:
-  print("✓ Timezone configured successfully!")
-  print("✓ Device is ready to create time-bound access codes")
-else:
-  print("✗ Warning still present - check timezone configuration")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -744,7 +743,55 @@ if (!hasWarning) {
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+device=$(curl -X 'POST' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"your-device-id\"
+  }")
+
+# Check timezone
+echo $device | jq -r '.device.properties.ultraloq_metadata.time_zone'
+
+# Check warnings
+echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_zone_unknown")'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+device = seam.devices.get(device_id="your-device-id")
+
+# Verify timezone is set
+timezone = device.properties["ultraloq_metadata"]["time_zone"]
+print(f"Device timezone: {timezone}")
+
+# Verify warning is cleared
+has_warning = any(
+  w.warning_code == "ultraloq_time_zone_unknown"
+  for w in device.warnings
+)
+
+if not has_warning:
+  print("✓ Timezone configured successfully!")
+  print("✓ Device is ready to create time-bound access codes")
+else:
+  print("✗ Warning still present - check timezone configuration")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -769,6 +816,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -802,6 +850,7 @@ if (!$hasWarning) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -831,6 +880,7 @@ else
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
@@ -859,25 +909,6 @@ if (!hasWarning) {
 }
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-device=$(curl -X 'POST' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"device_id\": \"your-device-id\"
-  }")
-
-# Check timezone
-echo $device | jq -r '.device.properties.ultraloq_metadata.time_zone'
-
-# Check warnings
-echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_zone_unknown")'
-```
-{% endtab %}
 {% endtabs %}
 
 After configuration, the device will also have the timezone in `device.location.timezone`:
@@ -904,29 +935,8 @@ After configuration, the device will also have the timezone in `device.location.
 You can change a device's timezone at any time by calling `/devices/report_provider_metadata` again with the new timezone.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-# User moved device from New York to Los Angeles
-seam.devices.report_provider_metadata(
-  devices=[
-    {
-      "device_id": "your-device-id",
-      "ultraloq_metadata": {
-        "time_zone": "America/Los_Angeles"  # Changed from America/New_York
-      }
-    }
-  ]
-)
-
-print("✓ Timezone updated to Pacific Time")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -948,7 +958,52 @@ console.log("✓ Timezone updated to Pacific Time");
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/report_provider_metadata' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "devices": [
+      {
+        "device_id": "your-device-id",
+        "ultraloq_metadata": {
+          "time_zone": "America/Los_Angeles"
+        }
+      }
+    ]
+  }'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+# User moved device from New York to Los Angeles
+seam.devices.report_provider_metadata(
+  devices=[
+    {
+      "device_id": "your-device-id",
+      "ultraloq_metadata": {
+        "time_zone": "America/Los_Angeles"  # Changed from America/New_York
+      }
+    }
+  ]
+)
+
+print("✓ Timezone updated to Pacific Time")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -971,6 +1026,7 @@ puts "✓ Timezone updated to Pacific Time"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -996,6 +1052,7 @@ echo "✓ Timezone updated to Pacific Time";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -1018,6 +1075,7 @@ Console.WriteLine("✓ Timezone updated to Pacific Time");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 
@@ -1038,26 +1096,6 @@ seam.devices().reportProviderMetadata(
 );
 
 System.out.println("✓ Timezone updated to Pacific Time");
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/report_provider_metadata' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "devices": [
-      {
-        "device_id": "your-device-id",
-        "ultraloq_metadata": {
-          "time_zone": "America/Los_Angeles"
-        }
-      }
-    ]
-  }'
 ```
 {% endtab %}
 {% endtabs %}

@@ -35,96 +35,99 @@ To use the Seam API to create card credentials for a Salto Space access system:
 The following example walks you through this process:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the access system.
-building_a = seam.acs.systems.get(
-  acs_system_id="11111111-1111-1111-1111-111111111111"
-)
+```javascript
+// Get the access system.
+const buildingA = await seam.acs.systems.get({
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+});
 
-# Step 1:
-# Create the new access system user.
-jane_user = seam.acs.users.create(
-  full_name = "Jane Doe",
-  phone_number = "+15555550100",
-  acs_system_id = building_a.acs_system_id
-)
+// Step 1:
+// Create the new access system user.
+const janeUser = await seam.acs.users.create({
+  full_name: "Jane Doe",
+  phone_number: "+15555550100",
+  acs_system_id: buildingA.acs_system_id
+});
 
-# Step 2:
-# Add the access system user to all desired access groups.
-access_group_ids = [
+// Step 2:
+// Add the access system user to all desired access groups.
+const accessGroupIds = [
   "44444444-4444-4444-4444-333333333333",
   "44444444-4444-4444-4444-444444444444"
-]
-for access_group_id in access_group_ids:
-  seam.acs.users.add_to_access_group(
-    acs_user_id = jane_user.acs_user_id,
-    acs_access_group_id = access_group_id
-  )
+];
+for (const accessGroupId of accessGroupIds) {
+  await seam.acs.users.addToAccessGroup({
+    acs_user_id: janeUser.acs_user_id,
+    acs_access_group_id: accessGroupId
+  });
+}
 
-# Step 3:
-# Create a card credential for the access system user.
-card_credential = seam.acs.credentials.create(
-  acs_user_id = jane_user.acs_user_id,
-  access_method = "card",
-  salto_space_metadata = {
-    # This example assigns a new card to the user.
-    # To update an existing card, set assign_new_card to False.
-    "assign_new_card": True
+// Step 3:
+// Create a card credential for the access system user.
+const cardCredential = await seam.acs.credentials.create({
+  acs_user_id: janeUser.acs_user_id,
+  access_method: "card",
+  salto_space_metadata: {
+    // This example assigns a new card to the user.
+    // To update an existing card, set assign_new_card to false.
+    "assign_new_card": true
   }
-)
+});
 
-# Step 4:
-# Encode the credential onto a card.
-# First, get the encoder that you want to use.
-encoder = seam.acs.encoders.list(
-  acs_system_ids = [building_a.acs_system_id]
-)[0]
+// Step 4:
+// Encode the credential onto a card.
+// First, get the encoder that you want to use.
+const encoder = (await seam.acs.encoders.list({
+  acs_system_ids: [building_a.acs_system_id]
+}))[0];
 
-# Then, encode the card.
-encoding_action_attempt = seam.acs.encoders.encode_credential(
-  acs_credential_id = card_credential.acs_credential_id,
-  acs_encoder_id = encoder.acs_encoder_id
-)
+// Then, encode the card.
+const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
+  acs_credential_id: cardCredential.acs_credential_id,
+  acs_encoder_id: encoder.acs_encoder_id
+});
 
-# To confirm that the encoding succeeded, 
-# poll the returned action attempt
-# until its status is success.
-seam.action_attempts.get(
-  action_attempt_id = encoding_action_attempt.action_attempt_id
-)
+// To confirm that the encoding succeeded, 
+// poll the returned action attempt
+// until its status is success.
+await seam.actionAttempts.get({
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='card',
-  is_issued=False,
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'card',
+  is_issued: false,
   ...
-)
+}
 
-ActionAttempt(
-  status='success',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='ENCODE_CREDENTIAL',
-  result={
-    acs_credential_id='66666666-6666-6666-6666-666666666666',
-    card_number='1234abc',
-    is_issued=True,
-    issued_at='2025-03-01T19:46:06.113Z',
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_CREDENTIAL',
+  result: {
+    acs_credential_id: "66666666-6666-6666-6666-666666666666',
+    card_number: '1234abc',
+    is_issued: true,
+    issued_at: '2025-03-01T19:46:06.113Z',
     ...
   },
-  error=null
-)
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -253,97 +256,98 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the access system.
-const buildingA = await seam.acs.systems.get({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+```python
+# Get the access system.
+building_a = seam.acs.systems.get(
+  acs_system_id="11111111-1111-1111-1111-111111111111"
+)
 
-// Step 1:
-// Create the new access system user.
-const janeUser = await seam.acs.users.create({
-  full_name: "Jane Doe",
-  phone_number: "+15555550100",
-  acs_system_id: buildingA.acs_system_id
-});
+# Step 1:
+# Create the new access system user.
+jane_user = seam.acs.users.create(
+  full_name = "Jane Doe",
+  phone_number = "+15555550100",
+  acs_system_id = building_a.acs_system_id
+)
 
-// Step 2:
-// Add the access system user to all desired access groups.
-const accessGroupIds = [
+# Step 2:
+# Add the access system user to all desired access groups.
+access_group_ids = [
   "44444444-4444-4444-4444-333333333333",
   "44444444-4444-4444-4444-444444444444"
-];
-for (const accessGroupId of accessGroupIds) {
-  await seam.acs.users.addToAccessGroup({
-    acs_user_id: janeUser.acs_user_id,
-    acs_access_group_id: accessGroupId
-  });
-}
+]
+for access_group_id in access_group_ids:
+  seam.acs.users.add_to_access_group(
+    acs_user_id = jane_user.acs_user_id,
+    acs_access_group_id = access_group_id
+  )
 
-// Step 3:
-// Create a card credential for the access system user.
-const cardCredential = await seam.acs.credentials.create({
-  acs_user_id: janeUser.acs_user_id,
-  access_method: "card",
-  salto_space_metadata: {
-    // This example assigns a new card to the user.
-    // To update an existing card, set assign_new_card to false.
-    "assign_new_card": true
+# Step 3:
+# Create a card credential for the access system user.
+card_credential = seam.acs.credentials.create(
+  acs_user_id = jane_user.acs_user_id,
+  access_method = "card",
+  salto_space_metadata = {
+    # This example assigns a new card to the user.
+    # To update an existing card, set assign_new_card to False.
+    "assign_new_card": True
   }
-});
+)
 
-// Step 4:
-// Encode the credential onto a card.
-// First, get the encoder that you want to use.
-const encoder = (await seam.acs.encoders.list({
+# Step 4:
+# Encode the credential onto a card.
+# First, get the encoder that you want to use.
+encoder = seam.acs.encoders.list(
   acs_system_ids = [building_a.acs_system_id]
-}))[0];
+)[0]
 
-// Then, encode the card.
-const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
-  acs_credential_id: cardCredential.acs_credential_id,
-  acs_encoder_id: encoder.acs_encoder_id
-});
+# Then, encode the card.
+encoding_action_attempt = seam.acs.encoders.encode_credential(
+  acs_credential_id = card_credential.acs_credential_id,
+  acs_encoder_id = encoder.acs_encoder_id
+)
 
-// To confirm that the encoding succeeded, 
-// poll the returned action attempt
-// until its status is success.
-await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id
-});
+# To confirm that the encoding succeeded, 
+# poll the returned action attempt
+# until its status is success.
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'card',
-  is_issued: false,
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='card',
+  is_issued=False,
   ...
-}
+)
 
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_CREDENTIAL',
-  result: {
-    acs_credential_id: "66666666-6666-6666-6666-666666666666',
-    card_number: '1234abc',
-    is_issued: true,
-    issued_at: '2025-03-01T19:46:06.113Z',
+ActionAttempt(
+  status='success',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_CREDENTIAL',
+  result={
+    acs_credential_id='66666666-6666-6666-6666-666666666666',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2025-03-01T19:46:06.113Z',
     ...
   },
-  error: null
-}
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -389,7 +393,7 @@ card_credential = seam.acs.credentials.create(
 # Encode the credential onto a card.
 # First, get the encoder that you want to use.
 encoder = (seam.acs.encoders.list(
-  acs_system_ids = [building_a.acs_system_id]
+  acs_system_ids: [building_a.acs_system_id]
 ))[0]
 
 # Then, encode the card.
@@ -434,6 +438,7 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -479,7 +484,7 @@ $card_credential = $seam->acs->credentials->create(
 // Encode the credential onto a card.
 // First, get the encoder that you want to use.
 $encoder = $seam->acs->encoders->list(
-  acs_system_ids = [$building_a->acs_system_id]
+  acs_system_ids: [$building_a->acs_system_id]
 )[0];
 
 // Then, encode the card.
@@ -524,6 +529,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

@@ -22,25 +22,27 @@ To set a temperature threshold for a thermostat, issue a [`/thermostats/set_temp
 * `upper_limit_celsius` or `upper_limit_fahrenheit`
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.set_temperature_threshold(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
-  lower_limit_celsius = 4,
-  upper_limit_celsius = 30
-)
+```javascript
+await seam.thermostats.setTemperatureThreshold({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  lower_limit_celsius: 4,
+  upper_limit_celsius: 30
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -65,25 +67,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.setTemperatureThreshold({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
-  lower_limit_celsius: 4,
-  upper_limit_celsius: 30
-});
+```python
+seam.thermostats.set_temperature_threshold(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+  lower_limit_celsius = 4,
+  upper_limit_celsius = 30
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -98,6 +102,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -116,6 +121,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```java
@@ -128,9 +134,6 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -140,32 +143,34 @@ void
 The temperature threshold range that you set for a thermostat is a property of the [`thermostat`](https://docs.seam.co/latest/api/thermostats/) resource itself. To view the threshold values, use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint and inspect the `thermostat.temperature_threshold`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
+```javascript
+await seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 ```
 
 **Response:**
 
-```
-Device(
-  device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-  temperature_threshold={
+```json
+{
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  temperature_threshold: {
     lower_limit_celsius: 4,
     lower_limit_fahrenheit: 39.2,
     upper_limit_celsius: 30,
     upper_limit_fahrenheit: 86
   },
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -199,32 +204,34 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+```python
+seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
 ```
 
 **Response:**
 
-```json
-{
-  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-  temperature_threshold: {
+```
+Device(
+  device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  temperature_threshold={
     lower_limit_celsius: 4,
     lower_limit_fahrenheit: 39.2,
     upper_limit_celsius: 30,
     upper_limit_fahrenheit: 86
   },
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -239,6 +246,7 @@ await seam.devices.get({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -264,6 +272,7 @@ $seam->devices->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -276,9 +285,6 @@ $seam->devices->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -307,33 +313,35 @@ To delete the temperature threshold range for a thermostat, issue a `/thermostat
   * `upper_limit_celsius` or `upper_limit_fahrenheit`
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.set_temperature_threshold(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
+```javascript
+await seam.thermostats.setTemperatureThreshold({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 ```
 
 or
 
-```python
-seam.thermostats.set_temperature_threshold(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
-  lower_limit_celsius = None,
-  upper_limit_celsius = None
-)
+```javascript
+await seam.thermostats.setTemperatureThreshold({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  lower_limit_celsius: null,
+  upper_limit_celsius: null
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -371,33 +379,35 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.setTemperatureThreshold({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+```python
+seam.thermostats.set_temperature_threshold(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 ```
 
 or
 
-```javascript
-await seam.thermostats.setTemperatureThreshold({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
-  lower_limit_celsius: null,
-  upper_limit_celsius: null
-});
+```python
+seam.thermostats.set_temperature_threshold(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+  lower_limit_celsius = None,
+  upper_limit_celsius = None
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -412,6 +422,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -438,6 +449,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```java
@@ -450,7 +462,4 @@ void
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

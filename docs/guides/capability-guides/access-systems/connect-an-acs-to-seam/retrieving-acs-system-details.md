@@ -13,28 +13,30 @@ You can list details for all the ACSs in your [workspace](../../../core-concepts
 You can [list all `acs_system` resources](https://docs.seam.co/latest/api/acs/systems/list) in your workspace. Note the `acs_system_id` in the response.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.systems.list()
+```javascript
+await seam.acs.systems.list();
 ```
 
 **Response:**
 
-```
+```json
 [
-  AcsSystem(
-    acs_system_id='11111111-1111-1111-1111-111111111111',
-    name='Visionline System',
+  {
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    name: 'Visionline System',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -64,28 +66,30 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.systems.list();
+```python
+seam.acs.systems.list()
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    name: 'Visionline System',
+  AcsSystem(
+    acs_system_id='11111111-1111-1111-1111-111111111111',
+    name='Visionline System',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -100,6 +104,7 @@ await seam.acs.systems.list();
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -121,6 +126,7 @@ $seam->acs->systems->list();
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -138,9 +144,6 @@ seam.SystemsAcs.List();
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -150,35 +153,35 @@ seam.SystemsAcs.List();
 You can [get the details of a specific `acs_system`](https://docs.seam.co/latest/api/acs/systems/get) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.systems.get(
- acs_system_id="11111111-1111-1111-1111-111111111111"
-)
+```javascript
+await seam.acs.systems.get({
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+});
 ```
 
 **Response:**
 
-```
-AcsSystem(
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  name='Example Inc',
-  workspace_id='00000000-0000-0000-0000-000000000000',
-  created_at='2023-11-30T06:27:14.961Z',
-  external_type='pti_site',
-  external_type_display_name='PTI site",
-  connected_account_ids=[
-    '11111111-1111-1111-1111-222222222222'
-  ],
-  image_url='https://connect.getseam.com/assets/images/acs_systems/pti_site.png',
-  image_alt_text='PTI site Logo'
-)
+```json
+{
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  name: 'Example Inc',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  created_at: '2023-11-30T06:27:14.961Z',
+  external_type: 'pti_site',
+  external_type_display_name: 'PTI site',
+  connected_account_ids: [ '11111111-1111-1111-1111-222222222222' ],
+  image_url: 'https://connect.getseam.com/assets/images/acs_systems/pti_site.png',
+  image_alt_text: 'PTI site Logo'
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -215,33 +218,37 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.systems.get({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+```python
+seam.acs.systems.get(
+ acs_system_id="11111111-1111-1111-1111-111111111111"
+)
 ```
 
 **Response:**
 
-```json
-{
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  name: 'Example Inc',
-  workspace_id: '00000000-0000-0000-0000-000000000000',
-  created_at: '2023-11-30T06:27:14.961Z',
-  external_type: 'pti_site',
-  external_type_display_name: 'PTI site',
-  connected_account_ids: [ '11111111-1111-1111-1111-222222222222' ],
-  image_url: 'https://connect.getseam.com/assets/images/acs_systems/pti_site.png',
-  image_alt_text: 'PTI site Logo'
-}
+```
+AcsSystem(
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  name='Example Inc',
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  created_at='2023-11-30T06:27:14.961Z',
+  external_type='pti_site',
+  external_type_display_name='PTI site",
+  connected_account_ids=[
+    '11111111-1111-1111-1111-222222222222'
+  ],
+  image_url='https://connect.getseam.com/assets/images/acs_systems/pti_site.png',
+  image_alt_text='PTI site Logo'
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -256,6 +263,7 @@ await seam.acs.systems.get({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -284,6 +292,7 @@ $seam->acs->systems->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -310,7 +319,4 @@ seam.SystemsAcs.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

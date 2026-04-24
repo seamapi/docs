@@ -13,13 +13,14 @@ Once you have [created credentials](../managing-credentials.md), you can retriev
 To [list the entrances to which a specific credential grants access](https://docs.seam.co/latest/api/acs/credentials/list_accessible_entrances), use `list_accessible_entrances` and provide the `acs_credential_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.list_accessible_entrances(
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
-)
+```javascript
+await seam.acs.credentials.listAccessibleEntrances({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
 ```
 
 **Response:**
@@ -28,20 +29,21 @@ seam.acs.credentials.list_accessible_entrances(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
+```json
 [
-  AcsEntrance(
-    acs_entrance_id='55555555-5555-5555-5555-555555555555',
-    acs_system_id='11111111-1111-1111-1111-111111111111',
-    display_name='Guest Lock 2',
+  {
+    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    display_name: 'Guest Lock 2',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -78,13 +80,14 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.listAccessibleEntrances({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
-});
+```python
+seam.acs.credentials.list_accessible_entrances(
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
 ```
 
 **Response:**
@@ -93,20 +96,21 @@ await seam.acs.credentials.listAccessibleEntrances({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
+```
 [
-  {
-    acs_entrance_id: '55555555-5555-5555-5555-555555555555',
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    display_name: 'Guest Lock 2',
+  AcsEntrance(
+    acs_entrance_id='55555555-5555-5555-5555-555555555555',
+    acs_system_id='11111111-1111-1111-1111-111111111111',
+    display_name='Guest Lock 2',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -121,6 +125,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -149,6 +154,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -173,9 +179,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

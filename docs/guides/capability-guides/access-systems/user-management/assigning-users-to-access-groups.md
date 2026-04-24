@@ -21,24 +21,26 @@ This guide explains how to grant access permissions to ACS users by adding them 
 To [add an ACS user to an access group](https://docs.seam.co/latest/api/acs/users/add_to_access_group), provide both the `acs_user_id` and the `acs_access_group_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.add_to_access_group(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  acs_access_group_id="44444444-4444-4444-4444-444444444444"
-)
+```javascript
+await seam.acs.users.addToAccessGroup({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_access_group_id: "44444444-4444-4444-4444-444444444444"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -61,24 +63,26 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.addToAccessGroup({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444"
-});
+```python
+seam.acs.users.add_to_access_group(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  acs_access_group_id="44444444-4444-4444-4444-444444444444"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -93,6 +97,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -110,6 +115,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -125,9 +131,6 @@ seam.UsersAcs.AddToAccessGroup(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -137,24 +140,26 @@ void
 To [remove an ACS user from an access group](https://docs.seam.co/latest/api/acs/users/remove_from_access_group), provide both the `acs_user_id` and the `acs_access_group_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.remove_from_access_group(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  acs_access_group_id="44444444-4444-4444-4444-444444444444"
-)
+```javascript
+await seam.acs.users.removeFromAccessGroup({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_access_group_id: "44444444-4444-4444-4444-444444444444"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -178,24 +183,26 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.removeFromAccessGroup({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444"
-});
+```python
+seam.acs.users.remove_from_access_group(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  acs_access_group_id="44444444-4444-4444-4444-444444444444"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -210,6 +217,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -227,6 +235,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -242,7 +251,4 @@ seam.UsersAcs.RemoveFromAccessGroup(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

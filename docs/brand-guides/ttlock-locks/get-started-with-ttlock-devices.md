@@ -104,56 +104,8 @@ Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** p
 Create a `connect_webview` object and then note the returned URL.
 
 {% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-from seam import Seam
-
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
-
-connect_webview = seam.connect_webviews.create(accepted_providers=["ttlock"])
-
-assert connect_webview.login_successful is False
-
-# Use the returned Connect Webview URL to display
-# the Connect Webview authorization flow to your user.
-print(connect_webview.url)
-```
-
-**Output:**
-
-```
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/connect_webviews/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "accepted_providers": ["ttlock"]
-}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
-  "URL: " + .connect_webview.url'
-  # Use the returned Connect Webview URL to display
-  # the Connect Webview authorization flow to your user.
-```
-
-**Output:**
-
-```
-Login Successful (false): false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 **Code:**
 
 ```javascript
@@ -180,7 +132,59 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "accepted_providers": ["ttlock"]
+}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
+  "URL: " + .connect_webview.url'
+  # Use the returned Connect Webview URL to display
+  # the Connect Webview authorization flow to your user.
+```
+
+**Output:**
+
+```
+Login Successful (false): false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+**Code:**
+
+```python
+from seam import Seam
+
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+
+connect_webview = seam.connect_webviews.create(accepted_providers=["ttlock"])
+
+assert connect_webview.login_successful is False
+
+# Use the returned Connect Webview URL to display
+# the Connect Webview authorization flow to your user.
+print(connect_webview.url)
+```
+
+**Output:**
+
+```
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -208,6 +212,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -236,6 +241,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -285,23 +291,27 @@ Complete the Connect Webview authorization flow by entering the following [TTLoc
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-updated_connect_webview = seam.connect_webviews.get(connect_webview.connect_webview_id)
+```javascript
+const updatedConnectWebview = await seam.connectWebviews.get({
+  connect_webview_id: connectWebview.connect_webview_id
+});
 
-assert updated_connect_webview.login_successful is True # True
+console.log(updatedConnectWebview.login_successful); // true
 ```
 
 **Output:**
 
 ```
-True
+true
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -322,25 +332,25 @@ Login Successful (true): true
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const updatedConnectWebview = await seam.connectWebviews.get({
-  connect_webview_id: connectWebview.connect_webview_id
-});
+```python
+updated_connect_webview = seam.connect_webviews.get(connect_webview.connect_webview_id)
 
-console.log(updatedConnectWebview.login_successful); // true
+assert updated_connect_webview.login_successful is True # True
 ```
 
 **Output:**
 
 ```
-true
+True
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -359,6 +369,7 @@ true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -377,6 +388,7 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -404,51 +416,55 @@ When you link a TTLock account with Seam, we create a `device` object to represe
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Retrieve all devices, filtered by manufacturer,
-# which is one of several filters that list() supports.
-all_ttlock_locks = seam.devices.list(manufacturer="ttlock")
+```javascript
+// Retrieve all devices, filtered by manufacturer,
+// which is one of several filters that list() supports.
+const allTtlockLocks = await seam.devices.list({manufacturer: "ttlock"});
 
-# Select the first device as an example.
-front_door = all_ttlock_locks[0]
+// Select the first device as an example.
+const frontDoor = allTtlockLocks[0];
 
-# Inspect specific properties.
-assert front_door.properties["online"] is True # True
-assert front_door.properties["locked"] is True # True
+// Inspect specific properties.
+console.log(frontDoor.properties.online); // true
+console.log(frontDoor.properties.locked); // true
 
-# View the entire returned device object.
-pprint(front_door)
+// View the entire returned device object.
+console.log(frontDoor);
 ```
 
 **Output:**
 
-```
-Device(
-  device_id='11111111-1111-1111-1111-444444444444',
-  display_name='Lock 1',
-  workspace_id='00000000-0000-0000-0000-000000000000'
-  connected_account_id='11111111-1111-1111-1111-222222222222',
-  created_at='2024-05-29T20:08:48.878Z',
-  properties={
-    'manufacturer': 'ttlock',
-    'online': True,
-    'locked': True,
-    'battery': {
-      'level': 0.9999532347993827,
-      'status': 'full'
+```json
+true
+true
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  display_name: 'Lock 1',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  connected_account_id: '11111111-1111-1111-1111-222222222222',
+  created_at: '2024-05-29T20:08:48.878Z',
+  properties: {
+    manufacturer: 'ttlock',
+    online: true,
+    locked: true,
+    battery: {
+      level: 0.9999532347993827,
+      status: 'full'
     },
     ...
-  }
-  can_remotely_unlock=True,
+  },
+  can_remotely_unlock: true,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -503,53 +519,53 @@ Locked (true): true
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-const allTtlockLocks = await seam.devices.list({manufacturer: "ttlock"});
+```python
+# Retrieve all devices, filtered by manufacturer,
+# which is one of several filters that list() supports.
+all_ttlock_locks = seam.devices.list(manufacturer="ttlock")
 
-// Select the first device as an example.
-const frontDoor = allTtlockLocks[0];
+# Select the first device as an example.
+front_door = all_ttlock_locks[0]
 
-// Inspect specific properties.
-console.log(frontDoor.properties.online); // true
-console.log(frontDoor.properties.locked); // true
+# Inspect specific properties.
+assert front_door.properties["online"] is True # True
+assert front_door.properties["locked"] is True # True
 
-// View the entire returned device object.
-console.log(frontDoor);
+# View the entire returned device object.
+pprint(front_door)
 ```
 
 **Output:**
 
-```json
-true
-true
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  display_name: 'Lock 1',
-  workspace_id: '00000000-0000-0000-0000-000000000000',
-  connected_account_id: '11111111-1111-1111-1111-222222222222',
-  created_at: '2024-05-29T20:08:48.878Z',
-  properties: {
-    manufacturer: 'ttlock',
-    online: true,
-    locked: true,
-    battery: {
-      level: 0.9999532347993827,
-      status: 'full'
+```
+Device(
+  device_id='11111111-1111-1111-1111-444444444444',
+  display_name='Lock 1',
+  workspace_id='00000000-0000-0000-0000-000000000000'
+  connected_account_id='11111111-1111-1111-1111-222222222222',
+  created_at='2024-05-29T20:08:48.878Z',
+  properties={
+    'manufacturer': 'ttlock',
+    'online': True,
+    'locked': True,
+    'battery': {
+      'level': 0.9999532347993827,
+      'status': 'full'
     },
     ...
-  },
-  can_remotely_unlock: true,
+  }
+  can_remotely_unlock=True,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -597,6 +613,7 @@ true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -643,6 +660,7 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -709,32 +727,39 @@ Try out the following actions on your TTLock lock:
 To unlock a door, use the [Unlock Door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) to track the progress of the unlock operation.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Confirm that the device can remotely unlock.
-# You're using a capability flag here!
-if front_door.can_remotely_unlock:
-  # Perform the unlock operation
-  # and return an action attempt.
-  action_attempt=seam.locks.unlock_door(device_id=front_door.device_id)
+```javascript
+// Confirm that the device can remotely unlock.
+// You're using a capability flag here!
+if (frontDoor.can_remotely_unlock) {
+  // Perform the unlock operation
+  // and return an action attempt.
+  const actionAttempt = await seam.locks.unlockDoor({
+    device_id: frontDoor.device_id
+  });
+};
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='pending',
-  action_type='UNLOCK_DOOR',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  result=None,
-  error={}
-)
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '11111111-2222-3333-4444-555555555555',
+    action_type: 'UNLOCK_DOOR',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -770,37 +795,34 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if (frontDoor.can_remotely_unlock) {
-  // Perform the unlock operation
-  // and return an action attempt.
-  const actionAttempt = await seam.locks.unlockDoor({
-    device_id: frontDoor.device_id
-  });
-};
+```python
+# Confirm that the device can remotely unlock.
+# You're using a capability flag here!
+if front_door.can_remotely_unlock:
+  # Perform the unlock operation
+  # and return an action attempt.
+  action_attempt=seam.locks.unlock_door(device_id=front_door.device_id)
 ```
 
 **Output:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'UNLOCK_DOOR',
-    result: {},
-    error: null
-  }
-}
+```
+ActionAttempt(
+  status='pending',
+  action_type='UNLOCK_DOOR',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  result=None,
+  error={}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -825,6 +847,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -851,6 +874,7 @@ if ($front_door->can_remotely_unlock) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -880,26 +904,28 @@ You can track the status of the unlock operation to confirm that the device unlo
 To query the `locked` status of the device:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the device by ID.
-updated_front_door = seam.devices.get(device_id=front_door.device_id)
+```javascript
+// Get the device by ID.
+const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
 
-# Inspect the locked property to confirm
-# that the unlock operation was successful.
-assert updated_front_door.properties["locked"] is False # False
+// Inspect the locked property to confirm
+// that the unlock operation was successful.
+console.log(updatedFrontDoor.properties.locked) // false
 ```
 
 **Output:**
 
 ```
-False
+false
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -927,26 +953,28 @@ Locked (false): false
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the device by ID.
-const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
+```python
+# Get the device by ID.
+updated_front_door = seam.devices.get(device_id=front_door.device_id)
 
-// Inspect the locked property to confirm
-// that the unlock operation was successful.
-console.log(updatedFrontDoor.properties.locked) // false
+# Inspect the locked property to confirm
+# that the unlock operation was successful.
+assert updated_front_door.properties["locked"] is False # False
 ```
 
 **Output:**
 
 ```
-false
+False
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -966,6 +994,7 @@ false
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -985,6 +1014,7 @@ false
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1019,61 +1049,64 @@ You can use the Seam API to program [online access codes](https://docs.seam.co/l
 The Seam API makes it easy to program both [ongoing](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#time-bound-access-codes) online access codes.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Confirm that the device supports online access codes.
-# Here's another capability flag!
-if updated_front_door.can_program_online_access_codes:
-  # Create an ongoing online access code.
-  seam.access_codes.create(
-    device_id = updated_front_door.device_id,
-    name = "my ongoing code",
-    code = "1234"
-  )
-  # Create a time-bound online access code.
-  seam.access_codes.create(
-    device_id = updated_front_door.device_id,
-    name = "my time-bound code",
-    starts_at = "2025-01-01T16:00:00Z",
-    ends_at = "2025-01-22T12:00:00Z",
-    code = "2345"
-  )
-  # List all access codes for this device.
-  access_codes = seam.access_codes.list(
-    device_id = updated_front_door.device_id
-  )
-  pprint(access_codes)
+```javascript
+// Confirm that the device supports online access codes.
+// Here's another capability flag!
+if (updatedFrontDoor.can_program_online_access_codes) {
+  // Create an ongoing online access code.
+  await seam.accessCodes.create({
+    device_id: updatedFrontDoor.device_id,
+    name: "my ongoing code",
+    code: "1234"
+  });
+  // Create a time-bound online access code.
+  await seam.accessCodes.create({
+    device_id: updatedFrontDoor.device_id,
+    name: "my time-bound code",
+    starts_at: "2025-01-01T16:00:00Z",
+    ends_at: "2025-01-22T12:00:00Z",
+    code: "2345"
+  });
+  // List all access codes for this device.
+  const accessCodes = await seam.accessCodes.list({
+    device_id: updatedFrontDoor.device_id
+  });
+  console.log(accessCodes);
+};
 ```
 
 **Output:**
 
-```
+```json
 [
-  AccessCode(
-    access_code_id='11111111-1111-1111-1111-555555555555',
-    device_id='11111111-1111-1111-1111-444444444444',
-    type='ongoing',
-    code='1234',
-    name='my ongoing code',
+  {
+    access_code_id: '11111111-1111-1111-1111-555555555555',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    name: 'my ongoing code',
+    code: '1234',
+    type: 'ongoing',
     ...
-  )
-  AccessCode(
-    access_code_id='11111111-1111-1111-1111-666666666666',
-    device_id='11111111-1111-1111-1111-444444444444',
-    type='time_bound',
-    code='2345',
-    starts_at='2025-01-01T16:00:00.000Z',
-    ends_at='2025-01-22T12:00:00.000Z',
-    name='my time-bound code',
+  },
+  {
+    access_code_id: '11111111-1111-1111-1111-666666666666',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    name: 'my time-bound code',
+    code: '2345',
+    type: 'time_bound',
+    starts_at: '2025-01-01T16:00:00.000Z',
+    ends_at: '2025-01-22T12:00:00.000Z',
     ...
-  )
+  }
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -1148,62 +1181,63 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Confirm that the device supports online access codes.
-// Here's another capability flag!
-if (updatedFrontDoor.can_program_online_access_codes) {
-  // Create an ongoing online access code.
-  await seam.accessCodes.create({
-    device_id: updatedFrontDoor.device_id,
-    name: "my ongoing code",
-    code: "1234"
-  });
-  // Create a time-bound online access code.
-  await seam.accessCodes.create({
-    device_id: updatedFrontDoor.device_id,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  });
-  // List all access codes for this device.
-  const accessCodes = await seam.accessCodes.list({
-    device_id: updatedFrontDoor.device_id
-  });
-  console.log(accessCodes);
-};
+```python
+# Confirm that the device supports online access codes.
+# Here's another capability flag!
+if updated_front_door.can_program_online_access_codes:
+  # Create an ongoing online access code.
+  seam.access_codes.create(
+    device_id = updated_front_door.device_id,
+    name = "my ongoing code",
+    code = "1234"
+  )
+  # Create a time-bound online access code.
+  seam.access_codes.create(
+    device_id = updated_front_door.device_id,
+    name = "my time-bound code",
+    starts_at = "2025-01-01T16:00:00Z",
+    ends_at = "2025-01-22T12:00:00Z",
+    code = "2345"
+  )
+  # List all access codes for this device.
+  access_codes = seam.access_codes.list(
+    device_id = updated_front_door.device_id
+  )
+  pprint(access_codes)
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    access_code_id: '11111111-1111-1111-1111-555555555555',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    name: 'my ongoing code',
-    code: '1234',
-    type: 'ongoing',
+  AccessCode(
+    access_code_id='11111111-1111-1111-1111-555555555555',
+    device_id='11111111-1111-1111-1111-444444444444',
+    type='ongoing',
+    code='1234',
+    name='my ongoing code',
     ...
-  },
-  {
-    access_code_id: '11111111-1111-1111-1111-666666666666',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    name: 'my time-bound code',
-    code: '2345',
-    type: 'time_bound',
-    starts_at: '2025-01-01T16:00:00.000Z',
-    ends_at: '2025-01-22T12:00:00.000Z',
+  )
+  AccessCode(
+    access_code_id='11111111-1111-1111-1111-666666666666',
+    device_id='11111111-1111-1111-1111-444444444444',
+    type='time_bound',
+    code='2345',
+    starts_at='2025-01-01T16:00:00.000Z',
+    ends_at='2025-01-22T12:00:00.000Z',
+    name='my time-bound code',
     ...
-  }
+  )
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1259,6 +1293,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1313,6 +1348,7 @@ if ($updated_front_door->can_program_online_access_codes) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

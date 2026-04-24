@@ -9,32 +9,34 @@ First, create the [user identity](../../capability-guides/mobile-access/managing
 After creating and configuring the user identity, create a [client session](../../core-concepts/authentication/client-session-tokens/) and capture the resulting [client session token](../../core-concepts/authentication/client-session-tokens/). When you use this token in your application, such as in a [Seam Component](../../ui-components/overview/), Seam limits you user's access to only the devices that you specified for the associated user identity.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# Create the user identity.
-user_identity = seam.user_identities.create(
-    user_identity_key="user-1"
+{% tab title="JavaScript" %}
+
+```javascript
+// Create the user identity.
+const user_identity = await seam.userIdentities.create({
+    user_identity_key: "user-1"
+});
+
+// Grant the user identity access to a specific device.
+await seam.userIdentities.grantAccessToDevice(
+    user_identity_id: user_identity.user_identity_id,
+    // Specify the ID of the device that you want your
+    // user to be able to access.
+    device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
 )
 
-# Grant the user identity access to a specific device.
-seam.user_identities.grant_access_to_device(
-    user_identity_id=user_identity.user_identity_id,
-    # Specify the ID of the device that you want your
-    # user to be able to access.
-    device_id="054765c8-a2fc-4599-b486-14c19f462c45"
-)
+// Create the client session.
+const client_session = await seam.clientSessions.create({
+    user_identity_ids: [user_identity.user_identity_id]
+});
 
-# Create the client session.
-client_session = seam.client_sessions.create(
-    user_identity_ids=[user_identity.user_identity_id]
-)
-
-# Use this token in your app.
-token = client_session.token
+// Use this token in your app.
+const token = client_session.token;
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 ```bash
 # Create the user identity.
 user_identity=$(curl -X 'POST' \
@@ -78,32 +80,34 @@ token=$(echo $client_session | jq -r '.client_session.token')
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```javascript
-// Create the user identity.
-const user_identity = await seam.userIdentities.create({
-    user_identity_key: "user-1"
-});
+{% tab title="Python" %}
 
-// Grant the user identity access to a specific device.
-await seam.userIdentities.grantAccessToDevice(
-    user_identity_id: user_identity.user_identity_id,
-    // Specify the ID of the device that you want your
-    // user to be able to access.
-    device_id: "054765c8-a2fc-4599-b486-14c19f462c45"
+```python
+# Create the user identity.
+user_identity = seam.user_identities.create(
+    user_identity_key="user-1"
 )
 
-// Create the client session.
-const client_session = await seam.clientSessions.create({
-    user_identity_ids: [user_identity.user_identity_id]
-});
+# Grant the user identity access to a specific device.
+seam.user_identities.grant_access_to_device(
+    user_identity_id=user_identity.user_identity_id,
+    # Specify the ID of the device that you want your
+    # user to be able to access.
+    device_id="054765c8-a2fc-4599-b486-14c19f462c45"
+)
 
-// Use this token in your app.
-const token = client_session.token;
+# Create the client session.
+client_session = seam.client_sessions.create(
+    user_identity_ids=[user_identity.user_identity_id]
+)
+
+# Use this token in your app.
+token = client_session.token
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 // Create the user identity.
 $user_identity = $seam->user_identities->create(
@@ -127,6 +131,4 @@ $client_session = $seam->client_sessions->create(
 $token = $client_session->token;
 ```
 {% endtab %}
-
-
 {% endtabs %}

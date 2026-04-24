@@ -75,30 +75,32 @@ Use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint f
 If the relevant capability flag is `false` or not present, you can view the [properties](https://docs.seam.co/latest/api/thermostats/#properties) of the device, [errors](https://docs.seam.co/latest/api/devices/#errors) or [warnings](https://docs.seam.co/latest/api/devices/#warnings) for the device, and [events](https://docs.seam.co/latest/api/events/) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
+```javascript
+await seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 ```
 
 **Response:**
 
-```
-Device(
-  device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-  can_hvac_heat=True,      // You can use seam.thermostats.heat() on this device.
-  can_hvac_cool=True,      // You can use seam.thermostats.cool() on this device.
-  can_hvac_heat_cool=True, // You can use seam.thermostats.heat_cool() on this device.
-  can_turn_off_hvac=True,  // You can use seam.thermostats.off() on this device.
+```json
+{
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  can_hvac_heat: true,      // You can use seam.thermostats.heat() on this device.
+  can_hvac_cool: true,      // You can use seam.thermostats.cool() on this device.
+  can_hvac_heat_cool: true, // You can use seam.thermostats.heatCool() on this device.
+  can_turn_off_hvac: true,  // You can use seam.thermostats.off() on this device.
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -130,30 +132,32 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+```python
+seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
 ```
 
 **Response:**
 
-```json
-{
-  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-  can_hvac_heat: true,      // You can use seam.thermostats.heat() on this device.
-  can_hvac_cool: true,      // You can use seam.thermostats.cool() on this device.
-  can_hvac_heat_cool: true, // You can use seam.thermostats.heatCool() on this device.
-  can_turn_off_hvac: true,  // You can use seam.thermostats.off() on this device.
+```
+Device(
+  device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  can_hvac_heat=True,      // You can use seam.thermostats.heat() on this device.
+  can_hvac_cool=True,      // You can use seam.thermostats.cool() on this device.
+  can_hvac_heat_cool=True, // You can use seam.thermostats.heat_cool() on this device.
+  can_turn_off_hvac=True,  // You can use seam.thermostats.off() on this device.
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -168,6 +172,7 @@ await seam.devices.get({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -191,6 +196,7 @@ $seam->devices->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -214,38 +220,41 @@ You can [set a thermostat to heat mode](https://docs.seam.co/latest/api/thermost
 Issue the thermostat `heat` request, providing the `device_id` of the thermostat and the `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the thermostat.
-thermostat = seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
+```javascript
+// Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 
-# Confirm that the thermostat supports heat mode.
-if thermostat.can_hvac_heat:
-  # Perform the heat request.
-  seam.thermostats.heat(
-    device_id = thermostat.device_id,
-    heating_set_point_celsius = 20
-  )
+// Confirm that the thermostat supports heat mode.
+if (thermostat.can_hvac_heat) {
+  // Perform the heat request.
+  await seam.thermostats.heat({
+    device_id: thermostat.device_id,
+    heating_set_point_celsius: 20
+  })
+};
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
-  action_type='SET_HVAC_MODE',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '97125745-15d9-4970-b5be-c34ec3ce1c81',
+  action_type: 'SET_HVAC_MODE',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -292,39 +301,40 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the thermostat.
-const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+```python
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
 
-// Confirm that the thermostat supports heat mode.
-if (thermostat.can_hvac_heat) {
-  // Perform the heat request.
-  await seam.thermostats.heat({
-    device_id: thermostat.device_id,
-    heating_set_point_celsius: 20
-  })
-};
+# Confirm that the thermostat supports heat mode.
+if thermostat.can_hvac_heat:
+  # Perform the heat request.
+  seam.thermostats.heat(
+    device_id = thermostat.device_id,
+    heating_set_point_celsius = 20
+  )
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '97125745-15d9-4970-b5be-c34ec3ce1c81',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='97125745-15d9-4970-b5be-c34ec3ce1c81',
+  action_type='SET_HVAC_MODE',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -356,6 +366,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -388,6 +399,7 @@ if ($thermostat->can_hvac_heat) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```java
@@ -411,38 +423,41 @@ You can [set a thermostat to cool mode](https://docs.seam.co/latest/api/thermost
 Issue the thermostat `cool` request, providing the `device_id` of the thermostat and the `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the thermostat.
-thermostat = seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
+```javascript
+// Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 
-# Confirm that the thermostat supports cool mode.
-if thermostat.can_hvac_cool:
-  # Perform the cool request.
-  seam.thermostats.cool(
-    device_id = thermostat.device_id,
-    cooling_set_point_celsius = 25
-  )
+// Confirm that the thermostat supports cool mode.
+if (thermostat.can_hvac_cool) {
+  // Perform the cool request.
+  await seam.thermostats.cool({
+    device_id: thermostat.device_id,
+    cooling_set_point_celsius: 25
+  })
+};
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='87478724-0e30-4fed-9f2a-456971b7b04f',
-  action_type='SET_HVAC_MODE',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '87478724-0e30-4fed-9f2a-456971b7b04f',
+  action_type: 'SET_HVAC_MODE',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -489,39 +504,40 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the thermostat.
-const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+```python
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
 
-// Confirm that the thermostat supports cool mode.
-if (thermostat.can_hvac_cool) {
-  // Perform the cool request.
-  await seam.thermostats.cool({
-    device_id: thermostat.device_id,
-    cooling_set_point_celsius: 25
-  })
-};
+# Confirm that the thermostat supports cool mode.
+if thermostat.can_hvac_cool:
+  # Perform the cool request.
+  seam.thermostats.cool(
+    device_id = thermostat.device_id,
+    cooling_set_point_celsius = 25
+  )
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '87478724-0e30-4fed-9f2a-456971b7b04f',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='87478724-0e30-4fed-9f2a-456971b7b04f',
+  action_type='SET_HVAC_MODE',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -553,6 +569,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -585,6 +602,7 @@ if ($thermostat->can_hvac_cool) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -611,39 +629,42 @@ Issue the thermostat `heat_cool` request, providing the `device_id` of the therm
 * `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the thermostat.
-thermostat = seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
+```javascript
+// Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 
-# Confirm that the thermostat supports heat-cool mode.
-if thermostat.can_hvac_heat_cool:
-  # Perform the heat_cool request.
-  seam.thermostats.heat_cool(
-    device_id = thermostat.device_id,
-    heating_set_point_celsius = 20,
-    cooling_set_point_celsius = 25
-  )
+// Confirm that the thermostat supports heat-cool mode.
+if (thermostat.can_hvac_heat_cool) {
+  // Perform the heatCool request.
+  await seam.thermostats.heatCool({
+    device_id: thermostat.device_id,
+    heating_set_point_celsius: 20,
+    cooling_set_point_celsius: 25
+  })
+};
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='8050ec59-7f29-4d0d-9842-dedaf304740d',
-  action_type='SET_HVAC_MODE',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '8050ec59-7f29-4d0d-9842-dedaf304740d',
+  action_type: 'SET_HVAC_MODE',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -691,40 +712,41 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the thermostat.
-const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+```python
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
 
-// Confirm that the thermostat supports heat-cool mode.
-if (thermostat.can_hvac_heat_cool) {
-  // Perform the heatCool request.
-  await seam.thermostats.heatCool({
-    device_id: thermostat.device_id,
-    heating_set_point_celsius: 20,
-    cooling_set_point_celsius: 25
-  })
-};
+# Confirm that the thermostat supports heat-cool mode.
+if thermostat.can_hvac_heat_cool:
+  # Perform the heat_cool request.
+  seam.thermostats.heat_cool(
+    device_id = thermostat.device_id,
+    heating_set_point_celsius = 20,
+    cooling_set_point_celsius = 25
+  )
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '8050ec59-7f29-4d0d-9842-dedaf304740d',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='8050ec59-7f29-4d0d-9842-dedaf304740d',
+  action_type='SET_HVAC_MODE',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -757,6 +779,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -790,6 +813,7 @@ if ($thermostat->can_hvac_heat_cool) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -813,37 +837,40 @@ You can [set a thermostat to "off" mode](https://docs.seam.co/latest/api/thermos
 Issue the thermostat `off` request, providing the `device_id` of the thermostat.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the thermostat.
-thermostat = seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
+```javascript
+// Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 
-# Confirm that the thermostat supports off mode.
-if thermostat.can_turn_off_hvac:
-  # Perform the off request.
-  seam.thermostats.off(
-    device_id = thermostat.device_id
-  )
+// Confirm that the thermostat supports off mode.
+if (thermostat.can_turn_off_hvac) {
+  // Perform the off request.
+  await seam.thermostats.off({
+    device_id: thermostat.device_id
+  })
+};
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-  action_type='SET_HVAC_MODE',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: 'ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
+  action_type: 'SET_HVAC_MODE',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -889,38 +916,39 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the thermostat.
-const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+```python
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
 
-// Confirm that the thermostat supports off mode.
-if (thermostat.can_turn_off_hvac) {
-  // Perform the off request.
-  await seam.thermostats.off({
-    device_id: thermostat.device_id
-  })
-};
+# Confirm that the thermostat supports off mode.
+if thermostat.can_turn_off_hvac:
+  # Perform the off request.
+  seam.thermostats.off(
+    device_id = thermostat.device_id
+  )
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: 'ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
+  action_type='SET_HVAC_MODE',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -951,6 +979,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -982,6 +1011,7 @@ if ($thermostat->can_turn_off_hvac) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -1005,30 +1035,32 @@ You can [configure the fan mode setting for a thermostat](https://docs.seam.co/l
 Set the fan mode setting by providing the `device_id` of the thermostat and specifying the desired `fan_mode_setting`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.set_fan_mode(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
-  fan_mode_setting = "auto"
-)
+```javascript
+await seam.thermostats.setFanMode({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+  fan_mode_setting: "auto"
+});
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type='SET_FAN_MODE',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
+  action_type: 'SET_FAN_MODE',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -1059,30 +1091,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.setFanMode({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
-  fan_mode_setting: "auto"
-});
+```python
+seam.thermostats.set_fan_mode(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
+  fan_mode_setting = "auto"
+)
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type: 'SET_FAN_MODE',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
+  action_type='SET_FAN_MODE',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -1097,6 +1131,7 @@ await seam.thermostats.setFanMode({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -1120,6 +1155,7 @@ $seam->thermostats->set_fan_mode(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -1141,29 +1177,31 @@ $seam->thermostats->set_fan_mode(
 The imperative HVAC or fan mode setting request returns an [action attempt](../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](https://docs.seam.co/latest/api/action_attempts/get) request. When the setting modification completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.action_attempts.get(
-  action_attempt_id = "9c9b584b-c645-4ce0-a9c2-79b6f1db2396"
-)
+```javascript
+await seam.actionAttempts.get(
+  action_attempt_id: "9c9b584b-c645-4ce0-a9c2-79b6f1db2396"
+);
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type='SET_FAN_MODE',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
+  action_type: 'SET_FAN_MODE',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -1194,29 +1232,31 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.actionAttempts.get(
-  action_attempt_id: "9c9b584b-c645-4ce0-a9c2-79b6f1db2396"
-);
+```python
+seam.action_attempts.get(
+  action_attempt_id = "9c9b584b-c645-4ce0-a9c2-79b6f1db2396"
+)
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type: 'SET_FAN_MODE',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
+  action_type='SET_FAN_MODE',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -1231,6 +1271,7 @@ await seam.actionAttempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -1253,6 +1294,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp

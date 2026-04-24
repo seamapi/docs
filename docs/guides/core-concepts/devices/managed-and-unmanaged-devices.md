@@ -18,7 +18,8 @@ Seam makes it possible to switch a device back and forth between the `managed` a
 When you convert a device to an `unmanaged` state (that is, "unamange a device"), Seam pauses billing for the device and converts all the managed device resources (for example, access codes) to unmanaged resources. As a result, Seam no longer monitors the lifecycle of these unmanaged resources.
 
 {% tabs %}
-{% tab title="Javascript" %}
+{% tab title="JavaScript" %}
+
 ```javascript
 
 const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
@@ -66,6 +67,7 @@ console.log(unmanagedDevice)
 {% endtab %}
 
 {% tab title="Python" %}
+
 ```python
 from seam import Seam
 seam = Seam()
@@ -101,6 +103,7 @@ print(unmanaged_device)
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -126,6 +129,7 @@ puts unmanaged_device.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 

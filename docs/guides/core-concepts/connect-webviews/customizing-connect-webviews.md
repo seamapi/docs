@@ -94,32 +94,34 @@ If you omit the `accepted_providers` parameter, the Connect Webview displays all
 The following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.connect_webviews.create(
-  accepted_providers = ["august", "schlage"]
-)
+```javascript
+await seam.connectWebviews.create({
+  accepted_providers: ["august", "schlage"]
+})
 ```
 
 **Response:**
 
-```
-ConnectWebview(
-  connect_webview_id='1139e5a5-4bfd-4c78-9a89-83a439ad538e',
-  status='pending',
-  url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=1139e5a5-4bfd-4c78-9a89-83a439ad538e&auth_token=5g6Nt1sunJamS1huj7pwztKaMaBpvKhLc',
-  accepted_providers=[
+```json
+{
+  connect_webview_id: '1139e5a5-4bfd-4c78-9a89-83a439ad538e',
+  status: 'pending',
+  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=8cf491d8-cf67-4ad0-907d-3a8ae3764019&auth_token=C4vLHdKqpMavg6HYBbejQkE1dZ8KDcetS',
+  accepted_providers: [
     'august',
     'schlage'
   ],
   ...
- )
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -155,32 +157,34 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.connectWebviews.create({
-  accepted_providers: ["august", "schlage"]
-})
+```python
+seam.connect_webviews.create(
+  accepted_providers = ["august", "schlage"]
+)
 ```
 
 **Response:**
 
-```json
-{
-  connect_webview_id: '1139e5a5-4bfd-4c78-9a89-83a439ad538e',
-  status: 'pending',
-  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=8cf491d8-cf67-4ad0-907d-3a8ae3764019&auth_token=C4vLHdKqpMavg6HYBbejQkE1dZ8KDcetS',
-  accepted_providers: [
+```
+ConnectWebview(
+  connect_webview_id='1139e5a5-4bfd-4c78-9a89-83a439ad538e',
+  status='pending',
+  url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=1139e5a5-4bfd-4c78-9a89-83a439ad538e&auth_token=5g6Nt1sunJamS1huj7pwztKaMaBpvKhLc',
+  accepted_providers=[
     'august',
     'schlage'
   ],
   ...
-}
+ )
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -206,6 +210,7 @@ client.connect_webviews.create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp

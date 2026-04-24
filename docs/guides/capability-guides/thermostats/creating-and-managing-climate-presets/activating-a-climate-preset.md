@@ -17,30 +17,32 @@ Further, Seam emits a [`thermostat.temperature_reached_set_point` event](https:/
 To activate a climate preset, issue a [`/thermostats/activate_climate_preset`](https://docs.seam.co/latest/api/thermostats/activate_climate_preset) request and specify the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.activate_climate_preset(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key = "occupied"
-)
+```javascript
+await seam.thermostats.activateClimatePreset({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied"
+});
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='05de2295-d1dc-4748-aae3-9931658bde20',
-  action_type='ACTIVATE_CLIMATE_PRESET',
-  error={},
-  result={},
-  status='success'
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '05de2295-d1dc-4748-aae3-9931658bde20',
+  action_type: 'ACTIVATE_CLIMATE_PRESET',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -71,30 +73,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.activateClimatePreset({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key: "occupied"
-});
+```python
+seam.thermostats.activate_climate_preset(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key = "occupied"
+)
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '05de2295-d1dc-4748-aae3-9931658bde20',
-  action_type: 'ACTIVATE_CLIMATE_PRESET',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='05de2295-d1dc-4748-aae3-9931658bde20',
+  action_type='ACTIVATE_CLIMATE_PRESET',
+  error={},
+  result={},
+  status='success'
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -109,6 +113,7 @@ await seam.thermostats.activateClimatePreset({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -132,6 +137,7 @@ $seam->thermostats->activate_climate_preset(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```java
@@ -144,9 +150,6 @@ $seam->thermostats->activate_climate_preset(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -156,29 +159,31 @@ $seam->thermostats->activate_climate_preset(
 Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts.md). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](https://docs.seam.co/latest/api/action_attempts/get) request. When the activation completes successfully, the `status` of the action attempt changes to `success`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.action_attempts.get(
-  action_attempt_id = "05de2295-d1dc-4748-aae3-9931658bde20"
-)
+```javascript
+await seam.actionAttempts.get(
+  action_attempt_id: "05de2295-d1dc-4748-aae3-9931658bde20"
+);
 ```
 
 **Response:**
 
-```
-ActionAttempt(
-  action_attempt_id='05de2295-d1dc-4748-aae3-9931658bde20',
-  action_type='ACTIVATE_CLIMATE_PRESET',
-  error={},
-  result={},
-  status='success'
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '05de2295-d1dc-4748-aae3-9931658bde20',
+  action_type: 'ACTIVATE_CLIMATE_PRESET',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -209,29 +214,31 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.actionAttempts.get(
-  action_attempt_id: "05de2295-d1dc-4748-aae3-9931658bde20"
-);
+```python
+seam.action_attempts.get(
+  action_attempt_id = "05de2295-d1dc-4748-aae3-9931658bde20"
+)
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '05de2295-d1dc-4748-aae3-9931658bde20',
-  action_type: 'ACTIVATE_CLIMATE_PRESET',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='05de2295-d1dc-4748-aae3-9931658bde20',
+  action_type='ACTIVATE_CLIMATE_PRESET',
+  error={},
+  result={},
+  status='success'
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -246,6 +253,7 @@ await seam.actionAttempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -268,6 +276,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -280,7 +289,4 @@ $seam->action_attempts->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

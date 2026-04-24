@@ -29,38 +29,40 @@ When creating a Connect Webview, choose which providers to display. Choose one o
 * To display a specific, custom set of providers, specify the desired list of `accepted_providers`. For details, see [Customize the Brands to Display in Your Connect Webviews](customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-created_connect_webview = seam.connect_webviews.create(
-  custom_redirect_url = "https://example.com/redirect",
-  custom_redirect_failure_url = "https://example.com/failure-redirect",
-  provider_category = "stable",
-  wait_for_device_creation = True
-)
+```javascript
+const createdConnectWebview = await seam.connectWebviews.create({
+  custom_redirect_url: "https://example.com/redirect",
+  custom_redirect_failure_url: "https://example.com/failure-redirect",
+  provider_category: "stable",
+  wait_for_device_creation: true
+})
 ```
 
 **Output:**
 
-```
-ConnectWebview(
-  connect_webview_id='12345678-1234-1234-1234-123456789012',
-  url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=z7Wu2Lc85gYUbNUhdvCWaEhmQv61FziA',
-  status='pending',
-  login_successful=False,
-  custom_redirect_url='https://example.com/redirect',
-  custom_redirect_failure_url='https://example.com/failure-redirect',
-  accepted_providers=[
+```json
+{
+  connect_webview_id: '12345678-1234-1234-1234-123456789012',
+  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=2r2Rn8V5QUtxE79gNhTmTK58KkuqrwU8d',
+  status: 'pending',
+  login_successful: false,
+  custom_redirect_url: 'https://example.com/redirect',
+  custom_redirect_failure_url: 'https://example.com/failure-redirect',
+  accepted_providers: [
     ...
   ],
-  wait_for_device_creation=True,
+  wait_for_device_creation: true,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -99,38 +101,40 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const createdConnectWebview = await seam.connectWebviews.create({
-  custom_redirect_url: "https://example.com/redirect",
-  custom_redirect_failure_url: "https://example.com/failure-redirect",
-  provider_category: "stable",
-  wait_for_device_creation: true
-})
+```python
+created_connect_webview = seam.connect_webviews.create(
+  custom_redirect_url = "https://example.com/redirect",
+  custom_redirect_failure_url = "https://example.com/failure-redirect",
+  provider_category = "stable",
+  wait_for_device_creation = True
+)
 ```
 
 **Output:**
 
-```json
-{
-  connect_webview_id: '12345678-1234-1234-1234-123456789012',
-  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=2r2Rn8V5QUtxE79gNhTmTK58KkuqrwU8d',
-  status: 'pending',
-  login_successful: false,
-  custom_redirect_url: 'https://example.com/redirect',
-  custom_redirect_failure_url: 'https://example.com/failure-redirect',
-  accepted_providers: [
+```
+ConnectWebview(
+  connect_webview_id='12345678-1234-1234-1234-123456789012',
+  url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=z7Wu2Lc85gYUbNUhdvCWaEhmQv61FziA',
+  status='pending',
+  login_successful=False,
+  custom_redirect_url='https://example.com/redirect',
+  custom_redirect_failure_url='https://example.com/failure-redirect',
+  accepted_providers=[
     ...
   ],
-  wait_for_device_creation: true,
+  wait_for_device_creation=True,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -163,6 +167,7 @@ created_connect_webview = client.connect_webviews.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -194,6 +199,7 @@ $created_connect_webview = $seam->connect_webviews->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

@@ -38,23 +38,39 @@ After you've done that, come back here and keep reading.
 ```
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device = seam.devices.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
-pprint("Supports backup access code pool: "
-    + str(device.properties.supports_backup_access_code_pool))
+```javascript
+console.log(await seam.devices.get({
+  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+}))
 ```
 
 **Response:**
 
-```
-'Supports backup access code pool: True'
+```json
+{
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  .
+  .
+  .
+  properties: {
+    .
+    .
+    .
+    supports_backup_access_code_pool: true
+  },
+  .
+  .
+  .
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -94,37 +110,25 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-console.log(await seam.devices.get({
-  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-}))
+```python
+device = seam.devices.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
+pprint("Supports backup access code pool: "
+    + str(device.properties.supports_backup_access_code_pool))
 ```
 
 **Response:**
 
-```json
-{
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  .
-  .
-  .
-  properties: {
-    .
-    .
-    .
-    supports_backup_access_code_pool: true
-  },
-  .
-  .
-  .
-}
+```
+'Supports backup access code pool: True'
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -150,12 +154,14 @@ puts client.devices.get(device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspe
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 # not yet implemented
 ```
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -190,50 +196,52 @@ In the smart lock app, backup access codes appear as "Backup {CODE\_ID} (Seam)".
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+```javascript
+const deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
-created_access_code = seam.access_codes.create(
-  device = device_id,
-  name = "my time-bound code",
-  starts_at = "2025-01-01T16:00:00Z",
-  ends_at = "2025-01-22T12:00:00Z",
-  use_backup_access_code_pool = True
-)
+const createdAccessCode = await seam.accessCodes.create({
+    device_id: deviceId,
+    name: "my time-bound code",
+    starts_at: "2025-01-01T16:00:00Z",
+    ends_at: "2025-01-22T12:00:00Z",
+    use_backup_access_code_pool: true
+})
 
-pprint(created_access_code)
+console.log(createdAccessCode)
 ```
 
 **Response:**
 
-```
-AccessCode(access_code_id='dc83d82d-55d2-4178-8c8c-10382311aed2',
-           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-           type='time_bound',
-           code='9132',
-           created_at='2023-10-19T05:07:03.693Z',
-           errors=[],
-           warnings=[],
-           starts_at='2025-01-01T16:00:00.000Z',
-           ends_at='2025-01-22T12:00:00.000Z',
-           name='my time-bound code',
-           status='unset',
-           common_code_key=None,
-           is_managed=True,
-           is_waiting_for_code_assignment=None,
-           is_scheduled_on_device=False,
-           pulled_backup_access_code_id=None,
-           is_backup_access_code_available=True,
-           is_backup=None,
-           appearance=None,
-           is_external_modification_allowed=False)
+```json
+{
+  access_code_id: 'f863cb36-7f96-4b56-ac91-115742c31c00',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my time-bound code',
+  appearance: null,
+  code: '8030',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'unset',
+  is_scheduled_on_device: false,
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  pulled_backup_access_code_id: null,
+  is_backup_access_code_available: true,
+  created_at: '2023-10-19T11:41:27.273Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -287,50 +295,52 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+```python
+device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
-const createdAccessCode = await seam.accessCodes.create({
-    device_id: deviceId,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    use_backup_access_code_pool: true
-})
+created_access_code = seam.access_codes.create(
+  device = device_id,
+  name = "my time-bound code",
+  starts_at = "2025-01-01T16:00:00Z",
+  ends_at = "2025-01-22T12:00:00Z",
+  use_backup_access_code_pool = True
+)
 
-console.log(createdAccessCode)
+pprint(created_access_code)
 ```
 
 **Response:**
 
-```json
-{
-  access_code_id: 'f863cb36-7f96-4b56-ac91-115742c31c00',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'my time-bound code',
-  appearance: null,
-  code: '8030',
-  common_code_key: null,
-  type: 'time_bound',
-  status: 'unset',
-  is_scheduled_on_device: false,
-  starts_at: '2025-01-01T16:00:00.000Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
-  pulled_backup_access_code_id: null,
-  is_backup_access_code_available: true,
-  created_at: '2023-10-19T11:41:27.273Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: false
-}
+```
+AccessCode(access_code_id='dc83d82d-55d2-4178-8c8c-10382311aed2',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='time_bound',
+           code='9132',
+           created_at='2023-10-19T05:07:03.693Z',
+           errors=[],
+           warnings=[],
+           starts_at='2025-01-01T16:00:00.000Z',
+           ends_at='2025-01-22T12:00:00.000Z',
+           name='my time-bound code',
+           status='unset',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=False,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=True,
+           is_backup=None,
+           appearance=None,
+           is_external_modification_allowed=False)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -372,6 +382,7 @@ puts created_access_code.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $device_id = "5a9dee23-e50f-4da7-88f3-fef38bf07857";
 
@@ -411,6 +422,7 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -453,24 +465,28 @@ Note that we only support pulling backup codes for `time_bound` codes at this ti
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-access_code = seam.access_codes.get("dc83d82d-55d2-4178-8c8c-10382311aed2")
+```javascript
+const accessCode = await seam.accessCodes.get({
+  access_code_id: "f863cb36-7f96-4b56-ac91-115742c31c00"
+})
 
-pprint("Is backup access code available: "
-    + str(access_code.is_backup_access_code_available))
+console.log("Is backup access code available: "
+  + accessCode.is_backup_access_code_available)
 ```
 
 **Response:**
 
 ```
-'Is backup access code available: True'
+Is backup access code available: true
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -504,26 +520,26 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const accessCode = await seam.accessCodes.get({
-  access_code_id: "f863cb36-7f96-4b56-ac91-115742c31c00"
-})
+```python
+access_code = seam.access_codes.get("dc83d82d-55d2-4178-8c8c-10382311aed2")
 
-console.log("Is backup access code available: "
-  + accessCode.is_backup_access_code_available)
+pprint("Is backup access code available: "
+    + str(access_code.is_backup_access_code_available))
 ```
 
 **Response:**
 
 ```
-Is backup access code available: true
+'Is backup access code available: True'
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -539,6 +555,7 @@ Is backup access code available: true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $access_code_id = "a91604eb-ebae-420c-a51e-07a30422fd94";
 
@@ -553,6 +570,7 @@ echo json_encode($access_code->is_backup_access_code_available);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -584,50 +602,49 @@ Upon executing this action, Seam performs the following additional actions:
 * Attempt to refill the backup access code pool with a new backup code.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-access_code_id = "dc83d82d-55d2-4178-8c8c-10382311aed2"
+```javascript
+const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
+    access_code_id: "f863cb36-7f96-4b56-ac91-115742c31c00"
+})
 
-backup_code = seam.access_codes.pull_backup_access_code(
-    access_code = access_code_id
-)
-
-pprint(backup_code)
+console.log(backupAccessCode)
 ```
 
 **Response:**
 
-```
-AccessCode(access_code_id='6db16e34-48d4-467a-856c-32a56b9cf0da',
-           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-           type='time_bound',
-           code='7768',
-           created_at='2023-10-19T05:07:05.548Z',
-           errors=[],
-           warnings=[],
-           starts_at='2023-10-19T05:22:37.082Z',
-           ends_at='2025-01-22T12:00:00.000Z',
-           name='Backup 6db16e34-48d4-467a-856c-32a56b9cf0da (Seam)',
-           status='set',
-           common_code_key=None,
-           is_managed=True,
-           is_waiting_for_code_assignment=None,
-           is_scheduled_on_device=None,
-           pulled_backup_access_code_id=None,
-           is_backup_access_code_available=False,
-           is_backup=True,
-           appearance={'first_name': 'Backup',
-                       'last_name': '6db16e34-48d4-467a-856c-32a56b9cf0da '
-                                    '(Seam)',
-                       'name': 'Backup 6db16e34-48d4-467a-856c-32a56b9cf0da '
-                               '(Seam)'},
-           is_external_modification_allowed=False)
+```json
+{
+  access_code_id: '284cc090-5d89-4e9d-a4ed-518c6cb68d99',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
+  appearance: {
+    name: 'Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
+    last_name: '284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
+    first_name: 'Backup'
+  },
+  code: '1275',
+  common_code_key: null,
+  type: 'time_bound',
+  status: 'set',
+  starts_at: '2023-10-19T11:50:21.092Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  is_backup: true,
+  is_backup_access_code_available: false,
+  created_at: '2023-10-19T05:07:05.369Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -673,47 +690,52 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
-    access_code_id: "f863cb36-7f96-4b56-ac91-115742c31c00"
-})
+```python
+access_code_id = "dc83d82d-55d2-4178-8c8c-10382311aed2"
 
-console.log(backupAccessCode)
+backup_code = seam.access_codes.pull_backup_access_code(
+    access_code = access_code_id
+)
+
+pprint(backup_code)
 ```
 
 **Response:**
 
-```json
-{
-  access_code_id: '284cc090-5d89-4e9d-a4ed-518c6cb68d99',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
-  appearance: {
-    name: 'Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
-    last_name: '284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
-    first_name: 'Backup'
-  },
-  code: '1275',
-  common_code_key: null,
-  type: 'time_bound',
-  status: 'set',
-  starts_at: '2023-10-19T11:50:21.092Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
-  is_backup: true,
-  is_backup_access_code_available: false,
-  created_at: '2023-10-19T05:07:05.369Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: false
-}
+```
+AccessCode(access_code_id='6db16e34-48d4-467a-856c-32a56b9cf0da',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='time_bound',
+           code='7768',
+           created_at='2023-10-19T05:07:05.548Z',
+           errors=[],
+           warnings=[],
+           starts_at='2023-10-19T05:22:37.082Z',
+           ends_at='2025-01-22T12:00:00.000Z',
+           name='Backup 6db16e34-48d4-467a-856c-32a56b9cf0da (Seam)',
+           status='set',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=None,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=False,
+           is_backup=True,
+           appearance={'first_name': 'Backup',
+                       'last_name': '6db16e34-48d4-467a-856c-32a56b9cf0da '
+                                    '(Seam)',
+                       'name': 'Backup 6db16e34-48d4-467a-856c-32a56b9cf0da '
+                               '(Seam)'},
+           is_external_modification_allowed=False)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -745,6 +767,7 @@ puts client.access_codes.pull_backup_access_code(access_code_id: access_code_id)
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $access_code_id = "a91604eb-ebae-420c-a51e-07a30422fd94";
 
@@ -779,6 +802,7 @@ echo json_encode($backup_code, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp

@@ -69,7 +69,22 @@ To control your Minut sensor via the Seam API, you must first authorize your Sea
 ### Create a Connect Webview
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```javascript
+import { Seam } from 'seam'
+const seam = new Seam()
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ["minut"],
+})
+console.log(connectWebview.login_successful) // false
+// Send the webview URL to your user
+console.log(connectWebview.url)
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```python
 from seam import Seam
 seam = Seam()
@@ -83,20 +98,8 @@ print(webview.url)
 ```
 {% endtab %}
 
-{% tab title="Javascript" %}
-```javascript
-import { Seam } from 'seam'
-const seam = new Seam()
-const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ["minut"],
-})
-console.log(connectWebview.login_successful) // false
-// Send the webview URL to your user
-console.log(connectWebview.url)
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -114,6 +117,7 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
@@ -142,7 +146,18 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 After you complete the login above, you'll get an event for [`connected_account.created`](https://docs.seam.co/latest/api/events/)if you set up a [webhook handler](https://docs.seam.co/latest/developer-tools/webhooks). Otherwise you can just poll for the webview until it's status changes, as shown below:
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```javascript
+const updatedWebview = await seam.connectWebviews.get(
+  connectWebview.connect_webview_id,
+)
+console.log(updatedWebview.login_successful) // true
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```python
 updated_webview = seam.connect_webviews.get(
     webview.connect_webview_id
@@ -152,16 +167,8 @@ assert updated_webview.login_successful # true
 ```
 {% endtab %}
 
-{% tab title="Javascript" %}
-```javascript
-const updatedWebview = await seam.connectWebviews.get(
-  connectWebview.connect_webview_id,
-)
-console.log(updatedWebview.login_successful) // true
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 puts updated_webview.login_successful # true
@@ -169,6 +176,7 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -181,82 +189,8 @@ echo json_encode($webview);
 Minut noise sensors appear with the `device_type` `"minut_sensor"`. The Minut noise sensors report properties in addition to noise levels, namely `temperature` and `humidity`.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-sensors = seam.devices.list(device_type="minut_sensor")
+{% tab title="JavaScript" %}
 
-sensors[0]
-# Device(
-#   device_id='fd200f4b-3815-497a-8520-10725c597e0c',
-#   device_type='minut_sensor',
-#   location={
-#     'timezone': 'America/Los_Angeles',
-#     'location_name': "Jane's Test Home"
-#   },
-#   properties={
-#     'online': True,
-#     'manufacturer': 'minut',
-#     'battery_level': 0.5,
-#     'minut_metadata': {
-#       'home_id': 'f53026ff7c5e314521f285f9',
-#       'device_id': '5bb32b83525d243950a92ab8',
-#       'home_name': "Jane's Test Home",
-#       'device_name': 'Living Room',
-#       'home_address': {
-#         'city': 'San Francisco',
-#         'notes': 'string',
-#         'region': 'San Francisco County',
-#         'country': 'US',
-#         'post_code': '44210',
-#         'street_name1': '2258 24th Street',
-#         'street_name2': ''
-#       },
-#       'home_location': {
-#         'latitude': 0,
-#         'longitude': 0
-#       },
-#       'device_location': {
-#         'latitude': 0,
-#         'longitude': 0
-#       },
-#       'latest_sensor_values': {
-#         'sound': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 47.7117919921875
-#         },
-#         'humidity': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 31.110000610351562
-#         },
-#         'pressure': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 101923
-#         },
-#         'temperature': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 21.270000457763672
-#         },
-#         'accelerometer_z': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': -1.00390625
-#         }
-#       }
-#     },
-#     'name': 'Living Room',
-#     'battery': {
-#       'level': 0.5,
-#       'status': 'good'
-#     },
-#     'image_url': 'https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png',
-#     'image_alt_text': 'Minut Sensor'
-#   },
-#   capabilities_supported=['noise_detection'],
-#   errors=[]
-# )
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const devices = await seam.devices.list({
   device_type: 'minut_sensor',
@@ -340,7 +274,84 @@ console.log(devices[0])
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+sensors = seam.devices.list(device_type="minut_sensor")
+
+sensors[0]
+# Device(
+#   device_id='fd200f4b-3815-497a-8520-10725c597e0c',
+#   device_type='minut_sensor',
+#   location={
+#     'timezone': 'America/Los_Angeles',
+#     'location_name': "Jane's Test Home"
+#   },
+#   properties={
+#     'online': True,
+#     'manufacturer': 'minut',
+#     'battery_level': 0.5,
+#     'minut_metadata': {
+#       'home_id': 'f53026ff7c5e314521f285f9',
+#       'device_id': '5bb32b83525d243950a92ab8',
+#       'home_name': "Jane's Test Home",
+#       'device_name': 'Living Room',
+#       'home_address': {
+#         'city': 'San Francisco',
+#         'notes': 'string',
+#         'region': 'San Francisco County',
+#         'country': 'US',
+#         'post_code': '44210',
+#         'street_name1': '2258 24th Street',
+#         'street_name2': ''
+#       },
+#       'home_location': {
+#         'latitude': 0,
+#         'longitude': 0
+#       },
+#       'device_location': {
+#         'latitude': 0,
+#         'longitude': 0
+#       },
+#       'latest_sensor_values': {
+#         'sound': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 47.7117919921875
+#         },
+#         'humidity': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 31.110000610351562
+#         },
+#         'pressure': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 101923
+#         },
+#         'temperature': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': 21.270000457763672
+#         },
+#         'accelerometer_z': {
+#           'time': '1970-01-01T00:00:00.000Z',
+#           'value': -1.00390625
+#         }
+#       }
+#     },
+#     'name': 'Living Room',
+#     'battery': {
+#       'level': 0.5,
+#       'status': 'good'
+#     },
+#     'image_url': 'https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png',
+#     'image_alt_text': 'Minut Sensor'
+#   },
+#   capabilities_supported=['noise_detection'],
+#   errors=[]
+# )
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 seam.devices.list(
   device_type: "minut_sensor"
@@ -412,6 +423,7 @@ seam.devices.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $devices = $seam->devices->list(device_type: 'minut_sensor');
 echo json_encode($device[0]);
@@ -510,26 +522,8 @@ Minut has a builtin threshold that can be triggered multiple times. Each Minut n
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-@app.route("/my_webhook_endpoint", methods=["POST"])
-def endpoint():
-    event = request.json["event"]
-    # {
-    #    noise_threshold_id: "...",
-    #    noise_threshold_name: "builtin_disturbance"
-    #    minut_metadata: {
-    #       "event_name": "disturbance_first_notice",
-    #    },
-    #    device_id: "...";
-    #    noise_level_decibels: 40,
-    #    created_at: "2023-03-14T05:00:35.451Z"
-    # }
+{% tab title="JavaScript" %}
 
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 app.post('/my_webhook_endpoint', (req, res) => {
   const event = req.body.event;
@@ -550,7 +544,28 @@ app.post('/my_webhook_endpoint', (req, res) => {
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+@app.route("/my_webhook_endpoint", methods=["POST"])
+def endpoint():
+    event = request.json["event"]
+    # {
+    #    noise_threshold_id: "...",
+    #    noise_threshold_name: "builtin_disturbance"
+    #    minut_metadata: {
+    #       "event_name": "disturbance_first_notice",
+    #    },
+    #    device_id: "...";
+    #    noise_level_decibels: 40,
+    #    created_at: "2023-03-14T05:00:35.451Z"
+    # }
+
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 post '/my_webhook_endpoint' do
   request.body.rewind
@@ -575,6 +590,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $app->post('/my_webhook_endpoint', function (Request $request, Response $response) {
     $data = $request->getParsedBody();

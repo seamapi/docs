@@ -29,7 +29,24 @@ Provider metadata is also available in [sandbox workspaces](../workspaces/#sandb
 For example, to get SmartThings metadata:
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```javascript
+const devices = await seam.devices.list()
+
+console.log(devices[0].properties.smartthings_metadata)
+/*
+{
+  "model": "0129-8002-0600",
+  "device_id": "750ed15f-93f2-4ff1-8944-47e93b10f7d6",
+  "device_name": "Yale Door Lock"
+}
+*/
+```
+{% endtab %}
+
 {% tab title="HTTP" %}
+
 ```bash
 curl \
   -H 'Authorization: Bearer MY_API_KEY' \
@@ -47,21 +64,6 @@ curl \
 #          "device_name": "Yale Door Lock"
 #        },
 # ...
-```
-{% endtab %}
-
-{% tab title="JavaScript" %}
-```javascript
-const devices = await seam.devices.list()
-
-console.log(devices[0].properties.smartthings_metadata)
-/*
-{
-  "model": "0129-8002-0600",
-  "device_id": "750ed15f-93f2-4ff1-8944-47e93b10f7d6",
-  "device_name": "Yale Door Lock"
-}
-*/
 ```
 {% endtab %}
 {% endtabs %}

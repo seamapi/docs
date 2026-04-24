@@ -133,33 +133,35 @@ Create an ACS user within the virtual Visionline access control system.
 2. Create the ACS user, as follows:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-from seam import Seam
+```javascript
+import { Seam } from "seam";
 
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
-acs_user = seam.acs.users.create(
-  full_name = "Jim Doe",
-  # Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id = acs_system_id
-)
+const acsUser = await seam.acs.users.create({
+  full_name: "Jim Doe",
+  // Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id: acsSystemId
+});
 ```
 
 **Output:**
 
-```
-AcsUser(
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  full_name='Jim Doe',
+```json
+{
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  full_name: 'Jim Doe',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -189,33 +191,35 @@ acs_user=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-import { Seam } from "seam";
+```python
+from seam import Seam
 
-const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-const acsUser = await seam.acs.users.create({
-  full_name: "Jim Doe",
-  // Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id: acsSystemId
-});
+acs_user = seam.acs.users.create(
+  full_name = "Jim Doe",
+  # Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id = acs_system_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  full_name: 'Jim Doe',
+```
+AcsUser(
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  full_name='Jim Doe',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -242,6 +246,7 @@ acs_user = seam.acs.users.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -269,6 +274,7 @@ $acs_user = $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -304,41 +310,43 @@ If this credential were intended for a real Visionline card, you'd need to creat
 2. Create the key card credential, as follows:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-key_card_credential = seam.acs.credentials.create(
-  acs_user_id = acs_user.acs_user_id,
-  access_method = "card",
-  allowed_acs_entrance_ids = [
-    vingcard_lock_2_entrance_id,
-    guest_lock_1_entrance_id
+```javascript
+const keyCardCredential = await seam.acs.credentials.create({
+  acs_user_id: acsUser.acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [
+    vingcardLock2EntranceId,
+    guestLock1EntranceId
   ],
-  starts_at = "2025-02-10T15:00:00.000Z",
-  ends_at = "2025-02-12T11:00:00.000Z",
-  visionline_metadata = {
+  starts_at: "2025-02-10T15:00:00.000Z",
+  ends_at: "2025-02-12T11:00:00.000Z",
+  visionline_metadata: {
     "card_format": "rfid48",
-    "override": True
+    "override": true
   }
-)
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='card',
-  starts_at='2025-02-10T15:00:00.000Z',
-  ends_at='2025-02-12T11:00:00.000Z',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'card',
+  starts_at: '2025-02-10T15:00:00.000Z',
+  ends_at: '2025-02-12T11:00:00.000Z',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -381,41 +389,43 @@ key_card_credential=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const keyCardCredential = await seam.acs.credentials.create({
-  acs_user_id: acsUser.acs_user_id,
-  access_method: "card",
-  allowed_acs_entrance_ids: [
-    vingcardLock2EntranceId,
-    guestLock1EntranceId
+```python
+key_card_credential = seam.acs.credentials.create(
+  acs_user_id = acs_user.acs_user_id,
+  access_method = "card",
+  allowed_acs_entrance_ids = [
+    vingcard_lock_2_entrance_id,
+    guest_lock_1_entrance_id
   ],
-  starts_at: "2025-02-10T15:00:00.000Z",
-  ends_at: "2025-02-12T11:00:00.000Z",
-  visionline_metadata: {
+  starts_at = "2025-02-10T15:00:00.000Z",
+  ends_at = "2025-02-12T11:00:00.000Z",
+  visionline_metadata = {
     "card_format": "rfid48",
-    "override": true
+    "override": True
   }
-});
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'card',
-  starts_at: '2025-02-10T15:00:00.000Z',
-  ends_at: '2025-02-12T11:00:00.000Z',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='card',
+  starts_at='2025-02-10T15:00:00.000Z',
+  ends_at='2025-02-12T11:00:00.000Z',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -450,6 +460,7 @@ key_card_credential = seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -481,6 +492,7 @@ $key_card_credential = $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -531,50 +543,52 @@ First, find the encoder that you want to use and note its ID. Then, encode the c
 For more information, see [Working with Card Encoders and Scanners](../working-with-card-encoders-and-scanners/).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the encoder that you want to use.
-encoder = seam.acs.encoders.list(
-  acs_system_ids = [acs_system_id]
-)[0]
+```javascript
+// Get the encoder that you want to use.
+const encoder = (await seam.acs.encoders.list({
+  acs_system_ids: [acsSystemId]
+}))[0];
 
-# Encode the card.
-encoding_action_attempt = seam.acs.encoders.encode_credential(
-  acs_credential_id = key_card_credential.acs_credential_id,
-  acs_encoder_id = encoder.acs_encoder_id
-)
+// Encode the card.
+const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
+  acs_credential_id: keyCardCredential.acs_credential_id,
+  acs_encoder_id: encoder.acs_encoder_id
+});
 
-# Confirm that the encoding succeeded by 
-# polling the returned action attempt
-# until its status is success.
-# You can also use a webhook.
-seam.action_attempts.get(
-  action_attempt_id = encoding_action_attempt.action_attempt_id
-)
+// Confirm that the encoding succeeded by 
+// polling the returned action attempt
+// until its status is success.
+// You can also use a webhook.
+await seam.actionAttempts.get({
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='success',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='ENCODE_CREDENTIAL',
-  result={
-    acs_credential_id='66666666-6666-6666-6666-666666666666',
-    card_number='1234abc',
-    is_issued=True,
-    issued_at='2025-02-10T12:00:00.000Z',
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_CREDENTIAL',
+  result: {
+    acs_credential_id: "66666666-6666-6666-6666-666666666666',
+    card_number: '1234abc',
+    is_issued: true,
+    issued_at: '2025-02-10T12:00:00.000Z',
     ...
   },
-  error=null
-)
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -636,56 +650,58 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the encoder that you want to use.
-const encoder = (await seam.acs.encoders.list({
-  acs_system_ids = [acsSystemId]
-}))[0];
+```python
+# Get the encoder that you want to use.
+encoder = seam.acs.encoders.list(
+  acs_system_ids = [acs_system_id]
+)[0]
 
-// Encode the card.
-const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
-  acs_credential_id: keyCardCredential.acs_credential_id,
-  acs_encoder_id: encoder.acs_encoder_id
-});
+# Encode the card.
+encoding_action_attempt = seam.acs.encoders.encode_credential(
+  acs_credential_id = key_card_credential.acs_credential_id,
+  acs_encoder_id = encoder.acs_encoder_id
+)
 
-// Confirm that the encoding succeeded by 
-// polling the returned action attempt
-// until its status is success.
-// You can also use a webhook.
-await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id
-});
+# Confirm that the encoding succeeded by 
+# polling the returned action attempt
+# until its status is success.
+# You can also use a webhook.
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_CREDENTIAL',
-  result: {
-    acs_credential_id: "66666666-6666-6666-6666-666666666666',
-    card_number: '1234abc',
-    is_issued: true,
-    issued_at: '2025-02-10T12:00:00.000Z',
+```
+ActionAttempt(
+  status='success',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_CREDENTIAL',
+  result={
+    acs_credential_id='66666666-6666-6666-6666-666666666666',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2025-02-10T12:00:00.000Z',
     ...
   },
-  error: null
-}
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
 # Get the encoder that you want to use.
 encoder = (seam.acs.encoders.list(
-  acs_system_ids = [acs_system_id]
+  acs_system_ids: [acs_system_id]
 ))[0]
 
 # Encode the card.
@@ -723,12 +739,13 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
 // Get the encoder that you want to use.
 $encoder = $seam->acs->encoders->list(
-  acs_system_ids = [$acs_system_id]
+  acs_system_ids: [$acs_system_id]
 )[0];
 
 // Encode the card.
@@ -766,6 +783,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

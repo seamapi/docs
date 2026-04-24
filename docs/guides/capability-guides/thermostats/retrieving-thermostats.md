@@ -15,60 +15,62 @@ To retrieve all [thermostats](./), issue a [`/thermostats/list`](https://docs.se
 The following example retrieves all Google Nest thermostats:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.list(
-  manufacturer = "nest"
-)
+```javascript
+await seam.thermostats.list({
+  manufacturer: "nest"
+});
 ```
 
 **Response:**
 
-```
+```json
 [
-  Device(
-    can_hvac_cool=True,
-    can_hvac_heat=True,
-    can_hvac_heat_cool=True,
-    can_turn_off_hvac=True,
-    device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-    device_type='nest_thermostat',
-    properties={
-      'available_hvac_mode_settings': [
+  {
+    device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+    device_type: 'nest_thermostat',
+    properties: {
+      online: true,
+      is_cooling: false,
+      is_heating: false,
+      manufacturer: 'nest',
+      is_fan_running: false,
+      relative_humidity: 0.46,
+      temperature_celsius: 24.64,
+      temperature_fahrenheit: 76.352,
+      available_hvac_mode_settings: [
         'heat',
         'cool',
         'heat_cool',
         'off'
       ],
-      'current_climate_setting': {
-        'display_name': 'eco',
-        'cooling_set_point_celsius': 25,
-        'cooling_set_point_fahrenheit': 77,
-        'heating_set_point_celsius': 20,
-        'heating_set_point_fahrenheit': 68,
-        'hvac_mode_setting': 'heat_cool',
-        'manual_override_allowed': True
+      current_climate_setting: {
+        display_name: 'eco',
+        hvac_mode_setting: 'heat_cool',
+        manual_override_allowed: true,
+        cooling_set_point_celsius: 25,
+        cooling_set_point_fahrenheit: 77,
+        heating_set_point_celsius: 20,
+        heating_set_point_fahrenheit: 68
       },
-      'is_cooling': False,
-      'is_fan_running': False,
-      'is_heating': False,
-      'manufacturer': 'nest',
-      'online': True,
-      'relative_humidity': 0.46,
-      'temperature_celsius': 24.64,
-      'temperature_fahrenheit': 76.352,
       ...
     },
+    can_hvac_cool: true,
+    can_hvac_heat: true,
+    can_turn_off_hvac: true,
+    can_hvac_heat_cool: true,
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -130,60 +132,62 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.list({
-  manufacturer: "nest"
-});
+```python
+seam.thermostats.list(
+  manufacturer = "nest"
+)
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-    device_type: 'nest_thermostat',
-    properties: {
-      online: true,
-      is_cooling: false,
-      is_heating: false,
-      manufacturer: 'nest',
-      is_fan_running: false,
-      relative_humidity: 0.46,
-      temperature_celsius: 24.64,
-      temperature_fahrenheit: 76.352,
-      available_hvac_mode_settings: [
+  Device(
+    can_hvac_cool=True,
+    can_hvac_heat=True,
+    can_hvac_heat_cool=True,
+    can_turn_off_hvac=True,
+    device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+    device_type='nest_thermostat',
+    properties={
+      'available_hvac_mode_settings': [
         'heat',
         'cool',
         'heat_cool',
         'off'
       ],
-      current_climate_setting: {
-        display_name: 'eco',
-        hvac_mode_setting: 'heat_cool',
-        manual_override_allowed: true,
-        cooling_set_point_celsius: 25,
-        cooling_set_point_fahrenheit: 77,
-        heating_set_point_celsius: 20,
-        heating_set_point_fahrenheit: 68
+      'current_climate_setting': {
+        'display_name': 'eco',
+        'cooling_set_point_celsius': 25,
+        'cooling_set_point_fahrenheit': 77,
+        'heating_set_point_celsius': 20,
+        'heating_set_point_fahrenheit': 68,
+        'hvac_mode_setting': 'heat_cool',
+        'manual_override_allowed': True
       },
+      'is_cooling': False,
+      'is_fan_running': False,
+      'is_heating': False,
+      'manufacturer': 'nest',
+      'online': True,
+      'relative_humidity': 0.46,
+      'temperature_celsius': 24.64,
+      'temperature_fahrenheit': 76.352,
       ...
     },
-    can_hvac_cool: true,
-    can_hvac_heat: true,
-    can_turn_off_hvac: true,
-    can_hvac_heat_cool: true,
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -241,6 +245,7 @@ seam.thermostats.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -294,6 +299,7 @@ $seam->thermostats->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -315,57 +321,60 @@ $seam->thermostats->list(
 To get a specific [thermostat](./), issue a [`/devices/get`](https://docs.seam.co/latest/api/devices/get) request, including the desired `device_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
+```javascript
+await seam.devices.get({
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 ```
 
 **Response:**
 
-```
-Device(
-  can_hvac_cool=True,
-  can_hvac_heat=True,
-  can_hvac_heat_cool=True,
-  can_turn_off_hvac=True,
-  device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-  device_type='nest_thermostat',
-  properties={
-    'available_hvac_mode_settings': [
+```json
+{
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  device_type: 'nest_thermostat',
+  properties: {
+    online: true,
+    is_cooling: false,
+    is_heating: false,
+    manufacturer: 'nest',
+    is_fan_running: false,
+    relative_humidity: 0.46,
+    temperature_celsius: 24.64,
+    temperature_fahrenheit: 76.352,
+    current_climate_setting: [Object],
+    available_hvac_mode_settings: [
       'heat',
       'cool',
       'heat_cool',
       'off'
     ],
-    'current_climate_setting': {
-      'display_name': 'eco',
-      'cooling_set_point_celsius': 25,
-      'cooling_set_point_fahrenheit': 77,
-      'heating_set_point_celsius': 20,
-      'heating_set_point_fahrenheit': 68,
-      'hvac_mode_setting': 'heat_cool',
-      'manual_override_allowed': True
+    current_climate_setting: {
+      display_name: 'eco',
+      hvac_mode_setting: 'heat_cool',
+      manual_override_allowed: true,
+      cooling_set_point_celsius: 25,
+      cooling_set_point_fahrenheit: 77,
+      heating_set_point_celsius: 20,
+      heating_set_point_fahrenheit: 68
     },
-    'is_cooling': False,
-    'is_fan_running': False,
-    'is_heating': False,
-    'manufacturer': 'nest',
-    'online': True,
-    'relative_humidity': 0.46,
-    'temperature_celsius': 24.64,
-    'temperature_fahrenheit': 76.352,
     ...
   },
+  can_hvac_cool: true,
+  can_hvac_heat: true,
+  can_turn_off_hvac: true,
+  can_hvac_heat_cool: true,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -424,58 +433,59 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+```python
+seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
 ```
 
 **Response:**
 
-```json
-{
-  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-  device_type: 'nest_thermostat',
-  properties: {
-    online: true,
-    is_cooling: false,
-    is_heating: false,
-    manufacturer: 'nest',
-    is_fan_running: false,
-    relative_humidity: 0.46,
-    temperature_celsius: 24.64,
-    temperature_fahrenheit: 76.352,
-    current_climate_setting: [Object],
-    available_hvac_mode_settings: [
+```
+Device(
+  can_hvac_cool=True,
+  can_hvac_heat=True,
+  can_hvac_heat_cool=True,
+  can_turn_off_hvac=True,
+  device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  device_type='nest_thermostat',
+  properties={
+    'available_hvac_mode_settings': [
       'heat',
       'cool',
       'heat_cool',
       'off'
     ],
-    current_climate_setting: {
-      display_name: 'eco',
-      hvac_mode_setting: 'heat_cool',
-      manual_override_allowed: true,
-      cooling_set_point_celsius: 25,
-      cooling_set_point_fahrenheit: 77,
-      heating_set_point_celsius: 20,
-      heating_set_point_fahrenheit: 68
+    'current_climate_setting': {
+      'display_name': 'eco',
+      'cooling_set_point_celsius': 25,
+      'cooling_set_point_fahrenheit': 77,
+      'heating_set_point_celsius': 20,
+      'heating_set_point_fahrenheit': 68,
+      'hvac_mode_setting': 'heat_cool',
+      'manual_override_allowed': True
     },
+    'is_cooling': False,
+    'is_fan_running': False,
+    'is_heating': False,
+    'manufacturer': 'nest',
+    'online': True,
+    'relative_humidity': 0.46,
+    'temperature_celsius': 24.64,
+    'temperature_fahrenheit': 76.352,
     ...
   },
-  can_hvac_cool: true,
-  can_hvac_heat: true,
-  can_turn_off_hvac: true,
-  can_hvac_heat_cool: true,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -490,6 +500,7 @@ await seam.devices.get({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -540,6 +551,7 @@ $seam->devices->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
