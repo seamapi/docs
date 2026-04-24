@@ -186,4 +186,3 @@
 * [Yale Locks](yale-locks/README.md)
     * [Get started with Yale Locks](yale-locks/get-started-with-yale-locks.md)
     * [Sandbox Yale Locks](yale-locks/yale-sample-data.md)
-* [Get started with Smart Locks](get-started-with-smartlocks-api.md)

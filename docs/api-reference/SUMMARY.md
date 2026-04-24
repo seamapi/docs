@@ -4,6 +4,7 @@
 * [Installation](installation.md)
 * [Authentication](authentication.md)
 * [Pagination](pagination.md)
+* [Rate Limits and Guardrails](rate-limits-and-guardrails.md)
 * [Access Codes](access_codes/README.md)
   * [Create an Access Code](access_codes/create.md)
   * [Create Multiple Linked Access Codes](access_codes/create_multiple.md)
