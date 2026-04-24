@@ -59,7 +59,7 @@ const credential = await seam.acs.credentials.create({
 // Encode the credential onto a card.
 // First, get the encoder that you want to use.
 const encoder = (await seam.acs.encoders.list({
-  acs_system_ids = ["11111111-1111-1111-1111-111111111111"]
+  acs_system_ids: ["11111111-1111-1111-1111-111111111111"]
 }))[0];
 
 # Then, encode the card.
@@ -335,7 +335,7 @@ credential = seam.acs.credentials.create(
 # Encode the credential onto a card.
 # First, get the encoder that you want to use.
 encoder = (seam.acs.encoders.list(
-  acs_system_ids = ["11111111-1111-1111-1111-111111111111"]
+  acs_system_ids: ["11111111-1111-1111-1111-111111111111"]
 ))[0]
 
 # Then, encode the card.
@@ -413,7 +413,7 @@ $credential = $seam->acs->credentials->create(
 // Encode the credential onto a card.
 // First, get the encoder that you want to use.
 $encoder = $seam->acs->encoders->list(
-  acs_system_ids = ["11111111-1111-1111-1111-111111111111"]
+  acs_system_ids: ["11111111-1111-1111-1111-111111111111"]
 )[0];
 
 // Then, encode the card.

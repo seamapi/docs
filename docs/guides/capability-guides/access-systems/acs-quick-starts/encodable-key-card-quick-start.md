@@ -550,7 +550,7 @@ For more information, see [Working with Card Encoders and Scanners](../working-w
 ```javascript
 // Get the encoder that you want to use.
 const encoder = (await seam.acs.encoders.list({
-  acs_system_ids = [acsSystemId]
+  acs_system_ids: [acsSystemId]
 }))[0];
 
 // Encode the card.
@@ -701,7 +701,7 @@ ActionAttempt(
 ```ruby
 # Get the encoder that you want to use.
 encoder = (seam.acs.encoders.list(
-  acs_system_ids = [acs_system_id]
+  acs_system_ids: [acs_system_id]
 ))[0]
 
 # Encode the card.
@@ -745,7 +745,7 @@ seam.action_attempts.get(
 ```php
 // Get the encoder that you want to use.
 $encoder = $seam->acs->encoders->list(
-  acs_system_ids = [$acs_system_id]
+  acs_system_ids: [$acs_system_id]
 )[0];
 
 // Encode the card.

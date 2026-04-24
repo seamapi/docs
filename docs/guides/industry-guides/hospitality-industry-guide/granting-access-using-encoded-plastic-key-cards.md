@@ -573,7 +573,7 @@ ActionAttempt(
 ```ruby
 # First, get the encoder that you want to use.
 encoder = (seam.acs.encoders.list(
-  acs_system_ids = [hotel_a.acs_system_id]
+  acs_system_ids: [hotel_a.acs_system_id]
 ))[0]
 
 # Then, encode the card.
@@ -616,7 +616,7 @@ seam.action_attempts.get(
 ```php
 // First, get the encoder that you want to use.
 $encoder = $seam->acs->encoders->list(
-  acs_system_ids = [$hotel_a->acs_system_id]
+  acs_system_ids: [$hotel_a->acs_system_id]
 )[0];
 
 // Then, encode the card.

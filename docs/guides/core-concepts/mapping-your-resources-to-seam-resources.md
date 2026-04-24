@@ -902,7 +902,7 @@ seam.access_grants.create(
 $seam->access_grants->create(
   user_identity_id: $user_identity->user_identity_id,
   starts_at: "2025-08-13T15:00:00.000Z",
-  ends_at: "2025-08-16T11:00:00.000Z"
+  ends_at: "2025-08-16T11:00:00.000Z",
   requested_access_methods: [
     ["mode" => "mobile_key"]
   ],

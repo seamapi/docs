@@ -666,7 +666,7 @@ seam.access_grants.create(
 
 # Encode the new card.
 encoder = (seam.acs.encoders.list(
-  acs_system_ids = [hotel_a.acs_system_id]
+  acs_system_ids: [hotel_a.acs_system_id]
 ))[0]
 
 encoding_action_attempt = seam.access_methods.encode(
@@ -739,7 +739,7 @@ $seam->access_grants->create(
 
 // Encode the access method onto a card.
 $encoder = $seam->acs->encoders->list(
-  acs_system_ids = [$hotel_a->acs_system_id]
+  acs_system_ids: [$hotel_a->acs_system_id]
 )[0];
 
 $encoding_action_attempt = $seam->access_methods->encode(
