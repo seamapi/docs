@@ -47,7 +47,11 @@ function formatTabsBlock(block: string): { result: string; changed: boolean } {
   return { result: lines.join('\n'), changed: true }
 }
 
-const dirs = ['docs/guides', 'docs/brand-guides']
+const dirs = [
+  'docs/guides',
+  'docs/brand-guides',
+  'codegen/source/docs/api-reference',
+]
 const files = dirs.flatMap((dir) => globSync(join(dir, '**/*.md')))
 
 let totalChanged = 0
