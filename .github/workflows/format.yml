@@ -29,6 +29,8 @@ jobs:
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Setup
         uses: ./.github/actions/setup
+      - name: Format code sample tabs
+        run: npm run format-code-sample-tabs
       - name: Format
         run: npm run format
       - name: Commit

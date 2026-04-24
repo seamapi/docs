@@ -13,6 +13,7 @@ import type {
 } from '@seamapi/blueprint'
 import { capitalCase } from 'change-case'
 
+import { supportedSdkOrder } from '../code-sample-tab-order.js'
 import type { PathMetadata } from '../path-metadata.js'
 import {
   type ApiRouteResource,
@@ -23,14 +24,18 @@ import {
   resourceSampleFilter,
 } from './api-route.js'
 
-const supportedSdks: SdkName[] = [
+const apiReferenceSdks = new Set<SdkName>([
   'javascript',
   'curl',
   'python',
   'ruby',
   'php',
   'seam_cli',
-]
+])
+
+const supportedSdks = supportedSdkOrder.filter((sdk) =>
+  apiReferenceSdks.has(sdk),
+)
 
 export interface ApiEndpointLayoutContext {
   description: string
