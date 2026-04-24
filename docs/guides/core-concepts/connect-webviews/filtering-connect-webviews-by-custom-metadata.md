@@ -151,11 +151,11 @@ echo json_encode($webviews);
 ```json
 [
   {
-    "connect_webview_id":"3c3f4c15-e7db-47c6-bc5a-1bf206ff269c",
-    "url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=xxxx&auth_token=yyyy",
-    "status"="pending",
-    "workspace_id"="398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "custom_metadata"={"internal_account_id"=>"user-1"},
+    "connect_webview_id": "3c3f4c15-e7db-47c6-bc5a-1bf206ff269c",
+    "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=xxxx&auth_token=yyyy",
+    "status": "pending",
+    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
+    "custom_metadata": {"internal_account_id": "user-1"},
     ...
   },
   ...

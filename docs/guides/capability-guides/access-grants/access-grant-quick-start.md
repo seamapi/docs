@@ -195,7 +195,7 @@ access_grant=$(curl --include --request POST "https://connect.getseam.com/access
     "access_grant_id":"6d74aefc-5712-4a8b-82c1-73a51ae60b87",
     "user_identity_id":"8cc2633a-54ca-455a-8a2b-77e6a1fc4fee",
     "starts_at":"2025-08-01T15:00:00.000Z",
-    "ends_at":"2025-08-04T11:00:00.000Z"
+    "ends_at":"2025-08-04T11:00:00.000Z",
     "instant_key_url":"https://ik.seam.co/ABCXYZ",
     "requested_access_methods":[
       {
@@ -399,7 +399,7 @@ $access_grant = $seam->access_grants->create(
   "access_grant_id":"6d74aefc-5712-4a8b-82c1-73a51ae60b87",
   "user_identity_id":"8cc2633a-54ca-455a-8a2b-77e6a1fc4fee",
   "starts_at":"2025-08-01T15:00:00.000Z",
-  "ends_at":"2025-08-04T11:00:00.000Z"
+  "ends_at":"2025-08-04T11:00:00.000Z",
   "instant_key_url":"https://ik.seam.co/ABCXYZ",
   "requested_access_methods":[
     {

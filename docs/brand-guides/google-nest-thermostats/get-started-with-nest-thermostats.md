@@ -538,7 +538,7 @@ Fan running: false
 const allGoogleNestThermostats = await seam.devices.list({manufacturer: "nest"});
 
 // Select the first device as an example.
-const livingRoomThermostat = allGoogleNestThermostats [0];
+const livingRoomThermostat = allGoogleNestThermostats[0];
 
 // Inspect specific properties.
 console.log("Current temperature: " + livingRoomThermostat.properties.temperature_fahrenheit);
@@ -595,7 +595,7 @@ Fan running: false
 all_google_nest_thermostats = seam.devices.list(manufacturer: "nest")
 
 # Select the first device as an example.
-living_room_thermostat = all_google_nest_thermostats [0]
+living_room_thermostat = all_google_nest_thermostats[0]
 
 # Inspect specific properties.
 puts "Current temperature: " + living_room_thermostat.properties.temperature_fahrenheit.to_s
@@ -652,7 +652,7 @@ Fan running: false
 $all_google_nest_thermostats = $seam->devices->list(manufacturer: "nest");
 
 // Select the first device as an example.
-$living_room_thermostat = $all_google_nest_thermostats [0];
+$living_room_thermostat = $all_google_nest_thermostats[0];
 
 // Inspect specific properties.
 echo "Current temperature: ", $living_room_thermostat->properties->temperature_fahrenheit, "\n";

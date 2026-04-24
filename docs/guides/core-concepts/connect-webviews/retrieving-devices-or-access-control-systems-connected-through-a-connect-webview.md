@@ -294,13 +294,13 @@ connected_acs_systems=$(
 **Code:**
 
 ```ruby
-// Coming soon!
+# Coming soon!
 ```
 
 **Output:**
 
-```json
-// Coming soon!
+```
+# Coming soon!
 ```
 {% endtab %}
 
@@ -336,7 +336,7 @@ $connected_acs_systems = $seam->acs->systems->list(
 
 ```csharp
 // Retrieve all acs_systems for the connectedAccountId.
-var connectedAcsSystems = seam.SystemsAcs.List(
+var connectedAcsSystems = seam.Acs.Systems.List(
   connectedAccountId: "11111111-1111-1111-2222-111111111111"
 );
 ```

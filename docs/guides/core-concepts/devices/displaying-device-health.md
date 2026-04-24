@@ -180,7 +180,7 @@ pprint(device_connected_events)
 ```bash
 # Use GET or POST.
 curl -X 'GET' \
-  'https://connect.getseam.com/devices/list' \
+  'https://connect.getseam.com/events/list' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \

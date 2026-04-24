@@ -134,10 +134,10 @@ from seam import Seam
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
 jen_doe_user = seam.user_identities.create(
-  full_name: "Jen Doe",
-  email_address = "jen.doe@example.com",
+  full_name="Jen Doe",
+  email_address="jen.doe@example.com",
   # Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_ids = [acs_system_id]
+  acs_system_ids=[acs_system_id]
 )
 ```
 

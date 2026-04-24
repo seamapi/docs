@@ -272,7 +272,7 @@ const connected_accounts = await seam.connected_accounts.list({
 
 let customerSystems = []
 
-for (const account of connectedAccounts) {
+for (const account of connected_accounts) {
   const systems = await seam.acs.systems.list({
     connected_account_id: account.connected_account_id
   });

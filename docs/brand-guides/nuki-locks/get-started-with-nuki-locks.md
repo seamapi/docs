@@ -110,7 +110,7 @@ puts created_webview.url
 ```php
 <?php
 // initiate the SDK client, you should replace this with your SDK client init portion
-$seam = new SeamSeamClient("YOUR_API_KEY");
+$seam = new Seam\SeamClient("YOUR_API_KEY");
 
 // create a connect webview with provider nuki
 $connect_webview = $seam->connect_webviews->create([

@@ -221,7 +221,7 @@ curl -X 'POST' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d "{
-    \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jane_user})\"
+    \"user_identity_id\": \"$(jq -r '.user_identity.user_identity_id' <<< ${jane_user})\",
     \"acs_entrance_ids\": [
       \"48ebfb50-c531-43c5-b9ea-409f26dabbd7\",
       \"f74e4879-5991-4e2f-a368-888983dcfbfc\"

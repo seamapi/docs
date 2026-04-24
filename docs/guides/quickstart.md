@@ -159,7 +159,7 @@ front_door=$(jq -r '.devices[0]' <<< ${all_august_locks})
 
 # Confirm that the device can remotely unlock.
 # You're using a capability flag here!
-if  $(jq -r '.can_remotely_lock' <<< ${front_door}); then \
+if  $(jq -r '.can_remotely_unlock' <<< ${front_door}); then \
   # Perform the unlock operation
   # and return an action attempt.
   curl -X 'POST' \
