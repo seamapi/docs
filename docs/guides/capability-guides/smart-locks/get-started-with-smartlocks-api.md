@@ -483,9 +483,9 @@ $seam->access_codes->create(
 
 Now that you've completed this guide, you can try to build a real application to connect and control a device. Don't hesitate to reach out to our team if we can help with anything, or explore other aspects of Seam, here is a list of helpful resources:
 
-* [Yale Getting Started Guide](yale-locks/get-started-with-yale-locks.md)
-* [August Getting Started Guide](august-locks/get-started-with-august-locks.md)
-* [Schlage Getting Started Guide](schlage-locks/get-started-with-schlage-locks.md)
-* [SmartThings Getting Started Guide](smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Yale Getting Started Guide](https://docs.seam.co/latest/device-and-system-integration-guides/yale-locks/get-started-with-yale-locks)
+* [August Getting Started Guide](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks/get-started-with-august-locks)
+* [Schlage Getting Started Guide](https://docs.seam.co/latest/device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks)
+* [SmartThings Getting Started Guide](https://docs.seam.co/latest/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks)
 * [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
 * [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)

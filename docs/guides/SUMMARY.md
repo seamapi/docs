@@ -44,6 +44,7 @@
 
 * [Device and System Capabilities](capability-guides/device-and-system-capabilities.md)
 * [Smart Locks](capability-guides/smart-locks/README.md)
+  * [Get started with Smart Locks](capability-guides/smart-locks/get-started-with-smartlocks-api.md)
   * [Locking and Unlocking Smart Locks](capability-guides/smart-locks/lock-and-unlock.md)
   * [Creating and Managing Smart Lock Access Codes](capability-guides/smart-locks/access-codes/README.md)
     * [Creating Access Codes](capability-guides/smart-locks/access-codes/creating-access-codes/README.md)
@@ -166,7 +167,6 @@
 * [Webhooks](developer-tools/webhooks.md)
 * [Seam CLI](developer-tools/seam-cli.md)
 * [Seam MCP Server](developer-tools/seam-mcp.md)
-* [Rate Limits and Guardrails](developer-tools/rate-limits-and-guardrails.md)
 * [Mobile SDKs](developer-tools/mobile-sdks/README.md)
   * [Android SDK](developer-tools/mobile-sdks/android-sdk.md)
   * [iOS SDK](developer-tools/mobile-sdks/ios-sdk.md)

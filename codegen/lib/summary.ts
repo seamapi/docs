@@ -30,7 +30,9 @@ const getUpdatedSummary = (summary: string, apiSummary: string): string => {
   const lines = summary.split('\n')
 
   const startIdx = lines.findIndex(
-    (line) => line.trim() === '* [Pagination](pagination.md)',
+    (line) =>
+      line.trim() ===
+      '* [Rate Limits and Guardrails](rate-limits-and-guardrails.md)',
   )
   if (startIdx === -1) {
     throw new Error('Could not find start of API summary')
