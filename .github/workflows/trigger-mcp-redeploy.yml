@@ -1,0 +1,37 @@
+---
+name: Trigger MCP Redeploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+# Only one in-flight trigger at a time; a later main-branch push
+# supersedes any queued one so we don't deploy stale docs.
+concurrency:
+  group: trigger-mcp-redeploy
+  cancel-in-progress: true
+
+jobs:
+  dispatch:
+    name: Dispatch seam-mcp deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.SEAM_CI_BOT_APP_ID }}
+          private-key: ${{ secrets.SEAM_CI_BOT_PRIVATE_KEY }}
+          owner: seamapi
+          repositories: seam-mcp
+
+      - name: Dispatch deploy workflow
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh workflow run deploy.yml \
+            --repo seamapi/seam-mcp \
+            --ref main
