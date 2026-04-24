@@ -24,86 +24,89 @@ To use the Seam API to create mobile credentials for mobile app users in a Salto
 The following example walks you through this process:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the access system.
-building_a = seam.acs.systems.get(
-  acs_system_id = "11111111-1111-1111-1111-111111111111"
-)
+```javascript
+// Get the access system.
+const buildingA = await seam.acs.systems.get({
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+});
 
-# Define the listing.
-listing = {
-  "listing_id": "2222222-2222",
-  "seam_access_group_ids": [
+// Define the listing.
+const listing = {
+  "listingId": "2222222-2222",
+  "seamAccessGroupIds": [
     "555555-5555",
     "666666-6666"
   ]
-}
+};
 
-# Define the reservation.
-reservation = {
-  "reservation_id": "3333122-433",
-  "guest_email": "jane@example.com",
-  "listing_id": "2222222-2222",
-  "check_in": "2024-11-01T15:00:00.000Z",
-  "check_out": "2024-11-04T11:00:00.000Z"
-}
+// Define the reservation.
+const reservation = {
+  "reservationId": "3333122-433",
+  "guestEmail": "jane@example.com",
+  "listingId": "2222222-2222",
+  "checkIn": "2024-11-01T15:00:00.000Z",
+  "checkOut": "2024-11-04T11:00:00.000Z"
+};
 
-# Step 1:
-# Create a user identity that corresponds to your user's mobile app account.
-jane_user = seam.user_identities.create(
-  email_address = "jane@example.com"
-)
+// Step 1:
+// Create a user identity that corresponds to your user's app account.
+const janeUser = await seam.userIdentities.create({
+  email_address: "jane@example.com"
+});
 
-# Step 2:
-# Create an access system user on the Salto KS access system.
-# Specify the access schedule for the user.
-reservation_user = seam.acs.users.create(
-  user_identity_id = jane_user.user_identity_id,
-  acs_system_id = building_a.acs_system_id,
-  full_name = reservation["reservation_id"],
-  access_schedule = {
-    "starts_at": reservation["check_in"],
-    "ends_at": reservation["check_out"]
+// Step 2:
+// Create an access system user on the Salto KS access system.
+// Specify the access schedule for the user.
+const reservationUser = await seam.acs.users.create({
+  user_identity_id: janeUser.user_identity_id,
+  full_name: reservation.reservationId,
+  acs_system_id: buildingA.acs_system_id,
+  access_schedule: {
+    "starts_at": reservation.checkIn,
+    "ends_at": reservation.checkOut
   }
-)
+});
 
-# Step 3:
-# Add the access system user to all access groups for the listing.
-for group_id_to_add in listing["seam_access_group_ids"]:
-  seam.acs.users.add_to_access_group(
-    acs_user_id = reservation_user.acs_user_id,
-    acs_access_group_id = group_id_to_add
-  )
-  
-# Step 4:
-# Create a mobile key for the access system user.
-reservation_mobile_key = seam.acs.credentials.create(
-  acs_user_id = reservation_user.acs_user_id,
-  is_multi_phone_sync_credential = True,
-  access_method = "mobile_key"
-)
+// Step 3:
+// Add the access system user to all access groups for the listing.
+for (const groupIdToAdd of listing.seamAccessGroupIds) {
+  await seam.acs.users.addToAccessGroup({
+    acs_user_id: reservationUser.acs_user_id,
+    acs_access_group_id: groupIdToAdd
+  });
+}
 
-# View the new credential.
-pprint(reservation_mobile_key)
+// Step 4:
+// Create a mobile key for the access system user.
+const reservationMobileKey = await seam.acs.credentials.create({
+  acs_user_id: reservationUser.acs_user_id,
+  access_method: "mobile_key",
+  is_multi_phone_sync_credential: true
+});
+
+// View the new credential.
+console.log(reservationMobileKey);
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='mobile_key',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'mobile_key',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -206,87 +209,88 @@ echo $reservation_mobile_key;
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the access system.
-const buildingA = await seam.acs.systems.get({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+```python
+# Get the access system.
+building_a = seam.acs.systems.get(
+  acs_system_id = "11111111-1111-1111-1111-111111111111"
+)
 
-// Define the listing.
-const listing = {
-  "listingId": "2222222-2222",
-  "seamAccessGroupIds": [
+# Define the listing.
+listing = {
+  "listing_id": "2222222-2222",
+  "seam_access_group_ids": [
     "555555-5555",
     "666666-6666"
   ]
-};
-
-// Define the reservation.
-const reservation = {
-  "reservationId": "3333122-433",
-  "guestEmail": "jane@example.com",
-  "listingId": "2222222-2222",
-  "checkIn": "2024-11-01T15:00:00.000Z",
-  "checkOut": "2024-11-04T11:00:00.000Z"
-};
-
-// Step 1:
-// Create a user identity that corresponds to your user's app account.
-const janeUser = await seam.userIdentities.create({
-  email_address: "jane@example.com"
-});
-
-// Step 2:
-// Create an access system user on the Salto KS access system.
-// Specify the access schedule for the user.
-const reservationUser = await seam.acs.users.create({
-  user_identity_id: janeUser.user_identity_id,
-  full_name: reservation.reservationId,
-  acs_system_id: buildingA.acs_system_id,
-  access_schedule: {
-    "starts_at": reservation.checkIn,
-    "ends_at": reservation.checkOut
-  }
-});
-
-// Step 3:
-// Add the access system user to all access groups for the listing.
-for (const groupIdToAdd of listing.seamAccessGroupIds) {
-  await seam.acs.users.addToAccessGroup({
-    acs_user_id: reservationUser.acs_user_id,
-    acs_access_group_id: groupIdToAdd
-  });
 }
 
-// Step 4:
-// Create a mobile key for the access system user.
-const reservationMobileKey = await seam.acs.credentials.create({
-  acs_user_id: reservationUser.acs_user_id,
-  access_method: "mobile_key",
-  is_multi_phone_sync_credential: true
-});
+# Define the reservation.
+reservation = {
+  "reservation_id": "3333122-433",
+  "guest_email": "jane@example.com",
+  "listing_id": "2222222-2222",
+  "check_in": "2024-11-01T15:00:00.000Z",
+  "check_out": "2024-11-04T11:00:00.000Z"
+}
 
-// View the new credential.
-console.log(reservationMobileKey);
+# Step 1:
+# Create a user identity that corresponds to your user's mobile app account.
+jane_user = seam.user_identities.create(
+  email_address = "jane@example.com"
+)
+
+# Step 2:
+# Create an access system user on the Salto KS access system.
+# Specify the access schedule for the user.
+reservation_user = seam.acs.users.create(
+  user_identity_id = jane_user.user_identity_id,
+  acs_system_id = building_a.acs_system_id,
+  full_name = reservation["reservation_id"],
+  access_schedule = {
+    "starts_at": reservation["check_in"],
+    "ends_at": reservation["check_out"]
+  }
+)
+
+# Step 3:
+# Add the access system user to all access groups for the listing.
+for group_id_to_add in listing["seam_access_group_ids"]:
+  seam.acs.users.add_to_access_group(
+    acs_user_id = reservation_user.acs_user_id,
+    acs_access_group_id = group_id_to_add
+  )
+  
+# Step 4:
+# Create a mobile key for the access system user.
+reservation_mobile_key = seam.acs.credentials.create(
+  acs_user_id = reservation_user.acs_user_id,
+  is_multi_phone_sync_credential = True,
+  access_method = "mobile_key"
+)
+
+# View the new credential.
+pprint(reservation_mobile_key)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'mobile_key',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='mobile_key',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -371,6 +375,7 @@ puts reservation_mobile_key.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -451,6 +456,7 @@ echo json_encode($reservation_mobile_key, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

@@ -7,42 +7,43 @@ Seam's sandbox workspaces enable you to develop integrations without access to a
 When issuing mobile credentials, some systems require the user identity to have a provisioned phone. While you are developing and testing your integration, you can add a simulated phone in your sandbox workspace. Use the following flow to [add a simulated phone](https://docs.seam.co/latest/api/phones/simulate/create_sandbox_phone) for a user identity:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-# Step 1: Create the user identity.
-user_identity = seam.user_identities.create(
-  user_identity_key = "jean_doe",
-  full_name = "Jean Doe"
-)
+```javascript
+// Step 1: Create the user identity.
+const userIdentity = await seam.userIdentities.create({
+  user_identity_key: "jean_doe",
+  full_name: "Jean Doe",
+});
 
-# Step 2: Create a simulated, sandbox phone.
-seam.phones.simulate.create_sandbox_phone(
-  user_identity_id = user_identity.user_identity_id
-)
+// Step 2: Create a simulated, sandbox phone.
+await seam.phones.simulate.createSandboxPhone({
+  user_identity_id: userIdentity.user_identity_id,
+});
 ```
 
 **Output:**
 
-```
-UserIdentity(
-  user_identity_id='22222222-2222-2222-2222-222222222222',
-  user_identity_key='jean_doe',
-  full_name='Jean Doe',
+```json
+{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "full_name": "Jean Doe",
   ...
-)
+}
 
-Phone(
-  device_id='22222222-2222-2222-2222-444444444444',
-  device_type='android_phone',
-  created_at='2025-01-01T10:40:00+00:00',
+{
+  "device_id": "22222222-2222-2222-2222-444444444444",
+  "device_type": "android_phone",
+  "created_at": "2025-01-01T10:40:00+00:00",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -92,41 +93,44 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-// Step 1: Create the user identity.
-const userIdentity = await seam.userIdentities.create({
-  user_identity_key: "jean_doe",
-  full_name: "Jean Doe",
-});
+```python
+# Step 1: Create the user identity.
+user_identity = seam.user_identities.create(
+  user_identity_key = "jean_doe",
+  full_name = "Jean Doe"
+)
 
-// Step 2: Create a simulated, sandbox phone.
-await seam.phones.simulate.createSandboxPhone({
-  user_identity_id: userIdentity.user_identity_id,
-});
+# Step 2: Create a simulated, sandbox phone.
+seam.phones.simulate.create_sandbox_phone(
+  user_identity_id = user_identity.user_identity_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "full_name": "Jean Doe",
+```
+UserIdentity(
+  user_identity_id='22222222-2222-2222-2222-222222222222',
+  user_identity_key='jean_doe',
+  full_name='Jean Doe',
   ...
-}
+)
 
-{
-  "device_id": "22222222-2222-2222-2222-444444444444",
-  "device_type": "android_phone",
-  "created_at": "2025-01-01T10:40:00+00:00",
+Phone(
+  device_id='22222222-2222-2222-2222-444444444444',
+  device_type='android_phone',
+  created_at='2025-01-01T10:40:00+00:00',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -161,6 +165,7 @@ seam.phones.simulate.create_sandbox_phone(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -195,6 +200,7 @@ $seam->phones->simulate->create_sandbox_phone(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp

@@ -34,29 +34,34 @@ The Seam API provides the following sandbox-only [capability flags](../../capabi
 To simulate a device disconnection:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 
-# Confirm that Seam supports simulated disconnection for the device.
-if device.can_simulate_disconnection:
-  # Perform the simulated disconnection.
-  seam.devices.simulate.disconnect(device_id=device.device_id)
+// Confirm that Seam supports simulated disconnection for the device.
+if (device.can_simulate_disconnection) {
+  // Perform the simulated disconnection.
+  await seam.devices.simulate.disconnect({
+    device_id: device.device_id
+  })
+};
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -95,32 +100,31 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 
-// Confirm that Seam supports simulated disconnection for the device.
-if (device.can_simulate_disconnection) {
-  // Perform the simulated disconnection.
-  await seam.devices.simulate.disconnect({
-    device_id: device.device_id
-  })
-};
+# Confirm that Seam supports simulated disconnection for the device.
+if device.can_simulate_disconnection:
+  # Perform the simulated disconnection.
+  seam.devices.simulate.disconnect(device_id=device.device_id)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -146,6 +150,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -167,6 +172,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -190,9 +196,6 @@ if (device.CanSimulateDisconnection == true) {
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -202,29 +205,34 @@ void
 To simulate a device connection:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 
-# Confirm that Seam supports simulated connection for the device.
-if device.can_simulate_connection:
-  # Perform the simulated connection.
-  seam.devices.simulate.connect(device_id=device.device_id)
+// Confirm that Seam supports simulated connection for the device.
+if (device.can_simulate_connection) {
+  // Perform the simulated connection.
+  await seam.devices.simulate.connect({
+    device_id: device.device_id
+  })
+};
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -263,32 +271,31 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 
-// Confirm that Seam supports simulated connection for the device.
-if (device.can_simulate_connection) {
-  // Perform the simulated connection.
-  await seam.devices.simulate.connect({
-    device_id: device.device_id
-  })
-};
+# Confirm that Seam supports simulated connection for the device.
+if device.can_simulate_connection:
+  # Perform the simulated connection.
+  seam.devices.simulate.connect(device_id=device.device_id)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -314,6 +321,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -335,6 +343,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -358,9 +367,6 @@ if (device.CanSimulateConnection == true) {
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -370,29 +376,34 @@ void
 To simulate a device removal:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 
-# Confirm that Seam supports simulated removal for the device.
-if device.can_simulate_removal:
-  # Perform the simulated removal.
-  seam.devices.simulate.remove(device_id=device.device_id)
+// Confirm that Seam supports simulated removal for the device.
+if (device.can_simulate_removal) {
+  // Perform the simulated removal.
+  await seam.devices.simulate.remove({
+    device_id: device.device_id
+  })
+};
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -431,32 +442,31 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 
-// Confirm that Seam supports simulated removal for the device.
-if (device.can_simulate_removal) {
-  // Perform the simulated removal.
-  await seam.devices.simulate.remove({
-    device_id: device.device_id
-  })
-};
+# Confirm that Seam supports simulated removal for the device.
+if device.can_simulate_removal:
+  # Perform the simulated removal.
+  seam.devices.simulate.remove(device_id=device.device_id)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -482,6 +492,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -503,6 +514,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 {% hint style="info" %}
 Coming soon!
 {% endhint %}
@@ -526,9 +538,6 @@ if (device.CanSimulateRemoval == true) {
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

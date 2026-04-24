@@ -25,23 +25,25 @@ If an app user loses their phone or wants to deactivate it, you can deactivate t
 To [deactivate](https://docs.seam.co/latest/api/phones/deactivate) a phone, provide the ID of the phone. When a phone is deactivated, Seam also revokes all the credentials issued to the deactivated phone. Seam also removes the associated ACS credentials from the ACS.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-seam.phones.deactivate(
-  device_id = lost_phone_id
-)
+```javascript
+await seam.phones.deactivate({
+  device_id: lostPhoneId,
+});
 ```
 
 **Output:**
 
 ```
-None    
+// void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -64,23 +66,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-await seam.phones.deactivate({
-  device_id: lostPhoneId,
-});
+```python
+seam.phones.deactivate(
+  device_id = lost_phone_id
+)
 ```
 
 **Output:**
 
 ```
-// void
+None    
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -97,6 +101,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -113,6 +118,7 @@ null
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp
@@ -134,37 +140,39 @@ Coming soon!
 To retrieve the list of phones that the mobile app user has used to sign in to their account, use the [List Phones](https://docs.seam.co/latest/api/phones/list) endpoint and include the ID of the user identity.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-seam.phones.list(
-  owner_user_identity_id = user_identity.id
-)
+```javascript
+await seam.phones.list({
+  owner_user_identity_id: user_identity.id,
+});
 ```
 
 **Output:**
 
-```
+```json
 [
-  Phone(
-    device_id='22222222-2222-2222-2222-444444444444',
-    device_type='android_phone',
-    created_at='2025-01-01T10:40:00+00:00',
+  {
+    "device_id": "22222222-2222-2222-2222-444444444444",
+    "device_type": "android_phone",
+    "created_at": "2025-01-01T10:40:00+00:00",
     ...
-  )
-  Phone(
-    device_id='22222222-2222-2222-2222-555555555555',
-    device_type='ios_phone',
-    created_at='2025-01-02T10:40:00+00:00',
+  },
+  {
+    "device_id": "22222222-2222-2222-2222-555555555555",
+    "device_type": "ios_phone",
+    "created_at": "2025-01-02T10:40:00+00:00",
     ...
-  )
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -203,37 +211,39 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-await seam.phones.list({
-  owner_user_identity_id: user_identity.id,
-});
+```python
+seam.phones.list(
+  owner_user_identity_id = user_identity.id
+)
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    "device_id": "22222222-2222-2222-2222-444444444444",
-    "device_type": "android_phone",
-    "created_at": "2025-01-01T10:40:00+00:00",
+  Phone(
+    device_id='22222222-2222-2222-2222-444444444444',
+    device_type='android_phone',
+    created_at='2025-01-01T10:40:00+00:00',
     ...
-  },
-  {
-    "device_id": "22222222-2222-2222-2222-555555555555",
-    "device_type": "ios_phone",
-    "created_at": "2025-01-02T10:40:00+00:00",
+  )
+  Phone(
+    device_id='22222222-2222-2222-2222-555555555555',
+    device_type='ios_phone',
+    created_at='2025-01-02T10:40:00+00:00',
     ...
-  },
+  )
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -264,6 +274,7 @@ seam.phones.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -294,6 +305,7 @@ $seam->phones->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp
@@ -315,28 +327,39 @@ Coming soon!
 To retrieve a phone by its ID, use the [Get Phone](https://docs.seam.co/latest/api/phones/get) endpoint and include the `device_id` of the phone.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Command:**
 
-```python
-seam.phones.get(
-  device_id = "22222222-2222-2222-2222-444444444444"
-)
+```javascript
+await seam.phones.list({
+  owner_user_identity_id: user_identity.id,
+});
 ```
 
 **Output:**
 
-```
-Phone(
-  device_id='22222222-2222-2222-2222-444444444444',
-  device_type='android_phone',
-  created_at='2025-01-01T10:40:00+00:00',
+```json
+[
+  {
+    "device_id": "22222222-2222-2222-2222-444444444444",
+    "device_type": "android_phone",
+    "created_at": "2025-01-01T10:40:00+00:00",
+    ...
+  },
+  {
+    "device_id": "22222222-2222-2222-2222-555555555555",
+    "device_type": "ios_phone",
+    "created_at": "2025-01-02T10:40:00+00:00",
+    ...
+  },
   ...
-)
+]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -366,37 +389,30 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Command:**
 
-```javascript
-await seam.phones.list({
-  owner_user_identity_id: user_identity.id,
-});
+```python
+seam.phones.get(
+  device_id = "22222222-2222-2222-2222-444444444444"
+)
 ```
 
 **Output:**
 
-```json
-[
-  {
-    "device_id": "22222222-2222-2222-2222-444444444444",
-    "device_type": "android_phone",
-    "created_at": "2025-01-01T10:40:00+00:00",
-    ...
-  },
-  {
-    "device_id": "22222222-2222-2222-2222-555555555555",
-    "device_type": "ios_phone",
-    "created_at": "2025-01-02T10:40:00+00:00",
-    ...
-  },
+```
+Phone(
+  device_id='22222222-2222-2222-2222-444444444444',
+  device_type='android_phone',
+  created_at='2025-01-01T10:40:00+00:00',
   ...
-]
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Command:**
 
 ```ruby
@@ -427,6 +443,7 @@ seam.phones.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Command:**
 
 ```php
@@ -457,6 +474,7 @@ $seam->phones->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Command:**
 
 ```csharp

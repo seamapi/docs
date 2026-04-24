@@ -32,29 +32,33 @@ If the device or connected account associated with an access code has an error, 
 The first step in troubleshooting an access code issue is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](https://docs.seam.co/latest/api/access_codes/get) or [List Access Codes](https://docs.seam.co/latest/api/access_codes/list) request and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes. Then, see the matching remedy in [Suggested Access Code Remedies](troubleshooting-access-code-issues.md#suggested-access-code-remedies) for next steps.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-access_code = seam.access_codes.get("1d9fe873-3393-4b29-b93e-87fe7f923462")
+```javascript
+const accessCode = await seam.accessCodes.get({
+  access_code_id: "38a569bb-40b9-4e42-97bd-bb78f8d96777"
+})
 
-pprint("Errors:")
-pprint(access_code.errors)
-pprint("Warnings:")
-pprint(access_code.warnings)
+console.log("Errors:")
+console.log(accessCode.errors)
+console.log("Warnings:")
+console.log(accessCode.warnings)
 ```
 
 **Response:**
 
-```
-'Errors:'
+```json
+Errors:
 [...]
-'Warnings:'
+Warnings:
 [...]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -99,31 +103,31 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const accessCode = await seam.accessCodes.get({
-  access_code_id: "38a569bb-40b9-4e42-97bd-bb78f8d96777"
-})
+```python
+access_code = seam.access_codes.get("1d9fe873-3393-4b29-b93e-87fe7f923462")
 
-console.log("Errors:")
-console.log(accessCode.errors)
-console.log("Warnings:")
-console.log(accessCode.warnings)
+pprint("Errors:")
+pprint(access_code.errors)
+pprint("Warnings:")
+pprint(access_code.warnings)
 ```
 
 **Response:**
 
-```json
-Errors:
+```
+'Errors:'
 [...]
-Warnings:
+'Warnings:'
 [...]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -143,6 +147,7 @@ Warnings:
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $access_code = $seam->access_codes->get('ed4a1f62-9070-4379-8c46-ea30a99e4d74');
 
@@ -157,6 +162,7 @@ if (property_exists($access_code, 'warnings')) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -178,7 +184,6 @@ Warnings:
 []
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ***

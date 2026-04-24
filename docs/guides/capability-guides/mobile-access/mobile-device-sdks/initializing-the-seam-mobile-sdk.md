@@ -230,24 +230,26 @@ First, use the Seam API or Seam Console to create a [user identity](../managing-
 Then, using the user identity, create a [client session](../../../core-concepts/authentication/client-session-tokens/) and capture the resulting [client session token](../../../core-concepts/authentication/client-session-tokens/). This token will be used to authenticate the user on your application.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# Create the user identity.
-user_identity = seam.user_identities.create(
-    email_address="jane@example.com"
-)
+{% tab title="JavaScript" %}
 
-# Create the client session.
-client_session = seam.client_sessions.create(
-    user_identity_ids=[user_identity.user_identity_id]
-)
+```javascript
+// Create the user identity.
+const userIdentity = await seam.userIdentities.create({
+    email_address: "jane@example.com"
+});
 
-# Use this token to launch your mobile controller.
-token = client_session.token
+// Create the client session.
+const clientSession = await seam.clientSessions.create({
+    user_identity_ids: [userIdentity.user_identity_id]
+});
+
+// Use this token to launch your mobile controller.
+const token = clientSession.token;
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 ```bash
 # Create the user identity.
 user_identity=$(curl -X 'POST' \
@@ -278,24 +280,26 @@ token=$(echo $client_session | jq -r '.client_session.token')
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```javascript
-// Create the user identity.
-const userIdentity = await seam.userIdentities.create({
-    email_address: "jane@example.com"
-});
+{% tab title="Python" %}
 
-// Create the client session.
-const clientSession = await seam.clientSessions.create({
-    user_identity_ids: [userIdentity.user_identity_id]
-});
+```python
+# Create the user identity.
+user_identity = seam.user_identities.create(
+    email_address="jane@example.com"
+)
 
-// Use this token to launch your mobile controller.
-const token = clientSession.token;
+# Create the client session.
+client_session = seam.client_sessions.create(
+    user_identity_ids=[user_identity.user_identity_id]
+)
+
+# Use this token to launch your mobile controller.
+token = client_session.token
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 ```ruby
 # Create the user identity.
 user_identity = client.user_identities.create(
@@ -313,6 +317,7 @@ token = client_session.token
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 // Create the user identity.
 $user_identity = $seam->user_identities->create(

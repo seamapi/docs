@@ -70,56 +70,8 @@ To control your Salto locks via the Seam API, you must first authorize your Seam
 #### Create a Connect Webview
 
 {% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-from seam import Seam
-
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
-
-connect_webview = seam.connect_webviews.create(accepted_providers=["salto_ks"])
-
-assert connect_webview.login_successful is False
-
-# Use the returned Connect Webview URL to display
-# the Connect Webview authorization flow to your user.
-print(connect_webview.url)
-```
-
-**Output:**
-
-```
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/connect_webviews/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "accepted_providers": ["salto_ks"]
-}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
-  "URL: " + .connect_webview.url'
-  # Use the returned Connect Webview URL to display
-  # the Connect Webview authorization flow to your user.
-```
-
-**Output:**
-
-```
-Login Successful (false): false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 **Code:**
 
 ```javascript
@@ -146,7 +98,59 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "accepted_providers": ["salto_ks"]
+}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
+  "URL: " + .connect_webview.url'
+  # Use the returned Connect Webview URL to display
+  # the Connect Webview authorization flow to your user.
+```
+
+**Output:**
+
+```
+Login Successful (false): false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+**Code:**
+
+```python
+from seam import Seam
+
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+
+connect_webview = seam.connect_webviews.create(accepted_providers=["salto_ks"])
+
+assert connect_webview.login_successful is False
+
+# Use the returned Connect Webview URL to display
+# the Connect Webview authorization flow to your user.
+print(connect_webview.url)
+```
+
+**Output:**
+
+```
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -174,6 +178,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -202,6 +207,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -245,15 +251,8 @@ During the authorization process, Seam adds an admin user to your Salto KS site.
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+{% tab title="JavaScript" %}
 
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -263,7 +262,17 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -272,6 +281,7 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
 assert($webview->status == 'pending');
@@ -284,21 +294,8 @@ assert($webview->status == 'pending');
 After a Salto account is linked with Seam, you can retrieve devices for this Salto account. The Seam API exposes most of the device's properties such as battery level.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-all_locks = seam.locks.list()
+{% tab title="JavaScript" %}
 
-some_lock = all_locks[0]
-
-assert some_lock.properties["online"] is True
-assert some_lock.properties["battery_level"] is True
-
-print(some_lock)
-# Device(device_id='681bf7bc-e7c6-48e6-acfe-6dbabd0615c5', device_type='salto_lock', location=None, properties={'locked': True, 'online': True, 'battery_level': 1, 'salto_metadata': {'model': 'wall_reader_pin', 'lock_id': 'lock_2', 'lock_type': 'wall_reader_pin', 'locked_state': 'locked', 'battery_level': 'fresh', 'customer_reference': 'BACK DOOR'}, 'has_direct_power': True, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'BACK DOOR'}, capabilities_supported=['access_code', 'lock'])
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -346,7 +343,23 @@ console.log(someLock)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["battery_level"] is True
+
+print(some_lock)
+# Device(device_id='681bf7bc-e7c6-48e6-acfe-6dbabd0615c5', device_type='salto_lock', location=None, properties={'locked': True, 'online': True, 'battery_level': 1, 'salto_metadata': {'model': 'wall_reader_pin', 'lock_id': 'lock_2', 'lock_type': 'wall_reader_pin', 'locked_state': 'locked', 'battery_level': 'fresh', 'customer_reference': 'BACK DOOR'}, 'has_direct_power': True, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'BACK DOOR'}, capabilities_supported=['access_code', 'lock'])
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -366,6 +379,7 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -404,21 +418,8 @@ Note that Salto KS disables this functionality by default and requires a special
 | device\_id | String |             |
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# lock the door
-seam.locks.lock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is True
+{% tab title="JavaScript" %}
 
-# Now unlock the door
-seam.locks.unlock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is False
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -432,7 +433,23 @@ console.log(updatedLock.properties.locked) // false
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# lock the door
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is True
+
+# Now unlock the door
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is False
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -447,6 +464,7 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -473,32 +491,8 @@ Salto does not let you specify a code for an access code. Instead Salto generate
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# create an ongoing code
-seam.access_codes.create(
-  device=some_lock,
-  name="Personal Access Code")
+{% tab title="JavaScript" %}
 
-# create a timebound code
-seam.access_codes.create(
-  device=some_lock,
-  name="My Temp Access Code",
-  starts_at="2028-08-12T19:23:42+0000",
-  ends_at="2028-08-13T19:23:42+0000")
-
-# you can use a device or a device_id as the "device" parameter
-seam.access_codes.list(device=some_lock)
-
-# [
-#   AccessCode(access_code_id='631a3a30-3fa7-462a-b3bc-65528ccf8765', type='time_bound', code=None, starts_at='2028-08-12T19:24:00.000Z', ends_at='2028-08-13T19:24:00.000Z', name='My Temp Access Code', status='unset', common_code_key=None),
-#  AccessCode(access_code_id='4d2f4952-5446-4051-ba7e-a6fc01a376d7', type='ongoing', code='59026', starts_at=None, ends_at=None, name='Personal Access Code', status='set', common_code_key=None)
-#  ]
-
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -553,7 +547,34 @@ await seam.accessCodes.list({
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# create an ongoing code
+seam.access_codes.create(
+  device=some_lock,
+  name="Personal Access Code")
+
+# create a timebound code
+seam.access_codes.create(
+  device=some_lock,
+  name="My Temp Access Code",
+  starts_at="2028-08-12T19:23:42+0000",
+  ends_at="2028-08-13T19:23:42+0000")
+
+# you can use a device or a device_id as the "device" parameter
+seam.access_codes.list(device=some_lock)
+
+# [
+#   AccessCode(access_code_id='631a3a30-3fa7-462a-b3bc-65528ccf8765', type='time_bound', code=None, starts_at='2028-08-12T19:24:00.000Z', ends_at='2028-08-13T19:24:00.000Z', name='My Temp Access Code', status='unset', common_code_key=None),
+#  AccessCode(access_code_id='4d2f4952-5446-4051-ba7e-a6fc01a376d7', type='ongoing', code='59026', starts_at=None, ends_at=None, name='Personal Access Code', status='set', common_code_key=None)
+#  ]
+
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -589,6 +610,7 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 

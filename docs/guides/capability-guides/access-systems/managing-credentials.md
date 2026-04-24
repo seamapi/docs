@@ -47,31 +47,33 @@ If you are creating card-based credentials, and your ACS requires card encoding,
 ### Create a PIN Code-based Credential
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.create(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  access_method="code",
-  code="824759"
-)
+```javascript
+await seam.acs.credentials.create({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  access_method: "code",
+  code: "824759"
+});
 ```
 
 **Response:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  code='824759',
-  access_method='code',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  code: '824759',
+  access_method: 'code',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -103,31 +105,33 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.create({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  access_method: "code",
-  code: "824759"
-});
+```python
+seam.acs.credentials.create(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  access_method="code",
+  code="824759"
+)
 ```
 
 **Response:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  code: '824759',
-  access_method: 'code',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  code='824759',
+  access_method='code',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -142,6 +146,7 @@ await seam.acs.credentials.create({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -166,6 +171,7 @@ $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -188,9 +194,6 @@ seam.CredentialsAcs.Create(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -200,30 +203,32 @@ seam.CredentialsAcs.Create(
 To create a plastic key card-based credential, set the `access_method` to `card`. Once you've created a credential, some access control systems require you to encode the card with the credential. To learn whether your ACS requires card encoding, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS. For card encoding instructions, see [Creating and Encoding Card-based Credentials](working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials.md).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.create(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  access_method="card",
-  code="123456"
-)
+```javascript
+await seam.acs.credentials.create({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  access_method: "card",
+  code: "123456"
+});
 ```
 
 **Response:**
 
-```
-AcsCredential(
-  acs_credential_id='77777777-7777-7777-7777-777777777777',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='card',
+```json
+{
+  acs_credential_id: '77777777-7777-7777-7777-777777777777',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'card',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -254,30 +259,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.create({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  access_method: "card",
-  code: "123456"
-});
+```python
+seam.acs.credentials.create(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  access_method="card",
+  code="123456"
+)
 ```
 
 **Response:**
 
-```json
-{
-  acs_credential_id: '77777777-7777-7777-7777-777777777777',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'card',
+```
+AcsCredential(
+  acs_credential_id='77777777-7777-7777-7777-777777777777',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='card',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -292,6 +299,7 @@ await seam.acs.credentials.create({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -315,6 +323,7 @@ $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -336,9 +345,6 @@ seam.CredentialsAcs.Create(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -348,27 +354,28 @@ seam.CredentialsAcs.Create(
 Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../mobile-access/) and [Issuing Mobile Credentials from an Access Control System](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
 {% hint style="info" %}
 This request contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```python
-seam.acs.credentials.create(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  allowed_acs_entrance_ids=[
+```javascript
+await seam.acs.credentials.create({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  allowed_acs_entrance_ids: [
     "55555555-5555-5555-5555-555555555555",
     "55555555-5555-5555-5555-000000000000"
   ],
-  credential_manager_acs_system_id="88888888-8888-8888-8888-888888888888",
-  access_method="mobile_key",
-  is_multi_phone_sync_credential=True,
-  starts_at="2024-03-01T10:40:00Z",
-  ends_at="2024-03-04T10:40:00Z",
+  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
+  access_method: "mobile_key",
+  is_multi_phone_sync_credential: true,
+  starts_at: "2024-03-01T10:40:00Z",
+  ends_at: "2024-03-04T10:40:00Z",
   ...
-)
+});
 ```
 
 **Response:**
@@ -377,18 +384,19 @@ seam.acs.credentials.create(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
-AcsCredential(
-  acs_credential_id='99999999-9999-9999-9999-999999999999',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='mobile_key',
-  is_multi_phone_sync_credential=True,
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'mobile_key',
+  is_multi_phone_sync_credential: true,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 {% hint style="info" %}
@@ -436,27 +444,28 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
 {% hint style="info" %}
 This request contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```javascript
-await seam.acs.credentials.create({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  allowed_acs_entrance_ids: [
+```python
+seam.acs.credentials.create(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  allowed_acs_entrance_ids=[
     "55555555-5555-5555-5555-555555555555",
     "55555555-5555-5555-5555-000000000000"
   ],
-  credential_manager_acs_system_id: "88888888-8888-8888-8888-888888888888",
-  access_method: "mobile_key",
-  is_multi_phone_sync_credential: true,
-  starts_at: "2024-03-01T10:40:00Z",
-  ends_at: "2024-03-04T10:40:00Z",
+  credential_manager_acs_system_id="88888888-8888-8888-8888-888888888888",
+  access_method="mobile_key",
+  is_multi_phone_sync_credential=True,
+  starts_at="2024-03-01T10:40:00Z",
+  ends_at="2024-03-04T10:40:00Z",
   ...
-});
+)
 ```
 
 **Response:**
@@ -465,18 +474,19 @@ await seam.acs.credentials.create({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
-{
-  acs_credential_id: '99999999-9999-9999-9999-999999999999',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'mobile_key',
-  is_multi_phone_sync_credential: true,
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='mobile_key',
+  is_multi_phone_sync_credential=True,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -491,6 +501,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 {% hint style="info" %}
@@ -531,6 +542,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 {% hint style="info" %}
@@ -570,9 +582,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -586,13 +595,14 @@ You can [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentia
 To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../capability-guides/access-systems/user-management.md), provide the `acs_user_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.list(
-  acs_user_id="33333333-3333-3333-3333-333333333333"
-)
+```javascript
+await seam.acs.credentials.list({
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+});
 ```
 
 **Response:**
@@ -601,19 +611,20 @@ seam.acs.credentials.list(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
+```json
 [
-  AcsCredential(
-    acs_credential_id='99999999-9999-9999-9999-999999999999',
-    acs_user_id='33333333-3333-3333-3333-333333333333',
+  {
+    acs_credential_id: '99999999-9999-9999-9999-999999999999',
+    acs_user_id: '33333333-3333-3333-3333-333333333333',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -649,13 +660,14 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.list({
-  acs_user_id: "33333333-3333-3333-3333-333333333333"
-});
+```python
+seam.acs.credentials.list(
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+)
 ```
 
 **Response:**
@@ -664,19 +676,20 @@ await seam.acs.credentials.list({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
+```
 [
-  {
-    acs_credential_id: '99999999-9999-9999-9999-999999999999',
-    acs_user_id: '33333333-3333-3333-3333-333333333333',
+  AcsCredential(
+    acs_credential_id='99999999-9999-9999-9999-999999999999',
+    acs_user_id='33333333-3333-3333-3333-333333333333',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -691,6 +704,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -718,6 +732,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -741,9 +756,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### List Credentials by User Identity
@@ -751,13 +763,14 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.list(
-  user_identity_id="22222222-2222-2222-2222-222222222222"
-)
+```javascript
+await seam.acs.credentials.list({
+  user_identity_id: "22222222-2222-2222-2222-222222222222"
+});
 ```
 
 **Response:**
@@ -766,19 +779,20 @@ seam.acs.credentials.list(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
+```json
 [
-  AcsCredential(
-    acs_credential_id='99999999-9999-9999-9999-999999999999',
-    acs_user_id='33333333-3333-3333-3333-333333333333',
+  {
+    acs_credential_id: '99999999-9999-9999-9999-999999999999',
+    acs_user_id: '33333333-3333-3333-3333-333333333333',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -814,13 +828,14 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.list({
-  user_identity_id: "22222222-2222-2222-2222-222222222222"
-});
+```python
+seam.acs.credentials.list(
+  user_identity_id="22222222-2222-2222-2222-222222222222"
+)
 ```
 
 **Response:**
@@ -829,19 +844,20 @@ await seam.acs.credentials.list({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
+```
 [
-  {
-    acs_credential_id: '99999999-9999-9999-9999-999999999999',
-    acs_user_id: '33333333-3333-3333-3333-333333333333',
+  AcsCredential(
+    acs_credential_id='99999999-9999-9999-9999-999999999999',
+    acs_user_id='33333333-3333-3333-3333-333333333333',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -856,6 +872,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -883,6 +900,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -906,9 +924,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -918,13 +933,14 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 To [get a credential](https://docs.seam.co/latest/api/acs/credentials/get), provide the `acs_credential_id` of the credential that you want to retrieve. These details include the user associated with the credential, the access method, the schedule for the credential, if applicable, and so on.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.get(
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
-)
+```javascript
+await seam.acs.credentials.get({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
 ```
 
 **Response:**
@@ -933,18 +949,19 @@ seam.acs.credentials.get(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
-AcsCredential(
-  acs_credential_id='99999999-9999-9999-9999-999999999999',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  access_method='mobile_key',
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_method: 'mobile_key',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -977,13 +994,14 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.get({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
-});
+```python
+seam.acs.credentials.get(
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
 ```
 
 **Response:**
@@ -992,18 +1010,19 @@ await seam.acs.credentials.get({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
-{
-  acs_credential_id: '99999999-9999-9999-9999-999999999999',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  access_method: 'mobile_key',
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_method='mobile_key',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -1018,6 +1037,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -1044,6 +1064,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -1068,9 +1089,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -1080,23 +1098,25 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 To [delete a credential](https://docs.seam.co/latest/api/acs/credentials/delete), provide the `acs_credential_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.delete(
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
-)
+```javascript
+await seam.acs.credentials.delete({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -1119,23 +1139,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.delete({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
-});
+```python
+seam.acs.credentials.delete(
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -1150,6 +1172,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -1166,6 +1189,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -1180,7 +1204,4 @@ seam.CredentialsAcs.Delete(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

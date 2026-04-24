@@ -25,48 +25,51 @@ To create a climate preset, issue a [`/thermostats/create_climate_preset`](https
 The following example creates two climate presets with the keys `occupied` and `unoccupied`:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the thermostat.
-thermostat = seam.devices.get(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
+```javascript
+// Get the thermostat.
+const thermostat = await seam.devices.get({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 
-# Confirm that the thermostat supports heat_cool mode
-# so that the climate presets can use this mode.
-if thermostat.can_hvac_heat_cool:
-  # Create the climate presets.
-  seam.thermostats.create_climate_preset(
-    device_id = thermostat.device_id,
-    climate_preset_key = "occupied",
-    name = "Occupied",
-    fan_mode_setting = "auto",
-    hvac_mode_setting = "heat_cool",
-    cooling_set_point_celsius = 25,
-    heating_set_point_celsius = 20
-  )
-  
-  seam.thermostats.create_climate_preset(
+// Confirm that the thermostat supports heat_cool mode
+// so that the climate presets can use this mode.
+if (thermostat.can_hvac_heat_cool) {
+  // Create the climate presets.
+  await seam.thermostats.createClimatePreset({
     device_id: thermostat.device_id,
-    climate_preset_key = "unoccupied",
-    name = "Unoccupied",
-    fan_mode_setting = "auto",
-    hvac_mode_setting = "heat_cool",
-    cooling_set_point_celsius = 30,
-    heating_set_point_celsius = 15
-  )  
+    climate_preset_key: "occupied",
+    name: "Occupied",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
+    cooling_set_point_celsius: 25,
+    heating_set_point_celsius: 20
+  });
+
+  await seam.thermostats.createClimatePreset({
+    device_id: thermostat.device_id,
+    climate_preset_key: "unoccupied",
+    name: "Unoccupied",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
+    cooling_set_point_celsius: 30,
+    heating_set_point_celsius: 15
+  });
+};
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -127,49 +130,50 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the thermostat.
-const thermostat = await seam.devices.get({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+```python
+# Get the thermostat.
+thermostat = seam.devices.get(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 
-// Confirm that the thermostat supports heat_cool mode
-// so that the climate presets can use this mode.
-if (thermostat.can_hvac_heat_cool) {
-  // Create the climate presets.
-  await seam.thermostats.createClimatePreset({
+# Confirm that the thermostat supports heat_cool mode
+# so that the climate presets can use this mode.
+if thermostat.can_hvac_heat_cool:
+  # Create the climate presets.
+  seam.thermostats.create_climate_preset(
+    device_id = thermostat.device_id,
+    climate_preset_key = "occupied",
+    name = "Occupied",
+    fan_mode_setting = "auto",
+    hvac_mode_setting = "heat_cool",
+    cooling_set_point_celsius = 25,
+    heating_set_point_celsius = 20
+  )
+  
+  seam.thermostats.create_climate_preset(
     device_id: thermostat.device_id,
-    climate_preset_key: "occupied",
-    name: "Occupied",
-    fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20
-  });
-
-  await seam.thermostats.createClimatePreset({
-    device_id: thermostat.device_id,
-    climate_preset_key: "unoccupied",
-    name: "Unoccupied",
-    fan_mode_setting: "auto",
-    hvac_mode_setting: "heat_cool",
-    cooling_set_point_celsius: 30,
-    heating_set_point_celsius: 15
-  });
-};
+    climate_preset_key = "unoccupied",
+    name = "Unoccupied",
+    fan_mode_setting = "auto",
+    hvac_mode_setting = "heat_cool",
+    cooling_set_point_celsius = 30,
+    heating_set_point_celsius = 15
+  )  
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -212,6 +216,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -254,6 +259,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -275,55 +281,57 @@ void
 To list climate presets for a thermostat, issue a [`/devices/get`](https://docs.seam.co/latest/api/devices/get) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.devices.get(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
+```javascript
+await seam.devices.get({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 ```
 
 **Response:**
 
-```
-Device(
-  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
-  properties={
-    'available_climate_presets': [
+```json
+{
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+  properties: {
+    available_climate_presets: [
       {
-        'climate_preset_key': 'occupied',
-        'cooling_set_point_celsius': 25,
-        'cooling_set_point_fahrenheit': 77,
-        'display_name': 'Occupied',
-        'fan_mode_setting': 'auto',
-        'heating_set_point_celsius': 20,
-        'heating_set_point_fahrenheit': 68,
-        'hvac_mode_setting': 'heat_cool',
-        'name': 'Occupied',
+        climate_preset_key: 'occupied',
+        name: 'Occupied',
+        display_name: 'Occupied',
+        fan_mode_setting: 'auto',
+        hvac_mode_setting: 'heat_cool',
+        cooling_set_point_celsius: 25,
+        heating_set_point_celsius: 20,
+        cooling_set_point_fahrenheit: 77,
+        heating_set_point_fahrenheit: 68,
         ...
       },
       {
-        'climate_preset_key': 'unoccupied',
-        'cooling_set_point_celsius': 30,
-        'cooling_set_point_fahrenheit': 86,
-        'display_name': 'Unoccupied',
-        'fan_mode_setting': 'auto',
-        'heating_set_point_celsius': 15,
-        'heating_set_point_fahrenheit': 59,
-        'hvac_mode_setting': 'heat_cool',
-        'name': 'Unoccupied',
+        climate_preset_key: 'unoccupied',
+        name: 'Unoccupied',
+        display_name: 'Unoccupied',
+        fan_mode_setting: 'auto',
+        hvac_mode_setting: 'heat_cool',
+        cooling_set_point_celsius: 30,
+        heating_set_point_celsius: 15,
+        cooling_set_point_fahrenheit: 86,
+        heating_set_point_fahrenheit: 59,
         ...
       }
     ],
     ...
   },
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -380,55 +388,57 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.devices.get({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+```python
+seam.devices.get(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
 ```
 
 **Response:**
 
-```json
-{
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  properties: {
-    available_climate_presets: [
+```
+Device(
+  device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
+  properties={
+    'available_climate_presets': [
       {
-        climate_preset_key: 'occupied',
-        name: 'Occupied',
-        display_name: 'Occupied',
-        fan_mode_setting: 'auto',
-        hvac_mode_setting: 'heat_cool',
-        cooling_set_point_celsius: 25,
-        heating_set_point_celsius: 20,
-        cooling_set_point_fahrenheit: 77,
-        heating_set_point_fahrenheit: 68,
+        'climate_preset_key': 'occupied',
+        'cooling_set_point_celsius': 25,
+        'cooling_set_point_fahrenheit': 77,
+        'display_name': 'Occupied',
+        'fan_mode_setting': 'auto',
+        'heating_set_point_celsius': 20,
+        'heating_set_point_fahrenheit': 68,
+        'hvac_mode_setting': 'heat_cool',
+        'name': 'Occupied',
         ...
       },
       {
-        climate_preset_key: 'unoccupied',
-        name: 'Unoccupied',
-        display_name: 'Unoccupied',
-        fan_mode_setting: 'auto',
-        hvac_mode_setting: 'heat_cool',
-        cooling_set_point_celsius: 30,
-        heating_set_point_celsius: 15,
-        cooling_set_point_fahrenheit: 86,
-        heating_set_point_fahrenheit: 59,
+        'climate_preset_key': 'unoccupied',
+        'cooling_set_point_celsius': 30,
+        'cooling_set_point_fahrenheit': 86,
+        'display_name': 'Unoccupied',
+        'fan_mode_setting': 'auto',
+        'heating_set_point_celsius': 15,
+        'heating_set_point_fahrenheit': 59,
+        'hvac_mode_setting': 'heat_cool',
+        'name': 'Unoccupied',
         ...
       }
     ],
     ...
   },
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -478,6 +488,7 @@ seam.devices.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -526,6 +537,7 @@ $seam->devices->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -547,25 +559,27 @@ $seam->devices->get(
 To update a climate preset, issue a [`/thermostats/update_climate_preset`](https://docs.seam.co/latest/api/thermostats/update_climate_preset) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.update_climate_preset(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key = "occupied",
-  cooling_set_point_celsius = 24
-)
+```javascript
+await seam.thermostats.updateClimatePreset({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied",
+  cooling_set_point_celsius: 24
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -590,25 +604,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.updateClimatePreset({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key: "occupied",
-  cooling_set_point_celsius: 24
-});
+```python
+seam.thermostats.update_climate_preset(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key = "occupied",
+  cooling_set_point_celsius = 24
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -627,6 +643,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -645,6 +662,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -666,24 +684,26 @@ void
 To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](https://docs.seam.co/latest/api/thermostats/delete_climate_preset) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.delete_climate_preset(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key = "occupied"
-)
+```javascript
+await seam.thermostats.deleteClimatePreset({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -707,24 +727,26 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.deleteClimatePreset({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key: "occupied"
-});
+```python
+seam.thermostats.delete_climate_preset(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key = "occupied"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -742,6 +764,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -759,6 +782,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```java

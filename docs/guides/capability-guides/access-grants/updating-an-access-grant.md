@@ -9,25 +9,27 @@ You can update the starting and ending times for an Access Grant.
 Note that you cannot update the access methods, entrances, or spaces associated with an Access Grant. To change these access characteristics, delete the Access Grant and recreate it.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.update(
-    access_grant_id="4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
-    starts_at="2025-06-19T18:01:32.000Z",
-    ends_at="2025-06-22T13:24:50.000Z",
-)
+```javascript
+await seam.accessGrants.update({
+  access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
+  starts_at: "2025-06-19T18:01:32.000Z",
+  ends_at: "2025-06-22T13:24:50.000Z",
+});
 ```
 
 **Output:**
 
-```python
-None
+```javascript
+// void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -49,25 +51,27 @@ EOF
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.update({
-  access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
-  starts_at: "2025-06-19T18:01:32.000Z",
-  ends_at: "2025-06-22T13:24:50.000Z",
-});
+```python
+seam.access_grants.update(
+    access_grant_id="4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
+    starts_at="2025-06-19T18:01:32.000Z",
+    ends_at="2025-06-22T13:24:50.000Z",
+)
 ```
 
 **Output:**
 
-```javascript
-// void
+```python
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -86,6 +90,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -103,6 +108,7 @@ $seam->access_grants->update(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

@@ -88,22 +88,8 @@ For Sandbox integrations, you can simply use `ABC123ABC` for both the API Key an
 #### Request a Connect Webview
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
+{% tab title="JavaScript" %}
 
-seam = Seam()
-
-webview = seam.connect_webviews.create(accepted_providers=["wyze"])
-
-assert webview.login_successful is False
-
-# Send the webview URL to your user
-print(webview.url)
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 import { Seam } from "seam";
 
@@ -120,7 +106,24 @@ console.log(connectWebview.url);
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["wyze"])
+
+assert webview.login_successful is False
+
+# Send the webview URL to your user
+print(webview.url)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -136,6 +139,7 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -162,15 +166,8 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+{% tab title="JavaScript" %}
 
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id
@@ -180,7 +177,17 @@ console.log(updatedWebview.login_successful); // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -189,6 +196,7 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
 assert($webview->status == 'pending');
@@ -201,19 +209,8 @@ assert($webview->status == 'pending');
 After a Wyze account is linked with Seam, you can retrieve its devices.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-all_locks = seam.locks.list()
+{% tab title="JavaScript" %}
 
-some_lock = all_locks[0]
-
-assert some_lock.properties["battery_level"] is True
-
-print(some_lock)
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const allLocks = await seam.locks.list();
 
@@ -225,7 +222,21 @@ console.log(someLock);
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["battery_level"] is True
+
+print(some_lock)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -237,6 +248,7 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -270,21 +282,8 @@ Next, you can perform the basic action of locking and unlocking the door.
 | device\_id | String |             |
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# lock the door
-seam.locks.lock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is True
+{% tab title="JavaScript" %}
 
-# Now unlock the door
-seam.locks.unlock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is False
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id);
@@ -298,7 +297,23 @@ console.log(updatedLock.properties.locked); // false
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# lock the door
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is True
+
+# Now unlock the door
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is False
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -313,6 +328,7 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -337,32 +353,8 @@ Wyze does not allow pin code values to be seen after the code is created. If you
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# create an ongoing code
-seam.access_codes.create(
-  device=some_lock,
-  name="Personal Access Code")
+{% tab title="JavaScript" %}
 
-# create a timebound code
-seam.access_codes.create(
-  device=some_lock,
-  name="My Temp Access Code",
-  starts_at="2028-08-12T19:23:42+0000",
-  ends_at="2028-08-13T19:23:42+0000")
-
-# you can use a device or a device_id as the "device" parameter
-seam.access_codes.list(device=some_lock)
-
-# [
-#   AccessCode(access_code_id='631a3a30-3fa7-462a-b3bc-65528ccf8765', type='time_bound', code=None, starts_at='2028-08-12T19:24:00.000Z', ends_at='2028-08-13T19:24:00.000Z', name='My Temp Access Code', status='unset', common_code_key=None),
-#  AccessCode(access_code_id='4d2f4952-5446-4051-ba7e-a6fc01a376d7', type='ongoing', code='123*12346', starts_at=None, ends_at=None, name='Personal Access Code', status='set', common_code_key=None)
-#  ]
-
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -417,7 +409,34 @@ await seam.accessCodes.list({
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# create an ongoing code
+seam.access_codes.create(
+  device=some_lock,
+  name="Personal Access Code")
+
+# create a timebound code
+seam.access_codes.create(
+  device=some_lock,
+  name="My Temp Access Code",
+  starts_at="2028-08-12T19:23:42+0000",
+  ends_at="2028-08-13T19:23:42+0000")
+
+# you can use a device or a device_id as the "device" parameter
+seam.access_codes.list(device=some_lock)
+
+# [
+#   AccessCode(access_code_id='631a3a30-3fa7-462a-b3bc-65528ccf8765', type='time_bound', code=None, starts_at='2028-08-12T19:24:00.000Z', ends_at='2028-08-13T19:24:00.000Z', name='My Temp Access Code', status='unset', common_code_key=None),
+#  AccessCode(access_code_id='4d2f4952-5446-4051-ba7e-a6fc01a376d7', type='ongoing', code='123*12346', starts_at=None, ends_at=None, name='Personal Access Code', status='set', common_code_key=None)
+#  ]
+
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -453,6 +472,7 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 

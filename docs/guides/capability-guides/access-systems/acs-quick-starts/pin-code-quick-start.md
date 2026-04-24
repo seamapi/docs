@@ -127,41 +127,43 @@ Create an ACS user within the virtual Salto KS access control system, and specif
 2. Create the ACS user, as follows:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-from seam import Seam
+```javascript
+import { Seam } from "seam";
 
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
-acs_user = seam.acs.users.create(
-  full_name = "June Doe",
-  # Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id = acs_system_id,
-  access_schedule = {
+const acsUser = await seam.acs.users.create({
+  full_name: "June Doe",
+  // Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id: acsSystemId,
+  access_schedule: {
     "starts_at": "2025-02-10T15:00:00.000Z",
     "ends_at": "2025-02-12T11:00:00.000Z"
   }
-)
+});
 ```
 
 **Output:**
 
-```
-AcsUser(
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  full_name='June Doe',
-  access_schedule={
-    'starts_at': '2025-02-10T15:00:00.000Z',
-    'ends_at': '2025-02-12T11:00:00.000Z'
+```json
+{
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  full_name: 'June Doe',
+  access_schedule: {
+    "starts_at": "2025-02-10T15:00:00.000Z",
+    "ends_at": "2025-02-12T11:00:00.000Z"
   },
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -199,41 +201,43 @@ acs_user=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-import { Seam } from "seam";
+```python
+from seam import Seam
 
-const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-const acsUser = await seam.acs.users.create({
-  full_name: "June Doe",
-  // Use the ACS system ID that you copied earlier from Seam Console.
-  acs_system_id: acsSystemId,
-  access_schedule: {
+acs_user = seam.acs.users.create(
+  full_name = "June Doe",
+  # Use the ACS system ID that you copied earlier from Seam Console.
+  acs_system_id = acs_system_id,
+  access_schedule = {
     "starts_at": "2025-02-10T15:00:00.000Z",
     "ends_at": "2025-02-12T11:00:00.000Z"
   }
-});
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  full_name: 'June Doe',
-  access_schedule: {
-    "starts_at": "2025-02-10T15:00:00.000Z",
-    "ends_at": "2025-02-12T11:00:00.000Z"
+```
+AcsUser(
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  full_name='June Doe',
+  access_schedule={
+    'starts_at': '2025-02-10T15:00:00.000Z',
+    'ends_at': '2025-02-12T11:00:00.000Z'
   },
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -268,6 +272,7 @@ acs_user = seam.acs.users.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -303,6 +308,7 @@ $acs_user = $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -334,25 +340,27 @@ Some other access control systems do not use access groups and, instead, specify
 2. Assign the ACS user to the Main Group, as follows:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.acs.users.add_to_access_group(
-  acs_user_id = acs_user.acs_user_id,
-  # Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id = access_group_id
-)
+```javascript
+await seam.acs.users.addToAccessGroup({
+  acs_user_id: acsUser.acs_user_id,
+  // Use the access group ID that you copied earlier from Seam Console.
+  acs_access_group_id: accessGroupId
+});
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -376,25 +384,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.acs.users.addToAccessGroup({
-  acs_user_id: acsUser.acs_user_id,
-  // Use the access group ID that you copied earlier from Seam Console.
-  acs_access_group_id: accessGroupId
-});
+```python
+seam.acs.users.add_to_access_group(
+  acs_user_id = acs_user.acs_user_id,
+  # Use the access group ID that you copied earlier from Seam Console.
+  acs_access_group_id = access_group_id
+)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -413,6 +423,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -431,6 +442,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -452,31 +464,33 @@ void
 Create a PIN code credential for the ACS user. After you create the credential, Salto KS generates the corresponding PIN code.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-pin_code_credential = seam.acs.credentials.create(
-  acs_user_id = acs_user.acs_user_id,
-  access_method = "code"
-)
+```javascript
+const pinCodeCredential = await seam.acs.credentials.create({
+  acs_user_id: acsUser.acs_user_id,
+  access_method: "code"
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  code='123456',
-  access_method='code',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  code: '123456',
+  access_method: 'code',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -507,31 +521,33 @@ pin_code_credential=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const pinCodeCredential = await seam.acs.credentials.create({
-  acs_user_id: acsUser.acs_user_id,
-  access_method: "code"
-});
+```python
+pin_code_credential = seam.acs.credentials.create(
+  acs_user_id = acs_user.acs_user_id,
+  access_method = "code"
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  code: '123456',
-  access_method: 'code',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  code='123456',
+  access_method='code',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -555,6 +571,7 @@ pin_code_credential = seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -579,6 +596,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

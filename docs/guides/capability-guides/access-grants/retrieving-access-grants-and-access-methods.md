@@ -18,24 +18,25 @@ You can also list all access methods for a specified Access Grant. In addition, 
 ## List Access Grants
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.list()
+```javascript
+await seam.accessGrants.list();
 ```
 
 **Output:**
 
-```python
+```javascript
 [
-  AccessGrant(
-    access_grant={
+  {
+    "access_grant": {
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -46,42 +47,37 @@ seam.access_grants.list()
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": [
-            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
-          ],
+          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": [
-              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
-          ],
+          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": [
-              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-          ],
+          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -152,24 +148,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.list();
+```python
+seam.access_grants.list()
 ```
 
 **Output:**
 
-```javascript
+```python
 [
-  {
-    "access_grant": {
+  AccessGrant(
+    access_grant={
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -180,36 +177,43 @@ await seam.accessGrants.list();
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
+          "created_access_method_ids": [
+            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
+          ],
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+          "created_access_method_ids": [
+              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+          ],
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+          "created_access_method_ids": [
+              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+          ],
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     }
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -264,6 +268,7 @@ seam.access_grants.list()
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -327,6 +332,7 @@ $seam->access_grants->list();
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -344,26 +350,27 @@ $seam->access_grants->list();
 ### List Access Grants for an Entrance
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.list(
-    acs_entrance_id="2673b363-4748-4a64-8075-f669c862ec74"
-)
+```javascript
+await seam.accessGrants.list({
+  acs_entrance_id: "2673b363-4748-4a64-8075-f669c862ec74"
+});
 ```
 
 **Output:**
 
-```python
+```javascript
 [
-  AccessGrant(
-    access_grant={
+  {
+    "access_grant": {
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -374,42 +381,37 @@ seam.access_grants.list(
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": [
-            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
-          ],
+          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": [
-              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
-          ],
+          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": [
-              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-          ],
+          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -482,26 +484,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.list({
-  acs_entrance_id: "2673b363-4748-4a64-8075-f669c862ec74"
-});
+```python
+seam.access_grants.list(
+    acs_entrance_id="2673b363-4748-4a64-8075-f669c862ec74"
+)
 ```
 
 **Output:**
 
-```javascript
+```python
 [
-  {
-    "access_grant": {
+  AccessGrant(
+    access_grant={
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -512,36 +515,43 @@ await seam.accessGrants.list({
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
+          "created_access_method_ids": [
+            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
+          ],
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+          "created_access_method_ids": [
+              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+          ],
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+          "created_access_method_ids": [
+              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+          ],
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     }
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -598,6 +608,7 @@ seam.access_grants.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -663,6 +674,7 @@ $seam->access_grants->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -680,26 +692,27 @@ $seam->access_grants->list(
 ### List Access Grants for an Access System
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.list(
-    acs_system_id="9f169742-048a-4105-84e3-bd1e0f9dc790"
-)
+```javascript
+await seam.accessGrants.list({
+  acs_system_id: "9f169742-048a-4105-84e3-bd1e0f9dc790"
+});
 ```
 
 **Output:**
 
-```python
+```javascript
 [
-  AccessGrant(
-    access_grant={
+  {
+    "access_grant": {
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -710,42 +723,37 @@ seam.access_grants.list(
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": [
-            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
-          ],
+          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": [
-              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
-          ],
+          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": [
-              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-          ],
+          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -818,26 +826,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.list({
-  acs_system_id: "9f169742-048a-4105-84e3-bd1e0f9dc790"
-});
+```python
+seam.access_grants.list(
+    acs_system_id="9f169742-048a-4105-84e3-bd1e0f9dc790"
+)
 ```
 
 **Output:**
 
-```javascript
+```python
 [
-  {
-    "access_grant": {
+  AccessGrant(
+    access_grant={
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -848,36 +857,43 @@ await seam.accessGrants.list({
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
+          "created_access_method_ids": [
+            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
+          ],
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+          "created_access_method_ids": [
+              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+          ],
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+          "created_access_method_ids": [
+              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+          ],
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     }
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -934,6 +950,7 @@ seam.access_grants.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -999,6 +1016,7 @@ $seam->access_grants->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1016,26 +1034,27 @@ $seam->access_grants->list(
 ### List Access Grants for a Space
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.list(
-  space_id="1d20c47d-3cc0-41ca-9917-bc798d071543"
-)
+```javascript
+await seam.accessGrants.list({
+  space_id: "1d20c47d-3cc0-41ca-9917-bc798d071543"
+});
 ```
 
 **Output:**
 
-```python
+```javascript
 [
-  AccessGrant(
-    access_grant={
+  {
+    "access_grant": {
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -1046,42 +1065,37 @@ seam.access_grants.list(
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": [
-            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
-          ],
+          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": [
-              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
-          ],
+          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": [
-              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-          ],
+          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -1154,26 +1168,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.list({
-  space_id: "1d20c47d-3cc0-41ca-9917-bc798d071543"
-});
+```python
+seam.access_grants.list(
+  space_id="1d20c47d-3cc0-41ca-9917-bc798d071543"
+)
 ```
 
 **Output:**
 
-```javascript
+```python
 [
-  {
-    "access_grant": {
+  AccessGrant(
+    access_grant={
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -1184,36 +1199,43 @@ await seam.accessGrants.list({
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
+          "created_access_method_ids": [
+            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
+          ],
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+          "created_access_method_ids": [
+              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+          ],
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+          "created_access_method_ids": [
+              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+          ],
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     }
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1270,6 +1292,7 @@ seam.access_grants.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1335,6 +1358,7 @@ $seam->access_grants->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1352,26 +1376,27 @@ $seam->access_grants->list(
 ### List Access Grants for a User Identity
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.list(
-    user_identity_id="f7620fcf-d92f-471e-b97e-3806daeebd40"
-)
+```javascript
+await seam.accessGrants.list({
+  user_identity_id: "f7620fcf-d92f-471e-b97e-3806daeebd40"
+});
 ```
 
 **Output:**
 
-```python
+```javascript
 [
-  AccessGrant(
-    access_grant={
+  {
+    "access_grant": {
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -1382,42 +1407,37 @@ seam.access_grants.list(
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": [
-            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
-          ],
+          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": [
-              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
-          ],
+          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": [
-              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-          ],
+          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
     }
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -1490,26 +1510,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.list({
-  user_identity_id: "f7620fcf-d92f-471e-b97e-3806daeebd40"
-});
+```python
+seam.access_grants.list(
+    user_identity_id="f7620fcf-d92f-471e-b97e-3806daeebd40"
+)
 ```
 
 **Output:**
 
-```javascript
+```python
 [
-  {
-    "access_grant": {
+  AccessGrant(
+    access_grant={
       "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
       "access_method_ids": [
         "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
         "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
       ],
       "created_at": "2025-06-16T16:54:17.946606Z",
       "display_name": "My Access Grant",
@@ -1520,36 +1541,43 @@ await seam.accessGrants.list({
           "display_name": "PIN Code",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
+          "created_access_method_ids": [
+            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
+          ],
         },
         {
           "display_name": "Plastic Card",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+          "created_access_method_ids": [
+              "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+          ],
         },
         {
           "display_name": "Mobile Key",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+          "created_access_method_ids": [
+              "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+          ],
         }
       ],
       "space_ids": [
         "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
       ],
       "starts_at": "2025-06-16T16:54:17.946606Z",
       "user_identity_id": "f7620fcf-d92f-471e-b97e-3806daeebd40",
-      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+      "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
     }
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1606,6 +1634,7 @@ seam.access_grants.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1671,6 +1700,7 @@ $seam->access_grants->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1690,47 +1720,51 @@ $seam->access_grants->list(
 ## List Access Methods for an Access Grant
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
+```javascript
+await seam.accessMethods.list({
+  access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b",
+});
 ```
 
 **Output:**
 
-```python
+```javascript
 [
-    AccessMethod(
-        access_method_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-        created_at="2025-06-16T16:54:17.946606Z",
-        display_name="PIN Code",
-        is_card_encoding_required=false,
-        mode="code",
-        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-    ),
-    AccessMethod(
-        access_method_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        created_at="2025-06-16T16:54:19.946606Z",
-        display_name="Plastic Card",
-        is_card_encoding_required=true,
-        mode="card",
-        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-    ),
-    AccessMethod(
-        access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-        created_at="2025-06-16T16:54:21.946606Z",
-        display_name="Mobile Key",
-        instant_key_url="https://ik.seam.co/ABCXYZ",
-        is_card_encoding_required=false,
-        mode="mobile_key",
-        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-    ),
+  {
+    "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+    "created_at": "2025-06-16T16:54:17.946606Z",
+    "display_name": "PIN Code",
+    "is_card_encoding_required": false,
+    "mode": "code",
+    "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+  },
+  {
+    "access_method_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+    "created_at": "2025-06-16T16:54:19.946606Z",
+    "display_name": "Plastic Card",
+    "is_card_encoding_required": true,
+    "mode": "card",
+    "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+  },
+  {
+    "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    "created_at": "2025-06-16T16:54:21.946606Z",
+    "display_name": "Mobile Key",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
+    "is_card_encoding_required": false,
+    "mode": "mobile_key",
+    "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+  }
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -1778,49 +1812,49 @@ EOF
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessMethods.list({
-  access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b",
-});
+```python
+seam.access_methods.list(access_grant_id="9072ebcd-95f3-4e4b-8f2f-10053911533b")
 ```
 
 **Output:**
 
-```javascript
+```python
 [
-  {
-    "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-    "created_at": "2025-06-16T16:54:17.946606Z",
-    "display_name": "PIN Code",
-    "is_card_encoding_required": false,
-    "mode": "code",
-    "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
-  },
-  {
-    "access_method_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-    "created_at": "2025-06-16T16:54:19.946606Z",
-    "display_name": "Plastic Card",
-    "is_card_encoding_required": true,
-    "mode": "card",
-    "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
-  },
-  {
-    "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-    "created_at": "2025-06-16T16:54:21.946606Z",
-    "display_name": "Mobile Key",
-    "instant_key_url": "https://ik.seam.co/ABCXYZ",
-    "is_card_encoding_required": false,
-    "mode": "mobile_key",
-    "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
-  }
+    AccessMethod(
+        access_method_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+        created_at="2025-06-16T16:54:17.946606Z",
+        display_name="PIN Code",
+        is_card_encoding_required=false,
+        mode="code",
+        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
+    ),
+    AccessMethod(
+        access_method_id="5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+        created_at="2025-06-16T16:54:19.946606Z",
+        display_name="Plastic Card",
+        is_card_encoding_required=true,
+        mode="card",
+        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
+    ),
+    AccessMethod(
+        access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        created_at="2025-06-16T16:54:21.946606Z",
+        display_name="Mobile Key",
+        instant_key_url="https://ik.seam.co/ABCXYZ",
+        is_card_encoding_required=false,
+        mode="mobile_key",
+        workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
+    ),
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1861,6 +1895,7 @@ seam.access_methods.list(access_grant_id: "9072ebcd-95f3-4e4b-8f2f-10053911533b"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1903,6 +1938,7 @@ $seam->access_methods->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1922,59 +1958,63 @@ $seam->access_methods->list(
 ## Get an Access Grant
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.get(access_grant_id="704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
+```javascript
+await seam.accessGrants.get({
+  access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
+});
 ```
 
 **Output:**
 
-```python
-AccessGrant(
-    access_grant_id="704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
-    access_method_ids=[
-        "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-        "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-    ],
-    created_at="2025-06-16T16:54:17.946606Z",
-    display_name="My Access Grant",
-    ends_at="2025-06-18T16:54:17.946606Z",
-    instant_key_url="https://ik.seam.co/ABCXYZ",
-    requested_access_methods=[
-        {
-            "display_name": "PIN Code",
-            "mode": "code",
-            "created_at": "2025-06-16T16:54:17.946606Z",
-            "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
-        },
-        {
-            "display_name": "Plastic Card",
-            "mode": "card",
-            "created_at": "2025-06-16T16:54:19.946606Z",
-            "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-        },
-        {
-            "display_name": "Mobile Key",
-            "mode": "mobile_key",
-            "created_at": "2025-06-16T16:54:21.946606Z",
-            "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-        },
-    ],
-    space_ids=[
-        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    ],
-    starts_at="2025-06-16T16:54:17.946606Z",
-    user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4",
-    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
-)
+```javascript
+{
+  "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
+  "access_method_ids": [
+    "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+    "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+    "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+  ],
+  "created_at": "2025-06-16T16:54:17.946606Z",
+  "display_name": "My Access Grant",
+  "ends_at": "2025-06-18T16:54:17.946606Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+  "requested_access_methods": [
+    {
+      "display_name": "PIN Code",
+      "mode": "code",
+      "created_at": "2025-06-16T16:54:17.946606Z",
+      "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
+    },
+    {
+      "display_name": "Plastic Card",
+      "mode": "card",
+      "created_at": "2025-06-16T16:54:19.946606Z",
+      "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+    },
+    {
+      "display_name": "Mobile Key",
+      "mode": "mobile_key",
+      "created_at": "2025-06-16T16:54:21.946606Z",
+      "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+    }
+  ],
+  "space_ids": [
+    "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+  ],
+  "starts_at": "2025-06-16T16:54:17.946606Z",
+  "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -2034,61 +2074,61 @@ EOF
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.get({
-  access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
-});
+```python
+seam.access_grants.get(access_grant_id="704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 ```
 
 **Output:**
 
-```javascript
-{
-  "access_grant_id": "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
-  "access_method_ids": [
-    "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-    "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-    "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-  ],
-  "created_at": "2025-06-16T16:54:17.946606Z",
-  "display_name": "My Access Grant",
-  "ends_at": "2025-06-18T16:54:17.946606Z",
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
-  "requested_access_methods": [
-    {
-      "display_name": "PIN Code",
-      "mode": "code",
-      "created_at": "2025-06-16T16:54:17.946606Z",
-      "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
-    },
-    {
-      "display_name": "Plastic Card",
-      "mode": "card",
-      "created_at": "2025-06-16T16:54:19.946606Z",
-      "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
-    },
-    {
-      "display_name": "Mobile Key",
-      "mode": "mobile_key",
-      "created_at": "2025-06-16T16:54:21.946606Z",
-      "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
-    }
-  ],
-  "space_ids": [
-    "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-    "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
-  ],
-  "starts_at": "2025-06-16T16:54:17.946606Z",
-  "user_identity_id": "e3d736c1-540d-4d10-83e5-9a4e135453b4",
-  "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
-}
+```python
+AccessGrant(
+    access_grant_id="704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
+    access_method_ids=[
+        "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+        "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+        "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    ],
+    created_at="2025-06-16T16:54:17.946606Z",
+    display_name="My Access Grant",
+    ends_at="2025-06-18T16:54:17.946606Z",
+    instant_key_url="https://ik.seam.co/ABCXYZ",
+    requested_access_methods=[
+        {
+            "display_name": "PIN Code",
+            "mode": "code",
+            "created_at": "2025-06-16T16:54:17.946606Z",
+            "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+        },
+        {
+            "display_name": "Plastic Card",
+            "mode": "card",
+            "created_at": "2025-06-16T16:54:19.946606Z",
+            "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+        },
+        {
+            "display_name": "Mobile Key",
+            "mode": "mobile_key",
+            "created_at": "2025-06-16T16:54:21.946606Z",
+            "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+        },
+    ],
+    space_ids=[
+        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+        "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+    ],
+    starts_at="2025-06-16T16:54:17.946606Z",
+    user_identity_id="e3d736c1-540d-4d10-83e5-9a4e135453b4",
+    workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -2138,6 +2178,7 @@ seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -2198,6 +2239,7 @@ $seam->access_grants->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -2217,29 +2259,33 @@ $seam->access_grants->get(
 ## Get an Access Method
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_methods.get(access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075")
+```javascript
+await seam.accessMethods.get({
+  access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075",
+});
 ```
 
 **Output:**
 
-```python
-AccessMethod(
-    access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075",
-    created_at="2025-06-14T16:54:17.946612Z",
-    display_name="My Mobile Key",
-    instant_key_url="https://ik.seam.co/ABCXYZ",
-    is_card_encoding_required=false,
-    mode="mobile_key",
-    workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
-)
+```javascript
+{
+  "access_method_id": "7410aea4-6bed-490c-a602-dd417d9cd075",
+  "created_at": "2025-06-14T16:54:17.946612Z",
+  "display_name": "My Mobile Key",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+  "is_card_encoding_required": false,
+  "mode": "mobile_key",
+  "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -2269,31 +2315,31 @@ EOF
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessMethods.get({
-  access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075",
-});
+```python
+seam.access_methods.get(access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075")
 ```
 
 **Output:**
 
-```javascript
-{
-  "access_method_id": "7410aea4-6bed-490c-a602-dd417d9cd075",
-  "created_at": "2025-06-14T16:54:17.946612Z",
-  "display_name": "My Mobile Key",
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
-  "is_card_encoding_required": false,
-  "mode": "mobile_key",
-  "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
-}
+```python
+AccessMethod(
+    access_method_id="7410aea4-6bed-490c-a602-dd417d9cd075",
+    created_at="2025-06-14T16:54:17.946612Z",
+    display_name="My Mobile Key",
+    instant_key_url="https://ik.seam.co/ABCXYZ",
+    is_card_encoding_required=false,
+    mode="mobile_key",
+    workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -2316,6 +2362,7 @@ seam.access_methods.get(access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -2340,6 +2387,7 @@ $seam->access_methods->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

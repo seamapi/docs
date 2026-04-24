@@ -11,24 +11,26 @@ Once you have created climate presets for a thermostat, you can set one of them 
 To set the fallback climate preset for a device, issue a [`/thermostats/set_fallback_climate_preset`](https://docs.seam.co/latest/api/thermostats/set_fallback_climate_preset) request and specify the `climate_preset_key` of the desired climate preset.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.thermostats.set_fallback_climate_preset(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key = "eco"
-)
+```javascript
+await seam.thermostats.setFallbackClimatePreset({
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "eco"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -52,24 +54,26 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.thermostats.setFallbackClimatePreset({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
-  climate_preset_key: "eco"
-});
+```python
+seam.thermostats.set_fallback_climate_preset(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key = "eco"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -84,6 +88,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -101,6 +106,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```java

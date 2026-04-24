@@ -68,22 +68,8 @@ To control your Igloohome locks via the Seam API, you must first authorize your 
 #### Request a Connect Webview
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
+{% tab title="JavaScript" %}
 
-seam = Seam()
-
-webview = seam.connect_webviews.create(accepted_providers=["igloohome"])
-
-assert webview.login_successful is False
-
-# Send the webview URL to your user
-print(webview.url)
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 import { Seam } from 'seam'
 
@@ -100,7 +86,24 @@ console.log(connectWebview.url)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["igloohome"])
+
+assert webview.login_successful is False
+
+# Send the webview URL to your user
+print(webview.url)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -116,6 +119,7 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -145,15 +149,8 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+{% tab title="JavaScript" %}
 
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -163,7 +160,17 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -172,6 +179,7 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -184,21 +192,8 @@ echo json_encode($webview);
 After an Igloohome account is linked with Seam, you can retrieve devices for this Igloohome account. The Seam API exposes most of the device's properties such as battery level.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-all_locks = seam.locks.list()
+{% tab title="JavaScript" %}
 
-some_lock = all_locks[0]
-
-assert some_lock.properties["online"] is True
-assert some_lock.properties["battery_level"] is True
-
-print(some_lock)
-# Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='igloohome_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'igloohome', 'battery_level': 0.86, 'igloohome_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'Office Lock'}, capabilities_supported=['access_code', 'lock'], errors=[])
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -234,7 +229,23 @@ console.log(someLock)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["battery_level"] is True
+
+print(some_lock)
+# Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='igloohome_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'igloohome', 'battery_level': 0.86, 'igloohome_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'Office Lock'}, capabilities_supported=['access_code', 'lock'], errors=[])
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -254,6 +265,7 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -288,21 +300,8 @@ Next, you can perform the basic action of locking and unlocking a door.
 | device\_id | String |             |
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# lock the door
-seam.locks.lock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is True
+{% tab title="JavaScript" %}
 
-# Now unlock the door
-seam.locks.unlock_door(device_id: some_lock.device_id)
-updated_lock = seam.locks.get(device_id: some_lock.device_id)
-assert updated_lock.properties["locked"] is False
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -316,7 +315,23 @@ console.log(updatedLock.properties.locked) // false
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# lock the door
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is True
+
+# Now unlock the door
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+assert updated_lock.properties["locked"] is False
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -331,6 +346,7 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -357,30 +373,8 @@ Igloohome pins have to be 4-6 digits long, and for time bound access codes, star
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# create an ongoing code
-seam.access_codes.create(
-  device=some_lock,
-  code="492332",
-  name="Personal Access Code")
+{% tab title="JavaScript" %}
 
-# create a timebound code
-seam.access_codes.create(
-  device=some_lock,
-  code="498882",
-  name="My Temp Access Code",
-  starts_at="2028-08-12T19:23:42+0000",
-  ends_at="2028-08-13T19:23:42+0000")
-
-# you can use a device or a device_id as the "device" parameter
-seam.access_codes.list(device=some_lock)
-
-
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -405,7 +399,32 @@ await seam.accessCodes.list({
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# create an ongoing code
+seam.access_codes.create(
+  device=some_lock,
+  code="492332",
+  name="Personal Access Code")
+
+# create a timebound code
+seam.access_codes.create(
+  device=some_lock,
+  code="498882",
+  name="My Temp Access Code",
+  starts_at="2028-08-12T19:23:42+0000",
+  ends_at="2028-08-13T19:23:42+0000")
+
+# you can use a device or a device_id as the "device" parameter
+seam.access_codes.list(device=some_lock)
+
+
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -426,6 +445,7 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 

@@ -7,21 +7,25 @@ description: Learn how to revoke an access method so that a user can no longer u
 To revoke an access method, delete it.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_methods.delete(access_method_id="3f10d86c-526b-4b85-8788-cc1a74411b71")
+```javascript
+await seam.accessMethods.delete({
+  access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b71",
+});
 ```
 
 **Output:**
 
-```python
-None
+```javascript
+// void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -41,23 +45,23 @@ EOF
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessMethods.delete({
-  access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b71",
-});
+```python
+seam.access_methods.delete(access_method_id="3f10d86c-526b-4b85-8788-cc1a74411b71")
 ```
 
 **Output:**
 
-```javascript
-// void
+```python
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -72,6 +76,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -87,6 +92,7 @@ $seam->access_methods->delete(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

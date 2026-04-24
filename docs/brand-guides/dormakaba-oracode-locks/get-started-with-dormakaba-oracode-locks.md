@@ -78,22 +78,8 @@ This guide discusses using a Seam sandbox workspace with virtual devices. Howeve
 #### Request a Connect Webview
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-webview = seam.connect_webviews.create(accepted_providers=["dormakaba_oracode"])
-
-assert webview.login_successful is False
-
-# Send the Connect Webview URL to your user.
-print(webview.url)
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from 'seam'
 
@@ -110,7 +96,24 @@ console.log(connectWebview.url)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["dormakaba_oracode"])
+
+assert webview.login_successful is False
+
+# Send the Connect Webview URL to your user.
+print(webview.url)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -126,6 +129,7 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -151,15 +155,8 @@ Navigate to the URL that the Connect Webview object returned. Because you are us
 Confirm the Connect Webview was successful by querying the status.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
-
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -169,7 +166,17 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -178,6 +185,7 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
 assert($webview->status == 'pending');
@@ -190,19 +198,8 @@ assert($webview->status == 'pending');
 After a dormakaba Oracode account is linked with Seam, you can retrieve the connected devices.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-all_locks = seam.locks.list()
-
-some_lock = all_locks[0]
-
-assert some_lock.properties["battery_level"] is True
-
-print(some_lock)
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -215,7 +212,21 @@ console.log(someLock)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["battery_level"] is True
+
+print(some_lock)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -227,6 +238,7 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 

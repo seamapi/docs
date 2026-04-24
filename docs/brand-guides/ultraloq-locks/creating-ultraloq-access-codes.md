@@ -36,25 +36,8 @@ To create access codes for an Ultraloq device:
 Permanent access codes work indefinitely until you delete them. They **do not require timezone configuration**.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-# Create permanent access code
-access_code = seam.access_codes.create(
-  device_id="your-device-id",
-  name="Maintenance Team",
-  code="1234"  # Optional: auto-generated if omitted
-)
-
-print(f"Access code created: {access_code.code}")
-print(f"Status: {access_code.status}")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -72,7 +55,43 @@ console.log(`Status: ${accessCode.status}`);
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "device_id": "your-device-id",
+    "name": "Maintenance Team",
+    "code": "1234"
+  }'
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+# Create permanent access code
+access_code = seam.access_codes.create(
+  device_id="your-device-id",
+  name="Maintenance Team",
+  code="1234"  # Optional: auto-generated if omitted
+)
+
+print(f"Access code created: {access_code.code}")
+print(f"Status: {access_code.status}")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -91,6 +110,7 @@ puts "Status: #{access_code.status}"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -112,6 +132,7 @@ echo "Status: " . $accessCode->status . "\n";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 
@@ -130,6 +151,7 @@ Console.WriteLine($"Status: {accessCode.Status}");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
@@ -149,21 +171,6 @@ System.out.println("Access code created: " + accessCode.getCode());
 System.out.println("Status: " + accessCode.getStatus());
 ```
 {% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_codes/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "device_id": "your-device-id",
-    "name": "Maintenance Team",
-    "code": "1234"
-  }'
-```
-{% endtab %}
 {% endtabs %}
 
 ***
@@ -179,7 +186,56 @@ Time-bound access codes automatically activate and deactivate at specified times
 {% endhint %}
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```javascript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+// Define time range in UTC
+const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);  // Tomorrow
+const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000);  // +2 days
+
+// Create time-bound access code
+const accessCode = await seam.accessCodes.create({
+  device_id: "your-device-id",
+  name: "Weekend Guest",
+  code: "5678",  // Optional: auto-generated if omitted
+  starts_at: startsAt.toISOString(),
+  ends_at: endsAt.toISOString()
+});
+
+console.log(`Access code created: ${accessCode.code}`);
+console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`);
+console.log(`Status: ${accessCode.status}`);
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+```bash
+# Calculate timestamps (requires date command)
+STARTS_AT=$(date -u -d '+1 day' '+%Y-%m-%dT%H:%M:%SZ')
+ENDS_AT=$(date -u -d '+3 days' '+%Y-%m-%dT%H:%M:%SZ')
+
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"your-device-id\",
+    \"name\": \"Weekend Guest\",
+    \"code\": \"5678\",
+    \"starts_at\": \"${STARTS_AT}\",
+    \"ends_at\": \"${ENDS_AT}\"
+  }"
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```python
 from seam import Seam
 from datetime import datetime, timedelta
@@ -205,32 +261,8 @@ print(f"Status: {access_code.status}")
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```javascript
-import { Seam } from "seam";
-
-const seam = new Seam();
-
-// Define time range in UTC
-const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);  // Tomorrow
-const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000);  // +2 days
-
-// Create time-bound access code
-const accessCode = await seam.accessCodes.create({
-  device_id: "your-device-id",
-  name: "Weekend Guest",
-  code: "5678",  // Optional: auto-generated if omitted
-  starts_at: startsAt.toISOString(),
-  ends_at: endsAt.toISOString()
-});
-
-console.log(`Access code created: ${accessCode.code}`);
-console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`);
-console.log(`Status: ${accessCode.status}`);
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 require "time"
@@ -257,6 +289,7 @@ puts "Status: #{access_code.status}"
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -285,6 +318,7 @@ echo "Status: " . $accessCode->status . "\n";
 {% endtab %}
 
 {% tab title="C#" %}
+
 ```csharp
 using Seam.Client;
 using System;
@@ -311,6 +345,7 @@ Console.WriteLine($"Status: {accessCode.Status}");
 {% endtab %}
 
 {% tab title="Java" %}
+
 ```java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
@@ -337,27 +372,6 @@ AccessCode accessCode = seam.accessCodes().create(
 System.out.println("Access code created: " + accessCode.getCode());
 System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCode.getEndsAt());
 System.out.println("Status: " + accessCode.getStatus());
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-```bash
-# Calculate timestamps (requires date command)
-STARTS_AT=$(date -u -d '+1 day' '+%Y-%m-%dT%H:%M:%SZ')
-ENDS_AT=$(date -u -d '+3 days' '+%Y-%m-%dT%H:%M:%SZ')
-
-curl -X 'POST' \
-  'https://connect.getseam.com/access_codes/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-    \"device_id\": \"your-device-id\",
-    \"name\": \"Weekend Guest\",
-    \"code\": \"5678\",
-    \"starts_at\": \"${STARTS_AT}\",
-    \"ends_at\": \"${ENDS_AT}\"
-  }"
 ```
 {% endtab %}
 {% endtabs %}
@@ -430,38 +444,8 @@ Ultraloq access codes must be:
 Before creating time-bound access codes, verify that the device's timezone is configured:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-def can_create_time_bound_codes(device_id):
-  device = seam.devices.get(device_id=device_id)
-
-  # Check for timezone warning
-  has_timezone_warning = any(
-    w.warning_code == "ultraloq_time_zone_unknown"
-    for w in device.warnings
-  )
-
-  return not has_timezone_warning
-
-# Check before creating
-if can_create_time_bound_codes("your-device-id"):
-  # Safe to create time-bound codes
-  access_code = seam.access_codes.create(
-    device_id="your-device-id",
-    starts_at="...",
-    ends_at="..."
-  )
-else:
-  print("Configure device timezone first")
-  print("See: Configuring Ultraloq Device Timezones")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -493,7 +477,40 @@ if (await canCreateTimeBoundCodes("your-device-id")) {
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+def can_create_time_bound_codes(device_id):
+  device = seam.devices.get(device_id=device_id)
+
+  # Check for timezone warning
+  has_timezone_warning = any(
+    w.warning_code == "ultraloq_time_zone_unknown"
+    for w in device.warnings
+  )
+
+  return not has_timezone_warning
+
+# Check before creating
+if can_create_time_bound_codes("your-device-id"):
+  # Safe to create time-bound codes
+  access_code = seam.access_codes.create(
+    device_id="your-device-id",
+    starts_at="...",
+    ends_at="..."
+  )
+else:
+  print("Configure device timezone first")
+  print("See: Configuring Ultraloq Device Timezones")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -526,6 +543,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -572,29 +590,8 @@ Users can disable access codes through the Ultraloq mobile app. When this happen
 ### Detecting Disabled Codes
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
-
-seam = Seam()
-
-access_code = seam.access_codes.get(
-  access_code_id="your-access-code-id"
-)
-
-# Check for disabled warning
-is_disabled = any(
-  w.warning_code == "ultraloq_access_code_disabled"
-  for w in access_code.warnings
-)
-
-if is_disabled:
-  print("⚠️ Code is disabled on Ultraloq device")
-  print("User must re-enable it in the Ultraloq mobile app")
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 ```javascript
 import { Seam } from "seam";
 
@@ -616,7 +613,31 @@ if (isDisabled) {
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+access_code = seam.access_codes.get(
+  access_code_id="your-access-code-id"
+)
+
+# Check for disabled warning
+is_disabled = any(
+  w.warning_code == "ultraloq_access_code_disabled"
+  for w in access_code.warnings
+)
+
+if is_disabled:
+  print("⚠️ Code is disabled on Ultraloq device")
+  print("User must re-enable it in the Ultraloq mobile app")
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -639,6 +660,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 <?php
 require 'vendor/autoload.php';

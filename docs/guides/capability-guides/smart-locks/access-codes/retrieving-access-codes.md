@@ -11,65 +11,67 @@ description: >-
 To retrieve all access codes for a device, include the `device_id` in the [List Access Codes](https://docs.seam.co/latest/api/access_codes/list) request.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-access_codes = seam.access_codes.list(device=device_id)
-
-pprint(access_codes)
+```javascript
+console.log(await seam.accessCodes.list({
+  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+}))
 ```
 
 **Response:**
 
-```
-[AccessCode(access_code_id='1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b',
-            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-            type='time_bound',
-            code='2345',
-            created_at='2023-10-19T02:21:58.738Z',
-            errors=[],
-            warnings=[],
-            starts_at='2025-01-01T16:00:00.000Z',
-            ends_at='2025-01-22T12:00:00.000Z',
-            name='my time-bound code',
-            status='unset',
-            common_code_key=None,
-            is_managed=True,
-            is_waiting_for_code_assignment=None,
-            is_scheduled_on_device=False,
-            pulled_backup_access_code_id=None,
-            is_backup_access_code_available=False,
-            is_backup=None,
-            appearance=None,
-            is_external_modification_allowed=False),
- AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
-            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-            type='ongoing',
-            code='1234',
-            created_at='2023-10-19T02:15:04.911Z',
-            errors=[],
-            warnings=[],
-            starts_at=None,
-            ends_at=None,
-            name='my ongoing code',
-            status='set',
-            common_code_key=None,
-            is_managed=True,
-            is_waiting_for_code_assignment=None,
-            is_scheduled_on_device=None,
-            pulled_backup_access_code_id=None,
-            is_backup_access_code_available=False,
-            is_backup=None,
-            appearance={'first_name': 'my',
-                        'last_name': 'ongoing code',
-                        'name': 'my ongoing code'},
-            is_external_modification_allowed=False)]
+```json
+[
+  {
+    access_code_id: '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
+    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+    name: 'my time-bound code',
+    appearance: null,
+    code: '2345',
+    common_code_key: null,
+    type: 'time_bound',
+    status: 'unset',
+    is_scheduled_on_device: false,
+    starts_at: '2025-01-01T16:00:00.000Z',
+    ends_at: '2025-01-22T12:00:00.000Z',
+    pulled_backup_access_code_id: null,
+    is_backup_access_code_available: true,
+    created_at: '2023-10-19T09:36:51.663Z',
+    errors: [],
+    warnings: [],
+    is_managed: true,
+    is_external_modification_allowed: false
+  },
+  {
+    access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+    name: 'my ongoing code',
+    appearance: {
+      name: 'my ongoing code',
+      last_name: 'ongoing code',
+      first_name: 'my'
+    },
+    code: '1234',
+    common_code_key: null,
+    type: 'ongoing',
+    status: 'set',
+    pulled_backup_access_code_id: null,
+    is_backup_access_code_available: true,
+    created_at: '2023-10-19T09:30:58.399Z',
+    errors: [],
+    warnings: [],
+    is_managed: true,
+    is_external_modification_allowed: false
+  }
+]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -136,65 +138,67 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-console.log(await seam.accessCodes.list({
-  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-}))
+```python
+device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+access_codes = seam.access_codes.list(device=device_id)
+
+pprint(access_codes)
 ```
 
 **Response:**
 
-```json
-[
-  {
-    access_code_id: '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my time-bound code',
-    appearance: null,
-    code: '2345',
-    common_code_key: null,
-    type: 'time_bound',
-    status: 'unset',
-    is_scheduled_on_device: false,
-    starts_at: '2025-01-01T16:00:00.000Z',
-    ends_at: '2025-01-22T12:00:00.000Z',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:36:51.663Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
-  },
-  {
-    access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my ongoing code',
-    appearance: {
-      name: 'my ongoing code',
-      last_name: 'ongoing code',
-      first_name: 'my'
-    },
-    code: '1234',
-    common_code_key: null,
-    type: 'ongoing',
-    status: 'set',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:30:58.399Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
-  }
-]
+```
+[AccessCode(access_code_id='1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b',
+            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+            type='time_bound',
+            code='2345',
+            created_at='2023-10-19T02:21:58.738Z',
+            errors=[],
+            warnings=[],
+            starts_at='2025-01-01T16:00:00.000Z',
+            ends_at='2025-01-22T12:00:00.000Z',
+            name='my time-bound code',
+            status='unset',
+            common_code_key=None,
+            is_managed=True,
+            is_waiting_for_code_assignment=None,
+            is_scheduled_on_device=False,
+            pulled_backup_access_code_id=None,
+            is_backup_access_code_available=False,
+            is_backup=None,
+            appearance=None,
+            is_external_modification_allowed=False),
+ AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
+            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+            type='ongoing',
+            code='1234',
+            created_at='2023-10-19T02:15:04.911Z',
+            errors=[],
+            warnings=[],
+            starts_at=None,
+            ends_at=None,
+            name='my ongoing code',
+            status='set',
+            common_code_key=None,
+            is_managed=True,
+            is_waiting_for_code_assignment=None,
+            is_scheduled_on_device=None,
+            pulled_backup_access_code_id=None,
+            is_backup_access_code_available=False,
+            is_backup=None,
+            appearance={'first_name': 'my',
+                        'last_name': 'ongoing code',
+                        'name': 'my ongoing code'},
+            is_external_modification_allowed=False)]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -242,6 +246,7 @@ puts client.access_codes.list(device_id: device_id).inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -295,6 +300,7 @@ echo json_encode($access_codes, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -322,7 +328,6 @@ Type: Ongoing
 Code: 1234
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ***
@@ -332,68 +337,68 @@ Code: 1234
 To retrieve access codes by IDs, include the desired `access_code_ids` in the [List Access Codes](https://docs.seam.co/latest/api/access_codes/list) request.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-access_code_ids = [
-    "1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b",
-    "daf89de3-ad3a-49aa-93bd-25f27d58f699"
-]
-access_codes = seam.access_codes.list(access_codes=access_code_ids)
-
-pprint(access_codes)
+```javascript
+const accessCodeIds = ['80aa1afa-f0e5-43c2-96ea-6ab141112f9c', 'f4780806-076e-4cec-8081-df0ea2139d5a']
+console.log(await seam.accessCodes.list({
+  access_code_ids: accessCodeIds
+}))
 ```
 
 **Response:**
 
-```
-[AccessCode(access_code_id='1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b',
-            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-            type='time_bound',
-            code='2345',
-            created_at='2023-10-19T02:21:58.738Z',
-            errors=[],
-            warnings=[],
-            starts_at='2025-01-01T16:00:00.000Z',
-            ends_at='2025-01-22T12:00:00.000Z',
-            name='my time-bound code',
-            status='unset',
-            common_code_key=None,
-            is_managed=True,
-            is_waiting_for_code_assignment=None,
-            is_scheduled_on_device=False,
-            pulled_backup_access_code_id=None,
-            is_backup_access_code_available=False,
-            is_backup=None,
-            appearance=None,
-            is_external_modification_allowed=False),
- AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
-            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-            type='ongoing',
-            code='1234',
-            created_at='2023-10-19T02:15:04.911Z',
-            errors=[],
-            warnings=[],
-            starts_at=None,
-            ends_at=None,
-            name='my ongoing code',
-            status='set',
-            common_code_key=None,
-            is_managed=True,
-            is_waiting_for_code_assignment=None,
-            is_scheduled_on_device=None,
-            pulled_backup_access_code_id=None,
-            is_backup_access_code_available=False,
-            is_backup=None,
-            appearance={'first_name': 'my',
-                        'last_name': 'ongoing code',
-                        'name': 'my ongoing code'},
-            is_external_modification_allowed=False)]
+```json
+[
+  {
+    access_code_id: '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
+    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+    name: 'my time-bound code',
+    appearance: null,
+    code: '2345',
+    common_code_key: null,
+    type: 'time_bound',
+    status: 'unset',
+    is_scheduled_on_device: false,
+    starts_at: '2025-01-01T16:00:00.000Z',
+    ends_at: '2025-01-22T12:00:00.000Z',
+    pulled_backup_access_code_id: null,
+    is_backup_access_code_available: true,
+    created_at: '2023-10-19T09:36:51.663Z',
+    errors: [],
+    warnings: [],
+    is_managed: true,
+    is_external_modification_allowed: false
+  },
+  {
+    access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+    name: 'my ongoing code',
+    appearance: {
+      name: 'my ongoing code',
+      last_name: 'ongoing code',
+      first_name: 'my'
+    },
+    code: '1234',
+    common_code_key: null,
+    type: 'ongoing',
+    status: 'set',
+    pulled_backup_access_code_id: null,
+    is_backup_access_code_available: true,
+    created_at: '2023-10-19T09:30:58.399Z',
+    errors: [],
+    warnings: [],
+    is_managed: true,
+    is_external_modification_allowed: false
+  }
+]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -463,66 +468,70 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const accessCodeIds = ['80aa1afa-f0e5-43c2-96ea-6ab141112f9c', 'f4780806-076e-4cec-8081-df0ea2139d5a']
-console.log(await seam.accessCodes.list({
-  access_code_ids: accessCodeIds
-}))
+```python
+access_code_ids = [
+    "1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b",
+    "daf89de3-ad3a-49aa-93bd-25f27d58f699"
+]
+access_codes = seam.access_codes.list(access_codes=access_code_ids)
+
+pprint(access_codes)
 ```
 
 **Response:**
 
-```json
-[
-  {
-    access_code_id: '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my time-bound code',
-    appearance: null,
-    code: '2345',
-    common_code_key: null,
-    type: 'time_bound',
-    status: 'unset',
-    is_scheduled_on_device: false,
-    starts_at: '2025-01-01T16:00:00.000Z',
-    ends_at: '2025-01-22T12:00:00.000Z',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:36:51.663Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
-  },
-  {
-    access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my ongoing code',
-    appearance: {
-      name: 'my ongoing code',
-      last_name: 'ongoing code',
-      first_name: 'my'
-    },
-    code: '1234',
-    common_code_key: null,
-    type: 'ongoing',
-    status: 'set',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:30:58.399Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
-  }
-]
+```
+[AccessCode(access_code_id='1bbd1eba-e4a2-4f96-b1b9-8498a5405b2b',
+            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+            type='time_bound',
+            code='2345',
+            created_at='2023-10-19T02:21:58.738Z',
+            errors=[],
+            warnings=[],
+            starts_at='2025-01-01T16:00:00.000Z',
+            ends_at='2025-01-22T12:00:00.000Z',
+            name='my time-bound code',
+            status='unset',
+            common_code_key=None,
+            is_managed=True,
+            is_waiting_for_code_assignment=None,
+            is_scheduled_on_device=False,
+            pulled_backup_access_code_id=None,
+            is_backup_access_code_available=False,
+            is_backup=None,
+            appearance=None,
+            is_external_modification_allowed=False),
+ AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
+            device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+            type='ongoing',
+            code='1234',
+            created_at='2023-10-19T02:15:04.911Z',
+            errors=[],
+            warnings=[],
+            starts_at=None,
+            ends_at=None,
+            name='my ongoing code',
+            status='set',
+            common_code_key=None,
+            is_managed=True,
+            is_waiting_for_code_assignment=None,
+            is_scheduled_on_device=None,
+            pulled_backup_access_code_id=None,
+            is_backup_access_code_available=False,
+            is_backup=None,
+            appearance={'first_name': 'my',
+                        'last_name': 'ongoing code',
+                        'name': 'my ongoing code'},
+            is_external_modification_allowed=False)]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -571,12 +580,14 @@ puts access_codes.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 /** not implemented; contact us if you need immediate support **/
 ```
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -607,7 +618,6 @@ Type: Ongoing
 Code: 1234
 ```
 {% endtab %}
-
 {% endtabs %}
 
 ***
@@ -617,45 +627,45 @@ Code: 1234
 To retrieve a specific access code, include the desired `access_code_id` in the [Get Access Code](https://docs.seam.co/latest/api/access_codes/get) request.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-access_code_id = "daf89de3-ad3a-49aa-93bd-25f27d58f699"
-access_code = seam.access_codes.get(access_code_id)
-
-pprint(access_code)
+```javascript
+console.log(await seam.accessCodes.get({
+  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
+}))
 ```
 
 **Response:**
 
-```
-AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
-           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-           type='ongoing',
-           code='1234',
-           created_at='2023-10-19T02:15:04.911Z',
-           errors=[],
-           warnings=[],
-           starts_at=None,
-           ends_at=None,
-           name='my ongoing code',
-           status='set',
-           common_code_key=None,
-           is_managed=True,
-           is_waiting_for_code_assignment=None,
-           is_scheduled_on_device=None,
-           pulled_backup_access_code_id=None,
-           is_backup_access_code_available=False,
-           is_backup=None,
-           appearance={'first_name': 'my',
-                       'last_name': 'ongoing code',
-                       'name': 'my ongoing code'},
-           is_external_modification_allowed=False)
+```json
+{
+  access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my ongoing code',
+  appearance: {
+    name: 'my ongoing code',
+    last_name: 'ongoing code',
+    first_name: 'my'
+  },
+  code: '1234',
+  common_code_key: null,
+  type: 'ongoing',
+  status: 'set',
+  pulled_backup_access_code_id: null,
+  is_backup_access_code_available: true,
+  created_at: '2023-10-19T09:30:58.399Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: false
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -700,43 +710,47 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-console.log(await seam.accessCodes.get({
-  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
-}))
+```python
+access_code_id = "daf89de3-ad3a-49aa-93bd-25f27d58f699"
+access_code = seam.access_codes.get(access_code_id)
+
+pprint(access_code)
 ```
 
 **Response:**
 
-```json
-{
-  access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'my ongoing code',
-  appearance: {
-    name: 'my ongoing code',
-    last_name: 'ongoing code',
-    first_name: 'my'
-  },
-  code: '1234',
-  common_code_key: null,
-  type: 'ongoing',
-  status: 'set',
-  pulled_backup_access_code_id: null,
-  is_backup_access_code_available: true,
-  created_at: '2023-10-19T09:30:58.399Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: false
-}
+```
+AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='ongoing',
+           code='1234',
+           created_at='2023-10-19T02:15:04.911Z',
+           errors=[],
+           warnings=[],
+           starts_at=None,
+           ends_at=None,
+           name='my ongoing code',
+           status='set',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=None,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=False,
+           is_backup=None,
+           appearance={'first_name': 'my',
+                       'last_name': 'ongoing code',
+                       'name': 'my ongoing code'},
+           is_external_modification_allowed=False)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -765,6 +779,7 @@ puts client.access_codes.get(access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc4
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 use Seam\SeamClient;
 
@@ -799,6 +814,7 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -818,5 +834,4 @@ Type: Ongoing
 Code: 1234
 ```
 {% endtab %}
-
 {% endtabs %}

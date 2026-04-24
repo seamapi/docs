@@ -13,28 +13,30 @@ You can also use unique resource keys as an easy way to link your resources to S
 If the associated [Connect Webview](../connect-webviews/) contains custom metadata, Seam transfers this custom metadata as the initial value for this property. However, you can use the [Update Connected Account](https://docs.seam.co/latest/api/connected_accounts/update) method with the optional `custom_metadata` property to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-connected_account_update = seam.connected_accounts.update(
-    connected_account_id = "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
-    custom_metadata = {
-        "internal_account_id": "user-1"
-    }
-)
+```javascript
+const connectedAccountUpdate = await seam.connectedAccounts.update({
+  connected_account_id: "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
+  custom_metadata: {
+    "internal_account_id": "user-1"
+  }
+})
 
-pprint(connected_account_update)
+console.log(connectedAccountUpdate)
 ```
 
 **Response:**
 
-```
-True
+```json
+{ ok: true }
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -60,28 +62,30 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const connectedAccountUpdate = await seam.connectedAccounts.update({
-  connected_account_id: "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
-  custom_metadata: {
-    "internal_account_id": "user-1"
-  }
-})
+```python
+connected_account_update = seam.connected_accounts.update(
+    connected_account_id = "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
+    custom_metadata = {
+        "internal_account_id": "user-1"
+    }
+)
 
-console.log(connectedAccountUpdate)
+pprint(connected_account_update)
 ```
 
 **Response:**
 
-```json
-{ ok: true }
+```
+True
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -103,6 +107,7 @@ puts connected_account_update.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -123,6 +128,7 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp

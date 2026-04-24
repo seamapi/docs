@@ -11,36 +11,41 @@ Seam enables you to configure the [noise thresholds](./#what-is-a-threshold) of 
 First, create a threshold using the [Create a Noise Threshold](https://docs.seam.co/latest/api/noise_sensors/noise_thresholds/create) endpoint. For example:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device_id = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa"
+```javascript
+const deviceId = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa"
 
-noise_threshold = seam.noise_sensors.noise_thresholds.create(
-    device_id = device_id,
-    starts_daily_at = "20:00:00[America/Los_Angeles]",
-    ends_daily_at = "06:00:00[America/Los_Angeles]",
-    noise_threshold_decibels = 70
-)
+const noiseThresholdAttempt = await seam.noiseThresholds.create({
+  device_id: deviceId,
+  starts_daily_at: "20:00:00[America/Los_Angeles]",
+  ends_daily_at: "06:00:00[America/Los_Angeles]",
+  noise_threshold_decibels: 70
+})
 
-pprint(noise_threshold)
+console.log(noiseThresholdAttempt)
 ```
 
 **Response:**
 
-```
-NoiseThreshold(noise_threshold_id='1b64e4b6-4d5d-4416-acca-dc3b1cbc00cd',
-               device_id='98dc7c66-045d-49cb-a62b-4bb431b0a9fa',
-               name='builtin_quiet_hours',
-               noise_threshold_decibels=70,
-               starts_daily_at='20:00:00[America/Los_Angeles]',
-               ends_daily_at='06:00:00[America/Los_Angeles]',
-               noise_threshold_nrs=None)
+```json
+{
+  action_attempt: {
+    status: 'pending',
+    action_type: 'CREATE_NOISE_THRESHOLD',
+    action_attempt_id: '5e24ef90-8043-44d8-89f9-9f7ae60ec390',
+    result: null,
+    error: null
+  },
+  ok: true
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -73,39 +78,38 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const deviceId = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa"
+```python
+device_id = "98dc7c66-045d-49cb-a62b-4bb431b0a9fa"
 
-const noiseThresholdAttempt = await seam.noiseThresholds.create({
-  device_id: deviceId,
-  starts_daily_at: "20:00:00[America/Los_Angeles]",
-  ends_daily_at: "06:00:00[America/Los_Angeles]",
-  noise_threshold_decibels: 70
-})
+noise_threshold = seam.noise_sensors.noise_thresholds.create(
+    device_id = device_id,
+    starts_daily_at = "20:00:00[America/Los_Angeles]",
+    ends_daily_at = "06:00:00[America/Los_Angeles]",
+    noise_threshold_decibels = 70
+)
 
-console.log(noiseThresholdAttempt)
+pprint(noise_threshold)
 ```
 
 **Response:**
 
-```json
-{
-  action_attempt: {
-    status: 'pending',
-    action_type: 'CREATE_NOISE_THRESHOLD',
-    action_attempt_id: '5e24ef90-8043-44d8-89f9-9f7ae60ec390',
-    result: null,
-    error: null
-  },
-  ok: true
-}
+```
+NoiseThreshold(noise_threshold_id='1b64e4b6-4d5d-4416-acca-dc3b1cbc00cd',
+               device_id='98dc7c66-045d-49cb-a62b-4bb431b0a9fa',
+               name='builtin_quiet_hours',
+               noise_threshold_decibels=70,
+               starts_daily_at='20:00:00[America/Los_Angeles]',
+               ends_daily_at='06:00:00[America/Los_Angeles]',
+               noise_threshold_nrs=None)
 ```
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -134,7 +138,6 @@ Result:
 Error:
 ```
 {% endtab %}
-
 {% endtabs %}
 
 This threshold creates a noise threshold of 70 decibels from 20:00-06:00 PST called `builtin_quiet_hours`.

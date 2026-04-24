@@ -21,32 +21,34 @@ This topic describes how to deliver the various access method modes.
 You can retrieve the access method by ID. The returned access method resource includes the `code` that you can share with your user.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_methods.get(
-  access_method_id = "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-)
+```javascript
+await seam.accessMethods.get({
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+});
 ```
 
 **Output:**
 
-```
-AccessMethod(
-  access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479",
-  display_name="PIN Code",
-  mode="code",
-  created_at="2025-06-16T16:54:19.946606Z",
-  is_issued=true,
-  issued_at="2025-06-16T16:55:03.924353Z",
-  code="1234",
+```json
+{
+  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "display_name": "PIN Code",
+  "mode": "code",
+  "created_at": "2025-06-16T16:54:19.946606Z",
+  "is_issued": true,
+  "issued_at": "2025-06-16T16:55:03.924353Z",
+  "code": "1234",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -79,32 +81,34 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessMethods.get({
-  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-});
+```python
+seam.access_methods.get(
+  access_method_id = "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-  "display_name": "PIN Code",
-  "mode": "code",
-  "created_at": "2025-06-16T16:54:19.946606Z",
-  "is_issued": true,
-  "issued_at": "2025-06-16T16:55:03.924353Z",
-  "code": "1234",
+```
+AccessMethod(
+  access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  display_name="PIN Code",
+  mode="code",
+  created_at="2025-06-16T16:54:19.946606Z",
+  is_issued=true,
+  issued_at="2025-06-16T16:55:03.924353Z",
+  code="1234",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -130,6 +134,7 @@ seam.access_methods.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -155,6 +160,7 @@ $seam->access_methods->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -184,33 +190,35 @@ Once you've encoded the card, the access method's `is_encoding_required` propert
 You deliver a mobile key to your user within your own mobile app that you develop using the Seam mobile SDKs. For mobile keys, the access method includes a `client_session_id` property that you can use to identify the client session and client session token that you need to initialize the Seam client on your user's mobile device. Then, your user simply taps a button in your app to unlock the door. For details, see [Mobile Access](../mobile-access/).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_methods.get(
-  access_method_id = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
-)
+```javascript
+await seam.accessMethods.get({
+  access_method_id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+});
 ```
 
 **Output:**
 
-```
-AccessMethod(
-  access_method_id="6ba7b810-9dad-11d1-80b4-00c04fd430c8",
-  display_name="Mobile Key",
-  mode="mobile_key",
-  created_at="2025-06-16T16:54:19.946606Z",
-  is_issued=true,
-  issued_at="2025-06-16T16:55:03.924353Z",
-  client_session_id="3f2504e0-4f89-11d3-9a0c-0305e82c3301",
-  instant_key_url="https://ik.seam.co/ABCXYZ",
+```json
+{
+  "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+  "display_name": "Mobile Key",
+  "mode": "mobile_key",
+  "created_at": "2025-06-16T16:54:19.946606Z",
+  "is_issued": true,
+  "issued_at": "2025-06-16T16:55:03.924353Z",
+  "client_session_id": "3f2504e0-4f89-11d3-9a0c-0305e82c3301",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -244,33 +252,35 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessMethods.get({
-  access_method_id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
-});
+```python
+seam.access_methods.get(
+  access_method_id = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
-  "display_name": "Mobile Key",
-  "mode": "mobile_key",
-  "created_at": "2025-06-16T16:54:19.946606Z",
-  "is_issued": true,
-  "issued_at": "2025-06-16T16:55:03.924353Z",
-  "client_session_id": "3f2504e0-4f89-11d3-9a0c-0305e82c3301",
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+```
+AccessMethod(
+  access_method_id="6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+  display_name="Mobile Key",
+  mode="mobile_key",
+  created_at="2025-06-16T16:54:19.946606Z",
+  is_issued=true,
+  issued_at="2025-06-16T16:55:03.924353Z",
+  client_session_id="3f2504e0-4f89-11d3-9a0c-0305e82c3301",
+  instant_key_url="https://ik.seam.co/ABCXYZ",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -297,6 +307,7 @@ seam.access_methods.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -323,6 +334,7 @@ $seam->access_methods->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

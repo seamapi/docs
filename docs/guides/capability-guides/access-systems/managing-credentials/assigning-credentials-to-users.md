@@ -15,14 +15,15 @@ This guide explains how to assign existing [credentials](./) to [ACS users](../u
 To [assign a credential to an ACS user](https://docs.seam.co/latest/api/acs/credentials/assign), provide both the `acs_user_id` and the `acs_credential_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.assign(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
-)
+```javascript
+await seam.acs.credentials.assign({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
 ```
 
 **Response:**
@@ -31,23 +32,24 @@ seam.acs.credentials.assign(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
-AcsCredential(
-  acs_credential_id='99999999-9999-9999-9999-999999999999',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  display_name='Multi Phone Sync Credential',
-  code=null,
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  access_method='mobile_key',
-  workspace_id='00000000-0000-0000-0000-000000000000',
-  created_at='2024-04-12T03:56:22.396Z',
-  is_multi_phone_sync_credential=True,
-  # manufacturer-specific metadata
-)
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  display_name: 'Multi Phone Sync Credential',
+  code: null,
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_method: 'mobile_key',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  created_at: '2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential: true,
+  // manufacturer-specific metadata
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -86,14 +88,15 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.assign({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
-});
+```python
+seam.acs.credentials.assign(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
 ```
 
 **Response:**
@@ -102,23 +105,24 @@ await seam.acs.credentials.assign({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
-{
-  acs_credential_id: '99999999-9999-9999-9999-999999999999',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  display_name: 'Multi Phone Sync Credential',
-  code: null,
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  access_method: 'mobile_key',
-  workspace_id: '00000000-0000-0000-0000-000000000000',
-  created_at: '2024-04-12T03:56:22.396Z',
-  is_multi_phone_sync_credential: true,
-  // manufacturer-specific metadata
-}
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  display_name='Multi Phone Sync Credential',
+  code=null,
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_method='mobile_key',
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  created_at='2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential=True,
+  # manufacturer-specific metadata
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -133,6 +137,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -165,6 +170,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -195,9 +201,6 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -207,14 +210,15 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 To [unassign a credential from an ACS user](https://docs.seam.co/latest/api/acs/credentials/unassign), provide both the `acs_user_id` and the `acs_credential_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.unassign(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
-)
+```javascript
+await seam.acs.credentials.unassign({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
 ```
 
 **Response:**
@@ -223,23 +227,24 @@ seam.acs.credentials.unassign(
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```
-AcsCredential(
-  acs_credential_id='99999999-9999-9999-9999-999999999999',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  display_name='Multi Phone Sync Credential',
-  code=null,
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  access_method='mobile_key',
-  workspace_id='00000000-0000-0000-0000-000000000000',
-  created_at='2024-04-12T03:56:22.396Z',
-  is_multi_phone_sync_credential=True,
-  # manufacturer-specific metadata
-)
+```json
+{
+  acs_credential_id: '99999999-9999-9999-9999-999999999999',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  display_name: 'Multi Phone Sync Credential',
+  code: null,
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_method: 'mobile_key',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  created_at: '2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential: true,
+  // manufacturer-specific metadata
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -278,14 +283,15 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.unassign({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
-});
+```python
+seam.acs.credentials.unassign(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
 ```
 
 **Response:**
@@ -294,23 +300,24 @@ await seam.acs.credentials.unassign({
 This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 {% endhint %}
 
-```json
-{
-  acs_credential_id: '99999999-9999-9999-9999-999999999999',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  display_name: 'Multi Phone Sync Credential',
-  code: null,
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  access_method: 'mobile_key',
-  workspace_id: '00000000-0000-0000-0000-000000000000',
-  created_at: '2024-04-12T03:56:22.396Z',
-  is_multi_phone_sync_credential: true,
-  // manufacturer-specific metadata
-}
+```
+AcsCredential(
+  acs_credential_id='99999999-9999-9999-9999-999999999999',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  display_name='Multi Phone Sync Credential',
+  code=null,
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_method='mobile_key',
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  created_at='2024-04-12T03:56:22.396Z',
+  is_multi_phone_sync_credential=True,
+  # manufacturer-specific metadata
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -325,6 +332,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -357,6 +365,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -387,7 +396,4 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -15,23 +15,25 @@ You can suspend an ACS user to revoke their access temporarily. Suspending an AC
 To [suspend an ACS user](https://docs.seam.co/latest/api/acs/users/suspend), provide the `acs_user_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.suspend(
-  acs_user_id="33333333-3333-3333-3333-333333333333"
-)
+```javascript
+await seam.acs.users.suspend({
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -54,23 +56,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.suspend({
-  acs_user_id: "33333333-3333-3333-3333-333333333333"
-});
+```python
+seam.acs.users.suspend(
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -85,6 +89,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -101,6 +106,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -115,9 +121,6 @@ seam.UsersAcs.Suspend(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -127,23 +130,25 @@ void
 To [unsuspend an ACS user](https://docs.seam.co/latest/api/acs/users/unsuspend), provide the `acs_user_id`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.unsuspend(
-  acs_user_id="33333333-3333-3333-3333-333333333333"
-)
+```javascript
+await seam.acs.users.unsuspend({
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -166,23 +171,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.unsuspend({
-  acs_user_id: "33333333-3333-3333-3333-333333333333"
-});
+```python
+seam.acs.users.unsuspend(
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -197,6 +204,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -213,6 +221,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -227,7 +236,4 @@ seam.UsersAcs.Unsuspend(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

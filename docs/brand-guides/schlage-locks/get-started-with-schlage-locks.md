@@ -70,22 +70,8 @@ To control your Schlage lock via the Seam API, you must first authorize your Sea
 #### Request a Connect Webview
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
+{% tab title="JavaScript" %}
 
-seam = Seam()
-
-webview = seam.connect_webviews.create(accepted_providers=["schlage"])
-
-assert webview.login_successful is False
-
-# Send the webview URL to your user
-print(webview.url)
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 import { Seam } from 'seam'
 
@@ -102,7 +88,24 @@ console.log(connectWebview.url)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["schlage"])
+
+assert webview.login_successful is False
+
+# Send the webview URL to your user
+print(webview.url)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -133,15 +136,8 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+{% tab title="JavaScript" %}
 
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -151,7 +147,17 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -165,33 +171,8 @@ puts updated_webview.login_successful # true
 After a Schlage account is linked with Seam, you can retrieve devices for this Schlage account. The Seam API exposes most of the device's properties such as battery level or door lock status.
 
 {% tabs %}
-{% tab title="Python" %}
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`python all\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_locks = seam.locks.list()
+{% tab title="JavaScript" %}
 
-some\_lock = all\_locks\[0]
-
-assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
-
-print(some\_lock)
-
-```python
-# Device(device_id='e2d95c42-b2bf-4d07-9211-7407d9c90c73',
-#   device_type='schlage_lock',
-#   location=None,
-#   properties={
-#     'locked': True,
-#     'online': True,
-#     'manufacturer': 'schlage',
-#     'battery_level': 0.48,
-#     'schlage_metadata': {'device_id': 'device-1', 'device_name': 'FRONT DOOR', 'access_code_length': 4}, 'name': 'FRONT DOOR'
-#   },
-#   capabilities_supported=['access_code', 'lock'])
-```
-
-````
-{% endtab %}
-
-{% tab title="Javascript" %}
 `
 
 ``javascript
@@ -478,6 +459,33 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co. If you would like help
+````
+{% endtab %}
+
+{% tab title="Python" %}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`python all\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_locks = seam.locks.list()
+
+some\_lock = all\_locks\[0]
+
+assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
+
+print(some\_lock)
+
+```python
+# Device(device_id='e2d95c42-b2bf-4d07-9211-7407d9c90c73',
+#   device_type='schlage_lock',
+#   location=None,
+#   properties={
+#     'locked': True,
+#     'online': True,
+#     'manufacturer': 'schlage',
+#     'battery_level': 0.48,
+#     'schlage_metadata': {'device_id': 'device-1', 'device_name': 'FRONT DOOR', 'access_code_length': 4}, 'name': 'FRONT DOOR'
+#   },
+#   capabilities_supported=['access_code', 'lock'])
+```
+
 ````
 {% endtab %}
 {% endtabs %}

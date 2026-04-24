@@ -13,27 +13,29 @@ You can update any active or upcoming access codes using the [Update Access Code
 When modifying an access code, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_codes.update(
-  access_code = "11111111-1111-1111-1111-555555555555",
-  name = "my updated code name",
-  code = "5432",
-  starts_at = "2025-02-01T16:00:00Z",
-  ends_at = "2025-02-22T12:00:00Z"
-)
+```javascript
+await seam.accessCodes.update({
+  access_code_id: "11111111-1111-1111-1111-555555555555",
+  name: "my updated code name",
+  starts_at: "2025-02-01T16:00:00Z",
+  ends_at: "2025-02-22T12:00:00Z",
+  code: "5432"
+})
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -60,27 +62,29 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessCodes.update({
-  access_code_id: "11111111-1111-1111-1111-555555555555",
-  name: "my updated code name",
-  starts_at: "2025-02-01T16:00:00Z",
-  ends_at: "2025-02-22T12:00:00Z",
-  code: "5432"
-})
+```python
+seam.access_codes.update(
+  access_code = "11111111-1111-1111-1111-555555555555",
+  name = "my updated code name",
+  code = "5432",
+  starts_at = "2025-02-01T16:00:00Z",
+  ends_at = "2025-02-22T12:00:00Z"
+)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -103,6 +107,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -123,6 +128,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -141,9 +147,6 @@ seam.AccessCodes.Update(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ## 2. Verify that the access code has been updated
@@ -187,69 +190,71 @@ However, if you receive `access_code.failed_to_set_on_device` or `access_code.de
 To convert a permanent access code to time-bound access, you must set the `starts_at` and `ends_at` properties to the timeframe that you want for the access code.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **1. Confirm that the access code starts as an ongoing code.**
 
 **Code:**
 
-```python
-access_code = seam.access_codes.get(
-  access_code_id = "11111111-1111-1111-1111-555555555555"
-)
+```javascript
+await seam.accessCodes.get({
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+});
 ```
 
 **Output:**
 
-```
-AccessCode(
-  access_code_id='11111111-1111-1111-1111-555555555555',
-  type='ongoing',
+```json
+{
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  type: 'ongoing',
   ...
-)
+}
 ```
 
 **2. Update the code to set `starts_at` and `ends_at` timestamps.**
 
 **Code:**
 
-```python
-seam.access_codes.update(
-  access_code = "11111111-1111-1111-1111-555555555555",
-  starts_at = "2025-01-01T16:00:00Z",
-  ends_at = "2025-01-22T12:00:00Z"
-)
+```javascript
+await seam.accessCodes.update({
+  access_code_id: "11111111-1111-1111-1111-555555555555",
+  starts_at: "2025-02-01T16:00:00Z",
+  ends_at: "2025-02-22T12:00:00Z"
+});
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 
 **3. Confirm that the `type` has changed to `time_bound`.**
 
 **Code:**
 
-```python
-seam.access_codes.get(
-  access_code_id = "11111111-1111-1111-1111-555555555555"
-)
+```javascript
+await seam.accessCodes.get({
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+});
 ```
 
 **Output:**
 
-```
-AccessCode(
-  access_code_id='11111111-1111-1111-1111-555555555555',
-  type='time_bound',
-  starts_at='2025-01-01T16:00:00.000Z',
-  ends_at='2025-01-22T12:00:00.000Z',
+```json
+{
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  type: 'time_bound',
+  starts_at: '2025-02-01T16:00:00.000Z',
+  ends_at: '2025-02-22T12:00:00.000Z',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **1. Confirm that the access code starts as an ongoing code.**
 
 **Request:**
@@ -336,69 +341,71 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **1. Confirm that the access code starts as an ongoing code.**
 
 **Code:**
 
-```javascript
-await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+```python
+access_code = seam.access_codes.get(
+  access_code_id = "11111111-1111-1111-1111-555555555555"
+)
 ```
 
 **Output:**
 
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-555555555555',
-  type: 'ongoing',
+```
+AccessCode(
+  access_code_id='11111111-1111-1111-1111-555555555555',
+  type='ongoing',
   ...
-}
+)
 ```
 
 **2. Update the code to set `starts_at` and `ends_at` timestamps.**
 
 **Code:**
 
-```javascript
-await seam.accessCodes.update({
-  access_code_id: "11111111-1111-1111-1111-555555555555",
-  starts_at: "2025-02-01T16:00:00Z",
-  ends_at: "2025-02-22T12:00:00Z"
-});
+```python
+seam.access_codes.update(
+  access_code = "11111111-1111-1111-1111-555555555555",
+  starts_at = "2025-01-01T16:00:00Z",
+  ends_at = "2025-01-22T12:00:00Z"
+)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 
 **3. Confirm that the `type` has changed to `time_bound`.**
 
 **Code:**
 
-```javascript
-await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+```python
+seam.access_codes.get(
+  access_code_id = "11111111-1111-1111-1111-555555555555"
+)
 ```
 
 **Output:**
 
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-555555555555',
-  type: 'time_bound',
-  starts_at: '2025-02-01T16:00:00.000Z',
-  ends_at: '2025-02-22T12:00:00.000Z',
+```
+AccessCode(
+  access_code_id='11111111-1111-1111-1111-555555555555',
+  type='time_bound',
+  starts_at='2025-01-01T16:00:00.000Z',
+  ends_at='2025-01-22T12:00:00.000Z',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **1. Confirm that the access code starts as an ongoing code.**
 
 **Code:**
@@ -463,6 +470,7 @@ client.access_codes.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **1. Confirm that the access code starts as an ongoing code.**
 
 **Code:**
@@ -527,6 +535,7 @@ $seam->access_codes->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **1. Confirm that the access code starts as an ongoing code.**
 
 **Code:**
@@ -589,9 +598,6 @@ seam.AccessCodes.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -601,68 +607,70 @@ seam.AccessCodes.Get(
 When converting a time-bound code to a permanent one, you'll also need to set the `type` property of the access code to `ongoing`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **1. Confirm that the access code starts as a time-bound code.**
 
 **Code:**
 
-```python
-seam.access_codes.get(
-  access_code_id = "11111111-1111-1111-1111-555555555555"
-)
+```javascript
+await seam.accessCodes.get({
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+});
 ```
 
 **Output:**
 
-```
-AccessCode(
-  access_code_id='11111111-1111-1111-1111-555555555555',
-  type='time_bound',
-  starts_at='2025-01-01T16:00:00.000Z',
-  ends_at='2025-01-22T12:00:00.000Z',
+```json
+{
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  type: 'time_bound',
+  starts_at: '2025-02-01T16:00:00.000Z',
+  ends_at: '2025-02-22T12:00:00.000Z',
   ...
-)
+}
 ```
 
 **2. Update the code to set the `type` to `ongoing`.**
 
 **Code:**
 
-```python
-seam.access_codes.update(
-  access_code_id = "11111111-1111-1111-1111-555555555555",
-  type = "ongoing"
-)
+```javascript
+await seam.accessCodes.update({
+  access_code_id: "11111111-1111-1111-1111-555555555555",
+  type: "ongoing"
+});
 ```
 
 **Output:**
 
-```
-None
+```json
+void
 ```
 
 **3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
 
 **Code:**
 
-```python
-seam.access_codes.get(
-  access_code_id = "11111111-1111-1111-1111-555555555555"
-)
+```javascript
+await seam.accessCodes.get({
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+});
 ```
 
 **Output:**
 
-```
-AccessCode(
-  access_code_id='11111111-1111-1111-1111-555555555555',
-  type='ongoing',
+```json
+{
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  type: 'ongoing',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **1. Confirm that the access code starts as a time-bound code.**
 
 **Request:**
@@ -748,68 +756,70 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **1. Confirm that the access code starts as a time-bound code.**
 
 **Code:**
 
-```javascript
-await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+```python
+seam.access_codes.get(
+  access_code_id = "11111111-1111-1111-1111-555555555555"
+)
 ```
 
 **Output:**
 
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-555555555555',
-  type: 'time_bound',
-  starts_at: '2025-02-01T16:00:00.000Z',
-  ends_at: '2025-02-22T12:00:00.000Z',
+```
+AccessCode(
+  access_code_id='11111111-1111-1111-1111-555555555555',
+  type='time_bound',
+  starts_at='2025-01-01T16:00:00.000Z',
+  ends_at='2025-01-22T12:00:00.000Z',
   ...
-}
+)
 ```
 
 **2. Update the code to set the `type` to `ongoing`.**
 
 **Code:**
 
-```javascript
-await seam.accessCodes.update({
-  access_code_id: "11111111-1111-1111-1111-555555555555",
-  type: "ongoing"
-});
+```python
+seam.access_codes.update(
+  access_code_id = "11111111-1111-1111-1111-555555555555",
+  type = "ongoing"
+)
 ```
 
 **Output:**
 
-```json
-void
+```
+None
 ```
 
 **3. Confirm that the `type` has changed to `ongoing` and the `starts_at` and `ends_at` are `None`.**
 
 **Code:**
 
-```javascript
-await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+```python
+seam.access_codes.get(
+  access_code_id = "11111111-1111-1111-1111-555555555555"
+)
 ```
 
 **Output:**
 
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-555555555555',
-  type: 'ongoing',
+```
+AccessCode(
+  access_code_id='11111111-1111-1111-1111-555555555555',
+  type='ongoing',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **1. Confirm that the access code starts as a time-bound code.**
 
 **Code:**
@@ -873,6 +883,7 @@ client.access_codes.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **1. Confirm that the access code starts as a time-bound code.**
 
 **Code:**
@@ -936,6 +947,7 @@ $seam->access_codes->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **1. Confirm that the access code starts as a time-bound code.**
 
 **Code:**
@@ -997,7 +1009,4 @@ seam.AccessCodes.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

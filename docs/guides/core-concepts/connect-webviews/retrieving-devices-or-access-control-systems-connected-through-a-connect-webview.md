@@ -21,33 +21,34 @@ If you set `wait_for_device_creation` to `false` when [creating the Connect Webv
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Retrieve all devices for the connected_account_id.
-connected_devices = seam.devices.list(
-  connected_account_id="11111111-1111-1111-1111-222222222222"
-)
-```
+<pre class="language-javascript"><code class="lang-javascript"><strong>// Retrieve all devices for the connected_account_id.
+</strong>const connectedDevices = await seam.devices.list({
+  connected_account_id: "11111111-1111-1111-1111-222222222222"
+});
+</code></pre>
 
 **Output:**
 
-```
+```json
 [
-  Device(
-    connected_account_id='11111111-1111-1111-1111-222222222222',
-    device_id='11111111-1111-1111-1111-444444444444',
-    display_name='Front Door Lock',
-    is_managed=True,
+  {
+    connected_account_id: '11111111-1111-1111-1111-222222222222',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    display_name: 'Front Door Lock',
+    is_managed: true,
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -83,32 +84,35 @@ connected_devices=$(
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>// Retrieve all devices for the connected_account_id.
-</strong>const connectedDevices = await seam.devices.list({
-  connected_account_id: "11111111-1111-1111-1111-222222222222"
-});
-</code></pre>
+```python
+# Retrieve all devices for the connected_account_id.
+connected_devices = seam.devices.list(
+  connected_account_id="11111111-1111-1111-1111-222222222222"
+)
+```
 
 **Output:**
 
-```json
+```
 [
-  {
-    connected_account_id: '11111111-1111-1111-1111-222222222222',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    display_name: 'Front Door Lock',
-    is_managed: true,
+  Device(
+    connected_account_id='11111111-1111-1111-1111-222222222222',
+    device_id='11111111-1111-1111-1111-444444444444',
+    display_name='Front Door Lock',
+    is_managed=True,
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -136,6 +140,7 @@ connected_devices = seam.devices.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -162,6 +167,7 @@ $connected_devices = $seam->devices->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -184,9 +190,6 @@ var connectedDevices = seam.Devices.List(
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -200,34 +203,35 @@ If you set `wait_for_device_creation` to `false` when [creating the Connect Webv
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Retrieve all acs_systems for the connected_account_id.
-connected_acs_systems = seam.acs.list(
-  connected_account_id="11111111-1111-1111-2222-111111111111"
-)
-```
+<pre class="language-javascript"><code class="lang-javascript"><strong>// Retrieve all acs_systems for the connected_account_id.
+</strong>const connectedAcsSystems = await seam.acs.systems.list({
+  connected_account_id: "11111111-1111-1111-2222-111111111111"
+});
+</code></pre>
 
 **Output:**
 
-```
+```json
 [
-  AcsSystem(
-    connected_account_ids=[
+  {
+    connected_account_ids: [
       '11111111-1111-1111-2222-111111111111'
     ],
-    acs_system_id='11111111-1111-1111-1111-111111111111',
-    name='My ACS',
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    name: 'My ACS',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -264,33 +268,36 @@ connected_acs_systems=$(
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>// Retrieve all acs_systems for the connected_account_id.
-</strong>const connectedAcsSystems = await seam.acs.systems.list({
-  connected_account_id: "11111111-1111-1111-2222-111111111111"
-});
-</code></pre>
+```python
+# Retrieve all acs_systems for the connected_account_id.
+connected_acs_systems = seam.acs.list(
+  connected_account_id="11111111-1111-1111-2222-111111111111"
+)
+```
 
 **Output:**
 
-```json
+```
 [
-  {
-    connected_account_ids: [
+  AcsSystem(
+    connected_account_ids=[
       '11111111-1111-1111-2222-111111111111'
     ],
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    name: 'My ACS',
+    acs_system_id='11111111-1111-1111-1111-111111111111',
+    name='My ACS',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -305,6 +312,7 @@ connected_acs_systems=$(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -332,6 +340,7 @@ $connected_acs_systems = $seam->acs->systems->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -355,7 +364,4 @@ var connectedAcsSystems = seam.Acs.Systems.List(
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

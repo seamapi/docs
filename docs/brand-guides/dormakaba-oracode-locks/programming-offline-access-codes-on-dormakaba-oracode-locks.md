@@ -37,37 +37,8 @@ If your booking times are more than 1 hour away from any configured slot, code c
 Before creating access codes, check which time slots are configured for your device:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# Get device and time slots
-device = seam.devices.get(device_id="your-device-id")
-time_slots = device.properties
-    .get("dormakaba_oracode_metadata", {})
-    .get("predefined_time_slots", [])
+{% tab title="JavaScript" %}
 
-print(time_slots)
-[
-  {
-      "name": "Guest RCI D 7am-7pm",
-      "prefix": 0,
-      "is_master": false,
-      "is_24_hour": false,
-      "is_one_shot": false,
-      "check_in_time": "07:00:00[America/Los_Angeles]",
-      "check_out_time": "19:00:00[America/Los_Angeles]",
-      "is_biweekly_mode": false,
-      "dormakaba_oracode_user_level_id": "f23721ec-6dce-4c54-8971-40d58449a366",
-      "ext_dormakaba_oracode_user_level_prefix": 0
-  },
-  ...
-]
-
-```
-
-
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // Get device and time slots
 const device = await seam.devices.get({
@@ -96,8 +67,35 @@ print(time_slots)
 ]
 
 ```
+{% endtab %}
 
+{% tab title="Python" %}
 
+```python
+# Get device and time slots
+device = seam.devices.get(device_id="your-device-id")
+time_slots = device.properties
+    .get("dormakaba_oracode_metadata", {})
+    .get("predefined_time_slots", [])
+
+print(time_slots)
+[
+  {
+      "name": "Guest RCI D 7am-7pm",
+      "prefix": 0,
+      "is_master": false,
+      "is_24_hour": false,
+      "is_one_shot": false,
+      "check_in_time": "07:00:00[America/Los_Angeles]",
+      "check_out_time": "19:00:00[America/Los_Angeles]",
+      "is_biweekly_mode": false,
+      "dormakaba_oracode_user_level_id": "f23721ec-6dce-4c54-8971-40d58449a366",
+      "ext_dormakaba_oracode_user_level_prefix": 0
+  },
+  ...
+]
+
+```
 {% endtab %}
 {% endtabs %}
 
@@ -212,23 +210,8 @@ Daily-bound codes are useful when you need day-level granularity and want more f
 For daily-bound codes, specify the same time (but different dates) in `starts_at` and `ends_at`. You can also set `max_time_rounding` to `1day` to allow Seam to round up to a full day to match available slots.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# Create daily-bound code
-access_code = seam.access_codes.create(
-  device_id=device.device_id,
-  name="Guest - Room 101",
-  starts_at="2024-09-16T00:00:00-07:00",
-  ends_at="2024-09-18T23:59:00-07:00",
-  max_time_rounding="1d",  # Allow day-level rounding
-  is_offline_access_code=True
-)
+{% tab title="JavaScript" %}
 
-print(f"Code created: {access_code.code}")
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 // Create daily-bound code
 const accessCode = await seam.accessCodes.create({
@@ -241,6 +224,23 @@ const accessCode = await seam.accessCodes.create({
 });
 
 console.log(`Code created: ${accessCode.code}`);
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+# Create daily-bound code
+access_code = seam.access_codes.create(
+  device_id=device.device_id,
+  name="Guest - Room 101",
+  starts_at="2024-09-16T00:00:00-07:00",
+  ends_at="2024-09-18T23:59:00-07:00",
+  max_time_rounding="1d",  # Allow day-level rounding
+  is_offline_access_code=True
+)
+
+print(f"Code created: {access_code.code}")
 ```
 {% endtab %}
 {% endtabs %}

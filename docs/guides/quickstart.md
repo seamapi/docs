@@ -101,43 +101,50 @@ The Seam SDK that you have installed automatically uses this API key once you ha
 Next, use the following code to retrieve one of the devices that you connected in [Step 1](quickstart.md#step-1-connect-devices), inspect the supported capabilities of the device, and use the Seam API to unlock the door:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-from seam import Seam
+```javascript
+import { Seam } from "seam";
 
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
-# Retrieve all devices, filtered by manufacturer,
-# which is one of several filters that list() supports.
-all_august_locks = seam.devices.list(manufacturer="august")
+// Retrieve all devices, filtered by manufacturer,
+// which is one of several filters that list() supports.
+const allAugustLocks = await seam.devices.list({manufacturer: "august"});
 
-# Select the first device as an example.
-front_door = all_august_locks[0]
+// Select the first device as an example.
+const frontDoor = allAugustLocks[0];
 
-# Confirm that the device can remotely unlock.
-# You're using a capability flag here!
-if front_door.can_remotely_unlock:
-  # Perform the unlock operation
-  # and return an action attempt.
-  action_attempt=seam.locks.unlock_door(device_id=front_door.device_id)
+// Confirm that the device can remotely unlock.
+// You're using a capability flag here!
+if (frontDoor.can_remotely_unlock) {
+  // Perform the unlock operation
+  // and return an action attempt.
+  const actionAttempt = await seam.locks.unlockDoor({
+    device_id: frontDoor.device_id
+  });
+};
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='pending',
-  action_type='UNLOCK_DOOR',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  result=None,
-  error={}
-)
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '11111111-2222-3333-4444-555555555555',
+    action_type: 'UNLOCK_DOOR',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -189,48 +196,45 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-import { Seam } from "seam";
+```python
+from seam import Seam
 
-const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-const allAugustLocks = await seam.devices.list({manufacturer: "august"});
+# Retrieve all devices, filtered by manufacturer,
+# which is one of several filters that list() supports.
+all_august_locks = seam.devices.list(manufacturer="august")
 
-// Select the first device as an example.
-const frontDoor = allAugustLocks[0];
+# Select the first device as an example.
+front_door = all_august_locks[0]
 
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if (frontDoor.can_remotely_unlock) {
-  // Perform the unlock operation
-  // and return an action attempt.
-  const actionAttempt = await seam.locks.unlockDoor({
-    device_id: frontDoor.device_id
-  });
-};
+# Confirm that the device can remotely unlock.
+# You're using a capability flag here!
+if front_door.can_remotely_unlock:
+  # Perform the unlock operation
+  # and return an action attempt.
+  action_attempt=seam.locks.unlock_door(device_id=front_door.device_id)
 ```
 
 **Output:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'UNLOCK_DOOR',
-    result: {},
-    error: null
-  }
-}
+```
+ActionAttempt(
+  status='pending',
+  action_type='UNLOCK_DOOR',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  result=None,
+  error={}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -266,6 +270,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -304,6 +309,7 @@ if ($front_door->can_remotely_unlock) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

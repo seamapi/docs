@@ -41,48 +41,47 @@ When external modifications are detected, Seam will send an `access_code.modifie
 If you want to allow device owners to be able to edit access codes that you have created through the Seam API, set the `allow_external_modification` flag to `true` when creating an access code. This prevents Seam from overwriting any changes made by the device owner to the access code. Seam also sets `code_modified_external_to_seam` as a warning on the code, instead of an error, when a change is detected. Note that the `allow_external_modification` flag can  also be passed when updating an access code or when converting an access code from unmanaged to managed.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+```javascript
+const deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
-created_access_code = seam.access_codes.create(
-  device = device_id,
-  name = "my ongoing code",
-  allow_external_modification = True
-)
+const createdAccessCode = await seam.accessCodes.create({
+    device_id: deviceId,
+    name: "my ongoing code",
+    allow_external_modification: true
+})
 
-pprint(created_access_code)
+console.log(createdAccessCode)
 ```
 
 **Response:**
 
-```
-AccessCode(access_code_id='1d9fe873-3393-4b29-b93e-87fe7f923462',
-           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-           type='ongoing',
-           code='5629',
-           created_at='2023-10-19T04:50:50.275Z',
-           errors=[],
-           warnings=[],
-           starts_at=None,
-           ends_at=None,
-           name='my ongoing code',
-           status='setting',
-           common_code_key=None,
-           is_managed=True,
-           is_waiting_for_code_assignment=None,
-           is_scheduled_on_device=None,
-           pulled_backup_access_code_id=None,
-           is_backup_access_code_available=False,
-           is_backup=None,
-           appearance=None,
-           is_external_modification_allowed=True)
+```json
+{
+  access_code_id: '38a569bb-40b9-4e42-97bd-bb78f8d96777',
+  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  name: 'my ongoing code',
+  appearance: null,
+  code: '1525',
+  common_code_key: null,
+  type: 'ongoing',
+  status: 'setting',
+  pulled_backup_access_code_id: null,
+  is_backup_access_code_available: true,
+  created_at: '2023-10-19T11:22:45.732Z',
+  errors: [],
+  warnings: [],
+  is_managed: true,
+  is_external_modification_allowed: true
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```sh
@@ -131,45 +130,50 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+```python
+device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
-const createdAccessCode = await seam.accessCodes.create({
-    device_id: deviceId,
-    name: "my ongoing code",
-    allow_external_modification: true
-})
+created_access_code = seam.access_codes.create(
+  device = device_id,
+  name = "my ongoing code",
+  allow_external_modification = True
+)
 
-console.log(createdAccessCode)
+pprint(created_access_code)
 ```
 
 **Response:**
 
-```json
-{
-  access_code_id: '38a569bb-40b9-4e42-97bd-bb78f8d96777',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'my ongoing code',
-  appearance: null,
-  code: '1525',
-  common_code_key: null,
-  type: 'ongoing',
-  status: 'setting',
-  pulled_backup_access_code_id: null,
-  is_backup_access_code_available: true,
-  created_at: '2023-10-19T11:22:45.732Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: true
-}
+```
+AccessCode(access_code_id='1d9fe873-3393-4b29-b93e-87fe7f923462',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='ongoing',
+           code='5629',
+           created_at='2023-10-19T04:50:50.275Z',
+           errors=[],
+           warnings=[],
+           starts_at=None,
+           ends_at=None,
+           name='my ongoing code',
+           status='setting',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=None,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=False,
+           is_backup=None,
+           appearance=None,
+           is_external_modification_allowed=True)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -206,6 +210,7 @@ puts created_access_code.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```php
 $seam = new SeamClient("YOUR_API_KEY");
 
@@ -240,6 +245,7 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -261,7 +267,6 @@ Created access code ID: 65f4a1d3-5f3a-45a4-a6b7-372c7f16c007
 Allow external modification: True
 ```
 {% endtab %}
-
 {% endtabs %}
 
 

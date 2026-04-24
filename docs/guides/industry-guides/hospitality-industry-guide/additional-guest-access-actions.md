@@ -26,43 +26,45 @@ Users can forward their Instant Key link—using text or email—to others in th
 Some guests may need access to multiple rooms or amenities (for example, a suite and a gym). You can grant access to multiple sets of doors simply by specifying the desired `acs_entrance_ids` when creating an Access Grant for the guest. Alternately, you can assign the desired set of entrances to a space resource and then specify one or more `space_ids` when creating the Access Grant.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.create(
-  user_identity_id=jane_user.user_identity_id,
-  acs_entrance_ids=[
+```javascript
+await seam.accessGrants.create({
+  user_identity_id: janeUser.user_identity_id,
+  acs_entrance_ids: [
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
   ],
-  space_ids=[
+  space_ids: [
     "c1eb6eb5-58f0-4ba3-8166-f21445ae9427",
     "2b19ddaa-44db-404b-aa2e-d99fa58020c8"
   ],
-  requested_access_methods=[
+  requested_access_methods: [
     {"mode": "mobile_key"}
   ],
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z"
-)
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+});
 ```
 
 **Output:**
 
-```python
-AccessGrant(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  display_name="My Access Grant",
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z",
+```json
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -105,43 +107,45 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.create({
-  user_identity_id: janeUser.user_identity_id,
-  acs_entrance_ids: [
+```python
+seam.access_grants.create(
+  user_identity_id=jane_user.user_identity_id,
+  acs_entrance_ids=[
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
   ],
-  space_ids: [
+  space_ids=[
     "c1eb6eb5-58f0-4ba3-8166-f21445ae9427",
     "2b19ddaa-44db-404b-aa2e-d99fa58020c8"
   ],
-  requested_access_methods: [
+  requested_access_methods=[
     {"mode": "mobile_key"}
   ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-});
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-13T15:00:00.000Z",
-  "ends_at": "2025-07-16T11:00:00.000Z",
+```python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -172,6 +176,7 @@ seam.access_grants.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -208,6 +213,7 @@ $seam->access_grants->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -235,32 +241,34 @@ If a guest is moved to a different room during their stay, you can create a new 
 If a guest arrives early or extends their stay, you can adjust the access schedule for access systems that support this feature, such as Salto KS. Update the `starts_at` or `ends_at` property in the Access Grant for the user.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.update(
-  user_identity_id=jane_user.user_identity_id,
-  starts_at="2025-07-14T15:00:00.000Z",
-  ends_at="2025-07-17T11:00:00.000Z"
-)
+```javascript
+await seam.accessGrants.update({
+  user_identity_id: janeUser.user_identity_id,
+  starts_at: "2025-07-14T15:00:00.000Z",
+  ends_at: "2025-07-17T11:00:00.000Z"
+});
 ```
 
 **Output:**
 
-```python
-AccessGrant(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  display_name="My Access Grant",
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  starts_at="2025-07-14T15:00:00.000Z",
-  ends_at="2025-07-17T11:00:00.000Z",
+```json
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-14T15:00:00.000Z",
+  "ends_at": "2025-07-17T11:00:00.000Z",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -292,32 +300,34 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.update({
-  user_identity_id: janeUser.user_identity_id,
-  starts_at: "2025-07-14T15:00:00.000Z",
-  ends_at: "2025-07-17T11:00:00.000Z"
-});
+```python
+seam.access_grants.update(
+  user_identity_id=jane_user.user_identity_id,
+  starts_at="2025-07-14T15:00:00.000Z",
+  ends_at="2025-07-17T11:00:00.000Z"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-14T15:00:00.000Z",
-  "ends_at": "2025-07-17T11:00:00.000Z",
+```python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-14T15:00:00.000Z",
+  ends_at="2025-07-17T11:00:00.000Z",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -343,6 +353,7 @@ seam.access_grants.update(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -368,6 +379,7 @@ $seam->access_grants->update(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -391,52 +403,53 @@ Mobile keys update automatically to match the new time window. If a Seam Instant
 Once you have encoded an access method onto a card, you cannot reuse the access method for another card. If a guest loses their key card, you can create a new access method and encode it onto a new card.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Create a new Access Grant.
-seam.access_grants.create(
-  user_identity_id=jane_user.user_identity_id,
-  acs_entrance_ids=[
+```javascript
+// Create a new Access Grant.
+await seam.accessGrants.create({
+  user_identity_id: janeUser.user_identity_id,
+  acs_entrance_ids: [
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],  
-  requested_access_methods=[
+  ],
+  requested_access_methods: [
     {"mode": "card"}
   ],
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z"
-)
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+});
 
-# Encode the new card.
-encoder = seam.acs.encoders.list(
-  acs_system_ids = [hotel_a.acs_system_id]
-)[0]
+// Encode the new card.
+const encoder = (await seam.acs.encoders.list({
+  acs_system_ids: [hotel_a.acs_system_id]
+}))[0];
 
-encoding_action_attempt = seam.access_methods.encode(
-  access_method_id = "ef3a5e10-5a76-4382-96f7-627f810ef849",
-  acs_encoder_id = encoder.acs_encoder_id
-)
+const encodingActionAttempt = await seam.accessMethods.encode({
+  access_method_id: "ef3a5e10-5a76-4382-96f7-627f810ef849",
+  acs_encoder_id: encoder.acs_encoder_id
+});
 
-# To confirm that the encoding succeeded, 
-# poll the returned action attempt
-# until its status is success.
-seam.action_attempts.get(
-  action_attempt_id = encoding_action_attempt.action_attempt_id
-)
+// To confirm that the encoding succeeded, 
+// poll the returned action attempt
+// until its status is success.
+await seam.actionAttempts.get({
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
 
-```python
-AccessGrant(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  display_name="My Access Grant",
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z",
-  requested_access_methods=[
+```json
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
+  "requested_access_methods": [
     {
       "display_name": "Plastic Card",
       "mode": "card",
@@ -445,25 +458,26 @@ AccessGrant(
     }
   ],
   ...
-)
+}
 
-ActionAttempt(
-  status='success',
-  action_attempt_id='4f80761b-2bfa-401a-9f73-a08439c970f7',
-  action_type='ENCODE_ACCESS_METHOD',
-  result={
-    access_method_id='ef3a5e10-5a76-4382-96f7-627f810ef849',
-    card_number='1234abc',
-    is_issued=True,
-    issued_at='2025-07-14T11:00:00.000Z',
+{
+  "status": "success",
+  "action_attempt_id": "4f80761b-2bfa-401a-9f73-a08439c970f7",
+  "action_type": "ENCODE_ACCESS_METHOD",
+  "result": {
+    "access_method_id": "ef3a5e10-5a76-4382-96f7-627f810ef849",
+    "card_number": "1234abc",
+    "is_issued": true,
+    "issued_at": "2025-07-14T11:00:00.000Z",
     ...
   },
-  error=null
-)
+  "error": null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -561,52 +575,53 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Create a new Access Grant.
-await seam.accessGrants.create({
-  user_identity_id: janeUser.user_identity_id,
-  acs_entrance_ids: [
+```python
+# Create a new Access Grant.
+seam.access_grants.create(
+  user_identity_id=jane_user.user_identity_id,
+  acs_entrance_ids=[
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],
-  requested_access_methods: [
+  ],  
+  requested_access_methods=[
     {"mode": "card"}
   ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-});
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
 
-// Encode the new card.
-const encoder = (await seam.acs.encoders.list({
-  acs_system_ids: [hotel_a.acs_system_id]
-}))[0];
+# Encode the new card.
+encoder = seam.acs.encoders.list(
+  acs_system_ids = [hotel_a.acs_system_id]
+)[0]
 
-const encodingActionAttempt = await seam.accessMethods.encode({
-  access_method_id: "ef3a5e10-5a76-4382-96f7-627f810ef849",
-  acs_encoder_id: encoder.acs_encoder_id
-});
+encoding_action_attempt = seam.access_methods.encode(
+  access_method_id = "ef3a5e10-5a76-4382-96f7-627f810ef849",
+  acs_encoder_id = encoder.acs_encoder_id
+)
 
-// To confirm that the encoding succeeded, 
-// poll the returned action attempt
-// until its status is success.
-await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id
-});
+# To confirm that the encoding succeeded, 
+# poll the returned action attempt
+# until its status is success.
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-13T15:00:00.000Z",
-  "ends_at": "2025-07-16T11:00:00.000Z",
-  "requested_access_methods": [
+```python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z",
+  requested_access_methods=[
     {
       "display_name": "Plastic Card",
       "mode": "card",
@@ -615,25 +630,26 @@ await seam.actionAttempts.get({
     }
   ],
   ...
-}
+)
 
-{
-  "status": "success",
-  "action_attempt_id": "4f80761b-2bfa-401a-9f73-a08439c970f7",
-  "action_type": "ENCODE_ACCESS_METHOD",
-  "result": {
-    "access_method_id": "ef3a5e10-5a76-4382-96f7-627f810ef849",
-    "card_number": "1234abc",
-    "is_issued": true,
-    "issued_at": "2025-07-14T11:00:00.000Z",
+ActionAttempt(
+  status='success',
+  action_attempt_id='4f80761b-2bfa-401a-9f73-a08439c970f7',
+  action_type='ENCODE_ACCESS_METHOD',
+  result={
+    access_method_id='ef3a5e10-5a76-4382-96f7-627f810ef849',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2025-07-14T11:00:00.000Z',
     ...
   },
-  "error": null
-}
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -703,6 +719,7 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -775,6 +792,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -796,40 +814,42 @@ $seam->action_attempts->get(
 For some access systems, such as Salto KS, you can specify an ending time for a guest's access. Set the `ends_at` parameter when creating an Access Grant.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.create(
-  user_identity_id=jane_user.user_identity_id,
-  acs_entrance_ids=[
+```javascript
+await seam.accessGrants.create({
+  user_identity_id: janeUser.user_identity_id,
+  acs_entrance_ids: [
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],  
-  requested_access_methods=[
+  ],
+  requested_access_methods: [
     {"mode": "mobile_key"}
   ],
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z"
-)
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+});
 ```
 
 **Output:**
 
-```python
-AccessGrant(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  display_name="My Access Grant",
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z",
-  instant_key_url="https://ik.seam.co/ABCXYZ",
+```json
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -869,40 +889,42 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.create({
-  user_identity_id: janeUser.user_identity_id,
-  acs_entrance_ids: [
+```python
+seam.access_grants.create(
+  user_identity_id=jane_user.user_identity_id,
+  acs_entrance_ids=[
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],
-  requested_access_methods: [
+  ],  
+  requested_access_methods=[
     {"mode": "mobile_key"}
   ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-});
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-13T15:00:00.000Z",
-  "ends_at": "2025-07-16T11:00:00.000Z",
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+```python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z",
+  instant_key_url="https://ik.seam.co/ABCXYZ",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -933,6 +955,7 @@ seam.access_grants.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -966,6 +989,7 @@ $seam->access_grants->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

@@ -24,33 +24,34 @@ To add `custom_metadata` to a Connect Webview:
    For example:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.connect_webviews.create(
-  provider_category = "stable",
-  custom_metadata = {
-    "your_app_user_id": "xxxx" # Insert your custom data here.
+```javascript
+await seam.connectWebviews.create({
+  provider_category: "stable",
+  custom_metadata: {
+    "your_app_user_id": "xxxx" // Insert your custom data here.
   }
-)
+})
 ```
 
 **Response:**
 
-```
-ConnectWebview(
-  workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-  connect_webview_id='49e050d9-cb4c-4600-b24d-cdf9dd2f92b7',
-  status='pending',
-  url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=49e050d9-cb4c-4600-b24d-cdf9dd2f92b7&auth_token=C1r8ff3GLSr2L1ifEaCopAgrq2Faht2Dh',
-  custom_metadata={'id': 'internal_id_1'},
+```json
+{
+  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=3937fa0b-ab09-4a00-9f10-69864750ed07&auth_token=PVHmtzULRFEQDny776KDsegSQ5t2SsZHR',
+  status: 'pending',
+  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+  custom_metadata: { id: 'internalId1' },
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -85,32 +86,35 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.connectWebviews.create({
-  provider_category: "stable",
-  custom_metadata: {
-    "your_app_user_id": "xxxx" // Insert your custom data here.
+```python
+seam.connect_webviews.create(
+  provider_category = "stable",
+  custom_metadata = {
+    "your_app_user_id": "xxxx" # Insert your custom data here.
   }
-})
+)
 ```
 
 **Response:**
 
-```json
-{
-  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=3937fa0b-ab09-4a00-9f10-69864750ed07&auth_token=PVHmtzULRFEQDny776KDsegSQ5t2SsZHR',
-  status: 'pending',
-  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-  custom_metadata: { id: 'internalId1' },
+```
+ConnectWebview(
+  workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+  connect_webview_id='49e050d9-cb4c-4600-b24d-cdf9dd2f92b7',
+  status='pending',
+  url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=49e050d9-cb4c-4600-b24d-cdf9dd2f92b7&auth_token=C1r8ff3GLSr2L1ifEaCopAgrq2Faht2Dh',
+  custom_metadata={'id': 'internal_id_1'},
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -136,6 +140,7 @@ client.connect_webviews.create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp

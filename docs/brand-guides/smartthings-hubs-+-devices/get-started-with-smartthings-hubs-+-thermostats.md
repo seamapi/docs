@@ -106,60 +106,8 @@ Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** p
 Create a `connect_webview` object and then note the returned URL.
 
 {% tabs %}
-{% tab title="Python" %}
-**Code:**
-
-```python
-from seam import Seam
-
-seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
-
-connect_webview = seam.connect_webviews.create(
-  accepted_providers=["smartthings"],
-  accepted_capabilities=["thermostat"]
-)
-
-assert connect_webview.login_successful is False
-
-# Use the returned Connect Webview URL to display
-# the Connect Webview authorization flow to your user.
-print(connect_webview.url)
-```
-
-**Output:**
-
-```
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
-{% tab title="cURL (bash)" %}
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/connect_webviews/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "accepted_providers": ["smartthings"],
-  "accepted_capabilities": ["thermostat"]
-}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
-  "URL: " + .connect_webview.url'
-  # Use the returned Connect Webview URL to display
-  # the Connect Webview authorization flow to your user.
-```
-
-**Output:**
-
-```
-Login Successful (false): false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-{% endtab %}
-
 {% tab title="JavaScript" %}
+
 **Code:**
 
 ```javascript
@@ -187,7 +135,63 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 ```
 {% endtab %}
 
+{% tab title="cURL" %}
+
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "accepted_providers": ["smartthings"],
+  "accepted_capabilities": ["thermostat"]
+}' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
+  "URL: " + .connect_webview.url'
+  # Use the returned Connect Webview URL to display
+  # the Connect Webview authorization flow to your user.
+```
+
+**Output:**
+
+```
+Login Successful (false): false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+**Code:**
+
+```python
+from seam import Seam
+
+seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
+
+connect_webview = seam.connect_webviews.create(
+  accepted_providers=["smartthings"],
+  accepted_capabilities=["thermostat"]
+)
+
+assert connect_webview.login_successful is False
+
+# Use the returned Connect Webview URL to display
+# the Connect Webview authorization flow to your user.
+print(connect_webview.url)
+```
+
+**Output:**
+
+```
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -216,6 +220,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -245,6 +250,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -295,23 +301,27 @@ Complete the Connect Webview authorization flow by entering the following [Smart
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-updated_connect_webview = seam.connect_webviews.get(connect_webview.connect_webview_id)
+```javascript
+const updatedConnectWebview = await seam.connectWebviews.get({
+  connect_webview_id: connectWebview.connect_webview_id
+});
 
-assert updated_connect_webview.login_successful is True # True
+console.log(updatedConnectWebview.login_successful); // true
 ```
 
 **Output:**
 
 ```
-True
+true
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -332,25 +342,25 @@ Login Successful (true): true
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const updatedConnectWebview = await seam.connectWebviews.get({
-  connect_webview_id: connectWebview.connect_webview_id
-});
+```python
+updated_connect_webview = seam.connect_webviews.get(connect_webview.connect_webview_id)
 
-console.log(updatedConnectWebview.login_successful); // true
+assert updated_connect_webview.login_successful is True # True
 ```
 
 **Output:**
 
 ```
-true
+True
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -369,6 +379,7 @@ true
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -387,6 +398,7 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -414,63 +426,65 @@ When you link a SmartThings account with Seam, we create a `device` object to re
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Retrieve all devices, filtered by manufacturer,
-# which is one of several filters that list() supports.
-all_smartthings_thermostats = seam.devices.list(manufacturer="smartthings")
+```javascript
+// Retrieve all devices, filtered by manufacturer,
+// which is one of several filters that list() supports.
+const allSmartThingsThermostats = await seam.devices.list({manufacturer: "smartthings"});
 
-# Select the first device as an example.
-living_room_thermostat = all_smartthings_thermostats[0]
+// Select the first device as an example.
+const livingRoomThermostat = allSmartThingsThermostats[0];
 
-# Inspect specific properties.
-pprint("Current temperature: " + str(living_room_thermostat.properties["temperature_fahrenheit"]))
-pprint("Fan running: " + str(living_room_thermostat.properties["is_fan_running"]))
+// Inspect specific properties.
+console.log("Current temperature: " + livingRoomThermostat.properties.temperature_fahrenheit);
+console.log("Fan running: " + livingRoomThermostat.properties.is_fan_running);
 
-# View the entire returned device object.
-pprint(living_room_thermostat)
+// View the entire returned device object.
+console.log(livingRoomThermostat);
 ```
 
 **Output:**
 
-```
-'Current temperature: 70'
-'Fan running: False'
-Device(
-  device_id='11111111-1111-1111-2222-444444444444',
-  workspace_id='00000000-0000-0000-0000-000000000000',
-  connected_account_id='11111111-1111-1111-1111-222222222222',
-  created_at='2024-10-03T22:12:15.666Z',
-  properties={
-    'manufacturer': 'smartthings',
-    'online': True,
-    'temperature_celsius': 21.11111111111111,
-    'temperature_fahrenheit': 70,
-    'relative_humidity': 0.36,
-    'is_cooling': False,
-    'is_heating': False,
-    'is_fan_running': False,
-    'current_climate_setting': {
-      'display_name': 'Manual Setting',
-      'fan_mode_setting': 'auto',
-      'heating_set_point_celsius': 21.11111111111111,   
-      'heating_set_point_fahrenheit': 70,
-      'hvac_mode_setting': 'heat',
-      'manual_override_allowed': True
+```json
+Current temperature: 70
+Fan running: false
+{
+  device_id: '11111111-1111-1111-2222-444444444444',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  connected_account_id: '11111111-1111-1111-1111-222222222222',
+  created_at: '2024-10-03T22:12:15.666Z',
+  properties: {
+    manufacturer: 'smartthings',
+    online: true,
+    temperature_celsius: 21.11111111111111,
+    temperature_fahrenheit: 70,
+    relative_humidity: 0.36,
+    is_cooling: false,
+    is_heating: false,
+    is_fan_running: false,
+    current_climate_setting: {
+      display_name: 'Manual Setting',
+      fan_mode_setting: 'auto',
+      hvac_mode_setting: 'heat',
+      manual_override_allowed: true,
+      heating_set_point_celsius: 21.11111111111111,
+      heating_set_point_fahrenheit: 70
     },
     ...
   },
-  can_hvac_cool=True,
-  can_hvac_heat=True,
-  can_turn_off_hvac=True,
+  can_hvac_cool: true,
+  can_hvac_heat: true,
+  can_turn_off_hvac: true,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -535,63 +549,65 @@ Fan running: false
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-const allSmartThingsThermostats = await seam.devices.list({manufacturer: "smartthings"});
+```python
+# Retrieve all devices, filtered by manufacturer,
+# which is one of several filters that list() supports.
+all_smartthings_thermostats = seam.devices.list(manufacturer="smartthings")
 
-// Select the first device as an example.
-const livingRoomThermostat = allSmartThingsThermostats[0];
+# Select the first device as an example.
+living_room_thermostat = all_smartthings_thermostats[0]
 
-// Inspect specific properties.
-console.log("Current temperature: " + livingRoomThermostat.properties.temperature_fahrenheit);
-console.log("Fan running: " + livingRoomThermostat.properties.is_fan_running);
+# Inspect specific properties.
+pprint("Current temperature: " + str(living_room_thermostat.properties["temperature_fahrenheit"]))
+pprint("Fan running: " + str(living_room_thermostat.properties["is_fan_running"]))
 
-// View the entire returned device object.
-console.log(livingRoomThermostat);
+# View the entire returned device object.
+pprint(living_room_thermostat)
 ```
 
 **Output:**
 
-```json
-Current temperature: 70
-Fan running: false
-{
-  device_id: '11111111-1111-1111-2222-444444444444',
-  workspace_id: '00000000-0000-0000-0000-000000000000',
-  connected_account_id: '11111111-1111-1111-1111-222222222222',
-  created_at: '2024-10-03T22:12:15.666Z',
-  properties: {
-    manufacturer: 'smartthings',
-    online: true,
-    temperature_celsius: 21.11111111111111,
-    temperature_fahrenheit: 70,
-    relative_humidity: 0.36,
-    is_cooling: false,
-    is_heating: false,
-    is_fan_running: false,
-    current_climate_setting: {
-      display_name: 'Manual Setting',
-      fan_mode_setting: 'auto',
-      hvac_mode_setting: 'heat',
-      manual_override_allowed: true,
-      heating_set_point_celsius: 21.11111111111111,
-      heating_set_point_fahrenheit: 70
+```
+'Current temperature: 70'
+'Fan running: False'
+Device(
+  device_id='11111111-1111-1111-2222-444444444444',
+  workspace_id='00000000-0000-0000-0000-000000000000',
+  connected_account_id='11111111-1111-1111-1111-222222222222',
+  created_at='2024-10-03T22:12:15.666Z',
+  properties={
+    'manufacturer': 'smartthings',
+    'online': True,
+    'temperature_celsius': 21.11111111111111,
+    'temperature_fahrenheit': 70,
+    'relative_humidity': 0.36,
+    'is_cooling': False,
+    'is_heating': False,
+    'is_fan_running': False,
+    'current_climate_setting': {
+      'display_name': 'Manual Setting',
+      'fan_mode_setting': 'auto',
+      'heating_set_point_celsius': 21.11111111111111,   
+      'heating_set_point_fahrenheit': 70,
+      'hvac_mode_setting': 'heat',
+      'manual_override_allowed': True
     },
     ...
   },
-  can_hvac_cool: true,
-  can_hvac_heat: true,
-  can_turn_off_hvac: true,
+  can_hvac_cool=True,
+  can_hvac_heat=True,
+  can_turn_off_hvac=True,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -648,6 +664,7 @@ Fan running: false
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -705,6 +722,7 @@ Fan running: false
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -754,35 +772,40 @@ In this example, set the HVAC mode to `heat` and the desired heating set point t
 Each of these HVAC mode endpoints returns an [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) to track the progress of the operation.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Confirm that the device supports heat mode.
-# You're using a capability flag here!
-if living_room_thermostat.can_hvac_heat:
-  # Set the HVAC mode
-  # and return an action attempt.
-  action_attempt = seam.thermostats.heat(
-    device_id = living_room_thermostat.device_id,
-    heating_set_point_fahrenheit = 68
-  )
+```javascript
+// Confirm that the device supports heat mode.
+// You're using a capability flag here!
+if (livingRoomThermostat.can_hvac_heat) {
+  // Set the HVAC mode
+  // and return an action attempt.
+  const actionAttempt = await seam.thermostats.heat({
+    device_id: livingRoomThermostat.device_id,
+    heating_set_point_fahrenheit: 68
+  });
+};
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='SET_HVAC_MODE',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '11111111-2222-3333-4444-555555555555',
+    action_type: 'SET_HVAC_MODE',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -819,38 +842,37 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Confirm that the device supports heat mode.
-// You're using a capability flag here!
-if (livingRoomThermostat.can_hvac_heat) {
-  // Set the HVAC mode
-  // and return an action attempt.
-  const actionAttempt = await seam.thermostats.heat({
-    device_id: livingRoomThermostat.device_id,
-    heating_set_point_fahrenheit: 68
-  });
-};
+```python
+# Confirm that the device supports heat mode.
+# You're using a capability flag here!
+if living_room_thermostat.can_hvac_heat:
+  # Set the HVAC mode
+  # and return an action attempt.
+  action_attempt = seam.thermostats.heat(
+    device_id = living_room_thermostat.device_id,
+    heating_set_point_fahrenheit = 68
+  )
 ```
 
 **Output:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'SET_HVAC_MODE',
-    result: {},
-    error: null
-  }
-}
+```
+ActionAttempt(
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='SET_HVAC_MODE',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -879,6 +901,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -908,6 +931,7 @@ if ($living_room_thermostat->can_hvac_heat) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -927,31 +951,33 @@ You can track the status of the operation to confirm that the device was set to 
 To query `properties.current_climate_setting.hvac_mode_setting` for the device:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the device by ID.
-updated_living_room_thermostat = seam.devices.get(
-  device_id = living_room_thermostat.device_id
-)
+```javascript
+// Get the device by ID.
+const updatedLivingRoomThermostat = await seam.devices.get({
+  device_id: livingRoomThermostat.device_id
+});
 
-# Inspect properties.current_climate_setting.hvac_mode_setting 
-# to confirm that setting the HVAC mode to heat was successful.
-pprint(
-  updated_living_room_thermostat.
-  properties["current_climate_setting"]["hvac_mode_setting"]
-)
+// Inspect properties.current_climate_setting.hvac_mode_setting 
+// to confirm that setting the HVAC mode to heat was successful.
+console.log(
+  updatedLivingRoomThermostat.properties.
+  current_climate_setting.hvac_mode_setting
+);
 ```
 
 **Output:**
 
 ```
-'heat'
+heat
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -979,31 +1005,33 @@ heat
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the device by ID.
-const updatedLivingRoomThermostat = await seam.devices.get({
-  device_id: livingRoomThermostat.device_id
-});
+```python
+# Get the device by ID.
+updated_living_room_thermostat = seam.devices.get(
+  device_id = living_room_thermostat.device_id
+)
 
-// Inspect properties.current_climate_setting.hvac_mode_setting 
-// to confirm that setting the HVAC mode to heat was successful.
-console.log(
-  updatedLivingRoomThermostat.properties.
-  current_climate_setting.hvac_mode_setting
-);
+# Inspect properties.current_climate_setting.hvac_mode_setting 
+# to confirm that setting the HVAC mode to heat was successful.
+pprint(
+  updated_living_room_thermostat.
+  properties["current_climate_setting"]["hvac_mode_setting"]
+)
 ```
 
 **Output:**
 
 ```
-heat
+'heat'
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1026,6 +1054,7 @@ heat
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1048,6 +1077,7 @@ heat
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1073,89 +1103,92 @@ You can schedule climate presets to start and stop whenever you'd like. You can 
 In this example, create comfort and eco climate presets, set eco as the fallback, and schedule the comfort climate preset to coincide with two vacation rental reservations.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Confirm that the thermostat supports cool mode
-# so that the climate presets can use this mode.
-if updated_living_room_thermostat.can_hvac_cool:
-  # Create the climate presets.
-  seam.thermostats.create_climate_preset(
-    device_id = updated_living_room_thermostat.device_id,
-    climate_preset_key = "comfort",
-    name = "Comfort",
-    fan_mode_setting = "auto",
-    hvac_mode_setting = "cool",
-    cooling_set_point_celsius = 25
-  )
+```javascript
+// Confirm that the thermostat supports cool mode
+// so that the climate presets can use this mode.
+if (updatedLivingRoomThermostat.can_hvac_cool) {
+  // Create the climate presets.
+  await seam.thermostats.createClimatePreset({
+    device_id: updatedLivingRoomThermostat.device_id,
+    climate_preset_key: "comfort",
+    name: "Comfort",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 25
+  });
   
-  seam.thermostats.create_climate_preset(
-    device_id: updated_living_room_thermostat.device_id,
-    climate_preset_key = "eco",
-    name = "Eco",
-    fan_mode_setting = "auto",
-    hvac_mode_setting = "cool",
-    cooling_set_point_celsius = 30
-  )
+  await seam.thermostats.createClimatePreset({
+    device_id: updatedLivingRoomThermostat.device_id,
+    climate_preset_key: "eco",
+    name: "Eco",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "cool",
+    cooling_set_point_celsius: 30
+  });
 
-  # Then, set eco as the fallback climate setting.
-  seam.thermostats.set_fallback_climate_preset(
-    device_id = updated_living_room_thermostat.device_id,
-    climate_preset_key = "eco"
-  )
+  // Then, set eco as the fallback climate setting.
+  await seam.thermostats.setFallbackClimatePreset({
+    device_id: updatedLivingRoomThermostat.device_id,
+    climate_preset_key: "eco"
+  });
   
-  # Now, schedule the comfort preset to coincide with two reservations.
-  seam.thermostats.schedules.create(
-    device_id = updated_living_room_thermostat.device_id,
-    name = "Jim's stay",
-    climate_preset_key = "comfort",
-    starts_at = "2025-03-10T15:00:00Z",
-    ends_at = "2025-03-15T12:00:00Z",
-    is_override_allowed = True,
-    max_override_period_minutes = 90
-  )
-  
-  seam.thermostats.schedules.create(
-    device_id = updated_living_room_thermostat.device_id,
-    name = "Jane's stay",
-    climate_preset_key = "comfort",
-    starts_at = "2025-03-17T15:00:00Z",
-    ends_at = "2025-03-20T12:00:00Z",
-    is_override_allowed = True,
-    max_override_period_minutes = 90
-  )
+  // Now, schedule the comfort preset to coincide with two reservations.
+  await seam.thermostats.schedules.create({
+    device_id: updatedLivingRoomThermostat.device_id,
+    name: "Jim's stay",
+    climate_preset_key: "comfort",
+    starts_at: "2025-03-10T15:00:00Z",
+    ends_at: "2025-03-15T12:00:00Z",
+    is_override_allowed: true,
+    max_override_period_minutes: 90
+  });
+
+  await seam.thermostats.schedules.create({
+    device_id: updatedLivingRoomThermostat.device_id,
+    name: "Jane's stay",
+    climate_preset_key: "comfort",
+    starts_at: "2025-03-17T15:00:00Z",
+    ends_at: "2025-03-20T12:00:00Z",
+    is_override_allowed: true,
+    max_override_period_minutes: 90
+  });
+}
 ```
 
 **Output:**
 
-```
-ThermostatSchedule(
-  thermostat_schedule_id='88888888-1111-1111-1111-111111111111',
-  name="Jim's stay",
-  device_id='11111111-1111-1111-2222-444444444444',
-  climate_preset_key='comfort',
-  starts_at='2025-03-10T15:00:00.000Z',
-  ends_at='2025-03-15T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
+```json
+{
+  thermostat_schedule_id: '88888888-1111-1111-1111-111111111111',
+  name: "Jim's stay",
+  device_id: '11111111-1111-1111-2222-444444444444',
+  climate_preset_key: 'comfort',
+  starts_at: '2025-03-10T15:00:00.000Z',
+  ends_at: '2025-03-15T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
   ...
-)
-ThermostatSchedule(
-  thermostat_schedule_id='88888888-1111-1111-1111-222222222222',
-  name="Jane's stay",
-  device_id='11111111-1111-1111-2222-444444444444',
-  climate_preset_key='comfort',
-  starts_at='2025-03-17T15:00:00.000Z',
-  ends_at='2025-03-20T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
+}
+{
+  thermostat_schedule_id: '88888888-1111-1111-1111-222222222222',
+  name: "Jane's stay",
+  device_id: '11111111-1111-1111-2222-444444444444',
+  climate_preset_key: 'comfort',
+  starts_at: '2025-03-17T15:00:00.000Z',
+  ends_at: '2025-03-20T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -1269,90 +1302,91 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Confirm that the thermostat supports cool mode
-// so that the climate presets can use this mode.
-if (updatedLivingRoomThermostat.can_hvac_cool) {
-  // Create the climate presets.
-  await seam.thermostats.createClimatePreset({
-    device_id: updatedLivingRoomThermostat.device_id,
-    climate_preset_key: "comfort",
-    name: "Comfort",
-    fan_mode_setting: "auto",
-    hvac_mode_setting: "cool",
-    cooling_set_point_celsius: 25
-  });
+```python
+# Confirm that the thermostat supports cool mode
+# so that the climate presets can use this mode.
+if updated_living_room_thermostat.can_hvac_cool:
+  # Create the climate presets.
+  seam.thermostats.create_climate_preset(
+    device_id = updated_living_room_thermostat.device_id,
+    climate_preset_key = "comfort",
+    name = "Comfort",
+    fan_mode_setting = "auto",
+    hvac_mode_setting = "cool",
+    cooling_set_point_celsius = 25
+  )
   
-  await seam.thermostats.createClimatePreset({
-    device_id: updatedLivingRoomThermostat.device_id,
-    climate_preset_key: "eco",
-    name: "Eco",
-    fan_mode_setting: "auto",
-    hvac_mode_setting: "cool",
-    cooling_set_point_celsius: 30
-  });
+  seam.thermostats.create_climate_preset(
+    device_id: updated_living_room_thermostat.device_id,
+    climate_preset_key = "eco",
+    name = "Eco",
+    fan_mode_setting = "auto",
+    hvac_mode_setting = "cool",
+    cooling_set_point_celsius = 30
+  )
 
-  // Then, set eco as the fallback climate setting.
-  await seam.thermostats.setFallbackClimatePreset({
-    device_id: updatedLivingRoomThermostat.device_id,
-    climate_preset_key: "eco"
-  });
+  # Then, set eco as the fallback climate setting.
+  seam.thermostats.set_fallback_climate_preset(
+    device_id = updated_living_room_thermostat.device_id,
+    climate_preset_key = "eco"
+  )
   
-  // Now, schedule the comfort preset to coincide with two reservations.
-  await seam.thermostats.schedules.create({
-    device_id: updatedLivingRoomThermostat.device_id,
-    name: "Jim's stay",
-    climate_preset_key: "comfort",
-    starts_at: "2025-03-10T15:00:00Z",
-    ends_at: "2025-03-15T12:00:00Z",
-    is_override_allowed: true,
-    max_override_period_minutes: 90
-  });
-
-  await seam.thermostats.schedules.create({
-    device_id: updatedLivingRoomThermostat.device_id,
-    name: "Jane's stay",
-    climate_preset_key: "comfort",
-    starts_at: "2025-03-17T15:00:00Z",
-    ends_at: "2025-03-20T12:00:00Z",
-    is_override_allowed: true,
-    max_override_period_minutes: 90
-  });
-}
+  # Now, schedule the comfort preset to coincide with two reservations.
+  seam.thermostats.schedules.create(
+    device_id = updated_living_room_thermostat.device_id,
+    name = "Jim's stay",
+    climate_preset_key = "comfort",
+    starts_at = "2025-03-10T15:00:00Z",
+    ends_at = "2025-03-15T12:00:00Z",
+    is_override_allowed = True,
+    max_override_period_minutes = 90
+  )
+  
+  seam.thermostats.schedules.create(
+    device_id = updated_living_room_thermostat.device_id,
+    name = "Jane's stay",
+    climate_preset_key = "comfort",
+    starts_at = "2025-03-17T15:00:00Z",
+    ends_at = "2025-03-20T12:00:00Z",
+    is_override_allowed = True,
+    max_override_period_minutes = 90
+  )
 ```
 
 **Output:**
 
-```json
-{
-  thermostat_schedule_id: '88888888-1111-1111-1111-111111111111',
-  name: "Jim's stay",
-  device_id: '11111111-1111-1111-2222-444444444444',
-  climate_preset_key: 'comfort',
-  starts_at: '2025-03-10T15:00:00.000Z',
-  ends_at: '2025-03-15T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
+```
+ThermostatSchedule(
+  thermostat_schedule_id='88888888-1111-1111-1111-111111111111',
+  name="Jim's stay",
+  device_id='11111111-1111-1111-2222-444444444444',
+  climate_preset_key='comfort',
+  starts_at='2025-03-10T15:00:00.000Z',
+  ends_at='2025-03-15T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
   ...
-}
-{
-  thermostat_schedule_id: '88888888-1111-1111-1111-222222222222',
-  name: "Jane's stay",
-  device_id: '11111111-1111-1111-2222-444444444444',
-  climate_preset_key: 'comfort',
-  starts_at: '2025-03-17T15:00:00.000Z',
-  ends_at: '2025-03-20T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
+)
+ThermostatSchedule(
+  thermostat_schedule_id='88888888-1111-1111-1111-222222222222',
+  name="Jane's stay",
+  device_id='11111111-1111-1111-2222-444444444444',
+  climate_preset_key='comfort',
+  starts_at='2025-03-17T15:00:00.000Z',
+  ends_at='2025-03-20T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1436,6 +1470,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1519,6 +1554,7 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -1542,58 +1578,60 @@ You can use the Seam API to create a thermostat weekly program for your SmartThi
 In this example, create a weekday daily program and a weekend daily program. Then, combine these daily programs into a weekly program by assigning a daily program to each day of the week.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Create the daily programs.
-weekday_program = seam.thermostats.daily_programs.create(
-  device_id = updated_living_room_thermostat.device_id,
-  name = "Weekday Program",
-  periods = [
+```javascript
+// Create the daily programs.
+const weekdayProgram = await seam.thermostats.dailyPrograms.create({
+  device_id: updatedLivingRoomThermostat.device_id,
+  name: "Weekday Program",
+  periods: [
     { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
     { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "22:00:00", "climate_preset_key": "Sleep" }
   ]
-)
+});
 
-weekend_program = seam.thermostats.daily_programs.create(
-  device_id = updated_living_room_thermostat.device_id,
-  name = "Weekend Program",
-  periods = [
+const weekendProgram = await seam.thermostats.dailyPrograms.create({
+  device_id: updatedLivingRoomThermostat.device_id,
+  name: "Weekend Program",
+  periods: [
     { "starts_at_time": "08:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "23:00:00", "climate_preset_key": "Sleep" }
   ]
-)
+});
 
-# Use the daily programs to set the weekly program.
-seam.thermostats.update_weekly_program(
-  device_id = updated_living_room_thermostat.device_id,
-  monday_program_id = weekday_program.thermostat_daily_program_id,
-  tuesday_program_id = weekday_program.thermostat_daily_program_id,
-  wednesday_program_id = weekday_program.thermostat_daily_program_id,
-  thursday_program_id = weekday_program.thermostat_daily_program_id,
-  friday_program_id = weekday_program.thermostat_daily_program_id,
-  saturday_program_id = weekend_program.thermostat_daily_program_id,
-  sunday_program_id = weekend_program.thermostat_daily_program_id
-)
+// Use the daily programs to set the weekly program.
+await seam.thermostats.updateWeeklyProgram({
+  device_id: updatedLivingRoomThermostat.device_id,
+  monday_program_id: weekdayProgram.thermostat_daily_program_id,
+  tuesday_program_id: weekdayProgram.thermostat_daily_program_id,
+  wednesday_program_id: weekdayProgram.thermostat_daily_program_id,
+  thursday_program_id: weekdayProgram.thermostat_daily_program_id,
+  friday_program_id: weekdayProgram.thermostat_daily_program_id,
+  saturday_program_id: weekendProgram.thermostat_daily_program_id,
+  sunday_program_id: weekendProgram.thermostat_daily_program_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  action_attempt_id='11111111-2222-3333-4444-666666666666',
-  action_type='PUSH_THERMOSTAT_PROGRAMS',
-  status='success',
-  result={},
-  error=None
-)
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -1664,58 +1702,60 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Create the daily programs.
-const weekdayProgram = await seam.thermostats.dailyPrograms.create({
-  device_id: updatedLivingRoomThermostat.device_id,
-  name: "Weekday Program",
-  periods: [
+```python
+# Create the daily programs.
+weekday_program = seam.thermostats.daily_programs.create(
+  device_id = updated_living_room_thermostat.device_id,
+  name = "Weekday Program",
+  periods = [
     { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
     { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "22:00:00", "climate_preset_key": "Sleep" }
   ]
-});
+)
 
-const weekendProgram = await seam.thermostats.dailyPrograms.create({
-  device_id: updatedLivingRoomThermostat.device_id,
-  name: "Weekend Program",
-  periods: [
+weekend_program = seam.thermostats.daily_programs.create(
+  device_id = updated_living_room_thermostat.device_id,
+  name = "Weekend Program",
+  periods = [
     { "starts_at_time": "08:00:00", "climate_preset_key": "Home" },
     { "starts_at_time": "23:00:00", "climate_preset_key": "Sleep" }
   ]
-});
+)
 
-// Use the daily programs to set the weekly program.
-await seam.thermostats.updateWeeklyProgram({
-  device_id: updatedLivingRoomThermostat.device_id,
-  monday_program_id: weekdayProgram.thermostat_daily_program_id,
-  tuesday_program_id: weekdayProgram.thermostat_daily_program_id,
-  wednesday_program_id: weekdayProgram.thermostat_daily_program_id,
-  thursday_program_id: weekdayProgram.thermostat_daily_program_id,
-  friday_program_id: weekdayProgram.thermostat_daily_program_id,
-  saturday_program_id: weekendProgram.thermostat_daily_program_id,
-  sunday_program_id: weekendProgram.thermostat_daily_program_id
-});
+# Use the daily programs to set the weekly program.
+seam.thermostats.update_weekly_program(
+  device_id = updated_living_room_thermostat.device_id,
+  monday_program_id = weekday_program.thermostat_daily_program_id,
+  tuesday_program_id = weekday_program.thermostat_daily_program_id,
+  wednesday_program_id = weekday_program.thermostat_daily_program_id,
+  thursday_program_id = weekday_program.thermostat_daily_program_id,
+  friday_program_id = weekday_program.thermostat_daily_program_id,
+  saturday_program_id = weekend_program.thermostat_daily_program_id,
+  sunday_program_id = weekend_program.thermostat_daily_program_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-666666666666',
-  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
-  result: {},
-  error: null
-}
+```
+ActionAttempt(
+  action_attempt_id='11111111-2222-3333-4444-666666666666',
+  action_type='PUSH_THERMOSTAT_PROGRAMS',
+  status='success',
+  result={},
+  error=None
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -1766,6 +1806,7 @@ seam.thermostats.update_weekly_program(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -1817,6 +1858,7 @@ $seam->thermostats->update_weekly_program(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

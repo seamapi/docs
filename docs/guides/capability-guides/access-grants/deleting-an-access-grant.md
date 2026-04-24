@@ -7,21 +7,25 @@ description: Learn how to delete an Access Grant.
 To delete an Access Grant:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.delete(access_grant_id="403ea27b-af76-4a48-ace9-8f9498f4c25c")
+```javascript
+await seam.accessGrants.delete({
+  access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c",
+});
 ```
 
 **Output:**
 
-```python
-None
+```javascript
+// void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -41,23 +45,23 @@ EOF
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.delete({
-  access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c",
-});
+```python
+seam.access_grants.delete(access_grant_id="403ea27b-af76-4a48-ace9-8f9498f4c25c")
 ```
 
 **Output:**
 
-```javascript
-// void
+```python
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -72,6 +76,7 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -87,6 +92,7 @@ $seam->access_grants->delete(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

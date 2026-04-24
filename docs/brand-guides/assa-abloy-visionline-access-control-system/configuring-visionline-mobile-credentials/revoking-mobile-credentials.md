@@ -7,23 +7,25 @@ description: Learn how to delete mobile credentials.
 To revoke a mobile credential, [delete the credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#delete-a-credential). Seam issues a discard command for the Visionline card. If you are deleting a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials), Seam discards all of the credentials that were created underneath it.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.credentials.delete(
-  acs_credential_id="66666666-6666-6666-6666-666666666666"
-)
+```javascript
+await seam.acs.credentials.delete({
+  acs_credential_id: "66666666-6666-6666-6666-666666666666"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -46,23 +48,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.credentials.delete({
-  acs_credential_id: "66666666-6666-6666-6666-666666666666"
-});
+```python
+seam.acs.credentials.delete(
+  acs_credential_id="66666666-6666-6666-6666-666666666666"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -77,6 +81,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -93,6 +98,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -107,7 +113,4 @@ seam.CredentialsAcs.Delete(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -24,87 +24,89 @@ To create a credential to encode onto a plastic key card for a Visionline ACS:
 The following example shows how to create a card-based override credential for Visionline and encode it onto a plastic card:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Step 1:
-# Create the new ACS user.
-acs_user = seam.acs.users.create(
-  acs_system_id = "11111111-1111-1111-1111-111111111111",
-  full_name = "Jane Doe",
-  email_address = "jane@example.com"
-)
+```javascript
+// Step 1:
+// Create the new ACS user.
+const acsUser = await seam.acs.users.create({
+  acs_system_id: "11111111-1111-1111-1111-111111111111",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com"
+});
 
-# Step 2:
-# Create a card-based credential for each entrance for the ACS user.
-credential = seam.acs.credentials.create(
-  acs_user_id = acs_user.acs_user_id,
-  access_method = "card",
-  # List the IDs of the entrances to which
-  # you want to grant access.
-  allowed_acs_entrance_ids = [
-    room_101.seam_acs_entrance_id
+// Step 2:
+// Create a card-based credential for each entrance for the ACS user.
+const credential = await seam.acs.credentials.create({
+  acs_user_id: acsUser.acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [
+    // List the IDs of the entrances to which
+    // you want to grant access.
+    room101.seam_acs_entrance_id
   ],
-  starts_at = "2024-12-01T15:00:00.000Z",
-  ends_at = "2024-12-04T12:00:00.000Z",
-  visionline_metadata = {
+  starts_at: "2024-12-01T15:00:00.000Z",
+  ends_at: "2024-12-04T12:00:00.000Z",
+  visionline_metadata: {
     "card_format": "rfid48",
-    "override": True
+    "override": true
   }
-)
+});
 
-# Step 3:
-# Encode the credential onto a card.
-# First, get the encoder that you want to use.
-encoder = seam.acs.encoders.list(
+// Step 3:
+// Encode the credential onto a card.
+// First, get the encoder that you want to use.
+const encoder = (await seam.acs.encoders.list({
   acs_system_ids = ["11111111-1111-1111-1111-111111111111"]
-)[0]
+}))[0];
 
 # Then, encode the card.
-encoding_action_attempt = seam.acs.encoders.encode_credential(
-  acs_credential_id = credential.acs_credential_id,
-  acs_encoder_id = encoder.acs_encoder_id
-)
+const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
+  acs_credential_id: credential.acs_credential_id,
+  acs_encoder_id: encoder.acs_encoder_id
+});
 
 # To confirm that the encoding succeeded, 
 # poll the returned action attempt
 # until its status is success.
-seam.action_attempts.get(
-  action_attempt_id = encoding_action_attempt.action_attempt_id
-)
+await seam.actionAttempts.get({
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='card',
-  starts_at='2024-12-01T15:00:00.000Z',
-  ends_at='2024-12-04T12:00:00.000Z',
-  is_issued=False,
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'card',
+  starts_at: '2024-12-01T15:00:00.000Z',
+  ends_at: '2024-12-04T12:00:00.000Z',
+  is_issued: false,
   ...
-)
+}
 
-ActionAttempt(
-  status='success',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='ENCODE_CREDENTIAL',
-  result={
-    acs_credential_id='66666666-6666-6666-6666-666666666666',
-    card_number='1234abc',
-    is_issued=True,
-    issued_at='2024-12-01T12:00:00.000Z',
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_CREDENTIAL',
+  result: {
+    acs_credential_id: "66666666-6666-6666-6666-666666666666',
+    card_number: '1234abc',
+    is_issued: true,
+    issued_at: '2024-12-01T12:00:00.000Z',
     ...
   },
-  error=null
-)
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -217,87 +219,89 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Step 1:
-// Create the new ACS user.
-const acsUser = await seam.acs.users.create({
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com"
-});
+```python
+# Step 1:
+# Create the new ACS user.
+acs_user = seam.acs.users.create(
+  acs_system_id = "11111111-1111-1111-1111-111111111111",
+  full_name = "Jane Doe",
+  email_address = "jane@example.com"
+)
 
-// Step 2:
-// Create a card-based credential for each entrance for the ACS user.
-const credential = await seam.acs.credentials.create({
-  acs_user_id: acsUser.acs_user_id,
-  access_method: "card",
-  allowed_acs_entrance_ids: [
-    // List the IDs of the entrances to which
-    // you want to grant access.
-    room101.seam_acs_entrance_id
+# Step 2:
+# Create a card-based credential for each entrance for the ACS user.
+credential = seam.acs.credentials.create(
+  acs_user_id = acs_user.acs_user_id,
+  access_method = "card",
+  # List the IDs of the entrances to which
+  # you want to grant access.
+  allowed_acs_entrance_ids = [
+    room_101.seam_acs_entrance_id
   ],
-  starts_at: "2024-12-01T15:00:00.000Z",
-  ends_at: "2024-12-04T12:00:00.000Z",
-  visionline_metadata: {
+  starts_at = "2024-12-01T15:00:00.000Z",
+  ends_at = "2024-12-04T12:00:00.000Z",
+  visionline_metadata = {
     "card_format": "rfid48",
-    "override": true
+    "override": True
   }
-});
+)
 
-// Step 3:
-// Encode the credential onto a card.
-// First, get the encoder that you want to use.
-const encoder = (await seam.acs.encoders.list({
+# Step 3:
+# Encode the credential onto a card.
+# First, get the encoder that you want to use.
+encoder = seam.acs.encoders.list(
   acs_system_ids = ["11111111-1111-1111-1111-111111111111"]
-}))[0];
+)[0]
 
 # Then, encode the card.
-const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
-  acs_credential_id: credential.acs_credential_id,
-  acs_encoder_id: encoder.acs_encoder_id
-});
+encoding_action_attempt = seam.acs.encoders.encode_credential(
+  acs_credential_id = credential.acs_credential_id,
+  acs_encoder_id = encoder.acs_encoder_id
+)
 
 # To confirm that the encoding succeeded, 
 # poll the returned action attempt
 # until its status is success.
-await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id
-});
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'card',
-  starts_at: '2024-12-01T15:00:00.000Z',
-  ends_at: '2024-12-04T12:00:00.000Z',
-  is_issued: false,
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='card',
+  starts_at='2024-12-01T15:00:00.000Z',
+  ends_at='2024-12-04T12:00:00.000Z',
+  is_issued=False,
   ...
-}
+)
 
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_CREDENTIAL',
-  result: {
-    acs_credential_id: "66666666-6666-6666-6666-666666666666',
-    card_number: '1234abc',
-    is_issued: true,
-    issued_at: '2024-12-01T12:00:00.000Z',
+ActionAttempt(
+  status='success',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_CREDENTIAL',
+  result={
+    acs_credential_id='66666666-6666-6666-6666-666666666666',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2024-12-01T12:00:00.000Z',
     ...
   },
-  error: null
-}
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -378,6 +382,7 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -455,6 +460,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -467,9 +473,6 @@ $seam->action_attempts->get(
 // Coming soon!
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

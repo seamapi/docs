@@ -28,26 +28,28 @@ Use [Get Device](https://docs.seam.co/latest/api/devices/get) for a specific dev
 If either of these capability flags is `false` or not present, you can view the [properties](https://docs.seam.co/latest/api/devices/#properties) of the device, [errors](https://docs.seam.co/latest/api/devices/#errors) or [warnings](https://docs.seam.co/latest/api/devices/#warnings) for the device, and [events](https://docs.seam.co/latest/api/events/) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
+```javascript
+await seam.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
 
-```
-Device(
-  device_id='11111111-1111-1111-1111-444444444444',
-  can_remotely_lock=True,   // You can use seam.locks.lock_door() on this device.
-  can_remotely_unlock=True, // You can use seam.locks.unlock_door() on this device.
+```json
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  can_remotely_lock: true,   // You can use seam.locks.lockDoor() on this device.
+  can_remotely_unlock: true, // You can use seam.locks.unlockDoor() on this device.
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -77,26 +79,28 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.devices.get("11111111-1111-1111-1111-444444444444")
+```python
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
 
-```json
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  can_remotely_lock: true,   // You can use seam.locks.lockDoor() on this device.
-  can_remotely_unlock: true, // You can use seam.locks.unlockDoor() on this device.
+```
+Device(
+  device_id='11111111-1111-1111-1111-444444444444',
+  can_remotely_lock=True,   // You can use seam.locks.lock_door() on this device.
+  can_remotely_unlock=True, // You can use seam.locks.unlock_door() on this device.
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -117,6 +121,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -136,6 +141,7 @@ $seam->devices->get("11111111-1111-1111-1111-444444444444");
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -153,9 +159,6 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -165,33 +168,42 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 You can lock a door using the [`lock_door`](https://docs.seam.co/latest/api/locks/lock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 
-# Confirm that the device can remotely lock.
-if device.can_remotely_lock:
-  # Perform the lock operation.
-  seam.locks.lock_door(device_id=device.device_id)
+// Confirm that the device can remotely lock.
+if (device.can_remotely_lock) {
+  // Perform the lock operation.
+  await seam.locks.lockDoor({
+    device_id: device.device_id
+  })
+};
 ```
 
 **Response:**
 
-```
-ActionAttempt(status='pending',
-              action_type='LOCK_DOOR',
-              action_attempt_id='11111111-2222-3333-4444-555555555555',
-              result=None,
-              error={})
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '11111111-2222-3333-4444-555555555555',
+    action_type: 'LOCK_DOOR',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -237,40 +249,35 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 
-// Confirm that the device can remotely lock.
-if (device.can_remotely_lock) {
-  // Perform the lock operation.
-  await seam.locks.lockDoor({
-    device_id: device.device_id
-  })
-};
+# Confirm that the device can remotely lock.
+if device.can_remotely_lock:
+  # Perform the lock operation.
+  seam.locks.lock_door(device_id=device.device_id)
 ```
 
 **Response:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'LOCK_DOOR',
-    result: {},
-    error: null
-  }
-}
+```
+ActionAttempt(status='pending',
+              action_type='LOCK_DOOR',
+              action_attempt_id='11111111-2222-3333-4444-555555555555',
+              result=None,
+              error={})
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -296,6 +303,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -323,6 +331,7 @@ if ($device->can_remotely_lock) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -346,9 +355,6 @@ if (device.CanRemotelyLock == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -358,33 +364,44 @@ if (device.CanRemotelyLock == true) {
 You can unlock a door using the [unlock\_door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
+```javascript
+// Get the device.
+const device = await seam.devices.get({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 
-# Confirm that the device can remotely unlock.
-if device.can_remotely_unlock:
-  # Perform the unlock operation.
-  seam.locks.unlock_door(device_id=device.device_id)
+// Confirm that the device can remotely unlock.
+if (device.can_remotely_unlock) {
+  // Perform the unlock operation.
+  await seam.locks.unlockDoor({
+    device_id: device.device_id
+  })
+};
 ```
 
 **Response:**
 
-```
-ActionAttempt(status='pending',
-              action_type='UNLOCK_DOOR',
-              action_attempt_id='11111111-2222-3333-4444-555555555555',
-              result=None,
-              error={})
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '11111111-2222-3333-4444-555555555555',
+    action_type: 'UNLOCK_DOOR',
+    result: {
+      was_confirmed_by_device: false
+    },
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -430,42 +447,35 @@ fi
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Get the device.
-const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
 
-// Confirm that the device can remotely unlock.
-if (device.can_remotely_unlock) {
-  // Perform the unlock operation.
-  await seam.locks.unlockDoor({
-    device_id: device.device_id
-  })
-};
+# Confirm that the device can remotely unlock.
+if device.can_remotely_unlock:
+  # Perform the unlock operation.
+  seam.locks.unlock_door(device_id=device.device_id)
 ```
 
 **Response:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'UNLOCK_DOOR',
-    result: {
-      was_confirmed_by_device: false
-    },
-    error: null
-  }
-}
+```
+ActionAttempt(status='pending',
+              action_type='UNLOCK_DOOR',
+              action_attempt_id='11111111-2222-3333-4444-555555555555',
+              result=None,
+              error={})
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -491,6 +501,7 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -520,6 +531,7 @@ if ($device->can_remotely_unlock) {
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -543,9 +555,6 @@ if (device.CanRemotelyUnlock == true) {
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -557,25 +566,33 @@ if (device.CanRemotelyUnlock == true) {
 When initiating a lock or unlock action, the Seam API returns an action attempt, which monitors the success or failure of the action.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.locks.lock_door(device_id="11111111-1111-1111-1111-444444444444")
+```javascript
+await seam.locks.lockDoor({
+  device_id: "11111111-1111-1111-1111-444444444444"
+});
 ```
 
 **Response:**
 
-```
-ActionAttempt(status='pending',
-              action_type='LOCK_DOOR',
-              action_attempt_id='11111111-2222-3333-4444-555555555555',
-              result=None,
-              error={})
+```json
+{
+  actionAttempt: {
+    status: 'success',
+    action_attempt_id: '11111111-2222-3333-4444-555555555555',
+    action_type: 'LOCK_DOOR',
+    result: {},
+    error: null
+  }
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -605,31 +622,27 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.locks.lockDoor({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+```python
+seam.locks.lock_door(device_id="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
 
-```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'LOCK_DOOR',
-    result: {},
-    error: null
-  }
-}
+```
+ActionAttempt(status='pending',
+              action_type='LOCK_DOOR',
+              action_attempt_id='11111111-2222-3333-4444-555555555555',
+              result=None,
+              error={})
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -648,6 +661,7 @@ client.locks.lock_door(device_id: "11111111-1111-1111-1111-444444444444")
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -668,6 +682,7 @@ $seam->locks->lock_door(device_id: "11111111-1111-1111-1111-444444444444");
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -684,9 +699,6 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
@@ -698,25 +710,31 @@ Some providers and device models do not confirm whether a lock or unlock complet
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.action_attempts.get(action_attempt_id="11111111-2222-3333-4444-555555555555")
+```javascript
+await seam.actionAttempts.get({action_attempt_id: "11111111-2222-3333-4444-555555555555"});
 ```
 
 **Response:**
 
-```
-ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
-              action_type='LOCK_DOOR',
-              status='success',
-              result={'was_confirmed_by_device': True},
-              error=None)
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555',
+  action_type: 'LOCK_DOOR',
+  result: {
+    was_confirmed_by_device: true
+  },
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -749,29 +767,27 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.actionAttempts.get({action_attempt_id: "11111111-2222-3333-4444-555555555555"});
+```python
+seam.action_attempts.get(action_attempt_id="11111111-2222-3333-4444-555555555555")
 ```
 
 **Response:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555',
-  action_type: 'LOCK_DOOR',
-  result: {
-    was_confirmed_by_device: true
-  },
-  error: null
-}
+```
+ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
+              action_type='LOCK_DOOR',
+              status='success',
+              result={'was_confirmed_by_device': True},
+              error=None)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -790,6 +806,7 @@ client.action_attempts.get(action_attempt_id: "11111111-2222-3333-4444-555555555
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -812,6 +829,7 @@ $seam->action_attempts->get(action_attempt_id: "11111111-2222-3333-4444-55555555
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -832,9 +850,6 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -844,28 +859,30 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 To retrieve the locked status of a specific door lock, use the [Get Device](https://docs.seam.co/latest/api/devices/get) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
+```javascript
+await seam.devices.get("11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
 
-```
-Device(
-  device_id='11111111-1111-1111-1111-444444444444',
-  properties={
-    'locked': True,
+```json
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  properties: {
+    locked: true,
     ...
   },
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -897,28 +914,30 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.devices.get("11111111-1111-1111-1111-444444444444")
+```python
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
 ```
 
 **Response:**
 
-```json
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  properties: {
-    locked: true,
+```
+Device(
+  device_id='11111111-1111-1111-1111-444444444444',
+  properties={
+    'locked': True,
     ...
   },
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -940,6 +959,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -961,6 +981,7 @@ $seam->devices->get("11111111-1111-1111-1111-444444444444");
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -980,9 +1001,6 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

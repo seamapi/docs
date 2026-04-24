@@ -13,28 +13,30 @@ You can also use unique resource keys as an easy way to link your resources to S
 Use the [Update Device](https://docs.seam.co/latest/api/devices/update) method with the optional [`custom_metadata` property](https://docs.seam.co/latest/api/devices/#properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-device_update = seam.devices.update(
-    device = "30fd243b-3054-4384-a713-5487076a3826",
-    custom_metadata = {
-        "internal_account_id": "user-1"
-    }
-)
+```javascript
+const deviceUpdate = await seam.devices.update({
+  device_id: "30fd243b-3054-4384-a713-5487076a3826",
+  custom_metadata: {
+    "internal_account_id": "user-1"
+  }
+})
 
-pprint(device_update)
+console.log(deviceUpdate)
 ```
 
 **Response:**
 
-```
-True
+```json
+{ ok: true }
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -60,28 +62,30 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-const deviceUpdate = await seam.devices.update({
-  device_id: "30fd243b-3054-4384-a713-5487076a3826",
-  custom_metadata: {
-    "internal_account_id": "user-1"
-  }
-})
+```python
+device_update = seam.devices.update(
+    device = "30fd243b-3054-4384-a713-5487076a3826",
+    custom_metadata = {
+        "internal_account_id": "user-1"
+    }
+)
 
-console.log(deviceUpdate)
+pprint(device_update)
 ```
 
 **Response:**
 
-```json
-{ ok: true }
+```
+True
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -103,6 +107,7 @@ puts device_update.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -123,6 +128,7 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp

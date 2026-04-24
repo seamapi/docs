@@ -47,37 +47,39 @@ To create an Access Grant, first [connect](../../core-concepts/workspaces/#conne
 List the entrances in the access system and identify the ones to which you want to grant the user access.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.acs.entrances.list(
-  acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339"
-)
+```javascript
+await seam.acs.entrances.list({
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+});
 ```
 
 **Output:**
 
-```python
+```json
 [
-  AcsEntrance(
-    acs_entrance_id="48ebfb50-c531-43c5-b9ea-409f26dabbd7",
-    display_name="Main Entrance",
-    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+  {
+    "acs_entrance_id": "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "display_name": "Main Entrance",
+    "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
     ...
-  ),
-  AcsEntrance(
-    acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
-    display_name="Room 101",
-    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+  },
+  {
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "display_name": "Room 101",
+    "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -114,37 +116,39 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.acs.entrances.list({
-  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
-});
+```python
+seam.acs.entrances.list(
+  acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+)
 ```
 
 **Output:**
 
-```json
+```python
 [
-  {
-    "acs_entrance_id": "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
-    "display_name": "Main Entrance",
-    "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+  AcsEntrance(
+    acs_entrance_id="48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    display_name="Main Entrance",
+    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339",
     ...
-  },
-  {
-    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "display_name": "Room 101",
-    "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+  ),
+  AcsEntrance(
+    acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
+    display_name="Room 101",
+    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339",
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -175,6 +179,7 @@ seam.acs.entrances.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -205,6 +210,7 @@ $seam->acs->entrances->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -226,30 +232,32 @@ You can create a user identity before creating the Access Grant, you can retriev
 To create a user identity, specify the unique `user_identity_key`, `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.user_identities.create(
-  full_name="Jane Doe",
-  email_address="jane@example.com",
-  acs_system_ids=["c359cba2-8ef2-47fc-bee0-1c7c2a886339"]
-)
+```javascript
+await seam.userIdentities.create({
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
+});
 ```
 
 **Output:**
 
-```python
-UserIdentity(
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  full_name="Jane Doe",
-  email_address="jane@example.com",
+```json
+{
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -281,30 +289,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.userIdentities.create({
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
-});
+```python
+seam.user_identities.create(
+  full_name="Jane Doe",
+  email_address="jane@example.com",
+  acs_system_ids=["c359cba2-8ef2-47fc-bee0-1c7c2a886339"]
+)
 ```
 
 **Output:**
 
-```json
-{
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
+```python
+UserIdentity(
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  full_name="Jane Doe",
+  email_address="jane@example.com",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -328,6 +338,7 @@ seam.user_identities.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -351,6 +362,7 @@ $seam->user_identities->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -372,42 +384,43 @@ $seam->user_identities->create(
 To create an Access Grant, specify the user identity, entrance IDs, starting and ending times, and requested access methods, such as `code`, `card`, and `mobile_key`. To issue an Instant Key, specify `mobile_key` as the mode for a requested access method.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_grants.create(
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  # Alternately, to create a new user identity, use the
-  # following parameter instead of user_identity_id:
-  # user_identity={
-  #  "full_name": "Jane Doe",
-  #  "email_address": "jane.doe@example.com",
-  # },
-  acs_entrance_ids=[
+```javascript
+await seam.accessGrants.create({
+  user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+  // Alternately, to create a new user identity, use the
+  // following parameter instead of user_identity_id:
+  // user_identity: {
+  //  full_name: "Jane Doe",
+  //  email_address: "jane.doe@example.com",
+  // },
+  acs_entrance_ids: [
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
   ],
-  requested_access_methods=[
+  requested_access_methods: [
     {"mode": "code"},
     {"mode": "card"},
     {"mode": "mobile_key"}
   ],
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z"
-)
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+});
 ```
 
 **Output:**
 
-```python
-AccessGrant(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  display_name="My Access Grant",
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z",
-  requested_access_methods=[
+```json
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
+  "requested_access_methods": [
     {
       "display_name": "Plastic Card",
       "mode": "card",
@@ -427,13 +440,14 @@ AccessGrant(
       ...
     }
   ],
-  instant_key_url="https://ik.seam.co/ABCXYZ",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```curl
@@ -501,42 +515,43 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessGrants.create({
-  user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
-  // Alternately, to create a new user identity, use the
-  // following parameter instead of user_identity_id:
-  // user_identity: {
-  //  full_name: "Jane Doe",
-  //  email_address: "jane.doe@example.com",
-  // },
-  acs_entrance_ids: [
+```python
+seam.access_grants.create(
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  # Alternately, to create a new user identity, use the
+  # following parameter instead of user_identity_id:
+  # user_identity={
+  #  "full_name": "Jane Doe",
+  #  "email_address": "jane.doe@example.com",
+  # },
+  acs_entrance_ids=[
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
   ],
-  requested_access_methods: [
+  requested_access_methods=[
     {"mode": "code"},
     {"mode": "card"},
     {"mode": "mobile_key"}
   ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-});
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-13T15:00:00.000Z",
-  "ends_at": "2025-07-16T11:00:00.000Z",
-  "requested_access_methods": [
+```python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z",
+  requested_access_methods=[
     {
       "display_name": "Plastic Card",
       "mode": "card",
@@ -556,13 +571,14 @@ await seam.accessGrants.create({
       ...
     }
   ],
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+  instant_key_url="https://ik.seam.co/ABCXYZ",
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -621,6 +637,7 @@ seam.access_grants.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -682,6 +699,7 @@ $seam->access_grants->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -710,32 +728,34 @@ To poll the created access methods, get these access methods by ID and look for 
 * When an access method is ready to be delivered to a user, `access_method.is_issued` changes to `true`. For a card access method, `access_method.is_issued` changes to `true` after you encode the plastic card. You can also view the `access_method.issued_at` property to learn when the access method was issued.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_methods.get(
-  access_method_id = "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-)
+```javascript
+await seam.accessMethods.get({
+  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+});
 ```
 
 **Output:**
 
-```
-AccessMethod(
-  access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-  display_name="Plastic Card",
-  mode="card",
-  created_at="2025-06-16T16:54:19.946606Z",
-  is_card_encoding_required=true,
-  is_issued=false,
-  issued_at=null,
+```json
+{
+  "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+  "display_name": "Plastic Card",
+  "mode": "card",
+  "created_at": "2025-06-16T16:54:19.946606Z",
+  "is_card_encoding_required": true,
+  "is_issued": false,
+  "issued_at": null,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -768,32 +788,34 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessMethods.get({
-  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-});
+```python
+seam.access_methods.get(
+  access_method_id = "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+)
 ```
 
 **Output:**
 
-```json
-{
-  "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-  "display_name": "Plastic Card",
-  "mode": "card",
-  "created_at": "2025-06-16T16:54:19.946606Z",
-  "is_card_encoding_required": true,
-  "is_issued": false,
-  "issued_at": null,
+```
+AccessMethod(
+  access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+  display_name="Plastic Card",
+  mode="card",
+  created_at="2025-06-16T16:54:19.946606Z",
+  is_card_encoding_required=true,
+  is_issued=false,
+  issued_at=null,
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -819,6 +841,7 @@ seam.access_methods.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -844,6 +867,7 @@ $seam->access_methods->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

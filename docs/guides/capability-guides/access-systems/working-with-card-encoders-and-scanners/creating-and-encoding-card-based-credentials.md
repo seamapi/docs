@@ -35,49 +35,51 @@ Depending on your specific access control system, creating an access system user
 {% endhint %}
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Step 1:
-# Create the new access system user.
-acs_user = seam.acs.users.create(
-  acs_system_id = "11111111-1111-1111-1111-111111111111",
-  full_name = "Jane Doe",
-  email_address = "jane@example.com"
-)
+```javascript
+// Step 1:
+// Create the new access system user.
+const acsUser = await seam.acs.users.create({
+  acs_system_id: "11111111-1111-1111-1111-111111111111",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com"
+});
 
-# Step 2:
-# Create a card-based credential for each entrance for the access system user.
-credential = seam.acs.credentials.create(
-  acs_user_id = acs_user.acs_user_id,
-  access_method = "card",
-  # List the IDs of the entrances to which
-  # you want to grant access.
-  allowed_acs_entrance_ids = [
-    room_101.seam_acs_entrance_id
+// Step 2:
+// Create a card-based credential for each entrance for the access system user.
+const credential = await seam.acs.credentials.create({
+  acs_user_id: acsUser.acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [
+    // List the IDs of the entrances to which
+    // you want to grant access.
+    room101.seam_acs_entrance_id
   ],
-  starts_at = "2024-12-01T15:00:00.000Z",
-  ends_at = "2024-12-04T12:00:00.000Z"
-)
+  starts_at: "2024-12-01T15:00:00.000Z",
+  ends_at: "2024-12-04T12:00:00.000Z"
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='card',
-  starts_at='2024-12-01T15:00:00.000Z',
-  ends_at='2024-12-04T12:00:00.000Z',
-  is_issued=False
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'card',
+  starts_at: '2024-12-01T15:00:00.000Z',
+  ends_at: '2024-12-04T12:00:00.000Z',
+  is_issued: false,
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -133,49 +135,51 @@ credential=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Step 1:
-// Create the new access system user.
-const acsUser = await seam.acs.users.create({
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com"
-});
+```python
+# Step 1:
+# Create the new access system user.
+acs_user = seam.acs.users.create(
+  acs_system_id = "11111111-1111-1111-1111-111111111111",
+  full_name = "Jane Doe",
+  email_address = "jane@example.com"
+)
 
-// Step 2:
-// Create a card-based credential for each entrance for the access system user.
-const credential = await seam.acs.credentials.create({
-  acs_user_id: acsUser.acs_user_id,
-  access_method: "card",
-  allowed_acs_entrance_ids: [
-    // List the IDs of the entrances to which
-    // you want to grant access.
-    room101.seam_acs_entrance_id
+# Step 2:
+# Create a card-based credential for each entrance for the access system user.
+credential = seam.acs.credentials.create(
+  acs_user_id = acs_user.acs_user_id,
+  access_method = "card",
+  # List the IDs of the entrances to which
+  # you want to grant access.
+  allowed_acs_entrance_ids = [
+    room_101.seam_acs_entrance_id
   ],
-  starts_at: "2024-12-01T15:00:00.000Z",
-  ends_at: "2024-12-04T12:00:00.000Z"
-});
+  starts_at = "2024-12-01T15:00:00.000Z",
+  ends_at = "2024-12-04T12:00:00.000Z"
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'card',
-  starts_at: '2024-12-01T15:00:00.000Z',
-  ends_at: '2024-12-04T12:00:00.000Z',
-  is_issued: false,
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='card',
+  starts_at='2024-12-01T15:00:00.000Z',
+  ends_at='2024-12-04T12:00:00.000Z',
+  is_issued=False
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -218,6 +222,7 @@ credential = seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -260,6 +265,7 @@ $credential = $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -312,30 +318,32 @@ There may be multiple encoders at a location, so it’s important to select the 
 This example shows how to retrieve all encoders in a building connected to a single access system. Once you've identified the encoder you'd like to use, save the `acs_encoder_id` of the chosen encoder for the next step.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.acs.encoders.list(
-  acs_system_ids = [building_system_id]
-)
+```javascript
+await seam.acs.encoders.list({
+  acs_system_ids: [buildingSystemId]
+});
 ```
 
 **Output:**
 
-```
+```json
 [
-  AcsEncoder(
-    acs_encoder_id='33333333-4444-5555-6666-777777777777',
-    display_name='Front Desk',
+  {
+    acs_encoder_id: '33333333-4444-5555-6666-777777777777',
+    display_name: 'Front Desk',
     ...
-  )
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -366,30 +374,32 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.acs.encoders.list({
-  acs_system_ids: [buildingSystemId]
-});
+```python
+seam.acs.encoders.list(
+  acs_system_ids = [building_system_id]
+)
 ```
 
 **Output:**
 
-```json
+```
 [
-  {
-    acs_encoder_id: '33333333-4444-5555-6666-777777777777',
-    display_name: 'Front Desk',
+  AcsEncoder(
+    acs_encoder_id='33333333-4444-5555-6666-777777777777',
+    display_name='Front Desk',
     ...
-  },
+  )
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -413,6 +423,7 @@ seam.acs.encoders.list(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -436,6 +447,7 @@ $seam->acs->encoders->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -467,30 +479,32 @@ seam.EncodersAcs.List(
 Use `/acs/encoders/encode_credential` to start the card writing procedure that stores the credential data on the plastic key card.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-encoding_action_attempt = seam.acs.encoders.encode_credential(
-  acs_credential_id = credential.acs_credential_id,
-  acs_encoder_id = encoder.acs_encoder_id
-)
+```javascript
+const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
+  acs_credential_id: credential.acs_credential_id,
+  acs_encoder_id: encoder.acs_encoder_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='pending',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='ENCODE_CREDENTIAL',
-  result=null,
-  error=null
-)
+```json
+{
+  status: 'pending',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_CREDENTIAL',
+  result: null,
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -522,30 +536,32 @@ encoding_action_attempt=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-const encodingActionAttempt = await seam.acs.encoders.encodeCredential({
-  acs_credential_id: credential.acs_credential_id,
-  acs_encoder_id: encoder.acs_encoder_id
-});
+```python
+encoding_action_attempt = seam.acs.encoders.encode_credential(
+  acs_credential_id = credential.acs_credential_id,
+  acs_encoder_id = encoder.acs_encoder_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'pending',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_CREDENTIAL',
-  result: null,
-  error: null
-}
+```
+ActionAttempt(
+  status='pending',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_CREDENTIAL',
+  result=null,
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -569,6 +585,7 @@ encoding_action_attempt = seam.acs.encoders.encode_credential(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -592,6 +609,7 @@ $encoding_action_attempt = $seam->acs->encoders->encode_credential(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -626,35 +644,37 @@ Once you issue a request to encode the credential onto the card, it is important
 When you make an `/acs/encoders/encode_credential` request, Seam returns an [action attempt](../../../core-concepts/action-attempts.md). To confirm that the card encoding was successful, you can poll this action attempt, until its `status` becomes `success`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.action_attempts.get(
-  action_attempt_id = encoding_action_attempt.action_attempt_id
-)
+```javascript
+await seam.actionAttempts.get({
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
 
-```
-ActionAttempt(
-  status='success',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='ENCODE_CREDENTIAL',
-  result={
-    acs_credential_id='66666666-6666-6666-6666-666666666666',
-    card_number='1234abc',
-    is_issued=True,
-    issued_at='2024-10-23T19:46:06.113Z',
+```json
+{
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_CREDENTIAL',
+  result: {
+    acs_credential_id: "66666666-6666-6666-6666-666666666666',
+    card_number: '1234abc',
+    is_issued: true,
+    issued_at: '2024-10-23T19:46:06.113Z',
     ...
   },
-  error=null
-)
+  error: null
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -691,35 +711,37 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id
-});
+```python
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_CREDENTIAL',
-  result: {
-    acs_credential_id: "66666666-6666-6666-6666-666666666666',
-    card_number: '1234abc',
-    is_issued: true,
-    issued_at: '2024-10-23T19:46:06.113Z',
+```
+ActionAttempt(
+  status='success',
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='ENCODE_CREDENTIAL',
+  result={
+    acs_credential_id='66666666-6666-6666-6666-666666666666',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2024-10-23T19:46:06.113Z',
     ...
   },
-  error: null
-}
+  error=null
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -748,6 +770,7 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -776,6 +799,7 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -809,33 +833,35 @@ seam.ActionAttempts.Get(
 It is also useful to note that Seam assigns values to various card-related properties on the credential when the encoder has finished encoding the card. For example, `acs_credential.is_issued` becomes `true`, and `acs_credential.card_number` and `acs_credential.issued_at` receive values. You can retrieve the credential to view these properties.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.acs.credentials.get(
-  acs_credential_id = credential.acs_credential_id
-)
+```javascript
+await seam.acs.credentials.get({
+  acs_credential_id: credential.acs_credential_id
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='card',
-  starts_at='2024-12-01T15:00:00.000Z',
-  ends_at='2024-12-04T12:00:00.000Z',
-  is_issued=True,
-  card_number='1234abc',
-  issued_at='2024-10-23T19:46:06.113Z',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'card',
+  starts_at: '2024-12-01T15:00:00.000Z',
+  ends_at: '2024-12-04T12:00:00.000Z',
+  is_issued: true,
+  card_number: '1234abc',
+  issued_at: '2024-10-23T19:46:06.113Z',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -870,33 +896,35 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.acs.credentials.get({
-  acs_credential_id: credential.acs_credential_id
-});
+```python
+seam.acs.credentials.get(
+  acs_credential_id = credential.acs_credential_id
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'card',
-  starts_at: '2024-12-01T15:00:00.000Z',
-  ends_at: '2024-12-04T12:00:00.000Z',
-  is_issued: true,
-  card_number: '1234abc',
-  issued_at: '2024-10-23T19:46:06.113Z',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='card',
+  starts_at='2024-12-01T15:00:00.000Z',
+  ends_at='2024-12-04T12:00:00.000Z',
+  is_issued=True,
+  card_number='1234abc',
+  issued_at='2024-10-23T19:46:06.113Z',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -923,6 +951,7 @@ seam.acs.credentials.get(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -949,6 +978,7 @@ $seam->acs->credentials->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

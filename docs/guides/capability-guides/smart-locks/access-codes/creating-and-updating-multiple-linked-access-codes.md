@@ -32,53 +32,55 @@ If you want to change these access codes that are not linked by a `common_code_k
 The following example creates two linked access codes for two devices.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Create the group of linked access codes.
-# Each returned access code includes a common_code_key.
-seam.access_codes.create_multiple(
-  device_ids = [
+```javascript
+// Create the group of linked access codes.
+// Each returned access code includes a common_code_key.
+await seam.accessCodes.createMultiple({
+  device_ids: [
     "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
     "d87eea5d-71c6-4633-a966-396c5ac51177"
   ],
-  name = "Jane's reservation",
-  starts_at = "2024-11-15T15:00:00Z",
-  ends_at = "2024-11-17T11:00:00Z",
-  preferred_code_length = 4
-)
+  name: "Jane's reservation",
+  starts_at: "2024-11-15T15:00:00Z",
+  ends_at: "2024-11-17T11:00:00Z",
+  preferred_code_length: 4
+});
 ```
 
 **Response:**
 
-```
+```json
 [
-  AccessCode(
-    access_code_id='4ae69d7a-de72-4bb0-a32e-afc2ac025e2e',
-    name="Jane's reservation",
-    device_id='8e94044d-a4d1-4691-9f7e-e97d3e8a0b73',
-    code='2709',
-    common_code_key='auto_set_by_create_multiple_a11a027a-5070-47f5-aabf-279051117b0d',
-    starts_at='2024-11-15T15:00:00.000Z',
-    ends_at='2024-11-17T11:00:00.000Z',
+  {
+    access_code_id: 'a1c682b1-c909-473f-926a-442a4ffc54c2',
+    name: "Jane's reservation",
+    device_id: '8e94044d-a4d1-4691-9f7e-e97d3e8a0b73',
+    code: '5974',
+    common_code_key: 'auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7',
+    starts_at: '2024-12-15T15:00:00.000Z',
+    ends_at: '2024-12-17T11:00:00.000Z',
     ...
-  ),
-  AccessCode(
-    access_code_id='adcd39ff-a334-4890-9904-0c056d8f8f8c',
-    name="Jane's reservation",
-    device_id='d87eea5d-71c6-4633-a966-396c5ac51177',
-    code='2709',
-    common_code_key='auto_set_by_create_multiple_a11a027a-5070-47f5-aabf-279051117b0d',
-    starts_at='2024-11-15T15:00:00.000Z',
-    ends_at='2024-11-17T11:00:00.000Z',
+  },
+  {
+    access_code_id: '49261a24-103c-4880-8e58-d1d98f301ba7',
+    name: "Jane's reservation",
+    device_id: 'd87eea5d-71c6-4633-a966-396c5ac51177',
+    code: '5974',
+    common_code_key: 'auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7',
+    starts_at: '2024-12-15T15:00:00.000Z',
+    ends_at: '2024-12-17T11:00:00.000Z',
     ...
-  )
+  }
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```sh
@@ -132,53 +134,55 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Create the group of linked access codes.
-// Each returned access code includes a common_code_key.
-await seam.accessCodes.createMultiple({
-  device_ids: [
+```python
+# Create the group of linked access codes.
+# Each returned access code includes a common_code_key.
+seam.access_codes.create_multiple(
+  device_ids = [
     "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
     "d87eea5d-71c6-4633-a966-396c5ac51177"
   ],
-  name: "Jane's reservation",
-  starts_at: "2024-11-15T15:00:00Z",
-  ends_at: "2024-11-17T11:00:00Z",
-  preferred_code_length: 4
-});
+  name = "Jane's reservation",
+  starts_at = "2024-11-15T15:00:00Z",
+  ends_at = "2024-11-17T11:00:00Z",
+  preferred_code_length = 4
+)
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    access_code_id: 'a1c682b1-c909-473f-926a-442a4ffc54c2',
-    name: "Jane's reservation",
-    device_id: '8e94044d-a4d1-4691-9f7e-e97d3e8a0b73',
-    code: '5974',
-    common_code_key: 'auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7',
-    starts_at: '2024-12-15T15:00:00.000Z',
-    ends_at: '2024-12-17T11:00:00.000Z',
+  AccessCode(
+    access_code_id='4ae69d7a-de72-4bb0-a32e-afc2ac025e2e',
+    name="Jane's reservation",
+    device_id='8e94044d-a4d1-4691-9f7e-e97d3e8a0b73',
+    code='2709',
+    common_code_key='auto_set_by_create_multiple_a11a027a-5070-47f5-aabf-279051117b0d',
+    starts_at='2024-11-15T15:00:00.000Z',
+    ends_at='2024-11-17T11:00:00.000Z',
     ...
-  },
-  {
-    access_code_id: '49261a24-103c-4880-8e58-d1d98f301ba7',
-    name: "Jane's reservation",
-    device_id: 'd87eea5d-71c6-4633-a966-396c5ac51177',
-    code: '5974',
-    common_code_key: 'auto_set_by_create_multiple_72f81ee3-997f-4fdc-81d0-289dabc28ae7',
-    starts_at: '2024-12-15T15:00:00.000Z',
-    ends_at: '2024-12-17T11:00:00.000Z',
+  ),
+  AccessCode(
+    access_code_id='adcd39ff-a334-4890-9904-0c056d8f8f8c',
+    name="Jane's reservation",
+    device_id='d87eea5d-71c6-4633-a966-396c5ac51177',
+    code='2709',
+    common_code_key='auto_set_by_create_multiple_a11a027a-5070-47f5-aabf-279051117b0d',
+    starts_at='2024-11-15T15:00:00.000Z',
+    ends_at='2024-11-17T11:00:00.000Z',
     ...
-  }
+  )
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -223,6 +227,7 @@ client.access_codes.create_multiple(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -269,6 +274,7 @@ $seam->access_codes->create_multiple(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -313,9 +319,6 @@ seam.AccessCodes.CreateMultiple(
 ]
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -325,29 +328,31 @@ seam.AccessCodes.CreateMultiple(
 The following example changes both the starting and ending times for a group of linked access codes:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-# Update the starting and ending times
-# for all these linked access codes,
-# using the common_code_key to identify
-# the group of access codes to update.
-seam.access_codes.update_multiple(
-  common_code_key = common_code_key,
-  starts_at = "2024-11-15T12:00:00Z",
-  ends_at = "2024-11-17T15:00:00Z"
-)
+```javascript
+// Update the starting and ending times
+// for all these linked access codes,
+// using the common_code_key to identify
+// the group of access codes to update.
+await seam.accessCodes.updateMultiple({
+  common_code_key: commonCodeKey,
+  starts_at: "2024-11-15T12:00:00Z",
+  ends_at: "2024-11-17T15:00:00Z"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```sh
@@ -376,29 +381,31 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-// Update the starting and ending times
-// for all these linked access codes,
-// using the common_code_key to identify
-// the group of access codes to update.
-await seam.accessCodes.updateMultiple({
-  common_code_key: commonCodeKey,
-  starts_at: "2024-11-15T12:00:00Z",
-  ends_at: "2024-11-17T15:00:00Z"
-});
+```python
+# Update the starting and ending times
+# for all these linked access codes,
+# using the common_code_key to identify
+# the group of access codes to update.
+seam.access_codes.update_multiple(
+  common_code_key = common_code_key,
+  starts_at = "2024-11-15T12:00:00Z",
+  ends_at = "2024-11-17T15:00:00Z"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -421,6 +428,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -443,6 +451,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -463,7 +472,4 @@ seam.AccessCodes.UpdateMultiple(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -11,23 +11,25 @@ description: >-
 To delete an access code, specify the desired `access_code_id` in the [Delete Access Code](https://docs.seam.co/latest/api/access_codes/delete) request.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-seam.access_codes.delete(
-  access_code_id="11111111-1111-1111-1111-555555555555"
-)
+```javascript
+await seam.accessCodes.delete({
+  access_code_id: "11111111-1111-1111-1111-555555555555"
+});
 ```
 
 **Output:**
 
 ```
-None
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -50,23 +52,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-await seam.accessCodes.delete({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+```python
+seam.access_codes.delete(
+  access_code_id="11111111-1111-1111-1111-555555555555"
+)
 ```
 
 **Output:**
 
 ```
-void
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -83,6 +87,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -99,6 +104,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp
@@ -113,9 +119,6 @@ seam.AccessCodes.Delete(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***

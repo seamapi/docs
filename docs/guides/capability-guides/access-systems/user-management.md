@@ -17,28 +17,30 @@ This guide explains how to create and manage ACS users. Using the [Access Contro
 To add ACS users to your access control system, first retrieve the `acs_system_id` of the ACS that you want to configure. To retrieve the ACS details, use [Get a System](https://docs.seam.co/latest/api/acs/systems/get) or [List Systems](https://docs.seam.co/latest/api/acs/systems/list). Then, continue to the remaining sections in this topic to learn how to manage ACS users.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.systems.list()
+```javascript
+await seam.acs.systems.list();
 ```
 
 **Response:**
 
-```
+```json
 [
-  AcsSystem(
-    acs_system_id='11111111-1111-1111-1111-111111111111',
-    name='Visionline System',
+  {
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    name: 'Visionline System',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -68,28 +70,30 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.systems.list();
+```python
+seam.acs.systems.list()
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    name: 'Visionline System',
+  AcsSystem(
+    acs_system_id='11111111-1111-1111-1111-111111111111',
+    name='Visionline System',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -104,6 +108,7 @@ await seam.acs.systems.list();
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -125,6 +130,7 @@ $seam->acs->systems->list();
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -142,9 +148,6 @@ seam.SystemsAcs.List();
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -160,34 +163,36 @@ In addition, if your ACS architecture supports assigning access schedules direct
 Further, you can use the `user_identity_id` parameter to associate a new ACS user with a [user identity](https://docs.seam.co/latest/api/user_identities/). You can use a user identity to link an ACS user with an app user in your system, such as a [mobile access app user](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) or an app user who needs access to multiple ACSs.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.create(
-  acs_system_id="11111111-1111-1111-1111-111111111111",
-  user_identity_id="22222222-2222-2222-2222-222222222222",
-  full_name="Jane Doe",
-  email_address="jane@example.com",
-  phone_number="+15555550101"
-)
+```javascript
+await seam.acs.users.create({
+  acs_system_id: "11111111-1111-1111-1111-111111111111",
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  phone_number: "+15555550101"
+});
 ```
 
 **Response:**
 
-```
-AcsUser(
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  full_name='Jane Doe',
-  email_address='jane@example.com',
-  phone_number='+15555550101',
-  acs_system_id='11111111-1111-1111-1111-111111111111',
+```json
+{
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  full_name: 'Jane Doe',
+  email_address: 'jane@example.com',
+  phone_number: '+15555550101',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -222,34 +227,36 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.create({
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  user_identity_id: "22222222-2222-2222-2222-222222222222",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  phone_number: "+15555550101"
-});
+```python
+seam.acs.users.create(
+  acs_system_id="11111111-1111-1111-1111-111111111111",
+  user_identity_id="22222222-2222-2222-2222-222222222222",
+  full_name="Jane Doe",
+  email_address="jane@example.com",
+  phone_number="+15555550101"
+)
 ```
 
 **Response:**
 
-```json
-{
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  full_name: 'Jane Doe',
-  email_address: 'jane@example.com',
-  phone_number: '+15555550101',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
+```
+AcsUser(
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  full_name='Jane Doe',
+  email_address='jane@example.com',
+  phone_number='+15555550101',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -264,6 +271,7 @@ await seam.acs.users.create({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -291,6 +299,7 @@ $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -316,9 +325,6 @@ seam.UsersAcs.Create(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -328,31 +334,33 @@ seam.UsersAcs.Create(
 To [list all ACS users](https://docs.seam.co/latest/api/acs/users/list) within an `acs_system`, provide the `acs_system_id` of the ACS. You can also filter users by `user_identity_id`, `user_identity_email_address`, or `user_identity_phone_number`.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.list(
-  acs_system_id="11111111-1111-1111-1111-111111111111"
-)
+```javascript
+await seam.acs.users.list({
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+});
 ```
 
 **Response:**
 
-```
+```json
 [
-  AcsUser(
-    acs_user_id='33333333-3333-3333-3333-333333333333',
-    full_name='Jane Doe',
-    email_address='jane@example.com',
+  {
+    acs_user_id: '33333333-3333-3333-3333-333333333333',
+    full_name: 'Jane Doe',
+    email_address: 'jane@example.com',
     ...
-  ),
+  },
   ...
 ]
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -385,31 +393,33 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.list({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+```python
+seam.acs.users.list(
+  acs_system_id="11111111-1111-1111-1111-111111111111"
+)
 ```
 
 **Response:**
 
-```json
+```
 [
-  {
-    acs_user_id: '33333333-3333-3333-3333-333333333333',
-    full_name: 'Jane Doe',
-    email_address: 'jane@example.com',
+  AcsUser(
+    acs_user_id='33333333-3333-3333-3333-333333333333',
+    full_name='Jane Doe',
+    email_address='jane@example.com',
     ...
-  },
+  ),
   ...
 ]
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -424,6 +434,7 @@ await seam.acs.users.list({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -448,6 +459,7 @@ $seam->acs->users->list(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -468,9 +480,6 @@ seam.UsersAcs.List(
 ...
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -480,35 +489,37 @@ seam.UsersAcs.List(
 To [get an ACS user](https://docs.seam.co/latest/api/acs/users/get), provide the `acs_user_id` of the user that you want to retrieve. These details include the contact details for the user, the user's access schedule, the associated [user identity](https://docs.seam.co/latest/api/user_identities/), if applicable, and so on.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.get(
- acs_user_id="33333333-3333-3333-3333-333333333333"
-)
+```javascript
+await seam.acs.users.get({
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+});
 ```
 
 **Response:**
 
-```
-AcsUser(
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  full_name='Jane Doe',
-  email_address='jane@example.com',
-  phone_number='+15555550100',
-  acs_system_id='11111111-1111-1111-1111-111111111111',
-  access_schedule={
-    'starts_at': '2024-03-01T10:40:00.000Z',
-    'ends_at': '2024-03-04T10:40:00.000Z'
+```json
+{
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  full_name: 'Jane Doe',
+  email_address: 'jane@example.com',
+  phone_number: '+15555550100',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  access_schedule: {
+    "starts_at": "2024-03-01T10:40:00.000Z",
+    "ends_at": "2024-03-04T10:40:00.000Z"
   },
-  user_identity_id='22222222-2222-2222-2222-222222222222',
+  user_identity_id: '22222222-2222-2222-2222-222222222222',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -545,35 +556,37 @@ curl -X 'GET' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.get({
-  acs_user_id: "33333333-3333-3333-3333-333333333333"
-});
+```python
+seam.acs.users.get(
+ acs_user_id="33333333-3333-3333-3333-333333333333"
+)
 ```
 
 **Response:**
 
-```json
-{
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  full_name: 'Jane Doe',
-  email_address: 'jane@example.com',
-  phone_number: '+15555550100',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  access_schedule: {
-    "starts_at": "2024-03-01T10:40:00.000Z",
-    "ends_at": "2024-03-04T10:40:00.000Z"
+```
+AcsUser(
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  full_name='Jane Doe',
+  email_address='jane@example.com',
+  phone_number='+15555550100',
+  acs_system_id='11111111-1111-1111-1111-111111111111',
+  access_schedule={
+    'starts_at': '2024-03-01T10:40:00.000Z',
+    'ends_at': '2024-03-04T10:40:00.000Z'
   },
-  user_identity_id: '22222222-2222-2222-2222-222222222222',
+  user_identity_id='22222222-2222-2222-2222-222222222222',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -588,6 +601,7 @@ await seam.acs.users.get({
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -616,6 +630,7 @@ $seam->acs->users->get(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -642,9 +657,6 @@ seam.AcsUsers.Get(
 }
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -654,24 +666,26 @@ seam.AcsUsers.Get(
 To [update an ACS user](https://docs.seam.co/latest/api/acs/users/update), provide the `acs_user_id` of the user that you want to update, along with the attributes that you want to modify, such as the contact details for the user or the user's access schedule.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.update(
-  acs_user_id="33333333-3333-3333-3333-333333333333",
-  full_name="Jack Doe"
-)
+```javascript
+await seam.acs.users.update({
+  acs_user_id: "33333333-3333-3333-3333-333333333333",
+  full_name: "Jack Doe"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -695,24 +709,26 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.update({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  full_name: "Jack Doe"
-});
+```python
+seam.acs.users.update(
+  acs_user_id="33333333-3333-3333-3333-333333333333",
+  full_name="Jack Doe"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -727,6 +743,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -744,6 +761,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -759,9 +777,6 @@ seam.UsersAcs.Update(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}
 
 ***
@@ -771,23 +786,25 @@ void
 To [delete an ACS user](https://docs.seam.co/latest/api/acs/users/delete), provide the `acs_user_id` of the user that you want to delete.
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Request:**
 
-```python
-seam.acs.users.delete(
-  acs_user_id="33333333-3333-3333-3333-333333333333"
-)
+```javascript
+await seam.acs.users.delete({
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+});
 ```
 
 **Response:**
 
-```
-None
+```json
+void
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Request:**
 
 ```bash
@@ -810,23 +827,25 @@ curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Request:**
 
-```javascript
-await seam.acs.users.delete({
-  acs_user_id: "33333333-3333-3333-3333-333333333333"
-});
+```python
+seam.acs.users.delete(
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+)
 ```
 
 **Response:**
 
-```json
-void
+```
+None
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Request:**
 
 ```ruby
@@ -841,6 +860,7 @@ void
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Request:**
 
 ```php
@@ -857,6 +877,7 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Request:**
 
 ```csharp
@@ -871,7 +892,4 @@ seam.UsersAcs.Delete(
 void
 ```
 {% endtab %}
-
-
-
 {% endtabs %}

@@ -23,64 +23,67 @@ To use the Seam API to create mobile credentials for mobile app users in a Salto
 The following example walks you through this process:
 
 {% tabs %}
-{% tab title="Python" %}
+{% tab title="JavaScript" %}
+
 **Code:**
 
-```python
-# Get the access system.
-building_a = seam.acs.systems.get(
-  acs_system_id = "11111111-1111-1111-1111-111111111111"
-)
+```javascript
+// Get the access system.
+const buildingA = await seam.acs.systems.get({
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+});
 
-# Step 1:
-# Create a user identity that corresponds to your user's mobile app account.
-jane_user = seam.user_identities.create(
-  full_name = "Jane Doe"
-)
+// Step 1:
+// Create a user identity that corresponds to your user's app account.
+const janeUser = await seam.userIdentities.create({
+  full_name: "Jane Doe"
+});
 
-# Step 2:
-# Create an access system user on the Salto Space access system.
-access_system_user = seam.acs.users.create(
-  user_identity_id = jane_user.user_identity_id,
-  acs_system_id = building_a.acs_system_id,
-  full_name = jane_user.full_name,
-  phone_number = "+15555550100"
-)
+// Step 2:
+// Create an access system user on the Salto Space access system.
+const accessSystemUser = await seam.acs.users.create({
+  user_identity_id: janeUser.user_identity_id,
+  acs_system_id: buildingA.acs_system_id,
+  full_name: janeUser.full_name,
+  phone_number: "+15555550100"
+});
 
-# Step 3:
-# Add the access system user to all desired access groups.
-access_group_ids = [
+// Step 3:
+// Add the access system user to all desired access groups.
+const accessGroupIds = [
   "44444444-4444-4444-4444-333333333333",
   "44444444-4444-4444-4444-444444444444"
-]
-for access_group_id in seam_access_group_ids:
-  seam.acs.users.add_to_access_group(
-    acs_user_id = access_system_user.acs_user_id,
-    acs_access_group_id = access_group_id
-  )
-  
-# Step 4:
-# Create a mobile key for the access system user.
-mobile_key = seam.acs.credentials.create(
-  acs_user_id = access_system_user.acs_user_id,
-  is_multi_phone_sync_credential = True,
-  access_method = "mobile_key"
-)
+];
+for (const accessGroupId of accessGroupIds) {
+  await seam.acs.users.addToAccessGroup({
+    acs_user_id: accessSystemUser.acs_user_id,
+    acs_access_group_id: accessGroupId
+  });
+}
+
+// Step 4:
+// Create a mobile key for the access system user.
+const mobileKey = await seam.acs.credentials.create({
+  acs_user_id: accessSystemUser.acs_user_id,
+  access_method: "mobile_key",
+  is_multi_phone_sync_credential: true
+});
 ```
 
 **Output:**
 
-```
-AcsCredential(
-  acs_credential_id='66666666-6666-6666-6666-666666666666',
-  acs_user_id='33333333-3333-3333-3333-333333333333',
-  access_method='mobile_key',
+```json
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  access_method: 'mobile_key',
   ...
-)
+}
 ```
 {% endtab %}
 
-{% tab title="cURL (bash)" %}
+{% tab title="cURL" %}
+
 **Code:**
 
 ```bash
@@ -163,65 +166,66 @@ mobile_key=$(curl -X 'POST' \
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
+{% tab title="Python" %}
+
 **Code:**
 
-```javascript
-// Get the access system.
-const buildingA = await seam.acs.systems.get({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+```python
+# Get the access system.
+building_a = seam.acs.systems.get(
+  acs_system_id = "11111111-1111-1111-1111-111111111111"
+)
 
-// Step 1:
-// Create a user identity that corresponds to your user's app account.
-const janeUser = await seam.userIdentities.create({
-  full_name: "Jane Doe"
-});
+# Step 1:
+# Create a user identity that corresponds to your user's mobile app account.
+jane_user = seam.user_identities.create(
+  full_name = "Jane Doe"
+)
 
-// Step 2:
-// Create an access system user on the Salto Space access system.
-const accessSystemUser = await seam.acs.users.create({
-  user_identity_id: janeUser.user_identity_id,
-  acs_system_id: buildingA.acs_system_id,
-  full_name: janeUser.full_name,
-  phone_number: "+15555550100"
-});
+# Step 2:
+# Create an access system user on the Salto Space access system.
+access_system_user = seam.acs.users.create(
+  user_identity_id = jane_user.user_identity_id,
+  acs_system_id = building_a.acs_system_id,
+  full_name = jane_user.full_name,
+  phone_number = "+15555550100"
+)
 
-// Step 3:
-// Add the access system user to all desired access groups.
-const accessGroupIds = [
+# Step 3:
+# Add the access system user to all desired access groups.
+access_group_ids = [
   "44444444-4444-4444-4444-333333333333",
   "44444444-4444-4444-4444-444444444444"
-];
-for (const accessGroupId of accessGroupIds) {
-  await seam.acs.users.addToAccessGroup({
-    acs_user_id: accessSystemUser.acs_user_id,
-    acs_access_group_id: accessGroupId
-  });
-}
-
-// Step 4:
-// Create a mobile key for the access system user.
-const mobileKey = await seam.acs.credentials.create({
-  acs_user_id: accessSystemUser.acs_user_id,
-  access_method: "mobile_key",
-  is_multi_phone_sync_credential: true
-});
+]
+for access_group_id in seam_access_group_ids:
+  seam.acs.users.add_to_access_group(
+    acs_user_id = access_system_user.acs_user_id,
+    acs_access_group_id = access_group_id
+  )
+  
+# Step 4:
+# Create a mobile key for the access system user.
+mobile_key = seam.acs.credentials.create(
+  acs_user_id = access_system_user.acs_user_id,
+  is_multi_phone_sync_credential = True,
+  access_method = "mobile_key"
+)
 ```
 
 **Output:**
 
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_user_id: '33333333-3333-3333-3333-333333333333',
-  access_method: 'mobile_key',
+```
+AcsCredential(
+  acs_credential_id='66666666-6666-6666-6666-666666666666',
+  acs_user_id='33333333-3333-3333-3333-333333333333',
+  access_method='mobile_key',
   ...
-}
+)
 ```
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 **Code:**
 
 ```ruby
@@ -280,6 +284,7 @@ mobile_key = seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
+
 **Code:**
 
 ```php
@@ -338,6 +343,7 @@ $mobile_key = $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
+
 **Code:**
 
 ```csharp

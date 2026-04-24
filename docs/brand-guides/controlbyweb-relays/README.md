@@ -21,32 +21,37 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 * C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
 
 {% tabs %}
+{% tab title="JavaScript" %}
+
+```bash
+npm i seam
+```
+{% endtab %}
+
 {% tab title="Python" %}
+
 ```bash
 pip install seam
 # For some development environments, use pip3 in this command instead of pip.
 ```
 {% endtab %}
 
-{% tab title="JavaScript" %}
-```bash
-npm i seam
-```
-{% endtab %}
-
 {% tab title="Ruby" %}
+
 ```bash
 bundle add seam
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
+
 ```bash
 composer require seamapi/seam
 ```
 {% endtab %}
 
 {% tab title="C#" %}
+
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
@@ -68,22 +73,8 @@ To control your ControlByWeb relay device via the Seam API, you must first autho
 #### Request a Connect Webview
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-from seam import Seam
+{% tab title="JavaScript" %}
 
-seam = Seam()
-
-webview = seam.connect_webviews.create(accepted_providers=["controlbyweb"])
-
-assert webview.login_successful is False
-
-# Send the webview URL to your user
-print(webview.url)
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 import { Seam } from 'seam'
 
@@ -100,7 +91,24 @@ console.log(connectWebview.url)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["controlbyweb"])
+
+assert webview.login_successful is False
+
+# Send the webview URL to your user
+print(webview.url)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 require "seam"
 
@@ -130,15 +138,8 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+{% tab title="JavaScript" %}
 
-assert updated_webview.login_successful # true
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -148,7 +149,17 @@ console.log(updatedWebview.login_successful) // true
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
+
+assert updated_webview.login_successful # true
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -162,40 +173,8 @@ puts updated_webview.login_successful # true
 After a ControlByWeb account is linked with Seam, you can retrieve devices for this ControlByWeb account. The main device property currently exposed by the Seam API is whether the device is online and reachable.
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-all_locks = seam.locks.list()
+{% tab title="JavaScript" %}
 
-some_lock = all_locks[0]
-
-assert some_lock.properties["online"] is True
-assert some_lock.properties["locked"] is True
-
-print(some_lock)
-# Device(
-#   device_id='4a570d13-9704-46e0-b69c-9fea80d6a7aa',
-#   device_type='controlbyweb_device',
-#   location=None,
-#   properties={
-#     'locked': True,
-#     'online': True,
-#     'manufacturer': 'controlbyweb',
-#     'controlbyweb_metadata': {
-#       'device_id': '9997',
-#       'relay_name': 'firstRelay',
-#       'device_name': 'Device 2'
-#     },
-#     'name': 'Device 2',
-#     'image_url': 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
-#     'image_alt_text': 'Placeholder Lock Image'
-#   },
-#   capabilities_supported=['lock'],
-#   errors=[]
-# )
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -234,7 +213,42 @@ console.log(someLock)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["locked"] is True
+
+print(some_lock)
+# Device(
+#   device_id='4a570d13-9704-46e0-b69c-9fea80d6a7aa',
+#   device_type='controlbyweb_device',
+#   location=None,
+#   properties={
+#     'locked': True,
+#     'online': True,
+#     'manufacturer': 'controlbyweb',
+#     'controlbyweb_metadata': {
+#       'device_id': '9997',
+#       'relay_name': 'firstRelay',
+#       'device_name': 'Device 2'
+#     },
+#     'name': 'Device 2',
+#     'image_url': 'https://connect.getseam.com/assets/images/devices/unknown-lock.png',
+#     'image_alt_text': 'Placeholder Lock Image'
+#   },
+#   capabilities_supported=['lock'],
+#   errors=[]
+# )
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -280,21 +294,24 @@ Next, you can perform the basic action of triggering a relay on the device. This
 | device\_id | String |             |
 
 {% tabs %}
-{% tab title="Python" %}
-```python
-# trigger the relay
-seam.locks.unlock_door(some_lock)
-```
-{% endtab %}
+{% tab title="JavaScript" %}
 
-{% tab title="Javascript" %}
 ```javascript
 // trigger the relay
 await seam.locks.unlockDoor(someLock.device_id)
 ```
 {% endtab %}
 
+{% tab title="Python" %}
+
+```python
+# trigger the relay
+seam.locks.unlock_door(some_lock)
+```
+{% endtab %}
+
 {% tab title="Ruby" %}
+
 ```ruby
 # trigger the relay
 seam.locks.unlock_door(device_id: some_lock.device_id)
