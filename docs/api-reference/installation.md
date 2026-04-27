@@ -142,3 +142,4 @@ Claude selects the appropriate tool automatically based on your prompt.
 ### Support
 
 For questions or issues with the Seam Docs MCP server, contact [support@seam.co](mailto:support@seam.co).
+
