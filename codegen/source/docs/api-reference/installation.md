@@ -1,5 +1,5 @@
 ---
-description: Install the Seam SDKs to call the Seam API and connect the Seam Docs MCP server to Claude.
+description: Install the Seam SDKs to call the Seam API and connect the Seam Docs MCP server to search Seam's docs and device database from Claude.
 ---
 
 # Installation
@@ -55,9 +55,9 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 
 ## Seam Docs MCP Server
 
-The **Seam Docs MCP Server** is a public, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude and other MCP-compatible clients access to the Seam documentation. Connect it once, then ask Claude questions about the Seam API, capabilities, webhooks, and SDK usage. Claude grounds its answers in the most up-to-date Seam docs.
+The **Seam Docs MCP Server** is a public, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude and other MCP-compatible clients access to Seam's developer documentation and device database. Connect it once, then ask Claude questions about the Seam API, capabilities, webhooks, SDK usage, and the 400+ supported device models — across smart locks, thermostats, access control systems, and noise sensors. Claude grounds its answers in the most up-to-date Seam docs.
 
-The server is intended for developers integrating with Seam who want Claude to answer Seam documentation questions accurately. It is read-only: it cannot control devices, manage access codes, create resources, or perform any other write operations against the Seam API.
+The server is intended for developers integrating with Seam who want Claude to answer Seam questions accurately, whether they're looking up an API endpoint, checking which lock models support mobile keys, or finding the right integration guide. It is read-only: it cannot control devices, manage access codes, create resources, or perform any other write operations against the Seam API.
 
 ### Server Details
 
@@ -73,14 +73,16 @@ No API key, account, or sign-up is required to use the Seam Docs MCP server. It 
 
 ### What You Can Ask
 
-Once connected, you can ask Claude questions like the following, and Claude will fetch the answer from the Seam docs:
+Once connected, you can ask Claude questions like the following, and Claude will fetch the answer from the Seam docs and device database:
 
 * "How do I unlock a Schlage Encode lock with the Seam API?"
 * "Show me the webhook payload for `lock.locked`."
 * "What's the difference between an access code and an access grant?"
-* "Which endpoints are available for managing thermostat schedules?"
+* "Which smart lock models support mobile keys and remote unlock?"
+* "Compare August and Yale lock features for a hospitality deployment."
+* "Find the right integration guide for property management workflows."
+* "Does Seam support Salto KS access control systems?"
 * "How do I create a Connect Webview from the Python SDK?"
-* "List the simulation endpoints for sandbox locks."
 
 ### Connect From Claude.ai
 
@@ -126,18 +128,18 @@ Or add the following entry to your Claude Code MCP configuration file:
 
 The Seam Docs MCP server exposes three read-only tools:
 
-| Tool                | Description                                                  |
-| ------------------- | ------------------------------------------------------------ |
-| `search_docs`       | Semantic search across all Seam documentation.               |
-| `get_doc`           | Fetch the full content of a specific Seam documentation page. |
-| `list_doc_sections` | Browse the Seam documentation tree structure.                |
+| Tool                | Display Name      | Description                                                                                  |
+| ------------------- | ----------------- | -------------------------------------------------------------------------------------------- |
+| `search_docs`       | Search Seam Docs  | Semantic search across all Seam documentation and the 400+ supported device models, ranked by relevance. |
+| `get_doc`           | Get Doc Page      | Fetch the full content of any Seam documentation or device page.                             |
+| `list_doc_sections` | List Doc Sections | Browse the Seam documentation tree to discover available content.                            |
 
 Claude selects the appropriate tool automatically based on your prompt.
 
 ### Troubleshooting
 
 * **403 Forbidden on connection** — The server only accepts requests from approved origins (`mcp.seam.co`, `claude.ai`, `app.claude.ai`, and `localhost`). Requests from other origins are rejected.
-* **Empty search results** — If `search_docs` returns nothing, broaden your query. Use Seam API resource names (for example, `access_codes`) rather than SDK-specific method names.
+* **Empty search results** — If `search_docs` returns nothing, broaden your query. Use Seam API resource names (for example, `access_codes`) rather than SDK-specific method names, and use generic capability terms (for example, "mobile keys") when searching for devices.
 * **Connection refused** — Confirm that your network allows outbound HTTPS to `mcp.seam.co`. Some corporate firewalls block custom MCP endpoints.
 
 ### Support
