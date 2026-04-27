@@ -1,6 +1,3 @@
----
-description: Install the Seam SDKs to call the Seam API and connect the Seam Docs MCP server to Claude.
----
 
 # Installation
 
@@ -143,3 +140,4 @@ Claude selects the appropriate tool automatically based on your prompt.
 ### Support
 
 For questions or issues with the Seam Docs MCP server, contact [support@seam.co](mailto:support@seam.co).
+
