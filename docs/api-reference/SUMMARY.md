@@ -1,7 +1,8 @@
 # API Reference
 
 * [Overview](README.md)
-* [Installation](installation.md)
+* [SDK Installation](installation.md)
+* [MCP Installation](mcp-installation.md)
 * [Authentication](authentication.md)
 * [Pagination](pagination.md)
 * [Rate Limits and Guardrails](rate-limits-and-guardrails.md)

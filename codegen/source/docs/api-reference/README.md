@@ -10,7 +10,8 @@ See the following reference topics:
 
 ## Getting Started
 
-* [Installation](installation.md)
+* [SDK Installation](installation.md)
+* [MCP Installation](mcp-installation.md)
 * [Authentication](authentication.md)
 * [Client Sessions](client_sessions/)
 * [Workspaces](workspaces/)
