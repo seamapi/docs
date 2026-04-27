@@ -26,6 +26,8 @@ await Promise.all([
     `./${apiReferenceRoot}/**`,
     `!./${apiReferenceRoot}/SUMMARY.md`,
     `!./${apiReferenceRoot}/.gitbook.yaml`,
+    `!./${apiReferenceRoot}/.gitbook/**`,
+    `!./${apiReferenceRoot}/mcp-installation.md`,
   ]),
 ])
 

@@ -1,3 +1,8 @@
+---
+description: Connect the Seam Docs MCP server to Claude to search Seam's API reference and device database from inside your conversations.
+cover: .gitbook/assets/mcp-cover.png
+coverY: 0
+---
 
 # MCP Installation
 
