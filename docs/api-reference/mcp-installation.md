@@ -2,11 +2,11 @@
 description: >-
   Connect the Seam Docs MCP server to Claude to search Seam's API reference and
   device database from inside your conversations.
-cover: .gitbook/assets/mcp-cover.png
-coverY: 192.46031746031747
 ---
 
 # MCP Installation
+
+<figure><img src=".gitbook/assets/mcp-cover.png" alt=""><figcaption></figcaption></figure>
 
 The **Seam Docs MCP Server** is a public, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude and other MCP-compatible clients access to Seam's developer documentation and device database. Connect it once, then ask Claude questions about the Seam API, capabilities, webhooks, SDK usage, and the 400+ supported device models — across smart locks, thermostats, access control systems, and noise sensors. Claude grounds its answers in the most up-to-date Seam docs.
 
