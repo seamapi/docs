@@ -1,7 +1,9 @@
 ---
-description: Connect the Seam Docs MCP server to Claude to search Seam's API reference and device database from inside your conversations.
+description: >-
+  Connect the Seam Docs MCP server to Claude to search Seam's API reference and
+  device database from inside your conversations.
 cover: .gitbook/assets/mcp-cover.png
-coverY: 0
+coverY: 192.46031746031747
 ---
 
 # MCP Installation
@@ -26,14 +28,14 @@ No API key, account, or sign-up is required to use the Seam Docs MCP server. It 
 
 Once connected, you can ask Claude questions like the following, and Claude will fetch the answer from the Seam docs and device database:
 
-- "How do I unlock a Schlage Encode lock with the Seam API?"
-- "Show me the webhook payload for `lock.locked`."
-- "What's the difference between an access code and an access grant?"
-- "Which smart lock models support mobile keys and remote unlock?"
-- "Compare August and Yale lock features for a hospitality deployment."
-- "Find the right integration guide for property management workflows."
-- "Does Seam support Salto KS access control systems?"
-- "How do I create a Connect Webview from the Python SDK?"
+* "How do I unlock a Schlage Encode lock with the Seam API?"
+* "Show me the webhook payload for `lock.locked`."
+* "What's the difference between an access code and an access grant?"
+* "Which smart lock models support mobile keys and remote unlock?"
+* "Compare August and Yale lock features for a hospitality deployment."
+* "Find the right integration guide for property management workflows."
+* "Does Seam support Salto KS access control systems?"
+* "How do I create a Connect Webview from the Python SDK?"
 
 ## Connect From Claude.ai
 
@@ -89,11 +91,10 @@ Claude selects the appropriate tool automatically based on your prompt.
 
 ## Troubleshooting
 
-- **403 Forbidden on connection** — The server only accepts requests from approved origins (`mcp.seam.co`, `claude.ai`, `app.claude.ai`, and `localhost`). Requests from other origins are rejected.
-- **Empty search results** — If `search_docs` returns nothing, broaden your query. Use Seam API resource names (for example, `access_codes`) rather than SDK-specific method names, and use generic capability terms (for example, "mobile keys") when searching for devices.
-- **Connection refused** — Confirm that your network allows outbound HTTPS to `mcp.seam.co`. Some corporate firewalls block custom MCP endpoints.
+* **403 Forbidden on connection** — The server only accepts requests from approved origins (`mcp.seam.co`, `claude.ai`, `app.claude.ai`, and `localhost`). Requests from other origins are rejected.
+* **Empty search results** — If `search_docs` returns nothing, broaden your query. Use Seam API resource names (for example, `access_codes`) rather than SDK-specific method names, and use generic capability terms (for example, "mobile keys") when searching for devices.
+* **Connection refused** — Confirm that your network allows outbound HTTPS to `mcp.seam.co`. Some corporate firewalls block custom MCP endpoints.
 
 ## Support
 
 For questions or issues with the Seam Docs MCP server, contact [support@seam.co](mailto:support@seam.co).
-
