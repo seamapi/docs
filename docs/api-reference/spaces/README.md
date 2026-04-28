@@ -47,6 +47,31 @@ Date and time at which the space was created.
 
 ---
 
+**`customer_data`** *Object*
+
+Reservation/stay-related defaults for the space.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>default_checkin_time</code></strong> <i>String</i>
+  
+    Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.
+
+  - <strong><code>default_checkout_time</code></strong> <i>String</i>
+  
+    Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.
+
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
+    IANA time zone for the space, e.g. America/Los_Angeles.
+
+</details>
+
+---
+
 **`customer_key`** *String*
 
 Customer key associated with the space.
