@@ -37,7 +37,7 @@ Add the script tag and custom element anywhere on your page. You can serve this 
   <body>
     <main>
       <device-list-by-capability
-        capability-name="remoteunlock"
+        capability-name="can_program_online_access_codes"
         token="your-api-token"
       ></device-list-by-capability>
     </main>
@@ -67,7 +67,7 @@ Then render the element wherever you need the device list:
 
 ```html
 <device-list-by-capability
-  capability-name="remoteunlock"
+  capability-name="can_program_online_access_codes"
   token="your-api-token"
 ></device-list-by-capability>
 ```
@@ -86,7 +86,7 @@ The `<device-list-by-capability>` element accepts the following attributes:
 
 | Attribute            | Type    | Default | Description                                                                                            |
 | -------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| `capability-name`    | string  | —       | **Required.** Comma-separated capability names, for example `remoteunlock` or `remoteunlock,walletkeys`. |
+| `capability-name`    | string  | —       | **Required.** Comma-separated [Seam capability flag names](../../capability-guides/device-and-system-capabilities.md), for example `can_program_online_access_codes` or `can_program_online_access_codes,can_provision_wallet_keys`. |
 | `token`              | string  | —       | **Required.** API token issued by Seam.                                                                |
 | `max-visible-rows`   | number  | `4`     | Maximum device rows shown per manufacturer before a "show more" control appears.                       |
 | `hide-search`        | boolean | `false` | Hide the search input.                                                                                 |
@@ -99,8 +99,8 @@ When you provide more than one capability, the component renders a dropdown sele
 
 ```html
 <device-list-by-capability
-  capability-name="remoteunlock,walletkeys"
-  initial-capability="remoteunlock"
+  capability-name="can_program_online_access_codes,can_provision_wallet_keys"
+  initial-capability="can_program_online_access_codes"
   token="your-api-token"
 ></device-list-by-capability>
 ```
@@ -109,7 +109,7 @@ When you provide more than one capability, the component renders a dropdown sele
 
 ```html
 <device-list-by-capability
-  capability-name="remoteunlock"
+  capability-name="can_program_online_access_codes"
   manufacturers="schlage,yale"
   token="your-api-token"
 ></device-list-by-capability>
@@ -118,6 +118,5 @@ When you provide more than one capability, the component renders a dropdown sele
 ## Next Steps
 
 - Browse live examples in the [interactive component storybook](https://seamapi.github.io/custom-device-db-web).
-- Review source, release notes, and version history in the [`custom-device-db-web` repository](https://github.com/seamapi/custom-device-db-web).
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
