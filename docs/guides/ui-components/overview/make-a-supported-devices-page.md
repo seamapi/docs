@@ -72,7 +72,7 @@ Then render the element wherever you need the device list:
 ></device-list-by-capability>
 ```
 
-Some frameworks require additional configuration to enable web component support. See the [Angular](getting-started-with-seam-components/angular.md) and [Vue](getting-started-with-seam-components/vue.md) guides for examples.
+Some frameworks require additional configuration to enable web component support. Refer to your framework's documentation — for example, the [Vue web components guide](https://vuejs.org/guide/extras/web-components.html) or Angular's `CUSTOM_ELEMENTS_SCHEMA`.
 {% endtab %}
 {% endtabs %}
 
