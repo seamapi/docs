@@ -4,8 +4,6 @@ description: Guide for using Akiles locks with Seam
 
 # Akiles Locks
 
-<figure><picture><source srcset="../../.gitbook/assets/akiles-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/akiles-manufacturer-page-cover-light.png" alt="Connect and control any Akiles device using the Seam API."></picture><figcaption><p>Connect and control any Akiles device using the Seam API.</p></figcaption></figure>
-
 ## Overview
 
 [Akiles](https://akiles.app/en) is a Barcelona-based company that produces smart lock products for the European market. These offerings include the Smart Cylinder, Roomlock, and Pinpad, as well as the Smart Controller for electrified locks and access points. Akiles also offers the Akiles Gateway and Akiles Cloud. Seam integrates with Akiles through the Akiles Gateway to provide remote unlock functionality and access code creation and management.

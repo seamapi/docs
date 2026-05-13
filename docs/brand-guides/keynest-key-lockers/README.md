@@ -4,8 +4,6 @@ description: Automating physical key hand‑offs with KeyNest lockers
 
 # Keynest Key Lockers
 
-<figure><img src="../../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
-
 ## Overview
 
 Connect your Keynest account to Seam to automate key pickup and drop-off for your properties. Keynest integrates directly with Seam’s Smart Lock API, letting you manage access to physical keys the same way you manage digital locks or credentials. Each physical key stored at a Keynest location appears as a device in Seam. You can issue time-bound pickup and drop-off codes through the Seam API, allowing guests, staff, or vendors to access keys securely without manual coordination.
@@ -19,8 +17,6 @@ This integration supports all keys stored and managed under your Keynest account
 {% hint style="warning" %}
 Note: Keys stored at [Quadrient lockers](https://www.quadient.com/en/news/KeyNest_Selects_Parcel_Pending_by_Quadient_Open_Network_to_Expand_Key_Exchange_Services_in_the_UK) aren't supported.
 {% endhint %}
-
-<figure><img src="../../.gitbook/assets/image (36).png" alt="" width="563"><figcaption><p>Keys stored at Quadrient Lockers are not compatible with Seam.</p></figcaption></figure>
 
 ***
 

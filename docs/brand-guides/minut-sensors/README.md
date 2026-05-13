@@ -49,6 +49,6 @@ To control Minut devices using Seam, you must prompt owners of these devices to 
 
 To purchase Minut sensors, visit the Minut online store.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Minut Online Store</strong></td><td></td><td><a href="https://store.minut.com/">https://store.minut.com/</a></td><td><a href="../.gitbook/assets/minut-logo.png">minut-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Minut Online Store</strong></td><td></td><td><a href="https://store.minut.com/">https://store.minut.com/</a></td><td></td></tr></tbody></table>
 
 ***

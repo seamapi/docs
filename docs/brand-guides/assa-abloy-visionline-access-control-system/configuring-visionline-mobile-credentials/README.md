@@ -12,8 +12,6 @@ This guide describes how to issue guest and staff mobile credentials on the Visi
 
 Visionline is a [credential-based access control system](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#credential-based-access-control-systems). That is, you create ACS users and credentials. Within these credentials, you specify the set of entrances to which you want to grant access and the schedules for this access.
 
-<figure><img src="../../../.gitbook/assets/acs-arch-credential-based.png" alt="Seam resource relationships for a credential-based ACS"><figcaption><p>Seam resource relationships for a credential-based ACS</p></figcaption></figure>
-
 ### Credential Types for Visionline
 
 When creating credentials, you can configure [guest](./#issuing-guest-mobile-credentials) mobile credentials for a Visionline ACS. Guest credentials are further subdivided into [override](./#issue-the-first-credential-for-a-reservation) and [joiner](./#issue-subsequent-credentials-for-a-reservation) credentials. An override credential serves as the first access grant for a reservation and revokes all previous guest access to the included guest room entrances. When a reservation includes multiple guests who need access, all subsequent access grants for the same reservation are joiner credentials. This type of credential provides shared access that matches the grants of existing credentials. For more details, see the following sections:
@@ -56,7 +54,7 @@ Reservations may involve multiple parties. In these situations, hotels often nee
 To issue the first guest credential for a reservation, create an override credential. This credential type invalidates any existing guest access to the target entrances. When creating an override credential, set `visionline_metadata.override` to `true`.
 
 {% hint style="info" %}
-You can also [verify whether a user identity has a phone that is set up for a credential manager](../configuring-visionline-mobile-credentials/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager.md) and, consequently, is ready to accept an override guest credential.
+You can also [verify whether a user identity has a phone that is set up for a credential manager](checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager.md) and, consequently, is ready to accept an override guest credential.
 {% endhint %}
 
 {% tabs %}
@@ -122,7 +120,7 @@ To issue a joiner credential, you must specify both the entrances to which to gr
 * `allowed_acs_entrance_ids`
 * `visionline_metadata.joiner_acs_credential_ids`
 
-For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](../configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials.md).
+For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](issuing-various-types-of-guest-joiner-mobile-credentials.md).
 
 {% tabs %}
 {% tab title="Python" %}
@@ -200,5 +198,3 @@ common_entrances = filter_entrances_by_profile_type(
 ```
 {% endtab %}
 {% endtabs %}
-
-<figure><img src="../../../.gitbook/assets/Join only.png" alt="In the Seam Console, we disable the Override option when a user identity has not set up their phone to receive Visionline credentials." width="421"><figcaption><p>In the Seam Console, we disable the Override option when a user identity has not set up their phone to receive Visionline credentials.</p></figcaption></figure>

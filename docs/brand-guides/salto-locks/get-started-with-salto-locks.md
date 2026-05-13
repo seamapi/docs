@@ -4,8 +4,6 @@ description: Learn how to connect and control your Salto lock with the Seam API.
 
 # Get started with Salto KS Locks
 
-<figure><img src="../.gitbook/assets/salto-getting-started-guide-cover.jpg" alt=""><figcaption><p>Salto Locks</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [Salto](https://www.seam.co/manufacturers/salto) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -71,7 +69,6 @@ To control your Salto locks via the Seam API, you must first authorize your Seam
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -99,7 +96,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -125,7 +121,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -150,7 +145,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -178,7 +172,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -207,7 +200,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -252,7 +244,6 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -263,7 +254,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -272,7 +262,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -281,7 +270,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
 assert($webview->status == 'pending');
@@ -295,7 +283,6 @@ After a Salto account is linked with Seam, you can retrieve devices for this Sal
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -344,7 +331,6 @@ console.log(someLock)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -359,7 +345,6 @@ print(some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -379,7 +364,6 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -403,8 +387,8 @@ Next, you can perform the basic action of locking and unlocking a door.
 Note that Salto KS disables this functionality by default and requires a special pass-through waiver via Seam. Please contact Seam to configure your IQ hubs to enable this functionality.
 {% endhint %}
 
-{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+[openapi.json](../.gitbook/assets/openapi.json)
 {% endopenapi %}
 
 ## Unlock a door
@@ -419,7 +403,6 @@ Note that Salto KS disables this functionality by default and requires a special
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -434,7 +417,6 @@ console.log(updatedLock.properties.locked) // false
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -449,7 +431,6 @@ assert updated_lock.properties["locked"] is False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -464,7 +445,6 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -492,7 +472,6 @@ Salto does not let you specify a code for an access code. Instead Salto generate
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -548,7 +527,6 @@ await seam.accessCodes.list({
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -574,7 +552,6 @@ seam.access_codes.list(device=some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -610,7 +587,6 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 

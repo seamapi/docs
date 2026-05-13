@@ -25,8 +25,6 @@ Make sure that your computer meets the following requirements:
 
 For more details, see the following ASSA ABLOY Visionline document:
 
-{% file src="../../../../../.gitbook/assets/VisiOnline Server Client and DCOM Port Requirements.pdf" %}
-
 ***
 
 ## Install Visionline
@@ -38,8 +36,6 @@ When prompted for an account username and password, you must specify the usernam
 {% endhint %}
 
 For detailed instructions, see the following ASSA ABLOY Visionline document:
-
-{% file src="../../../../../.gitbook/assets/66 5013 142-8 Installation instruction Visionline.pdf" %}
 
 ***
 

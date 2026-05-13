@@ -4,8 +4,6 @@ description: Learn how to connect and control Sensi thermostats with the Seam AP
 
 # Get Started with Sensi Thermostats
 
-<figure><picture><source srcset="../../.gitbook/assets/sensi-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/sensi-manufacturer-page-cover-light.png" alt="Sensi Thermostats"></picture><figcaption><p>Sensi Thermostats</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including thermostats, smart locks, access control systems (ACSs), and noise sensors.
@@ -96,7 +94,7 @@ The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provi
 
 Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-sensi-thermostats.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
-<img src="../../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
+
 {% endhint %}
 
 ### Create a Connect Webview
@@ -105,7 +103,6 @@ Create a `connect_webview` object and then note the returned URL.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -133,7 +130,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -159,7 +155,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -184,7 +179,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -212,7 +206,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -241,7 +234,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -286,13 +278,10 @@ Complete the Connect Webview authorization flow by entering the following [Sensi
 * **Email:** jane@example.com
 * **Password:** 1234
 
-<figure><picture><source srcset="../../.gitbook/assets/sensi_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/sensi_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a Sensi account with Seam. This flow varies slightly based on the device manufacturer."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a Sensi account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
-
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -311,7 +300,6 @@ true
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -333,7 +321,6 @@ Login Successful (true): true
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -350,7 +337,6 @@ True
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -369,7 +355,6 @@ true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -388,7 +373,6 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -417,7 +401,6 @@ The Seam API exposes each device's properties, such as the current temperature r
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -474,7 +457,6 @@ Fan running: false
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -540,7 +522,6 @@ Fan running: false
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -597,7 +578,6 @@ Device(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -654,7 +634,6 @@ Fan running: false
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -712,7 +691,6 @@ Fan running: false
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -763,7 +741,6 @@ Each of these HVAC mode endpoints returns an [action attempt](https://docs.seam.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -795,7 +772,6 @@ if (livingRoomThermostat.can_hvac_heat) {
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -833,7 +809,6 @@ fi
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -862,7 +837,6 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -891,7 +865,6 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -921,7 +894,6 @@ if ($living_room_thermostat->can_hvac_heat) {
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -942,7 +914,6 @@ To query `properties.current_climate_setting.hvac_mode_setting` for the device:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -967,7 +938,6 @@ heat
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -996,7 +966,6 @@ heat
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -1021,7 +990,6 @@ pprint(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -1044,7 +1012,6 @@ heat
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -1067,7 +1034,6 @@ heat
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -1094,7 +1060,6 @@ In this example, create comfort and eco climate presets, set eco as the fallback
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -1178,7 +1143,6 @@ if (updatedLivingRoomThermostat.can_hvac_cool) {
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -1293,7 +1257,6 @@ fi
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -1376,7 +1339,6 @@ ThermostatSchedule(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -1460,7 +1422,6 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -1544,7 +1505,6 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -1569,7 +1529,6 @@ In this example, create a weekday daily program and a weekend daily program. The
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -1621,7 +1580,6 @@ await seam.thermostats.updateWeeklyProgram({
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -1693,7 +1651,6 @@ curl -X 'POST' \
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -1745,7 +1702,6 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -1796,7 +1752,6 @@ seam.thermostats.update_weekly_program(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -1848,7 +1803,6 @@ $seam->thermostats->update_weekly_program(
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -1904,4 +1858,4 @@ If you have any questions or want to report an issue, email us at [support@seam.
 
 ## Quick links
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../../guides/.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>

@@ -8,7 +8,7 @@ description: Guide for using dormakaba Oracode locks with Seam
 
 Seam integrates with the dormakaba [Oracode Live](https://www.dormakaba.com/us-en/offering/products/vacation-short-term-rental-solutions/access-control-management/oracode-live--ka_128503) access control management platform. Intended for the vacation and short-term rental industries, the Oracode Live platform supports a "no keys, no cards" concept for efficient and secure access. Further, with the Oracode Live platform, codes expire automatically at the end of the authorized period.
 
-The Seam integration supports the generation of [offline access codes for dormakaba Oracode locks](./creating-dormakaba-oracode-offline-access-codes.md).
+The Seam integration supports the generation of [offline access codes for dormakaba Oracode locks](creating-dormakaba-oracode-offline-access-codes.md).
 
 You can use a variety of dormakaba Oracode smart locks with the Oracode Live platform. These strong and durable locks have commercial-grade finishes to withstand a wide range of climates.
 
@@ -16,7 +16,7 @@ You can use a variety of dormakaba Oracode smart locks with the Oracode Live pla
 
 ## Supported Devices
 
-This integration supports all locks connected using the [Oracode Live](https://www.dormakaba.com/us-en/offering/products/vacation-short-term-rental-solutions/access-control-management/oracode-live--ka_128503) platform. This integration supports [offline access code](./creating-dormakaba-oracode-offline-access-codes.md) provisioning for applicable dormakaba Oracode devices.
+This integration supports all locks connected using the [Oracode Live](https://www.dormakaba.com/us-en/offering/products/vacation-short-term-rental-solutions/access-control-management/oracode-live--ka_128503) platform. This integration supports [offline access code](creating-dormakaba-oracode-offline-access-codes.md) provisioning for applicable dormakaba Oracode devices.
 
 For detailed information about the dormakaba Oracode devices that Seam supports, see our [dormakaba Supported Devices page](https://www.seam.co/manufacturers/dormakaba).
 
@@ -43,9 +43,7 @@ To control dormakaba Oracode devices using Seam, you must prompt **the owners or
 1. Identify each dormakaba Oracode site that you want to connect to Seam.\
    For each site:
    * Log in to your [Oracode Live account](https://www.kabaecodewireless.com).
-   *   Note your site name, as shown in the upper-right corner of the Oracode Live portal.
-
-       <figure><img src="../../.gitbook/assets/oracode-live-site-name.png" alt="Note your site name in the Oracle Live portal."><figcaption><p>Note your site name in the Oracle Live portal.</p></figcaption></figure>
+   * Note your site name, as shown in the upper-right corner of the Oracode Live portal.
 2.  Contact [dormakaba Oracode Support](mailto:oracode@dormakaba.com) to connect all your dormakaba Live Services sites to Seam.\
     You can use the following sample email message:
 

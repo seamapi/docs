@@ -29,5 +29,3 @@ active_endpoint_exists = has_active_endpoint(user_identity.user_identity_id)
 {% endtabs %}
 
 ## Example of Disabling the Override Option When It's Not Available
-
-<figure><img src="../../../.gitbook/assets/Join only.png" alt="In the Seam Console, we disable the Override option when a user identity has not set up their phone to receive Visionline credentials. " width="421"><figcaption><p>In the Seam Console, we disable the Override option when a user identity has not set up their phone to receive Visionline credentials. </p></figcaption></figure>

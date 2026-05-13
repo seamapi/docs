@@ -39,12 +39,8 @@ Perform the following procedure for each lock:
 
 1. On the laptop or tablet, open the Lock Service 3G application.
 2. Connect the cable from the laptop or tablet running Lock Service 3G to the lock.
-3.  At the right of the **Lock Service 3G** window, in the upper field in the **Serial port and host** area, select the serial port that you want to use to connect to the lock.
-
-    <figure><img src="../../../../../.gitbook/assets/lock-service-3g-select-port.png" alt="Select the port." width="139"><figcaption><p>Select the port.</p></figcaption></figure>
+3. At the right of the **Lock Service 3G** window, in the upper field in the **Serial port and host** area, select the serial port that you want to use to connect to the lock.
 4. In the **Readout** section of the left navigation pane, click **Parameters**.
 5. In the **Parameters** area, click **Readout**.
 6. Click the **Module** tab.
-7.  Confirm that the lock includes a BLE module.
-
-    <figure><img src="../../../../../.gitbook/assets/lock-service-3g-confirm-ble-module.png" alt="Confirm that each lock has an installed BLE module."><figcaption><p>Confirm that each lock has an installed BLE module.</p></figcaption></figure>
+7. Confirm that the lock includes a BLE module.

@@ -45,9 +45,7 @@ To control Kwikset devices using Seam, you must prompt owners of these devices t
 
 1. Create an account in the [Kwikset App](https://www.kwikset.com/smart-locks/app) if you have not done so already.
 2. In the Kwikset App, add your Kwikset devices.
-3.  In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
-
-    <figure><img src="../.gitbook/assets/kwikset-MFA-settings.png" alt="Disable 2-Step Verification before connecting your Kwikset account to Seam." width="180"><figcaption><p>Disable 2-Step Verification before connecting your Kwikset account to Seam.</p></figcaption></figure>
+3. In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
 
 {% hint style="warning" %}
 You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
@@ -96,6 +94,6 @@ The Seam API emits a [`lock.access_denied` event](https://docs.seam.co/latest/ap
 
 Order Kwikset locks from Amazon.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Kwikset Halo, Halo Touch, and SmartCode Locks on Amazon</strong></td><td></td><td><a href="https://www.amazon.com/s?k=kwikset+halo+or+smartcode+lock">https://www.amazon.com/s?k=kwikset+halo+or+smartcode+lock</a></td><td><a href="../.gitbook/assets/kwikset-halo-halo-touch-on-amazon.jpg">kwikset-halo-halo-touch-on-amazon.jpg</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Kwikset Halo, Halo Touch, and SmartCode Locks on Amazon</strong></td><td></td><td><a href="https://www.amazon.com/s?k=kwikset+halo+or+smartcode+lock">https://www.amazon.com/s?k=kwikset+halo+or+smartcode+lock</a></td><td></td></tr></tbody></table>
 
 ***

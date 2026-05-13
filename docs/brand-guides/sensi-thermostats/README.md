@@ -4,8 +4,6 @@ description: Guide for using Sensi thermostats with Seam
 
 # Sensi Thermostats
 
-<div align="center"><figure><picture><source srcset="../../.gitbook/assets/sensi-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/sensi-manufacturer-page-cover-light.png" alt="Sensi Thermostats"></picture><figcaption><p>Sensi Thermostats</p></figcaption></figure></div>
-
 ## Overview
 
 Sensi produces smart thermostats for home and light commercial climate control. Focusing on convenience and sustainability, Sensi thermostats provide comfort and energy efficiency features. Sensi thermostats are designed for ease of use and offer features like scheduling, energy usage reports, and geofencing to optimize home temperature management.
@@ -72,4 +70,4 @@ Some Sensi models do not support heat-cool mode, such as the Sensi Classic and S
 
 To purchase Sensi thermostats, visit the Sensi online store.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Sensi Online Store</strong></td><td></td><td><a href="https://sensi.copeland.com/en-us/products">https://sensi.copeland.com/en-us/products</a></td><td><a href="../../guides/.gitbook/assets/sensi-logo.png">sensi-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Sensi Online Store</strong></td><td></td><td><a href="https://sensi.copeland.com/en-us/products">https://sensi.copeland.com/en-us/products</a></td><td><a href="../.gitbook/assets/sensi-logo.png">sensi-logo.png</a></td></tr></tbody></table>

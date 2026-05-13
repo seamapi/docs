@@ -4,8 +4,6 @@ description: Guide for using Salto KS door locks with Seam
 
 # Salto KS Locks
 
-<figure><picture><source srcset="../.gitbook/assets/salto-ks-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/salto-ks-manufacturer-page-cover-light.png" alt="Connect and control your Salto KS locks using the Seam API."></picture><figcaption><p>Connect and control your Salto KS locks using the Seam API.</p></figcaption></figure>
-
 ## Overview
 
 Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials; their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
@@ -109,4 +107,4 @@ A Salto lock displaying an `unknown` device type indicates a weak connection wit
 
 Get in touch with a Salto representative in your region. They can refer you to a local installer that will service your area.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto Systems Sales Contact</strong></td><td></td><td><a href="https://saltosystems.com/en-us/offices/">https://saltosystems.com/en-us/offices/</a></td><td><a href="../.gitbook/assets/salto-logo.png">salto-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto Systems Sales Contact</strong></td><td></td><td><a href="https://saltosystems.com/en-us/offices/">https://saltosystems.com/en-us/offices/</a></td><td></td></tr></tbody></table>

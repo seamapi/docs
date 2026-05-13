@@ -4,8 +4,6 @@ description: Guide for using the Latch Access Control System with Seam
 
 # Latch Access Control System
 
-<figure><picture><source srcset="../../.gitbook/assets/latch-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/latch-manufacturer-page-cover-light.png" alt="Connect and control your Latch ACS using the Seam API."></picture><figcaption><p>Connect and control your Latch ACS using the Seam API.</p></figcaption></figure>
-
 ## Overview
 
 Seam integrates seamlessly with the [Latch](https://www.latch.com/) management platform. Property managers and owners use the Latch [access control system](https://docs.seam.co/latest/capability-guides/access-systems) (ACS) to control access across their properties. Latch enables them to manage who has access to which spaces and when, view access history, and set up and manage multiple users and guests.
@@ -22,11 +20,9 @@ The Seam ACS schema consists of a series of resources that interact intuitively,
 
 The following diagram shows the Seam resources for a Latch ACS and the relationships between these resources:
 
-<figure><img src="../../.gitbook/assets/latch-acs.png" alt="Seam resources enable you to manage your Latch ACS intuitively."><figcaption><p>Seam resources enable you to manage your Latch ACS intuitively.</p></figcaption></figure>
-
 The following table provides a brief description of each of the Seam resources for the Latch ACS:
 
-<table><thead><tr><th width="233">Seam Resource</th><th>Description</th></tr></thead><tbody><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-user_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-user_light.png" alt="" data-size="line"></picture></p><p> <a href="https://docs.seam.co/latest/api/acs/users"><code>acs_user</code></a></p></td><td>Individual who has been granted access to specific entrances within a building. A user could be a resident or temporary guest.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-entrance_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-entrance_light.png" alt="" data-size="line"></picture></p><p> <a href="https://docs.seam.co/latest/api/acs/entrances"><code>acs_entrance</code></a></p></td><td>Physical points of entry within a property that are secured with Latch's smart access devices.</td></tr><tr><td><p><picture><source srcset="../../.gitbook/assets/acs-credential_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/acs-credential_light.png" alt="" data-size="line"></picture></p><p> <a href="https://docs.seam.co/latest/api/acs/credentials"><code>acs_credential</code></a></p></td><td>PIN codes or mobile keys. You can only assign one entrance to a key code-based credential. You can assign multiple entrances to mobile keys.</td></tr></tbody></table>
+<table><thead><tr><th width="233">Seam Resource</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://docs.seam.co/latest/api/acs/users"><code>acs_user</code></a></td><td>Individual who has been granted access to specific entrances within a building. A user could be a resident or temporary guest.</td></tr><tr><td><a href="https://docs.seam.co/latest/api/acs/entrances"><code>acs_entrance</code></a></td><td>Physical points of entry within a property that are secured with Latch's smart access devices.</td></tr><tr><td><a href="https://docs.seam.co/latest/api/acs/credentials"><code>acs_credential</code></a></td><td>PIN codes or mobile keys. You can only assign one entrance to a key code-based credential. You can assign multiple entrances to mobile keys.</td></tr></tbody></table>
 
 For more information about managing your Latch ACS through Seam, see the following topics:
 

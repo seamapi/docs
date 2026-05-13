@@ -21,11 +21,7 @@ Set up your development Credential Services account in the Visionline applicatio
     4. Type **User name** and **Password** for your development Credential Services account.
     5. Type the Credential Services **System ID**.
     6. Click **Test** to verify these credentials.
-    7.  Click **Save**.
-
-
-
-        <figure><img src="../../../../../.gitbook/assets/visionline-mobile-access-accout-details.png" alt=""><figcaption><p>In Visionline, create a mobile access account with your Credential Services account details.</p></figcaption></figure>
+    7. Click **Save**.
 
 ***
 
@@ -35,8 +31,6 @@ Locate your ASSA ABLOY Credential Services development tenant account details in
 
 1. In a web browser, go to the [ASSA ABLOY Global Solutions Technology Partner Portal](https://my.assaabloyglobalsolutions.com/tpp).
 2. Log in to the ASSA ABLOY Global Solutions Technology Partner Portal.
-3.  Click **Accounts > Account List**.
-
-    <figure><img src="../../../../../.gitbook/assets/assa-abloy-accounts-account-list-menu-item.png" alt="In the ASSA ABLOY Global Solutions Technology Partner Portal, click Accounts > Account List."><figcaption></figcaption></figure>
+3. Click **Accounts > Account List**.
 4. In the **Agreements** area, locate and open the text (`.txt`) file.\
    This text file contains your ASSA ABLOY tenant account username and password, as well as your system ID, application ID, and credential services URL.

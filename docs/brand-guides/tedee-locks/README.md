@@ -4,8 +4,6 @@ description: Guide for using Tedee locks with Seam
 
 # Tedee Locks
 
-<figure><picture><source srcset="../../.gitbook/assets/tedee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/tedee-manufacturer-page-cover-light.png" alt="Connect and control any Tedee device using the Seam API."></picture><figcaption><p>Connect and control any Tedee device using the Seam API.</p></figcaption></figure>
-
 ## Overview
 
 Tedee produces smart locks and accompanying products for the residential, rental, and business markets. Seam integrates with Tedee locks through the Wi-Fi-enabled Tedee smart bridge to provide app-based, remote locking and unlocking, as well as access sharing. In addition, Seam provides permanent, temporary, and scheduled access (PIN) code programming for Tedee locks with the Tedee keypad (and Tedee bridge). Tedee smart locks attach to existing locks, using either a Tedee hardware adapter or Tedee modular European cylinder.

@@ -4,8 +4,6 @@ description: Learn how to connect and control your Tedee locks with the Seam API
 
 # Get Started with Tedee Locks
 
-<figure><img src="../../.gitbook/assets/tedee-getting-started-cover.jpg" alt=""><figcaption><p>Tedee Locks</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of locks, including Tedee. This guide provides a rapid introduction to connecting and controlling your [Tedee](https://www.seam.co/manufacturers/tedee) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -136,13 +134,10 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **email:** jane@example.com
 * **password:** 1234
 
-<figure><img src="../../.gitbook/assets/tedee-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Tedee account with Seam</p></figcaption></figure>
-
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id
@@ -153,7 +148,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -162,7 +156,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -171,7 +164,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -185,7 +177,6 @@ After a Tedee account is linked with Seam, you can retrieve devices for this Ted
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -245,7 +236,6 @@ console.log(someLock)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -260,7 +250,6 @@ print(some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -284,7 +273,6 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
-
 {% code overflow="wrap" %}
 ```php
 use Seam\SeamClient;
@@ -306,9 +294,7 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking a door.
 
-{% openapi src="../../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../../.gitbook/assets/openapi (1).json>)
-{% endopenapi %}
+<mark style="color:green;">`POST`</mark> `undefined/locks/lock_door`
 
 ## Unlock a door
 
@@ -322,7 +308,6 @@ Next, you can perform the basic action of locking and unlocking a door.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -337,7 +322,6 @@ console.log(updatedLock.properties.locked) // false
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -352,7 +336,6 @@ assert updated_lock.properties["locked"] is False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -367,7 +350,6 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -395,7 +377,6 @@ For Tedee-specific access code restrictions, see [Access (PIN) Code Requirements
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -421,7 +402,6 @@ await seam.accessCodes.list({
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -443,7 +423,6 @@ seam.access_codes.list(device=some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -464,7 +443,6 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 

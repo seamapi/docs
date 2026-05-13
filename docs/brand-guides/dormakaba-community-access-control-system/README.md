@@ -4,8 +4,6 @@ description: Guide for using the Dormakaba Community Access Control System with 
 
 # Dormakaba Community Access Control System
 
-<figure><img src="../../.gitbook/assets/dk comm (1).png" alt=""><figcaption></figcaption></figure>
-
 ***
 
 ## Overview

@@ -4,8 +4,6 @@ description: Guide for using 33 Lock smart locks with Seam
 
 # 33 Lock Devices
 
-<figure><picture><source srcset="../../.gitbook/assets/33lock-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/33lock-manufacturer-page-cover-light.png" alt="Connect and control any 33 Locks device using the Seam API."></picture><figcaption><p>Connect and control any 33 Locks device using the Seam API.</p></figcaption></figure>
-
 ## Overview
 
 [33 Lock](https://www.33lock.com/) is a Vancouver-based smart lock company that is focused on delivering innovative access solutions for hotels, motels, resorts, hostels, and multifamily properties. These offerings include the IntelliBolt, IntelliLever, IntelliMortise, and IntelliReader. All of these devices have an integrated keypad.

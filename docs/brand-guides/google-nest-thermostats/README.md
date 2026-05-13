@@ -4,8 +4,6 @@ description: Guide for using Nest thermostats with Seam
 
 # Google Nest Thermostats
 
-<figure><picture><source srcset="../../.gitbook/assets/nest-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/nest-manufacturer-page-cover-light.png" alt="Google Nest Thermostats"></picture><figcaption><p>Google Nest Thermostats</p></figcaption></figure>
-
 ## Overview
 
 Google produces Nest smart thermostats as part of the Google smart home product group. Nest thermostats are designed to lower energy costs through energy efficiency features, such as remote climate monitoring and control, as well as climate setting scheduling. Google also produces an optional Nest Temperature Sensor accessory to prioritize certain rooms.
@@ -90,6 +88,6 @@ Note that, until you obtain Google Commercial Development, you can only connect 
 
 Order Nest thermostats from the Google online store or from Amazon.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-type="content-ref"></th><th data-hidden data-type="files"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Google Online Store</strong></td><td></td><td></td><td><a href="https://store.google.com/us/category/nest_thermostats">https://store.google.com/us/category/nest_thermostats</a></td><td><a href="../../guides/.gitbook/assets/nest-logo.png">nest-logo.png</a></td><td><a href="../../guides/.gitbook/assets/nest-logo.png">nest-logo.png</a></td><td><a href="https://store.google.com/us/category/nest_thermostats">https://store.google.com/us/category/nest_thermostats</a></td></tr><tr><td><strong>Nest Products on Amazon</strong></td><td></td><td></td><td><a href="https://amzn.to/3R6K2Uq">https://amzn.to/3R6K2Uq</a></td><td><a href="../.gitbook/assets/nest-on-amazon.png">nest-on-amazon.png</a></td><td><a href="../.gitbook/assets/nest-on-amazon.png">nest-on-amazon.png</a></td><td><a href="https://amzn.to/4aaJfus">https://amzn.to/4aaJfus</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-type="content-ref"></th><th data-hidden data-type="files"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Google Online Store</strong></td><td></td><td></td><td><a href="https://store.google.com/us/category/nest_thermostats">https://store.google.com/us/category/nest_thermostats</a></td><td><a href="../.gitbook/assets/nest-logo.png">nest-logo.png</a></td><td><a href="../.gitbook/assets/nest-logo.png">nest-logo.png</a></td><td><a href="https://store.google.com/us/category/nest_thermostats">https://store.google.com/us/category/nest_thermostats</a></td></tr><tr><td><strong>Nest Products on Amazon</strong></td><td></td><td></td><td><a href="https://amzn.to/3R6K2Uq">https://amzn.to/3R6K2Uq</a></td><td><a href="../.gitbook/assets/nest-on-amazon.png">nest-on-amazon.png</a></td><td><a href="../.gitbook/assets/nest-on-amazon.png">nest-on-amazon.png</a></td><td><a href="https://amzn.to/4aaJfus">https://amzn.to/4aaJfus</a></td></tr></tbody></table>
 
 ***

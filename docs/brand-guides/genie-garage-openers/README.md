@@ -1,5 +1,7 @@
 ---
 description: Guide for using Genie garage openers with Seam
+hidden: true
+noIndex: true
 ---
 
 # Genie Garage Openers

@@ -6,8 +6,6 @@ description: >-
 
 # Get started with dormakaba Oracode Locks
 
-<figure><img src="../../.gitbook/assets/guides/dormakaba-oracode-getting-started-seo-cover.jpg" alt=""><figcaption><p>Dormakaba Locks</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of locks. This guide provides a rapid introduction to connecting and controlling your [dormakaba Oracode](https://www.seam.co/manufacturers/dormakaba) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -72,14 +70,13 @@ This guide uses a sandbox [workspace](https://docs.seam.co/latest/core-concepts/
 To control your dormakaba Oracode locks using the Seam API, the owner or manager of these locks must first authorize your Seam workspace to access their dormakaba Oracode account. To do so, Seam provides[ Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews), which are pre-built UX flows that walk the device owner or manager through authorizing your application to control Oracode locks.
 
 {% hint style="info" %}
-This guide discusses using a Seam sandbox workspace with virtual devices. However, to connect real devices to Seam, some manufacturers may require additional prerequisite setup steps. For dormakaba Oracode-specific instructions, see the [dormakaba Oracode device integration guide](./README.md#setup-instructions).
+This guide discusses using a Seam sandbox workspace with virtual devices. However, to connect real devices to Seam, some manufacturers may require additional prerequisite setup steps. For dormakaba Oracode-specific instructions, see the [dormakaba Oracode device integration guide](./#setup-instructions).
 {% endhint %}
 
 #### Request a Connect Webview
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 
@@ -97,7 +94,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 
@@ -113,7 +109,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -129,7 +124,6 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -150,13 +144,10 @@ Navigate to the URL that the Connect Webview object returned. Because you are us
 * **site:** Ocean Beach Vacations
 * **time zone:** (Any)
 
-<figure><img src="../../.gitbook/assets/dormakaba-oracode_connect-flow-screens.png" alt="Seam Connect Webview flow to connect dormakaba Oracode account with Seam"><figcaption><p>Seam Connect Webview flow to connect dormakaba Oracode account with Seam</p></figcaption></figure>
-
 Confirm the Connect Webview was successful by querying the status.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -167,7 +158,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -176,7 +166,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -185,7 +174,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
 assert($webview->status == 'pending');
@@ -199,7 +187,6 @@ After a dormakaba Oracode account is linked with Seam, you can retrieve the conn
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -213,7 +200,6 @@ console.log(someLock)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -226,7 +212,6 @@ print(some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -238,7 +223,6 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -255,7 +239,7 @@ echo json_encode($locks);
 
 ### 4 — Programming Access Codes on a dormakaba Oracode Lock
 
-The Seam API enables you to create offline access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. For detailed instructions, see [Creating dormakaba Oracode Offline Access Codes](./creating-dormakaba-oracode-offline-access-codes.md).
+The Seam API enables you to create offline access codes on dormakaba Oracode devices, such as the 480i and 660i locks. Users can then enter these codes to unlock the door. For detailed instructions, see [Creating dormakaba Oracode Offline Access Codes](creating-dormakaba-oracode-offline-access-codes.md).
 
 {% hint style="info" %}
 dormakaba Oracode does not let you specify a code for an access code. Instead it auto-generates a six-digit code, which the Seam API returns. If you try to pass the `code` argument to the access code `create` function, the Seam API returns an error.

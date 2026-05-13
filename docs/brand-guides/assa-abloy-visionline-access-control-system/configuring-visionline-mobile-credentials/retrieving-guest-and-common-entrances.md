@@ -8,8 +8,6 @@ description: >-
 
 You can retrieve lists of entrances. You may want to display entrances categorized by type to provide more context to your app users. To fetch only guest or common entrances, filter using the `visionline_metadata.door_category` property for entrances. The value for this property is set within the Visionline ACS.
 
-<figure><img src="../../../.gitbook/assets/select-entrances-for-user.png" alt="You can provide context to your app users by displaying entrances categorized by type." width="375"><figcaption><p>You can provide context to your app users by displaying entrances categorized by type.</p></figcaption></figure>
-
 ## Fetch Guest Entrances
 
 To fetch only guest entrances, filter entrances to include only those with a `visionline_metadata.properties.door_category` of `guest`.

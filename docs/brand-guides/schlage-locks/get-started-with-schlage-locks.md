@@ -4,8 +4,6 @@ description: Learn how to connect and control your Schlage lock with the Seam AP
 
 # Get started with Schlage Locks
 
-<figure><img src="../../.gitbook/assets/schlage-getting-started-guide-cover.jpg" alt=""><figcaption><p>Schlage Smart Locks</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Schlage](https://www.seam.co/manufacturers/schlage) lock using the Seam API. Note that this guide is intended for Schlage Sense locks and Schlage Encode locks that connect to wifi. For Z-Wave Schlage locks such as Schlage Connect, head over to [our guide for SmartThings](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md).
@@ -71,7 +69,6 @@ To control your Schlage lock via the Seam API, you must first authorize your Sea
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 
@@ -89,7 +86,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 
@@ -105,7 +101,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -131,13 +126,10 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **password:** 1234
 * **2-factor-auth:** 123456
 
-<figure><img src="../../.gitbook/assets/connect-flow-screens (1) (1).png" alt=""><figcaption><p>Seam Connect Webview flow to connect Schlage account with Seam</p></figcaption></figure>
-
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -148,7 +140,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -157,7 +148,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -172,44 +162,17 @@ After a Schlage account is linked with Seam, you can retrieve devices for this S
 
 {% tabs %}
 {% tab title="JavaScript" %}
+\`
 
-`
+\`\`javascript const allLocks = await seam.locks.list()
 
-``javascript
-const allLocks = await seam.locks.list()
+const someLock = allLocks\[0]
 
-const someLock = allLocks[0]
+console.log(someLock.properties.online) // true console.log(someLock.properties.locked) // true
 
-console.log(someLock.properties.online) // true
-console.log(someLock.properties.locked) // true
+console.log(someLock) /\* { device\_id: 'e2d95c42-b2bf-4d07-9211-7407d9c90c73', device\_type: 'schlage\_lock', capabilities\_supported: \[ 'access\_code', 'lock' ], properties: { locked: false, online: true, manufacturer: 'schlage', battery\_level: 0.48, schlage\_metadata: { device\_id: 'device-1', device\_name: 'FRONT DOOR', access\_code\_length: 4 }, name: 'FRONT DOOR' }, location: null, connected\_account\_id: '1de737bc-12d1-4631-8a56-dbb2e61f1f51', workspace\_id: 'd7418ff3-a476-4f48-9a4b-211d1d21a03d', created\_at: '2022-12-16T01:15:17.478Z', errors: \[], warnings: \[] } \*/
 
-console.log(someLock)
-/*
-{
-  device_id: 'e2d95c42-b2bf-4d07-9211-7407d9c90c73',
-  device_type: 'schlage_lock',
-  capabilities_supported: [ 'access_code', 'lock' ],
-  properties: {
-    locked: false,
-    online: true,
-    manufacturer: 'schlage',
-    battery_level: 0.48,
-    schlage_metadata: {
-      device_id: 'device-1',
-      device_name: 'FRONT DOOR',
-      access_code_length: 4
-    },
-    name: 'FRONT DOOR'
-  },
-  location: null,
-  connected_account_id: '1de737bc-12d1-4631-8a56-dbb2e61f1f51',
-  workspace_id: 'd7418ff3-a476-4f48-9a4b-211d1d21a03d',
-  created_at: '2022-12-16T01:15:17.478Z',
-  errors: [],
-  warnings: []
-}
-*/
-```
+````
 
 </div>
 
@@ -222,21 +185,17 @@ puts some_lock.properties.online # true
 puts some_lock.properties.locked # true
 
 puts some_lock #   warnings=[]> #   errors=[] #   created_at=2022-12-16 01:15:17.478 UTC #     "name"=>"FRONT DOOR"} #     "schlage_metadata"=>{"device_id"=>"device-1", "device_name"=>"FRONT DOOR", "access_code_length"=>4},  #     "battery_level"=>0.48,  #     "manufacturer"=>"schlage",  #     "online"=>true,  #     "locked"=>false,  #   properties={ #   device_type="schlage_lock" #   device_id="e2d95c42-b2bf-4d07-9211-7407d9c90c73" # <Seam::Device:0x009b0
-```
-
-</div>
-
-</div>
+````
+{% endtab %}
+{% endtabs %}
 
 ### 4 — Locking & Unlocking a Door
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-<div data-gb-custom-block data-tag="openapi" data-src='../.gitbook/assets/openapi.json' data-path='/locks/lock_door' data-method='post'>
-
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
 [openapi.json](../.gitbook/assets/openapi.json)
-
-</div>
+{% endopenapi %}
 
 ## Unlock a door
 
@@ -248,10 +207,8 @@ Next, you can perform the basic action of locking and unlocking the door.
 | ---------- | ------ | ----------- |
 | device\_id | String |             |
 
-<div data-gb-custom-block data-tag="tabs">
-
-<div data-gb-custom-block data-tag="tab" data-title='Python'>
-
+{% tabs %}
+{% tab title="Python" %}
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -263,11 +220,9 @@ seam.locks.unlock_door(device_id: some_lock.device_id)
 updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
+{% endtab %}
 
-</div>
-
-<div data-gb-custom-block data-tag="tab" data-title='Javascript'>
-
+{% tab title="Javascript" %}
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -279,11 +234,9 @@ await seam.locks.unlockDoor(someLock.device_id)
 updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
+{% endtab %}
 
-</div>
-
-<div data-gb-custom-block data-tag="tab" data-title='Ruby'>
-
+{% tab title="Ruby" %}
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -295,10 +248,8 @@ seam.locks.unlock_door(device_id: some_lock.device_id)
 updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 ```
-
-</div>
-
-</div>
+{% endtab %}
+{% endtabs %}
 
 ### 5 — Setting Access Code on Schlage Lock
 
@@ -306,10 +257,8 @@ All Schlage wifi locks come with a keypad built-in to program access codes. Thes
 
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
 
-<div data-gb-custom-block data-tag="tabs">
-
-<div data-gb-custom-block data-tag="tab" data-title='Python'>
-
+{% tabs %}
+{% tab title="Python" %}
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -343,11 +292,9 @@ seam.access_codes.list(device=some_lock)
 # ]
 
 ```
+{% endtab %}
 
-</div>
-
-<div data-gb-custom-block data-tag="tab" data-title='Javascript'>
-
+{% tab title="Javascript" %}
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -389,11 +336,9 @@ await seam.accessCodes.list({
 ]
 */
 ```
+{% endtab %}
 
-</div>
-
-<div data-gb-custom-block data-tag="tab" data-title='Ruby'>
-
+{% tab title="Ruby" %}
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -439,10 +384,8 @@ seam.access_codes.list(device_id: some_lock.device_id)
 #   warnings=[]
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
-
-</div>
-
-</div>
+{% endtab %}
+{% endtabs %}
 
 ###
 
@@ -459,6 +402,7 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co. If you would like help
+
 ````
 {% endtab %}
 
@@ -487,5 +431,3 @@ print(some\_lock)
 ```
 
 ````
-{% endtab %}
-{% endtabs %}

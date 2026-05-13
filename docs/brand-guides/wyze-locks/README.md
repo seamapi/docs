@@ -4,8 +4,6 @@ description: Guide for using Wyze locks with Seam
 
 # Wyze Locks
 
-<figure><img src="../.gitbook/assets/wyze-api-docs-cover.png" alt=""><figcaption></figcaption></figure>
-
 ## Overview
 
 Wyze produces a smart lock with an accompanying gateway and an optional keypad. Intended for the residential and short-term rental industries, Wyze Locks provide fast installation, virtual keys, and automatic unlocking and locking functionality. Wyze Locks replace only the interior side of existing deadbolts, so existing physical keys still work. Further, Wyze Locks are compatible with most single-cylinder deadbolts.
@@ -62,6 +60,6 @@ To control Wyze devices using Seam, you must prompt owners of these devices to p
 
 To purchase Wyze devices, visit the Wyze online store.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Wyze Online Store</strong></td><td></td><td><a href="https://www.wyze.com/products/wyze-lock">https://www.wyze.com/products/wyze-lock</a></td><td><a href="../.gitbook/assets/wyze-logo.png">wyze-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Wyze Online Store</strong></td><td></td><td><a href="https://www.wyze.com/products/wyze-lock">https://www.wyze.com/products/wyze-lock</a></td><td></td></tr></tbody></table>
 
 ***

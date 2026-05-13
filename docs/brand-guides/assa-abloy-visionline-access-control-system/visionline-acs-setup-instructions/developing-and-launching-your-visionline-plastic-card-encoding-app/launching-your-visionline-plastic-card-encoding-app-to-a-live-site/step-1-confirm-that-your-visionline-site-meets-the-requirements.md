@@ -48,5 +48,3 @@ Make sure that the following ports are unblocked on the Visionline server and cl
 ## For More Information
 
 See the following ASSA ABLOY Visionline document:
-
-{% file src="../../../../../.gitbook/assets/VisiOnline Server Client and DCOM Port Requirements.pdf" %}

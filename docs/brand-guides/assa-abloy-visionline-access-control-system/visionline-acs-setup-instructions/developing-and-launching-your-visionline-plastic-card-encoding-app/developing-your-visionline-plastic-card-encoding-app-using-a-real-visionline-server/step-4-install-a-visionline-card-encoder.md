@@ -57,6 +57,4 @@ Buy and install a Visionline card encoder—specifically, the [ASSA ABLOY RFID e
 4\. Select the card encoder to which the Visionline server should send cards.
 
 1. Click **File** > **Select encoder**.
-2.  Select the encoder that you registered in the previous section and then click **OK**.
-
-    <figure><img src="../../../../../.gitbook/assets/visionline-select-encoder-window.png" alt="Select the card encoder that you want to use." width="563"><figcaption><p>Select the card encoder that you want to use.</p></figcaption></figure>
+2. Select the encoder that you registered in the previous section and then click **OK**.

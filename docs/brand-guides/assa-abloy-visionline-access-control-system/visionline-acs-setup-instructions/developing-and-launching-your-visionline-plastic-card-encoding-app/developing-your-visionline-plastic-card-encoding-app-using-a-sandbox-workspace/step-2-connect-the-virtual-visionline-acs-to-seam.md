@@ -8,9 +8,7 @@ description: >-
 
 Once you've created a sandbox workspace, add a virtual Visionline ACS to start developing your Visionline plastic card encoding app.
 
-1.  In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
-
-    <figure><img src="../../../../../.gitbook/assets/acs-quick-start-access-systems-tab (1).png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
 2.  On the **Access Systems** page, click **New Access System**.
 
     Seam Console displays a Connect Webview that enables you to connect a virtual ACS to Seam.

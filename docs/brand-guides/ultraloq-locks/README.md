@@ -4,8 +4,6 @@ description: Guide for using Ultraloq smart locks with Seam
 
 # Ultraloq Locks
 
-<figure><img src="../../.gitbook/assets/ultraloq-manufacturer-page-cover-light.png" alt="Connect and control Ultraloq devices using the Seam API."><figcaption><p>Connect and control Ultraloq devices using the Seam API.</p></figcaption></figure>
-
 ## Overview
 
 Seam integrates with Ultraloq smart locks, providing Wi-Fi-enabled access control with online programming capabilities. Ultraloq locks support both permanent and time-bound access codes, remote lock and unlock operations, and device monitoring.
@@ -93,6 +91,6 @@ After the user authorizes Seam through the OAuth flow, their Ultraloq devices wi
 
 ## Next Steps
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Connect Ultraloq to Seam</strong></td><td>Follow the setup guide to connect your Ultraloq account and configure device timezones.</td><td><a href="ultraloq-setup-guide.md">ultraloq-setup-guide.md</a></td></tr><tr><td><strong>Configure Device Timezones</strong></td><td>Learn how to set device timezones to enable time-bound access codes.</td><td><a href="configuring-ultraloq-device-timezones.md">configuring-ultraloq-device-timezones.md</a></td></tr><tr><td><strong>Create Access Codes</strong></td><td>Learn how to create permanent and time-bound access codes for Ultraloq locks.</td><td><a href="creating-ultraloq-access-codes.md">creating-ultraloq-access-codes.md</a></td></tr><tr><td><strong>Order Locks</strong></td><td>Purchase Ultraloq locks from Amazon.</td><td><a href="https://www.amazon.com/stores/ULTRALOQ/page/1F5DDCF3-7F1E-4B36-8D3F-8F8C5E5A5C5F">https://www.amazon.com/stores/ULTRALOQ</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Connect Ultraloq to Seam</strong></td><td>Follow the setup guide to connect your Ultraloq account and configure device timezones.</td><td><a href="ultraloq-setup-guide.md">ultraloq-setup-guide.md</a></td></tr><tr><td><strong>Configure Device Timezones</strong></td><td>Learn how to set device timezones to enable time-bound access codes.</td><td><a href="configuring-ultraloq-device-timezones.md">configuring-ultraloq-device-timezones.md</a></td></tr><tr><td><strong>Create Access Codes</strong></td><td>Learn how to create permanent and time-bound access codes for Ultraloq locks.</td><td><a href="creating-ultraloq-access-codes.md">creating-ultraloq-access-codes.md</a></td></tr><tr><td><strong>Order Locks</strong></td><td>Purchase Ultraloq locks from Amazon.</td><td><a href="https://www.amazon.com/stores/ULTRALOQ/page/1F5DDCF3-7F1E-4B36-8D3F-8F8C5E5A5C5F">https://www.amazon.com/stores/ULTRALOQ/page/1F5DDCF3-7F1E-4B36-8D3F-8F8C5E5A5C5F</a></td></tr></tbody></table>
 
 ***

@@ -4,8 +4,6 @@ description: Guide for using SmartThings-connected devices with Seam
 
 # SmartThings Hubs + Devices
 
-<figure><picture><source srcset="../../.gitbook/assets/smartthings-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/smartthings-manufacturer-page-cover-light.png" alt="SmartThings-Connected Smart Locks and Thermostats"></picture><figcaption><p>SmartThings-Connected Smart Locks and Thermostats</p></figcaption></figure>
-
 ## Overview
 
 Samsung SmartThings is a smart home platform that enables you to connect a variety of devices to a SmartThings Hub using Zigbee or Z-Wave. SmartThings Hubs are connected to your local network using Wi-Fi or Ethernet.

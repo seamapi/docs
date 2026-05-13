@@ -4,8 +4,6 @@ description: Guide for using Schlage locks with Seam
 
 # Schlage Locks
 
-<figure><picture><source srcset="../../.gitbook/assets/schlage-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/schlage-manufacturer-page-cover-light.png" alt="Connect and control Schlage devices using the Seam API."></picture><figcaption><p>Connect and control Schlage devices using the Seam API.</p></figcaption></figure>
-
 ## Overview
 
 Schlage produces [smart locks](https://www.schlage.com/en/home/products/products-smart-locks.html) for the residential market. With a focus on security, durability, and resilience, Schlage provides smart deadbolt locks in a variety of models and styles. Seam integrates with some Schlage locks through the [Schlage Home App](https://www.schlage.com/en/home/smart-locks/schlage-app.html), while other Schlage locks require a compatible Z-Wave hub for integration.

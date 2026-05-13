@@ -4,8 +4,6 @@ description: Learn how to connect and control your NoiseAware devices with the S
 
 # Get started with NoiseAware Sensors
 
-<figure><img src="../.gitbook/assets/guides/noiseaware-getting-seo-cover.jpg" alt=""><figcaption><p>NoiseAware Noise Devices</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [NoiseAware](https://www.seam.co/manufacturers/noiseaware) devices (called "activity zones" by NoiseAware) using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -51,7 +49,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
@@ -72,7 +69,6 @@ To control your NoiseAware device via the Seam API, you must first authorize you
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 
@@ -90,7 +86,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 seam = Seam()
@@ -105,7 +100,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -123,7 +117,6 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -156,7 +149,6 @@ After you complete the login above, you'll get an event for [`connected_account.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -167,7 +159,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(
     webview.connect_webview_id
@@ -178,7 +169,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -187,7 +177,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -201,7 +190,6 @@ NoiseAware noise devices appear with the `device_type` `"noiseaware_activity_zon
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const devices = await seam.devices.list({
   device_type: 'noiseaware_activity_zone',
@@ -239,7 +227,6 @@ console.log(devices[0])
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 devices = seam.devices.list(device_type="noiseaware_activity_zone")
 
@@ -269,7 +256,6 @@ devices[0]
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 seam.devices.list(
   device_type: "noiseaware_activity_zone"
@@ -299,7 +285,6 @@ seam.devices.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $devices = $seam->devices->list(device_type: 'noiseaware_activity_zone');
 
@@ -347,7 +332,6 @@ NoiseAware has three distinct noise alerts: `newNoise`, `continuedNoise`, and `r
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 app.post('/my_webhook_endpoint', (req, res) => {
   const event = req.body.event;
@@ -370,7 +354,6 @@ app.post('/my_webhook_endpoint', (req, res) => {
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 @app.route("/my_webhook_endpoint", methods=["POST"])
 def endpoint():
@@ -394,7 +377,6 @@ def endpoint():
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 post '/my_webhook_endpoint' do
   request.body.rewind
@@ -420,7 +402,6 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $app->post('/my_webhook_endpoint', function (Request $request, Response $response) {
     $data = $request->getParsedBody();

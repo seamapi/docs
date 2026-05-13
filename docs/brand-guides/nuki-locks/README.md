@@ -4,8 +4,6 @@ description: Guide for using Nuki locks with Seam
 
 # Nuki Locks
 
-<figure><img src="../.gitbook/assets/nuki-manufacturer-page-cover-light.png" alt="Use Nuki locks with Seam."><figcaption></figcaption></figure>
-
 ## Overview
 
 Nuki produces a smart lock and accompanying products for the residential, rental, vacation rental, and corporate markets. Seam integrates directly with the Wi-Fi-enabled Nuki Smart Lock Pro, as well as with the Nuki Smart Lock through the Nuki Wi-Fi Bridge. Because Nuki Smart Locks attach to existing deadbolts, they replace only the lock components on the insides of doors.
@@ -60,16 +58,10 @@ To control Nuki devices using Seam, you must prompt owners of these devices to p
    1. In a web browser, navigate to [Nuki Web](https://web.nuki.io/).
    2. Click **Go To Nuki Web**.
    3. Log in to Nuki Web using your Nuki App credentials.
-   4.  In the left-hand navigation pane, click **Short-Term Rental**.
-
-       <figure><img src="../.gitbook/assets/nuki-web-short-term-rental-page.png" alt="In Nuki Web, click Short-Term Rental."><figcaption></figcaption></figure>
+   4. In the left-hand navigation pane, click **Short-Term Rental**.
    5. On the **Short-term rental** page, click **Connect now**.
-   6.  In the **Connect to short-rental integrators** dialog, click **Nuki Online Shop**.
-
-       <figure><img src="../.gitbook/assets/nuki-web-connect-short-rental-integrators-dialog-w-link.png" alt="Click Nuki Online Shop."><figcaption></figcaption></figure>
-   7.  In the **Please select your devices for Nuki Smart Hosting** dialog, select the devices for which you want to be able to program access codes and then click **Buy Smart Hosting**.
-
-       <figure><img src="../.gitbook/assets/nuki-web-select-devices-smart-hosting-dialog.png" alt="Select the devices for which you want to be able to program access codes and then click Buy Smart Hosting."><figcaption></figcaption></figure>
+   6. In the **Connect to short-rental integrators** dialog, click **Nuki Online Shop**.
+   7. In the **Please select your devices for Nuki Smart Hosting** dialog, select the devices for which you want to be able to program access codes and then click **Buy Smart Hosting**.
    8. In the Nuki online store, complete your Nuki Smart Hosting purchase.
 5. Use your credentials for the Nuki app to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
 
@@ -99,6 +91,6 @@ For Smart Lock 2.0 and previous versions connected to a Nuki Keypad, you can cre
 
 To purchase Nuki devices, visit the Nuki online store.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Nuki Online Store</strong></td><td></td><td><a href="https://shop.nuki.io/en/">https://shop.nuki.io/en/</a></td><td><a href="../.gitbook/assets/nuki-logo.png">nuki-logo.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Nuki Online Store</strong></td><td></td><td><a href="https://shop.nuki.io/en/">https://shop.nuki.io/en/</a></td><td></td></tr></tbody></table>
 
 ***

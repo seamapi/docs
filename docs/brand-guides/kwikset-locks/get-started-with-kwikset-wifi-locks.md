@@ -4,8 +4,6 @@ description: Learn how to connect and control your Kwikset Halo lock with the Se
 
 # Get started with Kwikset Wi-Fi Locks
 
-<figure><img src="../.gitbook/assets/guides/kwikset-getting-started-guide-cover.jpg" alt=""><figcaption><p>Kwikset Halo Smart Locks</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Kwikset Halo](https://www.seam.co/manufacturers/kwikset) lock using the Seam API. To learn more about other smart lock brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -79,7 +77,6 @@ To control your Kwikset Halo lock via the Seam API, you must first authorize you
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 
@@ -97,7 +94,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 
@@ -113,7 +109,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -154,7 +149,6 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -165,7 +159,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -174,7 +167,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -189,8 +181,6 @@ After a Kwikset account is linked with Seam, you can retrieve devices for this K
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -232,7 +222,6 @@ console.log(someLock)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -273,8 +262,6 @@ print(some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -306,7 +293,9 @@ puts some_lock.inspect
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock\_door" method="post" %} [openapi (1).json](../.gitbook/assets/openapi%20\(1\).json) {% endopenapi %}
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock:door" method="post" %}
+[openapi.json](../.gitbook/assets/openapi.json)
+{% endopenapi %}
 
 #### Unlock a door
 
@@ -320,8 +309,6 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -336,8 +323,6 @@ console.log(updatedLock.properties.locked) // false
 {% endtab %}
 
 {% tab title="Python" %}
-
-
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -352,8 +337,6 @@ assert updated_lock.properties["locked"] is False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
-
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -370,9 +353,11 @@ puts updated_lock.properties.locked # false
 
 **5 — Setting Access Code on Kwikset Lock**
 
-{% hint style="info" %} In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
+{% hint style="info" %}
+In the Kwikset app, you cannot see access codes that were set from an external source (such as Seam) unless you are connected through Bluetooth to the lock.
 
-If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ shows the access codes that you have set from the app itself and not the codes set from Seam. {% endhint %}
+If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ shows the access codes that you have set from the app itself and not the codes set from Seam.
+{% endhint %}
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
@@ -391,8 +376,6 @@ Kwikset locks place the following constraints on access code attributes:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -437,8 +420,6 @@ await seam.accessCodes.list({
 {% endtab %}
 
 {% tab title="Python" %}
-
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -475,8 +456,6 @@ seam.access_codes.list(device=some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -525,8 +504,6 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
-
-
 ```
 
 php

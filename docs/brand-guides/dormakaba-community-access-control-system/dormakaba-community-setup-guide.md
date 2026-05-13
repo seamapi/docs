@@ -19,16 +19,14 @@ The setup process has three parts:
 1. Install Seam Bridge
    1. Install the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) on the computer hosting the Community System.
 2. Enable Community API
-   1. Go to **System Settings** > **Community API**.\
-      ![](<../../.gitbook/assets/unknown (1).png>)
+   1. Go to **System Settings** > **Community API**.<br>
    2. **Enable Community REST API**.
    3. Create a **Client ID** (max 32 characters) and **Secret Key** (max 512 characters).
    4. Enter these values in the Community API settings, and save these settings.
    5. These values are required later to connect Community to Seam via the Connect Webview.
 3. **Enable API Authentication**
    1. Go to **System Settings** > **Security** > **API Integration**.
-   2. **Enable API Authentication**.\
-      ![](<../../.gitbook/assets/unknown (1) (1).png>)
+   2. **Enable API Authentication**.<br>
 4. **Set up a New Operator Administrator User for Seam Integration**
    1. Under the top dropdown next to the dormakaba logo, select **Staff/Vendor Management**.
    2. Click **New Staff Member**.
@@ -52,9 +50,7 @@ The setup process has three parts:
 2. Inform them you are utilizing **Seam’s integration for Dormakaba Community Mobile Keys**.
 3. Dormakaba will connect your Community property to Seam’s LEGIC account and provide you with a **Project ID** and **API Key**.
 4. In Community, go to **System Settings** > **Advanced** > **Mobile Keys** > **LEGIC Configuration Settings** and enter the **Project ID** and **API Key**.
-5.  Enter **"https://integration.legicconnect.com"** as the **Endpoint address**.
-
-    <figure><img src="../../.gitbook/assets/Screenshot 2025-09-28 at 5.22.31 PM.png" alt=""><figcaption></figcaption></figure>
+5. Enter **"https://integration.legicconnect.com"** as the **Endpoint address**.
 6. Click **Test LEGIC connection settings** to confirm that the settings were set correctly.
 7. Click the **Save** icon in the top-right corner to save the changes.
 

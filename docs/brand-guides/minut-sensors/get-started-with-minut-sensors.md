@@ -4,8 +4,6 @@ description: Learn how to connect and control your Minut sensors with the Seam A
 
 # Get started with Minut Sensors
 
-<figure><img src="../.gitbook/assets/guides/minut-getting-seo-cover.jpg" alt=""><figcaption><p>Minut Noise Sensors</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of devices such as smart locks, thermostats, and sensors. This guide provides a rapid introduction to connecting and controlling your [Minut](https://www.seam.co/manufacturers/minut) sensors using the Seam API. To learn more about other brands of devices supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -49,7 +47,6 @@ composer require seamapi/seam
 {% tab title="C#" %}
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
-
 {% endtabs %}
 
 Once installed, [sign-up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
@@ -70,7 +67,6 @@ To control your Minut sensor via the Seam API, you must first authorize your Sea
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 const seam = new Seam()
@@ -84,7 +80,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 seam = Seam()
@@ -99,7 +94,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -117,7 +111,6 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
@@ -147,7 +140,6 @@ After you complete the login above, you'll get an event for [`connected_account.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -157,7 +149,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(
     webview.connect_webview_id
@@ -168,7 +159,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 puts updated_webview.login_successful # true
@@ -176,7 +166,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -190,7 +179,6 @@ Minut noise sensors appear with the `device_type` `"minut_sensor"`. The Minut no
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const devices = await seam.devices.list({
   device_type: 'minut_sensor',
@@ -275,7 +263,6 @@ console.log(devices[0])
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 sensors = seam.devices.list(device_type="minut_sensor")
 
@@ -351,7 +338,6 @@ sensors[0]
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 seam.devices.list(
   device_type: "minut_sensor"
@@ -423,7 +409,6 @@ seam.devices.list(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $devices = $seam->devices->list(device_type: 'minut_sensor');
 echo json_encode($device[0]);
@@ -523,7 +508,6 @@ Minut has a builtin threshold that can be triggered multiple times. Each Minut n
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 app.post('/my_webhook_endpoint', (req, res) => {
   const event = req.body.event;
@@ -545,7 +529,6 @@ app.post('/my_webhook_endpoint', (req, res) => {
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 @app.route("/my_webhook_endpoint", methods=["POST"])
 def endpoint():
@@ -565,7 +548,6 @@ def endpoint():
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 post '/my_webhook_endpoint' do
   request.body.rewind
@@ -590,7 +572,6 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $app->post('/my_webhook_endpoint', function (Request $request, Response $response) {
     $data = $request->getParsedBody();

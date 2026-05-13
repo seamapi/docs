@@ -2,7 +2,7 @@
 description: Learn how to configure your Latch ACS for integration with Seam.
 ---
 
-# Dormakaba Ambiance Setup Instructions
+# Dormakaba Ambiance Setup Guide
 
 Use this guide to connect your Dormakaba Ambiance system to Seam and enable automated guest access with plastic cards, mobile keys, and (when available) Apple Wallet. After setup, Seam syncs reservation changes in real time and manages the full guest key lifecycle for you.
 
@@ -85,13 +85,8 @@ Once Seam Bridge is installed (or if your system is cloud-hosted), you can conne
 1.  **Choose connection method**
 
     Select **Bridge application** for on-prem systems, or **Cloud connection** if your Ambiance server is hosted.
-2.  **(Bridge only) Enter your pairing token**\
-    Copy the pairing token from the Seam Bridge app and submit it.\
-
-
-    <figure><img src="../../.gitbook/assets/seam-bridge-client.png" alt=""><figcaption><p>Grab the Pairing Token from the top right corner of the Bridge application.</p></figcaption></figure>
-
-
+2. **(Bridge only) Enter your pairing token**\
+   Copy the pairing token from the Seam Bridge app and submit it.\\
 3. **Enter your Ambiance operator credentials**\
    These credentials come from the Staff Admin (Operator) account you created in Ambiance.
    *   **Ambiance Operator Username**
@@ -105,8 +100,7 @@ Once Seam Bridge is installed (or if your system is cloud-hosted), you can conne
        Example: `http://192.168.x.x`
    *   **Ambiance Cloud URL** (if Cloud connection)
 
-       Enter the base URL of your cloud-hosted Ambiance environment.\
-
+       Enter the base URL of your cloud-hosted Ambiance environment.\\
 4. **Enter your REST API credentials**\
    These fields use the values created under System Settings → PMS in Ambiance.
    *   **PMS Operator Username**
@@ -120,8 +114,7 @@ Once Seam Bridge is installed (or if your system is cloud-hosted), you can conne
        Enter the Client ID created when enabling LGS REST API.
    *   **REST API Client Secret**
 
-       Enter the Client Secret created alongside the Client ID.\
-
+       Enter the Client Secret created alongside the Client ID.\\
 
 Seam will verify the credentials and complete the connection. Once finished, your Ambiance entrances and reservations will begin syncing automatically.
 
@@ -134,9 +127,7 @@ Seam will verify the credentials and complete the connection. Once finished, you
 2. Inform them you are utilizing **Seam’s integration for Dormakaba Ambiance Mobile Keys**.
 3. Dormakaba will connect your Community property to Seam’s LEGIC account and provide you with a **Project ID** and **API Key**.
 4. In Ambiance, go to **System Settings** > **Advanced** > **Mobile Keys** > **LEGIC Configuration Settings** and enter the **Project ID** and **API Key**.
-5.  Enter **"https://integration.legicconnect.com"** as the **Endpoint address**.
-
-    <figure><img src="../../.gitbook/assets/Screenshot 2025-09-28 at 5.22.31 PM.png" alt=""><figcaption></figcaption></figure>
+5. Enter **"https://integration.legicconnect.com"** as the **Endpoint address**.
 6. Click **Test LEGIC connection settings** to confirm that the settings were set correctly.
 7. Click the **Save** icon in the top-right corner to save the changes.
 

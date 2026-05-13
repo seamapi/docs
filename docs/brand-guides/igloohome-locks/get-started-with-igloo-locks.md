@@ -4,8 +4,6 @@ description: Learn how to connect and control your Igloohome locks with the Seam
 
 # Get started with igloohome Locks
 
-<figure><img src="../../.gitbook/assets/guides/igloo-getting-seo-cover.png" alt=""><figcaption><p>Igloohome Locks</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of locks, including Igloohome. This guide provides a rapid introduction to connecting and controlling your [Igloohome](https://www.seam.co/manufacturers/igloohome) locks using the Seam API. To learn more about other device brands supported by the Seam API, such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -69,7 +67,6 @@ To control your Igloohome locks via the Seam API, you must first authorize your 
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 
@@ -87,7 +84,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 
@@ -103,7 +99,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -119,7 +114,6 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -144,13 +138,10 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 * **email:** jane@example.com
 * **password:** 1234
 
-<figure><img src="../../.gitbook/assets/guides/igloo-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect Igloohome account with Seam</p></figcaption></figure>
-
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -161,7 +152,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -170,7 +160,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -179,7 +168,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -193,7 +181,6 @@ After an Igloohome account is linked with Seam, you can retrieve devices for thi
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -230,7 +217,6 @@ console.log(someLock)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -245,7 +231,6 @@ print(some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -265,7 +250,6 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -301,7 +285,6 @@ Next, you can perform the basic action of locking and unlocking a door.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -316,7 +299,6 @@ console.log(updatedLock.properties.locked) // false
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -331,7 +313,6 @@ assert updated_lock.properties["locked"] is False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -346,7 +327,6 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -374,7 +354,6 @@ Igloohome pins have to be 4-6 digits long, and for time bound access codes, star
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -400,7 +379,6 @@ await seam.accessCodes.list({
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -424,7 +402,6 @@ seam.access_codes.list(device=some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -445,7 +422,6 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 

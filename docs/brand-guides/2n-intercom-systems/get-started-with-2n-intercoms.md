@@ -7,8 +7,6 @@ description: >-
 
 # Get started with 2N Intercoms
 
-<figure><img src="../../.gitbook/assets/guides/2n-getting-started-seo-cover.png" alt=""><figcaption><p>2N Intercoms</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of smart devices. This guide provides a rapid introduction to connecting and controlling your [2N](https://www.seam.co/manufacturers/2n) intercom using the Seam API. To learn more about other smart device brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -29,14 +27,12 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```bash
 npm i seam
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```bash
 pip install seam
 # For some development environments, use pip3 in this command instead of pip.
@@ -44,21 +40,18 @@ pip install seam
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```bash
 bundle add seam
 ```
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```bash
 composer require seamapi/seam
 ```
 {% endtab %}
 
 {% tab title="C#" %}
-
 Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
@@ -81,7 +74,6 @@ To control your 2N intercom via the Seam API, you must first authorize your Seam
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 
@@ -99,7 +91,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 
@@ -115,7 +106,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -133,7 +123,6 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -160,13 +149,10 @@ After entering the credentials for My2N, you'll have to enter the credentials of
 * **username:** jane
 * **password:** 1234
 
-<figure><img src="../../.gitbook/assets/guides/2n-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect My2N account with Seam</p></figcaption></figure>
-
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -177,7 +163,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -186,7 +171,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -195,7 +179,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -209,8 +192,6 @@ After a My2N account is linked with Seam, you can retrieve devices for this My2N
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -248,7 +229,6 @@ console.log(someLock)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -283,8 +263,6 @@ print(some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -316,8 +294,6 @@ puts some_lock.inspect
 {% endtab %}
 
 {% tab title="PHP" %}
-
-
 ```php
 use Seam\SeamClient;
 
@@ -350,8 +326,6 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -366,8 +340,6 @@ console.log(updatedLock.properties.locked) // false
 {% endtab %}
 
 {% tab title="Python" %}
-
-
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -382,8 +354,6 @@ assert updated_lock.properties["locked"] is False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
-
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -398,8 +368,6 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
-
-
 ```php
 use Seam\SeamClient;
 
@@ -423,8 +391,6 @@ Seam maps these residents to [access codes](https://docs.seam.co/latest/capabili
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -469,8 +435,6 @@ await seam.accessCodes.list({
 {% endtab %}
 
 {% tab title="Python" %}
-
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -507,8 +471,6 @@ seam.access_codes.list(device=some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -557,8 +519,6 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
-
-
 ```
 
 php

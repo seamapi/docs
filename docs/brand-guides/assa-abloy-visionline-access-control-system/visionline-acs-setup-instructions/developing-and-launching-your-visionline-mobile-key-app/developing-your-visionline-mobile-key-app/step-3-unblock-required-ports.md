@@ -24,5 +24,3 @@ Unblock the required ports on the Visionline server and client.
      * DCOM ports
 
 For more details, see the following ASSA ABLOY Visionline document:
-
-{% file src="../../../../../.gitbook/assets/VisiOnline Server Client and DCOM Port Requirements.pdf" %}

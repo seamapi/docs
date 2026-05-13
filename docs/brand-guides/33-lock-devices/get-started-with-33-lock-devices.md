@@ -4,8 +4,6 @@ description: Learn how to connect and control 33 Lock smart locks with the Seam 
 
 # Get started with 33 Lock devices
 
-<figure><picture><source srcset="../../.gitbook/assets/33lock-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/33lock-manufacturer-page-cover-light.png" alt="Connect and control any 33 Locks device using the Seam API."></picture><figcaption><p>33 Lock smart locks</p></figcaption></figure>
-
 ## Overview
 
 Seam provides a universal API to connect and control many brands of IoT devices and systems, including smart locks, access control systems (ACSs), thermostats, and noise sensors.
@@ -96,7 +94,7 @@ The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provi
 
 Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-33-lock-devices.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
-<img src="../../.gitbook/assets/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original">
+
 {% endhint %}
 
 ### Create a Connect Webview
@@ -105,7 +103,6 @@ Create a `connect_webview` object and then note the returned URL.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -133,7 +130,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -159,7 +155,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -184,7 +179,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -212,7 +206,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -241,7 +234,6 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -286,13 +278,10 @@ Complete the Connect Webview authorization flow by entering the following [TTLoc
 * **Email:** jane@example.com
 * **Password:** 1234
 
-<figure><picture><source srcset="../../.gitbook/assets/33-lock_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/33-lock_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect a TTLock account with Seam. This flow varies slightly based on the device manufacturer and region."></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect a TTLock account with Seam. This flow varies slightly based on the device manufacturer and region.</p></figcaption></figure>
-
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -311,7 +300,6 @@ true
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -333,7 +321,6 @@ Login Successful (true): true
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -350,7 +337,6 @@ True
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -369,7 +355,6 @@ true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -388,7 +373,6 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -417,7 +401,6 @@ The Seam API exposes each device's properties, such as the door lock status, pow
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -464,7 +447,6 @@ true
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -520,7 +502,6 @@ Locked (true): true
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -565,7 +546,6 @@ Device(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -613,7 +593,6 @@ true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -660,7 +639,6 @@ true
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -728,7 +706,6 @@ To unlock a door, use the [Unlock Door](https://docs.seam.co/latest/api/locks/un
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -759,7 +736,6 @@ if (frontDoor.can_remotely_unlock) {
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -796,7 +772,6 @@ fi
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -822,7 +797,6 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -847,7 +821,6 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -874,7 +847,6 @@ if ($front_door->can_remotely_unlock) {
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -905,7 +877,6 @@ To query the `locked` status of the device:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -925,7 +896,6 @@ false
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -954,7 +924,6 @@ Locked (false): false
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -974,7 +943,6 @@ False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -994,7 +962,6 @@ false
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -1014,7 +981,6 @@ false
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -1050,7 +1016,6 @@ The Seam API makes it easy to program both [ongoing](https://docs.seam.co/latest
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -1106,7 +1071,6 @@ if (updatedFrontDoor.can_program_online_access_codes) {
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -1182,7 +1146,6 @@ fi
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -1237,7 +1200,6 @@ if updated_front_door.can_program_online_access_codes:
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -1293,7 +1255,6 @@ end
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -1348,7 +1309,6 @@ if ($updated_front_door->can_program_online_access_codes) {
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -1419,8 +1379,6 @@ For more details about setting up your real 33 Lock device, see the [33 Lock loc
 
 Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview). These prebuilt UI components help you to build your device management flow.
 
-<figure><img src="../../.gitbook/assets/Lock Detail.png" alt="Seam Components make it easy to develop your application!" width="280"><figcaption><p>Seam Components make it easy to develop your application!</p></figcaption></figure>
-
 For example, you can use the [Device Table Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/device-table) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/device-details) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/access-code-details) provides a similar display and actions for access codes.
 
 Seam Components use a responsive design to fit seamlessly on any screen size. They also provide device debugging flows to help your users.
@@ -1454,4 +1412,4 @@ If you have any questions or want to report an issue, email us at [support@seam.
 
 ## Quick links
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../../guides/.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Get an API Key</strong> (free)</td><td>Sign up for the Seam Console and get your API keys. →</td><td></td><td><a href="../.gitbook/assets/seam-api-key.png">seam-api-key.png</a></td><td><a href="https://console.seam.co/">https://console.seam.co/</a></td></tr><tr><td><strong>Contact Sales</strong></td><td>Got a project or a specific question? Contact our team to get answers. →</td><td></td><td><a href="../.gitbook/assets/seam-contact-us-light.png">seam-contact-us-light.png</a></td><td><a href="https://www.seam.co/contact-us">https://www.seam.co/contact-us</a></td></tr></tbody></table>

@@ -89,7 +89,6 @@ For Sandbox integrations, you can simply use `ABC123ABC` for both the API Key an
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from "seam";
 
@@ -107,7 +106,6 @@ console.log(connectWebview.url);
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 
@@ -123,7 +121,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -139,7 +136,6 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -167,7 +163,6 @@ Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id
@@ -178,7 +173,6 @@ console.log(updatedWebview.login_successful); // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -187,7 +181,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -196,7 +189,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get('729847ff-98e0-418d-aeba-1e3cb38157c6');
 assert($webview->status == 'pending');
@@ -210,7 +202,6 @@ After a Wyze account is linked with Seam, you can retrieve its devices.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const allLocks = await seam.locks.list();
 
@@ -223,7 +214,6 @@ console.log(someLock);
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -236,7 +226,6 @@ print(some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -248,7 +237,6 @@ puts some_lock
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -267,8 +255,8 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
+{% openapi src="../.gitbook/assets/openapi.json" path="/locks/lock_door" method="post" %}
+[openapi.json](../.gitbook/assets/openapi.json)
 {% endopenapi %}
 
 ## Unlock a door
@@ -283,7 +271,6 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id);
@@ -298,7 +285,6 @@ console.log(updatedLock.properties.locked); // false
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -313,7 +299,6 @@ assert updated_lock.properties["locked"] is False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -328,7 +313,6 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -354,7 +338,6 @@ Wyze does not allow pin code values to be seen after the code is created. If you
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -410,7 +393,6 @@ await seam.accessCodes.list({
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -436,7 +418,6 @@ seam.access_codes.list(device=some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -472,7 +453,6 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 

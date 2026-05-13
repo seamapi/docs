@@ -30,13 +30,10 @@ Perform the following process for each Salto Space site that you want to integra
 4. In the **Salto SHIP Server** pane:
    1. Select **Enable**.
    2. In the **Transport Protocol** area, select **HTTP(S)** or **STP**.
-   3.  If you've selected **HTTP(S)**:
-
-       1. In the **Authentication** field, select **Basic**.
-       2. In the **Username** field, type a username for the integration with Seam, for example, `Seam_Integration`.
-       3. In the **Password** field, type a password for this Seam integration user.
-
-       <figure><img src="../../.gitbook/assets/salto-space-ship-settings.png" alt="In the Salto Space SHIP settings, specify a username and password for the integration with Seam."><figcaption><p>In the Salto Space SHIP settings, specify a username and password for the integration with Seam.</p></figcaption></figure>
+   3. If you've selected **HTTP(S)**:
+      1. In the **Authentication** field, select **Basic**.
+      2. In the **Username** field, type a username for the integration with Seam, for example, `Seam_Integration`.
+      3. In the **Password** field, type a password for this Seam integration user.
    4. If you've selected **STP**:
       1. In the **TCP/IP port** field, select or type the number of the port that you want to use.
 5. In the lower-right corner of the **General options** page, click **Save**.
@@ -70,9 +67,7 @@ To identify this URL:
 
 Perform the following process for each Salto Space site that you want to integrate with Seam:
 
-1.  In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
-
-    <figure><img src="../../.gitbook/assets/access-systems-tab-production-workspace.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
 2.  On the **Access Systems** page, click **New Access System**.
 
     Seam Console displays a Connect Webview that enables you to connect your access system to Seam.
@@ -86,9 +81,7 @@ Perform the following process for each Salto Space site that you want to integra
     For systems requirements, see [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
 7. Run the downloaded Seam Bridge app.
 8. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge and then click **Start pairing**.
-9.  Copy the pairing code.
-
-    <figure><img src="../../.gitbook/assets/seam-bridge-pairing-code.png" alt="Use the pairing code to pair Seam Bridge with your workspace." width="375"><figcaption><p>Use the pairing code to pair Seam Bridge with your workspace.</p></figcaption></figure>
+9. Copy the pairing code.
 10. In the Connect Webview, click **Continue**.
 11. On the **Seam Bridge Connection** page:
     1. In the **Enter your pairing token** field, paste the pairing code that you copied.

@@ -19,7 +19,7 @@ If you already connected your Visionline ACS to Seam during the development phas
 
 ## Connect Credential Services to Seam
 
-ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../assa-abloy-vingcard-credential-services/README.md).
+ASSA ABLOY Credential Services stores all the mobile credentials that your application issues. For more information about ASSA ABLOY Credential Services, see the [ASSA ABLOY Credential Services integration guide](../../../../assa-abloy-vingcard-credential-services/).
 
 You received a Credential Services production "tenant" account from ASSA ABLOY when you [obtained ASSA ABLOY certification](step-1-obtain-assa-abloy-certification-for-your-mobile-key-app.md) for your mobile key app. ASSA ABLOY provided you with the following production-phase information upon certification:
 
@@ -34,24 +34,18 @@ ASSA ABLOY assigned you a preliminary application ID during the development phas
 Once you've obtained certification, you must edit your workspace settings to update this application ID.
 {% endhint %}
 
-1.  In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**. Then, in the upper-right corner of the **Access Systems** page, click **New Access System**.
-
-    <figure><img src="../../../../../.gitbook/assets/access-systems-tab-production-workspace.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**. Then, in the upper-right corner of the **Access Systems** page, click **New Access System**.
 2. In the Connect Webview, perform the following steps:
    1. Click **Continue**.
    2. If the Connect Webview displays multiple brand options, select **Assa Abloy Credential Service**.
    3. In the **Username** field, type your production tenant account username.
    4. In the **Password** field, type your production tenant account password.
-   5.  In the **Credential Services URL** field, type the production Credential Services URL.
-
-       <figure><img src="../../../../../.gitbook/assets/connect-webview-assa-abloy-credential-service-credentials.png" alt="" width="181"><figcaption></figcaption></figure>
+   5. In the **Credential Services URL** field, type the production Credential Services URL.
    6. Click **Submit**.
 3. Configure your ASSA ABLOY settings in Seam Console, as follows:
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Settings**.
    2. On the **Workspace Settings** page, next to **Assa Abloy Settings**, click **Edit**.
-   3.  In the **Assa Abloy Settings** dialog, type your production application ID.
-
-       <figure><img src="../../../../../.gitbook/assets/assa-abloy-settings.png" alt="Type your ASSA ABLOY application ID." width="375"><figcaption><p>Type your ASSA ABLOY application ID.</p></figcaption></figure>
+   3. In the **Assa Abloy Settings** dialog, type your production application ID.
    4. Click **Save**.
 
 ***
@@ -71,9 +65,7 @@ Perform this process for each Visionline site that you want to connect to Seam.
     5. In the top menu in the Visionline application, click **Tools > Options**.
     6. In the left navigation pane of the **Options** window, click **Mobile Access**.
     7. Note the **UUID**.
-2.  In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
-
-    <figure><img src="../../../../../.gitbook/assets/access-systems-tab-production-workspace.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+2. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
 3.  On the **Access Systems** page, click **New Access System**.
 
     Seam Console displays a Connect Webview that enables you to connect your ACS to Seam.
@@ -88,8 +80,6 @@ Perform this process for each Visionline site that you want to connect to Seam.
 8. Run the downloaded Seam Bridge app.
 9. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge and then click **Start pairing**.
 10. Copy the pairing code.
-
-    <figure><img src="../../../../../.gitbook/assets/seam-bridge-pairing-code.png" alt="Use the pairing code to pair Seam Bridge with your workspace." width="375"><figcaption><p>Use the pairing code to pair Seam Bridge with your workspace.</p></figcaption></figure>
 11. In the Connect Webview, click **Continue**.
 12. On the **Set up your Seam Bridge** page:
     1. In the **Enter your pairing token** field, paste the pairing code that you copied.

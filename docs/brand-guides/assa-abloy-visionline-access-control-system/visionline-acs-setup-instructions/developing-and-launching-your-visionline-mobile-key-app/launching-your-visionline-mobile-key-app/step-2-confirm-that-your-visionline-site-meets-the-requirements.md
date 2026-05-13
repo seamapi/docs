@@ -27,5 +27,3 @@ Make sure that all locks meet the following requirements:
       See [Step 3: Confirm BLE Module on All Locks](step-3-confirm-ble-module-on-all-locks.md).
 
 For more details, see the following ASSA ABLOY Visionline document:
-
-{% file src="../../../../../.gitbook/assets/VisiOnline Server Client and DCOM Port Requirements.pdf" %}

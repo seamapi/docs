@@ -4,8 +4,6 @@ description: Guide for using Lockly smart locks with Seam
 
 # Lockly Locks
 
-<figure><img src="../../.gitbook/assets/lockly-manufacturer-page-cover-16-9-light.png" alt=""><figcaption></figcaption></figure>
-
 ## Overview
 
 Seam integrates with Lockly smart locks. With a focus on security, Lockly smart locks work with a vast array of door types, such as traditional deadbolts, latch bolts, and patio doors. In addition, Lockly smart locks support time-bound and one-time-use [offline access codes](creating-lockly-offline-access-codes.md) that you can issue when you are not connected to your Lockly lock.

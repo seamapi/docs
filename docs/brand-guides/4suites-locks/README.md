@@ -1,5 +1,7 @@
 ---
 description: Guide for using 4SUITES locks with Seam
+hidden: true
+noIndex: true
 ---
 
 # 4SUITES Locks
