@@ -6,7 +6,7 @@ description: >-
 
 # Creating and Managing Smart Lock Access Codes
 
-<figure><img src="../../../.gitbook/assets/code_unlock (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
 
 ## What Is an Access Code?
 

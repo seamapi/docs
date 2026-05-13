@@ -47,7 +47,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../../.gitbook/assets/workspace-switcher.png)
 3.  In the top navigation pane, click **ACS Systems**.
 
-    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab (1).png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
 4.  On the **Access Systems** page, click **New Access System**.
 
     Seam Console displays a Connect Webview that enables you to connect a virtual ACS to Seam.
@@ -134,7 +134,6 @@ Create an ACS user within the virtual Visionline access control system.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -161,7 +160,6 @@ const acsUser = await seam.acs.users.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -192,7 +190,6 @@ acs_user=$(curl -X 'POST' \
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -219,7 +216,6 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -246,7 +242,6 @@ acs_user = seam.acs.users.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -274,7 +269,6 @@ $acs_user = $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -311,7 +305,6 @@ If this credential were intended for a real Visionline card, you'd need to creat
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -346,7 +339,6 @@ const keyCardCredential = await seam.acs.credentials.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -390,7 +382,6 @@ key_card_credential=$(curl -X 'POST' \
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -425,7 +416,6 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -460,7 +450,6 @@ key_card_credential = seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -492,7 +481,6 @@ $key_card_credential = $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -544,7 +532,6 @@ For more information, see [Working with Card Encoders and Scanners](../working-w
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -588,7 +575,6 @@ await seam.actionAttempts.get({
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -651,7 +637,6 @@ curl -X 'POST' \
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -695,7 +680,6 @@ ActionAttempt(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -739,7 +723,6 @@ seam.action_attempts.get(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -783,7 +766,6 @@ $seam->action_attempts->get(
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp

@@ -4,8 +4,6 @@ description: Learn how to connect and control smartlocks with the Seam API.
 
 # Get started with Smart Locks
 
-<figure><img src="../.gitbook/assets/guides/smart-locks-16-9-seam.png" alt=""><figcaption><p>Seam Smart Locks API</p></figcaption></figure>
-
 ## Overview
 
 Seam is a simple API to connect and control almost any smartlocks. Seam already integrates popular smartlock brands such as [August](https://seam.co/manufacturers/august), [Yale](https://seam.co/manufacturers/yale), [Schlage](https://seam.co/manufacturers/schlage), [Igloo](https://www.seam.co/manufacturers/igloohome), and [Kwikset](https://www.seam.co/manufacturers/kwikset), as well as lesser known ones like [Nuki](https://www.seam.co/manufacturers/nuki), [Wyze](https://www.seam.co/manufacturers/wyze), or [TTLock](https://www.seam.co/manufacturers/ttlock).
@@ -77,7 +75,6 @@ To start, we will create a Connect Webview and pass "stable" as the `provider_ca
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 import { Seam } from 'seam'
 
@@ -95,7 +92,6 @@ console.log(connectWebview.url)
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 from seam import Seam
 
@@ -111,7 +107,6 @@ print(webview.url)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 require "seam"
 
@@ -129,7 +124,6 @@ puts webview.url
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -144,8 +138,6 @@ echo json_encode($webview)
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../.gitbook/assets/guides/yale-auth-example.png" alt=""><figcaption></figcaption></figure>
-
 #### Authorize Your Workspace
 
 Using a browser, navigate to the URL returned by the Connect Webview object. If you are in a sandbox workspace, you can select Yale as the provider and use the test login below to complete the process. If you have a non-sandbox workspace and a real device, simply use your account credentials.
@@ -155,13 +147,10 @@ Yale Test credentials:
 * **email:** jane@example.com
 * **password:** 1234
 
-<figure><img src="../.gitbook/assets/guides/smart-lock-connect-flow-screens.png" alt=""><figcaption><p>Seam Connect Webview flow to connect an account with Seam</p></figcaption></figure>
-
 Confirm the Connect Webview was successful by querying its status:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -172,7 +161,6 @@ console.log(updatedWebview.login_successful) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -181,7 +169,6 @@ assert updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
@@ -190,7 +177,6 @@ puts updated_webview.login_successful # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
@@ -204,7 +190,6 @@ After an account is linked with Seam, you can retrieve devices for this linked a
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -216,7 +201,6 @@ console.log(someLock.properties.locked) // true
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 all_locks = seam.locks.list()
 
@@ -228,7 +212,6 @@ assert some_lock.properties["locked"] is True
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -239,7 +222,6 @@ puts some_lock.properties.locked # true
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -256,9 +238,7 @@ echo json_encode($locks);
 
 Next, you can perform the basic action of locking and unlocking the door as most devices will support the `locks` capability.
 
-{% openapi src="../.gitbook/assets/openapi (1).json" path="/locks/lock_door" method="post" %}
-[openapi (1).json](<../.gitbook/assets/openapi (1).json>)
-{% endopenapi %}
+<mark style="color:green;">`POST`</mark> `undefined/locks/lock_door`
 
 ## Unlock a door
 
@@ -272,7 +252,6 @@ Next, you can perform the basic action of locking and unlocking the door as most
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -287,7 +266,6 @@ console.log(updatedLock.properties.locked) // false
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -302,7 +280,6 @@ assert updated_lock.properties["locked"] is False
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -317,7 +294,6 @@ puts updated_lock.properties.locked # false
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 
@@ -339,13 +315,10 @@ $seam->locks->lock_door($lock->device_id);
 
 Many smartlocks have a built-in keypad or an external one that can be paired over bluetooth. This lets you program access codes that a user can then enter at a later time to unlock a door.
 
-![](<../.gitbook/assets/code_unlock (1).gif>)
-
 The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a smartlock. An `ongoing` code is a code that will be permanently programmed onto the device until you tell the Seam API you wish to remove it. A `timebound` code is, as the time implies, time bound by a set of ISO8601 timestamp that you provide the Seam API. You can find out more about access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -390,7 +363,6 @@ await seam.accessCodes.list({
 {% endtab %}
 
 {% tab title="Python" %}
-
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -427,7 +399,6 @@ seam.access_codes.list(device=some_lock)
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -476,7 +447,6 @@ seam.access_codes.list(device_id: some_lock.device_id)
 {% endtab %}
 
 {% tab title="PHP" %}
-
 ```php
 use Seam\SeamClient;
 

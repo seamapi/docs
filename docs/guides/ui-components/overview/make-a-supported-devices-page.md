@@ -6,6 +6,8 @@ description: >-
 
 # Make a Supported Devices Page
 
+<figure><img src="../../.gitbook/assets/supported-device-table-final.png" alt=""><figcaption></figcaption></figure>
+
 ## Overview
 
 Seam adds support for new smart devices every week, and by integrating with Seam, you get access to those new devices too.
@@ -48,7 +50,6 @@ Add the script tag and custom element anywhere on your page. You can serve this 
   </body>
 </html>
 ```
-
 {% endtab %}
 
 {% tab title="Any JavaScript Framework" %}
@@ -84,14 +85,14 @@ Some frameworks require additional configuration to enable web component support
 
 The `<device-list-by-capability>` element accepts the following attributes:
 
-| Attribute            | Type    | Default | Description                                                                                            |
-| -------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| Attribute            | Type    | Default | Description                                                                                                                                                                                                                          |
+| -------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `capability-name`    | string  | —       | **Required.** Comma-separated [Seam capability flag names](../../capability-guides/device-and-system-capabilities.md), for example `can_program_online_access_codes` or `can_program_online_access_codes,can_provision_wallet_keys`. |
-| `token`              | string  | —       | **Required.** API token issued by Seam.                                                                |
-| `max-visible-rows`   | number  | `4`     | Maximum device rows shown per manufacturer before a "show more" control appears.                       |
-| `hide-search`        | boolean | `false` | Hide the search input.                                                                                 |
-| `manufacturers`      | string  | —       | Comma-separated manufacturer slugs to restrict the device list.                                        |
-| `initial-capability` | string  | —       | Which capability to display first when `capability-name` contains multiple values.                     |
+| `token`              | string  | —       | **Required.** API token issued by Seam.                                                                                                                                                                                              |
+| `max-visible-rows`   | number  | `4`     | Maximum device rows shown per manufacturer before a "show more" control appears.                                                                                                                                                     |
+| `hide-search`        | boolean | `false` | Hide the search input.                                                                                                                                                                                                               |
+| `manufacturers`      | string  | —       | Comma-separated manufacturer slugs to restrict the device list.                                                                                                                                                                      |
+| `initial-capability` | string  | —       | Which capability to display first when `capability-name` contains multiple values.                                                                                                                                                   |
 
 ### Show multiple capabilities
 
@@ -117,6 +118,6 @@ When you provide more than one capability, the component renders a dropdown sele
 
 ## Next Steps
 
-- Browse live examples in the [interactive component storybook](https://seamapi.github.io/custom-device-db-web).
+* Browse live examples in the [interactive component storybook](https://seamapi.github.io/custom-device-db-web).
 
 If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

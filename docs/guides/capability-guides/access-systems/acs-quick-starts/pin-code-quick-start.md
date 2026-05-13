@@ -44,7 +44,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](../../../.gitbook/assets/workspace-switcher.png)
 3.  In the top navigation pane, click **ACS Systems**.
 
-    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab (1).png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/acs-quick-start-access-systems-tab.png" alt="Click ACS Systems to go to the Access Systems page."><figcaption><p>Click ACS Systems to go to the Access Systems page.</p></figcaption></figure>
 4.  On the **Access Systems** page, click **New Access System**.
 
     Seam Console displays a Connect Webview that enables you to connect a virtual ACS to Seam.
@@ -128,7 +128,6 @@ Create an ACS user within the virtual Salto KS access control system, and specif
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -163,7 +162,6 @@ const acsUser = await seam.acs.users.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -202,7 +200,6 @@ acs_user=$(curl -X 'POST' \
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -237,7 +234,6 @@ AcsUser(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -272,7 +268,6 @@ acs_user = seam.acs.users.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -308,7 +303,6 @@ $acs_user = $seam->acs->users->create(
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -341,7 +335,6 @@ Some other access control systems do not use access groups and, instead, specify
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -360,7 +353,6 @@ void
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -385,7 +377,6 @@ curl -X 'POST' \
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -404,7 +395,6 @@ None
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -423,7 +413,6 @@ nil
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -442,7 +431,6 @@ void
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
@@ -465,7 +453,6 @@ Create a PIN code credential for the ACS user. After you create the credential, 
 
 {% tabs %}
 {% tab title="JavaScript" %}
-
 **Code:**
 
 ```javascript
@@ -490,7 +477,6 @@ const pinCodeCredential = await seam.acs.credentials.create({
 {% endtab %}
 
 {% tab title="cURL" %}
-
 **Code:**
 
 ```bash
@@ -522,7 +508,6 @@ pin_code_credential=$(curl -X 'POST' \
 {% endtab %}
 
 {% tab title="Python" %}
-
 **Code:**
 
 ```python
@@ -547,7 +532,6 @@ AcsCredential(
 {% endtab %}
 
 {% tab title="Ruby" %}
-
 **Code:**
 
 ```ruby
@@ -571,7 +555,6 @@ pin_code_credential = seam.acs.credentials.create(
 {% endtab %}
 
 {% tab title="PHP" %}
-
 **Code:**
 
 ```php
@@ -596,7 +579,6 @@ $pin_code_credential = $seam->acs->credentials->create(
 {% endtab %}
 
 {% tab title="C#" %}
-
 **Code:**
 
 ```csharp
