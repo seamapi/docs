@@ -1,28 +1,30 @@
 ---
-description: Use Seam Components to make a Supported Devices page
+description: >-
+  Embed the Seam Custom Device Database web component to show a filterable list
+  of compatible devices on your site
 ---
 
 # Make a Supported Devices Page
 
 ## Overview
 
-Seam adds supports for smart devices every week and by integrating with Seam, you get access to these new devices too!
+Seam adds support for new smart devices every week, and by integrating with Seam, you get access to those new devices too.
 
-This guide will show you how to add a [supported device table](https://react.seam.co/?path=/docs/components-supporteddevicetable--docs) to your website or application. You can use plain HTML, React, or any framework that supports web components.
+This guide shows you how to embed a filterable list of devices on your site using the [Seam Custom Device Database web component](https://github.com/seamapi/custom-device-db-web). The component is a standard custom element served from the Seam CDN, so it works in plain HTML and any framework that supports web components.
 
-## 1 - Get a Publishable Key from the Seam Console
+{% hint style="warning" %}
+**Migrating from the previous version?** The earlier `<seam-supported-device-table>` component has been retired and will no longer load. If your site embeds it today, replace it with `<device-list-by-capability>` as shown below.
+{% endhint %}
 
-To access the Seam API, you'll need a publishable key. This key identifies your application when making requests to Seam and is safe to embed in your frontend code.
+## 1 — Request an API Token
 
-Go to [console.seam.co](https://console.seam.co) and select "Client Sessions" from the sidebar. You should then see a "Publishable Key" that you can copy.
+The `<device-list-by-capability>` component reads from Seam's Custom Device Database, which requires an API token. Email [support@seam.co](mailto:support@seam.co) to request a token for your workspace.
 
-## 2 — Add Seam Components
+## 2 — Add the Component
 
 {% tabs %}
 {% tab title="Plain HTML" %}
-Seam Components are implemented in React, but may be used as native web components.
-
-Create a plain HTML page with the content below. You can serve this anyway you like, or even open it directly in your browser. The version in the script tag can be any [released version](https://github.com/seamapi/react/releases).
+Add the script tag and custom element anywhere on your page. You can serve this any way you like, or even open it directly in your browser.
 
 ```html
 <!DOCTYPE html>
@@ -30,75 +32,91 @@ Create a plain HTML page with the content below. You can serve this anyway you l
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Seam Components</title>
+    <title>Supported Devices</title>
   </head>
   <body>
     <main>
-      <seam-supported-device-table
-        publishable-key="your_publishable_key"
-      ></seam-supported-device-table>
+      <device-list-by-capability
+        capability-name="can_program_online_access_codes"
+        token="your-api-token"
+      ></device-list-by-capability>
     </main>
     <script
       type="module"
-      src="https://react.seam.co/v/1.42.1/dist/elements.js"
+      src="https://cdn.devicedb.seam.co/v/latest/DeviceListByCapability.global.js"
     ></script>
   </body>
 </html>
 ```
-{% endtab %}
 
-{% tab title="React" %}
-Install `@seamapi/react` in your React application
-
-```bash
-npm install --save @seamapi/react
-```
-
-Add the components anywhere in your React app
-
-```javascript
-import { SupportedDeviceTable, SeamProvider } from "@seamapi/react"
-
-export const App = () => {
-  return (
-    <SeamProvider publishableKey="your_publishable_key">
-      <main>
-        <SupportedDeviceTable />
-      </main>
-    </SeamProvider>
-  )
-}
-```
 {% endtab %}
 
 {% tab title="Any JavaScript Framework" %}
-Install `@seamapi/react` in your application
+Because `<device-list-by-capability>` is a standard custom element, you can use it in any framework that supports web components, including React, Vue, Angular, and Svelte.
 
-```bash
-npm install --save @seamapi/react
-```
-
-Then import the custom elements bundle in your application entrypoint:
-
-```javascript
-import "@seamapi/react/elements.js"
-```
-
-Add the components where your framework renders HTML. Some frameworks may require additional configuration to enable web component support, e.g., [Angular](getting-started-with-seam-components/angular.md) or [Vue](getting-started-with-seam-components/vue.md).
+Include the script tag once in your application's entrypoint (for example, `index.html`):
 
 ```html
-<seam-supported-device-table publishable-key="your_publishable_key"></seam-supported-device-table>
+<script
+  type="module"
+  src="https://cdn.devicedb.seam.co/v/latest/DeviceListByCapability.global.js"
+></script>
 ```
+
+Then render the element wherever you need the device list:
+
+```html
+<device-list-by-capability
+  capability-name="can_program_online_access_codes"
+  token="your-api-token"
+></device-list-by-capability>
+```
+
+Some frameworks require additional configuration to enable web component support. Refer to your framework's documentation — for example, the [Vue web components guide](https://vuejs.org/guide/extras/web-components.html) or Angular's `CUSTOM_ELEMENTS_SCHEMA`.
 {% endtab %}
 {% endtabs %}
 
-You should see a list of device models like what's shown below:
+{% hint style="warning" %}
+**Pin to a specific version in production.** The `/v/latest/` URL tracks the most recent release. To avoid surprise updates, pin to an immutable version such as `https://cdn.devicedb.seam.co/v/0.0.6/DeviceListByCapability.global.js`. See the [release list](https://github.com/seamapi/custom-device-db-web/releases) for available versions.
+{% endhint %}
 
-<figure><img src="https://3624860916-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FxnN2A67918om1UthYWsF%2Fuploads%2FyvmI7GxNyxhebqR99ZwF%2FScreen%20Shot%202023-06-30%20at%209.46.33%20AM.png?alt=media&#x26;token=18a6ad74-0f9f-4e18-8c15-57371c461044" alt=""><figcaption></figcaption></figure>
+## 3 — Configure the Component
+
+The `<device-list-by-capability>` element accepts the following attributes:
+
+| Attribute            | Type    | Default | Description                                                                                            |
+| -------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| `capability-name`    | string  | —       | **Required.** Comma-separated [Seam capability flag names](../../capability-guides/device-and-system-capabilities.md), for example `can_program_online_access_codes` or `can_program_online_access_codes,can_provision_wallet_keys`. |
+| `token`              | string  | —       | **Required.** API token issued by Seam.                                                                |
+| `max-visible-rows`   | number  | `4`     | Maximum device rows shown per manufacturer before a "show more" control appears.                       |
+| `hide-search`        | boolean | `false` | Hide the search input.                                                                                 |
+| `manufacturers`      | string  | —       | Comma-separated manufacturer slugs to restrict the device list.                                        |
+| `initial-capability` | string  | —       | Which capability to display first when `capability-name` contains multiple values.                     |
+
+### Show multiple capabilities
+
+When you provide more than one capability, the component renders a dropdown selector. Use `initial-capability` to control which capability is active on load.
+
+```html
+<device-list-by-capability
+  capability-name="can_program_online_access_codes,can_provision_wallet_keys"
+  initial-capability="can_program_online_access_codes"
+  token="your-api-token"
+></device-list-by-capability>
+```
+
+### Filter to specific manufacturers
+
+```html
+<device-list-by-capability
+  capability-name="can_program_online_access_codes"
+  manufacturers="schlage,yale"
+  token="your-api-token"
+></device-list-by-capability>
+```
 
 ## Next Steps
 
-* View and play with other components in the [interactive storybook component library](https://react.seam.co/)
-* Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
+- Browse live examples in the [interactive component storybook](https://seamapi.github.io/custom-device-db-web).
 
-If you have any questions or want to report an issue, email us at support@seam.co.
+If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
