@@ -164,7 +164,7 @@ The following repository secrets must be set on [GitHub Actions]:
 
 ## License
 
-Copyright (c) 2021-2024 Seam Labs, Inc.
+Copyright (c) 2021-present Seam Labs, Inc.
 
 ## Warranty
 
