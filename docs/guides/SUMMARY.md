@@ -148,7 +148,6 @@
     * [Update Access Code Form](ui-components/overview/react-components/update-access-code-form.md)
     * [Seam Provider](ui-components/overview/react-components/seam-provider.md)
     * [Connect Account Button](ui-components/overview/react-components/connect-account-button.md)
-  * [Make a Supported Devices Page](ui-components/overview/make-a-supported-devices-page.md)
   * [Using User Identities to Scope Users' Device Access](ui-components/overview/using-user-identities-to-scope-users-device-access.md)
 * [Seam Mobile Components](ui-components/seam-mobile-components/README.md)
   * [Seam Mobile Components for iOS](ui-components/seam-mobile-components/seam-mobile-components-for-ios/README.md)
