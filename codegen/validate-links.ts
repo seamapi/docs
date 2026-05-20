@@ -13,7 +13,7 @@ function findSiteSection(filePath: string): SiteSection | undefined {
 }
 
 const absoluteUrlPattern = new RegExp(
-  `${baseUrl.replaceAll('.', '\\.')}[^)"\\s]+`,
+  `${baseUrl.replaceAll('.', '\\.')}[^)"<>\\s]+`,
   'g',
 )
 
