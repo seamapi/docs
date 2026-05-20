@@ -23,6 +23,3 @@ redirects:
   core-concepts/connect-webviews: core-concepts/connect-webviews/README.md
   capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems/README.md
   capability-guides/thermostats/creating-and-managing-climate-schedules: capability-guides/thermostats/creating-and-managing-thermostat-schedules.md
-  ui-components/overview/react-components/supported-devices-table: ui-components/overview/make-a-supported-devices-page.md
-  ui-components/overview/getting-started-with-seam-components/angular: ui-components/overview/make-a-supported-devices-page.md
-  ui-components/overview/getting-started-with-seam-components/vue: ui-components/overview/make-a-supported-devices-page.md
