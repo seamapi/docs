@@ -4,6 +4,21 @@
 * [Quick Start](quickstart.md)
 * [Go Live!](go-live.md)
 
+## Use Cases
+
+* [Granting Access](use-cases/granting-access/README.md)
+  * [Access Grants](use-cases/granting-access/access-grants/README.md)
+    * [Access Grant Quick Start](use-cases/granting-access/access-grants/access-grant-quick-start.md)
+    * [Creating an Access Grant Using Devices](use-cases/granting-access/access-grants/creating-an-access-grant-using-devices.md)
+    * [Creating an Access Grant Using Spaces](use-cases/granting-access/access-grants/creating-an-access-grant-using-spaces.md)
+    * [Creating an Access Grant Using Entrances](use-cases/granting-access/access-grants/creating-an-access-grant-using-entrances.md)
+    * [Delivering Access Methods](use-cases/granting-access/access-grants/delivering-access-methods.md)
+    * [Reservation Access Grants](use-cases/granting-access/access-grants/reservation-access-grants.md)
+    * [Retrieving Access Grants and Access Methods](use-cases/granting-access/access-grants/retrieving-access-grants-and-access-methods.md)
+    * [Updating an Access Grant](use-cases/granting-access/access-grants/updating-an-access-grant.md)
+    * [Revoking an Access Method](use-cases/granting-access/access-grants/revoking-an-access-method.md)
+    * [Deleting an Access Grant](use-cases/granting-access/access-grants/deleting-an-access-grant.md)
+
 ## Core Concepts
 
 * [Overview](core-concepts/overview.md)
@@ -91,16 +106,6 @@
     * [Initializing the Seam Mobile SDK](capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk.md)
     * [Handling System Permissions](capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions.md)
     * [Using Unlock With Tap](capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap.md)
-* [Access Grants](capability-guides/access-grants/README.md)
-  * [Access Grant Quick Start](capability-guides/access-grants/access-grant-quick-start.md)
-  * [Creating an Access Grant Using Entrances](capability-guides/access-grants/creating-an-access-grant-using-entrances.md)
-  * [Creating an Access Grant Using Spaces](capability-guides/access-grants/creating-an-access-grant-using-spaces.md)
-  * [Delivering Access Methods](capability-guides/access-grants/delivering-access-methods.md)
-  * [Reservation Access Grants](capability-guides/access-grants/reservation-access-grants.md)
-  * [Retrieving Access Grants and Access Methods](capability-guides/access-grants/retrieving-access-grants-and-access-methods.md)
-  * [Updating an Access Grant](capability-guides/access-grants/updating-an-access-grant.md)
-  * [Revoking an Access Method](capability-guides/access-grants/revoking-an-access-method.md)
-  * [Deleting an Access Grant](capability-guides/access-grants/deleting-an-access-grant.md)
 * [Instant Keys](capability-guides/instant-keys/README.md)
   * [How Instant Keys Work](capability-guides/instant-keys/how-instant-keys-work.md)
   * [Setting Up Your Site for Instant Keys](capability-guides/instant-keys/setting-up-your-site-for-instant-keys.md)

@@ -1,8 +1,8 @@
 ---
 description: >-
   Seam provides a unified API to connect and control IoT devices, such as smart
-  locks, thermostats, cameras, and sensors. This guide walks you through issuing
-  your first device API call.
+  locks, thermostats, cameras, and sensors. This guide walks you through
+  granting your first access with the Seam API.
 ---
 
 # Quick Start
@@ -86,9 +86,9 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 {% endtab %}
 {% endtabs %}
 
-## Step 3 — Unlock a Door
+## Step 3 — Grant Access
 
-Unlock your first door!
+Grant your first access! You'll create an [Access Grant](use-cases/granting-access/access-grants/README.md)—the default and recommended way to grant a person access to any physical space through Seam—and get back a PIN code that your user could enter on the lock's keypad.
 
 To start, open a terminal window and export your API key as an environment variable.
 
@@ -98,7 +98,7 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 
 The Seam SDK that you have installed automatically uses this API key once you have exported it.
 
-Next, use the following code to retrieve one of the devices that you connected in [Step 1](quickstart.md#step-1-connect-devices), inspect the supported capabilities of the device, and use the Seam API to unlock the door:
+Next, use the following code to retrieve one of the devices that you connected in [Step 1](quickstart.md#step-1-connect-devices), inspect the supported capabilities of the device, and create an Access Grant that issues a PIN code on the lock:
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -112,34 +112,41 @@ const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-const allAugustLocks = await seam.devices.list({manufacturer: "august"});
+const allAugustLocks = await seam.devices.list({ manufacturer: "august" });
 
 // Select the first device as an example.
 const frontDoor = allAugustLocks[0];
 
-// Confirm that the device can remotely unlock.
+// Confirm that the device can program access codes.
 // You're using a capability flag here!
-if (frontDoor.can_remotely_unlock) {
-  // Perform the unlock operation
-  // and return an action attempt.
-  const actionAttempt = await seam.locks.unlockDoor({
-    device_id: frontDoor.device_id
+if (frontDoor.can_program_online_access_codes) {
+  // Grant your user access to the device
+  // for a specific time window.
+  const accessGrant = await seam.accessGrants.create({
+    user_identity: {
+      full_name: "Jane Doe",
+      email_address: "jane.doe@example.com",
+    },
+    device_ids: [frontDoor.device_id],
+    requested_access_methods: [{ mode: "code" }],
+    starts_at: "2025-07-13T15:00:00.000Z",
+    ends_at: "2025-07-16T11:00:00.000Z",
   });
-};
+
+  // Retrieve the issued access method to get the PIN code.
+  const accessMethod = await seam.accessMethods.get({
+    access_method_id:
+      accessGrant.requested_access_methods[0].created_access_method_ids[0],
+  });
+
+  console.log(accessMethod.code);
+}
 ```
 
 **Output:**
 
 ```json
-{
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'UNLOCK_DOOR',
-    result: {},
-    error: null
-  }
-}
+"1234"
 ```
 {% endtab %}
 
@@ -151,8 +158,7 @@ if (frontDoor.can_remotely_unlock) {
 # Retrieve all devices, filtered by manufacturer, which is
 # one of several filters that the list endpoint supports.
 all_august_locks=$(
-  # Use GET or POST.
-  curl -X 'GET' \
+  curl -X 'POST' \
     'https://connect.getseam.com/devices/list' \
     -H 'accept: application/json' \
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
@@ -164,35 +170,44 @@ all_august_locks=$(
 # Select the first device as an example.
 front_door=$(jq -r '.devices[0]' <<< ${all_august_locks})
 
-# Confirm that the device can remotely unlock.
+# Confirm that the device can program access codes.
 # You're using a capability flag here!
-if  $(jq -r '.can_remotely_unlock' <<< ${front_door}); then \
-  # Perform the unlock operation
-  # and return an action attempt.
-  curl -X 'POST' \
-    'https://connect.getseam.com/locks/unlock_door' \
+if  $(jq -r '.can_program_online_access_codes' <<< ${front_door}); then \
+  # Grant your user access to the device
+  # for a specific time window.
+  access_grant=$(curl -X 'POST' \
+    'https://connect.getseam.com/access_grants/create' \
     -H 'accept: application/json' \
     -H "Authorization: Bearer ${SEAM_API_KEY}" \
     -H 'Content-Type: application/json' \
     -d "{
-      \"device_id\": \"$(jq -r '.device_id' <<< ${front_door})\"
-  }";
+      \"user_identity\": {
+        \"full_name\": \"Jane Doe\",
+        \"email_address\": \"jane.doe@example.com\"
+      },
+      \"device_ids\": [\"$(jq -r '.device_id' <<< ${front_door})\"],
+      \"requested_access_methods\": [{\"mode\": \"code\"}],
+      \"starts_at\": \"2025-07-13T15:00:00.000Z\",
+      \"ends_at\": \"2025-07-16T11:00:00.000Z\"
+  }");
+
+  # Retrieve the issued access method to get the PIN code.
+  access_method_id=$(jq -r '.access_grant.requested_access_methods[0].created_access_method_ids[0]' <<< ${access_grant});
+  curl -X 'POST' \
+    'https://connect.getseam.com/access_methods/get' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d "{
+      \"access_method_id\": \"${access_method_id}\"
+  }" | jq -r '.access_method.code';
 fi
 ```
 
 **Output:**
 
 ```json
-{
-  "action_attempt": {
-    "status":"pending",
-    "action_type":"UNLOCK_DOOR",
-    "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-    "result":null,
-    "error":null
-  },
-  "ok":true
-}
+"1234"
 ```
 {% endtab %}
 
@@ -212,24 +227,34 @@ all_august_locks = seam.devices.list(manufacturer="august")
 # Select the first device as an example.
 front_door = all_august_locks[0]
 
-# Confirm that the device can remotely unlock.
+# Confirm that the device can program access codes.
 # You're using a capability flag here!
-if front_door.can_remotely_unlock:
-  # Perform the unlock operation
-  # and return an action attempt.
-  action_attempt=seam.locks.unlock_door(device_id=front_door.device_id)
+if front_door.can_program_online_access_codes:
+  # Grant your user access to the device
+  # for a specific time window.
+  access_grant = seam.access_grants.create(
+    user_identity={
+      "full_name": "Jane Doe",
+      "email_address": "jane.doe@example.com"
+    },
+    device_ids=[front_door.device_id],
+    requested_access_methods=[{"mode": "code"}],
+    starts_at="2025-07-13T15:00:00.000Z",
+    ends_at="2025-07-16T11:00:00.000Z"
+  )
+
+  # Retrieve the issued access method to get the PIN code.
+  access_method = seam.access_methods.get(
+    access_method_id=access_grant.requested_access_methods[0].created_access_method_ids[0]
+  )
+
+  print(access_method.code)
 ```
 
 **Output:**
 
 ```
-ActionAttempt(
-  status='pending',
-  action_type='UNLOCK_DOOR',
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  result=None,
-  error={}
-)
+1234
 ```
 {% endtab %}
 
@@ -249,23 +274,35 @@ all_august_locks = seam.devices.list(manufacturer: "august")
 # Select the first device as an example.
 front_door = all_august_locks[0]
 
-# Confirm that the device can remotely unlock.
+# Confirm that the device can program access codes.
 # You're using a capability flag here!
-if (front_door.can_remotely_unlock)
-  # Perform the unlock operation
-  # and return an action attempt.
-  action_attempt = seam.locks.unlock_door(device_id: front_door.device_id)
+if (front_door.can_program_online_access_codes)
+  # Grant your user access to the device
+  # for a specific time window.
+  access_grant = seam.access_grants.create(
+    user_identity: {
+      full_name: "Jane Doe",
+      email_address: "jane.doe@example.com",
+    },
+    device_ids: [front_door.device_id],
+    requested_access_methods: [{"mode": "code"}],
+    starts_at: "2025-07-13T15:00:00.000Z",
+    ends_at: "2025-07-16T11:00:00.000Z"
+  )
+
+  # Retrieve the issued access method to get the PIN code.
+  access_method = seam.access_methods.get(
+    access_method_id: access_grant.requested_access_methods[0].created_access_method_ids[0]
+  )
+
+  puts access_method.code
 end
 ```
 
 **Output:**
 
 ```
-<Seam::ActionAttempt:0x00438
-  status="pending"
-  action_type="UNLOCK_DOOR"
-  action_attempt_id="11111111-2222-3333-4444-555555555555"
-  result=nil>
+1234
 ```
 {% endtab %}
 
@@ -286,25 +323,35 @@ $all_august_locks = $seam->devices->list(manufacturer: "august");
 // Select the first device as an example.
 $front_door = $all_august_locks[0];
 
-// Confirm that the device can remotely unlock.
+// Confirm that the device can program access codes.
 // You're using a capability flag here!
-if ($front_door->can_remotely_unlock) {
-  // Perform the unlock operation
-  // and return an action attempt.
-  $action_attempt = $seam->locks->unlock_door(device_id: $front_door->device_id);
+if ($front_door->can_program_online_access_codes) {
+  // Grant your user access to the device
+  // for a specific time window.
+  $access_grant = $seam->access_grants->create(
+    user_identity: [
+      "full_name" => "Jane Doe",
+      "email_address" => "jane.doe@example.com",
+    ],
+    device_ids: [$front_door->device_id],
+    requested_access_methods: [["mode" => "code"]],
+    starts_at: "2025-07-13T15:00:00.000Z",
+    ends_at: "2025-07-16T11:00:00.000Z"
+  );
+
+  // Retrieve the issued access method to get the PIN code.
+  $access_method = $seam->access_methods->get(
+    access_method_id: $access_grant->requested_access_methods[0]->created_access_method_ids[0]
+  );
+
+  echo $access_method->code;
 }
 ```
 
 **Output:**
 
-```json
-{
-  "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-  "action_type":"UNLOCK_DOOR",
-  "error":null,
-  "result":{},
-  "status":"success"
-}
+```
+1234
 ```
 {% endtab %}
 
@@ -313,45 +360,32 @@ if ($front_door->can_remotely_unlock) {
 **Code:**
 
 ```csharp
-using Seam.Client;
-
-var seam = new SeamClient(apiToken: SEAM_API_KEY);
-
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-var allAugustLocks = seam.Devices.List(
-  manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.August
-);
-
-// Select the first device as an example.
-Device frontDoor = allAugustLocks[0];
-
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if (frontDoor.CanRemotelyUnlock == true) {
-  // Perform the unlock operation
-  // and return an action attempt.
-  ActionAttempt actionAttempt = seam.Locks.UnlockDoor(deviceId: frontDoor.DeviceId);
-}
+// Coming Soon!
 ```
 
 **Output:**
 
 ```json
-{
-  "status": "pending",
-  "action_type": "UNLOCK_DOOR",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555"
-}
+// Coming Soon!
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+In a sandbox workspace, the access method is issued almost instantly. On real devices, issuance can take a few moments—poll the access method until `is_issued` is `true` or watch for the `access_method.issued` event before reading the `code`.
+{% endhint %}
 
 ## Congrats! :tada:
 
 Now that you have completed the Seam API Quick Start, you are well on your way to writing code that can actually control the physical world! :sunglasses:
 
 Here are some ideas of what you can do next...
+
+### Go Deeper on Granting Access
+
+You just created your first Access Grant. The same API issues mobile keys, [Instant Keys](capability-guides/instant-keys/README.md), and plastic cards, grants access to multiple devices and [access system entrances](use-cases/granting-access/access-grants/creating-an-access-grant-using-entrances.md) in one call, and manages the full credential lifecycle. See [Granting Access](use-cases/granting-access/README.md) and the [Access Grants capability guide](use-cases/granting-access/access-grants/README.md).
+
+You can also control devices directly—for example, [lock and unlock doors](capability-guides/smart-locks/lock-and-unlock.md) remotely.
 
 ### Connect a Real Device
 
