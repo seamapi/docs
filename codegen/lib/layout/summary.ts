@@ -19,12 +19,38 @@ interface Context {
   pathMetadata: PathMetadata
 }
 
+// Access Grants are the default and recommended way to grant access, so the
+// granting resources are pinned to the top of the API reference nav. The
+// low-level legacy granting resources sink to the bottom. Everything else
+// stays alphabetical in between.
+const firstResourcePaths = [
+  '/access_grants',
+  '/access_methods',
+  '/spaces',
+  '/user_identities',
+  '/instant_keys',
+]
+const lastResourcePaths = ['/access_codes', '/acs']
+
+const topLevelRank = (path: string): number => {
+  const firstIdx = firstResourcePaths.indexOf(path)
+  if (firstIdx !== -1) return firstIdx
+  const lastIdx = lastResourcePaths.indexOf(path)
+  if (lastIdx !== -1) return firstResourcePaths.length + 1 + lastIdx
+  return firstResourcePaths.length
+}
+
 export function setSummaryLayoutContext(
   file: Partial<ApiSummaryLayoutContext>,
   context: Context,
 ): void {
   const paths = getPaths(null, context)
-  file.nodes = getNodes(paths, context)
+  const nodes = getNodes(paths, context)
+  file.nodes = nodes.sort(
+    (n1, n2) =>
+      topLevelRank(`/${n1.path.replace(/\/README\.md$/, '')}`) -
+      topLevelRank(`/${n2.path.replace(/\/README\.md$/, '')}`),
+  )
 }
 
 const getNodes = (paths: string[], context: Context): Node[] => {
