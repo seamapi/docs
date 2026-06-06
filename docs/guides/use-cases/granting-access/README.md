@@ -10,18 +10,111 @@ Use **Access Grants** to grant a person access to a physical space. Access Grant
 
 With one API call, you tell Seam *who* should have access, *where*, *when*, and *how*. Seam creates the credential, attaches it to a user identity, encodes the time window, propagates it to every relevant device, and re-materializes it as devices come online, get added to spaces, or change ownership. PIN codes, mobile keys, and plastic cards—all through the same request.
 
+{% tabs %}
+{% tab title="JavaScript" %}
+
 ```javascript
 await seam.accessGrants.create({
   user_identity: {
     full_name: "Jane Doe",
     email_address: "jane@example.com",
   },
-  device_ids: [front_door_lock_id],
+  device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
   requested_access_methods: [{ mode: "code" }],
   starts_at: "2025-07-13T15:00:00.000Z",
   ends_at: "2025-07-16T11:00:00.000Z",
 });
 ```
+{% endtab %}
+
+{% tab title="cURL" %}
+
+```bash
+curl --include --request POST "https://connect.getseam.com/access_grants/create" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "user_identity": {
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com"
+  },
+  "device_ids": ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  "requested_access_methods": [
+    {
+      "mode": "code"
+    }
+  ],
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z"
+}
+EOF
+```
+{% endtab %}
+
+{% tab title="Python" %}
+
+```python
+seam.access_grants.create(
+    user_identity={
+        "full_name": "Jane Doe",
+        "email_address": "jane@example.com",
+    },
+    device_ids=["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods=[{"mode": "code"}],
+    starts_at="2025-07-13T15:00:00.000Z",
+    ends_at="2025-07-16T11:00:00.000Z",
+)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+
+```ruby
+seam.access_grants.create(
+  user_identity: {
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+  },
+  device_ids: %w[6ba7b811-9dad-11d1-80b4-00c04fd430c8],
+  requested_access_methods: [{ mode: "code" }],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z",
+)
+```
+{% endtab %}
+
+{% tab title="PHP" %}
+
+```php
+$seam->access_grants->create(
+    user_identity: [
+        "full_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+    ],
+    device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods: [
+        ["mode" => "code"],
+    ],
+    starts_at: "2025-07-13T15:00:00.000Z",
+    ends_at: "2025-07-16T11:00:00.000Z",
+);
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+```bash
+seam access-grants create --user_identity {"full_name":"Jane Doe","email_address":"jane@example.com"} --device_ids ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"] --requested_access_methods [{"mode":"code"}] --starts_at "2025-07-13T15:00:00.000Z" --ends_at "2025-07-16T11:00:00.000Z"
+```
+{% endtab %}
+
+{% tab title="C#" %}
+
+```csharp
+// Coming Soon!
+```
+{% endtab %}
+{% endtabs %}
 
 Access Grants work across the entire Seam provider lineup:
 
