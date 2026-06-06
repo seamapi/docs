@@ -13,6 +13,7 @@ With one API call, you tell Seam *who* should have access, *where*, *when*, and 
 {% tabs %}
 {% tab title="JavaScript" %}
 
+
 ```javascript
 await seam.accessGrants.create({
   user_identity: {
@@ -28,6 +29,7 @@ await seam.accessGrants.create({
 {% endtab %}
 
 {% tab title="cURL" %}
+
 
 ```bash
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
@@ -53,6 +55,7 @@ EOF
 
 {% tab title="Python" %}
 
+
 ```python
 seam.access_grants.create(
     user_identity={
@@ -68,6 +71,7 @@ seam.access_grants.create(
 {% endtab %}
 
 {% tab title="Ruby" %}
+
 
 ```ruby
 seam.access_grants.create(
@@ -85,6 +89,7 @@ seam.access_grants.create(
 
 {% tab title="PHP" %}
 
+
 ```php
 $seam->access_grants->create(
     user_identity: [
@@ -101,17 +106,19 @@ $seam->access_grants->create(
 ```
 {% endtab %}
 
-{% tab title="Seam CLI" %}
-
-```bash
-seam access-grants create --user_identity {"full_name":"Jane Doe","email_address":"jane@example.com"} --device_ids ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"] --requested_access_methods [{"mode":"code"}] --starts_at "2025-07-13T15:00:00.000Z" --ends_at "2025-07-16T11:00:00.000Z"
-```
-{% endtab %}
-
 {% tab title="C#" %}
+
 
 ```csharp
 // Coming Soon!
+```
+{% endtab %}
+
+{% tab title="Seam CLI" %}
+
+
+```bash
+seam access-grants create --user_identity {"full_name":"Jane Doe","email_address":"jane@example.com"} --device_ids ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"] --requested_access_methods [{"mode":"code"}] --starts_at "2025-07-13T15:00:00.000Z" --ends_at "2025-07-16T11:00:00.000Z"
 ```
 {% endtab %}
 {% endtabs %}
