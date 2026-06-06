@@ -11,12 +11,12 @@ To use the Seam API to create mobile credentials for mobile app users in a Latch
 1.  Create a [user identity](https://docs.seam.co/latest/api/user_identities/) that corresponds to your user's app account.
 
     Seam [user identities](https://docs.seam.co/latest/api/user_identities/) enable you to match your own mobile app users to ACS users that you create using the Seam API.
-2. Create an [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) on the Latch access system or assign an existing access system user to the user identity.\
+2. Create an [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) on the Latch access system or assign an existing access system user to the user identity.\
    The resources that you create for the access system user are available under the associated user identity.
    * In the access system user creation command, set the `user_identity_id` property for a new access system user. Alternately, use the `add_acs_user` command for user identities to assign an existing access system user to a user identity.
    * If you choose to create a new access system user, specify the `acs_system_id` of the Latch access system in the building to which you want to grant the new user access.
    * Specify the details of the access system user, such as their `full_name`, `email_address`, and so on.
-3.  Create a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to represent the mobile key.
+3.  Create a [credential](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials) to represent the mobile key.
 
     * Specify the `acs_user_id`.
     * Set [`is_multi_phone_sync_credential`](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials) to `true`.
@@ -466,10 +466,10 @@ seam.CredentialsAcs.ListAccessibleEntrances(
 To learn more about using the Seam API with your Latch ACS, see the following topics:
 
 * [Programming PIN Codes for Latch ACS Users](programming-code-based-latch-credentials.md)
-* [Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems)
-* [Credential-based ACS](https://docs.seam.co/latest/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#credential-based-acs)
-* [Managing ACS Users](https://docs.seam.co/latest/capability-guides/access-systems/user-management)
-* [Managing Credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials)
+* [Access Control Systems](https://docs.seam.co/latest/low-level-apis/access-systems)
+* [Credential-based ACS](https://docs.seam.co/latest/low-level-apis/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences#credential-based-acs)
+* [Managing ACS Users](https://docs.seam.co/latest/low-level-apis/access-systems/user-management)
+* [Managing Credentials](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials)
 * [Mobile Access](https://docs.seam.co/latest/capability-guides/mobile-access)
 * [Access Control Systems](https://docs.seam.co/latest/api/acs/) in the Seam API reference
 * [User Identities](https://docs.seam.co/latest/api/user_identities/) in the Seam API reference

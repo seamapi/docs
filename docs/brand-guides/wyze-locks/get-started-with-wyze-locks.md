@@ -330,7 +330,7 @@ $seam->locks->lock_door($lock->device_id);
 
 ## 5 — Programming Access Code on a Wyze Lock
 
-The Seam API lets you create access codes on Wyze locks with a gateway. These codes can then be entered to unlock the door. You can find out more info about how Seam access codes in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
+The Seam API lets you create access codes on Wyze locks with a gateway. These codes can then be entered to unlock the door. You can find out more info about how Seam access codes in our [core concept section on access codes.](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes)
 
 {% hint style="info" %}
 Wyze does not allow pin code values to be seen after the code is created. If you create a code through Seam, avoid changing the pin code through the app and instead use Seam to change any information about the code!

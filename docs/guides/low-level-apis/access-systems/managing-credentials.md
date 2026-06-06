@@ -4,7 +4,11 @@ description: Learn how to manage credentials and assign them to users.
 
 # Managing Credentials
 
-An ACS generally uses digital means of access to authorize an [ACS user](../../capability-guides/access-systems/user-management.md) trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+{% hint style="success" %}
+**Granting access?** [Access Grants](../../use-cases/granting-access/README.md) are the default and recommended way to grant access—they manage the underlying codes and credentials for you, across standalone smart locks and access systems alike.
+{% endhint %}
+
+An ACS generally uses digital means of access to authorize an [ACS user](../../low-level-apis/access-systems/user-management.md) trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
 
 <figure><img src="../../.gitbook/assets/acs-credential-types.png" alt="Examples of ACS user credentials"><figcaption><p>Examples of ACS user credentials</p></figcaption></figure>
 
@@ -22,7 +26,7 @@ To [create a credential for an ACS user](https://docs.seam.co/latest/api/acs/cre
 
 * `code` for a PIN code-based credential
 * `card` for a plastic key card-based credential
-* `mobile_key` for a [Seam mobile key](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
+* `mobile_key` for a [Seam mobile key](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md#what-are-multi-phone-sync-credentials).
 
 Depending on the ACS and the type of credential you are issuing, you can also specify the following properties for the new credential:
 
@@ -351,7 +355,7 @@ seam.CredentialsAcs.Create(
 
 ### Create a Seam Mobile Key
 
-Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../mobile-access/) and [Issuing Mobile Credentials from an Access Control System](../mobile-access/issuing-mobile-credentials-from-an-access-control-system.md).
+Depending on the ACS for which you want to create a credential, you may also need to include system-specific metadata. See the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS. For more information about mobile access and issuing mobile credentials, see [Mobile Access](../../capability-guides/mobile-access/) and [Issuing Mobile Credentials from an Access Control System](../../capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -588,11 +592,11 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ## List Credentials
 
-You can [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../capability-guides/access-systems/user-management.md) or [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](https://docs.seam.co/latest/api/acs/credentials/list).
+You can [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../low-level-apis/access-systems/user-management.md) or [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity). You can also [list all credentials for an ACS system](https://docs.seam.co/latest/api/acs/credentials/list).
 
 ### List Credentials by ACS User
 
-To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../capability-guides/access-systems/user-management.md), provide the `acs_user_id`.
+To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [ACS user](../../low-level-apis/access-systems/user-management.md), provide the `acs_user_id`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -760,7 +764,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 
 ### List Credentials by User Identity
 
-To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [user identity](../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
+To [list all ACS credentials](https://docs.seam.co/latest/api/acs/credentials/list) for a specific [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity), provide the `user_identity_id`.
 
 {% tabs %}
 {% tab title="JavaScript" %}

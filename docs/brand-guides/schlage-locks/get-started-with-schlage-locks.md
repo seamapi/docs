@@ -258,7 +258,7 @@ puts updated_lock.properties.locked # false
 
 All Schlage wifi locks come with a keypad built-in to program access codes. These codes can then be entered to unlock a Schlage lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Schlage lock. You can find out more about Schlage lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes)
 
 {% tabs %}
 {% tab title="JavaScript" %}

@@ -1499,8 +1499,8 @@ if (!device.getWarnings().isEmpty()) {
 
 * **[Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)** - Detailed guide on permanent and time-bound access codes
 * **[Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)** - Complete timezone configuration reference
-* **[Lock and Unlock Operations](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)** - General smart lock control documentation
-* **[Access Codes Overview](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)** - Understanding access code management
+* **[Lock and Unlock Operations](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock)** - General smart lock control documentation
+* **[Access Codes Overview](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes)** - Understanding access code management
 
 ***
 

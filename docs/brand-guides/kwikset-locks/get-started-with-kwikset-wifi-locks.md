@@ -361,7 +361,7 @@ If you're connected through Wi-Fi and not Bluetooth, the Kwikset app _only_ show
 
 Some Kwikset locks have a keypad paired to them to program access codes. These codes can then be entered to unlock a Kwikset lock.
 
-The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
+The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on a Kwikset lock. You can find out more about Kwikset lock access code in our [core concept section on access codes.](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes)
 
 **Access Code Constraints**
 

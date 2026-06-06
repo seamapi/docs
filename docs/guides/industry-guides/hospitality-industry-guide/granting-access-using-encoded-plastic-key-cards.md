@@ -415,7 +415,7 @@ As a final step in creating a plastic key card, use the Seam API to encode the a
 
 First, list the available card encoders within the access system and identify the encoder that the person encoding the card should use. Then, initiate the encoding action. The Seam API returns an [action attempt](../../core-concepts/action-attempts.md) so that your app can track the status of the encoding. When the encoding completes successfully, the action attempt payload includes information about the encoded card, such as the card number and the date and time at which the card was issued (that is, encoded). If the encoding fails, the action attempt reports any encoding errors.
 
-For more details about card encoding, see [Creating and Encoding Card Access Methods](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods.md).
+For more details about card encoding, see [Creating and Encoding Card Access Methods](../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -684,7 +684,7 @@ Pay special attention to the following parts of the returned payload:
 * `action_attempt.result.acs_credential_on_seam` lists the properties of the access method as stored on the access system server.
 * `action_attempt.result.acs_credential_on_encoder` lists the properties of the access method as stored on the card.
 
-For more details, see [Scanning Encoded Cards](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards.md).
+For more details, see [Scanning Encoded Cards](../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}

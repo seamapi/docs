@@ -6,6 +6,10 @@ description: >-
 
 # Creating and Managing Smart Lock Access Codes
 
+{% hint style="success" %}
+**Granting access?** [Access Grants](../../../use-cases/granting-access/README.md) are the default and recommended way to grant access—they manage the underlying codes and credentials for you, across standalone smart locks and access systems alike.
+{% endhint %}
+
 <figure><img src="../../../.gitbook/assets/code_unlock.gif" alt=""><figcaption></figcaption></figure>
 
 ## What Is an Access Code?

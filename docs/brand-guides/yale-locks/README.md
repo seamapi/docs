@@ -37,7 +37,7 @@ For detailed information about the Yale devices that Seam supports, see our [Yal
 We support the following features:
 
 * [Triggering web unlock actions](https://docs.seam.co/latest/api/locks/unlock_door)
-* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on door locks that have a keypad
+* [Programming access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes) on door locks that have a keypad
 
 ***
 

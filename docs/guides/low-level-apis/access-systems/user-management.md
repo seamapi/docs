@@ -6,6 +6,10 @@ description: >-
 
 # Managing ACS Users
 
+{% hint style="success" %}
+**Granting access?** [Access Grants](../../use-cases/granting-access/README.md) are the default and recommended way to grant access—they manage the underlying codes and credentials for you, across standalone smart locks and access systems alike.
+{% endhint %}
+
 An ACS user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the [Salto](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
 This guide explains how to create and manage ACS users. Using the [Access Control Systems API](https://docs.seam.co/latest/api/acs/), you can automate issuing access to long-term tenants or visitors.
@@ -156,7 +160,7 @@ seam.SystemsAcs.List();
 
 To [create an ACS user](https://docs.seam.co/latest/api/acs/users/create), provide the `acs_system_id` of the ACS system and the attributes of the user, such as the `full_name`, `email_address`, `phone_number`, and so on.
 
-Also, if your [ACS architecture](../../capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
+Also, if your [ACS architecture](../../low-level-apis/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences.md) supports access groups, you can also assign an ACS user to one or more access groups. To do so, when you create the user, include the IDs of the access group to which you want add the user. The `acs_access_group_ids` parameter accepts an array of strings.
 
 In addition, if your ACS architecture supports assigning access schedules directly to ACS users, you can specify an `access_schedule` for the user, including a `starts_at` and `ends_at` date and time.
 

@@ -471,8 +471,8 @@ The [lifecycle of a time-bound access code](lifecycle-of-access-codes.md) is mar
 
 There are two methods to verify that an time-bound offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../../low-level-apis/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../../low-level-apis/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
 
 ***
 
@@ -767,5 +767,5 @@ The [lifecycle of a one-time-use access code](lifecycle-of-access-codes.md) is m
 
 There are two methods to verify that a one-time-use offline access code has been registered in the offline access code server that the device manufacturer maintains:
 
-* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#polling-method-1).
-* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../../capability-guides/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).
+* **Polling**: Continuously query the access code until the `status` is updated. For instructions, see [Polling Method](../../../low-level-apis/smart-locks/access-codes/creating-access-codes/#polling-method-1).
+* **Webhook**: Wait for updates to arrive using webhook requests from the Seam API. For instructions, see [Webhook Events Method](../../../low-level-apis/smart-locks/access-codes/creating-access-codes/#webhook-events-method-1).

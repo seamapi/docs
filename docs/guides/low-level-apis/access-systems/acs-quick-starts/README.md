@@ -7,6 +7,10 @@ description: >-
 
 # Access System Quick Starts
 
+{% hint style="success" %}
+**Granting access?** [Access Grants](../../../use-cases/granting-access/README.md) are the default and recommended way to grant access—they manage the underlying codes and credentials for you, across standalone smart locks and access systems alike.
+{% endhint %}
+
 * [PIN Code Quick Start](pin-code-quick-start.md)\
   Create your first PIN code credential to grant an access system user scheduled access to a virtual entrance that has a keypad.
 * [Encodable Key Card Quick Start](encodable-key-card-quick-start.md)\

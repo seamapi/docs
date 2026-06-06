@@ -6,7 +6,7 @@ description: >-
 
 # Mobile Key Quick Start
 
-In this quick start, create a user identity for a virtual [Salto KS](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](../../mobile-access/).
+In this quick start, create a user identity for a virtual [Salto KS](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](../../../capability-guides/mobile-access/).
 
 {% hint style="info" %}
 This quick start walks you through the process that applies specifically to the Salto KS ACS. There are often differences between access control systems. Once you've completed this quick start, learn how to work with your ACS using Seam, by reading the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
@@ -583,7 +583,7 @@ To use Seam Console to view information about your new PIN code credential:
     <figure><img src="../../../.gitbook/assets/pin-code-quick-start-access-group-entrances.png" alt="View the entrances to which the ACS user has access as a member of the access group."><figcaption><p>View the entrances to which the ACS user has access as a member of the access group.</p></figcaption></figure>
 
 {% hint style="info" %}
-This quick start shows the server-side portion of the mobile access development process. The other piece of this process is to develop a mobile app that downloads the user's mobile keys and then uses BLE or similar technology to unlock nearby entrances to which the user's credentials grant access. For details, see [Integrating into your mobile application](../../mobile-access/mobile-device-sdks/).
+This quick start shows the server-side portion of the mobile access development process. The other piece of this process is to develop a mobile app that downloads the user's mobile keys and then uses BLE or similar technology to unlock nearby entrances to which the user's credentials grant access. For details, see [Integrating into your mobile application](../../../capability-guides/mobile-access/mobile-device-sdks/).
 {% endhint %}
 
 ***
@@ -607,7 +607,7 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
    * [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources.md)
    * [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences.md)
 2. Create user identities.
-   * [Managing Mobile App User Accounts with User Identities](../../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
+   * [Managing Mobile App User Accounts with User Identities](../../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
 3. For relevant access control systems, assign user identities to access groups.
    * [Adding User Identities to Access Groups](https://docs.seam.co/latest/api/acs/access_groups/add_user)
 4. Learn about available entrances.
@@ -615,6 +615,6 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 5. Create credentials for ACS users.
    * [Managing Credentials](../managing-credentials.md)
 6. Learn more about the Seam mobile access solution.
-   * [Mobile Access](../../mobile-access/)
-   * [Integrating into your mobile application](../../mobile-access/mobile-device-sdks/)
+   * [Mobile Access](../../../capability-guides/mobile-access/)
+   * [Integrating into your mobile application](../../../capability-guides/mobile-access/mobile-device-sdks/)
 7. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).
