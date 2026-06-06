@@ -1,21 +1,21 @@
 ---
 description: >-
-  Learn how to create an Access Grant to define the "who, where, when, and how"
-  for assigning a user access to entrances grouped into spaces.
+  Learn how to create an access grant to define the "who, where, when, and how"
+  for assigning a user access to entrances.
 ---
 
-# Creating an Access Grant Using Spaces
+# Creating an Access Grant Using Entrances
 
 An Access Grant defines the following characteristics:
 
 * User identity: The user to whom you want to grant access.
-* Entrances or spaces: The sets of entrances or other access points to which you want to grant the user access.
+* Entrances: The set of entrances or other access points to which you want to grant the user access.
 * Access schedule: The starting and ending times for access.
-* Access methods: The modes of access, including key cards, PIN codes, mobile keys, and [Instant Keys](../../../capability-guides/instant-keys/).
+* Access methods: The modes of access, including key cards, PIN codes, mobile keys, and [Instant Keys](../../capability-guides/instant-keys/).
 
-Before creating an Access Grant, you can organize sets of entrances into [spaces](https://docs.seam.co/latest/api/spaces/). Then, when you create an Access Grant, you specify the IDs of the spaces to which you want to grant access. Seam grants the user access to all entrances included in these spaces. Alternately, you can specify the set of entrances to which you want to grant access using the IDs of the entrances themselves.
+It is important to note that you can specify the set of entrances to which you want to grant access using the IDs of the entrances themselves. Alternately, before creating an Access Grant, you can organize sets of entrances into spaces. Then, when you create an Access Grant, you specify the IDs of the spaces to which you want to grant access. Seam grants the user access to all entrances included in these spaces.
 
-This topic describes how to create an Access Grant using spaces. To learn how to create an Access Grant using entrances, see [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md).
+This topic describes how to create an Access Grant using entrances. To learn how to create an Access Grant using spaces, see [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md).
 
 ***
 
@@ -23,12 +23,12 @@ This topic describes how to create an Access Grant using spaces. To learn how to
 
 To create an Access Grant:
 
-1. [Identify the spaces](creating-an-access-grant-using-spaces.md#identify-space) to which you want to grant the user access.
-2. [Create a user identity](creating-an-access-grant-using-spaces.md#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
-3.  [Create an access grant](creating-an-access-grant-using-spaces.md#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, that is, one or more of `card`, `code`, and `mobile_key`.
+1. [Identify the entrances](creating-an-access-grant-using-entrances.md#identify-entrances) to which you want to grant the user access.
+2. [Create a user identity](creating-an-access-grant-using-entrances.md#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
+3.  [Create an Access Grant](creating-an-access-grant-using-entrances.md#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, that is, one or more of `card`, `code`, and `mobile_key`.
 
     The action returns the created Access Grant.
-4. [Poll for status changes or monitor for lifecycle events](creating-an-access-grant-using-spaces.md#poll-for-status-changes-or-monitor-for-lifecycle-events) to identify next steps, such as the following:
+4. [Monitor for lifecycle events](creating-an-access-grant-using-entrances.md#monitor-for-lifecycle-events) to identify next steps, such as the following:
    * Whether you need to encode a card access method onto a plastic card.
    * When the access methods are ready to deliver to your user.
 
@@ -38,15 +38,13 @@ If you've created an Access Grant that includes an mobile key, the returned Acce
 
 ## Before You Begin
 
-To create an Access Grant, first [connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access system to Seam. You may also need to set up your access system and confirm that it has the required licenses. For details, see [Setting Up Your Site for Instant Keys](../../../capability-guides/instant-keys/setting-up-your-site-for-instant-keys.md) and the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.
-
-Create one or more spaces to group the entrances to which you want to grant access. For details, see [Spaces](https://docs.seam.co/latest/api/spaces/) and [Create a Space](https://docs.seam.co/latest/api/spaces/create).
+To create an Access Grant, first [connect](../../core-concepts/workspaces/#connecting-virtual-devices) an access system to Seam. You may also need to set up your access system and confirm that it has the required licenses. For details, see [Setting Up Your Site for Instant Keys](../../capability-guides/instant-keys/setting-up-your-site-for-instant-keys.md) and the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.
 
 ***
 
-## **Identify Spaces**
+## **Identify Entrances**
 
-List the spaces and identify the ones to which you want to grant the user access.
+List the entrances in the access system and identify the ones to which you want to grant the user access.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -54,7 +52,9 @@ List the spaces and identify the ones to which you want to grant the user access
 **Code:**
 
 ```javascript
-await seam.spaces.list();
+await seam.acs.entrances.list({
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+});
 ```
 
 **Output:**
@@ -62,21 +62,19 @@ await seam.spaces.list();
 ```json
 [
   {
-    "created_at": "2025-06-16T16:54:17.946600Z",
-    "display_name": "Room 101",
-    "name": "Room 101",
-    "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+    "acs_entrance_id": "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "display_name": "Main Entrance",
+    "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
   },
   {
-    "created_at": "2025-06-16T16:55:31.429200Z",
-    "display_name": "Common Doors",
-    "name": "Common Doors",
-    "space_id": "550e8400-e29b-41d4-a716-446655440000",
-    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "display_name": "Room 101",
+    "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
   },
   ...
-]  
+]
 ```
 {% endtab %}
 
@@ -86,35 +84,34 @@ await seam.spaces.list();
 
 ```bash
 curl -X 'POST' \
-  'https://connect.getseam.com/spaces/list' \
+  'https://connect.getseam.com/acs/entrances/list' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
-  -d '{}'
+  -d '{
+    "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+}'
 ```
 
 **Output:**
 
 ```json
 {
-  "spaces": [
+  "acs_entrances": [
     {
-      "created_at": "2025-06-16T16:54:17.946600Z",
-      "display_name": "Room 101",
-      "name": "Room 101",
-      "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
-      "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+      "acs_entrance_id": "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+      "display_name": "Main Entrance",
+      "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+      ...
     },
     {
-      "created_at": "2025-06-16T16:55:31.429200Z",
-      "display_name": "Common Doors",
-      "name": "Common Doors",
-      "space_id": "550e8400-e29b-41d4-a716-446655440000",
-      "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
+      "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+      "display_name": "Room 101",
+      "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+      ...
     },
     ...
-  ],
-  ok: true
+  ]
 }
 ```
 {% endtab %}
@@ -124,27 +121,27 @@ curl -X 'POST' \
 **Code:**
 
 ```python
-seam.spaces.list()
+seam.acs.entrances.list(
+  acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+)
 ```
 
 **Output:**
 
 ```python
 [
-  {
-    "created_at": "2025-06-16T16:54:17.946600Z",
-    "display_name": "Room 101",
-    "name": "Room 101",
-    "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
-  },
-  {
-    "created_at": "2025-06-16T16:55:31.429200Z",
-    "display_name": "Common Doors",
-    "name": "Common Doors",
-    "space_id": "550e8400-e29b-41d4-a716-446655440000",
-    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
-  },
+  AcsEntrance(
+    acs_entrance_id="48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    display_name="Main Entrance",
+    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
+  ),
+  AcsEntrance(
+    acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
+    display_name="Room 101",
+    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
+  ),
   ...
 ]
 ```
@@ -155,7 +152,9 @@ seam.spaces.list()
 **Code:**
 
 ```ruby
-seam.spaces.list()
+seam.acs.entrances.list(
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+)
 ```
 
 **Output:**
@@ -163,18 +162,16 @@ seam.spaces.list()
 ```json
 [
   {
-    "created_at" => "2025-06-16T16:54:17.946600Z",
-    "display_name" => "Room 101",
-    "name" => "Room 101",
-    "space_id" => "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9"
+    "acs_entrance_id" => "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "display_name" => "Main Entrance",
+    "acs_system_id" => "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
   },
   {
-    "created_at" => "2025-06-16T16:55:31.429200Z",
-    "display_name" => "Common Doors",
-    "name" => "Common Doors",
-    "space_id" => "550e8400-e29b-41d4-a716-446655440000",
-    "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9"
+    "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "display_name" => "Room 101",
+    "acs_system_id" => "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
   },
   ...
 ]
@@ -186,27 +183,27 @@ seam.spaces.list()
 **Code:**
 
 ```php
-$seam->spaces->list();
+$seam->acs->entrances->list(
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+);
 ```
 
 **Output:**
 
 ```php
 [
-  {
-    "created_at": "2025-06-16T16:54:17.946600Z",
-    "display_name": "Room 101",
-    "name": "Room 101",
-    "space_id": "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
-  },
-  {
-    "created_at": "2025-06-16T16:55:31.429200Z",
-    "display_name": "Common Doors",
-    "name": "Common Doors",
-    "space_id": "550e8400-e29b-41d4-a716-446655440000",
-    "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
-  },
+  [
+    "acs_entrance_id" => "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "display_name" => "Main Entrance",
+    "acs_system_id" => "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
+  ],
+  [
+    "acs_entrance_id" => "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "display_name" => "Room 101",
+    "acs_system_id" => "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
+    ...
+  ],
   ...
 ];
 ```
@@ -230,7 +227,7 @@ $seam->spaces->list();
 
 ## **Create a User Identity**
 
-You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](creating-an-access-grant-using-spaces.md#create-an-access-grant).
+You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](creating-an-access-grant-using-entrances.md#create-an-access-grant).
 
 To create a user identity, specify the unique `user_identity_key`, `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
 
@@ -400,9 +397,9 @@ await seam.accessGrants.create({
   //  full_name: "Jane Doe",
   //  email_address: "jane.doe@example.com",
   // },
-  space_ids: [
-    "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "550e8400-e29b-41d4-a716-446655440000"
+  acs_entrance_ids: [
+    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "f74e4879-5991-4e2f-a368-888983dcfbfc"
   ],
   requested_access_methods: [
     {"mode": "code"},
@@ -423,10 +420,6 @@ await seam.accessGrants.create({
   "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "starts_at": "2025-07-13T15:00:00.000Z",
   "ends_at": "2025-07-16T11:00:00.000Z",
-  "space_ids": [
-    "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "550e8400-e29b-41d4-a716-446655440000"
-  ],
   "requested_access_methods": [
     {
       "display_name": "Plastic Card",
@@ -471,9 +464,9 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
     "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-    "space_ids": [
-      "5afeb047-3277-4102-b8c4-99edf05b91d2",
-      "550e8400-e29b-41d4-a716-446655440000"
+    "acs_entrance_ids": [
+      "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+      "f74e4879-5991-4e2f-a368-888983dcfbfc"
     ],
     "requested_access_methods": [
       {"mode": "code"},
@@ -495,10 +488,6 @@ curl -X 'POST' \
     "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
     "starts_at": "2025-07-13T15:00:00.000Z",
     "ends_at": "2025-07-16T11:00:00.000Z",
-    "space_ids": [
-      "5afeb047-3277-4102-b8c4-99edf05b91d2",
-      "550e8400-e29b-41d4-a716-446655440000"
-    ],
     "requested_access_methods": [
       {
         "display_name": "Plastic Card",
@@ -539,9 +528,9 @@ seam.access_grants.create(
   #  "full_name": "Jane Doe",
   #  "email_address": "jane.doe@example.com",
   # },
-  space_ids=[
-    "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "550e8400-e29b-41d4-a716-446655440000"
+  acs_entrance_ids=[
+    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "f74e4879-5991-4e2f-a368-888983dcfbfc"
   ],
   requested_access_methods=[
     {"mode": "code"},
@@ -562,10 +551,6 @@ AccessGrant(
   user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
   starts_at="2025-07-13T15:00:00.000Z",
   ends_at="2025-07-16T11:00:00.000Z",
-  space_ids=[
-    "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "550e8400-e29b-41d4-a716-446655440000"
-  ],
   requested_access_methods=[
     {
       "display_name": "Plastic Card",
@@ -605,7 +590,7 @@ seam.access_grants.create(
   #  full_name: "Jane Doe",
   #  email_address: "jane.doe@example.com",
   # },
-  space_ids: %w[5afeb047-3277-4102-b8c4-99edf05b91d2 550e8400-e29b-41d4-a716-446655440000],
+  acs_entrance_ids: %w[48ebfb50-c531-43c5-b9ea-409f26dabbd7 f74e4879-5991-4e2f-a368-888983dcfbfc],
   requested_access_methods: [
     {"mode": "code"},
     {"mode": "card"},
@@ -625,10 +610,6 @@ seam.access_grants.create(
   "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "starts_at" => "2025-07-13T15:00:00.000Z",
   "ends_at" => "2025-07-16T11:00:00.000Z",
-  "space_ids" => [
-    "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "550e8400-e29b-41d4-a716-446655440000"
-  ],
   "requested_access_methods" => [
     {
       "display_name": "Plastic Card",
@@ -668,9 +649,9 @@ $seam->access_grants->create(
   //  full_name: "Jane Doe",
   //  email_address: "jane.doe@example.com",
   // },
-  space_ids: [
-    "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "550e8400-e29b-41d4-a716-446655440000"
+  acs_entrance_ids: [
+    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "f74e4879-5991-4e2f-a368-888983dcfbfc",
   ],
   requested_access_methods: [
     ["mode" => "code"],
@@ -691,10 +672,6 @@ $seam->access_grants->create(
   "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "starts_at" => "2025-07-13T15:00:00.000Z",
   "ends_at" => "2025-07-16T11:00:00.000Z",
-  "space_ids" => [
-    "5afeb047-3277-4102-b8c4-99edf05b91d2",
-    "550e8400-e29b-41d4-a716-446655440000"
-  ],
   "requested_access_methods" => [
     {
       "display_name": "Plastic Card",

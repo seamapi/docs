@@ -8,7 +8,7 @@ description: >-
 
 Granting access to a device is the simplest form of an Access Grant. You specify the user, one or more device IDs, the access schedule, and the desired access methods, and Seam takes care of creating and managing the underlying credentials on each device.
 
-This path works for standalone smart locks—such as August, Yale, Schlage, igloohome, and TTLock devices—that are connected to Seam through a [Connect Webview](../../../core-concepts/connect-webviews/). The devices do not need to be part of an access control system.
+This path works for standalone smart locks—such as August, Yale, Schlage, igloohome, and TTLock devices—that are connected to Seam through a [Connect Webview](../../core-concepts/connect-webviews/). The devices do not need to be part of an access control system.
 
 An Access Grant defines the following characteristics:
 
@@ -36,10 +36,10 @@ To create an Access Grant:
 
 ## Before You Begin
 
-To create an Access Grant for a device, first [connect](../../../core-concepts/connect-webviews/) the device account to Seam. Then, confirm that the device supports access codes by checking its `can_program_online_access_codes` capability flag.
+To create an Access Grant for a device, first [connect](../../core-concepts/connect-webviews/) the device account to Seam. Then, confirm that the device supports access codes by checking its `can_program_online_access_codes` capability flag.
 
 {% hint style="info" %}
-You can try this entire flow in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces) using sandbox devices, such as the August sandbox locks.
+You can try this entire flow in a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces) using sandbox devices, such as the August sandbox locks.
 {% endhint %}
 
 ***

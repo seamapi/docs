@@ -7,17 +7,16 @@
 ## Use Cases
 
 * [Granting Access](use-cases/granting-access/README.md)
-  * [Access Grants](use-cases/granting-access/access-grants/README.md)
-    * [Access Grant Quick Start](use-cases/granting-access/access-grants/access-grant-quick-start.md)
-    * [Creating an Access Grant Using Devices](use-cases/granting-access/access-grants/creating-an-access-grant-using-devices.md)
-    * [Creating an Access Grant Using Spaces](use-cases/granting-access/access-grants/creating-an-access-grant-using-spaces.md)
-    * [Creating an Access Grant Using Entrances](use-cases/granting-access/access-grants/creating-an-access-grant-using-entrances.md)
-    * [Delivering Access Methods](use-cases/granting-access/access-grants/delivering-access-methods.md)
-    * [Reservation Access Grants](use-cases/granting-access/access-grants/reservation-access-grants.md)
-    * [Retrieving Access Grants and Access Methods](use-cases/granting-access/access-grants/retrieving-access-grants-and-access-methods.md)
-    * [Updating an Access Grant](use-cases/granting-access/access-grants/updating-an-access-grant.md)
-    * [Revoking an Access Method](use-cases/granting-access/access-grants/revoking-an-access-method.md)
-    * [Deleting an Access Grant](use-cases/granting-access/access-grants/deleting-an-access-grant.md)
+  * [Access Grant Quick Start](use-cases/granting-access/access-grant-quick-start.md)
+  * [Creating an Access Grant Using Devices](use-cases/granting-access/creating-an-access-grant-using-devices.md)
+  * [Creating an Access Grant Using Spaces](use-cases/granting-access/creating-an-access-grant-using-spaces.md)
+  * [Creating an Access Grant Using Entrances](use-cases/granting-access/creating-an-access-grant-using-entrances.md)
+  * [Delivering Access Methods](use-cases/granting-access/delivering-access-methods.md)
+  * [Reservation Access Grants](use-cases/granting-access/reservation-access-grants.md)
+  * [Retrieving Access Grants and Access Methods](use-cases/granting-access/retrieving-access-grants-and-access-methods.md)
+  * [Updating an Access Grant](use-cases/granting-access/updating-an-access-grant.md)
+  * [Revoking an Access Method](use-cases/granting-access/revoking-an-access-method.md)
+  * [Deleting an Access Grant](use-cases/granting-access/deleting-an-access-grant.md)
 
 ## Core Concepts
 

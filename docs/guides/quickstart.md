@@ -88,7 +88,7 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 
 ## Step 3 — Grant Access
 
-Grant your first access! You'll create an [Access Grant](use-cases/granting-access/access-grants/README.md)—the default and recommended way to grant a person access to any physical space through Seam—and get back a PIN code that your user could enter on the lock's keypad.
+Grant your first access! You'll create an [Access Grant](use-cases/granting-access/README.md)—the default and recommended way to grant a person access to any physical space through Seam—and get back a PIN code that your user could enter on the lock's keypad.
 
 To start, open a terminal window and export your API key as an environment variable.
 
@@ -383,7 +383,7 @@ Here are some ideas of what you can do next...
 
 ### Go Deeper on Granting Access
 
-You just created your first Access Grant. The same API issues mobile keys, [Instant Keys](capability-guides/instant-keys/README.md), and plastic cards, grants access to multiple devices and [access system entrances](use-cases/granting-access/access-grants/creating-an-access-grant-using-entrances.md) in one call, and manages the full credential lifecycle. See [Granting Access](use-cases/granting-access/README.md) and the [Access Grants capability guide](use-cases/granting-access/access-grants/README.md).
+You just created your first Access Grant. The same API issues mobile keys, [Instant Keys](capability-guides/instant-keys/README.md), and plastic cards, grants access to multiple devices and [access system entrances](use-cases/granting-access/creating-an-access-grant-using-entrances.md) in one call, and manages the full credential lifecycle. See the [Granting Access guide](use-cases/granting-access/README.md).
 
 You can also control devices directly—for example, [lock and unlock doors](capability-guides/smart-locks/lock-and-unlock.md) remotely.
 

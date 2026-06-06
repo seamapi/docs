@@ -23,13 +23,13 @@ redirects:
   core-concepts/connect-webviews: core-concepts/connect-webviews/README.md
   capability-guides/access-systems/understanding-acs-differences: capability-guides/access-systems/README.md
   capability-guides/thermostats/creating-and-managing-climate-schedules: capability-guides/thermostats/creating-and-managing-thermostat-schedules.md
-  capability-guides/access-grants: use-cases/granting-access/access-grants/README.md
-  capability-guides/access-grants/access-grant-quick-start: use-cases/granting-access/access-grants/access-grant-quick-start.md
-  capability-guides/access-grants/creating-an-access-grant-using-entrances: use-cases/granting-access/access-grants/creating-an-access-grant-using-entrances.md
-  capability-guides/access-grants/creating-an-access-grant-using-spaces: use-cases/granting-access/access-grants/creating-an-access-grant-using-spaces.md
-  capability-guides/access-grants/delivering-access-methods: use-cases/granting-access/access-grants/delivering-access-methods.md
-  capability-guides/access-grants/reservation-access-grants: use-cases/granting-access/access-grants/reservation-access-grants.md
-  capability-guides/access-grants/retrieving-access-grants-and-access-methods: use-cases/granting-access/access-grants/retrieving-access-grants-and-access-methods.md
-  capability-guides/access-grants/updating-an-access-grant: use-cases/granting-access/access-grants/updating-an-access-grant.md
-  capability-guides/access-grants/revoking-an-access-method: use-cases/granting-access/access-grants/revoking-an-access-method.md
-  capability-guides/access-grants/deleting-an-access-grant: use-cases/granting-access/access-grants/deleting-an-access-grant.md
+  capability-guides/access-grants: use-cases/granting-access/README.md
+  capability-guides/access-grants/access-grant-quick-start: use-cases/granting-access/access-grant-quick-start.md
+  capability-guides/access-grants/creating-an-access-grant-using-entrances: use-cases/granting-access/creating-an-access-grant-using-entrances.md
+  capability-guides/access-grants/creating-an-access-grant-using-spaces: use-cases/granting-access/creating-an-access-grant-using-spaces.md
+  capability-guides/access-grants/delivering-access-methods: use-cases/granting-access/delivering-access-methods.md
+  capability-guides/access-grants/reservation-access-grants: use-cases/granting-access/reservation-access-grants.md
+  capability-guides/access-grants/retrieving-access-grants-and-access-methods: use-cases/granting-access/retrieving-access-grants-and-access-methods.md
+  capability-guides/access-grants/updating-an-access-grant: use-cases/granting-access/updating-an-access-grant.md
+  capability-guides/access-grants/revoking-an-access-method: use-cases/granting-access/revoking-an-access-method.md
+  capability-guides/access-grants/deleting-an-access-grant: use-cases/granting-access/deleting-an-access-grant.md

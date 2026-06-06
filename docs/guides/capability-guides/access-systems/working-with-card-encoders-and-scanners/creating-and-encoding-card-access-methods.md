@@ -16,7 +16,7 @@ Some access control systems require encoding a plastic card with the data necess
 
 This process consists of the following basic steps:
 
-1.  Create an [Access Grant](../../../use-cases/granting-access/access-grants/) that includes a request for a card access method and identify the ID of the resulting access method.
+1.  Create an [Access Grant](../../../use-cases/granting-access/) that includes a request for a card access method and identify the ID of the resulting access method.
 
     See [Create an Access Grant](creating-and-encoding-card-access-methods.md#id-1.-create-an-access-grant).
 2. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the access method onto the card.\
@@ -34,7 +34,7 @@ Once you have written an access method to a card, you cannot reuse the access me
 
 This example shows how to create a card access method as part of an Access Grant. Note that the `is_encoding_required` property of the resulting access method is `true`, which means that the access method must be encoded onto a card. Further, once you've encoded the access method on to the card, the `is_issued` property changes to `true`, and the `issued_at` property indicates the date and time at which the encoding occurred.
 
-For more details about creating Access Grants, see [Creating an Access Grant Using Entrances](../../../use-cases/granting-access/access-grants/creating-an-access-grant-using-entrances.md) and [Creating an Access Grant Using Spaces](../../../use-cases/granting-access/access-grants/creating-an-access-grant-using-spaces.md).
+For more details about creating Access Grants, see [Creating an Access Grant Using Entrances](../../../use-cases/granting-access/creating-an-access-grant-using-entrances.md) and [Creating an Access Grant Using Spaces](../../../use-cases/granting-access/creating-an-access-grant-using-spaces.md).
 
 {% tabs %}
 {% tab title="JavaScript" %}

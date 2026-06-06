@@ -179,7 +179,7 @@ $seam->access_methods->get(
 
 ## Plastic Key Cards
 
-Some access systems require you to encode plastic key cards. In this case, the access method's `is_encoding_required` property is `true`. You can use the Seam API or Seam Console to encode and scan the cards. For details, see [Working with Card Encoders and Scanners](../../../capability-guides/access-systems/working-with-card-encoders-and-scanners/).
+Some access systems require you to encode plastic key cards. In this case, the access method's `is_encoding_required` property is `true`. You can use the Seam API or Seam Console to encode and scan the cards. For details, see [Working with Card Encoders and Scanners](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/).
 
 Once you've encoded the card, the access method's `is_encoding_required` property changes to `false`, and its `is_issued` property changes to `true`. The card is ready to be delivered to your user.
 
@@ -187,7 +187,7 @@ Once you've encoded the card, the access method's `is_encoding_required` propert
 
 ## Mobile Keys
 
-You deliver a mobile key to your user within your own mobile app that you develop using the Seam mobile SDKs. For mobile keys, the access method includes a `client_session_id` property that you can use to identify the client session and client session token that you need to initialize the Seam client on your user's mobile device. Then, your user simply taps a button in your app to unlock the door. For details, see [Mobile Access](../../../capability-guides/mobile-access/).
+You deliver a mobile key to your user within your own mobile app that you develop using the Seam mobile SDKs. For mobile keys, the access method includes a `client_session_id` property that you can use to identify the client session and client session token that you need to initialize the Seam client on your user's mobile device. Then, your user simply taps a button in your app to unlock the door. For details, see [Mobile Access](../../capability-guides/mobile-access/).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -353,4 +353,4 @@ $seam->access_methods->get(
 
 ## Instant Keys
 
-Each mobile key that you create also includes an Instant Key. Seam Instant Keys are the most streamlined mobile access experience available today. Both the Access Grant and the mobile key access method include the `instant_key_url` property. You deliver this URL to your user by sending it through text or email. No app download is required. You can also embed an Instant Key in your own app. For details, see [Instant Keys](../../../capability-guides/instant-keys/) and [Delivering Instant Keys](../../../capability-guides/instant-keys/delivering-instant-keys.md).
+Each mobile key that you create also includes an Instant Key. Seam Instant Keys are the most streamlined mobile access experience available today. Both the Access Grant and the mobile key access method include the `instant_key_url` property. You deliver this URL to your user by sending it through text or email. No app download is required. You can also embed an Instant Key in your own app. For details, see [Instant Keys](../../capability-guides/instant-keys/) and [Delivering Instant Keys](../../capability-guides/instant-keys/delivering-instant-keys.md).

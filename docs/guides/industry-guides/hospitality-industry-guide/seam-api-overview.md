@@ -2,7 +2,7 @@
 
 Seam provides a single unified API to grant and manage access across all supported hotel access systems. Intuitive and flexible, the Seam API makes it easy to grant access, no matter what type of device or system controls this access.
 
-If you want the easiest, most efficient way to grant access, use the [Access Grants](../../use-cases/granting-access/access-grants/README.md) API. This powerful API enables you to grant hotel guests access with a single call—for any access method. With this single API, you can…
+If you want the easiest, most efficient way to grant access, use the [Access Grants](../../use-cases/granting-access/README.md) API. This powerful API enables you to grant hotel guests access with a single call—for any access method. With this single API, you can…
 
 * Grant access to the desired set of guest rooms and relevant common areas.
 * Support mixed hardware environments without extra logic.

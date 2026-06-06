@@ -1,12 +1,12 @@
 ---
 description: >-
-  Use Access Grants to grant access to any physical space, irrespective of the
-  locking hardware. Learn which Seam API to use for granting access.
+  Access Grants are the default and recommended way to grant access to any
+  physical space, across smart locks and access control systems.
 ---
 
 # Granting Access
 
-Use **[Access Grants](access-grants/README.md)** to grant a person access to a physical space. Access Grants are the default and recommended way to grant access on Seam—for any kind of space (a home, a building, a locker, a parking structure) and irrespective of the locking hardware (standalone smart locks, access control systems, and more).
+Use **Access Grants** to grant a person access to a physical space. Access Grants are the default and recommended way to grant access on Seam—for any kind of space (a home, a building, a locker, a parking structure) and irrespective of the locking hardware (standalone smart locks, access control systems, and more).
 
 With one API call, you tell Seam *who* should have access, *where*, *when*, and *how*. Seam creates the credential, attaches it to a user identity, encodes the time window, propagates it to every relevant device, and re-materializes it as devices come online, get added to spaces, or change ownership. PIN codes, mobile keys, and plastic cards—all through the same request.
 
@@ -23,13 +23,37 @@ await seam.accessGrants.create({
 });
 ```
 
+Access Grants work across the entire Seam provider lineup:
+
+* **Standalone smart locks**, such as August, Yale, Schlage, Lockly, TTLock, Tedee, and igloohome devices. Specify the locks directly with `device_ids`.
+* **Access control systems (ACS)**, such as Salto KS, Salto Space, ASSA ABLOY Visionline and Vostio, dormakaba, Brivo, and Avigilon Alta. Specify entrances with `acs_entrance_ids`.
+* **Mixed estates.** Combine `device_ids` and `acs_entrance_ids` in the same Access Grant, or group access points into [spaces](https://docs.seam.co/latest/api/spaces) and grant access to the whole group with `space_ids`.
+
 ***
 
 ## Start Simple, Then Scale Up
 
-1. **One device.** Grant access to a single smart lock with a `device_id` and a `code` access method. See [Creating an Access Grant Using Devices](access-grants/creating-an-access-grant-using-devices.md).
-2. **Multiple devices and spaces.** Pass several `device_ids` in one call, or organize access points into [spaces](https://docs.seam.co/latest/api/spaces) (Alpha) and grant access by `space_id`. See [Creating an Access Grant Using Spaces](access-grants/creating-an-access-grant-using-spaces.md).
-3. **Access control systems.** Grant access to ACS entrances with `acs_entrance_ids`, including mobile keys, card encoding, and reservations. See [Creating an Access Grant Using Entrances](access-grants/creating-an-access-grant-using-entrances.md).
+We recommend learning Access Grants in three steps, from the simplest setup to the most advanced:
+
+1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices.md).
+2. **Multiple devices and spaces.** Pass several `device_ids` in one call to grant access to a set of locks at once. To manage groups of access points by name—for example, everything a guest in Unit 101 needs—organize them into [spaces](creating-an-access-grant-using-spaces.md) and grant access by `space_id`. Note that spaces are currently in Alpha.
+3. **Access control systems.** Connect an ACS, such as Salto, Visionline, or Brivo, and grant access to entrances with `acs_entrance_ids`. This path can involve additional setup, such as licenses, on-premises connections through Seam Bridge, mobile key configuration, and [reservations](reservation-access-grants.md) for offline-override systems. See [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md).
+
+***
+
+## Access Grant Characteristics
+
+An Access Grant includes the following characteristics:
+
+<table><thead><tr><th width="148.39999389648438">Characteristic</th><th>Creation Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Who</td><td><code>user_identity_id</code> or <code>user_identity</code></td><td>The user to whom to grant access. You can either create a user identity separately and specify the ID to the Access Grant or create a new user identity as part of the Access Grant creation action.</td></tr><tr><td>Where</td><td><code>device_ids</code>, <code>space_ids</code>, or <code>acs_entrance_ids</code></td><td>The access points to which to grant access. Specify one or more devices (such as standalone smart locks) by ID, one or more access system entrances by ID, or both. Alternately, you can define <a href="https://docs.seam.co/latest/api/spaces">spaces</a> (currently in Alpha and available as an early access preview) that contain groups of related devices and entrances and then specify one or more spaces by ID.</td></tr><tr><td>When</td><td><code>starts_at</code> and <code>ends_at</code></td><td>The access schedule.</td></tr><tr><td>How</td><td><code>requested_access_methods</code> and <code>mode</code></td><td>The access methods that you want to grant for the user. In each <code>requested_access_method</code>, specify the desired <code>mode</code> of access, such as a PIN code, key card, or mobile key (with an <a href="../../capability-guides/instant-keys/README.md">Instant Key</a>).</td></tr></tbody></table>
+
+***
+
+## Access Grant Process
+
+The Access Grant process consists of the following steps:
+
+<table><thead><tr><th width="198.800048828125">Step</th><th>Description</th></tr></thead><tbody><tr><td><ol><li>Connect your devices or access system to Seam.</li></ol></td><td>To connect your devices or access system to Seam, we recommend embedding a <a href="../../core-concepts/connect-webviews/README.md">Connect Webview</a> in your application. The Connect Webview flow guides the property manager through each step of the connection process.<br>For standalone smart locks, this is all the setup you need.<br>For on-premises access systems, use Seam Bridge to connect the access system securely to Seam. For details, see <a href="../../capability-guides/access-systems/connect-an-acs-to-seam/README.md">Connect an Access System to Seam</a>.</td></tr><tr><td><ol start="2"><li>(Access systems only) Set up your site.</li></ol></td><td>If you are granting access to access system entrances, confirm hardware capabilities and make sure that you have the required licenses. For example, if you plan to use mobile keys or Instant Keys, your lock hardware must support Bluetooth Low Energy (BLE) keys. Also, to use mobile keys with your access system, you may need to purchase licenses or subscriptions to activate certain software features. These requirements vary by access system. For details, see <a href="../../capability-guides/instant-keys/setting-up-your-site-for-instant-keys.md">Setting Up Your Site for Instant Keys</a> and the <a href="https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems">system integration guide</a> for your access system.</td></tr><tr><td><ol start="3"><li>(Optional) Set up spaces to organize access points into logical groups.</li></ol></td><td>You can use spaces to create groups of devices and entrances for efficiency. For example, a user staying in Room 101 may need access to the Room 101 door, the main entrance door, and the nearest elevator. You could create a space that includes these access points and then use this space when creating an Access Grant.<br>For details, see <a href="https://docs.seam.co/latest/api/spaces">spaces</a>.<br><strong>Note:</strong> Spaces are currently in Alpha. We're actively developing this feature and seeking early feedback at <a href="mailto:support@seam.co">support@seam.co</a>. Expect breaking changes as we refine the design.</td></tr><tr><td><ol start="4"><li>Create a user identity.</li></ol></td><td>User identities represent your users—the people to whom you want to grant access. You can create a user identity before creating an Access Grant, or you can create a user identity as part of creating the Access Grant.<br>See <a href="../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity">Managing Mobile App User Accounts with User Identities</a>.</td></tr><tr><td><ol start="5"><li>Create an Access Grant.</li></ol></td><td>When you create an Access Grant, you specify the user identity to whom you want to grant access, the access schedule, the set of devices, entrances, or spaces, and one or more access methods that you want to request.<br>See <a href="creating-an-access-grant-using-devices.md">Creating an Access Grant Using Devices</a>, <a href="creating-an-access-grant-using-spaces.md">Creating an Access Grant Using Spaces</a>, and <a href="creating-an-access-grant-using-entrances.md">Creating an Access Grant Using Entrances</a>.<br>You can poll for access method status changes or watch for Access Grant and access method lifecycle events that alert you to next steps, such as how and when to deliver each created access method to your user.</td></tr><tr><td><ol start="6"><li>Deliver the access method to the user.</li></ol></td><td><p>Once Seam alerts you that your access methods are ready, deliver them to your user. Delivery steps depend on the mode of access, such as PIN code, plastic key card, or mobile key.</p><ul><li>If you have created an Access Grant that includes a <code>code</code> access method, retrieve the access method to get the PIN code and share it with your user.</li><li>If you have created an Access Grant that includes a <code>card</code> access method, you may need to encode the card using the Seam encoders API.</li><li>If you have created an Access Grant that includes a mobile key, you can use the Seam mobile SDKs to develop your mobile app that delivers these mobile keys to your users.</li><li>Each mobile key also includes an Instant Key URL. To share this Instant Key with your user, send it through text or email or embed it in your own app.</li></ul><p>See <a href="delivering-access-methods.md">Delivering Access Methods</a>.</p></td></tr></tbody></table>
 
 ***
 
@@ -39,10 +63,10 @@ await seam.accessGrants.create({
 
 | Scenario | API to use |
 | --- | --- |
-| Grant a person access to one or more smart locks | [Access Grants](access-grants/README.md) (`device_ids`) |
-| Grant a person access to ACS entrances | [Access Grants](access-grants/README.md) (`acs_entrance_ids`) |
-| Grant a person access to a group of access points | [Access Grants](access-grants/README.md) + [spaces](https://docs.seam.co/latest/api/spaces) (`space_ids`) |
-| Issue a mobile key or Instant Key | [Access Grants](access-grants/README.md) (`mode: "mobile_key"`) |
+| Grant a person access to one or more smart locks | Access Grants (`device_ids`) |
+| Grant a person access to ACS entrances | Access Grants (`acs_entrance_ids`) |
+| Grant a person access to a group of access points | Access Grants + [spaces](https://docs.seam.co/latest/api/spaces) (`space_ids`) |
+| Issue a mobile key or Instant Key | Access Grants (`mode: "mobile_key"`) |
 | Set a PIN with a specific custom code value on a single lock | [Access Codes API](../../capability-guides/smart-locks/access-codes/README.md) (low-level) |
 | Manage offline or backup PIN code pools on a single lock | [Access Codes API](../../capability-guides/smart-locks/access-codes/README.md) (low-level) |
 | Directly manage ACS users, credentials, and access groups | [ACS API](../../capability-guides/access-systems/README.md) (low-level) |
@@ -54,8 +78,23 @@ The low-level [Access Codes](../../capability-guides/smart-locks/access-codes/RE
 
 ***
 
+## Using Reservations
+
+Some access control systems (such as Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) rely on offline override behavior for guest and resident credentials.
+
+When issuing Access Grants for these systems, you’ll need to use reservations to ensure credentials override and join correctly.
+
+👉 [Learn how to use reservations with Access Grants →](reservation-access-grants.md)
+
+***
+
 ## Get Started
 
-* [Access Grant Quick Start](access-grants/access-grant-quick-start.md)
-* [Access Grants Capability Guide](access-grants/README.md)
+To create your first Access Grant, see the [Access Grant Quick Start](access-grant-quick-start.md). Then, learn more in the following topics:
+
+* [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices.md)
+* [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md)
+* [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
+* [Delivering Access Methods](delivering-access-methods.md)
 * [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
+* [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)
