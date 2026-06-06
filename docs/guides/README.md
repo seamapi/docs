@@ -10,10 +10,6 @@ Connect your IoT devices and systems using Seam! From smart locks and thermostat
 
 Grant access. Unlock doors. Set temperatures. Monitor noise. Get started with Seam!
 
-{% embed url="https://youtu.be/99ZpSq2Z1-8" %}
-You can control your smart locks easily with the Seam API. In this video, learn how to get started!
-{% endembed %}
-
 {% embed url="https://www.youtube.com/watch?amp;ab_channel=Seam&t=102s&v=3CYvoJtAGNc" %}
 You can control your thermostats easily with the Seam API. In this video, learn how to get started!
 {% endembed %}
