@@ -1,4 +1,36 @@
 ---
+- title: Create an Access Grant for devices
+  description:
+    Creates a new Access Grant that gives a user identity a PIN code on one
+    or more devices, such as standalone smart locks.
+  request:
+    path: /access_grants/create
+    parameters:
+      user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
+      device_ids:
+        - 6ba7b811-9dad-11d1-80b4-00c04fd430c8
+      requested_access_methods:
+        - mode: code
+      starts_at: '2025-06-16T16:54:17.946606Z'
+      ends_at: '2025-06-18T16:54:17.946606Z'
+  response:
+    body:
+      access_grant:
+        access_grant_id: ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b
+        access_method_ids:
+          - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+        created_at: '2025-06-16T16:54:17.946606Z'
+        display_name: My Access Grant
+        ends_at: '2025-06-18T16:54:17.946606Z'
+        requested_access_methods:
+          - display_name: PIN Code Credential
+            mode: code
+            created_at: '2025-06-16T16:54:17.946606Z'
+            created_access_method_ids:
+              - a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d
+        starts_at: '2025-06-16T16:54:17.946606Z'
+        user_identity_id: e3d736c1-540d-4d10-83e5-9a4e135453b4
+        workspace_id: 750fc0bc-4450-4356-8d9f-18c6a3a6b2c7
 - title: Create an Access Grant using spaces
   description: Creates a new Access Grant using space IDs and an existing user identity.
   request:

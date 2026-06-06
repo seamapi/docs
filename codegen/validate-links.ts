@@ -1,6 +1,8 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 
+import YAML from 'yaml'
+
 import {
   baseUrl,
   type SiteSection,
@@ -10,6 +12,36 @@ import {
 
 function findSiteSection(filePath: string): SiteSection | undefined {
   return siteSections.find(({ root }) => filePath.startsWith(root + '/'))
+}
+
+// Each site section has its own .gitbook.yaml with a redirects map.
+// A URL covered by a redirect is not broken: GitBook resolves it.
+// (validate-redirects separately ensures every redirect target exists.)
+const sectionConfigPaths: Record<string, string> = {
+  Guides: '.gitbook.yaml',
+  'API Reference': join('docs', 'api-reference', '.gitbook.yaml'),
+  'Brand Guides': join('docs', 'brand-guides', '.gitbook.yaml'),
+}
+
+const sectionRedirects = new Map<string, Set<string>>()
+
+function getSectionRedirects(sectionName: string): Set<string> {
+  const cached = sectionRedirects.get(sectionName)
+  if (cached != null) return cached
+
+  const redirectPaths = new Set<string>()
+  const configPath = sectionConfigPaths[sectionName]
+  if (configPath != null && existsSync(configPath)) {
+    const config = YAML.parse(readFileSync(configPath, 'utf-8')) as {
+      redirects?: Record<string, string>
+    }
+    for (const key of Object.keys(config.redirects ?? {})) {
+      redirectPaths.add(key.replace(/^\//, ''))
+    }
+  }
+
+  sectionRedirects.set(sectionName, redirectPaths)
+  return redirectPaths
 }
 
 const absoluteUrlPattern = new RegExp(
@@ -82,6 +114,11 @@ function checkAbsoluteUrl(file: string, line: number, rawUrl: string): void {
 
   const targetMd = `${targetRoot}.md`
   const targetReadme = join(targetRoot, 'README.md')
+
+  // A URL covered by a .gitbook.yaml redirect resolves on the published site.
+  if (getSectionRedirects(section.name).has(pagePath.replace(/^\//, ''))) {
+    return
+  }
 
   if (!existsSync(targetMd) && !existsSync(targetReadme)) {
     brokenLinks.push({
