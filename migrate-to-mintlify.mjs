@@ -703,7 +703,22 @@ async function main() {
   );
   console.log("   ✓ docs.json generated");
 
-  // 5. Report summary
+  // 5. Write package.json
+  fs.writeFileSync(
+    path.join(DEST, "package.json"),
+    JSON.stringify(
+      {
+        name: "seam-docs",
+        private: true,
+        scripts: { dev: "mintlify dev", build: "mintlify build" },
+        devDependencies: { mintlify: "^4" },
+      },
+      null,
+      2
+    ) + "\n"
+  );
+
+  // 6. Report summary
   console.log("\n✅ Migration complete!");
   console.log(`   Files converted: ${fileCount}`);
   console.log(`   Assets copied: ${totalAssets}`);
