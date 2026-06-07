@@ -1,33 +1,116 @@
 ---
-title: 'Overview'
+title: "API Reference"
+description: "Complete reference for all Seam API resources and endpoints."
 ---
 
-This API reference provides a comprehensive listing of all the Seam API resources and endpoints. It also explains how to install the Seam SDKs that enable you to use Seam in the programming language of your choice.
+The Seam API lets you control smart locks, thermostats, access control systems, and more through a unified REST interface. All endpoints use `https://connect.getseam.com` as the base URL.
 
-See the following reference topics:
+<CardGroup cols={2}>
+  <Card title="SDK Installation" icon="download" href="/api/installation">
+    Install the Seam SDK for JavaScript, Python, Ruby, PHP, C#, or Go.
+  </Card>
+  <Card title="MCP Installation" icon="plug" href="/api/mcp-installation">
+    Connect Seam to AI assistants via the Model Context Protocol.
+  </Card>
+  <Card title="Authentication" icon="key" href="/api/authentication">
+    Authenticate with API keys, client session tokens, or personal access tokens.
+  </Card>
+  <Card title="Pagination" icon="list" href="/api/pagination">
+    Navigate large result sets with cursor-based pagination.
+  </Card>
+</CardGroup>
 
-## Getting Started
+## Granting Access
 
-- [SDK Installation](installation.md)
-- [MCP Installation](mcp-installation.md)
-- [Authentication](authentication.md)
-- [Client Sessions](client_sessions/)
-- [Workspaces](workspaces/)
+Manage how people access physical spaces — PIN codes, mobile keys, key cards, and more.
 
-## Controlling Devices and Systems
+<CardGroup cols={3}>
+  <Card title="Access Grants" icon="id-badge" href="/api/access_grants">
+    Create, update, and revoke access grants.
+  </Card>
+  <Card title="Access Methods" icon="door-open" href="/api/access_methods">
+    Manage individual access methods within a grant.
+  </Card>
+  <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
+    Program PIN codes on smart lock keypads.
+  </Card>
+</CardGroup>
 
-- [Connect Webviews](connect_webviews/)
-- [Devices](devices/)
-  - [Locks](locks/)
-    - [Access Codes](access_codes/)
-  - [Thermostats](thermostats/)
-  - [Noise Sensors](noise_sensors/)
-- [Access Control Systems](acs/)
-  - [User Identities](user_identities/)
-  - [Phones](phones/)
+## Devices and Systems
+
+Connect and control IoT hardware through a unified interface.
+
+<CardGroup cols={3}>
+  <Card title="Devices" icon="microchip" href="/api/devices">
+    List, get, and update connected devices.
+  </Card>
+  <Card title="Locks" icon="lock" href="/api/locks">
+    Lock and unlock smart locks.
+  </Card>
+  <Card title="Thermostats" icon="temperature-half" href="/api/thermostats">
+    Set temperature, HVAC mode, and climate presets.
+  </Card>
+  <Card title="Noise Sensors" icon="volume-high" href="/api/noise_sensors">
+    Monitor noise levels and configure thresholds.
+  </Card>
+  <Card title="Spaces" icon="building" href="/api/spaces">
+    Organize devices and entrances into named spaces.
+  </Card>
+  <Card title="Phones" icon="mobile" href="/api/phones">
+    Manage phones for mobile access credentials.
+  </Card>
+</CardGroup>
+
+## Access Control Systems
+
+Manage enterprise access control systems — users, credentials, entrances, and encoders.
+
+<CardGroup cols={3}>
+  <Card title="ACS Systems" icon="server" href="/api/acs">
+    Connect and manage access control systems.
+  </Card>
+  <Card title="User Identities" icon="user" href="/api/user_identities">
+    Map your users to Seam for cross-system identity management.
+  </Card>
+  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
+    Issue temporary mobile keys without an app install.
+  </Card>
+</CardGroup>
+
+## Account Management
+
+Set up workspaces, connect device accounts, and configure webhooks.
+
+<CardGroup cols={3}>
+  <Card title="Connect Webviews" icon="window-restore" href="/api/connect_webviews">
+    Launch authorization flows to connect user device accounts.
+  </Card>
+  <Card title="Connected Accounts" icon="link" href="/api/connected_accounts">
+    Manage linked manufacturer accounts.
+  </Card>
+  <Card title="Client Sessions" icon="user-shield" href="/api/client_sessions">
+    Create scoped sessions for frontend applications.
+  </Card>
+  <Card title="Workspaces" icon="briefcase" href="/api/workspaces">
+    Create and manage sandbox and production workspaces.
+  </Card>
+  <Card title="Webhooks" icon="bell" href="/api/webhooks">
+    Subscribe to real-time event notifications.
+  </Card>
+  <Card title="Customers" icon="users" href="/api/customers">
+    Manage customer portals and data.
+  </Card>
+</CardGroup>
 
 ## Monitoring
 
-- [Events](events/)
-- [Action Attempts](action_attempts/)
-- [Connected Accounts](connected_accounts/)
+Track events, poll for action completion, and handle errors.
+
+<CardGroup cols={3}>
+  <Card title="Events" icon="timeline" href="/api/events">
+    Query device and system events.
+  </Card>
+  <Card title="Action Attempts" icon="spinner" href="/api/action_attempts">
+    Poll async operations until completion.
+  </Card>
+</CardGroup>
