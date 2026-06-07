@@ -1,14 +1,12 @@
 ---
-title: "Device Simulations"
+title: 'Device Simulations'
 ---
 
 ## Endpoints
 
-
 [**`/devices/simulate/connect`**](./connect.md)
 
 Simulates connecting a device to Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
-
 
 [**`/devices/simulate/connect_to_hub`**](./connect_to_hub.md)
 
@@ -18,11 +16,9 @@ implemented for August and TTLock locks.
 This will clear the corresponding `hub_disconnected` or
 `ttlock_lock_not_paired_to_gateway` error on the device.
 
-
 [**`/devices/simulate/disconnect`**](./disconnect.md)
 
 Simulates disconnecting a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
-
 
 [**`/devices/simulate/disconnect_from_hub`**](./disconnect_from_hub.md)
 
@@ -33,16 +29,12 @@ This will set the corresponding `hub_disconnected` or
 `ttlock_lock_not_paired_to_gateway` error on the device, or mark the
 IglooHome bridge offline in sandbox.
 
-
 [**`/devices/simulate/paid_subscription`**](./paid_subscription.md)
 
 Toggle the simulated Nuki Smart Hosting subscription for a device (sandbox only).
 Send `is_expired: true` to simulate an expired subscription, or `false` to simulate an active subscription.
 The actual device error is created/cleared by the poller after this state change.
 
-
 [**`/devices/simulate/remove`**](./remove.md)
 
 Simulates removing a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
-
-

@@ -1,12 +1,11 @@
 ---
-title: "List Unmanaged Access Methods"
+title: 'List Unmanaged Access Methods'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Lists all unmanaged access methods (where is_managed = false), usually filtered by Access Grant.
-
 
 <details>
 
@@ -15,37 +14,38 @@ Lists all unmanaged access methods (where is_managed = false), usually filtered 
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** _String_ (Required)
 
 ID of Access Grant to list unmanaged access methods for.
 
 ---
 
-**`acs_entrance_id`** *String*
+**`acs_entrance_id`** _String_
 
 ID of the entrance for which you want to retrieve all unmanaged access methods.
 
 ---
 
-**`device_id`** *String*
+**`device_id`** _String_
 
 ID of the device for which you want to retrieve all unmanaged access methods.
 
 ---
 
-**`space_id`** *String*
+**`space_id`** _String_
 
 ID of the space for which you want to retrieve all unmanaged access methods.
 
 ---
-
 
 ## Response
 
@@ -54,4 +54,3 @@ Returns:
 **Array of [unknowns](./)**
 
 </Check>
-

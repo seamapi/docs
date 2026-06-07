@@ -1,8 +1,7 @@
 ---
-title: "Deleting Access Codes"
-description: "Learn how to delete your access codes, and ensure that the code is successfully removed from the device."
+title: 'Deleting Access Codes'
+description: 'Learn how to delete your access codes, and ensure that the code is successfully removed from the device.'
 ---
-
 
 ## 1. Delete the access code using the API
 
@@ -15,8 +14,8 @@ To delete an access code, specify the desired `access_code_id` in the [Delete Ac
 
 ```javascript
 await seam.accessCodes.delete({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+})
 ```
 
 **Output:**
@@ -24,6 +23,7 @@ await seam.accessCodes.delete({
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -48,6 +48,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -65,6 +66,7 @@ seam.access_codes.delete(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -82,6 +84,7 @@ client.access_codes.delete(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -99,6 +102,7 @@ $seam->access_codes->delete(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -116,10 +120,11 @@ seam.AccessCodes.Delete(
 ```
 void
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## 2. Verify that the access code has been removed
 

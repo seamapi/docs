@@ -1,18 +1,19 @@
 ---
-title: "Assigning ACS Users to Access Groups"
-description: "Learn how to use access groups to manage ACS user permissions across different doors and areas."
+title: 'Assigning ACS Users to Access Groups'
+description: 'Learn how to use access groups to manage ACS user permissions across different doors and areas.'
 ---
-
 
 Some ACSs use access groups, which are sets of ACS users, combined with sets of permissions. These permissions include both the set of areas or assets that the ACS users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each ACS user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of ACS users, especially in bigger organizations or complexes.
 
 <Info>
-To learn whether your ACS supports access groups, see the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your ACS.
+  To learn whether your ACS supports access groups, see the [system integration
+  guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems)
+  for your ACS.
 </Info>
 
 This guide explains how to grant access permissions to ACS users by adding them to the appropriate access groups.
 
-***
+---
 
 ## Add an ACS User to an Access Group
 
@@ -25,9 +26,9 @@ To [add an ACS user to an access group](https://docs.seam.co/latest/api/acs/user
 
 ```javascript
 await seam.acs.users.addToAccessGroup({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444"
-});
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  acs_access_group_id: '44444444-4444-4444-4444-444444444444',
+})
 ```
 
 **Response:**
@@ -35,6 +36,7 @@ await seam.acs.users.addToAccessGroup({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -59,6 +61,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -77,6 +80,7 @@ seam.acs.users.add_to_access_group(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -92,6 +96,7 @@ None
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -110,6 +115,7 @@ $seam->acs->users->add_to_access_group(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -128,10 +134,11 @@ seam.UsersAcs.AddToAccessGroup(
 ```
 void
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Remove an ACS User from an Access Group
 
@@ -144,9 +151,9 @@ To [remove an ACS user from an access group](https://docs.seam.co/latest/api/acs
 
 ```javascript
 await seam.acs.users.removeFromAccessGroup({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  acs_access_group_id: "44444444-4444-4444-4444-444444444444"
-});
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  acs_access_group_id: '44444444-4444-4444-4444-444444444444',
+})
 ```
 
 **Response:**
@@ -154,6 +161,7 @@ await seam.acs.users.removeFromAccessGroup({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -179,6 +187,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -197,6 +206,7 @@ seam.acs.users.remove_from_access_group(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -212,6 +222,7 @@ None
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -230,6 +241,7 @@ $seam->acs->users->remove_from_access_group(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -248,5 +260,6 @@ seam.UsersAcs.RemoveFromAccessGroup(
 ```
 void
 ```
+
 </Tab>
 </Tabs>

@@ -1,12 +1,11 @@
 ---
-title: "Simulate a Keypad Code Entry"
+title: 'Simulate a Keypad Code Entry'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Simulates the entry of a code on a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +16,9 @@ Simulates the entry of a code on a keypad.
 
 ```javascript
 await seam.locks.simulate.keypadCodeEntry({
-  device_id: "97a7a706-05a9-405c-91e5-b03e5b9c2003",
-  code: "1234",
-});
+  device_id: '97a7a706-05a9-405c-91e5-b03e5b9c2003',
+  code: '1234',
+})
 ```
 
 #### Output:
@@ -33,6 +32,7 @@ await seam.locks.simulate.keypadCodeEntry({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -65,6 +65,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -90,6 +91,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -117,6 +119,7 @@ seam.locks.simulate.keypad_code_entry(
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -143,6 +146,7 @@ $seam->locks->simulate->keypad_code_entry(
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -166,10 +170,10 @@ seam locks simulate keypad-code-entry --device_id "97a7a706-05a9-405c-91e5-b03e5
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -177,25 +181,26 @@ seam locks simulate keypad-code-entry --device_id "97a7a706-05a9-405c-91e5-b03e5
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`code`** *String* (Required)
+**`code`** _String_ (Required)
 
 Code that you want to simulate entering on a keypad.
 
 ---
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the device for which you want to simulate a keypad code entry.
 
 ---
-
 
 ## Response
 
@@ -205,11 +210,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -220,5 +222,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

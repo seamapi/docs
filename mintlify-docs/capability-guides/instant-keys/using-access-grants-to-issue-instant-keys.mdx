@@ -1,14 +1,61 @@
 ---
-title: "Using Access Grants to Issue Instant Keys"
-description: "Learn how to create an Access Grant that issues an Instant Key."
+title: 'Using Access Grants to Issue Instant Keys'
+description: 'Learn how to create an Access Grant that issues an Instant Key.'
 ---
-
 
 An Access Grant defines the "who, where, when, and how" for assigning a user access to entrances, including the following characteristics:
 
-<table><thead><tr><th width="148.39999389648438">Characteristic</th><th>Creation Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Who</td><td><code>user_identity_id</code> or <code>user_identity</code></td><td>The user to whom to grant access. You can either create a user identity separately and specify the ID to the access grant or create a new user identity as part of the Access Grant creation action.</td></tr><tr><td>Where</td><td><code>acs_entrance_ids</code> </td><td>The entrances to which to grant access. You can specify one or more entrances by ID.</td></tr><tr><td>When</td><td><code>starts_at</code> and <code>ends_at</code></td><td>The access schedule.</td></tr><tr><td>How</td><td><code>requested_access_methods</code> and <code>mode</code></td><td>The access methods that you want to grant for the user. In each <code>requested_access_method</code>, specify the desired <code>mode</code> of access, such as a PIN code, key card, or mobile key (with an Instant Key).</td></tr></tbody></table>
-
-
+<table>
+  <thead>
+    <tr>
+      <th width='148.39999389648438'>Characteristic</th>
+      <th>Creation Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Who</td>
+      <td>
+        <code>user_identity_id</code> or <code>user_identity</code>
+      </td>
+      <td>
+        The user to whom to grant access. You can either create a user identity
+        separately and specify the ID to the access grant or create a new user
+        identity as part of the Access Grant creation action.
+      </td>
+    </tr>
+    <tr>
+      <td>Where</td>
+      <td>
+        <code>acs_entrance_ids</code>{' '}
+      </td>
+      <td>
+        The entrances to which to grant access. You can specify one or more
+        entrances by ID.
+      </td>
+    </tr>
+    <tr>
+      <td>When</td>
+      <td>
+        <code>starts_at</code> and <code>ends_at</code>
+      </td>
+      <td>The access schedule.</td>
+    </tr>
+    <tr>
+      <td>How</td>
+      <td>
+        <code>requested_access_methods</code> and <code>mode</code>
+      </td>
+      <td>
+        The access methods that you want to grant for the user. In each{' '}
+        <code>requested_access_method</code>, specify the desired{' '}
+        <code>mode</code> of access, such as a PIN code, key card, or mobile key
+        (with an Instant Key).
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Once you have identified the entrances to which you want to grant a user access, create an Access Grant to assign the specified access to the user. Specify `mobile_key` as the mode for a requested access method, and the resulting mobile key also includes an Instant Key.
 
@@ -20,7 +67,7 @@ To create an Instant Key:
 
 The action returns an Access Grant that includes the Instant Key URL. You can then share this Instant Key URL with your user.
 
-***
+---
 
 ## **Identify Entrances**
 
@@ -33,8 +80,8 @@ List the entrances in the access system and identify the ones to which you want 
 
 ```javascript
 await seam.acs.entrances.list({
-  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339",
-});
+  acs_system_id: 'c359cba2-8ef2-47fc-bee0-1c7c2a886339',
+})
 ```
 
 **Output**
@@ -56,6 +103,7 @@ await seam.acs.entrances.list({
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -93,6 +141,7 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -124,6 +173,7 @@ seam.acs.entrances.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -155,6 +205,7 @@ seam.acs.entrances.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -186,6 +237,7 @@ $seam->acs->entrances->list(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -215,6 +267,7 @@ seam acs entrances list --acs_system_id "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
   ...
 ]
 ```
+
 </Tab>
 </Tabs>
 
@@ -222,7 +275,7 @@ seam acs entrances list --acs_system_id "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
 
 You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](https://docs.seam.co/latest/api/access_grants/create#create-an-access-grant-including-a-new-user-identity).
 
-To create a user identity, specify the unique `user_identity_key`,  `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
+To create a user identity, specify the unique `user_identity_key`, `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -231,10 +284,10 @@ To create a user identity, specify the unique `user_identity_key`,  `email_addre
 
 ```javascript
 await seam.userIdentities.create({
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
-});
+  full_name: 'Jane Doe',
+  email_address: 'jane@example.com',
+  acs_system_ids: ['c359cba2-8ef2-47fc-bee0-1c7c2a886339'],
+})
 ```
 
 **Output**
@@ -247,6 +300,7 @@ await seam.userIdentities.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -279,6 +333,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -303,6 +358,7 @@ UserIdentity(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -327,6 +383,7 @@ seam.user_identities.create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -351,6 +408,7 @@ $seam->user_identities->create(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -371,10 +429,11 @@ seam user-identities create --email_address "jane@example.com" --full_name "Jane
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## **Create an Access Grant**
 
@@ -387,7 +446,7 @@ To create an Access Grant, specify the user identity, entrance IDs, starting and
 
 ```javascript
 await seam.accessGrants.create({
-  user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
+  user_identity_id: 'e3d736c1-540d-4d10-83e5-9a4e135453b4',
   // Alternately, to create a new user identity, use the
   // following parameter instead of user_identity_id:
   // user_identity: {
@@ -395,15 +454,13 @@ await seam.accessGrants.create({
   //  email_address: "jane.doe@example.com",
   // },
   acs_entrance_ids: [
-    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
-    "f74e4879-5991-4e2f-a368-888983dcfbfc"
+    '48ebfb50-c531-43c5-b9ea-409f26dabbd7',
+    'f74e4879-5991-4e2f-a368-888983dcfbfc',
   ],
-  requested_access_methods: [
-    { mode: "mobile_key" },
-  ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-});
+  requested_access_methods: [{ mode: 'mobile_key' }],
+  starts_at: '2025-07-13T15:00:00.000Z',
+  ends_at: '2025-07-16T11:00:00.000Z',
+})
 ```
 
 **Output**
@@ -427,6 +484,7 @@ await seam.accessGrants.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -483,6 +541,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -531,6 +590,7 @@ AccessGrant(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -574,6 +634,7 @@ seam.access_grants.create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -623,6 +684,7 @@ $seam->access_grants->create(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -654,6 +716,7 @@ seam access-grants create --user_identity_id "e3d736c1-540d-4d10-83e5-9a4e135453
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 

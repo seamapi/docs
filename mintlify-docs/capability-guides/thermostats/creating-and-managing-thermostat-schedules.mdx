@@ -1,20 +1,100 @@
 ---
-title: "Creating and Managing Thermostat Schedules"
-description: "Learn how to create, list, get, update, and delete thermostat schedules for thermostats."
+title: 'Creating and Managing Thermostat Schedules'
+description: 'Learn how to create, list, get, update, and delete thermostat schedules for thermostats.'
 ---
-
 
 Once you have created a set of [climate presets](creating-and-managing-climate-presets/) for a thermostat, you can define schedules using the [`/thermostats/schedules/create`](https://docs.seam.co/latest/api/thermostats/schedules/create) endpoint. The Seam API's scheduling mechanism is flexible and intelligent. It can prioritize and handle multiple scheduled climate presets. For example, you could [set a fallback](creating-and-managing-climate-presets/setting-the-fallback-climate-preset.md) energy-saving climate preset for whenever a short-term rental property is unoccupied. Then, you could schedule—in advance—a "comfort" climate preset to correspond to each upcoming guest's stay.
 
-***
+---
 
 ## Thermostat Schedule Properties
 
 Each thermostat schedule can contain the following properties:
 
-<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the thermostat schedule.</td></tr><tr><td><code>climate_preset_key</code></td><td>(Required) Key of the climate preset to use for the thermostat schedule.</td></tr><tr><td><code>is_override_allowed</code></td><td>(Optional) Indicates whether a person at the thermostat or using the API can change (that is, override) the thermostat's settings from an active scheduled climate preset.</td></tr><tr><td><code>max_override_period_minutes</code></td><td>Number of minutes for which a person at the thermostat or using the API can change (that is, override) the thermostat's settings after the activation of the scheduled climate preset.<br /><strong>Note:</strong> If you set this value to <code>null</code>, there is no enforced maximum override period. That is, the override applies until another climate preset becomes active.<br />Default: <code>null</code><br />See also <a href="creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions">Specifying Manual Override Permissions</a>.</td></tr><tr><td><code>starts_at</code></td><td>(Required) Date and time at which the thermostat schedule starts, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr><tr><td><code>ends_at</code></td><td>(Required) Date and time at which the thermostat schedule ends, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format.</td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th width='339'>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>name</code>
+      </td>
+      <td>
+        (Optional) User-friendly name to identify the thermostat schedule.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>climate_preset_key</code>
+      </td>
+      <td>
+        (Required) Key of the climate preset to use for the thermostat schedule.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>is_override_allowed</code>
+      </td>
+      <td>
+        (Optional) Indicates whether a person at the thermostat or using the API
+        can change (that is, override) the thermostat's settings from an active
+        scheduled climate preset.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>max_override_period_minutes</code>
+      </td>
+      <td>
+        Number of minutes for which a person at the thermostat or using the API
+        can change (that is, override) the thermostat's settings after the
+        activation of the scheduled climate preset.
+        <br />
+        <strong>Note:</strong> If you set this value to <code>null</code>, there
+        is no enforced maximum override period. That is, the override applies
+        until another climate preset becomes active.
+        <br />
+        Default: <code>null</code>
+        <br />
+        See also{' '}
+        <a href='creating-and-managing-thermostat-schedules.md#specifying-manual-override-permissions'>
+          Specifying Manual Override Permissions
+        </a>
+        .
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>starts_at</code>
+      </td>
+      <td>
+        (Required) Date and time at which the thermostat schedule starts, in{' '}
+        <a href='https://www.iso.org/iso-8601-date-and-time-format.html'>
+          ISO 8601
+        </a>{' '}
+        format.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>ends_at</code>
+      </td>
+      <td>
+        (Required) Date and time at which the thermostat schedule ends, in{' '}
+        <a href='https://www.iso.org/iso-8601-date-and-time-format.html'>
+          ISO 8601
+        </a>{' '}
+        format.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-***
+---
 
 ## Setting the Schedule
 
@@ -24,7 +104,7 @@ In the Seam API, use the `starts_at` and `ends_at` parameters to define the time
 
 After a scheduled climate preset starts, Seam emits a [`thermostat.temperature_reached_set_point` event](https://docs.seam.co/latest/api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](understanding-thermostat-concepts/set-points.md) specified in this climate preset. You can configure a [webhook](../../developer-tools/webhooks.md) to watch for this event.
 
-***
+---
 
 ## Specifying Manual Override Permissions
 
@@ -34,7 +114,7 @@ Through these override period settings, the Seam API provides you with the flexi
 
 To allow complete control at the thermostat, set `is_override_allowed` to `true` and `max_override_period_minutes` to `null`. To disable manual overrides entirely, set `is_override_allowed` to `false`.
 
-***
+---
 
 ## Create a Thermostat Schedule
 
@@ -47,14 +127,14 @@ To create a thermostat schedule, issue a [`/thermostats/schedules/create`](https
 
 ```javascript
 await seam.thermostats.schedules.create({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
   name: "Jim's stay",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-01T15:00:00Z",
-  ends_at: "2024-11-05T12:00:00Z",
+  climate_preset_key: 'occupied',
+  starts_at: '2024-11-01T15:00:00Z',
+  ends_at: '2024-11-05T12:00:00Z',
   is_override_allowed: true,
-  max_override_period_minutes: 90
-});
+  max_override_period_minutes: 90,
+})
 ```
 
 **Response:**
@@ -72,6 +152,7 @@ await seam.thermostats.schedules.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -113,6 +194,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -146,6 +228,7 @@ ThermostatSchedule(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -179,6 +262,7 @@ seam.thermostats.schedules.create({
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -212,6 +296,7 @@ $seam->thermostats->schedules->create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -227,16 +312,28 @@ $seam->thermostats->schedules->create(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Schedule Multiple Climate Presets
 
 Suppose a short-term rental host wants to set a fallback "unoccupied" climate preset that takes effect immediately, as well as scheduling an "occupied" climate preset for two periods that correspond to guest reservations.
 
-<figure><img src="/images/multiple-climate-schedules.png" alt="Seam handles a fallback climate preset, along with multiple thermostat schedules." /><figcaption><p>Seam handles a fallback climate preset, along with multiple thermostat schedules.</p></figcaption></figure>
+<figure>
+  <img
+    src='/images/multiple-climate-schedules.png'
+    alt='Seam handles a fallback climate preset, along with multiple thermostat schedules.'
+  />
+  <figcaption>
+    <p>
+      Seam handles a fallback climate preset, along with multiple thermostat
+      schedules.
+    </p>
+  </figcaption>
+</figure>
 
 The following example shows how to set up these schedules:
 
@@ -248,36 +345,36 @@ The following example shows how to set up these schedules:
 ```javascript
 // Get the thermostat.
 const thermostat = await seam.devices.get({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+})
 
 // Set the fallback climate preset.
 await seam.thermostats.setFallbackClimatePreset({
   device_id: thermostat.device_id,
-  climate_preset_key: "unoccupied"
-});
+  climate_preset_key: 'unoccupied',
+})
 
 // Create the thermostat schedule for the first reservation.
 await seam.thermostats.schedules.create({
   device_id: thermostat.device_id,
   name: "Joe's stay",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-10T15:00:00Z",
-  ends_at: "2024-11-15T12:00:00Z",
+  climate_preset_key: 'occupied',
+  starts_at: '2024-11-10T15:00:00Z',
+  ends_at: '2024-11-15T12:00:00Z',
   is_override_allowed: true,
-  max_override_period_minutes: 90
-});
+  max_override_period_minutes: 90,
+})
 
 // Create the thermostat schedule for the second reservation.
 await seam.thermostats.schedules.create({
   device_id: thermostat.device_id,
   name: "Jane's stay",
-  climate_preset_key: "occupied",
-  starts_at: "2024-11-16T15:00:00Z",
-  ends_at: "2024-11-18T12:00:00Z",
+  climate_preset_key: 'occupied',
+  starts_at: '2024-11-16T15:00:00Z',
+  ends_at: '2024-11-18T12:00:00Z',
   is_override_allowed: true,
-  max_override_period_minutes: 90
-});
+  max_override_period_minutes: 90,
+})
 ```
 
 **Response:**
@@ -306,6 +403,7 @@ await seam.thermostats.schedules.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -324,7 +422,7 @@ thermostat=$(
     -d '{
       "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5"
   }')
-  
+
 # Set the fallback climate preset.
 curl -X 'POST' \
   'https://connect.getseam.com/thermostats/set_fallback_climate_preset' \
@@ -401,6 +499,7 @@ curl -X 'POST' \
   "ok":true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -468,6 +567,7 @@ ThermostatSchedule(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -535,6 +635,7 @@ seam.thermostats.schedules.create(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -602,6 +703,7 @@ $seam->thermostats->schedules->create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -617,10 +719,11 @@ $seam->thermostats->schedules->create(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## List All Thermostat Schedules for a Thermostat
 
@@ -633,8 +736,8 @@ To retrieve all thermostat schedules for a thermostat, issue a [`/thermostats/sc
 
 ```javascript
 await seam.thermostats.schedules.list({
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+})
 ```
 
 **Response:**
@@ -665,6 +768,7 @@ await seam.thermostats.schedules.list({
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -713,6 +817,7 @@ curl -X 'POST' \
   "ok":true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -753,6 +858,7 @@ seam.thermostats.schedules.list(
   )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -793,6 +899,7 @@ seam.thermostats.schedules.list(
   >
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -833,6 +940,7 @@ $seam->thermostats->schedules->list(
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -848,10 +956,11 @@ $seam->thermostats->schedules->list(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Get an Individual Thermostat Schedule
 
@@ -864,8 +973,8 @@ To get a specific thermostat schedule, issue a [`/thermostats/schedules/get`](ht
 
 ```javascript
 await seam.thermostats.schedules.get({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4"
-});
+  thermostat_schedule_id: '89d3507e-60e3-4101-bd1b-ba066ec30ad4',
+})
 ```
 
 **Response:**
@@ -883,6 +992,7 @@ await seam.thermostats.schedules.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -918,6 +1028,7 @@ curl -X 'POST' \
   "ok":true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -945,6 +1056,7 @@ ThermostatSchedule(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -972,6 +1084,7 @@ seam.thermostats.schedules.get(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -999,6 +1112,7 @@ $seam->thermostats->schedules->get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1014,10 +1128,11 @@ $seam->thermostats->schedules->get(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Update a Thermostat Schedule
 
@@ -1030,9 +1145,9 @@ To update a thermostat schedule, issue a [`/thermostats/schedules/update`](https
 
 ```javascript
 await seam.thermostats.schedules.update({
-  thermostat_schedule_id: "89d3507e-60e3-4101-bd1b-ba066ec30ad4",
-  ends_at: "2024-11-15T15:00:00Z"
-});
+  thermostat_schedule_id: '89d3507e-60e3-4101-bd1b-ba066ec30ad4',
+  ends_at: '2024-11-15T15:00:00Z',
+})
 ```
 
 **Response:**
@@ -1040,6 +1155,7 @@ await seam.thermostats.schedules.update({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1065,6 +1181,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1083,6 +1200,7 @@ seam.thermostats.schedules.update(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1101,6 +1219,7 @@ seam.thermostats.schedules.update(
 ```
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1119,6 +1238,7 @@ $seam->thermostats->schedules->update(
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1134,10 +1254,11 @@ void
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Delete a Thermostat Schedule
 
@@ -1150,8 +1271,8 @@ To delete a thermostat schedule, issue a [`/thermostats/schedules/delete`](https
 
 ```javascript
 await seam.thermostats.schedules.delete({
-  thermostat_schedule_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-});
+  thermostat_schedule_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+})
 ```
 
 **Response:**
@@ -1159,6 +1280,7 @@ await seam.thermostats.schedules.delete({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1183,6 +1305,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1200,6 +1323,7 @@ seam.thermostats.schedules.delete(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1217,6 +1341,7 @@ seam.thermostats.schedules.delete(
 ```
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1234,6 +1359,7 @@ $seam->thermostats->schedules->delete(
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1249,5 +1375,6 @@ void
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>

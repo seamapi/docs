@@ -1,12 +1,11 @@
 ---
-title: "Add Entrances to a Space"
+title: 'Add Entrances to a Space'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific space.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +16,9 @@ Adds entrances to a specific space.
 
 ```javascript
 await seam.spaces.addAcsEntrances({
-  space_id: "9f930664-c0d8-441b-8d66-2b1d0d2466f4",
-  acs_entrance_ids: ["b127a710-db3e-402c-afdf-5474769b1d83"],
-});
+  space_id: '9f930664-c0d8-441b-8d66-2b1d0d2466f4',
+  acs_entrance_ids: ['b127a710-db3e-402c-afdf-5474769b1d83'],
+})
 ```
 
 #### Output:
@@ -27,6 +26,7 @@ await seam.spaces.addAcsEntrances({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -53,6 +53,7 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -73,6 +74,7 @@ seam.spaces.add_acs_entrances(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -93,6 +95,7 @@ seam.spaces.add_acs_entrances(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -113,6 +116,7 @@ $seam->spaces->add_acs_entrances(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -130,10 +134,10 @@ seam spaces add-acs-entrances --space_id "9f930664-c0d8-441b-8d66-2b1d0d2466f4" 
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -142,25 +146,26 @@ seam spaces add-acs-entrances --space_id "9f930664-c0d8-441b-8d66-2b1d0d2466f4" 
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_entrance_ids`** *Array* *of UUIDs* (Required)
+**`acs_entrance_ids`** _Array_ _of UUIDs_ (Required)
 
 IDs of the entrances that you want to add to the space.
 
 ---
 
-**`space_id`** *String* (Required)
+**`space_id`** _String_ (Required)
 
 ID of the space to which you want to add entrances.
 
 ---
-
 
 ## Response
 
@@ -169,4 +174,3 @@ Returns:
 **void**
 
 </Check>
-

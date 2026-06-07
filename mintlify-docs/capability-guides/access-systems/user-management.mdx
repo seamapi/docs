@@ -1,14 +1,13 @@
 ---
-title: "Managing ACS Users"
-description: "Learn how to manage your ACS users to grant or revoke physical access for people."
+title: 'Managing ACS Users'
+description: 'Learn how to manage your ACS users to grant or revoke physical access for people.'
 ---
-
 
 An ACS user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the [Salto](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
 This guide explains how to create and manage ACS users. Using the [Access Control Systems API](https://docs.seam.co/latest/api/acs/), you can automate issuing access to long-term tenants or visitors.
 
-***
+---
 
 ## Before You Begin: Identify the ACS System ID
 
@@ -20,7 +19,7 @@ To add ACS users to your access control system, first retrieve the `acs_system_i
 **Request:**
 
 ```javascript
-await seam.acs.systems.list();
+await seam.acs.systems.list()
 ```
 
 **Response:**
@@ -35,6 +34,7 @@ await seam.acs.systems.list();
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -66,6 +66,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -88,6 +89,7 @@ seam.acs.systems.list()
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -103,6 +105,7 @@ seam.acs.systems.list()
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -125,6 +128,7 @@ $seam->acs->systems->list();
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -145,10 +149,11 @@ seam.SystemsAcs.List();
 }
 ...
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Create an ACS User
 
@@ -167,12 +172,12 @@ Further, you can use the `user_identity_id` parameter to associate a new ACS use
 
 ```javascript
 await seam.acs.users.create({
-  acs_system_id: "11111111-1111-1111-1111-111111111111",
-  user_identity_id: "22222222-2222-2222-2222-222222222222",
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-  phone_number: "+15555550101"
-});
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  user_identity_id: '22222222-2222-2222-2222-222222222222',
+  full_name: 'Jane Doe',
+  email_address: 'jane@example.com',
+  phone_number: '+15555550101',
+})
 ```
 
 **Response:**
@@ -187,6 +192,7 @@ await seam.acs.users.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -223,6 +229,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -251,6 +258,7 @@ AcsUser(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -266,6 +274,7 @@ AcsUser(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -294,6 +303,7 @@ $seam->acs->users->create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -322,10 +332,11 @@ seam.UsersAcs.Create(
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## List ACS Users
 
@@ -338,8 +349,8 @@ To [list all ACS users](https://docs.seam.co/latest/api/acs/users/list) within a
 
 ```javascript
 await seam.acs.users.list({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+})
 ```
 
 **Response:**
@@ -355,6 +366,7 @@ await seam.acs.users.list({
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -389,6 +401,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -414,6 +427,7 @@ seam.acs.users.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -429,6 +443,7 @@ seam.acs.users.list(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -454,6 +469,7 @@ $seam->acs->users->list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -477,10 +493,11 @@ seam.UsersAcs.List(
 }
 ...
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Get an ACS User
 
@@ -493,8 +510,8 @@ To [get an ACS user](https://docs.seam.co/latest/api/acs/users/get), provide the
 
 ```javascript
 await seam.acs.users.get({
-  acs_user_id: "33333333-3333-3333-3333-333333333333"
-});
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+})
 ```
 
 **Response:**
@@ -514,6 +531,7 @@ await seam.acs.users.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -552,6 +570,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -581,6 +600,7 @@ AcsUser(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -596,6 +616,7 @@ AcsUser(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -625,6 +646,7 @@ $seam->acs->users->get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -654,10 +676,11 @@ seam.AcsUsers.Get(
   ..
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Update an ACS User
 
@@ -670,9 +693,9 @@ To [update an ACS user](https://docs.seam.co/latest/api/acs/users/update), provi
 
 ```javascript
 await seam.acs.users.update({
-  acs_user_id: "33333333-3333-3333-3333-333333333333",
-  full_name: "Jack Doe"
-});
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+  full_name: 'Jack Doe',
+})
 ```
 
 **Response:**
@@ -680,6 +703,7 @@ await seam.acs.users.update({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -705,6 +729,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -723,6 +748,7 @@ seam.acs.users.update(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -738,6 +764,7 @@ None
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -756,6 +783,7 @@ $seam->acs->users->update(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -774,10 +802,11 @@ seam.UsersAcs.Update(
 ```
 void
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Delete an ACS User
 
@@ -790,8 +819,8 @@ To [delete an ACS user](https://docs.seam.co/latest/api/acs/users/delete), provi
 
 ```javascript
 await seam.acs.users.delete({
-  acs_user_id: "33333333-3333-3333-3333-333333333333"
-});
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+})
 ```
 
 **Response:**
@@ -799,6 +828,7 @@ await seam.acs.users.delete({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -823,6 +853,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -840,6 +871,7 @@ seam.acs.users.delete(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -855,6 +887,7 @@ None
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -872,6 +905,7 @@ $seam->acs->users->delete(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -889,5 +923,6 @@ seam.UsersAcs.Delete(
 ```
 void
 ```
+
 </Tab>
 </Tabs>

@@ -1,12 +1,11 @@
 ---
-title: "Retrieving Entrance Details"
-description: "Learn how to get details about the entrances in your ACS, including listing the credentials that provide access to a specific entrance."
+title: 'Retrieving Entrance Details'
+description: 'Learn how to get details about the entrances in your ACS, including listing the credentials that provide access to a specific entrance.'
 ---
-
 
 In an ACS, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your [workspace](../../core-concepts/workspaces/) or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific [credential](managing-credentials.md), and you can list all credentials associated with a specific entrance.
 
-***
+---
 
 ## List All Entrances
 
@@ -18,7 +17,7 @@ You can [list all `acs_entrance` resources](https://docs.seam.co/latest/api/acs/
 **Request:**
 
 ```javascript
-await seam.acs.entrances.list();
+await seam.acs.entrances.list()
 ```
 
 **Response:**
@@ -35,6 +34,7 @@ await seam.acs.entrances.list();
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -68,6 +68,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -92,6 +93,7 @@ seam.acs.entrances.list()
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -107,6 +109,7 @@ seam.acs.entrances.list()
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -131,6 +134,7 @@ $seam->acs->entrances->list();
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -153,10 +157,11 @@ seam.EntrancesAcs.List();
 }
 ...
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## List Entrances in an ACS
 
@@ -169,8 +174,8 @@ To list all `acs_entrance`s in a specific ACS, include the `acs_system_id` filte
 
 ```javascript
 await seam.acs.entrances.list({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+})
 ```
 
 **Response:**
@@ -187,6 +192,7 @@ await seam.acs.entrances.list({
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -222,6 +228,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -248,6 +255,7 @@ seam.acs.entrances.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -263,6 +271,7 @@ seam.acs.entrances.list(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -289,6 +298,7 @@ $seam->acs->entrances->list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -313,10 +323,11 @@ seam.EntrancesAcs.List(
 }
 ...
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## List Credentials Associated with an Entrance
 
@@ -329,14 +340,15 @@ To [list the credentials that grant access to a specific entrance](https://docs.
 
 ```javascript
 await seam.acs.entrances.list_credentials_with_access({
-  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
-});
+  acs_entrance_id: '55555555-5555-5555-5555-555555555555',
+})
 ```
 
 **Response:**
 
 <Info>
-This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
+  This response contains manufacturer-specific metadata that may vary by
+  [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 </Info>
 
 ```json
@@ -353,6 +365,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -374,7 +387,8 @@ curl -X 'GET' \
 **Response:**
 
 <Info>
-This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
+  This response contains manufacturer-specific metadata that may vary by
+  [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 </Info>
 
 ```json
@@ -394,6 +408,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -409,7 +424,8 @@ seam.acs.entrances.list_credentials_with_access(
 **Response:**
 
 <Info>
-This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
+  This response contains manufacturer-specific metadata that may vary by
+  [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 </Info>
 
 ```
@@ -426,6 +442,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -441,6 +458,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -456,7 +474,8 @@ $seam->acs->entrances->list_credentials_with_access(
 **Response:**
 
 <Info>
-This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
+  This response contains manufacturer-specific metadata that may vary by
+  [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 </Info>
 
 ```json
@@ -473,6 +492,7 @@ This response contains manufacturer-specific metadata that may vary by [manufact
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -488,7 +508,8 @@ seam.EntrancesAcs.ListCredentialsWithAccess(
 **Response:**
 
 <Info>
-This response contains manufacturer-specific metadata that may vary by [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
+  This response contains manufacturer-specific metadata that may vary by
+  [manufacturer](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 </Info>
 
 ```json
@@ -503,16 +524,17 @@ This response contains manufacturer-specific metadata that may vary by [manufact
 }
 ...
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## List Entrances Associated with a Credential
 
 To [list the entrances to which a specific credential grants access](https://docs.seam.co/latest/api/acs/credentials/list_accessible_entrances), use `list_accessible_entrances` method for the `acs_credential` object and provide the `acs_credential_id`. For details, see [Managing Credentials](managing-credentials.md#list-entrances-associated-with-a-credential).
 
-***
+---
 
 ## Get an Entrance
 
@@ -525,8 +547,8 @@ You can [get the details of a specific `acs_entrance`](https://docs.seam.co/late
 
 ```javascript
 await seam.acs.entrances.get({
-  acs_entrance_id: "55555555-5555-5555-5555-555555555555"
-});
+  acs_entrance_id: '55555555-5555-5555-5555-555555555555',
+})
 ```
 
 **Response:**
@@ -540,6 +562,7 @@ await seam.acs.entrances.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -572,6 +595,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -595,6 +619,7 @@ AcsEntrance(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -610,6 +635,7 @@ AcsEntrance(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -633,6 +659,7 @@ $seam->acs->entrances->get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -656,5 +683,6 @@ seam.EntrancesAcs.Get(
   ...
 }
 ```
+
 </Tab>
 </Tabs>

@@ -1,8 +1,7 @@
 ---
-title: "Step 5: Program Door Locks"
-description: "Learn how to program door locks for your mobile key integration."
+title: 'Step 5: Program Door Locks'
+description: 'Learn how to program door locks for your mobile key integration.'
 ---
-
 
 Once you have [set up door locks](step-4-set-up-door-locks-with-ble-profiles.md) in the Visionline application, use the Lock Service 3G application to program the door locks themselves. When you program a lock, you download the identity and settings for the lock from Lock Service 3G to the lock.
 
@@ -13,7 +12,7 @@ This process consists of the following basic steps:
 3. [Download door lock data from the Visionline server to Lock Service 3G.](step-5-program-door-locks.md#download-door-lock-data-to-lock-service-3g)
 4. [Initialize each door lock to program it with the correct settings.](step-5-program-door-locks.md#initialize-door-locks)
 
-***
+---
 
 ## Configure Visionline for Lock Service 3G
 
@@ -38,7 +37,7 @@ This process consists of the following basic steps:
    5. Click **OK**.
    6. In the **Service devices** window, click **Close**.
 
-***
+---
 
 ## Configure Lock Service 3G to Connect to the Visionline Server
 
@@ -52,23 +51,23 @@ This process consists of the following basic steps:
    5. Type the **Port** number to use to connect to the Visionline server.
    6. Click **OK**.
 3. At the right of the **Lock Service 3G** window, in the lower field in the **Serial port and host** area, select the name of the Visionline server connection that you created.
-4.  Register Lock Service 3G on the laptop or tablet.
+4. Register Lock Service 3G on the laptop or tablet.
+   1. In the **Setup** section of the left navigation pane, click **Register PC**.
+   2. In the **Register PC** area, type the registration **Code** that you obtained from the Visionline application.
+   3. Click **Register**.
 
-    1. In the **Setup** section of the left navigation pane, click **Register PC**.
-    2. In the **Register PC** area, type the registration **Code** that you obtained from the Visionline application.
-    3. Click **Register**.
+   Lock Service 3G registers with the Visionline server and displays a **Registration Finished** message.
 
-    Lock Service 3G registers with the Visionline server and displays a **Registration Finished** message.
 5. Click **OK**.
-6.  Retrieve the Visionline system ID.
+6. Retrieve the Visionline system ID.
+   1. In the **Setup** section of the left navigation pane, click **System ID**.
+   2. In the **System ID** area, click **Get**.
 
-    1. In the **Setup** section of the left navigation pane, click **System ID**.
-    2. In the **System ID** area, click **Get**.
+   Lock Service 3G retrieves the Visionline system ID and then displays a **New system ID has been set** message.
 
-    Lock Service 3G retrieves the Visionline system ID and then displays a **New system ID has been set** message.
 7. Click **OK**.
 
-***
+---
 
 ## Download Door Lock Data to Lock Service 3G
 
@@ -80,7 +79,7 @@ This process consists of the following basic steps:
 
 Lock Service downloads the door lock data from the Visionline server and displays a message when the download is complete.
 
-***
+---
 
 ## Initialize Door Locks
 
@@ -107,6 +106,11 @@ Perform the following steps on each lock:
    4. Select the **Read parameters after successful initialization** checkbox.
    5. Select the **Include BLE configuration data** checkbox.
    6. At the right of the **Lock Service 3G** window, in the upper field in the **Serial port and host** area, select the serial port that you want to use to connect to the lock.
-   7.  Connect the service cable with adapter cable from the laptop or tablet running Lock Service 3G to the lock and then click **Initialize**.
+   7. Connect the service cable with adapter cable from the laptop or tablet running Lock Service 3G to the lock and then click **Initialize**.
 
-       <Info> The lock and cable connection times out after 30 seconds. If programming the lock results in an error, try unplugging the cable from the lock and reconnecting it. Then, try initializing the lock again. </Info>
+      <Info>
+        {' '}
+        The lock and cable connection times out after 30 seconds. If programming
+        the lock results in an error, try unplugging the cable from the lock and
+        reconnecting it. Then, try initializing the lock again.{' '}
+      </Info>

@@ -1,8 +1,7 @@
 ---
-title: "Modifying Access Codes"
-description: "Learn how to update your access codes, and ensure that the changes are successfully set on the device."
+title: 'Modifying Access Codes'
+description: 'Learn how to update your access codes, and ensure that the changes are successfully set on the device.'
 ---
-
 
 ## 1. Update the access code using the API
 
@@ -17,11 +16,11 @@ When modifying an access code, adjust the properties of the access code, such as
 
 ```javascript
 await seam.accessCodes.update({
-  access_code_id: "11111111-1111-1111-1111-555555555555",
-  name: "my updated code name",
-  starts_at: "2025-02-01T16:00:00Z",
-  ends_at: "2025-02-22T12:00:00Z",
-  code: "5432"
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  name: 'my updated code name',
+  starts_at: '2025-02-01T16:00:00Z',
+  ends_at: '2025-02-22T12:00:00Z',
+  code: '5432',
 })
 ```
 
@@ -30,6 +29,7 @@ await seam.accessCodes.update({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -58,6 +58,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -79,6 +80,7 @@ seam.access_codes.update(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -100,6 +102,7 @@ client.access_codes.update(
 ```
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -121,6 +124,7 @@ $seam->access_codes->update(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -142,6 +146,7 @@ seam.AccessCodes.Update(
 ```
 void
 ```
+
 </Tab>
 </Tabs>
 
@@ -179,7 +184,7 @@ Monitor the incoming events on your webhook. Be on the lookout for the `access_c
 
 However, if you receive `access_code.failed_to_set_on_device` or `access_code.delay_in_setting_on_device` events, it's crucial to refer to [the "Troubleshooting access code issues" guide](troubleshooting-access-code-issues.md) for assistance.
 
-***
+---
 
 ## Special Case #1: Changing an ongoing access code to time-bound access
 
@@ -194,8 +199,8 @@ To convert a permanent access code to time-bound access, you must set the `start
 
 ```javascript
 await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+})
 ```
 
 **Output:**
@@ -214,10 +219,10 @@ await seam.accessCodes.get({
 
 ```javascript
 await seam.accessCodes.update({
-  access_code_id: "11111111-1111-1111-1111-555555555555",
-  starts_at: "2025-02-01T16:00:00Z",
-  ends_at: "2025-02-22T12:00:00Z"
-});
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  starts_at: '2025-02-01T16:00:00Z',
+  ends_at: '2025-02-22T12:00:00Z',
+})
 ```
 
 **Output:**
@@ -232,8 +237,8 @@ void
 
 ```javascript
 await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+})
 ```
 
 **Output:**
@@ -247,6 +252,7 @@ await seam.accessCodes.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -335,6 +341,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -398,6 +405,7 @@ AccessCode(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -461,6 +469,7 @@ client.access_codes.get(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -524,6 +533,7 @@ $seam->access_codes->get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -587,10 +597,11 @@ seam.AccessCodes.Get(
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Special Case #2: Changing a time-bound access code to permanent access
 
@@ -605,8 +616,8 @@ When converting a time-bound code to a permanent one, you'll also need to set th
 
 ```javascript
 await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+})
 ```
 
 **Output:**
@@ -627,9 +638,9 @@ await seam.accessCodes.get({
 
 ```javascript
 await seam.accessCodes.update({
-  access_code_id: "11111111-1111-1111-1111-555555555555",
-  type: "ongoing"
-});
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  type: 'ongoing',
+})
 ```
 
 **Output:**
@@ -644,8 +655,8 @@ void
 
 ```javascript
 await seam.accessCodes.get({
-  access_code_id: "11111111-1111-1111-1111-555555555555"
-});
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+})
 ```
 
 **Output:**
@@ -657,6 +668,7 @@ await seam.accessCodes.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -744,6 +756,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -806,6 +819,7 @@ AccessCode(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -868,6 +882,7 @@ client.access_codes.get(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -930,6 +945,7 @@ $seam->access_codes->get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -992,5 +1008,6 @@ seam.AccessCodes.Get(
   ...
 }
 ```
+
 </Tab>
 </Tabs>

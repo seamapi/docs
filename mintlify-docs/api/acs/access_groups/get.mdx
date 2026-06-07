@@ -1,12 +1,11 @@
 ---
-title: "Get an Access Group"
+title: 'Get an Access Group'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Returns a specified access group.
 
 ```javascript
 await seam.acs.accessGroups.get({
-  acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c547ae",
-});
+  acs_access_group_id: '09eb5265-6e3b-4e6d-bf96-736171c547ae',
+})
 ```
 
 #### Output:
@@ -41,6 +40,7 @@ await seam.acs.accessGroups.get({
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -81,6 +81,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -113,6 +114,7 @@ AcsAccessGroup(
     workspace_id="ac19352c-869a-4209-9ce7-44c740a8b5d0",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -145,6 +147,7 @@ seam.acs.access_groups.get(acs_access_group_id: "09eb5265-6e3b-4e6d-bf96-736171c
   "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -179,6 +182,7 @@ $seam->acs->access_groups->get(
     "workspace_id" => "ac19352c-869a-4209-9ce7-44c740a8b5d0",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -211,10 +215,10 @@ seam acs access-groups get --acs_access_group_id "09eb5265-6e3b-4e6d-bf96-736171
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -222,19 +226,20 @@ seam acs access-groups get --acs_access_group_id "09eb5265-6e3b-4e6d-bf96-736171
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_access_group_id`** *String* (Required)
+**`acs_access_group_id`** _String_ (Required)
 
 ID of the access group that you want to get.
 
 ---
-
 
 ## Response
 
@@ -244,11 +249,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -269,5 +271,6 @@ Returns:
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
 ```
+
 </Tab>
 </Tabs>

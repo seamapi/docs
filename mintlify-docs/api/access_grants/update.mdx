@@ -1,12 +1,11 @@
 ---
-title: "Update an Access Grant"
+title: 'Update an Access Grant'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Updates an existing Access Grant's time window.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,10 +16,10 @@ Updates an existing Access Grant's time window.
 
 ```javascript
 await seam.accessGrants.update({
-  access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
-  starts_at: "2025-06-19T18:01:32.000Z",
-  ends_at: "2025-06-22T13:24:50.000Z",
-});
+  access_grant_id: '4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1',
+  starts_at: '2025-06-19T18:01:32.000Z',
+  ends_at: '2025-06-22T13:24:50.000Z',
+})
 ```
 
 #### Output:
@@ -28,6 +27,7 @@ await seam.accessGrants.update({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -53,6 +53,7 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -74,6 +75,7 @@ seam.access_grants.update(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -95,6 +97,7 @@ seam.access_grants.update(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -116,6 +119,7 @@ $seam->access_grants->update(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -133,10 +137,10 @@ seam access-grants update --access_grant_id "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -145,37 +149,38 @@ seam access-grants update --access_grant_id "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** _String_ (Required)
 
 ID of the Access Grant to update.
 
 ---
 
-**`ends_at`** *String*
+**`ends_at`** _String_
 
 Date and time at which the validity of the grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
-**`name`** *String*
+**`name`** _String_
 
 Display name for the access grant.
 
 ---
 
-**`starts_at`** *String*
+**`starts_at`** _String_
 
 Date and time at which the validity of the grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
-
 
 ## Response
 
@@ -184,4 +189,3 @@ Returns:
 **void**
 
 </Check>
-

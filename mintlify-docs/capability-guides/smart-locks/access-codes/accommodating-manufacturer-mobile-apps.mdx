@@ -1,8 +1,7 @@
 ---
-title: "Streamlining Access Code Management from the Manufacturer App"
-description: "This guide covers how to ensure that codes created via the Seam API are easily identified and can be editable within the smart lock manufacturer app."
+title: 'Streamlining Access Code Management from the Manufacturer App'
+description: 'This guide covers how to ensure that codes created via the Seam API are easily identified and can be editable within the smart lock manufacturer app.'
 ---
-
 
 Most smart lock manufacturers provide a mobile (or web) app that device owners can use to manage their devices. This includes seeing and editing access codes that are programmed on their smart locks. When creating access codes using the Seam API, it's important to keep in mind that smart lock device owners may also be using their device manufacturer app to look up codes you've created and perhaps edit them. To ensure that these can easily be done, Seam provides a couple of API features for enabling this.
 
@@ -36,7 +35,7 @@ When external modifications are detected, Seam will send an `access_code.modifie
 
 ### Allow for Access Code Modification
 
-If you want to allow device owners to be able to edit access codes that you have created through the Seam API, set the `allow_external_modification` flag to `true` when creating an access code. This prevents Seam from overwriting any changes made by the device owner to the access code. Seam also sets `code_modified_external_to_seam` as a warning on the code, instead of an error, when a change is detected. Note that the `allow_external_modification` flag can  also be passed when updating an access code or when converting an access code from unmanaged to managed.
+If you want to allow device owners to be able to edit access codes that you have created through the Seam API, set the `allow_external_modification` flag to `true` when creating an access code. This prevents Seam from overwriting any changes made by the device owner to the access code. Seam also sets `code_modified_external_to_seam` as a warning on the code, instead of an error, when a change is detected. Note that the `allow_external_modification` flag can also be passed when updating an access code or when converting an access code from unmanaged to managed.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -44,12 +43,12 @@ If you want to allow device owners to be able to edit access codes that you have
 **Request:**
 
 ```javascript
-const deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+const deviceId = '6aae9d08-fed6-4ca5-8328-e36849ab48fe'
 
 const createdAccessCode = await seam.accessCodes.create({
-    device_id: deviceId,
-    name: "my ongoing code",
-    allow_external_modification: true
+  device_id: deviceId,
+  name: 'my ongoing code',
+  allow_external_modification: true,
 })
 
 console.log(createdAccessCode)
@@ -59,23 +58,24 @@ console.log(createdAccessCode)
 
 ```json
 {
-  access_code_id: '38a569bb-40b9-4e42-97bd-bb78f8d96777',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'my ongoing code',
-  appearance: null,
-  code: '1525',
-  common_code_key: null,
-  type: 'ongoing',
-  status: 'setting',
-  pulled_backup_access_code_id: null,
-  is_backup_access_code_available: true,
-  created_at: '2023-10-19T11:22:45.732Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: true
+  "access_code_id": "38a569bb-40b9-4e42-97bd-bb78f8d96777",
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "my ongoing code",
+  "appearance": null,
+  "code": "1525",
+  "common_code_key": null,
+  "type": "ongoing",
+  "status": "setting",
+  "pulled_backup_access_code_id": null,
+  "is_backup_access_code_available": true,
+  "created_at": "2023-10-19T11:22:45.732Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "is_external_modification_allowed": true
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -126,6 +126,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -168,6 +169,7 @@ AccessCode(access_code_id='1d9fe873-3393-4b29-b93e-87fe7f923462',
            appearance=None,
            is_external_modification_allowed=True)
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -205,6 +207,7 @@ puts created_access_code.inspect
   is_backup_access_code_available=true
   is_external_modification_allowed=true>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -240,6 +243,7 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 //     "is_waiting_for_code_assignment": null
 // }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -264,8 +268,6 @@ Console.WriteLine("Allow external modification: " + createdAccessCode.IsExternal
 Created access code ID: 65f4a1d3-5f3a-45a4-a6b7-372c7f16c007
 Allow external modification: True
 ```
+
 </Tab>
 </Tabs>
-
-
-

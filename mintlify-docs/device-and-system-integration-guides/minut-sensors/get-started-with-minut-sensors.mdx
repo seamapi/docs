@@ -1,8 +1,7 @@
 ---
-title: "Get started with Minut Sensors"
-description: "Learn how to connect and control your Minut sensors with the Seam API"
+title: 'Get started with Minut Sensors'
+description: 'Learn how to connect and control your Minut sensors with the Seam API'
 ---
-
 
 ## Overview
 
@@ -12,11 +11,11 @@ Seam provides a universal API to connect and control many brands of devices such
 
 Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
-* Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
-* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+- JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+- Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
+- Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
+- PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+- C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
 
 <Tabs>
 <Tab title="JavaScript">
@@ -25,24 +24,14 @@ npm i seam
 ```
 </Tab>
 
-<Tab title="Python">
-```bash
-pip install seam
-# For some development environments, use pip3 in this command instead of pip.
-```
+<Tab title='Python'>
+  ```bash pip install seam # For some development environments, use pip3 in this
+  command instead of pip. ```
 </Tab>
 
-<Tab title="Ruby">
-```bash
-bundle add seam
-```
-</Tab>
+<Tab title='Ruby'>```bash bundle add seam ```</Tab>
 
-<Tab title="PHP">
-```bash
-composer require seamapi/seam
-```
-</Tab>
+<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
@@ -56,7 +45,9 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 <Info>
-This guide uses a Sandbox Workspace. Only virtual sensors can be connected. If you need to connect a real Minut sensor, use a non-sandbox workspace and API key.
+  This guide uses a Sandbox Workspace. Only virtual sensors can be connected. If
+  you need to connect a real Minut sensor, use a non-sandbox workspace and API
+  key.
 </Info>
 
 ## 2. Link Minut Account with Seam
@@ -89,8 +80,10 @@ webview = seam.connect_webviews.create(accepted_providers=["minut"])
 assert webview.login_successful is False
 
 # Send this webview url to your user!
+
 print(webview.url)
-```
+
+````
 </Tab>
 
 <Tab title="Ruby">
@@ -107,7 +100,8 @@ puts webview.login_successful # false
 
 # Send the webview URL to your user
 puts webview.url
-```
+````
+
 </Tab>
 
 <Tab title="PHP">
@@ -129,10 +123,15 @@ echo json_encode($webview)
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Minut [sandbox test accounts ](minut-noise-sensor-sample-data.md)credentials below:
 
-* **email**: jane@example.com
-* **password**: 1234
+- **email**: jane@example.com
+- **password**: 1234
 
-<figure><img src="/images/guides/minut-connect-flow-screens.jpg" alt="" /><figcaption><p>Seam Connect Webview flow to connect Minut account with Seam</p></figcaption></figure>
+<figure>
+  <img src='/images/guides/minut-connect-flow-screens.jpg' alt='' />
+  <figcaption>
+    <p>Seam Connect Webview flow to connect Minut account with Seam</p>
+  </figcaption>
+</figure>
 
 ### Get the New Webview
 
@@ -155,14 +154,16 @@ updated_webview = seam.connect_webviews.get(
 )
 
 assert updated_webview.login_successful # true
-```
+
+````
 </Tab>
 
 <Tab title="Ruby">
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 puts updated_webview.login_successful # true
-```
+````
+
 </Tab>
 
 <Tab title="PHP">
@@ -267,74 +268,142 @@ console.log(devices[0])
 sensors = seam.devices.list(device_type="minut_sensor")
 
 sensors[0]
+
 # Device(
-#   device_id='fd200f4b-3815-497a-8520-10725c597e0c',
-#   device_type='minut_sensor',
-#   location={
-#     'timezone': 'America/Los_Angeles',
-#     'location_name': "Jane's Test Home"
-#   },
-#   properties={
-#     'online': True,
-#     'manufacturer': 'minut',
-#     'battery_level': 0.5,
-#     'minut_metadata': {
-#       'home_id': 'f53026ff7c5e314521f285f9',
-#       'device_id': '5bb32b83525d243950a92ab8',
-#       'home_name': "Jane's Test Home",
-#       'device_name': 'Living Room',
-#       'home_address': {
-#         'city': 'San Francisco',
-#         'notes': 'string',
-#         'region': 'San Francisco County',
-#         'country': 'US',
-#         'post_code': '44210',
-#         'street_name1': '2258 24th Street',
-#         'street_name2': ''
-#       },
-#       'home_location': {
-#         'latitude': 0,
-#         'longitude': 0
-#       },
-#       'device_location': {
-#         'latitude': 0,
-#         'longitude': 0
-#       },
-#       'latest_sensor_values': {
-#         'sound': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 47.7117919921875
-#         },
-#         'humidity': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 31.110000610351562
-#         },
-#         'pressure': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 101923
-#         },
-#         'temperature': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': 21.270000457763672
-#         },
-#         'accelerometer_z': {
-#           'time': '1970-01-01T00:00:00.000Z',
-#           'value': -1.00390625
-#         }
-#       }
-#     },
-#     'name': 'Living Room',
-#     'battery': {
-#       'level': 0.5,
-#       'status': 'good'
-#     },
-#     'image_url': 'https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png',
-#     'image_alt_text': 'Minut Sensor'
-#   },
-#   capabilities_supported=['noise_detection'],
-#   errors=[]
+
+# device_id='fd200f4b-3815-497a-8520-10725c597e0c',
+
+# device_type='minut_sensor',
+
+# location={
+
+# 'timezone': 'America/Los_Angeles',
+
+# 'location_name': "Jane's Test Home"
+
+# },
+
+# properties={
+
+# 'online': True,
+
+# 'manufacturer': 'minut',
+
+# 'battery_level': 0.5,
+
+# 'minut_metadata': {
+
+# 'home_id': 'f53026ff7c5e314521f285f9',
+
+# 'device_id': '5bb32b83525d243950a92ab8',
+
+# 'home_name': "Jane's Test Home",
+
+# 'device_name': 'Living Room',
+
+# 'home_address': {
+
+# 'city': 'San Francisco',
+
+# 'notes': 'string',
+
+# 'region': 'San Francisco County',
+
+# 'country': 'US',
+
+# 'post_code': '44210',
+
+# 'street_name1': '2258 24th Street',
+
+# 'street_name2': ''
+
+# },
+
+# 'home_location': {
+
+# 'latitude': 0,
+
+# 'longitude': 0
+
+# },
+
+# 'device_location': {
+
+# 'latitude': 0,
+
+# 'longitude': 0
+
+# },
+
+# 'latest_sensor_values': {
+
+# 'sound': {
+
+# 'time': '1970-01-01T00:00:00.000Z',
+
+# 'value': 47.7117919921875
+
+# },
+
+# 'humidity': {
+
+# 'time': '1970-01-01T00:00:00.000Z',
+
+# 'value': 31.110000610351562
+
+# },
+
+# 'pressure': {
+
+# 'time': '1970-01-01T00:00:00.000Z',
+
+# 'value': 101923
+
+# },
+
+# 'temperature': {
+
+# 'time': '1970-01-01T00:00:00.000Z',
+
+# 'value': 21.270000457763672
+
+# },
+
+# 'accelerometer_z': {
+
+# 'time': '1970-01-01T00:00:00.000Z',
+
+# 'value': -1.00390625
+
+# }
+
+# }
+
+# },
+
+# 'name': 'Living Room',
+
+# 'battery': {
+
+# 'level': 0.5,
+
+# 'status': 'good'
+
+# },
+
+# 'image_url': 'https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png',
+
+# 'image_alt_text': 'Minut Sensor'
+
+# },
+
+# capabilities_supported=['noise_detection'],
+
+# errors=[]
+
 # )
-```
+
+````
 </Tab>
 
 <Tab title="Ruby">
@@ -405,7 +474,8 @@ seam.devices.list(
 #   created_at=2023-05-08 17:01:45.79 UTC
 #   errors=[]
 #   warnings=[]>
-```
+````
+
 </Tab>
 
 <Tab title="PHP">
@@ -500,11 +570,11 @@ You'll get an event for `noise_threshold.noise_threshold_triggered` when you set
 <Info>
 Minut has a builtin threshold that can be triggered multiple times. Each Minut notice will trigger a `noise_threshold_triggered` event with the `minut_metadata.event_name` containing the Minut event name, which can be any of the following:
 
-* `disturbance_first_notice`
-* `disturbance_second_notice`
-* `disturbance_third_notice`
-* `disturbance_ended`
-</Info>
+- `disturbance_first_notice`
+- `disturbance_second_notice`
+- `disturbance_third_notice`
+- `disturbance_ended`
+  </Info>
 
 <Tabs>
 <Tab title="JavaScript">
@@ -544,7 +614,7 @@ def endpoint():
     #    created_at: "2023-03-14T05:00:35.451Z"
     # }
 
-```
+````
 </Tab>
 
 <Tab title="Ruby">
@@ -568,7 +638,8 @@ post '/my_webhook_endpoint' do
   #   }
   # }
 end
-```
+````
+
 </Tab>
 
 <Tab title="PHP">

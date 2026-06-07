@@ -1,5 +1,5 @@
 ---
-title: "List Connect Webviews"
+title: 'List Connect Webviews'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "List Connect Webviews"
 - [Examples](#examples)
 
 Returns a list of all [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,9 +17,9 @@ Returns a list of all Connect Webviews for a specified customer ID.
 
 ```javascript
 await seam.connectWebviews.list({
-  customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
+  customer_ids: ['e387e15f-be27-47ad-881f-4a6fc5460c57'],
   limit: 50,
-});
+})
 ```
 
 #### Output:
@@ -49,6 +48,7 @@ await seam.connectWebviews.list({
   "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -98,6 +98,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -138,6 +139,7 @@ ConnectWebview(
     workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -179,6 +181,7 @@ seam.connect_webviews.list(customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"
   "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -221,6 +224,7 @@ $seam->connect_webviews->list(
     "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -259,10 +263,10 @@ seam connect-webviews list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c57
   "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -271,49 +275,50 @@ seam connect-webviews list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c57
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`custom_metadata_has`** *Object*
+**`custom_metadata_has`** _Object_
 
 Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.
 
 ---
 
-**`customer_key`** *String*
+**`customer_key`** _String_
 
 Customer key for which you want to list connect webviews.
 
 ---
 
-**`limit`** *Number*
+**`limit`** _Number_
 
 Maximum number of records to return per page.
 
 ---
 
-**`page_cursor`** *String*
+**`page_cursor`** _String_
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`search`** *String*
+**`search`** _String_
 
 String for which to search. Filters returned Connect Webviews to include all records that satisfy a partial match using `connect_webview_id`, `accepted_providers`, `custom_metadata`, or `customer_key`.
 
 ---
 
-**`user_identifier_key`** *String*
+**`user_identifier_key`** _String_
 
 Your user ID for the user by which you want to filter Connect Webviews.
 
 ---
-
 
 ## Response
 
@@ -323,11 +328,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -353,13 +355,13 @@ Returns:
   "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### List Connect Webviews for a user identifier key
 
@@ -368,15 +370,13 @@ Returns a list of all Connect Webviews for a specified user identifier key.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.connectWebviews.list({
-  user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b19597",
+  user_identifier_key: '7bf74090-25cc-4235-a2f8-aea277b19597',
   limit: 50,
-});
+})
 ```
 
 #### Output:
@@ -405,11 +405,10 @@ await seam.connectWebviews.list({
   "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -452,11 +451,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -492,11 +490,10 @@ ConnectWebview(
     workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -533,11 +530,10 @@ seam.connect_webviews.list(user_identifier_key: "7bf74090-25cc-4235-a2f8-aea277b
   "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -575,11 +571,10 @@ $seam->connect_webviews->list(
     "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -613,12 +608,12 @@ seam connect-webviews list --user_identifier_key "7bf74090-25cc-4235-a2f8-aea277
   "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
 }
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List Connect Webviews with specific custom metadata
 
@@ -627,15 +622,13 @@ Returns a list of all Connect Webviews containing specified custom metadata.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.connectWebviews.list({
-  custom_metadata_has: { id: "internalId1" },
+  custom_metadata_has: { id: 'internalId1' },
   limit: 50,
-});
+})
 ```
 
 #### Output:
@@ -664,11 +657,10 @@ await seam.connectWebviews.list({
   "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -713,11 +705,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -751,11 +742,10 @@ ConnectWebview(
     workspace_id="9db95105-e77d-4577-b1b7-0a20b360d5e0",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -792,11 +782,10 @@ seam.connect_webviews.list(custom_metadata_has: { id: "internalId1" }, limit: 50
   "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -834,11 +823,10 @@ $seam->connect_webviews->list(
     "workspace_id" => "9db95105-e77d-4577-b1b7-0a20b360d5e0",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -872,6 +860,7 @@ seam connect-webviews list --custom_metadata_has {"id":"internalId1"} --limit 50
   "workspace_id": "9db95105-e77d-4577-b1b7-0a20b360d5e0"
 }
 ```
+
 </Tab>
 
 </Tabs>

@@ -1,8 +1,7 @@
 ---
-title: "Locking and Unlocking Smart Locks"
+title: 'Locking and Unlocking Smart Locks'
 description: "Learn how to lock and unlock a smart lock, and confirm the action's success."
 ---
-
 
 ## Overview
 
@@ -14,14 +13,14 @@ To ensure that the action has been successfully executed, we advise checking the
 
 Some providers and device models cannot confirm whether the physical lock or unlock happened in a reasonable time or at all. In those cases, a successful action attempt can still include `action_attempt.result.was_confirmed_by_device = false`.
 
-***
+---
 
 ## Before You Begin: Confirm Capabilities
 
 Before you attempt to lock or unlock a device, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
-* `device.can_remotely_lock`
-* `device.can_remotely_unlock`
+- `device.can_remotely_lock`
+- `device.can_remotely_unlock`
 
 Use [Get Device](https://docs.seam.co/latest/api/devices/get) for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to lock or unlock the device.
 
@@ -33,7 +32,7 @@ If either of these capability flags is `false` or not present, you can view the 
 **Request:**
 
 ```javascript
-await seam.devices.get("11111111-1111-1111-1111-444444444444")
+await seam.devices.get('11111111-1111-1111-1111-444444444444')
 ```
 
 **Response:**
@@ -46,6 +45,7 @@ await seam.devices.get("11111111-1111-1111-1111-444444444444")
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -77,6 +77,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -97,6 +98,7 @@ Device(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -118,6 +120,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
     ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -138,6 +141,7 @@ $seam->devices->get("11111111-1111-1111-1111-444444444444");
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -158,10 +162,11 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Locking a Door
 
@@ -175,31 +180,32 @@ You can lock a door using the [`lock_door`](https://docs.seam.co/latest/api/lock
 ```javascript
 // Get the device.
 const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+  device_id: '11111111-1111-1111-1111-444444444444',
+})
 
 // Confirm that the device can remotely lock.
 if (device.can_remotely_lock) {
   // Perform the lock operation.
   await seam.locks.lockDoor({
-    device_id: device.device_id
+    device_id: device.device_id,
   })
-};
+}
 ```
 
 **Response:**
 
 ```json
 {
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'LOCK_DOOR',
-    result: {},
-    error: null
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "LOCK_DOOR",
+    "result": {},
+    "error": null
   }
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -238,15 +244,16 @@ fi
 ```json
 {
   "action_attempt": {
-    "status":"pending",
-    "action_type":"LOCK_DOOR",
-    "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-    "result":null,
-    "error":null
+    "status": "pending",
+    "action_type": "LOCK_DOOR",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "result": null,
+    "error": null
   },
-  "ok":true
+  "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -274,6 +281,7 @@ ActionAttempt(status='pending',
               result=None,
               error={})
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -300,6 +308,7 @@ end
   action_attempt_id="11111111-2222-3333-4444-555555555555"
   result=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -321,13 +330,14 @@ if ($device->can_remotely_lock) {
 
 ```json
 {
-  "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-  "action_type":"LOCK_DOOR",
-  "error":null,
-  "result":{},
-  "status":"success"
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "LOCK_DOOR",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -354,14 +364,15 @@ if (device.CanRemotelyLock == true) {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555"
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Unlocking a Door
 
-You can unlock a door using the [unlock\_door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
+You can unlock a door using the [unlock_door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](lock-and-unlock.md#verifying-the-success-of-a-lock-or-unlock-action).
 
 <Tabs>
 <Tab title="JavaScript">
@@ -371,33 +382,34 @@ You can unlock a door using the [unlock\_door](https://docs.seam.co/latest/api/l
 ```javascript
 // Get the device.
 const device = await seam.devices.get({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+  device_id: '11111111-1111-1111-1111-444444444444',
+})
 
 // Confirm that the device can remotely unlock.
 if (device.can_remotely_unlock) {
   // Perform the unlock operation.
   await seam.locks.unlockDoor({
-    device_id: device.device_id
+    device_id: device.device_id,
   })
-};
+}
 ```
 
 **Response:**
 
 ```json
 {
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'UNLOCK_DOOR',
-    result: {
-      was_confirmed_by_device: false
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "UNLOCK_DOOR",
+    "result": {
+      "was_confirmed_by_device": false
     },
-    error: null
+    "error": null
   }
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -436,15 +448,16 @@ fi
 ```json
 {
   "action_attempt": {
-    "status":"pending",
-    "action_type":"UNLOCK_DOOR",
-    "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-    "result":null,
-    "error":null
+    "status": "pending",
+    "action_type": "UNLOCK_DOOR",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "result": null,
+    "error": null
   },
-  "ok":true
+  "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -472,6 +485,7 @@ ActionAttempt(status='pending',
               result=None,
               error={})
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -498,6 +512,7 @@ end
   action_attempt_id="11111111-2222-3333-4444-555555555555"
   result=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -519,15 +534,16 @@ if ($device->can_remotely_unlock) {
 
 ```json
 {
-  "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-  "action_type":"UNLOCK_DOOR",
-  "error":null,
-  "result":{
-    "was_confirmed_by_device":false
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "UNLOCK_DOOR",
+  "error": null,
+  "result": {
+    "was_confirmed_by_device": false
   },
-  "status":"success"
+  "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -554,10 +570,11 @@ if (device.CanRemotelyUnlock == true) {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555"
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Verifying the Success of a Lock or Unlock Action
 
@@ -572,23 +589,24 @@ When initiating a lock or unlock action, the Seam API returns an action attempt,
 
 ```javascript
 await seam.locks.lockDoor({
-  device_id: "11111111-1111-1111-1111-444444444444"
-});
+  device_id: '11111111-1111-1111-1111-444444444444',
+})
 ```
 
 **Response:**
 
 ```json
 {
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'LOCK_DOOR',
-    result: {},
-    error: null
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "LOCK_DOOR",
+    "result": {},
+    "error": null
   }
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -611,15 +629,16 @@ curl -X 'POST' \
 ```json
 {
   "action_attempt": {
-    "status":"pending",
-    "action_type":"LOCK_DOOR",
-    "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-    "result":null,
-    "error":null
+    "status": "pending",
+    "action_type": "LOCK_DOOR",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "result": null,
+    "error": null
   },
-  "ok":true
+  "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -639,6 +658,7 @@ ActionAttempt(status='pending',
               result=None,
               error={})
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -658,6 +678,7 @@ client.locks.lock_door(device_id: "11111111-1111-1111-1111-444444444444")
   action_attempt_id="11111111-2222-3333-4444-555555555555"
   result=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -672,13 +693,14 @@ $seam->locks->lock_door(device_id: "11111111-1111-1111-1111-444444444444");
 
 ```json
 {
-  "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-  "action_type":"LOCK_DOOR",
-  "error":null,
-  "result":{},
-  "status":"success"
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "LOCK_DOOR",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -698,6 +720,7 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
   "action_attempt_id": "11111111-2222-3333-4444-555555555555"
 }
 ```
+
 </Tab>
 </Tabs>
 
@@ -706,7 +729,11 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 Use the `action_attempt_id` from the prior response to make a [Get Action Attempt request](https://docs.seam.co/latest/api/action_attempts/get). When the action attempt's `status` changes to `success`, it indicates the action has been successful.
 
 <Info>
-Some providers and device models do not confirm whether a lock or unlock completed on the physical device. In those cases, the action attempt can still succeed while `action_attempt.result.was_confirmed_by_device` is `false`. Use this property to set the right expectation in your UI, especially for unlock flows.
+  Some providers and device models do not confirm whether a lock or unlock
+  completed on the physical device. In those cases, the action attempt can still
+  succeed while `action_attempt.result.was_confirmed_by_device` is `false`. Use
+  this property to set the right expectation in your UI, especially for unlock
+  flows.
 </Info>
 
 <Tabs>
@@ -715,22 +742,25 @@ Some providers and device models do not confirm whether a lock or unlock complet
 **Request:**
 
 ```javascript
-await seam.actionAttempts.get({action_attempt_id: "11111111-2222-3333-4444-555555555555"});
+await seam.actionAttempts.get({
+  action_attempt_id: '11111111-2222-3333-4444-555555555555',
+})
 ```
 
 **Response:**
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555',
-  action_type: 'LOCK_DOOR',
-  result: {
-    was_confirmed_by_device: true
+  "status": "success",
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "LOCK_DOOR",
+  "result": {
+    "was_confirmed_by_device": true
   },
-  error: null
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -765,6 +795,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -784,6 +815,7 @@ ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
               result={'was_confirmed_by_device': True},
               error=None)
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -803,6 +835,7 @@ client.action_attempts.get(action_attempt_id: "11111111-2222-3333-4444-555555555
   action_type="LOCK_DOOR"
   result={"was_confirmed_by_device"=>true}>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -817,15 +850,16 @@ $seam->action_attempts->get(action_attempt_id: "11111111-2222-3333-4444-55555555
 
 ```json
 {
-  "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-  "action_type":"LOCK_DOOR",
-  "error":null,
-  "result":{
-    "was_confirmed_by_device":true
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "LOCK_DOOR",
+  "error": null,
+  "result": {
+    "was_confirmed_by_device": true
   },
-  "status":"success"
+  "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -849,10 +883,11 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
   "error": null
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Checking the Locked Status of a Lock
 
@@ -864,7 +899,7 @@ To retrieve the locked status of a specific door lock, use the [Get Device](http
 **Request:**
 
 ```javascript
-await seam.devices.get("11111111-1111-1111-1111-444444444444")
+await seam.devices.get('11111111-1111-1111-1111-444444444444')
 ```
 
 **Response:**
@@ -879,6 +914,7 @@ await seam.devices.get("11111111-1111-1111-1111-444444444444")
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -912,6 +948,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -934,6 +971,7 @@ Device(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -956,6 +994,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -978,6 +1017,7 @@ $seam->devices->get("11111111-1111-1111-1111-444444444444");
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1000,10 +1040,11 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Lock and Unlock Events
 

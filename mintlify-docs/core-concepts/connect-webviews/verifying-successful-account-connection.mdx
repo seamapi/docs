@@ -1,19 +1,19 @@
 ---
-title: "Verifying Successful Account Connection"
+title: 'Verifying Successful Account Connection'
 description: "Learn how to find out when your user's device or ACS account has connected successfully to Seam."
 ---
 
-
 Use one of the following methods to find out when your user's account has connected successfully to Seam through your app:
 
-* If you've redirected your app to the Connect Webview, [poll](verifying-successful-account-connection.md#polling) or use a [webhook](verifying-successful-account-connection.md#webhook) to determine when the Connect Webview has completed successfully. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
-* If you've embedded the Connect Webview in an [iframe](https://www.w3schools.com/html/html_iframe.asp), use [event listening](verifying-successful-account-connection.md#event-listening) to determine when to close the iframe. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
+- If you've redirected your app to the Connect Webview, [poll](verifying-successful-account-connection.md#polling) or use a [webhook](verifying-successful-account-connection.md#webhook) to determine when the Connect Webview has completed successfully. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
+- If you've embedded the Connect Webview in an [iframe](https://www.w3schools.com/html/html_iframe.asp), use [event listening](verifying-successful-account-connection.md#event-listening) to determine when to close the iframe. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
 
 <Info>
-You do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.
+  You do not need to delete a Connect Webview once a user completes it. Instead,
+  you can simply ignore completed Connect Webviews.
 </Info>
 
-***
+---
 
 ## Polling
 
@@ -33,8 +33,8 @@ Also, once the connection is successful, the `connect_webview` object includes a
 
 ```javascript
 const updatedConnectWebview = await seam.connectWebviews.get({
-  connect_webview_id: connectWebview.connect_webview_id
-});
+  connect_webview_id: connectWebview.connect_webview_id,
+})
 ```
 
 **Output:**
@@ -48,6 +48,7 @@ const updatedConnectWebview = await seam.connectWebviews.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -79,6 +80,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -100,6 +102,7 @@ ConnectWebview(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -124,6 +127,7 @@ updated_connect_webview = seam.connect_webviews.get(
     ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -147,6 +151,7 @@ $updated_connect_webview = $seam->connect_webviews->get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -170,10 +175,11 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## **Webhook**
 
@@ -196,7 +202,7 @@ For more information, see [Webhooks](../../developer-tools/webhooks.md).
 }
 ```
 
-***
+---
 
 ## **Event Listening**
 
@@ -208,26 +214,26 @@ For example:
 
 ```javascript
 window.addEventListener(
-  "message",
+  'message',
   (event) => {
-    if (event.data?.event?.event_type === "connect_webview.login_succeeded") {
+    if (event.data?.event?.event_type === 'connect_webview.login_succeeded') {
       // Do something.
     }
   },
-  false
-);
+  false,
+)
 ```
 
-***
+---
 
 ## Additional Connection-Related Events
 
 Once you have received a `connect_webview.login_succeeded` event, you can use webhooks or listen for any of the following useful connection-related events:
 
-| Event                                    | Description                                                                                                                                                                                                                                                                                                              |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `connected_account.created`              | A [connected account](../connected-accounts/) has been imported into your Seam workspace.                                                                                                                                                                                                                                |
-| `connected_account.connected`            | Seam has established connection to or is reconnected to a [connected account](../connected-accounts/).                                                                                                                                                                                                                   |
-| `connected_account.completed_first_sync` | Seam has finished the first sync of a connected account, and the corresponding devices or systems are now available.                                                                                                                                                                                                     |
-| `device.added`                           | A device was added to Seam or was re-added to Seam after having been removed.                                                                                                                                                                                                                                            |
+| Event                                    | Description                                                                                                                                                                                                                                                                                                                |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `connected_account.created`              | A [connected account](../connected-accounts/) has been imported into your Seam workspace.                                                                                                                                                                                                                                  |
+| `connected_account.connected`            | Seam has established connection to or is reconnected to a [connected account](../connected-accounts/).                                                                                                                                                                                                                     |
+| `connected_account.completed_first_sync` | Seam has finished the first sync of a connected account, and the corresponding devices or systems are now available.                                                                                                                                                                                                       |
+| `device.added`                           | A device was added to Seam or was re-added to Seam after having been removed.                                                                                                                                                                                                                                              |
 | `device.connected`                       | <p>The status of a device changed from offline to online. That is, the <code>device.properties.online</code> property changed from <code>false</code> to <code>true</code>.<br />Note that some devices operate entirely in offline mode, so Seam never emits a <code>device.connected</code> event for these devices.</p> |

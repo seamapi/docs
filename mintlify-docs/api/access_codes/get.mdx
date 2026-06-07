@@ -1,5 +1,5 @@
 ---
-title: "Get an Access Code"
+title: 'Get an Access Code'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -8,7 +8,6 @@ title: "Get an Access Code"
 Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 You must specify either `access_code_id` or both `device_id` and `code`.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -19,8 +18,8 @@ Returns a specified access code.
 
 ```javascript
 await seam.accessCodes.get({
-  access_code_id: "90a114dc-48b5-4b8b-a3d3-972344594401",
-});
+  access_code_id: '90a114dc-48b5-4b8b-a3d3-972344594401',
+})
 ```
 
 #### Output:
@@ -51,6 +50,7 @@ await seam.accessCodes.get({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -99,6 +99,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -139,6 +140,7 @@ AccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -179,6 +181,7 @@ seam.access_codes.get(access_code_id: "90a114dc-48b5-4b8b-a3d3-972344594401")
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -221,6 +224,7 @@ $seam->access_codes->get(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -261,10 +265,10 @@ seam access-codes get --access_code_id "90a114dc-48b5-4b8b-a3d3-972344594401"
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -274,28 +278,28 @@ seam access-codes get --access_code_id "90a114dc-48b5-4b8b-a3d3-972344594401"
 - Client session token
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_code_id`** *String*
+**`access_code_id`** _String_
 
 ID of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`code`** *String*
+**`code`** _String_
 
 Code of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`device_id`** *String*
+**`device_id`** _String_
 
 ID of the device containing the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
-
 
 ## Response
 
@@ -305,11 +309,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -338,5 +339,6 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 </Tabs>

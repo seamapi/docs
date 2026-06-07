@@ -1,13 +1,14 @@
 ---
-title: "Adding Custom Metadata to a Connected Account"
-description: "You can add or change custom metadata for a connected account."
+title: 'Adding Custom Metadata to a Connected Account'
+description: 'You can add or change custom metadata for a connected account.'
 ---
-
 
 You can use custom metadata to store a custom payload or object, tailored to the specific needs of your app. For example, this feature is useful for tracking customer information, internal user IDs, or other internal resources for a [connected account](./). Storing custom metadata in a Seam `connected_account` object enables you to look up an internal resource from directly within your Seam [workspace](../workspaces/). Then, you can [filter connected accounts by the desired metadata](filtering-connected-accounts-by-custom-metadata.md).
 
 <Info>
-You can also use unique resource keys as an easy way to link your resources to Seam resources. For details, see [Mapping Your Resources to Seam Resources](../mapping-your-resources-to-seam-resources.md).
+  You can also use unique resource keys as an easy way to link your resources to
+  Seam resources. For details, see [Mapping Your Resources to Seam
+  Resources](../mapping-your-resources-to-seam-resources.md).
 </Info>
 
 If the associated [Connect Webview](../connect-webviews/) contains custom metadata, Seam transfers this custom metadata as the initial value for this property. However, you can use the [Update Connected Account](https://docs.seam.co/latest/api/connected_accounts/update) method with the optional `custom_metadata` property to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
@@ -19,10 +20,10 @@ If the associated [Connect Webview](../connect-webviews/) contains custom metada
 
 ```javascript
 const connectedAccountUpdate = await seam.connectedAccounts.update({
-  connected_account_id: "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
+  connected_account_id: '6e1cad57-b244-40ca-b4f3-30a46c8000d4',
   custom_metadata: {
-    "internal_account_id": "user-1"
-  }
+    internal_account_id: 'user-1',
+  },
 })
 
 console.log(connectedAccountUpdate)
@@ -31,8 +32,9 @@ console.log(connectedAccountUpdate)
 **Response:**
 
 ```json
-{ ok: true }
+{ "ok": true }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -60,6 +62,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -82,6 +85,7 @@ pprint(connected_account_update)
 ```
 True
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -104,6 +108,7 @@ puts connected_account_update.inspect
 ```
 {"ok"=>true}
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -123,6 +128,7 @@ echo json_encode($connected_account_update, JSON_PRETTY_PRINT);
 ```json
 true
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -157,5 +163,6 @@ Console.WriteLine(connectedAccountUpdate);
   "automatically_manage_new_devices": true
 }
 ```
+
 </Tab>
 </Tabs>

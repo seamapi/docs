@@ -1,12 +1,11 @@
 ---
-title: "Get an ACS System"
+title: 'Get an ACS System'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [access system](https://docs.seam.co/latest/capability-guides/access-systems).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Returns a specified access system.
 
 ```javascript
 await seam.acs.systems.get({
-  acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907",
-});
+  acs_system_id: '4720a2ac-59b5-4e55-96fc-52b3cbe95907',
+})
 ```
 
 #### Output:
@@ -44,6 +43,7 @@ await seam.acs.systems.get({
   "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -87,6 +87,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -122,6 +123,7 @@ AcsSystem(
     workspace_id="172920be-1f4d-45d4-8519-ecc3bdee638f",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -160,6 +162,7 @@ seam.acs.systems.get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907")
   "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -197,6 +200,7 @@ $seam->acs->systems->get(acs_system_id: "4720a2ac-59b5-4e55-96fc-52b3cbe95907");
     "workspace_id" => "172920be-1f4d-45d4-8519-ecc3bdee638f",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -232,10 +236,10 @@ seam acs systems get --acs_system_id "4720a2ac-59b5-4e55-96fc-52b3cbe95907"
   "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -243,19 +247,20 @@ seam acs systems get --acs_system_id "4720a2ac-59b5-4e55-96fc-52b3cbe95907"
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_system_id`** *String* (Required)
+**`acs_system_id`** _String_ (Required)
 
 ID of the access system that you want to get.
 
 ---
-
 
 ## Response
 
@@ -265,11 +270,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -292,5 +294,6 @@ Returns:
   "workspace_id": "172920be-1f4d-45d4-8519-ecc3bdee638f"
 }
 ```
+
 </Tab>
 </Tabs>

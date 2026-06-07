@@ -1,12 +1,11 @@
 ---
-title: "List Unmanaged Access Codes"
+title: 'List Unmanaged Access Codes'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,31 +16,32 @@ Returns a list of all unmanaged access codes.
 
 ```javascript
 await seam.accessCodes.unmanaged.list({
-  device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
-});
+  device_id: 'd885a24c-5741-49b1-85dc-ff6d5cf2f1b1',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "access_code_id": "88fa1812-bef8-4108-9fb4-4855376c3edf",
-    "code": "1234",
-    "created_at": "2025-06-16T16:54:17.946283Z",
-    "device_id": "d885a24c-5741-49b1-85dc-ff6d5cf2f1b1",
-    "ends_at": "2025-06-23T16:54:17.946261Z",
-    "errors": [],
-    "is_managed": false,
-    "name": "My Unmanaged Access Code",
-    "starts_at": "2025-06-21T16:54:17.946261Z",
-    "status": "set",
-    "type": "time_bound",
-    "warnings": [],
-    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
-  }
+    access_code_id: '88fa1812-bef8-4108-9fb4-4855376c3edf',
+    code: '1234',
+    created_at: '2025-06-16T16:54:17.946283Z',
+    device_id: 'd885a24c-5741-49b1-85dc-ff6d5cf2f1b1',
+    ends_at: '2025-06-23T16:54:17.946261Z',
+    errors: [],
+    is_managed: false,
+    name: 'My Unmanaged Access Code',
+    starts_at: '2025-06-21T16:54:17.946261Z',
+    status: 'set',
+    type: 'time_bound',
+    warnings: [],
+    workspace_id: '750fc0bc-4450-4356-8d9f-18c6a3a6b2c7',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -83,6 +83,7 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -116,6 +117,7 @@ seam.access_codes.unmanaged.list(device_id="d885a24c-5741-49b1-85dc-ff6d5cf2f1b1
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -149,6 +151,7 @@ seam.access_codes.unmanaged.list(device_id: "d885a24c-5741-49b1-85dc-ff6d5cf2f1b
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -184,6 +187,7 @@ $seam->access_codes->unmanaged->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -217,10 +221,10 @@ seam access-codes unmanaged list --device_id "d885a24c-5741-49b1-85dc-ff6d5cf2f1
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -229,43 +233,44 @@ seam access-codes unmanaged list --device_id "d885a24c-5741-49b1-85dc-ff6d5cf2f1
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the device for which you want to list unmanaged access codes.
 
 ---
 
-**`limit`** *Number*
+**`limit`** _Number_
 
 Numerical limit on the number of unmanaged access codes to return.
 
 ---
 
-**`page_cursor`** *String*
+**`page_cursor`** _String_
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`search`** *String*
+**`search`** _String_
 
 String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.
 
 ---
 
-**`user_identifier_key`** *String*
+**`user_identifier_key`** _String_
 
 Your user ID for the user by which to filter unmanaged access codes.
 
 ---
-
 
 ## Response
 
@@ -275,11 +280,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -298,5 +300,6 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 </Tabs>

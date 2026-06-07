@@ -1,5 +1,5 @@
 ---
-title: "Report Provider Metadata"
+title: 'Report Provider Metadata'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,27 +7,33 @@ title: "Report Provider Metadata"
 
 Updates provider-specific metadata for devices.
 
-
 <details>
 
 <summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`devices`** *Array* *of Objects* (Required)
+**`devices`** _Array_ _of Objects_ (Required)
 
 Array of devices with provider metadata to update
 
 <details>
 
-<summary><b><code>device_id</code></b> <i>UUID</i></summary>
+<summary>
+  <b>
+    <code>device_id</code>
+  </b>{' '}
+  <i>UUID</i>
+</summary>
 
 ID of the device to update
 
@@ -35,11 +41,14 @@ ID of the device to update
 
 ---
 
-
-
 <details>
 
-<summary><b><code>schlage_metadata</code></b> <i>Object</i></summary>
+<summary>
+  <b>
+    <code>schlage_metadata</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
 
 Schlage-specific metadata to update
 
@@ -47,11 +56,14 @@ Schlage-specific metadata to update
 
 ---
 
-
-
 <details>
 
-<summary><b><code>schlage_metadata.time_zone</code></b> <i>Enum</i></summary>
+<summary>
+  <b>
+    <code>schlage_metadata.time_zone</code>
+  </b>{' '}
+  <i>Enum</i>
+</summary>
 
 IANA timezone for the Schlage device
 
@@ -491,11 +503,14 @@ Enum values:
 
 ---
 
-
-
 <details>
 
-<summary><b><code>ultraloq_metadata</code></b> <i>Object</i></summary>
+<summary>
+  <b>
+    <code>ultraloq_metadata</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
 
 Ultraloq-specific metadata to update
 
@@ -503,11 +518,14 @@ Ultraloq-specific metadata to update
 
 ---
 
-
-
 <details>
 
-<summary><b><code>ultraloq_metadata.time_zone</code></b> <i>Enum</i></summary>
+<summary>
+  <b>
+    <code>ultraloq_metadata.time_zone</code>
+  </b>{' '}
+  <i>Enum</i>
+</summary>
 
 IANA timezone for the Ultraloq device
 
@@ -947,8 +965,6 @@ Enum values:
 
 ---
 
-
-
 ## Response
 
 <Check>
@@ -956,4 +972,3 @@ Returns:
 **void**
 
 </Check>
-

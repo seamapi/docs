@@ -1,12 +1,11 @@
 ---
-title: "Get an Action Attempt"
+title: 'Get an Action Attempt'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Returns a specified action attempt.
 
 ```javascript
 await seam.actionAttempts.get({
-  action_attempt_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
-});
+  action_attempt_id: '5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f',
+})
 ```
 
 #### Output:
@@ -32,6 +31,7 @@ await seam.actionAttempts.get({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -63,6 +63,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -86,6 +87,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -111,6 +113,7 @@ seam.action_attempts.get(action_attempt_id: "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -136,6 +139,7 @@ $seam->action_attempts->get(
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -159,10 +163,10 @@ seam action-attempts get --action_attempt_id "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -171,19 +175,20 @@ seam action-attempts get --action_attempt_id "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`action_attempt_id`** *String* (Required)
+**`action_attempt_id`** _String_ (Required)
 
 ID of the action attempt that you want to get.
 
 ---
-
 
 ## Response
 
@@ -192,4 +197,3 @@ Returns:
 **[action\_attempt](./)**
 
 </Check>
-

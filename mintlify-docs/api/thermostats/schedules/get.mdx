@@ -1,12 +1,11 @@
 ---
-title: "Get a Thermostat Schedule"
+title: 'Get a Thermostat Schedule'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Returns a specified thermostat schedule.
 
 ```javascript
 await seam.thermostats.schedules.get({
-  thermostat_schedule_id: "408f3f85-11ae-4111-bec1-0f2408a2b218",
-});
+  thermostat_schedule_id: '408f3f85-11ae-4111-bec1-0f2408a2b218',
+})
 ```
 
 #### Output:
@@ -38,6 +37,7 @@ await seam.thermostats.schedules.get({
   "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -75,6 +75,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -106,6 +107,7 @@ ThermostatSchedule(
     workspace_id="58419b36-6103-44e5-aa83-2163e90cce01",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -135,6 +137,7 @@ seam.thermostats.schedules.get(thermostat_schedule_id: "408f3f85-11ae-4111-bec1-
   "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -166,6 +169,7 @@ $seam->thermostats->schedules->get(
     "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -195,10 +199,10 @@ seam thermostats schedules get --thermostat_schedule_id "408f3f85-11ae-4111-bec1
   "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -207,19 +211,20 @@ seam thermostats schedules get --thermostat_schedule_id "408f3f85-11ae-4111-bec1
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`thermostat_schedule_id`** *String* (Required)
+**`thermostat_schedule_id`** _String_ (Required)
 
 ID of the thermostat schedule that you want to get.
 
 ---
-
 
 ## Response
 
@@ -229,11 +234,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -250,5 +252,6 @@ Returns:
   "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
+
 </Tab>
 </Tabs>

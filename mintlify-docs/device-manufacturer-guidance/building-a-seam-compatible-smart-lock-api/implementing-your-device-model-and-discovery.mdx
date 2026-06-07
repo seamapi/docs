@@ -1,12 +1,11 @@
 ---
-title: "Implementing your Device Model & Discovery"
-description: "How to structure your device schema and expose the endpoints Seam uses to list and sync a user’s locks."
+title: 'Implementing your Device Model & Discovery'
+description: 'How to structure your device schema and expose the endpoints Seam uses to list and sync a user’s locks.'
 ---
-
 
 A clean, predictable device model helps Seam present accurate information to end users and orchestrate smart-lock behavior across hospitality, multifamily, STR, and coworking environments. The fields listed below form the baseline for a Seam-compatible integration.
 
-***
+---
 
 ### Device Object Schema
 
@@ -14,17 +13,17 @@ Your API should expose a device resource with a stable, predictable structure. T
 
 A typical device object includes:
 
-* `device_id`: unique, stable identifier
-* `device_type`: smart\_lock, hub, or bridge
-* `device_model`: hardware model identifier
-* `online`: whether your cloud can reach the device
-* `battery_level`: percentage 0–100
-* `signal_quality`: optional, recommended
-* `location`: latitude/longitude if available
-* `timezone`: IANA timezone string
-* `bridge_id`: parent hub/bridge if applicable
-* `lock_state`: locked, unlocked, or unknown
-* `door_state`: open, closed, or ajar (if supported)
+- `device_id`: unique, stable identifier
+- `device_type`: smart_lock, hub, or bridge
+- `device_model`: hardware model identifier
+- `online`: whether your cloud can reach the device
+- `battery_level`: percentage 0–100
+- `signal_quality`: optional, recommended
+- `location`: latitude/longitude if available
+- `timezone`: IANA timezone string
+- `bridge_id`: parent hub/bridge if applicable
+- `lock_state`: locked, unlocked, or unknown
+- `door_state`: open, closed, or ajar (if supported)
 
 #### Device example
 
@@ -46,7 +45,7 @@ A typical device object includes:
 }
 ```
 
-***
+---
 
 ### Listing door locks
 
@@ -75,7 +74,7 @@ After a lock owner logs in through OAuth, Seam lists all locks associated with t
 }
 ```
 
-***
+---
 
 ### Getting a single lock
 
@@ -94,15 +93,15 @@ Seam may request information about a specific lock to display full details or pe
 }
 ```
 
-***
+---
 
 ### Connectivity reporting
 
 To keep device state fresh, your platform should send webhook events whenever connectivity changes.
 
-* Send an event when the device goes offline
-* Send another when it comes back online
-* Report hub or bridge status separately
+- Send an event when the device goes offline
+- Send another when it comes back online
+- Report hub or bridge status separately
 
 #### Online event example
 
@@ -124,11 +123,9 @@ To keep device state fresh, your platform should send webhook events whenever co
 }
 ```
 
-***
+---
 
 ### Power & battery reporting
-
-
 
 Your API should report battery percentage and emit events when power levels change.
 
@@ -162,7 +159,7 @@ Your API should report battery percentage and emit events when power levels chan
 }
 ```
 
-***
+---
 
 ### Time & timezone reporting
 
@@ -170,8 +167,8 @@ Accurate time lets Seam validate access-code schedules and align audit logs. Acc
 
 #### Required fields
 
-* `device_time`: the current time reported by the device
-* `timezone`: an IANA timezone string
+- `device_time`: the current time reported by the device
+- `timezone`: an IANA timezone string
 
 #### Device-time example
 
@@ -190,7 +187,6 @@ Seam compares `device_time` with server time to detect clock drift and identify 
 
 If scheduling is evaluated on-device, the reported device time and timezone must be kept accurate and updated reliably.
 
-***
+---
 
-***
-
+---

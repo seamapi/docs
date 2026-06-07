@@ -1,5 +1,5 @@
 ---
-title: "Create an Access Code"
+title: 'Create an Access Code'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "Create an Access Code"
 - [Examples](#examples)
 
 Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,10 +17,10 @@ Creates a new ongoing online access code.
 
 ```javascript
 await seam.accessCodes.create({
-  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
-  name: "My Ongoing Online Access Code",
-  code: "1234",
-});
+  device_id: 'a5036385-adcb-41b5-88c2-dd8a702a0730',
+  name: 'My Ongoing Online Access Code',
+  code: '1234',
+})
 ```
 
 #### Output:
@@ -50,6 +49,7 @@ await seam.accessCodes.create({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -98,6 +98,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -140,6 +141,7 @@ AccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -182,6 +184,7 @@ seam.access_codes.create(
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -224,6 +227,7 @@ $seam->access_codes->create(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -262,10 +266,10 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -274,72 +278,74 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the device for which you want to create the new access code.
 
 ---
 
-**`allow_external_modification`** *Boolean*
+**`allow_external_modification`** _Boolean_
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`attempt_for_offline_device`** *Boolean*
+**`attempt_for_offline_device`** _Boolean_
 
 ---
 
-**`code`** *String*
+**`code`** _String_
 
 Code to be used for access.
 
 ---
 
-**`common_code_key`** *String*
+**`common_code_key`** _String_
 
 Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
 
 ---
 
-**`ends_at`** *String*
+**`ends_at`** _String_
 
 Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
-**`is_external_modification_allowed`** *Boolean*
+**`is_external_modification_allowed`** _Boolean_
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`is_offline_access_code`** *Boolean*
+**`is_offline_access_code`** _Boolean_
 
 Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).
 
 ---
 
-**`is_one_time_use`** *Boolean*
+**`is_one_time_use`** _Boolean_
 
 Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.
 
 ---
 
-**`max_time_rounding`** *String*
+**`max_time_rounding`** _String_
 
 Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.
 
 ---
 
-**`name`** *String*
+**`name`** _String_
 
 Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
 
@@ -351,38 +357,35 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 ---
 
-**`prefer_native_scheduling`** *Boolean*
+**`prefer_native_scheduling`** _Boolean_
 
 Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
 
 ---
 
-**`preferred_code_length`** *Number*
+**`preferred_code_length`** _Number_
 
 Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.
 
 ---
 
-**`starts_at`** *String*
+**`starts_at`** _String_
 
 Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-**`use_backup_access_code_pool`** *Boolean*
+**`use_backup_access_code_pool`** _Boolean_
 
 Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
 
 ---
 
-**`use_offline_access_code`** *Boolean*
+**`use_offline_access_code`** _Boolean_
 
-<Warning>
-**Deprecated**. Use `is_offline_access_code` instead.
-</Warning>
+<Warning>**Deprecated**. Use `is_offline_access_code` instead.</Warning>
 
 ---
-
 
 ## Response
 
@@ -392,11 +395,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -425,13 +425,13 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### Create a time-bound online access code
 
@@ -440,18 +440,16 @@ Creates a new time-bound online access code.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.accessCodes.create({
-  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
-  name: "My Time-Bound Online Access Code",
-  starts_at: "2025-06-20T06:49:21.000Z",
-  ends_at: "2025-06-22T12:08:26.000Z",
-  code: "1234",
-});
+  device_id: 'a5036385-adcb-41b5-88c2-dd8a702a0730',
+  name: 'My Time-Bound Online Access Code',
+  starts_at: '2025-06-20T06:49:21.000Z',
+  ends_at: '2025-06-22T12:08:26.000Z',
+  code: '1234',
+})
 ```
 
 #### Output:
@@ -482,11 +480,10 @@ await seam.accessCodes.create({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -534,11 +531,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -580,11 +576,10 @@ AccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -626,11 +621,10 @@ seam.access_codes.create(
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -672,11 +666,10 @@ $seam->access_codes->create(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -712,12 +705,12 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### Create a time-bound offline access code
 
@@ -726,22 +719,20 @@ Creates a new time-bound offline access code.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.accessCodes.create({
-  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
-  name: "My Time-Bound Offline Access Code",
-  starts_at: "2025-06-20T06:49:21.000Z",
-  ends_at: "2025-06-22T12:08:26.000Z",
+  device_id: 'a5036385-adcb-41b5-88c2-dd8a702a0730',
+  name: 'My Time-Bound Offline Access Code',
+  starts_at: '2025-06-20T06:49:21.000Z',
+  ends_at: '2025-06-22T12:08:26.000Z',
   attempt_for_offline_device: true,
   preferred_code_length: 4,
   use_offline_access_code: true,
   is_offline_access_code: true,
-  max_time_rounding: "1h",
-});
+  max_time_rounding: '1h',
+})
 ```
 
 #### Output:
@@ -772,11 +763,10 @@ await seam.accessCodes.create({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -828,11 +818,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -878,11 +867,10 @@ AccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -928,11 +916,10 @@ seam.access_codes.create(
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -978,11 +965,10 @@ $seam->access_codes->create(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1018,12 +1004,12 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### Create a one-time-use offline access code
 
@@ -1032,22 +1018,20 @@ Creates a new one-time-use offline access code.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.accessCodes.create({
-  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
-  name: "My One-Time-Use Offline Access Code",
-  starts_at: "2025-06-20T06:49:21.000Z",
-  ends_at: "2025-06-22T12:08:26.000Z",
+  device_id: 'a5036385-adcb-41b5-88c2-dd8a702a0730',
+  name: 'My One-Time-Use Offline Access Code',
+  starts_at: '2025-06-20T06:49:21.000Z',
+  ends_at: '2025-06-22T12:08:26.000Z',
   attempt_for_offline_device: true,
   preferred_code_length: 4,
   use_offline_access_code: true,
   is_offline_access_code: true,
   is_one_time_use: true,
-});
+})
 ```
 
 #### Output:
@@ -1078,11 +1062,10 @@ await seam.accessCodes.create({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1134,11 +1117,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1184,11 +1166,10 @@ AccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1234,11 +1215,10 @@ seam.access_codes.create(
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1284,11 +1264,10 @@ $seam->access_codes->create(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1324,12 +1303,12 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### Create a time-bound online access code with a backup access code pool
 
@@ -1338,19 +1317,17 @@ Creates a new time-bound online access code with a backup access code pool.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.accessCodes.create({
-  device_id: "a5036385-adcb-41b5-88c2-dd8a702a0730",
-  name: "My Time-Bound Access Code",
-  starts_at: "2025-06-20T06:49:21.000Z",
-  ends_at: "2025-06-22T12:08:26.000Z",
-  code: "1234",
+  device_id: 'a5036385-adcb-41b5-88c2-dd8a702a0730',
+  name: 'My Time-Bound Access Code',
+  starts_at: '2025-06-20T06:49:21.000Z',
+  ends_at: '2025-06-22T12:08:26.000Z',
+  code: '1234',
   use_backup_access_code_pool: true,
-});
+})
 ```
 
 #### Output:
@@ -1381,11 +1358,10 @@ await seam.accessCodes.create({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1434,11 +1410,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1481,11 +1456,10 @@ AccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1528,11 +1502,10 @@ seam.access_codes.create(
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1575,11 +1548,10 @@ $seam->access_codes->create(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1615,6 +1587,7 @@ seam access-codes create --device_id "a5036385-adcb-41b5-88c2-dd8a702a0730" --na
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>

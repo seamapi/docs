@@ -1,12 +1,11 @@
 ---
-title: "Update a Space"
+title: 'Update a Space'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Updates an existing space.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +16,9 @@ Updates an existing space.
 
 ```javascript
 await seam.spaces.update({
-  space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81",
-  name: "My Updated Space",
-});
+  space_id: 'd3513c20-dc89-4e19-8713-1c3ab01aec81',
+  name: 'My Updated Space',
+})
 ```
 
 #### Output:
@@ -33,6 +32,7 @@ await seam.spaces.update({
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -65,6 +65,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -90,6 +91,7 @@ Space(
     workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -113,6 +115,7 @@ seam.spaces.update(space_id: "d3513c20-dc89-4e19-8713-1c3ab01aec81", name: "My U
   "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -139,6 +142,7 @@ $seam->spaces->update(
     "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -162,10 +166,10 @@ seam spaces update --space_id "d3513c20-dc89-4e19-8713-1c3ab01aec81" --name "My 
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -174,49 +178,50 @@ seam spaces update --space_id "d3513c20-dc89-4e19-8713-1c3ab01aec81" --name "My 
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_entrance_ids`** *Array* *of UUIDs*
+**`acs_entrance_ids`** _Array_ _of UUIDs_
 
 IDs of the entrances that you want to set for the space. If specified, this will replace all existing entrances.
 
 ---
 
-**`customer_key`** *String*
+**`customer_key`** _String_
 
 Customer key for which you want to update the space.
 
 ---
 
-**`device_ids`** *Array* *of UUIDs*
+**`device_ids`** _Array_ _of UUIDs_
 
 IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.
 
 ---
 
-**`name`** *String*
+**`name`** _String_
 
 Name of the space.
 
 ---
 
-**`space_id`** *String*
+**`space_id`** _String_
 
 ID of the space that you want to update.
 
 ---
 
-**`space_key`** *String*
+**`space_key`** _String_
 
 Unique key of the space that you want to update.
 
 ---
-
 
 ## Response
 
@@ -226,11 +231,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -241,5 +243,6 @@ Returns:
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 </Tabs>

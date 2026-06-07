@@ -1,8 +1,7 @@
 ---
-title: "Get Started with SmartThings Hubs + Thermostats"
-description: "Learn how to connect and control SmartThings-connected thermostats with the Seam API."
+title: 'Get Started with SmartThings Hubs + Thermostats'
+description: 'Learn how to connect and control SmartThings-connected thermostats with the Seam API.'
 ---
-
 
 ## Overview
 
@@ -19,20 +18,21 @@ This guide shows you how to install a Seam SDK and then control your SmartThings
 
 Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](https://docs.seam.co/latest/core-concepts/seam-console/seam-online-cli), which you can access from directly within the [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console).
 
-:arrow\_forward: [Go to the Seam Console!](https://console.seam.co/)
+:arrow_forward: [Go to the Seam Console!](https://console.seam.co/)
+
 </Check>
 
-***
+---
 
 ## Step 1: Install a Seam SDK
 
 Seam provides client libraries for many languages, including JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and an [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
-* Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
-* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+- JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+- Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
+- Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
+- PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+- C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
 
 First, install a Seam SDK, as follows:
 
@@ -43,24 +43,14 @@ npm i seam
 ```
 </Tab>
 
-<Tab title="Python">
-```bash
-pip install seam
-# For some development environments, use pip3 in this command instead of pip.
-```
+<Tab title='Python'>
+  ```bash pip install seam # For some development environments, use pip3 in this
+  command instead of pip. ```
 </Tab>
 
-<Tab title="Ruby">
-```bash
-bundle add seam
-```
-</Tab>
+<Tab title='Ruby'>```bash bundle add seam ```</Tab>
 
-<Tab title="PHP">
-```bash
-composer require seamapi/seam
-```
-</Tab>
+<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
@@ -76,10 +66,16 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
 <Info>
-This guide uses a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real SmartThings-connected thermostat, use a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and API key.
+  This guide uses a [sandbox
+  workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
+  You can only connect virtual devices and systems in this type of workspace. If
+  you want to connect a real SmartThings-connected thermostat, use a
+  [non-sandbox
+  workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces)
+  and API key.
 </Info>
 
-***
+---
 
 ## Step 2: Link your SmartThings account with Seam
 
@@ -94,7 +90,6 @@ The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provi
 
 Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-smartthings-hubs-+-thermostats.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
-
 </Check>
 
 ### Create a Connect Webview
@@ -106,20 +101,20 @@ Create a `connect_webview` object and then note the returned URL.
 **Code:**
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
 
 const connectWebview = await seam.connectWebviews.create({
   accepted_providers: ['smartthings'],
-  accepted_capabilities: ['thermostat']
-});
+  accepted_capabilities: ['thermostat'],
+})
 
-console.log(connectWebview.login_successful); // false
+console.log(connectWebview.login_successful) // false
 
 // Use the returned Connect Webview URL to display
 // the Connect Webview authorization flow to your user.
-console.log(connectWebview.url);
+console.log(connectWebview.url)
 ```
 
 **Output:**
@@ -128,6 +123,7 @@ console.log(connectWebview.url);
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -154,6 +150,7 @@ curl -X 'POST' \
 Login Successful (false): false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -181,6 +178,7 @@ print(connect_webview.url)
 ```
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -209,6 +207,7 @@ puts connect_webview.url
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -238,6 +237,7 @@ echo $connect_webview->url;
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -266,10 +266,11 @@ Console.WriteLine(connectWebview.Url);
 False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ### Authorize Your Workspace
 
@@ -278,13 +279,17 @@ In a web browser, go to the URL that the Connect Webview object returned.
 For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](https://docs.seam.co/latest/ui-components/overview/react-components/connect-account-button) within our suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview) that help you build your device management flow.
 
 <Check>
-Because you're using a sandbox workspace, you can connect Seam's test SmartThings account. We provide [virtual devices](smartthings-sample-data.md) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+  Because you're using a sandbox workspace, you can connect Seam's test
+  SmartThings account. We provide [virtual devices](smartthings-sample-data.md)
+  for each of the brands that we support. These sandbox devices and systems
+  enable you to test your app with devices from multiple brands without the need
+  to own all the corresponding physical devices.
 </Check>
 
 Complete the Connect Webview authorization flow by entering the following [SmartThings sandbox account](smartthings-sample-data.md) credentials:
 
-* **Email:** jane@example.com
-* **Password:** 1234
+- **Email:** jane@example.com
+- **Password:** 1234
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -294,10 +299,10 @@ Confirm that authorization through the Connect Webview was successful by queryin
 
 ```javascript
 const updatedConnectWebview = await seam.connectWebviews.get({
-  connect_webview_id: connectWebview.connect_webview_id
-});
+  connect_webview_id: connectWebview.connect_webview_id,
+})
 
-console.log(updatedConnectWebview.login_successful); // true
+console.log(updatedConnectWebview.login_successful) // true
 ```
 
 **Output:**
@@ -305,6 +310,7 @@ console.log(updatedConnectWebview.login_successful); // true
 ```
 true
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -326,6 +332,7 @@ curl -X 'GET' \
 ```
 Login Successful (true): true
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -342,6 +349,7 @@ assert updated_connect_webview.login_successful is True # True
 ```
 True
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -360,6 +368,7 @@ puts updated_connect_webview.login_successful # true
 ```
 true
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -378,6 +387,7 @@ echo $updated_connect_webview->login_successful ? 'true' : 'false', "\n"; // tru
 ```
 true
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -396,10 +406,11 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 ```
 True
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 3: Retrieve SmartThings-connected thermostat devices
 
@@ -414,17 +425,22 @@ The Seam API exposes each device's properties, such as the current temperature r
 ```javascript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-const allSmartThingsThermostats = await seam.devices.list({manufacturer: "smartthings"});
+const allSmartThingsThermostats = await seam.devices.list({
+  manufacturer: 'smartthings',
+})
 
 // Select the first device as an example.
-const livingRoomThermostat = allSmartThingsThermostats[0];
+const livingRoomThermostat = allSmartThingsThermostats[0]
 
 // Inspect specific properties.
-console.log("Current temperature: " + livingRoomThermostat.properties.temperature_fahrenheit);
-console.log("Fan running: " + livingRoomThermostat.properties.is_fan_running);
+console.log(
+  'Current temperature: ' +
+    livingRoomThermostat.properties.temperature_fahrenheit,
+)
+console.log('Fan running: ' + livingRoomThermostat.properties.is_fan_running)
 
 // View the entire returned device object.
-console.log(livingRoomThermostat);
+console.log(livingRoomThermostat)
 ```
 
 **Output:**
@@ -462,6 +478,7 @@ Fan running: false
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -527,6 +544,7 @@ Fan running: false
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -570,7 +588,7 @@ Device(
     'current_climate_setting': {
       'display_name': 'Manual Setting',
       'fan_mode_setting': 'auto',
-      'heating_set_point_celsius': 21.11111111111111,   
+      'heating_set_point_celsius': 21.11111111111111,
       'heating_set_point_fahrenheit': 70,
       'hvac_mode_setting': 'heat',
       'manual_override_allowed': True
@@ -583,6 +601,7 @@ Device(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -639,6 +658,7 @@ Fan running: false
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -696,6 +716,7 @@ Fan running: false
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -710,10 +731,11 @@ Fan running: false
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 4: Control your SmartThings-connected thermostat
 
@@ -725,21 +747,21 @@ Seam provides additional actions for thermostats, such as setting the fan mode, 
 
 Try out the following actions on your SmartThings-connected thermostat:
 
-* [ ] [Set the HVAC mode](get-started-with-smartthings-hubs-+-thermostats.md#set-the-hvac-mode)
-* [ ] [Create and schedule climate presets](get-started-with-smartthings-hubs-+-thermostats.md#create-and-schedule-climate-presets)
-* [ ] [Configure a weekly thermostat program](get-started-with-smartthings-hubs-+-thermostats.md#configure-a-weekly-thermostat-program)
+- [ ] [Set the HVAC mode](get-started-with-smartthings-hubs-+-thermostats.md#set-the-hvac-mode)
+- [ ] [Create and schedule climate presets](get-started-with-smartthings-hubs-+-thermostats.md#create-and-schedule-climate-presets)
+- [ ] [Configure a weekly thermostat program](get-started-with-smartthings-hubs-+-thermostats.md#configure-a-weekly-thermostat-program)
 
 ### Set the HVAC mode
 
 To set the HVAC mode, use any of the following endpoints or their equivalents in the Seam SDKs:
 
-* `/thermostats/heat`
-* `/thermostats/cool`
-* `/thermostats/heat_cool` (for devices that support this mode)
-* `/thermostats/off`
-*   `/thermostats/set_hvac_mode`
+- `/thermostats/heat`
+- `/thermostats/cool`
+- `/thermostats/heat_cool` (for devices that support this mode)
+- `/thermostats/off`
+- `/thermostats/set_hvac_mode`
 
-    This endpoint is a consolidated version of the other four endpoints.
+  This endpoint is a consolidated version of the other four endpoints.
 
 Specify the thermostat that you want to control by including the `device_id` in the request body. Also, include the desired temperature [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
@@ -759,24 +781,25 @@ if (livingRoomThermostat.can_hvac_heat) {
   // and return an action attempt.
   const actionAttempt = await seam.thermostats.heat({
     device_id: livingRoomThermostat.device_id,
-    heating_set_point_fahrenheit: 68
-  });
-};
+    heating_set_point_fahrenheit: 68,
+  })
+}
 ```
 
 **Output:**
 
 ```json
 {
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'SET_HVAC_MODE',
-    result: {},
-    error: null
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "SET_HVAC_MODE",
+    "result": {},
+    "error": null
   }
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -814,6 +837,7 @@ fi
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -842,6 +866,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -870,6 +895,7 @@ end
   result={}
   error=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -892,13 +918,14 @@ if ($living_room_thermostat->can_hvac_heat) {
 
 ```json
 {
-  "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-  "action_type":"SET_HVAC_MODE",
-  "error":null,
-  "result":{},
-  "status":"success"
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "SET_HVAC_MODE",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -913,6 +940,7 @@ if ($living_room_thermostat->can_hvac_heat) {
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
@@ -927,15 +955,15 @@ To query `properties.current_climate_setting.hvac_mode_setting` for the device:
 ```javascript
 // Get the device by ID.
 const updatedLivingRoomThermostat = await seam.devices.get({
-  device_id: livingRoomThermostat.device_id
-});
+  device_id: livingRoomThermostat.device_id,
+})
 
-// Inspect properties.current_climate_setting.hvac_mode_setting 
+// Inspect properties.current_climate_setting.hvac_mode_setting
 // to confirm that setting the HVAC mode to heat was successful.
 console.log(
-  updatedLivingRoomThermostat.properties.
-  current_climate_setting.hvac_mode_setting
-);
+  updatedLivingRoomThermostat.properties.current_climate_setting
+    .hvac_mode_setting,
+)
 ```
 
 **Output:**
@@ -943,6 +971,7 @@ console.log(
 ```
 heat
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -961,7 +990,7 @@ updated_living_room_thermostat=$(
       \"device_id\": \"$(jq -r '.device_id' <<< ${living_room_thermostat})\"
   }")
 
-# Inspect properties.current_climate_setting.hvac_mode_setting 
+# Inspect properties.current_climate_setting.hvac_mode_setting
 # to confirm that setting the HVAC mode to heat was successful.
 echo $(jq -r '(.device.properties.current_climate_setting.hvac_mode_setting)' <<< ${updated_living_room_thermostat})
 ```
@@ -971,6 +1000,7 @@ echo $(jq -r '(.device.properties.current_climate_setting.hvac_mode_setting)' <<
 ```
 heat
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -982,7 +1012,7 @@ updated_living_room_thermostat = seam.devices.get(
   device_id = living_room_thermostat.device_id
 )
 
-# Inspect properties.current_climate_setting.hvac_mode_setting 
+# Inspect properties.current_climate_setting.hvac_mode_setting
 # to confirm that setting the HVAC mode to heat was successful.
 pprint(
   updated_living_room_thermostat.
@@ -995,6 +1025,7 @@ pprint(
 ```
 'heat'
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1006,7 +1037,7 @@ updated_living_room_thermostat = seam.devices.get(
   device_id: living_room_thermostat.device_id
 )
 
-# Inspect properties.current_climate_setting.hvac_mode_setting 
+# Inspect properties.current_climate_setting.hvac_mode_setting
 # to confirm that setting the HVAC mode to heat was successful.
 puts updated_living_room_thermostat.
   properties.current_climate_setting.hvac_mode_setting
@@ -1017,6 +1048,7 @@ puts updated_living_room_thermostat.
 ```
 heat
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1028,7 +1060,7 @@ $updated_living_room_thermostat = $seam->devices->get(
   device_id: $living_room_thermostat->device_id
 );
 
-// Inspect properties.current_climate_setting.hvac_mode_setting 
+// Inspect properties.current_climate_setting.hvac_mode_setting
 // to confirm that setting the HVAC mode to heat was successful.
 echo $updated_living_room_thermostat->properties->
   current_climate_setting->hvac_mode_setting;
@@ -1039,6 +1071,7 @@ echo $updated_living_room_thermostat->properties->
 ```
 heat
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1053,10 +1086,11 @@ heat
 ```
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ### Create and schedule climate presets
 
@@ -1077,48 +1111,48 @@ if (updatedLivingRoomThermostat.can_hvac_cool) {
   // Create the climate presets.
   await seam.thermostats.createClimatePreset({
     device_id: updatedLivingRoomThermostat.device_id,
-    climate_preset_key: "comfort",
-    name: "Comfort",
-    fan_mode_setting: "auto",
-    hvac_mode_setting: "cool",
-    cooling_set_point_celsius: 25
-  });
-  
+    climate_preset_key: 'comfort',
+    name: 'Comfort',
+    fan_mode_setting: 'auto',
+    hvac_mode_setting: 'cool',
+    cooling_set_point_celsius: 25,
+  })
+
   await seam.thermostats.createClimatePreset({
     device_id: updatedLivingRoomThermostat.device_id,
-    climate_preset_key: "eco",
-    name: "Eco",
-    fan_mode_setting: "auto",
-    hvac_mode_setting: "cool",
-    cooling_set_point_celsius: 30
-  });
+    climate_preset_key: 'eco',
+    name: 'Eco',
+    fan_mode_setting: 'auto',
+    hvac_mode_setting: 'cool',
+    cooling_set_point_celsius: 30,
+  })
 
   // Then, set eco as the fallback climate setting.
   await seam.thermostats.setFallbackClimatePreset({
     device_id: updatedLivingRoomThermostat.device_id,
-    climate_preset_key: "eco"
-  });
-  
+    climate_preset_key: 'eco',
+  })
+
   // Now, schedule the comfort preset to coincide with two reservations.
   await seam.thermostats.schedules.create({
     device_id: updatedLivingRoomThermostat.device_id,
     name: "Jim's stay",
-    climate_preset_key: "comfort",
-    starts_at: "2025-03-10T15:00:00Z",
-    ends_at: "2025-03-15T12:00:00Z",
+    climate_preset_key: 'comfort',
+    starts_at: '2025-03-10T15:00:00Z',
+    ends_at: '2025-03-15T12:00:00Z',
     is_override_allowed: true,
-    max_override_period_minutes: 90
-  });
+    max_override_period_minutes: 90,
+  })
 
   await seam.thermostats.schedules.create({
     device_id: updatedLivingRoomThermostat.device_id,
     name: "Jane's stay",
-    climate_preset_key: "comfort",
-    starts_at: "2025-03-17T15:00:00Z",
-    ends_at: "2025-03-20T12:00:00Z",
+    climate_preset_key: 'comfort',
+    starts_at: '2025-03-17T15:00:00Z',
+    ends_at: '2025-03-20T12:00:00Z',
     is_override_allowed: true,
-    max_override_period_minutes: 90
-  });
+    max_override_period_minutes: 90,
+  })
 }
 ```
 
@@ -1148,6 +1182,7 @@ if (updatedLivingRoomThermostat.can_hvac_cool) {
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1262,6 +1297,7 @@ fi
   "ok":true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1280,7 +1316,7 @@ if updated_living_room_thermostat.can_hvac_cool:
     hvac_mode_setting = "cool",
     cooling_set_point_celsius = 25
   )
-  
+
   seam.thermostats.create_climate_preset(
     device_id: updated_living_room_thermostat.device_id,
     climate_preset_key = "eco",
@@ -1295,7 +1331,7 @@ if updated_living_room_thermostat.can_hvac_cool:
     device_id = updated_living_room_thermostat.device_id,
     climate_preset_key = "eco"
   )
-  
+
   # Now, schedule the comfort preset to coincide with two reservations.
   seam.thermostats.schedules.create(
     device_id = updated_living_room_thermostat.device_id,
@@ -1306,7 +1342,7 @@ if updated_living_room_thermostat.can_hvac_cool:
     is_override_allowed = True,
     max_override_period_minutes = 90
   )
-  
+
   seam.thermostats.schedules.create(
     device_id = updated_living_room_thermostat.device_id,
     name = "Jane's stay",
@@ -1344,6 +1380,7 @@ ThermostatSchedule(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1371,13 +1408,13 @@ if (updated_living_room_thermostat.can_hvac_cool)
     hvac_mode_setting: "cool",
     cooling_set_point_celsius: 30
   )
-  
+
   # Then, set eco as the fallback climate setting.
   seam.thermostats.set_fallback_climate_preset(
     device_id: updated_living_room_thermostat.device_id,
     climate_preset_key: "eco"
   )
-  
+
   # Now, schedule the comfort preset to coincide with two reservations.
   seam.thermostats.schedules.create(
     device_id: updated_living_room_thermostat.device_id,
@@ -1427,6 +1464,7 @@ end
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1445,7 +1483,7 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
     hvac_mode_setting: "cool",
     cooling_set_point_celsius: 25
   );
-  
+
   $seam->thermostats->create_climate_preset(
     device_id: $updated_living_room_thermostat->device_id,
     climate_preset_key: "eco",
@@ -1454,7 +1492,7 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
     hvac_mode_setting: "cool",
     cooling_set_point_celsius: 30
   );
-    
+
   // Then, set eco as the fallback climate setting.
   $seam->thermostats->set_fallback_climate_preset(
     device_id: $updated_living_room_thermostat->device_id,
@@ -1510,6 +1548,7 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1524,10 +1563,11 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ### Configure a weekly thermostat program
 
@@ -1543,23 +1583,23 @@ In this example, create a weekday daily program and a weekend daily program. The
 // Create the daily programs.
 const weekdayProgram = await seam.thermostats.dailyPrograms.create({
   device_id: updatedLivingRoomThermostat.device_id,
-  name: "Weekday Program",
+  name: 'Weekday Program',
   periods: [
-    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
-    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
-    { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
-    { "starts_at_time": "22:00:00", "climate_preset_key": "Sleep" }
-  ]
-});
+    { starts_at_time: '07:00:00', climate_preset_key: 'Home' },
+    { starts_at_time: '09:00:00', climate_preset_key: 'Away' },
+    { starts_at_time: '18:00:00', climate_preset_key: 'Home' },
+    { starts_at_time: '22:00:00', climate_preset_key: 'Sleep' },
+  ],
+})
 
 const weekendProgram = await seam.thermostats.dailyPrograms.create({
   device_id: updatedLivingRoomThermostat.device_id,
-  name: "Weekend Program",
+  name: 'Weekend Program',
   periods: [
-    { "starts_at_time": "08:00:00", "climate_preset_key": "Home" },
-    { "starts_at_time": "23:00:00", "climate_preset_key": "Sleep" }
-  ]
-});
+    { starts_at_time: '08:00:00', climate_preset_key: 'Home' },
+    { starts_at_time: '23:00:00', climate_preset_key: 'Sleep' },
+  ],
+})
 
 // Use the daily programs to set the weekly program.
 await seam.thermostats.updateWeeklyProgram({
@@ -1570,21 +1610,22 @@ await seam.thermostats.updateWeeklyProgram({
   thursday_program_id: weekdayProgram.thermostat_daily_program_id,
   friday_program_id: weekdayProgram.thermostat_daily_program_id,
   saturday_program_id: weekendProgram.thermostat_daily_program_id,
-  sunday_program_id: weekendProgram.thermostat_daily_program_id
-});
+  sunday_program_id: weekendProgram.thermostat_daily_program_id,
+})
 ```
 
 **Output:**
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-666666666666',
-  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1648,14 +1689,15 @@ curl -X 'POST' \
 {
   "action_attempt": {
     "status": "pending",
-    "action_type":"PUSH_THERMOSTAT_PROGRAMS",
+    "action_type": "PUSH_THERMOSTAT_PROGRAMS",
     "action_attempt_id": "11111111-2222-3333-4444-666666666666",
     "result": null,
-    "error":null
+    "error": null
   },
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1707,6 +1749,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1757,6 +1800,7 @@ seam.thermostats.update_weekly_program(
   result={}
   error=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1801,13 +1845,14 @@ $seam->thermostats->update_weekly_program(
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '11111111-2222-3333-4444-666666666666',
-  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1822,10 +1867,11 @@ $seam->thermostats->update_weekly_program(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 5: Connect a real SmartThings-connected thermostat
 
@@ -1833,44 +1879,53 @@ Now that you have learned the basics of using the Seam API, you can connect and 
 
 For more details about setting up your real SmartThings-connected thermostat, see the [SmartThings Hubs + devices integration guide](./).
 
-***
+---
 
 ## Step 6: Build your application!
 
 Seam makes it easy to develop your application. The robust Seam API and Seam SDKs in a wide variety of programming languages provide robust, up-to-date information about your thermostats. We also provide helpful thermostat-related events that enable you to monitor the status of your thermostats and the connected HVAC systems. Further, our simulation endpoints make it easy for you to test your thermostat app against events that can be difficult to orchestrate in your quality assurance (QA) environment using real devices.
 
-***
+---
 
 ## Next steps
 
 Now that you've completed this getting started guide for SmartThings-connected devices, you can learn more about what you can do with the Seam API.
 
-* [ ] **Explore**\
-  See the [other devices and system integrations](https://docs.seam.co/latest/device-and-system-integration-guides) that Seam supports.
-* [ ] **Learn**\
-  Read about Seam [concepts](https://docs.seam.co/latest/core-concepts/overview) and the [device and system capabilities ](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities)that Seam supports.
-* [ ] **Expand your abilities**\
-  Find out what other [thermostat actions](https://docs.seam.co/latest/capability-guides/thermostats) you can perform using the Seam API.
-* [ ] **Use webhooks**\
-  Learn how to use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) as an efficient way to receive device events.
-* [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [smart locks](https://docs.seam.co/latest/capability-guides/smart-locks), [access control systems](https://docs.seam.co/latest/capability-guides/access-systems), and [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
-* [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access).
+- [ ] **Explore**\
+      See the [other devices and system integrations](https://docs.seam.co/latest/device-and-system-integration-guides) that Seam supports.
+- [ ] **Learn**\
+      Read about Seam [concepts](https://docs.seam.co/latest/core-concepts/overview) and the [device and system capabilities ](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities)that Seam supports.
+- [ ] **Expand your abilities**\
+      Find out what other [thermostat actions](https://docs.seam.co/latest/capability-guides/thermostats) you can perform using the Seam API.
+- [ ] **Use webhooks**\
+      Learn how to use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) as an efficient way to receive device events.
+- [ ] **Find out more**\
+      Explore the other types of devices and systems that you can control with Seam, including [smart locks](https://docs.seam.co/latest/capability-guides/smart-locks), [access control systems](https://docs.seam.co/latest/capability-guides/access-systems), and [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
+- [ ] **Develop for mobile access**\
+      Learn about Seam's [mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access).
 
 <Info>
-If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
+  If you have any questions or want to report an issue, email us at
+  [support@seam.co](mailto:support@seam.co).
 </Info>
 
-***
+---
 
 ## Quick links
 
 <CardGroup cols={2}>
-<Card title="Get an API Key (free)" href="https://console.seam.co/" img="/images/seam-api-key.png">
-  Sign up for the Seam Console and get your API keys. →
-</Card>
-<Card title="Contact Sales" href="https://www.seam.co/contact-us" img="/images/seam-contact-us-light.png">
-  Got a project or a specific question? Contact our team to get answers. →
-</Card>
+  <Card
+    title='Get an API Key (free)'
+    href='https://console.seam.co/'
+    img='/images/seam-api-key.png'
+  >
+    Sign up for the Seam Console and get your API keys. →
+  </Card>
+  <Card
+    title='Contact Sales'
+    href='https://www.seam.co/contact-us'
+    img='/images/seam-contact-us-light.png'
+  >
+    Got a project or a specific question? Contact our team to get answers. →
+  </Card>
 </CardGroup>

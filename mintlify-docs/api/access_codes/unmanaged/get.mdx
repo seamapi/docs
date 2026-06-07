@@ -1,5 +1,5 @@
 ---
-title: "Get an Unmanaged Access Code"
+title: 'Get an Unmanaged Access Code'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -8,7 +8,6 @@ title: "Get an Unmanaged Access Code"
 Returns a specified [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
 You must specify either `access_code_id` or both `device_id` and `code`.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -19,8 +18,8 @@ Returns a specified unmanaged access code.
 
 ```javascript
 await seam.accessCodes.unmanaged.get({
-  access_code_id: "41b984ec-1b74-48cd-ba68-16660cd792b6",
-});
+  access_code_id: '41b984ec-1b74-48cd-ba68-16660cd792b6',
+})
 ```
 
 #### Output:
@@ -42,6 +41,7 @@ await seam.accessCodes.unmanaged.get({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -81,6 +81,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -112,6 +113,7 @@ UnmanagedAccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -143,6 +145,7 @@ seam.access_codes.unmanaged.get(access_code_id: "41b984ec-1b74-48cd-ba68-16660cd
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -176,6 +179,7 @@ $seam->access_codes->unmanaged->get(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -207,10 +211,10 @@ seam access-codes unmanaged get --access_code_id "41b984ec-1b74-48cd-ba68-16660c
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -219,31 +223,32 @@ seam access-codes unmanaged get --access_code_id "41b984ec-1b74-48cd-ba68-16660c
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_code_id`** *String*
+**`access_code_id`** _String_
 
 ID of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`code`** *String*
+**`code`** _String_
 
 Code of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
 
-**`device_id`** *String*
+**`device_id`** _String_
 
 ID of the device containing the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.
 
 ---
-
 
 ## Response
 
@@ -253,11 +258,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -276,5 +278,6 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 </Tabs>

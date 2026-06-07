@@ -1,10 +1,12 @@
 ---
-title: "Working with Card Encoders and Scanners"
-description: "Learn how to encode plastic cards and then scan these cards."
+title: 'Working with Card Encoders and Scanners'
+description: 'Learn how to encode plastic cards and then scan these cards.'
 ---
 
-
-<figure><img src="/images/card-scanner.png" alt="" /><figcaption></figcaption></figure>
+<figure>
+  <img src='/images/card-scanner.png' alt='' />
+  <figcaption></figcaption>
+</figure>
 
 Some access control systems require credentials to be [encoded onto plastic key cards](creating-and-encoding-card-based-credentials.md) using a card encoder. This process involves the following two key steps:
 
@@ -13,6 +15,7 @@ Some access control systems require credentials to be [encoded onto plastic key 
     Configure the access parameters for the credential or access method.
 
     Note that to create a card access method, you create an Access Grant that includes a request for a card access method. The resulting Access Grant includes the card access method.
+
 2.  Card encoding
 
     Write the credential or access method data onto the card using a compatible card encoder.
@@ -21,16 +24,22 @@ Separately, the Seam API also supports [card scanning](scanning-encoded-cards.md
 
 To verify if your ACS requires a card encoder, see the [system integration guide](../../../capability-guides/access-systems/) for your ACS.
 
-***
+---
 
 <CardGroup cols={2}>
-<Card title="Creating and Encoding Card-based Credentials" href="/creating-and-encoding-card-based-credentials" img="/images/encode-card.png">
-  
-</Card>
-<Card title="Creating and Encoding Card Access Methods" href="/creating-and-encoding-card-access-methods" img="/images/encode-card.png">
-  
-</Card>
-<Card title="Scanning Encoded Cards" href="/scanning-encoded-cards" img="/images/scan-card.png">
-  
-</Card>
+  <Card
+    title='Creating and Encoding Card-based Credentials'
+    href='/creating-and-encoding-card-based-credentials'
+    img='/images/encode-card.png'
+  ></Card>
+  <Card
+    title='Creating and Encoding Card Access Methods'
+    href='/creating-and-encoding-card-access-methods'
+    img='/images/encode-card.png'
+  ></Card>
+  <Card
+    title='Scanning Encoded Cards'
+    href='/scanning-encoded-cards'
+    img='/images/scan-card.png'
+  ></Card>
 </CardGroup>

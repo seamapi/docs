@@ -1,12 +1,11 @@
 ---
-title: "Update a Thermostat Daily Program"
+title: 'Update a Thermostat Daily Program'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Updates a specified thermostat daily program. The periods that you specify overwrite any existing periods for the daily program.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,15 +16,15 @@ Updates a specified thermostat daily program.
 
 ```javascript
 await seam.thermostats.dailyPrograms.update({
-  thermostat_daily_program_id: "6baf3a53-ba83-4052-8ea5-143584e18f03",
-  name: "Weekday Program",
+  thermostat_daily_program_id: '6baf3a53-ba83-4052-8ea5-143584e18f03',
+  name: 'Weekday Program',
   periods: [
-    { starts_at_time: "07:00:00", climate_preset_key: "Home" },
-    { starts_at_time: "09:00:00", climate_preset_key: "Away" },
-    { starts_at_time: "17:00:00", climate_preset_key: "Home" },
-    { starts_at_time: "22:30:00", climate_preset_key: "Sleep" },
+    { starts_at_time: '07:00:00', climate_preset_key: 'Home' },
+    { starts_at_time: '09:00:00', climate_preset_key: 'Away' },
+    { starts_at_time: '17:00:00', climate_preset_key: 'Home' },
+    { starts_at_time: '22:30:00', climate_preset_key: 'Sleep' },
   ],
-});
+})
 ```
 
 #### Output:
@@ -39,6 +38,7 @@ await seam.thermostats.dailyPrograms.update({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -89,6 +89,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -121,6 +122,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -154,6 +156,7 @@ seam.thermostats.daily_programs.update(
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -186,6 +189,7 @@ $seam->thermostats->daily_programs->update(
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -209,10 +213,10 @@ seam thermostats daily-programs update --thermostat_daily_program_id "6baf3a53-b
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -221,26 +225,33 @@ seam thermostats daily-programs update --thermostat_daily_program_id "6baf3a53-b
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`name`** *String* (Required)
+**`name`** _String_ (Required)
 
 Name of the thermostat daily program that you want to update.
 
 ---
 
-**`periods`** *Array* *of Objects* (Required)
+**`periods`** _Array_ _of Objects_ (Required)
 
 Array of thermostat daily program periods. The periods that you specify overwrite any existing periods for the daily program.
 
 <details>
 
-<summary><b><code>climate_preset_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>climate_preset_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
 
@@ -248,11 +259,14 @@ Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermo
 
 ---
 
-
-
 <details>
 
-<summary><b><code>starts_at_time</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>starts_at_time</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
@@ -260,13 +274,11 @@ Time at which the thermostat daily program period starts, in [ISO 8601](https://
 
 ---
 
-
-**`thermostat_daily_program_id`** *String* (Required)
+**`thermostat_daily_program_id`** _String_ (Required)
 
 ID of the thermostat daily program that you want to update.
 
 ---
-
 
 ## Response
 
@@ -276,11 +288,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -291,5 +300,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

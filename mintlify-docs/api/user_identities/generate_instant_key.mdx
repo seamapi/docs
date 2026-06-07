@@ -1,12 +1,11 @@
 ---
-title: "Generate an Instant Key"
+title: 'Generate an Instant Key'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Generates a new [instant key](https://docs.seam.co/latest/capability-guides/instant-keys) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +16,9 @@ Generates a new instant key for a specified user identity.
 
 ```javascript
 await seam.userIdentities.generateInstantKey({
-  user_identity_id: "d92e0c7b-72a1-4063-9ee8-2acefc240358",
+  user_identity_id: 'd92e0c7b-72a1-4063-9ee8-2acefc240358',
   max_use_count: 10,
-});
+})
 ```
 
 #### Output:
@@ -35,6 +34,7 @@ await seam.userIdentities.generateInstantKey({
   "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -69,6 +69,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -96,6 +97,7 @@ InstantKey(
     workspace_id="4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -124,6 +126,7 @@ seam.user_identities.generate_instant_key(
   "workspace_id" => "4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -152,6 +155,7 @@ $seam->user_identities->generate_instant_key(
     "workspace_id" => "4d1c24b2-781e-4d1a-8d77-15249ad57c8a",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -177,10 +181,10 @@ seam user-identities generate-instant-key --user_identity_id "d92e0c7b-72a1-4063
   "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -188,29 +192,30 @@ seam user-identities generate-instant-key --user_identity_id "d92e0c7b-72a1-4063
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`user_identity_id`** *String* (Required)
+**`user_identity_id`** _String_ (Required)
 
 ID of the user identity for which you want to generate an instant key.
 
 ---
 
-**`customization_profile_id`** *String*
+**`customization_profile_id`** _String_
 
 ---
 
-**`max_use_count`** *Number*
+**`max_use_count`** _Number_
 
 Maximum number of times the instant key can be used. Default: 1.
 
 ---
-
 
 ## Response
 
@@ -220,11 +225,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -237,5 +239,6 @@ Returns:
   "workspace_id": "4d1c24b2-781e-4d1a-8d77-15249ad57c8a"
 }
 ```
+
 </Tab>
 </Tabs>

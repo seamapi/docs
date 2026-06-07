@@ -1,12 +1,11 @@
 ---
-title: "Get a Space"
+title: 'Get a Space'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Gets a space.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,7 +15,7 @@ Returns a specified space.
 #### Code:
 
 ```javascript
-await seam.spaces.get({ space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63" });
+await seam.spaces.get({ space_id: '5f30970d-6ef5-4618-9e91-e701fbca6b63' })
 ```
 
 #### Output:
@@ -30,6 +29,7 @@ await seam.spaces.get({ space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63" });
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -61,6 +61,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -84,6 +85,7 @@ Space(
     workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -107,6 +109,7 @@ seam.spaces.get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63")
   "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -130,6 +133,7 @@ $seam->spaces->get(space_id: "5f30970d-6ef5-4618-9e91-e701fbca6b63");
     "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -153,10 +157,10 @@ seam spaces get --space_id "5f30970d-6ef5-4618-9e91-e701fbca6b63"
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -165,25 +169,26 @@ seam spaces get --space_id "5f30970d-6ef5-4618-9e91-e701fbca6b63"
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`space_id`** *String*
+**`space_id`** _String_
 
 ID of the space that you want to get.
 
 ---
 
-**`space_key`** *String*
+**`space_key`** _String_
 
 Unique key of the space that you want to get.
 
 ---
-
 
 ## Response
 
@@ -193,11 +198,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -208,5 +210,6 @@ Returns:
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 </Tabs>

@@ -1,5 +1,5 @@
 ---
-title: "Get a User Identity"
+title: 'Get a User Identity'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "Get a User Identity"
 - [Examples](#examples)
 
 Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,8 +17,8 @@ Returns a specified user identity, using a user identity ID.
 
 ```javascript
 await seam.userIdentities.get({
-  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
-});
+  user_identity_id: '43947360-cdc8-4db6-8b22-e079416d1d8b',
+})
 ```
 
 #### Output:
@@ -38,6 +37,7 @@ await seam.userIdentities.get({
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -74,6 +74,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -102,6 +103,7 @@ UserIdentity(
     workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -130,6 +132,7 @@ seam.user_identities.get(user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b
   "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -160,6 +163,7 @@ $seam->user_identities->get(
     "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -188,10 +192,10 @@ seam user-identities get --user_identity_id "43947360-cdc8-4db6-8b22-e079416d1d8
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -200,23 +204,24 @@ seam user-identities get --user_identity_id "43947360-cdc8-4db6-8b22-e079416d1d8
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`user_identity_id`** *String*
+**`user_identity_id`** _String_
 
 ID of the user identity that you want to get.
 
 ---
 
-**`user_identity_key`** *String*
+**`user_identity_key`** _String_
 
 ---
-
 
 ## Response
 
@@ -226,11 +231,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -247,13 +249,13 @@ Returns:
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### Get a user identity by user identity key
 
@@ -262,12 +264,10 @@ Returns a specified user identity, using a user identity key.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
-await seam.userIdentities.get({ user_identity_key: "jane_doe" });
+await seam.userIdentities.get({ user_identity_key: 'jane_doe' })
 ```
 
 #### Output:
@@ -286,11 +286,10 @@ await seam.userIdentities.get({ user_identity_key: "jane_doe" });
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -322,11 +321,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -350,11 +348,10 @@ UserIdentity(
     workspace_id="b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -378,11 +375,10 @@ seam.user_identities.get(user_identity_key: "jane_doe")
   "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -406,11 +402,10 @@ $seam->user_identities->get(user_identity_key: "jane_doe");
     "workspace_id" => "b7e0a4e0-1044-4319-9a0b-42b642b68c7f",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -434,6 +429,7 @@ seam user-identities get --user_identity_key "jane_doe"
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
+
 </Tab>
 
 </Tabs>

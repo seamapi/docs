@@ -1,8 +1,7 @@
 ---
-title: "igloohome Locks"
-description: "Guide for using igloohome locks with Seam"
+title: 'igloohome Locks'
+description: 'Guide for using igloohome locks with Seam'
 ---
-
 
 ## Overview
 
@@ -12,7 +11,7 @@ Seam integrates with igloohome locks through the [igloohome Wi-Fi Bridge](https:
 
 In addition, the Seam integration supports the generation of [offline access codes](./creating-igloohome-offline-access-codes.md) (that is, igloohome [algoPIN™](https://www.igloohome.co/en-US/how-it-works) codes) for igloohome locks without the need for the igloohome Bridge.
 
-***
+---
 
 ## Supported Devices
 
@@ -26,27 +25,29 @@ This integration supports lock, unlock, and customizable access code provisionin
 
 Each igloohome Bridge supports up to five compatible igloohome locks.
 
-***
+---
 
 ## Supported Features
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock) for igloohome smart locks connected through the igloohome Bridge
-* [Programming online access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
-* [Programming offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes)
+- [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock) for igloohome smart locks connected through the igloohome Bridge
+- [Programming online access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
+- [Programming offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes)
 
 <Info>
-We support customizable access codes for igloohome locks connected through the igloohome Bridge. We support offline algoPIN codes for all igloohome locks, without the need for a bridge.
+  We support customizable access codes for igloohome locks connected through the
+  igloohome Bridge. We support offline algoPIN codes for all igloohome locks,
+  without the need for a bridge.
 </Info>
 
-***
+---
 
 ### Device Provider Key
 
 To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their igloohome devices to Seam, include the `igloohome` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
-***
+---
 
 ## Setup Instructions
 
@@ -59,7 +60,7 @@ To control igloohome devices using Seam, you must prompt owners of these devices
 3. To be able to configure your igloohome smart locks remotely, trigger lock and unlock actions, and use custom codes, install the [igloohome Wi-Fi Bridge](https://www.igloohome.co/en-US/products/bridge), and then pair your locks to the bridge.
 4. Note your login credentials for the igloohome mobile app, and use these credentials to log in to the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to add your devices to Seam.
 
-***
+---
 
 ## Brand-Specific Events
 
@@ -73,12 +74,39 @@ igloohome devices have an auto-relock feature that automatically locks the devic
 
 Each time an igloohome device detects an invalid attempt of entry, Seam emits a [`lock.access_denied` event](https://docs.seam.co/latest/api/events/). Invalid entry attempts include entering the wrong PIN, exceeding the PIN length, and using an invalid key card. The igloohome lock also flashes red to indicate an invalid attempt. If too many invalid attempts occur, igloohome locks produce a Keypad Security Lockout alarm, accompanied by light and sound indicators. For more information, see the igloohome support articles on [keypad security](https://support.igloohome.co/support/solutions/articles/35000169627-keypad-security-lockout-activated-and-deactivated) and [incorrect PINs](https://support.igloohome.co/support/solutions/articles/35000169625-incorrect-pin).
 
-***
+---
 
 ## Where to Order
 
 Order igloohome devices directly from the igloohome website.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>igloohome</strong></td><td></td><td><a href="https://store-us.igloohome.co/">https://store-us.igloohome.co/</a></td><td><a href="/images/igloohome-logo.png">igloohome-logo.png</a></td></tr></tbody></table>
+<table data-view='cards'>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th data-hidden data-card-target data-type='content-ref'></th>
+      <th data-hidden data-card-cover data-type='files'></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>
+        <strong>igloohome</strong>
+      </td>
+      <td></td>
+      <td>
+        <a href='https://store-us.igloohome.co/'>
+          https://store-us.igloohome.co/
+        </a>
+      </td>
+      <td>
+        <a href='/images/igloohome-logo.png'>igloohome-logo.png</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-***
+---

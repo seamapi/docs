@@ -1,12 +1,11 @@
 ---
-title: "List Workspaces"
+title: 'List Workspaces'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a list of [workspaces](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,32 +15,34 @@ Returns a list of workspaces associated with the authentication value.
 #### Code:
 
 ```javascript
-await seam.workspaces.list();
+await seam.workspaces.list()
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "company_name": "Acme",
-    "connect_partner_name": "Acme",
-    "connect_webview_customization": {
-      "inviter_logo_url": "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
-      "logo_shape": "circle",
-      "primary_button_color": "#232426",
-      "primary_button_text_color": "#FFFDE7",
-      "success_message": "Your account has been successfully connected to Acme!"
+    company_name: 'Acme',
+    connect_partner_name: 'Acme',
+    connect_webview_customization: {
+      inviter_logo_url:
+        'https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c',
+      logo_shape: 'circle',
+      primary_button_color: '#232426',
+      primary_button_text_color: '#FFFDE7',
+      success_message: 'Your account has been successfully connected to Acme!',
     },
-    "is_sandbox": true,
-    "is_suspended": false,
-    "is_publishable_key_auth_enabled": true,
-    "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
-    "name": "My Sandbox Workspace",
-    "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
-  }
+    is_sandbox: true,
+    is_suspended: false,
+    is_publishable_key_auth_enabled: true,
+    publishable_key: 'seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE',
+    name: 'My Sandbox Workspace',
+    workspace_id: '6a0b6282-6a98-4fef-811e-0904c485ac7a',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -80,6 +81,7 @@ curl --include --request POST "https://connect.getseam.com/workspaces/list" \
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -115,6 +117,7 @@ seam.workspaces.list()
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -151,6 +154,7 @@ seam.workspaces.list()
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -188,6 +192,7 @@ $seam->workspaces->list();
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -223,10 +228,10 @@ seam workspaces list
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -235,15 +240,16 @@ seam workspaces list
 - API key
 - Client session token
 - Personal access token
-  <br />Can also include the `seam-workspace` header in the request.
+  <br />
+  Can also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
 None
-
 
 ## Response
 
@@ -253,11 +259,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -278,5 +281,6 @@ Returns:
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
 ```
+
 </Tab>
 </Tabs>

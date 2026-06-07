@@ -1,8 +1,7 @@
 ---
-title: "Managing Backup Access Codes"
-description: "Learn how to bullet proof your access code implementation with back up access codes."
+title: 'Managing Backup Access Codes'
+description: 'Learn how to bullet proof your access code implementation with back up access codes.'
 ---
-
 
 A backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes.
 
@@ -11,10 +10,11 @@ If there's ever a complication with a primary access code—be it due to intermi
 To bulletproof your implementation of access codes, it's essential to maintain a pool of backup access codes for each device. Seam provides a robust implementation of this backup pool system, and this article will help you learn how to use our backup access pool system.
 
 <Info>
-Seam supports backup access codes for [time-bound access codes](./#time-bound-access-codes) only.
+  Seam supports backup access codes for [time-bound access
+  codes](./#time-bound-access-codes) only.
 </Info>
 
-***
+---
 
 ## Before You Begin
 
@@ -41,9 +41,11 @@ After you've done that, come back here and keep reading.
 **Request:**
 
 ```javascript
-console.log(await seam.devices.get({
-  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-}))
+console.log(
+  await seam.devices.get({
+    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  }),
+)
 ```
 
 **Response:**
@@ -65,6 +67,7 @@ console.log(await seam.devices.get({
   .
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -106,6 +109,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -123,6 +127,7 @@ pprint("Supports backup access code pool: "
 ```
 'Supports backup access code pool: True'
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -147,6 +152,7 @@ puts client.devices.get(device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspe
   .
   >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -154,6 +160,7 @@ puts client.devices.get(device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspe
 ```php
 # not yet implemented
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -172,10 +179,11 @@ Console.WriteLine("Supports backup access code pool: " + device.Properties.Suppo
 Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
 Supports backup access code pool: True
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Enabling and Retrieving Backup Codes
 
@@ -195,14 +203,14 @@ In the smart lock app, backup access codes appear as "Backup {CODE\_ID} (Seam)".
 **Request:**
 
 ```javascript
-const deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+const deviceId = '6aae9d08-fed6-4ca5-8328-e36849ab48fe'
 
 const createdAccessCode = await seam.accessCodes.create({
-    device_id: deviceId,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    use_backup_access_code_pool: true
+  device_id: deviceId,
+  name: 'my time-bound code',
+  starts_at: '2025-01-01T16:00:00Z',
+  ends_at: '2025-01-22T12:00:00Z',
+  use_backup_access_code_pool: true,
 })
 
 console.log(createdAccessCode)
@@ -212,26 +220,27 @@ console.log(createdAccessCode)
 
 ```json
 {
-  access_code_id: 'f863cb36-7f96-4b56-ac91-115742c31c00',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'my time-bound code',
-  appearance: null,
-  code: '8030',
-  common_code_key: null,
-  type: 'time_bound',
-  status: 'unset',
-  is_scheduled_on_device: false,
-  starts_at: '2025-01-01T16:00:00.000Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
-  pulled_backup_access_code_id: null,
-  is_backup_access_code_available: true,
-  created_at: '2023-10-19T11:41:27.273Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: false
+  "access_code_id": "f863cb36-7f96-4b56-ac91-115742c31c00",
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "my time-bound code",
+  "appearance": null,
+  "code": "8030",
+  "common_code_key": null,
+  "type": "time_bound",
+  "status": "unset",
+  "is_scheduled_on_device": false,
+  "starts_at": "2025-01-01T16:00:00.000Z",
+  "ends_at": "2025-01-22T12:00:00.000Z",
+  "pulled_backup_access_code_id": null,
+  "is_backup_access_code_available": true,
+  "created_at": "2023-10-19T11:41:27.273Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "is_external_modification_allowed": false
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -287,6 +296,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -331,6 +341,7 @@ AccessCode(access_code_id='dc83d82d-55d2-4178-8c8c-10382311aed2',
            appearance=None,
            is_external_modification_allowed=False)
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -373,6 +384,7 @@ puts created_access_code.inspect
   is_backup_access_code_available=true
   is_external_modification_allowed=false>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -413,6 +425,7 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 //   "is_backup": null
 // }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -439,6 +452,7 @@ Console.WriteLine("Is backup access code available: " + createdAccessCode.IsBack
 Created access code ID: 4ea6c172-cff7-4502-a766-f9293f36cba5
 Is backup access code available: True
 ```
+
 </Tab>
 </Tabs>
 
@@ -453,7 +467,8 @@ You can retrieve a backup access code to use instead.
 To confirm that a backup access code is available for retrieval, check the `is_backup_access_code_available` property on the access code by inspecting the response from [Get Access Code](https://docs.seam.co/latest/api/access_codes/get) or [List Access Codes](https://docs.seam.co/latest/api/access_codes/list). If the backup code pool has been exhausted, this property returns `false`.
 
 <Info>
-Note that we only support pulling backup codes for `time_bound` codes at this time.
+  Note that we only support pulling backup codes for `time_bound` codes at this
+  time.
 </Info>
 
 <Tabs>
@@ -463,11 +478,13 @@ Note that we only support pulling backup codes for `time_bound` codes at this ti
 
 ```javascript
 const accessCode = await seam.accessCodes.get({
-  access_code_id: "f863cb36-7f96-4b56-ac91-115742c31c00"
+  access_code_id: 'f863cb36-7f96-4b56-ac91-115742c31c00',
 })
 
-console.log("Is backup access code available: "
-  + accessCode.is_backup_access_code_available)
+console.log(
+  'Is backup access code available: ' +
+    accessCode.is_backup_access_code_available,
+)
 ```
 
 **Response:**
@@ -475,6 +492,7 @@ console.log("Is backup access code available: "
 ```
 Is backup access code available: true
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -510,6 +528,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -528,6 +547,7 @@ pprint("Is backup access code available: "
 ```
 'Is backup access code available: True'
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -544,6 +564,7 @@ puts "Is backup access code available: #{access_code.is_backup_access_code_avail
 ```
 Is backup access code available: true
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -559,6 +580,7 @@ $access_code = $seam->access_codes->get(
 echo json_encode($access_code->is_backup_access_code_available);
 # => true
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -577,6 +599,7 @@ Console.WriteLine("Is backup access code available: " + accessCode.IsBackupAcces
 Created access code ID: 4ea6c172-cff7-4502-a766-f9293f36cba5
 Is backup access code available: True
 ```
+
 </Tab>
 </Tabs>
 
@@ -586,10 +609,10 @@ To retrieve a backup access code for an access code, include the `access_code_id
 
 Upon executing this action, Seam performs the following additional actions:
 
-* Mark the backup access code as pulled (`"pulled": true`), meaning that it has been removed from the pool.
-* Associate the backup access code with the original access code, ensuring that any future requests to the [Pull Backup Access Code](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code) request return the same backup access code.
-* Update the `ends_at` date for the backup access code to match that of the original access code.
-* Attempt to refill the backup access code pool with a new backup code.
+- Mark the backup access code as pulled (`"pulled": true`), meaning that it has been removed from the pool.
+- Associate the backup access code with the original access code, ensuring that any future requests to the [Pull Backup Access Code](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code) request return the same backup access code.
+- Update the `ends_at` date for the backup access code to match that of the original access code.
+- Attempt to refill the backup access code pool with a new backup code.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -598,7 +621,7 @@ Upon executing this action, Seam performs the following additional actions:
 
 ```javascript
 const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
-    access_code_id: "f863cb36-7f96-4b56-ac91-115742c31c00"
+  access_code_id: 'f863cb36-7f96-4b56-ac91-115742c31c00',
 })
 
 console.log(backupAccessCode)
@@ -608,29 +631,30 @@ console.log(backupAccessCode)
 
 ```json
 {
-  access_code_id: '284cc090-5d89-4e9d-a4ed-518c6cb68d99',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
-  appearance: {
-    name: 'Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
-    last_name: '284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)',
-    first_name: 'Backup'
+  "access_code_id": "284cc090-5d89-4e9d-a4ed-518c6cb68d99",
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
+  "appearance": {
+    "name": "Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
+    "last_name": "284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
+    "first_name": "Backup"
   },
-  code: '1275',
-  common_code_key: null,
-  type: 'time_bound',
-  status: 'set',
-  starts_at: '2023-10-19T11:50:21.092Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
-  is_backup: true,
-  is_backup_access_code_available: false,
-  created_at: '2023-10-19T05:07:05.369Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: false
+  "code": "1275",
+  "common_code_key": null,
+  "type": "time_bound",
+  "status": "set",
+  "starts_at": "2023-10-19T11:50:21.092Z",
+  "ends_at": "2025-01-22T12:00:00.000Z",
+  "is_backup": true,
+  "is_backup_access_code_available": false,
+  "created_at": "2023-10-19T05:07:05.369Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "is_external_modification_allowed": false
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -678,6 +702,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -722,6 +747,7 @@ AccessCode(access_code_id='6db16e34-48d4-467a-856c-32a56b9cf0da',
                                '(Seam)'},
            is_external_modification_allowed=False)
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -754,6 +780,7 @@ puts client.access_codes.pull_backup_access_code(access_code_id: access_code_id)
   is_managed=true
   is_external_modification_allowed=false>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -789,6 +816,7 @@ echo json_encode($backup_code, JSON_PRETTY_PRINT);
 //     "is_backup": true
 // }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -827,10 +855,11 @@ IsBackup: True
 PulledBackupAccessCodeId:
 IsExternalModificationAllowed: False
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Troubleshooting
 
@@ -848,7 +877,7 @@ Seam is having trouble refilling the back up access code pool. This could result
 
 There are no more back up codes available in the pool. This can happen when you've just enabled the back up pool feature, or when all of the backup access codes have been used.
 
-***
+---
 
 ## Supported Brands
 

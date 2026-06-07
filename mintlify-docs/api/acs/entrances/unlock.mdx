@@ -1,5 +1,5 @@
 ---
-title: "Unlock an Entrance"
+title: 'Unlock an Entrance'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,32 +7,32 @@ title: "Unlock an Entrance"
 
 Remotely unlocks a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
 
-
 <details>
 
 <summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_credential_id`** *String* (Required)
+**`acs_credential_id`** _String_ (Required)
 
 ID of the cloud_key credential to use for the unlock operation.
 
 ---
 
-**`acs_entrance_id`** *String* (Required)
+**`acs_entrance_id`** _String_ (Required)
 
 ID of the entrance to unlock.
 
 ---
-
 
 ## Response
 
@@ -42,11 +42,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -57,5 +54,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

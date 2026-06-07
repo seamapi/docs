@@ -1,5 +1,5 @@
 ---
-title: "Get a Device"
+title: 'Get a Device'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -10,7 +10,6 @@ Returns a specified [device](https://docs.seam.co/latest/core-concepts/devices).
 
 You must specify either `device_id` or `name`.
 
-
 <Tabs>
 <Tab title="JavaScript">
 
@@ -19,7 +18,7 @@ Returns a specified device, using an ID.
 #### Code:
 
 ```javascript
-await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
+await seam.devices.get({ device_id: 'a75bff05-29a3-4215-a09f-2156c52a4ac7' })
 ```
 
 #### Output:
@@ -187,6 +186,7 @@ await seam.devices.get({ device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7" });
   "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -372,6 +372,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -546,6 +547,7 @@ Device(
     workspace_id="9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -728,6 +730,7 @@ seam.devices.get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7")
   "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -932,6 +935,7 @@ $seam->devices->get(device_id: "a75bff05-29a3-4215-a09f-2156c52a4ac7");
     "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -1109,10 +1113,10 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
   "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -1121,25 +1125,26 @@ seam devices get --device_id "a75bff05-29a3-4215-a09f-2156c52a4ac7"
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String*
+**`device_id`** _String_
 
 ID of the device that you want to get.
 
 ---
 
-**`name`** *String*
+**`name`** _String_
 
 Name of the device that you want to get.
 
 ---
-
 
 ## Response
 
@@ -1149,11 +1154,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -1209,13 +1211,13 @@ Returns:
   "workspace_id": "5d7f2e1a-9c8b-4f3e-8d2c-1a0b9e8f7c6d"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### Get a device by name
 
@@ -1224,12 +1226,10 @@ Returns a specified device, using a name.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
-await seam.devices.get({ name: "My Device" });
+await seam.devices.get({ name: 'My Device' })
 ```
 
 #### Output:
@@ -1397,11 +1397,10 @@ await seam.devices.get({ name: "My Device" });
   "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1582,11 +1581,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1756,11 +1754,10 @@ Device(
     workspace_id="9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1938,11 +1935,10 @@ seam.devices.get(name: "My Device")
   "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -2142,11 +2138,10 @@ $seam->devices->get(name: "My Device");
     "workspace_id" => "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -2319,6 +2314,7 @@ seam devices get --name "My Device"
   "workspace_id": "9f8e7d6c-5b4a-3c2d-1e0f-9876543210ab"
 }
 ```
+
 </Tab>
 
 </Tabs>

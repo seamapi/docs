@@ -1,12 +1,11 @@
 ---
-title: "Create an ACS User"
+title: 'Create an ACS User'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Creates a new [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,17 +16,17 @@ Creates a new access system user.
 
 ```javascript
 await seam.acs.users.create({
-  full_name: "Jane Doe",
-  acs_system_id: "dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46",
-  acs_access_group_ids: ["bab9962b-708b-4db7-98d5-b242a28c12e9"],
-  user_identity_id: "3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6",
+  full_name: 'Jane Doe',
+  acs_system_id: 'dc5c90b2-1aab-40a6-bcaa-4b8924b7ad46',
+  acs_access_group_ids: ['bab9962b-708b-4db7-98d5-b242a28c12e9'],
+  user_identity_id: '3ce809f3-b5ac-43a7-a086-70ffa9cb1dd6',
   access_schedule: {
-    starts_at: "2025-06-10T15:00:00.000Z",
-    ends_at: "2025-06-12T11:00:00.000Z",
+    starts_at: '2025-06-10T15:00:00.000Z',
+    ends_at: '2025-06-12T11:00:00.000Z',
   },
-  email_address: "jane@example.com",
-  phone_number: "+15551234567",
-});
+  email_address: 'jane@example.com',
+  phone_number: '+15551234567',
+})
 ```
 
 #### Output:
@@ -62,6 +61,7 @@ await seam.acs.users.create({
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -125,6 +125,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -180,6 +181,7 @@ AcsUser(
     workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -235,6 +237,7 @@ seam.acs.users.create(
   "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -290,6 +293,7 @@ $seam->acs->users->create(
     "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -334,10 +338,10 @@ seam acs users create --full_name "Jane Doe" --acs_system_id "dc5c90b2-1aab-40a6
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -345,32 +349,39 @@ seam acs users create --full_name "Jane Doe" --acs_system_id "dc5c90b2-1aab-40a6
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_system_id`** *String* (Required)
+**`acs_system_id`** _String_ (Required)
 
 ID of the access system to which you want to add the new access system user.
 
 ---
 
-**`full_name`** *String* (Required)
+**`full_name`** _String_ (Required)
 
 Full name of the new access system user.
 
 ---
 
-**`access_schedule`** *Object*
+**`access_schedule`** _Object_
 
 `starts_at` and `ends_at` timestamps for the new access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 <details>
 
-<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>ends_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Ending timestamp for the new access system user's access.
 
@@ -378,11 +389,14 @@ Ending timestamp for the new access system user's access.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>starts_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Starting timestamp for the new access system user's access.
 
@@ -390,39 +404,35 @@ Starting timestamp for the new access system user's access.
 
 ---
 
-
-**`acs_access_group_ids`** *Array* *of UUIDs*
+**`acs_access_group_ids`** _Array_ _of UUIDs_
 
 Array of access group IDs to indicate the access groups to which you want to add the new access system user.
 
 ---
 
-**`email`** *String*
+**`email`** _String_
 
-<Warning>
-**Deprecated**. use email_address.
-</Warning>
+<Warning>**Deprecated**. use email_address.</Warning>
 
 ---
 
-**`email_address`** *String*
+**`email_address`** _String_
 
 Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`phone_number`** *String*
+**`phone_number`** _String_
 
 Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ---
 
-**`user_identity_id`** *String*
+**`user_identity_id`** _String_
 
 ID of the user identity with which you want to associate the new access system user.
 
 ---
-
 
 ## Response
 
@@ -432,11 +442,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -476,5 +483,6 @@ Returns:
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 </Tabs>

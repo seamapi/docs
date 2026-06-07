@@ -1,12 +1,11 @@
 ---
-title: "Get a Workspace"
+title: 'Get a Workspace'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,7 +15,7 @@ Returns the workspace associated with the authentication value.
 #### Code:
 
 ```javascript
-await seam.workspaces.get();
+await seam.workspaces.get()
 ```
 
 #### Output:
@@ -40,6 +39,7 @@ await seam.workspaces.get();
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -76,6 +76,7 @@ curl --include --request POST "https://connect.getseam.com/workspaces/get" \
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -109,6 +110,7 @@ Workspace(
     workspace_id="6a0b6282-6a98-4fef-811e-0904c485ac7a",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -143,6 +145,7 @@ seam.workspaces.get()
   "workspace_id" => "6a0b6282-6a98-4fef-811e-0904c485ac7a",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -178,6 +181,7 @@ $seam->workspaces->get();
     "workspace_id" => "6a0b6282-6a98-4fef-811e-0904c485ac7a",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -211,10 +215,10 @@ seam workspaces get
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -223,15 +227,16 @@ seam workspaces get
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
 None
-
 
 ## Response
 
@@ -241,11 +246,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -266,5 +268,6 @@ Returns:
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
 ```
+
 </Tab>
 </Tabs>

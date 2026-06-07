@@ -1,12 +1,11 @@
 ---
-title: "Retrieving ACS System Details"
-description: "Learn how to list and get information about your ACS systems."
+title: 'Retrieving ACS System Details'
+description: 'Learn how to list and get information about your ACS systems.'
 ---
-
 
 You can list details for all the ACSs in your [workspace](../../../core-concepts/workspaces/) or get these details for a specific ACS. Note that Seam represents the ACS as an [`acs_system`](https://docs.seam.co/latest/api/acs/systems/) resource. When you want to [create ACS users](../../../capability-guides/access-systems/user-management.md#create-a-user) for your ACS, you must first obtain the ID of the `acs_system` for which you want to create these users.
 
-***
+---
 
 ## List ACS Systems
 
@@ -18,7 +17,7 @@ You can [list all `acs_system` resources](https://docs.seam.co/latest/api/acs/sy
 **Request:**
 
 ```javascript
-await seam.acs.systems.list();
+await seam.acs.systems.list()
 ```
 
 **Response:**
@@ -33,6 +32,7 @@ await seam.acs.systems.list();
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -64,6 +64,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -86,6 +87,7 @@ seam.acs.systems.list()
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -101,6 +103,7 @@ seam.acs.systems.list()
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -123,6 +126,7 @@ $seam->acs->systems->list();
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -143,10 +147,11 @@ seam.SystemsAcs.List();
 }
 ...
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Get an ACS System
 
@@ -159,25 +164,26 @@ You can [get the details of a specific `acs_system`](https://docs.seam.co/latest
 
 ```javascript
 await seam.acs.systems.get({
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-});
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+})
 ```
 
 **Response:**
 
 ```json
 {
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  name: 'Example Inc',
-  workspace_id: '00000000-0000-0000-0000-000000000000',
-  created_at: '2023-11-30T06:27:14.961Z',
-  external_type: 'pti_site',
-  external_type_display_name: 'PTI site',
-  connected_account_ids: [ '11111111-1111-1111-1111-222222222222' ],
-  image_url: 'https://connect.getseam.com/assets/images/acs_systems/pti_site.png',
-  image_alt_text: 'PTI site Logo'
+  "acs_system_id": "11111111-1111-1111-1111-111111111111",
+  "name": "Example Inc",
+  "workspace_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2023-11-30T06:27:14.961Z",
+  "external_type": "pti_site",
+  "external_type_display_name": "PTI site",
+  "connected_account_ids": ["11111111-1111-1111-1111-222222222222"],
+  "image_url": "https://connect.getseam.com/assets/images/acs_systems/pti_site.png",
+  "image_alt_text": "PTI site Logo"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -207,15 +213,14 @@ curl -X 'GET' \
     "created_at": "2023-11-30T06:27:14.961Z",
     "external_type": "pti_site",
     "external_type_display_name": "PTI site",
-    "connected_account_ids": [
-      "11111111-1111-1111-1111-222222222222"
-    ],
+    "connected_account_ids": ["11111111-1111-1111-1111-222222222222"],
     "image_url": "https://connect.getseam.com/assets/images/acs_systems/pti_site.png",
     "image_alt_text": "PTI site Logo"
   },
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -245,6 +250,7 @@ AcsSystem(
   image_alt_text='PTI site Logo'
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -260,6 +266,7 @@ AcsSystem(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -282,13 +289,12 @@ $seam->acs->systems->get(
   "created_at": "2023-11-30T06:27:14.961Z",
   "external_type": "pti_site",
   "external_type_display_name": "PTI site",
-  "connected_account_ids": [
-    "11111111-1111-1111-1111-222222222222"
-  ],
+  "connected_account_ids": ["11111111-1111-1111-1111-222222222222"],
   "image_url": "https://connect.getseam.com/assets/images/acs_systems/pti_site.png",
   "image_alt_text": "PTI site Logo"
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -311,12 +317,11 @@ seam.SystemsAcs.Get(
   "created_at": "2023-11-30T06:27:14.961Z",
   "external_type": "pti_site",
   "external_type_display_name": "PTI site",
-  "connected_account_ids": [
-    "11111111-1111-1111-1111-222222222222"
-  ],
+  "connected_account_ids": ["11111111-1111-1111-1111-222222222222"],
   "image_url": "https://connect.getseam.com/assets/images/acs_systems/pti_site.png",
   "image_alt_text": "PTI site Logo"
 }
 ```
+
 </Tab>
 </Tabs>

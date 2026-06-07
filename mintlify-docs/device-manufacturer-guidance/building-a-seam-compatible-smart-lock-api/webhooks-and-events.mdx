@@ -1,10 +1,10 @@
 ---
-title: "Webhooks & Events"
+title: 'Webhooks & Events'
 ---
 
 How to send real-time device updates to Seam through a single webhook endpoint. Seam uses webhook events to keep device state accurate without polling and to correlate lock actions, access-code changes, and connectivity updates.
 
-***
+---
 
 ## Webhook registration
 
@@ -14,9 +14,9 @@ Your API should deliver all events to the provided URL.
 
 Correct behavior:
 
-* one webhook URL per Seam environment
-* no per-user or per-account webhook registration
-* Seam maps each incoming event to the correct connected account internally
+- one webhook URL per Seam environment
+- no per-user or per-account webhook registration
+- Seam maps each incoming event to the correct connected account internally
 
 Your API should allow Seam to register this URL and specify which event types it wants to receive.
 
@@ -52,7 +52,7 @@ Your API should allow Seam to register this URL and specify which event types it
 }
 ```
 
-***
+---
 
 ## Event Delivery
 
@@ -78,12 +78,12 @@ Your API should retry event delivery when Seam returns a non-2xx status.
 
 #### Recommended approach
 
-* Exponential backoff
-* Retries for at least 24 hours
-* Payload unchanged
-* Maintain chronological order when possible
+- Exponential backoff
+- Retries for at least 24 hours
+- Payload unchanged
+- Maintain chronological order when possible
 
-***
+---
 
 ## Event Examples
 
@@ -129,7 +129,7 @@ Your API should retry event delivery when Seam returns a non-2xx status.
 }
 ```
 
-***
+---
 
 ### Lock action events
 
@@ -162,7 +162,7 @@ Your API should retry event delivery when Seam returns a non-2xx status.
 }
 ```
 
-***
+---
 
 ### Access code lifecycle events
 
@@ -203,7 +203,7 @@ Your API should retry event delivery when Seam returns a non-2xx status.
 }
 ```
 
-***
+---
 
 ### Access code usage events
 
@@ -228,7 +228,7 @@ Your API should retry event delivery when Seam returns a non-2xx status.
 }
 ```
 
-***
+---
 
 ## Event format consistency
 
@@ -239,8 +239,8 @@ All events should follow a standard shape:
   "event_type": "string",
   "device_id": "string or null",
   "timestamp": "ISO-8601 timestamp",
-  "data": { }
+  "data": {}
 }
 ```
 
-***
+---

@@ -1,5 +1,5 @@
 ---
-title: "Update an ACS User"
+title: 'Update an ACS User'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "Update an ACS User"
 - [Examples](#examples)
 
 Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,18 +17,18 @@ Updates the properties of a specified access system user, using the associated u
 
 ```javascript
 await seam.acs.users.update({
-  acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
-  user_identity_id: "b0bbb463-4fad-4b21-a695-952463ea6e93",
-  acs_system_id: "88ae7b8b-c406-414b-a745-91d9cea661f7",
+  acs_user_id: '5db87499-0b3b-4750-a2e8-341b2af64049',
+  user_identity_id: 'b0bbb463-4fad-4b21-a695-952463ea6e93',
+  acs_system_id: '88ae7b8b-c406-414b-a745-91d9cea661f7',
   access_schedule: {
-    starts_at: "2025-06-10T15:00:00.000Z",
-    ends_at: "2025-06-12T11:00:00.000Z",
+    starts_at: '2025-06-10T15:00:00.000Z',
+    ends_at: '2025-06-12T11:00:00.000Z',
   },
-  full_name: "Jane Doe",
-  email: "jane@example.com",
-  phone_number: "+15551234567",
-  email_address: "jane@example.com",
-});
+  full_name: 'Jane Doe',
+  email: 'jane@example.com',
+  phone_number: '+15551234567',
+  email_address: 'jane@example.com',
+})
 ```
 
 #### Output:
@@ -37,6 +36,7 @@ await seam.acs.users.update({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -70,6 +70,7 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -99,6 +100,7 @@ seam.acs.users.update(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -128,6 +130,7 @@ seam.acs.users.update(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -157,6 +160,7 @@ $seam->acs->users->update(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -174,10 +178,10 @@ seam acs users update --acs_user_id "5db87499-0b3b-4750-a2e8-341b2af64049" --use
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -185,20 +189,27 @@ seam acs users update --acs_user_id "5db87499-0b3b-4750-a2e8-341b2af64049" --use
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_schedule`** *Object*
+**`access_schedule`** _Object_
 
 `starts_at` and `ends_at` timestamps for the access system user's access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. If you omit `starts_at`, it defaults to the current time. `ends_at` is optional and must be a time in the future and after `starts_at`.
 
 <details>
 
-<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>ends_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Ending timestamp for the access system user's access.
 
@@ -206,11 +217,14 @@ Ending timestamp for the access system user's access.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>starts_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Starting timestamp for the access system user's access.
 
@@ -218,55 +232,51 @@ Starting timestamp for the access system user's access.
 
 ---
 
-
-**`acs_system_id`** *String*
+**`acs_system_id`** _String_
 
 ID of the access system that you want to update. You can only provide acs_system_id with user_identity_id.
 
 ---
 
-**`acs_user_id`** *String*
+**`acs_user_id`** _String_
 
 ID of the access system user that you want to update. You can only provide acs_user_id or user_identity_id.
 
 ---
 
-**`email`** *String*
+**`email`** _String_
 
-<Warning>
-**Deprecated**. use email_address.
-</Warning>
+<Warning>**Deprecated**. use email_address.</Warning>
 
 ---
 
-**`email_address`** *String*
+**`email_address`** _String_
 
 Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`full_name`** *String*
+**`full_name`** _String_
 
 Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
-**`hid_acs_system_id`** *String*
+**`hid_acs_system_id`** _String_
 
 ---
 
-**`phone_number`** *String*
+**`phone_number`** _String_
 
 Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ---
 
-**`user_identity_id`** *String*
+**`user_identity_id`** _String_
 
 ID of the user identity that you want to update. You can only provide acs_user_id or user_identity_id. If you provide user_identity_id, you must also provide acs_system_id.
 
 ---
-
 
 ## Response
 
@@ -276,11 +286,9 @@ Returns:
 
 </Check>
 
-
 ---
 
 ## Examples
-
 
 ### Update an access system user
 
@@ -289,22 +297,20 @@ Updates the properties of a specified access system user.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.acs.users.update({
-  acs_user_id: "5db87499-0b3b-4750-a2e8-341b2af64049",
+  acs_user_id: '5db87499-0b3b-4750-a2e8-341b2af64049',
   access_schedule: {
-    starts_at: "2025-06-10T15:00:00.000Z",
-    ends_at: "2025-06-12T11:00:00.000Z",
+    starts_at: '2025-06-10T15:00:00.000Z',
+    ends_at: '2025-06-12T11:00:00.000Z',
   },
-  full_name: "Jane Doe",
-  email: "jane@example.com",
-  phone_number: "+15551234567",
-  email_address: "jane@example.com",
-});
+  full_name: 'Jane Doe',
+  email: 'jane@example.com',
+  phone_number: '+15551234567',
+  email_address: 'jane@example.com',
+})
 ```
 
 #### Output:
@@ -312,11 +318,10 @@ await seam.acs.users.update({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -343,11 +348,10 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -370,11 +374,10 @@ seam.acs.users.update(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -397,11 +400,10 @@ seam.acs.users.update(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -424,11 +426,10 @@ $seam->acs->users->update(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -441,6 +442,7 @@ seam acs users update --acs_user_id "5db87499-0b3b-4750-a2e8-341b2af64049" --acc
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>

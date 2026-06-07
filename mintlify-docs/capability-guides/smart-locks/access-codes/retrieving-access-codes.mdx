@@ -1,8 +1,7 @@
 ---
-title: "Retrieving Access Codes"
-description: "Learn how to retrieve access codes using various filters or by referencing their specific IDs"
+title: 'Retrieving Access Codes'
+description: 'Learn how to retrieve access codes using various filters or by referencing their specific IDs'
 ---
-
 
 ## Retrieving All Access Codes for a Device
 
@@ -14,9 +13,11 @@ To retrieve all access codes for a device, include the `device_id` in the [List 
 **Request:**
 
 ```javascript
-console.log(await seam.accessCodes.list({
-  device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-}))
+console.log(
+  await seam.accessCodes.list({
+    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+  }),
+)
 ```
 
 **Response:**
@@ -24,48 +25,49 @@ console.log(await seam.accessCodes.list({
 ```json
 [
   {
-    access_code_id: '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my time-bound code',
-    appearance: null,
-    code: '2345',
-    common_code_key: null,
-    type: 'time_bound',
-    status: 'unset',
-    is_scheduled_on_device: false,
-    starts_at: '2025-01-01T16:00:00.000Z',
-    ends_at: '2025-01-22T12:00:00.000Z',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:36:51.663Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
+    "access_code_id": "80aa1afa-f0e5-43c2-96ea-6ab141112f9c",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my time-bound code",
+    "appearance": null,
+    "code": "2345",
+    "common_code_key": null,
+    "type": "time_bound",
+    "status": "unset",
+    "is_scheduled_on_device": false,
+    "starts_at": "2025-01-01T16:00:00.000Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T09:36:51.663Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": false
   },
   {
-    access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my ongoing code',
-    appearance: {
-      name: 'my ongoing code',
-      last_name: 'ongoing code',
-      first_name: 'my'
+    "access_code_id": "f4780806-076e-4cec-8081-df0ea2139d5a",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    "appearance": {
+      "name": "my ongoing code",
+      "last_name": "ongoing code",
+      "first_name": "my"
     },
-    code: '1234',
-    common_code_key: null,
-    type: 'ongoing',
-    status: 'set',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:30:58.399Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
+    "code": "1234",
+    "common_code_key": null,
+    "type": "ongoing",
+    "status": "set",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T09:30:58.399Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": false
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -134,6 +136,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -193,6 +196,7 @@ pprint(access_codes)
                         'name': 'my ongoing code'},
             is_external_modification_allowed=False)]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -241,6 +245,7 @@ puts client.access_codes.list(device_id: device_id).inspect
   is_managed=true
   is_external_modification_allowed=false>]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -295,6 +300,7 @@ echo json_encode($access_codes, JSON_PRETTY_PRINT);
 // ]
 
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -325,10 +331,11 @@ Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
 Type: Ongoing
 Code: 1234
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Retrieving Access Codes Using Access Code IDs
 
@@ -340,10 +347,15 @@ To retrieve access codes by IDs, include the desired `access_code_ids` in the [L
 **Request:**
 
 ```javascript
-const accessCodeIds = ['80aa1afa-f0e5-43c2-96ea-6ab141112f9c', 'f4780806-076e-4cec-8081-df0ea2139d5a']
-console.log(await seam.accessCodes.list({
-  access_code_ids: accessCodeIds
-}))
+const accessCodeIds = [
+  '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
+  'f4780806-076e-4cec-8081-df0ea2139d5a',
+]
+console.log(
+  await seam.accessCodes.list({
+    access_code_ids: accessCodeIds,
+  }),
+)
 ```
 
 **Response:**
@@ -351,48 +363,49 @@ console.log(await seam.accessCodes.list({
 ```json
 [
   {
-    access_code_id: '80aa1afa-f0e5-43c2-96ea-6ab141112f9c',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my time-bound code',
-    appearance: null,
-    code: '2345',
-    common_code_key: null,
-    type: 'time_bound',
-    status: 'unset',
-    is_scheduled_on_device: false,
-    starts_at: '2025-01-01T16:00:00.000Z',
-    ends_at: '2025-01-22T12:00:00.000Z',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:36:51.663Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
+    "access_code_id": "80aa1afa-f0e5-43c2-96ea-6ab141112f9c",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my time-bound code",
+    "appearance": null,
+    "code": "2345",
+    "common_code_key": null,
+    "type": "time_bound",
+    "status": "unset",
+    "is_scheduled_on_device": false,
+    "starts_at": "2025-01-01T16:00:00.000Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T09:36:51.663Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": false
   },
   {
-    access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
-    device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-    name: 'my ongoing code',
-    appearance: {
-      name: 'my ongoing code',
-      last_name: 'ongoing code',
-      first_name: 'my'
+    "access_code_id": "f4780806-076e-4cec-8081-df0ea2139d5a",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my ongoing code",
+    "appearance": {
+      "name": "my ongoing code",
+      "last_name": "ongoing code",
+      "first_name": "my"
     },
-    code: '1234',
-    common_code_key: null,
-    type: 'ongoing',
-    status: 'set',
-    pulled_backup_access_code_id: null,
-    is_backup_access_code_available: true,
-    created_at: '2023-10-19T09:30:58.399Z',
-    errors: [],
-    warnings: [],
-    is_managed: true,
-    is_external_modification_allowed: false
+    "code": "1234",
+    "common_code_key": null,
+    "type": "ongoing",
+    "status": "set",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T09:30:58.399Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": false
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -464,6 +477,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -526,6 +540,7 @@ pprint(access_codes)
                         'name': 'my ongoing code'},
             is_external_modification_allowed=False)]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -575,6 +590,7 @@ puts access_codes.inspect
   is_managed=true
   is_external_modification_allowed=false>]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -582,6 +598,7 @@ puts access_codes.inspect
 ```php
 /** not implemented; contact us if you need immediate support **/
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -615,10 +632,11 @@ Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
 Type: Ongoing
 Code: 1234
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Retrieving Individual Access Codes
 
@@ -630,36 +648,39 @@ To retrieve a specific access code, include the desired `access_code_id` in the 
 **Request:**
 
 ```javascript
-console.log(await seam.accessCodes.get({
-  access_code_id: "f4780806-076e-4cec-8081-df0ea2139d5a"
-}))
+console.log(
+  await seam.accessCodes.get({
+    access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
+  }),
+)
 ```
 
 **Response:**
 
 ```json
 {
-  access_code_id: 'f4780806-076e-4cec-8081-df0ea2139d5a',
-  device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-  name: 'my ongoing code',
-  appearance: {
-    name: 'my ongoing code',
-    last_name: 'ongoing code',
-    first_name: 'my'
+  "access_code_id": "f4780806-076e-4cec-8081-df0ea2139d5a",
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "my ongoing code",
+  "appearance": {
+    "name": "my ongoing code",
+    "last_name": "ongoing code",
+    "first_name": "my"
   },
-  code: '1234',
-  common_code_key: null,
-  type: 'ongoing',
-  status: 'set',
-  pulled_backup_access_code_id: null,
-  is_backup_access_code_available: true,
-  created_at: '2023-10-19T09:30:58.399Z',
-  errors: [],
-  warnings: [],
-  is_managed: true,
-  is_external_modification_allowed: false
+  "code": "1234",
+  "common_code_key": null,
+  "type": "ongoing",
+  "status": "set",
+  "pulled_backup_access_code_id": null,
+  "is_backup_access_code_available": true,
+  "created_at": "2023-10-19T09:30:58.399Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "is_external_modification_allowed": false
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -706,6 +727,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -745,6 +767,7 @@ AccessCode(access_code_id='daf89de3-ad3a-49aa-93bd-25f27d58f699',
                        'name': 'my ongoing code'},
            is_external_modification_allowed=False)
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -774,6 +797,7 @@ puts client.access_codes.get(access_code_id: "6fe348a8-5938-4b73-8a36-86f7ffdfc4
   is_managed=true
   is_external_modification_allowed=false>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -809,6 +833,7 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 //     "is_waiting_for_code_assignment": null
 // }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -831,5 +856,6 @@ Access code ID: fe372cb9-1fa5-492f-9494-ea01c5558333
 Type: Ongoing
 Code: 1234
 ```
+
 </Tab>
 </Tabs>

@@ -19,11 +19,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": [
-              "index",
-              "quickstart",
-              "go-live"
-            ]
+            "pages": ["index", "quickstart", "go-live"]
           },
           {
             "group": "Use Cases",
@@ -435,11 +431,7 @@
           },
           {
             "group": "Events",
-            "pages": [
-              "api/events",
-              "api/events/get",
-              "api/events/list"
-            ]
+            "pages": ["api/events", "api/events/get", "api/events/list"]
           },
           {
             "group": "Instant Keys",
@@ -592,9 +584,7 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": [
-              "device-and-system-integration-guides/index"
-            ]
+            "pages": ["device-and-system-integration-guides/index"]
           },
           {
             "group": "2N Intercom Systems",

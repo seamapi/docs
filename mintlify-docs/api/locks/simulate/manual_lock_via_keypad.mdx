@@ -1,12 +1,11 @@
 ---
-title: "Simulate a Manual Lock Action Using a Keypad"
+title: 'Simulate a Manual Lock Action Using a Keypad'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Simulates a manual lock action using a keypad. You can only perform this action for [August](https://docs.seam.co/latest/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Simulates a manual lock action using a keypad.
 
 ```javascript
 await seam.locks.simulate.manualLockViaKeypad({
-  device_id: "d0eed522-8c2f-4905-88fd-4fe8b067bedc",
-});
+  device_id: 'd0eed522-8c2f-4905-88fd-4fe8b067bedc',
+})
 ```
 
 #### Output:
@@ -32,6 +31,7 @@ await seam.locks.simulate.manualLockViaKeypad({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -63,6 +63,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -88,6 +89,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -112,6 +114,7 @@ seam.locks.simulate.manual_lock_via_keypad(device_id: "d0eed522-8c2f-4905-88fd-4
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -137,6 +140,7 @@ $seam->locks->simulate->manual_lock_via_keypad(
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -160,10 +164,10 @@ seam locks simulate manual-lock-via-keypad --device_id "d0eed522-8c2f-4905-88fd-
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -171,19 +175,20 @@ seam locks simulate manual-lock-via-keypad --device_id "d0eed522-8c2f-4905-88fd-
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the device for which you want to simulate a manual lock action using a keypad.
 
 ---
-
 
 ## Response
 
@@ -193,11 +198,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -208,5 +210,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

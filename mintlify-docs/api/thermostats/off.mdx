@@ -1,12 +1,11 @@
 ---
-title: "Set to Off Mode"
+title: 'Set to Off Mode'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Sets a specified thermostat to "off" mode.
 
 ```javascript
 await seam.thermostats.off({
-  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
-});
+  device_id: '5d5c3b30-5fed-47a3-9df1-ed32f32589e5',
+})
 ```
 
 #### Output:
@@ -32,6 +31,7 @@ await seam.thermostats.off({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -63,6 +63,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -86,6 +87,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -110,6 +112,7 @@ seam.thermostats.off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5")
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -133,6 +136,7 @@ $seam->thermostats->off(device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5");
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -156,10 +160,10 @@ seam thermostats off --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5"
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -168,19 +172,20 @@ seam thermostats off --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5"
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the thermostat device that you want to set to off mode.
 
 ---
-
 
 ## Response
 
@@ -190,11 +195,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -205,5 +207,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

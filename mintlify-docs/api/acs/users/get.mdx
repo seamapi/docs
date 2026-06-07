@@ -1,5 +1,5 @@
 ---
-title: "Get an ACS User"
+title: 'Get an ACS User'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "Get an ACS User"
 - [Examples](#examples)
 
 Returns a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,9 +17,9 @@ Returns a specified access system user.
 
 ```javascript
 await seam.acs.users.get({
-  user_identity_id: "cde1ec76-5b0d-4b3e-9b85-d80dcc9b599c",
-  acs_system_id: "f4d2b3fb-7fa5-47fd-b0d3-aa6da8f5b710",
-});
+  user_identity_id: 'cde1ec76-5b0d-4b3e-9b85-d80dcc9b599c',
+  acs_system_id: 'f4d2b3fb-7fa5-47fd-b0d3-aa6da8f5b710',
+})
 ```
 
 #### Output:
@@ -55,6 +54,7 @@ await seam.acs.users.get({
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -108,6 +108,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -155,6 +156,7 @@ AcsUser(
     workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -202,6 +204,7 @@ seam.acs.users.get(
   "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -249,6 +252,7 @@ $seam->acs->users->get(
     "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -293,10 +297,10 @@ seam acs users get --user_identity_id "cde1ec76-5b0d-4b3e-9b85-d80dcc9b599c" --a
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -304,31 +308,32 @@ seam acs users get --user_identity_id "cde1ec76-5b0d-4b3e-9b85-d80dcc9b599c" --a
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_system_id`** *String*
+**`acs_system_id`** _String_
 
 ID of the access system that you want to get. You can only provide acs_user_id or user_identity_id.
 
 ---
 
-**`acs_user_id`** *String*
+**`acs_user_id`** _String_
 
 ID of the access system user that you want to get. You can only provide acs_user_id or user_identity_id.
 
 ---
 
-**`user_identity_id`** *String*
+**`user_identity_id`** _String_
 
 ID of the user identity that you want to get. You can only provide acs_user_id or user_identity_id.
 
 ---
-
 
 ## Response
 
@@ -338,11 +343,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -382,13 +384,13 @@ Returns:
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### Get an access system user
 
@@ -397,14 +399,12 @@ Returns a specified access system user.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.acs.users.get({
-  acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08",
-});
+  acs_user_id: '42968059-0c89-40f3-b39a-fb80398d0d08',
+})
 ```
 
 #### Output:
@@ -439,11 +439,10 @@ await seam.acs.users.get({
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -491,11 +490,10 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -535,11 +533,10 @@ AcsUser(
     workspace_id="8d4868e3-2f95-4f33-8689-19420b3101cd",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -579,11 +576,10 @@ seam.acs.users.get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08")
   "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -623,11 +619,10 @@ $seam->acs->users->get(acs_user_id: "42968059-0c89-40f3-b39a-fb80398d0d08");
     "workspace_id" => "8d4868e3-2f95-4f33-8689-19420b3101cd",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -667,6 +662,7 @@ seam acs users get --acs_user_id "42968059-0c89-40f3-b39a-fb80398d0d08"
   "workspace_id": "8d4868e3-2f95-4f33-8689-19420b3101cd"
 }
 ```
+
 </Tab>
 
 </Tabs>

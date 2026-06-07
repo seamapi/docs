@@ -1,5 +1,5 @@
 ---
-title: "List Entrances"
+title: 'List Entrances'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "List Entrances"
 - [Examples](#examples)
 
 Returns a list of all [access system entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,34 +17,35 @@ Returns a list of all entrances for a specified access system.
 
 ```javascript
 await seam.acs.entrances.list({
-  acs_system_id: "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
-});
+  acs_system_id: 'd34802da-d8e3-4d0b-98c3-16d6e18ed508',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id": "d34802da-d8e3-4d0b-98c3-16d6e18ed508",
-    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
-    "created_at": "2025-06-15T16:54:17.946495Z",
-    "display_name": "Main Entrance",
-    "errors": [],
-    "visionline_metadata": {
-      "door_category": "guest",
-      "door_name": "Main Entrance",
-      "profiles": [
+    acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
+    acs_system_id: 'd34802da-d8e3-4d0b-98c3-16d6e18ed508',
+    connected_account_id: '1b9a3e0d-443f-4063-b619-4ca7e2a97751',
+    created_at: '2025-06-15T16:54:17.946495Z',
+    display_name: 'Main Entrance',
+    errors: [],
+    visionline_metadata: {
+      door_category: 'guest',
+      door_name: 'Main Entrance',
+      profiles: [
         {
-          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-          "visionline_door_profile_type": "BLE"
-        }
-      ]
-    }
-  }
+          visionline_door_profile_id: '7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+          visionline_door_profile_type: 'BLE',
+        },
+      ],
+    },
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -90,6 +90,7 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -126,6 +127,7 @@ seam.acs.entrances.list(acs_system_id="d34802da-d8e3-4d0b-98c3-16d6e18ed508")
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -162,6 +164,7 @@ seam.acs.entrances.list(acs_system_id: "d34802da-d8e3-4d0b-98c3-16d6e18ed508")
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -201,6 +204,7 @@ $seam->acs->entrances->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -237,10 +241,10 @@ seam acs entrances list --acs_system_id "d34802da-d8e3-4d0b-98c3-16d6e18ed508"
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -249,75 +253,74 @@ seam acs entrances list --acs_system_id "d34802da-d8e3-4d0b-98c3-16d6e18ed508"
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_credential_id`** *String*
+**`acs_credential_id`** _String_
 
 ID of the credential for which you want to retrieve all entrances.
 
 ---
 
-**`acs_entrance_ids`** *Array* *of UUIDs*
+**`acs_entrance_ids`** _Array_ _of UUIDs_
 
 IDs of the entrances for which you want to retrieve all entrances.
 
 ---
 
-**`acs_system_id`** *String*
+**`acs_system_id`** _String_
 
 ID of the access system for which you want to retrieve all entrances.
 
 ---
 
-**`connected_account_id`** *String*
+**`connected_account_id`** _String_
 
 ID of the connected account for which you want to retrieve all entrances.
 
 ---
 
-**`customer_key`** *String*
+**`customer_key`** _String_
 
 Customer key for which you want to list entrances.
 
 ---
 
-**`limit`** *Number*
+**`limit`** _Number_
 
 Maximum number of records to return per page.
 
 ---
 
-**`location_id`** *String*
+**`location_id`** _String_
 
-<Warning>
-**Deprecated**. Use `space_id`.
-</Warning>
+<Warning>**Deprecated**. Use `space_id`.</Warning>
 
 ---
 
-**`page_cursor`** *String*
+**`page_cursor`** _String_
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`search`** *String*
+**`search`** _String_
 
 String for which to search. Filters returned entrances to include all records that satisfy a partial match using `display_name`.
 
 ---
 
-**`space_id`** *String*
+**`space_id`** _String_
 
 ID of the space for which you want to list entrances.
 
 ---
-
 
 ## Response
 
@@ -327,11 +330,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -354,13 +354,13 @@ Returns:
   }
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### List entrances for a credential
 
@@ -369,45 +369,42 @@ Returns a list of all access system entrances for a specified credential.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.acs.entrances.list({
-  acs_credential_id: "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a",
-});
+  acs_credential_id: 'e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
-    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
-    "created_at": "2025-06-15T16:54:17.946495Z",
-    "display_name": "Main Entrance",
-    "errors": [],
-    "visionline_metadata": {
-      "door_category": "guest",
-      "door_name": "Main Entrance",
-      "profiles": [
+    acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
+    acs_system_id: '6a74a969-94ea-4383-b5cf-5e7da8c113d1',
+    connected_account_id: '1b9a3e0d-443f-4063-b619-4ca7e2a97751',
+    created_at: '2025-06-15T16:54:17.946495Z',
+    display_name: 'Main Entrance',
+    errors: [],
+    visionline_metadata: {
+      door_category: 'guest',
+      door_name: 'Main Entrance',
+      profiles: [
         {
-          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-          "visionline_door_profile_type": "BLE"
-        }
-      ]
-    }
-  }
+          visionline_door_profile_id: '7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+          visionline_door_profile_type: 'BLE',
+        },
+      ],
+    },
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -447,11 +444,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -483,11 +479,10 @@ seam.acs.entrances.list(acs_credential_id="e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a"
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -519,11 +514,10 @@ seam.acs.entrances.list(acs_credential_id: "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5a
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -558,11 +552,10 @@ $seam->acs->entrances->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -594,12 +587,12 @@ seam acs entrances list --acs_credential_id "e2a3eed8-5b4d-41a7-9c1d-1d06c41b0d5
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List entrances for a space
 
@@ -608,45 +601,42 @@ Returns a list of all access system entrances for a specified space.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.acs.entrances.list({
-  space_id: "3bd2edc0-aae7-440c-98ec-a5ab03664833",
-});
+  space_id: '3bd2edc0-aae7-440c-98ec-a5ab03664833',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
-    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
-    "created_at": "2025-06-15T16:54:17.946495Z",
-    "display_name": "Main Entrance",
-    "errors": [],
-    "visionline_metadata": {
-      "door_category": "guest",
-      "door_name": "Main Entrance",
-      "profiles": [
+    acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
+    acs_system_id: '6a74a969-94ea-4383-b5cf-5e7da8c113d1',
+    connected_account_id: '1b9a3e0d-443f-4063-b619-4ca7e2a97751',
+    created_at: '2025-06-15T16:54:17.946495Z',
+    display_name: 'Main Entrance',
+    errors: [],
+    visionline_metadata: {
+      door_category: 'guest',
+      door_name: 'Main Entrance',
+      profiles: [
         {
-          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-          "visionline_door_profile_type": "BLE"
-        }
-      ]
-    }
-  }
+          visionline_door_profile_id: '7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+          visionline_door_profile_type: 'BLE',
+        },
+      ],
+    },
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -686,11 +676,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -722,11 +711,10 @@ seam.acs.entrances.list(space_id="3bd2edc0-aae7-440c-98ec-a5ab03664833")
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -758,11 +746,10 @@ seam.acs.entrances.list(space_id: "3bd2edc0-aae7-440c-98ec-a5ab03664833")
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -795,11 +782,10 @@ $seam->acs->entrances->list(space_id: "3bd2edc0-aae7-440c-98ec-a5ab03664833");
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -831,12 +817,12 @@ seam acs entrances list --space_id "3bd2edc0-aae7-440c-98ec-a5ab03664833"
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List entrances for an access grant
 
@@ -845,45 +831,42 @@ Returns a list of all access system entrances for a specified access grant.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.acs.entrances.list({
-  access_grant_id: "6596ea31-f747-4253-950e-dba0de24fedb",
-});
+  access_grant_id: '6596ea31-f747-4253-950e-dba0de24fedb',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
-    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
-    "created_at": "2025-06-15T16:54:17.946495Z",
-    "display_name": "Main Entrance",
-    "errors": [],
-    "visionline_metadata": {
-      "door_category": "guest",
-      "door_name": "Main Entrance",
-      "profiles": [
+    acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
+    acs_system_id: '6a74a969-94ea-4383-b5cf-5e7da8c113d1',
+    connected_account_id: '1b9a3e0d-443f-4063-b619-4ca7e2a97751',
+    created_at: '2025-06-15T16:54:17.946495Z',
+    display_name: 'Main Entrance',
+    errors: [],
+    visionline_metadata: {
+      door_category: 'guest',
+      door_name: 'Main Entrance',
+      profiles: [
         {
-          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-          "visionline_door_profile_type": "BLE"
-        }
-      ]
-    }
-  }
+          visionline_door_profile_id: '7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+          visionline_door_profile_type: 'BLE',
+        },
+      ],
+    },
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -923,11 +906,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -959,11 +941,10 @@ seam.acs.entrances.list(access_grant_id="6596ea31-f747-4253-950e-dba0de24fedb")
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -995,11 +976,10 @@ seam.acs.entrances.list(access_grant_id: "6596ea31-f747-4253-950e-dba0de24fedb")
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1034,11 +1014,10 @@ $seam->acs->entrances->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1070,12 +1049,12 @@ seam acs entrances list --access_grant_id "6596ea31-f747-4253-950e-dba0de24fedb"
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List entrances for an access method
 
@@ -1084,45 +1063,42 @@ Returns a list of all access system entrances for a specified access method.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.acs.entrances.list({
-  access_method_id: "f838c33b-bc00-47a4-8bde-2aa8ea4258cc",
-});
+  access_method_id: 'f838c33b-bc00-47a4-8bde-2aa8ea4258cc',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
-    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
-    "created_at": "2025-06-15T16:54:17.946495Z",
-    "display_name": "Main Entrance",
-    "errors": [],
-    "visionline_metadata": {
-      "door_category": "guest",
-      "door_name": "Main Entrance",
-      "profiles": [
+    acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
+    acs_system_id: '6a74a969-94ea-4383-b5cf-5e7da8c113d1',
+    connected_account_id: '1b9a3e0d-443f-4063-b619-4ca7e2a97751',
+    created_at: '2025-06-15T16:54:17.946495Z',
+    display_name: 'Main Entrance',
+    errors: [],
+    visionline_metadata: {
+      door_category: 'guest',
+      door_name: 'Main Entrance',
+      profiles: [
         {
-          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-          "visionline_door_profile_type": "BLE"
-        }
-      ]
-    }
-  }
+          visionline_door_profile_id: '7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+          visionline_door_profile_type: 'BLE',
+        },
+      ],
+    },
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1162,11 +1138,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1198,11 +1173,10 @@ seam.acs.entrances.list(access_method_id="f838c33b-bc00-47a4-8bde-2aa8ea4258cc")
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1234,11 +1208,10 @@ seam.acs.entrances.list(access_method_id: "f838c33b-bc00-47a4-8bde-2aa8ea4258cc"
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1273,11 +1246,10 @@ $seam->acs->entrances->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1309,6 +1281,7 @@ seam acs entrances list --access_method_id "f838c33b-bc00-47a4-8bde-2aa8ea4258cc
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>

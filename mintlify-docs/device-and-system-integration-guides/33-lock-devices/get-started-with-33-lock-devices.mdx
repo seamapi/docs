@@ -1,8 +1,7 @@
 ---
-title: "Get started with 33 Lock devices"
-description: "Learn how to connect and control 33 Lock smart locks with the Seam API."
+title: 'Get started with 33 Lock devices'
+description: 'Learn how to connect and control 33 Lock smart locks with the Seam API.'
 ---
-
 
 ## Overview
 
@@ -19,20 +18,21 @@ This guide shows you how to install a Seam SDK and then control your 33 Lock dev
 
 Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](https://docs.seam.co/latest/core-concepts/seam-console/seam-online-cli), which you can access from directly within the [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console).
 
-:arrow\_forward: [Go to the Seam Console!](https://console.seam.co/)
+:arrow_forward: [Go to the Seam Console!](https://console.seam.co/)
+
 </Check>
 
-***
+---
 
 ## Step 1: Install a Seam SDK
 
 Seam provides client libraries for many languages, including JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and an [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
-* Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
-* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+- JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+- Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
+- Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
+- PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+- C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
 
 First, install a Seam SDK, as follows:
 
@@ -43,24 +43,14 @@ npm i seam
 ```
 </Tab>
 
-<Tab title="Python">
-```bash
-pip install seam
-# For some development environments, use pip3 in this command instead of pip.
-```
+<Tab title='Python'>
+  ```bash pip install seam # For some development environments, use pip3 in this
+  command instead of pip. ```
 </Tab>
 
-<Tab title="Ruby">
-```bash
-bundle add seam
-```
-</Tab>
+<Tab title='Ruby'>```bash bundle add seam ```</Tab>
 
-<Tab title="PHP">
-```bash
-composer require seamapi/seam
-```
-</Tab>
+<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
@@ -76,10 +66,15 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 ```
 
 <Info>
-This guide uses a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). You can only connect virtual devices and systems in this type of workspace. If you want to connect a real 33 Lock device, use a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and API key.
+  This guide uses a [sandbox
+  workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
+  You can only connect virtual devices and systems in this type of workspace. If
+  you want to connect a real 33 Lock device, use a [non-sandbox
+  workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces)
+  and API key.
 </Info>
 
-***
+---
 
 ## Step 2: Link your 33 Lock with Seam
 
@@ -94,7 +89,6 @@ The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provi
 
 Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-33-lock-devices.md#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
-
 </Check>
 
 ### Create a Connect Webview
@@ -106,19 +100,19 @@ Create a `connect_webview` object and then note the returned URL.
 **Code:**
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
 
 const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ['ttlock']
-});
+  accepted_providers: ['ttlock'],
+})
 
-console.log(connectWebview.login_successful); // false
+console.log(connectWebview.login_successful) // false
 
 // Use the returned Connect Webview URL to display
 // the Connect Webview authorization flow to your user.
-console.log(connectWebview.url);
+console.log(connectWebview.url)
 ```
 
 **Output:**
@@ -127,6 +121,7 @@ console.log(connectWebview.url);
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -152,6 +147,7 @@ curl -X 'POST' \
 Login Successful (false): false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -176,6 +172,7 @@ print(connect_webview.url)
 ```
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -203,6 +200,7 @@ puts connect_webview.url
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -231,6 +229,7 @@ echo $connect_webview->url;
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -258,10 +257,11 @@ Console.WriteLine(connectWebview.Url);
 False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ### Authorize your workspace
 
@@ -270,13 +270,17 @@ In a web browser, go to the URL that the Connect Webview object returned.
 For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](https://docs.seam.co/latest/ui-components/overview/react-components/connect-account-button) within our suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview) that help you build your device management flow.
 
 <Check>
-Because you're using a sandbox workspace, you can connect Seam's test TTLock account. We provide [virtual devices](../ttlock-locks/ttlock-sample-data.md) for each of the brands that we support. These sandbox devices and systems enable you to test your app with devices from multiple brands without the need to own all the corresponding physical devices.
+  Because you're using a sandbox workspace, you can connect Seam's test TTLock
+  account. We provide [virtual devices](../ttlock-locks/ttlock-sample-data.md)
+  for each of the brands that we support. These sandbox devices and systems
+  enable you to test your app with devices from multiple brands without the need
+  to own all the corresponding physical devices.
 </Check>
 
 Complete the Connect Webview authorization flow by entering the following [TTLock sandbox account](../ttlock-locks/ttlock-sample-data.md) credentials:
 
-* **Email:** jane@example.com
-* **Password:** 1234
+- **Email:** jane@example.com
+- **Password:** 1234
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -286,10 +290,10 @@ Confirm that authorization through the Connect Webview was successful by queryin
 
 ```javascript
 const updatedConnectWebview = await seam.connectWebviews.get({
-  connect_webview_id: connectWebview.connect_webview_id
-});
+  connect_webview_id: connectWebview.connect_webview_id,
+})
 
-console.log(updatedConnectWebview.login_successful); // true
+console.log(updatedConnectWebview.login_successful) // true
 ```
 
 **Output:**
@@ -297,6 +301,7 @@ console.log(updatedConnectWebview.login_successful); // true
 ```
 true
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -318,6 +323,7 @@ curl -X 'POST' \
 ```
 Login Successful (true): true
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -334,6 +340,7 @@ assert updated_connect_webview.login_successful is True # True
 ```
 True
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -352,6 +359,7 @@ puts updated_connect_webview.login_successful # true
 ```
 true
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -370,6 +378,7 @@ echo $updated_connect_webview->login_successful ? 'true' : 'false', "\n"; // tru
 ```
 true
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -388,10 +397,11 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 ```
 True
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 3: Retrieve 33 Lock devices
 
@@ -406,17 +416,17 @@ The Seam API exposes each device's properties, such as the door lock status, pow
 ```javascript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
-const allTtlockLocks = await seam.devices.list({manufacturer: "ttlock"});
+const allTtlockLocks = await seam.devices.list({ manufacturer: 'ttlock' })
 
 // Select the first device as an example.
-const frontDoor = allTtlockLocks[0];
+const frontDoor = allTtlockLocks[0]
 
 // Inspect specific properties.
-console.log(frontDoor.properties.online); // true
-console.log(frontDoor.properties.locked); // true
+console.log(frontDoor.properties.online) // true
+console.log(frontDoor.properties.locked) // true
 
 // View the entire returned device object.
-console.log(frontDoor);
+console.log(frontDoor)
 ```
 
 **Output:**
@@ -444,6 +454,7 @@ true
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -499,6 +510,7 @@ Locked (true): true
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -543,6 +555,7 @@ Device(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -590,6 +603,7 @@ true
     ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -636,6 +650,7 @@ true
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -684,10 +699,11 @@ True
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 4: Control your 33 Lock device
 
@@ -697,8 +713,8 @@ Each device that you connect to Seam has a specific set of capabilities. These c
 
 Try out the following actions on your 33 Lock device:
 
-* [ ] [Unlock your lock](get-started-with-33-lock-devices.md#unlock-your-lock)
-* [ ] [Program access codes on your lock](get-started-with-33-lock-devices.md#program-access-codes-on-your-lock)
+- [ ] [Unlock your lock](get-started-with-33-lock-devices.md#unlock-your-lock)
+- [ ] [Program access codes on your lock](get-started-with-33-lock-devices.md#program-access-codes-on-your-lock)
 
 ### Unlock your lock
 
@@ -715,24 +731,25 @@ if (frontDoor.can_remotely_unlock) {
   // Perform the unlock operation
   // and return an action attempt.
   const actionAttempt = await seam.locks.unlockDoor({
-    device_id: frontDoor.device_id
-  });
-};
+    device_id: frontDoor.device_id,
+  })
+}
 ```
 
 **Output:**
 
 ```json
 {
-  actionAttempt: {
-    status: 'success',
-    action_attempt_id: '11111111-2222-3333-4444-555555555555',
-    action_type: 'UNLOCK_DOOR',
-    result: {},
-    error: null
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "UNLOCK_DOOR",
+    "result": {},
+    "error": null
   }
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -760,15 +777,16 @@ fi
 ```json
 {
   "action_attempt": {
-    "status":"pending",
-    "action_type":"UNLOCK_DOOR",
-    "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-    "result":null,
-    "error":null
+    "status": "pending",
+    "action_type": "UNLOCK_DOOR",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "result": null,
+    "error": null
   },
-  "ok":true
+  "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -794,6 +812,7 @@ ActionAttempt(
   error={}
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -818,6 +837,7 @@ end
   action_attempt_id="11111111-2222-3333-4444-555555555555"
   result=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -837,13 +857,14 @@ if ($front_door->can_remotely_unlock) {
 
 ```json
 {
-  "action_attempt_id":"11111111-2222-3333-4444-555555555555",
-  "action_type":"UNLOCK_DOOR",
-  "error":null,
-  "result":{},
-  "status":"success"
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "UNLOCK_DOOR",
+  "error": null,
+  "result": {},
+  "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -868,6 +889,7 @@ if (frontDoor.CanRemotelyUnlock == true) {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555"
 }
 ```
+
 </Tab>
 </Tabs>
 
@@ -881,7 +903,9 @@ To query the `locked` status of the device:
 
 ```javascript
 // Get the device by ID.
-const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
+const updatedFrontDoor = await seam.devices.get({
+  device_id: frontDoor.device_id,
+})
 
 // Inspect the locked property to confirm
 // that the unlock operation was successful.
@@ -893,6 +917,7 @@ console.log(updatedFrontDoor.properties.locked) // false
 ```
 false
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -921,6 +946,7 @@ echo $(jq -r '"Locked (false): " + (.device.properties.locked | tostring)' <<< $
 ```
 Locked (false): false
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -940,6 +966,7 @@ assert updated_front_door.properties["locked"] is False # False
 ```
 False
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -959,6 +986,7 @@ puts updated_front_door.properties.locked # false
 ```
 false
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -978,6 +1006,7 @@ echo $updated_front_door->properties->locked ? 'true' : 'false', "\n"; // false
 ```
 false
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -999,14 +1028,17 @@ Console.WriteLine(updatedFrontDoor.Properties.Locked); // false
 ```
 False
 ```
+
 </Tab>
 </Tabs>
 
 <Check>
-Now that you have successfully unlocked your lock, you can use the [Lock Door](https://docs.seam.co/latest/api/locks/lock_door) endpoint to lock it again.
+  Now that you have successfully unlocked your lock, you can use the [Lock
+  Door](https://docs.seam.co/latest/api/locks/lock_door) endpoint to lock it
+  again.
 </Check>
 
-***
+---
 
 ### Program access codes on your lock
 
@@ -1025,23 +1057,23 @@ if (updatedFrontDoor.can_program_online_access_codes) {
   // Create an ongoing online access code.
   await seam.accessCodes.create({
     device_id: updatedFrontDoor.device_id,
-    name: "my ongoing code",
-    code: "1234"
-  });
+    name: 'my ongoing code',
+    code: '1234',
+  })
   // Create a time-bound online access code.
   await seam.accessCodes.create({
     device_id: updatedFrontDoor.device_id,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  });
+    name: 'my time-bound code',
+    starts_at: '2025-01-01T16:00:00Z',
+    ends_at: '2025-01-22T12:00:00Z',
+    code: '2345',
+  })
   // List all access codes for this device.
   const accessCodes = await seam.accessCodes.list({
-    device_id: updatedFrontDoor.device_id
-  });
-  console.log(accessCodes);
-};
+    device_id: updatedFrontDoor.device_id,
+  })
+  console.log(accessCodes)
+}
 ```
 
 **Output:**
@@ -1068,6 +1100,7 @@ if (updatedFrontDoor.can_program_online_access_codes) {
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1143,6 +1176,7 @@ fi
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1197,6 +1231,7 @@ if updated_front_door.can_program_online_access_codes:
   )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1252,6 +1287,7 @@ end
   >
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1306,6 +1342,7 @@ if ($updated_front_door->can_program_online_access_codes) {
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1362,10 +1399,11 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
   ...
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 5: Connect a real 33 Lock device
 
@@ -1373,7 +1411,7 @@ Now that you have learned the basics of using the Seam API, you can connect and 
 
 For more details about setting up your real 33 Lock device, see the [33 Lock locks integration guide](./).
 
-***
+---
 
 ## Step 6: Build your application!
 
@@ -1385,38 +1423,47 @@ Seam Components use a responsive design to fit seamlessly on any screen size. Th
 
 To learn about all the Seam Components that we provide, see [Seam Components](https://docs.seam.co/latest/ui-components/overview).
 
-***
+---
 
 ## Next steps
 
 Now that you've completed this getting started guide for 33 Lock devices, you can learn more about what you can do with the Seam API.
 
-* [ ] **Explore**\
-  See the [other devices and system integrations](https://docs.seam.co/latest/device-and-system-integration-guides) that Seam supports.
-* [ ] **Learn**\
-  Read about Seam [concepts](https://docs.seam.co/latest/core-concepts/overview) and the [device and system capabilities ](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities)that Seam supports.
-* [ ] **Use Seam Components**\
-  Find out about [Seam Components](https://docs.seam.co/latest/ui-components/overview), which are prebuilt UI components for building your device management flow.
-* [ ] **Use webhooks**\
-  Learn how to use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) as an efficient way to receive device events.
-* [ ] **Find out more**\
-  Explore the other types of devices and systems that you can control with Seam, including [access control systems](https://docs.seam.co/latest/capability-guides/access-systems), [thermostats](https://docs.seam.co/latest/capability-guides/thermostats), and [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
-* [ ] **Develop for mobile access**\
-  Learn about Seam's [mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access).
+- [ ] **Explore**\
+      See the [other devices and system integrations](https://docs.seam.co/latest/device-and-system-integration-guides) that Seam supports.
+- [ ] **Learn**\
+      Read about Seam [concepts](https://docs.seam.co/latest/core-concepts/overview) and the [device and system capabilities ](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities)that Seam supports.
+- [ ] **Use Seam Components**\
+      Find out about [Seam Components](https://docs.seam.co/latest/ui-components/overview), which are prebuilt UI components for building your device management flow.
+- [ ] **Use webhooks**\
+      Learn how to use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) as an efficient way to receive device events.
+- [ ] **Find out more**\
+      Explore the other types of devices and systems that you can control with Seam, including [access control systems](https://docs.seam.co/latest/capability-guides/access-systems), [thermostats](https://docs.seam.co/latest/capability-guides/thermostats), and [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
+- [ ] **Develop for mobile access**\
+      Learn about Seam's [mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access).
 
 <Info>
-If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
+  If you have any questions or want to report an issue, email us at
+  [support@seam.co](mailto:support@seam.co).
 </Info>
 
-***
+---
 
 ## Quick links
 
 <CardGroup cols={2}>
-<Card title="Get an API Key (free)" href="https://console.seam.co/" img="/images/seam-api-key.png">
-  Sign up for the Seam Console and get your API keys. →
-</Card>
-<Card title="Contact Sales" href="https://www.seam.co/contact-us" img="/images/seam-contact-us-light.png">
-  Got a project or a specific question? Contact our team to get answers. →
-</Card>
+  <Card
+    title='Get an API Key (free)'
+    href='https://console.seam.co/'
+    img='/images/seam-api-key.png'
+  >
+    Sign up for the Seam Console and get your API keys. →
+  </Card>
+  <Card
+    title='Contact Sales'
+    href='https://www.seam.co/contact-us'
+    img='/images/seam-contact-us-light.png'
+  >
+    Got a project or a specific question? Contact our team to get answers. →
+  </Card>
 </CardGroup>

@@ -1,12 +1,11 @@
 ---
-title: "Implementing Access Codes"
-description: "How to create, update, list, and track PIN codes on smart locks through your API."
+title: 'Implementing Access Codes'
+description: 'How to create, update, list, and track PIN codes on smart locks through your API.'
 ---
-
 
 Seam relies on access codes to support hospitality, multifamily, coworking, and STR use cases. Your API should let Seam create user-defined PIN codes, manage their validity windows, and receive events when codes are used or fail.
 
-***
+---
 
 ### Creating an access code
 
@@ -67,7 +66,7 @@ Once the device successfully stores the PIN, your API should send a webhook even
 }
 ```
 
-***
+---
 
 ### Updating an access code
 
@@ -115,7 +114,7 @@ If the request is invalid or the device cannot accept changes, your API should r
 }
 ```
 
-***
+---
 
 ### Deleting an access code
 
@@ -145,7 +144,7 @@ Seam may remove a PIN code when a reservation ends or a user revokes access.
 }
 ```
 
-***
+---
 
 ### Listing access codes
 
@@ -178,7 +177,7 @@ Your API should expose an endpoint to list all codes currently on a lock. Seam u
 }
 ```
 
-***
+---
 
 ### Access code usage events
 
@@ -195,7 +194,7 @@ When an access code is used, your API should send a webhook event that includes 
 }
 ```
 
-***
+---
 
 #### Incorrect PIN attempts
 
@@ -212,16 +211,16 @@ Being able to see incorrect pin that was set is useful for debugging access code
 }
 ```
 
-***
+---
 
 ### Common error responses
 
 Your API should clearly surface code-related failures, including:
 
-* invalid PIN format
-* conflicting PIN on device
-* device unable to store new codes
-* device offline or out of sync
+- invalid PIN format
+- conflicting PIN on device
+- device unable to store new codes
+- device offline or out of sync
 
 #### Example: conflicting PIN error
 
@@ -232,4 +231,4 @@ Your API should clearly surface code-related failures, including:
 }
 ```
 
-***
+---

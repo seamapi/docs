@@ -1,8 +1,7 @@
 ---
-title: "Dormakaba Community Setup Guide"
-description: "Learn how to configure your Latch ACS for integration with Seam."
+title: 'Dormakaba Community Setup Guide'
+description: 'Learn how to configure your Latch ACS for integration with Seam.'
 ---
-
 
 To connect a Dormakaba Community system to Seam, the system administrator must perform a set of setup steps on the computer where the Community server is running.
 
@@ -12,7 +11,7 @@ The setup process has three parts:
 2. [**Enable Mobile Keys**](dormakaba-community-setup-guide.md#enable-mobile-keys-in-community) – Work with Dormakaba Technical Support to purchase a mobile keys license and link your property to Seam’s LEGIC account.
 3. [**Connect Community to Seam**](dormakaba-community-setup-guide.md#connect-community-to-seam) – Use the Seam Connect Webview to pair the Seam Bridge, enter Operator Administrator login credentials, and establish the API connection.
 
-***
+---
 
 ## Prepare Community for Seam Integration
 
@@ -34,14 +33,14 @@ The setup process has three parts:
    4. Assign this staff member the role of **Operator Administrator** so they have admin-level control of the Community system.
    5. In the new staff profile, go to the **Operator Info** tab.
    6. Under **Local Login**, create a **Username** and **Password** for this Operator Administrator.
-      * These values are used later to connect Community to Seam via the Connect Webview.
+      - These values are used later to connect Community to Seam via the Connect Webview.
    7. Still in the **Operator Info** tab, scroll to the **API Login** section.
    8. Click **Add/Update Username & Password**.
    9. Create a unique API username and password.
-      * These values are required later to connect Community to Seam via the Connect Webview.
+      - These values are required later to connect Community to Seam via the Connect Webview.
    10. Click the **Save** icon in the top-right corner to confirm changes.
 
-***
+---
 
 ## Enable Mobile Keys in Community
 
@@ -54,19 +53,19 @@ The setup process has three parts:
 6. Click **Test LEGIC connection settings** to confirm that the settings were set correctly.
 7. Click the **Save** icon in the top-right corner to save the changes.
 
-***
+---
 
 ## Connect Community to Seam
 
 1. **Pair Seam Bridge**
-   * Make sure **Seam Bridge** is running.
-   * In the Connect Webview, enter the **pairing code** from the top-right corner of the Seam Bridge app.
+   - Make sure **Seam Bridge** is running.
+   - In the Connect Webview, enter the **pairing code** from the top-right corner of the Seam Bridge app.
 2. **Enter Operator Administrator login**
-   * Use the same **username** and **password** you use to log in locally to Community.
-   * For the system URL, run `ipconfig` in Command Prompt and use your computer’s IPv4 Address.
+   - Use the same **username** and **password** you use to log in locally to Community.
+   - For the system URL, run `ipconfig` in Command Prompt and use your computer’s IPv4 Address.
 3. **Enter API credentials**
-   * In the Connect Webview, enter the **Client ID** and **Secret Key** you created in the Community API settings.
-   * Enter the **API Username and Password** you created for the Operator Administrator.
+   - In the Connect Webview, enter the **Client ID** and **Secret Key** you created in the Community API settings.
+   - Enter the **API Username and Password** you created for the Operator Administrator.
 4. Click **Submit** to finish connecting Community to Seam.
 
-***
+---

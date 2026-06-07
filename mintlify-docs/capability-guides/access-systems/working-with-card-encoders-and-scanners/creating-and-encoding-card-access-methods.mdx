@@ -1,13 +1,18 @@
 ---
-title: "Creating and Encoding Card Access Methods"
-description: "Learn how to create a card access method and then encode this access method onto a plastic card."
+title: 'Creating and Encoding Card Access Methods'
+description: 'Learn how to create a card access method and then encode this access method onto a plastic card.'
 ---
 
-
-<figure><img src="/images/encode-card.png" alt="" /><figcaption></figcaption></figure>
+<figure>
+  <img src='/images/encode-card.png' alt='' />
+  <figcaption></figcaption>
+</figure>
 
 <Info>
-**Early Access Preview.** The Access Grants and access methods APIs are currently in Alpha. We're actively developing them and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
+  **Early Access Preview.** The Access Grants and access methods APIs are
+  currently in Alpha. We're actively developing them and seeking early feedback
+  at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we
+  refine the design.
 </Info>
 
 Some access control systems require encoding a plastic card with the data necessary to enable access. This process involves creating an access grant that requests a card access method with the required access permissions and then using a card encoder to write the access method onto the card.
@@ -17,16 +22,17 @@ This process consists of the following basic steps:
 1.  Create an [Access Grant](../../../use-cases/granting-access/) that includes a request for a card access method and identify the ID of the resulting access method.
 
     See [Create an Access Grant](creating-and-encoding-card-access-methods.md#id-1.-create-an-access-grant).
-2. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the access method onto the card.\
-   See [Retrieve Encoders](creating-and-encoding-card-access-methods.md#id-2.-retrieve-encoders).
-3. Use the `/access_methods/encode` endpoint to encode the access method onto the card, using the encoder that you have chosen.\
-   See [Encode the Card](creating-and-encoding-card-access-methods.md#id-3.-encode-the-card).
-4. Confirm that the card was encoded successfully using polling or a [webhook](../../../developer-tools/webhooks.md).\
-   See [Confirm Successful Encoding](creating-and-encoding-card-access-methods.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-access-methods.md#common-encoding-errors).
+
+2.  Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the access method onto the card.\
+    See [Retrieve Encoders](creating-and-encoding-card-access-methods.md#id-2.-retrieve-encoders).
+3.  Use the `/access_methods/encode` endpoint to encode the access method onto the card, using the encoder that you have chosen.\
+    See [Encode the Card](creating-and-encoding-card-access-methods.md#id-3.-encode-the-card).
+4.  Confirm that the card was encoded successfully using polling or a [webhook](../../../developer-tools/webhooks.md).\
+    See [Confirm Successful Encoding](creating-and-encoding-card-access-methods.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-access-methods.md#common-encoding-errors).
 
 Once you have written an access method to a card, you cannot reuse the access method for another card. That is, you must create a separate access method for each card. However, you can reuse a card by re-encoding the card with a new access method.
 
-***
+---
 
 ## 1. **Create an Access Grant**
 
@@ -44,30 +50,28 @@ For more details about creating Access Grants, see [Creating an Access Grant Usi
 // you want to grant access.
 const entrances = await seam.acs.entrances.list({
   // Use the access system ID that you copied in the previous step.
-  acs_system_id: acsSystemId
-});
+  acs_system_id: acsSystemId,
+})
 
 // Create the Access Grant.
 const accessGrant = await seam.accessGrants.create({
   // Create a new user identity to represent your user.
   user_identity: {
-    full_name: "Jane Doe",
-    email_address: "jane.doe@example.com",
-    phone_number: "+15555551000"    
+    full_name: 'Jane Doe',
+    email_address: 'jane.doe@example.com',
+    phone_number: '+15555551000',
   },
   // Specify the IDs of the entrances to which you want to grant access.
   acs_entrance_ids: [
     entrances[0].acs_entrance_id,
-    entrances[1].acs_entrance_id
+    entrances[1].acs_entrance_id,
   ],
   // Specify that you want to issue a card access method.
-  requested_access_methods: [
-    {"mode": "card"}
-  ],
+  requested_access_methods: [{ mode: 'card' }],
   // Specify the access schedule.
-  starts_at: "2025-08-01T15:00:00.000Z",
-  ends_at: "2025-08-04T11:00:00.000Z"
-});
+  starts_at: '2025-08-01T15:00:00.000Z',
+  ends_at: '2025-08-04T11:00:00.000Z',
+})
 ```
 
 **Output**
@@ -91,6 +95,7 @@ const accessGrant = await seam.accessGrants.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -105,7 +110,7 @@ mapfile -t entrances < <(
   curl -s --request POST "https://connect.getseam.com/acs/entrances/list" \
     --header "Authorization: Bearer $SEAM_API_KEY" \
     --header "Content-Type: application/json" \
-    --data "{\"acs_system_id\": \"$acs_system_id\"}" | 
+    --data "{\"acs_system_id\": \"$acs_system_id\"}" |
   jq -c '.acs_entrances[]'
 )
 
@@ -162,6 +167,7 @@ access_grant=$(curl --include --request POST "https://connect.getseam.com/access
   "ok":true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -221,6 +227,7 @@ AccessGrant(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -241,7 +248,7 @@ access_grant = seam.access_grants.create(
   user_identity: {
     full_name: "Jane Doe",
     email_address: "jane.doe@example.com",
-    phone_number: "+15555551000"    
+    phone_number: "+15555551000"
   },
   # Specify the IDs of the entrances to which you want to grant access.
   acs_entrance_ids: [
@@ -279,6 +286,7 @@ access_grant = seam.access_grants.create(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -337,6 +345,7 @@ $access_grant = $seam->access_grants->create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -352,10 +361,11 @@ $access_grant = $seam->access_grants->create(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## 2. Retrieve Encoders
 
@@ -370,8 +380,8 @@ This example shows how to retrieve all encoders in a building connected to a sin
 
 ```javascript
 await seam.acs.encoders.list({
-  acs_system_ids: [buildingSystemId]
-});
+  acs_system_ids: [buildingSystemId],
+})
 ```
 
 **Output:**
@@ -386,6 +396,7 @@ await seam.acs.encoders.list({
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -418,6 +429,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -442,6 +454,7 @@ seam.acs.encoders.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -466,6 +479,7 @@ seam.acs.encoders.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -490,6 +504,7 @@ $seam->acs->encoders->list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -505,10 +520,11 @@ $seam->acs->encoders->list(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## 3. Encode the Card
 
@@ -522,8 +538,8 @@ Use `/acs/encoders/encode_credential` to start the card writing procedure that s
 ```javascript
 const encodingActionAttempt = await seam.accessMethods.encode({
   access_method_id: accessMethodId,
-  acs_encoder_id: encoder.acs_encoder_id
-});
+  acs_encoder_id: encoder.acs_encoder_id,
+})
 ```
 
 **Output:**
@@ -537,6 +553,7 @@ const encodingActionAttempt = await seam.accessMethods.encode({
   error: null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -559,17 +576,17 @@ encoding_action_attempt=$(curl -X 'POST' \
 
 ```json
 {
-  "action_attempt":
-    {
-      "status": "pending",
-      "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-      "action_type": "ENCODE_ACCESS_METHOD",
-      "result": null,
-      "error": null
-    },
+  "action_attempt": {
+    "status": "pending",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "ENCODE_ACCESS_METHOD",
+    "result": null,
+    "error": null
+  },
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -594,6 +611,7 @@ ActionAttempt(
   error=null
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -618,6 +636,7 @@ encoding_action_attempt = seam.access_methods.encode(
   error=nil
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -642,6 +661,7 @@ $encoding_action_attempt = $seam->access_methods->encode(
   "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -657,10 +677,11 @@ $encoding_action_attempt = $seam->access_methods->encode(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## 4. Confirm Successful Encoding
 
@@ -677,8 +698,8 @@ When you make an `/access_methods/encode` request, Seam returns an [action attem
 
 ```javascript
 await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id
-});
+  action_attempt_id: encodingActionAttempt.action_attempt_id,
+})
 ```
 
 **Output:**
@@ -698,6 +719,7 @@ await seam.actionAttempts.get({
   error: null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -736,6 +758,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -765,6 +788,7 @@ ActionAttempt(
   error=null
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -794,6 +818,7 @@ seam.action_attempts.get(
   error=nil
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -823,6 +848,7 @@ $seam->action_attempts->get(
   "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -838,6 +864,7 @@ $seam->action_attempts->get(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
@@ -852,8 +879,8 @@ It is also useful to note that Seam assigns values to various card-related prope
 
 ```javascript
 await seam.accessMethods.get({
-  access_method_id: accessMethodId
-});
+  access_method_id: accessMethodId,
+})
 ```
 
 **Output**
@@ -865,6 +892,7 @@ await seam.accessMethods.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -894,6 +922,7 @@ curl -X 'POST' \
   ok: true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -915,6 +944,7 @@ AccessMethod(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -936,6 +966,7 @@ seam.access_methods.get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -957,6 +988,7 @@ $seam->access_methods->get(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -972,10 +1004,11 @@ $seam->access_methods->get(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ### Confirm Successful Encoding by Using a Webhook
 
@@ -995,8 +1028,37 @@ To confirm successful encoding, you can use a [webhook](../../../developer-tools
 }
 ```
 
-***
+---
 
 ## Common Encoding Errors
 
-<table><thead><tr><th width="309">Error</th><th>Description</th></tr></thead><tbody><tr><td><code>no_card_on_encoder</code></td><td>No card was placed on the encoder.</td></tr><tr><td><code>incompatible_card_format</code></td><td>A card with an incompatible card format was placed on the encoder.</td></tr><tr><td><code>uncategorized_error</code></td><td>Any other encoding error.</td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th width='309'>Error</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>no_card_on_encoder</code>
+      </td>
+      <td>No card was placed on the encoder.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>incompatible_card_format</code>
+      </td>
+      <td>
+        A card with an incompatible card format was placed on the encoder.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>uncategorized_error</code>
+      </td>
+      <td>Any other encoding error.</td>
+    </tr>
+  </tbody>
+</table>

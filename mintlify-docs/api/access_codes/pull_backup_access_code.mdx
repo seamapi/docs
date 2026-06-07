@@ -1,5 +1,5 @@
 ---
-title: "Pull a Backup Access Code"
+title: 'Pull a Backup Access Code'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -15,7 +15,6 @@ You can only pull backup access codes for time-bound access codes.
 
 Before pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.
 
-
 <Tabs>
 <Tab title="JavaScript">
 
@@ -25,8 +24,8 @@ Retrieves a backup access code for an access code.
 
 ```javascript
 await seam.accessCodes.pullBackupAccessCode({
-  access_code_id: "8e525b87-5e4b-48a5-a322-5d45262a735f",
-});
+  access_code_id: '8e525b87-5e4b-48a5-a322-5d45262a735f',
+})
 ```
 
 #### Output:
@@ -57,6 +56,7 @@ await seam.accessCodes.pullBackupAccessCode({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -105,6 +105,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -147,6 +148,7 @@ AccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -187,6 +189,7 @@ seam.access_codes.pull_backup_access_code(access_code_id: "8e525b87-5e4b-48a5-a3
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -229,6 +232,7 @@ $seam->access_codes->pull_backup_access_code(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -269,10 +273,10 @@ seam access-codes pull-backup-access-code --access_code_id "8e525b87-5e4b-48a5-a
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -281,19 +285,20 @@ seam access-codes pull-backup-access-code --access_code_id "8e525b87-5e4b-48a5-a
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_code_id`** *String* (Required)
+**`access_code_id`** _String_ (Required)
 
 ID of the access code for which you want to pull a backup access code.
 
 ---
-
 
 ## Response
 
@@ -303,11 +308,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -336,5 +338,6 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 </Tabs>

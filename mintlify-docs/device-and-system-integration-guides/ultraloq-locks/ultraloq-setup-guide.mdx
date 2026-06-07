@@ -1,8 +1,7 @@
 ---
-title: "Ultraloq Setup Guide"
-description: "Step-by-step instructions for connecting Ultraloq devices to Seam"
+title: 'Ultraloq Setup Guide'
+description: 'Step-by-step instructions for connecting Ultraloq devices to Seam'
 ---
-
 
 This guide walks you through connecting Ultraloq locks to Seam and configuring them for use with the Seam API.
 
@@ -10,15 +9,17 @@ This guide walks you through connecting Ultraloq locks to Seam and configuring t
 
 To follow this guide, you need:
 
-* A Seam account (create one at [console.seam.co](https://console.seam.co))
-* An API key from your Seam workspace
-* An Ultraloq account with at least one lock configured
+- A Seam account (create one at [console.seam.co](https://console.seam.co))
+- An API key from your Seam workspace
+- An Ultraloq account with at least one lock configured
 
 <Info>
-If you're testing the integration, you can use a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) with test Ultraloq devices.
+  If you're testing the integration, you can use a [sandbox
+  workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces)
+  with test Ultraloq devices.
 </Info>
 
-***
+---
 
 ## Step 1: Create a Connect Webview
 
@@ -28,17 +29,18 @@ Create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-web
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 const webview = await seam.connectWebviews.create({
-  accepted_providers: ["ultraloq"],
-  custom_redirect_url: "https://your-app.com/oauth/callback"
-});
+  accepted_providers: ['ultraloq'],
+  custom_redirect_url: 'https://your-app.com/oauth/callback',
+})
 
-console.log(webview.url);
+console.log(webview.url)
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -54,6 +56,7 @@ curl -X 'POST' \
     "custom_redirect_url": "https://your-app.com/oauth/callback"
   }'
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -70,6 +73,7 @@ webview = seam.connect_webviews.create(
 
 print(webview.url)
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -86,6 +90,7 @@ webview = seam.connect_webviews.create(
 
 puts webview.url
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -105,6 +110,7 @@ $webview = $seam->connect_webviews->create(
 
 echo $webview->url;
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -121,6 +127,7 @@ var webview = seam.ConnectWebviews.Create(
 
 Console.WriteLine(webview.Url);
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -140,10 +147,11 @@ ConnectWebview webview = seam.connectWebviews().create(
 
 System.out.println(webview.getUrl());
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 2: User Authorization
 
@@ -154,7 +162,7 @@ Direct the user to the Connect Webview URL returned in Step 1. The user will be 
 
 After authorization, the user is redirected to your `custom_redirect_url` with the `connect_webview_id` as a query parameter.
 
-***
+---
 
 ## Step 3: Verify Connection
 
@@ -164,20 +172,21 @@ Wait for the Connect Webview status to change to `authorized`, indicating that t
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 // Poll until authorized
 const webview = await seam.connectWebviews.get({
-  connect_webview_id: webview.connect_webview_id
-});
+  connect_webview_id: webview.connect_webview_id,
+})
 
-if (webview.status === "authorized") {
-  console.log("Connection successful!");
-  console.log(`Connected account ID: ${webview.connected_account_id}`);
+if (webview.status === 'authorized') {
+  console.log('Connection successful!')
+  console.log(`Connected account ID: ${webview.connected_account_id}`)
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -192,6 +201,7 @@ curl -X 'POST' \
     \"connect_webview_id\": \"${CONNECT_WEBVIEW_ID}\"
   }"
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -210,6 +220,7 @@ if webview.status == "authorized":
   print("Connection successful!")
   print(f"Connected account ID: {webview.connected_account_id}")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -229,6 +240,7 @@ if webview.status == "authorized"
   puts "Connected account ID: #{webview.connected_account_id}"
 end
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -251,6 +263,7 @@ if ($webview->status === "authorized") {
   echo "Connected account ID: " . $webview->connected_account_id;
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -271,6 +284,7 @@ if (webview.Status == "authorized")
   Console.WriteLine($"Connected account ID: {webview.ConnectedAccountId}");
 }
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -293,10 +307,11 @@ if (webview.getStatus().equals("authorized")) {
   System.out.println("Connected account ID: " + webview.getConnectedAccountId());
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 4: List Devices
 
@@ -306,21 +321,22 @@ Once the connection is authorized, retrieve the list of Ultraloq devices associa
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 const devices = await seam.devices.list({
-  connected_account_id: webview.connected_account_id
-});
+  connected_account_id: webview.connected_account_id,
+})
 
 for (const device of devices) {
-  console.log(`Device: ${device.properties.name}`);
-  console.log(`Device ID: ${device.device_id}`);
-  console.log(`Warnings:`, device.warnings);
-  console.log();
+  console.log(`Device: ${device.properties.name}`)
+  console.log(`Device ID: ${device.device_id}`)
+  console.log(`Warnings:`, device.warnings)
+  console.log()
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -335,6 +351,7 @@ curl -X 'POST' \
     \"connected_account_id\": \"${CONNECTED_ACCOUNT_ID}\"
   }"
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -354,6 +371,7 @@ for device in devices:
   print(f"Warnings: {device.warnings}")
   print()
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -374,6 +392,7 @@ devices.each do |device|
   puts
 end
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -396,6 +415,7 @@ foreach ($devices as $device) {
   echo "Warnings: " . json_encode($device->warnings) . "\n\n";
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -417,6 +437,7 @@ foreach (var device in devices)
   Console.WriteLine();
 }
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -440,6 +461,7 @@ for (Device device : devices) {
   System.out.println();
 }
 ```
+
 </Tab>
 </Tabs>
 
@@ -469,10 +491,12 @@ When you first list Ultraloq devices, they will have the `ultraloq_time_zone_unk
 ```
 
 <Warning>
-**Important:** The `ultraloq_time_zone_unknown` warning indicates that you must configure the device's timezone before creating time-bound access codes. Proceed to Step 5 to configure timezones.
+  **Important:** The `ultraloq_time_zone_unknown` warning indicates that you
+  must configure the device's timezone before creating time-bound access codes.
+  Proceed to Step 5 to configure timezones.
 </Warning>
 
-***
+---
 
 ## Step 5: Configure Device Timezones
 
@@ -482,9 +506,9 @@ This is a **required step** for Ultraloq devices. You must configure each device
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 // Configure timezone for one or more devices
 await seam.devices.reportProviderMetadata({
@@ -492,14 +516,15 @@ await seam.devices.reportProviderMetadata({
     {
       device_id: device.device_id,
       ultraloq_metadata: {
-        time_zone: "America/New_York"
-      }
-    }
-  ]
-});
+        time_zone: 'America/New_York',
+      },
+    },
+  ],
+})
 
-console.log("Timezone configured successfully!");
+console.log('Timezone configured successfully!')
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -521,6 +546,7 @@ curl -X 'POST' \
     ]
   }"
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -544,6 +570,7 @@ seam.devices.report_provider_metadata(
 
 print("Timezone configured successfully!")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -567,6 +594,7 @@ seam.devices.report_provider_metadata(
 
 puts "Timezone configured successfully!"
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -593,6 +621,7 @@ $seam->devices->report_provider_metadata(
 
 echo "Timezone configured successfully!";
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -616,6 +645,7 @@ seam.Devices.ReportProviderMetadata(
 
 Console.WriteLine("Timezone configured successfully!");
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -641,6 +671,7 @@ seam.devices().reportProviderMetadata(
 
 System.out.println("Timezone configured successfully!");
 ```
+
 </Tab>
 </Tabs>
 
@@ -648,11 +679,12 @@ System.out.println("Timezone configured successfully!");
 **Valid Timezone Values:** Use IANA timezone strings such as `"America/New_York"`, `"Europe/London"`, or `"Asia/Tokyo"`. Do not use timezone abbreviations like `"EST"` or `"PST"`.
 
 For a complete list of valid timezones, see the [IANA Time Zone Database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+
 </Check>
 
 For detailed information about timezone configuration, including best practices and troubleshooting, see [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md).
 
-***
+---
 
 ## Step 6: Verify Configuration
 
@@ -662,28 +694,29 @@ After configuring the timezone, verify that the warning has been cleared and the
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 const device = await seam.devices.get({
-  device_id: device.device_id
-});
+  device_id: device.device_id,
+})
 
 // Check that timezone is configured
 console.assert(
-  device.properties.ultraloq_metadata.time_zone === "America/New_York",
-  "Timezone should be set"
-);
+  device.properties.ultraloq_metadata.time_zone === 'America/New_York',
+  'Timezone should be set',
+)
 
 // Check that warning is cleared
 const hasWarning = device.warnings.some(
-  w => w.warning_code === "ultraloq_time_zone_unknown"
-);
-console.assert(!hasWarning, "Timezone warning should be cleared");
+  (w) => w.warning_code === 'ultraloq_time_zone_unknown',
+)
+console.assert(!hasWarning, 'Timezone warning should be cleared')
 
-console.log("✓ Device is ready to create time-bound access codes!");
+console.log('✓ Device is ready to create time-bound access codes!')
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -704,6 +737,7 @@ echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
 # Check warnings are cleared
 echo $device | jq '.device.warnings'
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -727,6 +761,7 @@ assert not has_warning, "Timezone warning should be cleared"
 
 print("✓ Device is ready to create time-bound access codes!")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -747,6 +782,7 @@ raise "Timezone warning not cleared" if has_warning
 
 puts "✓ Device is ready to create time-bound access codes!"
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -776,6 +812,7 @@ assert(!$hasWarning, "Timezone warning should be cleared");
 
 echo "✓ Device is ready to create time-bound access codes!";
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -801,6 +838,7 @@ Debug.Assert(!hasWarning, "Timezone warning should be cleared");
 
 Console.WriteLine("✓ Device is ready to create time-bound access codes!");
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -827,10 +865,11 @@ assert !hasWarning : "Timezone warning should be cleared";
 
 System.out.println("✓ Device is ready to create time-bound access codes!");
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Next Steps
 
@@ -842,18 +881,19 @@ Now that your Ultraloq devices are connected and configured, you can perform com
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 // Lock the door
-await seam.locks.lockDoor({ device_id: "your-device-id" });
-console.log("Door locked");
+await seam.locks.lockDoor({ device_id: 'your-device-id' })
+console.log('Door locked')
 
 // Unlock the door
-await seam.locks.unlockDoor({ device_id: "your-device-id" });
-console.log("Door unlocked");
+await seam.locks.unlockDoor({ device_id: 'your-device-id' })
+console.log('Door unlocked')
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -875,6 +915,7 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d "{\"device_id\": \"your-device-id\"}"
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -892,6 +933,7 @@ print("Door locked")
 seam.locks.unlock_door(device_id="your-device-id")
 print("Door unlocked")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -909,6 +951,7 @@ puts "Door locked"
 seam.locks.unlock_door(device_id: "your-device-id")
 puts "Door unlocked"
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -929,6 +972,7 @@ echo "Door locked\n";
 $seam->locks->unlock_door(device_id: "your-device-id");
 echo "Door unlocked\n";
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -946,6 +990,7 @@ Console.WriteLine("Door locked");
 seam.Locks.UnlockDoor(deviceId: "your-device-id");
 Console.WriteLine("Door unlocked");
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -967,6 +1012,7 @@ seam.locks().unlockDoor(LocksUnlockDoorRequest.builder()
   .build());
 System.out.println("Door unlocked");
 ```
+
 </Tab>
 </Tabs>
 
@@ -978,19 +1024,20 @@ Permanent access codes work indefinitely and do not require timezone configurati
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 // Create permanent access code
 const accessCode = await seam.accessCodes.create({
-  device_id: "your-device-id",
-  name: "Maintenance Team",
-  code: "1234"  // Optional: auto-generated if omitted
-});
+  device_id: 'your-device-id',
+  name: 'Maintenance Team',
+  code: '1234', // Optional: auto-generated if omitted
+})
 
-console.log(`Created permanent code: ${accessCode.code}`);
+console.log(`Created permanent code: ${accessCode.code}`)
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1007,6 +1054,7 @@ curl -X 'POST' \
     "code": "1234"
   }'
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1025,6 +1073,7 @@ access_code = seam.access_codes.create(
 
 print(f"Created permanent code: {access_code.code}")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1043,6 +1092,7 @@ access_code = seam.access_codes.create(
 
 puts "Created permanent code: #{access_code.code}"
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1064,6 +1114,7 @@ $accessCode = $seam->access_codes->create(
 
 echo "Created permanent code: " . $accessCode->code . "\n";
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1082,6 +1133,7 @@ var accessCode = seam.AccessCodes.Create(
 
 Console.WriteLine($"Created permanent code: {accessCode.Code}");
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -1103,6 +1155,7 @@ AccessCode accessCode = seam.accessCodes().create(
 
 System.out.println("Created permanent code: " + accessCode.getCode());
 ```
+
 </Tab>
 </Tabs>
 
@@ -1114,25 +1167,26 @@ Time-bound access codes require timezone configuration (completed in Step 5):
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 // Define time range
-const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
-const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000);
+const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000)
+const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000)
 
 // Create time-bound access code
 const accessCode = await seam.accessCodes.create({
-  device_id: "your-device-id",
-  name: "Weekend Guest",
+  device_id: 'your-device-id',
+  name: 'Weekend Guest',
   starts_at: startsAt.toISOString(),
-  ends_at: endsAt.toISOString()
-});
+  ends_at: endsAt.toISOString(),
+})
 
-console.log(`Created time-bound code: ${accessCode.code}`);
-console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`);
+console.log(`Created time-bound code: ${accessCode.code}`)
+console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`)
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1154,6 +1208,7 @@ curl -X 'POST' \
     \"ends_at\": \"${ENDS_AT}\"
   }"
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1179,6 +1234,7 @@ access_code = seam.access_codes.create(
 print(f"Created time-bound code: {access_code.code}")
 print(f"Active from {access_code.starts_at} to {access_code.ends_at}")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1204,6 +1260,7 @@ access_code = seam.access_codes.create(
 puts "Created time-bound code: #{access_code.code}"
 puts "Active from #{access_code.starts_at} to #{access_code.ends_at}"
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1231,6 +1288,7 @@ $accessCode = $seam->access_codes->create(
 echo "Created time-bound code: " . $accessCode->code . "\n";
 echo "Active from " . $accessCode->starts_at . " to " . $accessCode->ends_at . "\n";
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1256,6 +1314,7 @@ var accessCode = seam.AccessCodes.Create(
 Console.WriteLine($"Created time-bound code: {accessCode.Code}");
 Console.WriteLine($"Active from {accessCode.StartsAt} to {accessCode.EndsAt}");
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -1285,6 +1344,7 @@ AccessCode accessCode = seam.accessCodes().create(
 System.out.println("Created time-bound code: " + accessCode.getCode());
 System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCode.getEndsAt());
 ```
+
 </Tab>
 </Tabs>
 
@@ -1294,28 +1354,29 @@ System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCo
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
-const device = await seam.devices.get({ device_id: "your-device-id" });
+const device = await seam.devices.get({ device_id: 'your-device-id' })
 
 // Check lock status
-console.log(`Lock status: ${device.properties.locked}`);
+console.log(`Lock status: ${device.properties.locked}`)
 
 // Check online status
-console.log(`Online: ${device.properties.online}`);
+console.log(`Online: ${device.properties.online}`)
 
 // Check battery level (if available)
 if (device.properties.battery_level) {
-  console.log(`Battery level: ${device.properties.battery_level}`);
+  console.log(`Battery level: ${device.properties.battery_level}`)
 }
 
 // Check for warnings
 if (device.warnings.length > 0) {
-  console.log(`Warnings: ${device.warnings.map(w => w.warning_code)}`);
+  console.log(`Warnings: ${device.warnings.map((w) => w.warning_code)}`)
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1340,6 +1401,7 @@ echo $device | jq '.device.properties.battery_level'
 # Check warnings
 echo $device | jq '.device.warnings'
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1365,6 +1427,7 @@ if 'battery_level' in device.properties:
 if device.warnings:
   print(f"Warnings: {[w.warning_code for w in device.warnings]}")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1392,6 +1455,7 @@ if device.warnings.any?
   puts "Warnings: #{device.warnings.map(&:warning_code)}"
 end
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1423,6 +1487,7 @@ if (count($device->warnings) > 0) {
   echo "Warnings: " . implode(", ", $warningCodes) . "\n";
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1454,6 +1519,7 @@ if (device.Warnings.Any())
   Console.WriteLine($"Warnings: {warningCodes}");
 }
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -1490,19 +1556,20 @@ if (!device.getWarnings().isEmpty()) {
   System.out.println("Warnings: " + warningCodes);
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Related Resources
 
-* **[Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)** - Detailed guide on permanent and time-bound access codes
-* **[Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)** - Complete timezone configuration reference
-* **[Lock and Unlock Operations](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)** - General smart lock control documentation
-* **[Access Codes Overview](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)** - Understanding access code management
+- **[Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)** - Detailed guide on permanent and time-bound access codes
+- **[Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)** - Complete timezone configuration reference
+- **[Lock and Unlock Operations](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)** - General smart lock control documentation
+- **[Access Codes Overview](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)** - Understanding access code management
 
-***
+---
 
 ## Troubleshooting
 
@@ -1530,4 +1597,4 @@ If you receive an error when creating time-bound access codes:
 2. Verify the `ultraloq_time_zone_unknown` warning is not present in `device.warnings`
 3. Ensure you're providing both `starts_at` and `ends_at` parameters
 
-***
+---

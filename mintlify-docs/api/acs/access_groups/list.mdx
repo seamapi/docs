@@ -1,5 +1,5 @@
 ---
-title: "List Access Groups"
+title: 'List Access Groups'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "List Access Groups"
 - [Examples](#examples)
 
 Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,34 +17,35 @@ Returns a list of all access groups, filtered by user identity.
 
 ```javascript
 await seam.acs.accessGroups.list({
-  acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f",
-  acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8",
-  user_identity_id: "9b1deda4-07e2-4e90-acde-5724b6ab7305",
-});
+  acs_system_id: '1b529056-1b04-450b-b3da-016b65a5017f',
+  acs_user_id: 'ebe506e1-33ba-44e8-892b-2d12c1709cd8',
+  user_identity_id: '9b1deda4-07e2-4e90-acde-5724b6ab7305',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "access_group_type": "salto_ks_access_group",
-    "access_group_type_display_name": "Salto KS Access Group",
-    "acs_access_group_id": "3f448826-9875-4947-9519-e468090a4f7d",
-    "acs_system_id": "1b529056-1b04-450b-b3da-016b65a5017f",
-    "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-    "created_at": "2025-06-15T16:54:17.946453Z",
-    "display_name": "Main Group",
-    "external_type": "salto_ks_access_group",
-    "external_type_display_name": "Salto KS Access Group",
-    "is_managed": true,
-    "name": "My Access Group",
-    "pending_mutations": [],
-    "warnings": [],
-    "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
-  }
+    access_group_type: 'salto_ks_access_group',
+    access_group_type_display_name: 'Salto KS Access Group',
+    acs_access_group_id: '3f448826-9875-4947-9519-e468090a4f7d',
+    acs_system_id: '1b529056-1b04-450b-b3da-016b65a5017f',
+    connected_account_id: 'daba7bd0-edb6-4bb9-a70b-f9ae08a0e301',
+    created_at: '2025-06-15T16:54:17.946453Z',
+    display_name: 'Main Group',
+    external_type: 'salto_ks_access_group',
+    external_type_display_name: 'Salto KS Access Group',
+    is_managed: true,
+    name: 'My Access Group',
+    pending_mutations: [],
+    warnings: [],
+    workspace_id: 'ac19352c-869a-4209-9ce7-44c740a8b5d0',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -90,6 +90,7 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -128,6 +129,7 @@ seam.acs.access_groups.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -166,6 +168,7 @@ seam.acs.access_groups.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -204,6 +207,7 @@ $seam->acs->access_groups->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -238,10 +242,10 @@ seam acs access-groups list --acs_system_id "1b529056-1b04-450b-b3da-016b65a5017
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -249,37 +253,38 @@ seam acs access-groups list --acs_system_id "1b529056-1b04-450b-b3da-016b65a5017
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_system_id`** *String*
+**`acs_system_id`** _String_
 
 ID of the access system for which you want to retrieve all access groups.
 
 ---
 
-**`acs_user_id`** *String*
+**`acs_user_id`** _String_
 
 ID of the access system user for which you want to retrieve all access groups.
 
 ---
 
-**`search`** *String*
+**`search`** _String_
 
 String for which to search. Filters returned access groups to include all records that satisfy a partial match using `name` or `acs_access_group_id`.
 
 ---
 
-**`user_identity_id`** *String*
+**`user_identity_id`** _String_
 
 ID of the user identity for which you want to retrieve all access groups.
 
 ---
-
 
 ## Response
 
@@ -289,11 +294,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -314,13 +316,13 @@ Returns:
   "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### List access groups for an access system user
 
@@ -329,44 +331,41 @@ Returns a list of all access groups, filtered by access system user.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.acs.accessGroups.list({
-  acs_system_id: "1b529056-1b04-450b-b3da-016b65a5017f",
-  acs_user_id: "ebe506e1-33ba-44e8-892b-2d12c1709cd8",
-});
+  acs_system_id: '1b529056-1b04-450b-b3da-016b65a5017f',
+  acs_user_id: 'ebe506e1-33ba-44e8-892b-2d12c1709cd8',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "access_group_type": "salto_ks_access_group",
-    "access_group_type_display_name": "Salto KS Access Group",
-    "acs_access_group_id": "3f448826-9875-4947-9519-e468090a4f7d",
-    "acs_system_id": "1b529056-1b04-450b-b3da-016b65a5017f",
-    "connected_account_id": "daba7bd0-edb6-4bb9-a70b-f9ae08a0e301",
-    "created_at": "2025-06-15T16:54:17.946453Z",
-    "display_name": "Main Group",
-    "external_type": "salto_ks_access_group",
-    "external_type_display_name": "Salto KS Access Group",
-    "is_managed": true,
-    "name": "My Access Group",
-    "pending_mutations": [],
-    "warnings": [],
-    "workspace_id": "ac19352c-869a-4209-9ce7-44c740a8b5d0"
-  }
+    access_group_type: 'salto_ks_access_group',
+    access_group_type_display_name: 'Salto KS Access Group',
+    acs_access_group_id: '3f448826-9875-4947-9519-e468090a4f7d',
+    acs_system_id: '1b529056-1b04-450b-b3da-016b65a5017f',
+    connected_account_id: 'daba7bd0-edb6-4bb9-a70b-f9ae08a0e301',
+    created_at: '2025-06-15T16:54:17.946453Z',
+    display_name: 'Main Group',
+    external_type: 'salto_ks_access_group',
+    external_type_display_name: 'Salto KS Access Group',
+    is_managed: true,
+    name: 'My Access Group',
+    pending_mutations: [],
+    warnings: [],
+    workspace_id: 'ac19352c-869a-4209-9ce7-44c740a8b5d0',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -405,11 +404,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -442,11 +440,10 @@ seam.acs.access_groups.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -479,11 +476,10 @@ seam.acs.access_groups.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -516,11 +512,10 @@ $seam->acs->access_groups->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -550,6 +545,7 @@ seam acs access-groups list --acs_system_id "1b529056-1b04-450b-b3da-016b65a5017
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>

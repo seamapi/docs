@@ -1,19 +1,23 @@
 ---
-title: "Setting the Current HVAC and Fan Mode Settings"
-description: "Learn how to configure the current climate settings on a thermostat."
+title: 'Setting the Current HVAC and Fan Mode Settings'
+description: 'Learn how to configure the current climate settings on a thermostat.'
 ---
-
 
 You can use the following Seam API "imperative" endpoints to set the current HVAC and fan mode settings for a connected thermostat, individually:
 
-* [`/thermostats/heat`](https://docs.seam.co/latest/api/thermostats/heat)
-* [`/thermostats/cool`](https://docs.seam.co/latest/api/thermostats/cool)
-* [`/thermostats/heat_cool`](https://docs.seam.co/latest/api/thermostats/heat_cool)
-* [`/thermostats/off`](https://docs.seam.co/latest/api/thermostats/off)
-* [`/thermostats/set_fan_mode`](https://docs.seam.co/latest/api/thermostats/set_fan_mode)
+- [`/thermostats/heat`](https://docs.seam.co/latest/api/thermostats/heat)
+- [`/thermostats/cool`](https://docs.seam.co/latest/api/thermostats/cool)
+- [`/thermostats/heat_cool`](https://docs.seam.co/latest/api/thermostats/heat_cool)
+- [`/thermostats/off`](https://docs.seam.co/latest/api/thermostats/off)
+- [`/thermostats/set_fan_mode`](https://docs.seam.co/latest/api/thermostats/set_fan_mode)
 
 <Info>
-You can also use the [`/thermostats/set_hvac_mode`](https://docs.seam.co/latest/api/thermostats/set_hvac_mode) endpoint to set a thermostat to the desired HVAC mode, including `heat`, `cool`, `heat_cool`, `eco` (for Google Nest), or `off`, depending on the capabilities of the device. For `heat`, `cool`, and `heat_cool`, also specify the desired heating and cooling set points, as appropriate.
+  You can also use the
+  [`/thermostats/set_hvac_mode`](https://docs.seam.co/latest/api/thermostats/set_hvac_mode)
+  endpoint to set a thermostat to the desired HVAC mode, including `heat`,
+  `cool`, `heat_cool`, `eco` (for Google Nest), or `off`, depending on the
+  capabilities of the device. For `heat`, `cool`, and `heat_cool`, also specify
+  the desired heating and cooling set points, as appropriate.
 </Info>
 
 Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](./#thermostat-capabilities).
@@ -22,7 +26,7 @@ These imperative operations return an [action attempt](../../core-concepts/actio
 
 Further, Seam emits a [`thermostat.temperature_reached_set_point` event](https://docs.seam.co/latest/api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling temperature that you requested.
 
-***
+---
 
 ## HVAC Settings
 
@@ -30,15 +34,56 @@ When you use an imperative endpoint to set the HVAC settings for a thermostat, y
 
 To set the HVAC mode and set points, issue a thermostat [`heat`](configure-current-climate-settings.md#set-a-thermostat-to-heat-mode), [`cool`](configure-current-climate-settings.md#set-a-thermostat-to-cool-mode), [`heat_cool`](configure-current-climate-settings.md#set-a-thermostat-to-heat-cool-mode), `eco` (for Google Nest), or [`off`](configure-current-climate-settings.md#turn-off-heating-and-cooling) request and include the desired set points in the body of the request.
 
-***
+---
 
 ## Fan Mode Settings
 
 Seam supports the following fan mode settings:
 
-<table><thead><tr><th width="156">Fan mode</th><th>Description</th></tr></thead><tbody><tr><td><code>on</code></td><td>The fan runs all the time, regardless of whether the HVAC system is cooling or heating.</td></tr><tr><td><code>auto</code></td><td>The fan runs whenever the HVAC system is cooling or heating but does not run at other times.</td></tr><tr><td><code>circulate</code></td><td>The fan runs for a specific number of minutes each hour, regardless of whether the HVAC system is cooling or heating. To find out whether a thermostat supports this setting, view its <a href="https://docs.seam.co/latest/api/thermostats#device.properties"><code>device.properties.available_fan_mode_settings</code></a> property.</td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th width='156'>Fan mode</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>on</code>
+      </td>
+      <td>
+        The fan runs all the time, regardless of whether the HVAC system is
+        cooling or heating.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>auto</code>
+      </td>
+      <td>
+        The fan runs whenever the HVAC system is cooling or heating but does not
+        run at other times.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>circulate</code>
+      </td>
+      <td>
+        The fan runs for a specific number of minutes each hour, regardless of
+        whether the HVAC system is cooling or heating. To find out whether a
+        thermostat supports this setting, view its{' '}
+        <a href='https://docs.seam.co/latest/api/thermostats#device.properties'>
+          <code>device.properties.available_fan_mode_settings</code>
+        </a>{' '}
+        property.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-***
+---
 
 ## Process Overview
 
@@ -47,28 +92,29 @@ To configure and then verify a climate setting on a thermostat, perform the foll
 1.  Confirm the capabilities of the thermostat.
 
     See [Before You Begin: Confirm Capabilities](configure-current-climate-settings.md#before-you-begin-confirm-capabilities).
-2. Execute the imperative climate setting request.\
-   See the following instructions:
-   * [Set a Thermostat to Heat Mode](configure-current-climate-settings.md#set-a-thermostat-to-heat-mode)
-   * [Set a Thermostat to Cool Mode](configure-current-climate-settings.md#set-a-thermostat-to-cool-mode)
-   * [Set a Thermostat to Heat-Cool Mode](configure-current-climate-settings.md#set-a-thermostat-to-heat-cool-mode)
-   * [Turn off Heating and Cooling](configure-current-climate-settings.md#turn-off-heating-and-cooling)
-   * [Set the Fan Mode Setting](configure-current-climate-settings.md#set-the-fan-mode-setting)
-3. Poll the action attempt.\
-   See [Poll the Action Attempt](configure-current-climate-settings.md#poll-the-action-attempt).
-4. If desired, configure a webhook to watch for a `thermostat.temperature_reached_set_point` event that indicates that the thermostat has reported a temperature within 1° Celsius of the heating or cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) that you requested.\
-   See [Webhooks](../../developer-tools/webhooks.md).
 
-***
+2.  Execute the imperative climate setting request.\
+    See the following instructions:
+    - [Set a Thermostat to Heat Mode](configure-current-climate-settings.md#set-a-thermostat-to-heat-mode)
+    - [Set a Thermostat to Cool Mode](configure-current-climate-settings.md#set-a-thermostat-to-cool-mode)
+    - [Set a Thermostat to Heat-Cool Mode](configure-current-climate-settings.md#set-a-thermostat-to-heat-cool-mode)
+    - [Turn off Heating and Cooling](configure-current-climate-settings.md#turn-off-heating-and-cooling)
+    - [Set the Fan Mode Setting](configure-current-climate-settings.md#set-the-fan-mode-setting)
+3.  Poll the action attempt.\
+    See [Poll the Action Attempt](configure-current-climate-settings.md#poll-the-action-attempt).
+4.  If desired, configure a webhook to watch for a `thermostat.temperature_reached_set_point` event that indicates that the thermostat has reported a temperature within 1° Celsius of the heating or cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points.md) that you requested.\
+    See [Webhooks](../../developer-tools/webhooks.md).
+
+---
 
 ## Before You Begin: Confirm Capabilities
 
 Before you attempt to set the HVAC or fan mode settings for a thermostat, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags) for the device:
 
-* `device.can_hvac_heat`
-* `device.can_hvac_cool`
-* `device.can_hvac_heat_cool`
-* `device.can_turn_off_hvac`
+- `device.can_hvac_heat`
+- `device.can_hvac_cool`
+- `device.can_hvac_heat_cool`
+- `device.can_turn_off_hvac`
 
 Use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint for a specific device to return these capability flags. Then, use an `if` statement or similar check to confirm that the relevant flag is both present and `true` before attempting to perform the imperative thermostat action.
 
@@ -81,8 +127,8 @@ If the relevant capability flag is `false` or not present, you can view the [pro
 
 ```javascript
 await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+})
 ```
 
 **Response:**
@@ -97,6 +143,7 @@ await seam.devices.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -130,6 +177,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -154,6 +202,7 @@ Device(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -169,6 +218,7 @@ Device(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -193,6 +243,7 @@ $seam->devices->get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -208,10 +259,11 @@ $seam->devices->get(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Set a Thermostat to Heat Mode
 
@@ -227,30 +279,31 @@ Issue the thermostat `heat` request, providing the `device_id` of the thermostat
 ```javascript
 // Get the thermostat.
 const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+})
 
 // Confirm that the thermostat supports heat mode.
 if (thermostat.can_hvac_heat) {
   // Perform the heat request.
   await seam.thermostats.heat({
     device_id: thermostat.device_id,
-    heating_set_point_celsius: 20
+    heating_set_point_celsius: 20,
   })
-};
+}
 ```
 
 **Response:**
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '97125745-15d9-4970-b5be-c34ec3ce1c81',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "97125745-15d9-4970-b5be-c34ec3ce1c81",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -299,6 +352,7 @@ fi
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -331,6 +385,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -363,6 +418,7 @@ end
   result={}
   error=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -389,13 +445,14 @@ if ($thermostat->can_hvac_heat) {
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '97125745-15d9-4970-b5be-c34ec3ce1c81',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "97125745-15d9-4970-b5be-c34ec3ce1c81",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -411,10 +468,11 @@ if ($thermostat->can_hvac_heat) {
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Set a Thermostat to Cool Mode
 
@@ -430,30 +488,31 @@ Issue the thermostat `cool` request, providing the `device_id` of the thermostat
 ```javascript
 // Get the thermostat.
 const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+})
 
 // Confirm that the thermostat supports cool mode.
 if (thermostat.can_hvac_cool) {
   // Perform the cool request.
   await seam.thermostats.cool({
     device_id: thermostat.device_id,
-    cooling_set_point_celsius: 25
+    cooling_set_point_celsius: 25,
   })
-};
+}
 ```
 
 **Response:**
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '87478724-0e30-4fed-9f2a-456971b7b04f',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "87478724-0e30-4fed-9f2a-456971b7b04f",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -502,6 +561,7 @@ fi
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -534,6 +594,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -566,6 +627,7 @@ end
   result={}
   error=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -592,13 +654,14 @@ if ($thermostat->can_hvac_cool) {
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '87478724-0e30-4fed-9f2a-456971b7b04f',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "87478724-0e30-4fed-9f2a-456971b7b04f",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -614,10 +677,11 @@ if ($thermostat->can_hvac_cool) {
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Set a Thermostat to Heat-Cool Mode
 
@@ -625,8 +689,8 @@ You can [set a thermostat to heat-cool (also known as "auto") mode](https://docs
 
 Issue the thermostat `heat_cool` request, providing the `device_id` of the thermostat and the following set points:
 
-* `heating_set_point_celsius` or `heating_set_point_fahrenheit`
-* `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`
+- `heating_set_point_celsius` or `heating_set_point_fahrenheit`
+- `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`
 
 <Tabs>
 <Tab title="JavaScript">
@@ -636,8 +700,8 @@ Issue the thermostat `heat_cool` request, providing the `device_id` of the therm
 ```javascript
 // Get the thermostat.
 const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+})
 
 // Confirm that the thermostat supports heat-cool mode.
 if (thermostat.can_hvac_heat_cool) {
@@ -645,22 +709,23 @@ if (thermostat.can_hvac_heat_cool) {
   await seam.thermostats.heatCool({
     device_id: thermostat.device_id,
     heating_set_point_celsius: 20,
-    cooling_set_point_celsius: 25
+    cooling_set_point_celsius: 25,
   })
-};
+}
 ```
 
 **Response:**
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '8050ec59-7f29-4d0d-9842-dedaf304740d',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "8050ec59-7f29-4d0d-9842-dedaf304740d",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -710,6 +775,7 @@ fi
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -743,6 +809,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -776,6 +843,7 @@ end
   result={}
   error=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -803,13 +871,14 @@ if ($thermostat->can_hvac_heat_cool) {
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '8050ec59-7f29-4d0d-9842-dedaf304740d',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "8050ec59-7f29-4d0d-9842-dedaf304740d",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -825,10 +894,11 @@ if ($thermostat->can_hvac_heat_cool) {
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Turn off Heating and Cooling
 
@@ -844,29 +914,30 @@ Issue the thermostat `off` request, providing the `device_id` of the thermostat.
 ```javascript
 // Get the thermostat.
 const thermostat = await seam.devices.get({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-});
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+})
 
 // Confirm that the thermostat supports off mode.
 if (thermostat.can_turn_off_hvac) {
   // Perform the off request.
   await seam.thermostats.off({
-    device_id: thermostat.device_id
+    device_id: thermostat.device_id,
   })
-};
+}
 ```
 
 **Response:**
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: 'ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -914,6 +985,7 @@ fi
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -945,6 +1017,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -976,6 +1049,7 @@ end
   result={}
   error=nil>
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1001,13 +1075,14 @@ if ($thermostat->can_turn_off_hvac) {
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: 'ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd',
-  action_type: 'SET_HVAC_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "ef94c8b2-3ff0-4e56-a97e-033ca07ba0fd",
+  "action_type": "SET_HVAC_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1023,10 +1098,11 @@ if ($thermostat->can_turn_off_hvac) {
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Set the Fan Mode Setting
 
@@ -1041,22 +1117,23 @@ Set the fan mode setting by providing the `device_id` of the thermostat and spec
 
 ```javascript
 await seam.thermostats.setFanMode({
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
-  fan_mode_setting: "auto"
-});
+  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
+  fan_mode_setting: 'auto',
+})
 ```
 
 **Response:**
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type: 'SET_FAN_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "9c9b584b-c645-4ce0-a9c2-79b6f1db2396",
+  "action_type": "SET_FAN_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1089,6 +1166,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1113,6 +1191,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1128,6 +1207,7 @@ ActionAttempt(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1145,13 +1225,14 @@ $seam->thermostats->set_fan_mode(
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type: 'SET_FAN_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "9c9b584b-c645-4ce0-a9c2-79b6f1db2396",
+  "action_type": "SET_FAN_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1167,10 +1248,11 @@ $seam->thermostats->set_fan_mode(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Poll the Action Attempt
 
@@ -1191,13 +1273,14 @@ await seam.actionAttempts.get(
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type: 'SET_FAN_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "9c9b584b-c645-4ce0-a9c2-79b6f1db2396",
+  "action_type": "SET_FAN_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -1230,6 +1313,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -1253,6 +1337,7 @@ ActionAttempt(
   error=None
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1268,6 +1353,7 @@ ActionAttempt(
 ```
 # Coming soon!
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -1284,13 +1370,14 @@ $seam->action_attempts->get(
 
 ```json
 {
-  status: 'success',
-  action_attempt_id: '9c9b584b-c645-4ce0-a9c2-79b6f1db2396',
-  action_type: 'SET_FAN_MODE',
-  result: {},
-  error: null
+  "status": "success",
+  "action_attempt_id": "9c9b584b-c645-4ce0-a9c2-79b6f1db2396",
+  "action_type": "SET_FAN_MODE",
+  "result": {},
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -1306,5 +1393,6 @@ $seam->action_attempts->get(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>

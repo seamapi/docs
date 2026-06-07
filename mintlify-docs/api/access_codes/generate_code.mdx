@@ -1,12 +1,11 @@
 ---
-title: "Generate a Code"
+title: 'Generate a Code'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Generates a code for an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes), given a device ID.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Generates a code for an access code, given a device ID.
 
 ```javascript
 await seam.accessCodes.generateCode({
-  device_id: "02cd5099-d9f8-45a1-a9c0-f2ecbd334792",
-});
+  device_id: '02cd5099-d9f8-45a1-a9c0-f2ecbd334792',
+})
 ```
 
 #### Output:
@@ -26,6 +25,7 @@ await seam.accessCodes.generateCode({
 ```javascript
 { "device_id": "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code": "1234" }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -54,6 +54,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -71,6 +72,7 @@ seam.access_codes.generate_code(device_id="02cd5099-d9f8-45a1-a9c0-f2ecbd334792"
 ```python
 AccessCode(device_id="02cd5099-d9f8-45a1-a9c0-f2ecbd334792", code="1234")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -88,6 +90,7 @@ seam.access_codes.generate_code(device_id: "02cd5099-d9f8-45a1-a9c0-f2ecbd334792
 ```ruby
 { "device_id" => "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code" => "1234" }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -107,6 +110,7 @@ $seam->access_codes->generate_code(
 ```php
 ["device_id" => "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code" => "1234"];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -124,10 +128,10 @@ seam access-codes generate-code --device_id "02cd5099-d9f8-45a1-a9c0-f2ecbd33479
 ```seam_cli
 { "device_id": "02cd5099-d9f8-45a1-a9c0-f2ecbd334792", "code": "1234" }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -136,19 +140,20 @@ seam access-codes generate-code --device_id "02cd5099-d9f8-45a1-a9c0-f2ecbd33479
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the device for which you want to generate a code.
 
 ---
-
 
 ## Response
 
@@ -158,11 +163,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -191,5 +193,6 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 </Tabs>

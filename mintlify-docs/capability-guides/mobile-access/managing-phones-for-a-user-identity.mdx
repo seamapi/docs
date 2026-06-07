@@ -1,26 +1,37 @@
 ---
-title: "Managing Phones for a User Identity"
-description: "Learn how to manage the phones associated with a user identity."
+title: 'Managing Phones for a User Identity'
+description: 'Learn how to manage the phones associated with a user identity.'
 ---
-
 
 An app user may have several phones. When they sign into their account on your mobile application, it is important that additional phones also provide access. Seam facilitates this access by registering each phone within the [user identity](managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity) and synchronizing [mobile credentials](./#managing-mobile-credentials) across these phones. Further, Seam provides a feature to deactivate a phone if an app user loses it.
 
-***
+---
 
 ## App User New Phone Process
 
 When an app user signs in to a new phone, Seam can automatically set up the new phone, generate matching credentials, and issue these credentials. To facilitate this capability, you must [issue a multi-phone sync credential](issuing-mobile-credentials-from-an-access-control-system.md) when creating a mobile credential.
 
-<figure><img src="/images/image (2) (1).png" alt="When a user sign in to a new phone, Seam also issues matching credentials to the new phone." /><figcaption></figcaption></figure>
+<figure>
+  <img
+    src='/images/image (2) (1).png'
+    alt='When a user sign in to a new phone, Seam also issues matching credentials to the new phone.'
+  />
+  <figcaption></figcaption>
+</figure>
 
-***
+---
 
 ## App User Lost Phone Process
 
 If an app user loses their phone or wants to deactivate it, you can deactivate the phone. Seam then automatically invalidates the stored credentials on their deactivated phone.
 
-<figure><img src="/images/image (3) (1).png" alt="When a phone is revoked, Seam revokes all the credentials issued to this phone." /><figcaption></figcaption></figure>
+<figure>
+  <img
+    src='/images/image (3) (1).png'
+    alt='When a phone is revoked, Seam revokes all the credentials issued to this phone.'
+  />
+  <figcaption></figcaption>
+</figure>
 
 To [deactivate](https://docs.seam.co/latest/api/phones/deactivate) a phone, provide the ID of the phone. When a phone is deactivated, Seam also revokes all the credentials issued to the deactivated phone. Seam also removes the associated ACS credentials from the ACS.
 
@@ -32,7 +43,7 @@ To [deactivate](https://docs.seam.co/latest/api/phones/deactivate) a phone, prov
 ```javascript
 await seam.phones.deactivate({
   device_id: lostPhoneId,
-});
+})
 ```
 
 **Output:**
@@ -40,6 +51,7 @@ await seam.phones.deactivate({
 ```
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -64,6 +76,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -79,8 +92,9 @@ seam.phones.deactivate(
 **Output:**
 
 ```
-None    
+None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -98,6 +112,7 @@ seam.phones.deactivate(
 ```
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -115,6 +130,7 @@ $seam->phones->deactivate(
 ```
 null
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -130,10 +146,11 @@ Coming soon!
 ```json
 Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Retrieving Phones for a User Identity
 
@@ -147,7 +164,7 @@ To retrieve the list of phones that the mobile app user has used to sign in to t
 ```javascript
 await seam.phones.list({
   owner_user_identity_id: user_identity.id,
-});
+})
 ```
 
 **Output:**
@@ -169,6 +186,7 @@ await seam.phones.list({
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -209,6 +227,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -240,6 +259,7 @@ seam.phones.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -271,6 +291,7 @@ seam.phones.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -302,6 +323,7 @@ $seam->phones->list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -317,10 +339,11 @@ Coming soon!
 ```json
 Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Retrieving a Phone by ID
 
@@ -334,7 +357,7 @@ To retrieve a phone by its ID, use the [Get Phone](https://docs.seam.co/latest/a
 ```javascript
 await seam.phones.list({
   owner_user_identity_id: user_identity.id,
-});
+})
 ```
 
 **Output:**
@@ -356,6 +379,7 @@ await seam.phones.list({
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -387,6 +411,7 @@ curl -X 'GET' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -409,6 +434,7 @@ Phone(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -440,6 +466,7 @@ seam.phones.list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -471,6 +498,7 @@ $seam->phones->list(
   ...
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -486,5 +514,6 @@ Coming soon!
 ```json
 Coming soon!
 ```
+
 </Tab>
 </Tabs>

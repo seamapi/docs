@@ -1,5 +1,5 @@
 ---
-title: "Update an Access Code"
+title: 'Update an Access Code'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -8,7 +8,6 @@ title: "Update an Access Code"
 Updates a specified active or upcoming [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 See also [Modifying Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -19,12 +18,12 @@ Updates a specified active or upcoming access code.
 
 ```javascript
 await seam.accessCodes.update({
-  access_code_id: "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5",
-  name: "My Updated Access Code",
-  starts_at: "2025-06-19T08:26:41.000Z",
-  ends_at: "2025-06-21T17:38:07.000Z",
-  code: "4444",
-});
+  access_code_id: 'b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5',
+  name: 'My Updated Access Code',
+  starts_at: '2025-06-19T08:26:41.000Z',
+  ends_at: '2025-06-21T17:38:07.000Z',
+  code: '4444',
+})
 ```
 
 #### Output:
@@ -32,6 +31,7 @@ await seam.accessCodes.update({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -59,6 +59,7 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -82,6 +83,7 @@ seam.access_codes.update(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -105,6 +107,7 @@ seam.access_codes.update(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -128,6 +131,7 @@ $seam->access_codes->update(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -145,10 +149,10 @@ seam access-codes update --access_code_id "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5"
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -157,78 +161,80 @@ seam access-codes update --access_code_id "b854d7c9-d0d8-40a7-8a7c-cd3d167a6ce5"
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_code_id`** *String* (Required)
+**`access_code_id`** _String_ (Required)
 
 ID of the access code that you want to update.
 
 ---
 
-**`allow_external_modification`** *Boolean*
+**`allow_external_modification`** _Boolean_
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`attempt_for_offline_device`** *Boolean*
+**`attempt_for_offline_device`** _Boolean_
 
 ---
 
-**`code`** *String*
+**`code`** _String_
 
 Code to be used for access.
 
 ---
 
-**`device_id`** *String*
+**`device_id`** _String_
 
 ID of the device containing the access code that you want to update.
 
 ---
 
-**`ends_at`** *String*
+**`ends_at`** _String_
 
 Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
-**`is_external_modification_allowed`** *Boolean*
+**`is_external_modification_allowed`** _Boolean_
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`is_managed`** *Boolean*
+**`is_managed`** _Boolean_
 
 Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`.
 
 ---
 
-**`is_offline_access_code`** *Boolean*
+**`is_offline_access_code`** _Boolean_
 
 Indicates whether the access code is an [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes).
 
 ---
 
-**`is_one_time_use`** *Boolean*
+**`is_one_time_use`** _Boolean_
 
 Indicates whether the [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.
 
 ---
 
-**`max_time_rounding`** *String*
+**`max_time_rounding`** _String_
 
 Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.
 
 ---
 
-**`name`** *String*
+**`name`** _String_
 
 Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
 
@@ -240,44 +246,41 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 ---
 
-**`prefer_native_scheduling`** *Boolean*
+**`prefer_native_scheduling`** _Boolean_
 
 Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
 
 ---
 
-**`preferred_code_length`** *Number*
+**`preferred_code_length`** _Number_
 
 Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.
 
 ---
 
-**`starts_at`** *String*
+**`starts_at`** _String_
 
 Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-**`type`** *String*
+**`type`** _String_
 
 Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).
 
 ---
 
-**`use_backup_access_code_pool`** *Boolean*
+**`use_backup_access_code_pool`** _Boolean_
 
 Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
 
 ---
 
-**`use_offline_access_code`** *Boolean*
+**`use_offline_access_code`** _Boolean_
 
-<Warning>
-**Deprecated**. Use `is_offline_access_code` instead.
-</Warning>
+<Warning>**Deprecated**. Use `is_offline_access_code` instead.</Warning>
 
 ---
-
 
 ## Response
 
@@ -286,4 +289,3 @@ Returns:
 **void**
 
 </Check>
-

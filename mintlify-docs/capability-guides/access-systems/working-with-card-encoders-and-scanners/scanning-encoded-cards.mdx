@@ -1,12 +1,14 @@
 ---
-title: "Scanning Encoded Cards"
-description: "Learn how to scan an encoded card to retrieve useful information about the card."
+title: 'Scanning Encoded Cards'
+description: 'Learn how to scan an encoded card to retrieve useful information about the card.'
 ---
 
+<figure>
+  <img src='/images/scan-card.png' alt='' />
+  <figcaption></figcaption>
+</figure>
 
-<figure><img src="/images/scan-card.png" alt="" /><figcaption></figcaption></figure>
-
-You can use an encoder to scan a plastic key card to read its encoded parameters. The scan result  includes the card's properties, such as its card number, serial number, and other useful details. The returned payload can also reveal whether the card is up to date with the server. If discrepancies are detected, Seam also provides warnings to indicate that the card is out of date and needs re-encoding.
+You can use an encoder to scan a plastic key card to read its encoded parameters. The scan result includes the card's properties, such as its card number, serial number, and other useful details. The returned payload can also reveal whether the card is up to date with the server. If discrepancies are detected, Seam also provides warnings to indicate that the card is out of date and needs re-encoding.
 
 The scanning process consists of the following basic steps:
 
@@ -20,7 +22,7 @@ The scanning process consists of the following basic steps:
    Once the `status` of the action attempt is `success`, view the card payload within the action attempt. Note any `action_attempt.result.warnings`. Warning messages show which properties are out of sync.\
    See [View the Scanned Card Payload](scanning-encoded-cards.md#view-the-scanned-card-payload). Also, see a list of [common scanning errors](scanning-encoded-cards.md#common-scanning-errors).
 
-***
+---
 
 ## 1. Initiate the Scanning Process
 
@@ -32,29 +34,30 @@ To scan a card, first, identify the `acs_encoder_id` of the encoder that you wan
 **Code:**
 
 ```javascript
-// Retrieve a list of all available encoders in a building, 
+// Retrieve a list of all available encoders in a building,
 // that is, connected to a single acs_system.
 await seam.acs.encoders.list({
-  acs_system_ids: [buildingSystemId]
-});
+  acs_system_ids: [buildingSystemId],
+})
 
 // Scan the card using the desired encoder.
 const scanningActionAttempt = await seam.acs.encoders.scanCredential({
-  acs_encoder_id: encoder.acs_encoder_id
-});
+  acs_encoder_id: encoder.acs_encoder_id,
+})
 ```
 
 **Output:**
 
 ```json
 {
-  status: 'pending',
-  action_attempt_id: '11111111-2222-3333-4444-666666666666',
-  action_type: 'SCAN_CREDENTIAL',
-  result: null,
-  error: null
+  "status": "pending",
+  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+  "action_type": "SCAN_CREDENTIAL",
+  "result": null,
+  "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -62,7 +65,7 @@ const scanningActionAttempt = await seam.acs.encoders.scanCredential({
 **Code:**
 
 ```bash
-# Retrieve a list of all available encoders in a building, 
+# Retrieve a list of all available encoders in a building,
 # that is, connected to a single acs_system.
 curl -X 'POST' \
   'https://connect.getseam.com/acs/encoders/list' \
@@ -88,17 +91,17 @@ scanning_action_attempt=$(curl -X 'POST' \
 
 ```json
 {
-  "action_attempt":
-    {
-      "status": "pending",
-      "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-      "action_type": "SCAN_CREDENTIAL",
-      "result": null,
-      "error": null
-    },
+  "action_attempt": {
+    "status": "pending",
+    "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+    "action_type": "SCAN_CREDENTIAL",
+    "result": null,
+    "error": null
+  },
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -106,7 +109,7 @@ scanning_action_attempt=$(curl -X 'POST' \
 **Code:**
 
 ```python
-# Retrieve a list of all available encoders in a building, 
+# Retrieve a list of all available encoders in a building,
 # that is, connected to a single acs_system.
 seam.acs.encoders.list(
   acs_system_ids = [building_system_id]
@@ -129,6 +132,7 @@ ActionAttempt(
   error=null
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -136,7 +140,7 @@ ActionAttempt(
 **Code:**
 
 ```ruby
-# Retrieve a list of all available encoders in a building, 
+# Retrieve a list of all available encoders in a building,
 # that is, connected to a single acs_system.
 seam.acs.encoders.list(
   acs_system_ids: [building_system_id]
@@ -159,6 +163,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
   error=nil
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -166,7 +171,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
 **Code:**
 
 ```php
-// Retrieve a list of all available encoders in a building, 
+// Retrieve a list of all available encoders in a building,
 // that is, connected to a single acs_system.
 $seam->acs->encoders->list(
   acs_system_ids: [building_system_id]
@@ -189,6 +194,7 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
   "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -196,7 +202,7 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
 **Code:**
 
 ```csharp
-// Retrieve a list of all available encoders in a building, 
+// Retrieve a list of all available encoders in a building,
 // that is, connected to a single acs_system.
 seam.EncodersAcs.List(
   acsSystemIds: new List<string>
@@ -222,10 +228,11 @@ actionAttempt scanningActionAttempt = seam.EncodersAcs.ScanCredential(
   "error": null
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## 2. Confirm Successful Scan
 
@@ -238,8 +245,8 @@ When you make an `/acs/encoders/scan_credential` request, Seam returns an [actio
 
 ```javascript
 await seam.actionAttempts.get({
-  action_attempt_id: scanningActionAttempt.action_attempt_id
-});
+  action_attempt_id: scanningActionAttempt.action_attempt_id,
+})
 ```
 
 **Output:**
@@ -255,6 +262,7 @@ await seam.actionAttempts.get({
   error: null
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -289,6 +297,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -314,6 +323,7 @@ ActionAttempt(
   error=null
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -339,6 +349,7 @@ seam.action_attempts.get(
   error=nil
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -364,6 +375,7 @@ $seam->action_attempts->get(
   "error": null
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -389,18 +401,19 @@ seam.ActionAttempts.Get(
   "error": null
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## 3. View the Scanned Card Payload
 
 Once the action attempt's `status` is `success`, view the action attempt payload to view information about the scanned card. Pay special attention to the following parts of the returned payload:
 
-* `action_attempt.result.warnings` list any properties that Seam has detected are out-of-sync between the card and the encoder.
-* `action_attempt.result.acs_credential_on_seam` lists the properties of the credential as stored on the ACS server.
-* `action_attempt.result.acs_credential_on_encoder` lists the properties of the credential as stored on the card.
+- `action_attempt.result.warnings` list any properties that Seam has detected are out-of-sync between the card and the encoder.
+- `action_attempt.result.acs_credential_on_seam` lists the properties of the credential as stored on the ACS server.
+- `action_attempt.result.acs_credential_on_encoder` lists the properties of the credential as stored on the card.
 
 ```json
 {
@@ -424,7 +437,7 @@ Once the action attempt's `status` is `success`, view the action attempt payload
       "access_method": "card",
       "acs_system_id": "11111111-1111-1111-1111-111111111111",
       "acs_credential_id": "66666666-6666-6666-6666-666666666666",
-      ...      
+      ...
     },
     "acs_credential_on_encoder": {
       "starts_at": "2024-12-01T15:00:00.000Z",
@@ -437,8 +450,29 @@ Once the action attempt's `status` is `success`, view the action attempt payload
 }
 ```
 
-***
+---
 
 ### Common Scanning Errors
 
-<table><thead><tr><th width="309">Error</th><th>Description</th></tr></thead><tbody><tr><td><code>no_card_on_encoder</code></td><td>No card was placed on the encoder.</td></tr><tr><td><code>uncategorized_error</code></td><td>Any other encoding error.</td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th width='309'>Error</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>no_card_on_encoder</code>
+      </td>
+      <td>No card was placed on the encoder.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>uncategorized_error</code>
+      </td>
+      <td>Any other encoding error.</td>
+    </tr>
+  </tbody>
+</table>

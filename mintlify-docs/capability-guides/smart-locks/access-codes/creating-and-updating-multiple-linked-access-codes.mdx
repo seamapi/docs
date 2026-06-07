@@ -1,21 +1,20 @@
 ---
-title: "Creating and Updating Multiple Linked Access Codes"
-description: "Learn how to create and update groups of access codes with the same code for properties with multiple door locks."
+title: 'Creating and Updating Multiple Linked Access Codes'
+description: 'Learn how to create and update groups of access codes with the same code for properties with multiple door locks.'
 ---
-
 
 Users with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock. In this case, use [`/access_codes/create_multiple`](https://docs.seam.co/latest/api/access_codes/create_multiple). Specify the `device_id` of each device for which you want to create linked access codes. You can also include additional optional properties, such as the following:
 
-* A name to apply to all of the access codes.
-* The `preferred_code_length`.
-* Whether to throw an error or create a random code if any of the included devices cannot share a code.
-* Starting and ending timestamps if you want to create time-bound access codes.
+- A name to apply to all of the access codes.
+- The `preferred_code_length`.
+- Whether to throw an error or create a random code if any of the included devices cannot share a code.
+- Starting and ending timestamps if you want to create time-bound access codes.
 
 When you use `/access_codes/create_multiple`, Seam assigns a `common_code_key` to all of the created access codes and returns this key. The `common_code_key` identifies all the access codes within this linked group.
 
 Then, you can change the starting or ending time for the group of access codes—for example, if a short-term rental guest requests an early check-in or late checkout. To update a group of linked access codes, use [`/access_codes/update_multiple`](https://docs.seam.co/latest/api/access_codes/update_multiple), specifying the `common_code_key` of the linked access code group, along with the replacement starting and ending timestamps.
 
-***
+---
 
 ## Specifying Custom Codes
 
@@ -23,7 +22,7 @@ When you use `/access_codes/create_multiple`, you can specify a custom `code`. S
 
 If you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using [`/access_codes/update`](https://docs.seam.co/latest/api/access_codes/update).
 
-***
+---
 
 ## Create Linked Access Codes
 
@@ -39,14 +38,14 @@ The following example creates two linked access codes for two devices.
 // Each returned access code includes a common_code_key.
 await seam.accessCodes.createMultiple({
   device_ids: [
-    "8e94044d-a4d1-4691-9f7e-e97d3e8a0b73",
-    "d87eea5d-71c6-4633-a966-396c5ac51177"
+    '8e94044d-a4d1-4691-9f7e-e97d3e8a0b73',
+    'd87eea5d-71c6-4633-a966-396c5ac51177',
   ],
   name: "Jane's reservation",
-  starts_at: "2024-11-15T15:00:00Z",
-  ends_at: "2024-11-17T11:00:00Z",
-  preferred_code_length: 4
-});
+  starts_at: '2024-11-15T15:00:00Z',
+  ends_at: '2024-11-17T11:00:00Z',
+  preferred_code_length: 4,
+})
 ```
 
 **Response:**
@@ -75,6 +74,7 @@ await seam.accessCodes.createMultiple({
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -130,6 +130,7 @@ curl -X 'POST' \
   "ok":true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -177,6 +178,7 @@ seam.access_codes.create_multiple(
   )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -222,6 +224,7 @@ client.access_codes.create_multiple(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -269,6 +272,7 @@ $seam->access_codes->create_multiple(
   }
 ]
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -316,10 +320,11 @@ seam.AccessCodes.CreateMultiple(
   }
 ]
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Update Linked Access Codes
 
@@ -337,9 +342,9 @@ The following example changes both the starting and ending times for a group of 
 // the group of access codes to update.
 await seam.accessCodes.updateMultiple({
   common_code_key: commonCodeKey,
-  starts_at: "2024-11-15T12:00:00Z",
-  ends_at: "2024-11-17T15:00:00Z"
-});
+  starts_at: '2024-11-15T12:00:00Z',
+  ends_at: '2024-11-17T15:00:00Z',
+})
 ```
 
 **Response:**
@@ -347,6 +352,7 @@ await seam.accessCodes.updateMultiple({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -377,6 +383,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -400,6 +407,7 @@ seam.access_codes.update_multiple(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -423,6 +431,7 @@ client.access_codes.update_multiple(
 ```
 void
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -446,6 +455,7 @@ $seam->access_codes->update_multiple(
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -469,5 +479,6 @@ seam.AccessCodes.UpdateMultiple(
 ```json
 void
 ```
+
 </Tab>
 </Tabs>

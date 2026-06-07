@@ -1,12 +1,11 @@
 ---
-title: "Set to Cool Mode"
+title: 'Set to Cool Mode'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [cool mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +16,9 @@ Sets a specified thermostat to cool mode.
 
 ```javascript
 await seam.thermostats.cool({
-  device_id: "408641ab-d0f5-475c-b8a5-9b9096405f9a",
+  device_id: '408641ab-d0f5-475c-b8a5-9b9096405f9a',
   cooling_set_point_fahrenheit: 75,
-});
+})
 ```
 
 #### Output:
@@ -33,6 +32,7 @@ await seam.thermostats.cool({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -65,6 +65,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -90,6 +91,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -117,6 +119,7 @@ seam.thermostats.cool(
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -143,6 +146,7 @@ $seam->thermostats->cool(
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -166,10 +170,10 @@ seam thermostats cool --device_id "408641ab-d0f5-475c-b8a5-9b9096405f9a" --cooli
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -178,31 +182,32 @@ seam thermostats cool --device_id "408641ab-d0f5-475c-b8a5-9b9096405f9a" --cooli
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the thermostat device that you want to set to cool mode.
 
 ---
 
-**`cooling_set_point_celsius`** *Number*
+**`cooling_set_point_celsius`** _Number_
 
 [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`cooling_set_point_fahrenheit`** *Number*
+**`cooling_set_point_fahrenheit`** _Number_
 
 [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.
 
 ---
-
 
 ## Response
 
@@ -212,11 +217,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -227,5 +229,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

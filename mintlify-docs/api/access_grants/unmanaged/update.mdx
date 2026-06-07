@@ -1,5 +1,5 @@
 ---
-title: "Update an Unmanaged Access Grant"
+title: 'Update an Unmanaged Access Grant'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -11,7 +11,6 @@ This endpoint can only be used to convert unmanaged access grants to managed one
 
 When converting an unmanaged access grant to managed, all associated access methods will also be converted to managed.
 
-
 <details>
 
 <summary>Authentication Methods</summary>
@@ -19,31 +18,32 @@ When converting an unmanaged access grant to managed, all associated access meth
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** _String_ (Required)
 
 ID of the unmanaged Access Grant to update.
 
 ---
 
-**`is_managed`** *Boolean* (Required)
+**`is_managed`** _Boolean_ (Required)
 
 Must be set to true to convert the unmanaged access grant to managed.
 
 ---
 
-**`access_grant_key`** *String*
+**`access_grant_key`** _String_
 
 Unique key for the access grant. If not provided, the existing key will be preserved.
 
 ---
-
 
 ## Response
 
@@ -52,4 +52,3 @@ Returns:
 **void**
 
 </Check>
-

@@ -1,12 +1,11 @@
 ---
-title: "Set the Fan Mode Setting"
+title: 'Set the Fan Mode Setting'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +16,9 @@ Sets the fan mode setting for a specified thermostat.
 
 ```javascript
 await seam.thermostats.setFanMode({
-  device_id: "363e657e-3b07-4670-a290-7fb1f32b8e33",
-  fan_mode_setting: "auto",
-});
+  device_id: '363e657e-3b07-4670-a290-7fb1f32b8e33',
+  fan_mode_setting: 'auto',
+})
 ```
 
 #### Output:
@@ -33,6 +32,7 @@ await seam.thermostats.setFanMode({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -65,6 +65,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -90,6 +91,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -117,6 +119,7 @@ seam.thermostats.set_fan_mode(
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -143,6 +146,7 @@ $seam->thermostats->set_fan_mode(
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -166,10 +170,10 @@ seam thermostats set-fan-mode --device_id "363e657e-3b07-4670-a290-7fb1f32b8e33"
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -178,33 +182,32 @@ seam thermostats set-fan-mode --device_id "363e657e-3b07-4670-a290-7fb1f32b8e33"
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the thermostat device for which you want to set the fan mode.
 
 ---
 
-**`fan_mode`** *String*
+**`fan_mode`** _String_
 
-<Warning>
-**Deprecated**. Use `fan_mode_setting` instead.
-</Warning>
+<Warning>**Deprecated**. Use `fan_mode_setting` instead.</Warning>
 
 ---
 
-**`fan_mode_setting`** *String*
+**`fan_mode_setting`** _String_
 
 [Fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat.
 
 ---
-
 
 ## Response
 
@@ -214,11 +217,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -229,5 +229,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

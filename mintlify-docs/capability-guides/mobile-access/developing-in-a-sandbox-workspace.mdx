@@ -1,5 +1,5 @@
 ---
-title: "Developing in a Sandbox Workspace"
+title: 'Developing in a Sandbox Workspace'
 ---
 
 Seam's sandbox workspaces enable you to develop integrations without access to a real system. Use your sandbox workspace to test out issuing mobile keys and other related aspects of your integration.
@@ -16,14 +16,14 @@ When issuing mobile credentials, some systems require the user identity to have 
 ```javascript
 // Step 1: Create the user identity.
 const userIdentity = await seam.userIdentities.create({
-  user_identity_key: "jean_doe",
-  full_name: "Jean Doe",
-});
+  user_identity_key: 'jean_doe',
+  full_name: 'Jean Doe',
+})
 
 // Step 2: Create a simulated, sandbox phone.
 await seam.phones.simulate.createSandboxPhone({
   user_identity_id: userIdentity.user_identity_id,
-});
+})
 ```
 
 **Output:**
@@ -42,6 +42,7 @@ await seam.phones.simulate.createSandboxPhone({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -93,6 +94,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -129,6 +131,7 @@ Phone(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -164,6 +167,7 @@ seam.phones.simulate.create_sandbox_phone(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -199,6 +203,7 @@ $seam->phones->simulate->create_sandbox_phone(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -214,5 +219,6 @@ Coming soon!
 ```json
 Coming soon!
 ```
+
 </Tab>
 </Tabs>

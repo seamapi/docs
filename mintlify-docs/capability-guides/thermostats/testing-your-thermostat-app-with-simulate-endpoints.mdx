@@ -1,21 +1,22 @@
 ---
-title: "Testing Your Thermostat App with Simulate Endpoints"
-description: "Learn how to use the Seam suite of simulate endpoints to test your thermostat app."
+title: 'Testing Your Thermostat App with Simulate Endpoints'
+description: 'Learn how to use the Seam suite of simulate endpoints to test your thermostat app.'
 ---
-
 
 Seam's suite of `simulate` endpoints help you to test your thermostat app against events that can be difficult to orchestrate in your quality assurance (QA) environment using real devices. Seam provides the following thermostat-related `simulate` endpoints that you can use in a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
 
-* [`/thermostats/simulate/hvac_mode_adjusted`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-adjusting-the-hvac-mode)
-* [`/thermostats/simulate/temperature_reached`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-reaching-a-desired-temperature)
+- [`/thermostats/simulate/hvac_mode_adjusted`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-adjusting-the-hvac-mode)
+- [`/thermostats/simulate/temperature_reached`](testing-your-thermostat-app-with-simulate-endpoints.md#simulate-reaching-a-desired-temperature)
 
 Seam supports these endpoints for all thermostat [sandbox devices](https://docs.seam.co/latest/device-and-system-integration-guides).
 
 <Info>
-Seam provides additional `simulate` endpoints to help you [test your app against device disconnection and removal](../../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).
+  Seam provides additional `simulate` endpoints to help you [test your app
+  against device disconnection and
+  removal](../../core-concepts/devices/testing-your-app-against-device-disconnection-and-removal.md).
 </Info>
 
-***
+---
 
 ## Checking Capability Flags
 
@@ -23,14 +24,14 @@ Before using the `simulate` endpoints, check the relevant capabilities of the sa
 
 The following device properties show the relevant capabilities of a thermostat:
 
-* `device.can_hvac_heat`
-* `device.can_hvac_cool`
-* `device.can_hvac_heat_cool`
-* `device.can_turn_off_hvac`
+- `device.can_hvac_heat`
+- `device.can_hvac_cool`
+- `device.can_hvac_heat_cool`
+- `device.can_turn_off_hvac`
 
 For more information, see [Thermostat Capabilities](../../capability-guides/thermostats/#thermostat-capabilities).
 
-***
+---
 
 ## Simulate Adjusting the HVAC Mode
 
@@ -38,10 +39,10 @@ The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate 
 
 You can simulate having set the HVAC mode to any of the following settings:
 
-* `heat`
-* `cool`
-* `heat_cool`
-* `off`
+- `heat`
+- `cool`
+- `heat_cool`
+- `off`
 
 When you set the HVAC mode to `heat`, `cool`, or `heat_cool`, you must also set the following applicable [set points](understanding-thermostat-concepts/set-points.md) to the desired degrees Fahrenheit or Celsius:
 
@@ -62,8 +63,8 @@ To simulate having adjusted the HVAC mode for a thermostat:
 ```javascript
 // Get the device.
 const thermostat = await seam.devices.get({
-  device_id: "11111111-1111-1111-2222-444444444444"
-});
+  device_id: '11111111-1111-1111-2222-444444444444',
+})
 
 // Confirm that Seam supports the desired HVAC mode for the thermostat.
 // In this example, we're simulating having set the thermostat to heat mode.
@@ -71,10 +72,10 @@ if (thermostat.can_hvac_heat) {
   // Perform the simulated HVAC mode adjustment.
   await seam.thermostats.simulate.hvacModeAdjusted({
     device_id: thermostat.device_id,
-    hvac_mode: "heat",
-    heating_set_point_fahrenheit: 68
+    hvac_mode: 'heat',
+    heating_set_point_fahrenheit: 68,
   })
-};
+}
 ```
 
 **Output:**
@@ -82,6 +83,7 @@ if (thermostat.can_hvac_heat) {
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -125,6 +127,7 @@ fi
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -153,13 +156,12 @@ if thermostat.can_hvac_heat:
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
 
-<Info>
-Coming soon!
-</Info>
+<Info>Coming soon!</Info>
 
 **Code:**
 
@@ -184,6 +186,7 @@ end
 ```
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -211,13 +214,12 @@ if ($thermostat->can_hvac_heat) {
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
 
-<Info>
-Coming soon!
-</Info>
+<Info>Coming soon!</Info>
 
 **Code:**
 
@@ -242,10 +244,11 @@ if (thermostat.CanHvacHeat == true) {
 ```json
 void
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Simulate Reaching a Desired Temperature
 
@@ -253,8 +256,8 @@ The `/thermostats/simulate/temperature_reached` endpoint enables you to simulate
 
 Specify the desired temperature that you want to simulate the thermostat reaching using either of the following parameters:
 
-* `temperature_celsius`
-* `temperature_fahrenheit`
+- `temperature_celsius`
+- `temperature_fahrenheit`
 
 To simulate reaching a desired temperature:
 
@@ -266,14 +269,14 @@ To simulate reaching a desired temperature:
 ```javascript
 // Get the device.
 const thermostat = await seam.devices.get({
-  device_id: "11111111-1111-1111-2222-444444444444"
-});
+  device_id: '11111111-1111-1111-2222-444444444444',
+})
 
 // Simulate reaching the specified temperature.
 await seam.thermostats.simulate.temperatureReached({
   device_id: thermostat.device_id,
-  temperature_celsius: 25
-});
+  temperature_celsius: 25,
+})
 ```
 
 **Output:**
@@ -281,6 +284,7 @@ await seam.thermostats.simulate.temperatureReached({
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -319,6 +323,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -343,13 +348,12 @@ seam.thermostats.simulate.temperature_reached(
 ```
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
 
-<Info>
-Coming soon!
-</Info>
+<Info>Coming soon!</Info>
 
 **Code:**
 
@@ -369,6 +373,7 @@ client.thermostats.simulate.temperature_reached(
 ```
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -391,13 +396,12 @@ $seam->thermostats->simulate->temperature_reached(
 ```json
 void
 ```
+
 </Tab>
 
 <Tab title="C#">
 
-<Info>
-Coming soon!
-</Info>
+<Info>Coming soon!</Info>
 
 **Code:**
 
@@ -417,5 +421,6 @@ seam.Thermostats.Simulate.TemperatureReached(
 ```json
 void
 ```
+
 </Tab>
 </Tabs>

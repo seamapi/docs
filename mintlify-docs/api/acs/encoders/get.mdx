@@ -1,12 +1,11 @@
 ---
-title: "Get an Encoder"
+title: 'Get an Encoder'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Returns a specified encoder.
 
 ```javascript
 await seam.acs.encoders.get({
-  acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a",
-});
+  acs_encoder_id: '4bccf994-21a6-4a6d-bc6d-5b0311d1686a',
+})
 ```
 
 #### Output:
@@ -34,6 +33,7 @@ await seam.acs.encoders.get({
   "workspace_id": "f863ac85-2c4e-49ae-8679-3ec2417f1d62"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -67,6 +67,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -92,6 +93,7 @@ AcsEncoder(
     workspace_id="f863ac85-2c4e-49ae-8679-3ec2417f1d62",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -117,6 +119,7 @@ seam.acs.encoders.get(acs_encoder_id: "4bccf994-21a6-4a6d-bc6d-5b0311d1686a")
   "workspace_id" => "f863ac85-2c4e-49ae-8679-3ec2417f1d62",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -144,6 +147,7 @@ $seam->acs->encoders->get(
     "workspace_id" => "f863ac85-2c4e-49ae-8679-3ec2417f1d62",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -169,10 +173,10 @@ seam acs encoders get --acs_encoder_id "4bccf994-21a6-4a6d-bc6d-5b0311d1686a"
   "workspace_id": "f863ac85-2c4e-49ae-8679-3ec2417f1d62"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -180,19 +184,20 @@ seam acs encoders get --acs_encoder_id "4bccf994-21a6-4a6d-bc6d-5b0311d1686a"
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_encoder_id`** *String* (Required)
+**`acs_encoder_id`** _String_ (Required)
 
 ID of the encoder that you want to get.
 
 ---
-
 
 ## Response
 
@@ -202,11 +207,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -219,5 +221,6 @@ Returns:
   "workspace_id": "f863ac85-2c4e-49ae-8679-3ec2417f1d62"
 }
 ```
+
 </Tab>
 </Tabs>

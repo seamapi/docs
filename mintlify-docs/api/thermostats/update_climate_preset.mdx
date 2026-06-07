@@ -1,12 +1,11 @@
 ---
-title: "Update a Climate Preset"
+title: 'Update a Climate Preset'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Updates a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,15 +16,15 @@ Updates a specified climate preset for a specified thermostat.
 
 ```javascript
 await seam.thermostats.updateClimatePreset({
-  device_id: "a2495670-80a5-4c98-b8c0-8b0c9d49c3b8",
-  climate_preset_key: "Home",
-  name: "Home",
-  fan_mode_setting: "auto",
-  hvac_mode_setting: "heat_cool",
+  device_id: 'a2495670-80a5-4c98-b8c0-8b0c9d49c3b8',
+  climate_preset_key: 'Home',
+  name: 'Home',
+  fan_mode_setting: 'auto',
+  hvac_mode_setting: 'heat_cool',
   cooling_set_point_fahrenheit: 75,
   heating_set_point_fahrenheit: 65,
   manual_override_allowed: true,
-});
+})
 ```
 
 #### Output:
@@ -33,6 +32,7 @@ await seam.thermostats.updateClimatePreset({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -63,6 +63,7 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -89,6 +90,7 @@ seam.thermostats.update_climate_preset(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -115,6 +117,7 @@ seam.thermostats.update_climate_preset(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -141,6 +144,7 @@ $seam->thermostats->update_climate_preset(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -158,10 +162,10 @@ seam thermostats update-climate-preset --device_id "a2495670-80a5-4c98-b8c0-8b0c
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -170,50 +174,57 @@ seam thermostats update-climate-preset --device_id "a2495670-80a5-4c98-b8c0-8b0c
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`climate_preset_key`** *String* (Required)
+**`climate_preset_key`** _String_ (Required)
 
 Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 ---
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the thermostat device for which you want to update a climate preset.
 
 ---
 
-**`climate_preset_mode`** *String*
+**`climate_preset_mode`** _String_
 
 The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
 
 ---
 
-**`cooling_set_point_celsius`** *Number*
+**`cooling_set_point_celsius`** _Number_
 
 Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
-**`cooling_set_point_fahrenheit`** *Number*
+**`cooling_set_point_fahrenheit`** _Number_
 
 Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
-**`ecobee_metadata`** *Object*
+**`ecobee_metadata`** _Object_
 
 Metadata specific to the Ecobee climate, if applicable.
 
 <details>
 
-<summary><b><code>climate_ref</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>climate_ref</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Reference to the Ecobee climate, if applicable.
 
@@ -221,11 +232,14 @@ Reference to the Ecobee climate, if applicable.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>is_optimized</code></b> <i>Boolean</i></summary>
+<summary>
+  <b>
+    <code>is_optimized</code>
+  </b>{' '}
+  <i>Boolean</i>
+</summary>
 
 Indicates if the climate preset is optimized by Ecobee.
 
@@ -233,11 +247,14 @@ Indicates if the climate preset is optimized by Ecobee.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>owner</code></b> <i>Enum</i></summary>
+<summary>
+  <b>
+    <code>owner</code>
+  </b>{' '}
+  <i>Enum</i>
+</summary>
 
 Indicates whether the climate preset is owned by the user or the system.
 
@@ -250,47 +267,43 @@ Enum values:
 
 ---
 
-
-**`fan_mode_setting`** *String*
+**`fan_mode_setting`** _String_
 
 Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 
 ---
 
-**`heating_set_point_celsius`** *Number*
+**`heating_set_point_celsius`** _Number_
 
 Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
-**`heating_set_point_fahrenheit`** *Number*
+**`heating_set_point_fahrenheit`** _Number_
 
 Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 ---
 
-**`hvac_mode_setting`** *String*
+**`hvac_mode_setting`** _String_
 
 Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 
 ---
 
-**`manual_override_allowed`** *Boolean*
+**`manual_override_allowed`** _Boolean_
 
 Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
-<Warning>
-**Deprecated**. Use 'thermostat_schedule.is_override_allowed'
-</Warning>
+<Warning>**Deprecated**. Use 'thermostat_schedule.is_override_allowed'</Warning>
 
 ---
 
-**`name`** *String*
+**`name`** _String_
 
 User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 ---
-
 
 ## Response
 
@@ -299,4 +312,3 @@ Returns:
 **void**
 
 </Check>
-

@@ -1,8 +1,7 @@
 ---
-title: "Workspaces"
-description: "Workspaces are the top-level resource in the Seam ecosystem. They encapsulate all other resources, such as devices, events, and connected third-party accounts."
+title: 'Workspaces'
+description: 'Workspaces are the top-level resource in the Seam ecosystem. They encapsulate all other resources, such as devices, events, and connected third-party accounts.'
 ---
-
 
 ## What is a Workspace?
 
@@ -10,12 +9,18 @@ A workspace is conceptually like a project or environment. It encapsulate all ot
 
 There is no limit to the number of workspaces that you can create, but most Seam customers only have the following two workspaces:
 
-* One [sandbox workspace](./#sandbox-workspaces) in which they connect virtual devices to test their apps
-* One [production workspace](./#production-workspaces) in which they connect real devices
+- One [sandbox workspace](./#sandbox-workspaces) in which they connect virtual devices to test their apps
+- One [production workspace](./#production-workspaces) in which they connect real devices
 
-<figure><img src="/images/workspace-illustration.png" alt="Workspaces encapsulate resources, such as devices and connected accounts. An API key for the workspace is required to interact with these resources. You can configure webhook endpoints to receive notifications from devices inside a workspace." /><figcaption></figcaption></figure>
+<figure>
+  <img
+    src='/images/workspace-illustration.png'
+    alt='Workspaces encapsulate resources, such as devices and connected accounts. An API key for the workspace is required to interact with these resources. You can configure webhook endpoints to receive notifications from devices inside a workspace.'
+  />
+  <figcaption></figcaption>
+</figure>
 
-***
+---
 
 ## Production Workspaces
 
@@ -26,19 +31,21 @@ Production workspaces enable you to connect and control real devices from brands
 1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
 
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](/images/workspace-switcher.png)
-2. Click **New Workspace**.
-3. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
+
+2.  Click **New Workspace**.
+3.  In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
 4.  Disable **Sandbox mode**.
 
     ![To create a production workspace, disable sandbox mode.](/images/add-production-workspace.png)
-5. Click **Create Workspace**.
+
+5.  Click **Create Workspace**.
 
 ### Connecting Devices
 
 You can use either of the following two ways to connect devices to a production workspace:
 
-* Use [Seam Console](./#connect-devices-using-seam-console).
-* Use [Connect Webviews](./#connect-devices-using-connect-webviews).
+- Use [Seam Console](./#connect-devices-using-seam-console).
+- Use [Connect Webviews](./#connect-devices-using-connect-webviews).
 
 #### Connect Devices Using Seam Console
 
@@ -55,13 +62,25 @@ Once authorized, the devices associated with this test account appear in the **D
 
 If you are creating an application (app) to control your users' devices, use [Connect Webviews](../connect-webviews/). Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their device accounts to Seam through your app. Seam handles all the authentication steps. Once your user has completed the authorization through your app, your users' devices are linked with your production workspace, and you can access and control their devices using the Seam API.
 
-<figure><img src="/images/Seam Connect.png" alt="Use Connect Webviews to enable your users to authorize your app to control their devices." /><figcaption></figcaption></figure>
+<figure>
+  <img
+    src='/images/Seam Connect.png'
+    alt='Use Connect Webviews to enable your users to authorize your app to control their devices.'
+  />
+  <figcaption></figcaption>
+</figure>
 
 ### Single Workspace Setup (More Common)
 
 Most Seam customers use a single production workspace to connect all their devices, regardless of whether these devices are ones that they own or they are controlling thousands of end customers' devices. For example, a property management app with thousands of customers could still use a single production workspace to connect all customers' devices.
 
-<figure><img src="/images/common-workspace-setup (2).png" alt="Most Seam customers use a single production workspace to connect all their devices." /><figcaption></figcaption></figure>
+<figure>
+  <img
+    src='/images/common-workspace-setup (2).png'
+    alt='Most Seam customers use a single production workspace to connect all their devices.'
+  />
+  <figcaption></figcaption>
+</figure>
 
 ### Per-Customer Workspace Setup (Less Common)
 
@@ -71,13 +90,23 @@ For example, an information technology (IT) firm that builds custom apps for its
 
 Occasionally, an app may also be using multiple Seam workspaces. For example, a restaurant chain providing a management dashboard for its franchisees may want to use a different Seam workspace for each franchisee to simplify billing and support. See App 3 in the following diagram:
 
-<figure><img src="/images/less-common-workspace-setup.png" alt="Some development scenarios may warrant using multiple production workspaces." /><figcaption></figcaption></figure>
+<figure>
+  <img
+    src='/images/less-common-workspace-setup.png'
+    alt='Some development scenarios may warrant using multiple production workspaces.'
+  />
+  <figcaption></figcaption>
+</figure>
 
 <Info>
-Note that when you use multiple workspaces, you either need to create an [API key](../authentication/api-keys.md) for each workspace or create a single [Personal Access Token](../authentication/personal-access-tokens.md) (PAT) for use with all workspaces and then specify the ID of the workspace that you want to access.
+  Note that when you use multiple workspaces, you either need to create an [API
+  key](../authentication/api-keys.md) for each workspace or create a single
+  [Personal Access Token](../authentication/personal-access-tokens.md) (PAT) for
+  use with all workspaces and then specify the ID of the workspace that you want
+  to access.
 </Info>
 
-***
+---
 
 ## Sandbox Workspaces
 
@@ -86,7 +115,8 @@ Sandbox workspaces are a special type of workspace designed for testing code. Sa
 Importantly, virtual devices behave identically to the corresponding real devices. That is, if your app works with a virtual device in a sandbox workspace, it will also work with a real device in a production workspace.
 
 <Info>
-You can only connect virtual devices in a sandbox workspace. To connect a real device, switch to a production workspace.
+  You can only connect virtual devices in a sandbox workspace. To connect a real
+  device, switch to a production workspace.
 </Info>
 
 ### Create a Sandbox Workspace
@@ -94,10 +124,11 @@ You can only connect virtual devices in a sandbox workspace. To connect a real d
 1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
 
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](/images/workspace-switcher.png)
-2. Click **New Workspace**.
-3. In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
-4. Enable **Sandbox mode**.
-5. Click **Create Workspace**.
+
+2.  Click **New Workspace**.
+3.  In the **Add a Workspace** dialog, type a name for your new workspace and your company name.
+4.  Enable **Sandbox mode**.
+5.  Click **Create Workspace**.
 
 ### Connecting Virtual Devices
 
@@ -113,9 +144,9 @@ You can trigger test events for some virtual devices. This capability is useful 
    The **Actions** tab lists the actions that you can perform on this virtual device.
 4. Click the desired action, as applicable for that action.\
    For example:
-   * For a virtual door lock, click **Locked** to lock or unlock the lock.
-   * For a virtual thermostat, click **Edit** and then modify the climate or fan setting.
-   * For a virtual noise sensor, click **Trigger** to trigger a noise threshold alert.
+   - For a virtual door lock, click **Locked** to lock or unlock the lock.
+   - For a virtual thermostat, click **Edit** and then modify the climate or fan setting.
+   - For a virtual noise sensor, click **Trigger** to trigger a noise threshold alert.
 5. Click the **Events** tab for the device.\
    The **Events** tab displays events for the device.
 
@@ -134,11 +165,12 @@ You can reset a sandbox workspace either manually through [Seam Console](./#rese
 1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
 
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](/images/workspace-switcher.png)
-2. Select the name of the sandbox workspace that you want to reset.\
-   Seam Console switches to the selected sandbox workspace.
-3. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Settings**.
-4. At the upper-right corner of the **Workspace Settings** page, click ![Seam Console three-dot menu button](/images/three-dot-menu-button.png) and then select **Reset Sandbox**.
-5. Click **Reset Workspace** to confirm the reset.
+
+2.  Select the name of the sandbox workspace that you want to reset.\
+    Seam Console switches to the selected sandbox workspace.
+3.  In the top navigation pane of [Seam Console](https://console.seam.co/), click **Settings**.
+4.  At the upper-right corner of the **Workspace Settings** page, click ![Seam Console three-dot menu button](/images/three-dot-menu-button.png) and then select **Reset Sandbox**.
+5.  Click **Reset Workspace** to confirm the reset.
 
 #### Reset a Sandbox Workspace Using the Seam API
 
@@ -150,18 +182,14 @@ await seam.workspaces.resetSandbox()
 ```
 </Tab>
 
-<Tab title="Python">
-```python
-# Reset the sandbox workspace associated with your API key.
-seam.workspaces.reset_sandbox()
-```
+<Tab title='Python'>
+  ```python # Reset the sandbox workspace associated with your API key.
+  seam.workspaces.reset_sandbox() ```
 </Tab>
 
-<Tab title="Ruby">
-```ruby
-# Reset the sandbox workspace associated with your API key.
-seam.workspaces.reset_sandbox
-```
+<Tab title='Ruby'>
+  ```ruby # Reset the sandbox workspace associated with your API key.
+  seam.workspaces.reset_sandbox ```
 </Tab>
 
 <Tab title="PHP">
@@ -172,7 +200,7 @@ $seam->workspaces->reset_sandbox();
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Sharing Workspaces
 
@@ -181,11 +209,12 @@ You can add teammates to your workspace.
 1.  In the upper-left corner of [Seam Console](https://console.seam.co/), click the workspace switcher to display the workspace list.
 
     ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](/images/workspace-switcher.png)
-2. Select the name of the workspace that you want to share.\
-   Seam Console switches to the selected workspace.
-3. In the left navigation pane, click **Team**.
-4. In the upper-right corner of the **Team** page, click **Add member**.
-5. In the **Add Organization Member** dialog, type the email address of the teammate that you want to add to this workspace.
-6. Click **Add to Team**.
+
+2.  Select the name of the workspace that you want to share.\
+    Seam Console switches to the selected workspace.
+3.  In the left navigation pane, click **Team**.
+4.  In the upper-right corner of the **Team** page, click **Add member**.
+5.  In the **Add Organization Member** dialog, type the email address of the teammate that you want to add to this workspace.
+6.  Click **Add to Team**.
 
 Seam Console sends an email invitation to the specified teammate.

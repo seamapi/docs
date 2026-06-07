@@ -1,25 +1,26 @@
 ---
-title: "Creating Ultraloq Access Codes"
-description: "Create and manage access codes for Ultraloq locks"
+title: 'Creating Ultraloq Access Codes'
+description: 'Create and manage access codes for Ultraloq locks'
 ---
-
 
 This guide explains how to create and manage access codes for Ultraloq locks using the Seam API.
 
-***
+---
 
 ## Overview
 
 Ultraloq locks support two types of access codes:
 
-* **Permanent access codes** — Codes without start or end times that work indefinitely
-* **Time-bound access codes** — Codes that automatically activate and deactivate at specific times
+- **Permanent access codes** — Codes without start or end times that work indefinitely
+- **Time-bound access codes** — Codes that automatically activate and deactivate at specific times
 
 <Warning>
-**Important:** Time-bound access codes require [timezone configuration](configuring-ultraloq-device-timezones.md). Permanent access codes work without timezone configuration.
+  **Important:** Time-bound access codes require [timezone
+  configuration](configuring-ultraloq-device-timezones.md). Permanent access
+  codes work without timezone configuration.
 </Warning>
 
-***
+---
 
 ## Before You Begin
 
@@ -29,7 +30,7 @@ To create access codes for an Ultraloq device:
 2. For **time-bound access codes only**: Device timezone must be [configured](configuring-ultraloq-device-timezones.md)
 3. Device must have `can_program_online_access_codes: true`
 
-***
+---
 
 ## Creating Permanent Access Codes
 
@@ -39,20 +40,21 @@ Permanent access codes work indefinitely until you delete them. They **do not re
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 // Create permanent access code
 const accessCode = await seam.accessCodes.create({
-  device_id: "your-device-id",
-  name: "Maintenance Team",
-  code: "1234"  // Optional: auto-generated if omitted
-});
+  device_id: 'your-device-id',
+  name: 'Maintenance Team',
+  code: '1234', // Optional: auto-generated if omitted
+})
 
-console.log(`Access code created: ${accessCode.code}`);
-console.log(`Status: ${accessCode.status}`);
+console.log(`Access code created: ${accessCode.code}`)
+console.log(`Status: ${accessCode.status}`)
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -69,6 +71,7 @@ curl -X 'POST' \
     "code": "1234"
   }'
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -88,6 +91,7 @@ access_code = seam.access_codes.create(
 print(f"Access code created: {access_code.code}")
 print(f"Status: {access_code.status}")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -107,6 +111,7 @@ access_code = seam.access_codes.create(
 puts "Access code created: #{access_code.code}"
 puts "Status: #{access_code.status}"
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -129,6 +134,7 @@ $accessCode = $seam->access_codes->create(
 echo "Access code created: " . $accessCode->code . "\n";
 echo "Status: " . $accessCode->status . "\n";
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -148,6 +154,7 @@ var accessCode = seam.AccessCodes.Create(
 Console.WriteLine($"Access code created: {accessCode.Code}");
 Console.WriteLine($"Status: {accessCode.Status}");
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -170,46 +177,48 @@ AccessCode accessCode = seam.accessCodes().create(
 System.out.println("Access code created: " + accessCode.getCode());
 System.out.println("Status: " + accessCode.getStatus());
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Creating Time-Bound Access Codes
 
 Time-bound access codes automatically activate and deactivate at specified times. They **require timezone configuration**.
 
 <Warning>
-**Prerequisites:**
-1. Device timezone must be configured (see [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md))
-2. Device must not have the `ultraloq_time_zone_unknown` warning
+  **Prerequisites:** 1. Device timezone must be configured (see [Configuring
+  Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)) 2.
+  Device must not have the `ultraloq_time_zone_unknown` warning
 </Warning>
 
 <Tabs>
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 // Define time range in UTC
-const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000);  // Tomorrow
-const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000);  // +2 days
+const startsAt = new Date(Date.now() + 24 * 60 * 60 * 1000) // Tomorrow
+const endsAt = new Date(startsAt.getTime() + 2 * 24 * 60 * 60 * 1000) // +2 days
 
 // Create time-bound access code
 const accessCode = await seam.accessCodes.create({
-  device_id: "your-device-id",
-  name: "Weekend Guest",
-  code: "5678",  // Optional: auto-generated if omitted
+  device_id: 'your-device-id',
+  name: 'Weekend Guest',
+  code: '5678', // Optional: auto-generated if omitted
   starts_at: startsAt.toISOString(),
-  ends_at: endsAt.toISOString()
-});
+  ends_at: endsAt.toISOString(),
+})
 
-console.log(`Access code created: ${accessCode.code}`);
-console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`);
-console.log(`Status: ${accessCode.status}`);
+console.log(`Access code created: ${accessCode.code}`)
+console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`)
+console.log(`Status: ${accessCode.status}`)
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -232,6 +241,7 @@ curl -X 'POST' \
     \"ends_at\": \"${ENDS_AT}\"
   }"
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -259,6 +269,7 @@ print(f"Access code created: {access_code.code}")
 print(f"Active from {access_code.starts_at} to {access_code.ends_at}")
 print(f"Status: {access_code.status}")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -286,6 +297,7 @@ puts "Access code created: #{access_code.code}"
 puts "Active from #{access_code.starts_at} to #{access_code.ends_at}"
 puts "Status: #{access_code.status}"
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -315,6 +327,7 @@ echo "Access code created: " . $accessCode->code . "\n";
 echo "Active from " . $accessCode->starts_at . " to " . $accessCode->ends_at . "\n";
 echo "Status: " . $accessCode->status . "\n";
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -342,6 +355,7 @@ Console.WriteLine($"Access code created: {accessCode.Code}");
 Console.WriteLine($"Active from {accessCode.StartsAt} to {accessCode.EndsAt}");
 Console.WriteLine($"Status: {accessCode.Status}");
 ```
+
 </Tab>
 
 <Tab title="Java">
@@ -373,6 +387,7 @@ System.out.println("Access code created: " + accessCode.getCode());
 System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCode.getEndsAt());
 System.out.println("Status: " + accessCode.getStatus());
 ```
+
 </Tab>
 </Tabs>
 
@@ -401,7 +416,7 @@ Seam converts to local time:
 Ultraloq device activates code from 2:00 PM to 9:00 PM EST.
 ```
 
-***
+---
 
 ## Access Code Requirements
 
@@ -409,11 +424,12 @@ Ultraloq device activates code from 2:00 PM to 9:00 PM EST.
 
 Ultraloq access codes must be:
 
-* **Numeric only** — Only digits 0-9
-* **4-8 characters long** — Examples: `"1234"`, `"567890"`, `"12345678"`
+- **Numeric only** — Only digits 0-9
+- **4-8 characters long** — Examples: `"1234"`, `"567890"`, `"12345678"`
 
 <Info>
-**Auto-generated codes:** If you omit the `code` parameter, Seam automatically generates a random 4-8 digit numeric code.
+  **Auto-generated codes:** If you omit the `code` parameter, Seam automatically
+  generates a random 4-8 digit numeric code.
 </Info>
 
 ### Valid Examples
@@ -437,7 +453,7 @@ Ultraloq access codes must be:
 "12-34"     # Special characters not allowed
 ```
 
-***
+---
 
 ## Checking Device Readiness
 
@@ -447,34 +463,35 @@ Before creating time-bound access codes, verify that the device's timezone is co
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 async function canCreateTimeBoundCodes(deviceId) {
-  const device = await seam.devices.get({ device_id: deviceId });
+  const device = await seam.devices.get({ device_id: deviceId })
 
   // Check for timezone warning
   const hasTimezoneWarning = device.warnings.some(
-    w => w.warning_code === "ultraloq_time_zone_unknown"
-  );
+    (w) => w.warning_code === 'ultraloq_time_zone_unknown',
+  )
 
-  return !hasTimezoneWarning;
+  return !hasTimezoneWarning
 }
 
 // Check before creating
-if (await canCreateTimeBoundCodes("your-device-id")) {
+if (await canCreateTimeBoundCodes('your-device-id')) {
   // Safe to create time-bound codes
   const accessCode = await seam.accessCodes.create({
-    device_id: "your-device-id",
-    starts_at: "...",
-    ends_at: "..."
-  });
+    device_id: 'your-device-id',
+    starts_at: '...',
+    ends_at: '...',
+  })
 } else {
-  console.log("Configure device timezone first");
-  console.log("See: Configuring Ultraloq Device Timezones");
+  console.log('Configure device timezone first')
+  console.log('See: Configuring Ultraloq Device Timezones')
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -507,6 +524,7 @@ else:
   print("Configure device timezone first")
   print("See: Configuring Ultraloq Device Timezones")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -540,6 +558,7 @@ else
   puts "See: Configuring Ultraloq Device Timezones"
 end
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -578,10 +597,11 @@ if (canCreateTimeBoundCodes($seam, "your-device-id")) {
   echo "See: Configuring Ultraloq Device Timezones\n";
 }
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Disabled Access Codes
 
@@ -593,24 +613,25 @@ Users can disable access codes through the Ultraloq mobile app. When this happen
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam();
+const seam = new Seam()
 
 const accessCode = await seam.accessCodes.get({
-  access_code_id: "your-access-code-id"
-});
+  access_code_id: 'your-access-code-id',
+})
 
 // Check for disabled warning
 const isDisabled = accessCode.warnings.some(
-  w => w.warning_code === "ultraloq_access_code_disabled"
-);
+  (w) => w.warning_code === 'ultraloq_access_code_disabled',
+)
 
 if (isDisabled) {
-  console.log("⚠️ Code is disabled on Ultraloq device");
-  console.log("User must re-enable it in the Ultraloq mobile app");
+  console.log('⚠️ Code is disabled on Ultraloq device')
+  console.log('User must re-enable it in the Ultraloq mobile app')
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -634,6 +655,7 @@ if is_disabled:
   print("⚠️ Code is disabled on Ultraloq device")
   print("User must re-enable it in the Ultraloq mobile app")
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -657,6 +679,7 @@ if is_disabled
   puts "User must re-enable it in the Ultraloq mobile app"
 end
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -687,14 +710,17 @@ if ($isDisabled) {
   echo "User must re-enable it in the Ultraloq mobile app\n";
 }
 ```
+
 </Tab>
 </Tabs>
 
 <Info>
-**Resolution:** The user must re-enable the code in the Ultraloq mobile app. Seam cannot programmatically re-enable disabled codes. Once re-enabled in the app, Seam will automatically detect the change and clear the warning.
+  **Resolution:** The user must re-enable the code in the Ultraloq mobile app.
+  Seam cannot programmatically re-enable disabled codes. Once re-enabled in the
+  app, Seam will automatically detect the change and clear the warning.
 </Info>
 
-***
+---
 
 ## Validation and Error Handling
 
@@ -758,7 +784,7 @@ If `ends_at` is before `starts_at`:
 
 **Solution:** Ensure `starts_at` comes before `ends_at`.
 
-***
+---
 
 ## Best Practices
 
@@ -826,7 +852,7 @@ starts_at = "2024-01-20T15:00:00Z"
 starts_at = "2024-01-20T10:00:00"  # Ambiguous!
 ```
 
-***
+---
 
 ## Troubleshooting
 
@@ -857,24 +883,24 @@ If you receive validation errors when creating codes:
 3. **Missing time bounds:** Provide both `starts_at` and `ends_at`, or neither
 4. **Invalid ordering:** Ensure `starts_at` is before `ends_at`
 
-***
+---
 
 ## API Reference
 
 For complete API documentation, see:
 
-* [POST /access_codes/create](https://docs.seam.co/latest/api/access_codes/create)
-* [GET /access_codes/get](https://docs.seam.co/latest/api/access_codes/get)
-* [GET /access_codes/list](https://docs.seam.co/latest/api/access_codes/list)
-* [POST /access_codes/delete](https://docs.seam.co/latest/api/access_codes/delete)
+- [POST /access_codes/create](https://docs.seam.co/latest/api/access_codes/create)
+- [GET /access_codes/get](https://docs.seam.co/latest/api/access_codes/get)
+- [GET /access_codes/list](https://docs.seam.co/latest/api/access_codes/list)
+- [POST /access_codes/delete](https://docs.seam.co/latest/api/access_codes/delete)
 
-***
+---
 
 ## Next Steps
 
-* **Learn about timezone configuration:** See [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)
-* **Understand code constraints:** See [Understanding Code Constraints](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints)
-* **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide.md)
-* **Explore access code webhooks:** See [Webhooks](https://docs.seam.co/latest/developer-tools/webhooks)
+- **Learn about timezone configuration:** See [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones.md)
+- **Understand code constraints:** See [Understanding Code Constraints](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints)
+- **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide.md)
+- **Explore access code webhooks:** See [Webhooks](https://docs.seam.co/latest/developer-tools/webhooks)
 
-***
+---

@@ -1,5 +1,5 @@
 ---
-title: "Push Customer Data"
+title: 'Push Customer Data'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,33 +7,39 @@ title: "Push Customer Data"
 
 Pushes customer data including resources like spaces, properties, rooms, users, etc.
 
-
 <details>
 
 <summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`customer_key`** *String* (Required)
+**`customer_key`** _String_ (Required)
 
 Your unique identifier for the customer.
 
 ---
 
-**`access_grants`** *Array* *of Objects*
+**`access_grants`** _Array_ _of Objects_
 
 List of access grants.
 
 <details>
 
-<summary><b><code>access_grant_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>access_grant_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the access grant.
 
@@ -41,11 +47,14 @@ Your unique identifier for the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>building_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>building_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Building keys associated with the access grant.
 
@@ -53,11 +62,14 @@ Building keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>common_area_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>common_area_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Common area keys associated with the access grant.
 
@@ -65,11 +77,14 @@ Common area keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>ends_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Ending date and time for the access grant.
 
@@ -77,11 +92,14 @@ Ending date and time for the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>facility_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>facility_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Facility keys associated with the access grant.
 
@@ -89,11 +107,14 @@ Facility keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>guest_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>guest_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Guest key associated with the access grant.
 
@@ -101,11 +122,14 @@ Guest key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>listing_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>listing_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Listing keys associated with the access grant.
 
@@ -113,11 +137,14 @@ Listing keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your name for this access grant resource.
 
@@ -125,11 +152,14 @@ Your name for this access grant resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>preferred_code</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>preferred_code</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Preferred PIN code to use when creating access for this reservation.
 
@@ -137,11 +167,14 @@ Preferred PIN code to use when creating access for this reservation.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>property_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>property_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Property keys associated with the access grant.
 
@@ -149,11 +182,14 @@ Property keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>resident_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>resident_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Resident key associated with the access grant.
 
@@ -161,11 +197,14 @@ Resident key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>room_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>room_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Room keys associated with the access grant.
 
@@ -173,11 +212,14 @@ Room keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>space_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>space_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Space keys associated with the access grant.
 
@@ -185,11 +227,14 @@ Space keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>starts_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Starting date and time for the access grant.
 
@@ -197,11 +242,14 @@ Starting date and time for the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>tenant_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>tenant_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Tenant key associated with the access grant.
 
@@ -209,11 +257,14 @@ Tenant key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>unit_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>unit_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Unit keys associated with the access grant.
 
@@ -221,11 +272,14 @@ Unit keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_identity_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_identity_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 User identity key associated with the access grant.
 
@@ -233,11 +287,14 @@ User identity key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 User key associated with the access grant.
 
@@ -245,14 +302,18 @@ User key associated with the access grant.
 
 ---
 
-
-**`bookings`** *Array* *of Objects*
+**`bookings`** _Array_ _of Objects_
 
 List of bookings.
 
 <details>
 
-<summary><b><code>booking_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>booking_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the booking.
 
@@ -260,11 +321,14 @@ Your unique identifier for the booking.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>building_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>building_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Building keys associated with the access grant.
 
@@ -272,11 +336,14 @@ Building keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>common_area_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>common_area_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Common area keys associated with the access grant.
 
@@ -284,11 +351,14 @@ Common area keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>ends_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Ending date and time for the access grant.
 
@@ -296,11 +366,14 @@ Ending date and time for the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>facility_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>facility_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Facility keys associated with the access grant.
 
@@ -308,11 +381,14 @@ Facility keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>guest_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>guest_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Guest key associated with the access grant.
 
@@ -320,11 +396,14 @@ Guest key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>listing_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>listing_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Listing keys associated with the access grant.
 
@@ -332,11 +411,14 @@ Listing keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your name for this access grant resource.
 
@@ -344,11 +426,14 @@ Your name for this access grant resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>preferred_code</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>preferred_code</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Preferred PIN code to use when creating access for this reservation.
 
@@ -356,11 +441,14 @@ Preferred PIN code to use when creating access for this reservation.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>property_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>property_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Property keys associated with the access grant.
 
@@ -368,11 +456,14 @@ Property keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>resident_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>resident_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Resident key associated with the access grant.
 
@@ -380,11 +471,14 @@ Resident key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>room_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>room_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Room keys associated with the access grant.
 
@@ -392,11 +486,14 @@ Room keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>space_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>space_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Space keys associated with the access grant.
 
@@ -404,11 +501,14 @@ Space keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>starts_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Starting date and time for the access grant.
 
@@ -416,11 +516,14 @@ Starting date and time for the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>tenant_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>tenant_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Tenant key associated with the access grant.
 
@@ -428,11 +531,14 @@ Tenant key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>unit_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>unit_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Unit keys associated with the access grant.
 
@@ -440,11 +546,14 @@ Unit keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_identity_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_identity_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 User identity key associated with the access grant.
 
@@ -452,11 +561,14 @@ User identity key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 User key associated with the access grant.
 
@@ -464,14 +576,18 @@ User key associated with the access grant.
 
 ---
 
-
-**`buildings`** *Array* *of Objects*
+**`buildings`** _Array_ _of Objects_
 
 List of buildings.
 
 <details>
 
-<summary><b><code>building_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>building_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the building.
 
@@ -479,11 +595,14 @@ Your unique identifier for the building.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -491,14 +610,18 @@ Your display name for this location resource.
 
 ---
 
-
-**`common_areas`** *Array* *of Objects*
+**`common_areas`** _Array_ _of Objects_
 
 List of shared common areas.
 
 <details>
 
-<summary><b><code>common_area_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>common_area_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the common area.
 
@@ -506,11 +629,14 @@ Your unique identifier for the common area.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -518,11 +644,14 @@ Your display name for this location resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>parent_site_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the site.
 
@@ -530,14 +659,18 @@ Your unique identifier for the site.
 
 ---
 
-
-**`facilities`** *Array* *of Objects*
+**`facilities`** _Array_ _of Objects_
 
 List of gym or fitness facilities.
 
 <details>
 
-<summary><b><code>facility_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>facility_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the facility.
 
@@ -545,11 +678,14 @@ Your unique identifier for the facility.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -557,14 +693,18 @@ Your display name for this location resource.
 
 ---
 
-
-**`guests`** *Array* *of Objects*
+**`guests`** _Array_ _of Objects_
 
 List of guests.
 
 <details>
 
-<summary><b><code>email_address</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>email_address</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Email address associated with the user identity.
 
@@ -572,11 +712,14 @@ Email address associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>guest_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>guest_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the guest.
 
@@ -584,11 +727,14 @@ Your unique identifier for the guest.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this user identity resource.
 
@@ -596,11 +742,14 @@ Your display name for this user identity resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>phone_number</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>phone_number</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Phone number associated with the user identity.
 
@@ -608,14 +757,18 @@ Phone number associated with the user identity.
 
 ---
 
-
-**`listings`** *Array* *of Objects*
+**`listings`** _Array_ _of Objects_
 
 List of property listings.
 
 <details>
 
-<summary><b><code>listing_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>listing_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the listing.
 
@@ -623,11 +776,14 @@ Your unique identifier for the listing.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -635,14 +791,18 @@ Your display name for this location resource.
 
 ---
 
-
-**`properties`** *Array* *of Objects*
+**`properties`** _Array_ _of Objects_
 
 List of short-term rental properties.
 
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -650,11 +810,14 @@ Your display name for this location resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>property_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>property_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the property.
 
@@ -662,14 +825,18 @@ Your unique identifier for the property.
 
 ---
 
-
-**`property_listings`** *Array* *of Objects*
+**`property_listings`** _Array_ _of Objects_
 
 List of property listings.
 
 <details>
 
-<summary><b><code>custom_metadata</code></b> <i>Record</i></summary>
+<summary>
+  <b>
+    <code>custom_metadata</code>
+  </b>{' '}
+  <i>Record</i>
+</summary>
 
 Set key:value pairs. Accepts string or Boolean values. Adding custom metadata to a property listing enables you to store custom information, like customer details or internal IDs from your application.
 
@@ -677,11 +844,14 @@ Set key:value pairs. Accepts string or Boolean values. Adding custom metadata to
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -689,11 +859,14 @@ Your display name for this location resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>property_listing_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>property_listing_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the property listing.
 
@@ -701,14 +874,18 @@ Your unique identifier for the property listing.
 
 ---
 
-
-**`reservations`** *Array* *of Objects*
+**`reservations`** _Array_ _of Objects_
 
 List of reservations.
 
 <details>
 
-<summary><b><code>building_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>building_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Building keys associated with the access grant.
 
@@ -716,11 +893,14 @@ Building keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>common_area_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>common_area_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Common area keys associated with the access grant.
 
@@ -728,11 +908,14 @@ Common area keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>custom_metadata</code></b> <i>Record</i></summary>
+<summary>
+  <b>
+    <code>custom_metadata</code>
+  </b>{' '}
+  <i>Record</i>
+</summary>
 
 Set key:value pairs for filtering reservations by custom criteria.
 
@@ -740,11 +923,14 @@ Set key:value pairs for filtering reservations by custom criteria.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>ends_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>ends_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Ending date and time for the access grant.
 
@@ -752,11 +938,14 @@ Ending date and time for the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>facility_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>facility_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Facility keys associated with the access grant.
 
@@ -764,11 +953,14 @@ Facility keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>guest_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>guest_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Guest key associated with the access grant.
 
@@ -776,11 +968,14 @@ Guest key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>listing_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>listing_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Listing keys associated with the access grant.
 
@@ -788,11 +983,14 @@ Listing keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your name for this access grant resource.
 
@@ -800,11 +998,14 @@ Your name for this access grant resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>preferred_code</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>preferred_code</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Preferred PIN code to use when creating access for this reservation.
 
@@ -812,11 +1013,14 @@ Preferred PIN code to use when creating access for this reservation.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>property_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>property_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Property keys associated with the access grant.
 
@@ -824,11 +1028,14 @@ Property keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>reservation_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>reservation_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the reservation.
 
@@ -836,11 +1043,14 @@ Your unique identifier for the reservation.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>resident_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>resident_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Resident key associated with the access grant.
 
@@ -848,11 +1058,14 @@ Resident key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>room_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>room_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Room keys associated with the access grant.
 
@@ -860,11 +1073,14 @@ Room keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>space_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>space_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Space keys associated with the access grant.
 
@@ -872,11 +1088,14 @@ Space keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>starts_at</code></b> <i>Datetime</i></summary>
+<summary>
+  <b>
+    <code>starts_at</code>
+  </b>{' '}
+  <i>Datetime</i>
+</summary>
 
 Starting date and time for the access grant.
 
@@ -884,11 +1103,14 @@ Starting date and time for the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>tenant_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>tenant_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Tenant key associated with the access grant.
 
@@ -896,11 +1118,14 @@ Tenant key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>unit_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>unit_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 Unit keys associated with the access grant.
 
@@ -908,11 +1133,14 @@ Unit keys associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_identity_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_identity_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 User identity key associated with the access grant.
 
@@ -920,11 +1148,14 @@ User identity key associated with the access grant.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 User key associated with the access grant.
 
@@ -932,14 +1163,18 @@ User key associated with the access grant.
 
 ---
 
-
-**`residents`** *Array* *of Objects*
+**`residents`** _Array_ _of Objects_
 
 List of residents.
 
 <details>
 
-<summary><b><code>email_address</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>email_address</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Email address associated with the user identity.
 
@@ -947,11 +1182,14 @@ Email address associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this user identity resource.
 
@@ -959,11 +1197,14 @@ Your display name for this user identity resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>phone_number</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>phone_number</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Phone number associated with the user identity.
 
@@ -971,11 +1212,14 @@ Phone number associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>resident_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>resident_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the resident.
 
@@ -983,14 +1227,18 @@ Your unique identifier for the resident.
 
 ---
 
-
-**`rooms`** *Array* *of Objects*
+**`rooms`** _Array_ _of Objects_
 
 List of hotel or hospitality rooms.
 
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -998,11 +1246,14 @@ Your display name for this location resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>parent_site_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the site.
 
@@ -1010,11 +1261,14 @@ Your unique identifier for the site.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>room_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>room_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the room.
 
@@ -1022,14 +1276,18 @@ Your unique identifier for the room.
 
 ---
 
-
-**`sites`** *Array* *of Objects*
+**`sites`** _Array_ _of Objects_
 
 List of general sites or areas.
 
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -1037,11 +1295,14 @@ Your display name for this location resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>site_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>site_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the site.
 
@@ -1049,14 +1310,18 @@ Your unique identifier for the site.
 
 ---
 
-
-**`spaces`** *Array* *of Objects*
+**`spaces`** _Array_ _of Objects_
 
 List of general spaces or areas.
 
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -1064,11 +1329,14 @@ Your display name for this location resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>parent_site_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the site.
 
@@ -1076,11 +1344,14 @@ Your unique identifier for the site.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>space_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>space_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the space.
 
@@ -1088,14 +1359,18 @@ Your unique identifier for the space.
 
 ---
 
-
-**`staff_members`** *Array* *of Objects*
+**`staff_members`** _Array_ _of Objects_
 
 List of staff members.
 
 <details>
 
-<summary><b><code>building_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>building_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the buildings the staff member is associated with.
 
@@ -1103,11 +1378,14 @@ List of unique identifiers for the buildings the staff member is associated with
 
 ---
 
-
-
 <details>
 
-<summary><b><code>common_area_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>common_area_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the common areas the staff member is associated with.
 
@@ -1115,11 +1393,14 @@ List of unique identifiers for the common areas the staff member is associated w
 
 ---
 
-
-
 <details>
 
-<summary><b><code>email_address</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>email_address</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Email address associated with the user identity.
 
@@ -1127,11 +1408,14 @@ Email address associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>facility_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>facility_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the facilities the staff member is associated with.
 
@@ -1139,11 +1423,14 @@ List of unique identifiers for the facilities the staff member is associated wit
 
 ---
 
-
-
 <details>
 
-<summary><b><code>listing_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>listing_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the listings the staff member is associated with.
 
@@ -1151,11 +1438,14 @@ List of unique identifiers for the listings the staff member is associated with.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this user identity resource.
 
@@ -1163,11 +1453,14 @@ Your display name for this user identity resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>phone_number</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>phone_number</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Phone number associated with the user identity.
 
@@ -1175,11 +1468,14 @@ Phone number associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>property_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>property_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the properties the staff member is associated with.
 
@@ -1187,11 +1483,14 @@ List of unique identifiers for the properties the staff member is associated wit
 
 ---
 
-
-
 <details>
 
-<summary><b><code>property_listing_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>property_listing_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the property listings the staff member is associated with.
 
@@ -1199,11 +1498,14 @@ List of unique identifiers for the property listings the staff member is associa
 
 ---
 
-
-
 <details>
 
-<summary><b><code>room_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>room_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the rooms the staff member is associated with.
 
@@ -1211,11 +1513,14 @@ List of unique identifiers for the rooms the staff member is associated with.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>site_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>site_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the sites the staff member is associated with.
 
@@ -1223,11 +1528,14 @@ List of unique identifiers for the sites the staff member is associated with.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>space_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>space_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the spaces the staff member is associated with.
 
@@ -1235,11 +1543,14 @@ List of unique identifiers for the spaces the staff member is associated with.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>staff_member_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>staff_member_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the staff.
 
@@ -1247,11 +1558,14 @@ Your unique identifier for the staff.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>unit_keys</code></b> <i>List</i></summary>
+<summary>
+  <b>
+    <code>unit_keys</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
 
 List of unique identifiers for the units the staff member is associated with.
 
@@ -1259,14 +1573,18 @@ List of unique identifiers for the units the staff member is associated with.
 
 ---
 
-
-**`tenants`** *Array* *of Objects*
+**`tenants`** _Array_ _of Objects_
 
 List of tenants.
 
 <details>
 
-<summary><b><code>email_address</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>email_address</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Email address associated with the user identity.
 
@@ -1274,11 +1592,14 @@ Email address associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this user identity resource.
 
@@ -1286,11 +1607,14 @@ Your display name for this user identity resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>phone_number</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>phone_number</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Phone number associated with the user identity.
 
@@ -1298,11 +1622,14 @@ Phone number associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>tenant_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>tenant_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the tenant.
 
@@ -1310,14 +1637,18 @@ Your unique identifier for the tenant.
 
 ---
 
-
-**`units`** *Array* *of Objects*
+**`units`** _Array_ _of Objects_
 
 List of multi-family residential units.
 
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this location resource.
 
@@ -1325,11 +1656,14 @@ Your display name for this location resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>parent_site_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>parent_site_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the site.
 
@@ -1337,11 +1671,14 @@ Your unique identifier for the site.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>unit_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>unit_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the unit.
 
@@ -1349,14 +1686,18 @@ Your unique identifier for the unit.
 
 ---
 
-
-**`user_identities`** *Array* *of Objects*
+**`user_identities`** _Array_ _of Objects_
 
 List of user identities.
 
 <details>
 
-<summary><b><code>email_address</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>email_address</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Email address associated with the user identity.
 
@@ -1364,11 +1705,14 @@ Email address associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this user identity resource.
 
@@ -1376,11 +1720,14 @@ Your display name for this user identity resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>phone_number</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>phone_number</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Phone number associated with the user identity.
 
@@ -1388,11 +1735,14 @@ Phone number associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_identity_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_identity_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the user identity.
 
@@ -1400,14 +1750,18 @@ Your unique identifier for the user identity.
 
 ---
 
-
-**`users`** *Array* *of Objects*
+**`users`** _Array_ _of Objects_
 
 List of users.
 
 <details>
 
-<summary><b><code>email_address</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>email_address</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Email address associated with the user identity.
 
@@ -1415,11 +1769,14 @@ Email address associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>name</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>name</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your display name for this user identity resource.
 
@@ -1427,11 +1784,14 @@ Your display name for this user identity resource.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>phone_number</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>phone_number</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Phone number associated with the user identity.
 
@@ -1439,19 +1799,20 @@ Phone number associated with the user identity.
 
 ---
 
-
-
 <details>
 
-<summary><b><code>user_key</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>user_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Your unique identifier for the user.
 
 </details>
 
 ---
-
-
 
 ## Response
 
@@ -1460,4 +1821,3 @@ Returns:
 **void**
 
 </Check>
-

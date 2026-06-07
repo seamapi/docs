@@ -1,5 +1,5 @@
 ---
-title: "List Client Sessions"
+title: 'List Client Sessions'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "List Client Sessions"
 - [Examples](#examples)
 
 Returns a list of all [client sessions](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,29 +17,30 @@ Returns a list of all client sessions for a specific client session ID.
 
 ```javascript
 await seam.clientSessions.list({
-  client_session_id: "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-});
+  client_session_id: 'a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "client_session_id": "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids": ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids": ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at": "2025-06-15T16:54:17.946309Z",
-    "customer_id": "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count": 1,
-    "expires_at": "2025-06-18T06:10:42.000Z",
-    "token": "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key": "jane_doe",
-    "user_identity_id": "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
-  }
+    client_session_id: 'a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc',
+    connect_webview_ids: ['e0f522d4-a7b6-4f65-ba90-11cde67a893a'],
+    connected_account_ids: ['c35ecf64-474a-466a-95a6-7b35cb4c8bb4'],
+    created_at: '2025-06-15T16:54:17.946309Z',
+    customer_id: 'e387e15f-be27-47ad-881f-4a6fc5460c57',
+    device_count: 1,
+    expires_at: '2025-06-18T06:10:42.000Z',
+    token: 'seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq',
+    user_identifier_key: 'jane_doe',
+    user_identity_id: 'b4ce8233-3b35-4d2d-82ec-d48513684f0a',
+    workspace_id: 'b887bf84-9849-4454-a562-cf84293d9781',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -80,6 +80,7 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -111,6 +112,7 @@ seam.client_sessions.list(client_session_id="a083ce0f-8b03-4081-ac9a-1ad2ce6aaab
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -142,6 +144,7 @@ seam.client_sessions.list(client_session_id: "a083ce0f-8b03-4081-ac9a-1ad2ce6aaa
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -175,6 +178,7 @@ $seam->client_sessions->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -206,10 +210,10 @@ seam client-sessions list --client_session_id "a083ce0f-8b03-4081-ac9a-1ad2ce6aa
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -217,43 +221,44 @@ seam client-sessions list --client_session_id "a083ce0f-8b03-4081-ac9a-1ad2ce6aa
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`client_session_id`** *String*
+**`client_session_id`** _String_
 
 ID of the client session that you want to retrieve.
 
 ---
 
-**`connect_webview_id`** *String*
+**`connect_webview_id`** _String_
 
 ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to retrieve client sessions.
 
 ---
 
-**`user_identifier_key`** *String*
+**`user_identifier_key`** _String_
 
 Your user ID for the user by which you want to filter client sessions.
 
 ---
 
-**`user_identity_id`** *String*
+**`user_identity_id`** _String_
 
 ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions.
 
 ---
 
-**`without_user_identifier_key`** *Boolean*
+**`without_user_identifier_key`** _Boolean_
 
 Indicates whether to retrieve only client sessions without associated user identifier keys.
 
 ---
-
 
 ## Response
 
@@ -263,11 +268,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -285,13 +287,13 @@ Returns:
   "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### List client sessions for a user identifier key
 
@@ -300,38 +302,35 @@ Returns a list of all client sessions for a specific user identifier key.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
-await seam.clientSessions.list({ user_identifier_key: "jane_doe" });
+await seam.clientSessions.list({ user_identifier_key: 'jane_doe' })
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "client_session_id": "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids": ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids": ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at": "2025-06-15T16:54:17.946309Z",
-    "customer_id": "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count": 1,
-    "expires_at": "2025-06-18T06:10:42.000Z",
-    "token": "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key": "jane_doe",
-    "user_identity_id": "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
-  }
+    client_session_id: 'a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc',
+    connect_webview_ids: ['e0f522d4-a7b6-4f65-ba90-11cde67a893a'],
+    connected_account_ids: ['c35ecf64-474a-466a-95a6-7b35cb4c8bb4'],
+    created_at: '2025-06-15T16:54:17.946309Z',
+    customer_id: 'e387e15f-be27-47ad-881f-4a6fc5460c57',
+    device_count: 1,
+    expires_at: '2025-06-18T06:10:42.000Z',
+    token: 'seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq',
+    user_identifier_key: 'jane_doe',
+    user_identity_id: 'b4ce8233-3b35-4d2d-82ec-d48513684f0a',
+    workspace_id: 'b887bf84-9849-4454-a562-cf84293d9781',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -366,11 +365,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -397,11 +395,10 @@ seam.client_sessions.list(user_identifier_key="jane_doe")
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -428,11 +425,10 @@ seam.client_sessions.list(user_identifier_key: "jane_doe")
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -459,11 +455,10 @@ $seam->client_sessions->list(user_identifier_key: "jane_doe");
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -490,12 +485,12 @@ seam client-sessions list --user_identifier_key "jane_doe"
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List client sessions for a Connect Webview ID
 
@@ -504,40 +499,37 @@ Returns a list of all client sessions for a specific Connect Webview ID.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.clientSessions.list({
-  connect_webview_id: "e0f522d4-a7b6-4f65-ba90-11cde67a893a",
-});
+  connect_webview_id: 'e0f522d4-a7b6-4f65-ba90-11cde67a893a',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "client_session_id": "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids": ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids": ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at": "2025-06-15T16:54:17.946309Z",
-    "customer_id": "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count": 1,
-    "expires_at": "2025-06-18T06:10:42.000Z",
-    "token": "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key": "jane_doe",
-    "user_identity_id": "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
-  }
+    client_session_id: 'a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc',
+    connect_webview_ids: ['e0f522d4-a7b6-4f65-ba90-11cde67a893a'],
+    connected_account_ids: ['c35ecf64-474a-466a-95a6-7b35cb4c8bb4'],
+    created_at: '2025-06-15T16:54:17.946309Z',
+    customer_id: 'e387e15f-be27-47ad-881f-4a6fc5460c57',
+    device_count: 1,
+    expires_at: '2025-06-18T06:10:42.000Z',
+    token: 'seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq',
+    user_identifier_key: 'jane_doe',
+    user_identity_id: 'b4ce8233-3b35-4d2d-82ec-d48513684f0a',
+    workspace_id: 'b887bf84-9849-4454-a562-cf84293d9781',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -572,11 +564,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -603,11 +594,10 @@ seam.client_sessions.list(connect_webview_id="e0f522d4-a7b6-4f65-ba90-11cde67a89
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -634,11 +624,10 @@ seam.client_sessions.list(connect_webview_id: "e0f522d4-a7b6-4f65-ba90-11cde67a8
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -667,11 +656,10 @@ $seam->client_sessions->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -698,12 +686,12 @@ seam client-sessions list --connect_webview_id "e0f522d4-a7b6-4f65-ba90-11cde67a
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List client sessions for a user identity ID
 
@@ -712,40 +700,37 @@ Returns a list of all client sessions for a specific user identity ID.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.clientSessions.list({
-  user_identity_id: "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-});
+  user_identity_id: 'b4ce8233-3b35-4d2d-82ec-d48513684f0a',
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "client_session_id": "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids": ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids": ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at": "2025-06-15T16:54:17.946309Z",
-    "customer_id": "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count": 1,
-    "expires_at": "2025-06-18T06:10:42.000Z",
-    "token": "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key": "jane_doe",
-    "user_identity_id": "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
-  }
+    client_session_id: 'a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc',
+    connect_webview_ids: ['e0f522d4-a7b6-4f65-ba90-11cde67a893a'],
+    connected_account_ids: ['c35ecf64-474a-466a-95a6-7b35cb4c8bb4'],
+    created_at: '2025-06-15T16:54:17.946309Z',
+    customer_id: 'e387e15f-be27-47ad-881f-4a6fc5460c57',
+    device_count: 1,
+    expires_at: '2025-06-18T06:10:42.000Z',
+    token: 'seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq',
+    user_identifier_key: 'jane_doe',
+    user_identity_id: 'b4ce8233-3b35-4d2d-82ec-d48513684f0a',
+    workspace_id: 'b887bf84-9849-4454-a562-cf84293d9781',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -780,11 +765,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -811,11 +795,10 @@ seam.client_sessions.list(user_identity_id="b4ce8233-3b35-4d2d-82ec-d48513684f0a
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -842,11 +825,10 @@ seam.client_sessions.list(user_identity_id: "b4ce8233-3b35-4d2d-82ec-d48513684f0
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -875,11 +857,10 @@ $seam->client_sessions->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -906,12 +887,12 @@ seam client-sessions list --user_identity_id "b4ce8233-3b35-4d2d-82ec-d48513684f
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List client sessions without a user identifier key
 
@@ -920,38 +901,35 @@ Returns a list of all client sessions without a user identifier key.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
-await seam.clientSessions.list({ without_user_identifier_key: true });
+await seam.clientSessions.list({ without_user_identifier_key: true })
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "client_session_id": "a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc",
-    "connect_webview_ids": ["e0f522d4-a7b6-4f65-ba90-11cde67a893a"],
-    "connected_account_ids": ["c35ecf64-474a-466a-95a6-7b35cb4c8bb4"],
-    "created_at": "2025-06-15T16:54:17.946309Z",
-    "customer_id": "e387e15f-be27-47ad-881f-4a6fc5460c57",
-    "device_count": 1,
-    "expires_at": "2025-06-18T06:10:42.000Z",
-    "token": "seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq",
-    "user_identifier_key": null,
-    "user_identity_id": "b4ce8233-3b35-4d2d-82ec-d48513684f0a",
-    "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
-  }
+    client_session_id: 'a083ce0f-8b03-4081-ac9a-1ad2ce6aaabc',
+    connect_webview_ids: ['e0f522d4-a7b6-4f65-ba90-11cde67a893a'],
+    connected_account_ids: ['c35ecf64-474a-466a-95a6-7b35cb4c8bb4'],
+    created_at: '2025-06-15T16:54:17.946309Z',
+    customer_id: 'e387e15f-be27-47ad-881f-4a6fc5460c57',
+    device_count: 1,
+    expires_at: '2025-06-18T06:10:42.000Z',
+    token: 'seam_cst1891oqCmD_6dBwV8PJ2Fsoe9dWYVyMfVHq',
+    user_identifier_key: null,
+    user_identity_id: 'b4ce8233-3b35-4d2d-82ec-d48513684f0a',
+    workspace_id: 'b887bf84-9849-4454-a562-cf84293d9781',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -986,11 +964,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1017,11 +994,10 @@ seam.client_sessions.list(without_user_identifier_key=true)
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1048,11 +1024,10 @@ seam.client_sessions.list(without_user_identifier_key: true)
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1079,11 +1054,10 @@ $seam->client_sessions->list(without_user_identifier_key: true);
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1110,6 +1084,7 @@ seam client-sessions list --without_user_identifier_key true
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>

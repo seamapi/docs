@@ -1,12 +1,11 @@
 ---
-title: "Reset a Sandbox Workspace"
+title: 'Reset a Sandbox Workspace'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Resets the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,7 +15,7 @@ Resets the sandbox workspace associated with the authentication value.
 #### Code:
 
 ```javascript
-await seam.workspaces.resetSandbox();
+await seam.workspaces.resetSandbox()
 ```
 
 #### Output:
@@ -30,6 +29,7 @@ await seam.workspaces.resetSandbox();
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -56,6 +56,7 @@ curl --include --request POST "https://connect.getseam.com/workspaces/reset_sand
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -79,6 +80,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -103,6 +105,7 @@ seam.workspaces.reset_sandbox()
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -126,6 +129,7 @@ $seam->workspaces->reset_sandbox();
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -149,10 +153,10 @@ seam workspaces reset-sandbox
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -160,15 +164,16 @@ seam workspaces reset-sandbox
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
 None
-
 
 ## Response
 
@@ -178,11 +183,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -193,5 +195,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

@@ -1,12 +1,11 @@
 ---
-title: "Set a Temperature Threshold"
+title: 'Set a Temperature Threshold'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Sets a [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,10 +16,10 @@ Sets a temperature threshold for a specified thermostat.
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
-  device_id: "a9b52627-e6e2-4beb-9168-964749f7bbae",
+  device_id: 'a9b52627-e6e2-4beb-9168-964749f7bbae',
   lower_limit_fahrenheit: 60,
   upper_limit_fahrenheit: 80,
-});
+})
 ```
 
 #### Output:
@@ -28,6 +27,7 @@ await seam.thermostats.setTemperatureThreshold({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -53,6 +53,7 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -74,6 +75,7 @@ seam.thermostats.set_temperature_threshold(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -95,6 +97,7 @@ seam.thermostats.set_temperature_threshold(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -116,6 +119,7 @@ $seam->thermostats->set_temperature_threshold(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -133,10 +137,10 @@ seam thermostats set-temperature-threshold --device_id "a9b52627-e6e2-4beb-9168-
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -144,43 +148,44 @@ seam thermostats set-temperature-threshold --device_id "a9b52627-e6e2-4beb-9168-
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the thermostat device for which you want to set a temperature threshold.
 
 ---
 
-**`lower_limit_celsius`** *Number*
+**`lower_limit_celsius`** _Number_
 
 Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
 ---
 
-**`lower_limit_fahrenheit`** *Number*
+**`lower_limit_fahrenheit`** _Number_
 
 Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.
 
 ---
 
-**`upper_limit_celsius`** *Number*
+**`upper_limit_celsius`** _Number_
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
 
 ---
 
-**`upper_limit_fahrenheit`** *Number*
+**`upper_limit_fahrenheit`** _Number_
 
 Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.
 
 ---
-
 
 ## Response
 
@@ -189,4 +194,3 @@ Returns:
 **void**
 
 </Check>
-

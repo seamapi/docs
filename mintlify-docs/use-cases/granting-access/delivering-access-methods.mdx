@@ -1,18 +1,20 @@
 ---
-title: "Delivering Access Methods"
-description: "Learn how to deliver key cards, PIN codes, mobile keys, and Instant Keys to your users."
+title: 'Delivering Access Methods'
+description: 'Learn how to deliver key cards, PIN codes, mobile keys, and Instant Keys to your users.'
 ---
-
 
 The `access_method.is_issued` property and event let you know when an access method is ready to deliver to your user. Once an access method is ready to deliver, retrieve the access method by ID. Remember, the returned Access Grant includes the IDs of all the requested access methods. Then, deliver the access method to your user. The delivery mechanism varies for different access method modes.
 
 <Info>
-If you've created an Access Grant that includes a mobile key, the Access Grant also contains the corresponding Instant Key URL, for added efficiency. In this case, you do not need to retrieve the access method. Instead, you can identify the Instant Key URL directly from the returned Access Grant.
+  If you've created an Access Grant that includes a mobile key, the Access Grant
+  also contains the corresponding Instant Key URL, for added efficiency. In this
+  case, you do not need to retrieve the access method. Instead, you can identify
+  the Instant Key URL directly from the returned Access Grant.
 </Info>
 
 This topic describes how to deliver the various access method modes.
 
-***
+---
 
 ## PIN Codes
 
@@ -25,8 +27,8 @@ You can retrieve the access method by ID. The returned access method resource in
 
 ```javascript
 await seam.accessMethods.get({
-  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-});
+  access_method_id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+})
 ```
 
 **Output:**
@@ -43,6 +45,7 @@ await seam.accessMethods.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -77,6 +80,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -103,6 +107,7 @@ AccessMethod(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -129,6 +134,7 @@ seam.access_methods.get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -155,6 +161,7 @@ $seam->access_methods->get(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -170,10 +177,11 @@ $seam->access_methods->get(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Plastic Key Cards
 
@@ -181,7 +189,7 @@ Some access systems require you to encode plastic key cards. In this case, the a
 
 Once you've encoded the card, the access method's `is_encoding_required` property changes to `false`, and its `is_issued` property changes to `true`. The card is ready to be delivered to your user.
 
-***
+---
 
 ## Mobile Keys
 
@@ -194,8 +202,8 @@ You deliver a mobile key to your user within your own mobile app that you develo
 
 ```javascript
 await seam.accessMethods.get({
-  access_method_id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
-});
+  access_method_id: '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+})
 ```
 
 **Output:**
@@ -213,6 +221,7 @@ await seam.accessMethods.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -248,6 +257,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -275,6 +285,7 @@ AccessMethod(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -302,6 +313,7 @@ seam.access_methods.get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -329,6 +341,7 @@ $seam->access_methods->get(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -344,10 +357,11 @@ $seam->access_methods->get(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Instant Keys
 

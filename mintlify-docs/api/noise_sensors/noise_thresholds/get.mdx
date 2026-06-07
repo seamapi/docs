@@ -1,12 +1,11 @@
 ---
-title: "Get a Noise Threshold"
+title: 'Get a Noise Threshold'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Returns a specified noise threshold for a noise sensor.
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.get({
-  noise_threshold_id: "8282891b-c4da-4239-8f01-56089d44b80d",
-});
+  noise_threshold_id: '8282891b-c4da-4239-8f01-56089d44b80d',
+})
 ```
 
 #### Output:
@@ -34,6 +33,7 @@ await seam.noiseSensors.noiseThresholds.get({
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -67,6 +67,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -94,6 +95,7 @@ NoiseThreshold(
     starts_daily_at="2025-06-20T18:29:57.000Z",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -119,6 +121,7 @@ seam.noise_sensors.noise_thresholds.get(noise_threshold_id: "8282891b-c4da-4239-
   "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -146,6 +149,7 @@ $seam->noise_sensors->noise_thresholds->get(
     "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -171,10 +175,10 @@ seam noise-sensors noise-thresholds get --noise_threshold_id "8282891b-c4da-4239
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -182,19 +186,20 @@ seam noise-sensors noise-thresholds get --noise_threshold_id "8282891b-c4da-4239
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`noise_threshold_id`** *String* (Required)
+**`noise_threshold_id`** _String_ (Required)
 
 ID of the noise threshold that you want to get.
 
 ---
-
 
 ## Response
 
@@ -204,11 +209,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -221,5 +223,6 @@ Returns:
   "starts_daily_at": "07:00:00[America/Los_Angeles]"
 }
 ```
+
 </Tab>
 </Tabs>

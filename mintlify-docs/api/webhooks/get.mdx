@@ -1,12 +1,11 @@
 ---
-title: "Get a Webhook"
+title: 'Get a Webhook'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,7 +15,7 @@ Gets a specified webhook.
 #### Code:
 
 ```javascript
-await seam.webhooks.get({ webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657" });
+await seam.webhooks.get({ webhook_id: 'e5f1b17c-c67d-469d-a860-9510cf814657' })
 ```
 
 #### Output:
@@ -29,6 +28,7 @@ await seam.webhooks.get({ webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657" });
   "webhook_id": "e5f1b17c-c67d-469d-a860-9510cf814657"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -59,6 +59,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -81,6 +82,7 @@ Webhook(
     webhook_id="e5f1b17c-c67d-469d-a860-9510cf814657",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -103,6 +105,7 @@ seam.webhooks.get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657")
   "webhook_id" => "e5f1b17c-c67d-469d-a860-9510cf814657",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -125,6 +128,7 @@ $seam->webhooks->get(webhook_id: "e5f1b17c-c67d-469d-a860-9510cf814657");
     "webhook_id" => "e5f1b17c-c67d-469d-a860-9510cf814657",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -147,10 +151,10 @@ seam webhooks get --webhook_id "e5f1b17c-c67d-469d-a860-9510cf814657"
   "webhook_id": "e5f1b17c-c67d-469d-a860-9510cf814657"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -158,19 +162,20 @@ seam webhooks get --webhook_id "e5f1b17c-c67d-469d-a860-9510cf814657"
 
 - API key
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`webhook_id`** *String* (Required)
+**`webhook_id`** _String_ (Required)
 
 ID of the webhook that you want to get.
 
 ---
-
 
 ## Response
 
@@ -180,11 +185,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -194,5 +196,6 @@ Returns:
   "webhook_id": "ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1"
 }
 ```
+
 </Tab>
 </Tabs>

@@ -1,5 +1,5 @@
 ---
-title: "List Events"
+title: 'List Events'
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,7 +7,6 @@ title: "List Events"
 - [Examples](#examples)
 
 Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to filter or see events that already took place.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,28 +17,30 @@ Returns a list of events for a specified device.
 
 ```javascript
 await seam.events.list({
-  device_id: "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
-  since: "2025-05-15T00:00:00.000Z",
+  device_id: 'b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2',
+  since: '2025-05-15T00:00:00.000Z',
   limit: 10,
-});
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-    "created_at": "2025-06-15T16:54:18.000000Z",
-    "device_id": "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
-    "event_description": "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
-    "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    "event_type": "device.connected",
-    "occurred_at": "2025-06-15T16:54:17.946329Z",
-    "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-  }
+    connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+    created_at: '2025-06-15T16:54:18.000000Z',
+    device_id: 'b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2',
+    event_description:
+      'The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.',
+    event_id: '6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+    event_type: 'device.connected',
+    occurred_at: '2025-06-15T16:54:17.946329Z',
+    workspace_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -78,6 +79,7 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -110,6 +112,7 @@ seam.events.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -143,6 +146,7 @@ seam.events.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -176,6 +180,7 @@ $seam->events->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -204,10 +209,10 @@ seam events list --device_id "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2" --since "202
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -216,147 +221,151 @@ seam events list --device_id "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2" --since "202
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_code_id`** *String*
+**`access_code_id`** _String_
 
 ID of the access code for which you want to list events.
 
 ---
 
-**`access_code_ids`** *Array* *of UUIDs*
+**`access_code_ids`** _Array_ _of UUIDs_
 
 IDs of the access codes for which you want to list events.
 
 ---
 
-**`access_grant_id`** *String*
+**`access_grant_id`** _String_
 
 ID of the access grant for which you want to list events.
 
 ---
 
-**`access_grant_ids`** *Array* *of UUIDs*
+**`access_grant_ids`** _Array_ _of UUIDs_
 
 IDs of the access grants for which you want to list events.
 
 ---
 
-**`access_method_id`** *String*
+**`access_method_id`** _String_
 
 ID of the access method for which you want to list events.
 
 ---
 
-**`access_method_ids`** *Array* *of UUIDs*
+**`access_method_ids`** _Array_ _of UUIDs_
 
 IDs of the access methods for which you want to list events.
 
 ---
 
-**`acs_access_group_id`** *String*
+**`acs_access_group_id`** _String_
 
 ID of the ACS access group for which you want to list events.
 
 ---
 
-**`acs_credential_id`** *String*
+**`acs_credential_id`** _String_
 
 ID of the ACS credential for which you want to list events.
 
 ---
 
-**`acs_encoder_id`** *String*
+**`acs_encoder_id`** _String_
 
 ID of the ACS encoder for which you want to list events.
 
 ---
 
-**`acs_entrance_id`** *String*
+**`acs_entrance_id`** _String_
 
 ID of the ACS entrance for which you want to list events.
 
 ---
 
-**`acs_system_id`** *String*
+**`acs_system_id`** _String_
 
 ID of the access system for which you want to list events.
 
 ---
 
-**`acs_system_ids`** *Array* *of UUIDs*
+**`acs_system_ids`** _Array_ _of UUIDs_
 
 IDs of the access systems for which you want to list events.
 
 ---
 
-**`acs_user_id`** *String*
+**`acs_user_id`** _String_
 
 ID of the ACS user for which you want to list events.
 
 ---
 
-**`between`** *Array* *of Objects*
+**`between`** _Array_ _of Objects_
 
 Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.
 
 ---
 
-**`connect_webview_id`** *String*
+**`connect_webview_id`** _String_
 
 ID of the Connect Webview for which you want to list events.
 
 ---
 
-**`connected_account_id`** *String*
+**`connected_account_id`** _String_
 
 ID of the connected account for which you want to list events.
 
 ---
 
-**`customer_key`** *String*
+**`customer_key`** _String_
 
 Customer key for which you want to list events.
 
 ---
 
-**`device_id`** *String*
+**`device_id`** _String_
 
 ID of the device for which you want to list events.
 
 ---
 
-**`device_ids`** *Array* *of UUIDs*
+**`device_ids`** _Array_ _of UUIDs_
 
 IDs of the devices for which you want to list events.
 
 ---
 
-**`event_ids`** *Array* *of UUIDs*
+**`event_ids`** _Array_ _of UUIDs_
 
 IDs of the events that you want to list.
 
 ---
 
-**`event_type`** *String*
+**`event_type`** _String_
 
 Type of the events that you want to list.
 
 ---
 
-**`event_types`** *Array* *of Enums*
+**`event_types`** _Array_ _of Enums_
 
 Types of the events that you want to list.
+
 <details>
 
 <summary>Enum values</summary>
 
 Possible enum values:
+
 - <code>access_code.created</code>
 - <code>access_code.changed</code>
 - <code>access_code.scheduled_on_device</code>
@@ -464,42 +473,41 @@ Possible enum values:
 
 ---
 
-**`limit`** *Number*
+**`limit`** _Number_
 
 Numerical limit on the number of events to return.
 
 ---
 
-**`since`** *String*
+**`since`** _String_
 
 Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`.
 
 ---
 
-**`space_id`** *String*
+**`space_id`** _String_
 
 ID of the space for which you want to list events.
 
 ---
 
-**`space_ids`** *Array* *of UUIDs*
+**`space_ids`** _Array_ _of UUIDs_
 
 IDs of the spaces for which you want to list events.
 
 ---
 
-**`unstable_offset`** *Number*
+**`unstable_offset`** _Number_
 
 Offset for the events that you want to list.
 
 ---
 
-**`user_identity_id`** *String*
+**`user_identity_id`** _String_
 
 ID of the user identity for which you want to list events.
 
 ---
-
 
 ## Response
 
@@ -509,11 +517,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -527,13 +532,13 @@ Returns:
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
+
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
-
 
 ### List events for a customer
 
@@ -542,39 +547,37 @@ Returns a list of events for a specified customer.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.events.list({
-  customer_ids: ["e387e15f-be27-47ad-881f-4a6fc5460c57"],
-  between: ["2025-05-15T00:00:00.000Z", "2025-06-20T23:59:59.999Z"],
+  customer_ids: ['e387e15f-be27-47ad-881f-4a6fc5460c57'],
+  between: ['2025-05-15T00:00:00.000Z', '2025-06-20T23:59:59.999Z'],
   limit: 10,
-});
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-    "created_at": "2025-06-15T16:54:18.000000Z",
-    "device_id": "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
-    "event_description": "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
-    "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    "event_type": "device.connected",
-    "occurred_at": "2025-06-15T16:54:17.946329Z",
-    "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-  }
+    connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+    created_at: '2025-06-15T16:54:18.000000Z',
+    device_id: 'b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2',
+    event_description:
+      'The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.',
+    event_id: '6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+    event_type: 'device.connected',
+    occurred_at: '2025-06-15T16:54:17.946329Z',
+    workspace_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -613,11 +616,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -645,11 +647,10 @@ seam.events.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -678,11 +679,10 @@ seam.events.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -711,11 +711,10 @@ $seam->events->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -739,12 +738,12 @@ seam events list --customer_ids ["e387e15f-be27-47ad-881f-4a6fc5460c57"] --betwe
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List events for an access system
 
@@ -753,39 +752,36 @@ Returns a list of events for a specified access system.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.events.list({
-  acs_system_id: "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
-  since: "2025-05-15T00:00:00.000Z",
+  acs_system_id: '5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099',
+  since: '2025-05-15T00:00:00.000Z',
   limit: 10,
-});
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-    "created_at": "2025-06-15T16:54:18.000000Z",
-    "acs_system_id": "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099",
-    "event_description": "An access system was connected.",
-    "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    "event_type": "acs_system.connected",
-    "occurred_at": "2025-06-15T16:54:17.946329Z",
-    "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-  }
+    connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+    created_at: '2025-06-15T16:54:18.000000Z',
+    acs_system_id: '5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099',
+    event_description: 'An access system was connected.',
+    event_id: '6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+    event_type: 'acs_system.connected',
+    occurred_at: '2025-06-15T16:54:17.946329Z',
+    workspace_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -819,11 +815,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -851,11 +846,10 @@ seam.events.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -883,11 +877,10 @@ seam.events.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -915,11 +908,10 @@ $seam->events->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -943,12 +935,12 @@ seam events list --acs_system_id "5d92d231-cea4-4ceb-b9f6-1ff9cb9c5099" --since 
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List events for an access code
 
@@ -957,40 +949,37 @@ Returns a list of events for a specified access code.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.events.list({
-  access_code_id: "37ba4a46-c9a7-47a2-b761-f63d02acbea4",
-  since: "2025-05-15T00:00:00.000Z",
+  access_code_id: '37ba4a46-c9a7-47a2-b761-f63d02acbea4',
+  since: '2025-05-15T00:00:00.000Z',
   limit: 10,
-});
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "access_code_id": "37ba4a46-c9a7-47a2-b761-f63d02acbea4",
-    "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-    "created_at": "2025-06-15T16:54:18.000000Z",
-    "device_id": "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
-    "event_description": "An access code was created.",
-    "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    "event_type": "access_code.created",
-    "occurred_at": "2025-06-15T16:54:17.946329Z",
-    "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-  }
+    access_code_id: '37ba4a46-c9a7-47a2-b761-f63d02acbea4',
+    connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+    created_at: '2025-06-15T16:54:18.000000Z',
+    device_id: 'b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2',
+    event_description: 'An access code was created.',
+    event_id: '6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+    event_type: 'access_code.created',
+    occurred_at: '2025-06-15T16:54:17.946329Z',
+    workspace_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1025,11 +1014,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1058,11 +1046,10 @@ seam.events.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1091,11 +1078,10 @@ seam.events.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1124,11 +1110,10 @@ $seam->events->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1153,12 +1138,12 @@ seam events list --access_code_id "37ba4a46-c9a7-47a2-b761-f63d02acbea4" --since
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List events of a specific type
 
@@ -1167,39 +1152,37 @@ Returns a list of events of a specified type.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.events.list({
-  event_type: "device.connected",
-  since: "2025-05-15T00:00:00.000Z",
+  event_type: 'device.connected',
+  since: '2025-05-15T00:00:00.000Z',
   limit: 10,
-});
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-    "created_at": "2025-06-15T16:54:18.000000Z",
-    "device_id": "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
-    "event_description": "The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.",
-    "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    "event_type": "device.connected",
-    "occurred_at": "2025-06-15T16:54:17.946329Z",
-    "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-  }
+    connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+    created_at: '2025-06-15T16:54:18.000000Z',
+    device_id: 'b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2',
+    event_description:
+      'The status of a device changed from offline to online. That is, the device.properties.online property changed from false to true. Note that some devices operate entirely in offline mode, so Seam never emits a device.connected event for these devices.',
+    event_id: '6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+    event_type: 'device.connected',
+    occurred_at: '2025-06-15T16:54:17.946329Z',
+    workspace_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1233,11 +1216,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1263,11 +1245,10 @@ seam.events.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1292,11 +1273,10 @@ seam.events.list(event_type: "device.connected", since: "2025-05-15T00:00:00.000
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1325,11 +1305,10 @@ $seam->events->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1353,12 +1332,12 @@ seam events list --event_type "device.connected" --since "2025-05-15T00:00:00.00
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List events for a connected account
 
@@ -1367,39 +1346,37 @@ Returns a list of events for a specified connected account.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.events.list({
-  connected_account_id: "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-  since: "2025-05-15T00:00:00.000Z",
+  connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+  since: '2025-05-15T00:00:00.000Z',
   limit: 10,
-});
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-    "created_at": "2025-06-15T16:54:18.000000Z",
-    "device_id": "b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2",
-    "event_description": "A connected account was connected for the first time or was reconnected after being disconnected.",
-    "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    "event_type": "connected_account.connected",
-    "occurred_at": "2025-06-15T16:54:17.946329Z",
-    "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-  }
+    connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+    created_at: '2025-06-15T16:54:18.000000Z',
+    device_id: 'b2ebca6c-d6d1-47dd-8dae-e9fa06f060b2',
+    event_description:
+      'A connected account was connected for the first time or was reconnected after being disconnected.',
+    event_id: '6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+    event_type: 'connected_account.connected',
+    occurred_at: '2025-06-15T16:54:17.946329Z',
+    workspace_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1433,11 +1410,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1465,11 +1441,10 @@ seam.events.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1498,11 +1473,10 @@ seam.events.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1531,11 +1505,10 @@ $seam->events->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1559,12 +1532,12 @@ seam events list --connected_account_id "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b" -
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>
 
 ---
-
 
 ### List events for a Connect Webview
 
@@ -1573,39 +1546,36 @@ Returns a list of events for a specified Connect Webview.
 <Tabs>
 <Tab title="JavaScript">
 
-
-
 #### Code:
 
 ```javascript
 await seam.events.list({
-  connect_webview_id: "775bc894-c51a-47e8-b7ac-f92292c62d63",
-  since: "2025-05-15T00:00:00.000Z",
+  connect_webview_id: '775bc894-c51a-47e8-b7ac-f92292c62d63',
+  since: '2025-05-15T00:00:00.000Z',
   limit: 10,
-});
+})
 ```
 
 #### Output:
 
 ```javascript
-[
+;[
   {
-    "connect_webview_id": "775bc894-c51a-47e8-b7ac-f92292c62d63",
-    "connected_account_id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-    "created_at": "2025-06-15T16:54:18.000000Z",
-    "event_description": "A Connect Webview login succeeded.",
-    "event_id": "6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-    "event_type": "connect_webview.login_succeeded",
-    "occurred_at": "2025-06-15T16:54:17.946329Z",
-    "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
-  }
+    connect_webview_id: '775bc894-c51a-47e8-b7ac-f92292c62d63',
+    connected_account_id: '2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b',
+    created_at: '2025-06-15T16:54:18.000000Z',
+    event_description: 'A Connect Webview login succeeded.',
+    event_id: '6d7e8f9a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
+    event_type: 'connect_webview.login_succeeded',
+    occurred_at: '2025-06-15T16:54:17.946329Z',
+    workspace_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
+  },
 ]
 ```
+
 </Tab>
 
 <Tab title="cURL">
-
-
 
 #### Code:
 
@@ -1639,11 +1609,10 @@ EOF
   ]
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
-
-
 
 #### Code:
 
@@ -1671,11 +1640,10 @@ seam.events.list(
     )
 ]
 ```
+
 </Tab>
 
 <Tab title="Ruby">
-
-
 
 #### Code:
 
@@ -1703,11 +1671,10 @@ seam.events.list(
   },
 ]
 ```
+
 </Tab>
 
 <Tab title="PHP">
-
-
 
 #### Code:
 
@@ -1735,11 +1702,10 @@ $seam->events->list(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
-
-
 
 #### Code:
 
@@ -1763,6 +1729,7 @@ seam events list --connect_webview_id "775bc894-c51a-47e8-b7ac-f92292c62d63" --s
   }
 ]
 ```
+
 </Tab>
 
 </Tabs>

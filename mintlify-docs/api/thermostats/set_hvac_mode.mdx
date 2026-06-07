@@ -1,12 +1,11 @@
 ---
-title: "Set the HVAC Mode"
+title: 'Set the HVAC Mode'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,11 +16,11 @@ Sets the HVAC mode for a specified thermostat.
 
 ```javascript
 await seam.thermostats.setHvacMode({
-  device_id: "5d5c3b30-5fed-47a3-9df1-ed32f32589e5",
-  hvac_mode_setting: "heat_cool",
+  device_id: '5d5c3b30-5fed-47a3-9df1-ed32f32589e5',
+  hvac_mode_setting: 'heat_cool',
   heating_set_point_celsius: 20,
   cooling_set_point_celsius: 25,
-});
+})
 ```
 
 #### Output:
@@ -35,6 +34,7 @@ await seam.thermostats.setHvacMode({
   "status": "success"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -69,6 +69,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -97,6 +98,7 @@ ActionAttempt(
     status="success",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -126,6 +128,7 @@ seam.thermostats.set_hvac_mode(
   "status" => "success",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -154,6 +157,7 @@ $seam->thermostats->set_hvac_mode(
     "status" => "success",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -177,10 +181,10 @@ seam thermostats set-hvac-mode --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5
   "status": "success"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -189,47 +193,48 @@ seam thermostats set-hvac-mode --device_id "5d5c3b30-5fed-47a3-9df1-ed32f32589e5
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`device_id`** *String* (Required)
+**`device_id`** _String_ (Required)
 
 ID of the thermostat device for which you want to set the HVAC mode.
 
 ---
 
-**`hvac_mode_setting`** *String* (Required)
+**`hvac_mode_setting`** _String_ (Required)
 
 ---
 
-**`cooling_set_point_celsius`** *Number*
+**`cooling_set_point_celsius`** _Number_
 
 [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`cooling_set_point_fahrenheit`** *Number*
+**`cooling_set_point_fahrenheit`** _Number_
 
 [Cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.
 
 ---
 
-**`heating_set_point_celsius`** *Number*
+**`heating_set_point_celsius`** _Number_
 
 [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.
 
 ---
 
-**`heating_set_point_fahrenheit`** *Number*
+**`heating_set_point_fahrenheit`** _Number_
 
 [Heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.
 
 ---
-
 
 ## Response
 
@@ -239,11 +244,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -254,5 +256,6 @@ Returns:
   "status": "success"
 }
 ```
+
 </Tab>
 </Tabs>

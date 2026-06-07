@@ -1,12 +1,11 @@
 ---
-title: "Remove Entrances from a Space"
+title: 'Remove Entrances from a Space'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Removes [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) from a specific space.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +16,9 @@ Removes entrances from a specific space.
 
 ```javascript
 await seam.spaces.removeAcsEntrances({
-  space_id: "674e511a-06c6-4734-b4ce-af467496d5fe",
-  acs_entrance_ids: ["fd859a36-199b-4c2f-894a-24d52621f6a4"],
-});
+  space_id: '674e511a-06c6-4734-b4ce-af467496d5fe',
+  acs_entrance_ids: ['fd859a36-199b-4c2f-894a-24d52621f6a4'],
+})
 ```
 
 #### Output:
@@ -27,6 +26,7 @@ await seam.spaces.removeAcsEntrances({
 ```javascript
 // void
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -53,6 +53,7 @@ EOF
 ```curl
 {}
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -73,6 +74,7 @@ seam.spaces.remove_acs_entrances(
 ```python
 None
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -93,6 +95,7 @@ seam.spaces.remove_acs_entrances(
 ```ruby
 nil
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -113,6 +116,7 @@ $seam->spaces->remove_acs_entrances(
 ```php
 
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -130,10 +134,10 @@ seam spaces remove-acs-entrances --space_id "674e511a-06c6-4734-b4ce-af467496d5f
 ```seam_cli
 {}
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -142,25 +146,26 @@ seam spaces remove-acs-entrances --space_id "674e511a-06c6-4734-b4ce-af467496d5f
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_entrance_ids`** *Array* *of UUIDs* (Required)
+**`acs_entrance_ids`** _Array_ _of UUIDs_ (Required)
 
 IDs of the entrances that you want to remove from the space.
 
 ---
 
-**`space_id`** *String* (Required)
+**`space_id`** _String_ (Required)
 
 ID of the space from which you want to remove entrances.
 
 ---
-
 
 ## Response
 
@@ -169,4 +174,3 @@ Returns:
 **void**
 
 </Check>
-

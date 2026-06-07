@@ -1,12 +1,11 @@
 ---
-title: "Implementing Client Sessions for Device Management in the Backend"
+title: 'Implementing Client Sessions for Device Management in the Backend'
 description: "Learn how to use client sessions to control your users' access to devices."
 ---
 
-
 If you are developing an application with multiple customers connecting their devices, [client sessions](./) are a practical way to manage device access for each user. This topic provides an example of implementing client sessions in the backend, ensuring that users can access only the devices that they own.
 
-***
+---
 
 ## Connect Your Users' Accounts Using a Client Session
 
@@ -21,26 +20,27 @@ When connecting your customers' devices, you can create a client session for eac
 // in production.
 const seam = new Seam("YOUR_API_KEY")
 
-// Get or create a client session using your own internal user 
+// Get or create a client session using your own internal user
 // ID as the user_identifier_key.
 const user_identifier_key = "xxxx"
 const client_session = await seam.clientSessions.get_or_create({
-    user_identifier_key
+user_identifier_key
 })
-  
-// Create a Connect Webview and link the Connect Webview to the 
-// client session, using the user_identifier_key to identify the 
+
+// Create a Connect Webview and link the Connect Webview to the
+// client session, using the user_identifier_key to identify the
 // desired client session.
 const connect_webview = await seam.connectWebviews.create()
 await seam.clientSessions.grant_access({
-  user_identifier_key,
-  connect_webview_ids: [connect_webview.connect_webview_id],
+user_identifier_key,
+connect_webview_ids: [connect_webview.connect_webview_id],
 })
-  
-// Share the URL of the Connect Webview with the user to enable 
+
+// Share the URL of the Connect Webview with the user to enable
 // them connect their devices.
 const connect_webview_url = connect_webview.url
-```
+
+````
 </Tab>
 </Tabs>
 
@@ -58,11 +58,12 @@ const user_identifier_key = "xxxx"
 const devices = await seam.devices.list({
   user_identifier_key
 })
-```
+````
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Authorize Requests Using the User Identifier Key
 

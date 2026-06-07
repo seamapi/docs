@@ -1,12 +1,11 @@
 ---
-title: "Create a Space"
+title: 'Create a Space'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Creates a new space.
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,10 +16,10 @@ Creates a new space.
 
 ```javascript
 await seam.spaces.create({
-  name: "My Space",
-  device_ids: ["b7254403-db91-4e10-bb7b-31d0615d2963"],
-  acs_entrance_ids: ["46a47667-a90b-45cc-9bb6-f0917464f1f3"],
-});
+  name: 'My Space',
+  device_ids: ['b7254403-db91-4e10-bb7b-31d0615d2963'],
+  acs_entrance_ids: ['46a47667-a90b-45cc-9bb6-f0917464f1f3'],
+})
 ```
 
 #### Output:
@@ -34,6 +33,7 @@ await seam.spaces.create({
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -71,6 +71,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -98,6 +99,7 @@ Space(
     workspace_id="96bd12f9-6def-4bf4-b517-760417451ae9",
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -125,6 +127,7 @@ seam.spaces.create(
   "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -152,6 +155,7 @@ $seam->spaces->create(
     "workspace_id" => "96bd12f9-6def-4bf4-b517-760417451ae9",
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -175,10 +179,10 @@ seam spaces create --name "My Space" --device_ids ["b7254403-db91-4e10-bb7b-31d0
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -187,43 +191,44 @@ seam spaces create --name "My Space" --device_ids ["b7254403-db91-4e10-bb7b-31d0
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`name`** *String* (Required)
+**`name`** _String_ (Required)
 
 Name of the space that you want to create.
 
 ---
 
-**`acs_entrance_ids`** *Array* *of UUIDs*
+**`acs_entrance_ids`** _Array_ _of UUIDs_
 
 IDs of the entrances that you want to add to the new space.
 
 ---
 
-**`customer_key`** *String*
+**`customer_key`** _String_
 
 Customer key for which you want to create the space.
 
 ---
 
-**`device_ids`** *Array* *of UUIDs*
+**`device_ids`** _Array_ _of UUIDs_
 
 IDs of the devices that you want to add to the new space.
 
 ---
 
-**`space_key`** *String*
+**`space_key`** _String_
 
 Unique key for the space within the workspace.
 
 ---
-
 
 ## Response
 
@@ -233,11 +238,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -248,5 +250,6 @@ Returns:
   "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
 }
 ```
+
 </Tab>
 </Tabs>

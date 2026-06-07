@@ -1,11 +1,14 @@
 ---
-title: "Granting Access Using Mobile Keys"
+title: 'Granting Access Using Mobile Keys'
 ---
 
 To issue mobile keys, first identify the user to whom you want to grant access and create a user identity to represent this user. Then, create an Access Grant to specify the entrances and spaces to which you want to grant the user access. Through this Access Grant, Seam generates all the necessary mobile keys. You can then deliver the mobile keys to your user in a mobile app that you develop. Your user installs this app on their phone.
 
 <Info>
-Seam also provides [Instant Keys](granting-access-using-mobile-keys.md#granting-access-using-seam-instant-keys) as an app-free alternative to mobile keys. When you create a mobile key, Seam automatically also creates an Instant Key.
+  Seam also provides [Instant
+  Keys](granting-access-using-mobile-keys.md#granting-access-using-seam-instant-keys)
+  as an app-free alternative to mobile keys. When you create a mobile key, Seam
+  automatically also creates an Instant Key.
 </Info>
 
 This section details the steps in this process and provides accompanying Seam API code samples. See the following instructions:
@@ -14,7 +17,7 @@ This section details the steps in this process and provides accompanying Seam AP
 2. [Create an Access Grant](granting-access-using-mobile-keys.md#create-an-access-grant)
 3. [Deliver the Mobile Key](granting-access-using-mobile-keys.md#deliver-the-mobile-key)
 
-***
+---
 
 ## Create a User Identity
 
@@ -28,9 +31,9 @@ On the server side, use the Seam API to create a `user_identity`. A user identit
 ```javascript
 // Create a user identity for your mobile app user.
 const janeUser = await seam.userIdentities.create({
-  full_name: "Jane Doe",
-  phone_number: "+15555550100"
-});
+  full_name: 'Jane Doe',
+  phone_number: '+15555550100',
+})
 ```
 
 **Output:**
@@ -43,6 +46,7 @@ const janeUser = await seam.userIdentities.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -75,6 +79,7 @@ jane_user=$(curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -99,6 +104,7 @@ UserIdentity(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -123,6 +129,7 @@ jane_user = seam.user_identities.create(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -147,6 +154,7 @@ $jane_user = $seam->user_identities->create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -162,10 +170,11 @@ $jane_user = $seam->user_identities->create(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Create an Access Grant
 
@@ -183,15 +192,13 @@ await seam.accessGrants.create({
   user_identity_id: janeUser.user_identity_id,
   // You can specify acs_entrance_ids, space_ids, or both.
   acs_entrance_ids: [
-    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
-    "f74e4879-5991-4e2f-a368-888983dcfbfc"
+    '48ebfb50-c531-43c5-b9ea-409f26dabbd7',
+    'f74e4879-5991-4e2f-a368-888983dcfbfc',
   ],
-  requested_access_methods: [
-    {"mode": "mobile_key"}
-  ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-});
+  requested_access_methods: [{ mode: 'mobile_key' }],
+  starts_at: '2025-07-13T15:00:00.000Z',
+  ends_at: '2025-07-16T11:00:00.000Z',
+})
 ```
 
 **Output:**
@@ -215,6 +222,7 @@ await seam.accessGrants.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -267,6 +275,7 @@ curl -X 'POST' \
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -282,7 +291,7 @@ seam.access_grants.create(
   acs_entrance_ids=[
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],  
+  ],
   requested_access_methods=[
     {"mode": "mobile_key"}
   ],
@@ -312,6 +321,7 @@ AccessGrant(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -354,6 +364,7 @@ seam.access_grants.create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -399,6 +410,7 @@ $seam->access_grants->create(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -414,10 +426,11 @@ $seam->access_grants->create(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Deliver the Mobile Key
 
@@ -425,8 +438,20 @@ Seam provides a mobile SDK for iOS and Android that you can use to develop a mob
 
 The Seam mobile SDK uses a scanning model called "unlock with tap" to unlock the nearest granted entrance. Your app starts this scanning process, your user holds their mobile device up to the hotel room door or other access point, and it unlocks.
 
-<figure><img src="/images/mobile-key-flow.png" alt="Develop a mobile app to deliver the mobile key to your user and to unlock the door." /><figcaption><p>Develop a mobile app to deliver the mobile key to your user and to unlock the door.</p></figcaption></figure>
+<figure>
+  <img
+    src='/images/mobile-key-flow.png'
+    alt='Develop a mobile app to deliver the mobile key to your user and to unlock the door.'
+  />
+  <figcaption>
+    <p>
+      Develop a mobile app to deliver the mobile key to your user and to unlock
+      the door.
+    </p>
+  </figcaption>
+</figure>
 
 <Info>
-Alternately, for a more streamlined experience that does not require an app download, use [Seam Instant Keys](granting-access-using-seam-instant-keys.md).
+  Alternately, for a more streamlined experience that does not require an app
+  download, use [Seam Instant Keys](granting-access-using-seam-instant-keys.md).
 </Info>

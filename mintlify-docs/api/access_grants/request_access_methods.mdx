@@ -1,12 +1,11 @@
 ---
-title: "Add Requested Access Methods to Access Grant"
+title: 'Add Requested Access Methods to Access Grant'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Adds additional requested access methods to an existing Access Grant.
-
 
 <details>
 
@@ -15,26 +14,33 @@ Adds additional requested access methods to an existing Access Grant.
 - API key
 - Client session token
 - Personal access token
-  <br />Must also include the `seam-workspace` header in the request.
+  <br />
+  Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** _String_ (Required)
 
 ID of the Access Grant to add access methods to.
 
 ---
 
-**`requested_access_methods`** *Array* *of Objects* (Required)
+**`requested_access_methods`** _Array_ _of Objects_ (Required)
 
 Array of requested access methods to add to the access grant.
 
 <details>
 
-<summary><b><code>code</code></b> <i>String</i></summary>
+<summary>
+  <b>
+    <code>code</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
 
 Specific PIN code to use for this access method. Only applicable when mode is 'code'.
 
@@ -42,11 +48,14 @@ Specific PIN code to use for this access method. Only applicable when mode is 'c
 
 ---
 
-
-
 <details>
 
-<summary><b><code>instant_key_max_use_count</code></b> <i>Number</i></summary>
+<summary>
+  <b>
+    <code>instant_key_max_use_count</code>
+  </b>{' '}
+  <i>Number</i>
+</summary>
 
 Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.
 
@@ -54,11 +63,14 @@ Maximum number of times the instant key can be used. Only applicable when mode i
 
 ---
 
-
-
 <details>
 
-<summary><b><code>mode</code></b> <i>Enum</i></summary>
+<summary>
+  <b>
+    <code>mode</code>
+  </b>{' '}
+  <i>Enum</i>
+</summary>
 
 Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 
@@ -73,8 +85,6 @@ Enum values:
 
 ---
 
-
-
 ## Response
 
 <Check>
@@ -83,11 +93,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -130,5 +137,6 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
+
 </Tab>
 </Tabs>

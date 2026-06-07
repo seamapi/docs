@@ -1,22 +1,28 @@
 ---
-title: "Access Grant Quick Start"
-description: "Create your first Access Grant to give a user scheduled access to a set of access points with Seam."
+title: 'Access Grant Quick Start'
+description: 'Create your first Access Grant to give a user scheduled access to a set of access points with Seam.'
 ---
-
 
 In this quick start, create an Access Grant to give a user access to a set of access points. Access Grants are the default and recommended way to grant access to any physical space, irrespective of the locking hardware—standalone smart locks, access control systems, or a mix of both. With a single command you can define the "who, where, when, and how" for assigning a user access.
 
 <Check>
-**Starting with a standalone smart lock?** The fastest first success is a single device and a PIN code: see the [Seam Quick Start](../../quickstart.md), which creates an Access Grant on a sandbox August lock, or [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices.md). This quick start walks through the more advanced access system (ACS) path, including key cards, mobile keys, and Instant Keys.
+  **Starting with a standalone smart lock?** The fastest first success is a
+  single device and a PIN code: see the [Seam Quick Start](../../quickstart.md),
+  which creates an Access Grant on a sandbox August lock, or [Creating an Access
+  Grant Using Devices](creating-an-access-grant-using-devices.md). This quick
+  start walks through the more advanced access system (ACS) path, including key
+  cards, mobile keys, and Instant Keys.
 </Check>
 
 In addition, this quick start shows you that, with Access Grants, it's easy to issue users access through multiple types of access methods, such as key cards, PIN codes, mobile keys, and Instant Keys.
 
 <Info>
-Seam Instant Keys are the fastest way to share access. You can send them as links through text or email, with no app download required. For details, see [Instant Keys](../../capability-guides/instant-keys/).
+  Seam Instant Keys are the fastest way to share access. You can send them as
+  links through text or email, with no app download required. For details, see
+  [Instant Keys](../../capability-guides/instant-keys/).
 </Info>
 
-***
+---
 
 ## Before You Begin
 
@@ -27,11 +33,12 @@ Before you begin this quick start, perform the following steps:
     In this quick start, you can use a Seam virtual access system in a sandbox workspace, for example, the [virtual Salto Space access system](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/sandbox-salto-space-access-control-system).
 
     For instructions, see [Connect an Access System to Seam](../../capability-guides/access-systems/connect-an-acs-to-seam/).
+
 2.  Install a Seam SDK and create an API key.
 
     For instructions, see [Installation](https://docs.seam.co/latest/api/installation) and [API Keys](../../core-concepts/authentication/api-keys.md).
 
-***
+---
 
 ## Overview
 
@@ -40,18 +47,19 @@ This quick start walks you through the following basic steps:
 1.  Create an Access Grant.
 
     This Access Grant defines the following characteristics:
-
-    * User identity: The user to whom you want to grant access.
-    * Entrances: The set of entrances or other access points to which you want to grant the user access.
-    * Access schedule: The starting and ending times for access.
-    * Access methods: The modes of access, including key cards, PIN codes, mobile keys, and Instant Keys.
+    - User identity: The user to whom you want to grant access.
+    - Entrances: The set of entrances or other access points to which you want to grant the user access.
+    - Access schedule: The starting and ending times for access.
+    - Access methods: The modes of access, including key cards, PIN codes, mobile keys, and Instant Keys.
 
     For instructions, see [Step 1: Create an Access Grant](access-grant-quick-start.md#step-1-create-an-access-grant).
+
 2.  Poll for access method status changes or monitor for Access Grant and access method lifecycle events.
 
     These properties and events let you know what your next step is. They also alert you to when you can deliver the access methods to your user.
 
     For instructions, see [Step 2: Poll for Status Changes or Monitor for Lifecycle Events](access-grant-quick-start.md#step-2-poll-for-status-changes-or-monitor-for-lifecycle-events).
+
 3.  Deliver the created access methods to your user.
 
     The delivery method depends on the access method.
@@ -60,7 +68,7 @@ This quick start walks you through the following basic steps:
 
 :rocket: Let's get started!
 
-***
+---
 
 ## Step 1: Create an Access Grant
 
@@ -69,7 +77,7 @@ Create an Access Grant to define the "who, where, when, and how" for assigning a
 1. Find the access system ID.
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
    2. On the **Access Systems** page, locate the access system that you connected to Seam.
-   3. In the **acs\_system\_id** column for the access system, click the ID to copy it.
+   3. In the **acs_system_id** column for the access system, click the ID to copy it.
    4. Store this access system ID for future use.
 2. Create the Access Grant, as follows:
 
@@ -79,39 +87,36 @@ Create an Access Grant to define the "who, where, when, and how" for assigning a
 **Code:**
 
 ```javascript
-import { Seam } from "seam";
+import { Seam } from 'seam'
 
-const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
 
 // Identify the IDs of the entrances to which
 // you want to grant access.
 const entrances = await seam.acs.entrances.list({
   // Use the access system ID that you copied in the previous step.
-  acs_system_id: acsSystemId
-});
+  acs_system_id: acsSystemId,
+})
 
 // Create the Access Grant.
 const accessGrant = await seam.accessGrants.create({
   // Create a new user identity to represent your user.
   user_identity: {
-    full_name: "Jane Doe",
-    email_address: "jane.doe@example.com",
-    phone_number: "+15555551000"    
+    full_name: 'Jane Doe',
+    email_address: 'jane.doe@example.com',
+    phone_number: '+15555551000',
   },
   // Specify the IDs of the entrances to which you want to grant access.
   acs_entrance_ids: [
     entrances[0].acs_entrance_id,
-    entrances[1].acs_entrance_id
+    entrances[1].acs_entrance_id,
   ],
   // Specify the access methods that you want to issue.
-  requested_access_methods: [
-    {"mode": "card"},
-    {"mode": "mobile_key"}
-  ],
+  requested_access_methods: [{ mode: 'card' }, { mode: 'mobile_key' }],
   // Specify the access schedule.
-  starts_at: "2025-08-01T15:00:00.000Z",
-  ends_at: "2025-08-04T11:00:00.000Z"
-});
+  starts_at: '2025-08-01T15:00:00.000Z',
+  ends_at: '2025-08-04T11:00:00.000Z',
+})
 ```
 
 **Output:**
@@ -140,6 +145,7 @@ const accessGrant = await seam.accessGrants.create({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -154,7 +160,7 @@ mapfile -t entrances < <(
   curl -s --request POST "https://connect.getseam.com/acs/entrances/list" \
     --header "Authorization: Bearer $SEAM_API_KEY" \
     --header "Content-Type: application/json" \
-    --data "{\"acs_system_id\": \"$acs_system_id\"}" | 
+    --data "{\"acs_system_id\": \"$acs_system_id\"}" |
   jq -c '.acs_entrances[]'
 )
 
@@ -219,6 +225,7 @@ access_grant=$(curl --include --request POST "https://connect.getseam.com/access
   "ok":true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -288,6 +295,7 @@ AccessGrant(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -312,7 +320,7 @@ access_grant = seam.access_grants.create(
   user_identity: {
     full_name: "Jane Doe",
     email_address: "jane.doe@example.com",
-    phone_number: "+15555551000"    
+    phone_number: "+15555551000"
   },
   # Specify the IDs of the entrances to which you want to grant access.
   acs_entrance_ids: [
@@ -356,6 +364,7 @@ access_grant = seam.access_grants.create(
   ...
 >
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -425,6 +434,7 @@ $access_grant = $seam->access_grants->create(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -440,10 +450,11 @@ $access_grant = $seam->access_grants->create(
 ```json
 // Coming soon!
 ```
+
 </Tab>
 </Tabs>
 
-***
+---
 
 ## Step 2: Poll for Status Changes or Monitor for Lifecycle Events
 
@@ -453,8 +464,8 @@ Once you've created an Access Grant with one or more access methods, poll the cr
 
 To poll the created access methods, get these access methods by ID and look for the following status changes:
 
-* If `access_method.is_encoding_required` is `true`, you must encode the card access method onto a plastic key card. Once you've encoded the access method onto a card, this property changes to `false`.
-* When an access method is ready to be delivered to a user, `access_method.is_issued` changes to `true`. For a card access method, `access_method.is_issued` changes to `true` after you encode the plastic card. You can also view the `access_method.issued_at` property to learn when the access method was issued.
+- If `access_method.is_encoding_required` is `true`, you must encode the card access method onto a plastic key card. Once you've encoded the access method onto a card, this property changes to `false`.
+- When an access method is ready to be delivered to a user, `access_method.is_issued` changes to `true`. For a card access method, `access_method.is_issued` changes to `true` after you encode the plastic card. You can also view the `access_method.issued_at` property to learn when the access method was issued.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -463,8 +474,8 @@ To poll the created access methods, get these access methods by ID and look for 
 
 ```javascript
 await seam.accessMethods.get({
-  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-});
+  access_method_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
+})
 ```
 
 **Output:**
@@ -481,6 +492,7 @@ await seam.accessMethods.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -515,6 +527,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -541,6 +554,7 @@ AccessMethod(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -567,6 +581,7 @@ seam.access_methods.get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -593,6 +608,7 @@ $seam->access_methods->get(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -608,6 +624,7 @@ $seam->access_methods->get(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
@@ -615,10 +632,10 @@ $seam->access_methods->get(
 
 Watch for the following events that include the IDs of the created Access Grant and access methods:
 
-* `access_grant.access_granted_to_door`
-* `access_grant.access_granted_to_all_doors`
-* `access_method.card_encoding_required`&#x20;
-* `access_method.issued`
+- `access_grant.access_granted_to_door`
+- `access_grant.access_granted_to_all_doors`
+- `access_method.card_encoding_required`&#x20;
+- `access_method.issued`
 
 These events tell you what to do next. For example, if you've created a card access method, `access_method.card_encoding_required` lets you know that you need to encode the access method onto a plastic card. `access_grant.access_granted_to_all_doors` tells you that Seam has successfully created all the access methods that you requested through the Access Grant. `access_method.issued` indicates that you can now deliver the access method to your user.
 
@@ -635,14 +652,17 @@ The following example shows the payload for an `access_method.card_encoding_requ
 }
 ```
 
-***
+---
 
 ## Step 3: Deliver the Access Methods
 
 Once the access methods are ready to deliver to your user, retrieve each access method by ID. Remember, the returned access grant includes the IDs of all the requested access methods. Then, deliver each access method to your user. The delivery mechanism varies for different access method modes.
 
 <Info>
-If you've created an Access Grant that includes a mobile key, the access grant also contains the corresponding Instant Key URL, for added efficiency. In this case, you do not need to retrieve the access method. Instead, you can identify the Instant Key URL directly from the returned Access Grant.
+  If you've created an Access Grant that includes a mobile key, the access grant
+  also contains the corresponding Instant Key URL, for added efficiency. In this
+  case, you do not need to retrieve the access method. Instead, you can identify
+  the Instant Key URL directly from the returned Access Grant.
 </Info>
 
 ### Get an Access Method
@@ -656,8 +676,8 @@ Retrieve each access method that you created as part of the Access Grant. Note t
 
 ```javascript
 await seam.accessMethods.get({
-  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-});
+  access_method_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
+})
 ```
 
 **Output:**
@@ -674,6 +694,7 @@ await seam.accessMethods.get({
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -708,6 +729,7 @@ curl -X 'POST' \
   "ok": true
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -734,6 +756,7 @@ AccessMethod(
   ...
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -760,6 +783,7 @@ seam.access_methods.get(
   ...
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -786,6 +810,7 @@ $seam->access_methods->get(
   ...
 ];
 ```
+
 </Tab>
 
 <Tab title="C#">
@@ -801,6 +826,7 @@ $seam->access_methods->get(
 ```json
 // Coming Soon!
 ```
+
 </Tab>
 </Tabs>
 
@@ -808,16 +834,80 @@ $seam->access_methods->get(
 
 The way in which you deliver an access method depends on the mode of access. The following table describes the delivery mechanisms:
 
-<table><thead><tr><th width="188.4000244140625">Access Method Mode</th><th>Delivery Mechanism</th></tr></thead><tbody><tr><td>PIN code</td><td>You can retrieve the access method by ID. The returned access method resource includes the <code>code</code> that you can share with your user.</td></tr><tr><td>Plastic key card</td><td>Some access systems require you to encode plastic key cards. In this case, the access method's <code>is_encoding_required</code> property is <code>true</code>. You can use the Seam API or Seam Console to encode and scan the cards. For details, see <a href="../../capability-guides/access-systems/working-with-card-encoders-and-scanners/">Working with Card Encoders and Scanners</a>.<br />Once you've encoded the card, the access method's <code>is_encoding_required</code> property changes to <code>false</code>, and its <code>is_issued</code> property changes to <code>true</code>. The card is ready to be delivered to your user.</td></tr><tr><td>Mobile key</td><td>You deliver a mobile key to your user within your own mobile app that you develop using the Seam mobile SDKs. For mobile keys, the access method includes a <code>client_session_token</code> property that you can use to identify the client session and client session token that you need to initialize the Seam client on your user's mobile device. Then, your user simply taps a button in your app to unlock the door. For details, see <a href="../../capability-guides/mobile-access/">Mobile Access</a>.</td></tr><tr><td>Instant Key</td><td>Each mobile key that you create also includes an Instant Key. Seam Instant Keys are the most streamlined mobile access experience available today. Both the Access Grant and the mobile key access method include the <code>instant_key_url</code> property. You deliver this URL to your user by sending it through text or email. There's no app download required. You can also embed an Instant Key in your own app. For details, see <a href="../../capability-guides/instant-keys/">Instant Keys</a> and <a href="../../capability-guides/instant-keys/delivering-instant-keys.md">Delivering Instant Keys</a>.</td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th width='188.4000244140625'>Access Method Mode</th>
+      <th>Delivery Mechanism</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PIN code</td>
+      <td>
+        You can retrieve the access method by ID. The returned access method
+        resource includes the <code>code</code> that you can share with your
+        user.
+      </td>
+    </tr>
+    <tr>
+      <td>Plastic key card</td>
+      <td>
+        Some access systems require you to encode plastic key cards. In this
+        case, the access method's <code>is_encoding_required</code> property is{' '}
+        <code>true</code>. You can use the Seam API or Seam Console to encode
+        and scan the cards. For details, see{' '}
+        <a href='../../capability-guides/access-systems/working-with-card-encoders-and-scanners/'>
+          Working with Card Encoders and Scanners
+        </a>
+        .<br />
+        Once you've encoded the card, the access method's{' '}
+        <code>is_encoding_required</code> property changes to <code>false</code>
+        , and its <code>is_issued</code> property changes to <code>true</code>.
+        The card is ready to be delivered to your user.
+      </td>
+    </tr>
+    <tr>
+      <td>Mobile key</td>
+      <td>
+        You deliver a mobile key to your user within your own mobile app that
+        you develop using the Seam mobile SDKs. For mobile keys, the access
+        method includes a <code>client_session_token</code> property that you
+        can use to identify the client session and client session token that you
+        need to initialize the Seam client on your user's mobile device. Then,
+        your user simply taps a button in your app to unlock the door. For
+        details, see{' '}
+        <a href='../../capability-guides/mobile-access/'>Mobile Access</a>.
+      </td>
+    </tr>
+    <tr>
+      <td>Instant Key</td>
+      <td>
+        Each mobile key that you create also includes an Instant Key. Seam
+        Instant Keys are the most streamlined mobile access experience available
+        today. Both the Access Grant and the mobile key access method include
+        the <code>instant_key_url</code> property. You deliver this URL to your
+        user by sending it through text or email. There's no app download
+        required. You can also embed an Instant Key in your own app. For
+        details, see{' '}
+        <a href='../../capability-guides/instant-keys/'>Instant Keys</a> and{' '}
+        <a href='../../capability-guides/instant-keys/delivering-instant-keys.md'>
+          Delivering Instant Keys
+        </a>
+        .
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-***
+---
 
 ## Next Steps
 
 Now that you've created your first Access Grant, learn more about Access Grants.
 
-* [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
-* [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md)
-* [Delivering Access Methods](delivering-access-methods.md)
-* [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
-* [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)
+- [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
+- [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md)
+- [Delivering Access Methods](delivering-access-methods.md)
+- [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
+- [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

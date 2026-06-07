@@ -1,12 +1,11 @@
 ---
-title: "Get an Entrance"
+title: 'Get an Entrance'
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
-
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +16,8 @@ Returns a specified access system entrance.
 
 ```javascript
 await seam.acs.entrances.get({
-  acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1",
-});
+  acs_entrance_id: 'c931c953-4a5b-4f66-9189-500d39959ad1',
+})
 ```
 
 #### Output:
@@ -43,6 +42,7 @@ await seam.acs.entrances.get({
   }
 }
 ```
+
 </Tab>
 
 <Tab title="cURL">
@@ -85,6 +85,7 @@ EOF
   }
 }
 ```
+
 </Tab>
 
 <Tab title="Python">
@@ -119,6 +120,7 @@ AcsEntrance(
     },
 )
 ```
+
 </Tab>
 
 <Tab title="Ruby">
@@ -153,6 +155,7 @@ seam.acs.entrances.get(acs_entrance_id: "c931c953-4a5b-4f66-9189-500d39959ad1")
   },
 }
 ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -190,6 +193,7 @@ $seam->acs->entrances->get(
     ],
 ];
 ```
+
 </Tab>
 
 <Tab title="Seam CLI">
@@ -224,10 +228,10 @@ seam acs entrances get --acs_entrance_id "c931c953-4a5b-4f66-9189-500d39959ad1"
   }
 }
 ```
+
 </Tab>
 
 </Tabs>
-
 
 <details>
 
@@ -237,16 +241,16 @@ seam acs entrances get --acs_entrance_id "c931c953-4a5b-4f66-9189-500d39959ad1"
 - Client session token
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
 </details>
 
 ## Request Parameters
 
-**`acs_entrance_id`** *String* (Required)
+**`acs_entrance_id`** _String_ (Required)
 
 ID of the entrance that you want to get.
 
 ---
-
 
 ## Response
 
@@ -256,11 +260,8 @@ Returns:
 
 </Check>
 
-
 <Tabs>
 <Tab title="JSON">
-
-
 
 ```json
 {
@@ -283,5 +284,6 @@ Returns:
   }
 }
 ```
+
 </Tab>
 </Tabs>
