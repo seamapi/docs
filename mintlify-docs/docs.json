@@ -1,10 +1,10 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Seam",
-  "theme": "quill",
+  "theme": "mint",
   "logo": {
-    "light": "/images/seam-wordmark-light.png",
-    "dark": "/images/seam-wordmark-dark.png"
+    "light": "/images/seam-logo-light.png",
+    "dark": "/images/seam-logo-dark.png"
   },
   "favicon": "/images/favicon.png",
   "colors": {
@@ -17,57 +17,693 @@
       {
         "group": "Overview",
         "pages": [
-          "README",
-          "quickstart",
-          "go-live"
+          "api-reference/README",
+          "api-reference/installation",
+          "api-reference/mcp-installation",
+          "api-reference/authentication",
+          "api-reference/pagination",
+          "api-reference/rate-limits-and-guardrails",
+          "api-reference/access_codes",
+          "api-reference/access_codes/create",
+          "api-reference/access_codes/create_multiple",
+          "api-reference/access_codes/delete",
+          "api-reference/access_codes/generate_code",
+          "api-reference/access_codes/get",
+          "api-reference/access_codes/list",
+          "api-reference/access_codes/pull_backup_access_code",
+          "api-reference/access_codes/report_device_constraints",
+          "api-reference/access_codes/update",
+          "api-reference/access_codes/update_multiple",
+          "api-reference/acs",
+          "api-reference/access_grants",
+          "api-reference/access_grants/request_access_methods",
+          "api-reference/access_grants/create",
+          "api-reference/access_grants/delete",
+          "api-reference/access_grants/get",
+          "api-reference/access_grants/get_related",
+          "api-reference/access_grants/list",
+          "api-reference/access_grants/update",
+          "api-reference/access_methods",
+          "api-reference/access_methods/delete",
+          "api-reference/access_methods/encode",
+          "api-reference/access_methods/get",
+          "api-reference/access_methods/get_related",
+          "api-reference/access_methods/list",
+          "api-reference/action_attempts",
+          "api-reference/action_attempts/get",
+          "api-reference/action_attempts/list",
+          "api-reference/client_sessions",
+          "api-reference/client_sessions/create",
+          "api-reference/client_sessions/delete",
+          "api-reference/client_sessions/get",
+          "api-reference/client_sessions/get_or_create",
+          "api-reference/client_sessions/grant_access",
+          "api-reference/client_sessions/list",
+          "api-reference/client_sessions/revoke",
+          "api-reference/connect_webviews",
+          "api-reference/connect_webviews/create",
+          "api-reference/connect_webviews/delete",
+          "api-reference/connect_webviews/get",
+          "api-reference/connect_webviews/list",
+          "api-reference/connected_accounts",
+          "api-reference/connected_accounts/delete",
+          "api-reference/connected_accounts/get",
+          "api-reference/connected_accounts/list",
+          "api-reference/connected_accounts/sync",
+          "api-reference/connected_accounts/update",
+          "api-reference/customers",
+          "api-reference/customers/create_portal",
+          "api-reference/customers/delete_data",
+          "api-reference/customers/push_data",
+          "api-reference/devices",
+          "api-reference/devices/get",
+          "api-reference/devices/list_device_providers",
+          "api-reference/devices/list",
+          "api-reference/devices/report_provider_metadata",
+          "api-reference/devices/update",
+          "api-reference/events",
+          "api-reference/events/get",
+          "api-reference/events/list",
+          "api-reference/instant_keys",
+          "api-reference/instant_keys/delete",
+          "api-reference/instant_keys/get",
+          "api-reference/instant_keys/list",
+          "api-reference/locks",
+          "api-reference/locks/configure_auto_lock",
+          "api-reference/locks/get",
+          "api-reference/locks/list",
+          "api-reference/locks/lock_door",
+          "api-reference/locks/unlock_door",
+          "api-reference/noise_sensors",
+          "api-reference/noise_sensors/list",
+          "api-reference/phones",
+          "api-reference/phones/deactivate",
+          "api-reference/phones/get",
+          "api-reference/phones/list",
+          "api-reference/spaces",
+          "api-reference/spaces/add_devices",
+          "api-reference/spaces/add_acs_entrances",
+          "api-reference/spaces/create",
+          "api-reference/spaces/delete",
+          "api-reference/spaces/get",
+          "api-reference/spaces/get_related",
+          "api-reference/spaces/list",
+          "api-reference/spaces/remove_devices",
+          "api-reference/spaces/remove_acs_entrances",
+          "api-reference/spaces/update",
+          "api-reference/thermostats",
+          "api-reference/thermostats/activate_climate_preset",
+          "api-reference/thermostats/create_climate_preset",
+          "api-reference/thermostats/delete_climate_preset",
+          "api-reference/thermostats/list",
+          "api-reference/thermostats/set_temperature_threshold",
+          "api-reference/thermostats/set_fallback_climate_preset",
+          "api-reference/thermostats/set_fan_mode",
+          "api-reference/thermostats/set_hvac_mode",
+          "api-reference/thermostats/cool",
+          "api-reference/thermostats/heat",
+          "api-reference/thermostats/heat_cool",
+          "api-reference/thermostats/off",
+          "api-reference/thermostats/update_climate_preset",
+          "api-reference/thermostats/update_weekly_program",
+          "api-reference/user_identities",
+          "api-reference/user_identities/add_acs_user",
+          "api-reference/user_identities/create",
+          "api-reference/user_identities/delete",
+          "api-reference/user_identities/generate_instant_key",
+          "api-reference/user_identities/get",
+          "api-reference/user_identities/grant_access_to_device",
+          "api-reference/user_identities/list_accessible_devices",
+          "api-reference/user_identities/list_accessible_entrances",
+          "api-reference/user_identities/list_acs_systems",
+          "api-reference/user_identities/list_acs_users",
+          "api-reference/user_identities/list",
+          "api-reference/user_identities/remove_acs_user",
+          "api-reference/user_identities/revoke_access_to_device",
+          "api-reference/user_identities/update",
+          "api-reference/webhooks",
+          "api-reference/webhooks/create",
+          "api-reference/webhooks/delete",
+          "api-reference/webhooks/get",
+          "api-reference/webhooks/list",
+          "api-reference/webhooks/update",
+          "api-reference/workspaces",
+          "api-reference/workspaces/create",
+          "api-reference/workspaces/get",
+          "api-reference/workspaces/list",
+          "api-reference/workspaces/reset_sandbox",
+          "api-reference/workspaces/update"
+        ]
+      },
+      {
+        "group": "Access Code Simulations",
+        "pages": [
+          "api-reference/access_codes/simulate",
+          "api-reference/access_codes/simulate/create_unmanaged_access_code"
+        ]
+      },
+      {
+        "group": "Unmanaged Access Codes",
+        "pages": [
+          "api-reference/access_codes/unmanaged",
+          "api-reference/access_codes/unmanaged/convert_to_managed",
+          "api-reference/access_codes/unmanaged/delete",
+          "api-reference/access_codes/unmanaged/get",
+          "api-reference/access_codes/unmanaged/list",
+          "api-reference/access_codes/unmanaged/update"
+        ]
+      },
+      {
+        "group": "Access Groups",
+        "pages": [
+          "api-reference/acs/access_groups",
+          "api-reference/acs/access_groups/add_user",
+          "api-reference/acs/access_groups/delete",
+          "api-reference/acs/access_groups/get",
+          "api-reference/acs/access_groups/list",
+          "api-reference/acs/access_groups/list_users",
+          "api-reference/acs/access_groups/list_accessible_entrances",
+          "api-reference/acs/access_groups/remove_user"
+        ]
+      },
+      {
+        "group": "ACS Users",
+        "pages": [
+          "api-reference/acs/users",
+          "api-reference/acs/users/add_to_access_group",
+          "api-reference/acs/users/create",
+          "api-reference/acs/users/delete",
+          "api-reference/acs/users/get",
+          "api-reference/acs/users/list_accessible_entrances",
+          "api-reference/acs/users/list",
+          "api-reference/acs/users/remove_from_access_group",
+          "api-reference/acs/users/revoke_access_to_all_entrances",
+          "api-reference/acs/users/suspend",
+          "api-reference/acs/users/unsuspend",
+          "api-reference/acs/users/update"
+        ]
+      },
+      {
+        "group": "Credentials",
+        "pages": [
+          "api-reference/acs/credentials",
+          "api-reference/acs/credentials/assign",
+          "api-reference/acs/credentials/create",
+          "api-reference/acs/credentials/delete",
+          "api-reference/acs/credentials/get",
+          "api-reference/acs/credentials/list_accessible_entrances",
+          "api-reference/acs/credentials/list",
+          "api-reference/acs/credentials/unassign",
+          "api-reference/acs/credentials/update"
+        ]
+      },
+      {
+        "group": "Encoders",
+        "pages": [
+          "api-reference/acs/encoders",
+          "api-reference/acs/encoders/encode_credential",
+          "api-reference/acs/encoders/get",
+          "api-reference/acs/encoders/list",
+          "api-reference/acs/encoders/scan_credential",
+          "api-reference/acs/encoders/simulate",
+          "api-reference/acs/encoders/simulate/next_credential_encode_will_fail",
+          "api-reference/acs/encoders/simulate/next_credential_encode_will_succeed",
+          "api-reference/acs/encoders/simulate/next_credential_scan_will_fail",
+          "api-reference/acs/encoders/simulate/next_credential_scan_will_succeed"
+        ]
+      },
+      {
+        "group": "Entrances",
+        "pages": [
+          "api-reference/acs/entrances",
+          "api-reference/acs/entrances/get",
+          "api-reference/acs/entrances/grant_access",
+          "api-reference/acs/entrances/list_credentials_with_access",
+          "api-reference/acs/entrances/list",
+          "api-reference/acs/entrances/unlock"
+        ]
+      },
+      {
+        "group": "Systems",
+        "pages": [
+          "api-reference/acs/systems",
+          "api-reference/acs/systems/get",
+          "api-reference/acs/systems/list",
+          "api-reference/acs/systems/list_compatible_credential_manager_acs_systems",
+          "api-reference/acs/systems/report_devices"
+        ]
+      },
+      {
+        "group": "Unmanaged",
+        "pages": [
+          "api-reference/access_grants/unmanaged",
+          "api-reference/access_grants/unmanaged/get",
+          "api-reference/access_grants/unmanaged/list",
+          "api-reference/access_grants/unmanaged/update"
+        ]
+      },
+      {
+        "group": "Unmanaged",
+        "pages": [
+          "api-reference/access_methods/unmanaged",
+          "api-reference/access_methods/unmanaged/get",
+          "api-reference/access_methods/unmanaged/list"
+        ]
+      },
+      {
+        "group": "Simulate",
+        "pages": [
+          "api-reference/connected_accounts/simulate",
+          "api-reference/connected_accounts/simulate/disconnect"
+        ]
+      },
+      {
+        "group": "Device Simulations",
+        "pages": [
+          "api-reference/devices/simulate",
+          "api-reference/devices/simulate/connect",
+          "api-reference/devices/simulate/disconnect",
+          "api-reference/devices/simulate/remove",
+          "api-reference/devices/simulate/connect_to_hub",
+          "api-reference/devices/simulate/disconnect_from_hub",
+          "api-reference/devices/simulate/paid_subscription"
+        ]
+      },
+      {
+        "group": "Unmanaged Devices",
+        "pages": [
+          "api-reference/devices/unmanaged",
+          "api-reference/devices/unmanaged/get",
+          "api-reference/devices/unmanaged/list",
+          "api-reference/devices/unmanaged/update"
+        ]
+      },
+      {
+        "group": "Lock Simulations",
+        "pages": [
+          "api-reference/locks/simulate",
+          "api-reference/locks/simulate/keypad_code_entry",
+          "api-reference/locks/simulate/manual_lock_via_keypad"
+        ]
+      },
+      {
+        "group": "Noise Sensor Simulations",
+        "pages": [
+          "api-reference/noise_sensors/simulate",
+          "api-reference/noise_sensors/simulate/trigger_noise_threshold"
+        ]
+      },
+      {
+        "group": "Noise Thresholds",
+        "pages": [
+          "api-reference/noise_sensors/noise_thresholds",
+          "api-reference/noise_sensors/noise_thresholds/create",
+          "api-reference/noise_sensors/noise_thresholds/delete",
+          "api-reference/noise_sensors/noise_thresholds/get",
+          "api-reference/noise_sensors/noise_thresholds/list",
+          "api-reference/noise_sensors/noise_thresholds/update"
+        ]
+      },
+      {
+        "group": "Phone Simulations",
+        "pages": [
+          "api-reference/phones/simulate",
+          "api-reference/phones/simulate/create_sandbox_phone"
+        ]
+      },
+      {
+        "group": "Daily Programs",
+        "pages": [
+          "api-reference/thermostats/daily_programs",
+          "api-reference/thermostats/daily_programs/create",
+          "api-reference/thermostats/daily_programs/delete",
+          "api-reference/thermostats/daily_programs/update"
+        ]
+      },
+      {
+        "group": "Thermostat Schedules",
+        "pages": [
+          "api-reference/thermostats/schedules",
+          "api-reference/thermostats/schedules/create",
+          "api-reference/thermostats/schedules/delete",
+          "api-reference/thermostats/schedules/get",
+          "api-reference/thermostats/schedules/list",
+          "api-reference/thermostats/schedules/update"
+        ]
+      },
+      {
+        "group": "Thermostat Simulations",
+        "pages": [
+          "api-reference/thermostats/simulate",
+          "api-reference/thermostats/simulate/hvac_mode_adjusted",
+          "api-reference/thermostats/simulate/temperature_reached"
+        ]
+      },
+      {
+        "group": "Unmanaged",
+        "pages": [
+          "api-reference/user_identities/unmanaged",
+          "api-reference/user_identities/unmanaged/get",
+          "api-reference/user_identities/unmanaged/list",
+          "api-reference/user_identities/unmanaged/update"
         ]
       }
     ],
     "tabs": [
+      {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "brand-guides/README",
+              "brand-guides/2n-intercom-systems",
+              "brand-guides/2n-intercom-systems/2n-system-set-up-instructions",
+              "brand-guides/2n-intercom-systems/get-started-with-2n-intercoms",
+              "brand-guides/2n-intercom-systems/2n-intercoms-sample-data",
+              "brand-guides/33-lock-devices",
+              "brand-guides/33-lock-devices/get-started-with-33-lock-devices",
+              "brand-guides/4suites-locks",
+              "brand-guides/4suites-locks/get-started-with-4suites-locks",
+              "brand-guides/4suites-locks/4suites-locks-sample-data",
+              "brand-guides/akiles-locks",
+              "brand-guides/akiles-locks/get-started-with-akiles-locks",
+              "brand-guides/akiles-locks/sandbox-akiles-locks",
+              "brand-guides/assa-abloy-vingcard-credential-services",
+              "brand-guides/assa-abloy-vingcard-credential-services/sandbox-assa-abloy-vingcard-credential-services",
+              "brand-guides/assa-abloy-visionline-access-control-system",
+              "brand-guides/assa-abloy-visionline-access-control-system/mobile-credential-related-properties",
+              "brand-guides/assa-abloy-visionline-access-control-system/common-use-cases",
+              "brand-guides/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development",
+              "brand-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development",
+              "brand-guides/assa-abloy-visionline-access-control-system/creating-visionline-card-based-credentials",
+              "brand-guides/assa-abloy-visionline-access-control-system/assa-abloy-visionline-access-management-system-sample-data",
+              "brand-guides/assa-abloy-vostio-access-control-system",
+              "brand-guides/assa-abloy-vostio-access-control-system/sandbox-assa-abloy-vostio-access-control-system",
+              "brand-guides/avigilon-alta-access-system",
+              "brand-guides/avigilon-alta-access-system/avigilon-alta-access-system-sample-data",
+              "brand-guides/brivo-access",
+              "brand-guides/brivo-access/brivo-access-setup-guide",
+              "brand-guides/brivo-access/brivo-access-sample-data",
+              "brand-guides/controlbyweb-relays",
+              "brand-guides/controlbyweb-relays/controlbyweb-relays-sample-data",
+              "brand-guides/dormakaba-ambiance-access-control-system",
+              "brand-guides/dormakaba-ambiance-access-control-system/dormakaba-ambiance-setup-guide",
+              "brand-guides/dormakaba-ambiance-access-control-system/sandbox-dormakaba-ambiance-access-control-system",
+              "brand-guides/dormakaba-community-access-control-system",
+              "brand-guides/dormakaba-community-access-control-system/dormakaba-community-setup-guide",
+              "brand-guides/dormakaba-community-access-control-system/sandbox-dormakaba-community-access-control-system",
+              "brand-guides/dormakaba-oracode-locks",
+              "brand-guides/dormakaba-oracode-locks/get-started-with-dormakaba-oracode-locks",
+              "brand-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes",
+              "brand-guides/dormakaba-oracode-locks/programming-offline-access-codes-on-dormakaba-oracode-locks",
+              "brand-guides/dormakaba-oracode-locks/dormakaba-oracode-setup-guide",
+              "brand-guides/dormakaba-oracode-locks/dormakaba-oracode-sample-data",
+              "brand-guides/genie-garage-openers",
+              "brand-guides/genie-garage-openers/genie-sample-data",
+              "brand-guides/google-nest-thermostats",
+              "brand-guides/google-nest-thermostats/get-started-with-nest-thermostats",
+              "brand-guides/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development",
+              "brand-guides/google-nest-thermostats/google-nest-thermostats-sample-data",
+              "brand-guides/honeywell-thermostats",
+              "brand-guides/honeywell-thermostats/get-started-with-honeywell-thermostats",
+              "brand-guides/honeywell-thermostats/sandbox-honeywell-thermostats",
+              "brand-guides/hotek-access-control-system",
+              "brand-guides/hotek-access-control-system/sandbox-hotek-access-control-system",
+              "brand-guides/igloohome-locks",
+              "brand-guides/igloohome-locks/igloohome-error-and-warning-codes",
+              "brand-guides/igloohome-locks/creating-igloohome-offline-access-codes",
+              "brand-guides/igloohome-locks/get-started-with-igloo-locks",
+              "brand-guides/igloohome-locks/igloohome-sample-data",
+              "brand-guides/keynest-key-lockers",
+              "brand-guides/keynest-key-lockers/keynest-setup-instructions",
+              "brand-guides/keynest-key-lockers/sandbox-keynest-lockers",
+              "brand-guides/latch-access-control-system",
+              "brand-guides/latch-access-control-system/latch-setup-guide",
+              "brand-guides/latch-access-control-system/programming-code-based-latch-credentials",
+              "brand-guides/latch-access-control-system/programming-latch-acs-mobile-credentials",
+              "brand-guides/latch-access-control-system/sandbox-latch-access-control-system",
+              "brand-guides/lockly-locks",
+              "brand-guides/lockly-locks/lockly-setup-guide",
+              "brand-guides/lockly-locks/creating-lockly-offline-access-codes",
+              "brand-guides/lockly-locks/lockly-lock-sample-data",
+              "brand-guides/pti-storlogix-cloud",
+              "brand-guides/pti-storlogix-cloud/pti-storlogix-cloud-sample-data",
+              "brand-guides/salto-ks-access-control-system",
+              "brand-guides/salto-ks-access-control-system/salto-ks-setup-instructions",
+              "brand-guides/salto-ks-access-control-system/programming-code-based-salto-ks-credentials",
+              "brand-guides/salto-ks-access-control-system/programming-salto-ks-mobile-credentials",
+              "brand-guides/salto-ks-access-control-system/special-requirements-for-android-mobile-access-sdk-development",
+              "brand-guides/salto-ks-access-control-system/sandbox-salto-ks-access-control-system",
+              "brand-guides/salto-proaccess-space-access-system",
+              "brand-guides/salto-proaccess-space-access-system/salto-space-setup-instructions",
+              "brand-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials",
+              "brand-guides/salto-proaccess-space-access-system/programming-salto-space-mobile-credentials",
+              "brand-guides/salto-proaccess-space-access-system/sandbox-salto-space-access-control-system",
+              "brand-guides/schlage-locks",
+              "brand-guides/schlage-locks/schlage-locks-setup-instructions",
+              "brand-guides/schlage-locks/get-started-with-schlage-locks",
+              "brand-guides/schlage-locks/schlage-locks-daylight-savings-time-adjustments",
+              "brand-guides/schlage-locks/schlage-encode-sample-data",
+              "brand-guides/sensi-thermostats",
+              "brand-guides/sensi-thermostats/get-started-with-sensi-thermostats",
+              "brand-guides/sensi-thermostats/sandbox-sensi-thermostats",
+              "brand-guides/smartthings-hubs-+-devices",
+              "brand-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks",
+              "brand-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-thermostats",
+              "brand-guides/smartthings-hubs-+-devices/smartthings-sample-data",
+              "brand-guides/tedee-locks",
+              "brand-guides/tedee-locks/get-started-with-tedee-locks",
+              "brand-guides/tedee-locks/sandbox-tedee-locks",
+              "brand-guides/ultraloq-locks",
+              "brand-guides/ultraloq-locks/ultraloq-setup-guide",
+              "brand-guides/ultraloq-locks/configuring-ultraloq-device-timezones",
+              "brand-guides/ultraloq-locks/creating-ultraloq-access-codes"
+            ]
+          },
+          {
+            "group": "Visionline ACS Setup Instructions",
+            "pages": [
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/instructions-for-issuing-visionline-instant-keys",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace",
+              "brand-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam"
+            ]
+          },
+          {
+            "group": "Configuring Visionline Mobile Credentials",
+            "pages": [
+              "brand-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials",
+              "brand-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials",
+              "brand-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials",
+              "brand-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/retrieving-guest-and-common-entrances",
+              "brand-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager",
+              "brand-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/updating-guest-mobile-credentials",
+              "brand-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/revoking-mobile-credentials"
+            ]
+          },
+          {
+            "group": "August Locks",
+            "pages": [
+              "brand-guides/august-locks",
+              "brand-guides/august-locks/get-started-with-august-locks",
+              "brand-guides/august-locks/august-locks-sample-data"
+            ]
+          },
+          {
+            "group": "ecobee Thermostats",
+            "pages": [
+              "brand-guides/ecobee-thermostats",
+              "brand-guides/ecobee-thermostats/get-started-with-ecobee-thermostats",
+              "brand-guides/ecobee-thermostats/ecobee-sample-data"
+            ]
+          },
+          {
+            "group": "Kwikset Locks",
+            "pages": [
+              "brand-guides/kwikset-locks",
+              "brand-guides/kwikset-locks/get-started-with-kwikset-wifi-locks",
+              "brand-guides/kwikset-locks/kwikset-locks-sample-data"
+            ]
+          },
+          {
+            "group": "Minut Sensors",
+            "pages": [
+              "brand-guides/minut-sensors",
+              "brand-guides/minut-sensors/get-started-with-minut-sensors",
+              "brand-guides/minut-sensors/minut-noise-sensor-sample-data"
+            ]
+          },
+          {
+            "group": "NoiseAware Sensors",
+            "pages": [
+              "brand-guides/noiseaware-sensors",
+              "brand-guides/noiseaware-sensors/get-started-with-noiseaware-sensors",
+              "brand-guides/noiseaware-sensors/noiseaware-sample-data"
+            ]
+          },
+          {
+            "group": "Nuki Locks",
+            "pages": [
+              "brand-guides/nuki-locks",
+              "brand-guides/nuki-locks/get-started-with-nuki-locks",
+              "brand-guides/nuki-locks/nuki-sample-data"
+            ]
+          },
+          {
+            "group": "Salto KS Locks",
+            "pages": [
+              "brand-guides/salto-locks",
+              "brand-guides/salto-locks/get-started-with-salto-locks",
+              "brand-guides/salto-locks/sandbox-salto-ks-locks"
+            ]
+          },
+          {
+            "group": "TTLock Locks",
+            "pages": [
+              "brand-guides/ttlock-locks",
+              "brand-guides/ttlock-locks/get-started-with-ttlock-devices",
+              "brand-guides/ttlock-locks/ttlock-sample-data"
+            ]
+          },
+          {
+            "group": "Wyze Locks",
+            "pages": [
+              "brand-guides/wyze-locks",
+              "brand-guides/wyze-locks/get-started-with-wyze-locks",
+              "brand-guides/wyze-locks/wyze-sample-data"
+            ]
+          },
+          {
+            "group": "Yale Locks",
+            "pages": [
+              "brand-guides/yale-locks",
+              "brand-guides/yale-locks/get-started-with-yale-locks",
+              "brand-guides/yale-locks/yale-sample-data"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "guides/README",
+              "guides/quickstart",
+              "guides/go-live"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Use Cases",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "guides/use-cases/granting-access",
+              "guides/use-cases/granting-access/access-grant-quick-start",
+              "guides/use-cases/granting-access/creating-an-access-grant-using-devices",
+              "guides/use-cases/granting-access/creating-an-access-grant-using-spaces",
+              "guides/use-cases/granting-access/creating-an-access-grant-using-entrances",
+              "guides/use-cases/granting-access/delivering-access-methods",
+              "guides/use-cases/granting-access/reservation-access-grants",
+              "guides/use-cases/granting-access/retrieving-access-grants-and-access-methods",
+              "guides/use-cases/granting-access/updating-an-access-grant",
+              "guides/use-cases/granting-access/revoking-an-access-method",
+              "guides/use-cases/granting-access/deleting-an-access-grant"
+            ]
+          }
+        ]
+      },
       {
         "tab": "Core Concepts",
         "groups": [
           {
             "group": "Overview",
             "pages": [
-              "core-concepts/overview",
-              "core-concepts/seam-console",
-              "core-concepts/seam-console/seam-online-cli",
-              "core-concepts/workspaces",
-              "core-concepts/authentication",
-              "core-concepts/authentication/api-keys",
-              "core-concepts/authentication/personal-access-tokens",
-              "core-concepts/connect-webviews",
-              "core-concepts/connect-webviews/connect-webview-process",
-              "core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app",
-              "core-concepts/connect-webviews/verifying-successful-account-connection",
-              "core-concepts/connect-webviews/retrieving-devices-or-access-control-systems-connected-through-a-connect-webview",
-              "core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview",
-              "core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata",
-              "core-concepts/connect-webviews/customizing-connect-webviews",
-              "core-concepts/devices",
-              "core-concepts/devices/displaying-device-health",
-              "core-concepts/devices/displaying-device-power-status",
-              "core-concepts/devices/managed-and-unmanaged-devices",
-              "core-concepts/devices/adding-custom-metadata-to-a-device",
-              "core-concepts/devices/filtering-devices-by-custom-metadata",
-              "core-concepts/devices/handling-device-errors",
-              "core-concepts/devices/testing-your-app-against-device-disconnection-and-removal",
-              "core-concepts/providers",
-              "core-concepts/providers/provider-metadata",
-              "core-concepts/connected-accounts",
-              "core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account",
-              "core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata",
-              "device-guides/reconnecting-an-account",
-              "core-concepts/mapping-your-resources-to-seam-resources",
-              "core-concepts/action-attempts"
+              "guides/core-concepts/overview",
+              "guides/core-concepts/seam-console",
+              "guides/core-concepts/seam-console/seam-online-cli",
+              "guides/core-concepts/workspaces",
+              "guides/core-concepts/authentication",
+              "guides/core-concepts/authentication/api-keys",
+              "guides/core-concepts/authentication/personal-access-tokens",
+              "guides/core-concepts/connect-webviews",
+              "guides/core-concepts/connect-webviews/connect-webview-process",
+              "guides/core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app",
+              "guides/core-concepts/connect-webviews/verifying-successful-account-connection",
+              "guides/core-concepts/connect-webviews/retrieving-devices-or-access-control-systems-connected-through-a-connect-webview",
+              "guides/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview",
+              "guides/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata",
+              "guides/core-concepts/connect-webviews/customizing-connect-webviews",
+              "guides/core-concepts/devices",
+              "guides/core-concepts/devices/displaying-device-health",
+              "guides/core-concepts/devices/displaying-device-power-status",
+              "guides/core-concepts/devices/managed-and-unmanaged-devices",
+              "guides/core-concepts/devices/adding-custom-metadata-to-a-device",
+              "guides/core-concepts/devices/filtering-devices-by-custom-metadata",
+              "guides/core-concepts/devices/handling-device-errors",
+              "guides/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal",
+              "guides/core-concepts/providers",
+              "guides/core-concepts/providers/provider-metadata",
+              "guides/core-concepts/connected-accounts",
+              "guides/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account",
+              "guides/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata",
+              "guides/core-concepts/connected-accounts/reconnecting-an-account",
+              "guides/core-concepts/mapping-your-resources-to-seam-resources",
+              "guides/core-concepts/action-attempts"
             ]
           },
           {
             "group": "Client Sessions and Client Session Tokens",
             "pages": [
-              "core-concepts/authentication/client-session-tokens",
-              "core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend"
+              "guides/core-concepts/authentication/client-session-tokens",
+              "guides/core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend"
             ]
           }
         ]
@@ -78,139 +714,131 @@
           {
             "group": "Overview",
             "pages": [
-              "capability-guides/device-and-system-capabilities",
-              "products/smart-locks",
-              "products/smart-locks/lock-and-unlock",
-              "products/access-systems",
-              "capability-guides/access-systems/retrieving-entrance-details",
-              "capability-guides/access-systems/troubleshooting-your-access-control-system",
-              "capability-guides/mobile-access",
-              "capability-guides/mobile-access/mobile-access-setup",
-              "capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities",
-              "capability-guides/mobile-access/managing-phones-for-a-user-identity",
-              "capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system",
-              "capability-guides/mobile-access/developing-in-a-sandbox-workspace",
-              "capability-guides/access-grants",
-              "capability-guides/access-grants/access-grant-quick-start",
-              "capability-guides/access-grants/creating-an-access-grant-using-entrances",
-              "capability-guides/access-grants/creating-an-access-grant-using-spaces",
-              "capability-guides/access-grants/delivering-access-methods",
-              "capability-guides/access-grants/reservation-access-grants",
-              "capability-guides/access-grants/retrieving-access-grants-and-access-methods",
-              "capability-guides/access-grants/updating-an-access-grant",
-              "capability-guides/access-grants/revoking-an-access-method",
-              "capability-guides/access-grants/deleting-an-access-grant",
-              "capability-guides/instant-keys",
-              "capability-guides/instant-keys/how-instant-keys-work",
-              "capability-guides/instant-keys/setting-up-your-site-for-instant-keys",
-              "capability-guides/instant-keys/using-access-grants-to-issue-instant-keys",
-              "capability-guides/instant-keys/using-seam-console-to-issue-instant-keys",
-              "capability-guides/instant-keys/delivering-instant-keys",
-              "products/thermostats",
-              "products/thermostats/retrieving-thermostats",
-              "capability-guides/thermostats/setting-and-monitoring-temperature-thresholds",
-              "products/thermostats/configure-current-climate-settings",
-              "capability-guides/thermostats/creating-and-managing-thermostat-schedules",
-              "capability-guides/thermostats/creating-and-managing-thermostat-programs",
-              "capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints",
-              "products/noise-sensors",
-              "products/noise-sensors/configure-noise-threshold-settings",
-              "capability-guides/seam-bridge",
-              "capability-guides/seam-bridge/seam-bridge-setup-for-windows",
-              "capability-guides/seam-bridge/seam-bridge-setup-for-macos",
-              "capability-guides/seam-bridge/seam-bridge-setup-for-linux",
-              "capability-guides/customer-portals",
-              "capability-guides/customer-portals/customers",
-              "capability-guides/customer-portals/preview-the-customer-portal-in-console",
-              "capability-guides/customer-portals/integrate-customer-portal-into-your-application",
-              "capability-guides/reservation-automations"
+              "guides/capability-guides/device-and-system-capabilities",
+              "guides/capability-guides/smart-locks",
+              "guides/capability-guides/smart-locks/get-started-with-smartlocks-api",
+              "guides/capability-guides/smart-locks/lock-and-unlock",
+              "guides/capability-guides/access-systems",
+              "guides/capability-guides/access-systems/retrieving-entrance-details",
+              "guides/capability-guides/access-systems/troubleshooting-your-access-control-system",
+              "guides/capability-guides/mobile-access",
+              "guides/capability-guides/mobile-access/mobile-access-setup",
+              "guides/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities",
+              "guides/capability-guides/mobile-access/managing-phones-for-a-user-identity",
+              "guides/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system",
+              "guides/capability-guides/mobile-access/developing-in-a-sandbox-workspace",
+              "guides/capability-guides/instant-keys",
+              "guides/capability-guides/instant-keys/how-instant-keys-work",
+              "guides/capability-guides/instant-keys/setting-up-your-site-for-instant-keys",
+              "guides/capability-guides/instant-keys/using-access-grants-to-issue-instant-keys",
+              "guides/capability-guides/instant-keys/using-seam-console-to-issue-instant-keys",
+              "guides/capability-guides/instant-keys/delivering-instant-keys",
+              "guides/capability-guides/thermostats",
+              "guides/capability-guides/thermostats/retrieving-thermostats",
+              "guides/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds",
+              "guides/capability-guides/thermostats/configure-current-climate-settings",
+              "guides/capability-guides/thermostats/creating-and-managing-thermostat-schedules",
+              "guides/capability-guides/thermostats/creating-and-managing-thermostat-programs",
+              "guides/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints",
+              "guides/capability-guides/noise-sensors",
+              "guides/capability-guides/noise-sensors/configure-noise-threshold-settings",
+              "guides/capability-guides/seam-bridge",
+              "guides/capability-guides/seam-bridge/seam-bridge-setup-for-windows",
+              "guides/capability-guides/seam-bridge/seam-bridge-setup-for-macos",
+              "guides/capability-guides/seam-bridge/seam-bridge-setup-for-linux",
+              "guides/capability-guides/customer-portals",
+              "guides/capability-guides/customer-portals/customers",
+              "guides/capability-guides/customer-portals/preview-the-customer-portal-in-console",
+              "guides/capability-guides/customer-portals/integrate-customer-portal-into-your-application",
+              "guides/capability-guides/customer-portals/filtering-portal-resources-by-custom-metadata",
+              "guides/capability-guides/reservation-automations"
             ]
           },
           {
             "group": "Creating and Managing Smart Lock Access Codes",
             "pages": [
-              "products/smart-locks/access-codes",
-              "capability-guides/smart-locks/access-codes/creating-access-codes",
-              "capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints",
-              "products/smart-locks/access-codes/retrieving-access-codes",
-              "products/smart-locks/access-codes/modifying-access-codes",
-              "products/smart-locks/access-codes/deleting-access-codes",
-              "products/smart-locks/access-codes/lifecycle-of-access-codes",
-              "products/smart-locks/access-codes/access-code-requirements-for-door-locks",
-              "products/smart-locks/access-codes/accommodating-manufacturer-mobile-apps",
-              "products/smart-locks/access-codes/troubleshooting-access-code-issues",
-              "products/smart-locks/access-codes/backup-access-codes",
-              "products/smart-locks/access-codes/offline-access-codes",
-              "capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes",
-              "products/smart-locks/access-codes/migrating-existing-access-codes"
+              "guides/capability-guides/smart-locks/access-codes",
+              "guides/capability-guides/smart-locks/access-codes/creating-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints",
+              "guides/capability-guides/smart-locks/access-codes/retrieving-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/modifying-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/deleting-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/access-code-requirements-for-door-locks",
+              "guides/capability-guides/smart-locks/access-codes/accommodating-manufacturer-mobile-apps",
+              "guides/capability-guides/smart-locks/access-codes/troubleshooting-access-code-issues",
+              "guides/capability-guides/smart-locks/access-codes/backup-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/offline-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes",
+              "guides/capability-guides/smart-locks/access-codes/migrating-existing-access-codes"
             ]
           },
           {
             "group": "Access System Quick Starts",
             "pages": [
-              "capability-guides/access-systems/acs-quick-starts",
-              "capability-guides/access-systems/acs-quick-starts/pin-code-quick-start",
-              "capability-guides/access-systems/acs-quick-starts/encodable-key-card-quick-start",
-              "capability-guides/access-systems/acs-quick-starts/mobile-key-quick-start"
+              "guides/capability-guides/access-systems/acs-quick-starts",
+              "guides/capability-guides/access-systems/acs-quick-starts/pin-code-quick-start",
+              "guides/capability-guides/access-systems/acs-quick-starts/encodable-key-card-quick-start",
+              "guides/capability-guides/access-systems/acs-quick-starts/mobile-key-quick-start"
             ]
           },
           {
             "group": "Connect an Access System to Seam",
             "pages": [
-              "capability-guides/access-systems/connect-an-acs-to-seam",
-              "capability-guides/access-systems/connect-an-acs-to-seam/retrieving-acs-system-details",
-              "capability-guides/access-systems/connect-an-acs-to-seam/access-control-system-resources",
-              "capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences"
+              "guides/capability-guides/access-systems/connect-an-acs-to-seam",
+              "guides/capability-guides/access-systems/connect-an-acs-to-seam/retrieving-acs-system-details",
+              "guides/capability-guides/access-systems/connect-an-acs-to-seam/access-control-system-resources",
+              "guides/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences"
             ]
           },
           {
             "group": "Managing ACS Users",
             "pages": [
-              "products/access-systems/user-management",
-              "products/access-systems/suspending-and-unsuspending-users",
-              "capability-guides/access-systems/user-management/assigning-users-to-access-groups"
+              "guides/capability-guides/access-systems/user-management",
+              "guides/capability-guides/access-systems/user-management/suspending-and-unsuspending-users",
+              "guides/capability-guides/access-systems/user-management/assigning-users-to-access-groups"
             ]
           },
           {
             "group": "Managing Credentials",
             "pages": [
-              "capability-guides/access-systems/managing-credentials",
-              "capability-guides/access-systems/assigning-credentials-to-users",
-              "capability-guides/access-systems/managing-credentials/listing-credentials-and-associated-entrances"
+              "guides/capability-guides/access-systems/managing-credentials",
+              "guides/capability-guides/access-systems/managing-credentials/assigning-credentials-to-users",
+              "guides/capability-guides/access-systems/managing-credentials/listing-credentials-and-associated-entrances"
             ]
           },
           {
             "group": "Working with Card Encoders and Scanners",
             "pages": [
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners",
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials",
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods",
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards"
+              "guides/capability-guides/access-systems/working-with-card-encoders-and-scanners",
+              "guides/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials",
+              "guides/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods",
+              "guides/capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards"
             ]
           },
           {
             "group": "Integrating into Your Mobile Application",
             "pages": [
-              "capability-guides/mobile-access/mobile-device-sdks",
-              "capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk",
-              "capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions",
-              "capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap"
+              "guides/capability-guides/mobile-access/mobile-device-sdks",
+              "guides/capability-guides/mobile-access/mobile-device-sdks/initializing-the-seam-mobile-sdk",
+              "guides/capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions",
+              "guides/capability-guides/mobile-access/mobile-device-sdks/using-unlock-with-tap"
             ]
           },
           {
             "group": "Understanding Thermostat Concepts",
             "pages": [
-              "capability-guides/thermostats/understanding-thermostat-concepts",
-              "capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode",
-              "capability-guides/thermostats/understanding-thermostat-concepts/set-points"
+              "guides/capability-guides/thermostats/understanding-thermostat-concepts",
+              "guides/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode",
+              "guides/capability-guides/thermostats/understanding-thermostat-concepts/set-points"
             ]
           },
           {
             "group": "Creating and Managing Climate Presets",
             "pages": [
-              "capability-guides/thermostats/creating-and-managing-climate-presets",
-              "capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset",
-              "capability-guides/thermostats/creating-and-managing-climate-presets/activating-a-climate-preset"
+              "guides/capability-guides/thermostats/creating-and-managing-climate-presets",
+              "guides/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset",
+              "guides/capability-guides/thermostats/creating-and-managing-climate-presets/activating-a-climate-preset"
             ]
           }
         ]
@@ -221,399 +849,43 @@
           {
             "group": "Overview",
             "pages": [
-              "seam-components/overview",
-              "seam-components/make-a-supported-devices-page",
-              "ui-components/overview/using-user-identities-to-scope-users-device-access",
-              "ui-components/seam-mobile-components"
+              "guides/ui-components/overview",
+              "guides/ui-components/overview/using-user-identities-to-scope-users-device-access",
+              "guides/ui-components/seam-mobile-components"
             ]
           },
           {
             "group": "Getting Started with Seam Components",
             "pages": [
-              "seam-components/overview/getting-started-with-seam-components",
-              "seam-components/overview/get-started-with-react-components-and-client-session-tokens",
-              "seam-components/overview/angular",
-              "seam-components/overview/vue",
-              "seam-components/overview/get-started-with-client-side-components"
+              "guides/ui-components/overview/getting-started-with-seam-components",
+              "guides/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens",
+              "guides/ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components"
             ]
           },
           {
             "group": "Components",
             "pages": [
-              "seam-components/react-components",
-              "seam-components/react-components/device-details",
-              "seam-components/react-components/device-table",
-              "seam-components/react-components/access-code-table",
-              "seam-components/react-components/access-code-details",
-              "seam-components/react-components/create-access-code-form",
-              "seam-components/react-components/update-access-code-form",
-              "seam-components/react-components/supported-devices-table",
-              "seam-components/react-components/seam-provider",
-              "seam-components/react-components/connect-account-button"
+              "guides/ui-components/overview/react-components",
+              "guides/ui-components/overview/react-components/device-details",
+              "guides/ui-components/overview/react-components/device-table",
+              "guides/ui-components/overview/react-components/access-code-table",
+              "guides/ui-components/overview/react-components/access-code-details",
+              "guides/ui-components/overview/react-components/create-access-code-form",
+              "guides/ui-components/overview/react-components/update-access-code-form",
+              "guides/ui-components/overview/react-components/seam-provider",
+              "guides/ui-components/overview/react-components/connect-account-button"
             ]
           },
           {
             "group": "Seam Mobile Components for iOS",
             "pages": [
-              "ui-components/seam-mobile-components/seam-mobile-components-for-ios",
-              "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming",
-              "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/colors",
-              "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/fonts",
-              "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/keycard-styles",
-              "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/toast-styles",
-              "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/unlockcard-styles"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "api",
-              "api/installation",
-              "api/authentication",
-              "api/pagination",
-              "api/access_codes",
-              "api/access_codes/create",
-              "api/access_codes/create_multiple",
-              "api/access_codes/delete",
-              "api/access_codes/generate_code",
-              "api/access_codes/get",
-              "api/access_codes/list",
-              "api/access_codes/pull_backup_access_code",
-              "api/access_codes/report_device_constraints",
-              "api/access_codes/update",
-              "api/access_codes/update_multiple",
-              "api/acs",
-              "api/access_grants",
-              "api/access_grants/request_access_methods",
-              "api/access_grants/create",
-              "api/access_grants/delete",
-              "api/access_grants/get",
-              "api/access_grants/get_related",
-              "api/access_grants/list",
-              "api/access_grants/update",
-              "api/access_methods",
-              "api/access_methods/delete",
-              "api/access_methods/encode",
-              "api/access_methods/get",
-              "api/access_methods/get_related",
-              "api/access_methods/list",
-              "api/action_attempts",
-              "api/action_attempts/get",
-              "api/action_attempts/list",
-              "api/client_sessions",
-              "api/client_sessions/create",
-              "api/client_sessions/delete",
-              "api/client_sessions/get",
-              "api/client_sessions/get_or_create",
-              "api/client_sessions/grant_access",
-              "api/client_sessions/list",
-              "api/client_sessions/revoke",
-              "api/connect_webviews",
-              "api/connect_webviews/create",
-              "api/connect_webviews/delete",
-              "api/connect_webviews/get",
-              "api/connect_webviews/list",
-              "api/connected_accounts",
-              "api/connected_accounts/delete",
-              "api/connected_accounts/get",
-              "api/connected_accounts/list",
-              "api/connected_accounts/sync",
-              "api/connected_accounts/update",
-              "api/customers",
-              "api/customers/create_portal",
-              "api/customers/delete_data",
-              "api/customers/push_data",
-              "api/devices",
-              "api/devices/get",
-              "api/devices/list_device_providers",
-              "api/devices/list",
-              "api/devices/update",
-              "api/events",
-              "api/events/get",
-              "api/events/list",
-              "api/instant_keys",
-              "api/instant_keys/delete",
-              "api/instant_keys/get",
-              "api/instant_keys/list",
-              "api/locks",
-              "api/locks/get",
-              "api/locks/list",
-              "api/locks/lock_door",
-              "api/locks/unlock_door",
-              "api/noise_sensors",
-              "api/noise_sensors/list",
-              "api/phones",
-              "api/phones/deactivate",
-              "api/phones/get",
-              "api/phones/list",
-              "api/spaces",
-              "api/spaces/add_devices",
-              "api/spaces/add_acs_entrances",
-              "api/spaces/create",
-              "api/spaces/delete",
-              "api/spaces/get",
-              "api/spaces/get_related",
-              "api/spaces/list",
-              "api/spaces/remove_devices",
-              "api/spaces/remove_acs_entrances",
-              "api/spaces/update",
-              "api/thermostats",
-              "api/thermostats/activate_climate_preset",
-              "api/thermostats/create_climate_preset",
-              "api/thermostats/delete_climate_preset",
-              "api/thermostats/list",
-              "api/thermostats/set_temperature_threshold",
-              "api/thermostats/set_fallback_climate_preset",
-              "api/thermostats/set_fan_mode",
-              "api/thermostats/set_hvac_mode",
-              "api/thermostats/cool",
-              "api/thermostats/heat",
-              "api/thermostats/heat_cool",
-              "api/thermostats/off",
-              "api/thermostats/update_climate_preset",
-              "api/thermostats/update_weekly_program",
-              "api/user_identities",
-              "api/user_identities/add_acs_user",
-              "api/user_identities/create",
-              "api/user_identities/delete",
-              "api/user_identities/generate_instant_key",
-              "api/user_identities/get",
-              "api/user_identities/grant_access_to_device",
-              "api/user_identities/list_accessible_devices",
-              "api/user_identities/list_acs_systems",
-              "api/user_identities/list_acs_users",
-              "api/user_identities/list",
-              "api/user_identities/remove_acs_user",
-              "api/user_identities/revoke_access_to_device",
-              "api/user_identities/update",
-              "api/webhooks",
-              "api/webhooks/create",
-              "api/webhooks/delete",
-              "api/webhooks/get",
-              "api/webhooks/list",
-              "api/webhooks/update",
-              "api/workspaces",
-              "api/workspaces/create",
-              "api/workspaces/get",
-              "api/workspaces/list",
-              "api/workspaces/reset_sandbox",
-              "api/workspaces/update"
-            ]
-          },
-          {
-            "group": "Access Code Simulations",
-            "pages": [
-              "api/access_codes/simulate",
-              "api/access_codes/simulate/create_unmanaged_access_code"
-            ]
-          },
-          {
-            "group": "Unmanaged Access Codes",
-            "pages": [
-              "api/access_codes/unmanaged",
-              "api/access_codes/unmanaged/convert_to_managed",
-              "api/access_codes/unmanaged/delete",
-              "api/access_codes/unmanaged/get",
-              "api/access_codes/unmanaged/list",
-              "api/access_codes/unmanaged/update"
-            ]
-          },
-          {
-            "group": "Access Groups",
-            "pages": [
-              "api/acs/access_groups",
-              "api/acs/access_groups/add_user",
-              "api/acs/access_groups/get",
-              "api/acs/access_groups/list",
-              "api/acs/access_groups/list_users",
-              "api/acs/access_groups/list_accessible_entrances",
-              "api/acs/access_groups/remove_user"
-            ]
-          },
-          {
-            "group": "ACS Users",
-            "pages": [
-              "api/acs/users",
-              "api/acs/users/add_to_access_group",
-              "api/acs/users/create",
-              "api/acs/users/delete",
-              "api/acs/users/get",
-              "api/acs/users/list_accessible_entrances",
-              "api/acs/users/list",
-              "api/acs/users/remove_from_access_group",
-              "api/acs/users/revoke_access_to_all_entrances",
-              "api/acs/users/suspend",
-              "api/acs/users/unsuspend",
-              "api/acs/users/update"
-            ]
-          },
-          {
-            "group": "Credentials",
-            "pages": [
-              "api/acs/credentials",
-              "api/acs/credentials/assign",
-              "api/acs/credentials/create",
-              "api/acs/credentials/delete",
-              "api/acs/credentials/get",
-              "api/acs/credentials/list_accessible_entrances",
-              "api/acs/credentials/list",
-              "api/acs/credentials/unassign",
-              "api/acs/credentials/update"
-            ]
-          },
-          {
-            "group": "Encoders",
-            "pages": [
-              "api/acs/encoders",
-              "api/acs/encoders/encode_credential",
-              "api/acs/encoders/get",
-              "api/acs/encoders/list",
-              "api/acs/encoders/scan_credential",
-              "api/acs/encoders/simulate",
-              "api/acs/encoders/simulate/next_credential_encode_will_fail",
-              "api/acs/encoders/simulate/next_credential_encode_will_succeed",
-              "api/acs/encoders/simulate/next_credential_scan_will_fail",
-              "api/acs/encoders/simulate/next_credential_scan_will_succeed"
-            ]
-          },
-          {
-            "group": "Entrances",
-            "pages": [
-              "api/acs/entrances",
-              "api/acs/entrances/get",
-              "api/acs/entrances/grant_access",
-              "api/acs/entrances/list_credentials_with_access",
-              "api/acs/entrances/list"
-            ]
-          },
-          {
-            "group": "Systems",
-            "pages": [
-              "api/acs/systems",
-              "api/acs/systems/get",
-              "api/acs/systems/list",
-              "api/acs/systems/list_compatible_credential_manager_acs_systems",
-              "api/acs/systems/report_devices"
-            ]
-          },
-          {
-            "group": "Unmanaged",
-            "pages": [
-              "api/access_grants/unmanaged",
-              "api/access_grants/unmanaged/get",
-              "api/access_grants/unmanaged/list",
-              "api/access_grants/unmanaged/update"
-            ]
-          },
-          {
-            "group": "Unmanaged",
-            "pages": [
-              "api/access_methods/unmanaged",
-              "api/access_methods/unmanaged/get",
-              "api/access_methods/unmanaged/list"
-            ]
-          },
-          {
-            "group": "Simulate",
-            "pages": [
-              "api/connected_accounts/simulate",
-              "api/connected_accounts/simulate/disconnect"
-            ]
-          },
-          {
-            "group": "Device Simulations",
-            "pages": [
-              "api/devices/simulate",
-              "api/devices/simulate/connect",
-              "api/devices/simulate/disconnect",
-              "api/devices/simulate/remove",
-              "api/devices/simulate/connect_to_hub",
-              "api/devices/simulate/disconnect_from_hub",
-              "api/devices/simulate/paid_subscription"
-            ]
-          },
-          {
-            "group": "Unmanaged Devices",
-            "pages": [
-              "api/devices/unmanaged",
-              "api/devices/unmanaged/get",
-              "api/devices/unmanaged/list",
-              "api/devices/unmanaged/update"
-            ]
-          },
-          {
-            "group": "Lock Simulations",
-            "pages": [
-              "api/locks/simulate",
-              "api/locks/simulate/keypad_code_entry",
-              "api/locks/simulate/manual_lock_via_keypad"
-            ]
-          },
-          {
-            "group": "Noise Sensor Simulations",
-            "pages": [
-              "api/noise_sensors/simulate",
-              "api/noise_sensors/simulate/trigger_noise_threshold"
-            ]
-          },
-          {
-            "group": "Noise Thresholds",
-            "pages": [
-              "api/noise_sensors/noise_thresholds",
-              "api/noise_sensors/noise_thresholds/create",
-              "api/noise_sensors/noise_thresholds/delete",
-              "api/noise_sensors/noise_thresholds/get",
-              "api/noise_sensors/noise_thresholds/list",
-              "api/noise_sensors/noise_thresholds/update"
-            ]
-          },
-          {
-            "group": "Phone Simulations",
-            "pages": [
-              "api/phones/simulate",
-              "api/phones/simulate/create_sandbox_phone"
-            ]
-          },
-          {
-            "group": "Daily Programs",
-            "pages": [
-              "api/thermostats/daily_programs",
-              "api/thermostats/daily_programs/create",
-              "api/thermostats/daily_programs/delete",
-              "api/thermostats/daily_programs/update"
-            ]
-          },
-          {
-            "group": "Thermostat Schedules",
-            "pages": [
-              "api/thermostats/schedules",
-              "api/thermostats/schedules/create",
-              "api/thermostats/schedules/delete",
-              "api/thermostats/schedules/get",
-              "api/thermostats/schedules/list",
-              "api/thermostats/schedules/update"
-            ]
-          },
-          {
-            "group": "Thermostat Simulations",
-            "pages": [
-              "api/thermostats/simulate",
-              "api/thermostats/simulate/hvac_mode_adjusted",
-              "api/thermostats/simulate/temperature_reached"
-            ]
-          },
-          {
-            "group": "Unmanaged",
-            "pages": [
-              "api/user_identities/unmanaged",
-              "api/user_identities/unmanaged/get",
-              "api/user_identities/unmanaged/list",
-              "api/user_identities/unmanaged/update"
+              "guides/ui-components/seam-mobile-components/seam-mobile-components-for-ios",
+              "guides/ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming",
+              "guides/ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/colors",
+              "guides/ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/fonts",
+              "guides/ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/keycard-styles",
+              "guides/ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/toast-styles",
+              "guides/ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/unlockcard-styles"
             ]
           }
         ]
@@ -624,53 +896,12 @@
           {
             "group": "Overview",
             "pages": [
-              "core-concepts/webhooks",
-              "developer-tools/seam-cli",
-              "device-guides/sandbox-and-sample-data",
-              "device-guides/sandbox-and-sample-data/2n-intercoms-sample-data",
-              "device-guides/sandbox-and-sample-data/4suites-locks-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-akiles-locks",
-              "device-guides/sandbox-and-sample-data/assa-abloy-credential-service-sample-data",
-              "device-guides/sandbox-and-sample-data/assa-abloy-visionline-access-management-system-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-assa-abloy-vostio-access-control-system",
-              "device-guides/sandbox-and-sample-data/august-locks-sample-data",
-              "device-guides/sandbox-and-sample-data/avigilon-alta-access-system-sample-data",
-              "device-guides/sandbox-and-sample-data/brivo-access-sample-data",
-              "device-guides/sandbox-and-sample-data/controlbyweb-relays-sample-data",
-              "device-guides/sandbox-and-sample-data/doorking-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-dormakaba-ambiance-access-control-system",
-              "developer-tools/sandbox-and-sample-data/sandbox-dormakaba-community-access-control-system",
-              "device-guides/sandbox-and-sample-data/dormakaba-oracode-sample-data",
-              "device-guides/sandbox-and-sample-data/ecobee-sample-data",
-              "device-guides/sandbox-and-sample-data/genie-sample-data",
-              "device-guides/sandbox-and-sample-data/google-nest-thermostats-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-honeywell-thermostats",
-              "developer-tools/sandbox-and-sample-data/sandbox-hotek-access-control-system",
-              "device-guides/sandbox-and-sample-data/igloohome-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-keynest-lockers",
-              "device-guides/sandbox-and-sample-data/kwikset-locks-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-latch-access-control-system",
-              "device-guides/sandbox-and-sample-data/linear-sample-data",
-              "device-guides/sandbox-and-sample-data/lockly-lock-sample-data",
-              "device-guides/sandbox-and-sample-data/minut-noise-sensor-sample-data",
-              "device-guides/sandbox-and-sample-data/noiseaware-sample-data",
-              "device-guides/sandbox-and-sample-data/nuki-sample-data",
-              "device-guides/sandbox-and-sample-data/pti-storlogix-cloud-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-salto-ks-access-control-system",
-              "developer-tools/sandbox-and-sample-data/sandbox-salto-ks-locks",
-              "developer-tools/sandbox-and-sample-data/sandbox-salto-space-access-control-system",
-              "device-guides/sandbox-and-sample-data/schlage-encode-sample-data",
-              "device-guides/sandbox-and-sample-data/seam-bridge-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-sensi-thermostats",
-              "device-guides/sandbox-and-sample-data/smartthings-sample-data",
-              "developer-tools/sandbox-and-sample-data/sandbox-tedee-locks",
-              "device-guides/sandbox-and-sample-data/ttlock-sample-data",
-              "device-guides/sandbox-and-sample-data/wyze-sample-data",
-              "device-guides/sandbox-and-sample-data/yale-sample-data",
-              "device-guides/rate-limits-and-guardrails",
-              "developer-tools/mobile-sdks",
-              "developer-tools/mobile-sdks/android-sdk",
-              "developer-tools/mobile-sdks/ios-sdk"
+              "guides/developer-tools/webhooks",
+              "guides/developer-tools/seam-cli",
+              "guides/developer-tools/seam-mcp",
+              "guides/developer-tools/mobile-sdks",
+              "guides/developer-tools/mobile-sdks/android-sdk",
+              "guides/developer-tools/mobile-sdks/ios-sdk"
             ]
           }
         ]
@@ -681,173 +912,14 @@
           {
             "group": "Overview",
             "pages": [
-              "industry-guides/hospitality-industry-guide",
-              "industry-guides/hospitality-industry-guide/feature-overview",
-              "industry-guides/hospitality-industry-guide/seam-api-overview",
-              "industry-guides/hospitality-industry-guide/setting-up-the-hotel-site",
-              "industry-guides/hospitality-industry-guide/granting-access-using-seam-instant-keys",
-              "industry-guides/hospitality-industry-guide/granting-access-using-mobile-keys",
-              "industry-guides/hospitality-industry-guide/granting-access-using-encoded-plastic-key-cards",
-              "industry-guides/hospitality-industry-guide/additional-guest-access-actions"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Device and System Integration Guides",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "device-and-system-integration-guides/overview",
-              "device-guides/2n-intercom-systems",
-              "device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions",
-              "device-guides/get-started-with-2n-intercoms",
-              "device-and-system-integration-guides/33-lock-devices",
-              "device-and-system-integration-guides/33-lock-devices/get-started-with-33-lock-devices",
-              "device-and-system-integration-guides/4suites-locks",
-              "device-and-system-integration-guides/4suites-locks/get-started-with-4suites-locks",
-              "device-and-system-integration-guides/akiles-locks",
-              "device-and-system-integration-guides/akiles-locks/get-started-with-akiles-locks",
-              "device-and-system-integration-guides/assa-abloy-credential-services",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/mobile-credential-related-properties",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/common-use-cases",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/creating-visionline-card-based-credentials",
-              "device-guides/august-locks",
-              "device-guides/get-started-with-august-locks",
-              "device-guides/avigilon-alta-access-system",
-              "device-guides/brivo-access",
-              "device-guides/get-started-with-controlbyweb-devices",
-              "device-and-system-integration-guides/dormakaba-ambiance-access-control-system",
-              "device-and-system-integration-guides/dormakaba-ambiance-access-control-system/dormakaba-ambiance-setup-guide",
-              "device-and-system-integration-guides/dormakaba-community-access-control-system",
-              "device-and-system-integration-guides/dormakaba-community-access-control-system/dormakaba-community-setup-guide",
-              "device-guides/dormakaba-oracode-locks",
-              "device-guides/get-started-with-dormakaba-oracode-locks",
-              "device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes",
-              "device-guides/ecobee-thermostats",
-              "device-guides/get-started-with-ecobee-thermostats",
-              "device-guides/google-nest-thermostats",
-              "device-and-system-integration-guides/google-nest-thermostats/get-started-with-nest-thermostats",
-              "device-guides/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development",
-              "device-and-system-integration-guides/honeywell-thermostats",
-              "device-and-system-integration-guides/honeywell-thermostats/get-started-with-honeywell-thermostats",
-              "device-guides/igloohome-locks",
-              "device-guides/get-started-with-igloo-locks",
-              "device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes",
-              "device-and-system-integration-guides/keynest-key-lockers",
-              "device-and-system-integration-guides/keynest-key-lockers/keynest-setup-instructions",
-              "device-guides/kwikset-locks",
-              "device-guides/get-started-with-kwikset-wifi-locks",
-              "device-and-system-integration-guides/latch-access-control-system",
-              "device-and-system-integration-guides/latch-access-control-system/latch-setup-guide",
-              "device-and-system-integration-guides/latch-access-control-system/programming-code-based-latch-credentials",
-              "device-and-system-integration-guides/latch-access-control-system/programming-latch-acs-mobile-credentials",
-              "device-and-system-integration-guides/lockly-locks",
-              "device-and-system-integration-guides/lockly-locks/lockly-setup-guide",
-              "device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes",
-              "device-guides/minut-sensors",
-              "device-guides/get-started-with-minut-sensors",
-              "device-guides/noiseaware-sensors",
-              "device-guides/get-started-with-noiseaware-sensors",
-              "device-guides/nuki-locks",
-              "device-guides/get-started-with-nuki-locks",
-              "device-guides/pti-storlogix-cloud",
-              "device-and-system-integration-guides/salto-ks-access-control-system",
-              "device-and-system-integration-guides/salto-ks-access-control-system/salto-ks-setup-instructions",
-              "device-and-system-integration-guides/salto-ks-access-control-system/programming-code-based-salto-ks-credentials",
-              "device-and-system-integration-guides/salto-ks-access-control-system/programming-salto-ks-mobile-credentials",
-              "device-and-system-integration-guides/salto-ks-access-control-system/special-requirements-for-android-mobile-access-sdk-development",
-              "device-guides/salto-locks",
-              "device-guides/get-started-with-salto-locks",
-              "device-and-system-integration-guides/salto-proaccess-space-access-system",
-              "device-and-system-integration-guides/salto-proaccess-space-access-system/salto-space-setup-instructions",
-              "device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials",
-              "device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-mobile-credentials",
-              "device-and-system-integration-guides/schlage-locks",
-              "device-and-system-integration-guides/schlage-locks/schlage-locks-setup-instructions",
-              "device-guides/get-started-with-schlage-locks",
-              "device-and-system-integration-guides/schlage-locks/schlage-locks-daylight-savings-time-adjustments",
-              "device-and-system-integration-guides/sensi-thermostats",
-              "device-and-system-integration-guides/sensi-thermostats/get-started-with-sensi-thermostats",
-              "device-and-system-integration-guides/smartthings-hubs-+-devices",
-              "device-guides/get-started-with-smartthings-hubs-+-smart-locks",
-              "device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-thermostats",
-              "device-and-system-integration-guides/tedee-locks",
-              "device-and-system-integration-guides/tedee-locks/get-started-with-tedee-locks",
-              "device-guides/ttlock-locks",
-              "device-guides/get-started-with-ttlock-devices",
-              "device-guides/wyze-locks",
-              "device-guides/get-started-with-wyze-locks",
-              "device-guides/yale-locks",
-              "device-guides/get-started-with-yale-locks",
-              "device-guides/get-started-with-smartlocks-api"
-            ]
-          },
-          {
-            "group": "Visionline ACS Setup Instructions",
-            "pages": [
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/instructions-for-issuing-visionline-instant-keys",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam"
-            ]
-          },
-          {
-            "group": "Configuring Visionline Mobile Credentials",
-            "pages": [
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/retrieving-guest-and-common-entrances",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/updating-guest-mobile-credentials",
-              "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/revoking-mobile-credentials"
+              "guides/industry-guides/hospitality-industry-guide",
+              "guides/industry-guides/hospitality-industry-guide/feature-overview",
+              "guides/industry-guides/hospitality-industry-guide/seam-api-overview",
+              "guides/industry-guides/hospitality-industry-guide/setting-up-the-hotel-site",
+              "guides/industry-guides/hospitality-industry-guide/granting-access-using-seam-instant-keys",
+              "guides/industry-guides/hospitality-industry-guide/granting-access-using-mobile-keys",
+              "guides/industry-guides/hospitality-industry-guide/granting-access-using-encoded-plastic-key-cards",
+              "guides/industry-guides/hospitality-industry-guide/additional-guest-access-actions"
             ]
           }
         ]
@@ -858,17 +930,17 @@
           {
             "group": "Overview",
             "pages": [
-              "device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api",
-              "device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-authentication",
-              "device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-your-device-model-and-discovery",
-              "device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-lock-actions",
-              "device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-access-codes",
-              "device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/webhooks-and-events",
-              "for-device-manufacturers/creating-a-seam-compatible-intercom-api",
-              "for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-oauth-endpoints",
-              "for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-intercom-crud-endpoints",
-              "for-device-manufacturers/creating-a-seam-compatible-intercom-api/creating-access-code-crud-endpoints",
-              "for-device-manufacturers/creating-a-seam-compatible-door-locks-api/creating-the-health-endpoint"
+              "guides/device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api",
+              "guides/device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-authentication",
+              "guides/device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-your-device-model-and-discovery",
+              "guides/device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-lock-actions",
+              "guides/device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/implementing-access-codes",
+              "guides/device-manufacturer-guidance/building-a-seam-compatible-smart-lock-api/webhooks-and-events",
+              "guides/device-manufacturer-guidance/creating-a-seam-compatible-intercom-api",
+              "guides/device-manufacturer-guidance/creating-a-seam-compatible-intercom-api/creating-oauth-endpoints",
+              "guides/device-manufacturer-guidance/creating-a-seam-compatible-intercom-api/creating-intercom-crud-endpoints",
+              "guides/device-manufacturer-guidance/creating-a-seam-compatible-intercom-api/creating-access-code-crud-endpoints",
+              "guides/device-manufacturer-guidance/creating-a-seam-compatible-intercom-api/creating-the-health-endpoint"
             ]
           }
         ]

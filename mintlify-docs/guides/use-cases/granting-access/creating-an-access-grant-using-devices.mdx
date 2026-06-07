@@ -1,0 +1,765 @@
+---
+title: "Creating an Access Grant Using Devices"
+description: "Learn how to create an Access Grant to give a user access to one or more devices, such as standalone smart locks."
+---
+
+
+Granting access to a device is the simplest form of an Access Grant. You specify the user, one or more device IDs, the access schedule, and the desired access methods, and Seam takes care of creating and managing the underlying credentials on each device.
+
+This path works for standalone smart locks—such as August, Yale, Schlage, igloohome, and TTLock devices—that are connected to Seam through a [Connect Webview](../../core-concepts/connect-webviews/). The devices do not need to be part of an access control system.
+
+An Access Grant defines the following characteristics:
+
+* User identity: The user to whom you want to grant access.
+* Devices: The set of devices to which you want to grant the user access.
+* Access schedule: The starting and ending times for access.
+* Access methods: The modes of access, such as PIN codes and mobile keys.
+
+This topic describes how to create an Access Grant using device IDs. To learn how to organize devices and entrances into spaces and grant access to a whole space, see [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md). To learn how to grant access to access system entrances, see [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md).
+
+***
+
+## Access Grant Creation Process
+
+To create an Access Grant:
+
+1. [Identify the devices](creating-an-access-grant-using-devices.md#identify-devices) to which you want to grant the user access.
+2. [Create a user identity](creating-an-access-grant-using-devices.md#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
+3. [Create an Access Grant](creating-an-access-grant-using-devices.md#create-an-access-grant) for the user identity to define the devices to which the user should have access, the starting and ending times for this access, and the requested access methods, such as `code`.
+
+   The action returns the created Access Grant.
+4. [Retrieve the resulting access methods](creating-an-access-grant-using-devices.md#retrieve-the-access-methods) once they are issued. For a `code` access method, the returned access method includes the PIN code that you can deliver to your user.
+
+***
+
+## Before You Begin
+
+To create an Access Grant for a device, first [connect](../../core-concepts/connect-webviews/) the device account to Seam. Then, confirm that the device supports access codes by checking its `can_program_online_access_codes` capability flag.
+
+<Info>
+You can try this entire flow in a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces) using sandbox devices, such as the August sandbox locks.
+</Info>
+
+***
+
+## Identify Devices
+
+List your devices and identify the ones to which you want to grant the user access. Check the `can_program_online_access_codes` capability flag for each device.
+
+<Tabs>
+<Tab title="JavaScript">
+
+**Code:**
+
+```javascript
+const devices = await seam.devices.list();
+
+const lock = devices.find(
+  (device) => device.can_program_online_access_codes
+);
+```
+
+**Output:**
+
+```json
+[
+  {
+    "device_id": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+    "display_name": "Front Door",
+    "can_program_online_access_codes": true,
+    ...
+  },
+  ...
+]
+```
+</Tab>
+
+<Tab title="cURL">
+
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+
+**Output:**
+
+```json
+{
+  "devices": [
+    {
+      "device_id": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+      "display_name": "Front Door",
+      "can_program_online_access_codes": true,
+      ...
+    },
+    ...
+  ]
+}
+```
+</Tab>
+
+<Tab title="Python">
+
+**Code:**
+
+```python
+devices = seam.devices.list()
+
+lock = next(
+  device for device in devices
+  if device.can_program_online_access_codes
+)
+```
+
+**Output:**
+
+```python
+[
+  Device(
+    device_id="6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+    display_name="Front Door",
+    can_program_online_access_codes=true,
+    ...
+  ),
+  ...
+]
+```
+</Tab>
+
+<Tab title="Ruby">
+
+**Code:**
+
+```ruby
+devices = seam.devices.list
+
+lock = devices.find(&:can_program_online_access_codes)
+```
+
+**Output:**
+
+```ruby
+[
+  {
+    "device_id" => "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+    "display_name" => "Front Door",
+    "can_program_online_access_codes" => true,
+    ...
+  },
+  ...
+]
+```
+</Tab>
+
+<Tab title="PHP">
+
+**Code:**
+
+```php
+$devices = $seam->devices->list();
+```
+
+**Output:**
+
+```php
+[
+  [
+    "device_id" => "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+    "display_name" => "Front Door",
+    "can_program_online_access_codes" => true,
+    ...
+  ],
+  ...
+];
+```
+</Tab>
+
+<Tab title="C#">
+
+**Code:**
+
+```csharp
+// Coming Soon!
+```
+
+**Output:**
+
+```json
+// Coming Soon!
+```
+</Tab>
+</Tabs>
+
+***
+
+## Create a User Identity
+
+You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and create a new user identity as part of the Access Grant creation action.
+
+To create a user identity, specify the unique `user_identity_key`, `email_address`, or `phone_number` of the user.
+
+<Tabs>
+<Tab title="JavaScript">
+
+**Code:**
+
+```javascript
+await seam.userIdentities.create({
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+});
+```
+
+**Output:**
+
+```json
+{
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  ...
+}
+```
+</Tab>
+
+<Tab title="cURL">
+
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/user_identities/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com"
+}'
+```
+
+**Output:**
+
+```json
+{
+  "user_identity": {
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "full_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    ...
+  }
+}
+```
+</Tab>
+
+<Tab title="Python">
+
+**Code:**
+
+```python
+seam.user_identities.create(
+  full_name="Jane Doe",
+  email_address="jane@example.com"
+)
+```
+
+**Output:**
+
+```python
+UserIdentity(
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  full_name="Jane Doe",
+  email_address="jane@example.com",
+  ...
+)
+```
+</Tab>
+
+<Tab title="Ruby">
+
+**Code:**
+
+```ruby
+seam.user_identities.create(
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+)
+```
+
+**Output:**
+
+```ruby
+{
+  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  ...
+}
+```
+</Tab>
+
+<Tab title="PHP">
+
+**Code:**
+
+```php
+$seam->user_identities->create(
+  full_name: "Jane Doe",
+  email_address: "jane@example.com"
+);
+```
+
+**Output:**
+
+```php
+[
+  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name" => "Jane Doe",
+  "email_address" => "jane@example.com",
+  ...
+];
+```
+</Tab>
+
+<Tab title="C#">
+
+**Code:**
+
+```csharp
+// Coming Soon!
+```
+
+**Output:**
+
+```json
+// Coming Soon!
+```
+</Tab>
+</Tabs>
+
+***
+
+## Create an Access Grant
+
+To create an Access Grant, specify the user identity, device IDs, starting and ending times, and requested access methods, such as `code`.
+
+To grant access to multiple devices at the same time, include all the desired device IDs in the `device_ids` array. Seam creates the requested access methods on each device.
+
+<Tabs>
+<Tab title="JavaScript">
+
+**Code:**
+
+```javascript
+await seam.accessGrants.create({
+  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  // Alternately, to create a new user identity, use the
+  // following parameter instead of user_identity_id:
+  // user_identity: {
+  //  full_name: "Jane Doe",
+  //  email_address: "jane.doe@example.com",
+  // },
+  device_ids: [
+    "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+  ],
+  requested_access_methods: [
+    {"mode": "code"}
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+});
+```
+
+**Output:**
+
+```json
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
+  "requested_access_methods": [
+    {
+      "display_name": "PIN Code",
+      "mode": "code",
+      "created_access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+      ...
+    }
+  ],
+  ...
+}
+```
+</Tab>
+
+<Tab title="cURL">
+
+**Code:**
+
+```bash
+# Alternately, to create a new user identity, use the
+# following parameter instead of user_identity_id:
+# user_identity={
+#  "full_name": "Jane Doe",
+#  "email_address": "jane.doe@example.com",
+# },
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "device_ids": [
+      "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+    ],
+    "requested_access_methods": [
+      {"mode": "code"}
+    ],
+    "starts_at": "2025-07-13T15:00:00.000Z",
+    "ends_at": "2025-07-16T11:00:00.000Z"
+}'
+```
+
+**Output:**
+
+```json
+{
+  "access_grant": {
+    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    "display_name": "My Access Grant",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "starts_at": "2025-07-13T15:00:00.000Z",
+    "ends_at": "2025-07-16T11:00:00.000Z",
+    "requested_access_methods": [
+      {
+        "display_name": "PIN Code",
+        "mode": "code",
+        "created_access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+        ...
+      }
+    ],
+    ...
+  }
+}
+```
+</Tab>
+
+<Tab title="Python">
+
+**Code:**
+
+```python
+seam.access_grants.create(
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  # Alternately, to create a new user identity, use the
+  # following parameter instead of user_identity_id:
+  # user_identity={
+  #  "full_name": "Jane Doe",
+  #  "email_address": "jane.doe@example.com",
+  # },
+  device_ids=[
+    "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+  ],
+  requested_access_methods=[
+    {"mode": "code"}
+  ],
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
+```
+
+**Output:**
+
+```python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z",
+  requested_access_methods=[
+    {
+      "display_name": "PIN Code",
+      "mode": "code",
+      "created_access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+      ...
+    }
+  ],
+  ...
+)
+```
+</Tab>
+
+<Tab title="Ruby">
+
+**Code:**
+
+```ruby
+seam.access_grants.create(
+  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  # Alternately, to create a new user identity, use the
+  # following parameter instead of user_identity_id:
+  # user_identity: {
+  #  full_name: "Jane Doe",
+  #  email_address: "jane.doe@example.com",
+  # },
+  device_ids: %w[6ba7b811-9dad-11d1-80b4-00c04fd430c8],
+  requested_access_methods: [
+    {"mode": "code"}
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+)
+```
+
+**Output:**
+
+```ruby
+{
+  "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name" => "My Access Grant",
+  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at" => "2025-07-13T15:00:00.000Z",
+  "ends_at" => "2025-07-16T11:00:00.000Z",
+  "requested_access_methods" => [
+    {
+      "display_name": "PIN Code",
+      "mode": "code",
+      "created_access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+      ...
+    }
+  ],
+  ...
+}
+```
+</Tab>
+
+<Tab title="PHP">
+
+**Code:**
+
+```php
+$seam->access_grants->create(
+  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  // Alternately, to create a new user identity, use the
+  // following parameter instead of user_identity_id:
+  // user_identity: {
+  //  full_name: "Jane Doe",
+  //  email_address: "jane.doe@example.com",
+  // },
+  device_ids: [
+    "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+  ],
+  requested_access_methods: [
+    ["mode" => "code"],
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+);
+```
+
+**Output:**
+
+```php
+[
+  "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name" => "My Access Grant",
+  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at" => "2025-07-13T15:00:00.000Z",
+  "ends_at" => "2025-07-16T11:00:00.000Z",
+  "requested_access_methods" => [
+    {
+      "display_name": "PIN Code",
+      "mode": "code",
+      "created_access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+      ...
+    }
+  ],
+  ...
+];
+```
+</Tab>
+
+<Tab title="C#">
+
+**Code:**
+
+```csharp
+// Coming Soon!
+```
+
+**Output:**
+
+```json
+// Coming Soon!
+```
+</Tab>
+</Tabs>
+
+***
+
+## Retrieve the Access Methods
+
+Once an access method has been issued, retrieve it by ID. For a `code` access method, the returned access method includes the `code` that you can deliver to your user.
+
+You can poll the access method for the `is_issued` status change or watch for the `access_method.issued` event.
+
+<Tabs>
+<Tab title="JavaScript">
+
+**Code:**
+
+```javascript
+await seam.accessMethods.get({
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+});
+```
+
+**Output:**
+
+```json
+{
+  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "display_name": "PIN Code",
+  "mode": "code",
+  "is_issued": true,
+  "code": "1234",
+  ...
+}
+```
+</Tab>
+
+<Tab title="cURL">
+
+**Code:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+}'
+```
+
+**Output:**
+
+```json
+{
+  "access_method": {
+    "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "display_name": "PIN Code",
+    "mode": "code",
+    "is_issued": true,
+    "code": "1234",
+    ...
+  },
+  "ok": true
+}
+```
+</Tab>
+
+<Tab title="Python">
+
+**Code:**
+
+```python
+seam.access_methods.get(
+  access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+**Output:**
+
+```python
+AccessMethod(
+  access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  display_name="PIN Code",
+  mode="code",
+  is_issued=true,
+  code="1234",
+  ...
+)
+```
+</Tab>
+
+<Tab title="Ruby">
+
+**Code:**
+
+```ruby
+seam.access_methods.get(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+**Output:**
+
+```ruby
+{
+  "access_method_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "display_name" => "PIN Code",
+  "mode" => "code",
+  "is_issued" => true,
+  "code" => "1234",
+  ...
+}
+```
+</Tab>
+
+<Tab title="PHP">
+
+**Code:**
+
+```php
+$seam->access_methods->get(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+);
+```
+
+**Output:**
+
+```php
+[
+  "access_method_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "display_name" => "PIN Code",
+  "mode" => "code",
+  "is_issued" => true,
+  "code" => "1234",
+  ...
+];
+```
+</Tab>
+
+<Tab title="C#">
+
+**Code:**
+
+```csharp
+// Coming Soon!
+```
+
+**Output:**
+
+```json
+// Coming Soon!
+```
+</Tab>
+</Tabs>
+
+***
+
+## Next Steps
+
+Once you've created the Access Grant and the resulting access methods have been issued, you can deliver the access methods to your user. For details, see [Delivering Access Methods](delivering-access-methods.md).
+
+To organize devices into logical groups—for example, all the locks that a guest staying in Unit 101 needs—and grant access to the whole group with a single ID, see [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md).

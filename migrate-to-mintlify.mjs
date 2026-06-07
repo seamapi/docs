@@ -143,6 +143,17 @@ function convertContent(content, filePath) {
   out = out.replace(/\\{%/g, "{%");
   out = out.replace(/%\\}/g, "%}");
 
+  // 13. Self-close void HTML elements for MDX compatibility
+  // <br> → <br />
+  out = out.replace(/<br\s*>/g, "<br />");
+  // <img ...> → <img ... /> (only if not already self-closed)
+  out = out.replace(/<img\s([^>]*[^/])>/g, "<img $1 />");
+  // <hr> → <hr />
+  out = out.replace(/<hr\s*>/g, "<hr />");
+
+  // 14. Convert HTML comments <!-- --> to MDX comments {/* */}
+  out = out.replace(/<!--([\s\S]*?)-->/g, "{/*$1*/}");
+
   return out;
 }
 
@@ -438,7 +449,7 @@ function buildDocsJson(parsedSummary) {
   const docsJson = {
     $schema: "https://mintlify.com/docs.json",
     name: "Seam",
-    theme: "quill",
+    theme: "mint",
     logo: {
       light: "/images/seam-logo-light.png",
       dark: "/images/seam-logo-dark.png",
@@ -502,36 +513,52 @@ function main() {
   }
   ensureDir(DEST);
 
-  // 2. Copy assets
-  console.log("📁 Copying assets...");
-  const assetsDir = path.join(SRC, ".gitbook", "assets");
-  if (fs.existsSync(assetsDir)) {
-    copyRecursive(assetsDir, path.join(DEST, "images"));
-    console.log("   ✓ Assets copied to images/");
-  }
+  // The docs repo has multiple GitBook spaces: api-reference/, brand-guides/, guides/
+  // Each has its own .gitbook/assets/ and SUMMARY.md
+  const spaces = fs.readdirSync(SRC).filter((entry) => {
+    const fullPath = path.join(SRC, entry);
+    return (
+      fs.statSync(fullPath).isDirectory() &&
+      fs.existsSync(path.join(fullPath, "SUMMARY.md"))
+    );
+  });
 
-  // 3. Convert all markdown files
+  console.log(`   Found ${spaces.length} GitBook spaces: ${spaces.join(", ")}`);
+
+  // 2. Copy assets from all spaces into a shared images/ folder
+  console.log("📁 Copying assets...");
+  let totalAssets = 0;
+  for (const space of spaces) {
+    const assetsDir = path.join(SRC, space, ".gitbook", "assets");
+    if (fs.existsSync(assetsDir)) {
+      copyRecursive(assetsDir, path.join(DEST, "images"));
+      const count = fs.readdirSync(assetsDir).length;
+      totalAssets += count;
+      console.log(`   ✓ ${space}: ${count} assets`);
+    }
+  }
+  console.log(`   ✓ Total: ${totalAssets} assets copied to images/`);
+
+  // 3. Convert all markdown files from all spaces
   console.log("📝 Converting markdown files...");
   let fileCount = 0;
   let errorCount = 0;
 
-  function processDir(srcDir, destDir) {
+  function processDir(srcDir, destDir, spaceName) {
     if (!fs.existsSync(srcDir)) return;
     for (const entry of fs.readdirSync(srcDir)) {
       const srcPath = path.join(srcDir, entry);
       const stat = fs.statSync(srcPath);
 
-      // Skip .gitbook directory (assets already copied)
       if (entry === ".gitbook") continue;
 
       if (stat.isDirectory()) {
-        processDir(srcPath, path.join(destDir, entry));
+        processDir(srcPath, path.join(destDir, entry), spaceName);
       } else if (entry.endsWith(".md")) {
         try {
           const content = fs.readFileSync(srcPath, "utf-8");
           const relativePath = path.relative(SRC, srcPath);
 
-          // Convert to .mdx
           const destFile = path.join(
             destDir,
             entry.replace(/\.md$/, ".mdx")
@@ -549,31 +576,79 @@ function main() {
     }
   }
 
-  processDir(SRC, DEST);
+  for (const space of spaces) {
+    processDir(path.join(SRC, space), path.join(DEST, space), space);
+  }
   console.log(`   ✓ ${fileCount} files converted, ${errorCount} errors`);
 
-  // 4. Generate docs.json from SUMMARY.md
-  console.log("📋 Generating docs.json from SUMMARY.md...");
-  const summaryPath = path.join(SRC, "SUMMARY.md");
-  if (fs.existsSync(summaryPath)) {
-    const nav = parseSummary(summaryPath);
-    const docsJson = buildDocsJson(nav);
-    fs.writeFileSync(
-      path.join(DEST, "docs.json"),
-      JSON.stringify(docsJson, null, 2)
-    );
-    console.log("   ✓ docs.json generated");
+  // 4. Generate docs.json from all SUMMARY.md files
+  console.log("📋 Generating docs.json...");
+  const allSections = [];
+  for (const space of spaces) {
+    const summaryPath = path.join(SRC, space, "SUMMARY.md");
+    if (fs.existsSync(summaryPath)) {
+      const parsed = parseSummary(summaryPath);
+      // Prefix all page paths with the space name
+      for (const section of parsed.sections) {
+        for (const item of section.items) {
+          item.path = `${space}/${item.path}`;
+        }
+      }
+      allSections.push(...parsed.sections);
+    }
   }
+
+  const docsJson = buildDocsJson({
+    sections: allSections,
+    buildGroups: function (items) {
+      const groups = [];
+      let currentGroup = null;
+
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+
+        if (item.indent <= 2) {
+          const children = [];
+          let j = i + 1;
+          while (j < items.length && items[j].indent > 2) {
+            children.push(items[j]);
+            j++;
+          }
+
+          if (children.length > 0) {
+            const subPages = [item.path];
+            for (const child of children) {
+              subPages.push(child.path);
+            }
+            groups.push({ group: item.title, pages: subPages });
+            i = j - 1;
+          } else {
+            if (!currentGroup || currentGroup.group !== "__standalone__") {
+              currentGroup = { group: "__standalone__", pages: [] };
+              groups.push(currentGroup);
+            }
+            currentGroup.pages.push(item.path);
+          }
+        }
+      }
+
+      return groups.map((g) => {
+        if (g.group === "__standalone__") return { ...g, group: "Overview" };
+        return g;
+      });
+    },
+  });
+  fs.writeFileSync(
+    path.join(DEST, "docs.json"),
+    JSON.stringify(docsJson, null, 2)
+  );
+  console.log("   ✓ docs.json generated");
 
   // 5. Report summary
   console.log("\n✅ Migration complete!");
   console.log(`   Files converted: ${fileCount}`);
-  console.log(`   Assets copied: ${fs.existsSync(path.join(DEST, "images")) ? fs.readdirSync(path.join(DEST, "images")).length : 0}`);
+  console.log(`   Assets copied: ${totalAssets}`);
   console.log(`   Output: ${DEST}`);
-  console.log("\nNext steps:");
-  console.log("   1. Review docs.json navigation structure");
-  console.log("   2. Run 'npx mintlify dev' from mintlify-docs/ to preview");
-  console.log("   3. Fix any remaining syntax issues");
 }
 
 main();
