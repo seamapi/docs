@@ -1,0 +1,528 @@
+---
+title: 'Create Customer Portal'
+---
+
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+
+Creates a new customer portal magic link with configurable features.
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br />
+  Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
+</details>
+
+## Request Parameters
+
+**`customer_data`** _Object_
+
+<details>
+
+<summary>
+  <b>
+    <code>access_grants</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of access grants.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>bookings</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of bookings.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>buildings</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of buildings.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>common_areas</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of shared common areas.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>customer_key</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
+
+Your unique identifier for the customer.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>facilities</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of gym or fitness facilities.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>guests</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of guests.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>listings</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of property listings.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>properties</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of short-term rental properties.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>property_listings</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of property listings.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>reservations</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of reservations.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>residents</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of residents.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>rooms</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of hotel or hospitality rooms.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>sites</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of general sites or areas.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>spaces</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of general spaces or areas.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>staff_members</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of staff members.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>tenants</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of tenants.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>units</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of multi-family residential units.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>user_identities</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of user identities.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>users</code>
+  </b>{' '}
+  <i>List</i>
+</summary>
+
+List of users.
+
+</details>
+
+---
+
+**`customer_resources_filters`** _Array_ _of Objects_
+
+Filter configuration for resources based on their custom_metadata. Each filter specifies a field, operation, and value to match against resource custom_metadata.
+
+<details>
+
+<summary>
+  <b>
+    <code>field</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
+
+The custom_metadata field name to filter on.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>operation</code>
+  </b>{' '}
+  <i>Enum</i>
+</summary>
+
+The comparison operation. Currently only '=' is supported.
+
+Enum values:
+
+- <code>=</code>
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>value</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
+
+The value to compare against.
+
+</details>
+
+---
+
+**`customization_profile_id`** _String_
+
+The ID of the customization profile to use for the portal.
+
+---
+
+**`exclude_locale_picker`** _Boolean_
+
+Whether to exclude the option to select a locale within the portal UI.
+
+---
+
+**`features`** _Object_
+
+<details>
+
+<summary>
+  <b>
+    <code>configure</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
+
+Configuration for the configure feature.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>connect</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
+
+Configuration for the connect accounts feature.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>manage</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
+
+Configuration for the manage feature.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>manage_devices</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
+
+## Configuration for the manage devices feature.
+
+## deprecated: Use `manage` instead.
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>organize</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
+
+Configuration for the organize feature.
+
+</details>
+
+---
+
+**`is_embedded`** _Boolean_
+
+Whether the portal is embedded in another application.
+
+---
+
+**`landing_page`** _Object_
+
+Configuration for the landing page when the portal loads.
+
+<details>
+
+<summary>
+  <b>
+    <code>manage</code>
+  </b>{' '}
+  <i>Object</i>
+</summary>
+
+</details>
+
+---
+
+**`locale`** _String_
+
+The locale to use for the portal.
+
+---
+
+**`navigation_mode`** _String_
+
+Navigation mode for the portal. 'restricted' tells frontend to hide navigation UI, typically used for embedded deep links.
+
+---
+
+## Response
+
+<Check>
+Returns:
+**[customer\_portal](.)**
+
+</Check>
+
+<Tabs>
+<Tab title="JSON">
+
+```json
+{
+  "created_at": "2025-06-16T16:54:17.946594Z",
+  "customer_key": "My Company",
+  "expires_at": "2025-06-17T16:54:17.946594Z",
+  "url": "https://se.am/1234",
+  "workspace_id": "67c58f1f-f148-4415-a63c-dc6c145c6b91"
+}
+```
+
+</Tab>
+</Tabs>

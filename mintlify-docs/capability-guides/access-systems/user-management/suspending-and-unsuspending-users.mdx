@@ -1,0 +1,248 @@
+---
+title: 'Suspending and Unsuspending ACS Users'
+description: 'Learn how to make temporary access changes by suspending or unsuspending ACS users.'
+---
+
+You can suspend an ACS user to revoke their access temporarily. Suspending an ACS user is a good action to take for users who may be behind on payment or have not fulfilled the requirements for entry. Then, once the user rectifies the payment, requirements, or other deficiency, you can unsuspend the ACS user to restore their access.
+
+---
+
+## Suspend an ACS User
+
+To [suspend an ACS user](https://docs.seam.co/latest/api/acs/users/suspend), provide the `acs_user_id`.
+
+<Tabs>
+<Tab title="JavaScript">
+
+**Request:**
+
+```javascript
+await seam.acs.users.suspend({
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+})
+```
+
+**Response:**
+
+```json
+void
+```
+
+</Tab>
+
+<Tab title="cURL">
+
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/users/suspend' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "ok": true
+}
+```
+
+</Tab>
+
+<Tab title="Python">
+
+**Request:**
+
+```python
+seam.acs.users.suspend(
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+)
+```
+
+**Response:**
+
+```
+None
+```
+
+</Tab>
+
+<Tab title="Ruby">
+
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+**Request:**
+
+```php
+$seam->acs->users->suspend(
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+);
+```
+
+**Response:**
+
+```
+void
+```
+
+</Tab>
+
+<Tab title="C#">
+
+**Request:**
+
+```csharp
+seam.UsersAcs.Suspend(
+  acsUserId: "33333333-3333-3333-3333-333333333333",
+);
+```
+
+**Response:**
+
+```
+void
+```
+
+</Tab>
+</Tabs>
+
+---
+
+## Unsuspend an ACS User
+
+To [unsuspend an ACS user](https://docs.seam.co/latest/api/acs/users/unsuspend), provide the `acs_user_id`.
+
+<Tabs>
+<Tab title="JavaScript">
+
+**Request:**
+
+```javascript
+await seam.acs.users.unsuspend({
+  acs_user_id: '33333333-3333-3333-3333-333333333333',
+})
+```
+
+**Response:**
+
+```json
+void
+```
+
+</Tab>
+
+<Tab title="cURL">
+
+**Request:**
+
+```bash
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/users/unsuspend' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_user_id": "33333333-3333-3333-3333-333333333333"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "ok": true
+}
+```
+
+</Tab>
+
+<Tab title="Python">
+
+**Request:**
+
+```python
+seam.acs.users.unsuspend(
+  acs_user_id="33333333-3333-3333-3333-333333333333"
+)
+```
+
+**Response:**
+
+```
+None
+```
+
+</Tab>
+
+<Tab title="Ruby">
+
+**Request:**
+
+```ruby
+# Coming soon!
+```
+
+**Response:**
+
+```
+# Coming soon!
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+**Request:**
+
+```php
+$seam->acs->users->unsuspend(
+  acs_user_id: "33333333-3333-3333-3333-333333333333"
+);
+```
+
+**Response:**
+
+```
+void
+```
+
+</Tab>
+
+<Tab title="C#">
+
+**Request:**
+
+```csharp
+seam.UsersAcs.Unsuspend(
+  acsUserId: "33333333-3333-3333-3333-333333333333"
+);
+```
+
+**Response:**
+
+```
+void
+```
+
+</Tab>
+</Tabs>

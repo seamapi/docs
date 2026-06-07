@@ -1,0 +1,298 @@
+---
+title: 'Update a Workspace'
+---
+
+- [Request Parameters](#request-parameters)
+- [Response](#response)
+
+Updates the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.
+
+<Tabs>
+<Tab title="JavaScript">
+
+Updates the workspace associated with the authentication value.
+
+#### Code:
+
+```javascript
+await seam.workspaces.update({
+  name: 'My Workspace',
+  connect_partner_name: 'Acme',
+  connect_webview_customization: {
+    inviter_logo_url:
+      'https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c',
+    logo_shape: 'circle',
+    primary_button_color: '#232426',
+    primary_button_text_color: '#FFFDE7',
+    success_message: 'Your account has been successfully connected to Acme!',
+  },
+  is_suspended: true,
+})
+```
+
+#### Output:
+
+```javascript
+// void
+```
+
+</Tab>
+
+<Tab title="cURL">
+
+Updates the workspace associated with the authentication value.
+
+#### Code:
+
+```curl
+curl --include --request POST "https://connect.getseam.com/workspaces/update" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "name": "My Workspace",
+  "connect_partner_name": "Acme",
+  "connect_webview_customization": {
+    "inviter_logo_url": "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+    "logo_shape": "circle",
+    "primary_button_color": "#232426",
+    "primary_button_text_color": "#FFFDE7",
+    "success_message": "Your account has been successfully connected to Acme!"
+  },
+  "is_suspended": true
+}
+EOF
+```
+
+#### Output:
+
+```curl
+{}
+```
+
+</Tab>
+
+<Tab title="Python">
+
+Updates the workspace associated with the authentication value.
+
+#### Code:
+
+```python
+seam.workspaces.update(
+    name="My Workspace",
+    connect_partner_name="Acme",
+    connect_webview_customization={
+        "inviter_logo_url": "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+        "logo_shape": "circle",
+        "primary_button_color": "#232426",
+        "primary_button_text_color": "#FFFDE7",
+        "success_message": "Your account has been successfully connected to Acme!",
+    },
+    is_suspended=true,
+)
+```
+
+#### Output:
+
+```python
+None
+```
+
+</Tab>
+
+<Tab title="Ruby">
+
+Updates the workspace associated with the authentication value.
+
+#### Code:
+
+```ruby
+seam.workspaces.update(
+  name: "My Workspace",
+  connect_partner_name: "Acme",
+  connect_webview_customization: {
+    inviter_logo_url:
+      "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+    logo_shape: "circle",
+    primary_button_color: "#232426",
+    primary_button_text_color: "#FFFDE7",
+    success_message: "Your account has been successfully connected to Acme!",
+  },
+  is_suspended: true,
+)
+```
+
+#### Output:
+
+```ruby
+nil
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+Updates the workspace associated with the authentication value.
+
+#### Code:
+
+```php
+$seam->workspaces->update(
+    name: "My Workspace",
+    connect_partner_name: "Acme",
+    connect_webview_customization: [
+        "inviter_logo_url" =>
+            "https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c",
+        "logo_shape" => "circle",
+        "primary_button_color" => "#232426",
+        "primary_button_text_color" => "#FFFDE7",
+        "success_message" =>
+            "Your account has been successfully connected to Acme!",
+    ],
+    is_suspended: true,
+);
+```
+
+#### Output:
+
+```php
+
+```
+
+</Tab>
+
+<Tab title="Seam CLI">
+
+Updates the workspace associated with the authentication value.
+
+#### Code:
+
+```seam_cli
+seam workspaces update --name "My Workspace" --connect_partner_name "Acme" --connect_webview_customization {"inviter_logo_url":"https://connect.getseam.com/internal/images/view?image_id=1de135fa-f0c2-4e57-90d0-6b9a7d090a0c","logo_shape":"circle","primary_button_color":"#232426","primary_button_text_color":"#FFFDE7","success_message":"Your account has been successfully connected to Acme!"} --is_suspended true
+```
+
+#### Output:
+
+```seam_cli
+{}
+```
+
+</Tab>
+
+</Tabs>
+
+<details>
+
+<summary>Authentication Methods</summary>
+
+- API key
+- Personal access token
+  <br />
+  Must also include the `seam-workspace` header in the request.
+
+To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
+
+</details>
+
+## Request Parameters
+
+**`connect_partner_name`** _String_
+
+Connect partner name for the workspace.
+
+---
+
+**`connect_webview_customization`** _Object_
+
+[Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) customizations for the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+
+<details>
+
+<summary>
+  <b>
+    <code>logo_shape</code>
+  </b>{' '}
+  <i>Enum</i>
+</summary>
+
+Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+
+Enum values:
+
+- <code>circle</code>
+- <code>square</code>
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>primary_button_color</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
+
+Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>primary_button_text_color</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
+
+Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+
+</details>
+
+---
+
+<details>
+
+<summary>
+  <b>
+    <code>success_message</code>
+  </b>{' '}
+  <i>String</i>
+</summary>
+
+Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+
+</details>
+
+---
+
+**`is_publishable_key_auth_enabled`** _Boolean_
+
+Indicates whether publishable key authentication is enabled for this workspace.
+
+---
+
+**`is_suspended`** _Boolean_
+
+Indicates whether the workspace is suspended.
+
+---
+
+**`name`** _String_
+
+Name of the workspace.
+
+---
+
+## Response
+
+<Check>
+Returns:
+**void**
+
+</Check>
