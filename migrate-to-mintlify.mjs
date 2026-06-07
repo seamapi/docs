@@ -502,20 +502,29 @@ function buildDocsJson(parsedSummary) {
   return docsJson;
 }
 
-// ─── Branding ───────────────────────────────────────────────────────────────
-
-const BRANDING_DIR = path.resolve("branding");
-
 // ─── Main ───────────────────────────────────────────────────────────────────
 
 function main() {
   console.log("🚀 Starting GitBook → Mintlify migration...\n");
 
-  // 1. Clean and create destination
-  if (fs.existsSync(DEST)) {
-    fs.rmSync(DEST, { recursive: true });
-  }
+  // 1. Clean generated files but preserve images/ (which has checked-in branding)
   ensureDir(DEST);
+  if (fs.existsSync(DEST)) {
+    for (const entry of fs.readdirSync(DEST)) {
+      if (entry === "images") continue;
+      const fullPath = path.join(DEST, entry);
+      fs.rmSync(fullPath, { recursive: true });
+    }
+    // Clean generated assets from images/ (everything except branding)
+    const imagesDir = path.join(DEST, "images");
+    if (fs.existsSync(imagesDir)) {
+      const brandingFiles = new Set(["favicon.png", "seam-wordmark-light.png", "seam-wordmark-dark.png"]);
+      for (const entry of fs.readdirSync(imagesDir)) {
+        if (brandingFiles.has(entry)) continue;
+        fs.rmSync(path.join(imagesDir, entry), { recursive: true });
+      }
+    }
+  }
 
   // The docs repo has multiple GitBook spaces: api-reference/, brand-guides/, guides/
   // Each has its own .gitbook/assets/ and SUMMARY.md
@@ -542,13 +551,6 @@ function main() {
     }
   }
   console.log(`   ✓ Total: ${totalAssets} assets copied to images/`);
-
-  // Copy branding assets from branding/ into images/
-  console.log("🎨 Copying branding assets...");
-  if (fs.existsSync(BRANDING_DIR)) {
-    copyRecursive(BRANDING_DIR, path.join(DEST, "images"));
-    console.log(`   ✓ ${fs.readdirSync(BRANDING_DIR).join(", ")}`);
-  }
 
   // 3. Convert all markdown files from all spaces
   console.log("📝 Converting markdown files...");
