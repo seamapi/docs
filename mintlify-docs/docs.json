@@ -986,5 +986,11 @@
   },
   "api": {
     "baseUrl": "https://connect.getseam.com"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/latest/:slug*",
+      "destination": "/:slug*"
+    }
+  ]
 }
