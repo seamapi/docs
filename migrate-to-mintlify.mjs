@@ -391,7 +391,7 @@ function parseSummary(summaryPath, spacePrefix) {
       pagePath = pagePath.replace(/\.md$/, "");
 
       // Prefix with space name
-      pagePath = `${spacePrefix}/${pagePath}`;
+      pagePath = spacePrefix ? `${spacePrefix}/${pagePath}` : pagePath;
 
       if (!currentSection) {
         currentSection = { name: "Getting Started", pages: [] };
@@ -430,7 +430,7 @@ function parseSummaryAsGroups(summaryPath, spacePrefix) {
     if (pagePath.includes("broken-reference") || pagePath.includes("/broken/")) continue;
 
     pagePath = pagePath.replace(/\.md$/, "");
-    pagePath = `${spacePrefix}/${pagePath}`;
+    pagePath = spacePrefix ? `${spacePrefix}/${pagePath}` : pagePath;
 
     items.push({ title, path: pagePath, indent });
   }
@@ -618,8 +618,17 @@ function main() {
     }
   }
 
+  // Map GitBook space names to old URL-compatible output paths
+  const spaceOutputMap = {
+    "guides": "",  // guides go to root
+    "api-reference": "api",
+    "brand-guides": "device-and-system-integration-guides",
+  };
+
   for (const space of spaces) {
-    processDir(path.join(SRC, space), path.join(DEST, space), space);
+    const outputPrefix = spaceOutputMap[space] ?? space;
+    const destDir = outputPrefix ? path.join(DEST, outputPrefix) : DEST;
+    processDir(path.join(SRC, space), destDir, space);
   }
   console.log(`   ✓ ${fileCount} files converted, ${errorCount} errors`);
 
@@ -631,14 +640,15 @@ function main() {
   const apiSummary = path.join(SRC, "api-reference", "SUMMARY.md");
   const brandSummary = path.join(SRC, "brand-guides", "SUMMARY.md");
 
+  // Use old URL prefixes for page paths in navigation
   const guidesSections = fs.existsSync(guidesSummary)
-    ? parseSummary(guidesSummary, "guides")
+    ? parseSummary(guidesSummary, "")
     : [];
   const apiGroups = fs.existsSync(apiSummary)
-    ? parseSummaryAsGroups(apiSummary, "api-reference")
+    ? parseSummaryAsGroups(apiSummary, "api")
     : [];
   const brandGroups = fs.existsSync(brandSummary)
-    ? parseSummaryAsGroups(brandSummary, "brand-guides")
+    ? parseSummaryAsGroups(brandSummary, "device-and-system-integration-guides")
     : [];
 
   const docsJson = buildDocsJson(guidesSections, apiGroups, brandGroups);
