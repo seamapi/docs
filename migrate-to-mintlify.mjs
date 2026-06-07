@@ -353,100 +353,132 @@ function convertFrontmatter(content, filePath) {
 
 // ─── SUMMARY.md → docs.json navigation ─────────────────────────────────────
 
-function parseSummary(summaryPath) {
+/**
+ * Parse a single SUMMARY.md file into sections.
+ * Returns an array of { name: string, pages: string[] } where each section
+ * corresponds to a `## Header` in the SUMMARY.md. Pages before the first
+ * `## Header` go into a section named "Getting Started".
+ *
+ * Page paths have .md stripped but README is preserved
+ * (e.g. "use-cases/granting-access/README").
+ */
+function parseSummary(summaryPath, spacePrefix) {
   const content = fs.readFileSync(summaryPath, "utf-8");
   const lines = content.split("\n");
 
-  const sections = []; // [{name, items: [{title, path, indent, children}]}]
+  const sections = []; // [{name, pages: [string]}]
   let currentSection = null;
 
   for (const line of lines) {
     // Section headers like ## Core Concepts
     const sectionMatch = line.match(/^## (.+?)(?:\s*<a[^>]*>.*<\/a>)?$/);
     if (sectionMatch) {
-      currentSection = { name: sectionMatch[1].trim(), items: [] };
+      currentSection = { name: sectionMatch[1].trim(), pages: [] };
       sections.push(currentSection);
       continue;
     }
 
-    // Page entries: * [Title](path.md)
-    const pageMatch = line.match(/^(\s*)\*\s+\[([^\]]+)\]\(([^)]+)\)/);
+    // Page entries at any indent level: * [Title](path.md)
+    const pageMatch = line.match(/^\s*\*\s+\[([^\]]+)\]\(([^)]+)\)/);
     if (pageMatch) {
-      const indent = pageMatch[1].length;
-      const title = pageMatch[2];
-      let pagePath = pageMatch[3];
+      let pagePath = pageMatch[2];
 
+      // Skip external links and broken references
       if (pagePath.startsWith("http")) continue;
       if (pagePath.includes("broken-reference") || pagePath.includes("/broken/")) continue;
 
-      pagePath = pagePath
-        .replace(/\.md$/, "")
-        .replace(/\/README$/, "");
+      // Strip .md extension (Mintlify uses .mdx, referenced without extension)
+      pagePath = pagePath.replace(/\.md$/, "");
+
+      // Prefix with space name
+      pagePath = `${spacePrefix}/${pagePath}`;
 
       if (!currentSection) {
-        currentSection = { name: "Getting Started", items: [] };
+        currentSection = { name: "Getting Started", pages: [] };
         sections.unshift(currentSection);
       }
 
-      currentSection.items.push({ title, path: pagePath, indent });
+      currentSection.pages.push(pagePath);
     }
   }
 
-  // Build nested groups from items based on indent levels
-  function buildGroups(items) {
-    const groups = [];
-    let currentGroup = null;
-
-    for (let i = 0; i < items.length; i++) {
-      const item = items[i];
-
-      if (item.indent <= 2) {
-        // Check if next items are children (indent > 2)
-        const children = [];
-        let j = i + 1;
-        while (j < items.length && items[j].indent > 2) {
-          children.push(items[j]);
-          j++;
-        }
-
-        if (children.length > 0) {
-          // This is a group parent
-          const subPages = [item.path];
-          for (const child of children) {
-            subPages.push(child.path);
-          }
-          groups.push({
-            group: item.title,
-            pages: subPages,
-          });
-          i = j - 1; // skip children
-        } else {
-          // Standalone page — add to a catch-all group if needed
-          if (!currentGroup || currentGroup.group !== "__standalone__") {
-            currentGroup = { group: "__standalone__", pages: [] };
-            groups.push(currentGroup);
-          }
-          currentGroup.pages.push(item.path);
-        }
-      }
-    }
-
-    // Merge standalone groups and rename
-    return groups.map((g) => {
-      if (g.group === "__standalone__") {
-        return { ...g, group: "Overview" };
-      }
-      return g;
-    });
-  }
-
-  return { sections, buildGroups };
+  return sections;
 }
 
-function buildDocsJson(parsedSummary) {
-  const { sections, buildGroups } = parsedSummary;
+/**
+ * Parse an API-style SUMMARY.md (api-reference or brand-guides) where
+ * top-level items with children become groups, and top-level items
+ * without children go into an "Overview" group.
+ *
+ * Returns an array of { group: string, pages: string[] }.
+ */
+function parseSummaryAsGroups(summaryPath, spacePrefix) {
+  const content = fs.readFileSync(summaryPath, "utf-8");
+  const lines = content.split("\n");
 
-  const docsJson = {
+  // Parse into a flat list with indent levels
+  const items = []; // [{title, path, indent}]
+  for (const line of lines) {
+    const pageMatch = line.match(/^(\s*)\*\s+\[([^\]]+)\]\(([^)]+)\)/);
+    if (!pageMatch) continue;
+
+    const indent = pageMatch[1].length;
+    const title = pageMatch[2];
+    let pagePath = pageMatch[3];
+
+    if (pagePath.startsWith("http")) continue;
+    if (pagePath.includes("broken-reference") || pagePath.includes("/broken/")) continue;
+
+    pagePath = pagePath.replace(/\.md$/, "");
+    pagePath = `${spacePrefix}/${pagePath}`;
+
+    items.push({ title, path: pagePath, indent });
+  }
+
+  // Group: top-level items (indent 0) with children become named groups.
+  // Top-level items without children go into "Overview".
+  const groups = [];
+  let overviewGroup = null;
+
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    if (item.indent > 0) continue; // skip — already consumed as child
+
+    // Collect all children (anything with indent > 0 that follows)
+    const children = [];
+    let j = i + 1;
+    while (j < items.length && items[j].indent > 0) {
+      children.push(items[j]);
+      j++;
+    }
+
+    if (children.length > 0) {
+      // This top-level item + its children form a group
+      const pages = [item.path, ...children.map((c) => c.path)];
+      groups.push({ group: item.title, pages });
+      i = j - 1; // skip past children
+    } else {
+      // Standalone top-level page → "Overview" group
+      if (!overviewGroup) {
+        overviewGroup = { group: "Overview", pages: [] };
+        // Insert Overview at the front
+        groups.unshift(overviewGroup);
+      }
+      overviewGroup.pages.push(item.path);
+    }
+  }
+
+  return groups;
+}
+
+/**
+ * Build the full docs.json object with 3 tabs:
+ *   - Guides (default tab, sidebar groups from ## sections)
+ *   - API Reference (groups per API resource)
+ *   - Brand Guides (groups per brand)
+ */
+function buildDocsJson(guidesSections, apiGroups, brandGroups) {
+  return {
     $schema: "https://mintlify.com/docs.json",
     name: "Seam",
     theme: "mint",
@@ -460,7 +492,25 @@ function buildDocsJson(parsedSummary) {
       light: "#60A5FA",
       dark: "#1D4ED8",
     },
-    navigation: {},
+    navigation: {
+      tabs: [
+        {
+          tab: "Guides",
+          groups: guidesSections.map((s) => ({
+            group: s.name,
+            pages: s.pages,
+          })),
+        },
+        {
+          tab: "API Reference",
+          groups: apiGroups,
+        },
+        {
+          tab: "Brand Guides",
+          groups: brandGroups,
+        },
+      ],
+    },
     topbar: {
       links: [
         {
@@ -479,27 +529,6 @@ function buildDocsJson(parsedSummary) {
       baseUrl: "https://connect.getseam.com",
     },
   };
-
-  if (sections.length <= 1) {
-    // Simple: just groups
-    const groups = sections.length > 0 ? buildGroups(sections[0].items) : [];
-    docsJson.navigation.groups = groups;
-  } else {
-    // First section becomes the main sidebar groups, rest become tabs
-    const firstSection = sections[0];
-    docsJson.navigation.groups = buildGroups(firstSection.items);
-
-    docsJson.navigation.tabs = [];
-    for (let i = 1; i < sections.length; i++) {
-      const section = sections[i];
-      docsJson.navigation.tabs.push({
-        tab: section.name,
-        groups: buildGroups(section.items),
-      });
-    }
-  }
-
-  return docsJson;
 }
 
 // ─── Main ───────────────────────────────────────────────────────────────────
@@ -596,61 +625,23 @@ function main() {
 
   // 4. Generate docs.json from all SUMMARY.md files
   console.log("📋 Generating docs.json...");
-  const allSections = [];
-  for (const space of spaces) {
-    const summaryPath = path.join(SRC, space, "SUMMARY.md");
-    if (fs.existsSync(summaryPath)) {
-      const parsed = parseSummary(summaryPath);
-      // Prefix all page paths with the space name
-      for (const section of parsed.sections) {
-        for (const item of section.items) {
-          item.path = `${space}/${item.path}`;
-        }
-      }
-      allSections.push(...parsed.sections);
-    }
-  }
 
-  const docsJson = buildDocsJson({
-    sections: allSections,
-    buildGroups: function (items) {
-      const groups = [];
-      let currentGroup = null;
+  // Parse each space's SUMMARY.md with the appropriate strategy
+  const guidesSummary = path.join(SRC, "guides", "SUMMARY.md");
+  const apiSummary = path.join(SRC, "api-reference", "SUMMARY.md");
+  const brandSummary = path.join(SRC, "brand-guides", "SUMMARY.md");
 
-      for (let i = 0; i < items.length; i++) {
-        const item = items[i];
+  const guidesSections = fs.existsSync(guidesSummary)
+    ? parseSummary(guidesSummary, "guides")
+    : [];
+  const apiGroups = fs.existsSync(apiSummary)
+    ? parseSummaryAsGroups(apiSummary, "api-reference")
+    : [];
+  const brandGroups = fs.existsSync(brandSummary)
+    ? parseSummaryAsGroups(brandSummary, "brand-guides")
+    : [];
 
-        if (item.indent <= 2) {
-          const children = [];
-          let j = i + 1;
-          while (j < items.length && items[j].indent > 2) {
-            children.push(items[j]);
-            j++;
-          }
-
-          if (children.length > 0) {
-            const subPages = [item.path];
-            for (const child of children) {
-              subPages.push(child.path);
-            }
-            groups.push({ group: item.title, pages: subPages });
-            i = j - 1;
-          } else {
-            if (!currentGroup || currentGroup.group !== "__standalone__") {
-              currentGroup = { group: "__standalone__", pages: [] };
-              groups.push(currentGroup);
-            }
-            currentGroup.pages.push(item.path);
-          }
-        }
-      }
-
-      return groups.map((g) => {
-        if (g.group === "__standalone__") return { ...g, group: "Overview" };
-        return g;
-      });
-    },
-  });
+  const docsJson = buildDocsJson(guidesSections, apiGroups, brandGroups);
   fs.writeFileSync(
     path.join(DEST, "docs.json"),
     JSON.stringify(docsJson, null, 2)
