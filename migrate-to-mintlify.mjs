@@ -372,8 +372,9 @@ function parseSummary(summaryPath, spacePrefix) {
       if (
         pagePath.includes('broken-reference') ||
         pagePath.includes('/broken/')
-      )
+      ) {
         continue
+      }
 
       // Strip .md extension and README (use index instead)
       pagePath = pagePath
@@ -418,8 +419,12 @@ function parseSummaryAsGroups(summaryPath, spacePrefix) {
     let pagePath = pageMatch[3]
 
     if (pagePath.startsWith('http')) continue
-    if (pagePath.includes('broken-reference') || pagePath.includes('/broken/'))
+    if (
+      pagePath.includes('broken-reference') ||
+      pagePath.includes('/broken/')
+    ) {
       continue
+    }
 
     pagePath = pagePath
       .replace(/\.md$/, '')
