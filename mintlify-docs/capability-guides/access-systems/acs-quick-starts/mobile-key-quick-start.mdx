@@ -23,10 +23,10 @@ This quick start walks you through the following basic steps:
 2. Install a Seam SDK and create an API key.
 3. Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
    - Seam user identities enable you to match your own mobile app users to ACS users.
-4. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups.md).
+4. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups).
    - Access groups are preconfigured to grant access to specific entrances.\
-     While some access control systems use access groups, others specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
-5. Create a mobile key [ACS credential](../managing-credentials.md) for the user identity.
+     While some access control systems use access groups, others specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences#access-permission-assignment-variations).
+5. Create a mobile key [ACS credential](../managing-credentials) for the user identity.
 6. View the list of entrances to which the user now has access.
 
 :rocket: Let's get started!
@@ -299,7 +299,7 @@ $jen_doe_user = $seam->user_identities->create(
 
 Add the user identity to an access group. For Salto KS, access groups specify the entrances to which users have access.
 
-Some other access control systems do not use access groups and, instead, specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
+Some other access control systems do not use access groups and, instead, specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences#access-permission-assignment-variations).
 
 1. Find the access group ID.
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
@@ -586,7 +586,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 
 ## Step 6: View Your New Credential
 
-You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the list of entrances to which the ACS user now has access.
+You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli) to view the list of entrances to which the ACS user now has access.
 
 To use Seam Console to view information about your new PIN code credential:
 
@@ -637,8 +637,8 @@ To use Seam Console to view information about your new PIN code credential:
 
 Now that you've created a mobile key credential, try out the other ACS quick starts.
 
-- [PIN Code Quick Start](pin-code-quick-start.md)
-- [Key Card Quick Start](encodable-key-card-quick-start.md)
+- [PIN Code Quick Start](pin-code-quick-start)
+- [Key Card Quick Start](encodable-key-card-quick-start)
 
 Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
 
@@ -649,16 +649,16 @@ Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
 For a deeper dive into ACS concepts and instructions, see the following topics:
 
 1. Learn about ACS concepts.
-   - [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources.md)
-   - [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences.md)
+   - [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources)
+   - [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences)
 2. Create user identities.
-   - [Managing Mobile App User Accounts with User Identities](../../mobile-access/managing-mobile-app-user-accounts-with-user-identities.md)
+   - [Managing Mobile App User Accounts with User Identities](../../mobile-access/managing-mobile-app-user-accounts-with-user-identities)
 3. For relevant access control systems, assign user identities to access groups.
    - [Adding User Identities to Access Groups](https://docs.seam.co/latest/api/acs/access_groups/add_user)
 4. Learn about available entrances.
-   - [Retrieving Entrance Details](../retrieving-entrance-details.md)
+   - [Retrieving Entrance Details](../retrieving-entrance-details)
 5. Create credentials for ACS users.
-   - [Managing Credentials](../managing-credentials.md)
+   - [Managing Credentials](../managing-credentials)
 6. Learn more about the Seam mobile access solution.
    - [Mobile Access](../../mobile-access/)
    - [Integrating into your mobile application](../../mobile-access/mobile-device-sdks/)

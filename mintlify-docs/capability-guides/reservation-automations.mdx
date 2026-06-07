@@ -26,7 +26,7 @@ Reservation Automations follow the lifecycle of a reservation:
 Set up these resources in your Seam workspace:
 
 - [Customer](customer-portals/) – identify who the automation belongs to with a `customer_key`.
-- [Spaces](../core-concepts/mapping-your-resources-to-seam-resources.md) – represent the real-world units your customer manages (i.e. _Room 101_ in a hotel, _Studio 3_ in a gym). Each space must be created via [`/spaces/create`](https://docs.seam.co/latest/api/spaces/create) with a `space_key` and assigned devices or entrances **before** you call `push_data`. Reservations reference these spaces by `space_key`.
+- [Spaces](../core-concepts/mapping-your-resources-to-seam-resources) – represent the real-world units your customer manages (i.e. _Room 101_ in a hotel, _Studio 3_ in a gym). Each space must be created via [`/spaces/create`](https://docs.seam.co/latest/api/spaces/create) with a `space_key` and assigned devices or entrances **before** you call `push_data`. Reservations reference these spaces by `space_key`.
 - Devices or entrances – connect locks, thermostats, or ACS entrances to each space (e.g., assign the lock in Room 101 to the _Room 101_ space). Use `device_ids` for smart locks and thermostats, or `acs_entrance_ids` for access control system entrances.
 - Unique user identity emails – each `user_identity` you push must have a unique `email_address`. If an email already exists from a previous call, the reservation is silently skipped.
 

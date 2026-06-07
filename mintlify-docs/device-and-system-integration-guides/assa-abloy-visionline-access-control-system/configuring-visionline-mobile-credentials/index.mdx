@@ -37,7 +37,7 @@ Use the following basic process to grant access in a Visionline ACS:
 
 ## Issuing Guest Mobile Credentials
 
-To issue a guest mobile credential for the Visionline ACS, create a credential with `visionline_metadata.card_function_type` set to `guest`. Also, for a guest credential, you normally set `visionline_metadata.card_format` to `rfid48`, unless the guest needs a higher-capacity `TLCode` card. For more information about Visionline metadata, see [`acs_credential.visionline_metadata` Properties](../mobile-credential-related-properties.md#acs_credential.visionline_metadata-properties).
+To issue a guest mobile credential for the Visionline ACS, create a credential with `visionline_metadata.card_function_type` set to `guest`. Also, for a guest credential, you normally set `visionline_metadata.card_format` to `rfid48`, unless the guest needs a higher-capacity `TLCode` card. For more information about Visionline metadata, see [`acs_credential.visionline_metadata` Properties](../mobile-credential-related-properties#acs_credential.visionline_metadata-properties).
 
 ### Guest Mobile Credential Types
 
@@ -56,7 +56,7 @@ To issue the first guest credential for a reservation, create an override creden
 <Info>
   You can also [verify whether a user identity has a phone that is set up for a
   credential
-  manager](checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager.md)
+  manager](checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager)
   and, consequently, is ready to accept an override guest credential.
 </Info>
 
@@ -131,7 +131,7 @@ To issue a joiner credential, you must specify both the entrances to which to gr
 * `allowed_acs_entrance_ids`
 * `visionline_metadata.joiner_acs_credential_ids`
 
-For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](issuing-various-types-of-guest-joiner-mobile-credentials.md).
+For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](issuing-various-types-of-guest-joiner-mobile-credentials).
 
 <Tabs>
 <Tab title="Python">

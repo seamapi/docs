@@ -7,10 +7,10 @@ You can use [Seam Console](../seam-console/) to customize the [Connect Webviews]
 
 You can customize the following characteristics of your Connect Webviews:
 
-- [Look and feel](customizing-connect-webviews.md#customize-the-look-and-feel-of-your-connect-webviews)
-- [Brands (manufacturers) to display](customizing-connect-webviews.md#customize-the-brands-to-display-in-your-connect-webviews)
-- [Device types (capabilities) to connect](customizing-connect-webviews.md#customize-the-types-of-devices-to-connect)
-- [Behavior settings](customizing-connect-webviews.md#customize-the-behavior-settings-of-your-connect-webviews), including `automatically_manage_new_devices` and `wait_for_device_creation`
+- [Look and feel](customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews)
+- [Brands (manufacturers) to display](customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews)
+- [Device types (capabilities) to connect](customizing-connect-webviews#customize-the-types-of-devices-to-connect)
+- [Behavior settings](customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews), including `automatically_manage_new_devices` and `wait_for_device_creation`
 
 ---
 
@@ -195,13 +195,13 @@ When you create a Connect Webview, you can customize the providers—that is, th
 | [Wyze](https://docs.seam.co/latest/device-and-system-integration-guides/wyze-locks)                                                                         | `wyze`                          |
 | [Yale](https://docs.seam.co/latest/device-and-system-integration-guides/yale-locks)                                                                         | `yale`                          |
 
-To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](https://docs.seam.co/latest/api/devices/list_device_providers) method to learn about each provider. The information that this method returns for each provider includes a set of [capability flags](../../capability-guides/device-and-system-capabilities.md#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.
+To help you decide which providers to include in a Connect Webview, you can use the [List Device Providers](https://docs.seam.co/latest/api/devices/list_device_providers) method to learn about each provider. The information that this method returns for each provider includes a set of [capability flags](../../capability-guides/device-and-system-capabilities#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.
 
 <Info>
   If you omit the `accepted_providers` parameter, the Connect Webview displays
   all of the stable providers that Seam supports, by default. For more
   information about provider categories, see [Step 1: Create a Connect
-  Webview](connect-webview-process.md#step-1-create-a-connect-webview).
+  Webview](connect-webview-process#step-1-create-a-connect-webview).
 </Info>
 
 The following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:
@@ -368,7 +368,7 @@ seam.ConnectWebviews.Create(
   SmartThings.
 </Info>
 
-Some providers support multiple device types, like smart locks and thermostats. To specify which types of devices your users can connect to Seam for a provider that supports multiple device types, use the `accepted_capabilities` parameter when creating a Connect Webview. This parameter is especially applicable when the Connect Webview [`automatically_manage_new_devices`](customizing-connect-webviews.md#automatically_manage_new_devices) parameter is `true`. Set `accepted_capabilities` to an array containing one or more of the following values to indicate the capabilities of the devices that the Connect Webview can accept:
+Some providers support multiple device types, like smart locks and thermostats. To specify which types of devices your users can connect to Seam for a provider that supports multiple device types, use the `accepted_capabilities` parameter when creating a Connect Webview. This parameter is especially applicable when the Connect Webview [`automatically_manage_new_devices`](customizing-connect-webviews#automatically_manage_new_devices) parameter is `true`. Set `accepted_capabilities` to an array containing one or more of the following values to indicate the capabilities of the devices that the Connect Webview can accept:
 
 - `lock`
 - `thermostat`
@@ -380,14 +380,14 @@ Seam maintains a default value for this parameter for each provider. For example
 
 You can use the following two properties to customize the behavior of your Connect Webviews:
 
-- [`automatically_manage_new_devices`](customizing-connect-webviews.md#automatically_manage_new_devices)
-- [`wait_for_device_creation`](customizing-connect-webviews.md#wait_for_device_creation)
+- [`automatically_manage_new_devices`](customizing-connect-webviews#automatically_manage_new_devices)
+- [`wait_for_device_creation`](customizing-connect-webviews#wait_for_device_creation)
 
 You configure these properties when you are creating the Connect Webview. Consequently, you can customize these two characteristics for each of your Connect Webviews.
 
 ### `automatically_manage_new_devices`
 
-Seam charges fees for different parts of the API, like connecting a device, creating an access code or thermostat schedule, and creating an access control system user. To learn more, contact our team. You can exclude specific devices from your bill by marking them as "[unmanaged](../devices/managed-and-unmanaged-devices.md)."
+Seam charges fees for different parts of the API, like connecting a device, creating an access code or thermostat schedule, and creating an access control system user. To learn more, contact our team. You can exclude specific devices from your bill by marking them as "[unmanaged](../devices/managed-and-unmanaged-devices)."
 
 The default value for `automatically_manage_new_devices` is `true`. Consequently, by default, Seam imports all devices and makes them available for use. However, if you set this property to `false`, Seam sets the `is_managed` property for all new devices to `false` (that is, unmanaged) when a user first connects their account to Seam.
 

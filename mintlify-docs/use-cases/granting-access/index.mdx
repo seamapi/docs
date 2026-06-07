@@ -132,9 +132,9 @@ Access Grants work across the entire Seam provider lineup:
 
 We recommend learning Access Grants in three steps, from the simplest setup to the most advanced:
 
-1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices.md).
-2. **Multiple devices and spaces.** Pass several `device_ids` in one call to grant access to a set of locks at once. To manage groups of access points by name—for example, everything a guest in Unit 101 needs—organize them into [spaces](creating-an-access-grant-using-spaces.md) and grant access by `space_id`.
-3. **Access control systems.** Connect an ACS, such as Salto, Visionline, or Brivo, and grant access to entrances with `acs_entrance_ids`. This path can involve additional setup, such as licenses, on-premises connections through Seam Bridge, mobile key configuration, and [reservations](reservation-access-grants.md) for offline-override systems. See [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md).
+1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices).
+2. **Multiple devices and spaces.** Pass several `device_ids` in one call to grant access to a set of locks at once. To manage groups of access points by name—for example, everything a guest in Unit 101 needs—organize them into [spaces](creating-an-access-grant-using-spaces) and grant access by `space_id`.
+3. **Access control systems.** Connect an ACS, such as Salto, Visionline, or Brivo, and grant access to entrances with `acs_entrance_ids`. This path can involve additional setup, such as licenses, on-premises connections through Seam Bridge, mobile key configuration, and [reservations](reservation-access-grants) for offline-override systems. See [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances).
 
 ---
 
@@ -297,7 +297,7 @@ The Access Grant process consists of the following steps:
         Grant.
         <br />
         See{' '}
-        <a href='../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md#what-is-a-user-identity'>
+        <a href='../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity'>
           Managing Mobile App User Accounts with User Identities
         </a>
         .
@@ -388,15 +388,15 @@ The Access Grant process consists of the following steps:
 | Grant a person access to ACS entrances                       | Access Grants (`acs_entrance_ids`)                                                         |
 | Grant a person access to a group of access points            | Access Grants + [spaces](https://docs.seam.co/latest/api/spaces) (`space_ids`)             |
 | Issue a mobile key or Instant Key                            | Access Grants (`mode: "mobile_key"`)                                                       |
-| Set a PIN with a specific custom code value on a single lock | [Access Codes API](../../capability-guides/smart-locks/access-codes/README.md) (low-level) |
-| Manage offline or backup PIN code pools on a single lock     | [Access Codes API](../../capability-guides/smart-locks/access-codes/README.md) (low-level) |
-| Directly manage ACS users, credentials, and access groups    | [ACS API](../../capability-guides/access-systems/README.md) (low-level)                    |
-| Lock or unlock a door remotely                               | [Smart Locks API](../../capability-guides/smart-locks/README.md) (not a granting workflow) |
+| Set a PIN with a specific custom code value on a single lock | [Access Codes API](../../capability-guides/smart-locks/access-codes/index) (low-level) |
+| Manage offline or backup PIN code pools on a single lock     | [Access Codes API](../../capability-guides/smart-locks/access-codes/index) (low-level) |
+| Directly manage ACS users, credentials, and access groups    | [ACS API](../../capability-guides/access-systems/index) (low-level)                    |
+| Lock or unlock a door remotely                               | [Smart Locks API](../../capability-guides/smart-locks/index) (not a granting workflow) |
 
 <Warning>
   The low-level [Access
-  Codes](../../capability-guides/smart-locks/access-codes/README.md) and
-  [ACS](../../capability-guides/access-systems/README.md) granting workflows are
+  Codes](../../capability-guides/smart-locks/access-codes/index) and
+  [ACS](../../capability-guides/access-systems/index) granting workflows are
   no longer recommended for granting access. For new development, use Access
   Grants—they cover the same providers through one consistent, future-proof
   interface.
@@ -410,17 +410,17 @@ Some access control systems (such as Dormakaba Ambiance, Dormakaba Community, Vi
 
 When issuing Access Grants for these systems, you’ll need to use reservations to ensure credentials override and join correctly.
 
-👉 [Learn how to use reservations with Access Grants →](reservation-access-grants.md)
+👉 [Learn how to use reservations with Access Grants →](reservation-access-grants)
 
 ---
 
 ## Get Started
 
-To create your first Access Grant, see the [Access Grant Quick Start](access-grant-quick-start.md). Then, learn more in the following topics:
+To create your first Access Grant, see the [Access Grant Quick Start](access-grant-quick-start). Then, learn more in the following topics:
 
-- [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices.md)
-- [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md)
-- [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
-- [Delivering Access Methods](delivering-access-methods.md)
+- [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices)
+- [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces)
+- [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances)
+- [Delivering Access Methods](delivering-access-methods)
 - [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
 - [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

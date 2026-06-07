@@ -8,8 +8,8 @@ You can create thermostat weekly programs in a unified manner across the variety
 To set a thermostat weekly program:
 
 1. [Create the climate presets](creating-and-managing-climate-presets/#create-a-climate-preset) that you want to use in your weekly program.
-2. [Create the daily programs](creating-and-managing-thermostat-programs.md#create-a-daily-program) that you want to use in your weekly program. In each daily program, define a set of time periods. For each of these time periods, specify the starting time for the period and the key that identifies the climate preset that you want to activate at the starting time.
-3. [Update the weekly program](creating-and-managing-thermostat-programs.md#update-the-weekly-program) on the thermostat. To define the weekly program, specify the configured daily program that you want to apply to each day of the week.
+2. [Create the daily programs](creating-and-managing-thermostat-programs#create-a-daily-program) that you want to use in your weekly program. In each daily program, define a set of time periods. For each of these time periods, specify the starting time for the period and the key that identifies the climate preset that you want to activate at the starting time.
+3. [Update the weekly program](creating-and-managing-thermostat-programs#update-the-weekly-program) on the thermostat. To define the weekly program, specify the configured daily program that you want to apply to each day of the week.
 
 You can update daily programs, and you can update the weekly program again as desired. You can also delete any daily programs that are not being used in a weekly program.
 
@@ -276,7 +276,7 @@ $seam->thermostats->daily_programs->create(
 
 To update a daily program, use `/thermostats/daily_programs/update`, specifying the ID of the daily program that you want to change. You can edit the name for the daily program and the desired replacement set of daily program periods. To delete a daily program period, simply omit it when specifying the complete set of replacement program periods for the daily program.
 
-Updating a daily program returns an [action attempt](../../core-concepts/action-attempts.md) so that you can track the status of pushing this program change to the thermostat.
+Updating a daily program returns an [action attempt](../../core-concepts/action-attempts) so that you can track the status of pushing this program change to the thermostat.
 
 The following example changes the climate preset for the second period and the starting time of the third period:
 
@@ -589,7 +589,7 @@ You set or update the weekly program using `/thermostats/update_weekly_program`.
 
 To replace a weekly program, use `/thermostats/update_weekly_program`, specifying the desired replacement daily program IDs. The new weekly program overwrites any previous weekly program. To clear all daily programs from the weekly program, set all daily program ID parameters to null.
 
-Updating the weekly program returns an [action attempt](../../core-concepts/action-attempts.md) so that you can track the status of pushing this program change to the thermostat.
+Updating the weekly program returns an [action attempt](../../core-concepts/action-attempts) so that you can track the status of pushing this program change to the thermostat.
 
 The following example assigns the same weekday program to each weekday and the same weekend program to each weekend day:&#x20;
 

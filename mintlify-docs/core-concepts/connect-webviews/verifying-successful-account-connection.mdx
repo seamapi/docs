@@ -5,8 +5,8 @@ description: "Learn how to find out when your user's device or ACS account has c
 
 Use one of the following methods to find out when your user's account has connected successfully to Seam through your app:
 
-- If you've redirected your app to the Connect Webview, [poll](verifying-successful-account-connection.md#polling) or use a [webhook](verifying-successful-account-connection.md#webhook) to determine when the Connect Webview has completed successfully. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
-- If you've embedded the Connect Webview in an [iframe](https://www.w3schools.com/html/html_iframe.asp), use [event listening](verifying-successful-account-connection.md#event-listening) to determine when to close the iframe. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview.md) associated with the newly-connected account.
+- If you've redirected your app to the Connect Webview, [poll](verifying-successful-account-connection#polling) or use a [webhook](verifying-successful-account-connection#webhook) to determine when the Connect Webview has completed successfully. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview) associated with the newly-connected account.
+- If you've embedded the Connect Webview in an [iframe](https://www.w3schools.com/html/html_iframe.asp), use [event listening](verifying-successful-account-connection#event-listening) to determine when to close the iframe. You can then [retrieve the device or ACS](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview) associated with the newly-connected account.
 
 <Info>
   You do not need to delete a Connect Webview once a user completes it. Instead,
@@ -189,7 +189,7 @@ To avoid polling, use a Seam webhook to monitor for a `connected_account.connect
 
 Note that the `connected_account.connected` event also includes a `connected_account_id` property.
 
-For more information, see [Webhooks](../../developer-tools/webhooks.md).
+For more information, see [Webhooks](../../developer-tools/webhooks).
 
 ```json
 {
@@ -206,7 +206,7 @@ For more information, see [Webhooks](../../developer-tools/webhooks.md).
 
 ## **Event Listening**
 
-When you [host a Connect Webview in an HTML iframe](embedding-a-connect-webview-in-your-app.md#embed-the-connect-webview-in-an-iframe), the [iframe](https://www.w3schools.com/html/html_iframe.asp) uses `window.parent.postMessage` to send messages to the parent window that is hosting the iframe. `window.parent.postMessage` is a cross-origin communication mechanism available in web browsers.
+When you [host a Connect Webview in an HTML iframe](embedding-a-connect-webview-in-your-app#embed-the-connect-webview-in-an-iframe), the [iframe](https://www.w3schools.com/html/html_iframe.asp) uses `window.parent.postMessage` to send messages to the parent window that is hosting the iframe. `window.parent.postMessage` is a cross-origin communication mechanism available in web browsers.
 
 Register an event listener for the parent window containing the iframe to monitor for `message` events. Specifically, listen for a `connect_webview.login_succeeded` event. This event indicates that Seam has successfully established the connection to the user's device or ACS account. A `connect_webview.login_failed` event indicates that the account connection did not complete successfully.
 
