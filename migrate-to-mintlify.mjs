@@ -387,8 +387,8 @@ function parseSummary(summaryPath, spacePrefix) {
       if (pagePath.startsWith("http")) continue;
       if (pagePath.includes("broken-reference") || pagePath.includes("/broken/")) continue;
 
-      // Strip .md extension (Mintlify uses .mdx, referenced without extension)
-      pagePath = pagePath.replace(/\.md$/, "");
+      // Strip .md extension and README (use index instead)
+      pagePath = pagePath.replace(/\.md$/, "").replace(/\/README$/, "").replace(/^README$/, "index");
 
       // Prefix with space name
       pagePath = spacePrefix ? `${spacePrefix}/${pagePath}` : pagePath;
@@ -429,7 +429,7 @@ function parseSummaryAsGroups(summaryPath, spacePrefix) {
     if (pagePath.startsWith("http")) continue;
     if (pagePath.includes("broken-reference") || pagePath.includes("/broken/")) continue;
 
-    pagePath = pagePath.replace(/\.md$/, "");
+    pagePath = pagePath.replace(/\.md$/, "").replace(/\/README$/, "").replace(/^README$/, "index");
     pagePath = spacePrefix ? `${spacePrefix}/${pagePath}` : pagePath;
 
     items.push({ title, path: pagePath, indent });
@@ -601,10 +601,8 @@ function main() {
           const content = fs.readFileSync(srcPath, "utf-8");
           const relativePath = path.relative(SRC, srcPath);
 
-          const destFile = path.join(
-            destDir,
-            entry.replace(/\.md$/, ".mdx")
-          );
+          const mdxName = entry === "README.md" ? "index.mdx" : entry.replace(/\.md$/, ".mdx");
+          const destFile = path.join(destDir, mdxName);
           const converted = convertContent(content, relativePath);
 
           ensureDir(path.dirname(destFile));
