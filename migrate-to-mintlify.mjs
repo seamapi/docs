@@ -7,7 +7,6 @@
 
 import fs from "fs";
 import path from "path";
-import https from "https";
 
 const SRC = path.resolve("docs");
 const DEST = path.resolve("mintlify-docs");
@@ -503,49 +502,13 @@ function buildDocsJson(parsedSummary) {
   return docsJson;
 }
 
-// ─── Branding download ──────────────────────────────────────────────────────
+// ─── Branding ───────────────────────────────────────────────────────────────
 
-function downloadFile(url, destPath) {
-  return new Promise((resolve, reject) => {
-    const follow = (u) => {
-      https.get(u, (res) => {
-        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-          follow(res.headers.location);
-          return;
-        }
-        if (res.statusCode !== 200) {
-          reject(new Error(`HTTP ${res.statusCode}`));
-          return;
-        }
-        const chunks = [];
-        res.on("data", (c) => chunks.push(c));
-        res.on("end", () => {
-          fs.writeFileSync(destPath, Buffer.concat(chunks));
-          resolve();
-        });
-        res.on("error", reject);
-      }).on("error", reject);
-    };
-    follow(url);
-  });
-}
-
-async function downloadBrandingAssets(assets, destDir) {
-  ensureDir(destDir);
-  for (const asset of assets) {
-    const destPath = path.join(destDir, asset.name);
-    try {
-      await downloadFile(asset.url, destPath);
-      console.log(`   ✓ ${asset.name}`);
-    } catch (err) {
-      console.error(`   ✗ ${asset.name}: ${err.message}`);
-    }
-  }
-}
+const BRANDING_DIR = path.resolve("branding");
 
 // ─── Main ───────────────────────────────────────────────────────────────────
 
-async function main() {
+function main() {
   console.log("🚀 Starting GitBook → Mintlify migration...\n");
 
   // 1. Clean and create destination
@@ -580,23 +543,12 @@ async function main() {
   }
   console.log(`   ✓ Total: ${totalAssets} assets copied to images/`);
 
-  // Download branding assets
-  console.log("🎨 Downloading branding assets...");
-  const brandingAssets = [
-    {
-      name: "favicon.png",
-      url: "https://images.gitbook.com/__img/dpr=1.600000023841858,width=256,onerror=redirect,fit=contain,format=auto,signature=-60968074/https%3A%2F%2F4111523609-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FjhFodLh6YFJJYK6Lv9wE%252Fsites%252Fsite_T5A16%252Ficon%252F9de8Nrzyoh0GOmsoHRxl%252Ffavicon.png%3Falt%3Dmedia%26token%3D52af8d51-cb26-4b82-a94b-53187e359a6c",
-    },
-    {
-      name: "seam-wordmark-light.png",
-      url: "https://images.gitbook.com/__img/dpr=1.600000023841858,width=256,onerror=redirect,fit=contain,format=auto,signature=-1313960770/https%3A%2F%2F4111523609-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FjhFodLh6YFJJYK6Lv9wE%252Fsites%252Fsite_T5A16%252Flogo%252FJtEJlE3FYODekvyYWxlQ%252Fseam-wordmark-light.png%3Falt%3Dmedia%26token%3D20426f0b-236e-4b7a-b2dc-4efcd591eaae",
-    },
-    {
-      name: "seam-wordmark-dark.png",
-      url: "https://images.gitbook.com/__img/dpr=1.600000023841858,width=256,onerror=redirect,fit=contain,format=auto,signature=-1449667876/https%3A%2F%2F4111523609-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FjhFodLh6YFJJYK6Lv9wE%252Fsites%252Fsite_T5A16%252Flogo%252FEG7dKENMo0BNU0Mid509%252Fseam-wordmark-dark.png%3Falt%3Dmedia%26token%3D2fbec4a2-92b7-475e-913f-1e2972cc065c",
-    },
-  ];
-  await downloadBrandingAssets(brandingAssets, path.join(DEST, "images"));
+  // Copy branding assets from branding/ into images/
+  console.log("🎨 Copying branding assets...");
+  if (fs.existsSync(BRANDING_DIR)) {
+    copyRecursive(BRANDING_DIR, path.join(DEST, "images"));
+    console.log(`   ✓ ${fs.readdirSync(BRANDING_DIR).join(", ")}`);
+  }
 
   // 3. Convert all markdown files from all spaces
   console.log("📝 Converting markdown files...");
