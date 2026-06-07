@@ -996,5 +996,25 @@
   },
   "api": {
     "baseUrl": "https://connect.getseam.com"
-  }
+  },
+  "redirects": [
+    { "source": "/latest/:slug*", "destination": "/:slug*" },
+    { "source": "/quickstart", "destination": "/guides/quickstart" },
+    { "source": "/go-live", "destination": "/guides/go-live" },
+    { "source": "/core-concepts/:slug*", "destination": "/guides/core-concepts/:slug*" },
+    { "source": "/capability-guides/:slug*", "destination": "/guides/capability-guides/:slug*" },
+    { "source": "/use-cases/:slug*", "destination": "/guides/use-cases/:slug*" },
+    { "source": "/ui-components/:slug*", "destination": "/guides/ui-components/:slug*" },
+    { "source": "/seam-components/:slug*", "destination": "/guides/ui-components/:slug*" },
+    { "source": "/developer-tools/:slug*", "destination": "/guides/developer-tools/:slug*" },
+    { "source": "/industry-guides/:slug*", "destination": "/guides/industry-guides/:slug*" },
+    { "source": "/device-manufacturer-guidance/:slug*", "destination": "/guides/device-manufacturer-guidance/:slug*" },
+    { "source": "/products/smart-locks/:slug*", "destination": "/guides/capability-guides/smart-locks/:slug*" },
+    { "source": "/products/access-systems/:slug*", "destination": "/guides/capability-guides/access-systems/:slug*" },
+    { "source": "/products/thermostats/:slug*", "destination": "/guides/capability-guides/thermostats/:slug*" },
+    { "source": "/products/noise-sensors/:slug*", "destination": "/guides/capability-guides/noise-sensors/:slug*" },
+    { "source": "/api/:slug*", "destination": "/api-reference/:slug*" },
+    { "source": "/device-and-system-integration-guides/:slug*", "destination": "/brand-guides/:slug*" },
+    { "source": "/device-guides/:slug*", "destination": "/brand-guides/:slug*" }
+  ]
 }
