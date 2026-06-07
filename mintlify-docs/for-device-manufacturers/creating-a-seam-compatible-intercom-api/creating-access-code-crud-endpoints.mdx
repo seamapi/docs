@@ -1,0 +1,25 @@
+---
+title: "Creating Access Code CRUD Endpoints"
+---
+
+## Overview
+
+Access Codes CRUD endpoints Seam to list access codes created on an intercom.
+
+### Listing Access Codes
+
+After an Intercom Owner logs in and , Seam lists all the access codes that have been programmed  and allows them to enable delivery on them. Your Intercom system should return a JSON list of intercoms.
+
+
+
+### Getting an Access Code
+
+Seam may request intercom information to display information about the intercom to the connecting user.
+
+
+
+### Removing an Access Code
+
+Seam unlocks doors to let in delivery people. If a door is disconnected or you're unable to unlock the door, return HTTP status code `500` with some details (see example below)
+
+

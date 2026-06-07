@@ -1,0 +1,106 @@
+---
+title: "Deleting an Access Grant"
+description: "Learn how to delete an Access Grant."
+---
+
+
+<Info>
+**Early Access Preview.** The Access Grants API is currently in Alpha. We're actively developing it and seeking early feedback at [support@seam.co](mailto:support@seam.co). Expect breaking changes as we refine the design.
+</Info>
+
+To delete an Access Grant:
+
+<Tabs>
+<Tab title="Python">
+**Code:**
+
+```python
+seam.access_grants.delete(access_grant_id="403ea27b-af76-4a48-ace9-8f9498f4c25c")
+```
+
+**Output:**
+
+```python
+None
+```
+</Tab>
+
+<Tab title="cURL (bash)">
+**Code:**
+
+```curl
+curl --include --request POST "https://connect.getseam.com/access_grants/delete" \
+  --header "Authorization: Bearer $SEAM_API_KEY" \
+  --json @- <<EOF
+{
+  "access_grant_id": "403ea27b-af76-4a48-ace9-8f9498f4c25c"
+}
+EOF
+```
+
+**Output:**
+
+```curl
+{}
+```
+</Tab>
+
+<Tab title="JavaScript">
+**Code:**
+
+```javascript
+await seam.accessGrants.delete({
+  access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c",
+});
+```
+
+**Output:**
+
+```javascript
+// void
+```
+</Tab>
+
+<Tab title="Ruby">
+**Code:**
+
+```ruby
+seam.access_grants.delete(access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c")
+```
+
+**Output:**
+
+```ruby
+nil
+```
+</Tab>
+
+<Tab title="PHP">
+**Code:**
+
+```php
+$seam->access_grants->delete(
+    access_grant_id: "403ea27b-af76-4a48-ace9-8f9498f4c25c"
+);
+```
+
+**Output:**
+
+```php
+```
+</Tab>
+
+<Tab title="C#">
+**Code:**
+
+```csharp
+// Coming Soon!
+```
+
+**Output:**
+
+```json
+// Coming Soon!
+```
+</Tab>
+</Tabs>
