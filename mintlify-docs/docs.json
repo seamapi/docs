@@ -715,7 +715,8 @@
               }
             ]
           }
-        ]
+        ],
+        "href": "/api"
       },
       {
         "tab": "Brand Guides",
@@ -1106,7 +1107,8 @@
               "device-and-system-integration-guides/yale-locks/yale-sample-data"
             ]
           }
-        ]
+        ],
+        "href": "/device-and-system-integration-guides"
       }
     ]
   },
