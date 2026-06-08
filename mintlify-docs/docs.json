@@ -273,15 +273,6 @@
                 ]
               },
               {
-                "group": "Instant Keys",
-                "pages": [
-                  "api/instant_keys",
-                  "api/instant_keys/delete",
-                  "api/instant_keys/get",
-                  "api/instant_keys/list"
-                ]
-              },
-              {
                 "group": "Access Methods",
                 "pages": [
                   "api/access_methods",
@@ -514,22 +505,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Spaces",
-                "pages": [
-                  "api/spaces",
-                  "api/spaces/add_devices",
-                  "api/spaces/add_acs_entrances",
-                  "api/spaces/create",
-                  "api/spaces/delete",
-                  "api/spaces/get",
-                  "api/spaces/get_related",
-                  "api/spaces/list",
-                  "api/spaces/remove_devices",
-                  "api/spaces/remove_acs_entrances",
-                  "api/spaces/update"
-                ]
               }
             ]
           },
@@ -625,6 +600,22 @@
                   "api/customers/delete_data",
                   "api/customers/push_data"
                 ]
+              },
+              {
+                "group": "Spaces",
+                "pages": [
+                  "api/spaces",
+                  "api/spaces/add_devices",
+                  "api/spaces/add_acs_entrances",
+                  "api/spaces/create",
+                  "api/spaces/delete",
+                  "api/spaces/get",
+                  "api/spaces/get_related",
+                  "api/spaces/list",
+                  "api/spaces/remove_devices",
+                  "api/spaces/remove_acs_entrances",
+                  "api/spaces/update"
+                ]
               }
             ]
           },
@@ -711,6 +702,15 @@
                       "api/phones/simulate/create_sandbox_phone"
                     ]
                   }
+                ]
+              },
+              {
+                "group": "Instant Keys",
+                "pages": [
+                  "api/instant_keys",
+                  "api/instant_keys/delete",
+                  "api/instant_keys/get",
+                  "api/instant_keys/list"
                 ]
               }
             ]

@@ -31,14 +31,9 @@ Base URL: https://connect.getseam.com
 
 Use [Access Grants](/api/access_grants) to give people access to physical spaces. Tell Seam _who_ should have access, _where_, and _when_ — Seam automatically creates the right credential and programs it to the device.
 
-<CardGroup cols={2}>
-  <Card title="Access Grants" icon="id-badge" href="/api/access_grants">
-    The primary API for granting access — create, update, revoke, and manage the full lifecycle.
-  </Card>
-  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
-    Temporary mobile keys that work without an app install. Delivered via URL.
-  </Card>
-</CardGroup>
+<Card title="Access Grants" icon="id-badge" href="/api/access_grants">
+  The primary API for granting access — create, update, revoke, and manage the full lifecycle.
+</Card>
 
 Access Grants support all access methods through a single API:
 
@@ -79,9 +74,6 @@ Connect and control IoT devices and access control systems.
   <Card title="ACS" icon="server" href="/api/acs">
     Manage access control system users, credentials, entrances, and encoders.
   </Card>
-  <Card title="Spaces" icon="building" href="/api/spaces">
-    Organize devices and entrances into named groups.
-  </Card>
 </CardGroup>
 
 ---
@@ -109,6 +101,9 @@ Connect device accounts and configure your workspace.
   <Card title="Customers" icon="users" href="/api/customers">
     Customer portals and data.
   </Card>
+  <Card title="Spaces" icon="building" href="/api/spaces">
+    Organize devices and entrances into named groups.
+  </Card>
 </CardGroup>
 
 ---
@@ -135,11 +130,14 @@ Track events, subscribe to webhooks, and poll for action completion.
 
 These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead — they handle credential creation, device programming, and lifecycle management automatically.
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
     Directly program PIN codes on smart lock keypads.
   </Card>
-  <Card title="Access Methods" icon="door-open" href="/api/access_methods">
-    Manage individual access methods within an access grant.
+  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
+    Temporary mobile keys without an app install.
+  </Card>
+  <Card title="Phones" icon="mobile" href="/api/phones">
+    Manage phones for mobile access credentials.
   </Card>
 </CardGroup>
