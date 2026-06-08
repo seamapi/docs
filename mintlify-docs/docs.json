@@ -424,15 +424,10 @@
                 "group": "Access Control Systems (ACS)",
                 "pages": [
                   "api/acs",
-                  "api/acs/access_groups",
-                  "api/acs/users",
-                  "api/acs/credentials",
-                  "api/acs/encoders",
-                  "api/acs/entrances",
-                  "api/acs/systems",
                   {
                     "group": "Access Groups",
                     "pages": [
+                      "api/acs/access_groups",
                       "api/acs/access_groups/add_user",
                       "api/acs/access_groups/delete",
                       "api/acs/access_groups/get",
@@ -445,6 +440,7 @@
                   {
                     "group": "ACS Users",
                     "pages": [
+                      "api/acs/users",
                       "api/acs/users/add_to_access_group",
                       "api/acs/users/create",
                       "api/acs/users/delete",
@@ -461,6 +457,7 @@
                   {
                     "group": "Credentials",
                     "pages": [
+                      "api/acs/credentials",
                       "api/acs/credentials/assign",
                       "api/acs/credentials/create",
                       "api/acs/credentials/delete",
@@ -474,11 +471,11 @@
                   {
                     "group": "Encoders",
                     "pages": [
+                      "api/acs/encoders",
                       "api/acs/encoders/encode_credential",
                       "api/acs/encoders/get",
                       "api/acs/encoders/list",
                       "api/acs/encoders/scan_credential",
-                      "api/acs/encoders/simulate",
                       "api/acs/encoders/simulate/next_credential_encode_will_fail",
                       "api/acs/encoders/simulate/next_credential_encode_will_succeed",
                       "api/acs/encoders/simulate/next_credential_scan_will_fail",
@@ -488,6 +485,7 @@
                   {
                     "group": "Entrances",
                     "pages": [
+                      "api/acs/entrances",
                       "api/acs/entrances/get",
                       "api/acs/entrances/grant_access",
                       "api/acs/entrances/list_credentials_with_access",
@@ -498,6 +496,7 @@
                   {
                     "group": "Systems",
                     "pages": [
+                      "api/acs/systems",
                       "api/acs/systems/get",
                       "api/acs/systems/list",
                       "api/acs/systems/list_compatible_credential_manager_acs_systems",
