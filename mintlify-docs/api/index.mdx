@@ -97,21 +97,28 @@ Track events, subscribe to webhooks, and poll for action completion.
   </Card>
 </CardGroup>
 
-## Low-Level APIs
+## Access Control Systems
 
-These APIs provide direct access to specific device and system capabilities. For most use cases, the higher-level APIs above are recommended.
+Manage enterprise access control systems — users, credentials, entrances, and encoders. Useful for device management, observability, and advanced ACS workflows.
+
+<CardGroup cols={2}>
+  <Card title="ACS Systems" icon="server" href="/api/acs">
+    Connect and manage access control systems, users, credentials, entrances, and encoders.
+  </Card>
+  <Card title="Customers" icon="users" href="/api/customers">
+    Manage customer portals and data.
+  </Card>
+</CardGroup>
+
+## Direct Credential Management
+
+These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead — they handle credential creation, device programming, and lifecycle management automatically.
 
 <CardGroup cols={3}>
   <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
     Directly program PIN codes on smart lock keypads.
   </Card>
-  <Card title="Access Control Systems" icon="server" href="/api/acs">
-    Directly manage ACS users, credentials, entrances, and encoders.
-  </Card>
   <Card title="Access Methods" icon="door-open" href="/api/access_methods">
     Manage individual access methods within an access grant.
-  </Card>
-  <Card title="Customers" icon="users" href="/api/customers">
-    Manage customer portals and data.
   </Card>
 </CardGroup>
