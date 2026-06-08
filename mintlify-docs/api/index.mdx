@@ -3,7 +3,15 @@ title: "API Reference"
 description: "Complete reference for all Seam API resources and endpoints."
 ---
 
-The Seam API lets you control smart locks, thermostats, access control systems, and more through a unified REST interface. All endpoints use `https://connect.getseam.com` as the base URL.
+The Seam API is organized around REST. It accepts JSON request bodies, returns JSON responses, and uses standard HTTP response codes and verbs. All endpoints use `https://connect.getseam.com` as the base URL.
+
+You can use the Seam API in a [sandbox workspace](/core-concepts/workspaces) without affecting live devices. The API key you use determines whether the request runs in sandbox or production mode.
+
+**Just getting started?** Check out the [quickstart guide](/quickstart).
+
+```
+Base URL: https://connect.getseam.com
+```
 
 <CardGroup cols={3}>
   <Card title="Install an SDK" icon="download" href="/api/installation">
@@ -17,16 +25,35 @@ The Seam API lets you control smart locks, thermostats, access control systems, 
   </Card>
 </CardGroup>
 
+---
+
 ## Granting Access
 
-Use **Access Grants** to give people access to physical spaces. Access Grants are the recommended way to grant access on Seam — they work across standalone smart locks and access control systems, and automatically handle PIN codes, mobile keys, and key cards for you.
+Use [Access Grants](/api/access_grants) to give people access to physical spaces. Tell Seam _who_ should have access, _where_, and _when_ — Seam creates the right credential and programs it to the device automatically.
+
+One API call handles all access methods:
+
+<CardGroup cols={2}>
+  <Card title="PIN Codes" icon="input-numeric" horizontal>
+    Generate keypad codes for smart locks. Ongoing or time-bound.
+  </Card>
+  <Card title="Key Cards" icon="id-card" horizontal>
+    Encode plastic cards for access control systems.
+  </Card>
+  <Card title="Mobile Keys" icon="mobile" horizontal>
+    Issue mobile credentials via app or Instant Key URL.
+  </Card>
+  <Card title="Remote Unlock" icon="lock-open" horizontal>
+    Unlock doors remotely via API call.
+  </Card>
+</CardGroup>
 
 <CardGroup cols={2}>
   <Card title="Access Grants" icon="id-badge" href="/api/access_grants">
-    Create, update, and revoke access grants. This is the primary API for granting access to any space.
+    The primary API for granting access — create, update, revoke, and manage the full lifecycle.
   </Card>
   <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
-    Issue temporary mobile keys that work without an app install.
+    Temporary mobile keys that work without an app install. Delivered via URL.
   </Card>
 </CardGroup>
 
@@ -34,11 +61,13 @@ Use **Access Grants** to give people access to physical spaces. Access Grants ar
 The [Access Codes](/api/access_codes) and [ACS Credentials](/api/acs/credentials) APIs are low-level alternatives. For most use cases, **Access Grants** handle everything automatically — creating the right credential type, programming it to the device, and managing the lifecycle.
 </Info>
 
+---
+
 ## Devices and Hardware
 
 Connect and control IoT hardware through a unified interface.
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="Devices" icon="microchip" href="/api/devices">
     List, get, and update connected devices.
   </Card>
@@ -53,13 +82,15 @@ Connect and control IoT hardware through a unified interface.
   </Card>
 </CardGroup>
 
+---
+
 ## Setup and Configuration
 
 Connect device accounts, organize your spaces, and manage your workspace.
 
 <CardGroup cols={3}>
   <Card title="Connect Webviews" icon="window-restore" href="/api/connect_webviews">
-    Launch authorization flows to connect user device accounts.
+    Authorization flows to link user device accounts.
   </Card>
   <Card title="Connected Accounts" icon="link" href="/api/connected_accounts">
     Manage linked manufacturer accounts.
@@ -68,18 +99,20 @@ Connect device accounts, organize your spaces, and manage your workspace.
     Organize devices and entrances into named spaces.
   </Card>
   <Card title="User Identities" icon="user" href="/api/user_identities">
-    Map your users to Seam for cross-system identity management.
+    Map your users to Seam for cross-system identity.
   </Card>
   <Card title="Workspaces" icon="briefcase" href="/api/workspaces">
-    Create and manage sandbox and production workspaces.
+    Sandbox and production workspaces.
   </Card>
   <Card title="Client Sessions" icon="user-shield" href="/api/client_sessions">
-    Create scoped sessions for frontend applications.
+    Scoped sessions for frontend apps.
   </Card>
   <Card title="Customers" icon="users" href="/api/customers">
-    Manage customer portals and data.
+    Customer portals and data.
   </Card>
 </CardGroup>
+
+---
 
 ## Monitoring
 
@@ -90,16 +123,18 @@ Track events, subscribe to webhooks, and poll for action completion.
     Query device and system events.
   </Card>
   <Card title="Webhooks" icon="bell" href="/api/webhooks">
-    Subscribe to real-time event notifications.
+    Real-time event notifications.
   </Card>
   <Card title="Action Attempts" icon="spinner" href="/api/action_attempts">
     Poll async operations until completion.
   </Card>
 </CardGroup>
 
+---
+
 ## Access Control Systems
 
-Manage enterprise access control systems — users, credentials, entrances, and encoders. Useful for device management, observability, and advanced ACS workflows.
+Manage enterprise access control systems — users, credentials, entrances, and encoders.
 
 <CardGroup cols={2}>
   <Card title="ACS Systems" icon="server" href="/api/acs">
@@ -107,11 +142,13 @@ Manage enterprise access control systems — users, credentials, entrances, and 
   </Card>
 </CardGroup>
 
+---
+
 ## Direct Credential Management
 
-These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead — they handle credential creation, device programming, and lifecycle management automatically.
+These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead.
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
     Directly program PIN codes on smart lock keypads.
   </Card>
