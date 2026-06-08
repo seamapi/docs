@@ -22,21 +22,22 @@ The Seam API lets you control smart locks, thermostats, access control systems, 
 
 ## Granting Access
 
-Manage how people access physical spaces — PIN codes, mobile keys, key cards, and more.
+Use **Access Grants** to give people access to physical spaces. Access Grants are the recommended way to grant access on Seam — they work across standalone smart locks and access control systems, and automatically handle PIN codes, mobile keys, and key cards for you.
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="Access Grants" icon="id-badge" href="/api/access_grants">
-    Create, update, and revoke access grants.
+    Create, update, and revoke access grants. This is the primary API for granting access to any space.
   </Card>
-  <Card title="Access Methods" icon="door-open" href="/api/access_methods">
-    Manage individual access methods within a grant.
-  </Card>
-  <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
-    Program PIN codes on smart lock keypads.
+  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
+    Issue temporary mobile keys that work without an app install.
   </Card>
 </CardGroup>
 
-## Devices and Systems
+<Info>
+The [Access Codes](/api/access_codes) and [ACS Credentials](/api/acs/credentials) APIs are low-level alternatives. For most use cases, **Access Grants** handle everything automatically — creating the right credential type, programming it to the device, and managing the lifecycle.
+</Info>
+
+## Devices and Hardware
 
 Connect and control IoT hardware through a unified interface.
 
@@ -53,33 +54,11 @@ Connect and control IoT hardware through a unified interface.
   <Card title="Noise Sensors" icon="volume-high" href="/api/noise_sensors">
     Monitor noise levels and configure thresholds.
   </Card>
-  <Card title="Spaces" icon="building" href="/api/spaces">
-    Organize devices and entrances into named spaces.
-  </Card>
-  <Card title="Phones" icon="mobile" href="/api/phones">
-    Manage phones for mobile access credentials.
-  </Card>
 </CardGroup>
 
-## Access Control Systems
+## Setup and Configuration
 
-Manage enterprise access control systems — users, credentials, entrances, and encoders.
-
-<CardGroup cols={3}>
-  <Card title="ACS Systems" icon="server" href="/api/acs">
-    Connect and manage access control systems.
-  </Card>
-  <Card title="User Identities" icon="user" href="/api/user_identities">
-    Map your users to Seam for cross-system identity management.
-  </Card>
-  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
-    Issue temporary mobile keys without an app install.
-  </Card>
-</CardGroup>
-
-## Account Management
-
-Set up workspaces, connect device accounts, and configure webhooks.
+Connect device accounts, organize your spaces, and manage your workspace.
 
 <CardGroup cols={3}>
   <Card title="Connect Webviews" icon="window-restore" href="/api/connect_webviews">
@@ -88,29 +67,51 @@ Set up workspaces, connect device accounts, and configure webhooks.
   <Card title="Connected Accounts" icon="link" href="/api/connected_accounts">
     Manage linked manufacturer accounts.
   </Card>
-  <Card title="Client Sessions" icon="user-shield" href="/api/client_sessions">
-    Create scoped sessions for frontend applications.
+  <Card title="Spaces" icon="building" href="/api/spaces">
+    Organize devices and entrances into named spaces.
+  </Card>
+  <Card title="User Identities" icon="user" href="/api/user_identities">
+    Map your users to Seam for cross-system identity management.
   </Card>
   <Card title="Workspaces" icon="briefcase" href="/api/workspaces">
     Create and manage sandbox and production workspaces.
   </Card>
-  <Card title="Webhooks" icon="bell" href="/api/webhooks">
-    Subscribe to real-time event notifications.
-  </Card>
-  <Card title="Customers" icon="users" href="/api/customers">
-    Manage customer portals and data.
+  <Card title="Client Sessions" icon="user-shield" href="/api/client_sessions">
+    Create scoped sessions for frontend applications.
   </Card>
 </CardGroup>
 
 ## Monitoring
 
-Track events, poll for action completion, and handle errors.
+Track events, subscribe to webhooks, and poll for action completion.
 
 <CardGroup cols={3}>
   <Card title="Events" icon="timeline" href="/api/events">
     Query device and system events.
   </Card>
+  <Card title="Webhooks" icon="bell" href="/api/webhooks">
+    Subscribe to real-time event notifications.
+  </Card>
   <Card title="Action Attempts" icon="spinner" href="/api/action_attempts">
     Poll async operations until completion.
+  </Card>
+</CardGroup>
+
+## Low-Level APIs
+
+These APIs provide direct access to specific device and system capabilities. For most use cases, the higher-level APIs above are recommended.
+
+<CardGroup cols={3}>
+  <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
+    Directly program PIN codes on smart lock keypads.
+  </Card>
+  <Card title="Access Control Systems" icon="server" href="/api/acs">
+    Directly manage ACS users, credentials, entrances, and encoders.
+  </Card>
+  <Card title="Access Methods" icon="door-open" href="/api/access_methods">
+    Manage individual access methods within an access grant.
+  </Card>
+  <Card title="Customers" icon="users" href="/api/customers">
+    Manage customer portals and data.
   </Card>
 </CardGroup>
