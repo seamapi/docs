@@ -1,9 +1,9 @@
 ---
-title: "API Reference"
-description: "Complete reference for all Seam API resources and endpoints."
+title: "Introduction"
+description: "The Seam API lets you control smart locks, thermostats, access control systems, and more through a unified REST interface."
 ---
 
-The Seam API is organized around REST. It accepts JSON request bodies, returns JSON responses, and uses standard HTTP response codes and verbs. All endpoints use `https://connect.getseam.com` as the base URL.
+The Seam API is organized around REST. It accepts JSON request bodies, returns JSON responses, and uses standard HTTP response codes and verbs.
 
 You can use the Seam API in a [sandbox workspace](/core-concepts/workspaces) without affecting live devices. The API key you use determines whether the request runs in sandbox or production mode.
 
@@ -29,9 +29,18 @@ Base URL: https://connect.getseam.com
 
 ## Granting Access
 
-Use [Access Grants](/api/access_grants) to give people access to physical spaces. Tell Seam _who_ should have access, _where_, and _when_ — Seam creates the right credential and programs it to the device automatically.
+Use [Access Grants](/api/access_grants) to give people access to physical spaces. Tell Seam _who_ should have access, _where_, and _when_ — Seam automatically creates the right credential and programs it to the device.
 
-One API call handles all access methods:
+<CardGroup cols={2}>
+  <Card title="Access Grants" icon="id-badge" href="/api/access_grants">
+    The primary API for granting access — create, update, revoke, and manage the full lifecycle.
+  </Card>
+  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
+    Temporary mobile keys that work without an app install. Delivered via URL.
+  </Card>
+</CardGroup>
+
+Access Grants support all access methods through a single API:
 
 <CardGroup cols={2}>
   <Card title="PIN Codes" icon="input-numeric" horizontal>
@@ -48,26 +57,13 @@ One API call handles all access methods:
   </Card>
 </CardGroup>
 
-<CardGroup cols={2}>
-  <Card title="Access Grants" icon="id-badge" href="/api/access_grants">
-    The primary API for granting access — create, update, revoke, and manage the full lifecycle.
-  </Card>
-  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
-    Temporary mobile keys that work without an app install. Delivered via URL.
-  </Card>
-</CardGroup>
-
-<Info>
-The [Access Codes](/api/access_codes) and [ACS Credentials](/api/acs/credentials) APIs are low-level alternatives. For most use cases, **Access Grants** handle everything automatically — creating the right credential type, programming it to the device, and managing the lifecycle.
-</Info>
-
 ---
 
-## Devices and Hardware
+## Devices and Systems
 
-Connect and control IoT hardware through a unified interface.
+Connect and control IoT devices and access control systems.
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Devices" icon="microchip" href="/api/devices">
     List, get, and update connected devices.
   </Card>
@@ -80,13 +76,19 @@ Connect and control IoT hardware through a unified interface.
   <Card title="Noise Sensors" icon="volume-high" href="/api/noise_sensors">
     Monitor noise levels and configure thresholds.
   </Card>
+  <Card title="ACS" icon="server" href="/api/acs">
+    Manage access control system users, credentials, entrances, and encoders.
+  </Card>
+  <Card title="Spaces" icon="building" href="/api/spaces">
+    Organize devices and entrances into named groups.
+  </Card>
 </CardGroup>
 
 ---
 
-## Setup and Configuration
+## Setup
 
-Connect device accounts, organize your spaces, and manage your workspace.
+Connect device accounts and configure your workspace.
 
 <CardGroup cols={3}>
   <Card title="Connect Webviews" icon="window-restore" href="/api/connect_webviews">
@@ -94,9 +96,6 @@ Connect device accounts, organize your spaces, and manage your workspace.
   </Card>
   <Card title="Connected Accounts" icon="link" href="/api/connected_accounts">
     Manage linked manufacturer accounts.
-  </Card>
-  <Card title="Spaces" icon="building" href="/api/spaces">
-    Organize devices and entrances into named spaces.
   </Card>
   <Card title="User Identities" icon="user" href="/api/user_identities">
     Map your users to Seam for cross-system identity.
@@ -132,21 +131,9 @@ Track events, subscribe to webhooks, and poll for action completion.
 
 ---
 
-## Access Control Systems
+## Low-Level APIs
 
-Manage enterprise access control systems — users, credentials, entrances, and encoders.
-
-<CardGroup cols={2}>
-  <Card title="ACS Systems" icon="server" href="/api/acs">
-    Connect and manage access control systems, users, credentials, entrances, and encoders.
-  </Card>
-</CardGroup>
-
----
-
-## Direct Credential Management
-
-These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead.
+These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead — they handle credential creation, device programming, and lifecycle management automatically.
 
 <CardGroup cols={2}>
   <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
