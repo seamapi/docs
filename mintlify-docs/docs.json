@@ -19,7 +19,11 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["index", "quickstart", "go-live"]
+            "pages": [
+              "index",
+              "quickstart",
+              "go-live"
+            ]
           },
           {
             "group": "Use Cases",
@@ -233,348 +237,457 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "Overview",
+            "group": "API Reference",
             "pages": [
               "api/index",
               "api/installation",
               "api/mcp-installation",
               "api/authentication",
               "api/pagination",
-              "api/rate-limits-and-guardrails"
-            ]
-          },
-          {
-            "group": "Access Codes",
-            "pages": [
-              "api/access_codes",
-              "api/access_codes/create",
-              "api/access_codes/create_multiple",
-              "api/access_codes/delete",
-              "api/access_codes/generate_code",
-              "api/access_codes/get",
-              "api/access_codes/list",
-              "api/access_codes/pull_backup_access_code",
-              "api/access_codes/report_device_constraints",
-              "api/access_codes/update",
-              "api/access_codes/update_multiple",
-              "api/access_codes/simulate",
-              "api/access_codes/simulate/create_unmanaged_access_code",
-              "api/access_codes/unmanaged",
-              "api/access_codes/unmanaged/convert_to_managed",
-              "api/access_codes/unmanaged/delete",
-              "api/access_codes/unmanaged/get",
-              "api/access_codes/unmanaged/list",
-              "api/access_codes/unmanaged/update"
-            ]
-          },
-          {
-            "group": "Access Control Systems (ACS)",
-            "pages": [
-              "api/acs",
-              "api/acs/access_groups",
-              "api/acs/access_groups/add_user",
-              "api/acs/access_groups/delete",
-              "api/acs/access_groups/get",
-              "api/acs/access_groups/list",
-              "api/acs/access_groups/list_users",
-              "api/acs/access_groups/list_accessible_entrances",
-              "api/acs/access_groups/remove_user",
-              "api/acs/users",
-              "api/acs/users/add_to_access_group",
-              "api/acs/users/create",
-              "api/acs/users/delete",
-              "api/acs/users/get",
-              "api/acs/users/list_accessible_entrances",
-              "api/acs/users/list",
-              "api/acs/users/remove_from_access_group",
-              "api/acs/users/revoke_access_to_all_entrances",
-              "api/acs/users/suspend",
-              "api/acs/users/unsuspend",
-              "api/acs/users/update",
-              "api/acs/credentials",
-              "api/acs/credentials/assign",
-              "api/acs/credentials/create",
-              "api/acs/credentials/delete",
-              "api/acs/credentials/get",
-              "api/acs/credentials/list_accessible_entrances",
-              "api/acs/credentials/list",
-              "api/acs/credentials/unassign",
-              "api/acs/credentials/update",
-              "api/acs/encoders",
-              "api/acs/encoders/encode_credential",
-              "api/acs/encoders/get",
-              "api/acs/encoders/list",
-              "api/acs/encoders/scan_credential",
-              "api/acs/encoders/simulate",
-              "api/acs/encoders/simulate/next_credential_encode_will_fail",
-              "api/acs/encoders/simulate/next_credential_encode_will_succeed",
-              "api/acs/encoders/simulate/next_credential_scan_will_fail",
-              "api/acs/encoders/simulate/next_credential_scan_will_succeed",
-              "api/acs/entrances",
-              "api/acs/entrances/get",
-              "api/acs/entrances/grant_access",
-              "api/acs/entrances/list_credentials_with_access",
-              "api/acs/entrances/list",
-              "api/acs/entrances/unlock",
-              "api/acs/systems",
-              "api/acs/systems/get",
-              "api/acs/systems/list",
-              "api/acs/systems/list_compatible_credential_manager_acs_systems",
-              "api/acs/systems/report_devices"
-            ]
-          },
-          {
-            "group": "Access Grants",
-            "pages": [
-              "api/access_grants",
-              "api/access_grants/request_access_methods",
-              "api/access_grants/create",
-              "api/access_grants/delete",
-              "api/access_grants/get",
-              "api/access_grants/get_related",
-              "api/access_grants/list",
-              "api/access_grants/update",
-              "api/access_grants/unmanaged",
-              "api/access_grants/unmanaged/get",
-              "api/access_grants/unmanaged/list",
-              "api/access_grants/unmanaged/update"
-            ]
-          },
-          {
-            "group": "Access Methods",
-            "pages": [
-              "api/access_methods",
-              "api/access_methods/delete",
-              "api/access_methods/encode",
-              "api/access_methods/get",
-              "api/access_methods/get_related",
-              "api/access_methods/list",
-              "api/access_methods/unmanaged",
-              "api/access_methods/unmanaged/get",
-              "api/access_methods/unmanaged/list"
-            ]
-          },
-          {
-            "group": "Action Attempts",
-            "pages": [
-              "api/action_attempts",
-              "api/action_attempts/get",
-              "api/action_attempts/list"
-            ]
-          },
-          {
-            "group": "Client Sessions",
-            "pages": [
-              "api/client_sessions",
-              "api/client_sessions/create",
-              "api/client_sessions/delete",
-              "api/client_sessions/get",
-              "api/client_sessions/get_or_create",
-              "api/client_sessions/grant_access",
-              "api/client_sessions/list",
-              "api/client_sessions/revoke"
-            ]
-          },
-          {
-            "group": "Connect Webviews",
-            "pages": [
-              "api/connect_webviews",
-              "api/connect_webviews/create",
-              "api/connect_webviews/delete",
-              "api/connect_webviews/get",
-              "api/connect_webviews/list"
-            ]
-          },
-          {
-            "group": "Connected Accounts",
-            "pages": [
-              "api/connected_accounts",
-              "api/connected_accounts/delete",
-              "api/connected_accounts/get",
-              "api/connected_accounts/list",
-              "api/connected_accounts/sync",
-              "api/connected_accounts/update",
-              "api/connected_accounts/simulate",
-              "api/connected_accounts/simulate/disconnect"
-            ]
-          },
-          {
-            "group": "Customers",
-            "pages": [
-              "api/customers",
-              "api/customers/create_portal",
-              "api/customers/delete_data",
-              "api/customers/push_data"
-            ]
-          },
-          {
-            "group": "Devices",
-            "pages": [
-              "api/devices",
-              "api/devices/get",
-              "api/devices/list_device_providers",
-              "api/devices/list",
-              "api/devices/report_provider_metadata",
-              "api/devices/update",
-              "api/devices/simulate",
-              "api/devices/simulate/connect",
-              "api/devices/simulate/disconnect",
-              "api/devices/simulate/remove",
-              "api/devices/simulate/connect_to_hub",
-              "api/devices/simulate/disconnect_from_hub",
-              "api/devices/simulate/paid_subscription",
-              "api/devices/unmanaged",
-              "api/devices/unmanaged/get",
-              "api/devices/unmanaged/list",
-              "api/devices/unmanaged/update"
-            ]
-          },
-          {
-            "group": "Events",
-            "pages": ["api/events", "api/events/get", "api/events/list"]
-          },
-          {
-            "group": "Instant Keys",
-            "pages": [
-              "api/instant_keys",
-              "api/instant_keys/delete",
-              "api/instant_keys/get",
-              "api/instant_keys/list"
-            ]
-          },
-          {
-            "group": "Locks",
-            "pages": [
-              "api/locks",
-              "api/locks/configure_auto_lock",
-              "api/locks/get",
-              "api/locks/list",
-              "api/locks/lock_door",
-              "api/locks/unlock_door",
-              "api/locks/simulate",
-              "api/locks/simulate/keypad_code_entry",
-              "api/locks/simulate/manual_lock_via_keypad"
-            ]
-          },
-          {
-            "group": "Noise Sensors",
-            "pages": [
-              "api/noise_sensors",
-              "api/noise_sensors/list",
-              "api/noise_sensors/simulate",
-              "api/noise_sensors/simulate/trigger_noise_threshold",
-              "api/noise_sensors/noise_thresholds",
-              "api/noise_sensors/noise_thresholds/create",
-              "api/noise_sensors/noise_thresholds/delete",
-              "api/noise_sensors/noise_thresholds/get",
-              "api/noise_sensors/noise_thresholds/list",
-              "api/noise_sensors/noise_thresholds/update"
-            ]
-          },
-          {
-            "group": "Phones",
-            "pages": [
-              "api/phones",
-              "api/phones/deactivate",
-              "api/phones/get",
-              "api/phones/list",
-              "api/phones/simulate",
-              "api/phones/simulate/create_sandbox_phone"
-            ]
-          },
-          {
-            "group": "Spaces",
-            "pages": [
-              "api/spaces",
-              "api/spaces/add_devices",
-              "api/spaces/add_acs_entrances",
-              "api/spaces/create",
-              "api/spaces/delete",
-              "api/spaces/get",
-              "api/spaces/get_related",
-              "api/spaces/list",
-              "api/spaces/remove_devices",
-              "api/spaces/remove_acs_entrances",
-              "api/spaces/update"
-            ]
-          },
-          {
-            "group": "Thermostats",
-            "pages": [
-              "api/thermostats",
-              "api/thermostats/activate_climate_preset",
-              "api/thermostats/create_climate_preset",
-              "api/thermostats/delete_climate_preset",
-              "api/thermostats/list",
-              "api/thermostats/set_temperature_threshold",
-              "api/thermostats/set_fallback_climate_preset",
-              "api/thermostats/set_fan_mode",
-              "api/thermostats/set_hvac_mode",
-              "api/thermostats/cool",
-              "api/thermostats/heat",
-              "api/thermostats/heat_cool",
-              "api/thermostats/off",
-              "api/thermostats/update_climate_preset",
-              "api/thermostats/update_weekly_program",
-              "api/thermostats/daily_programs",
-              "api/thermostats/daily_programs/create",
-              "api/thermostats/daily_programs/delete",
-              "api/thermostats/daily_programs/update",
-              "api/thermostats/schedules",
-              "api/thermostats/schedules/create",
-              "api/thermostats/schedules/delete",
-              "api/thermostats/schedules/get",
-              "api/thermostats/schedules/list",
-              "api/thermostats/schedules/update",
-              "api/thermostats/simulate",
-              "api/thermostats/simulate/hvac_mode_adjusted",
-              "api/thermostats/simulate/temperature_reached"
-            ]
-          },
-          {
-            "group": "User Identities",
-            "pages": [
-              "api/user_identities",
-              "api/user_identities/add_acs_user",
-              "api/user_identities/create",
-              "api/user_identities/delete",
-              "api/user_identities/generate_instant_key",
-              "api/user_identities/get",
-              "api/user_identities/grant_access_to_device",
-              "api/user_identities/list_accessible_devices",
-              "api/user_identities/list_accessible_entrances",
-              "api/user_identities/list_acs_systems",
-              "api/user_identities/list_acs_users",
-              "api/user_identities/list",
-              "api/user_identities/remove_acs_user",
-              "api/user_identities/revoke_access_to_device",
-              "api/user_identities/update",
-              "api/user_identities/unmanaged",
-              "api/user_identities/unmanaged/get",
-              "api/user_identities/unmanaged/list",
-              "api/user_identities/unmanaged/update"
-            ]
-          },
-          {
-            "group": "Webhooks",
-            "pages": [
-              "api/webhooks",
-              "api/webhooks/create",
-              "api/webhooks/delete",
-              "api/webhooks/get",
-              "api/webhooks/list",
-              "api/webhooks/update"
-            ]
-          },
-          {
-            "group": "Workspaces",
-            "pages": [
-              "api/workspaces",
-              "api/workspaces/create",
-              "api/workspaces/get",
-              "api/workspaces/list",
-              "api/workspaces/reset_sandbox",
-              "api/workspaces/update"
+              "api/rate-limits-and-guardrails",
+              {
+                "group": "Access Codes",
+                "pages": [
+                  "api/access_codes",
+                  "api/access_codes/create",
+                  "api/access_codes/create_multiple",
+                  "api/access_codes/delete",
+                  "api/access_codes/generate_code",
+                  "api/access_codes/get",
+                  "api/access_codes/list",
+                  "api/access_codes/pull_backup_access_code",
+                  "api/access_codes/report_device_constraints",
+                  "api/access_codes/update",
+                  "api/access_codes/update_multiple",
+                  "api/access_codes/simulate",
+                  "api/access_codes/unmanaged",
+                  {
+                    "group": "Simulations",
+                    "pages": [
+                      "api/access_codes/simulate/create_unmanaged_access_code"
+                    ]
+                  },
+                  {
+                    "group": "Unmanaged Access Codes",
+                    "pages": [
+                      "api/access_codes/unmanaged/convert_to_managed",
+                      "api/access_codes/unmanaged/delete",
+                      "api/access_codes/unmanaged/get",
+                      "api/access_codes/unmanaged/list",
+                      "api/access_codes/unmanaged/update"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Access Control Systems (ACS)",
+                "pages": [
+                  "api/acs",
+                  "api/acs/access_groups",
+                  "api/acs/users",
+                  "api/acs/credentials",
+                  "api/acs/encoders",
+                  "api/acs/entrances",
+                  "api/acs/systems",
+                  {
+                    "group": "Access Groups",
+                    "pages": [
+                      "api/acs/access_groups/add_user",
+                      "api/acs/access_groups/delete",
+                      "api/acs/access_groups/get",
+                      "api/acs/access_groups/list",
+                      "api/acs/access_groups/list_users",
+                      "api/acs/access_groups/list_accessible_entrances",
+                      "api/acs/access_groups/remove_user"
+                    ]
+                  },
+                  {
+                    "group": "ACS Users",
+                    "pages": [
+                      "api/acs/users/add_to_access_group",
+                      "api/acs/users/create",
+                      "api/acs/users/delete",
+                      "api/acs/users/get",
+                      "api/acs/users/list_accessible_entrances",
+                      "api/acs/users/list",
+                      "api/acs/users/remove_from_access_group",
+                      "api/acs/users/revoke_access_to_all_entrances",
+                      "api/acs/users/suspend",
+                      "api/acs/users/unsuspend",
+                      "api/acs/users/update"
+                    ]
+                  },
+                  {
+                    "group": "Credentials",
+                    "pages": [
+                      "api/acs/credentials/assign",
+                      "api/acs/credentials/create",
+                      "api/acs/credentials/delete",
+                      "api/acs/credentials/get",
+                      "api/acs/credentials/list_accessible_entrances",
+                      "api/acs/credentials/list",
+                      "api/acs/credentials/unassign",
+                      "api/acs/credentials/update"
+                    ]
+                  },
+                  {
+                    "group": "Encoders",
+                    "pages": [
+                      "api/acs/encoders/encode_credential",
+                      "api/acs/encoders/get",
+                      "api/acs/encoders/list",
+                      "api/acs/encoders/scan_credential",
+                      "api/acs/encoders/simulate",
+                      "api/acs/encoders/simulate/next_credential_encode_will_fail",
+                      "api/acs/encoders/simulate/next_credential_encode_will_succeed",
+                      "api/acs/encoders/simulate/next_credential_scan_will_fail",
+                      "api/acs/encoders/simulate/next_credential_scan_will_succeed"
+                    ]
+                  },
+                  {
+                    "group": "Entrances",
+                    "pages": [
+                      "api/acs/entrances/get",
+                      "api/acs/entrances/grant_access",
+                      "api/acs/entrances/list_credentials_with_access",
+                      "api/acs/entrances/list",
+                      "api/acs/entrances/unlock"
+                    ]
+                  },
+                  {
+                    "group": "Systems",
+                    "pages": [
+                      "api/acs/systems/get",
+                      "api/acs/systems/list",
+                      "api/acs/systems/list_compatible_credential_manager_acs_systems",
+                      "api/acs/systems/report_devices"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Access Grants",
+                "pages": [
+                  "api/access_grants",
+                  "api/access_grants/request_access_methods",
+                  "api/access_grants/create",
+                  "api/access_grants/delete",
+                  "api/access_grants/get",
+                  "api/access_grants/get_related",
+                  "api/access_grants/list",
+                  "api/access_grants/update",
+                  "api/access_grants/unmanaged",
+                  {
+                    "group": "Unmanaged",
+                    "pages": [
+                      "api/access_grants/unmanaged/get",
+                      "api/access_grants/unmanaged/list",
+                      "api/access_grants/unmanaged/update"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Access Methods",
+                "pages": [
+                  "api/access_methods",
+                  "api/access_methods/delete",
+                  "api/access_methods/encode",
+                  "api/access_methods/get",
+                  "api/access_methods/get_related",
+                  "api/access_methods/list",
+                  "api/access_methods/unmanaged",
+                  {
+                    "group": "Unmanaged",
+                    "pages": [
+                      "api/access_methods/unmanaged/get",
+                      "api/access_methods/unmanaged/list"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Action Attempts",
+                "pages": [
+                  "api/action_attempts",
+                  "api/action_attempts/get",
+                  "api/action_attempts/list"
+                ]
+              },
+              {
+                "group": "Client Sessions",
+                "pages": [
+                  "api/client_sessions",
+                  "api/client_sessions/create",
+                  "api/client_sessions/delete",
+                  "api/client_sessions/get",
+                  "api/client_sessions/get_or_create",
+                  "api/client_sessions/grant_access",
+                  "api/client_sessions/list",
+                  "api/client_sessions/revoke"
+                ]
+              },
+              {
+                "group": "Connect Webviews",
+                "pages": [
+                  "api/connect_webviews",
+                  "api/connect_webviews/create",
+                  "api/connect_webviews/delete",
+                  "api/connect_webviews/get",
+                  "api/connect_webviews/list"
+                ]
+              },
+              {
+                "group": "Connected Accounts",
+                "pages": [
+                  "api/connected_accounts",
+                  "api/connected_accounts/delete",
+                  "api/connected_accounts/get",
+                  "api/connected_accounts/list",
+                  "api/connected_accounts/sync",
+                  "api/connected_accounts/update",
+                  "api/connected_accounts/simulate",
+                  {
+                    "group": "Simulations",
+                    "pages": [
+                      "api/connected_accounts/simulate/disconnect"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Customers",
+                "pages": [
+                  "api/customers",
+                  "api/customers/create_portal",
+                  "api/customers/delete_data",
+                  "api/customers/push_data"
+                ]
+              },
+              {
+                "group": "Devices",
+                "pages": [
+                  "api/devices",
+                  "api/devices/get",
+                  "api/devices/list_device_providers",
+                  "api/devices/list",
+                  "api/devices/report_provider_metadata",
+                  "api/devices/update",
+                  "api/devices/simulate",
+                  "api/devices/unmanaged",
+                  {
+                    "group": "Simulations",
+                    "pages": [
+                      "api/devices/simulate/connect",
+                      "api/devices/simulate/disconnect",
+                      "api/devices/simulate/remove",
+                      "api/devices/simulate/connect_to_hub",
+                      "api/devices/simulate/disconnect_from_hub",
+                      "api/devices/simulate/paid_subscription"
+                    ]
+                  },
+                  {
+                    "group": "Unmanaged Devices",
+                    "pages": [
+                      "api/devices/unmanaged/get",
+                      "api/devices/unmanaged/list",
+                      "api/devices/unmanaged/update"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Events",
+                "pages": [
+                  "api/events",
+                  "api/events/get",
+                  "api/events/list"
+                ]
+              },
+              {
+                "group": "Instant Keys",
+                "pages": [
+                  "api/instant_keys",
+                  "api/instant_keys/delete",
+                  "api/instant_keys/get",
+                  "api/instant_keys/list"
+                ]
+              },
+              {
+                "group": "Locks",
+                "pages": [
+                  "api/locks",
+                  "api/locks/configure_auto_lock",
+                  "api/locks/get",
+                  "api/locks/list",
+                  "api/locks/lock_door",
+                  "api/locks/unlock_door",
+                  "api/locks/simulate",
+                  {
+                    "group": "Simulations",
+                    "pages": [
+                      "api/locks/simulate/keypad_code_entry",
+                      "api/locks/simulate/manual_lock_via_keypad"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Noise Sensors",
+                "pages": [
+                  "api/noise_sensors",
+                  "api/noise_sensors/list",
+                  "api/noise_sensors/simulate",
+                  "api/noise_sensors/noise_thresholds",
+                  {
+                    "group": "Simulations",
+                    "pages": [
+                      "api/noise_sensors/simulate/trigger_noise_threshold"
+                    ]
+                  },
+                  {
+                    "group": "Noise Thresholds",
+                    "pages": [
+                      "api/noise_sensors/noise_thresholds/create",
+                      "api/noise_sensors/noise_thresholds/delete",
+                      "api/noise_sensors/noise_thresholds/get",
+                      "api/noise_sensors/noise_thresholds/list",
+                      "api/noise_sensors/noise_thresholds/update"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Phones",
+                "pages": [
+                  "api/phones",
+                  "api/phones/deactivate",
+                  "api/phones/get",
+                  "api/phones/list",
+                  "api/phones/simulate",
+                  {
+                    "group": "Simulations",
+                    "pages": [
+                      "api/phones/simulate/create_sandbox_phone"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Spaces",
+                "pages": [
+                  "api/spaces",
+                  "api/spaces/add_devices",
+                  "api/spaces/add_acs_entrances",
+                  "api/spaces/create",
+                  "api/spaces/delete",
+                  "api/spaces/get",
+                  "api/spaces/get_related",
+                  "api/spaces/list",
+                  "api/spaces/remove_devices",
+                  "api/spaces/remove_acs_entrances",
+                  "api/spaces/update"
+                ]
+              },
+              {
+                "group": "Thermostats",
+                "pages": [
+                  "api/thermostats",
+                  "api/thermostats/activate_climate_preset",
+                  "api/thermostats/create_climate_preset",
+                  "api/thermostats/delete_climate_preset",
+                  "api/thermostats/list",
+                  "api/thermostats/set_temperature_threshold",
+                  "api/thermostats/set_fallback_climate_preset",
+                  "api/thermostats/set_fan_mode",
+                  "api/thermostats/set_hvac_mode",
+                  "api/thermostats/cool",
+                  "api/thermostats/heat",
+                  "api/thermostats/heat_cool",
+                  "api/thermostats/off",
+                  "api/thermostats/update_climate_preset",
+                  "api/thermostats/update_weekly_program",
+                  "api/thermostats/daily_programs",
+                  "api/thermostats/schedules",
+                  "api/thermostats/simulate",
+                  {
+                    "group": "Daily Programs",
+                    "pages": [
+                      "api/thermostats/daily_programs/create",
+                      "api/thermostats/daily_programs/delete",
+                      "api/thermostats/daily_programs/update"
+                    ]
+                  },
+                  {
+                    "group": "Schedules",
+                    "pages": [
+                      "api/thermostats/schedules/create",
+                      "api/thermostats/schedules/delete",
+                      "api/thermostats/schedules/get",
+                      "api/thermostats/schedules/list",
+                      "api/thermostats/schedules/update"
+                    ]
+                  },
+                  {
+                    "group": "Simulations",
+                    "pages": [
+                      "api/thermostats/simulate/hvac_mode_adjusted",
+                      "api/thermostats/simulate/temperature_reached"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "User Identities",
+                "pages": [
+                  "api/user_identities",
+                  "api/user_identities/add_acs_user",
+                  "api/user_identities/create",
+                  "api/user_identities/delete",
+                  "api/user_identities/generate_instant_key",
+                  "api/user_identities/get",
+                  "api/user_identities/grant_access_to_device",
+                  "api/user_identities/list_accessible_devices",
+                  "api/user_identities/list_accessible_entrances",
+                  "api/user_identities/list_acs_systems",
+                  "api/user_identities/list_acs_users",
+                  "api/user_identities/list",
+                  "api/user_identities/remove_acs_user",
+                  "api/user_identities/revoke_access_to_device",
+                  "api/user_identities/update",
+                  "api/user_identities/unmanaged",
+                  {
+                    "group": "Unmanaged",
+                    "pages": [
+                      "api/user_identities/unmanaged/get",
+                      "api/user_identities/unmanaged/list",
+                      "api/user_identities/unmanaged/update"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Webhooks",
+                "pages": [
+                  "api/webhooks",
+                  "api/webhooks/create",
+                  "api/webhooks/delete",
+                  "api/webhooks/get",
+                  "api/webhooks/list",
+                  "api/webhooks/update"
+                ]
+              },
+              {
+                "group": "Workspaces",
+                "pages": [
+                  "api/workspaces",
+                  "api/workspaces/create",
+                  "api/workspaces/get",
+                  "api/workspaces/list",
+                  "api/workspaces/reset_sandbox",
+                  "api/workspaces/update"
+                ]
+              }
             ]
           }
         ]
@@ -584,7 +697,9 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": ["device-and-system-integration-guides/index"]
+            "pages": [
+              "device-and-system-integration-guides/index"
+            ]
           },
           {
             "group": "2N Intercom Systems",
