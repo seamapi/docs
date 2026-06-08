@@ -237,7 +237,7 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "",
             "pages": [
               "api/index",
               "api/installation",
