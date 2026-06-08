@@ -237,7 +237,7 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "",
+            "group": "Getting Started",
             "pages": [
               "api/index",
               "api/installation",
@@ -715,8 +715,7 @@
               }
             ]
           }
-        ],
-        "href": "/api"
+        ]
       },
       {
         "tab": "Brand Guides",
