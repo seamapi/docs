@@ -12,7 +12,7 @@ Some access control systems require encoding a plastic card with the data necess
 
 This process consists of the following basic steps:
 
-1. Set up an [access system user](../../../capability-guides/access-systems/user-management.md) and create a [credential](../managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card`.\
+1. Set up an [access system user](../../../low-level-apis/access-systems/user-management.md) and create a [credential](../managing-credentials.md#create-a-card-based-credential) with the `access_method` set to `card`.\
    See the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system provider to learn specific requirements, such as configuring entrances and access schedules.\
    See [Set Up an Access System User and Card Credential](creating-and-encoding-card-based-credentials.md#id-1.-set-up-an-access-syseuser-and-card-credential).
 2. Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the credential onto the card.\

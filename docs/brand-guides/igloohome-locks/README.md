@@ -32,9 +32,9 @@ Each igloohome Bridge supports up to five compatible igloohome locks.
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock) for igloohome smart locks connected through the igloohome Bridge
-* [Programming online access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes)
-* [Programming offline access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/offline-access-codes)
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock) for igloohome smart locks connected through the igloohome Bridge
+* [Programming online access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes)
+* [Programming offline access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/offline-access-codes)
 
 {% hint style="info" %}
 We support customizable access codes for igloohome locks connected through the igloohome Bridge. We support offline algoPIN codes for all igloohome locks, without the need for a bridge.

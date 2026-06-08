@@ -6,6 +6,10 @@ description: >-
 
 # Smart Locks
 
+{% hint style="warning" %}
+**This is a low-level API.** For granting access to smart locks, use [Access Grants](../../use-cases/granting-access/README.md)—the default and recommended way to grant access to any physical space. We don't recommend building on the Smart Locks API directly unless you have discussed your use case with the Seam team at [support@seam.co](mailto:support@seam.co). See [Which API should I use to grant access?](../../use-cases/granting-access/README.md#which-api-should-i-use-to-grant-access)
+{% endhint %}
+
 {% embed url="https://youtu.be/99ZpSq2Z1-8" %}
 You can control your smart locks easily with the Seam API. In this video, learn how to get started!
 {% endembed %}

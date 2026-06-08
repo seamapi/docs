@@ -22,8 +22,8 @@ For detailed information about the ASSA ABLOY Visionline devices that Seam suppo
 
 We support the following features:
 
-* [Managing access systems](https://docs.seam.co/latest/capability-guides/access-systems)
-* [Issuing plastic card credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials#create-a-key-card-based-credential)
+* [Managing access systems](https://docs.seam.co/latest/low-level-apis/access-systems)
+* [Issuing plastic card credentials](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials#create-a-key-card-based-credential)
 * [Issuing mobile access credentials](https://docs.seam.co/latest/capability-guides/mobile-access)
 
 ***
@@ -36,7 +36,7 @@ To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-
 
 ## Troubleshooting
 
-For information about Visionline ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system).
+For information about Visionline ACS-related errors, including issues related to the connection between your ACS and Seam, see [Troubleshooting Your ACS](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system).
 
 ***
 

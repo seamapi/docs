@@ -12,7 +12,7 @@ Seam integrates with Brivo, which produces an access control platform for applic
 
 ## Supported Devices
 
-This integration supports all [readers](https://www.brivo.com/products/smart-readers/), [control panels](https://www.brivo.com/products/control-panels/), and [wireless smart locks](https://www.brivo.com/capability-guides/smart-locks/) connected to the Brivo Access platform. Brivo control panels also integrate with any Wiegand or Open Supervised Device Protocol (OSDP) readers.
+This integration supports all [readers](https://www.brivo.com/products/smart-readers/), [control panels](https://www.brivo.com/products/control-panels/), and [wireless smart locks](https://www.brivo.com/low-level-apis/smart-locks/) connected to the Brivo Access platform. Brivo control panels also integrate with any Wiegand or Open Supervised Device Protocol (OSDP) readers.
 
 The Brivo Access platform supports the following wireless locks:
 
@@ -26,9 +26,9 @@ For detailed information about the Brivo-connected devices that Seam supports, s
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)
-* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) for readers and locks that have a keypad
-* [Managing access systems](https://docs.seam.co/latest/capability-guides/access-systems)
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock)
+* [Programming access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes) for readers and locks that have a keypad
+* [Managing access systems](https://docs.seam.co/latest/low-level-apis/access-systems)
 
 ***
 

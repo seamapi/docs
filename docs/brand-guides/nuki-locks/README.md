@@ -32,8 +32,8 @@ For detailed information about the Nuki devices that Seam supports, see our [Nuk
 
 We support the following features:
 
-* [Triggering web lock and unlock actions](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock)
-* [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on locks and openers that have an installed Nuki Keypad
+* [Triggering web lock and unlock actions](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock)
+* [Programming access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes) on locks and openers that have an installed Nuki Keypad
 
 {% hint style="info" %}
 Nuki does not allow the use of zeros in PIN codes.
