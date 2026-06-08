@@ -456,15 +456,6 @@
                 ]
               },
               {
-                "group": "Customers",
-                "pages": [
-                  "api/customers",
-                  "api/customers/create_portal",
-                  "api/customers/delete_data",
-                  "api/customers/push_data"
-                ]
-              },
-              {
                 "group": "Devices",
                 "pages": [
                   "api/devices",
@@ -686,6 +677,15 @@
                   "api/workspaces/list",
                   "api/workspaces/reset_sandbox",
                   "api/workspaces/update"
+                ]
+              },
+              {
+                "group": "Customers",
+                "pages": [
+                  "api/customers",
+                  "api/customers/create_portal",
+                  "api/customers/delete_data",
+                  "api/customers/push_data"
                 ]
               }
             ]
