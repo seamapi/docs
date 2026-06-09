@@ -252,7 +252,7 @@ function titleFromPath(path: string): string {
 export function transformSpec(
   spec: any,
   blueprint: Blueprint,
-  pathMetadata: PathMetadata,
+  _pathMetadata: PathMetadata,
 ): { spec: any; stats: TransformStats } {
   const endpointMap = buildEndpointMap(blueprint)
   const stats: TransformStats = {
@@ -305,7 +305,9 @@ export function transformSpec(
         source: string
       }> = []
 
-      for (const sample of bpEndpoint.codeSamples) {
+      // Use the first/primary code sample to avoid tab duplication
+      const sample = bpEndpoint.codeSamples[0]
+      if (sample) {
         for (const sdk of mintlifySdkOrder) {
           const code = sample.code[sdk]
           if (!code) continue
@@ -316,8 +318,6 @@ export function transformSpec(
             source: combineRequestResponse(sdk, code.request, code.response),
           })
         }
-        // Only use the first/primary code sample to avoid tab duplication
-        break
       }
 
       if (codeSamples.length > 0) {

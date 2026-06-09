@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { env } from 'node:process'
