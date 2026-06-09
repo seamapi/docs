@@ -145,8 +145,10 @@ export async function updateDocsJson(specPaths?: Set<string>): Promise<void> {
     )
   }
 
-  // Remove top-level openapi if it exists (should be at tab level)
-  delete docsJson.openapi
+  // Ensure top-level openapi is set (needed for Mintlify cloud build to
+  // process the spec and generate endpoint pages). The tab-level openapi
+  // field alone only works in the dev server.
+  docsJson.openapi = ['openapi.json']
 
   if (!docsJson.api) {
     docsJson.api = {
