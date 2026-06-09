@@ -12,21 +12,6 @@ The key benefit of cloud keys is **user-attributed unlocks**. Each unlock is rec
 
 ***
 
-## How Cloud Keys Work
-
-Cloud keys differ from other access methods in how the unlock reaches the door:
-
-| Access Method | How It Unlocks | User Attribution |
-| --- | --- | --- |
-| **Cloud key** | API call over the internet through the ACS cloud connection | Attributed to the granted user identity |
-| **Mobile key** | Bluetooth Low Energy (BLE) or NFC from the user's phone | Attributed to the granted user identity |
-| **PIN code** | User enters a code on the lock keypad | Attributed to whoever has the code |
-| **Key card** | User taps a physical card on the lock | Attributed to whoever holds the card |
-
-With cloud keys, your application calls the Seam API to unlock an entrance on behalf of the user. Seam routes the unlock through the ACS cloud connection, and the ACS records the action as that user's entry.
-
-***
-
 ## Use Cases
 
 - **Web pass shared via link:** Share a web pass URL with your user. The user opens the link and taps to unlock — similar to Instant Keys, but for cloud-connected locks that support web unlock.

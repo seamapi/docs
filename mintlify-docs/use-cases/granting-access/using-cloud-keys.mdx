@@ -1,0 +1,282 @@
+---
+title: 'Using Cloud Keys'
+description: >-
+  Learn how to use cloud keys to trigger web-based unlocks attributed to
+  specific user identities in the ACS audit trail.
+---
+
+# Using Cloud Keys
+
+Cloud keys are a web-based unlock access method. When you use a cloud key, the door unlocks over the internet through the ACS cloud connection. Each unlock is attributed to the specific user identity in the ACS audit trail, rather than being recorded as a generic system action.
+
+Cloud keys are ideal for:
+
+- **Web pass shared via link:** Send your user a URL that triggers a remote unlock when tapped.
+- **Embedded unlock in your app:** Add an unlock button to your web or mobile app that calls the Seam API to unlock the door.
+
+## Before You Begin
+
+To use cloud keys, you need:
+
+- A [Seam API key](https://console.seam.co)
+- A connected ACS that supports cloud key unlocks
+- A [user identity](/core-concepts/user-identities) representing the person who will unlock the door
+- An entrance that supports cloud key unlocks (`can_unlock_with_cloud_key` is `true`)
+
+## Step 1: Verify Entrance Support
+
+List the entrances for your ACS and confirm that `can_unlock_with_cloud_key` is `true` for the entrance you want to unlock.
+
+<CodeGroup>
+
+```javascript JavaScript
+const entrances = await seam.acs.entrances.list({
+  acs_system_id: 'c359cba2-8ef2-47fc-bee0-1c7c2a886339',
+})
+
+const cloudKeyEntrances = entrances.filter(
+  (e) => e.can_unlock_with_cloud_key
+)
+```
+
+```python Python
+entrances = seam.acs.entrances.list(
+    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+)
+
+cloud_key_entrances = [
+    e for e in entrances if e.can_unlock_with_cloud_key
+]
+```
+
+```ruby Ruby
+entrances = seam.acs.entrances.list(
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+)
+
+cloud_key_entrances = entrances.select do |e|
+  e.can_unlock_with_cloud_key
+end
+```
+
+```php PHP
+$entrances = $seam->acs->entrances->list(
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+);
+
+$cloudKeyEntrances = array_filter(
+  $entrances,
+  fn($e) => $e->can_unlock_with_cloud_key
+);
+```
+
+```csharp C#
+var entrances = seam.Acs.Entrances.List(
+  acsSystemId: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+);
+
+var cloudKeyEntrances = entrances
+  .Where(e => e.CanUnlockWithCloudKey)
+  .ToList();
+```
+
+```java Java
+var entrances = seam.acs().entrances().list(
+  AcsEntrancesListRequest.builder()
+    .acsSystemId("c359cba2-8ef2-47fc-bee0-1c7c2a886339")
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/entrances/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+}'
+```
+
+</CodeGroup>
+
+**Output:**
+
+```json
+[
+  {
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "display_name": "Main Entrance",
+    "can_unlock_with_cloud_key": true,
+    ...
+  }
+]
+```
+
+## Step 2: Create an Access Grant with a Cloud Key
+
+Create an [Access Grant](/use-cases/granting-access/access-grants) for the user identity, specifying `cloud_key` as the requested access method mode. Include the entrance IDs that the user should be able to unlock.
+
+<CodeGroup>
+
+```javascript JavaScript
+const accessGrant = await seam.accessGrants.create({
+  user_identity_id: '22222222-2222-2222-2222-222222222222',
+  acs_entrance_ids: ['f74e4879-5991-4e2f-a368-888983dcfbfc'],
+  requested_access_methods: [
+    { mode: 'cloud_key' }
+  ],
+})
+```
+
+```python Python
+access_grant = seam.access_grants.create(
+    user_identity_id="22222222-2222-2222-2222-222222222222",
+    acs_entrance_ids=["f74e4879-5991-4e2f-a368-888983dcfbfc"],
+    requested_access_methods=[{"mode": "cloud_key"}],
+)
+```
+
+```ruby Ruby
+access_grant = seam.access_grants.create(
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  acs_entrance_ids: ["f74e4879-5991-4e2f-a368-888983dcfbfc"],
+  requested_access_methods: [{ mode: "cloud_key" }]
+)
+```
+
+```php PHP
+$accessGrant = $seam->access_grants->create(
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  acs_entrance_ids: ["f74e4879-5991-4e2f-a368-888983dcfbfc"],
+  requested_access_methods: [["mode" => "cloud_key"]]
+);
+```
+
+```csharp C#
+var accessGrant = seam.AccessGrants.Create(
+  userIdentityId: "22222222-2222-2222-2222-222222222222",
+  acsEntranceIds: new List<string>
+  {
+    "f74e4879-5991-4e2f-a368-888983dcfbfc"
+  },
+  requestedAccessMethods: new List<RequestedAccessMethod>
+  {
+    new RequestedAccessMethod { Mode = "cloud_key" }
+  }
+);
+```
+
+```java Java
+var accessGrant = seam.accessGrants().create(
+  AccessGrantsCreateRequest.builder()
+    .userIdentityId("22222222-2222-2222-2222-222222222222")
+    .acsEntranceIds(List.of(
+      "f74e4879-5991-4e2f-a368-888983dcfbfc"
+    ))
+    .requestedAccessMethods(List.of(
+      RequestedAccessMethod.builder()
+        .mode("cloud_key")
+        .build()
+    ))
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "acs_entrance_ids": ["f74e4879-5991-4e2f-a368-888983dcfbfc"],
+  "requested_access_methods": [{ "mode": "cloud_key" }]
+}'
+```
+
+</CodeGroup>
+
+**Output:**
+
+```json
+{
+  "access_grant_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "access_method_ids": ["99887766-5544-3322-1100-aabbccddeeff"],
+  "requested_access_methods": [
+    { "mode": "cloud_key" }
+  ],
+  ...
+}
+```
+
+## Step 3: Unlock the Entrance
+
+Once the access grant is active, unlock the entrance on behalf of the user. The `acs_credential_id` from the cloud key access method authorizes the unlock and attributes it to the user identity in the ACS audit trail.
+
+<CodeGroup>
+
+```javascript JavaScript
+await seam.acs.entrances.unlock({
+  acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
+  acs_credential_id: '99887766-5544-3322-1100-aabbccddeeff',
+})
+```
+
+```python Python
+seam.acs.entrances.unlock(
+    acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
+    acs_credential_id="99887766-5544-3322-1100-aabbccddeeff",
+)
+```
+
+```ruby Ruby
+seam.acs.entrances.unlock(
+  acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  acs_credential_id: "99887766-5544-3322-1100-aabbccddeeff"
+)
+```
+
+```php PHP
+$seam->acs->entrances->unlock(
+  acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  acs_credential_id: "99887766-5544-3322-1100-aabbccddeeff"
+);
+```
+
+```csharp C#
+seam.Acs.Entrances.Unlock(
+  acsEntranceId: "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  acsCredentialId: "99887766-5544-3322-1100-aabbccddeeff"
+);
+```
+
+```java Java
+seam.acs().entrances().unlock(
+  AcsEntrancesUnlockRequest.builder()
+    .acsEntranceId("f74e4879-5991-4e2f-a368-888983dcfbfc")
+    .acsCredentialId("99887766-5544-3322-1100-aabbccddeeff")
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/entrances/unlock' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  "acs_credential_id": "99887766-5544-3322-1100-aabbccddeeff"
+}'
+```
+
+</CodeGroup>
+
+The unlock event appears in the ACS audit trail attributed to the specific user identity, not as a generic system action.
+
+## Next Steps
+
+- [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods) — Learn how to deliver all access method types to your users.
+- [Access Grants](/use-cases/granting-access/access-grants) — Learn more about creating and managing Access Grants.
