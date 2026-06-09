@@ -195,7 +195,7 @@
             "group": "Seam Components",
             "pages": [
               {
-                "group": "Seam Components",
+                "group": "Seam Web Components",
                 "pages": [
                   "ui-components/overview/index",
                   {
@@ -220,20 +220,20 @@
                       "ui-components/overview/react-components/connect-account-button"
                     ]
                   },
-                  "ui-components/overview/using-user-identities-to-scope-users-device-access",
-                  {
-                    "group": "Mobile Components",
-                    "pages": [
-                      "ui-components/seam-mobile-components/index",
-                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/index",
-                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/index",
-                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/colors",
-                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/fonts",
-                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/keycard-styles",
-                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/toast-styles",
-                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/unlockcard-styles"
-                    ]
-                  }
+                  "ui-components/overview/using-user-identities-to-scope-users-device-access"
+                ]
+              },
+              {
+                "group": "Seam Mobile Components",
+                "pages": [
+                  "ui-components/seam-mobile-components/index",
+                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/index",
+                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/index",
+                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/colors",
+                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/fonts",
+                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/keycard-styles",
+                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/toast-styles",
+                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/unlockcard-styles"
                 ]
               }
             ]
