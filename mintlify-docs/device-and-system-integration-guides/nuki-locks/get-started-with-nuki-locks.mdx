@@ -19,19 +19,29 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">```bash
+bundle add seam
+```</Tab>
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+<Tab title="PHP">```bash
+composer require seamapi/seam
+```</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
@@ -58,6 +68,7 @@ To control your Nuki locks via the Seam API, you must first authorize your Seam 
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```javascript
 // Use Seam SDK to create a connect webview with the provider nuki
 const createdConnectWebview = await seam.connectWebviews.create({
@@ -68,9 +79,11 @@ const createdConnectWebview = await seam.connectWebviews.create({
 console.log(createdConnectWebview.url);
 
 ````
+
 </Tab>
 
 <Tab title="Python">
+
 ```python
 # Create a webview with Nuki as the provider
 created_webview = seam.connect_webviews.create(accepted_providers=["nuki"])
@@ -82,9 +95,11 @@ assert created_webview.login_successful is False
 print(created_webview.url)
 ````
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 ```ruby
 # Create a connect webview with the provider "nuki"
 created_webview = seam.connect_webviews.create(accepted_providers: ["nuki"])
@@ -98,9 +113,11 @@ raise 'Login should not be succesful' unless !created_webview.login_successful
 puts created_webview.url
 
 ````
+
 </Tab>
 
 <Tab title="PHP">
+
 ```php
 <?php
 // initiate the SDK client, you should replace this with your SDK client init portion
@@ -118,6 +135,7 @@ assert($connect_webview->login_successful === false);
 print($connect_webview->url);
 ?>
 ````
+
 
 </Tab>
 </Tabs>
@@ -140,6 +158,7 @@ Confirm the Connect Webview was successful by querying its status:
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id
@@ -148,31 +167,38 @@ const updatedWebview = await seam.connectWebviews.get(
 console.log(updatedWebview.login_successful) // true
 
 ````
+
 </Tab>
 
 <Tab title="Python">
+
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 ````
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 
 ````
+
 </Tab>
 
 <Tab title="PHP">
+
 ```php
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
 ````
+
 
 </Tab>
 </Tabs>
@@ -183,6 +209,7 @@ After a Nuki account is linked with Seam, you can retrieve devices for this Nuki
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```javascript
 const allLocks = await seam.locks.list()
 
@@ -217,9 +244,11 @@ warnings: []
 _/
 
 ````
+
 </Tab>
 
 <Tab title="Python">
+
 ```python
 all_locks = seam.locks.list()
 
@@ -232,9 +261,11 @@ print(some_lock)
 # Device(device_id='60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e', device_type='nuki_lock', location=None, properties={'locked': False, 'online': True, 'manufacturer': 'nuki', 'battery_level': 0.86, 'nuki_metadata': {'device_id': '545636388', 'device_name': 'Office Lock'}, 'max_active_codes_supported': 100, 'supported_code_lengths': [6], 'name': 'Office Lock'}, capabilities_supported=['access_code', 'lock'], errors=[])
 ````
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 ```ruby
 some_lock = seam.locks.list.first
 
@@ -258,9 +289,11 @@ puts some_lock
 # warnings=[]>
 
 ````
+
 </Tab>
 
 <Tab title="PHP">
+
 ```php
 use Seam\SeamClient;
 
@@ -273,6 +306,7 @@ echo json_encode($locks);
 [{"device_id":"60d0f1b6-26ae-4366-8d1b-d20ad0d6a62e","workspace_id":"d7418ff3-a476-4f48-9a4b-211d1d21a03d","connected_account_id":"32e92b46-7978-4d48-a3e7-9b04662151b3","device_type":"nuki_lock","properties":{"online":true,"locked":false,"door_open":null,"battery_level":0.86,"name":"Office Lock","manufacturer":"nuki","august_metadata":null,"schlage_metadata":null,"smartthings_metadata":null},"location":null,"created_at":"2023-02-11T00:46:12.940Z","capabilities_supported":["access_code","lock"],"errors":[]}]
 */
 ````
+
 
 </Tab>
 </Tabs>
@@ -298,6 +332,7 @@ Next, you can perform the basic action of locking and unlocking a door.
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -310,9 +345,11 @@ updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 
 ````
+
 </Tab>
 
 <Tab title="Python">
+
 ```python
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -325,9 +362,11 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ````
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 ```ruby
 # lock the door
 seam.locks.lock_door(device_id: some_lock.device_id)
@@ -341,9 +380,11 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 
 ````
+
 </Tab>
 
 <Tab title="PHP">
+
 ```php
 use Seam\SeamClient;
 
@@ -356,6 +397,7 @@ $seam->locks->unlock_door($lock->device_id);
 # lock the door
 $seam->locks->lock_door($lock->device_id);
 ````
+
 
 </Tab>
 </Tabs>
@@ -373,6 +415,7 @@ The Seam API makes it easy to program both `ongoing` codes and `timebound` codes
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```javascript
 // create an ongoing code
 await seam.accessCodes.create({
@@ -396,9 +439,11 @@ device_id: someLock.device_id,
 })
 
 ````
+
 </Tab>
 
 <Tab title="Python">
+
 ```python
 # create an ongoing code
 seam.access_codes.create(
@@ -420,9 +465,11 @@ seam.access_codes.list(device=some_lock)
 
 ````
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 ```ruby
 # create an ongoing code
 seam.access_codes.create(
@@ -442,9 +489,11 @@ ends_at: '2028-08-13T19:23:42+0000'
 seam.access_codes.list(device_id: some_lock.device_id)
 
 ````
+
 </Tab>
 
 <Tab title="PHP">
+
 ```php
 use Seam\SeamClient;
 
@@ -464,6 +513,7 @@ $seam->access_codes->create(
 );
 
 ````
+
 
 </Tab>
 </Tabs>

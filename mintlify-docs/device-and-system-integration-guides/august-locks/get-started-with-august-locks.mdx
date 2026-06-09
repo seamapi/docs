@@ -40,19 +40,29 @@ First, install a Seam SDK, as follows:
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">```bash
+bundle add seam
+```</Tab>
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+<Tab title="PHP">```bash
+composer require seamapi/seam
+```</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
@@ -125,6 +135,7 @@ false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -151,6 +162,7 @@ Login Successful (false): false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -175,6 +187,7 @@ print(connect_webview.url)
 ```
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 
 </Tab>
 
@@ -203,6 +216,7 @@ puts connect_webview.url
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 
 </Tab>
 
@@ -233,6 +247,7 @@ false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -260,6 +275,7 @@ Console.WriteLine(connectWebview.Url);
 False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 
 </Tab>
 </Tabs>
@@ -310,6 +326,7 @@ console.log(updatedConnectWebview.login_successful) // true
 true
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -332,6 +349,7 @@ curl -X 'GET' \
 Login Successful (true): true
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -348,6 +366,7 @@ assert updated_connect_webview.login_successful is True # True
 ```
 True
 ```
+
 
 </Tab>
 
@@ -368,6 +387,7 @@ puts updated_connect_webview.login_successful # true
 true
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -387,6 +407,7 @@ echo $updated_connect_webview->login_successful ? 'true' : 'false', "\n"; // tru
 true
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -405,6 +426,7 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 ```
 True
 ```
+
 
 </Tab>
 </Tabs>
@@ -463,6 +485,7 @@ true
 }
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -519,6 +542,7 @@ Locked (true): true
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -563,6 +587,7 @@ Device(
   ...
 )
 ```
+
 
 </Tab>
 
@@ -612,6 +637,7 @@ true
 >
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -658,6 +684,7 @@ true
   ...
 }
 ```
+
 
 </Tab>
 
@@ -707,6 +734,7 @@ True
   ...
 }
 ```
+
 
 </Tab>
 </Tabs>
@@ -758,6 +786,7 @@ if (frontDoor.can_remotely_unlock) {
 }
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -795,6 +824,7 @@ fi
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -821,6 +851,7 @@ ActionAttempt(
 )
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
@@ -845,6 +876,7 @@ end
   action_attempt_id="11111111-2222-3333-4444-555555555555"
   result=nil>
 ```
+
 
 </Tab>
 
@@ -873,6 +905,7 @@ if ($front_door->can_remotely_unlock) {
 }
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -897,6 +930,7 @@ if (frontDoor.CanRemotelyUnlock == true) {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555"
 }
 ```
+
 
 </Tab>
 </Tabs>
@@ -923,6 +957,7 @@ console.log(updatedFrontDoor.properties.locked) // false
 ```
 false
 ```
+
 
 </Tab>
 
@@ -953,6 +988,7 @@ echo $(jq -r '"Locked (false): " + (.device.properties.locked | tostring)' <<< $
 Locked (false): false
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -972,6 +1008,7 @@ assert updated_front_door.properties["locked"] is False # False
 ```
 False
 ```
+
 
 </Tab>
 
@@ -993,6 +1030,7 @@ puts updated_front_door.properties.locked # false
 false
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -1012,6 +1050,7 @@ echo $updated_front_door->properties->locked ? 'true' : 'false', "\n"; // false
 ```
 false
 ```
+
 
 </Tab>
 
@@ -1034,6 +1073,7 @@ Console.WriteLine(updatedFrontDoor.Properties.Locked); // false
 ```
 False
 ```
+
 
 </Tab>
 </Tabs>
@@ -1106,6 +1146,7 @@ if (updatedFrontDoor.can_program_online_access_codes) {
   }
 ]
 ```
+
 
 </Tab>
 
@@ -1183,6 +1224,7 @@ fi
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -1237,6 +1279,7 @@ if updated_front_door.can_program_online_access_codes:
   )
 ]
 ```
+
 
 </Tab>
 
@@ -1294,6 +1337,7 @@ end
 ]
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -1348,6 +1392,7 @@ if ($updated_front_door->can_program_online_access_codes) {
   }
 ]
 ```
+
 
 </Tab>
 
@@ -1405,6 +1450,7 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
   ...
 }
 ```
+
 
 </Tab>
 </Tabs>
