@@ -234,7 +234,7 @@ The Access Grant process consists of the following steps:
         <br />
         For on-premises access systems, use Seam Bridge to connect the access
         system securely to Seam. For details, see{' '}
-        <a href='../../capability-guides/access-systems/connect-an-acs-to-seam/README.md'>
+        <a href='../../low-level-apis/access-systems/connect-an-acs-to-seam/README.md'>
           Connect an Access System to Seam
         </a>
         .
@@ -388,15 +388,15 @@ The Access Grant process consists of the following steps:
 | Grant a person access to ACS entrances                       | Access Grants (`acs_entrance_ids`)                                                         |
 | Grant a person access to a group of access points            | Access Grants + [spaces](https://docs.seam.co/latest/api/spaces) (`space_ids`)             |
 | Issue a mobile key or Instant Key                            | Access Grants (`mode: "mobile_key"`)                                                       |
-| Set a PIN with a specific custom code value on a single lock | [Access Codes API](../../capability-guides/smart-locks/access-codes/index) (low-level) |
-| Manage offline or backup PIN code pools on a single lock     | [Access Codes API](../../capability-guides/smart-locks/access-codes/index) (low-level) |
-| Directly manage ACS users, credentials, and access groups    | [ACS API](../../capability-guides/access-systems/index) (low-level)                    |
-| Lock or unlock a door remotely                               | [Smart Locks API](../../capability-guides/smart-locks/index) (not a granting workflow) |
+| Set a PIN with a specific custom code value on a single lock | [Access Codes API](../../low-level-apis/smart-locks/access-codes/index) (low-level) |
+| Manage offline or backup PIN code pools on a single lock     | [Access Codes API](../../low-level-apis/smart-locks/access-codes/index) (low-level) |
+| Directly manage ACS users, credentials, and access groups    | [ACS API](../../low-level-apis/access-systems/index) (low-level)                    |
+| Lock or unlock a door remotely                               | [Smart Locks API](../../low-level-apis/smart-locks/index) (not a granting workflow) |
 
 <Warning>
   The low-level [Access
-  Codes](../../capability-guides/smart-locks/access-codes/index) and
-  [ACS](../../capability-guides/access-systems/index) granting workflows are
+  Codes](../../low-level-apis/smart-locks/access-codes/index) and
+  [ACS](../../low-level-apis/access-systems/index) granting workflows are
   no longer recommended for granting access. For new development, use Access
   Grants—they cover the same providers through one consistent, future-proof
   interface.
