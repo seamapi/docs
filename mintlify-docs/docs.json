@@ -192,43 +192,48 @@
             ]
           },
           {
-            "group": "UI Components",
+            "group": "Seam Components",
             "pages": [
-              "ui-components/overview/index",
               {
-                "group": "Getting Started",
+                "group": "Seam Components",
                 "pages": [
-                  "ui-components/overview/getting-started-with-seam-components/index",
-                  "ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens",
-                  "ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components"
-                ]
-              },
-              {
-                "group": "React Components",
-                "pages": [
-                  "ui-components/overview/react-components/index",
-                  "ui-components/overview/react-components/device-details",
-                  "ui-components/overview/react-components/device-table",
-                  "ui-components/overview/react-components/access-code-table",
-                  "ui-components/overview/react-components/access-code-details",
-                  "ui-components/overview/react-components/create-access-code-form",
-                  "ui-components/overview/react-components/update-access-code-form",
-                  "ui-components/overview/react-components/seam-provider",
-                  "ui-components/overview/react-components/connect-account-button"
-                ]
-              },
-              "ui-components/overview/using-user-identities-to-scope-users-device-access",
-              {
-                "group": "Mobile Components",
-                "pages": [
-                  "ui-components/seam-mobile-components/index",
-                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/index",
-                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/index",
-                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/colors",
-                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/fonts",
-                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/keycard-styles",
-                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/toast-styles",
-                  "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/unlockcard-styles"
+                  "ui-components/overview/index",
+                  {
+                    "group": "Getting Started",
+                    "pages": [
+                      "ui-components/overview/getting-started-with-seam-components/index",
+                      "ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens",
+                      "ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components"
+                    ]
+                  },
+                  {
+                    "group": "React Components",
+                    "pages": [
+                      "ui-components/overview/react-components/index",
+                      "ui-components/overview/react-components/device-details",
+                      "ui-components/overview/react-components/device-table",
+                      "ui-components/overview/react-components/access-code-table",
+                      "ui-components/overview/react-components/access-code-details",
+                      "ui-components/overview/react-components/create-access-code-form",
+                      "ui-components/overview/react-components/update-access-code-form",
+                      "ui-components/overview/react-components/seam-provider",
+                      "ui-components/overview/react-components/connect-account-button"
+                    ]
+                  },
+                  "ui-components/overview/using-user-identities-to-scope-users-device-access",
+                  {
+                    "group": "Mobile Components",
+                    "pages": [
+                      "ui-components/seam-mobile-components/index",
+                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/index",
+                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/index",
+                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/colors",
+                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/fonts",
+                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/keycard-styles",
+                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/toast-styles",
+                      "ui-components/seam-mobile-components/seam-mobile-components-for-ios/theming/unlockcard-styles"
+                    ]
+                  }
                 ]
               }
             ]
