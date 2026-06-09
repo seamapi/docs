@@ -354,3 +354,13 @@ $seam->access_methods->get(
 ## Instant Keys
 
 Each mobile key that you create also includes an Instant Key. Seam Instant Keys are the most streamlined mobile access experience available today. Both the Access Grant and the mobile key access method include the `instant_key_url` property. You deliver this URL to your user by sending it through text or email. No app download is required. You can also embed an Instant Key in your own app. For details, see [Instant Keys](../../capability-guides/instant-keys/) and [Delivering Instant Keys](../../capability-guides/instant-keys/delivering-instant-keys.md).
+
+***
+
+## Cloud Keys
+
+Cloud keys provide a web-based unlock experience. Your user opens a web pass or taps an unlock button in your app, and the door unlocks over the internet through the ACS cloud connection. Each unlock is attributed to the specific user identity in the ACS audit trail — not recorded as a generic system action.
+
+To unlock an entrance on behalf of a user, retrieve the cloud key access method from the Access Grant and call `/acs/entrances/unlock` with the credential ID.
+
+For the complete workflow — including verifying entrance support and creating an Access Grant with a cloud key — see [Using Cloud Keys](using-cloud-keys.md).
