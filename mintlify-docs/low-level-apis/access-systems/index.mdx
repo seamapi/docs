@@ -1,11 +1,12 @@
 ---
 title: 'Access Control Systems'
+sidebarTitle: 'Overview'
 description: "Learn about managing access control systems that enable you to control users' access to physical spaces, using credentials."
 ---
 
 <Warning>
   This is a low-level API. For granting access through your access control
-  system, use [Access Grants](/use-cases/granting-access)—the default and
+  system, use [Access Grants](/use-cases/granting-access/index)—the default and
   recommended way to grant access to any physical space. We don't recommend
   building on the ACS API directly unless you've discussed your use case with
   the Seam team at [support@seam.co](mailto:support@seam.co).
@@ -50,7 +51,7 @@ Seam enables you to manage your ACS in a logical, efficient manner.
    For each user, specify the entrances to which the user has access and the schedule for this access.
 
 3. Define credentials, which are the digital means of granting access, such as PIN codes, mobile keys, and plastic (RFID) cards.\
-   If you are developing a mobile app to provide access for your ACS users, you can also use [Seam's iOS and Android SDKs](../../developer-tools/mobile-sdks/) that pair with the Seam API to create and manage mobile keys.
+   If you are developing a mobile app to provide access for your ACS users, you can also use [Seam's iOS and Android SDKs](/developer-tools/mobile-sdks/index) that pair with the Seam API to create and manage mobile keys.
 
 <figure>
   <img
@@ -75,22 +76,22 @@ For details specific to your access control system, see the [system integration 
 
 ## **Getting Started**
 
-Create your first credentials! See the [ACS Quick Starts](../../low-level-apis/access-systems/acs-quick-starts/).
+Create your first credentials! See the [ACS Quick Starts](/low-level-apis/access-systems/acs-quick-starts/index).
 
 <CardGroup cols={2}>
   <Card
     title='Create your first PIN code credential. →'
-    href='/../../low-level-apis/access-systems/acs-quick-starts/pin-code-quick-start'
+    href='/low-level-apis/access-systems/acs-quick-starts/pin-code-quick-start'
     img='/images/pin-code.png'
   ></Card>
   <Card
     title='Create your first encodable key card credential. →'
-    href='/../../low-level-apis/access-systems/acs-quick-starts/encodable-key-card-quick-start'
+    href='/low-level-apis/access-systems/acs-quick-starts/encodable-key-card-quick-start'
     img='/images/key-card.png'
   ></Card>
   <Card
     title='Create your first mobile key credential. →'
-    href='/../../low-level-apis/access-systems/acs-quick-starts/mobile-key-quick-start'
+    href='/low-level-apis/access-systems/acs-quick-starts/mobile-key-quick-start'
     img='/images/mobile-key.png'
   ></Card>
 </CardGroup>
@@ -102,14 +103,14 @@ Create your first credentials! See the [ACS Quick Starts](../../low-level-apis/a
 Find out more about using Seam to manage access control system resources. See the following guides:
 
 1. Connect your ACS to Seam.
-   - [Connect an ACS to Seam](../../low-level-apis/access-systems/connect-an-acs-to-seam/)
+   - [Connect an ACS to Seam](/low-level-apis/access-systems/connect-an-acs-to-seam/index)
 2. Learn about ACS concepts.
    - [Access Control System Resources](../../low-level-apis/access-systems/connect-an-acs-to-seam/access-control-system-resources)
    - [Understanding ACS Differences](../../low-level-apis/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences)
 3. Get your ACS system ID.
    - [Retrieving ACS System Details](../../low-level-apis/access-systems/connect-an-acs-to-seam/retrieving-acs-system-details)
 4. Create ACS users.
-   - [Managing ACS Users](user-management)
+   - [Managing ACS Users](/low-level-apis/access-systems/user-management)
 5. For relevant access control systems, assign ACS users to access groups.
    - [Assigning ACS Users to Access Groups](../../low-level-apis/access-systems/user-management/assigning-users-to-access-groups)
 6. Learn about available entrances.

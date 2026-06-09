@@ -20,7 +20,7 @@ You can use the following Seam API "imperative" endpoints to set the current HVA
   the desired heating and cooling set points, as appropriate.
 </Info>
 
-Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](./#thermostat-capabilities).
+Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](#before-you-begin-confirm-capabilities).
 
 These imperative operations return an [action attempt](../../core-concepts/action-attempts) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
 
@@ -32,7 +32,7 @@ Further, Seam emits a [`thermostat.temperature_reached_set_point` event](https:/
 
 When you use an imperative endpoint to set the HVAC settings for a thermostat, you specify the [HVAC mode](../../capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) and the desired [set points](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points) in Fahrenheit or Celsius.
 
-To set the HVAC mode and set points, issue a thermostat [`heat`](configure-current-climate-settings#set-a-thermostat-to-heat-mode), [`cool`](configure-current-climate-settings#set-a-thermostat-to-cool-mode), [`heat_cool`](configure-current-climate-settings#set-a-thermostat-to-heat-cool-mode), `eco` (for Google Nest), or [`off`](configure-current-climate-settings#turn-off-heating-and-cooling) request and include the desired set points in the body of the request.
+To set the HVAC mode and set points, issue a thermostat [`heat`](#set-a-thermostat-to-heat-mode), [`cool`](#set-a-thermostat-to-cool-mode), [`heat_cool`](#set-a-thermostat-to-heat-cool-mode), `eco` (for Google Nest), or [`off`](#turn-off-heating-and-cooling) request and include the desired set points in the body of the request.
 
 ---
 
@@ -91,17 +91,17 @@ To configure and then verify a climate setting on a thermostat, perform the foll
 
 1.  Confirm the capabilities of the thermostat.
 
-    See [Before You Begin: Confirm Capabilities](configure-current-climate-settings#before-you-begin-confirm-capabilities).
+    See [Before You Begin: Confirm Capabilities](#before-you-begin-confirm-capabilities).
 
 2.  Execute the imperative climate setting request.\
     See the following instructions:
-    - [Set a Thermostat to Heat Mode](configure-current-climate-settings#set-a-thermostat-to-heat-mode)
-    - [Set a Thermostat to Cool Mode](configure-current-climate-settings#set-a-thermostat-to-cool-mode)
-    - [Set a Thermostat to Heat-Cool Mode](configure-current-climate-settings#set-a-thermostat-to-heat-cool-mode)
-    - [Turn off Heating and Cooling](configure-current-climate-settings#turn-off-heating-and-cooling)
-    - [Set the Fan Mode Setting](configure-current-climate-settings#set-the-fan-mode-setting)
+    - [Set a Thermostat to Heat Mode](#set-a-thermostat-to-heat-mode)
+    - [Set a Thermostat to Cool Mode](#set-a-thermostat-to-cool-mode)
+    - [Set a Thermostat to Heat-Cool Mode](#set-a-thermostat-to-heat-cool-mode)
+    - [Turn off Heating and Cooling](#turn-off-heating-and-cooling)
+    - [Set the Fan Mode Setting](#set-the-fan-mode-setting)
 3.  Poll the action attempt.\
-    See [Poll the Action Attempt](configure-current-climate-settings#poll-the-action-attempt).
+    See [Poll the Action Attempt](#poll-the-action-attempt).
 4.  If desired, configure a webhook to watch for a `thermostat.temperature_reached_set_point` event that indicates that the thermostat has reported a temperature within 1° Celsius of the heating or cooling [set point](../../capability-guides/thermostats/understanding-thermostat-concepts/set-points) that you requested.\
     See [Webhooks](../../developer-tools/webhooks).
 
@@ -1106,7 +1106,7 @@ if ($thermostat->can_turn_off_hvac) {
 
 ## Set the Fan Mode Setting
 
-You can [configure the fan mode setting for a thermostat](https://docs.seam.co/latest/api/thermostats/set_fan_mode). For details about the supported fan modes, see [Fan Mode Settings](configure-current-climate-settings#fan-mode-settings).
+You can [configure the fan mode setting for a thermostat](https://docs.seam.co/latest/api/thermostats/set_fan_mode). For details about the supported fan modes, see [Fan Mode Settings](#fan-mode-settings).
 
 Set the fan mode setting by providing the `device_id` of the thermostat and specifying the desired `fan_mode_setting`.
 

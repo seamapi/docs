@@ -5,13 +5,13 @@ description: 'Learn how to create, list, update, and delete climate presets for 
 
 You create a set of climate presets for each thermostat, customized for your—and your users'—needs. Each climate preset is a predefined configuration for a thermostat that specifies settings, such as HVAC mode, fan mode, and temperature set points. These presets make it quick and efficient for users to apply consistent climate settings tailored to different scenarios, enhancing both comfort and energy efficiency.
 
-Once you create climate presets, you can [activate them](https://docs.seam.co/latest/api/thermostats/activate_climate_preset), add them to thermostat [schedules](../creating-and-managing-thermostat-schedules) and [programs](../creating-and-managing-thermostat-programs), and set them as the [fallback climate preset](setting-the-fallback-climate-preset).
+Once you create climate presets, you can [activate them](https://docs.seam.co/latest/api/thermostats/activate_climate_preset), add them to thermostat [schedules](../creating-and-managing-thermostat-schedules) and [programs](../creating-and-managing-thermostat-programs), and set them as the [fallback climate preset](/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset).
 
 ---
 
 ## Climate Preset Properties
 
-Each climate preset can contain the following properties, depending on the [capabilities](../../../capability-guides/thermostats/#thermostat-capabilities) of the thermostat:
+Each climate preset can contain the following properties, depending on the [capabilities](/capability-guides/thermostats/index#thermostat-capabilities) of the thermostat:
 
 <table>
   <thead>
@@ -48,7 +48,7 @@ Each climate preset can contain the following properties, depending on the [capa
       </td>
       <td>
         Desired{' '}
-        <a href='../understanding-thermostat-concepts/hvac-mode.md'>
+        <a href='/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode'>
           HVAC mode
         </a>{' '}
         setting, such as <code>heat</code>, <code>cool</code>,{' '}
@@ -61,7 +61,7 @@ Each climate preset can contain the following properties, depending on the [capa
       </td>
       <td>
         Temperature to which the thermostat should cool (in °C). See also{' '}
-        <a href='../understanding-thermostat-concepts/set-points.md'>
+        <a href='/capability-guides/thermostats/understanding-thermostat-concepts/set-points'>
           Set Points
         </a>
         .
@@ -96,9 +96,7 @@ Each climate preset can contain the following properties, depending on the [capa
         can change the thermostat's settings.
         <br />
         <br />
-        Deprecated. Use <code>
-          thermostat_schedule.is_override_allowed
-        </code>{' '}
+        Deprecated. Use <code>thermostat_schedule.is_override_allowed</code>{' '}
         instead.
       </td>
     </tr>

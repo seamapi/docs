@@ -11,7 +11,7 @@ To bulletproof your implementation of access codes, it's essential to maintain a
 
 <Info>
   Seam supports backup access codes for [time-bound access
-  codes](./#time-bound-access-codes) only.
+  codes](/low-level-apis/smart-locks/access-codes#time-bound-access-codes) only.
 </Info>
 
 ---
@@ -194,7 +194,7 @@ To activate the backup pool, set `use_backup_access_code_pool` to `true` when [c
 This activation is a one-time process for each device. Once initiated, Seam consistently maintains a backup code pool for the device. All access codes associated with the device utilize the same backup code pool.
 
 <Info>
-In the smart lock app, backup access codes appear as "Backup {CODE\_ID} (Seam)".
+In the smart lock app, backup access codes appear as "Backup `{CODE_ID}` (Seam)".
 </Info>
 
 <Tabs>

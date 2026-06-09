@@ -1,5 +1,6 @@
 ---
 title: 'Granting Access'
+sidebarTitle: 'Overview'
 description: 'Access Grants are the default and recommended way to grant access to any physical space, across smart locks and access control systems.'
 ---
 
@@ -132,9 +133,9 @@ Access Grants work across the entire Seam provider lineup:
 
 We recommend learning Access Grants in three steps, from the simplest setup to the most advanced:
 
-1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices).
-2. **Multiple devices and spaces.** Pass several `device_ids` in one call to grant access to a set of locks at once. To manage groups of access points by name—for example, everything a guest in Unit 101 needs—organize them into [spaces](creating-an-access-grant-using-spaces) and grant access by `space_id`.
-3. **Access control systems.** Connect an ACS, such as Salto, Visionline, or Brivo, and grant access to entrances with `acs_entrance_ids`. This path can involve additional setup, such as licenses, on-premises connections through Seam Bridge, mobile key configuration, and [reservations](reservation-access-grants) for offline-override systems. See [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances).
+1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant Using Devices](/use-cases/granting-access/creating-an-access-grant-using-devices).
+2. **Multiple devices and spaces.** Pass several `device_ids` in one call to grant access to a set of locks at once. To manage groups of access points by name—for example, everything a guest in Unit 101 needs—organize them into [spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces) and grant access by `space_id`.
+3. **Access control systems.** Connect an ACS, such as Salto, Visionline, or Brivo, and grant access to entrances with `acs_entrance_ids`. This path can involve additional setup, such as licenses, on-premises connections through Seam Bridge, mobile key configuration, and [reservations](/use-cases/granting-access/reservation-access-grants) for offline-override systems. See [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances).
 
 ---
 
@@ -194,7 +195,7 @@ An Access Grant includes the following characteristics:
         <code>requested_access_method</code>, specify the desired{' '}
         <code>mode</code> of access, such as a PIN code, key card, or mobile key
         (with an{' '}
-        <a href='../../capability-guides/instant-keys/README.md'>Instant Key</a>
+        <a href='/capability-guides/instant-keys/index'>Instant Key</a>
         ).
       </td>
     </tr>
@@ -224,7 +225,7 @@ The Access Grant process consists of the following steps:
       <td>
         To connect your devices or access system to Seam, we recommend embedding
         a{' '}
-        <a href='../../core-concepts/connect-webviews/README.md'>
+        <a href='/core-concepts/connect-webviews/index'>
           Connect Webview
         </a>{' '}
         in your application. The Connect Webview flow guides the property
@@ -234,7 +235,7 @@ The Access Grant process consists of the following steps:
         <br />
         For on-premises access systems, use Seam Bridge to connect the access
         system securely to Seam. For details, see{' '}
-        <a href='../../low-level-apis/access-systems/connect-an-acs-to-seam/README.md'>
+        <a href='/low-level-apis/access-systems/connect-an-acs-to-seam/index'>
           Connect an Access System to Seam
         </a>
         .
@@ -254,7 +255,7 @@ The Access Grant process consists of the following steps:
         mobile keys with your access system, you may need to purchase licenses
         or subscriptions to activate certain software features. These
         requirements vary by access system. For details, see{' '}
-        <a href='../../capability-guides/instant-keys/setting-up-your-site-for-instant-keys.md'>
+        <a href='/capability-guides/instant-keys/setting-up-your-site-for-instant-keys'>
           Setting Up Your Site for Instant Keys
         </a>{' '}
         and the{' '}
@@ -316,15 +317,15 @@ The Access Grant process consists of the following steps:
         request.
         <br />
         See{' '}
-        <a href='creating-an-access-grant-using-devices.md'>
+        <a href='/use-cases/granting-access/creating-an-access-grant-using-devices'>
           Creating an Access Grant Using Devices
         </a>
         ,{' '}
-        <a href='creating-an-access-grant-using-spaces.md'>
+        <a href='/use-cases/granting-access/creating-an-access-grant-using-spaces'>
           Creating an Access Grant Using Spaces
         </a>
         , and{' '}
-        <a href='creating-an-access-grant-using-entrances.md'>
+        <a href='/use-cases/granting-access/creating-an-access-grant-using-entrances'>
           Creating an Access Grant Using Entrances
         </a>
         .<br />
@@ -369,7 +370,7 @@ The Access Grant process consists of the following steps:
         </ul>
         <p>
           See{' '}
-          <a href='delivering-access-methods.md'>Delivering Access Methods</a>.
+          <a href='/use-cases/granting-access/delivering-access-methods'>Delivering Access Methods</a>.
         </p>
       </td>
     </tr>
@@ -410,17 +411,17 @@ Some access control systems (such as Dormakaba Ambiance, Dormakaba Community, Vi
 
 When issuing Access Grants for these systems, you’ll need to use reservations to ensure credentials override and join correctly.
 
-👉 [Learn how to use reservations with Access Grants →](reservation-access-grants)
+👉 [Learn how to use reservations with Access Grants →](/use-cases/granting-access/reservation-access-grants)
 
 ---
 
 ## Get Started
 
-To create your first Access Grant, see the [Access Grant Quick Start](access-grant-quick-start). Then, learn more in the following topics:
+To create your first Access Grant, see the [Access Grant Quick Start](/use-cases/granting-access/access-grant-quick-start). Then, learn more in the following topics:
 
-- [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices)
-- [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces)
-- [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances)
-- [Delivering Access Methods](delivering-access-methods)
+- [Creating an Access Grant Using Devices](/use-cases/granting-access/creating-an-access-grant-using-devices)
+- [Creating an Access Grant Using Spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces)
+- [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances)
+- [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods)
 - [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
 - [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

@@ -15,10 +15,10 @@ const staticPages = new Set([
 ])
 
 /**
- * Check if a page reference is an index/overview page.
+ * Check if a page reference is an object overview page (e.g. "api/access_codes/object").
  */
-function isIndexPage(page: string): boolean {
-  return page.endsWith('/index')
+function isObjectPage(page: string): boolean {
+  return page.startsWith('api/') && page.endsWith('/object')
 }
 
 /**
@@ -72,8 +72,8 @@ function transformPages(
         // Keep static pages as MDX
         if (staticPages.has(page)) return page
 
-        // Keep index pages as MDX (overview/object description pages)
-        if (isIndexPage(page)) return page
+        // Keep object pages as MDX (overview/object description pages)
+        if (isObjectPage(page)) return page
 
         // Check if the endpoint exists in the spec
         const apiPath = page.replace(/^api/, '')

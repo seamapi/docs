@@ -21,22 +21,41 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+```bash
+bundle add seam
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+```bash
+composer require seamapi/seam
+```
+
+</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
+
 </Tab>
 </Tabs>
 
@@ -60,6 +79,7 @@ To control your Schlage lock via the Seam API, you must first authorize your Sea
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```javascript
 import { Seam } from 'seam'
 
@@ -75,9 +95,11 @@ console.log(connectWebview.login_successful) // false
 console.log(connectWebview.url)
 
 ````
+
 </Tab>
 
 <Tab title="Python">
+
 ```python
 from seam import Seam
 
@@ -91,9 +113,11 @@ assert webview.login_successful is False
 print(webview.url)
 ````
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 ```ruby
 require "seam"
 
@@ -110,12 +134,13 @@ puts webview.login_successful # false
 puts webview.url
 
 ````
+
 </Tab>
 </Tabs>
 
 #### Authorize Your Workspace
 
-Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Schlage [sandbox test accounts ](schlage-encode-sample-data)credentials below:
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Schlage [sandbox test accounts ](./schlage-encode-sample-data)credentials below:
 
 * **email:** jane@example.com
 * **password:** 1234
@@ -125,6 +150,7 @@ Confirm the Connect Webview was successful by querying its status:
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```javascript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
@@ -133,23 +159,28 @@ const updatedWebview = await seam.connectWebviews.get(
 console.log(updatedWebview.login_successful) // true
 ````
 
+
 </Tab>
 
 <Tab title="Python">
+
 ```python
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 assert updated_webview.login_successful # true
 
 ````
+
 </Tab>
 
 <Tab title="Ruby">
+
 ```ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 
 puts updated_webview.login_successful # true
 ````
+
 
 </Tab>
 </Tabs>
@@ -160,21 +191,49 @@ After a Schlage account is linked with Seam, you can retrieve devices for this S
 
 <Tabs>
 <Tab title="JavaScript">
-\`
 
-\`\`javascript const allLocks = await seam.locks.list()
 
-const someLock = allLocks\[0]
+```javascript
+const allLocks = await seam.locks.list()
 
-console.log(someLock.properties.online) // true console.log(someLock.properties.locked) // true
+const someLock = allLocks[0]
 
-console.log(someLock) /\* { device_id: 'e2d95c42-b2bf-4d07-9211-7407d9c90c73', device_type: 'schlage_lock', capabilities_supported: \[ 'access_code', 'lock' ], properties: { locked: false, online: true, manufacturer: 'schlage', battery_level: 0.48, schlage_metadata: { device_id: 'device-1', device_name: 'FRONT DOOR', access_code_length: 4 }, name: 'FRONT DOOR' }, location: null, connected_account_id: '1de737bc-12d1-4631-8a56-dbb2e61f1f51', workspace_id: 'd7418ff3-a476-4f48-9a4b-211d1d21a03d', created_at: '2022-12-16T01:15:17.478Z', errors: \[], warnings: \[] } \*/
+console.log(someLock.properties.online) // true
+console.log(someLock.properties.locked) // true
 
-````
+console.log(someLock)
+/*
+{
+  device_id: 'e2d95c42-b2bf-4d07-9211-7407d9c90c73',
+  device_type: 'schlage_lock',
+  capabilities_supported: [ 'access_code', 'lock' ],
+  properties: {
+    locked: false,
+    online: true,
+    manufacturer: 'schlage',
+    battery_level: 0.48,
+    schlage_metadata: {
+      device_id: 'device-1',
+      device_name: 'FRONT DOOR',
+      access_code_length: 4
+    },
+    name: 'FRONT DOOR'
+  },
+  location: null,
+  connected_account_id: '1de737bc-12d1-4631-8a56-dbb2e61f1f51',
+  workspace_id: 'd7418ff3-a476-4f48-9a4b-211d1d21a03d',
+  created_at: '2022-12-16T01:15:17.478Z',
+  errors: [],
+  warnings: []
+}
+*/
+```
 
-</div>
 
-<div data-gb-custom-block data-tag="tab" data-title='Ruby'>
+</Tab>
+
+<Tab title="Ruby">
+
 
 ```ruby
 some_lock = seam.locks.list.first
@@ -182,8 +241,49 @@ some_lock = seam.locks.list.first
 puts some_lock.properties.online # true
 puts some_lock.properties.locked # true
 
-puts some_lock #   warnings=[]> #   errors=[] #   created_at=2022-12-16 01:15:17.478 UTC #     "name"=>"FRONT DOOR"} #     "schlage_metadata"=>{"device_id"=>"device-1", "device_name"=>"FRONT DOOR", "access_code_length"=>4},  #     "battery_level"=>0.48,  #     "manufacturer"=>"schlage",  #     "online"=>true,  #     "locked"=>false,  #   properties={ #   device_type="schlage_lock" #   device_id="e2d95c42-b2bf-4d07-9211-7407d9c90c73" # <Seam::Device:0x009b0
-````
+puts some_lock
+# <Seam::Device:0x009b0
+#   device_id="e2d95c42-b2bf-4d07-9211-7407d9c90c73"
+#   device_type="schlage_lock"
+#   properties={
+#     "locked"=>false,
+#     "online"=>true,
+#     "manufacturer"=>"schlage",
+#     "battery_level"=>0.48,
+#     "schlage_metadata"=>{"device_id"=>"device-1", "device_name"=>"FRONT DOOR", "access_code_length"=>4},
+#     "name"=>"FRONT DOOR"}
+#   created_at=2022-12-16 01:15:17.478 UTC
+#   errors=[]
+#   warnings=[]>
+```
+
+
+</Tab>
+
+<Tab title="Python">
+
+```python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["locked"] is True
+
+print(some_lock)
+# Device(device_id='e2d95c42-b2bf-4d07-9211-7407d9c90c73',
+#   device_type='schlage_lock',
+#   location=None,
+#   properties={
+#     'locked': True,
+#     'online': True,
+#     'manufacturer': 'schlage',
+#     'battery_level': 0.48,
+#     'schlage_metadata': {'device_id': 'device-1', 'device_name': 'FRONT DOOR', 'access_code_length': 4},
+#     'name': 'FRONT DOOR'
+#   },
+#   capabilities_supported=['access_code', 'lock'])
+```
 
 </Tab>
 </Tabs>
@@ -194,7 +294,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 > **`POST`** `/locks/lock_door`
 >
-> See the [API Reference](/api-reference/locks/lock_door) for details.
+> See the [API Reference](/api/locks/lock_door) for details.
 
 ## Unlock a door
 
@@ -210,6 +310,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 <Tabs>
 <Tab title="JavaScript">
 
+
 ```javascript
 // lock the door
 await seam.locks.lockDoor(someLock.device_id)
@@ -222,9 +323,11 @@ updatedLock = await seam.locks.get(someLock.device_id)
 console.log(updatedLock.properties.locked) // false
 ```
 
+
 </Tab>
 
 <Tab title="Python">
+
 
 ```python
 # lock the door
@@ -238,9 +341,11 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 assert updated_lock.properties["locked"] is False
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 
 ```ruby
 # lock the door
@@ -254,6 +359,7 @@ updated_lock = seam.locks.get(device_id: some_lock.device_id)
 puts updated_lock.properties.locked # false
 ```
 
+
 </Tab>
 </Tabs>
 
@@ -265,6 +371,7 @@ The Seam API makes it easy to program both `ongoing` codes and `timebound` codes
 
 <Tabs>
 <Tab title="JavaScript">
+
 
 ```javascript
 // create an ongoing code
@@ -308,9 +415,11 @@ await seam.accessCodes.list({
 */
 ```
 
+
 </Tab>
 
 <Tab title="Python">
+
 
 ```python
 # create an ongoing code
@@ -346,9 +455,11 @@ seam.access_codes.list(device=some_lock)
 
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
+
 
 ```ruby
 # create an ongoing code
@@ -396,6 +507,7 @@ seam.access_codes.list(device_id: some_lock.device_id)
 #   access_code_id="91a08a3d-a0bb-4ff0-bfb4-ced164353988">]
 ```
 
+
 </Tab>
 </Tabs>
 
@@ -413,33 +525,4 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 - [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
 - [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
-If you have any questions or want to report an issue, email us at support@seam.co. If you would like help
-
-````
-</Tab>
-
-<Tab title="Python">
-
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`python all\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_locks = seam.locks.list()
-
-some\_lock = all\_locks\[0]
-
-assert some\_lock.properties\["online"] is True assert some\_lock.properties\["locked"] is True
-
-print(some\_lock)
-
-```python
-# Device(device_id='e2d95c42-b2bf-4d07-9211-7407d9c90c73',
-#   device_type='schlage_lock',
-#   location=None,
-#   properties={
-#     'locked': True,
-#     'online': True,
-#     'manufacturer': 'schlage',
-#     'battery_level': 0.48,
-#     'schlage_metadata': {'device_id': 'device-1', 'device_name': 'FRONT DOOR', 'access_code_length': 4}, 'name': 'FRONT DOOR'
-#   },
-#   capabilities_supported=['access_code', 'lock'])
-```
-
-````
+If you have any questions or want to report an issue, email us at support@seam.co.

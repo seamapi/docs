@@ -9,7 +9,7 @@ Seam relies on access codes to support hospitality, multifamily, coworking, and 
 
 ### Creating an access code
 
-Seam specifies the PIN value and validity window (if supported). Your API should return an immediate acknowledgement and send a status event when the code is fully applied to the device. If the request is invalid or the device cannot accept a new code, your API should return [an error response](implementing-access-codes#common-error-responses) immediately instead of a pending status.
+Seam specifies the PIN value and validity window (if supported). Your API should return an immediate acknowledgement and send a status event when the code is fully applied to the device. If the request is invalid or the device cannot accept a new code, your API should return [an error response](#common-error-responses) immediately instead of a pending status.
 
 #### Create code request
 
@@ -72,7 +72,7 @@ Once the device successfully stores the PIN, your API should send a webhook even
 
 If your platform allows modification, Seam may update the validity window or replace the PIN value.
 
-If the request is invalid or the device cannot accept changes, your API should return [an error response](implementing-access-codes#common-error-responses) immediately instead of a pending status.
+If the request is invalid or the device cannot accept changes, your API should return [an error response](#common-error-responses) immediately instead of a pending status.
 
 #### Update request
 

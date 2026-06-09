@@ -5,12 +5,12 @@ description: 'Workspaces are the top-level resource in the Seam ecosystem. They 
 
 ## What is a Workspace?
 
-A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](../authentication/api-keys), a [Personal Access Token](../authentication/personal-access-tokens) (PAT), or [client session tokens](../authentication/client-session-tokens/), and you can receive events from a workspace using [webhooks](../../developer-tools/webhooks).
+A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](../authentication/api-keys), a [Personal Access Token](../authentication/personal-access-tokens) (PAT), or [client session tokens](/core-concepts/authentication/client-session-tokens/index), and you can receive events from a workspace using [webhooks](../../developer-tools/webhooks).
 
 There is no limit to the number of workspaces that you can create, but most Seam customers only have the following two workspaces:
 
-- One [sandbox workspace](./#sandbox-workspaces) in which they connect virtual devices to test their apps
-- One [production workspace](./#production-workspaces) in which they connect real devices
+- One [sandbox workspace](#sandbox-workspaces) in which they connect virtual devices to test their apps
+- One [production workspace](#production-workspaces) in which they connect real devices
 
 <figure>
   <img
@@ -44,14 +44,14 @@ Production workspaces enable you to connect and control real devices from brands
 
 You can use either of the following two ways to connect devices to a production workspace:
 
-- Use [Seam Console](./#connect-devices-using-seam-console).
-- Use [Connect Webviews](./#connect-devices-using-connect-webviews).
+- Use [Seam Console](#connect-devices-using-seam-console).
+- Use [Connect Webviews](#connect-devices-using-connect-webviews).
 
 #### Connect Devices Using Seam Console
 
 1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Devices**.
 2. In the upper-right corner of the **Devices** page, click **Add Devices**.\
-   Seam Console displays a [Connect Webview](../connect-webviews/) (that is, an authorization flow) that enables you to connect a device account to Seam.
+   Seam Console displays a [Connect Webview](/core-concepts/connect-webviews/index) (that is, an authorization flow) that enables you to connect a device account to Seam.
 3. In the Connect Webview, click **Continue**.
 4. In the manufacturer list, select the manufacturer of the devices that you want to connect.
 5. Follow the login instructions to authorize these devices.
@@ -60,11 +60,11 @@ Once authorized, the devices associated with this test account appear in the **D
 
 #### Connect Devices Using Connect Webviews
 
-If you are creating an application (app) to control your users' devices, use [Connect Webviews](../connect-webviews/). Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their device accounts to Seam through your app. Seam handles all the authentication steps. Once your user has completed the authorization through your app, your users' devices are linked with your production workspace, and you can access and control their devices using the Seam API.
+If you are creating an application (app) to control your users' devices, use [Connect Webviews](/core-concepts/connect-webviews/index). Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their device accounts to Seam through your app. Seam handles all the authentication steps. Once your user has completed the authorization through your app, your users' devices are linked with your production workspace, and you can access and control their devices using the Seam API.
 
 <figure>
   <img
-    src='/images/Seam Connect.png'
+    src='/images/Seam-Connect.png'
     alt='Use Connect Webviews to enable your users to authorize your app to control their devices.'
   />
   <figcaption></figcaption>
@@ -76,7 +76,7 @@ Most Seam customers use a single production workspace to connect all their devic
 
 <figure>
   <img
-    src='/images/common-workspace-setup (2).png'
+    src='/images/common-workspace-setup-(2).png'
     alt='Most Seam customers use a single production workspace to connect all their devices.'
   />
   <figcaption></figcaption>
@@ -132,7 +132,7 @@ Importantly, virtual devices behave identically to the corresponding real device
 
 ### Connecting Virtual Devices
 
-To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](./#connect-devices-using-the-seam-console) or in [Connect Webviews](./#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see [Sandbox Devices and Systems](https://docs.seam.co/latest/device-and-system-integration-guides).
+To connect virtual devices, specify the login credentials for test device accounts in the [Seam Console](#connect-devices-using-seam-console) or in [Connect Webviews](#connect-devices-using-connect-webviews) within you apps. All manufacturers and devices that Seam supports have one or more sandbox test accounts with pre-seeded devices. For login credentials for all test device accounts, see [Sandbox Devices and Systems](https://docs.seam.co/latest/device-and-system-integration-guides).
 
 ### Interacting with a Virtual Device
 
@@ -152,13 +152,13 @@ You can trigger test events for some virtual devices. This capability is useful 
 
 ### Testing Your App
 
-To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](./#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](../devices/testing-your-app-against-device-disconnection-and-removal).
+To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](../devices/testing-your-app-against-device-disconnection-and-removal).
 
 ### Resetting Sandbox Workspaces
 
 Sandbox workspace are unique in that you can reset them to the original starting state. For example, if you need to run complex continuous integration (CI) testing for an app, you can reset the sandbox workspace after each individual test run.
 
-You can reset a sandbox workspace either manually through [Seam Console](./#reset-a-sandbox-workspace-using-the-seam-console) or programmatically using the [Seam API](./#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset a Sandbox Workspace](https://docs.seam.co/latest/api/workspaces/reset_sandbox) API reference.
+You can reset a sandbox workspace either manually through [Seam Console](#reset-a-sandbox-workspace-using-seam-console) or programmatically using the [Seam API](#reset-a-sandbox-workspace-using-the-seam-api). For detailed information about resetting a sandbox workspace through the Seam API, see the [Reset a Sandbox Workspace](https://docs.seam.co/latest/api/workspaces/reset_sandbox) API reference.
 
 #### Reset a Sandbox Workspace Using Seam Console
 
@@ -180,16 +180,19 @@ You can reset a sandbox workspace either manually through [Seam Console](./#rese
 // Reset the sandbox workspace associated with your API key.
 await seam.workspaces.resetSandbox()
 ```
+
 </Tab>
 
 <Tab title='Python'>
   ```python # Reset the sandbox workspace associated with your API key.
   seam.workspaces.reset_sandbox() ```
+
 </Tab>
 
 <Tab title='Ruby'>
   ```ruby # Reset the sandbox workspace associated with your API key.
   seam.workspaces.reset_sandbox ```
+
 </Tab>
 
 <Tab title="PHP">
@@ -197,6 +200,7 @@ await seam.workspaces.resetSandbox()
 // Reset the sandbox workspace associated with your API key.
 $seam->workspaces->reset_sandbox();
 ```
+
 </Tab>
 </Tabs>
 

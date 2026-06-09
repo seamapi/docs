@@ -7,9 +7,9 @@ When integrating with the Visionline system, ASSA ABLOY requires handling a set 
 
 ## Issue Guest Mobile Credentials
 
-- [Issue a credential for a single guest in a single room.](configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials#single-guest-in-a-single-room)
-- [Issue a credential for a returning guest to a single room.](configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials#returning-guest-to-a-single-room)
-- [Issue credentials for multiple guests in multiple rooms.](configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials#multiple-guests-in-multiple-rooms)
+- [Issue a credential for a single guest in a single room.](./configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials#single-guest-in-a-single-room)
+- [Issue a credential for a returning guest to a single room.](./configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials#returning-guest-to-a-single-room)
+- [Issue credentials for multiple guests in multiple rooms.](./configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials#multiple-guests-in-multiple-rooms)
 
 ```python
 acs_user = seam.acs.user.get(acs_user_id="xxx")
@@ -98,8 +98,8 @@ seam.acs.credentials.create(
 
 ## Issue Joiner Mobile Credentials
 
-- [Join to a Seam mobile credential.](configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials#join-to-a-seam-mobile-credential)
-- [Join to a plastic card.](configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials#join-to-a-plastic-card)
+- [Join to a Seam mobile credential.](./configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials#join-to-a-seam-mobile-credential)
+- [Join to a plastic card.](./configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials#join-to-a-plastic-card)
 
 ```python
 joiners = [joiner_mobile_parent_sync_credential, joiner_mobile_child_credential]
@@ -126,6 +126,6 @@ cred = seam.acs.credentials.create({
 
 ## Additional Scenarios
 
-- [Update guest mobile credentials.](configuring-visionline-mobile-credentials/updating-guest-mobile-credentials)
-- [Revoke a mobile credential.](configuring-visionline-mobile-credentials/revoking-mobile-credentials)
+- [Update guest mobile credentials.](./configuring-visionline-mobile-credentials/updating-guest-mobile-credentials)
+- [Revoke a mobile credential.](./configuring-visionline-mobile-credentials/revoking-mobile-credentials)
 - [Remove a user identity.](https://docs.seam.co/latest/api/user_identities/delete)

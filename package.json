@@ -26,7 +26,10 @@
     "format": "prettier --write --ignore-path .prettierignore .",
     "preformat": "eslint --fix .",
     "format-code-sample-tabs": "tsx codegen/format-code-sample-tabs.ts",
-    "generate:mintlify": "tsx mintlify-codegen/generate.ts"
+    "generate:mintlify": "tsx mintlify-codegen/generate.ts",
+    "validate:mintlify": "cd mintlify-docs && npx @mintlify/cli@latest validate 2>&1 | tsx ../mintlify-codegen/filter-validate-output.ts",
+    "validate:mintlify-links": "cd mintlify-docs && npx @mintlify/cli@latest broken-links --check-redirects",
+    "validate:mintlify-anchors": "cd mintlify-docs && npx @mintlify/cli@latest broken-links --check-anchors --check-redirects"
   },
   "engines": {
     "node": ">=22.11.0",

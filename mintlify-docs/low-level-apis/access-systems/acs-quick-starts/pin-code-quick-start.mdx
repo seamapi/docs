@@ -18,8 +18,8 @@ In this quick start, create an ACS user for a virtual [Salto KS](https://docs.se
 
 This quick start walks you through the following basic steps:
 
-1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
-   - To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
+1. [Connect](/core-concepts/workspaces/index#connecting-virtual-devices) an access control system to Seam.
+   - To get started quickly, use a virtual ACS in a [sandbox workspace](/core-concepts/workspaces/index#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
 3. Create an [ACS user](../user-management).
    - Also, specify the access schedule for this user.
@@ -38,10 +38,10 @@ This quick start walks you through the following basic steps:
 
 ## Step 1: Connect a Virtual ACS
 
-In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](../../../core-concepts/connect-webviews/) and then use it to connect an ACS to Seam.
+In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](/core-concepts/connect-webviews/index) and then use it to connect an ACS to Seam.
 
 1. Log in to [Seam Console](https://console.seam.co/).
-2. In the upper-left corner, click the workspace switcher and select or [create a sandbox workspace](../../../core-concepts/workspaces/#create-a-sandbox-workspace).
+2. In the upper-left corner, click the workspace switcher and select or [create a sandbox workspace](/core-concepts/workspaces/index#create-a-sandbox-workspace).
 
    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](/images/workspace-switcher.png)
 
@@ -82,22 +82,42 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+```bash
+bundle add seam
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+```bash
+composer require seamapi/seam
+```
+
+</Tab>
 
 <Tab title="C#">
+
 Install using [nuget](https://www.nuget.org/packages/Seam).
+
 </Tab>
 </Tabs>
 
@@ -687,10 +707,10 @@ To use Seam Console to view information about your new PIN code credential:
 
 Now that you've created a PIN code credential, try out the other ACS quick starts.
 
-- [Key Card Quick Start](encodable-key-card-quick-start)
-- [Mobile Key Quick Start](mobile-key-quick-start)
+- [Key Card Quick Start](/low-level-apis/access-systems/acs-quick-starts/encodable-key-card-quick-start)
+- [Mobile Key Quick Start](/low-level-apis/access-systems/acs-quick-starts/mobile-key-quick-start)
 
-Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
+Then, [connect your ACS to Seam](/low-level-apis/access-systems/connect-an-acs-to-seam/index).
 
 ---
 

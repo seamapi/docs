@@ -61,9 +61,9 @@ Once you have identified the entrances to which you want to grant a user access,
 
 To create an Instant Key:
 
-1. [Identify the entrances](using-access-grants-to-issue-instant-keys#identify-entrances) to which you want to grant the user access.
-2. [Create a user identity](using-access-grants-to-issue-instant-keys#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
-3. [Create an Access Grant](using-access-grants-to-issue-instant-keys#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, including a mobile key.
+1. [Identify the entrances](#identify-entrances) to which you want to grant the user access.
+2. [Create a user identity](#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
+3. [Create an Access Grant](#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, including a mobile key.
 
 The action returns an Access Grant that includes the Instant Key URL. You can then share this Instant Key URL with your user.
 
@@ -720,4 +720,4 @@ seam access-grants create --user_identity_id "e3d736c1-540d-4d10-83e5-9a4e135453
 </Tab>
 </Tabs>
 
-Within the response, the `instant_key_url` property provides the issued Instant Key. Share this URL with your user. For details, see [Delivering Instant Keys](delivering-instant-keys).
+Within the response, the `instant_key_url` property provides the issued Instant Key. Share this URL with your user. For details, see [Delivering Instant Keys](/capability-guides/instant-keys/delivering-instant-keys).

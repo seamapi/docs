@@ -3,7 +3,7 @@ title: 'Get Started with ecobee Thermostats'
 description: 'Learn how to connect and control ecobee thermostats with the Seam API.'
 ---
 
-<figure><picture><source srcset="/images/ecobee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)"><img src="/images/ecobee-manufacturer-page-cover-light.png" alt="" /></picture><figcaption><p>ecobee Thermostats</p></figcaption></figure>
+<figure><picture><source srcset="/images/ecobee-manufacturer-page-cover-dark.png" media="(prefers-color-scheme: dark)" /><img src="/images/ecobee-manufacturer-page-cover-light.png" alt="" /></picture><figcaption><p>ecobee Thermostats</p></figcaption></figure>
 
 ## Overview
 
@@ -40,22 +40,41 @@ First, install a Seam SDK, as follows:
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+```bash
+bundle add seam
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+```bash
+composer require seamapi/seam
+```
+
+</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
+
 </Tab>
 </Tabs>
 
@@ -89,7 +108,7 @@ This guide shows you how to create a Connect Webview programmatically using the 
 
 The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-ecobee-thermostats#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
 <img src="/images/add-devices-button.png" alt="You can also use the Seam Console to add devices." data-size="original" />
 </Check>
@@ -125,6 +144,7 @@ false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -151,6 +171,7 @@ Login Successful (false): false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -175,6 +196,7 @@ print(connect_webview.url)
 ```
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 
 </Tab>
 
@@ -203,6 +225,7 @@ puts connect_webview.url
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 
 </Tab>
 
@@ -233,6 +256,7 @@ false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -261,6 +285,7 @@ False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 </Tabs>
 
@@ -274,18 +299,18 @@ For application developers, you can redirect your user to this Connect Webview U
 
 <Check>
   Because you're using a sandbox workspace, you can connect Seam's test ecobee
-  account. We provide [virtual devices](ecobee-sample-data) for each of the
+  account. We provide [virtual devices](./ecobee-sample-data) for each of the
   brands that we support. These sandbox devices and systems enable you to test
   your app with devices from multiple brands without the need to own all the
   corresponding physical devices.
 </Check>
 
-Complete the Connect Webview authorization flow by entering the following [ecobee sandbox account](ecobee-sample-data) credentials:
+Complete the Connect Webview authorization flow by entering the following [ecobee sandbox account](./ecobee-sample-data) credentials:
 
 - **Email:** jane@example.com
 - **Password:** 1234
 
-<figure><picture><source srcset="/images/ecobee_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)"><img src="/images/ecobee_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer." /></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
+<figure><picture><source srcset="/images/ecobee_connect-flow-screens_dark.png" media="(prefers-color-scheme: dark)" /><img src="/images/ecobee_connect-flow-screens_light.png" alt="Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer." /></picture><figcaption><p>Use the Seam Connect Webview authorization flow to connect an ecobee account with Seam. This flow varies slightly based on the device manufacturer.</p></figcaption></figure>
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
@@ -306,6 +331,7 @@ console.log(updatedConnectWebview.login_successful) // true
 ```
 true
 ```
+
 
 </Tab>
 
@@ -329,6 +355,7 @@ curl -X 'GET' \
 Login Successful (true): true
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -345,6 +372,7 @@ assert updated_connect_webview.login_successful is True # True
 ```
 True
 ```
+
 
 </Tab>
 
@@ -365,6 +393,7 @@ puts updated_connect_webview.login_successful # true
 true
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -384,6 +413,7 @@ echo $updated_connect_webview->login_successful ? 'true' : 'false', "\n"; // tru
 true
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -402,6 +432,7 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 ```
 True
 ```
+
 
 </Tab>
 </Tabs>
@@ -474,6 +505,7 @@ Fan running: false
 }
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -541,6 +573,7 @@ Fan running: false
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -599,6 +632,7 @@ Device(
 )
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
@@ -656,6 +690,7 @@ Fan running: false
   ...
 >
 ```
+
 
 </Tab>
 
@@ -716,6 +751,7 @@ Fan running: false
 }
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -730,6 +766,7 @@ Fan running: false
 ```json
 // Coming soon!
 ```
+
 
 </Tab>
 </Tabs>
@@ -746,9 +783,9 @@ Seam provides additional actions for thermostats, such as setting the fan mode, 
 
 Try out the following actions on your ecobee thermostat:
 
-- [ ] [Set the HVAC mode](get-started-with-ecobee-thermostats#set-the-hvac-mode)
-- [ ] [Create and schedule climate presets](get-started-with-ecobee-thermostats#create-and-schedule-climate-presets)
-- [ ] [Configure a weekly thermostat program](get-started-with-ecobee-thermostats#configure-a-weekly-thermostat-program)
+- [ ] [Set the HVAC mode](#set-the-hvac-mode)
+- [ ] [Create and schedule climate presets](#create-and-schedule-climate-presets)
+- [ ] [Configure a weekly thermostat program](#configure-a-weekly-thermostat-program)
 
 ### Set the HVAC mode
 
@@ -799,6 +836,7 @@ if (livingRoomThermostat.can_hvac_heat) {
 }
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -837,6 +875,7 @@ fi
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -866,6 +905,7 @@ ActionAttempt(
 )
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
@@ -894,6 +934,7 @@ end
   result={}
   error=nil>
 ```
+
 
 </Tab>
 
@@ -925,6 +966,7 @@ if ($living_room_thermostat->can_hvac_heat) {
 }
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -939,6 +981,7 @@ if ($living_room_thermostat->can_hvac_heat) {
 ```json
 // Coming soon!
 ```
+
 
 </Tab>
 </Tabs>
@@ -971,6 +1014,7 @@ console.log(
 heat
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -1000,6 +1044,7 @@ echo $(jq -r '(.device.properties.current_climate_setting.hvac_mode_setting)' <<
 heat
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -1025,6 +1070,7 @@ pprint(
 'heat'
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1047,6 +1093,7 @@ puts updated_living_room_thermostat.
 ```
 heat
 ```
+
 
 </Tab>
 
@@ -1071,6 +1118,7 @@ echo $updated_living_room_thermostat->properties->
 heat
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -1085,6 +1133,7 @@ heat
 ```
 // Coming soon!
 ```
+
 
 </Tab>
 </Tabs>
@@ -1183,6 +1232,7 @@ if (updatedLivingRoomThermostat.can_hvac_heat_cool) {
   ...
 }
 ```
+
 
 </Tab>
 
@@ -1301,6 +1351,7 @@ fi
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -1385,6 +1436,7 @@ ThermostatSchedule(
   ...
 )
 ```
+
 
 </Tab>
 
@@ -1472,6 +1524,7 @@ end
 >
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -1558,6 +1611,7 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
 }
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -1572,6 +1626,7 @@ if ($updated_living_room_thermostat->can_hvac_heat_cool) {
 ```json
 // Coming soon!
 ```
+
 
 </Tab>
 </Tabs>
@@ -1634,6 +1689,7 @@ await seam.thermostats.updateWeeklyProgram({
   "error": null
 }
 ```
+
 
 </Tab>
 
@@ -1707,6 +1763,7 @@ curl -X 'POST' \
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -1759,6 +1816,7 @@ ActionAttempt(
 )
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
@@ -1809,6 +1867,7 @@ seam.thermostats.update_weekly_program(
   result={}
   error=nil>
 ```
+
 
 </Tab>
 
@@ -1862,6 +1921,7 @@ $seam->thermostats->update_weekly_program(
 }
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -1876,6 +1936,7 @@ $seam->thermostats->update_weekly_program(
 ```json
 // Coming soon!
 ```
+
 
 </Tab>
 </Tabs>

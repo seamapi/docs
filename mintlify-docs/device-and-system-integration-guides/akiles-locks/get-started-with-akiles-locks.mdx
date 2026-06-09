@@ -38,22 +38,41 @@ First, install a Seam SDK, as follows:
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+```bash
+bundle add seam
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+```bash
+composer require seamapi/seam
+```
+
+</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
+
 </Tab>
 </Tabs>
 
@@ -87,7 +106,7 @@ This guide shows you how to create a Connect Webview programmatically using the 
 
 The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-akiles-locks#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
 </Check>
 
@@ -122,6 +141,7 @@ false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -148,6 +168,7 @@ Login Successful (false): false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -172,6 +193,7 @@ print(connect_webview.url)
 ```
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 
 </Tab>
 
@@ -200,6 +222,7 @@ puts connect_webview.url
 false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
 
 </Tab>
 
@@ -230,6 +253,7 @@ false
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -258,6 +282,7 @@ False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+
 </Tab>
 </Tabs>
 
@@ -271,13 +296,13 @@ For application developers, you can redirect your user to this Connect Webview U
 
 <Check>
   Because you're using a sandbox workspace, you can connect Seam's test Akiles
-  account. We provide [virtual devices](sandbox-akiles-locks) for each of the
+  account. We provide [virtual devices](./sandbox-akiles-locks) for each of the
   brands that we support. These sandbox devices and systems enable you to test
   your app with devices from multiple brands without the need to own all the
   corresponding physical devices.
 </Check>
 
-Complete the Connect Webview authorization flow by entering the following [Akiles sandbox account](sandbox-akiles-locks) credentials:
+Complete the Connect Webview authorization flow by entering the following [Akiles sandbox account](./sandbox-akiles-locks) credentials:
 
 - **Email:** jane@example.com
 - **Password:** 1234
@@ -302,6 +327,7 @@ console.log(updatedConnectWebview.login_successful) // true
 true
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -324,6 +350,7 @@ curl -X 'GET' \
 Login Successful (true): true
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -340,6 +367,7 @@ assert updated_connect_webview.login_successful is True # True
 ```
 True
 ```
+
 
 </Tab>
 
@@ -360,6 +388,7 @@ puts updated_connect_webview.login_successful # true
 true
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -379,6 +408,7 @@ echo $updated_connect_webview->login_successful ? 'true' : 'false', "\n"; // tru
 true
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -397,6 +427,7 @@ Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 ```
 True
 ```
+
 
 </Tab>
 </Tabs>
@@ -452,6 +483,7 @@ true
 }
 ```
 
+
 </Tab>
 
 <Tab title="cURL">
@@ -505,6 +537,7 @@ Locked (true): true
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -546,6 +579,7 @@ Device(
   ...
 )
 ```
+
 
 </Tab>
 
@@ -592,6 +626,7 @@ true
 >
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -635,6 +670,7 @@ true
   ...
 }
 ```
+
 
 </Tab>
 
@@ -682,6 +718,7 @@ True
 }
 ```
 
+
 </Tab>
 </Tabs>
 
@@ -695,8 +732,8 @@ Each device that you connect to Seam has a specific set of capabilities. These c
 
 Try out the following actions on your Akiles lock:
 
-- [ ] [Unlock your lock](get-started-with-akiles-locks#unlock-your-lock)
-- [ ] [Program access codes on your lock](get-started-with-akiles-locks#program-access-codes-on-your-lock)
+- [ ] [Unlock your lock](#unlock-your-lock)
+- [ ] [Program access codes on your lock](#program-access-codes-on-your-lock)
 
 ### Unlock your lock
 
@@ -731,6 +768,7 @@ if (frontDoor.can_remotely_unlock) {
   }
 }
 ```
+
 
 </Tab>
 
@@ -769,6 +807,7 @@ fi
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -795,6 +834,7 @@ ActionAttempt(
 )
 ```
 
+
 </Tab>
 
 <Tab title="Ruby">
@@ -819,6 +859,7 @@ end
   action_attempt_id="11111111-2222-3333-4444-555555555555"
   result=nil>
 ```
+
 
 </Tab>
 
@@ -847,6 +888,7 @@ if ($front_door->can_remotely_unlock) {
 }
 ```
 
+
 </Tab>
 
 <Tab title="C#">
@@ -872,6 +914,7 @@ if (frontDoor.CanRemotelyUnlock == true) {
 }
 ```
 
+
 </Tab>
 </Tabs>
 
@@ -883,19 +926,21 @@ To query the `locked` status of the device:
 <Tab title="JavaScript">
 **Code:**
 
-<pre class="language-javascript"><code class="lang-javascript">// Get the device by ID.
+```javascript
+// Get the device by ID.
 const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
 
 // Inspect the locked property to confirm
 // that the unlock operation was successful.
-<strong>console.log(updatedFrontDoor.properties.locked); // false
-</strong></code></pre>
+console.log(updatedFrontDoor.properties.locked); // false
+```
 
 **Output:**
 
 ```
 false
 ```
+
 
 </Tab>
 
@@ -926,6 +971,7 @@ echo $(jq -r '"Locked (false): " + (.device.properties.locked | tostring)' <<< $
 Locked (false): false
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -945,6 +991,7 @@ assert updated_front_door.properties["locked"] is False # False
 ```
 False
 ```
+
 
 </Tab>
 
@@ -966,6 +1013,7 @@ puts updated_front_door.properties.locked # false
 false
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -985,6 +1033,7 @@ echo $updated_front_door->properties->locked ? 'true' : 'false', "\n"; // false
 ```
 false
 ```
+
 
 </Tab>
 
@@ -1007,6 +1056,7 @@ Console.WriteLine(updatedFrontDoor.Properties.Locked); // false
 ```
 False
 ```
+
 
 </Tab>
 </Tabs>
@@ -1073,6 +1123,7 @@ if (updatedFrontDoor.can_program_online_access_codes) {
   }
 ]
 ```
+
 
 </Tab>
 
@@ -1150,6 +1201,7 @@ fi
 }
 ```
 
+
 </Tab>
 
 <Tab title="Python">
@@ -1204,6 +1256,7 @@ if updated_front_door.can_program_online_access_codes:
   )
 ]
 ```
+
 
 </Tab>
 
@@ -1261,6 +1314,7 @@ end
 ]
 ```
 
+
 </Tab>
 
 <Tab title="PHP">
@@ -1315,6 +1369,7 @@ if ($updated_front_door->can_program_online_access_codes) {
   }
 ]
 ```
+
 
 </Tab>
 
@@ -1372,6 +1427,7 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
   ...
 }
 ```
+
 
 </Tab>
 </Tabs>

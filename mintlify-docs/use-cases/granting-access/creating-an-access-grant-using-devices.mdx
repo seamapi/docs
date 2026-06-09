@@ -5,7 +5,7 @@ description: 'Learn how to create an Access Grant to give a user access to one o
 
 Granting access to a device is the simplest form of an Access Grant. You specify the user, one or more device IDs, the access schedule, and the desired access methods, and Seam takes care of creating and managing the underlying credentials on each device.
 
-This path works for standalone smart locks—such as August, Yale, Schlage, igloohome, and TTLock devices—that are connected to Seam through a [Connect Webview](../../core-concepts/connect-webviews/). The devices do not need to be part of an access control system.
+This path works for standalone smart locks—such as August, Yale, Schlage, igloohome, and TTLock devices—that are connected to Seam through a [Connect Webview](/core-concepts/connect-webviews/index). The devices do not need to be part of an access control system.
 
 An Access Grant defines the following characteristics:
 
@@ -14,7 +14,7 @@ An Access Grant defines the following characteristics:
 - Access schedule: The starting and ending times for access.
 - Access methods: The modes of access, such as PIN codes and mobile keys.
 
-This topic describes how to create an Access Grant using device IDs. To learn how to organize devices and entrances into spaces and grant access to a whole space, see [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces). To learn how to grant access to access system entrances, see [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances).
+This topic describes how to create an Access Grant using device IDs. To learn how to organize devices and entrances into spaces and grant access to a whole space, see [Creating an Access Grant Using Spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces). To learn how to grant access to access system entrances, see [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances).
 
 ---
 
@@ -22,23 +22,23 @@ This topic describes how to create an Access Grant using device IDs. To learn ho
 
 To create an Access Grant:
 
-1. [Identify the devices](creating-an-access-grant-using-devices#identify-devices) to which you want to grant the user access.
-2. [Create a user identity](creating-an-access-grant-using-devices#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
-3. [Create an Access Grant](creating-an-access-grant-using-devices#create-an-access-grant) for the user identity to define the devices to which the user should have access, the starting and ending times for this access, and the requested access methods, such as `code`.
+1. [Identify the devices](#identify-devices) to which you want to grant the user access.
+2. [Create a user identity](#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
+3. [Create an Access Grant](#create-an-access-grant) for the user identity to define the devices to which the user should have access, the starting and ending times for this access, and the requested access methods, such as `code`.
 
    The action returns the created Access Grant.
 
-4. [Retrieve the resulting access methods](creating-an-access-grant-using-devices#retrieve-the-access-methods) once they are issued. For a `code` access method, the returned access method includes the PIN code that you can deliver to your user.
+4. [Retrieve the resulting access methods](#retrieve-the-access-methods) once they are issued. For a `code` access method, the returned access method includes the PIN code that you can deliver to your user.
 
 ---
 
 ## Before You Begin
 
-To create an Access Grant for a device, first [connect](../../core-concepts/connect-webviews/) the device account to Seam. Then, confirm that the device supports access codes by checking its `can_program_online_access_codes` capability flag.
+To create an Access Grant for a device, first [connect](/core-concepts/connect-webviews/index) the device account to Seam. Then, confirm that the device supports access codes by checking its `can_program_online_access_codes` capability flag.
 
 <Info>
   You can try this entire flow in a [sandbox
-  workspace](../../core-concepts/workspaces/#sandbox-workspaces) using sandbox
+  workspace](/core-concepts/workspaces/index#sandbox-workspaces) using sandbox
   devices, such as the August sandbox locks.
 </Info>
 
@@ -780,6 +780,6 @@ $seam->access_methods->get(
 
 ## Next Steps
 
-Once you've created the Access Grant and the resulting access methods have been issued, you can deliver the access methods to your user. For details, see [Delivering Access Methods](delivering-access-methods).
+Once you've created the Access Grant and the resulting access methods have been issued, you can deliver the access methods to your user. For details, see [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods).
 
-To organize devices into logical groups—for example, all the locks that a guest staying in Unit 101 needs—and grant access to the whole group with a single ID, see [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces).
+To organize devices into logical groups—for example, all the locks that a guest staying in Unit 101 needs—and grant access to the whole group with a single ID, see [Creating an Access Grant Using Spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces).

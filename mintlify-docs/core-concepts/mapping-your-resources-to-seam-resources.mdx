@@ -24,7 +24,7 @@ The guide describes how to add resources keys to Seam resources of various relev
 
 ## **Associating Connected Accounts with Your Customers**
 
-[Connected Accounts](connected-accounts/) represent connections that your customers set up with their own devices or access systems through your app. You embed a [Connect Webview](connect-webviews/) in your app, and your customers establish these connections by authenticating their device or system accounts through the pre-built Connect Webview flow. Each successful connection creates a Connected Account in your Seam workspace. Each Connected Account is linked to a specific customer.
+[Connected Accounts](/core-concepts/connected-accounts/index) represent connections that your customers set up with their own devices or access systems through your app. You embed a [Connect Webview](/core-concepts/connect-webviews/index) in your app, and your customers establish these connections by authenticating their device or system accounts through the pre-built Connect Webview flow. Each successful connection creates a Connected Account in your Seam workspace. Each Connected Account is linked to a specific customer.
 
 When you create an instance of a Connect Webview, you can tag it with a customer key. When your customer completes the authentication flow through this Connect Webview, Seam automatically copies the `customer_key` to the resulting Connected Account. You can then use the `customer_key` to retrieve the Connected Account consistently.
 

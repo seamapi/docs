@@ -25,7 +25,7 @@ Reservation Automations follow the lifecycle of a reservation:
 
 Set up these resources in your Seam workspace:
 
-- [Customer](customer-portals/) – identify who the automation belongs to with a `customer_key`.
+- [Customer](/capability-guides/customer-portals/index) – identify who the automation belongs to with a `customer_key`.
 - [Spaces](../core-concepts/mapping-your-resources-to-seam-resources) – represent the real-world units your customer manages (i.e. _Room 101_ in a hotel, _Studio 3_ in a gym). Each space must be created via [`/spaces/create`](https://docs.seam.co/latest/api/spaces/create) with a `space_key` and assigned devices or entrances **before** you call `push_data`. Reservations reference these spaces by `space_key`.
 - Devices or entrances – connect locks, thermostats, or ACS entrances to each space (e.g., assign the lock in Room 101 to the _Room 101_ space). Use `device_ids` for smart locks and thermostats, or `acs_entrance_ids` for access control system entrances.
 - Unique user identity emails – each `user_identity` you push must have a unique `email_address`. If an email already exists from a previous call, the reservation is silently skipped.
@@ -41,7 +41,7 @@ Set up these resources in your Seam workspace:
 
 <Check>
   You can also let customers configure their own accounts, spaces, and devices
-  with [Customer Portals](customer-portals/).
+  with [Customer Portals](/capability-guides/customer-portals/index).
 </Check>
 
 ---
@@ -122,7 +122,7 @@ PIN code priority:
 When enabled, multiple guests can share the same email address or phone number. This is useful when the same person has multiple reservations or holds different roles.
 
 <figure>
-  <img src='/images/Screenshot 2026-03-31 at 23.46.11.png' alt='' />
+  <img src='/images/Screenshot-2026-03-31-at-23.46.11.png' alt='' />
   <figcaption></figcaption>
 </figure>
 

@@ -37,16 +37,16 @@ GET https://api.provider.com/oauth/authorize?
 
 ### 2. User login + consent screen
 
-After Seam sends the authorization request in [step 1](implementing-authentication#id-1.-authorization-request-launches-the-flow), your service should display a login and consent screen. The user signs in, reviews what Seam will be able to access, and decides whether to continue.
+After Seam sends the authorization request in [step 1](#1-authorization-request-launches-the-flow), your service should display a login and consent screen. The user signs in, reviews what Seam will be able to access, and decides whether to continue.
 
 <Columns cols={2}>
 <div>
-<figure><img src="/images/google sign in copy.png" alt="" width="375" /><figcaption><p>Example login screen from Google</p></figcaption></figure>
+<figure><img src="/images/google-sign-in-copy.png" alt="" width="375" /><figcaption><p>Example login screen from Google</p></figcaption></figure>
 
 </div>
 
 <div>
-<figure><img src="/images/image (48).png" alt="" width="375" /><figcaption><p>Example consent screen from Google</p></figcaption></figure>
+<figure><img src="/images/image-(48).png" alt="" width="375" /><figcaption><p>Example consent screen from Google</p></figcaption></figure>
 
 </div>
 </Columns>
@@ -81,7 +81,7 @@ https://example.com/oauth_redirect?
 
 - the redirect URL must exactly match one that Seam registered with your platform.
 - `code` is the temporary value Seam will exchange for tokens.
-- `state` must match what Seam originally sent in [Step 1](implementing-authentication#id-1.-authorization-request-launches-the-flow).
+- `state` must match what Seam originally sent in [Step 1](#1-authorization-request-launches-the-flow).
 
 ---
 

@@ -11,7 +11,7 @@ description: 'Learn about device and system capabilities, as well as capability 
   <figcaption></figcaption>
 </figure>
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For example, some devices support [remote unlock actions](../low-level-apis/smart-locks/lock-and-unlock), while others support [programming access codes](../low-level-apis/smart-locks/access-codes/). Some devices support both of these capabilities. When developing your application, it is imperative to be able to identify the capabilities of each device.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For example, some devices support [remote unlock actions](../low-level-apis/smart-locks/lock-and-unlock), while others support [programming access codes](/low-level-apis/smart-locks/access-codes/index). Some devices support both of these capabilities. When developing your application, it is imperative to be able to identify the capabilities of each device.
 
 For example, if a device supports programming online access codes, your app can present the [`CreateAccessCodeForm` Seam Component](../ui-components/overview/react-components/create-access-code-form) to your user. On the other hand, if a connected device does not support the remote unlock action, you'll likely want to disable or not display the unlock functionality for your app user.
 
@@ -90,7 +90,7 @@ Seam recommends adding capability checks before performing specific actions in y
       </td>
       <td>
         Indicates whether the device can perform a{' '}
-        <a href='../low-level-apis/smart-locks/lock-and-unlock.md'>
+        <a href='/low-level-apis/smart-locks/lock-and-unlock'>
           remote unlock operation
         </a>
         .
@@ -107,7 +107,7 @@ Seam recommends adding capability checks before performing specific actions in y
       </td>
       <td>
         Indicates whether the device can perform a{' '}
-        <a href='../low-level-apis/smart-locks/lock-and-unlock.md'>
+        <a href='/low-level-apis/smart-locks/lock-and-unlock'>
           remote lock operation
         </a>
         .
@@ -124,7 +124,7 @@ Seam recommends adding capability checks before performing specific actions in y
       </td>
       <td>
         Indicates whether the device can{' '}
-        <a href='../low-level-apis/smart-locks/access-codes/'>
+        <a href='/low-level-apis/smart-locks/access-codes'>
           program online access codes
         </a>
         .<br />
@@ -144,7 +144,7 @@ Seam recommends adding capability checks before performing specific actions in y
       </td>
       <td>
         Indicates whether the device can{' '}
-        <a href='../low-level-apis/smart-locks/access-codes/offline-access-codes.md'>
+        <a href='/low-level-apis/smart-locks/access-codes/offline-access-codes'>
           program offline access codes
         </a>
         .<br />
@@ -164,7 +164,7 @@ Seam recommends adding capability checks before performing specific actions in y
       <td>
         Indicates whether the thermostat device (in conjunction with the
         associated HVAC system) supports{' '}
-        <a href='thermostats/understanding-thermostat-concepts/hvac-mode.md'>
+        <a href='/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode'>
           heat mode
         </a>
         .<br />
@@ -187,7 +187,7 @@ Seam recommends adding capability checks before performing specific actions in y
       <td>
         Indicates whether the thermostat device (in conjunction with the
         associated HVAC system) supports{' '}
-        <a href='thermostats/understanding-thermostat-concepts/hvac-mode.md'>
+        <a href='/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode'>
           cool mode
         </a>
         .<br />
@@ -210,7 +210,7 @@ Seam recommends adding capability checks before performing specific actions in y
       <td>
         Indicates whether the thermostat device (in conjunction with the
         associated HVAC system) supports{' '}
-        <a href='thermostats/understanding-thermostat-concepts/hvac-mode.md'>
+        <a href='/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode'>
           heat-cool (auto) mode
         </a>
         .<br />
@@ -233,7 +233,7 @@ Seam recommends adding capability checks before performing specific actions in y
       <td>
         Indicates whether the thermostat device (in conjunction with the
         associated HVAC system) supports{' '}
-        <a href='thermostats/understanding-thermostat-concepts/hvac-mode.md'>
+        <a href='/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode'>
           off mode
         </a>
         .<br />
@@ -260,9 +260,9 @@ Seam recommends adding capability checks before performing specific actions in y
 
 To learn about the actions that you can perform using the Seam API, see the Seam capability guides. These guides provide helpful tutorials and code samples, categorized by capability types.
 
-- [Smart locks](../low-level-apis/smart-locks/), including [locking/unlocking](../low-level-apis/smart-locks/lock-and-unlock) and [managing access codes](../low-level-apis/smart-locks/access-codes/)
-- [Access control systems](../low-level-apis/access-systems/)
-- [Thermostats](../capability-guides/thermostats/)
-- [Noise sensors](../capability-guides/noise-sensors/)
-- [Mobile access](mobile-access/)
-- [Seam Bridge](seam-bridge)
+- [Smart locks](/low-level-apis/smart-locks/index), including [locking/unlocking](../low-level-apis/smart-locks/lock-and-unlock) and [managing access codes](/low-level-apis/smart-locks/access-codes/index)
+- [Access control systems](/low-level-apis/access-systems/index)
+- [Thermostats](/capability-guides/thermostats/index)
+- [Noise sensors](/capability-guides/noise-sensors/index)
+- [Mobile access](/capability-guides/mobile-access/index)
+- [Seam Bridge](/capability-guides/seam-bridge)

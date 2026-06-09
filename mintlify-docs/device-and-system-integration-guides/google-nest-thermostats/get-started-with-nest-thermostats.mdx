@@ -43,19 +43,37 @@ First, install a Seam SDK, as follows:
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+```bash
+bundle add seam
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+```bash
+composer require seamapi/seam
+```
+
+</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
+
 </Tab>
 </Tabs>
 
@@ -89,7 +107,7 @@ This guide shows you how to create a Connect Webview programmatically using the 
 
 The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provides another easy way to connect devices to your Seam workspace.
 
-Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](get-started-with-nest-thermostats#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
+Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
 </Check>
 
@@ -274,13 +292,13 @@ For application developers, you can redirect your user to this Connect Webview U
 <Check>
   Because you're using a sandbox workspace, you can connect Seam's test Google
   Nest account. We provide [virtual
-  devices](google-nest-thermostats-sample-data) for each of the brands that
+  devices](./google-nest-thermostats-sample-data) for each of the brands that
   we support. These sandbox devices and systems enable you to test your app with
   devices from multiple brands without the need to own all the corresponding
   physical devices.
 </Check>
 
-Complete the Connect Webview authorization flow by entering the following [Google Nest sandbox account](google-nest-thermostats-sample-data) credentials:
+Complete the Connect Webview authorization flow by entering the following [Google Nest sandbox account](./google-nest-thermostats-sample-data) credentials:
 
 - **Email:** jane@example.com
 - **Password:** 1234
@@ -746,9 +764,9 @@ Seam provides additional actions for thermostats, such as setting the fan mode, 
 
 Try out the following actions on your Google Nest thermostat:
 
-- [ ] [Set the HVAC mode](get-started-with-nest-thermostats#set-the-hvac-mode)
-- [ ] [Create and schedule climate presets](get-started-with-nest-thermostats#create-and-schedule-climate-presets)
-- [ ] [Configure a weekly thermostat program](get-started-with-nest-thermostats#configure-a-weekly-thermostat-program)
+- [ ] [Set the HVAC mode](#set-the-hvac-mode)
+- [ ] [Create and schedule climate presets](#create-and-schedule-climate-presets)
+- [ ] [Configure a weekly thermostat program](#configure-a-weekly-thermostat-program)
 
 ### Set the HVAC mode
 
@@ -1886,7 +1904,7 @@ $seam->thermostats->update_weekly_program(
 
 Now that you have learned the basics of using the Seam API, you can connect and control a real Google Nest device. To do so, make sure to switch to a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
 
-For more details about setting up your real Google Nest thermostat, see the [Google Nest thermostats integration guide](../).
+For more details about setting up your real Google Nest thermostat, see the [Google Nest thermostats integration guide](/index).
 
 ---
 

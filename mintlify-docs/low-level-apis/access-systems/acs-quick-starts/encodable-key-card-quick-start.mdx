@@ -16,8 +16,8 @@ Once you've completed this quick start, learn how to work with your ACS using Se
 
 This quick start walks you through the following basic steps:
 
-1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
-   - To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
+1. [Connect](/core-concepts/workspaces/index#connecting-virtual-devices) an access control system to Seam.
+   - To get started quickly, use a virtual ACS in a [sandbox workspace](/core-concepts/workspaces/index#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
 3. Create an [ACS user](../user-management).
 4. Create an encodable key card [ACS credential](../managing-credentials) for the ACS user.
@@ -38,10 +38,10 @@ This quick start walks you through the following basic steps:
 
 ## Step 1: Connect a Virtual ACS
 
-In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](../../../core-concepts/connect-webviews/) and then use it to connect an ACS to Seam.
+In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](/core-concepts/connect-webviews/index) and then use it to connect an ACS to Seam.
 
 1. Log in to [Seam Console](https://console.seam.co/).
-2. In the upper-left corner, click the workspace switcher and select or [create a sandbox workspace](../../../core-concepts/workspaces/#create-a-sandbox-workspace).
+2. In the upper-left corner, click the workspace switcher and select or [create a sandbox workspace](/core-concepts/workspaces/index#create-a-sandbox-workspace).
 
    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](/images/workspace-switcher.png)
 
@@ -66,7 +66,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
    2. In the device brand list, click **Visionline**.
    3. On the **Set up your Seam Bridge** page, click **Continue**.
 
-      [Seam Bridge](../../seam-bridge) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this quick start uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
+      [Seam Bridge](/capability-guides/seam-bridge) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this quick start uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
 
    4. On the **Seam Bridge Connection** page, click **Submit**.
    5. On the **Enter your credentials** page:
@@ -86,22 +86,41 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
 
 <Tabs>
 <Tab title="JavaScript">
+
 ```bash
 npm i seam
 ```
+
 </Tab>
 
-<Tab title='Python'>
-  ```bash pip install seam # For some development environments, use pip3 in this
-  command instead of pip. ```
+<Tab title="Python">
+
+```bash
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
 </Tab>
 
-<Tab title='Ruby'>```bash bundle add seam ```</Tab>
+<Tab title="Ruby">
 
-<Tab title='PHP'>```bash composer require seamapi/seam ```</Tab>
+```bash
+bundle add seam
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+```bash
+composer require seamapi/seam
+```
+
+</Tab>
 
 <Tab title="C#">
 Install using [nuget](https://www.nuget.org/packages/Seam).
+
 </Tab>
 </Tabs>
 
@@ -568,7 +587,7 @@ Encode the credential that you created onto a card for the Visionline access con
 
 First, find the encoder that you want to use and note its ID. Then, encode the credential onto the card using the encoder that you identified. Finally, confirm that the card was encoded successfully.
 
-For more information, see [Working with Card Encoders and Scanners](../working-with-card-encoders-and-scanners/).
+For more information, see [Working with Card Encoders and Scanners](/low-level-apis/access-systems/working-with-card-encoders-and-scanners/index).
 
 <Tabs>
 <Tab title="JavaScript">
@@ -834,10 +853,10 @@ $seam->action_attempts->get(
 
 Now that you've created a key card credential and encoded it onto a card, try out the other ACS quick starts.
 
-- [Mobile Key Quick Start](mobile-key-quick-start)
-- [PIN Code Quick Start](pin-code-quick-start)
+- [Mobile Key Quick Start](./mobile-key-quick-start)
+- [PIN Code Quick Start](./pin-code-quick-start)
 
-Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
+Then, [connect your ACS to Seam](/low-level-apis/access-systems/connect-an-acs-to-seam/index).
 
 ---
 
@@ -857,5 +876,5 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 5. Create credentials for ACS users.
    - [Managing Credentials](../managing-credentials)
 6. For relevant access control systems, encode credentials onto key cards.
-   - [Working with Card Encoders and Scanners](../working-with-card-encoders-and-scanners/)
+   - [Working with Card Encoders and Scanners](/low-level-apis/access-systems/working-with-card-encoders-and-scanners/index)
 7. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).
