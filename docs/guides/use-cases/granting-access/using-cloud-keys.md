@@ -509,9 +509,7 @@ You can combine cloud keys with other access methods in the same Access Grant. F
 
 ## Step 3: Unlock an Entrance on Behalf of the User
 
-Once the cloud key access method is issued, use it to unlock an entrance. Retrieve the access method ID from the Access Grant, then call `/acs/entrances/unlock` with the cloud key credential.
-
-First, retrieve the cloud key access method:
+Once the cloud key access method is issued, unlock the entrance by calling `/access_methods/unlock_door` with the cloud key `access_method_id` and the `acs_entrance_id`. The endpoint resolves the credential internally and attributes the unlock to the user identity in the ACS audit trail.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -519,211 +517,8 @@ First, retrieve the cloud key access method:
 **Code:**
 
 ```javascript
-const accessMethods = await seam.accessMethods.list({
-  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
-});
-
-const cloudKey = accessMethods.find(
-  (method) => method.mode === "cloud_key"
-);
-```
-
-**Output:**
-
-```json
-{
-  "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-  "display_name": "Cloud Key",
-  "mode": "cloud_key",
-  "is_issued": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="cURL" %}
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/list' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
-}'
-```
-
-**Output:**
-
-```json
-{
-  "access_methods": [
-    {
-      "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-      "display_name": "Cloud Key",
-      "mode": "cloud_key",
-      "is_issued": true,
-      ...
-    }
-  ],
-  "ok": true
-}
-```
-{% endtab %}
-
-{% tab title="Python" %}
-
-**Code:**
-
-```python
-access_methods = seam.access_methods.list(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
-)
-
-cloud_key = next(
-  m for m in access_methods
-  if m.mode == "cloud_key"
-)
-```
-
-**Output:**
-
-```
-AccessMethod(
-  access_method_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-  display_name="Cloud Key",
-  mode="cloud_key",
-  is_issued=True,
-  ...
-)
-```
-{% endtab %}
-
-{% tab title="Ruby" %}
-
-**Code:**
-
-```ruby
-access_methods = seam.access_methods.list(
-  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
-)
-
-cloud_key = access_methods.find do |method|
-  method.mode == "cloud_key"
-end
-```
-
-**Output:**
-
-```
-{
-  "access_method_id" => "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-  "display_name" => "Cloud Key",
-  "mode" => "cloud_key",
-  "is_issued" => true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="PHP" %}
-
-**Code:**
-
-```php
-$access_methods = $seam->access_methods->list(
-  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
-);
-
-$cloud_key = array_values(array_filter(
-  $access_methods,
-  fn($m) => $m->mode === "cloud_key"
-))[0];
-```
-
-**Output:**
-
-```json
-{
-  "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-  "display_name": "Cloud Key",
-  "mode": "cloud_key",
-  "is_issued": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="C#" %}
-
-**Code:**
-
-```csharp
-var accessMethods = seam.AccessMethods.List(
-  accessGrantId: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
-);
-
-var cloudKey = accessMethods
-  .First(m => m.Mode == "cloud_key");
-```
-
-**Output:**
-
-```json
-{
-  "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-  "display_name": "Cloud Key",
-  "mode": "cloud_key",
-  "is_issued": true,
-  ...
-}
-```
-{% endtab %}
-
-{% tab title="Java" %}
-
-**Code:**
-
-```java
-var accessMethods = seam.accessMethods().list(
-  AccessMethodsListRequest.builder()
-    .accessGrantId("ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b")
-    .build()
-);
-
-var cloudKey = accessMethods.stream()
-  .filter(m -> "cloud_key".equals(m.getMode()))
-  .findFirst()
-  .orElseThrow();
-```
-
-**Output:**
-
-```json
-{
-  "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
-  "display_name": "Cloud Key",
-  "mode": "cloud_key",
-  "is_issued": true,
-  ...
-}
-```
-{% endtab %}
-{% endtabs %}
-
-Then, unlock the entrance using the cloud key credential:
-
-{% tabs %}
-{% tab title="JavaScript" %}
-
-**Code:**
-
-```javascript
-const actionAttempt = await seam.acs.entrances.unlock({
-  acs_credential_id: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+const actionAttempt = await seam.accessMethods.unlockDoor({
+  access_method_id: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
   acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc"
 });
 ```
@@ -747,12 +542,12 @@ const actionAttempt = await seam.acs.entrances.unlock({
 
 ```bash
 curl -X 'POST' \
-  'https://connect.getseam.com/acs/entrances/unlock' \
+  'https://connect.getseam.com/access_methods/unlock_door' \
   -H 'accept: application/json' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-    "acs_credential_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+    "access_method_id": "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
     "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc"
 }'
 ```
@@ -778,8 +573,8 @@ curl -X 'POST' \
 **Code:**
 
 ```python
-action_attempt = seam.acs.entrances.unlock(
-  acs_credential_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+action_attempt = seam.access_methods.unlock_door(
+  access_method_id="a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
   acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc"
 )
 ```
@@ -802,8 +597,8 @@ ActionAttempt(
 **Code:**
 
 ```ruby
-action_attempt = seam.acs.entrances.unlock(
-  acs_credential_id: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+action_attempt = seam.access_methods.unlock_door(
+  access_method_id: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
   acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc"
 )
 ```
@@ -826,8 +621,8 @@ action_attempt = seam.acs.entrances.unlock(
 **Code:**
 
 ```php
-$action_attempt = $seam->acs->entrances->unlock(
-  acs_credential_id: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+$action_attempt = $seam->access_methods->unlock_door(
+  access_method_id: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
   acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc"
 );
 ```
@@ -850,8 +645,8 @@ $action_attempt = $seam->acs->entrances->unlock(
 **Code:**
 
 ```csharp
-var actionAttempt = seam.Acs.Entrances.Unlock(
-  acsCredentialId: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
+var actionAttempt = seam.AccessMethods.UnlockDoor(
+  accessMethodId: "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d",
   acsEntranceId: "f74e4879-5991-4e2f-a368-888983dcfbfc"
 );
 ```
@@ -874,9 +669,9 @@ var actionAttempt = seam.Acs.Entrances.Unlock(
 **Code:**
 
 ```java
-var actionAttempt = seam.acs().entrances().unlock(
-  AcsEntrancesUnlockRequest.builder()
-    .acsCredentialId("a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d")
+var actionAttempt = seam.accessMethods().unlockDoor(
+  AccessMethodsUnlockDoorRequest.builder()
+    .accessMethodId("a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d")
     .acsEntranceId("f74e4879-5991-4e2f-a368-888983dcfbfc")
     .build()
 );

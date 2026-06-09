@@ -213,66 +213,78 @@ curl -X 'POST' \
 
 ## Step 3: Unlock the Entrance
 
-Once the access grant is active, unlock the entrance on behalf of the user. The `acs_credential_id` from the cloud key access method authorizes the unlock and attributes it to the user identity in the ACS audit trail.
+Once the access grant is active, unlock the entrance on behalf of the user by calling `/access_methods/unlock_door` with the cloud key `access_method_id` and the `acs_entrance_id`. The endpoint resolves the credential internally and attributes the unlock to the user identity in the ACS audit trail.
 
 <CodeGroup>
 
 ```javascript JavaScript
-await seam.acs.entrances.unlock({
+const actionAttempt = await seam.accessMethods.unlockDoor({
+  access_method_id: '99887766-5544-3322-1100-aabbccddeeff',
   acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
-  acs_credential_id: '99887766-5544-3322-1100-aabbccddeeff',
 })
 ```
 
 ```python Python
-seam.acs.entrances.unlock(
+action_attempt = seam.access_methods.unlock_door(
+    access_method_id="99887766-5544-3322-1100-aabbccddeeff",
     acs_entrance_id="f74e4879-5991-4e2f-a368-888983dcfbfc",
-    acs_credential_id="99887766-5544-3322-1100-aabbccddeeff",
 )
 ```
 
 ```ruby Ruby
-seam.acs.entrances.unlock(
-  acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc",
-  acs_credential_id: "99887766-5544-3322-1100-aabbccddeeff"
+action_attempt = seam.access_methods.unlock_door(
+  access_method_id: "99887766-5544-3322-1100-aabbccddeeff",
+  acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc"
 )
 ```
 
 ```php PHP
-$seam->acs->entrances->unlock(
-  acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc",
-  acs_credential_id: "99887766-5544-3322-1100-aabbccddeeff"
+$actionAttempt = $seam->access_methods->unlock_door(
+  access_method_id: "99887766-5544-3322-1100-aabbccddeeff",
+  acs_entrance_id: "f74e4879-5991-4e2f-a368-888983dcfbfc"
 );
 ```
 
 ```csharp C#
-seam.Acs.Entrances.Unlock(
-  acsEntranceId: "f74e4879-5991-4e2f-a368-888983dcfbfc",
-  acsCredentialId: "99887766-5544-3322-1100-aabbccddeeff"
+var actionAttempt = seam.AccessMethods.UnlockDoor(
+  accessMethodId: "99887766-5544-3322-1100-aabbccddeeff",
+  acsEntranceId: "f74e4879-5991-4e2f-a368-888983dcfbfc"
 );
 ```
 
 ```java Java
-seam.acs().entrances().unlock(
-  AcsEntrancesUnlockRequest.builder()
+var actionAttempt = seam.accessMethods().unlockDoor(
+  AccessMethodsUnlockDoorRequest.builder()
+    .accessMethodId("99887766-5544-3322-1100-aabbccddeeff")
     .acsEntranceId("f74e4879-5991-4e2f-a368-888983dcfbfc")
-    .acsCredentialId("99887766-5544-3322-1100-aabbccddeeff")
     .build()
 );
 ```
 
 ```bash cURL
 curl -X 'POST' \
-  'https://connect.getseam.com/acs/entrances/unlock' \
+  'https://connect.getseam.com/access_methods/unlock_door' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
-  "acs_credential_id": "99887766-5544-3322-1100-aabbccddeeff"
+  "access_method_id": "99887766-5544-3322-1100-aabbccddeeff",
+  "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc"
 }'
 ```
 
 </CodeGroup>
+
+**Output:**
+
+```json
+{
+  "action_attempt_id": "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f",
+  "action_type": "UNLOCK_DOOR",
+  "status": "success",
+  "result": { "was_confirmed_by_device": false },
+  "error": null
+}
+```
 
 The unlock event appears in the ACS audit trail attributed to the specific user identity, not as a generic system action.
 

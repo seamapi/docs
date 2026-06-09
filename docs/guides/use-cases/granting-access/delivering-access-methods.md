@@ -361,6 +361,6 @@ Each mobile key that you create also includes an Instant Key. Seam Instant Keys 
 
 Cloud keys provide a web-based unlock experience. Your user opens a web pass or taps an unlock button in your app, and the door unlocks over the internet through the ACS cloud connection. Each unlock is attributed to the specific user identity in the ACS audit trail — not recorded as a generic system action.
 
-To unlock an entrance on behalf of a user, retrieve the cloud key access method from the Access Grant and call `/acs/entrances/unlock` with the credential ID.
+To unlock an entrance on behalf of a user, call `/access_methods/unlock_door` with the cloud key `access_method_id` and the `acs_entrance_id`.
 
 For the complete workflow — including verifying entrance support and creating an Access Grant with a cloud key — see [Using Cloud Keys](using-cloud-keys.md).
