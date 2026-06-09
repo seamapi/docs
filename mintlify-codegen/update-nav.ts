@@ -18,7 +18,7 @@ const staticPages = new Set([
  * Check if a page reference is an object overview page (e.g. "api/access_codes/object").
  */
 function isObjectPage(page: string): boolean {
-  return page.endsWith('/object')
+  return page.startsWith('api/') && page.endsWith('/object')
 }
 
 /**
