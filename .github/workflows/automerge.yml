@@ -31,6 +31,8 @@ jobs:
         with:
           files: |
             docs/api-reference/**
+            mintlify-docs/openapi.json
+            mintlify-docs/docs.json
   merge:
     name: Merge
     runs-on: ubuntu-latest

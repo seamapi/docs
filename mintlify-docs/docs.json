@@ -250,6 +250,7 @@
       },
       {
         "tab": "API Reference",
+        "openapi": "openapi.json",
         "groups": [
           {
             "group": "Getting Started",
@@ -269,19 +270,19 @@
                 "group": "Access Grants",
                 "pages": [
                   "api/access_grants/index",
-                  "api/access_grants/request_access_methods",
-                  "api/access_grants/create",
-                  "api/access_grants/delete",
-                  "api/access_grants/get",
-                  "api/access_grants/get_related",
-                  "api/access_grants/list",
-                  "api/access_grants/update",
+                  "POST /access_grants/request_access_methods",
+                  "POST /access_grants/create",
+                  "POST /access_grants/delete",
+                  "POST /access_grants/get",
+                  "POST /access_grants/get_related",
+                  "POST /access_grants/list",
+                  "POST /access_grants/update",
                   {
                     "group": "Unmanaged",
                     "pages": [
-                      "api/access_grants/unmanaged/get",
-                      "api/access_grants/unmanaged/list",
-                      "api/access_grants/unmanaged/update"
+                      "POST /access_grants/unmanaged/get",
+                      "POST /access_grants/unmanaged/list",
+                      "POST /access_grants/unmanaged/update"
                     ]
                   }
                 ]
@@ -290,16 +291,16 @@
                 "group": "Access Methods",
                 "pages": [
                   "api/access_methods/index",
-                  "api/access_methods/delete",
-                  "api/access_methods/encode",
-                  "api/access_methods/get",
-                  "api/access_methods/get_related",
-                  "api/access_methods/list",
+                  "POST /access_methods/delete",
+                  "POST /access_methods/encode",
+                  "POST /access_methods/get",
+                  "POST /access_methods/get_related",
+                  "POST /access_methods/list",
                   {
                     "group": "Unmanaged",
                     "pages": [
-                      "api/access_methods/unmanaged/get",
-                      "api/access_methods/unmanaged/list"
+                      "POST /access_methods/unmanaged/get",
+                      "POST /access_methods/unmanaged/list"
                     ]
                   }
                 ]
@@ -313,30 +314,29 @@
                 "group": "Devices",
                 "pages": [
                   "api/devices/index",
-                  "api/devices/get",
-                  "api/devices/list_device_providers",
-                  "api/devices/list",
-                  "api/devices/report_provider_metadata",
-                  "api/devices/update",
+                  "POST /devices/get",
+                  "POST /devices/list_device_providers",
+                  "POST /devices/list",
+                  "POST /devices/update",
                   "api/devices/simulate/index",
                   "api/devices/unmanaged/index",
                   {
                     "group": "Simulations",
                     "pages": [
-                      "api/devices/simulate/connect",
-                      "api/devices/simulate/disconnect",
-                      "api/devices/simulate/remove",
-                      "api/devices/simulate/connect_to_hub",
-                      "api/devices/simulate/disconnect_from_hub",
-                      "api/devices/simulate/paid_subscription"
+                      "POST /devices/simulate/connect",
+                      "POST /devices/simulate/disconnect",
+                      "POST /devices/simulate/remove",
+                      "POST /devices/simulate/connect_to_hub",
+                      "POST /devices/simulate/disconnect_from_hub",
+                      "POST /devices/simulate/paid_subscription"
                     ]
                   },
                   {
                     "group": "Unmanaged Devices",
                     "pages": [
-                      "api/devices/unmanaged/get",
-                      "api/devices/unmanaged/list",
-                      "api/devices/unmanaged/update"
+                      "POST /devices/unmanaged/get",
+                      "POST /devices/unmanaged/list",
+                      "POST /devices/unmanaged/update"
                     ]
                   }
                 ]
@@ -345,16 +345,15 @@
                 "group": "Locks",
                 "pages": [
                   "api/locks/index",
-                  "api/locks/configure_auto_lock",
-                  "api/locks/get",
-                  "api/locks/list",
-                  "api/locks/lock_door",
-                  "api/locks/unlock_door",
+                  "POST /locks/get",
+                  "POST /locks/list",
+                  "POST /locks/lock_door",
+                  "POST /locks/unlock_door",
                   {
                     "group": "Simulations",
                     "pages": [
-                      "api/locks/simulate/keypad_code_entry",
-                      "api/locks/simulate/manual_lock_via_keypad"
+                      "POST /locks/simulate/keypad_code_entry",
+                      "POST /locks/simulate/manual_lock_via_keypad"
                     ]
                   }
                 ]
@@ -363,45 +362,45 @@
                 "group": "Thermostats",
                 "pages": [
                   "api/thermostats/index",
-                  "api/thermostats/activate_climate_preset",
-                  "api/thermostats/create_climate_preset",
-                  "api/thermostats/delete_climate_preset",
-                  "api/thermostats/list",
-                  "api/thermostats/set_temperature_threshold",
-                  "api/thermostats/set_fallback_climate_preset",
-                  "api/thermostats/set_fan_mode",
-                  "api/thermostats/set_hvac_mode",
-                  "api/thermostats/cool",
-                  "api/thermostats/heat",
-                  "api/thermostats/heat_cool",
-                  "api/thermostats/off",
-                  "api/thermostats/update_climate_preset",
-                  "api/thermostats/update_weekly_program",
+                  "POST /thermostats/activate_climate_preset",
+                  "POST /thermostats/create_climate_preset",
+                  "POST /thermostats/delete_climate_preset",
+                  "POST /thermostats/list",
+                  "POST /thermostats/set_temperature_threshold",
+                  "POST /thermostats/set_fallback_climate_preset",
+                  "POST /thermostats/set_fan_mode",
+                  "POST /thermostats/set_hvac_mode",
+                  "POST /thermostats/cool",
+                  "POST /thermostats/heat",
+                  "POST /thermostats/heat_cool",
+                  "POST /thermostats/off",
+                  "POST /thermostats/update_climate_preset",
+                  "POST /thermostats/update_weekly_program",
                   "api/thermostats/daily_programs/index",
                   "api/thermostats/schedules/index",
                   {
                     "group": "Daily Programs",
                     "pages": [
-                      "api/thermostats/daily_programs/create",
-                      "api/thermostats/daily_programs/delete",
-                      "api/thermostats/daily_programs/update"
+                      "POST /thermostats/daily_programs/create",
+                      "POST /thermostats/daily_programs/delete",
+                      "POST /thermostats/daily_programs/update"
                     ]
                   },
                   {
                     "group": "Schedules",
                     "pages": [
-                      "api/thermostats/schedules/create",
-                      "api/thermostats/schedules/delete",
-                      "api/thermostats/schedules/get",
-                      "api/thermostats/schedules/list",
-                      "api/thermostats/schedules/update"
+                      "POST /thermostats/schedules/create",
+                      "POST /thermostats/schedules/delete",
+                      "POST /thermostats/schedules/get",
+                      "POST /thermostats/schedules/list",
+                      "POST /thermostats/schedules/update"
                     ]
                   },
                   {
                     "group": "Simulations",
                     "pages": [
-                      "api/thermostats/simulate/hvac_mode_adjusted",
-                      "api/thermostats/simulate/temperature_reached"
+                      "POST /thermostats/simulate/hvac_mode_adjusted",
+                      "POST /thermostats/simulate/temperature_reached"
                     ]
                   }
                 ]
@@ -410,22 +409,22 @@
                 "group": "Noise Sensors",
                 "pages": [
                   "api/noise_sensors/index",
-                  "api/noise_sensors/list",
+                  "POST /noise_sensors/list",
                   "api/noise_sensors/noise_thresholds/index",
                   {
                     "group": "Simulations",
                     "pages": [
-                      "api/noise_sensors/simulate/trigger_noise_threshold"
+                      "POST /noise_sensors/simulate/trigger_noise_threshold"
                     ]
                   },
                   {
                     "group": "Noise Thresholds",
                     "pages": [
-                      "api/noise_sensors/noise_thresholds/create",
-                      "api/noise_sensors/noise_thresholds/delete",
-                      "api/noise_sensors/noise_thresholds/get",
-                      "api/noise_sensors/noise_thresholds/list",
-                      "api/noise_sensors/noise_thresholds/update"
+                      "POST /noise_sensors/noise_thresholds/create",
+                      "POST /noise_sensors/noise_thresholds/delete",
+                      "POST /noise_sensors/noise_thresholds/get",
+                      "POST /noise_sensors/noise_thresholds/list",
+                      "POST /noise_sensors/noise_thresholds/update"
                     ]
                   }
                 ]
@@ -438,79 +437,77 @@
                     "group": "Access Groups",
                     "pages": [
                       "api/acs/access_groups/index",
-                      "api/acs/access_groups/add_user",
-                      "api/acs/access_groups/delete",
-                      "api/acs/access_groups/get",
-                      "api/acs/access_groups/list",
-                      "api/acs/access_groups/list_users",
-                      "api/acs/access_groups/list_accessible_entrances",
-                      "api/acs/access_groups/remove_user"
+                      "POST /acs/access_groups/add_user",
+                      "POST /acs/access_groups/get",
+                      "POST /acs/access_groups/list",
+                      "POST /acs/access_groups/list_users",
+                      "POST /acs/access_groups/list_accessible_entrances",
+                      "POST /acs/access_groups/remove_user"
                     ]
                   },
                   {
                     "group": "ACS Users",
                     "pages": [
                       "api/acs/users/index",
-                      "api/acs/users/add_to_access_group",
-                      "api/acs/users/create",
-                      "api/acs/users/delete",
-                      "api/acs/users/get",
-                      "api/acs/users/list_accessible_entrances",
-                      "api/acs/users/list",
-                      "api/acs/users/remove_from_access_group",
-                      "api/acs/users/revoke_access_to_all_entrances",
-                      "api/acs/users/suspend",
-                      "api/acs/users/unsuspend",
-                      "api/acs/users/update"
+                      "POST /acs/users/add_to_access_group",
+                      "POST /acs/users/create",
+                      "POST /acs/users/delete",
+                      "POST /acs/users/get",
+                      "POST /acs/users/list_accessible_entrances",
+                      "POST /acs/users/list",
+                      "POST /acs/users/remove_from_access_group",
+                      "POST /acs/users/revoke_access_to_all_entrances",
+                      "POST /acs/users/suspend",
+                      "POST /acs/users/unsuspend",
+                      "POST /acs/users/update"
                     ]
                   },
                   {
                     "group": "Credentials",
                     "pages": [
                       "api/acs/credentials/index",
-                      "api/acs/credentials/assign",
-                      "api/acs/credentials/create",
-                      "api/acs/credentials/delete",
-                      "api/acs/credentials/get",
-                      "api/acs/credentials/list_accessible_entrances",
-                      "api/acs/credentials/list",
-                      "api/acs/credentials/unassign",
-                      "api/acs/credentials/update"
+                      "POST /acs/credentials/assign",
+                      "POST /acs/credentials/create",
+                      "POST /acs/credentials/delete",
+                      "POST /acs/credentials/get",
+                      "POST /acs/credentials/list_accessible_entrances",
+                      "POST /acs/credentials/list",
+                      "POST /acs/credentials/unassign",
+                      "POST /acs/credentials/update"
                     ]
                   },
                   {
                     "group": "Encoders",
                     "pages": [
                       "api/acs/encoders/index",
-                      "api/acs/encoders/encode_credential",
-                      "api/acs/encoders/get",
-                      "api/acs/encoders/list",
-                      "api/acs/encoders/scan_credential",
-                      "api/acs/encoders/simulate/next_credential_encode_will_fail",
-                      "api/acs/encoders/simulate/next_credential_encode_will_succeed",
-                      "api/acs/encoders/simulate/next_credential_scan_will_fail",
-                      "api/acs/encoders/simulate/next_credential_scan_will_succeed"
+                      "POST /acs/encoders/encode_credential",
+                      "POST /acs/encoders/get",
+                      "POST /acs/encoders/list",
+                      "POST /acs/encoders/scan_credential",
+                      "POST /acs/encoders/simulate/next_credential_encode_will_fail",
+                      "POST /acs/encoders/simulate/next_credential_encode_will_succeed",
+                      "POST /acs/encoders/simulate/next_credential_scan_will_fail",
+                      "POST /acs/encoders/simulate/next_credential_scan_will_succeed"
                     ]
                   },
                   {
                     "group": "Entrances",
                     "pages": [
                       "api/acs/entrances/index",
-                      "api/acs/entrances/get",
-                      "api/acs/entrances/grant_access",
-                      "api/acs/entrances/list_credentials_with_access",
-                      "api/acs/entrances/list",
-                      "api/acs/entrances/unlock"
+                      "POST /acs/entrances/get",
+                      "POST /acs/entrances/grant_access",
+                      "POST /acs/entrances/list_credentials_with_access",
+                      "POST /acs/entrances/list"
                     ]
                   },
                   {
                     "group": "Systems",
                     "pages": [
                       "api/acs/systems/index",
-                      "api/acs/systems/get",
-                      "api/acs/systems/list",
-                      "api/acs/systems/list_compatible_credential_manager_acs_systems",
-                      "api/acs/systems/report_devices"
+                      "POST /acs/systems/get",
+                      "POST /acs/systems/list",
+                      "POST /acs/systems/list_compatible_credential_manager_acs_systems",
+                      "POST /acs/systems/report_devices"
                     ]
                   }
                 ]
@@ -524,25 +521,25 @@
                 "group": "Connect Webviews",
                 "pages": [
                   "api/connect_webviews/index",
-                  "api/connect_webviews/create",
-                  "api/connect_webviews/delete",
-                  "api/connect_webviews/get",
-                  "api/connect_webviews/list"
+                  "POST /connect_webviews/create",
+                  "POST /connect_webviews/delete",
+                  "POST /connect_webviews/get",
+                  "POST /connect_webviews/list"
                 ]
               },
               {
                 "group": "Connected Accounts",
                 "pages": [
                   "api/connected_accounts/index",
-                  "api/connected_accounts/delete",
-                  "api/connected_accounts/get",
-                  "api/connected_accounts/list",
-                  "api/connected_accounts/sync",
-                  "api/connected_accounts/update",
+                  "POST /connected_accounts/delete",
+                  "POST /connected_accounts/get",
+                  "POST /connected_accounts/list",
+                  "POST /connected_accounts/sync",
+                  "POST /connected_accounts/update",
                   {
                     "group": "Simulations",
                     "pages": [
-                      "api/connected_accounts/simulate/disconnect"
+                      "POST /connected_accounts/simulate/disconnect"
                     ]
                   }
                 ]
@@ -551,26 +548,25 @@
                 "group": "User Identities",
                 "pages": [
                   "api/user_identities/index",
-                  "api/user_identities/add_acs_user",
-                  "api/user_identities/create",
-                  "api/user_identities/delete",
-                  "api/user_identities/generate_instant_key",
-                  "api/user_identities/get",
-                  "api/user_identities/grant_access_to_device",
-                  "api/user_identities/list_accessible_devices",
-                  "api/user_identities/list_accessible_entrances",
-                  "api/user_identities/list_acs_systems",
-                  "api/user_identities/list_acs_users",
-                  "api/user_identities/list",
-                  "api/user_identities/remove_acs_user",
-                  "api/user_identities/revoke_access_to_device",
-                  "api/user_identities/update",
+                  "POST /user_identities/add_acs_user",
+                  "POST /user_identities/create",
+                  "POST /user_identities/delete",
+                  "POST /user_identities/generate_instant_key",
+                  "POST /user_identities/get",
+                  "POST /user_identities/grant_access_to_device",
+                  "POST /user_identities/list_accessible_devices",
+                  "POST /user_identities/list_acs_systems",
+                  "POST /user_identities/list_acs_users",
+                  "POST /user_identities/list",
+                  "POST /user_identities/remove_acs_user",
+                  "POST /user_identities/revoke_access_to_device",
+                  "POST /user_identities/update",
                   {
                     "group": "Unmanaged",
                     "pages": [
-                      "api/user_identities/unmanaged/get",
-                      "api/user_identities/unmanaged/list",
-                      "api/user_identities/unmanaged/update"
+                      "POST /user_identities/unmanaged/get",
+                      "POST /user_identities/unmanaged/list",
+                      "POST /user_identities/unmanaged/update"
                     ]
                   }
                 ]
@@ -579,49 +575,49 @@
                 "group": "Workspaces",
                 "pages": [
                   "api/workspaces/index",
-                  "api/workspaces/create",
-                  "api/workspaces/get",
-                  "api/workspaces/list",
-                  "api/workspaces/reset_sandbox",
-                  "api/workspaces/update"
+                  "POST /workspaces/create",
+                  "POST /workspaces/get",
+                  "POST /workspaces/list",
+                  "POST /workspaces/reset_sandbox",
+                  "POST /workspaces/update"
                 ]
               },
               {
                 "group": "Client Sessions",
                 "pages": [
                   "api/client_sessions/index",
-                  "api/client_sessions/create",
-                  "api/client_sessions/delete",
-                  "api/client_sessions/get",
-                  "api/client_sessions/get_or_create",
-                  "api/client_sessions/grant_access",
-                  "api/client_sessions/list",
-                  "api/client_sessions/revoke"
+                  "POST /client_sessions/create",
+                  "POST /client_sessions/delete",
+                  "POST /client_sessions/get",
+                  "POST /client_sessions/get_or_create",
+                  "POST /client_sessions/grant_access",
+                  "POST /client_sessions/list",
+                  "POST /client_sessions/revoke"
                 ]
               },
               {
                 "group": "Customers",
                 "pages": [
                   "api/customers/index",
-                  "api/customers/create_portal",
-                  "api/customers/delete_data",
-                  "api/customers/push_data"
+                  "POST /customers/create_portal",
+                  "POST /customers/delete_data",
+                  "POST /customers/push_data"
                 ]
               },
               {
                 "group": "Spaces",
                 "pages": [
                   "api/spaces/index",
-                  "api/spaces/add_devices",
-                  "api/spaces/add_acs_entrances",
-                  "api/spaces/create",
-                  "api/spaces/delete",
-                  "api/spaces/get",
-                  "api/spaces/get_related",
-                  "api/spaces/list",
-                  "api/spaces/remove_devices",
-                  "api/spaces/remove_acs_entrances",
-                  "api/spaces/update"
+                  "POST /spaces/add_devices",
+                  "POST /spaces/add_acs_entrances",
+                  "POST /spaces/create",
+                  "POST /spaces/delete",
+                  "POST /spaces/get",
+                  "POST /spaces/get_related",
+                  "POST /spaces/list",
+                  "POST /spaces/remove_devices",
+                  "POST /spaces/remove_acs_entrances",
+                  "POST /spaces/update"
                 ]
               }
             ]
@@ -633,27 +629,27 @@
                 "group": "Events",
                 "pages": [
                   "api/events/index",
-                  "api/events/get",
-                  "api/events/list"
+                  "POST /events/get",
+                  "POST /events/list"
                 ]
               },
               {
                 "group": "Webhooks",
                 "pages": [
                   "api/webhooks/index",
-                  "api/webhooks/create",
-                  "api/webhooks/delete",
-                  "api/webhooks/get",
-                  "api/webhooks/list",
-                  "api/webhooks/update"
+                  "POST /webhooks/create",
+                  "POST /webhooks/delete",
+                  "POST /webhooks/get",
+                  "POST /webhooks/list",
+                  "POST /webhooks/update"
                 ]
               },
               {
                 "group": "Action Attempts",
                 "pages": [
                   "api/action_attempts/index",
-                  "api/action_attempts/get",
-                  "api/action_attempts/list"
+                  "POST /action_attempts/get",
+                  "POST /action_attempts/list"
                 ]
               }
             ]
@@ -665,31 +661,31 @@
                 "group": "Access Codes",
                 "pages": [
                   "api/access_codes/index",
-                  "api/access_codes/create",
-                  "api/access_codes/create_multiple",
-                  "api/access_codes/delete",
-                  "api/access_codes/generate_code",
-                  "api/access_codes/get",
-                  "api/access_codes/list",
-                  "api/access_codes/pull_backup_access_code",
-                  "api/access_codes/report_device_constraints",
-                  "api/access_codes/update",
-                  "api/access_codes/update_multiple",
+                  "POST /access_codes/create",
+                  "POST /access_codes/create_multiple",
+                  "POST /access_codes/delete",
+                  "POST /access_codes/generate_code",
+                  "POST /access_codes/get",
+                  "POST /access_codes/list",
+                  "POST /access_codes/pull_backup_access_code",
+                  "POST /access_codes/report_device_constraints",
+                  "POST /access_codes/update",
+                  "POST /access_codes/update_multiple",
                   "api/access_codes/unmanaged/index",
                   {
                     "group": "Simulations",
                     "pages": [
-                      "api/access_codes/simulate/create_unmanaged_access_code"
+                      "POST /access_codes/simulate/create_unmanaged_access_code"
                     ]
                   },
                   {
                     "group": "Unmanaged Access Codes",
                     "pages": [
-                      "api/access_codes/unmanaged/convert_to_managed",
-                      "api/access_codes/unmanaged/delete",
-                      "api/access_codes/unmanaged/get",
-                      "api/access_codes/unmanaged/list",
-                      "api/access_codes/unmanaged/update"
+                      "POST /access_codes/unmanaged/convert_to_managed",
+                      "POST /access_codes/unmanaged/delete",
+                      "POST /access_codes/unmanaged/get",
+                      "POST /access_codes/unmanaged/list",
+                      "POST /access_codes/unmanaged/update"
                     ]
                   }
                 ]
@@ -698,13 +694,13 @@
                 "group": "Phones",
                 "pages": [
                   "api/phones/index",
-                  "api/phones/deactivate",
-                  "api/phones/get",
-                  "api/phones/list",
+                  "POST /phones/deactivate",
+                  "POST /phones/get",
+                  "POST /phones/list",
                   {
                     "group": "Simulations",
                     "pages": [
-                      "api/phones/simulate/create_sandbox_phone"
+                      "POST /phones/simulate/create_sandbox_phone"
                     ]
                   }
                 ]
@@ -713,9 +709,9 @@
                 "group": "Instant Keys",
                 "pages": [
                   "api/instant_keys/index",
-                  "api/instant_keys/delete",
-                  "api/instant_keys/get",
-                  "api/instant_keys/list"
+                  "POST /instant_keys/delete",
+                  "POST /instant_keys/get",
+                  "POST /instant_keys/list"
                 ]
               }
             ]
@@ -1131,7 +1127,13 @@
     }
   },
   "api": {
-    "baseUrl": "https://connect.getseam.com"
+    "baseUrl": "https://connect.getseam.com",
+    "playground": {
+      "display": "simple"
+    },
+    "examples": {
+      "autogenerate": false
+    }
   },
   "redirects": [
     {
