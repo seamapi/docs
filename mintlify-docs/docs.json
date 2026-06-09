@@ -239,6 +239,7 @@
           {
             "group": "Getting Started",
             "pages": [
+              "api/index",
               "api/installation",
               "api/mcp-installation",
               "api/authentication",
@@ -260,7 +261,6 @@
                   "api/access_grants/get_related",
                   "api/access_grants/list",
                   "api/access_grants/update",
-                  "api/access_grants/unmanaged",
                   {
                     "group": "Unmanaged",
                     "pages": [
@@ -280,7 +280,6 @@
                   "api/access_methods/get",
                   "api/access_methods/get_related",
                   "api/access_methods/list",
-                  "api/access_methods/unmanaged",
                   {
                     "group": "Unmanaged",
                     "pages": [
@@ -336,7 +335,6 @@
                   "api/locks/list",
                   "api/locks/lock_door",
                   "api/locks/unlock_door",
-                  "api/locks/simulate",
                   {
                     "group": "Simulations",
                     "pages": [
@@ -366,7 +364,6 @@
                   "api/thermostats/update_weekly_program",
                   "api/thermostats/daily_programs",
                   "api/thermostats/schedules",
-                  "api/thermostats/simulate",
                   {
                     "group": "Daily Programs",
                     "pages": [
@@ -399,7 +396,6 @@
                 "pages": [
                   "api/noise_sensors",
                   "api/noise_sensors/list",
-                  "api/noise_sensors/simulate",
                   "api/noise_sensors/noise_thresholds",
                   {
                     "group": "Simulations",
@@ -422,10 +418,10 @@
               {
                 "group": "Access Control Systems (ACS)",
                 "pages": [
+                  "api/acs",
                   {
                     "group": "Access Groups",
                     "pages": [
-                      "api/acs/access_groups",
                       "api/acs/access_groups/add_user",
                       "api/acs/access_groups/delete",
                       "api/acs/access_groups/get",
@@ -438,7 +434,6 @@
                   {
                     "group": "ACS Users",
                     "pages": [
-                      "api/acs/users",
                       "api/acs/users/add_to_access_group",
                       "api/acs/users/create",
                       "api/acs/users/delete",
@@ -455,7 +450,6 @@
                   {
                     "group": "Credentials",
                     "pages": [
-                      "api/acs/credentials",
                       "api/acs/credentials/assign",
                       "api/acs/credentials/create",
                       "api/acs/credentials/delete",
@@ -469,7 +463,6 @@
                   {
                     "group": "Encoders",
                     "pages": [
-                      "api/acs/encoders",
                       "api/acs/encoders/encode_credential",
                       "api/acs/encoders/get",
                       "api/acs/encoders/list",
@@ -483,7 +476,6 @@
                   {
                     "group": "Entrances",
                     "pages": [
-                      "api/acs/entrances",
                       "api/acs/entrances/get",
                       "api/acs/entrances/grant_access",
                       "api/acs/entrances/list_credentials_with_access",
@@ -494,7 +486,6 @@
                   {
                     "group": "Systems",
                     "pages": [
-                      "api/acs/systems",
                       "api/acs/systems/get",
                       "api/acs/systems/list",
                       "api/acs/systems/list_compatible_credential_manager_acs_systems",
@@ -527,7 +518,6 @@
                   "api/connected_accounts/list",
                   "api/connected_accounts/sync",
                   "api/connected_accounts/update",
-                  "api/connected_accounts/simulate",
                   {
                     "group": "Simulations",
                     "pages": [
@@ -554,7 +544,6 @@
                   "api/user_identities/remove_acs_user",
                   "api/user_identities/revoke_access_to_device",
                   "api/user_identities/update",
-                  "api/user_identities/unmanaged",
                   {
                     "group": "Unmanaged",
                     "pages": [
@@ -665,7 +654,6 @@
                   "api/access_codes/report_device_constraints",
                   "api/access_codes/update",
                   "api/access_codes/update_multiple",
-                  "api/access_codes/simulate",
                   "api/access_codes/unmanaged",
                   {
                     "group": "Simulations",
@@ -692,7 +680,6 @@
                   "api/phones/deactivate",
                   "api/phones/get",
                   "api/phones/list",
-                  "api/phones/simulate",
                   {
                     "group": "Simulations",
                     "pages": [
