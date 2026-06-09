@@ -1156,5 +1156,8 @@
       "source": "/capability-guides/access-systems/:slug*",
       "destination": "/low-level-apis/access-systems/:slug*"
     }
+  ],
+  "openapi": [
+    "openapi.json"
   ]
 }
