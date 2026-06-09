@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * Filter `mintlify validate` output:
  * - Strip ANSI escape sequences for clean CI logs
