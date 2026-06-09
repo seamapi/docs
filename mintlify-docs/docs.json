@@ -28,17 +28,22 @@
           {
             "group": "Use Cases",
             "pages": [
-              "use-cases/granting-access/index",
-              "use-cases/granting-access/access-grant-quick-start",
-              "use-cases/granting-access/creating-an-access-grant-using-devices",
-              "use-cases/granting-access/creating-an-access-grant-using-spaces",
-              "use-cases/granting-access/creating-an-access-grant-using-entrances",
-              "use-cases/granting-access/delivering-access-methods",
-              "use-cases/granting-access/reservation-access-grants",
-              "use-cases/granting-access/retrieving-access-grants-and-access-methods",
-              "use-cases/granting-access/updating-an-access-grant",
-              "use-cases/granting-access/revoking-an-access-method",
-              "use-cases/granting-access/deleting-an-access-grant"
+              {
+                "group": "Granting Access",
+                "pages": [
+                  "use-cases/granting-access/index",
+                  "use-cases/granting-access/access-grant-quick-start",
+                  "use-cases/granting-access/creating-an-access-grant-using-devices",
+                  "use-cases/granting-access/creating-an-access-grant-using-spaces",
+                  "use-cases/granting-access/creating-an-access-grant-using-entrances",
+                  "use-cases/granting-access/delivering-access-methods",
+                  "use-cases/granting-access/reservation-access-grants",
+                  "use-cases/granting-access/retrieving-access-grants-and-access-methods",
+                  "use-cases/granting-access/updating-an-access-grant",
+                  "use-cases/granting-access/revoking-an-access-method",
+                  "use-cases/granting-access/deleting-an-access-grant"
+                ]
+              }
             ]
           },
           {
