@@ -1,7 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
-import { type Blueprint,createBlueprint } from '@seamapi/blueprint'
+import { type Blueprint, createBlueprint } from '@seamapi/blueprint'
 import * as types from '@seamapi/types/connect'
 import jsYaml from 'js-yaml'
 

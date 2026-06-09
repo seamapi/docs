@@ -379,9 +379,7 @@ function transformComponents(spec: any): void {
   for (const [name, schema] of Object.entries(schemas) as any) {
     // Truncate long descriptions
     if (schema.description) {
-      schema.description = truncateDescription(
-        rewriteLinks(schema.description),
-      )
+      schema.description = truncateDescription(rewriteLinks(schema.description))
     }
 
     // Simplify error/warning arrays in properties

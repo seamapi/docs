@@ -45,11 +45,7 @@ function transformPages(
     .map((page) => {
       // Nested group object
       if (typeof page === 'object' && page.group) {
-        const transformed = transformPages(
-          page.pages,
-          specPaths,
-          removed,
-        )
+        const transformed = transformPages(page.pages, specPaths, removed)
         if (transformed.length === 0) return null // Remove empty groups
         return {
           ...page,
@@ -95,9 +91,7 @@ function transformPages(
     .filter((p) => p !== null)
 }
 
-export async function updateDocsJson(
-  specPaths?: Set<string>,
-): Promise<void> {
+export async function updateDocsJson(specPaths?: Set<string>): Promise<void> {
   const docsJsonPath = join(
     import.meta.dirname,
     '..',
@@ -143,11 +137,7 @@ export async function updateDocsJson(
   // Transform all groups in the API Reference tab
   const removedPages: string[] = []
   for (const group of apiTab.groups) {
-    group.pages = transformPages(
-      group.pages,
-      specPaths,
-      removedPages,
-    )
+    group.pages = transformPages(group.pages, specPaths, removedPages)
   }
   if (removedPages.length > 0) {
     console.log(

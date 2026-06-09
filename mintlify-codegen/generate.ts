@@ -45,7 +45,9 @@ const orderedSpec = {
 await writeFile(outputPath, JSON.stringify(orderedSpec, null, 2))
 
 const size = JSON.stringify(orderedSpec).length
-console.log(`  Wrote openapi.json: ${stats.totalEndpoints} endpoints (${(size / 1024).toFixed(0)}KB)`)
+console.log(
+  `  Wrote openapi.json: ${stats.totalEndpoints} endpoints (${(size / 1024).toFixed(0)}KB)`,
+)
 
 // Phase E: Update docs.json navigation
 console.log('Updating docs.json navigation...')
