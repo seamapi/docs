@@ -1,5 +1,5 @@
 ---
-title: 'List Thermostat Schedules'
+title: "List Thermostat Schedules"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,6 +7,7 @@ title: 'List Thermostat Schedules'
 - [Examples](#examples)
 
 Returns a list of all [thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,30 +18,29 @@ Returns a list of all thermostat schedules for a specified thermostat, using a d
 
 ```javascript
 await seam.thermostats.schedules.list({
-  device_id: 'b5d58842-32be-46d2-b161-26787a0bd5ea',
-})
+  device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea",
+});
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    climate_preset_key: 'Eco',
-    created_at: '2025-06-14T16:54:17.946316Z',
-    device_id: 'b5d58842-32be-46d2-b161-26787a0bd5ea',
-    ends_at: '2025-07-14T16:54:17.946313Z',
-    errors: [],
-    is_override_allowed: true,
-    max_override_period_minutes: 90,
-    name: 'Unoccupied',
-    starts_at: '2025-07-12T16:54:17.946313Z',
-    thermostat_schedule_id: 'af2cb7f7-9f28-40da-a0a0-e7a008ef7a35',
-    workspace_id: '58419b36-6103-44e5-aa83-2163e90cce01',
-  },
+    "climate_preset_key": "Eco",
+    "created_at": "2025-06-14T16:54:17.946316Z",
+    "device_id": "b5d58842-32be-46d2-b161-26787a0bd5ea",
+    "ends_at": "2025-07-14T16:54:17.946313Z",
+    "errors": [],
+    "is_override_allowed": true,
+    "max_override_period_minutes": 90,
+    "name": "Unoccupied",
+    "starts_at": "2025-07-12T16:54:17.946313Z",
+    "thermostat_schedule_id": "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+    "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -80,7 +80,6 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -112,7 +111,6 @@ seam.thermostats.schedules.list(device_id="b5d58842-32be-46d2-b161-26787a0bd5ea"
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -144,7 +142,6 @@ seam.thermostats.schedules.list(device_id: "b5d58842-32be-46d2-b161-26787a0bd5ea
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -178,7 +175,6 @@ $seam->thermostats->schedules->list(
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -210,10 +206,10 @@ seam thermostats schedules list --device_id "b5d58842-32be-46d2-b161-26787a0bd5e
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -222,26 +218,25 @@ seam thermostats schedules list --device_id "b5d58842-32be-46d2-b161-26787a0bd5e
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to list schedules.
 
 ---
 
-**`user_identifier_key`** _String_
+**`user_identifier_key`** *String*
 
 User identifier key by which to filter the list of returned thermostat schedules.
 
 ---
+
 
 ## Response
 
@@ -251,8 +246,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -269,13 +267,13 @@ Returns:
   "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
+
 
 ### List thermostat schedules by user identifier key
 
@@ -284,37 +282,40 @@ Returns a list of all thermostat schedules for a specified thermostat, using a u
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
 await seam.thermostats.schedules.list({
-  user_identifier_key: 'b5c8bf4e-c231-474f-b4dc-adad38c25d3f',
-})
+  user_identifier_key: "b5c8bf4e-c231-474f-b4dc-adad38c25d3f",
+});
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    climate_preset_key: 'Eco',
-    created_at: '2025-06-14T16:54:17.946316Z',
-    device_id: 'dc1dfc4b-8082-453f-a953-276941af8650',
-    ends_at: '2025-07-14T16:54:17.946313Z',
-    errors: [],
-    is_override_allowed: true,
-    max_override_period_minutes: 90,
-    name: 'Unoccupied',
-    starts_at: '2025-07-12T16:54:17.946313Z',
-    thermostat_schedule_id: 'af2cb7f7-9f28-40da-a0a0-e7a008ef7a35',
-    workspace_id: '58419b36-6103-44e5-aa83-2163e90cce01',
-  },
+    "climate_preset_key": "Eco",
+    "created_at": "2025-06-14T16:54:17.946316Z",
+    "device_id": "dc1dfc4b-8082-453f-a953-276941af8650",
+    "ends_at": "2025-07-14T16:54:17.946313Z",
+    "errors": [],
+    "is_override_allowed": true,
+    "max_override_period_minutes": 90,
+    "name": "Unoccupied",
+    "starts_at": "2025-07-12T16:54:17.946313Z",
+    "thermostat_schedule_id": "af2cb7f7-9f28-40da-a0a0-e7a008ef7a35",
+    "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -349,10 +350,11 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -381,10 +383,11 @@ seam.thermostats.schedules.list(
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -411,10 +414,11 @@ seam.thermostats.schedules.list(user_identifier_key: "b5c8bf4e-c231-474f-b4dc-ad
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -443,10 +447,11 @@ $seam->thermostats->schedules->list(
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -473,7 +478,6 @@ seam thermostats schedules list --user_identifier_key "b5c8bf4e-c231-474f-b4dc-a
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>

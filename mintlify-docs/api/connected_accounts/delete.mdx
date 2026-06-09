@@ -1,5 +1,5 @@
 ---
-title: 'Delete a Connected Account'
+title: "Delete a Connected Account"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -11,6 +11,7 @@ Deleting a connected account triggers a `connected_account.deleted` event and re
 
 For example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.
 
+
 <Tabs>
 <Tab title="JavaScript">
 
@@ -20,8 +21,8 @@ Deletes a specified connected account.
 
 ```javascript
 await seam.connectedAccounts.delete({
-  connected_account_id: '35a07a42-4eb2-4080-9bf9-ee08aa2bf62e',
-})
+  connected_account_id: "35a07a42-4eb2-4080-9bf9-ee08aa2bf62e",
+});
 ```
 
 #### Output:
@@ -29,7 +30,6 @@ await seam.connectedAccounts.delete({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -53,7 +53,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -73,7 +72,6 @@ seam.connected_accounts.delete(
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -91,7 +89,6 @@ seam.connected_accounts.delete(connected_account_id: "35a07a42-4eb2-4080-9bf9-ee
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -111,7 +108,6 @@ $seam->connected_accounts->delete(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -129,10 +125,10 @@ seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-e
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -141,20 +137,19 @@ seam connected-accounts delete --connected_account_id "35a07a42-4eb2-4080-9bf9-e
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`connected_account_id`** _String_ (Required)
+**`connected_account_id`** *String* (Required)
 
 ID of the connected account that you want to delete.
 
 ---
+
 
 ## Response
 
@@ -163,3 +158,4 @@ Returns:
 **void**
 
 </Check>
+

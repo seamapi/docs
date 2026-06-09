@@ -1,7 +1,8 @@
 ---
-title: 'Using Unlock With Tap'
-description: 'This feature enables your app to perform unlock operations using mobile credentials.'
+title: "Using Unlock With Tap"
+description: "This feature enables your app to perform unlock operations using mobile credentials."
 ---
+
 
 Unlocking with SeamSDK uses proximity to communicate credentials to door readers. When a user initiates an unlock, the SDK performs scanning, error handling, and unlock events using `Seam.shared.unlock(using:)`.
 
@@ -13,7 +14,7 @@ Using this process involves the following steps:
 4. Handle unlock status events.
 5. Cancel the unlock operation if needed.
 
----
+***
 
 ## 1. Retrieve Mobile Credentials
 
@@ -30,11 +31,10 @@ let credentials = Seam.shared.credentials
 
 // Observe updates with Combine
 let credentialsSubscription = Seam.shared.$credentials
-.sink { creds in
-// Update UI with new credentials array.
-}
-
-````
+    .sink { creds in
+        // Update UI with new credentials array.
+    }
+```
 </Tab>
 
 <Tab title="Android Kotlin">
@@ -46,8 +46,7 @@ import co.seam.core.api.SeamSDK
 SeamSDK.getInstance().credentials.collect { credentials ->
     // Update UI with new credentials array.
 }
-````
-
+```
 </Tab>
 </Tabs>
 
@@ -62,13 +61,12 @@ import SeamSDK
 import Combine
 
 let errorSubscription = Seam.shared.$credentials
-.flatMap { creds in creds.publisher }
-.map { $0.errors }
-.sink { errors in
-// Handle errors, for example, `.userInteractionRequired`, `.expired`, etc.
-}
-
-````
+    .flatMap { creds in creds.publisher }
+    .map { $0.errors }
+    .sink { errors in
+        // Handle errors, for example, `.userInteractionRequired`, `.expired`, etc.
+    }
+```
 </Tab>
 
 <Tab title="Android Kotlin">
@@ -101,8 +99,7 @@ fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
         is SeamRequiredUserInteraction.GrantPermissions -> { /* handle permissions error*/ }
     }
 }
-````
-
+```
 </Tab>
 </Tabs>
 
@@ -112,8 +109,8 @@ fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
 
 The call to `Seam.shared.unlock(using:)` may throw:
 
-- `SeamError`: For SDK-level issues (for example, invalid token, uninitialized SDK).
-- `SeamCredentialError`: For credential-specific issues (for example, expired credential, device not eligible). Ensure that you wrap the call in `do/catch` blocks to handle these errors.
+* `SeamError`: For SDK-level issues (for example, invalid token, uninitialized SDK).
+* `SeamCredentialError`: For credential-specific issues (for example, expired credential, device not eligible). Ensure that you wrap the call in `do/catch` blocks to handle these errors.
 
 Use Async/Await or Combine to initiate an unlock with a selected credential:
 
@@ -170,7 +167,6 @@ do {
     print("Unlock error: \(error)")
 }
 ```
-
 </Tab>
 
 <Tab title="Android Kotlin">
@@ -186,47 +182,47 @@ val seamSDK = SeamSDK.getInstance()
 
 // Perform unlock
 try {
-val credentialId = credential.id
-// Timeout is optional
-seamSDK.unlock(
-credentialId = credentialId,
-timeout = 30.seconds
-)
+    val credentialId = credential.id
+    // Timeout is optional
+    seamSDK.unlock(
+        credentialId = credentialId,
+        timeout = 30.seconds
+    )
 } catch (seamError: SeamError) {
-when (seamError) {
-is SeamError.ActivationRequired -> {
-// handle error when SDK is not activated
-}
-is SeamError.CredentialErrors -> {
-val credentialErrors = seamError.errors
-handleCredentialErrors(credentialErrors)
-// handle error when there are credential errors
-}
-is SeamError.InitializationRequired -> {
-// handle error when SDK is not initialized
-}
-is SeamError.IntegrationNotFound -> {
-// handle error when integration is not found, Such as Assa Abloy, Latch and Salto
-}
-is SeamError.InternetConnectionRequired -> {
-// handle error when internet connection is required
-}
-is SeamError.InvalidClientSessionToken -> {
-// handle error when client session token is invalid
-}
-else -> {
-// handle other errors
-}
-}
+    when (seamError) {
+        is SeamError.ActivationRequired -> {
+            // handle error when SDK is not activated
+        }
+        is SeamError.CredentialErrors -> {
+            val credentialErrors = seamError.errors
+            handleCredentialErrors(credentialErrors)
+            // handle error when there are credential errors
+        }
+        is SeamError.InitializationRequired -> {
+            // handle error when SDK is not initialized
+        }
+        is SeamError.IntegrationNotFound -> {
+            // handle error when integration is not found, Such as Assa Abloy, Latch and Salto
+        }
+        is SeamError.InternetConnectionRequired -> {
+            // handle error when internet connection is required
+        }
+        is SeamError.InvalidClientSessionToken -> {
+            // handle error when client session token is invalid
+        }
+        else -> {
+            // handle other errors
+        }
+    }
 }
 
 // Handle credential errors on unlock
 fun handleCredentialErrors(credentialErrors: List<SeamCredentialError>) {
-credentialErrors.forEach { credentialError ->
-when (credentialError) {
-is SeamCredentialError.Invalid -> {
-// handle error when credential is invalid
-}
+    credentialErrors.forEach { credentialError ->
+        when (credentialError) {
+            is SeamCredentialError.Invalid -> {
+                // handle error when credential is invalid
+            }
 
             is SeamCredentialError.Expired -> {
                 // handle error when credential is expired
@@ -245,10 +241,9 @@ is SeamCredentialError.Invalid -> {
             }
         }
     }
-
 }
 
-````
+```
 </Tab>
 </Tabs>
 
@@ -290,7 +285,7 @@ Task {
         // Handle thrown errors.
     }
 }
-````
+```
 
 Combine example:
 
@@ -313,7 +308,7 @@ do {
                     // Operation timed out—offer retry.
                 case .connectionFailed(let debugDescription):
                     // Show debugDescription details.
-                }
+                }           
             }
         )
     // Retain `unlockSubscription` as a property and cancel when appropriate (for example, in deinit or viewWillDisappear).
@@ -322,7 +317,6 @@ do {
     print("Unlock initialization error: \(error)")
 }
 ```
-
 </Tab>
 
 <Tab title="Android Kotlin">
@@ -355,8 +349,7 @@ Stop scanning by canceling your active task or subscription.
 unlockSubscription.cancel()
 
 // For Async/Await, cancel the Task as needed.
-
-````
+```
 </Tab>
 
 <Tab title="Android Kotlin">
@@ -370,7 +363,6 @@ val job = seamSDK.unlock(
 
 // Canceling the job stops the unlock process
 job.cancel()
-````
-
+```
 </Tab>
 </Tabs>

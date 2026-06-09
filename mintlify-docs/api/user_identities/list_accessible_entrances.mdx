@@ -1,11 +1,12 @@
 ---
-title: 'List Accessible Entrances for a User Identity'
+title: "List Accessible Entrances for a User Identity"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a list of all [ACS entrances](https://docs.seam.co/latest/api/acs/entrances) accessible to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.
+
 
 <details>
 
@@ -14,20 +15,19 @@ Returns a list of all [ACS entrances](https://docs.seam.co/latest/api/acs/entran
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`user_identity_id`** _String_ (Required)
+**`user_identity_id`** *String* (Required)
 
 ID of the user identity for which you want to retrieve all accessible entrances.
 
 ---
+
 
 ## Response
 
@@ -37,8 +37,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -61,6 +64,5 @@ Returns:
   }
 }
 ```
-
 </Tab>
 </Tabs>

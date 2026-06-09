@@ -1,5 +1,5 @@
 ---
-title: 'Granting Access Using Encoded Plastic Key Cards'
+title: "Granting Access Using Encoded Plastic Key Cards"
 ---
 
 To issue a plastic key card, identify the user to whom you want to grant access and create a user identity to represent this user. Then, create an Access Grant to specify the entrances and spaces to which you want to grant the user access. The Access Grant creates a card access method. You use the Seam API to encode the access method onto a plastic key card. You can also use the Seam API to scan encoded cards.
@@ -11,7 +11,7 @@ This section details the steps in this process and provides accompanying Seam AP
 3. [Encode the Card](granting-access-using-encoded-plastic-key-cards.md#encode-the-card)
 4. [Scan the Card](granting-access-using-encoded-plastic-key-cards.md#scan-the-card)
 
----
+***
 
 ## Create a User Identity
 
@@ -25,9 +25,9 @@ Use the Seam API to create a `user_identity`. A user identity represents the hot
 ```javascript
 // Create a user identity for your user.
 const janeUser = await seam.userIdentities.create({
-  full_name: 'Jane Doe',
-  phone_number: '+15555550100',
-})
+  full_name: "Jane Doe",
+  phone_number: "+15555550100"
+});
 ```
 
 **Output:**
@@ -40,7 +40,6 @@ const janeUser = await seam.userIdentities.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -73,7 +72,6 @@ jane_user=$(curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -98,7 +96,6 @@ UserIdentity(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -123,7 +120,6 @@ jane_user = seam.user_identities.create(
   ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -148,7 +144,6 @@ $jane_user = $seam->user_identities->create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -164,11 +159,10 @@ $jane_user = $seam->user_identities->create(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Create an Access Grant
 
@@ -186,13 +180,15 @@ await seam.accessGrants.create({
   user_identity_id: janeUser.user_identity_id,
   // You can specify acs_entrance_ids, space_ids, or both.
   acs_entrance_ids: [
-    '48ebfb50-c531-43c5-b9ea-409f26dabbd7',
-    'f74e4879-5991-4e2f-a368-888983dcfbfc',
+    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "f74e4879-5991-4e2f-a368-888983dcfbfc"
   ],
-  requested_access_methods: [{ mode: 'card' }],
-  starts_at: '2025-07-13T15:00:00.000Z',
-  ends_at: '2025-07-16T11:00:00.000Z',
-})
+  requested_access_methods: [
+    {"mode": "card"}
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+});
 ```
 
 **Output:**
@@ -215,7 +211,6 @@ await seam.accessGrants.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -267,7 +262,6 @@ curl -X 'POST' \
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -283,7 +277,7 @@ seam.access_grants.create(
   acs_entrance_ids=[
     "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
     "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],
+  ],  
   requested_access_methods=[
     {"mode": "card"}
   ],
@@ -312,7 +306,6 @@ AccessGrant(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -354,7 +347,6 @@ seam.access_grants.create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -399,7 +391,6 @@ $seam->access_grants->create(
   ...
 ];
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -415,7 +406,6 @@ $seam->access_grants->create(
 ```json
 // Coming Soon!
 ```
-
 </Tab>
 </Tabs>
 
@@ -423,20 +413,11 @@ $seam->access_grants->create(
 
 As a final step in creating a plastic key card, use the Seam API to encode the access method onto the plastic card. Your app can serve hotel front desk staff as well as self-serve check-in kiosks with built-in physical encoders.
 
-<figure>
-  <img
-    src='/images/encode-card-anim-border-added.gif'
-    alt='Encode the access method onto a plastic key card.'
-    width='563'
-  />
-  <figcaption>
-    <p>Encode the access method onto a plastic key card.</p>
-  </figcaption>
-</figure>
+<figure><img src="/images/encode-card-anim-border-added.gif" alt="Encode the access method onto a plastic key card." width="563" /><figcaption><p>Encode the access method onto a plastic key card.</p></figcaption></figure>
 
 First, list the available card encoders within the access system and identify the encoder that the person encoding the card should use. Then, initiate the encoding action. The Seam API returns an [action attempt](../../core-concepts/action-attempts.md) so that your app can track the status of the encoding. When the encoding completes successfully, the action attempt payload includes information about the encoded card, such as the card number and the date and time at which the card was issued (that is, encoded). If the encoding fails, the action attempt reports any encoding errors.
 
-For more details about card encoding, see [Creating and Encoding Card Access Methods](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods.md).
+For more details about card encoding, see [Creating and Encoding Card Access Methods](../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods.md).
 
 <Tabs>
 <Tab title="JavaScript">
@@ -445,24 +426,22 @@ For more details about card encoding, see [Creating and Encoding Card Access Met
 
 ```javascript
 // First, get the encoder that you want to use.
-const encoder = (
-  await seam.acs.encoders.list({
-    acs_system_ids: [hotel_a.acs_system_id],
-  })
-)[0]
+const encoder = (await seam.acs.encoders.list({
+  acs_system_ids: [hotel_a.acs_system_id]
+}))[0];
 
 // Then, encode the card.
 const encodingActionAttempt = await seam.accessMethods.encode({
-  access_method_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
-  acs_encoder_id: encoder.acs_encoder_id,
-})
+  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+  acs_encoder_id: encoder.acs_encoder_id
+});
 
-// To confirm that the encoding succeeded,
+// To confirm that the encoding succeeded, 
 // poll the returned action attempt
 // until its status is success.
 await seam.actionAttempts.get({
-  action_attempt_id: encodingActionAttempt.action_attempt_id,
-})
+  action_attempt_id: encodingActionAttempt.action_attempt_id
+});
 ```
 
 **Output:**
@@ -482,7 +461,6 @@ await seam.actionAttempts.get({
   error: null
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -511,7 +489,7 @@ encoding_action_attempt=$(curl -X 'POST' \
   \"acs_encoder_id\": \"$(jq -r '.acs_encoder_id' <<< ${encoder})\"
 }")
 
-# To confirm that the encoding succeeded,
+# To confirm that the encoding succeeded, 
 # poll the returned action attempt
 # until its status is success.
 curl -X 'POST' \
@@ -545,7 +523,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -564,7 +541,7 @@ encoding_action_attempt = seam.access_methods.encode(
   acs_encoder_id = encoder.acs_encoder_id
 )
 
-# To confirm that the encoding succeeded,
+# To confirm that the encoding succeeded, 
 # poll the returned action attempt
 # until its status is success.
 seam.action_attempts.get(
@@ -589,7 +566,6 @@ ActionAttempt(
   error=null
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -608,7 +584,7 @@ encoding_action_attempt = seam.access_methods.encode(
   acs_encoder_id: encoder.acs_encoder_id
 )
 
-# To confirm that the encoding succeeded,
+# To confirm that the encoding succeeded, 
 # poll the returned action attempt
 # until its status is success.
 seam.action_attempts.get(
@@ -633,7 +609,6 @@ seam.action_attempts.get(
   error=nil
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -652,7 +627,7 @@ $encoding_action_attempt = $seam->access_methods->encode(
   acs_encoder_id: $encoder->acs_encoder_id
 );
 
-// To confirm that the encoding succeeded,
+// To confirm that the encoding succeeded, 
 // poll the returned action attempt
 // until its status is success.
 $seam->action_attempts->get(
@@ -677,7 +652,6 @@ $seam->action_attempts->get(
   "error": null
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -693,35 +667,26 @@ $seam->action_attempts->get(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Scan the Card
 
 You can scan the card to view its data and confirm that it's up to date with the server. The scan result includes the card's properties, such as its card number, serial number, and other useful details. If discrepancies are detected, Seam provides warnings to indicate that the card is out of date and needs re-encoding.
 
-<figure>
-  <img
-    src='/images/scan-card-results.png'
-    alt='Use the Seam API to scan a plastic card to view its details.'
-  />
-  <figcaption>
-    <p>Use the Seam API to scan a plastic card to view its details.</p>
-  </figcaption>
-</figure>
+<figure><img src="/images/scan-card-results.png" alt="Use the Seam API to scan a plastic card to view its details." /><figcaption><p>Use the Seam API to scan a plastic card to view its details.</p></figcaption></figure>
 
 To scan a card, first initiate the scanning process. This scanning action returns an action attempt that you can poll to track the status. When the scan completes, view the card payload within the action attempt. Note any `action_attempt.result.warnings`. Warning messages show which properties are out of sync.&#x20;
 
 Pay special attention to the following parts of the returned payload:
 
-- `action_attempt.result.warnings` list any properties that Seam has detected are out-of-sync between the card and the encoder.
-- `action_attempt.result.acs_credential_on_seam` lists the properties of the access method as stored on the access system server.
-- `action_attempt.result.acs_credential_on_encoder` lists the properties of the access method as stored on the card.
+* `action_attempt.result.warnings` list any properties that Seam has detected are out-of-sync between the card and the encoder.
+* `action_attempt.result.acs_credential_on_seam` lists the properties of the access method as stored on the access system server.
+* `action_attempt.result.acs_credential_on_encoder` lists the properties of the access method as stored on the card.
 
-For more details, see [Scanning Encoded Cards](../../capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards.md).
+For more details, see [Scanning Encoded Cards](../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards.md).
 
 <Tabs>
 <Tab title="JavaScript">
@@ -729,16 +694,16 @@ For more details, see [Scanning Encoded Cards](../../capability-guides/access-sy
 **Code:**
 
 ```javascript
-// Retrieve a list of all available encoders in a hotel,
+// Retrieve a list of all available encoders in a hotel, 
 // that is, connected to a single acs_system.
 await seam.acs.encoders.list({
-  acs_system_ids: [hotelASystemId],
-})
+  acs_system_ids: [hotelASystemId]
+});
 
 // Scan the card using the desired encoder.
 const scanningActionAttempt = await seam.acs.encoders.scanCredential({
-  acs_encoder_id: encoder.acs_encoder_id,
-})
+  acs_encoder_id: encoder.acs_encoder_id
+});
 ```
 
 **Output:**
@@ -763,7 +728,7 @@ const scanningActionAttempt = await seam.acs.encoders.scanCredential({
       'card_number': '1234abc',
       'display_name': 'Card 1234abc',
       'access_method': 'card',
-      ...
+      ...      
     },
     'acs_credential_on_encoder': {
       'starts_at': '2025-07-13T15:00:00.000Z',
@@ -775,7 +740,6 @@ const scanningActionAttempt = await seam.acs.encoders.scanCredential({
   error: null
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -783,7 +747,7 @@ const scanningActionAttempt = await seam.acs.encoders.scanCredential({
 **Code:**
 
 ```bash
-# Retrieve a list of all available encoders in a hotel,
+# Retrieve a list of all available encoders in a hotel, 
 # that is, connected to a single acs_system.
 curl -X 'POST' \
   'https://connect.getseam.com/acs/encoders/list' \
@@ -829,7 +793,7 @@ scanning_action_attempt=$(curl -X 'POST' \
           "card_number": "1234abc",
           "display_name": "Card 1234abc",
           "access_method": "card",
-          ...
+          ...      
         },
         "acs_credential_on_encoder": {
           "starts_at": "2025-07-13T15:00:00.000Z",
@@ -843,7 +807,6 @@ scanning_action_attempt=$(curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -851,7 +814,7 @@ scanning_action_attempt=$(curl -X 'POST' \
 **Code:**
 
 ```python
-# Retrieve a list of all available encoders in a hotel,
+# Retrieve a list of all available encoders in a hotel, 
 # that is, connected to a single acs_system.
 seam.acs.encoders.list(
   acs_system_ids = [hotel_a_system_id]
@@ -881,11 +844,11 @@ ActionAttempt(
     ],
     acs_credential_on_seam={
       "starts_at": "2025-07-13T15:00:00.000Z",
-      "ends_at": "2025-07-16T11:00:00.000Z",
+      "ends_at": "2025-07-16T11:00:00.000Z",  
       "card_number": "1234abc",
       "display_name": "Card 1234abc",
       "access_method": "card",
-      ...
+      ...      
     },
     acs_credential_on_encoder={
       "starts_at": "2025-07-13T15:00:00.000Z",
@@ -897,7 +860,6 @@ ActionAttempt(
   error=null
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -905,7 +867,7 @@ ActionAttempt(
 **Code:**
 
 ```ruby
-# Retrieve a list of all available encoders in a hotel,
+# Retrieve a list of all available encoders in a hotel, 
 # that is, connected to a single acs_system.
 seam.acs.encoders.list(
   acs_system_ids: [hotel_a_system_id]
@@ -939,7 +901,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
       "card_number": "1234abc",
       "display_name": "Card 1234abc",
       "access_method": "card",
-      ...
+      ...      
     },
     "acs_credential_on_encoder": {
       "starts_at": "2025-07-13T15:00:00.000Z",
@@ -951,7 +913,6 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
   error=nil
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -959,7 +920,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
 **Code:**
 
 ```php
-// Retrieve a list of all available encoders in a hotel,
+// Retrieve a list of all available encoders in a hotel, 
 // that is, connected to a single acs_system.
 $seam->acs->encoders->list(
   acs_system_ids: [$hotel_a_system_id]
@@ -993,7 +954,7 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
       "card_number": "1234abc",
       "display_name": "Card 1234abc",
       "access_method": "card",
-      ...
+      ...      
     },
     "acs_credential_on_encoder": {
       "starts_at": "2025-07-13T15:00:00.000Z",
@@ -1005,7 +966,6 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
   "error": null
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -1021,6 +981,5 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>

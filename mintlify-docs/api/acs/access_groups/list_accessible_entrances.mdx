@@ -1,11 +1,12 @@
 ---
-title: 'List Entrances Accessible to an Access Group'
+title: "List Entrances Accessible to an Access Group"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,35 +17,34 @@ Returns a list of all accessible entrances for a specified access group.
 
 ```javascript
 await seam.acs.accessGroups.listAccessibleEntrances({
-  acs_access_group_id: '1b02a29f-effd-4ce6-8a58-16ec09fd9b50',
-})
+  acs_access_group_id: "1b02a29f-effd-4ce6-8a58-16ec09fd9b50",
+});
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    acs_entrance_id: 'f74e4879-5991-4e2f-a368-888983dcfbfc',
-    acs_system_id: '6a74a969-94ea-4383-b5cf-5e7da8c113d1',
-    connected_account_id: '1b9a3e0d-443f-4063-b619-4ca7e2a97751',
-    created_at: '2025-06-15T16:54:17.946495Z',
-    display_name: 'Main Entrance',
-    errors: [],
-    visionline_metadata: {
-      door_category: 'guest',
-      door_name: 'Main Entrance',
-      profiles: [
+    "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
+    "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
+    "connected_account_id": "1b9a3e0d-443f-4063-b619-4ca7e2a97751",
+    "created_at": "2025-06-15T16:54:17.946495Z",
+    "display_name": "Main Entrance",
+    "errors": [],
+    "visionline_metadata": {
+      "door_category": "guest",
+      "door_name": "Main Entrance",
+      "profiles": [
         {
-          visionline_door_profile_id: '7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
-          visionline_door_profile_type: 'BLE',
-        },
-      ],
-    },
-  },
+          "visionline_door_profile_id": "7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+          "visionline_door_profile_type": "BLE"
+        }
+      ]
+    }
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -89,7 +89,6 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -128,7 +127,6 @@ seam.acs.access_groups.list_accessible_entrances(
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -167,7 +165,6 @@ seam.acs.access_groups.list_accessible_entrances(
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -207,7 +204,6 @@ $seam->acs->access_groups->list_accessible_entrances(
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -244,10 +240,10 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "1b02a29f
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -255,20 +251,19 @@ seam acs access-groups list-accessible-entrances --acs_access_group_id "1b02a29f
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`acs_access_group_id`** _String_ (Required)
+**`acs_access_group_id`** *String* (Required)
 
 ID of the access group for which you want to retrieve all accessible entrances.
 
 ---
+
 
 ## Response
 
@@ -278,8 +273,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -302,6 +300,5 @@ Returns:
   }
 }
 ```
-
 </Tab>
 </Tabs>

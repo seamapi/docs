@@ -1,11 +1,12 @@
 ---
-title: 'Get an Access Method'
+title: "Get an Access Method"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Gets an access method.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,8 +17,8 @@ Returns a specified access method.
 
 ```javascript
 await seam.accessMethods.get({
-  access_method_id: '7410aea4-6bed-490c-a602-dd417d9cd075',
-})
+  access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075",
+});
 ```
 
 #### Output:
@@ -33,7 +34,6 @@ await seam.accessMethods.get({
   "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -67,7 +67,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -93,7 +92,6 @@ AccessMethod(
     workspace_id="661025d3-c1d2-403c-83a8-af153aaedfbc",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -119,7 +117,6 @@ seam.access_methods.get(access_method_id: "7410aea4-6bed-490c-a602-dd417d9cd075"
   "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -147,7 +144,6 @@ $seam->access_methods->get(
     "workspace_id" => "661025d3-c1d2-403c-83a8-af153aaedfbc",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -173,10 +169,10 @@ seam access-methods get --access_method_id "7410aea4-6bed-490c-a602-dd417d9cd075
   "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -184,20 +180,19 @@ seam access-methods get --access_method_id "7410aea4-6bed-490c-a602-dd417d9cd075
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`access_method_id`** _String_ (Required)
+**`access_method_id`** *String* (Required)
 
 ID of access method to get.
 
 ---
+
 
 ## Response
 
@@ -207,8 +202,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -221,6 +219,5 @@ Returns:
   "workspace_id": "661025d3-c1d2-403c-83a8-af153aaedfbc"
 }
 ```
-
 </Tab>
 </Tabs>

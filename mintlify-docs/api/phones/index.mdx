@@ -1,5 +1,5 @@
 ---
-title: 'Phones'
+title: "Phones"
 ---
 
 ## The phone Object
@@ -8,6 +8,7 @@ title: 'Phones'
 - [phone.properties](./#phone.properties)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
+
 
 Represents an app user's mobile phone.
 
@@ -40,35 +41,43 @@ A phone resource.
   "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
-
 ## Properties
 
-**`created_at`** _Datetime_
+**`created_at`** *Datetime*
 
 Date and time at which the phone was created.
 
+
+
+
 ---
 
-**`custom_metadata`** _Record_
+**`custom_metadata`** *Record*
 
 Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
 
+
+
+
 ---
 
-**`device_id`** _UUID_
+**`device_id`** *UUID*
 
 ID of the phone.
 
+
+
+
 ---
 
-**`device_type`** _Enum_
+**`device_type`** *Enum*
 
 Device type for phones.
+
 
 <details>
 <summary>Enum values</summary>
@@ -77,117 +86,119 @@ Device type for phones.
 - <code>android_phone</code>
 </details>
 
+
 ---
 
-**`display_name`** _String_
+**`display_name`** *String*
 
 Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
 
+
+
+
 ---
 
-**`errors`** _List_ _of Objects_
+**`errors`** *List* *of Objects*
 
 Errors associated with the phone.
+
+
 
 <details>
   <summary>Child Object Properties</summary>
 <strong><code>error_code</code></strong> <i>String</i>
 
-<strong>
-  <code>message</code>
-</strong>
-<i>String</i>
+<strong><code>message</code></strong> <i>String</i>
 
 </details>
 
 ---
 
-**`nickname`** _String_
+**`nickname`** *String*
 
 Optional nickname to describe the phone, settable through Seam.
 
+
+
+
 ---
 
-**`warnings`** _List_ _of Objects_
+**`warnings`** *List* *of Objects*
 
 Warnings associated with the phone.
+
+
 
 <details>
   <summary>Child Object Properties</summary>
 <strong><code>message</code></strong> <i>String</i>
 
-<strong>
-  <code>warning_code</code>
-</strong>
-<i>String</i>
+<strong><code>warning_code</code></strong> <i>String</i>
 
 </details>
 
 ---
 
-**`workspace_id`** _UUID_
+**`workspace_id`** *UUID*
 
 ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.
 
+
+
+
 ---
+
 
 ## phone.properties
 
-**`assa_abloy_credential_service_metadata`** _Object_
+**`assa_abloy_credential_service_metadata`** *Object*
 
 ASSA ABLOY Credential Service metadata for the phone.
+
+
 
 <details>
   <summary>Child Properties</summary>
 
-- <strong>
-    <code>endpoints</code>
-  </strong>
-  <i>List</i> <i>of Objects</i>
+  - <strong><code>endpoints</code></strong> <i>List</i> <i>of Objects</i>
+  
+    Endpoints associated with the phone.
 
-  Endpoints associated with the phone.
-
-- <strong>
-    <code>endpoint_id</code>
-  </strong>
-  <i>String</i>
+- <strong><code>endpoint_id</code></strong> <i>String</i>
 
   ID of the associated endpoint.
 
-- <strong>
-    <code>is_active</code>
-  </strong>
-  <i>Boolean</i>
+
+- <strong><code>is_active</code></strong> <i>Boolean</i>
 
   Indicated whether the endpoint is active.
-  - <strong>
-      <code>has_active_endpoint</code>
-    </strong>
-    <i>Boolean</i>
 
+
+  - <strong><code>has_active_endpoint</code></strong> <i>Boolean</i>
+  
     Indicates whether the credential service has active endpoints associated with the phone.
 
 </details>
 
 ---
 
-**`salto_space_credential_service_metadata`** _Object_
+**`salto_space_credential_service_metadata`** *Object*
 
 Salto Space credential service metadata for the phone.
+
+
 
 <details>
   <summary>Child Properties</summary>
 
-- <strong>
-    <code>has_active_phone</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether the credential service has an active associated phone.
+  - <strong><code>has_active_phone</code></strong> <i>Boolean</i>
+  
+    Indicates whether the credential service has an active associated phone.
 
 </details>
 
 ---
+
 
 ## Events
 
@@ -199,69 +210,52 @@ A phone device was deactivated.
 
 <summary>Properties</summary>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_custom_metadata</code>
-</strong>
-<i>Record</i>
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
 
-Custom metadata of the device; present when device_id is provided.
+  Custom metadata of the device; present when device_id is provided.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the affected phone device.
+  ID of the affected phone device.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `phone.deactivated`
+  Value: `phone.deactivated`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 ## Endpoints
 
+
 [**`/phones/deactivate`**](./deactivate.md)
 
 Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).
+
 
 [**`/phones/get`**](./get.md)
 
 Returns a specified [phone](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity).
 
+
 [**`/phones/list`**](./list.md)
 
 Returns a list of all [phones](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
+
+

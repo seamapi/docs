@@ -1,5 +1,5 @@
 ---
-title: 'Get an Unmanaged Device'
+title: "Get an Unmanaged Device"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -12,6 +12,7 @@ An unmanaged device has a limited set of visible properties and a subset of supp
 
 You must specify either `device_id` or `name`.
 
+
 <Tabs>
 <Tab title="JavaScript">
 
@@ -21,8 +22,8 @@ Returns a specified unmanaged device, using an ID.
 
 ```javascript
 await seam.devices.unmanaged.get({
-  device_id: '9f871e41-0ce4-4825-8d99-9653df4cd525',
-})
+  device_id: "9f871e41-0ce4-4825-8d99-9653df4cd525",
+});
 ```
 
 #### Output:
@@ -69,7 +70,6 @@ await seam.devices.unmanaged.get({
   "workspace_id": "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -137,7 +137,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -194,7 +193,6 @@ UnmanagedDevice(
     workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -263,7 +261,6 @@ seam.devices.unmanaged.get(device_id: "9f871e41-0ce4-4825-8d99-9653df4cd525")
   "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -330,7 +327,6 @@ $seam->devices->unmanaged->get(
     "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -387,10 +383,10 @@ seam devices unmanaged get --device_id "9f871e41-0ce4-4825-8d99-9653df4cd525"
   "workspace_id": "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -399,26 +395,25 @@ seam devices unmanaged get --device_id "9f871e41-0ce4-4825-8d99-9653df4cd525"
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_
+**`device_id`** *String*
 
 ID of the unmanaged device that you want to get.
 
 ---
 
-**`name`** _String_
+**`name`** *String*
 
 Name of the unmanaged device that you want to get.
 
 ---
+
 
 ## Response
 
@@ -428,8 +423,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -474,13 +472,13 @@ Returns:
   "workspace_id": "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
+
 
 ### Get an unmanaged device by name
 
@@ -489,10 +487,12 @@ Returns a specified unmanaged device, using a name.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
-await seam.devices.unmanaged.get({ name: 'My Unmanaged Device' })
+await seam.devices.unmanaged.get({ name: "My Unmanaged Device" });
 ```
 
 #### Output:
@@ -539,10 +539,11 @@ await seam.devices.unmanaged.get({ name: 'My Unmanaged Device' })
   "workspace_id": "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -605,10 +606,11 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -660,10 +662,11 @@ UnmanagedDevice(
     workspace_id="3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -727,10 +730,11 @@ seam.devices.unmanaged.get(name: "My Unmanaged Device")
   "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -790,10 +794,11 @@ $seam->devices->unmanaged->get(name: "My Unmanaged Device");
     "workspace_id" => "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -845,7 +850,6 @@ seam devices unmanaged get --name "My Unmanaged Device"
   "workspace_id": "3cd6ba1c-8a60-4c24-b487-07bf6c0b755b"
 }
 ```
-
 </Tab>
 
 </Tabs>

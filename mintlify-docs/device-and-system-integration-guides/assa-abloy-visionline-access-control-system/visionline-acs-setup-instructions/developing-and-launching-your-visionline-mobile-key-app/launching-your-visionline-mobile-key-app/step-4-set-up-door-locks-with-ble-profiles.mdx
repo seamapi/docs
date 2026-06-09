@@ -1,7 +1,8 @@
 ---
-title: 'Step 4: Set up Door Locks with BLE Profiles'
-description: 'Learn how to set up door locks with BLE profiles when launching your Visionline mobile key app into production.'
+title: "Step 4: Set up Door Locks with BLE Profiles"
+description: "Learn how to set up door locks with BLE profiles when launching your Visionline mobile key app into production."
 ---
+
 
 In the Visionline application, set up all door locks for your Visionline mobile key integration.
 
@@ -12,11 +13,10 @@ Note that for common doors, guest entrance doors and elevator reader relays auto
 For guest common doors, you must grant guest access manually, such as for a gym door or parking entrance.
 
 <Info>
-  These instructions use Visionline 1.27. If you are using Visionline 1.28, you
-  may notice differences in a few field names.
+These instructions use Visionline 1.27. If you are using Visionline 1.28, you may notice differences in a few field names.
 </Info>
 
----
+***
 
 ## Set up Guest Room Locks
 
@@ -49,55 +49,17 @@ When defining guest room doors, first create a door area and then create a door 
    11. When you are done adding door sets, in the **Door details** window, click **Close**.
    12. In the **Doors** window, click **Close**.
 
----
+***
 
 ## Set up Common Door Locks
 
 When defining common doors, make sure to choose the appropriate door type. Visionline door types include the following, among others:
 
-<table>
-  <thead>
-    <tr>
-      <th width='210'>Door Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Guest entrance</td>
-      <td>
-        Specify a set of guest doors to give automatic access to guests within
-        this range. You can use this door type for common entrances.
-      </td>
-    </tr>
-    <tr>
-      <td>Guest common</td>
-      <td>
-        You must grant access to doors of this type explicitly to specific guest
-        credentials. You can use this door type for gym doors, parking
-        entrances, and so on.
-      </td>
-    </tr>
-    <tr>
-      <td>Elevator reader relay</td>
-      <td>
-        This door type represents a floor button or relay within an elevator.
-        Specify a set of guest doors to give automatic access to guests within
-        this range. Assign each elevator reader relay to the corresponding
-        "slot" in an elevator reader definition.
-      </td>
-    </tr>
-    <tr>
-      <td>Elevator reader</td>
-      <td>
-        The door type serves as an organization mechanism for sets of elevator
-        reader relays.
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table><thead><tr><th width="210">Door Type</th><th>Description</th></tr></thead><tbody><tr><td>Guest entrance</td><td>Specify a set of guest doors to give automatic access to guests within this range. You can use this door type for common entrances.</td></tr><tr><td>Guest common</td><td>You must grant access to doors of this type explicitly to specific guest credentials. You can use this door type for gym doors, parking entrances, and so on.</td></tr><tr><td>Elevator reader relay</td><td>This door type represents a floor button or relay within an elevator. Specify a set of guest doors to give automatic access to guests within this range. Assign each elevator reader relay to the corresponding "slot" in an elevator reader definition.</td></tr><tr><td>Elevator reader</td><td>The door type serves as an organization mechanism for sets of elevator reader relays.</td></tr></tbody></table>
 
-<Info>For more information about door types, see the Visionline Help.</Info>
+<Info>
+For more information about door types, see the Visionline Help.
+</Info>
 
 To define a common door, first create a door area and then create a door of the appropriate type.
 

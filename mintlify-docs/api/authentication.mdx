@@ -1,6 +1,7 @@
 ---
-title: 'Authentication'
+title: "Authentication"
 ---
+
 
 Export your API key as an environment variable. Seam client libraries automatically pick up this exported key. For example:
 
@@ -16,16 +17,16 @@ Next, run the following code to confirm that you are correctly authenticated:
 **Code:**
 
 ```javascript
-import { Seam } from 'seam'
+import { Seam } from "seam";
 
-const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
+const seam = new Seam(); // Seam automatically uses your exported SEAM_API_KEY.
 
 const checkAuth = async () => {
-  const workspace = await seam.workspaces.get()
-  console.log(workspace)
+  const workspace = await seam.workspaces.get();
+  console.log(workspace);
 }
 
-checkAuth()
+checkAuth();
 ```
 
 **Output:**
@@ -37,9 +38,8 @@ checkAuth()
   company_name: 'Acme',
   connect_partner_name: 'Acme',
   is_sandbox": true
-}
+} 
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -69,7 +69,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -96,7 +95,6 @@ Workspace(
   is_sandbox=True
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -117,15 +115,14 @@ puts workspace.inspect
 
 ```
 <
-  Seam::Workspace:0x0070328
+  Seam::Workspace:0x0070328                                          
     workspace_id="00000000-0000-0000-0000-000000000000"
     name="Sandbox"
-    company_name="Acme"
+    company_name="Acme"      
     connect_partner_name="Acme"
     is_sandbox=true
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -154,7 +151,6 @@ echo json_encode($workspace, JSON_PRETTY_PRINT);
   "is_sandbox": true
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -182,6 +178,6 @@ Console.WriteLine(workspace);
   "is_sandbox": true
 }
 ```
-
 </Tab>
 </Tabs>
+

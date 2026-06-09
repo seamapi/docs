@@ -1,109 +1,28 @@
 ---
-title: 'Displaying Device Power Status'
+title: "Displaying Device Power Status"
 description: "You can display the power status of your end users' devices in your app."
 ---
 
-<figure>
-  <img
-    src='/images/seam-component-device-power-status-display-example.png'
-    alt='Display the power status of your end users&#x27; devices in your app.'
-  />
-  <figcaption></figcaption>
-</figure>
+
+<figure><img src="/images/seam-component-device-power-status-display-example.png" alt="Display the power status of your end users&#x27; devices in your app." /><figcaption></figcaption></figure>
 
 You can display the power status of your end users' devices in your app, including whether the device is wired or battery-powered. Further, for battery-powered devices, you can also display information about the battery status, such as the battery charge level and the battery status.
 
 To display this information, use either of the following Seam mechanisms:
 
-- [Use the `properties.has_direct_power`, and `properties.battery` properties of the `device` object.](displaying-device-power-status.md#get-device-power-status-using-device-properties)
-- [Use the `device.low_battery` and `device.battery_status_changed` events.](displaying-device-power-status.md#get-device-power-status-using-battery-related-events)
+* [Use the `properties.has_direct_power`, and `properties.battery` properties of the `device` object.](displaying-device-power-status.md#get-device-power-status-using-device-properties)
+* [Use the `device.low_battery` and `device.battery_status_changed` events.](displaying-device-power-status.md#get-device-power-status-using-battery-related-events)
 
 ## Get Device Power Status Using Device Properties
 
 Seam polls connected devices and accounts every ten minutes and updates the following device properties accordingly:
 
-<table>
-  <thead>
-    <tr>
-      <th width='320'>Property</th>
-      <th width='137'>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>properties.has_direct_power</code>
-      </td>
-      <td>Boolean</td>
-      <td>
-        Indicates whether the device has direct power, that is, whether the
-        device is wired
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>properties.battery</code>
-      </td>
-      <td>Object</td>
-      <td>
-        Battery information, including <code>level</code> and{' '}
-        <code>status</code>
-        <br />
-        If the device is offline, Seam does not return this property.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>properties.battery.level</code>
-      </td>
-      <td>Number (0-1)</td>
-      <td>
-        Battery level of the device as a decimal value between 0 and 1,
-        inclusive
-        <br />
-        If the device is offline, Seam does not return this property.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>properties.battery.status</code>
-      </td>
-      <td>Enum (string)</td>
-      <td>
-        <p>
-          Current status of the battery charge level.
-          <br />
-          If the device is offline, Seam does not return this property.
-        </p>
-        <p>Values are:</p>
-        <p>
-          <code>critical</code>: Indicates an extremely low level, suggesting
-          imminent shutdown or an urgent need for charging.
-        </p>
-        <p>
-          <code>low</code>: Signifies that the battery is under the preferred
-          threshold and should be charged soon.
-        </p>
-        <p>
-          <code>good</code>: Denotes a satisfactory charge level, adequate for
-          normal use without the immediate need for recharging.
-        </p>
-        <p>
-          <code>full</code>: Represents a battery that is fully charged,
-          providing the maximum duration of usage.
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table><thead><tr><th width="320">Property</th><th width="137">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>properties.has_direct_power</code></td><td>Boolean</td><td>Indicates whether the device has direct power, that is, whether the device is wired</td></tr><tr><td><code>properties.battery</code></td><td>Object</td><td>Battery information, including <code>level</code> and <code>status</code><br />If the device is offline, Seam does not return this property.</td></tr><tr><td><code>properties.battery.level</code></td><td>Number (0-1)</td><td>Battery level of the device as a decimal value between 0 and 1, inclusive<br />If the device is offline, Seam does not return this property.</td></tr><tr><td><code>properties.battery.status</code></td><td>Enum (string)</td><td><p>Current status of the battery charge level.<br />If the device is offline, Seam does not return this property.</p><p>Values are:</p><p><code>critical</code>: Indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging.</p><p><code>low</code>: Signifies that the battery is under the preferred threshold and should be charged soon.</p><p><code>good</code>: Denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging.</p><p><code>full</code>: Represents a battery that is fully charged, providing the maximum duration of usage.</p></td></tr></tbody></table>
 
 Use a [Get Device](https://docs.seam.co/latest/api/devices/get) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
 
 <Info>
-  You can also use the prebuilt [device details Seam
-  Component](../../ui-components/overview/react-components/device-details.md),
-  which includes a device power status display.
+You can also use the prebuilt [device details Seam Component](../../ui-components/overview/react-components/device-details.md), which includes a device power status display.
 </Info>
 
 <Tabs>
@@ -112,15 +31,13 @@ Use a [Get Device](https://docs.seam.co/latest/api/devices/get) request to retri
 **Request:**
 
 ```javascript
-const device = await seam.devices.get({
-  device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
-})
+const device = await seam.devices.get({device_id: "36cf1a96-196d-41b0-9804-88154387f1f9"});
 if (device.properties.has_direct_power == true) {
-  console.log('Power Source: Wired')
+  console.log("Power Source: Wired");
 } else {
-  console.log('Power Source: Battery-powered')
-  console.log('Battery Level: ' + device.properties.battery.level.toString())
-  console.log('Battery Status: ' + device.properties.battery.status)
+  console.log("Power Source: Battery-powered");
+  console.log("Battery Level: " + device.properties.battery.level.toString());
+  console.log("Battery Status: " + device.properties.battery.status);
 }
 ```
 
@@ -131,7 +48,6 @@ Power Source: Battery-powered
 Battery Level: 0.9999532347993827
 Battery Status: full
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -160,7 +76,6 @@ Power Source: Battery-powered
 Power Source: Battery Level: 0.9999532347993827
 Power Source: Battery Status: full
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -184,7 +99,6 @@ else:
 'Battery Level: 0.9999532347993827'
 'Battery Status: full'
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -209,7 +123,6 @@ Power Source: Battery-powered
 Battery Level: 0.9999532347993827
 Battery Status: full
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -235,7 +148,6 @@ Power Source: Battery-powered
 Battery Level: 0.99995323479938
 Battery Status: full
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -264,7 +176,6 @@ Power Source: Battery-powered
 Battery Level: 0.9999532
 Battery Status: Full
 ```
-
 </Tab>
 </Tabs>
 
@@ -272,8 +183,8 @@ Battery Status: Full
 
 Seam generates the following battery-related events:
 
-- `device.low_battery`
-- `device.battery_status_changed`
+* `device.low_battery`
+* `device.battery_status_changed`
 
 You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../../developer-tools/webhooks.md) and then display the corresponding status in your app.
 
@@ -281,63 +192,7 @@ You can retrieve these events using a [List Events](https://docs.seam.co/latest/
 
 When issuing a [List Events](https://docs.seam.co/latest/api/events/list) request to retrieve [`device.low_battery`](https://docs.seam.co/latest/api/events/) or [`device.battery_status_changed`](https://docs.seam.co/latest/api/events/) events for a specific device, include the following parameters:
 
-<table>
-  <thead>
-    <tr>
-      <th width='162'>Parameter</th>
-      <th width='161'>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>device_id</code>
-      </td>
-      <td>String (UUID)</td>
-      <td>
-        ID of the device for which you want to retrieve{' '}
-        <code>device.connected</code> or <code>device.disconnected</code> events
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>event_type</code>
-      </td>
-      <td>String</td>
-      <td>
-        Event type that you want to retrieve, that is,{' '}
-        <code>device.connected</code> or <code>device.disconnected</code>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>since</code>
-      </td>
-      <td>String</td>
-      <td>
-        Desired starting event generation date and time
-        <br />
-        You must include <code>since</code> or <code>between</code>.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>between</code>
-      </td>
-      <td>Set of two strings</td>
-      <td>
-        Desired starting and ending event generation dates and times
-        <br />
-        For example:
-        <br />
-        <code>["2024-01-01T00:00:00Z", "2024-02-01T00:00:00Z"]</code>
-        <br />
-        You must include <code>between</code> or <code>since</code>.
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table><thead><tr><th width="162">Parameter</th><th width="161">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>device_id</code></td><td>String (UUID)</td><td>ID of the device for which you want to retrieve <code>device.connected</code> or <code>device.disconnected</code> events</td></tr><tr><td><code>event_type</code></td><td>String</td><td>Event type that you want to retrieve, that is, <code>device.connected</code> or <code>device.disconnected</code></td></tr><tr><td><code>since</code></td><td>String</td><td>Desired starting event generation date and time<br />You must include <code>since</code> or <code>between</code>.</td></tr><tr><td><code>between</code></td><td>Set of two strings</td><td>Desired starting and ending event generation dates and times<br />For example:<br /><code>["2024-01-01T00:00:00Z", "2024-02-01T00:00:00Z"]</code><br />You must include <code>between</code> or <code>since</code>.</td></tr></tbody></table>
 
 The following example uses the List Events request to retrieve all `device.battery_status_changed` events for a specific device since January 1, 2024:
 
@@ -348,9 +203,9 @@ The following example uses the List Events request to retrieve all `device.batte
 
 ```javascript
 const device_battery_status_changed_events = await seam.events.list({
-  device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
-  event_type: 'device.battery_status_changed',
-  since: '2024-01-01T00:00:00Z',
+  device_id: "36cf1a96-196d-41b0-9804-88154387f1f9",
+  event_type: "device.battery_status_changed",
+  since: "2024-01-01T00:00:00Z"
 })
 console.log(device_battery_status_changed_events)
 ```
@@ -360,17 +215,16 @@ console.log(device_battery_status_changed_events)
 ```json
 [
   {
-    "event_id": "de4314a2-903d-53e9-bb5e-ded5d19ad074",
-    "device_id": "36cf1a96-196d-41b0-9804-88154387f1f9",
-    "event_type": "device.battery_status_changed",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-01T02:25:10.158Z",
-    "occurred_at": "2024-01-01T02:25:10.158Z",
-    "connected_account_id": "c1413928-f527-4e12-abf9-d5e18d92dd33"
+    event_id: 'de4314a2-903d-53e9-bb5e-ded5d19ad074',
+    device_id: '36cf1a96-196d-41b0-9804-88154387f1f9',
+    event_type: 'device.battery_status_changed',
+    workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+    created_at: '2024-01-01T02:25:10.158Z',
+    occurred_at: '2024-01-01T02:25:10.158Z',
+    connected_account_id: 'c1413928-f527-4e12-abf9-d5e18d92dd33'
   }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -409,7 +263,6 @@ curl -X 'GET' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -436,7 +289,6 @@ pprint(device_battery_status_changed_events)
   'occurred_at': '2024-01-01T02:25:10.158Z',
   'workspace_id': '398d80b7-3f96-47c2-b85a-6f8ba21d07be'}]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -462,7 +314,6 @@ puts device_battery_status_changed_events.inspect
   workspace_id="398d80b7-3f96-47c2-b85a-6f8ba21d07be"
   created_at=2024-01-01 02:25:10.158Z]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -481,18 +332,8 @@ echo json_encode($device_battery_status_changed_events), "\n";
 **Response:**
 
 ```json
-[
-  {
-    "event_id": "de4314a2-903d-53e9-bb5e-ded5d19ad074",
-    "device_id": "36cf1a96-196d-41b0-9804-88154387f1f9",
-    "event_type": "device.battery_status_changed",
-    "workspace_id": "398d80b7-3f96-47c2-b85a-6f8ba21d07be",
-    "created_at": "2024-01-01T02:25:10.158Z",
-    "occurred_at": "2024-01-01T02:25:10.158Z"
-  }
-]
+[{"event_id":"de4314a2-903d-53e9-bb5e-ded5d19ad074","device_id":"36cf1a96-196d-41b0-9804-88154387f1f9","event_type":"device.battery_status_changed","workspace_id":"398d80b7-3f96-47c2-b85a-6f8ba21d07be","created_at":"2024-01-01T02:25:10.158Z","occurred_at":"2024-01-01T02:25:10.158Z"}]
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -523,7 +364,6 @@ foreach (var device_battery_status_changed_event in device_battery_status_change
   "occurred_at": "2024-01-01T02:25:10.158Z"
 }
 ```
-
 </Tab>
 </Tabs>
 

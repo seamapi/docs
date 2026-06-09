@@ -1,7 +1,8 @@
 ---
-title: 'Retrieving Guest and Common Entrances'
-description: 'Learn how to fetch various types of entrances to help provide more context for your app users.'
+title: "Retrieving Guest and Common Entrances"
+description: "Learn how to fetch various types of entrances to help provide more context for your app users."
 ---
+
 
 You can retrieve lists of entrances. You may want to display entrances categorized by type to provide more context to your app users. To fetch only guest or common entrances, filter using the `visionline_metadata.door_category` property for entrances. The value for this property is set within the Visionline ACS.
 
@@ -17,22 +18,20 @@ all_entrances = seam.acs.entrances.list(
 )
 
 # Filter for entrances with the guest entrance category type.
-
 guest_entrance_category_types = ["guest"]
 
 def filter_entrances_by_profile_type(entrance_list, category_types):
-guest_entrances = []
-for entrance in entrance_list:
-if entrance["visionline_metadata"]["door_category"] in category_types:
-guest_entrances.append(entrance)
-return guest_entrances
+    guest_entrances = []
+    for entrance in entrance_list:
+        if entrance["visionline_metadata"]["door_category"] in category_types:
+            guest_entrances.append(entrance)
+    return guest_entrances
 
 guest_entrances = filter_entrances_by_profile_type(
-all_entrances,
-guest_entrance_category_types
+    all_entrances,
+    guest_entrance_category_types
 )
-
-````
+```
 </Tab>
 </Tabs>
 
@@ -63,7 +62,6 @@ common_entrances = filter_entrances_by_profile_type(
     all_entrances,
     common_entrance_category_types
 )
-````
-
+```
 </Tab>
 </Tabs>

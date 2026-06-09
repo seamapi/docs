@@ -1,13 +1,16 @@
 ---
-title: 'Get a Lock'
+title: "Get a Lock"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-<Warning>**Deprecated**. Use `/devices/get` instead.</Warning>
+<Warning>
+**Deprecated**. Use `/devices/get` instead.
+</Warning>
 
 Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
+
 
 <details>
 
@@ -16,26 +19,25 @@ Returns a specified [lock](https://docs.seam.co/latest/capability-guides/smart-l
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_
+**`device_id`** *String*
 
 ID of the lock that you want to get.
 
 ---
 
-**`name`** _String_
+**`name`** *String*
 
 Name of the lock that you want to get.
 
 ---
+
 
 ## Response
 
@@ -45,8 +47,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -102,6 +107,5 @@ Returns:
   "workspace_id": "5d7f2e1a-9c8b-4f3e-8d2c-1a0b9e8f7c6d"
 }
 ```
-
 </Tab>
 </Tabs>

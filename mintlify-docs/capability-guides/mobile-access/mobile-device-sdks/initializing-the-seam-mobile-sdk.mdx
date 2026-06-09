@@ -1,5 +1,5 @@
 ---
-title: 'Initializing the Seam Mobile SDK'
+title: "Initializing the Seam Mobile SDK"
 ---
 
 ## 1. Install the Seam SDK
@@ -7,9 +7,7 @@ title: 'Initializing the Seam Mobile SDK'
 The Seam SDK is [available for download on request](mailto:support@seam.co) and is fully documented. See the Seam [Android](https://android.seam.vc/) and [iOS](https://ios.seam.vc/documentation/seamsdk/seam) SDK reference documentation.
 
 <Info>
-  You must also use the Seam API to perform server-side actions. Consequently,
-  [install a Seam server-side SDK](https://docs.seam.co/latest/api/installation)
-  in the language of your choice if you have not done so already.
+You must also use the Seam API to perform server-side actions. Consequently, [install a Seam server-side SDK](https://docs.seam.co/latest/api/installation) in the language of your choice if you have not done so already.
 </Info>
 
 <Tabs>
@@ -76,51 +74,24 @@ repositories {
 }
 ```
 
----
+***
 
 #### Add your GitHub credentials
 
 Gradle requires two credentials to download the Seam SDK packages from GitHub:
 
-<table>
-  <thead>
-    <tr>
-      <th width='152.2001953125'>Credential</th>
-      <th>Description</th>
-      <th>Where to get it</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>githubUsername</code>
-      </td>
-      <td>Your GitHub username.</td>
-      <td>Use the same username you use to log in to GitHub.</td>
-    </tr>
-    <tr>
-      <td>
-        <code>githubPat</code>
-      </td>
-      <td>
-        Personal Access Token (PAT) with the <code>read:packages</code> scope
-      </td>
-      <td>Follow the steps below to generate it.</td>
-    </tr>
-  </tbody>
-</table>
+<table><thead><tr><th width="152.2001953125">Credential</th><th>Description</th><th>Where to get it</th></tr></thead><tbody><tr><td><code>githubUsername</code></td><td>Your GitHub username.</td><td>Use the same username you use to log in to GitHub.</td></tr><tr><td><code>githubPat</code></td><td>Personal Access Token (PAT) with the <code>read:packages</code> scope</td><td>Follow the steps below to generate it.</td></tr></tbody></table>
 
 **To retrieve your credentials**
 
 1. Ask Seam to add your GitHub account as a collaborator to the private repository:\
    [https://github.com/seampkg/seam-mobile-sdk](https://github.com/seampkg/seam-mobile-sdk)
-2. Once you’ve been added, go to your GitHub account:
+2.  Once you’ve been added, go to your GitHub account:
 
-   **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
-
+    **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
 3. Select **Generate new token (classic)** and choose:
-   - Expiration: as needed (e.g., 90 days or “No expiration” if permitted)
-   - Scopes: check only `read:packages`
+   * Expiration: as needed (e.g., 90 days or “No expiration” if permitted)
+   * Scopes: check only `read:packages`
 4. Copy the generated token. This is your `githubPat` value.
 
 Once you have both values, create a `local.properties` file in your project root:
@@ -134,12 +105,12 @@ githubPat=YOUR_GITHUB_CLASSIC_PAT
 <Info>
 Important:
 
-- `local.properties` is listed in `.gitignore` by default. Never commit this file to version control.
-- PATs are private credentials--treat them like passwords.
-- If your token expires or you lose access,
-  </Info>
+* `local.properties` is listed in `.gitignore` by default. Never commit this file to version control.
+* PATs are private credentials--treat them like passwords.
+* If your token expires or you lose access,
+</Info>
 
----
+***
 
 #### Add Seam SDK dependencies
 
@@ -183,7 +154,6 @@ dependencies {
     // ...
 }
 ```
-
 </Tab>
 
 <Tab title="iOS Swift">
@@ -218,11 +188,10 @@ targets: [
     )
 ]
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## 2. Implement any Manufacturer- and Mobile OS-Specific Requirements
 
@@ -232,13 +201,13 @@ Note the following manufacturer- and OS-specific requirements:
 
 See the [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for the access control system or device for which you are planning to develop. Further, you may need to register for developer access with the ACS that you have chosen to use.
 
----
+***
 
 ### iOS Requirement
 
 While not required, you can optionally request the `com.apple.developer.passkit.pass-presentation-suppression` entitlement from the Apple Developer portal. This entitlement prevents Apple Wallet from appearing when scanning for Bluetooth low energy (BLE) or similar locks, improving the unlock experience.
 
----
+***
 
 ## 3. Configure a User Identity for your App User and Generate a Client Session Token
 
@@ -254,18 +223,17 @@ Then, using the user identity, create a [client session](../../../core-concepts/
 ```javascript
 // Create the user identity.
 const userIdentity = await seam.userIdentities.create({
-  email_address: 'jane@example.com',
-})
+    email_address: "jane@example.com"
+});
 
 // Create the client session.
 const clientSession = await seam.clientSessions.create({
-  user_identity_ids: [userIdentity.user_identity_id],
-})
+    user_identity_ids: [userIdentity.user_identity_id]
+});
 
 // Use this token to launch your mobile controller.
-const token = clientSession.token
+const token = clientSession.token;
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -280,7 +248,7 @@ user_identity=$(curl -X 'POST' \
   -d '{
         "email_address": "jane@example.com"
   }')
-
+  
 # Get the user identity ID.
 user_identity_id=$(echo $user_identity | jq -r '.user_identity.user_identity_id')
 
@@ -294,11 +262,10 @@ client_session=$(curl -X 'POST' \
         \"user_identity_ids\": [\"$user_identity_id\"]
   }")
 
-# Get the resulting client session token and
+# Get the resulting client session token and 
 # use this token to launch your mobile controller.
 token=$(echo $client_session | jq -r '.client_session.token')
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -317,7 +284,6 @@ client_session = seam.client_sessions.create(
 # Use this token to launch your mobile controller.
 token = client_session.token
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -336,7 +302,6 @@ client_session = client.client_sessions.create(
 # Use this token to launch your mobile controller.
 token = client_session.token
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -355,11 +320,10 @@ $client_session = $seam->client_sessions->create(
 // Use this token to launch your mobile controller.
 $token = $client_session->token;
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## 4. Initialize the Mobile SDK with the Client Session Token
 
@@ -376,19 +340,18 @@ import SeamSDK
 
 // Initialize the Mobile SDK with the client session token (CST).
 Task {
-do {
-// Bootstrap the SDK with the CST from your login flow.
-try Seam.initialize(clientSessionToken: token)
-// Start credential sync and background polling.
-try await Seam.shared.activate()
-print("Seam SDK is now active.")
-} catch let error as SeamError {
-// Handle SDK-specific initialization errors (invalid token, etc).
-showAlert(title: "Initialization Failed", message: error.localizedDescription)
+    do {
+        // Bootstrap the SDK with the CST from your login flow.
+        try Seam.initialize(clientSessionToken: token)
+        // Start credential sync and background polling.
+        try await Seam.shared.activate()
+        print("Seam SDK is now active.")
+    } catch let error as SeamError {
+        // Handle SDK-specific initialization errors (invalid token, etc).
+        showAlert(title: "Initialization Failed", message: error.localizedDescription)
+    }
 }
-}
-
-````
+```
 </Tab>
 
 <Tab title="Android Kotlin">
@@ -415,8 +378,7 @@ try {
         }
     }
 }
-````
-
+```
 </Tab>
 </Tabs>
 
@@ -446,21 +408,21 @@ func startMonitoringCredentialErrors() {
 
 **Credential error types**
 
-- `awaitingLocalCredential`: Waiting for a local credential to become available.
-- `expired`: The credential has expired and is no longer valid.
-- `userInteractionRequired(action)`: User interaction is required to resolve the issue; inspect action for details.
-- `unsupportedDevice`: The current device is not supported.
-- `contactSeamSupport`: Configuration error requiring developer attention.
-- `unknown`: An unclassified or unexpected credential error occurred.
+* `awaitingLocalCredential`: Waiting for a local credential to become available.
+* `expired`: The credential has expired and is no longer valid.
+* `userInteractionRequired(action)`: User interaction is required to resolve the issue; inspect action for details.
+* `unsupportedDevice`: The current device is not supported.
+* `contactSeamSupport`: Configuration error requiring developer attention.
+* `unknown`: An unclassified or unexpected credential error occurred.
 
 **userInteractionRequired actions**
 
-- `completeOtpAuthorization(otpUrl:)`: The user must complete OTP authorization via the provided URL.
-- `enableInternet`: The user must enable internet connectivity.
-- `enableBluetooth`: The user must enable Bluetooth on the device.
-- `grantBluetoothPermission`: The user must grant Bluetooth permission to the app.
-- `appRestartRequired`: The user must restart the app to resolve the issue.
-  </Tab>
+* `completeOtpAuthorization(otpUrl:)`: The user must complete OTP authorization via the provided URL.
+* `enableInternet`: The user must enable internet connectivity.
+* `enableBluetooth`: The user must enable Bluetooth on the device.
+* `grantBluetoothPermission`: The user must grant Bluetooth permission to the app.
+* `appRestartRequired`: The user must restart the app to resolve the issue.
+</Tab>
 
 <Tab title="Android Kotlin">
 **Observe credential errors**
@@ -496,17 +458,17 @@ fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
 
 **Credential error types**
 
-- `Loading`: The system is waiting for a local credential to become available.
-- `Expired`: The credential has expired and is no longer valid.
-- `UserInteractionRequired(val interaction: SeamRequiredUserInteraction)`: User interaction is required to resolve the issue; check interaction for specifics.
-- `Unknown`: An unclassified or unexpected credential error occurred.
+* `Loading`: The system is waiting for a local credential to become available.
+* `Expired`: The credential has expired and is no longer valid.
+* `UserInteractionRequired(val interaction: SeamRequiredUserInteraction)`: User interaction is required to resolve the issue; check interaction for specifics.
+* `Unknown`: An unclassified or unexpected credential error occurred.
 
 **userInteractionRequired actions**
 
-- `CompleteOtpAuthorization(val otpUrl: String)`: The user must complete OTP authorization via the provided URL.
-- `EnableInternet`: The user must enable internet connectivity.
-- `EnableBluetooth`: The user must enable Bluetooth on the device.
-- `GrantPermissions(val permissions: List<String>)`: The user must grant the required permissions.
-- `AppRestartRequired`: The user must restart the app to resolve the issue.
-  </Tab>
+* `CompleteOtpAuthorization(val otpUrl: String)`: The user must complete OTP authorization via the provided URL.
+* `EnableInternet`: The user must enable internet connectivity.
+* `EnableBluetooth`: The user must enable Bluetooth on the device.
+* `GrantPermissions(val permissions: List<String>)`: The user must grant the required permissions.
+* `AppRestartRequired`: The user must restart the app to resolve the issue.
+</Tab>
 </Tabs>

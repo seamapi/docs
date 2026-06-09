@@ -1,11 +1,12 @@
 ---
-title: 'Unlock a Lock'
+title: "Unlock a Lock"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Unlocks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,8 +17,8 @@ Unlocks a lock.
 
 ```javascript
 await seam.locks.unlockDoor({
-  device_id: 'be047431-bf00-4da6-9fc7-0a7796a9b57f',
-})
+  device_id: "be047431-bf00-4da6-9fc7-0a7796a9b57f",
+});
 ```
 
 #### Output:
@@ -31,7 +32,6 @@ await seam.locks.unlockDoor({
   "status": "success"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -63,7 +63,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -87,7 +86,6 @@ ActionAttempt(
     status="success",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -113,7 +111,6 @@ seam.locks.unlock_door(device_id: "be047431-bf00-4da6-9fc7-0a7796a9b57f")
   "status" => "success",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -137,7 +134,6 @@ $seam->locks->unlock_door(device_id: "be047431-bf00-4da6-9fc7-0a7796a9b57f");
     "status" => "success",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -161,10 +157,10 @@ seam locks unlock-door --device_id "be047431-bf00-4da6-9fc7-0a7796a9b57f"
   "status": "success"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -173,20 +169,19 @@ seam locks unlock-door --device_id "be047431-bf00-4da6-9fc7-0a7796a9b57f"
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the lock that you want to unlock.
 
 ---
+
 
 ## Response
 
@@ -196,8 +191,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -208,6 +206,5 @@ Returns:
   "status": "success"
 }
 ```
-
 </Tab>
 </Tabs>

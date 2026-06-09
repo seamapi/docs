@@ -1,17 +1,10 @@
 ---
-title: 'Get started with ControlByWeb Devices'
-description: 'Learn how to connect and control your ControlByWeb device with the Seam API.'
+title: "Get started with ControlByWeb Devices"
+description: "Learn how to connect and control your ControlByWeb device with the Seam API."
 ---
 
-<figure>
-  <img
-    src='/images/guides/controlbyweb-getting-started-guide-cover.jpg'
-    alt=''
-  />
-  <figcaption>
-    <p>ControlByWeb Devices</p>
-  </figcaption>
-</figure>
+
+<figure><img src="/images/guides/controlbyweb-getting-started-guide-cover.jpg" alt="" /><figcaption><p>ControlByWeb Devices</p></figcaption></figure>
 
 ## Overview
 
@@ -21,11 +14,11 @@ Seam provides a universal API to connect and control many brands of smart device
 
 Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
 
-- JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
-- Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
-- Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
-- PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
-- C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+* JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+* Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
+* Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
+* PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+* C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
 
 <Tabs>
 <Tab title="JavaScript">
@@ -33,7 +26,6 @@ Seam provides client libraries for many languages, such as JavaScript, Python, R
 ```bash
 npm i seam
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -42,7 +34,6 @@ npm i seam
 pip install seam
 # For some development environments, use pip3 in this command instead of pip.
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -50,7 +41,6 @@ pip install seam
 ```bash
 bundle add seam
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -58,13 +48,11 @@ bundle add seam
 ```bash
 composer require seamapi/seam
 ```
-
 </Tab>
 
 <Tab title="C#">
 
 Install using [nuget](https://www.nuget.org/packages/Seam).
-
 </Tab>
 </Tabs>
 
@@ -75,9 +63,7 @@ $ export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
 ```
 
 <Info>
-  This guide uses a Sandbox Workspace. Only virtual devices can be connected. If
-  you need to connect a real ControlByWeb device, use a non-sandbox workspace
-  and API key.
+This guide uses a Sandbox Workspace. Only virtual devices can be connected. If you need to connect a real ControlByWeb device, use a non-sandbox workspace and API key.
 </Info>
 
 ## 2 — Link ControlByWeb Account with Seam
@@ -103,7 +89,6 @@ console.log(connectWebview.login_successful) // false
 // Send the webview URL to your user
 console.log(connectWebview.url)
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -120,7 +105,6 @@ assert webview.login_successful is False
 # Send the webview URL to your user
 print(webview.url)
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -139,7 +123,6 @@ puts webview.login_successful # false
 # Send the webview URL to your user
 puts webview.url
 ```
-
 </Tab>
 </Tabs>
 
@@ -147,15 +130,10 @@ puts webview.url
 
 Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the ControlByWeb [sandbox test account](controlbyweb-relays-sample-data.md) credentials below:
 
-- **username:** jane
-- **password:** 1234
+* **username:** jane
+* **password:** 1234
 
-<figure>
-  <img src='/images/guides/controlbyweb-connect-flow-screens.jpg' alt='' />
-  <figcaption>
-    <p>Seam Connect Webview flow to connect ControlByWeb account with Seam</p>
-  </figcaption>
-</figure>
+<figure><img src="/images/guides/controlbyweb-connect-flow-screens.jpg" alt="" /><figcaption><p>Seam Connect Webview flow to connect ControlByWeb account with Seam</p></figcaption></figure>
 
 Confirm the Connect Webview was successful by querying its status:
 
@@ -169,7 +147,6 @@ const updatedWebview = await seam.connectWebviews.get(
 
 console.log(updatedWebview.login_successful) // true
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -179,7 +156,6 @@ updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_
 
 assert updated_webview.login_successful # true
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -189,7 +165,6 @@ updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_
 
 puts updated_webview.login_successful # true
 ```
-
 </Tab>
 </Tabs>
 
@@ -236,7 +211,6 @@ console.log(someLock)
 }
 */
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -271,7 +245,6 @@ print(some_lock)
 #   errors=[]
 # )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -303,7 +276,6 @@ puts some_lock.inspect
 #   errors=[]
 #   warnings=[]
 ```
-
 </Tab>
 </Tabs>
 
@@ -313,14 +285,13 @@ Next, you can perform the basic action of triggering a relay on the device. This
 
 #### Unlock a door
 
-<mark style='color:green;'>`POST`</mark>
-`https://connect.getseam.com/locks/unlock_door`
+<mark style="color:green;">`POST`</mark> `https://connect.getseam.com/locks/unlock_door`
 
 **Request Body**
 
-| Name      | Type   | Description |
-| --------- | ------ | ----------- |
-| device_id | String |             |
+| Name       | Type   | Description |
+| ---------- | ------ | ----------- |
+| device\_id | String |             |
 
 <Tabs>
 <Tab title="JavaScript">
@@ -329,7 +300,6 @@ Next, you can perform the basic action of triggering a relay on the device. This
 // trigger the relay
 await seam.locks.unlockDoor(someLock.device_id)
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -338,7 +308,6 @@ await seam.locks.unlockDoor(someLock.device_id)
 # trigger the relay
 seam.locks.unlock_door(some_lock)
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -347,7 +316,6 @@ seam.locks.unlock_door(some_lock)
 # trigger the relay
 seam.locks.unlock_door(device_id: some_lock.device_id)
 ```
-
 </Tab>
 </Tabs>
 
@@ -357,12 +325,12 @@ Now that you've completed this guide, you can try to connect a real ControlByWeb
 
 In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
 
-- [Yale Getting Started Guide](../yale-locks/get-started-with-yale-locks.md)
-- [August Getting Started Guide](../august-locks/get-started-with-august-locks.md)
-- [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
-- [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
-- [Minut Getting Started Guide](../minut-sensors/get-started-with-minut-sensors.md)
-- [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
-- [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
+* [Yale Getting Started Guide](../yale-locks/get-started-with-yale-locks.md)
+* [August Getting Started Guide](../august-locks/get-started-with-august-locks.md)
+* [Schlage Getting Started Guide](../schlage-locks/get-started-with-schlage-locks.md)
+* [SmartThings Getting Started Guide](../smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks.md)
+* [Minut Getting Started Guide](../minut-sensors/get-started-with-minut-sensors.md)
+* [Receiving webhook](https://docs.seam.co/latest/developer-tools/webhooks) for [device events](https://docs.seam.co/latest/api/events/list)
+* [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

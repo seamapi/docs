@@ -1,11 +1,12 @@
 ---
-title: 'Revoke Access to a Device from a User Identity'
+title: "Revoke Access to a Device from a User Identity"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,9 +17,9 @@ Revokes access to a specified device from a specified user identity.
 
 ```javascript
 await seam.userIdentities.revokeAccessToDevice({
-  user_identity_id: 'a5a48343-a95e-4f51-a5d9-1e4241b73553',
-  device_id: '92874f9e-a2b5-4d49-a039-0280196ad4d5',
-})
+  user_identity_id: "a5a48343-a95e-4f51-a5d9-1e4241b73553",
+  device_id: "92874f9e-a2b5-4d49-a039-0280196ad4d5",
+});
 ```
 
 #### Output:
@@ -26,7 +27,6 @@ await seam.userIdentities.revokeAccessToDevice({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -51,7 +51,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -72,7 +71,6 @@ seam.user_identities.revoke_access_to_device(
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -93,7 +91,6 @@ seam.user_identities.revoke_access_to_device(
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -114,7 +111,6 @@ $seam->user_identities->revoke_access_to_device(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -132,10 +128,10 @@ seam user-identities revoke-access-to-device --user_identity_id "a5a48343-a95e-4
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -143,26 +139,25 @@ seam user-identities revoke-access-to-device --user_identity_id "a5a48343-a95e-4
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the managed device to which you want to revoke access from the user identity.
 
 ---
 
-**`user_identity_id`** _String_ (Required)
+**`user_identity_id`** *String* (Required)
 
 ID of the user identity from which you want to revoke access to a device.
 
 ---
+
 
 ## Response
 
@@ -171,3 +166,4 @@ Returns:
 **void**
 
 </Check>
+

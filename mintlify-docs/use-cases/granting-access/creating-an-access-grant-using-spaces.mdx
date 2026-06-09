@@ -1,20 +1,21 @@
 ---
-title: 'Creating an Access Grant Using Spaces'
-description: 'Learn how to create an Access Grant to define the "who, where, when, and how" for assigning a user access to entrances grouped into spaces.'
+title: "Creating an Access Grant Using Spaces"
+description: "Learn how to create an Access Grant to define the \"who, where, when, and how\" for assigning a user access to entrances grouped into spaces."
 ---
+
 
 An Access Grant defines the following characteristics:
 
-- User identity: The user to whom you want to grant access.
-- Entrances or spaces: The sets of entrances or other access points to which you want to grant the user access.
-- Access schedule: The starting and ending times for access.
-- Access methods: The modes of access, including key cards, PIN codes, mobile keys, and [Instant Keys](../../capability-guides/instant-keys/).
+* User identity: The user to whom you want to grant access.
+* Entrances or spaces: The sets of entrances or other access points to which you want to grant the user access.
+* Access schedule: The starting and ending times for access.
+* Access methods: The modes of access, including key cards, PIN codes, mobile keys, and [Instant Keys](../../capability-guides/instant-keys/).
 
 Before creating an Access Grant, you can organize sets of entrances into [spaces](https://docs.seam.co/latest/api/spaces/). Then, when you create an Access Grant, you specify the IDs of the spaces to which you want to grant access. Seam grants the user access to all entrances included in these spaces. Alternately, you can specify the set of entrances to which you want to grant access using the IDs of the entrances themselves.
 
 This topic describes how to create an Access Grant using spaces. To learn how to create an Access Grant using entrances, see [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md).
 
----
+***
 
 ## Access Grant Creation Process
 
@@ -22,17 +23,16 @@ To create an Access Grant:
 
 1. [Identify the spaces](creating-an-access-grant-using-spaces.md#identify-space) to which you want to grant the user access.
 2. [Create a user identity](creating-an-access-grant-using-spaces.md#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
-3. [Create an access grant](creating-an-access-grant-using-spaces.md#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, that is, one or more of `card`, `code`, and `mobile_key`.
+3.  [Create an access grant](creating-an-access-grant-using-spaces.md#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, that is, one or more of `card`, `code`, and `mobile_key`.
 
-   The action returns the created Access Grant.
-
+    The action returns the created Access Grant.
 4. [Poll for status changes or monitor for lifecycle events](creating-an-access-grant-using-spaces.md#poll-for-status-changes-or-monitor-for-lifecycle-events) to identify next steps, such as the following:
-   - Whether you need to encode a card access method onto a plastic card.
-   - When the access methods are ready to deliver to your user.
+   * Whether you need to encode a card access method onto a plastic card.
+   * When the access methods are ready to deliver to your user.
 
 If you've created an Access Grant that includes an mobile key, the returned Access Grant includes the Instant Key URL. to make it more efficient for you to share this URL with your user.
 
----
+***
 
 ## Before You Begin
 
@@ -40,7 +40,7 @@ To create an Access Grant, first [connect](../../core-concepts/workspaces/#conne
 
 Create one or more spaces to group the entrances to which you want to grant access. For details, see [Spaces](https://docs.seam.co/latest/api/spaces/) and [Create a Space](https://docs.seam.co/latest/api/spaces/create).
 
----
+***
 
 ## **Identify Spaces**
 
@@ -52,7 +52,7 @@ List the spaces and identify the ones to which you want to grant the user access
 **Code:**
 
 ```javascript
-await seam.spaces.list()
+await seam.spaces.list();
 ```
 
 **Output:**
@@ -74,9 +74,8 @@ await seam.spaces.list()
     "workspace_id": "96bd12f9-6def-4bf4-b517-760417451ae9"
   },
   ...
-]
+]  
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -116,7 +115,6 @@ curl -X 'POST' \
   ok: true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -148,7 +146,6 @@ seam.spaces.list()
   ...
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -180,7 +177,6 @@ seam.spaces.list()
   ...
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -212,7 +208,6 @@ $seam->spaces->list();
   ...
 ];
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -228,7 +223,6 @@ $seam->spaces->list();
 ```json
 // Coming Soon!
 ```
-
 </Tab>
 </Tabs>
 
@@ -245,10 +239,10 @@ To create a user identity, specify the unique `user_identity_key`, `email_addres
 
 ```javascript
 await seam.userIdentities.create({
-  full_name: 'Jane Doe',
-  email_address: 'jane@example.com',
-  acs_system_ids: ['c359cba2-8ef2-47fc-bee0-1c7c2a886339'],
-})
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+  acs_system_ids: ["c359cba2-8ef2-47fc-bee0-1c7c2a886339"],
+});
 ```
 
 **Output:**
@@ -261,7 +255,6 @@ await seam.userIdentities.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -295,7 +288,6 @@ curl -X 'POST' \
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -320,7 +312,6 @@ UserIdentity(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -345,7 +336,6 @@ seam.user_identities.create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -370,7 +360,6 @@ $seam->user_identities->create(
   ...
 ];
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -386,11 +375,10 @@ $seam->user_identities->create(
 ```json
 // Coming Soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## **Create an Access Grant**
 
@@ -403,7 +391,7 @@ To create an Access Grant, specify the user identity, entrance IDs, starting and
 
 ```javascript
 await seam.accessGrants.create({
-  user_identity_id: 'e3d736c1-540d-4d10-83e5-9a4e135453b4',
+  user_identity_id: "e3d736c1-540d-4d10-83e5-9a4e135453b4",
   // Alternately, to create a new user identity, use the
   // following parameter instead of user_identity_id:
   // user_identity: {
@@ -411,17 +399,17 @@ await seam.accessGrants.create({
   //  email_address: "jane.doe@example.com",
   // },
   space_ids: [
-    '5afeb047-3277-4102-b8c4-99edf05b91d2',
-    '550e8400-e29b-41d4-a716-446655440000',
+    "5afeb047-3277-4102-b8c4-99edf05b91d2",
+    "550e8400-e29b-41d4-a716-446655440000"
   ],
   requested_access_methods: [
-    { mode: 'code' },
-    { mode: 'card' },
-    { mode: 'mobile_key' },
+    {"mode": "code"},
+    {"mode": "card"},
+    {"mode": "mobile_key"}
   ],
-  starts_at: '2025-07-13T15:00:00.000Z',
-  ends_at: '2025-07-16T11:00:00.000Z',
-})
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+});
 ```
 
 **Output:**
@@ -461,7 +449,6 @@ await seam.accessGrants.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -535,7 +522,6 @@ curl -X 'POST' \
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -602,7 +588,6 @@ AccessGrant(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -666,7 +651,6 @@ seam.access_grants.create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -733,7 +717,6 @@ $seam->access_grants->create(
   ...
 ];
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -749,11 +732,10 @@ $seam->access_grants->create(
 ```json
 // Coming Soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Poll for Status Changes or Monitor for Lifecycle Events
 
@@ -763,8 +745,8 @@ Once you've created an Access Grant with one or more access methods, poll the cr
 
 To poll the created access methods, get these access methods by ID and look for the following status changes:
 
-- If `access_method.is_encoding_required` is `true`, you must encode the card access method onto a plastic key card. Once you've encoded the access method onto a card, this property changes to `false`.
-- When an access method is ready to be delivered to a user, `access_method.is_issued` changes to `true`. For a card access method, `access_method.is_issued` changes to `true` after you encode the plastic card. You can also view the `access_method.issued_at` property to learn when the access method was issued.
+* If `access_method.is_encoding_required` is `true`, you must encode the card access method onto a plastic key card. Once you've encoded the access method onto a card, this property changes to `false`.
+* When an access method is ready to be delivered to a user, `access_method.is_issued` changes to `true`. For a card access method, `access_method.is_issued` changes to `true` after you encode the plastic card. You can also view the `access_method.issued_at` property to learn when the access method was issued.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -773,8 +755,8 @@ To poll the created access methods, get these access methods by ID and look for 
 
 ```javascript
 await seam.accessMethods.get({
-  access_method_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
-})
+  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+});
 ```
 
 **Output:**
@@ -791,7 +773,6 @@ await seam.accessMethods.get({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -826,7 +807,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -853,7 +833,6 @@ AccessMethod(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -880,7 +859,6 @@ seam.access_methods.get(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -907,7 +885,6 @@ $seam->access_methods->get(
   ...
 ];
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -923,7 +900,6 @@ $seam->access_methods->get(
 ```json
 // Coming Soon!
 ```
-
 </Tab>
 </Tabs>
 
@@ -931,10 +907,10 @@ $seam->access_methods->get(
 
 Watch for the following Access Grant and access method events that include the IDs of the created Access Grant and access methods:
 
-- `access_grant.access_granted_to_door`
-- `access_grant.access_granted_to_all_doors`
-- `access_method.card_encoding_required`
-- `access_method.issued`
+* `access_grant.access_granted_to_door`
+* `access_grant.access_granted_to_all_doors`
+* `access_method.card_encoding_required`
+* `access_method.issued`
 
 These events tell you what to do next. For example, if you've created a card access method, `access_method.card_encoding_required` lets you know that you need to encode the access method onto a plastic card. `access_grant.access_granted_to_all_doors` tells you that Seam has successfully created all the access methods that you requested through an Access Grant. `access_method.issued` indicates that you can now deliver the access method to your user.
 
@@ -951,7 +927,7 @@ The following example shows the payload for an `access_method.card_encoding_requ
 }
 ```
 
----
+***
 
 ## Next Steps
 

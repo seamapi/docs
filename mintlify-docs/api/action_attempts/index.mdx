@@ -1,5 +1,5 @@
 ---
-title: 'Action Attempts'
+title: "Action Attempts"
 ---
 
 ## The action_attempt Object
@@ -7,21 +7,25 @@ title: 'Action Attempts'
 - [Properties](./#properties)
 - [Events](./#events)
 
+
 Represents an attempt to perform an action against a device.
 
 ---
-
 ## Properties
 
-**`action_attempt_id`** _UUID_
+**`action_attempt_id`** *UUID*
 
 ID of the action attempt.
 
+
+
+
 ---
 
-**`status`** _Enum_
+**`status`** *Enum*
 
 Status of the action attempt.
+
 
 <details>
 <summary>Enum values</summary>
@@ -31,11 +35,13 @@ Status of the action attempt.
 - <code>error</code>
 </details>
 
+
 ---
 
-**`action_type`** _Enum_
+**`action_type`** *Enum*
 
 Type of the action attempt.
+
 
 <details>
 <summary>Enum values</summary>
@@ -54,19 +60,27 @@ Type of the action attempt.
 - <code>CONFIGURE_AUTO_LOCK</code>
 </details>
 
+
 ---
 
-**`error`** _Object_
+**`error`** *Object*
 
 Error associated with the action attempt. Null for pending and successful action attempts.
 
+
+
+
 ---
 
-**`result`** _Object_
+**`result`** *Object*
 
 Result of the action attempt. Null for pending and errored action attempts.
 
+
+
+
 ---
+
 
 ## Events
 
@@ -78,76 +92,45 @@ A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-at
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.lock_door.succeeded`
+  Value: `action_attempt.lock_door.succeeded`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -160,76 +143,45 @@ A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-at
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.lock_door.failed`
+  Value: `action_attempt.lock_door.failed`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -242,76 +194,45 @@ An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.unlock_door.succeeded`
+  Value: `action_attempt.unlock_door.succeeded`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -324,76 +245,45 @@ An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.unlock_door.failed`
+  Value: `action_attempt.unlock_door.failed`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -406,76 +296,45 @@ A simulate keypad code entry [action attempt](https://docs.seam.co/latest/core-c
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.simulate_keypad_code_entry.succeeded`
+  Value: `action_attempt.simulate_keypad_code_entry.succeeded`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -488,76 +347,45 @@ A simulate keypad code entry [action attempt](https://docs.seam.co/latest/core-c
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.simulate_keypad_code_entry.failed`
+  Value: `action_attempt.simulate_keypad_code_entry.failed`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -570,76 +398,45 @@ A simulate manual lock via keypad [action attempt](https://docs.seam.co/latest/c
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.simulate_manual_lock_via_keypad.succeeded`
+  Value: `action_attempt.simulate_manual_lock_via_keypad.succeeded`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -652,86 +449,59 @@ A simulate manual lock via keypad [action attempt](https://docs.seam.co/latest/c
 
 <summary>Properties</summary>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>action_attempt_id</code></strong> <i>UUID</i>
 
-ID of the affected action attempt.
+  ID of the affected action attempt.
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<strong><code>action_type</code></strong> <i>String</i>
 
-Type of the action.
+  Type of the action.
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-ID of the connected account associated with the action attempt, if applicable.
+  ID of the connected account associated with the action attempt, if applicable.
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>created_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event was created.
+  Date and time at which the event was created.
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>device_id</code></strong> <i>UUID</i>
 
-ID of the device associated with the action attempt, if applicable.
+  ID of the device associated with the action attempt, if applicable.
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>event_id</code></strong> <i>UUID</i>
 
-ID of the event.
+  ID of the event.
 
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
+<strong><code>event_type</code></strong> <i>Enum</i>
 
-Value: `action_attempt.simulate_manual_lock_via_keypad.failed`
+  Value: `action_attempt.simulate_manual_lock_via_keypad.failed`
 
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
 
-Date and time at which the event occurred.
+  Date and time at which the event occurred.
 
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
+<strong><code>status</code></strong> <i>String</i>
 
-Status of the action.
+  Status of the action.
 
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
+<strong><code>workspace_id</code></strong> <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 ## Endpoints
 
+
 [**`/action_attempts/get`**](./get.md)
 
 Returns a specified [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).
 
+
 [**`/action_attempts/list`**](./list.md)
 
 Returns a list of the [action attempts](https://docs.seam.co/latest/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.
+
+

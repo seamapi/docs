@@ -1,11 +1,12 @@
 ---
-title: 'Filtering Portal Resources by Custom Metadata'
-description: 'Use customer_resources_filters to control which resources are visible to customers in a portal, based on custom_metadata on property_listings and reservations.'
+title: "Filtering Portal Resources by Custom Metadata"
+description: "Use customer_resources_filters to control which resources are visible to customers in a portal, based on custom_metadata on property_listings and reservations."
 ---
+
 
 When creating a customer portal, you can use the `customer_resources_filters` parameter to control which resources (property listings, reservations) are visible to the customer. Filters match against the `custom_metadata` you set on resources in `customer_data`.
 
----
+***
 
 ### How It Works
 
@@ -13,7 +14,7 @@ When creating a customer portal, you can use the `customer_resources_filters` pa
 2. **Set `customer_resources_filters` when creating the portal** — provide an array of filter objects that specify which `custom_metadata` values a resource must have to be visible.
 3. **Filtering is enforced server-side** — the customer portal only returns resources whose `custom_metadata` matches all specified filters.
 
----
+***
 
 ### Filter Structure Reference
 
@@ -25,16 +26,16 @@ Each filter in the `customer_resources_filters` array is an object with the foll
 | `operation` | String            | The comparison operation. Currently only `"="` (equals) is supported.                                                                           |
 | `value`     | String or Boolean | The value to compare against.                                                                                                                   |
 
----
+***
 
 ### Key Behaviors
 
-- **AND logic** — when multiple filters are provided, a resource must match _all_ of them to be visible.
-- **Exact match** — the `=` operation performs an exact match against the `custom_metadata` value.
-- **Server-side enforcement** — filtering happens on the server. The customer portal API only returns matching resources.
-- **Field name rules** — field names must match the regex `^[a-zA-Z_]\w*$` (start with a letter or underscore, followed by alphanumeric characters or underscores).
+* **AND logic** — when multiple filters are provided, a resource must match _all_ of them to be visible.
+* **Exact match** — the `=` operation performs an exact match against the `custom_metadata` value.
+* **Server-side enforcement** — filtering happens on the server. The customer portal API only returns matching resources.
+* **Field name rules** — field names must match the regex `^[a-zA-Z_]\w*$` (start with a letter or underscore, followed by alphanumeric characters or underscores).
 
----
+***
 
 ### Examples
 
@@ -48,29 +49,28 @@ Create property listings with a `region` field in `custom_metadata`, then filter
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
-    customer_key: 'customer_123',
+    customer_key: "customer_123",
     property_listings: [
       {
-        name: 'Lisbon Apartment',
-        property_listing_key: 'lisbon_apt',
-        custom_metadata: { region: 'europe' },
+        name: "Lisbon Apartment",
+        property_listing_key: "lisbon_apt",
+        custom_metadata: { region: "europe" },
       },
       {
-        name: 'NYC Loft',
-        property_listing_key: 'nyc_loft',
-        custom_metadata: { region: 'north_america' },
+        name: "NYC Loft",
+        property_listing_key: "nyc_loft",
+        custom_metadata: { region: "north_america" },
       },
     ],
   },
   customer_resources_filters: [
-    { field: 'region', operation: '=', value: 'europe' },
+    { field: "region", operation: "=", value: "europe" },
   ],
-})
+});
 
 // The portal will only show "Lisbon Apartment"
-console.log(customer_portal.url)
+console.log(customer_portal.url);
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -101,7 +101,6 @@ curl -X POST \
     ]
   }'
 ```
-
 </Tab>
 </Tabs>
 
@@ -115,35 +114,34 @@ When you provide multiple filters, a resource must match all of them. Here, only
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
-    customer_key: 'customer_123',
+    customer_key: "customer_123",
     property_listings: [
       {
-        name: 'Premium Villa',
-        property_listing_key: 'premium_villa',
-        custom_metadata: { is_premium: true, region: 'europe' },
+        name: "Premium Villa",
+        property_listing_key: "premium_villa",
+        custom_metadata: { is_premium: true, region: "europe" },
       },
       {
-        name: 'Standard Apartment',
-        property_listing_key: 'standard_apt',
-        custom_metadata: { is_premium: false, region: 'europe' },
+        name: "Standard Apartment",
+        property_listing_key: "standard_apt",
+        custom_metadata: { is_premium: false, region: "europe" },
       },
       {
-        name: 'Premium Condo',
-        property_listing_key: 'premium_condo',
-        custom_metadata: { is_premium: true, region: 'north_america' },
+        name: "Premium Condo",
+        property_listing_key: "premium_condo",
+        custom_metadata: { is_premium: true, region: "north_america" },
       },
     ],
   },
   customer_resources_filters: [
-    { field: 'is_premium', operation: '=', value: true },
-    { field: 'region', operation: '=', value: 'europe' },
+    { field: "is_premium", operation: "=", value: true },
+    { field: "region", operation: "=", value: "europe" },
   ],
-})
+});
 
 // Only "Premium Villa" is visible in the portal
-console.log(customer_portal.url)
+console.log(customer_portal.url);
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -180,7 +178,6 @@ curl -X POST \
     ]
   }'
 ```
-
 </Tab>
 </Tabs>
 
@@ -194,29 +191,28 @@ Filter by a boolean `custom_metadata` value, such as showing only premium listin
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
-    customer_key: 'customer_123',
+    customer_key: "customer_123",
     property_listings: [
       {
-        name: 'Premium Villa',
-        property_listing_key: 'premium_villa',
+        name: "Premium Villa",
+        property_listing_key: "premium_villa",
         custom_metadata: { is_premium: true },
       },
       {
-        name: 'Standard Apartment',
-        property_listing_key: 'standard_apt',
+        name: "Standard Apartment",
+        property_listing_key: "standard_apt",
         custom_metadata: { is_premium: false },
       },
     ],
   },
   customer_resources_filters: [
-    { field: 'is_premium', operation: '=', value: true },
+    { field: "is_premium", operation: "=", value: true },
   ],
-})
+});
 
 // Only "Premium Villa" is visible
-console.log(customer_portal.url)
+console.log(customer_portal.url);
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -247,7 +243,6 @@ curl -X POST \
     ]
   }'
 ```
-
 </Tab>
 </Tabs>
 
@@ -261,44 +256,43 @@ Filters also apply to reservations. Here, only reservations that are both premiu
 ```javascript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
-    customer_key: 'customer_123',
+    customer_key: "customer_123",
     property_listings: [
       {
-        name: 'Premium Villa',
-        property_listing_key: 'premium_villa',
+        name: "Premium Villa",
+        property_listing_key: "premium_villa",
       },
     ],
     reservations: [
       {
-        name: 'Premium EU Reservation',
-        reservation_key: 'premium_eu_res',
-        space_keys: ['premium_villa'],
-        custom_metadata: { is_premium: true, region: 'europe' },
+        name: "Premium EU Reservation",
+        reservation_key: "premium_eu_res",
+        space_keys: ["premium_villa"],
+        custom_metadata: { is_premium: true, region: "europe" },
       },
       {
-        name: 'Standard EU Reservation',
-        reservation_key: 'standard_eu_res',
-        space_keys: ['premium_villa'],
-        custom_metadata: { is_premium: false, region: 'europe' },
+        name: "Standard EU Reservation",
+        reservation_key: "standard_eu_res",
+        space_keys: ["premium_villa"],
+        custom_metadata: { is_premium: false, region: "europe" },
       },
       {
-        name: 'Premium US Reservation',
-        reservation_key: 'premium_us_res',
-        space_keys: ['premium_villa'],
-        custom_metadata: { is_premium: true, region: 'north_america' },
+        name: "Premium US Reservation",
+        reservation_key: "premium_us_res",
+        space_keys: ["premium_villa"],
+        custom_metadata: { is_premium: true, region: "north_america" },
       },
     ],
   },
   customer_resources_filters: [
-    { field: 'is_premium', operation: '=', value: true },
-    { field: 'region', operation: '=', value: 'europe' },
+    { field: "is_premium", operation: "=", value: true },
+    { field: "region", operation: "=", value: "europe" },
   ],
-})
+});
 
 // Only "Premium EU Reservation" is visible in the portal
-console.log(customer_portal.url)
+console.log(customer_portal.url);
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -344,11 +338,10 @@ curl -X POST \
     ]
   }'
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ### Verifying Filters
 

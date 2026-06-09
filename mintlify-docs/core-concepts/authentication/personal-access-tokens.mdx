@@ -1,25 +1,22 @@
 ---
-title: 'Personal Access Tokens'
-description: 'Create a Personal Access Token to access multiple Seam workspaces using a single credential.'
+title: "Personal Access Tokens"
+description: "Create a Personal Access Token to access multiple Seam workspaces using a single credential."
 ---
+
 
 In some instances, it may be necessary to access multiple workspaces with a single Seam credential. For example, you may want to set up separate workspaces for each of your users to control different sets of devices. For more information about scenarios in which multiple workspaces are useful, see [Per-Customer Workspace Setup](../workspaces/#per-customer-workspace-setup-less-common).
 
 Because [API keys](api-keys.md) are scoped to a single workspace, Seam provides Personal Access Tokens (PATs) to enable multi-workspace authorization. First, [create a PAT](personal-access-tokens.md#create-a-personal-access-token). Then, [use this PAT with a workspace ID](personal-access-tokens.md#use-a-pat-and-workspace-id-in-the-seam-api) to access the desired workspace.
 
-<Warning>Never use a PAT in a web browser or expose it to your users.</Warning>
+<Warning>
+Never use a PAT in a web browser or expose it to your users.
+</Warning>
 
-<figure>
-  <img
-    src='/images/personal-access-token.png'
-    alt='Unlike API keys, PATs enable multi-workspace authorization.'
-  />
-  <figcaption></figcaption>
-</figure>
+<figure><img src="/images/personal-access-token.png" alt="Unlike API keys, PATs enable multi-workspace authorization." /><figcaption></figcaption></figure>
 
 ## Create a Personal Access Token
 
-1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **Developer**.
+1. In the top navigation pane  of [Seam Console](https://console.seam.co/), click **Developer**.
 2. In the left navigation pane, **Personal Access Tokens**.
 3. In the upper-right corner of the **Personal Access Tokens** page, click **Add Personal Access Token**.
 4. In the **Add Personal Access Token** dialog, type a name for your new PAT and then click **Create Personal Access Token**.
@@ -39,12 +36,11 @@ const seam = new Seam({
   // Specify PAT.
   apiKey: pat,
   // Specify workspace ID.
-  workspaceId: workspaceId,
+  workspaceId: workspaceId
 })
 
 console.log(await seam.devices.list())
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -58,7 +54,6 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{}'
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -73,7 +68,6 @@ seam = Seam(
 
 pprint(seam.devices.list())
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -88,7 +82,6 @@ client = Seam.new(
 
 puts client.devices.list().inspect
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -103,7 +96,6 @@ $seam = new Seam\SeamClient(
 
 print_r($seam->devices->list());
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -122,7 +114,6 @@ foreach (var device in devices)
   Console.WriteLine(device);
 }
 ```
-
 </Tab>
 </Tabs>
 
@@ -132,5 +123,4 @@ Instead of including your PAT in the `Seam` constructor, you can export your PAT
 ```bash
 $ export SEAM_API_KEY=${PAT}
 ```
-
 </Info>

@@ -1,5 +1,5 @@
 ---
-title: 'Get a Client Session'
+title: "Get a Client Session"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,6 +7,7 @@ title: 'Get a Client Session'
 - [Examples](#examples)
 
 Returns a specified [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +18,8 @@ Returns a specified client session by ID.
 
 ```javascript
 await seam.clientSessions.get({
-  client_session_id: 'c2cbd177-1ace-414b-bb1e-9f129e4a05c1',
-})
+  client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
+});
 ```
 
 #### Output:
@@ -38,7 +39,6 @@ await seam.clientSessions.get({
   "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -76,7 +76,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -106,7 +105,6 @@ ClientSession(
     workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -136,7 +134,6 @@ seam.client_sessions.get(client_session_id: "c2cbd177-1ace-414b-bb1e-9f129e4a05c
   "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -168,7 +165,6 @@ $seam->client_sessions->get(
     "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -198,10 +194,10 @@ seam client-sessions get --client_session_id "c2cbd177-1ace-414b-bb1e-9f129e4a05
   "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -210,26 +206,25 @@ seam client-sessions get --client_session_id "c2cbd177-1ace-414b-bb1e-9f129e4a05
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`client_session_id`** _String_
+**`client_session_id`** *String*
 
 ID of the client session that you want to get.
 
 ---
 
-**`user_identifier_key`** _String_
+**`user_identifier_key`** *String*
 
 User identifier key associated with the client session that you want to get.
 
 ---
+
 
 ## Response
 
@@ -239,8 +234,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -258,13 +256,13 @@ Returns:
   "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
+
 
 ### Get a client session for a user identifier key
 
@@ -273,10 +271,12 @@ Returns a specified client session, using a user identifier key.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
-await seam.clientSessions.get({ user_identifier_key: 'jane_doe' })
+await seam.clientSessions.get({ user_identifier_key: "jane_doe" });
 ```
 
 #### Output:
@@ -296,10 +296,11 @@ await seam.clientSessions.get({ user_identifier_key: 'jane_doe' })
   "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -332,10 +333,11 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -360,10 +362,11 @@ ClientSession(
     workspace_id="b887bf84-9849-4454-a562-cf84293d9781",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -388,10 +391,11 @@ seam.client_sessions.get(user_identifier_key: "jane_doe")
   "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -416,10 +420,11 @@ $seam->client_sessions->get(user_identifier_key: "jane_doe");
     "workspace_id" => "b887bf84-9849-4454-a562-cf84293d9781",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -444,7 +449,6 @@ seam client-sessions get --user_identifier_key "jane_doe"
   "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
 }
 ```
-
 </Tab>
 
 </Tabs>

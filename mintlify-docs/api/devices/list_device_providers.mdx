@@ -1,5 +1,5 @@
 ---
-title: 'List Device Providers'
+title: "List Device Providers"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -12,6 +12,7 @@ The information that this endpoint returns for each provider includes a set of [
 
 When you create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
+
 <Tabs>
 <Tab title="JavaScript">
 
@@ -20,25 +21,23 @@ Returns a list of all device providers.
 #### Code:
 
 ```javascript
-await seam.devices.listDeviceProviders()
+await seam.devices.listDeviceProviders();
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    can_program_online_access_codes: true,
-    can_remotely_unlock: true,
-    device_provider_name: 'akiles',
-    display_name: 'Akiles',
-    image_url:
-      'https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128',
-    provider_categories: ['stable', 'consumer_smartlocks'],
-  },
+    "can_program_online_access_codes": true,
+    "can_remotely_unlock": true,
+    "device_provider_name": "akiles",
+    "display_name": "Akiles",
+    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
+    "provider_categories": ["stable", "consumer_smartlocks"]
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -68,7 +67,6 @@ curl --include --request POST "https://connect.getseam.com/devices/list_device_p
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -95,7 +93,6 @@ seam.devices.list_device_providers()
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -123,7 +120,6 @@ seam.devices.list_device_providers()
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -151,7 +147,6 @@ $seam->devices->list_device_providers();
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -178,10 +173,10 @@ seam devices list-device-providers
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -190,20 +185,19 @@ seam devices list-device-providers
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`provider_category`** _String_
+**`provider_category`** *String*
 
 Category for which you want to list providers.
 
 ---
+
 
 ## Response
 
@@ -213,8 +207,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -227,13 +224,13 @@ Returns:
   "provider_categories": ["stable", "consumer_smartlocks"]
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
+
 
 ### List device providers for a specific provider category
 
@@ -242,31 +239,33 @@ Returns a list of all device providers for a specified provider category.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
-await seam.devices.listDeviceProviders({ provider_category: 'stable' })
+await seam.devices.listDeviceProviders({ provider_category: "stable" });
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    can_program_online_access_codes: true,
-    can_remotely_unlock: true,
-    device_provider_name: 'akiles',
-    display_name: 'Akiles',
-    image_url:
-      'https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128',
-    provider_categories: ['stable', 'consumer_smartlocks'],
-  },
+    "can_program_online_access_codes": true,
+    "can_remotely_unlock": true,
+    "device_provider_name": "akiles",
+    "display_name": "Akiles",
+    "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/logos/akiles.png&q=75&w=128",
+    "provider_categories": ["stable", "consumer_smartlocks"]
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -296,10 +295,11 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -321,10 +321,11 @@ seam.devices.list_device_providers(provider_category="stable")
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -347,10 +348,11 @@ seam.devices.list_device_providers(provider_category: "stable")
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -373,10 +375,11 @@ $seam->devices->list_device_providers(provider_category: "stable");
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -398,7 +401,6 @@ seam devices list-device-providers --provider_category "stable"
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>

@@ -1,11 +1,12 @@
 ---
-title: 'Get an Access Grant'
+title: "Get an Access Grant"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Get an Access Grant.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,8 +17,8 @@ Returns a specified Access Grant.
 
 ```javascript
 await seam.accessGrants.get({
-  access_grant_id: '704eadf0-a0a2-4715-b0e1-2f002dc1b6e0',
-})
+  access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0",
+});
 ```
 
 #### Output:
@@ -63,7 +64,6 @@ await seam.accessGrants.get({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -127,7 +127,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -183,7 +182,6 @@ AccessGrant(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -236,7 +234,6 @@ seam.access_grants.get(access_grant_id: "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0")
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -300,7 +297,6 @@ $seam->access_grants->get(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -356,10 +352,10 @@ seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -368,26 +364,25 @@ seam access-grants get --access_grant_id "704eadf0-a0a2-4715-b0e1-2f002dc1b6e0"
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`access_grant_id`** _String_
+**`access_grant_id`** *String*
 
 ID of Access Grant to get.
 
 ---
 
-**`access_grant_key`** _String_
+**`access_grant_key`** *String*
 
 Unique key of Access Grant to get.
 
 ---
+
 
 ## Response
 
@@ -397,8 +392,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -441,6 +439,5 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 </Tabs>

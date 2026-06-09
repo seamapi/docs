@@ -1,5 +1,5 @@
 ---
-title: 'Get an Event'
+title: "Get an Event"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,6 +7,7 @@ title: 'Get an Event'
 - [Examples](#examples)
 
 Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://docs.seam.co/latest/developer-tools/webhooks), but it enables you to retrieve an event that already took place.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,7 +17,7 @@ Returns a specified event by ID.
 #### Code:
 
 ```javascript
-await seam.events.get({ event_id: 'ed3adbb8-bbe1-4033-a35a-710d44322bd8' })
+await seam.events.get({ event_id: "ed3adbb8-bbe1-4033-a35a-710d44322bd8" });
 ```
 
 #### Output:
@@ -33,7 +34,6 @@ await seam.events.get({ event_id: 'ed3adbb8-bbe1-4033-a35a-710d44322bd8' })
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -68,7 +68,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -95,7 +94,6 @@ SeamEvent(
     workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -123,7 +121,6 @@ seam.events.get(event_id: "ed3adbb8-bbe1-4033-a35a-710d44322bd8")
   "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -151,7 +148,6 @@ $seam->events->get(event_id: "ed3adbb8-bbe1-4033-a35a-710d44322bd8");
     "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -178,10 +174,10 @@ seam events get --event_id "ed3adbb8-bbe1-4033-a35a-710d44322bd8"
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -190,32 +186,31 @@ seam events get --event_id "ed3adbb8-bbe1-4033-a35a-710d44322bd8"
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_
+**`device_id`** *String*
 
 Unique identifier for the device that triggered the event that you want to get.
 
 ---
 
-**`event_id`** _String_
+**`event_id`** *String*
 
 Unique identifier for the event that you want to get.
 
 ---
 
-**`event_type`** _String_
+**`event_type`** *String*
 
 Type of the event that you want to get.
 
 ---
+
 
 ## Response
 
@@ -225,8 +220,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -240,13 +238,13 @@ Returns:
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
+
 
 ### Get an event by event type
 
@@ -255,10 +253,12 @@ Returns a specified event, using the event type.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
-await seam.events.get({ event_type: 'device.connected' })
+await seam.events.get({ event_type: "device.connected" });
 ```
 
 #### Output:
@@ -275,10 +275,11 @@ await seam.events.get({ event_type: 'device.connected' })
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -308,10 +309,11 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -333,10 +335,11 @@ SeamEvent(
     workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -359,10 +362,11 @@ seam.events.get(event_type: "device.connected")
   "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -385,10 +389,11 @@ $seam->events->get(event_type: "device.connected");
     "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -410,12 +415,12 @@ seam events get --event_type "device.connected"
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
-
 </Tab>
 
 </Tabs>
 
 ---
+
 
 ### Get an event by device ID
 
@@ -424,10 +429,12 @@ Returns a specified event by device ID.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
-await seam.events.get({ device_id: '3febfdb2-de92-43c1-aba4-640ce8a55a22' })
+await seam.events.get({ device_id: "3febfdb2-de92-43c1-aba4-640ce8a55a22" });
 ```
 
 #### Output:
@@ -444,10 +451,11 @@ await seam.events.get({ device_id: '3febfdb2-de92-43c1-aba4-640ce8a55a22' })
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -477,10 +485,11 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -502,10 +511,11 @@ SeamEvent(
     workspace_id="9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -528,10 +538,11 @@ seam.events.get(device_id: "3febfdb2-de92-43c1-aba4-640ce8a55a22")
   "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -554,10 +565,11 @@ $seam->events->get(device_id: "3febfdb2-de92-43c1-aba4-640ce8a55a22");
     "workspace_id" => "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -579,7 +591,6 @@ seam events get --device_id "3febfdb2-de92-43c1-aba4-640ce8a55a22"
   "workspace_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d"
 }
 ```
-
 </Tab>
 
 </Tabs>

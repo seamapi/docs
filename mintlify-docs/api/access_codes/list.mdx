@@ -1,5 +1,5 @@
 ---
-title: 'List Access Codes'
+title: "List Access Codes"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -8,6 +8,7 @@ title: 'List Access Codes'
 Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -18,42 +19,41 @@ Returns a list of all access codes.
 
 ```javascript
 await seam.accessCodes.list({
-  device_id: 'f5197f50-839b-4a8e-82f3-e9ef06af93ae',
+  device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
   limit: 10,
-})
+});
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    access_code_id: 'e9cf6dd6-89aa-477f-a701-c08f3de13c1f',
-    code: '1234',
-    common_code_key: null,
-    created_at: '2025-06-14T16:54:17.946242Z',
-    device_id: 'f5197f50-839b-4a8e-82f3-e9ef06af93ae',
-    ends_at: '2025-07-04T16:54:17.946049Z',
-    errors: [],
-    is_backup: false,
-    is_backup_access_code_available: false,
-    is_external_modification_allowed: false,
-    is_managed: true,
-    is_offline_access_code: false,
-    is_one_time_use: false,
-    is_scheduled_on_device: true,
-    is_waiting_for_code_assignment: false,
-    name: 'My Access Code',
-    pulled_backup_access_code_id: null,
-    starts_at: '2025-07-02T16:54:17.946049Z',
-    status: 'set',
-    type: 'time_bound',
-    warnings: [],
-    workspace_id: '750fc0bc-4450-4356-8d9f-18c6a3a6b2c7',
-  },
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": null,
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "f5197f50-839b-4a8e-82f3-e9ef06af93ae",
+    "ends_at": "2025-07-04T16:54:17.946049Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-07-02T16:54:17.946049Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -105,7 +105,6 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -148,7 +147,6 @@ seam.access_codes.list(device_id="f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit=1
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -191,7 +189,6 @@ seam.access_codes.list(device_id: "f5197f50-839b-4a8e-82f3-e9ef06af93ae", limit:
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -237,7 +234,6 @@ $seam->access_codes->list(
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -280,10 +276,10 @@ seam access-codes list --device_id "f5197f50-839b-4a8e-82f3-e9ef06af93ae" --limi
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -292,68 +288,67 @@ seam access-codes list --device_id "f5197f50-839b-4a8e-82f3-e9ef06af93ae" --limi
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`access_code_ids`** _Array_ _of UUIDs_
+**`access_code_ids`** *Array* *of UUIDs*
 
 IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 ---
 
-**`access_grant_id`** _String_
+**`access_grant_id`** *String*
 
 ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 ---
 
-**`access_method_id`** _String_
+**`access_method_id`** *String*
 
 ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 ---
 
-**`customer_key`** _String_
+**`customer_key`** *String*
 
 Customer key for which you want to list access codes.
 
 ---
 
-**`device_id`** _String_
+**`device_id`** *String*
 
 ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 
 ---
 
-**`limit`** _Number_
+**`limit`** *Number*
 
 Numerical limit on the number of access codes to return.
 
 ---
 
-**`page_cursor`** _String_
+**`page_cursor`** *String*
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`search`** _String_
+**`search`** *String*
 
 String for which to search. Filters returned access codes to include all records that satisfy a partial match using `name`, `code` or `access_code_id`.
 
 ---
 
-**`user_identifier_key`** _String_
+**`user_identifier_key`** *String*
 
 Your user ID for the user by which to filter access codes.
 
 ---
+
 
 ## Response
 
@@ -363,8 +358,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -393,6 +391,5 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 </Tabs>

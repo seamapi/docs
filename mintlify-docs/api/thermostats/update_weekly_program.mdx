@@ -1,11 +1,12 @@
 ---
-title: 'Update the Thermostat Weekly Program'
+title: "Update the Thermostat Weekly Program"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Updates the thermostat weekly program for a thermostat device. To configure a weekly program, specify the ID of the daily program that you want to use for each day of the week. When you update a weekly program, the set of programs that you specify overwrites any previous weekly program for the thermostat.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,15 +17,15 @@ Updates the thermostat weekly program for a thermostat device.
 
 ```javascript
 await seam.thermostats.updateWeeklyProgram({
-  device_id: '076546e8-966c-47dd-831b-8d98413bf070',
-  monday_program_id: 'a36dccaa-aeb9-47da-bf1d-43a08ba5c870',
-  tuesday_program_id: 'a36dccaa-aeb9-47da-bf1d-43a08ba5c870',
-  wednesday_program_id: 'a36dccaa-aeb9-47da-bf1d-43a08ba5c870',
-  thursday_program_id: 'a36dccaa-aeb9-47da-bf1d-43a08ba5c870',
-  friday_program_id: 'a36dccaa-aeb9-47da-bf1d-43a08ba5c870',
-  saturday_program_id: '3bf5a788-caf8-40c5-a7d5-78b72e9b3a28',
-  sunday_program_id: '3bf5a788-caf8-40c5-a7d5-78b72e9b3a28',
-})
+  device_id: "076546e8-966c-47dd-831b-8d98413bf070",
+  monday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  tuesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  wednesday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  thursday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  friday_program_id: "a36dccaa-aeb9-47da-bf1d-43a08ba5c870",
+  saturday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+  sunday_program_id: "3bf5a788-caf8-40c5-a7d5-78b72e9b3a28",
+});
 ```
 
 #### Output:
@@ -38,7 +39,6 @@ await seam.thermostats.updateWeeklyProgram({
   "status": "success"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -77,7 +77,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -110,7 +109,6 @@ ActionAttempt(
     status="success",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -144,7 +142,6 @@ seam.thermostats.update_weekly_program(
   "status" => "success",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -177,7 +174,6 @@ $seam->thermostats->update_weekly_program(
     "status" => "success",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -201,10 +197,10 @@ seam thermostats update-weekly-program --device_id "076546e8-966c-47dd-831b-8d98
   "status": "success"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -213,62 +209,61 @@ seam thermostats update-weekly-program --device_id "076546e8-966c-47dd-831b-8d98
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to update the weekly program.
 
 ---
 
-**`friday_program_id`** _String_
+**`friday_program_id`** *String*
 
 ID of the thermostat daily program to run on Fridays.
 
 ---
 
-**`monday_program_id`** _String_
+**`monday_program_id`** *String*
 
 ID of the thermostat daily program to run on Mondays.
 
 ---
 
-**`saturday_program_id`** _String_
+**`saturday_program_id`** *String*
 
 ID of the thermostat daily program to run on Saturdays.
 
 ---
 
-**`sunday_program_id`** _String_
+**`sunday_program_id`** *String*
 
 ID of the thermostat daily program to run on Sundays.
 
 ---
 
-**`thursday_program_id`** _String_
+**`thursday_program_id`** *String*
 
 ID of the thermostat daily program to run on Thursdays.
 
 ---
 
-**`tuesday_program_id`** _String_
+**`tuesday_program_id`** *String*
 
 ID of the thermostat daily program to run on Tuesdays.
 
 ---
 
-**`wednesday_program_id`** _String_
+**`wednesday_program_id`** *String*
 
 ID of the thermostat daily program to run on Wednesdays.
 
 ---
+
 
 ## Response
 
@@ -278,8 +273,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -290,6 +288,5 @@ Returns:
   "status": "success"
 }
 ```
-
 </Tab>
 </Tabs>

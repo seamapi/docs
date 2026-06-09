@@ -1,5 +1,5 @@
 ---
-title: 'Get a Connected Account'
+title: "Get a Connected Account"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,6 +7,7 @@ title: 'Get a Connected Account'
 - [Examples](#examples)
 
 Returns a specified [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,8 +18,8 @@ Returns a specified connected account, using an ID.
 
 ```javascript
 await seam.connectedAccounts.get({
-  connected_account_id: 'a289aa54-5488-4707-9a4b-eeea4edf311d',
-})
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
+});
 ```
 
 #### Output:
@@ -43,7 +44,6 @@ await seam.connectedAccounts.get({
   "warnings": []
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -86,7 +86,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -121,7 +120,6 @@ ConnectedAccount(
     warnings=[],
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -158,7 +156,6 @@ seam.connected_accounts.get(connected_account_id: "a289aa54-5488-4707-9a4b-eeea4
   "warnings" => [],
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -195,7 +192,6 @@ $seam->connected_accounts->get(
     "warnings" => [],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -230,10 +226,10 @@ seam connected-accounts get --connected_account_id "a289aa54-5488-4707-9a4b-eeea
   "warnings": []
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -242,26 +238,25 @@ seam connected-accounts get --connected_account_id "a289aa54-5488-4707-9a4b-eeea
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`connected_account_id`** _String_
+**`connected_account_id`** *String*
 
 ID of the connected account that you want to get.
 
 ---
 
-**`email`** _String_
+**`email`** *String*
 
 Email address associated with the connected account that you want to get.
 
 ---
+
 
 ## Response
 
@@ -271,8 +266,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -295,13 +293,13 @@ Returns:
   "accepted_capabilities": ["lock"]
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
+
 
 ### Get a connected account for an email address
 
@@ -310,10 +308,12 @@ Returns a specified connected account, using an email address.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
-await seam.connectedAccounts.get({ email: 'jane_doe@example.com' })
+await seam.connectedAccounts.get({ email: "jane_doe@example.com" });
 ```
 
 #### Output:
@@ -338,10 +338,11 @@ await seam.connectedAccounts.get({ email: 'jane_doe@example.com' })
   "warnings": []
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -379,10 +380,11 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -412,10 +414,11 @@ ConnectedAccount(
     warnings=[],
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -447,10 +450,11 @@ seam.connected_accounts.get(email: "jane_doe@example.com")
   "warnings" => [],
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -480,10 +484,11 @@ $seam->connected_accounts->get(email: "jane_doe@example.com");
     "warnings" => [],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -513,7 +518,6 @@ seam connected-accounts get --email "jane_doe@example.com"
   "warnings": []
 }
 ```
-
 </Tab>
 
 </Tabs>

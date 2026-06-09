@@ -1,11 +1,12 @@
 ---
-title: 'Update a Webhook'
+title: "Update a Webhook"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,13 +17,13 @@ Updates a specified webhook.
 
 ```javascript
 await seam.webhooks.update({
-  webhook_id: 'e294905f-e7a5-4804-95a6-303f440eb262',
+  webhook_id: "e294905f-e7a5-4804-95a6-303f440eb262",
   event_types: [
-    'device.connected',
-    'device.disconnected',
-    'device.unmanaged.converted_to_managed',
+    "device.connected",
+    "device.disconnected",
+    "device.unmanaged.converted_to_managed",
   ],
-})
+});
 ```
 
 #### Output:
@@ -30,7 +31,6 @@ await seam.webhooks.update({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -59,7 +59,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -84,7 +83,6 @@ seam.webhooks.update(
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -105,7 +103,6 @@ seam.webhooks.update(
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -130,7 +127,6 @@ $seam->webhooks->update(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -148,10 +144,10 @@ seam webhooks update --webhook_id "e294905f-e7a5-4804-95a6-303f440eb262" --event
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -159,26 +155,25 @@ seam webhooks update --webhook_id "e294905f-e7a5-4804-95a6-303f440eb262" --event
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`event_types`** _Array_ _of Strings_ (Required)
+**`event_types`** *Array* *of Strings* (Required)
 
 Types of events that you want the webhook to receive.
 
 ---
 
-**`webhook_id`** _String_ (Required)
+**`webhook_id`** *String* (Required)
 
 ID of the webhook that you want to update.
 
 ---
+
 
 ## Response
 
@@ -187,3 +182,4 @@ Returns:
 **void**
 
 </Check>
+

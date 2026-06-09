@@ -1,11 +1,12 @@
 ---
-title: 'Lock a Lock'
+title: "Lock a Lock"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Locks a [lock](https://docs.seam.co/latest/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/capability-guides/smart-locks/lock-and-unlock).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,8 +17,8 @@ Locks a lock.
 
 ```javascript
 await seam.locks.lockDoor({
-  device_id: '9a31853e-4db0-4d78-b21d-f50c8dbdb9dc',
-})
+  device_id: "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc",
+});
 ```
 
 #### Output:
@@ -31,7 +32,6 @@ await seam.locks.lockDoor({
   "status": "success"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -63,7 +63,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -87,7 +86,6 @@ ActionAttempt(
     status="success",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -112,7 +110,6 @@ seam.locks.lock_door(device_id: "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc")
   "status" => "success",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -136,7 +133,6 @@ $seam->locks->lock_door(device_id: "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc");
     "status" => "success",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -160,10 +156,10 @@ seam locks lock-door --device_id "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc"
   "status": "success"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -172,20 +168,19 @@ seam locks lock-door --device_id "9a31853e-4db0-4d78-b21d-f50c8dbdb9dc"
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the lock that you want to lock.
 
 ---
+
 
 ## Response
 
@@ -195,8 +190,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -207,6 +205,5 @@ Returns:
   "status": "success"
 }
 ```
-
 </Tab>
 </Tabs>

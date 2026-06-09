@@ -1,22 +1,18 @@
 ---
-title: 'Salto KS Locks'
-description: 'Guide for using Salto KS door locks with Seam'
+title: "Salto KS Locks"
+description: "Guide for using Salto KS door locks with Seam"
 ---
+
 
 ## Overview
 
 Salto Systems produces world-class electronic access control solutions. Their locks work with a vast array of entrance types, from traditional doors and elevators, to key cylinders and parking stiles. They also support a versatile range of key credentials; their locks work with RFID tags, mobile keys, and PIN codes. Using their mobile app and app dashboard, businesses can easily assign, monitor, and revoke access rights.
 
 <Info>
-  Seam supports two integrations for Salto KS. We recommend using the [Salto KS
-  access control system
-  integration](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system)
-  because it provides more robust functionality, such as managing ACS users and
-  credentials. However, if you want to connect a single or just a few Salto KS
-  locks, you can choose the Salto KS lock integration that this topic describes.
+Seam supports two integrations for Salto KS. We recommend using the [Salto KS access control system integration](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) because it provides more robust functionality, such as managing ACS users and credentials. However, if you want to connect a single or just a few Salto KS locks, you can choose the Salto KS lock integration that this topic describes.
 </Info>
 
----
+***
 
 ## Supported Devices
 
@@ -24,22 +20,22 @@ This integration works any devices connected via their [Salto KS platform](https
 
 For detailed information about the Salto devices that Seam supports, see our [Salto Supported Devices page](https://www.seam.co/manufacturers/salto).
 
----
+***
 
 ## Supported Features
 
 We support the following features:
 
-- [Triggering web unlock actions](https://docs.seam.co/latest/api/locks/unlock_door)
-- [Programming access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on door locks and card readers that have a PIN pad
+* [Triggering web unlock actions](https://docs.seam.co/latest/api/locks/unlock_door)
+* [Programming access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes) on door locks and card readers that have a PIN pad
 
----
+***
 
 ### Device Provider Key
 
 To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their Salto devices to Seam, include the `salto_ks` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
----
+***
 
 ## Setup Instructions
 
@@ -65,7 +61,7 @@ A subdomain of `app-accept`, for example, `https://app-accept.saltoks.com`, indi
 
 Make sure that your installer has released your Salto KS sites. Seam cannot perform actions on unreleased Salto KS sites.
 
----
+***
 
 ### Setup Process
 
@@ -78,9 +74,9 @@ To control Salto KS devices using Seam, you must prompt owners of these devices 
    2. In the **Enter your credentials** dialog, type your username and password for the Salto KS web app and then click **Log In**.
    3. Select **Full Access** and then click **Yes, Allow**.
    4. Select the Salto KS sites that you want to integrate with Seam and then click **Continue**.
-   5. Click **Allow and Continue** to confirm that you allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
+   5.  Click **Allow and Continue** to confirm that you allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
 
-      <Warning> Do not suspend or remove the Seam Integration admin user from your Salto KS site. </Info>\*\*\*
+       {% hint style="warning" %} Do not suspend or remove the Seam Integration admin user from your Salto KS site. {% endhint %}\*\*\*
 
 ## Brand-Specific Integration Considerations
 
@@ -97,7 +93,7 @@ When you encounter this error, it means that the Salto KS site has exceeded the 
 1. You can reduce the number of access codes you've created. Each access code will take up one user slot.
 2. You can ask the device owner to contact their Salto installer to increase the subscription limit on their site.
 
----
+***
 
 ## Troubleshooting
 
@@ -105,35 +101,10 @@ When you encounter this error, it means that the Salto KS site has exceeded the 
 
 A Salto lock displaying an `unknown` device type indicates a weak connection with the Salto IQ hub. Please contact a Salto installer for assistance.
 
----
+***
 
 ## Where to Order
 
 Get in touch with a Salto representative in your region. They can refer you to a local installer that will service your area.
 
-<table data-view='cards'>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th data-hidden data-card-target data-type='content-ref'></th>
-      <th data-hidden data-card-cover data-type='files'></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>
-        <strong>Salto Systems Sales Contact</strong>
-      </td>
-      <td></td>
-      <td>
-        <a href='https://saltosystems.com/en-us/offices/'>
-          https://saltosystems.com/en-us/offices/
-        </a>
-      </td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Salto Systems Sales Contact</strong></td><td></td><td><a href="https://saltosystems.com/en-us/offices/">https://saltosystems.com/en-us/offices/</a></td><td></td></tr></tbody></table>

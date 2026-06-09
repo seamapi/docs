@@ -19,7 +19,11 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["index", "quickstart", "go-live"]
+            "pages": [
+              "index",
+              "quickstart",
+              "go-live"
+            ]
           },
           {
             "group": "Use Cases",
@@ -79,44 +83,6 @@
             "group": "Capability Guides",
             "pages": [
               "capability-guides/device-and-system-capabilities",
-              "capability-guides/smart-locks",
-              "capability-guides/smart-locks/get-started-with-smartlocks-api",
-              "capability-guides/smart-locks/lock-and-unlock",
-              "capability-guides/smart-locks/access-codes",
-              "capability-guides/smart-locks/access-codes/creating-access-codes",
-              "capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints",
-              "capability-guides/smart-locks/access-codes/retrieving-access-codes",
-              "capability-guides/smart-locks/access-codes/modifying-access-codes",
-              "capability-guides/smart-locks/access-codes/deleting-access-codes",
-              "capability-guides/smart-locks/access-codes/lifecycle-of-access-codes",
-              "capability-guides/smart-locks/access-codes/access-code-requirements-for-door-locks",
-              "capability-guides/smart-locks/access-codes/accommodating-manufacturer-mobile-apps",
-              "capability-guides/smart-locks/access-codes/troubleshooting-access-code-issues",
-              "capability-guides/smart-locks/access-codes/backup-access-codes",
-              "capability-guides/smart-locks/access-codes/offline-access-codes",
-              "capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes",
-              "capability-guides/smart-locks/access-codes/migrating-existing-access-codes",
-              "capability-guides/access-systems",
-              "capability-guides/access-systems/acs-quick-starts",
-              "capability-guides/access-systems/acs-quick-starts/pin-code-quick-start",
-              "capability-guides/access-systems/acs-quick-starts/encodable-key-card-quick-start",
-              "capability-guides/access-systems/acs-quick-starts/mobile-key-quick-start",
-              "capability-guides/access-systems/connect-an-acs-to-seam",
-              "capability-guides/access-systems/connect-an-acs-to-seam/retrieving-acs-system-details",
-              "capability-guides/access-systems/connect-an-acs-to-seam/access-control-system-resources",
-              "capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences",
-              "capability-guides/access-systems/user-management",
-              "capability-guides/access-systems/user-management/suspending-and-unsuspending-users",
-              "capability-guides/access-systems/user-management/assigning-users-to-access-groups",
-              "capability-guides/access-systems/retrieving-entrance-details",
-              "capability-guides/access-systems/managing-credentials",
-              "capability-guides/access-systems/managing-credentials/assigning-credentials-to-users",
-              "capability-guides/access-systems/managing-credentials/listing-credentials-and-associated-entrances",
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners",
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials",
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods",
-              "capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards",
-              "capability-guides/access-systems/troubleshooting-your-access-control-system",
               "capability-guides/mobile-access",
               "capability-guides/mobile-access/mobile-access-setup",
               "capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities",
@@ -225,6 +191,49 @@
               "device-manufacturer-guidance/creating-a-seam-compatible-intercom-api/creating-intercom-crud-endpoints",
               "device-manufacturer-guidance/creating-a-seam-compatible-intercom-api/creating-access-code-crud-endpoints",
               "device-manufacturer-guidance/creating-a-seam-compatible-intercom-api/creating-the-health-endpoint"
+            ]
+          },
+          {
+            "group": "Low-Level APIs",
+            "pages": [
+              "low-level-apis/smart-locks",
+              "low-level-apis/smart-locks/get-started-with-smartlocks-api",
+              "low-level-apis/smart-locks/lock-and-unlock",
+              "low-level-apis/smart-locks/access-codes",
+              "low-level-apis/smart-locks/access-codes/creating-access-codes",
+              "low-level-apis/smart-locks/access-codes/creating-access-codes/understanding-code-constraints",
+              "low-level-apis/smart-locks/access-codes/retrieving-access-codes",
+              "low-level-apis/smart-locks/access-codes/modifying-access-codes",
+              "low-level-apis/smart-locks/access-codes/deleting-access-codes",
+              "low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes",
+              "low-level-apis/smart-locks/access-codes/access-code-requirements-for-door-locks",
+              "low-level-apis/smart-locks/access-codes/accommodating-manufacturer-mobile-apps",
+              "low-level-apis/smart-locks/access-codes/troubleshooting-access-code-issues",
+              "low-level-apis/smart-locks/access-codes/backup-access-codes",
+              "low-level-apis/smart-locks/access-codes/offline-access-codes",
+              "low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes",
+              "low-level-apis/smart-locks/access-codes/migrating-existing-access-codes",
+              "low-level-apis/access-systems",
+              "low-level-apis/access-systems/acs-quick-starts",
+              "low-level-apis/access-systems/acs-quick-starts/pin-code-quick-start",
+              "low-level-apis/access-systems/acs-quick-starts/encodable-key-card-quick-start",
+              "low-level-apis/access-systems/acs-quick-starts/mobile-key-quick-start",
+              "low-level-apis/access-systems/connect-an-acs-to-seam",
+              "low-level-apis/access-systems/connect-an-acs-to-seam/retrieving-acs-system-details",
+              "low-level-apis/access-systems/connect-an-acs-to-seam/access-control-system-resources",
+              "low-level-apis/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences",
+              "low-level-apis/access-systems/user-management",
+              "low-level-apis/access-systems/user-management/suspending-and-unsuspending-users",
+              "low-level-apis/access-systems/user-management/assigning-users-to-access-groups",
+              "low-level-apis/access-systems/retrieving-entrance-details",
+              "low-level-apis/access-systems/managing-credentials",
+              "low-level-apis/access-systems/managing-credentials/assigning-credentials-to-users",
+              "low-level-apis/access-systems/managing-credentials/listing-credentials-and-associated-entrances",
+              "low-level-apis/access-systems/working-with-card-encoders-and-scanners",
+              "low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials",
+              "low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods",
+              "low-level-apis/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards",
+              "low-level-apis/access-systems/troubleshooting-your-access-control-system"
             ]
           }
         ]
@@ -431,7 +440,11 @@
           },
           {
             "group": "Events",
-            "pages": ["api/events", "api/events/get", "api/events/list"]
+            "pages": [
+              "api/events",
+              "api/events/get",
+              "api/events/list"
+            ]
           },
           {
             "group": "Instant Keys",
@@ -584,7 +597,9 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": ["device-and-system-integration-guides/index"]
+            "pages": [
+              "device-and-system-integration-guides/index"
+            ]
           },
           {
             "group": "2N Intercom Systems",

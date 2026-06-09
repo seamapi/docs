@@ -1,11 +1,12 @@
 ---
-title: 'HVAC Mode Adjusted'
+title: "HVAC Mode Adjusted"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Simulates having adjusted the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) for a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](https://docs.seam.co/latest/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,10 +17,10 @@ Simulates having adjusted the HVAC mode for a thermostat.
 
 ```javascript
 await seam.thermostats.simulate.hvacModeAdjusted({
-  device_id: '278a72ba-7deb-45e3-a0c0-573fd360ee7b',
-  hvac_mode: 'heat',
+  device_id: "278a72ba-7deb-45e3-a0c0-573fd360ee7b",
+  hvac_mode: "heat",
   heating_set_point_fahrenheit: 68,
-})
+});
 ```
 
 #### Output:
@@ -27,7 +28,6 @@ await seam.thermostats.simulate.hvacModeAdjusted({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -53,7 +53,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -75,7 +74,6 @@ seam.thermostats.simulate.hvac_mode_adjusted(
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -97,7 +95,6 @@ seam.thermostats.simulate.hvac_mode_adjusted(
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -119,7 +116,6 @@ $seam->thermostats->simulate->hvac_mode_adjusted(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -137,10 +133,10 @@ seam thermostats simulate hvac-mode-adjusted --device_id "278a72ba-7deb-45e3-a0c
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -148,50 +144,49 @@ seam thermostats simulate hvac-mode-adjusted --device_id "278a72ba-7deb-45e3-a0c
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to simulate having adjusted the HVAC mode.
 
 ---
 
-**`hvac_mode`** _String_ (Required)
+**`hvac_mode`** *String* (Required)
 
 HVAC mode that you want to simulate.
 
 ---
 
-**`cooling_set_point_celsius`** _Number_
+**`cooling_set_point_celsius`** *Number*
 
 Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.
 
 ---
 
-**`cooling_set_point_fahrenheit`** _Number_
+**`cooling_set_point_fahrenheit`** *Number*
 
 Cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.
 
 ---
 
-**`heating_set_point_celsius`** _Number_
+**`heating_set_point_celsius`** *Number*
 
 Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.
 
 ---
 
-**`heating_set_point_fahrenheit`** _Number_
+**`heating_set_point_fahrenheit`** *Number*
 
 Heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.
 
 ---
+
 
 ## Response
 
@@ -200,3 +195,4 @@ Returns:
 **void**
 
 </Check>
+

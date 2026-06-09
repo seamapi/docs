@@ -1,11 +1,12 @@
 ---
-title: 'Update a Connected Account'
+title: "Update a Connected Account"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Updates a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,10 +17,10 @@ Updates a connected account.
 
 ```javascript
 await seam.connectedAccounts.update({
-  connected_account_id: 'a289aa54-5488-4707-9a4b-eeea4edf311d',
+  connected_account_id: "a289aa54-5488-4707-9a4b-eeea4edf311d",
   automatically_manage_new_devices: true,
-  custom_metadata: { id: 'internalId1' },
-})
+  custom_metadata: { id: "internalId1" },
+});
 ```
 
 #### Output:
@@ -27,7 +28,6 @@ await seam.connectedAccounts.update({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -55,7 +55,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -77,7 +76,6 @@ seam.connected_accounts.update(
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -101,7 +99,6 @@ seam.connected_accounts.update(
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -123,7 +120,6 @@ $seam->connected_accounts->update(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -141,10 +137,10 @@ seam connected-accounts update --connected_account_id "a289aa54-5488-4707-9a4b-e
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -152,31 +148,27 @@ seam connected-accounts update --connected_account_id "a289aa54-5488-4707-9a4b-e
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`connected_account_id`** _String_ (Required)
+**`connected_account_id`** *String* (Required)
 
 ID of the connected account that you want to update.
 
 ---
 
-**`accepted_capabilities`** _Array_ _of Enums_
+**`accepted_capabilities`** *Array* *of Enums*
 
 List of accepted device capabilities that restrict the types of devices that can be connected through this connected account. Valid values are `lock`, `thermostat`, `noise_sensor`, and `access_control`.
-
 <details>
 
 <summary>Enum values</summary>
 
 Possible enum values:
-
 - <code>lock</code>
 - <code>thermostat</code>
 - <code>noise_sensor</code>
@@ -186,23 +178,24 @@ Possible enum values:
 
 ---
 
-**`automatically_manage_new_devices`** _Boolean_
+**`automatically_manage_new_devices`** *Boolean*
 
 Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
 
 ---
 
-**`custom_metadata`** _Object_
+**`custom_metadata`** *Object*
 
 Custom metadata that you want to associate with the connected account. Entirely replaces the existing custom metadata object. If a new Connect Webview contains custom metadata and is used to reconnect a connected account, the custom metadata from the Connect Webview will entirely replace the entire custom metadata object on the connected account. Supports up to 50 JSON key:value pairs. [Adding custom metadata to a connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/latest/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata).
 
 ---
 
-**`customer_key`** _String_
+**`customer_key`** *String*
 
 The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer.
 
 ---
+
 
 ## Response
 
@@ -211,3 +204,4 @@ Returns:
 **void**
 
 </Check>
+

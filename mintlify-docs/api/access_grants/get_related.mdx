@@ -1,5 +1,5 @@
 ---
-title: 'Get related Access Grant resources'
+title: "Get related Access Grant resources"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,41 +7,38 @@ title: 'Get related Access Grant resources'
 
 Gets all related resources for one or more Access Grants.
 
+
 <details>
 
 <summary>Authentication Methods</summary>
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`access_grant_ids`** _Array_ _of UUIDs_
+**`access_grant_ids`** *Array* *of UUIDs*
 
 IDs of the access grants that you want to get along with their related resources.
 
 ---
 
-**`access_grant_keys`** _Array_ _of Strings_
+**`access_grant_keys`** *Array* *of Strings*
 
 Keys of the access grants that you want to get along with their related resources.
 
 ---
 
-**`exclude`** _Array_ _of Enums_
-
+**`exclude`** *Array* *of Enums*
 <details>
 
 <summary>Enum values</summary>
 
 Possible enum values:
-
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
@@ -54,14 +51,12 @@ Possible enum values:
 
 ---
 
-**`include`** _Array_ _of Enums_
-
+**`include`** *Array* *of Enums*
 <details>
 
 <summary>Enum values</summary>
 
 Possible enum values:
-
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
@@ -73,6 +68,7 @@ Possible enum values:
 </details>
 
 ---
+
 
 ## Response
 
@@ -90,8 +86,11 @@ batch response
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -109,7 +108,10 @@ batch response
       "can_program_online_access_codes": true,
       "can_remotely_lock": true,
       "can_remotely_unlock": true,
-      "capabilities_supported": ["access_code", "lock"],
+      "capabilities_supported": [
+        "access_code",
+        "lock"
+      ],
       "connected_account_id": "8e3a4f1b-2c7d-4a9e-8b5f-3d2c1a0b9e8f",
       "created_at": "2025-03-27T02:08:16.418Z",
       "space_ids": [],
@@ -165,7 +167,13 @@ batch response
           "model": "Encode"
         },
         "serial_number": "34000000000531e0",
-        "supported_code_lengths": [4, 5, 6, 7, 8],
+        "supported_code_lengths": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
         "supports_backup_access_code_pool": true,
         "supports_offline_access_codes": false
       },
@@ -214,7 +222,9 @@ batch response
         "username": "jane_doe"
       },
       "warnings": [],
-      "accepted_capabilities": ["lock"]
+      "accepted_capabilities": [
+        "lock"
+      ]
     }
   ],
   "acs_systems": [
@@ -223,7 +233,9 @@ batch response
       "acs_system_id": "dbed811f-a8c7-4dab-a3cb-1a734ebd6ac7",
       "acs_user_count": 20,
       "connected_account_id": "a94aeed0-1ae0-4e49-9c23-8444c7ceba09",
-      "connected_account_ids": ["a94aeed0-1ae0-4e49-9c23-8444c7ceba09"],
+      "connected_account_ids": [
+        "a94aeed0-1ae0-4e49-9c23-8444c7ceba09"
+      ],
       "created_at": "2025-06-15T16:54:17.946425Z",
       "default_credential_manager_acs_system_id": "5dde2def-3507-44f5-9521-7ca96aa4cd18",
       "errors": [],
@@ -250,7 +262,9 @@ batch response
       "phone_number": "+1555551002",
       "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
       "user_identity_key": "jane_doe",
-      "acs_user_ids": ["0fc82df4-391b-4d00-a234-86378f1c3952"],
+      "acs_user_ids": [
+        "0fc82df4-391b-4d00-a234-86378f1c3952"
+      ],
       "warnings": [],
       "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
     }
@@ -287,6 +301,5 @@ batch response
   ]
 }
 ```
-
 </Tab>
 </Tabs>

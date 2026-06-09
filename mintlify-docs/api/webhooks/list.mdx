@@ -1,11 +1,12 @@
 ---
-title: 'List Webhooks'
+title: "List Webhooks"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/webhooks).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -15,22 +16,21 @@ Returns a list of all webhooks.
 #### Code:
 
 ```javascript
-await seam.webhooks.list()
+await seam.webhooks.list();
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    event_types: ['device.connected', 'device.disconnected'],
-    secret: 'mySecret',
-    url: 'https://example.com/webhook',
-    webhook_id: 'ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1',
-  },
+    "event_types": ["device.connected", "device.disconnected"],
+    "secret": "mySecret",
+    "url": "https://example.com/webhook",
+    "webhook_id": "ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -58,7 +58,6 @@ curl --include --request POST "https://connect.getseam.com/webhooks/list" \
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -83,7 +82,6 @@ seam.webhooks.list()
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -108,7 +106,6 @@ seam.webhooks.list()
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -133,7 +130,6 @@ $seam->webhooks->list();
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -158,10 +154,10 @@ seam webhooks list
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -169,16 +165,15 @@ seam webhooks list
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
 None
+
 
 ## Response
 
@@ -188,8 +183,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -199,6 +197,5 @@ Returns:
   "webhook_id": "ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1"
 }
 ```
-
 </Tab>
 </Tabs>

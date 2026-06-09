@@ -1,7 +1,8 @@
 ---
-title: 'Activating a Climate Preset'
-description: 'Learn how to activate a preconfigured climate preset immediately.'
+title: "Activating a Climate Preset"
+description: "Learn how to activate a preconfigured climate preset immediately."
 ---
+
 
 In addition to [scheduling](../creating-and-managing-thermostat-schedules.md) climate presets for a thermostat, you can activate a configured climate preset immediately. When you activate a climate preset, it overrides any scheduled climate preset that is already active on the thermostat.
 
@@ -9,7 +10,7 @@ Activating a climate preset returns an [action attempt](../../../core-concepts/a
 
 Further, Seam emits a [`thermostat.temperature_reached_set_point` event](https://docs.seam.co/latest/api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](../understanding-thermostat-concepts/set-points.md) specified in the climate preset that you've activated. You can configure a [webhook](../../../developer-tools/webhooks.md) to watch for this event.
 
----
+***
 
 ## Activate a Climate Preset
 
@@ -22,23 +23,22 @@ To activate a climate preset, issue a [`/thermostats/activate_climate_preset`](h
 
 ```javascript
 await seam.thermostats.activateClimatePreset({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key: 'occupied',
-})
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied"
+});
 ```
 
 **Response:**
 
 ```json
 {
-  "status": "success",
-  "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
-  "action_type": "ACTIVATE_CLIMATE_PRESET",
-  "result": {},
-  "error": null
+  status: 'success',
+  action_attempt_id: '05de2295-d1dc-4748-aae3-9931658bde20',
+  action_type: 'ACTIVATE_CLIMATE_PRESET',
+  result: {},
+  error: null
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -71,7 +71,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -96,7 +95,6 @@ ActionAttempt(
   status='success'
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -112,7 +110,6 @@ ActionAttempt(
 ```
 # Coming soon!
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -137,7 +134,6 @@ $seam->thermostats->activate_climate_preset(
   "status": "success"
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -153,11 +149,10 @@ $seam->thermostats->activate_climate_preset(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Poll the Action Attempt
 
@@ -178,14 +173,13 @@ await seam.actionAttempts.get(
 
 ```json
 {
-  "status": "success",
-  "action_attempt_id": "05de2295-d1dc-4748-aae3-9931658bde20",
-  "action_type": "ACTIVATE_CLIMATE_PRESET",
-  "result": {},
-  "error": null
+  status: 'success',
+  action_attempt_id: '05de2295-d1dc-4748-aae3-9931658bde20',
+  action_type: 'ACTIVATE_CLIMATE_PRESET',
+  result: {},
+  error: null
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -218,7 +212,6 @@ curl -X 'GET' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -242,7 +235,6 @@ ActionAttempt(
   status='success'
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -258,7 +250,6 @@ ActionAttempt(
 ```
 # Coming soon!
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -282,7 +273,6 @@ $seam->action_attempts->get(
   "status": "success"
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -298,6 +288,5 @@ $seam->action_attempts->get(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>

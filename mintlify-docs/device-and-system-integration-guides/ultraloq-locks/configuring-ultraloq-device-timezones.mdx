@@ -1,11 +1,12 @@
 ---
-title: 'Configuring Ultraloq Device Timezones'
-description: 'Configure device timezones for Ultraloq locks to enable time-bound access codes'
+title: "Configuring Ultraloq Device Timezones"
+description: "Configure device timezones for Ultraloq locks to enable time-bound access codes"
 ---
+
 
 Ultraloq devices require timezone configuration before you can create time-bound access codes. This guide explains why this is necessary and how to configure timezones for your Ultraloq devices.
 
----
+***
 
 ## Why Timezone Configuration is Required
 
@@ -13,37 +14,36 @@ Ultraloq devices have a unique characteristic that requires manual timezone conf
 
 **The Problem:**
 
-- Ultraloq devices schedule access codes using **device-local time** (e.g., "2024-01-15 14:30")
-- The Ultraloq API returns timestamps **without timezone information**
-- Without knowing the device's timezone, Seam cannot correctly convert UTC timestamps to device-local time
+* Ultraloq devices schedule access codes using **device-local time** (e.g., "2024-01-15 14:30")
+* The Ultraloq API returns timestamps **without timezone information**
+* Without knowing the device's timezone, Seam cannot correctly convert UTC timestamps to device-local time
 
 **The Solution:**
 
-- You must manually configure each device's timezone using the `/devices/report_provider_metadata` API
-- This tells Seam what timezone the device is in so it can correctly schedule time-bound access codes
+* You must manually configure each device's timezone using the `/devices/report_provider_metadata` API
+* This tells Seam what timezone the device is in so it can correctly schedule time-bound access codes
 
 <Info>
-  This is a **one-time configuration** per device. Once set, the timezone
-  persists until you change it.
+This is a **one-time configuration** per device. Once set, the timezone persists until you change it.
 </Info>
 
----
+***
 
 ## What Works Without Timezone
 
 You can use the following features **without** configuring the device's timezone:
 
-- ✅ **Permanent access codes** — Codes without `starts_at` and `ends_at` work immediately
-- ✅ **Lock and unlock operations** — Remote lock/unlock commands work immediately
-- ✅ **Device monitoring** — Battery level, lock status, and online/offline state
+* ✅ **Permanent access codes** — Codes without `starts_at` and `ends_at` work immediately
+* ✅ **Lock and unlock operations** — Remote lock/unlock commands work immediately
+* ✅ **Device monitoring** — Battery level, lock status, and online/offline state
 
----
+***
 
 ## What Requires Timezone
 
 The following feature **requires** timezone configuration:
 
-- ❌ **Time-bound access codes** — Codes with `starts_at` and `ends_at` require timezone
+* ❌ **Time-bound access codes** — Codes with `starts_at` and `ends_at` require timezone
 
 If you attempt to create a time-bound access code without configuring the timezone, you'll receive a validation error:
 
@@ -56,7 +56,7 @@ If you attempt to create a time-bound access code without configuring the timezo
 }
 ```
 
----
+***
 
 ## Detecting Unconfigured Devices
 
@@ -66,29 +66,28 @@ When you first connect an Ultraloq device, it will have the `ultraloq_time_zone_
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from 'seam'
+import { Seam } from "seam";
 
-const seam = new Seam()
+const seam = new Seam();
 
 const device = await seam.devices.get({
-  device_id: 'your-device-id',
-})
+  device_id: "your-device-id"
+});
 
 // Check for timezone warning
 const hasTimezoneWarning = device.warnings.some(
-  (w) => w.warning_code === 'ultraloq_time_zone_unknown',
-)
+  w => w.warning_code === "ultraloq_time_zone_unknown"
+);
 
 if (hasTimezoneWarning) {
-  console.log('⚠️ Timezone not configured')
-  console.log('Configure timezone before creating time-bound access codes')
+  console.log("⚠️ Timezone not configured");
+  console.log("Configure timezone before creating time-bound access codes");
 }
 
 // Check timezone value
-const timezone = device.properties.ultraloq_metadata?.time_zone
-console.log(`Current timezone: ${timezone}`) // Will be null if not configured
+const timezone = device.properties.ultraloq_metadata?.time_zone;
+console.log(`Current timezone: ${timezone}`);  // Will be null if not configured
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -109,7 +108,6 @@ echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_z
 # Check timezone value
 echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -135,7 +133,6 @@ if has_timezone_warning:
 timezone = device.properties.get("ultraloq_metadata", {}).get("time_zone")
 print(f"Current timezone: {timezone}")  # Will be None if not configured
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -161,7 +158,6 @@ end
 timezone = device.properties.dig("ultraloq_metadata", "time_zone")
 puts "Current timezone: #{timezone}"  # Will be nil if not configured
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -194,7 +190,6 @@ if ($hasTimezoneWarning) {
 $timezone = $device->properties->ultraloq_metadata->time_zone ?? null;
 echo "Current timezone: " . ($timezone ?? "not set") . "\n";
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -221,7 +216,6 @@ if (hasTimezoneWarning)
 var timezone = device.Properties.UltraloqMetadata?.TimeZone;
 Console.WriteLine($"Current timezone: {timezone ?? "not set"}");
 ```
-
 </Tab>
 
 <Tab title="Java">
@@ -251,11 +245,10 @@ if (hasTimezoneWarning) {
 String timezone = device.getProperties().getUltraloqMetadata().getTimeZone();
 System.out.println("Current timezone: " + (timezone != null ? timezone : "not set"));
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Configuring Timezones
 
@@ -267,25 +260,24 @@ To configure the timezone for a single device, use the `/devices/report_provider
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from 'seam'
+import { Seam } from "seam";
 
-const seam = new Seam()
+const seam = new Seam();
 
 // Configure timezone for one device
 await seam.devices.reportProviderMetadata({
   devices: [
     {
-      device_id: 'your-device-id',
+      device_id: "your-device-id",
       ultraloq_metadata: {
-        time_zone: 'America/New_York',
-      },
-    },
-  ],
-})
+        time_zone: "America/New_York"
+      }
+    }
+  ]
+});
 
-console.log('✓ Timezone configured successfully!')
+console.log("✓ Timezone configured successfully!");
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -307,7 +299,6 @@ curl -X 'POST' \
     ]
   }'
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -331,7 +322,6 @@ seam.devices.report_provider_metadata(
 
 print("✓ Timezone configured successfully!")
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -355,7 +345,6 @@ seam.devices.report_provider_metadata(
 
 puts "✓ Timezone configured successfully!"
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -382,7 +371,6 @@ $seam->devices->report_provider_metadata(
 
 echo "✓ Timezone configured successfully!";
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -406,7 +394,6 @@ seam.Devices.ReportProviderMetadata(
 
 Console.WriteLine("✓ Timezone configured successfully!");
 ```
-
 </Tab>
 
 <Tab title="Java">
@@ -432,7 +419,6 @@ seam.devices().reportProviderMetadata(
 
 System.out.println("✓ Timezone configured successfully!");
 ```
-
 </Tab>
 </Tabs>
 
@@ -444,28 +430,27 @@ You can configure timezones for multiple devices in a single API call:
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from 'seam'
+import { Seam } from "seam";
 
-const seam = new Seam()
+const seam = new Seam();
 
 // Get all Ultraloq devices
 const devices = await seam.devices.list({
-  device_type: 'ultraloq_lock',
-})
+  device_type: "ultraloq_lock"
+});
 
 // Configure timezone for all devices
 await seam.devices.reportProviderMetadata({
-  devices: devices.map((device) => ({
+  devices: devices.map(device => ({
     device_id: device.device_id,
     ultraloq_metadata: {
-      time_zone: 'America/Los_Angeles', // Or get from user
-    },
-  })),
-})
+      time_zone: "America/Los_Angeles"  // Or get from user
+    }
+  }))
+});
 
-console.log(`✓ Configured timezone for ${devices.length} devices`)
+console.log(`✓ Configured timezone for ${devices.length} devices`);
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -497,7 +482,6 @@ curl -X 'POST' \
     }]
   }')"
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -525,7 +509,6 @@ seam.devices.report_provider_metadata(
 
 print(f"✓ Configured timezone for {len(devices)} devices")
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -552,7 +535,6 @@ seam.devices.report_provider_metadata(
 
 puts "✓ Configured timezone for #{devices.length} devices"
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -582,7 +564,6 @@ $seam->devices->report_provider_metadata(devices: $deviceMetadata);
 
 echo "✓ Configured timezone for " . count($devices) . " devices";
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -608,7 +589,6 @@ seam.Devices.ReportProviderMetadata(
 
 Console.WriteLine($"✓ Configured timezone for {devices.Count()} devices");
 ```
-
 </Tab>
 
 <Tab title="Java">
@@ -643,11 +623,10 @@ seam.devices().reportProviderMetadata(
 
 System.out.println("✓ Configured timezone for " + devices.size() + " devices");
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Valid Timezone Values
 
@@ -655,29 +634,27 @@ You must use **IANA timezone strings** (also called "tz database" timezones). Th
 
 ### Examples of Valid Timezones
 
-- `"America/New_York"` — Eastern Time (US)
-- `"America/Chicago"` — Central Time (US)
-- `"America/Denver"` — Mountain Time (US)
-- `"America/Los_Angeles"` — Pacific Time (US)
-- `"America/Phoenix"` — Arizona (no DST)
-- `"America/Toronto"` — Eastern Time (Canada)
-- `"Europe/London"` — UK
-- `"Europe/Paris"` — Central European Time
-- `"Asia/Tokyo"` — Japan
-- `"Australia/Sydney"` — Australian Eastern Time
+* `"America/New_York"` — Eastern Time (US)
+* `"America/Chicago"` — Central Time (US)
+* `"America/Denver"` — Mountain Time (US)
+* `"America/Los_Angeles"` — Pacific Time (US)
+* `"America/Phoenix"` — Arizona (no DST)
+* `"America/Toronto"` — Eastern Time (Canada)
+* `"Europe/London"` — UK
+* `"Europe/Paris"` — Central European Time
+* `"Asia/Tokyo"` — Japan
+* `"Australia/Sydney"` — Australian Eastern Time
 
 <Warning>
-  **Do not use timezone abbreviations** like `"EST"`, `"PST"`, or `"GMT-5"`.
-  These are ambiguous and will cause validation errors. Always use the full IANA
-  timezone string.
+**Do not use timezone abbreviations** like `"EST"`, `"PST"`, or `"GMT-5"`. These are ambiguous and will cause validation errors. Always use the full IANA timezone string.
 </Warning>
 
 ### Finding the Right Timezone
 
 For a complete list of valid IANA timezones, see:
 
-- [IANA Time Zone Database (Wikipedia)](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-- [IANA Official Database](https://www.iana.org/time-zones)
+* [IANA Time Zone Database (Wikipedia)](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+* [IANA Official Database](https://www.iana.org/time-zones)
 
 Most programming languages also provide timezone lookup utilities:
 
@@ -686,16 +663,15 @@ Most programming languages also provide timezone lookup utilities:
 
 ```javascript
 // Using Intl API (built-in)
-const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-console.log(`User's timezone: ${userTimezone}`)
+const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+console.log(`User's timezone: ${userTimezone}`);
 // Example: "America/Los_Angeles"
 
 // Or using moment-timezone library
-const moment = require('moment-timezone')
-const allTimezones = moment.tz.names()
-console.log(`Available timezones: ${allTimezones.length}`)
+const moment = require('moment-timezone');
+const allTimezones = moment.tz.names();
+console.log(`Available timezones: ${allTimezones.length}`);
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -712,7 +688,6 @@ ny_timezones = [tz for tz in all_timezones if "New" in tz]
 print(ny_timezones)
 # ['America/New_York', 'America/North_Dakota/New_Salem', ...]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -729,11 +704,10 @@ ny_timezones = all_timezones.select { |tz| tz.include?("New") }
 puts ny_timezones
 # ["America/New_York", "America/North_Dakota/New_Salem", ...]
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Verification
 
@@ -743,31 +717,30 @@ After configuring the timezone, verify that the configuration was successful:
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from 'seam'
+import { Seam } from "seam";
 
-const seam = new Seam()
+const seam = new Seam();
 
 const device = await seam.devices.get({
-  device_id: 'your-device-id',
-})
+  device_id: "your-device-id"
+});
 
 // Verify timezone is set
-const timezone = device.properties.ultraloq_metadata.time_zone
-console.log(`Device timezone: ${timezone}`)
+const timezone = device.properties.ultraloq_metadata.time_zone;
+console.log(`Device timezone: ${timezone}`);
 
 // Verify warning is cleared
 const hasWarning = device.warnings.some(
-  (w) => w.warning_code === 'ultraloq_time_zone_unknown',
-)
+  w => w.warning_code === "ultraloq_time_zone_unknown"
+);
 
 if (!hasWarning) {
-  console.log('✓ Timezone configured successfully!')
-  console.log('✓ Device is ready to create time-bound access codes')
+  console.log("✓ Timezone configured successfully!");
+  console.log("✓ Device is ready to create time-bound access codes");
 } else {
-  console.log('✗ Warning still present - check timezone configuration')
+  console.log("✗ Warning still present - check timezone configuration");
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -788,7 +761,6 @@ echo $device | jq -r '.device.properties.ultraloq_metadata.time_zone'
 # Check warnings
 echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_zone_unknown")'
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -816,7 +788,6 @@ if not has_warning:
 else:
   print("✗ Warning still present - check timezone configuration")
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -842,7 +813,6 @@ else
   puts "✗ Warning still present - check timezone configuration"
 end
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -877,7 +847,6 @@ if (!$hasWarning) {
   echo "✗ Warning still present - check timezone configuration\n";
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -908,7 +877,6 @@ else
   Console.WriteLine("✗ Warning still present - check timezone configuration");
 }
 ```
-
 </Tab>
 
 <Tab title="Java">
@@ -940,7 +908,6 @@ if (!hasWarning) {
   System.out.println("✗ Warning still present - check timezone configuration");
 }
 ```
-
 </Tab>
 </Tabs>
 
@@ -961,7 +928,7 @@ After configuration, the device will also have the timezone in `device.location.
 }
 ```
 
----
+***
 
 ## Changing Timezones
 
@@ -971,25 +938,24 @@ You can change a device's timezone at any time by calling `/devices/report_provi
 <Tab title="JavaScript">
 
 ```javascript
-import { Seam } from 'seam'
+import { Seam } from "seam";
 
-const seam = new Seam()
+const seam = new Seam();
 
 // User moved device from New York to Los Angeles
 await seam.devices.reportProviderMetadata({
   devices: [
     {
-      device_id: 'your-device-id',
+      device_id: "your-device-id",
       ultraloq_metadata: {
-        time_zone: 'America/Los_Angeles', // Changed from America/New_York
-      },
-    },
-  ],
-})
+        time_zone: "America/Los_Angeles"  // Changed from America/New_York
+      }
+    }
+  ]
+});
 
-console.log('✓ Timezone updated to Pacific Time')
+console.log("✓ Timezone updated to Pacific Time");
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -1011,7 +977,6 @@ curl -X 'POST' \
     ]
   }'
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -1035,7 +1000,6 @@ seam.devices.report_provider_metadata(
 
 print("✓ Timezone updated to Pacific Time")
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -1059,7 +1023,6 @@ seam.devices.report_provider_metadata(
 
 puts "✓ Timezone updated to Pacific Time"
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -1086,7 +1049,6 @@ $seam->devices->report_provider_metadata(
 
 echo "✓ Timezone updated to Pacific Time";
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -1110,7 +1072,6 @@ seam.Devices.ReportProviderMetadata(
 
 Console.WriteLine("✓ Timezone updated to Pacific Time");
 ```
-
 </Tab>
 
 <Tab title="Java">
@@ -1136,17 +1097,16 @@ seam.devices().reportProviderMetadata(
 
 System.out.println("✓ Timezone updated to Pacific Time");
 ```
-
 </Tab>
 </Tabs>
 
 **Impact on Existing Access Codes:**
 
-- Existing time-bound access codes maintain their **UTC timestamps**
-- They continue working correctly because Seam stores them in UTC internally
-- Future access codes will use the new timezone for scheduling
+* Existing time-bound access codes maintain their **UTC timestamps**
+* They continue working correctly because Seam stores them in UTC internally
+* Future access codes will use the new timezone for scheduling
 
----
+***
 
 ## Best Practices
 
@@ -1223,7 +1183,7 @@ In your application UI, guide users to select the correct timezone:
 └─────────────────────────────────────────────┘
 ```
 
----
+***
 
 ## Troubleshooting
 
@@ -1232,49 +1192,46 @@ In your application UI, guide users to select the correct timezone:
 **Problem:** You receive an error like `"Invalid timezone. Must be a valid IANA timezone string."`
 
 **Solution:**
-
-- Verify you're using a valid IANA timezone (e.g., `"America/New_York"`, not `"EST"`)
-- Check for typos in the timezone string
-- Refer to the [IANA timezone list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+* Verify you're using a valid IANA timezone (e.g., `"America/New_York"`, not `"EST"`)
+* Check for typos in the timezone string
+* Refer to the [IANA timezone list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
 ### Warning Not Cleared After Configuration
 
 **Problem:** The `ultraloq_time_zone_unknown` warning persists after calling `report_provider_metadata`.
 
 **Solution:**
-
-- Verify the API call succeeded (check for errors in the response)
-- Refresh the device by calling `seam.devices.get()` again
-- Ensure you used the correct `device_id`
-- Wait a few seconds and check again (state updates are usually immediate but may take a moment)
+* Verify the API call succeeded (check for errors in the response)
+* Refresh the device by calling `seam.devices.get()` again
+* Ensure you used the correct `device_id`
+* Wait a few seconds and check again (state updates are usually immediate but may take a moment)
 
 ### Time-Bound Codes Still Failing
 
 **Problem:** Time-bound access codes still fail to create after configuring timezone.
 
 **Solution:**
+* Verify `device.properties.ultraloq_metadata.time_zone` is not `null`
+* Check that `device.warnings` does not contain `ultraloq_time_zone_unknown`
+* Ensure you're providing both `starts_at` and `ends_at` in your access code request
+* Verify your timestamps are valid ISO 8601 UTC strings
 
-- Verify `device.properties.ultraloq_metadata.time_zone` is not `null`
-- Check that `device.warnings` does not contain `ultraloq_time_zone_unknown`
-- Ensure you're providing both `starts_at` and `ends_at` in your access code request
-- Verify your timestamps are valid ISO 8601 UTC strings
-
----
+***
 
 ## API Reference
 
 For complete API documentation, see:
 
-- [POST /devices/report_provider_metadata](https://docs.seam.co/latest/api/devices/report_provider_metadata)
+* [POST /devices/report_provider_metadata](https://docs.seam.co/latest/api/devices/report_provider_metadata)
 
----
+***
 
 ## Next Steps
 
 Now that you understand timezone configuration, you can:
 
-- **Create time-bound access codes:** See [Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)
-- **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide.md)
-- **Learn about access code constraints:** See [Understanding Code Constraints](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints)
+* **Create time-bound access codes:** See [Creating Ultraloq Access Codes](creating-ultraloq-access-codes.md)
+* **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide.md)
+* **Learn about access code constraints:** See [Understanding Code Constraints](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/creating-access-codes/understanding-code-constraints)
 
----
+***

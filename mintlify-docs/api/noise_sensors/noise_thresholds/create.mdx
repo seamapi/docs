@@ -1,11 +1,12 @@
 ---
-title: 'Create a Noise Threshold'
+title: "Create a Noise Threshold"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Creates a new [noise threshold](https://docs.seam.co/latest/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/latest/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,13 +17,13 @@ Creates a new noise threshold for a noise sensor.
 
 ```javascript
 await seam.noiseSensors.noiseThresholds.create({
-  device_id: '8282891b-c4da-4239-8f01-56089d44b80d',
-  name: 'My Noise Sensor',
-  starts_daily_at: '2025-06-20T18:29:57.000Z',
-  ends_daily_at: '2025-06-19T12:38:44.000Z',
+  device_id: "8282891b-c4da-4239-8f01-56089d44b80d",
+  name: "My Noise Sensor",
+  starts_daily_at: "2025-06-20T18:29:57.000Z",
+  ends_daily_at: "2025-06-19T12:38:44.000Z",
   noise_threshold_decibels: 50,
   noise_threshold_nrs: 40,
-})
+});
 ```
 
 #### Output:
@@ -38,7 +39,6 @@ await seam.noiseSensors.noiseThresholds.create({
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -77,7 +77,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -110,7 +109,6 @@ NoiseThreshold(
     starts_daily_at="2025-06-20T18:29:57.000Z",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -143,7 +141,6 @@ seam.noise_sensors.noise_thresholds.create(
   "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -176,7 +173,6 @@ $seam->noise_sensors->noise_thresholds->create(
     "starts_daily_at" => "2025-06-20T18:29:57.000Z",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -202,10 +198,10 @@ seam noise-sensors noise-thresholds create --device_id "8282891b-c4da-4239-8f01-
   "starts_daily_at": "2025-06-20T18:29:57.000Z"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -213,50 +209,49 @@ seam noise-sensors noise-thresholds create --device_id "8282891b-c4da-4239-8f01-
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the device for which you want to create a noise threshold.
 
 ---
 
-**`ends_daily_at`** _String_ (Required)
+**`ends_daily_at`** *String* (Required)
 
 Time at which the new noise threshold should become inactive daily.
 
 ---
 
-**`starts_daily_at`** _String_ (Required)
+**`starts_daily_at`** *String* (Required)
 
 Time at which the new noise threshold should become active daily.
 
 ---
 
-**`name`** _String_
+**`name`** *String*
 
 Name of the new noise threshold.
 
 ---
 
-**`noise_threshold_decibels`** _Number_
+**`noise_threshold_decibels`** *Number*
 
 Noise level in decibels for the new noise threshold.
 
 ---
 
-**`noise_threshold_nrs`** _Number_
+**`noise_threshold_nrs`** *Number*
 
 Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/latest/device-and-system-integration-guides/noiseaware-sensors).
 
 ---
+
 
 ## Response
 
@@ -266,8 +261,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -280,6 +278,5 @@ Returns:
   "starts_daily_at": "07:00:00[America/Los_Angeles]"
 }
 ```
-
 </Tab>
 </Tabs>

@@ -1,11 +1,12 @@
 ---
-title: 'Activate a Climate Preset'
+title: "Activate a Climate Preset"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Activates a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,9 +17,9 @@ Activates a specified climate preset for a specified thermostat.
 
 ```javascript
 await seam.thermostats.activateClimatePreset({
-  device_id: '52b88155-5b81-47d2-b04d-28a802bd7395',
-  climate_preset_key: 'Eco',
-})
+  device_id: "52b88155-5b81-47d2-b04d-28a802bd7395",
+  climate_preset_key: "Eco",
+});
 ```
 
 #### Output:
@@ -32,7 +33,6 @@ await seam.thermostats.activateClimatePreset({
   "status": "success"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -65,7 +65,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -91,7 +90,6 @@ ActionAttempt(
     status="success",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -119,7 +117,6 @@ seam.thermostats.activate_climate_preset(
   "status" => "success",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -146,7 +143,6 @@ $seam->thermostats->activate_climate_preset(
     "status" => "success",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -170,10 +166,10 @@ seam thermostats activate-climate-preset --device_id "52b88155-5b81-47d2-b04d-28
   "status": "success"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -181,26 +177,25 @@ seam thermostats activate-climate-preset --device_id "52b88155-5b81-47d2-b04d-28
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`climate_preset_key`** _String_ (Required)
+**`climate_preset_key`** *String* (Required)
 
 Climate preset key of the climate preset that you want to activate.
 
 ---
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to activate a climate preset.
 
 ---
+
 
 ## Response
 
@@ -210,8 +205,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -222,6 +220,5 @@ Returns:
   "status": "success"
 }
 ```
-
 </Tab>
 </Tabs>

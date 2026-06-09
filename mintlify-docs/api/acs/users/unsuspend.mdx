@@ -1,5 +1,5 @@
 ---
-title: 'Unsuspend an ACS User'
+title: "Unsuspend an ACS User"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,6 +7,7 @@ title: 'Unsuspend an ACS User'
 - [Examples](#examples)
 
 [Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an access system user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the access system user restores their access.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -17,9 +18,9 @@ Unsuspends a specified suspended access system user, using the associated user i
 
 ```javascript
 await seam.acs.users.unsuspend({
-  user_identity_id: '6a42fbcf-da1a-40f8-8221-596774f97537',
-  acs_system_id: '264ea3f9-e483-469e-aada-c98c094d5521',
-})
+  user_identity_id: "6a42fbcf-da1a-40f8-8221-596774f97537",
+  acs_system_id: "264ea3f9-e483-469e-aada-c98c094d5521",
+});
 ```
 
 #### Output:
@@ -27,7 +28,6 @@ await seam.acs.users.unsuspend({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -52,7 +52,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -73,7 +72,6 @@ seam.acs.users.unsuspend(
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -94,7 +92,6 @@ seam.acs.users.unsuspend(
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -115,7 +112,6 @@ $seam->acs->users->unsuspend(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -133,10 +129,10 @@ seam acs users unsuspend --user_identity_id "6a42fbcf-da1a-40f8-8221-596774f9753
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -144,32 +140,31 @@ seam acs users unsuspend --user_identity_id "6a42fbcf-da1a-40f8-8221-596774f9753
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`acs_system_id`** _String_
+**`acs_system_id`** *String*
 
 ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id.
 
 ---
 
-**`acs_user_id`** _String_
+**`acs_user_id`** *String*
 
 ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.
 
 ---
 
-**`user_identity_id`** _String_
+**`user_identity_id`** *String*
 
 ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id.
 
 ---
+
 
 ## Response
 
@@ -179,9 +174,11 @@ Returns:
 
 </Check>
 
+
 ---
 
 ## Examples
+
 
 ### Unsuspend an access system user
 
@@ -190,12 +187,14 @@ Unsuspends a specified suspended access system user.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
 await seam.acs.users.unsuspend({
-  acs_user_id: '56dd7042-4134-4788-9212-53f25f2939e1',
-})
+  acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1",
+});
 ```
 
 #### Output:
@@ -203,10 +202,11 @@ await seam.acs.users.unsuspend({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -225,10 +225,11 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -241,10 +242,11 @@ seam.acs.users.unsuspend(acs_user_id="56dd7042-4134-4788-9212-53f25f2939e1")
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -257,10 +259,11 @@ seam.acs.users.unsuspend(acs_user_id: "56dd7042-4134-4788-9212-53f25f2939e1")
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -275,10 +278,11 @@ $seam->acs->users->unsuspend(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -291,7 +295,6 @@ seam acs users unsuspend --acs_user_id "56dd7042-4134-4788-9212-53f25f2939e1"
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>

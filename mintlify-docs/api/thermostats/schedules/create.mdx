@@ -1,11 +1,12 @@
 ---
-title: 'Create a Thermostat Schedule'
+title: "Create a Thermostat Schedule"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Creates a new [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,14 +17,14 @@ Creates a new thermostat schedule for a specified thermostat.
 
 ```javascript
 await seam.thermostats.schedules.create({
-  device_id: 'd710aa35-232d-442b-a817-c28045de1c74',
+  device_id: "d710aa35-232d-442b-a817-c28045de1c74",
   name: "Jane's Stay",
-  climate_preset_key: 'Occupied',
+  climate_preset_key: "Occupied",
   max_override_period_minutes: 90,
-  starts_at: '2025-06-19T15:00:00.000Z',
-  ends_at: '2025-06-22T11:00:00.000Z',
+  starts_at: "2025-06-19T15:00:00.000Z",
+  ends_at: "2025-06-22T11:00:00.000Z",
   is_override_allowed: true,
-})
+});
 ```
 
 #### Output:
@@ -43,7 +44,6 @@ await seam.thermostats.schedules.create({
   "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -87,7 +87,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -125,7 +124,6 @@ ThermostatSchedule(
     workspace_id="58419b36-6103-44e5-aa83-2163e90cce01",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -163,7 +161,6 @@ seam.thermostats.schedules.create(
   "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -201,7 +198,6 @@ $seam->thermostats->schedules->create(
     "workspace_id" => "58419b36-6103-44e5-aa83-2163e90cce01",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -231,10 +227,10 @@ seam thermostats schedules create --device_id "d710aa35-232d-442b-a817-c28045de1
   "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -243,56 +239,55 @@ seam thermostats schedules create --device_id "d710aa35-232d-442b-a817-c28045de1
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`climate_preset_key`** _String_ (Required)
+**`climate_preset_key`** *String* (Required)
 
 Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the new thermostat schedule.
 
 ---
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the thermostat device for which you want to create a schedule.
 
 ---
 
-**`ends_at`** _String_ (Required)
+**`ends_at`** *String* (Required)
 
 Date and time at which the new thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-**`starts_at`** _String_ (Required)
+**`starts_at`** *String* (Required)
 
 Date and time at which the new thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-**`is_override_allowed`** _Boolean_
+**`is_override_allowed`** *Boolean*
 
 Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the new schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
 ---
 
-**`max_override_period_minutes`** _Number_
+**`max_override_period_minutes`** *Number*
 
 Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
 ---
 
-**`name`** _String_
+**`name`** *String*
 
 Name of the thermostat schedule.
 
 ---
+
 
 ## Response
 
@@ -302,8 +297,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -320,6 +318,5 @@ Returns:
   "workspace_id": "58419b36-6103-44e5-aa83-2163e90cce01"
 }
 ```
-
 </Tab>
 </Tabs>

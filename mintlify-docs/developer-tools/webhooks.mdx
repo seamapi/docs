@@ -1,7 +1,8 @@
 ---
-title: 'Webhooks'
-description: 'Learn about using webhooks to receive notifications of events.'
+title: "Webhooks"
+description: "Learn about using webhooks to receive notifications of events."
 ---
+
 
 ## Configuring Webhooks
 
@@ -21,16 +22,7 @@ You can add webhooks through the Seam Console or programmatically. Let's start b
 
 You can specify any public URL endpoint to receive webhook events by pasting the URL into the **Create Webhook** dialog.
 
-<figure>
-  <img
-    src='/images/create-webhook-dialog.png'
-    alt='You can specify any internet-accessible URL as your webhook URL.'
-    width='563'
-  />
-  <figcaption>
-    <p>You can specify any internet-accessible URL as your webhook URL.</p>
-  </figcaption>
-</figure>
+<figure><img src="/images/create-webhook-dialog.png" alt="You can specify any internet-accessible URL as your webhook URL." width="563" /><figcaption><p>You can specify any internet-accessible URL as your webhook URL.</p></figcaption></figure>
 
 Webhook endpoints can receive many different types of events, such as `device.connected` or `device.low_battery`. It's a good idea when getting started with webhooks to review the list of webhook [event types](https://docs.seam.co/latest/api/events/) and test your endpoint using the Svix sandbox environment.
 
@@ -46,28 +38,20 @@ We use webhooks from Svix. For more information about consuming events, such as 
 
 Use the webhooks playground in Seam Console to see the payload for each event and test these events against your own endpoints.
 
-<figure>
-  <img
-    src='/images/testing-your-webhooks.png'
-    alt='Use the webhooks playground to test events.'
-  />
-  <figcaption>
-    <p>Use the webhooks playground to test events.</p>
-  </figcaption>
-</figure>
+<figure><img src="/images/testing-your-webhooks.png" alt="Use the webhooks playground to test events." /><figcaption><p>Use the webhooks playground to test events.</p></figcaption></figure>
 
 ## Retry Schedule for Webhooks
 
 Seam delivers each webhook event based on a retry schedule with exponential backoff. Each message is attempted based on the following schedule, where each period is started following the failure of the preceding attempt:
 
-- Immediately
-- 5 seconds
-- 5 minutes
-- 30 minutes
-- 2 hours
-- 5 hours
-- 10 hours
-- 10 hours (in addition to the previous)
+* Immediately
+* 5 seconds
+* 5 minutes
+* 30 minutes
+* 2 hours
+* 5 hours
+* 10 hours
+* 10 hours (in addition to the previous)
 
 For example, an attempt that fails three times before eventually succeeding will be delivered roughly 35 minutes and 5 seconds following the first attempt.
 

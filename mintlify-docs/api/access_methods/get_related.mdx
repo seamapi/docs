@@ -1,11 +1,12 @@
 ---
-title: 'Get related Access Method resources'
+title: "Get related Access Method resources"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Gets all related resources for one or more Access Methods.
+
 
 <details>
 
@@ -14,29 +15,25 @@ Gets all related resources for one or more Access Methods.
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`access_method_ids`** _Array_ _of UUIDs_ (Required)
+**`access_method_ids`** *Array* *of UUIDs* (Required)
 
 IDs of the access methods that you want to get along with their related resources.
 
 ---
 
-**`exclude`** _Array_ _of Enums_
-
+**`exclude`** *Array* *of Enums*
 <details>
 
 <summary>Enum values</summary>
 
 Possible enum values:
-
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
@@ -49,14 +46,12 @@ Possible enum values:
 
 ---
 
-**`include`** _Array_ _of Enums_
-
+**`include`** *Array* *of Enums*
 <details>
 
 <summary>Enum values</summary>
 
 Possible enum values:
-
 - <code>spaces</code>
 - <code>devices</code>
 - <code>acs_entrances</code>
@@ -68,6 +63,7 @@ Possible enum values:
 </details>
 
 ---
+
 
 ## Response
 
@@ -85,8 +81,11 @@ batch response
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -104,7 +103,10 @@ batch response
       "can_program_online_access_codes": true,
       "can_remotely_lock": true,
       "can_remotely_unlock": true,
-      "capabilities_supported": ["access_code", "lock"],
+      "capabilities_supported": [
+        "access_code",
+        "lock"
+      ],
       "connected_account_id": "8e3a4f1b-2c7d-4a9e-8b5f-3d2c1a0b9e8f",
       "created_at": "2025-03-27T02:08:16.418Z",
       "space_ids": [],
@@ -160,7 +162,13 @@ batch response
           "model": "Encode"
         },
         "serial_number": "34000000000531e0",
-        "supported_code_lengths": [4, 5, 6, 7, 8],
+        "supported_code_lengths": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
         "supports_backup_access_code_pool": true,
         "supports_offline_access_codes": false
       },
@@ -206,19 +214,25 @@ batch response
           "display_name": "PIN Code Credential",
           "mode": "code",
           "created_at": "2025-06-16T16:54:17.946606Z",
-          "created_access_method_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"]
+          "created_access_method_ids": [
+            "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
+          ]
         },
         {
           "display_name": "Card Credential",
           "mode": "card",
           "created_at": "2025-06-16T16:54:19.946606Z",
-          "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+          "created_access_method_ids": [
+            "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+          ]
         },
         {
           "display_name": "Mobile Key Credential",
           "mode": "mobile_key",
           "created_at": "2025-06-16T16:54:21.946606Z",
-          "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+          "created_access_method_ids": [
+            "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+          ]
         }
       ],
       "space_ids": [
@@ -255,8 +269,12 @@ batch response
   "client_sessions": [
     {
       "client_session_id": "c2cbd177-1ace-414b-bb1e-9f129e4a05c1",
-      "connect_webview_ids": ["550e8400-e29b-41d4-a716-446655440000"],
-      "connected_account_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+      "connect_webview_ids": [
+        "550e8400-e29b-41d4-a716-446655440000"
+      ],
+      "connected_account_ids": [
+        "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+      ],
       "created_at": "2025-06-15T16:54:17.946309Z",
       "customer_id": "77eccc4e-c8bc-4c7d-b83c-cb853ed3bade",
       "device_count": 1,
@@ -264,7 +282,9 @@ batch response
       "token": "seam_cst1891oqCmB_6dBwV8PJ2Fsoe9dWYVyMfVHq",
       "user_identifier_key": "user_id_1",
       "user_identity_id": "a6e93f84-565e-47d7-8908-1ca71ada373c",
-      "user_identity_ids": ["a6e93f84-565e-47d7-8908-1ca71ada373c"],
+      "user_identity_ids": [
+        "a6e93f84-565e-47d7-8908-1ca71ada373c"
+      ],
       "workspace_id": "b887bf84-9849-4454-a562-cf84293d9781"
     }
   ],
@@ -292,9 +312,13 @@ batch response
       "visionline_metadata": {
         "card_function_type": "guest",
         "card_id": "5",
-        "common_acs_entrance_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+        "common_acs_entrance_ids": [
+          "5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"
+        ],
         "credential_id": "15",
-        "guest_acs_entrance_ids": ["a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"],
+        "guest_acs_entrance_ids": [
+          "a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d"
+        ],
         "is_valid": true
       },
       "warnings": [],
@@ -303,6 +327,5 @@ batch response
   ]
 }
 ```
-
 </Tab>
 </Tabs>

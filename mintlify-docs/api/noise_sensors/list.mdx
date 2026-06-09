@@ -1,11 +1,12 @@
 ---
-title: 'List Noise Sensors'
+title: "List Noise Sensors"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a list of all [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -15,90 +16,88 @@ Returns a list of all noise sensors. For additional filter parameters, see /devi
 #### Code:
 
 ```javascript
-await seam.noiseSensors.list({ limit: 10 })
+await seam.noiseSensors.list({ limit: 10 });
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    capabilities_supported: ['noise_detection'],
-    connected_account_id: '9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d',
-    created_at: '2025-05-16T16:54:17.946049Z',
-    custom_metadata: { id: 'internalId1' },
-    device_id: 'f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f',
-    device_type: 'minut_sensor',
-    display_name: 'Living Room',
-    errors: [],
-    is_managed: true,
-    location: {
-      location_name: "Jane's Test Home",
-      timezone: 'America/Los_Angeles',
+    "capabilities_supported": ["noise_detection"],
+    "connected_account_id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    "created_at": "2025-05-16T16:54:17.946049Z",
+    "custom_metadata": { "id": "internalId1" },
+    "device_id": "f1e2d3c4-b5a6-4d7c-8e9f-0a1b2c3d4e5f",
+    "device_type": "minut_sensor",
+    "display_name": "Living Room",
+    "errors": [],
+    "is_managed": true,
+    "location": {
+      "location_name": "Jane's Test Home",
+      "timezone": "America/Los_Angeles"
     },
-    nickname: 'Living Room',
-    properties: {
-      appearance: { name: 'Living Room' },
-      battery: { level: 1, status: 'full' },
-      battery_level: 1,
-      currently_triggering_noise_threshold_ids: [],
-      image_alt_text: 'Minut Sensor',
-      image_url:
-        'https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128',
-      manufacturer: 'minut',
-      minut_metadata: {
-        device_id: '770cd3153deca3dee0fe0614',
-        device_location: { latitude: 0, longitude: 0 },
-        device_name: 'Living Room',
-        home_address: {
-          city: 'San Francisco',
-          country: 'US',
-          notes: 'string',
-          post_code: '44210',
-          region: 'San Francisco County',
-          street_name1: '2258 24th Street',
-          street_name2: '',
+    "nickname": "Living Room",
+    "properties": {
+      "appearance": { "name": "Living Room" },
+      "battery": { "level": 1, "status": "full" },
+      "battery_level": 1,
+      "currently_triggering_noise_threshold_ids": [],
+      "image_alt_text": "Minut Sensor",
+      "image_url": "https://connect.getseam.com/_next/image?url=https://connect.getseam.com/assets/images/devices/minut_gen-3_front.png&q=75&w=128",
+      "manufacturer": "minut",
+      "minut_metadata": {
+        "device_id": "770cd3153deca3dee0fe0614",
+        "device_location": { "latitude": 0, "longitude": 0 },
+        "device_name": "Living Room",
+        "home_address": {
+          "city": "San Francisco",
+          "country": "US",
+          "notes": "string",
+          "post_code": "44210",
+          "region": "San Francisco County",
+          "street_name1": "2258 24th Street",
+          "street_name2": ""
         },
-        home_id: '2978b6d5dba395ec08300e46',
-        home_location: { latitude: 0, longitude: 0 },
-        home_name: "Jane's Test Home",
-        latest_sensor_values: {
-          accelerometer_z: {
-            time: '2025-06-16T16:54:17.946049Z',
-            value: -1.00390625,
+        "home_id": "2978b6d5dba395ec08300e46",
+        "home_location": { "latitude": 0, "longitude": 0 },
+        "home_name": "Jane's Test Home",
+        "latest_sensor_values": {
+          "accelerometer_z": {
+            "time": "2025-06-16T16:54:17.946049Z",
+            "value": -1.00390625
           },
-          humidity: {
-            time: '2025-06-16T16:54:17.946049Z',
-            value: 31.110000610351562,
+          "humidity": {
+            "time": "2025-06-16T16:54:17.946049Z",
+            "value": 31.110000610351562
           },
-          pressure: {
-            time: '2025-06-16T16:54:17.946049Z',
-            value: 101923,
+          "pressure": {
+            "time": "2025-06-16T16:54:17.946049Z",
+            "value": 101923
           },
-          sound: {
-            time: '2025-06-16T16:54:17.946049Z',
-            value: 47.7117919921875,
+          "sound": {
+            "time": "2025-06-16T16:54:17.946049Z",
+            "value": 47.7117919921875
           },
-          temperature: {
-            time: '2025-06-16T16:54:17.946049Z',
-            value: 21.270000457763672,
-          },
-        },
+          "temperature": {
+            "time": "2025-06-16T16:54:17.946049Z",
+            "value": 21.270000457763672
+          }
+        }
       },
-      model: {
-        display_name: 'Noise Sensor',
-        manufacturer_display_name: 'Minut',
+      "model": {
+        "display_name": "Noise Sensor",
+        "manufacturer_display_name": "Minut"
       },
-      name: 'Living Room',
-      noise_level_decibels: 47.7117919921875,
-      online: true,
+      "name": "Living Room",
+      "noise_level_decibels": 47.7117919921875,
+      "online": true
     },
-    warnings: [],
-    workspace_id: '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
-  },
+    "warnings": [],
+    "workspace_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -198,7 +197,6 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -290,7 +288,6 @@ seam.noise_sensors.list(limit=10)
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -396,7 +393,6 @@ seam.noise_sensors.list(limit: 10)
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -489,7 +485,6 @@ $seam->noise_sensors->list(limit: 10);
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -581,10 +576,10 @@ seam noise-sensors list --limit 10
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -593,120 +588,119 @@ seam noise-sensors list --limit 10
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`connect_webview_id`** _String_
+**`connect_webview_id`** *String*
 
 ID of the Connect Webview for which you want to list devices.
 
 ---
 
-**`connected_account_id`** _String_
+**`connected_account_id`** *String*
 
 ID of the connected account for which you want to list devices.
 
 ---
 
-**`connected_account_ids`** _Array_ _of UUIDs_
+**`connected_account_ids`** *Array* *of UUIDs*
 
 Array of IDs of the connected accounts for which you want to list devices.
 
 ---
 
-**`created_before`** _String_
+**`created_before`** *String*
 
 Timestamp by which to limit returned devices. Returns devices created before this timestamp.
 
 ---
 
-**`custom_metadata_has`** _Object_
+**`custom_metadata_has`** *Object*
 
 Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.
 
 ---
 
-**`customer_key`** _String_
+**`customer_key`** *String*
 
 Customer key for which you want to list devices.
 
 ---
 
-**`device_ids`** _Array_ _of UUIDs_
+**`device_ids`** *Array* *of UUIDs*
 
 Array of device IDs for which you want to list devices.
 
 ---
 
-**`device_type`** _String_
+**`device_type`** *String*
 
 Device type of the noise sensors that you want to list.
 
 ---
 
-**`device_types`** _Array_ _of Enums_
+**`device_types`** *Array* *of Enums*
 
 Device types of the noise sensors that you want to list.
-
 <details>
 
 <summary>Enum values</summary>
 
 Possible enum values:
-
 - <code>noiseaware_activity_zone</code>
 - <code>minut_sensor</code>
 </details>
 
 ---
 
-**`limit`** _Number_
+**`limit`** *Number*
 
 Numerical limit on the number of devices to return.
 
 ---
 
-**`manufacturer`** _String_
+**`manufacturer`** *String*
 
 Manufacturers of the noise sensors that you want to list.
 
 ---
 
-**`page_cursor`** _String_
+**`page_cursor`** *String*
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`search`** _String_
+**`search`** *String*
 
 String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.
 
 ---
 
-**`space_id`** _String_
+**`space_id`** *String*
 
 ID of the space for which you want to list devices.
 
 ---
 
-**`unstable_location_id`** _String_
+**`unstable_location_id`** *String*
 
-<Warning>**Deprecated**. Use `space_id`.</Warning>
+<Warning>
+**Deprecated**. Use `space_id`.
+</Warning>
 
 ---
 
-**`user_identifier_key`** _String_
+**`user_identifier_key`** *String*
 
 Your own internal user ID for the user for which you want to list devices.
 
 ---
+
 
 ## Response
 
@@ -716,8 +710,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -792,6 +789,5 @@ Returns:
   "workspace_id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
 }
 ```
-
 </Tab>
 </Tabs>

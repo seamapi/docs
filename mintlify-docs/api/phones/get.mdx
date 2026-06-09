@@ -1,11 +1,12 @@
 ---
-title: 'Get a Phone'
+title: "Get a Phone"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Returns a specified [phone](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -15,7 +16,7 @@ Returns a specified phone.
 #### Code:
 
 ```javascript
-await seam.phones.get({ device_id: '2c39adb7-ba99-4b60-927d-9b796952c8e8' })
+await seam.phones.get({ device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8" });
 ```
 
 #### Output:
@@ -44,7 +45,6 @@ await seam.phones.get({ device_id: '2c39adb7-ba99-4b60-927d-9b796952c8e8' })
   "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -91,7 +91,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -130,7 +129,6 @@ Phone(
     workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -166,7 +164,6 @@ seam.phones.get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8")
   "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -205,7 +202,6 @@ $seam->phones->get(device_id: "2c39adb7-ba99-4b60-927d-9b796952c8e8");
     "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -244,10 +240,10 @@ seam phones get --device_id "2c39adb7-ba99-4b60-927d-9b796952c8e8"
   "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -255,20 +251,19 @@ seam phones get --device_id "2c39adb7-ba99-4b60-927d-9b796952c8e8"
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 Device ID of the phone that you want to get.
 
 ---
+
 
 ## Response
 
@@ -278,8 +273,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -305,6 +303,5 @@ Returns:
   "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
 }
 ```
-
 </Tab>
 </Tabs>

@@ -1,7 +1,8 @@
 ---
-title: 'Revoking an Access Method'
-description: 'Learn how to revoke an access method so that a user can no longer use it.'
+title: "Revoking an Access Method"
+description: "Learn how to revoke an access method so that a user can no longer use it."
 ---
+
 
 To revoke an access method, delete it.
 
@@ -12,8 +13,8 @@ To revoke an access method, delete it.
 
 ```javascript
 await seam.accessMethods.delete({
-  access_method_id: '3f10d86c-526b-4b85-8788-cc1a74411b71',
-})
+  access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b71",
+});
 ```
 
 **Output:**
@@ -21,7 +22,6 @@ await seam.accessMethods.delete({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -43,7 +43,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -59,7 +58,6 @@ seam.access_methods.delete(access_method_id="3f10d86c-526b-4b85-8788-cc1a74411b7
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -75,7 +73,6 @@ seam.access_methods.delete(access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -91,9 +88,7 @@ $seam->access_methods->delete(
 **Output:**
 
 ```php
-
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -109,6 +104,5 @@ $seam->access_methods->delete(
 ```json
 // Coming Soon!
 ```
-
 </Tab>
 </Tabs>

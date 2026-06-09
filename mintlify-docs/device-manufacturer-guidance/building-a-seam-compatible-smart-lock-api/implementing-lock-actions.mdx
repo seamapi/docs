@@ -1,7 +1,8 @@
 ---
-title: 'Implementing Lock Actions'
-description: 'How to process lock and unlock requests and send events that confirm the final outcome.'
+title: "Implementing Lock Actions"
+description: "How to process lock and unlock requests and send events that confirm the final outcome."
 ---
+
 
 Seam must be able to send lock and unlock commands and receive clear confirmation of what happened. Your API should execute commands quickly, return an immediate status, and emit events that describe how the action occurred.
 
@@ -41,7 +42,7 @@ If the command is rejected immediately due to a known condition:
 }
 ```
 
----
+***
 
 ### Action completion events
 
@@ -54,7 +55,7 @@ After the device processes the command, your platform should send an event confi
   "event_type": "lock.action_completed",
   "device_id": "lock_491829",
   "action_id": "act_39102",
-  "custom_id": "req_39102", // be able to trace the action to the event
+  "custom_id": "req_39102",  // be able to trace the action to the event
   "action": "unlock",
   "status": "success",
   "performed_via": "pin_code",
@@ -69,7 +70,7 @@ After the device processes the command, your platform should send an event confi
   "event_type": "lock.action_completed",
   "device_id": "lock_491829",
   "action_id": "act_99921",
-  "custom_id": "req_39102", // be able to trace the action to the event
+  "custom_id": "req_39102",  // be able to trace the action to the event
   "action": "lock",
   "status": "success",
   "performed_via": "mobile_app",
@@ -77,7 +78,7 @@ After the device processes the command, your platform should send an event confi
 }
 ```
 
----
+***
 
 ### Action attribution
 
@@ -85,12 +86,12 @@ Each event should specify how the operation was performed. This makes it possibl
 
 Common values for `performed_via`:
 
-- `pin_code`
-- `mobile_app`
-- `remote_api`
-- `bluetooth_key`
-- `fob_card`
-- `manual_turn`
+* `pin_code`
+* `mobile_app`
+* `remote_api`
+* `bluetooth_key`
+* `fob_card`
+* `manual_turn`
 
 #### Example:
 
@@ -100,7 +101,7 @@ Common values for `performed_via`:
 }
 ```
 
----
+***
 
 ### Failure modes
 
@@ -108,11 +109,11 @@ Your API should clearly represent lock failures when the device cannot complete 
 
 #### Examples of device-side failures
 
-- lock jammed
-- bolt obstruction
-- bolt not fully extended
-- mechanism error
-- firmware unable to accept commands
+* lock jammed
+* bolt obstruction
+* bolt not fully extended
+* mechanism error
+* firmware unable to accept commands
 
 #### Failure event example
 

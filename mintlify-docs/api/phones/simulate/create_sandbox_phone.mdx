@@ -1,11 +1,12 @@
 ---
-title: 'Create a Sandbox Phone'
+title: "Create a Sandbox Phone"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](https://docs.seam.co/latest/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,23 +17,23 @@ Creates a new simulated phone in a sandbox workspace.
 
 ```javascript
 await seam.phones.simulate.createSandboxPhone({
-  custom_sdk_installation_id: 'visionline_sdk',
-  user_identity_id: '799f9914-f2c2-4087-ab34-f1ffb44d6a0b',
+  custom_sdk_installation_id: "visionline_sdk",
+  user_identity_id: "799f9914-f2c2-4087-ab34-f1ffb44d6a0b",
   phone_metadata: {
-    operating_system: 'android',
+    operating_system: "android",
     os_version: 10,
-    device_manufacturer: 'Samsung',
-    device_model: 'Samsung Galaxy S10',
+    device_manufacturer: "Samsung",
+    device_model: "Samsung Galaxy S10",
   },
   assa_abloy_metadata: {
-    ble_capability: 'true,',
-    hce_capability: 'false,',
-    nfc_capability: 'false,',
-    application_version: '1.0.0',
-    seos_applet_version: '1.0.0',
+    ble_capability: "true,",
+    hce_capability: "false,",
+    nfc_capability: "false,",
+    application_version: "1.0.0",
+    seos_applet_version: "1.0.0",
     seos_tsm_endpoint_id: 1,
   },
-})
+});
 ```
 
 #### Output:
@@ -61,7 +62,6 @@ await seam.phones.simulate.createSandboxPhone({
   "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -123,7 +123,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -179,7 +178,6 @@ Phone(
     workspace_id="da8639a4-28a2-4884-a4f9-b7691f4cf336",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -232,7 +230,6 @@ seam.phones.simulate.create_sandbox_phone(
   "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -288,7 +285,6 @@ $seam->phones->simulate->create_sandbox_phone(
     "workspace_id" => "da8639a4-28a2-4884-a4f9-b7691f4cf336",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -327,10 +323,10 @@ seam phones simulate create-sandbox-phone --custom_sdk_installation_id "visionli
   "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -338,33 +334,26 @@ seam phones simulate create-sandbox-phone --custom_sdk_installation_id "visionli
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`user_identity_id`** _String_ (Required)
+**`user_identity_id`** *String* (Required)
 
 ID of the user identity that you want to associate with the simulated phone.
 
 ---
 
-**`assa_abloy_metadata`** _Object_
+**`assa_abloy_metadata`** *Object*
 
 ASSA ABLOY metadata that you want to associate with the simulated phone.
 
 <details>
 
-<summary>
-  <b>
-    <code>application_version</code>
-  </b>{' '}
-  <i>String</i>
-</summary>
+<summary><b><code>application_version</code></b> <i>String</i></summary>
 
 Application version that you want to use for the simulated phone.
 
@@ -372,14 +361,11 @@ Application version that you want to use for the simulated phone.
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>ble_capability</code>
-  </b>{' '}
-  <i>Boolean</i>
-</summary>
+<summary><b><code>ble_capability</code></b> <i>Boolean</i></summary>
 
 Indicates whether the simulated phone should have Bluetooth low energy (BLE) capability.
 
@@ -387,14 +373,11 @@ Indicates whether the simulated phone should have Bluetooth low energy (BLE) cap
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>hce_capability</code>
-  </b>{' '}
-  <i>Boolean</i>
-</summary>
+<summary><b><code>hce_capability</code></b> <i>Boolean</i></summary>
 
 Indicates whether the simulated phone should have host card emulation (HCE) capability.
 
@@ -402,14 +385,11 @@ Indicates whether the simulated phone should have host card emulation (HCE) capa
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>nfc_capability</code>
-  </b>{' '}
-  <i>Boolean</i>
-</summary>
+<summary><b><code>nfc_capability</code></b> <i>Boolean</i></summary>
 
 Indicates whether the simulated phone should have near-field communication (NFC) capability.
 
@@ -417,14 +397,11 @@ Indicates whether the simulated phone should have near-field communication (NFC)
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>seos_applet_version</code>
-  </b>{' '}
-  <i>String</i>
-</summary>
+<summary><b><code>seos_applet_version</code></b> <i>String</i></summary>
 
 SEOS applet version that you want to use for the simulated phone.
 
@@ -432,14 +409,11 @@ SEOS applet version that you want to use for the simulated phone.
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>seos_tsm_endpoint_id</code>
-  </b>{' '}
-  <i>Number</i>
-</summary>
+<summary><b><code>seos_tsm_endpoint_id</code></b> <i>Number</i></summary>
 
 ID of the SEOS trusted service manager (TSM) endpoint that you want to use for the simulated phone.
 
@@ -447,24 +421,20 @@ ID of the SEOS trusted service manager (TSM) endpoint that you want to use for t
 
 ---
 
-**`custom_sdk_installation_id`** _String_
+
+**`custom_sdk_installation_id`** *String*
 
 ID of the custom SDK installation that you want to use for the simulated phone.
 
 ---
 
-**`phone_metadata`** _Object_
+**`phone_metadata`** *Object*
 
 Metadata that you want to associate with the simulated phone.
 
 <details>
 
-<summary>
-  <b>
-    <code>device_manufacturer</code>
-  </b>{' '}
-  <i>String</i>
-</summary>
+<summary><b><code>device_manufacturer</code></b> <i>String</i></summary>
 
 Manufacturer that you want to use for the simulated phone.
 
@@ -472,14 +442,11 @@ Manufacturer that you want to use for the simulated phone.
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>device_model</code>
-  </b>{' '}
-  <i>String</i>
-</summary>
+<summary><b><code>device_model</code></b> <i>String</i></summary>
 
 Device model that you want to use for the simulated phone.
 
@@ -487,14 +454,11 @@ Device model that you want to use for the simulated phone.
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>operating_system</code>
-  </b>{' '}
-  <i>Enum</i>
-</summary>
+<summary><b><code>operating_system</code></b> <i>Enum</i></summary>
 
 Mobile operating system that you want to use for the simulated phone.
 
@@ -507,20 +471,19 @@ Enum values:
 
 ---
 
+
+
 <details>
 
-<summary>
-  <b>
-    <code>os_version</code>
-  </b>{' '}
-  <i>String</i>
-</summary>
+<summary><b><code>os_version</code></b> <i>String</i></summary>
 
 Mobile operating system version that you want to use for the simulated phone.
 
 </details>
 
 ---
+
+
 
 ## Response
 
@@ -530,8 +493,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -557,6 +523,5 @@ Returns:
   "workspace_id": "da8639a4-28a2-4884-a4f9-b7691f4cf336"
 }
 ```
-
 </Tab>
 </Tabs>

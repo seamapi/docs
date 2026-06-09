@@ -1,5 +1,5 @@
 ---
-title: 'Create Multiple Linked Access Codes'
+title: "Create Multiple Linked Access Codes"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -15,6 +15,7 @@ If you want to change these access codes that are not linked by a `common_code_k
 
 See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
 
+
 <Tabs>
 <Tab title="JavaScript">
 
@@ -25,49 +26,47 @@ Creates new access codes that share a common code across multiple devices.
 ```javascript
 await seam.accessCodes.createMultiple({
   device_ids: [
-    'd9717800-fa73-401a-b66b-03f0ef950e2a',
-    '550e8400-e29b-41d4-a716-446655440000',
+    "d9717800-fa73-401a-b66b-03f0ef950e2a",
+    "550e8400-e29b-41d4-a716-446655440000",
   ],
-  behavior_when_code_cannot_be_shared: 'throw',
+  behavior_when_code_cannot_be_shared: "throw",
   preferred_code_length: 4,
-  name: 'My Linked Access Code',
-  starts_at: '2025-06-19T01:41:56.000Z',
-  ends_at: '2025-06-22T16:40:40.000Z',
-})
+  name: "My Linked Access Code",
+  starts_at: "2025-06-19T01:41:56.000Z",
+  ends_at: "2025-06-22T16:40:40.000Z",
+});
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    access_code_id: 'e9cf6dd6-89aa-477f-a701-c08f3de13c1f',
-    code: '1234',
-    common_code_key:
-      'auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000',
-    created_at: '2025-06-14T16:54:17.946242Z',
-    device_id: 'c9cd621d-ef0c-45c8-b608-026ebdb74615',
-    ends_at: '2025-07-04T16:54:17.946049Z',
-    errors: [],
-    is_backup: false,
-    is_backup_access_code_available: false,
-    is_external_modification_allowed: false,
-    is_managed: true,
-    is_offline_access_code: false,
-    is_one_time_use: false,
-    is_scheduled_on_device: true,
-    is_waiting_for_code_assignment: false,
-    name: 'My Linked Access Code',
-    pulled_backup_access_code_id: null,
-    starts_at: '2025-07-02T16:54:17.946049Z',
-    status: 'set',
-    type: 'time_bound',
-    warnings: [],
-    workspace_id: '750fc0bc-4450-4356-8d9f-18c6a3a6b2c7',
-  },
+    "access_code_id": "e9cf6dd6-89aa-477f-a701-c08f3de13c1f",
+    "code": "1234",
+    "common_code_key": "auto_set_by_create_multiple_550e8400-e29b-41d4-a716-446655440000",
+    "created_at": "2025-06-14T16:54:17.946242Z",
+    "device_id": "c9cd621d-ef0c-45c8-b608-026ebdb74615",
+    "ends_at": "2025-07-04T16:54:17.946049Z",
+    "errors": [],
+    "is_backup": false,
+    "is_backup_access_code_available": false,
+    "is_external_modification_allowed": false,
+    "is_managed": true,
+    "is_offline_access_code": false,
+    "is_one_time_use": false,
+    "is_scheduled_on_device": true,
+    "is_waiting_for_code_assignment": false,
+    "name": "My Linked Access Code",
+    "pulled_backup_access_code_id": null,
+    "starts_at": "2025-07-02T16:54:17.946049Z",
+    "status": "set",
+    "type": "time_bound",
+    "warnings": [],
+    "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -126,7 +125,6 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -179,7 +177,6 @@ seam.access_codes.create_multiple(
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -229,7 +226,6 @@ seam.access_codes.create_multiple(
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -283,7 +279,6 @@ $seam->access_codes->create_multiple(
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -326,10 +321,10 @@ seam access-codes create-multiple --device_ids ["d9717800-fa73-401a-b66b-03f0ef9
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -338,56 +333,54 @@ seam access-codes create-multiple --device_ids ["d9717800-fa73-401a-b66b-03f0ef9
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`device_ids`** _Array_ _of UUIDs_ (Required)
+**`device_ids`** *Array* *of UUIDs* (Required)
 
 IDs of the devices for which you want to create the new access codes.
 
 ---
 
-**`allow_external_modification`** _Boolean_
+**`allow_external_modification`** *Boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`attempt_for_offline_device`** _Boolean_
+**`attempt_for_offline_device`** *Boolean*
 
 ---
 
-**`behavior_when_code_cannot_be_shared`** _String_
+**`behavior_when_code_cannot_be_shared`** *String*
 
 Desired behavior if any device cannot share a code. If `throw` (default), no access codes will be created if any device cannot share a code. If `create_random_code`, a random code will be created on devices that cannot share a code.
 
 ---
 
-**`code`** _String_
+**`code`** *String*
 
 Code to be used for access.
 
 ---
 
-**`ends_at`** _String_
+**`ends_at`** *String*
 
 Date and time at which the validity of the new access code ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 ---
 
-**`is_external_modification_allowed`** _Boolean_
+**`is_external_modification_allowed`** *Boolean*
 
 Indicates whether [external modification](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
-**`name`** _String_
+**`name`** *String*
 
 Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.
 
@@ -399,29 +392,30 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 ---
 
-**`prefer_native_scheduling`** _Boolean_
+**`prefer_native_scheduling`** *Boolean*
 
 Indicates whether [native scheduling](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
 
 ---
 
-**`preferred_code_length`** _Number_
+**`preferred_code_length`** *Number*
 
 Preferred code length. If the affected devices do not support the preferred code length, Seam reverts to using the shortest supported code length.
 
 ---
 
-**`starts_at`** _String_
+**`starts_at`** *String*
 
 Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 ---
 
-**`use_backup_access_code_pool`** _Boolean_
+**`use_backup_access_code_pool`** *Boolean*
 
 Indicates whether to use a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/latest/api/access_codes/pull_backup_access_code).
 
 ---
+
 
 ## Response
 
@@ -431,8 +425,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -461,6 +458,5 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 </Tabs>

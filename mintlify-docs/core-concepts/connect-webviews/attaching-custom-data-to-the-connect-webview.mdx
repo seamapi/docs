@@ -1,21 +1,19 @@
 ---
-title: 'Attaching Custom Metadata to the Connect Webview'
-description: 'Use custom metadata to link internal IDs from your application to a Seam Connect Webview and connected account.'
+title: "Attaching Custom Metadata to the Connect Webview"
+description: "Use custom metadata to link internal IDs from your application to a Seam Connect Webview and connected account."
 ---
+
 
 Adding Custom Metadata to a Connect Webview enables you to store custom information, like customer details or internal IDs from your application. The `custom_metadata` is then transferred to any connected accounts connected through the connect webview, making it easy to find and filter these resources in your Seam workspace.
 
 <Info>
-  You can also use unique resource keys as an easy way to link your resources to
-  Seam resources. For details, see [Mapping Your Resources to Seam
-  Resources](../mapping-your-resources-to-seam-resources.md).
+You can also use unique resource keys as an easy way to link your resources to Seam resources. For details, see [Mapping Your Resources to Seam Resources](../mapping-your-resources-to-seam-resources.md).
 </Info>
 
 The `custom_metadata` property supports up to 50 JSON key:value pairs. When an account is successfully connected through a Connect Webview, Seam creates a connected account and copies the `custom_metadata` to it.
 
 <Info>
-  If the `custom_metadata` property is left blank, Seam stores an empty set (`{}
-  `) on both the Connect Webview and connected account resource.
+If the `custom_metadata` property is left blank, Seam stores an empty set (`{}`) on both the Connect Webview and connected account resource.
 </Info>
 
 To add `custom_metadata` to a Connect Webview:
@@ -30,10 +28,10 @@ To add `custom_metadata` to a Connect Webview:
 
 ```javascript
 await seam.connectWebviews.create({
-  provider_category: 'stable',
+  provider_category: "stable",
   custom_metadata: {
-    your_app_user_id: 'xxxx', // Insert your custom data here.
-  },
+    "your_app_user_id": "xxxx" // Insert your custom data here.
+  }
 })
 ```
 
@@ -48,7 +46,6 @@ await seam.connectWebviews.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -85,7 +82,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -113,7 +109,6 @@ ConnectWebview(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -140,7 +135,6 @@ client.connect_webviews.create(
   ...
 >
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -172,7 +166,6 @@ seam.ConnectWebviews.Create(
   ...
 }
 ```
-
 </Tab>
 </Tabs>
 
@@ -185,9 +178,7 @@ seam.ConnectWebviews.Create(
 7. Within the returned `connected_account`, view the `custom_metadata`.
 
 <Info>
-  If a Connect Webview was used to connect an existing connected account (for
-  example, to reconnect a disconnected account), Seam will replace any existing
-  `custom metadata` in the `connected_account` object with the new payload.
+If a Connect Webview was used to connect an existing connected account (for example, to reconnect a disconnected account), Seam will replace any existing `custom metadata` in the `connected_account` object with the new payload.
 </Info>
 
 ## Next Steps

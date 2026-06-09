@@ -1,22 +1,23 @@
 ---
-title: 'Setting and Monitoring Temperature Thresholds'
-description: 'Learn how to use temperature thresholds to monitor your thermostat for potential HVAC system misuse or malfunctioning.'
+title: "Setting and Monitoring Temperature Thresholds"
+description: "Learn how to use temperature thresholds to monitor your thermostat for potential HVAC system misuse or malfunctioning."
 ---
+
 
 You can configure Seam to emit a [`thermostat.temperature_threshold_exceeded` event](https://docs.seam.co/latest/api/events/) if a thermostat reports a temperature outside a specific threshold range. This capability helps you to monitor your thermostats proactively, alerting you to potential HVAC system misuse or malfunctioning.
 
-Use the [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set_temperature_threshold) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../developer-tools/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
+Use the [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) endpoint to set upper and lower acceptable temperature bounds. Then, you can use a [webhook](../../developer-tools/webhooks.md) to monitor for `thermostat.temperature_threshold_exceeded` events.
 
 When the thermostat reports a temperature outside the threshold range, Seam also adds a warning on the thermostat. You can use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint to get the thermostat and then inspect its `device.warnings` property.
 
----
+***
 
 ## Set a Temperature Threshold
 
-To set a temperature threshold for a thermostat, issue a [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set_temperature_threshold) request, providing the `device_id` of the desired thermostat. Also, include the following parameters:
+To set a temperature threshold for a thermostat, issue a [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) request, providing the `device_id` of the desired thermostat. Also, include the following parameters:
 
-- `lower_limit_celsius` or `lower_limit_fahrenheit`
-- `upper_limit_celsius` or `upper_limit_fahrenheit`
+* `lower_limit_celsius` or `lower_limit_fahrenheit`
+* `upper_limit_celsius` or `upper_limit_fahrenheit`
 
 <Tabs>
 <Tab title="JavaScript">
@@ -25,10 +26,10 @@ To set a temperature threshold for a thermostat, issue a [`/thermostats/set_temp
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius: 4,
-  upper_limit_celsius: 30,
-})
+  upper_limit_celsius: 30
+});
 ```
 
 **Response:**
@@ -36,7 +37,6 @@ await seam.thermostats.setTemperatureThreshold({
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -63,7 +63,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -83,7 +82,6 @@ seam.thermostats.set_temperature_threshold(
 ```
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -99,7 +97,6 @@ None
 ```
 # Coming soon!
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -119,7 +116,6 @@ $seam->thermostats->set_temperature_threshold(
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -135,11 +131,10 @@ void
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## View a Temperature Threshold
 
@@ -152,8 +147,8 @@ The temperature threshold range that you set for a thermostat is a property of t
 
 ```javascript
 await seam.devices.get({
-  device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
-})
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+});
 ```
 
 **Response:**
@@ -170,7 +165,6 @@ await seam.devices.get({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -206,7 +200,6 @@ curl -X 'GET' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -233,7 +226,6 @@ Device(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -249,7 +241,6 @@ Device(
 ```
 # Coming soon!
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -276,7 +267,6 @@ $seam->devices->get(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -292,17 +282,16 @@ $seam->devices->get(
 ```
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Change a Temperature Threshold
 
-To change the temperature threshold range for a thermostat, issue a new [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set_temperature_threshold) request. The new threshold values replace the previous ones.
+To change the temperature threshold range for a thermostat, issue a new [`/thermostats/set_temperature_threshold`](https://docs.seam.co/latest/api/thermostats/set\_temperature\_threshold) request. The new threshold values replace the previous ones.
 
----
+***
 
 ## Monitor a Temperature Threshold
 
@@ -310,16 +299,16 @@ To monitor a thermostat for temperatures outside the bounds of the configured th
 
 When the reported temperature for a thermostat returns to within the configured threshold range, Seam emits a `thermostat.temperature_threshold_no_longer_exceeded` event.
 
----
+***
 
 ## Delete a Temperature Threshold
 
 To delete the temperature threshold range for a thermostat, issue a `/thermostats/set_temperature_threshold` request, providing either of the following parameter combinations:
 
-- Provide only the `device_id` of the desired thermostat.
-- Provide the `device_id` of the desired thermostat and set the following parameters to null:
-  - `lower_limit_celsius` or `lower_limit_fahrenheit`
-  - `upper_limit_celsius` or `upper_limit_fahrenheit`
+* Provide only the `device_id` of the desired thermostat.
+* Provide the `device_id` of the desired thermostat and set the following parameters to null:
+  * `lower_limit_celsius` or `lower_limit_fahrenheit`
+  * `upper_limit_celsius` or `upper_limit_fahrenheit`
 
 <Tabs>
 <Tab title="JavaScript">
@@ -328,18 +317,18 @@ To delete the temperature threshold range for a thermostat, issue a `/thermostat
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-})
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 ```
 
 or
 
 ```javascript
 await seam.thermostats.setTemperatureThreshold({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius: null,
-  upper_limit_celsius: null,
-})
+  upper_limit_celsius: null
+});
 ```
 
 **Response:**
@@ -347,7 +336,6 @@ await seam.thermostats.setTemperatureThreshold({
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -387,7 +375,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -415,7 +402,6 @@ seam.thermostats.set_temperature_threshold(
 ```
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -431,7 +417,6 @@ None
 ```
 # Coming soon!
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -459,7 +444,6 @@ $seam->thermostats->set_temperature_threshold(
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -475,6 +459,5 @@ void
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>

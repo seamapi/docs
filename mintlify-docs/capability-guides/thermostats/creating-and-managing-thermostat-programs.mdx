@@ -1,7 +1,8 @@
 ---
-title: 'Creating and Managing Thermostat Programs'
-description: 'Learn how to create and manage daily and weekly programs for thermostats.'
+title: "Creating and Managing Thermostat Programs"
+description: "Learn how to create and manage daily and weekly programs for thermostats."
 ---
+
 
 You can create thermostat weekly programs in a unified manner across the variety of thermostats that Seam supports. This standard feature of smart thermostats enables you to define full-week programs that are made up of reusable daily programs. Each daily program consists of a set of thermostat daily program periods, that is, time blocks with associated [climate presets](creating-and-managing-climate-presets/).
 
@@ -13,7 +14,7 @@ To set a thermostat weekly program:
 
 You can update daily programs, and you can update the weekly program again as desired. You can also delete any daily programs that are not being used in a weekly program.
 
----
+***
 
 ## Daily Program Period Properties
 
@@ -24,7 +25,7 @@ Each daily program period contains the following properties:
 | `starts_at_time`     | Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. |
 | `climate_preset_key` | Key of the climate preset to activate at the `starts_at_time`.                                                                          |
 
----
+***
 
 ## Daily Program Properties
 
@@ -38,7 +39,7 @@ Each daily program contains the following properties:
 | `periods`                     | Array of thermostat daily program periods.                                       |
 | `created_at`                  | Date and time at which the thermostat daily program was created.                 |
 
----
+***
 
 ## Weekly Program Properties
 
@@ -56,7 +57,7 @@ Each weekly program contains the following properties:
 | `sunday_program_id`    | ID of the thermostat daily program to run on Sundays.                  |
 | `created_at`           | Date and time at which the thermostat weekly program was created.      |
 
----
+***
 
 ## Create a Daily Program
 
@@ -71,15 +72,15 @@ The following example creates a weekday daily program with four period, each of 
 
 ```javascript
 await seam.thermostats.dailyPrograms.create({
-  device_id: '11111111-1111-1111-2222-444444444444',
-  name: 'Weekday Program',
+  device_id: "11111111-1111-1111-2222-444444444444",
+  name: "Weekday Program",
   periods: [
-    { starts_at_time: '07:00:00', climate_preset_key: 'Home' },
-    { starts_at_time: '09:00:00', climate_preset_key: 'Away' },
-    { starts_at_time: '16:00:00', climate_preset_key: 'Home' },
-    { starts_at_time: '22:30:00', climate_preset_key: 'Sleep' },
-  ],
-})
+    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "09:00:00", "climate_preset_key": "Away" },
+    { "starts_at_time": "16:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
+  ]
+});
 ```
 
 **Response:**
@@ -98,7 +99,6 @@ await seam.thermostats.dailyPrograms.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -142,7 +142,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -178,7 +177,6 @@ ThermostatDailyProgram(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -214,7 +212,6 @@ seam.thermostats.daily_programs.create(
   ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -250,7 +247,6 @@ $seam->thermostats->daily_programs->create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -266,11 +262,10 @@ $seam->thermostats->daily_programs->create(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Update a Daily Program
 
@@ -287,29 +282,28 @@ The following example changes the climate preset for the second period and the s
 
 ```javascript
 await seam.thermostats.dailyPrograms.update({
-  thermostat_daily_program_id: '99999999-1111-1111-1111-111111111111',
-  name: 'Weekday Program',
+  thermostat_daily_program_id: "99999999-1111-1111-1111-111111111111",
+  name: "Weekday Program",
   periods: [
-    { starts_at_time: '07:00:00', climate_preset_key: 'Home' },
-    { starts_at_time: '09:00:00', climate_preset_key: 'Eco' },
-    { starts_at_time: '18:00:00', climate_preset_key: 'Home' },
-    { starts_at_time: '22:30:00', climate_preset_key: 'Sleep' },
-  ],
-})
+    { "starts_at_time": "07:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "09:00:00", "climate_preset_key": "Eco" },
+    { "starts_at_time": "18:00:00", "climate_preset_key": "Home" },
+    { "starts_at_time": "22:30:00", "climate_preset_key": "Sleep" }
+  ]
+});
 ```
 
 **Response:**
 
 ```json
 {
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
-  "result": {},
-  "error": null
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -340,15 +334,14 @@ curl -X 'POST' \
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "PUSH_THERMOSTAT_PROGRAMS",
+    "action_type":"PUSH_THERMOSTAT_PROGRAMS",
     "action_attempt_id": "11111111-2222-3333-4444-555555555555",
     "result": null,
-    "error": null
+    "error":null
   },
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -379,7 +372,6 @@ ActionAttempt(
   error=None
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -409,7 +401,6 @@ seam.thermostats.daily_programs.update(
   result={}
   error=nil>
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -433,14 +424,13 @@ $seam->thermostats->daily_programs->update(
 
 ```json
 {
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
-  "result": {},
-  "error": null
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -456,11 +446,10 @@ $seam->thermostats->daily_programs->update(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Delete a Daily Program
 
@@ -473,8 +462,8 @@ To delete a daily program, use `/thermostats/daily_programs/delete`, specifying 
 
 ```javascript
 await seam.thermostats.dailyPrograms.delete({
-  thermostat_daily_program_id: '99999999-1111-1111-1111-111111111111',
-})
+  thermostat_daily_program_id: "99999999-1111-1111-1111-111111111111"
+});
 ```
 
 **Response:**
@@ -482,7 +471,6 @@ await seam.thermostats.dailyPrograms.delete({
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -507,7 +495,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -525,7 +512,6 @@ seam.thermostats.daily_programs.delete(
 ```
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -543,7 +529,6 @@ seam.thermostats.daily_programs.delete(
 ```
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -561,7 +546,6 @@ $seam->thermostats->daily_programs->delete(
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -577,11 +561,10 @@ void
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Update the Weekly Program
 
@@ -600,29 +583,28 @@ The following example assigns the same weekday program to each weekday and the s
 
 ```javascript
 await seam.thermostats.updateWeeklyProgram({
-  device_id: '11111111-1111-1111-2222-444444444444',
-  monday_program_id: '99999999-1111-1111-1111-111111111111',
-  tuesday_program_id: '99999999-1111-1111-1111-111111111111',
-  wednesday_program_id: '99999999-1111-1111-1111-111111111111',
-  thursday_program_id: '99999999-1111-1111-1111-111111111111',
-  friday_program_id: '99999999-1111-1111-1111-111111111111',
-  saturday_program_id: '99999999-1111-1111-1111-222222222222',
-  sunday_program_id: '99999999-1111-1111-1111-222222222222',
-})
+  device_id: "11111111-1111-1111-2222-444444444444",
+  monday_program_id: "99999999-1111-1111-1111-111111111111",
+  tuesday_program_id: "99999999-1111-1111-1111-111111111111",
+  wednesday_program_id: "99999999-1111-1111-1111-111111111111",
+  thursday_program_id: "99999999-1111-1111-1111-111111111111",
+  friday_program_id: "99999999-1111-1111-1111-111111111111",
+  saturday_program_id: "99999999-1111-1111-1111-222222222222",
+  sunday_program_id: "99999999-1111-1111-1111-222222222222"
+});
 ```
 
 **Response:**
 
 ```json
 {
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
-  "result": {},
-  "error": null
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -653,15 +635,14 @@ curl -X 'POST' \
 {
   "action_attempt": {
     "status": "pending",
-    "action_type": "PUSH_THERMOSTAT_PROGRAMS",
+    "action_type":"PUSH_THERMOSTAT_PROGRAMS",
     "action_attempt_id": "11111111-2222-3333-4444-666666666666",
     "result": null,
-    "error": null
+    "error":null
   },
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -692,7 +673,6 @@ ActionAttempt(
   error=None
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -722,7 +702,6 @@ seam.thermostats.update_weekly_program(
   result={}
   error=nil>
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -746,14 +725,13 @@ $seam->thermostats->update_weekly_program(
 
 ```json
 {
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
-  "result": {},
-  "error": null
+  status: 'success',
+  action_attempt_id: '11111111-2222-3333-4444-666666666666',
+  action_type: 'PUSH_THERMOSTAT_PROGRAMS',
+  result: {},
+  error: null
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -769,6 +747,5 @@ $seam->thermostats->update_weekly_program(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>

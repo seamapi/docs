@@ -1,5 +1,5 @@
 ---
-title: 'List User Identities'
+title: "List User Identities"
 ---
 
 - [Request Parameters](#request-parameters)
@@ -7,6 +7,7 @@ title: 'List User Identities'
 - [Examples](#examples)
 
 Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,28 +17,27 @@ Returns a list of all user identities.
 #### Code:
 
 ```javascript
-await seam.userIdentities.list()
+await seam.userIdentities.list();
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    created_at: '2025-06-16T16:54:17.946546Z',
-    display_name: 'Jane Doe',
-    email_address: 'jane@example.com',
-    errors: [],
-    full_name: 'Jane Doe',
-    phone_number: '+1555551002',
-    user_identity_id: '43947360-cdc8-4db6-8b22-e079416d1d8b',
-    user_identity_key: 'jane_doe',
-    warnings: [],
-    workspace_id: 'b7e0a4e0-1044-4319-9a0b-42b642b68c7f',
-  },
+    "created_at": "2025-06-16T16:54:17.946546Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "full_name": "Jane Doe",
+    "phone_number": "+1555551002",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key": "jane_doe",
+    "warnings": [],
+    "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -71,7 +71,6 @@ curl --include --request POST "https://connect.getseam.com/user_identities/list"
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -102,7 +101,6 @@ seam.user_identities.list()
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -133,7 +131,6 @@ seam.user_identities.list()
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -164,7 +161,6 @@ $seam->user_identities->list();
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -195,10 +191,10 @@ seam user-identities list
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -207,50 +203,49 @@ seam user-identities list
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`created_before`** _String_
+**`created_before`** *String*
 
 Timestamp by which to limit returned user identities. Returns user identities created before this timestamp.
 
 ---
 
-**`credential_manager_acs_system_id`** _String_
+**`credential_manager_acs_system_id`** *String*
 
 `acs_system_id` of the credential manager by which you want to filter the list of user identities.
 
 ---
 
-**`limit`** _Number_
+**`limit`** *Number*
 
 Maximum number of records to return per page.
 
 ---
 
-**`page_cursor`** _String_
+**`page_cursor`** *String*
 
 Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.
 
 ---
 
-**`search`** _String_
+**`search`** *String*
 
 String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.
 
 ---
 
-**`user_identity_ids`** _Array_ _of UUIDs_
+**`user_identity_ids`** *Array* *of UUIDs*
 
 Array of user identity IDs by which to filter the list of user identities.
 
 ---
+
 
 ## Response
 
@@ -260,8 +255,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -278,13 +276,13 @@ Returns:
   "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
 }
 ```
-
 </Tab>
 </Tabs>
 
 ---
 
 ## Examples
+
 
 ### List user identities for a credential manager
 
@@ -293,36 +291,39 @@ Returns a list of all user identities for a specified credential manager.
 <Tabs>
 <Tab title="JavaScript">
 
+
+
 #### Code:
 
 ```javascript
 await seam.userIdentities.list({
-  credential_manager_acs_system_id: '10698917-8527-4137-92ff-f1ce291bc287',
-})
+  credential_manager_acs_system_id: "10698917-8527-4137-92ff-f1ce291bc287",
+});
 ```
 
 #### Output:
 
 ```javascript
-;[
+[
   {
-    created_at: '2025-06-16T16:54:17.946546Z',
-    display_name: 'Jane Doe',
-    email_address: 'jane@example.com',
-    errors: [],
-    full_name: 'Jane Doe',
-    phone_number: '+1555551002',
-    user_identity_id: '43947360-cdc8-4db6-8b22-e079416d1d8b',
-    user_identity_key: 'jane_doe',
-    warnings: [],
-    workspace_id: 'b7e0a4e0-1044-4319-9a0b-42b642b68c7f',
-  },
+    "created_at": "2025-06-16T16:54:17.946546Z",
+    "display_name": "Jane Doe",
+    "email_address": "jane@example.com",
+    "errors": [],
+    "full_name": "Jane Doe",
+    "phone_number": "+1555551002",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "user_identity_key": "jane_doe",
+    "warnings": [],
+    "workspace_id": "b7e0a4e0-1044-4319-9a0b-42b642b68c7f"
+  }
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
+
+
 
 #### Code:
 
@@ -356,10 +357,11 @@ EOF
   ]
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
+
+
 
 #### Code:
 
@@ -387,10 +389,11 @@ seam.user_identities.list(
     )
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
+
+
 
 #### Code:
 
@@ -416,10 +419,11 @@ seam.user_identities.list(credential_manager_acs_system_id: "10698917-8527-4137-
   },
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
+
+
 
 #### Code:
 
@@ -447,10 +451,11 @@ $seam->user_identities->list(
     ],
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
+
+
 
 #### Code:
 
@@ -476,7 +481,6 @@ seam user-identities list --credential_manager_acs_system_id "10698917-8527-4137
   }
 ]
 ```
-
 </Tab>
 
 </Tabs>

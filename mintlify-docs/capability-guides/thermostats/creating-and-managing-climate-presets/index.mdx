@@ -1,131 +1,22 @@
 ---
-title: 'Creating and Managing Climate Presets'
-description: 'Learn how to create, list, update, and delete climate presets for thermostats.'
+title: "Creating and Managing Climate Presets"
+description: "Learn how to create, list, update, and delete climate presets for thermostats."
 ---
+
 
 You create a set of climate presets for each thermostat, customized for your—and your users'—needs. Each climate preset is a predefined configuration for a thermostat that specifies settings, such as HVAC mode, fan mode, and temperature set points. These presets make it quick and efficient for users to apply consistent climate settings tailored to different scenarios, enhancing both comfort and energy efficiency.
 
 Once you create climate presets, you can [activate them](https://docs.seam.co/latest/api/thermostats/activate_climate_preset), add them to thermostat [schedules](../creating-and-managing-thermostat-schedules.md) and [programs](../creating-and-managing-thermostat-programs.md), and set them as the [fallback climate preset](setting-the-fallback-climate-preset.md).
 
----
+***
 
 ## Climate Preset Properties
 
 Each climate preset can contain the following properties, depending on the [capabilities](../../../capability-guides/thermostats/#thermostat-capabilities) of the thermostat:
 
-<table>
-  <thead>
-    <tr>
-      <th width='339'>Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>climate_preset_key</code>
-      </td>
-      <td>(Required) Key to identify the climate preset.</td>
-    </tr>
-    <tr>
-      <td>
-        <code>name</code>
-      </td>
-      <td>(Optional) User-friendly name to identify the climate preset.</td>
-    </tr>
-    <tr>
-      <td>
-        <code>fan_mode_setting</code>
-      </td>
-      <td>
-        Desired fan mode setting, such as <code>on</code>, <code>auto</code>, or{' '}
-        <code>circulate</code>.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>hvac_mode_setting</code>
-      </td>
-      <td>
-        Desired{' '}
-        <a href='../understanding-thermostat-concepts/hvac-mode.md'>
-          HVAC mode
-        </a>{' '}
-        setting, such as <code>heat</code>, <code>cool</code>,{' '}
-        <code>heat_cool</code>, or <code>off</code>.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>cooling_set_point_celsius</code>
-      </td>
-      <td>
-        Temperature to which the thermostat should cool (in °C). See also{' '}
-        <a href='../understanding-thermostat-concepts/set-points.md'>
-          Set Points
-        </a>
-        .
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>cooling_set_point_fahrenheit</code>
-      </td>
-      <td>Temperature to which the thermostat should cool (in °F).</td>
-    </tr>
-    <tr>
-      <td>
-        <code>heating_set_point_celsius</code>
-      </td>
-      <td>Temperature to which the thermostat should heat (in °C).</td>
-    </tr>
-    <tr>
-      <td>
-        <code>heating_set_point_fahrenheit</code>
-      </td>
-      <td>Temperature to which the thermostat should heat (in °F).</td>
-    </tr>
-    <tr>
-      <td>
-        <del>
-          <code>manual_override_allowed</code>
-        </del>
-      </td>
-      <td>
-        (Optional) Indicates whether a person at the thermostat or using the API
-        can change the thermostat's settings.
-        <br />
-        <br />
-        Deprecated. Use <code>
-          thermostat_schedule.is_override_allowed
-        </code>{' '}
-        instead.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>can_edit</code>
-      </td>
-      <td>
-        Indicates whether the climate preset can be edited. There are some cases
-        in which Seam syncs in climate presets (from the device) that cannot be
-        modified.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>can_delete</code>
-      </td>
-      <td>
-        Indicates whether the climate preset can be deleted. There are some
-        cases in which Seam syncs in climate presets (from the device) that
-        cannot be deleted.
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table><thead><tr><th width="339">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>climate_preset_key</code></td><td>(Required) Key to identify the climate preset.</td></tr><tr><td><code>name</code></td><td>(Optional) User-friendly name to identify the climate preset.</td></tr><tr><td><code>fan_mode_setting</code></td><td>Desired fan mode setting, such as <code>on</code>, <code>auto</code>, or <code>circulate</code>.</td></tr><tr><td><code>hvac_mode_setting</code></td><td>Desired <a href="../understanding-thermostat-concepts/hvac-mode.md">HVAC mode</a> setting, such as <code>heat</code>, <code>cool</code>, <code>heat_cool</code>, or <code>off</code>.</td></tr><tr><td><code>cooling_set_point_celsius</code></td><td>Temperature to which the thermostat should cool (in °C). See also <a href="../understanding-thermostat-concepts/set-points.md">Set Points</a>.</td></tr><tr><td><code>cooling_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should cool (in °F).</td></tr><tr><td><code>heating_set_point_celsius</code></td><td>Temperature to which the thermostat should heat (in °C).</td></tr><tr><td><code>heating_set_point_fahrenheit</code></td><td>Temperature to which the thermostat should heat (in °F).</td></tr><tr><td><del><code>manual_override_allowed</code></del></td><td>(Optional) Indicates whether a person at the thermostat or using the API can change the thermostat's settings.<br /><br />Deprecated. Use <code>thermostat_schedule.is_override_allowed</code> instead.</td></tr><tr><td><code>can_edit</code></td><td>Indicates whether the climate preset can be edited. There are some cases in which Seam syncs in climate presets (from the device) that cannot be modified.</td></tr><tr><td><code>can_delete</code></td><td>Indicates whether the climate preset can be deleted. There are some cases in which Seam syncs in climate presets (from the device) that cannot be deleted.</td></tr></tbody></table>
 
----
+***
 
 ## Create a Climate Preset
 
@@ -141,8 +32,8 @@ The following example creates two climate presets with the keys `occupied` and `
 ```javascript
 // Get the thermostat.
 const thermostat = await seam.devices.get({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-})
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 
 // Confirm that the thermostat supports heat_cool mode
 // so that the climate presets can use this mode.
@@ -150,24 +41,24 @@ if (thermostat.can_hvac_heat_cool) {
   // Create the climate presets.
   await seam.thermostats.createClimatePreset({
     device_id: thermostat.device_id,
-    climate_preset_key: 'occupied',
-    name: 'Occupied',
-    fan_mode_setting: 'auto',
-    hvac_mode_setting: 'heat_cool',
+    climate_preset_key: "occupied",
+    name: "Occupied",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 25,
-    heating_set_point_celsius: 20,
-  })
+    heating_set_point_celsius: 20
+  });
 
   await seam.thermostats.createClimatePreset({
     device_id: thermostat.device_id,
-    climate_preset_key: 'unoccupied',
-    name: 'Unoccupied',
-    fan_mode_setting: 'auto',
-    hvac_mode_setting: 'heat_cool',
+    climate_preset_key: "unoccupied",
+    name: "Unoccupied",
+    fan_mode_setting: "auto",
+    hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 30,
-    heating_set_point_celsius: 15,
-  })
-}
+    heating_set_point_celsius: 15
+  });
+};
 ```
 
 **Response:**
@@ -175,7 +66,6 @@ if (thermostat.can_hvac_heat_cool) {
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -213,7 +103,7 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${thermostat}); then \
       \"cooling_set_point_celsius\": 25,
       \"heating_set_point_celsius\": 20
   }";
-
+  
   curl -X 'POST' \
     'https://connect.getseam.com/thermostats/create_climate_preset' \
     -H 'accept: application/json' \
@@ -238,7 +128,6 @@ fi
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -264,7 +153,7 @@ if thermostat.can_hvac_heat_cool:
     cooling_set_point_celsius = 25,
     heating_set_point_celsius = 20
   )
-
+  
   seam.thermostats.create_climate_preset(
     device_id: thermostat.device_id,
     climate_preset_key = "unoccupied",
@@ -273,7 +162,7 @@ if thermostat.can_hvac_heat_cool:
     hvac_mode_setting = "heat_cool",
     cooling_set_point_celsius = 30,
     heating_set_point_celsius = 15
-  )
+  )  
 ```
 
 **Response:**
@@ -281,7 +170,6 @@ if thermostat.can_hvac_heat_cool:
 ```
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -325,7 +213,6 @@ end
 ```
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -351,7 +238,7 @@ if ($thermostat->can_hvac_heat_cool) {
     cooling_set_point_celsius: 25,
     heating_set_point_celsius: 20
   );
-
+  
   $seam->thermostats->create_climate_preset(
     device_id: $thermostat->device_id,
     climate_preset_key: "unoccupied",
@@ -360,7 +247,7 @@ if ($thermostat->can_hvac_heat_cool) {
     hvac_mode_setting: "heat_cool",
     cooling_set_point_celsius: 30,
     heating_set_point_celsius: 15
-  );
+  );  
 }
 ```
 
@@ -369,7 +256,6 @@ if ($thermostat->can_hvac_heat_cool) {
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -385,11 +271,10 @@ void
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## List All Climate Presets for a Thermostat
 
@@ -402,8 +287,8 @@ To list climate presets for a thermostat, issue a [`/devices/get`](https://docs.
 
 ```javascript
 await seam.devices.get({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-})
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+});
 ```
 
 **Response:**
@@ -443,7 +328,6 @@ await seam.devices.get({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -502,7 +386,6 @@ curl -X 'GET' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -552,7 +435,6 @@ Device(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -583,7 +465,7 @@ seam.devices.get(
         "cooling_set_point_fahrenheit"=>77,
         "heating_set_point_fahrenheit"=>68,
         ...
-      },
+      },      
       {
         "climate_preset_key"=>"unoccupied",
         "name"=>"Unoccupied",
@@ -603,7 +485,6 @@ seam.devices.get(
  ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -653,7 +534,6 @@ $seam->devices->get(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -669,11 +549,10 @@ $seam->devices->get(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Update a Climate Preset
 
@@ -686,10 +565,10 @@ To update a climate preset, issue a [`/thermostats/update_climate_preset`](https
 
 ```javascript
 await seam.thermostats.updateClimatePreset({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key: 'occupied',
-  cooling_set_point_celsius: 24,
-})
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied",
+  cooling_set_point_celsius: 24
+});
 ```
 
 **Response:**
@@ -697,7 +576,6 @@ await seam.thermostats.updateClimatePreset({
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -724,7 +602,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -744,7 +621,6 @@ seam.thermostats.update_climate_preset(
 ```
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -764,7 +640,6 @@ seam.thermostats.update_climate_preset(
 ```
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -784,7 +659,6 @@ $seam->thermostats->update_climate_preset(
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -800,11 +674,10 @@ void
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Delete a Climate Preset
 
@@ -817,9 +690,9 @@ To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](https
 
 ```javascript
 await seam.thermostats.deleteClimatePreset({
-  device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
-  climate_preset_key: 'occupied',
-})
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
+  climate_preset_key: "occupied"
+});
 ```
 
 **Response:**
@@ -827,7 +700,6 @@ await seam.thermostats.deleteClimatePreset({
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -853,7 +725,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -872,7 +743,6 @@ seam.thermostats.delete_climate_preset(
 ```
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -891,7 +761,6 @@ seam.thermostats.delete_climate_preset(
 ```
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -910,7 +779,6 @@ $seam->thermostats->delete_climate_preset(
 ```json
 void
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -926,6 +794,5 @@ void
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>

@@ -1,11 +1,12 @@
 ---
-title: 'Delete a Webhook'
+title: "Delete a Webhook"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,8 +17,8 @@ Deletes a specified webhook.
 
 ```javascript
 await seam.webhooks.delete({
-  webhook_id: 'd3fb55d3-8b49-43ed-ac6b-e490be7b4274',
-})
+  webhook_id: "d3fb55d3-8b49-43ed-ac6b-e490be7b4274",
+});
 ```
 
 #### Output:
@@ -25,7 +26,6 @@ await seam.webhooks.delete({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -49,7 +49,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -67,7 +66,6 @@ seam.webhooks.delete(webhook_id="d3fb55d3-8b49-43ed-ac6b-e490be7b4274")
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -85,7 +83,6 @@ seam.webhooks.delete(webhook_id: "d3fb55d3-8b49-43ed-ac6b-e490be7b4274")
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -103,7 +100,6 @@ $seam->webhooks->delete(webhook_id: "d3fb55d3-8b49-43ed-ac6b-e490be7b4274");
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -121,10 +117,10 @@ seam webhooks delete --webhook_id "d3fb55d3-8b49-43ed-ac6b-e490be7b4274"
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -132,20 +128,19 @@ seam webhooks delete --webhook_id "d3fb55d3-8b49-43ed-ac6b-e490be7b4274"
 
 - API key
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`webhook_id`** _String_ (Required)
+**`webhook_id`** *String* (Required)
 
 ID of the webhook that you want to delete.
 
 ---
+
 
 ## Response
 
@@ -154,3 +149,4 @@ Returns:
 **void**
 
 </Check>
+

@@ -1,7 +1,8 @@
 ---
-title: 'Mapping Your Resources to Seam Resources'
-description: 'Learn how Seam makes it easy to tag Seam resources with your own internal IDs.'
+title: "Mapping Your Resources to Seam Resources"
+description: "Learn how Seam makes it easy to tag Seam resources with your own internal IDs."
 ---
+
 
 Seam enables you to set a custom unique key on each instance of resources, like Spaces, User Identities, and Access Grants. Use these keys to map your own data—such as rooms, listings, or reservations—to the corresponding Seam resources. In addition, you can link your own customers with the Connect Webviews and resulting Connected Accounts that they use to connect their devices and systems to Seam.
 
@@ -9,18 +10,18 @@ Resource keys make it easier to cross-reference and sync information between you
 
 Each resource includes a `<resource>_key` property in which you can store your own identifier. For example:
 
-- `space_key` for [Spaces](https://docs.seam.co/latest/api/spaces/)
-- `user_identity_key` for [User Identities](https://docs.seam.co/latest/api/user_identities/)
-- `access_grant_key` for [Access Grants](https://docs.seam.co/latest/api/access_grants/)
-- `customer_key` for [Connect Webviews](https://docs.seam.co/latest/api/connect_webviews/) and [Connected Accounts](https://docs.seam.co/latest/api/connected_accounts/)
+* `space_key` for [Spaces](https://docs.seam.co/latest/api/spaces/)
+* `user_identity_key` for [User Identities](https://docs.seam.co/latest/api/user_identities/)
+* `access_grant_key` for [Access Grants](https://docs.seam.co/latest/api/access_grants/)
+* `customer_key` for [Connect Webviews](https://docs.seam.co/latest/api/connect_webviews/) and [Connected Accounts](https://docs.seam.co/latest/api/connected_accounts/)
 
 Resource keys of each type generally need to be unique within your workspace. For example, if you save a Space with the `space_key` `room-101-id`, you cannot create another Space with this key.
 
-The one exception is with `customer_key`, where you can create multiple Connect Webviews using the same `customer_key`.
+The one exception is with `customer_key`, where you can create multiple Connect Webviews using the same  `customer_key`.
 
 The guide describes how to add resources keys to Seam resources of various relevant types and also how to retrieve a Seam resource using a resource key.
 
----
+***
 
 ## **Associating Connected Accounts with Your Customers**
 
@@ -37,8 +38,8 @@ When you create an instance of a Connect Webview, you can tag it with a customer
 
 ```javascript
 await seam.connectWebviews.create({
-  accepted_providers: '',
-  customer_key: 'customer-id', // Your unique identifier for the customer
+  accepted_providers: "",
+  customer_key: "customer-id" // Your unique identifier for the customer
 })
 ```
 
@@ -51,7 +52,6 @@ await seam.connectWebviews.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -83,7 +83,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -106,7 +105,6 @@ ConnectWebview(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -129,7 +127,6 @@ client.connect_webviews.create(
     ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -152,7 +149,6 @@ $created_connect_webview = $seam->connect_webviews->create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -168,7 +164,6 @@ $created_connect_webview = $seam->connect_webviews->create(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
@@ -183,16 +178,16 @@ Once your customer has completed the Connect Webview authentication flow, and Se
 
 ```javascript
 const connected_accounts = await seam.connected_accounts.list({
-  customer_key: 'customer-id',
+  customer_key: "customer-id"
 })
 
 let customerSystems = []
 
 for (const account of connected_accounts) {
   const systems = await seam.acs.systems.list({
-    connected_account_id: account.connected_account_id,
-  })
-  customerSystems.push(...systems)
+    connected_account_id: account.connected_account_id
+  });
+  customerSystems.push(...systems);
 }
 
 console.log(customerSystems)
@@ -217,7 +212,6 @@ console.log(customerSystems)
   ...
 ]
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -274,7 +268,6 @@ echo $customer_systems
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -292,9 +285,9 @@ for account in connected_accounts:
   systems = seam.acs.systems.list(
     connected_account_id=account.connected_account_id
   )
-
+  
   customer_systems.extend(systems)
-
+    
 pprint(customer_systems)
 ```
 
@@ -317,7 +310,6 @@ pprint(customer_systems)
   ...
 ]
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -360,7 +352,6 @@ puts customer_systems.inspect
   ...
 ]
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -403,7 +394,6 @@ echo json_encode($customer_systems);
   ...
 ]
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -419,13 +409,12 @@ echo json_encode($customer_systems);
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
 Any accounts that your customer sets up also carry this `customer_key`, so you can associate their connected systems with their properties, Spaces, and reservations in your own database.
 
----
+***
 
 ## **Associating a Seam Space with Your Own Resource**
 
@@ -438,9 +427,9 @@ When you create a Seam space resource, you can include your own ID as the value 
 
 ```javascript
 await seam.spaces.create({
-  name: 'Valley Grove - Room 104',
+  name: "Valley Grove - Room 104",
   acs_entrance_ids: [unit104Entrance.acs_entrance_id],
-  space_key: 'room-104-id', // Your room ID
+  space_key: "room-104-id" // Your room ID
 })
 ```
 
@@ -454,7 +443,6 @@ await seam.spaces.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -488,7 +476,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -513,7 +500,6 @@ Space(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -538,7 +524,6 @@ client.spaces.create(
     ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -550,7 +535,7 @@ $seam->spaces->create(
   name: "Valley Grove - Room 104",
   acs_entrance_ids: [$unit_104_entrance->acs_entrance_id],
   space_key: "room-104-id" // Your room ID
-);
+);  
 ```
 
 **Output:**
@@ -563,7 +548,6 @@ $seam->spaces->create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -579,11 +563,10 @@ $seam->spaces->create(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Associating a Seam User Identity with Your User
 
@@ -596,8 +579,8 @@ You can use the `user_identity_key` to link a Seam User Identity with your ID fo
 
 ```javascript
 await seam.userIdentities.create({
-  full_name: 'Jane Doe',
-  user_identity_key: 'user-123-id', // Your end user ID
+  full_name: "Jane Doe",
+  user_identity_key: "user-123-id" // Your end user ID
 })
 ```
 
@@ -611,7 +594,6 @@ await seam.userIdentities.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -644,7 +626,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -668,7 +649,6 @@ UserIdentity(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -692,7 +672,6 @@ client.user_identities.create(
     ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -716,7 +695,6 @@ $seam->user_identities->create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -732,11 +710,10 @@ $seam->user_identities->create(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## **Associating a Seam Access Grant with Your Own Resource**
 
@@ -750,12 +727,14 @@ You can add your own booking or lease reference to a Seam Access Grant as an `ac
 ```javascript
 await seam.accessGrants.create({
   user_identity_id: userIdentity.user_identity_id,
-  starts_at: '2025-08-13T15:00:00.000Z',
-  ends_at: '2025-08-16T11:00:00.000Z',
-  requested_access_methods: [{ mode: 'mobile_key' }],
+  starts_at: "2025-08-13T15:00:00.000Z",
+  ends_at: "2025-08-16T11:00:00.000Z",
+  requested_access_methods: [
+    {"mode": "mobile_key"}
+  ],
   space_ids: [room104Id],
-  access_grant_key: 'booking-789-id', // Your booking or lease reference
-})
+  access_grant_key: "booking-789-id" // Your booking or lease reference
+});
 ```
 
 **Output:**
@@ -780,7 +759,6 @@ await seam.accessGrants.create({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -830,7 +808,6 @@ curl -X 'POST' \
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -872,7 +849,6 @@ AccessGrant(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -914,7 +890,6 @@ seam.access_grants.create(
   ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -956,7 +931,6 @@ $seam->access_grants->create(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -972,11 +946,10 @@ $seam->access_grants->create(
 ```json
 // Coming Soon!
 ```
-
 </Tab>
 </Tabs>
 
----
+***
 
 ## Retrieving a Resource Using the `<resource>_key`
 
@@ -991,7 +964,7 @@ The following example retrieves a Seam Space using a `space_key`:
 
 ```javascript
 await seam.spaces.get({
-  space_key: 'room-104-id',
+  space_key: "room-104-id"
 })
 ```
 
@@ -1005,7 +978,6 @@ await seam.spaces.get({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -1036,7 +1008,6 @@ curl -X 'POST' \
   "ok": true
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -1059,7 +1030,6 @@ Space(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -1082,7 +1052,6 @@ client.spaces.get(
     ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -1105,7 +1074,6 @@ $seam->spaces->get(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -1121,7 +1089,6 @@ $seam->spaces->get(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>
 
@@ -1134,7 +1101,7 @@ The following example retrieves a Seam Access Grant using an `access_grant_key`:
 
 ```javascript
 await seam.accessGrants.get({
-  access_grant_key: 'booking-789-id',
+  access_grant_key: "booking-789-id"
 })
 ```
 
@@ -1160,7 +1127,6 @@ await seam.accessGrants.get({
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -1202,7 +1168,6 @@ curl -X 'POST' \
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -1237,7 +1202,6 @@ AccessGrant(
   ...
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -1272,7 +1236,6 @@ client.access_grants.get(
   ...
 >
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -1307,7 +1270,6 @@ $seam->access_grants->get(
   ...
 }
 ```
-
 </Tab>
 
 <Tab title="C#">
@@ -1323,6 +1285,5 @@ $seam->access_grants->get(
 ```json
 // Coming soon!
 ```
-
 </Tab>
 </Tabs>

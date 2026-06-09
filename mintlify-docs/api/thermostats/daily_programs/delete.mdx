@@ -1,11 +1,12 @@
 ---
-title: 'Delete a Thermostat Daily Program'
+title: "Delete a Thermostat Daily Program"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Deletes a thermostat daily program.
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,8 +17,8 @@ Deletes a thermostat daily program.
 
 ```javascript
 await seam.thermostats.dailyPrograms.delete({
-  thermostat_daily_program_id: 'a8665859-629e-4696-88b1-1eda1976250a',
-})
+  thermostat_daily_program_id: "a8665859-629e-4696-88b1-1eda1976250a",
+});
 ```
 
 #### Output:
@@ -25,7 +26,6 @@ await seam.thermostats.dailyPrograms.delete({
 ```javascript
 // void
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -49,7 +49,6 @@ EOF
 ```curl
 {}
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -69,7 +68,6 @@ seam.thermostats.daily_programs.delete(
 ```python
 None
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -89,7 +87,6 @@ seam.thermostats.daily_programs.delete(
 ```ruby
 nil
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -109,7 +106,6 @@ $seam->thermostats->daily_programs->delete(
 ```php
 
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -127,10 +123,10 @@ seam thermostats daily-programs delete --thermostat_daily_program_id "a8665859-6
 ```seam_cli
 {}
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -139,20 +135,19 @@ seam thermostats daily-programs delete --thermostat_daily_program_id "a8665859-6
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`thermostat_daily_program_id`** _String_ (Required)
+**`thermostat_daily_program_id`** *String* (Required)
 
 ID of the thermostat daily program that you want to delete.
 
 ---
+
 
 ## Response
 
@@ -161,3 +156,4 @@ Returns:
 **void**
 
 </Check>
+

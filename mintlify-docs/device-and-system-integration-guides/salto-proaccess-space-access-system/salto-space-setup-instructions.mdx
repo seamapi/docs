@@ -1,7 +1,8 @@
 ---
-title: 'Salto Space Setup Instructions'
-description: 'Learn how to connect your Salto Space access system to Seam.'
+title: "Salto Space Setup Instructions"
+description: "Learn how to connect your Salto Space access system to Seam."
 ---
+
 
 This topic describes how to connect your Salto Space sites to Seam.
 
@@ -13,7 +14,7 @@ This section describes the steps that you must take before connecting your Salto
 
 These setup instructions assume that you are integrating existing, live Salto Space sites with Seam.
 
----
+***
 
 ### SHIP Settings for Seam Integration
 
@@ -38,7 +39,7 @@ Perform the following process for each Salto Space site that you want to integra
 5. In the lower-right corner of the **General options** page, click **Save**.
 6. Note the username and password or TCP/IP port that you have specified in the SHIP settings. You must use this information to connect your Salto Space site to Seam.
 
----
+***
 
 ### LAN URL and Host of the Salto Space Server
 
@@ -49,42 +50,35 @@ To identify this URL:
 1.  On the Windows computer that is running the Salto Space server, open a **Command Prompt** window.
 
     That is, click **Start**, type `cmd`, and press **Enter**.
-
 2.  In the **Command Prompt** window, type `ipconfig` and then press **Enter**.
 
     This command displays the computer's Windows IP configuration.
-
 3.  Note the IPv4 address that the computer is using to connect to the internet.
 
     This IP address identifies the host of the Salto Space server. It most likely starts with `192`.
-
 4.  Prepend `http://` and append the port number `8100` to the IP address to form the LAN URL.
 
     For example, if the computer's IP address is `192.168.1.101`, the LAN URL is `http://192.168.1.101:8100`.
+5. If you want to use HTTP(S) when connecting your Salto Space access system to Seam, note the LAN URL. If you want to use Salto Transport Protocol (STP) when connecting your Salto Space access system to Seam, note the IP address that identifies the host of the Salto Space server.
 
-5.  If you want to use HTTP(S) when connecting your Salto Space access system to Seam, note the LAN URL. If you want to use Salto Transport Protocol (STP) when connecting your Salto Space access system to Seam, note the IP address that identifies the host of the Salto Space server.
-
----
+***
 
 ## Setup Process
 
 Perform the following process for each Salto Space site that you want to integrate with Seam:
 
 1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
-2. On the **Access Systems** page, click **New Access System**.
+2.  On the **Access Systems** page, click **New Access System**.
 
-   Seam Console displays a Connect Webview that enables you to connect your access system to Seam.
-
+    Seam Console displays a Connect Webview that enables you to connect your access system to Seam.
 3. In the Connect Webview, click **Continue**.
 4. If the Connect Webview displays multiple brand options, click **Salto Space**.
-5. On the **Set up your Seam Bridge** page, click [**latest Seam Bridge**](https://www.seam.co/seam-bridge/releases/latest).
+5.  On the **Set up your Seam Bridge** page, click [**latest Seam Bridge**](https://www.seam.co/seam-bridge/releases/latest).
 
-   [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Salto Space is an on-premises access system, Seam Bridge is required for Salto Space systems.
+    [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Salto Space is an on-premises access system, Seam Bridge is required for Salto Space systems.
+6.  Download the Seam Bridge executable onto the on-premises computer that is running Salto Space or onto a computer on the same network.
 
-6. Download the Seam Bridge executable onto the on-premises computer that is running Salto Space or onto a computer on the same network.
-
-   For systems requirements, see [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
-
+    For systems requirements, see [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
 7. Run the downloaded Seam Bridge app.
 8. In the **Welcome to Seam Bridge** window, type a name for the site that you are connecting using Seam Bridge and then click **Start pairing**.
 9. Copy the pairing code.
@@ -98,20 +92,15 @@ Perform the following process for each Salto Space site that you want to integra
     3. Click **Submit**.
 13. On the **Enter your credentials** page:
     1. If you have chosen to use HTTP(S):
-       1. In the **LAN URL of the Salto Space server** field, type the [LAN URL that you identified for the Salto Space server](salto-space-setup-instructions.md#lan-url-and-host-of-the-salto-space-server) before beginning this process.
+       1.  In the **LAN URL of the Salto Space server** field, type the [LAN URL that you identified for the Salto Space server](salto-space-setup-instructions.md#lan-url-and-host-of-the-salto-space-server) before beginning this process.
 
-          For example: `http://192.168.1.101:8100`
-
+           For example: `http://192.168.1.101:8100`
        2. In the **Username** field, type the username that you configured in the [Salto Space SHIP settings](salto-space-setup-instructions.md#prerequisites).
        3. In the **Password** field, type the password that you configured in the Salto Space SHIP settings.
-
     2. If you have chosen to use STP:
-       1. In the **Host of the Salto Space server** field, type the [IP address that you identified for the Salto Space server](salto-space-setup-instructions.md#lan-url-and-host-of-the-salto-space-server) before beginning this process.
+       1.  In the **Host of the Salto Space server** field, type the [IP address that you identified for the Salto Space server](salto-space-setup-instructions.md#lan-url-and-host-of-the-salto-space-server) before beginning this process.
 
-          For example: `192.168.1.101`
-
+           For example: `192.168.1.101`
        2. In the **TCP/IP Port configured in the Salto Space server** field, type the TCP/IP port number that you configured in the [Salto Space SHIP settings](salto-space-setup-instructions.md#prerequisites).
-
     3. Click **Submit**.
-
 14. Click **Close**.

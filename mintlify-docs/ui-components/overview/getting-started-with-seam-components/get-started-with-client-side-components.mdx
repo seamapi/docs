@@ -1,7 +1,8 @@
 ---
-title: 'Get started with Client Side Components'
-description: 'Use Seam Components without touching the backend.'
+title: "Get started with Client Side Components"
+description: "Use Seam Components without touching the backend."
 ---
+
 
 ## Overview
 
@@ -47,7 +48,6 @@ Create a plain HTML page with the content below. You can serve this anyway you l
   </body>
 </html>
 ```
-
 </Tab>
 
 <Tab title="React">
@@ -60,11 +60,11 @@ npm install --save @seamapi/react
 Add the components anywhere in your React app
 
 ```javascript
-import { ConnectAccountButton, DeviceTable, SeamProvider } from '@seamapi/react'
+import { ConnectAccountButton, DeviceTable, SeamProvider } from "@seamapi/react"
 
 export const App = () => {
   return (
-    <SeamProvider publishableKey='your_publishable_key'>
+    <SeamProvider publishableKey="your_publishable_key">
       <main>
         <h1>Seam Components</h1>
         <ConnectAccountButton />
@@ -74,7 +74,6 @@ export const App = () => {
   )
 }
 ```
-
 </Tab>
 
 <Tab title="Any JavaScript Framework">
@@ -87,18 +86,15 @@ npm install --save @seamapi/react
 Then import the custom elements bundle in your application entrypoint:
 
 ```javascript
-import '@seamapi/react/elements.js'
+import "@seamapi/react/elements.js"
 ```
 
 Add the components where your framework renders HTML. Some frameworks require additional configuration to enable web component support — refer to your framework's documentation (for example, [Vue's web components guide](https://vuejs.org/guide/extras/web-components.html) or Angular's `CUSTOM_ELEMENTS_SCHEMA`).
 
 ```html
-<seam-connect-account-button
-  publishable-key="your_publishable_key"
-></seam-connect-account-button>
+<seam-connect-account-button publishable-key="your_publishable_key"></seam-connect-account-button>
 <seam-device-table publishable-key="your_publishable_key"></seam-device-table>
 ```
-
 </Tab>
 </Tabs>
 
@@ -112,11 +108,11 @@ A User Identifier Key allows a device owner to make API requests to Seam where i
 
 Here are some suggestions for selecting a key:
 
-- The key should be a secret only known by the user.
-- The key should not be displayed anywhere visible in the app or URL bar.
-- The key should be opaque and contain sufficient entropy like a version 4 UUID.
-- You should have a way to invalidate and generate a new key.
-- Do NOT use an email, name, phone number, or anything that might be known by a third party.
+* The key should be a secret only known by the user.
+* The key should not be displayed anywhere visible in the app or URL bar.
+* The key should be opaque and contain sufficient entropy like a version 4 UUID.
+* You should have a way to invalidate and generate a new key.
+* Do NOT use an email, name, phone number, or anything that might be known by a third party.
 
 We recommend either using a version 4 UUID that you generate and store with your user metadata, or a salted hash of your internal user identifier.
 
@@ -157,10 +153,10 @@ Once you have selected a user identifier key, update your code as follows:
 import { ConnectAccountButton, DeviceTable, SeamProvider } from "@seamapi/react";
 
 export const App = () => {
-  const { userIdentifierKey } = useAuth() // or however you manage client side auth
+  const { userIdentifierKey } = useAuth(); // or however you manage client side auth
   return (
     <SeamProvider
-      publishableKey='your_publishable_key'
+      publishableKey="your_publishable_key"
       userIdentifierKey={userIdentifierKey}
     >
       <main>
@@ -169,10 +165,10 @@ export const App = () => {
         <DeviceTable />
       </main>
     </SeamProvider>
-  )
-}
+  );
+};
 
-````
+```
 </Tab>
 
 <Tab title="Any JavaScript Framework">
@@ -187,8 +183,7 @@ export const App = () => {
   user-identifier-key="your_user_identifier_key"
 >
 </seam-device-table>
-````
-
+```
 </Tab>
 </Tabs>
 
@@ -196,8 +191,8 @@ Now, press the Connect Account button to open a Seam Connect Webview where you c
 
 ## Next Steps
 
-- [Minimal sample apps](https://github.com/seamapi/seam-components-sample-apps) running Seam Components in various frameworks.
-- View and play with other components in the [interactive storybook component library](https://react.seam.co/)
-- Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
+* [Minimal sample apps](https://github.com/seamapi/seam-components-sample-apps) running Seam Components in various frameworks.
+* View and play with other components in the [interactive storybook component library](https://react.seam.co/)
+* Check out some [Full Example Apps](https://github.com/seamapi/react/tree/main/examples)
 
 If you have any questions or want to report an issue, email us at support@seam.co.

@@ -1,11 +1,12 @@
 ---
-title: 'Simulate Creating an Unmanaged Access Code'
+title: "Simulate Creating an Unmanaged Access Code"
 ---
 
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
 Simulates the creation of an [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
+
 
 <Tabs>
 <Tab title="JavaScript">
@@ -16,10 +17,10 @@ Simulates the creation of an unmanaged access code in a sandbox workspace.
 
 ```javascript
 await seam.accessCodes.simulate.createUnmanagedAccessCode({
-  device_id: '5db6ef75-2e0d-4491-bf7e-c3eb01d5c963',
-  name: 'My Access Code',
-  code: '1234',
-})
+  device_id: "5db6ef75-2e0d-4491-bf7e-c3eb01d5c963",
+  name: "My Access Code",
+  code: "1234",
+});
 ```
 
 #### Output:
@@ -41,7 +42,6 @@ await seam.accessCodes.simulate.createUnmanagedAccessCode({
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 
 <Tab title="cURL">
@@ -83,7 +83,6 @@ EOF
   }
 }
 ```
-
 </Tab>
 
 <Tab title="Python">
@@ -117,7 +116,6 @@ UnmanagedAccessCode(
     workspace_id="750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 )
 ```
-
 </Tab>
 
 <Tab title="Ruby">
@@ -153,7 +151,6 @@ seam.access_codes.simulate.create_unmanaged_access_code(
   "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 }
 ```
-
 </Tab>
 
 <Tab title="PHP">
@@ -189,7 +186,6 @@ $seam->access_codes->simulate->create_unmanaged_access_code(
     "workspace_id" => "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7",
 ];
 ```
-
 </Tab>
 
 <Tab title="Seam CLI">
@@ -221,10 +217,10 @@ seam access-codes simulate create-unmanaged-access-code --device_id "5db6ef75-2e
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 
 </Tabs>
+
 
 <details>
 
@@ -233,32 +229,31 @@ seam access-codes simulate create-unmanaged-access-code --device_id "5db6ef75-2e
 - API key
 - Client session token
 - Personal access token
-  <br />
-  Must also include the `seam-workspace` header in the request.
+  <br />Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
-
 </details>
 
 ## Request Parameters
 
-**`code`** _String_ (Required)
+**`code`** *String* (Required)
 
 Code of the simulated unmanaged access code.
 
 ---
 
-**`device_id`** _String_ (Required)
+**`device_id`** *String* (Required)
 
 ID of the device for which you want to simulate the creation of an unmanaged access code.
 
 ---
 
-**`name`** _String_ (Required)
+**`name`** *String* (Required)
 
 Name of the simulated unmanaged access code.
 
 ---
+
 
 ## Response
 
@@ -268,8 +263,11 @@ Returns:
 
 </Check>
 
+
 <Tabs>
 <Tab title="JSON">
+
+
 
 ```json
 {
@@ -288,6 +286,5 @@ Returns:
   "workspace_id": "750fc0bc-4450-4356-8d9f-18c6a3a6b2c7"
 }
 ```
-
 </Tab>
 </Tabs>
