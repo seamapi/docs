@@ -239,7 +239,6 @@
           {
             "group": "Getting Started",
             "pages": [
-              "api/index",
               "api/installation",
               "api/mcp-installation",
               "api/authentication",
@@ -423,7 +422,6 @@
               {
                 "group": "Access Control Systems (ACS)",
                 "pages": [
-                  "api/acs",
                   {
                     "group": "Access Groups",
                     "pages": [
