@@ -20,7 +20,7 @@ To use cloud keys, you need:
 
 - A [Seam API key](https://console.seam.co)
 - A connected ACS that supports cloud key unlocks
-- A [user identity](/core-concepts/user-identities) representing the person who will unlock the door
+- A [user identity](/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) representing the person who will unlock the door
 - An entrance that supports cloud key unlocks (`can_unlock_with_cloud_key` is `true`)
 
 ## Step 1: Verify Entrance Support
@@ -115,7 +115,7 @@ curl -X 'POST' \
 
 ## Step 2: Create an Access Grant with a Cloud Key
 
-Create an [Access Grant](/use-cases/granting-access/access-grants) for the user identity, specifying `cloud_key` as the requested access method mode. Include the entrance IDs that the user should be able to unlock.
+Create an [Access Grant](/use-cases/granting-access/index) for the user identity, specifying `cloud_key` as the requested access method mode. Include the entrance IDs that the user should be able to unlock.
 
 <CodeGroup>
 
@@ -291,4 +291,4 @@ The unlock event appears in the ACS audit trail attributed to the specific user 
 ## Next Steps
 
 - [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods) — Learn how to deliver all access method types to your users.
-- [Access Grants](/use-cases/granting-access/access-grants) — Learn more about creating and managing Access Grants.
+- [Access Grants](/use-cases/granting-access/index) — Learn more about creating and managing Access Grants.
