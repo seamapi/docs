@@ -39,8 +39,9 @@ process.stdin.on('end', () => {
     // Filter out known false positive
     if (line.includes(knownFalsePositive)) return false
     // Filter out the summary line that just counts warnings
-    if (line.match(/^error Build validation failed with \d+ warning/))
-      {return false}
+    if (line.match(/^error Build validation failed with \d+ warning/)) {
+      return false
+    }
     return true
   })
 
