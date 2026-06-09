@@ -8,7 +8,7 @@ title: 'The Entrance Object'
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
-Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Represents an [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/low-level-apis/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
@@ -48,19 +48,19 @@ An access system entrance resource.
 
 **`acs_entrance_id`** _UUID_
 
-ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+ID of the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 ---
 
 **`acs_system_id`** _UUID_
 
-ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+ID of the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems) that contains the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 ---
 
 **`assa_abloy_vostio_metadata`** _Object_
 
-ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -117,7 +117,7 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.
 
 **`brivo_metadata`** _Object_
 
-Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -179,25 +179,25 @@ Indicates whether the ACS entrance can be unlocked with mobile key credentials.
 
 **`connected_account_id`** _UUID_
 
-ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+ID of the [connected account](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 ---
 
 **`created_at`** _Datetime_
 
-Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.
+Date and time at which the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) was created.
 
 ---
 
 **`display_name`** _String_
 
-Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Display name for the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 ---
 
 **`dormakaba_ambiance_metadata`** _Object_
 
-dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -215,7 +215,7 @@ dormakaba Ambiance-specific metadata associated with the [entrance](https://docs
 
 **`dormakaba_community_metadata`** _Object_
 
-dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -233,7 +233,7 @@ dormakaba Community-specific metadata associated with the [entrance](https://doc
 
 **`errors`** _List_ _of Objects_
 
-Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Errors associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Object Properties</summary>
@@ -254,7 +254,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 **`hotek_metadata`** _Object_
 
-Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -286,7 +286,7 @@ Hotek-specific metadata associated with the [entrance](https://docs.seam.co/late
 
 **`latch_metadata`** _Object_
 
-Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -325,7 +325,7 @@ Latch-specific metadata associated with the [entrance](https://docs.seam.co/late
 
 **`salto_ks_metadata`** _Object_
 
-Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -392,7 +392,7 @@ Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/l
 
 **`salto_space_metadata`** _Object_
 
-Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -451,7 +451,7 @@ IDs of the spaces that the entrance is in.
 
 **`visionline_metadata`** _Object_
 
-Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 <details>
   <summary>Child Properties</summary>
@@ -521,7 +521,7 @@ Visionline-specific metadata associated with the [entrance](https://docs.seam.co
 
 **`acs_entrance.added`**
 
-An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was added.
+An [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) was added.
 
 <details>
 
@@ -587,7 +587,7 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) asso
 
 **`acs_entrance.removed`**
 
-An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was removed.
+An [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) was removed.
 
 <details>
 
@@ -655,20 +655,20 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) asso
 
 [**`/acs/entrances/get`**](./get)
 
-Returns a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Returns a specified [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 [**`/acs/entrances/grant_access`**](./grant_access)
 
-Grants a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Grants a specified [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 [**`/acs/entrances/list`**](./list)
 
-Returns a list of all [access system entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Returns a list of all [access system entrances](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 [**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access)
 
-Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Returns a list of all [credentials](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
 
 [**`/acs/entrances/unlock`**](./unlock)
 
-Remotely unlocks a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
+Remotely unlocks a specified [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
