@@ -202,15 +202,73 @@ function simplifyErrorWarningArray(prop: any): any {
 }
 
 /**
- * Rewrite docs.seam.co links to relative Mintlify paths.
+ * Path remappings for sections that were restructured during the
+ * GitBook → Mintlify migration. The upstream @seamapi/types package
+ * still references the old GitBook paths in description fields.
+ *
+ * Each entry maps from the old path prefix to the new Mintlify path prefix.
+ * Order matters: longer (more specific) prefixes must come first so they
+ * match before shorter ones.
+ */
+/**
+ * Prefix-based remappings for sections that were restructured during the
+ * GitBook → Mintlify migration. Any path starting with the old prefix
+ * gets the prefix swapped to the new one. For example:
+ *   /capability-guides/access-systems/user-management
+ *   → /low-level-apis/access-systems/user-management
+ */
+const prefixRemappings: Array<[string, string]> = [
+  // access-grants moved from capability-guides to use-cases/granting-access
+  ['/capability-guides/access-grants', '/use-cases/granting-access'],
+  // access-systems moved from capability-guides to low-level-apis
+  ['/capability-guides/access-systems', '/low-level-apis/access-systems'],
+  // smart-locks moved from capability-guides to low-level-apis
+  ['/capability-guides/smart-locks', '/low-level-apis/smart-locks'],
+]
+
+/**
+ * Rewrite docs.seam.co links to relative Mintlify paths and apply
+ * path remappings for restructured sections.
  */
 function rewriteLinks(text: string): string {
   if (!text) return text
-  return text.replace(/https:\/\/docs\.seam\.co\/latest\//g, '/')
+  // Step 1: Replace absolute docs.seam.co URLs with relative paths
+  let result = text.replace(/https:\/\/docs\.seam\.co\/latest\//g, '/')
+  // Step 2: Apply prefix-based remappings for restructured sections.
+  // These are safe to use with replaceAll because they only match
+  // directory prefixes (the old path is never a standalone page slug
+  // that could collide with a longer valid path).
+  for (const [oldPrefix, newPrefix] of prefixRemappings) {
+    result = result.replaceAll(oldPrefix, newPrefix)
+  }
+  return result
+}
+
+/**
+ * Recursively rewrite all `description` string fields in an object tree.
+ * This ensures links are fixed in deeply nested schemas, not just top-level.
+ */
+function rewriteAllDescriptions(obj: any): void {
+  if (obj == null || typeof obj !== 'object') return
+  if (Array.isArray(obj)) {
+    for (const item of obj) {
+      rewriteAllDescriptions(item)
+    }
+    return
+  }
+  for (const [key, value] of Object.entries(obj)) {
+    if (key === 'description' && typeof value === 'string') {
+      obj[key] = rewriteLinks(value)
+    } else if (typeof value === 'object') {
+      rewriteAllDescriptions(value)
+    }
+  }
 }
 
 /**
  * Truncate a description to the first paragraph or ~500 chars.
+ * Avoids cutting inside markdown links, which would produce broken
+ * link syntax like `[text](/path/to/pa...`.
  */
 function truncateDescription(text: string, maxLen = 500): string {
   if (!text || text.length <= maxLen) return text
@@ -221,11 +279,37 @@ function truncateDescription(text: string, maxLen = 500): string {
     return text.slice(0, paragraphBreak)
   }
 
-  // Cut at sentence boundary within maxLen
+  // Cut at sentence boundary within maxLen, but ensure we don't cut
+  // inside a markdown link. A safe cut point is a ". " that is NOT
+  // inside an unclosed "[...](...)" construct.
   const truncated = text.slice(0, maxLen)
-  const lastPeriod = truncated.lastIndexOf('. ')
-  if (lastPeriod > maxLen / 2) {
-    return truncated.slice(0, lastPeriod + 1)
+
+  // Find the last ". " that isn't inside a markdown link
+  let bestCut = -1
+  for (let i = truncated.length - 1; i >= maxLen / 2; i--) {
+    if (truncated[i] === '.' && truncated[i + 1] === ' ') {
+      // Check if we're inside an unclosed markdown link
+      const before = truncated.slice(0, i + 1)
+      const lastOpenBracket = before.lastIndexOf('[')
+      const lastCloseParen = before.lastIndexOf(')')
+      // If the last "[" is after the last ")", we're inside a link — skip
+      if (lastOpenBracket > lastCloseParen) continue
+      bestCut = i + 1
+      break
+    }
+  }
+
+  if (bestCut > 0) {
+    return truncated.slice(0, bestCut)
+  }
+
+  // Fallback: cut at maxLen but avoid cutting inside a markdown link.
+  // Find the last position before maxLen that isn't inside a link.
+  const lastCloseParen = truncated.lastIndexOf(')')
+  const lastOpenBracket = truncated.lastIndexOf('[')
+  if (lastOpenBracket > lastCloseParen) {
+    // We'd cut inside a markdown link — cut before the link starts
+    return truncated.slice(0, lastOpenBracket).trimEnd() + '...'
   }
 
   return truncated + '...'
@@ -348,12 +432,7 @@ export function transformSpec(
       }
     }
 
-    // 5. Rewrite description links
-    if (op.description) {
-      op.description = rewriteLinks(op.description)
-    }
-
-    // 6. Clean up vendor extensions Mintlify doesn't need
+    // 5. Clean up vendor extensions Mintlify doesn't need
     delete op['x-fern-sdk-group-name']
     delete op['x-fern-sdk-method-name']
     delete op['x-fern-sdk-return-value']
@@ -365,6 +444,12 @@ export function transformSpec(
 
   // Transform component schemas
   transformComponents(spec)
+
+  // Recursively rewrite all description fields in the entire spec.
+  // This catches deeply nested descriptions that the per-operation and
+  // per-component passes above don't reach (e.g., parameter descriptions,
+  // nested schema properties, response schema descriptions).
+  rewriteAllDescriptions(spec)
 
   return { spec, stats }
 }
@@ -379,7 +464,7 @@ function transformComponents(spec: any): void {
   for (const [name, schema] of Object.entries(schemas) as any) {
     // Truncate long descriptions
     if (schema.description) {
-      schema.description = truncateDescription(rewriteLinks(schema.description))
+      schema.description = truncateDescription(schema.description)
     }
 
     // Simplify error/warning arrays in properties
@@ -392,11 +477,6 @@ function transformComponents(spec: any): void {
           propName.endsWith('_warnings')
         ) {
           schema.properties[propName] = simplifyErrorWarningArray(prop)
-        }
-
-        // Also rewrite descriptions in properties
-        if (prop.description) {
-          prop.description = rewriteLinks(prop.description)
         }
       }
     }
