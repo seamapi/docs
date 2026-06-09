@@ -19,11 +19,11 @@ This quick start walks you through the following basic steps:
 1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
    - To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
-3. Create an [ACS user](../user-management.md).
-4. Create an encodable key card [ACS credential](../managing-credentials.md) for the ACS user.
+3. Create an [ACS user](../user-management).
+4. Create an encodable key card [ACS credential](../managing-credentials) for the ACS user.
 
    This credential contains both the set of entrances to which the user has access and the access schedule for the user.\
-   While some access control systems specify allowed entrances directly within the credential, others use access groups. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
+   While some access control systems specify allowed entrances directly within the credential, others use access groups. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences#access-permission-assignment-variations).
 
 5. View the following information about your successfully-created credential:
    - The list of entrances to which the ACS user now has access.
@@ -66,7 +66,7 @@ In this quick start, use Seam Console to connect a virtual ACS to your sandbox w
    2. In the device brand list, click **Visionline**.
    3. On the **Set up your Seam Bridge** page, click **Continue**.
 
-      [Seam Bridge](../../seam-bridge.md) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this quick start uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
+      [Seam Bridge](../../seam-bridge) is a software-only component that enables you to connect on-premises software systems to the Seam platform. Because Visionline is an on-premises ACS, Seam Bridge is required for real Visionline systems. However, this quick start uses a virtual Visionline ACS, so you do not need to install Seam Bridge.
 
    4. On the **Seam Bridge Connection** page, click **Submit**.
    5. On the **Enter your credentials** page:
@@ -520,7 +520,7 @@ $key_card_credential = $seam->acs->credentials->create(
 
 ## Step 5: View Your New Credential
 
-You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the following information about your successfully-created credential:
+You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli) to view the following information about your successfully-created credential:
 
 - The list of entrances to which the ACS user now has access.
 - The access schedule for the credential.
@@ -834,8 +834,8 @@ $seam->action_attempts->get(
 
 Now that you've created a key card credential and encoded it onto a card, try out the other ACS quick starts.
 
-- [Mobile Key Quick Start](mobile-key-quick-start.md)
-- [PIN Code Quick Start](pin-code-quick-start.md)
+- [Mobile Key Quick Start](mobile-key-quick-start)
+- [PIN Code Quick Start](pin-code-quick-start)
 
 Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
 
@@ -846,16 +846,16 @@ Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
 For a deeper dive into ACS concepts and instructions, see the following topics:
 
 1. Learn about ACS concepts.
-   - [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources.md)
-   - [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences.md)
+   - [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources)
+   - [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences)
 2. Create ACS users.
-   - [Managing ACS Users](../user-management.md)
+   - [Managing ACS Users](../user-management)
 3. For relevant access control systems, assign ACS users to access groups.
-   - [Assigning ACS Users to Access Groups](../user-management/assigning-users-to-access-groups.md)
+   - [Assigning ACS Users to Access Groups](../user-management/assigning-users-to-access-groups)
 4. Learn about available entrances.
-   - [Retrieving Entrance Details](../retrieving-entrance-details.md)
+   - [Retrieving Entrance Details](../retrieving-entrance-details)
 5. Create credentials for ACS users.
-   - [Managing Credentials](../managing-credentials.md)
+   - [Managing Credentials](../managing-credentials)
 6. For relevant access control systems, encode credentials onto key cards.
    - [Working with Card Encoders and Scanners](../working-with-card-encoders-and-scanners/)
 7. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).

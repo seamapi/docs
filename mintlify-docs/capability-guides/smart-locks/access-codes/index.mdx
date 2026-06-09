@@ -52,11 +52,11 @@ For [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-
 
 Hourly-bound offline access codes are intended for shorter durations, while daily-bound offline codes are intended for longer durations. Device manufacturers set the bounds for these short- and long-term access codes, and some device manufacturers enforce a maximum duration for hourly-bound offline access codes. See the corresponding device guide for more information.
 
-To [create a time-bound offline access code](offline-access-codes.md#creating-time-bound-offline-access-codes), specify the desired `starts_at` and `ends_at` date and time. To [create a daily-bound offline access code](offline-access-codes.md#program-a-daily-bound-offline-access-code), you must specify the same time in the `starts_at` and `ends_at` properties.
+To [create a time-bound offline access code](offline-access-codes#creating-time-bound-offline-access-codes), specify the desired `starts_at` and `ends_at` date and time. To [create a daily-bound offline access code](offline-access-codes#program-a-daily-bound-offline-access-code), you must specify the same time in the `starts_at` and `ends_at` properties.
 
 #### One-Time-Use Offline Access Codes
 
-For [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks) and [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks), you can create [one-time-use offline access codes](offline-access-codes.md#creating-one-time-use-offline-access-codes). igloohome one-time-use offline access codes are valid for 24 hours from the `starts_at` timestamp that you configure. Lockly offline access codes are valid for the time period that you specify using the `starts_at` and `ends_at` timestamps. These codes expire after a single use.
+For [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks) and [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks), you can create [one-time-use offline access codes](offline-access-codes#creating-one-time-use-offline-access-codes). igloohome one-time-use offline access codes are valid for 24 hours from the `starts_at` timestamp that you configure. Lockly offline access codes are valid for the time period that you specify using the `starts_at` and `ends_at` timestamps. These codes expire after a single use.
 
 ---
 
@@ -153,7 +153,7 @@ This behavior can sometimes be surprising to users, so we recommend that you inf
 
 Occasionally, Seam may encounter issues when programming codes onto locks. Such hiccups can arise from device connectivity issues, manual interventions from the lock or its accompanying app, or service disruptions from the lock providers. Given these issues, we strongly advise preprogramming a set of backup codes onto the door lock. Should you detect a failure in access code programming, these backup codes can be promptly shared.
 
-Seam offers a Backup Access Code service. When activated, this service automatically maintain a pool of pre-programmed access codes on a device. These codes are programmed in addition to the regular access codes on Seam, acting as a safety net in case of any issues with the primary codes. Please read about [how to enable and request a back up code here](backup-access-codes.md).
+Seam offers a Backup Access Code service. When activated, this service automatically maintain a pool of pre-programmed access codes on a device. These codes are programmed in addition to the regular access codes on Seam, acting as a safety net in case of any issues with the primary codes. Please read about [how to enable and request a back up code here](backup-access-codes).
 
 <CardGroup cols={2}>
   <Card

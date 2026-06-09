@@ -21,12 +21,12 @@ This quick start walks you through the following basic steps:
 1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
    - To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
-3. Create an [ACS user](../user-management.md).
+3. Create an [ACS user](../user-management).
    - Also, specify the access schedule for this user.
-4. Assign the ACS user to an [access group](../user-management/assigning-users-to-access-groups.md).
+4. Assign the ACS user to an [access group](../user-management/assigning-users-to-access-groups).
    - Access groups are preconfigured to grant access to specific entrances.\
-     While some access control systems use access groups, others specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
-5. Create a PIN code [ACS credential](../managing-credentials.md) for the ACS user.
+     While some access control systems use access groups, others specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences#access-permission-assignment-variations).
+5. Create a PIN code [ACS credential](../managing-credentials) for the ACS user.
 6. View the following information about your successfully-created credential:
    - The PIN code for the credential.
    - The access schedule for the ACS user.
@@ -331,7 +331,7 @@ $acs_user = $seam->acs->users->create(
 
 Add the ACS user to an access group. For Salto KS, access groups specify the entrances to which users have access.
 
-Some other access control systems do not use access groups and, instead, specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences.md#access-permission-assignment-variations).
+Some other access control systems do not use access groups and, instead, specify allowed entrances directly within the credential. For more details, see [Access Permission Assignment Variations](../connect-an-acs-to-seam/understanding-access-control-system-differences#access-permission-assignment-variations).
 
 1. Find the access group ID.
    1. In the top navigation pane of [Seam Console](https://console.seam.co/), click **ACS Systems**.
@@ -617,7 +617,7 @@ $pin_code_credential = $seam->acs->credentials->create(
 
 ## Step 6: View Your New Credential
 
-You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli.md) to view the following information about your successfully-created credential:
+You can use Seam Console, the Seam API, or the [Seam CLI](../../../core-concepts/seam-console/seam-online-cli) to view the following information about your successfully-created credential:
 
 - The PIN code for the credential.
 - The access schedule for the ACS user.
@@ -687,8 +687,8 @@ To use Seam Console to view information about your new PIN code credential:
 
 Now that you've created a PIN code credential, try out the other ACS quick starts.
 
-- [Key Card Quick Start](encodable-key-card-quick-start.md)
-- [Mobile Key Quick Start](mobile-key-quick-start.md)
+- [Key Card Quick Start](encodable-key-card-quick-start)
+- [Mobile Key Quick Start](mobile-key-quick-start)
 
 Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
 
@@ -699,14 +699,14 @@ Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
 For a deeper dive into ACS concepts and instructions, see the following topics:
 
 1. Learn about ACS concepts.
-   - [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources.md)
-   - [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences.md)
+   - [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources)
+   - [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences)
 2. Create ACS users.
-   - [Managing ACS Users](../user-management.md)
+   - [Managing ACS Users](../user-management)
 3. For relevant access control systems, assign ACS users to access groups.
-   - [Assigning ACS Users to Access Groups](../user-management/assigning-users-to-access-groups.md)
+   - [Assigning ACS Users to Access Groups](../user-management/assigning-users-to-access-groups)
 4. Learn about available entrances.
-   - [Retrieving Entrance Details](../retrieving-entrance-details.md)
+   - [Retrieving Entrance Details](../retrieving-entrance-details)
 5. Create credentials for ACS users.
-   - [Managing Credentials](../managing-credentials.md)
+   - [Managing Credentials](../managing-credentials)
 6. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).

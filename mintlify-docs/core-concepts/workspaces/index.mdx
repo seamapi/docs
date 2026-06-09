@@ -5,7 +5,7 @@ description: 'Workspaces are the top-level resource in the Seam ecosystem. They 
 
 ## What is a Workspace?
 
-A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](../authentication/api-keys.md), a [Personal Access Token](../authentication/personal-access-tokens.md) (PAT), or [client session tokens](../authentication/client-session-tokens/), and you can receive events from a workspace using [webhooks](../../developer-tools/webhooks.md).
+A workspace is conceptually like a project or environment. It encapsulate all other Seam resources, such as devices and connected third-party accounts. You access resources within a workspace using an [API key](../authentication/api-keys), a [Personal Access Token](../authentication/personal-access-tokens) (PAT), or [client session tokens](../authentication/client-session-tokens/), and you can receive events from a workspace using [webhooks](../../developer-tools/webhooks).
 
 There is no limit to the number of workspaces that you can create, but most Seam customers only have the following two workspaces:
 
@@ -100,8 +100,8 @@ Occasionally, an app may also be using multiple Seam workspaces. For example, a 
 
 <Info>
   Note that when you use multiple workspaces, you either need to create an [API
-  key](../authentication/api-keys.md) for each workspace or create a single
-  [Personal Access Token](../authentication/personal-access-tokens.md) (PAT) for
+  key](../authentication/api-keys) for each workspace or create a single
+  [Personal Access Token](../authentication/personal-access-tokens) (PAT) for
   use with all workspaces and then specify the ID of the workspace that you want
   to access.
 </Info>
@@ -152,7 +152,7 @@ You can trigger test events for some virtual devices. This capability is useful 
 
 ### Testing Your App
 
-To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](./#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](../devices/testing-your-app-against-device-disconnection-and-removal.md).
+To help you test your app against events—like device disconnection or removal—that are difficult to orchestrate in a QA environment using real devices, Seam provides a suite of `simulate` endpoints that you can use in a [sandbox workspace](./#sandbox-workspaces). See [Testing Your App Against Device Disconnection and Removal](../devices/testing-your-app-against-device-disconnection-and-removal).
 
 ### Resetting Sandbox Workspaces
 

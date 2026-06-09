@@ -1,33 +1,143 @@
 ---
-title: 'Overview'
+title: "Introduction"
+description: "The Seam API lets you control smart locks, thermostats, access control systems, and more through a unified REST interface."
 ---
 
-This API reference provides a comprehensive listing of all the Seam API resources and endpoints. It also explains how to install the Seam SDKs that enable you to use Seam in the programming language of your choice.
+The Seam API is organized around REST. It accepts JSON request bodies, returns JSON responses, and uses standard HTTP response codes and verbs.
 
-See the following reference topics:
+You can use the Seam API in a [sandbox workspace](/core-concepts/workspaces) without affecting live devices. The API key you use determines whether the request runs in sandbox or production mode.
 
-## Getting Started
+**Just getting started?** Check out the [quickstart guide](/quickstart).
 
-- [SDK Installation](installation.md)
-- [MCP Installation](mcp-installation.md)
-- [Authentication](authentication.md)
-- [Client Sessions](client_sessions/)
-- [Workspaces](workspaces/)
+```
+Base URL: https://connect.getseam.com
+```
 
-## Controlling Devices and Systems
+<CardGroup cols={3}>
+  <Card title="Install an SDK" icon="download" href="/api/installation">
+    JavaScript, Python, Ruby, PHP, C#, or Go.
+  </Card>
+  <Card title="Authentication" icon="key" href="/api/authentication">
+    API keys, client sessions, or personal access tokens.
+  </Card>
+  <Card title="MCP for AI Agents" icon="plug" href="/api/mcp-installation">
+    Connect Seam to AI assistants via MCP.
+  </Card>
+</CardGroup>
 
-- [Connect Webviews](connect_webviews/)
-- [Devices](devices/)
-  - [Locks](locks/)
-    - [Access Codes](access_codes/)
-  - [Thermostats](thermostats/)
-  - [Noise Sensors](noise_sensors/)
-- [Access Control Systems](acs/)
-  - [User Identities](user_identities/)
-  - [Phones](phones/)
+---
+
+## Granting Access
+
+Use [Access Grants](/api/access_grants) to give people access to physical spaces. Tell Seam _who_ should have access, _where_, and _when_ — Seam automatically creates the right credential and programs it to the device.
+
+<Card title="Access Grants" icon="id-badge" href="/api/access_grants">
+  The primary API for granting access — create, update, revoke, and manage the full lifecycle.
+</Card>
+
+Access Grants support all access methods through a single API:
+
+<CardGroup cols={2}>
+  <Card title="PIN Codes" icon="input-numeric" horizontal>
+    Generate keypad codes for smart locks. Ongoing or time-bound.
+  </Card>
+  <Card title="Key Cards" icon="id-card" horizontal>
+    Encode plastic cards for access control systems.
+  </Card>
+  <Card title="Mobile Keys" icon="mobile" horizontal>
+    Issue mobile credentials via app or Instant Key URL.
+  </Card>
+  <Card title="Remote Unlock" icon="lock-open" horizontal>
+    Unlock doors remotely via API call.
+  </Card>
+</CardGroup>
+
+---
+
+## Devices and Systems
+
+Connect and control IoT devices and access control systems.
+
+<CardGroup cols={3}>
+  <Card title="Devices" icon="microchip" href="/api/devices">
+    List, get, and update connected devices.
+  </Card>
+  <Card title="Locks" icon="lock" href="/api/locks">
+    Lock and unlock smart locks.
+  </Card>
+  <Card title="Thermostats" icon="temperature-half" href="/api/thermostats">
+    Set temperature, HVAC mode, and climate presets.
+  </Card>
+  <Card title="Noise Sensors" icon="volume-high" href="/api/noise_sensors">
+    Monitor noise levels and configure thresholds.
+  </Card>
+  <Card title="ACS" icon="server" href="/api/acs">
+    Manage access control system users, credentials, entrances, and encoders.
+  </Card>
+</CardGroup>
+
+---
+
+## Setup
+
+Connect device accounts and configure your workspace.
+
+<CardGroup cols={3}>
+  <Card title="Connect Webviews" icon="window-restore" href="/api/connect_webviews">
+    Authorization flows to link user device accounts.
+  </Card>
+  <Card title="Connected Accounts" icon="link" href="/api/connected_accounts">
+    Manage linked manufacturer accounts.
+  </Card>
+  <Card title="User Identities" icon="user" href="/api/user_identities">
+    Map your users to Seam for cross-system identity.
+  </Card>
+  <Card title="Workspaces" icon="briefcase" href="/api/workspaces">
+    Sandbox and production workspaces.
+  </Card>
+  <Card title="Client Sessions" icon="user-shield" href="/api/client_sessions">
+    Scoped sessions for frontend apps.
+  </Card>
+  <Card title="Customers" icon="users" href="/api/customers">
+    Customer portals and data.
+  </Card>
+  <Card title="Spaces" icon="building" href="/api/spaces">
+    Organize devices and entrances into named groups.
+  </Card>
+</CardGroup>
+
+---
 
 ## Monitoring
 
-- [Events](events/)
-- [Action Attempts](action_attempts/)
-- [Connected Accounts](connected_accounts/)
+Track events, subscribe to webhooks, and poll for action completion.
+
+<CardGroup cols={3}>
+  <Card title="Events" icon="timeline" href="/api/events">
+    Query device and system events.
+  </Card>
+  <Card title="Webhooks" icon="bell" href="/api/webhooks">
+    Real-time event notifications.
+  </Card>
+  <Card title="Action Attempts" icon="spinner" href="/api/action_attempts">
+    Poll async operations until completion.
+  </Card>
+</CardGroup>
+
+---
+
+## Low-Level APIs
+
+These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead — they handle credential creation, device programming, and lifecycle management automatically.
+
+<CardGroup cols={3}>
+  <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
+    Directly program PIN codes on smart lock keypads.
+  </Card>
+  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
+    Temporary mobile keys without an app install.
+  </Card>
+  <Card title="Phones" icon="mobile" href="/api/phones">
+    Manage phones for mobile access credentials.
+  </Card>
+</CardGroup>

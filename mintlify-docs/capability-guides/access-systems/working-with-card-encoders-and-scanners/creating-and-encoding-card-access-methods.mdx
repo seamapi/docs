@@ -21,14 +21,14 @@ This process consists of the following basic steps:
 
 1.  Create an [Access Grant](../../../use-cases/granting-access/) that includes a request for a card access method and identify the ID of the resulting access method.
 
-    See [Create an Access Grant](creating-and-encoding-card-access-methods.md#id-1.-create-an-access-grant).
+    See [Create an Access Grant](creating-and-encoding-card-access-methods#id-1.-create-an-access-grant).
 
 2.  Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the access method onto the card.\
-    See [Retrieve Encoders](creating-and-encoding-card-access-methods.md#id-2.-retrieve-encoders).
+    See [Retrieve Encoders](creating-and-encoding-card-access-methods#id-2.-retrieve-encoders).
 3.  Use the `/access_methods/encode` endpoint to encode the access method onto the card, using the encoder that you have chosen.\
-    See [Encode the Card](creating-and-encoding-card-access-methods.md#id-3.-encode-the-card).
-4.  Confirm that the card was encoded successfully using polling or a [webhook](../../../developer-tools/webhooks.md).\
-    See [Confirm Successful Encoding](creating-and-encoding-card-access-methods.md#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-access-methods.md#common-encoding-errors).
+    See [Encode the Card](creating-and-encoding-card-access-methods#id-3.-encode-the-card).
+4.  Confirm that the card was encoded successfully using polling or a [webhook](../../../developer-tools/webhooks).\
+    See [Confirm Successful Encoding](creating-and-encoding-card-access-methods#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-access-methods#common-encoding-errors).
 
 Once you have written an access method to a card, you cannot reuse the access method for another card. That is, you must create a separate access method for each card. However, you can reuse a card by re-encoding the card with a new access method.
 
@@ -38,7 +38,7 @@ Once you have written an access method to a card, you cannot reuse the access me
 
 This example shows how to create a card access method as part of an Access Grant. Note that the `is_encoding_required` property of the resulting access method is `true`, which means that the access method must be encoded onto a card. Further, once you've encoded the access method on to the card, the `is_issued` property changes to `true`, and the `issued_at` property indicates the date and time at which the encoding occurred.
 
-For more details about creating Access Grants, see [Creating an Access Grant Using Entrances](../../../use-cases/granting-access/creating-an-access-grant-using-entrances.md) and [Creating an Access Grant Using Spaces](../../../use-cases/granting-access/creating-an-access-grant-using-spaces.md).
+For more details about creating Access Grants, see [Creating an Access Grant Using Entrances](../../../use-cases/granting-access/creating-an-access-grant-using-entrances) and [Creating an Access Grant Using Spaces](../../../use-cases/granting-access/creating-an-access-grant-using-spaces).
 
 <Tabs>
 <Tab title="JavaScript">
@@ -685,11 +685,11 @@ $encoding_action_attempt = $seam->access_methods->encode(
 
 ## 4. Confirm Successful Encoding
 
-Once you issue a request to encode the access method onto the card, it is important to confirm that the encoding process completes successfully. You can use polling or a [webhook](../../../developer-tools/webhooks.md).
+Once you issue a request to encode the access method onto the card, it is important to confirm that the encoding process completes successfully. You can use polling or a [webhook](../../../developer-tools/webhooks).
 
 ### Confirm Successful Encoding by Polling
 
-When you make an `/access_methods/encode` request, Seam returns an [action attempt](../../../core-concepts/action-attempts.md). To confirm that the card encoding was successful, you can poll this action attempt, until its `status` becomes `success`.
+When you make an `/access_methods/encode` request, Seam returns an [action attempt](../../../core-concepts/action-attempts). To confirm that the card encoding was successful, you can poll this action attempt, until its `status` becomes `success`.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -1012,7 +1012,7 @@ $seam->access_methods->get(
 
 ### Confirm Successful Encoding by Using a Webhook
 
-To confirm successful encoding, you can use a [webhook](../../../developer-tools/webhooks.md) to listen for an `access_method.issued` event that contains the `access_method_id` in the payload. If you are re-encoding a card, listen for `access_method.reissued` instead of `access_method.issued`.
+To confirm successful encoding, you can use a [webhook](../../../developer-tools/webhooks) to listen for an `access_method.issued` event that contains the `access_method_id` in the payload. If you are re-encoding a card, listen for `access_method.reissued` instead of `access_method.issued`.
 
 ```json
 {

@@ -1,10 +1,30 @@
 ---
-title: 'Authentication'
-description: 'You can use any of several methods to authenticate with the Seam API.'
+title: "Authentication"
+description: "Choose the right authentication method for your Seam integration — API keys for server-side, client sessions for frontend apps, or personal access tokens for development."
 ---
 
-You can use any of the following methods to authenticate to the Seam API:
+Seam supports several authentication methods, each designed for a different use case. All methods authenticate against the Seam API at `https://connect.getseam.com`.
 
-- [Use an API key.](api-keys.md)
-- [Use a Personal Access Token.](personal-access-tokens.md)
-- [Use client sessions and client session tokens.](client-session-tokens/)
+<CardGroup cols={3}>
+  <Card title="API Keys" icon="key" href="/core-concepts/authentication/api-keys">
+    Server-side authentication for production apps. Create API keys in Seam Console and pass them via the `Authorization` header or SDK constructor.
+  </Card>
+  <Card title="Personal Access Tokens" icon="user" href="/core-concepts/authentication/personal-access-tokens">
+    Authenticate as yourself across all your workspaces. Ideal for development, scripting, and the Seam CLI.
+  </Card>
+  <Card title="Client Session Tokens" icon="browser" href="/core-concepts/authentication/client-session-tokens">
+    Scoped tokens for frontend apps. Grant users access to specific devices without exposing your API key.
+  </Card>
+</CardGroup>
+
+## Choosing the Right Method
+
+| Method | Use case | Scope | Where to use |
+|--------|----------|-------|--------------|
+| **API Key** | Production backend | Single workspace | Server-side only |
+| **Personal Access Token** | Development and CLI | All your workspaces | Local dev, scripts |
+| **Client Session Token** | Frontend apps | Scoped to specific devices | Browser, mobile |
+
+<Info>
+API keys and personal access tokens should never be exposed in client-side code. Use client session tokens for any frontend integration.
+</Info>

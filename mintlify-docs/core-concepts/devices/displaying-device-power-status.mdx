@@ -15,8 +15,8 @@ You can display the power status of your end users' devices in your app, includi
 
 To display this information, use either of the following Seam mechanisms:
 
-- [Use the `properties.has_direct_power`, and `properties.battery` properties of the `device` object.](displaying-device-power-status.md#get-device-power-status-using-device-properties)
-- [Use the `device.low_battery` and `device.battery_status_changed` events.](displaying-device-power-status.md#get-device-power-status-using-battery-related-events)
+- [Use the `properties.has_direct_power`, and `properties.battery` properties of the `device` object.](displaying-device-power-status#get-device-power-status-using-device-properties)
+- [Use the `device.low_battery` and `device.battery_status_changed` events.](displaying-device-power-status#get-device-power-status-using-battery-related-events)
 
 ## Get Device Power Status Using Device Properties
 
@@ -102,7 +102,7 @@ Use a [Get Device](https://docs.seam.co/latest/api/devices/get) request to retri
 
 <Info>
   You can also use the prebuilt [device details Seam
-  Component](../../ui-components/overview/react-components/device-details.md),
+  Component](../../ui-components/overview/react-components/device-details),
   which includes a device power status display.
 </Info>
 
@@ -275,7 +275,7 @@ Seam generates the following battery-related events:
 - `device.low_battery`
 - `device.battery_status_changed`
 
-You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../../developer-tools/webhooks.md) and then display the corresponding status in your app.
+You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../../developer-tools/webhooks) and then display the corresponding status in your app.
 
 ### Get Battery-Related Events Using a List Events Request
 
@@ -529,4 +529,4 @@ foreach (var device_battery_status_changed_event in device_battery_status_change
 
 ### Retrieve Battery-Related Events Using a Webhook
 
-You can set up webhook endpoints to receive `device.battery_status_changed` and `device.low_battery` events. Then, you can use the receipt of these events to display the corresponding device status in your app. For more information about configuring webhooks, see [Webhooks](../../developer-tools/webhooks.md).
+You can set up webhook endpoints to receive `device.battery_status_changed` and `device.low_battery` events. Then, you can use the receipt of these events to display the corresponding device status in your app. For more information about configuring webhooks, see [Webhooks](../../developer-tools/webhooks).
