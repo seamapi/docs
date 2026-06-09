@@ -20,7 +20,7 @@ You can use the following Seam API "imperative" endpoints to set the current HVA
   the desired heating and cooling set points, as appropriate.
 </Info>
 
-Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](#thermostat-capabilities).
+Note that it's important to check the capabilities of a thermostat before attempting to use an imperative endpoint. For example, if a thermostat is attached to an HVAC system that does not have cooling capabilities, you cannot use `/thermostats/cool` or `/thermostats/heat_cool`. To check the capabilities of a thermostat, retrieve the thermostat and confirm the [relevant capability flags](#before-you-begin-confirm-capabilities).
 
 These imperative operations return an [action attempt](../../core-concepts/action-attempts) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
 

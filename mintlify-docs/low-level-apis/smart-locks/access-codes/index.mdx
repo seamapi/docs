@@ -74,7 +74,7 @@ Seam ensures access reliability by initiating the programming of access codes on
 
 ### **Native Scheduling**
 
-For locks that support setting codes with a schedule, Seam will preload access codes onto the device a full **72 hours** before the `starts_at` timestamp of a time-bound code. When the `starts_at` time arrives, the code automatically activates and will remain active until its `ends_at` time. We enable this "native scheduling" functionality by default for all providers that support it. See [Native Scheduling—Supported Providers](#native-schedulingsupported-providers) for a list of supported providers. You can choose to override this default behavior and have Seam perform "just-in-time scheduling" by setting `prefer_native_scheduling` to `false` when creating a code.
+For locks that support setting codes with a schedule, Seam will preload access codes onto the device a full **72 hours** before the `starts_at` timestamp of a time-bound code. When the `starts_at` time arrives, the code automatically activates and will remain active until its `ends_at` time. We enable this "native scheduling" functionality by default for all providers that support it. See [Native Scheduling - Supported Providers](#native-scheduling-supported-providers) for a list of supported providers. You can choose to override this default behavior and have Seam perform "just-in-time scheduling" by setting `prefer_native_scheduling` to `false` when creating a code.
 
 <figure>
   <img src='/images/native-code-programming-dark.png' alt='' />
@@ -88,7 +88,7 @@ For locks that support setting codes with a schedule, Seam will preload access c
   </figcaption>
 </figure>
 
-#### Native Scheduling—Supported Providers
+#### Native Scheduling Supported Providers
 
 | ✅ Supported | ✖️ Not Supported  |
 | ------------ | ----------------- |
