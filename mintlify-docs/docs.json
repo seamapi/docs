@@ -338,7 +338,8 @@
                       "POST /devices/unmanaged/list",
                       "POST /devices/unmanaged/update"
                     ]
-                  }
+                  },
+                  "POST /devices/report_provider_metadata"
                 ]
               },
               {
@@ -355,7 +356,8 @@
                       "POST /locks/simulate/keypad_code_entry",
                       "POST /locks/simulate/manual_lock_via_keypad"
                     ]
-                  }
+                  },
+                  "POST /locks/configure_auto_lock"
                 ]
               },
               {
@@ -442,7 +444,8 @@
                       "POST /acs/access_groups/list",
                       "POST /acs/access_groups/list_users",
                       "POST /acs/access_groups/list_accessible_entrances",
-                      "POST /acs/access_groups/remove_user"
+                      "POST /acs/access_groups/remove_user",
+                      "POST /acs/access_groups/delete"
                     ]
                   },
                   {
@@ -497,7 +500,8 @@
                       "POST /acs/entrances/get",
                       "POST /acs/entrances/grant_access",
                       "POST /acs/entrances/list_credentials_with_access",
-                      "POST /acs/entrances/list"
+                      "POST /acs/entrances/list",
+                      "POST /acs/entrances/unlock"
                     ]
                   },
                   {
@@ -568,7 +572,8 @@
                       "POST /user_identities/unmanaged/list",
                       "POST /user_identities/unmanaged/update"
                     ]
-                  }
+                  },
+                  "POST /user_identities/list_accessible_entrances"
                 ]
               },
               {

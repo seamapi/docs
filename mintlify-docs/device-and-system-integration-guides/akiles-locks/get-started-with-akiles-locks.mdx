@@ -883,13 +883,14 @@ To query the `locked` status of the device:
 <Tab title="JavaScript">
 **Code:**
 
-<pre class="language-javascript"><code class="lang-javascript">// Get the device by ID.
+```javascript
+// Get the device by ID.
 const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
 
 // Inspect the locked property to confirm
 // that the unlock operation was successful.
-<strong>console.log(updatedFrontDoor.properties.locked); // false
-</strong></code></pre>
+console.log(updatedFrontDoor.properties.locked); // false
+```
 
 **Output:**
 

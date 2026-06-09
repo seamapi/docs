@@ -27,11 +27,12 @@ Use this `connected_account_id` in a [List Devices](https://docs.seam.co/latest/
 
 **Code:**
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>// Retrieve all devices for the connected_account_id.
-</strong>const connectedDevices = await seam.devices.list({
+```javascript
+// Retrieve all devices for the connected_account_id.
+const connectedDevices = await seam.devices.list({
   connected_account_id: "11111111-1111-1111-1111-222222222222"
 });
-</code></pre>
+```
 
 **Output:**
 
@@ -220,11 +221,12 @@ Use this `connected_account_id` in a [List ACS Systems](https://docs.seam.co/lat
 
 **Code:**
 
-<pre class="language-javascript"><code class="lang-javascript"><strong>// Retrieve all acs_systems for the connected_account_id.
-</strong>const connectedAcsSystems = await seam.acs.systems.list({
+```javascript
+// Retrieve all acs_systems for the connected_account_id.
+const connectedAcsSystems = await seam.acs.systems.list({
   connected_account_id: "11111111-1111-1111-2222-111111111111"
 });
-</code></pre>
+```
 
 **Output:**
 
