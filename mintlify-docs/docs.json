@@ -192,10 +192,10 @@
             ]
           },
           {
-            "group": "Seam Components",
+            "group": "UI Components",
             "pages": [
               {
-                "group": "Seam Components",
+                "group": "Seam Web Components",
                 "pages": [
                   "ui-components/overview/index",
                   {
@@ -222,12 +222,7 @@
                   },
                   "ui-components/overview/using-user-identities-to-scope-users-device-access"
                 ]
-              }
-            ]
-          },
-          {
-            "group": "Seam Mobile Components",
-            "pages": [
+              },
               {
                 "group": "Seam Mobile Components",
                 "pages": [
