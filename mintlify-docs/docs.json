@@ -247,14 +247,19 @@
           {
             "group": "Industry Guides",
             "pages": [
-              "industry-guides/hospitality-industry-guide/index",
-              "industry-guides/hospitality-industry-guide/feature-overview",
-              "industry-guides/hospitality-industry-guide/seam-api-overview",
-              "industry-guides/hospitality-industry-guide/setting-up-the-hotel-site",
-              "industry-guides/hospitality-industry-guide/granting-access-using-seam-instant-keys",
-              "industry-guides/hospitality-industry-guide/granting-access-using-mobile-keys",
-              "industry-guides/hospitality-industry-guide/granting-access-using-encoded-plastic-key-cards",
-              "industry-guides/hospitality-industry-guide/additional-guest-access-actions"
+              {
+                "group": "Hospitality Industry Guide",
+                "pages": [
+                  "industry-guides/hospitality-industry-guide/index",
+                  "industry-guides/hospitality-industry-guide/feature-overview",
+                  "industry-guides/hospitality-industry-guide/seam-api-overview",
+                  "industry-guides/hospitality-industry-guide/setting-up-the-hotel-site",
+                  "industry-guides/hospitality-industry-guide/granting-access-using-seam-instant-keys",
+                  "industry-guides/hospitality-industry-guide/granting-access-using-mobile-keys",
+                  "industry-guides/hospitality-industry-guide/granting-access-using-encoded-plastic-key-cards",
+                  "industry-guides/hospitality-industry-guide/additional-guest-access-actions"
+                ]
+              }
             ]
           },
           {
