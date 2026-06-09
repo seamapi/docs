@@ -3,10 +3,10 @@ title: 'Testing Your Thermostat App with Simulate Endpoints'
 description: 'Learn how to use the Seam suite of simulate endpoints to test your thermostat app.'
 ---
 
-Seam's suite of `simulate` endpoints help you to test your thermostat app against events that can be difficult to orchestrate in your quality assurance (QA) environment using real devices. Seam provides the following thermostat-related `simulate` endpoints that you can use in a [sandbox workspace](../../core-concepts/workspaces/#sandbox-workspaces):
+Seam's suite of `simulate` endpoints help you to test your thermostat app against events that can be difficult to orchestrate in your quality assurance (QA) environment using real devices. Seam provides the following thermostat-related `simulate` endpoints that you can use in a [sandbox workspace](/core-concepts/workspaces/index#sandbox-workspaces):
 
-- [`/thermostats/simulate/hvac_mode_adjusted`](testing-your-thermostat-app-with-simulate-endpoints#simulate-adjusting-the-hvac-mode)
-- [`/thermostats/simulate/temperature_reached`](testing-your-thermostat-app-with-simulate-endpoints#simulate-reaching-a-desired-temperature)
+- [`/thermostats/simulate/hvac_mode_adjusted`](#simulate-adjusting-the-hvac-mode)
+- [`/thermostats/simulate/temperature_reached`](#simulate-reaching-a-desired-temperature)
 
 Seam supports these endpoints for all thermostat [sandbox devices](https://docs.seam.co/latest/device-and-system-integration-guides).
 
@@ -20,7 +20,7 @@ Seam supports these endpoints for all thermostat [sandbox devices](https://docs.
 
 ## Checking Capability Flags
 
-Before using the `simulate` endpoints, check the relevant capabilities of the sandbox thermostat that you want to test. For example, if you want to use `/thermostats/simulate/hvac_mode_adjusted` to simulate having set the [HVAC mode](understanding-thermostat-concepts/hvac-mode) on a thermostat to `heat`, you must first make sure that the thermostat supports heat mode.
+Before using the `simulate` endpoints, check the relevant capabilities of the sandbox thermostat that you want to test. For example, if you want to use `/thermostats/simulate/hvac_mode_adjusted` to simulate having set the [HVAC mode](./understanding-thermostat-concepts/hvac-mode) on a thermostat to `heat`, you must first make sure that the thermostat supports heat mode.
 
 The following device properties show the relevant capabilities of a thermostat:
 
@@ -29,13 +29,13 @@ The following device properties show the relevant capabilities of a thermostat:
 - `device.can_hvac_heat_cool`
 - `device.can_turn_off_hvac`
 
-For more information, see [Thermostat Capabilities](../../capability-guides/thermostats/#thermostat-capabilities).
+For more information, see [Thermostat Capabilities](/capability-guides/thermostats/index#thermostat-capabilities).
 
 ---
 
 ## Simulate Adjusting the HVAC Mode
 
-The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the [HVAC mode](understanding-thermostat-concepts/hvac-mode) for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](https://docs.seam.co/latest/api/events/) correctly, such as `thermostat.manually_adjusted`.
+The `/thermostats/simulate/hvac_mode_adjusted` endpoint enables you to simulate having adjusted the [HVAC mode](./understanding-thermostat-concepts/hvac-mode) for a thermostat. This simulation is helpful for testing that your app is receiving [thermostat events](https://docs.seam.co/latest/api/events/) correctly, such as `thermostat.manually_adjusted`.
 
 You can simulate having set the HVAC mode to any of the following settings:
 
@@ -44,7 +44,7 @@ You can simulate having set the HVAC mode to any of the following settings:
 - `heat_cool`
 - `off`
 
-When you set the HVAC mode to `heat`, `cool`, or `heat_cool`, you must also set the following applicable [set points](understanding-thermostat-concepts/set-points) to the desired degrees Fahrenheit or Celsius:
+When you set the HVAC mode to `heat`, `cool`, or `heat_cool`, you must also set the following applicable [set points](./understanding-thermostat-concepts/set-points) to the desired degrees Fahrenheit or Celsius:
 
 | HVAC Mode Setting | Required Set Points                                                                                                                                                                               |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

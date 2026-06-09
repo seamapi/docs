@@ -9,7 +9,7 @@ In this quick start, create an Access Grant to give a user access to a set of ac
   **Starting with a standalone smart lock?** The fastest first success is a
   single device and a PIN code: see the [Seam Quick Start](../../quickstart),
   which creates an Access Grant on a sandbox August lock, or [Creating an Access
-  Grant Using Devices](creating-an-access-grant-using-devices). This quick
+  Grant Using Devices](/use-cases/granting-access/creating-an-access-grant-using-devices). This quick
   start walks through the more advanced access system (ACS) path, including key
   cards, mobile keys, and Instant Keys.
 </Check>
@@ -19,7 +19,7 @@ In addition, this quick start shows you that, with Access Grants, it's easy to i
 <Info>
   Seam Instant Keys are the fastest way to share access. You can send them as
   links through text or email, with no app download required. For details, see
-  [Instant Keys](../../capability-guides/instant-keys/).
+  [Instant Keys](/capability-guides/instant-keys/index).
 </Info>
 
 ---
@@ -28,11 +28,11 @@ In addition, this quick start shows you that, with Access Grants, it's easy to i
 
 Before you begin this quick start, perform the following steps:
 
-1.  [Connect](../../core-concepts/workspaces/#connecting-virtual-devices) an access system to Seam.
+1.  [Connect](/core-concepts/workspaces/index#connecting-virtual-devices) an access system to Seam.
 
     In this quick start, you can use a Seam virtual access system in a sandbox workspace, for example, the [virtual Salto Space access system](https://docs.seam.co/latest/device-and-system-integration-guides/salto-proaccess-space-access-system/sandbox-salto-space-access-control-system).
 
-    For instructions, see [Connect an Access System to Seam](../../low-level-apis/access-systems/connect-an-acs-to-seam/).
+    For instructions, see [Connect an Access System to Seam](/low-level-apis/access-systems/connect-an-acs-to-seam/index).
 
 2.  Install a Seam SDK and create an API key.
 
@@ -52,19 +52,19 @@ This quick start walks you through the following basic steps:
     - Access schedule: The starting and ending times for access.
     - Access methods: The modes of access, including key cards, PIN codes, mobile keys, and Instant Keys.
 
-    For instructions, see [Step 1: Create an Access Grant](access-grant-quick-start#step-1-create-an-access-grant).
+    For instructions, see [Step 1: Create an Access Grant](#step-1-create-an-access-grant).
 
 2.  Poll for access method status changes or monitor for Access Grant and access method lifecycle events.
 
     These properties and events let you know what your next step is. They also alert you to when you can deliver the access methods to your user.
 
-    For instructions, see [Step 2: Poll for Status Changes or Monitor for Lifecycle Events](access-grant-quick-start#step-2-poll-for-status-changes-or-monitor-for-lifecycle-events).
+    For instructions, see [Step 2: Poll for Status Changes or Monitor for Lifecycle Events](#step-2-poll-for-status-changes-or-monitor-for-lifecycle-events).
 
 3.  Deliver the created access methods to your user.
 
     The delivery method depends on the access method.
 
-    For instructions, see [Step 3: Deliver the Access Methods](access-grant-quick-start#step-3-deliver-the-access-methods).
+    For instructions, see [Step 3: Deliver the Access Methods](#step-3-deliver-the-access-methods).
 
 :rocket: Let's get started!
 
@@ -857,7 +857,7 @@ The way in which you deliver an access method depends on the mode of access. The
         case, the access method's <code>is_encoding_required</code> property is{' '}
         <code>true</code>. You can use the Seam API or Seam Console to encode
         and scan the cards. For details, see{' '}
-        <a href='../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/'>
+        <a href='/low-level-apis/access-systems/working-with-card-encoders-and-scanners'>
           Working with Card Encoders and Scanners
         </a>
         .<br />
@@ -877,7 +877,7 @@ The way in which you deliver an access method depends on the mode of access. The
         need to initialize the Seam client on your user's mobile device. Then,
         your user simply taps a button in your app to unlock the door. For
         details, see{' '}
-        <a href='../../capability-guides/mobile-access/'>Mobile Access</a>.
+        <a href='/capability-guides/mobile-access'>Mobile Access</a>.
       </td>
     </tr>
     <tr>
@@ -890,8 +890,8 @@ The way in which you deliver an access method depends on the mode of access. The
         user by sending it through text or email. There's no app download
         required. You can also embed an Instant Key in your own app. For
         details, see{' '}
-        <a href='../../capability-guides/instant-keys/'>Instant Keys</a> and{' '}
-        <a href='../../capability-guides/instant-keys/delivering-instant-keys.md'>
+        <a href='/capability-guides/instant-keys'>Instant Keys</a> and{' '}
+        <a href='/capability-guides/instant-keys/delivering-instant-keys'>
           Delivering Instant Keys
         </a>
         .
@@ -906,8 +906,8 @@ The way in which you deliver an access method depends on the mode of access. The
 
 Now that you've created your first Access Grant, learn more about Access Grants.
 
-- [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances)
-- [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces)
-- [Delivering Access Methods](delivering-access-methods)
+- [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances)
+- [Creating an Access Grant Using Spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces)
+- [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods)
 - [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
 - [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

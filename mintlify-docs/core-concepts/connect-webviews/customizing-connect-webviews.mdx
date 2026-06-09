@@ -3,14 +3,14 @@ title: 'Customizing Connect Webviews'
 description: 'You can customize the look and feel, brand list, and behavior of your Connect Webviews.'
 ---
 
-You can use [Seam Console](../seam-console/) to customize the [Connect Webviews](./) that you present to your users through your app.
+You can use [Seam Console](/core-concepts/seam-console/index) to customize the [Connect Webviews](./) that you present to your users through your app.
 
 You can customize the following characteristics of your Connect Webviews:
 
-- [Look and feel](customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews)
-- [Brands (manufacturers) to display](customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews)
-- [Device types (capabilities) to connect](customizing-connect-webviews#customize-the-types-of-devices-to-connect)
-- [Behavior settings](customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews), including `automatically_manage_new_devices` and `wait_for_device_creation`
+- [Look and feel](#customize-the-look-and-feel-of-your-connect-webviews)
+- [Brands (manufacturers) to display](#customize-the-brands-to-display-in-your-connect-webviews)
+- [Device types (capabilities) to connect](#customize-the-types-of-devices-to-connect)
+- [Behavior settings](#customize-the-behavior-settings-of-your-connect-webviews), including `automatically_manage_new_devices` and `wait_for_device_creation`
 
 ---
 
@@ -201,7 +201,7 @@ To help you decide which providers to include in a Connect Webview, you can use 
   If you omit the `accepted_providers` parameter, the Connect Webview displays
   all of the stable providers that Seam supports, by default. For more
   information about provider categories, see [Step 1: Create a Connect
-  Webview](connect-webview-process#step-1-create-a-connect-webview).
+  Webview](/core-concepts/connect-webviews/connect-webview-process#step-1-create-a-connect-webview).
 </Info>
 
 The following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:
@@ -368,7 +368,7 @@ seam.ConnectWebviews.Create(
   SmartThings.
 </Info>
 
-Some providers support multiple device types, like smart locks and thermostats. To specify which types of devices your users can connect to Seam for a provider that supports multiple device types, use the `accepted_capabilities` parameter when creating a Connect Webview. This parameter is especially applicable when the Connect Webview [`automatically_manage_new_devices`](customizing-connect-webviews#automatically_manage_new_devices) parameter is `true`. Set `accepted_capabilities` to an array containing one or more of the following values to indicate the capabilities of the devices that the Connect Webview can accept:
+Some providers support multiple device types, like smart locks and thermostats. To specify which types of devices your users can connect to Seam for a provider that supports multiple device types, use the `accepted_capabilities` parameter when creating a Connect Webview. This parameter is especially applicable when the Connect Webview [`automatically_manage_new_devices`](#automatically_manage_new_devices) parameter is `true`. Set `accepted_capabilities` to an array containing one or more of the following values to indicate the capabilities of the devices that the Connect Webview can accept:
 
 - `lock`
 - `thermostat`
@@ -380,8 +380,8 @@ Seam maintains a default value for this parameter for each provider. For example
 
 You can use the following two properties to customize the behavior of your Connect Webviews:
 
-- [`automatically_manage_new_devices`](customizing-connect-webviews#automatically_manage_new_devices)
-- [`wait_for_device_creation`](customizing-connect-webviews#wait_for_device_creation)
+- [`automatically_manage_new_devices`](#automatically_manage_new_devices)
+- [`wait_for_device_creation`](#wait_for_device_creation)
 
 You configure these properties when you are creating the Connect Webview. Consequently, you can customize these two characteristics for each of your Connect Webviews.
 

@@ -60,5 +60,7 @@ jobs:
         uses: ./.github/actions/setup
       - name: Validate Mintlify build (MDX parsing + nav resolution)
         run: npm run validate:mintlify
-      - name: Check for broken links (informational)
-        run: npm run validate:mintlify-links || true
+      - name: Check for broken links
+        run: npm run validate:mintlify-links
+      - name: Check for broken anchors (informational)
+        run: npm run validate:mintlify-anchors || true

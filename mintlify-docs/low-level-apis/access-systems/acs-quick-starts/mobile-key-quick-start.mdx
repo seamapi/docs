@@ -3,7 +3,7 @@ title: 'Mobile Key Quick Start'
 description: 'Create your first mobile key credential to start controlling an access control system with Seam.'
 ---
 
-In this quick start, create a user identity for a virtual [Salto KS](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](../../mobile-access/).
+In this quick start, create a user identity for a virtual [Salto KS](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](/capability-guides/mobile-access/index).
 
 <Info>
   This quick start walks you through the process that applies specifically to
@@ -18,8 +18,8 @@ In this quick start, create a user identity for a virtual [Salto KS](https://doc
 
 This quick start walks you through the following basic steps:
 
-1. [Connect](../../../core-concepts/workspaces/#connecting-virtual-devices) an access control system to Seam.
-   - To get started quickly, use a virtual ACS in a [sandbox workspace](../../../core-concepts/workspaces/#sandbox-workspaces).
+1. [Connect](/core-concepts/workspaces/index#connecting-virtual-devices) an access control system to Seam.
+   - To get started quickly, use a virtual ACS in a [sandbox workspace](/core-concepts/workspaces/index#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
 3. Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
    - Seam user identities enable you to match your own mobile app users to ACS users.
@@ -35,10 +35,10 @@ This quick start walks you through the following basic steps:
 
 ## Step 1: Connect a Virtual ACS
 
-In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](../../../core-concepts/connect-webviews/) and then use it to connect an ACS to Seam.
+In this quick start, use Seam Console to connect a virtual ACS to your sandbox workspace. Alternately, you can use the Seam API to create a [Connect Webview](/core-concepts/connect-webviews/index) and then use it to connect an ACS to Seam.
 
 1. Log in to [Seam Console](https://console.seam.co/).
-2. In the upper-left corner, click the workspace switcher and select or [create a sandbox workspace](../../../core-concepts/workspaces/#create-a-sandbox-workspace).
+2. In the upper-left corner, click the workspace switcher and select or [create a sandbox workspace](/core-concepts/workspaces/index#create-a-sandbox-workspace).
 
    ![Use the Seam Console workspace switcher to switch between workspaces and create new workspaces.](/images/workspace-switcher.png)
 
@@ -646,7 +646,7 @@ To use Seam Console to view information about your new PIN code credential:
   app that downloads the user's mobile keys and then uses BLE or similar
   technology to unlock nearby entrances to which the user's credentials grant
   access. For details, see [Integrating into your mobile
-  application](../../mobile-access/mobile-device-sdks/).
+  application](/capability-guides/mobile-access/mobile-device-sdks/index).
 </Info>
 
 ---
@@ -655,10 +655,10 @@ To use Seam Console to view information about your new PIN code credential:
 
 Now that you've created a mobile key credential, try out the other ACS quick starts.
 
-- [PIN Code Quick Start](pin-code-quick-start)
-- [Key Card Quick Start](encodable-key-card-quick-start)
+- [PIN Code Quick Start](/low-level-apis/access-systems/acs-quick-starts/pin-code-quick-start)
+- [Key Card Quick Start](/low-level-apis/access-systems/acs-quick-starts/encodable-key-card-quick-start)
 
-Then, [connect your ACS to Seam](../connect-an-acs-to-seam/).
+Then, [connect your ACS to Seam](/low-level-apis/access-systems/connect-an-acs-to-seam/index).
 
 ---
 
@@ -670,7 +670,7 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
    - [Access Control System Resources](../connect-an-acs-to-seam/access-control-system-resources)
    - [Understanding ACS Differences](../connect-an-acs-to-seam/understanding-access-control-system-differences)
 2. Create user identities.
-   - [Managing Mobile App User Accounts with User Identities](../../mobile-access/managing-mobile-app-user-accounts-with-user-identities)
+   - [Managing Mobile App User Accounts with User Identities](/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities)
 3. For relevant access control systems, assign user identities to access groups.
    - [Adding User Identities to Access Groups](https://docs.seam.co/latest/api/acs/access_groups/add_user)
 4. Learn about available entrances.
@@ -678,6 +678,6 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 5. Create credentials for ACS users.
    - [Managing Credentials](../managing-credentials)
 6. Learn more about the Seam mobile access solution.
-   - [Mobile Access](../../mobile-access/)
-   - [Integrating into your mobile application](../../mobile-access/mobile-device-sdks/)
+   - [Mobile Access](/capability-guides/mobile-access/index)
+   - [Integrating into your mobile application](/capability-guides/mobile-access/mobile-device-sdks/index)
 7. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).

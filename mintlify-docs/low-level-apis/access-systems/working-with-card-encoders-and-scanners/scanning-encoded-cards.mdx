@@ -15,12 +15,12 @@ The scanning process consists of the following basic steps:
 1. Initiate the scanning process.\
    Use the `/acs/encoders/scan_credential` endpoint. Specify the `acs_encoder_id` of the encoder that you want to use to scan the card.\
    This request returns an action attempt that tracks the status of the scan.\
-   See [Initiate the Scanning Process](scanning-encoded-cards#initiate-the-scanning-process).
+   See [Initiate the Scanning Process](#1-initiate-the-scanning-process).
 2. Poll the returned action attempt, until its `status` becomes `success`.\
-   See [Confirm Successful Scan](scanning-encoded-cards#confirm-successful-scan).
+   See [Confirm Successful Scan](#2-confirm-successful-scan).
 3. View the scanned card payload.\
    Once the `status` of the action attempt is `success`, view the card payload within the action attempt. Note any `action_attempt.result.warnings`. Warning messages show which properties are out of sync.\
-   See [View the Scanned Card Payload](scanning-encoded-cards#view-the-scanned-card-payload). Also, see a list of [common scanning errors](scanning-encoded-cards#common-scanning-errors).
+   See [View the Scanned Card Payload](#3-view-the-scanned-card-payload). Also, see a list of [common scanning errors](#common-scanning-errors).
 
 ---
 

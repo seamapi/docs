@@ -11,10 +11,10 @@ description: 'Use redirection or an iframe to embed a Connect Webview in your ap
   <figcaption></figcaption>
 </figure>
 
-To enable your users to connect their devices or access control system to Seam through your app, use a [Connect Webview](./). First, in your app, add a mechanism—such as a button—to [open a new Connect Webview](embedding-a-connect-webview-in-your-app#step-1-open-a-connect-webview). Then, you can use either of the following two methods to [display the Connect Webview](embedding-a-connect-webview-in-your-app#step-2-display-the-connect-webview) in your app:
+To enable your users to connect their devices or access control system to Seam through your app, use a [Connect Webview](./). First, in your app, add a mechanism—such as a button—to [open a new Connect Webview](#step-1-open-a-connect-webview). Then, you can use either of the following two methods to [display the Connect Webview](#step-2-display-the-connect-webview) in your app:
 
-- [Redirect to the Connect Webview URL.](embedding-a-connect-webview-in-your-app#redirect-to-the-connect-webview-url)
-- [Embed the Connect Webview in an inline frame (iframe).](embedding-a-connect-webview-in-your-app#embed-the-connect-webview-in-an-iframe)
+- [Redirect to the Connect Webview URL.](#redirect-to-the-connect-webview-url)
+- [Embed the Connect Webview in an inline frame (iframe).](#embed-the-connect-webview-in-an-iframe)
 
 ---
 
@@ -22,11 +22,11 @@ To enable your users to connect their devices or access control system to Seam t
 
 To enable users to connect their devices or access control system with your app, present a button to create and display a new Connect Webview. If your app has a settings section, we recommend creating a device or ACS settings page and displaying an **Add** or **Link** button, such as **Add Devices**.
 
-When your user clicks this button, your app can either [redirect to the Connect Webview URL](embedding-a-connect-webview-in-your-app#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](embedding-a-connect-webview-in-your-app#embed-the-connect-webview-in-an-iframe) and present it in a modal.
+When your user clicks this button, your app can either [redirect to the Connect Webview URL](#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](#embed-the-connect-webview-in-an-iframe) and present it in a modal.
 
 <figure>
   <img
-    src='/images/connect-webview-embedding-1 (1).png'
+    src='/images/connect-webview-embedding-1-(1).png'
     alt='Add a button to your app to enable your users to connect their devices or ACS using a Connect Webview.'
     width='563'
   />
@@ -42,19 +42,19 @@ When your user clicks this button, your app can either [redirect to the Connect 
 
 ## Step 2: Display the Connect Webview
 
-You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-your-app#redirect-to-the-connect-webview-url) or [use an iframe](embedding-a-connect-webview-in-your-app#embed-the-connect-webview-in-an-iframe) to display the Connect Webview. The following sections describe these two options:
+You can [redirect to the Connect Webview URL](#redirect-to-the-connect-webview-url) or [use an iframe](#embed-the-connect-webview-in-an-iframe) to display the Connect Webview. The following sections describe these two options:
 
 ### Redirect to the Connect Webview URL
 
 To incorporate a Connect Webview in your app using redirection:
 
-1. [Create the Connect Webview.](./#id-1.-create-a-connect-webview)
+1. [Create the Connect Webview.](#step-1-open-a-connect-webview)
    - Make sure to set a `custom_redirect_url` so that the Connect Webview redirects back to the desired page within your app after the Connect Webview flow completes.
    - If you want to redirect to a different page when there is an error, you can set the `custom_redirect_failure_url` to the URL for the desired page.
    - We recommend setting `wait_for_device_creation` to `true` so that the Connect Webview does not complete until Seam completes the first sync of the connected account and devices or ACS.
 2. Redirect your app to the URL for the created Connect Webview.\
    Pass the Connect Webview `url` to the client portion of your app and redirect your app to this URL.\
-   The resulting page displays the [authorization flow](./#connect-webview-process) through which your app user can link their device or ACS account to Seam.\\
+   The resulting page displays the [authorization flow](#step-1-open-a-connect-webview) through which your app user can link their device or ACS account to Seam.\\
 
    <figure>
      <img
@@ -68,10 +68,10 @@ To incorporate a Connect Webview in your app using redirection:
    - `connect_webview_id`
    - If there is an error, `error_code` and `error_message`
 
-3. [Your user completes the Connect Webview authorization flow.](./#id-3.-your-user-completes-the-connect-webview)
-4. [Learn when the device or ACS account connection has completed successfully.](./#id-4.-verify-successful-device-account-connection)
-5. [Retrieve the devices or ACS that your user has just connected to Seam.](./#id-5.-retrieve-connected-devices)
-6. [Use the Seam API to control your users' connected devices or ACS.](./#id-6.-use-the-seam-api-to-control-your-users-connected-devices)
+3. [Your user completes the Connect Webview authorization flow.](#opening-connect-webviews-in-ios-or-android-apps)
+4. [Learn when the device or ACS account connection has completed successfully.](#step-2-display-the-connect-webview)
+5. [Retrieve the devices or ACS that your user has just connected to Seam.](#step-2-display-the-connect-webview)
+6. [Use the Seam API to control your users' connected devices or ACS.](#step-2-display-the-connect-webview)
 
 ---
 
@@ -79,7 +79,7 @@ To incorporate a Connect Webview in your app using redirection:
 
 To incorporate a Connect Webview in your app using an HTML [iframe](https://www.w3schools.com/html/html_iframe.asp):
 
-1. [Create the Connect Webview.](./#id-1.-create-a-connect-webview)\
+1. [Create the Connect Webview.](#step-1-open-a-connect-webview)\
    We recommend setting `wait_for_device_creation` to `true` so that the Connect Webview does not complete until Seam completes the first sync of the connected account and devices or ACS.
 2. Display the URL for the created Connect Webview in an iframe.\
    Pass the Connect Webview `url` to the client portion of your app and use an HTML [iframe](https://www.w3schools.com/html/html_iframe.asp) to display the Connect Webview URL.
@@ -94,7 +94,7 @@ To incorporate a Connect Webview in your app using an HTML [iframe](https://www.
    />
    ```
 
-3. [Your user completes the Connect Webview authorization flow.](./#id-3.-your-user-completes-the-connect-webview)
+3. [Your user completes the Connect Webview authorization flow.](#opening-connect-webviews-in-ios-or-android-apps)
 
    <Info>
      {' '}
@@ -104,10 +104,10 @@ To incorporate a Connect Webview in your app using an HTML [iframe](https://www.
      away this behavior.{' '}
    </Info>
 
-4. [Learn when the device or ACS account connection has completed successfully.](./#id-4.-verify-successful-device-account-connection)\
+4. [Learn when the device or ACS account connection has completed successfully.](#step-2-display-the-connect-webview)\
    When the connection completes successfully, you can close the iframe.
-5. [Retrieve the devices or ACS that your user has just connected to Seam.](./#id-5.-retrieve-connected-devices)
-6. [Use the Seam API to control your users' connected devices or ACS.](./#id-6.-use-the-seam-api-to-control-your-users-connected-devices)
+5. [Retrieve the devices or ACS that your user has just connected to Seam.](#step-2-display-the-connect-webview)
+6. [Use the Seam API to control your users' connected devices or ACS.](#step-2-display-the-connect-webview)
 
 ---
 

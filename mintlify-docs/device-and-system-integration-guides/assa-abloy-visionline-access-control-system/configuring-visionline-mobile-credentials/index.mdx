@@ -13,11 +13,11 @@ Visionline is a [credential-based access control system](https://docs.seam.co/la
 
 ### Credential Types for Visionline
 
-When creating credentials, you can configure [guest](./#issuing-guest-mobile-credentials) mobile credentials for a Visionline ACS. Guest credentials are further subdivided into [override](./#issue-the-first-credential-for-a-reservation) and [joiner](./#issue-subsequent-credentials-for-a-reservation) credentials. An override credential serves as the first access grant for a reservation and revokes all previous guest access to the included guest room entrances. When a reservation includes multiple guests who need access, all subsequent access grants for the same reservation are joiner credentials. This type of credential provides shared access that matches the grants of existing credentials. For more details, see the following sections:
+When creating credentials, you can configure [guest](#issuing-guest-mobile-credentials) mobile credentials for a Visionline ACS. Guest credentials are further subdivided into [override](#issue-the-first-credential-for-a-reservation) and [joiner](#issue-subsequent-credentials-for-a-reservation) credentials. An override credential serves as the first access grant for a reservation and revokes all previous guest access to the included guest room entrances. When a reservation includes multiple guests who need access, all subsequent access grants for the same reservation are joiner credentials. This type of credential provides shared access that matches the grants of existing credentials. For more details, see the following sections:
 
-- [Guest Mobile Credential Types](./#guest-mobile-credential-types)
-- [Issue the First Credential for a Reservation](./#issue-the-first-credential-for-a-reservation)
-- [Issue Subsequent Credentials for a Reservation](./#issue-subsequent-credentials-for-a-reservation)
+- [Guest Mobile Credential Types](#guest-mobile-credential-types)
+- [Issue the First Credential for a Reservation](#issue-the-first-credential-for-a-reservation)
+- [Issue Subsequent Credentials for a Reservation](#issue-subsequent-credentials-for-a-reservation)
 
 <Info>
   Seam currently only supports issuing guest mobile credentials and plastic
@@ -31,21 +31,21 @@ Use the following basic process to grant access in a Visionline ACS:
 1. Set up the mobile user account by creating a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 2. Associate the user identity with an [ACS user](https://docs.seam.co/latest/low-level-apis/access-systems#what-is-a-user).
 3. Gather the entrances to which the credential should have access.
-4. Create the [guest](./#issuing-guest-mobile-credentials) mobile credential.
+4. Create the [guest](#issuing-guest-mobile-credentials) mobile credential.
 
 ---
 
 ## Issuing Guest Mobile Credentials
 
-To issue a guest mobile credential for the Visionline ACS, create a credential with `visionline_metadata.card_function_type` set to `guest`. Also, for a guest credential, you normally set `visionline_metadata.card_format` to `rfid48`, unless the guest needs a higher-capacity `TLCode` card. For more information about Visionline metadata, see [`acs_credential.visionline_metadata` Properties](../mobile-credential-related-properties#acs_credential.visionline_metadata-properties).
+To issue a guest mobile credential for the Visionline ACS, create a credential with `visionline_metadata.card_function_type` set to `guest`. Also, for a guest credential, you normally set `visionline_metadata.card_format` to `rfid48`, unless the guest needs a higher-capacity `TLCode` card. For more information about Visionline metadata, see [`acs_credential.visionline_metadata` Properties](/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/mobile-credential-related-properties#acs_credential.visionline_metadata-properties).
 
 ### Guest Mobile Credential Types
 
 Guest mobile credentials consist of two credential types: override credentials and joiner credentials.
 
-When issuing the [first guest credential for a reservation](./#issue-the-first-credential-for-a-reservation), a hotel needs to guarantee that all previous access to the guest room entrance is revoked. To revoke all other access, you create an override credential that invalidates all previous access to the guest room entrance. That is, an override credential overrides any existing credentials that previously granted access to the same guest room entrance.
+When issuing the [first guest credential for a reservation](#issue-the-first-credential-for-a-reservation), a hotel needs to guarantee that all previous access to the guest room entrance is revoked. To revoke all other access, you create an override credential that invalidates all previous access to the guest room entrance. That is, an override credential overrides any existing credentials that previously granted access to the same guest room entrance.
 
-Reservations may involve multiple parties. In these situations, hotels often need to provide credentials for the same guest room entrances to additional guests. To do so, [issue "joiner credentials."](./#issue-subsequent-credentials-for-a-reservation) This type of credential allows shared access with any existing credentials that already grant entry to the same guest room entrances.
+Reservations may involve multiple parties. In these situations, hotels often need to provide credentials for the same guest room entrances to additional guests. To do so, [issue "joiner credentials."](#issue-subsequent-credentials-for-a-reservation) This type of credential allows shared access with any existing credentials that already grant entry to the same guest room entrances.
 
 ---
 
@@ -56,7 +56,7 @@ To issue the first guest credential for a reservation, create an override creden
 <Info>
   You can also [verify whether a user identity has a phone that is set up for a
   credential
-  manager](checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager)
+  manager](./checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager)
   and, consequently, is ready to accept an override guest credential.
 </Info>
 
@@ -132,7 +132,7 @@ To issue a joiner credential, you must specify both the entrances to which to gr
 * `allowed_acs_entrance_ids`
 * `visionline_metadata.joiner_acs_credential_ids`
 
-For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](issuing-various-types-of-guest-joiner-mobile-credentials).
+For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](./issuing-various-types-of-guest-joiner-mobile-credentials).
 
 <Tabs>
 <Tab title="Python">

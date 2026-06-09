@@ -13,16 +13,16 @@ Some access control systems require encoding a plastic card with the data necess
 
 This process consists of the following basic steps:
 
-1.  Create an [Access Grant](../../../use-cases/granting-access/) that includes a request for a card access method and identify the ID of the resulting access method.
+1.  Create an [Access Grant](/use-cases/granting-access/index) that includes a request for a card access method and identify the ID of the resulting access method.
 
-    See [Create an Access Grant](creating-and-encoding-card-access-methods#id-1.-create-an-access-grant).
+    See [Create an Access Grant](#1-create-an-access-grant).
 
 2.  Use the `/acs/encoders/list` endpoint to retrieve a list of available encoders. Then, choose the encoder that you want to use to write the access method onto the card.\
-    See [Retrieve Encoders](creating-and-encoding-card-access-methods#id-2.-retrieve-encoders).
+    See [Retrieve Encoders](#2-retrieve-encoders).
 3.  Use the `/access_methods/encode` endpoint to encode the access method onto the card, using the encoder that you have chosen.\
-    See [Encode the Card](creating-and-encoding-card-access-methods#id-3.-encode-the-card).
+    See [Encode the Card](#3-encode-the-card).
 4.  Confirm that the card was encoded successfully using polling or a [webhook](../../../developer-tools/webhooks).\
-    See [Confirm Successful Encoding](creating-and-encoding-card-access-methods#id-4.-confirm-successful-encoding). Also, see a list of [common encoding errors](creating-and-encoding-card-access-methods#common-encoding-errors).
+    See [Confirm Successful Encoding](#4-confirm-successful-encoding). Also, see a list of [common encoding errors](#common-encoding-errors).
 
 Once you have written an access method to a card, you cannot reuse the access method for another card. That is, you must create a separate access method for each card. However, you can reuse a card by re-encoding the card with a new access method.
 

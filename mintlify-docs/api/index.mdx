@@ -5,7 +5,7 @@ description: "The Seam API lets you control smart locks, thermostats, access con
 
 The Seam API is organized around REST. It accepts JSON request bodies, returns JSON responses, and uses standard HTTP response codes and verbs.
 
-You can use the Seam API in a [sandbox workspace](/core-concepts/workspaces) without affecting live devices. The API key you use determines whether the request runs in sandbox or production mode.
+You can use the Seam API in a [sandbox workspace](/core-concepts/workspaces/index) without affecting live devices. The API key you use determines whether the request runs in sandbox or production mode.
 
 **Just getting started?** Check out the [quickstart guide](/quickstart).
 
@@ -29,9 +29,9 @@ Base URL: https://connect.getseam.com
 
 ## Granting Access
 
-Use [Access Grants](/api/access_grants) to give people access to physical spaces. Tell Seam _who_ should have access, _where_, and _when_ — Seam automatically creates the right credential and programs it to the device.
+Use [Access Grants](/api/access_grants/object) to give people access to physical spaces. Tell Seam _who_ should have access, _where_, and _when_ — Seam automatically creates the right credential and programs it to the device.
 
-<Card title="Access Grants" icon="id-badge" href="/api/access_grants">
+<Card title="Access Grants" icon="id-badge" href="/api/access_grants/object">
   The primary API for granting access — create, update, revoke, and manage the full lifecycle.
 </Card>
 
@@ -59,19 +59,19 @@ Access Grants support all access methods through a single API:
 Connect and control IoT devices and access control systems.
 
 <CardGroup cols={3}>
-  <Card title="Devices" icon="microchip" href="/api/devices">
+  <Card title="Devices" icon="microchip" href="/core-concepts/devices/index">
     List, get, and update connected devices.
   </Card>
-  <Card title="Locks" icon="lock" href="/api/locks">
+  <Card title="Locks" icon="lock" href="/api/locks/object">
     Lock and unlock smart locks.
   </Card>
-  <Card title="Thermostats" icon="temperature-half" href="/api/thermostats">
+  <Card title="Thermostats" icon="temperature-half" href="/capability-guides/thermostats/index">
     Set temperature, HVAC mode, and climate presets.
   </Card>
-  <Card title="Noise Sensors" icon="volume-high" href="/api/noise_sensors">
+  <Card title="Noise Sensors" icon="volume-high" href="/api/noise_sensors/object">
     Monitor noise levels and configure thresholds.
   </Card>
-  <Card title="ACS" icon="server" href="/api/acs">
+  <Card title="ACS" icon="server" href="/api/acs/object">
     Manage access control system users, credentials, entrances, and encoders.
   </Card>
 </CardGroup>
@@ -83,25 +83,25 @@ Connect and control IoT devices and access control systems.
 Connect device accounts and configure your workspace.
 
 <CardGroup cols={3}>
-  <Card title="Connect Webviews" icon="window-restore" href="/api/connect_webviews">
+  <Card title="Connect Webviews" icon="window-restore" href="/api/connect_webviews/object">
     Authorization flows to link user device accounts.
   </Card>
-  <Card title="Connected Accounts" icon="link" href="/api/connected_accounts">
+  <Card title="Connected Accounts" icon="link" href="/api/connected_accounts/object">
     Manage linked manufacturer accounts.
   </Card>
-  <Card title="User Identities" icon="user" href="/api/user_identities">
+  <Card title="User Identities" icon="user" href="/api/user_identities/object">
     Map your users to Seam for cross-system identity.
   </Card>
-  <Card title="Workspaces" icon="briefcase" href="/api/workspaces">
+  <Card title="Workspaces" icon="briefcase" href="/core-concepts/workspaces/index">
     Sandbox and production workspaces.
   </Card>
-  <Card title="Client Sessions" icon="user-shield" href="/api/client_sessions">
+  <Card title="Client Sessions" icon="user-shield" href="/api/client_sessions/object">
     Scoped sessions for frontend apps.
   </Card>
-  <Card title="Customers" icon="users" href="/api/customers">
+  <Card title="Customers" icon="users" href="/capability-guides/customer-portals/customers">
     Customer portals and data.
   </Card>
-  <Card title="Spaces" icon="building" href="/api/spaces">
+  <Card title="Spaces" icon="building" href="/api/spaces/object">
     Organize devices and entrances into named groups.
   </Card>
 </CardGroup>
@@ -113,13 +113,13 @@ Connect device accounts and configure your workspace.
 Track events, subscribe to webhooks, and poll for action completion.
 
 <CardGroup cols={3}>
-  <Card title="Events" icon="timeline" href="/api/events">
+  <Card title="Events" icon="timeline" href="/api/events/object">
     Query device and system events.
   </Card>
-  <Card title="Webhooks" icon="bell" href="/api/webhooks">
+  <Card title="Webhooks" icon="bell" href="/developer-tools/webhooks">
     Real-time event notifications.
   </Card>
-  <Card title="Action Attempts" icon="spinner" href="/api/action_attempts">
+  <Card title="Action Attempts" icon="spinner" href="/api/action_attempts/object">
     Poll async operations until completion.
   </Card>
 </CardGroup>
@@ -128,16 +128,16 @@ Track events, subscribe to webhooks, and poll for action completion.
 
 ## Low-Level APIs
 
-These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants) instead — they handle credential creation, device programming, and lifecycle management automatically.
+These APIs let you program credentials directly on devices. For most access-granting workflows, use [Access Grants](/api/access_grants/object) instead — they handle credential creation, device programming, and lifecycle management automatically.
 
 <CardGroup cols={3}>
-  <Card title="Access Codes" icon="input-numeric" href="/api/access_codes">
+  <Card title="Access Codes" icon="input-numeric" href="/api/access_codes/object">
     Directly program PIN codes on smart lock keypads.
   </Card>
-  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys">
+  <Card title="Instant Keys" icon="bolt" href="/api/instant_keys/object">
     Temporary mobile keys without an app install.
   </Card>
-  <Card title="Phones" icon="mobile" href="/api/phones">
+  <Card title="Phones" icon="mobile" href="/api/phones/object">
     Manage phones for mobile access credentials.
   </Card>
 </CardGroup>

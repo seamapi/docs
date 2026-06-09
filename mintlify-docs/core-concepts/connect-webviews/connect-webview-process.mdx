@@ -23,7 +23,7 @@ When creating a Connect Webview, choose which providers to display. Choose one o
 
   To list all providers within a category, use the [List Device Providers](https://docs.seam.co/latest/api/devices/list_device_providers) method with the desired `provider_category` filter.
 
-- To display a specific, custom set of providers, specify the desired list of `accepted_providers`. For details, see [Customize the Brands to Display in Your Connect Webviews](customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+- To display a specific, custom set of providers, specify the desired list of `accepted_providers`. For details, see [Customize the Brands to Display in Your Connect Webviews](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 <Tabs>
 <Tab title="JavaScript">
@@ -242,9 +242,9 @@ The created `connect_webview` object includes a `url` property. You use this URL
 
 ## Step 2: Display the Connect Webview
 
-In your app, [open the Connect Webview for your user](embedding-a-connect-webview-in-your-app#opening-a-connect-webview), using the Connect Webview `url`.
+In your app, [open the Connect Webview for your user](/core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app#step-1-open-a-connect-webview), using the Connect Webview `url`.
 
-You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-your-app#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](embedding-a-connect-webview-in-your-app#embed-the-connect-webview-in-an-iframe).
+You can [redirect to the Connect Webview URL](/core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app#redirect-to-the-connect-webview-url) or [embed the Connect Webview in an iframe](/core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app#embed-the-connect-webview-in-an-iframe).
 
 <Info>
   If you choose to embed a Connect Webview in an iframe, it's important to
@@ -252,7 +252,7 @@ You can [redirect to the Connect Webview URL](embedding-a-connect-webview-in-you
   flow for security purposes. Seam is not able to abstract away this behavior.
 </Info>
 
-For instructions, see [Embedding a Connect Webview in Your App](embedding-a-connect-webview-in-your-app).
+For instructions, see [Embedding a Connect Webview in Your App](/core-concepts/connect-webviews/embedding-a-connect-webview-in-your-app).
 
 ---
 
@@ -318,11 +318,11 @@ The Connect Webview guides your app user through the following authorization ste
 
 Use one of the following methods to learn when the account connection has completed successfully:
 
-- [Polling](verifying-successful-account-connection#polling)
-- [Webhook](verifying-successful-account-connection#webhook)
-- [Event listening](verifying-successful-account-connection#event-listening) (for iframes)
+- [Polling](/core-concepts/connect-webviews/verifying-successful-account-connection#polling)
+- [Webhook](/core-concepts/connect-webviews/verifying-successful-account-connection#webhook)
+- [Event listening](/core-concepts/connect-webviews/verifying-successful-account-connection#event-listening) (for iframes)
 
-For instructions, see [Verifying Successful Account Connection](verifying-successful-account-connection).
+For instructions, see [Verifying Successful Account Connection](/core-concepts/connect-webviews/verifying-successful-account-connection).
 
 <Info>
   You do not need to delete a Connect Webview once a user completes it. Instead,
@@ -337,7 +337,7 @@ Use the `connected_account_id` from the `connected_account.connected` event or t
 
 Once you have retrieved the newly-connected set of devices or ACS, you can start controlling them with the Seam API. For example, for a set of devices, you may first want to prompt your user to group devices by property. For an ACS, you may first want your user to configure the access permissions to grant to new visitors or tenants.
 
-For instructions, see [Retrieving Devices or Access Control Systems Connected Through a Connect Webview](retrieving-devices-or-access-control-systems-connected-through-a-connect-webview).
+For instructions, see [Retrieving Devices or Access Control Systems Connected Through a Connect Webview](/core-concepts/connect-webviews/retrieving-devices-or-access-control-systems-connected-through-a-connect-webview).
 
 <Info>
   If your user wants to connect additional devices or ACS from different brands
@@ -353,8 +353,8 @@ Continue using the Seam API to control your users' connected devices or ACS. For
 
 To learn about the actions that you can perform using the Seam API, see the Seam [capability guides](../../capability-guides/device-and-system-capabilities). These guides provide helpful tutorials and code samples, categorized by capability types.
 
-- [Smart locks](../../low-level-apis/smart-locks/), including [locking/unlocking](../../low-level-apis/smart-locks/lock-and-unlock) and [managing access codes](../../low-level-apis/smart-locks/access-codes/)
-- [Access control systems](../../low-level-apis/access-systems/)
-- [Thermostats](../../capability-guides/thermostats/)
-- [Noise sensors](../../capability-guides/noise-sensors/)
-- [Mobile access](../../capability-guides/mobile-access/)
+- [Smart locks](/low-level-apis/smart-locks/index), including [locking/unlocking](../../low-level-apis/smart-locks/lock-and-unlock) and [managing access codes](/low-level-apis/smart-locks/access-codes/index)
+- [Access control systems](/low-level-apis/access-systems/index)
+- [Thermostats](/capability-guides/thermostats/index)
+- [Noise sensors](/capability-guides/noise-sensors/index)
+- [Mobile access](/capability-guides/mobile-access/index)

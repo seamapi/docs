@@ -13,8 +13,8 @@ description: "You can display the health status of your end users' devices in yo
 
 To display the health—that is, the online/offline status—of your end users' devices in your app, you can use the following Seam mechanisms:
 
-- [Use the `properties.online` property of the `device` object.](displaying-device-health#get-device-status-using-device-properties)
-- [Use the `device.connected` and `device.disconnected` events.](displaying-device-health#get-device-status-using-connection-related-events)
+- [Use the `properties.online` property of the `device` object.](#get-device-status-using-device-properties)
+- [Use the `device.connected` and `device.disconnected` events.](#get-device-status-using-connection-related-events)
 
 ## Get Device Status Using Device Properties
 
@@ -151,9 +151,9 @@ When a device connection or disconnection occurs, Seam generates a [`device.conn
   To help you test your app against events—like device disconnection or
   removal—that are difficult to orchestrate in a QA environment using real
   devices, Seam provides a suite of `simulate` endpoints that you can use in a
-  [sandbox workspace](../workspaces/#sandbox-workspaces). See [Testing Your App
+  [sandbox workspace](/core-concepts/workspaces/index#sandbox-workspaces). See [Testing Your App
   Against Device Disconnection and
-  Removal](testing-your-app-against-device-disconnection-and-removal).
+  Removal](/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
 </Info>
 
 ### Get Connection-Related Events Using a List Events Request

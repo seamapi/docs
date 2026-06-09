@@ -16,7 +16,7 @@ Ultraloq locks support two types of access codes:
 
 <Warning>
   **Important:** Time-bound access codes require [timezone
-  configuration](configuring-ultraloq-device-timezones). Permanent access
+  configuration](./configuring-ultraloq-device-timezones). Permanent access
   codes work without timezone configuration.
 </Warning>
 
@@ -26,8 +26,8 @@ Ultraloq locks support two types of access codes:
 
 To create access codes for an Ultraloq device:
 
-1. Your Ultraloq device must be [connected to Seam](ultraloq-setup-guide)
-2. For **time-bound access codes only**: Device timezone must be [configured](configuring-ultraloq-device-timezones)
+1. Your Ultraloq device must be [connected to Seam](./ultraloq-setup-guide)
+2. For **time-bound access codes only**: Device timezone must be [configured](./configuring-ultraloq-device-timezones)
 3. Device must have `can_program_online_access_codes: true`
 
 ---
@@ -189,7 +189,7 @@ Time-bound access codes automatically activate and deactivate at specified times
 
 <Warning>
   **Prerequisites:** 1. Device timezone must be configured (see [Configuring
-  Ultraloq Device Timezones](configuring-ultraloq-device-timezones)) 2.
+  Ultraloq Device Timezones](./configuring-ultraloq-device-timezones)) 2.
   Device must not have the `ultraloq_time_zone_unknown` warning
 </Warning>
 
@@ -737,7 +737,7 @@ If you attempt to create a time-bound code without configuring the device's time
 }
 ```
 
-**Solution:** Configure the device's timezone first using `/devices/report_provider_metadata`. See [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones).
+**Solution:** Configure the device's timezone first using `/devices/report_provider_metadata`. See [Configuring Ultraloq Device Timezones](./configuring-ultraloq-device-timezones).
 
 ### Invalid Code Format
 
@@ -898,9 +898,9 @@ For complete API documentation, see:
 
 ## Next Steps
 
-- **Learn about timezone configuration:** See [Configuring Ultraloq Device Timezones](configuring-ultraloq-device-timezones)
+- **Learn about timezone configuration:** See [Configuring Ultraloq Device Timezones](./configuring-ultraloq-device-timezones)
 - **Understand code constraints:** See [Understanding Code Constraints](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/creating-access-codes/understanding-code-constraints)
-- **Review the setup guide:** See [Ultraloq Setup Guide](ultraloq-setup-guide)
+- **Review the setup guide:** See [Ultraloq Setup Guide](./ultraloq-setup-guide)
 - **Explore access code webhooks:** See [Webhooks](https://docs.seam.co/latest/developer-tools/webhooks)
 
 ---

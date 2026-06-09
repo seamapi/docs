@@ -5,12 +5,12 @@ description: 'Learn about the site requirements for using Instant Keys.'
 
 Before issuing Instant Keys, make sure that your property meets the following requirements:
 
-- [Bluetooth compatibility for door locks](setting-up-your-site-for-instant-keys#confirm-bluetooth-compatibility-for-door-locks)
-- [License requirements](setting-up-your-site-for-instant-keys#purchase-the-required-licenses)
+- [Bluetooth compatibility for door locks](#bluetooth-compatibility-for-door-locks)
+- [License requirements](#purchase-the-required-licenses)
 
 Fulfilling these requirements ensures that guests can unlock doors using mobile credentials over Bluetooth.
 
-Then, [connect your access system to Seam](setting-up-your-site-for-instant-keys#connect-the-access-system-to-seam).
+Then, [connect your access system to Seam](#connect-your-access-system-to-seam).
 
 ---
 
@@ -40,7 +40,7 @@ The following table describes the BLE requirements for the access systems for wh
       <td>ASSA ABLOY Visionline and Vostio (Vingcard locks)</td>
       <td>
         Requires specific hardware and licensing. See{' '}
-        <a href='setting-up-your-site-for-instant-keys#vingcard-lock-requirements'>
+        <a href='#vingcard-lock-requirements'>
           Vingcard Lock Requirements
         </a>
         .
@@ -73,7 +73,7 @@ To support mobile (BLE) keys, your lock must have the correct Lock Control Unit 
 | LCU 6333 or 6334 (green label) | <ul><li>No BLE support.</li><li>Needs an additional <a href="https://estore.vingcard.com/ca/ble-module-pcba-7001.html">BLE module</a> installed.</li></ul> |
 
 <figure>
-  <img src='/images/image (8) (2).png' alt='LCU examples' />
+  <img src='/images/image-(8)-(2).png' alt='LCU examples' />
   <figcaption>
     <p>LCU examples</p>
   </figcaption>
@@ -121,11 +121,11 @@ To use mobile keys with Salto Space, you need to add the following features when
 
 ## Connect Your Access System to Seam
 
-To connect your access system to Seam, we recommend embedding a [Connect Webview](../../core-concepts/connect-webviews/) in your application. The Connect Webview flow guides the property manager through each step of the connection process.
+To connect your access system to Seam, we recommend embedding a [Connect Webview](/core-concepts/connect-webviews/index) in your application. The Connect Webview flow guides the property manager through each step of the connection process.
 
 <figure>
   <img
-    src='/images/salto webview.webp.png'
+    src='/images/salto-webview.webp.png'
     alt='Example: Connect Webview for Salto systems'
   />
   <figcaption>
@@ -136,7 +136,7 @@ To connect your access system to Seam, we recommend embedding a [Connect Webview
 For on-premises access systems, such as Salto Space and Visionline, Seam offers the lightweight [Seam Bridge](../seam-bridge) app, at no extra cost. This software-only component runs on a computer within the same local network and creates a secure tunnel between Seam Cloud and the access system. Seam Bridge manages encryption, handles authentication, and removes the need to expose local ports to the internet.
 
 <figure>
-  <img src='/images/image (9) (2).png' alt='Seam Bridge' />
+  <img src='/images/image-(9)-(2).png' alt='Seam Bridge' />
   <figcaption>
     <p>Seam Bridge</p>
   </figcaption>

@@ -8,11 +8,11 @@ An Access Grant defines the following characteristics:
 - User identity: The user to whom you want to grant access.
 - Entrances or spaces: The sets of entrances or other access points to which you want to grant the user access.
 - Access schedule: The starting and ending times for access.
-- Access methods: The modes of access, including key cards, PIN codes, mobile keys, and [Instant Keys](../../capability-guides/instant-keys/).
+- Access methods: The modes of access, including key cards, PIN codes, mobile keys, and [Instant Keys](/capability-guides/instant-keys/index).
 
 Before creating an Access Grant, you can organize sets of entrances into [spaces](https://docs.seam.co/latest/api/spaces/). Then, when you create an Access Grant, you specify the IDs of the spaces to which you want to grant access. Seam grants the user access to all entrances included in these spaces. Alternately, you can specify the set of entrances to which you want to grant access using the IDs of the entrances themselves.
 
-This topic describes how to create an Access Grant using spaces. To learn how to create an Access Grant using entrances, see [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances).
+This topic describes how to create an Access Grant using spaces. To learn how to create an Access Grant using entrances, see [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances).
 
 ---
 
@@ -20,13 +20,13 @@ This topic describes how to create an Access Grant using spaces. To learn how to
 
 To create an Access Grant:
 
-1. [Identify the spaces](creating-an-access-grant-using-spaces#identify-space) to which you want to grant the user access.
-2. [Create a user identity](creating-an-access-grant-using-spaces#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
-3. [Create an access grant](creating-an-access-grant-using-spaces#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, that is, one or more of `card`, `code`, and `mobile_key`.
+1. [Identify the spaces](#identify-space) to which you want to grant the user access.
+2. [Create a user identity](#create-a-user-identity) for the user to whom you want to grant access. Alternately, you can create a new user identity as part of the Access Grant creation action.
+3. [Create an access grant](#create-an-access-grant) for the user identity to define the entrances to which the user should have access, the starting and ending times for this access, and the requested access methods, that is, one or more of `card`, `code`, and `mobile_key`.
 
    The action returns the created Access Grant.
 
-4. [Poll for status changes or monitor for lifecycle events](creating-an-access-grant-using-spaces#poll-for-status-changes-or-monitor-for-lifecycle-events) to identify next steps, such as the following:
+4. [Poll for status changes or monitor for lifecycle events](#poll-for-status-changes-or-monitor-for-lifecycle-events) to identify next steps, such as the following:
    - Whether you need to encode a card access method onto a plastic card.
    - When the access methods are ready to deliver to your user.
 
@@ -36,7 +36,7 @@ If you've created an Access Grant that includes an mobile key, the returned Acce
 
 ## Before You Begin
 
-To create an Access Grant, first [connect](../../core-concepts/workspaces/#connecting-virtual-devices) an access system to Seam. You may also need to set up your access system and confirm that it has the required licenses. For details, see [Setting Up Your Site for Instant Keys](../../capability-guides/instant-keys/setting-up-your-site-for-instant-keys) and the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.
+To create an Access Grant, first [connect](/core-concepts/workspaces/index#connecting-virtual-devices) an access system to Seam. You may also need to set up your access system and confirm that it has the required licenses. For details, see [Setting Up Your Site for Instant Keys](../../capability-guides/instant-keys/setting-up-your-site-for-instant-keys) and the [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems) for your access system.
 
 Create one or more spaces to group the entrances to which you want to grant access. For details, see [Spaces](https://docs.seam.co/latest/api/spaces/) and [Create a Space](https://docs.seam.co/latest/api/spaces/create).
 
@@ -234,7 +234,7 @@ $seam->spaces->list();
 
 ## **Create a User Identity**
 
-You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](creating-an-access-grant-using-spaces#create-an-access-grant).
+You can create a user identity before creating the Access Grant, you can retrieve an existing user identity, or you can skip this step and [create a new user identity as part of the Access Grant creation action](#create-an-access-grant).
 
 To create a user identity, specify the unique `user_identity_key`, `email_address`, or `phone_number` of the user. Also, include the ID of the access system in which you want to grant the user access.
 
@@ -955,4 +955,4 @@ The following example shows the payload for an `access_method.card_encoding_requ
 
 ## Next Steps
 
-Once you've created the Access Grant and the resulting access methods have been issued, you can deliver the access methods to your user. For details, see [Delivering Access Methods](delivering-access-methods).
+Once you've created the Access Grant and the resulting access methods have been issued, you can deliver the access methods to your user. For details, see [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods).

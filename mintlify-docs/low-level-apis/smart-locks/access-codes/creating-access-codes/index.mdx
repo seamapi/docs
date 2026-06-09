@@ -22,7 +22,7 @@ Seam supports programming two types of online access codes for online door locks
 
 ## Before You Begin: Confirm Capabilities
 
-Before you attempt to create an [online](../../../../low-level-apis/smart-locks/access-codes/#what-is-an-access-code) or [offline](../../../../low-level-apis/smart-locks/access-codes/#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](../../../device-and-system-capabilities#capability-flags) for the device:
+Before you attempt to create an [online](/low-level-apis/smart-locks/access-codes/index#what-is-an-access-code) or [offline](/low-level-apis/smart-locks/access-codes/index#offline-access-codes) access code, be sure to confirm that your device has the capability to perform these operations. You can inspect the capabilities of a device by checking the following [capability flags](/capability-guides/device-and-system-capabilities#capability-flags) for the device:
 
 - `device.can_program_online_access_codes`
 - `device.can_program_offline_access_codes`
@@ -772,7 +772,7 @@ The [lifecycle of a time-bound access code](../../../../low-level-apis/smart-loc
   </figcaption>
 </figure>
 
-On door locks that support [natively scheduled](../../../../low-level-apis/smart-locks/access-codes/#native-scheduling) access codes, Seam will preload the access code into the device's internal memory bank **72 hours ahead** of the `starts_at` time. Even if preloaded in memory, the access code will remain in an `unset` state ahead of the `starts_at` time and await the precise activation moment to toggle its status. When the `starts_at` time arrives, the access code becomes active and transition to a `set` status, granting the designated user the ability to utilize it for entry. If there's an issue programming the natively-scheduled code by its `starts_at` time, the code's status will display as `setting`. For more information on the lifecycle of access codes, [please refer to this guide](../../../../low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).
+On door locks that support [natively scheduled](/low-level-apis/smart-locks/access-codes/index#native-scheduling) access codes, Seam will preload the access code into the device's internal memory bank **72 hours ahead** of the `starts_at` time. Even if preloaded in memory, the access code will remain in an `unset` state ahead of the `starts_at` time and await the precise activation moment to toggle its status. When the `starts_at` time arrives, the access code becomes active and transition to a `set` status, granting the designated user the ability to utilize it for entry. If there's an issue programming the natively-scheduled code by its `starts_at` time, the code's status will display as `setting`. For more information on the lifecycle of access codes, [please refer to this guide](../../../../low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).
 
 There are two methods to verify that an time-bound access code has been set on the device:
 

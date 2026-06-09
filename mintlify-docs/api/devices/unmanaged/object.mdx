@@ -4,12 +4,12 @@ title: 'Unmanaged Devices'
 
 ## The unmanaged_device Object
 
-- [Properties](./#properties)
-- [unmanaged_device.properties](./#unmanaged_device.properties)
-- [Errors](./#errors)
-- [Warnings](./#warnings)
-- [Events](./#events)
-- [Endpoints](./#endpoints)
+- [Properties](#properties)
+- [unmanaged_device.properties](#unmanaged_device.properties)
+- [Errors](#errors)
+- [Warnings](#warnings)
+- [Events](#events)
+- [Endpoints](#endpoints)
 
 Represents an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).
 
@@ -229,7 +229,7 @@ Type of the device.
 
 ---
 
-[**`errors`**](./#errors) _List_ _of Objects_
+[**`errors`**](#errors) _List_ _of Objects_
 
 Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.
 
@@ -742,7 +742,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 ---
 
-[**`warnings`**](./#warnings) _List_ _of Objects_
+[**`warnings`**](#warnings) _List_ _of Objects_
 
 Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.
 
