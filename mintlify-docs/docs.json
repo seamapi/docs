@@ -195,7 +195,7 @@
             "group": "UI Components",
             "pages": [
               {
-                "group": "Seam Web Components",
+                "group": "Seam Components",
                 "pages": [
                   "ui-components/overview/index",
                   {
@@ -249,9 +249,14 @@
               "developer-tools/webhooks",
               "developer-tools/seam-cli",
               "developer-tools/seam-mcp",
-              "developer-tools/mobile-sdks/index",
-              "developer-tools/mobile-sdks/android-sdk",
-              "developer-tools/mobile-sdks/ios-sdk"
+              {
+                "group": "Mobile SDKs",
+                "pages": [
+                  "developer-tools/mobile-sdks/index",
+                  "developer-tools/mobile-sdks/android-sdk",
+                  "developer-tools/mobile-sdks/ios-sdk"
+                ]
+              }
             ]
           },
           {
