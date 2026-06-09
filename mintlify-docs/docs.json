@@ -37,6 +37,7 @@
                   "use-cases/granting-access/creating-an-access-grant-using-spaces",
                   "use-cases/granting-access/creating-an-access-grant-using-entrances",
                   "use-cases/granting-access/delivering-access-methods",
+                  "use-cases/granting-access/using-cloud-keys",
                   "use-cases/granting-access/reservation-access-grants",
                   "use-cases/granting-access/retrieving-access-grants-and-access-methods",
                   "use-cases/granting-access/updating-an-access-grant",
