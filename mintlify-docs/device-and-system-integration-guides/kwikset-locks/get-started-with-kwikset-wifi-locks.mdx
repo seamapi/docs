@@ -211,7 +211,7 @@ console.log(someLock.properties.online) // true
 console.log(someLock.properties.locked) // true
 
 console.log(someLock)
-/_
+/*
 {
 device_id: '10891c43-29e0-4b93-b071-34749025a123',
 device_type: 'kwikset_lock',
@@ -238,7 +238,7 @@ image_alt_text: 'Kwikset Halo Touchscreen Wifi Enabled Smart Lock, Polished Chro
 },
 location: null,
 }
-_/
+*/
 
 ````
 
@@ -336,9 +336,9 @@ puts some_lock.inspect
 
 Next, you can perform the basic action of locking and unlocking the door.
 
-> **`POST`** `/locks/lock:door`
+> **`POST`** `/locks/lock_door`
 >
-> See the [API Reference](/api-reference/locks/lock:door) for details.
+> See the [API Reference](/api-reference/locks/lock_door) for details.
 
 #### Unlock a door
 
@@ -348,7 +348,7 @@ Next, you can perform the basic action of locking and unlocking the door.
 
 | Name       | Type   | Description |
 | ---------- | ------ | ----------- |
-| device\_id | String |             |
+| device_id | String |             |
 
 <Tabs>
 <Tab title="JavaScript">
@@ -454,7 +454,7 @@ await seam.accessCodes.list({
 device_id: someLock.device_id,
 })
 
-/_
+/*
 [
 {
 code: '1988',
@@ -471,7 +471,7 @@ ends_at: '2028-08-13T19:24:00.000Z',
 access_code_id: '8c2db4da-b137-4c08-a2c3-d611e6ff91b3',
 }
 ]
-_/
+*/
 
 ````
 
@@ -596,9 +596,7 @@ seam.access_codes.list(device_id: some_lock.device_id)
 
 <Tab title="PHP">
 
-```
-
-php
+```php
 use Seam\SeamClient;
 
 $seam = new SeamClient("YOUR_API_KEY");
@@ -635,4 +633,3 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 * [Core Concepts](https://docs.seam.co/latest/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co.
-```

@@ -123,7 +123,7 @@ The following example shows how to handle all links to URLs that are not in the 
 someWebView.navigationDelegate = self
 
 extension YourViewController: WKNavigationDelegate {
-func webView(\_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 if let url = navigationAction.request.url, navigationAction.navigationType == .linkActivated {
 if (url.host != "getseam.com" || url.host != "seam.co") {
 UIApplication.shared.open(url)
