@@ -59,6 +59,13 @@ jobs:
           retry_wait_seconds: 1
           timeout_minutes: 2
           command: npm run generate
+      - name: Generate Mintlify docs
+        uses: nick-fields/retry@v3
+        with:
+          max_attempts: 3
+          retry_wait_seconds: 1
+          timeout_minutes: 2
+          command: npm run generate:mintlify
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

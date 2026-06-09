@@ -25,7 +25,8 @@
     "postlint": "prettier --check --ignore-path .prettierignore .",
     "format": "prettier --write --ignore-path .prettierignore .",
     "preformat": "eslint --fix .",
-    "format-code-sample-tabs": "tsx codegen/format-code-sample-tabs.ts"
+    "format-code-sample-tabs": "tsx codegen/format-code-sample-tabs.ts",
+    "generate:mintlify": "tsx mintlify-codegen/generate.ts"
   },
   "engines": {
     "node": ">=22.11.0",
