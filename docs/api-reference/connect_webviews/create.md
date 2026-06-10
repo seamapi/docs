@@ -569,6 +569,7 @@ Possible enum values:
 - <code>assa_abloy_credential_service</code>
 - <code>tedee</code>
 - <code>honeywell_resideo</code>
+- <code>first_alert</code>
 - <code>latch</code>
 - <code>akiles</code>
 - <code>assa_abloy_vostio</code>
@@ -582,6 +583,11 @@ Possible enum values:
 - <code>ultraloq</code>
 - <code>ring</code>
 - <code>ical</code>
+- <code>lodgify</code>
+- <code>hostaway</code>
+- <code>guesty</code>
+- <code>acuity_scheduling</code>
+- <code>omnitec</code>
 - <code>yale_access</code>
 - <code>hid_cm</code>
 - <code>google_nest</code>

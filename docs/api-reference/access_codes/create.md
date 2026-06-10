@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Creates a new [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+Creates a new [access code](https://docs.seam.co/latest/low-level-apis/access-codes). For granting access, we recommend [Access Grants](https://docs.seam.co/latest/use-cases/granting-access) instead: they work across both standalone smart locks and access control systems and manage the underlying codes for you. Use this low-level endpoint only when you need direct control over a code on a single device, such as setting a custom PIN value.
 
 
 {% tabs %}

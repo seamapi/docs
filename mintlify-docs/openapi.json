@@ -586,6 +586,14 @@
                     "message": {
                       "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                       "type": "string"
+                    },
+                    "missing_device_ids": {
+                      "description": "IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.",
+                      "items": {
+                        "format": "uuid",
+                        "type": "string"
+                      },
+                      "type": "array"
                     }
                   },
                   "required": [
@@ -940,12 +948,20 @@
             "format": "uri",
             "type": "string"
           },
+          "is_assignment_required": {
+            "description": "Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.",
+            "type": "boolean"
+          },
           "is_encoding_required": {
             "description": "Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.",
             "type": "boolean"
           },
           "is_issued": {
             "description": "Indicates whether the access method has been issued.",
+            "type": "boolean"
+          },
+          "is_ready_for_assignment": {
+            "description": "Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.",
             "type": "boolean"
           },
           "is_ready_for_encoding": {
@@ -1309,7 +1325,8 @@
               "brivo_group",
               "salto_space_group",
               "dormakaba_community_access_group",
-              "dormakaba_ambiance_access_group"
+              "dormakaba_ambiance_access_group",
+              "avigilon_alta_group"
             ],
             "type": "string",
             "x-deprecated": "Use `external_type`."
@@ -1411,7 +1428,8 @@
               "brivo_group",
               "salto_space_group",
               "dormakaba_community_access_group",
-              "dormakaba_ambiance_access_group"
+              "dormakaba_ambiance_access_group",
+              "avigilon_alta_group"
             ],
             "type": "string"
           },
@@ -2015,7 +2033,6 @@
             "enum": [
               "pti_card",
               "brivo_credential",
-              "brivo_digital_credential",
               "hid_credential",
               "visionline_card",
               "salto_ks_credential",
@@ -2023,7 +2040,9 @@
               "salto_space_key",
               "latch_access",
               "dormakaba_ambiance_credential",
-              "hotek_card"
+              "hotek_card",
+              "salto_ks_tag",
+              "avigilon_alta_credential"
             ],
             "type": "string"
           },
@@ -2389,6 +2408,52 @@
             ],
             "type": "object"
           },
+          "avigilon_alta_metadata": {
+            "description": "Avigilon Alta-specific metadata associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
+            "properties": {
+              "entry_name": {
+                "description": "Entry name for an Avigilon Alta system.",
+                "type": "string"
+              },
+              "entry_relays_total_count": {
+                "description": "Total count of entry relays for an Avigilon Alta system.",
+                "format": "float",
+                "type": "number"
+              },
+              "org_name": {
+                "description": "Organization name for an Avigilon Alta system.",
+                "type": "string"
+              },
+              "site_id": {
+                "description": "Site ID for an Avigilon Alta system.",
+                "format": "float",
+                "type": "number"
+              },
+              "site_name": {
+                "description": "Site name for an Avigilon Alta system.",
+                "type": "string"
+              },
+              "zone_id": {
+                "description": "Zone ID for an Avigilon Alta system.",
+                "format": "float",
+                "type": "number"
+              },
+              "zone_name": {
+                "description": "Zone name for an Avigilon Alta system.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "entry_name",
+              "org_name",
+              "zone_id",
+              "zone_name",
+              "site_id",
+              "site_name",
+              "entry_relays_total_count"
+            ],
+            "type": "object"
+          },
           "brivo_metadata": {
             "description": "Brivo-specific metadata associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
             "properties": {
@@ -2511,6 +2576,10 @@
               }
             },
             "type": "object"
+          },
+          "is_locked": {
+            "description": "Indicates whether the [entrance](/low-level-apis/access-systems/retrieving-entrance-details) is currently locked.",
+            "type": "boolean"
           },
           "latch_metadata": {
             "description": "Latch-specific metadata associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
@@ -2672,6 +2741,126 @@
               "door_category"
             ],
             "type": "object"
+          },
+          "warnings": {
+            "description": "Warnings associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
+            "items": {
+              "description": "Warning associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
+              "discriminator": {
+                "propertyName": "warning_code"
+              },
+              "oneOf": [
+                {
+                  "description": "Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which Seam created the warning.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                      "type": "string"
+                    },
+                    "warning_code": {
+                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                      "enum": [
+                        "salto_ks_entrance_access_code_support_removed"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "warning_code"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "description": "Indicates that this entrance shares a zone with other entrances in Avigilon Alta and cannot be added to an access group individually.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which Seam created the warning.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                      "type": "string"
+                    },
+                    "warning_code": {
+                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                      "enum": [
+                        "entrance_shares_zone"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "warning_code"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "description": "Indicates that this entrance requires additional configuration in the access control system before Seam can fully manage it.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which Seam created the warning.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                      "type": "string"
+                    },
+                    "warning_code": {
+                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                      "enum": [
+                        "entrance_setup_required"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "warning_code"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "description": "Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which Seam created the warning.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                      "type": "string"
+                    },
+                    "warning_code": {
+                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                      "enum": [
+                        "salto_ks_privacy_mode"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "warning_code"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
           }
         },
         "required": [
@@ -2681,7 +2870,8 @@
           "created_at",
           "display_name",
           "connected_account_id",
-          "errors"
+          "errors",
+          "warnings"
         ],
         "type": "object",
         "x-route-path": "/acs/entrances"
@@ -2754,7 +2944,7 @@
             "description": "Brand-specific terminology for the [access control system](/low-level-apis/access-systems) type.",
             "enum": [
               "pti_site",
-              "alta_org",
+              "avigilon_alta_org",
               "salto_ks_site",
               "salto_space_system",
               "brivo_account",
@@ -2808,7 +2998,7 @@
             "deprecated": true,
             "enum": [
               "pti_site",
-              "alta_org",
+              "avigilon_alta_org",
               "salto_ks_site",
               "salto_space_system",
               "brivo_account",
@@ -3041,7 +3231,8 @@
               "salto_site_user",
               "latch_user",
               "dormakaba_community_user",
-              "salto_space_user"
+              "salto_space_user",
+              "avigilon_alta_user"
             ],
             "type": "string"
           },
@@ -3465,6 +3656,65 @@
                     "mutation_code",
                     "acs_access_group_id",
                     "variant"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "description": "Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which the mutation was created.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "from": {
+                      "description": "Previous credential assignment.",
+                      "properties": {
+                        "acs_credential_id": {
+                          "description": "Previous credential ID.",
+                          "format": "uuid",
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "acs_credential_id"
+                      ],
+                      "type": "object"
+                    },
+                    "message": {
+                      "description": "Detailed description of the mutation.",
+                      "type": "string"
+                    },
+                    "mutation_code": {
+                      "description": "Mutation code to indicate that Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.",
+                      "enum": [
+                        "updating_credential_assignment"
+                      ],
+                      "type": "string"
+                    },
+                    "to": {
+                      "description": "New credential assignment.",
+                      "properties": {
+                        "acs_credential_id": {
+                          "description": "New credential ID.",
+                          "format": "uuid",
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "acs_credential_id"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "mutation_code",
+                    "from",
+                    "to"
                   ],
                   "type": "object"
                 }
@@ -4419,6 +4669,14 @@
             "description": "Your unique key for the customer associated with this connected account.",
             "type": "string"
           },
+          "default_checkin_time": {
+            "description": "Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times.",
+            "type": "string"
+          },
+          "default_checkout_time": {
+            "description": "Default reservation check-out time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration.",
+            "type": "string"
+          },
           "display_name": {
             "description": "Display name for the connected account.",
             "type": "string"
@@ -4583,9 +4841,21 @@
             },
             "type": "array"
           },
+          "ical_feed_origin": {
+            "description": "For iCal connected accounts, the platform that produced the feed (for example, `airbnb`, `vrbo`, or `booking`), or `unknown` when it could not be determined. Intended for rendering the source platform's logo.",
+            "type": "string"
+          },
+          "ical_url": {
+            "description": "For iCal connected accounts, the feed URL for the connection. Sourced from the connector configuration.",
+            "type": "string"
+          },
           "image_url": {
             "description": "Logo URL for the connected account provider.",
             "format": "uri",
+            "type": "string"
+          },
+          "time_zone": {
+            "description": "IANA time zone (e.g. America/Los_Angeles) for this connected account. Sourced from the connector configuration.",
             "type": "string"
           },
           "user_identifier": {
@@ -4968,7 +5238,8 @@
                   "tedee_lock",
                   "akiles_lock",
                   "ultraloq_lock",
-                  "korelock_lock"
+                  "keyincode_lock",
+                  "omnitec_lock"
                 ],
                 "type": "string"
               },
@@ -6171,6 +6442,41 @@
                         ],
                         "type": "object"
                       },
+                      "omnitec_metadata": {
+                        "description": "Metadata for an Omnitec device.",
+                        "properties": {
+                          "has_gateway": {
+                            "description": "Whether the Omnitec lock has a connected gateway for remote operations.",
+                            "type": "boolean"
+                          },
+                          "lock_id": {
+                            "description": "Lock ID for an Omnitec device.",
+                            "format": "float",
+                            "type": "number"
+                          },
+                          "lock_mac": {
+                            "description": "Bluetooth MAC address for an Omnitec device.",
+                            "type": "string"
+                          },
+                          "lock_name": {
+                            "description": "Lock name for an Omnitec device.",
+                            "type": "string"
+                          },
+                          "timezone_raw_offset_ms": {
+                            "description": "Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST.",
+                            "format": "float",
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "lock_id",
+                          "lock_name",
+                          "lock_mac",
+                          "has_gateway",
+                          "timezone_raw_offset_ms"
+                        ],
+                        "type": "object"
+                      },
                       "ring_metadata": {
                         "description": "Metadata for a Ring device.",
                         "properties": {
@@ -6514,6 +6820,12 @@
                           "lock_id": {
                             "description": "Lock ID for a TTLock device.",
                             "format": "float",
+                            "type": "number"
+                          },
+                          "timezone_raw_offset_ms": {
+                            "description": "Lock-side timezone offset in milliseconds east of UTC, as configured in the TTLock app. Source of truth for the lock's wall-clock interpretation of access code start/end times — a misconfigured value here is the typical cause of customer \"codes offset by N hours\" reports. Diagnostic only; Seam does not convert times based on this value.",
+                            "format": "float",
+                            "nullable": true,
                             "type": "number"
                           },
                           "wireless_keypads": {
@@ -7828,6 +8140,7 @@
               "assa_abloy_credential_service",
               "tedee",
               "honeywell_resideo",
+              "first_alert",
               "latch",
               "akiles",
               "assa_abloy_vostio",
@@ -7840,7 +8153,12 @@
               "dormakaba_ambiance",
               "ultraloq",
               "ring",
-              "ical"
+              "ical",
+              "lodgify",
+              "hostaway",
+              "guesty",
+              "acuity_scheduling",
+              "omnitec"
             ],
             "type": "string"
           },
@@ -10571,6 +10889,14 @@
                   "access_grant.could_not_create_requested_access_methods"
                 ],
                 "type": "string"
+              },
+              "missing_device_ids": {
+                "description": "IDs of the devices that did not receive a requested access method. Use these to identify which specific devices failed without having to fetch the Access Grant.",
+                "items": {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                "type": "array"
               },
               "occurred_at": {
                 "description": "Date and time at which the event occurred.",
@@ -15765,7 +16091,7 @@
                 "type": "boolean"
               },
               "action_attempt_id": {
-                "description": "ID of the action attempt associated with the lock action.",
+                "description": "ID of the Seam action attempt that triggered this lock. Present only when the lock was initiated through Seam (via a `LOCK_DOOR` action attempt).",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15827,14 +16153,22 @@
                 ],
                 "type": "string"
               },
+              "is_via_bluetooth": {
+                "description": "\n      Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
+                "type": "boolean"
+              },
+              "is_via_nfc": {
+                "description": "\n      Whether the lock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
+                "type": "boolean"
+              },
               "method": {
-                "description": "Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.",
+                "description": "Method by which the lock was locked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or button press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by an auto-relock timer. `unknown`: could not be determined.",
                 "enum": [
                   "keycode",
                   "manual",
                   "automatic",
                   "unknown",
-                  "seamapi"
+                  "remote"
                 ],
                 "type": "string"
               },
@@ -15890,7 +16224,7 @@
                 "type": "string"
               },
               "action_attempt_id": {
-                "description": "ID of the action attempt associated with the unlock action.",
+                "description": "ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15952,14 +16286,22 @@
                 ],
                 "type": "string"
               },
+              "is_via_bluetooth": {
+                "description": "\n      Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
+                "type": "boolean"
+              },
+              "is_via_nfc": {
+                "description": "\n      Whether the unlock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.\n    ",
+                "type": "boolean"
+              },
               "method": {
-                "description": "Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](/low-level-apis/smart-locks/access-codes) that was used, if reported by the device.",
+                "description": "Method by which the lock was unlocked. `keycode`: an [access code](/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.",
                 "enum": [
                   "keycode",
                   "manual",
                   "automatic",
                   "unknown",
-                  "seamapi"
+                  "remote"
                 ],
                 "type": "string"
               },
@@ -17837,6 +18179,52 @@
                               ],
                               "type": "object"
                             },
+                            "avigilon_alta_metadata": {
+                              "description": "Avigilon Alta-specific metadata associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
+                              "properties": {
+                                "entry_name": {
+                                  "description": "Entry name for an Avigilon Alta system.",
+                                  "type": "string"
+                                },
+                                "entry_relays_total_count": {
+                                  "description": "Total count of entry relays for an Avigilon Alta system.",
+                                  "format": "float",
+                                  "type": "number"
+                                },
+                                "org_name": {
+                                  "description": "Organization name for an Avigilon Alta system.",
+                                  "type": "string"
+                                },
+                                "site_id": {
+                                  "description": "Site ID for an Avigilon Alta system.",
+                                  "format": "float",
+                                  "type": "number"
+                                },
+                                "site_name": {
+                                  "description": "Site name for an Avigilon Alta system.",
+                                  "type": "string"
+                                },
+                                "zone_id": {
+                                  "description": "Zone ID for an Avigilon Alta system.",
+                                  "format": "float",
+                                  "type": "number"
+                                },
+                                "zone_name": {
+                                  "description": "Zone name for an Avigilon Alta system.",
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "entry_name",
+                                "org_name",
+                                "zone_id",
+                                "zone_name",
+                                "site_id",
+                                "site_name",
+                                "entry_relays_total_count"
+                              ],
+                              "type": "object"
+                            },
                             "brivo_metadata": {
                               "description": "Brivo-specific metadata associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
                               "properties": {
@@ -17959,6 +18347,10 @@
                                 }
                               },
                               "type": "object"
+                            },
+                            "is_locked": {
+                              "description": "Indicates whether the [entrance](/low-level-apis/access-systems/retrieving-entrance-details) is currently locked.",
+                              "type": "boolean"
                             },
                             "latch_metadata": {
                               "description": "Latch-specific metadata associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
@@ -18120,6 +18512,126 @@
                                 "door_category"
                               ],
                               "type": "object"
+                            },
+                            "warnings": {
+                              "description": "Warnings associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
+                              "items": {
+                                "description": "Warning associated with the [entrance](/low-level-apis/access-systems/retrieving-entrance-details).",
+                                "discriminator": {
+                                  "propertyName": "warning_code"
+                                },
+                                "oneOf": [
+                                  {
+                                    "description": "Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.",
+                                    "properties": {
+                                      "created_at": {
+                                        "description": "Date and time at which Seam created the warning.",
+                                        "format": "date-time",
+                                        "type": "string"
+                                      },
+                                      "message": {
+                                        "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                        "type": "string"
+                                      },
+                                      "warning_code": {
+                                        "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                        "enum": [
+                                          "salto_ks_entrance_access_code_support_removed"
+                                        ],
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "created_at",
+                                      "message",
+                                      "warning_code"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "description": "Indicates that this entrance shares a zone with other entrances in Avigilon Alta and cannot be added to an access group individually.",
+                                    "properties": {
+                                      "created_at": {
+                                        "description": "Date and time at which Seam created the warning.",
+                                        "format": "date-time",
+                                        "type": "string"
+                                      },
+                                      "message": {
+                                        "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                        "type": "string"
+                                      },
+                                      "warning_code": {
+                                        "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                        "enum": [
+                                          "entrance_shares_zone"
+                                        ],
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "created_at",
+                                      "message",
+                                      "warning_code"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "description": "Indicates that this entrance requires additional configuration in the access control system before Seam can fully manage it.",
+                                    "properties": {
+                                      "created_at": {
+                                        "description": "Date and time at which Seam created the warning.",
+                                        "format": "date-time",
+                                        "type": "string"
+                                      },
+                                      "message": {
+                                        "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                        "type": "string"
+                                      },
+                                      "warning_code": {
+                                        "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                        "enum": [
+                                          "entrance_setup_required"
+                                        ],
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "created_at",
+                                      "message",
+                                      "warning_code"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "description": "Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.",
+                                    "properties": {
+                                      "created_at": {
+                                        "description": "Date and time at which Seam created the warning.",
+                                        "format": "date-time",
+                                        "type": "string"
+                                      },
+                                      "message": {
+                                        "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                        "type": "string"
+                                      },
+                                      "warning_code": {
+                                        "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                        "enum": [
+                                          "salto_ks_privacy_mode"
+                                        ],
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "created_at",
+                                      "message",
+                                      "warning_code"
+                                    ],
+                                    "type": "object"
+                                  }
+                                ]
+                              },
+                              "type": "array"
                             }
                           },
                           "required": [
@@ -18129,7 +18641,8 @@
                             "created_at",
                             "display_name",
                             "connected_account_id",
-                            "errors"
+                            "errors",
+                            "warnings"
                           ],
                           "type": "object",
                           "x-route-path": "/acs/entrances"
@@ -18235,7 +18748,6 @@
                         "enum": [
                           "pti_card",
                           "brivo_credential",
-                          "brivo_digital_credential",
                           "hid_credential",
                           "visionline_card",
                           "salto_ks_credential",
@@ -18243,7 +18755,9 @@
                           "salto_space_key",
                           "latch_access",
                           "dormakaba_ambiance_credential",
-                          "hotek_card"
+                          "hotek_card",
+                          "salto_ks_tag",
+                          "avigilon_alta_credential"
                         ],
                         "type": "string"
                       },
@@ -18806,6 +19320,29 @@
             "format": "date-time",
             "type": "string"
           },
+          "customer_data": {
+            "description": "Reservation/stay-related defaults for the space.",
+            "properties": {
+              "default_checkin_time": {
+                "description": "Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.",
+                "nullable": true,
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                "type": "string"
+              },
+              "default_checkout_time": {
+                "description": "Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.",
+                "nullable": true,
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                "type": "string"
+              },
+              "time_zone": {
+                "description": "IANA time zone for the space, e.g. America/Los_Angeles.",
+                "nullable": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
           "customer_key": {
             "description": "Customer key associated with the space.",
             "type": "string"
@@ -19118,6 +19655,20 @@
             "format": "uuid",
             "type": "string"
           },
+          "cannot_be_managed": {
+            "description": "Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations.",
+            "enum": [
+              true
+            ],
+            "type": "boolean"
+          },
+          "cannot_delete_unmanaged_access_code": {
+            "description": "Indicates that Seam cannot delete this unmanaged access code through the provider. If this access code needs to be deleted, it will only be possible from the manufacturer app.",
+            "enum": [
+              true
+            ],
+            "type": "boolean"
+          },
           "code": {
             "description": "Code used for access. Typically, a numeric or alphanumeric string.",
             "nullable": true,
@@ -19225,9 +19776,10 @@
             "type": "string"
           },
           "status": {
-            "description": "Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.",
+            "description": "Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.",
             "enum": [
-              "set"
+              "set",
+              "unset"
             ],
             "type": "string"
           },
@@ -19294,7 +19846,8 @@
               "brivo_group",
               "salto_space_group",
               "dormakaba_community_access_group",
-              "dormakaba_ambiance_access_group"
+              "dormakaba_ambiance_access_group",
+              "avigilon_alta_group"
             ],
             "type": "string",
             "x-deprecated": "Use `external_type`."
@@ -19396,7 +19949,8 @@
               "brivo_group",
               "salto_space_group",
               "dormakaba_community_access_group",
-              "dormakaba_ambiance_access_group"
+              "dormakaba_ambiance_access_group",
+              "avigilon_alta_group"
             ],
             "type": "string"
           },
@@ -20001,7 +20555,6 @@
             "enum": [
               "pti_card",
               "brivo_credential",
-              "brivo_digital_credential",
               "hid_credential",
               "visionline_card",
               "salto_ks_credential",
@@ -20009,7 +20562,9 @@
               "salto_space_key",
               "latch_access",
               "dormakaba_ambiance_credential",
-              "hotek_card"
+              "hotek_card",
+              "salto_ks_tag",
+              "avigilon_alta_credential"
             ],
             "type": "string"
           },
@@ -20257,7 +20812,8 @@
               "salto_site_user",
               "latch_user",
               "dormakaba_community_user",
-              "salto_space_user"
+              "salto_space_user",
+              "avigilon_alta_user"
             ],
             "type": "string"
           },
@@ -20683,6 +21239,65 @@
                     "variant"
                   ],
                   "type": "object"
+                },
+                {
+                  "description": "Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which the mutation was created.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "from": {
+                      "description": "Previous credential assignment.",
+                      "properties": {
+                        "acs_credential_id": {
+                          "description": "Previous credential ID.",
+                          "format": "uuid",
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "acs_credential_id"
+                      ],
+                      "type": "object"
+                    },
+                    "message": {
+                      "description": "Detailed description of the mutation.",
+                      "type": "string"
+                    },
+                    "mutation_code": {
+                      "description": "Mutation code to indicate that Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.",
+                      "enum": [
+                        "updating_credential_assignment"
+                      ],
+                      "type": "string"
+                    },
+                    "to": {
+                      "description": "New credential assignment.",
+                      "properties": {
+                        "acs_credential_id": {
+                          "description": "New credential ID.",
+                          "format": "uuid",
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "acs_credential_id"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "mutation_code",
+                    "from",
+                    "to"
+                  ],
+                  "type": "object"
                 }
               ]
             },
@@ -21003,7 +21618,8 @@
                   "tedee_lock",
                   "akiles_lock",
                   "ultraloq_lock",
-                  "korelock_lock"
+                  "keyincode_lock",
+                  "omnitec_lock"
                 ],
                 "type": "string"
               },
@@ -21646,11 +22262,6 @@
       }
     },
     "securitySchemes": {
-      "access_token": {
-        "bearerFormat": "API Token",
-        "scheme": "bearer",
-        "type": "http"
-      },
       "api_key": {
         "bearerFormat": "API Key",
         "scheme": "bearer",
@@ -21791,7 +22402,7 @@
   "paths": {
     "/access_codes/create": {
       "post": {
-        "description": "Creates a new [access code](/low-level-apis/smart-locks/access-codes).",
+        "description": "Creates a new [access code](/low-level-apis/access-codes). For granting access, we recommend [Access Grants](/use-cases/granting-access) instead: they work across both standalone smart locks and access control systems and manage the underlying codes for you. Use this low-level endpoint only when you need direct control over a code on a single device, such as setting a custom PIN value.",
         "operationId": "accessCodesCreatePost",
         "requestBody": {
           "content": {
@@ -21808,7 +22419,7 @@
                   },
                   "code": {
                     "description": "Code to be used for access.",
-                    "maxLength": 9,
+                    "maxLength": 12,
                     "minLength": 4,
                     "pattern": "^\\d+$",
                     "type": "string"
@@ -22059,7 +22670,7 @@
                   },
                   "code": {
                     "description": "Code to be used for access.",
-                    "maxLength": 9,
+                    "maxLength": 12,
                     "minLength": 4,
                     "pattern": "^\\d+$",
                     "type": "string"
@@ -22229,7 +22840,7 @@
                   },
                   "code": {
                     "description": "Code to be used for access.",
-                    "maxLength": 9,
+                    "maxLength": 12,
                     "minLength": 4,
                     "pattern": "^\\d+$",
                     "type": "string"
@@ -22856,7 +23467,7 @@
             "api_key": []
           },
           {
-            "access_token": []
+            "pat_with_workspace": []
           },
           {
             "console_session_with_workspace": []
@@ -22943,7 +23554,7 @@
             "api_key": []
           },
           {
-            "access_token": []
+            "pat_with_workspace": []
           },
           {
             "console_session_with_workspace": []
@@ -24842,7 +25453,7 @@
                   },
                   "code": {
                     "description": "Code to be used for access.",
-                    "maxLength": 9,
+                    "maxLength": 12,
                     "minLength": 4,
                     "pattern": "^\\d+$",
                     "type": "string"
@@ -25013,7 +25624,7 @@
                   },
                   "code": {
                     "description": "Code to be used for access.",
-                    "maxLength": 9,
+                    "maxLength": 12,
                     "minLength": 4,
                     "pattern": "^\\d+$",
                     "type": "string"
@@ -25262,7 +25873,7 @@
                   },
                   "code": {
                     "description": "Code to be used for access.",
-                    "maxLength": 9,
+                    "maxLength": 12,
                     "minLength": 4,
                     "pattern": "^\\d+$",
                     "type": "string"
@@ -25620,7 +26231,7 @@
     },
     "/access_grants/create": {
       "post": {
-        "description": "Creates a new Access Grant.",
+        "description": "Creates a new [Access Grant](/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.",
         "operationId": "accessGrantsCreatePost",
         "requestBody": {
           "content": {
@@ -26680,6 +27291,15 @@
           },
           {
             "in": "query",
+            "name": "device_id",
+            "schema": {
+              "description": "ID of the device by which you want to filter the list of Access Grants.",
+              "format": "uuid",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "location_id",
             "schema": {
               "deprecated": true,
@@ -26823,6 +27443,11 @@
                   },
                   "customer_key": {
                     "description": "Customer key for which you want to list access grants.",
+                    "type": "string"
+                  },
+                  "device_id": {
+                    "description": "ID of the device by which you want to filter the list of Access Grants.",
+                    "format": "uuid",
                     "type": "string"
                   },
                   "limit": {
@@ -27143,6 +27768,14 @@
                                   "message": {
                                     "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                                     "type": "string"
+                                  },
+                                  "missing_device_ids": {
+                                    "description": "IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.",
+                                    "items": {
+                                      "format": "uuid",
+                                      "type": "string"
+                                    },
+                                    "type": "array"
                                   }
                                 },
                                 "required": [
@@ -27632,6 +28265,49 @@
                                   "message",
                                   "warning_code",
                                   "device_id"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "description": "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                "properties": {
+                                  "created_at": {
+                                    "description": "Date and time at which Seam created the warning.",
+                                    "format": "date-time",
+                                    "type": "string"
+                                  },
+                                  "device_id": {
+                                    "description": "ID of the device whose time constraints the access grant violates.",
+                                    "format": "uuid",
+                                    "type": "string"
+                                  },
+                                  "message": {
+                                    "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                    "type": "string"
+                                  },
+                                  "reason": {
+                                    "description": "Specific reason why the grant's times are not programmable on the device.",
+                                    "enum": [
+                                      "duration_exceeds_max",
+                                      "times_do_not_match_slots",
+                                      "ongoing_not_supported"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "warning_code": {
+                                    "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                    "enum": [
+                                      "device_time_constraints_violated"
+                                    ],
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "created_at",
+                                  "message",
+                                  "warning_code",
+                                  "device_id",
+                                  "reason"
                                 ],
                                 "type": "object"
                               }
@@ -27794,6 +28470,14 @@
                                   "message": {
                                     "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                                     "type": "string"
+                                  },
+                                  "missing_device_ids": {
+                                    "description": "IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.",
+                                    "items": {
+                                      "format": "uuid",
+                                      "type": "string"
+                                    },
+                                    "type": "array"
                                   }
                                 },
                                 "required": [
@@ -28283,6 +28967,49 @@
                                   "message",
                                   "warning_code",
                                   "device_id"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "description": "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                "properties": {
+                                  "created_at": {
+                                    "description": "Date and time at which Seam created the warning.",
+                                    "format": "date-time",
+                                    "type": "string"
+                                  },
+                                  "device_id": {
+                                    "description": "ID of the device whose time constraints the access grant violates.",
+                                    "format": "uuid",
+                                    "type": "string"
+                                  },
+                                  "message": {
+                                    "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                    "type": "string"
+                                  },
+                                  "reason": {
+                                    "description": "Specific reason why the grant's times are not programmable on the device.",
+                                    "enum": [
+                                      "duration_exceeds_max",
+                                      "times_do_not_match_slots",
+                                      "ongoing_not_supported"
+                                    ],
+                                    "type": "string"
+                                  },
+                                  "warning_code": {
+                                    "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                    "enum": [
+                                      "device_time_constraints_violated"
+                                    ],
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "created_at",
+                                  "message",
+                                  "warning_code",
+                                  "device_id",
+                                  "reason"
                                 ],
                                 "type": "object"
                               }
@@ -28482,6 +29209,14 @@
                                     "message": {
                                       "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                                       "type": "string"
+                                    },
+                                    "missing_device_ids": {
+                                      "description": "IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.",
+                                      "items": {
+                                        "format": "uuid",
+                                        "type": "string"
+                                      },
+                                      "type": "array"
                                     }
                                   },
                                   "required": [
@@ -28971,6 +29706,49 @@
                                     "message",
                                     "warning_code",
                                     "device_id"
+                                  ],
+                                  "type": "object"
+                                },
+                                {
+                                  "description": "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                  "properties": {
+                                    "created_at": {
+                                      "description": "Date and time at which Seam created the warning.",
+                                      "format": "date-time",
+                                      "type": "string"
+                                    },
+                                    "device_id": {
+                                      "description": "ID of the device whose time constraints the access grant violates.",
+                                      "format": "uuid",
+                                      "type": "string"
+                                    },
+                                    "message": {
+                                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                      "type": "string"
+                                    },
+                                    "reason": {
+                                      "description": "Specific reason why the grant's times are not programmable on the device.",
+                                      "enum": [
+                                        "duration_exceeds_max",
+                                        "times_do_not_match_slots",
+                                        "ongoing_not_supported"
+                                      ],
+                                      "type": "string"
+                                    },
+                                    "warning_code": {
+                                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                      "enum": [
+                                        "device_time_constraints_violated"
+                                      ],
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "created_at",
+                                    "message",
+                                    "warning_code",
+                                    "device_id",
+                                    "reason"
                                   ],
                                   "type": "object"
                                 }
@@ -29162,6 +29940,14 @@
                                     "message": {
                                       "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
                                       "type": "string"
+                                    },
+                                    "missing_device_ids": {
+                                      "description": "IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.",
+                                      "items": {
+                                        "format": "uuid",
+                                        "type": "string"
+                                      },
+                                      "type": "array"
                                     }
                                   },
                                   "required": [
@@ -29651,6 +30437,49 @@
                                     "message",
                                     "warning_code",
                                     "device_id"
+                                  ],
+                                  "type": "object"
+                                },
+                                {
+                                  "description": "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
+                                  "properties": {
+                                    "created_at": {
+                                      "description": "Date and time at which Seam created the warning.",
+                                      "format": "date-time",
+                                      "type": "string"
+                                    },
+                                    "device_id": {
+                                      "description": "ID of the device whose time constraints the access grant violates.",
+                                      "format": "uuid",
+                                      "type": "string"
+                                    },
+                                    "message": {
+                                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                                      "type": "string"
+                                    },
+                                    "reason": {
+                                      "description": "Specific reason why the grant's times are not programmable on the device.",
+                                      "enum": [
+                                        "duration_exceeds_max",
+                                        "times_do_not_match_slots",
+                                        "ongoing_not_supported"
+                                      ],
+                                      "type": "string"
+                                    },
+                                    "warning_code": {
+                                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                                      "enum": [
+                                        "device_time_constraints_violated"
+                                      ],
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "created_at",
+                                    "message",
+                                    "warning_code",
+                                    "device_id",
+                                    "reason"
                                   ],
                                   "type": "object"
                                 }
@@ -30107,6 +30936,84 @@
             "source": "seam access-grants update --access_grant_id \"4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1\" --starts_at \"2025-06-19T18:01:32.000Z\" --ends_at \"2025-06-22T13:24:50.000Z\"\n\n# {}"
           }
         ]
+      }
+    },
+    "/access_methods/assign_card": {
+      "post": {
+        "description": "Assigns an existing card credential to a card-mode access method, identified by `card_number`.",
+        "operationId": "accessMethodsAssignCardPost",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "access_method_id": {
+                    "description": "ID of the card-mode `access_method` to assign the card to.",
+                    "format": "uuid",
+                    "type": "string"
+                  },
+                  "card_number": {
+                    "description": "Card number of the card credential to assign.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "access_method_id",
+                  "card_number"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "access_method": {
+                      "$ref": "#/components/schemas/access_method"
+                    },
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "access_method",
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "pat_with_workspace": []
+          },
+          {
+            "console_session_with_workspace": []
+          },
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Assign a Card to an Access Method",
+        "tags": [],
+        "x-response-key": "access_method",
+        "x-title": "Assign a Card to an Access Method",
+        "x-mint": {
+          "href": "/api/access_methods/assign_card"
+        }
       }
     },
     "/access_methods/delete": {
@@ -31180,6 +32087,133 @@
         ]
       }
     },
+    "/access_methods/unlock_door": {
+      "post": {
+        "description": "Remotely unlocks a specified [entrance](/low-level-apis/access-systems/retrieving-entrance-details) using the cloud key credential associated with an access method. Returns an action attempt that tracks the progress of the unlock operation.",
+        "operationId": "accessMethodsUnlockDoorPost",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "access_method_id": {
+                    "description": "ID of the cloud_key `access_method` to use for the unlock operation.",
+                    "format": "uuid",
+                    "type": "string"
+                  },
+                  "acs_entrance_id": {
+                    "description": "ID of the entrance to unlock.",
+                    "format": "uuid",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "access_method_id",
+                  "acs_entrance_id"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "action_attempt": {
+                      "type": "object",
+                      "description": "Tracks the progress of this operation. Poll using the action_attempt_id.",
+                      "properties": {
+                        "action_attempt_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "description": "ID of the action attempt."
+                        },
+                        "action_type": {
+                          "type": "string",
+                          "enum": [
+                            "UNLOCK_DOOR"
+                          ],
+                          "description": "Type of action being tracked."
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "pending",
+                            "success",
+                            "error"
+                          ],
+                          "description": "Current status of the action."
+                        },
+                        "result": {
+                          "type": "object",
+                          "nullable": true,
+                          "description": "Result payload on success."
+                        },
+                        "error": {
+                          "type": "object",
+                          "nullable": true,
+                          "description": "Error details on failure.",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "action_attempt_id",
+                        "action_type",
+                        "status"
+                      ]
+                    },
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "action_attempt",
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "pat_with_workspace": []
+          },
+          {
+            "console_session_with_workspace": []
+          },
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Unlock a Door with an Access Method",
+        "tags": [],
+        "x-action-attempt-type": "UNLOCK_DOOR",
+        "x-response-key": "action_attempt",
+        "x-title": "Unlock a Door with an Access Method",
+        "x-mint": {
+          "href": "/api/access_methods/unlock_door"
+        }
+      }
+    },
     "/access_methods/unmanaged/get": {
       "get": {
         "description": "Gets an unmanaged access method (where is_managed = false).",
@@ -31224,12 +32258,20 @@
                           "description": "Display name of the access method.",
                           "type": "string"
                         },
+                        "is_assignment_required": {
+                          "description": "Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.",
+                          "type": "boolean"
+                        },
                         "is_encoding_required": {
                           "description": "Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.",
                           "type": "boolean"
                         },
                         "is_issued": {
                           "description": "Indicates whether the access method has been issued.",
+                          "type": "boolean"
+                        },
+                        "is_ready_for_assignment": {
+                          "description": "Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.",
                           "type": "boolean"
                         },
                         "is_ready_for_encoding": {
@@ -31674,12 +32716,20 @@
                           "description": "Display name of the access method.",
                           "type": "string"
                         },
+                        "is_assignment_required": {
+                          "description": "Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.",
+                          "type": "boolean"
+                        },
                         "is_encoding_required": {
                           "description": "Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.",
                           "type": "boolean"
                         },
                         "is_issued": {
                           "description": "Indicates whether the access method has been issued.",
+                          "type": "boolean"
+                        },
+                        "is_ready_for_assignment": {
+                          "description": "Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.",
                           "type": "boolean"
                         },
                         "is_ready_for_encoding": {
@@ -32147,12 +33197,20 @@
                             "description": "Display name of the access method.",
                             "type": "string"
                           },
+                          "is_assignment_required": {
+                            "description": "Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.",
+                            "type": "boolean"
+                          },
                           "is_encoding_required": {
                             "description": "Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.",
                             "type": "boolean"
                           },
                           "is_issued": {
                             "description": "Indicates whether the access method has been issued.",
+                            "type": "boolean"
+                          },
+                          "is_ready_for_assignment": {
+                            "description": "Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.",
                             "type": "boolean"
                           },
                           "is_ready_for_encoding": {
@@ -32618,12 +33676,20 @@
                             "description": "Display name of the access method.",
                             "type": "string"
                           },
+                          "is_assignment_required": {
+                            "description": "Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.",
+                            "type": "boolean"
+                          },
                           "is_encoding_required": {
                             "description": "Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.",
                             "type": "boolean"
                           },
                           "is_issued": {
                             "description": "Indicates whether the access method has been issued.",
+                            "type": "boolean"
+                          },
+                          "is_ready_for_assignment": {
+                            "description": "Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.",
                             "type": "boolean"
                           },
                           "is_ready_for_encoding": {
@@ -34517,7 +35583,7 @@
     },
     "/acs/credentials/create": {
       "post": {
-        "description": "Creates a new [credential](/low-level-apis/access-systems/managing-credentials) for a specified [ACS user](/low-level-apis/access-systems/user-management).",
+        "description": "Creates a new [credential](/low-level-apis/managing-credentials) for a specified [ACS user](/low-level-apis/access-systems/user-management). For granting access, we recommend [Access Grants](/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.",
         "operationId": "acsCredentialsCreatePost",
         "requestBody": {
           "content": {
@@ -36567,6 +37633,17 @@
                     "description": "ID of the encoder to use for the scan.",
                     "format": "uuid",
                     "type": "string"
+                  },
+                  "salto_ks_metadata": {
+                    "description": "Salto KS-specific metadata for the scan action.",
+                    "properties": {
+                      "detect_new_tags": {
+                        "default": false,
+                        "description": "When true, activates tag registration mode on the encoder to detect new, unregistered tags. When false, only detects existing tags already registered in the system. Defaults to false.",
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
                   }
                 },
                 "required": [
@@ -36707,6 +37784,153 @@
             "source": "seam acs encoders scan-credential --acs_encoder_id \"b062df92-91c6-482c-a3f9-6e578f062d36\"\n\n# {\n#   \"action_attempt_id\": \"123e4567-e89b-12d3-a456-426614174000\",\n#   \"action_type\": \"SCAN_CREDENTIAL\",\n#   \"error\": null,\n#   \"result\": {\n#     \"acs_credential_on_encoder\": {\n#       \"card_number\": \"164d29dc4a09b65f\",\n#       \"created_at\": \"2025-06-16T16:54:17.946514Z\",\n#       \"ends_at\": \"2025-07-13T16:54:17.946512Z\",\n#       \"is_issued\": true,\n#       \"starts_at\": \"2025-07-10T16:54:17.946512Z\",\n#       \"visionline_metadata\": {\n#         \"cancelled\": false,\n#         \"card_format\": \"guest\",\n#         \"card_holder\": \"Guest\",\n#         \"card_id\": \"5\",\n#         \"common_acs_entrance_ids\": [\n#           \"5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f\"\n#         ],\n#         \"discarded\": false,\n#         \"expired\": false,\n#         \"guest_acs_entrance_ids\": [\n#           \"a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d\"\n#         ],\n#         \"number_of_issued_cards\": 1,\n#         \"overridden\": false,\n#         \"overwritten\": false,\n#         \"pending_auto_update\": false\n#       }\n#     },\n#     \"acs_credential_on_seam\": {\n#       \"access_method\": \"card\",\n#       \"acs_credential_id\": \"73a0a199-024f-454d-a916-9bbda8502c12\",\n#       \"acs_system_id\": \"b1d03165-2759-474b-a342-e02223f27b39\",\n#       \"acs_user_id\": \"0fc82df4-391b-4d00-a234-86378f1c3952\",\n#       \"card_number\": \"164d29dc4a09b65f\",\n#       \"created_at\": \"2025-06-16T16:54:17.946514Z\",\n#       \"display_name\": \"Guest Lock 1, Vingcard Lock 2\",\n#       \"ends_at\": \"2025-07-12T16:54:17.946512Z\",\n#       \"errors\": [],\n#       \"external_type\": \"visionline_card\",\n#       \"external_type_display_name\": \"Visionline Card\",\n#       \"is_issued\": true,\n#       \"is_latest_desired_state_synced_with_provider\": true,\n#       \"is_managed\": true,\n#       \"is_multi_phone_sync_credential\": false,\n#       \"issued_at\": \"2025-06-16T16:54:17.946512Z\",\n#       \"latest_desired_state_synced_with_provider_at\": \"2025-06-18T16:54:17.946514Z\",\n#       \"starts_at\": \"2025-07-10T16:54:17.946512Z\",\n#       \"visionline_metadata\": {\n#         \"card_function_type\": \"guest\",\n#         \"card_id\": \"5\",\n#         \"common_acs_entrance_ids\": [\n#           \"5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f\"\n#         ],\n#         \"credential_id\": \"15\",\n#         \"guest_acs_entrance_ids\": [\n#           \"a1b2c3d4-e5f6-4a3b-2c1d-0e9f8a7b6c5d\"\n#         ],\n#         \"is_valid\": true\n#       },\n#       \"warnings\": [],\n#       \"workspace_id\": \"005f1e54-5360-40db-8c31-4ef6baaad1fd\"\n#     },\n#     \"warnings\": [\n#       {\n#         \"warning_code\": \"acs_credential_on_encoder_out_of_sync\",\n#         \"warning_message\": \"The following properties are out of sync between acs_credential_on_encoder and acs_credential_on_seam: ends_at\"\n#       }\n#     ]\n#   },\n#   \"status\": \"success\"\n# }"
           }
         ]
+      }
+    },
+    "/acs/encoders/scan_to_assign_credential": {
+      "post": {
+        "description": "Scans a physical card placed on the specified [encoder](/low-level-apis/access-systems/working-with-card-encoders-and-scanners) and assigns the scanned credential to an ACS user. Provide either an `acs_user_id` or a `user_identity_id`.",
+        "operationId": "acsEncodersScanToAssignCredentialPost",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "acs_encoder_id": {
+                    "description": "ID of the `acs_encoder` to use to scan the credential.",
+                    "format": "uuid",
+                    "type": "string"
+                  },
+                  "acs_user_id": {
+                    "description": "ID of the `acs_user` to assign the scanned credential to.",
+                    "format": "uuid",
+                    "type": "string"
+                  },
+                  "salto_ks_metadata": {
+                    "description": "Salto KS-specific metadata for the scan action.",
+                    "properties": {
+                      "detect_new_tags": {
+                        "default": false,
+                        "description": "When true, activates tag registration mode on the encoder to detect new, unregistered tags. When false, only detects existing tags already registered in the system. Defaults to false.",
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "user_identity_id": {
+                    "description": "ID of the `user_identity` to assign the scanned credential to. If the ACS system contains an ACS user linked to this user identity, it is used. Otherwise, one is created.",
+                    "format": "uuid",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "acs_encoder_id"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "action_attempt": {
+                      "type": "object",
+                      "description": "Tracks the progress of this operation. Poll using the action_attempt_id.",
+                      "properties": {
+                        "action_attempt_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "description": "ID of the action attempt."
+                        },
+                        "action_type": {
+                          "type": "string",
+                          "enum": [
+                            "SCAN_TO_ASSIGN_CREDENTIAL"
+                          ],
+                          "description": "Type of action being tracked."
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "pending",
+                            "success",
+                            "error"
+                          ],
+                          "description": "Current status of the action."
+                        },
+                        "result": {
+                          "type": "object",
+                          "nullable": true,
+                          "description": "Result payload on success."
+                        },
+                        "error": {
+                          "type": "object",
+                          "nullable": true,
+                          "description": "Error details on failure.",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "action_attempt_id",
+                        "action_type",
+                        "status"
+                      ]
+                    },
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "action_attempt",
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "pat_with_workspace": []
+          },
+          {
+            "console_session_with_workspace": []
+          },
+          {
+            "api_key": []
+          },
+          {
+            "client_session_with_customer": []
+          }
+        ],
+        "summary": "Scan to Assign a Credential",
+        "tags": [
+          "/acs"
+        ],
+        "x-action-attempt-type": "SCAN_TO_ASSIGN_CREDENTIAL",
+        "x-response-key": "action_attempt",
+        "x-title": "Scan to Assign a Credential",
+        "x-mint": {
+          "href": "/api/acs/encoders/scan_to_assign_credential"
+        }
       }
     },
     "/acs/encoders/simulate/next_credential_encode_will_fail": {
@@ -37327,7 +38551,7 @@
             "api_key": []
           },
           {
-            "access_token": []
+            "pat_with_workspace": []
           },
           {
             "console_session_with_workspace": []
@@ -37409,7 +38633,7 @@
             "api_key": []
           },
           {
-            "access_token": []
+            "pat_with_workspace": []
           },
           {
             "console_session_with_workspace": []
@@ -42865,6 +44089,7 @@
                         "assa_abloy_credential_service",
                         "tedee",
                         "honeywell_resideo",
+                        "first_alert",
                         "latch",
                         "akiles",
                         "assa_abloy_vostio",
@@ -42878,6 +44103,11 @@
                         "ultraloq",
                         "ring",
                         "ical",
+                        "lodgify",
+                        "hostaway",
+                        "guesty",
+                        "acuity_scheduling",
+                        "omnitec",
                         "yale_access",
                         "hid_cm",
                         "google_nest"
@@ -44116,6 +45346,15 @@
           },
           {
             "in": "query",
+            "name": "space_id",
+            "schema": {
+              "description": "ID of the space by which you want to filter connected accounts.",
+              "format": "uuid",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "search",
             "schema": {
               "description": "String for which to search. Filters returned connected accounts to include all records that satisfy a partial match using `connected_account_id`, `account_type`, `customer_key`, `custom_metadata`, `user_identifier.username`, `user_identifier.email` or `user_identifier.phone`.",
@@ -44248,6 +45487,11 @@
                   "search": {
                     "description": "String for which to search. Filters returned connected accounts to include all records that satisfy a partial match using `connected_account_id`, `account_type`, `customer_key`, `custom_metadata`, `user_identifier.username`, `user_identifier.email` or `user_identifier.phone`.",
                     "minLength": 1,
+                    "type": "string"
+                  },
+                  "space_id": {
+                    "description": "ID of the space by which you want to filter connected accounts.",
+                    "format": "uuid",
                     "type": "string"
                   },
                   "user_identifier_key": {
@@ -44584,6 +45828,12 @@
                     "description": "The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer.",
                     "minLength": 1,
                     "type": "string"
+                  },
+                  "display_name": {
+                    "description": "Human-readable name for the connected account, shown in the dashboard. For example, `Booking from Airbnb House 1`.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -44696,6 +45946,12 @@
                   },
                   "customer_key": {
                     "description": "The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer.",
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "display_name": {
+                    "description": "Human-readable name for the connected account, shown in the dashboard. For example, `Booking from Airbnb House 1`.",
+                    "maxLength": 255,
                     "minLength": 1,
                     "type": "string"
                   }
@@ -45848,6 +47104,12 @@
                             "description": "List of general spaces or areas.",
                             "items": {
                               "properties": {
+                                "duration_minutes": {
+                                  "description": "Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.",
+                                  "exclusiveMinimum": true,
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
                                 "name": {
                                   "description": "Your display name for this location resource.",
                                   "type": "string"
@@ -47241,6 +48503,12 @@
                     "description": "List of general spaces or areas.",
                     "items": {
                       "properties": {
+                        "duration_minutes": {
+                          "description": "Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.",
+                          "exclusiveMinimum": true,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
                         "name": {
                           "description": "Your display name for this location resource.",
                           "type": "string"
@@ -47811,7 +49079,8 @@
                     "tedee_lock",
                     "akiles_lock",
                     "ultraloq_lock",
-                    "korelock_lock"
+                    "keyincode_lock",
+                    "omnitec_lock"
                   ],
                   "type": "string"
                 },
@@ -47896,7 +49165,8 @@
                       "tedee_lock",
                       "akiles_lock",
                       "ultraloq_lock",
-                      "korelock_lock"
+                      "keyincode_lock",
+                      "omnitec_lock"
                     ],
                     "type": "string"
                   },
@@ -47981,7 +49251,7 @@
                 "controlbyweb",
                 "dormakaba_oracode",
                 "tedee",
-                "korelock",
+                "keyincode",
                 "akiles",
                 "ecobee",
                 "honeywell_resideo",
@@ -47995,7 +49265,12 @@
                 "tado",
                 "ultraloq",
                 "ring",
-                "ical"
+                "ical",
+                "lodgify",
+                "hostaway",
+                "guesty",
+                "acuity_scheduling",
+                "omnitec"
               ],
               "type": "string"
             }
@@ -48317,7 +49592,8 @@
                           "tedee_lock",
                           "akiles_lock",
                           "ultraloq_lock",
-                          "korelock_lock"
+                          "keyincode_lock",
+                          "omnitec_lock"
                         ],
                         "type": "string"
                       },
@@ -48398,7 +49674,8 @@
                             "tedee_lock",
                             "akiles_lock",
                             "ultraloq_lock",
-                            "korelock_lock"
+                            "keyincode_lock",
+                            "omnitec_lock"
                           ],
                           "type": "string"
                         },
@@ -48543,7 +49820,7 @@
                       "controlbyweb",
                       "dormakaba_oracode",
                       "tedee",
-                      "korelock",
+                      "keyincode",
                       "akiles",
                       "ecobee",
                       "honeywell_resideo",
@@ -48557,7 +49834,12 @@
                       "tado",
                       "ultraloq",
                       "ring",
-                      "ical"
+                      "ical",
+                      "lodgify",
+                      "hostaway",
+                      "guesty",
+                      "acuity_scheduling",
+                      "omnitec"
                     ],
                     "type": "string"
                   },
@@ -48908,6 +50190,450 @@
                           "description": "ID of the device to update",
                           "format": "uuid",
                           "type": "string"
+                        },
+                        "omnitec_metadata": {
+                          "description": "Omnitec-specific metadata to update",
+                          "properties": {
+                            "time_zone": {
+                              "description": "IANA timezone for the Omnitec device",
+                              "enum": [
+                                "Africa/Abidjan",
+                                "Africa/Accra",
+                                "Africa/Addis_Ababa",
+                                "Africa/Algiers",
+                                "Africa/Asmera",
+                                "Africa/Bamako",
+                                "Africa/Bangui",
+                                "Africa/Banjul",
+                                "Africa/Bissau",
+                                "Africa/Blantyre",
+                                "Africa/Brazzaville",
+                                "Africa/Bujumbura",
+                                "Africa/Cairo",
+                                "Africa/Casablanca",
+                                "Africa/Ceuta",
+                                "Africa/Conakry",
+                                "Africa/Dakar",
+                                "Africa/Dar_es_Salaam",
+                                "Africa/Djibouti",
+                                "Africa/Douala",
+                                "Africa/El_Aaiun",
+                                "Africa/Freetown",
+                                "Africa/Gaborone",
+                                "Africa/Harare",
+                                "Africa/Johannesburg",
+                                "Africa/Juba",
+                                "Africa/Kampala",
+                                "Africa/Khartoum",
+                                "Africa/Kigali",
+                                "Africa/Kinshasa",
+                                "Africa/Lagos",
+                                "Africa/Libreville",
+                                "Africa/Lome",
+                                "Africa/Luanda",
+                                "Africa/Lubumbashi",
+                                "Africa/Lusaka",
+                                "Africa/Malabo",
+                                "Africa/Maputo",
+                                "Africa/Maseru",
+                                "Africa/Mbabane",
+                                "Africa/Mogadishu",
+                                "Africa/Monrovia",
+                                "Africa/Nairobi",
+                                "Africa/Ndjamena",
+                                "Africa/Niamey",
+                                "Africa/Nouakchott",
+                                "Africa/Ouagadougou",
+                                "Africa/Porto-Novo",
+                                "Africa/Sao_Tome",
+                                "Africa/Tripoli",
+                                "Africa/Tunis",
+                                "Africa/Windhoek",
+                                "America/Adak",
+                                "America/Anchorage",
+                                "America/Anguilla",
+                                "America/Antigua",
+                                "America/Araguaina",
+                                "America/Argentina/La_Rioja",
+                                "America/Argentina/Rio_Gallegos",
+                                "America/Argentina/Salta",
+                                "America/Argentina/San_Juan",
+                                "America/Argentina/San_Luis",
+                                "America/Argentina/Tucuman",
+                                "America/Argentina/Ushuaia",
+                                "America/Aruba",
+                                "America/Asuncion",
+                                "America/Bahia",
+                                "America/Bahia_Banderas",
+                                "America/Barbados",
+                                "America/Belem",
+                                "America/Belize",
+                                "America/Blanc-Sablon",
+                                "America/Boa_Vista",
+                                "America/Bogota",
+                                "America/Boise",
+                                "America/Buenos_Aires",
+                                "America/Cambridge_Bay",
+                                "America/Campo_Grande",
+                                "America/Cancun",
+                                "America/Caracas",
+                                "America/Catamarca",
+                                "America/Cayenne",
+                                "America/Cayman",
+                                "America/Chicago",
+                                "America/Chihuahua",
+                                "America/Ciudad_Juarez",
+                                "America/Coral_Harbour",
+                                "America/Cordoba",
+                                "America/Costa_Rica",
+                                "America/Creston",
+                                "America/Cuiaba",
+                                "America/Curacao",
+                                "America/Danmarkshavn",
+                                "America/Dawson",
+                                "America/Dawson_Creek",
+                                "America/Denver",
+                                "America/Detroit",
+                                "America/Dominica",
+                                "America/Edmonton",
+                                "America/Eirunepe",
+                                "America/El_Salvador",
+                                "America/Fort_Nelson",
+                                "America/Fortaleza",
+                                "America/Glace_Bay",
+                                "America/Godthab",
+                                "America/Goose_Bay",
+                                "America/Grand_Turk",
+                                "America/Grenada",
+                                "America/Guadeloupe",
+                                "America/Guatemala",
+                                "America/Guayaquil",
+                                "America/Guyana",
+                                "America/Halifax",
+                                "America/Havana",
+                                "America/Hermosillo",
+                                "America/Indiana/Knox",
+                                "America/Indiana/Marengo",
+                                "America/Indiana/Petersburg",
+                                "America/Indiana/Tell_City",
+                                "America/Indiana/Vevay",
+                                "America/Indiana/Vincennes",
+                                "America/Indiana/Winamac",
+                                "America/Indianapolis",
+                                "America/Inuvik",
+                                "America/Iqaluit",
+                                "America/Jamaica",
+                                "America/Jujuy",
+                                "America/Juneau",
+                                "America/Kentucky/Monticello",
+                                "America/Kralendijk",
+                                "America/La_Paz",
+                                "America/Lima",
+                                "America/Los_Angeles",
+                                "America/Louisville",
+                                "America/Lower_Princes",
+                                "America/Maceio",
+                                "America/Managua",
+                                "America/Manaus",
+                                "America/Marigot",
+                                "America/Martinique",
+                                "America/Matamoros",
+                                "America/Mazatlan",
+                                "America/Mendoza",
+                                "America/Menominee",
+                                "America/Merida",
+                                "America/Metlakatla",
+                                "America/Mexico_City",
+                                "America/Miquelon",
+                                "America/Moncton",
+                                "America/Monterrey",
+                                "America/Montevideo",
+                                "America/Montreal",
+                                "America/Montserrat",
+                                "America/Nassau",
+                                "America/New_York",
+                                "America/Nipigon",
+                                "America/Nome",
+                                "America/Noronha",
+                                "America/North_Dakota/Beulah",
+                                "America/North_Dakota/Center",
+                                "America/North_Dakota/New_Salem",
+                                "America/Ojinaga",
+                                "America/Panama",
+                                "America/Pangnirtung",
+                                "America/Paramaribo",
+                                "America/Phoenix",
+                                "America/Port-au-Prince",
+                                "America/Port_of_Spain",
+                                "America/Porto_Velho",
+                                "America/Puerto_Rico",
+                                "America/Punta_Arenas",
+                                "America/Rainy_River",
+                                "America/Rankin_Inlet",
+                                "America/Recife",
+                                "America/Regina",
+                                "America/Resolute",
+                                "America/Rio_Branco",
+                                "America/Santa_Isabel",
+                                "America/Santarem",
+                                "America/Santiago",
+                                "America/Santo_Domingo",
+                                "America/Sao_Paulo",
+                                "America/Scoresbysund",
+                                "America/Sitka",
+                                "America/St_Barthelemy",
+                                "America/St_Johns",
+                                "America/St_Kitts",
+                                "America/St_Lucia",
+                                "America/St_Thomas",
+                                "America/St_Vincent",
+                                "America/Swift_Current",
+                                "America/Tegucigalpa",
+                                "America/Thule",
+                                "America/Thunder_Bay",
+                                "America/Tijuana",
+                                "America/Toronto",
+                                "America/Tortola",
+                                "America/Vancouver",
+                                "America/Whitehorse",
+                                "America/Winnipeg",
+                                "America/Yakutat",
+                                "America/Yellowknife",
+                                "Antarctica/Casey",
+                                "Antarctica/Davis",
+                                "Antarctica/DumontDUrville",
+                                "Antarctica/Macquarie",
+                                "Antarctica/Mawson",
+                                "Antarctica/McMurdo",
+                                "Antarctica/Palmer",
+                                "Antarctica/Rothera",
+                                "Antarctica/Syowa",
+                                "Antarctica/Troll",
+                                "Antarctica/Vostok",
+                                "Arctic/Longyearbyen",
+                                "Asia/Aden",
+                                "Asia/Almaty",
+                                "Asia/Amman",
+                                "Asia/Anadyr",
+                                "Asia/Aqtau",
+                                "Asia/Aqtobe",
+                                "Asia/Ashgabat",
+                                "Asia/Atyrau",
+                                "Asia/Baghdad",
+                                "Asia/Bahrain",
+                                "Asia/Baku",
+                                "Asia/Bangkok",
+                                "Asia/Barnaul",
+                                "Asia/Beirut",
+                                "Asia/Bishkek",
+                                "Asia/Brunei",
+                                "Asia/Calcutta",
+                                "Asia/Chita",
+                                "Asia/Choibalsan",
+                                "Asia/Colombo",
+                                "Asia/Damascus",
+                                "Asia/Dhaka",
+                                "Asia/Dili",
+                                "Asia/Dubai",
+                                "Asia/Dushanbe",
+                                "Asia/Famagusta",
+                                "Asia/Gaza",
+                                "Asia/Hebron",
+                                "Asia/Hong_Kong",
+                                "Asia/Hovd",
+                                "Asia/Irkutsk",
+                                "Asia/Jakarta",
+                                "Asia/Jayapura",
+                                "Asia/Jerusalem",
+                                "Asia/Kabul",
+                                "Asia/Kamchatka",
+                                "Asia/Karachi",
+                                "Asia/Katmandu",
+                                "Asia/Khandyga",
+                                "Asia/Krasnoyarsk",
+                                "Asia/Kuala_Lumpur",
+                                "Asia/Kuching",
+                                "Asia/Kuwait",
+                                "Asia/Macau",
+                                "Asia/Magadan",
+                                "Asia/Makassar",
+                                "Asia/Manila",
+                                "Asia/Muscat",
+                                "Asia/Nicosia",
+                                "Asia/Novokuznetsk",
+                                "Asia/Novosibirsk",
+                                "Asia/Omsk",
+                                "Asia/Oral",
+                                "Asia/Phnom_Penh",
+                                "Asia/Pontianak",
+                                "Asia/Pyongyang",
+                                "Asia/Qatar",
+                                "Asia/Qostanay",
+                                "Asia/Qyzylorda",
+                                "Asia/Rangoon",
+                                "Asia/Riyadh",
+                                "Asia/Saigon",
+                                "Asia/Sakhalin",
+                                "Asia/Samarkand",
+                                "Asia/Seoul",
+                                "Asia/Shanghai",
+                                "Asia/Singapore",
+                                "Asia/Srednekolymsk",
+                                "Asia/Taipei",
+                                "Asia/Tashkent",
+                                "Asia/Tbilisi",
+                                "Asia/Tehran",
+                                "Asia/Thimphu",
+                                "Asia/Tokyo",
+                                "Asia/Tomsk",
+                                "Asia/Ulaanbaatar",
+                                "Asia/Urumqi",
+                                "Asia/Ust-Nera",
+                                "Asia/Vientiane",
+                                "Asia/Vladivostok",
+                                "Asia/Yakutsk",
+                                "Asia/Yekaterinburg",
+                                "Asia/Yerevan",
+                                "Atlantic/Azores",
+                                "Atlantic/Bermuda",
+                                "Atlantic/Canary",
+                                "Atlantic/Cape_Verde",
+                                "Atlantic/Faeroe",
+                                "Atlantic/Madeira",
+                                "Atlantic/Reykjavik",
+                                "Atlantic/South_Georgia",
+                                "Atlantic/St_Helena",
+                                "Atlantic/Stanley",
+                                "Australia/Adelaide",
+                                "Australia/Brisbane",
+                                "Australia/Broken_Hill",
+                                "Australia/Currie",
+                                "Australia/Darwin",
+                                "Australia/Eucla",
+                                "Australia/Hobart",
+                                "Australia/Lindeman",
+                                "Australia/Lord_Howe",
+                                "Australia/Melbourne",
+                                "Australia/Perth",
+                                "Australia/Sydney",
+                                "Europe/Amsterdam",
+                                "Europe/Andorra",
+                                "Europe/Astrakhan",
+                                "Europe/Athens",
+                                "Europe/Belgrade",
+                                "Europe/Berlin",
+                                "Europe/Bratislava",
+                                "Europe/Brussels",
+                                "Europe/Bucharest",
+                                "Europe/Budapest",
+                                "Europe/Busingen",
+                                "Europe/Chisinau",
+                                "Europe/Copenhagen",
+                                "Europe/Dublin",
+                                "Europe/Gibraltar",
+                                "Europe/Guernsey",
+                                "Europe/Helsinki",
+                                "Europe/Isle_of_Man",
+                                "Europe/Istanbul",
+                                "Europe/Jersey",
+                                "Europe/Kaliningrad",
+                                "Europe/Kiev",
+                                "Europe/Kirov",
+                                "Europe/Lisbon",
+                                "Europe/Ljubljana",
+                                "Europe/London",
+                                "Europe/Luxembourg",
+                                "Europe/Madrid",
+                                "Europe/Malta",
+                                "Europe/Mariehamn",
+                                "Europe/Minsk",
+                                "Europe/Monaco",
+                                "Europe/Moscow",
+                                "Europe/Oslo",
+                                "Europe/Paris",
+                                "Europe/Podgorica",
+                                "Europe/Prague",
+                                "Europe/Riga",
+                                "Europe/Rome",
+                                "Europe/Samara",
+                                "Europe/San_Marino",
+                                "Europe/Sarajevo",
+                                "Europe/Saratov",
+                                "Europe/Simferopol",
+                                "Europe/Skopje",
+                                "Europe/Sofia",
+                                "Europe/Stockholm",
+                                "Europe/Tallinn",
+                                "Europe/Tirane",
+                                "Europe/Ulyanovsk",
+                                "Europe/Uzhgorod",
+                                "Europe/Vaduz",
+                                "Europe/Vatican",
+                                "Europe/Vienna",
+                                "Europe/Vilnius",
+                                "Europe/Volgograd",
+                                "Europe/Warsaw",
+                                "Europe/Zagreb",
+                                "Europe/Zaporozhye",
+                                "Europe/Zurich",
+                                "Indian/Antananarivo",
+                                "Indian/Chagos",
+                                "Indian/Christmas",
+                                "Indian/Cocos",
+                                "Indian/Comoro",
+                                "Indian/Kerguelen",
+                                "Indian/Mahe",
+                                "Indian/Maldives",
+                                "Indian/Mauritius",
+                                "Indian/Mayotte",
+                                "Indian/Reunion",
+                                "Pacific/Apia",
+                                "Pacific/Auckland",
+                                "Pacific/Bougainville",
+                                "Pacific/Chatham",
+                                "Pacific/Easter",
+                                "Pacific/Efate",
+                                "Pacific/Enderbury",
+                                "Pacific/Fakaofo",
+                                "Pacific/Fiji",
+                                "Pacific/Funafuti",
+                                "Pacific/Galapagos",
+                                "Pacific/Gambier",
+                                "Pacific/Guadalcanal",
+                                "Pacific/Guam",
+                                "Pacific/Honolulu",
+                                "Pacific/Johnston",
+                                "Pacific/Kiritimati",
+                                "Pacific/Kosrae",
+                                "Pacific/Kwajalein",
+                                "Pacific/Majuro",
+                                "Pacific/Marquesas",
+                                "Pacific/Midway",
+                                "Pacific/Nauru",
+                                "Pacific/Niue",
+                                "Pacific/Norfolk",
+                                "Pacific/Noumea",
+                                "Pacific/Pago_Pago",
+                                "Pacific/Palau",
+                                "Pacific/Pitcairn",
+                                "Pacific/Ponape",
+                                "Pacific/Port_Moresby",
+                                "Pacific/Rarotonga",
+                                "Pacific/Saipan",
+                                "Pacific/Tahiti",
+                                "Pacific/Tarawa",
+                                "Pacific/Tongatapu",
+                                "Pacific/Truk",
+                                "Pacific/Wake",
+                                "Pacific/Wallis"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "time_zone"
+                          ],
+                          "type": "object"
                         },
                         "schlage_metadata": {
                           "description": "Schlage-specific metadata to update",
@@ -49971,7 +51697,7 @@
     },
     "/devices/simulate/connect_to_hub": {
       "post": {
-        "description": "Simulates bringing the Wi‑Fi hub (bridge) back online for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will clear the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device.",
+        "description": "Simulates bringing the Wi‑Fi hub (bridge) back online for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August and TTLock locks.\nThis will clear the `hub_disconnected` error on the device.",
         "operationId": "devicesSimulateConnectToHubPost",
         "requestBody": {
           "content": {
@@ -50183,7 +51909,7 @@
     },
     "/devices/simulate/disconnect_from_hub": {
       "post": {
-        "description": "Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August, TTLock, and IglooHome devices.\nThis will set the corresponding `hub_disconnected` or\n`ttlock_lock_not_paired_to_gateway` error on the device, or mark the\nIglooHome bridge offline in sandbox.",
+        "description": "Simulates taking the Wi‑Fi hub (bridge) offline for a device.\nOnly applicable for sandbox workspaces and currently\nimplemented for August, TTLock, and IglooHome devices.\nThis will set the `hub_disconnected` error on the device, or mark the\nIglooHome bridge offline in sandbox.",
         "operationId": "devicesSimulateDisconnectFromHubPost",
         "requestBody": {
           "content": {
@@ -50738,7 +52464,8 @@
                     "tedee_lock",
                     "akiles_lock",
                     "ultraloq_lock",
-                    "korelock_lock"
+                    "keyincode_lock",
+                    "omnitec_lock"
                   ],
                   "type": "string"
                 },
@@ -50823,7 +52550,8 @@
                       "tedee_lock",
                       "akiles_lock",
                       "ultraloq_lock",
-                      "korelock_lock"
+                      "keyincode_lock",
+                      "omnitec_lock"
                     ],
                     "type": "string"
                   },
@@ -50908,7 +52636,7 @@
                 "controlbyweb",
                 "dormakaba_oracode",
                 "tedee",
-                "korelock",
+                "keyincode",
                 "akiles",
                 "ecobee",
                 "honeywell_resideo",
@@ -50922,7 +52650,12 @@
                 "tado",
                 "ultraloq",
                 "ring",
-                "ical"
+                "ical",
+                "lodgify",
+                "hostaway",
+                "guesty",
+                "acuity_scheduling",
+                "omnitec"
               ],
               "type": "string"
             }
@@ -51242,7 +52975,8 @@
                           "tedee_lock",
                           "akiles_lock",
                           "ultraloq_lock",
-                          "korelock_lock"
+                          "keyincode_lock",
+                          "omnitec_lock"
                         ],
                         "type": "string"
                       },
@@ -51323,7 +53057,8 @@
                             "tedee_lock",
                             "akiles_lock",
                             "ultraloq_lock",
-                            "korelock_lock"
+                            "keyincode_lock",
+                            "omnitec_lock"
                           ],
                           "type": "string"
                         },
@@ -51468,7 +53203,7 @@
                       "controlbyweb",
                       "dormakaba_oracode",
                       "tedee",
-                      "korelock",
+                      "keyincode",
                       "akiles",
                       "ecobee",
                       "honeywell_resideo",
@@ -51482,7 +53217,12 @@
                       "tado",
                       "ultraloq",
                       "ring",
-                      "ical"
+                      "ical",
+                      "lodgify",
+                      "hostaway",
+                      "guesty",
+                      "acuity_scheduling",
+                      "omnitec"
                     ],
                     "type": "string"
                   },
@@ -54160,7 +55900,8 @@
                 "tedee_lock",
                 "akiles_lock",
                 "ultraloq_lock",
-                "korelock_lock"
+                "keyincode_lock",
+                "omnitec_lock"
               ],
               "type": "string"
             }
@@ -54199,7 +55940,8 @@
                   "tedee_lock",
                   "akiles_lock",
                   "ultraloq_lock",
-                  "korelock_lock"
+                  "keyincode_lock",
+                  "omnitec_lock"
                 ],
                 "type": "string"
               },
@@ -54236,11 +55978,12 @@
                 "four_suites",
                 "dormakaba_oracode",
                 "tedee",
-                "korelock",
+                "keyincode",
                 "akiles",
                 "korelock",
                 "smartthings",
-                "ultraloq"
+                "ultraloq",
+                "omnitec"
               ],
               "type": "string"
             }
@@ -54559,7 +56302,8 @@
                       "tedee_lock",
                       "akiles_lock",
                       "ultraloq_lock",
-                      "korelock_lock"
+                      "keyincode_lock",
+                      "omnitec_lock"
                     ],
                     "type": "string"
                   },
@@ -54594,7 +56338,8 @@
                         "tedee_lock",
                         "akiles_lock",
                         "ultraloq_lock",
-                        "korelock_lock"
+                        "keyincode_lock",
+                        "omnitec_lock"
                       ],
                       "type": "string"
                     },
@@ -54691,11 +56436,12 @@
                       "four_suites",
                       "dormakaba_oracode",
                       "tedee",
-                      "korelock",
+                      "keyincode",
                       "akiles",
                       "korelock",
                       "smartthings",
-                      "ultraloq"
+                      "ultraloq",
+                      "omnitec"
                     ],
                     "type": "string"
                   },
@@ -58311,6 +60057,161 @@
         "x-title": "Add Entrances to a Space"
       }
     },
+    "/spaces/add_connected_account": {
+      "post": {
+        "description": "Adds a [connected account](/core-concepts/connected-accounts) to a specific space.",
+        "operationId": "spacesAddConnectedAccountPost",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "connected_account_id": {
+                    "description": "ID of the connected account that you want to add to the space.",
+                    "format": "uuid",
+                    "type": "string"
+                  },
+                  "space_id": {
+                    "description": "ID of the space to which you want to add the connected account.",
+                    "format": "uuid",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "space_id",
+                  "connected_account_id"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "pat_with_workspace": []
+          },
+          {
+            "console_session_with_workspace": []
+          },
+          {
+            "api_key": []
+          },
+          {
+            "client_session_with_customer": []
+          }
+        ],
+        "summary": "Add a Connected Account to a Space",
+        "tags": [],
+        "x-response-key": null,
+        "x-title": "Add a Connected Account to a Space",
+        "x-mint": {
+          "href": "/api/spaces/add_connected_account"
+        }
+      },
+      "put": {
+        "description": "Adds a [connected account](/core-concepts/connected-accounts) to a specific space.",
+        "operationId": "spacesAddConnectedAccountPut",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "connected_account_id": {
+                    "description": "ID of the connected account that you want to add to the space.",
+                    "format": "uuid",
+                    "type": "string"
+                  },
+                  "space_id": {
+                    "description": "ID of the space to which you want to add the connected account.",
+                    "format": "uuid",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "space_id",
+                  "connected_account_id"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "pat_with_workspace": []
+          },
+          {
+            "console_session_with_workspace": []
+          },
+          {
+            "api_key": []
+          },
+          {
+            "client_session_with_customer": []
+          }
+        ],
+        "summary": "/spaces/add_connected_account",
+        "tags": [],
+        "x-fern-sdk-group-name": [
+          "spaces"
+        ],
+        "x-fern-sdk-method-name": "add_connected_account",
+        "x-response-key": null,
+        "x-title": "Add a Connected Account to a Space"
+      }
+    },
     "/spaces/add_devices": {
       "post": {
         "description": "Adds devices to a specific space.",
@@ -58522,6 +60423,37 @@
                       "type": "string"
                     },
                     "type": "array"
+                  },
+                  "connected_account_ids": {
+                    "description": "IDs of connected accounts to associate with the new space. Persisted on seam.location_third_party_account so the UI can show which provider account(s) a space came from.",
+                    "items": {
+                      "format": "uuid",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "customer_data": {
+                    "description": "Reservation/stay-related defaults for the space.",
+                    "properties": {
+                      "default_checkin_time": {
+                        "description": "Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.",
+                        "nullable": true,
+                        "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                        "type": "string"
+                      },
+                      "default_checkout_time": {
+                        "description": "Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.",
+                        "nullable": true,
+                        "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                        "type": "string"
+                      },
+                      "time_zone": {
+                        "description": "IANA time zone for the space, e.g. America/Los_Angeles.",
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
                   },
                   "customer_key": {
                     "description": "Customer key for which you want to create the space.",
@@ -59760,6 +61692,158 @@
         ]
       }
     },
+    "/spaces/remove_connected_account": {
+      "delete": {
+        "description": "Removes a [connected account](/core-concepts/connected-accounts) from a specific space.",
+        "operationId": "spacesRemoveConnectedAccountDelete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "space_id",
+            "required": true,
+            "schema": {
+              "description": "ID of the space from which you want to remove the connected account.",
+              "format": "uuid",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "connected_account_id",
+            "required": true,
+            "schema": {
+              "description": "ID of the connected account that you want to remove from the space.",
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "pat_with_workspace": []
+          },
+          {
+            "console_session_with_workspace": []
+          },
+          {
+            "api_key": []
+          },
+          {
+            "client_session_with_customer": []
+          }
+        ],
+        "summary": "/spaces/remove_connected_account",
+        "tags": [],
+        "x-fern-sdk-group-name": [
+          "spaces"
+        ],
+        "x-fern-sdk-method-name": "remove_connected_account",
+        "x-response-key": null,
+        "x-title": "Remove a Connected Account from a Space"
+      },
+      "post": {
+        "description": "Removes a [connected account](/core-concepts/connected-accounts) from a specific space.",
+        "operationId": "spacesRemoveConnectedAccountPost",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "connected_account_id": {
+                    "description": "ID of the connected account that you want to remove from the space.",
+                    "format": "uuid",
+                    "type": "string"
+                  },
+                  "space_id": {
+                    "description": "ID of the space from which you want to remove the connected account.",
+                    "format": "uuid",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "space_id",
+                  "connected_account_id"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "pat_with_workspace": []
+          },
+          {
+            "console_session_with_workspace": []
+          },
+          {
+            "api_key": []
+          },
+          {
+            "client_session_with_customer": []
+          }
+        ],
+        "summary": "Remove a Connected Account from a Space",
+        "tags": [],
+        "x-response-key": null,
+        "x-title": "Remove a Connected Account from a Space",
+        "x-mint": {
+          "href": "/api/spaces/remove_connected_account"
+        }
+      }
+    },
     "/spaces/remove_devices": {
       "delete": {
         "description": "Removes devices from a specific space.",
@@ -59967,6 +62051,29 @@
                     },
                     "type": "array"
                   },
+                  "customer_data": {
+                    "description": "Reservation/stay-related defaults for the space. Only the keys you provide are updated; omit a key to leave it unchanged. Pass null on a key to clear it.",
+                    "properties": {
+                      "default_checkin_time": {
+                        "description": "Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.",
+                        "nullable": true,
+                        "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                        "type": "string"
+                      },
+                      "default_checkout_time": {
+                        "description": "Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.",
+                        "nullable": true,
+                        "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                        "type": "string"
+                      },
+                      "time_zone": {
+                        "description": "IANA time zone for the space, e.g. America/Los_Angeles.",
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
                   "customer_key": {
                     "description": "Customer key for which you want to update the space.",
                     "minLength": 1,
@@ -60068,6 +62175,29 @@
                       "type": "string"
                     },
                     "type": "array"
+                  },
+                  "customer_data": {
+                    "description": "Reservation/stay-related defaults for the space. Only the keys you provide are updated; omit a key to leave it unchanged. Pass null on a key to clear it.",
+                    "properties": {
+                      "default_checkin_time": {
+                        "description": "Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.",
+                        "nullable": true,
+                        "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                        "type": "string"
+                      },
+                      "default_checkout_time": {
+                        "description": "Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.",
+                        "nullable": true,
+                        "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$",
+                        "type": "string"
+                      },
+                      "time_zone": {
+                        "description": "IANA time zone for the space, e.g. America/Los_Angeles.",
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
                   },
                   "customer_key": {
                     "description": "Customer key for which you want to update the space.",

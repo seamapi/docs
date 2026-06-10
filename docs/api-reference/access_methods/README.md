@@ -126,6 +126,15 @@ URL of the Instant Key for mobile key access methods.
 
 ---
 
+**`is_assignment_required`** *Boolean*
+
+Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment.
+
+
+
+
+---
+
 **`is_encoding_required`** *Boolean*
 
 Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method.
@@ -138,6 +147,15 @@ Indicates whether encoding with an card encoder is required to issue or reissue 
 **`is_issued`** *Boolean*
 
 Indicates whether the access method has been issued.
+
+
+
+
+---
+
+**`is_ready_for_assignment`** *Boolean*
+
+Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment.
 
 
 
@@ -807,6 +825,11 @@ An access method was created.
 ## Endpoints
 
 
+[**`/access_methods/assign_card`**](./assign_card.md)
+
+Assigns an existing card credential to a card-mode access method, identified by `card_number`.
+
+
 [**`/access_methods/delete`**](./delete.md)
 
 Deletes an access method.
@@ -830,5 +853,10 @@ Gets all related resources for one or more Access Methods.
 [**`/access_methods/list`**](./list.md)
 
 Lists all access methods, usually filtered by Access Grant.
+
+
+[**`/access_methods/unlock_door`**](./unlock_door.md)
+
+Remotely unlocks a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) using the cloud key credential associated with an access method. Returns an action attempt that tracks the progress of the unlock operation.
 
 

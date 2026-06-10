@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Creates a new Access Grant.
+Creates a new [Access Grant](https://docs.seam.co/latest/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.
 
 
 {% tabs %}

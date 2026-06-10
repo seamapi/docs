@@ -71,3 +71,6 @@ redirects:
   capability-guides/smart-locks/access-codes/creating-access-codes: low-level-apis/smart-locks/access-codes/creating-access-codes/README.md
   capability-guides/smart-locks/access-codes/offline-access-codes: low-level-apis/smart-locks/access-codes/offline-access-codes.md
   capability-guides/smart-locks/get-started-with-smartlocks-api: low-level-apis/smart-locks/get-started-with-smartlocks-api.md
+  low-level-apis/access-codes: low-level-apis/smart-locks/access-codes/README.md
+  low-level-apis/managing-credentials: low-level-apis/access-systems/managing-credentials.md
+  use-cases/granting-access/access-grants: use-cases/granting-access/README.md

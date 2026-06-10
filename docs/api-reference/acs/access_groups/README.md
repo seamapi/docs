@@ -61,6 +61,7 @@ An access group resource.
 - <code>salto_space_group</code>
 - <code>dormakaba_community_access_group</code>
 - <code>dormakaba_ambiance_access_group</code>
+- <code>avigilon_alta_group</code>
 </details>
 
 
@@ -202,6 +203,7 @@ Brand-specific terminology for the access group type.
 - <code>salto_space_group</code>
 - <code>dormakaba_community_access_group</code>
 - <code>dormakaba_ambiance_access_group</code>
+- <code>avigilon_alta_group</code>
 </details>
 
 

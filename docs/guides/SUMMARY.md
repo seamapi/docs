@@ -12,6 +12,7 @@
   * [Creating an Access Grant Using Spaces](use-cases/granting-access/creating-an-access-grant-using-spaces.md)
   * [Creating an Access Grant Using Entrances](use-cases/granting-access/creating-an-access-grant-using-entrances.md)
   * [Delivering Access Methods](use-cases/granting-access/delivering-access-methods.md)
+  * [Using Cloud Keys](use-cases/granting-access/using-cloud-keys.md)
   * [Reservation Access Grants](use-cases/granting-access/reservation-access-grants.md)
   * [Retrieving Access Grants and Access Methods](use-cases/granting-access/retrieving-access-grants-and-access-methods.md)
   * [Updating an Access Grant](use-cases/granting-access/updating-an-access-grant.md)

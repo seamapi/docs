@@ -174,6 +174,14 @@ Variants:
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
   
   
+  ---
+
+  **`missing_device_ids`** *List* *of UUIDs*
+  
+  
+  IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.
+  
+  
 </details>
 
 ---
@@ -703,6 +711,60 @@ Indicates that a device in the access grant does not support access codes and wa
   
   
 </details>
+<details>
+<summary><code>device_time_constraints_violated</code></summary>
+
+Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`device_id`** *UUID*
+  
+  
+  ID of the device whose time constraints the access grant violates.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`reason`** *Enum*
+  
+  
+  Specific reason why the grant's times are not programmable on the device.
+  
+  Enum values:
+  
+  - <code>duration_exceeds_max</code>
+  - <code>times_do_not_match_slots</code>
+  - <code>ongoing_not_supported</code>
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>device_time_constraints_violated</code>
+  
+  
+</details>
 
 ---
 
@@ -736,6 +798,12 @@ Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/
 **`device_does_not_support_access_codes`**
 
 Indicates that a device in the access grant does not support access codes and was excluded from code materialization.
+
+---
+
+**`device_time_constraints_violated`**
+
+Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.
 
 ---
 
@@ -1024,6 +1092,10 @@ One or more requested access methods could not be created for an Access Grant.
 
   Value: `access_grant.could_not_create_requested_access_methods`
 
+<strong><code>missing_device_ids</code></strong> <i>List</i> <i>of UUIDs</i>
+
+  IDs of the devices that did not receive a requested access method. Use these to identify which specific devices failed without having to fetch the Access Grant.
+
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
@@ -1040,7 +1112,7 @@ One or more requested access methods could not be created for an Access Grant.
 
 [**`/access_grants/create`**](./create.md)
 
-Creates a new Access Grant.
+Creates a new [Access Grant](https://docs.seam.co/latest/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.
 
 
 [**`/access_grants/delete`**](./delete.md)

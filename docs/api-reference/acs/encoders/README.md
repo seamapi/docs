@@ -239,3 +239,8 @@ Returns a list of all [encoders](https://docs.seam.co/latest/capability-guides/a
 Scans an encoded [acs_credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 
 
+[**`/acs/encoders/scan_to_assign_credential`**](./scan_to_assign_credential.md)
+
+Scans a physical card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) and assigns the scanned credential to an ACS user. Provide either an `acs_user_id` or a `user_identity_id`.
+
+

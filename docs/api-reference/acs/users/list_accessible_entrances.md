@@ -314,7 +314,8 @@ Returns:
         "visionline_door_profile_type": "BLE"
       }
     ]
-  }
+  },
+  "warnings": []
 }
 ```
 {% endtab %}

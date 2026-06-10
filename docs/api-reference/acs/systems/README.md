@@ -356,6 +356,38 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
   
   
 </details>
+<details>
+<summary><code>provider_service_unavailable</code></summary>
+
+Indicates that the access control system provider's service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>provider_service_unavailable</code>
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
 
 ---
 
@@ -368,7 +400,7 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 <summary>Enum values</summary>
 
 - <code>pti_site</code>
-- <code>alta_org</code>
+- <code>avigilon_alta_org</code>
 - <code>salto_ks_site</code>
 - <code>salto_space_system</code>
 - <code>brivo_account</code>
@@ -459,7 +491,7 @@ Name of the [access control system](https://docs.seam.co/latest/capability-guide
 <summary>Enum values</summary>
 
 - <code>pti_site</code>
-- <code>alta_org</code>
+- <code>avigilon_alta_org</code>
 - <code>salto_ks_site</code>
 - <code>salto_space_system</code>
 - <code>brivo_account</code>
@@ -628,6 +660,12 @@ Indicates that the [access control system](https://docs.seam.co/latest/capabilit
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
     See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+**`provider_service_unavailable`**
+
+Indicates that the access control system provider's service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.
 
 ---
 

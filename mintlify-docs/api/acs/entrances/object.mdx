@@ -5,20 +5,13 @@ description: 'Learn how the acs_entrance object represents a secured door, gate,
 
 ## The acs_entrance Object
 
-- [Properties](#properties)
-- [Events](#events)
-- [Endpoints](#endpoints)
-
-Represents an [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/low-level-apis/access-systems).
+Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
-<Tabs>
-<Tab title="ACS Entrance">
+<ResponseExample>
 
-An access system entrance resource.
-
-```json
+```json ACS Entrance
 {
   "acs_entrance_id": "f74e4879-5991-4e2f-a368-888983dcfbfc",
   "acs_system_id": "6a74a969-94ea-4383-b5cf-5e7da8c113d1",
@@ -36,640 +29,252 @@ An access system entrance resource.
         "visionline_door_profile_type": "BLE"
       }
     ]
-  }
+  },
+  "warnings": []
 }
 ```
 
-</Tab>
-</Tabs>
+</ResponseExample>
 
 ---
 
 ## Properties
 
-**`acs_entrance_id`** _UUID_
-
-ID of the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
----
-
-**`acs_system_id`** _UUID_
-
-ID of the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems) that contains the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
----
-
-**`assa_abloy_vostio_metadata`** _Object_
-
-ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>door_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the door in the Vostio access system.
-
-- <strong>
-    <code>door_number</code>
-  </strong>
-  <i>Number</i>
-
-  Number of the door in the Vostio access system.
-
-- <strong>
-    <code>door_type</code>
-  </strong>
-  <i>Enum</i>
-
-  Type of the door in the Vostio access system.
-
-      <details>
-
-  <summary>Enum values:</summary>
-
-          - <code>CommonDoor</code>
-          - <code>EntranceDoor</code>
-          - <code>GuestDoor</code>
-          - <code>Elevator</code>
-
-      </details>
-
-- <strong>
-    <code>pms_id</code>
-  </strong>
-  <i>String</i>
-
-  PMS ID of the door in the Vostio access system.
-
-- <strong>
-    <code>stand_open</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.
-
-</details>
-
----
-
-**`brivo_metadata`** _Object_
-
-Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>access_point_id</code>
-  </strong>
-  <i>String</i>
-
-  ID of the access point in the Brivo access system.
-
-- <strong>
-    <code>site_id</code>
-  </strong>
-  <i>Number</i>
-
-  ID of the site that the access point belongs to.
-
-- <strong>
-    <code>site_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the site that the access point belongs to.
-
-</details>
-
----
-
-**`can_belong_to_reservation`** _Boolean_
-
-Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.
-
----
-
-**`can_unlock_with_card`** _Boolean_
-
-Indicates whether the ACS entrance can be unlocked with card credentials.
-
----
-
-**`can_unlock_with_cloud_key`** _Boolean_
-
-Indicates whether the ACS entrance can be unlocked with cloud key credentials.
-
----
-
-**`can_unlock_with_code`** _Boolean_
-
-Indicates whether the ACS entrance can be unlocked with pin codes.
-
----
-
-**`can_unlock_with_mobile_key`** _Boolean_
-
-Indicates whether the ACS entrance can be unlocked with mobile key credentials.
-
----
-
-**`connected_account_id`** _UUID_
-
-ID of the [connected account](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
----
-
-**`created_at`** _Datetime_
-
-Date and time at which the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) was created.
-
----
-
-**`display_name`** _String_
-
-Display name for the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
----
-
-**`dormakaba_ambiance_metadata`** _Object_
-
-dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>access_point_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the access point in the dormakaba Ambiance access system.
-
-</details>
-
----
-
-**`dormakaba_community_metadata`** _Object_
-
-dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>access_point_profile</code>
-  </strong>
-  <i>String</i>
-
-  Type of access point profile in the dormakaba Community access system.
-
-</details>
-
----
-
-**`errors`** _List_ _of Objects_
-
-Errors associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Object Properties</summary>
-<strong><code>error_code</code></strong> <i>String</i>
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-<strong>
-  <code>message</code>
-</strong>
-<i>String</i>
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-
----
-
-**`hotek_metadata`** _Object_
-
-Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>common_area_name</code>
-  </strong>
-  <i>String</i>
-
-  Display name of the entrance.
-
-- <strong>
-    <code>common_area_number</code>
-  </strong>
-  <i>String</i>
-
-  Display name of the entrance.
-
-- <strong>
-    <code>room_number</code>
-  </strong>
-  <i>String</i>
-
-  Room number of the entrance.
-
-</details>
-
----
-
-**`latch_metadata`** _Object_
-
-Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>accessibility_type</code>
-  </strong>
-  <i>String</i>
-
-  Accessibility type in the Latch access system.
-
-- <strong>
-    <code>door_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the door in the Latch access system.
-
-- <strong>
-    <code>door_type</code>
-  </strong>
-  <i>String</i>
-
-  Type of the door in the Latch access system.
-
-- <strong>
-    <code>is_connected</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether the entrance is connected.
-
-</details>
-
----
-
-**`salto_ks_metadata`** _Object_
-
-Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>battery_level</code>
-  </strong>
-  <i>String</i>
-
-  Battery level of the door access device.
-
-- <strong>
-    <code>door_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the door in the Salto KS access system.
-
-- <strong>
-    <code>intrusion_alarm</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether an intrusion alarm is active on the door.
-
-- <strong>
-    <code>left_open_alarm</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether the door is left open.
-
-- <strong>
-    <code>lock_type</code>
-  </strong>
-  <i>String</i>
-
-  Type of the lock in the Salto KS access system.
-
-- <strong>
-    <code>locked_state</code>
-  </strong>
-  <i>String</i>
-
-  Locked state of the door in the Salto KS access system.
-
-- <strong>
-    <code>online</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether the door access device is online.
-
-- <strong>
-    <code>privacy_mode</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether privacy mode is enabled for the lock.
-
-</details>
-
----
-
-**`salto_space_metadata`** _Object_
-
-Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>audit_on_keys</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.
-
-- <strong>
-    <code>door_description</code>
-  </strong>
-  <i>String</i>
-
-  Description of the door in the Salto Space access system.
-
-- <strong>
-    <code>door_id</code>
-  </strong>
-  <i>String</i>
-
-  Door ID in the Salto Space access system.
-
-- <strong>
-    <code>door_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the door in the Salto Space access system.
-
-- <strong>
-    <code>room_description</code>
-  </strong>
-  <i>String</i>
-
-  Description of the room in the Salto Space access system.
-
-- <strong>
-    <code>room_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the room in the Salto Space access system.
-
-</details>
-
----
-
-**`space_ids`** _List_ _of UUIDs_
-
-IDs of the spaces that the entrance is in.
-
----
-
-**`visionline_metadata`** _Object_
-
-Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>door_category</code>
-  </strong>
-  <i>Enum</i>
-
-  Category of the door in the Visionline access system.
-
-      <details>
-
-  <summary>Enum values:</summary>
-
-          - <code>entrance</code>
-          - <code>guest</code>
-          - <code>elevator reader</code>
-          - <code>common</code>
-          - <code>common (PMS)</code>
-
-      </details>
-
-- <strong>
-    <code>door_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of the door in the Visionline access system.
-
-- <strong>
-    <code>profiles</code>
-  </strong>
-  <i>List</i> <i>of Objects</i>
-
-  Profile for the door in the Visionline access system.
-
-- <strong>
-    <code>visionline_door_profile_id</code>
-  </strong>
-  <i>String</i>
-
-  Door profile ID in the Visionline access system.
-
-- <strong>
-    <code>visionline_door_profile_type</code>
-  </strong>
-  <i>Enum</i>
-
-  Door profile type in the Visionline access system.
-
-      <details>
-
-  <summary>Enum values:</summary>
-
-          - <code>BLE</code>
-          - <code>commonDoor</code>
-          - <code>touch</code>
-
-      </details>
-
-</details>
-
----
-
-## Events
-
-**`acs_entrance.added`**
-
-An [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) was added.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>acs_entrance_id</code>
-</strong>
-<i>UUID</i>
-
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the access system.
-
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the connected account.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `acs_entrance.added`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-**`acs_entrance.removed`**
-
-An [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) was removed.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>acs_entrance_id</code>
-</strong>
-<i>UUID</i>
-
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the access system.
-
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the connected account.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `acs_entrance.removed`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-## Endpoints
-
-[**`/acs/entrances/get`**](./get)
-
-Returns a specified [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-[**`/acs/entrances/grant_access`**](./grant_access)
-
-Grants a specified [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-[**`/acs/entrances/list`**](./list)
-
-Returns a list of all [access system entrances](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-[**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access)
-
-Returns a list of all [credentials](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
-[**`/acs/entrances/unlock`**](./unlock)
-
-Remotely unlocks a specified [entrance](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
+<ResponseField name="acs_entrance_id" type="String (UUID)">
+  ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+</ResponseField>
+
+<ResponseField name="assa_abloy_vostio_metadata" type="Object">
+  ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="door_name" type="String">
+      Name of the door in the Vostio access system.
+    </ResponseField>
+    <ResponseField name="door_number" type="number">
+      Number of the door in the Vostio access system.
+    </ResponseField>
+    <ResponseField name="door_type" type="Enum (String)">
+      Type of the door in the Vostio access system.
+    </ResponseField>
+    <ResponseField name="pms_id" type="String">
+      PMS ID of the door in the Vostio access system.
+    </ResponseField>
+    <ResponseField name="stand_open" type="Boolean">
+      Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="avigilon_alta_metadata" type="Object">
+  Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="entry_name" type="String">
+      Entry name for an Avigilon Alta system.
+    </ResponseField>
+    <ResponseField name="entry_relays_total_count" type="number">
+      Total count of entry relays for an Avigilon Alta system.
+    </ResponseField>
+    <ResponseField name="org_name" type="String">
+      Organization name for an Avigilon Alta system.
+    </ResponseField>
+    <ResponseField name="site_id" type="number">
+      Site ID for an Avigilon Alta system.
+    </ResponseField>
+    <ResponseField name="site_name" type="String">
+      Site name for an Avigilon Alta system.
+    </ResponseField>
+    <ResponseField name="zone_id" type="number">
+      Zone ID for an Avigilon Alta system.
+    </ResponseField>
+    <ResponseField name="zone_name" type="String">
+      Zone name for an Avigilon Alta system.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="brivo_metadata" type="Object">
+  Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="access_point_id" type="String">
+      ID of the access point in the Brivo access system.
+    </ResponseField>
+    <ResponseField name="site_id" type="number">
+      ID of the site that the access point belongs to.
+    </ResponseField>
+    <ResponseField name="site_name" type="String">
+      Name of the site that the access point belongs to.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="can_belong_to_reservation" type="Boolean">
+  Indicates whether the ACS entrance can belong to a reservation via an access_grant.reservation_key.
+</ResponseField>
+
+<ResponseField name="can_unlock_with_card" type="Boolean">
+  Indicates whether the ACS entrance can be unlocked with card credentials.
+</ResponseField>
+
+<ResponseField name="can_unlock_with_cloud_key" type="Boolean">
+  Indicates whether the ACS entrance can be unlocked with cloud key credentials.
+</ResponseField>
+
+<ResponseField name="can_unlock_with_code" type="Boolean">
+  Indicates whether the ACS entrance can be unlocked with pin codes.
+</ResponseField>
+
+<ResponseField name="can_unlock_with_mobile_key" type="Boolean">
+  Indicates whether the ACS entrance can be unlocked with mobile key credentials.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.
+</ResponseField>
+
+<ResponseField name="display_name" type="String">
+  Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+</ResponseField>
+
+<ResponseField name="dormakaba_ambiance_metadata" type="Object">
+  dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="access_point_name" type="String">
+      Name of the access point in the dormakaba Ambiance access system.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="dormakaba_community_metadata" type="Object">
+  dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="access_point_profile" type="String">
+      Type of access point profile in the dormakaba Community access system.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="errors" type="Array">
+  Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+</ResponseField>
+
+<ResponseField name="hotek_metadata" type="Object">
+  Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="common_area_name" type="String">
+      Display name of the entrance.
+    </ResponseField>
+    <ResponseField name="common_area_number" type="String">
+      Display name of the entrance.
+    </ResponseField>
+    <ResponseField name="room_number" type="String">
+      Room number of the entrance.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="is_locked" type="Boolean">
+  Indicates whether the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) is currently locked.
+</ResponseField>
+
+<ResponseField name="latch_metadata" type="Object">
+  Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="accessibility_type" type="String">
+      Accessibility type in the Latch access system.
+    </ResponseField>
+    <ResponseField name="door_name" type="String">
+      Name of the door in the Latch access system.
+    </ResponseField>
+    <ResponseField name="door_type" type="String">
+      Type of the door in the Latch access system.
+    </ResponseField>
+    <ResponseField name="is_connected" type="Boolean">
+      Indicates whether the entrance is connected.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="salto_ks_metadata" type="Object">
+  Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="battery_level" type="String">
+      Battery level of the door access device.
+    </ResponseField>
+    <ResponseField name="door_name" type="String">
+      Name of the door in the Salto KS access system.
+    </ResponseField>
+    <ResponseField name="intrusion_alarm" type="Boolean">
+      Indicates whether an intrusion alarm is active on the door.
+    </ResponseField>
+    <ResponseField name="left_open_alarm" type="Boolean">
+      Indicates whether the door is left open.
+    </ResponseField>
+    <ResponseField name="lock_type" type="String">
+      Type of the lock in the Salto KS access system.
+    </ResponseField>
+    <ResponseField name="locked_state" type="String">
+      Locked state of the door in the Salto KS access system.
+    </ResponseField>
+    <ResponseField name="online" type="Boolean">
+      Indicates whether the door access device is online.
+    </ResponseField>
+    <ResponseField name="privacy_mode" type="Boolean">
+      Indicates whether privacy mode is enabled for the lock.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="salto_space_metadata" type="Object">
+  Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="audit_on_keys" type="Boolean">
+      Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.
+    </ResponseField>
+    <ResponseField name="door_description" type="String">
+      Description of the door in the Salto Space access system.
+    </ResponseField>
+    <ResponseField name="door_id" type="String">
+      Door ID in the Salto Space access system.
+    </ResponseField>
+    <ResponseField name="door_name" type="String">
+      Name of the door in the Salto Space access system.
+    </ResponseField>
+    <ResponseField name="room_description" type="String">
+      Description of the room in the Salto Space access system.
+    </ResponseField>
+    <ResponseField name="room_name" type="String">
+      Name of the room in the Salto Space access system.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="space_ids" type="Array">
+  IDs of the spaces that the entrance is in.
+</ResponseField>
+
+<ResponseField name="visionline_metadata" type="Object">
+  Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  <Expandable title="properties">
+    <ResponseField name="door_category" type="Enum (String)">
+      Category of the door in the Visionline access system.
+    </ResponseField>
+    <ResponseField name="door_name" type="String">
+      Name of the door in the Visionline access system.
+    </ResponseField>
+    <ResponseField name="profiles" type="Array">
+      Profile for the door in the Visionline access system.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="warnings" type="Array">
+  Warnings associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+</ResponseField>

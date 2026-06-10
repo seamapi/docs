@@ -290,6 +290,12 @@ String for which to search. Filters returned connected accounts to include all r
 
 ---
 
+**`space_id`** *String*
+
+ID of the space by which you want to filter connected accounts.
+
+---
+
 **`user_identifier_key`** *String*
 
 Your user ID for the user by which you want to filter connected accounts.

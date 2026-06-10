@@ -58,7 +58,8 @@ function transformPages(
         // Already an OpenAPI ref (either "POST /path" or legacy "file.json POST /path")
         const openApiMatch = page.match(/(?:\.json )?POST (.+)$/)
         if (openApiMatch && !page.startsWith('api/')) {
-          const apiPath = openApiMatch[1]
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const apiPath = openApiMatch[1]!
           if (!specPaths.has(apiPath)) {
             removed.push(page)
             return null
@@ -145,6 +146,19 @@ export async function updateDocsJson(specPaths?: Set<string>): Promise<void> {
     )
   }
 
+  // Add new spec endpoints that aren't in the nav yet
+  const addedPages = addMissingEndpoints(apiTab.groups, specPaths)
+  if (addedPages.length > 0) {
+    console.log(
+      `Added ${addedPages.length} new endpoints to nav: ${addedPages.join(', ')}`,
+    )
+  }
+
+  // Move orphaned object pages into their matching subgroups
+  for (const group of apiTab.groups) {
+    nestObjectPagesInSubgroups(group.pages)
+  }
+
   // Ensure top-level openapi is set (needed for Mintlify cloud build to
   // process the spec and generate endpoint pages). The tab-level openapi
   // field alone only works in the dev server.
@@ -179,6 +193,152 @@ export async function updateDocsJson(specPaths?: Set<string>): Promise<void> {
   console.log(
     `Updated docs.json: ${openApiRefs} OpenAPI refs, ${staticRefs} static MDX refs`,
   )
+}
+
+/**
+ * Move object pages that sit at a group level into matching subgroups.
+ * e.g. "api/devices/simulate/object" floating in the Devices group
+ * gets moved to be the first item in the Simulations subgroup
+ * (whose endpoints share the /devices/simulate/ prefix).
+ */
+function nestObjectPagesInSubgroups(pages: any[]): void {
+  const objectPages: Array<{ idx: number; page: string; prefix: string }> = []
+  const subgroups: Array<{ idx: number; group: any; prefixes: Set<string> }> =
+    []
+
+  for (let i = 0; i < pages.length; i++) {
+    const page = pages[i]
+    if (typeof page === 'string' && isObjectPage(page)) {
+      // e.g. "api/devices/simulate/object" → "/devices/simulate"
+      const prefix = page.replace(/^api/, '').replace(/\/object$/, '')
+      objectPages.push({ idx: i, page, prefix })
+    } else if (typeof page === 'object' && page.group) {
+      const navPaths = collectNavPaths(page.pages)
+      const prefixes = new Set([...navPaths].map(getPathPrefix))
+      subgroups.push({ idx: i, group: page, prefixes })
+      // Recurse into nested subgroups
+      nestObjectPagesInSubgroups(page.pages)
+    }
+  }
+
+  // Match each orphaned object page to a subgroup
+  const toRemove = new Set<number>()
+  for (const obj of objectPages) {
+    for (const sub of subgroups) {
+      if (sub.prefixes.has(obj.prefix)) {
+        // Already inside this subgroup? Skip.
+        if (sub.group.pages.includes(obj.page)) break
+        // Insert as first item in the subgroup
+        sub.group.pages.unshift(obj.page)
+        toRemove.add(obj.idx)
+        break
+      }
+    }
+  }
+
+  // Remove relocated pages from the parent (in reverse to preserve indices)
+  for (const idx of [...toRemove].sort((a, b) => b - a)) {
+    pages.splice(idx, 1)
+  }
+}
+
+/**
+ * Collect all API paths already referenced in the nav tree.
+ */
+function collectNavPaths(pages: any[]): Set<string> {
+  const paths = new Set<string>()
+  for (const page of pages) {
+    if (typeof page === 'string') {
+      const match = page.match(/^POST (.+)$/)
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      if (match) paths.add(match[1]!)
+    } else if (typeof page === 'object' && page.group) {
+      for (const p of collectNavPaths(page.pages)) {
+        paths.add(p)
+      }
+    }
+  }
+  return paths
+}
+
+/**
+ * Find the best matching group for an API path and insert the endpoint.
+ * Matches by longest shared path prefix with existing endpoints in each group.
+ */
+function addMissingEndpoints(groups: any[], specPaths: Set<string>): string[] {
+  const allNavPaths = new Set<string>()
+  for (const group of groups) {
+    for (const p of collectNavPaths(group.pages)) {
+      allNavPaths.add(p)
+    }
+  }
+
+  const missing = [...specPaths].filter((p) => !allNavPaths.has(p))
+  if (missing.length === 0) return []
+
+  const added: string[] = []
+  for (const path of missing) {
+    if (insertIntoMatchingGroup(groups, path)) {
+      added.push(path)
+    }
+  }
+  return added
+}
+
+/**
+ * Get the namespace prefix for an API path (e.g. "/access_methods/unlock_door" → "/access_methods").
+ * For nested namespaces like "/acs/users/list", returns "/acs/users".
+ */
+function getPathPrefix(path: string): string {
+  const parts = path.split('/').filter(Boolean)
+  if (parts.length <= 1) return path
+  return '/' + parts.slice(0, -1).join('/')
+}
+
+/**
+ * Try to insert a path into the matching nav group. Returns true if inserted.
+ * Walks the tree recursively to find the deepest matching subgroup.
+ */
+function insertIntoMatchingGroup(groups: any[], path: string): boolean {
+  const prefix = getPathPrefix(path)
+  const ref = `POST ${path}`
+
+  for (const group of groups) {
+    if (!group.pages) continue
+
+    // Check subgroups first (deepest match wins)
+    const subgroups = group.pages.filter(
+      (p: any) => typeof p === 'object' && p.group,
+    )
+    if (insertIntoMatchingGroup(subgroups, path)) return true
+
+    // Check if this group's existing endpoints share our prefix
+    const groupPaths = collectNavPaths(group.pages)
+    const groupPrefixes = new Set([...groupPaths].map(getPathPrefix))
+    if (groupPrefixes.has(prefix)) {
+      // Insert alphabetically among the POST refs
+      const insertIdx = group.pages.findIndex(
+        (p: any) => typeof p === 'string' && p > ref && p.startsWith('POST '),
+      )
+      if (insertIdx === -1) {
+        // Find the last POST ref and insert after it (before any subgroups at the end)
+        let lastPostIdx = -1
+        for (let i = 0; i < group.pages.length; i++) {
+          if (
+            typeof group.pages[i] === 'string' &&
+            group.pages[i].startsWith('POST ')
+          ) {
+            lastPostIdx = i
+          }
+        }
+        group.pages.splice(lastPostIdx + 1, 0, ref)
+      } else {
+        group.pages.splice(insertIdx, 0, ref)
+      }
+      return true
+    }
+  }
+  return false
 }
 
 // Run if called directly (standalone usage)

@@ -5,74 +5,40 @@ description: 'Learn how the webhook object lets you receive event notifications 
 
 ## The webhook Object
 
-- [Properties](#properties)
-- [Endpoints](#endpoints)
-
 Represents a [webhook](https://docs.seam.co/latest/developer-tools/webhooks) that enables you to receive notifications of events. When you create a webhook, specify the endpoint URL at which you want to receive events and the set of event types that you want to receive.
 
-<Tabs>
-<Tab title="Webhook">
+<ResponseExample>
 
-A webhook resource.
-
-```json
+```json Webhook
 {
-  "event_types": ["device.connected", "device.disconnected"],
+  "event_types": [
+    "device.connected",
+    "device.disconnected"
+  ],
   "secret": "mySecret",
   "url": "https://example.com/webhook",
   "webhook_id": "ffe5cc3c-f3f4-48e8-b377-6f76c05d09a1"
 }
 ```
 
-</Tab>
-</Tabs>
+</ResponseExample>
 
 ---
 
 ## Properties
 
-**`event_types`** _List_ _of Strings_
+<ResponseField name="event_types" type="Array">
+  Types of events that the [webhook](https://docs.seam.co/latest/developer-tools/webhooks) should receive.
+</ResponseField>
 
-Types of events that the [webhook](https://docs.seam.co/latest/developer-tools/webhooks) should receive.
+<ResponseField name="secret" type="String">
+  Secret associated with the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+</ResponseField>
 
----
+<ResponseField name="url" type="String">
+  URL for the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+</ResponseField>
 
-**`secret`** _String_
-
-Secret associated with the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
----
-
-**`url`** _String_
-
-URL for the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
----
-
-**`webhook_id`** _String_
-
-ID of the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
----
-
-## Endpoints
-
-[**`/webhooks/create`**](./create)
-
-Creates a new [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
-[**`/webhooks/delete`**](./delete)
-
-Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
-[**`/webhooks/get`**](./get)
-
-Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
-[**`/webhooks/list`**](./list)
-
-Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/webhooks).
-
-[**`/webhooks/update`**](./update)
-
-Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+<ResponseField name="webhook_id" type="String">
+  ID of the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+</ResponseField>

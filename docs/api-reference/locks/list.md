@@ -1225,7 +1225,8 @@ Possible enum values:
 - <code>tedee_lock</code>
 - <code>akiles_lock</code>
 - <code>ultraloq_lock</code>
-- <code>korelock_lock</code>
+- <code>keyincode_lock</code>
+- <code>omnitec_lock</code>
 </details>
 
 ---
