@@ -185,6 +185,45 @@ IDs of the entrances that you want to set for the space. If specified, this will
 
 ---
 
+**`customer_data`** *Object*
+
+Reservation/stay-related defaults for the space. Only the keys you provide are updated; omit a key to leave it unchanged. Pass null on a key to clear it.
+
+<details>
+
+<summary><b><code>default_checkin_time</code></b> <i>String</i></summary>
+
+Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>default_checkout_time</code></b> <i>String</i></summary>
+
+Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>time_zone</code></b> <i>String</i></summary>
+
+IANA time zone for the space, e.g. America/Los_Angeles.
+
+</details>
+
+---
+
+
 **`customer_key`** *String*
 
 Customer key for which you want to update the space.

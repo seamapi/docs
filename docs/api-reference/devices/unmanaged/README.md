@@ -305,7 +305,8 @@ Type of the device.
 - <code>tedee_lock</code>
 - <code>akiles_lock</code>
 - <code>ultraloq_lock</code>
-- <code>korelock_lock</code>
+- <code>keyincode_lock</code>
+- <code>omnitec_lock</code>
 - <code>keynest_key</code>
 - <code>noiseaware_activity_zone</code>
 - <code>minut_sensor</code>
@@ -1427,6 +1428,38 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   
 </details>
 <details>
+<summary><code>salto_ks_lock_access_code_support_removed</code></summary>
+
+Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_lock_access_code_support_removed</code>
+  
+  
+</details>
+<details>
 <summary><code>unknown_issue_with_phone</code></summary>
 
 Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.
@@ -1727,6 +1760,38 @@ Indicates that the device has reached its maximum number of active access codes.
   Enum values:
   
   - <code>max_access_codes_reached</code>
+  
+  
+</details>
+<details>
+<summary><code>insufficient_permissions</code></summary>
+
+Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>insufficient_permissions</code>
   
   
 </details>
@@ -2135,6 +2200,12 @@ Indicates that the backup access code is unhealthy.
 
 ---
 
+**`salto_ks_lock_access_code_support_removed`**
+
+Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
+
+---
+
 **`salto_ks_office_mode`**
 
 Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
@@ -2157,6 +2228,12 @@ Indicates that the accessory keypad exists, but is not linked to the Igloohome B
 **`hub_required_for_additional_capabilities`**
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
+
+---
+
+**`insufficient_permissions`**
+
+Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.
 
 ---
 

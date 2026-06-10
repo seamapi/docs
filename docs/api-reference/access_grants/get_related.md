@@ -197,7 +197,8 @@ batch response
             "visionline_door_profile_type": "BLE"
           }
         ]
-      }
+      },
+      "warnings": []
     }
   ],
   "connected_accounts": [

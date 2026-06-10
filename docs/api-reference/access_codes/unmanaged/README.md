@@ -58,6 +58,24 @@ Unique identifier for the access code.
 
 ---
 
+**`cannot_be_managed`** *Boolean*
+
+Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations.
+
+
+
+
+---
+
+**`cannot_delete_unmanaged_access_code`** *Boolean*
+
+Indicates that Seam cannot delete this unmanaged access code through the provider. If this access code needs to be deleted, it will only be possible from the manufacturer app.
+
+
+
+
+---
+
 **`code`** *String*
 
 Code used for access. Typically, a numeric or alphanumeric string.
@@ -150,6 +168,46 @@ The specific structure of each object in this list depends on the value of its `
 
 Variants:
 <details>
+<summary><code>provider_issue</code></summary>
+
+Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>provider_issue</code>
+  
+  
+  ---
+
+  **`is_access_code_error`** *Boolean*
+  
+  
+  Indicates that this is an access code error.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
 <summary><code>smartthings_failed_to_set_access_code</code></summary>
 
 Failed to set code on SmartThings device.
@@ -210,46 +268,6 @@ Failed to set code after multiple retries.
   Enum values:
   
   - <code>smartthings_failed_to_set_after_multiple_retries</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>smartthings_no_free_slots_available</code></summary>
-
-No free slots available on the device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>smartthings_no_free_slots_available</code>
   
   
   ---
@@ -382,10 +400,26 @@ Duplicate access code detected on device.
   
   ---
 
+  **`managed_access_code_id`** *UUID*
+  
+  
+  ID of the managed access code that conflicts with this managed access code, when Seam can identify it.
+  
+  
+  ---
+
   **`message`** *String*
   
   
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`unmanaged_access_code_id`** *UUID*
+  
+  
+  ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.
   
   
 </details>
@@ -450,6 +484,46 @@ No space for access code on device.
   Enum values:
   
   - <code>no_space_for_access_code_on_device</code>
+  
+  
+  ---
+
+  **`is_access_code_error`** *Boolean*
+  
+  
+  Indicates that this is an access code error.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
+<summary><code>access_code_state_unconfirmed</code></summary>
+
+Indicates that the provider cannot confirm whether the access code was set or removed on the device.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>access_code_state_unconfirmed</code>
   
   
   ---
@@ -554,6 +628,19 @@ Unable to confirm the deletion of the access code on Kwikset device.
 
 Code was modified or removed externally after Seam successfully set it on the device.
 
+  **`change_type`** *Enum*
+  
+  
+  Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.
+  
+  Enum values:
+  
+  - <code>modified</code>
+  - <code>removed</code>
+  
+  
+  ---
+
   **`created_at`** *Datetime*
   
   
@@ -588,6 +675,27 @@ Code was modified or removed externally after Seam successfully set it on the de
   Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
   
   
+  ---
+
+  **`modified_fields`** *List* *of Objects*
+  
+  
+  List of fields that were changed externally, with their previous and new values.
+  
+  
+  - <strong><code>field</code></strong> <i>String</i>
+  
+    The name of the field that was changed (e.g. `code`, `starts_at`, `ends_at`).
+  
+  - <strong><code>from</code></strong> <i>String</i>
+  
+    The previous value of the field.
+  
+  - <strong><code>to</code></strong> <i>String</i>
+  
+    The new value of the field.
+  
+  
 </details>
 <details>
 <summary><code>august_lock_invalid_code_length</code></summary>
@@ -610,46 +718,6 @@ Invalid code length for August lock.
   Enum values:
   
   - <code>august_lock_invalid_code_length</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>august_device_programming_delay</code></summary>
-
-Access code has not yet been fully moved to the device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>august_device_programming_delay</code>
   
   
   ---
@@ -730,6 +798,46 @@ August lock is temporarily offline.
   Enum values:
   
   - <code>august_lock_temporarily_offline</code>
+  
+  
+  ---
+
+  **`is_access_code_error`** *Boolean*
+  
+  
+  Indicates that this is an access code error.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
+<details>
+<summary><code>access_code_inactive</code></summary>
+
+Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>access_code_inactive</code>
   
   
   ---
@@ -910,9 +1018,9 @@ No Dormakaba Oracode user levels configured for the requested time range.
   
 </details>
 <details>
-<summary><code>kwikset_insufficient_permissions</code></summary>
+<summary><code>insufficient_permissions</code></summary>
 
-Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.
+Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.
 
   **`created_at`** *Datetime*
   
@@ -929,7 +1037,7 @@ Admin role required—insufficient permissions to manage PINs on this Kwikset de
   
   Enum values:
   
-  - <code>kwikset_insufficient_permissions</code>
+  - <code>insufficient_permissions</code>
   
   
   ---
@@ -1685,13 +1793,14 @@ Date and time at which the time-bound access code becomes active.
 
 **`status`** *Enum*
 
-Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational.
+Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.
 
 
 <details>
 <summary>Enum values</summary>
 
 - <code>set</code>
+- <code>unset</code>
 </details>
 
 
@@ -1722,6 +1831,38 @@ Warnings associated with the [access code](https://docs.seam.co/latest/capabilit
 The specific structure of each object in this list depends on the value of its `warning_code` field.
 
 Variants:
+<details>
+<summary><code>provider_issue</code></summary>
+
+Indicates a provider-specific issue that may affect the access code. Check the warning message for details.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>provider_issue</code>
+  
+  
+</details>
 <details>
 <summary><code>smartthings_failed_to_set_access_code</code></summary>
 
@@ -1855,6 +1996,19 @@ The Schlage device's timezone is ambiguous and this code's schedule crosses a da
 
 Code was modified or removed externally after Seam successfully set it on the device.
 
+  **`change_type`** *Enum*
+  
+  
+  Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.
+  
+  Enum values:
+  
+  - <code>modified</code>
+  - <code>removed</code>
+  
+  
+  ---
+
   **`created_at`** *Datetime*
   
   
@@ -1867,6 +2021,27 @@ Code was modified or removed externally after Seam successfully set it on the de
   
   
   Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`modified_fields`** *List* *of Objects*
+  
+  
+  List of fields that were changed externally, with their previous and new values.
+  
+  
+  - <strong><code>field</code></strong> <i>String</i>
+  
+    The name of the field that was changed (e.g. `code`, `starts_at`, `ends_at`).
+  
+  - <strong><code>from</code></strong> <i>String</i>
+  
+    The previous value of the field.
+  
+  - <strong><code>to</code></strong> <i>String</i>
+  
+    The new value of the field.
   
   
   ---
@@ -1975,38 +2150,6 @@ Third-party integration detected that may cause access codes to fail.
   Enum values:
   
   - <code>third_party_integration_detected</code>
-  
-  
-</details>
-<details>
-<summary><code>august_device_programming_delay</code></summary>
-
-Access code has not yet been fully moved to the device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>august_device_programming_delay</code>
   
   
 </details>
@@ -2139,6 +2282,38 @@ Unable to confirm that the access code is set on Kwikset device.
   
 </details>
 <details>
+<summary><code>access_code_inactive</code></summary>
+
+Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>access_code_inactive</code>
+  
+  
+</details>
+<details>
 <summary><code>ultraloq_access_code_disabled</code></summary>
 
 Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.
@@ -2249,15 +2424,21 @@ Unique identifier for the Seam workspace associated with the access code.
 
 ## Errors
 
-**`account_disconnected`**
+**`access_code_inactive`**
 
-Indicates that the account is disconnected.
+Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
 
 ---
 
-**`august_device_programming_delay`**
+**`access_code_state_unconfirmed`**
 
-Access code has not yet been fully moved to the device.
+Indicates that the provider cannot confirm whether the access code was set or removed on the device.
+
+---
+
+**`account_disconnected`**
+
+Indicates that the account is disconnected.
 
 ---
 
@@ -2363,15 +2544,15 @@ Indicates that the hub is disconnected.
 
 ---
 
-**`keynest_unsupported_third_party_locker`**
+**`insufficient_permissions`**
 
-KeyNest locker is not supported.
+Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.
 
 ---
 
-**`kwikset_insufficient_permissions`**
+**`keynest_unsupported_third_party_locker`**
 
-Admin role required—insufficient permissions to manage PINs on this Kwikset device. Please have a Home Admin update your role in the Kwikset app, or ask them to set the PIN.
+KeyNest locker is not supported.
 
 ---
 
@@ -2405,6 +2586,12 @@ No space for access code on device.
 
 ---
 
+**`provider_issue`**
+
+Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.
+
+---
+
 **`replaced_by_newer_access_code`**
 
 This access code was overridden on the device by a newer access code programmed to the same slot.
@@ -2435,12 +2622,6 @@ Failed to set code after multiple retries.
 
 ---
 
-**`smartthings_no_free_slots_available`**
-
-No free slots available on the device.
-
----
-
 **`subscription_required`**
 
 Indicates that a subscription is required to connect.
@@ -2468,9 +2649,9 @@ Potential duplicate access code detected.
 
 ## Warnings
 
-**`august_device_programming_delay`**
+**`access_code_inactive`**
 
-Access code has not yet been fully moved to the device.
+Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
 
 ---
 
@@ -2519,6 +2700,12 @@ Unable to confirm that the access code is set on Kwikset device.
 **`management_transferred`**
 
 Management was transferred to another workspace.
+
+---
+
+**`provider_issue`**
+
+Indicates a provider-specific issue that may affect the access code. Check the warning message for details.
 
 ---
 

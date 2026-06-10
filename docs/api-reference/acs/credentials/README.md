@@ -277,7 +277,6 @@ Brand-specific terminology for the [credential](https://docs.seam.co/latest/capa
 
 - <code>pti_card</code>
 - <code>brivo_credential</code>
-- <code>brivo_digital_credential</code>
 - <code>hid_credential</code>
 - <code>visionline_card</code>
 - <code>salto_ks_credential</code>
@@ -286,6 +285,8 @@ Brand-specific terminology for the [credential](https://docs.seam.co/latest/capa
 - <code>latch_access</code>
 - <code>dormakaba_ambiance_credential</code>
 - <code>hotek_card</code>
+- <code>salto_ks_tag</code>
+- <code>avigilon_alta_credential</code>
 </details>
 
 
@@ -878,7 +879,7 @@ Assigns a specified [credential](https://docs.seam.co/latest/capability-guides/a
 
 [**`/acs/credentials/create`**](./create.md)
 
-Creates a new [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+Creates a new [credential](https://docs.seam.co/latest/low-level-apis/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). For granting access, we recommend [Access Grants](https://docs.seam.co/latest/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.
 
 
 [**`/acs/credentials/delete`**](./delete.md)

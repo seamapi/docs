@@ -13,8 +13,7 @@ Simulates connecting a device to Seam. Only applicable for [sandbox devices](htt
 Simulates bringing the Wi‑Fi hub (bridge) back online for a device.
 Only applicable for sandbox workspaces and currently
 implemented for August and TTLock locks.
-This will clear the corresponding `hub_disconnected` or
-`ttlock_lock_not_paired_to_gateway` error on the device.
+This will clear the `hub_disconnected` error on the device.
 
 
 [**`/devices/simulate/disconnect`**](./disconnect.md)
@@ -27,8 +26,7 @@ Simulates disconnecting a device from Seam. Only applicable for [sandbox devices
 Simulates taking the Wi‑Fi hub (bridge) offline for a device.
 Only applicable for sandbox workspaces and currently
 implemented for August, TTLock, and IglooHome devices.
-This will set the corresponding `hub_disconnected` or
-`ttlock_lock_not_paired_to_gateway` error on the device, or mark the
+This will set the `hub_disconnected` error on the device, or mark the
 IglooHome bridge offline in sandbox.
 
 

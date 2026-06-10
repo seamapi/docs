@@ -3,6 +3,7 @@
 ## The acs_entrance Object
 
 - [Properties](./#properties)
+- [Warnings](./#warnings)
 - [Events](./#events)
 - [Endpoints](./#endpoints)
 
@@ -34,7 +35,8 @@ An access system entrance resource.
         "visionline_door_profile_type": "BLE"
       }
     ]
-  }
+  },
+  "warnings": []
 }
 ```
 {% endtab %}
@@ -97,6 +99,47 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.
   - <strong><code>stand_open</code></strong> <i>Boolean</i>
   
     Indicates whether keys are allowed to set the door in stand open mode in the Vostio access system.
+
+</details>
+
+---
+
+**`avigilon_alta_metadata`** *Object*
+
+Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>entry_name</code></strong> <i>String</i>
+  
+    Entry name for an Avigilon Alta system.
+
+  - <strong><code>entry_relays_total_count</code></strong> <i>Number</i>
+  
+    Total count of entry relays for an Avigilon Alta system.
+
+  - <strong><code>org_name</code></strong> <i>String</i>
+  
+    Organization name for an Avigilon Alta system.
+
+  - <strong><code>site_id</code></strong> <i>Number</i>
+  
+    Site ID for an Avigilon Alta system.
+
+  - <strong><code>site_name</code></strong> <i>String</i>
+  
+    Site name for an Avigilon Alta system.
+
+  - <strong><code>zone_id</code></strong> <i>Number</i>
+  
+    Zone ID for an Avigilon Alta system.
+
+  - <strong><code>zone_name</code></strong> <i>String</i>
+  
+    Zone name for an Avigilon Alta system.
 
 </details>
 
@@ -278,6 +321,15 @@ Hotek-specific metadata associated with the [entrance](https://docs.seam.co/late
 
 ---
 
+**`is_locked`** *Boolean*
+
+Indicates whether the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) is currently locked.
+
+
+
+
+---
+
 **`latch_metadata`** *Object*
 
 Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
@@ -446,6 +498,174 @@ Visionline-specific metadata associated with the [entrance](https://docs.seam.co
 
 
 </details>
+
+---
+
+[**`warnings`**](./#warnings) *List* *of Objects*
+
+Warnings associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+
+
+
+
+The specific structure of each object in this list depends on the value of its `warning_code` field.
+
+Variants:
+<details>
+<summary><code>salto_ks_entrance_access_code_support_removed</code></summary>
+
+Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_entrance_access_code_support_removed</code>
+  
+  
+</details>
+<details>
+<summary><code>entrance_shares_zone</code></summary>
+
+Indicates that this entrance shares a zone with other entrances in Avigilon Alta and cannot be added to an access group individually.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>entrance_shares_zone</code>
+  
+  
+</details>
+<details>
+<summary><code>entrance_setup_required</code></summary>
+
+Indicates that this entrance requires additional configuration in the access control system before Seam can fully manage it.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>entrance_setup_required</code>
+  
+  
+</details>
+<details>
+<summary><code>salto_ks_privacy_mode</code></summary>
+
+Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_privacy_mode</code>
+  
+  
+</details>
+
+---
+
+
+## Warnings
+
+**`entrance_setup_required`**
+
+Indicates that this entrance requires additional configuration in the access control system before Seam can fully manage it.
+
+---
+
+**`entrance_shares_zone`**
+
+Indicates that this entrance shares a zone with other entrances in Avigilon Alta and cannot be added to an access group individually.
+
+---
+
+**`salto_ks_entrance_access_code_support_removed`**
+
+Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
+
+---
+
+**`salto_ks_privacy_mode`**
+
+Indicates that this entrance is in privacy mode. When privacy mode is enabled, access codes, mobile keys, and remote unlocks will not work unless the user has admin access.
 
 ---
 

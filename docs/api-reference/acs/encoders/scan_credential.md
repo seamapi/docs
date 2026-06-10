@@ -538,6 +538,21 @@ ID of the encoder to use for the scan.
 
 ---
 
+**`salto_ks_metadata`** *Object*
+
+Salto KS-specific metadata for the scan action.
+
+<details>
+
+<summary><b><code>detect_new_tags</code></b> <i>Boolean</i></summary>
+
+When true, activates tag registration mode on the encoder to detect new, unregistered tags. When false, only detects existing tags already registered in the system. Defaults to false.
+
+</details>
+
+---
+
+
 
 ## Response
 

@@ -438,7 +438,8 @@ Type of the device.
 - <code>tedee_lock</code>
 - <code>akiles_lock</code>
 - <code>ultraloq_lock</code>
-- <code>korelock_lock</code>
+- <code>keyincode_lock</code>
+- <code>omnitec_lock</code>
 - <code>keynest_key</code>
 - <code>noiseaware_activity_zone</code>
 - <code>minut_sensor</code>
@@ -1588,6 +1589,38 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
   
 </details>
 <details>
+<summary><code>salto_ks_lock_access_code_support_removed</code></summary>
+
+Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>salto_ks_lock_access_code_support_removed</code>
+  
+  
+</details>
+<details>
 <summary><code>unknown_issue_with_phone</code></summary>
 
 Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.
@@ -1888,6 +1921,38 @@ Indicates that the device has reached its maximum number of active access codes.
   Enum values:
   
   - <code>max_access_codes_reached</code>
+  
+  
+</details>
+<details>
+<summary><code>insufficient_permissions</code></summary>
+
+Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>insufficient_permissions</code>
   
   
 </details>
@@ -3434,6 +3499,39 @@ Metadata for a Nuki device.
 
 ---
 
+**`omnitec_metadata`** *Object*
+
+Metadata for an Omnitec device.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>has_gateway</code></strong> <i>Boolean</i>
+  
+    Whether the Omnitec lock has a connected gateway for remote operations.
+
+  - <strong><code>lock_id</code></strong> <i>Number</i>
+  
+    Lock ID for an Omnitec device.
+
+  - <strong><code>lock_mac</code></strong> <i>String</i>
+  
+    Bluetooth MAC address for an Omnitec device.
+
+  - <strong><code>lock_name</code></strong> <i>String</i>
+  
+    Lock name for an Omnitec device.
+
+  - <strong><code>timezone_raw_offset_ms</code></strong> <i>Number</i>
+  
+    Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST.
+
+</details>
+
+---
+
 **`online`** *Boolean*
 
 Indicates whether the device is online.
@@ -3966,6 +4064,10 @@ Metadata for a TTLock device.
   - <strong><code>lock_id</code></strong> <i>Number</i>
   
     Lock ID for a TTLock device.
+
+  - <strong><code>timezone_raw_offset_ms</code></strong> <i>Number</i>
+  
+    Lock-side timezone offset in milliseconds east of UTC, as configured in the TTLock app. Source of truth for the lock's wall-clock interpretation of access code start/end times — a misconfigured value here is the typical cause of customer "codes offset by N hours" reports. Diagnostic only; Seam does not convert times based on this value.
 
   - <strong><code>wireless_keypads</code></strong> <i>List</i> <i>of Objects</i>
   

@@ -25,6 +25,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/automations`: No undocumented message provided
 - `/seam/customer/v1/connector_customers`: No undocumented message provided
 - `/seam/customer/v1/connectors`: No undocumented message provided
+- `/seam/customer/v1/connectors/external_sites`: No undocumented message provided
 - `/seam/customer/v1/connectors/ical`: No undocumented message provided
 - `/seam/customer/v1/customers/automations`: No undocumented message provided
 - `/seam/customer/v1/customers`: No undocumented message provided
@@ -131,7 +132,7 @@ These items are intentionally undocumented.
 - `/seam/customer/v1/connectors/list`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/sync`: Only used internally.
 - `/seam/customer/v1/connectors/update`: Internal endpoint for Console.
-- `/seam/customer/v1/connectors/ical/generate-config`: Only used internally.
+- `/seam/customer/v1/connectors/external_sites/list`: Internal endpoint for Console.
 - `/seam/customer/v1/connectors/ical/validate-config`: Only used internally.
 - `/seam/customer/v1/customers/automations/get`: Internal endpoint for customer portals.
 - `/seam/customer/v1/customers/automations/update`: Internal endpoint for customer portals.
@@ -684,7 +685,7 @@ These items are deprecated.
 - `/seam/customer/v1/connectors/list`: `connectors`
 - `/seam/customer/v1/connectors/sync`: `connector_sync`
 - `/seam/customer/v1/connectors/update`: `connector`
-- `/seam/customer/v1/connectors/ical/generate-config`: `generated_config`
+- `/seam/customer/v1/connectors/external_sites/list`: `external_sites`
 - `/seam/customer/v1/connectors/ical/validate-config`: `validation_result`
 - `/seam/customer/v1/customers/automations/get`: `automation`
 - `/seam/customer/v1/portals/get`: `customer_portal`
@@ -714,11 +715,14 @@ These items are deprecated.
 - `/access_grants/unmanaged/get`
 - `/access_grants/unmanaged/list`
 - `/access_grants/unmanaged/update`
+- `/access_methods/assign_card`
 - `/access_methods/encode`
 - `/access_methods/get_related`
+- `/access_methods/unlock_door`
 - `/access_methods/unmanaged/get`
 - `/access_methods/unmanaged/list`
 - `/acs/access_groups/delete`
+- `/acs/encoders/scan_to_assign_credential`
 - `/acs/entrances/unlock`
 - `/connected_accounts/simulate/disconnect`
 - `/customers/create_portal`
@@ -731,7 +735,9 @@ These items are deprecated.
 - `/instant_keys/list`
 - `/locks/configure_auto_lock`
 - `/locks/get`
+- `/spaces/add_connected_account`
 - `/spaces/get_related`
+- `/spaces/remove_connected_account`
 - `/user_identities/list_accessible_entrances`
 - `/user_identities/unmanaged/get`
 - `/user_identities/unmanaged/list`
@@ -842,6 +848,7 @@ These items are deprecated.
 - `event: space.device_membership_changed`
 - `event: space.created`
 - `event: space.deleted`
+- `action_attempt: SCAN_TO_ASSIGN_CREDENTIAL`
 - `action_attempt: CONFIGURE_AUTO_LOCK`
 - `action_attempt: SYNC_ACCESS_CODES`
 - `action_attempt: CREATE_ACCESS_CODE`
