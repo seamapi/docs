@@ -133,10 +133,7 @@ You can request multiple modes in one call — for example, a PIN code _and_ a m
 
 ## Reservation Keys
 
-A `reservation_key` is an optional string you can pass when creating an Access Grant. It serves two purposes depending on the system:
-
-- **Override-based access systems** (Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) — these systems **require** a `reservation_key` so Seam can coordinate credential override sequencing across grants. Without it, credentials can conflict.
-- **All other systems** — if you pass the same `reservation_key` across multiple Access Grants, Seam reuses the same PIN code for all of them. This is useful when a guest has multiple reservations and you want them to keep the same code.
+Override-based access systems (Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) **require** a `reservation_key` when creating an Access Grant so Seam can coordinate credential override sequencing across grants. Without it, credentials can conflict.
 
 See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants) for the full guide.
 
