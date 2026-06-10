@@ -53,10 +53,12 @@
                 "pages": [
                   "use-cases/granting-access/index",
                   "use-cases/granting-access/access-grant-quick-start",
-                  "use-cases/granting-access/creating-an-access-grant-using-devices",
-                  "use-cases/granting-access/creating-an-access-grant-using-spaces",
-                  "use-cases/granting-access/creating-an-access-grant-using-entrances",
+                  "use-cases/granting-access/creating-an-access-grant",
                   "use-cases/granting-access/delivering-access-methods",
+                  "use-cases/granting-access/using-pin-codes",
+                  "use-cases/granting-access/using-mobile-keys",
+                  "use-cases/granting-access/using-instant-keys",
+                  "use-cases/granting-access/using-key-cards",
                   "use-cases/granting-access/using-cloud-keys",
                   "use-cases/granting-access/reservation-access-grants",
                   "use-cases/granting-access/retrieving-access-grants-and-access-methods",
@@ -3129,6 +3131,18 @@
     {
       "source": "/yale-locks/yale-sample-data",
       "destination": "/device-and-system-integration-guides/yale-locks/yale-sample-data"
+    },
+    {
+      "source": "/use-cases/granting-access/creating-an-access-grant-using-devices",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/use-cases/granting-access/creating-an-access-grant-using-spaces",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/use-cases/granting-access/creating-an-access-grant-using-entrances",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
     }
   ],
   "openapi": [

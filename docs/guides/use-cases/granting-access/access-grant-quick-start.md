@@ -9,7 +9,7 @@ description: >-
 In this quick start, create an Access Grant to give a user access to a set of access points. Access Grants are the default and recommended way to grant access to any physical space, irrespective of the locking hardware—standalone smart locks, access control systems, or a mix of both. With a single command you can define the "who, where, when, and how" for assigning a user access.
 
 {% hint style="success" %}
-**Starting with a standalone smart lock?** The fastest first success is a single device and a PIN code: see the [Seam Quick Start](../../quickstart.md), which creates an Access Grant on a sandbox August lock, or [Creating an Access Grant Using Devices](creating-an-access-grant-using-devices.md). This quick start walks through the more advanced access system (ACS) path, including key cards, mobile keys, and Instant Keys.
+**Starting with a standalone smart lock?** The fastest first success is a single device and a PIN code: see the [Seam Quick Start](../../quickstart.md), which creates an Access Grant on a sandbox August lock, or [Creating an Access Grant](creating-an-access-grant.md#using-device-ids). This quick start walks through the more advanced access system (ACS) path, including key cards, mobile keys, and Instant Keys.
 {% endhint %}
 
 In addition, this quick start shows you that, with Access Grants, it's easy to issue users access through multiple types of access methods, such as key cards, PIN codes, mobile keys, and Instant Keys.
@@ -818,8 +818,7 @@ The way in which you deliver an access method depends on the mode of access. The
 
 Now that you've created your first Access Grant, learn more about Access Grants.
 
-* [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
-* [Creating an Access Grant Using Spaces](creating-an-access-grant-using-spaces.md)
+* [Creating an Access Grant](creating-an-access-grant.md)
 * [Delivering Access Methods](delivering-access-methods.md)
 * [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
 * [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

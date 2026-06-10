@@ -25,8 +25,11 @@ redirects:
   capability-guides/thermostats/creating-and-managing-climate-schedules: capability-guides/thermostats/creating-and-managing-thermostat-schedules.md
   capability-guides/access-grants: use-cases/granting-access/README.md
   capability-guides/access-grants/access-grant-quick-start: use-cases/granting-access/access-grant-quick-start.md
-  capability-guides/access-grants/creating-an-access-grant-using-entrances: use-cases/granting-access/creating-an-access-grant-using-entrances.md
-  capability-guides/access-grants/creating-an-access-grant-using-spaces: use-cases/granting-access/creating-an-access-grant-using-spaces.md
+  capability-guides/access-grants/creating-an-access-grant-using-entrances: use-cases/granting-access/creating-an-access-grant.md
+  capability-guides/access-grants/creating-an-access-grant-using-spaces: use-cases/granting-access/creating-an-access-grant.md
+  use-cases/granting-access/creating-an-access-grant-using-devices: use-cases/granting-access/creating-an-access-grant.md
+  use-cases/granting-access/creating-an-access-grant-using-spaces: use-cases/granting-access/creating-an-access-grant.md
+  use-cases/granting-access/creating-an-access-grant-using-entrances: use-cases/granting-access/creating-an-access-grant.md
   capability-guides/access-grants/delivering-access-methods: use-cases/granting-access/delivering-access-methods.md
   capability-guides/access-grants/reservation-access-grants: use-cases/granting-access/reservation-access-grants.md
   capability-guides/access-grants/retrieving-access-grants-and-access-methods: use-cases/granting-access/retrieving-access-grants-and-access-methods.md

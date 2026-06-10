@@ -698,7 +698,7 @@ The unlock is now recorded in the ACS audit trail as an entry by the user identi
 ## Next Steps
 
 - [Delivering Access Methods](delivering-access-methods.md)
-- [Creating an Access Grant Using Entrances](creating-an-access-grant-using-entrances.md)
+- [Creating an Access Grant](creating-an-access-grant.md)
 - [Retrieving Access Grants and Access Methods](retrieving-access-grants-and-access-methods.md)
 - [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants)
 - [ACS Entrances API Reference](https://docs.seam.co/latest/api/acs/entrances)

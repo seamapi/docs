@@ -107,9 +107,9 @@ Access Grants work across the entire Seam provider lineup:
 
 We recommend learning Access Grants in three steps, from the simplest setup to the most advanced:
 
-1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant Using Devices](/use-cases/granting-access/creating-an-access-grant-using-devices).
-2. **Multiple devices and spaces.** Pass several `device_ids` in one call to grant access to a set of locks at once. To manage groups of access points by name—for example, everything a guest in Unit 101 needs—organize them into [spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces) and grant access by `space_id`.
-3. **Access control systems.** Connect an ACS, such as Salto, Visionline, or Brivo, and grant access to entrances with `acs_entrance_ids`. This path can involve additional setup, such as licenses, on-premises connections through Seam Bridge, mobile key configuration, and [reservations](/use-cases/granting-access/reservation-access-grants) for offline-override systems. See [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances).
+1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant](/use-cases/granting-access/creating-an-access-grant#using-device-ids).
+2. **Multiple devices and spaces.** Pass several `device_ids` in one call to grant access to a set of locks at once. To manage groups of access points by name—for example, everything a guest in Unit 101 needs—organize them into [spaces](/use-cases/granting-access/creating-an-access-grant#using-space-ids) and grant access by `space_id`.
+3. **Access control systems.** Connect an ACS, such as Salto, Visionline, or Brivo, and grant access to entrances with `acs_entrance_ids`. This path can involve additional setup, such as licenses, on-premises connections through Seam Bridge, mobile key configuration, and [reservations](/use-cases/granting-access/reservation-access-grants) for offline-override systems. See [Creating an Access Grant](/use-cases/granting-access/creating-an-access-grant#using-entrance-ids).
 
 ---
 
@@ -291,16 +291,8 @@ The Access Grant process consists of the following steps:
         request.
         <br />
         See{' '}
-        <a href='/use-cases/granting-access/creating-an-access-grant-using-devices'>
-          Creating an Access Grant Using Devices
-        </a>
-        ,{' '}
-        <a href='/use-cases/granting-access/creating-an-access-grant-using-spaces'>
-          Creating an Access Grant Using Spaces
-        </a>
-        , and{' '}
-        <a href='/use-cases/granting-access/creating-an-access-grant-using-entrances'>
-          Creating an Access Grant Using Entrances
+        <a href='/use-cases/granting-access/creating-an-access-grant'>
+          Creating an Access Grant
         </a>
         .<br />
         You can poll for access method status changes or watch for Access Grant
@@ -393,9 +385,7 @@ When issuing Access Grants for these systems, you’ll need to use reservations 
 
 To create your first Access Grant, see the [Access Grant Quick Start](/use-cases/granting-access/access-grant-quick-start). Then, learn more in the following topics:
 
-- [Creating an Access Grant Using Devices](/use-cases/granting-access/creating-an-access-grant-using-devices)
-- [Creating an Access Grant Using Spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces)
-- [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances)
+- [Creating an Access Grant](/use-cases/granting-access/creating-an-access-grant)
 - [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods)
 - [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
 - [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)

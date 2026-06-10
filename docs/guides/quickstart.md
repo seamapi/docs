@@ -383,7 +383,7 @@ Here are some ideas of what you can do next...
 
 ### Go Deeper on Granting Access
 
-You just created your first Access Grant. The same API issues mobile keys, [Instant Keys](capability-guides/instant-keys/README.md), and plastic cards, grants access to multiple devices and [access system entrances](use-cases/granting-access/creating-an-access-grant-using-entrances.md) in one call, and manages the full credential lifecycle. See the [Granting Access guide](use-cases/granting-access/README.md).
+You just created your first Access Grant. The same API issues mobile keys, [Instant Keys](capability-guides/instant-keys/README.md), and plastic cards, grants access to multiple devices and [access system entrances](use-cases/granting-access/creating-an-access-grant.md) in one call, and manages the full credential lifecycle. See the [Granting Access guide](use-cases/granting-access/README.md).
 
 You can also control devices directly—for example, [lock and unlock doors](low-level-apis/smart-locks/lock-and-unlock.md) remotely.
 

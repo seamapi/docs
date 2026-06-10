@@ -1,0 +1,357 @@
+---
+title: 'Using PIN Codes'
+description: >-
+  Learn how to create an Access Grant with a PIN code access method and deliver
+  the code to your user.
+---
+
+PIN codes are the simplest access method. When you request a `code` access method in an Access Grant, Seam programs a PIN code onto the lock. Your user enters the code on the lock's keypad to unlock the door.
+
+PIN codes work with:
+
+- **Standalone smart locks** — August, Yale, Schlage, Lockly, TTLock, Tedee, igloohome, and other connected locks. Specify the locks with `device_ids`.
+- **Access control systems** — Salto KS, Salto Space, Brivo, dormakaba, and other ACS platforms that support PIN-based credentials. Specify entrances with `acs_entrance_ids` or group access points into spaces and use `space_ids`.
+
+## Before You Begin
+
+To use PIN codes, you need:
+
+- A [Seam API key](https://console.seam.co)
+- One or more connected devices or ACS entrances that support PIN codes
+- For standalone smart locks: confirm that `can_program_online_access_codes` is `true` on the device
+- For ACS entrances: confirm that `can_unlock_with_code` is `true` on the entrance
+
+## Step 1: Verify Device or Entrance Support
+
+### Standalone Smart Locks
+
+List your devices and confirm that `can_program_online_access_codes` is `true`.
+
+<CodeGroup>
+
+```javascript JavaScript
+const devices = await seam.devices.list()
+
+const pinCapableDevices = devices.filter(
+  (d) => d.can_program_online_access_codes
+)
+```
+
+```python Python
+devices = seam.devices.list()
+
+pin_capable_devices = [
+    d for d in devices if d.can_program_online_access_codes
+]
+```
+
+```ruby Ruby
+devices = seam.devices.list
+
+pin_capable_devices = devices.select do |d|
+  d.can_program_online_access_codes
+end
+```
+
+```php PHP
+$devices = $seam->devices->list();
+
+$pinCapableDevices = array_filter(
+  $devices,
+  fn($d) => $d->can_program_online_access_codes
+);
+```
+
+```csharp C#
+var devices = seam.Devices.List();
+
+var pinCapableDevices = devices
+  .Where(d => d.CanProgramOnlineAccessCodes)
+  .ToList();
+```
+
+```java Java
+var devices = seam.devices().list(
+  DevicesListRequest.builder().build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+
+</CodeGroup>
+
+### ACS Entrances
+
+List the entrances for your ACS and confirm that `can_unlock_with_code` is `true`.
+
+<CodeGroup>
+
+```javascript JavaScript
+const entrances = await seam.acs.entrances.list({
+  acs_system_id: 'c359cba2-8ef2-47fc-bee0-1c7c2a886339',
+})
+
+const codeEntrances = entrances.filter(
+  (e) => e.can_unlock_with_code
+)
+```
+
+```python Python
+entrances = seam.acs.entrances.list(
+    acs_system_id="c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+)
+
+code_entrances = [
+    e for e in entrances if e.can_unlock_with_code
+]
+```
+
+```ruby Ruby
+entrances = seam.acs.entrances.list(
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+)
+
+code_entrances = entrances.select do |e|
+  e.can_unlock_with_code
+end
+```
+
+```php PHP
+$entrances = $seam->acs->entrances->list(
+  acs_system_id: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+);
+
+$codeEntrances = array_filter(
+  $entrances,
+  fn($e) => $e->can_unlock_with_code
+);
+```
+
+```csharp C#
+var entrances = seam.Acs.Entrances.List(
+  acsSystemId: "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+);
+
+var codeEntrances = entrances
+  .Where(e => e.CanUnlockWithCode)
+  .ToList();
+```
+
+```java Java
+var entrances = seam.acs().entrances().list(
+  AcsEntrancesListRequest.builder()
+    .acsSystemId("c359cba2-8ef2-47fc-bee0-1c7c2a886339")
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/entrances/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_system_id": "c359cba2-8ef2-47fc-bee0-1c7c2a886339"
+}'
+```
+
+</CodeGroup>
+
+## Step 2: Create an Access Grant with a PIN Code
+
+Create an [Access Grant](/use-cases/granting-access/index) specifying `code` as the requested access method mode. You can target devices, entrances, or spaces.
+
+<CodeGroup>
+
+```javascript JavaScript
+const accessGrant = await seam.accessGrants.create({
+  user_identity_id: '22222222-2222-2222-2222-222222222222',
+  device_ids: ['6ba7b811-9dad-11d1-80b4-00c04fd430c8'],
+  requested_access_methods: [
+    { mode: 'code' }
+  ],
+  starts_at: '2025-07-13T15:00:00.000Z',
+  ends_at: '2025-07-16T11:00:00.000Z',
+})
+```
+
+```python Python
+access_grant = seam.access_grants.create(
+    user_identity_id="22222222-2222-2222-2222-222222222222",
+    device_ids=["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods=[{"mode": "code"}],
+    starts_at="2025-07-13T15:00:00.000Z",
+    ends_at="2025-07-16T11:00:00.000Z",
+)
+```
+
+```ruby Ruby
+access_grant = seam.access_grants.create(
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  requested_access_methods: [{ mode: "code" }],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+)
+```
+
+```php PHP
+$accessGrant = $seam->access_grants->create(
+  user_identity_id: "22222222-2222-2222-2222-222222222222",
+  device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  requested_access_methods: [["mode" => "code"]],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+);
+```
+
+```csharp C#
+var accessGrant = seam.AccessGrants.Create(
+  userIdentityId: "22222222-2222-2222-2222-222222222222",
+  deviceIds: new List<string>
+  {
+    "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+  },
+  requestedAccessMethods: new List<RequestedAccessMethod>
+  {
+    new RequestedAccessMethod { Mode = "code" }
+  },
+  startsAt: "2025-07-13T15:00:00.000Z",
+  endsAt: "2025-07-16T11:00:00.000Z"
+);
+```
+
+```java Java
+var accessGrant = seam.accessGrants().create(
+  AccessGrantsCreateRequest.builder()
+    .userIdentityId("22222222-2222-2222-2222-222222222222")
+    .deviceIds(List.of(
+      "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+    ))
+    .requestedAccessMethods(List.of(
+      RequestedAccessMethod.builder()
+        .mode("code")
+        .build()
+    ))
+    .startsAt("2025-07-13T15:00:00.000Z")
+    .endsAt("2025-07-16T11:00:00.000Z")
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "device_ids": ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  "requested_access_methods": [{ "mode": "code" }],
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z"
+}'
+```
+
+</CodeGroup>
+
+<Info>
+  In a sandbox workspace, PIN codes are issued almost instantly. On real
+  devices, issuance can take a few moments. Poll the access method until
+  `is_issued` is `true` or watch for the `access_method.issued` event.
+</Info>
+
+## Step 3: Retrieve the PIN Code
+
+Once the access method is issued, retrieve it to get the code. Share the code with your user through text, email, or your application.
+
+<CodeGroup>
+
+```javascript JavaScript
+const accessMethod = await seam.accessMethods.get({
+  access_method_id:
+    accessGrant.requested_access_methods[0].created_access_method_ids[0],
+})
+
+console.log(accessMethod.code) // => "1234"
+```
+
+```python Python
+access_method = seam.access_methods.get(
+    access_method_id=access_grant.requested_access_methods[0].created_access_method_ids[0]
+)
+
+print(access_method.code)  # => "1234"
+```
+
+```ruby Ruby
+access_method = seam.access_methods.get(
+  access_method_id: access_grant.requested_access_methods[0].created_access_method_ids[0]
+)
+
+puts access_method.code  # => "1234"
+```
+
+```php PHP
+$accessMethod = $seam->access_methods->get(
+  access_method_id: $accessGrant->requested_access_methods[0]->created_access_method_ids[0]
+);
+
+echo $accessMethod->code;  // => "1234"
+```
+
+```csharp C#
+var accessMethod = seam.AccessMethods.Get(
+  accessMethodId: accessGrant.RequestedAccessMethods[0].CreatedAccessMethodIds[0]
+);
+
+Console.WriteLine(accessMethod.Code);  // => "1234"
+```
+
+```java Java
+var accessMethod = seam.accessMethods().get(
+  AccessMethodsGetRequest.builder()
+    .accessMethodId(
+      accessGrant.getRequestedAccessMethods().get(0).getCreatedAccessMethodIds().get(0)
+    )
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+}'
+```
+
+</CodeGroup>
+
+**Output:**
+
+```json
+{
+  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "display_name": "PIN Code",
+  "mode": "code",
+  "is_issued": true,
+  "issued_at": "2025-06-16T16:55:03.924353Z",
+  "code": "1234",
+  ...
+}
+```
+
+## Next Steps
+
+- [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods) — Learn how to deliver all access method types to your users.
+- [Creating an Access Grant](/use-cases/granting-access/creating-an-access-grant) — Learn more about specifying devices, entrances, and spaces.
+- [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/) — See all access method properties and endpoints.
