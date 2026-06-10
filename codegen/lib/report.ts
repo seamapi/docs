@@ -9,11 +9,13 @@ import type {
   Resource,
   Route,
 } from '@seamapi/blueprint'
+import { openapi as _openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
 import { apiReferenceRoot } from './config.js'
 
-const { openapi } = require('@seamapi/types/connect') as { openapi: any }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const openapi: any = _openapi
 
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
