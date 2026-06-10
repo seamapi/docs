@@ -198,68 +198,70 @@ curl -X 'POST' \
 
 ## Step 3: Deliver the Key Card
 
-Retrieve the access method and check the `is_encoding_required` property to determine whether you need to encode the card or whether the system assigns it automatically.
+List the access methods for the Access Grant and check the `is_encoding_required` property to determine whether you need to encode the card or whether the system assigns it automatically.
 
 <CodeGroup>
 
 ```javascript JavaScript
-const accessMethod = await seam.accessMethods.get({
-  access_method_id:
-    accessGrant.requested_access_methods[0].created_access_method_ids[0],
+const accessMethods = await seam.accessMethods.list({
+  access_grant_id: accessGrant.access_grant_id,
 })
 
-console.log(accessMethod.is_encoding_required)
+const card = accessMethods[0]
+console.log(card.is_encoding_required)
 ```
 
 ```python Python
-access_method = seam.access_methods.get(
-    access_method_id=access_grant.requested_access_methods[0].created_access_method_ids[0]
+access_methods = seam.access_methods.list(
+    access_grant_id=access_grant.access_grant_id
 )
 
-print(access_method.is_encoding_required)
+card = access_methods[0]
+print(card.is_encoding_required)
 ```
 
 ```ruby Ruby
-access_method = seam.access_methods.get(
-  access_method_id: access_grant.requested_access_methods[0].created_access_method_ids[0]
+access_methods = seam.access_methods.list(
+  access_grant_id: access_grant.access_grant_id
 )
 
-puts access_method.is_encoding_required
+card = access_methods[0]
+puts card.is_encoding_required
 ```
 
 ```php PHP
-$accessMethod = $seam->access_methods->get(
-  access_method_id: $accessGrant->requested_access_methods[0]->created_access_method_ids[0]
+$accessMethods = $seam->access_methods->list(
+  access_grant_id: $accessGrant->access_grant_id
 );
 
-echo $accessMethod->is_encoding_required;
+$card = $accessMethods[0];
+echo $card->is_encoding_required;
 ```
 
 ```csharp C#
-var accessMethod = seam.AccessMethods.Get(
-  accessMethodId: accessGrant.RequestedAccessMethods[0].CreatedAccessMethodIds[0]
+var accessMethods = seam.AccessMethods.List(
+  accessGrantId: accessGrant.AccessGrantId
 );
 
-Console.WriteLine(accessMethod.IsEncodingRequired);
+var card = accessMethods[0];
+Console.WriteLine(card.IsEncodingRequired);
 ```
 
 ```java Java
-var accessMethod = seam.accessMethods().get(
-  AccessMethodsGetRequest.builder()
-    .accessMethodId(
-      accessGrant.getRequestedAccessMethods().get(0).getCreatedAccessMethodIds().get(0)
-    )
+var accessMethods = seam.accessMethods().list(
+  AccessMethodsListRequest.builder()
+    .accessGrantId(accessGrant.getAccessGrantId())
     .build()
 );
 ```
 
 ```bash cURL
 curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
+  'https://connect.getseam.com/access_methods/list' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "access_method_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+  "access_grant_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 }'
 ```
 
@@ -365,7 +367,7 @@ An access method can cover multiple doors — for example, if the Access Grant i
 
 ```javascript JavaScript
 const related = await seam.accessMethods.getRelated({
-  access_method_ids: [accessMethod.access_method_id],
+  access_method_ids: [card.access_method_id],
 })
 
 console.log(related.acs_entrances) // entrances this card unlocks

@@ -205,73 +205,75 @@ curl -X 'POST' \
 
 ## Step 3: Deliver the Mobile Key
 
-Once the access method is issued, retrieve it to get the `client_session_id`. Use this value to initialize the Seam mobile SDK on your user's device so they can unlock doors from your app.
+Once the access method is issued, list the access methods for the Access Grant to get the `client_session_id`. Use this value to initialize the Seam mobile SDK on your user's device so they can unlock doors from your app.
 
 <CodeGroup>
 
 ```javascript JavaScript
-const accessMethod = await seam.accessMethods.get({
-  access_method_id:
-    accessGrant.requested_access_methods[0].created_access_method_ids[0],
+const accessMethods = await seam.accessMethods.list({
+  access_grant_id: accessGrant.access_grant_id,
 })
 
-console.log(accessMethod.client_session_id)
-console.log(accessMethod.instant_key_url)
+const mobileKey = accessMethods[0]
+console.log(mobileKey.client_session_id)
+console.log(mobileKey.instant_key_url)
 ```
 
 ```python Python
-access_method = seam.access_methods.get(
-    access_method_id=access_grant.requested_access_methods[0].created_access_method_ids[0]
+access_methods = seam.access_methods.list(
+    access_grant_id=access_grant.access_grant_id
 )
 
-print(access_method.client_session_id)
-print(access_method.instant_key_url)
+mobile_key = access_methods[0]
+print(mobile_key.client_session_id)
+print(mobile_key.instant_key_url)
 ```
 
 ```ruby Ruby
-access_method = seam.access_methods.get(
-  access_method_id: access_grant.requested_access_methods[0].created_access_method_ids[0]
+access_methods = seam.access_methods.list(
+  access_grant_id: access_grant.access_grant_id
 )
 
-puts access_method.client_session_id
-puts access_method.instant_key_url
+mobile_key = access_methods[0]
+puts mobile_key.client_session_id
+puts mobile_key.instant_key_url
 ```
 
 ```php PHP
-$accessMethod = $seam->access_methods->get(
-  access_method_id: $accessGrant->requested_access_methods[0]->created_access_method_ids[0]
+$accessMethods = $seam->access_methods->list(
+  access_grant_id: $accessGrant->access_grant_id
 );
 
-echo $accessMethod->client_session_id;
-echo $accessMethod->instant_key_url;
+$mobileKey = $accessMethods[0];
+echo $mobileKey->client_session_id;
+echo $mobileKey->instant_key_url;
 ```
 
 ```csharp C#
-var accessMethod = seam.AccessMethods.Get(
-  accessMethodId: accessGrant.RequestedAccessMethods[0].CreatedAccessMethodIds[0]
+var accessMethods = seam.AccessMethods.List(
+  accessGrantId: accessGrant.AccessGrantId
 );
 
-Console.WriteLine(accessMethod.ClientSessionId);
-Console.WriteLine(accessMethod.InstantKeyUrl);
+var mobileKey = accessMethods[0];
+Console.WriteLine(mobileKey.ClientSessionId);
+Console.WriteLine(mobileKey.InstantKeyUrl);
 ```
 
 ```java Java
-var accessMethod = seam.accessMethods().get(
-  AccessMethodsGetRequest.builder()
-    .accessMethodId(
-      accessGrant.getRequestedAccessMethods().get(0).getCreatedAccessMethodIds().get(0)
-    )
+var accessMethods = seam.accessMethods().list(
+  AccessMethodsListRequest.builder()
+    .accessGrantId(accessGrant.getAccessGrantId())
     .build()
 );
 ```
 
 ```bash cURL
 curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
+  'https://connect.getseam.com/access_methods/list' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+  "access_grant_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 }'
 ```
 
