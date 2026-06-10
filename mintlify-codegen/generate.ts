@@ -80,7 +80,11 @@ if (stats.withoutCodeSamples.length > 0) {
 }
 
 function renderTabs(
-  samples: Array<{ title: string; description: string; properties: Record<string, unknown> }>,
+  samples: Array<{
+    title: string
+    description: string
+    properties: Record<string, unknown>
+  }>,
 ): string {
   const tabs = samples.map((s) => {
     const json = JSON.stringify(s.properties, null, 2)
@@ -95,7 +99,17 @@ async function updateObjectPages(
 ): Promise<string[]> {
   const updated: string[] = []
 
-  const resourcesByRoute = new Map<string, Array<{ resourceType: string; samples: Array<{ title: string; description: string; properties: Record<string, unknown> }> }>>()
+  const resourcesByRoute = new Map<
+    string,
+    Array<{
+      resourceType: string
+      samples: Array<{
+        title: string
+        description: string
+        properties: Record<string, unknown>
+      }>
+    }>
+  >()
   for (const resource of bp.resources) {
     if (resource.resourceSamples.length === 0) continue
     const existing = resourcesByRoute.get(resource.routePath) ?? []
@@ -107,12 +121,7 @@ async function updateObjectPages(
   }
 
   for (const [routePath, resources] of resourcesByRoute) {
-    const objectPath = join(
-      docsDir,
-      'api',
-      routePath.slice(1),
-      'object.mdx',
-    )
+    const objectPath = join(docsDir, 'api', routePath.slice(1), 'object.mdx')
 
     let content: string
     try {

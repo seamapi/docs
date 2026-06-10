@@ -213,10 +213,7 @@ function collectNavPaths(pages: any[]): Set<string> {
  * Find the best matching group for an API path and insert the endpoint.
  * Matches by longest shared path prefix with existing endpoints in each group.
  */
-function addMissingEndpoints(
-  groups: any[],
-  specPaths: Set<string>,
-): string[] {
+function addMissingEndpoints(groups: any[], specPaths: Set<string>): string[] {
   const allNavPaths = new Set<string>()
   for (const group of groups) {
     for (const p of collectNavPaths(group.pages)) {
