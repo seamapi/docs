@@ -5,7 +5,7 @@ description: 'Learn how the device object represents a smart lock, thermostat, s
 
 ## The device Object
 
-Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that has been connected to Seam.
+Represents a [device](https://docs.seam.co/core-concepts/devices) that has been connected to Seam.
 
 <ResponseExample>
 
@@ -470,7 +470,7 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="capabilities_supported" type="Array">
-  Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).
+  Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
@@ -482,7 +482,7 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="custom_metadata" type="object">
-  Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+  Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 </ResponseField>
 
 <ResponseField name="device_id" type="String (UUID)">
@@ -502,7 +502,7 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="is_managed" type="Boolean">
-  Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
+  Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 </ResponseField>
 
 <ResponseField name="nickname" type="String">
@@ -1437,54 +1437,54 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       Supported code lengths for access codes.
     </ResponseField>
     <ResponseField name="supports_backup_access_code_pool" type="Boolean">
-      Indicates whether the device supports a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).
+      Indicates whether the device supports a [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes).
     </ResponseField>
     <ResponseField name="active_thermostat_schedule" type="Object" deprecated>
-      Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+      Active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
       <Expandable title="properties">
         <ResponseField name="climate_preset_key" type="String">
-          Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
         </ResponseField>
         <ResponseField name="created_at" type="String (ISO 8601)">
-          Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
+          Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
         </ResponseField>
         <ResponseField name="device_id" type="String (UUID)">
-          ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
+          ID of the desired [thermostat](https://docs.seam.co/capability-guides/thermostats) device.
         </ResponseField>
         <ResponseField name="ends_at" type="String (ISO 8601)">
-          Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+          Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
         </ResponseField>
         <ResponseField name="errors" type="Array">
-          Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          Errors associated with the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
         </ResponseField>
         <ResponseField name="is_override_allowed" type="Boolean">
-          Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
+          Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
         </ResponseField>
         <ResponseField name="max_override_period_minutes" type="number">
-          Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+          Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
         </ResponseField>
         <ResponseField name="name" type="String">
-          User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          User-friendly name to identify the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
         </ResponseField>
         <ResponseField name="starts_at" type="String (ISO 8601)">
-          Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+          Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
         </ResponseField>
         <ResponseField name="thermostat_schedule_id" type="String (UUID)">
-          ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+          ID of the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
         </ResponseField>
         <ResponseField name="workspace_id" type="String (UUID)">
-          ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.
+          ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.
         </ResponseField>
       </Expandable>
     </ResponseField>
     <ResponseField name="active_thermostat_schedule_id" type="String (UUID)">
-      ID of the active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+      ID of the active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
     </ResponseField>
     <ResponseField name="available_climate_preset_modes" type="Array">
       Climate preset modes that the thermostat supports, such as "home", "away", "wake", "sleep", "occupied", and "unoccupied".
     </ResponseField>
     <ResponseField name="available_climate_presets" type="Array">
-      Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
+      Available [climate presets](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
     </ResponseField>
     <ResponseField name="available_fan_mode_settings" type="Array">
       Fan mode settings that the thermostat supports.
@@ -1496,28 +1496,28 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       Current climate setting.
       <Expandable title="properties">
         <ResponseField name="can_delete" type="Boolean">
-          Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
+          Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
         </ResponseField>
         <ResponseField name="can_edit" type="Boolean">
-          Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
+          Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
         </ResponseField>
         <ResponseField name="can_use_with_thermostat_daily_programs" type="Boolean">
-          Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
+          Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
         </ResponseField>
         <ResponseField name="climate_preset_key" type="String">
-          Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+          Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
         </ResponseField>
         <ResponseField name="climate_preset_mode" type="Enum (String)">
           The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
         </ResponseField>
         <ResponseField name="cooling_set_point_celsius" type="number">
-          Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="cooling_set_point_fahrenheit" type="number">
-          Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="display_name" type="String">
-          Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+          Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
         </ResponseField>
         <ResponseField name="ecobee_metadata" type="Object">
           Metadata specific to the Ecobee climate, if applicable.
@@ -1534,22 +1534,22 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
           </Expandable>
         </ResponseField>
         <ResponseField name="fan_mode_setting" type="Enum (String)">
-          Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+          Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
         </ResponseField>
         <ResponseField name="heating_set_point_celsius" type="number">
-          Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="heating_set_point_fahrenheit" type="number">
-          Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="hvac_mode_setting" type="Enum (String)">
-          Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+          Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
         </ResponseField>
         <ResponseField name="manual_override_allowed" type="Boolean" deprecated>
-          Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+          Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
         </ResponseField>
         <ResponseField name="name" type="String">
-          User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+          User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -1557,28 +1557,28 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       The default climate setting.
       <Expandable title="properties">
         <ResponseField name="can_delete" type="Boolean">
-          Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
+          Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
         </ResponseField>
         <ResponseField name="can_edit" type="Boolean">
-          Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
+          Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
         </ResponseField>
         <ResponseField name="can_use_with_thermostat_daily_programs" type="Boolean">
-          Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
+          Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
         </ResponseField>
         <ResponseField name="climate_preset_key" type="String">
-          Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+          Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
         </ResponseField>
         <ResponseField name="climate_preset_mode" type="Enum (String)">
           The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
         </ResponseField>
         <ResponseField name="cooling_set_point_celsius" type="number">
-          Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="cooling_set_point_fahrenheit" type="number">
-          Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="display_name" type="String">
-          Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+          Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
         </ResponseField>
         <ResponseField name="ecobee_metadata" type="Object">
           Metadata specific to the Ecobee climate, if applicable.
@@ -1595,27 +1595,27 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
           </Expandable>
         </ResponseField>
         <ResponseField name="fan_mode_setting" type="Enum (String)">
-          Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+          Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
         </ResponseField>
         <ResponseField name="heating_set_point_celsius" type="number">
-          Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="heating_set_point_fahrenheit" type="number">
-          Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+          Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
         </ResponseField>
         <ResponseField name="hvac_mode_setting" type="Enum (String)">
-          Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+          Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
         </ResponseField>
         <ResponseField name="manual_override_allowed" type="Boolean" deprecated>
-          Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+          Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
         </ResponseField>
         <ResponseField name="name" type="String">
-          User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+          User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
         </ResponseField>
       </Expandable>
     </ResponseField>
     <ResponseField name="fallback_climate_preset_key" type="String">
-      Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
+      Key of the [fallback climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
     </ResponseField>
     <ResponseField name="fan_mode_setting" type="Enum (String)" deprecated>
       The fan mode setting.
@@ -1633,16 +1633,16 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       Indicates whether the current thermostat settings differ from the most recent active program or schedule that Seam activated. For this condition to occur, `current_climate_setting.manual_override_allowed` must also be `true`.
     </ResponseField>
     <ResponseField name="max_cooling_set_point_celsius" type="number">
-      Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+      Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
     </ResponseField>
     <ResponseField name="max_cooling_set_point_fahrenheit" type="number">
-      Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+      Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
     </ResponseField>
     <ResponseField name="max_heating_set_point_celsius" type="number">
-      Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+      Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
     </ResponseField>
     <ResponseField name="max_heating_set_point_fahrenheit" type="number">
-      Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+      Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
     </ResponseField>
     <ResponseField name="max_thermostat_daily_program_periods_per_day" type="number">
       Maximum number of periods that the thermostat can support per day. For example, if the thermostat supports 4 periods per day, this value is 4.
@@ -1651,22 +1651,22 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       Maximum number of climate presets that the thermostat can support for weekly programming.
     </ResponseField>
     <ResponseField name="min_cooling_set_point_celsius" type="number">
-      Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+      Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
     </ResponseField>
     <ResponseField name="min_cooling_set_point_fahrenheit" type="number">
-      Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+      Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
     </ResponseField>
     <ResponseField name="min_heating_cooling_delta_celsius" type="number">
-      Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
+      Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
     </ResponseField>
     <ResponseField name="min_heating_cooling_delta_fahrenheit" type="number">
-      Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
+      Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
     </ResponseField>
     <ResponseField name="min_heating_set_point_celsius" type="number">
-      Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+      Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
     </ResponseField>
     <ResponseField name="min_heating_set_point_fahrenheit" type="number">
-      Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+      Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
     </ResponseField>
     <ResponseField name="relative_humidity" type="number">
       Reported relative humidity, as a value between 0 and 1, inclusive.
@@ -1678,19 +1678,19 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       Reported temperature in °F.
     </ResponseField>
     <ResponseField name="temperature_threshold" type="Object">
-      Current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+      Current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
       <Expandable title="properties">
         <ResponseField name="lower_limit_celsius" type="number">
-          Lower limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          Lower limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
         </ResponseField>
         <ResponseField name="lower_limit_fahrenheit" type="number">
-          Lower limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          Lower limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
         </ResponseField>
         <ResponseField name="upper_limit_celsius" type="number">
-          Upper limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          Upper limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
         </ResponseField>
         <ResponseField name="upper_limit_fahrenheit" type="number">
-          Upper limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+          Upper limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -1698,10 +1698,10 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       Precision of the thermostat's period in minutes. For example, if the thermostat supports 15-minute periods, this value is 15. All values are relative to the top of the hour, so for 15 minutes, the periods would be 0, 15, 30, and 45 minutes past the hour.
     </ResponseField>
     <ResponseField name="thermostat_daily_programs" type="Array">
-      Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+      Configured [daily programs](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
     </ResponseField>
     <ResponseField name="thermostat_weekly_program" type="Object">
-      Current [weekly program](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+      Current [weekly program](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
       <Expandable title="properties">
         <ResponseField name="created_at" type="String (ISO 8601)">
           Date and time at which the thermostat weekly program was created.
@@ -1836,7 +1836,7 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="supports_backup_access_code_pool" type="Boolean">
-  Indicates whether the device supports a [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).
+  Indicates whether the device supports a [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes).
 </ResponseField>
 
 ## Hardware
@@ -1934,46 +1934,46 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 ## Thermostats
 
 <ResponseField name="active_thermostat_schedule" type="Object" deprecated>
-  Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+  Active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
   <Expandable title="properties">
     <ResponseField name="climate_preset_key" type="String">
-      Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+      Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
     </ResponseField>
     <ResponseField name="created_at" type="String (ISO 8601)">
-      Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
+      Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
     </ResponseField>
     <ResponseField name="device_id" type="String (UUID)">
-      ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
+      ID of the desired [thermostat](https://docs.seam.co/capability-guides/thermostats) device.
     </ResponseField>
     <ResponseField name="ends_at" type="String (ISO 8601)">
-      Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+      Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
     </ResponseField>
     <ResponseField name="errors" type="Array">
-      Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+      Errors associated with the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
     </ResponseField>
     <ResponseField name="is_override_allowed" type="Boolean">
-      Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
+      Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
     </ResponseField>
     <ResponseField name="max_override_period_minutes" type="number">
-      Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+      Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
     </ResponseField>
     <ResponseField name="name" type="String">
-      User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+      User-friendly name to identify the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
     </ResponseField>
     <ResponseField name="starts_at" type="String (ISO 8601)">
-      Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+      Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
     </ResponseField>
     <ResponseField name="thermostat_schedule_id" type="String (UUID)">
-      ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+      ID of the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
     </ResponseField>
     <ResponseField name="workspace_id" type="String (UUID)">
-      ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.
+      ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="active_thermostat_schedule_id" type="String (UUID)">
-  ID of the active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+  ID of the active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 </ResponseField>
 
 <ResponseField name="available_climate_preset_modes" type="Array">
@@ -1981,7 +1981,7 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="available_climate_presets" type="Array">
-  Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
+  Available [climate presets](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
 </ResponseField>
 
 <ResponseField name="available_fan_mode_settings" type="Array">
@@ -1996,28 +1996,28 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
   Current climate setting.
   <Expandable title="properties">
     <ResponseField name="can_delete" type="Boolean">
-      Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
+      Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
     </ResponseField>
     <ResponseField name="can_edit" type="Boolean">
-      Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
+      Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
     </ResponseField>
     <ResponseField name="can_use_with_thermostat_daily_programs" type="Boolean">
-      Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
+      Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
     </ResponseField>
     <ResponseField name="climate_preset_key" type="String">
-      Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+      Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
     </ResponseField>
     <ResponseField name="climate_preset_mode" type="Enum (String)">
       The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
     </ResponseField>
     <ResponseField name="cooling_set_point_celsius" type="number">
-      Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="cooling_set_point_fahrenheit" type="number">
-      Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="display_name" type="String">
-      Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+      Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
     </ResponseField>
     <ResponseField name="ecobee_metadata" type="Object">
       Metadata specific to the Ecobee climate, if applicable.
@@ -2034,22 +2034,22 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       </Expandable>
     </ResponseField>
     <ResponseField name="fan_mode_setting" type="Enum (String)">
-      Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+      Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
     </ResponseField>
     <ResponseField name="heating_set_point_celsius" type="number">
-      Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="heating_set_point_fahrenheit" type="number">
-      Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="hvac_mode_setting" type="Enum (String)">
-      Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+      Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
     </ResponseField>
     <ResponseField name="manual_override_allowed" type="Boolean" deprecated>
-      Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+      Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
     </ResponseField>
     <ResponseField name="name" type="String">
-      User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+      User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -2058,28 +2058,28 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
   The default climate setting.
   <Expandable title="properties">
     <ResponseField name="can_delete" type="Boolean">
-      Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
+      Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
     </ResponseField>
     <ResponseField name="can_edit" type="Boolean">
-      Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
+      Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
     </ResponseField>
     <ResponseField name="can_use_with_thermostat_daily_programs" type="Boolean">
-      Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
+      Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
     </ResponseField>
     <ResponseField name="climate_preset_key" type="String">
-      Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+      Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
     </ResponseField>
     <ResponseField name="climate_preset_mode" type="Enum (String)">
       The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
     </ResponseField>
     <ResponseField name="cooling_set_point_celsius" type="number">
-      Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="cooling_set_point_fahrenheit" type="number">
-      Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="display_name" type="String">
-      Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+      Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
     </ResponseField>
     <ResponseField name="ecobee_metadata" type="Object">
       Metadata specific to the Ecobee climate, if applicable.
@@ -2096,28 +2096,28 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
       </Expandable>
     </ResponseField>
     <ResponseField name="fan_mode_setting" type="Enum (String)">
-      Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+      Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
     </ResponseField>
     <ResponseField name="heating_set_point_celsius" type="number">
-      Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="heating_set_point_fahrenheit" type="number">
-      Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+      Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
     </ResponseField>
     <ResponseField name="hvac_mode_setting" type="Enum (String)">
-      Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+      Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
     </ResponseField>
     <ResponseField name="manual_override_allowed" type="Boolean" deprecated>
-      Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+      Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
     </ResponseField>
     <ResponseField name="name" type="String">
-      User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+      User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="fallback_climate_preset_key" type="String">
-  Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
+  Key of the [fallback climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
 </ResponseField>
 
 <ResponseField name="fan_mode_setting" type="Enum (String)" deprecated>
@@ -2141,19 +2141,19 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="max_cooling_set_point_celsius" type="number">
-  Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+  Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
 </ResponseField>
 
 <ResponseField name="max_cooling_set_point_fahrenheit" type="number">
-  Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+  Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
 </ResponseField>
 
 <ResponseField name="max_heating_set_point_celsius" type="number">
-  Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+  Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
 </ResponseField>
 
 <ResponseField name="max_heating_set_point_fahrenheit" type="number">
-  Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+  Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
 </ResponseField>
 
 <ResponseField name="max_thermostat_daily_program_periods_per_day" type="number">
@@ -2165,27 +2165,27 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="min_cooling_set_point_celsius" type="number">
-  Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+  Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
 </ResponseField>
 
 <ResponseField name="min_cooling_set_point_fahrenheit" type="number">
-  Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+  Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
 </ResponseField>
 
 <ResponseField name="min_heating_cooling_delta_celsius" type="number">
-  Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
+  Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
 </ResponseField>
 
 <ResponseField name="min_heating_cooling_delta_fahrenheit" type="number">
-  Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
+  Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
 </ResponseField>
 
 <ResponseField name="min_heating_set_point_celsius" type="number">
-  Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+  Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
 </ResponseField>
 
 <ResponseField name="min_heating_set_point_fahrenheit" type="number">
-  Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+  Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
 </ResponseField>
 
 <ResponseField name="relative_humidity" type="number">
@@ -2201,19 +2201,19 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="temperature_threshold" type="Object">
-  Current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+  Current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
   <Expandable title="properties">
     <ResponseField name="lower_limit_celsius" type="number">
-      Lower limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+      Lower limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
     </ResponseField>
     <ResponseField name="lower_limit_fahrenheit" type="number">
-      Lower limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+      Lower limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
     </ResponseField>
     <ResponseField name="upper_limit_celsius" type="number">
-      Upper limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+      Upper limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
     </ResponseField>
     <ResponseField name="upper_limit_fahrenheit" type="number">
-      Upper limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+      Upper limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -2223,11 +2223,11 @@ Represents a [device](https://docs.seam.co/latest/core-concepts/devices) that ha
 </ResponseField>
 
 <ResponseField name="thermostat_daily_programs" type="Array">
-  Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+  Configured [daily programs](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
 </ResponseField>
 
 <ResponseField name="thermostat_weekly_program" type="Object">
-  Current [weekly program](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+  Current [weekly program](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
   <Expandable title="properties">
     <ResponseField name="created_at" type="String (ISO 8601)">
       Date and time at which the thermostat weekly program was created.

@@ -5,11 +5,11 @@ description: 'Learn how the acs_user object represents an individual—such as a
 
 ## The acs_user Object
 
-Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access system](https://docs.seam.co/latest/capability-guides/access-systems).
+Represents a [user](https://docs.seam.co/capability-guides/access-systems/user-management) in an [access system](https://docs.seam.co/capability-guides/access-systems).
 
 An access system user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
 
-For details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
+For details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/device-and-system-integration-guides#access-control-systems).
 
 <ResponseExample>
 
@@ -63,7 +63,7 @@ For details about how to configure users in your access system, see the correspo
 ## Properties
 
 <ResponseField name="access_schedule" type="Object">
-  `starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.
+  `starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/capability-guides/access-systems/user-management) access.
   <Expandable title="properties">
     <ResponseField name="ends_at" type="String (ISO 8601)">
       Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
@@ -75,23 +75,23 @@ For details about how to configure users in your access system, see the correspo
 </ResponseField>
 
 <ResponseField name="acs_system_id" type="String (UUID)">
-  ID of the [access system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  ID of the [access system](https://docs.seam.co/capability-guides/access-systems) that contains the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="acs_user_id" type="String (UUID)">
-  ID of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  ID of the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  The ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
-  Date and time at which the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
+  Date and time at which the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) was created.
 </ResponseField>
 
 <ResponseField name="display_name" type="String">
-  Display name for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Display name for the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="email" type="String" deprecated>
@@ -99,23 +99,23 @@ For details about how to configure users in your access system, see the correspo
 </ResponseField>
 
 <ResponseField name="email_address" type="String">
-  Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Email address of the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="errors" type="Array">
-  Errors associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Errors associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="external_type" type="Enum (String)">
-  Brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
+  Brand-specific terminology for the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) type.
 </ResponseField>
 
 <ResponseField name="external_type_display_name" type="String">
-  Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
+  Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) type.
 </ResponseField>
 
 <ResponseField name="full_name" type="String">
-  Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Full name of the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="hid_acs_system_id" type="String (UUID)">
@@ -127,19 +127,19 @@ For details about how to configure users in your access system, see the correspo
 </ResponseField>
 
 <ResponseField name="is_suspended" type="Boolean">
-  Indicates whether the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
+  Indicates whether the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
 </ResponseField>
 
 <ResponseField name="pending_mutations" type="Array">
-  Pending mutations associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.
+  Pending mutations associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.
 </ResponseField>
 
 <ResponseField name="phone_number" type="String">
-  Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+  Phone number of the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 </ResponseField>
 
 <ResponseField name="salto_space_metadata" type="Object">
-  Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
   <Expandable title="properties">
     <ResponseField name="audit_openings" type="Boolean">
       Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.
@@ -151,25 +151,25 @@ For details about how to configure users in your access system, see the correspo
 </ResponseField>
 
 <ResponseField name="user_identity_email_address" type="String">
-  Email address of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Email address of the user identity associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="user_identity_full_name" type="String">
-  Full name of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Full name of the user identity associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="user_identity_id" type="String">
-  ID of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  ID of the user identity associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="user_identity_phone_number" type="String">
-  Phone number of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+  Phone number of the user identity associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 </ResponseField>
 
 <ResponseField name="warnings" type="Array">
-  Warnings associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  Warnings associated with the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
 </ResponseField>

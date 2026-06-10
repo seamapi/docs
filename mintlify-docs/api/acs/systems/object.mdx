@@ -5,11 +5,11 @@ description: 'Learn how the acs_system object represents an access control syste
 
 ## The acs_system Object
 
-Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Represents an [access control system](https://docs.seam.co/capability-guides/access-systems).
 
-Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/latest/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.
+Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.
 
-For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).
+For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).
 
 <ResponseExample>
 
@@ -50,7 +50,7 @@ For details about the resources associated with an access control system, see th
 </ResponseField>
 
 <ResponseField name="acs_system_id" type="String (UUID)">
-  ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="acs_user_count" type="number">
@@ -58,39 +58,39 @@ For details about the resources associated with an access control system, see th
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="connected_account_ids" type="Array" deprecated>
-  IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
-  Date and time at which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) was created.
+  Date and time at which the [access control system](https://docs.seam.co/capability-guides/access-systems) was created.
 </ResponseField>
 
 <ResponseField name="default_credential_manager_acs_system_id" type="String (UUID)">
-  ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="errors" type="Array">
-  Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  Errors associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="external_type" type="Enum (String)">
-  Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
+  Brand-specific terminology for the [access control system](https://docs.seam.co/capability-guides/access-systems) type.
 </ResponseField>
 
 <ResponseField name="external_type_display_name" type="String">
-  Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.
+  Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/capability-guides/access-systems) type.
 </ResponseField>
 
 <ResponseField name="image_alt_text" type="String">
-  Alternative text for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) image.
+  Alternative text for the [access control system](https://docs.seam.co/capability-guides/access-systems) image.
 </ResponseField>
 
 <ResponseField name="image_url" type="String">
-  URL for the image that represents the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  URL for the image that represents the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="is_credential_manager" type="Boolean">
@@ -101,13 +101,13 @@ For details about the resources associated with an access control system, see th
   The location.
   <Expandable title="properties">
     <ResponseField name="time_zone" type="String">
-      Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
+      Time zone in which the [access control system](https://docs.seam.co/capability-guides/access-systems) is located.
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="name" type="String">
-  Name of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  Name of the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="system_type" type="Enum (String)" deprecated>
@@ -122,7 +122,7 @@ For details about the resources associated with an access control system, see th
   The visionline metadata.
   <Expandable title="properties">
     <ResponseField name="lan_address" type="String">
-      IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) on the local network.
+      IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) on the local network.
     </ResponseField>
     <ResponseField name="mobile_access_uuid" type="String">
       Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
@@ -134,9 +134,9 @@ For details about the resources associated with an access control system, see th
 </ResponseField>
 
 <ResponseField name="warnings" type="Array">
-  Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  Warnings associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/capability-guides/access-systems).
 </ResponseField>
