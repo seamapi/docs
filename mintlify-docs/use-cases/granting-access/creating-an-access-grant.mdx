@@ -217,8 +217,8 @@ Each access method has an `is_issued` flag. Once it's `true`, the credential is 
 | ------------ | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | `code`       | Read the `code` property and share the PIN with your user.                 | [Using PIN Codes](/use-cases/granting-access/using-pin-codes)                |
 | `mobile_key` | Initialize the Seam mobile SDK with the `client_session_token`, or send the `instant_key_url`. | [Using Mobile Keys](/use-cases/granting-access/using-mobile-keys) / [Instant Keys](/use-cases/granting-access/using-instant-keys) |
-| `card`       | Encode the credential onto a physical card. `is_issued` becomes `true` after encoding. | [Using Key Cards](/use-cases/granting-access/using-key-cards)                |
-| `cloud_key`  | Call `access_methods.unlock_door` to unlock on behalf of the user.         | [Using Cloud Keys](/use-cases/granting-access/using-cloud-keys)              |
+| `card`       | Encode a fresh card or assign an existing card. `is_issued` becomes `true` after encoding or assignment. | [Using Key Cards](/use-cases/granting-access/using-key-cards)                |
+| `cloud_key`  | Call `access_methods.unlock_door` from your web app to unlock on behalf of the user.         | [Using Cloud Keys](/use-cases/granting-access/using-cloud-keys)              |
 
 <Info>
 In a sandbox workspace, automatically-issued access methods are ready almost instantly. On real devices, issuance can take a few moments.
