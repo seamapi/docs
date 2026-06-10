@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Simulates that the next attempt to encode a [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).
+Simulates that the next attempt to encode a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
 
 
 {% tabs %}

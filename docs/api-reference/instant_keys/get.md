@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Gets an [instant key](https://docs.seam.co/capability-guides/instant-keys).
+Gets an [instant key](https://docs.seam.co/latest/capability-guides/instant-keys).
 
 
 <details>

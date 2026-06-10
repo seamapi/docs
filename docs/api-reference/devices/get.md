@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a specified [device](https://docs.seam.co/core-concepts/devices).
+Returns a specified [device](https://docs.seam.co/latest/core-concepts/devices).
 
 You must specify either `device_id` or `name`.
 

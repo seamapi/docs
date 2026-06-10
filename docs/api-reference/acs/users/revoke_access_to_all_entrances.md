@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Revokes access to all [entrances](https://docs.seam.co/api/acs/entrances) for a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 {% tabs %}

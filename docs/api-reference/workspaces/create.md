@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Creates a new [workspace](https://docs.seam.co/core-concepts/workspaces).
+Creates a new [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
 
 
 {% tabs %}
@@ -349,13 +349,13 @@ Connect partner name for the new workspace.
 
 **`connect_webview_customization`** *Object*
 
-[Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) customizations for the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+[Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) customizations for the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
 <details>
 
 <summary><b><code>logo_shape</code></b> <i>Enum</i></summary>
 
-Logo shape for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
 Enum values:
 
@@ -372,7 +372,7 @@ Enum values:
 
 <summary><b><code>primary_button_color</code></b> <i>String</i></summary>
 
-Primary button color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
 </details>
 
@@ -384,7 +384,7 @@ Primary button color for [Connect Webviews](https://docs.seam.co/core-concepts/c
 
 <summary><b><code>primary_button_text_color</code></b> <i>String</i></summary>
 
-Primary button text color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
 </details>
 
@@ -396,7 +396,7 @@ Primary button text color for [Connect Webviews](https://docs.seam.co/core-conce
 
 <summary><b><code>success_message</code></b> <i>String</i></summary>
 
-Success message for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
+Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
 
 </details>
 
@@ -405,7 +405,7 @@ Success message for [Connect Webviews](https://docs.seam.co/core-concepts/connec
 
 **`is_sandbox`** *Boolean*
 
-Indicates whether the new workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).
+Indicates whether the new workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
 
 ---
 

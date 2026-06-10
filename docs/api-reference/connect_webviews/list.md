@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews).
+Returns a list of all [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 
 {% tabs %}
@@ -278,7 +278,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`custom_metadata_has`** *Object*
 
-Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.
+Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs.
 
 ---
 

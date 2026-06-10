@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Updates the properties of a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Updates the properties of a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 
 {% tabs %}
@@ -239,13 +239,13 @@ ID of the access system user that you want to update. You can only provide acs_u
 
 **`email_address`** *String*
 
-Email address of the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
 **`full_name`** *String*
 
-Full name of the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
 
 ---
 
@@ -255,7 +255,7 @@ Full name of the [access system user](https://docs.seam.co/capability-guides/acc
 
 **`phone_number`** *String*
 
-Phone number of the [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
 
 ---
 

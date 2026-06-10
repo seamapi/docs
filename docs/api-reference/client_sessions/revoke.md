@@ -3,9 +3,9 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Revokes a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).
+Revokes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 
-Note that [deleting a client session](https://docs.seam.co/api/client_sessions/delete) is a separate action.
+Note that [deleting a client session](https://docs.seam.co/latest/api/client_sessions/delete) is a separate action.
 
 
 {% tabs %}
