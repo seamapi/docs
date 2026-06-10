@@ -402,11 +402,13 @@
                 "group": "Access Methods",
                 "pages": [
                   "api/access_methods/object",
+                  "POST /access_methods/assign_card",
                   "POST /access_methods/delete",
                   "POST /access_methods/encode",
                   "POST /access_methods/get",
                   "POST /access_methods/get_related",
                   "POST /access_methods/list",
+                  "POST /access_methods/unlock_door",
                   {
                     "group": "Unmanaged",
                     "pages": [
@@ -429,11 +431,10 @@
                   "POST /devices/list_device_providers",
                   "POST /devices/list",
                   "POST /devices/update",
-                  "api/devices/simulate/object",
-                  "api/devices/unmanaged/object",
                   {
                     "group": "Simulations",
                     "pages": [
+                      "api/devices/simulate/object",
                       "POST /devices/simulate/connect",
                       "POST /devices/simulate/disconnect",
                       "POST /devices/simulate/remove",
@@ -445,6 +446,7 @@
                   {
                     "group": "Unmanaged Devices",
                     "pages": [
+                      "api/devices/unmanaged/object",
                       "POST /devices/unmanaged/get",
                       "POST /devices/unmanaged/list",
                       "POST /devices/unmanaged/update"
@@ -489,11 +491,10 @@
                   "POST /thermostats/off",
                   "POST /thermostats/update_climate_preset",
                   "POST /thermostats/update_weekly_program",
-                  "api/thermostats/daily_programs/object",
-                  "api/thermostats/schedules/object",
                   {
                     "group": "Daily Programs",
                     "pages": [
+                      "api/thermostats/daily_programs/object",
                       "POST /thermostats/daily_programs/create",
                       "POST /thermostats/daily_programs/delete",
                       "POST /thermostats/daily_programs/update"
@@ -502,6 +503,7 @@
                   {
                     "group": "Schedules",
                     "pages": [
+                      "api/thermostats/schedules/object",
                       "POST /thermostats/schedules/create",
                       "POST /thermostats/schedules/delete",
                       "POST /thermostats/schedules/get",
@@ -523,7 +525,6 @@
                 "pages": [
                   "api/noise_sensors/object",
                   "POST /noise_sensors/list",
-                  "api/noise_sensors/noise_thresholds/object",
                   {
                     "group": "Simulations",
                     "pages": [
@@ -533,6 +534,7 @@
                   {
                     "group": "Noise Thresholds",
                     "pages": [
+                      "api/noise_sensors/noise_thresholds/object",
                       "POST /noise_sensors/noise_thresholds/create",
                       "POST /noise_sensors/noise_thresholds/delete",
                       "POST /noise_sensors/noise_thresholds/get",
@@ -598,6 +600,7 @@
                       "POST /acs/encoders/get",
                       "POST /acs/encoders/list",
                       "POST /acs/encoders/scan_credential",
+                      "POST /acs/encoders/scan_to_assign_credential",
                       "POST /acs/encoders/simulate/next_credential_encode_will_fail",
                       "POST /acs/encoders/simulate/next_credential_encode_will_succeed",
                       "POST /acs/encoders/simulate/next_credential_scan_will_fail",
@@ -724,6 +727,7 @@
                 "group": "Spaces",
                 "pages": [
                   "api/spaces/object",
+                  "POST /spaces/add_connected_account",
                   "POST /spaces/add_devices",
                   "POST /spaces/add_acs_entrances",
                   "POST /spaces/create",
@@ -731,6 +735,7 @@
                   "POST /spaces/get",
                   "POST /spaces/get_related",
                   "POST /spaces/list",
+                  "POST /spaces/remove_connected_account",
                   "POST /spaces/remove_devices",
                   "POST /spaces/remove_acs_entrances",
                   "POST /spaces/update"
@@ -787,7 +792,6 @@
                   "POST /access_codes/report_device_constraints",
                   "POST /access_codes/update",
                   "POST /access_codes/update_multiple",
-                  "api/access_codes/unmanaged/object",
                   {
                     "group": "Simulations",
                     "pages": [
@@ -797,6 +801,7 @@
                   {
                     "group": "Unmanaged Access Codes",
                     "pages": [
+                      "api/access_codes/unmanaged/object",
                       "POST /access_codes/unmanaged/convert_to_managed",
                       "POST /access_codes/unmanaged/delete",
                       "POST /access_codes/unmanaged/get",

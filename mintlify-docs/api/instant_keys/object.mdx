@@ -4,19 +4,13 @@ title: 'The Instant Key Object'
 
 ## The instant_key Object
 
-- [Properties](#properties)
-- [Endpoints](#endpoints)
-
 Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.
 
 There’s no app to install, nor account to create. Your user just taps a link and gets a lightweight, native-feeling experience using iOS App Clip or Instant Apps on Android. Further, Instant Keys work offline, so even in areas with poor cellular or Wi-Fi, like elevator banks or concrete-walled hallways, the Instant Keys still work.
 
-<Tabs>
-<Tab title="Instant Key">
+<ResponseExample>
 
-An Instant Key resource.
-
-```json
+```json Instant Key
 {
   "client_session_id": "bfe3b1c6-fb9e-48b1-9b5b-c762b2983af6",
   "created_at": "2025-06-14T16:54:17.946559Z",
@@ -28,103 +22,55 @@ An Instant Key resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</ResponseExample>
 
 ---
 
 ## Properties
 
-**`client_session_id`** _UUID_
+<ResponseField name="client_session_id" type="String (UUID)">
+  ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) associated with the Instant Key.
+</ResponseField>
 
-ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) associated with the Instant Key.
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the Instant Key was created.
+</ResponseField>
 
----
+<ResponseField name="customization" type="Object">
+  Customization applied to the Instant Key UI.
+  <Expandable title="properties">
+    <ResponseField name="logo_url" type="String">
+      URL of the logo displayed on the Instant Key.
+    </ResponseField>
+    <ResponseField name="primary_color" type="String">
+      Primary color used in the Instant Key UI.
+    </ResponseField>
+    <ResponseField name="secondary_color" type="String">
+      Secondary color used in the Instant Key UI.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
 
-**`created_at`** _Datetime_
+<ResponseField name="customization_profile_id" type="String (UUID)">
+  ID of the customization profile associated with the Instant Key.
+</ResponseField>
 
-Date and time at which the Instant Key was created.
+<ResponseField name="expires_at" type="String (ISO 8601)">
+  Date and time at which the Instant Key expires.
+</ResponseField>
 
----
+<ResponseField name="instant_key_id" type="String (UUID)">
+  ID of the Instant Key.
+</ResponseField>
 
-**`customization`** _Object_
+<ResponseField name="instant_key_url" type="String">
+  Shareable URL for the Instant Key. Use the URL to deliver the Instant Key to your user through a link in a text message or email or by embedding it in your web app.
+</ResponseField>
 
-Customization applied to the Instant Key UI.
+<ResponseField name="user_identity_id" type="String (UUID)">
+  ID of the user identity associated with the Instant Key.
+</ResponseField>
 
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>logo_url</code>
-  </strong>
-  <i>String</i>
-
-  URL of the logo displayed on the Instant Key.
-
-- <strong>
-    <code>primary_color</code>
-  </strong>
-  <i>String</i>
-
-  Primary color used in the Instant Key UI.
-
-- <strong>
-    <code>secondary_color</code>
-  </strong>
-  <i>String</i>
-
-  Secondary color used in the Instant Key UI.
-
-</details>
-
----
-
-**`customization_profile_id`** _UUID_
-
-ID of the customization profile associated with the Instant Key.
-
----
-
-**`expires_at`** _Datetime_
-
-Date and time at which the Instant Key expires.
-
----
-
-**`instant_key_id`** _UUID_
-
-ID of the Instant Key.
-
----
-
-**`instant_key_url`** _String_
-
-Shareable URL for the Instant Key. Use the URL to deliver the Instant Key to your user through a link in a text message or email or by embedding it in your web app.
-
----
-
-**`user_identity_id`** _UUID_
-
-ID of the user identity associated with the Instant Key.
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Instant Key.
-
----
-
-## Endpoints
-
-[**`/instant_keys/delete`**](./delete)
-
-Deletes a specified [Instant Key](https://docs.seam.co/latest/capability-guides/instant-keys).
-
-[**`/instant_keys/get`**](./get)
-
-Gets an [instant key](https://docs.seam.co/latest/capability-guides/instant-keys).
-
-[**`/instant_keys/list`**](./list)
-
-Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/instant-keys).
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Instant Key.
+</ResponseField>

@@ -4,11 +4,7 @@ title: 'The Encoder Object'
 
 ## The acs_encoder Object
 
-- [Properties](#properties)
-- [Events](#events)
-- [Endpoints](#endpoints)
-
-Represents a hardware device that encodes [credential](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/latest/low-level-apis/access-systems).
+Represents a hardware device that encodes [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Some access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:
 
@@ -19,16 +15,13 @@ Some access control systems require credentials to be encoded onto plastic key c
 
 Separately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.
 
-See [Working with Card Encoders and Scanners](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
+See [Working with Card Encoders and Scanners](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 
 To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
-<Tabs>
-<Tab title="ACS Encoder">
+<ResponseExample>
 
-An access system encoder resource.
-
-```json
+```json ACS Encoder
 {
   "acs_encoder_id": "681da2d6-4ac6-4b33-8c03-86281b761325",
   "acs_system_id": "c85406d2-214f-4e11-8000-a2e5b5a362a4",
@@ -40,236 +33,36 @@ An access system encoder resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</ResponseExample>
 
 ---
 
 ## Properties
 
-**`acs_encoder_id`** _UUID_
-
-ID of the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners.
-
----
-
-**`acs_system_id`** _UUID_
-
-ID of the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems) that contains the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
----
-
-**`connected_account_id`** _UUID_
-
-ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
----
-
-**`created_at`** _Datetime_
-
-Date and time at which the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was created.
-
----
-
-**`display_name`** _String_
-
-Display name for the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
----
-
-**`errors`** _List_ _of Objects_
-
-Errors associated with the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
-<details>
-  <summary>Child Object Properties</summary>
-<strong><code>created_at</code></strong> <i>Datetime</i>
-
-Date and time at which Seam created the error.
-
-<strong>
-  <code>error_code</code>
-</strong>
-<i>Enum</i>
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>acs_encoder_removed</code>
-
-</details>
-
-<strong>
-  <code>message</code>
-</strong>
-<i>String</i>
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
----
-
-## Events
-
-**`acs_encoder.added`**
-
-An [access system encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was added.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>acs_encoder_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the affected encoder.
-
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the access system.
-
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the connected account.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `acs_encoder.added`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-**`acs_encoder.removed`**
-
-An [access system encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was removed.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>acs_encoder_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the affected encoder.
-
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the access system.
-
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the connected account.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `acs_encoder.removed`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-## Endpoints
-
-[**`/acs/encoders/encode_credential`**](./encode_credential)
-
-Encodes an existing [credential](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners). Either provide an `acs_credential_id` or an `access_method_id`
-
-[**`/acs/encoders/get`**](./get)
-
-Returns a specified [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
-[**`/acs/encoders/list`**](./list)
-
-Returns a list of all [encoders](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
-[**`/acs/encoders/scan_credential`**](./scan_credential)
-
-Scans an encoded [acs_credential](https://docs.seam.co/latest/low-level-apis/access-systems/managing-credentials) from a plastic card placed on the specified [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
+<ResponseField name="acs_encoder_id" type="String (UUID)">
+  ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.
+</ResponseField>
+
+<ResponseField name="display_name" type="String">
+  Display name for the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
+
+<ResponseField name="errors" type="Array">
+  Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
