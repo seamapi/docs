@@ -22,12 +22,12 @@ For detailed information about the Kwikset devices that Seam supports, see our [
 
 We support the following features:
 
-- [Triggering web lock and unlock actions](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock)
-- [Programming access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes)
+- [Triggering web lock and unlock actions](/low-level-apis/smart-locks/lock-and-unlock)
+- [Programming access codes](/low-level-apis/smart-locks/access-codes)
 
 <Info>
   Seam does not support [unmanaged access
-  codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes)
+  codes](/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes)
   for Kwikset.
 </Info>
 
@@ -35,7 +35,7 @@ We support the following features:
 
 ### Device Provider Key
 
-To create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) that enables your users to connect their Kwikset devices to Seam, include the `kwikset` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+To create a [Connect Webview](/core-concepts/connect-webviews) that enables your users to connect their Kwikset devices to Seam, include the `kwikset` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 ---
 
@@ -50,7 +50,7 @@ To control Kwikset devices using Seam, you must prompt owners of these devices t
 3. In the Kwikset App, click on the top left menu button, navigate to **Account Settings** and disable **2-Step Verification**.
 
 <Warning>
-You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+You must disable **2-Step Verification**—that is, multifactor authentication (MFA)—before connecting your Kwikset account to Seam using the [Seam Connect Webview](/core-concepts/connect-webviews).
 
 Enabling MFA in the Kwikset App can block the Seam login process from performing successful authorization using your Kwikset account. After you connect your Kwikset account to Seam, you can reenable **2-Step Verification** in the Kwikset App **Account Settings**.
 
@@ -86,11 +86,11 @@ Seam supports the following events and event property values for Kwikset devices
 
 ### Kwikset Auto-Lock
 
-Kwikset devices have an auto-lock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-lock occurrences by emitting a [`lock.locked` event](https://docs.seam.co/latest/api/events/) with `automatic` as the value for the `method` property.
+Kwikset devices have an auto-lock feature that automatically locks the device after a configurable period of time, for example, 30 seconds. The Seam API reports these auto-lock occurrences by emitting a [`lock.locked` event](/api/events/object) with `automatic` as the value for the `method` property.
 
 ### Kwikset Access Denied Event
 
-The Seam API emits a [`lock.access_denied` event](https://docs.seam.co/latest/api/events/) when an incorrect access code is entered three times in a row on a Kwikset device. The Kwikset device also emits warning beeps for approximately 15 seconds, and the keypad is locked during this time. The keypad remains locked for one minute after the warning beeps end.
+The Seam API emits a [`lock.access_denied` event](/api/events/object) when an incorrect access code is entered three times in a row on a Kwikset device. The Kwikset device also emits warning beeps for approximately 15 seconds, and the keypad is locked during this time. The keypad remains locked for one minute after the warning beeps end.
 
 ---
 

@@ -53,7 +53,7 @@ Identify the entrances (or spaces) the user should have access to.
 
 ### **2. Check entrance capabilities**
 
-If you’re looking to issue a guest or resident credential, use the [Entrances API](https://docs.seam.co/latest/api/acs/entrances/) to confirm which entrances support reservation semantics.
+If you’re looking to issue a guest or resident credential, use the [Entrances API](/api/acs/entrances/object) to confirm which entrances support reservation semantics.
 
 ```
 const entrances = await seam.acs.entrances.list({ space_id: "room-101" })

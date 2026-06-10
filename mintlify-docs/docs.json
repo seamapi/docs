@@ -3129,6 +3129,10 @@
     {
       "source": "/yale-locks/yale-sample-data",
       "destination": "/device-and-system-integration-guides/yale-locks/yale-sample-data"
+    },
+    {
+      "source": "/latest/:path*",
+      "destination": "/:path*"
     }
   ],
   "openapi": [

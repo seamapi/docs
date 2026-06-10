@@ -12,13 +12,13 @@ description: 'Learn how the device object represents a smart lock connected to S
 - [Events](#events)
 - [Endpoints](#endpoints)
 
-Represents a [lock](https://docs.seam.co/latest/low-level-apis/smart-locks).
+Represents a [lock](/low-level-apis/smart-locks).
 
-The Seam API enables you to control connected smart locks from a wide variety of manufacturers, including locks that provide online and offline [access code](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes) programming.
+The Seam API enables you to control connected smart locks from a wide variety of manufacturers, including locks that provide online and offline [access code](/low-level-apis/smart-locks/access-codes) programming.
 
 Depending on the smart lock brand and model, actions that you can perform include remote unlock, remote lock, and programming access codes. You can also view a lock's properties, capabilities, and status. Further, you can monitor for unlock and lock events.
 
-See also [Webhooks](https://docs.seam.co/latest/developer-tools/webhooks).
+See also [Webhooks](/developer-tools/webhooks).
 
 <Tabs>
 <Tab title="Lock Device">
@@ -169,7 +169,7 @@ A lock device resource.
 
 **`capabilities_supported`** _List_ _of Enums_
 
-Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).
+Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](/capability-guides/device-and-system-capabilities#capability-flags).
 
 ---
 
@@ -187,7 +187,7 @@ Date and time at which the device object was created.
 
 **`custom_metadata`** _Record_
 
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 
 ---
 
@@ -284,7 +284,7 @@ Enum values:
 
 **`is_connected_account_error`** _Boolean_
 
-Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+Indicates that the error is a [connected account](/api/connected_accounts/object) error.
 
 ---
 
@@ -322,7 +322,7 @@ Enum values:
 
 **`is_connected_account_error`** _Boolean_
 
-Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+Indicates that the error is a [connected account](/api/connected_accounts/object) error.
 
 ---
 
@@ -468,7 +468,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-Indicates that the [backup access code pool](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
 **`created_at`** _Datetime_
 
@@ -724,7 +724,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 **`created_at`** _Datetime_
 
@@ -744,7 +744,7 @@ Enum values:
 
 **`is_bridge_error`** _Boolean_
 
-Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
+Indicates whether the error is related to [Seam Bridge](/capability-guides/seam-bridge).
 
 ---
 
@@ -764,7 +764,7 @@ Detailed description of the error. Provides insights into the issue and potentia
 
 **`is_managed`** _Boolean_
 
-Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
+Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](/core-concepts/devices/managed-and-unmanaged-devices).
 
 ---
 
@@ -3113,7 +3113,7 @@ Supported code lengths for access codes.
 
 **`supports_backup_access_code_pool`** _Boolean_
 
-Indicates whether the device supports a [backup access code pool](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/backup-access-codes).
+Indicates whether the device supports a [backup access code pool](/low-level-apis/smart-locks/access-codes/backup-access-codes).
 
 ---
 
@@ -3495,7 +3495,7 @@ Indicates that the lock is not connected to a bridge.
 
 **`empty_backup_access_code_pool`**
 
-Indicates that the [backup access code pool](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
 ---
 
@@ -3555,7 +3555,7 @@ Indicates that the account is disconnected.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -3691,7 +3691,7 @@ Indicates that the Wyze Lock is not connected to a gateway.
 
 **`lock.locked`**
 
-A [lock](https://docs.seam.co/latest/low-level-apis/smart-locks) was locked.
+A [lock](/low-level-apis/smart-locks) was locked.
 
 <details>
 
@@ -3730,7 +3730,7 @@ Custom metadata of the connected account, present when connected_account_id is p
 </strong>
 <i>UUID</i>
 
-ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+ID of the [connected account](/core-concepts/connected-accounts) associated with the event.
 
 <strong>
   <code>created_at</code>
@@ -3804,7 +3804,7 @@ Date and time at which the event occurred.
 </strong>
 <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+ID of the [workspace](/core-concepts/workspaces) associated with the event.
 
 </details>
 
@@ -3812,7 +3812,7 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) asso
 
 **`lock.unlocked`**
 
-A [lock](https://docs.seam.co/latest/low-level-apis/smart-locks) was unlocked.
+A [lock](/low-level-apis/smart-locks) was unlocked.
 
 <details>
 
@@ -3878,7 +3878,7 @@ Custom metadata of the connected account, present when connected_account_id is p
 </strong>
 <i>UUID</i>
 
-ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+ID of the [connected account](/core-concepts/connected-accounts) associated with the event.
 
 <strong>
   <code>created_at</code>
@@ -3927,7 +3927,7 @@ Value: `lock.unlocked`
 </strong>
 <i>Enum</i>
 
-Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes) that was used, if reported by the device.
+Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](/low-level-apis/smart-locks/access-codes) that was used, if reported by the device.
 
 <details>
     <summary>Enum values:</summary>
@@ -3961,7 +3961,7 @@ ID of the user identity associated with the unlock event.
 </strong>
 <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+ID of the [workspace](/core-concepts/workspaces) associated with the event.
 
 </details>
 
@@ -3969,7 +3969,7 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) asso
 
 **`lock.access_denied`**
 
-The [lock](https://docs.seam.co/latest/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
+The [lock](/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
 
 <details>
 
@@ -3994,7 +3994,7 @@ Custom metadata of the connected account, present when connected_account_id is p
 </strong>
 <i>UUID</i>
 
-ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+ID of the [connected account](/core-concepts/connected-accounts) associated with the event.
 
 <strong>
   <code>created_at</code>
@@ -4050,7 +4050,7 @@ Date and time at which the event occurred.
 </strong>
 <i>UUID</i>
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+ID of the [workspace](/core-concepts/workspaces) associated with the event.
 
 </details>
 
@@ -4060,20 +4060,20 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) asso
 
 [**`/locks/configure_auto_lock`**](./configure_auto_lock)
 
-Configures the auto-lock setting for a specified [lock](https://docs.seam.co/latest/low-level-apis/smart-locks).
+Configures the auto-lock setting for a specified [lock](/low-level-apis/smart-locks).
 
 [**`/locks/get`**](./get)
 
-Returns a specified [lock](https://docs.seam.co/latest/low-level-apis/smart-locks).
+Returns a specified [lock](/low-level-apis/smart-locks).
 
 [**`/locks/list`**](./list)
 
-Returns a list of all [locks](https://docs.seam.co/latest/low-level-apis/smart-locks).
+Returns a list of all [locks](/low-level-apis/smart-locks).
 
 [**`/locks/lock_door`**](./lock_door)
 
-Locks a [lock](https://docs.seam.co/latest/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock).
+Locks a [lock](/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](/low-level-apis/smart-locks/lock-and-unlock).
 
 [**`/locks/unlock_door`**](./unlock_door)
 
-Unlocks a [lock](https://docs.seam.co/latest/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock).
+Unlocks a [lock](/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](/low-level-apis/smart-locks/lock-and-unlock).

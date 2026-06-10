@@ -98,7 +98,7 @@ Seam polls connected devices and accounts every ten minutes and updates the foll
   </tbody>
 </table>
 
-Use a [Get Device](https://docs.seam.co/latest/api/devices/get) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
+Use a [Get Device](/api/devices/get) request to retrieve the current power status of a device. First, determine whether the device is wired. If the device is battery-powered (that is, not wired), get the battery level and status. Then, display the retrieved device power status in your app.
 
 <Info>
   You can also use the prebuilt [device details Seam
@@ -275,11 +275,11 @@ Seam generates the following battery-related events:
 - `device.low_battery`
 - `device.battery_status_changed`
 
-You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../../developer-tools/webhooks) and then display the corresponding status in your app.
+You can retrieve these events using a [List Events](/api/events/list) request or through [webhooks](../../developer-tools/webhooks) and then display the corresponding status in your app.
 
 ### Get Battery-Related Events Using a List Events Request
 
-When issuing a [List Events](https://docs.seam.co/latest/api/events/list) request to retrieve [`device.low_battery`](https://docs.seam.co/latest/api/events/) or [`device.battery_status_changed`](https://docs.seam.co/latest/api/events/) events for a specific device, include the following parameters:
+When issuing a [List Events](/api/events/list) request to retrieve [`device.low_battery`](/api/events/object) or [`device.battery_status_changed`](/api/events/object) events for a specific device, include the following parameters:
 
 <table>
   <thead>

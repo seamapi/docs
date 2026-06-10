@@ -18,7 +18,7 @@ description: 'Access codes are codes for keypad devices. These are used when you
 
 ## What Is an Access Code?
 
-An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](https://docs.seam.co/latest/api/access_codes/), you can easily generate access codes on the hundreds of door lock models with which we integrate.
+An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam [Access Code API](/api/access_codes/object), you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
 Seam supports programming two types of access codes: [ongoing](#ongoing-access-codes) and [time-bound](#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`.
 
@@ -38,7 +38,7 @@ Time-bound access codes are suitable for temporary access, like guest visits or 
 
 ### Offline Access Codes
 
-Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. Currently, Seam supports offline access codes for [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks), [dormakaba Oracode locks](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks), and [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks). For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
+Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. Currently, Seam supports offline access codes for [igloohome locks](/device-and-system-integration-guides/igloohome-locks), [dormakaba Oracode locks](/device-and-system-integration-guides/dormakaba-oracode-locks), and [Lockly locks](/device-and-system-integration-guides/lockly-locks). For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
 <Info>
   You cannot modify a created offline access code. In addition, you cannot
@@ -50,13 +50,13 @@ Offline access (PIN) codes are designed for door locks that might not always mai
 
 Seam supports two types of offline access codes: [time-bound](#time-bound-offline-access-codes) and [one-time-use](#one-time-use-offline-access-codes). Note that this support varies based on the device manufacturer. Before creating an offline access code, it is imperative to understand any manufacturer- or device-specific constraints, such as the maximum number of access codes, any time slot or activation requirements, and so on. For details, see the corresponding device guide.
 
-- [igloohome Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks)
-- [dormakaba Oracode Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks)
-- [Lockly Locks device guide](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks)
+- [igloohome Locks device guide](/device-and-system-integration-guides/igloohome-locks)
+- [dormakaba Oracode Locks device guide](/device-and-system-integration-guides/dormakaba-oracode-locks)
+- [Lockly Locks device guide](/device-and-system-integration-guides/lockly-locks)
 
 #### Time-Bound Offline Access Codes
 
-For [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks) and [dormakaba Oracode locks](https://docs.seam.co/latest/device-and-system-integration-guides/dormakaba-oracode-locks), you can create time-bound offline access codes with validity durations at either the hour level or the day level. For [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks), you can create generic time-bound offline access codes that do not differentiate between hourly-bound and daily-bound codes.
+For [igloohome locks](/device-and-system-integration-guides/igloohome-locks) and [dormakaba Oracode locks](/device-and-system-integration-guides/dormakaba-oracode-locks), you can create time-bound offline access codes with validity durations at either the hour level or the day level. For [Lockly locks](/device-and-system-integration-guides/lockly-locks), you can create generic time-bound offline access codes that do not differentiate between hourly-bound and daily-bound codes.
 
 Hourly-bound offline access codes are intended for shorter durations, while daily-bound offline codes are intended for longer durations. Device manufacturers set the bounds for these short- and long-term access codes, and some device manufacturers enforce a maximum duration for hourly-bound offline access codes. See the corresponding device guide for more information.
 
@@ -64,7 +64,7 @@ To [create a time-bound offline access code](/low-level-apis/smart-locks/access-
 
 #### One-Time-Use Offline Access Codes
 
-For [igloohome locks](https://docs.seam.co/latest/device-and-system-integration-guides/igloohome-locks) and [Lockly locks](https://docs.seam.co/latest/device-and-system-integration-guides/lockly-locks), you can create [one-time-use offline access codes](/low-level-apis/smart-locks/access-codes/offline-access-codes#creating-one-time-use-offline-access-codes). igloohome one-time-use offline access codes are valid for 24 hours from the `starts_at` timestamp that you configure. Lockly offline access codes are valid for the time period that you specify using the `starts_at` and `ends_at` timestamps. These codes expire after a single use.
+For [igloohome locks](/device-and-system-integration-guides/igloohome-locks) and [Lockly locks](/device-and-system-integration-guides/lockly-locks), you can create [one-time-use offline access codes](/low-level-apis/smart-locks/access-codes/offline-access-codes#creating-one-time-use-offline-access-codes). igloohome one-time-use offline access codes are valid for 24 hours from the `starts_at` timestamp that you configure. Lockly offline access codes are valid for the time period that you specify using the `starts_at` and `ends_at` timestamps. These codes expire after a single use.
 
 ---
 
@@ -133,7 +133,7 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 ## Linking Unlock Events and Access Codes
 
-When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](https://docs.seam.co/latest/api/events/). Some device manufacturers include the ID of the access code in lock-related events. This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
+When a user unlocks a door using an access code, Seam issues a [`lock.unlocked` event](/api/events/object). Some device manufacturers include the ID of the access code in lock-related events. This information is useful for troubleshooting and logging. Further, if you name access codes in a way that identifies the associated users, you can use these `lock.unlocked` events to identify the users who unlocked the doors.
 
 Currently, the following device manufacturers send the `access_code_id` in the `lock.unlocked` event:
 

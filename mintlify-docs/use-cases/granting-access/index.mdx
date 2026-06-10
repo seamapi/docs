@@ -125,7 +125,7 @@ Access Grants work across the entire Seam provider lineup:
 
 - **Standalone smart locks**, such as August, Yale, Schlage, Lockly, TTLock, Tedee, and igloohome devices. Specify the locks directly with `device_ids`.
 - **Access control systems (ACS)**, such as Salto KS, Salto Space, ASSA ABLOY Visionline and Vostio, dormakaba, Brivo, and Avigilon Alta. Specify entrances with `acs_entrance_ids`.
-- **Mixed estates.** Combine `device_ids` and `acs_entrance_ids` in the same Access Grant, or group access points into [spaces](https://docs.seam.co/latest/api/spaces) and grant access to the whole group with `space_ids`.
+- **Mixed estates.** Combine `device_ids` and `acs_entrance_ids` in the same Access Grant, or group access points into [spaces](/api/spaces/object) and grant access to the whole group with `space_ids`.
 
 ---
 
@@ -173,7 +173,7 @@ An Access Grant includes the following characteristics:
         The access points to which to grant access. Specify one or more devices
         (such as standalone smart locks) by ID, one or more access system
         entrances by ID, or both. Alternately, you can define{' '}
-        <a href='https://docs.seam.co/latest/api/spaces'>spaces</a> that contain
+        <a href='/api/spaces/object'>spaces</a> that contain
         groups of related devices and entrances and then specify one or more
         spaces by ID.
       </td>
@@ -259,7 +259,7 @@ The Access Grant process consists of the following steps:
           Setting Up Your Site for Instant Keys
         </a>{' '}
         and the{' '}
-        <a href='https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems'>
+        <a href='/device-and-system-integration-guides#access-control-systems'>
           system integration guide
         </a>{' '}
         for your access system.
@@ -282,7 +282,7 @@ The Access Grant process consists of the following steps:
         space when creating an Access Grant.
         <br />
         For details, see{' '}
-        <a href='https://docs.seam.co/latest/api/spaces'>spaces</a>.
+        <a href='/api/spaces/object'>spaces</a>.
       </td>
     </tr>
     <tr>
@@ -387,7 +387,7 @@ The Access Grant process consists of the following steps:
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | Grant a person access to one or more smart locks             | Access Grants (`device_ids`)                                                               |
 | Grant a person access to ACS entrances                       | Access Grants (`acs_entrance_ids`)                                                         |
-| Grant a person access to a group of access points            | Access Grants + [spaces](https://docs.seam.co/latest/api/spaces) (`space_ids`)             |
+| Grant a person access to a group of access points            | Access Grants + [spaces](/api/spaces/object) (`space_ids`)             |
 | Issue a mobile key or Instant Key                            | Access Grants (`mode: "mobile_key"`)                                                       |
 | Set a PIN with a specific custom code value on a single lock | [Access Codes API](../../low-level-apis/smart-locks/access-codes/index) (low-level) |
 | Manage offline or backup PIN code pools on a single lock     | [Access Codes API](../../low-level-apis/smart-locks/access-codes/index) (low-level) |
@@ -423,5 +423,5 @@ To create your first Access Grant, see the [Access Grant Quick Start](/use-cases
 - [Creating an Access Grant Using Spaces](/use-cases/granting-access/creating-an-access-grant-using-spaces)
 - [Creating an Access Grant Using Entrances](/use-cases/granting-access/creating-an-access-grant-using-entrances)
 - [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods)
-- [Access Grants API Reference](https://docs.seam.co/latest/api/access_grants/)
-- [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/)
+- [Access Grants API Reference](/api/access_grants/object)
+- [Access Methods API Reference](/api/access_methods/object)

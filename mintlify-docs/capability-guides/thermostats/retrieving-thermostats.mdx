@@ -3,7 +3,7 @@ title: 'Retrieving Thermostats'
 description: 'Learn how to retrieve all thermostats or a specific thermostat by ID.'
 ---
 
-When you use the [`/thermostats/list`](https://docs.seam.co/latest/api/thermostats/list) and [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoints to retrieve information about your connected thermostats, the Seam API returns the following categories of information:
+When you use the [`/thermostats/list`](/api/thermostats/list) and [`/devices/get`](/api/devices/get) endpoints to retrieve information about your connected thermostats, the Seam API returns the following categories of information:
 
 <table>
   <thead>
@@ -95,7 +95,7 @@ When you use the [`/thermostats/list`](https://docs.seam.co/latest/api/thermosta
 
 ## List All Thermostats
 
-To retrieve all [thermostats](./), issue a [`/thermostats/list`](https://docs.seam.co/latest/api/thermostats/list) request. You can filter by a variety of criteria, including `connected_account_id`, `connect_webview_id`, `manufacturer`, `user_identifier_key`, and so on.
+To retrieve all [thermostats](./), issue a [`/thermostats/list`](/api/thermostats/list) request. You can filter by a variety of criteria, including `connected_account_id`, `connect_webview_id`, `manufacturer`, `user_identifier_key`, and so on.
 
 The following example retrieves all Google Nest thermostats:
 
@@ -409,7 +409,7 @@ $seam->thermostats->list(
 
 ## Get an Individual Thermostat
 
-To get a specific [thermostat](./), issue a [`/devices/get`](https://docs.seam.co/latest/api/devices/get) request, including the desired `device_id`.
+To get a specific [thermostat](./), issue a [`/devices/get`](/api/devices/get) request, including the desired `device_id`.
 
 <Tabs>
 <Tab title="JavaScript">

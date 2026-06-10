@@ -16,7 +16,7 @@ To learn more about other IoT device and system brands that Seam supports—such
 <Check>
 This guide shows you how to install a Seam SDK and then control your Akiles lock using the Seam API.
 
-Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](https://docs.seam.co/latest/core-concepts/seam-console/seam-online-cli), which you can access from directly within the [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console).
+Another easy way to learn about what you can do with the Seam API is to explore the [interactive Seam CLI](/core-concepts/seam-console/seam-online-cli), which you can access from directly within the [Seam Console](/core-concepts/seam-console).
 
 :arrow_forward: [Go to the Seam Console!](https://console.seam.co/)
 
@@ -76,7 +76,7 @@ Install using [nuget](https://www.nuget.org/packages/Seam).
 </Tab>
 </Tabs>
 
-Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](https://docs.seam.co/latest/core-concepts/seam-console#create-a-seam-account) to get your [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
+Next, go to [https://console.seam.co/](https://console.seam.co/) and [sign up for Seam](/core-concepts/seam-console#create-a-seam-account) to get your [API key](/core-concepts/authentication/api-keys).
 
 Then, export your API key as an environment variable.
 
@@ -86,10 +86,10 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 
 <Info>
   This guide uses a [sandbox
-  workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
+  workspace](/core-concepts/workspaces#sandbox-workspaces).
   You can only connect virtual devices and systems in this type of workspace. If
   you want to connect a real Akiles lock, use a [non-sandbox
-  workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces)
+  workspace](/core-concepts/workspaces#production-workspaces)
   and API key.
 </Info>
 
@@ -97,14 +97,14 @@ $ export SEAM_API_KEY=seam_test2bMS_94SrGUXuNR2JmJkjtvBQDg5c
 
 ## Step 2: Link your Akiles account with Seam
 
-To control your Akiles lock using the Seam API, you must first authorize your Seam workspace to connect to your Akiles account. If your application needs to connect to your users' Akiles accounts, Seam provides fully-embedded, [customizable](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews) client-side [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Akiles locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their Akiles account.
+To control your Akiles lock using the Seam API, you must first authorize your Seam workspace to connect to your Akiles account. If your application needs to connect to your users' Akiles accounts, Seam provides fully-embedded, [customizable](/core-concepts/connect-webviews/customizing-connect-webviews) client-side [Connect Webviews](/core-concepts/connect-webviews) to collect their authorization securely. These user-friendly pre-built authorization flows walk your users through the process of granting your Seam workspace permission to control their Akiles locks. The Connect Webview presents a flow that prompts your users to enter their credentials for their Akiles account.
 
 In this guide, you create a Connect Webview object. Then, you display the graphical component of the created Connect Webview and enter a set of sample credentials to connect a sandbox Akiles account.
 
 <Check>
 This guide shows you how to create a Connect Webview programmatically using the Seam API.
 
-The [Seam Console](https://docs.seam.co/latest/core-concepts/seam-console) provides another easy way to connect devices to your Seam workspace.
+The [Seam Console](/core-concepts/seam-console) provides another easy way to connect devices to your Seam workspace.
 
 Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** page, click **+ Add Devices**. Then, see [Authorize your workspace](#authorize-your-workspace) in this guide to complete the Connect Webview authorization flow.
 
@@ -292,7 +292,7 @@ https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-12
 
 In a web browser, go to the URL that the Connect Webview object returned.
 
-For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](https://docs.seam.co/latest/ui-components/overview/react-components/connect-account-button) within our suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview) that help you build your device management flow.
+For application developers, you can redirect your user to this Connect Webview URL so that they can authorize your app to control their devices using Seam. We even provide a prebuilt [Connect Account Button](/ui-components/overview/react-components/connect-account-button) within our suite of [Seam Components](/ui-components/overview) that help you build your device management flow.
 
 <Check>
   Because you're using a sandbox workspace, you can connect Seam's test Akiles
@@ -436,7 +436,7 @@ True
 
 ## Step 3: Retrieve Akiles lock devices
 
-When you link an Akiles account with Seam, we create a `device` object to represent each Akiles lock in your account. You can then retrieve these Akiles devices using the [List Devices](https://docs.seam.co/latest/api/devices/list) and [Get Device](https://docs.seam.co/latest/api/devices/get) endpoints.
+When you link an Akiles account with Seam, we create a `device` object to represent each Akiles lock in your account. You can then retrieve these Akiles devices using the [List Devices](/api/devices/list) and [Get Device](/api/devices/get) endpoints.
 
 The Seam API exposes each device's properties, such as the door lock status, capabilities, and so on.
 
@@ -728,7 +728,7 @@ True
 
 Next, you can use the Seam API to control your lock.
 
-Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](https://docs.seam.co/latest/low-level-apis/smart-locks/lock-and-unlock), [programming access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes), and so on. Seam's intuitive and granular [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
+Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use, such as [remote unlock actions](/low-level-apis/smart-locks/lock-and-unlock), [programming access codes](/low-level-apis/smart-locks/access-codes), and so on. Seam's intuitive and granular [capability flags](/capability-guides/device-and-system-capabilities#capability-flags) inform your application about what features and behaviors each device supports. Notice the capability flags within the code samples in this guide.
 
 Try out the following actions on your Akiles lock:
 
@@ -737,7 +737,7 @@ Try out the following actions on your Akiles lock:
 
 ### Unlock your lock
 
-To unlock a door, use the [Unlock Door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) to track the progress of the unlock operation.
+To unlock a door, use the [Unlock Door](/api/locks/unlock_door) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](/core-concepts/action-attempts) to track the progress of the unlock operation.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -918,7 +918,7 @@ if (frontDoor.CanRemotelyUnlock == true) {
 </Tab>
 </Tabs>
 
-You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](https://docs.seam.co/latest/api/action_attempts/get) by ID, or look for a [`lock.unlocked` event](https://docs.seam.co/latest/api/events/).
+You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](/api/action_attempts/get) by ID, or look for a [`lock.unlocked` event](/api/events/object).
 
 To query the `locked` status of the device:
 
@@ -1065,9 +1065,9 @@ False
 
 ### Program access codes on your lock
 
-You can use the Seam API to program [online access codes](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes) on Akiles locks that have an integrated keypad or an Akiles Pinpad. Lock users can then enter these access codes using the keypad or Pinpad to unlock the lock.
+You can use the Seam API to program [online access codes](/low-level-apis/smart-locks/access-codes) on Akiles locks that have an integrated keypad or an Akiles Pinpad. Lock users can then enter these access codes using the keypad or Pinpad to unlock the lock.
 
-The Seam API makes it easy to program both [ongoing](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes#time-bound-access-codes) online access codes.
+The Seam API makes it easy to program both [ongoing](/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](/low-level-apis/smart-locks/access-codes#time-bound-access-codes) online access codes.
 
 <Tabs>
 <Tab title="JavaScript">
@@ -1436,7 +1436,7 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 
 ## Step 5: Connect a real Akiles lock
 
-Now that you have learned the basics of using the Seam API, you can connect and control a real Akiles device. To do so, make sure to switch to a [non-sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces) and [API key](https://docs.seam.co/latest/core-concepts/authentication/api-keys).
+Now that you have learned the basics of using the Seam API, you can connect and control a real Akiles device. To do so, make sure to switch to a [non-sandbox workspace](/core-concepts/workspaces#production-workspaces) and [API key](/core-concepts/authentication/api-keys).
 
 For more details about setting up your real Akiles lock, see the [Akiles locks integration guide](./).
 
@@ -1444,13 +1444,13 @@ For more details about setting up your real Akiles lock, see the [Akiles locks i
 
 ## Step 6: Build your application!
 
-Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](https://docs.seam.co/latest/ui-components/overview). These prebuilt UI components help you to build your device management flow.
+Seam makes it easy to develop your application. In addition to the robust Seam API and the wide variety of programming languages that our SDKs support, we also provide a suite of [Seam Components](/ui-components/overview). These prebuilt UI components help you to build your device management flow.
 
-For example, you can use the [Device Table Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/device-table) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/device-details) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](https://docs.seam.co/latest/ui-components/overview/react-components/access-code-details) provides a similar display and actions for access codes.
+For example, you can use the [Device Table Seam Component](/ui-components/overview/react-components/device-table) to display a list of devices and to identify all devices with issues. You can use the [Device Details Seam Component](/ui-components/overview/react-components/device-details) to display a device's properties, settings, and issues, as well as to enable your users to perform actions based on each device's capabilities. The [Access Code Details Seam Component](/ui-components/overview/react-components/access-code-details) provides a similar display and actions for access codes.
 
 Seam Components use a responsive design to fit seamlessly on any screen size. They also provide device debugging flows to help your users.
 
-To learn about all the Seam Components that we provide, see [Seam Components](https://docs.seam.co/latest/ui-components/overview).
+To learn about all the Seam Components that we provide, see [Seam Components](/ui-components/overview).
 
 ---
 
@@ -1459,17 +1459,17 @@ To learn about all the Seam Components that we provide, see [Seam Components](ht
 Now that you've completed this getting started guide for Akiles devices, you can learn more about what you can do with the Seam API.
 
 - [ ] **Explore**\
-       See the [other devices and system integrations](https://docs.seam.co/latest/device-and-system-integration-guides) that Seam supports.
+       See the [other devices and system integrations](/device-and-system-integration-guides) that Seam supports.
 - [ ] **Learn**\
-       Read about Seam [concepts](https://docs.seam.co/latest/core-concepts/overview) and the [device and system capabilities ](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities)that Seam supports.
+       Read about Seam [concepts](/core-concepts/overview) and the [device and system capabilities ](/capability-guides/device-and-system-capabilities)that Seam supports.
 - [ ] **Use Seam Components**\
-       Find out about [Seam Components](https://docs.seam.co/latest/ui-components/overview), which are prebuilt UI components for building your device management flow.
+       Find out about [Seam Components](/ui-components/overview), which are prebuilt UI components for building your device management flow.
 - [ ] **Use webhooks**\
-       Learn how to use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) as an efficient way to receive device events.
+       Learn how to use [webhooks](/developer-tools/webhooks) as an efficient way to receive device events.
 - [ ] **Find out more**\
-       Explore the other types of devices and systems that you can control with Seam, including [access control systems](https://docs.seam.co/latest/low-level-apis/access-systems), [thermostats](https://docs.seam.co/latest/capability-guides/thermostats), and [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
+       Explore the other types of devices and systems that you can control with Seam, including [access control systems](/low-level-apis/access-systems), [thermostats](/capability-guides/thermostats), and [noise sensors](/capability-guides/noise-sensors).
 - [ ] **Develop for mobile access**\
-       Learn about Seam's [mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access).
+       Learn about Seam's [mobile access solution](/capability-guides/mobile-access).
 
 <Info>
   If you have any questions or want to report an issue, email us at
