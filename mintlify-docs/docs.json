@@ -3172,6 +3172,30 @@
     {
       "source": "/latest/:path*",
       "destination": "/:path*"
+    },
+    {
+      "source": "/device-guides/get-started-with-august-locks",
+      "destination": "/device-and-system-integration-guides/august-locks/get-started-with-august-locks"
+    },
+    {
+      "source": "/device-guides/get-started-with-yale-locks",
+      "destination": "/device-and-system-integration-guides/yale-locks/get-started-with-yale-locks"
+    },
+    {
+      "source": "/device-guides/get-started-with-minut-sensors",
+      "destination": "/device-and-system-integration-guides/minut-sensors/get-started-with-minut-sensors"
+    },
+    {
+      "source": "/device-guides/get-started-with-noiseaware-sensors",
+      "destination": "/device-and-system-integration-guides/noiseaware-sensors/get-started-with-noiseaware-sensors"
+    },
+    {
+      "source": "/device-guides/get-started-with-schlage-locks",
+      "destination": "/device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks"
+    },
+    {
+      "source": "/device-guides/get-started-with-smartthings-hubs-+-smart-locks",
+      "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks"
     }
   ],
   "openapi": [
