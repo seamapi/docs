@@ -4,13 +4,7 @@ title: 'The ACS System Object'
 
 ## The acs_system Object
 
-- [Properties](#properties)
-- [Errors](#errors)
-- [Warnings](#warnings)
-- [Events](#events)
-- [Endpoints](#endpoints)
-
-Represents an [access control system](https://docs.seam.co/latest/low-level-apis/access-systems).
+Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/latest/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.
 
@@ -102,8 +96,13 @@ For details about the resources associated with an access control system, see th
   Indicates whether the `acs_system` is a credential manager.
 </ResponseField>
 
-<ResponseField name="location" type="object">
+<ResponseField name="location" type="Object">
   The location.
+  <Expandable title="properties">
+    <ResponseField name="time_zone" type="String">
+      Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="name" type="String">
@@ -118,8 +117,19 @@ For details about the resources associated with an access control system, see th
   The system type display name.
 </ResponseField>
 
-<ResponseField name="visionline_metadata" type="object">
+<ResponseField name="visionline_metadata" type="Object">
   The visionline metadata.
+  <Expandable title="properties">
+    <ResponseField name="lan_address" type="String">
+      IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) on the local network.
+    </ResponseField>
+    <ResponseField name="mobile_access_uuid" type="String">
+      Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.
+    </ResponseField>
+    <ResponseField name="system_id" type="String">
+      Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="warnings" type="Array">
@@ -129,402 +139,3 @@ For details about the resources associated with an access control system, see th
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 </ResponseField>
-
-
-## <Warning>**Deprecated**. this field is deprecated.</Warning>
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>time_zone_does_not_match_location</code>
-
-</details>
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems).
-
----
-
-## Errors
-
-**`account_disconnected`**
-
-Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to restore access.
-
----
-
-**`acs_system_disconnected`**
-
-Indicates that the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
-
----
-
-**`bridge_disconnected`**
-
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
-
----
-
-**`salto_ks_certification_expired`**
-
-Indicates that the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
-
----
-
-**`salto_ks_subscription_limit_exceeded`**
-
-Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
-
----
-
-**`seam_bridge_disconnected`**
-
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
-See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
-
----
-
-**`visionline_instance_unreachable`**
-
-Indicates that [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
-For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
-See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
-
----
-
-## Warnings
-
-**`salto_ks_subscription_limit_almost_reached`**
-
-Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.
-
----
-
-**`time_zone_does_not_match_location`**
-
-Indicates the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/latest/low-level-apis/access-systems/retrieving-entrance-details).
-
----
-
-## Events
-
-**`acs_system.connected`**
-
-An [access system](https://docs.seam.co/latest/low-level-apis/access-systems) was connected.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the access system.
-
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the connected account.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `acs_system.connected`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-**`acs_system.added`**
-
-An [access system](https://docs.seam.co/latest/low-level-apis/access-systems) was added.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the access system.
-
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the connected account.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `acs_system.added`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-**`acs_system.disconnected`**
-
-An [access system](https://docs.seam.co/latest/low-level-apis/access-systems) was disconnected.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>acs_system_errors</code>
-</strong>
-<i>List</i> <i>of Objects</i>
-
-Errors associated with the access control system.
-
-- <strong>
-    <code>created_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Date and time at which Seam created the error.
-
-- <strong>
-    <code>error_code</code>
-  </strong>
-  <i>String</i>
-
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-- <strong>
-    <code>message</code>
-  </strong>
-  <i>String</i>
-
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the access system.
-
-<strong>
-  <code>acs_system_warnings</code>
-</strong>
-<i>List</i> <i>of Objects</i>
-
-Warnings associated with the access control system.
-
-- <strong>
-    <code>created_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Date and time at which Seam created the warning.
-
-- <strong>
-    <code>message</code>
-  </strong>
-  <i>String</i>
-
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
-- <strong>
-    <code>warning_code</code>
-  </strong>
-  <i>String</i>
-
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-<strong>
-  <code>connected_account_errors</code>
-</strong>
-<i>List</i> <i>of Objects</i>
-
-Errors associated with the connected account.
-
-- <strong>
-    <code>created_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Date and time at which Seam created the error.
-
-- <strong>
-    <code>error_code</code>
-  </strong>
-  <i>String</i>
-
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-- <strong>
-    <code>message</code>
-  </strong>
-  <i>String</i>
-
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the connected account.
-
-<strong>
-  <code>connected_account_warnings</code>
-</strong>
-<i>List</i> <i>of Objects</i>
-
-Warnings associated with the connected account.
-
-- <strong>
-    <code>created_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Date and time at which Seam created the warning.
-
-- <strong>
-    <code>message</code>
-  </strong>
-  <i>String</i>
-
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
-- <strong>
-    <code>warning_code</code>
-  </strong>
-  <i>String</i>
-
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `acs_system.disconnected`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-## Endpoints
-
-[**`/acs/systems/get`**](./get)
-
-Returns a specified [access system](https://docs.seam.co/latest/low-level-apis/access-systems).
-
-[**`/acs/systems/list`**](./list)
-
-Returns a list of all [access systems](https://docs.seam.co/latest/low-level-apis/access-systems).
-
-[**`/acs/systems/list_compatible_credential_manager_acs_systems`**](./list_compatible_credential_manager_acs_systems)
-
-Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/latest/low-level-apis/access-systems).
-
-[**`/acs/systems/report_devices`**](./report_devices)
-
-Reports ACS system device status including encoders and entrances.

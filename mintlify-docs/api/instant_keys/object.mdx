@@ -4,9 +4,6 @@ title: 'The Instant Key Object'
 
 ## The instant_key Object
 
-- [Properties](#properties)
-- [Endpoints](#endpoints)
-
 Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.
 
 There’s no app to install, nor account to create. Your user just taps a link and gets a lightweight, native-feeling experience using iOS App Clip or Instant Apps on Android. Further, Instant Keys work offline, so even in areas with poor cellular or Wi-Fi, like elevator banks or concrete-walled hallways, the Instant Keys still work.
@@ -39,8 +36,19 @@ There’s no app to install, nor account to create. Your user just taps a link a
   Date and time at which the Instant Key was created.
 </ResponseField>
 
-<ResponseField name="customization" type="object">
+<ResponseField name="customization" type="Object">
   Customization applied to the Instant Key UI.
+  <Expandable title="properties">
+    <ResponseField name="logo_url" type="String">
+      URL of the logo displayed on the Instant Key.
+    </ResponseField>
+    <ResponseField name="primary_color" type="String">
+      Primary color used in the Instant Key UI.
+    </ResponseField>
+    <ResponseField name="secondary_color" type="String">
+      Secondary color used in the Instant Key UI.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="customization_profile_id" type="String (UUID)">
@@ -66,18 +74,3 @@ There’s no app to install, nor account to create. Your user just taps a link a
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Instant Key.
 </ResponseField>
-
-
-## Endpoints
-
-[**`/instant_keys/delete`**](./delete)
-
-Deletes a specified [Instant Key](https://docs.seam.co/latest/capability-guides/instant-keys).
-
-[**`/instant_keys/get`**](./get)
-
-Gets an [instant key](https://docs.seam.co/latest/capability-guides/instant-keys).
-
-[**`/instant_keys/list`**](./list)
-
-Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/instant-keys).

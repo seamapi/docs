@@ -4,10 +4,6 @@ title: 'The Client Session Object'
 
 ## The client_session Object
 
-- [Properties](#properties)
-- [Events](#events)
-- [Endpoints](#endpoints)
-
 Represents a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
 
 You create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.
@@ -96,90 +92,3 @@ See also [Get Started with React](https://docs.seam.co/latest/ui-components/over
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
 </ResponseField>
-
-
-## Events
-
-**`client_session.deleted`**
-
-A [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) was deleted.
-
-<details>
-
-<summary>Properties</summary>
-
-<strong>
-  <code>client_session_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the affected client session.
-
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event was created.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `client_session.deleted`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
-
-## Endpoints
-
-[**`/client_sessions/create`**](./create)
-
-Creates a new [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
-
-[**`/client_sessions/delete`**](./delete)
-
-Deletes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
-
-[**`/client_sessions/get`**](./get)
-
-Returns a specified [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
-
-[**`/client_sessions/get_or_create`**](./get_or_create)
-
-Returns a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.
-
-[**`/client_sessions/grant_access`**](./grant_access)
-
-Grants a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) access to one or more resources, such as [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews), [user identities](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity), and so on.
-
-[**`/client_sessions/list`**](./list)
-
-Returns a list of all [client sessions](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
-
-[**`/client_sessions/revoke`**](./revoke)
-
-Revokes a [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).

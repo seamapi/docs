@@ -10,8 +10,10 @@ import { transformSpec } from './transform-spec.js'
 import { updateDocsJson } from './update-nav.js'
 
 const skipCodeFormat = env['SKIP_CODE_FORMAT'] != null
-const codeGroupStartPattern = /^<(?:CodeGroup|Tabs)>/m
-const codeGroupEndPattern = /<\/(?:CodeGroup|Tabs)>/
+
+const hiddenProperties: Record<string, Set<string>> = {
+  access_grant: new Set(['location_ids']),
+}
 
 console.log('Mintlify OpenAPI codegen starting...')
 if (skipCodeFormat) {
@@ -102,19 +104,94 @@ interface BlueprintProperty {
   jsonType: string
   isDeprecated: boolean
   isUndocumented: boolean
+  properties?: BlueprintProperty[]
+  propertyGroups?: Array<{ name: string; propertyGroupKey: string }>
+  propertyGroupKey?: string | null
 }
 
-function renderProperties(properties: BlueprintProperty[]): string {
-  const fields = properties
-    .filter((p) => !p.isUndocumented)
-    .map((p) => {
-      const type = formatPropertyType(p.format, p.jsonType)
-      const attrs = [`name="${p.name}"`, `type="${type}"`]
-      if (p.isDeprecated) attrs.push('deprecated')
-      const desc = p.description || `The ${p.name.replace(/_/g, ' ')}.`
-      return `<ResponseField ${attrs.join(' ')}>\n  ${desc}\n</ResponseField>`
-    })
+function shouldHide(
+  resourceType: string,
+  prop: BlueprintProperty,
+): boolean {
+  if (prop.isUndocumented) return true
+  return hiddenProperties[resourceType]?.has(prop.name) ?? false
+}
+
+function renderResponseField(
+  prop: BlueprintProperty,
+  resourceType: string,
+): string {
+  const type = formatPropertyType(prop.format, prop.jsonType)
+  const attrs = [`name="${prop.name}"`, `type="${type}"`]
+  if (prop.isDeprecated) attrs.push('deprecated')
+  const desc = prop.description || `The ${prop.name.replace(/_/g, ' ')}.`
+
+  if (
+    prop.format === 'object' &&
+    prop.properties &&
+    prop.properties.length > 0
+  ) {
+    const children = prop.properties
+      .filter((c) => !shouldHide(resourceType, c))
+      .map((c) => renderResponseField(c, resourceType))
+    if (children.length > 0) {
+      return [
+        `<ResponseField ${attrs.join(' ')}>`,
+        `  ${desc}`,
+        `  <Expandable title="properties">`,
+        ...children.map((c) => indent(c, 4)),
+        `  </Expandable>`,
+        `</ResponseField>`,
+      ].join('\n')
+    }
+  }
+
+  return `<ResponseField ${attrs.join(' ')}>\n  ${desc}\n</ResponseField>`
+}
+
+function indent(text: string, spaces: number): string {
+  const pad = ' '.repeat(spaces)
+  return text
+    .split('\n')
+    .map((line) => (line.trim() ? pad + line : line))
+    .join('\n')
+}
+
+function renderProperties(
+  properties: BlueprintProperty[],
+  resourceType: string,
+): string {
+  const ungrouped = properties.filter(
+    (p) => !shouldHide(resourceType, p) && !p.propertyGroupKey,
+  )
+  const fields = ungrouped.map((p) => renderResponseField(p, resourceType))
   return fields.join('\n\n')
+}
+
+function renderGroupedProperties(
+  properties: BlueprintProperty[],
+  resourceType: string,
+): string {
+  const groups = new Map<string, { name: string; props: BlueprintProperty[] }>()
+  for (const p of properties) {
+    if (shouldHide(resourceType, p) || !p.propertyGroupKey) continue
+    const existing = groups.get(p.propertyGroupKey)
+    if (existing) {
+      existing.props.push(p)
+    } else {
+      groups.set(p.propertyGroupKey, { name: p.propertyGroupKey, props: [p] })
+    }
+  }
+
+  if (groups.size === 0) return ''
+
+  const sections: string[] = []
+  for (const [, { props }] of groups) {
+    for (const p of props) {
+      sections.push(renderResponseField(p, resourceType))
+    }
+  }
+  return sections.join('\n\n')
 }
 
 function formatPropertyType(format: string, jsonType: string): string {
@@ -131,9 +208,77 @@ function formatPropertyType(format: string, jsonType: string): string {
       return 'Boolean'
     case 'string':
       return 'String'
+    case 'object':
+      return 'Object'
     default:
       return jsonType
   }
+}
+
+function renderResourceSection(
+  resourceType: string,
+  description: string,
+  samples: Array<{
+    title: string
+    description: string
+    properties: Record<string, unknown>
+  }>,
+  properties: BlueprintProperty[],
+): string {
+  const parts: string[] = []
+
+  parts.push(description)
+
+  // Response example (right-side sticky JSON panel)
+  parts.push(renderCodeGroup(samples))
+
+  parts.push('---')
+  parts.push('## Properties')
+  parts.push(renderProperties(properties, resourceType))
+
+  // Grouped properties (e.g., Hardware, Access Codes on device)
+  const grouped = renderGroupedProperties(properties, resourceType)
+  if (grouped) {
+    parts.push(grouped)
+  }
+
+  // Nested object properties (e.g., device.properties with sub-groups)
+  const propsField = properties.find(
+    (p) => p.name === 'properties' && p.format === 'object',
+  )
+  if (propsField?.properties && propsField.properties.length > 0) {
+    const subGroups = propsField.propertyGroups ?? []
+    if (subGroups.length > 0) {
+      for (const group of subGroups) {
+        const groupProps = propsField.properties.filter(
+          (p) =>
+            p.propertyGroupKey === group.propertyGroupKey &&
+            !shouldHide(resourceType, p),
+        )
+        if (groupProps.length === 0) continue
+        parts.push(`## ${group.name}`)
+        parts.push(
+          groupProps
+            .map((p) => renderResponseField(p, resourceType))
+            .join('\n\n'),
+        )
+      }
+    } else {
+      const visibleChildren = propsField.properties.filter(
+        (p) => !shouldHide(resourceType, p),
+      )
+      if (visibleChildren.length > 0) {
+        parts.push(`## ${resourceType}.properties`)
+        parts.push(
+          visibleChildren
+            .map((p) => renderResponseField(p, resourceType))
+            .join('\n\n'),
+        )
+      }
+    }
+  }
+
+  return parts.join('\n\n')
 }
 
 async function updateObjectPages(
@@ -146,6 +291,7 @@ async function updateObjectPages(
     string,
     Array<{
       resourceType: string
+      description: string
       samples: Array<{
         title: string
         description: string
@@ -159,6 +305,7 @@ async function updateObjectPages(
     const existing = resourcesByRoute.get(resource.routePath) ?? []
     existing.push({
       resourceType: resource.resourceType,
+      description: resource.description,
       samples: resource.resourceSamples,
       properties: resource.properties as BlueprintProperty[],
     })
@@ -176,47 +323,41 @@ async function updateObjectPages(
     }
 
     let changed = false
-    for (const { resourceType, samples, properties } of resources) {
+    // Process resources in reverse order so index shifts don't affect earlier sections
+    for (const {
+      resourceType,
+      description,
+      samples,
+      properties,
+    } of [...resources].reverse()) {
       const sectionHeader = `## The ${resourceType} Object`
       const sectionIdx = content.indexOf(sectionHeader)
-      const searchFrom = sectionIdx === -1 ? 0 : sectionIdx
+      if (sectionIdx === -1) continue
 
-      // Update CodeGroup/Tabs section
-      const codeGroupMatch = codeGroupStartPattern.exec(
-        content.slice(searchFrom),
+      const sectionContentStart =
+        content.indexOf('\n', sectionIdx) + 1
+
+      // Find end of this resource section: next "## The X Object" or end of file
+      const nextResourceMatch = /\n## The \w+ Object/m.exec(
+        content.slice(sectionContentStart),
       )
-      if (codeGroupMatch) {
-        const absStart = searchFrom + codeGroupMatch.index
-        const endMatch = codeGroupEndPattern.exec(content.slice(absStart))
-        if (endMatch) {
-          const absEnd = absStart + endMatch.index + endMatch[0].length
-          const newCodeGroup = renderCodeGroup(samples)
-          content =
-            content.slice(0, absStart) + newCodeGroup + content.slice(absEnd)
-          changed = true
-        }
-      }
+      const sectionEnd = nextResourceMatch
+        ? sectionContentStart + nextResourceMatch.index
+        : content.length
 
-      // Update Properties section
-      const propsHeader = '## Properties'
-      const propsIdx = content.indexOf(propsHeader, searchFrom)
-      if (propsIdx !== -1 && properties.length > 0) {
-        const propsContentStart = propsIdx + propsHeader.length
-        // Find the next ## heading or end of file to bound the properties section
-        const nextSectionMatch = /\n## (?!Properties)/m.exec(
-          content.slice(propsContentStart),
-        )
-        const propsContentEnd = nextSectionMatch
-          ? propsContentStart + nextSectionMatch.index
-          : content.length
-
-        const newProps = '\n\n' + renderProperties(properties) + '\n\n'
-        content =
-          content.slice(0, propsContentStart) +
-          newProps +
-          content.slice(propsContentEnd)
-        changed = true
-      }
+      const newSection = renderResourceSection(
+        resourceType,
+        description,
+        samples,
+        properties,
+      )
+      content =
+        content.slice(0, sectionContentStart) +
+        '\n' +
+        newSection +
+        '\n' +
+        content.slice(sectionEnd)
+      changed = true
     }
 
     if (changed) {

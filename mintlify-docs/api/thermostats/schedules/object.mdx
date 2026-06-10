@@ -4,9 +4,6 @@ title: 'Thermostat Schedules'
 
 ## The thermostat_schedule Object
 
-- [Properties](#properties)
-- [Endpoints](#endpoints)
-
 Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.
 
 <CodeGroup>
@@ -76,26 +73,3 @@ Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.
 </ResponseField>
-
-
-## Endpoints
-
-[**`/thermostats/schedules/create`**](./create)
-
-Creates a new [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-
-[**`/thermostats/schedules/delete`**](./delete)
-
-Deletes a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-
-[**`/thermostats/schedules/get`**](./get)
-
-Returns a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
-
-[**`/thermostats/schedules/list`**](./list)
-
-Returns a list of all [thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
-
-[**`/thermostats/schedules/update`**](./update)
-
-Updates a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
