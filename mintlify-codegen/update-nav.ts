@@ -154,6 +154,11 @@ export async function updateDocsJson(specPaths?: Set<string>): Promise<void> {
     )
   }
 
+  // Move orphaned object pages into their matching subgroups
+  for (const group of apiTab.groups) {
+    nestObjectPagesInSubgroups(group.pages)
+  }
+
   // Ensure top-level openapi is set (needed for Mintlify cloud build to
   // process the spec and generate endpoint pages). The tab-level openapi
   // field alone only works in the dev server.
@@ -188,6 +193,53 @@ export async function updateDocsJson(specPaths?: Set<string>): Promise<void> {
   console.log(
     `Updated docs.json: ${openApiRefs} OpenAPI refs, ${staticRefs} static MDX refs`,
   )
+}
+
+/**
+ * Move object pages that sit at a group level into matching subgroups.
+ * e.g. "api/devices/simulate/object" floating in the Devices group
+ * gets moved to be the first item in the Simulations subgroup
+ * (whose endpoints share the /devices/simulate/ prefix).
+ */
+function nestObjectPagesInSubgroups(pages: any[]): void {
+  const objectPages: Array<{ idx: number; page: string; prefix: string }> = []
+  const subgroups: Array<{ idx: number; group: any; prefixes: Set<string> }> =
+    []
+
+  for (let i = 0; i < pages.length; i++) {
+    const page = pages[i]
+    if (typeof page === 'string' && isObjectPage(page)) {
+      // e.g. "api/devices/simulate/object" → "/devices/simulate"
+      const prefix = page.replace(/^api/, '').replace(/\/object$/, '')
+      objectPages.push({ idx: i, page, prefix })
+    } else if (typeof page === 'object' && page.group) {
+      const navPaths = collectNavPaths(page.pages)
+      const prefixes = new Set([...navPaths].map(getPathPrefix))
+      subgroups.push({ idx: i, group: page, prefixes })
+      // Recurse into nested subgroups
+      nestObjectPagesInSubgroups(page.pages)
+    }
+  }
+
+  // Match each orphaned object page to a subgroup
+  const toRemove = new Set<number>()
+  for (const obj of objectPages) {
+    for (const sub of subgroups) {
+      if (sub.prefixes.has(obj.prefix)) {
+        // Already inside this subgroup? Skip.
+        if (sub.group.pages.includes(obj.page)) break
+        // Insert as first item in the subgroup
+        sub.group.pages.unshift(obj.page)
+        toRemove.add(obj.idx)
+        break
+      }
+    }
+  }
+
+  // Remove relocated pages from the parent (in reverse to preserve indices)
+  for (const idx of [...toRemove].sort((a, b) => b - a)) {
+    pages.splice(idx, 1)
+  }
 }
 
 /**
