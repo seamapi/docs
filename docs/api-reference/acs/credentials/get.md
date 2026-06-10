@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).
+Returns a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
 
 
 {% tabs %}

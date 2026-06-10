@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of the [action attempts](https://docs.seam.co/latest/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.
+Returns a list of the [action attempts](https://docs.seam.co/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.
 
 
 {% tabs %}

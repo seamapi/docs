@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+Returns a list of all [credentials](https://docs.seam.co/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 
 
 {% tabs %}

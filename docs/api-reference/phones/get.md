@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [phone](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity).
+Returns a specified [phone](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity).
 
 
 {% tabs %}

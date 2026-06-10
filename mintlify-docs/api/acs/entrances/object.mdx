@@ -5,7 +5,7 @@ description: 'Learn how the acs_entrance object represents a secured door, gate,
 
 ## The acs_entrance Object
 
-Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+Represents an [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/capability-guides/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
@@ -41,15 +41,15 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 ## Properties
 
 <ResponseField name="acs_entrance_id" type="String (UUID)">
-  ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  ID of the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 </ResponseField>
 
 <ResponseField name="acs_system_id" type="String (UUID)">
-  ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  ID of the [access control system](https://docs.seam.co/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 </ResponseField>
 
 <ResponseField name="assa_abloy_vostio_metadata" type="Object">
-  ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="door_name" type="String">
       Name of the door in the Vostio access system.
@@ -70,7 +70,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="avigilon_alta_metadata" type="Object">
-  Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="entry_name" type="String">
       Entry name for an Avigilon Alta system.
@@ -97,7 +97,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="brivo_metadata" type="Object">
-  Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Brivo-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="access_point_id" type="String">
       ID of the access point in the Brivo access system.
@@ -132,19 +132,19 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  ID of the [connected account](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
-  Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.
+  Date and time at which the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) was created.
 </ResponseField>
 
 <ResponseField name="display_name" type="String">
-  Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Display name for the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 </ResponseField>
 
 <ResponseField name="dormakaba_ambiance_metadata" type="Object">
-  dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="access_point_name" type="String">
       Name of the access point in the dormakaba Ambiance access system.
@@ -153,7 +153,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="dormakaba_community_metadata" type="Object">
-  dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="access_point_profile" type="String">
       Type of access point profile in the dormakaba Community access system.
@@ -162,11 +162,11 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="errors" type="Array">
-  Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Errors associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 </ResponseField>
 
 <ResponseField name="hotek_metadata" type="Object">
-  Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Hotek-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="common_area_name" type="String">
       Display name of the entrance.
@@ -181,11 +181,11 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="is_locked" type="Boolean">
-  Indicates whether the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) is currently locked.
+  Indicates whether the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) is currently locked.
 </ResponseField>
 
 <ResponseField name="latch_metadata" type="Object">
-  Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Latch-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="accessibility_type" type="String">
       Accessibility type in the Latch access system.
@@ -203,7 +203,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="salto_ks_metadata" type="Object">
-  Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="battery_level" type="String">
       Battery level of the door access device.
@@ -233,7 +233,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="salto_space_metadata" type="Object">
-  Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="audit_on_keys" type="Boolean">
       Indicates whether AuditOnKeys is enabled for the door in the Salto Space access system.
@@ -261,7 +261,7 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="visionline_metadata" type="Object">
-  Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Visionline-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
   <Expandable title="properties">
     <ResponseField name="door_category" type="Enum (String)">
       Category of the door in the Visionline access system.
@@ -276,5 +276,5 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 </ResponseField>
 
 <ResponseField name="warnings" type="Array">
-  Warnings associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  Warnings associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 </ResponseField>

@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/webhooks).
+Returns a list of all [webhooks](https://docs.seam.co/developer-tools/webhooks).
 
 
 {% tabs %}

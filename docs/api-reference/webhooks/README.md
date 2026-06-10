@@ -6,7 +6,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a [webhook](https://docs.seam.co/latest/developer-tools/webhooks) that enables you to receive notifications of events. When you create a webhook, specify the endpoint URL at which you want to receive events and the set of event types that you want to receive.
+Represents a [webhook](https://docs.seam.co/developer-tools/webhooks) that enables you to receive notifications of events. When you create a webhook, specify the endpoint URL at which you want to receive events and the set of event types that you want to receive.
 
 {% tabs %}
 {% tab title="Webhook" %}
@@ -29,7 +29,7 @@ A webhook resource.
 
 **`event_types`** *List* *of Strings*
 
-Types of events that the [webhook](https://docs.seam.co/latest/developer-tools/webhooks) should receive.
+Types of events that the [webhook](https://docs.seam.co/developer-tools/webhooks) should receive.
 
 
 
@@ -38,7 +38,7 @@ Types of events that the [webhook](https://docs.seam.co/latest/developer-tools/w
 
 **`secret`** *String*
 
-Secret associated with the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+Secret associated with the [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 
 
@@ -47,7 +47,7 @@ Secret associated with the [webhook](https://docs.seam.co/latest/developer-tools
 
 **`url`** *String*
 
-URL for the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+URL for the [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 
 
@@ -56,7 +56,7 @@ URL for the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
 
 **`webhook_id`** *String*
 
-ID of the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+ID of the [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 
 
@@ -68,26 +68,26 @@ ID of the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
 
 [**`/webhooks/create`**](./create.md)
 
-Creates a new [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+Creates a new [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 
 [**`/webhooks/delete`**](./delete.md)
 
-Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+Deletes a specified [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 
 [**`/webhooks/get`**](./get.md)
 
-Gets a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+Gets a specified [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 
 [**`/webhooks/list`**](./list.md)
 
-Returns a list of all [webhooks](https://docs.seam.co/latest/developer-tools/webhooks).
+Returns a list of all [webhooks](https://docs.seam.co/developer-tools/webhooks).
 
 
 [**`/webhooks/update`**](./update.md)
 
-Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+Updates a specified [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 

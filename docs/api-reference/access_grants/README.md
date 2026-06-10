@@ -137,7 +137,7 @@ Date and time at which the Access Grant ends.
 
 [**`errors`**](./#errors) *List* *of Objects*
 
-Errors associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).
+Errors associated with the [access grant](https://docs.seam.co/capability-guides/access-grants).
 
 
 
@@ -450,7 +450,7 @@ ID of user identity to which the Access Grant gives access.
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [access grant](https://docs.seam.co/latest/capability-guides/access-grants).
+Warnings associated with the [access grant](https://docs.seam.co/capability-guides/access-grants).
 
 
 
@@ -461,7 +461,7 @@ Variants:
 <details>
 <summary><code>being_deleted</code></summary>
 
-Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.
+Indicates that the [access grant](https://docs.seam.co/capability-guides/access-grants) is being deleted.
 
   **`created_at`** *Datetime*
   
@@ -578,7 +578,7 @@ Indicates that the access grant has access to locations it should not have. Acce
 <details>
 <summary><code>updating_access_times</code></summary>
 
-Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.
+Indicates that the access times for this [access grant](https://docs.seam.co/capability-guides/access-grants) are being updated.
 
   **`access_method_ids`** *List* *of UUIDs*
   
@@ -791,7 +791,7 @@ ID of the Seam workspace associated with the Access Grant.
 
 **`being_deleted`**
 
-Indicates that the [access grant](https://docs.seam.co/latest/capability-guides/access-grants) is being deleted.
+Indicates that the [access grant](https://docs.seam.co/capability-guides/access-grants) is being deleted.
 
 ---
 
@@ -827,7 +827,7 @@ Indicates that the access grant should have access to more locations than it cur
 
 **`updating_access_times`**
 
-Indicates that the access times for this [access grant](https://docs.seam.co/latest/capability-guides/access-grants) are being updated.
+Indicates that the access times for this [access grant](https://docs.seam.co/capability-guides/access-grants) are being updated.
 
 ---
 
@@ -864,7 +864,7 @@ An Access Grant was created.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -899,7 +899,7 @@ An Access Grant was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -934,7 +934,7 @@ All access requested for an Access Grant was successfully granted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -953,7 +953,7 @@ Access requested as part of an Access Grant to a particular door was successfull
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
-  ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  ID of the affected [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -973,7 +973,7 @@ Access requested as part of an Access Grant to a particular door was successfull
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -992,7 +992,7 @@ Access to a particular door that was requested as part of an Access Grant was lo
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
-  ID of the affected [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
+  ID of the affected [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -1012,7 +1012,7 @@ Access to a particular door that was requested as part of an Access Grant was lo
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -1059,7 +1059,7 @@ An Access Grant's start or end time was changed.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -1102,7 +1102,7 @@ One or more requested access methods could not be created for an Access Grant.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -1112,7 +1112,7 @@ One or more requested access methods could not be created for an Access Grant.
 
 [**`/access_grants/create`**](./create.md)
 
-Creates a new [Access Grant](https://docs.seam.co/latest/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.
+Creates a new [Access Grant](https://docs.seam.co/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.
 
 
 [**`/access_grants/delete`**](./delete.md)

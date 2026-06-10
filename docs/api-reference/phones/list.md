@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [phones](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
+Returns a list of all [phones](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
 
 
 {% tabs %}
@@ -275,7 +275,7 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 **`acs_credential_id`** *String*
 
-ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which you want to filter the list of returned phones.
+ID of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) by which you want to filter the list of returned phones.
 
 ---
 
