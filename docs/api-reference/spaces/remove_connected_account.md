@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Removes a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) from a specific space.
+Removes a [connected account](https://docs.seam.co/core-concepts/connected-accounts) from a specific space.
 
 
 <details>

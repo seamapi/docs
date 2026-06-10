@@ -56,7 +56,7 @@ Date and time at which the phone was created.
 
 **`custom_metadata`** *Record*
 
-Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
+Optional [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
 
 
 
@@ -139,7 +139,7 @@ Warnings associated with the phone.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.
+ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the phone.
 
 
 
@@ -234,7 +234,7 @@ A phone device was deactivated.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -244,16 +244,16 @@ A phone device was deactivated.
 
 [**`/phones/deactivate`**](./deactivate.md)
 
-Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).
+Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).
 
 
 [**`/phones/get`**](./get.md)
 
-Returns a specified [phone](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity).
+Returns a specified [phone](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity).
 
 
 [**`/phones/list`**](./list.md)
 
-Returns a list of all [phones](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
+Returns a list of all [phones](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.
 
 

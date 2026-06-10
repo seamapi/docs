@@ -10,7 +10,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).
+Represents an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).
 
 {% tabs %}
 {% tab title="Unmanaged Device" %}
@@ -228,7 +228,7 @@ An unmanaged device resource.
 
 **`capabilities_supported`** *List* *of Enums*
 
-Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).
+Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).
 
 
 
@@ -255,7 +255,7 @@ Date and time at which the device object was created.
 
 **`custom_metadata`** *Record*
 
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 
 
 
@@ -362,7 +362,7 @@ Indicates that the account is disconnected.
   **`is_connected_account_error`** *Boolean*
   
   
-  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.
   
   
   ---
@@ -410,7 +410,7 @@ Indicates that the Salto site user limit has been reached.
   **`is_connected_account_error`** *Boolean*
   
   
-  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.
   
   
   ---
@@ -593,7 +593,7 @@ Indicates that the device is disconnected.
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
@@ -913,7 +913,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -938,7 +938,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
   
   
   ---
@@ -2033,7 +2033,7 @@ Indicates that the account is disconnected.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -2088,7 +2088,7 @@ Indicates that the lock is not paired with a gateway.
 ### Access Codes
 **`empty_backup_access_code_pool`**
 
-Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
 
 ---
 
@@ -2280,7 +2280,7 @@ Indicates that the temperature threshold has been exceeded.
 
 **`device.unmanaged.converted_to_managed`**
 
-An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.
+An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.
 
 <details>
 
@@ -2292,7 +2292,7 @@ An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2324,14 +2324,14 @@ An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.unmanaged.connected`**
 
-The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`.
+The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`.
 
 <details>
 
@@ -2343,7 +2343,7 @@ The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/de
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2375,14 +2375,14 @@ The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/de
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`device.unmanaged.disconnected`**
 
-The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
+The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
 
 <details>
 
@@ -2413,7 +2413,7 @@ The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/de
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -2513,7 +2513,7 @@ The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/de
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -2523,16 +2523,16 @@ The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/de
 
 [**`/devices/unmanaged/get`**](./get.md)
 
-Returns a specified [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
+Returns a specified [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 
 
 [**`/devices/unmanaged/list`**](./list.md)
 
-Returns a list of all [unmanaged devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
+Returns a list of all [unmanaged devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 
 
 [**`/devices/unmanaged/update`**](./update.md)
 
-Updates a specified [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices). To convert an unmanaged device to managed, set `is_managed` to `true`.
+Updates a specified [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices). To convert an unmanaged device to managed, set `is_managed` to `true`.
 
 

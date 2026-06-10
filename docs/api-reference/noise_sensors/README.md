@@ -18,6 +18,6 @@ The Seam API represents a noise sensor as a `device` resource that includes both
 
 [**`/noise_sensors/list`**](./list.md)
 
-Returns a list of all [noise sensors](https://docs.seam.co/latest/capability-guides/noise-sensors).
+Returns a list of all [noise sensors](https://docs.seam.co/capability-guides/noise-sensors).
 
 

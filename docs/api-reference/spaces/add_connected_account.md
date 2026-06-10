@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Adds a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) to a specific space.
+Adds a [connected account](https://docs.seam.co/core-concepts/connected-accounts) to a specific space.
 
 
 <details>

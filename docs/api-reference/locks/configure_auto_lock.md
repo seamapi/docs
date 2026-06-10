@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Configures the auto-lock setting for a specified [lock](https://docs.seam.co/latest/capability-guides/smart-locks).
+Configures the auto-lock setting for a specified [lock](https://docs.seam.co/capability-guides/smart-locks).
 
 
 <details>
