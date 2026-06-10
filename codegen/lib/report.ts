@@ -9,7 +9,8 @@ import type {
   Resource,
   Route,
 } from '@seamapi/blueprint'
-import { openapi } from '@seamapi/types/connect'
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { openapi } = require('@seamapi/types/connect') as { openapi: any }
 import type Metalsmith from 'metalsmith'
 
 import { apiReferenceRoot } from './config.js'
@@ -379,24 +380,7 @@ function processResponseKeys(endpoint: Endpoint, report: Report): void {
 function getOpenapiResponseProperties(
   path: string,
 ): Record<string, unknown> | null {
-  const paths = openapi['paths'] as Record<
-    string,
-    {
-      post?: {
-        responses?: Record<
-          string,
-          {
-            content?: {
-              'application/json'?: {
-                schema?: { properties?: Record<string, unknown> }
-              }
-            }
-          }
-        >
-      }
-    }
-  >
-  const openapiEndpointDef = paths[path]
+  const openapiEndpointDef = openapi.paths[path]
 
   if (openapiEndpointDef == null) {
     // eslint-disable-next-line no-console
