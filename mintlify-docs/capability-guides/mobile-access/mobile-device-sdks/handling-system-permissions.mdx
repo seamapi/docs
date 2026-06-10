@@ -1,5 +1,6 @@
 ---
 title: 'Handling System Permissions'
+description: "Detect and resolve missing system permissions like Bluetooth and connectivity in your mobile app by handling the Seam SDK's credential errors."
 ---
 
 The mobile SDK surfaces missing or required system permissions (Bluetooth, internet connectivity, and so on) as `CredentialError.userInteractionRequired(action)` entries in each credential’s `errors` array. After activation, observe these errors and handle the specified actions. Errors update automatically as requirements change.

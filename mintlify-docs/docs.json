@@ -12,6 +12,26 @@
     "light": "#60A5FA",
     "dark": "#1D4ED8"
   },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-WEDP4R501R"
+    },
+    "posthog": {
+      "apiKey": "phc_uGxZi2ITs4kTMqcVibHr6wVWhJ1YKA2LpCbldvd3GYN",
+      "apiHost": "https://us.i.posthog.com"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "og:type": "website",
+      "og:site_name": "Seam",
+      "og:locale": "en_US",
+      "og:image": "https://docs.seam.co/images/seam-og-default.jpg",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@helloseam"
+    },
+    "indexing": "navigable"
+  },
   "navigation": {
     "tabs": [
       {
@@ -1453,6 +1473,1662 @@
     {
       "source": "/api/workspaces/index",
       "destination": "/api/workspaces/object"
+    },
+    {
+      "source": "/api/access_codes",
+      "destination": "/api/access_codes/object"
+    },
+    {
+      "source": "/api/access_codes/simulate",
+      "destination": "/api/access_codes/simulate/object"
+    },
+    {
+      "source": "/api/access_codes/unmanaged",
+      "destination": "/api/access_codes/unmanaged/object"
+    },
+    {
+      "source": "/api/access_grants",
+      "destination": "/api/access_grants/object"
+    },
+    {
+      "source": "/api/access_grants/unmanaged",
+      "destination": "/api/access_grants/unmanaged/object"
+    },
+    {
+      "source": "/api/access_methods",
+      "destination": "/api/access_methods/object"
+    },
+    {
+      "source": "/api/access_methods/unmanaged",
+      "destination": "/api/access_methods/unmanaged/object"
+    },
+    {
+      "source": "/api/acs",
+      "destination": "/api/acs/object"
+    },
+    {
+      "source": "/api/acs/access_groups",
+      "destination": "/api/acs/access_groups/object"
+    },
+    {
+      "source": "/api/acs/credentials",
+      "destination": "/api/acs/credentials/object"
+    },
+    {
+      "source": "/api/acs/encoders",
+      "destination": "/api/acs/encoders/object"
+    },
+    {
+      "source": "/api/acs/encoders/simulate",
+      "destination": "/api/acs/encoders/simulate/object"
+    },
+    {
+      "source": "/api/acs/entrances",
+      "destination": "/api/acs/entrances/object"
+    },
+    {
+      "source": "/api/acs/systems",
+      "destination": "/api/acs/systems/object"
+    },
+    {
+      "source": "/api/acs/users",
+      "destination": "/api/acs/users/object"
+    },
+    {
+      "source": "/api/action_attempts",
+      "destination": "/api/action_attempts/object"
+    },
+    {
+      "source": "/api/client_sessions",
+      "destination": "/api/client_sessions/object"
+    },
+    {
+      "source": "/api/connect_webviews",
+      "destination": "/api/connect_webviews/object"
+    },
+    {
+      "source": "/api/connected_accounts",
+      "destination": "/api/connected_accounts/object"
+    },
+    {
+      "source": "/api/connected_accounts/simulate",
+      "destination": "/api/connected_accounts/simulate/object"
+    },
+    {
+      "source": "/api/customers",
+      "destination": "/capability-guides/customer-portals/customers"
+    },
+    {
+      "source": "/api/devices",
+      "destination": "/core-concepts/devices"
+    },
+    {
+      "source": "/api/devices/simulate",
+      "destination": "/api/devices/simulate/object"
+    },
+    {
+      "source": "/api/devices/unmanaged",
+      "destination": "/api/devices/unmanaged/object"
+    },
+    {
+      "source": "/api/events",
+      "destination": "/api/events/object"
+    },
+    {
+      "source": "/api/instant_keys",
+      "destination": "/api/instant_keys/object"
+    },
+    {
+      "source": "/api/locks",
+      "destination": "/api/locks/object"
+    },
+    {
+      "source": "/api/locks/simulate",
+      "destination": "/api/locks/simulate/object"
+    },
+    {
+      "source": "/api/noise_sensors",
+      "destination": "/api/noise_sensors/object"
+    },
+    {
+      "source": "/api/noise_sensors/noise_thresholds",
+      "destination": "/api/noise_sensors/noise_thresholds/object"
+    },
+    {
+      "source": "/api/noise_sensors/simulate",
+      "destination": "/api/noise_sensors/simulate/object"
+    },
+    {
+      "source": "/api/phones",
+      "destination": "/api/phones/object"
+    },
+    {
+      "source": "/api/phones/simulate",
+      "destination": "/api/phones/simulate/object"
+    },
+    {
+      "source": "/api/spaces",
+      "destination": "/api/spaces/object"
+    },
+    {
+      "source": "/api/thermostats",
+      "destination": "/capability-guides/thermostats"
+    },
+    {
+      "source": "/api/thermostats/daily_programs",
+      "destination": "/api/thermostats/daily_programs/object"
+    },
+    {
+      "source": "/api/thermostats/schedules",
+      "destination": "/api/thermostats/schedules/object"
+    },
+    {
+      "source": "/api/thermostats/simulate",
+      "destination": "/api/thermostats/simulate/object"
+    },
+    {
+      "source": "/api/user_identities",
+      "destination": "/api/user_identities/object"
+    },
+    {
+      "source": "/api/user_identities/unmanaged",
+      "destination": "/api/user_identities/unmanaged/object"
+    },
+    {
+      "source": "/api/webhooks",
+      "destination": "/developer-tools/webhooks"
+    },
+    {
+      "source": "/api/workspaces",
+      "destination": "/core-concepts/workspaces"
+    },
+    {
+      "source": "/capability-guides/access-grants",
+      "destination": "/use-cases/granting-access"
+    },
+    {
+      "source": "/capability-guides/access-grants/access-grant-quick-start",
+      "destination": "/use-cases/granting-access/access-grant-quick-start"
+    },
+    {
+      "source": "/capability-guides/access-grants/creating-an-access-grant-using-entrances",
+      "destination": "/use-cases/granting-access/creating-an-access-grant-using-entrances"
+    },
+    {
+      "source": "/capability-guides/access-grants/creating-an-access-grant-using-spaces",
+      "destination": "/use-cases/granting-access/creating-an-access-grant-using-spaces"
+    },
+    {
+      "source": "/capability-guides/access-grants/deleting-an-access-grant",
+      "destination": "/use-cases/granting-access/deleting-an-access-grant"
+    },
+    {
+      "source": "/capability-guides/access-grants/delivering-access-methods",
+      "destination": "/use-cases/granting-access/delivering-access-methods"
+    },
+    {
+      "source": "/capability-guides/access-grants/reservation-access-grants",
+      "destination": "/use-cases/granting-access/reservation-access-grants"
+    },
+    {
+      "source": "/capability-guides/access-grants/retrieving-access-grants-and-access-methods",
+      "destination": "/use-cases/granting-access/retrieving-access-grants-and-access-methods"
+    },
+    {
+      "source": "/capability-guides/access-grants/revoking-an-access-method",
+      "destination": "/use-cases/granting-access/revoking-an-access-method"
+    },
+    {
+      "source": "/capability-guides/access-grants/updating-an-access-grant",
+      "destination": "/use-cases/granting-access/updating-an-access-grant"
+    },
+    {
+      "source": "/capability-guides/access-systems",
+      "destination": "/low-level-apis/access-systems"
+    },
+    {
+      "source": "/capability-guides/access-systems/acs-quick-starts",
+      "destination": "/low-level-apis/access-systems/acs-quick-starts"
+    },
+    {
+      "source": "/capability-guides/access-systems/acs-quick-starts/encodable-key-card-quick-start",
+      "destination": "/low-level-apis/access-systems/acs-quick-starts/encodable-key-card-quick-start"
+    },
+    {
+      "source": "/capability-guides/access-systems/acs-quick-starts/mobile-key-quick-start",
+      "destination": "/low-level-apis/access-systems/acs-quick-starts/mobile-key-quick-start"
+    },
+    {
+      "source": "/capability-guides/access-systems/acs-quick-starts/pin-code-quick-start",
+      "destination": "/low-level-apis/access-systems/acs-quick-starts/pin-code-quick-start"
+    },
+    {
+      "source": "/capability-guides/access-systems/assigning-credentials-to-users",
+      "destination": "/low-level-apis/access-systems/managing-credentials/assigning-credentials-to-users"
+    },
+    {
+      "source": "/capability-guides/access-systems/connect-an-acs-to-seam",
+      "destination": "/low-level-apis/access-systems/connect-an-acs-to-seam"
+    },
+    {
+      "source": "/capability-guides/access-systems/connect-an-acs-to-seam/access-control-system-resources",
+      "destination": "/low-level-apis/access-systems/connect-an-acs-to-seam/access-control-system-resources"
+    },
+    {
+      "source": "/capability-guides/access-systems/connect-an-acs-to-seam/retrieving-acs-system-details",
+      "destination": "/low-level-apis/access-systems/connect-an-acs-to-seam/retrieving-acs-system-details"
+    },
+    {
+      "source": "/capability-guides/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences",
+      "destination": "/low-level-apis/access-systems/connect-an-acs-to-seam/understanding-access-control-system-differences"
+    },
+    {
+      "source": "/capability-guides/access-systems/managing-credentials",
+      "destination": "/low-level-apis/access-systems/managing-credentials"
+    },
+    {
+      "source": "/capability-guides/access-systems/managing-credentials/assigning-credentials-to-users",
+      "destination": "/low-level-apis/access-systems/managing-credentials/assigning-credentials-to-users"
+    },
+    {
+      "source": "/capability-guides/access-systems/managing-credentials/listing-credentials-and-associated-entrances",
+      "destination": "/low-level-apis/access-systems/managing-credentials/listing-credentials-and-associated-entrances"
+    },
+    {
+      "source": "/capability-guides/access-systems/retrieving-entrance-details",
+      "destination": "/low-level-apis/access-systems/retrieving-entrance-details"
+    },
+    {
+      "source": "/capability-guides/access-systems/troubleshooting-your-access-control-system",
+      "destination": "/low-level-apis/access-systems/troubleshooting-your-access-control-system"
+    },
+    {
+      "source": "/capability-guides/access-systems/understanding-acs-differences",
+      "destination": "/low-level-apis/access-systems"
+    },
+    {
+      "source": "/capability-guides/access-systems/user-management",
+      "destination": "/low-level-apis/access-systems/user-management"
+    },
+    {
+      "source": "/capability-guides/access-systems/user-management/assigning-users-to-access-groups",
+      "destination": "/low-level-apis/access-systems/user-management/assigning-users-to-access-groups"
+    },
+    {
+      "source": "/capability-guides/access-systems/user-management/suspending-and-unsuspending-users",
+      "destination": "/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users"
+    },
+    {
+      "source": "/capability-guides/access-systems/working-with-card-encoders-and-scanners",
+      "destination": "/low-level-apis/access-systems/working-with-card-encoders-and-scanners"
+    },
+    {
+      "source": "/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods",
+      "destination": "/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods"
+    },
+    {
+      "source": "/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials",
+      "destination": "/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials"
+    },
+    {
+      "source": "/capability-guides/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards",
+      "destination": "/low-level-apis/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards"
+    },
+    {
+      "source": "/capability-guides/smart-locks",
+      "destination": "/low-level-apis/smart-locks"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/access-code-requirements-for-door-locks",
+      "destination": "/low-level-apis/smart-locks/access-codes/access-code-requirements-for-door-locks"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/accommodating-manufacturer-mobile-apps",
+      "destination": "/low-level-apis/smart-locks/access-codes/accommodating-manufacturer-mobile-apps"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/backup-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/backup-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/creating-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/creating-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/creating-access-codes/understanding-code-constraints",
+      "destination": "/low-level-apis/smart-locks/access-codes/creating-access-codes/understanding-code-constraints"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/deleting-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/deleting-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/migrating-existing-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/modifying-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/modifying-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/offline-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/offline-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/retrieving-access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes/retrieving-access-codes"
+    },
+    {
+      "source": "/capability-guides/smart-locks/access-codes/troubleshooting-access-code-issues",
+      "destination": "/low-level-apis/smart-locks/access-codes/troubleshooting-access-code-issues"
+    },
+    {
+      "source": "/capability-guides/smart-locks/get-started-with-smartlocks-api",
+      "destination": "/low-level-apis/smart-locks/get-started-with-smartlocks-api"
+    },
+    {
+      "source": "/capability-guides/smart-locks/lock-and-unlock",
+      "destination": "/low-level-apis/smart-locks/lock-and-unlock"
+    },
+    {
+      "source": "/capability-guides/thermostats/creating-and-managing-climate-schedules",
+      "destination": "/capability-guides/thermostats/creating-and-managing-thermostat-schedules"
+    },
+    {
+      "source": "/core-concepts/workspaces/api-keys",
+      "destination": "/core-concepts/authentication/api-keys"
+    },
+    {
+      "source": "/core-concepts/workspaces/client-session-tokens",
+      "destination": "/core-concepts/authentication/client-session-tokens"
+    },
+    {
+      "source": "/core-concepts/workspaces/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend",
+      "destination": "/core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend"
+    },
+    {
+      "source": "/core-concepts/workspaces/personal-access-tokens",
+      "destination": "/core-concepts/authentication/personal-access-tokens"
+    },
+    {
+      "source": "/going-live",
+      "destination": "/go-live"
+    },
+    {
+      "source": "/products/access-systems/suspending-and-unsuspending-users",
+      "destination": "/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users"
+    },
+    {
+      "source": "/products/access-systems/user-management",
+      "destination": "/low-level-apis/access-systems/user-management"
+    },
+    {
+      "source": "/products/seam-bridge-in-development",
+      "destination": "/capability-guides/seam-bridge"
+    },
+    {
+      "source": "/quickstart/authentication",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/quickstart/connect-a-device",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/quickstart/get-api-key",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/quickstart/going-live",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/quickstart/installation",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/quickstart/your-first-device-api-call",
+      "destination": "/quickstart"
+    },
+    {
+      "source": "/2n-intercom-systems",
+      "destination": "/device-and-system-integration-guides/2n-intercom-systems"
+    },
+    {
+      "source": "/2n-intercom-systems/2n-intercoms-sample-data",
+      "destination": "/device-and-system-integration-guides/2n-intercom-systems/2n-intercoms-sample-data"
+    },
+    {
+      "source": "/2n-intercom-systems/2n-system-set-up-instructions",
+      "destination": "/device-and-system-integration-guides/2n-intercom-systems/2n-system-set-up-instructions"
+    },
+    {
+      "source": "/2n-intercom-systems/get-started-with-2n-intercoms",
+      "destination": "/device-and-system-integration-guides/2n-intercom-systems/get-started-with-2n-intercoms"
+    },
+    {
+      "source": "/33-lock-devices",
+      "destination": "/device-and-system-integration-guides/33-lock-devices"
+    },
+    {
+      "source": "/33-lock-devices/get-started-with-33-lock-devices",
+      "destination": "/device-and-system-integration-guides/33-lock-devices/get-started-with-33-lock-devices"
+    },
+    {
+      "source": "/4suites-locks",
+      "destination": "/device-and-system-integration-guides/4suites-locks"
+    },
+    {
+      "source": "/4suites-locks/4suites-locks-sample-data",
+      "destination": "/device-and-system-integration-guides/4suites-locks/4suites-locks-sample-data"
+    },
+    {
+      "source": "/4suites-locks/get-started-with-4suites-locks",
+      "destination": "/device-and-system-integration-guides/4suites-locks/get-started-with-4suites-locks"
+    },
+    {
+      "source": "/akiles-locks",
+      "destination": "/device-and-system-integration-guides/akiles-locks"
+    },
+    {
+      "source": "/akiles-locks/get-started-with-akiles-locks",
+      "destination": "/device-and-system-integration-guides/akiles-locks/get-started-with-akiles-locks"
+    },
+    {
+      "source": "/akiles-locks/sandbox-akiles-locks",
+      "destination": "/device-and-system-integration-guides/akiles-locks/sandbox-akiles-locks"
+    },
+    {
+      "source": "/assa-abloy-credential-services-credential-manager-in-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-vingcard-credential-services"
+    },
+    {
+      "source": "/assa-abloy-vingcard-credential-services",
+      "destination": "/device-and-system-integration-guides/assa-abloy-vingcard-credential-services"
+    },
+    {
+      "source": "/assa-abloy-vingcard-credential-services/sandbox-assa-abloy-vingcard-credential-services",
+      "destination": "/device-and-system-integration-guides/assa-abloy-vingcard-credential-services/sandbox-assa-abloy-vingcard-credential-services"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/common-use-cases",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/common-use-cases"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/creating-visionline-card-based-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/creating-visionline-card-based-credentials"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/credential-types",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/credential-types/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-joiner-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/credential-types/retrieving-guest-and-common-entrances",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/credential-types/revoking-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/credential-types/updating-guest-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/mobile-credential-related-properties",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/mobile-credential-related-properties"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-android-mobile-access-sdk-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-ios-mobile-access-sdk-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system-in-development/visionline-credential-metadata",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/assa-abloy-visionline-access-management-system-sample-data",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/assa-abloy-visionline-access-management-system-sample-data"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/common-use-cases",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/common-use-cases"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-joiner-mobile-credentials"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/issuing-various-types-of-guest-mobile-credentials"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/retrieving-guest-and-common-entrances",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/retrieving-guest-and-common-entrances"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/revoking-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/revoking-mobile-credentials"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/updating-guest-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/configuring-visionline-mobile-credentials/updating-guest-mobile-credentials"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/creating-visionline-card-based-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/creating-visionline-card-based-credentials"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/mobile-credential-related-properties",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/mobile-credential-related-properties"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam"
+    },
+    {
+      "source": "/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/instructions-for-issuing-visionline-instant-keys",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/instructions-for-issuing-visionline-instant-keys"
+    },
+    {
+      "source": "/assa-abloy-vostio-access-control-system",
+      "destination": "/device-and-system-integration-guides/assa-abloy-vostio-access-control-system"
+    },
+    {
+      "source": "/assa-abloy-vostio-access-control-system/sandbox-assa-abloy-vostio-access-control-system",
+      "destination": "/device-and-system-integration-guides/assa-abloy-vostio-access-control-system/sandbox-assa-abloy-vostio-access-control-system"
+    },
+    {
+      "source": "/august-locks",
+      "destination": "/device-and-system-integration-guides/august-locks"
+    },
+    {
+      "source": "/august-locks/august-locks-sample-data",
+      "destination": "/device-and-system-integration-guides/august-locks/august-locks-sample-data"
+    },
+    {
+      "source": "/august-locks/get-started-with-august-locks",
+      "destination": "/device-and-system-integration-guides/august-locks/get-started-with-august-locks"
+    },
+    {
+      "source": "/avigilon-alta-access-system",
+      "destination": "/device-and-system-integration-guides/avigilon-alta-access-system"
+    },
+    {
+      "source": "/avigilon-alta-access-system/avigilon-alta-access-system-sample-data",
+      "destination": "/device-and-system-integration-guides/avigilon-alta-access-system/avigilon-alta-access-system-sample-data"
+    },
+    {
+      "source": "/brivo-access",
+      "destination": "/device-and-system-integration-guides/brivo-access"
+    },
+    {
+      "source": "/brivo-access/brivo-access-sample-data",
+      "destination": "/device-and-system-integration-guides/brivo-access/brivo-access-sample-data"
+    },
+    {
+      "source": "/brivo-access/brivo-access-setup-guide",
+      "destination": "/device-and-system-integration-guides/brivo-access/brivo-access-setup-guide"
+    },
+    {
+      "source": "/controlbyweb-relays",
+      "destination": "/device-and-system-integration-guides/controlbyweb-relays"
+    },
+    {
+      "source": "/controlbyweb-relays/controlbyweb-relays-sample-data",
+      "destination": "/device-and-system-integration-guides/controlbyweb-relays/controlbyweb-relays-sample-data"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-credential-services-credential-manager-in-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-vingcard-credential-services"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/common-use-cases",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/common-use-cases"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/creating-visionline-card-based-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/creating-visionline-card-based-credentials"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/checking-if-a-user-identity-has-a-phone-that-is-set-up-for-a-credential-manager",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-joiner-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/issuing-various-types-of-guest-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/retrieving-guest-and-common-entrances",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/revoking-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/credential-types/updating-guest-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/mobile-credential-related-properties",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/mobile-credential-related-properties"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-android-mobile-access-sdk-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-android-mobile-access-sdk-development"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/special-requirements-for-ios-mobile-access-sdk-development",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/special-requirements-for-ios-mobile-access-sdk-development"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/next-steps"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-1-complete-the-assa-abloy-mobile-development-course"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-10-connect-your-visionline-development-account-to-seam"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-2-install-your-visionline-application"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-3-unblock-required-ports"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-4-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-5-set-up-your-credential-services-account-in-visionline"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-6-configure-the-mobile-access-uuid-in-visionline"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-7-set-up-door-locks-with-ble-profiles"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-8-program-door-locks"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/developing-your-visionline-mobile-key-app/step-9-create-a-production-workspace"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-1-obtain-assa-abloy-certification-for-your-mobile-key-app"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-2-confirm-that-your-visionline-site-meets-the-requirements"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-3-confirm-ble-module-on-all-locks"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-4-set-up-door-locks-with-ble-profiles"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-5-program-door-locks"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-6-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-7-purchase-and-import-the-callback-and-mobile-service-options-from-assa-abloy"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-8-create-a-production-workspace"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-mobile-key-app/launching-your-visionline-mobile-key-app/step-9-connect-your-visionline-production-account-to-seam"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/next-steps"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-1-install-your-visionline-application"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-2-unblock-required-ports"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-3-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-4-install-a-visionline-card-encoder"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-5-set-up-door-locks"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-6-program-door-locks"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-7-create-a-production-workspace"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-real-visionline-server/step-8-connect-your-visionline-development-account-to-seam"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/next-steps"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-1-create-a-sandbox-workspace"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/developing-your-visionline-plastic-card-encoding-app-using-a-sandbox-workspace/step-2-connect-the-virtual-visionline-acs-to-seam"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-1-confirm-that-your-visionline-site-meets-the-requirements"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-2-configure-a-visionline-user-account"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-3-purchase-and-import-the-callback-option-from-assa-abloy"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-4-create-a-production-workspace"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/visionline-acs-setup-instructions/developing-and-launching-your-visionline-plastic-card-encoding-app/launching-your-visionline-plastic-card-encoding-app-to-a-live-site/step-5-connect-your-visionline-production-account-to-seam"
+    },
+    {
+      "source": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system-in-development/visionline-credential-metadata",
+      "destination": "/device-and-system-integration-guides/assa-abloy-visionline-access-control-system"
+    },
+    {
+      "source": "/device-and-system-integration-guides/get-started-with-controlbyweb-devices",
+      "destination": "/device-and-system-integration-guides/controlbyweb-relays"
+    },
+    {
+      "source": "/dormakaba-ambiance-access-control-system",
+      "destination": "/device-and-system-integration-guides/dormakaba-ambiance-access-control-system"
+    },
+    {
+      "source": "/dormakaba-ambiance-access-control-system/dormakaba-ambiance-setup-guide",
+      "destination": "/device-and-system-integration-guides/dormakaba-ambiance-access-control-system/dormakaba-ambiance-setup-guide"
+    },
+    {
+      "source": "/dormakaba-ambiance-access-control-system/sandbox-dormakaba-ambiance-access-control-system",
+      "destination": "/device-and-system-integration-guides/dormakaba-ambiance-access-control-system/sandbox-dormakaba-ambiance-access-control-system"
+    },
+    {
+      "source": "/dormakaba-community-access-control-system",
+      "destination": "/device-and-system-integration-guides/dormakaba-community-access-control-system"
+    },
+    {
+      "source": "/dormakaba-community-access-control-system/dormakaba-community-setup-guide",
+      "destination": "/device-and-system-integration-guides/dormakaba-community-access-control-system/dormakaba-community-setup-guide"
+    },
+    {
+      "source": "/dormakaba-community-access-control-system/sandbox-dormakaba-community-access-control-system",
+      "destination": "/device-and-system-integration-guides/dormakaba-community-access-control-system/sandbox-dormakaba-community-access-control-system"
+    },
+    {
+      "source": "/dormakaba-oracode-locks",
+      "destination": "/device-and-system-integration-guides/dormakaba-oracode-locks"
+    },
+    {
+      "source": "/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes",
+      "destination": "/device-and-system-integration-guides/dormakaba-oracode-locks/creating-dormakaba-oracode-offline-access-codes"
+    },
+    {
+      "source": "/dormakaba-oracode-locks/dormakaba-oracode-sample-data",
+      "destination": "/device-and-system-integration-guides/dormakaba-oracode-locks/dormakaba-oracode-sample-data"
+    },
+    {
+      "source": "/dormakaba-oracode-locks/dormakaba-oracode-setup-guide",
+      "destination": "/device-and-system-integration-guides/dormakaba-oracode-locks/dormakaba-oracode-setup-guide"
+    },
+    {
+      "source": "/dormakaba-oracode-locks/get-started-with-dormakaba-oracode-locks",
+      "destination": "/device-and-system-integration-guides/dormakaba-oracode-locks/get-started-with-dormakaba-oracode-locks"
+    },
+    {
+      "source": "/dormakaba-oracode-locks/programming-offline-access-codes-on-dormakaba-oracode-locks",
+      "destination": "/device-and-system-integration-guides/dormakaba-oracode-locks/programming-offline-access-codes-on-dormakaba-oracode-locks"
+    },
+    {
+      "source": "/ecobee-thermostats",
+      "destination": "/device-and-system-integration-guides/ecobee-thermostats"
+    },
+    {
+      "source": "/ecobee-thermostats/ecobee-sample-data",
+      "destination": "/device-and-system-integration-guides/ecobee-thermostats/ecobee-sample-data"
+    },
+    {
+      "source": "/ecobee-thermostats/get-started-with-ecobee-thermostats",
+      "destination": "/device-and-system-integration-guides/ecobee-thermostats/get-started-with-ecobee-thermostats"
+    },
+    {
+      "source": "/genie-garage-openers",
+      "destination": "/device-and-system-integration-guides/genie-garage-openers"
+    },
+    {
+      "source": "/genie-garage-openers/genie-sample-data",
+      "destination": "/device-and-system-integration-guides/genie-garage-openers/genie-sample-data"
+    },
+    {
+      "source": "/get-started-with-controlbyweb-devices",
+      "destination": "/device-and-system-integration-guides/controlbyweb-relays"
+    },
+    {
+      "source": "/google-nest-thermostats",
+      "destination": "/device-and-system-integration-guides/google-nest-thermostats"
+    },
+    {
+      "source": "/google-nest-thermostats/get-started-with-nest-thermostats",
+      "destination": "/device-and-system-integration-guides/google-nest-thermostats/get-started-with-nest-thermostats"
+    },
+    {
+      "source": "/google-nest-thermostats/google-nest-thermostats-sample-data",
+      "destination": "/device-and-system-integration-guides/google-nest-thermostats/google-nest-thermostats-sample-data"
+    },
+    {
+      "source": "/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development",
+      "destination": "/device-and-system-integration-guides/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development"
+    },
+    {
+      "source": "/honeywell-thermostats",
+      "destination": "/device-and-system-integration-guides/honeywell-thermostats"
+    },
+    {
+      "source": "/honeywell-thermostats/get-started-with-honeywell-thermostats",
+      "destination": "/device-and-system-integration-guides/honeywell-thermostats/get-started-with-honeywell-thermostats"
+    },
+    {
+      "source": "/honeywell-thermostats/sandbox-honeywell-thermostats",
+      "destination": "/device-and-system-integration-guides/honeywell-thermostats/sandbox-honeywell-thermostats"
+    },
+    {
+      "source": "/hotek-access-control-system",
+      "destination": "/device-and-system-integration-guides/hotek-access-control-system"
+    },
+    {
+      "source": "/hotek-access-control-system/sandbox-hotek-access-control-system",
+      "destination": "/device-and-system-integration-guides/hotek-access-control-system/sandbox-hotek-access-control-system"
+    },
+    {
+      "source": "/igloohome-locks",
+      "destination": "/device-and-system-integration-guides/igloohome-locks"
+    },
+    {
+      "source": "/igloohome-locks/creating-igloohome-offline-access-codes",
+      "destination": "/device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes"
+    },
+    {
+      "source": "/igloohome-locks/get-started-with-igloo-locks",
+      "destination": "/device-and-system-integration-guides/igloohome-locks/get-started-with-igloo-locks"
+    },
+    {
+      "source": "/igloohome-locks/igloohome-error-and-warning-codes",
+      "destination": "/device-and-system-integration-guides/igloohome-locks/igloohome-error-and-warning-codes"
+    },
+    {
+      "source": "/igloohome-locks/igloohome-sample-data",
+      "destination": "/device-and-system-integration-guides/igloohome-locks/igloohome-sample-data"
+    },
+    {
+      "source": "/keynest-key-lockers",
+      "destination": "/device-and-system-integration-guides/keynest-key-lockers"
+    },
+    {
+      "source": "/keynest-key-lockers/keynest-setup-instructions",
+      "destination": "/device-and-system-integration-guides/keynest-key-lockers/keynest-setup-instructions"
+    },
+    {
+      "source": "/keynest-key-lockers/sandbox-keynest-lockers",
+      "destination": "/device-and-system-integration-guides/keynest-key-lockers/sandbox-keynest-lockers"
+    },
+    {
+      "source": "/kwikset-locks",
+      "destination": "/device-and-system-integration-guides/kwikset-locks"
+    },
+    {
+      "source": "/kwikset-locks/get-started-with-kwikset-wifi-locks",
+      "destination": "/device-and-system-integration-guides/kwikset-locks/get-started-with-kwikset-wifi-locks"
+    },
+    {
+      "source": "/kwikset-locks/kwikset-locks-sample-data",
+      "destination": "/device-and-system-integration-guides/kwikset-locks/kwikset-locks-sample-data"
+    },
+    {
+      "source": "/latch-access-control-system",
+      "destination": "/device-and-system-integration-guides/latch-access-control-system"
+    },
+    {
+      "source": "/latch-access-control-system/latch-setup-guide",
+      "destination": "/device-and-system-integration-guides/latch-access-control-system/latch-setup-guide"
+    },
+    {
+      "source": "/latch-access-control-system/programming-code-based-latch-credentials",
+      "destination": "/device-and-system-integration-guides/latch-access-control-system/programming-code-based-latch-credentials"
+    },
+    {
+      "source": "/latch-access-control-system/programming-latch-acs-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/latch-access-control-system/programming-latch-acs-mobile-credentials"
+    },
+    {
+      "source": "/latch-access-control-system/sandbox-latch-access-control-system",
+      "destination": "/device-and-system-integration-guides/latch-access-control-system/sandbox-latch-access-control-system"
+    },
+    {
+      "source": "/lockly-locks",
+      "destination": "/device-and-system-integration-guides/lockly-locks"
+    },
+    {
+      "source": "/lockly-locks/creating-lockly-offline-access-codes",
+      "destination": "/device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes"
+    },
+    {
+      "source": "/lockly-locks/lockly-lock-sample-data",
+      "destination": "/device-and-system-integration-guides/lockly-locks/lockly-lock-sample-data"
+    },
+    {
+      "source": "/lockly-locks/lockly-setup-guide",
+      "destination": "/device-and-system-integration-guides/lockly-locks/lockly-setup-guide"
+    },
+    {
+      "source": "/minut-sensors",
+      "destination": "/device-and-system-integration-guides/minut-sensors"
+    },
+    {
+      "source": "/minut-sensors/get-started-with-minut-sensors",
+      "destination": "/device-and-system-integration-guides/minut-sensors/get-started-with-minut-sensors"
+    },
+    {
+      "source": "/minut-sensors/minut-noise-sensor-sample-data",
+      "destination": "/device-and-system-integration-guides/minut-sensors/minut-noise-sensor-sample-data"
+    },
+    {
+      "source": "/noiseaware-sensors",
+      "destination": "/device-and-system-integration-guides/noiseaware-sensors"
+    },
+    {
+      "source": "/noiseaware-sensors/get-started-with-noiseaware-sensors",
+      "destination": "/device-and-system-integration-guides/noiseaware-sensors/get-started-with-noiseaware-sensors"
+    },
+    {
+      "source": "/noiseaware-sensors/noiseaware-sample-data",
+      "destination": "/device-and-system-integration-guides/noiseaware-sensors/noiseaware-sample-data"
+    },
+    {
+      "source": "/nuki-locks",
+      "destination": "/device-and-system-integration-guides/nuki-locks"
+    },
+    {
+      "source": "/nuki-locks/get-started-with-nuki-locks",
+      "destination": "/device-and-system-integration-guides/nuki-locks/get-started-with-nuki-locks"
+    },
+    {
+      "source": "/nuki-locks/nuki-sample-data",
+      "destination": "/device-and-system-integration-guides/nuki-locks/nuki-sample-data"
+    },
+    {
+      "source": "/pti-storlogix-cloud",
+      "destination": "/device-and-system-integration-guides/pti-storlogix-cloud"
+    },
+    {
+      "source": "/pti-storlogix-cloud/pti-storlogix-cloud-sample-data",
+      "destination": "/device-and-system-integration-guides/pti-storlogix-cloud/pti-storlogix-cloud-sample-data"
+    },
+    {
+      "source": "/salto-ks-access-control-system",
+      "destination": "/device-and-system-integration-guides/salto-ks-access-control-system"
+    },
+    {
+      "source": "/salto-ks-access-control-system/programming-code-based-salto-ks-credentials",
+      "destination": "/device-and-system-integration-guides/salto-ks-access-control-system/programming-code-based-salto-ks-credentials"
+    },
+    {
+      "source": "/salto-ks-access-control-system/programming-salto-ks-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/salto-ks-access-control-system/programming-salto-ks-mobile-credentials"
+    },
+    {
+      "source": "/salto-ks-access-control-system/salto-ks-setup-instructions",
+      "destination": "/device-and-system-integration-guides/salto-ks-access-control-system/salto-ks-setup-instructions"
+    },
+    {
+      "source": "/salto-ks-access-control-system/sandbox-salto-ks-access-control-system",
+      "destination": "/device-and-system-integration-guides/salto-ks-access-control-system/sandbox-salto-ks-access-control-system"
+    },
+    {
+      "source": "/salto-ks-access-control-system/special-requirements-for-android-mobile-access-sdk-development",
+      "destination": "/device-and-system-integration-guides/salto-ks-access-control-system/special-requirements-for-android-mobile-access-sdk-development"
+    },
+    {
+      "source": "/salto-locks",
+      "destination": "/device-and-system-integration-guides/salto-locks"
+    },
+    {
+      "source": "/salto-locks/get-started-with-salto-locks",
+      "destination": "/device-and-system-integration-guides/salto-locks/get-started-with-salto-locks"
+    },
+    {
+      "source": "/salto-locks/sandbox-salto-ks-locks",
+      "destination": "/device-and-system-integration-guides/salto-locks/sandbox-salto-ks-locks"
+    },
+    {
+      "source": "/salto-proaccess-space-access-system",
+      "destination": "/device-and-system-integration-guides/salto-proaccess-space-access-system"
+    },
+    {
+      "source": "/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials",
+      "destination": "/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials"
+    },
+    {
+      "source": "/salto-proaccess-space-access-system/programming-salto-space-mobile-credentials",
+      "destination": "/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-mobile-credentials"
+    },
+    {
+      "source": "/salto-proaccess-space-access-system/salto-space-setup-instructions",
+      "destination": "/device-and-system-integration-guides/salto-proaccess-space-access-system/salto-space-setup-instructions"
+    },
+    {
+      "source": "/salto-proaccess-space-access-system/sandbox-salto-space-access-control-system",
+      "destination": "/device-and-system-integration-guides/salto-proaccess-space-access-system/sandbox-salto-space-access-control-system"
+    },
+    {
+      "source": "/schlage-locks",
+      "destination": "/device-and-system-integration-guides/schlage-locks"
+    },
+    {
+      "source": "/schlage-locks/get-started-with-schlage-locks",
+      "destination": "/device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks"
+    },
+    {
+      "source": "/schlage-locks/schlage-encode-sample-data",
+      "destination": "/device-and-system-integration-guides/schlage-locks/schlage-encode-sample-data"
+    },
+    {
+      "source": "/schlage-locks/schlage-locks-daylight-savings-time-adjustments",
+      "destination": "/device-and-system-integration-guides/schlage-locks/schlage-locks-daylight-savings-time-adjustments"
+    },
+    {
+      "source": "/schlage-locks/schlage-locks-setup-instructions",
+      "destination": "/device-and-system-integration-guides/schlage-locks/schlage-locks-setup-instructions"
+    },
+    {
+      "source": "/sensi-thermostats",
+      "destination": "/device-and-system-integration-guides/sensi-thermostats"
+    },
+    {
+      "source": "/sensi-thermostats/get-started-with-sensi-thermostats",
+      "destination": "/device-and-system-integration-guides/sensi-thermostats/get-started-with-sensi-thermostats"
+    },
+    {
+      "source": "/sensi-thermostats/sandbox-sensi-thermostats",
+      "destination": "/device-and-system-integration-guides/sensi-thermostats/sandbox-sensi-thermostats"
+    },
+    {
+      "source": "/smartthings-hubs-+-devices",
+      "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices"
+    },
+    {
+      "source": "/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks",
+      "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks"
+    },
+    {
+      "source": "/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-thermostats",
+      "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-thermostats"
+    },
+    {
+      "source": "/smartthings-hubs-+-devices/smartthings-sample-data",
+      "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices/smartthings-sample-data"
+    },
+    {
+      "source": "/tedee-locks",
+      "destination": "/device-and-system-integration-guides/tedee-locks"
+    },
+    {
+      "source": "/tedee-locks/get-started-with-tedee-locks",
+      "destination": "/device-and-system-integration-guides/tedee-locks/get-started-with-tedee-locks"
+    },
+    {
+      "source": "/tedee-locks/sandbox-tedee-locks",
+      "destination": "/device-and-system-integration-guides/tedee-locks/sandbox-tedee-locks"
+    },
+    {
+      "source": "/ttlock-locks",
+      "destination": "/device-and-system-integration-guides/ttlock-locks"
+    },
+    {
+      "source": "/ttlock-locks/get-started-with-ttlock-devices",
+      "destination": "/device-and-system-integration-guides/ttlock-locks/get-started-with-ttlock-devices"
+    },
+    {
+      "source": "/ttlock-locks/ttlock-sample-data",
+      "destination": "/device-and-system-integration-guides/ttlock-locks/ttlock-sample-data"
+    },
+    {
+      "source": "/ultraloq-locks",
+      "destination": "/device-and-system-integration-guides/ultraloq-locks"
+    },
+    {
+      "source": "/ultraloq-locks/configuring-ultraloq-device-timezones",
+      "destination": "/device-and-system-integration-guides/ultraloq-locks/configuring-ultraloq-device-timezones"
+    },
+    {
+      "source": "/ultraloq-locks/creating-ultraloq-access-codes",
+      "destination": "/device-and-system-integration-guides/ultraloq-locks/creating-ultraloq-access-codes"
+    },
+    {
+      "source": "/ultraloq-locks/ultraloq-setup-guide",
+      "destination": "/device-and-system-integration-guides/ultraloq-locks/ultraloq-setup-guide"
+    },
+    {
+      "source": "/wyze-locks",
+      "destination": "/device-and-system-integration-guides/wyze-locks"
+    },
+    {
+      "source": "/wyze-locks/get-started-with-wyze-locks",
+      "destination": "/device-and-system-integration-guides/wyze-locks/get-started-with-wyze-locks"
+    },
+    {
+      "source": "/wyze-locks/wyze-sample-data",
+      "destination": "/device-and-system-integration-guides/wyze-locks/wyze-sample-data"
+    },
+    {
+      "source": "/yale-locks",
+      "destination": "/device-and-system-integration-guides/yale-locks"
+    },
+    {
+      "source": "/yale-locks/get-started-with-yale-locks",
+      "destination": "/device-and-system-integration-guides/yale-locks/get-started-with-yale-locks"
+    },
+    {
+      "source": "/yale-locks/yale-sample-data",
+      "destination": "/device-and-system-integration-guides/yale-locks/yale-sample-data"
     }
   ],
   "openapi": [
