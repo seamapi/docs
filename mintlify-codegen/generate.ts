@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { readFile, writeFile } from 'node:fs/promises'
+import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { env } from 'node:process'
 
@@ -67,6 +67,14 @@ if (updatedObjects.length > 0) {
   )
 }
 
+// Phase G: strip any legacy `/latest` from generated docs links. Guards against
+// upstream @seamapi/types regressions reintroducing `docs.seam.co/latest` into
+// generated descriptions. The docs site serves at the root (no `/latest`); a
+// `/latest/:path*` redirect handles old inbound URLs. See DOC-206 / DOC-199.
+console.log('Sanitizing legacy /latest links in generated output...')
+const sanitizedCount = await stripLatestLinks(outputDir)
+console.log(`  Sanitized ${sanitizedCount} generated file(s)`)
+
 console.log(`\nDone!`)
 console.log(`  Removed undocumented paths: ${stats.removedPaths}`)
 console.log(`  Total documented endpoints: ${stats.totalEndpoints}`)
@@ -79,6 +87,37 @@ if (stats.withoutCodeSamples.length > 0) {
   console.log(
     `  Missing samples: ${stats.withoutCodeSamples.slice(0, 10).join(', ')}${stats.withoutCodeSamples.length > 10 ? `... and ${stats.withoutCodeSamples.length - 10} more` : ''}`,
   )
+}
+
+/**
+ * Strip the legacy `/latest` path segment from `docs.seam.co` links in the
+ * generated output (openapi.json + the API `object.mdx` pages). These links
+ * originate in `@seamapi/types` descriptions; this guard keeps the docs
+ * `/latest`-free regardless of the upstream package version.
+ */
+async function stripLatestLinks(docsDir: string): Promise<number> {
+  const files = [join(docsDir, 'openapi.json')]
+  const apiDir = join(docsDir, 'api')
+  const entries = await readdir(apiDir, { recursive: true })
+  for (const entry of entries) {
+    if (entry.endsWith('.mdx')) files.push(join(apiDir, entry))
+  }
+
+  let count = 0
+  for (const file of files) {
+    let content: string
+    try {
+      content = await readFile(file, 'utf8')
+    } catch {
+      continue
+    }
+    const replaced = content.split('docs.seam.co/latest').join('docs.seam.co')
+    if (replaced !== content) {
+      await writeFile(file, replaced)
+      count++
+    }
+  }
+  return count
 }
 
 function renderCodeGroup(
