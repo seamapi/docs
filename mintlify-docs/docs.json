@@ -402,13 +402,11 @@
                 "group": "Access Methods",
                 "pages": [
                   "api/access_methods/object",
-                  "POST /access_methods/assign_card",
                   "POST /access_methods/delete",
                   "POST /access_methods/encode",
                   "POST /access_methods/get",
                   "POST /access_methods/get_related",
                   "POST /access_methods/list",
-                  "POST /access_methods/unlock_door",
                   {
                     "group": "Unmanaged",
                     "pages": [
