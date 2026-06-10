@@ -29,7 +29,7 @@ You specify _where_ to grant access using one or more of these parameters:
 | Parameter          | Best for                       | Description                                                                                                                                         |
 | ------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `device_ids`       | Standalone smart locks         | Pass IDs of individual devices like August, Yale, or Schlage locks connected through a [Connect Webview](/core-concepts/connect-webviews/index).     |
-| `space_ids`        | Grouped access points          | Grant access to all entrances and devices in one or more [spaces](https://docs.seam.co/latest/api/spaces/). Useful when a guest needs access to a room door, lobby, and elevator in one call. |
+| `space_ids`        | Grouped access points          | Grant access to all entrances and devices in one or more [spaces](/api/spaces/object). Useful when a guest needs access to a room door, lobby, and elevator in one call. |
 | `acs_entrance_ids` | Access control system entrances | Pass IDs of individual ACS entrances for fine-grained control.                                                                                      |
 
 You can combine these in a single Access Grant — for example, a standalone smart lock (`device_ids`) plus a set of ACS entrances (`acs_entrance_ids`).

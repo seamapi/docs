@@ -7,7 +7,7 @@ A client session enables a client, such as a web browser or mobile phone, to acc
 
 Once you create a client session on the backend, you can pass the resulting generated client session token from the backend to the frontend (that is, to the client). Using client session tokens on the frontend eliminates the need for your user's browser to communicate with your backend server. Instead, the client makes requests directly to the Seam API.
 
-Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](/ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components#3-select-a-user-identifier-key), along with the [connected accounts](https://docs.seam.co/latest/api/connected_accounts/) associated with this user. Then, you can [use client sessions on the backend to limit your users to only the devices that they own](/core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend).
+Client sessions make it easy to control your users' access to devices. When you create a client session, you can specify [your own internal user ID for a desired user](/ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components#3-select-a-user-identifier-key), along with the [connected accounts](/api/connected_accounts/object) associated with this user. Then, you can [use client sessions on the backend to limit your users to only the devices that they own](/core-concepts/authentication/client-session-tokens/implementing-client-sessions-for-device-management-in-the-backend).
 
 <Info>
   If you are just getting started with Seam, see [Seam
@@ -42,7 +42,7 @@ You can use client sessions in the following two ways:
 
 ## Create a Client Session for an Existing User and Retrieve the Session Token
 
-To [create a client session](https://docs.seam.co/latest/api/client_sessions/create) for an existing user with connected accounts in your workspace, include the IDs of the user's connected accounts (`connected_account_ids`) and [provide your own unique internal user ID (`user_identifier_key`)](/ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components#3-select-a-user-identifier-key). Then, use the generated client session token to retrieve and manage the resources authorized through the connected accounts associated with this client session.
+To [create a client session](/api/client_sessions/create) for an existing user with connected accounts in your workspace, include the IDs of the user's connected accounts (`connected_account_ids`) and [provide your own unique internal user ID (`user_identifier_key`)](/ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components#3-select-a-user-identifier-key). Then, use the generated client session token to retrieve and manage the resources authorized through the connected accounts associated with this client session.
 
 **Request:**
 
@@ -72,7 +72,7 @@ Client session token: seam_cst1891oqCmE_6dBwV8PJ2Ffoe9dWYVyMfVHq
 
 ## List Client Sessions
 
-You can [list all client sessions](https://docs.seam.co/latest/api/client_sessions/list) within your workspace.
+You can [list all client sessions](/api/client_sessions/list) within your workspace.
 
 **Request:**
 
@@ -124,7 +124,7 @@ await seam.clientSessions.list()
 
 ## Get a Client Session
 
-To [get a specific client session](https://docs.seam.co/latest/api/client_sessions/get), provide the client session ID (`client_session_id`).
+To [get a specific client session](/api/client_sessions/get), provide the client session ID (`client_session_id`).
 
 **Request:**
 
@@ -161,7 +161,7 @@ const clientSession = await seam.clientSessions.get({
 
 ## Delete a Client Session
 
-To [delete a client session](https://docs.seam.co/latest/api/client_sessions/delete), provide the client session ID (`client_session_id`).
+To [delete a client session](/api/client_sessions/delete), provide the client session ID (`client_session_id`).
 
 <CodeGroup>
 

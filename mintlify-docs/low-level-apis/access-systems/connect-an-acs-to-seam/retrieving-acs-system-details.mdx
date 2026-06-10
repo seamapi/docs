@@ -3,13 +3,13 @@ title: 'Retrieving ACS System Details'
 description: 'Learn how to list and get information about your ACS systems.'
 ---
 
-You can list details for all the ACSs in your [workspace](/core-concepts/workspaces/index) or get these details for a specific ACS. Note that Seam represents the ACS as an [`acs_system`](https://docs.seam.co/latest/api/acs/systems/) resource. When you want to [create ACS users](/low-level-apis/access-systems/user-management#create-an-acs-user) for your ACS, you must first obtain the ID of the `acs_system` for which you want to create these users.
+You can list details for all the ACSs in your [workspace](/core-concepts/workspaces/index) or get these details for a specific ACS. Note that Seam represents the ACS as an [`acs_system`](/api/acs/systems/object) resource. When you want to [create ACS users](/low-level-apis/access-systems/user-management#create-an-acs-user) for your ACS, you must first obtain the ID of the `acs_system` for which you want to create these users.
 
 ---
 
 ## List ACS Systems
 
-You can [list all `acs_system` resources](https://docs.seam.co/latest/api/acs/systems/list) in your workspace. Note the `acs_system_id` in the response.
+You can [list all `acs_system` resources](/api/acs/systems/list) in your workspace. Note the `acs_system_id` in the response.
 
 **Request:**
 
@@ -117,7 +117,7 @@ seam.SystemsAcs.List();
 
 ## Get an ACS System
 
-You can [get the details of a specific `acs_system`](https://docs.seam.co/latest/api/acs/systems/get) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
+You can [get the details of a specific `acs_system`](/api/acs/systems/get) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
 
 **Request:**
 

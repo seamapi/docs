@@ -3,14 +3,14 @@ title: 'Mobile Key Quick Start'
 description: 'Create your first mobile key credential to start controlling an access control system with Seam.'
 ---
 
-In this quick start, create a user identity for a virtual [Salto KS](https://docs.seam.co/latest/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](/capability-guides/mobile-access/index).
+In this quick start, create a user identity for a virtual [Salto KS](/device-and-system-integration-guides/salto-ks-access-control-system) access control system. Then, grant the user access to an entrance using a mobile key credential. With mobile keys, developers can create mobile apps that download users' credentials and then use Bluetooth low energy (BLE) or similar communications technologies to unlock granted nearby entrances. For more information about Seam's mobile access solution, see [Mobile Access](/capability-guides/mobile-access/index).
 
 <Info>
   This quick start walks you through the process that applies specifically to
   the Salto KS ACS. There are often differences between access control systems.
   Once you've completed this quick start, learn how to work with your ACS using
   Seam, by reading the [system integration
-  guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems)
+  guide](/device-and-system-integration-guides#access-control-systems)
   for your ACS.
 </Info>
 
@@ -21,7 +21,7 @@ This quick start walks you through the following basic steps:
 1. [Connect](/core-concepts/workspaces/index#connecting-virtual-devices) an access control system to Seam.
    - To get started quickly, use a virtual ACS in a [sandbox workspace](/core-concepts/workspaces/index#sandbox-workspaces).
 2. Install a Seam SDK and create an API key.
-3. Create a [user identity](https://docs.seam.co/latest/api/user_identities/).
+3. Create a [user identity](/api/user_identities/object).
    - Seam user identities enable you to match your own mobile app users to ACS users.
 4. Assign the user identity to an [access group](../user-management/assigning-users-to-access-groups).
    - Access groups are preconfigured to grant access to specific entrances.\
@@ -576,7 +576,7 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 2. Create user identities.
    - [Managing Mobile App User Accounts with User Identities](/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities)
 3. For relevant access control systems, assign user identities to access groups.
-   - [Adding User Identities to Access Groups](https://docs.seam.co/latest/api/acs/access_groups/add_user)
+   - [Adding User Identities to Access Groups](/api/acs/access_groups/add_user)
 4. Learn about available entrances.
    - [Retrieving Entrance Details](../retrieving-entrance-details)
 5. Create credentials for ACS users.
@@ -584,4 +584,4 @@ For a deeper dive into ACS concepts and instructions, see the following topics:
 6. Learn more about the Seam mobile access solution.
    - [Mobile Access](/capability-guides/mobile-access/index)
    - [Integrating into your mobile application](/capability-guides/mobile-access/mobile-device-sdks/index)
-7. See the Seam [Access Control Systems API reference](https://docs.seam.co/latest/api/acs/).
+7. See the Seam [Access Control Systems API reference](/api/acs/object).

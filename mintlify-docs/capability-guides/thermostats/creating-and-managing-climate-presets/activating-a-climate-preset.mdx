@@ -7,13 +7,13 @@ In addition to [scheduling](../creating-and-managing-thermostat-schedules) clima
 
 Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts) that enables you to track the progress of the action. Poll this action attempt, until the action completes.
 
-Further, Seam emits a [`thermostat.temperature_reached_set_point` event](https://docs.seam.co/latest/api/events/) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](../understanding-thermostat-concepts/set-points) specified in the climate preset that you've activated. You can configure a [webhook](../../../developer-tools/webhooks) to watch for this event.
+Further, Seam emits a [`thermostat.temperature_reached_set_point` event](/api/events/object) when the thermostat reports a temperature within 1° Celsius of the heating or cooling [set point](../understanding-thermostat-concepts/set-points) specified in the climate preset that you've activated. You can configure a [webhook](../../../developer-tools/webhooks) to watch for this event.
 
 ---
 
 ## Activate a Climate Preset
 
-To activate a climate preset, issue a [`/thermostats/activate_climate_preset`](https://docs.seam.co/latest/api/thermostats/activate_climate_preset) request and specify the `climate_preset_key` of the desired climate preset.
+To activate a climate preset, issue a [`/thermostats/activate_climate_preset`](/api/thermostats/activate_climate_preset) request and specify the `climate_preset_key` of the desired climate preset.
 
 **Request:**
 
@@ -123,7 +123,7 @@ ActionAttempt(
 
 ## Poll the Action Attempt
 
-Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](https://docs.seam.co/latest/api/action_attempts/get) request. When the activation completes successfully, the `status` of the action attempt changes to `success`.
+Activating a climate preset returns an [action attempt](../../../core-concepts/action-attempts). Use the `action_attempt_id` from this response to poll the associated action attempt using the [`/action_attempts/get`](/api/action_attempts/get) request. When the activation completes successfully, the `status` of the action attempt changes to `success`.
 
 **Request:**
 
