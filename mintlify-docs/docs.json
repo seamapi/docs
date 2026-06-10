@@ -1650,10 +1650,6 @@
       "destination": "/use-cases/granting-access"
     },
     {
-      "source": "/capability-guides/access-grants/access-grant-quick-start",
-      "destination": "/use-cases/granting-access/access-grant-quick-start"
-    },
-    {
       "source": "/capability-guides/access-grants/creating-an-access-grant-using-entrances",
       "destination": "/use-cases/granting-access/creating-an-access-grant-using-entrances"
     },
@@ -1662,28 +1658,8 @@
       "destination": "/use-cases/granting-access/creating-an-access-grant-using-spaces"
     },
     {
-      "source": "/capability-guides/access-grants/deleting-an-access-grant",
-      "destination": "/use-cases/granting-access/deleting-an-access-grant"
-    },
-    {
-      "source": "/capability-guides/access-grants/delivering-access-methods",
-      "destination": "/use-cases/granting-access/delivering-access-methods"
-    },
-    {
       "source": "/capability-guides/access-grants/reservation-access-grants",
       "destination": "/use-cases/granting-access/reservation-access-grants"
-    },
-    {
-      "source": "/capability-guides/access-grants/retrieving-access-grants-and-access-methods",
-      "destination": "/use-cases/granting-access/retrieving-access-grants-and-access-methods"
-    },
-    {
-      "source": "/capability-guides/access-grants/revoking-an-access-method",
-      "destination": "/use-cases/granting-access/revoking-an-access-method"
-    },
-    {
-      "source": "/capability-guides/access-grants/updating-an-access-grant",
-      "destination": "/use-cases/granting-access/updating-an-access-grant"
     },
     {
       "source": "/capability-guides/access-systems",
