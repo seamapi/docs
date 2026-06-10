@@ -18,7 +18,7 @@ To display the health—that is, the online/offline status—of your end users' 
 
 ## Get Device Status Using Device Properties
 
-Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](https://docs.seam.co/latest/api/devices/#device.properties) property accordingly. Use a [Get Device](https://docs.seam.co/latest/api/devices/get) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
+Seam polls connected devices and accounts every ten minutes and updates the Boolean [`device.properties.online`](/core-concepts/devices) property accordingly. Use a [Get Device](/api/devices/get) request to retrieve the current online/offline status of a device. Then, display the device status in your app.
 
 <Info>
   You can also use the prebuilt [device details Seam
@@ -107,7 +107,7 @@ Online: True
 
 ## Get Device Status Using Connection-Related Events
 
-When a device connection or disconnection occurs, Seam generates a [`device.connected`](https://docs.seam.co/latest/api/events/) or [`device.disconnected`](https://docs.seam.co/latest/api/events/) event, respectively. You can retrieve these events using a [List Events](https://docs.seam.co/latest/api/events/list) request or through [webhooks](../../developer-tools/webhooks) and then display the corresponding status in your app.
+When a device connection or disconnection occurs, Seam generates a [`device.connected`](/api/events/object) or [`device.disconnected`](/api/events/object) event, respectively. You can retrieve these events using a [List Events](/api/events/list) request or through [webhooks](../../developer-tools/webhooks) and then display the corresponding status in your app.
 
 <Info>
   To help you test your app against events—like device disconnection or
@@ -120,7 +120,7 @@ When a device connection or disconnection occurs, Seam generates a [`device.conn
 
 ### Get Connection-Related Events Using a List Events Request
 
-When issuing a [List Events](https://docs.seam.co/latest/api/events/list) request to retrieve [`device.connected`](https://docs.seam.co/latest/api/events/) or [`device.disconnected`](https://docs.seam.co/latest/api/events/) events for a specific device, include the following parameters:
+When issuing a [List Events](/api/events/list) request to retrieve [`device.connected`](/api/events/object) or [`device.disconnected`](/api/events/object) events for a specific device, include the following parameters:
 
 <table>
   <thead>

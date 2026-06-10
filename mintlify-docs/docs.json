@@ -3168,6 +3168,10 @@
     {
       "source": "/capability-guides/access-grants/revoking-an-access-method",
       "destination": "/use-cases/granting-access/managing-access-methods"
+    },
+    {
+      "source": "/latest/:path*",
+      "destination": "/:path*"
     }
   ],
   "openapi": [
