@@ -115,6 +115,7 @@
       profiles:
         - visionline_door_profile_id: 7f8e9d0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a
           visionline_door_profile_type: BLE
+    warnings: []
 - title: ACS Mobile Key Credential
   description: An access system mobile key credential resource.
   resource_type: acs_credential
