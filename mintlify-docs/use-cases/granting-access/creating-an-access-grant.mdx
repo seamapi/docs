@@ -38,6 +38,10 @@ You can combine these in a single Access Grant — for example, a standalone sma
 If you're using Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, or Vostio, you'll also need to pass a `reservation_key` to coordinate credential override sequencing. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
 </Info>
 
+<Info>
+If you create multiple Access Grants for the same `user_identity_id`, Seam tries to reuse the same access methods across grants — for example, assigning the same PIN code so the user doesn't have to learn a new one for each reservation.
+</Info>
+
 ### Example
 
 The example below creates an Access Grant for a single smart lock with a PIN code. To grant access to multiple doors at once, pass `space_ids` instead of `device_ids`. To target specific ACS entrances, use `acs_entrance_ids`. You can also request multiple modes in one call — for example, `[{"mode": "code"}, {"mode": "mobile_key"}]`.
