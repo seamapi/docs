@@ -11,12 +11,9 @@ title: 'The Phone Object'
 
 Represents an app user's mobile phone.
 
-<Tabs>
-<Tab title="Phone">
+<CodeGroup>
 
-A phone resource.
-
-```json
+```json Phone
 {
   "created_at": "2025-06-14T16:54:17.946540Z",
   "custom_metadata": {
@@ -43,95 +40,52 @@ A phone resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`created_at`** _Datetime_
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the phone was created.
+</ResponseField>
 
-Date and time at which the phone was created.
+<ResponseField name="custom_metadata" type="object">
+  Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
+</ResponseField>
 
----
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the phone.
+</ResponseField>
 
-**`custom_metadata`** _Record_
+<ResponseField name="device_type" type="Enum (String)">
+  Device type for phones.
+</ResponseField>
 
-Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
+<ResponseField name="display_name" type="String">
+  Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
+</ResponseField>
 
----
+<ResponseField name="errors" type="Array">
+  Errors associated with the phone.
+</ResponseField>
 
-**`device_id`** _UUID_
+<ResponseField name="nickname" type="String">
+  Optional nickname to describe the phone, settable through Seam.
+</ResponseField>
 
-ID of the phone.
+<ResponseField name="properties" type="object">
+  Properties of the phone.
+</ResponseField>
 
----
+<ResponseField name="warnings" type="Array">
+  Warnings associated with the phone.
+</ResponseField>
 
-**`device_type`** _Enum_
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.
+</ResponseField>
 
-Device type for phones.
-
-<details>
-<summary>Enum values</summary>
-
-- <code>ios_phone</code>
-- <code>android_phone</code>
-</details>
-
----
-
-**`display_name`** _String_
-
-Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.
-
----
-
-**`errors`** _List_ _of Objects_
-
-Errors associated with the phone.
-
-<details>
-  <summary>Child Object Properties</summary>
-<strong><code>error_code</code></strong> <i>String</i>
-
-<strong>
-  <code>message</code>
-</strong>
-<i>String</i>
-
-</details>
-
----
-
-**`nickname`** _String_
-
-Optional nickname to describe the phone, settable through Seam.
-
----
-
-**`warnings`** _List_ _of Objects_
-
-Warnings associated with the phone.
-
-<details>
-  <summary>Child Object Properties</summary>
-<strong><code>message</code></strong> <i>String</i>
-
-<strong>
-  <code>warning_code</code>
-</strong>
-<i>String</i>
-
-</details>
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the phone.
-
----
 
 ## phone.properties
 

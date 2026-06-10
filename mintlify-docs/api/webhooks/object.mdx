@@ -9,12 +9,9 @@ title: 'The Webhook Object'
 
 Represents a [webhook](https://docs.seam.co/latest/developer-tools/webhooks) that enables you to receive notifications of events. When you create a webhook, specify the endpoint URL at which you want to receive events and the set of event types that you want to receive.
 
-<Tabs>
-<Tab title="Webhook">
+<CodeGroup>
 
-A webhook resource.
-
-```json
+```json Webhook
 {
   "event_types": [
     "device.connected",
@@ -26,36 +23,28 @@ A webhook resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`event_types`** _List_ _of Strings_
+<ResponseField name="event_types" type="Array">
+  Types of events that the [webhook](https://docs.seam.co/latest/developer-tools/webhooks) should receive.
+</ResponseField>
 
-Types of events that the [webhook](https://docs.seam.co/latest/developer-tools/webhooks) should receive.
+<ResponseField name="secret" type="String">
+  Secret associated with the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+</ResponseField>
 
----
+<ResponseField name="url" type="String">
+  URL for the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+</ResponseField>
 
-**`secret`** _String_
+<ResponseField name="webhook_id" type="String">
+  ID of the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+</ResponseField>
 
-Secret associated with the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
----
-
-**`url`** _String_
-
-URL for the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
----
-
-**`webhook_id`** _String_
-
-ID of the [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
-
----
 
 ## Endpoints
 

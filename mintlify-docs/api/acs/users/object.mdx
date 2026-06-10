@@ -16,12 +16,9 @@ An access system user typically refers to an individual who requires access, lik
 
 For details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
-<Tabs>
-<Tab title="ACS User">
+<CodeGroup>
 
-An access system user resource.
-
-```json
+```json ACS User
 {
   "access_schedule": {
     "ends_at": "2025-06-12T11:00:00.000Z",
@@ -64,844 +61,108 @@ An access system user resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`access_schedule`** _Object_
+<ResponseField name="access_schedule" type="object">
+  `starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access.
+</ResponseField>
 
-`starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) access.
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the [access system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-<details>
-  <summary>Child Properties</summary>
+<ResponseField name="acs_user_id" type="String (UUID)">
+  ID of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-- <strong>
-    <code>ends_at</code>
-  </strong>
-  <i>Datetime</i>
+<ResponseField name="connected_account_id" type="String (UUID)">
+  The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-  Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was created.
+</ResponseField>
 
-- <strong>
-    <code>starts_at</code>
-  </strong>
-  <i>Datetime</i>
+<ResponseField name="display_name" type="String">
+  Display name for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-  Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+<ResponseField name="email" type="String" deprecated>
+  The email.
+</ResponseField>
 
-</details>
+<ResponseField name="email_address" type="String">
+  Email address of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
----
+<ResponseField name="errors" type="Array">
+  Errors associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-**`acs_system_id`** _UUID_
+<ResponseField name="external_type" type="Enum (String)">
+  Brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
+</ResponseField>
 
-ID of the [access system](https://docs.seam.co/latest/low-level-apis/access-systems) that contains the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
+<ResponseField name="external_type_display_name" type="String">
+  Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) type.
+</ResponseField>
 
----
+<ResponseField name="full_name" type="String">
+  Full name of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-**`acs_user_id`** _UUID_
+<ResponseField name="hid_acs_system_id" type="String (UUID)">
+  The hid acs system id.
+</ResponseField>
 
-ID of the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
+<ResponseField name="is_managed" type="Boolean">
+  The is managed.
+</ResponseField>
 
----
+<ResponseField name="is_suspended" type="Boolean">
+  Indicates whether the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).
+</ResponseField>
 
-**`connected_account_id`** _UUID_
+<ResponseField name="pending_mutations" type="Array">
+  Pending mutations associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.
+</ResponseField>
 
-The ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
+<ResponseField name="phone_number" type="String">
+  Phone number of the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+</ResponseField>
 
----
+<ResponseField name="salto_space_metadata" type="object">
+  Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-**`created_at`** _Datetime_
+<ResponseField name="user_identity_email_address" type="String">
+  Email address of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-Date and time at which the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) was created.
+<ResponseField name="user_identity_full_name" type="String">
+  Full name of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
----
+<ResponseField name="user_identity_id" type="String">
+  ID of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-**`display_name`** _String_
+<ResponseField name="user_identity_phone_number" type="String">
+  Phone number of the user identity associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).
+</ResponseField>
 
-Display name for the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
+<ResponseField name="warnings" type="Array">
+  Warnings associated with the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
----
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).
+</ResponseField>
 
-**`email`** _String_
-
-<Warning>**Deprecated**. use email_address.</Warning>
-
----
-
-**`email_address`** _String_
-
-Email address of the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
----
-
-[**`errors`**](#errors) _List_ _of Objects_
-
-Errors associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
-The specific structure of each object in this list depends on the value of its `error_code` field.
-
-Variants:
-
-<details>
-<summary><code>deleted_externally</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/latest/low-level-apis/access-systems) outside of Seam.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Enum values:
-
-- <code>deleted_externally</code>
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-<details>
-<summary><code>salto_ks_subscription_limit_exceeded</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Enum values:
-
-- <code>salto_ks_subscription_limit_exceeded</code>
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-<details>
-<summary><code>failed_to_create_on_acs_system</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) was not created on the [access system](https://docs.seam.co/latest/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Enum values:
-
-- <code>failed_to_create_on_acs_system</code>
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-<details>
-<summary><code>failed_to_update_on_acs_system</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/latest/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Enum values:
-
-- <code>failed_to_update_on_acs_system</code>
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-<details>
-<summary><code>failed_to_delete_on_acs_system</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/latest/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Enum values:
-
-- <code>failed_to_delete_on_acs_system</code>
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-<details>
-<summary><code>latch_conflict_with_resident_user</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Enum values:
-
-- <code>latch_conflict_with_resident_user</code>
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-
----
-
-**`external_type`** _Enum_
-
-Brand-specific terminology for the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) type.
-
-<details>
-<summary>Enum values</summary>
-
-- <code>pti_user</code>
-- <code>brivo_user</code>
-- <code>hid_credential_manager_user</code>
-- <code>salto_site_user</code>
-- <code>latch_user</code>
-- <code>dormakaba_community_user</code>
-- <code>salto_space_user</code>
-</details>
-
----
-
-**`external_type_display_name`** _String_
-
-Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) type.
-
----
-
-**`full_name`** _String_
-
-Full name of the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
----
-
-**`hid_acs_system_id`** _UUID_
-
----
-
-**`is_managed`** _Boolean_
-
----
-
-**`is_suspended`** _Boolean_
-
-Indicates whether the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) is currently [suspended](https://docs.seam.co/latest/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users).
-
----
-
-**`pending_mutations`** _List_ _of Objects_
-
-Pending mutations associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.
-
-The specific structure of each object in this list depends on the value of its `mutation_code` field.
-
-Variants:
-
-<details>
-<summary><code>creating</code></summary>
-
-Seam is in the process of pushing a user creation to the integrated access system.
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that Seam is in the process of pushing a user creation to the integrated access system.
-
-Enum values:
-
-- <code>creating</code>
-
-</details>
-<details>
-<summary><code>deleting</code></summary>
-
-Seam is in the process of pushing a user deletion to the integrated access system.
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that Seam is in the process of pushing a user deletion to the integrated access system.
-
-Enum values:
-
-- <code>deleting</code>
-
-</details>
-<details>
-<summary><code>deferring_creation</code></summary>
-
-User exists in Seam but has not been pushed to the provider yet. Will be created when a credential is issued.
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that Seam is intentionally deferring the creation of the user on the access control system until the appropriate time.
-
-Enum values:
-
-- <code>deferring_creation</code>
-
----
-
-**`scheduled_at`** _Datetime_
-
-Optional: When the user creation is scheduled to occur.
-
-</details>
-<details>
-<summary><code>updating_user_information</code></summary>
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`from`** _Object_
-
-Old access system user information.
-
-Child Properties
-
-- <strong>
-    <code>email_address</code>
-  </strong>
-  <i>String</i>
-
-  Email address of the access system user.
-
-- <strong>
-    <code>full_name</code>
-  </strong>
-  <i>String</i>
-
-  Full name of the access system user.
-
-- <strong>
-    <code>phone_number</code>
-  </strong>
-  <i>String</i>
-
-  Phone number of the access system user.
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that Seam is in the process of pushing updated user information to the integrated access system.
-
-Enum values:
-
-- <code>updating_user_information</code>
-
----
-
-**`to`** _Object_
-
-New access system user information.
-
-Child Properties
-
-- <strong>
-    <code>email_address</code>
-  </strong>
-  <i>String</i>
-
-  Email address of the access system user.
-
-- <strong>
-    <code>full_name</code>
-  </strong>
-  <i>String</i>
-
-  Full name of the access system user.
-
-- <strong>
-    <code>phone_number</code>
-  </strong>
-  <i>String</i>
-
-  Phone number of the access system user.
-
-</details>
-<details>
-<summary><code>updating_access_schedule</code></summary>
-
-Seam is in the process of pushing an access schedule update to the integrated access system.
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`from`** _Object_
-
-Old access schedule information.
-
-Child Properties
-
-- <strong>
-    <code>ends_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Starting time for the access schedule.
-
-- <strong>
-    <code>starts_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Starting time for the access schedule.
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that Seam is in the process of pushing updated access schedule information to the integrated access system.
-
-Enum values:
-
-- <code>updating_access_schedule</code>
-
----
-
-**`to`** _Object_
-
-New access schedule information.
-
-Child Properties
-
-- <strong>
-    <code>ends_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Starting time for the access schedule.
-
-- <strong>
-    <code>starts_at</code>
-  </strong>
-  <i>Datetime</i>
-
-  Starting time for the access schedule.
-
-</details>
-<details>
-<summary><code>updating_suspension_state</code></summary>
-
-Seam is in the process of pushing a suspension state update to the integrated access system.
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`from`** _Object_
-
-Old user suspension state information.
-
-Child Properties
-
-- <strong>
-    <code>is_suspended</code>
-  </strong>
-  <i>Boolean</i>
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that Seam is in the process of pushing updated user suspension state information to the integrated access system.
-
-Enum values:
-
-- <code>updating_suspension_state</code>
-
----
-
-**`to`** _Object_
-
-New user suspension state information.
-
-Child Properties
-
-- <strong>
-    <code>is_suspended</code>
-  </strong>
-  <i>Boolean</i>
-
-</details>
-<details>
-<summary><code>updating_group_membership</code></summary>
-
-Seam is in the process of pushing an access group membership update to the integrated access system.
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`from`** _Object_
-
-Old access group membership.
-
-Child Properties
-
-- <strong>
-    <code>acs_access_group_id</code>
-  </strong>
-  <i>UUID</i>
-
-  Old access group ID.
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that Seam is in the process of pushing updated access group membership information to the integrated access system.
-
-Enum values:
-
-- <code>updating_group_membership</code>
-
----
-
-**`to`** _Object_
-
-New access group membership.
-
-Child Properties
-
-- <strong>
-    <code>acs_access_group_id</code>
-  </strong>
-  <i>UUID</i>
-
-  New access group ID.
-
-</details>
-<details>
-<summary><code>deferring_group_membership_update</code></summary>
-
-A scheduled access group membership change is pending for this user.
-
-**`acs_access_group_id`** _UUID_
-
-ID of the access group involved in the scheduled change.
-
----
-
-**`created_at`** _Datetime_
-
-Date and time at which the mutation was created.
-
----
-
-**`message`** _String_
-
-Detailed description of the mutation.
-
----
-
-**`mutation_code`** _Enum_
-
-Mutation code to indicate that a scheduled access group membership change is pending for this user.
-
-Enum values:
-
-- <code>deferring_group_membership_update</code>
-
----
-
-**`variant`** _Enum_
-
-Whether the user is scheduled to be added to or removed from the access group.
-
-Enum values:
-
-- <code>adding</code>
-- <code>removing</code>
-
-</details>
-
----
-
-**`phone_number`** _String_
-
-Phone number of the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).
-
----
-
-**`salto_space_metadata`** _Object_
-
-Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>audit_openings</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether AuditOpenings is enabled for the user in the Salto Space access system.
-
-- <strong>
-    <code>user_id</code>
-  </strong>
-  <i>String</i>
-
-  User ID in the Salto Space access system.
-
-</details>
-
----
-
-**`user_identity_email_address`** _String_
-
-Email address of the user identity associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
----
-
-**`user_identity_full_name`** _String_
-
-Full name of the user identity associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
----
-
-**`user_identity_id`** _String_
-
-ID of the user identity associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
----
-
-**`user_identity_phone_number`** _String_
-
-Phone number of the user identity associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).
-
----
-
-[**`warnings`**](#warnings) _List_ _of Objects_
-
-Warnings associated with the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
-The specific structure of each object in this list depends on the value of its `warning_code` field.
-
-Variants:
-
-<details>
-<summary><code>being_deleted</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/latest/low-level-apis/access-systems). This is a temporary state, and the access system user will be deleted shortly.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Enum values:
-
-- <code>being_deleted</code>
-
-</details>
-<details>
-<summary><code>salto_ks_user_not_subscribed</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Enum values:
-
-- <code>salto_ks_user_not_subscribed</code>
-
-</details>
-<details>
-<summary><code>unknown_issue_with_acs_user</code></summary>
-
-An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Enum values:
-
-- <code>unknown_issue_with_acs_user</code>
-
-</details>
-<details>
-<summary><code>latch_resident_user</code></summary>
-
-Indicates that the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Enum values:
-
-- <code>latch_resident_user</code>
-
-</details>
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/latest/low-level-apis/access-systems/user-management).
-
----
 
 ## Errors
 

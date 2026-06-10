@@ -10,12 +10,9 @@ title: 'The Space Object'
 
 Represents a space that is a logical grouping of devices and entrances. You can assign access to an entire space, thereby making granting access more efficient.
 
-<Tabs>
-<Tab title="Space">
+<CodeGroup>
 
-A space resource.
-
-```json
+```json Space
 {
   "created_at": "2025-06-16T16:54:17.946600Z",
   "display_name": "My Space",
@@ -25,66 +22,52 @@ A space resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`acs_entrance_count`** _Number_
+<ResponseField name="acs_entrance_count" type="number">
+  Number of entrances in the space.
+</ResponseField>
 
-Number of entrances in the space.
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the space was created.
+</ResponseField>
 
----
+<ResponseField name="customer_data" type="object">
+  Reservation/stay-related defaults for the space.
+</ResponseField>
 
-**`created_at`** _Datetime_
+<ResponseField name="customer_key" type="String">
+  Customer key associated with the space.
+</ResponseField>
 
-Date and time at which the space was created.
+<ResponseField name="device_count" type="number">
+  Number of devices in the space.
+</ResponseField>
 
----
+<ResponseField name="display_name" type="String">
+  Display name for the space.
+</ResponseField>
 
-**`customer_key`** _String_
+<ResponseField name="name" type="String">
+  Name of the space.
+</ResponseField>
 
-Customer key associated with the space.
+<ResponseField name="space_id" type="String (UUID)">
+  ID of the space.
+</ResponseField>
 
----
+<ResponseField name="space_key" type="String">
+  Unique key for the space within the workspace.
+</ResponseField>
 
-**`device_count`** _Number_
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the space.
+</ResponseField>
 
-Number of devices in the space.
-
----
-
-**`display_name`** _String_
-
-Display name for the space.
-
----
-
-**`name`** _String_
-
-Name of the space.
-
----
-
-**`space_id`** _UUID_
-
-ID of the space.
-
----
-
-**`space_key`** _String_
-
-Unique key for the space within the workspace.
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the space.
-
----
 
 ## Events
 

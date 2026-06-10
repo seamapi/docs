@@ -20,12 +20,9 @@ When you create a Connect Webview, specify the desired provider category key in 
 
 To list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters.
 
-<Tabs>
-<Tab title="Connect Webview">
+<CodeGroup>
 
-A connect webview resource.
-
-```json
+```json Connect Webview
 {
   "accepted_capabilities": [
     "lock",
@@ -60,140 +57,88 @@ A connect webview resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`accepted_capabilities`** _List_ _of Enums_
+<ResponseField name="accepted_capabilities" type="Array">
+  High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`.
+</ResponseField>
 
-High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`.
+<ResponseField name="accepted_providers" type="Array">
+  List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+</ResponseField>
 
----
+<ResponseField name="any_provider_allowed" type="Boolean">
+  Indicates whether any provider is allowed.
+</ResponseField>
 
-**`accepted_providers`** _List_ _of Strings_
+<ResponseField name="authorized_at" type="String (ISO 8601)">
+  Date and time at which the user authorized (through the Connect Webview) the management of their devices.
+</ResponseField>
 
-List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+<ResponseField name="automatically_manage_new_devices" type="Boolean">
+  Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
+</ResponseField>
 
----
+<ResponseField name="connect_webview_id" type="String (UUID)">
+  ID of the Connect Webview.
+</ResponseField>
 
-**`any_provider_allowed`** _Boolean_
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview.
+</ResponseField>
 
-Indicates whether any provider is allowed.
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the Connect Webview was created.
+</ResponseField>
 
----
+<ResponseField name="custom_metadata" type="object">
+  Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+</ResponseField>
 
-**`authorized_at`** _Datetime_
+<ResponseField name="custom_redirect_failure_url" type="String">
+  URL to which the Connect Webview should redirect when an unexpected error occurs.
+</ResponseField>
 
-Date and time at which the user authorized (through the Connect Webview) the management of their devices.
+<ResponseField name="custom_redirect_url" type="String">
+  URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs.
+</ResponseField>
 
----
+<ResponseField name="customer_key" type="String">
+  The customer key associated with this webview, if any.
+</ResponseField>
 
-**`automatically_manage_new_devices`** _Boolean_
+<ResponseField name="device_selection_mode" type="Enum (String)">
+  The device selection mode.
+</ResponseField>
 
-Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
+<ResponseField name="login_successful" type="Boolean">
+  Indicates whether the user logged in successfully using the Connect Webview.
+</ResponseField>
 
----
+<ResponseField name="selected_provider" type="String">
+  Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+</ResponseField>
 
-**`connect_webview_id`** _UUID_
+<ResponseField name="status" type="Enum (String)">
+  Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview.
+</ResponseField>
 
-ID of the Connect Webview.
+<ResponseField name="url" type="String">
+  URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user.
+</ResponseField>
 
----
+<ResponseField name="wait_for_device_creation" type="Boolean">
+  Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.
+</ResponseField>
 
-**`connected_account_id`** _UUID_
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview.
+</ResponseField>
 
-ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview.
-
----
-
-**`created_at`** _Datetime_
-
-Date and time at which the Connect Webview was created.
-
----
-
-**`custom_metadata`** _Record_
-
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
-
----
-
-**`custom_redirect_failure_url`** _String_
-
-URL to which the Connect Webview should redirect when an unexpected error occurs.
-
----
-
-**`custom_redirect_url`** _String_
-
-URL to which the Connect Webview should redirect when the user successfully pairs a device or system. If you do not set the `custom_redirect_failure_url`, the Connect Webview redirects to the `custom_redirect_url` when an unexpected error occurs.
-
----
-
-**`customer_key`** _String_
-
-The customer key associated with this webview, if any.
-
----
-
-**`device_selection_mode`** _Enum_
-
-<details>
-<summary>Enum values</summary>
-
-- <code>none</code>
-- <code>single</code>
-- <code>multiple</code>
-</details>
-
----
-
-**`login_successful`** _Boolean_
-
-Indicates whether the user logged in successfully using the Connect Webview.
-
----
-
-**`selected_provider`** _String_
-
-Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
-
----
-
-**`status`** _Enum_
-
-Status of the Connect Webview. `authorized` indicates that the user has successfully logged into their device or system account, thereby completing the Connect Webview.
-
-<details>
-<summary>Enum values</summary>
-
-- <code>pending</code>
-- <code>failed</code>
-- <code>authorized</code>
-</details>
-
----
-
-**`url`** _String_
-
-URL for the Connect Webview. You use the URL to display the Connect Webview flow to your user.
-
----
-
-**`wait_for_device_creation`** _Boolean_
-
-Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview.
-
----
 
 ## Events
 

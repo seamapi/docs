@@ -10,6 +10,8 @@ import { transformSpec } from './transform-spec.js'
 import { updateDocsJson } from './update-nav.js'
 
 const skipCodeFormat = env['SKIP_CODE_FORMAT'] != null
+const codeGroupStartPattern = /^<(?:CodeGroup|Tabs)>/m
+const codeGroupEndPattern = /<\/(?:CodeGroup|Tabs)>/
 
 console.log('Mintlify OpenAPI codegen starting...')
 if (skipCodeFormat) {
@@ -79,18 +81,59 @@ if (stats.withoutCodeSamples.length > 0) {
   )
 }
 
-function renderTabs(
+function renderCodeGroup(
   samples: Array<{
     title: string
     description: string
     properties: Record<string, unknown>
   }>,
 ): string {
-  const tabs = samples.map((s) => {
+  const blocks = samples.map((s) => {
     const json = JSON.stringify(s.properties, null, 2)
-    return `<Tab title="${s.title}">\n\n${s.description}\n\n\`\`\`json\n${json}\n\`\`\`\n\n</Tab>`
+    return `\`\`\`json ${s.title}\n${json}\n\`\`\``
   })
-  return `<Tabs>\n${tabs.join('\n')}\n</Tabs>`
+  return `<CodeGroup>\n\n${blocks.join('\n\n')}\n\n</CodeGroup>`
+}
+
+interface BlueprintProperty {
+  name: string
+  description: string
+  format: string
+  jsonType: string
+  isDeprecated: boolean
+  isUndocumented: boolean
+}
+
+function renderProperties(properties: BlueprintProperty[]): string {
+  const fields = properties
+    .filter((p) => !p.isUndocumented)
+    .map((p) => {
+      const type = formatPropertyType(p.format, p.jsonType)
+      const attrs = [`name="${p.name}"`, `type="${type}"`]
+      if (p.isDeprecated) attrs.push('deprecated')
+      const desc = p.description || `The ${p.name.replace(/_/g, ' ')}.`
+      return `<ResponseField ${attrs.join(' ')}>\n  ${desc}\n</ResponseField>`
+    })
+  return fields.join('\n\n')
+}
+
+function formatPropertyType(format: string, jsonType: string): string {
+  switch (format) {
+    case 'id':
+      return 'String (UUID)'
+    case 'datetime':
+      return 'String (ISO 8601)'
+    case 'enum':
+      return 'Enum (String)'
+    case 'list':
+      return 'Array'
+    case 'boolean':
+      return 'Boolean'
+    case 'string':
+      return 'String'
+    default:
+      return jsonType
+  }
 }
 
 async function updateObjectPages(
@@ -108,6 +151,7 @@ async function updateObjectPages(
         description: string
         properties: Record<string, unknown>
       }>
+      properties: BlueprintProperty[]
     }>
   >()
   for (const resource of bp.resources) {
@@ -116,6 +160,7 @@ async function updateObjectPages(
     existing.push({
       resourceType: resource.resourceType,
       samples: resource.resourceSamples,
+      properties: resource.properties as BlueprintProperty[],
     })
     resourcesByRoute.set(resource.routePath, existing)
   }
@@ -131,20 +176,39 @@ async function updateObjectPages(
     }
 
     let changed = false
-    for (const { resourceType, samples } of resources) {
+    for (const { resourceType, samples, properties } of resources) {
       const sectionHeader = `## The ${resourceType} Object`
       const sectionIdx = content.indexOf(sectionHeader)
       const searchFrom = sectionIdx === -1 ? 0 : sectionIdx
 
-      const tabsStart = content.indexOf('<Tabs>', searchFrom)
-      const tabsEnd = content.indexOf('</Tabs>', tabsStart)
-      if (tabsStart === -1 || tabsEnd === -1) continue
+      // Update CodeGroup/Tabs section
+      const codeGroupMatch = codeGroupStartPattern.exec(content.slice(searchFrom))
+      if (codeGroupMatch) {
+        const absStart = searchFrom + codeGroupMatch.index
+        const endMatch = codeGroupEndPattern.exec(content.slice(absStart))
+        if (endMatch) {
+          const absEnd = absStart + endMatch.index + endMatch[0].length
+          const newCodeGroup = renderCodeGroup(samples)
+          content = content.slice(0, absStart) + newCodeGroup + content.slice(absEnd)
+          changed = true
+        }
+      }
 
-      const newTabs = renderTabs(samples)
-      const before = content.slice(0, tabsStart)
-      const after = content.slice(tabsEnd + 7)
-      content = before + newTabs + after
-      changed = true
+      // Update Properties section
+      const propsHeader = '## Properties'
+      const propsIdx = content.indexOf(propsHeader, searchFrom)
+      if (propsIdx !== -1 && properties.length > 0) {
+        const propsContentStart = propsIdx + propsHeader.length
+        // Find the next ## heading or end of file to bound the properties section
+        const nextSectionMatch = /\n## (?!Properties)/m.exec(content.slice(propsContentStart))
+        const propsContentEnd = nextSectionMatch
+          ? propsContentStart + nextSectionMatch.index
+          : content.length
+
+        const newProps = '\n\n' + renderProperties(properties) + '\n\n'
+        content = content.slice(0, propsContentStart) + newProps + content.slice(propsContentEnd)
+        changed = true
+      }
     }
 
     if (changed) {

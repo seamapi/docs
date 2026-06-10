@@ -23,12 +23,9 @@ See [Working with Card Encoders and Scanners](https://docs.seam.co/latest/low-le
 
 To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides#access-control-systems).
 
-<Tabs>
-<Tab title="ACS Encoder">
+<CodeGroup>
 
-An access system encoder resource.
-
-```json
+```json ACS Encoder
 {
   "acs_encoder_id": "681da2d6-4ac6-4b33-8c03-86281b761325",
   "acs_system_id": "c85406d2-214f-4e11-8000-a2e5b5a362a4",
@@ -40,83 +37,40 @@ An access system encoder resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`acs_encoder_id`** _UUID_
+<ResponseField name="acs_encoder_id" type="String (UUID)">
+  ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.
+</ResponseField>
 
-ID of the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners.
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
 
----
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
 
-**`acs_system_id`** _UUID_
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.
+</ResponseField>
 
-ID of the [access control system](https://docs.seam.co/latest/low-level-apis/access-systems) that contains the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
+<ResponseField name="display_name" type="String">
+  Display name for the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
 
----
+<ResponseField name="errors" type="Array">
+  Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
 
-**`connected_account_id`** _UUID_
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+</ResponseField>
 
-ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
----
-
-**`created_at`** _Datetime_
-
-Date and time at which the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was created.
-
----
-
-**`display_name`** _String_
-
-Display name for the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
----
-
-**`errors`** _List_ _of Objects_
-
-Errors associated with the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
-<details>
-  <summary>Child Object Properties</summary>
-<strong><code>created_at</code></strong> <i>Datetime</i>
-
-Date and time at which Seam created the error.
-
-<strong>
-  <code>error_code</code>
-</strong>
-<i>Enum</i>
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>acs_encoder_removed</code>
-
-</details>
-
-<strong>
-  <code>message</code>
-</strong>
-<i>String</i>
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
-
----
 
 ## Events
 

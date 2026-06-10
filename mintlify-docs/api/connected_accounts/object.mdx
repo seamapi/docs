@@ -12,12 +12,9 @@ title: 'The Connected Account Object'
 
 Represents a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
 
-<Tabs>
-<Tab title="Connected Account">
+<CodeGroup>
 
-A connected account resource.
-
-```json
+```json Connected Account
 {
   "account_type": "salto_space",
   "account_type_display_name": "Salto Space",
@@ -43,472 +40,84 @@ A connected account resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`accepted_capabilities`** _List_ _of Enums_
+<ResponseField name="accepted_capabilities" type="Array">
+  List of capabilities that were accepted during the account connection process.
+</ResponseField>
 
-List of capabilities that were accepted during the account connection process.
+<ResponseField name="account_type" type="String">
+  Type of connected account.
+</ResponseField>
 
----
+<ResponseField name="account_type_display_name" type="String">
+  Display name for the connected account type.
+</ResponseField>
 
-**`account_type`** _String_
+<ResponseField name="automatically_manage_new_devices" type="Boolean">
+  Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.
+</ResponseField>
 
-Type of connected account.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
 
----
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the connected account was created.
+</ResponseField>
 
-**`account_type_display_name`** _String_
+<ResponseField name="custom_metadata" type="object">
+  Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+</ResponseField>
 
-Display name for the connected account type.
+<ResponseField name="customer_key" type="String">
+  Your unique key for the customer associated with this connected account.
+</ResponseField>
 
----
+<ResponseField name="default_checkin_time" type="String">
+  Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times.
+</ResponseField>
 
-**`automatically_manage_new_devices`** _Boolean_
+<ResponseField name="default_checkout_time" type="String">
+  Default reservation check-out time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration.
+</ResponseField>
 
-Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.
+<ResponseField name="display_name" type="String">
+  Display name for the connected account.
+</ResponseField>
 
----
+<ResponseField name="errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
 
-**`connected_account_id`** _UUID_
+<ResponseField name="ical_feed_origin" type="String">
+  For iCal connected accounts, the platform that produced the feed (for example, `airbnb`, `vrbo`, or `booking`), or `unknown` when it could not be determined. Intended for rendering the source platform's logo.
+</ResponseField>
 
-ID of the connected account.
+<ResponseField name="ical_url" type="String">
+  For iCal connected accounts, the feed URL for the connection. Sourced from the connector configuration.
+</ResponseField>
 
----
+<ResponseField name="image_url" type="String">
+  Logo URL for the connected account provider.
+</ResponseField>
 
-**`created_at`** _Datetime_
+<ResponseField name="time_zone" type="String">
+  IANA time zone (e.g. America/Los_Angeles) for this connected account. Sourced from the connector configuration.
+</ResponseField>
 
-Date and time at which the connected account was created.
+<ResponseField name="user_identifier" type="object" deprecated>
+  User identifier associated with the connected account.
+</ResponseField>
 
----
+<ResponseField name="warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
 
-**`custom_metadata`** _Record_
-
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
-
----
-
-**`customer_key`** _String_
-
-Your unique key for the customer associated with this connected account.
-
----
-
-**`display_name`** _String_
-
-Display name for the connected account.
-
----
-
-[**`errors`**](#errors) _List_ _of Objects_
-
-Errors associated with the connected account.
-
-The specific structure of each object in this list depends on the value of its `error_code` field.
-
-Variants:
-
-<details>
-<summary><code>account_disconnected</code></summary>
-
-Indicates that the account is disconnected.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>account_disconnected</code>
-
----
-
-**`is_bridge_error`** _Boolean_
-
-Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
-
----
-
-**`is_connected_account_error`** _Boolean_
-
-Indicates whether the error is related specifically to the connected account.
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-<details>
-<summary><code>bridge_disconnected</code></summary>
-
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>bridge_disconnected</code>
-
----
-
-**`is_bridge_error`** _Boolean_
-
-Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
-
----
-
-**`is_connected_account_error`** _Boolean_
-
-Indicates whether the error is related specifically to the connected account.
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
-</details>
-<details>
-<summary><code>salto_ks_subscription_limit_exceeded</code></summary>
-
-Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the error.
-
----
-
-**`error_code`** _Enum_
-
-Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>salto_ks_subscription_limit_exceeded</code>
-
----
-
-**`is_bridge_error`** _Boolean_
-
-Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
-
----
-
-**`is_connected_account_error`** _Boolean_
-
-Indicates whether the error is related specifically to the connected account.
-
----
-
-**`message`** _String_
-
-Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`salto_ks_metadata`** _Object_
-
-Salto KS metadata associated with the connected account that has an error.
-
-Child Properties
-
-- <strong>
-    <code>sites</code>
-  </strong>
-  <i>List</i> <i>of Objects</i>
-
-  Salto sites associated with the connected account that has an error.
-
-- <strong>
-    <code>site_id</code>
-  </strong>
-  <i>String</i>
-
-  ID of a Salto site associated with the connected account that has an error.
-
-- <strong>
-    <code>site_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of a Salto site associated with the connected account that has an error.
-
-- <strong>
-    <code>site_user_subscription_limit</code>
-  </strong>
-  <i>Number</i>
-
-  Subscription limit of site users for a Salto site associated with the connected account that has an error.
-
-- <strong>
-    <code>subscribed_site_user_count</code>
-  </strong>
-  <i>Number</i>
-
-  Count of subscribed site users for a Salto site associated with the connected account that has an error.
-
-</details>
-
----
-
-**`image_url`** _String_
-
-Logo URL for the connected account provider.
-
----
-
-**`user_identifier`** _Object_
-
-User identifier associated with the connected account.
-
-<Warning>**Deprecated**. Use `display_name` instead.</Warning>
-
-<details>
-  <summary>Child Properties</summary>
-
-- <strong>
-    <code>api_url</code>
-  </strong>
-  <i>String</i>
-
-  API URL for the user identifier associated with the connected account.
-
-- <strong>
-    <code>email</code>
-  </strong>
-  <i>String</i>
-
-  Email address of the user identifier associated with the connected account.
-
-- <strong>
-    <code>exclusive</code>
-  </strong>
-  <i>Boolean</i>
-
-  Indicates whether the user identifier associated with the connected account is exclusive.
-
-- <strong>
-    <code>phone</code>
-  </strong>
-  <i>String</i>
-
-  Phone number of the user identifier associated with the connected account.
-
-- <strong>
-    <code>username</code>
-  </strong>
-  <i>String</i>
-
-  Username of the user identifier associated with the connected account.
-
-</details>
-
----
-
-[**`warnings`**](#warnings) _List_ _of Objects_
-
-Warnings associated with the connected account.
-
-The specific structure of each object in this list depends on the value of its `warning_code` field.
-
-Variants:
-
-<details>
-<summary><code>scheduled_maintenance_window</code></summary>
-
-Indicates that scheduled downtime is planned for the connected account.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>scheduled_maintenance_window</code>
-
-</details>
-<details>
-<summary><code>unknown_issue_with_connected_account</code></summary>
-
-Indicates that an unknown issue occurred while syncing the state of the connected account with the provider. This issue may affect the proper functioning of one or more resources in the account.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>unknown_issue_with_connected_account</code>
-
-</details>
-<details>
-<summary><code>salto_ks_subscription_limit_almost_reached</code></summary>
-
-Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`salto_ks_metadata`** _Object_
-
-Salto KS metadata associated with the connected account that has a warning.
-
-Child Properties
-
-- <strong>
-    <code>sites</code>
-  </strong>
-  <i>List</i> <i>of Objects</i>
-
-  Salto sites associated with the connected account that has a warning.
-
-- <strong>
-    <code>site_id</code>
-  </strong>
-  <i>String</i>
-
-  ID of a Salto site associated with the connected account that has a warning.
-
-- <strong>
-    <code>site_name</code>
-  </strong>
-  <i>String</i>
-
-  Name of a Salto site associated with the connected account that has a warning.
-
-- <strong>
-    <code>site_user_subscription_limit</code>
-  </strong>
-  <i>Number</i>
-
-  Subscription limit of site users for a Salto site associated with the connected account that has a warning.
-
-- <strong>
-    <code>subscribed_site_user_count</code>
-  </strong>
-  <i>Number</i>
-
-  Count of subscribed site users for a Salto site associated with the connected account that has a warning.
-
----
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>salto_ks_subscription_limit_almost_reached</code>
-
-</details>
-<details>
-<summary><code>account_reauthorization_requested</code></summary>
-
-Indicates that the Connected Account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>account_reauthorization_requested</code>
-
-</details>
-<details>
-<summary><code>being_deleted</code></summary>
-
-Indicates that the connected account is currently being deleted. All devices, access codes, and other resources associated with this account are in the process of being removed from Seam.
-
-**`created_at`** _Datetime_
-
-Date and time at which Seam created the warning.
-
----
-
-**`message`** _String_
-
-Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-
----
-
-**`warning_code`** _Enum_
-
-Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-
-Enum values:
-
-- <code>being_deleted</code>
-
-</details>
-
----
 
 ## Errors
 

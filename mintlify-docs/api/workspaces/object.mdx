@@ -237,12 +237,9 @@ Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspac
 
 Represents a Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/latest/core-concepts/workspaces#production-workspaces).
 
-<Tabs>
-<Tab title="Production Workspace">
+<CodeGroup>
 
-A production workspace resource.
-
-```json
+```json Production Workspace
 {
   "company_name": "Acme",
   "connect_partner_name": "Acme",
@@ -262,12 +259,7 @@ A production workspace resource.
 }
 ```
 
-</Tab>
-<Tab title="Sandbox Workspace">
-
-A sandbox workspace resource.
-
-```json
+```json Sandbox Workspace
 {
   "company_name": "Acme",
   "connect_partner_name": "Acme",
@@ -287,12 +279,7 @@ A sandbox workspace resource.
 }
 ```
 
-</Tab>
-<Tab title="Workspace">
-
-A workspace resource.
-
-```json
+```json Workspace
 {
   "company_name": "Acme",
   "connect_partner_name": "Acme",
@@ -312,113 +299,48 @@ A workspace resource.
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
 ## Properties
 
-**`company_name`** _String_
+<ResponseField name="company_name" type="String">
+  Company name associated with the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
+</ResponseField>
 
-Company name associated with the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
+<ResponseField name="connect_partner_name" type="String" deprecated>
+  The connect partner name.
+</ResponseField>
 
----
+<ResponseField name="connect_webview_customization" type="object">
+  The connect webview customization.
+</ResponseField>
 
-**`connect_partner_name`** _String_
+<ResponseField name="is_publishable_key_auth_enabled" type="Boolean">
+  Indicates whether publishable key authentication is enabled for this workspace.
+</ResponseField>
 
-<Warning>**Deprecated**. Use `company_name` instead.</Warning>
+<ResponseField name="is_sandbox" type="Boolean">
+  Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
+</ResponseField>
 
----
+<ResponseField name="is_suspended" type="Boolean">
+  Indicates whether the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.
+</ResponseField>
 
-**`connect_webview_customization`** _Object_
+<ResponseField name="name" type="String">
+  Name of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
+</ResponseField>
 
-<details>
-  <summary>Child Properties</summary>
+<ResponseField name="publishable_key" type="String">
+  Publishable key for the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.
+</ResponseField>
 
-- <strong>
-    <code>inviter_logo_url</code>
-  </strong>
-  <i>String</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
+</ResponseField>
 
-  URL of the inviter logo for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
-
-- <strong>
-    <code>logo_shape</code>
-  </strong>
-  <i>Enum</i>
-
-  Logo shape for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
-
-      <details>
-
-  <summary>Enum values:</summary>
-
-          - <code>circle</code>
-          - <code>square</code>
-
-      </details>
-
-- <strong>
-    <code>primary_button_color</code>
-  </strong>
-  <i>String</i>
-
-  Primary button color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
-
-- <strong>
-    <code>primary_button_text_color</code>
-  </strong>
-  <i>String</i>
-
-  Primary button text color for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
-
-- <strong>
-    <code>success_message</code>
-  </strong>
-  <i>String</i>
-
-  Success message for [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).
-
-</details>
-
----
-
-**`is_publishable_key_auth_enabled`** _Boolean_
-
-Indicates whether publishable key authentication is enabled for this workspace.
-
----
-
-**`is_sandbox`** _Boolean_
-
-Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
-
----
-
-**`is_suspended`** _Boolean_
-
-Indicates whether the [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.
-
----
-
-**`name`** _String_
-
-Name of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
-
----
-
-**`publishable_key`** _String_
-
-Publishable key for the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.
-
----
-
-**`workspace_id`** _UUID_
-
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
-
----
 
 ## Endpoints
 
