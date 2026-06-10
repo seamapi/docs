@@ -1,14 +1,19 @@
 ---
 title: 'Granting Access'
 sidebarTitle: 'Overview'
-description: 'Access Grants are the default and recommended way to grant access to any physical space, across smart locks and access control systems.'
+description: 'One API to grant access across smart locks and access control systems — PIN codes, mobile keys, key cards, and cloud keys.'
 ---
 
-Use **Access Grants** to grant a person access to a physical space. With one API call, you tell Seam _who_ should have access, _where_, _when_, and _how_. Seam creates the credential, propagates it to every relevant device, and re-materializes it as devices come online or change ownership. PIN codes, mobile keys, key cards, and cloud keys — all through the same request.
+**Access Grants** are a single API for granting access to any physical space. Whether you're working with standalone smart locks, enterprise access control systems, or both — one call handles it all.
 
-<CodeGroup>
+- **One integration** for smart locks (August, Yale, Schlage, TTLock, igloohome, and more) and access control systems (Salto, ASSA ABLOY Visionline, dormakaba, Brivo, and more).
+- **Every access method** — PIN codes, mobile keys, Instant Keys, key cards, and cloud keys — through the same `requested_access_methods` parameter.
+- **Automatic lifecycle management** — Seam propagates credentials to devices, re-materializes them as hardware comes online, and cleans up when access expires.
 
-```javascript JavaScript
+<Tabs>
+<Tab title="JavaScript">
+
+```javascript
 await seam.accessGrants.create({
   user_identity: {
     full_name: 'Jane Doe',
@@ -21,7 +26,72 @@ await seam.accessGrants.create({
 })
 ```
 
-```bash cURL
+</Tab>
+
+<Tab title="Python">
+
+```python
+seam.access_grants.create(
+    user_identity={
+        "full_name": "Jane Doe",
+        "email_address": "jane@example.com",
+    },
+    device_ids=["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods=[{"mode": "code"}],
+    starts_at="2025-07-13T15:00:00.000Z",
+    ends_at="2025-07-16T11:00:00.000Z",
+)
+```
+
+</Tab>
+
+<Tab title="Ruby">
+
+```ruby
+seam.access_grants.create(
+  user_identity: {
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+  },
+  device_ids: %w[6ba7b811-9dad-11d1-80b4-00c04fd430c8],
+  requested_access_methods: [{ mode: "code" }],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z",
+)
+```
+
+</Tab>
+
+<Tab title="PHP">
+
+```php
+$seam->access_grants->create(
+    user_identity: [
+        "full_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+    ],
+    device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods: [
+        ["mode" => "code"],
+    ],
+    starts_at: "2025-07-13T15:00:00.000Z",
+    ends_at: "2025-07-16T11:00:00.000Z",
+);
+```
+
+</Tab>
+
+<Tab title="C#">
+
+```csharp
+// Coming Soon!
+```
+
+</Tab>
+
+<Tab title="cURL">
+
+```bash
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
@@ -38,96 +108,23 @@ curl --include --request POST "https://connect.getseam.com/access_grants/create"
 EOF
 ```
 
-```python Python
-seam.access_grants.create(
-    user_identity={
-        "full_name": "Jane Doe",
-        "email_address": "jane@example.com",
-    },
-    device_ids=["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
-    requested_access_methods=[{"mode": "code"}],
-    starts_at="2025-07-13T15:00:00.000Z",
-    ends_at="2025-07-16T11:00:00.000Z",
-)
-```
+</Tab>
+</Tabs>
 
-```ruby Ruby
-seam.access_grants.create(
-  user_identity: {
-    full_name: "Jane Doe",
-    email_address: "jane@example.com",
-  },
-  device_ids: %w[6ba7b811-9dad-11d1-80b4-00c04fd430c8],
-  requested_access_methods: [{ mode: "code" }],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z",
-)
-```
+You specify _where_ to grant access using `device_ids` (smart locks), `acs_entrance_ids` (ACS entrances), or `space_ids` (groups of access points). You can combine them in a single grant.
 
-```php PHP
-$seam->access_grants->create(
-    user_identity: [
-        "full_name" => "Jane Doe",
-        "email_address" => "jane@example.com",
-    ],
-    device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
-    requested_access_methods: [
-        ["mode" => "code"],
-    ],
-    starts_at: "2025-07-13T15:00:00.000Z",
-    ends_at: "2025-07-16T11:00:00.000Z",
-);
-```
-
-```csharp C#
-// Coming Soon!
-```
-
-```bash Seam CLI
-seam access-grants create --user_identity {"full_name":"Jane Doe","email_address":"jane@example.com"} --device_ids ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"] --requested_access_methods [{"mode":"code"}] --starts_at "2025-07-13T15:00:00.000Z" --ends_at "2025-07-16T11:00:00.000Z"
-```
-
-</CodeGroup>
-
-Access Grants work across the entire Seam provider lineup:
-
-- **Standalone smart locks** — August, Yale, Schlage, Lockly, TTLock, Tedee, igloohome, and more. Specify locks with `device_ids`.
-- **Access control systems** — Salto KS, Salto Space, ASSA ABLOY Visionline and Vostio, dormakaba, Brivo, Avigilon Alta, and more. Specify entrances with `acs_entrance_ids`.
-- **Mixed estates** — Combine `device_ids` and `acs_entrance_ids` in the same grant, or group access points into [spaces](https://docs.seam.co/latest/api/spaces) and use `space_ids`.
+<Info>
+Override-based access systems (Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) require a `reservation_key` for credential sequencing. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
+</Info>
 
 ---
 
-## Start Simple, Then Scale Up
+## When to Use Lower-Level APIs
 
-1. **One device.** Connect a smart lock and create an Access Grant with a single `device_id` and a `code` access method. See [Creating an Access Grant](/use-cases/granting-access/creating-an-access-grant).
-2. **Multiple devices and spaces.** Pass several `device_ids` in one call, or organize access points into [spaces](/use-cases/granting-access/creating-an-access-grant#choosing-resources) and grant access by `space_id`.
-3. **Access control systems.** Connect an ACS and grant access to entrances with `acs_entrance_ids`. This path may involve additional setup — licenses, Seam Bridge connections, mobile key configuration, and [reservations](/use-cases/granting-access/reservation-access-grants) for override-based systems.
+Access Grants cover the vast majority of use cases. The lower-level APIs are only needed for:
 
----
-
-## Reservations for Override-Based Systems
-
-Some access control systems (Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) use credential override sequencing for guest access. When creating Access Grants for these systems, you need to pass a `reservation_key`. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
-
----
-
-## Which API Should I Use?
-
-**Use Access Grants.** The lower-level APIs remain available for a small set of specific scenarios:
-
-| Scenario                                                     | API                                                                                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| Grant a person access to smart locks                         | Access Grants (`device_ids`)                                                               |
-| Grant a person access to ACS entrances                       | Access Grants (`acs_entrance_ids`)                                                         |
-| Grant a person access to a group of access points            | Access Grants + [spaces](https://docs.seam.co/latest/api/spaces) (`space_ids`)             |
-| Issue a mobile key or Instant Key                            | Access Grants (`mode: "mobile_key"`)                                                       |
-| Set a specific custom PIN code on a single lock              | [Access Codes API](../../low-level-apis/smart-locks/access-codes/index) (low-level)        |
-| Manage offline or backup PIN code pools                      | [Access Codes API](../../low-level-apis/smart-locks/access-codes/index) (low-level)        |
-| Directly manage ACS users, credentials, and access groups    | [ACS API](../../low-level-apis/access-systems/index) (low-level)                           |
-
-<Warning>
-  The low-level [Access Codes](../../low-level-apis/smart-locks/access-codes/index) and [ACS](../../low-level-apis/access-systems/index) granting workflows are no longer recommended. For new development, use Access Grants.
-</Warning>
+- **Custom PIN codes** — setting a specific code value on a single lock. Use the [Access Codes API](../../low-level-apis/smart-locks/access-codes/index).
+- **Direct ACS management** — managing ACS users, credentials, or access groups outside of Access Grants. Use the [ACS API](../../low-level-apis/access-systems/index).
 
 ---
 
