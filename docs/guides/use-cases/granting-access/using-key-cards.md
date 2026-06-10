@@ -18,7 +18,7 @@ To use key cards, you need:
 
 - A [Seam API key](https://console.seam.co)
 - A connected ACS that supports card-based credentials
-- A [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities/) representing the person who will receive the card
+- A [user identity](../../capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities.md) representing the person who will receive the card
 - An entrance that supports card access (`can_unlock_with_card` is `true`)
 - For encoding: a compatible card encoder connected to Seam (see [Working with Card Encoders and Scanners](../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/))
 
