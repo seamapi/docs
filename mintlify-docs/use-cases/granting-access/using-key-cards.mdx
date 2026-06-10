@@ -450,6 +450,38 @@ related = seam.access_methods.get_related(
 print(related.acs_entrances)  # entrances this card unlocks
 ```
 
+```ruby Ruby
+related = seam.access_methods.get_related(
+  access_method_ids: [access_method.access_method_id]
+)
+
+puts related.acs_entrances  # entrances this card unlocks
+```
+
+```php PHP
+$related = $seam->access_methods->get_related(
+  access_method_ids: [$accessMethod->access_method_id]
+);
+
+echo json_encode($related->acs_entrances);  // entrances this card unlocks
+```
+
+```csharp C#
+var related = seam.AccessMethods.GetRelated(
+  accessMethodIds: new List<string> { accessMethod.AccessMethodId }
+);
+
+// related.AcsEntrances — entrances this card unlocks
+```
+
+```java Java
+var related = seam.accessMethods().getRelated(
+  AccessMethodsGetRelatedRequest.builder()
+    .accessMethodIds(List.of(accessMethod.getAccessMethodId()))
+    .build()
+);
+```
+
 ```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_methods/get_related' \
