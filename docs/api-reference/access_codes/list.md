@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Returns a list of all [access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 Specify `device_id`, `access_code_ids`, `access_method_id`, or `access_grant_id`.
 

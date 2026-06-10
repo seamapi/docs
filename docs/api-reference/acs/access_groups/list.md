@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [access groups](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
 
 
 {% tabs %}

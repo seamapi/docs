@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of [workspaces](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.
+Returns a list of [workspaces](https://docs.seam.co/latest/core-concepts/workspaces) associated with the authentication value.
 
 
 {% tabs %}

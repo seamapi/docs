@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Deletes an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
 
 
 {% tabs %}

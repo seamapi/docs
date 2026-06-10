@@ -5,6 +5,6 @@
 
 [**`/connected_accounts/simulate/disconnect`**](./disconnect.md)
 
-Simulates a connected account becoming disconnected from Seam. Only applicable for [sandbox workspaces](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).
+Simulates a connected account becoming disconnected from Seam. Only applicable for [sandbox workspaces](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).
 
 

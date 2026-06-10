@@ -8,7 +8,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents an [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/capability-guides/access-systems).
+Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
 
 In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 
@@ -47,7 +47,7 @@ An access system entrance resource.
 
 **`acs_entrance_id`** *UUID*
 
-ID of the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+ID of the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -56,7 +56,7 @@ ID of the [entrance](https://docs.seam.co/capability-guides/access-systems/retri
 
 **`acs_system_id`** *UUID*
 
-ID of the [access control system](https://docs.seam.co/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -65,7 +65,7 @@ ID of the [access control system](https://docs.seam.co/capability-guides/access-
 
 **`assa_abloy_vostio_metadata`** *Object*
 
-ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -106,7 +106,7 @@ ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.
 
 **`avigilon_alta_metadata`** *Object*
 
-Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -147,7 +147,7 @@ Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam
 
 **`brivo_metadata`** *Object*
 
-Brivo-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Brivo-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -217,7 +217,7 @@ Indicates whether the ACS entrance can be unlocked with mobile key credentials.
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+ID of the [connected account](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -226,7 +226,7 @@ ID of the [connected account](https://docs.seam.co/capability-guides/access-syst
 
 **`created_at`** *Datetime*
 
-Date and time at which the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) was created.
+Date and time at which the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was created.
 
 
 
@@ -235,7 +235,7 @@ Date and time at which the [entrance](https://docs.seam.co/capability-guides/acc
 
 **`display_name`** *String*
 
-Display name for the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Display name for the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -244,7 +244,7 @@ Display name for the [entrance](https://docs.seam.co/capability-guides/access-sy
 
 **`dormakaba_ambiance_metadata`** *Object*
 
-dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -261,7 +261,7 @@ dormakaba Ambiance-specific metadata associated with the [entrance](https://docs
 
 **`dormakaba_community_metadata`** *Object*
 
-dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -278,7 +278,7 @@ dormakaba Community-specific metadata associated with the [entrance](https://doc
 
 **`errors`** *List* *of Objects*
 
-Errors associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Errors associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -298,7 +298,7 @@ Errors associated with the [entrance](https://docs.seam.co/capability-guides/acc
 
 **`hotek_metadata`** *Object*
 
-Hotek-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Hotek-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -323,7 +323,7 @@ Hotek-specific metadata associated with the [entrance](https://docs.seam.co/capa
 
 **`is_locked`** *Boolean*
 
-Indicates whether the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) is currently locked.
+Indicates whether the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) is currently locked.
 
 
 
@@ -332,7 +332,7 @@ Indicates whether the [entrance](https://docs.seam.co/capability-guides/access-s
 
 **`latch_metadata`** *Object*
 
-Latch-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Latch-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -361,7 +361,7 @@ Latch-specific metadata associated with the [entrance](https://docs.seam.co/capa
 
 **`salto_ks_metadata`** *Object*
 
-Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -406,7 +406,7 @@ Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/c
 
 **`salto_space_metadata`** *Object*
 
-Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -452,7 +452,7 @@ IDs of the spaces that the entrance is in.
 
 **`visionline_metadata`** *Object*
 
-Visionline-specific metadata associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Visionline-specific metadata associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -503,7 +503,7 @@ Visionline-specific metadata associated with the [entrance](https://docs.seam.co
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Warnings associated with the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 
@@ -674,7 +674,7 @@ Indicates that this entrance is in privacy mode. When privacy mode is enabled, a
 
 **`acs_entrance.added`**
 
-An [access system entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) was added.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was added.
 
 <details>
 
@@ -708,14 +708,14 @@ An [access system entrance](https://docs.seam.co/capability-guides/access-system
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`acs_entrance.removed`**
 
-An [access system entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) was removed.
+An [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) was removed.
 
 <details>
 
@@ -749,7 +749,7 @@ An [access system entrance](https://docs.seam.co/capability-guides/access-system
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -759,26 +759,26 @@ An [access system entrance](https://docs.seam.co/capability-guides/access-system
 
 [**`/acs/entrances/get`**](./get.md)
 
-Returns a specified [access system entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Returns a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 [**`/acs/entrances/grant_access`**](./grant_access.md)
 
-Grants a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Grants a specified [access system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 [**`/acs/entrances/list`**](./list.md)
 
-Returns a list of all [access system entrances](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Returns a list of all [access system entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 [**`/acs/entrances/list_credentials_with_access`**](./list_credentials_with_access.md)
 
-Returns a list of all [credentials](https://docs.seam.co/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).
 
 
 [**`/acs/entrances/unlock`**](./unlock.md)
 
-Remotely unlocks a specified [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
+Remotely unlocks a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
 
 

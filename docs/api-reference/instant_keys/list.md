@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [instant keys](https://docs.seam.co/capability-guides/instant-keys).
+Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/instant-keys).
 
 
 <details>

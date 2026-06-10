@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Creates a new [webhook](https://docs.seam.co/developer-tools/webhooks).
+Creates a new [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
 
 
 {% tabs %}

@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Updates a specified [webhook](https://docs.seam.co/developer-tools/webhooks).
+Updates a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
 
 
 {% tabs %}

@@ -71,7 +71,7 @@ Array of thermostat daily program periods.
   <summary>Child Object Properties</summary>
 <strong><code>climate_preset_key</code></strong> <i>String</i>
 
-  Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
+  Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
 
 <strong><code>starts_at_time</code></strong> <i>String</i>
 
@@ -92,7 +92,7 @@ ID of the thermostat daily program.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.
+ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.
 
 
 

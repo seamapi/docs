@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
 
 
 {% tabs %}

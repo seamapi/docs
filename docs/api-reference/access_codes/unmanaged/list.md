@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [unmanaged access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+Returns a list of all [unmanaged access codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
 
 
 {% tabs %}

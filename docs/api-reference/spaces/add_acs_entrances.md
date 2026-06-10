@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Adds [entrances](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) to a specific space.
+Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific space.
 
 
 {% tabs %}
