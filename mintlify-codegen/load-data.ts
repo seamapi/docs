@@ -59,8 +59,9 @@ function generateDefaultValue(propSchema: any): unknown {
   if (propSchema.enum) return propSchema.enum[0]
   switch (propSchema.type) {
     case 'string':
-      if (propSchema.format === 'uuid')
+      if (propSchema.format === 'uuid') {
         return '00000000-0000-0000-0000-000000000000'
+      }
       if (propSchema.format === 'date-time') return '2025-01-01T00:00:00.000Z'
       if (propSchema.format === 'uri') return 'https://example.com'
       return ''
