@@ -5,7 +5,7 @@ description: 'Learn how the connect_webview object embeds a client-side flow tha
 
 ## The connect_webview Object
 
-Represents a [Connect Webview](/core-concepts/connect-webviews).
+Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
 
 Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.
 
@@ -65,7 +65,7 @@ To list all providers within a category, use `/devices/list_device_providers` wi
 </ResponseField>
 
 <ResponseField name="accepted_providers" type="Array">
-  List of accepted [provider keys](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+  List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 </ResponseField>
 
 <ResponseField name="any_provider_allowed" type="Boolean">
@@ -77,7 +77,7 @@ To list all providers within a category, use `/devices/list_device_providers` wi
 </ResponseField>
 
 <ResponseField name="automatically_manage_new_devices" type="Boolean">
-  Indicates whether Seam should [import all new devices](/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
+  Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
 </ResponseField>
 
 <ResponseField name="connect_webview_id" type="String (UUID)">
@@ -85,7 +85,7 @@ To list all providers within a category, use `/devices/list_device_providers` wi
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](/core-concepts/connected-accounts) associated with the Connect Webview.
+  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -93,7 +93,7 @@ To list all providers within a category, use `/devices/list_device_providers` wi
 </ResponseField>
 
 <ResponseField name="custom_metadata" type="object">
-  Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+  Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 </ResponseField>
 
 <ResponseField name="custom_redirect_failure_url" type="String">
@@ -117,7 +117,7 @@ To list all providers within a category, use `/devices/list_device_providers` wi
 </ResponseField>
 
 <ResponseField name="selected_provider" type="String">
-  Selected provider of the Connect Webview, one of the [provider keys](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+  Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 </ResponseField>
 
 <ResponseField name="status" type="Enum (String)">
@@ -129,9 +129,9 @@ To list all providers within a category, use `/devices/list_device_providers` wi
 </ResponseField>
 
 <ResponseField name="wait_for_device_creation" type="Boolean">
-  Indicates whether Seam should [finish syncing all devices](/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.
+  Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](/core-concepts/workspaces) that contains the Connect Webview.
+  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview.
 </ResponseField>
