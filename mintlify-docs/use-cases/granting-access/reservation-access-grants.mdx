@@ -1,6 +1,6 @@
 ---
-title: 'Reservation Access Grants'
-description: 'Learn how to use reservation_key with Access Grants to handle guest and resident credentials on offline access systems.'
+title: "Reservation Access Grants"
+description: "Learn how to use reservation_key with Access Grants to handle guest and resident credentials on offline access systems."
 ---
 
 ## Overview
@@ -55,7 +55,7 @@ Identify the entrances (or spaces) the user should have access to.
 
 If you’re looking to issue a guest or resident credential, use the [Entrances API](https://docs.seam.co/latest/api/acs/entrances/) to confirm which entrances support reservation semantics.
 
-```
+```text
 const entrances = await seam.acs.entrances.list({ space_id: "room-101" })
 const entrances_that_support_reservations = entrances.filter(e => e.can_belong_to_reservation)
 ```
@@ -63,7 +63,7 @@ const entrances_that_support_reservations = entrances.filter(e => e.can_belong_t
 - If at least one entrance supports reservations → include a `reservation_key`.
 - If none do → issue a standard access grant (omit `reservation_key`).
 
-#### **For mixed grants: Reservation-capable + non-capable entrances**
+#### **For mixed grants: Reservation-capable \+ non-capable entrances**
 
 When a single Access Grant includes a mix of entrances, Seam applies reservation behavior per entrance.
 
@@ -92,7 +92,7 @@ await seam.accessGrants.create({
 
 Pass the `reservation_key` to group related grants and let Seam apply override/joiner behavior consistently.
 
-```
+```text
 await seam.accessGrants.create({
   user_identity_id: "guest-1",
   acs_entrance_ids: ["room-101-id"],
@@ -190,11 +190,11 @@ This allows, for example, giving one guest full access and another guest limited
 
 Issuing a **superset** of reservation-capable doors isn’t allowed. If you need to expand the set (e.g., adding a new unit), clear the existing grants first and reissue with the new set.
 
-\<aside> 💡
+\<aside\> 💡
 
 Entrances that don’t support reservations are not included in the subset/superset check. You can include any combination of non-capable entrances without triggering this rule.
 
-\</aside>
+\</aside\>
 
 ```tsx
 // Reservation has room-101 (reservation-capable door)
@@ -231,7 +231,7 @@ All access grants within the same `reservation_key` must have **overlapping time
 This ensures the underlying system treats the credentials as part of the same stay or lease and applies proper joiner behavior.
 
 - If the time frames **overlap**, the new grant joins the existing reservation.
-- If the time frames **don’t overlap**, the new grant is treated as a separate stay and must use a different reservation_key.
+- If the time frames **don’t overlap**, the new grant is treated as a separate stay and must use a different reservation\_key.
 
 ```tsx
 // ✅ Valid: overlapping time frames
@@ -401,78 +401,10 @@ await seam.acs.encoders.encode_card({
 
 This section lists common validation and conflict errors you may encounter when creating Access Grants with `reservation_key`, along with what they mean and how to resolve them.
 
-<table>
-  <thead>
-    <tr>
-      <th width='120.4228515625'>HTTP Code</th>
-      <th width='185.884765625'>Error title</th>
-      <th>When it happens</th>
-      <th>How to fix</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>400</td>
-      <td>
-        <code>reservation_key</code> not supported.
-      </td>
-      <td>
-        You passed a <code>reservation_key</code> but none of the targeted
-        entrances support reservations.
-      </td>
-      <td>
-        Remove <code>reservation_key</code> or include at least one
-        reservation-capable entrance.
-      </td>
-    </tr>
-    <tr>
-      <td>400</td>
-      <td>
-        <code>reservation_key</code> required for guest cards.
-      </td>
-      <td>
-        The targeted provider requires a reservation for guest credentials
-        (e.g., Visionline) but none was provided.
-      </td>
-      <td>
-        Add a <code>reservation_key</code> when issuing guest credentials for
-        these entrances.
-      </td>
-    </tr>
-    <tr>
-      <td>409</td>
-      <td>Reservation entrance change requires cleanup.</td>
-      <td>
-        You tried to issue an access grant with a different door set for an
-        existing reservation.
-      </td>
-      <td>
-        List and delete existing access grants for that{' '}
-        <code>reservation_key</code>, then reissue with the new door set.
-      </td>
-    </tr>
-    <tr>
-      <td>409</td>
-      <td>Reservation joiner entrance set conflict.</td>
-      <td>
-        A joiner grant includes a superset of the reservation-capable doors.
-      </td>
-      <td>
-        Joiners must use the same or a subset of the reservation-capable doors.
-        Adjust the door set or clear/reissue.
-      </td>
-    </tr>
-    <tr>
-      <td>409</td>
-      <td>Reservation time frames must overlap.</td>
-      <td>
-        A new access grant’s time frame doesn’t overlap with existing grants for
-        the same reservation.
-      </td>
-      <td>
-        Either adjust the time frame to overlap or use a new{' '}
-        <code>reservation_key</code> for the separate stay.
-      </td>
-    </tr>
-  </tbody>
-</table>
+|  |  |  |
+| --- | --- | --- |
+| not supported. | You passed a  but none of the targeted entrances support reservations. | Remove  or include at least one reservation-capable entrance. |
+| required for guest cards. | The targeted provider requires a reservation for guest credentials (e.g., Visionline) but none was provided. | Add a  when issuing guest credentials for these entrances. |
+| You tried to issue an access grant with a different door set for an existing reservation. | List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. |  |
+| A joiner grant includes a superset of the reservation-capable doors. | Joiners must use the same or a subset of the reservation-capable doors. Adjust the door set or clear/reissue. |  |
+| A new access grant’s time frame doesn’t overlap with existing grants for the same reservation. | Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. |  |

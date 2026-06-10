@@ -1,0 +1,236 @@
+---
+title: "Managing Access Methods"
+description: "Add new access methods to an existing Access Grant or revoke individual credentials."
+---
+
+After you've [created an Access Grant](/use-cases/granting-access/creating-an-access-grant) and delivered the initial credentials, you may need to add new access methods or revoke existing ones — without changing the grant itself.
+
+This page covers operations on **individual access methods**. To update the schedule, resources, or delete the entire grant, see [Managing Access Grants](/use-cases/granting-access/managing-access-grants).
+
+---
+
+## Adding an Access Method
+
+A single Access Grant can have multiple access methods. You can add new ones at any time — for example:
+
+- A guest originally received a PIN code but now also wants a **mobile key** for hands-free entry.
+- A building manager needs to issue a **key card** for a contractor who doesn't have a smartphone.
+- An office tenant wants to add a **cloud key** so their front desk app can trigger remote unlocks for visitors.
+
+The new access method inherits the schedule and resources from the existing Access Grant automatically.
+
+<CodeGroup>
+
+```python Python
+# Guest wants a mobile key in addition to their PIN code
+access_method = seam.access_methods.create(
+    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    mode="mobile_key",
+)
+```
+
+```javascript JavaScript
+// Guest wants a mobile key in addition to their PIN code
+const accessMethod = await seam.accessMethods.create({
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  mode: "mobile_key",
+});
+```
+
+```ruby Ruby
+# Guest wants a mobile key in addition to their PIN code
+access_method = seam.access_methods.create(
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  mode: "mobile_key"
+)
+```
+
+```php PHP
+// Guest wants a mobile key in addition to their PIN code
+$access_method = $seam->access_methods->create(
+    access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    mode: "mobile_key"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+# Guest wants a mobile key in addition to their PIN code
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    "mode": "mobile_key"
+  }'
+```
+
+</CodeGroup>
+
+Once created, deliver the new access method the same way as any other — see the delivery guides for [PIN codes](/use-cases/granting-access/using-pin-codes), [mobile keys](/use-cases/granting-access/using-mobile-keys), [key cards](/use-cases/granting-access/using-key-cards), [instant keys](/use-cases/granting-access/using-instant-keys), or [cloud keys](/use-cases/granting-access/using-cloud-keys).
+
+---
+
+## Revoking an Access Method
+
+Revoke a single access method when you need to disable one credential while keeping the rest active. Common scenarios include:
+
+- A guest **lost their key card** — revoke the card but keep their PIN code working so they're not locked out.
+- A tenant's **phone was stolen** — revoke the mobile key immediately while a replacement is set up.
+- A temporary **cloud key** was issued for a one-time visitor and is no longer needed.
+
+<CodeGroup>
+
+```python Python
+# Guest lost their key card — revoke it, keep PIN active
+seam.access_methods.delete(
+    access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+```javascript JavaScript
+// Guest lost their key card — revoke it, keep PIN active
+await seam.accessMethods.delete({
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+});
+```
+
+```ruby Ruby
+# Guest lost their key card — revoke it, keep PIN active
+seam.access_methods.delete(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+```php PHP
+// Guest lost their key card — revoke it, keep PIN active
+$seam->access_methods->delete(
+    access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+# Guest lost their key card — revoke it, keep PIN active
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/delete' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{"access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"}'
+```
+
+</CodeGroup>
+
+Seam removes the credential from the device or access system and emits an `access_method.deleted` event. Other access methods under the same Access Grant are unaffected.
+
+<Info>
+To revoke **all** access for a person at once — for example, on checkout or offboarding — [delete the entire Access Grant](/use-cases/granting-access/managing-access-grants#deleting-an-access-grant) instead.
+</Info>
+
+### Revoke and Replace
+
+A common pattern is to revoke a compromised credential and immediately issue a replacement:
+
+<CodeGroup>
+
+```python Python
+# Revoke the lost card
+seam.access_methods.delete(
+    access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+
+# Issue a replacement card under the same grant
+new_card = seam.access_methods.create(
+    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    mode="card",
+)
+```
+
+```javascript JavaScript
+// Revoke the lost card
+await seam.accessMethods.delete({
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+});
+
+// Issue a replacement card under the same grant
+const newCard = await seam.accessMethods.create({
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  mode: "card",
+});
+```
+
+```ruby Ruby
+# Revoke the lost card
+seam.access_methods.delete(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+
+# Issue a replacement card under the same grant
+new_card = seam.access_methods.create(
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  mode: "card"
+)
+```
+
+```php PHP
+// Revoke the lost card
+$seam->access_methods->delete(
+    access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+);
+
+// Issue a replacement card under the same grant
+$new_card = $seam->access_methods->create(
+    access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    mode: "card"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+# Revoke the lost card
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/delete' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{"access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"}'
+
+# Issue a replacement card under the same grant
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    "mode": "card"
+  }'
+```
+
+</CodeGroup>
+
+The replacement card will need to be [encoded](/use-cases/granting-access/using-key-cards) before it's ready for the guest.

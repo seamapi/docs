@@ -1,0 +1,239 @@
+---
+title: "Creating an Access Grant"
+description: "Create an Access Grant, check the resulting access methods, and deliver credentials to your user."
+---
+
+An Access Grant is a single API call that defines **who** gets access, **where** they can go, **when** access is valid, and **how** they get in. This guide walks through the full flow from creation to delivery.
+
+## Before You Begin
+
+- A Seam workspace with at least one connected device or access system. You can use a [sandbox workspace](/core-concepts/workspaces/index#sandbox-workspaces) with test devices.
+- An [API key](/core-concepts/authentication/api-keys).
+- The Seam SDK installed in your language of choice (see [Quick Start](/quickstart)).
+
+---
+
+## Step 1: Create the Access Grant
+
+Call `/access_grants/create` with four things:
+
+1. **Who** — a `user_identity_id` for an existing user, or pass `user_identity` to create one inline
+2. **Where** — the resources to grant access to
+3. **When** — the access schedule (`starts_at` and `ends_at`)
+4. **How** — the access method modes to issue (e.g., `code`, `mobile_key`, `card`, `cloud_key`)
+
+### Choosing Resources
+
+You specify _where_ to grant access using one or more of these parameters:
+
+| Parameter          | Best for                       | Description                                                                                                                                         |
+| ------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `device_ids`       | Standalone smart locks         | Pass IDs of individual devices like August, Yale, or Schlage locks connected through a [Connect Webview](/core-concepts/connect-webviews/index).     |
+| `space_ids`        | Grouped access points          | Grant access to all entrances and devices in one or more [spaces](https://docs.seam.co/latest/api/spaces/). Useful when a guest needs access to a room door, lobby, and elevator in one call. |
+| `acs_entrance_ids` | Access control system entrances | Pass IDs of individual ACS entrances for fine-grained control.                                                                                      |
+
+You can combine these in a single Access Grant — for example, a standalone smart lock (`device_ids`) plus a set of ACS entrances (`acs_entrance_ids`).
+
+<Info>
+If you're using Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, or Vostio, you'll also need to pass a `reservation_key` to coordinate credential override sequencing. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
+</Info>
+
+<Info>
+If you create multiple Access Grants for the same `user_identity_id`, Seam tries to reuse the same access methods across grants — for example, assigning the same PIN code so the user doesn't have to learn a new one for each reservation.
+</Info>
+
+### Example
+
+The example below creates an Access Grant for a single smart lock with a PIN code. To grant access to multiple doors at once, pass `space_ids` instead of `device_ids`. To target specific ACS entrances, use `acs_entrance_ids`. You can also request multiple modes in one call — for example, `[{"mode": "code"}, {"mode": "mobile_key"}]`.
+
+<CodeGroup>
+
+```python Python
+from seam import Seam
+
+seam = Seam()
+
+access_grant = seam.access_grants.create(
+    user_identity={
+        "full_name": "Jane Doe",
+        "email_address": "jane@example.com",
+    },
+    device_ids=["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods=[{"mode": "code"}],
+    starts_at="2025-07-13T15:00:00.000Z",
+    ends_at="2025-07-16T11:00:00.000Z",
+)
+```
+
+```javascript JavaScript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+const accessGrant = await seam.accessGrants.create({
+  user_identity: {
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+  },
+  device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  requested_access_methods: [{ mode: "code" }],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z",
+});
+```
+
+```ruby Ruby
+require "seam"
+
+seam = Seam.new()
+
+access_grant = seam.access_grants.create(
+  user_identity: {
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+  },
+  device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  requested_access_methods: [{ "mode": "code" }],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+)
+```
+
+```php PHP
+<?php
+require 'vendor/autoload.php';
+
+$seam = new Seam\SeamClient();
+
+$access_grant = $seam->access_grants->create(
+    user_identity: [
+        "full_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+    ],
+    device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods: [["mode" => "code"]],
+    starts_at: "2025-07-13T15:00:00.000Z",
+    ends_at: "2025-07-16T11:00:00.000Z"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "user_identity": {
+      "full_name": "Jane Doe",
+      "email_address": "jane@example.com"
+    },
+    "device_ids": ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    "requested_access_methods": [{"mode": "code"}],
+    "starts_at": "2025-07-13T15:00:00.000Z",
+    "ends_at": "2025-07-16T11:00:00.000Z"
+  }'
+```
+
+</CodeGroup>
+
+<Info>
+When you request `mobile_key`, Seam also generates an `instant_key_url` on the Access Grant — a shareable link that gives your user mobile access without downloading an app. See [Using Instant Keys](/use-cases/granting-access/using-instant-keys).
+</Info>
+
+---
+
+## Step 2: Deliver the Access Methods
+
+After creating the grant, list the access methods to see what was created and check their issuance status.
+
+<CodeGroup>
+
+```python Python
+access_methods = seam.access_methods.list(
+    access_grant_id=access_grant.access_grant_id
+)
+
+for method in access_methods:
+    print(f"{method.mode}: is_issued={method.is_issued}")
+```
+
+```javascript JavaScript
+const accessMethods = await seam.accessMethods.list({
+  access_grant_id: accessGrant.access_grant_id,
+});
+
+for (const method of accessMethods) {
+  console.log(`${method.mode}: is_issued=${method.is_issued}`);
+}
+```
+
+```ruby Ruby
+access_methods = seam.access_methods.list(
+  access_grant_id: access_grant.access_grant_id
+)
+
+access_methods.each do |method|
+  puts "#{method.mode}: is_issued=#{method.is_issued}"
+end
+```
+
+```php PHP
+$access_methods = $seam->access_methods->list(
+    access_grant_id: $access_grant->access_grant_id
+);
+
+foreach ($access_methods as $method) {
+    echo $method->mode . ": is_issued=" . $method->is_issued . "\n";
+}
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"access_grant_id\": \"${access_grant_id}\"}"
+```
+
+</CodeGroup>
+
+Each access method has an `is_issued` flag. Once it's `true`, the credential is active and ready to deliver. How you deliver depends on the mode:
+
+| Mode         | What to do                                                                 | Guide                                                                        |
+| ------------ | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `code`       | Read the `code` property and share the PIN with your user.                 | [Using PIN Codes](/use-cases/granting-access/using-pin-codes)                |
+| `mobile_key` | Initialize the Seam mobile SDK with the `client_session_token`, or send the `instant_key_url`. | [Using Mobile Keys](/use-cases/granting-access/using-mobile-keys) / [Instant Keys](/use-cases/granting-access/using-instant-keys) |
+| `card`       | Encode a fresh card or assign an existing card. `is_issued` becomes `true` after encoding or assignment. | [Using Key Cards](/use-cases/granting-access/using-key-cards)                |
+| `cloud_key`  | Call `access_methods.unlock_door` from your web app to unlock on behalf of the user.         | [Using Cloud Keys](/use-cases/granting-access/using-cloud-keys)              |
+
+<Info>
+In a sandbox workspace, automatically-issued access methods are ready almost instantly. On real devices, issuance can take a few moments.
+</Info>
+
+### Tracking Issuance with Events
+
+Instead of polling `is_issued`, you can listen for [webhook](/developer-tools/webhooks) events:
+
+| Event                                      | Meaning                                                  |
+| ------------------------------------------ | -------------------------------------------------------- |
+| `access_method.issued`                     | The access method is ready to deliver.                   |
+| `access_method.card_encoding_required`     | A card needs to be encoded before it can be delivered.   |
+| `access_method.card_assignment_required`   | A card needs to be assigned to a physical card before it can be issued. |
