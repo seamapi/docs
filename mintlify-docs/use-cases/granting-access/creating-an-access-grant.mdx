@@ -1412,8 +1412,9 @@ You can also watch for the following Access Grant and access method events:
 
 - `access_grant.access_granted_to_door` — Seam has granted access to a specific door.
 - `access_grant.access_granted_to_all_doors` — Seam has granted access to all requested doors.
-- `access_method.card_encoding_required` — A card access method needs to be encoded onto a plastic card.
 - `access_method.issued` — An access method is ready to deliver to your user.
+- `access_method.card_encoding_required` — A card access method needs to be encoded onto a plastic card.
+- `access_method.assignment_required` — An access method requires manual assignment to an ACS user before it can be issued. This can occur when Seam cannot automatically match the access method to an existing user identity in the access control system.
 
 Example `access_method.card_encoding_required` event payload:
 
