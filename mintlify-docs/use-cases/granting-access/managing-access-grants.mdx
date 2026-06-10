@@ -1,0 +1,240 @@
+---
+title: "Managing Access Grants"
+description: "Update the schedule or resources on an Access Grant, or delete a grant entirely when access should end."
+---
+
+After you've [created an Access Grant](/use-cases/granting-access/creating-an-access-grant), circumstances change — a guest extends their stay, a contractor's scope expands to a new building, or a reservation is cancelled. This page covers how to update or delete an Access Grant to handle these situations.
+
+---
+
+## Updating an Access Grant
+
+Use `access_grants.update` when you need to change _when_ or _where_ a person has access. Common scenarios include:
+
+- **Extended stay:** A hotel guest extends their checkout from Friday to Sunday — update `ends_at`.
+- **Early access:** A contractor needs to start a day earlier — update `starts_at`.
+- **Scope change:** A resident moves from Unit 101 to Unit 205 — update `device_ids`, `space_ids`, or `acs_entrance_ids`.
+
+### Updating the Schedule
+
+Pass `starts_at` and/or `ends_at` to change the access window. The new schedule applies to all access methods under the grant.
+
+<CodeGroup>
+
+```python Python
+# Guest extended their stay — push checkout to Sunday
+seam.access_grants.update(
+    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    ends_at="2025-07-18T11:00:00.000Z",
+)
+```
+
+```javascript JavaScript
+// Guest extended their stay — push checkout to Sunday
+await seam.accessGrants.update({
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  ends_at: "2025-07-18T11:00:00.000Z",
+});
+```
+
+```ruby Ruby
+# Guest extended their stay — push checkout to Sunday
+seam.access_grants.update(
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  ends_at: "2025-07-18T11:00:00.000Z"
+)
+```
+
+```php PHP
+// Guest extended their stay — push checkout to Sunday
+$seam->access_grants->update(
+    access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    ends_at: "2025-07-18T11:00:00.000Z"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+# Guest extended their stay — push checkout to Sunday
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/update' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    "ends_at": "2025-07-18T11:00:00.000Z"
+  }'
+```
+
+</CodeGroup>
+
+### Updating Resources
+
+Pass `device_ids`, `space_ids`, or `acs_entrance_ids` to change _where_ the person has access. For example, if a resident moves units, update the grant to point to the new space instead of deleting and recreating it.
+
+<CodeGroup>
+
+```python Python
+# Resident moved from Unit 101 to Unit 205
+seam.access_grants.update(
+    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    space_ids=["b0c5d5e0-7f0a-4f1b-8e3d-unit-205-space"],
+)
+```
+
+```javascript JavaScript
+// Resident moved from Unit 101 to Unit 205
+await seam.accessGrants.update({
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  space_ids: ["b0c5d5e0-7f0a-4f1b-8e3d-unit-205-space"],
+});
+```
+
+```ruby Ruby
+# Resident moved from Unit 101 to Unit 205
+seam.access_grants.update(
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  space_ids: ["b0c5d5e0-7f0a-4f1b-8e3d-unit-205-space"]
+)
+```
+
+```php PHP
+// Resident moved from Unit 101 to Unit 205
+$seam->access_grants->update(
+    access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    space_ids: ["b0c5d5e0-7f0a-4f1b-8e3d-unit-205-space"]
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+# Resident moved from Unit 101 to Unit 205
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/update' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    "space_ids": ["b0c5d5e0-7f0a-4f1b-8e3d-unit-205-space"]
+  }'
+```
+
+</CodeGroup>
+
+---
+
+## Re-issuance After an Update
+
+When you update an Access Grant, Seam needs to re-program the credentials on the affected devices. During this process, each access method temporarily becomes invalid.
+
+### What happens to each access method
+
+1. Seam emits an `access_method.revoked` event and sets `is_issued` to `false`. The credential is no longer valid on the device.
+2. Seam re-programs the credential with the updated schedule or resources.
+3. Once the credential is active again, the next step depends on the mode:
+
+| Mode | What happens | Event |
+| --- | --- | --- |
+| **PIN code** | The code value stays the same. Seam updates the valid time window on the lock automatically. | `access_method.reissued` |
+| **Mobile key** | Seam updates the credential automatically. | `access_method.reissued` |
+| **Cloud key** | Seam updates the credential automatically. | `access_method.reissued` |
+| **Card** | The physical card must be re-encoded with the new credential. | `access_method.card_encoding_required`, then `access_method.reissued` after encoding |
+
+<Info>
+For cards, you'll need to [re-encode the card](/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods) before the updated credential takes effect. Plan for this if your workflow relies on physical cards — the guest will need to visit the front desk.
+</Info>
+
+### Listening for re-issuance events
+
+Use [webhooks](/developer-tools/webhooks) or poll `access_methods.list` to track when access methods become valid again after an update:
+
+- **`access_method.revoked`** — The credential has been invalidated and is being re-programmed. The access method's `is_issued` is `false`.
+- **`access_method.card_encoding_required`** — (Cards only) The new credential is ready but needs to be encoded onto the physical card.
+- **`access_method.reissued`** — The credential is active again. The access method's `is_issued` is `true`.
+
+---
+
+## Deleting an Access Grant
+
+Delete an Access Grant when a person's access should end entirely — for example, when a guest checks out, an employee is offboarded, or a contractor's engagement ends. Deleting the grant removes **all** access methods under it at once.
+
+<CodeGroup>
+
+```python Python
+# Guest checked out — revoke all access
+seam.access_grants.delete(
+    access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
+)
+```
+
+```javascript JavaScript
+// Guest checked out — revoke all access
+await seam.accessGrants.delete({
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+});
+```
+
+```ruby Ruby
+# Guest checked out — revoke all access
+seam.access_grants.delete(
+  access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
+)
+```
+
+```php PHP
+// Guest checked out — revoke all access
+$seam->access_grants->delete(
+    access_grant_id: "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+# Guest checked out — revoke all access
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/delete' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{"access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b"}'
+```
+
+</CodeGroup>
+
+Seam emits an `access_grant.deleted` event and an `access_method.deleted` event for each access method that was removed.
+
+<Info>
+To revoke a single access method while keeping the rest active (for example, disabling a lost key card but keeping the guest's PIN code), use [`access_methods.delete`](/use-cases/granting-access/managing-access-methods#revoking-an-access-method) instead.
+</Info>
+
+### Delete vs. Update
+
+| Scenario | Action |
+| --- | --- |
+| Guest checks out, employee offboards — all access should end | **Delete** the Access Grant |
+| Guest extends stay, schedule changes | **Update** `starts_at` / `ends_at` |
+| Person moves to a different unit or building | **Update** `device_ids`, `space_ids`, or `acs_entrance_ids` |
+| One credential is lost but the person still needs access | [**Delete** the access method](/use-cases/granting-access/managing-access-methods#revoking-an-access-method), not the grant |

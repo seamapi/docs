@@ -52,19 +52,20 @@
                 "group": "Granting Access",
                 "pages": [
                   "use-cases/granting-access/index",
-                  "use-cases/granting-access/access-grant-quick-start",
                   "use-cases/granting-access/creating-an-access-grant",
-                  "use-cases/granting-access/delivering-access-methods",
-                  "use-cases/granting-access/using-pin-codes",
-                  "use-cases/granting-access/using-mobile-keys",
-                  "use-cases/granting-access/using-instant-keys",
-                  "use-cases/granting-access/using-key-cards",
-                  "use-cases/granting-access/using-cloud-keys",
-                  "use-cases/granting-access/reservation-access-grants",
-                  "use-cases/granting-access/retrieving-access-grants-and-access-methods",
-                  "use-cases/granting-access/updating-an-access-grant",
-                  "use-cases/granting-access/revoking-an-access-method",
-                  "use-cases/granting-access/deleting-an-access-grant"
+                  {
+                    "group": "Delivering Access Methods",
+                    "pages": [
+                      "use-cases/granting-access/using-pin-codes",
+                      "use-cases/granting-access/using-mobile-keys",
+                      "use-cases/granting-access/using-instant-keys",
+                      "use-cases/granting-access/using-key-cards",
+                      "use-cases/granting-access/using-cloud-keys"
+                    ]
+                  },
+                  "use-cases/granting-access/managing-access-grants",
+                  "use-cases/granting-access/managing-access-methods",
+                  "use-cases/granting-access/reservation-access-grants"
                 ]
               }
             ]
@@ -3143,6 +3144,54 @@
     {
       "source": "/use-cases/granting-access/creating-an-access-grant-using-entrances",
       "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/use-cases/granting-access/access-grant-quick-start",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/use-cases/granting-access/delivering-access-methods",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/use-cases/granting-access/retrieving-access-grants-and-access-methods",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/use-cases/granting-access/updating-an-access-grant",
+      "destination": "/use-cases/granting-access/managing-access-grants"
+    },
+    {
+      "source": "/use-cases/granting-access/deleting-an-access-grant",
+      "destination": "/use-cases/granting-access/managing-access-grants"
+    },
+    {
+      "source": "/use-cases/granting-access/revoking-an-access-method",
+      "destination": "/use-cases/granting-access/managing-access-methods"
+    },
+    {
+      "source": "/capability-guides/access-grants/access-grant-quick-start",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/capability-guides/access-grants/delivering-access-methods",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/capability-guides/access-grants/retrieving-access-grants-and-access-methods",
+      "destination": "/use-cases/granting-access/creating-an-access-grant"
+    },
+    {
+      "source": "/capability-guides/access-grants/updating-an-access-grant",
+      "destination": "/use-cases/granting-access/managing-access-grants"
+    },
+    {
+      "source": "/capability-guides/access-grants/deleting-an-access-grant",
+      "destination": "/use-cases/granting-access/managing-access-grants"
+    },
+    {
+      "source": "/capability-guides/access-grants/revoking-an-access-method",
+      "destination": "/use-cases/granting-access/managing-access-methods"
     }
   ],
   "openapi": [
