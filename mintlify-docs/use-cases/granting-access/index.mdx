@@ -129,9 +129,11 @@ When you request `mobile_key`, Seam also generates an **Instant Key** — a shar
 
 You can request multiple modes in one call — for example, a PIN code _and_ a mobile key — and Seam issues all of them under the same Access Grant.
 
-<Info>
-Override-based access systems (Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) require a `reservation_key` for credential sequencing. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
-</Info>
+---
+
+## Override-Based Access Systems
+
+Some access systems — Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio — use override-based credential sequencing. These systems require a `reservation_key` when creating an Access Grant so Seam can coordinate credential ordering. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
 
 ---
 
