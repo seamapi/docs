@@ -389,36 +389,36 @@ action_attempt = seam.access_methods.assign_card(
 ```
 
 ```php PHP
-$actionAttempt = $seam->access_methods->encode(
+$actionAttempt = $seam->access_methods->assign_card(
   access_method_id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
   card_number: "ABCD1234"
 );
 ```
 
 ```csharp C#
-var actionAttempt = seam.AccessMethods.Encode(
+var actionAttempt = seam.AccessMethods.AssignCard(
   accessMethodId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  acsEncoderId: "encoder-001"
+  cardNumber: "ABCD1234"
 );
 ```
 
 ```java Java
-var actionAttempt = seam.accessMethods().encode(
-  AccessMethodsEncodeRequest.builder()
+var actionAttempt = seam.accessMethods().assignCard(
+  AccessMethodsAssignCardRequest.builder()
     .accessMethodId("a1b2c3d4-e5f6-7890-abcd-ef1234567890")
-    .acsEncoderId("encoder-001")
+    .cardNumber("ABCD1234")
     .build()
 );
 ```
 
 ```bash cURL
 curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/encode' \
+  'https://connect.getseam.com/access_methods/assign_card' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
   "access_method_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "acs_encoder_id": "encoder-001"
+  "card_number": "ABCD1234"
 }'
 ```
 
