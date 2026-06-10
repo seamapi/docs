@@ -402,11 +402,13 @@
                 "group": "Access Methods",
                 "pages": [
                   "api/access_methods/object",
+                  "POST /access_methods/assign_card",
                   "POST /access_methods/delete",
                   "POST /access_methods/encode",
                   "POST /access_methods/get",
                   "POST /access_methods/get_related",
                   "POST /access_methods/list",
+                  "POST /access_methods/unlock_door",
                   {
                     "group": "Unmanaged",
                     "pages": [
@@ -598,6 +600,7 @@
                       "POST /acs/encoders/get",
                       "POST /acs/encoders/list",
                       "POST /acs/encoders/scan_credential",
+                      "POST /acs/encoders/scan_to_assign_credential",
                       "POST /acs/encoders/simulate/next_credential_encode_will_fail",
                       "POST /acs/encoders/simulate/next_credential_encode_will_succeed",
                       "POST /acs/encoders/simulate/next_credential_scan_will_fail",
@@ -724,6 +727,7 @@
                 "group": "Spaces",
                 "pages": [
                   "api/spaces/object",
+                  "POST /spaces/add_connected_account",
                   "POST /spaces/add_devices",
                   "POST /spaces/add_acs_entrances",
                   "POST /spaces/create",
@@ -731,6 +735,7 @@
                   "POST /spaces/get",
                   "POST /spaces/get_related",
                   "POST /spaces/list",
+                  "POST /spaces/remove_connected_account",
                   "POST /spaces/remove_devices",
                   "POST /spaces/remove_acs_entrances",
                   "POST /spaces/update"
