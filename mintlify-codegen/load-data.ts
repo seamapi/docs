@@ -3,6 +3,7 @@ import { join } from 'node:path'
 
 import { type Blueprint, createBlueprint } from '@seamapi/blueprint'
 import * as types from '@seamapi/types/connect'
+// @ts-expect-error js-yaml has no type declarations
 import jsYaml from 'js-yaml'
 
 import { formatCode } from '../codegen/lib/format-code.js'
@@ -66,7 +67,7 @@ export async function loadBlueprint(
   }
 
   const blueprint = await createBlueprint(
-    typesModule,
+    typesModule as any,
     skipCodeFormat ? {} : { formatCode },
   )
 

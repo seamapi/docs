@@ -58,7 +58,7 @@ function transformPages(
         // Already an OpenAPI ref (either "POST /path" or legacy "file.json POST /path")
         const openApiMatch = page.match(/(?:\.json )?POST (.+)$/)
         if (openApiMatch && !page.startsWith('api/')) {
-          const apiPath = openApiMatch[1]
+          const apiPath = openApiMatch[1]!
           if (!specPaths.has(apiPath)) {
             removed.push(page)
             return null

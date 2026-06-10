@@ -344,6 +344,7 @@ export function transformSpec(
     withCodeSamples: 0,
     withActionAttempts: 0,
     withoutCodeSamples: [] as string[],
+    removedPaths: 0,
   }
 
   // Remove only undocumented paths to reduce spec size
