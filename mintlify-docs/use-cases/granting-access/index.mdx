@@ -112,6 +112,23 @@ EOF
 
 You specify _where_ to grant access using `device_ids` (smart locks), `acs_entrance_ids` (ACS entrances), or `space_ids` (groups of access points). You can combine them in a single grant.
 
+---
+
+## Access Methods
+
+Each Access Grant can issue one or more **access methods** — the credentials your user actually uses to get through a door. Request them via the `requested_access_methods` parameter.
+
+| Mode | What it is | Best for |
+| --- | --- | --- |
+| `code` | A PIN code programmed on the lock. | Simple keypad entry — share a code via text, email, or your app. |
+| `mobile_key` | A BLE credential delivered through the [Seam mobile SDK](/capability-guides/mobile-access/mobile-device-sdks/index). | Building a custom app with native mobile unlock. |
+| `card` | A credential encoded onto a physical plastic card. | Hotels and offices with existing card infrastructure. |
+| `cloud_key` | A remote unlock triggered on behalf of a specific user, attributed in the ACS audit trail. | Audit-traced remote access without physical credentials. |
+
+When you request `mobile_key`, Seam also generates an **Instant Key** — a shareable URL that gives your user mobile access without downloading an app. Useful for quick delivery via text or email.
+
+You can request multiple modes in one call — for example, a PIN code _and_ a mobile key — and Seam issues all of them under the same Access Grant.
+
 <Info>
 Override-based access systems (Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) require a `reservation_key` for credential sequencing. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
 </Info>
