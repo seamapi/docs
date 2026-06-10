@@ -177,9 +177,9 @@ When your user taps the link on their phone, the Instant Key opens as an iOS App
   same URL.
 </Info>
 
-## Listing Related Devices and Entrances
+## Listing Related Entrances
 
-To see which devices or entrances an Instant Key gives access to, call `/access_methods/get_related` with the underlying mobile key's access method ID.
+To see which entrances an Instant Key gives access to, call `/access_methods/get_related` with the underlying mobile key's access method ID.
 
 <CodeGroup>
 
@@ -188,7 +188,6 @@ const related = await seam.accessMethods.getRelated({
   access_method_ids: [accessMethod.access_method_id],
 })
 
-console.log(related.devices) // smart locks this Instant Key unlocks
 console.log(related.acs_entrances) // ACS entrances this Instant Key unlocks
 ```
 
@@ -197,7 +196,6 @@ related = seam.access_methods.get_related(
     access_method_ids=[access_method.access_method_id]
 )
 
-print(related.devices)        # smart locks this Instant Key unlocks
 print(related.acs_entrances)  # ACS entrances this Instant Key unlocks
 ```
 

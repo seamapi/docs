@@ -300,9 +300,9 @@ Use the `client_session_id` to look up the client session token, then pass it to
   required. See [Using Instant Keys](/use-cases/granting-access/using-instant-keys).
 </Info>
 
-## Listing Related Devices and Entrances
+## Listing Related Entrances
 
-To see which devices or entrances a mobile key gives access to, call `/access_methods/get_related`.
+To see which entrances a mobile key gives access to, call `/access_methods/get_related`.
 
 <CodeGroup>
 
@@ -311,7 +311,6 @@ const related = await seam.accessMethods.getRelated({
   access_method_ids: [accessMethod.access_method_id],
 })
 
-console.log(related.devices) // smart locks this mobile key unlocks
 console.log(related.acs_entrances) // ACS entrances this mobile key unlocks
 ```
 
@@ -320,7 +319,6 @@ related = seam.access_methods.get_related(
     access_method_ids=[access_method.access_method_id]
 )
 
-print(related.devices)        # smart locks this mobile key unlocks
 print(related.acs_entrances)  # ACS entrances this mobile key unlocks
 ```
 
