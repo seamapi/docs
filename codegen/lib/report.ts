@@ -14,7 +14,6 @@ import type Metalsmith from 'metalsmith'
 
 import { apiReferenceRoot } from './config.js'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const openapi: any = _openapi
 
 const defaultDeprecatedMessage = 'No deprecated message provided'
