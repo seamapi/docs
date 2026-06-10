@@ -58,6 +58,7 @@ function transformPages(
         // Already an OpenAPI ref (either "POST /path" or legacy "file.json POST /path")
         const openApiMatch = page.match(/(?:\.json )?POST (.+)$/)
         if (openApiMatch && !page.startsWith('api/')) {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           const apiPath = openApiMatch[1]!
           if (!specPaths.has(apiPath)) {
             removed.push(page)
@@ -197,6 +198,7 @@ function collectNavPaths(pages: any[]): Set<string> {
   for (const page of pages) {
     if (typeof page === 'string') {
       const match = page.match(/^POST (.+)$/)
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       if (match) paths.add(match[1]!)
     } else if (typeof page === 'object' && page.group) {
       for (const p of collectNavPaths(page.pages)) {
