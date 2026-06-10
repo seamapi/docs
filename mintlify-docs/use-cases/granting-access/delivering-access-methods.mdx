@@ -20,20 +20,56 @@ This topic describes how to deliver the various access method modes.
 
 You can retrieve the access method by ID. The returned access method resource includes the `code` that you can share with your user.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessMethods.get({
   access_method_id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+}'
+```
+
+```python Python
+seam.access_methods.get(
+  access_method_id = "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+```ruby Ruby
+seam.access_methods.get(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+```php PHP
+$seam->access_methods->get(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
   "display_name": "PIN Code",
@@ -46,26 +82,7 @@ await seam.accessMethods.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-}'
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "access_method": {
     "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
@@ -81,21 +98,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.access_methods.get(
-  access_method_id = "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-)
-```
-
-**Output:**
-
-```
+```json Python
 AccessMethod(
   access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479",
   display_name="PIN Code",
@@ -108,21 +111,7 @@ AccessMethod(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.access_methods.get(
-  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 {
   "access_method_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
   "display_name" => "PIN Code",
@@ -135,21 +124,7 @@ seam.access_methods.get(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->access_methods->get(
-  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 [
   "access_method_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
   "display_name" => "PIN Code",
@@ -162,24 +137,11 @@ $seam->access_methods->get(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -195,20 +157,56 @@ Once you've encoded the card, the access method's `is_encoding_required` propert
 
 You deliver a mobile key to your user within your own mobile app that you develop using the Seam mobile SDKs. For mobile keys, the access method includes a `client_session_id` property that you can use to identify the client session and client session token that you need to initialize the Seam client on your user's mobile device. Then, your user simply taps a button in your app to unlock the door. For details, see [Mobile Access](/capability-guides/mobile-access/index).
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessMethods.get({
   access_method_id: '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+}'
+```
+
+```python Python
+seam.access_methods.get(
+  access_method_id = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+)
+```
+
+```ruby Ruby
+seam.access_methods.get(
+  access_method_id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+)
+```
+
+```php PHP
+$seam->access_methods->get(
+  access_method_id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
   "display_name": "Mobile Key",
@@ -222,26 +220,7 @@ await seam.accessMethods.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
-}'
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "access_method": {
     "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -258,21 +237,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.access_methods.get(
-  access_method_id = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
-)
-```
-
-**Output:**
-
-```
+```json Python
 AccessMethod(
   access_method_id="6ba7b810-9dad-11d1-80b4-00c04fd430c8",
   display_name="Mobile Key",
@@ -286,21 +251,7 @@ AccessMethod(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.access_methods.get(
-  access_method_id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 {
   "access_method_id" => "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
   "display_name" => "Mobile Key",
@@ -314,21 +265,7 @@ seam.access_methods.get(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->access_methods->get(
-  access_method_id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 [
   "access_method_id" => "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
   "display_name" => "Mobile Key",
@@ -342,24 +279,11 @@ $seam->access_methods->get(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

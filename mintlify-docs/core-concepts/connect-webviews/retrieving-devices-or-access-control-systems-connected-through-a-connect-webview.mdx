@@ -22,40 +22,18 @@ Use this `connected_account_id` in a [List Devices](https://docs.seam.co/latest/
   connected account and the devices are now available.
 </Info>
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Retrieve all devices for the connected_account_id.
 const connectedDevices = await seam.devices.list({
   connected_account_id: "11111111-1111-1111-1111-222222222222"
 });
 ```
 
-**Output:**
-
-```json
-[
-  {
-    connected_account_id: '11111111-1111-1111-1111-222222222222',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    display_name: 'Front Door Lock',
-    is_managed: true,
-    ...
-  },
-  ...
-]
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Retrieve all devices for the connected_account_id.
 connected_devices=$(
   # Use GET or POST.
@@ -69,9 +47,54 @@ connected_devices=$(
   }')
 ```
 
+```python Python
+# Retrieve all devices for the connected_account_id.
+connected_devices = seam.devices.list(
+  connected_account_id="11111111-1111-1111-1111-222222222222"
+)
+```
+
+```ruby Ruby
+# Retrieve all devices for the connected_account_id.
+connected_devices = seam.devices.list(
+  connected_account_id: "11111111-1111-1111-1111-222222222222"
+)
+```
+
+```php PHP
+// Retrieve all devices for the connected_account_id.
+$connected_devices = $seam->devices->list(
+  connected_account_id: "11111111-1111-1111-1111-222222222222"
+);
+```
+
+```csharp C#
+// Retrieve all devices for the connectedAccountId.
+var connectedDevices = seam.Devices.List(
+  connectedAccountId: "11111111-1111-1111-1111-222222222222"
+);
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+[
+  {
+    connected_account_id: '11111111-1111-1111-1111-222222222222',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    display_name: 'Front Door Lock',
+    is_managed: true,
+    ...
+  },
+  ...
+]
+```
+
+```json cURL
 {
   "devices": [
     {
@@ -87,22 +110,7 @@ connected_devices=$(
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-# Retrieve all devices for the connected_account_id.
-connected_devices = seam.devices.list(
-  connected_account_id="11111111-1111-1111-1111-222222222222"
-)
-```
-
-**Output:**
-
-```
+```json Python
 [
   Device(
     connected_account_id='11111111-1111-1111-1111-222222222222',
@@ -115,22 +123,7 @@ connected_devices = seam.devices.list(
 ]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-# Retrieve all devices for the connected_account_id.
-connected_devices = seam.devices.list(
-  connected_account_id: "11111111-1111-1111-1111-222222222222"
-)
-```
-
-**Output:**
-
-```json
+```json Ruby
 [
   <
     Seam::Device:0x00438
@@ -144,22 +137,7 @@ connected_devices = seam.devices.list(
 ]
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-// Retrieve all devices for the connected_account_id.
-$connected_devices = $seam->devices->list(
-  connected_account_id: "11111111-1111-1111-1111-222222222222"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 [
   {
     "connected_account_id": "11111111-1111-1111-1111-222222222222",
@@ -172,22 +150,7 @@ $connected_devices = $seam->devices->list(
 ]
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
-// Retrieve all devices for the connectedAccountId.
-var connectedDevices = seam.Devices.List(
-  connectedAccountId: "11111111-1111-1111-1111-222222222222"
-);
-```
-
-**Output:**
-
-```json
+```json C#
 {
   "connected_account_id": "11111111-1111-1111-1111-222222222222",
   "device_id": "11111111-1111-1111-1111-444444444444",
@@ -198,8 +161,7 @@ var connectedDevices = seam.Devices.List(
 ...
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -216,41 +178,18 @@ Use this `connected_account_id` in a [List ACS Systems](https://docs.seam.co/lat
   connected account and the `acs_system` is now available.
 </Info>
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Retrieve all acs_systems for the connected_account_id.
 const connectedAcsSystems = await seam.acs.systems.list({
   connected_account_id: "11111111-1111-1111-2222-111111111111"
 });
 ```
 
-**Output:**
-
-```json
-[
-  {
-    connected_account_ids: [
-      '11111111-1111-1111-2222-111111111111'
-    ],
-    acs_system_id: '11111111-1111-1111-1111-111111111111',
-    name: 'My ACS',
-    ...
-  },
-  ...
-]
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Retrieve all acs_systems for the connected_account_id.
 connected_acs_systems=$(
   # Use GET or POST.
@@ -264,9 +203,52 @@ connected_acs_systems=$(
   }')
 ```
 
+```python Python
+# Retrieve all acs_systems for the connected_account_id.
+connected_acs_systems = seam.acs.list(
+  connected_account_id="11111111-1111-1111-2222-111111111111"
+)
+```
+
+```ruby Ruby
+# Coming soon!
+```
+
+```php PHP
+// Retrieve all acs_systems for the connected_account_id.
+$connected_acs_systems = $seam->acs->systems->list(
+  connected_account_id: "11111111-1111-1111-2222-111111111111"
+);
+```
+
+```csharp C#
+// Retrieve all acs_systems for the connectedAccountId.
+var connectedAcsSystems = seam.Acs.Systems.List(
+  connectedAccountId: "11111111-1111-1111-2222-111111111111"
+);
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+[
+  {
+    connected_account_ids: [
+      '11111111-1111-1111-2222-111111111111'
+    ],
+    acs_system_id: '11111111-1111-1111-1111-111111111111',
+    name: 'My ACS',
+    ...
+  },
+  ...
+]
+```
+
+```json cURL
 {
   "acs_systems": [
     {
@@ -283,22 +265,7 @@ connected_acs_systems=$(
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-# Retrieve all acs_systems for the connected_account_id.
-connected_acs_systems = seam.acs.list(
-  connected_account_id="11111111-1111-1111-2222-111111111111"
-)
-```
-
-**Output:**
-
-```
+```json Python
 [
   AcsSystem(
     connected_account_ids=[
@@ -312,38 +279,11 @@ connected_acs_systems = seam.acs.list(
 ]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```json Ruby
 # Coming soon!
 ```
 
-**Output:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-// Retrieve all acs_systems for the connected_account_id.
-$connected_acs_systems = $seam->acs->systems->list(
-  connected_account_id: "11111111-1111-1111-2222-111111111111"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 [
   {
     "connected_account_ids": [
@@ -357,22 +297,7 @@ $connected_acs_systems = $seam->acs->systems->list(
 ]
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
-// Retrieve all acs_systems for the connectedAccountId.
-var connectedAcsSystems = seam.Acs.Systems.List(
-  connectedAccountId: "11111111-1111-1111-2222-111111111111"
-);
-```
-
-**Output:**
-
-```json
+```json C#
 {
   "connected_account_ids": [
     "11111111-1111-1111-2222-111111111111"
@@ -384,5 +309,4 @@ var connectedAcsSystems = seam.Acs.Systems.List(
 ...
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

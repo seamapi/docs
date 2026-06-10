@@ -38,33 +38,15 @@ If either of these capability flags is `false` or not present, you can view the 
 
 In addition, you could look for a `device.accessory_keypad_disconnected` event.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.devices.get({ device_id: '11111111-1111-1111-1111-444444444444' })
 ```
 
-**Response:**
-
-```json
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  can_program_online_access_codes: true,  // You can create online access codes for this device.
-  can_program_offline_access_codes: true, // You can create offline access codes for this device.
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
@@ -76,9 +58,38 @@ curl -X 'GET' \
 }'
 ```
 
+```python Python
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
+```
+
+```ruby Ruby
+client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
+```
+
+```php PHP
+$seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
+```
+
+```csharp C#
+seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  can_program_online_access_codes: true,  // You can create online access codes for this device.
+  can_program_offline_access_codes: true, // You can create offline access codes for this device.
+  ...
+}
+```
+
+```json cURL
 {
   "lock": {
     "device_id": "11111111-1111-1111-1111-444444444444",
@@ -90,19 +101,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Python
 Device(
   device_id='11111111-1111-1111-1111-444444444444',
   can_program_online_access_codes=True,  // You can create online access codes for this device.
@@ -111,19 +110,7 @@ Device(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::Device:0x00438
   device_id="11111111-1111-1111-1111-444444444444"
   can_program_online_access_codes=true  // You can create online access codes for this device.
@@ -132,19 +119,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "can_program_online_access_codes": true,  // You can create online access codes for this device.
@@ -153,19 +128,7 @@ $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```
+```json C#
 {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "can_program_online_access_codes": true,  // You can create online access codes for this device.
@@ -174,8 +137,7 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -199,12 +161,11 @@ Set an ongoing online access code by providing the `device_id` of the smart lock
 
 To customize the PIN code, specify a desired PIN for the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See [Access Code Requirements for Door Locks](../../../../low-level-apis/smart-locks/access-codes/access-code-requirements-for-door-locks) to understand any requirements specific to the door lock.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device.
 const device = await seam.devices.get({
   device_id: '11111111-1111-1111-1111-444444444444',
@@ -221,26 +182,7 @@ if (device.can_program_online_access_codes) {
 }
 ```
 
-**Response:**
-
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-555555555555',
-  device_id: '11111111-1111-1111-1111-444444444444',
-  name: 'my ongoing code',
-  code: '1234',
-  type: 'ongoing',
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Get the device.
 device=$(
   # Use GET or POST.
@@ -269,9 +211,85 @@ if  $(jq -r '.device.can_program_online_access_codes' <<< ${device}); then \
 fi
 ```
 
+```python Python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
+
+# Confirm that the device supports online access codes.
+if device.can_program_online_access_codes:
+  # Create the ongoing online access code.
+  seam.access_codes.create(
+    device_id = device.device_id,
+    name = "my ongoing code",
+    code = "1234"
+  )
+```
+
+```ruby Ruby
+# Get the device.
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
+
+# Confirm that the device supports online access codes.
+if (device.can_program_online_access_codes)
+  # Create the ongoing online access code.
+  client.access_codes.create(
+    device_id: device.device_id,
+    name: "my ongoing code",
+    code: "1234"
+  )
+end
+```
+
+```php PHP
+// Get the device.
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device supports online access codes.
+if ($device->can_program_online_access_codes) {
+  // Create the ongoing online access code.
+  $seam->access_codes->create(
+    device_id: $device->device_id,
+    name: "my ongoing code",
+    code: "1234"
+  );
+}
+```
+
+```csharp C#
+// Get the device.
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device supports online access codes.
+if (device.CanProgramOnlineAccessCodes == true) {
+  // Create the ongoing online access code.
+  seam.AccessCodes.Create(
+    deviceId: device.DeviceId,
+    name: "my ongoing code",
+    code: "1234"
+  );
+}
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  access_code_id: '11111111-1111-1111-1111-555555555555',
+  device_id: '11111111-1111-1111-1111-444444444444',
+  name: 'my ongoing code',
+  code: '1234',
+  type: 'ongoing',
+  ...
+}
+```
+
+```json cURL
 {
   "action_attempt":{
     "status":"pending",
@@ -292,31 +310,7 @@ fi
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
-
-# Confirm that the device supports online access codes.
-if device.can_program_online_access_codes:
-  # Create the ongoing online access code.
-  seam.access_codes.create(
-    device_id = device.device_id,
-    name = "my ongoing code",
-    code = "1234"
-  )
-```
-
-**Response:**
-
-```
+```json Python
 AccessCode(
   access_code_id='11111111-1111-1111-1111-555555555555',
   device_id='11111111-1111-1111-1111-444444444444',
@@ -327,30 +321,7 @@ AccessCode(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-# Get the device.
-device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
-
-# Confirm that the device supports online access codes.
-if (device.can_program_online_access_codes)
-  # Create the ongoing online access code.
-  client.access_codes.create(
-    device_id: device.device_id,
-    name: "my ongoing code",
-    code: "1234"
-  )
-end
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::AccessCode:0x00460
   access_code_id="11111111-1111-1111-1111-555555555555"
   device_id="11111111-1111-1111-1111-444444444444"
@@ -361,30 +332,7 @@ end
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-// Get the device.
-$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device supports online access codes.
-if ($device->can_program_online_access_codes) {
-  // Create the ongoing online access code.
-  $seam->access_codes->create(
-    device_id: $device->device_id,
-    name: "my ongoing code",
-    code: "1234"
-  );
-}
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "access_code_id": "11111111-1111-1111-1111-555555555555",
   "device_id": "11111111-1111-1111-1111-444444444444",
@@ -395,30 +343,7 @@ if ($device->can_program_online_access_codes) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-// Get the device.
-Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device supports online access codes.
-if (device.CanProgramOnlineAccessCodes == true) {
-  // Create the ongoing online access code.
-  seam.AccessCodes.Create(
-    deviceId: device.DeviceId,
-    name: "my ongoing code",
-    code: "1234"
-  );
-}
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "type": "ongoing",
   "access_code_id": "11111111-1111-1111-1111-555555555555",
@@ -429,8 +354,7 @@ if (device.CanProgramOnlineAccessCodes == true) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### 2. Verify Successful Ongoing Code Programming
 
@@ -498,12 +422,11 @@ As with ongoing codes, you can assign an optional `name` to the access code. A c
 
 Similarly, to customize the PIN code, specify a desired PIN in the `code` property. If you do not specify a `code`, you can set the `preferred_code_length`, and Seam generates a code of this length if the affected device supports the specified preferred code length. See the [Access Code Requirements for Door Locks](../../../../low-level-apis/smart-locks/access-codes/access-code-requirements-for-door-locks) to understand any requirements specific to the door lock brand.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device.
 const device = await seam.devices.get({
   device_id: '11111111-1111-1111-1111-444444444444',
@@ -522,28 +445,7 @@ if (device.can_program_online_access_codes) {
 }
 ```
 
-**Response:**
-
-```json
-{
-  access_code_id: '11111111-1111-1111-1111-666666666666',
-  device_id: '11111111-1111-1111-1111-444444444444',
-  name: 'my time-bound code',
-  code: '2345',
-  type: 'time_bound',
-  starts_at: '2025-01-01T16:00:00.000Z',
-  ends_at: '2025-01-22T12:00:00.000Z',
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```sh
+```sh cURL
 # Get the device.
 device=$(
   # Use GET or POST.
@@ -574,9 +476,95 @@ if  $(jq -r '.device.can_program_online_access_codes' <<< ${device}); then \
 fi
 ```
 
+```python Python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
+
+# Confirm that the device supports online access codes.
+if device.can_program_online_access_codes:
+  # Create the time-bound online access code.
+  seam.access_codes.create(
+    device_id = device.device_id,
+    name = "my time-bound code",
+    starts_at = "2025-01-01T16:00:00Z",
+    ends_at = "2025-01-22T12:00:00Z",
+    code = "2345"
+  )
+```
+
+```ruby Ruby
+# Get the device.
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
+
+# Confirm that the device supports online access codes.
+if (device.can_program_online_access_codes)
+  # Create the time-bound online access code.
+  client.access_codes.create(
+    device_id: device.device_id,
+    name: "my time-bound code",
+    starts_at: "2025-01-01T16:00:00Z",
+    ends_at: "2025-01-22T12:00:00Z",
+    code: "2345"
+  )
+end
+```
+
+```php PHP
+// Get the device.
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device supports online access codes.
+if ($device->can_program_online_access_codes) {
+  // Create the time-bound online access code.
+  $seam->access_codes->create(
+    device_id: $device->device_id,
+    name: "my time-bound code",
+    starts_at:  "2025-01-01T16:00:00Z",
+    ends_at: "2025-01-22T12:00:00Z",
+    code: "2345"
+  );
+}
+```
+
+```csharp C#
+// Get the device.
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device supports online access codes.
+if (device.CanProgramOnlineAccessCodes == true) {
+  // Create the time-bound online access code.
+  seam.AccessCodes.Create(
+    deviceId: device.DeviceId,
+    name: "my time-bound code",
+    startsAt: "2025-01-01T16:00:00Z",
+    endsAt: "2025-01-22T12:00:00Z",
+    code: "2345"
+  );
+}
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  access_code_id: '11111111-1111-1111-1111-666666666666',
+  device_id: '11111111-1111-1111-1111-444444444444',
+  name: 'my time-bound code',
+  code: '2345',
+  type: 'time_bound',
+  starts_at: '2025-01-01T16:00:00.000Z',
+  ends_at: '2025-01-22T12:00:00.000Z',
+  ...
+}
+```
+
+```json cURL
 {
   "action_attempt": {
     "status": "pending",
@@ -599,33 +587,7 @@ fi
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
-
-# Confirm that the device supports online access codes.
-if device.can_program_online_access_codes:
-  # Create the time-bound online access code.
-  seam.access_codes.create(
-    device_id = device.device_id,
-    name = "my time-bound code",
-    starts_at = "2025-01-01T16:00:00Z",
-    ends_at = "2025-01-22T12:00:00Z",
-    code = "2345"
-  )
-```
-
-**Response:**
-
-```
+```json Python
 AccessCode(
   access_code_id='11111111-1111-1111-1111-666666666666',
   device_id='11111111-1111-1111-1111-444444444444',
@@ -638,32 +600,7 @@ AccessCode(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-# Get the device.
-device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
-
-# Confirm that the device supports online access codes.
-if (device.can_program_online_access_codes)
-  # Create the time-bound online access code.
-  client.access_codes.create(
-    device_id: device.device_id,
-    name: "my time-bound code",
-    starts_at: "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  )
-end
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::AccessCode:0x00438
   access_code_id="11111111-1111-1111-1111-666666666666"
   device_id="11111111-1111-1111-1111-444444444444"
@@ -676,32 +613,7 @@ end
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-// Get the device.
-$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device supports online access codes.
-if ($device->can_program_online_access_codes) {
-  // Create the time-bound online access code.
-  $seam->access_codes->create(
-    device_id: $device->device_id,
-    name: "my time-bound code",
-    starts_at:  "2025-01-01T16:00:00Z",
-    ends_at: "2025-01-22T12:00:00Z",
-    code: "2345"
-  );
-}
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "access_code_id": "11111111-1111-1111-1111-666666666666",
   "device_id": "11111111-1111-1111-1111-444444444444",
@@ -713,32 +625,7 @@ if ($device->can_program_online_access_codes) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-// Get the device.
-Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device supports online access codes.
-if (device.CanProgramOnlineAccessCodes == true) {
-  // Create the time-bound online access code.
-  seam.AccessCodes.Create(
-    deviceId: device.DeviceId,
-    name: "my time-bound code",
-    startsAt: "2025-01-01T16:00:00Z",
-    endsAt: "2025-01-22T12:00:00Z",
-    code: "2345"
-  );
-}
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "type": "time_bound",
   "access_code_id": "11111111-1111-1111-1111-666666666666",
@@ -751,8 +638,7 @@ if (device.CanProgramOnlineAccessCodes == true) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### 2. Verify Successful Time-Bound Code Programming
 

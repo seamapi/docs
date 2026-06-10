@@ -7,10 +7,9 @@ First, create the [user identity](../../capability-guides/mobile-access/managing
 
 After creating and configuring the user identity, create a [client session](/core-concepts/authentication/client-session-tokens/index) and capture the resulting [client session token](/core-concepts/authentication/client-session-tokens/index). When you use this token in your application, such as in a [Seam Component](/ui-components/overview/index), Seam limits you user's access to only the devices that you specified for the associated user identity.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 // Create the user identity.
 const user_identity = await seam.userIdentities.create({
     user_identity_key: "user-1"
@@ -33,11 +32,7 @@ const client_session = await seam.clientSessions.create({
 const token = client_session.token;
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 # Create the user identity.
 user_identity=$(curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
@@ -79,11 +74,7 @@ client_session=$(curl -X 'POST' \
 token=$(echo $client_session | jq -r '.client_session.token')
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 # Create the user identity.
 user_identity = seam.user_identities.create(
     user_identity_key="user-1"
@@ -106,11 +97,7 @@ client_session = seam.client_sessions.create(
 token = client_session.token
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 // Create the user identity.
 $user_identity = $seam->user_identities->create(
   user_identity_key: "user-1"
@@ -133,5 +120,4 @@ $client_session = $seam->client_sessions->create(
 $token = $client_session->token;
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

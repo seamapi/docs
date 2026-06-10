@@ -75,10 +75,9 @@ To control your Minut sensor via the Seam API, you must first authorize your Sea
 
 ### Create a Connect Webview
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 const seam = new Seam()
 const connectWebview = await seam.connectWebviews.create({
@@ -89,11 +88,7 @@ console.log(connectWebview.login_successful) // false
 console.log(connectWebview.url)
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 seam = Seam()
 
@@ -105,13 +100,9 @@ assert webview.login_successful is False
 
 print(webview.url)
 
-````
+```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new(api_key: "MY_API_KEY")
@@ -124,14 +115,9 @@ puts webview.login_successful # false
 
 # Send the webview URL to your user
 puts webview.url
-````
+```
 
-
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 use Seam\SeamClient;
 $seam = new SeamClient("YOUR_API_KEY");
 $webview = $seam->connect_webviews->create(
@@ -143,8 +129,7 @@ echo json_encode($webview)
 */
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Authorize Your Workspace
 
@@ -164,59 +149,43 @@ Navigate to the URL returned by the Webview object. Since you are using a sandbo
 
 After you complete the login above, you'll get an event for [`connected_account.created`](https://docs.seam.co/latest/api/events/)if you set up a [webhook handler](https://docs.seam.co/latest/developer-tools/webhooks). Otherwise you can just poll for the webview until it's status changes, as shown below:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const updatedWebview = await seam.connectWebviews.get(
   connectWebview.connect_webview_id,
 )
 console.log(updatedWebview.login_successful) // true
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 updated_webview = seam.connect_webviews.get(
     webview.connect_webview_id
 )
 
 assert updated_webview.login_successful # true
 
-````
+```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 updated_webview = seam.connect_webviews.get(connect_webview_id: webview.connect_webview_id)
 puts updated_webview.login_successful # true
-````
+```
 
-
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 $webview = $seam->connect_webviews->get($webview->id);
 echo json_encode($webview);
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## 3. Retrieve Minut Noise Sensors
 
 Minut noise sensors appear with the `device_type` `"minut_sensor"`. The Minut noise sensors report properties in addition to noise levels, namely `temperature` and `humidity`.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const devices = await seam.devices.list({
   device_type: 'minut_sensor',
 })
@@ -298,11 +267,7 @@ console.log(devices[0])
 */
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 sensors = seam.devices.list(device_type="minut_sensor")
 
 sensors[0]
@@ -441,13 +406,9 @@ sensors[0]
 
 # )
 
-````
+```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 seam.devices.list(
   device_type: "minut_sensor"
 ).first
@@ -514,14 +475,9 @@ seam.devices.list(
 #   created_at=2023-05-08 17:01:45.79 UTC
 #   errors=[]
 #   warnings=[]>
-````
+```
 
-
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 $devices = $seam->devices->list(device_type: 'minut_sensor');
 echo json_encode($device[0]);
 /*
@@ -601,8 +557,7 @@ echo json_encode($device[0]);
 */
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## 4. Receive Noise Events
 
@@ -620,10 +575,9 @@ Minut has a builtin threshold that can be triggered multiple times. Each Minut n
 
 </Info>
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 app.post('/my_webhook_endpoint', (req, res) => {
   const event = req.body.event;
   // {
@@ -642,11 +596,7 @@ app.post('/my_webhook_endpoint', (req, res) => {
 });
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 @app.route("/my_webhook_endpoint", methods=["POST"])
 def endpoint():
     event = request.json["event"]
@@ -661,13 +611,9 @@ def endpoint():
     #    created_at: "2023-03-14T05:00:35.451Z"
     # }
 
-````
+```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 post '/my_webhook_endpoint' do
   request.body.rewind
   payload = JSON.parse(request.body.read)
@@ -687,14 +633,9 @@ post '/my_webhook_endpoint' do
   #   }
   # }
 end
-````
+```
 
-
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 $app->post('/my_webhook_endpoint', function (Request $request, Response $response) {
     $data = $request->getParsedBody();
     $event = $data['event'];
@@ -714,8 +655,7 @@ $app->post('/my_webhook_endpoint', function (Request $request, Response $respons
 });
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## Next Steps
 

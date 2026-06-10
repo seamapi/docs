@@ -18,12 +18,11 @@ To set a temperature threshold for a thermostat, issue a [`/thermostats/set_temp
 - `lower_limit_celsius` or `lower_limit_fahrenheit`
 - `upper_limit_celsius` or `upper_limit_fahrenheit`
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.thermostats.setTemperatureThreshold({
   device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
   lower_limit_celsius: 4,
@@ -31,19 +30,7 @@ await seam.thermostats.setTemperatureThreshold({
 })
 ```
 
-**Response:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/thermostats/set_temperature_threshold' \
   -H 'accept: application/json' \
@@ -56,21 +43,7 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 seam.thermostats.set_temperature_threshold(
   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius = 4,
@@ -78,35 +51,11 @@ seam.thermostats.set_temperature_threshold(
 )
 ```
 
-**Response:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 # Coming soon!
 ```
 
-**Response:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $seam->thermostats->set_temperature_threshold(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   lower_limit_celsius: 4,
@@ -114,30 +63,43 @@ $seam->thermostats->set_temperature_threshold(
 );
 ```
 
+```java C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
+```json cURL
+{
+  "ok": true
+}
+```
 
-<Tab title="C#">
+```json Python
+None
+```
 
-**Request:**
+```json Ruby
+# Coming soon!
+```
 
-```java
+```json PHP
+void
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -145,20 +107,55 @@ void
 
 The temperature threshold range that you set for a thermostat is a property of the [`thermostat`](https://docs.seam.co/latest/api/thermostats/) resource itself. To view the threshold values, use the [`/devices/get`](https://docs.seam.co/latest/api/devices/get) endpoint and inspect the `thermostat.temperature_threshold`.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.devices.get({
   device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
 })
 ```
 
+```bash cURL
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+}'
+```
+
+```python Python
+seam.devices.get(
+  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+)
+```
+
+```ruby Ruby
+# Coming soon!
+```
+
+```php PHP
+$seam->devices->get(
+  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   device_id: 'a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
   temperature_threshold: {
@@ -171,27 +168,7 @@ await seam.devices.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
-# Use GET or POST.
-curl -X 'GET' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-}'
-```
-
-**Response:**
-
-```json
+```json cURL
 {
   "device": {
     "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
@@ -207,21 +184,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.devices.get(
-  device_id = "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-)
-```
-
-**Response:**
-
-```
+```json Python
 Device(
   device_id='a4b775e3-feb2-4c6b-8e78-a73ec2d70b61',
   temperature_threshold={
@@ -234,37 +197,11 @@ Device(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```json Ruby
 # Coming soon!
 ```
 
-**Response:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->devices->get(
-  device_id: "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61"
-);
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "device_id": "a4b775e3-feb2-4c6b-8e78-a73ec2d70b61",
   "temperature_threshold": {
@@ -277,24 +214,11 @@ $seam->devices->get(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Response:**
-
-```
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

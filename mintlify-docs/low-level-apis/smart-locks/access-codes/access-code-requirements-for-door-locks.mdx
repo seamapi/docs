@@ -43,12 +43,11 @@ Sample set of access code requirements:
 }
 ```
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const device = await seam.devices.get({
   device_id: 'ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
 })
@@ -57,9 +56,111 @@ console.log(device)
 console.log(device.properties.code_constraints)
 ```
 
+```bash cURL
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "ed4bb795-f29f-43e5-bc0f-35f69f9141b5"
+}'
+```
+
+```python Python
+pprint(seam.locks.get(device="ed4bb795-f29f-43e5-bc0f-35f69f9141b5"))
+```
+
+```ruby Ruby
+puts client.devices.get(device_id: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5").inspect
+```
+
+```php PHP
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
+
+# Inspect this device to see which capabilities it supports
+echo json_encode($device->properties, JSON_PRETTY_PRINT);
+
+// {
+//     "online": true,
+//     "locked": false,
+//     "name": "Office Lock",
+//     "battery_level": 0.86,
+//     "battery": {
+//         "level": 0.86,
+//         "status": "full"
+//     },
+//     "manufacturer": "nuki",
+//     "supported_code_lengths": [
+//         6
+//     ],
+//     "code_constraints": [
+//         {
+//             "constraint_type": "cannot_start_with_12"
+//         },
+//         {
+//             "constraint_type": "no_zeros"
+//         },
+//         {
+//             "constraint_type": "name_length",
+//             "max_length": 20
+//         }
+//     ],
+//     "model": {
+//         "display_name": "Lock",
+//         "manufacturer_display_name": "Nuki"
+//     },
+//     "image_url": "https:\/\/connect.getseam.com\/assets\/images\/devices\/nuki_smart_lock_3_pro_black.png",
+//     "image_alt_text": "Nuki Smart Lock 3.0 Pro Black, Front",
+//     "nuki_metadata": {
+//         "device_id": "545636389",
+//         "device_name": "Office Lock",
+//         "keypad_battery_critical": false
+//     }
+// }
+```
+
+```csharp C#
+var device = seam.Devices.Get(deviceId: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5");
+Console.WriteLine("Device ID: " + device.DeviceId);
+Console.WriteLine("Type: " + device.DeviceType);
+Console.WriteLine("Capabilities supported:");
+foreach (var capability in device.CapabilitiesSupported)
+{
+  Console.WriteLine(capability);
+}
+Console.WriteLine("Supported code lengths:");
+if (device.Properties.SupportedCodeLengths is not null)
+{
+  foreach (var supportedCodeLength in device.Properties.SupportedCodeLengths)
+  {
+    Console.WriteLine(supportedCodeLength);
+
+  }
+}
+Console.WriteLine("Code constraints:");
+if (device.Properties.CodeConstraints is not null)
+{
+  foreach (var codeConstraint in device.Properties.CodeConstraints)
+  {
+    Console.WriteLine(codeConstraint);
+  }
+}
+Console.WriteLine("Supports backup access code pool: " + device.Properties.SupportsBackupAccessCodePool);
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   device_id: 'ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
   device_type: 'nuki_lock',
@@ -100,27 +201,7 @@ console.log(device.properties.code_constraints)
 ]
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
-# Use GET or POST.
-curl -X 'GET' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "ed4bb795-f29f-43e5-bc0f-35f69f9141b5"
-}'
-```
-
-**Response:**
-
-```json
+```json cURL
 {
   "device": {
     "device_id": "ed4bb795-f29f-43e5-bc0f-35f69f9141b5",
@@ -178,19 +259,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-pprint(seam.locks.get(device="ed4bb795-f29f-43e5-bc0f-35f69f9141b5"))
-```
-
-**Response:**
-
-```
+```json Python
 Device(device_id='ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
        device_type='nuki_lock',
        location=None,
@@ -224,19 +293,7 @@ Device(device_id='ed4bb795-f29f-43e5-bc0f-35f69f9141b5',
        is_managed=True)
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-puts client.devices.get(device_id: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5").inspect
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::Device:0x00438
   device_id="ed4bb795-f29f-43e5-bc0f-35f69f9141b5"
   device_type="nuki_lock"
@@ -250,97 +307,7 @@ puts client.devices.get(device_id: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5").inspe
   is_managed=true>
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
-use Seam\SeamClient;
-
-$seam = new SeamClient("YOUR_API_KEY");
-
-$device = $seam->devices->get("0e2e6262-7f91-4970-a58d-47ef30b41e2e");
-
-# Inspect this device to see which capabilities it supports
-echo json_encode($device->properties, JSON_PRETTY_PRINT);
-
-// {
-//     "online": true,
-//     "locked": false,
-//     "name": "Office Lock",
-//     "battery_level": 0.86,
-//     "battery": {
-//         "level": 0.86,
-//         "status": "full"
-//     },
-//     "manufacturer": "nuki",
-//     "supported_code_lengths": [
-//         6
-//     ],
-//     "code_constraints": [
-//         {
-//             "constraint_type": "cannot_start_with_12"
-//         },
-//         {
-//             "constraint_type": "no_zeros"
-//         },
-//         {
-//             "constraint_type": "name_length",
-//             "max_length": 20
-//         }
-//     ],
-//     "model": {
-//         "display_name": "Lock",
-//         "manufacturer_display_name": "Nuki"
-//     },
-//     "image_url": "https:\/\/connect.getseam.com\/assets\/images\/devices\/nuki_smart_lock_3_pro_black.png",
-//     "image_alt_text": "Nuki Smart Lock 3.0 Pro Black, Front",
-//     "nuki_metadata": {
-//         "device_id": "545636389",
-//         "device_name": "Office Lock",
-//         "keypad_battery_critical": false
-//     }
-// }
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-var device = seam.Devices.Get(deviceId: "ed4bb795-f29f-43e5-bc0f-35f69f9141b5");
-Console.WriteLine("Device ID: " + device.DeviceId);
-Console.WriteLine("Type: " + device.DeviceType);
-Console.WriteLine("Capabilities supported:");
-foreach (var capability in device.CapabilitiesSupported)
-{
-  Console.WriteLine(capability);
-}
-Console.WriteLine("Supported code lengths:");
-if (device.Properties.SupportedCodeLengths is not null)
-{
-  foreach (var supportedCodeLength in device.Properties.SupportedCodeLengths)
-  {
-    Console.WriteLine(supportedCodeLength);
-
-  }
-}
-Console.WriteLine("Code constraints:");
-if (device.Properties.CodeConstraints is not null)
-{
-  foreach (var codeConstraint in device.Properties.CodeConstraints)
-  {
-    Console.WriteLine(codeConstraint);
-  }
-}
-Console.WriteLine("Supports backup access code pool: " + device.Properties.SupportsBackupAccessCodePool);
-```
-
-**Response:**
-
-```
+```json C#
 Device ID: ed4bb795-f29f-43e5-bc0f-35f69f9141b5
 Type: NukiLock
 Capabilities supported:
@@ -362,8 +329,7 @@ Code constraints:
 Supports backup access code pool: True
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

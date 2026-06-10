@@ -7,12 +7,11 @@ You can update the starting and ending times for an Access Grant.
 
 Note that you cannot update the access methods, entrances, or spaces associated with an Access Grant. To change these access characteristics, delete the Access Grant and recreate it.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessGrants.update({
   access_grant_id: '4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1',
   starts_at: '2025-06-19T18:01:32.000Z',
@@ -20,19 +19,7 @@ await seam.accessGrants.update({
 })
 ```
 
-**Output:**
-
-```javascript
-// void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```curl
+```curl cURL
 curl --include --request POST "https://connect.getseam.com/access_grants/update" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
@@ -44,19 +31,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/update"
 EOF
 ```
 
-**Output:**
-
-```curl
-{}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 seam.access_grants.update(
     access_grant_id="4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
     starts_at="2025-06-19T18:01:32.000Z",
@@ -64,19 +39,7 @@ seam.access_grants.update(
 )
 ```
 
-**Output:**
-
-```python
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 seam.access_grants.update(
   access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
   starts_at: "2025-06-19T18:01:32.000Z",
@@ -84,19 +47,7 @@ seam.access_grants.update(
 )
 ```
 
-**Output:**
-
-```ruby
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 $seam->access_grants->update(
     access_grant_id: "4ec65722-bf38-4b2f-b4c8-f488aa6ba3f1",
     starts_at: "2025-06-19T18:01:32.000Z",
@@ -104,30 +55,41 @@ $seam->access_grants->update(
 );
 ```
 
-**Output:**
-
-```php
-
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```csharp C#
 // Coming Soon!
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```javascript JavaScript
+// void
+```
+
+```curl cURL
+{}
+```
+
+```python Python
+None
+```
+
+```ruby Ruby
+nil
+```
+
+```php PHP
+
+```
+
+```json C#
 // Coming Soon!
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

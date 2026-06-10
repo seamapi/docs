@@ -11,9 +11,9 @@ An account can become disconnected for many reasons, including the following:
 
 When an account is disconnected, Seam emits an error like the following example on the `connected_account`:
 
-<Tabs>
-<Tab title="Python">
-```python
+<CodeGroup>
+
+```python Python
 seam.connected_accounts.get(email_address="jane@example.com")
 # ConnectedAccount(
 #   ...
@@ -26,8 +26,7 @@ seam.connected_accounts.get(email_address="jane@example.com")
 # )
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 Seam recommends adding error handling logic to you application for this error. Your app should also include a fallback case if it encounters an unknown generic error code.
 

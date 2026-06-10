@@ -13,12 +13,11 @@ You can use custom metadata to store a custom payload or object, tailored to the
 
 Use the [Update Device](https://docs.seam.co/latest/api/devices/update) method with the optional [`custom_metadata` property](https://docs.seam.co/latest/api/devices/#properties) to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const deviceUpdate = await seam.devices.update({
   device_id: '30fd243b-3054-4384-a713-5487076a3826',
   custom_metadata: {
@@ -29,19 +28,7 @@ const deviceUpdate = await seam.devices.update({
 console.log(deviceUpdate)
 ```
 
-**Response:**
-
-```json
-{ "ok": true }
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/devices/update' \
   -H 'accept: application/json' \
@@ -55,21 +42,7 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 device_update = seam.devices.update(
     device = "30fd243b-3054-4384-a713-5487076a3826",
     custom_metadata = {
@@ -80,19 +53,7 @@ device_update = seam.devices.update(
 pprint(device_update)
 ```
 
-**Response:**
-
-```
-True
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 device_update = client.devices.update(
   device_id: "30fd243b-3054-4384-a713-5487076a3826",
   custom_metadata: {
@@ -103,19 +64,7 @@ device_update = client.devices.update(
 puts device_update.inspect
 ```
 
-**Response:**
-
-```
-{"ok"=>true}
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $device_update = $seam->devices->update(
   device_id: "30fd243b-3054-4384-a713-5487076a3826",
   custom_metadata: array('internal_account_id' => 'user-1')
@@ -123,19 +72,7 @@ $device_update = $seam->devices->update(
 echo json_encode($device_update, JSON_PRETTY_PRINT);
 ```
 
-**Response:**
-
-```json
-true
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```csharp C#
 var customMetadata = new Dictionary<string, string>()
 {
   {"internal_account_id", "user-1"}
@@ -149,9 +86,35 @@ var deviceUpdate = seam.Devices.Update(
 Console.WriteLine(deviceUpdate);
 ```
 
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{ "ok": true }
+```
+
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+True
+```
+
+```json Ruby
+{"ok"=>true}
+```
+
+```json PHP
+true
+```
+
+```json C#
 {
   "device_id": "30fd243b-3054-4384-a713-5487076a3826",
   "device_type": "schlage_lock",
@@ -161,5 +124,4 @@ Console.WriteLine(deviceUpdate);
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

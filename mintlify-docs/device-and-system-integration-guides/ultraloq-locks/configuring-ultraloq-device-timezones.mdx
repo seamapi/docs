@@ -62,10 +62,9 @@ If you attempt to create a time-bound access code without configuring the timezo
 
 When you first connect an Ultraloq device, it will have the `ultraloq_time_zone_unknown` warning:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -89,11 +88,7 @@ const timezone = device.properties.ultraloq_metadata?.time_zone
 console.log(`Current timezone: ${timezone}`) // Will be null if not configured
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 device=$(curl -X 'POST' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
@@ -110,11 +105,7 @@ echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_z
 echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -136,11 +127,7 @@ timezone = device.properties.get("ultraloq_metadata", {}).get("time_zone")
 print(f"Current timezone: {timezone}")  # Will be None if not configured
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -162,11 +149,7 @@ timezone = device.properties.dig("ultraloq_metadata", "time_zone")
 puts "Current timezone: #{timezone}"  # Will be nil if not configured
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -195,11 +178,7 @@ $timezone = $device->properties->ultraloq_metadata->time_zone ?? null;
 echo "Current timezone: " . ($timezone ?? "not set") . "\n";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -222,11 +201,7 @@ var timezone = device.Properties.UltraloqMetadata?.TimeZone;
 Console.WriteLine($"Current timezone: {timezone ?? "not set"}");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
 
@@ -252,8 +227,7 @@ String timezone = device.getProperties().getUltraloqMetadata().getTimeZone();
 System.out.println("Current timezone: " + (timezone != null ? timezone : "not set"));
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -263,10 +237,9 @@ System.out.println("Current timezone: " + (timezone != null ? timezone : "not se
 
 To configure the timezone for a single device, use the `/devices/report_provider_metadata` endpoint:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -286,11 +259,7 @@ await seam.devices.reportProviderMetadata({
 console.log('✓ Timezone configured successfully!')
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/devices/report_provider_metadata' \
   -H 'accept: application/json' \
@@ -308,11 +277,7 @@ curl -X 'POST' \
   }'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -332,11 +297,7 @@ seam.devices.report_provider_metadata(
 print("✓ Timezone configured successfully!")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -356,11 +317,7 @@ seam.devices.report_provider_metadata(
 puts "✓ Timezone configured successfully!"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -383,11 +340,7 @@ $seam->devices->report_provider_metadata(
 echo "✓ Timezone configured successfully!";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -407,11 +360,7 @@ seam.Devices.ReportProviderMetadata(
 Console.WriteLine("✓ Timezone configured successfully!");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 
 Seam seam = Seam.builder().build();
@@ -433,17 +382,15 @@ seam.devices().reportProviderMetadata(
 System.out.println("✓ Timezone configured successfully!");
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Multiple Devices (Batch Configuration)
 
 You can configure timezones for multiple devices in a single API call:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -466,11 +413,7 @@ await seam.devices.reportProviderMetadata({
 console.log(`✓ Configured timezone for ${devices.length} devices`)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 # Get all Ultraloq devices
 devices=$(curl -X 'POST' \
   'https://connect.getseam.com/devices/list' \
@@ -498,11 +441,7 @@ curl -X 'POST' \
   }')"
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -526,11 +465,7 @@ seam.devices.report_provider_metadata(
 print(f"✓ Configured timezone for {len(devices)} devices")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -553,11 +488,7 @@ seam.devices.report_provider_metadata(
 puts "✓ Configured timezone for #{devices.length} devices"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -583,11 +514,7 @@ $seam->devices->report_provider_metadata(devices: $deviceMetadata);
 echo "✓ Configured timezone for " . count($devices) . " devices";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 using System.Linq;
 
@@ -609,11 +536,7 @@ seam.Devices.ReportProviderMetadata(
 Console.WriteLine($"✓ Configured timezone for {devices.Count()} devices");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
 import java.util.stream.Collectors;
@@ -644,8 +567,7 @@ seam.devices().reportProviderMetadata(
 System.out.println("✓ Configured timezone for " + devices.size() + " devices");
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -681,10 +603,9 @@ For a complete list of valid IANA timezones, see:
 
 Most programming languages also provide timezone lookup utilities:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 // Using Intl API (built-in)
 const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
 console.log(`User's timezone: ${userTimezone}`)
@@ -696,11 +617,7 @@ const allTimezones = moment.tz.names()
 console.log(`Available timezones: ${allTimezones.length}`)
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 import pytz
 
 # List all available timezones
@@ -713,11 +630,7 @@ print(ny_timezones)
 # ['America/New_York', 'America/North_Dakota/New_Salem', ...]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require 'tzinfo'
 
 # List all available timezones
@@ -730,8 +643,7 @@ puts ny_timezones
 # ["America/New_York", "America/North_Dakota/New_Salem", ...]
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -739,10 +651,9 @@ puts ny_timezones
 
 After configuring the timezone, verify that the configuration was successful:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -768,11 +679,7 @@ if (!hasWarning) {
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 device=$(curl -X 'POST' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
@@ -789,11 +696,7 @@ echo $device | jq -r '.device.properties.ultraloq_metadata.time_zone'
 echo $device | jq '.device.warnings[] | select(.warning_code == "ultraloq_time_zone_unknown")'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -817,11 +720,7 @@ else:
   print("✗ Warning still present - check timezone configuration")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -843,11 +742,7 @@ else
 end
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -878,11 +773,7 @@ if (!$hasWarning) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -909,11 +800,7 @@ else
 }
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
 
@@ -941,8 +828,7 @@ if (!hasWarning) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 After configuration, the device will also have the timezone in `device.location.timezone`:
 
@@ -967,10 +853,9 @@ After configuration, the device will also have the timezone in `device.location.
 
 You can change a device's timezone at any time by calling `/devices/report_provider_metadata` again with the new timezone.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -990,11 +875,7 @@ await seam.devices.reportProviderMetadata({
 console.log('✓ Timezone updated to Pacific Time')
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/devices/report_provider_metadata' \
   -H 'accept: application/json' \
@@ -1012,11 +893,7 @@ curl -X 'POST' \
   }'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -1036,11 +913,7 @@ seam.devices.report_provider_metadata(
 print("✓ Timezone updated to Pacific Time")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -1060,11 +933,7 @@ seam.devices.report_provider_metadata(
 puts "✓ Timezone updated to Pacific Time"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -1087,11 +956,7 @@ $seam->devices->report_provider_metadata(
 echo "✓ Timezone updated to Pacific Time";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -1111,11 +976,7 @@ seam.Devices.ReportProviderMetadata(
 Console.WriteLine("✓ Timezone updated to Pacific Time");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 
 Seam seam = Seam.builder().build();
@@ -1137,8 +998,7 @@ seam.devices().reportProviderMetadata(
 System.out.println("✓ Timezone updated to Pacific Time");
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 **Impact on Existing Access Codes:**
 

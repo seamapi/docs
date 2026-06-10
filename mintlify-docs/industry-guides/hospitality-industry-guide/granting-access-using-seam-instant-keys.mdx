@@ -30,12 +30,11 @@ This section details the steps in this process and provides accompanying Seam AP
 
 Use the Seam API to create a `user_identity`. A user identity represents the hotel guest.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Create a user identity for your user.
 const janeUser = await seam.userIdentities.create({
   full_name: 'Jane Doe',
@@ -43,24 +42,7 @@ const janeUser = await seam.userIdentities.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "full_name": "Jane Doe",
-  "phone_number": "+15555550100",
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Create a user identity for your user.
 jane_user=$(curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
@@ -73,9 +55,50 @@ jane_user=$(curl -X 'POST' \
 }')
 ```
 
+```python Python
+# Create a user identity for your user.
+jane_user = seam.user_identities.create(
+  full_name = "Jane Doe",
+  phone_number = "+15555550100"
+)
+```
+
+```ruby Ruby
+# Create a user identity for your user.
+jane_user = seam.user_identities.create(
+  full_name: "Jane Doe",
+  phone_number: "+15555550100"
+)
+```
+
+```php PHP
+// Create a user identity for your user.
+$jane_user = $seam->user_identities->create(
+  full_name: "Jane Doe",
+  phone_number: "+15555550100"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name": "Jane Doe",
+  "phone_number": "+15555550100",
+  ...
+}
+```
+
+```json cURL
 {
   "user_identity": {
     "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
@@ -87,23 +110,7 @@ jane_user=$(curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-# Create a user identity for your user.
-jane_user = seam.user_identities.create(
-  full_name = "Jane Doe",
-  phone_number = "+15555550100"
-)
-```
-
-**Output:**
-
-```
+```json Python
 UserIdentity(
   user_identity_id='43947360-cdc8-4db6-8b22-e079416d1d8b',
   full_name='Jane Doe',
@@ -112,23 +119,7 @@ UserIdentity(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-# Create a user identity for your user.
-jane_user = seam.user_identities.create(
-  full_name: "Jane Doe",
-  phone_number: "+15555550100"
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::UserIdentity:0x005f0
   user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b"
   full_name="Jane Doe"
@@ -137,23 +128,7 @@ jane_user = seam.user_identities.create(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-// Create a user identity for your user.
-$jane_user = $seam->user_identities->create(
-  full_name: "Jane Doe",
-  phone_number: "+15555550100"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "full_name": "Jane Doe",
@@ -162,24 +137,11 @@ $jane_user = $seam->user_identities->create(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -187,12 +149,11 @@ $jane_user = $seam->user_identities->create(
 
 To create an Access Grant, specify the user identity, entrance or space IDs, and starting and ending times. Include `mobile_key` as a requested access method.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessGrants.create({
   // You can specify the ID of an existing user identity or
   // use the user_identity parameter to create a new one.
@@ -208,29 +169,7 @@ await seam.accessGrants.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-13T15:00:00.000Z",
-  "ends_at": "2025-07-16T11:00:00.000Z",
-  "instant_key_url": "https://ik.seam.co/ABCXYZ",
-  ...
-}
-
-// Share the instant_key_url with your user.
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # You can specify the ID of an existing user identity or
 # use the user_identity parameter to create a new one.
 # Also, you can specify acs_entrance_ids, space_ids, or both.
@@ -253,31 +192,7 @@ curl -X 'POST' \
 }"
 ```
 
-**Output:**
-
-```json
-{
-  "access_grant": {
-    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-    "display_name": "My Access Grant",
-    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-    "starts_at": "2025-07-13T15:00:00.000Z",
-    "ends_at": "2025-07-16T11:00:00.000Z",
-    "instant_key_url": "https://ik.seam.co/ABCXYZ",
-    ...
-  }
-}
-
-# Share the instant_key_url with your user.
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 seam.access_grants.create(
   # You can specify the ID of an existing user identity or
   # use the user_identity parameter to create a new one.
@@ -295,29 +210,7 @@ seam.access_grants.create(
 )
 ```
 
-**Output:**
-
-```python
-AccessGrant(
-  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  display_name="My Access Grant",
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z",
-  instant_key_url="https://ik.seam.co/ABCXYZ",
-  ...
-)
-
-# Share the instant_key_url with your user.
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 seam.access_grants.create(
   # You can specify the ID of an existing user identity or
   # use the user_identity parameter to create a new one.
@@ -332,29 +225,7 @@ seam.access_grants.create(
 )
 ```
 
-**Output:**
-
-```ruby
-{
-  "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name" => "My Access Grant",
-  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at" => "2025-07-13T15:00:00.000Z",
-  "ends_at" => "2025-07-16T11:00:00.000Z",
-  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
-  ...
-}
-
-# Share the instant_key_url with your user.
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 $seam->access_grants->create(
   // You can specify the ID of an existing user identity or
   // use the user_identity parameter to create a new one.
@@ -372,9 +243,75 @@ $seam->access_grants->create(
 );
 ```
 
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```php
+<CodeGroup>
+
+```json JavaScript
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+  ...
+}
+
+// Share the instant_key_url with your user.
+```
+
+```json cURL
+{
+  "access_grant": {
+    "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+    "display_name": "My Access Grant",
+    "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+    "starts_at": "2025-07-13T15:00:00.000Z",
+    "ends_at": "2025-07-16T11:00:00.000Z",
+    "instant_key_url": "https://ik.seam.co/ABCXYZ",
+    ...
+  }
+}
+
+# Share the instant_key_url with your user.
+```
+
+```python Python
+AccessGrant(
+  access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  display_name="My Access Grant",
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z",
+  instant_key_url="https://ik.seam.co/ABCXYZ",
+  ...
+)
+
+# Share the instant_key_url with your user.
+```
+
+```ruby Ruby
+{
+  "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name" => "My Access Grant",
+  "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at" => "2025-07-13T15:00:00.000Z",
+  "ends_at" => "2025-07-16T11:00:00.000Z",
+  "instant_key_url" => "https://ik.seam.co/ABCXYZ",
+  ...
+}
+
+# Share the instant_key_url with your user.
+```
+
+```php PHP
 [
   "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   "display_name" => "My Access Grant",
@@ -388,24 +325,11 @@ $seam->access_grants->create(
 // Share the instant_key_url with your user.
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

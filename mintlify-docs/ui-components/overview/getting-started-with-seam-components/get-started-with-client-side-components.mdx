@@ -122,9 +122,9 @@ We recommend either using a version 4 UUID that you generate and store with your
 
 Once you have selected a user identifier key, update your code as follows:
 
-<Tabs>
-<Tab title="Plain HTML">
-```html
+<CodeGroup>
+
+```html Plain HTML
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -151,10 +151,7 @@ Once you have selected a user identifier key, update your code as follows:
 </html>
 ```
 
-</Tab>
-
-<Tab title="React">
-```javascript
+```javascript React
 import { ConnectAccountButton, DeviceTable, SeamProvider } from "@seamapi/react";
 
 export const App = () => {
@@ -173,12 +170,9 @@ export const App = () => {
   )
 }
 
-````
+```
 
-</Tab>
-
-<Tab title="Any JavaScript Framework">
-```html
+```html Any JavaScript Framework
 <seam-connect-account-button
   publishable-key="your_publishable_key"
   user-identifier-key="your_user_identifier_key"
@@ -189,10 +183,9 @@ export const App = () => {
   user-identifier-key="your_user_identifier_key"
 >
 </seam-device-table>
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 Now, press the Connect Account button to open a Seam Connect Webview where you can login with your device provider. After logging in, you will be redirected back to this page where you should see your devices.
 

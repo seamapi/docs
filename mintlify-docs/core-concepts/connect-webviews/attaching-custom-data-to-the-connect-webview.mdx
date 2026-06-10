@@ -23,12 +23,11 @@ To add `custom_metadata` to a Connect Webview:
 1. Execute [`/connect_webviews/create`](https://docs.seam.co/latest/api/connect_webviews/create) and specify the internal ID as a key:value pair in the `custom_metadata`.\
    For example:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.connectWebviews.create({
   provider_category: 'stable',
   custom_metadata: {
@@ -37,25 +36,7 @@ await seam.connectWebviews.create({
 })
 ```
 
-**Response:**
-
-```json
-{
-  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=3937fa0b-ab09-4a00-9f10-69864750ed07&auth_token=PVHmtzULRFEQDny776KDsegSQ5t2SsZHR',
-  status: 'pending',
-  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
-  custom_metadata: { id: 'internalId1' },
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/connect_webviews/create' \
   -H 'accept: application/json' \
@@ -69,9 +50,53 @@ curl -X 'POST' \
 }'
 ```
 
+```python Python
+seam.connect_webviews.create(
+  provider_category = "stable",
+  custom_metadata = {
+    "your_app_user_id": "xxxx" # Insert your custom data here.
+  }
+)
+```
+
+```ruby Ruby
+client.connect_webviews.create(
+  provider_category: "stable",
+  custom_metadata: {
+    "your_app_user_id": "xxxx" # Insert your custom data here.
+  }
+)
+```
+
+```csharp C#
+var customMetadata = new Dictionary<string, string>()
+{
+  {"id", "internal-user-id"}
+};
+
+seam.ConnectWebviews.Create(
+  providerCategory: Seam.Api.ConnectWebviews.CreateRequest.ProviderCategoryEnum.Stable,
+  customMetadata: customMetadata
+);
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=3937fa0b-ab09-4a00-9f10-69864750ed07&auth_token=PVHmtzULRFEQDny776KDsegSQ5t2SsZHR',
+  status: 'pending',
+  workspace_id: '398d80b7-3f96-47c2-b85a-6f8ba21d07be',
+  custom_metadata: { id: 'internalId1' },
+  ...
+}
+```
+
+```json cURL
 {
   "connect_webview": {
     "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=3c3f4c15-e7db-47c6-bc5a-1bf206ff269c&auth_token=LrpMC4MVHAY8YJRcNFeX1nQcb7tGNwpot",
@@ -86,24 +111,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.connect_webviews.create(
-  provider_category = "stable",
-  custom_metadata = {
-    "your_app_user_id": "xxxx" # Insert your custom data here.
-  }
-)
-```
-
-**Response:**
-
-```
+```json Python
 ConnectWebview(
   workspace_id='398d80b7-3f96-47c2-b85a-6f8ba21d07be',
   connect_webview_id='49e050d9-cb4c-4600-b24d-cdf9dd2f92b7',
@@ -114,24 +122,7 @@ ConnectWebview(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-client.connect_webviews.create(
-  provider_category: "stable",
-  custom_metadata: {
-    "your_app_user_id": "xxxx" # Insert your custom data here.
-  }
-)
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::ConnectWebview:0x00438
   url="https://connect.getseam.com/connect_webviews/view?connect_webview_id=7fe89a3e-a1d7-44dd-b53f-35f8f5f92607&auth_token=3jJWKRBcJvZeGcrA8UnC1y2RieyHDPSwV"
   status="pending"
@@ -141,27 +132,7 @@ client.connect_webviews.create(
 >
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-var customMetadata = new Dictionary<string, string>()
-{
-  {"id", "internal-user-id"}
-};
-
-seam.ConnectWebviews.Create(
-  providerCategory: Seam.Api.ConnectWebviews.CreateRequest.ProviderCategoryEnum.Stable,
-  customMetadata: customMetadata
-);
-```
-
-**Response:**
-
-```
+```json C#
 {
   "connect_webview_id": "3874d8b4-4bb5-470a-9fc7-a54931a4b933",
   "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=3874d8b4-4bb5-470a-9fc7-a54931a4b933&auth_token=F9t4SkQ6R8mZjJEBV5K4dwoVdkR6VtjdJ",
@@ -173,8 +144,7 @@ seam.ConnectWebviews.Create(
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 2. Your app presents the Connect Webview to your user.
 3. The user completes the Connect Webview.

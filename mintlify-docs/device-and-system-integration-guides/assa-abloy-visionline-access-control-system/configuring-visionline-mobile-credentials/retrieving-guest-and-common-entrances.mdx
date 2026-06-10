@@ -9,9 +9,9 @@ You can retrieve lists of entrances. You may want to display entrances categoriz
 
 To fetch only guest entrances, filter entrances to include only those with a `visionline_metadata.properties.door_category` of `guest`.
 
-<Tabs>
-<Tab title="Python">
-```python
+<CodeGroup>
+
+```python Python
 all_entrances = seam.acs.entrances.list(
   acs_system_id=acs_system.acs_system_id
 )
@@ -32,10 +32,9 @@ all_entrances,
 guest_entrance_category_types
 )
 
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ***
 
@@ -43,9 +42,9 @@ guest_entrance_category_types
 
 To fetch only common entrances, filter entrances to include only those with a `visionline_metadata.properties.door_category` of `common` or `common (PMS)`.
 
-<Tabs>
-<Tab title="Python">
-```python
+<CodeGroup>
+
+```python Python
 all_entrances = seam.acs.entrances.list(
   acs_system_id=acs_system.acs_system_id
 )
@@ -64,7 +63,6 @@ common_entrances = filter_entrances_by_profile_type(
     all_entrances,
     common_entrance_category_types
 )
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>

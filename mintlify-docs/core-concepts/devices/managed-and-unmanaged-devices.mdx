@@ -14,10 +14,9 @@ Seam makes it possible to switch a device back and forth between the `managed` a
 
 When you convert a device to an `unmanaged` state (that is, "unamange a device"), Seam pauses billing for the device and converts all the managed device resources (for example, access codes) to unmanaged resources. As a result, Seam no longer monitors the lifecycle of these unmanaged resources.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const deviceId = '77208078-6dd7-44e5-a3e4-a2ed3a34efc9'
 
 // Take a managed device.
@@ -61,11 +60,7 @@ console.log(unmanagedDevice)
 */
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 seam = Seam()
 
@@ -98,11 +93,7 @@ print(unmanaged_device)
 #                 is_managed=False)
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -125,11 +116,7 @@ puts unmanaged_device.inspect
 #   properties={"name"=>"FRONT DOOR", "online"=>true, "manufacturer"=>"august", "image_url"=>"https://connect.getseam.com/assets/images/devices/yale_assure-lock-touchscreen-wifi-smart-lock_satin-nickel_front.png", "image_alt_text"=>"Yale Assure Touchscreen Wifi Smart Lock, Satin Nickel, Front", "model"=>{"display_name"=>"Lock", "manufacturer_display_name"=>"August"}}>
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 use Seam\SeamClient;
 
 $seam = new SeamClient("YOUR_API_KEY");
@@ -169,16 +156,15 @@ echo json_encode($unmanaged_device, JSON_PRETTY_PRINT);
 // }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## Convert an Unmanaged Device to Managed
 
 To convert an unmanaged device back to managed (that is, to "manage a device"), retrieve the device using the unmanaged device API and use the `update` function to change the managed state of the device back to `true`. Note that you must also convert unmanaged device resources (for example, access codes) back to managed.
 
-<Tabs>
-<Tab title="JavaScript">
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const deviceId = "77208078-6dd7-44e5-a3e4-a2ed3a34efc9"
 
 // Retrieve the unmanaged device if needed.
@@ -238,12 +224,9 @@ is_managed: true
 }
 _/
 
-````
+```
 
-</Tab>
-
-<Tab title="Python">
-```python
+```python Python
 from seam import Seam
 seam = Seam()
 
@@ -289,12 +272,9 @@ print(device)
 #        connected_account_id='5fe50f46-274f-4a03-ba95-3a517464fdc7',
 #        workspace_id='1d2826eb-4a26-4f46-bddb-ef5898baa859',
 #        created_at='2023-08-30T06:45:59.213Z')
-````
+```
 
-</Tab>
-
-<Tab title="Ruby">
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -327,12 +307,9 @@ puts device.inspect
 
 # is_managed=true>
 
-````
+```
 
-</Tab>
-
-<Tab title="PHP">
-```php
+```php PHP
 use Seam\SeamClient;
 
 $seam = new SeamClient("YOUR_API_KEY");
@@ -400,18 +377,17 @@ echo json_encode($device, JSON_PRETTY_PRINT);
 //     "errors": [],
 //     "warnings": []
 // }
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## Automatically Set New Devices to Unmanaged
 
 You can configure a [Connect Webview](/core-concepts/connect-webviews/index) so that it automatically sets all new devices added to the workspace through this Connect Webview to `unmanaged` by default. To do so, when creating a Connect Webview, set `automatically_manage_new_devices` to `false`. Once the Connect Webview is authorized, Seam sets any device added to the workspace to `unmanaged`.
 
-<Tabs>
-<Tab title="JavaScript">
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const connectWebview = await seam.connectWebviews.create({
     // accepted_providers: ["schlage", "august"...etc], <== Use this property for precise control of accepted providers.
     provider_category: "stable",
@@ -453,6 +429,5 @@ _/
 
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 ```

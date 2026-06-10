@@ -44,11 +44,11 @@ You can use client sessions in the following two ways:
 
 To [create a client session](https://docs.seam.co/latest/api/client_sessions/create) for an existing user with connected accounts in your workspace, include the IDs of the user's connected accounts (`connected_account_ids`) and [provide your own unique internal user ID (`user_identifier_key`)](/ui-components/overview/getting-started-with-seam-components/get-started-with-client-side-components#3-select-a-user-identifier-key). Then, use the generated client session token to retrieve and manage the resources authorized through the connected accounts associated with this client session.
 
-<Tabs>
-<Tab title="JavaScript">
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const client_session = await seam.clientSessions.create({
   user_identifier_key: 'internal-user-id-1',
   connected_account_ids: [
@@ -60,14 +60,13 @@ const client_session = await seam.clientSessions.create({
 console.log(`Client session token: ${client_session.token}`)
 ```
 
+</CodeGroup>
+
 **Response:**
 
-```
+```json
 Client session token: seam_cst1891oqCmE_6dBwV8PJ2Ffoe9dWYVyMfVHq
 ```
-
-</Tab>
-</Tabs>
 
 ---
 
@@ -75,13 +74,15 @@ Client session token: seam_cst1891oqCmE_6dBwV8PJ2Ffoe9dWYVyMfVHq
 
 You can [list all client sessions](https://docs.seam.co/latest/api/client_sessions/list) within your workspace.
 
-<Tabs>
-<Tab title="JavaScript">
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.clientSessions.list()
 ```
+
+</CodeGroup>
 
 **Response:**
 
@@ -119,24 +120,23 @@ await seam.clientSessions.list()
 ]
 ```
 
-</Tab>
-</Tabs>
-
 ---
 
 ## Get a Client Session
 
 To [get a specific client session](https://docs.seam.co/latest/api/client_sessions/get), provide the client session ID (`client_session_id`).
 
-<Tabs>
-<Tab title="JavaScript">
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const clientSession = await seam.clientSessions.get({
   client_session_id: "c75d4330-ae01-4dfd-b6c5-f3e94e0d8168",
 }))
 ```
+
+</CodeGroup>
 
 **Response:**
 
@@ -157,27 +157,21 @@ const clientSession = await seam.clientSessions.get({
 }
 ```
 
-</Tab>
-</Tabs>
-
 ---
 
 ## Delete a Client Session
 
 To [delete a client session](https://docs.seam.co/latest/api/client_sessions/delete), provide the client session ID (`client_session_id`).
 
-<Tabs>
-<Tab title="JavaScript">
-**Request:**
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 await seam.clientSessions.delete({
   client_session_id: '639eb8af-19a9-4ae5-817c-6ad08fd078e7',
 })
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

@@ -9,12 +9,11 @@ You can update any active or upcoming access codes using the [Update Access Code
 
 When modifying an access code, adjust the properties of the access code, such as the `code`, `name`, `starts_at`, and `ends_at` to the new desired values.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessCodes.update({
   access_code_id: '11111111-1111-1111-1111-555555555555',
   name: 'my updated code name',
@@ -24,19 +23,7 @@ await seam.accessCodes.update({
 })
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/update' \
   -H 'accept: application/json' \
@@ -51,21 +38,7 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 seam.access_codes.update(
   access_code = "11111111-1111-1111-1111-555555555555",
   name = "my updated code name",
@@ -75,19 +48,7 @@ seam.access_codes.update(
 )
 ```
 
-**Output:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 client.access_codes.update(
   access_code_id: "11111111-1111-1111-1111-555555555555",
   name: "my updated code name",
@@ -97,19 +58,7 @@ client.access_codes.update(
 )
 ```
 
-**Output:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 $seam->access_codes->update(
   access_code_id: "11111111-1111-1111-1111-555555555555",
   name: "my updated code name",
@@ -119,19 +68,7 @@ $seam->access_codes->update(
 );
 ```
 
-**Output:**
-
-```
-void
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```csharp C#
 seam.AccessCodes.Update(
   accessCodeId: "11111111-1111-1111-1111-555555555555",
   name: "my updated code name",
@@ -141,14 +78,39 @@ seam.AccessCodes.Update(
 );
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
-</Tabs>
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+nil
+```
+
+```json PHP
+void
+```
+
+```json C#
+void
+```
+
+</CodeGroup>
 
 ## 2. Verify that the access code has been updated
 

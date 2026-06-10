@@ -26,33 +26,15 @@ Use [Get Device](https://docs.seam.co/latest/api/devices/get) for a specific dev
 
 If either of these capability flags is `false` or not present, you can view the [properties](https://docs.seam.co/latest/api/devices/#properties) of the device, [errors](https://docs.seam.co/latest/api/devices/#errors) or [warnings](https://docs.seam.co/latest/api/devices/#warnings) for the device, and [events](https://docs.seam.co/latest/api/events/) related to the device to learn more about the cause of these issues. For example, you could examine `device.properties.online`. In addition, you could look for a `device.disconnected` event.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.devices.get('11111111-1111-1111-1111-444444444444')
 ```
 
-**Response:**
-
-```json
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  can_remotely_lock: true,   // You can use seam.locks.lockDoor() on this device.
-  can_remotely_unlock: true, // You can use seam.locks.unlockDoor() on this device.
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
@@ -64,9 +46,38 @@ curl -X 'GET' \
 }'
 ```
 
+```python Python
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
+```
+
+```ruby Ruby
+client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
+```
+
+```php PHP
+$seam->devices->get("11111111-1111-1111-1111-444444444444");
+```
+
+```csharp C#
+seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  can_remotely_lock: true,   // You can use seam.locks.lockDoor() on this device.
+  can_remotely_unlock: true, // You can use seam.locks.unlockDoor() on this device.
+  ...
+}
+```
+
+```json cURL
 {
   "device": {
     "device_id": "11111111-1111-1111-1111-444444444444",
@@ -78,19 +89,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Python
 Device(
   device_id='11111111-1111-1111-1111-444444444444',
   can_remotely_lock=True,   // You can use seam.locks.lock_door() on this device.
@@ -99,19 +98,7 @@ Device(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Ruby
 <
   Seam::Device:0x00438
     device_id="11111111-1111-1111-1111-444444444444"
@@ -121,19 +108,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->devices->get("11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "can_remotely_lock": true,   // You can use $seam->locks->lock_door() on this device.
@@ -142,19 +117,7 @@ $seam->devices->get("11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```
+```json C#
 {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "can_remotely_lock": true,   // You can use seam.Locks.LockDoor() on this device.
@@ -163,8 +126,7 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -172,12 +134,11 @@ seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
 You can lock a door using the [`lock_door`](https://docs.seam.co/latest/api/locks/lock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](#verifying-the-success-of-a-lock-or-unlock-action).
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device.
 const device = await seam.devices.get({
   device_id: '11111111-1111-1111-1111-444444444444',
@@ -192,27 +153,7 @@ if (device.can_remotely_lock) {
 }
 ```
 
-**Response:**
-
-```json
-{
-  "actionAttempt": {
-    "status": "success",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "action_type": "LOCK_DOOR",
-    "result": {},
-    "error": null
-  }
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Get the device.
 device=$(
   # Use GET or POST.
@@ -239,9 +180,70 @@ if  $(jq -r '.device.can_remotely_lock' <<< ${device}); then \
 fi
 ```
 
+```python Python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
+
+# Confirm that the device can remotely lock.
+if device.can_remotely_lock:
+  # Perform the lock operation.
+  seam.locks.lock_door(device_id=device.device_id)
+```
+
+```ruby Ruby
+# Get the device.
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
+
+# Confirm that the device can remotely lock.
+if (device.can_remotely_lock)
+  # Perform the lock operation.
+  client.locks.lock_door(device_id: device.device_id)
+end
+```
+
+```php PHP
+// Get the device.
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device can remotely lock.
+if ($device->can_remotely_lock) {
+  // Perform the lock operation.
+  $seam->locks->lock_door(device_id: $device->device_id);
+}
+```
+
+```csharp C#
+// Get the device.
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device can remotely lock.
+if (device.CanRemotelyLock == true) {
+  // Perform the lock operation.
+  seam.Locks.LockDoor(deviceId: device.DeviceId);
+}
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "LOCK_DOOR",
+    "result": {},
+    "error": null
+  }
+}
+```
+
+```json cURL
 {
   "action_attempt": {
     "status": "pending",
@@ -254,27 +256,7 @@ fi
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
-
-# Confirm that the device can remotely lock.
-if device.can_remotely_lock:
-  # Perform the lock operation.
-  seam.locks.lock_door(device_id=device.device_id)
-```
-
-**Response:**
-
-```
+```json Python
 ActionAttempt(status='pending',
               action_type='LOCK_DOOR',
               action_attempt_id='11111111-2222-3333-4444-555555555555',
@@ -282,26 +264,7 @@ ActionAttempt(status='pending',
               error={})
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-# Get the device.
-device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
-
-# Confirm that the device can remotely lock.
-if (device.can_remotely_lock)
-  # Perform the lock operation.
-  client.locks.lock_door(device_id: device.device_id)
-end
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::ActionAttempt:0x00438
   status="pending"
   action_type="LOCK_DOOR"
@@ -309,26 +272,7 @@ end
   result=nil>
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-// Get the device.
-$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device can remotely lock.
-if ($device->can_remotely_lock) {
-  // Perform the lock operation.
-  $seam->locks->lock_door(device_id: $device->device_id);
-}
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
   "action_type": "LOCK_DOOR",
@@ -338,26 +282,7 @@ if ($device->can_remotely_lock) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-// Get the device.
-Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device can remotely lock.
-if (device.CanRemotelyLock == true) {
-  // Perform the lock operation.
-  seam.Locks.LockDoor(deviceId: device.DeviceId);
-}
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "status": "pending",
   "action_type": "LOCK_DOOR",
@@ -365,8 +290,7 @@ if (device.CanRemotelyLock == true) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -374,12 +298,11 @@ if (device.CanRemotelyLock == true) {
 
 You can unlock a door using the [unlock_door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. To confirm the success of the action, see [Verifying the success of a lock or unlock action](#verifying-the-success-of-a-lock-or-unlock-action).
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device.
 const device = await seam.devices.get({
   device_id: '11111111-1111-1111-1111-444444444444',
@@ -394,29 +317,7 @@ if (device.can_remotely_unlock) {
 }
 ```
 
-**Response:**
-
-```json
-{
-  "actionAttempt": {
-    "status": "success",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "action_type": "UNLOCK_DOOR",
-    "result": {
-      "was_confirmed_by_device": false
-    },
-    "error": null
-  }
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Get the device.
 device=$(
   # Use GET or POST.
@@ -443,9 +344,72 @@ if  $(jq -r '.device.can_remotely_unlock' <<< ${device}); then \
 fi
 ```
 
+```python Python
+# Get the device.
+device = seam.devices.get(
+  device_id="11111111-1111-1111-1111-444444444444"
+)
+
+# Confirm that the device can remotely unlock.
+if device.can_remotely_unlock:
+  # Perform the unlock operation.
+  seam.locks.unlock_door(device_id=device.device_id)
+```
+
+```ruby Ruby
+# Get the device.
+device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
+
+# Confirm that the device can remotely unlock.
+if (device.can_remotely_unlock)
+  # Perform the unlock operation.
+  client.locks.unlock_door(device_id: device.device_id)
+end
+```
+
+```php PHP
+// Get the device.
+$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device can remotely unlock.
+if ($device->can_remotely_unlock) {
+  // Perform the unlock operation.
+  $seam->locks->unlock_door(device_id: $device->device_id);
+}
+```
+
+```csharp C#
+// Get the device.
+Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
+
+// Confirm that the device can remotely unlock.
+if (device.CanRemotelyUnlock == true) {
+  // Perform the unlock operation.
+  seam.Locks.UnlockDoor(deviceId: device.DeviceId);
+}
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "UNLOCK_DOOR",
+    "result": {
+      "was_confirmed_by_device": false
+    },
+    "error": null
+  }
+}
+```
+
+```json cURL
 {
   "action_attempt": {
     "status": "pending",
@@ -458,27 +422,7 @@ fi
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-# Get the device.
-device = seam.devices.get(
-  device_id="11111111-1111-1111-1111-444444444444"
-)
-
-# Confirm that the device can remotely unlock.
-if device.can_remotely_unlock:
-  # Perform the unlock operation.
-  seam.locks.unlock_door(device_id=device.device_id)
-```
-
-**Response:**
-
-```
+```json Python
 ActionAttempt(status='pending',
               action_type='UNLOCK_DOOR',
               action_attempt_id='11111111-2222-3333-4444-555555555555',
@@ -486,26 +430,7 @@ ActionAttempt(status='pending',
               error={})
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-# Get the device.
-device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
-
-# Confirm that the device can remotely unlock.
-if (device.can_remotely_unlock)
-  # Perform the unlock operation.
-  client.locks.unlock_door(device_id: device.device_id)
-end
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::ActionAttempt:0x00438
   status="pending"
   action_type="UNLOCK_DOOR"
@@ -513,26 +438,7 @@ end
   result=nil>
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-// Get the device.
-$device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device can remotely unlock.
-if ($device->can_remotely_unlock) {
-  // Perform the unlock operation.
-  $seam->locks->unlock_door(device_id: $device->device_id);
-}
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
   "action_type": "UNLOCK_DOOR",
@@ -544,26 +450,7 @@ if ($device->can_remotely_unlock) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-// Get the device.
-Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
-
-// Confirm that the device can remotely unlock.
-if (device.CanRemotelyUnlock == true) {
-  // Perform the unlock operation.
-  seam.Locks.UnlockDoor(deviceId: device.DeviceId);
-}
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "status": "pending",
   "action_type": "UNLOCK_DOOR",
@@ -571,8 +458,7 @@ if (device.CanRemotelyUnlock == true) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -582,20 +468,50 @@ if (device.CanRemotelyUnlock == true) {
 
 When initiating a lock or unlock action, the Seam API returns an action attempt, which monitors the success or failure of the action.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.locks.lockDoor({
   device_id: '11111111-1111-1111-1111-444444444444',
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/lock_door' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "device_id": "11111111-1111-1111-1111-444444444444"
+}'
+```
+
+```python Python
+seam.locks.lock_door(device_id="11111111-1111-1111-1111-444444444444")
+```
+
+```ruby Ruby
+client.locks.lock_door(device_id: "11111111-1111-1111-1111-444444444444")
+```
+
+```php PHP
+$seam->locks->lock_door(device_id: "11111111-1111-1111-1111-444444444444");
+```
+
+```csharp C#
+seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "actionAttempt": {
     "status": "success",
@@ -607,26 +523,7 @@ await seam.locks.lockDoor({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/locks/lock_door' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "device_id": "11111111-1111-1111-1111-444444444444"
-}'
-```
-
-**Response:**
-
-```json
+```json cURL
 {
   "action_attempt": {
     "status": "pending",
@@ -639,19 +536,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.locks.lock_door(device_id="11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Python
 ActionAttempt(status='pending',
               action_type='LOCK_DOOR',
               action_attempt_id='11111111-2222-3333-4444-555555555555',
@@ -659,19 +544,7 @@ ActionAttempt(status='pending',
               error={})
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-client.locks.lock_door(device_id: "11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::ActionAttempt:0x00438
   status="pending"
   action_type="LOCK_DOOR"
@@ -679,19 +552,7 @@ client.locks.lock_door(device_id: "11111111-1111-1111-1111-444444444444")
   result=nil>
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->locks->lock_door(device_id: "11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
   "action_type": "LOCK_DOOR",
@@ -701,19 +562,7 @@ $seam->locks->lock_door(device_id: "11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "status": "pending",
   "action_type": "LOCK_DOOR",
@@ -721,8 +570,7 @@ seam.Locks.LockDoor(deviceId: "11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### 2. Poll the Action Attempt to Verify the Success of the Action
 
@@ -736,38 +584,17 @@ Use the `action_attempt_id` from the prior response to make a [Get Action Attemp
   flows.
 </Info>
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.actionAttempts.get({
   action_attempt_id: '11111111-2222-3333-4444-555555555555',
 })
 ```
 
-**Response:**
-
-```json
-{
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-  "action_type": "LOCK_DOOR",
-  "result": {
-    "was_confirmed_by_device": true
-  },
-  "error": null
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/action_attempts/get' \
@@ -779,9 +606,41 @@ curl -X 'GET' \
 }'
 ```
 
+```python Python
+seam.action_attempts.get(action_attempt_id="11111111-2222-3333-4444-555555555555")
+```
+
+```ruby Ruby
+client.action_attempts.get(action_attempt_id: "11111111-2222-3333-4444-555555555555")
+```
+
+```php PHP
+$seam->action_attempts->get(action_attempt_id: "11111111-2222-3333-4444-555555555555");
+```
+
+```csharp C#
+seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "status": "success",
+  "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+  "action_type": "LOCK_DOOR",
+  "result": {
+    "was_confirmed_by_device": true
+  },
+  "error": null
+}
+```
+
+```json cURL
 {
   "action_attempt": {
     "status": "success",
@@ -796,19 +655,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.action_attempts.get(action_attempt_id="11111111-2222-3333-4444-555555555555")
-```
-
-**Response:**
-
-```
+```json Python
 ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
               action_type='LOCK_DOOR',
               status='success',
@@ -816,19 +663,7 @@ ActionAttempt(action_attempt_id='11111111-2222-3333-4444-555555555555',
               error=None)
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-client.action_attempts.get(action_attempt_id: "11111111-2222-3333-4444-555555555555")
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::ActionAttempt:0x00438
   status="success"
   action_attempt_id="11111111-2222-3333-4444-555555555555"
@@ -836,19 +671,7 @@ client.action_attempts.get(action_attempt_id: "11111111-2222-3333-4444-555555555
   result={"was_confirmed_by_device"=>true}>
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->action_attempts->get(action_attempt_id: "11111111-2222-3333-4444-555555555555");
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
   "action_type": "LOCK_DOOR",
@@ -860,19 +683,7 @@ $seam->action_attempts->get(action_attempt_id: "11111111-2222-3333-4444-55555555
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
-```
-
-**Response:**
-
-```
+```json C#
 {
   "status": "success",
   "action_type": "LOCK_DOOR",
@@ -884,8 +695,7 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -893,35 +703,15 @@ seam.ActionAttempts.Get("11111111-2222-3333-4444-555555555555");
 
 To retrieve the locked status of a specific door lock, use the [Get Device](https://docs.seam.co/latest/api/devices/get) endpoint by providing the `device_id` of the desired lock. This operation returns detailed information, including the current locked status. Note that if the lock is offline, Seam does not return the `device.locked` property.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.devices.get('11111111-1111-1111-1111-444444444444')
 ```
 
-**Response:**
-
-```json
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  properties: {
-    locked: true,
-    ...
-  },
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/devices/get' \
@@ -933,9 +723,40 @@ curl -X 'GET' \
 }'
 ```
 
+```python Python
+seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
+```
+
+```ruby Ruby
+client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
+```
+
+```php PHP
+$seam->devices->get("11111111-1111-1111-1111-444444444444");
+```
+
+```csharp C#
+seam.Devices.Get("11111111-1111-1111-1111-444444444444");
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  properties: {
+    locked: true,
+    ...
+  },
+  ...
+}
+```
+
+```json cURL
 {
   "lock": {
     "device_id": "11111111-1111-1111-1111-444444444444",
@@ -949,19 +770,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.devices.get(device_id="11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Python
 Device(
   device_id='11111111-1111-1111-1111-444444444444',
   properties={
@@ -972,19 +781,7 @@ Device(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::Device:0x00438
   device_id="11111111-1111-1111-1111-444444444444"
   properties={
@@ -995,19 +792,7 @@ client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->devices->get("11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "properties": {
@@ -1018,19 +803,7 @@ $seam->devices->get("11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-seam.Devices.Get("11111111-1111-1111-1111-444444444444");
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "device_id": "11111111-1111-1111-1111-444444444444",
   "properties": {
@@ -1041,8 +814,7 @@ seam.Devices.Get("11111111-1111-1111-1111-444444444444");
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

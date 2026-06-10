@@ -29,10 +29,9 @@ To access provider metadata, make any call that returns device properties, such 
 
 For example, to get SmartThings metadata:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const devices = await seam.devices.list()
 
 console.log(devices[0].properties.smartthings_metadata)
@@ -45,11 +44,7 @@ console.log(devices[0].properties.smartthings_metadata)
 */
 ```
 
-</Tab>
-
-<Tab title="HTTP">
-
-```bash
+```bash HTTP
 curl \
   -H 'Authorization: Bearer MY_API_KEY' \
   https://connect.getseam.com/devices/list
@@ -68,8 +63,7 @@ curl \
 # ...
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## Provider Metadata Definitions
 

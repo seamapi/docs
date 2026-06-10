@@ -114,11 +114,11 @@ Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** p
 
 Create a `connect_webview` object and then note the returned URL.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
@@ -134,20 +134,7 @@ console.log(connectWebview.login_successful) // false
 console.log(connectWebview.url)
 ```
 
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/connect_webviews/create' \
   -H 'accept: application/json' \
@@ -161,20 +148,7 @@ curl -X 'POST' \
   # the Connect Webview authorization flow to your user.
 ```
 
-**Output:**
-
-```
-Login Successful (false): false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
@@ -190,19 +164,7 @@ assert connect_webview.login_successful is False
 print(connect_webview.url)
 ```
 
-**Output:**
-
-```
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
@@ -218,20 +180,7 @@ puts connect_webview.login_successful # false
 puts connect_webview.url
 ```
 
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -248,20 +197,7 @@ echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
 echo $connect_webview->url;
 ```
 
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient(apiToken: SEAM_API_KEY);
@@ -277,16 +213,42 @@ Console.WriteLine(connectWebview.LoginSuccessful); // False
 Console.WriteLine(connectWebview.Url);
 ```
 
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
+```json cURL
+Login Successful (false): false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json Python
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json Ruby
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json PHP
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json C#
 False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -311,11 +273,11 @@ Complete the Connect Webview authorization flow by entering the following [Smart
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const updatedConnectWebview = await seam.connectWebviews.get({
   connect_webview_id: connectWebview.connect_webview_id,
 })
@@ -323,19 +285,7 @@ const updatedConnectWebview = await seam.connectWebviews.get({
 console.log(updatedConnectWebview.login_successful) // true
 ```
 
-**Output:**
-
-```
-true
-```
-
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 curl -X 'GET' \
   'https://connect.getseam.com/connect_webviews/get' \
   -H 'accept: application/json' \
@@ -346,37 +296,13 @@ curl -X 'GET' \
 }" | jq -r '"Login Successful (true): " + (.connect_webview.login_successful | tostring)'
 ```
 
-**Output:**
-
-```
-Login Successful (true): true
-```
-
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 updated_connect_webview = seam.connect_webviews.get(connect_webview.connect_webview_id)
 
 assert updated_connect_webview.login_successful is True # True
 ```
 
-**Output:**
-
-```
-True
-```
-
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 updated_connect_webview = seam.connect_webviews.get(
   connect_webview_id: connect_webview.connect_webview_id
 )
@@ -384,19 +310,7 @@ updated_connect_webview = seam.connect_webviews.get(
 puts updated_connect_webview.login_successful # true
 ```
 
-**Output:**
-
-```
-true
-```
-
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 $updated_connect_webview = $seam->connect_webviews->get(
   connect_webview_id: $connect_webview->connect_webview_id
 );
@@ -404,19 +318,7 @@ $updated_connect_webview = $seam->connect_webviews->get(
 echo $updated_connect_webview->login_successful ? 'true' : 'false', "\n"; // true
 ```
 
-**Output:**
-
-```
-true
-```
-
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```csharp C#
 var updatedConnectWebview = seam.ConnectWebviews.Get(
   connectWebviewId: connectWebview.connectWebviewId
 );
@@ -424,15 +326,37 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
 Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 ```
 
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+true
 ```
+
+```json cURL
+Login Successful (true): true
+```
+
+```json Python
 True
 ```
 
+```json Ruby
+true
+```
 
-</Tab>
-</Tabs>
+```json PHP
+true
+```
+
+```json C#
+True
+```
+
+</CodeGroup>
 
 ---
 
@@ -442,11 +366,11 @@ When you link an SmartThings account with Seam, we create a `device` object to r
 
 The Seam API exposes each device's properties, such as the door lock status, power status, capabilities, and so on.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
 const allSmartThingsLocks = await seam.devices.list({
@@ -464,39 +388,7 @@ console.log(frontDoor.properties.locked) // true
 console.log(frontDoor)
 ```
 
-**Output:**
-
-```json
-true
-true
-{
-  device_id: '11111111-1111-1111-1111-444444444444',
-  display_name: 'Lock 1',
-  workspace_id: '00000000-0000-0000-0000-000000000000',
-  connected_account_id: '11111111-1111-1111-1111-222222222222',
-  created_at: '2024-05-29T20:08:48.878Z',
-  properties: {
-    manufacturer: 'smartthings',
-    online: true,
-    locked: true,
-    battery: {
-      level: 0.9999532347993827,
-      status: 'full'
-    },
-    ...
-  },
-  can_remotely_unlock: true,
-  ...
-}
-```
-
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Retrieve all devices, filtered by manufacturer, which is
 # one of several filters that the list endpoint supports.
 all_smartthings_locks=$(
@@ -521,9 +413,103 @@ echo $(jq -r '"Locked (true): " + (.properties.locked | tostring)' <<< ${front_d
 echo ${front_door}
 ```
 
+```python Python
+# Retrieve all devices, filtered by manufacturer,
+# which is one of several filters that list() supports.
+all_smartthings_locks = seam.devices.list(manufacturer="smartthings")
+
+# Select the first device as an example.
+front_door = all_smartthings_locks[0]
+
+# Inspect specific properties.
+assert front_door.properties["online"] is True # True
+assert front_door.properties["locked"] is True # True
+
+# View the entire returned device object.
+pprint(front_door)
+```
+
+```ruby Ruby
+# Retrieve all devices, filtered by manufacturer,
+# which is one of several filters that list() supports.
+all_smartthings_locks = seam.devices.list(manufacturer: "smartthings")
+
+# Select the first device as an example.
+front_door = all_smartthings_locks[0]
+
+# Inspect specific properties.
+puts front_door.properties.online # true
+puts front_door.properties.locked # true
+
+# View the entire returned device object.
+puts front_door.inspect
+```
+
+```php PHP
+// Retrieve all devices, filtered by manufacturer,
+// which is one of several filters that list() supports.
+$all_smartthings_locks = $seam->devices->list(manufacturer: "smartthings");
+
+// Select the first device as an example.
+$front_door = $all_smartthings_locks[0];
+
+// Inspect specific properties.
+echo $front_door->properties->online ? 'true' : 'false', "\n"; // true
+echo $front_door->properties->locked ? 'true' : 'false', "\n"; // true
+
+// View the entire returned device object.
+echo json_encode($front_door, JSON_PRETTY_PRINT);
+```
+
+```csharp C#
+// Retrieve all devices, filtered by manufacturer,
+// which is one of several filters that list() supports.
+var allSmartThingsLocks = seam.Devices.List(
+  manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.Smartthings
+);
+
+// Select the first device as an example.
+Device frontDoor = allSmartThingsLocks[0];
+
+// Inspect specific properties.
+Console.WriteLine(frontDoor.Properties.Online); // true
+Console.WriteLine(frontDoor.Properties.Locked); // true
+
+// View the entire returned device object.
+Console.WriteLine(frontDoor);
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+true
+true
+{
+  device_id: '11111111-1111-1111-1111-444444444444',
+  display_name: 'Lock 1',
+  workspace_id: '00000000-0000-0000-0000-000000000000',
+  connected_account_id: '11111111-1111-1111-1111-222222222222',
+  created_at: '2024-05-29T20:08:48.878Z',
+  properties: {
+    manufacturer: 'smartthings',
+    online: true,
+    locked: true,
+    battery: {
+      level: 0.9999532347993827,
+      status: 'full'
+    },
+    ...
+  },
+  can_remotely_unlock: true,
+  ...
+}
+```
+
+```json cURL
 Online (true): true
 Locked (true): true
 {
@@ -547,31 +533,7 @@ Locked (true): true
 }
 ```
 
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
-# Retrieve all devices, filtered by manufacturer,
-# which is one of several filters that list() supports.
-all_smartthings_locks = seam.devices.list(manufacturer="smartthings")
-
-# Select the first device as an example.
-front_door = all_smartthings_locks[0]
-
-# Inspect specific properties.
-assert front_door.properties["online"] is True # True
-assert front_door.properties["locked"] is True # True
-
-# View the entire returned device object.
-pprint(front_door)
-```
-
-**Output:**
-
-```
+```json Python
 Device(
   device_id='11111111-1111-1111-1111-444444444444',
   display_name='Lock 1',
@@ -593,31 +555,7 @@ Device(
 )
 ```
 
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
-# Retrieve all devices, filtered by manufacturer,
-# which is one of several filters that list() supports.
-all_smartthings_locks = seam.devices.list(manufacturer: "smartthings")
-
-# Select the first device as an example.
-front_door = all_smartthings_locks[0]
-
-# Inspect specific properties.
-puts front_door.properties.online # true
-puts front_door.properties.locked # true
-
-# View the entire returned device object.
-puts front_door.inspect
-```
-
-**Output:**
-
-```json
+```json Ruby
 true
 true
 <
@@ -642,31 +580,7 @@ true
 >
 ```
 
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-$all_smartthings_locks = $seam->devices->list(manufacturer: "smartthings");
-
-// Select the first device as an example.
-$front_door = $all_smartthings_locks[0];
-
-// Inspect specific properties.
-echo $front_door->properties->online ? 'true' : 'false', "\n"; // true
-echo $front_door->properties->locked ? 'true' : 'false', "\n"; // true
-
-// View the entire returned device object.
-echo json_encode($front_door, JSON_PRETTY_PRINT);
-```
-
-**Output:**
-
-```json
+```json PHP
 true
 true
 {
@@ -690,33 +604,7 @@ true
 }
 ```
 
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-var allSmartThingsLocks = seam.Devices.List(
-  manufacturer: Seam.Api.Devices.ListRequest.ManufacturerEnum.Smartthings
-);
-
-// Select the first device as an example.
-Device frontDoor = allSmartThingsLocks[0];
-
-// Inspect specific properties.
-Console.WriteLine(frontDoor.Properties.Online); // true
-Console.WriteLine(frontDoor.Properties.Locked); // true
-
-// View the entire returned device object.
-Console.WriteLine(frontDoor);
-```
-
-**Output:**
-
-```json
+```json C#
 True
 True
 {
@@ -740,9 +628,7 @@ True
 }
 ```
 
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -761,11 +647,11 @@ Try out the following actions on your SmartThings-connected lock:
 
 To unlock a door, use the [Unlock Door](https://docs.seam.co/latest/api/locks/unlock_door) endpoint. Specify the device that you want to unlock by including the `device_id` in the request body. This endpoint returns an [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) to track the progress of the unlock operation.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Confirm that the device can remotely unlock.
 // You're using a capability flag here!
 if (frontDoor.can_remotely_unlock) {
@@ -777,27 +663,7 @@ if (frontDoor.can_remotely_unlock) {
 }
 ```
 
-**Output:**
-
-```json
-{
-  "actionAttempt": {
-    "status": "success",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "action_type": "UNLOCK_DOOR",
-    "result": {},
-    "error": null
-  }
-}
-```
-
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Confirm that the device can remotely unlock.
 # You're using a capability flag here!
 if  $(jq -r '.can_remotely_lock' <<< ${front_door}); then \
@@ -814,9 +680,64 @@ if  $(jq -r '.can_remotely_lock' <<< ${front_door}); then \
 fi
 ```
 
+```python Python
+# Confirm that the device can remotely unlock.
+# You're using a capability flag here!
+if front_door.can_remotely_unlock:
+  # Perform the unlock operation
+  # and return an action attempt.
+  action_attempt=seam.locks.unlock_door(device_id=front_door.device_id)
+```
+
+```ruby Ruby
+# Confirm that the device can remotely unlock.
+# You're using a capability flag here!
+if (front_door.can_remotely_unlock)
+  # Perform the unlock operation
+  # and return an action attempt.
+  action_attempt = seam.locks.unlock_door(device_id: front_door.device_id)
+end
+```
+
+```php PHP
+// Confirm that the device can remotely unlock.
+// You're using a capability flag here!
+if ($front_door->can_remotely_unlock) {
+  // Perform the unlock operation
+  // and return an action attempt.
+  $action_attempt = $seam->locks->unlock_door(device_id: $front_door->device_id);
+}
+```
+
+```csharp C#
+// Confirm that the device can remotely unlock.
+// You're using a capability flag here!
+if (frontDoor.CanRemotelyUnlock == true) {
+  // Perform the unlock operation
+  // and return an action attempt.
+  ActionAttempt actionAttempt = seam.Locks.UnlockDoor(deviceId: frontDoor.DeviceId);
+}
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "UNLOCK_DOOR",
+    "result": {},
+    "error": null
+  }
+}
+```
+
+```json cURL
 {
   "action_attempt": {
     "status": "pending",
@@ -829,24 +750,7 @@ fi
 }
 ```
 
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
-# Confirm that the device can remotely unlock.
-# You're using a capability flag here!
-if front_door.can_remotely_unlock:
-  # Perform the unlock operation
-  # and return an action attempt.
-  action_attempt=seam.locks.unlock_door(device_id=front_door.device_id)
-```
-
-**Output:**
-
-```
+```json Python
 ActionAttempt(
   status='pending',
   action_type='UNLOCK_DOOR',
@@ -856,25 +760,7 @@ ActionAttempt(
 )
 ```
 
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
-# Confirm that the device can remotely unlock.
-# You're using a capability flag here!
-if (front_door.can_remotely_unlock)
-  # Perform the unlock operation
-  # and return an action attempt.
-  action_attempt = seam.locks.unlock_door(device_id: front_door.device_id)
-end
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::ActionAttempt:0x00438
   status="pending"
   action_type="UNLOCK_DOOR"
@@ -882,25 +768,7 @@ end
   result=nil>
 ```
 
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if ($front_door->can_remotely_unlock) {
-  // Perform the unlock operation
-  // and return an action attempt.
-  $action_attempt = $seam->locks->unlock_door(device_id: $front_door->device_id);
-}
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
   "action_type": "UNLOCK_DOOR",
@@ -910,25 +778,7 @@ if ($front_door->can_remotely_unlock) {
 }
 ```
 
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
-// Confirm that the device can remotely unlock.
-// You're using a capability flag here!
-if (frontDoor.CanRemotelyUnlock == true) {
-  // Perform the unlock operation
-  // and return an action attempt.
-  ActionAttempt actionAttempt = seam.Locks.UnlockDoor(deviceId: frontDoor.DeviceId);
-}
-```
-
-**Output:**
-
-```json
+```json C#
 {
   "status": "pending",
   "action_type": "UNLOCK_DOOR",
@@ -936,19 +786,17 @@ if (frontDoor.CanRemotelyUnlock == true) {
 }
 ```
 
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 You can track the status of the unlock operation to confirm that the device unlocked successfully. Query the `locked` status of the device, [retrieve the action attempt](https://docs.seam.co/latest/api/action_attempts/get) by ID, or look for a [`lock.unlocked` event](https://docs.seam.co/latest/api/events/).
 
 To query the `locked` status of the device:
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device by ID.
 const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id});
 
@@ -957,19 +805,7 @@ const updatedFrontDoor = await seam.devices.get({device_id: frontDoor.device_id}
 console.log(updatedFrontDoor.properties.locked) // false
 ```
 
-**Output:**
-
-```
-false
-```
-
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Get the device by ID.
 updated_front_door=$(
   # Use GET or POST.
@@ -987,19 +823,7 @@ updated_front_door=$(
 echo $(jq -r '"Locked (false): " + (.device.properties.locked | tostring)' <<< ${updated_front_door})
 ```
 
-**Output:**
-
-```
-Locked (false): false
-```
-
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 # Get the device by ID.
 updated_front_door = seam.devices.get(device_id=front_door.device_id)
 
@@ -1008,19 +832,7 @@ updated_front_door = seam.devices.get(device_id=front_door.device_id)
 assert updated_front_door.properties["locked"] is False # False
 ```
 
-**Output:**
-
-```
-False
-```
-
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 # Get the device by ID.
 updated_front_door = seam.devices.get(device_id: front_door.device_id)
 
@@ -1029,19 +841,7 @@ updated_front_door = seam.devices.get(device_id: front_door.device_id)
 puts updated_front_door.properties.locked # false
 ```
 
-**Output:**
-
-```
-false
-```
-
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 // Get the device by ID.
 $updated_front_door = $seam->devices->get(device_id: $front_door->device_id);
 
@@ -1050,19 +850,7 @@ $updated_front_door = $seam->devices->get(device_id: $front_door->device_id);
 echo $updated_front_door->properties->locked ? 'true' : 'false', "\n"; // false
 ```
 
-**Output:**
-
-```
-false
-```
-
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```csharp C#
 // Get the device by ID.
 Device updatedFrontDoor = seam.Devices.Get(
   deviceId: frontDoor.DeviceId
@@ -1073,15 +861,37 @@ Device updatedFrontDoor = seam.Devices.Get(
 Console.WriteLine(updatedFrontDoor.Properties.Locked); // false
 ```
 
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+false
 ```
+
+```json cURL
+Locked (false): false
+```
+
+```json Python
 False
 ```
 
+```json Ruby
+false
+```
 
-</Tab>
-</Tabs>
+```json PHP
+false
+```
+
+```json C#
+False
+```
+
+</CodeGroup>
 
 <Check>
   Now that you have successfully unlocked your lock, you can use the [Lock
@@ -1097,11 +907,11 @@ You can use the Seam API to program [online access codes](https://docs.seam.co/l
 
 The Seam API makes it easy to program both [ongoing](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/latest/low-level-apis/smart-locks/access-codes#time-bound-access-codes) online access codes.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Confirm that the device supports online access codes.
 // Here's another capability flag!
 if (updatedFrontDoor.can_program_online_access_codes) {
@@ -1127,38 +937,7 @@ if (updatedFrontDoor.can_program_online_access_codes) {
 }
 ```
 
-**Output:**
-
-```json
-[
-  {
-    access_code_id: '11111111-1111-1111-1111-555555555555',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    name: 'my ongoing code',
-    code: '1234',
-    type: 'ongoing',
-    ...
-  },
-  {
-    access_code_id: '11111111-1111-1111-1111-666666666666',
-    device_id: '11111111-1111-1111-1111-444444444444',
-    name: 'my time-bound code',
-    code: '2345',
-    type: 'time_bound',
-    starts_at: '2025-01-01T16:00:00.000Z',
-    ends_at: '2025-01-22T12:00:00.000Z',
-    ...
-  }
-]
-```
-
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Confirm that the device supports online access codes.
 # Here's another capability flag!
 if  $(jq -r '.device.can_program_online_access_codes' <<< ${updated_front_door}); then \
@@ -1201,41 +980,7 @@ if  $(jq -r '.device.can_program_online_access_codes' <<< ${updated_front_door})
 fi
 ```
 
-**Output:**
-
-```json
-{
-  "access_codes": [
-    {
-      "access_code_id":"11111111-1111-1111-1111-555555555555",
-      "device_id":"11111111-1111-1111-1111-444444444444",
-      "name":"my ongoing code",
-      "code":"1234",
-      "type":"ongoing",
-      ...
-    },
-    {
-      "access_code_id": "11111111-1111-1111-1111-666666666666",
-      "device_id": "11111111-1111-1111-1111-444444444444",
-      "name": "my time-bound code",
-      "code": "2345",
-      "type": "time_bound",
-      "starts_at": "2025-01-01T16:00:00.000Z",
-      "ends_at": "2025-01-22T12:00:00.000Z",
-      ...
-    }
-  ],
-  "ok": true
-}
-```
-
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 # Confirm that the device supports online access codes.
 # Here's another capability flag!
 if updated_front_door.can_program_online_access_codes:
@@ -1260,38 +1005,7 @@ if updated_front_door.can_program_online_access_codes:
   pprint(access_codes)
 ```
 
-**Output:**
-
-```
-[
-  AccessCode(
-    access_code_id='11111111-1111-1111-1111-555555555555',
-    device_id='11111111-1111-1111-1111-444444444444',
-    type='ongoing',
-    code='1234',
-    name='my ongoing code',
-    ...
-  )
-  AccessCode(
-    access_code_id='11111111-1111-1111-1111-666666666666',
-    device_id='11111111-1111-1111-1111-444444444444',
-    type='time_bound',
-    code='2345',
-    starts_at='2025-01-01T16:00:00.000Z',
-    ends_at='2025-01-22T12:00:00.000Z',
-    name='my time-bound code',
-    ...
-  )
-]
-```
-
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 # Confirm that the device supports online access codes.
 # Here's another capability flag!
 if (updated_front_door.can_program_online_access_codes)
@@ -1317,38 +1031,7 @@ if (updated_front_door.can_program_online_access_codes)
 end
 ```
 
-**Output:**
-
-```
-[
-  <Seam::AccessCode:0x00460
-    access_code_id="11111111-1111-1111-1111-555555555555"
-    device_id="11111111-1111-1111-1111-444444444444"
-    name="my ongoing code"
-    code="1234"
-    type="ongoing"
-    ...
-  >,
-  <Seam::AccessCode:0x00438
-    access_code_id="11111111-1111-1111-1111-666666666666"
-    device_id="11111111-1111-1111-1111-444444444444"
-    name="my time-bound code"
-    code="2345"
-    type="time_bound"
-    starts_at=2025-01-01 16:00:00 UTC
-    ends_at=2025-01-22 12:00:00 UTC
-    ...
-  >
-]
-```
-
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 // Confirm that the device supports online access codes.
 // Here's another capability flag!
 if ($updated_front_door->can_program_online_access_codes) {
@@ -1374,37 +1057,7 @@ if ($updated_front_door->can_program_online_access_codes) {
 }
 ```
 
-**Output:**
-
-```json
-[
-  {
-    "access_code_id": "11111111-1111-1111-1111-555555555555",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my ongoing code",
-    "type": "ongoing",
-    "code": "1234",
-    ...
-  },
-  {
-    "access_code_id": "11111111-1111-1111-1111-666666666666",
-    "device_id": "11111111-1111-1111-1111-444444444444",
-    "name": "my time-bound code",
-    "type": "time_bound",
-    "starts_at": "2025-01-01T16:00:00.000Z",
-    "ends_at": "2025-01-22T12:00:00.000Z",
-    "code": "2345",
-  }
-]
-```
-
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```csharp C#
 // Confirm that the device supports online access codes.
 // Here's another capability flag!
 if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
@@ -1433,9 +1086,130 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 }
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+[
+  {
+    access_code_id: '11111111-1111-1111-1111-555555555555',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    name: 'my ongoing code',
+    code: '1234',
+    type: 'ongoing',
+    ...
+  },
+  {
+    access_code_id: '11111111-1111-1111-1111-666666666666',
+    device_id: '11111111-1111-1111-1111-444444444444',
+    name: 'my time-bound code',
+    code: '2345',
+    type: 'time_bound',
+    starts_at: '2025-01-01T16:00:00.000Z',
+    ends_at: '2025-01-22T12:00:00.000Z',
+    ...
+  }
+]
+```
+
+```json cURL
+{
+  "access_codes": [
+    {
+      "access_code_id":"11111111-1111-1111-1111-555555555555",
+      "device_id":"11111111-1111-1111-1111-444444444444",
+      "name":"my ongoing code",
+      "code":"1234",
+      "type":"ongoing",
+      ...
+    },
+    {
+      "access_code_id": "11111111-1111-1111-1111-666666666666",
+      "device_id": "11111111-1111-1111-1111-444444444444",
+      "name": "my time-bound code",
+      "code": "2345",
+      "type": "time_bound",
+      "starts_at": "2025-01-01T16:00:00.000Z",
+      "ends_at": "2025-01-22T12:00:00.000Z",
+      ...
+    }
+  ],
+  "ok": true
+}
+```
+
+```json Python
+[
+  AccessCode(
+    access_code_id='11111111-1111-1111-1111-555555555555',
+    device_id='11111111-1111-1111-1111-444444444444',
+    type='ongoing',
+    code='1234',
+    name='my ongoing code',
+    ...
+  )
+  AccessCode(
+    access_code_id='11111111-1111-1111-1111-666666666666',
+    device_id='11111111-1111-1111-1111-444444444444',
+    type='time_bound',
+    code='2345',
+    starts_at='2025-01-01T16:00:00.000Z',
+    ends_at='2025-01-22T12:00:00.000Z',
+    name='my time-bound code',
+    ...
+  )
+]
+```
+
+```json Ruby
+[
+  <Seam::AccessCode:0x00460
+    access_code_id="11111111-1111-1111-1111-555555555555"
+    device_id="11111111-1111-1111-1111-444444444444"
+    name="my ongoing code"
+    code="1234"
+    type="ongoing"
+    ...
+  >,
+  <Seam::AccessCode:0x00438
+    access_code_id="11111111-1111-1111-1111-666666666666"
+    device_id="11111111-1111-1111-1111-444444444444"
+    name="my time-bound code"
+    code="2345"
+    type="time_bound"
+    starts_at=2025-01-01 16:00:00 UTC
+    ends_at=2025-01-22 12:00:00 UTC
+    ...
+  >
+]
+```
+
+```json PHP
+[
+  {
+    "access_code_id": "11111111-1111-1111-1111-555555555555",
+    "device_id": "11111111-1111-1111-1111-444444444444",
+    "name": "my ongoing code",
+    "type": "ongoing",
+    "code": "1234",
+    ...
+  },
+  {
+    "access_code_id": "11111111-1111-1111-1111-666666666666",
+    "device_id": "11111111-1111-1111-1111-444444444444",
+    "name": "my time-bound code",
+    "type": "time_bound",
+    "starts_at": "2025-01-01T16:00:00.000Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    "code": "2345",
+  }
+]
+```
+
+```json C#
 {
   "type": "ongoing",
   "access_code_id": "11111111-1111-1111-1111-555555555555",
@@ -1456,9 +1230,7 @@ if (updatedFrontDoor.CanProgramOnlineAccessCodes == true) {
 }
 ```
 
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

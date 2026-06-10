@@ -131,12 +131,11 @@ To create a climate preset, issue a [`/thermostats/create_climate_preset`](https
 
 The following example creates two climate presets with the keys `occupied` and `unoccupied`:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the thermostat.
 const thermostat = await seam.devices.get({
   device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
@@ -168,19 +167,7 @@ if (thermostat.can_hvac_heat_cool) {
 }
 ```
 
-**Response:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Get the thermostat.
 thermostat=$(
   # Use GET or POST.
@@ -229,21 +216,7 @@ if  $(jq -r '.device.can_hvac_heat_cool' <<< ${thermostat}); then \
 fi
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 # Get the thermostat.
 thermostat = seam.devices.get(
   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
@@ -274,19 +247,7 @@ if thermostat.can_hvac_heat_cool:
   )
 ```
 
-**Response:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 # Get the thermostat.
 thermostat = seam.devices.get(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
@@ -318,19 +279,7 @@ if (thermostat.can_hvac_heat_cool)
 end
 ```
 
-**Response:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 // Get the thermostat.
 $thermostat = $seam->devices->get(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
@@ -362,30 +311,43 @@ if ($thermostat->can_hvac_heat_cool) {
 }
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
+```json cURL
+{
+  "ok": true
+}
+```
 
-<Tab title="C#">
+```json Python
+None
+```
 
-**Request:**
+```json Ruby
+nil
+```
 
-```csharp
+```json PHP
+void
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -393,20 +355,57 @@ void
 
 To list climate presets for a thermostat, issue a [`/devices/get`](https://docs.seam.co/latest/api/devices/get) request, providing the `device_id` of the desired thermostat. Then, inspect the `available_climate_presets` property.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.devices.get({
   device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
 })
 ```
 
+```bash cURL
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5"
+}'
+```
+
+```python Python
+seam.devices.get(
+  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
+```
+
+```ruby Ruby
+seam.devices.get(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+)
+```
+
+```php PHP
+$seam->devices->get(
+  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
   properties: {
@@ -442,27 +441,7 @@ await seam.devices.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
-# Use GET or POST.
-curl -X 'GET' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5"
-}'
-```
-
-**Response:**
-
-```json
+```json cURL
 {
   "device": {
     "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
@@ -501,21 +480,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.devices.get(
-  device_id = "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
-```
-
-**Response:**
-
-```
+```json Python
 Device(
   device_id='2d488679-6f07-4810-aed2-e726872c1dd5',
   properties={
@@ -551,21 +516,7 @@ Device(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-seam.devices.get(
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-)
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::Resources::Device:0x005f0
   device_id="2d488679-6f07-4810-aed2-e726872c1dd5"
   properties=#<Seam::DeepHashAccessor:0x000001bf948fdbd0 @data={
@@ -602,21 +553,7 @@ seam.devices.get(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->devices->get(
-  device_id: "2d488679-6f07-4810-aed2-e726872c1dd5"
-);
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "device_id": "2d488679-6f07-4810-aed2-e726872c1dd5",
   "properties": {
@@ -652,24 +589,11 @@ $seam->devices->get(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -677,12 +601,11 @@ $seam->devices->get(
 
 To update a climate preset, issue a [`/thermostats/update_climate_preset`](https://docs.seam.co/latest/api/thermostats/update_climate_preset) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset. Also, include the desired updated settings for the climate preset.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.thermostats.updateClimatePreset({
   device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
   climate_preset_key: 'occupied',
@@ -690,19 +613,7 @@ await seam.thermostats.updateClimatePreset({
 })
 ```
 
-**Response:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/thermostats/update_climate_preset' \
   -H 'accept: application/json' \
@@ -715,21 +626,7 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 seam.thermostats.update_climate_preset(
   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key = "occupied",
@@ -737,19 +634,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-**Response:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 seam.thermostats.update_climate_preset(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "occupied",
@@ -757,19 +642,7 @@ seam.thermostats.update_climate_preset(
 )
 ```
 
-**Response:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $seam->thermostats->update_climate_preset(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "occupied",
@@ -777,30 +650,43 @@ $seam->thermostats->update_climate_preset(
 );
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
+```json cURL
+{
+  "ok": true
+}
+```
 
-<Tab title="C#">
+```json Python
+None
+```
 
-**Request:**
+```json Ruby
+nil
+```
 
-```csharp
+```json PHP
+void
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -808,31 +694,18 @@ void
 
 To delete a climate preset, issue a [`/thermostats/delete_climate_preset`](https://docs.seam.co/latest/api/thermostats/delete_climate_preset) request, providing the `device_id` of the thermostat and the `climate_preset_key` of the desired climate preset.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.thermostats.deleteClimatePreset({
   device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
   climate_preset_key: 'occupied',
 })
 ```
 
-**Response:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/thermostats/delete_climate_preset' \
   -H 'accept: application/json' \
@@ -844,86 +717,61 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 seam.thermostats.delete_climate_preset(
   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key = "occupied"
 )
 ```
 
-**Response:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 seam.thermostats.delete_climate_preset(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "occupied"
 )
 ```
 
-**Response:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $seam->thermostats->delete_climate_preset(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "occupied"
 );
 ```
 
+```java C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
+```json cURL
+{
+  "ok": true
+}
+```
 
-<Tab title="C#">
+```json Python
+None
+```
 
-**Request:**
+```json Ruby
+nil
+```
 
-```java
+```json PHP
+void
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>

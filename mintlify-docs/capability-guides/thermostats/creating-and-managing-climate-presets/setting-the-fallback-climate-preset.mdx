@@ -7,31 +7,18 @@ Once you have created climate presets for a thermostat, you can set one of them 
 
 To set the fallback climate preset for a device, issue a [`/thermostats/set_fallback_climate_preset`](https://docs.seam.co/latest/api/thermostats/set_fallback_climate_preset) request and specify the `climate_preset_key` of the desired climate preset.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.thermostats.setFallbackClimatePreset({
   device_id: '2d488679-6f07-4810-aed2-e726872c1dd5',
   climate_preset_key: 'eco',
 })
 ```
 
-**Response:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/thermostats/set_fallback_climate_preset' \
   -H 'accept: application/json' \
@@ -43,83 +30,58 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 seam.thermostats.set_fallback_climate_preset(
   device_id = "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key = "eco"
 )
 ```
 
-**Response:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 # Coming soon!
 ```
 
-**Response:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $seam->thermostats->set_fallback_climate_preset(
   device_id: "2d488679-6f07-4810-aed2-e726872c1dd5",
   climate_preset_key: "eco"
 );
 ```
 
+```java C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
+```json cURL
+{
+  "ok": true
+}
+```
 
-<Tab title="C#">
+```json Python
+None
+```
 
-**Request:**
+```json Ruby
+# Coming soon!
+```
 
-```java
+```json PHP
+void
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Response:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>

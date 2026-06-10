@@ -131,9 +131,9 @@ The mobile SDK automatically clears resolved permission errors once the required
 
 Implement your handler for each action:
 
-<Tabs>
-<Tab title="Android Kotlin">
-```kotlin
+<CodeGroup>
+
+```kotlin Android Kotlin
 fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
     when (interaction) {
         is SeamRequiredUserInteraction.CompleteOtpAuthorization -> { /* handle OTP authorization */ }
@@ -142,12 +142,9 @@ fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
         is SeamRequiredUserInteraction.GrantPermissions -> { /* handle permissions error*/ }
     }
 }
-````
+```
 
-</Tab>
-
-<Tab title="iOS Swift">
-```swift
+```swift iOS Swift
 func handlePermissionAction(_ action: CredentialUserAction) {
     switch action {
     case .enableInternet:
@@ -160,8 +157,7 @@ func handlePermissionAction(_ action: CredentialUserAction) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

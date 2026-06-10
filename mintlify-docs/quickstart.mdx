@@ -107,12 +107,11 @@ The Seam SDK that you have installed automatically uses this API key once you ha
 
 Next, use the following code to retrieve one of the devices that you connected in [Step 1](#step-1-connect-devices), inspect the supported capabilities of the device, and create an Access Grant that issues a PIN code on the lock:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
@@ -150,19 +149,7 @@ if (frontDoor.can_program_online_access_codes) {
 }
 ```
 
-**Output:**
-
-```json
-"1234"
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Retrieve all devices, filtered by manufacturer, which is
 # one of several filters that the list endpoint supports.
 all_august_locks=$(
@@ -212,19 +199,7 @@ if  $(jq -r '.can_program_online_access_codes' <<< ${front_door}); then \
 fi
 ```
 
-**Output:**
-
-```json
-"1234"
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
@@ -260,19 +235,7 @@ if front_door.can_program_online_access_codes:
   print(access_method.code)
 ```
 
-**Output:**
-
-```
-1234
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
@@ -309,19 +272,7 @@ if (front_door.can_program_online_access_codes)
 end
 ```
 
-**Output:**
-
-```
-1234
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -359,30 +310,41 @@ if ($front_door->can_program_online_access_codes) {
 }
 ```
 
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+"1234"
 ```
+
+```json cURL
+"1234"
+```
+
+```json Python
 1234
 ```
 
-</Tab>
+```json Ruby
+1234
+```
 
-<Tab title="C#">
+```json PHP
+1234
+```
 
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 <Info>
   In a sandbox workspace, the access method is issued almost instantly. On real

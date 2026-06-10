@@ -206,39 +206,17 @@ To help you decide which providers to include in a Connect Webview, you can use 
 
 The following Connect Webview creation request specifies that the Connect Webview should only display August and Schlage:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.connectWebviews.create({
   accepted_providers: ['august', 'schlage'],
 })
 ```
 
-**Response:**
-
-```json
-{
-  connect_webview_id: '1139e5a5-4bfd-4c78-9a89-83a439ad538e',
-  status: 'pending',
-  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=8cf491d8-cf67-4ad0-907d-3a8ae3764019&auth_token=C4vLHdKqpMavg6HYBbejQkE1dZ8KDcetS',
-  accepted_providers: [
-    'august',
-    'schlage'
-  ],
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/connect_webviews/create' \
   -H 'accept: application/json' \
@@ -252,9 +230,49 @@ curl -X 'POST' \
 }'
 ```
 
+```python Python
+seam.connect_webviews.create(
+  accepted_providers = ["august", "schlage"]
+)
+```
+
+```ruby Ruby
+client.connect_webviews.create(
+  accepted_providers: ["august", "schlage"]
+)
+```
+
+```csharp C#
+List<Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum> acceptedProviders = new() {
+  Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.August,
+  Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Schlage
+};
+
+seam.ConnectWebviews.Create(
+  acceptedProviders: acceptedProviders
+);
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  connect_webview_id: '1139e5a5-4bfd-4c78-9a89-83a439ad538e',
+  status: 'pending',
+  url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=8cf491d8-cf67-4ad0-907d-3a8ae3764019&auth_token=C4vLHdKqpMavg6HYBbejQkE1dZ8KDcetS',
+  accepted_providers: [
+    'august',
+    'schlage'
+  ],
+  ...
+}
+```
+
+```json cURL
 {
   "connect_webview": {
     "connect_webview_id": "1139e5a5-4bfd-4c78-9a89-83a439ad538e",
@@ -270,21 +288,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.connect_webviews.create(
-  accepted_providers = ["august", "schlage"]
-)
-```
-
-**Response:**
-
-```
+```json Python
 ConnectWebview(
   connect_webview_id='1139e5a5-4bfd-4c78-9a89-83a439ad538e',
   status='pending',
@@ -297,21 +301,7 @@ ConnectWebview(
  )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-client.connect_webviews.create(
-  accepted_providers: ["august", "schlage"]
-)
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::ConnectWebview:0x00438
   connect_webview_id="1139e5a5-4bfd-4c78-9a89-83a439ad538e"
   status="pending"
@@ -324,26 +314,7 @@ client.connect_webviews.create(
 >
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-List<Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum> acceptedProviders = new() {
-  Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.August,
-  Seam.Api.ConnectWebviews.CreateRequest.AcceptedProvidersEnum.Schlage
-};
-
-seam.ConnectWebviews.Create(
-  acceptedProviders: acceptedProviders
-);
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "connect_webview_id": "f69fa3b8-c89d-4fd4-b6fc-feb456d07234",
   "status": "pending",
@@ -356,8 +327,7 @@ seam.ConnectWebviews.Create(
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

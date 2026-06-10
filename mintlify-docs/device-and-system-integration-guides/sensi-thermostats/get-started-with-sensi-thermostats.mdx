@@ -113,11 +113,11 @@ Go to [https://console.seam.co/](https://console.seam.co/). On the **Devices** p
 
 Create a `connect_webview` object and then note the returned URL.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
@@ -133,19 +133,7 @@ console.log(connectWebview.login_successful) // false
 console.log(connectWebview.url)
 ```
 
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/connect_webviews/create' \
   -H 'accept: application/json' \
@@ -159,19 +147,7 @@ curl -X 'POST' \
   # the Connect Webview authorization flow to your user.
 ```
 
-**Output:**
-
-```
-Login Successful (false): false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
@@ -185,18 +161,7 @@ assert connect_webview.login_successful is False
 print(connect_webview.url)
 ```
 
-**Output:**
-
-```
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
@@ -212,19 +177,7 @@ puts connect_webview.login_successful # false
 puts connect_webview.url
 ```
 
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -241,19 +194,7 @@ echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
 echo $connect_webview->url;
 ```
 
-**Output:**
-
-```
-false
-https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient(apiToken: SEAM_API_KEY);
@@ -269,15 +210,42 @@ Console.WriteLine(connectWebview.LoginSuccessful); // False
 Console.WriteLine(connectWebview.Url);
 ```
 
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+
+```json cURL
+Login Successful (false): false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json Python
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json Ruby
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json PHP
+false
+https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+```json C#
 False
 https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -302,11 +270,11 @@ Complete the Connect Webview authorization flow by entering the following [Sensi
 
 Confirm that authorization through the Connect Webview was successful by querying its status.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const updatedConnectWebview = await seam.connectWebviews.get({
   connect_webview_id: connectWebview.connect_webview_id,
 })
@@ -314,18 +282,7 @@ const updatedConnectWebview = await seam.connectWebviews.get({
 console.log(updatedConnectWebview.login_successful) // true
 ```
 
-**Output:**
-
-```
-true
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 curl -X 'GET' \
   'https://connect.getseam.com/connect_webviews/get' \
   -H 'accept: application/json' \
@@ -336,35 +293,13 @@ curl -X 'GET' \
 }" | jq -r '"Login Successful (true): " + (.connect_webview.login_successful | tostring)'
 ```
 
-**Output:**
-
-```
-Login Successful (true): true
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 updated_connect_webview = seam.connect_webviews.get(connect_webview.connect_webview_id)
 
 assert updated_connect_webview.login_successful is True # True
 ```
 
-**Output:**
-
-```
-True
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 updated_connect_webview = seam.connect_webviews.get(
   connect_webview_id: connect_webview.connect_webview_id
 )
@@ -372,18 +307,7 @@ updated_connect_webview = seam.connect_webviews.get(
 puts updated_connect_webview.login_successful # true
 ```
 
-**Output:**
-
-```
-true
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 $updated_connect_webview = $seam->connect_webviews->get(
   connect_webview_id: $connect_webview->connect_webview_id
 );
@@ -391,18 +315,7 @@ $updated_connect_webview = $seam->connect_webviews->get(
 echo $updated_connect_webview->login_successful ? 'true' : 'false', "\n"; // true
 ```
 
-**Output:**
-
-```
-true
-```
-
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```csharp C#
 var updatedConnectWebview = seam.ConnectWebviews.Get(
   connectWebviewId: connectWebview.connectWebviewId
 );
@@ -410,14 +323,37 @@ var updatedConnectWebview = seam.ConnectWebviews.Get(
 Console.WriteLine(updatedConnectWebview.LoginSuccessful); // True
 ```
 
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+true
 ```
+
+```json cURL
+Login Successful (true): true
+```
+
+```json Python
 True
 ```
 
-</Tab>
-</Tabs>
+```json Ruby
+true
+```
+
+```json PHP
+true
+```
+
+```json C#
+True
+```
+
+</CodeGroup>
 
 ---
 
@@ -427,11 +363,11 @@ When you link a Sensi account with Seam, we create a `device` object to represen
 
 The Seam API exposes each device's properties, such as the current temperature reading in Fahrenheit and Celsius, current HVAC and fan modes, available climate presets, thermostat-specific constraints, and much more.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Retrieve all devices, filtered by manufacturer,
 // which is one of several filters that list() supports.
 const allSensiThermostats = await seam.devices.list({ manufacturer: 'sensi' })
@@ -450,9 +386,90 @@ console.log('Fan running: ' + livingRoomThermostat.properties.is_fan_running)
 console.log(livingRoomThermostat)
 ```
 
+```bash cURL
+# Retrieve all devices, filtered by manufacturer, which is
+# one of several filters that the list endpoint supports.
+all_sensi_thermostats=$(
+  # Use GET or POST.
+  curl -X 'GET' \
+    'https://connect.getseam.com/devices/list' \
+    -H 'accept: application/json' \
+    -H "Authorization: Bearer ${SEAM_API_KEY}" \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "manufacturer": "sensi"
+  }')
+
+# Select the first device as an example.
+living_room_thermostat=$(jq -r '.devices[0]' <<< ${all_sensi_thermostats})
+
+# Inspect specific properties.
+echo $(jq -r '"Current temperature: " + (.properties.temperature_fahrenheit | tostring)' <<< ${living_room_thermostat})
+echo $(jq -r '"Fan running: " + (.properties.is_fan_running | tostring)' <<< ${living_room_thermostat})
+
+# View the entire returned device object.
+echo ${living_room_thermostat}
+```
+
+```python Python
+# Retrieve all devices, filtered by manufacturer,
+# which is one of several filters that list() supports.
+all_sensi_thermostats = seam.devices.list(manufacturer="sensi")
+
+# Select the first device as an example.
+living_room_thermostat = all_sensi_thermostats[0]
+
+# Inspect specific properties.
+pprint("Current temperature: " + str(living_room_thermostat.properties["temperature_fahrenheit"]))
+pprint("Fan running: " + str(living_room_thermostat.properties["is_fan_running"]))
+
+# View the entire returned device object.
+pprint(living_room_thermostat)
+```
+
+```ruby Ruby
+# Retrieve all devices, filtered by manufacturer,
+# which is one of several filters that list() supports.
+all_sensi_thermostats = seam.devices.list(manufacturer: "sensi")
+
+# Select the first device as an example.
+living_room_thermostat = all_sensi_thermostats[0]
+
+# Inspect specific properties.
+puts "Current temperature: " + living_room_thermostat.properties.temperature_fahrenheit.to_s
+puts "Fan running: " + living_room_thermostat.properties.is_fan_running.to_s
+
+# View the entire returned device object.
+puts living_room_thermostat.inspect
+```
+
+```php PHP
+// Retrieve all devices, filtered by manufacturer,
+// which is one of several filters that list() supports.
+$all_sensi_thermostats = $seam->devices->list(manufacturer: "sensi");
+
+// Select the first device as an example.
+$living_room_thermostat = $all_sensi_thermostats[0];
+
+// Inspect specific properties.
+echo "Current temperature: ", $living_room_thermostat->properties->temperature_fahrenheit, "\n";
+echo "Fan running: ", $living_room_thermostat->properties->is_fan_running ? 'true' : 'false', "\n";
+
+// View the entire returned device object.
+echo json_encode($living_room_thermostat, JSON_PRETTY_PRINT);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 Current temperature: 70
 Fan running: false
 {
@@ -486,39 +503,7 @@ Fan running: false
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
-# Retrieve all devices, filtered by manufacturer, which is
-# one of several filters that the list endpoint supports.
-all_sensi_thermostats=$(
-  # Use GET or POST.
-  curl -X 'GET' \
-    'https://connect.getseam.com/devices/list' \
-    -H 'accept: application/json' \
-    -H "Authorization: Bearer ${SEAM_API_KEY}" \
-    -H 'Content-Type: application/json' \
-    -d '{
-    "manufacturer": "sensi"
-  }')
-
-# Select the first device as an example.
-living_room_thermostat=$(jq -r '.devices[0]' <<< ${all_sensi_thermostats})
-
-# Inspect specific properties.
-echo $(jq -r '"Current temperature: " + (.properties.temperature_fahrenheit | tostring)' <<< ${living_room_thermostat})
-echo $(jq -r '"Fan running: " + (.properties.is_fan_running | tostring)' <<< ${living_room_thermostat})
-
-# View the entire returned device object.
-echo ${living_room_thermostat}
-```
-
-**Output:**
-
-```json
+```json cURL
 Current temperature: 70
 Fan running: false
 {
@@ -552,30 +537,7 @@ Fan running: false
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
-# Retrieve all devices, filtered by manufacturer,
-# which is one of several filters that list() supports.
-all_sensi_thermostats = seam.devices.list(manufacturer="sensi")
-
-# Select the first device as an example.
-living_room_thermostat = all_sensi_thermostats[0]
-
-# Inspect specific properties.
-pprint("Current temperature: " + str(living_room_thermostat.properties["temperature_fahrenheit"]))
-pprint("Fan running: " + str(living_room_thermostat.properties["is_fan_running"]))
-
-# View the entire returned device object.
-pprint(living_room_thermostat)
-```
-
-**Output:**
-
-```
+```json Python
 'Current temperature: 70'
 'Fan running: False'
 Device(
@@ -609,30 +571,7 @@ Device(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
-# Retrieve all devices, filtered by manufacturer,
-# which is one of several filters that list() supports.
-all_sensi_thermostats = seam.devices.list(manufacturer: "sensi")
-
-# Select the first device as an example.
-living_room_thermostat = all_sensi_thermostats[0]
-
-# Inspect specific properties.
-puts "Current temperature: " + living_room_thermostat.properties.temperature_fahrenheit.to_s
-puts "Fan running: " + living_room_thermostat.properties.is_fan_running.to_s
-
-# View the entire returned device object.
-puts living_room_thermostat.inspect
-```
-
-**Output:**
-
-```
+```json Ruby
 Current temperature: 70
 Fan running: false
 <Seam::Resources::Device:0x005f0
@@ -666,30 +605,7 @@ Fan running: false
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
-// Retrieve all devices, filtered by manufacturer,
-// which is one of several filters that list() supports.
-$all_sensi_thermostats = $seam->devices->list(manufacturer: "sensi");
-
-// Select the first device as an example.
-$living_room_thermostat = $all_sensi_thermostats[0];
-
-// Inspect specific properties.
-echo "Current temperature: ", $living_room_thermostat->properties->temperature_fahrenheit, "\n";
-echo "Fan running: ", $living_room_thermostat->properties->is_fan_running ? 'true' : 'false', "\n";
-
-// View the entire returned device object.
-echo json_encode($living_room_thermostat, JSON_PRETTY_PRINT);
-```
-
-**Output:**
-
-```json
+```json PHP
 Current temperature: 70
 Fan running: false
 {
@@ -724,23 +640,11 @@ Fan running: false
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -776,11 +680,11 @@ In this example, set the HVAC mode to `heat` and the desired heating set point t
 
 Each of these HVAC mode endpoints returns an [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) to track the progress of the operation.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Confirm that the device supports heat mode.
 // You're using a capability flag here!
 if (livingRoomThermostat.can_hvac_heat) {
@@ -793,26 +697,7 @@ if (livingRoomThermostat.can_hvac_heat) {
 }
 ```
 
-**Output:**
-
-```json
-{
-  "actionAttempt": {
-    "status": "success",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "action_type": "SET_HVAC_MODE",
-    "result": {},
-    "error": null
-  }
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Confirm that the device supports heat mode.
 # You're using a capability flag here!
 if  $(jq -r '.can_hvac_heat' <<< ${living_room_thermostat}); then \
@@ -830,27 +715,7 @@ if  $(jq -r '.can_hvac_heat' <<< ${living_room_thermostat}); then \
 fi
 ```
 
-**Output:**
-
-```json
-{
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "SET_HVAC_MODE",
-    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
-    "result": null,
-    "error": null
-  },
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 # Confirm that the device supports heat mode.
 # You're using a capability flag here!
 if living_room_thermostat.can_hvac_heat:
@@ -862,24 +727,7 @@ if living_room_thermostat.can_hvac_heat:
   )
 ```
 
-**Output:**
-
-```
-ActionAttempt(
-  action_attempt_id='11111111-2222-3333-4444-555555555555',
-  action_type='SET_HVAC_MODE',
-  status='success',
-  result={},
-  error=None
-)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 # Confirm that the device supports heat mode.
 # You're using a capability flag here!
 if (living_room_thermostat.can_hvac_heat)
@@ -892,23 +740,7 @@ if (living_room_thermostat.can_hvac_heat)
 end
 ```
 
-**Output:**
-
-```
-<Seam::Resources::ActionAttempt:0x005f0
-  status="success"
-  action_type="SET_HVAC_MODE"
-  action_attempt_id="11111111-2222-3333-4444-555555555555"
-  result={}
-  error=nil>
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 // Confirm that the device supports heat mode.
 // You're using a capability flag here!
 if ($living_room_thermostat->can_hvac_heat) {
@@ -921,9 +753,61 @@ if ($living_room_thermostat->can_hvac_heat) {
 }
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "actionAttempt": {
+    "status": "success",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "action_type": "SET_HVAC_MODE",
+    "result": {},
+    "error": null
+  }
+}
+```
+
+```json cURL
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "SET_HVAC_MODE",
+    "action_attempt_id": "11111111-2222-3333-4444-555555555555",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
+```
+
+```json Python
+ActionAttempt(
+  action_attempt_id='11111111-2222-3333-4444-555555555555',
+  action_type='SET_HVAC_MODE',
+  status='success',
+  result={},
+  error=None
+)
+```
+
+```json Ruby
+<Seam::Resources::ActionAttempt:0x005f0
+  status="success"
+  action_type="SET_HVAC_MODE"
+  action_attempt_id="11111111-2222-3333-4444-555555555555"
+  result={}
+  error=nil>
+```
+
+```json PHP
 {
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
   "action_type": "SET_HVAC_MODE",
@@ -933,33 +817,21 @@ if ($living_room_thermostat->can_hvac_heat) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 You can track the status of the operation to confirm that the device was set to heat mode successfully. Query `properties.current_climate_setting.hvac_mode_setting` for the device, [retrieve the action attempt](https://docs.seam.co/latest/api/action_attempts/get) by ID, or look for a [`thermostat.manually_adjusted` event](https://docs.seam.co/latest/api/events/). Further, if you wanted to find out whether the HVAC system was currently heating, you could inspect `properties.is_heating` for the device.
 
 To query `properties.current_climate_setting.hvac_mode_setting` for the device:
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device by ID.
 const updatedLivingRoomThermostat = await seam.devices.get({
   device_id: livingRoomThermostat.device_id,
@@ -973,18 +845,7 @@ console.log(
 )
 ```
 
-**Output:**
-
-```
-heat
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Get the device by ID.
 updated_living_room_thermostat=$(
   # Use GET or POST.
@@ -1002,18 +863,7 @@ updated_living_room_thermostat=$(
 echo $(jq -r '(.device.properties.current_climate_setting.hvac_mode_setting)' <<< ${updated_living_room_thermostat})
 ```
 
-**Output:**
-
-```
-heat
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 # Get the device by ID.
 updated_living_room_thermostat = seam.devices.get(
   device_id = living_room_thermostat.device_id
@@ -1027,18 +877,7 @@ pprint(
 )
 ```
 
-**Output:**
-
-```
-'heat'
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 # Get the device by ID.
 updated_living_room_thermostat = seam.devices.get(
   device_id: living_room_thermostat.device_id
@@ -1050,18 +889,7 @@ puts updated_living_room_thermostat.
   properties.current_climate_setting.hvac_mode_setting
 ```
 
-**Output:**
-
-```
-heat
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 // Get the device by ID.
 $updated_living_room_thermostat = $seam->devices->get(
   device_id: $living_room_thermostat->device_id
@@ -1073,29 +901,41 @@ echo $updated_living_room_thermostat->properties->
   current_climate_setting->hvac_mode_setting;
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```
+<CodeGroup>
+
+```json JavaScript
 heat
 ```
 
-</Tab>
+```json cURL
+heat
+```
 
-<Tab title="C#">
-**Code:**
+```json Python
+'heat'
+```
 
-```csharp
+```json Ruby
+heat
+```
+
+```json PHP
+heat
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -1107,11 +947,11 @@ You can schedule climate presets to start and stop whenever you'd like. You can 
 
 In this example, create comfort and eco climate presets, set eco as the fallback, and schedule the comfort climate preset to coincide with two vacation rental reservations.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Confirm that the thermostat supports cool mode
 // so that the climate presets can use this mode.
 if (updatedLivingRoomThermostat.can_hvac_cool) {
@@ -1163,39 +1003,7 @@ if (updatedLivingRoomThermostat.can_hvac_cool) {
 }
 ```
 
-**Output:**
-
-```json
-{
-  thermostat_schedule_id: '88888888-1111-1111-1111-111111111111',
-  name: "Jim's stay",
-  device_id: '11111111-1111-1111-2222-444444444444',
-  climate_preset_key: 'comfort',
-  starts_at: '2025-03-10T15:00:00.000Z',
-  ends_at: '2025-03-15T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
-  ...
-}
-{
-  thermostat_schedule_id: '88888888-1111-1111-1111-222222222222',
-  name: "Jane's stay",
-  device_id: '11111111-1111-1111-2222-444444444444',
-  climate_preset_key: 'comfort',
-  starts_at: '2025-03-17T15:00:00.000Z',
-  ends_at: '2025-03-20T12:00:00.000Z',
-  is_override_allowed: true,
-  max_override_period_minutes: 90,
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Confirm that the thermostat supports cool mode
 # so that the climate presets can use this mode.
 if  $(jq -r '.device.can_hvac_cool' <<< ${updated_living_room_thermostat}); then \
@@ -1272,45 +1080,7 @@ if  $(jq -r '.device.can_hvac_cool' <<< ${updated_living_room_thermostat}); then
 fi
 ```
 
-**Output:**
-
-```json
-{
-  "thermostat_schedule":{
-    "thermostat_schedule_id":"88888888-1111-1111-1111-111111111111",
-    "name":"Jim's stay",
-    "device_id":"11111111-1111-1111-2222-444444444444",
-    "climate_preset_key":"comfort",
-    "starts_at":"2025-03-10T15:00:00.000Z",
-    "ends_at":"2025-03-15T12:00:00.000Z",
-    "is_override_allowed":true,
-    "max_override_period_minutes":90,
-    ...
-  },
-  "ok":true
-}
-{
-  "thermostat_schedule":{
-    "thermostat_schedule_id":"88888888-1111-1111-1111-222222222222",
-    "name":"Jane's stay",
-    "device_id":"11111111-1111-1111-2222-444444444444",
-    "climate_preset_key":"comfort",
-    "starts_at":"2025-03-17T15:00:00.000Z",
-    "ends_at":"2025-03-20T12:00:00.000Z",
-    "is_override_allowed":true,
-    "max_override_period_minutes":90,
-    ...
-  },
-  "ok":true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 # Confirm that the thermostat supports cool mode
 # so that the climate presets can use this mode.
 if updated_living_room_thermostat.can_hvac_cool:
@@ -1361,39 +1131,7 @@ if updated_living_room_thermostat.can_hvac_cool:
   )
 ```
 
-**Output:**
-
-```
-ThermostatSchedule(
-  thermostat_schedule_id='88888888-1111-1111-1111-111111111111',
-  name="Jim's stay",
-  device_id='11111111-1111-1111-2222-444444444444',
-  climate_preset_key='comfort',
-  starts_at='2025-03-10T15:00:00.000Z',
-  ends_at='2025-03-15T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
-  ...
-)
-ThermostatSchedule(
-  thermostat_schedule_id='88888888-1111-1111-1111-222222222222',
-  name="Jane's stay",
-  device_id='11111111-1111-1111-2222-444444444444',
-  climate_preset_key='comfort',
-  starts_at='2025-03-17T15:00:00.000Z',
-  ends_at='2025-03-20T12:00:00.000Z',
-  is_override_allowed=True,
-  max_override_period_minutes=90,
-  ...
-)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 # Confirm that the thermostat supports cool mode
 # so that the climate presets can use this mode.
 if (updated_living_room_thermostat.can_hvac_cool)
@@ -1445,39 +1183,7 @@ if (updated_living_room_thermostat.can_hvac_cool)
 end
 ```
 
-**Output:**
-
-```
-<Seam::Resources::ThermostatSchedule:0x005f0
-  thermostat_schedule_id="88888888-1111-1111-1111-111111111111"
-  name="Jim's stay"
-  device_id="11111111-1111-1111-2222-444444444444"
-  climate_preset_key="comfort"
-  starts_at=2025-03-10 15:00:00 UTC
-  ends_at=2025-03-15 12:00:00 UTC
-  is_override_allowed=true
-  max_override_period_minutes=90
-  ...
->
-<Seam::Resources::ThermostatSchedule:0x005f0
-  thermostat_schedule_id="88888888-1111-1111-1111-222222222222"
-  name="Jane's stay"
-  device_id="11111111-1111-1111-2222-444444444444"
-  climate_preset_key="comfort"
-  starts_at=2025-03-17 15:00:00 UTC
-  ends_at=2025-03-20 12:00:00 UTC
-  is_override_allowed=true
-  max_override_period_minutes=90
-  ...
->
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 // Confirm that the thermostat supports cool mode
 // so that the climate presets can use this mode.
 if ($updated_living_room_thermostat->can_hvac_cool) {
@@ -1529,9 +1235,123 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
 }
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  thermostat_schedule_id: '88888888-1111-1111-1111-111111111111',
+  name: "Jim's stay",
+  device_id: '11111111-1111-1111-2222-444444444444',
+  climate_preset_key: 'comfort',
+  starts_at: '2025-03-10T15:00:00.000Z',
+  ends_at: '2025-03-15T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
+  ...
+}
+{
+  thermostat_schedule_id: '88888888-1111-1111-1111-222222222222',
+  name: "Jane's stay",
+  device_id: '11111111-1111-1111-2222-444444444444',
+  climate_preset_key: 'comfort',
+  starts_at: '2025-03-17T15:00:00.000Z',
+  ends_at: '2025-03-20T12:00:00.000Z',
+  is_override_allowed: true,
+  max_override_period_minutes: 90,
+  ...
+}
+```
+
+```json cURL
+{
+  "thermostat_schedule":{
+    "thermostat_schedule_id":"88888888-1111-1111-1111-111111111111",
+    "name":"Jim's stay",
+    "device_id":"11111111-1111-1111-2222-444444444444",
+    "climate_preset_key":"comfort",
+    "starts_at":"2025-03-10T15:00:00.000Z",
+    "ends_at":"2025-03-15T12:00:00.000Z",
+    "is_override_allowed":true,
+    "max_override_period_minutes":90,
+    ...
+  },
+  "ok":true
+}
+{
+  "thermostat_schedule":{
+    "thermostat_schedule_id":"88888888-1111-1111-1111-222222222222",
+    "name":"Jane's stay",
+    "device_id":"11111111-1111-1111-2222-444444444444",
+    "climate_preset_key":"comfort",
+    "starts_at":"2025-03-17T15:00:00.000Z",
+    "ends_at":"2025-03-20T12:00:00.000Z",
+    "is_override_allowed":true,
+    "max_override_period_minutes":90,
+    ...
+  },
+  "ok":true
+}
+```
+
+```json Python
+ThermostatSchedule(
+  thermostat_schedule_id='88888888-1111-1111-1111-111111111111',
+  name="Jim's stay",
+  device_id='11111111-1111-1111-2222-444444444444',
+  climate_preset_key='comfort',
+  starts_at='2025-03-10T15:00:00.000Z',
+  ends_at='2025-03-15T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
+  ...
+)
+ThermostatSchedule(
+  thermostat_schedule_id='88888888-1111-1111-1111-222222222222',
+  name="Jane's stay",
+  device_id='11111111-1111-1111-2222-444444444444',
+  climate_preset_key='comfort',
+  starts_at='2025-03-17T15:00:00.000Z',
+  ends_at='2025-03-20T12:00:00.000Z',
+  is_override_allowed=True,
+  max_override_period_minutes=90,
+  ...
+)
+```
+
+```json Ruby
+<Seam::Resources::ThermostatSchedule:0x005f0
+  thermostat_schedule_id="88888888-1111-1111-1111-111111111111"
+  name="Jim's stay"
+  device_id="11111111-1111-1111-2222-444444444444"
+  climate_preset_key="comfort"
+  starts_at=2025-03-10 15:00:00 UTC
+  ends_at=2025-03-15 12:00:00 UTC
+  is_override_allowed=true
+  max_override_period_minutes=90
+  ...
+>
+<Seam::Resources::ThermostatSchedule:0x005f0
+  thermostat_schedule_id="88888888-1111-1111-1111-222222222222"
+  name="Jane's stay"
+  device_id="11111111-1111-1111-2222-444444444444"
+  climate_preset_key="comfort"
+  starts_at=2025-03-17 15:00:00 UTC
+  ends_at=2025-03-20 12:00:00 UTC
+  is_override_allowed=true
+  max_override_period_minutes=90
+  ...
+>
+```
+
+```json PHP
 {
   "thermostat_schedule_id":"88888888-1111-1111-1111-111111111111",
   "name":"Jim's stay",
@@ -1556,23 +1376,11 @@ if ($updated_living_room_thermostat->can_hvac_cool) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -1582,11 +1390,11 @@ You can use the Seam API to create a thermostat weekly program for your Sensi th
 
 In this example, create a weekday daily program and a weekend daily program. Then, combine these daily programs into a weekly program by assigning a daily program to each day of the week.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Create the daily programs.
 const weekdayProgram = await seam.thermostats.dailyPrograms.create({
   device_id: updatedLivingRoomThermostat.device_id,
@@ -1621,24 +1429,7 @@ await seam.thermostats.updateWeeklyProgram({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "status": "success",
-  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
-  "result": {},
-  "error": null
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Create the daily programs.
 weekday_program=$(curl -X 'POST' \
   'https://connect.getseam.com/thermostats/daily_programs/create' \
@@ -1690,27 +1481,7 @@ curl -X 'POST' \
 }"
 ```
 
-**Output:**
-
-```json
-{
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "PUSH_THERMOSTAT_PROGRAMS",
-    "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-    "result": null,
-    "error": null
-  },
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 # Create the daily programs.
 weekday_program = seam.thermostats.daily_programs.create(
   device_id = updated_living_room_thermostat.device_id,
@@ -1745,24 +1516,7 @@ seam.thermostats.update_weekly_program(
 )
 ```
 
-**Output:**
-
-```
-ActionAttempt(
-  action_attempt_id='11111111-2222-3333-4444-666666666666',
-  action_type='PUSH_THERMOSTAT_PROGRAMS',
-  status='success',
-  result={},
-  error=None
-)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 # Create the daily programs.
 weekday_program = seam.thermostats.daily_programs.create(
   device_id: updated_living_room_thermostat.device_id,
@@ -1797,23 +1551,7 @@ seam.thermostats.update_weekly_program(
 )
 ```
 
-**Output:**
-
-```
-<Seam::Resources::ActionAttempt:0x005f0
-  status="success"
-  action_type="PUSH_THERMOSTAT_PROGRAMS"
-  action_attempt_id="11111111-2222-3333-4444-666666666666"
-  result={}
-  error=nil>
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 // Create the daily programs.
 $weekday_program = $seam->thermostats->daily_programs->create(
   device_id: $updated_living_room_thermostat->device_id,
@@ -1848,9 +1586,17 @@ $seam->thermostats->update_weekly_program(
 );
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "status": "success",
   "action_attempt_id": "11111111-2222-3333-4444-666666666666",
@@ -1860,23 +1606,53 @@ $seam->thermostats->update_weekly_program(
 }
 ```
 
-</Tab>
+```json cURL
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "PUSH_THERMOSTAT_PROGRAMS",
+    "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
+```
 
-<Tab title="C#">
-**Code:**
+```json Python
+ActionAttempt(
+  action_attempt_id='11111111-2222-3333-4444-666666666666',
+  action_type='PUSH_THERMOSTAT_PROGRAMS',
+  status='success',
+  result={},
+  error=None
+)
+```
 
-```csharp
+```json Ruby
+<Seam::Resources::ActionAttempt:0x005f0
+  status="success"
+  action_type="PUSH_THERMOSTAT_PROGRAMS"
+  action_attempt_id="11111111-2222-3333-4444-666666666666"
+  result={}
+  error=nil>
+```
+
+```json PHP
+{
+  "status": "success",
+  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+  "action_type": "PUSH_THERMOSTAT_PROGRAMS",
+  "result": {},
+  "error": null
+}
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
