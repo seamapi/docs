@@ -1,8 +1,6 @@
 ---
-title: 'Using Mobile Keys'
-description: >-
-  Learn how to create an Access Grant with a mobile key access method and
-  deliver it through your mobile app using the Seam mobile SDKs.
+title: "Using Mobile Keys"
+description: "Learn how to create an Access Grant with a mobile key access method and deliver it through your mobile app using the Seam mobile SDKs."
 ---
 
 Mobile keys let your users unlock doors by tapping a button in your mobile app. When you request a `mobile_key` access method in an Access Grant, Seam issues a mobile credential that you deliver through your own app using the Seam mobile SDKs. Each mobile key also includes an [Instant Key](/capability-guides/instant-keys/index) URL for immediate access without an app download.
@@ -10,6 +8,8 @@ Mobile keys let your users unlock doors by tapping a button in your mobile app. 
 Mobile keys work with:
 
 - **Access control systems** — Salto KS, Salto Space, ASSA ABLOY Visionline and Vostio, dormakaba, Brivo, and other ACS platforms that support BLE-based mobile credentials. Specify entrances with `acs_entrance_ids` or use `space_ids`.
+
+---
 
 ## Before You Begin
 
@@ -22,11 +22,10 @@ To use mobile keys, you need:
 - An entrance that supports mobile keys (`can_unlock_with_mobile_key` is `true`)
 
 <Info>
-  If you plan to build a mobile app that delivers mobile keys, see
-  [Mobile Access](/capability-guides/mobile-access/index) for the complete
-  SDK integration guide. If you just want to share a link for instant access,
-  see [Using Instant Keys](/use-cases/granting-access/using-instant-keys) instead.
+  If you plan to build a mobile app that delivers mobile keys, see [Mobile Access](/capability-guides/mobile-access/index) for the complete SDK integration guide. If you just want to share a link for instant access, see [Using Instant Keys](/use-cases/granting-access/using-instant-keys) instead.
 </Info>
+
+---
 
 ## Step 1: Verify Entrance Support
 
@@ -104,6 +103,8 @@ curl -X 'POST' \
 ```
 
 </CodeGroup>
+
+---
 
 ## Step 2: Create an Access Grant with a Mobile Key
 
@@ -203,6 +204,8 @@ curl -X 'POST' \
 
 </CodeGroup>
 
+---
+
 ## Step 3: Deliver the Mobile Key
 
 Once the access method is issued, list the access methods for the Access Grant to get the `client_session_id`. Use this value to initialize the Seam mobile SDK on your user's device so they can unlock doors from your app.
@@ -297,12 +300,12 @@ curl -X 'POST' \
 Use the `client_session_id` to look up the client session token, then pass it to the Seam mobile SDK to initialize your user's mobile app. For the complete mobile SDK integration guide, see [Mobile Access](/capability-guides/mobile-access/index).
 
 <Info>
-  Every mobile key also includes an `instant_key_url`. You can share this URL
-  with your user as an alternative or backup access method — no app download
-  required. See [Using Instant Keys](/use-cases/granting-access/using-instant-keys).
+  Every mobile key also includes an `instant_key_url`. You can share this URL with your user as an alternative or backup access method — no app download required. See [Using Instant Keys](/use-cases/granting-access/using-instant-keys).
 </Info>
 
-## See Which Doors an Access Method Covers
+---
+
+## Step 4: See Which Doors the Mobile Key Covers
 
 An access method can cover multiple doors — for example, if the Access Grant includes several entrances or spaces. To see which doors a mobile key unlocks, call `/access_methods/get_related`.
 
@@ -335,6 +338,8 @@ curl -X 'POST' \
 ```
 
 </CodeGroup>
+
+---
 
 ## Next Steps
 

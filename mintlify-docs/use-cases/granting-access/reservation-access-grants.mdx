@@ -401,10 +401,10 @@ await seam.acs.encoders.encode_card({
 
 This section lists common validation and conflict errors you may encounter when creating Access Grants with `reservation_key`, along with what they mean and how to resolve them.
 
-|
-|
+|  |  |  |
+| --- | --- | --- |
 | not supported. | You passed a  but none of the targeted entrances support reservations. | Remove  or include at least one reservation-capable entrance. |
 | required for guest cards. | The targeted provider requires a reservation for guest credentials (e.g., Visionline) but none was provided. | Add a  when issuing guest credentials for these entrances. |
-| You tried to issue an access grant with a different door set for an existing reservation. | List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. |
-| A joiner grant includes a superset of the reservation-capable doors. | Joiners must use the same or a subset of the reservation-capable doors. Adjust the door set or clear/reissue. |
-| A new access grant’s time frame doesn’t overlap with existing grants for the same reservation. | Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. |
+| You tried to issue an access grant with a different door set for an existing reservation. | List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. List and delete existing access grants for that{' '} , then reissue with the new door set. |  |
+| A joiner grant includes a superset of the reservation-capable doors. | Joiners must use the same or a subset of the reservation-capable doors. Adjust the door set or clear/reissue. |  |
+| A new access grant’s time frame doesn’t overlap with existing grants for the same reservation. | Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. Either adjust the time frame to overlap or use a new{' '}  for the separate stay. |  |

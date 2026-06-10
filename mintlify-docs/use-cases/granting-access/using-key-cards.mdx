@@ -1,8 +1,6 @@
 ---
-title: 'Using Key Cards'
-description: >-
-  Learn how to create an Access Grant with a key card access method, then encode
-  or assign the card to your user.
+title: "Using Key Cards"
+description: "Learn how to create an Access Grant with a key card access method, then encode or assign the card to your user."
 ---
 
 Key cards are plastic cards that unlock doors when presented to a card reader. When you request a `card` access method in an Access Grant, Seam creates a card credential. Depending on your access control system, you either encode the credential onto a physical card using a card encoder or the system assigns the credential to a pre-registered card automatically.
@@ -10,6 +8,8 @@ Key cards are plastic cards that unlock doors when presented to a card reader. W
 Key cards work with:
 
 - **Access control systems** — Salto KS, Salto Space, ASSA ABLOY Visionline and Vostio, dormakaba, Brivo, and other ACS platforms that support card-based credentials. Specify entrances with `acs_entrance_ids` or use `space_ids`.
+
+---
 
 ## Before You Begin
 
@@ -20,6 +20,8 @@ To use key cards, you need:
 - A [user identity](/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) representing the person who will receive the card
 - An entrance that supports card access (`can_unlock_with_card` is `true`)
 - For encoding: a compatible card encoder connected to Seam (see [Working with Card Encoders and Scanners](/low-level-apis/access-systems/working-with-card-encoders-and-scanners/index))
+
+---
 
 ## Step 1: Verify Entrance Support
 
@@ -97,6 +99,8 @@ curl -X 'POST' \
 ```
 
 </CodeGroup>
+
+---
 
 ## Step 2: Create an Access Grant with a Key Card
 
@@ -195,6 +199,8 @@ curl -X 'POST' \
 ```
 
 </CodeGroup>
+
+---
 
 ## Step 3: Deliver the Key Card
 
@@ -355,11 +361,74 @@ For the complete card encoding workflow, including listing encoders and scanning
 
 ### Assigning Cards
 
-If `is_encoding_required` is `false`, the ACS assigns the credential to a card automatically — no physical encoding step is needed. This is common with systems that use pre-registered or cloud-managed cards.
+If `is_assigning_required` is `true`, you can assign an existing credential to the access method by providing the card number. This is common with systems that use pre-registered cards.
 
-In this case, once `is_issued` is `true`, the card is ready. Hand the assigned card to your user.
+Use the Seam API to input the `card_number` for the access method:
 
-## See Which Doors an Access Method Covers
+<CodeGroup>
+
+```javascript JavaScript
+const actionAttempt = await seam.accessMethods.assignCard({
+  access_method_id: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+  card_number: 'ABCD1234',
+})
+```
+
+```python Python
+action_attempt = seam.access_methods.assign_card(
+    access_method_id="a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    card_number="ABCD1234",
+)
+```
+
+```ruby Ruby
+action_attempt = seam.access_methods.assign_card(
+  access_method_id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  card_number: "ABCD1234"
+)
+```
+
+```php PHP
+$actionAttempt = $seam->access_methods->encode(
+  access_method_id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  card_number: "ABCD1234"
+);
+```
+
+```csharp C#
+var actionAttempt = seam.AccessMethods.Encode(
+  accessMethodId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  acsEncoderId: "encoder-001"
+);
+```
+
+```java Java
+var actionAttempt = seam.accessMethods().encode(
+  AccessMethodsEncodeRequest.builder()
+    .accessMethodId("a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+    .acsEncoderId("encoder-001")
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/encode' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "acs_encoder_id": "encoder-001"
+}'
+```
+
+</CodeGroup>
+
+Once a card is assigned, the access method's `is_assignment_required` property changes to `false` and `is_issued` changes to `true`. Hand the assigned card to your user.
+
+---
+
+## Step 4: See Which Doors the Key Card Covers
 
 An access method can cover multiple doors — for example, if the Access Grant includes several entrances or spaces. To see which doors a key card unlocks, call `/access_methods/get_related`.
 
@@ -367,7 +436,7 @@ An access method can cover multiple doors — for example, if the Access Grant i
 
 ```javascript JavaScript
 const related = await seam.accessMethods.getRelated({
-  access_method_ids: [card.access_method_id],
+  access_method_ids: [accessMethod.access_method_id],
 })
 
 console.log(related.acs_entrances) // entrances this card unlocks
@@ -392,6 +461,8 @@ curl -X 'POST' \
 ```
 
 </CodeGroup>
+
+---
 
 ## Next Steps
 

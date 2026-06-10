@@ -1,8 +1,6 @@
 ---
-title: 'Using Instant Keys'
-description: >-
-  Learn how to deliver Instant Keys — shareable unlock links that work without
-  an app download — through Access Grants.
+title: "Using Instant Keys"
+description: "Learn how to deliver Instant Keys — shareable unlock links that work without an app download — through Access Grants."
 ---
 
 Instant Keys are the fastest way to give someone mobile access. When you create an Access Grant with a `mobile_key` access method, Seam automatically generates an Instant Key URL. Share this URL with your user through text, email, or your app. When they tap the link, they can unlock the door immediately — no app download required.
@@ -15,6 +13,8 @@ Instant Keys are ideal for:
 - **Backup access** — Provide a fallback unlock method alongside a native mobile key in your app.
 - **Quick onboarding** — Let users unlock immediately while they set up your full mobile app.
 
+---
+
 ## Before You Begin
 
 To use Instant Keys, you need:
@@ -26,9 +26,10 @@ To use Instant Keys, you need:
 - An entrance that supports mobile keys (`can_unlock_with_mobile_key` is `true`)
 
 <Info>
-  Instant Keys are generated automatically when you create a mobile key access
-  method. You do not need to request them separately.
+  Instant Keys are generated automatically when you create a mobile key access method. You do not need to request them separately.
 </Info>
+
+---
 
 ## Step 1: Create an Access Grant with a Mobile Key
 
@@ -160,7 +161,11 @@ curl -X 'POST' \
 }
 ```
 
+---
+
 ## Step 2: Share the Instant Key URL
+
+Once the access method is created, list the access methods for the Access Grant to get the `instant_key_url`. 
 
 Deliver the `instant_key_url` to your user. Common delivery methods include:
 
@@ -171,13 +176,95 @@ Deliver the `instant_key_url` to your user. Common delivery methods include:
 
 When your user taps the link on their phone, the Instant Key opens as an iOS App Clip or Android Instant App. They can unlock the door immediately — no app store download needed.
 
+<CodeGroup>
+
+```javascript JavaScript
+const accessMethods = await seam.accessMethods.list({
+  access_grant_id: accessGrant.access_grant_id,
+})
+
+const instantKey = accessMethods[0]
+console.log(instantKey.instant_key_url)
+```
+
+```python Python
+access_methods = seam.access_methods.list(
+    access_grant_id=access_grant.access_grant_id
+)
+
+instant_key = access_methods[0]
+print(instant_key.instant_key_url)
+```
+
+```ruby Ruby
+access_methods = seam.access_methods.list(
+  access_grant_id: access_grant.access_grant_id
+)
+
+instant_key = access_methods[0]
+puts instant_key.instant_key_url
+```
+
+```php PHP
+$accessMethods = $seam->access_methods->list(
+  access_grant_id: $accessGrant->access_grant_id
+);
+
+$instantKey = $accessMethods[0];
+echo $instantKey->instant_key_url;
+```
+
+```csharp C#
+var accessMethods = seam.AccessMethods.List(
+  accessGrantId: accessGrant.AccessGrantId
+);
+
+var instantKey = accessMethods[0];
+Console.WriteLine(instantKey.InstantKeyUrl);
+```
+
+```java Java
+var accessMethods = seam.accessMethods().list(
+  AccessMethodsListRequest.builder()
+    .accessGrantId(accessGrant.getAccessGrantId())
+    .build()
+);
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_grant_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+}'
+```
+
+</CodeGroup>
+
+**Output:**
+
+```json
+{
+  "access_method_id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+  "display_name": "Mobile Key",
+  "mode": "mobile_key",
+  "is_issued": true,
+  "issued_at": "2025-06-16T16:55:03.924353Z",
+  "instant_key_url": "https://ik.seam.co/ABCXYZ",
+  ...
+}
+```
+
+Use the `client_session_id` to look up the client session token, then pass it to the Seam mobile SDK to initialize your user's mobile app. For the complete mobile SDK integration guide, see [Mobile Access](/capability-guides/mobile-access/index).
+
 <Info>
-  The Instant Key URL is also available on the access method itself as
-  `instant_key_url`. Both the Access Grant and the access method return the
-  same URL.
 </Info>
 
-## See Which Doors an Access Method Covers
+---
+
+## Step 3: See Which Doors an Access Method Covers
 
 An access method can cover multiple doors — for example, if the Access Grant includes several entrances or spaces. To see which doors an Instant Key unlocks, call `/access_methods/get_related` with the underlying mobile key's access method ID.
 
@@ -210,6 +297,8 @@ curl -X 'POST' \
 ```
 
 </CodeGroup>
+
+---
 
 ## Next Steps
 

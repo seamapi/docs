@@ -1,8 +1,6 @@
 ---
-title: 'Using PIN Codes'
-description: >-
-  Learn how to create an Access Grant with a PIN code access method and deliver
-  the code to your user.
+title: "Using PIN Codes"
+description: "Learn how to create an Access Grant with a PIN code access method and deliver the code to your user."
 ---
 
 PIN codes are the simplest access method. When you request a `code` access method in an Access Grant, Seam programs a PIN code onto the lock. Your user enters the code on the lock's keypad to unlock the door.
@@ -12,6 +10,8 @@ PIN codes work with:
 - **Standalone smart locks** — August, Yale, Schlage, Lockly, TTLock, Tedee, igloohome, and other connected locks. Specify the locks with `device_ids`.
 - **Access control systems** — Salto KS, Salto Space, Brivo, dormakaba, and other ACS platforms that support PIN-based credentials. Specify entrances with `acs_entrance_ids` or group access points into spaces and use `space_ids`.
 
+---
+
 ## Before You Begin
 
 To use PIN codes, you need:
@@ -20,6 +20,8 @@ To use PIN codes, you need:
 - One or more connected devices or ACS entrances that support PIN codes
 - For standalone smart locks: confirm that `can_program_online_access_codes` is `true` on the device
 - For ACS entrances: confirm that `can_unlock_with_code` is `true` on the entrance
+
+---
 
 ## Step 1: Verify Device or Entrance Support
 
@@ -163,6 +165,8 @@ curl -X 'POST' \
 
 </CodeGroup>
 
+---
+
 ## Step 2: Create an Access Grant with a PIN Code
 
 Create an [Access Grant](/use-cases/granting-access/index) specifying `code` as the requested access method mode. You can target devices, entrances, or spaces.
@@ -262,19 +266,24 @@ curl -X 'POST' \
 </CodeGroup>
 
 <Info>
-  In a sandbox workspace, PIN codes are issued almost instantly. On real
-  devices, issuance can take a few moments. Poll the access method until
-  `is_issued` is `true` or watch for the `access_method.issued` event.
+  In a sandbox workspace, PIN codes are issued almost instantly. On real devices, issuance can take a few moments. Poll the access method until `is_issued` is `true` or watch for the `access_method.issued` event.
 </Info>
+
+---
 
 ## Step 3: Retrieve the PIN Code
 
-Once the access method is issued, list the access methods for the Access Grant to get the code. Share the code with your user through text, email, or your application.
+Once the access method is issued, list the access methods for the Access Granlist the access methods for the Access Grant to get the code. Share the code with your user through text, email, or your application.
 
 <CodeGroup>
 
 ```javascript JavaScript
 const accessMethods = await seam.accessMethods.list({
+  access_grant_id: accessGrant.access_grant_id,
+})
+
+const pinCode = accessMethods[0]
+console.log(pinCodes = await seam.accessMethods.list({
   access_grant_id: accessGrant.access_grant_id,
 })
 
@@ -288,11 +297,21 @@ access_methods = seam.access_methods.list(
 )
 
 pin_code = access_methods[0]
+print(pin_codes = seam.access_methods.list(
+    access_grant_id=access_grant.access_grant_id
+)
+
+pin_code = access_methods[0]
 print(pin_code.code)  # => "1234"
 ```
 
 ```ruby Ruby
 access_methods = seam.access_methods.list(
+  access_grant_id: access_grant.access_grant_id
+)
+
+pin_code = access_methods[0]
+puts pin_codes = seam.access_methods.list(
   access_grant_id: access_grant.access_grant_id
 )
 
@@ -306,11 +325,21 @@ $accessMethods = $seam->access_methods->list(
 );
 
 $pinCode = $accessMethods[0];
+echo $pinCodes = $seam->access_methods->list(
+  access_grant_id: $accessGrant->access_grant_id
+);
+
+$pinCode = $accessMethods[0];
 echo $pinCode->code;  // => "1234"
 ```
 
 ```csharp C#
 var accessMethods = seam.AccessMethods.List(
+  accessGrantId: accessGrant.AccessGrantId
+);
+
+var pinCode = accessMethods[0];
+Console.WriteLine(pinCodes = seam.AccessMethods.List(
   accessGrantId: accessGrant.AccessGrantId
 );
 
@@ -321,6 +350,8 @@ Console.WriteLine(pinCode.Code);  // => "1234"
 ```java Java
 var accessMethods = seam.accessMethods().list(
   AccessMethodsListRequest.builder()
+    .accessGrantId(accessGrant.getAccessGrantId()s = seam.accessMethods().list(
+  AccessMethodsListRequest.builder()
     .accessGrantId(accessGrant.getAccessGrantId())
     .build()
 );
@@ -329,6 +360,10 @@ var accessMethods = seam.accessMethods().list(
 ```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_methods/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_grant_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890list' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
@@ -352,7 +387,9 @@ curl -X 'POST' \
 }
 ```
 
-## See Which Doors an Access Method Covers
+---
+
+## Step 4: See Which Doors an Access Method Covers
 
 An access method can cover multiple doors — for example, if the Access Grant includes several devices or entrances. To see which doors a PIN code is programmed on, call `/access_methods/get_related`.
 
@@ -387,6 +424,8 @@ curl -X 'POST' \
 ```
 
 </CodeGroup>
+
+---
 
 ## Next Steps
 
