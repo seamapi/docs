@@ -288,9 +288,9 @@ curl -X 'POST' \
 
 The unlock event appears in the ACS audit trail attributed to the specific user identity, not as a generic system action.
 
-## Listing Related Entrances
+## Step 4: List the Doors This Cloud Key Applies To
 
-To see which entrances a cloud key can unlock, call `/access_methods/get_related`.
+An access method can cover multiple doors — for example, if the Access Grant includes several entrances or spaces. To see exactly which doors a cloud key can unlock, call `/access_methods/get_related`.
 
 <CodeGroup>
 

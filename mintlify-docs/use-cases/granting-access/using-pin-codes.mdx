@@ -350,9 +350,9 @@ curl -X 'POST' \
 }
 ```
 
-## Listing Related Devices and Entrances
+## Step 4: List the Doors This PIN Code Applies To
 
-To see which devices or entrances a PIN code access method covers, call `/access_methods/get_related`. This returns the devices, ACS entrances, spaces, and other resources associated with the access method.
+An access method can cover multiple doors — for example, if the Access Grant includes several devices or entrances. To see exactly which doors a PIN code is programmed on, call `/access_methods/get_related`.
 
 <CodeGroup>
 
