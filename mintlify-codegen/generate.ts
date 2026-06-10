@@ -182,14 +182,17 @@ async function updateObjectPages(
       const searchFrom = sectionIdx === -1 ? 0 : sectionIdx
 
       // Update CodeGroup/Tabs section
-      const codeGroupMatch = codeGroupStartPattern.exec(content.slice(searchFrom))
+      const codeGroupMatch = codeGroupStartPattern.exec(
+        content.slice(searchFrom),
+      )
       if (codeGroupMatch) {
         const absStart = searchFrom + codeGroupMatch.index
         const endMatch = codeGroupEndPattern.exec(content.slice(absStart))
         if (endMatch) {
           const absEnd = absStart + endMatch.index + endMatch[0].length
           const newCodeGroup = renderCodeGroup(samples)
-          content = content.slice(0, absStart) + newCodeGroup + content.slice(absEnd)
+          content =
+            content.slice(0, absStart) + newCodeGroup + content.slice(absEnd)
           changed = true
         }
       }
@@ -200,13 +203,18 @@ async function updateObjectPages(
       if (propsIdx !== -1 && properties.length > 0) {
         const propsContentStart = propsIdx + propsHeader.length
         // Find the next ## heading or end of file to bound the properties section
-        const nextSectionMatch = /\n## (?!Properties)/m.exec(content.slice(propsContentStart))
+        const nextSectionMatch = /\n## (?!Properties)/m.exec(
+          content.slice(propsContentStart),
+        )
         const propsContentEnd = nextSectionMatch
           ? propsContentStart + nextSectionMatch.index
           : content.length
 
         const newProps = '\n\n' + renderProperties(properties) + '\n\n'
-        content = content.slice(0, propsContentStart) + newProps + content.slice(propsContentEnd)
+        content =
+          content.slice(0, propsContentStart) +
+          newProps +
+          content.slice(propsContentEnd)
         changed = true
       }
     }
