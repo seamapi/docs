@@ -123,7 +123,7 @@ Each Access Grant can issue one or more **access methods** — the credentials y
 | `code` | A PIN code programmed on the lock. | Simple keypad entry — share a code via text, email, or your app. |
 | `mobile_key` | A BLE credential delivered through the [Seam mobile SDK](/capability-guides/mobile-access/mobile-device-sdks/index). | Building a custom app with native mobile unlock. |
 | `card` | A credential encoded onto a physical plastic card. | Hotels and offices with existing card infrastructure. |
-| `cloud_key` | A web pass for unlocking the door, with access logs. | Remote unlock without physical credentials. |
+| `cloud_key` | A web pass for unlocking the door, with access logs. | Web unlock without physical credentials. |
 
 When you request `mobile_key`, Seam also generates an **Instant Key** — a shareable URL that gives your user mobile access without downloading an app. Useful for quick delivery via text or email.
 
