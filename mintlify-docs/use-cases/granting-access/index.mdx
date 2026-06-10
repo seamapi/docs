@@ -1,6 +1,5 @@
 ---
-title: 'Granting Access'
-sidebarTitle: 'Overview'
+title: 'Overview'
 description: 'One API to grant access across smart locks and access control systems — PIN codes, mobile keys, key cards, and cloud keys.'
 ---
 
@@ -116,15 +115,6 @@ You specify _where_ to grant access using `device_ids` (smart locks), `acs_entra
 <Info>
 Override-based access systems (Dormakaba Ambiance, Dormakaba Community, Visionline, Salto Space, and Vostio) require a `reservation_key` for credential sequencing. See [Reservation Access Grants](/use-cases/granting-access/reservation-access-grants).
 </Info>
-
----
-
-## When to Use Lower-Level APIs
-
-Access Grants cover the vast majority of use cases. The lower-level APIs are only needed for:
-
-- **Custom PIN codes** — setting a specific code value on a single lock. Use the [Access Codes API](../../low-level-apis/smart-locks/access-codes/index).
-- **Direct ACS management** — managing ACS users, credentials, or access groups outside of Access Grants. Use the [ACS API](../../low-level-apis/access-systems/index).
 
 ---
 
