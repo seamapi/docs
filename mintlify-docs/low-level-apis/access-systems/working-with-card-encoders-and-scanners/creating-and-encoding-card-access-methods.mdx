@@ -367,37 +367,17 @@ There may be multiple encoders at a location, so it’s important to select the 
 
 This example shows how to retrieve all encoders in a building connected to a single access system. Once you've identified the encoder you'd like to use, save the `acs_encoder_id` of the chosen encoder for the next step.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.acs.encoders.list({
   acs_system_ids: [buildingSystemId],
 })
 ```
 
-**Output:**
-
-```json
-[
-  {
-    acs_encoder_id: '33333333-4444-5555-6666-777777777777',
-    display_name: 'Front Desk',
-    ...
-  },
-  ...
-]
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/acs/encoders/list' \
   -H 'accept: application/json' \
@@ -408,9 +388,46 @@ curl -X 'POST' \
 }"
 ```
 
+```python Python
+seam.acs.encoders.list(
+  acs_system_ids = [building_system_id]
+)
+```
+
+```ruby Ruby
+seam.acs.encoders.list(
+  acs_system_ids: [building_system_id]
+)
+```
+
+```php PHP
+$seam->acs->encoders->list(
+  acs_system_ids: [building_system_id]
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+[
+  {
+    acs_encoder_id: '33333333-4444-5555-6666-777777777777',
+    display_name: 'Front Desk',
+    ...
+  },
+  ...
+]
+```
+
+```json cURL
 {
   "acs_encoders": [
     {
@@ -424,21 +441,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.acs.encoders.list(
-  acs_system_ids = [building_system_id]
-)
-```
-
-**Output:**
-
-```
+```json Python
 [
   AcsEncoder(
     acs_encoder_id='33333333-4444-5555-6666-777777777777',
@@ -449,21 +452,7 @@ seam.acs.encoders.list(
 ]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.acs.encoders.list(
-  acs_system_ids: [building_system_id]
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 [
   <Seam::Resources::AcsEncoder:0x00410
     acs_encoder_id="33333333-4444-5555-6666-777777777777"
@@ -474,21 +463,7 @@ seam.acs.encoders.list(
 ]
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->acs->encoders->list(
-  acs_system_ids: [building_system_id]
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 [
   {
     "acs_encoder_id": "33333333-4444-5555-6666-777777777777",
@@ -499,24 +474,11 @@ $seam->acs->encoders->list(
 ]
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -524,37 +486,18 @@ $seam->acs->encoders->list(
 
 Use `/acs/encoders/encode_credential` to start the card writing procedure that stores the access method data on the plastic key card.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const encodingActionAttempt = await seam.accessMethods.encode({
   access_method_id: accessMethodId,
   acs_encoder_id: encoder.acs_encoder_id,
 })
 ```
 
-**Output:**
-
-```json
-{
-  status: 'pending',
-  action_attempt_id: '11111111-2222-3333-4444-555555555555",
-  action_type: 'ENCODE_ACCESS_METHOD',
-  result: null,
-  error: null
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 encoding_action_attempt=$(curl -X 'POST' \
   'https://connect.getseam.com/access_methods/encode' \
   -H 'accept: application/json' \
@@ -566,9 +509,48 @@ encoding_action_attempt=$(curl -X 'POST' \
 }")
 ```
 
+```python Python
+encoding_action_attempt = seam.access_methods.encode(
+  access_method_id = access_method_id,
+  acs_encoder_id = encoder.acs_encoder_id
+)
+```
+
+```ruby Ruby
+encoding_action_attempt = seam.access_methods.encode(
+  access_method_id: access_method_id,
+  acs_encoder_id: encoder.acs_encoder_id
+)
+```
+
+```php PHP
+$encoding_action_attempt = $seam->access_methods->encode(
+  acs_credential_id: $access_method_id,
+  acs_encoder_id: $encoder->acs_encoder_id
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  status: 'pending',
+  action_attempt_id: '11111111-2222-3333-4444-555555555555",
+  action_type: 'ENCODE_ACCESS_METHOD',
+  result: null,
+  error: null
+}
+```
+
+```json cURL
 {
   "action_attempt": {
     "status": "pending",
@@ -581,22 +563,7 @@ encoding_action_attempt=$(curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-encoding_action_attempt = seam.access_methods.encode(
-  access_method_id = access_method_id,
-  acs_encoder_id = encoder.acs_encoder_id
-)
-```
-
-**Output:**
-
-```
+```json Python
 ActionAttempt(
   status='pending',
   action_attempt_id='11111111-2222-3333-4444-555555555555',
@@ -606,22 +573,7 @@ ActionAttempt(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-encoding_action_attempt = seam.access_methods.encode(
-  access_method_id: access_method_id,
-  acs_encoder_id: encoder.acs_encoder_id
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::ActionAttempt:0x00410
   status="pending"
   action_attempt_id="11111111-2222-3333-4444-555555555555"
@@ -631,22 +583,7 @@ encoding_action_attempt = seam.access_methods.encode(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$encoding_action_attempt = $seam->access_methods->encode(
-  acs_credential_id: $access_method_id,
-  acs_encoder_id: $encoder->acs_encoder_id
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "status": "pending",
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
@@ -656,24 +593,11 @@ $encoding_action_attempt = $seam->access_methods->encode(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -685,20 +609,56 @@ Once you issue a request to encode the access method onto the card, it is import
 
 When you make an `/access_methods/encode` request, Seam returns an [action attempt](../../../core-concepts/action-attempts). To confirm that the card encoding was successful, you can poll this action attempt, until its `status` becomes `success`.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.actionAttempts.get({
   action_attempt_id: encodingActionAttempt.action_attempt_id,
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/action_attempts/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+  \"action_attempt_id\": \"$(jq -r '.action_attempt.action_attempt_id' <<< ${encoding_action_attempt})\"
+}"
+```
+
+```python Python
+seam.action_attempts.get(
+  action_attempt_id = encoding_action_attempt.action_attempt_id
+)
+```
+
+```ruby Ruby
+seam.action_attempts.get(
+  action_attempt_id: encoding_action_attempt.action_attempt_id
+)
+```
+
+```php PHP
+$seam->action_attempts->get(
+  action_attempt_id: $encoding_action_attempt->action_attempt_id
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   status: 'success',
   action_attempt_id: '11111111-2222-3333-4444-555555555555",
@@ -714,26 +674,7 @@ await seam.actionAttempts.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/action_attempts/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"action_attempt_id\": \"$(jq -r '.action_attempt.action_attempt_id' <<< ${encoding_action_attempt})\"
-}"
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "action_attempt":
     {
@@ -753,21 +694,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.action_attempts.get(
-  action_attempt_id = encoding_action_attempt.action_attempt_id
-)
-```
-
-**Output:**
-
-```
+```json Python
 ActionAttempt(
   status='success',
   action_attempt_id='11111111-2222-3333-4444-555555555555',
@@ -783,21 +710,7 @@ ActionAttempt(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.action_attempts.get(
-  action_attempt_id: encoding_action_attempt.action_attempt_id
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::ActionAttempt:0x00410
   status="success"
   action_attempt_id="11111111-2222-3333-4444-555555555555"
@@ -813,21 +726,7 @@ seam.action_attempts.get(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->action_attempts->get(
-  action_attempt_id: $encoding_action_attempt->action_attempt_id
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "status": "success",
   "action_attempt_id": "11111111-2222-3333-4444-555555555555",
@@ -843,24 +742,11 @@ $seam->action_attempts->get(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 #### View Access Method Properties
 

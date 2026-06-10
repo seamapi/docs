@@ -5,30 +5,17 @@ description: 'Learn how to revoke an access method so that a user can no longer 
 
 To revoke an access method, delete it.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessMethods.delete({
   access_method_id: '3f10d86c-526b-4b85-8788-cc1a74411b71',
 })
 ```
 
-**Output:**
-
-```javascript
-// void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```curl
+```curl cURL
 curl --include --request POST "https://connect.getseam.com/access_methods/delete" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
@@ -38,77 +25,52 @@ curl --include --request POST "https://connect.getseam.com/access_methods/delete
 EOF
 ```
 
-**Output:**
-
-```curl
-{}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 seam.access_methods.delete(access_method_id="3f10d86c-526b-4b85-8788-cc1a74411b71")
 ```
 
-**Output:**
-
-```python
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 seam.access_methods.delete(access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b71")
 ```
 
-**Output:**
-
-```ruby
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 $seam->access_methods->delete(
     access_method_id: "3f10d86c-526b-4b85-8788-cc1a74411b71"
 );
 ```
 
-**Output:**
-
-```php
-
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```csharp C#
 // Coming Soon!
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```javascript JavaScript
+// void
+```
+
+```curl cURL
+{}
+```
+
+```python Python
+None
+```
+
+```ruby Ruby
+nil
+```
+
+```php PHP
+
+```
+
+```json C#
 // Coming Soon!
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

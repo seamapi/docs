@@ -174,10 +174,9 @@ Some device providers require you to configure the device's timezone before crea
 
 Check for the provider-specific timezone warning in `device.warnings`:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -197,11 +196,7 @@ if (timezoneWarnings.length > 0) {
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 device=$(curl -X 'POST' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
@@ -215,11 +210,7 @@ device=$(curl -X 'POST' \
 echo $device | jq '.device.warnings[] | select(.warning_code | test("time_zone"; "i"))'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -237,11 +228,7 @@ if timezone_warnings:
   print(f"Warning: {timezone_warnings[0].message}")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -259,11 +246,7 @@ if timezone_warnings.any?
 end
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -284,11 +267,7 @@ if (count($timezoneWarnings) > 0) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 using System.Linq;
 
@@ -308,11 +287,7 @@ if (timezoneWarnings.Any())
 }
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
 import java.util.stream.Collectors;
@@ -336,7 +311,6 @@ if (!timezoneWarnings.isEmpty()) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 For devices requiring timezone configuration, attempting to create a time-bound access code without first setting the timezone will result in a validation error.

@@ -36,10 +36,9 @@ To create access codes for an Ultraloq device:
 
 Permanent access codes work indefinitely until you delete them. They **do not require timezone configuration**.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -55,11 +54,7 @@ console.log(`Access code created: ${accessCode.code}`)
 console.log(`Status: ${accessCode.status}`)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/create' \
   -H 'accept: application/json' \
@@ -72,11 +67,7 @@ curl -X 'POST' \
   }'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -92,11 +83,7 @@ print(f"Access code created: {access_code.code}")
 print(f"Status: {access_code.status}")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -112,11 +99,7 @@ puts "Access code created: #{access_code.code}"
 puts "Status: #{access_code.status}"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -135,11 +118,7 @@ echo "Access code created: " . $accessCode->code . "\n";
 echo "Status: " . $accessCode->status . "\n";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -155,11 +134,7 @@ Console.WriteLine($"Access code created: {accessCode.Code}");
 Console.WriteLine($"Status: {accessCode.Status}");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
 
@@ -178,8 +153,7 @@ System.out.println("Access code created: " + accessCode.getCode());
 System.out.println("Status: " + accessCode.getStatus());
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -193,10 +167,9 @@ Time-bound access codes automatically activate and deactivate at specified times
   Device must not have the `ultraloq_time_zone_unknown` warning
 </Warning>
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -219,11 +192,7 @@ console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`)
 console.log(`Status: ${accessCode.status}`)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 # Calculate timestamps (requires date command)
 STARTS_AT=$(date -u -d '+1 day' '+%Y-%m-%dT%H:%M:%SZ')
 ENDS_AT=$(date -u -d '+3 days' '+%Y-%m-%dT%H:%M:%SZ')
@@ -242,11 +211,7 @@ curl -X 'POST' \
   }"
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 from datetime import datetime, timedelta
 
@@ -270,11 +235,7 @@ print(f"Active from {access_code.starts_at} to {access_code.ends_at}")
 print(f"Status: {access_code.status}")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 require "time"
 
@@ -298,11 +259,7 @@ puts "Active from #{access_code.starts_at} to #{access_code.ends_at}"
 puts "Status: #{access_code.status}"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -328,11 +285,7 @@ echo "Active from " . $accessCode->starts_at . " to " . $accessCode->ends_at . "
 echo "Status: " . $accessCode->status . "\n";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 using System;
 
@@ -356,11 +309,7 @@ Console.WriteLine($"Active from {accessCode.StartsAt} to {accessCode.EndsAt}");
 Console.WriteLine($"Status: {accessCode.Status}");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
 import java.time.Instant;
@@ -388,8 +337,7 @@ System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCo
 System.out.println("Status: " + accessCode.getStatus());
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### How Time Zone Conversion Works
 
@@ -459,10 +407,9 @@ Ultraloq access codes must be:
 
 Before creating time-bound access codes, verify that the device's timezone is configured:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -492,11 +439,7 @@ if (await canCreateTimeBoundCodes('your-device-id')) {
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -525,11 +468,7 @@ else:
   print("See: Configuring Ultraloq Device Timezones")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -559,11 +498,7 @@ else
 end
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -598,8 +533,7 @@ if (canCreateTimeBoundCodes($seam, "your-device-id")) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -609,10 +543,9 @@ Users can disable access codes through the Ultraloq mobile app. When this happen
 
 ### Detecting Disabled Codes
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -632,11 +565,7 @@ if (isDisabled) {
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -656,11 +585,7 @@ if is_disabled:
   print("User must re-enable it in the Ultraloq mobile app")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -680,11 +605,7 @@ if is_disabled
 end
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -711,8 +632,7 @@ if ($isDisabled) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 <Info>
   **Resolution:** The user must re-enable the code in the Ultraloq mobile app.

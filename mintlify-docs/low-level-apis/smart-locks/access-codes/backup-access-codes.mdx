@@ -35,12 +35,11 @@ After you've done that, come back here and keep reading.
 }
 ```
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 console.log(
   await seam.devices.get({
     device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
@@ -48,9 +47,45 @@ console.log(
 )
 ```
 
+```bash cURL
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/devices/get' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+}'
+```
+
+```python Python
+device = seam.devices.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
+pprint("Supports backup access code pool: "
+    + str(device.properties.supports_backup_access_code_pool))
+```
+
+```ruby Ruby
+puts client.devices.get(device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
+```
+
+```php PHP
+# not yet implemented
+```
+
+```csharp C#
+var device = seam.Devices.Get(deviceId: "6aae9d08-fed6-4ca5-8328-e36849ab48fe");
+Console.WriteLine("Device ID: " + device.DeviceId);
+Console.WriteLine("Supports backup access code pool: " + device.Properties.SupportsBackupAccessCodePool);
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   device_id: '6aae9d08-fed6-4ca5-8328-e36849ab48fe',
   .
@@ -68,27 +103,7 @@ console.log(
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
-# Use GET or POST.
-curl -X 'GET' \
-  'https://connect.getseam.com/devices/get' \
-  -H 'accept: application/json' \
-  -H 'Authorization: Bearer ${API_KEY}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-}'
-```
-
-**Response:**
-
-```json
+```json cURL
 {
   "device": {
     "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
@@ -110,37 +125,11 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-device = seam.devices.get("6aae9d08-fed6-4ca5-8328-e36849ab48fe")
-pprint("Supports backup access code pool: "
-    + str(device.properties.supports_backup_access_code_pool))
-```
-
-**Response:**
-
-```
+```json Python
 'Supports backup access code pool: True'
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-puts client.devices.get(device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspect
-```
-
-**Response:**
-
-```
+```json Ruby
 <Seam::Device:0x00438
   device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
   .
@@ -153,35 +142,12 @@ puts client.devices.get(device_id: "6aae9d08-fed6-4ca5-8328-e36849ab48fe").inspe
   >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
-# not yet implemented
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-var device = seam.Devices.Get(deviceId: "6aae9d08-fed6-4ca5-8328-e36849ab48fe");
-Console.WriteLine("Device ID: " + device.DeviceId);
-Console.WriteLine("Supports backup access code pool: " + device.Properties.SupportsBackupAccessCodePool);
-```
-
-**Response:**
-
-```
+```json C#
 Device ID: 6aae9d08-fed6-4ca5-8328-e36849ab48fe
 Supports backup access code pool: True
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -197,12 +163,11 @@ This activation is a one-time process for each device. Once initiated, Seam cons
 In the smart lock app, backup access codes appear as "Backup `{CODE_ID}` (Seam)".
 </Info>
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const deviceId = '6aae9d08-fed6-4ca5-8328-e36849ab48fe'
 
 const createdAccessCode = await seam.accessCodes.create({
@@ -216,38 +181,7 @@ const createdAccessCode = await seam.accessCodes.create({
 console.log(createdAccessCode)
 ```
 
-**Response:**
-
-```json
-{
-  "access_code_id": "f863cb36-7f96-4b56-ac91-115742c31c00",
-  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name": "my time-bound code",
-  "appearance": null,
-  "code": "8030",
-  "common_code_key": null,
-  "type": "time_bound",
-  "status": "unset",
-  "is_scheduled_on_device": false,
-  "starts_at": "2025-01-01T16:00:00.000Z",
-  "ends_at": "2025-01-22T12:00:00.000Z",
-  "pulled_backup_access_code_id": null,
-  "is_backup_access_code_available": true,
-  "created_at": "2023-10-19T11:41:27.273Z",
-  "errors": [],
-  "warnings": [],
-  "is_managed": true,
-  "is_external_modification_allowed": false
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/create' \
   -H 'accept: application/json' \
@@ -262,48 +196,7 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "action_attempt": {
-    "status": "pending",
-    "action_type": "CREATE_ACCESS_CODE",
-    "action_attempt_id": "7177edd7-3f99-46b9-bf4b-d3a9a16f6da9",
-    "result": null,
-    "error": null
-  },
-  "access_code": {
-    "access_code_id": "ddb6e6b7-7156-471e-9199-4106db2f2e57",
-    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-    "name": "my time-bound code",
-    "appearance": null,
-    "code": "1185",
-    "common_code_key": null,
-    "type": "time_bound",
-    "status": "unset",
-    "is_scheduled_on_device": false,
-    "starts_at": "2025-01-01T16:00:00.000Z",
-    "ends_at": "2025-01-22T12:00:00.000Z",
-    "pulled_backup_access_code_id": null,
-    "is_backup_access_code_available": true,
-    "created_at": "2023-10-19T08:23:50.789Z",
-    "errors": [],
-    "warnings": [],
-    "is_managed": true,
-    "is_external_modification_allowed": false
-  },
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
 created_access_code = seam.access_codes.create(
@@ -317,38 +210,7 @@ created_access_code = seam.access_codes.create(
 pprint(created_access_code)
 ```
 
-**Response:**
-
-```
-AccessCode(access_code_id='dc83d82d-55d2-4178-8c8c-10382311aed2',
-           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-           type='time_bound',
-           code='9132',
-           created_at='2023-10-19T05:07:03.693Z',
-           errors=[],
-           warnings=[],
-           starts_at='2025-01-01T16:00:00.000Z',
-           ends_at='2025-01-22T12:00:00.000Z',
-           name='my time-bound code',
-           status='unset',
-           common_code_key=None,
-           is_managed=True,
-           is_waiting_for_code_assignment=None,
-           is_scheduled_on_device=False,
-           pulled_backup_access_code_id=None,
-           is_backup_access_code_available=True,
-           is_backup=None,
-           appearance=None,
-           is_external_modification_allowed=False)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 device_id = "6aae9d08-fed6-4ca5-8328-e36849ab48fe"
 
 created_access_code = client.access_codes.create(
@@ -362,34 +224,7 @@ created_access_code = client.access_codes.create(
 puts created_access_code.inspect
 ```
 
-**Response:**
-
-```
-<Seam::AccessCode:0x00438
-  code="2239"
-  name="my time-bound code"
-  type="time_bound"
-  errors=[]
-  status="unset"
-  ends_at=2025-01-22 12:00:00 UTC
-  warnings=[]
-  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-  starts_at=2025-01-01 16:00:00 UTC
-  appearance=nil
-  created_at=2023-10-25 04:17:43.323 UTC
-  is_managed=true
-  access_code_id="995d1927-e0db-4a97-b759-515193e6edbc"
-  is_scheduled_on_device=false
-  pulled_backup_access_code_id=nil
-  is_backup_access_code_available=true
-  is_external_modification_allowed=false>
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 $device_id = "5a9dee23-e50f-4da7-88f3-fef38bf07857";
 
 $access_code = $seam->access_codes->create(
@@ -426,13 +261,7 @@ echo json_encode($access_code, JSON_PRETTY_PRINT);
 // }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```csharp C#
 var deviceId = "6aae9d08-fed6-4ca5-8328-e36849ab48fe";
 var createdAccessCode = seam.AccessCodes.Create(
   deviceId: deviceId,
@@ -446,15 +275,118 @@ Console.WriteLine("Created access code ID: " + createdAccessCode.AccessCodeId);
 Console.WriteLine("Is backup access code available: " + createdAccessCode.IsBackupAccessCodeAvailable);
 ```
 
+</CodeGroup>
+
 **Response:**
 
+<CodeGroup>
+
+```json JavaScript
+{
+  "access_code_id": "f863cb36-7f96-4b56-ac91-115742c31c00",
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "my time-bound code",
+  "appearance": null,
+  "code": "8030",
+  "common_code_key": null,
+  "type": "time_bound",
+  "status": "unset",
+  "is_scheduled_on_device": false,
+  "starts_at": "2025-01-01T16:00:00.000Z",
+  "ends_at": "2025-01-22T12:00:00.000Z",
+  "pulled_backup_access_code_id": null,
+  "is_backup_access_code_available": true,
+  "created_at": "2023-10-19T11:41:27.273Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "is_external_modification_allowed": false
+}
 ```
+
+```json cURL
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_type": "CREATE_ACCESS_CODE",
+    "action_attempt_id": "7177edd7-3f99-46b9-bf4b-d3a9a16f6da9",
+    "result": null,
+    "error": null
+  },
+  "access_code": {
+    "access_code_id": "ddb6e6b7-7156-471e-9199-4106db2f2e57",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "my time-bound code",
+    "appearance": null,
+    "code": "1185",
+    "common_code_key": null,
+    "type": "time_bound",
+    "status": "unset",
+    "is_scheduled_on_device": false,
+    "starts_at": "2025-01-01T16:00:00.000Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    "pulled_backup_access_code_id": null,
+    "is_backup_access_code_available": true,
+    "created_at": "2023-10-19T08:23:50.789Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": false
+  },
+  "ok": true
+}
+```
+
+```json Python
+AccessCode(access_code_id='dc83d82d-55d2-4178-8c8c-10382311aed2',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='time_bound',
+           code='9132',
+           created_at='2023-10-19T05:07:03.693Z',
+           errors=[],
+           warnings=[],
+           starts_at='2025-01-01T16:00:00.000Z',
+           ends_at='2025-01-22T12:00:00.000Z',
+           name='my time-bound code',
+           status='unset',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=False,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=True,
+           is_backup=None,
+           appearance=None,
+           is_external_modification_allowed=False)
+```
+
+```json Ruby
+<Seam::AccessCode:0x00438
+  code="2239"
+  name="my time-bound code"
+  type="time_bound"
+  errors=[]
+  status="unset"
+  ends_at=2025-01-22 12:00:00 UTC
+  warnings=[]
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  starts_at=2025-01-01 16:00:00 UTC
+  appearance=nil
+  created_at=2023-10-25 04:17:43.323 UTC
+  is_managed=true
+  access_code_id="995d1927-e0db-4a97-b759-515193e6edbc"
+  is_scheduled_on_device=false
+  pulled_backup_access_code_id=nil
+  is_backup_access_code_available=true
+  is_external_modification_allowed=false>
+```
+
+```json C#
 Created access code ID: 4ea6c172-cff7-4502-a766-f9293f36cba5
 Is backup access code available: True
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### 2. Detect when an access code has failed to program
 
@@ -471,12 +403,11 @@ To confirm that a backup access code is available for retrieval, check the `is_b
   time.
 </Info>
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const accessCode = await seam.accessCodes.get({
   access_code_id: 'f863cb36-7f96-4b56-ac91-115742c31c00',
 })
@@ -487,19 +418,7 @@ console.log(
 )
 ```
 
-**Response:**
-
-```
-Is backup access code available: true
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
@@ -511,9 +430,47 @@ curl -X 'GET' \
 }'
 ```
 
+```python Python
+access_code = seam.access_codes.get("dc83d82d-55d2-4178-8c8c-10382311aed2")
+
+pprint("Is backup access code available: "
+    + str(access_code.is_backup_access_code_available))
+```
+
+```ruby Ruby
+access_code = client.access_codes.get(access_code_id: "995d1927-e0db-4a97-b759-515193e6edbc")
+puts "Is backup access code available: #{access_code.is_backup_access_code_available}"
+```
+
+```php PHP
+$access_code_id = "a91604eb-ebae-420c-a51e-07a30422fd94";
+
+$access_code = $seam->access_codes->get(
+  access_code_id: $access_code_id
+);
+
+# Inspect access code is_backup_access_code_available
+echo json_encode($access_code->is_backup_access_code_available);
+# => true
+```
+
+```csharp C#
+var accessCode = seam.AccessCodes.Get(accessCodeId: "4ea6c172-cff7-4502-a766-f9293f36cba5");
+Console.WriteLine("Created access code ID: " + accessCode.AccessCodeId);
+Console.WriteLine("Is backup access code available: " + accessCode.IsBackupAccessCodeAvailable);
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+Is backup access code available: true
+```
+
+```json cURL
 {
   "access_code": {
     "access_code_id": "ddb6e6b7-7156-471e-9199-4106db2f2e57",
@@ -529,79 +486,20 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-access_code = seam.access_codes.get("dc83d82d-55d2-4178-8c8c-10382311aed2")
-
-pprint("Is backup access code available: "
-    + str(access_code.is_backup_access_code_available))
-```
-
-**Response:**
-
-```
+```json Python
 'Is backup access code available: True'
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-access_code = client.access_codes.get(access_code_id: "995d1927-e0db-4a97-b759-515193e6edbc")
-puts "Is backup access code available: #{access_code.is_backup_access_code_available}"
-```
-
-**Response:**
-
-```
+```json Ruby
 Is backup access code available: true
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
-$access_code_id = "a91604eb-ebae-420c-a51e-07a30422fd94";
-
-$access_code = $seam->access_codes->get(
-  access_code_id: $access_code_id
-);
-
-# Inspect access code is_backup_access_code_available
-echo json_encode($access_code->is_backup_access_code_available);
-# => true
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-var accessCode = seam.AccessCodes.Get(accessCodeId: "4ea6c172-cff7-4502-a766-f9293f36cba5");
-Console.WriteLine("Created access code ID: " + accessCode.AccessCodeId);
-Console.WriteLine("Is backup access code available: " + accessCode.IsBackupAccessCodeAvailable);
-```
-
-**Response:**
-
-```
+```json C#
 Created access code ID: 4ea6c172-cff7-4502-a766-f9293f36cba5
 Is backup access code available: True
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### 4. Retrieve a backup access code
 
@@ -614,12 +512,11 @@ Upon executing this action, Seam performs the following additional actions:
 - Update the `ends_at` date for the backup access code to match that of the original access code.
 - Attempt to refill the backup access code pool with a new backup code.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
   access_code_id: 'f863cb36-7f96-4b56-ac91-115742c31c00',
 })
@@ -627,41 +524,7 @@ const backupAccessCode = await seam.accessCodes.pullBackupAccessCode({
 console.log(backupAccessCode)
 ```
 
-**Response:**
-
-```json
-{
-  "access_code_id": "284cc090-5d89-4e9d-a4ed-518c6cb68d99",
-  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-  "name": "Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
-  "appearance": {
-    "name": "Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
-    "last_name": "284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
-    "first_name": "Backup"
-  },
-  "code": "1275",
-  "common_code_key": null,
-  "type": "time_bound",
-  "status": "set",
-  "starts_at": "2023-10-19T11:50:21.092Z",
-  "ends_at": "2025-01-22T12:00:00.000Z",
-  "is_backup": true,
-  "is_backup_access_code_available": false,
-  "created_at": "2023-10-19T05:07:05.369Z",
-  "errors": [],
-  "warnings": [],
-  "is_managed": true,
-  "is_external_modification_allowed": false
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/pull_backup_access_code' \
   -H 'accept: application/json' \
@@ -672,44 +535,7 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "backup_access_code": {
-    "access_code_id": "1e72a758-fbf5-433a-8c20-b379dd6df2d3",
-    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
-    "name": "Backup 1e72a758-fbf5-433a-8c20-b379dd6df2d3 (Seam)",
-    "appearance": {
-      "name": "Backup 1e72a758-fbf5-433a-8c20-b379dd6df2d3 (Seam)",
-      "last_name": "1e72a758-fbf5-433a-8c20-b379dd6df2d3 (Seam)",
-      "first_name": "Backup"
-    },
-    "code": "4207",
-    "common_code_key": null,
-    "type": "time_bound",
-    "status": "set",
-    "starts_at": "2023-10-19T08:33:10.702Z",
-    "ends_at": "2025-01-22T12:00:00.000Z",
-    "is_backup": true,
-    "is_backup_access_code_available": false,
-    "created_at": "2023-10-19T05:07:05.205Z",
-    "errors": [],
-    "warnings": [],
-    "is_managed": true,
-    "is_external_modification_allowed": false
-  },
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 access_code_id = "dc83d82d-55d2-4178-8c8c-10382311aed2"
 
 backup_code = seam.access_codes.pull_backup_access_code(
@@ -719,73 +545,12 @@ backup_code = seam.access_codes.pull_backup_access_code(
 pprint(backup_code)
 ```
 
-**Response:**
-
-```
-AccessCode(access_code_id='6db16e34-48d4-467a-856c-32a56b9cf0da',
-           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
-           type='time_bound',
-           code='7768',
-           created_at='2023-10-19T05:07:05.548Z',
-           errors=[],
-           warnings=[],
-           starts_at='2023-10-19T05:22:37.082Z',
-           ends_at='2025-01-22T12:00:00.000Z',
-           name='Backup 6db16e34-48d4-467a-856c-32a56b9cf0da (Seam)',
-           status='set',
-           common_code_key=None,
-           is_managed=True,
-           is_waiting_for_code_assignment=None,
-           is_scheduled_on_device=None,
-           pulled_backup_access_code_id=None,
-           is_backup_access_code_available=False,
-           is_backup=True,
-           appearance={'first_name': 'Backup',
-                       'last_name': '6db16e34-48d4-467a-856c-32a56b9cf0da '
-                                    '(Seam)',
-                       'name': 'Backup 6db16e34-48d4-467a-856c-32a56b9cf0da '
-                               '(Seam)'},
-           is_external_modification_allowed=False)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 access_code_id="995d1927-e0db-4a97-b759-515193e6edbc"
 puts client.access_codes.pull_backup_access_code(access_code_id: access_code_id).inspect
 ```
 
-**Response:**
-
-```
-<Seam::AccessCode:0x00438
-  access_code_id="9b0b88f1-160c-470f-b649-c8a7c9839b22"
-  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
-  name="Backup 9b0b88f1-160c-470f-b649-c8a7c9839b22 (Seam)"
-  appearance={"name"=>"Backup 9b0b88f1-160c-470f-b649-c8a7c9839b22 (Seam)", "last_name"=>"9b0b88f1-160c-470f-b649-c8a7c9839b22 (Seam)", "first_name"=>"Backup"}
-  code="9501"
-  type="time_bound"
-  status="set"
-  starts_at=2023-10-25 04:30:25.371 UTC
-  ends_at=2025-01-22 12:00:00 UTC
-  is_backup=true
-  is_backup_access_code_available=false
-  created_at=2023-10-19 05:07:05.963 UTC
-  errors=[]
-  warnings=[]
-  is_managed=true
-  is_external_modification_allowed=false>
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 $access_code_id = "a91604eb-ebae-420c-a51e-07a30422fd94";
 
 $backup_code = $seam->access_codes->pull_backup_access_code(
@@ -817,13 +582,7 @@ echo json_encode($backup_code, JSON_PRETTY_PRINT);
 // }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```csharp C#
 var backupAccessCode = seam.AccessCodes.PullBackupAccessCode(accessCodeId: "4ea6c172-cff7-4502-a766-f9293f36cba5");
 Type t = backupAccessCode.GetType();
 foreach (var property in t.GetProperties())
@@ -832,9 +591,115 @@ foreach (var property in t.GetProperties())
 }
 ```
 
+</CodeGroup>
+
 **Response:**
 
+<CodeGroup>
+
+```json JavaScript
+{
+  "access_code_id": "284cc090-5d89-4e9d-a4ed-518c6cb68d99",
+  "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+  "name": "Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
+  "appearance": {
+    "name": "Backup 284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
+    "last_name": "284cc090-5d89-4e9d-a4ed-518c6cb68d99 (Seam)",
+    "first_name": "Backup"
+  },
+  "code": "1275",
+  "common_code_key": null,
+  "type": "time_bound",
+  "status": "set",
+  "starts_at": "2023-10-19T11:50:21.092Z",
+  "ends_at": "2025-01-22T12:00:00.000Z",
+  "is_backup": true,
+  "is_backup_access_code_available": false,
+  "created_at": "2023-10-19T05:07:05.369Z",
+  "errors": [],
+  "warnings": [],
+  "is_managed": true,
+  "is_external_modification_allowed": false
+}
 ```
+
+```json cURL
+{
+  "backup_access_code": {
+    "access_code_id": "1e72a758-fbf5-433a-8c20-b379dd6df2d3",
+    "device_id": "6aae9d08-fed6-4ca5-8328-e36849ab48fe",
+    "name": "Backup 1e72a758-fbf5-433a-8c20-b379dd6df2d3 (Seam)",
+    "appearance": {
+      "name": "Backup 1e72a758-fbf5-433a-8c20-b379dd6df2d3 (Seam)",
+      "last_name": "1e72a758-fbf5-433a-8c20-b379dd6df2d3 (Seam)",
+      "first_name": "Backup"
+    },
+    "code": "4207",
+    "common_code_key": null,
+    "type": "time_bound",
+    "status": "set",
+    "starts_at": "2023-10-19T08:33:10.702Z",
+    "ends_at": "2025-01-22T12:00:00.000Z",
+    "is_backup": true,
+    "is_backup_access_code_available": false,
+    "created_at": "2023-10-19T05:07:05.205Z",
+    "errors": [],
+    "warnings": [],
+    "is_managed": true,
+    "is_external_modification_allowed": false
+  },
+  "ok": true
+}
+```
+
+```json Python
+AccessCode(access_code_id='6db16e34-48d4-467a-856c-32a56b9cf0da',
+           device_id='6aae9d08-fed6-4ca5-8328-e36849ab48fe',
+           type='time_bound',
+           code='7768',
+           created_at='2023-10-19T05:07:05.548Z',
+           errors=[],
+           warnings=[],
+           starts_at='2023-10-19T05:22:37.082Z',
+           ends_at='2025-01-22T12:00:00.000Z',
+           name='Backup 6db16e34-48d4-467a-856c-32a56b9cf0da (Seam)',
+           status='set',
+           common_code_key=None,
+           is_managed=True,
+           is_waiting_for_code_assignment=None,
+           is_scheduled_on_device=None,
+           pulled_backup_access_code_id=None,
+           is_backup_access_code_available=False,
+           is_backup=True,
+           appearance={'first_name': 'Backup',
+                       'last_name': '6db16e34-48d4-467a-856c-32a56b9cf0da '
+                                    '(Seam)',
+                       'name': 'Backup 6db16e34-48d4-467a-856c-32a56b9cf0da '
+                               '(Seam)'},
+           is_external_modification_allowed=False)
+```
+
+```json Ruby
+<Seam::AccessCode:0x00438
+  access_code_id="9b0b88f1-160c-470f-b649-c8a7c9839b22"
+  device_id="6aae9d08-fed6-4ca5-8328-e36849ab48fe"
+  name="Backup 9b0b88f1-160c-470f-b649-c8a7c9839b22 (Seam)"
+  appearance={"name"=>"Backup 9b0b88f1-160c-470f-b649-c8a7c9839b22 (Seam)", "last_name"=>"9b0b88f1-160c-470f-b649-c8a7c9839b22 (Seam)", "first_name"=>"Backup"}
+  code="9501"
+  type="time_bound"
+  status="set"
+  starts_at=2023-10-25 04:30:25.371 UTC
+  ends_at=2025-01-22 12:00:00 UTC
+  is_backup=true
+  is_backup_access_code_available=false
+  created_at=2023-10-19 05:07:05.963 UTC
+  errors=[]
+  warnings=[]
+  is_managed=true
+  is_external_modification_allowed=false>
+```
+
+```json C#
 CommonCodeKey:
 IsScheduledOnDevice:
 Type: TimeBound
@@ -856,8 +721,7 @@ PulledBackupAccessCodeId:
 IsExternalModificationAllowed: False
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

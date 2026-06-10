@@ -32,12 +32,11 @@ When Seam is able to provide more specific information beyond one of the generic
 
 The first step in troubleshooting an access code issue is to figure out what the issue is from Seam's point of view. Make a [Get Access Code](https://docs.seam.co/latest/api/access_codes/get) or [List Access Codes](https://docs.seam.co/latest/api/access_codes/list) request and look at the `errors` and `warnings` payloads on the access code object. Look at the error and warning codes. Then, see the matching remedy in [Suggested Access Code Remedies](#suggested-access-code-remedies) for next steps.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const accessCode = await seam.accessCodes.get({
   access_code_id: '38a569bb-40b9-4e42-97bd-bb78f8d96777',
 })
@@ -48,22 +47,7 @@ console.log('Warnings:')
 console.log(accessCode.warnings)
 ```
 
-**Response:**
-
-```json
-Errors:
-[...]
-Warnings:
-[...]
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/access_codes/get' \
@@ -75,9 +59,59 @@ curl -X 'GET' \
 }'
 ```
 
+```python Python
+access_code = seam.access_codes.get("1d9fe873-3393-4b29-b93e-87fe7f923462")
+
+pprint("Errors:")
+pprint(access_code.errors)
+pprint("Warnings:")
+pprint(access_code.warnings)
+```
+
+```ruby Ruby
+access_code = client.access_codes.get(access_code_id: "8f1f576f-ee52-4f12-97f6-7a1593965dec")
+puts "Errors:"
+puts access_code.errors
+puts "Warnings:"
+puts access_code.warnings
+```
+
+```php PHP
+$access_code = $seam->access_codes->get('ed4a1f62-9070-4379-8c46-ea30a99e4d74');
+
+if (property_exists($access_code, 'errors')) {
+    echo json_encode($access_code->errors);
+}
+
+if (property_exists($access_code, 'warnings')) {
+    echo json_encode($access_code->warnings);
+}
+```
+
+```csharp C#
+var accessCode = seam.AccessCodes.Get(accessCodeId: "65f4a1d3-5f3a-45a4-a6b7-372c7f16c007");
+
+Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
+Console.WriteLine("Errors:");
+Console.WriteLine(accessCode.Errors);
+Console.WriteLine("Warnings:");
+Console.WriteLine(accessCode.Warnings);
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+Errors:
+[...]
+Warnings:
+[...]
+```
+
+```json cURL
 {
   "access_code": {
     "access_code_id": "a7b85c1f-9963-4fa8-b106-7ce580a41256",
@@ -104,94 +138,26 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-access_code = seam.access_codes.get("1d9fe873-3393-4b29-b93e-87fe7f923462")
-
-pprint("Errors:")
-pprint(access_code.errors)
-pprint("Warnings:")
-pprint(access_code.warnings)
-```
-
-**Response:**
-
-```
+```json Python
 'Errors:'
 [...]
 'Warnings:'
 [...]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-access_code = client.access_codes.get(access_code_id: "8f1f576f-ee52-4f12-97f6-7a1593965dec")
-puts "Errors:"
-puts access_code.errors
-puts "Warnings:"
-puts access_code.warnings
-```
-
-**Response:**
-
-```
+```json Ruby
 Errors:
 Warnings:
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
-$access_code = $seam->access_codes->get('ed4a1f62-9070-4379-8c46-ea30a99e4d74');
-
-if (property_exists($access_code, 'errors')) {
-    echo json_encode($access_code->errors);
-}
-
-if (property_exists($access_code, 'warnings')) {
-    echo json_encode($access_code->warnings);
-}
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-var accessCode = seam.AccessCodes.Get(accessCodeId: "65f4a1d3-5f3a-45a4-a6b7-372c7f16c007");
-
-Console.WriteLine("Access code ID: " + accessCode.AccessCodeId);
-Console.WriteLine("Errors:");
-Console.WriteLine(accessCode.Errors);
-Console.WriteLine("Warnings:");
-Console.WriteLine(accessCode.Warnings);
-```
-
-**Response:**
-
-```
+```json C#
 Errors:
 []
 Warnings:
 []
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

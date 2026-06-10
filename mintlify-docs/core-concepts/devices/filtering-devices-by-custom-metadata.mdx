@@ -12,12 +12,11 @@ When you use [List Devices](https://docs.seam.co/latest/api/devices/list), you c
   device](/core-concepts/devices/adding-custom-metadata-to-a-device).
 </Info>
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const devices = await seam.devices.list({
   custom_metadata_has: {
     internal_account_id: 'user-1',
@@ -27,28 +26,7 @@ const devices = await seam.devices.list({
 console.log(devices)
 ```
 
-**Response:**
-
-```json
-[
-  {
-    device_id: 'f7a7fb02-9277-4354-8dd1-28e2d016a7a9',
-    device_type: 'schlage_lock',
-    ...
-    is_managed: true,
-    custom_metadata: { internal_account_id: 'user-1' }
-  },
-  ...
-]
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/devices/list' \
   -H 'accept: application/json' \
@@ -61,9 +39,70 @@ curl -X 'POST' \
 }'
 ```
 
+```python Python
+devices = seam.devices.list(
+  custom_metadata_has = {
+    "internal_account_id": "user-1"
+  }
+)
+
+pprint(devices)
+```
+
+```ruby Ruby
+devices = client.devices.list(
+  custom_metadata_has: {
+    "internal_account_id": "user-1"
+  }
+)
+
+puts devices.inspect
+```
+
+```php PHP
+$devices = $seam->devices->list(
+  custom_metadata_has: array('internal_account_id' => 'user-1')
+);
+
+echo json_encode($devices);
+```
+
+```csharp C#
+var customMetadata = new Dictionary<string, string>()
+{
+  {"internal_account_id", "user-1"}
+};
+
+var devices = seam.Devices.List(
+  customMetadataHas: customMetadata
+);
+
+foreach (var device in devices)
+{
+  Console.WriteLine(device);
+}
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+[
+  {
+    device_id: 'f7a7fb02-9277-4354-8dd1-28e2d016a7a9',
+    device_type: 'schlage_lock',
+    ...
+    is_managed: true,
+    custom_metadata: { internal_account_id: 'user-1' }
+  },
+  ...
+]
+```
+
+```json cURL
 {
   "devices": [
     {
@@ -80,25 +119,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-devices = seam.devices.list(
-  custom_metadata_has = {
-    "internal_account_id": "user-1"
-  }
-)
-
-pprint(devices)
-```
-
-**Response:**
-
-```
+```json Python
 [Device(device_id='f7a7fb02-9277-4354-8dd1-28e2d016a7a9',
         device_type='schlage_lock',
         ...
@@ -107,25 +128,7 @@ pprint(devices)
 ...]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
-devices = client.devices.list(
-  custom_metadata_has: {
-    "internal_account_id": "user-1"
-  }
-)
-
-puts devices.inspect
-```
-
-**Response:**
-
-```
+```json Ruby
 [<Seam::Device:0x004d8
   device_id="f7a7fb02-9277-4354-8dd1-28e2d016a7a9"
   device_type="schlage_lock"
@@ -134,51 +137,11 @@ puts devices.inspect
   custom_metadata={"internal_account_id"=>"user-1"}>, ...]
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$devices = $seam->devices->list(
-  custom_metadata_has: array('internal_account_id' => 'user-1')
-);
-
-echo json_encode($devices);
-```
-
-**Response:**
-
-```json
+```json PHP
 [{"device_id":"f7a7fb02-9277-4354-8dd1-28e2d016a7a9","device_type":"schlage_lock",..."is_managed":true,"custom_metadata":{"internal_account_id":"user-1"}},...]
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-var customMetadata = new Dictionary<string, string>()
-{
-  {"internal_account_id", "user-1"}
-};
-
-var devices = seam.Devices.List(
-  customMetadataHas: customMetadata
-);
-
-foreach (var device in devices)
-{
-  Console.WriteLine(device);
-}
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "device_id": "f7a7fb02-9277-4354-8dd1-28e2d016a7a9",
   "device_type": "schlage_lock",
@@ -191,5 +154,4 @@ foreach (var device in devices)
 ...
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

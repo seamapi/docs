@@ -42,10 +42,9 @@ Each filter in the `customer_resources_filters` array is an object with the foll
 
 Create property listings with a `region` field in `custom_metadata`, then filter to show only European properties.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: 'customer_123',
@@ -71,11 +70,7 @@ const { customer_portal } = await seam.customers.createPortal({
 console.log(customer_portal.url)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \
   -H 'Authorization: Bearer ${SEAM_API_KEY}' \
@@ -102,17 +97,15 @@ curl -X POST \
   }'
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 #### Example 2: Multiple Filters (AND Logic)
 
 When you provide multiple filters, a resource must match all of them. Here, only property listings that are both premium and in Europe are shown.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: 'customer_123',
@@ -144,11 +137,7 @@ const { customer_portal } = await seam.customers.createPortal({
 console.log(customer_portal.url)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \
   -H 'Authorization: Bearer ${SEAM_API_KEY}' \
@@ -181,17 +170,15 @@ curl -X POST \
   }'
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 #### Example 3: Boolean Filters
 
 Filter by a boolean `custom_metadata` value, such as showing only premium listings.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: 'customer_123',
@@ -217,11 +204,7 @@ const { customer_portal } = await seam.customers.createPortal({
 console.log(customer_portal.url)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \
   -H 'Authorization: Bearer ${SEAM_API_KEY}' \
@@ -248,17 +231,15 @@ curl -X POST \
   }'
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 #### Example 4: Filtering Reservations
 
 Filters also apply to reservations. Here, only reservations that are both premium and in Europe are shown.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const { customer_portal } = await seam.customers.createPortal({
   customer_data: {
     customer_key: 'customer_123',
@@ -299,11 +280,7 @@ const { customer_portal } = await seam.customers.createPortal({
 console.log(customer_portal.url)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X POST \
   'https://connect.getseam.com/customers/create_portal' \
   -H 'Authorization: Bearer ${SEAM_API_KEY}' \
@@ -345,8 +322,7 @@ curl -X POST \
   }'
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

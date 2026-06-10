@@ -44,12 +44,11 @@ To [create a user identity](https://docs.seam.co/latest/api/user_identities/crea
 
 Note that if you specify one or more of the `user_identity_key`, `email_address`, or `phone_number`, each of these values must be unique within your [workspace](/core-concepts/workspaces/index).
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Command:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.userIdentities.create({
   user_identity_key: 'jean_doe',
   email_address: 'jean@example.com',
@@ -58,27 +57,7 @@ await seam.userIdentities.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "user_identity_key": "jean_doe",
-  "email_address": "jean@example.com",
-  "phone_number": "+15555550110",
-  "display_name": "Jean Doe",
-  "full_name": "Jean Doe",
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
   -H 'accept: application/json' \
@@ -92,9 +71,56 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
+```python Python
+seam.user_identities.create(
+  user_identity_key = "jean_doe",
+  email_address = "jean@example.com",
+  phone_number = "+15555550110",
+  full_name = "Jean Doe"
+)
+```
 
-```json
+```ruby Ruby
+seam.user_identities.create(
+  user_identity_key: "jean_doe",
+  email_address: "jean@example.com",
+  phone_number: "+15555550110",
+  full_name: "Jean Doe",
+)
+```
+
+```php PHP
+$seam->user_identities->create(
+  user_identity_key: "jean_doe",
+  email_address: "jean@example.com",
+  phone_number: "+15555550110",
+  full_name: "Jean Doe"
+);
+```
+
+```csharp C#
+Coming soon!
+```
+
+</CodeGroup>
+
+**Output:**
+
+<CodeGroup>
+
+```json JavaScript
+{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "user_identity_key": "jean_doe",
+  "email_address": "jean@example.com",
+  "phone_number": "+15555550110",
+  "display_name": "Jean Doe",
+  "full_name": "Jean Doe",
+  ...
+}
+```
+
+```json cURL
 {
   "user_identity": {
     "user_identity_id": "22222222-2222-2222-2222-222222222222",
@@ -109,24 +135,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Command:**
-
-```python
-seam.user_identities.create(
-  user_identity_key = "jean_doe",
-  email_address = "jean@example.com",
-  phone_number = "+15555550110",
-  full_name = "Jean Doe"
-)
-```
-
-**Output:**
-
-```
+```json Python
 UserIdentity(
   user_identity_id='22222222-2222-2222-2222-222222222222',
   user_identity_key='jean_doe',
@@ -138,24 +147,7 @@ UserIdentity(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Command:**
-
-```ruby
-seam.user_identities.create(
-  user_identity_key: "jean_doe",
-  email_address: "jean@example.com",
-  phone_number: "+15555550110",
-  full_name: "Jean Doe",
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::UserIdentity:0x005f0
   user_identity_id="22222222-2222-2222-2222-222222222222"
   user_identity_key="jean_doe"
@@ -167,24 +159,7 @@ seam.user_identities.create(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Command:**
-
-```php
-$seam->user_identities->create(
-  user_identity_key: "jean_doe",
-  email_address: "jean@example.com",
-  phone_number: "+15555550110",
-  full_name: "Jean Doe"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "user_identity_id": "22222222-2222-2222-2222-222222222222",
   "user_identity_key": "jean_doe",
@@ -196,35 +171,21 @@ $seam->user_identities->create(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Command:**
-
-```csharp
+```json C#
 Coming soon!
 ```
 
-**Output:**
-
-```json
-Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### 2. Assign an ACS User to the User Identity
 
 To [link an ACS user with a user identity](https://docs.seam.co/latest/api/user_identities/add_acs_user), provide the ID of the user identity and the ID of the ACS user.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Command:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const userIdentity = await seam.userIdentities.get({
   email_address: 'jean@example.com',
 })
@@ -239,19 +200,7 @@ await seam.userIdentities.addAcsUser({
 })
 ```
 
-**Output:**
-
-```
-// void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 # Use GET or POST.
 curl -X 'GET' \
   'https://connect.getseam.com/user_identities/get' \
@@ -284,21 +233,7 @@ curl -X 'POST' \
 }"
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Command:**
-
-```python
+```python Python
 user_identity = seam.user_identities.get(
   email_address = "jean@example.com"
 )
@@ -313,19 +248,7 @@ seam.user_identities.add_acs_user(
 )
 ```
 
-**Output:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Command:**
-
-```ruby
+```ruby Ruby
 user_identity = seam.user_identities.get(
   email_address: "jane@example.com"
 )
@@ -340,19 +263,7 @@ seam.user_identities.add_acs_user(
 )
 ```
 
-**Output:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Command:**
-
-```php
+```php PHP
 $user_identity = $seam->user_identities->get(
   email_address: "jean@example.com",
 );
@@ -367,30 +278,43 @@ $seam->user_identities->add_acs_user(
 );
 ```
 
+```csharp C#
+Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+// void
 ```
+
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+nil
+```
+
+```json PHP
 null
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Command:**
-
-```csharp
+```json C#
 Coming soon!
 ```
 
-**Output:**
-
-```json
-Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -398,30 +322,17 @@ Coming soon!
 
 When you [delete a user identity](https://docs.seam.co/latest/api/user_identities/delete), Seam automatically cleans up all other associated resources.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Command:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.userIdentities.delete({
   user_identity_id: '22222222-2222-2222-2222-222222222222',
 })
 ```
 
-**Output:**
-
-```
-// void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/user_identities/delete' \
   -H 'accept: application/json' \
@@ -432,83 +343,58 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Command:**
-
-```python
+```python Python
 seam.user_identities.delete(
     user_identity_id = "22222222-2222-2222-2222-222222222222"
 )
 ```
 
-**Output:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Command:**
-
-```ruby
+```ruby Ruby
 seam.user_identities.delete(
   user_identity_id: "22222222-2222-2222-2222-222222222222"
 )
 ```
 
-**Output:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Command:**
-
-```php
+```php PHP
 $seam->user_identities->delete(
   user_identity_id: "22222222-2222-2222-2222-222222222222"
 );
 ```
 
+```csharp C#
+Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
+<CodeGroup>
+
+```json JavaScript
+// void
 ```
+
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+nil
+```
+
+```json PHP
 null
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Command:**
-
-```csharp
+```json C#
 Coming soon!
 ```
 
-**Output:**
-
-```json
-Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>

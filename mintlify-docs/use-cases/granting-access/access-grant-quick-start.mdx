@@ -81,12 +81,11 @@ Create an Access Grant to define the "who, where, when, and how" for assigning a
    4. Store this access system ID for future use.
 2. Create the Access Grant, as follows:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
@@ -119,40 +118,7 @@ const accessGrant = await seam.accessGrants.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  access_grant_id: '6d74aefc-5712-4a8b-82c1-73a51ae60b87',
-  user_identity_id: '8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
-  starts_at: '2025-08-01T15:00:00.000Z',
-  ends_at: '2025-08-04T11:00:00.000Z'
-  instant_key_url: 'https://ik.seam.co/ABCXYZ',
-  requested_access_methods: [
-    {
-      display_name: 'Plastic card',
-      mode: 'card',
-      created_access_method_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-      created_at: '2025-06-16T16:54:19.946606Z'
-    },
-    {
-      display_name: 'Mobile key',
-      mode: 'mobile_key',
-      created_access_method_ids: ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-      created_at: '2025-06-16T16:54:21.946606Z'
-    }
-  ],
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```curl
+```curl cURL
 # Identify the IDs of the entrances to which
 # you want to grant access.
 # Use the access system ID that you copied in the previous step.
@@ -196,43 +162,7 @@ access_grant=$(curl --include --request POST "https://connect.getseam.com/access
 }")
 ```
 
-**Output:**
-
-```json
-{
-  "access_grant":{
-    "access_grant_id":"6d74aefc-5712-4a8b-82c1-73a51ae60b87",
-    "user_identity_id":"8cc2633a-54ca-455a-8a2b-77e6a1fc4fee",
-    "starts_at":"2025-08-01T15:00:00.000Z",
-    "ends_at":"2025-08-04T11:00:00.000Z",
-    "instant_key_url":"https://ik.seam.co/ABCXYZ",
-    "requested_access_methods":[
-      {
-        "display_name":"Plastic Card",
-        "mode":"card",
-        "created_access_method_ids":["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-        "created_at":"2025-06-16T16:54:19.946606Z"
-      },
-      {
-        "display_name":"Mobile Key",
-        "mode":"mobile_key",
-        "created_access_method_ids":["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-        "created_at":"2025-06-16T16:54:21.946606Z"
-      }
-    ],
-    ...
-  },
-  "ok":true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
@@ -269,40 +199,7 @@ access_grant = seam.access_grants.create(
 )
 ```
 
-**Output:**
-
-```python
-AccessGrant(
-  access_grant_id='6d74aefc-5712-4a8b-82c1-73a51ae60b87',
-  user_identity_id='8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
-  starts_at='2025-08-01T15:00:00.000Z',
-  ends_at='2025-08-04T11:00:00.000Z',
-  instant_key_url='https://ik.seam.co/ABCXYZ',
-  requested_access_methods=[
-    {
-      "display_name": "Plastic Card",
-      "mode": "card",
-      "created_at": "2025-06-16T16:54:19.946606Z",
-      "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
-    },
-    {
-      "display_name": "Mobile Key",
-      "mode": "mobile_key",
-      "created_at": "2025-06-16T16:54:21.946606Z",
-      "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
-    }
-  ],
-  ...
-)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
@@ -338,40 +235,7 @@ access_grant = seam.access_grants.create(
 )
 ```
 
-**Output:**
-
-```ruby
-<Seam::Resources::AccessGrant:0x005f0
-  access_grant_id="6d74aefc-5712-4a8b-82c1-73a51ae60b87"
-  user_identity_id="8cc2633a-54ca-455a-8a2b-77e6a1fc4fee"
-  starts_at=2025-08-01 15:00:00 UTC
-  ends_at=2025-08-04 11:00:00 UTC
-  instant_key_url="https://ik.seam.co/ABCXYZ"
-  requested_access_methods=[
-    {
-      "display_name"=>"Plastic card",
-      "mode"=>"card",
-      "created_access_method_ids"=>["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
-      "created_at"=>"2025-06-16T16:54:19.946606Z"
-    },
-    {
-      "display_name"=>"Mobile key",
-      "mode"=>"mobile_key",
-      "created_access_method_ids"=>["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-      "created_at"=>"2025-06-16T16:54:21.946606Z"
-    }
-  ]
-  ...
->
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -408,9 +272,120 @@ $access_grant = $seam->access_grants->create(
 );
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```php
+<CodeGroup>
+
+```json JavaScript
+{
+  access_grant_id: '6d74aefc-5712-4a8b-82c1-73a51ae60b87',
+  user_identity_id: '8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
+  starts_at: '2025-08-01T15:00:00.000Z',
+  ends_at: '2025-08-04T11:00:00.000Z'
+  instant_key_url: 'https://ik.seam.co/ABCXYZ',
+  requested_access_methods: [
+    {
+      display_name: 'Plastic card',
+      mode: 'card',
+      created_access_method_ids: ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+      created_at: '2025-06-16T16:54:19.946606Z'
+    },
+    {
+      display_name: 'Mobile key',
+      mode: 'mobile_key',
+      created_access_method_ids: ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+      created_at: '2025-06-16T16:54:21.946606Z'
+    }
+  ],
+  ...
+}
+```
+
+```json cURL
+{
+  "access_grant":{
+    "access_grant_id":"6d74aefc-5712-4a8b-82c1-73a51ae60b87",
+    "user_identity_id":"8cc2633a-54ca-455a-8a2b-77e6a1fc4fee",
+    "starts_at":"2025-08-01T15:00:00.000Z",
+    "ends_at":"2025-08-04T11:00:00.000Z",
+    "instant_key_url":"https://ik.seam.co/ABCXYZ",
+    "requested_access_methods":[
+      {
+        "display_name":"Plastic Card",
+        "mode":"card",
+        "created_access_method_ids":["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+        "created_at":"2025-06-16T16:54:19.946606Z"
+      },
+      {
+        "display_name":"Mobile Key",
+        "mode":"mobile_key",
+        "created_access_method_ids":["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+        "created_at":"2025-06-16T16:54:21.946606Z"
+      }
+    ],
+    ...
+  },
+  "ok":true
+}
+```
+
+```python Python
+AccessGrant(
+  access_grant_id='6d74aefc-5712-4a8b-82c1-73a51ae60b87',
+  user_identity_id='8cc2633a-54ca-455a-8a2b-77e6a1fc4fee',
+  starts_at='2025-08-01T15:00:00.000Z',
+  ends_at='2025-08-04T11:00:00.000Z',
+  instant_key_url='https://ik.seam.co/ABCXYZ',
+  requested_access_methods=[
+    {
+      "display_name": "Plastic Card",
+      "mode": "card",
+      "created_at": "2025-06-16T16:54:19.946606Z",
+      "created_access_method_ids": ["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"]
+    },
+    {
+      "display_name": "Mobile Key",
+      "mode": "mobile_key",
+      "created_at": "2025-06-16T16:54:21.946606Z",
+      "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"]
+    }
+  ],
+  ...
+)
+```
+
+```ruby Ruby
+<Seam::Resources::AccessGrant:0x005f0
+  access_grant_id="6d74aefc-5712-4a8b-82c1-73a51ae60b87"
+  user_identity_id="8cc2633a-54ca-455a-8a2b-77e6a1fc4fee"
+  starts_at=2025-08-01 15:00:00 UTC
+  ends_at=2025-08-04 11:00:00 UTC
+  instant_key_url="https://ik.seam.co/ABCXYZ"
+  requested_access_methods=[
+    {
+      "display_name"=>"Plastic card",
+      "mode"=>"card",
+      "created_access_method_ids"=>["5f4e3d2c-1b0a-9f8e-7d6c-5b4a3c2d1e0f"],
+      "created_at"=>"2025-06-16T16:54:19.946606Z"
+    },
+    {
+      "display_name"=>"Mobile key",
+      "mode"=>"mobile_key",
+      "created_access_method_ids"=>["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+      "created_at"=>"2025-06-16T16:54:21.946606Z"
+    }
+  ]
+  ...
+>
+```
+
+```php PHP
 {
   "access_grant_id":"6d74aefc-5712-4a8b-82c1-73a51ae60b87",
   "user_identity_id":"8cc2633a-54ca-455a-8a2b-77e6a1fc4fee",
@@ -435,24 +410,11 @@ $access_grant = $seam->access_grants->create(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -467,20 +429,56 @@ To poll the created access methods, get these access methods by ID and look for 
 - If `access_method.is_encoding_required` is `true`, you must encode the card access method onto a plastic key card. Once you've encoded the access method onto a card, this property changes to `false`.
 - When an access method is ready to be delivered to a user, `access_method.is_issued` changes to `true`. For a card access method, `access_method.is_issued` changes to `true` after you encode the plastic card. You can also view the `access_method.issued_at` property to learn when the access method was issued.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessMethods.get({
   access_method_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+}'
+```
+
+```python Python
+seam.access_methods.get(
+  access_method_id = "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+)
+```
+
+```ruby Ruby
+seam.access_methods.get(
+  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+)
+```
+
+```php PHP
+$seam->access_methods->get(
+  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   "display_name": "Plastic Card",
@@ -493,26 +491,7 @@ await seam.accessMethods.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-}'
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "access_method": {
     "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
@@ -528,21 +507,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.access_methods.get(
-  access_method_id = "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-)
-```
-
-**Output:**
-
-```
+```json Python
 AccessMethod(
   access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   display_name="Plastic Card",
@@ -555,21 +520,7 @@ AccessMethod(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.access_methods.get(
-  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 {
   "access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   "display_name" => "Plastic Card",
@@ -582,21 +533,7 @@ seam.access_methods.get(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->access_methods->get(
-  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 [
   "access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   "display_name" => "Plastic Card",
@@ -609,24 +546,11 @@ $seam->access_methods->get(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Monitor for Lifecycle Events
 
@@ -669,20 +593,56 @@ Once the access methods are ready to deliver to your user, retrieve each access 
 
 Retrieve each access method that you created as part of the Access Grant. Note that the set of relevant properties for an access method varies based on the mode, such as `card`, `code`, or `mobile_key`.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessMethods.get({
   access_method_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+}'
+```
+
+```python Python
+seam.access_methods.get(
+  access_method_id = "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+)
+```
+
+```ruby Ruby
+seam.access_methods.get(
+  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+)
+```
+
+```php PHP
+$seam->access_methods->get(
+  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   "display_name": "Plastic Card",
@@ -695,26 +655,7 @@ await seam.accessMethods.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-}'
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "access_method": {
     "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
@@ -730,21 +671,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.access_methods.get(
-  access_method_id = "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-)
-```
-
-**Output:**
-
-```
+```json Python
 AccessMethod(
   access_method_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   display_name="Plastic Card",
@@ -757,21 +684,7 @@ AccessMethod(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.access_methods.get(
-  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 {
   "access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   "display_name" => "Plastic Card",
@@ -784,21 +697,7 @@ seam.access_methods.get(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->access_methods->get(
-  access_method_id: "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 [
   "access_method_id" => "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
   "display_name" => "Plastic Card",
@@ -811,24 +710,11 @@ $seam->access_methods->get(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Deliver the Access Method to Your User
 

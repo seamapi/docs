@@ -25,12 +25,11 @@ When creating a Connect Webview, choose which providers to display. Choose one o
 
 - To display a specific, custom set of providers, specify the desired list of `accepted_providers`. For details, see [Customize the Brands to Display in Your Connect Webviews](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const createdConnectWebview = await seam.connectWebviews.create({
   custom_redirect_url: 'https://example.com/redirect',
   custom_redirect_failure_url: 'https://example.com/failure-redirect',
@@ -39,9 +38,63 @@ const createdConnectWebview = await seam.connectWebviews.create({
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "custom_redirect_url": "https://example.com/redirect",
+  "custom_redirect_failure_url": "https://example.com/failure-redirect",
+  "provider_category": "stable",
+  "wait_for_device_creation": true
+}'
+```
+
+```python Python
+created_connect_webview = seam.connect_webviews.create(
+  custom_redirect_url = "https://example.com/redirect",
+  custom_redirect_failure_url = "https://example.com/failure-redirect",
+  provider_category = "stable",
+  wait_for_device_creation = True
+)
+```
+
+```ruby Ruby
+created_connect_webview = client.connect_webviews.create(
+  custom_redirect_url: "https://example.com/redirect",
+  custom_redirect_failure_url: "https://example.com/failure-redirect",
+  provider_category: "stable",
+  wait_for_device_creation: true
+)
+```
+
+```php PHP
+$created_connect_webview = $seam->connect_webviews->create(
+  custom_redirect_url: "https://example.com/redirect",
+  custom_redirect_failure_url: "https://example.com/failure-redirect",
+  provider_category: "stable",
+  wait_for_device_creation: true
+);
+```
+
+```csharp C#
+var createdConnectWebview = seam.ConnectWebviews.Create(
+  customRedirectUrl: "https://example.com/redirect",
+  customRedirectFailureUrl: "https://example.com/failure-redirect",
+  providerCategory: Seam.Api.ConnectWebviews.CreateRequest.ProviderCategoryEnum.Stable,
+  waitForDeviceCreation: true
+);
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   connect_webview_id: '12345678-1234-1234-1234-123456789012',
   url: 'https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=2r2Rn8V5QUtxE79gNhTmTK58KkuqrwU8d',
@@ -57,29 +110,7 @@ const createdConnectWebview = await seam.connectWebviews.create({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/connect_webviews/create' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "custom_redirect_url": "https://example.com/redirect",
-  "custom_redirect_failure_url": "https://example.com/failure-redirect",
-  "provider_category": "stable",
-  "wait_for_device_creation": true
-}'
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "connect_webview": {
     "connect_webview_id": "12345678-1234-1234-1234-123456789012",
@@ -98,24 +129,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-created_connect_webview = seam.connect_webviews.create(
-  custom_redirect_url = "https://example.com/redirect",
-  custom_redirect_failure_url = "https://example.com/failure-redirect",
-  provider_category = "stable",
-  wait_for_device_creation = True
-)
-```
-
-**Output:**
-
-```
+```json Python
 ConnectWebview(
   connect_webview_id='12345678-1234-1234-1234-123456789012',
   url='https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=z7Wu2Lc85gYUbNUhdvCWaEhmQv61FziA',
@@ -131,24 +145,7 @@ ConnectWebview(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-created_connect_webview = client.connect_webviews.create(
-  custom_redirect_url: "https://example.com/redirect",
-  custom_redirect_failure_url: "https://example.com/failure-redirect",
-  provider_category: "stable",
-  wait_for_device_creation: true
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <
   Seam::ConnectWebview:0x00438
     connect_webview_id="12345678-1234-1234-1234-123456789012"
@@ -165,24 +162,7 @@ created_connect_webview = client.connect_webviews.create(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$created_connect_webview = $seam->connect_webviews->create(
-  custom_redirect_url: "https://example.com/redirect",
-  custom_redirect_failure_url: "https://example.com/failure-redirect",
-  provider_category: "stable",
-  wait_for_device_creation: true
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "connect_webview_id": "12345678-1234-1234-1234-123456789012",
   "url": "https:\/\/connect.getseam.com\/connect_webviews\/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=CvXRmaLfBghshH5rUNKcGivC6BVbjD6JG",
@@ -198,24 +178,7 @@ $created_connect_webview = $seam->connect_webviews->create(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
-var createdConnectWebview = seam.ConnectWebviews.Create(
-  customRedirectUrl: "https://example.com/redirect",
-  customRedirectFailureUrl: "https://example.com/failure-redirect",
-  providerCategory: Seam.Api.ConnectWebviews.CreateRequest.ProviderCategoryEnum.Stable,
-  waitForDeviceCreation: true
-);
-```
-
-**Output:**
-
-```json
+```json C#
 {
   "connect_webview_id": "12345678-1234-1234-1234-123456789012",
   "url": "https://connect.getseam.com/connect_webviews/view?connect_webview_id=12345678-1234-1234-1234-123456789012&auth_token=9eBKNtzB6ZKkSPPD33MZFshYSbmBcSMz7",
@@ -231,8 +194,7 @@ var createdConnectWebview = seam.ConnectWebviews.Create(
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Connect Webview Response
 

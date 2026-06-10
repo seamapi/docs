@@ -19,9 +19,9 @@ Using this process involves the following steps:
 
 Access the current credentials through the published `credentials` array on `Seam.shared`:
 
-<Tabs>
-<Tab title="iOS Swift">
-```swift
+<CodeGroup>
+
+```swift iOS Swift
 import SeamSDK
 import Combine
 
@@ -34,12 +34,9 @@ let credentialsSubscription = Seam.shared.$credentials
 // Update UI with new credentials array.
 }
 
-````
+```
 
-</Tab>
-
-<Tab title="Android Kotlin">
-```kotlin
+```kotlin Android Kotlin
 import co.seam.core.api.SeamCredential
 import co.seam.core.api.SeamSDK
 
@@ -47,18 +44,17 @@ import co.seam.core.api.SeamSDK
 SeamSDK.getInstance().credentials.collect { credentials ->
     // Update UI with new credentials array.
 }
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## 2. Monitor Credential Errors
 
 Permission or setup issues appear in each credential’s `errors` property. Observe like this:
 
-<Tabs>
-<Tab title="iOS Swift">
-```swift
+<CodeGroup>
+
+```swift iOS Swift
 import SeamSDK
 import Combine
 
@@ -69,12 +65,9 @@ let errorSubscription = Seam.shared.$credentials
 // Handle errors, for example, `.userInteractionRequired`, `.expired`, etc.
 }
 
-````
+```
 
-</Tab>
-
-<Tab title="Android Kotlin">
-```kotlin
+```kotlin Android Kotlin
 import co.seam.core.api.SeamCredential
 import co.seam.core.api.SeamSDK
 import co.seam.core.sdkerrors.SeamCredentialError
@@ -103,10 +96,9 @@ fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
         is SeamRequiredUserInteraction.GrantPermissions -> { /* handle permissions error*/ }
     }
 }
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 > **Note:** The `.errors` array on credentials represents per-credential issues, though some issues may be repeated across several credentials (for example, bluetooth requirements). SDK- or credential-level errors (such as invalid token or expired credential) are thrown directly by methods like `unlock(using:)` because `SeamError` or `SeamCredentialError` and must be handled through `do/catch`.
 
@@ -119,13 +111,9 @@ The call to `Seam.shared.unlock(using:)` may throw:
 
 Use Async/Await or Combine to initiate an unlock with a selected credential:
 
-<Tabs>
-<Tab title="iOS Swift">
-<Info>
-If the Apple Wallet dialog appears when using the BLE unlock, see [Handling System Permissions](/capability-guides/mobile-access/mobile-device-sdks/handling-system-permissions#platform-setup-requirements) for steps to prevent it and ensure a smoother unlockWithTap experience.
-</Info>
+<CodeGroup>
 
-```swift
+```swift iOS Swift
 import SeamSDK
 import Combine
 
@@ -173,10 +161,7 @@ do {
 }
 ```
 
-</Tab>
-
-<Tab title="Android Kotlin">
-```kotlin
+```kotlin Android Kotlin
 import co.seam.core.api.SeamCredential
 import co.seam.core.api.SeamSDK
 import co.seam.core.events.SeamUnlockEvent
@@ -250,10 +235,9 @@ is SeamCredentialError.Invalid -> {
 
 }
 
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ***
 
@@ -352,20 +336,17 @@ coroutineScope.launch {
 
 Stop scanning by canceling your active task or subscription.
 
-<Tabs>
-<Tab title="iOS Swift">
-```swift
+<CodeGroup>
+
+```swift iOS Swift
 // For Combine
 unlockSubscription.cancel()
 
 // For Async/Await, cancel the Task as needed.
 
-````
+```
 
-</Tab>
-
-<Tab title="Android Kotlin">
-```kotlin
+```kotlin Android Kotlin
 val seamSDK = SeamSDK.getInstance()
 // The unlock function returns a Job
 val job = seamSDK.unlock(
@@ -375,7 +356,6 @@ val job = seamSDK.unlock(
 
 // Canceling the job stops the unlock process
 job.cancel()
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>

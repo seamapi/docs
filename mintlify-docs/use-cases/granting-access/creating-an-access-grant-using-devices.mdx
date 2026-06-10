@@ -48,20 +48,55 @@ To create an Access Grant for a device, first [connect](/core-concepts/connect-w
 
 List your devices and identify the ones to which you want to grant the user access. Check the `can_program_online_access_codes` capability flag for each device.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const devices = await seam.devices.list()
 
 const lock = devices.find((device) => device.can_program_online_access_codes)
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/devices/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+
+```python Python
+devices = seam.devices.list()
+
+lock = next(
+  device for device in devices
+  if device.can_program_online_access_codes
+)
+```
+
+```ruby Ruby
+devices = seam.devices.list
+
+lock = devices.find(&:can_program_online_access_codes)
+```
+
+```php PHP
+$devices = $seam->devices->list();
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 [
   {
     "device_id": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
@@ -73,24 +108,7 @@ const lock = devices.find((device) => device.can_program_online_access_codes)
 ]
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/devices/list' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "devices": [
     {
@@ -104,24 +122,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-devices = seam.devices.list()
-
-lock = next(
-  device for device in devices
-  if device.can_program_online_access_codes
-)
-```
-
-**Output:**
-
-```python
+```python Python
 [
   Device(
     device_id="6ba7b811-9dad-11d1-80b4-00c04fd430c8",
@@ -133,21 +134,7 @@ lock = next(
 ]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-devices = seam.devices.list
-
-lock = devices.find(&:can_program_online_access_codes)
-```
-
-**Output:**
-
-```ruby
+```ruby Ruby
 [
   {
     "device_id" => "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
@@ -159,19 +146,7 @@ lock = devices.find(&:can_program_online_access_codes)
 ]
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$devices = $seam->devices->list();
-```
-
-**Output:**
-
-```php
+```php PHP
 [
   [
     "device_id" => "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
@@ -183,24 +158,11 @@ $devices = $seam->devices->list();
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -210,36 +172,18 @@ You can create a user identity before creating the Access Grant, you can retriev
 
 To create a user identity, specify the unique `user_identity_key`, `email_address`, or `phone_number` of the user.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.userIdentities.create({
   full_name: 'Jane Doe',
   email_address: 'jane@example.com',
 })
 ```
 
-**Output:**
-
-```json
-{
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "full_name": "Jane Doe",
-  "email_address": "jane@example.com",
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
   -H 'accept: application/json' \
@@ -251,9 +195,47 @@ curl -X 'POST' \
 }'
 ```
 
+```python Python
+seam.user_identities.create(
+  full_name="Jane Doe",
+  email_address="jane@example.com"
+)
+```
+
+```ruby Ruby
+seam.user_identities.create(
+  full_name: "Jane Doe",
+  email_address: "jane@example.com",
+)
+```
+
+```php PHP
+$seam->user_identities->create(
+  full_name: "Jane Doe",
+  email_address: "jane@example.com"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name": "Jane Doe",
+  "email_address": "jane@example.com",
+  ...
+}
+```
+
+```json cURL
 {
   "user_identity": {
     "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
@@ -264,22 +246,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.user_identities.create(
-  full_name="Jane Doe",
-  email_address="jane@example.com"
-)
-```
-
-**Output:**
-
-```python
+```python Python
 UserIdentity(
   user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
   full_name="Jane Doe",
@@ -288,22 +255,7 @@ UserIdentity(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.user_identities.create(
-  full_name: "Jane Doe",
-  email_address: "jane@example.com",
-)
-```
-
-**Output:**
-
-```ruby
+```ruby Ruby
 {
   "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "full_name" => "Jane Doe",
@@ -312,22 +264,7 @@ seam.user_identities.create(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->user_identities->create(
-  full_name: "Jane Doe",
-  email_address: "jane@example.com"
-);
-```
-
-**Output:**
-
-```php
+```php PHP
 [
   "user_identity_id" => "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "full_name" => "Jane Doe",
@@ -336,24 +273,11 @@ $seam->user_identities->create(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -363,12 +287,11 @@ To create an Access Grant, specify the user identity, device IDs, starting and e
 
 To grant access to multiple devices at the same time, include all the desired device IDs in the `device_ids` array. Seam creates the requested access methods on each device.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessGrants.create({
   user_identity_id: '43947360-cdc8-4db6-8b22-e079416d1d8b',
   // Alternately, to create a new user identity, use the
@@ -384,34 +307,7 @@ await seam.accessGrants.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-13T15:00:00.000Z",
-  "ends_at": "2025-07-16T11:00:00.000Z",
-  "requested_access_methods": [
-    {
-      "display_name": "PIN Code",
-      "mode": "code",
-      "created_access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
-      ...
-    }
-  ],
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Alternately, to create a new user identity, use the
 # following parameter instead of user_identity_id:
 # user_identity={
@@ -436,9 +332,94 @@ curl -X 'POST' \
 }'
 ```
 
+```python Python
+seam.access_grants.create(
+  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
+  # Alternately, to create a new user identity, use the
+  # following parameter instead of user_identity_id:
+  # user_identity={
+  #  "full_name": "Jane Doe",
+  #  "email_address": "jane.doe@example.com",
+  # },
+  device_ids=[
+    "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+  ],
+  requested_access_methods=[
+    {"mode": "code"}
+  ],
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
+```
+
+```ruby Ruby
+seam.access_grants.create(
+  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  # Alternately, to create a new user identity, use the
+  # following parameter instead of user_identity_id:
+  # user_identity: {
+  #  full_name: "Jane Doe",
+  #  email_address: "jane.doe@example.com",
+  # },
+  device_ids: %w[6ba7b811-9dad-11d1-80b4-00c04fd430c8],
+  requested_access_methods: [
+    {"mode": "code"}
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+)
+```
+
+```php PHP
+$seam->access_grants->create(
+  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  // Alternately, to create a new user identity, use the
+  // following parameter instead of user_identity_id:
+  // user_identity: {
+  //  full_name: "Jane Doe",
+  //  email_address: "jane.doe@example.com",
+  // },
+  device_ids: [
+    "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+  ],
+  requested_access_methods: [
+    ["mode" => "code"],
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
+  "requested_access_methods": [
+    {
+      "display_name": "PIN Code",
+      "mode": "code",
+      "created_access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+      ...
+    }
+  ],
+  ...
+}
+```
+
+```json cURL
 {
   "access_grant": {
     "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
@@ -459,35 +440,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.access_grants.create(
-  user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b",
-  # Alternately, to create a new user identity, use the
-  # following parameter instead of user_identity_id:
-  # user_identity={
-  #  "full_name": "Jane Doe",
-  #  "email_address": "jane.doe@example.com",
-  # },
-  device_ids=[
-    "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
-  ],
-  requested_access_methods=[
-    {"mode": "code"}
-  ],
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z"
-)
-```
-
-**Output:**
-
-```python
+```python Python
 AccessGrant(
   access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   display_name="My Access Grant",
@@ -506,33 +459,7 @@ AccessGrant(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.access_grants.create(
-  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  # Alternately, to create a new user identity, use the
-  # following parameter instead of user_identity_id:
-  # user_identity: {
-  #  full_name: "Jane Doe",
-  #  email_address: "jane.doe@example.com",
-  # },
-  device_ids: %w[6ba7b811-9dad-11d1-80b4-00c04fd430c8],
-  requested_access_methods: [
-    {"mode": "code"}
-  ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-)
-```
-
-**Output:**
-
-```ruby
+```ruby Ruby
 {
   "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   "display_name" => "My Access Grant",
@@ -551,35 +478,7 @@ seam.access_grants.create(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->access_grants->create(
-  user_identity_id: "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  // Alternately, to create a new user identity, use the
-  // following parameter instead of user_identity_id:
-  // user_identity: {
-  //  full_name: "Jane Doe",
-  //  email_address: "jane.doe@example.com",
-  // },
-  device_ids: [
-    "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
-  ],
-  requested_access_methods: [
-    ["mode" => "code"],
-  ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-);
-```
-
-**Output:**
-
-```php
+```php PHP
 [
   "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   "display_name" => "My Access Grant",
@@ -598,24 +497,11 @@ $seam->access_grants->create(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -625,37 +511,17 @@ Once an access method has been issued, retrieve it by ID. For a `code` access me
 
 You can poll the access method for the `is_issued` status change or watch for the `access_method.issued` event.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessMethods.get({
   access_method_id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
 })
 ```
 
-**Output:**
-
-```json
-{
-  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-  "display_name": "PIN Code",
-  "mode": "code",
-  "is_issued": true,
-  "code": "1234",
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_methods/get' \
   -H 'accept: application/json' \
@@ -666,9 +532,46 @@ curl -X 'POST' \
 }'
 ```
 
+```python Python
+seam.access_methods.get(
+  access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+```ruby Ruby
+seam.access_methods.get(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+)
+```
+
+```php PHP
+$seam->access_methods->get(
+  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "display_name": "PIN Code",
+  "mode": "code",
+  "is_issued": true,
+  "code": "1234",
+  ...
+}
+```
+
+```json cURL
 {
   "access_method": {
     "access_method_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
@@ -682,21 +585,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.access_methods.get(
-  access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479"
-)
-```
-
-**Output:**
-
-```python
+```python Python
 AccessMethod(
   access_method_id="f47ac10b-58cc-4372-a567-0e02b2c3d479",
   display_name="PIN Code",
@@ -707,21 +596,7 @@ AccessMethod(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.access_methods.get(
-  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-)
-```
-
-**Output:**
-
-```ruby
+```ruby Ruby
 {
   "access_method_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
   "display_name" => "PIN Code",
@@ -732,21 +607,7 @@ seam.access_methods.get(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->access_methods->get(
-  access_method_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
-);
-```
-
-**Output:**
-
-```php
+```php PHP
 [
   "access_method_id" => "f47ac10b-58cc-4372-a567-0e02b2c3d479",
   "display_name" => "PIN Code",
@@ -757,24 +618,11 @@ $seam->access_methods->get(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

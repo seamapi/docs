@@ -25,10 +25,9 @@ To follow this guide, you need:
 
 Create a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) to enable the Ultraloq device owner to authorize Seam to access their Ultraloq account.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -41,11 +40,7 @@ const webview = await seam.connectWebviews.create({
 console.log(webview.url)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/connect_webviews/create' \
   -H 'accept: application/json' \
@@ -57,11 +52,7 @@ curl -X 'POST' \
   }'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -74,11 +65,7 @@ webview = seam.connect_webviews.create(
 print(webview.url)
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -91,11 +78,7 @@ webview = seam.connect_webviews.create(
 puts webview.url
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -111,11 +94,7 @@ $webview = $seam->connect_webviews->create(
 echo $webview->url;
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -128,11 +107,7 @@ var webview = seam.ConnectWebviews.Create(
 Console.WriteLine(webview.Url);
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.ConnectWebview;
 
@@ -148,8 +123,7 @@ ConnectWebview webview = seam.connectWebviews().create(
 System.out.println(webview.getUrl());
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -168,10 +142,9 @@ After authorization, the user is redirected to your `custom_redirect_url` with t
 
 Wait for the Connect Webview status to change to `authorized`, indicating that the connection was successful. You can either poll the Connect Webview or use [webhooks](https://docs.seam.co/latest/developer-tools/webhooks) to be notified when the status changes.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -187,11 +160,7 @@ if (webview.status === 'authorized') {
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/connect_webviews/get' \
   -H 'accept: application/json' \
@@ -202,11 +171,7 @@ curl -X 'POST' \
   }"
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -221,11 +186,7 @@ if webview.status == "authorized":
   print(f"Connected account ID: {webview.connected_account_id}")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -241,11 +202,7 @@ if webview.status == "authorized"
 end
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -264,11 +221,7 @@ if ($webview->status === "authorized") {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -285,11 +238,7 @@ if (webview.Status == "authorized")
 }
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.ConnectWebview;
 
@@ -308,8 +257,7 @@ if (webview.getStatus().equals("authorized")) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -317,10 +265,9 @@ if (webview.getStatus().equals("authorized")) {
 
 Once the connection is authorized, retrieve the list of Ultraloq devices associated with the connected account.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -337,11 +284,7 @@ for (const device of devices) {
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/devices/list' \
   -H 'accept: application/json' \
@@ -352,11 +295,7 @@ curl -X 'POST' \
   }"
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -372,11 +311,7 @@ for device in devices:
   print()
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -393,11 +328,7 @@ devices.each do |device|
 end
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -416,11 +347,7 @@ foreach ($devices as $device) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -438,11 +365,7 @@ foreach (var device in devices)
 }
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
 
@@ -462,8 +385,7 @@ for (Device device : devices) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 **Expected Output:**
 
@@ -502,10 +424,9 @@ When you first list Ultraloq devices, they will have the `ultraloq_time_zone_unk
 
 This is a **required step** for Ultraloq devices. You must configure each device's timezone before you can create time-bound access codes.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -525,11 +446,7 @@ await seam.devices.reportProviderMetadata({
 console.log('Timezone configured successfully!')
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/devices/report_provider_metadata' \
   -H 'accept: application/json' \
@@ -547,11 +464,7 @@ curl -X 'POST' \
   }"
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -571,11 +484,7 @@ seam.devices.report_provider_metadata(
 print("Timezone configured successfully!")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -595,11 +504,7 @@ seam.devices.report_provider_metadata(
 puts "Timezone configured successfully!"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -622,11 +527,7 @@ $seam->devices->report_provider_metadata(
 echo "Timezone configured successfully!";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -646,11 +547,7 @@ seam.Devices.ReportProviderMetadata(
 Console.WriteLine("Timezone configured successfully!");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 
 Seam seam = Seam.builder().build();
@@ -672,8 +569,7 @@ seam.devices().reportProviderMetadata(
 System.out.println("Timezone configured successfully!");
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 <Check>
 **Valid Timezone Values:** Use IANA timezone strings such as `"America/New_York"`, `"Europe/London"`, or `"Asia/Tokyo"`. Do not use timezone abbreviations like `"EST"` or `"PST"`.
@@ -690,10 +586,9 @@ For detailed information about timezone configuration, including best practices 
 
 After configuring the timezone, verify that the warning has been cleared and the timezone is set correctly.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -717,11 +612,7 @@ console.assert(!hasWarning, 'Timezone warning should be cleared')
 console.log('✓ Device is ready to create time-bound access codes!')
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 device=$(curl -X 'POST' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
@@ -738,11 +629,7 @@ echo $device | jq '.device.properties.ultraloq_metadata.time_zone'
 echo $device | jq '.device.warnings'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -762,11 +649,7 @@ assert not has_warning, "Timezone warning should be cleared"
 print("✓ Device is ready to create time-bound access codes!")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -783,11 +666,7 @@ raise "Timezone warning not cleared" if has_warning
 puts "✓ Device is ready to create time-bound access codes!"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -813,11 +692,7 @@ assert(!$hasWarning, "Timezone warning should be cleared");
 echo "✓ Device is ready to create time-bound access codes!";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -839,11 +714,7 @@ Debug.Assert(!hasWarning, "Timezone warning should be cleared");
 Console.WriteLine("✓ Device is ready to create time-bound access codes!");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
 
@@ -866,8 +737,7 @@ assert !hasWarning : "Timezone warning should be cleared";
 System.out.println("✓ Device is ready to create time-bound access codes!");
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -877,10 +747,9 @@ Now that your Ultraloq devices are connected and configured, you can perform com
 
 ### Lock and Unlock Devices
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -894,11 +763,7 @@ await seam.locks.unlockDoor({ device_id: 'your-device-id' })
 console.log('Door unlocked')
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 # Lock the door
 curl -X 'POST' \
   'https://connect.getseam.com/locks/lock_door' \
@@ -916,11 +781,7 @@ curl -X 'POST' \
   -d "{\"device_id\": \"your-device-id\"}"
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -934,11 +795,7 @@ seam.locks.unlock_door(device_id="your-device-id")
 print("Door unlocked")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -952,11 +809,7 @@ seam.locks.unlock_door(device_id: "your-device-id")
 puts "Door unlocked"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -973,11 +826,7 @@ $seam->locks->unlock_door(device_id: "your-device-id");
 echo "Door unlocked\n";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -991,11 +840,7 @@ seam.Locks.UnlockDoor(deviceId: "your-device-id");
 Console.WriteLine("Door unlocked");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 
 Seam seam = Seam.builder().build();
@@ -1013,17 +858,15 @@ seam.locks().unlockDoor(LocksUnlockDoorRequest.builder()
 System.out.println("Door unlocked");
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Create Permanent Access Codes
 
 Permanent access codes work indefinitely and do not require timezone configuration:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -1038,11 +881,7 @@ const accessCode = await seam.accessCodes.create({
 console.log(`Created permanent code: ${accessCode.code}`)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/access_codes/create' \
   -H 'accept: application/json' \
@@ -1055,11 +894,7 @@ curl -X 'POST' \
   }'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -1074,11 +909,7 @@ access_code = seam.access_codes.create(
 print(f"Created permanent code: {access_code.code}")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -1093,11 +924,7 @@ access_code = seam.access_codes.create(
 puts "Created permanent code: #{access_code.code}"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -1115,11 +942,7 @@ $accessCode = $seam->access_codes->create(
 echo "Created permanent code: " . $accessCode->code . "\n";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 
 var seam = new SeamClient();
@@ -1134,11 +957,7 @@ var accessCode = seam.AccessCodes.Create(
 Console.WriteLine($"Created permanent code: {accessCode.Code}");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
 
@@ -1156,17 +975,15 @@ AccessCode accessCode = seam.accessCodes().create(
 System.out.println("Created permanent code: " + accessCode.getCode());
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Create Time-Bound Access Codes
 
 Time-bound access codes require timezone configuration (completed in Step 5):
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -1187,11 +1004,7 @@ console.log(`Created time-bound code: ${accessCode.code}`)
 console.log(`Active from ${accessCode.starts_at} to ${accessCode.ends_at}`)
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 # Calculate timestamps
 STARTS_AT=$(date -u -d '+1 day' '+%Y-%m-%dT%H:%M:%SZ')
 ENDS_AT=$(date -u -d '+3 days' '+%Y-%m-%dT%H:%M:%SZ')
@@ -1209,11 +1022,7 @@ curl -X 'POST' \
   }"
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 from datetime import datetime, timedelta
 
@@ -1235,11 +1044,7 @@ print(f"Created time-bound code: {access_code.code}")
 print(f"Active from {access_code.starts_at} to {access_code.ends_at}")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 require "time"
 
@@ -1261,11 +1066,7 @@ puts "Created time-bound code: #{access_code.code}"
 puts "Active from #{access_code.starts_at} to #{access_code.ends_at}"
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -1289,11 +1090,7 @@ echo "Created time-bound code: " . $accessCode->code . "\n";
 echo "Active from " . $accessCode->starts_at . " to " . $accessCode->ends_at . "\n";
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 using System;
 
@@ -1315,11 +1112,7 @@ Console.WriteLine($"Created time-bound code: {accessCode.Code}");
 Console.WriteLine($"Active from {accessCode.StartsAt} to {accessCode.EndsAt}");
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.AccessCode;
 import java.time.Instant;
@@ -1345,15 +1138,13 @@ System.out.println("Created time-bound code: " + accessCode.getCode());
 System.out.println("Active from " + accessCode.getStartsAt() + " to " + accessCode.getEndsAt());
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Monitor Device Status
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam()
@@ -1377,11 +1168,7 @@ if (device.warnings.length > 0) {
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 device=$(curl -X 'POST' \
   'https://connect.getseam.com/devices/get' \
   -H 'accept: application/json' \
@@ -1402,11 +1189,7 @@ echo $device | jq '.device.properties.battery_level'
 echo $device | jq '.device.warnings'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()
@@ -1428,11 +1211,7 @@ if device.warnings:
   print(f"Warnings: {[w.warning_code for w in device.warnings]}")
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new()
@@ -1456,11 +1235,7 @@ if device.warnings.any?
 end
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -1488,11 +1263,7 @@ if (count($device->warnings) > 0) {
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 using Seam.Client;
 using System.Linq;
 
@@ -1520,11 +1291,7 @@ if (device.Warnings.Any())
 }
 ```
 
-</Tab>
-
-<Tab title="Java">
-
-```java
+```java Java
 import com.seam.api.Seam;
 import com.seam.api.types.Device;
 import java.util.stream.Collectors;
@@ -1557,8 +1324,7 @@ if (!device.getWarnings().isEmpty()) {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

@@ -11,18 +11,47 @@ You can list details for all the ACSs in your [workspace](/core-concepts/workspa
 
 You can [list all `acs_system` resources](https://docs.seam.co/latest/api/acs/systems/list) in your workspace. Note the `acs_system_id` in the response.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.acs.systems.list()
 ```
 
+```bash cURL
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/acs/systems/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+
+```python Python
+seam.acs.systems.list()
+```
+
+```ruby Ruby
+# Coming soon!
+```
+
+```php PHP
+$seam->acs->systems->list();
+```
+
+```csharp C#
+seam.SystemsAcs.List();
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 [
   {
     acs_system_id: '11111111-1111-1111-1111-111111111111',
@@ -33,25 +62,7 @@ await seam.acs.systems.list()
 ]
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
-# Use GET or POST.
-curl -X 'GET' \
-  'https://connect.getseam.com/acs/systems/list' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{}'
-```
-
-**Response:**
-
-```json
+```json cURL
 {
   "acs_systems": [
     {
@@ -65,19 +76,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.acs.systems.list()
-```
-
-**Response:**
-
-```
+```json Python
 [
   AcsSystem(
     acs_system_id='11111111-1111-1111-1111-111111111111',
@@ -88,35 +87,11 @@ seam.acs.systems.list()
 ]
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```json Ruby
 # Coming soon!
 ```
 
-**Response:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->acs->systems->list();
-```
-
-**Response:**
-
-```json
+```json PHP
 [
   {
     "acs_system_id": "11111111-1111-1111-1111-111111111111",
@@ -127,19 +102,7 @@ $seam->acs->systems->list();
 ]
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-seam.SystemsAcs.List();
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
   "name": "Visionline System",
@@ -148,8 +111,7 @@ seam.SystemsAcs.List();
 ...
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -157,20 +119,57 @@ seam.SystemsAcs.List();
 
 You can [get the details of a specific `acs_system`](https://docs.seam.co/latest/api/acs/systems/get) in your workspace. These details include the `acs_system_id`, date and time at which the `acs_system` was created in Seam, the name and type of the `acs_system`, and so on.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.acs.systems.get({
   acs_system_id: '11111111-1111-1111-1111-111111111111',
 })
 ```
 
+```bash cURL
+# Use GET or POST.
+curl -X 'GET' \
+  'https://connect.getseam.com/acs/systems/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "acs_system_id": "11111111-1111-1111-1111-111111111111"
+}'
+```
+
+```python Python
+seam.acs.systems.get(
+ acs_system_id="11111111-1111-1111-1111-111111111111"
+)
+```
+
+```ruby Ruby
+# Coming soon!
+```
+
+```php PHP
+$seam->acs->systems->get(
+  acs_system_id: "11111111-1111-1111-1111-111111111111"
+);
+```
+
+```csharp C#
+seam.SystemsAcs.Get(
+  acsSystemId: "11111111-1111-1111-1111-111111111111"
+);
+```
+
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
   "name": "Example Inc",
@@ -184,27 +183,7 @@ await seam.acs.systems.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
-# Use GET or POST.
-curl -X 'GET' \
-  'https://connect.getseam.com/acs/systems/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "acs_system_id": "11111111-1111-1111-1111-111111111111"
-}'
-```
-
-**Response:**
-
-```json
+```json cURL
 {
   "acs_system": {
     "acs_system_id": "11111111-1111-1111-1111-111111111111",
@@ -221,21 +200,7 @@ curl -X 'GET' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
-seam.acs.systems.get(
- acs_system_id="11111111-1111-1111-1111-111111111111"
-)
-```
-
-**Response:**
-
-```
+```json Python
 AcsSystem(
   acs_system_id='11111111-1111-1111-1111-111111111111',
   name='Example Inc',
@@ -251,37 +216,11 @@ AcsSystem(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```json Ruby
 # Coming soon!
 ```
 
-**Response:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
-$seam->acs->systems->get(
-  acs_system_id: "11111111-1111-1111-1111-111111111111"
-);
-```
-
-**Response:**
-
-```json
+```json PHP
 {
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
   "name": "Example Inc",
@@ -295,21 +234,7 @@ $seam->acs->systems->get(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
-seam.SystemsAcs.Get(
-  acsSystemId: "11111111-1111-1111-1111-111111111111"
-);
-```
-
-**Response:**
-
-```json
+```json C#
 {
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
   "name": "Example Inc",
@@ -323,5 +248,4 @@ seam.SystemsAcs.Get(
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

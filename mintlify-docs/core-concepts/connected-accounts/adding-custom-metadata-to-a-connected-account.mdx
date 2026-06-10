@@ -13,12 +13,11 @@ You can use custom metadata to store a custom payload or object, tailored to the
 
 If the associated [Connect Webview](/core-concepts/connect-webviews/index) contains custom metadata, Seam transfers this custom metadata as the initial value for this property. However, you can use the [Update Connected Account](https://docs.seam.co/latest/api/connected_accounts/update) method with the optional `custom_metadata` property to change or add custom metadata for the connected account. This property accepts up to 50 JSON key:value pairs.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const connectedAccountUpdate = await seam.connectedAccounts.update({
   connected_account_id: '6e1cad57-b244-40ca-b4f3-30a46c8000d4',
   custom_metadata: {
@@ -29,19 +28,7 @@ const connectedAccountUpdate = await seam.connectedAccounts.update({
 console.log(connectedAccountUpdate)
 ```
 
-**Response:**
-
-```json
-{ "ok": true }
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/connected_accounts/update' \
   -H 'accept: application/json' \
@@ -55,21 +42,7 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 connected_account_update = seam.connected_accounts.update(
     connected_account_id = "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
     custom_metadata = {
@@ -80,19 +53,7 @@ connected_account_update = seam.connected_accounts.update(
 pprint(connected_account_update)
 ```
 
-**Response:**
-
-```
-True
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 connected_account_update = client.connected_accounts.update(
   connected_account_id: "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
   custom_metadata: {
@@ -103,19 +64,7 @@ connected_account_update = client.connected_accounts.update(
 puts connected_account_update.inspect
 ```
 
-**Response:**
-
-```
-{"ok"=>true}
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $connected_account_update = $seam->connected_accounts->update(
   connected_account_id: "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
   custom_metadata: array('internal_account_id' => 'user-1')
@@ -123,19 +72,7 @@ $connected_account_update = $seam->connected_accounts->update(
 echo json_encode($connected_account_update, JSON_PRETTY_PRINT);
 ```
 
-**Response:**
-
-```json
-true
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```csharp C#
 var customMetadata = new Dictionary<string, string>()
 {
   {"internal_account_id", "user-1"}
@@ -149,9 +86,35 @@ var connectedAccountUpdate = seam.ConnectedAccounts.Update(
 Console.WriteLine(connectedAccountUpdate);
 ```
 
+</CodeGroup>
+
 **Response:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{ "ok": true }
+```
+
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+True
+```
+
+```json Ruby
+{"ok"=>true}
+```
+
+```json PHP
+true
+```
+
+```json C#
 {
   "connected_account_id": "6e1cad57-b244-40ca-b4f3-30a46c8000d4",
   "created_at": "2023-12-15T08:03:23.432Z",
@@ -164,5 +127,4 @@ Console.WriteLine(connectedAccountUpdate);
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

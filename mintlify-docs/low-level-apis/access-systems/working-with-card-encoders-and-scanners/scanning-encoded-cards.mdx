@@ -28,12 +28,11 @@ The scanning process consists of the following basic steps:
 
 To scan a card, first, identify the `acs_encoder_id` of the encoder that you want to use to scan the card. Then, initiate the scan using the `/acs/encoders/scan_credential` endpoint.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Retrieve a list of all available encoders in a building,
 // that is, connected to a single acs_system.
 await seam.acs.encoders.list({
@@ -46,25 +45,7 @@ const scanningActionAttempt = await seam.acs.encoders.scanCredential({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "status": "pending",
-  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-  "action_type": "SCAN_CREDENTIAL",
-  "result": null,
-  "error": null
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Retrieve a list of all available encoders in a building,
 # that is, connected to a single acs_system.
 curl -X 'POST' \
@@ -87,28 +68,7 @@ scanning_action_attempt=$(curl -X 'POST' \
 }")
 ```
 
-**Output:**
-
-```json
-{
-  "action_attempt": {
-    "status": "pending",
-    "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-    "action_type": "SCAN_CREDENTIAL",
-    "result": null,
-    "error": null
-  },
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 # Retrieve a list of all available encoders in a building,
 # that is, connected to a single acs_system.
 seam.acs.encoders.list(
@@ -121,25 +81,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
 )
 ```
 
-**Output:**
-
-```
-ActionAttempt(
-  status='pending',
-  action_attempt_id='11111111-2222-3333-4444-666666666666',
-  action_type='SCAN_CREDENTIAL',
-  result=null,
-  error=null
-)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 # Retrieve a list of all available encoders in a building,
 # that is, connected to a single acs_system.
 seam.acs.encoders.list(
@@ -152,25 +94,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
 )
 ```
 
-**Output:**
-
-```
-<Seam::Resources::ActionAttempt:0x00410
-  status="pending"
-  action_attempt_id="11111111-2222-3333-4444-666666666666"
-  action_type="SCAN_CREDENTIAL"
-  result=nil
-  error=nil
->
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 // Retrieve a list of all available encoders in a building,
 // that is, connected to a single acs_system.
 $seam->acs->encoders->list(
@@ -183,25 +107,7 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
 );
 ```
 
-**Output:**
-
-```json
-{
-  "status": "pending",
-  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
-  "action_type": "SCAN_CREDENTIAL",
-  "result": null,
-  "error": null
-}
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```csharp C#
 // Retrieve a list of all available encoders in a building,
 // that is, connected to a single acs_system.
 seam.EncodersAcs.List(
@@ -217,9 +123,13 @@ actionAttempt scanningActionAttempt = seam.EncodersAcs.ScanCredential(
 );
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "status": "pending",
   "action_attempt_id": "11111111-2222-3333-4444-666666666666",
@@ -229,8 +139,60 @@ actionAttempt scanningActionAttempt = seam.EncodersAcs.ScanCredential(
 }
 ```
 
-</Tab>
-</Tabs>
+```json cURL
+{
+  "action_attempt": {
+    "status": "pending",
+    "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+    "action_type": "SCAN_CREDENTIAL",
+    "result": null,
+    "error": null
+  },
+  "ok": true
+}
+```
+
+```json Python
+ActionAttempt(
+  status='pending',
+  action_attempt_id='11111111-2222-3333-4444-666666666666',
+  action_type='SCAN_CREDENTIAL',
+  result=null,
+  error=null
+)
+```
+
+```json Ruby
+<Seam::Resources::ActionAttempt:0x00410
+  status="pending"
+  action_attempt_id="11111111-2222-3333-4444-666666666666"
+  action_type="SCAN_CREDENTIAL"
+  result=nil
+  error=nil
+>
+```
+
+```json PHP
+{
+  "status": "pending",
+  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+  "action_type": "SCAN_CREDENTIAL",
+  "result": null,
+  "error": null
+}
+```
+
+```json C#
+{
+  "status": "pending",
+  "action_attempt_id": "11111111-2222-3333-4444-666666666666",
+  "action_type": "SCAN_CREDENTIAL",
+  "result": null,
+  "error": null
+}
+```
+
+</CodeGroup>
 
 ---
 
@@ -238,20 +200,58 @@ actionAttempt scanningActionAttempt = seam.EncodersAcs.ScanCredential(
 
 When you make an `/acs/encoders/scan_credential` request, Seam returns an [action attempt](../../../core-concepts/action-attempts). To identify when the scan has completed and to confirm that the scan was successful, poll this action attempt, until its `status` becomes `success`.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.actionAttempts.get({
   action_attempt_id: scanningActionAttempt.action_attempt_id,
 })
 ```
 
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/action_attempts/get' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+  \"action_attempt_id\": \"$(jq -r '.action_attempt.action_attempt_id' <<< ${scanning_action_attempt})\"
+}"
+```
+
+```python Python
+seam.action_attempts.get(
+  action_attempt_id = scanning_action_attempt.action_attempt_id
+)
+```
+
+```ruby Ruby
+seam.action_attempts.get(
+  action_attempt_id: scanning_action_attempt.action_attempt_id
+)
+```
+
+```php PHP
+$seam->action_attempts->get(
+  action_attempt_id: $scanning_action_attempt->action_attempt_id
+);
+```
+
+```csharp C#
+seam.ActionAttempts.Get(
+  actionAttemptId: scanningActionAttempt.actionAttemptId
+);
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   status: 'success',
   action_attempt_id: '11111111-2222-3333-4444-666666666666",
@@ -263,26 +263,7 @@ await seam.actionAttempts.get({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-curl -X 'POST' \
-  'https://connect.getseam.com/action_attempts/get' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"action_attempt_id\": \"$(jq -r '.action_attempt.action_attempt_id' <<< ${scanning_action_attempt})\"
-}"
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "action_attempt":
     {
@@ -298,21 +279,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.action_attempts.get(
-  action_attempt_id = scanning_action_attempt.action_attempt_id
-)
-```
-
-**Output:**
-
-```
+```json Python
 ActionAttempt(
   status='success',
   action_attempt_id='11111111-2222-3333-4444-666666666666',
@@ -324,21 +291,7 @@ ActionAttempt(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.action_attempts.get(
-  action_attempt_id: scanning_action_attempt.action_attempt_id
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::ActionAttempt:0x00410
   status="success"
   action_attempt_id="11111111-2222-3333-4444-666666666666"
@@ -350,21 +303,7 @@ seam.action_attempts.get(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->action_attempts->get(
-  action_attempt_id: $scanning_action_attempt->action_attempt_id
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "status": "success",
   "action_attempt_id": "11111111-2222-3333-4444-666666666666",
@@ -376,21 +315,7 @@ $seam->action_attempts->get(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
-seam.ActionAttempts.Get(
-  actionAttemptId: scanningActionAttempt.actionAttemptId
-);
-```
-
-**Output:**
-
-```json
+```json C#
 {
   "status": "success",
   "action_attempt_id": "11111111-2222-3333-4444-666666666666",
@@ -402,8 +327,7 @@ seam.ActionAttempts.Get(
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 

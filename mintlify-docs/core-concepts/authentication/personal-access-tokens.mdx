@@ -31,10 +31,9 @@ To use a PAT for authorization in the Seam API, you must specify the PAT in the 
 
 The following example shows how to use a PAT and workspace ID to [list all devices](https://docs.seam.co/latest/api/devices/list) in a workspace:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 const seam = new Seam({
   // Specify PAT.
   apiKey: pat,
@@ -45,11 +44,7 @@ const seam = new Seam({
 console.log(await seam.devices.list())
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/devices/list' \
   -H 'accept: application/json' \
@@ -59,11 +54,7 @@ curl -X 'POST' \
   -d '{}'
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 seam = Seam(
     # Specify PAT.
     api_key=pat,
@@ -74,11 +65,7 @@ seam = Seam(
 pprint(seam.devices.list())
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 client = Seam.new(
   # Specify PAT.
   api_key: pat,
@@ -89,11 +76,7 @@ client = Seam.new(
 puts client.devices.list().inspect
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 $seam = new Seam\SeamClient(
   // Specify PAT.
   $pat,
@@ -104,11 +87,7 @@ $seam = new Seam\SeamClient(
 print_r($seam->devices->list());
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 var seam = new SeamClient(
     // Specify PAT.
     apiToken: pat,
@@ -123,8 +102,7 @@ foreach (var device in devices)
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 <Info>
 Instead of including your PAT in the `Seam` constructor, you can export your PAT as a `SEAM_API_KEY` environment variable. Then, all installed Seam SDKs automatically use this exported PAT.

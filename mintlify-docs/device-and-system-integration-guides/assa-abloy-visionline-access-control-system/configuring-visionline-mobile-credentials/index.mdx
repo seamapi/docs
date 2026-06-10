@@ -60,9 +60,9 @@ To issue the first guest credential for a reservation, create an override creden
   and, consequently, is ready to accept an override guest credential.
 </Info>
 
-<Tabs>
-<Tab title="Python">
-```python
+<CodeGroup>
+
+```python Python
 # Set up the mobile user account.
 user_identity = seam.user_identities.create(
     user_identity_key="xxx"
@@ -111,10 +111,9 @@ visionline_metadata={
 }
 )
 
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ***
 
@@ -134,9 +133,9 @@ To issue a joiner credential, you must specify both the entrances to which to gr
 
 For instructions on how to retrieve credentials that have overlapping access, see [Issuing Various Types of Guest Joiner Mobile Credentials](./issuing-various-types-of-guest-joiner-mobile-credentials).
 
-<Tabs>
-<Tab title="Python">
-```python
+<CodeGroup>
+
+```python Python
 # Set up the mobile user account.
 user_identity = seam.user_identities.create(
     user_identity_key="xxx"
@@ -182,14 +181,13 @@ cred = seam.acs.credentials.create({
     ]
   }
 })
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
-<Tabs>
-<Tab title="Python">
-```python
+<CodeGroup>
+
+```python Python
 all_entrances = seam.acs.entrances.list(
   acs_system_id=acs_system.acs_system_id
 )
@@ -212,6 +210,5 @@ common_entrance_category_types
 
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 ```

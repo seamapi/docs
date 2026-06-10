@@ -17,12 +17,11 @@ This section details the steps in this process and provides accompanying Seam AP
 
 Use the Seam API to create a `user_identity`. A user identity represents the hotel guest.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Create a user identity for your user.
 const janeUser = await seam.userIdentities.create({
   full_name: 'Jane Doe',
@@ -30,24 +29,7 @@ const janeUser = await seam.userIdentities.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "full_name": "Jane Doe",
-  "phone_number": "+15555550100",
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Create a user identity for your user.
 jane_user=$(curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
@@ -60,9 +42,50 @@ jane_user=$(curl -X 'POST' \
 }')
 ```
 
+```python Python
+# Create a user identity for your user.
+jane_user = seam.user_identities.create(
+  full_name = "Jane Doe",
+  phone_number = "+15555550100"
+)
+```
+
+```ruby Ruby
+# Create a user identity for your user.
+jane_user = seam.user_identities.create(
+  full_name: "Jane Doe",
+  phone_number: "+15555550100"
+)
+```
+
+```php PHP
+// Create a user identity for your user.
+$jane_user = $seam->user_identities->create(
+  full_name: "Jane Doe",
+  phone_number: "+15555550100"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "full_name": "Jane Doe",
+  "phone_number": "+15555550100",
+  ...
+}
+```
+
+```json cURL
 {
   "user_identity": {
     "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
@@ -74,23 +97,7 @@ jane_user=$(curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-# Create a user identity for your user.
-jane_user = seam.user_identities.create(
-  full_name = "Jane Doe",
-  phone_number = "+15555550100"
-)
-```
-
-**Output:**
-
-```
+```json Python
 UserIdentity(
   user_identity_id='43947360-cdc8-4db6-8b22-e079416d1d8b',
   full_name='Jane Doe',
@@ -99,23 +106,7 @@ UserIdentity(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-# Create a user identity for your user.
-jane_user = seam.user_identities.create(
-  full_name: "Jane Doe",
-  phone_number: "+15555550100"
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::UserIdentity:0x005f0
   user_identity_id="43947360-cdc8-4db6-8b22-e079416d1d8b"
   full_name="Jane Doe"
@@ -124,23 +115,7 @@ jane_user = seam.user_identities.create(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-// Create a user identity for your user.
-$jane_user = $seam->user_identities->create(
-  full_name: "Jane Doe",
-  phone_number: "+15555550100"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
   "full_name": "Jane Doe",
@@ -149,24 +124,11 @@ $jane_user = $seam->user_identities->create(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -174,12 +136,11 @@ $jane_user = $seam->user_identities->create(
 
 To create an Access Grant, specify the user identity, entrance or space IDs, and starting and ending times. Include `card` as a requested access method.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.accessGrants.create({
   // You can specify the ID of an existing user identity or
   // use the user_identity parameter to create a new one.
@@ -195,34 +156,7 @@ await seam.accessGrants.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
-  "display_name": "My Access Grant",
-  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
-  "starts_at": "2025-07-13T15:00:00.000Z",
-  "ends_at": "2025-07-16T11:00:00.000Z",
-  "requested_access_methods": [
-    {
-      "display_name": "Plastic Card",
-      "mode": "card",
-      "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-      ...
-    }
-  ],
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # You can specify the ID of an existing user identity or
 # use the user_identity parameter to create a new one.
 # Also, you can specify acs_entrance_ids, space_ids, or both.
@@ -245,9 +179,87 @@ curl -X 'POST' \
 }"
 ```
 
+```python Python
+seam.access_grants.create(
+  # You can specify the ID of an existing user identity or
+  # use the user_identity parameter to create a new one.
+  user_identity_id=jane_user.user_identity_id,
+  # You can specify acs_entrance_ids, space_ids, or both.
+  acs_entrance_ids=[
+    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "f74e4879-5991-4e2f-a368-888983dcfbfc"
+  ],
+  requested_access_methods=[
+    {"mode": "card"}
+  ],
+  starts_at="2025-07-13T15:00:00.000Z",
+  ends_at="2025-07-16T11:00:00.000Z"
+)
+```
+
+```ruby Ruby
+seam.access_grants.create(
+  # You can specify the ID of an existing user identity or
+  # use the user_identity parameter to create a new one.
+  user_identity_id: jane_user.user_identity_id,
+  # You can specify acs_entrance_ids, space_ids, or both.
+  acs_entrance_ids: %w[48ebfb50-c531-43c5-b9ea-409f26dabbd7 f74e4879-5991-4e2f-a368-888983dcfbfc],
+  requested_access_methods: [
+    {"mode": "card"}
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+)
+```
+
+```php PHP
+$seam->access_grants->create(
+  // You can specify the ID of an existing user identity or
+  // use the user_identity parameter to create a new one.
+  user_identity_id: $jane_user->user_identity_id,
+  // You can specify acs_entrance_ids, space_ids, or both.
+  acs_entrance_ids: [
+    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
+    "f74e4879-5991-4e2f-a368-888983dcfbfc",
+  ],
+  requested_access_methods: [
+    ["mode" => "card"],
+  ],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+);
+```
+
+```csharp C#
+// Coming Soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
+  "display_name": "My Access Grant",
+  "user_identity_id": "43947360-cdc8-4db6-8b22-e079416d1d8b",
+  "starts_at": "2025-07-13T15:00:00.000Z",
+  "ends_at": "2025-07-16T11:00:00.000Z",
+  "requested_access_methods": [
+    {
+      "display_name": "Plastic Card",
+      "mode": "card",
+      "created_access_method_ids": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+      ...
+    }
+  ],
+  ...
+}
+```
+
+```json cURL
 {
   "access_grant": {
     "access_grant_id": "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
@@ -268,33 +280,7 @@ curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-seam.access_grants.create(
-  # You can specify the ID of an existing user identity or
-  # use the user_identity parameter to create a new one.
-  user_identity_id=jane_user.user_identity_id,
-  # You can specify acs_entrance_ids, space_ids, or both.
-  acs_entrance_ids=[
-    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
-    "f74e4879-5991-4e2f-a368-888983dcfbfc"
-  ],
-  requested_access_methods=[
-    {"mode": "card"}
-  ],
-  starts_at="2025-07-13T15:00:00.000Z",
-  ends_at="2025-07-16T11:00:00.000Z"
-)
-```
-
-**Output:**
-
-```python
+```python Python
 AccessGrant(
   access_grant_id="ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   display_name="My Access Grant",
@@ -313,30 +299,7 @@ AccessGrant(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-seam.access_grants.create(
-  # You can specify the ID of an existing user identity or
-  # use the user_identity parameter to create a new one.
-  user_identity_id: jane_user.user_identity_id,
-  # You can specify acs_entrance_ids, space_ids, or both.
-  acs_entrance_ids: %w[48ebfb50-c531-43c5-b9ea-409f26dabbd7 f74e4879-5991-4e2f-a368-888983dcfbfc],
-  requested_access_methods: [
-    {"mode": "card"}
-  ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-)
-```
-
-**Output:**
-
-```ruby
+```ruby Ruby
 {
   "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   "display_name" => "My Access Grant",
@@ -355,33 +318,7 @@ seam.access_grants.create(
 }
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-$seam->access_grants->create(
-  // You can specify the ID of an existing user identity or
-  // use the user_identity parameter to create a new one.
-  user_identity_id: $jane_user->user_identity_id,
-  // You can specify acs_entrance_ids, space_ids, or both.
-  acs_entrance_ids: [
-    "48ebfb50-c531-43c5-b9ea-409f26dabbd7",
-    "f74e4879-5991-4e2f-a368-888983dcfbfc",
-  ],
-  requested_access_methods: [
-    ["mode" => "card"],
-  ],
-  starts_at: "2025-07-13T15:00:00.000Z",
-  ends_at: "2025-07-16T11:00:00.000Z"
-);
-```
-
-**Output:**
-
-```php
+```php PHP
 [
   "access_grant_id" => "ef83cca9-5fdf-4ac2-93f3-c21c5a8be54b",
   "display_name" => "My Access Grant",
@@ -400,24 +337,11 @@ $seam->access_grants->create(
 ];
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming Soon!
 ```
 
-**Output:**
-
-```json
-// Coming Soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ## Encode the Card
 
@@ -438,12 +362,11 @@ First, list the available card encoders within the access system and identify th
 
 For more details about card encoding, see [Creating and Encoding Card Access Methods](../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-access-methods).
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // First, get the encoder that you want to use.
 const encoder = (
   await seam.acs.encoders.list({
@@ -465,31 +388,7 @@ await seam.actionAttempts.get({
 })
 ```
 
-**Output:**
-
-```json
-{
-  status: 'success',
-  action_attempt_id: 'e49a33f7-9596-4b45-8e66-550b72fea134',
-  action_type: 'ENCODE_ACCESS_METHOD',
-  result: {
-    acs_credential_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
-    card_number: '1234abc',
-    is_issued: true,
-    issued_at: '2025-07-13T14:00:00.000Z',
-    ...
-  },
-  error: null
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # First, get the encoder that you want to use.
 encoder=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/encoders/list' \
@@ -524,35 +423,7 @@ curl -X 'POST' \
 }"
 ```
 
-**Output:**
-
-```json
-{
-  "action_attempt":
-    {
-      "status": "success",
-      "action_attempt_id": "e49a33f7-9596-4b45-8e66-550b72fea134",
-      "action_type": "ENCODE_ACCESS_METHOD",
-      "result": {
-        "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-        "card_number": "1234abc",
-        "is_issued": true,
-        "issued_at": "2025-07-13T14:00:00.000Z",
-        ...
-      },
-      "error": null
-    },
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 # First, get the encoder that you want to use.
 encoder = seam.acs.encoders.list(
   acs_system_ids = [hotel_a.acs_system_id]
@@ -572,31 +443,7 @@ seam.action_attempts.get(
 )
 ```
 
-**Output:**
-
-```
-ActionAttempt(
-  status='success',
-  action_attempt_id='e49a33f7-9596-4b45-8e66-550b72fea134',
-  action_type='ENCODE_ACCESS_METHOD',
-  result={
-    access_method_id='c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
-    card_number='1234abc',
-    is_issued=True,
-    issued_at='2025-07-13T14:00:00.000Z',
-    ...
-  },
-  error=null
-)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
+```ruby Ruby
 # First, get the encoder that you want to use.
 encoder = (seam.acs.encoders.list(
   acs_system_ids: [hotel_a.acs_system_id]
@@ -616,31 +463,7 @@ seam.action_attempts.get(
 )
 ```
 
-**Output:**
-
-```
-<Seam::Resources::ActionAttempt:0x00410
-  status="success"
-  action_attempt_id="e49a33f7-9596-4b45-8e66-550b72fea134"
-  action_type="ENCODE_ACCESS_METHOD"
-  result={
-    acs_credential_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
-    card_number="1234abc"
-    is_issued=true,
-    issued_at="2025-07-13T14:00:00.000Z"
-    ...
-  }
-  error=nil
->
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 // First, get the encoder that you want to use.
 $encoder = $seam->acs->encoders->list(
   acs_system_ids: [$hotel_a->acs_system_id]
@@ -660,9 +483,85 @@ $seam->action_attempts->get(
 );
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  status: 'success',
+  action_attempt_id: 'e49a33f7-9596-4b45-8e66-550b72fea134',
+  action_type: 'ENCODE_ACCESS_METHOD',
+  result: {
+    acs_credential_id: 'c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
+    card_number: '1234abc',
+    is_issued: true,
+    issued_at: '2025-07-13T14:00:00.000Z',
+    ...
+  },
+  error: null
+}
+```
+
+```json cURL
+{
+  "action_attempt":
+    {
+      "status": "success",
+      "action_attempt_id": "e49a33f7-9596-4b45-8e66-550b72fea134",
+      "action_type": "ENCODE_ACCESS_METHOD",
+      "result": {
+        "access_method_id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        "card_number": "1234abc",
+        "is_issued": true,
+        "issued_at": "2025-07-13T14:00:00.000Z",
+        ...
+      },
+      "error": null
+    },
+  "ok": true
+}
+```
+
+```json Python
+ActionAttempt(
+  status='success',
+  action_attempt_id='e49a33f7-9596-4b45-8e66-550b72fea134',
+  action_type='ENCODE_ACCESS_METHOD',
+  result={
+    access_method_id='c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f',
+    card_number='1234abc',
+    is_issued=True,
+    issued_at='2025-07-13T14:00:00.000Z',
+    ...
+  },
+  error=null
+)
+```
+
+```json Ruby
+<Seam::Resources::ActionAttempt:0x00410
+  status="success"
+  action_attempt_id="e49a33f7-9596-4b45-8e66-550b72fea134"
+  action_type="ENCODE_ACCESS_METHOD"
+  result={
+    acs_credential_id="c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"
+    card_number="1234abc"
+    is_issued=true,
+    issued_at="2025-07-13T14:00:00.000Z"
+    ...
+  }
+  error=nil
+>
+```
+
+```json PHP
 {
   "status": "success",
   "action_attempt_id": "e49a33f7-9596-4b45-8e66-550b72fea134",
@@ -678,24 +577,11 @@ $seam->action_attempts->get(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -723,12 +609,11 @@ Pay special attention to the following parts of the returned payload:
 
 For more details, see [Scanning Encoded Cards](../../low-level-apis/access-systems/working-with-card-encoders-and-scanners/scanning-encoded-cards).
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Retrieve a list of all available encoders in a hotel,
 // that is, connected to a single acs_system.
 await seam.acs.encoders.list({
@@ -741,9 +626,79 @@ const scanningActionAttempt = await seam.acs.encoders.scanCredential({
 })
 ```
 
+```bash cURL
+# Retrieve a list of all available encoders in a hotel,
+# that is, connected to a single acs_system.
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/encoders/list' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+  \"acs_system_ids\": [\"${hotel_a_system_id}\"]
+}"
+
+# Scan the card using the desired encoder.
+scanning_action_attempt=$(curl -X 'POST' \
+  'https://connect.getseam.com/acs/encoders/scan_credential' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+  \"acs_encoder_id\": \"${acs_encoder_id}\"
+}")
+```
+
+```python Python
+# Retrieve a list of all available encoders in a hotel,
+# that is, connected to a single acs_system.
+seam.acs.encoders.list(
+  acs_system_ids = [hotel_a_system_id]
+)
+
+# Scan the card using the desired encoder.
+scanning_action_attempt = seam.acs.encoders.scan_credential(
+  acs_encoder_id = encoder.acs_encoder_id
+)
+```
+
+```ruby Ruby
+# Retrieve a list of all available encoders in a hotel,
+# that is, connected to a single acs_system.
+seam.acs.encoders.list(
+  acs_system_ids: [hotel_a_system_id]
+)
+
+# Scan the card using the desired encoder.
+scanning_action_attempt = seam.acs.encoders.scan_credential(
+  acs_encoder_id: encoder.acs_encoder_id
+)
+```
+
+```php PHP
+// Retrieve a list of all available encoders in a hotel,
+// that is, connected to a single acs_system.
+$seam->acs->encoders->list(
+  acs_system_ids: [$hotel_a_system_id]
+);
+
+// Scan the card using the desired encoder.
+$scanning_action_attempt = $seam->acs->encoders->scan_credential(
+  acs_encoder_id: $encoder->acs_encoder_id
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   status: 'success',
   action_attempt_id: '0243f349-68bf-4323-9e61-4c40eb72eb1e",
@@ -776,38 +731,7 @@ const scanningActionAttempt = await seam.acs.encoders.scanCredential({
 }
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
-# Retrieve a list of all available encoders in a hotel,
-# that is, connected to a single acs_system.
-curl -X 'POST' \
-  'https://connect.getseam.com/acs/encoders/list' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"acs_system_ids\": [\"${hotel_a_system_id}\"]
-}"
-
-# Scan the card using the desired encoder.
-scanning_action_attempt=$(curl -X 'POST' \
-  'https://connect.getseam.com/acs/encoders/scan_credential' \
-  -H 'accept: application/json' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d "{
-  \"acs_encoder_id\": \"${acs_encoder_id}\"
-}")
-```
-
-**Output:**
-
-```json
+```json cURL
 {
   "action_attempt":
     {
@@ -844,28 +768,7 @@ scanning_action_attempt=$(curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
-# Retrieve a list of all available encoders in a hotel,
-# that is, connected to a single acs_system.
-seam.acs.encoders.list(
-  acs_system_ids = [hotel_a_system_id]
-)
-
-# Scan the card using the desired encoder.
-scanning_action_attempt = seam.acs.encoders.scan_credential(
-  acs_encoder_id = encoder.acs_encoder_id
-)
-```
-
-**Output:**
-
-```
+```json Python
 ActionAttempt(
   status='success',
   action_attempt_id='0243f349-68bf-4323-9e61-4c40eb72eb1e',
@@ -898,28 +801,7 @@ ActionAttempt(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-**Code:**
-
-```ruby
-# Retrieve a list of all available encoders in a hotel,
-# that is, connected to a single acs_system.
-seam.acs.encoders.list(
-  acs_system_ids: [hotel_a_system_id]
-)
-
-# Scan the card using the desired encoder.
-scanning_action_attempt = seam.acs.encoders.scan_credential(
-  acs_encoder_id: encoder.acs_encoder_id
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::ActionAttempt:0x00410
   status="success"
   action_attempt_id="0243f349-68bf-4323-9e61-4c40eb72eb1e"
@@ -952,28 +834,7 @@ scanning_action_attempt = seam.acs.encoders.scan_credential(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
-// Retrieve a list of all available encoders in a hotel,
-// that is, connected to a single acs_system.
-$seam->acs->encoders->list(
-  acs_system_ids: [$hotel_a_system_id]
-);
-
-// Scan the card using the desired encoder.
-$scanning_action_attempt = $seam->acs->encoders->scan_credential(
-  acs_encoder_id: $encoder->acs_encoder_id
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "status": "success",
   "action_attempt_id": "0243f349-68bf-4323-9e61-4c40eb72eb1e",
@@ -1006,21 +867,8 @@ $scanning_action_attempt = $seam->acs->encoders->scan_credential(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>

@@ -11,9 +11,9 @@ If you are developing an application with multiple customers connecting their de
 
 When connecting your customers' devices, you can create a client session for each customer and associate this session with any Connect Webviews that you issue to them.
 
-<Tabs>
-<Tab title="JavaScript">
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Pass your API key to the Seam constructor to authorize access 
 // to your Seam workspace.
 // Set your API key. Remember to switch to your live API key 
@@ -40,10 +40,9 @@ connect_webview_ids: [connect_webview.connect_webview_id],
 // them connect their devices.
 const connect_webview_url = connect_webview.url
 
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ***
 
@@ -51,18 +50,17 @@ const connect_webview_url = connect_webview.url
 
 You can use the `user_identifier_key` to retrieve a list of devices that only includes the ones that a specific user owns.
 
-<Tabs>
-<Tab title="JavaScript">
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const user_identifier_key = "xxxx"
 
 const devices = await seam.devices.list({
   user_identifier_key
 })
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -70,9 +68,9 @@ const devices = await seam.devices.list({
 
 You can also use the `user_identifier_key` to ensure that a user has the authorization to interact with a device.
 
-<Tabs>
-<Tab title="Node">
-```javascript
+<CodeGroup>
+
+```javascript Node
 const handleUnlock = async (req, res) => {
   // Retrieve the internal user ID used to set the 
   // user_identifier_key.
@@ -97,5 +95,4 @@ const handleUnlock = async (req, res) => {
 }
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>

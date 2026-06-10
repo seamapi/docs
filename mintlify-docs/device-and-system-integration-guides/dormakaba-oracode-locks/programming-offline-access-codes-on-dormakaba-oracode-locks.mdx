@@ -38,10 +38,9 @@ If your booking times are more than 1 hour away from any configured slot, code c
 
 Before creating access codes, check which time slots are configured for your device:
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 // Get device and time slots
 const device = await seam.devices.get({
   device_id: "your-device-id"
@@ -70,11 +69,7 @@ print(time_slots)
 
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 # Get device and time slots
 device = seam.devices.get(device_id="your-device-id")
 time_slots = device.properties
@@ -100,8 +95,7 @@ print(time_slots)
 
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 **Understanding time slot format:**
 
@@ -211,10 +205,9 @@ Daily-bound codes are useful when you need day-level granularity and want more f
 
 For daily-bound codes, specify the same time (but different dates) in `starts_at` and `ends_at`. You can also set `max_time_rounding` to `1day` to allow Seam to round up to a full day to match available slots.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 // Create daily-bound code
 const accessCode = await seam.accessCodes.create({
   device_id: device.device_id,
@@ -228,11 +221,7 @@ const accessCode = await seam.accessCodes.create({
 console.log(`Code created: ${accessCode.code}`)
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 # Create daily-bound code
 access_code = seam.access_codes.create(
   device_id=device.device_id,
@@ -246,8 +235,7 @@ access_code = seam.access_codes.create(
 print(f"Code created: {access_code.code}")
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 #### Step 2: Verify the code was set
 

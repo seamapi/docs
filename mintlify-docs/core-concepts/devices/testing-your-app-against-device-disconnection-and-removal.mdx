@@ -33,12 +33,11 @@ The Seam API provides the following sandbox-only [capability flags](../../capabi
 
 To simulate a device disconnection:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device.
 const device = await seam.devices.get({
   device_id: '11111111-1111-1111-1111-444444444444',
@@ -53,19 +52,7 @@ if (device.can_simulate_disconnection) {
 }
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Get the device.
 device=$(
   # Use GET or POST.
@@ -92,21 +79,7 @@ if  $(jq -r '.device.can_simulate_disconnection' <<< ${device}); then \
 fi
 ```
 
-**Output:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 # Get the device.
 device = seam.devices.get(
   device_id="11111111-1111-1111-1111-444444444444"
@@ -118,21 +91,7 @@ if device.can_simulate_disconnection:
   seam.devices.simulate.disconnect(device_id=device.device_id)
 ```
 
-**Output:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-<Info>Coming soon!</Info>
-
-**Code:**
-
-```ruby
+```ruby Ruby
 # Get the device.
 device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
@@ -143,19 +102,7 @@ if (device.can_simulate_disconnection)
 end
 ```
 
-**Output:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 // Get the device.
 $device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 
@@ -166,21 +113,7 @@ if ($device->can_simulate_disconnection) {
 }
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="C#">
-
-<Info>Coming soon!</Info>
-
-**Code:**
-
-```csharp
+```csharp C#
 // Get the device.
 Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
@@ -191,14 +124,39 @@ if (device.CanSimulateDisconnection == true) {
 }
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
-</Tabs>
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+nil
+```
+
+```json PHP
+void
+```
+
+```json C#
+void
+```
+
+</CodeGroup>
 
 ---
 
@@ -206,12 +164,11 @@ void
 
 To simulate a device connection:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device.
 const device = await seam.devices.get({
   device_id: '11111111-1111-1111-1111-444444444444',
@@ -226,19 +183,7 @@ if (device.can_simulate_connection) {
 }
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Get the device.
 device=$(
   # Use GET or POST.
@@ -265,21 +210,7 @@ if  $(jq -r '.device.can_simulate_connection' <<< ${device}); then \
 fi
 ```
 
-**Output:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 # Get the device.
 device = seam.devices.get(
   device_id="11111111-1111-1111-1111-444444444444"
@@ -291,21 +222,7 @@ if device.can_simulate_connection:
   seam.devices.simulate.connect(device_id=device.device_id)
 ```
 
-**Output:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-<Info>Coming soon!</Info>
-
-**Code:**
-
-```ruby
+```ruby Ruby
 # Get the device.
 device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
@@ -316,19 +233,7 @@ if (device.can_simulate_connection)
 end
 ```
 
-**Output:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 // Get the device.
 $device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 
@@ -339,21 +244,7 @@ if ($device->can_simulate_connection) {
 }
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="C#">
-
-<Info>Coming soon!</Info>
-
-**Code:**
-
-```csharp
+```csharp C#
 // Get the device.
 Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
@@ -364,14 +255,39 @@ if (device.CanSimulateConnection == true) {
 }
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
-</Tabs>
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+nil
+```
+
+```json PHP
+void
+```
+
+```json C#
+void
+```
+
+</CodeGroup>
 
 ---
 
@@ -379,12 +295,11 @@ void
 
 To simulate a device removal:
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 // Get the device.
 const device = await seam.devices.get({
   device_id: '11111111-1111-1111-1111-444444444444',
@@ -399,19 +314,7 @@ if (device.can_simulate_removal) {
 }
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Code:**
-
-```bash
+```bash cURL
 # Get the device.
 device=$(
   # Use GET or POST.
@@ -438,21 +341,7 @@ if  $(jq -r '.device.can_simulate_removal' <<< ${device}); then \
 fi
 ```
 
-**Output:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Code:**
-
-```python
+```python Python
 # Get the device.
 device = seam.devices.get(
   device_id="11111111-1111-1111-1111-444444444444"
@@ -464,21 +353,7 @@ if device.can_simulate_removal:
   seam.devices.simulate.remove(device_id=device.device_id)
 ```
 
-**Output:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-<Info>Coming soon!</Info>
-
-**Code:**
-
-```ruby
+```ruby Ruby
 # Get the device.
 device = client.devices.get(device_id: "11111111-1111-1111-1111-444444444444")
 
@@ -489,19 +364,7 @@ if (device.can_simulate_removal)
 end
 ```
 
-**Output:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Code:**
-
-```php
+```php PHP
 // Get the device.
 $device = $seam->devices->get(device_id: "11111111-1111-1111-1111-444444444444");
 
@@ -512,21 +375,7 @@ if ($device->can_simulate_removal) {
 }
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="C#">
-
-<Info>Coming soon!</Info>
-
-**Code:**
-
-```csharp
+```csharp C#
 // Get the device.
 Device device = seam.Devices.Get(deviceId: "11111111-1111-1111-1111-444444444444");
 
@@ -537,14 +386,39 @@ if (device.CanSimulateRemoval == true) {
 }
 ```
 
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
-</Tabs>
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+nil
+```
+
+```json PHP
+void
+```
+
+```json C#
+void
+```
+
+</CodeGroup>
 
 ---
 

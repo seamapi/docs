@@ -11,30 +11,17 @@ You can suspend an ACS user to revoke their access temporarily. Suspending an AC
 
 To [suspend an ACS user](https://docs.seam.co/latest/api/acs/users/suspend), provide the `acs_user_id`.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.acs.users.suspend({
   acs_user_id: '33333333-3333-3333-3333-333333333333',
 })
 ```
 
-**Response:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/acs/users/suspend' \
   -H 'accept: application/json' \
@@ -45,86 +32,61 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 seam.acs.users.suspend(
   acs_user_id="33333333-3333-3333-3333-333333333333"
 )
 ```
 
-**Response:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 # Coming soon!
 ```
 
-**Response:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $seam->acs->users->suspend(
   acs_user_id: "33333333-3333-3333-3333-333333333333"
 );
 ```
 
-**Response:**
-
-```
-void
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```csharp C#
 seam.UsersAcs.Suspend(
   acsUserId: "33333333-3333-3333-3333-333333333333",
 );
 ```
 
+</CodeGroup>
+
 **Response:**
 
-```
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
-</Tabs>
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+# Coming soon!
+```
+
+```json PHP
+void
+```
+
+```json C#
+void
+```
+
+</CodeGroup>
 
 ---
 
@@ -132,30 +94,17 @@ void
 
 To [unsuspend an ACS user](https://docs.seam.co/latest/api/acs/users/unsuspend), provide the `acs_user_id`.
 
-<Tabs>
-<Tab title="JavaScript">
-
 **Request:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.acs.users.unsuspend({
   acs_user_id: '33333333-3333-3333-3333-333333333333',
 })
 ```
 
-**Response:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-
-**Request:**
-
-```bash
+```bash cURL
 curl -X 'POST' \
   'https://connect.getseam.com/acs/users/unsuspend' \
   -H 'accept: application/json' \
@@ -166,83 +115,58 @@ curl -X 'POST' \
 }'
 ```
 
-**Response:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-
-**Request:**
-
-```python
+```python Python
 seam.acs.users.unsuspend(
   acs_user_id="33333333-3333-3333-3333-333333333333"
 )
 ```
 
-**Response:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-
-**Request:**
-
-```ruby
+```ruby Ruby
 # Coming soon!
 ```
 
-**Response:**
-
-```
-# Coming soon!
-```
-
-</Tab>
-
-<Tab title="PHP">
-
-**Request:**
-
-```php
+```php PHP
 $seam->acs->users->unsuspend(
   acs_user_id: "33333333-3333-3333-3333-333333333333"
 );
 ```
 
-**Response:**
-
-```
-void
-```
-
-</Tab>
-
-<Tab title="C#">
-
-**Request:**
-
-```csharp
+```csharp C#
 seam.UsersAcs.Unsuspend(
   acsUserId: "33333333-3333-3333-3333-333333333333"
 );
 ```
 
+</CodeGroup>
+
 **Response:**
 
-```
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
-</Tabs>
+```json cURL
+{
+  "ok": true
+}
+```
+
+```json Python
+None
+```
+
+```json Ruby
+# Coming soon!
+```
+
+```json PHP
+void
+```
+
+```json C#
+void
+```
+
+</CodeGroup>

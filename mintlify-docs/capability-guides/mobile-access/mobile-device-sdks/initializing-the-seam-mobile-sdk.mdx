@@ -248,10 +248,9 @@ First, use the Seam API or Seam Console to create a [user identity](../managing-
 
 Then, using the user identity, create a [client session](/core-concepts/authentication/client-session-tokens/index) and capture the resulting [client session token](/core-concepts/authentication/client-session-tokens/index). This token will be used to authenticate the user on your application.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 // Create the user identity.
 const userIdentity = await seam.userIdentities.create({
   email_address: 'jane@example.com',
@@ -266,11 +265,7 @@ const clientSession = await seam.clientSessions.create({
 const token = clientSession.token
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 # Create the user identity.
 user_identity=$(curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
@@ -299,11 +294,7 @@ client_session=$(curl -X 'POST' \
 token=$(echo $client_session | jq -r '.client_session.token')
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 # Create the user identity.
 user_identity = seam.user_identities.create(
     email_address="jane@example.com"
@@ -318,11 +309,7 @@ client_session = seam.client_sessions.create(
 token = client_session.token
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 # Create the user identity.
 user_identity = client.user_identities.create(
     email_address: "jane@example.com"
@@ -337,11 +324,7 @@ client_session = client.client_sessions.create(
 token = client_session.token
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 // Create the user identity.
 $user_identity = $seam->user_identities->create(
   email_address: "jane@example.com"
@@ -356,8 +339,7 @@ $client_session = $seam->client_sessions->create(
 $token = $client_session->token;
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -369,9 +351,9 @@ Use the client session token that you generated earlier to bootstrap the Seam SD
 
 Perform initialization and activation within your app’s asynchronous context (for example, Swift’s `Task` or Kotlin coroutines) so that you can handle errors. The initialization call may fail due to configuration issues (such as an invalid token), and the activation call may fail due to network or runtime errors. Catch these errors and present a user-friendly message or fallback UI as appropriate.
 
-<Tabs>
-<Tab title="iOS Swift">
-```swift
+<CodeGroup>
+
+```swift iOS Swift
 import SeamSDK
 
 // Initialize the Mobile SDK with the client session token (CST).
@@ -388,12 +370,9 @@ showAlert(title: "Initialization Failed", message: error.localizedDescription)
 }
 }
 
-````
+```
 
-</Tab>
-
-<Tab title="Android Kotlin">
-```kotlin
+```kotlin Android Kotlin
 try {
     SeamSDK.initialize(context, "seam_cst_...")
     SeamSDK.getInstance().activate()
@@ -416,10 +395,9 @@ try {
         }
     }
 }
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ### Credential Errors
 

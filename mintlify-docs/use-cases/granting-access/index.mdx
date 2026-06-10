@@ -8,10 +8,9 @@ Use **Access Grants** to grant a person access to a physical space. Access Grant
 
 With one API call, you tell Seam _who_ should have access, _where_, _when_, and _how_. Seam creates the credential, attaches it to a user identity, encodes the time window, propagates it to every relevant device, and re-materializes it as devices come online, get added to spaces, or change ownership. PIN codes, mobile keys, and plastic cards—all through the same request.
 
-<Tabs>
-<Tab title="JavaScript">
+<CodeGroup>
 
-```javascript
+```javascript JavaScript
 await seam.accessGrants.create({
   user_identity: {
     full_name: 'Jane Doe',
@@ -24,11 +23,7 @@ await seam.accessGrants.create({
 })
 ```
 
-</Tab>
-
-<Tab title="cURL">
-
-```bash
+```bash cURL
 curl --include --request POST "https://connect.getseam.com/access_grants/create" \
   --header "Authorization: Bearer $SEAM_API_KEY" \
   --json @- <<EOF
@@ -49,11 +44,7 @@ curl --include --request POST "https://connect.getseam.com/access_grants/create"
 EOF
 ```
 
-</Tab>
-
-<Tab title="Python">
-
-```python
+```python Python
 seam.access_grants.create(
     user_identity={
         "full_name": "Jane Doe",
@@ -66,11 +57,7 @@ seam.access_grants.create(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-
-```ruby
+```ruby Ruby
 seam.access_grants.create(
   user_identity: {
     full_name: "Jane Doe",
@@ -83,11 +70,7 @@ seam.access_grants.create(
 )
 ```
 
-</Tab>
-
-<Tab title="PHP">
-
-```php
+```php PHP
 $seam->access_grants->create(
     user_identity: [
         "full_name" => "Jane Doe",
@@ -102,24 +85,15 @@ $seam->access_grants->create(
 );
 ```
 
-</Tab>
-
-<Tab title="C#">
-
-```csharp
+```csharp C#
 // Coming Soon!
 ```
 
-</Tab>
-
-<Tab title="Seam CLI">
-
-```bash
+```bash Seam CLI
 seam access-grants create --user_identity {"full_name":"Jane Doe","email_address":"jane@example.com"} --device_ids ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"] --requested_access_methods [{"mode":"code"}] --starts_at "2025-07-13T15:00:00.000Z" --ends_at "2025-07-16T11:00:00.000Z"
 ```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 Access Grants work across the entire Seam provider lineup:
 

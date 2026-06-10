@@ -117,9 +117,9 @@ If you want to include a Connect Webview flow inside an iOS or Android app, it i
 
 The following example shows how to handle all links to URLs that are not in the `getseam.com` or `seam.co` domain within a Connect Webview embedded in an iOS or Android app:
 
-<Tabs>
-<Tab title="iOS (Swift)">
-```swift
+<CodeGroup>
+
+```swift iOS (Swift)
 someWebView.navigationDelegate = self
 
 extension YourViewController: WKNavigationDelegate {
@@ -135,12 +135,9 @@ decisionHandler(.allow)
 }
 }
 
-````
+```
 
-</Tab>
-
-<Tab title="Android (Kotlin)">
-```kotlin
+```kotlin Android (Kotlin)
 webView.webViewClient = object : WebViewClient() {
   override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
     if (Uri.parse(url).host != "getseam.com" || Uri.parse(url).host != "seam.co") {
@@ -151,10 +148,9 @@ webView.webViewClient = object : WebViewClient() {
     return false
   }
 }
-````
+```
 
-</Tab>
-</Tabs>
+</CodeGroup>
 
 For details, see the following relevant iOS or Android documentation:
 

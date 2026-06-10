@@ -144,11 +144,11 @@ Create a user identity to represent a mobile app user.
    4. Store this ACS system ID for future use.
 2. Create the user identity, as follows:
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 import { Seam } from 'seam'
 
 const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
@@ -161,23 +161,7 @@ const jenDoeUser = await seam.userIdentities.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  "user_identity_id": "22222222-2222-2222-2222-222222222222",
-  "full_name": "Jen Doe",
-  "email_address": "jen.doe@example.com",
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Use the ACS system ID that you copied earlier from Seam Console.
 jen_doe_user=$(curl -X 'POST' \
   'https://connect.getseam.com/user_identities/create' \
@@ -191,26 +175,7 @@ jen_doe_user=$(curl -X 'POST' \
 }")
 ```
 
-**Output:**
-
-```json
-{
-  "user_identity": {
-    "user_identity_id": "22222222-2222-2222-2222-222222222222",
-    "full_name": "Jen Doe",
-    "email_address": "jen.doe@example.com",
-    ...
-  },
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
@@ -223,23 +188,7 @@ jen_doe_user = seam.user_identities.create(
 )
 ```
 
-**Output:**
-
-```
-UserIdentity(
-  user_identity_id='22222222-2222-2222-2222-222222222222',
-  full_name='Jen Doe',
-  email_address='jen.doe@example.com',
-  ...
-)
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 require "seam"
 
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
@@ -252,23 +201,7 @@ jen_doe_user = seam.user_identities.create(
 )
 ```
 
-**Output:**
-
-```
-<Seam::Resources::UserIdentity:0x005f0
-  user_identity_id="22222222-2222-2222-2222-222222222222"
-  full_name="Jen Doe"
-  email_address="jen.doe@example.com"
-  ...
->
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 <?php
 require 'vendor/autoload.php';
 
@@ -282,9 +215,17 @@ $jen_doe_user = $seam->user_identities->create(
 );
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
 {
   "user_identity_id": "22222222-2222-2222-2222-222222222222",
   "full_name": "Jen Doe",
@@ -293,23 +234,50 @@ $jen_doe_user = $seam->user_identities->create(
 }
 ```
 
-</Tab>
+```json cURL
+{
+  "user_identity": {
+    "user_identity_id": "22222222-2222-2222-2222-222222222222",
+    "full_name": "Jen Doe",
+    "email_address": "jen.doe@example.com",
+    ...
+  },
+  "ok": true
+}
+```
 
-<Tab title="C#">
-**Code:**
+```json Python
+UserIdentity(
+  user_identity_id='22222222-2222-2222-2222-222222222222',
+  full_name='Jen Doe',
+  email_address='jen.doe@example.com',
+  ...
+)
+```
 
-```csharp
+```json Ruby
+<Seam::Resources::UserIdentity:0x005f0
+  user_identity_id="22222222-2222-2222-2222-222222222222"
+  full_name="Jen Doe"
+  email_address="jen.doe@example.com"
+  ...
+>
+```
+
+```json PHP
+{
+  "user_identity_id": "22222222-2222-2222-2222-222222222222",
+  "full_name": "Jen Doe",
+  "email_address": "jen.doe@example.com",
+  ...
+}
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -327,11 +295,11 @@ Some other access control systems do not use access groups and, instead, specify
    5. Store this access group ID for future use.
 2. Assign the user identity to the Main Group, as follows:
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 await seam.acs.accessGroups.addUser({
   // Use the access group ID that you copied earlier from Seam Console.
   acs_access_group_id: accessGroupId,
@@ -339,18 +307,7 @@ await seam.acs.accessGroups.addUser({
 })
 ```
 
-**Output:**
-
-```json
-void
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 # Use the access group ID that you copied earlier from Seam Console.
 curl -X 'POST' \
   'https://connect.getseam.com/acs/access_groups/add_user' \
@@ -362,20 +319,7 @@ curl -X 'POST' \
 }"
 ```
 
-**Output:**
-
-```json
-{
-  "ok": true
-}
-```
-
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
+```python Python
 seam.acs.access_groups.add_user(
   # Use the access group ID that you copied earlier from Seam Console.
   acs_access_group_id = access_group_id,
@@ -383,18 +327,7 @@ seam.acs.access_groups.add_user(
 )
 ```
 
-**Output:**
-
-```
-None
-```
-
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
+```ruby Ruby
 seam.acs.access_groups.add_user(
   # Use the access group ID that you copied earlier from Seam Console.
   acs_access_group_id: access_group_id,
@@ -402,18 +335,7 @@ seam.acs.access_groups.add_user(
 )
 ```
 
-**Output:**
-
-```
-nil
-```
-
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
+```php PHP
 $seam->acs->access_groups->add_user(
   // Use the access group ID that you copied earlier from Seam Console.
   acs_access_group_id: $access_group_id,
@@ -421,29 +343,43 @@ $seam->acs->access_groups->add_user(
 );
 ```
 
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```
+<CodeGroup>
+
+```json JavaScript
 void
 ```
 
-</Tab>
+```json cURL
+{
+  "ok": true
+}
+```
 
-<Tab title="C#">
-**Code:**
+```json Python
+None
+```
 
-```csharp
+```json Ruby
+nil
+```
+
+```json PHP
+void
+```
+
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
@@ -451,11 +387,11 @@ void
 
 Create a mobile key credential for the user identity.
 
-<Tabs>
-<Tab title="JavaScript">
 **Code:**
 
-```javascript
+<CodeGroup>
+
+```javascript JavaScript
 const mobileKey = await seam.acs.credentials.create({
   user_identity_id: jenDoeUser.user_identity_id,
   is_multi_phone_sync_credential: true,
@@ -463,24 +399,7 @@ const mobileKey = await seam.acs.credentials.create({
 })
 ```
 
-**Output:**
-
-```json
-{
-  acs_credential_id: '66666666-6666-6666-6666-666666666666',
-  acs_system_id: '11111111-1111-1111-1111-111111111111',
-  user_identity_id: '22222222-2222-2222-2222-222222222222',
-  access_method: 'mobile_key',
-  ...
-}
-```
-
-</Tab>
-
-<Tab title="cURL">
-**Code:**
-
-```bash
+```bash cURL
 mobile_key=$(curl -X 'POST' \
   'https://connect.getseam.com/acs/credentials/create' \
   -H 'accept: application/json' \
@@ -493,9 +412,51 @@ mobile_key=$(curl -X 'POST' \
 }")
 ```
 
+```python Python
+mobile_key = seam.acs.credentials.create(
+  user_identity_id = jen_doe_user.user_identity_id,
+  is_multi_phone_sync_credential = True,
+  access_method = "mobile_key"
+)
+```
+
+```ruby Ruby
+mobile_key = seam.acs.credentials.create(
+  user_identity_id: jen_doe_user.user_identity_id,
+  is_multi_phone_sync_credential: true,
+  access_method: "mobile_key"
+)
+```
+
+```php PHP
+$pin_code_credential = $seam->acs->credentials->create(
+  user_identity_id: $jen_doe_user->user_identity_id,
+  is_multi_phone_sync_credential: true,
+  access_method: "mobile_key"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+</CodeGroup>
+
 **Output:**
 
-```json
+<CodeGroup>
+
+```json JavaScript
+{
+  acs_credential_id: '66666666-6666-6666-6666-666666666666',
+  acs_system_id: '11111111-1111-1111-1111-111111111111',
+  user_identity_id: '22222222-2222-2222-2222-222222222222',
+  access_method: 'mobile_key',
+  ...
+}
+```
+
+```json cURL
 {
   "acs_credential":{
     "acs_credential_id": "66666666-6666-6666-6666-666666666666",
@@ -507,22 +468,7 @@ mobile_key=$(curl -X 'POST' \
 }
 ```
 
-</Tab>
-
-<Tab title="Python">
-**Code:**
-
-```python
-mobile_key = seam.acs.credentials.create(
-  user_identity_id = jen_doe_user.user_identity_id,
-  is_multi_phone_sync_credential = True,
-  access_method = "mobile_key"
-)
-```
-
-**Output:**
-
-```
+```json Python
 AcsCredential(
   acs_credential_id='66666666-6666-6666-6666-666666666666',
   acs_system_id='11111111-1111-1111-1111-111111111111',
@@ -532,22 +478,7 @@ AcsCredential(
 )
 ```
 
-</Tab>
-
-<Tab title="Ruby">
-**Code:**
-
-```ruby
-mobile_key = seam.acs.credentials.create(
-  user_identity_id: jen_doe_user.user_identity_id,
-  is_multi_phone_sync_credential: true,
-  access_method: "mobile_key"
-)
-```
-
-**Output:**
-
-```
+```json Ruby
 <Seam::Resources::AcsCredential:0x005f0
   acs_credential_id="66666666-6666-6666-6666-666666666666"
   acs_system_id="11111111-1111-1111-1111-111111111111"
@@ -557,22 +488,7 @@ mobile_key = seam.acs.credentials.create(
 >
 ```
 
-</Tab>
-
-<Tab title="PHP">
-**Code:**
-
-```php
-$pin_code_credential = $seam->acs->credentials->create(
-  user_identity_id: $jen_doe_user->user_identity_id,
-  is_multi_phone_sync_credential: true,
-  access_method: "mobile_key"
-);
-```
-
-**Output:**
-
-```json
+```json PHP
 {
   "acs_credential_id": "66666666-6666-6666-6666-666666666666",
   "acs_system_id": "11111111-1111-1111-1111-111111111111",
@@ -582,23 +498,11 @@ $pin_code_credential = $seam->acs->credentials->create(
 }
 ```
 
-</Tab>
-
-<Tab title="C#">
-**Code:**
-
-```csharp
+```json C#
 // Coming soon!
 ```
 
-**Output:**
-
-```json
-// Coming soon!
-```
-
-</Tab>
-</Tabs>
+</CodeGroup>
 
 ---
 
