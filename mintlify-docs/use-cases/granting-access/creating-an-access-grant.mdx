@@ -1413,6 +1413,7 @@ You can also watch for the following access method events:
 - `access_method.issued` — An access method is ready to deliver to your user.
 - `access_method.card_encoding_required` — A card access method needs to be encoded onto a plastic card.
 - `access_method.assignment_required` — An access method requires manual assignment to an ACS user before it can be issued. This can occur when Seam cannot automatically match the access method to an existing user identity in the access control system.
+- `access_method.card_assignment_required` — A card access method requires manual assignment to a physical card before it can be issued.
 
 Example `access_method.card_encoding_required` event payload:
 
