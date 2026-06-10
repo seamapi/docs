@@ -357,9 +357,42 @@ If `is_encoding_required` is `false`, the ACS assigns the credential to a card a
 
 In this case, once `is_issued` is `true`, the card is ready. Hand the assigned card to your user.
 
+## Listing Related Entrances
+
+To see which entrances a key card gives access to, call `/access_methods/get_related`.
+
+<CodeGroup>
+
+```javascript JavaScript
+const related = await seam.accessMethods.getRelated({
+  access_method_ids: [accessMethod.access_method_id],
+})
+
+console.log(related.acs_entrances) // entrances this card unlocks
+```
+
+```python Python
+related = seam.access_methods.get_related(
+    access_method_ids=[access_method.access_method_id]
+)
+
+print(related.acs_entrances)  # entrances this card unlocks
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get_related' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"]
+}'
+```
+
+</CodeGroup>
+
 ## Next Steps
 
 - [Working with Card Encoders and Scanners](/low-level-apis/access-systems/working-with-card-encoders-and-scanners/index) — Complete guide to encoding and scanning cards.
-- [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods) — Learn how to deliver all access method types to your users.
 - [Creating an Access Grant](/use-cases/granting-access/creating-an-access-grant) — Learn more about specifying devices, entrances, and spaces.
 - [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/) — See all access method properties and endpoints.

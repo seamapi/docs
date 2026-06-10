@@ -350,8 +350,43 @@ curl -X 'POST' \
 }
 ```
 
+## Listing Related Devices and Entrances
+
+To see which devices or entrances a PIN code access method covers, call `/access_methods/get_related`. This returns the devices, ACS entrances, spaces, and other resources associated with the access method.
+
+<CodeGroup>
+
+```javascript JavaScript
+const related = await seam.accessMethods.getRelated({
+  access_method_ids: [accessMethod.access_method_id],
+})
+
+console.log(related.devices) // devices this PIN code is programmed on
+console.log(related.acs_entrances) // ACS entrances this PIN code unlocks
+```
+
+```python Python
+related = seam.access_methods.get_related(
+    access_method_ids=[access_method.access_method_id]
+)
+
+print(related.devices)        # devices this PIN code is programmed on
+print(related.acs_entrances)  # ACS entrances this PIN code unlocks
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get_related' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"]
+}'
+```
+
+</CodeGroup>
+
 ## Next Steps
 
-- [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods) — Learn how to deliver all access method types to your users.
 - [Creating an Access Grant](/use-cases/granting-access/creating-an-access-grant) — Learn more about specifying devices, entrances, and spaces.
 - [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/) — See all access method properties and endpoints.

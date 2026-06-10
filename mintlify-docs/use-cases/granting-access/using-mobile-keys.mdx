@@ -300,9 +300,44 @@ Use the `client_session_id` to look up the client session token, then pass it to
   required. See [Using Instant Keys](/use-cases/granting-access/using-instant-keys).
 </Info>
 
+## Listing Related Devices and Entrances
+
+To see which devices or entrances a mobile key gives access to, call `/access_methods/get_related`.
+
+<CodeGroup>
+
+```javascript JavaScript
+const related = await seam.accessMethods.getRelated({
+  access_method_ids: [accessMethod.access_method_id],
+})
+
+console.log(related.devices) // smart locks this mobile key unlocks
+console.log(related.acs_entrances) // ACS entrances this mobile key unlocks
+```
+
+```python Python
+related = seam.access_methods.get_related(
+    access_method_ids=[access_method.access_method_id]
+)
+
+print(related.devices)        # smart locks this mobile key unlocks
+print(related.acs_entrances)  # ACS entrances this mobile key unlocks
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get_related' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_ids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"]
+}'
+```
+
+</CodeGroup>
+
 ## Next Steps
 
 - [Mobile Access](/capability-guides/mobile-access/index) — Complete guide to building a mobile app with the Seam mobile SDKs.
 - [Using Instant Keys](/use-cases/granting-access/using-instant-keys) — Share the Instant Key URL included with every mobile key.
-- [Delivering Access Methods](/use-cases/granting-access/delivering-access-methods) — Learn how to deliver all access method types to your users.
 - [Access Methods API Reference](https://docs.seam.co/latest/api/access_methods/) — See all access method properties and endpoints.
