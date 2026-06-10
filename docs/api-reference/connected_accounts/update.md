@@ -194,6 +194,12 @@ The customer key to associate with this connected account. If provided, the conn
 
 ---
 
+**`display_name`** *String*
+
+Human-readable name for the connected account, shown in the dashboard. For example, `Booking from Airbnb House 1`.
+
+---
+
 
 ## Response
 

@@ -6,8 +6,7 @@
 Simulates taking the Wi‑Fi hub (bridge) offline for a device.
 Only applicable for sandbox workspaces and currently
 implemented for August, TTLock, and IglooHome devices.
-This will set the corresponding `hub_disconnected` or
-`ttlock_lock_not_paired_to_gateway` error on the device, or mark the
+This will set the `hub_disconnected` error on the device, or mark the
 IglooHome bridge offline in sandbox.
 
 

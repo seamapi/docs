@@ -6,8 +6,7 @@
 Simulates bringing the Wi‑Fi hub (bridge) back online for a device.
 Only applicable for sandbox workspaces and currently
 implemented for August and TTLock locks.
-This will clear the corresponding `hub_disconnected` or
-`ttlock_lock_not_paired_to_gateway` error on the device.
+This will clear the `hub_disconnected` error on the device.
 
 
 {% tabs %}

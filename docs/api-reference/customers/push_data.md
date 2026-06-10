@@ -1054,6 +1054,18 @@ List of general spaces or areas.
 
 <details>
 
+<summary><b><code>duration_minutes</code></b> <i>Number</i></summary>
+
+Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>name</code></b> <i>String</i></summary>
 
 Your display name for this location resource.

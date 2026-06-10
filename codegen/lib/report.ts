@@ -9,10 +9,12 @@ import type {
   Resource,
   Route,
 } from '@seamapi/blueprint'
-import { openapi } from '@seamapi/types/connect'
+import { openapi as _openapi } from '@seamapi/types/connect'
 import type Metalsmith from 'metalsmith'
 
 import { apiReferenceRoot } from './config.js'
+
+const openapi: any = _openapi
 
 const defaultDeprecatedMessage = 'No deprecated message provided'
 const defaultDraftMessage = 'No draft message provided'
@@ -379,7 +381,7 @@ function processResponseKeys(endpoint: Endpoint, report: Report): void {
 function getOpenapiResponseProperties(
   path: string,
 ): Record<string, unknown> | null {
-  const openapiEndpointDef = openapi.paths[path as keyof typeof openapi.paths]
+  const openapiEndpointDef = openapi.paths[path]
 
   if (openapiEndpointDef == null) {
     // eslint-disable-next-line no-console
@@ -390,6 +392,7 @@ function getOpenapiResponseProperties(
   if (openapiEndpointDef.post?.responses == null) return null
 
   const responseObj = openapiEndpointDef.post.responses['200']
+  if (responseObj == null) return null
 
   if ('content' in responseObj) {
     const jsonContent = responseObj.content['application/json']

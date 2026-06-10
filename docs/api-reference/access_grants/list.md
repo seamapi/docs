@@ -460,6 +460,12 @@ Customer key for which you want to list access grants.
 
 ---
 
+**`device_id`** *String*
+
+ID of the device by which you want to filter the list of Access Grants.
+
+---
+
 **`limit`** *Number*
 
 Numerical limit on the number of access grants to return.

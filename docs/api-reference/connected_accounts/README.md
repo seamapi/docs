@@ -115,6 +115,24 @@ Your unique key for the customer associated with this connected account.
 
 ---
 
+**`default_checkin_time`** *String*
+
+Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times.
+
+
+
+
+---
+
+**`default_checkout_time`** *String*
+
+Default reservation check-out time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration.
+
+
+
+
+---
+
 **`display_name`** *String*
 
 Display name for the connected account.
@@ -315,9 +333,36 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 ---
 
+**`ical_feed_origin`** *String*
+
+For iCal connected accounts, the platform that produced the feed (for example, `airbnb`, `vrbo`, or `booking`), or `unknown` when it could not be determined. Intended for rendering the source platform's logo.
+
+
+
+
+---
+
+**`ical_url`** *String*
+
+For iCal connected accounts, the feed URL for the connection. Sourced from the connector configuration.
+
+
+
+
+---
+
 **`image_url`** *String*
 
 Logo URL for the connected account provider.
+
+
+
+
+---
+
+**`time_zone`** *String*
+
+IANA time zone (e.g. America/Los_Angeles) for this connected account. Sourced from the connector configuration.
 
 
 
@@ -564,6 +609,38 @@ Indicates that the connected account is currently being deleted. All devices, ac
   
   
 </details>
+<details>
+<summary><code>provider_service_unavailable</code></summary>
+
+Indicates that the connected account's provider service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>provider_service_unavailable</code>
+  
+  
+</details>
 
 ---
 
@@ -600,6 +677,12 @@ Indicates that the Connected Account requires reauthorization using a new Connec
 **`being_deleted`**
 
 Indicates that the connected account is currently being deleted. All devices, access codes, and other resources associated with this account are in the process of being removed from Seam.
+
+---
+
+**`provider_service_unavailable`**
+
+Indicates that the connected account's provider service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.
 
 ---
 

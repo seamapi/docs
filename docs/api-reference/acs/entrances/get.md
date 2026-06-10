@@ -233,6 +233,8 @@ seam acs entrances get --acs_entrance_id "c931c953-4a5b-4f66-9189-500d39959ad1"
 
 - API key
 - Client session token
+- Personal access token
+  <br>Must also include the `seam-workspace` header in the request.
 
 To learn more, see [Authentication](https://docs.seam.co/latest/api/authentication).
 </details>
@@ -278,7 +280,8 @@ Returns:
         "visionline_door_profile_type": "BLE"
       }
     ]
-  }
+  },
+  "warnings": []
 }
 ```
 {% endtab %}

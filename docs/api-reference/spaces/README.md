@@ -47,6 +47,31 @@ Date and time at which the space was created.
 
 ---
 
+**`customer_data`** *Object*
+
+Reservation/stay-related defaults for the space.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>default_checkin_time</code></strong> <i>String</i>
+  
+    Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.
+
+  - <strong><code>default_checkout_time</code></strong> <i>String</i>
+  
+    Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.
+
+  - <strong><code>time_zone</code></strong> <i>String</i>
+  
+    IANA time zone for the space, e.g. America/Los_Angeles.
+
+</details>
+
+---
+
 **`customer_key`** *String*
 
 Customer key associated with the space.
@@ -268,6 +293,11 @@ A space was deleted.
 Adds [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) to a specific space.
 
 
+[**`/spaces/add_connected_account`**](./add_connected_account.md)
+
+Adds a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) to a specific space.
+
+
 [**`/spaces/add_devices`**](./add_devices.md)
 
 Adds devices to a specific space.
@@ -301,6 +331,11 @@ Returns a list of all spaces.
 [**`/spaces/remove_acs_entrances`**](./remove_acs_entrances.md)
 
 Removes [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) from a specific space.
+
+
+[**`/spaces/remove_connected_account`**](./remove_connected_account.md)
+
+Removes a [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) from a specific space.
 
 
 [**`/spaces/remove_devices`**](./remove_devices.md)

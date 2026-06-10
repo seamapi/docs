@@ -358,6 +358,7 @@ Brand-specific terminology for the [access system user](https://docs.seam.co/lat
 - <code>latch_user</code>
 - <code>dormakaba_community_user</code>
 - <code>salto_space_user</code>
+- <code>avigilon_alta_user</code>
 </details>
 
 
@@ -828,6 +829,66 @@ A scheduled access group membership change is pending for this user.
   
   - <code>adding</code>
   - <code>removing</code>
+  
+  
+</details>
+<details>
+<summary><code>updating_credential_assignment</code></summary>
+
+Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which the mutation was created.
+  
+  
+  ---
+
+  **`from`** *Object*
+  
+  
+  Previous credential assignment.
+  
+  Child Properties
+  
+  - <strong><code>acs_credential_id</code></strong> <i>UUID</i>
+    
+      Previous credential ID.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the mutation.
+  
+  
+  ---
+
+  **`mutation_code`** *Enum*
+  
+  
+  Mutation code to indicate that Seam is in the process of assigning or unassigning a credential to the user on the integrated access system.
+  
+  Enum values:
+  
+  - <code>updating_credential_assignment</code>
+  
+  
+  ---
+
+  **`to`** *Object*
+  
+  
+  New credential assignment.
+  
+  Child Properties
+  
+  - <strong><code>acs_credential_id</code></strong> <i>UUID</i>
+    
+      New credential ID.
   
   
 </details>
