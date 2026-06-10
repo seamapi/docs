@@ -6,7 +6,7 @@ title: 'The Access Grant Object'
 
 Represents an Access Grant. Access Grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an Access Grant for an existing user identity, or you can create a new user identity *while* creating the new Access Grant.
 
-<CodeGroup>
+<ResponseExample>
 
 ```json Access Grant
 {
@@ -56,7 +56,7 @@ Represents an Access Grant. Access Grants enable you to grant a user identity ac
 }
 ```
 
-</CodeGroup>
+</ResponseExample>
 
 ---
 
@@ -100,6 +100,10 @@ Represents an Access Grant. Access Grants enable you to grant a user identity ac
 
 <ResponseField name="instant_key_url" type="String">
   Instant Key URL. Only returned if the Access Grant has a single mobile_key access_method.
+</ResponseField>
+
+<ResponseField name="location_ids" type="Array" deprecated>
+  The location ids.
 </ResponseField>
 
 <ResponseField name="name" type="String">

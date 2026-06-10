@@ -11,9 +11,7 @@ import { updateDocsJson } from './update-nav.js'
 
 const skipCodeFormat = env['SKIP_CODE_FORMAT'] != null
 
-const hiddenProperties: Record<string, Set<string>> = {
-  access_grant: new Set(['location_ids']),
-}
+const hiddenProperties: Record<string, Set<string>> = {}
 
 console.log('Mintlify OpenAPI codegen starting...')
 if (skipCodeFormat) {
@@ -94,7 +92,7 @@ function renderCodeGroup(
     const json = JSON.stringify(s.properties, null, 2)
     return `\`\`\`json ${s.title}\n${json}\n\`\`\``
   })
-  return `<CodeGroup>\n\n${blocks.join('\n\n')}\n\n</CodeGroup>`
+  return `<ResponseExample>\n\n${blocks.join('\n\n')}\n\n</ResponseExample>`
 }
 
 interface BlueprintProperty {
