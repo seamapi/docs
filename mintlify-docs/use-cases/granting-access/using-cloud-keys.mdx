@@ -211,6 +211,40 @@ curl -X 'POST' \
 }
 ```
 
+## See Which Doors an Access Method Covers
+
+An access method can cover multiple doors — for example, if the Access Grant includes several entrances or spaces. To see which doors a cloud key can unlock, call `/access_methods/get_related`.
+
+<CodeGroup>
+
+```javascript JavaScript
+const related = await seam.accessMethods.getRelated({
+  access_method_ids: [accessMethod.access_method_id],
+})
+
+console.log(related.acs_entrances) // entrances this cloud key can unlock
+```
+
+```python Python
+related = seam.access_methods.get_related(
+    access_method_ids=[access_method.access_method_id]
+)
+
+print(related.acs_entrances)  # entrances this cloud key can unlock
+```
+
+```bash cURL
+curl -X 'POST' \
+  'https://connect.getseam.com/access_methods/get_related' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "access_method_ids": ["99887766-5544-3322-1100-aabbccddeeff"]
+}'
+```
+
+</CodeGroup>
+
 ## Step 3: Unlock the Entrance
 
 Once the access grant is active, unlock the entrance on behalf of the user by calling `/access_methods/unlock_door` with the cloud key `access_method_id` and the `acs_entrance_id`. The endpoint resolves the credential internally and attributes the unlock to the user identity in the ACS audit trail.
@@ -287,40 +321,6 @@ curl -X 'POST' \
 ```
 
 The unlock event appears in the ACS audit trail attributed to the specific user identity, not as a generic system action.
-
-## See Which Doors an Access Method Covers
-
-An access method can cover multiple doors — for example, if the Access Grant includes several entrances or spaces. To see which doors a cloud key can unlock, call `/access_methods/get_related`.
-
-<CodeGroup>
-
-```javascript JavaScript
-const related = await seam.accessMethods.getRelated({
-  access_method_ids: [accessMethod.access_method_id],
-})
-
-console.log(related.acs_entrances) // entrances this cloud key can unlock
-```
-
-```python Python
-related = seam.access_methods.get_related(
-    access_method_ids=[access_method.access_method_id]
-)
-
-print(related.acs_entrances)  # entrances this cloud key can unlock
-```
-
-```bash cURL
-curl -X 'POST' \
-  'https://connect.getseam.com/access_methods/get_related' \
-  -H "Authorization: Bearer ${SEAM_API_KEY}" \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "access_method_ids": ["99887766-5544-3322-1100-aabbccddeeff"]
-}'
-```
-
-</CodeGroup>
 
 ## Next Steps
 
