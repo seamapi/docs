@@ -109,10 +109,7 @@ interface BlueprintProperty {
   propertyGroupKey?: string | null
 }
 
-function shouldHide(
-  resourceType: string,
-  prop: BlueprintProperty,
-): boolean {
+function shouldHide(resourceType: string, prop: BlueprintProperty): boolean {
   if (prop.isUndocumented) return true
   return hiddenProperties[resourceType]?.has(prop.name) ?? false
 }
@@ -324,18 +321,14 @@ async function updateObjectPages(
 
     let changed = false
     // Process resources in reverse order so index shifts don't affect earlier sections
-    for (const {
-      resourceType,
-      description,
-      samples,
-      properties,
-    } of [...resources].reverse()) {
+    for (const { resourceType, description, samples, properties } of [
+      ...resources,
+    ].reverse()) {
       const sectionHeader = `## The ${resourceType} Object`
       const sectionIdx = content.indexOf(sectionHeader)
       if (sectionIdx === -1) continue
 
-      const sectionContentStart =
-        content.indexOf('\n', sectionIdx) + 1
+      const sectionContentStart = content.indexOf('\n', sectionIdx) + 1
 
       // Find end of this resource section: next "## The X Object" or end of file
       const nextResourceMatch = /\n## The \w+ Object/m.exec(
