@@ -3196,6 +3196,26 @@
     {
       "source": "/device-guides/get-started-with-smartthings-hubs-+-smart-locks",
       "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks"
+    },
+    {
+      "source": "/low-level-apis/access-codes",
+      "destination": "/low-level-apis/smart-locks/access-codes"
+    },
+    {
+      "source": "/low-level-apis/managing-credentials",
+      "destination": "/low-level-apis/access-systems/managing-credentials"
+    },
+    {
+      "source": "/use-cases/granting-access/access-grants",
+      "destination": "/use-cases/granting-access"
+    },
+    {
+      "source": "/device-and-system-integration-guides/get-started-with-schlage-locks",
+      "destination": "/device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks"
+    },
+    {
+      "source": "/device-and-system-integration-guides/get-started-with-smartthings-hubs-+-smart-locks",
+      "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks"
     }
   ],
   "openapi": [
