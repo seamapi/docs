@@ -3171,11 +3171,11 @@
     },
     {
       "source": "/latest/robots.txt",
-      "destination": "/robots.txt"
+      "destination": "https://docs.seam.co/robots.txt"
     },
     {
       "source": "/latest/sitemap.xml",
-      "destination": "/sitemap.xml"
+      "destination": "https://docs.seam.co/sitemap.xml"
     },
     {
       "source": "/latest/:path*",
