@@ -14,6 +14,7 @@ A guide section is a group of `.mdx` pages — an overview, a core workflow tuto
 ### 1. Understand the feature
 
 Ask the user enough questions to understand:
+
 - What is the feature? What API resources does it involve?
 - What are the variants or modes? (e.g., access grants have 5 access method modes)
 - What's the happy-path workflow a developer follows?
@@ -26,6 +27,7 @@ Don't start writing until you can articulate the page structure. Propose the str
 ### 2. Check existing patterns
 
 Read the existing use-case guides to match conventions:
+
 - `mintlify-docs/use-cases/granting-access/` — the reference implementation
 - `mintlify-docs/docs.json` — for navigation structure patterns
 
@@ -33,13 +35,13 @@ Read the existing use-case guides to match conventions:
 
 A typical guide section has these page types (not all are always needed):
 
-| Page | File | Purpose |
-|------|------|---------|
-| Overview | `index.mdx` | What the feature is, when to use it, quick code example |
-| Core workflow | `creating-a-<resource>.mdx` | Step-by-step tutorial for the primary action |
-| Variant pages | `using-<variant>.mdx` | One per variant/mode — specific delivery or usage flow |
-| Management | `managing-<resource>.mdx` | Update, delete, revoke operations |
-| Advanced | `<topic>.mdx` | Edge cases, special integrations, conceptual deep-dives |
+| Page          | File                        | Purpose                                                 |
+| ------------- | --------------------------- | ------------------------------------------------------- |
+| Overview      | `index.mdx`                 | What the feature is, when to use it, quick code example |
+| Core workflow | `creating-a-<resource>.mdx` | Step-by-step tutorial for the primary action            |
+| Variant pages | `using-<variant>.mdx`       | One per variant/mode — specific delivery or usage flow  |
+| Management    | `managing-<resource>.mdx`   | Update, delete, revoke operations                       |
+| Advanced      | `<topic>.mdx`               | Edge cases, special integrations, conceptual deep-dives |
 
 Confirm the page list with the user before writing.
 
@@ -51,8 +53,8 @@ Confirm the page list with the user before writing.
 
 ```yaml
 ---
-title: "Page Title in Title Case"
-description: "One sentence, under 150 characters, describing what this page teaches."
+title: 'Page Title in Title Case'
+description: 'One sentence, under 150 characters, describing what this page teaches.'
 ---
 ```
 
@@ -69,6 +71,7 @@ Every `<CodeGroup>` must include all 7 languages in this exact order:
 7. cURL (bash)
 
 Use language-appropriate conventions:
+
 - **JavaScript:** `camelCase`, `const`, `await`
 - **Python:** `snake_case`, no type hints in examples
 - **Ruby:** `snake_case`, keyword arguments
@@ -120,6 +123,7 @@ description: "<One-sentence value prop>"
 ```
 
 **Key rules:**
+
 - Keep it scannable — tables over prose for comparisons
 - Link to every other page in the section
 - Use `---` horizontal rules between major sections
@@ -128,7 +132,7 @@ description: "<One-sentence value prop>"
 
 ### Template: Core workflow page (`creating-a-<resource>.mdx`)
 
-```
+````
 ---
 title: "Creating a <Resource>"
 description: "<One sentence about the core creation workflow>"
@@ -168,7 +172,7 @@ To create a <resource>, you need:
 
 ```json
 { ... }
-```
+````
 
 [Optional: table of key parameters or modes]
 
@@ -192,6 +196,7 @@ To create a <resource>, you need:
 
 - [Variant pages](./using-<variant>) — Deliver using a specific mode.
 - [Management](./managing-<resource>) — Update or delete.
+
 ```
 
 **Key rules:**
@@ -206,9 +211,12 @@ To create a <resource>, you need:
 ### Template: Variant/delivery page (`using-<variant>.mdx`)
 
 ```
+
 ---
+
 title: "Using <Variant Name>"
 description: "<One sentence about this specific variant>"
+
 ---
 
 [1-2 sentence intro describing this variant]
@@ -287,6 +295,7 @@ To use <variant>, you need:
 
 - [Related variant](./using-<other-variant>) — Alternative approach.
 - [API reference](https://docs.seam.co/latest/api/<resource>/) — Full endpoint docs.
+
 ```
 
 **Key rules:**
@@ -301,9 +310,12 @@ To use <variant>, you need:
 ### Template: Management page (`managing-<resource>.mdx`)
 
 ```
+
 ---
+
 title: "Managing <Resources>"
 description: "<One sentence about update/delete operations>"
+
 ---
 
 [Intro paragraph — when and why you'd manage these resources]
@@ -348,7 +360,8 @@ description: "<One sentence about update/delete operations>"
 
 - [Creating](./creating-a-<resource>) — How to create new resources.
 - [API reference](https://docs.seam.co/latest/api/<resource>/) — Full endpoint docs.
-```
+
+````
 
 **Key rules:**
 - No step numbering — use scenario-based headings instead
@@ -379,7 +392,7 @@ Add the section to `mintlify-docs/docs.json` under the appropriate group. Follow
     "use-cases/<feature>/<advanced-topic>"
   ]
 }
-```
+````
 
 Variant pages go in a nested group if there are 3+ of them; otherwise keep them flat.
 
@@ -415,11 +428,13 @@ npx @mintlify/cli@latest dev --port 3333
 Run the server command with `run_in_background: true` so it stays alive. The server runs at `http://localhost:3333`.
 
 **When to start it:**
+
 - At the beginning of the writing session, before writing the first page
 - After pulling latest changes from the branch
 - If the user reports the server is down
 
 **When to restart it:**
+
 - After changes to `docs.json` (nav changes don't hot-reload reliably)
 - If the server crashes or stops responding
 - After rebasing or pulling remote changes
@@ -428,6 +443,7 @@ Always kill the old process on port 3333 before starting a new one. The OpenAPI 
 
 **Sharing page URLs with the user:**
 After writing or updating a page, tell the user the local preview URL so they can review it:
+
 - `http://localhost:3333/use-cases/<feature>/<page-name>`
 
 For example: "Page is ready — you can review it at http://localhost:3333/use-cases/granting-access/using-cloud-keys"
@@ -449,18 +465,19 @@ For example: "Page is ready — you can review it at http://localhost:3333/use-c
 
 ## Mintlify component reference
 
-| Component | When to use |
-|-----------|-------------|
-| `<CodeGroup>` | Every multi-language code example |
-| `<Info>` | Tips, prerequisites notes, important caveats, cross-references |
-| `<Warning>` | Breaking changes, deprecation notices, destructive operations |
-| `<Tabs>` | Only on overview pages for quick examples (rare — prefer `<CodeGroup>`) |
-| `---` | Between every major `##` section — creates visual rhythm |
-| Tables | Comparisons with 3+ options, parameter references, decision matrices |
+| Component     | When to use                                                             |
+| ------------- | ----------------------------------------------------------------------- |
+| `<CodeGroup>` | Every multi-language code example                                       |
+| `<Info>`      | Tips, prerequisites notes, important caveats, cross-references          |
+| `<Warning>`   | Breaking changes, deprecation notices, destructive operations           |
+| `<Tabs>`      | Only on overview pages for quick examples (rare — prefer `<CodeGroup>`) |
+| `---`         | Between every major `##` section — creates visual rhythm                |
+| Tables        | Comparisons with 3+ options, parameter references, decision matrices    |
 
 ## Terminology
 
 Use Seam's preferred terms consistently:
+
 - "Device" (not "smart lock" generically)
 - "Access code" (not "PIN code" in API context — but "PIN code" is fine in user-facing prose)
 - "Connected account" (not "integration" or "connection")
