@@ -5,7 +5,7 @@
 
 [**`/devices/simulate/connect`**](./connect.md)
 
-Simulates connecting a device to Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
+Simulates connecting a device to Seam. Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
 
 
 [**`/devices/simulate/connect_to_hub`**](./connect_to_hub.md)
@@ -18,7 +18,7 @@ This will clear the `hub_disconnected` error on the device.
 
 [**`/devices/simulate/disconnect`**](./disconnect.md)
 
-Simulates disconnecting a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
+Simulates disconnecting a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
 
 
 [**`/devices/simulate/disconnect_from_hub`**](./disconnect_from_hub.md)
@@ -39,6 +39,6 @@ The actual device error is created/cleared by the poller after this state change
 
 [**`/devices/simulate/remove`**](./remove.md)
 
-Simulates removing a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/latest/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
+Simulates removing a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).
 
 

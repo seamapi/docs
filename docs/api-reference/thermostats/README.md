@@ -361,7 +361,7 @@ A thermostat device resource.
 
 **`capabilities_supported`** *List* *of Enums*
 
-Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/latest/capability-guides/device-and-system-capabilities#capability-flags).
+Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).
 
 
 
@@ -388,7 +388,7 @@ Date and time at which the device object was created.
 
 **`custom_metadata`** *Record*
 
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 
 
 
@@ -504,7 +504,7 @@ Indicates that the account is disconnected.
   **`is_connected_account_error`** *Boolean*
   
   
-  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.
   
   
   ---
@@ -552,7 +552,7 @@ Indicates that the Salto site user limit has been reached.
   **`is_connected_account_error`** *Boolean*
   
   
-  Indicates that the error is a [connected account](https://docs.seam.co/latest/api/connected_accounts) error.
+  Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.
   
   
   ---
@@ -735,7 +735,7 @@ Indicates that the device is disconnected.
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-Indicates that the [backup access code pool](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
@@ -1055,7 +1055,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1080,7 +1080,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
   **`is_bridge_error`** *Boolean*
   
   
-  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge).
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
   
   
   ---
@@ -1105,7 +1105,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 
 **`is_managed`** *Boolean*
 
-Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).
+Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 
 
 
@@ -1973,7 +1973,7 @@ Unique identifier for the Seam workspace associated with the device.
 
 **`active_thermostat_schedule`** *Object*
 
-Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+Active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 {% hint style="warning" %}
 **Deprecated**. Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.
@@ -1985,23 +1985,23 @@ Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/therm
 
   - <strong><code>climate_preset_key</code></strong> <i>String</i>
   
-    Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+    Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
   - <strong><code>created_at</code></strong> <i>Datetime</i>
   
-    Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
+    Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.
 
   - <strong><code>device_id</code></strong> <i>UUID</i>
   
-    ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.
+    ID of the desired [thermostat](https://docs.seam.co/capability-guides/thermostats) device.
 
   - <strong><code>ends_at</code></strong> <i>Datetime</i>
   
-    Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+    Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
   - <strong><code>errors</code></strong> <i>List</i> <i>of Objects</i>
   
-    Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+    Errors associated with the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 - <strong><code>error_code</code></strong> <i>String</i>
 
@@ -2015,27 +2015,27 @@ Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/therm
 
   - <strong><code>is_override_allowed</code></strong> <i>Boolean</i>
   
-    Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
+    Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.
 
   - <strong><code>max_override_period_minutes</code></strong> <i>Number</i>
   
-    Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+    Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
   - <strong><code>name</code></strong> <i>String</i>
   
-    User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+    User-friendly name to identify the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
   - <strong><code>starts_at</code></strong> <i>Datetime</i>
   
-    Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+    Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
   - <strong><code>thermostat_schedule_id</code></strong> <i>UUID</i>
   
-    ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+    ID of the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
   - <strong><code>workspace_id</code></strong> <i>UUID</i>
   
-    ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat schedule.
+    ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.
 
 </details>
 
@@ -2043,7 +2043,7 @@ Active [thermostat schedule](https://docs.seam.co/latest/capability-guides/therm
 
 **`active_thermostat_schedule_id`** *UUID*
 
-ID of the active [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+ID of the active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
 
 
 
@@ -2179,7 +2179,7 @@ Climate preset modes that the thermostat supports, such as "home", "away", "wake
 
 **`available_climate_presets`** *List* *of Objects*
 
-Available [climate presets](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
+Available [climate presets](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.
 
 
 
@@ -2187,19 +2187,19 @@ Available [climate presets](https://docs.seam.co/latest/capability-guides/thermo
   <summary>Child Object Properties</summary>
 <strong><code>can_delete</code></strong> <i>Boolean</i>
 
-  Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
+  Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
 
 <strong><code>can_edit</code></strong> <i>Boolean</i>
 
-  Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
+  Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
 
 <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
 
-  Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
+  Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
 
 <strong><code>climate_preset_key</code></strong> <i>String</i>
 
-  Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+  Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
 
@@ -2217,15 +2217,15 @@ Available [climate presets](https://docs.seam.co/latest/capability-guides/thermo
 
 <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>display_name</code></strong> <i>String</i>
 
-  Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+  Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 <strong><code>ecobee_metadata</code></strong> <i>Object</i>
 
@@ -2251,7 +2251,7 @@ Available [climate presets](https://docs.seam.co/latest/capability-guides/thermo
 
 <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
 
-  Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+  Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 <details>
     <summary>Enum values:</summary>
 
@@ -2262,15 +2262,15 @@ Available [climate presets](https://docs.seam.co/latest/capability-guides/thermo
 
 <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
 
-  Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+  Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 <details>
     <summary>Enum values:</summary>
 
@@ -2283,7 +2283,7 @@ Available [climate presets](https://docs.seam.co/latest/capability-guides/thermo
 
 <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
 
-  Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+  Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
 
 {% hint style="warning" %}
 **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
@@ -2291,7 +2291,7 @@ Available [climate presets](https://docs.seam.co/latest/capability-guides/thermo
 
 <strong><code>name</code></strong> <i>String</i>
 
-  User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+  User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 </details>
 
@@ -2413,19 +2413,19 @@ Current climate setting.
 
   - <strong><code>can_delete</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
+    Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
 
   - <strong><code>can_edit</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
+    Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
 
   - <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
+    Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
 
   - <strong><code>climate_preset_key</code></strong> <i>String</i>
   
-    Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+    Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
   
@@ -2443,15 +2443,15 @@ Current climate setting.
 
   - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>display_name</code></strong> <i>String</i>
   
-    Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+    Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>ecobee_metadata</code></strong> <i>Object</i>
   
@@ -2477,7 +2477,7 @@ Current climate setting.
 
   - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
   
-    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+    Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
   <details>
       <summary>Enum values:</summary>
   
@@ -2488,15 +2488,15 @@ Current climate setting.
 
   - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
   
-    Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+    Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
   <details>
       <summary>Enum values:</summary>
   
@@ -2509,7 +2509,7 @@ Current climate setting.
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
   
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
   
   {% hint style="warning" %}
   **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
@@ -2517,7 +2517,7 @@ Current climate setting.
 
   - <strong><code>name</code></strong> <i>String</i>
   
-    User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+    User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 </details>
 
@@ -2536,19 +2536,19 @@ Current climate setting.
 
   - <strong><code>can_delete</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
+    Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.
 
   - <strong><code>can_edit</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
+    Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.
 
   - <strong><code>can_use_with_thermostat_daily_programs</code></strong> <i>Boolean</i>
   
-    Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
+    Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.
 
   - <strong><code>climate_preset_key</code></strong> <i>String</i>
   
-    Unique key to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+    Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>climate_preset_mode</code></strong> <i>Enum</i>
   
@@ -2566,15 +2566,15 @@ Current climate setting.
 
   - <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>display_name</code></strong> <i>String</i>
   
-    Display name for the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+    Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
   - <strong><code>ecobee_metadata</code></strong> <i>Object</i>
   
@@ -2600,7 +2600,7 @@ Current climate setting.
 
   - <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
   
-    Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+    Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
   <details>
       <summary>Enum values:</summary>
   
@@ -2611,15 +2611,15 @@ Current climate setting.
 
   - <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
   
-    Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+    Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
   - <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
   
-    Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+    Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
   <details>
       <summary>Enum values:</summary>
   
@@ -2632,7 +2632,7 @@ Current climate setting.
 
   - <strong><code>manual_override_allowed</code></strong> <i>Boolean</i>
   
-    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+    Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
   
   {% hint style="warning" %}
   **Deprecated**. Use 'thermostat_schedule.is_override_allowed'
@@ -2640,7 +2640,7 @@ Current climate setting.
 
   - <strong><code>name</code></strong> <i>String</i>
   
-    User-friendly name to identify the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets).
+    User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).
 
 </details>
 
@@ -2768,7 +2768,7 @@ Metadata for an ecobee device.
 
 **`fallback_climate_preset_key`** *String*
 
-Key of the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
+Key of the [fallback climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.
 
 
 
@@ -3148,7 +3148,7 @@ Metadata for a Lockly device.
 
 **`max_cooling_set_point_celsius`** *Number*
 
-Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
 
 
 
@@ -3157,7 +3157,7 @@ Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermo
 
 **`max_cooling_set_point_fahrenheit`** *Number*
 
-Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
 
 
 
@@ -3166,7 +3166,7 @@ Maximum [cooling set point](https://docs.seam.co/latest/capability-guides/thermo
 
 **`max_heating_set_point_celsius`** *Number*
 
-Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
 
 
 
@@ -3175,7 +3175,7 @@ Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermo
 
 **`max_heating_set_point_fahrenheit`** *Number*
 
-Maximum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
 
 
 
@@ -3202,7 +3202,7 @@ Maximum number of climate presets that the thermostat can support for weekly pro
 
 **`min_cooling_set_point_celsius`** *Number*
 
-Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
+Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.
 
 
 
@@ -3211,7 +3211,7 @@ Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermo
 
 **`min_cooling_set_point_fahrenheit`** *Number*
 
-Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
+Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.
 
 
 
@@ -3220,7 +3220,7 @@ Minimum [cooling set point](https://docs.seam.co/latest/capability-guides/thermo
 
 **`min_heating_cooling_delta_celsius`** *Number*
 
-Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
+Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.
 
 
 
@@ -3229,7 +3229,7 @@ Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/t
 
 **`min_heating_cooling_delta_fahrenheit`** *Number*
 
-Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
+Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.
 
 
 
@@ -3238,7 +3238,7 @@ Minimum [temperature difference](https://docs.seam.co/latest/capability-guides/t
 
 **`min_heating_set_point_celsius`** *Number*
 
-Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
+Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.
 
 
 
@@ -3247,7 +3247,7 @@ Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermo
 
 **`min_heating_set_point_fahrenheit`** *Number*
 
-Minimum [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
+Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.
 
 
 
@@ -3881,7 +3881,7 @@ Reported temperature in °F.
 
 **`temperature_threshold`** *Object*
 
-Current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+Current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
 
 
@@ -3890,19 +3890,19 @@ Current [temperature threshold](https://docs.seam.co/latest/capability-guides/th
 
   - <strong><code>lower_limit_celsius</code></strong> <i>Number</i>
   
-    Lower limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+    Lower limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
   - <strong><code>lower_limit_fahrenheit</code></strong> <i>Number</i>
   
-    Lower limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+    Lower limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
   - <strong><code>upper_limit_celsius</code></strong> <i>Number</i>
   
-    Upper limit in °C within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+    Upper limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
   - <strong><code>upper_limit_fahrenheit</code></strong> <i>Number</i>
   
-    Upper limit in °F within the current [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+    Upper limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
 
 </details>
 
@@ -3919,7 +3919,7 @@ Precision of the thermostat's period in minutes. For example, if the thermostat 
 
 **`thermostat_daily_programs`** *List* *of Objects*
 
-Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+Configured [daily programs](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
 
 
 
@@ -3943,7 +3943,7 @@ Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermo
 
 - <strong><code>climate_preset_key</code></strong> <i>String</i>
 
-  Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
+  Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
 
 
 - <strong><code>starts_at_time</code></strong> <i>String</i>
@@ -3957,7 +3957,7 @@ Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermo
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the thermostat daily program.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.
 
 </details>
 
@@ -3965,7 +3965,7 @@ Configured [daily programs](https://docs.seam.co/latest/capability-guides/thermo
 
 **`thermostat_weekly_program`** *Object*
 
-Current [weekly program](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
+Current [weekly program](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.
 
 
 
@@ -4264,7 +4264,7 @@ Indicates that the account is disconnected.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -4342,7 +4342,7 @@ Indicates that the Wyze Lock is not connected to a gateway.
 
 **`thermostat.climate_preset_activated`**
 
-A thermostat [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
+A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
 
 <details>
 
@@ -4358,7 +4358,7 @@ A thermostat [climate preset](https://docs.seam.co/latest/capability-guides/ther
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4398,14 +4398,14 @@ A thermostat [climate preset](https://docs.seam.co/latest/capability-guides/ther
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`thermostat.manually_adjusted`**
 
-A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was adjusted manually.
+A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted manually.
 
 <details>
 
@@ -4417,15 +4417,15 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>cooling_set_point_fahrenheit</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4453,7 +4453,7 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <strong><code>fan_mode_setting</code></strong> <i>Enum</i>
 
-  Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+  Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
 <details>
     <summary>Enum values:</summary>
 
@@ -4464,15 +4464,15 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <strong><code>heating_set_point_celsius</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>heating_set_point_fahrenheit</code></strong> <i>Number</i>
 
-  Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <strong><code>hvac_mode_setting</code></strong> <i>Enum</i>
 
-  Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+  Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 <details>
     <summary>Enum values:</summary>
 
@@ -4499,14 +4499,14 @@ A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was ad
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`thermostat.temperature_threshold_exceeded`**
 
-A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 
 <details>
 
@@ -4518,7 +4518,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4574,14 +4574,14 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`thermostat.temperature_threshold_no_longer_exceeded`**
 
-A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 
 <details>
 
@@ -4593,7 +4593,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4649,14 +4649,14 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`thermostat.temperature_reached_set_point`**
 
-A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 
 <details>
 
@@ -4668,7 +4668,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4716,14 +4716,14 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temp
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`thermostat.temperature_changed`**
 
-A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) reported temperature changed by at least 1 °C.
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported temperature changed by at least 1 °C.
 
 <details>
 
@@ -4735,7 +4735,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4775,7 +4775,7 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -4785,67 +4785,67 @@ A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) repo
 
 [**`/thermostats/activate_climate_preset`**](./activate_climate_preset.md)
 
-Activates a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Activates a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/cool`**](./cool.md)
 
-Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [cool mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to [cool mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).
 
 
 [**`/thermostats/create_climate_preset`**](./create_climate_preset.md)
 
-Creates a [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Creates a [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/delete_climate_preset`**](./delete_climate_preset.md)
 
-Deletes a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Deletes a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/heat`**](./heat.md)
 
-Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to [heat mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).
 
 
 [**`/thermostats/heat_cool`**](./heat_cool.md)
 
-Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).
 
 
 [**`/thermostats/list`**](./list.md)
 
-Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
+Returns a list of all [thermostats](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/off`**](./off.md)
 
-Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).
+Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).
 
 
 [**`/thermostats/set_fallback_climate_preset`**](./set_fallback_climate_preset.md)
 
-Sets a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) as the ["fallback"](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Sets a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) as the ["fallback"](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) preset for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/set_fan_mode`**](./set_fan_mode.md)
 
-Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Sets the [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/set_hvac_mode`**](./set_hvac_mode.md)
 
-Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Sets the [HVAC mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/set_temperature_threshold`**](./set_temperature_threshold.md)
 
-Sets a [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
+Sets a [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.
 
 
 [**`/thermostats/update_climate_preset`**](./update_climate_preset.md)
 
-Updates a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).
+Updates a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).
 
 
 [**`/thermostats/update_weekly_program`**](./update_weekly_program.md)

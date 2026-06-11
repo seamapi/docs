@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a list of all [client sessions](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).
+Returns a list of all [client sessions](https://docs.seam.co/core-concepts/authentication/client-session-tokens).
 
 
 {% tabs %}
@@ -230,7 +230,7 @@ ID of the client session that you want to retrieve.
 
 **`connect_webview_id`** *String*
 
-ID of the [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) for which you want to retrieve client sessions.
+ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions.
 
 ---
 
@@ -242,7 +242,7 @@ Your user ID for the user by which you want to filter client sessions.
 
 **`user_identity_id`** *String*
 
-ID of the [user identity](https://docs.seam.co/latest/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions.
+ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions.
 
 ---
 

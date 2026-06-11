@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).
+Returns a specified [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
 
 You must specify either `access_code_id` or both `device_id` and `code`.
 

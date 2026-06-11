@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Updates the code and ends at date and time for a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).
+Updates the code and ends at date and time for a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
 
 
 {% tabs %}

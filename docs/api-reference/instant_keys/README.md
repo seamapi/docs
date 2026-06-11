@@ -34,7 +34,7 @@ An Instant Key resource.
 
 **`client_session_id`** *UUID*
 
-ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) associated with the Instant Key.
+ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) associated with the Instant Key.
 
 
 
@@ -122,7 +122,7 @@ ID of the user identity associated with the Instant Key.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Instant Key.
+ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Instant Key.
 
 
 
@@ -134,16 +134,16 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that
 
 [**`/instant_keys/delete`**](./delete.md)
 
-Deletes a specified [Instant Key](https://docs.seam.co/latest/capability-guides/instant-keys).
+Deletes a specified [Instant Key](https://docs.seam.co/capability-guides/instant-keys).
 
 
 [**`/instant_keys/get`**](./get.md)
 
-Gets an [instant key](https://docs.seam.co/latest/capability-guides/instant-keys).
+Gets an [instant key](https://docs.seam.co/capability-guides/instant-keys).
 
 
 [**`/instant_keys/list`**](./list.md)
 
-Returns a list of all [instant keys](https://docs.seam.co/latest/capability-guides/instant-keys).
+Returns a list of all [instant keys](https://docs.seam.co/capability-guides/instant-keys).
 
 

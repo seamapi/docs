@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Remotely unlocks a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
+Remotely unlocks a specified [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.
 
 
 <details>
