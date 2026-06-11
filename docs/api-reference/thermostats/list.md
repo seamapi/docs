@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).
+Returns a list of all [thermostats](https://docs.seam.co/capability-guides/thermostats).
 
 
 {% tabs %}
@@ -1169,7 +1169,7 @@ Timestamp by which to limit returned devices. Returns devices created before thi
 
 **`custom_metadata_has`** *Object*
 
-Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.
+Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.
 
 ---
 

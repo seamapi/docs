@@ -7,7 +7,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+Represents a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
 
 Connect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.
 
@@ -65,7 +65,7 @@ High-level device capabilities that the Connect Webview can accept. When creatin
 
 **`accepted_providers`** *List* *of Strings*
 
-List of accepted [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+List of accepted [provider keys](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 
 
@@ -92,7 +92,7 @@ Date and time at which the user authorized (through the Connect Webview) the man
 
 **`automatically_manage_new_devices`** *Boolean*
 
-Indicates whether Seam should [import all new devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
+Indicates whether Seam should [import all new devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.
 
 
 
@@ -110,7 +110,7 @@ ID of the Connect Webview.
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the Connect Webview.
+ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the Connect Webview.
 
 
 
@@ -128,7 +128,7 @@ Date and time at which the Connect Webview was created.
 
 **`custom_metadata`** *Record*
 
-Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
+Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application.
 
 
 
@@ -188,7 +188,7 @@ Indicates whether the user logged in successfully using the Connect Webview.
 
 **`selected_provider`** *String*
 
-Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
 
 
@@ -222,7 +222,7 @@ URL for the Connect Webview. You use the URL to display the Connect Webview flow
 
 **`wait_for_device_creation`** *Boolean*
 
-Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/latest/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.
+Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.
 
 
 
@@ -231,7 +231,7 @@ Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the Connect Webview.
+ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Connect Webview.
 
 
 
@@ -243,7 +243,7 @@ ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that
 
 **`connect_webview.login_succeeded`**
 
-A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login succeeded.
+A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login succeeded.
 
 <details>
 
@@ -251,7 +251,7 @@ A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) 
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the affected [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+  ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -259,7 +259,7 @@ A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) 
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -283,14 +283,14 @@ A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) 
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
 
 **`connect_webview.login_failed`**
 
-A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) login failed.
+A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login failed.
 
 <details>
 
@@ -298,7 +298,7 @@ A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) 
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the affected [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+  ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -318,7 +318,7 @@ A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) 
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </details>
 
 ---
@@ -328,21 +328,21 @@ A [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews) 
 
 [**`/connect_webviews/create`**](./create.md)
 
-Creates a new [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+Creates a new [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
 
 
 [**`/connect_webviews/delete`**](./delete.md)
 
-Deletes a [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+Deletes a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
 
 
 [**`/connect_webviews/get`**](./get.md)
 
-Returns a specified [Connect Webview](https://docs.seam.co/latest/core-concepts/connect-webviews).
+Returns a specified [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
 
 
 [**`/connect_webviews/list`**](./list.md)
 
-Returns a list of all [Connect Webviews](https://docs.seam.co/latest/core-concepts/connect-webviews).
+Returns a list of all [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews).
 
 

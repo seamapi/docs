@@ -240,7 +240,7 @@ Array of thermostat daily program periods. The periods that you specify overwrit
 
 <summary><b><code>climate_preset_key</code></b> <i>String</i></summary>
 
-Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
+Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.
 
 </details>
 

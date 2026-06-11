@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+Returns a specified [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 
 
 {% tabs %}

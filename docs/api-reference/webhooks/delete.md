@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes a specified [webhook](https://docs.seam.co/latest/developer-tools/webhooks).
+Deletes a specified [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 
 {% tabs %}
