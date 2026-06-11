@@ -349,7 +349,9 @@ Date and time at which the validity of the new grant ends, in [ISO 8601](https:/
 
 **`location`** *Object*
 
-When used, creates a new location with the given entrances and devices, and gives the user access to this location.
+{% hint style="warning" %}
+**Deprecated**. Create a space first, then reference it using `space_ids`.
+{% endhint %}
 
 <details>
 
