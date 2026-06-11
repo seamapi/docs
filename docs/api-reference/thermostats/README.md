@@ -1781,6 +1781,38 @@ Indicates that a hub or relay must be connected to unlock additional capabilitie
   
 </details>
 <details>
+<summary><code>provider_issue</code></summary>
+
+Indicates a provider-specific issue that may affect device functionality.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the warning.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+  
+  
+  ---
+
+  **`warning_code`** *Enum*
+  
+  
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>provider_issue</code>
+  
+  
+</details>
+<details>
 <summary><code>keynest_unsupported_locker</code></summary>
 
 Indicates that the key is in a locker that does not support the access codes API.
