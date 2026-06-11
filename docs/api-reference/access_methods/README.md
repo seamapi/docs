@@ -827,7 +827,7 @@ An access method was created.
 
 [**`/access_methods/assign_card`**](./assign_card.md)
 
-Assigns a pre-registered card credential to a card-mode access method, identified by `card_number`. Use this endpoint for access systems that use pre-registered cards, where a physical card must be associated with an access method before it can be issued.
+Assigns a pre-registered card credential, identified by `card_number`, to a card-mode access method. Use this endpoint for access systems that use pre-registered cards, where a physical card must be associated with an access method before it can be used for access. Assigning a card credential also triggers issuance of the access method.
 
 
 [**`/access_methods/delete`**](./delete.md)
