@@ -3170,14 +3170,6 @@
       "destination": "/use-cases/granting-access/managing-access-methods"
     },
     {
-      "source": "/latest/robots.txt",
-      "destination": "https://docs.seam.co/robots.txt"
-    },
-    {
-      "source": "/latest/sitemap.xml",
-      "destination": "https://docs.seam.co/sitemap.xml"
-    },
-    {
       "source": "/latest/:path*",
       "destination": "/:path*"
     },
