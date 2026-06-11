@@ -403,6 +403,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/access_codes/unmanaged/update`
     - `is_managed`
 - `/access_grants/create`
+    - `location`
     - `location_ids`
     - `requested_access_methods`
 - `/access_grants/get_related`
@@ -594,6 +595,7 @@ These items are deprecated.
 - `/access_codes/update`
     - `use_offline_access_code`: Use `is_offline_access_code` instead.
 - `/access_grants/create`
+    - `location`: Create a space first, then reference it using `space_ids`.
     - `location_ids`: Use `space_ids`.
 - `/access_grants/list`
     - `location_id`: Use `space_id`.
