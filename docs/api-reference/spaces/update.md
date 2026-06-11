@@ -224,12 +224,6 @@ IANA time zone for the space, e.g. America/Los_Angeles.
 ---
 
 
-**`customer_key`** *String*
-
-Customer key for which you want to update the space.
-
----
-
 **`device_ids`** *Array* *of UUIDs*
 
 IDs of the devices that you want to set for the space. If specified, this will replace all existing devices.
