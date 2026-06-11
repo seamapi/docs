@@ -30940,7 +30940,7 @@
     },
     "/access_methods/assign_card": {
       "post": {
-        "description": "Assigns an existing card credential to a card-mode access method, identified by `card_number`.",
+        "description": "Assigns a pre-registered card credential to a card-mode access method, identified by `card_number`. Use this endpoint for access systems that use pre-registered cards, where a physical card must be associated with an access method before it can be issued.",
         "operationId": "accessMethodsAssignCardPost",
         "requestBody": {
           "content": {
@@ -30948,12 +30948,12 @@
               "schema": {
                 "properties": {
                   "access_method_id": {
-                    "description": "ID of the card-mode `access_method` to assign the card to.",
+                    "description": "ID of the `access_method` to assign the credential to.",
                     "format": "uuid",
                     "type": "string"
                   },
                   "card_number": {
-                    "description": "Card number of the card credential to assign.",
+                    "description": "Card number of the credential to assign.",
                     "type": "string"
                   }
                 },
@@ -30972,15 +30972,62 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "access_method": {
-                      "$ref": "#/components/schemas/access_method"
+                    "action_attempt": {
+                      "type": "object",
+                      "description": "Tracks the progress of this operation. Poll using the action_attempt_id.",
+                      "properties": {
+                        "action_attempt_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "description": "ID of the action attempt."
+                        },
+                        "action_type": {
+                          "type": "string",
+                          "enum": [
+                            "ASSIGN_CREDENTIAL"
+                          ],
+                          "description": "Type of action being tracked."
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "pending",
+                            "success",
+                            "error"
+                          ],
+                          "description": "Current status of the action."
+                        },
+                        "result": {
+                          "type": "object",
+                          "nullable": true,
+                          "description": "Result payload on success."
+                        },
+                        "error": {
+                          "type": "object",
+                          "nullable": true,
+                          "description": "Error details on failure.",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "action_attempt_id",
+                        "action_type",
+                        "status"
+                      ]
                     },
                     "ok": {
                       "type": "boolean"
                     }
                   },
                   "required": [
-                    "access_method",
+                    "action_attempt",
                     "ok"
                   ],
                   "type": "object"
@@ -31007,10 +31054,11 @@
             "api_key": []
           }
         ],
-        "summary": "Assign a Card to an Access Method",
+        "summary": "Assign a Card Credential to an Access Method",
         "tags": [],
-        "x-response-key": "access_method",
-        "x-title": "Assign a Card to an Access Method",
+        "x-action-attempt-type": "ASSIGN_CREDENTIAL",
+        "x-response-key": "action_attempt",
+        "x-title": "Assign a Card Credential to an Access Method",
         "x-mint": {
           "href": "/api/access_methods/assign_card"
         }

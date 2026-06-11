@@ -849,6 +849,7 @@ These items are deprecated.
 - `event: space.created`
 - `event: space.deleted`
 - `action_attempt: SCAN_TO_ASSIGN_CREDENTIAL`
+- `action_attempt: ASSIGN_CREDENTIAL`
 - `action_attempt: CONFIGURE_AUTO_LOCK`
 - `action_attempt: SYNC_ACCESS_CODES`
 - `action_attempt: CREATE_ACCESS_CODE`
