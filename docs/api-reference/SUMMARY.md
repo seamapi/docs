@@ -90,7 +90,7 @@
     * [List Unmanaged Access Grants](access_grants/unmanaged/list.md)
     * [Update an Unmanaged Access Grant](access_grants/unmanaged/update.md)
 * [Access Methods](access_methods/README.md)
-  * [Assign a Card to an Access Method](access_methods/assign_card.md)
+  * [Assign a Card Credential to an Access Method](access_methods/assign_card.md)
   * [Delete an Access Method](access_methods/delete.md)
   * [Encode an Access Method](access_methods/encode.md)
   * [Get an Access Method](access_methods/get.md)

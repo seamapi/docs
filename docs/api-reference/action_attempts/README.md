@@ -49,6 +49,7 @@ Type of the action attempt.
 - <code>SCAN_CREDENTIAL</code>
 - <code>ENCODE_CREDENTIAL</code>
 - <code>SCAN_TO_ASSIGN_CREDENTIAL</code>
+- <code>ASSIGN_CREDENTIAL</code>
 - <code>RESET_SANDBOX_WORKSPACE</code>
 - <code>SET_FAN_MODE</code>
 - <code>SET_HVAC_MODE</code>
