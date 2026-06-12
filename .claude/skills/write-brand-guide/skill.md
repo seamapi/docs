@@ -273,6 +273,7 @@ ACS brands typically need a dedicated setup guide page because their setup is mo
 **During the interview, ask the user for specific setup instructions for the ACS system.** These are brand-specific and can't be auto-discovered. Prompt with: "ACS setup guides are very specific to each system. Can you provide the setup steps for this brand? (e.g., prerequisites, connection details, how to configure entrances/encoders, troubleshooting tips)"
 
 Create a `<brand>-setup-guide.mdx` page with these sections:
+
 1. **Overview** — what the guide covers, link to Seam Bridge
 2. **Prerequisites** — hardware, network, and Seam workspace requirements
 3. **Step 1: Connect the ACS System** — Console flow with connection fields in a table
@@ -281,6 +282,7 @@ Create a `<brand>-setup-guide.mdx` page with these sections:
 6. **Troubleshooting** — common issues (port reachability, host mismatch, encoder not found, etc.)
 
 Add an `<Info>` callout in the overview page's Setup Instructions section linking to the setup guide:
+
 ```
 <Info>
   For detailed step-by-step instructions, including troubleshooting, see the [<Brand> Setup Guide](./<brand>-setup-guide).
