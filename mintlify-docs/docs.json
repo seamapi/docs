@@ -954,6 +954,8 @@
               {
                 "group": "Omnitec Locks",
                 "pages": [
+                  "device-and-system-integration-guides/omnitec-locks/index",
+                  "device-and-system-integration-guides/omnitec-locks/get-started-with-omnitec-locks",
                   "device-and-system-integration-guides/omnitec-locks/sandbox-omnitec-locks"
                 ]
               },

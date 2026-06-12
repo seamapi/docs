@@ -1,0 +1,703 @@
+---
+title: 'Get Started with Omnitec Locks'
+description: 'Learn how to connect and control your Omnitec lock with the Seam API.'
+---
+
+## Overview
+
+Seam provides a universal API to connect and control many brands of smart locks. This guide provides a rapid introduction to connecting and controlling your [Omnitec](https://www.seam.co/manufacturers/omnitec) lock using the Seam API. Omnitec locks must be connected through an [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online) for online access.
+
+To learn more about other smart lock brands supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+
+---
+
+## 1 — Install Seam SDK
+
+Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
+
+- JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+- Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
+- Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
+- PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+- C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+- Java ([Maven](https://central.sonatype.com/artifact/co.seam/java), [GitHub](https://github.com/seamapi/java))
+
+<CodeGroup>
+
+```bash JavaScript
+npm i seam
+```
+
+```bash Python
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
+```bash Ruby
+bundle add seam
+```
+
+```bash PHP
+composer require seamapi/seam
+```
+
+```bash C#
+Install using nuget: https://www.nuget.org/packages/Seam
+```
+
+```bash Java
+// Add to your pom.xml or build.gradle — see Maven Central for details.
+```
+
+```bash cURL (bash)
+# cURL is already installed on most systems. No additional installation needed.
+# Export your API key as an environment variable:
+export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
+
+</CodeGroup>
+
+Once installed, [sign up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
+
+```bash
+export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
+
+<Info>
+  This guide uses a Sandbox Workspace. Only virtual devices can be connected. If
+  you need to connect a real Omnitec lock, use a non-sandbox workspace and API key.
+</Info>
+
+---
+
+## 2 — Link Omnitec Account with Seam
+
+To control your Omnitec lock via the Seam API, you must first authorize your Seam workspace against your Omnitec account. To do so, Seam provides [Connect Webviews](/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your Omnitec lock.
+
+#### Request a Connect Webview
+
+<CodeGroup>
+
+```javascript JavaScript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ["omnitec"],
+});
+
+console.log(connectWebview.login_successful); // false
+
+// Send the webview URL to your user
+console.log(connectWebview.url);
+```
+
+```python Python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["omnitec"])
+
+assert webview.login_successful is False
+
+# Send the webview URL to your user
+print(webview.url)
+```
+
+```ruby Ruby
+require "seam"
+
+seam = Seam.new(api_key: "MY_API_KEY")
+
+webview = seam.connect_webviews.create(
+  accepted_providers: ["omnitec"]
+)
+
+puts webview.login_successful # false
+
+# Send the webview URL to your user
+puts webview.url
+```
+
+```php PHP
+<?php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$webview = $seam->connect_webviews->create(
+  accepted_providers: ["omnitec"]
+);
+
+echo $webview->login_successful; // false
+
+// Send the webview URL to your user
+echo $webview->url;
+```
+
+```csharp C#
+using Seam.Client;
+
+var seam = new SeamClient(apiToken: "YOUR_API_KEY");
+
+var webview = seam.ConnectWebviews.Create(
+  acceptedProviders: new List<string> { "omnitec" }
+);
+
+Console.WriteLine(webview.LoginSuccessful); // false
+
+// Send the webview URL to your user
+Console.WriteLine(webview.Url);
+```
+
+```java Java
+import co.seam.Seam;
+import co.seam.api.types.ConnectWebview;
+
+Seam seam = Seam.builder().apiKey("YOUR_API_KEY").build();
+
+ConnectWebview webview = seam.connectWebviews().create(
+  ConnectWebviewsCreateRequest.builder()
+    .acceptedProviders(List.of("omnitec"))
+    .build()
+);
+
+System.out.println(webview.getLoginSuccessful()); // false
+
+// Send the webview URL to your user
+System.out.println(webview.getUrl());
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "accepted_providers": ["omnitec"]
+  }'
+```
+
+</CodeGroup>
+
+#### Authorize Your Workspace
+
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Omnitec [sandbox test account](/device-and-system-integration-guides/omnitec-locks/sandbox-omnitec-locks) credentials below:
+
+- **email:** jane@example.com
+- **password:** 1234
+
+During the Connect Webview flow, you will also be prompted to select a time zone. You can choose any valid time zone.
+
+Confirm the Connect Webview was successful by querying its status:
+
+<CodeGroup>
+
+```javascript JavaScript
+const updatedWebview = await seam.connectWebviews.get(
+  connectWebview.connect_webview_id
+);
+
+console.log(updatedWebview.login_successful); // true
+```
+
+```python Python
+updated_webview = seam.connect_webviews.get(
+    connect_webview_id=webview.connect_webview_id
+)
+
+assert updated_webview.login_successful  # true
+```
+
+```ruby Ruby
+updated_webview = seam.connect_webviews.get(
+  connect_webview_id: webview.connect_webview_id
+)
+
+puts updated_webview.login_successful # true
+```
+
+```php PHP
+<?php
+$updated_webview = $seam->connect_webviews->get(
+  connect_webview_id: $webview->connect_webview_id
+);
+
+echo $updated_webview->login_successful; // true
+```
+
+```csharp C#
+var updatedWebview = seam.ConnectWebviews.Get(
+  connectWebviewId: webview.ConnectWebviewId
+);
+
+Console.WriteLine(updatedWebview.LoginSuccessful); // true
+```
+
+```java Java
+ConnectWebview updatedWebview = seam.connectWebviews().get(
+  ConnectWebviewsGetRequest.builder()
+    .connectWebviewId(webview.getConnectWebviewId())
+    .build()
+);
+
+System.out.println(updatedWebview.getLoginSuccessful()); // true
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/get' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"connect_webview_id\": \"${CONNECT_WEBVIEW_ID}\"
+  }"
+```
+
+</CodeGroup>
+
+---
+
+## 3 — Retrieve Omnitec Lock Devices
+
+After an Omnitec account is linked with Seam, you can retrieve devices for this Omnitec account. The Seam API exposes most of the device's properties such as battery level or door lock status.
+
+<CodeGroup>
+
+```javascript JavaScript
+const allLocks = await seam.locks.list();
+
+const someLock = allLocks[0];
+
+console.log(someLock.properties.online); // true
+console.log(someLock.properties.locked); // true
+
+console.log(someLock);
+/*
+{
+  device_id: '...',
+  device_type: 'omnitec_lock',
+  capabilities_supported: ['access_code', 'lock'],
+  properties: {
+    locked: true,
+    online: true,
+    manufacturer: 'omnitec',
+    omnitec_metadata: {
+      lock_id: '...',
+      lock_name: 'Room 101',
+      has_gateway: true
+    },
+    name: 'Room 101'
+  },
+  ...
+}
+*/
+```
+
+```python Python
+all_locks = seam.locks.list()
+
+some_lock = all_locks[0]
+
+assert some_lock.properties["online"] is True
+assert some_lock.properties["locked"] is True
+
+print(some_lock)
+# Device(
+#   device_id='...',
+#   device_type='omnitec_lock',
+#   properties={
+#     'locked': True,
+#     'online': True,
+#     'manufacturer': 'omnitec',
+#     'omnitec_metadata': {...},
+#     'name': 'Room 101'
+#   },
+#   capabilities_supported=['access_code', 'lock']
+# )
+```
+
+```ruby Ruby
+some_lock = seam.locks.list.first
+
+puts some_lock.properties.online # true
+puts some_lock.properties.locked # true
+
+puts some_lock
+```
+
+```php PHP
+<?php
+$locks = $seam->locks->list();
+
+$some_lock = $locks[0];
+
+echo $some_lock->properties->online; // true
+echo $some_lock->properties->locked; // true
+```
+
+```csharp C#
+var locks = seam.Locks.List();
+
+var someLock = locks[0];
+
+Console.WriteLine(someLock.Properties.Online); // true
+Console.WriteLine(someLock.Properties.Locked); // true
+```
+
+```java Java
+var locks = seam.locks().list();
+
+var someLock = locks.get(0);
+
+System.out.println(someLock.getProperties().getOnline()); // true
+System.out.println(someLock.getProperties().getLocked()); // true
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+
+</CodeGroup>
+
+---
+
+## 4 — Locking & Unlocking a Door
+
+You can perform the basic actions of locking and unlocking an Omnitec lock.
+
+<CodeGroup>
+
+```javascript JavaScript
+// lock the door
+await seam.locks.lockDoor(someLock.device_id);
+const updatedLock = await seam.locks.get(someLock.device_id);
+console.log(updatedLock.properties.locked); // true
+
+// unlock the door
+await seam.locks.unlockDoor(someLock.device_id);
+const unlockedLock = await seam.locks.get(someLock.device_id);
+console.log(unlockedLock.properties.locked); // false
+```
+
+```python Python
+# lock the door
+seam.locks.lock_door(device_id=some_lock.device_id)
+updated_lock = seam.locks.get(device_id=some_lock.device_id)
+assert updated_lock.properties["locked"] is True
+
+# unlock the door
+seam.locks.unlock_door(device_id=some_lock.device_id)
+updated_lock = seam.locks.get(device_id=some_lock.device_id)
+assert updated_lock.properties["locked"] is False
+```
+
+```ruby Ruby
+# lock the door
+seam.locks.lock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+puts updated_lock.properties.locked # true
+
+# unlock the door
+seam.locks.unlock_door(device_id: some_lock.device_id)
+updated_lock = seam.locks.get(device_id: some_lock.device_id)
+puts updated_lock.properties.locked # false
+```
+
+```php PHP
+<?php
+// lock the door
+$seam->locks->lock_door(device_id: $some_lock->device_id);
+$updated_lock = $seam->locks->get(device_id: $some_lock->device_id);
+echo $updated_lock->properties->locked; // true
+
+// unlock the door
+$seam->locks->unlock_door(device_id: $some_lock->device_id);
+$updated_lock = $seam->locks->get(device_id: $some_lock->device_id);
+echo $updated_lock->properties->locked; // false
+```
+
+```csharp C#
+// lock the door
+seam.Locks.LockDoor(deviceId: someLock.DeviceId);
+var updatedLock = seam.Locks.Get(deviceId: someLock.DeviceId);
+Console.WriteLine(updatedLock.Properties.Locked); // true
+
+// unlock the door
+seam.Locks.UnlockDoor(deviceId: someLock.DeviceId);
+updatedLock = seam.Locks.Get(deviceId: someLock.DeviceId);
+Console.WriteLine(updatedLock.Properties.Locked); // false
+```
+
+```java Java
+// lock the door
+seam.locks().lockDoor(LocksLockDoorRequest.builder()
+    .deviceId(someLock.getDeviceId())
+    .build());
+var updatedLock = seam.locks().get(LocksGetRequest.builder()
+    .deviceId(someLock.getDeviceId())
+    .build());
+System.out.println(updatedLock.getProperties().getLocked()); // true
+
+// unlock the door
+seam.locks().unlockDoor(LocksUnlockDoorRequest.builder()
+    .deviceId(someLock.getDeviceId())
+    .build());
+updatedLock = seam.locks().get(LocksGetRequest.builder()
+    .deviceId(someLock.getDeviceId())
+    .build());
+System.out.println(updatedLock.getProperties().getLocked()); // false
+```
+
+```bash cURL (bash)
+# lock the door
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/lock_door' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"${DEVICE_ID}\"}"
+
+# unlock the door
+curl -X 'POST' \
+  'https://connect.getseam.com/locks/unlock_door' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"${DEVICE_ID}\"}"
+```
+
+</CodeGroup>
+
+---
+
+## 5 — Setting Access Codes on an Omnitec Lock
+
+Omnitec locks with a keypad support access code programming. The Seam API makes it easy to program both `ongoing` codes and `timebound` codes on an Omnitec lock.
+
+You can find out more about access codes in our [guide on access codes](/low-level-apis/smart-locks/access-codes).
+
+<CodeGroup>
+
+```javascript JavaScript
+// create an ongoing code
+await seam.accessCodes.create({
+  device_id: someLock.device_id,
+  code: "123456",
+  name: "Personal Access Code",
+});
+
+// create a timebound code
+await seam.accessCodes.create({
+  device_id: someLock.device_id,
+  code: "888888",
+  name: "Guest Access Code",
+  starts_at: "2028-11-12T19:00:00+0000",
+  ends_at: "2028-11-13T12:00:00+0000",
+});
+
+// list all access codes on the device
+const accessCodes = await seam.accessCodes.list({
+  device_id: someLock.device_id,
+});
+
+console.log(accessCodes);
+/*
+[
+  {
+    code: '123456',
+    type: 'ongoing',
+    status: 'setting',
+    access_code_id: '...',
+    name: 'Personal Access Code'
+  },
+  {
+    code: '888888',
+    type: 'timebound',
+    status: 'setting',
+    access_code_id: '...',
+    name: 'Guest Access Code',
+    starts_at: '2028-11-12T19:00:00.000Z',
+    ends_at: '2028-11-13T12:00:00.000Z'
+  }
+]
+*/
+```
+
+```python Python
+# create an ongoing code
+seam.access_codes.create(
+    device_id=some_lock.device_id,
+    code="123456",
+    name="Personal Access Code"
+)
+
+# create a timebound code
+seam.access_codes.create(
+    device_id=some_lock.device_id,
+    code="888888",
+    name="Guest Access Code",
+    starts_at="2028-11-12T19:00:00+0000",
+    ends_at="2028-11-13T12:00:00+0000"
+)
+
+# list all access codes on the device
+access_codes = seam.access_codes.list(device_id=some_lock.device_id)
+
+print(access_codes)
+```
+
+```ruby Ruby
+# create an ongoing code
+seam.access_codes.create(
+  device_id: some_lock.device_id,
+  code: "123456",
+  name: "Personal Access Code"
+)
+
+# create a timebound code
+seam.access_codes.create(
+  device_id: some_lock.device_id,
+  code: "888888",
+  name: "Guest Access Code",
+  starts_at: "2028-11-12T19:00:00+0000",
+  ends_at: "2028-11-13T12:00:00+0000"
+)
+
+# list all access codes on the device
+access_codes = seam.access_codes.list(device_id: some_lock.device_id)
+
+puts access_codes
+```
+
+```php PHP
+<?php
+// create an ongoing code
+$seam->access_codes->create(
+  device_id: $some_lock->device_id,
+  code: "123456",
+  name: "Personal Access Code"
+);
+
+// create a timebound code
+$seam->access_codes->create(
+  device_id: $some_lock->device_id,
+  code: "888888",
+  name: "Guest Access Code",
+  starts_at: "2028-11-12T19:00:00+0000",
+  ends_at: "2028-11-13T12:00:00+0000"
+);
+
+// list all access codes on the device
+$access_codes = $seam->access_codes->list(
+  device_id: $some_lock->device_id
+);
+
+print_r($access_codes);
+```
+
+```csharp C#
+// create an ongoing code
+seam.AccessCodes.Create(
+  deviceId: someLock.DeviceId,
+  code: "123456",
+  name: "Personal Access Code"
+);
+
+// create a timebound code
+seam.AccessCodes.Create(
+  deviceId: someLock.DeviceId,
+  code: "888888",
+  name: "Guest Access Code",
+  startsAt: "2028-11-12T19:00:00+0000",
+  endsAt: "2028-11-13T12:00:00+0000"
+);
+
+// list all access codes on the device
+var accessCodes = seam.AccessCodes.List(
+  deviceId: someLock.DeviceId
+);
+
+foreach (var code in accessCodes)
+{
+  Console.WriteLine(code.Code);
+}
+```
+
+```java Java
+// create an ongoing code
+seam.accessCodes().create(AccessCodesCreateRequest.builder()
+    .deviceId(someLock.getDeviceId())
+    .code("123456")
+    .name("Personal Access Code")
+    .build());
+
+// create a timebound code
+seam.accessCodes().create(AccessCodesCreateRequest.builder()
+    .deviceId(someLock.getDeviceId())
+    .code("888888")
+    .name("Guest Access Code")
+    .startsAt("2028-11-12T19:00:00+0000")
+    .endsAt("2028-11-13T12:00:00+0000")
+    .build());
+
+// list all access codes on the device
+var accessCodes = seam.accessCodes().list(AccessCodesListRequest.builder()
+    .deviceId(someLock.getDeviceId())
+    .build());
+
+System.out.println(accessCodes);
+```
+
+```bash cURL (bash)
+# create an ongoing code
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"${DEVICE_ID}\",
+    \"code\": \"123456\",
+    \"name\": \"Personal Access Code\"
+  }"
+
+# create a timebound code
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"device_id\": \"${DEVICE_ID}\",
+    \"code\": \"888888\",
+    \"name\": \"Guest Access Code\",
+    \"starts_at\": \"2028-11-12T19:00:00+0000\",
+    \"ends_at\": \"2028-11-13T12:00:00+0000\"
+  }"
+
+# list all access codes on the device
+curl -X 'POST' \
+  'https://connect.getseam.com/access_codes/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"device_id\": \"${DEVICE_ID}\"}"
+```
+
+</CodeGroup>
+
+---
+
+## Next Steps
+
+Now that you've completed this guide, you can try to connect a real Omnitec device. To do so, make sure to switch to a non-sandbox workspace and API key as real devices cannot be connected to sandbox workspaces.
+
+In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
+
+- [Receiving webhooks](/developer-tools/webhooks) for [device events](/api/events/list)
+- [Core Concepts](/core-concepts/overview)
+- [Access Codes Guide](/low-level-apis/smart-locks/access-codes)
+
+If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).
