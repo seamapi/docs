@@ -1,0 +1,107 @@
+---
+title: 'Hotek Setup Guide'
+description: 'Configure your Hotek SMART system and connect it to Seam through a Seam Bridge.'
+---
+
+## Overview
+
+This guide walks you through connecting a Hotek SMART access control system to Seam. The integration requires a [Seam Bridge](/capability-guides/seam-bridge) installed on the same network as the Hotek SMART Server, which relays commands between Seam's cloud API and the on-premise Hotek system over TCP.
+
+<Info>
+  This guide assumes the Hotek SMART system and LockOH PMS Server are already installed and running at the property.
+</Info>
+
+---
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- A Hotek SMART system installed and running at the property
+- A [Seam Bridge](/capability-guides/seam-bridge) installed on the same network as the Hotek SMART Server
+- The TCP host IP address and port number for the Hotek SMART Server (default port is `10003`)
+- A Seam workspace with API access
+
+---
+
+## Step 1: Connect the Hotek ACS System
+
+1. In the [Seam Console](https://console.seam.co), go to **Access Systems** and click **+ New Access System**.
+2. Select **Hotek** from the list of providers.
+3. Complete the **Seam Bridge** section by entering your Bridge connection details as shown in your Bridge UI.
+4. Complete the **Hotek** section with your SMART Server connection details:
+
+| Field | Description |
+| --- | --- |
+| **Site Name** | A human-readable name to identify this Hotek installation (e.g., "Hotel Lobby System") |
+| **TCP Host** | The IP address of the Hotek SMART Server. Use `127.0.0.1` if the Bridge runs on the same machine, or the server's LAN IP otherwise. |
+| **TCP Port** | The port the Hotek SMART Server listens on (default: `10003`). Check your LockOH PMS settings if unsure. |
+
+Once connected, a new **ACS System (Hotek)** appears in your workspace and shows as **connected** once the Bridge can reach the Hotek SMART Server.
+
+---
+
+## Step 2: Set Up Entrances and Encoders
+
+After connecting the Hotek system, you need to configure which rooms and encoders are available in Seam.
+
+<Info>
+  Entrance and encoder setup is currently managed by Seam support. This process will be automated in a future release.
+</Info>
+
+### Configure Entrances
+
+1. In the Hotek SMART application, click **All Room** and note the room numbers you want to manage through Seam.
+2. Contact [Seam support](mailto:support@seam.co) with your `acs_system_id` and the room numbers you want to set up as entrances.
+
+Seam support will configure the rooms so they appear as entrances in your Seam workspace. Both guest rooms and common area doors can be added.
+
+### Configure Encoders
+
+1. Note the number and identifiers of card encoders at your property (e.g., encoder `01`).
+2. Contact [Seam support](mailto:support@seam.co) with your encoder details.
+
+Seam support will register the encoders so they appear in your Seam workspace, associated with the Hotek ACS system.
+
+---
+
+## Step 3: Verify the Connection
+
+Once setup is complete, verify that your system, entrances, and encoders appear correctly:
+
+- **ACS System** — should show as connected/online in the Seam Console
+- **Entrances** — your configured rooms and common areas should appear under Entrances for the ACS system
+- **Encoders** — registered encoders should be listed and associated with the ACS system
+
+You can also verify programmatically using the Seam API. See the [Getting Started guide](./get-started-with-hotek-access-control-system) for code examples.
+
+---
+
+## Troubleshooting
+
+### Bridge cannot reach the Hotek SMART Server
+
+Verify that the TCP host and port are correct. From the Bridge host machine, test connectivity:
+
+```bash
+nc -zv <tcp_host> <tcp_port>
+# Example: nc -zv 127.0.0.1 10003
+```
+
+If the Hotek SMART Server runs on a different machine than the Bridge, do not use `127.0.0.1` — use the server's LAN IP address instead.
+
+### Encoder not found
+
+Confirm that you have registered the encoder (usually `01`) through Seam support. The encoder must be associated with the ACS system before it can be used for card encoding.
+
+### Rooms not appearing as entrances
+
+The room numbers in Seam must match the room list in Hotek SMART. Check the **All Room** list in the Hotek SMART application and verify the room numbers match what was provided to Seam support.
+
+### Duplicate site name
+
+Use a unique Site Name for each Hotek installation to avoid confusion when managing multiple properties in the Seam Console.
+
+### Feature flag not enabled
+
+Ensure your Seam workspace is enabled for Hotek access. Contact [Seam support](mailto:support@seam.co) if the Hotek provider does not appear in your Connect Webview or Console.

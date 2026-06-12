@@ -8,7 +8,7 @@ description: >-
 
 Create a complete brand integration guide for a device manufacturer in the Mintlify docs. All work happens in `mintlify-docs/device-and-system-integration-guides/` — this is the only docs site.
 
-A brand guide is a group of `.mdx` pages — an overview, a getting-started tutorial, and a sandbox credentials page — organized under `mintlify-docs/device-and-system-integration-guides/<brand>-locks/` (or `-access-control-system/` for ACS brands).
+A brand guide is a group of `.mdx` pages — an overview, a getting-started tutorial, a sandbox credentials page, and optionally a setup guide — organized under `mintlify-docs/device-and-system-integration-guides/<brand>-locks/` (or `-access-control-system/` for ACS brands).
 
 ---
 
@@ -265,6 +265,29 @@ Replace the 5-step lock tutorial with an ACS-focused flow:
    - Create a credential with `seam.acs.credentials.create()` specifying `access_method: "card"` and `allowed_acs_entrance_ids`
 
 Use seeded room numbers and user names from `seed.ts` in code examples.
+
+### Setup Guide (ACS only)
+
+ACS brands typically need a dedicated setup guide page because their setup is more involved than lock brands — it requires on-premise hardware (Seam Bridge), network configuration (TCP host/port), and often manual steps coordinated with Seam support (entrance and encoder registration).
+
+**During the interview, ask the user for specific setup instructions for the ACS system.** These are brand-specific and can't be auto-discovered. Prompt with: "ACS setup guides are very specific to each system. Can you provide the setup steps for this brand? (e.g., prerequisites, connection details, how to configure entrances/encoders, troubleshooting tips)"
+
+Create a `<brand>-setup-guide.mdx` page with these sections:
+1. **Overview** — what the guide covers, link to Seam Bridge
+2. **Prerequisites** — hardware, network, and Seam workspace requirements
+3. **Step 1: Connect the ACS System** — Console flow with connection fields in a table
+4. **Step 2: Set Up Entrances and Encoders** — how rooms and encoders get registered (often via Seam support)
+5. **Step 3: Verify the Connection** — what to check in Console and via API
+6. **Troubleshooting** — common issues (port reachability, host mismatch, encoder not found, etc.)
+
+Add an `<Info>` callout in the overview page's Setup Instructions section linking to the setup guide:
+```
+<Info>
+  For detailed step-by-step instructions, including troubleshooting, see the [<Brand> Setup Guide](./<brand>-setup-guide).
+</Info>
+```
+
+Reference examples: `dormakaba-community-setup-guide.mdx`, `latch-setup-guide.mdx`, `hotek-setup-guide.mdx`.
 
 ### Sandbox Credentials differences (ACS)
 
