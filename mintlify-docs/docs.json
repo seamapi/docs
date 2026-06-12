@@ -952,6 +952,12 @@
                 ]
               },
               {
+                "group": "Omnitec Locks",
+                "pages": [
+                  "device-and-system-integration-guides/omnitec-locks/sandbox-omnitec-locks"
+                ]
+              },
+              {
                 "group": "Schlage Locks",
                 "pages": [
                   "device-and-system-integration-guides/schlage-locks/index",
