@@ -121,6 +121,7 @@ Also check `mintlify-docs/docs.json` to find where to insert the new brand in th
 Before writing, tell the user what you'll create:
 
 - `index.mdx` — Overview page
+- `<brand>-setup-guide.mdx` — Setup guide with prerequisites, connection steps, and troubleshooting
 - `get-started-with-<brand>-locks.mdx` — Getting started tutorial
 - `sandbox-<brand>-locks.mdx` — Sandbox credentials (or confirm one already exists)
 - Navigation update in `docs.json`
@@ -172,11 +173,7 @@ To create a [Connect Webview](/core-concepts/connect-webviews) that enables your
 
 ## Setup Instructions
 
-To control <Brand> devices using Seam, you must prompt owners of these devices to perform the following steps:
-
-1. [Gateway/bridge setup step if applicable]
-2. [Device pairing step if applicable]
-3. Note your <Brand> account login credentials, and use these credentials to log in to the [Seam Connect Webview](/core-concepts/connect-webviews) to add your devices to Seam.
+For step-by-step instructions on connecting <Brand> devices to Seam — including [gateway/bridge] configuration and troubleshooting — see the [<Brand> Setup Guide](./<brand>-setup-guide).
 
 ---
 
@@ -266,30 +263,30 @@ Replace the 5-step lock tutorial with an ACS-focused flow:
 
 Use seeded room numbers and user names from `seed.ts` in code examples.
 
-### Setup Guide (ACS only)
+### Setup Guide
 
-ACS brands typically need a dedicated setup guide page because their setup is more involved than lock brands — it requires on-premise hardware (Seam Bridge), network configuration (TCP host/port), and often manual steps coordinated with Seam support (entrance and encoder registration).
+Every brand gets a dedicated setup guide page (`<brand>-setup-guide.mdx`). The overview page's "Setup Instructions" section links to it — it should not contain inline setup steps.
 
-**During the interview, ask the user for specific setup instructions for the ACS system.** These are brand-specific and can't be auto-discovered. Prompt with: "ACS setup guides are very specific to each system. Can you provide the setup steps for this brand? (e.g., prerequisites, connection details, how to configure entrances/encoders, troubleshooting tips)"
+**During the interview, ask the user for specific setup instructions.** These are brand-specific and can't be auto-discovered. Prompt with: "Can you provide the setup steps for this brand? (e.g., prerequisites, connection details, gateway/bridge configuration, troubleshooting tips)"
+
+For ACS brands, also ask about entrance and encoder setup — these often require coordination with Seam support.
 
 Create a `<brand>-setup-guide.mdx` page with these sections:
-
-1. **Overview** — what the guide covers, link to Seam Bridge
+1. **Overview** — what the guide covers, link to gateway/bridge product page if applicable
 2. **Prerequisites** — hardware, network, and Seam workspace requirements
-3. **Step 1: Connect the ACS System** — Console flow with connection fields in a table
-4. **Step 2: Set Up Entrances and Encoders** — how rooms and encoders get registered (often via Seam support)
+3. **Step 1: Connect** — Console or Connect Webview flow with connection fields in a table
+4. **Step 2: Configure devices/entrances** — how devices get paired or entrances get registered
 5. **Step 3: Verify the Connection** — what to check in Console and via API
-6. **Troubleshooting** — common issues (port reachability, host mismatch, encoder not found, etc.)
+6. **Troubleshooting** — common issues (connectivity, credentials, device pairing, etc.)
 
-Add an `<Info>` callout in the overview page's Setup Instructions section linking to the setup guide:
-
+The overview page should link to the setup guide with a single line:
 ```
-<Info>
-  For detailed step-by-step instructions, including troubleshooting, see the [<Brand> Setup Guide](./<brand>-setup-guide).
-</Info>
+## Setup Instructions
+
+For step-by-step instructions on connecting <Brand> devices to Seam — including [gateway/bridge] configuration and troubleshooting — see the [<Brand> Setup Guide](./<brand>-setup-guide).
 ```
 
-Reference examples: `dormakaba-community-setup-guide.mdx`, `latch-setup-guide.mdx`, `hotek-setup-guide.mdx`.
+Reference examples: `dormakaba-community-setup-guide.mdx`, `latch-setup-guide.mdx`, `hotek-setup-guide.mdx`, `omnitec-setup-guide.mdx`.
 
 ### Sandbox Credentials differences (ACS)
 

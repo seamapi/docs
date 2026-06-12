@@ -1,0 +1,70 @@
+---
+title: 'Omnitec Setup Guide'
+description: 'Set up Omnitec locks with a Rent&Pass Gateway and connect them to Seam.'
+---
+
+## Overview
+
+This guide walks you through connecting Omnitec hotel locks to Seam. The integration requires an [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online), which provides the Wi-Fi connectivity that enables real-time communication between Seam and your Omnitec locks.
+
+<Warning>
+  Seam only supports Omnitec locks that are online through a gateway. Offline-only Omnitec locks (without a gateway connection) are not supported.
+</Warning>
+
+---
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- Omnitec electronic hotel locks installed at the property
+- An [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online) — this provides the Wi-Fi bridge between your locks and Seam
+- A Wi-Fi network accessible to the gateway
+- Your Omnitec account credentials (email and password)
+- A Seam workspace with API access
+
+---
+
+## Step 1: Install and Configure the Gateway
+
+1. Install the [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online) at the property and connect it to the Wi-Fi network.
+2. Pair your Omnitec locks with the gateway following Omnitec's pairing instructions. Each lock must be online and reachable through the gateway for remote operations.
+3. Verify that all locks appear as connected in the Omnitec Rent&Pass management interface.
+
+---
+
+## Step 2: Connect to Seam
+
+1. In the [Seam Console](https://console.seam.co), create a [Connect Webview](/core-concepts/connect-webviews) with `omnitec` in the `accepted_providers` list.
+2. Open the Connect Webview and log in with your Omnitec account credentials.
+3. Once authorized, your online Omnitec locks appear as devices in your Seam workspace.
+
+See the [sandbox credentials page](./sandbox-omnitec-locks) for test values to use during development.
+
+---
+
+## Step 3: Verify the Connection
+
+Once connected, verify that your devices appear correctly:
+
+- **Devices** — your online Omnitec locks should appear in the Seam Console under Devices
+- **Status** — each lock should show as online/connected
+- **Capabilities** — locks should report `can_remotely_lock`, `can_remotely_unlock`, and `can_program_online_access_codes`
+
+You can also verify programmatically using the Seam API. See the [Getting Started guide](./get-started-with-omnitec-locks) for code examples.
+
+---
+
+## Troubleshooting
+
+### Locks not appearing after authorization
+
+Ensure the Rent&Pass Gateway is powered on and connected to Wi-Fi. Only locks that are online through the gateway are visible to Seam.
+
+### Lock shows as offline
+
+Check that the lock is within range of the gateway and that the gateway's Wi-Fi connection is active. Re-pair the lock with the gateway if necessary.
+
+### Gateway connection issues
+
+Verify that the gateway's Wi-Fi network has internet access. The gateway needs to reach Omnitec's cloud servers to relay commands from Seam.
