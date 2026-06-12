@@ -35,11 +35,13 @@ grep -A 20 "<brand>:" <seam-connect>/lib/device/providers.ts 2>/dev/null
 ```
 
 Look for the `capability_flags` object. The key flags to extract:
+
 - `can_remotely_lock` / `can_remotely_unlock` → lock/unlock actions
 - `can_program_online_access_codes` → online access codes
 - `can_program_offline_access_codes` → offline access codes
 
 Also note:
+
 - `provider_key` — the string used in `accepted_providers`
 - `readable_name` — the display name for the brand
 - `device_kinds` — "lock", "thermostat", etc.
@@ -52,6 +54,7 @@ cat <seam-connect>/providers/<brand>/fake/lib/seed.ts
 ```
 
 Look for `addUserAccount`, `createSeededDatabase`, or similar seed functions. Extract:
+
 - **Email** — usually `jane@example.com` or similar
 - **Password** — usually `test1234` or `1234`
 - **2FA code** — if present (e.g., August/Yale use `123456`)
@@ -80,15 +83,18 @@ ACS brands have a different guide structure (systems, entrances, credentials) vs
 After auto-discovery, present what you found to the user:
 
 > "I found the following in seam-connect for **<Brand>**:
+>
 > - **Provider key:** `<key>`
 > - **Features:** lock/unlock, online access codes [etc.]
 > - **Sandbox credentials:** jane@example.com / test1234
 > - **Device metadata:** lock_name, has_gateway, lock_mac
 >
 > I still need to know:
+>
 > - [any gaps — gateway product URL, brand description, where-to-order link, etc.]"
 
 The user only needs to fill in what can't be discovered from code — typically:
+
 - Gateway/bridge product URL (if the brand requires one)
 - Brand description / market focus (hospitality, residential, etc.)
 - Where-to-order link
@@ -113,6 +119,7 @@ Also check `mintlify-docs/docs.json` to find where to insert the new brand in th
 ### 4. Confirm the plan
 
 Before writing, tell the user what you'll create:
+
 - `index.mdx` — Overview page
 - `get-started-with-<brand>-locks.mdx` — Getting started tutorial
 - `sandbox-<brand>-locks.mdx` — Sandbox credentials (or confirm one already exists)
@@ -207,6 +214,7 @@ Follow the 5-step structure used by all brand guides:
 5. **Set Access Codes** — Create ongoing + timebound codes, list codes (skip if access codes not supported)
 
 **Every CodeGroup must include all 7 languages in this order:**
+
 1. JavaScript
 2. Python
 3. Ruby
@@ -228,6 +236,7 @@ If the discovery step (step 1d) detects an ACS brand (has `EntrancesFacetTypes` 
 ### Directory naming
 
 Use `-access-control-system` instead of `-locks`:
+
 - `mintlify-docs/device-and-system-integration-guides/<brand>-access-control-system/`
 
 ### Overview differences (ACS)
@@ -327,6 +336,7 @@ npx @mintlify/cli@latest dev --port 3333
 ```
 
 Run with `run_in_background: true`. If ports 3333-3342 are all in use, kill them all first:
+
 ```bash
 lsof -i :3333-3342 -t 2>/dev/null | sort -u | xargs kill -9 2>/dev/null
 ```
@@ -334,6 +344,7 @@ lsof -i :3333-3342 -t 2>/dev/null | sort -u | xargs kill -9 2>/dev/null
 The OpenAPI validation warning is harmless — ignore it.
 
 Share the preview URLs with the user:
+
 - `http://localhost:3333/device-and-system-integration-guides/<brand>-locks`
 - `http://localhost:3333/device-and-system-integration-guides/<brand>-locks/get-started-with-<brand>-locks`
 - `http://localhost:3333/device-and-system-integration-guides/<brand>-locks/sandbox-<brand>-locks`
@@ -345,25 +356,27 @@ Share the preview URLs with the user:
 3. Commit with message: `feat: add <Brand> locks brand guide`
 4. Push to origin with `-u` flag
 5. Create or update a PR:
+
    ```bash
    gh pr create --title "feat: add <Brand> locks brand guide" --body "$(cat <<'EOF'
    ## Summary
-   
+
    - Adds overview page for <Brand> locks with supported features, device provider key, setup instructions
    - Adds getting started guide with full 5-step tutorial in all 7 SDK languages
    - Adds sandbox credentials page
    - Updates docs.json navigation
-   
+
    ## Test plan
-   
+
    - [ ] Verify pages render correctly on Mintlify preview deploy
    - [ ] Confirm nav shows all pages under "<Brand> Locks"
    - [ ] Check all internal links resolve
-   
+
    🤖 Generated with [Claude Code](https://claude.com/claude-code)
    EOF
    )"
    ```
+
    If a PR already exists for the branch, update it with `gh pr edit` instead.
 
 ---
@@ -387,6 +400,7 @@ In code output examples, use the brand's actual device type (e.g., `omnitec_lock
 ## Terminology
 
 Use Seam's preferred terms:
+
 - "Device" (not "smart lock" generically)
 - "Access code" (not "PIN code" in API context — but "PIN code" is fine in user-facing prose)
 - "Connected account" (not "integration" or "connection")
