@@ -1,6 +1,226 @@
 ---
 title: 'Seam'
-description: 'API reference for the Seam class in the Seam iOS SDK.'
+description: 'The main entry point for the Seam iOS SDK. Manages SDK lifecycle, credential synchronization, unlock operations, and cleanup.'
 ---
 
-Content coming soon.
+> **Interim hand-authored reference.** This page is authored from the SeamSDK public Swift sources. See the [reference overview](/mobile-sdks/ios/reference) for context.
+
+## Overview
+
+`Seam` is a `public final class` that conforms to `ObservableObject`. It exposes a shared singleton and the full public API for initializing the SDK, observing credentials, triggering unlocks, and tearing down the session.
+
+```swift
+public final class Seam: ObservableObject
+```
+
+**Use cases:**
+
+- Bootstrapping the SDK at app launch (`initialize` + `activate`).
+- Observing `credentials` changes reactively in SwiftUI or Combine.
+- Triggering a manual credential refresh on pull-to-refresh.
+- Unlocking a door via Combine publisher with per-attempt proximity control.
+- Cleaning up resources on logout or account switch with `deactivate()`.
+
+---
+
+## Shared Instance
+
+### `shared`
+
+The shared singleton instance of `Seam`. Use this to interact with the SDK after initialization.
+
+```swift
+public static let shared: Seam
+```
+
+---
+
+## Type Methods
+
+### `initialize(clientSessionToken:)`
+
+Sets up the SDK with the provided client session token. Must be called before any other SDK methods.
+
+```swift
+public static func initialize(clientSessionToken: String) throws
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `clientSessionToken` | `String` | A valid client session token string. |
+
+**Throws**
+
+| Error | Description |
+|-------|-------------|
+| `SeamError.invalidClientSessionToken` | The provided token is malformed or invalid. |
+| `SeamError.deactivationInProgress` | A deactivation operation is already running. |
+| `SeamError.alreadyInitialized` | The SDK is already initialized without prior deactivation. |
+
+**Notes**
+
+- Initializing without a token will attempt to use the previous session if still valid.
+- Thread-safe: can be invoked from any thread.
+- To reinitialize, call `deactivate(deintegrate:)` first.
+
+```swift
+try Seam.initialize(clientSessionToken: "your_token")
+```
+
+---
+
+## Instance Properties
+
+### `credentials`
+
+A published list of current credentials, automatically synchronized in the background.
+
+```swift
+@Published public private(set) var credentials: [SeamCredential]
+```
+
+Subscribe to this property to observe changes and update your UI or business logic. Credentials are automatically kept up-to-date as changes occur. Call `refresh()` to trigger an explicit sync (for example, on pull-to-refresh).
+
+**See also:** [`SeamCredential`](/mobile-sdks/ios/reference/seam-credential), [`refresh()`](#refresh)
+
+---
+
+### `isActive`
+
+A published Boolean indicating whether the SDK is currently active.
+
+```swift
+@Published public private(set) var isActive: Bool
+```
+
+Use this to enable or disable UI or logic depending on whether Seam is active.
+
+---
+
+## Instance Methods
+
+### `activate()`
+
+Starts the SDK to begin credential synchronization and processing.
+
+```swift
+public func activate() async throws
+```
+
+**Throws**
+
+| Error | Description |
+|-------|-------------|
+| `SeamError.initializationRequired` | `initialize(clientSessionToken:)` has not been called. |
+| `SeamError.deactivationInProgress` | A deactivation operation is in progress. |
+
+```swift
+await Seam.shared.activate()
+```
+
+---
+
+### `refresh()`
+
+Requests the latest credential list and updates the published `credentials` property.
+
+```swift
+public func refresh() async throws -> [SeamCredential]
+```
+
+**Returns:** An array of refreshed `SeamCredential` values.
+
+**Throws**
+
+| Error | Description |
+|-------|-------------|
+| `SeamError.initializationRequired` | The SDK has not been initialized. |
+| `SeamError.deactivationInProgress` | A deactivation operation is in progress. |
+
+**Note:** Credentials are automatically synchronized in the background — calling `refresh()` is optional and intended for explicit user-initiated sync (for example, pull-to-refresh UI).
+
+```swift
+Task {
+    do {
+        let updatedCredentials = try await Seam.shared.refresh()
+    } catch {
+        // Handle refresh errors
+    }
+}
+```
+
+---
+
+### `unlock(using:proximity:timeout:)`
+
+Unlocks a door or device using the given credential ID.
+
+```swift
+public func unlock(
+    using credentialId: String,
+    proximity: SeamUnlockProximity? = nil,
+    timeout: TimeInterval = 10.0
+) throws -> AnyPublisher<SeamUnlockEvent, Never>
+```
+
+**Parameters**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `credentialId` | `String` | — | The ID of the credential to use. |
+| `proximity` | `SeamUnlockProximity?` | `nil` | Required proximity for this attempt. If `nil`, uses the credential's default (the first value in `SeamCredential.supportedUnlockProximities`). |
+| `timeout` | `TimeInterval` | `10.0` | Maximum seconds to wait for the unlock operation. |
+
+**Returns:** A Combine publisher emitting [`SeamUnlockEvent`](/mobile-sdks/ios/reference/seam-unlock-event) values as the operation progresses.
+
+**Throws**
+
+| Error | Description |
+|-------|-------------|
+| `SeamError.initializationRequired` | `initialize(clientSessionToken:)` has not been called. |
+| `SeamError.invalidCredentialId` | No credential matches the provided identifier. |
+| `SeamError.integrationNotFound` | The lock provider integration for the credential is not configured. |
+| `SeamError.credentialErrors([SeamCredentialError])` | The credential has one or more associated errors. |
+
+```swift
+// Use the credential's default proximity
+let publisher = try Seam.shared.unlock(using: credential.id)
+
+// Require on-site Bluetooth proximity
+let publisher = try Seam.shared.unlock(using: credential.id, proximity: .nearby)
+
+// Require tap/at-reader proximity
+let publisher = try Seam.shared.unlock(using: credential.id, proximity: .touch)
+```
+
+**See also:** [`SeamUnlockProximity`](/mobile-sdks/ios/reference/seam-unlock-proximity), [`SeamUnlockEvent`](/mobile-sdks/ios/reference/seam-unlock-event), [`SeamCredential.supportedUnlockProximities`](/mobile-sdks/ios/reference/seam-credential)
+
+---
+
+### `deactivate(deintegrate:)`
+
+Stops the SDK and releases resources, optionally removing device association.
+
+```swift
+public func deactivate(deintegrate: Bool = false) async
+```
+
+**Parameters**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `deintegrate` | `Bool` | `false` | If `true`, performs full deintegration and removes device endpoints. If `false`, logs out but retains device endpoints. |
+
+**Notes**
+
+- `initialize()` must have been called first.
+- Safe to call multiple times; idle calls are no-ops.
+
+```swift
+await Seam.shared.deactivate()
+
+// Full deintegration on account removal:
+await Seam.shared.deactivate(deintegrate: true)
+```

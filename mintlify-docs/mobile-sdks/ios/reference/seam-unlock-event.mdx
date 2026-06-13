@@ -1,6 +1,87 @@
 ---
 title: 'SeamUnlockEvent'
-description: 'API reference for the SeamUnlockEvent type in the Seam iOS SDK.'
+description: 'Events emitted by the unlock publisher as an unlock operation progresses from launch through access granted, timeout, or connection failure.'
 ---
 
-Content coming soon.
+> **Interim hand-authored reference.** This page is authored from the SeamSDK public Swift sources. See the [reference overview](/mobile-sdks/ios/reference) for context.
+
+## Overview
+
+`SeamUnlockEvent` is a `public enum` representing the stages of a door unlock operation. The `Seam.unlock(using:proximity:timeout:)` method returns an `AnyPublisher<SeamUnlockEvent, Never>` that emits these events as the operation progresses.
+
+```swift
+public enum SeamUnlockEvent
+```
+
+Use the sequence of events to update your UI in response to connection status, success, timeouts, and errors.
+
+---
+
+## Cases
+
+| Case | Description |
+|------|-------------|
+| `launched` | The unlock operation has started scanning for a lock. |
+| `grantedAccess` | The lock granted access; entry is allowed. |
+| `timedOut` | The unlock operation timed out before completing. |
+| `connectionFailed(debugDescription: String?)` | The unlock operation failed to connect. The associated `debugDescription` is an optional debug message with failure details. |
+
+### `connectionFailed(debugDescription:)`
+
+```swift
+case connectionFailed(debugDescription: String?)
+```
+
+Emitted when the SDK cannot establish a connection to the lock hardware within the operation. The associated `debugDescription` provides optional diagnostic details for debugging — do not display it directly to end users.
+
+---
+
+## Example
+
+### Async/Await
+
+```swift
+do {
+    let credentialId = "some_credential_id"
+    let stream = try Seam.shared.unlock(using: credentialId).values
+    for await event in stream {
+        switch event {
+        case .launched:
+            showSpinner()
+        case .grantedAccess:
+            hideSpinner()
+            showSuccessBanner()
+        case .timedOut:
+            hideSpinner()
+            showTimeoutError()
+        case .connectionFailed(let debug):
+            hideSpinner()
+            showConnectionError(debug: debug)
+        }
+    }
+} catch {
+    // Handle errors thrown synchronously by unlock(using:)
+}
+```
+
+### Combine
+
+```swift
+var cancellable: AnyCancellable?
+
+do {
+    cancellable = try Seam.shared.unlock(using: credential.id)
+        .sink { event in
+            switch event {
+            case .launched:       showSpinner()
+            case .grantedAccess:  showSuccessBanner()
+            case .timedOut:       showTimeoutError()
+            case .connectionFailed: showConnectionError()
+            }
+        }
+} catch {
+    handleUnlockError(error)
+}
+```
+
+**See also:** [`Seam.unlock(using:proximity:timeout:)`](/mobile-sdks/ios/reference/seam#unlock-using-proximity-timeout-), [`SeamUnlockProximity`](/mobile-sdks/ios/reference/seam-unlock-proximity)

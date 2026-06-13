@@ -1,6 +1,172 @@
 ---
-title: 'SeamSdkService'
-description: 'API reference for the SeamSdkService protocol in the Seam iOS SDK.'
+title: 'SeamSDKService'
+description: 'An Objective-C–compatible bridge that wraps the Seam class for use from React Native, Flutter, and other cross-platform runtimes.'
 ---
 
-Content coming soon.
+> **Interim hand-authored reference.** This page is authored from the SeamSDK public Swift sources. See the [reference overview](/mobile-sdks/ios/reference) for context.
+
+## Overview
+
+`SeamSDKService` is a `public final class` that subclasses `NSObject` and carries the Objective-C name `SeamSDKService`. It wraps the [`Seam`](/mobile-sdks/ios/reference/seam) singleton with `@objc`-annotated properties and methods so that cross-platform frameworks (React Native, Flutter, Cordova) can call them from JavaScript or Dart without requiring Swift-native async/await or Combine.
+
+```swift
+@objc(SeamSDKService)
+public final class SeamSDKService: NSObject
+```
+
+**Note:** If you are writing a native Swift or SwiftUI app, use [`Seam`](/mobile-sdks/ios/reference/seam) directly. `SeamSDKService` is intended for bridge scenarios where Objective-C runtime interop is required.
+
+---
+
+## Shared Instance
+
+### `shared`
+
+The shared singleton instance.
+
+```swift
+@objc(shared)
+public static let shared: SeamSDKService
+```
+
+---
+
+## Type Methods
+
+### `initialize(clientSessionToken:)`
+
+Initializes the Seam SDK with the provided token. Returns `0` on success and `1` on failure (ObjC-friendly error signaling).
+
+```swift
+@objc(initializeWithClientSessionToken:)
+public class func initialize(clientSessionToken: NSString) -> NSNumber
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `clientSessionToken` | `NSString` | A valid client session token. |
+
+**Returns:** `NSNumber(0)` on success, `NSNumber(1)` if initialization throws.
+
+---
+
+## Instance Properties
+
+### `isActive`
+
+Boxed Boolean indicating whether the Seam SDK is currently active.
+
+```swift
+@objc public var isActive: NSNumber { get }
+```
+
+Reflects `Seam.shared.isActive` as an `NSNumber` for Objective-C callers.
+
+---
+
+### `credentials`
+
+The current credentials as an `NSArray` of `NSDictionary` objects.
+
+```swift
+@objc public var credentials: NSArray { get }
+```
+
+Each dictionary contains the following keys:
+
+| Key | Type | Description |
+|-----|------|-------------|
+| `id` | `String` | Credential identifier. |
+| `name` | `String` | Display name. |
+| `location` | `String` | Associated location. |
+| `provider` | `String?` | Third-party provider name, if any. |
+| `expiryEpoch` | `TimeInterval?` | Expiry as Unix timestamp, if set. |
+| `cardNumber` | `String?` | Card number, if any. |
+| `code` | `String?` | Access code, if any. |
+| `errors` | `[NSDictionary]` | Encoded credential errors (see [`SeamCredentialError`](/mobile-sdks/ios/reference/seam-credential-error)). |
+
+---
+
+## Instance Methods
+
+### `isActivePublisher()`
+
+Returns a Combine publisher for the `isActive` state as an `AnyObject`.
+
+```swift
+@objc(isActivePublisher)
+public func isActivePublisher() -> AnyObject
+```
+
+**Returns:** `AnyPublisher<Bool, Never>` erased to `AnyObject` for ObjC bridging.
+
+---
+
+### `credentialsPublisher()`
+
+Returns a Combine publisher for the credentials array as an `AnyObject`.
+
+```swift
+@objc(credentialsPublisher)
+public func credentialsPublisher() -> AnyObject
+```
+
+**Returns:** `AnyPublisher<[NSDictionary], Never>` erased to `AnyObject`.
+
+---
+
+### `activate(_:)`
+
+Activates the SDK asynchronously, calling the completion handler when done.
+
+```swift
+@objc(activateWithCompletion:)
+public func activate(_ completion: @escaping (NSNumber, NSString?) -> Void)
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `completion` | `(NSNumber, NSString?) -> Void` | Called with `(0, nil)` on success or `(1, nil)` on failure. |
+
+---
+
+### `refresh(_:)`
+
+Refreshes credentials asynchronously and calls the completion handler with the result.
+
+```swift
+@objc(refreshWithCompletion:)
+public func refresh(_ completion: @escaping (NSNumber, NSArray?) -> Void)
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `completion` | `(NSNumber, NSArray?) -> Void` | Called with `(0, credentials)` on success or `(1, nil)` on failure. |
+
+---
+
+### `unlock(credentialId:timeout:)`
+
+Unlocks a door using the given credential ID and returns an event publisher.
+
+```swift
+@objc(unlockWithCredentialId:timeout:)
+public func unlock(credentialId: NSString, timeout: NSNumber) -> AnyObject
+```
+
+**Parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `credentialId` | `NSString` | The credential ID to unlock with. |
+| `timeout` | `NSNumber` | Maximum seconds to wait. |
+
+**Returns:** `AnyPublisher<NSDictionary, Never>` erased to `AnyObject`. Each dictionary represents a [`SeamUnlockEvent`](/mobile-sdks/ios/reference/seam-unlock-event) with an `"event"` key (`"launched"`, `"grantedAccess"`, `"timedOut"`, `"connectionFailed"`) and, for `"connectionFailed"`, an optional `"debug"` key.
+
+If the unlock call throws (for example, invalid credential ID), an immediately-completing empty publisher is returned.
