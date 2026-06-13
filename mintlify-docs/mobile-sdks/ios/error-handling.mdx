@@ -99,8 +99,8 @@ unlockPublisher
 
 ```swift
 do {
-    let events = try await Seam.shared.unlock(using: credential.id)
-    for await event in events {
+    let events = try Seam.shared.unlock(using: credential.id)
+    for await event in events.values {
         // Handle unlock events
     }
 } catch let error as SeamError {

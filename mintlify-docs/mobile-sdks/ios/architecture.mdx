@@ -44,7 +44,7 @@ The following sequence shows what happens from initialization through a successf
     The lock authorizes the credential and responds.
   </Step>
   <Step title="Event Stream">
-    The SDK emits `SeamUnlockEvent` values: `launched`, `connected`, `grantedAccess`, and others.
+    The SDK emits `SeamUnlockEvent` values: `launched`, `grantedAccess`, and others.
   </Step>
   <Step title="Completion">
     Your app handles the events and updates its UI accordingly.
@@ -59,7 +59,7 @@ The following sequence shows what happens from initialization through a successf
 |------|-------------|
 | **Client Session Token (CST)** | A short-lived token used to authenticate SDK API calls. Obtained from your server via the Seam API. |
 | **SeamCredential** | Represents a single access credential with `id`, `name`, `location`, `expiry`, and `metadata`. Immutable snapshot; observe the `credentials` published property for live updates. |
-| **SeamUnlockEvent** | Enum describing each stage of an unlock operation (`launched`, `connected`, `grantedAccess`, `timedOut`, `connectionFailed`). |
+| **SeamUnlockEvent** | Enum describing each stage of an unlock operation (`launched`, `grantedAccess`, `timedOut`, `connectionFailed`). |
 | **SeamError** | Thrown for SDK setup and API-level failures. See [Error Handling](/mobile-sdks/ios/error-handling). |
 | **SeamCredentialError** | Returned when a specific credential has an issue (expired, unsupported device, user interaction required). |
 
