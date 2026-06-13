@@ -1,0 +1,631 @@
+---
+title: 'Get Started with the Hotek Access Control System'
+description: 'Learn how to connect and control your Hotek access control system with the Seam API.'
+---
+
+## Overview
+
+Seam provides a universal API to connect and control many brands of access control systems. This guide provides a rapid introduction to connecting and controlling your [Hotek](https://www.seam.co/manufacturers/hotek) access control system using the Seam API.
+
+Hotek systems communicate over TCP via a [Seam Bridge](/capability-guides/seam-bridge) installed on the property network.
+
+To learn more about other access control systems supported by Seam, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
+
+---
+
+## 1 — Install Seam SDK
+
+Seam provides client libraries for many languages, such as JavaScript, Python, Ruby, PHP, and others, as well as a Postman collection and [OpenAPI](https://connect.getseam.com/openapi.json) spec.
+
+- JavaScript / TypeScript ([npm](https://www.npmjs.com/package/seam), [GitHub](https://github.com/seamapi/javascript))
+- Python ([pip](https://pypi.org/project/seam/), [GitHub](https://github.com/seamapi/python))
+- Ruby Gem ([rubygem](https://rubygems.org/gems/seam), [GitHub](https://github.com/seamapi/ruby))
+- PHP ([packagist](https://packagist.org/packages/seamapi/seam), [GitHub](https://github.com/seamapi/php))
+- C# ([nuget](https://www.nuget.org/packages/Seam), [GitHub](https://github.com/seamapi/csharp))
+- Java ([Maven](https://central.sonatype.com/artifact/co.seam/java), [GitHub](https://github.com/seamapi/java))
+
+<CodeGroup>
+
+```bash JavaScript
+npm i seam
+```
+
+```bash Python
+pip install seam
+# For some development environments, use pip3 in this command instead of pip.
+```
+
+```bash Ruby
+bundle add seam
+```
+
+```bash PHP
+composer require seamapi/seam
+```
+
+```bash C#
+Install using nuget: https://www.nuget.org/packages/Seam
+```
+
+```bash Java
+// Add to your pom.xml or build.gradle — see Maven Central for details.
+```
+
+```bash cURL (bash)
+# cURL is already installed on most systems. No additional installation needed.
+# Export your API key as an environment variable:
+export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
+
+</CodeGroup>
+
+Once installed, [sign up for Seam](https://console.seam.co/) to get your API key, and export it as an environment variable:
+
+```bash
+export SEAM_API_KEY=seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw
+```
+
+<Info>
+  This guide uses a Sandbox Workspace. Only virtual devices can be connected. If
+  you need to connect a real Hotek system, use a non-sandbox workspace and API key.
+</Info>
+
+---
+
+## 2 — Link Hotek System with Seam
+
+To control your Hotek system via the Seam API, you must first authorize your Seam workspace against your Hotek installation. To do so, Seam provides [Connect Webviews](/core-concepts/connect-webviews): pre-built UX flows that walk you through authorizing your application to control your Hotek system.
+
+#### Request a Connect Webview
+
+<CodeGroup>
+
+```javascript JavaScript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+const connectWebview = await seam.connectWebviews.create({
+  accepted_providers: ["hotek"],
+});
+
+console.log(connectWebview.login_successful); // false
+
+// Send the webview URL to your user
+console.log(connectWebview.url);
+```
+
+```python Python
+from seam import Seam
+
+seam = Seam()
+
+webview = seam.connect_webviews.create(accepted_providers=["hotek"])
+
+assert webview.login_successful is False
+
+# Send the webview URL to your user
+print(webview.url)
+```
+
+```ruby Ruby
+require "seam"
+
+seam = Seam.new(api_key: "MY_API_KEY")
+
+webview = seam.connect_webviews.create(
+  accepted_providers: ["hotek"]
+)
+
+puts webview.login_successful # false
+
+# Send the webview URL to your user
+puts webview.url
+```
+
+```php PHP
+<?php
+use Seam\SeamClient;
+
+$seam = new SeamClient("YOUR_API_KEY");
+
+$webview = $seam->connect_webviews->create(
+  accepted_providers: ["hotek"]
+);
+
+echo $webview->login_successful; // false
+
+// Send the webview URL to your user
+echo $webview->url;
+```
+
+```csharp C#
+using Seam.Client;
+
+var seam = new SeamClient(apiToken: "YOUR_API_KEY");
+
+var webview = seam.ConnectWebviews.Create(
+  acceptedProviders: new List<string> { "hotek" }
+);
+
+Console.WriteLine(webview.LoginSuccessful); // false
+
+// Send the webview URL to your user
+Console.WriteLine(webview.Url);
+```
+
+```java Java
+import co.seam.Seam;
+import co.seam.api.types.ConnectWebview;
+
+Seam seam = Seam.builder().apiKey("YOUR_API_KEY").build();
+
+ConnectWebview webview = seam.connectWebviews().create(
+  ConnectWebviewsCreateRequest.builder()
+    .acceptedProviders(List.of("hotek"))
+    .build()
+);
+
+System.out.println(webview.getLoginSuccessful()); // false
+
+// Send the webview URL to your user
+System.out.println(webview.getUrl());
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "accepted_providers": ["hotek"]
+  }'
+```
+
+</CodeGroup>
+
+#### Authorize Your Workspace
+
+Navigate to the URL returned by the Webview object. Since you are using a sandbox workspace, complete the login flow by entering the Hotek [sandbox test credentials](/device-and-system-integration-guides/hotek-access-control-system/sandbox-hotek-access-control-system):
+
+1. **Bridge connection** — the pairing token is prefilled in sandbox mode
+2. **Hotek Dashboard Credentials:**
+   - **Site Name:** Any string (e.g., "My Hotek Site")
+   - **TCP Port:** Any port number
+   - **Hotek SMART Server IP Address:** prefilled
+
+Confirm the Connect Webview was successful by querying its status:
+
+<CodeGroup>
+
+```javascript JavaScript
+const updatedWebview = await seam.connectWebviews.get(
+  connectWebview.connect_webview_id
+);
+
+console.log(updatedWebview.login_successful); // true
+```
+
+```python Python
+updated_webview = seam.connect_webviews.get(
+    connect_webview_id=webview.connect_webview_id
+)
+
+assert updated_webview.login_successful  # true
+```
+
+```ruby Ruby
+updated_webview = seam.connect_webviews.get(
+  connect_webview_id: webview.connect_webview_id
+)
+
+puts updated_webview.login_successful # true
+```
+
+```php PHP
+<?php
+$updated_webview = $seam->connect_webviews->get(
+  connect_webview_id: $webview->connect_webview_id
+);
+
+echo $updated_webview->login_successful; // true
+```
+
+```csharp C#
+var updatedWebview = seam.ConnectWebviews.Get(
+  connectWebviewId: webview.ConnectWebviewId
+);
+
+Console.WriteLine(updatedWebview.LoginSuccessful); // true
+```
+
+```java Java
+ConnectWebview updatedWebview = seam.connectWebviews().get(
+  ConnectWebviewsGetRequest.builder()
+    .connectWebviewId(webview.getConnectWebviewId())
+    .build()
+);
+
+System.out.println(updatedWebview.getLoginSuccessful()); // true
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/connect_webviews/get' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"connect_webview_id\": \"${CONNECT_WEBVIEW_ID}\"
+  }"
+```
+
+</CodeGroup>
+
+---
+
+## 3 — Retrieve the ACS System
+
+After the Hotek system is linked with Seam, you can retrieve the ACS system. This represents the connected Hotek SMART Server installation.
+
+<CodeGroup>
+
+```javascript JavaScript
+const systems = await seam.acs.systems.list();
+
+const hotekSystem = systems[0];
+
+console.log(hotekSystem);
+/*
+{
+  acs_system_id: '...',
+  name: 'My Hotek Site',
+  external_type: 'hotek_site',
+  connected_account_ids: ['...'],
+  ...
+}
+*/
+```
+
+```python Python
+systems = seam.acs.systems.list()
+
+hotek_system = systems[0]
+
+print(hotek_system)
+# AcsSystem(
+#   acs_system_id='...',
+#   name='My Hotek Site',
+#   external_type='hotek_site',
+#   ...
+# )
+```
+
+```ruby Ruby
+systems = seam.acs.systems.list
+
+hotek_system = systems.first
+
+puts hotek_system
+```
+
+```php PHP
+<?php
+$systems = $seam->acs->systems->list();
+
+$hotek_system = $systems[0];
+
+echo $hotek_system->name; // My Hotek Site
+```
+
+```csharp C#
+var systems = seam.Acs.Systems.List();
+
+var hotekSystem = systems[0];
+
+Console.WriteLine(hotekSystem.Name); // My Hotek Site
+```
+
+```java Java
+var systems = seam.acs().systems().list();
+
+var hotekSystem = systems.get(0);
+
+System.out.println(hotekSystem.getName()); // My Hotek Site
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/systems/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+```
+
+</CodeGroup>
+
+---
+
+## 4 — List Entrances
+
+Entrances represent the doors managed by the Hotek system. In the sandbox, this includes guest rooms (101-104, 201-204).
+
+<CodeGroup>
+
+```javascript JavaScript
+const entrances = await seam.acs.entrances.list({
+  acs_system_id: hotekSystem.acs_system_id,
+});
+
+console.log(entrances);
+/*
+[
+  {
+    acs_entrance_id: '...',
+    display_name: 'Room 101',
+    hotek_metadata: {
+      room_number: '101',
+      door_type: 'guest'
+    },
+    ...
+  },
+  ...
+]
+*/
+```
+
+```python Python
+entrances = seam.acs.entrances.list(
+    acs_system_id=hotek_system.acs_system_id
+)
+
+print(entrances)
+```
+
+```ruby Ruby
+entrances = seam.acs.entrances.list(
+  acs_system_id: hotek_system.acs_system_id
+)
+
+puts entrances
+```
+
+```php PHP
+<?php
+$entrances = $seam->acs->entrances->list(
+  acs_system_id: $hotek_system->acs_system_id
+);
+
+print_r($entrances);
+```
+
+```csharp C#
+var entrances = seam.Acs.Entrances.List(
+  acsSystemId: hotekSystem.AcsSystemId
+);
+
+foreach (var entrance in entrances)
+{
+  Console.WriteLine(entrance.DisplayName);
+}
+```
+
+```java Java
+var entrances = seam.acs().entrances().list(
+  AcsEntrancesListRequest.builder()
+    .acsSystemId(hotekSystem.getAcsSystemId())
+    .build()
+);
+
+System.out.println(entrances);
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/entrances/list' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{\"acs_system_id\": \"${ACS_SYSTEM_ID}\"}"
+```
+
+</CodeGroup>
+
+---
+
+## 5 — Create a User and Issue a Credential
+
+To grant access to a guest, create an ACS user and then issue a credential (key card) for the entrances they should access.
+
+#### Create an ACS User
+
+<CodeGroup>
+
+```javascript JavaScript
+const user = await seam.acs.users.create({
+  acs_system_id: hotekSystem.acs_system_id,
+  full_name: "Jane Guest",
+});
+
+console.log(user.acs_user_id);
+```
+
+```python Python
+user = seam.acs.users.create(
+    acs_system_id=hotek_system.acs_system_id,
+    full_name="Jane Guest"
+)
+
+print(user.acs_user_id)
+```
+
+```ruby Ruby
+user = seam.acs.users.create(
+  acs_system_id: hotek_system.acs_system_id,
+  full_name: "Jane Guest"
+)
+
+puts user.acs_user_id
+```
+
+```php PHP
+<?php
+$user = $seam->acs->users->create(
+  acs_system_id: $hotek_system->acs_system_id,
+  full_name: "Jane Guest"
+);
+
+echo $user->acs_user_id;
+```
+
+```csharp C#
+var user = seam.Acs.Users.Create(
+  acsSystemId: hotekSystem.AcsSystemId,
+  fullName: "Jane Guest"
+);
+
+Console.WriteLine(user.AcsUserId);
+```
+
+```java Java
+var user = seam.acs().users().create(
+  AcsUsersCreateRequest.builder()
+    .acsSystemId(hotekSystem.getAcsSystemId())
+    .fullName("Jane Guest")
+    .build()
+);
+
+System.out.println(user.getAcsUserId());
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/users/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"acs_system_id\": \"${ACS_SYSTEM_ID}\",
+    \"full_name\": \"Jane Guest\"
+  }"
+```
+
+</CodeGroup>
+
+#### Create a Credential for the User
+
+<CodeGroup>
+
+```javascript JavaScript
+const credential = await seam.acs.credentials.create({
+  acs_user_id: user.acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [
+    entrances.find((e) => e.display_name === "Room 101").acs_entrance_id,
+  ],
+});
+
+console.log(credential);
+/*
+{
+  acs_credential_id: '...',
+  access_method: 'card',
+  ...
+}
+*/
+```
+
+```python Python
+room_101 = next(e for e in entrances if e.display_name == "Room 101")
+
+credential = seam.acs.credentials.create(
+    acs_user_id=user.acs_user_id,
+    access_method="card",
+    allowed_acs_entrance_ids=[room_101.acs_entrance_id]
+)
+
+print(credential)
+```
+
+```ruby Ruby
+room_101 = entrances.find { |e| e.display_name == "Room 101" }
+
+credential = seam.acs.credentials.create(
+  acs_user_id: user.acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [room_101.acs_entrance_id]
+)
+
+puts credential
+```
+
+```php PHP
+<?php
+$room_101 = array_values(array_filter(
+  $entrances,
+  fn($e) => $e->display_name === "Room 101"
+))[0];
+
+$credential = $seam->acs->credentials->create(
+  acs_user_id: $user->acs_user_id,
+  access_method: "card",
+  allowed_acs_entrance_ids: [$room_101->acs_entrance_id]
+);
+
+print_r($credential);
+```
+
+```csharp C#
+var room101 = entrances.First(e => e.DisplayName == "Room 101");
+
+var credential = seam.Acs.Credentials.Create(
+  acsUserId: user.AcsUserId,
+  accessMethod: "card",
+  allowedAcsEntranceIds: new List<string> { room101.AcsEntranceId }
+);
+
+Console.WriteLine(credential.AcsCredentialId);
+```
+
+```java Java
+var room101 = entrances.stream()
+    .filter(e -> "Room 101".equals(e.getDisplayName()))
+    .findFirst()
+    .orElseThrow();
+
+var credential = seam.acs().credentials().create(
+  AcsCredentialsCreateRequest.builder()
+    .acsUserId(user.getAcsUserId())
+    .accessMethod("card")
+    .allowedAcsEntranceIds(List.of(room101.getAcsEntranceId()))
+    .build()
+);
+
+System.out.println(credential.getAcsCredentialId());
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/acs/credentials/create' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d "{
+    \"acs_user_id\": \"${ACS_USER_ID}\",
+    \"access_method\": \"card\",
+    \"allowed_acs_entrance_ids\": [\"${ACS_ENTRANCE_ID}\"]
+  }"
+```
+
+</CodeGroup>
+
+---
+
+## Next Steps
+
+Now that you've completed this guide, you can try connecting a real Hotek system. To do so, make sure to switch to a non-sandbox workspace and API key, and ensure you have a [Seam Bridge](/capability-guides/seam-bridge) installed on the property network.
+
+In addition, if you'd like to explore other aspects of Seam, here is a list of helpful resources:
+
+- [Access Grants](/use-cases/granting-access) — the recommended way to manage access across providers
+- [Plastic Card Encoding](/api/acs/encoders/encode_credential) — encode physical key cards
+- [Receiving webhooks](/developer-tools/webhooks) for [device events](/api/events/list)
+- [Core Concepts](/core-concepts/overview)
+
+If you have any questions or want to report an issue, email us at [support@seam.co](mailto:support@seam.co).

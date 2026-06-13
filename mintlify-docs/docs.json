@@ -955,6 +955,7 @@
                 "group": "Omnitec Locks",
                 "pages": [
                   "device-and-system-integration-guides/omnitec-locks/index",
+                  "device-and-system-integration-guides/omnitec-locks/omnitec-setup-guide",
                   "device-and-system-integration-guides/omnitec-locks/get-started-with-omnitec-locks",
                   "device-and-system-integration-guides/omnitec-locks/sandbox-omnitec-locks"
                 ]
@@ -1129,6 +1130,8 @@
                 "group": "Hotek Access Control System",
                 "pages": [
                   "device-and-system-integration-guides/hotek-access-control-system/index",
+                  "device-and-system-integration-guides/hotek-access-control-system/hotek-setup-guide",
+                  "device-and-system-integration-guides/hotek-access-control-system/get-started-with-hotek-access-control-system",
                   "device-and-system-integration-guides/hotek-access-control-system/sandbox-hotek-access-control-system"
                 ]
               },
