@@ -1,7 +1,140 @@
 ---
 title: 'UI Components'
-description: 'Pre-built UI components for the Seam iOS SDK to accelerate your mobile app development.'
-sidebarTitle: 'Overview'
+description: 'SeamComponents is a themeable SwiftUI library for mobile access. Add fully-featured key flows to your app with two lines of code, or compose custom experiences from reusable building blocks.'
+sidebarTitle: 'Getting Started'
 ---
 
-Content coming soon.
+## What is SeamComponents?
+
+SeamComponents is a themeable SwiftUI component library designed to work hand-in-hand with the [Seam iOS SDK](/mobile-sdks/ios/installation). It provides:
+
+- **An all-in-one view** — `SeamAccessView` handles key retrieval, credential display, unlocking, error handling, and user interactions with two lines of code.
+- **Composable building blocks** — `SeamCredentialsView`, `SeamKeyCardView`, and `SeamUnlockCardView` let you build custom experiences that fit your app's design.
+- **Flexible theming** — Override colors, fonts, and card appearance globally or per-subtree using the `SeamTheme` environment system.
+- **Protocol-based service** — `SeamServiceProtocol` makes it easy to inject live, mock, or preview implementations without changing your UI code.
+- **Accessibility first** — All components are built with accessibility as a first-class feature.
+
+SeamComponents is ideal for hotels, multi-family properties, or any app integrating digital access.
+
+---
+
+## Prerequisites
+
+- **iOS 16+** (Swift 5.5+)
+- Add to your `Info.plist`:
+  - `NSBluetoothAlwaysUsageDescription`
+- **Optional:** Request the `com.apple.developer.passkit.pass-presentation-suppression` entitlement to prevent Apple Wallet from appearing during BLE/NFC scans.
+
+---
+
+## Getting Started
+
+<Steps>
+  <Step title="Add SeamComponents to your project">
+    Add SeamComponents using Swift Package Manager:
+
+    1. Open your Xcode project.
+    2. Go to **File > Add Packages...**
+    3. Enter the package URL:
+       ```
+       https://github.com/seamapi/seam-components-swift
+       ```
+    4. Choose the latest version and add it to your app target.
+  </Step>
+
+  <Step title="Initialize the Seam SDK">
+    Before using any SeamComponents UI, initialize and activate the Seam SDK with your client session token:
+
+    ```swift
+    import SeamSDK
+
+    do {
+        try Seam.initialize(clientSessionToken: "YOUR_TOKEN")
+        Task { try await Seam.shared.activate() }
+    } catch {
+        // Handle initialization/activation errors (e.g., show an alert)
+    }
+    ```
+
+    Call `initialize` after sign-in (or app launch), then `activate()` to begin syncing credentials.
+
+    See [Quickstart](/mobile-sdks/ios/quickstart) for full initialization details.
+  </Step>
+
+  <Step title="Add the all-in-one access view">
+    For the easiest integration, add `SeamAccessView` to your SwiftUI view hierarchy:
+
+    ```swift
+    import SeamComponents
+
+    var body: some View {
+        SeamAccessView()
+    }
+    ```
+
+    That's it. `SeamAccessView` handles key retrieval, credential display, unlocking, error handling, and user interactions automatically.
+  </Step>
+</Steps>
+
+---
+
+## Theming and Appearance
+
+SeamComponents supports full white-labeling via the `SeamTheme` environment system. Override colors, fonts, and card appearance by injecting a custom theme:
+
+```swift
+import SeamComponents
+
+let customTheme = SeamTheme.default.with(
+    keyCard: .default.with(
+        backgroundGradient: [Color.white, Color.blue],
+        accentColor: .blue,
+        cornerRadius: 16
+    ),
+    fonts: .default.with(
+        title: .system(size: 22, weight: .bold)
+    )
+)
+
+var body: some View {
+    SeamAccessView()
+        .environment(\.seamTheme, customTheme)
+}
+```
+
+<Note>
+  If you do not inject a theme, SeamComponents use `SeamTheme.default`, which
+  matches the native iOS style.
+</Note>
+
+The `SeamTheme` API uses a builder pattern with nested `.with(...)` calls. Override only the parts you need — everything else falls back to the default. Theming can be applied globally at your app root or scoped to any view subtree.
+
+See [Customizing Appearance](/mobile-sdks/ios/ui-components/customizing-appearance) for details and advanced examples.
+
+---
+
+## Custom Integration
+
+If you need more control over layout, navigation, or data flow, compose your own UI using SeamComponents building blocks:
+
+- **`SeamCredentialsView`** — Coordinator view that manages selection, pull-to-refresh, and empty state handling.
+- **`SeamCredentialGrid` / `SeamCredentialTable`** — Pure, stateless subviews for displaying credentials in grid or list format.
+- **`SeamKeyCardView`** — Displays an individual credential as a visually rich key card with status and error overlays.
+- **`SeamUnlockCardView`** — Manages all unlock functionality for a selected credential, including progress and error feedback.
+
+Inject a live `SeamService` or a mock conforming to `SeamServiceProtocol` for previews and tests.
+
+See [Custom Integration](/mobile-sdks/ios/ui-components/custom-integration) for code samples and advanced patterns.
+
+---
+
+## What's Next
+
+<CardGroup cols={2}>
+  <Card title="Customizing Appearance" href="/mobile-sdks/ios/ui-components/customizing-appearance">
+    Override colors, fonts, and card styles using the SeamTheme system.
+  </Card>
+  <Card title="Custom Integration" href="/mobile-sdks/ios/ui-components/custom-integration">
+    Compose building blocks and inject mock services for full UI control.
+  </Card>
+</CardGroup>

@@ -1,6 +1,143 @@
 ---
 title: 'Error Handling'
-description: 'Learn how to handle errors and exceptions in the Seam iOS SDK.'
+description: 'Interpret and handle errors thrown by the Seam iOS SDK, including API setup errors (SeamError) and credential-specific errors (SeamCredentialError), using Combine or async/await.'
 ---
 
-Content coming soon.
+## Overview
+
+Errors in SeamSDK fall into two categories:
+
+- **SeamError** — Thrown for SDK initialization, configuration, or API-level failures (for example, invalid token or no network).
+- **SeamCredentialError** — Returned when a specific credential has an issue (for example, expired, unsupported device, or user action required).
+
+Handling both types ensures your app can provide resilient, user-friendly access flows.
+
+<Note>
+  SeamComponents includes a complete reference implementation that presents UI and
+  messaging for all `SeamError` and `SeamCredentialError` cases. You can use it
+  as a guide or drop it in directly. See [UI Components](/mobile-sdks/ios/ui-components).
+</Note>
+
+---
+
+## SeamError Cases
+
+| Case | Description |
+|------|-------------|
+| `.internetConnectionRequired` | A network connection is required to perform this operation. |
+| `.initializationRequired` | The SDK is not initialized; call `initialize(clientSessionToken:)` first. |
+| `.invalidClientSessionToken` | The provided session token is malformed or invalid. |
+| `.deactivationInProgress` | A deactivation operation is already running; retry later. |
+| `.alreadyInitialized` | The SDK is already initialized; call `deactivate(deintegrate:)` before reinitializing. |
+| `.invalidCredentialId` | No credential matches the specified identifier. |
+| `.integrationNotFound` | No credential matching the specified credential was found. This usually indicates that the provider integration was not included when installing SeamSDK via your package manager. |
+| `.credentialErrors(errors)` | One or more `SeamCredentialError` occurred for this credential. |
+
+---
+
+## SeamCredentialError Cases
+
+| Case | Description |
+|------|-------------|
+| `.awaitingLocalCredential` | Waiting for a local credential to become available. |
+| `.expired` | The credential has expired and is no longer valid. |
+| `.userInteractionRequired(action)` | The user must perform a specific action (for example, enable Bluetooth). |
+| `.contactSeamSupport` | Configuration error requiring developer attention. |
+| `.unsupportedDevice` | The current device is not supported. |
+| `.unknown` | An unclassified or unexpected error occurred. |
+
+---
+
+## Resolving Required User Interactions
+
+When you encounter `.userInteractionRequired(let action)`, inspect the `action` to guide the user:
+
+| Action | Resolution |
+|--------|-----------|
+| `.completeOtpAuthorization(otpUrl: URL)` | Open the provided URL to complete OTP authorization. |
+| `.enableInternet` | Prompt the user to enable internet connectivity or switch to a network. |
+| `.enableBluetooth` | Prompt the user to enable Bluetooth in Settings or Control Center. |
+| `.grantBluetoothPermission` | Present a permissions request dialog to grant Bluetooth access. |
+| `.appRestartRequired` | Ask the user to restart the app to recover from this error. |
+
+**Example:**
+
+```swift
+if case .userInteractionRequired(let action) = error {
+    switch action {
+    case .enableBluetooth:
+        showBluetoothEnableAlert()
+    case .completeOtpAuthorization:
+        navigateToOtpScreen()
+    default:
+        break
+    }
+}
+```
+
+---
+
+## Handling Errors in Code
+
+### Using Combine
+
+```swift
+let unlockPublisher = try Seam.shared.unlock(using: credential.id)
+
+unlockPublisher
+    .sink(
+        receiveCompletion: { _ in
+            print("Unlock finished")
+        },
+        receiveValue: { event in
+            // Handle unlock events
+        }
+    )
+```
+
+### Using async/await
+
+```swift
+do {
+    let events = try await Seam.shared.unlock(using: credential.id)
+    for await event in events {
+        // Handle unlock events
+    }
+} catch let error as SeamError {
+    // Handle SDK-level errors
+}
+```
+
+### Generic Helper Function
+
+```swift
+func handleError(_ error: Error) {
+    switch error {
+    case let sdkError as SeamError:
+        // Map to user-friendly messages
+        break
+    case let credError as SeamCredentialError:
+        // Prompt user based on error type
+        break
+    default:
+        // Generic fallback
+        break
+    }
+}
+```
+
+---
+
+## Best Practices
+
+- **Map errors to UI states** — Show loading, success, or error screens based on the error type.
+- **Provide actionable feedback** — For credential expiration, guide the user to renew or reissue their credential.
+- **Check credentials before unlocking** — If `unlock(using:)` would throw `.credentialErrors([...])`, present the top error to the user and wait until it is resolved before attempting the unlock.
+
+---
+
+## See Also
+
+- [Quickstart](/mobile-sdks/ios/quickstart) — How to initialize SeamSDK and perform your first unlock.
+- [Architecture](/mobile-sdks/ios/architecture) — How SeamSDK integrates with your app, cloud services, and hardware.
+- [UI Components](/mobile-sdks/ios/ui-components) — SeamComponents handles error presentation automatically.

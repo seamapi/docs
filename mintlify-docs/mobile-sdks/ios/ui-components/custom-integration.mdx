@@ -1,6 +1,221 @@
 ---
 title: 'Custom Integration'
-description: 'Build fully custom UI experiences using the Seam iOS SDK components.'
+description: 'Build fully custom UI experiences using SeamComponents building blocks, dependency injection, and the SeamServiceProtocol.'
 ---
 
-Content coming soon.
+While `SeamAccessView` is the fastest way to integrate mobile keys, many apps need more control over layout, navigation, or data flow. SeamComponents supports full customization through composable building blocks and protocol-based dependency injection.
+
+---
+
+## Building Blocks
+
+SeamComponents exports a set of reusable, domain-specific SwiftUI views:
+
+| Component | Description |
+|-----------|-------------|
+| **`SeamAccessView`** | All-in-one mobile access experience: credential fetching, display, unlocking, and error handling. |
+| **`SeamCredentialsView`** | Coordinator/container view that manages sheet presentation, selection, pull-to-refresh, and empty state handling. Delegates unlocking to `SeamUnlockCardView`. |
+| **`SeamCredentialGrid`** | Pure, stateless subview for displaying credentials in a grid layout. |
+| **`SeamCredentialTable`** | Pure, stateless subview for displaying credentials in a list/table format. |
+| **`SeamKeyCardView`** | Displays an individual credential as a visually rich key card with status and error overlays. Supports custom `SeamAccessCredentialErrorStyle`. |
+| **`SeamUnlockCardView`** | Manages all unlock functionality for a selected credential, including progress and error feedback. |
+
+Each component works with a single service wrapper conforming to `SeamServiceProtocol`, so you can inject live or mock implementations as needed.
+
+---
+
+## Example: Custom Key List and Unlock Flow
+
+Create and own a `SeamCredentialsViewModel`, then pass it to the credential views. The coordinator views handle selection, navigation, refresh, and empty state automatically.
+
+```swift
+import SeamComponents
+
+struct CustomKeysScreen: View {
+    @StateObject var viewModel = SeamCredentialsViewModel(seam: SeamService())
+
+    var body: some View {
+        VStack {
+            // Coordinator view with grid layout: handles selection, refresh,
+            // empty state UI, and unlock sheet presentation automatically.
+            SeamCredentialsGridView(viewModel: viewModel)
+
+            // Or use table layout:
+            // SeamCredentialsTableView(viewModel: viewModel)
+
+            // If you want full control over selection and navigation,
+            // compose with the pure subviews instead:
+            // SeamCredentialGrid(
+            //     credentials: viewModel.credentials,
+            //     selectedId: viewModel.selectedCredentialId,
+            //     onSelect: viewModel.select
+            // )
+
+            // When using pure subviews, manage empty states and unlock
+            // sheet presentation yourself.
+            if let selectedId = viewModel.selectedCredentialId {
+                SeamUnlockCardView(
+                    viewModel: SeamUnlockCardViewModel(
+                        credentialId: selectedId,
+                        service: viewModel.service
+                    )
+                )
+            }
+        }
+    }
+}
+```
+
+<Tip>
+  Use the coordinator views (`SeamCredentialsGridView`, `SeamCredentialsTableView`) for
+  a full-featured experience — empty states, selection, refresh, and unlock presentation
+  are all handled for you.
+</Tip>
+
+---
+
+## Dependency Injection and Mocks
+
+SeamComponents uses a single wrapper `ObservableObject` API:
+
+| Type | Role |
+|------|------|
+| **`SeamServiceProtocol`** | Protocol that your UI and view models depend on. |
+| **`SeamService`** | Production implementation that mirrors `Seam` state and forwards commands. |
+| **Mock conformers** | Custom classes (e.g., `MockSeamService`) that you fully control for tests and previews. |
+
+### Live Usage
+
+```swift
+let service: SeamServiceProtocol = SeamService()
+let vm = SeamCredentialsViewModel(seam: service)
+```
+
+### Mock Usage (Tests and Previews)
+
+```swift
+final class MockSeamService: SeamServiceProtocol {
+    @Published private(set) var credentials: [SeamAccessCredential] = []
+    @Published private(set) var isActive: Bool = false
+
+    var isActivePublisher: AnyPublisher<Bool, Never> { $isActive.eraseToAnyPublisher() }
+    var credentialsPublisher: AnyPublisher<[SeamAccessCredential], Never> { $credentials.eraseToAnyPublisher() }
+
+    func initialize(clientSessionToken: String?) throws {}
+    func activate() async throws { isActive = true }
+    @discardableResult
+    func refresh() async throws -> [SeamAccessCredential] { credentials }
+    func unlock(using credentialId: String, timeout: TimeInterval) throws -> AnyPublisher<SeamAccessUnlockEvent, Never> {
+        Just(.launched).append(Just(.grantedAccess)).eraseToAnyPublisher()
+    }
+    func deactivate(deintegrate: Bool) async { isActive = false }
+}
+
+// Inject into your view model
+let mock = MockSeamService()
+let vm = SeamCredentialsViewModel(seam: mock)
+```
+
+```swift
+#Preview {
+    CustomKeysScreen()
+}
+```
+
+This design keeps your UI and business logic independent of concrete SDK types, while remaining iOS 16-friendly.
+
+---
+
+## Custom Styling and Extensibility
+
+All views are built with SwiftUI best practices — system fonts, SF Symbols, and color styles. You can:
+
+- Override styles using environment modifiers.
+- Add your own accessibility labels and localization.
+- Compose SeamComponents with your own views and navigation.
+- Use `SeamAccessCredentialErrorStyle` to override error/status badge appearance, icons, and messaging in key card and unlock views.
+
+See [Customizing Appearance](/mobile-sdks/ios/ui-components/customizing-appearance) for the full theming API.
+
+---
+
+## Handling Unlock Events and Errors
+
+The unlock stream emits `SeamAccessUnlockEvent` values and never fails. Available events:
+
+| Event | Description |
+|-------|-------------|
+| `launched` | The unlock process started (scanning/probing). |
+| `grantedAccess` | Access granted by the lock (success). |
+| `timedOut` | The attempt timed out without success. |
+| `connectionFailed(debugDescription:)` | Connection or protocol negotiation failed. |
+
+Subscribe to these events to show custom notifications, present modals, or log analytics.
+
+### Credential Errors and Presentation
+
+Per-credential issues surface via each credential's `errors: [SeamCredentialError]` array. Use `SeamAccessCredentialErrorStyle` to present badges, messages, and actions consistently across key cards and unlock views.
+
+**Rendering an error badge on a key card:**
+
+```swift
+let style = SeamAccessCredentialErrorStyle.default
+let theme = SeamTheme.default
+
+SeamKeyCardView(credential: credential, style: style)
+    .overlay(alignment: .bottomLeading) {
+        if let error = credential.errors.first {
+            HStack(spacing: 8) {
+                Image(systemName: style.systemIcon(error, theme: theme))
+                Text(style.message(error))
+            }
+            .padding(8)
+        }
+    }
+```
+
+**Offering a corrective action:**
+
+```swift
+if let error = credential.errors.first,
+   let actionTitle = style.primaryActionTitle(error) {
+    Button(actionTitle) {
+        style.primaryAction(error)() // e.g., open Settings or OTP URL
+    }
+}
+```
+
+<Tip>
+  The `errors` array is ordered by severity. Show the first item as the primary badge
+  on a key card, and reveal details or actions on tap.
+</Tip>
+
+<Note>
+  If `unlock(using:)` throws `.credentialErrors([...])`, present the top error using
+  your style and avoid starting the unlock until it is resolved.
+</Note>
+
+**Credential error types:**
+
+- `awaitingLocalCredential` — Waiting for a local credential to become available.
+- `expired` — The credential has expired and cannot be used.
+- `userInteractionRequired(action)` — The user must perform a specific action.
+- `contactSeamSupport` — Configuration error requiring developer attention.
+- `unsupportedDevice` — The current device is not supported for this credential.
+- `unknown` — An unclassified or unexpected issue occurred.
+
+**Possible `userInteractionRequired` actions:**
+
+- `completeOtpAuthorization(otpUrl:)` — Open the provided URL to complete OTP authorization.
+- `enableInternet` — Prompt the user to enable internet connectivity.
+- `enableBluetooth` — Prompt the user to turn on Bluetooth.
+- `grantBluetoothPermission` — Direct the user to grant Bluetooth permission.
+- `appRestartRequired` — Ask the user to restart the app.
+
+---
+
+## See Also
+
+- [Getting Started](/mobile-sdks/ios/ui-components) — Add SeamComponents to your project and display your first key.
+- [Customizing Appearance](/mobile-sdks/ios/ui-components/customizing-appearance) — Override colors, fonts, and card styles using the SeamTheme system.
+- [Error Handling](/mobile-sdks/ios/error-handling) — SDK-level error types and recovery patterns.

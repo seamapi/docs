@@ -1,6 +1,178 @@
 ---
 title: 'Installation'
-description: 'Add the Seam iOS SDK to your project using Swift Package Manager.'
+description: 'Add the Seam iOS SDK to your project using CocoaPods or Swift Package Manager, configure Git LFS, and get your app building.'
 ---
 
-Content coming soon.
+## Requirements
+
+SeamSDK integrates with various vendor SDKs to deliver robust access control functionality. Before you begin, confirm your environment meets the following requirements:
+
+- **iOS 15.0+**
+- **[Git LFS](https://git-lfs.github.com)** (required for large binary assets)
+- **[CocoaPods](https://cocoapods.org)** (if installing via CocoaPods)
+- **[Swift Package Manager](https://swift.org/package-manager/)** (if installing via SPM)
+
+<Note>
+  Some vendor SDKs that SeamSDK integrates with may have additional platform requirements. The minimum iOS version and other technical prerequisites are designed to ensure compatibility across all integrated systems.
+</Note>
+
+---
+
+## Installation
+
+<Steps>
+  <Step title="Install Git LFS">
+    SeamSDK includes large binary assets (xcframeworks) tracked via Git LFS. Install and initialize Git LFS before cloning or adding the package:
+
+    ```bash
+    brew install git-lfs
+    git lfs install
+    ```
+  </Step>
+
+  <Step title="Obtain SeamSDK">
+    Contact your Seam representative to gain access to the SeamSDK package. The SDK is distributed as a private package.
+  </Step>
+
+  <Step title="Install the SDK">
+    Choose your preferred package manager.
+
+    <Tabs>
+      <Tab title="CocoaPods">
+        SeamSDK supports CocoaPods subspecs, so you can integrate only the modules you need.
+
+        #### Full SDK Installation
+
+        Add the following to your `Podfile`:
+
+        ```ruby
+        platform :ios, '15.0'
+
+        target 'YourAppName' do
+          use_frameworks!
+
+          pod 'SeamSDK', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+        end
+        ```
+
+        #### Selective Module Installation
+
+        To include only specific lock-provider integrations, specify the desired subspecs:
+
+        ```ruby
+        pod 'SeamSDK/SeamDormakabaIntegration', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+        pod 'SeamSDK/SeamLatchIntegration', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+        ```
+
+        After updating your `Podfile`, run:
+
+        ```bash
+        pod install
+        ```
+      </Tab>
+
+      <Tab title="Swift Package Manager">
+        SeamSDK is also available as a **local Swift package**.
+
+        #### Adding via Xcode
+
+        1. Open your Xcode project.
+        2. Navigate to **File > Add Packages...**
+        3. Click **Add Local...**
+        4. Select the folder containing `Package.swift` for SeamSDK.
+        5. Choose the desired libraries:
+           - `SeamSDK` — core SDK
+           - `SeamDormakabaIntegration` — Dormakaba support
+           - `SeamLatchIntegration` — Latch support
+           - `SeamSaltoIntegration` — Salto support
+           - `SeamAssaAbloyIntegration` — Assa Abloy support
+
+        #### Adding via Package.swift
+
+        Alternatively, add SeamSDK manually to your `Package.swift`:
+
+        ```swift
+        dependencies: [
+            .package(path: "PATH_TO_SEAM_SDK/SeamSDK")
+        ],
+        targets: [
+            .target(
+                name: "YourApp",
+                dependencies: ["SeamSDK", "SeamSaltoIntegration"]
+            )
+        ]
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Configure Xcode Settings">
+    #### Disable User Script Sandboxing (CocoaPods)
+
+    If you are using CocoaPods, disable **User Script Sandboxing** to prevent build errors related to rsync/samba:
+
+    1. Open your project in Xcode.
+    2. Select your project in the navigator.
+    3. Select your target.
+    4. Go to **Build Settings**.
+    5. Search for "sandbox".
+    6. Set **User Script Sandboxing** to **No**.
+  </Step>
+</Steps>
+
+---
+
+## Integration with Custom SDKs
+
+If you are developing a custom SDK that depends on SeamSDK, apply the same CocoaPods or SPM patterns described above to manage dependencies and versioning.
+
+---
+
+## Basic Example
+
+Once SeamSDK is installed, initialize and activate it in your app, then perform an unlock:
+
+```swift
+import SeamSDK
+
+let seam = Seam.initialize(clientSessionToken: CLIENT_SESSION_TOKEN)
+
+// Activate Seam.
+try await Seam.shared.activate()
+
+// Perform unlock.
+let publisher = try Seam.shared.unlock(using: Seam.shared.credentials.first!.id)
+```
+
+For full API documentation and additional examples, see the [Seam iOS SDK reference](https://ios.seam.vc/documentation/seamsdk/seam).
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title='"No such module SeamSDK" error'>
+    - Ensure you have properly installed the dependency via CocoaPods or SPM.
+    - Run `pod install` or confirm that SPM has resolved dependencies correctly.
+    - Open the `.xcworkspace` file (not `.xcodeproj`) after a CocoaPods install.
+  </Accordion>
+
+  <Accordion title="Build errors related to rsync/samba">
+    Disable **User Script Sandboxing** in Build Settings as described in the [Configure Xcode Settings](#configure-xcode-settings) step above.
+  </Accordion>
+
+  <Accordion title="Git LFS issues">
+    Ensure Git LFS is installed (`brew install git-lfs`) and initialized (`git lfs install`). Re-clone or re-pull the repository after installing Git LFS.
+  </Accordion>
+
+  <Accordion title="Version conflicts">
+    Run `pod update SeamSDK` (CocoaPods) or use Xcode's package resolution (**File > Packages > Resolve Package Versions**) to refresh SPM dependencies.
+  </Accordion>
+
+  <Accordion title='"Symbol Not Found" errors'>
+    - Confirm all dependencies are correctly installed and match the required versions.
+    - Verify that `BUILD_LIBRARY_FOR_DISTRIBUTION` is set to `YES` in Build Settings.
+  </Accordion>
+</AccordionGroup>
+
+For additional support, reach out in your dedicated Seam support Slack channel.
