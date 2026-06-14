@@ -178,12 +178,12 @@ export async function parseDoccArchive(
   const entries = await readdir(dataDir, { withFileTypes: true })
   const moduleDirs = entries.filter((e) => e.isDirectory())
 
-  if (moduleDirs.length === 0) {
+  const firstModuleDir = moduleDirs[0]
+  if (firstModuleDir == null) {
     throw new Error(`No module directories found in ${dataDir}`)
   }
-
-  const moduleDir = join(dataDir, moduleDirs[0]!.name)
-  console.log(`  Module: ${moduleDirs[0]!.name}`)
+  const moduleDir = join(dataDir, firstModuleDir.name)
+  console.log(`  Module: ${firstModuleDir.name}`)
 
   // Top-level JSON files = one per public type
   const files = await readdir(moduleDir, { withFileTypes: true })
