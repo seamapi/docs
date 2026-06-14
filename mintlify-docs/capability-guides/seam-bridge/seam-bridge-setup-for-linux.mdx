@@ -13,26 +13,26 @@ Ubuntu, Debian, Fedora, Arch, OpenSUSE, and most Linux desktops that include Web
 
 WebKitGTK 3 or 4
 
-1.  Check if installed:
+1. Check if installed:
 
-    ```bash
-    ldd ./seambridge | grep webkit
-    ```
+   ```bash
+   ldd ./seambridge | grep webkit
+   ```
 
-2.  If not installed, the user must install (depending on distro):
-    - **Ubuntu/Debian**
+2. If not installed, the user must install (depending on distro):
+   - **Ubuntu/Debian**
 
       ```bash
       sudo apt install libwebkit2gtk-4.0-37
       ```
 
-    - **Fedora**
+   - **Fedora**
 
       ```bash
       sudo dnf install webkit2gtk3
       ```
 
-    - **Arch**
+   - **Arch**
 
       ```bash
       sudo pacman -S webkit2gtk
