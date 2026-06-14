@@ -899,7 +899,24 @@
           {
             "group": "Android SDK",
             "pages": [
-              "mobile-sdks/android/index"
+              "mobile-sdks/android/index",
+              "mobile-sdks/android/installation",
+              "mobile-sdks/android/quickstart",
+              "mobile-sdks/android/architecture",
+              "mobile-sdks/android/error-handling",
+              {
+                "group": "API Reference",
+                "pages": [
+                  "mobile-sdks/android/reference/index",
+                  "mobile-sdks/android/reference/seam-sdk",
+                  "mobile-sdks/android/reference/seam-credential",
+                  "mobile-sdks/android/reference/unlock-proximity",
+                  "mobile-sdks/android/reference/seam-unlock-event",
+                  "mobile-sdks/android/reference/seam-error",
+                  "mobile-sdks/android/reference/seam-credential-error",
+                  "mobile-sdks/android/reference/seam-required-user-interaction"
+                ]
+              }
             ]
           }
         ]
