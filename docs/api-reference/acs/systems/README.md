@@ -9,7 +9,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents an [access control system](https://docs.seam.co/capability-guides/access-systems).
+Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.
 
@@ -57,7 +57,7 @@ An access system resource.
 
 **`acs_system_id`** *UUID*
 
-ID of the [access control system](https://docs.seam.co/capability-guides/access-systems).
+ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -74,7 +74,7 @@ ID of the [access control system](https://docs.seam.co/capability-guides/access-
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
+ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -83,7 +83,7 @@ ID of the [connected account](https://docs.seam.co/core-concepts/connected-accou
 
 **`connected_account_ids`** *List* *of UUIDs*
 
-IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
+IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 {% hint style="warning" %}
 **Deprecated**. Use `connected_account_id`.
@@ -95,7 +95,7 @@ IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-acc
 
 **`created_at`** *Datetime*
 
-Date and time at which the [access control system](https://docs.seam.co/capability-guides/access-systems) was created.
+Date and time at which the [access control system](https://docs.seam.co/low-level-apis/access-systems) was created.
 
 
 
@@ -104,7 +104,7 @@ Date and time at which the [access control system](https://docs.seam.co/capabili
 
 **`default_credential_manager_acs_system_id`** *UUID*
 
-ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/capability-guides/access-systems).
+ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -113,7 +113,7 @@ ID of the default credential manager `acs_system` for this [access control syste
 
 [**`errors`**](./#errors) *List* *of Objects*
 
-Errors associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
+Errors associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -126,7 +126,7 @@ Variants:
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -159,7 +159,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 <summary><code>bridge_disconnected</code></summary>
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -199,7 +199,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 
 Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
   **`created_at`** *Datetime*
   
@@ -263,7 +263,7 @@ Indicates that the maximum number of users allowed for the site has been reached
 <details>
 <summary><code>acs_system_disconnected</code></summary>
 
-Indicates that the [access control system](https://docs.seam.co/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
+Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
 
   **`created_at`** *Datetime*
   
@@ -327,7 +327,7 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
 <details>
 <summary><code>salto_ks_certification_expired</code></summary>
 
-Indicates that the [access control system](https://docs.seam.co/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
+Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
   **`created_at`** *Datetime*
   
@@ -393,7 +393,7 @@ Indicates that the access control system provider's service is temporarily unava
 
 **`external_type`** *Enum*
 
-Brand-specific terminology for the [access control system](https://docs.seam.co/capability-guides/access-systems) type.
+Brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type.
 
 
 <details>
@@ -421,7 +421,7 @@ Brand-specific terminology for the [access control system](https://docs.seam.co/
 
 **`external_type_display_name`** *String*
 
-Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/capability-guides/access-systems) type.
+Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type.
 
 
 
@@ -430,7 +430,7 @@ Display name that corresponds to the brand-specific terminology for the [access 
 
 **`image_alt_text`** *String*
 
-Alternative text for the [access control system](https://docs.seam.co/capability-guides/access-systems) image.
+Alternative text for the [access control system](https://docs.seam.co/low-level-apis/access-systems) image.
 
 
 
@@ -439,7 +439,7 @@ Alternative text for the [access control system](https://docs.seam.co/capability
 
 **`image_url`** *String*
 
-URL for the image that represents the [access control system](https://docs.seam.co/capability-guides/access-systems).
+URL for the image that represents the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -465,7 +465,7 @@ Indicates whether the `acs_system` is a credential manager.
 
   - <strong><code>time_zone</code></strong> <i>String</i>
   
-    Time zone in which the [access control system](https://docs.seam.co/capability-guides/access-systems) is located.
+    Time zone in which the [access control system](https://docs.seam.co/low-level-apis/access-systems) is located.
 
 </details>
 
@@ -473,7 +473,7 @@ Indicates whether the `acs_system` is a credential manager.
 
 **`name`** *String*
 
-Name of the [access control system](https://docs.seam.co/capability-guides/access-systems).
+Name of the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -547,7 +547,7 @@ Name of the [access control system](https://docs.seam.co/capability-guides/acces
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [access control system](https://docs.seam.co/capability-guides/access-systems).
+Warnings associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -590,7 +590,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
 <details>
 <summary><code>time_zone_does_not_match_location</code></summary>
 
-Indicates the [access control system](https://docs.seam.co/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Indicates the [access control system](https://docs.seam.co/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
 
   **`created_at`** *Datetime*
   
@@ -634,7 +634,7 @@ Indicates the [access control system](https://docs.seam.co/capability-guides/acc
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/capability-guides/access-systems).
+ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -652,14 +652,14 @@ Indicates that the login credentials are invalid. Reconnect the account using a 
 
 **`acs_system_disconnected`**
 
-Indicates that the [access control system](https://docs.seam.co/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
+Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
 
 ---
 
 **`bridge_disconnected`**
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -671,7 +671,7 @@ Indicates that the access control system provider's service is temporarily unava
 
 **`salto_ks_certification_expired`**
 
-Indicates that the [access control system](https://docs.seam.co/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
+Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
 
 ---
 
@@ -685,7 +685,7 @@ Indicates that the maximum number of users allowed for the site has been reached
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -693,7 +693,7 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 
 Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).
 
 ---
 
@@ -708,7 +708,7 @@ Indicates that the Salto KS site has exceeded 80% of the maximum number of allow
 
 **`time_zone_does_not_match_location`**
 
-Indicates the [access control system](https://docs.seam.co/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Indicates the [access control system](https://docs.seam.co/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
 
 ---
 
@@ -717,7 +717,7 @@ Indicates the [access control system](https://docs.seam.co/capability-guides/acc
 
 **`acs_system.connected`**
 
-An [access system](https://docs.seam.co/capability-guides/access-systems) was connected.
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was connected.
 
 <details>
 
@@ -756,7 +756,7 @@ An [access system](https://docs.seam.co/capability-guides/access-systems) was co
 
 **`acs_system.added`**
 
-An [access system](https://docs.seam.co/capability-guides/access-systems) was added.
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was added.
 
 <details>
 
@@ -795,7 +795,7 @@ An [access system](https://docs.seam.co/capability-guides/access-systems) was ad
 
 **`acs_system.disconnected`**
 
-An [access system](https://docs.seam.co/capability-guides/access-systems) was disconnected.
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was disconnected.
 
 <details>
 
@@ -913,17 +913,17 @@ An [access system](https://docs.seam.co/capability-guides/access-systems) was di
 
 [**`/acs/systems/get`**](./get.md)
 
-Returns a specified [access system](https://docs.seam.co/capability-guides/access-systems).
+Returns a specified [access system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 [**`/acs/systems/list`**](./list.md)
 
-Returns a list of all [access systems](https://docs.seam.co/capability-guides/access-systems).
+Returns a list of all [access systems](https://docs.seam.co/low-level-apis/access-systems).
 
 
 [**`/acs/systems/list_compatible_credential_manager_acs_systems`**](./list_compatible_credential_manager_acs_systems.md)
 
-Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/capability-guides/access-systems).
+Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 [**`/acs/systems/report_devices`**](./report_devices.md)

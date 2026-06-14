@@ -7,7 +7,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a hardware device that encodes [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/capability-guides/access-systems).
+Represents a hardware device that encodes [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 Some access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:
 
@@ -18,7 +18,7 @@ Some access control systems require credentials to be encoded onto plastic key c
 
 Separately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.
 
-See [Working with Card Encoders and Scanners](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+See [Working with Card Encoders and Scanners](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 To verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/device-and-system-integration-guides#access-control-systems).
 
@@ -46,7 +46,7 @@ An access system encoder resource.
 
 **`acs_encoder_id`** *UUID*
 
-ID of the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners.
+ID of the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners.
 
 
 
@@ -55,7 +55,7 @@ ID of the [encoder](https://docs.seam.co/capability-guides/access-systems/workin
 
 **`acs_system_id`** *UUID*
 
-ID of the [access control system](https://docs.seam.co/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 
@@ -64,7 +64,7 @@ ID of the [access control system](https://docs.seam.co/capability-guides/access-
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 
@@ -73,7 +73,7 @@ ID of the [connected account](https://docs.seam.co/core-concepts/connected-accou
 
 **`created_at`** *Datetime*
 
-Date and time at which the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.
+Date and time at which the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was created.
 
 
 
@@ -82,7 +82,7 @@ Date and time at which the [encoder](https://docs.seam.co/capability-guides/acce
 
 **`display_name`** *String*
 
-Display name for the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+Display name for the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 
@@ -91,7 +91,7 @@ Display name for the [encoder](https://docs.seam.co/capability-guides/access-sys
 
 **`errors`** *List* *of Objects*
 
-Errors associated with the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+Errors associated with the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 
@@ -120,7 +120,7 @@ Errors associated with the [encoder](https://docs.seam.co/capability-guides/acce
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 
@@ -132,7 +132,7 @@ ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contai
 
 **`acs_encoder.added`**
 
-An [access system encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.
+An [access system encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was added.
 
 <details>
 
@@ -175,7 +175,7 @@ An [access system encoder](https://docs.seam.co/capability-guides/access-systems
 
 **`acs_encoder.removed`**
 
-An [access system encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.
+An [access system encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was removed.
 
 <details>
 
@@ -221,26 +221,26 @@ An [access system encoder](https://docs.seam.co/capability-guides/access-systems
 
 [**`/acs/encoders/encode_credential`**](./encode_credential.md)
 
-Encodes an existing [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners). Either provide an `acs_credential_id` or an `access_method_id`
+Encodes an existing [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners). Either provide an `acs_credential_id` or an `access_method_id`
 
 
 [**`/acs/encoders/get`**](./get.md)
 
-Returns a specified [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+Returns a specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 [**`/acs/encoders/list`**](./list.md)
 
-Returns a list of all [encoders](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+Returns a list of all [encoders](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 [**`/acs/encoders/scan_credential`**](./scan_credential.md)
 
-Scans an encoded [acs_credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) from a plastic card placed on the specified [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners).
+Scans an encoded [acs_credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) from a plastic card placed on the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 [**`/acs/encoders/scan_to_assign_credential`**](./scan_to_assign_credential.md)
 
-Scans a physical card placed on the specified [encoder](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners) and assigns the scanned credential to an ACS user. Provide either an `acs_user_id` or a `user_identity_id`.
+Scans a physical card placed on the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) and assigns the scanned credential to an ACS user. Provide either an `acs_user_id` or a `user_identity_id`.
 
 

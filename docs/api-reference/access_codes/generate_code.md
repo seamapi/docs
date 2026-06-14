@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Generates a code for an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes), given a device ID.
+Generates a code for an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes), given a device ID.
 
 
 {% tabs %}

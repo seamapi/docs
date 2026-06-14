@@ -985,7 +985,7 @@
             "type": "string"
           },
           "pending_mutations": {
-            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
             "items": {
               "discriminator": {
                 "propertyName": "mutation_code"
@@ -1195,15 +1195,15 @@
             "type": "array"
           },
           "warnings": {
-            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
             "items": {
-              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
               "discriminator": {
                 "propertyName": "warning_code"
               },
               "oneOf": [
                 {
-                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -1230,7 +1230,7 @@
                   "type": "object"
                 },
                 {
-                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -20435,7 +20435,7 @@
         "x-undocumented": "Unreleased."
       },
       "unmanaged_acs_credential": {
-        "description": "Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an...",
+        "description": "Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).",
         "properties": {
           "access_method": {
             "description": "Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.",
@@ -32344,7 +32344,7 @@
                           "type": "string"
                         },
                         "pending_mutations": {
-                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                           "items": {
                             "discriminator": {
                               "propertyName": "mutation_code"
@@ -32554,15 +32554,15 @@
                           "type": "array"
                         },
                         "warnings": {
-                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                           "items": {
-                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "discriminator": {
                               "propertyName": "warning_code"
                             },
                             "oneOf": [
                               {
-                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -32589,7 +32589,7 @@
                                 "type": "object"
                               },
                               {
-                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -32802,7 +32802,7 @@
                           "type": "string"
                         },
                         "pending_mutations": {
-                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                           "items": {
                             "discriminator": {
                               "propertyName": "mutation_code"
@@ -33012,15 +33012,15 @@
                           "type": "array"
                         },
                         "warnings": {
-                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                           "items": {
-                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "discriminator": {
                               "propertyName": "warning_code"
                             },
                             "oneOf": [
                               {
-                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -33047,7 +33047,7 @@
                                 "type": "object"
                               },
                               {
-                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -33283,7 +33283,7 @@
                             "type": "string"
                           },
                           "pending_mutations": {
-                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                             "items": {
                               "discriminator": {
                                 "propertyName": "mutation_code"
@@ -33493,15 +33493,15 @@
                             "type": "array"
                           },
                           "warnings": {
-                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "items": {
-                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                               "discriminator": {
                                 "propertyName": "warning_code"
                               },
                               "oneOf": [
                                 {
-                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",
@@ -33528,7 +33528,7 @@
                                   "type": "object"
                                 },
                                 {
-                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",
@@ -33762,7 +33762,7 @@
                             "type": "string"
                           },
                           "pending_mutations": {
-                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                             "items": {
                               "discriminator": {
                                 "propertyName": "mutation_code"
@@ -33972,15 +33972,15 @@
                             "type": "array"
                           },
                           "warnings": {
-                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "items": {
-                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                               "discriminator": {
                                 "propertyName": "warning_code"
                               },
                               "oneOf": [
                                 {
-                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",
@@ -34007,7 +34007,7 @@
                                   "type": "object"
                                 },
                                 {
-                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",

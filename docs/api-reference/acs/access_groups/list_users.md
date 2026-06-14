@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [access system users](https://docs.seam.co/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Returns a list of all [access system users](https://docs.seam.co/low-level-apis/access-systems/user-management) in an [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 {% tabs %}

@@ -619,7 +619,7 @@ Indicates that the device is disconnected.
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
@@ -939,7 +939,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -3222,7 +3222,7 @@ Supported code lengths for access codes.
 
 **`supports_backup_access_code_pool`** *Boolean*
 
-Indicates whether the device supports a [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes).
+Indicates whether the device supports a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes).
 
 
 
@@ -3516,7 +3516,7 @@ Indicates that the lock is not connected to a bridge.
 
 **`empty_backup_access_code_pool`**
 
-Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
 ---
 
@@ -3576,7 +3576,7 @@ Indicates that the account is disconnected.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -3732,7 +3732,7 @@ Indicates that the Wyze Lock is not connected to a gateway.
 
 **`lock.locked`**
 
-A [lock](https://docs.seam.co/capability-guides/smart-locks) was locked.
+A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 
 <details>
 
@@ -3816,7 +3816,7 @@ A [lock](https://docs.seam.co/capability-guides/smart-locks) was locked.
 
 **`lock.unlocked`**
 
-A [lock](https://docs.seam.co/capability-guides/smart-locks) was unlocked.
+A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
 
 <details>
 
@@ -3894,7 +3894,7 @@ A [lock](https://docs.seam.co/capability-guides/smart-locks) was unlocked.
 
 <strong><code>method</code></strong> <i>Enum</i>
 
-  Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.
+  Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.
 <details>
     <summary>Enum values:</summary>
 
@@ -3924,7 +3924,7 @@ A [lock](https://docs.seam.co/capability-guides/smart-locks) was unlocked.
 
 **`lock.access_denied`**
 
-The [lock](https://docs.seam.co/capability-guides/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
+The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
 
 <details>
 
@@ -3982,26 +3982,26 @@ The [lock](https://docs.seam.co/capability-guides/smart-locks) denied access to 
 
 [**`/locks/configure_auto_lock`**](./configure_auto_lock.md)
 
-Configures the auto-lock setting for a specified [lock](https://docs.seam.co/capability-guides/smart-locks).
+Configures the auto-lock setting for a specified [lock](https://docs.seam.co/low-level-apis/smart-locks).
 
 
 [**`/locks/get`**](./get.md)
 
-Returns a specified [lock](https://docs.seam.co/capability-guides/smart-locks).
+Returns a specified [lock](https://docs.seam.co/low-level-apis/smart-locks).
 
 
 [**`/locks/list`**](./list.md)
 
-Returns a list of all [locks](https://docs.seam.co/capability-guides/smart-locks).
+Returns a list of all [locks](https://docs.seam.co/low-level-apis/smart-locks).
 
 
 [**`/locks/lock_door`**](./lock_door.md)
 
-Locks a [lock](https://docs.seam.co/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/capability-guides/smart-locks/lock-and-unlock).
+Locks a [lock](https://docs.seam.co/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/low-level-apis/smart-locks/lock-and-unlock).
 
 
 [**`/locks/unlock_door`**](./unlock_door.md)
 
-Unlocks a [lock](https://docs.seam.co/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/capability-guides/smart-locks/lock-and-unlock).
+Unlocks a [lock](https://docs.seam.co/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/low-level-apis/smart-locks/lock-and-unlock).
 
 

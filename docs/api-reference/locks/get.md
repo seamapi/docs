@@ -7,7 +7,7 @@
 **Deprecated**. Use `/devices/get` instead.
 {% endhint %}
 
-Returns a specified [lock](https://docs.seam.co/capability-guides/smart-locks).
+Returns a specified [lock](https://docs.seam.co/low-level-apis/smart-locks).
 
 
 <details>

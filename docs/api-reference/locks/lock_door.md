@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Locks a [lock](https://docs.seam.co/capability-guides/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/capability-guides/smart-locks/lock-and-unlock).
+Locks a [lock](https://docs.seam.co/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/low-level-apis/smart-locks/lock-and-unlock).
 
 
 {% tabs %}
