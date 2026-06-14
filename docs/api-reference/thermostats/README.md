@@ -735,7 +735,7 @@ Indicates that the device is disconnected.
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
@@ -1055,7 +1055,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -4296,7 +4296,7 @@ Indicates that the account is disconnected.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 

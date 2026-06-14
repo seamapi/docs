@@ -137,7 +137,7 @@ Date and time at which the Access Grant ends.
 
 [**`errors`**](./#errors) *List* *of Objects*
 
-Errors associated with the [access grant](https://docs.seam.co/capability-guides/access-grants).
+Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).
 
 
 
@@ -450,7 +450,7 @@ ID of user identity to which the Access Grant gives access.
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [access grant](https://docs.seam.co/capability-guides/access-grants).
+Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).
 
 
 
@@ -461,7 +461,7 @@ Variants:
 <details>
 <summary><code>being_deleted</code></summary>
 
-Indicates that the [access grant](https://docs.seam.co/capability-guides/access-grants) is being deleted.
+Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.
 
   **`created_at`** *Datetime*
   
@@ -578,7 +578,7 @@ Indicates that the access grant has access to locations it should not have. Acce
 <details>
 <summary><code>updating_access_times</code></summary>
 
-Indicates that the access times for this [access grant](https://docs.seam.co/capability-guides/access-grants) are being updated.
+Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.
 
   **`access_method_ids`** *List* *of UUIDs*
   
@@ -791,7 +791,7 @@ ID of the Seam workspace associated with the Access Grant.
 
 **`being_deleted`**
 
-Indicates that the [access grant](https://docs.seam.co/capability-guides/access-grants) is being deleted.
+Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.
 
 ---
 
@@ -827,7 +827,7 @@ Indicates that the access grant should have access to more locations than it cur
 
 **`updating_access_times`**
 
-Indicates that the access times for this [access grant](https://docs.seam.co/capability-guides/access-grants) are being updated.
+Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.
 
 ---
 
@@ -953,7 +953,7 @@ Access requested as part of an Access Grant to a particular door was successfull
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
-  ID of the affected [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+  ID of the affected [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -992,7 +992,7 @@ Access to a particular door that was requested as part of an Access Grant was lo
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
-  ID of the affected [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+  ID of the affected [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 

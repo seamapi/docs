@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Unassigns a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) from a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Unassigns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) from a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
 
 
 {% tabs %}

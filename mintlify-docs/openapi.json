@@ -3113,6 +3113,33 @@
                     "warning_code"
                   ],
                   "type": "object"
+                },
+                {
+                  "description": "Indicates that the access control system requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which Seam created the warning.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                      "type": "string"
+                    },
+                    "warning_code": {
+                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                      "enum": [
+                        "setup_required"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "warning_code"
+                  ],
+                  "type": "object"
                 }
               ]
             },
@@ -20435,7 +20462,7 @@
         "x-undocumented": "Unreleased."
       },
       "unmanaged_acs_credential": {
-        "description": "Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an...",
+        "description": "Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).",
         "properties": {
           "access_method": {
             "description": "Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.",

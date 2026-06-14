@@ -9,13 +9,13 @@
 - [Endpoints](./#endpoints)
 
 
-Represents a smart lock [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Represents a smart lock [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
-Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/capability-guides/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/capability-guides/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.
+Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/low-level-apis/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.
 
-In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
+In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
 {% tabs %}
 {% tab title="One-Time-Use Offline Access Code" %}
@@ -252,7 +252,7 @@ Date and time after which the time-bound access code becomes inactive.
 
 [**`errors`**](./#errors) *List* *of Objects*
 
-Errors associated with the [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 
@@ -1489,7 +1489,7 @@ Indicates that the device is disconnected.
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
@@ -1809,7 +1809,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -2263,7 +2263,7 @@ Date and time at which the time-bound access code becomes active.
 
 **`status`** *Enum*
 
-Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/lifecycle-of-access-codes).
+Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).
 
 
 <details>
@@ -2296,7 +2296,7 @@ Type of the access code. `ongoing` access codes are active continuously until de
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 
@@ -3055,7 +3055,7 @@ Indicates that the user is not authorized to use the August lock.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -3079,7 +3079,7 @@ Indicates that the device has been removed.
 
 **`empty_backup_access_code_pool`**
 
-Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
 ---
 
@@ -3229,7 +3229,7 @@ A backup access code has been pulled and is being used in place of this access c
 
 **`access_code.created`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was created.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was created.
 
 <details>
 
@@ -3280,7 +3280,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.changed`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was changed.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed.
 
 <details>
 
@@ -3331,7 +3331,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.scheduled_on_device`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/capability-guides/smart-locks/access-codes#native-scheduling) on a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
 
 <details>
 
@@ -3386,7 +3386,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.set_on_device`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was set on a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was set on a device.
 
 <details>
 
@@ -3441,7 +3441,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.removed_from_device`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was removed from a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was removed from a device.
 
 <details>
 
@@ -3492,7 +3492,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.delay_in_setting_on_device`**
 
-There was an unusually long delay in setting an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) on a device.
+There was an unusually long delay in setting an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) on a device.
 
 <details>
 
@@ -3657,7 +3657,7 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 **`access_code.failed_to_set_on_device`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) failed to be set on a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be set on a device.
 
 <details>
 
@@ -3822,7 +3822,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.deleted`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was deleted.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted.
 
 <details>
 
@@ -3877,7 +3877,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.delay_in_removing_from_device`**
 
-There was an unusually long delay in removing an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) from a device.
+There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.
 
 <details>
 
@@ -4042,7 +4042,7 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 **`access_code.failed_to_remove_from_device`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) failed to be removed from a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be removed from a device.
 
 <details>
 
@@ -4207,7 +4207,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.modified_external_to_seam`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was modified outside of Seam.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was modified outside of Seam.
 
 <details>
 
@@ -4258,7 +4258,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.deleted_external_to_seam`**
 
-An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes) was deleted outside of Seam.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.
 
 <details>
 
@@ -4309,7 +4309,7 @@ An [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes
 
 **`access_code.backup_access_code_pulled`**
 
-A [backup access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.
+A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.
 
 <details>
 
@@ -4370,32 +4370,32 @@ Creates a new [access code](https://docs.seam.co/low-level-apis/access-codes). F
 
 [**`/access_codes/create_multiple`**](./create_multiple.md)
 
-Creates new [access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.
+Creates new [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.
 
 
 [**`/access_codes/delete`**](./delete.md)
 
-Deletes an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Deletes an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 [**`/access_codes/generate_code`**](./generate_code.md)
 
-Generates a code for an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes), given a device ID.
+Generates a code for an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes), given a device ID.
 
 
 [**`/access_codes/get`**](./get.md)
 
-Returns a specified [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Returns a specified [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 [**`/access_codes/list`**](./list.md)
 
-Returns a list of all [access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Returns a list of all [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 [**`/access_codes/pull_backup_access_code`**](./pull_backup_access_code.md)
 
-Retrieves a backup access code for an [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes).
+Retrieves a backup access code for an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes).
 
 
 [**`/access_codes/report_device_constraints`**](./report_device_constraints.md)
@@ -4405,11 +4405,11 @@ Enables you to report access code-related constraints for a device. Currently, s
 
 [**`/access_codes/update`**](./update.md)
 
-Updates a specified active or upcoming [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Updates a specified active or upcoming [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 [**`/access_codes/update_multiple`**](./update_multiple.md)
 
-Updates [access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.
+Updates [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.
 
 

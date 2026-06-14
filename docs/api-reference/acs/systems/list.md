@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [access systems](https://docs.seam.co/capability-guides/access-systems).
+Returns a list of all [access systems](https://docs.seam.co/low-level-apis/access-systems).
 
 To filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.
 

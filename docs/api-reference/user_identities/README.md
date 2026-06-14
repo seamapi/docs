@@ -282,7 +282,7 @@ Indicates that the user identity is currently being deleted.
 
 [**`/user_identities/add_acs_user`**](./add_acs_user.md)
 
-Adds a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Adds a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 [**`/user_identities/create`**](./create.md)
@@ -327,17 +327,17 @@ Returns a list of all [ACS entrances](https://docs.seam.co/api/acs/entrances) ac
 
 [**`/user_identities/list_acs_systems`**](./list_acs_systems.md)
 
-Returns a list of all [access systems](https://docs.seam.co/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [access systems](https://docs.seam.co/low-level-apis/access-systems) associated with a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 [**`/user_identities/list_acs_users`**](./list_acs_users.md)
 
-Returns a list of all [access system users](https://docs.seam.co/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [access system users](https://docs.seam.co/low-level-apis/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 [**`/user_identities/remove_acs_user`**](./remove_acs_user.md)
 
-Removes a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Removes a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 [**`/user_identities/revoke_access_to_device`**](./revoke_access_to_device.md)

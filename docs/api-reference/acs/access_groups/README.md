@@ -10,7 +10,7 @@
 
 Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
 
-Some access control systems use [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.
+Some access control systems use [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.
 
 To learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/device-and-system-integration-guides#access-control-systems).
 
@@ -156,7 +156,7 @@ Variants:
 <details>
 <summary><code>failed_to_create_on_acs_system</code></summary>
 
-Indicates that the [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+Indicates that the [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
   **`created_at`** *Datetime*
   
@@ -689,7 +689,7 @@ ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contai
 
 **`failed_to_create_on_acs_system`**
 
-Indicates that the [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/capability-guides/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
+Indicates that the [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
 
 ---
 
@@ -744,36 +744,36 @@ An ACS access group was deleted.
 
 [**`/acs/access_groups/add_user`**](./add_user.md)
 
-Adds a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Adds a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) to a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/access_groups/delete`**](./delete.md)
 
-Deletes a specified [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Deletes a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/access_groups/get`**](./get.md)
 
-Returns a specified [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Returns a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/access_groups/list`**](./list.md)
 
-Returns a list of all [access groups](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Returns a list of all [access groups](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/access_groups/list_accessible_entrances`**](./list_accessible_entrances.md)
 
-Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/access_groups/list_users`**](./list_users.md)
 
-Returns a list of all [access system users](https://docs.seam.co/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Returns a list of all [access system users](https://docs.seam.co/low-level-apis/access-systems/user-management) in an [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 [**`/acs/access_groups/remove_user`**](./remove_user.md)
 
-Removes a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Removes a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) from a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 

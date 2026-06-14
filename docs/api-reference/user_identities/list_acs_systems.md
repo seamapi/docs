@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a list of all [access systems](https://docs.seam.co/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
+Returns a list of all [access systems](https://docs.seam.co/low-level-apis/access-systems) associated with a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).
 
 
 {% tabs %}
