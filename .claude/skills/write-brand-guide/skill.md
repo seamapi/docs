@@ -272,6 +272,7 @@ Every brand gets a dedicated setup guide page (`<brand>-setup-guide.mdx`). The o
 For ACS brands, also ask about entrance and encoder setup — these often require coordination with Seam support.
 
 Create a `<brand>-setup-guide.mdx` page with these sections:
+
 1. **Overview** — what the guide covers, link to gateway/bridge product page if applicable
 2. **Prerequisites** — hardware, network, and Seam workspace requirements
 3. **Step 1: Connect** — Console or Connect Webview flow with connection fields in a table
@@ -280,6 +281,7 @@ Create a `<brand>-setup-guide.mdx` page with these sections:
 6. **Troubleshooting** — common issues (connectivity, credentials, device pairing, etc.)
 
 The overview page should link to the setup guide with a single line:
+
 ```
 ## Setup Instructions
 
