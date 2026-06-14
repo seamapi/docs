@@ -1,0 +1,63 @@
+---
+title: 'SeamError'
+description: 'Errors thrown by Seam for initialization, usage, and credential-precondition failures.'
+---
+
+> **Interim hand-authored reference.** This page is authored from the SeamSDK public Swift sources. See the [reference overview](/mobile-sdks/ios/reference) for context.
+
+## Overview
+
+`SeamError` is a `public enum` that conforms to `Error`. It is thrown by `Seam` methods to signal initialization, state, and credential-related failures.
+
+```swift
+public enum SeamError: Error
+```
+
+---
+
+## Cases
+
+| Case | Description |
+|------|-------------|
+| `internetConnectionRequired` | Network connection is required to perform this operation. |
+| `initializationRequired` | The SDK has not been initialized. Call `Seam.initialize(clientSessionToken:)` first. |
+| `invalidClientSessionToken` | The provided client session token is malformed or invalid. |
+| `deactivationInProgress` | A deactivation operation is already in progress. |
+| `alreadyInitialized` | The SDK is already initialized. Call `deactivate(deintegrate:)` before reinitializing. |
+| `invalidCredentialId` | No credential matching the specified identifier was found. |
+| `integrationNotFound` | No integration was found for the specified credential. This usually means the provider integration package was not included when installing the SDK. |
+| `credentialErrors([SeamCredentialError])` | One or more credential-specific errors occurred. The associated value is an array of [`SeamCredentialError`](/mobile-sdks/ios/reference/seam-credential-error) values. |
+
+### `credentialErrors(_:)`
+
+```swift
+case credentialErrors([SeamCredentialError])
+```
+
+Thrown by `Seam.unlock(using:proximity:timeout:)` when the credential has one or more active errors that prevent unlocking. The associated value contains the list of errors in priority order.
+
+**See also:** [`SeamCredentialError`](/mobile-sdks/ios/reference/seam-credential-error)
+
+---
+
+## Example
+
+```swift
+do {
+    try Seam.initialize(clientSessionToken: token)
+} catch let error as SeamError {
+    switch error {
+    case .invalidClientSessionToken:
+        // The token string was malformed — check your token source
+        print("Invalid token")
+    case .alreadyInitialized:
+        // SDK was already initialized — deactivate first if you need to reinitialize
+        print("Already initialized")
+    case .credentialErrors(let errors):
+        // One or more credential errors — inspect each SeamCredentialError
+        print("Credential errors: \(errors)")
+    default:
+        print("Seam error: \(error)")
+    }
+}
+```

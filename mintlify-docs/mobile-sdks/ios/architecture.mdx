@@ -1,0 +1,79 @@
+---
+title: 'Architecture'
+description: 'A high-level view of how the Seam iOS SDK integrates with your app, Seam Cloud services, and lock hardware — including data flow, security, and offline support.'
+---
+
+## System Components
+
+SeamSDK connects four main components:
+
+- **Mobile App** — Your iOS application, written in Swift, that calls the Seam SDK.
+- **SeamSDK** — A native library responsible for credential management, unlock flows, and event streaming.
+- **Seam Cloud API** — The cloud service that provisions credentials, handles revocation, and provides analytics.
+- **Lock Hardware** — Physical locks that communicate over BLE and/or NFC.
+
+```
+Mobile App  ──SDK Calls──▶  Seam SDK  ──HTTP──▶  Seam Cloud API
+                               │                       │
+                           BLE/NFC               Push Events
+                               │                       │
+                               ▼                       ▼
+                          Lock Hardware          Seam SDK (update)
+```
+
+---
+
+## Unlock Sequence
+
+The following sequence shows what happens from initialization through a successful unlock:
+
+<Steps>
+  <Step title="Initialization">
+    Your app calls `Seam.initialize(clientSessionToken:)` and then `activate()`.
+  </Step>
+  <Step title="Credential Fetch">
+    The SDK automatically fetches and keeps credentials up to date by syncing with Seam Cloud.
+  </Step>
+  <Step title="Unlock Request">
+    Your app invokes `unlock(using: credentialId)`.
+  </Step>
+  <Step title="Connection">
+    The SDK connects to the lock via BLE or NFC.
+  </Step>
+  <Step title="Authentication and Confirmation">
+    The lock authorizes the credential and responds.
+  </Step>
+  <Step title="Event Stream">
+    The SDK emits `SeamUnlockEvent` values: `launched`, `grantedAccess`, and others.
+  </Step>
+  <Step title="Completion">
+    Your app handles the events and updates its UI accordingly.
+  </Step>
+</Steps>
+
+---
+
+## Key Data Types
+
+| Type | Description |
+|------|-------------|
+| **Client Session Token (CST)** | A short-lived token used to authenticate SDK API calls. Obtained from your server via the Seam API. |
+| **SeamCredential** | Represents a single access credential with `id`, `name`, `location`, `expiry`, and `metadata`. Immutable snapshot; observe the `credentials` published property for live updates. |
+| **SeamUnlockEvent** | Enum describing each stage of an unlock operation (`launched`, `grantedAccess`, `timedOut`, `connectionFailed`). |
+| **SeamError** | Thrown for SDK setup and API-level failures. See [Error Handling](/mobile-sdks/ios/error-handling). |
+| **SeamCredentialError** | Returned when a specific credential has an issue (expired, unsupported device, user interaction required). |
+
+---
+
+## Security and Offline Support
+
+- **Secure Transport** — All API calls use HTTPS. Lock communication is secured by the lock vendor's protocol.
+- **Keychain Storage** — Tokens and other sensitive data are stored in the iOS Keychain.
+- **Offline Support** — SeamSDK supports offline usage. Credentials are cached locally so that unlock attempts and recent credential data remain available during network interruptions.
+
+---
+
+## See Also
+
+- [Quickstart](/mobile-sdks/ios/quickstart) — How to initialize SeamSDK and perform your first unlock.
+- [Error Handling](/mobile-sdks/ios/error-handling) — How to interpret and handle errors emitted by SeamSDK.

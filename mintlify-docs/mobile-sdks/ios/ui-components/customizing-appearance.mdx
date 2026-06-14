@@ -1,0 +1,134 @@
+---
+title: 'Customizing Appearance'
+description: 'Customize every aspect of SeamComponents appearance — including colors, fonts, and status indicators — using the composable SeamTheme system.'
+---
+
+## Overview
+
+SeamComponents provides a flexible theming system that lets you fully customize the look and feel of all UI elements. This enables easy white-labeling, brand alignment, and accessibility support.
+
+Theming is accomplished by:
+1. Building a `SeamTheme` value that groups together colors and fonts.
+2. Injecting it into your SwiftUI view hierarchy via `.environment(\.seamTheme, ...)`.
+
+All SeamComponents — `SeamAccessView`, `SeamKeyCardView`, `SeamCredentialsView`, and `SeamUnlockCardView` — automatically use the active theme from the environment.
+
+<Note>
+  If you do not inject a theme, SeamComponents use `SeamTheme.default`, which
+  matches the native iOS style.
+</Note>
+
+---
+
+## Why Theming Matters
+
+Applying a custom theme lets you:
+
+- **White-label your app** by replacing default colors and fonts with your brand's identity.
+- **Align with brand guidelines** for a consistent and professional appearance.
+- **Support accessibility features** such as Dynamic Type and high-contrast modes.
+
+---
+
+## Quick Start
+
+### Basic Custom Theme
+
+Override the accent color and large title font:
+
+```swift
+// Start from the default theme and override specific roles.
+let myTheme = SeamTheme.default
+    .with(colors: .default.with(accent: .orange))
+    .with(fonts: .default.with(largeTitle: .system(size: 36, weight: .bold)))
+
+// Apply to your view hierarchy:
+SeamAccessView()
+    .environment(\.seamTheme, myTheme)
+```
+
+### Partial Customization
+
+Override only what you need — everything else falls back to the default:
+
+```swift
+let partialTheme = SeamTheme.default
+    .with(colors: .default.with(accent: .green))
+    .with(fonts: .default.with(body: .system(size: 16, weight: .medium)))
+
+SeamAccessView()
+    .environment(\.seamTheme, partialTheme)
+```
+
+### Key Card Customization
+
+Customize the key card's gradient, accent color, and corner radius:
+
+```swift
+let customTheme = SeamTheme.default.with(
+    keyCard: .default.with(
+        backgroundGradient: [Color.white, Color.blue],
+        accentColor: .blue,
+        cornerRadius: 16
+    )
+)
+
+SeamAccessView()
+    .environment(\.seamTheme, customTheme)
+```
+
+---
+
+## Design Tips
+
+- **Accent drives actions:** The `colors.accent` role powers primary buttons and highlights.
+- **Prefer dynamic colors:** Use light/dark-aware colors so your theme looks great in both appearances.
+- **Keep fonts accessible:** Favor Dynamic Type-friendly fonts; avoid locking sizes unless necessary.
+
+---
+
+## Theme Scope and Environment
+
+Themes can be applied globally or scoped to a portion of your UI:
+
+- **Global theming:** Apply a theme at the root of your app's view hierarchy to affect all SeamComponents.
+- **Subtree theming:** Apply a theme to a specific view or container to override it only for that subtree.
+
+```swift
+// Global — applies to all SeamComponents in the app
+MyRootView()
+    .environment(\.seamTheme, myTheme)
+
+// Scoped — applies only within this sheet
+SeamAccessView()
+    .environment(\.seamTheme, specialTheme)
+```
+
+Because theming is driven by SwiftUI's environment system, updating the theme dynamically will automatically update all affected SeamComponents.
+
+---
+
+## FAQ
+
+**Q: What happens if I don't provide a theme?**
+
+All SeamComponents will use the built-in default theme, which matches the native iOS style.
+
+**Q: Can I override only some colors or fonts?**
+
+Yes. `SeamTheme` is fully composable — provide only the values you want to override; everything else falls back to the default.
+
+**Q: Does theming work with accessibility features?**
+
+Yes. All theme values work with Dynamic Type, high-contrast settings, and other accessibility features.
+
+**Q: Can I change the theme at runtime?**
+
+Yes. Because theming is driven by SwiftUI's environment system, updating the injected value dynamically will automatically update all affected SeamComponents.
+
+---
+
+## See Also
+
+- [Getting Started](/mobile-sdks/ios/ui-components) — Add SeamComponents to your project and display your first key.
+- [Custom Integration](/mobile-sdks/ios/ui-components/custom-integration) — Compose building blocks and inject mock services for full UI control.
