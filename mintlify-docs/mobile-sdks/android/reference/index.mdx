@@ -1,0 +1,65 @@
+---
+title: 'Android SDK API Reference'
+description: 'Complete API reference for the Seam Android SDK — classes, data classes, enumerations, and sealed classes.'
+sidebarTitle: 'Overview'
+---
+
+> **Interim hand-authored reference.** This page is authored directly from the Seam Android SDK public Kotlin sources. The long-term plan is to generate these pages from KDoc via Dokka.
+
+The Seam Android SDK exposes a reactive, coroutine-friendly API built around `StateFlow` properties and suspend functions. Use `SeamSDK` as the single entry point for all SDK operations.
+
+## Quick Start
+
+```kotlin
+// 1. Initialize at app launch (suspend — call from a coroutine)
+SeamSDK.initialize(context, "seam_cst_...")
+
+// 2. Activate to begin credential sync
+SeamSDK.getInstance().activate()
+
+// 3. Observe credentials
+SeamSDK.getInstance().credentials.collect { credentials ->
+    // Update your UI
+}
+```
+
+## Classes
+
+<CardGroup cols={2}>
+  <Card title="SeamSDK" href="/mobile-sdks/android/reference/seam-sdk">
+    The main entry point for the Seam Android SDK. Manages SDK lifecycle, credential synchronization, unlock operations, and StateFlow-based status updates.
+  </Card>
+</CardGroup>
+
+## Data Classes
+
+<CardGroup cols={2}>
+  <Card title="SeamCredential" href="/mobile-sdks/android/reference/seam-credential">
+    An immutable snapshot of a single access credential — its name, location, expiry, supported unlock proximities, and any active errors.
+  </Card>
+</CardGroup>
+
+## Enumerations
+
+<CardGroup cols={2}>
+  <Card title="UnlockProximity" href="/mobile-sdks/android/reference/unlock-proximity">
+    The required physical proximity for an unlock attempt: `TOUCH`, `NEARBY`, or `REMOTE`.
+  </Card>
+</CardGroup>
+
+## Sealed Classes
+
+<CardGroup cols={2}>
+  <Card title="SeamUnlockEvent" href="/mobile-sdks/android/reference/seam-unlock-event">
+    Events emitted to the `unlockStatus` StateFlow as an unlock operation progresses from scanning through access granted, timeout, or reader error.
+  </Card>
+  <Card title="SeamError" href="/mobile-sdks/android/reference/seam-error">
+    Errors thrown by `SeamSDK` methods for initialization, activation, credential, and network failures.
+  </Card>
+  <Card title="SeamCredentialError" href="/mobile-sdks/android/reference/seam-credential-error">
+    Credential-specific errors that appear in `SeamCredential.errors` or are thrown wrapped in `SeamError.CredentialErrors`.
+  </Card>
+  <Card title="SeamRequiredUserInteraction" href="/mobile-sdks/android/reference/seam-required-user-interaction">
+    Actions the user must take to resolve a `SeamCredentialError.UserInteractionRequired` error — OTP authorization, enabling internet or Bluetooth, or granting permissions.
+  </Card>
+</CardGroup>
