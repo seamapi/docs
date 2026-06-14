@@ -145,15 +145,8 @@ Device(
 
 Ongoing online access codes are ideal for long-term users that wish to keep the same code. Ongoing codes remain active on a device until removed.
 
-<figure>
-  <img src='/images/ongoing-access-code-light.png' alt='' />
-  <figcaption>
-    <p>
-      Timeline of an ongoing access code. The code remains active, until you use
-      the Seam API to remove it.
-    </p>
-  </figcaption>
-</figure>
+![Timeline of an ongoing access code. The code remains active, until you use
+      the Seam API to remove it.](/images/ongoing-access-code-light.png)
 
 ### 1. Create an Ongoing Online Access Code
 
@@ -371,14 +364,7 @@ Use the `access_code` reference returned by the create function to call the [Get
 
 If the `status` remains `setting` for a very long time, or if the `access_code` object contains any `warnings` or `errors` properties, consult [the guide on "Troubleshooting Access Code Issues"](../../../../low-level-apis/smart-locks/access-codes/troubleshooting-access-code-issues) for further guidance.
 
-<figure>
-  <img src='/images/ongoing-access-code-polling-verification-dark.png' alt='' />
-  <figcaption>
-    <p>
-      Illustration of the polling verification step for an ongoing access code
-    </p>
-  </figcaption>
-</figure>
+![Illustration of the polling verification step for an ongoing access code](/images/ongoing-access-code-polling-verification-dark.png)
 
 ### **Webhook Events Method**
 
@@ -389,14 +375,7 @@ To avoid polling, monitor for incoming Seam webhook events related to the code s
 
 In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](../../../../low-level-apis/smart-locks/access-codes/troubleshooting-access-code-issues) for assistance and mitigation strategies.
 
-<figure>
-  <img src='/images/ongoing-access-code-webhook-verification-dark.png' alt='' />
-  <figcaption>
-    <p>
-      Illustration of the webhook verification method for an ongoing access code
-    </p>
-  </figcaption>
-</figure>
+![Illustration of the webhook verification method for an ongoing access code](/images/ongoing-access-code-webhook-verification-dark.png)
 
 ---
 
@@ -404,15 +383,8 @@ In the event of delay or failure, refer to [the "Troubleshooting access code iss
 
 Time-bound online access codes are suitable for temporary access, like guest visits or service appointments. These codes operate between designated `starts_at` and `ends_at` timestamps, granting access only during that period. Seam automatically ensures that the code is programmed on the device at the `starts_at` time and unprogrammed at the `ends_at` time.
 
-<figure>
-  <img src='/images/time-bound-access-code-light.png' alt='' />
-  <figcaption>
-    <p>
-      Timeline of an time-bound access code. The code remains active until the
-      ends_at timestamp that you configured using the Seam API.
-    </p>
-  </figcaption>
-</figure>
+![Timeline of an time-bound access code. The code remains active until the
+      ends_at timestamp that you configured using the Seam API.](/images/time-bound-access-code-light.png)
 
 ### 1. Create a Time-Bound Online Access Code
 
@@ -648,15 +620,7 @@ The [lifecycle of a time-bound access code](../../../../low-level-apis/smart-loc
 2. `Setting`: As the scheduled `starts_at` time approaches, Seam initiates the process of programming the code onto the lock, transitioning the code's `status` to `setting`.
 3. `Set`: Upon successful programming, the status updates to `set`, signaling that the code is loaded onto the lock, and may grant the designated user the ability to unlock the door.
 
-<figure>
-  <img
-    src='/images/state-sequence-for-access-codes-lifecycle-dark.png'
-    alt=''
-  />
-  <figcaption>
-    <p>Life-cycle of a time-bound access code</p>
-  </figcaption>
-</figure>
+![Life-cycle of a time-bound access code](/images/state-sequence-for-access-codes-lifecycle-dark.png)
 
 On door locks that support [natively scheduled](/low-level-apis/smart-locks/access-codes/index#native-scheduling) access codes, Seam will preload the access code into the device's internal memory bank **72 hours ahead** of the `starts_at` time. Even if preloaded in memory, the access code will remain in an `unset` state ahead of the `starts_at` time and await the precise activation moment to toggle its status. When the `starts_at` time arrives, the access code becomes active and transition to a `set` status, granting the designated user the ability to utilize it for entry. If there's an issue programming the natively-scheduled code by its `starts_at` time, the code's status will display as `setting`. For more information on the lifecycle of access codes, [please refer to this guide](../../../../low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).
 
@@ -671,13 +635,7 @@ Use the `access_code` reference returned by the create function to call the [Get
 
 If the `status` remains `setting`, or if the `access_code` object displays any `warnings` or `errors`, refer to [the "Troubleshooting Access Code Issues" guide](../../../../low-level-apis/smart-locks/access-codes/troubleshooting-access-code-issues) for assistance.
 
-<figure>
-  <img
-    src='/images/timebound-access-code-polling-verification-dark.png'
-    alt=''
-  />
-  <figcaption></figcaption>
-</figure>
+![](/images/timebound-access-code-polling-verification-dark.png)
 
 ### **Webhook Events Method**
 
@@ -688,10 +646,4 @@ To avoid polling, monitor for incoming Seam webhook events related to the code s
 
 In the event of delay or failure, refer to [the "Troubleshooting access code issues" guide](../../../../low-level-apis/smart-locks/access-codes/troubleshooting-access-code-issues) for assistance and mitigation strategies.
 
-<figure>
-  <img
-    src='/images/timebound-access-code-webhook-verification-dark.png'
-    alt=''
-  />
-  <figcaption></figcaption>
-</figure>
+![](/images/timebound-access-code-webhook-verification-dark.png)

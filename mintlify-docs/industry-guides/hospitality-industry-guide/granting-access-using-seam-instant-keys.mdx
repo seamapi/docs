@@ -5,18 +5,8 @@ description: 'Issue Seam Instant Keys to hotel guests by creating a user identit
 
 To issue an Instant Key, identify the user to whom you want to grant access and create a user identity to represent this user. Then, create an Access Grant to specify the entrances and spaces to which you want to grant the user access. The Access Grant returns the Instant Key URL that you can deliver to your user through text or email.
 
-<figure>
-  <img
-    src='/images/iphone-appclip-unlock.png'
-    alt='Send hotel guests Seam Instant Keys in a text message or email—No app download required!'
-  />
-  <figcaption>
-    <p>
-      Send hotel guests Seam Instant Keys in a text message or email—No app
-      download required!
-    </p>
-  </figcaption>
-</figure>
+![Send hotel guests Seam Instant Keys in a text message or email—No app
+      download required!](/images/iphone-appclip-unlock.png)
 
 This section details the steps in this process and provides accompanying Seam API code samples. See the following instructions:
 
@@ -337,17 +327,6 @@ AccessGrant(
 
 Share the generated `instant_key_url` with your user in your preferred way, depending on your product flow and guest experience. For most use cases, the simplest way to deliver an Instant Key is using a link in a text message or email. This method works well if you already collect the guest's phone number or email at booking.
 
-<figure>
-  <img
-    src='/images/instant-key-text-message.png'
-    alt='You can deliver an Instant Key using a link in a text message or email.'
-    width='295'
-  />
-  <figcaption>
-    <p>
-      You can deliver an Instant Key using a link in a text message or email.
-    </p>
-  </figcaption>
-</figure>
+![You can deliver an Instant Key using a link in a text message or email.](/images/instant-key-text-message.png)
 
 Note that Instant Keys are also designed to have an appropriately-short validity period, as indicated by the Instant Key resource's `expires_at` property.

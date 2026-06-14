@@ -11,10 +11,7 @@ description: 'Access codes are codes for keypad devices. These are used when you
 </Info>
 
 
-<figure>
-  <img src='/images/code_unlock.gif' alt='' />
-  <figcaption></figcaption>
-</figure>
+![](/images/code_unlock.gif)
 
 ## What Is an Access Code?
 
@@ -28,13 +25,19 @@ In addition, for certain devices, Seam also supports [offline access codes](#off
 
 Ongoing access code are ideal for residents or long-term users. Ongoing codes start right away and remain active on a device until they are removed.
 
-<figure><picture><source srcset="/images/ongoing-access-code-dark.png" media="(prefers-color-scheme: dark)" /><img src="/images/ongoing-access-code-light.png" alt="Timeline of an ongoing access code. The code remains active until you ask Seam to remove it." /></picture><figcaption><p>Timeline of an ongoing access code. The code remains active until you ask Seam to remove it.</p></figcaption></figure>
+<picture>
+  <source srcset="/images/ongoing-access-code-dark.png" media="(prefers-color-scheme: dark)" />
+  <img src="/images/ongoing-access-code-light.png" alt="Timeline of an ongoing access code. The code remains active until you ask Seam to remove it." />
+</picture>
 
 ### **Time-Bound Access Codes**
 
 Time-bound access codes are suitable for temporary access, like guest visits or service appointments. These codes operate between designated `starts_at` and `ends_at` timestamps, granting access only during this period.
 
-<figure><picture><source srcset="/images/time-bound-access-code-dark.png" media="(prefers-color-scheme: dark)" /><img src="/images/time-bound-access-code-light.png" alt="Timeline of a time-bound access code. The code remains active until the ends_at timestamp that you provide to Seam." /></picture><figcaption><p>Timeline of a time-bound access code. The code remains active until the <code>ends_at</code> timestamp that you provide to Seam.</p></figcaption></figure>
+<picture>
+  <source srcset="/images/time-bound-access-code-dark.png" media="(prefers-color-scheme: dark)" />
+  <img src="/images/time-bound-access-code-light.png" alt="Timeline of a time-bound access code. The code remains active until the ends_at timestamp that you provide to Seam." />
+</picture>
 
 ### Offline Access Codes
 
@@ -76,17 +79,10 @@ Seam ensures access reliability by initiating the programming of access codes on
 
 For locks that support setting codes with a schedule, Seam will preload access codes onto the device a full **72 hours** before the `starts_at` timestamp of a time-bound code. When the `starts_at` time arrives, the code automatically activates and will remain active until its `ends_at` time. We enable this "native scheduling" functionality by default for all providers that support it. See [Native Scheduling - Supported Providers](#native-scheduling-supported-providers) for a list of supported providers. You can choose to override this default behavior and have Seam perform "just-in-time scheduling" by setting `prefer_native_scheduling` to `false` when creating a code.
 
-<figure>
-  <img src='/images/native-code-programming-dark.png' alt='' />
-  <figcaption>
-    <p>
-      72 hours before the <code>starts_at</code> timestamp, Seam inserts the
+![72 hours before the <code>starts_at</code> timestamp, Seam inserts the
       code into the device's internal memory. When the <code>starts_at</code>{' '}
       time arrives, the device automatically activates the code. It is then
-      automatically deactivated at the <code>ends_at</code> timestamp.
-    </p>
-  </figcaption>
-</figure>
+      automatically deactivated at the <code>ends_at</code> timestamp.](/images/native-code-programming-dark.png)
 
 #### Native Scheduling Supported Providers
 
@@ -108,16 +104,9 @@ For locks that support setting codes with a schedule, Seam will preload access c
 
 For those locks that lack native scheduling functionality, Seam will use its own scheduling infrastructure to program the code 60 minutes before the `starts_at` time, and remove it at the `ends_at` time.
 
-<figure>
-  <img src='/images/just-in-time-programming-dark.png' alt='' />
-  <figcaption>
-    <p>
-      When the <code>starts_at</code> time arrives, Seam adds the code to the
+![When the <code>starts_at</code> time arrives, Seam adds the code to the
       device and activates it. It is then automatically deactivated at the{' '}
-      <code>ends_at</code> timestamp.
-    </p>
-  </figcaption>
-</figure>
+      <code>ends_at</code> timestamp.](/images/just-in-time-programming-dark.png)
 
 ---
 
