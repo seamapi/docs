@@ -13,6 +13,8 @@ If you want to change these access codes that are not linked by a `common_code_k
 
 See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
 
+For granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.
+
 
 {% tabs %}
 {% tab title="JavaScript" %}
