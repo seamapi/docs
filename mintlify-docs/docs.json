@@ -3286,15 +3286,15 @@
     },
     {
       "source": "/developer-tools/mobile-sdks/index",
-      "destination": "/mobile-sdks/index"
+      "destination": "/mobile-sdks"
     },
     {
       "source": "/developer-tools/mobile-sdks/ios-sdk",
-      "destination": "/mobile-sdks/ios/index"
+      "destination": "/mobile-sdks/ios"
     },
     {
       "source": "/developer-tools/mobile-sdks/android-sdk",
-      "destination": "/mobile-sdks/android/index"
+      "destination": "/mobile-sdks/android"
     }
   ],
   "openapi": [
