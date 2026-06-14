@@ -1,0 +1,59 @@
+---
+title: 'UnlockProximity'
+description: 'The required physical proximity for an unlock attempt: TOUCH, NEARBY, or REMOTE.'
+---
+
+> **Interim hand-authored reference.** This page is authored directly from the Seam Android SDK public Kotlin sources. See the [reference overview](/mobile-sdks/android/reference/index) for context.
+
+## Overview
+
+`UnlockProximity` is an `enum class` representing the proximity at which a credential is used to unlock a reader. Pass one of these values to `SeamSDK.getInstance().unlock()` to specify the required proximity for an attempt.
+
+```kotlin
+enum class UnlockProximity {
+    TOUCH,
+    NEARBY,
+    REMOTE
+}
+```
+
+If no `unlockProximity` argument is provided to `unlock()`, the SDK uses the first value in `SeamCredential.supportedUnlockProximities` as the default.
+
+---
+
+## Cases
+
+| Case | Description |
+|------|-------------|
+| `TOUCH` | The user must hold the back of the phone against the reader to unlock. |
+| `NEARBY` | The user must be physically close to the reader but does not need to touch it. |
+| `REMOTE` | The reader is unlocked from a remote location, for example via Wi-Fi. No physical proximity is required. |
+
+---
+
+## Example
+
+```kotlin
+// Use the credential's default proximity (first in supportedUnlockProximities)
+SeamSDK.getInstance().unlock(credentialId = credential.id!!)
+
+// Require tap-to-unlock
+SeamSDK.getInstance().unlock(
+    credentialId = credential.id!!,
+    unlockProximity = UnlockProximity.TOUCH
+)
+
+// Require nearby Bluetooth proximity
+SeamSDK.getInstance().unlock(
+    credentialId = credential.id!!,
+    unlockProximity = UnlockProximity.NEARBY
+)
+
+// Unlock remotely
+SeamSDK.getInstance().unlock(
+    credentialId = credential.id!!,
+    unlockProximity = UnlockProximity.REMOTE
+)
+```
+
+**See also:** [`SeamCredential.supportedUnlockProximities`](/mobile-sdks/android/reference/seam-credential), [`SeamSDK.unlock()`](/mobile-sdks/android/reference/seam-sdk)

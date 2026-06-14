@@ -1,10 +1,39 @@
 ---
 title: 'Android SDK'
-description: 'Build native Android apps for mobile access and smart device management with the Seam Android SDK.'
+description: 'Build native Android apps for mobile access and smart device management with the Seam Android SDK, compatible with Android 7.0 (API 24) and above.'
 sidebarTitle: 'Overview'
 ---
 
-<Note>
-  The Seam Android SDK documentation is coming soon. For early access, contact
-  [support@seam.co](mailto:support@seam.co).
-</Note>
+The Seam Android SDK lets you build your own mobile app that supports mobile access or smart device management. It provides a reactive, coroutine-friendly API for initializing the SDK, managing credentials, and performing unlock operations with real-time status updates.
+
+Get started with our [quickstart guide](/mobile-sdks/android/quickstart), or browse the [SDK API Reference](/mobile-sdks/android/reference/index).
+
+---
+
+## Requirements
+
+- **Compile SDK:** 35
+- **Kotlin:** 2.1.0 or greater
+- **Minimum Android SDK:** API Level 24 (Android 7.0) for the base SDK; higher for certain provider modules (see [Installation](/mobile-sdks/android/installation))
+
+---
+
+## Get Started
+
+<CardGroup cols={2}>
+  <Card title="Installation" href="/mobile-sdks/android/installation">
+    Add the Seam Android SDK to your project using Gradle and GitHub Packages.
+  </Card>
+  <Card title="Quickstart" href="/mobile-sdks/android/quickstart">
+    Get up and running with a minimal working integration in minutes.
+  </Card>
+  <Card title="Architecture" href="/mobile-sdks/android/architecture">
+    Understand StateFlows, coroutines, offline caching, and the SDK lifecycle.
+  </Card>
+  <Card title="Error Handling" href="/mobile-sdks/android/error-handling">
+    Interpret and handle SeamError, SeamCredentialError, and required user interactions.
+  </Card>
+  <Card title="API Reference" href="/mobile-sdks/android/reference/index">
+    Browse the complete Android SDK API reference documentation.
+  </Card>
+</CardGroup>

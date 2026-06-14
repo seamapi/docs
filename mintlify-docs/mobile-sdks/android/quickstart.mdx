@@ -1,0 +1,227 @@
+---
+title: 'Quickstart'
+description: 'Get up and running with the Seam Android SDK in minutes: install, initialize, activate, observe credentials, and perform your first unlock.'
+---
+
+## Prerequisites
+
+- Android project with Compile SDK 35 and Kotlin 2.1.0+
+- Seam Android SDK installed (see [Installation](/mobile-sdks/android/installation))
+- A client session token (CST) from the Seam API for the current user
+
+---
+
+## Overview
+
+The integration follows three steps:
+
+1. **Initialize** — Bootstrap the SDK once with a client session token.
+2. **Activate** — Sync credentials and start background services.
+3. **Unlock** — Observe credentials and trigger the unlock flow.
+
+<Steps>
+  <Step title="Initialize the SDK">
+    Call `SeamSDK.initialize()` once per user session — the best place is `Application.onCreate()` or immediately after sign-in. It is a `suspend` function, so call it from a coroutine.
+
+    ```kotlin
+    import co.seam.core.api.SeamSDK
+    import co.seam.core.sdkerrors.SeamError
+
+    // In your Application class or sign-in flow:
+    coroutineScope.launch {
+        try {
+            SeamSDK.initialize(context, "seam_cst_...")
+        } catch (e: SeamError) {
+            when (e) {
+                is SeamError.AlreadyInitialized -> {
+                    // SDK is already set up — safe to ignore
+                }
+                is SeamError.InvalidClientSessionToken -> {
+                    // Token is malformed; check your sign-in flow
+                }
+                else -> {
+                    // Log and surface the error to the user
+                }
+            }
+        }
+    }
+    ```
+
+    <Note>
+      `initialize` is idempotent and thread-safe. Calling it a second time with the same token is a no-op. To re-initialize with a different token, call `deactivate(deintegrate = true)` first.
+    </Note>
+  </Step>
+
+  <Step title="Activate and observe credentials">
+    After initialization, call `activate()` to sync credentials from the server. Then collect the `credentials` StateFlow to react to credential updates in your UI.
+
+    ```kotlin
+    import co.seam.core.api.SeamSDK
+    import co.seam.core.sdkerrors.SeamError
+
+    coroutineScope.launch {
+        val seam = SeamSDK.getInstance()
+
+        try {
+            seam.activate()
+        } catch (e: SeamError) {
+            when (e) {
+                is SeamError.InternetConnectionRequired -> {
+                    showError("No internet connection. Please connect and try again.")
+                }
+                is SeamError.InvalidClientSessionToken -> {
+                    showError("Session expired. Please sign in again.")
+                }
+                else -> {
+                    showError("Activation failed: ${e.message}")
+                }
+            }
+        }
+
+        // Observe the credential list reactively
+        seam.credentials.collect { credentials ->
+            if (credentials.isEmpty()) {
+                showNoCredentialsView()
+            } else {
+                showCredentialsList(credentials)
+            }
+        }
+    }
+    ```
+
+    <Note>
+      `credentials` is a `StateFlow` — it emits the current list immediately upon collection and then again whenever the list changes. Use `lifecycleScope.launch` or `repeatOnLifecycle` in a Fragment or Activity to automatically cancel collection when the view is destroyed.
+    </Note>
+  </Step>
+
+  <Step title="Perform an unlock">
+    Before calling `unlock()`, subscribe to `unlockStatus` so you receive all progress events. Pass the credential ID and an optional timeout. The `unlock()` call returns a `Job` that you can cancel if needed.
+
+    ```kotlin
+    import co.seam.core.api.SeamSDK
+    import co.seam.core.sdkerrors.SeamError
+    import co.seam.core.events.SeamUnlockEvent
+    import kotlin.time.Duration.Companion.seconds
+
+    coroutineScope.launch {
+        val seam = SeamSDK.getInstance()
+
+        // Collect unlock status events before starting the unlock
+        launch {
+            seam.unlockStatus.collect { event ->
+                when (event) {
+                    is SeamUnlockEvent.ScanningStarted -> showStatus("Scanning...")
+                    is SeamUnlockEvent.AccessGranted   -> showSuccess("Access granted!")
+                    is SeamUnlockEvent.Timeout         -> showError("Timed out")
+                    is SeamUnlockEvent.ReaderError     -> showError("Reader error: ${event.message}")
+                }
+            }
+        }
+
+        // Initiate the unlock — throws SeamError on pre-flight failures
+        try {
+            val credential = seam.credentials.value.first()
+            val credentialId = credential.id ?: return@launch
+            seam.unlock(
+                credentialId = credentialId,
+                timeout = 30.seconds
+            )
+        } catch (e: SeamError) {
+            when (e) {
+                is SeamError.ActivationRequired    -> showError("Please activate the SDK first.")
+                is SeamError.InvalidCredentialId   -> showError("Credential not found.")
+                is SeamError.CredentialErrors      -> handleCredentialErrors(e.errors)
+                is SeamError.IntegrationNotFound   -> showError("Provider integration not installed.")
+                else                               -> showError("Unlock failed: ${e.message}")
+            }
+        }
+    }
+    ```
+
+    <Note>
+      Always check `credential.errors` before unlocking. If a credential has unresolved errors (for example, `Loading` or `UserInteractionRequired`), the unlock call will throw `SeamError.CredentialErrors`. See [Error Handling](/mobile-sdks/android/error-handling) for details.
+    </Note>
+  </Step>
+</Steps>
+
+---
+
+## Complete Example
+
+The following shows the three steps wired together in a minimal Activity:
+
+```kotlin
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.Lifecycle
+import co.seam.core.api.SeamSDK
+import co.seam.core.events.SeamUnlockEvent
+import co.seam.core.sdkerrors.SeamError
+import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.seconds
+
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        lifecycleScope.launch {
+            // Step 1: Initialize (in practice, do this in Application.onCreate)
+            try {
+                SeamSDK.initialize(applicationContext, "seam_cst_...")
+            } catch (e: SeamError.AlreadyInitialized) {
+                // Already initialized — continue
+            }
+
+            val seam = SeamSDK.getInstance()
+
+            // Step 2: Activate
+            try {
+                seam.activate()
+            } catch (e: SeamError) {
+                return@launch
+            }
+
+            // Observe credentials using lifecycle-aware collection
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                seam.credentials.collect { credentials ->
+                    // Update your UI here
+                }
+            }
+        }
+    }
+
+    fun onUnlockButtonClicked(credentialId: String) {
+        lifecycleScope.launch {
+            val seam = SeamSDK.getInstance()
+
+            // Step 3: Subscribe to status, then unlock
+            launch {
+                seam.unlockStatus.collect { event ->
+                    when (event) {
+                        is SeamUnlockEvent.AccessGranted -> showSuccess()
+                        is SeamUnlockEvent.Timeout       -> showError("Timed out")
+                        else -> {}
+                    }
+                }
+            }
+
+            try {
+                seam.unlock(credentialId = credentialId, timeout = 30.seconds)
+            } catch (e: SeamError) {
+                showError(e.message ?: "Unlock failed")
+            }
+        }
+    }
+}
+```
+
+---
+
+## Next Steps
+
+- [Architecture](/mobile-sdks/android/architecture) — Deep dive into StateFlows, coroutine context, offline caching, and SDK lifecycle.
+- [Error Handling](/mobile-sdks/android/error-handling) — All `SeamError` subtypes and credential error patterns.
+- [API Reference](/mobile-sdks/android/reference/index) — Full reference for `SeamSDK`, `SeamCredential`, and related types.
