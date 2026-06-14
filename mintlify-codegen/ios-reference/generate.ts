@@ -409,8 +409,12 @@ function extractParameters(
   sections: RawSection[],
 ): Array<{ name: string; description: string }> | undefined {
   const paramSection = sections.find((s) => s.kind === 'parameters')
-  if (paramSection?.parameters == null || paramSection.parameters.length === 0)
-    {return undefined}
+  if (
+    paramSection?.parameters == null ||
+    paramSection.parameters.length === 0
+  ) {
+    return undefined
+  }
 
   return paramSection.parameters.map((p) => ({
     name: p.name,
