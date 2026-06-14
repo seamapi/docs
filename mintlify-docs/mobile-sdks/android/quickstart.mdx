@@ -111,12 +111,9 @@ The integration follows three steps:
             seam.unlockStatus.collect { event ->
                 when (event) {
                     is SeamUnlockEvent.ScanningStarted -> showStatus("Scanning...")
-                    is SeamUnlockEvent.Connecting      -> showStatus("Connecting...")
-                    is SeamUnlockEvent.ReaderConnected -> showStatus("Connected")
                     is SeamUnlockEvent.AccessGranted   -> showSuccess("Access granted!")
                     is SeamUnlockEvent.Timeout         -> showError("Timed out")
                     is SeamUnlockEvent.ReaderError     -> showError("Reader error: ${event.message}")
-                    else -> {}
                 }
             }
         }
@@ -124,8 +121,9 @@ The integration follows three steps:
         // Initiate the unlock — throws SeamError on pre-flight failures
         try {
             val credential = seam.credentials.value.first()
+            val credentialId = credential.id ?: return@launch
             seam.unlock(
-                credentialId = credential.id,
+                credentialId = credentialId,
                 timeout = 30.seconds
             )
         } catch (e: SeamError) {

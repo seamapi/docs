@@ -144,7 +144,7 @@ The SDK's lifecycle maps naturally onto the Android application lifecycle:
 |------|-------------|
 | **Client Session Token (CST)** | A short-lived token used to authenticate SDK API calls. Obtained from your server via the Seam API after the user signs in. |
 | **`SeamCredential`** | An immutable snapshot of a single access credential, with `id`, `name`, `location`, `expiry`, and an `errors` list. Observe the `credentials` StateFlow for live updates. |
-| **`SeamUnlockEvent`** | A sealed class describing each stage of an unlock operation (`ScanningStarted`, `Connecting`, `AccessGranted`, `Timeout`, `ReaderError`, and others). |
+| **`SeamUnlockEvent`** | A sealed class describing each stage of an unlock operation (`ScanningStarted`, `AccessGranted`, `Timeout`, and `ReaderError`). |
 | **`SeamError`** | A sealed class for SDK setup and API-level failures. See [Error Handling](/mobile-sdks/android/error-handling). |
 | **`SeamCredentialError`** | Returned in `SeamCredential.errors` when a specific credential has an issue (for example, expired, loading, or user interaction required). |
 

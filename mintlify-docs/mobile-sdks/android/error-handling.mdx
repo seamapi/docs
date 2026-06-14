@@ -86,7 +86,8 @@ if (credential.errors.isNotEmpty()) {
     }
 } else {
     // Credential is ready — proceed with unlock
-    performUnlock(credential.id)
+    val credentialId = credential.id ?: return showError("Credential has no ID.")
+    performUnlock(credentialId)
 }
 ```
 
@@ -166,11 +167,9 @@ fun performUnlock(credentialId: String) {
             seam.unlockStatus.collect { event ->
                 when (event) {
                     is SeamUnlockEvent.ScanningStarted -> showStatus("Scanning...")
-                    is SeamUnlockEvent.Connecting      -> showStatus("Connecting...")
                     is SeamUnlockEvent.AccessGranted   -> showSuccess("Access granted!")
                     is SeamUnlockEvent.Timeout         -> showError("Operation timed out.")
                     is SeamUnlockEvent.ReaderError     -> showError("Reader error: ${event.message}")
-                    else -> {}
                 }
             }
         }
