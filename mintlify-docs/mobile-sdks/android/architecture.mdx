@@ -1,0 +1,165 @@
+---
+title: 'Architecture'
+description: 'A high-level view of how the Seam Android SDK integrates with your app, Seam Cloud services, and lock hardware — including StateFlows, coroutines, offline caching, and the SDK lifecycle.'
+---
+
+## System Components
+
+The Seam Android SDK connects four main components:
+
+- **Mobile App** — Your Android application, written in Kotlin, that calls the Seam SDK.
+- **SeamSDK** — A native library responsible for credential management, unlock flows, and reactive state emission.
+- **Seam Cloud API** — The cloud service that provisions credentials, handles revocation, and synchronizes state.
+- **Lock Hardware** — Physical locks that communicate over Bluetooth Low Energy (BLE) and/or NFC.
+
+```
+Mobile App  ──SDK Calls──▶  Seam SDK  ──HTTPS──▶  Seam Cloud API
+                               │                        │
+                            BLE/NFC              Push / Sync Events
+                               │                        │
+                               ▼                        ▼
+                          Lock Hardware          SeamSDK (state update)
+```
+
+---
+
+## Reactive State with StateFlow
+
+The SDK exposes its state through three `StateFlow` properties. Because `StateFlow` is a hot stream, your UI always has access to the latest value via `.value`, and you can collect emissions reactively using Kotlin coroutines.
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `credentials` | `StateFlow<List<SeamCredential>>` | Current list of access credentials. Emits on every change, including credential sync from the server. |
+| `isActivated` | `StateFlow<Boolean>` | `true` after a successful `activate()` call; `false` after `deactivate()`. |
+| `unlockStatus` | `StateFlow<UnlockEvent>` | Emits progress events during an unlock operation. The latest event is always accessible via `.value`. |
+
+### Collecting StateFlows
+
+All three StateFlows are thread-safe and can be collected from any coroutine context. When collecting in an Activity or Fragment, use `repeatOnLifecycle` to automatically cancel collection when the view is not in the foreground:
+
+```kotlin
+lifecycleScope.launch {
+    repeatOnLifecycle(Lifecycle.State.STARTED) {
+        SeamSDK.getInstance().credentials.collect { credentials ->
+            updateCredentialListUI(credentials)
+        }
+    }
+}
+```
+
+StateFlows survive configuration changes (for example, screen rotation) when collected through a `ViewModel`, making them a natural fit for Android's architecture components.
+
+---
+
+## Coroutines and Suspend Functions
+
+The SDK's mutating operations are Kotlin `suspend` functions — they are non-blocking and safe to call from any coroutine context without additional threading configuration:
+
+| Function | Suspend? | Notes |
+|----------|----------|-------|
+| `SeamSDK.initialize(context, clientSessionToken)` | Yes | Call once, typically in `Application.onCreate()`. Thread-safe and idempotent. |
+| `seamSDK.activate()` | Yes | Requires internet on first call. Safe to call multiple times. |
+| `seamSDK.deactivate(deintegrate)` | Yes | Stops background operations; does not clear cached credentials unless `deintegrate = true`. |
+| `seamSDK.refresh()` | Yes | Manually syncs credentials; `credentials` StateFlow updates before the call returns. |
+| `seamSDK.unlock(credentialId, unlockProximity, timeout)` | No | Returns a `Job`. Subscribe to `unlockStatus` before calling. |
+| `SeamSDK.getInstance()` | No | Returns the initialized instance. Throws if `initialize` was not called. |
+
+<Note>
+  `unlock()` is not a suspend function — it launches a background `Job` and emits progress via `unlockStatus`. Start collecting `unlockStatus` **before** calling `unlock()` to ensure you receive all events from the start of the operation.
+</Note>
+
+---
+
+## Offline Caching
+
+The SDK caches credentials locally so that unlock operations remain available even without an active network connection.
+
+| Operation | Requires Internet | Notes |
+|-----------|------------------|-------|
+| `activate()` | Yes (first call) | Subsequent calls may succeed from cache if already activated. |
+| `refresh()` | Yes | Always fetches from the server. |
+| `unlock()` | No (if cached) | Uses locally cached credentials. BLE/NFC communication goes directly to the lock. |
+| `credentials` StateFlow | No | Always emits the last-known list, including while offline. |
+
+When the app comes back online, the SDK automatically re-syncs credentials in the background. Your UI observing `credentials` will receive updated values without any manual intervention.
+
+---
+
+## SDK Lifecycle
+
+The SDK's lifecycle maps naturally onto the Android application lifecycle:
+
+<Steps>
+  <Step title="Initialize (once per installation / sign-in)">
+    Call `SeamSDK.initialize(context, clientSessionToken)` in `Application.onCreate()` or immediately after the user signs in. Initialization is idempotent — calling it again with the same token is a no-op. To re-initialize with a new token (for example, after a sign-out and sign-in), call `deactivate(deintegrate = true)` first.
+
+    ```kotlin
+    class MyApplication : Application() {
+        override fun onCreate() {
+            super.onCreate()
+            // Launch a coroutine from an application-scoped scope
+            applicationScope.launch {
+                try {
+                    SeamSDK.initialize(this@MyApplication, userClientSessionToken)
+                } catch (e: SeamError.AlreadyInitialized) {
+                    // Safe to ignore if already initialized for this session
+                }
+            }
+        }
+    }
+    ```
+  </Step>
+
+  <Step title="Activate (when the user opens the credential / lock screen)">
+    Call `activate()` to start syncing credentials and background services. This is typically done when the user navigates to the part of your app that manages access credentials. The SDK is safe to activate multiple times.
+
+    ```kotlin
+    viewModelScope.launch {
+        SeamSDK.getInstance().activate()
+    }
+    ```
+  </Step>
+
+  <Step title="Use credentials and unlock">
+    Observe the `credentials` StateFlow to display the user's keys and call `unlock()` when the user taps an unlock button. See the [Quickstart](/mobile-sdks/android/quickstart) for a complete example.
+  </Step>
+
+  <Step title="Deactivate (optional, on sign-out)">
+    Call `deactivate()` to stop background operations while preserving the credential cache. Pass `deintegrate = true` to also remove the device association and clear all cached state — use this path when the user signs out.
+
+    ```kotlin
+    viewModelScope.launch {
+        // Sign-out path: full teardown
+        SeamSDK.getInstance().deactivate(deintegrate = true)
+    }
+    ```
+  </Step>
+</Steps>
+
+---
+
+## Key Data Types
+
+| Type | Description |
+|------|-------------|
+| **Client Session Token (CST)** | A short-lived token used to authenticate SDK API calls. Obtained from your server via the Seam API after the user signs in. |
+| **`SeamCredential`** | An immutable snapshot of a single access credential, with `id`, `name`, `location`, `expiry`, and an `errors` list. Observe the `credentials` StateFlow for live updates. |
+| **`SeamUnlockEvent`** | A sealed class describing each stage of an unlock operation (`ScanningStarted`, `Connecting`, `AccessGranted`, `Timeout`, `ReaderError`, and others). |
+| **`SeamError`** | A sealed class for SDK setup and API-level failures. See [Error Handling](/mobile-sdks/android/error-handling). |
+| **`SeamCredentialError`** | Returned in `SeamCredential.errors` when a specific credential has an issue (for example, expired, loading, or user interaction required). |
+
+---
+
+## Security and Storage
+
+- **Secure Transport** — All Seam Cloud API calls use HTTPS. Lock communication is secured by the lock vendor's protocol over BLE/NFC.
+- **Encrypted Storage** — Tokens and credentials are stored using Android's secure storage mechanisms. Do not cache CSTs in plaintext in your own code.
+- **Credential Isolation** — Credentials are scoped to the initialized client session token. Calling `deactivate(deintegrate = true)` wipes all locally cached state.
+
+---
+
+## See Also
+
+- [Quickstart](/mobile-sdks/android/quickstart) — Initialize the SDK and perform your first unlock.
+- [Error Handling](/mobile-sdks/android/error-handling) — How to handle `SeamError` and credential errors.
+- [API Reference](/mobile-sdks/android/reference/index) — Full API reference for all public types.
