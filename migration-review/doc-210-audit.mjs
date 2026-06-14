@@ -39,7 +39,9 @@ for (const fp of mdxFiles) {
   routes.add(r === '/' ? '/' : r)
 }
 try {
-  const oa = JSON.parse(fs.readFileSync(path.join(ROOT, 'openapi.json'), 'utf8'))
+  const oa = JSON.parse(
+    fs.readFileSync(path.join(ROOT, 'openapi.json'), 'utf8'),
+  )
   for (const m of Object.values(oa.paths || {})) {
     for (const op of Object.values(m)) {
       const href = op?.['x-mint']?.href
@@ -109,8 +111,9 @@ console.log(`  hops whose destination is NOT a valid route: ${invalid.length}`)
 if (invalid.length) {
   const byT = {}
   for (const h of invalid) byT[h.to] = (byT[h.to] || 0) + 1
-  for (const [t, n] of Object.entries(byT).sort((a, b) => b[1] - a[1]))
-    {console.log(`     ${n}x -> ${t}`)}
+  for (const [t, n] of Object.entries(byT).sort((a, b) => b[1] - a[1])) {
+    console.log(`     ${n}x -> ${t}`)
+  }
 }
 
 console.log(`\n--- HAND-WRITTEN files needing one-time fix ---`)
@@ -133,5 +136,6 @@ for (const h of gen) {
   const k = `${h.from} -> ${h.to}`
   byMap[k] = (byMap[k] || 0) + 1
 }
-for (const [k, n] of Object.entries(byMap).sort((a, b) => b[1] - a[1]))
-  {console.log(`   ${n}x  ${k}`)}
+for (const [k, n] of Object.entries(byMap).sort((a, b) => b[1] - a[1])) {
+  console.log(`   ${n}x  ${k}`)
+}

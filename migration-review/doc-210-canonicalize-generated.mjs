@@ -9,7 +9,9 @@ import path from 'node:path'
 const ROOT = '/home/sy/seam/docs/mintlify-docs'
 
 const docs = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs.json'), 'utf8'))
-const redir = new Map((docs.redirects ?? []).map((r) => [r.source, r.destination]))
+const redir = new Map(
+  (docs.redirects ?? []).map((r) => [r.source, r.destination]),
+)
 
 function canonicalizePath(p) {
   let current = p.replace(/^\/latest(?=\/|$)/, '')
@@ -59,8 +61,9 @@ function canonicalizeLinks(text) {
 const files = [path.join(ROOT, 'openapi.json')]
 const apiDir = path.join(ROOT, 'api')
 for (const entry of fs.readdirSync(apiDir, { recursive: true })) {
-  if (typeof entry === 'string' && entry.endsWith('.mdx'))
-    {files.push(path.join(apiDir, entry))}
+  if (typeof entry === 'string' && entry.endsWith('.mdx')) {
+    files.push(path.join(apiDir, entry))
+  }
 }
 
 let count = 0
