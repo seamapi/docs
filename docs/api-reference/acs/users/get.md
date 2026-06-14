@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Returns a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Returns a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
 
 
 {% tabs %}

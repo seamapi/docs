@@ -8,7 +8,7 @@
 - [Endpoints](./#endpoints)
 
 
-Means by which an [access control system user](https://docs.seam.co/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/capability-guides/access-systems).
+Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
 
@@ -110,7 +110,7 @@ An access system PIN code credential resource.
 
 **`access_method`** *Enum*
 
-Access method for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
+Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.
 
 
 <details>
@@ -127,7 +127,7 @@ Access method for the [credential](https://docs.seam.co/capability-guides/access
 
 **`acs_credential_id`** *UUID*
 
-ID of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -144,7 +144,7 @@ ID of the [credential](https://docs.seam.co/capability-guides/access-systems/man
 
 **`acs_system_id`** *UUID*
 
-ID of the [access control system](https://docs.seam.co/capability-guides/access-systems) that contains the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -153,7 +153,7 @@ ID of the [access control system](https://docs.seam.co/capability-guides/access-
 
 **`acs_user_id`** *UUID*
 
-ID of the [ACS user](https://docs.seam.co/capability-guides/access-systems/user-management) to whom the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) belongs.
+ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.
 
 
 
@@ -162,7 +162,7 @@ ID of the [ACS user](https://docs.seam.co/capability-guides/access-systems/user-
 
 **`assa_abloy_vostio_metadata`** *Object*
 
-Vostio-specific metadata for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -199,7 +199,7 @@ Vostio-specific metadata for the [credential](https://docs.seam.co/capability-gu
 
 **`card_number`** *String*
 
-Number of the card associated with the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -208,7 +208,7 @@ Number of the card associated with the [credential](https://docs.seam.co/capabil
 
 **`code`** *String*
 
-Access (PIN) code for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -217,7 +217,7 @@ Access (PIN) code for the [credential](https://docs.seam.co/capability-guides/ac
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/capability-guides/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) belongs.
+ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/managing-credentials#connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.
 
 
 
@@ -226,7 +226,7 @@ ID of the [connected account](https://docs.seam.co/capability-guides/access-syst
 
 **`created_at`** *Datetime*
 
-Date and time at which the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was created.
+Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.
 
 
 
@@ -235,7 +235,7 @@ Date and time at which the [credential](https://docs.seam.co/capability-guides/a
 
 **`display_name`** *String*
 
-Display name that corresponds to the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) type.
+Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.
 
 
 
@@ -244,7 +244,7 @@ Display name that corresponds to the [credential](https://docs.seam.co/capabilit
 
 **`ends_at`** *String*
 
-Date and time at which the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
+Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.
 
 
 
@@ -253,7 +253,7 @@ Date and time at which the [credential](https://docs.seam.co/capability-guides/a
 
 **`errors`** *List* *of Objects*
 
-Errors associated with the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -269,7 +269,7 @@ Errors associated with the [credential](https://docs.seam.co/capability-guides/a
 
 **`external_type`** *Enum*
 
-Brand-specific terminology for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
+Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.
 
 
 <details>
@@ -294,7 +294,7 @@ Brand-specific terminology for the [credential](https://docs.seam.co/capability-
 
 **`external_type_display_name`** *String*
 
-Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) type.
+Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.
 
 
 
@@ -303,7 +303,7 @@ Display name that corresponds to the brand-specific terminology for the [credent
 
 **`is_issued`** *Boolean*
 
-Indicates whether the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) has been encoded onto a card.
+Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.
 
 
 
@@ -312,7 +312,7 @@ Indicates whether the [credential](https://docs.seam.co/capability-guides/access
 
 **`is_latest_desired_state_synced_with_provider`** *Boolean*
 
-Indicates whether the latest state of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) has been synced from Seam to the provider.
+Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.
 
 
 
@@ -329,7 +329,7 @@ Indicates whether the latest state of the [credential](https://docs.seam.co/capa
 
 **`is_multi_phone_sync_credential`** *Boolean*
 
-Indicates whether the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
+Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).
 
 
 
@@ -338,7 +338,7 @@ Indicates whether the [credential](https://docs.seam.co/capability-guides/access
 
 **`is_one_time_use`** *Boolean*
 
-Indicates whether the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.
+Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.
 
 
 
@@ -347,7 +347,7 @@ Indicates whether the [credential](https://docs.seam.co/capability-guides/access
 
 **`issued_at`** *Datetime*
 
-Date and time at which the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was encoded onto a card.
+Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.
 
 
 
@@ -356,7 +356,7 @@ Date and time at which the [credential](https://docs.seam.co/capability-guides/a
 
 **`latest_desired_state_synced_with_provider_at`** *Datetime*
 
-Date and time at which the state of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was most recently synced from Seam to the provider.
+Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.
 
 
 
@@ -365,7 +365,7 @@ Date and time at which the state of the [credential](https://docs.seam.co/capabi
 
 **`parent_acs_credential_id`** *UUID*
 
-ID of the parent [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -374,7 +374,7 @@ ID of the parent [credential](https://docs.seam.co/capability-guides/access-syst
 
 **`starts_at`** *String*
 
-Date and time at which the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
+Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.
 
 
 
@@ -383,7 +383,7 @@ Date and time at which the [credential](https://docs.seam.co/capability-guides/a
 
 **`user_identity_id`** *UUID*
 
-ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) belongs.
+ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.
 
 
 
@@ -392,7 +392,7 @@ ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the 
 
 **`visionline_metadata`** *Object*
 
-Visionline-specific metadata for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -443,7 +443,7 @@ Visionline-specific metadata for the [credential](https://docs.seam.co/capabilit
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -454,7 +454,7 @@ Variants:
 <details>
 <summary><code>waiting_to_be_issued</code></summary>
 
-Indicates that the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) is waiting to be issued.
+Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.
 
   **`created_at`** *Datetime*
   
@@ -486,7 +486,7 @@ Indicates that the [credential](https://docs.seam.co/capability-guides/access-sy
 <details>
 <summary><code>schedule_externally_modified</code></summary>
 
-Indicates that the schedule of one of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials)'s children was modified externally.
+Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.
 
   **`created_at`** *Datetime*
   
@@ -518,7 +518,7 @@ Indicates that the schedule of one of the [credential](https://docs.seam.co/capa
 <details>
 <summary><code>schedule_modified</code></summary>
 
-Indicates that the schedule of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.
+Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.
 
   **`created_at`** *Datetime*
   
@@ -550,7 +550,7 @@ Indicates that the schedule of the [credential](https://docs.seam.co/capability-
 <details>
 <summary><code>being_deleted</code></summary>
 
-Indicates that the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) is being deleted.
+Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.
 
   **`created_at`** *Datetime*
   
@@ -582,7 +582,7 @@ Indicates that the [credential](https://docs.seam.co/capability-guides/access-sy
 <details>
 <summary><code>unknown_issue_with_acs_credential</code></summary>
 
-An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.
+An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.
 
   **`created_at`** *Datetime*
   
@@ -614,7 +614,7 @@ An unknown issue occurred while syncing the state of the [credential](https://do
 <details>
 <summary><code>needs_to_be_reissued</code></summary>
 
-Access permissions for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.
+Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.
 
   **`created_at`** *Datetime*
   
@@ -648,7 +648,7 @@ Access permissions for the [credential](https://docs.seam.co/capability-guides/a
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -660,37 +660,37 @@ ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contai
 
 **`being_deleted`**
 
-Indicates that the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) is being deleted.
+Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.
 
 ---
 
 **`needs_to_be_reissued`**
 
-Access permissions for the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.
+Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.
 
 ---
 
 **`schedule_externally_modified`**
 
-Indicates that the schedule of one of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials)'s children was modified externally.
+Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.
 
 ---
 
 **`schedule_modified`**
 
-Indicates that the schedule of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.
+Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.
 
 ---
 
 **`unknown_issue_with_acs_credential`**
 
-An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.
+An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.
 
 ---
 
 **`waiting_to_be_issued`**
 
-Indicates that the [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) is waiting to be issued.
+Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.
 
 ---
 
@@ -699,7 +699,7 @@ Indicates that the [credential](https://docs.seam.co/capability-guides/access-sy
 
 **`acs_credential.deleted`**
 
-An [access system credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was deleted.
+An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was deleted.
 
 <details>
 
@@ -742,7 +742,7 @@ An [access system credential](https://docs.seam.co/capability-guides/access-syst
 
 **`acs_credential.issued`**
 
-An [access system credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was issued.
+An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was issued.
 
 <details>
 
@@ -785,7 +785,7 @@ An [access system credential](https://docs.seam.co/capability-guides/access-syst
 
 **`acs_credential.reissued`**
 
-An [access system credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was reissued.
+An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was reissued.
 
 <details>
 
@@ -828,7 +828,7 @@ An [access system credential](https://docs.seam.co/capability-guides/access-syst
 
 **`acs_credential.invalidated`**
 
-An [access system credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.
+An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.
 
 <details>
 
@@ -874,27 +874,27 @@ An [access system credential](https://docs.seam.co/capability-guides/access-syst
 
 [**`/acs/credentials/assign`**](./assign.md)
 
-Assigns a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) to a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Assigns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) to a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
 
 
 [**`/acs/credentials/create`**](./create.md)
 
-Creates a new [credential](https://docs.seam.co/low-level-apis/managing-credentials) for a specified [ACS user](https://docs.seam.co/capability-guides/access-systems/user-management). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.
+Creates a new [credential](https://docs.seam.co/low-level-apis/managing-credentials) for a specified [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.
 
 
 [**`/acs/credentials/delete`**](./delete.md)
 
-Deletes a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Deletes a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 [**`/acs/credentials/get`**](./get.md)
 
-Returns a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Returns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 [**`/acs/credentials/list`**](./list.md)
 
-Returns a list of all [credentials](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Returns a list of all [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 [**`/acs/credentials/list_accessible_entrances`**](./list_accessible_entrances.md)
@@ -904,11 +904,11 @@ Returns a list of all [entrances](https://docs.seam.co/api/acs/entrances) to whi
 
 [**`/acs/credentials/unassign`**](./unassign.md)
 
-Unassigns a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) from a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Unassigns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) from a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
 
 
 [**`/acs/credentials/update`**](./update.md)
 
-Updates the code and ends at date and time for a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials).
+Updates the code and ends at date and time for a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 

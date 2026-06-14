@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Assigns a specified [credential](https://docs.seam.co/capability-guides/access-systems/managing-credentials) to a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management).
+Assigns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) to a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
 
 
 {% tabs %}

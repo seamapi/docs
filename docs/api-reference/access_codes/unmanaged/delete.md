@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes an [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+Deletes an [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).
 
 
 {% tabs %}

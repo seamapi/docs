@@ -4,7 +4,7 @@
 - [Response](#response)
 - [Examples](#examples)
 
-Grants a specified [access system user](https://docs.seam.co/capability-guides/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details).
+Grants a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
 
 
 {% tabs %}

@@ -290,7 +290,7 @@ A space was deleted.
 
 [**`/spaces/add_acs_entrances`**](./add_acs_entrances.md)
 
-Adds [entrances](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) to a specific space.
+Adds [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) to a specific space.
 
 
 [**`/spaces/add_connected_account`**](./add_connected_account.md)
@@ -330,7 +330,7 @@ Returns a list of all spaces.
 
 [**`/spaces/remove_acs_entrances`**](./remove_acs_entrances.md)
 
-Removes [entrances](https://docs.seam.co/capability-guides/access-systems/retrieving-entrance-details) from a specific space.
+Removes [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) from a specific space.
 
 
 [**`/spaces/remove_connected_account`**](./remove_connected_account.md)

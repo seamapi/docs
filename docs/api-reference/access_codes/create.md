@@ -287,7 +287,7 @@ ID of the device for which you want to create the new access code.
 
 **`allow_external_modification`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
+Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
@@ -303,7 +303,7 @@ Code to be used for access.
 
 **`common_code_key`** *String*
 
-Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
+Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
 
 ---
 
@@ -315,25 +315,25 @@ Date and time at which the validity of the new access code ends, in [ISO 8601](h
 
 **`is_external_modification_allowed`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
+Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
 **`is_offline_access_code`** *Boolean*
 
-Indicates whether the access code is an [offline access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/offline-access-codes).
+Indicates whether the access code is an [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes).
 
 ---
 
 **`is_one_time_use`** *Boolean*
 
-Indicates whether the [offline access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/offline-access-codes) is a single-use access code.
+Indicates whether the [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) is a single-use access code.
 
 ---
 
 **`max_time_rounding`** *String*
 
-Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.
+Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.
 
 ---
 
@@ -351,7 +351,7 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 **`prefer_native_scheduling`** *Boolean*
 
-Indicates whether [native scheduling](https://docs.seam.co/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
+Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
 
 ---
 
@@ -369,7 +369,7 @@ Date and time at which the validity of the new access code starts, in [ISO 8601]
 
 **`use_backup_access_code_pool`** *Boolean*
 
-Indicates whether to use a [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).
+Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).
 
 ---
 
