@@ -369,10 +369,10 @@ If a sandbox page already exists in the nav, keep it and add the new pages befor
 Add a card for the new brand to `mintlify-docs/device-and-system-integration-guides/index.mdx`. This page lists all brands grouped by category (Smart Locks, Access Control Systems, Thermostats, Cameras, Noise Sensors, Relays). Insert the card alphabetically within the correct `<CardGroup>`:
 
 ```mdx
-  <Card
-    title='<Brand> Locks'
-    href='/device-and-system-integration-guides/<brand>-locks'
-  ></Card>
+<Card
+  title='<Brand> Locks'
+  href='/device-and-system-integration-guides/<brand>-locks'
+></Card>
 ```
 
 If the brand has a logo image in `/images/`, add the `img` prop. If no logo exists, omit it.
