@@ -1,0 +1,110 @@
+---
+title: 'Expo Integration'
+description: 'Configure the Seam iOS SDK for use with Expo and React Native projects that use static linking.'
+---
+
+Static linking with React Native or Expo requires additional steps to enable dynamic framework compatibility for SeamSDK.
+
+## Prerequisites
+
+Before following this guide, complete the standard [Installation](/mobile-sdks/ios/installation) steps to add SeamSDK to your project via CocoaPods.
+
+---
+
+## Configure Dynamic Framework Support
+
+### Step 1: Add the helper block to your Podfile
+
+Add the following block to your `Podfile`. It detects all SeamSDK targets and converts them to dynamic frameworks at install time:
+
+```ruby
+# ============================================================================
+# Dynamic Framework Support for SeamSDK with Static Linking
+# ============================================================================
+SEAM_DEPENDENCIES = Set.new
+
+def collect_dependent_targets(target, dependencies = Set.new)
+  return dependencies if dependencies.include?(target.name)
+
+  dependencies.add(target.name)
+  target.dependent_targets.each do |dependent|
+    collect_dependent_targets(dependent, dependencies)
+  end
+  dependencies
+end
+
+def setup_seam_dynamic_frameworks(installer)
+  seam_target = installer.pod_targets.find { |target| target.name.start_with?('SeamSDK') }
+  SEAM_DEPENDENCIES.merge(collect_dependent_targets(seam_target))
+
+  puts "Converting to dynamic frameworks: #{SEAM_DEPENDENCIES.to_a.join(', ')}"
+
+  installer.pod_targets.each do |pod|
+    if SEAM_DEPENDENCIES.include?(pod.name)
+      def pod.build_type
+        Pod::BuildType.dynamic_framework
+      end
+    end
+  end
+end
+
+def configure_seam_dynamic_frameworks(installer)
+  installer.pods_project.targets.each do |target|
+    if SEAM_DEPENDENCIES.include?(target.name)
+      target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
+    end
+  end
+end
+# ============================================================================
+```
+
+### Step 2: Call the helpers in your post_install hook
+
+Call both helpers inside your `post_install` block:
+
+```ruby
+post_install do |installer|
+  setup_seam_dynamic_frameworks(installer)
+  configure_seam_dynamic_frameworks(installer)
+end
+```
+
+### Step 3: Run pod install
+
+```bash
+pod install
+```
+
+---
+
+## Avoiding File Duplication with Expo Modules
+
+<Warning>
+  If you are using an Expo module that includes a broad wildcard in its Podspec
+  (for example, `s.source_files = "**/*.{h,m,mm,swift,hpp,cpp}"`), **do not**
+  nest the `SeamSDK` folder inside that module's directory. Otherwise,
+  CocoaPods may include the same files twice — once via your module's Podspec
+  and again via the `SeamSDK.podspec` — leading to duplication or build
+  conflicts.
+</Warning>
+
+**How to fix or avoid this:**
+
+1. **Place the `SeamSDK` folder outside** your Expo module's directory structure so it is not picked up by the module's wildcard pattern.
+
+2. If it must remain nested, **exclude it** in your Expo module's Podspec:
+
+   ```ruby
+   s.exclude_files = "**/SeamSDK/**/*"
+   ```
+
+   This tells CocoaPods not to include the SeamSDK sources a second time.
+
+---
+
+## Next Steps
+
+- [Quickstart](/mobile-sdks/ios/quickstart) — Initialize and activate the SDK, then perform your first unlock.
+- [Architecture](/mobile-sdks/ios/architecture) — Understand how SeamSDK integrates with your app, the Seam Cloud, and lock hardware.

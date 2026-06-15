@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Returns a specified [access system](https://docs.seam.co/capability-guides/access-systems).
+Returns a specified [access system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 {% tabs %}

@@ -3,6 +3,16 @@ title: 'Creating Access Codes'
 description: 'Learn how to program an access code onto a smart lock with a keypad, and ensure the code is successfully set.'
 ---
 
+<Warning>
+  This is a low-level API. For granting a person access, use [Access
+  Grants](/use-cases/granting-access/index)—the default and recommended way to
+  grant access to any physical space, across both standalone smart locks and
+  access systems. We don't recommend building on the Access Codes API directly
+  unless you specifically need low-level control over individual PIN codes (or
+  have discussed your use case with the Seam team at
+  [support@seam.co](mailto:support@seam.co)).
+</Warning>
+
 ## Overview
 
 This guide explains how to create online access codes on an online smart lock. With the [Access Codes](/api/access_codes/object) API, generate PIN codes on a door lock and share it with visitors, allowing them keyless access.

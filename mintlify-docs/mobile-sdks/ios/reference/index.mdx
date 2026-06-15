@@ -1,0 +1,67 @@
+---
+title: 'iOS SDK API Reference'
+description: 'Complete API reference for the SeamSDK Swift library — classes, structures, enumerations, and extensions.'
+sidebarTitle: 'Overview'
+---
+
+> **Interim hand-authored reference.** These pages are authored directly from the SeamSDK public Swift sources as the day-one source of truth. The long-term plan ([DOC-224](https://linear.app/seam/issue/DOC-224)) is to generate them from Swift-DocC (`xcodebuild docbuild`), which requires macOS + Xcode. See `mintlify-codegen/ios-reference/README.md` for details.
+
+SeamSDK is a Swift library for mobile key management. It handles fetching, interpreting, and using secure credentials issued to users for physical access, with support for synchronization, unlock flows, advanced error handling, and offline caching.
+
+## Quick Start
+
+```swift
+// 1. Initialize at app launch
+try Seam.initialize(clientSessionToken: "your_client_session_token")
+
+// 2. Activate to begin credential sync
+await Seam.shared.activate()
+
+// 3. Observe credentials in SwiftUI
+@StateObject var seam = Seam.shared
+// seam.credentials — [SeamCredential] auto-updates
+```
+
+## Classes
+
+<CardGroup cols={2}>
+  <Card title="Seam" href="/mobile-sdks/ios/reference/seam">
+    The main entry point. Manages SDK lifecycle, credential sync, and unlock operations. Conforms to `ObservableObject` for SwiftUI integration.
+  </Card>
+  <Card title="SeamSDKService" href="/mobile-sdks/ios/reference/seam-sdk-service">
+    An Objective-C–compatible bridge that wraps `Seam` for use from React Native, Flutter, and other cross-platform runtimes.
+  </Card>
+</CardGroup>
+
+## Structures
+
+<CardGroup cols={2}>
+  <Card title="SeamCredential" href="/mobile-sdks/ios/reference/seam-credential">
+    An immutable snapshot of a single access credential — its name, location, expiry, supported unlock proximities, and any active errors.
+  </Card>
+</CardGroup>
+
+## Enumerations
+
+<CardGroup cols={2}>
+  <Card title="SeamError" href="/mobile-sdks/ios/reference/seam-error">
+    Errors thrown by `Seam` for initialization, usage, and credential-precondition failures.
+  </Card>
+  <Card title="SeamCredentialError" href="/mobile-sdks/ios/reference/seam-credential-error">
+    Credential-specific errors, including the `RequiredUserInteraction` sub-enum that describes actions the user must take.
+  </Card>
+  <Card title="SeamUnlockEvent" href="/mobile-sdks/ios/reference/seam-unlock-event">
+    Events emitted by the `unlock` publisher as an unlock operation progresses from launch to access granted, timeout, or failure.
+  </Card>
+  <Card title="SeamUnlockProximity" href="/mobile-sdks/ios/reference/seam-unlock-proximity">
+    The required physical proximity for an unlock attempt: `.touch`, `.nearby`, or `.remote`.
+  </Card>
+</CardGroup>
+
+## Extensions
+
+<CardGroup cols={2}>
+  <Card title="Extensions" href="/mobile-sdks/ios/reference/extensions">
+    Public extensions on `String` and `PKAutomaticPassPresentationSuppressionResult` provided by SeamSDK.
+  </Card>
+</CardGroup>

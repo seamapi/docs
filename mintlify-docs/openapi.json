@@ -985,7 +985,7 @@
             "type": "string"
           },
           "pending_mutations": {
-            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
             "items": {
               "discriminator": {
                 "propertyName": "mutation_code"
@@ -1195,15 +1195,15 @@
             "type": "array"
           },
           "warnings": {
-            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
             "items": {
-              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
               "discriminator": {
                 "propertyName": "warning_code"
               },
               "oneOf": [
                 {
-                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -1230,7 +1230,7 @@
                   "type": "object"
                 },
                 {
-                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -2095,7 +2095,7 @@
             "type": "string"
           },
           "user_identity_id": {
-            "description": "ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.",
+            "description": "ID of the [user identity](https://docs.seam.co/api/user_identities/object) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.",
             "format": "uuid",
             "type": "string"
           },
@@ -2877,7 +2877,7 @@
         "x-route-path": "/acs/entrances"
       },
       "acs_system": {
-        "description": "Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).",
+        "description": "Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users/object#acs_user) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials/object#acs_credential) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs/object).",
         "properties": {
           "acs_access_group_count": {
             "format": "float",
@@ -3103,6 +3103,33 @@
                       "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
                       "enum": [
                         "time_zone_does_not_match_location"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "warning_code"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "description": "Indicates that the access control system requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which Seam created the warning.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.",
+                      "type": "string"
+                    },
+                    "warning_code": {
+                      "description": "Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.",
+                      "enum": [
+                        "setup_required"
                       ],
                       "type": "string"
                     }
@@ -8195,7 +8222,7 @@
         "x-route-path": "/devices"
       },
       "enrollment_automation": {
-        "description": "Represents an [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/capability-guides/mobile-access/).",
+        "description": "Represents an [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/capability-guides/mobile-access).",
         "properties": {
           "created_at": {
             "description": "Date and time at which the enrollment automation was created.",
@@ -18108,7 +18135,7 @@
                 "acs_credentials": {
                   "description": "Access system credentials associated with the phone provider session.",
                   "items": {
-                    "description": "Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.",
+                    "description": "Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.",
                     "properties": {
                       "access_method": {
                         "description": "Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.",
@@ -18810,7 +18837,7 @@
                         "type": "string"
                       },
                       "user_identity_id": {
-                        "description": "ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.",
+                        "description": "ID of the [user identity](https://docs.seam.co/api/user_identities/object) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.",
                         "format": "uuid",
                         "type": "string"
                       },
@@ -20435,7 +20462,7 @@
         "x-undocumented": "Unreleased."
       },
       "unmanaged_acs_credential": {
-        "description": "Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an...",
+        "description": "Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).",
         "properties": {
           "access_method": {
             "description": "Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.",
@@ -20617,7 +20644,7 @@
             "type": "string"
           },
           "user_identity_id": {
-            "description": "ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.",
+            "description": "ID of the [user identity](https://docs.seam.co/api/user_identities/object) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.",
             "format": "uuid",
             "type": "string"
           },
@@ -22402,7 +22429,7 @@
   "paths": {
     "/access_codes/create": {
       "post": {
-        "description": "Creates a new [access code](https://docs.seam.co/low-level-apis/access-codes). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they work across both standalone smart locks and access control systems and manage the underlying codes for you. Use this low-level endpoint only when you need direct control over a code on a single device, such as setting a custom PIN value.",
+        "description": "Creates a new [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they work across both standalone smart locks and access control systems and manage the underlying codes for you. Use this low-level endpoint only when you need direct control over a code on a single device, such as setting a custom PIN value.",
         "operationId": "accessCodesCreatePost",
         "requestBody": {
           "content": {
@@ -22644,7 +22671,7 @@
     },
     "/access_codes/create_multiple": {
       "post": {
-        "description": "Creates new [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).",
+        "description": "Creates new [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.",
         "operationId": "accessCodesCreateMultiplePost",
         "requestBody": {
           "content": {
@@ -22814,7 +22841,7 @@
         ]
       },
       "put": {
-        "description": "Creates new [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).",
+        "description": "Creates new [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.",
         "operationId": "accessCodesCreateMultiplePut",
         "requestBody": {
           "content": {
@@ -26231,7 +26258,7 @@
     },
     "/access_grants/create": {
       "post": {
-        "description": "Creates a new [Access Grant](https://docs.seam.co/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.",
+        "description": "Creates a new [Access Grant](https://docs.seam.co/use-cases/granting-access). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.",
         "operationId": "accessGrantsCreatePost",
         "requestBody": {
           "content": {
@@ -32344,7 +32371,7 @@
                           "type": "string"
                         },
                         "pending_mutations": {
-                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                           "items": {
                             "discriminator": {
                               "propertyName": "mutation_code"
@@ -32554,15 +32581,15 @@
                           "type": "array"
                         },
                         "warnings": {
-                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                           "items": {
-                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "discriminator": {
                               "propertyName": "warning_code"
                             },
                             "oneOf": [
                               {
-                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -32589,7 +32616,7 @@
                                 "type": "object"
                               },
                               {
-                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -32802,7 +32829,7 @@
                           "type": "string"
                         },
                         "pending_mutations": {
-                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                          "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                           "items": {
                             "discriminator": {
                               "propertyName": "mutation_code"
@@ -33012,15 +33039,15 @@
                           "type": "array"
                         },
                         "warnings": {
-                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                          "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                           "items": {
-                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "discriminator": {
                               "propertyName": "warning_code"
                             },
                             "oneOf": [
                               {
-                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -33047,7 +33074,7 @@
                                 "type": "object"
                               },
                               {
-                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                 "properties": {
                                   "created_at": {
                                     "description": "Date and time at which Seam created the warning.",
@@ -33283,7 +33310,7 @@
                             "type": "string"
                           },
                           "pending_mutations": {
-                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                             "items": {
                               "discriminator": {
                                 "propertyName": "mutation_code"
@@ -33493,15 +33520,15 @@
                             "type": "array"
                           },
                           "warnings": {
-                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "items": {
-                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                               "discriminator": {
                                 "propertyName": "warning_code"
                               },
                               "oneOf": [
                                 {
-                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",
@@ -33528,7 +33555,7 @@
                                   "type": "object"
                                 },
                                 {
-                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",
@@ -33762,7 +33789,7 @@
                             "type": "string"
                           },
                           "pending_mutations": {
-                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods). Indicates operations that are in progress.",
+                            "description": "Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.",
                             "items": {
                               "discriminator": {
                                 "propertyName": "mutation_code"
@@ -33972,15 +33999,15 @@
                             "type": "array"
                           },
                           "warnings": {
-                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                            "description": "Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                             "items": {
-                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods).",
+                              "description": "Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).",
                               "discriminator": {
                                 "propertyName": "warning_code"
                               },
                               "oneOf": [
                                 {
-                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) is being deleted.",
+                                  "description": "Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",
@@ -34007,7 +34034,7 @@
                                   "type": "object"
                                 },
                                 {
-                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/delivering-access-methods) are being updated.",
+                                  "description": "Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.",
                                   "properties": {
                                     "created_at": {
                                       "description": "Date and time at which Seam created the warning.",
@@ -35632,7 +35659,7 @@
     },
     "/acs/credentials/create": {
       "post": {
-        "description": "Creates a new [credential](https://docs.seam.co/low-level-apis/managing-credentials) for a specified [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.",
+        "description": "Creates a new [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) for a specified [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.",
         "operationId": "acsCredentialsCreatePost",
         "requestBody": {
           "content": {
@@ -36503,7 +36530,7 @@
     },
     "/acs/credentials/list_accessible_entrances": {
       "get": {
-        "description": "Returns a list of all [entrances](https://docs.seam.co/api/acs/entrances) to which a [credential](https://docs.seam.co/api/acs/credentials) grants access.",
+        "description": "Returns a list of all [entrances](https://docs.seam.co/api/acs/entrances/object) to which a [credential](https://docs.seam.co/api/acs/credentials/object) grants access.",
         "operationId": "acsCredentialsListAccessibleEntrancesGet",
         "parameters": [
           {
@@ -36575,7 +36602,7 @@
         "x-title": "List Accessible Entrances"
       },
       "post": {
-        "description": "Returns a list of all [entrances](https://docs.seam.co/api/acs/entrances) to which a [credential](https://docs.seam.co/api/acs/credentials) grants access.",
+        "description": "Returns a list of all [entrances](https://docs.seam.co/api/acs/entrances/object) to which a [credential](https://docs.seam.co/api/acs/credentials/object) grants access.",
         "operationId": "acsCredentialsListAccessibleEntrancesPost",
         "requestBody": {
           "content": {
@@ -41299,7 +41326,7 @@
     },
     "/acs/users/list_accessible_entrances": {
       "get": {
-        "description": "Lists the [entrances](https://docs.seam.co/api/acs/entrances) to which a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) has access.",
+        "description": "Lists the [entrances](https://docs.seam.co/api/acs/entrances/object) to which a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) has access.",
         "operationId": "acsUsersListAccessibleEntrancesGet",
         "parameters": [
           {
@@ -41391,7 +41418,7 @@
         "x-title": "List ACS User-Accessible Entrances"
       },
       "post": {
-        "description": "Lists the [entrances](https://docs.seam.co/api/acs/entrances) to which a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) has access.",
+        "description": "Lists the [entrances](https://docs.seam.co/api/acs/entrances/object) to which a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) has access.",
         "operationId": "acsUsersListAccessibleEntrancesPost",
         "requestBody": {
           "content": {
@@ -41708,7 +41735,7 @@
     },
     "/acs/users/revoke_access_to_all_entrances": {
       "post": {
-        "description": "Revokes access to all [entrances](https://docs.seam.co/api/acs/entrances) for a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).",
+        "description": "Revokes access to all [entrances](https://docs.seam.co/api/acs/entrances/object) for a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).",
         "operationId": "acsUsersRevokeAccessToAllEntrancesPost",
         "requestBody": {
           "content": {
@@ -43382,7 +43409,7 @@
                     "type": "array"
                   },
                   "connected_account_ids": {
-                    "description": "IDs of the [connected accounts](https://docs.seam.co/api/connected_accounts) that you want to associate with the client session (or that are already associated with the existing client session).",
+                    "description": "IDs of the [connected accounts](https://docs.seam.co/api/connected_accounts/object) that you want to associate with the client session (or that are already associated with the existing client session).",
                     "items": {
                       "type": "string"
                     },
@@ -67800,7 +67827,7 @@
     },
     "/user_identities/delete": {
       "delete": {
-        "description": "Deletes a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/api/acs/credentials), [acs users](https://docs.seam.co/api/acs/users) and [client sessions](https://docs.seam.co/api/client_sessions).",
+        "description": "Deletes a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/api/acs/credentials/object), [acs users](https://docs.seam.co/api/acs/users/object) and [client sessions](https://docs.seam.co/api/client_sessions/object).",
         "operationId": "userIdentitiesDeleteDelete",
         "parameters": [
           {
@@ -67863,7 +67890,7 @@
         "x-title": "Delete a User Identity"
       },
       "post": {
-        "description": "Deletes a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/api/acs/credentials), [acs users](https://docs.seam.co/api/acs/users) and [client sessions](https://docs.seam.co/api/client_sessions).",
+        "description": "Deletes a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/api/acs/credentials/object), [acs users](https://docs.seam.co/api/acs/users/object) and [client sessions](https://docs.seam.co/api/client_sessions/object).",
         "operationId": "userIdentitiesDeletePost",
         "requestBody": {
           "content": {
@@ -68267,7 +68294,7 @@
     },
     "/user_identities/grant_access_to_device": {
       "post": {
-        "description": "Grants a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/core-concepts/devices/).",
+        "description": "Grants a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/core-concepts/devices).",
         "operationId": "userIdentitiesGrantAccessToDevicePost",
         "requestBody": {
           "content": {
@@ -68374,7 +68401,7 @@
         ]
       },
       "put": {
-        "description": "Grants a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/core-concepts/devices/).",
+        "description": "Grants a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/core-concepts/devices).",
         "operationId": "userIdentitiesGrantAccessToDevicePut",
         "requestBody": {
           "content": {
@@ -68920,7 +68947,7 @@
     },
     "/user_identities/list_accessible_entrances": {
       "get": {
-        "description": "Returns a list of all [ACS entrances](https://docs.seam.co/api/acs/entrances) accessible to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.",
+        "description": "Returns a list of all [ACS entrances](https://docs.seam.co/api/acs/entrances/object) accessible to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.",
         "operationId": "userIdentitiesListAccessibleEntrancesGet",
         "parameters": [
           {
@@ -68994,7 +69021,7 @@
         "x-title": "List Accessible Entrances for a User Identity"
       },
       "post": {
-        "description": "Returns a list of all [ACS entrances](https://docs.seam.co/api/acs/entrances) accessible to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.",
+        "description": "Returns a list of all [ACS entrances](https://docs.seam.co/api/acs/entrances/object) accessible to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.",
         "operationId": "userIdentitiesListAccessibleEntrancesPost",
         "requestBody": {
           "content": {
@@ -69625,7 +69652,7 @@
     },
     "/user_identities/revoke_access_to_device": {
       "delete": {
-        "description": "Revokes access to a specified [device](https://docs.seam.co/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
+        "description": "Revokes access to a specified [device](https://docs.seam.co/core-concepts/devices) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
         "operationId": "userIdentitiesRevokeAccessToDeviceDelete",
         "parameters": [
           {
@@ -69698,7 +69725,7 @@
         "x-title": "Revoke Access to a Device from a User Identity"
       },
       "post": {
-        "description": "Revokes access to a specified [device](https://docs.seam.co/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
+        "description": "Revokes access to a specified [device](https://docs.seam.co/core-concepts/devices) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).",
         "operationId": "userIdentitiesRevokeAccessToDevicePost",
         "requestBody": {
           "content": {

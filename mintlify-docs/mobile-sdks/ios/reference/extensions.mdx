@@ -1,0 +1,47 @@
+---
+title: 'Extensions'
+description: 'Public extensions on String and PKAutomaticPassPresentationSuppressionResult provided by SeamSDK.'
+---
+
+> **Interim hand-authored reference.** This page is authored from the SeamSDK public Swift sources. See the [reference overview](/mobile-sdks/ios/reference) for context.
+
+## Overview
+
+SeamSDK adds two public extensions to types outside the SDK's own namespace. Both are minor utility conformances.
+
+---
+
+## `extension String`
+
+```swift
+extension String: @retroactive Error { }
+```
+
+Conforms `String` to `Error` retroactively. This allows string literals to be used as throwable error values in SDK-internal bridging code. It is a low-level utility conformance with no public API surface beyond what `Error` already provides.
+
+---
+
+## `extension PKAutomaticPassPresentationSuppressionResult`
+
+Defined in `PassKit`. SeamSDK adds a `CustomStringConvertible` conformance so that suppression result values produce human-readable descriptions in logs.
+
+```swift
+extension PKAutomaticPassPresentationSuppressionResult: @retroactive CustomStringConvertible {
+    public var description: String { get }
+}
+```
+
+### `description`
+
+Returns a human-readable name for the suppression result.
+
+| Value | `description` |
+|-------|---------------|
+| `.notSupported` | `"NotSupported"` |
+| `.alreadyPresenting` | `"AlreadyPresenting"` |
+| `.denied` | `"Denied"` |
+| `.cancelled` | `"Cancelled"` |
+| `.success` | `"Success"` |
+| unknown future cases | `"Unknown(<rawValue>)"` |
+
+This conformance is used internally by SeamSDK to log Apple Wallet pass-suppression state during unlock operations. You do not need to interact with it directly.

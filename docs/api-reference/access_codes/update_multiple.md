@@ -3,11 +3,11 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Updates [access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.
+Updates [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.
 
 Specify the `common_code_key` to identify the set of access codes that you want to update.
 
-See also [Update Linked Access Codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes#update-linked-access-codes).
+See also [Update Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes#update-linked-access-codes).
 
 
 {% tabs %}

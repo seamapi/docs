@@ -1,0 +1,155 @@
+---
+title: 'Quickstart'
+description: 'Get up and running with the Seam iOS SDK in minutes: prerequisites, installation, initialization, and your first unlock.'
+---
+
+## Prerequisites
+
+- iOS 15.0+
+- Git LFS installed for large assets
+
+See [Installation](/mobile-sdks/ios/installation) for full setup instructions, including CocoaPods and Swift Package Manager options.
+
+---
+
+## Install Git LFS
+
+SeamSDK includes large binary assets (xcframeworks) tracked via Git LFS. Install and initialize Git LFS before cloning or adding the package:
+
+```bash
+brew install git-lfs
+git lfs install
+```
+
+## Obtain SeamSDK
+
+Contact your Seam representative to download the private SeamSDK package.
+
+---
+
+## Package Manager Installation
+
+SeamSDK provides per-lock-provider granularity — include only the modules your app needs.
+
+<Tabs>
+  <Tab title="Swift Package Manager">
+    1. In Xcode, choose **File > Add Packages...**
+    2. Click **Add Local...** and select the folder containing `Package.swift`.
+    3. Select `SeamSDK` (core) and any provider packages (for example, `SeamDormakabaIntegration`).
+
+    Or add to your `Package.swift`:
+
+    ```swift
+    dependencies: [
+        .package(path: "PATH_TO_SEAM_SDK/SeamSDK")
+    ],
+    targets: [
+        .target(
+            name: "YourApp",
+            dependencies: ["SeamSDK", "SeamSaltoIntegration"]
+        )
+    ]
+    ```
+  </Tab>
+
+  <Tab title="CocoaPods">
+    Select your desired provider integrations (for example, `SeamDormakabaIntegration`) and the Seam core is automatically included.
+
+    ```ruby
+    pod 'SeamSDK', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+    # Optional subspecs for specific providers:
+    pod 'SeamSDK/SeamDormakabaIntegration', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+    pod 'SeamSDK/SeamLatchIntegration', :path => 'PATH_TO_SEAM_SDK/SeamSDK.podspec'
+    ```
+
+    ```bash
+    pod install
+    ```
+
+    After installing, disable **User Script Sandboxing** in Build Settings to avoid rsync/samba issues.
+  </Tab>
+</Tabs>
+
+---
+
+## Integration with Custom SDKs
+
+If you build a custom SDK on top of SeamSDK, apply the same CocoaPods or SPM patterns to manage dependencies and versioning.
+
+---
+
+## Initialize and Activate
+
+Use the client session token you obtain from the Seam API to bootstrap the SDK. Call `initialize` once (typically after sign-in), then call `activate()` to begin syncing credentials.
+
+```swift
+import SeamSDK
+
+// After obtaining your client session token:
+do {
+    try Seam.initialize(clientSessionToken: "USER_TOKEN")
+    print("Seam SDK initialized")
+} catch {
+    print("Initialization failed: \(error)")
+}
+
+Task {
+    do {
+        try await Seam.shared.activate()
+        print("Seam SDK activated")
+    } catch {
+        print("Activation error: \(error)")
+    }
+}
+```
+
+<Note>
+  See `Seam.initialize(clientSessionToken:)` and `Seam.activate()` in the
+  [iOS SDK reference](/mobile-sdks/ios/reference/seam) for
+  full parameter details.
+</Note>
+
+---
+
+## Perform an Unlock
+
+Once the SDK is active, iterate over the async event stream returned by `unlock(using:)`:
+
+```swift
+import SeamSDK
+
+// Perform unlock and handle events:
+do {
+    for await event in try Seam.shared.unlock(using: "credentialId").values {
+        if case .grantedAccess = event {
+            print("Unlocked successfully")
+        }
+    }
+} catch {
+    print("Unlock error: \(error)")
+}
+```
+
+<Note>
+  See `Seam.unlock(using:timeout:)` and the [Error Handling](/mobile-sdks/ios/error-handling)
+  guide for details on error types and recovery flows.
+</Note>
+
+---
+
+## Troubleshooting
+
+- **No such module 'SeamSDK':** Ensure dependencies are installed via CocoaPods or SPM and run `pod install` or resolve SPM packages in Xcode.
+- **rsync/samba build errors:** Disable **User Script Sandboxing** in Build Settings.
+- **Git LFS errors:** Verify Git LFS is installed and `git lfs install` has been run.
+- **Version conflicts:** Update your Pod or SPM dependencies to the latest SeamSDK version.
+
+For additional support, reach out via your dedicated Seam support Slack channel or visit the [Seam Console](https://console.seam.co).
+
+---
+
+## Next Steps
+
+- [Architecture](/mobile-sdks/ios/architecture) — How SeamSDK integrates with your app, cloud services, and hardware.
+- [Error Handling](/mobile-sdks/ios/error-handling) — How to interpret and handle errors emitted by SeamSDK.
+- [UI Components](/mobile-sdks/ios/ui-components) — Drop-in SwiftUI components for mobile key flows.

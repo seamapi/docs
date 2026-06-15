@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Creates new [access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes) that share a common code across multiple devices.
+Creates new [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.
 
 Users with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.
 
@@ -11,7 +11,9 @@ If you specify a custom code, Seam assigns this custom code to each of the resul
 
 If you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.
 
-See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
+See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).
+
+For granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.
 
 
 {% tabs %}
@@ -346,7 +348,7 @@ IDs of the devices for which you want to create the new access codes.
 
 **`allow_external_modification`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
+Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
@@ -374,7 +376,7 @@ Date and time at which the validity of the new access code ends, in [ISO 8601](h
 
 **`is_external_modification_allowed`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/capability-guides/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
+Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.
 
 ---
 
@@ -392,7 +394,7 @@ To help your users identify codes set by Seam, Seam provides the name exactly as
 
 **`prefer_native_scheduling`** *Boolean*
 
-Indicates whether [native scheduling](https://docs.seam.co/capability-guides/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
+Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.
 
 ---
 
@@ -410,7 +412,7 @@ Date and time at which the validity of the new access code starts, in [ISO 8601]
 
 **`use_backup_access_code_pool`** *Boolean*
 
-Indicates whether to use a [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).
+Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes#backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).
 
 ---
 

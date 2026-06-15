@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Converts an [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Converts an [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 An unmanaged access code has a limited set of operations that you can perform on it. Once you convert an unmanaged access code to a managed access code, the full set of access code operations and lifecycle events becomes available for it.
 
@@ -162,7 +162,7 @@ ID of the unmanaged access code that you want to convert to a managed access cod
 
 **`allow_external_modification`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.
+Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed.
 
 ---
 
@@ -174,7 +174,7 @@ Indicates whether to force the access code conversion. To switch management of a
 
 **`is_external_modification_allowed`** *Boolean*
 
-Indicates whether [external modification](https://docs.seam.co/capability-guides/smart-locks/access-codes#external-modification) of the access code is allowed.
+Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed.
 
 ---
 

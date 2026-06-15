@@ -1,0 +1,212 @@
+---
+title: 'Error Handling'
+description: 'Interpret and handle errors thrown by the Seam Android SDK, including SDK-level errors (SeamError), credential-specific errors (SeamCredentialError), and required user interactions.'
+---
+
+## Overview
+
+Errors in the Seam Android SDK fall into two categories:
+
+- **`SeamError`** — Thrown by SDK operations such as `initialize()`, `activate()`, `deactivate()`, `refresh()`, and `unlock()`. These represent SDK setup, configuration, or API-level failures.
+- **`SeamCredentialError`** — Stored in `SeamCredential.errors`. These represent issues with a specific credential that must be resolved before it can be used for an unlock.
+
+Handling both types ensures your app can present clear, actionable guidance to users.
+
+---
+
+## SeamError
+
+`SeamError` is a sealed class. Each subtype maps to a specific failure mode:
+
+| Subtype | Thrown by | Description |
+|---------|-----------|-------------|
+| `SeamError.AlreadyInitialized` | `initialize()` | The SDK is already initialized. Call `deactivate(deintegrate = true)` before re-initializing with a new token. |
+| `SeamError.InitializationRequired` | `getInstance()`, `activate()`, `refresh()`, `unlock()` | The SDK has not been initialized; call `SeamSDK.initialize()` first. |
+| `SeamError.InvalidClientSessionToken` | `initialize()`, `activate()` | The client session token is malformed or has expired. Obtain a fresh token from your server. |
+| `SeamError.InternetConnectionRequired` | `initialize()`, `activate()`, `refresh()` | A network connection is required for this operation. |
+| `SeamError.DeactivationInProgress` | `initialize()`, `refresh()`, `deactivate()` | A deactivation is already running; wait for it to complete before retrying. |
+| `SeamError.ActivationRequired` | `unlock()` | The SDK has not been activated; call `activate()` first. |
+| `SeamError.InvalidCredentialId` | `unlock()` | No credential matches the specified ID. Verify the credential ID against `credentials.value`. |
+| `SeamError.IntegrationNotFound` | `unlock()` | No provider integration was found for this credential. Ensure you added the correct provider module (for example, `seam-phone-sdk-android-assaabloy`) in your Gradle dependencies. |
+| `SeamError.CredentialErrors` | `unlock()` | The credential has unresolved errors. Inspect `e.errors` (a `List<SeamCredentialError>`) and resolve them before retrying the unlock. |
+| `SeamError.InvalidUnlockProximity` | `unlock()` | The specified `UnlockProximity` is not supported by this credential. |
+
+### Handling SeamError in code
+
+```kotlin
+try {
+    SeamSDK.getInstance().activate()
+} catch (e: SeamError) {
+    when (e) {
+        is SeamError.InitializationRequired     -> showError("SDK not initialized. Please restart the app.")
+        is SeamError.InternetConnectionRequired -> showError("No internet connection.")
+        is SeamError.InvalidClientSessionToken  -> promptReSignIn()
+        is SeamError.DeactivationInProgress     -> { /* Retry after a short delay */ }
+        else                                    -> showError("Unexpected error: ${e.message}")
+    }
+}
+```
+
+---
+
+## SeamCredentialError
+
+`SeamCredentialError` is a sealed class stored in `SeamCredential.errors`. A credential may have zero or more errors simultaneously. Check `errors` before calling `unlock()`:
+
+| Subtype | Description |
+|---------|-------------|
+| `SeamCredentialError.Loading` | The credential is still being provisioned. Wait for the `credentials` StateFlow to emit an updated list where this error is no longer present. |
+| `SeamCredentialError.Expired` | The credential has expired. Contact the credential issuer or administrator to reissue it. |
+| `SeamCredentialError.UserInteractionRequired(interaction)` | The user must take a specific action before this credential can be used. Inspect the `interaction` property. |
+| `SeamCredentialError.Unknown` | An unclassified error occurred. Retry or contact Seam support. |
+
+### Checking credential errors before unlock
+
+```kotlin
+val credential = SeamSDK.getInstance().credentials.value
+    .firstOrNull { it.id == targetCredentialId }
+    ?: return showError("Credential not found")
+
+if (credential.errors.isNotEmpty()) {
+    credential.errors.forEach { error ->
+        when (error) {
+            is SeamCredentialError.Loading -> {
+                showStatus("Credential is loading, please wait...")
+            }
+            is SeamCredentialError.Expired -> {
+                showError("This credential has expired. Contact your administrator.")
+            }
+            is SeamCredentialError.UserInteractionRequired -> {
+                handleUserInteraction(error.interaction)
+            }
+            is SeamCredentialError.Unknown -> {
+                showError("An unexpected error occurred. Please try again.")
+            }
+        }
+    }
+} else {
+    // Credential is ready — proceed with unlock
+    val credentialId = credential.id ?: return showError("Credential has no ID.")
+    performUnlock(credentialId)
+}
+```
+
+---
+
+## SeamRequiredUserInteraction
+
+When a credential has a `SeamCredentialError.UserInteractionRequired` error, the `interaction` property tells you exactly what the user needs to do:
+
+| Subtype | Description | Recommended Action |
+|---------|-------------|-------------------|
+| `SeamRequiredUserInteraction.CompleteOtpAuthorization(otpUrl)` | The user must complete an OTP authorization flow. | Open `otpUrl` in a browser or WebView. |
+| `SeamRequiredUserInteraction.EnableInternet` | The device has no internet connection. | Prompt the user to enable Wi-Fi or mobile data. |
+| `SeamRequiredUserInteraction.EnableBluetooth` | Bluetooth is disabled. | Prompt the user to enable Bluetooth in Settings or the quick settings panel. |
+| `SeamRequiredUserInteraction.GrantPermissions(permissions)` | One or more Android permissions have not been granted. | Use `ActivityCompat.requestPermissions()` with the list of permission strings in `permissions`. |
+
+### Handling required user interactions
+
+```kotlin
+fun handleUserInteraction(interaction: SeamRequiredUserInteraction) {
+    when (interaction) {
+        is SeamRequiredUserInteraction.CompleteOtpAuthorization -> {
+            // Open the OTP URL so the user can complete authorization
+            openUrl(interaction.otpUrl)
+        }
+        is SeamRequiredUserInteraction.EnableInternet -> {
+            showMessage("Please enable your internet connection and try again.")
+        }
+        is SeamRequiredUserInteraction.EnableBluetooth -> {
+            showMessage("Please enable Bluetooth and try again.")
+            // Optionally launch the Bluetooth settings screen:
+            // startActivity(Intent(Settings.ACTION_BLUETOOTH_SETTINGS))
+        }
+        is SeamRequiredUserInteraction.GrantPermissions -> {
+            // Request the missing permissions
+            ActivityCompat.requestPermissions(
+                activity,
+                interaction.permissions.toTypedArray(),
+                REQUEST_CODE_SEAM_PERMISSIONS
+            )
+        }
+    }
+}
+```
+
+---
+
+## Handling unlock errors end-to-end
+
+The following example shows a complete unlock handler that covers both pre-flight credential checks and runtime `SeamError` cases:
+
+```kotlin
+fun performUnlock(credentialId: String) {
+    coroutineScope.launch {
+        val seam = SeamSDK.getInstance()
+
+        // Check credential errors before attempting unlock
+        val credential = seam.credentials.value.firstOrNull { it.id == credentialId }
+        if (credential == null) {
+            showError("Credential not found.")
+            return@launch
+        }
+        if (credential.errors.isNotEmpty()) {
+            // Show the first blocking error to the user
+            val firstError = credential.errors.first()
+            when (firstError) {
+                is SeamCredentialError.Loading                -> showStatus("Loading...")
+                is SeamCredentialError.Expired                -> showError("Credential expired.")
+                is SeamCredentialError.UserInteractionRequired -> handleUserInteraction(firstError.interaction)
+                is SeamCredentialError.Unknown                -> showError("Unknown credential error.")
+            }
+            return@launch
+        }
+
+        // Collect unlock events before initiating the unlock
+        launch {
+            seam.unlockStatus.collect { event ->
+                when (event) {
+                    is SeamUnlockEvent.ScanningStarted -> showStatus("Scanning...")
+                    is SeamUnlockEvent.AccessGranted   -> showSuccess("Access granted!")
+                    is SeamUnlockEvent.Timeout         -> showError("Operation timed out.")
+                    is SeamUnlockEvent.ReaderError     -> showError("Reader error: ${event.message}")
+                }
+            }
+        }
+
+        // Initiate the unlock
+        try {
+            seam.unlock(credentialId = credentialId, timeout = 30.seconds)
+        } catch (e: SeamError) {
+            when (e) {
+                is SeamError.ActivationRequired  -> showError("Please activate the SDK first.")
+                is SeamError.InvalidCredentialId -> showError("Credential not found.")
+                is SeamError.IntegrationNotFound -> showError("Provider not installed.")
+                is SeamError.CredentialErrors    -> {
+                    // Errors surfaced at unlock time — re-run the credential check above
+                    e.errors.firstOrNull()?.let { handleCredentialError(it) }
+                }
+                else -> showError("Unlock failed: ${e.message}")
+            }
+        }
+    }
+}
+```
+
+---
+
+## Best Practices
+
+- **Check `credential.errors` before calling `unlock()`** — An unlock attempt on a credential with unresolved errors will throw `SeamError.CredentialErrors`. Checking upfront lets you present better UX before the call.
+- **Subscribe to `unlockStatus` before `unlock()`** — `unlock()` emits events immediately; subscribing after the call can miss early events like `ScanningStarted`.
+- **Map errors to UI states** — Distinguish loading states (`SeamCredentialError.Loading`) from actionable errors so you show spinners rather than error messages while credentials are provisioning.
+- **Retry transient errors** — `SeamError.InternetConnectionRequired` and `SeamError.DeactivationInProgress` are transient. Implement retry logic with backoff for these cases.
+
+---
+
+## See Also
+
+- [SeamError reference](/mobile-sdks/android/reference/seam-error) — Full type reference for all `SeamError` subtypes.
+- [SeamCredentialError reference](/mobile-sdks/android/reference/seam-credential-error) — Full type reference for all `SeamCredentialError` subtypes.
+- [Quickstart](/mobile-sdks/android/quickstart) — Initialize the SDK and perform your first unlock.
+- [Architecture](/mobile-sdks/android/architecture) — How StateFlows and the SDK lifecycle fit together.

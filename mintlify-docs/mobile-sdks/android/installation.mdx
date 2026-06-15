@@ -1,0 +1,211 @@
+---
+title: 'Installation'
+description: 'Add the Seam Android SDK to your project using Gradle and GitHub Packages, configure credentials, and select the provider modules your app needs.'
+---
+
+## Requirements
+
+Before integrating the Seam Android SDK, confirm your project meets these requirements:
+
+- **Compile SDK:** 35
+- **Kotlin:** 2.1.0 or greater
+- **Minimum Android SDK:** Depends on the provider modules you include:
+
+| Module | Artifact ID | Minimum SDK |
+|--------|-------------|-------------|
+| Core (required) | `seam-phone-sdk-android-core` | API 24 (Android 7.0) |
+| Salto KS | `seam-phone-sdk-android-saltoks` | API 24 (Android 7.0) |
+| Salto Space | `seam-phone-sdk-android-saltospace` | API 24 (Android 7.0) |
+| Latch | `seam-phone-sdk-android-latch` | API 26 (Android 8.0) |
+| Assa Abloy | `seam-phone-sdk-android-assaabloy` | API 28 (Android 9.0) |
+
+Your app's `minSdk` must be set to the **highest** level required by any Seam module you include.
+
+<Note>
+  Including both `assaabloy` and `latch`, for example, requires `minSdk = 28` because Assa Abloy sets the higher floor.
+</Note>
+
+---
+
+## Installation
+
+<Steps>
+  <Step title="Request access to the Seam package registry">
+    The SDK is distributed as a Maven package on GitHub Packages under the `seampkg/seam-mobile-sdk` repository.
+
+    1. Contact your Seam representative to be added as a collaborator on the repository.
+    2. Once added, go to your GitHub [Developer Settings](https://github.com/settings/tokens) and navigate to **Personal access tokens > Tokens (Classic)**.
+    3. Click **Generate new token (classic)**.
+    4. Give the token a note and an expiration date.
+    5. Select the `read:packages` scope.
+    6. Click **Generate token** and copy the value — you will not be able to see it again.
+  </Step>
+
+  <Step title="Store your credentials in local.properties">
+    Open (or create) `local.properties` at the root of your Android project and add your GitHub username and the token you just created:
+
+    ```properties
+    # local.properties — DO NOT commit this file
+    seamUsername=YOUR_GITHUB_USERNAME
+    seamPat=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    ```
+
+    <Note>
+      `local.properties` should be listed in `.gitignore`. Never commit credentials to version control.
+    </Note>
+  </Step>
+
+  <Step title="Configure the Maven repository in settings.gradle">
+    Add a helper function and the GitHub Packages Maven repository to your `settings.gradle.kts` (or `settings.gradle`):
+
+    <Tabs>
+      <Tab title="Kotlin DSL (settings.gradle.kts)">
+        ```kotlin
+        import java.util.Properties
+
+        fun getPropertyOrNull(propertyName: String): String? {
+            val propertiesFile = file("local.properties")
+            if (!propertiesFile.exists()) return null
+            val properties = Properties()
+            properties.load(propertiesFile.inputStream())
+            return properties.getProperty(propertyName, null)
+        }
+
+        dependencyResolutionManagement {
+            repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+            repositories {
+                google()
+                mavenCentral()
+                maven {
+                    name = "GitHubPackages"
+                    url = uri("https://maven.pkg.github.com/seampkg/seam-mobile-sdk")
+                    credentials {
+                        username = getPropertyOrNull("seamUsername")
+                        password = getPropertyOrNull("seamPat")
+                    }
+                }
+            }
+        }
+        ```
+      </Tab>
+
+      <Tab title="Groovy DSL (settings.gradle)">
+        ```groovy
+        String getPropertyOrNull(String propertyName) {
+            def propertiesFile = file("local.properties")
+            if (!propertiesFile.exists()) return null
+            def properties = new Properties()
+            properties.load(propertiesFile.inputStream())
+            return properties.getProperty(propertyName, null)
+        }
+
+        dependencyResolutionManagement {
+            repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+            repositories {
+                google()
+                mavenCentral()
+                maven {
+                    name = "GitHubPackages"
+                    url = uri("https://maven.pkg.github.com/seampkg/seam-mobile-sdk")
+                    credentials {
+                        username = getPropertyOrNull("seamUsername")
+                        password = getPropertyOrNull("seamPat")
+                    }
+                }
+            }
+        }
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Add SDK dependencies to your app module">
+    In your app module's `build.gradle.kts` (or `build.gradle`), add `core` plus whichever provider modules your app requires:
+
+    <Tabs>
+      <Tab title="Kotlin DSL (build.gradle.kts)">
+        ```kotlin
+        val seamVersion = "1.9.39" // Replace with the latest version
+
+        dependencies {
+            // Required
+            implementation("co.seam:seam-phone-sdk-android-core:$seamVersion")
+
+            // Add only the provider integrations you need
+            implementation("co.seam:seam-phone-sdk-android-saltoks:$seamVersion")
+            implementation("co.seam:seam-phone-sdk-android-saltospace:$seamVersion")
+            implementation("co.seam:seam-phone-sdk-android-latch:$seamVersion")
+            implementation("co.seam:seam-phone-sdk-android-assaabloy:$seamVersion")
+        }
+        ```
+      </Tab>
+
+      <Tab title="Groovy DSL (build.gradle)">
+        ```groovy
+        def seamVersion = "1.9.39" // Replace with the latest version
+
+        dependencies {
+            // Required
+            implementation "co.seam:seam-phone-sdk-android-core:$seamVersion"
+
+            // Add only the provider integrations you need
+            implementation "co.seam:seam-phone-sdk-android-saltoks:$seamVersion"
+            implementation "co.seam:seam-phone-sdk-android-saltospace:$seamVersion"
+            implementation "co.seam:seam-phone-sdk-android-latch:$seamVersion"
+            implementation "co.seam:seam-phone-sdk-android-assaabloy:$seamVersion"
+        }
+        ```
+      </Tab>
+    </Tabs>
+
+    Sync your project with Gradle after saving.
+  </Step>
+</Steps>
+
+---
+
+## Quick Verification
+
+Once the sync succeeds, verify the SDK is on the classpath by adding a temporary import to any Kotlin file:
+
+```kotlin
+import co.seam.core.api.SeamSDK
+```
+
+If Android Studio resolves the import without errors, the SDK is installed correctly.
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="401 Unauthorized during Gradle sync">
+    - Confirm `seamUsername` and `seamPat` are set correctly in `local.properties`.
+    - Verify the PAT has the `read:packages` scope and has not expired.
+    - Ensure you have been added as a collaborator on the `seampkg/seam-mobile-sdk` repository.
+  </Accordion>
+
+  <Accordion title="Package not found / Could not resolve dependency">
+    - Confirm the `maven { ... }` block is inside `dependencyResolutionManagement.repositories` in `settings.gradle.kts`, not inside a module's `build.gradle.kts`.
+    - Double-check the artifact ID spelling (for example, `seam-phone-sdk-android-core`, not `seam-android-core`).
+    - Try a fresh Gradle sync via **File > Sync Project with Gradle Files**.
+  </Accordion>
+
+  <Accordion title="minSdk conflict">
+    If Gradle reports a manifest merger conflict about `minSdkVersion`, raise your app's `minSdk` to match the highest value required by the Seam modules you have included. See the requirements table above.
+  </Accordion>
+
+  <Accordion title="Kotlin version incompatibility">
+    The SDK requires Kotlin 2.1.0 or later. Check your project's `libs.versions.toml` or `build.gradle.kts` and update the `kotlin` version entry accordingly.
+  </Accordion>
+</AccordionGroup>
+
+For additional support, reach out in your dedicated Seam support Slack channel.
+
+---
+
+## Next Steps
+
+- [Quickstart](/mobile-sdks/android/quickstart) — Initialize the SDK and perform your first unlock.
+- [Architecture](/mobile-sdks/android/architecture) — How the SDK's reactive model and offline caching work.
+- [Error Handling](/mobile-sdks/android/error-handling) — Handling `SeamError` and credential errors.

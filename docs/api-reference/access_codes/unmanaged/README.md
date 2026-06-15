@@ -9,7 +9,7 @@
 - [Endpoints](./#endpoints)
 
 
-Represents an [unmanaged smart lock access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+Represents an [unmanaged smart lock access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).
 
 An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.
 
@@ -159,7 +159,7 @@ Date and time after which the time-bound access code becomes inactive.
 
 [**`errors`**](./#errors) *List* *of Objects*
 
-Errors associated with the [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 
@@ -1396,7 +1396,7 @@ Indicates that the device is disconnected.
 <details>
 <summary><code>empty_backup_access_code_pool</code></summary>
 
-Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
   **`created_at`** *Datetime*
   
@@ -1716,7 +1716,7 @@ Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
 <details>
 <summary><code>bridge_disconnected</code></summary>
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
   **`created_at`** *Datetime*
   
@@ -1823,7 +1823,7 @@ Type of the access code. `ongoing` access codes are active continuously until de
 
 [**`warnings`**](./#warnings) *List* *of Objects*
 
-Warnings associated with the [access code](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 
@@ -2474,7 +2474,7 @@ August lock is temporarily offline.
 
 **`bridge_disconnected`**
 
-Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
 
 ---
 
@@ -2522,7 +2522,7 @@ Duplicate access code detected on device.
 
 **`empty_backup_access_code_pool`**
 
-Indicates that the [backup access code pool](https://docs.seam.co/capability-guides/smart-locks/access-codes/backup-access-codes) is empty.
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
 ---
 
@@ -2756,7 +2756,7 @@ A backup access code has been pulled and is being used in place of this access c
 
 **`access_code.unmanaged.converted_to_managed`**
 
-An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.
 
 <details>
 
@@ -2807,7 +2807,7 @@ An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/ac
 
 **`access_code.unmanaged.failed_to_convert_to_managed`**
 
-An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.
 
 <details>
 
@@ -2972,7 +2972,7 @@ An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/ac
 
 **`access_code.unmanaged.created`**
 
-An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.
 
 <details>
 
@@ -3023,7 +3023,7 @@ An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/ac
 
 **`access_code.unmanaged.removed`**
 
-An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.
 
 <details>
 
@@ -3077,26 +3077,26 @@ An [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/ac
 
 [**`/access_codes/unmanaged/convert_to_managed`**](./convert_to_managed.md)
 
-Converts an [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/capability-guides/smart-locks/access-codes).
+Converts an [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
 
 
 [**`/access_codes/unmanaged/delete`**](./delete.md)
 
-Deletes an [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+Deletes an [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).
 
 
 [**`/access_codes/unmanaged/get`**](./get.md)
 
-Returns a specified [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+Returns a specified [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).
 
 
 [**`/access_codes/unmanaged/list`**](./list.md)
 
-Returns a list of all [unmanaged access codes](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+Returns a list of all [unmanaged access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).
 
 
 [**`/access_codes/unmanaged/update`**](./update.md)
 
-Updates a specified [unmanaged access code](https://docs.seam.co/capability-guides/smart-locks/access-codes/migrating-existing-access-codes).
+Updates a specified [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).
 
 

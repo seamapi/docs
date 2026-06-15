@@ -272,15 +272,7 @@
             "pages": [
               "developer-tools/webhooks",
               "developer-tools/seam-cli",
-              "developer-tools/seam-mcp",
-              {
-                "group": "Mobile SDKs",
-                "pages": [
-                  "developer-tools/mobile-sdks/index",
-                  "developer-tools/mobile-sdks/android-sdk",
-                  "developer-tools/mobile-sdks/ios-sdk"
-                ]
-              }
+              "developer-tools/seam-mcp"
             ]
           },
           {
@@ -856,6 +848,73 @@
                   "POST /instant_keys/delete",
                   "POST /instant_keys/get",
                   "POST /instant_keys/list"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Mobile SDKs",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "mobile-sdks/index"
+            ]
+          },
+          {
+            "group": "iOS SDK",
+            "pages": [
+              "mobile-sdks/ios/index",
+              "mobile-sdks/ios/installation",
+              "mobile-sdks/ios/quickstart",
+              "mobile-sdks/ios/architecture",
+              "mobile-sdks/ios/error-handling",
+              "mobile-sdks/ios/expo-integration",
+              {
+                "group": "UI Components",
+                "pages": [
+                  "mobile-sdks/ios/ui-components/index",
+                  "mobile-sdks/ios/ui-components/customizing-appearance",
+                  "mobile-sdks/ios/ui-components/custom-integration"
+                ]
+              },
+              {
+                "group": "API Reference",
+                "pages": [
+                  "mobile-sdks/ios/reference/index",
+                  "mobile-sdks/ios/reference/seam",
+                  "mobile-sdks/ios/reference/seam-sdk-service",
+                  "mobile-sdks/ios/reference/seam-credential",
+                  "mobile-sdks/ios/reference/seam-error",
+                  "mobile-sdks/ios/reference/seam-credential-error",
+                  "mobile-sdks/ios/reference/seam-unlock-event",
+                  "mobile-sdks/ios/reference/seam-unlock-proximity",
+                  "mobile-sdks/ios/reference/extensions"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Android SDK",
+            "pages": [
+              "mobile-sdks/android/index",
+              "mobile-sdks/android/installation",
+              "mobile-sdks/android/quickstart",
+              "mobile-sdks/android/architecture",
+              "mobile-sdks/android/error-handling",
+              {
+                "group": "API Reference",
+                "pages": [
+                  "mobile-sdks/android/reference/index",
+                  "mobile-sdks/android/reference/seam-sdk",
+                  "mobile-sdks/android/reference/seam-credential",
+                  "mobile-sdks/android/reference/unlock-proximity",
+                  "mobile-sdks/android/reference/seam-unlock-event",
+                  "mobile-sdks/android/reference/seam-error",
+                  "mobile-sdks/android/reference/seam-credential-error",
+                  "mobile-sdks/android/reference/seam-required-user-interaction"
                 ]
               }
             ]
@@ -3227,6 +3286,18 @@
     {
       "source": "/device-and-system-integration-guides/get-started-with-smartthings-hubs-+-smart-locks",
       "destination": "/device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks"
+    },
+    {
+      "source": "/developer-tools/mobile-sdks/index",
+      "destination": "/mobile-sdks"
+    },
+    {
+      "source": "/developer-tools/mobile-sdks/ios-sdk",
+      "destination": "/mobile-sdks/ios"
+    },
+    {
+      "source": "/developer-tools/mobile-sdks/android-sdk",
+      "destination": "/mobile-sdks/android"
     }
   ],
   "openapi": [

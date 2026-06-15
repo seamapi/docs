@@ -3,7 +3,7 @@
 - [Request Parameters](#request-parameters)
 - [Response](#response)
 
-Deletes a specified [access group](https://docs.seam.co/capability-guides/access-systems/user-management/assigning-users-to-access-groups).
+Deletes a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).
 
 
 <details>
