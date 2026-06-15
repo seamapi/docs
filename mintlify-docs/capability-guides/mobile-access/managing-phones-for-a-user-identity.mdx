@@ -11,13 +11,7 @@ An app user may have several phones. When they sign into their account on your m
 
 When an app user signs in to a new phone, Seam can automatically set up the new phone, generate matching credentials, and issue these credentials. To facilitate this capability, you must [issue a multi-phone sync credential](/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) when creating a mobile credential.
 
-<figure>
-  <img
-    src='/images/image-(2)-(1).png'
-    alt='When a user sign in to a new phone, Seam also issues matching credentials to the new phone.'
-  />
-  <figcaption></figcaption>
-</figure>
+![When a user sign in to a new phone, Seam also issues matching credentials to the new phone.](/images/image-(2)-(1).png)
 
 ---
 
@@ -25,13 +19,7 @@ When an app user signs in to a new phone, Seam can automatically set up the new 
 
 If an app user loses their phone or wants to deactivate it, you can deactivate the phone. Seam then automatically invalidates the stored credentials on their deactivated phone.
 
-<figure>
-  <img
-    src='/images/image-(3)-(1).png'
-    alt='When a phone is revoked, Seam revokes all the credentials issued to this phone.'
-  />
-  <figcaption></figcaption>
-</figure>
+![When a phone is revoked, Seam revokes all the credentials issued to this phone.](/images/image-(3)-(1).png)
 
 To [deactivate](/api/phones/deactivate) a phone, provide the ID of the phone. When a phone is deactivated, Seam also revokes all the credentials issued to the deactivated phone. Seam also removes the associated ACS credentials from the ACS.
 

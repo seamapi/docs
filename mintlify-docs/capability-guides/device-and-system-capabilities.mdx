@@ -3,13 +3,7 @@ title: 'Device and System Capabilities'
 description: 'Learn about device and system capabilities, as well as capability flags.'
 ---
 
-<figure>
-  <img
-    src='/images/blog-cover_new-capabilities.png'
-    alt='In the Seam API, capability flags inform your application about what features and behaviors each device supports.'
-  />
-  <figcaption></figcaption>
-</figure>
+![In the Seam API, capability flags inform your application about what features and behaviors each device supports.](/images/blog-cover_new-capabilities.png)
 
 Each device that you connect to Seam has a specific set of capabilities. These capabilities define the Seam API actions that you can use. For example, some devices support [remote unlock actions](../low-level-apis/smart-locks/lock-and-unlock), while others support [programming access codes](/low-level-apis/smart-locks/access-codes/index). Some devices support both of these capabilities. When developing your application, it is imperative to be able to identify the capabilities of each device.
 
@@ -19,19 +13,8 @@ For example, if a device supports programming online access codes, your app can 
 
 Capability flags inform your application about what features and behaviors each device supports. That is, you can use capability flags to match devices to the requirements for operations within your app. These flags also compare the capabilities of a specific device instance with those of the device model in general.
 
-<figure>
-  <img
-    src='/images/capability-flags-explained-online-access-code.png'
-    alt='Capability flags help you to understand which actions a device can perform.'
-    width='563'
-  />
-  <figcaption>
-    <p>
-      Capability flags help you to understand which actions a device can
-      perform.
-    </p>
-  </figcaption>
-</figure>
+![Capability flags help you to understand which actions a device can
+      perform.](/images/capability-flags-explained-online-access-code.png)
 
 All capability flags share the following behavior:
 
@@ -46,19 +29,8 @@ Reasons why a capability flag might be `false` could include that a required har
 
 With respect to the ability to program online access codes, as long as a lock has the required hardware, Seam assumes that any offline status is temporary and will be resolved before [it's time to set the access code on the device](../low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes). Consequently, in this case, Seam maintains `can_program_online_access_codes` as `true`.
 
-<figure>
-  <img
-    src='/images/capability-flags-explained-remote-unlock.png'
-    alt='Capability flags help you to understand why a device cannot currently perform an action.'
-    width='563'
-  />
-  <figcaption>
-    <p>
-      Capability flags help you to understand why a device cannot currently
-      perform an action.
-    </p>
-  </figcaption>
-</figure>
+![Capability flags help you to understand why a device cannot currently
+      perform an action.](/images/capability-flags-explained-remote-unlock.png)
 
 Seam recommends adding capability checks before performing specific actions in your app. For example, before performing a [remote unlock](../low-level-apis/smart-locks/lock-and-unlock#unlocking-a-door) operation, you can check to make sure that the target device supports remote unlocking. For details and code samples, see the corresponding capability guides.
 
