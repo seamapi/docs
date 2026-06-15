@@ -36,11 +36,11 @@ description: 'Step-by-step instructions for installing, launching, and configuri
 1. Accept the **Terms of Service.**
 2. Enter a name for the site that you are connecting using Seam Bridge—for example, `My Site`—and then click **Start pairing**.
 
-   ![](/images/Screenshot-2025-11-13-at-11.07.19-AM.png)
+   <img src="/images/Screenshot-2025-11-13-at-11.07.19-AM.png" alt="Seam Bridge Welcome screen" style={{width: "420px", height: "auto"}} />
 
 3. Seam Bridge displays a **Pairing code.** Use this code when connecting Seam Bridge to your workspace. Return to this window whenever a new pairing code is requested.
 
-   ![](/images/bridge.png)
+   <img src="/images/bridge.png" alt="Seam Bridge pairing code screen" style={{width: "420px", height: "auto"}} />
 
 ---
 
@@ -57,7 +57,7 @@ Use Task Scheduler to auto-start your app and restart it if it fails.
 
 1. In the right-hand **Actions** pane, select **Create Task…** (not _Create Basic Task_).
 
-   ![](/images/Task-Scheduler-Create-Task....png)
+   <img src="/images/Task-Scheduler-Create-Task....png" alt="Task Scheduler - Create Task option" style={{width: "550px", height: "auto"}} />
 
 2. In the **General** tab:
    - Name: e.g. `Seam Bridge - Keep Running`.
@@ -65,14 +65,14 @@ Use Task Scheduler to auto-start your app and restart it if it fails.
    - (If needed) Check **Run with highest privileges**.
    - Pick the right OS under **Configure for** (e.g. Windows 10/11).
 
-   ![](/images/Screenshot-2025-11-13-at-3.43.54-PM.png)
+   <img src="/images/Screenshot-2025-11-13-at-3.43.54-PM.png" alt="Task Properties - General tab" style={{width: "450px", height: "auto"}} />
 
 3. **Set up trigger to launch at start up**
    - Go to the **Triggers** tab and click **New….**
    - Set **Begin the task** to **At startup**.
    - Make sure **Enabled** is checked, then click **OK**.
 
-   ![](/images/Screenshot-2025-11-13-at-8.32.45-AM.png)
+   <img src="/images/Screenshot-2025-11-13-at-8.32.45-AM.png" alt="Task Properties - Triggers tab, At startup trigger" style={{width: "450px", height: "auto"}} />
 
 4. **Add another trigger to relaunch Seam Bridge if it closes**
    1. In the **Triggers** tab, select **New…**
@@ -86,7 +86,7 @@ Use Task Scheduler to auto-start your app and restart it if it fails.
       - Ensure **Enabled** is checked
    5. Select **OK** to save the trigger.
 
-   ![](/images/Screenshot-2025-11-13-at-3.19.04-PM.png)
+   <img src="/images/Screenshot-2025-11-13-at-3.19.04-PM.png" alt="Task Properties - Triggers tab, scheduled trigger" style={{width: "450px", height: "auto"}} />
 
 5. **Configure launching the Seam Bridge app**
    - Go to the **Actions** tab and click **New….**
@@ -95,7 +95,7 @@ Use Task Scheduler to auto-start your app and restart it if it fails.
      - Example: `C:\Users\user\Downloads\SeamBridge.exe`
    - Click **OK**.
 
-   ![](/images/Screenshot-2025-11-13-at-9.02.46-AM.png)
+   <img src="/images/Screenshot-2025-11-13-at-9.02.46-AM.png" alt="Task Properties - Actions tab" style={{width: "450px", height: "auto"}} />
 
 6. **Configure settings for relaunching**
    1. Go to the **Settings** tab.
@@ -105,7 +105,7 @@ Use Task Scheduler to auto-start your app and restart it if it fails.
    3. Uncheck **Stop the task if it runs longer than:**.
    4. Check **If the running task does not end when requested, force it to stop**.
 
-   ![](/images/Screenshot-2025-11-13-at-9.37.06-AM.png)
+   <img src="/images/Screenshot-2025-11-13-at-9.37.06-AM.png" alt="Task Properties - Settings tab" style={{width: "450px", height: "auto"}} />
 
 7. **Prevent power settings from stopping the task**
    - Go to the **Conditions** tab.
@@ -113,7 +113,7 @@ Use Task Scheduler to auto-start your app and restart it if it fails.
      - Uncheck **Start the task only if the computer is on AC power**.
      - Uncheck **Stop if the computer switches to battery power**.
 
-   ![](/images/Screenshot-2025-11-13-at-9.46.57-AM.png)
+   <img src="/images/Screenshot-2025-11-13-at-9.46.57-AM.png" alt="Task Properties - Conditions tab" style={{width: "450px", height: "auto"}} />
 
 #### **Save and test**
 
