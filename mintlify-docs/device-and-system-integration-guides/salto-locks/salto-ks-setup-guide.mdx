@@ -1,0 +1,77 @@
+---
+title: 'Salto KS Lock Setup Guide'
+description: 'Connect your Salto KS locks to Seam.'
+---
+
+## Overview
+
+This guide walks you through connecting your Salto KS locks to Seam. Your locks must already be set up and working in the Salto KS platform before proceeding.
+
+<Info>
+  Seam supports two integrations for Salto KS. We recommend using the [Salto KS
+  access control system
+  integration](/device-and-system-integration-guides/salto-ks-access-control-system)
+  because it provides more robust functionality, such as managing ACS users and
+  credentials. However, if you want to connect a single or just a few Salto KS
+  locks, you can choose the Salto KS lock integration described in this guide.
+</Info>
+
+---
+
+## Prerequisites
+
+Before connecting your Salto KS devices to Seam, confirm the following:
+
+- **Site Admin rights:** You must use a Salto KS web app user account that has "Site Admin" rights.
+- **Production environment:** You must use a Salto KS production environment account. You cannot use "Accept Environment" credentials. To confirm your account type, check the Salto KS dashboard URL. The subdomain must be `app` (for example, `https://app.saltoks.com`). A subdomain of `app-accept` (for example, `https://app-accept.saltoks.com`) indicates an Accept Environment that cannot connect to Seam.
+- **Released sites:** Make sure that your installer has released your Salto KS sites. Seam cannot perform actions on unreleased Salto KS sites.
+
+---
+
+## Step 1: Confirm Your Salto KS Account
+
+1. Create an account in the [Salto KS app](https://app.saltoks.com/) if you have not done so already.
+2. In the Salto KS app, confirm that your Salto KS devices are added and online.
+3. Note your login credentials for the Salto KS app.
+
+---
+
+## Step 2: Connect to Seam via Connect Webview
+
+1. Open the [Connect Webview](/core-concepts/connect-webviews) provided by your application.
+2. If the Connect Webview displays multiple brand options, select **Salto KS**.
+3. In the **Enter your credentials** dialog, type your username and password for the Salto KS web app and then click **Log In**.
+4. Select **Full Access** and then click **Yes, Allow**.
+5. Select the Salto KS sites that you want to integrate with Seam and then click **Continue**.
+6. Click **Allow and Continue** to confirm that you allow Seam to add the requisite admin user to your Salto KS site for the integration with Seam.
+
+<Warning>Do not suspend or remove the Seam Integration admin user from your Salto KS site.</Warning>
+
+---
+
+## Step 3: Verify the Connection
+
+After connecting, verify that your Salto KS locks appear as devices and show as online with unlock and access code capabilities.
+
+---
+
+## Troubleshooting
+
+### Authorization fails in Connect Webview
+
+Make sure you are using a Salto KS account with Site Admin rights and a production environment URL (`https://app.saltoks.com`). Accept Environment credentials (`https://app-accept.saltoks.com`) cannot connect to Seam.
+
+### Locks not appearing after authorization
+
+Ensure your Salto KS sites have been released by your installer. Seam cannot perform actions on unreleased sites. Also confirm that devices are online in the Salto KS app.
+
+### `salto_site_user_not_subscribed` error
+
+This error means the Salto KS site has exceeded the allowed number of users for its subscription plan. To resolve this:
+
+1. Reduce the number of access codes you have created. Each access code takes up one user slot.
+2. Ask the device owner to contact their Salto installer to increase the subscription limit on their site.
+
+### Lock shows an `unknown` device type
+
+This indicates a weak connection with the Salto IQ hub. Contact a Salto installer for assistance.

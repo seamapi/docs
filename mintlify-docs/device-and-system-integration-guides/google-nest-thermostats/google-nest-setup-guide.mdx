@@ -1,0 +1,50 @@
+---
+title: 'Google Nest Setup Guide'
+description: 'Connect your Google Nest thermostats to Seam.'
+---
+
+This guide walks you through connecting your Google Nest thermostats to Seam. Your thermostats must already be set up and working in the Google Home app before proceeding.
+
+## 1. Set up Google Device Access
+
+Before connecting Nest devices to Seam, you must create a [Google Device Access](https://developers.google.com/nest/device-access) project -- including an associated OAuth client -- and provide information about this project to Seam through the [Seam Console](/core-concepts/seam-console).
+
+We recommend that you apply for [Google Commercial Development](https://developers.google.com/nest/device-access/project/apply) for your Nest devices. For detailed instructions, see [Obtain Google Nest Device Access and Commercial Development](/device-and-system-integration-guides/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development).
+
+<Info>
+  Note the restrictive [rate
+  limits](https://developers.google.com/nest/device-access/project/limits) in
+  the Google Device Access Sandbox environment while testing the integration
+  with customers.
+</Info>
+
+The period of time that Google takes to approve Commercial Development may range from a week to more than a month. For more information, see [Apply for Commercial Development](https://developers.google.com/nest/device-access/project/apply) on the Google Device Access site.
+
+Once Google approves your Commercial Development application, you can gradually scale the number of managed devices as you proceed through the Google stages to reach [Google certification for Commercial Production](https://developers.google.com/nest/device-access/project/apply#certification_for_commercial_production).
+
+## 2. Create a Google Home account
+
+If you don't already have one, download the [Google Home app](https://home.google.com/get-app/) and create an account. Add your Nest thermostats in the app and confirm they are online.
+
+## 3. Connect Google Nest to Seam
+
+Use the login credentials for your Google Home account to log in through the [Seam Connect Webview](/core-concepts/connect-webviews) and authorize Seam to access your devices.
+
+## 4. Verify the connection
+
+After completing the Connect Webview, confirm that your Nest thermostats appear in your Seam workspace and show an **online** status.
+
+---
+
+## Troubleshooting
+
+If you see a "No access to partner" error in the Connect Webview:
+
+- Verify that you have [obtained Google Commercial Development](/device-and-system-integration-guides/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development). Until you obtain Commercial Development, you can only connect devices associated directly with your own Google test users' accounts.
+- Confirm that you added the developer email address as a home member in the Google Home app settings.
+
+If your devices don't appear after connecting:
+
+- Confirm that your Nest thermostats are online in the Google Home app.
+- Verify that you logged in with the same Google account that owns the thermostats.
+- Wait a few minutes for the initial sync to complete, then refresh your device list.

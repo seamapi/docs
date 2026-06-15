@@ -870,6 +870,7 @@
                 "group": "33 Lock Devices",
                 "pages": [
                   "device-and-system-integration-guides/33-lock-devices/index",
+                  "device-and-system-integration-guides/33-lock-devices/33-lock-setup-guide",
                   "device-and-system-integration-guides/33-lock-devices/get-started-with-33-lock-devices"
                 ]
               },
@@ -885,6 +886,7 @@
                 "group": "Akiles Locks",
                 "pages": [
                   "device-and-system-integration-guides/akiles-locks/index",
+                  "device-and-system-integration-guides/akiles-locks/akiles-setup-guide",
                   "device-and-system-integration-guides/akiles-locks/get-started-with-akiles-locks",
                   "device-and-system-integration-guides/akiles-locks/sandbox-akiles-locks"
                 ]
@@ -893,6 +895,7 @@
                 "group": "August Locks",
                 "pages": [
                   "device-and-system-integration-guides/august-locks/index",
+                  "device-and-system-integration-guides/august-locks/august-setup-guide",
                   "device-and-system-integration-guides/august-locks/get-started-with-august-locks",
                   "device-and-system-integration-guides/august-locks/august-locks-sample-data"
                 ]
@@ -912,6 +915,7 @@
                 "group": "igloohome Locks",
                 "pages": [
                   "device-and-system-integration-guides/igloohome-locks/index",
+                  "device-and-system-integration-guides/igloohome-locks/igloohome-setup-guide",
                   "device-and-system-integration-guides/igloohome-locks/igloohome-error-and-warning-codes",
                   "device-and-system-integration-guides/igloohome-locks/creating-igloohome-offline-access-codes",
                   "device-and-system-integration-guides/igloohome-locks/get-started-with-igloo-locks",
@@ -922,6 +926,7 @@
                 "group": "Kwikset Locks",
                 "pages": [
                   "device-and-system-integration-guides/kwikset-locks/index",
+                  "device-and-system-integration-guides/kwikset-locks/kwikset-setup-guide",
                   "device-and-system-integration-guides/kwikset-locks/get-started-with-kwikset-wifi-locks",
                   "device-and-system-integration-guides/kwikset-locks/kwikset-locks-sample-data"
                 ]
@@ -939,6 +944,7 @@
                 "group": "Nuki Locks",
                 "pages": [
                   "device-and-system-integration-guides/nuki-locks/index",
+                  "device-and-system-integration-guides/nuki-locks/nuki-setup-guide",
                   "device-and-system-integration-guides/nuki-locks/get-started-with-nuki-locks",
                   "device-and-system-integration-guides/nuki-locks/nuki-sample-data"
                 ]
@@ -966,6 +972,7 @@
                 "group": "Tedee Locks",
                 "pages": [
                   "device-and-system-integration-guides/tedee-locks/index",
+                  "device-and-system-integration-guides/tedee-locks/tedee-setup-guide",
                   "device-and-system-integration-guides/tedee-locks/get-started-with-tedee-locks",
                   "device-and-system-integration-guides/tedee-locks/sandbox-tedee-locks"
                 ]
@@ -974,6 +981,7 @@
                 "group": "TTLock Locks",
                 "pages": [
                   "device-and-system-integration-guides/ttlock-locks/index",
+                  "device-and-system-integration-guides/ttlock-locks/ttlock-setup-guide",
                   "device-and-system-integration-guides/ttlock-locks/get-started-with-ttlock-devices",
                   "device-and-system-integration-guides/ttlock-locks/ttlock-sample-data"
                 ]
@@ -991,6 +999,7 @@
                 "group": "Wyze Locks",
                 "pages": [
                   "device-and-system-integration-guides/wyze-locks/index",
+                  "device-and-system-integration-guides/wyze-locks/wyze-setup-guide",
                   "device-and-system-integration-guides/wyze-locks/get-started-with-wyze-locks",
                   "device-and-system-integration-guides/wyze-locks/wyze-sample-data"
                 ]
@@ -1012,6 +1021,7 @@
                 "group": "ASSA ABLOY Vingcard Credential Services",
                 "pages": [
                   "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/index",
+                  "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/assa-abloy-vingcard-credential-services-setup-guide",
                   "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/sandbox-assa-abloy-vingcard-credential-services"
                 ]
               },
@@ -1091,6 +1101,7 @@
                 "group": "Avigilon Alta Access System",
                 "pages": [
                   "device-and-system-integration-guides/avigilon-alta-access-system/index",
+                  "device-and-system-integration-guides/avigilon-alta-access-system/avigilon-alta-setup-guide",
                   "device-and-system-integration-guides/avigilon-alta-access-system/avigilon-alta-access-system-sample-data"
                 ]
               },
@@ -1153,6 +1164,7 @@
                 "group": "Salto KS Locks",
                 "pages": [
                   "device-and-system-integration-guides/salto-locks/index",
+                  "device-and-system-integration-guides/salto-locks/salto-ks-setup-guide",
                   "device-and-system-integration-guides/salto-locks/get-started-with-salto-locks",
                   "device-and-system-integration-guides/salto-locks/sandbox-salto-ks-locks"
                 ]
@@ -1190,6 +1202,7 @@
                 "group": "ecobee Thermostats",
                 "pages": [
                   "device-and-system-integration-guides/ecobee-thermostats/index",
+                  "device-and-system-integration-guides/ecobee-thermostats/ecobee-setup-guide",
                   "device-and-system-integration-guides/ecobee-thermostats/get-started-with-ecobee-thermostats",
                   "device-and-system-integration-guides/ecobee-thermostats/ecobee-sample-data"
                 ]
@@ -1198,6 +1211,7 @@
                 "group": "Google Nest Thermostats",
                 "pages": [
                   "device-and-system-integration-guides/google-nest-thermostats/index",
+                  "device-and-system-integration-guides/google-nest-thermostats/google-nest-setup-guide",
                   "device-and-system-integration-guides/google-nest-thermostats/get-started-with-nest-thermostats",
                   "device-and-system-integration-guides/google-nest-thermostats/obtain-google-nest-device-access-and-commercial-development",
                   "device-and-system-integration-guides/google-nest-thermostats/google-nest-thermostats-sample-data"
@@ -1207,6 +1221,7 @@
                 "group": "Honeywell Resideo Thermostats",
                 "pages": [
                   "device-and-system-integration-guides/honeywell-thermostats/index",
+                  "device-and-system-integration-guides/honeywell-thermostats/honeywell-resideo-setup-guide",
                   "device-and-system-integration-guides/honeywell-thermostats/get-started-with-honeywell-thermostats",
                   "device-and-system-integration-guides/honeywell-thermostats/sandbox-honeywell-thermostats"
                 ]
@@ -1215,6 +1230,7 @@
                 "group": "Sensi Thermostats",
                 "pages": [
                   "device-and-system-integration-guides/sensi-thermostats/index",
+                  "device-and-system-integration-guides/sensi-thermostats/sensi-setup-guide",
                   "device-and-system-integration-guides/sensi-thermostats/get-started-with-sensi-thermostats",
                   "device-and-system-integration-guides/sensi-thermostats/sandbox-sensi-thermostats"
                 ]
@@ -1223,6 +1239,7 @@
                 "group": "SmartThings Hubs + Devices",
                 "pages": [
                   "device-and-system-integration-guides/smartthings-hubs-+-devices/index",
+                  "device-and-system-integration-guides/smartthings-hubs-+-devices/smartthings-setup-guide",
                   "device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-smart-locks",
                   "device-and-system-integration-guides/smartthings-hubs-+-devices/get-started-with-smartthings-hubs-+-thermostats",
                   "device-and-system-integration-guides/smartthings-hubs-+-devices/smartthings-sample-data"
@@ -1237,6 +1254,7 @@
                 "group": "Minut Sensors",
                 "pages": [
                   "device-and-system-integration-guides/minut-sensors/index",
+                  "device-and-system-integration-guides/minut-sensors/minut-setup-guide",
                   "device-and-system-integration-guides/minut-sensors/get-started-with-minut-sensors",
                   "device-and-system-integration-guides/minut-sensors/minut-noise-sensor-sample-data"
                 ]
@@ -1245,8 +1263,21 @@
                 "group": "NoiseAware Sensors",
                 "pages": [
                   "device-and-system-integration-guides/noiseaware-sensors/index",
+                  "device-and-system-integration-guides/noiseaware-sensors/noiseaware-setup-guide",
                   "device-and-system-integration-guides/noiseaware-sensors/get-started-with-noiseaware-sensors",
                   "device-and-system-integration-guides/noiseaware-sensors/noiseaware-sample-data"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Cameras",
+            "pages": [
+              {
+                "group": "Ring Cameras",
+                "pages": [
+                  "device-and-system-integration-guides/ring-cameras/index",
+                  "device-and-system-integration-guides/ring-cameras/ring-setup-guide"
                 ]
               }
             ]
@@ -1280,6 +1311,7 @@
                 "group": "PTI Storlogix Cloud",
                 "pages": [
                   "device-and-system-integration-guides/pti-storlogix-cloud/index",
+                  "device-and-system-integration-guides/pti-storlogix-cloud/pti-storlogix-cloud-setup-guide",
                   "device-and-system-integration-guides/pti-storlogix-cloud/pti-storlogix-cloud-sample-data"
                 ]
               }

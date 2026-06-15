@@ -1,0 +1,92 @@
+---
+title: 'Akiles Setup Guide'
+description: 'Connect your Akiles locks to Seam.'
+---
+
+## Overview
+
+This guide walks you through connecting your Akiles locks to Seam. Your Akiles devices must already be physically installed before proceeding.
+
+Akiles locks require the [Akiles Gateway](https://akiles.app/en/products/smart-lock-system-gateway) for remote connectivity. You can optionally add the [Akiles Pinpad](https://akiles.app/en/products/smart-lock-system-pinpad) to enable access code entry on devices without an integrated keypad.
+
+---
+
+## Step 1: Set Up the Akiles Gateway
+
+1. Plug in your Akiles Gateway and connect it using Ethernet.
+
+   The LED should be blue to indicate that it is connected.
+
+---
+
+## Step 2: Prepare Your Lock Hardware IDs
+
+Before installing an Akiles Roomlock, take a picture of the QR code inside the lock body. The QR code is located on the inside of the lock, opposite the keypad. This code is required to add the lock in the Akiles app.
+
+---
+
+## Step 3: Add Devices in the Akiles App
+
+1. Log in to the Akiles app.
+   - [Web](https://web.akiles.app/login)
+   - [iOS](https://apps.apple.com/app/akiles/id1467888600)
+   - [Google Play](https://play.google.com/store/apps/details?id=app.akiles&hl=en)
+
+   Make sure to note your credentials for the Akiles app.
+
+2. In the Akiles app, click the upper-left menu and select **Devices**.
+3. At the upper-right corner, click **Actions +** and select **New Device**.
+4. Type a name for the new device and select the site with which you want to associate the device.
+5. In the **Device Type** area, add the Akiles Gateway:
+   - Scan the QR code on the back of the Gateway to retrieve the hardware ID number.
+   - In the **Device Type** field, paste the hardware ID number. The Akiles app displays Device and Version information based on the hardware ID.
+   - Click **Create Device**. The Akiles app creates the device representation and displays the device status. A Gateway takes a moment to connect to the Akiles server, run a firmware auto-update, and reboot.
+6. Add each Akiles lock:
+   - Using the photo that you took of the QR code inside the lock, scan this code to retrieve the hardware ID number.
+   - In the **Device Type** field, paste the hardware ID number. The Akiles app displays Device and Version information based on the hardware ID.
+   - Click **Create Device**. The Akiles app creates the device representation and displays that the device status is offline.
+
+---
+
+## Step 4: Link Locks to the Gateway
+
+1. Click the upper-left menu and select **Links**. By default, the Akiles app displays a link between the Gateway and server.
+2. Click **Link +**.
+3. Clear the **Server** field to remove **Server** from **Central Device**.
+4. Click **Central Device** and select **Gateway**.
+5. Click **Peripheral Device** and select **Lock**.
+6. Click **Create Link**. This link connects the lock to the Akiles server and may take several minutes to complete. It also performs firmware updates that take additional time.
+7. Repeat for each lock.
+8. Click the upper-left menu, select **Devices**, and make sure that all devices are online.
+
+---
+
+## Step 5: Connect to Seam
+
+Use your credentials for the Akiles app to log in to the [Connect Webview](/core-concepts/connect-webviews) to add your Akiles devices to Seam.
+
+---
+
+## Step 6: Verify the Connection
+
+After connecting, verify that your Akiles devices appear in your Seam workspace and that each device shows an **online** status.
+
+---
+
+## Troubleshooting
+
+### Devices not appearing after connecting
+
+- Verify that all Akiles devices are online in the Akiles app.
+- Confirm that each lock is linked to the Gateway.
+
+### Lock shows as offline
+
+- Check that the Gateway LED is blue, indicating it is connected.
+- Verify the Ethernet connection to the Gateway.
+- In the Akiles app, check the **Links** section to confirm the lock-to-Gateway link is active.
+
+### Gateway not connecting
+
+- Verify the Ethernet cable is securely connected.
+- Allow time for the Gateway to complete firmware updates and reboot after initial setup.
