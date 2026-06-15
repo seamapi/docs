@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * Sync manufacturer/provider logos from DeviceDB (Strapi) into the brand guides.
  *
@@ -18,7 +19,7 @@
  * Requires env: STRAPI_API_URL (includes the /api suffix), STRAPI_AUTH_TOKEN.
  */
 
-import { existsSync, readdirSync,readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
