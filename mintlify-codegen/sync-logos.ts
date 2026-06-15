@@ -18,9 +18,9 @@
  * Requires env: STRAPI_API_URL (includes the /api suffix), STRAPI_AUTH_TOKEN.
  */
 
-import { fileURLToPath } from 'node:url'
+import { existsSync, readdirSync,readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const repoRoot = join(__dirname, '..')
