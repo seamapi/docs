@@ -297,7 +297,7 @@ Create a `<brand>-setup-guide.mdx` page with these sections:
 1. **Overview** — one paragraph: what this guide covers, mention any hardware requirement (e.g., gateway) as a prerequisite, not as a setup step
 2. **Step 1: Locate credentials** — where to find the credentials needed for the Connect Webview (app settings, admin portal, etc.). Call out if they differ from the regular login.
 3. **Step 2: Connect via Connect Webview** — open the webview, select the provider, enter credentials
-4. **Step 3: Verify the Connection** — confirm devices appear in Seam
+4. **Step 3: Verify the Connection** — confirm devices appear and show expected capabilities. Keep it generic — don't reference the Seam Console specifically, since users may be connecting through a third-party app.
 5. **Troubleshooting** — common issues (wrong credentials, devices not appearing, connectivity)
 
 **Do not include:** hardware installation steps, prerequisites like "a Seam workspace with API access", or links to sandbox credentials. The setup guide is for real users connecting their real system. Sandbox instructions belong on the sandbox credentials page.
