@@ -924,6 +924,15 @@
                 ]
               },
               {
+                "group": "KeyInCode Locks",
+                "pages": [
+                  "device-and-system-integration-guides/keyincode-locks/index",
+                  "device-and-system-integration-guides/keyincode-locks/keyincode-setup-guide",
+                  "device-and-system-integration-guides/keyincode-locks/get-started-with-keyincode-locks",
+                  "device-and-system-integration-guides/keyincode-locks/sandbox-keyincode-locks"
+                ]
+              },
+              {
                 "group": "Kwikset Locks",
                 "pages": [
                   "device-and-system-integration-guides/kwikset-locks/index",
@@ -1095,6 +1104,7 @@
                 "group": "ASSA ABLOY Vostio Access Control System",
                 "pages": [
                   "device-and-system-integration-guides/assa-abloy-vostio-access-control-system/index",
+                  "device-and-system-integration-guides/assa-abloy-vostio-access-control-system/vostio-setup-guide",
                   "device-and-system-integration-guides/assa-abloy-vostio-access-control-system/sandbox-assa-abloy-vostio-access-control-system"
                 ]
               },
@@ -1209,6 +1219,13 @@
                 ]
               },
               {
+                "group": "First Alert Thermostats",
+                "pages": [
+                  "device-and-system-integration-guides/first-alert-thermostats/index",
+                  "device-and-system-integration-guides/first-alert-thermostats/first-alert-setup-guide"
+                ]
+              },
+              {
                 "group": "Google Nest Thermostats",
                 "pages": [
                   "device-and-system-integration-guides/google-nest-thermostats/index",
@@ -1234,6 +1251,13 @@
                   "device-and-system-integration-guides/sensi-thermostats/sensi-setup-guide",
                   "device-and-system-integration-guides/sensi-thermostats/get-started-with-sensi-thermostats",
                   "device-and-system-integration-guides/sensi-thermostats/sandbox-sensi-thermostats"
+                ]
+              },
+              {
+                "group": "Tado Thermostats",
+                "pages": [
+                  "device-and-system-integration-guides/tado-thermostats/index",
+                  "device-and-system-integration-guides/tado-thermostats/tado-setup-guide"
                 ]
               },
               {
