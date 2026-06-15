@@ -9,16 +9,12 @@ This guide walks you through connecting your ASSA ABLOY Vostio access control sy
 
 ---
 
-## Step 1: Gather Your Vostio Credentials
+## Step 1: Create Your Vostio API Credentials
 
-To connect Vostio to Seam, you need the following credentials from your Vostio account:
-
-- **Username**
-- **Password**
-- **Client ID**
-- **User Pool ID**
-
-Contact your ASSA ABLOY account representative if you do not have these credentials.
+1. Log in to the Vostio dashboard.
+2. In the left sidebar, click **Settings**, then select **Integrations**.
+3. On the **Guest API** tab, click **Create credentials**.
+4. Save the generated credentials — if you lose them, you cannot retrieve them. You would need to create new credentials and delete the old ones.
 
 ---
 
@@ -26,7 +22,7 @@ Contact your ASSA ABLOY account representative if you do not have these credenti
 
 1. Open the [Connect Webview](/core-concepts/connect-webviews) provided by your application.
 2. Select **Vingcard Vostio** as the provider.
-3. Enter your Vostio credentials (username, password, client ID, and user pool ID).
+3. Enter your Vostio Guest API credentials.
 4. Once authorized, your Vostio system, entrances, and encoders appear in Seam.
 
 ---
@@ -41,7 +37,7 @@ After connecting, verify that your Vostio ACS system shows as connected, your en
 
 ### Authorization fails in Connect Webview
 
-Verify that you are using the correct Vostio credentials, including the client ID and user pool ID. These are specific to your Vostio installation.
+Verify that you are using the correct Vostio Guest API credentials. If you have lost your credentials, log in to the Vostio dashboard and create new ones under **Settings > Integrations > Guest API**.
 
 ### Entrances not appearing after authorization
 
