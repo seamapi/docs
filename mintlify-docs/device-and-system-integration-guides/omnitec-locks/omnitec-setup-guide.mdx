@@ -17,33 +17,20 @@ This guide walks you through connecting Omnitec hotel locks to Seam. The integra
 
 Before you begin, ensure you have:
 
-- Omnitec electronic hotel locks installed at the property
-- An [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online) — this provides the Wi-Fi bridge between your locks and Seam
-- A Wi-Fi network accessible to the gateway
-- Your Omnitec Rent&Pass integrator credentials (see [Step 2](#step-2-locate-your-api-credentials))
-- A Seam workspace with API access
+- An [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online) installed and connected to Wi-Fi
+- Omnitec locks paired with the gateway and visible in the Rent&Pass app
 
 ---
 
-## Step 1: Install and Configure the Gateway
-
-1. Install the [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online) at the property and connect it to the Wi-Fi network.
-2. Pair your Omnitec locks with the gateway following Omnitec's pairing instructions. Each lock must be online and reachable through the gateway for remote operations.
-3. Verify that all locks appear as connected in the Omnitec Rent&Pass management interface.
-
----
-
-## Step 2: Locate Your API Credentials
+## Step 1: Locate Your Integrator Credentials
 
 The credentials used for the Seam integration are **not** the same as the login email and password used to access the Rent&Pass app.
 
-To find your API credentials:
+To find your integrator credentials:
 
 1. Open the Omnitec Rent&Pass app.
 2. Navigate to the **Integrator Credentials** section.
 3. Note the **Username** and **Password** displayed there.
-
-These are the credentials you will provide when connecting to Seam in the next step.
 
 <Info>
   If the "Integrator Credentials" section is not visible in your Rent&Pass app, contact Omnitec support to have it enabled on your account.
@@ -51,23 +38,18 @@ These are the credentials you will provide when connecting to Seam in the next s
 
 ---
 
-## Step 3: Connect to Seam
+## Step 2: Connect to Seam via Connect Webview
 
-1. In the [Seam Console](https://console.seam.co), create a [Connect Webview](/core-concepts/connect-webviews) with `omnitec` in the `accepted_providers` list.
-2. Open the Connect Webview and log in using the **Integrator Credentials** from the Rent&Pass app (not your regular app login).
-3. Once authorized, your online Omnitec locks appear as devices in your Seam workspace.
+1. Open the [Connect Webview](/core-concepts/connect-webviews) provided by your application.
+2. Select Omnitec as the provider.
+3. Enter the **Integrator Credentials** from the Rent&Pass app (not your regular app login).
+4. Once authorized, your online Omnitec locks appear as devices in Seam.
 
 ---
 
-## Step 4: Verify the Connection
+## Step 3: Verify the Connection
 
-Once connected, verify that your devices appear correctly:
-
-- **Devices** — your online Omnitec locks should appear in the Seam Console under Devices
-- **Status** — each lock should show as online/connected
-- **Capabilities** — locks should report `can_remotely_lock`, `can_remotely_unlock`, and `can_program_online_access_codes`
-
-You can also verify programmatically using the Seam API. See the [Getting Started guide](./get-started-with-omnitec-locks) for code examples.
+After connecting, verify that your locks appear in the Seam Console under Devices. Each lock should show as online and report lock/unlock and access code capabilities.
 
 ---
 
