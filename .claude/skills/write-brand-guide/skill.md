@@ -299,6 +299,8 @@ Create a `<brand>-setup-guide.mdx` page with these sections:
 5. **Step 3: Verify the Connection** — what to check in Console and via API
 6. **Troubleshooting** — common issues (connectivity, credentials, device pairing, etc.)
 
+**The setup guide is for production setup — do not link to sandbox credentials from here.** Sandbox instructions belong on the sandbox credentials page and in the getting-started tutorial. The setup guide should describe how real users connect their real hardware.
+
 The overview page should link to the setup guide with a single line:
 
 ```
@@ -350,11 +352,14 @@ Insert a new group entry:
   "group": "<Brand> Locks",
   "pages": [
     "device-and-system-integration-guides/<brand>-locks/index",
+    "device-and-system-integration-guides/<brand>-locks/<brand>-setup-guide",
     "device-and-system-integration-guides/<brand>-locks/get-started-with-<brand>-locks",
     "device-and-system-integration-guides/<brand>-locks/sandbox-<brand>-locks"
   ]
 }
 ```
+
+For ACS brands, adjust the directory and page names accordingly (e.g., `<brand>-access-control-system/`). Include any additional subpages (e.g., finding-your-room-numbers) after the setup guide.
 
 If a sandbox page already exists in the nav, keep it and add the new pages before it.
 
@@ -392,6 +397,34 @@ Share the preview URLs with the user:
 - `http://localhost:3333/device-and-system-integration-guides/<brand>-locks/get-started-with-<brand>-locks`
 - `http://localhost:3333/device-and-system-integration-guides/<brand>-locks/sandbox-<brand>-locks`
 
+### Update Vale vocabulary
+
+Mintlify runs Vale spellcheck on PRs. Brand names and Seam-specific terms that aren't in a standard dictionary will trigger warnings. Add new terms to the vocabulary file:
+
+```bash
+# Add brand name (and any brand-specific terms) to the accept list
+echo "<Brand>" >> mintlify-docs/styles/Vocab/Seam/accept.txt
+```
+
+The vocabulary file is at `mintlify-docs/styles/Vocab/Seam/accept.txt`. Common terms already listed: Hotek, Omnitec, Webview, Webviews, prefilled. Add any new brand names or brand-specific jargon that would fail spellcheck.
+
+If the Vale config (`mintlify-docs/.vale.ini`) or vocabulary directory doesn't exist yet, create them:
+
+```
+# mintlify-docs/.vale.ini
+StylesPath = styles
+MinAlertLevel = suggestion
+Vocab = Seam
+
+[*.mdx]
+BasedOnStyles = Vale
+```
+
+```
+# mintlify-docs/styles/Vocab/Seam/accept.txt
+<brand-specific terms, one per line>
+```
+
 ### Commit, push, and open PR
 
 1. Create a feature branch if not already on one: `feat/<brand>-brand-guide`
@@ -405,9 +438,10 @@ Share the preview URLs with the user:
    ## Summary
 
    - Adds overview page for <Brand> locks with supported features, device provider key, setup instructions
+   - Adds setup guide with prerequisites, connection steps, and troubleshooting
    - Adds getting started guide with full 5-step tutorial in all 7 SDK languages
    - Adds sandbox credentials page
-   - Updates docs.json navigation
+   - Updates docs.json navigation and Vale vocabulary
 
    ## Test plan
 
