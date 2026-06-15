@@ -423,7 +423,10 @@ BasedOnStyles = Vale
 
 ```
 # mintlify-docs/styles/Vocab/Seam/accept.txt
-<brand-specific terms, one per line>
+Hotek
+Omnitec
+Webview
+Webviews
 ```
 
 ### Commit, push, and open PR
