@@ -475,6 +475,17 @@ Webviews
 
    If a PR already exists for the branch, update it with `gh pr edit` instead.
 
+### Create a Linear ticket for missing logos
+
+If the brand doesn't have a logo in `mintlify-docs/images/`, create a Linear ticket on the **Documentation** team assigned to **Sy Bohy** requesting the logo. Include:
+
+- The brand name
+- The expected image path (e.g., `/images/<brand>-logo.png`)
+- Where the logo is used: the `<Card>` in `mintlify-docs/device-and-system-integration-guides/index.mdx` and optionally the overview page itself
+- A link to the PR that added the brand guide
+
+Use priority Low (4). Once the logo is added, the `img` prop needs to be added to the Card on the overview page.
+
 ---
 
 ## Code sample conventions
