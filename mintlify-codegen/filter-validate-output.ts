@@ -24,8 +24,7 @@ process.stdin.on('end', () => {
   // Known false positive: Mintlify CLI tries to validate docs.json as an
   // OpenAPI spec because it has a top-level "openapi" key (which is actually
   // the Mintlify config telling it which spec file to use).
-  const knownFalsePositive =
-    'Error validating OpenAPI file /docs.json: Error: Failed to validate OpenAPI schema'
+  const knownFalsePositive = 'Error validating OpenAPI file /docs.json'
 
   const realIssues = lines.filter((line) => {
     // Keep only warning/error/parsing lines
