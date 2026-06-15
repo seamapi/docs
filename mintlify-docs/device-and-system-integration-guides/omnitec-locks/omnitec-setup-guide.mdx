@@ -20,7 +20,7 @@ Before you begin, ensure you have:
 - Omnitec electronic hotel locks installed at the property
 - An [Omnitec Rent&Pass Gateway](https://www.omnitecsystems.com/products/rent-and-pass/gateway-online) — this provides the Wi-Fi bridge between your locks and Seam
 - A Wi-Fi network accessible to the gateway
-- Your Omnitec account credentials (email and password)
+- Your Omnitec Rent&Pass integrator credentials (see [Step 2](#step-2-locate-your-api-credentials))
 - A Seam workspace with API access
 
 ---
@@ -33,15 +33,33 @@ Before you begin, ensure you have:
 
 ---
 
-## Step 2: Connect to Seam
+## Step 2: Locate Your API Credentials
+
+The credentials used for the Seam integration are **not** the same as the login email and password used to access the Rent&Pass app.
+
+To find your API credentials:
+
+1. Open the Omnitec Rent&Pass app.
+2. Navigate to the **Integrator Credentials** section.
+3. Note the **Username** and **Password** displayed there.
+
+These are the credentials you will provide when connecting to Seam in the next step.
+
+<Info>
+  If the "Integrator Credentials" section is not visible in your Rent&Pass app, contact Omnitec support to have it enabled on your account.
+</Info>
+
+---
+
+## Step 3: Connect to Seam
 
 1. In the [Seam Console](https://console.seam.co), create a [Connect Webview](/core-concepts/connect-webviews) with `omnitec` in the `accepted_providers` list.
-2. Open the Connect Webview and log in with your Omnitec account credentials.
+2. Open the Connect Webview and log in using the **Integrator Credentials** from the Rent&Pass app (not your regular app login).
 3. Once authorized, your online Omnitec locks appear as devices in your Seam workspace.
 
 ---
 
-## Step 3: Verify the Connection
+## Step 4: Verify the Connection
 
 Once connected, verify that your devices appear correctly:
 
@@ -54,6 +72,10 @@ You can also verify programmatically using the Seam API. See the [Getting Starte
 ---
 
 ## Troubleshooting
+
+### Authorization fails in Connect Webview
+
+Make sure you are using the **Integrator Credentials** from the Rent&Pass app, not your regular app login email and password. These are different credentials. If the "Integrator Credentials" section is not visible in the app, contact Omnitec support.
 
 ### Locks not appearing after authorization
 
