@@ -134,6 +134,8 @@ Get a thumbs-up before proceeding.
 
 ### Page 1: Overview (`index.mdx`)
 
+The overview is a **landing page**, not a tutorial. Each section answers one question and links elsewhere for details. Keep it scannable — a developer should be able to skim the page in 30 seconds and know what this brand does, what Seam supports, and where to go next.
+
 ```
 ---
 title: '<Brand> Locks'
@@ -144,6 +146,8 @@ description: 'Guide for using <Brand> locks with Seam'
 ## Overview
 
 [1-2 paragraphs: what the brand makes, what market they serve, how Seam integrates with them. Mention gateway/bridge requirement here if applicable.]
+
+[If the brand requires a gateway/bridge, add an <Info> block here.]
 
 ---
 
@@ -165,7 +169,33 @@ We support the following features:
 
 ---
 
-### Device Provider Key
+[OPTIONAL — for ACS brands, add Related Features after Supported Features:]
+
+## Related Features
+
+- [**Access Grants**](/use-cases/granting-access) — The recommended way to manage access in Seam.
+- [**Plastic Card Encoding**](/api/acs/encoders/encode_credential) — Encode and issue physical key cards.
+[Add Mobile Keys, Instant Keys links if supported]
+
+---
+
+[OPTIONAL — include only if there are real gotchas:]
+
+## Brand-Specific Restrictions
+
+[No remote unlock, PIN length limits, account type requirements, etc. Use prose, not a <Warning> block — the heading already signals caution.]
+
+---
+
+[OPTIONAL — include only if notable events exist:]
+
+## Brand-Specific Events
+
+[Auto-relock, access denied, etc.]
+
+---
+
+## Device Provider Key
 
 To create a [Connect Webview](/core-concepts/connect-webviews) that enables your users to connect their <Brand> devices to Seam, include the `<provider_key>` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
@@ -174,19 +204,6 @@ To create a [Connect Webview](/core-concepts/connect-webviews) that enables your
 ## Setup Instructions
 
 For step-by-step instructions on connecting <Brand> devices to Seam — including [gateway/bridge] configuration and troubleshooting — see the [<Brand> Setup Guide](./<brand>-setup-guide).
-
----
-
-[OPTIONAL SECTIONS — include only if the user provided this information:]
-
-## Brand-Specific Access Code Constraints
-[Table of constraints: PIN length, max codes, name restrictions, etc.]
-
-## Brand-Specific Events
-[Auto-relock, access denied, etc.]
-
-## Troubleshooting
-[Brand-specific errors and fixes]
 
 ---
 
@@ -199,6 +216,8 @@ For step-by-step instructions on connecting <Brand> devices to Seam — includin
   ></Card>
 </CardGroup>
 ```
+
+**Section order matters.** Developers scan top-down: what is it (Overview) → what works (Supported Devices, Features) → what doesn't (Restrictions) → how to connect (Provider Key, Setup) → where to buy. Don't add runtime troubleshooting here — put it in the setup guide.
 
 ### Page 2: Getting Started (`get-started-with-<brand>-locks.mdx`)
 

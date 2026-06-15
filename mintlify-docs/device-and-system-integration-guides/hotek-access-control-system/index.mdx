@@ -11,7 +11,7 @@ Hotek manufactures access control systems designed for the hospitality industry.
 Seam integrates with Hotek through a [Seam Bridge](/capability-guides/seam-bridge) connection to the Hotek SMART Server. This enables you to manage entrances (rooms and common areas), provision credentials (key cards), and encode plastic cards using Seam's unified API — all without direct interaction with the Hotek system.
 
 <Info>
-  Hotek requires a [Seam Bridge](/capability-guides/seam-bridge) installed on the property network to communicate with the Hotek SMART Server. The bridge relays commands between Seam's cloud API and the on-premise Hotek server over TCP.
+  Hotek requires a [Seam Bridge](/capability-guides/seam-bridge) installed on the property network. The bridge relays commands between Seam's cloud API and the on-premise Hotek server over TCP.
 </Info>
 
 ---
@@ -27,13 +27,6 @@ For detailed information about the Hotek devices that Seam supports, see our [Ho
 
 ---
 
-## Related Features
-
-- [**Access Grants**](/use-cases/granting-access) — The recommended way to manage access in Seam. Integrate once, and your access model works consistently across all providers, including Hotek.
-- [**Plastic Card Encoding**](/api/acs/encoders/encode_credential) — Encode and issue physical key cards using Seam's card management API.
-
----
-
 ## Supported Features
 
 We support the following features:
@@ -43,13 +36,22 @@ We support the following features:
 - Creating and revoking credentials (key cards)
 - Encoding plastic cards via connected encoders
 
-<Warning>
-  Hotek locks do not support remote web unlock. Access is granted by encoding physical key cards or issuing credentials that work with the lock hardware.
-</Warning>
+---
+
+## Related Features
+
+- [**Access Grants**](/use-cases/granting-access) — The recommended way to manage access in Seam. Integrate once, and your access model works consistently across all providers, including Hotek.
+- [**Plastic Card Encoding**](/api/acs/encoders/encode_credential) — Encode and issue physical key cards using Seam's card management API.
 
 ---
 
-### Device Provider Key
+## Brand-Specific Restrictions
+
+Hotek locks do not support remote web unlock. Access is granted by encoding physical key cards or issuing credentials that work with the lock hardware.
+
+---
+
+## Device Provider Key
 
 To create a [Connect Webview](/core-concepts/connect-webviews) that enables your users to connect their Hotek system to Seam, include the `hotek` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
 
