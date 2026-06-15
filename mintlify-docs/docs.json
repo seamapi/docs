@@ -272,7 +272,8 @@
             "pages": [
               "developer-tools/webhooks",
               "developer-tools/seam-cli",
-              "developer-tools/seam-mcp"
+              "developer-tools/seam-mcp",
+              "developer-tools/test-accounts"
             ]
           },
           {

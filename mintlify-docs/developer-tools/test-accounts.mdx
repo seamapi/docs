@@ -1,0 +1,54 @@
+---
+title: 'Test Accounts'
+description: 'Log in to shared sandbox test accounts to connect virtual devices from any manufacturer, so you can build and test without physical hardware.'
+---
+
+Seam provides shared **test accounts** for every manufacturer it supports, so you can connect virtual devices in a [sandbox workspace](/core-concepts/workspaces#sandbox-workspaces) and build your integration without any physical hardware.
+
+When you connect a device—in the [Seam Console](https://console.seam.co) or through a [Connect Webview](/core-concepts/connect-webviews)—enter the test-account credentials below instead of real manufacturer credentials.
+
+## The standard sandbox login
+
+Most manufacturers accept the same test-account login:
+
+| Field                              | Value                                                          |
+| ---------------------------------- | -------------------------------------------------------------- |
+| **Email**                          | Any address in the `example.com` domain—for example, `jane@example.com` |
+| **Password**                       | `1234`                                                         |
+| **Two-factor / verification code** | `123456` (enter this whenever a device prompts for a code)     |
+
+<Info>
+  These are shared, non-secret sandbox fixtures. They work only in [sandbox
+  workspaces](/core-concepts/workspaces#sandbox-workspaces) and grant no access
+  to real accounts or devices, so they are safe to commit to code and share with
+  your team.
+</Info>
+
+## Brands that need extra credentials
+
+The following integrations require something beyond the standard login—an API key, an additional field, or extra setup steps. See each brand's sandbox guide for the exact values to enter.
+
+{/* Add a row here when you add a brand whose sandbox connection needs more than the standard email + password (+ 2FA code). */}
+
+| Brand                                                                                                                          | What's different                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| [2N Intercoms](/device-and-system-integration-guides/2n-intercom-systems/2n-intercoms-sample-data)                             | Standard login, plus separate per-device credentials for each intercom.                                   |
+| [ASSA ABLOY Vingcard Credential Services](/device-and-system-integration-guides/assa-abloy-vingcard-credential-services/sandbox-assa-abloy-vingcard-credential-services) | Username and password, plus a Credential Services URL.                          |
+| [ASSA ABLOY Visionline](/device-and-system-integration-guides/assa-abloy-visionline-access-control-system/assa-abloy-visionline-access-management-system-sample-data) | Connects through [Seam Bridge](/capability-guides/seam-bridge); needs extra mobile-key setup and a Credential Services connection to issue mobile keys. |
+| [ASSA ABLOY Vostio](/device-and-system-integration-guides/assa-abloy-vostio-access-control-system/sandbox-assa-abloy-vostio-access-control-system) | Username and password, plus a Client ID and User Pool ID; needs a Credential Services connection to issue mobile keys. |
+| [August Locks](/device-and-system-integration-guides/august-locks/august-locks-sample-data)                                    | Standard login; also choose a Device Region (for "Others," select **Email** as the 2FA method).           |
+| [Brivo Access](/device-and-system-integration-guides/brivo-access/brivo-access-sample-data)                                    | Standard login, plus a Brivo Access API key.                                                              |
+| [Dormakaba Ambiance](/device-and-system-integration-guides/dormakaba-ambiance-access-control-system/sandbox-dormakaba-ambiance-access-control-system) | Connect Webview with a PMS operator login and API client credentials; needs LEGIC Connect to issue mobile keys. |
+| [Dormakaba Community](/device-and-system-integration-guides/dormakaba-community-access-control-system/sandbox-dormakaba-community-access-control-system) | Connect Webview with a PMS operator login and Community API client credentials; needs LEGIC Connect to issue mobile keys. |
+| [Dormakaba Oracode](/device-and-system-integration-guides/dormakaba-oracode-locks/dormakaba-oracode-sample-data)               | No email or password; a username, site, and time zone.                                                    |
+| [Hotek](/device-and-system-integration-guides/hotek-access-control-system/sandbox-hotek-access-control-system)                 | No credentials; complete the Connect Webview (site name and TCP port).                                    |
+| [Latch](/device-and-system-integration-guides/latch-access-control-system/sandbox-latch-access-control-system)                 | No credentials; complete the Connect Webview and select Latch.                                            |
+| [Lockly Locks](/device-and-system-integration-guides/lockly-locks/lockly-lock-sample-data)                                     | API-key style: an email plus Team/Client ID, Access Key, and Token values. No password.                   |
+| [Omnitec Locks](/device-and-system-integration-guides/omnitec-locks/sandbox-omnitec-locks)                                     | Standard login; also select any time zone in the Connect Webview.                                         |
+| [PTI Storlogix Cloud](/device-and-system-integration-guides/pti-storlogix-cloud/pti-storlogix-cloud-sample-data)               | Standard login, plus a Site Key, Site Code, and a dashboard URL.                                          |
+| [Salto Space](/device-and-system-integration-guides/salto-proaccess-space-access-system/sandbox-salto-space-access-control-system) | Connects through Seam Bridge; uses a username and password over a LAN URL.                            |
+| [Wyze Locks](/device-and-system-integration-guides/wyze-locks/wyze-sample-data)                                                | Standard login, plus a Wyze API Key ID and API Key.                                                       |
+
+## Per-brand details
+
+Each manufacturer's [sandbox guide](/device-and-system-integration-guides) lists its exact accepted accounts and the virtual devices pre-seeded with each one. To trigger test events on a virtual device or reset a sandbox workspace, see [Sandbox Workspaces](/core-concepts/workspaces#sandbox-workspaces).
