@@ -979,6 +979,13 @@
                 ]
               },
               {
+                "group": "Sifely Locks",
+                "pages": [
+                  "device-and-system-integration-guides/sifely-locks/index",
+                  "device-and-system-integration-guides/sifely-locks/sifely-setup-guide"
+                ]
+              },
+              {
                 "group": "Tedee Locks",
                 "pages": [
                   "device-and-system-integration-guides/tedee-locks/index",

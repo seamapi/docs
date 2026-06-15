@@ -1,0 +1,51 @@
+---
+title: 'Sifely Locks'
+sidebarTitle: 'Overview'
+description: 'Guide for using Sifely smart locks with Seam'
+---
+
+## Overview
+
+Sifely produces smart locks and keyless entry systems built on the TTLock platform. Their product line includes deadbolts, lever locks, padlocks, and locker locks designed for residential and light commercial use. Sifely locks support keypad entry, Bluetooth, and Wi-Fi connectivity through the TTLock app and a compatible gateway.
+
+Seam integrates with Sifely locks to provide remote lock and unlock actions and access code programming through a unified API.
+
+---
+
+## Supported Devices
+
+This integration supports Sifely smart locks that are paired with a [compatible TTLock gateway](https://ttlock.eu/shop/tag/ttlock+gateway/).
+
+For detailed information about the Sifely devices that Seam supports, see our [Sifely Supported Devices page](https://www.seam.co/manufacturers/sifely).
+
+---
+
+## Supported Features
+
+We support the following features:
+
+- [Triggering web lock and unlock actions](/low-level-apis/smart-locks/lock-and-unlock)
+- [Programming access codes](/low-level-apis/smart-locks/access-codes) on locks that have a keypad
+
+---
+
+## Device Provider Key
+
+To create a [Connect Webview](/core-concepts/connect-webviews) that enables your users to connect their Sifely devices to Seam, include the `ttlock` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+
+---
+
+## Setup Instructions
+
+For instructions on connecting Sifely locks to Seam, see the [Sifely Setup Guide](./sifely-setup-guide).
+
+---
+
+## Where to Order
+
+<CardGroup cols={1}>
+  <Card
+    title="Sifely - Smart Locks"
+    href="https://www.sifely.com/"
+  ></Card>
+</CardGroup>
