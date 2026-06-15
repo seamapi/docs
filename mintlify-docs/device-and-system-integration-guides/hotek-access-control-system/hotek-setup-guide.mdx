@@ -17,55 +17,88 @@ This guide walks you through connecting a Hotek SMART access control system to S
 
 Before you begin, ensure you have:
 
-- A Hotek SMART system installed and running at the property
-- A [Seam Bridge](/capability-guides/seam-bridge) installed on the same network as the Hotek SMART Server
-- The TCP host IP address and port number for the Hotek SMART Server (default port is `10003`)
+- Hotek SMART software installed and running on a Windows PC at the property
+- A [Seam Bridge](/capability-guides/seam-bridge) installed on the same machine as Hotek SMART (or on the same local network)
+- The TCP port number for the Hotek SMART PMS Server (default: `10003`)
 - A Seam workspace with API access
 
 ---
 
-## Step 1: Connect the Hotek ACS System
+## Step 1: Find Your TCP Port
+
+Hotek SMART listens for PMS commands on a TCP port. The default is `10003`. To confirm, open **Command Prompt** on the machine running Hotek SMART and run:
+
+```bash
+for /f "tokens=2" %i in ('tasklist /FI "IMAGENAME eq PMSServer.exe" /NH') do netstat -ano | findstr "LISTENING" | findstr "%i"
+```
+
+You should see output like:
+
+```
+TCP    0.0.0.0:10003    0.0.0.0:0    LISTENING    5712
+```
+
+<Tip>
+  If you see multiple ports, use `10003` — that's the standard PMS interface port.
+</Tip>
+
+---
+
+## Step 2: Connect via the Seam Console
 
 1. In the [Seam Console](https://console.seam.co), go to **Access Systems** and click **+ New Access System**.
 2. Select **Hotek** from the list of providers.
 3. Complete the **Seam Bridge** section by entering your Bridge connection details as shown in your Bridge UI.
-4. Complete the **Hotek** section with your SMART Server connection details:
+4. Complete the **Hotek** section with your connection details:
 
 | Field | Description |
 | --- | --- |
-| **Site Name** | A human-readable name to identify this Hotek installation (e.g., "Hotel Lobby System") |
-| **TCP Host** | The IP address of the Hotek SMART Server. Use `127.0.0.1` if the Bridge runs on the same machine, or the server's LAN IP otherwise. |
-| **TCP Port** | The port the Hotek SMART Server listens on (default: `10003`). Check your LockOH PMS settings if unsure. |
+| **Site Name** | A name for your Hotek site (e.g., "Hotel Marlin") |
+| **TCP Port** | The port from Step 1 (default: `10003`) |
+| **Remote IP** | If the Seam Bridge and Hotek SMART are on different computers, check the box and enter the IP address of the Hotek SMART server. Leave unchecked if they run on the same machine. |
+| **Setup Instructions Email** | (Optional) Enter an email and Seam sends instructions for completing setup |
 
 Once connected, a new **ACS System (Hotek)** appears in your workspace and shows as **connected** once the Bridge can reach the Hotek SMART Server.
 
 ---
 
-## Step 2: Set Up Entrances and Encoders
+## Step 3: Provide Room Numbers, Common Doors, and Encoders
 
-After connecting the Hotek system, you need to configure which rooms and encoders are available in Seam.
+After connecting, Seam needs three pieces of information to finish configuring your account. You can find all of this in the Hotek SMART software.
 
 <Info>
-  Entrance and encoder setup is currently managed by Seam support. This process will be automated in a future release.
+  Entrance and encoder setup is currently managed by Seam support. If you provided a setup instructions email in the previous step, Seam sends you an email with your Connected Account ID and instructions. Otherwise, send the information below to [support@getseam.com](mailto:support@getseam.com) along with your Connected Account ID.
 </Info>
 
-### Configure Entrances
+### Guest Rooms
 
-1. In the Hotek SMART application, click **All Room** and note the room numbers you want to manage through Seam.
-2. Contact [Seam support](mailto:support@seam.co) with your `acs_system_id` and the room numbers you want to set up as entrances.
+1. Open Hotek SMART.
+2. Click the **Room** icon in the top-left corner of the screen.
+3. Adjust the **Lock Name** column to make sure the full name is visible.
+4. Send screenshots of the full room list, showing the **Lock No.** and **Lock Name** columns. Scroll and send multiple screenshots if needed.
 
-Seam support will configure the rooms so they appear as entrances in your Seam workspace. Both guest rooms and common area doors can be added.
+### Common Doors
 
-### Configure Encoders
+1. In Hotek SMART, click the **Room** icon in the top-left corner of the screen.
+2. Click the **Common Door** tab at the bottom of the screen.
+3. Adjust the **Name** column to make sure the full name is visible.
+4. Send screenshots of the full common door list, showing the **Code** and **Name** columns. Scroll and send multiple screenshots if needed.
 
-1. Note the number and identifiers of card encoders at your property (e.g., encoder `01`).
-2. Contact [Seam support](mailto:support@seam.co) with your encoder details.
+### Encoders
 
-Seam support will register the encoders so they appear in your Seam workspace, associated with the Hotek ACS system.
+1. In Hotek SMART, click **Card** in the menu bar.
+2. Click **TCP Encoder**.
+3. Send a screenshot showing the **Encoder No.** column.
+
+<Tip>
+  If you're using a USB encoder instead of a TCP encoder, let Seam support know in your email.
+</Tip>
+
+Seam support will configure the rooms, common doors, and encoders so they appear as entrances and encoders in your Seam workspace.
 
 ---
 
-## Step 3: Verify the Connection
+## Step 4: Verify the Connection
 
 Once setup is complete, verify that your system, entrances, and encoders appear correctly:
 
@@ -79,24 +112,30 @@ You can also verify programmatically using the Seam API. See the [Getting Starte
 
 ## Troubleshooting
 
-### Bridge cannot reach the Hotek SMART Server
+### Can't find PMSServer.exe
 
-Verify that the TCP host and port are correct. From the Bridge host machine, test connectivity:
+Hotek SMART may not be running. Launch it from the Start menu or check Task Manager.
+
+### Connection times out
+
+Verify that the Seam Bridge is running, confirm the TCP port, and check that the firewall allows inbound connections on that port.
+
+From the Bridge host machine, you can test connectivity:
 
 ```bash
 nc -zv <tcp_host> <tcp_port>
 # Example: nc -zv 127.0.0.1 10003
 ```
 
-If the Hotek SMART Server runs on a different machine than the Bridge, do not use `127.0.0.1` — use the server's LAN IP address instead.
+If the Hotek SMART Server runs on a different machine than the Bridge, make sure you checked the remote IP box and entered the server's LAN IP address.
 
 ### Encoder not found
 
-Confirm that you have registered the encoder (usually `01`) through Seam support. The encoder must be associated with the ACS system before it can be used for card encoding.
+Confirm that you sent encoder details to Seam support. The encoder must be registered with the ACS system before it can be used for card encoding.
 
 ### Rooms not appearing as entrances
 
-The room numbers in Seam must match the room list in Hotek SMART. Check the **All Room** list in the Hotek SMART application and verify the room numbers match what was provided to Seam support.
+The room numbers in Seam must match the room list in Hotek SMART. Check the **Room** list in the Hotek SMART application and verify the room numbers match what was provided to Seam support.
 
 ### Duplicate site name
 
@@ -104,4 +143,4 @@ Use a unique Site Name for each Hotek installation to avoid confusion when manag
 
 ### Feature flag not enabled
 
-Ensure your Seam workspace is enabled for Hotek access. Contact [Seam support](mailto:support@seam.co) if the Hotek provider does not appear in your Connect Webview or Console.
+Ensure your Seam workspace is enabled for Hotek access. Contact [Seam support](mailto:support@getseam.com) if the Hotek provider does not appear in your Connect Webview or Console.
