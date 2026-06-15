@@ -348,16 +348,7 @@ AccessGrant(
 
 As a final step in creating a plastic key card, use the Seam API to encode the access method onto the plastic card. Your app can serve hotel front desk staff as well as self-serve check-in kiosks with built-in physical encoders.
 
-<figure>
-  <img
-    src='/images/encode-card-anim-border-added.gif'
-    alt='Encode the access method onto a plastic key card.'
-    width='563'
-  />
-  <figcaption>
-    <p>Encode the access method onto a plastic key card.</p>
-  </figcaption>
-</figure>
+<img src="/images/encode-card-anim-border-added.gif" alt="Encode the access method onto a plastic key card." style={{width: "450px", height: "auto"}} />
 
 First, list the available card encoders within the access system and identify the encoder that the person encoding the card should use. Then, initiate the encoding action. The Seam API returns an [action attempt](../../core-concepts/action-attempts) so that your app can track the status of the encoding. When the encoding completes successfully, the action attempt payload includes information about the encoded card, such as the card number and the date and time at which the card was issued (that is, encoded). If the encoding fails, the action attempt reports any encoding errors.
 
@@ -590,15 +581,7 @@ ActionAttempt(
 
 You can scan the card to view its data and confirm that it's up to date with the server. The scan result includes the card's properties, such as its card number, serial number, and other useful details. If discrepancies are detected, Seam provides warnings to indicate that the card is out of date and needs re-encoding.
 
-<figure>
-  <img
-    src='/images/scan-card-results.png'
-    alt='Use the Seam API to scan a plastic card to view its details.'
-  />
-  <figcaption>
-    <p>Use the Seam API to scan a plastic card to view its details.</p>
-  </figcaption>
-</figure>
+<img src="/images/scan-card-results.png" alt="Use the Seam API to scan a plastic card to view its details." style={{width: "550px", height: "auto"}} />
 
 To scan a card, first initiate the scanning process. This scanning action returns an action attempt that you can poll to track the status. When the scan completes, view the card payload within the action attempt. Note any `action_attempt.result.warnings`. Warning messages show which properties are out of sync.&#x20;
 
