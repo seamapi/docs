@@ -272,15 +272,7 @@
             "pages": [
               "developer-tools/webhooks",
               "developer-tools/seam-cli",
-              "developer-tools/seam-mcp",
-              {
-                "group": "Mobile SDKs",
-                "pages": [
-                  "developer-tools/mobile-sdks/index",
-                  "developer-tools/mobile-sdks/android-sdk",
-                  "developer-tools/mobile-sdks/ios-sdk"
-                ]
-              }
+              "developer-tools/seam-mcp"
             ]
           },
           {
