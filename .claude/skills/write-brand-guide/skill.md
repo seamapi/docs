@@ -302,6 +302,8 @@ Create a `<brand>-setup-guide.mdx` page with these sections:
 
 **Do not include:** hardware installation steps, prerequisites like "a Seam workspace with API access", or links to sandbox credentials. The setup guide is for real users connecting their real system. Sandbox instructions belong on the sandbox credentials page.
 
+**The setup guide is for production setup — do not link to sandbox credentials from here.** Sandbox instructions belong on the sandbox credentials page and in the getting-started tutorial. The setup guide should describe how real users connect their real hardware.
+
 The overview page should link to the setup guide with a single line:
 
 ```
