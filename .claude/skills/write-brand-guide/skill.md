@@ -286,20 +286,21 @@ Use seeded room numbers and user names from `seed.ts` in code examples.
 
 Every brand gets a dedicated setup guide page (`<brand>-setup-guide.mdx`). The overview page's "Setup Instructions" section links to it — it should not contain inline setup steps.
 
-**During the interview, ask the user for specific setup instructions.** These are brand-specific and can't be auto-discovered. Prompt with: "Can you provide the setup steps for this brand? (e.g., prerequisites, connection details, gateway/bridge configuration, troubleshooting tips)"
+**The setup guide focuses on connecting the brand's system to Seam — not on installing hardware.** Assume the user already has the brand's devices set up and working. The guide covers how to find the right credentials and authorize with Seam through the Connect Webview.
+
+**During the interview, ask the user for specific connection instructions.** These are brand-specific and can't be auto-discovered. Prompt with: "What credentials or information does the user need to connect this brand to Seam? Where do they find them?"
 
 For ACS brands, also ask about entrance and encoder setup — these often require coordination with Seam support.
 
 Create a `<brand>-setup-guide.mdx` page with these sections:
 
-1. **Overview** — what the guide covers, link to gateway/bridge product page if applicable
-2. **Prerequisites** — hardware, network, and Seam workspace requirements
-3. **Step 1: Connect** — Console or Connect Webview flow with connection fields in a table
-4. **Step 2: Configure devices/entrances** — how devices get paired or entrances get registered
-5. **Step 3: Verify the Connection** — what to check in Console and via API
-6. **Troubleshooting** — common issues (connectivity, credentials, device pairing, etc.)
+1. **Overview** — one paragraph: what this guide covers, mention any hardware requirement (e.g., gateway) as a prerequisite, not as a setup step
+2. **Step 1: Locate credentials** — where to find the credentials needed for the Connect Webview (app settings, admin portal, etc.). Call out if they differ from the regular login.
+3. **Step 2: Connect via Connect Webview** — open the webview, select the provider, enter credentials
+4. **Step 3: Verify the Connection** — confirm devices appear in Seam
+5. **Troubleshooting** — common issues (wrong credentials, devices not appearing, connectivity)
 
-**The setup guide is for production setup — do not link to sandbox credentials from here.** Sandbox instructions belong on the sandbox credentials page and in the getting-started tutorial. The setup guide should describe how real users connect their real hardware.
+**Do not include:** hardware installation steps, prerequisites like "a Seam workspace with API access", or links to sandbox credentials. The setup guide is for real users connecting their real system. Sandbox instructions belong on the sandbox credentials page.
 
 The overview page should link to the setup guide with a single line:
 
