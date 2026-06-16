@@ -1,0 +1,68 @@
+---
+title: 'PTI Storlogix Cloud Setup Guide'
+description: 'Connect your PTI Storlogix Cloud system to Seam.'
+---
+
+## Overview
+
+This guide walks you through connecting your PTI Storlogix Cloud access control system to Seam. Your Storlogix Cloud site must already be set up and operational before proceeding.
+
+---
+
+## Step 1: Gather Your Storlogix Cloud Credentials
+
+To connect your Storlogix site, you need the following information:
+
+- Site code
+- Site key
+- Operator username
+- Operator password
+- Storlogix Cloud dashboard URL
+
+To obtain this information:
+
+1. Log in to your Storlogix Cloud dashboard using your operator username and password.
+2. Note the page URL in the address bar at the top of your web browser, as well as the operator username and password that you used to log in.
+3. In the top, left corner of the Storlogix Cloud dashboard, click the three-bar button.
+4. Click **Operations > Company Info**.
+5. Click the **Device Settings** tab.
+6. Note the **SiteKey** and **SiteCode** values.
+
+<Info>
+If you do not have access to your Storlogix Cloud dashboard -- that is, if you are unsure of your Storlogix Cloud login credentials or the dashboard URL -- contact the [PTI Security Systems Customer Support team](https://ptisecurity.my.salesforce-sites.com/apex/Support). They can assist you in retrieving your login details.
+
+When contacting a PTI Security Systems Customer Support agent, have your PTI Support PIN or facility information ready.
+
+Make sure that you obtain the appropriate credentials specifically for Storlogix Cloud dashboard access.
+</Info>
+
+---
+
+## Step 2: Connect to Seam via Connect Webview
+
+1. Open the [Connect Webview](/core-concepts/connect-webviews) provided by your application.
+2. Select PTI Storlogix Cloud as the provider.
+3. Enter the site code, site key, operator username, operator password, and dashboard URL that you gathered in Step 1.
+4. Once authorized, your PTI Storlogix Cloud system is connected to Seam.
+
+---
+
+## Step 3: Verify the Connection
+
+After connecting, verify that your Storlogix Cloud system appears as a connected account and that your access control resources are visible in Seam.
+
+---
+
+## Troubleshooting
+
+### Authorization fails in Connect Webview
+
+Make sure you are using the operator credentials for the Storlogix Cloud dashboard, not a different PTI login. Double-check the site code, site key, and dashboard URL values from the Device Settings tab.
+
+### Cannot find Storlogix Cloud credentials
+
+Contact the [PTI Security Systems Customer Support team](https://ptisecurity.my.salesforce-sites.com/apex/Support) with your PTI Support PIN or facility information to retrieve your dashboard login details.
+
+### System connected but no access areas visible
+
+Verify that your Storlogix Cloud site has access levels and units configured. Seam reflects the access structure defined in Storlogix Cloud.

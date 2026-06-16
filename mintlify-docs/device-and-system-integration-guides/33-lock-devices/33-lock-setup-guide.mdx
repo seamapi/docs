@@ -1,0 +1,80 @@
+---
+title: '33 Lock Setup Guide'
+description: 'Connect your 33 Lock smart locks to Seam.'
+---
+
+## Overview
+
+This guide walks you through connecting your 33 Lock smart locks to Seam. Your locks must already be physically installed before proceeding.
+
+33 Lock devices use the TTLock platform. You need a TTLock account, the TTLock mobile app, and a compatible TTLock Gateway to connect your locks to Seam.
+
+---
+
+## Step 1: Set Up a TTLock Account
+
+1. Download the TTLock app for [iOS](https://apps.apple.com/us/app/ttlock/id1033046018) or [Android](https://play.google.com/store/apps/details?id=com.tongtongsuo.app&hl=en_CA).
+2. Create an account in the TTLock app.
+
+   For details, see the [33 Lock Account Registration guide](https://33lock.notion.site/Account-Registration-13050a6ca1ac81788991ecb923a2cb04#13050a6ca1ac8008b3ece7ed6bbbd094).
+
+---
+
+## Step 2: Add Your Lock and Gateway to the TTLock App
+
+1. Add your 33 Lock device to the TTLock app.
+
+   For details, see the [33 Lock Lock Management guide](https://33lock.notion.site/Lock-Management-13050a6ca1ac81449b3cf68f8b463267#13650a6ca1ac80ecaf8de356da907a9d).
+
+2. Add the TTLock Gateway to the TTLock app.
+
+   For details, see the [33 Lock Gateway Management guide](https://33lock.notion.site/Gateway-Management-13050a6ca1ac811f9962fe949fefcc7a).
+
+   33 Lock devices automatically pair with the gateway. Confirm the gateway-to-lock connection strength. For details, see the [33 Lock Gateway Settings guide](https://33lock.notion.site/Gateway-Settings-13550a6ca1ac80f59574f9df40463431#13750a6ca1ac80758293cf85026ef835).
+
+3. In the TTLock app, go to the lock settings and enable the **Remote Unlock** feature.
+
+<Info>
+  If Seam detects that the Remote Unlock feature is disabled, a warning is added to the device.
+</Info>
+
+---
+
+## Step 3: Transfer Ownership (If Applicable)
+
+If an installer set up the 33 Lock device and needs to transfer ownership to another user, see the following 33 Lock guides:
+
+- [Administrators](https://33lock.notion.site/Administrators-13050a6ca1ac81de9c9cdaab35f98002)
+- [Transferring Locks](https://33lock.notion.site/Lock-Management-13050a6ca1ac81449b3cf68f8b463267#13650a6ca1ac80c8b96ef07012bc0457)
+- [Transferring Gateways](https://33lock.notion.site/Gateway-Management-13050a6ca1ac811f9962fe949fefcc7a#13050a6ca1ac806885c7f44966275cd0)
+
+---
+
+## Step 4: Connect to Seam
+
+Use your TTLock account credentials to log in to the [Connect Webview](/core-concepts/connect-webviews) to add your 33 Lock devices to Seam.
+
+<Info>
+  The Connect Webview displays the provider as **TTLock**.
+</Info>
+
+---
+
+## Step 5: Verify the Connection
+
+After connecting, verify that your 33 Lock devices appear in your Seam workspace and that each device shows an **online** status.
+
+---
+
+## Troubleshooting
+
+For errors and warnings related to 33 Lock devices, see [Troubleshooting](/device-and-system-integration-guides/ttlock-locks/index#troubleshooting) in the TTLock device integration guide.
+
+### Devices not appearing after connecting
+
+- Verify that your 33 Lock devices are added to the TTLock app and connected to a TTLock Gateway.
+- Confirm the gateway is online and paired with the lock.
+
+### Remote Unlock warning on device
+
+- Open the TTLock app, go to the lock settings, and enable the **Remote Unlock** feature.

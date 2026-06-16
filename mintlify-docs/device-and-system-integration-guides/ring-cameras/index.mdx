@@ -1,0 +1,79 @@
+---
+title: 'Ring Cameras'
+sidebarTitle: 'Overview'
+description: 'Guide for using Ring cameras and doorbells with Seam'
+---
+
+## Overview
+
+Ring manufactures video doorbells and security cameras designed for residential use. Their product lineup includes wired and battery-powered cameras, video doorbells, and floodlight cameras that homeowners use to monitor their properties.
+
+Seam integrates with Ring cameras and doorbells to provide motion detection events, doorbell press events, and device status monitoring.
+
+<Info>
+  Live video streaming and historical clip downloads are not yet available via the API. Thumbnails and short clips are included directly on motion and doorbell event payloads.
+</Info>
+
+---
+
+## Supported Devices
+
+Seam supports two Ring device types:
+
+- **`ring_camera`** — Ring security cameras (indoor and outdoor)
+- **`ring_doorbell`** — Ring video doorbells (devices with a physical button)
+
+Device type is determined automatically by Seam based on the device's capabilities. Doorbells are identified by their button-press capability; all other Ring devices are classified as cameras.
+
+For detailed information about the Ring devices that Seam supports, see our [Ring Supported Devices page](https://www.seam.co/manufacturers/ring).
+
+---
+
+## Supported Features
+
+| Feature                      | `ring_camera` | `ring_doorbell` |
+| ---------------------------- | ------------- | --------------- |
+| Motion detection events      | ✅            | ✅              |
+| Doorbell press events        | —             | ✅              |
+| Device online/offline status | ✅            | ✅              |
+| Live video streaming         | Coming soon   | Coming soon     |
+| Historical clip downloads    | Coming soon   | Coming soon     |
+
+---
+
+## Brand-Specific Restrictions
+
+- **Ring Protect subscription required** for video clip access and some motion detection features. Devices without an active subscription may fire limited events.
+- **Account re-linking** must be done through the Ring app. If a user's Ring account tokens expire, they need to re-link via the Connect flow — there is no automatic re-auth path.
+
+---
+
+## Brand-Specific Events
+
+Seam fires the following camera-specific events for Ring devices:
+
+- **`camera.activated`** — Fired when a Ring camera or doorbell detects motion. Includes `activation_reason`, `motion_sub_type` (human, vehicle, package, or other), `image_url`, and `video_url`.
+- **`device.doorbell_rang`** — Fired when a Ring doorbell button is pressed. Includes `image_url` and `video_url`.
+
+---
+
+## Device Provider Key
+
+To create a [Connect Webview](/core-concepts/connect-webviews) that enables your users to connect their Ring devices to Seam, include the `ring` device provider key in the `accepted_providers` list. For more information, see [Customize the Brands to Display in Your Connect Webviews](/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).
+
+---
+
+## Setup Instructions
+
+For instructions on connecting Ring cameras and doorbells to Seam — including the Ring App pairing flow and troubleshooting — see the [Ring Setup Guide](./ring-setup-guide).
+
+---
+
+## Where to Order
+
+<CardGroup cols={1}>
+  <Card
+    title="Ring - Products"
+    href="https://ring.com/collections"
+  ></Card>
+</CardGroup>

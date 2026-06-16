@@ -1,0 +1,48 @@
+---
+title: 'igloohome Setup Guide'
+description: 'Connect your igloohome locks to Seam.'
+---
+
+This guide walks you through connecting your igloohome locks to Seam. Your locks must already be set up and working in the igloohome app before proceeding.
+
+## 1. Create an igloohome account
+
+If you don't already have one, download the igloohome mobile app and create an account. For more information, see "Download App & Sign in" in the [igloohome app quick start guide](https://support.igloohome.co/support/solutions/articles/35000183120-igloohome-app-quick-start-guide).
+
+## 2. Add your igloohome devices
+
+In the igloohome mobile app, add your igloohome locks. For more information, see "Pair your lock" in the [igloohome app quick start guide](https://support.igloohome.co/support/solutions/articles/35000183120-igloohome-app-quick-start-guide).
+
+## 3. Set up the igloohome Bridge (optional)
+
+To configure your igloohome smart locks remotely, trigger lock and unlock actions, and use custom access codes, install the [igloohome Wi-Fi Bridge](https://www.igloohome.co/en-US/products/bridge) and pair your locks to the bridge.
+
+<Info>
+  The igloohome Bridge is not required for offline access code (algoPIN)
+  provisioning. It is only needed for remote lock/unlock and custom access
+  codes.
+</Info>
+
+## 4. Connect igloohome to Seam
+
+Use the login credentials for your igloohome account to log in through the [Seam Connect Webview](/core-concepts/connect-webviews) and authorize Seam to access your devices.
+
+## 5. Verify the connection
+
+After completing the Connect Webview, confirm that your igloohome locks appear in your Seam workspace and show an **online** status.
+
+---
+
+## Troubleshooting
+
+If your devices don't appear after connecting:
+
+- Confirm that your igloohome locks are paired in the igloohome mobile app.
+- Verify that you logged in with the same igloohome account that owns the locks.
+- Wait a few minutes for the initial sync to complete, then refresh your device list.
+
+If your devices show as offline:
+
+- Verify that the igloohome Bridge is powered on and connected to Wi-Fi.
+- Check that each lock is within range of the bridge and paired to it.
+- Note that locks without a bridge will only support offline access codes (algoPIN).

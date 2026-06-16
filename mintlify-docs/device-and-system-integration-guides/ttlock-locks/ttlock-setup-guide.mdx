@@ -1,0 +1,50 @@
+---
+title: 'TTLock Setup Guide'
+description: 'Connect your TTLock locks to Seam.'
+---
+
+To use Seam with TTLock locks, ask the device owner to complete the steps below. Locks must already be installed before proceeding.
+
+### 1. Set up the TTLock app
+
+1. Download and install the [TTLock app](https://www.ttlock.com/#/lock/app) and create an account if you don't have one.
+
+<Warning>
+  Your users must be the **top administrator** for each TTLock that they want to
+  connect to Seam.
+</Warning>
+
+2. Set up your door lock in the TTLock app. Follow [the instructions in this video](https://www.youtube.com/watch?v=IbgZNc1dAx4) for guidance.
+
+### 2. Pair the lock with a TTLock gateway
+
+Pair each lock with a [TTLock gateway](https://ttlock.eu/shop/tag/ttlock+gateway/). Follow [the instructions in this video](https://www.youtube.com/watch?v=-lhKbjVP1as) for guidance.
+
+### 3. Enable Remote Unlock
+
+In the [TTLock app](https://www.ttlock.com/#/lock/app), go to the lock settings and enable the **Remote Unlock** feature for each lock. This feature must be enabled to unlock a TTLock device through Seam. Follow [the instructions in this video](https://www.youtube.com/watch?v=ni-38QpoNA4) for guidance.
+
+### 4. Connect TTLock to Seam
+
+1. Note your login credentials for the TTLock app.
+2. In the form to connect TTLock to Seam, enter those credentials and click **Submit** to complete.
+
+---
+
+### Troubleshooting
+
+If locks don't appear after connecting your account:
+
+- Verify that you're logging in with the **top administrator** account for each lock. Locks added under a sub-account will not appear.
+
+If you see a `ttlock_lock_not_paired_to_gateway` error:
+
+- Purchase [a compatible gateway](https://ttlock.eu/shop/tag/ttlock+gateway/) and pair it to the lock using the TTLock app.
+
+If you see a `ttlock_lock_gateway_unlocking_not_enabled` warning:
+
+- Open the lock settings in the TTLock app and enable the **Remote Unlock** feature.
+
+If a lock is not completing requested actions:
+
+- Certain TTLock Wi-Fi lock models have a power-saving mode that prevents remote control. Confirm whether the lock is in power-saving mode and, if so, ask the user to turn it off.

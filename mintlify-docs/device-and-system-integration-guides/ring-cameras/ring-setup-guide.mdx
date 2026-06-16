@@ -1,0 +1,72 @@
+---
+title: 'Ring Setup Guide'
+description: 'Connect your Ring cameras and doorbells to Seam using the Ring App pairing flow.'
+---
+
+## Overview
+
+This guide walks you through connecting your Ring cameras and doorbells to Seam. Ring uses a **Ring App-initiated** account linking flow — this is different from the standard OAuth flow used by most providers. The connection is initiated from inside the Ring app rather than through a redirect.
+
+Your Ring devices must already be set up and visible in the Ring app before proceeding.
+
+---
+
+## Step 1: Create a Connect Webview
+
+Create a [Connect Webview](/core-concepts/connect-webviews) with `ring` as the accepted provider. Seam generates a 6-character **pairing code** and displays it to the user.
+
+---
+
+## Step 2: Pair Through the Ring App
+
+1. The user opens the Ring app on their phone.
+2. Navigates to **App Store → Seam → Connect**.
+3. Selects which devices to share with Seam.
+4. Ring redirects the user to a Seam-hosted page where they enter the pairing code from Step 1.
+
+<Info>
+  The pairing code is displayed in the Connect Webview. The user must enter this code on the Seam-hosted page that Ring redirects to — this is what links their Ring account to your Connect Webview session.
+</Info>
+
+---
+
+## Step 3: Verify the Connection
+
+Once the user completes the pairing flow, a connected account is created and Seam begins syncing their Ring devices automatically. Verify that your Ring cameras and doorbells appear as devices and show as online.
+
+Each Ring device exposes the following metadata in `device.properties`:
+
+- `ring_metadata.device_name` — The device's display name
+- `ring_metadata.has_motion_detection` — Whether the device supports motion detection
+- `ring_metadata.max_resolution` — Maximum video resolution
+- `ring_metadata.video_codecs` — Supported video codecs
+- `ring_metadata.has_color_night_vision` — Color night vision support
+- `ring_metadata.has_hdr` — HDR support
+
+---
+
+## Troubleshooting
+
+### Authorization fails or pairing code is rejected
+
+Make sure the user is entering the pairing code displayed in the Connect Webview on the Seam-hosted page that Ring redirects to. The code is 6 characters and is case-insensitive.
+
+### Devices not appearing after pairing
+
+Ensure the Ring devices are set up and online in the Ring app. Only devices that the user selects during the Ring App pairing flow are shared with Seam.
+
+### Devices show as offline
+
+Check that the Ring device has power and is connected to Wi-Fi. Ring cameras rely on a direct Wi-Fi connection to Ring's cloud servers.
+
+### Motion events not firing
+
+A Ring Protect subscription is required for some motion detection features. Devices without an active subscription may fire limited events or no events at all.
+
+### Account tokens expire
+
+If a user's Ring account tokens expire, they need to re-link through the Ring App pairing flow. There is no automatic re-auth path — create a new Connect Webview and have the user repeat the pairing process.
+
+### New devices not appearing
+
+Device sync runs on a periodic poll. New devices added to a Ring account after the initial connection appear in Seam within a few minutes.
