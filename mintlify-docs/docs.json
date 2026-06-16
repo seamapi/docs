@@ -924,6 +924,15 @@
                 ]
               },
               {
+                "group": "KeyInCode Locks",
+                "pages": [
+                  "device-and-system-integration-guides/keyincode-locks/index",
+                  "device-and-system-integration-guides/keyincode-locks/keyincode-setup-guide",
+                  "device-and-system-integration-guides/keyincode-locks/get-started-with-keyincode-locks",
+                  "device-and-system-integration-guides/keyincode-locks/sandbox-keyincode-locks"
+                ]
+              },
+              {
                 "group": "Kwikset Locks",
                 "pages": [
                   "device-and-system-integration-guides/kwikset-locks/index",
@@ -967,6 +976,13 @@
                   "device-and-system-integration-guides/schlage-locks/get-started-with-schlage-locks",
                   "device-and-system-integration-guides/schlage-locks/schlage-locks-daylight-savings-time-adjustments",
                   "device-and-system-integration-guides/schlage-locks/schlage-encode-sample-data"
+                ]
+              },
+              {
+                "group": "Sifely Locks",
+                "pages": [
+                  "device-and-system-integration-guides/sifely-locks/index",
+                  "device-and-system-integration-guides/sifely-locks/sifely-setup-guide"
                 ]
               },
               {
@@ -1018,14 +1034,6 @@
           {
             "group": "Access Control Systems",
             "pages": [
-              {
-                "group": "ASSA ABLOY Vingcard Credential Services",
-                "pages": [
-                  "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/index",
-                  "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/assa-abloy-vingcard-credential-services-setup-guide",
-                  "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/sandbox-assa-abloy-vingcard-credential-services"
-                ]
-              },
               {
                 "group": "ASSA ABLOY Visionline Access Control System",
                 "pages": [
@@ -1095,6 +1103,7 @@
                 "group": "ASSA ABLOY Vostio Access Control System",
                 "pages": [
                   "device-and-system-integration-guides/assa-abloy-vostio-access-control-system/index",
+                  "device-and-system-integration-guides/assa-abloy-vostio-access-control-system/vostio-setup-guide",
                   "device-and-system-integration-guides/assa-abloy-vostio-access-control-system/sandbox-assa-abloy-vostio-access-control-system"
                 ]
               },
@@ -1206,6 +1215,13 @@
                   "device-and-system-integration-guides/ecobee-thermostats/ecobee-setup-guide",
                   "device-and-system-integration-guides/ecobee-thermostats/get-started-with-ecobee-thermostats",
                   "device-and-system-integration-guides/ecobee-thermostats/ecobee-sample-data"
+                ]
+              },
+              {
+                "group": "First Alert Thermostats",
+                "pages": [
+                  "device-and-system-integration-guides/first-alert-thermostats/index",
+                  "device-and-system-integration-guides/first-alert-thermostats/first-alert-setup-guide"
                 ]
               },
               {

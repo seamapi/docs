@@ -364,6 +364,21 @@ For ACS brands, adjust the directory and page names accordingly (e.g., `<brand>-
 
 If a sandbox page already exists in the nav, keep it and add the new pages before it.
 
+### Update the brand guides overview page
+
+Add a card for the new brand to `mintlify-docs/device-and-system-integration-guides/index.mdx`. This page lists all brands grouped by category (Smart Locks, Access Control Systems, Thermostats, Cameras, Noise Sensors, Relays). Insert the card alphabetically within the correct `<CardGroup>`:
+
+```mdx
+<Card
+  title='<Brand> Locks'
+  href='/device-and-system-integration-guides/<brand>-locks'
+></Card>
+```
+
+If the brand has a logo image in `/images/`, add the `img` prop. If no logo exists, omit it.
+
+If adding a brand in a new category (e.g., the first camera brand), also add the category heading, `<CardGroup>`, and a link in the top-level list.
+
 ---
 
 ## After writing all pages
@@ -423,7 +438,10 @@ BasedOnStyles = Vale
 
 ```
 # mintlify-docs/styles/Vocab/Seam/accept.txt
-<brand-specific terms, one per line>
+Hotek
+Omnitec
+Webview
+Webviews
 ```
 
 ### Commit, push, and open PR
@@ -456,6 +474,17 @@ BasedOnStyles = Vale
    ```
 
    If a PR already exists for the branch, update it with `gh pr edit` instead.
+
+### Create a Linear ticket for missing logos
+
+If the brand doesn't have a logo in `mintlify-docs/images/`, create a Linear ticket on the **Documentation** team assigned to **Sy Bohy** requesting the logo. Include:
+
+- The brand name
+- The expected image path (e.g., `/images/<brand>-logo.png`)
+- Where the logo is used: the `<Card>` in `mintlify-docs/device-and-system-integration-guides/index.mdx` and optionally the overview page itself
+- A link to the PR that added the brand guide
+
+Use priority Low (4). Once the logo is added, the `img` prop needs to be added to the Card on the overview page.
 
 ---
 
