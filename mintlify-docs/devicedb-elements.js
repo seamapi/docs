@@ -6,10 +6,10 @@
 //
 // Pin to a specific version (CDN URLs are immutable once published).
 ;(function () {
-  var SRC =
+  const SRC =
     "https://cdn.devicedb.seam.co/v/0.0.15/DeviceListByCapability.global.js"
   if (document.querySelector('script[data-devicedb-elements]')) return
-  var s = document.createElement("script")
+  const s = document.createElement("script")
   s.type = "module"
   s.src = SRC
   s.setAttribute("data-devicedb-elements", "")
