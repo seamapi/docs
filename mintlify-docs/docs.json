@@ -3,8 +3,8 @@
   "name": "Seam",
   "theme": "mint",
   "logo": {
-    "light": "/images/seam-wordmark-light.png",
-    "dark": "/images/seam-wordmark-dark.png"
+    "light": "/images/seam-logo-light.svg",
+    "dark": "/images/seam-logo-dark.svg"
   },
   "favicon": "/images/favicon.png",
   "colors": {
