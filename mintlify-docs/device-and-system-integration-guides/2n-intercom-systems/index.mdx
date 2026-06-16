@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using 2N® intercom systems with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_2n_8f6c14fa6a.svg"
@@ -35,11 +37,10 @@ For a complete compatibility list, see [2N Supported Devices](https://www.seam.c
 
 {/* devicedb-devices:start — PoC: live supported-device list from DeviceDB */}
 
-<device-list-by-capability
+<DeviceList
   manufacturers="2n"
-  capability-name="can_remotely_unlock,can_program_online_access_codes"
-  token="6c51f0a4-d421-429e-8295-d02271aa4f23"
-></device-list-by-capability>
+  capabilityName="can_remotely_unlock,can_program_online_access_codes"
+/>
 
 {/* devicedb-devices:end */}
 

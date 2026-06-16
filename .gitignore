@@ -12,7 +12,6 @@
 !codegen/**/*.d.ts
 !ava.config.js
 !mintlify-docs/pylon.js
-!mintlify-docs/devicedb-elements.js
 
 # Build directories
 package
