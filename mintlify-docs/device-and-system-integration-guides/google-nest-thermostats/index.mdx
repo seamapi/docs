@@ -14,6 +14,8 @@ description: 'Guide for using Nest thermostats with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Google produces Nest smart thermostats as part of the Google smart home product group. Nest thermostats are designed to lower energy costs through energy efficiency features, such as remote climate monitoring and control, as well as climate setting scheduling. Google also produces an optional Nest Temperature Sensor accessory to prioritize certain rooms.
@@ -21,6 +23,12 @@ Google produces Nest smart thermostats as part of the Google smart home product 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="nest" capabilityName="can_hvac_heat,can_hvac_cool,can_hvac_fan,can_program_thermostat_weekly_programs" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [Nest thermostats](https://store.google.com/us/category/nest_thermostats).
 

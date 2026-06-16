@@ -14,6 +14,8 @@ description: 'Guide for using August locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 August produces smart locks for the residential market. Seam integrates directly with the August Wi-Fi Smart Lock, as well as with additional August Smart Locks through the August Connect® Wi-Fi Bridge. In addition, Seam supports the August Smart Keypad accessory.
@@ -23,6 +25,12 @@ Each August lock attaches to an existing deadbolt, replacing only the lock compo
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="august" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all August Smart Lock models that are connected to Wi-Fi, either through built-in Wi-Fi or using the [August Connect Wi-Fi Bridge](https://august.com/products/august-connect). Seam also supports the addition of the optional [August Smart Keypad](https://august.com/products/august-smart-keypad) to enable entering access codes to control the lock.
 

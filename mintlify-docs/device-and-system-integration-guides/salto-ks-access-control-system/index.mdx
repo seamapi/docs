@@ -14,6 +14,8 @@ description: 'Guide for using the Salto KS Access Control System with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 [Salto KS](https://saltoks.com/) (Keys as a Service) provides a cloud-based access control system that enables property managers and owners to control access across their properties. With Salto KS, you can manage user access, set schedules, and monitor entrances efficiently. Because Salto KS is cloud-based, it provides the benefits and ease of remote management. In addition, you can monitor real-time data and analytics.
@@ -131,6 +133,12 @@ For more information about managing your Salto KS ACS through Seam, see the foll
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="salto" capabilityName="can_remotely_unlock,can_provision_mobile_keys,can_program_online_access_codes,can_encode_plastic_cards" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all Salto locks connected to the Salto KS ACS.
 

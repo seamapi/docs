@@ -14,6 +14,8 @@ description: 'Guide for using NoiseAware sensors with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Seam integrates with NoiseAware sensors to provide [privacy-safe noise monitoring](https://noiseaware.com/privacy-safe-noise-monitoring/) functions for the short-term rental and vacation rental industries. NoiseAware produces both an indoor sensor and an accompanying weatherproof outdoor sensor. For each NoiseAware sensor, you can set one noise threshold per hour, and the sensor notifies owners when noise levels exceed these configured thresholds.
@@ -21,6 +23,12 @@ Seam integrates with NoiseAware sensors to provide [privacy-safe noise monitorin
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="noiseaware" capabilityName="can_monitor" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [NoiseAware sensors](https://noiseaware.com/features/).
 

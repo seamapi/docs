@@ -16,6 +16,8 @@ description: 'Guide for using the Dormakaba Community Access Control System with
 
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Connect your Dormakaba Community system to Seam to automate access and enable mobile credentials across your properties. Seam provides a single API and management layer, so you can integrate Community directly into your PMS, resident app, or hospitality platform.
@@ -44,6 +46,12 @@ Follow the [Dormkaba Community Setup Guide](./dormakaba-community-setup-guide) t
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="dormakaba" capabilityName="can_remotely_unlock,can_provision_mobile_keys,can_program_online_access_codes,can_encode_plastic_cards" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all wireless locks and readers connected to the Dormakaba Community system.
 

@@ -14,6 +14,8 @@ description: 'Guide for using the PTI Storlogix Cloud with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlogixcloudplatform/) to create [users](/low-level-apis/access-systems), [generate PIN codes](/low-level-apis/access-systems/managing-credentials#create-a-pin-code-based-credential), and [grant users access](/low-level-apis/access-systems) to different access areas within storage rental unit facilities.
@@ -21,6 +23,12 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="pti" capabilityName="can_remotely_unlock,can_provision_mobile_keys,can_program_online_access_codes,can_encode_plastic_cards" />
+
+{/* devicedb-devices:end */}
 
 Seam integrates with any site that has Storlogix Cloud installed.
 

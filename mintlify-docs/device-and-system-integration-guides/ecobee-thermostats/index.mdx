@@ -19,6 +19,8 @@ description: 'Guide for using ecobee thermostats with Seam'
   <img src="/images/ecobee-manufacturer-page-cover-light.png" alt="ecobee Thermostats" />
 </picture>
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 ecobee smart thermostats are designed to lower energy costs. In addition to energy efficiency features, such as climate setting scheduling, occupancy sensors, and automatic air conditioning pause when a window or door is left open, ecobee thermostats are hard-wired, instead of battery-powered, for reliability.
@@ -26,6 +28,12 @@ ecobee smart thermostats are designed to lower energy costs. In addition to ener
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="ecobee" capabilityName="can_hvac_heat,can_hvac_cool,can_hvac_fan,can_program_thermostat_weekly_programs" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/smart-thermostats/).
 

@@ -14,6 +14,8 @@ description: 'Guide for using Yale door locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Yale manufacturers some of the most advanced smart locks on the market such as the Yale [Assure](https://amzn.to/452zo6n) and [Nextouch](https://amzn.to/3DAeRdP) locks. With a unique interchangeable network module, Yale Locks are designed to be incredibly versatile, allowing for compatibility with a range of communication standards such as Z-wave, Wi-Fi, Bluetooth, and Zigbee. This adaptability ensures that they seamlessly fit into various smart home ecosystems.
@@ -21,6 +23,12 @@ Yale manufacturers some of the most advanced smart locks on the market such as t
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="yale" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 The Seam integration is tailored for Yale Locks that are connected via the following platforms:
 

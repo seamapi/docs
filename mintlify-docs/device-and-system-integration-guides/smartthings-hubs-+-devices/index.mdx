@@ -14,6 +14,8 @@ description: 'Guide for using SmartThings-connected devices with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Samsung SmartThings is a smart home platform that enables you to connect a variety of devices to a SmartThings Hub using Zigbee or Z-Wave. SmartThings Hubs are connected to your local network using Wi-Fi or Ethernet.
@@ -21,6 +23,12 @@ Samsung SmartThings is a smart home platform that enables you to connect a varie
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="smartthings" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_hvac_heat,can_hvac_cool" />
+
+{/* devicedb-devices:end */}
 
 This integration supports smart locks and thermostats connected to a [SmartThings Hub](https://aeotec.com/where-to-buy/).
 

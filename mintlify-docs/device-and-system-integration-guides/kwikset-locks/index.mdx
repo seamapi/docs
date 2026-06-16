@@ -14,6 +14,8 @@ description: 'Guide for using Kwikset locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Kwikset produces smart locks suitable for residential homes, rental properties, and vacation rentals. The Kwikset Halo and Halo Touch series offer Wi-Fi-enabled smart locks that connect directly to the existing Wi-Fi router for a property, eliminating the need for a separate smart home hub. On the other hand, the Kwikset SmartCode series provides multiple connectivity options, including Zigbee and Z-Wave. For SmartCode series locks, the Seam integration requires the use of a hub. The Seam integration enables the remote unlocking feature and the ability to set customizable access codes for the Kwikset Halo, Halo Touch, and SmartCode series.
@@ -21,6 +23,12 @@ Kwikset produces smart locks suitable for residential homes, rental properties, 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="kwikset" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports the Kwikset [Halo](https://www.kwikset.com/halo), [Halo Touch](https://www.kwikset.com/halo-touch), and [SmartCode](https://www.kwikset.com/products/electronic/electronic-smart-locks) lines of smart locks.
 

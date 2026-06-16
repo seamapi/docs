@@ -14,6 +14,8 @@ description: 'Guide for using 33 Lock smart locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 [33 Lock](https://www.33lock.com/) is a Vancouver-based smart lock company that is focused on delivering innovative access solutions for hotels, motels, resorts, hostels, and multifamily properties. These offerings include the IntelliBolt, IntelliLever, IntelliMortise, and IntelliReader. All of these devices have an integrated keypad.
@@ -21,6 +23,12 @@ description: 'Guide for using 33 Lock smart locks with Seam'
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="33-lock" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration works with all 33 Lock locks. Note that 33 Lock devices require you to register for a free [TTLock account](https://33lock.notion.site/Account-Registration-13050a6ca1ac81788991ecb923a2cb04#13050a6ca1ac8008b3ece7ed6bbbd094) and to connect the locks to a [compatible TTLock Gateway](https://33lock.notion.site/Gateway-Management-13050a6ca1ac811f9962fe949fefcc7a#13650a6ca1ac80d599e7edf5ffc171cf).
 

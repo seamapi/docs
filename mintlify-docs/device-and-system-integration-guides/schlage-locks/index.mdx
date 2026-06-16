@@ -14,6 +14,8 @@ description: 'Guide for using Schlage locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Schlage produces [smart locks](https://www.schlage.com/en/home/products/products-smart-locks.html) for the residential market. With a focus on security, durability, and resilience, Schlage provides smart deadbolt locks in a variety of models and styles. Seam integrates with some Schlage locks through the [Schlage Home App](https://www.schlage.com/en/home/smart-locks/schlage-app.html), while other Schlage locks require a compatible Z-Wave hub for integration.
@@ -21,6 +23,12 @@ Schlage produces [smart locks](https://www.schlage.com/en/home/products/products
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="schlage" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports Schlage Encode™ and Connect™ locks, as well as Connected Keypad locks. Seam does not support integration with Schlage Sense™ locks.
 

@@ -14,6 +14,8 @@ description: 'Guide for using Nuki locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Nuki produces a smart lock and accompanying products for the residential, rental, vacation rental, and corporate markets. Seam integrates directly with the Wi-Fi-enabled Nuki Smart Lock Pro, as well as with the Nuki Smart Lock through the Nuki Wi-Fi Bridge. Because Nuki Smart Locks attach to existing deadbolts, they replace only the lock components on the insides of doors.
@@ -23,6 +25,12 @@ Seam also supports the Nuki Keypad accessory for access code-based entry. In add
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="nuki" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all Nuki Smart Lock and Nuki Opener models that are connected to Wi-Fi, either through built-in Wi-Fi or using the [Nuki Bridge](https://nuki.io/en/bridge/). Seam also supports the addition of the optional [Nuki Keypad](https://nuki.io/en/keypad-code/) to enable entering access codes to control the lock or opener.
 

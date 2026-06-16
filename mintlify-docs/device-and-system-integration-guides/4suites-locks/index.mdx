@@ -14,6 +14,8 @@ description: 'Guide for using 4SUITES locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 4SUITES produces cloud-managed Internet of Things (IoT) locks, lock upgrades, and readers for the hospitality industry. Because 4SUITES locks use IoT-enabled sensors, instead of relying on Bluetooth®, guests can use 4SUITES mobile keys through a webapp on a smartphone or other internet-connected device—without needing to download an app. Seam integrates with 4SUITES locks to provide streamlined hotel operations and improved guest access.
@@ -21,6 +23,12 @@ description: 'Guide for using 4SUITES locks with Seam'
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="4suites" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [4SUITES locks, lock upgrades, and readers](https://www.4suiteshq.com/products/).
 

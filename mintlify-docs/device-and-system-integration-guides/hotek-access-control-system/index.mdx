@@ -14,6 +14,8 @@ description: 'Guide for using the Hotek access control system with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Hotek manufactures access control systems designed for the hospitality industry. Their SMART Server platform manages electronic door locks, encoders, and room access across hotel properties, communicating with locks over TCP via a local network.
@@ -27,6 +29,12 @@ Seam integrates with Hotek through a [Seam Bridge](/capability-guides/seam-bridg
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="hotek" capabilityName="can_remotely_unlock,can_provision_mobile_keys,can_program_online_access_codes,can_encode_plastic_cards" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all electronic door locks and encoders connected to a Hotek SMART Server. The Hotek system manages two types of entrances:
 

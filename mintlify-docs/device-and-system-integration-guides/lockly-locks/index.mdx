@@ -14,6 +14,8 @@ description: 'Guide for using Lockly smart locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Seam integrates with Lockly smart locks. With a focus on security, Lockly smart locks work with a vast array of door types, such as traditional deadbolts, latch bolts, and patio doors. In addition, Lockly smart locks support time-bound and one-time-use [offline access codes](/device-and-system-integration-guides/lockly-locks/creating-lockly-offline-access-codes) that you can issue when you are not connected to your Lockly lock.
@@ -28,6 +30,12 @@ Follow the [Lockly Setup Guide](/device-and-system-integration-guides/lockly-loc
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="lockly" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 All Lockly smart locks are supported.
 

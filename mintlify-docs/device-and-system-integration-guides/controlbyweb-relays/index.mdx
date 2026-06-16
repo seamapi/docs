@@ -16,6 +16,8 @@ description: 'Learn how to connect and control your ControlByWeb device with the
 
 ![ControlByWeb Devices](/images/guides/controlbyweb-getting-started-guide-cover.jpg)
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Seam provides a universal API to connect and control many brands of smart devices. This guide provides a rapid introduction to connecting and controlling your [ControlByWeb](https://www.seam.co/manufacturers/controlbyweb) relay device using the Seam API. To learn more about other smart device brands supported by Seam such as Yale, Schlage, and August, head over to our [integration page](https://www.seam.co/supported-devices-and-systems).
@@ -324,3 +326,11 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 - [Core Concepts](/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co.
+
+## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="controlbyweb" capabilityName="can_remotely_unlock" />
+
+{/* devicedb-devices:end */}

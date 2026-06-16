@@ -14,6 +14,8 @@ description: 'Automating physical key hand‑offs with KeyNest lockers'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Connect your Keynest account to Seam to automate key pickup and drop-off for your properties. Keynest integrates directly with Seam’s Smart Lock API, letting you manage access to physical keys the same way you manage digital locks or credentials. Each physical key stored at a Keynest location appears as a device in Seam. You can issue time-bound pickup and drop-off codes through the Seam API, allowing guests, staff, or vendors to access keys securely without manual coordination.
@@ -21,6 +23,12 @@ Connect your Keynest account to Seam to automate key pickup and drop-off for you
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="keynest" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all keys stored and managed under your Keynest account. Each key is represented as a device within Seam once connected.
 

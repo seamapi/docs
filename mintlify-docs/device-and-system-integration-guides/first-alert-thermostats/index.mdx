@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using First Alert thermostats with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 First Alert produces smart thermostats for residential climate control, offering features designed to help homeowners manage energy costs while maintaining comfortable temperatures. Seam integrates with First Alert thermostats to provide heating, cooling, and thermostat program management through a unified API.
@@ -11,6 +13,12 @@ First Alert produces smart thermostats for residential climate control, offering
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="first-alert" capabilityName="can_hvac_heat,can_hvac_cool,can_hvac_fan,can_program_thermostat_weekly_programs" />
+
+{/* devicedb-devices:end */}
 
 This integration supports [First Alert smart thermostats](https://www.firstalert.com/).
 

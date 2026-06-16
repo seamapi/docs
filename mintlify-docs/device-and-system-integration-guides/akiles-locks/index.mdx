@@ -14,6 +14,8 @@ description: 'Guide for using Akiles locks with Seam'
 />
 {/* devicedb-logo:end */}
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 [Akiles](https://akiles.app/en) is a Barcelona-based company that produces smart lock products for the European market. These offerings include the Smart Cylinder, Roomlock, and Pinpad, as well as the Smart Controller for electrified locks and access points. Akiles also offers the Akiles Gateway and Akiles Cloud. Seam integrates with Akiles through the Akiles Gateway to provide remote unlock functionality and access code creation and management.
@@ -21,6 +23,12 @@ description: 'Guide for using Akiles locks with Seam'
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="akiles" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all Akiles locks. These locks require the [Akiles Gateway](https://akiles.app/en/products/smart-lock-system-gateway). Seam also supports the addition of the optional [Akiles Pinpad](https://akiles.app/en/products/smart-lock-system-pinpad) to enable entering access codes for devices that do not have an integrated keypad.
 

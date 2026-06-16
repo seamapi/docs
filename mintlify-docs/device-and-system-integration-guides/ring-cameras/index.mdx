@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Ring cameras and doorbells with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Ring manufactures video doorbells and security cameras designed for residential use. Their product lineup includes wired and battery-powered cameras, video doorbells, and floodlight cameras that homeowners use to monitor their properties.
@@ -17,6 +19,12 @@ Seam integrates with Ring cameras and doorbells to provide motion detection even
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="ring" capabilityName="can_monitor" />
+
+{/* devicedb-devices:end */}
 
 Seam supports two Ring device types:
 

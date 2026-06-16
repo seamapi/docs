@@ -16,6 +16,8 @@ description: 'Guide for using the Dormakaba Ambiance Access Control System with 
 
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Connect Dormakaba Ambiance to Seam to automate guest access with mobile keys, plastic cards, and Apple Wallet. Seam gives you one API to plug Ambiance into your PMS or hospitality platform.
@@ -44,6 +46,12 @@ Follow the [Dormkaba Ambiance Setup Guide](./dormakaba-ambiance-setup-guide) to 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="dormakaba" capabilityName="can_remotely_unlock,can_provision_mobile_keys,can_program_online_access_codes,can_encode_plastic_cards" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all wireless locks and readers connected to the Dormakaba Ambiance system.
 
