@@ -1261,13 +1261,6 @@
                 ]
               },
               {
-                "group": "Tado Thermostats",
-                "pages": [
-                  "device-and-system-integration-guides/tado-thermostats/index",
-                  "device-and-system-integration-guides/tado-thermostats/tado-setup-guide"
-                ]
-              },
-              {
                 "group": "SmartThings Hubs + Devices",
                 "pages": [
                   "device-and-system-integration-guides/smartthings-hubs-+-devices/index",
