@@ -1,13 +1,15 @@
 // Renders the Seam DeviceDB <device-list-by-capability> web component.
 //
-// Why a snippet (and not the raw element in MDX): Mintlify's MDX compiler
-// treats a hyphenated tag like <device-list-by-capability> as a missing React
-// component and drops it ("Component ... does not exist"). Inside a .jsx
-// snippet, React renders the hyphenated tag as a real custom DOM element, so
-// the web component can upgrade once the CDN module loads.
+// Mintlify's MDX/JSX compiler turns a hyphenated tag (in MDX *or* in a .jsx
+// snippet) into a missing component reference — `<device-list-by-capability>`
+// compiles to `_component0`, which is undefined and throws. So we never write
+// the custom element as JSX. Instead we inject it as raw HTML via
+// dangerouslySetInnerHTML: the browser parses the markup and upgrades the
+// custom element once the CDN module registers it. The values interpolated
+// here are author-controlled (no user input), so the HTML string is safe.
 //
-// The CDN module is loaded once per page from here (a <script> rendered in JSX
-// would not execute, so it's injected imperatively on the client).
+// The CDN module is loaded once per page (a <script> rendered by React would
+// not execute, so it's injected imperatively on the client).
 
 export const DeviceList = ({
   manufacturers,
@@ -26,11 +28,7 @@ export const DeviceList = ({
     }
   }
 
-  return (
-    <device-list-by-capability
-      manufacturers={manufacturers}
-      capability-name={capabilityName}
-      token={token}
-    />
-  );
+  const html = `<device-list-by-capability manufacturers="${manufacturers}" capability-name="${capabilityName}" token="${token}"></device-list-by-capability>`;
+
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
 };
