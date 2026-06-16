@@ -120,6 +120,9 @@ const LOGO_BLOCK_RE = new RegExp(
   `\\n*\\{\\/\\* ${LOGO_MARKER_START}[\\s\\S]*?${LOGO_MARKER_END} \\*\\/\\}\\n*`,
 )
 
+// Rendered width/height of the square logo, in pixels.
+const LOGO_SIZE_PX = 192
+
 async function fetchCollection(
   apiUrl: string,
   token: string,
@@ -163,9 +166,9 @@ function buildLogoBlock(url: string, displayName: string): string {
     `<img`,
     `  src="${url}"`,
     `  alt="${displayName} logo"`,
-    `  width="96"`,
-    `  height="96"`,
-    `  style={{ width: "96px", height: "96px", objectFit: "contain" }}`,
+    `  width="${LOGO_SIZE_PX}"`,
+    `  height="${LOGO_SIZE_PX}"`,
+    `  style={{ width: "${LOGO_SIZE_PX}px", height: "${LOGO_SIZE_PX}px", objectFit: "contain" }}`,
     `/>`,
     LOGO_END,
   ].join('\n')
