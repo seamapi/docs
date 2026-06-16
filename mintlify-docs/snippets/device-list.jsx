@@ -1,39 +1,52 @@
-// Renders the Seam DeviceDB <device-list-by-capability> web component.
+// Renders the Seam DeviceDB <device-list-by-capability> web component inside an
+// <iframe>.
 //
-// Two Mintlify/React constraints shape this:
-//   1. A hyphenated JSX tag compiles to a missing component (`_component0 is
-//      not defined`) and throws — so we never write the custom element as JSX.
-//   2. Server-rendering the element and letting the web component upgrade on
-//      the client causes a React hydration mismatch (#418) — so we render an
-//      empty <div> (identical on server and client) and inject the element
-//      AFTER mount via a ref callback, which only runs on the client.
-//
-// The CDN module is loaded once per page from the same ref callback.
+// Why an iframe: Mintlify compiles a hyphenated JSX tag into a missing
+// component (`_component0`), and injecting the web component into the React
+// tree (dangerouslySetInnerHTML or a ref) makes the component mutate the DOM
+// during hydration, which throws React #418. An iframe runs the component in
+// its own document — fully outside React — so none of that can happen. The
+// inner page reports its height via postMessage so the iframe auto-resizes and
+// reads like an inline element (no fixed height / inner scrollbar).
+
+const CDN =
+  "https://cdn.devicedb.seam.co/v/0.0.15/DeviceListByCapability.global.js"
+const CLOSE = "</scr" + "ipt>"
 
 export const DeviceList = ({
   manufacturers,
   capabilityName,
   token = "6c51f0a4-d421-429e-8295-d02271aa4f23",
 }) => {
-  const mount = (el) => {
-    if (!el || el.querySelector("device-list-by-capability")) return;
+  const srcDoc = [
+    '<!doctype html><html><head><meta charset="utf-8">',
+    "<style>html,body{margin:0;padding:0;background:transparent}</style></head><body>",
+    `<script type="module" src="${CDN}">${CLOSE}`,
+    `<device-list-by-capability manufacturers="${manufacturers}" capability-name="${capabilityName}" token="${token}"></device-list-by-capability>`,
+    `<script>new ResizeObserver(function(){parent.postMessage({__devicedb:true,height:document.documentElement.scrollHeight},"*")}).observe(document.documentElement)${CLOSE}`,
+    "</body></html>",
+  ].join("")
 
-    const loaderId = "devicedb-elements-loader";
-    if (!document.getElementById(loaderId)) {
-      const script = document.createElement("script");
-      script.id = loaderId;
-      script.type = "module";
-      script.src =
-        "https://cdn.devicedb.seam.co/v/0.0.15/DeviceListByCapability.global.js";
-      document.head.appendChild(script);
-    }
+  const onRef = (iframe) => {
+    if (!iframe || iframe.dataset.devicedbBound) return
+    iframe.dataset.devicedbBound = "1"
+    window.addEventListener("message", (event) => {
+      if (
+        event.source === iframe.contentWindow &&
+        event.data &&
+        event.data.__devicedb
+      ) {
+        iframe.style.height = `${event.data.height}px`
+      }
+    })
+  }
 
-    const element = document.createElement("device-list-by-capability");
-    element.setAttribute("manufacturers", manufacturers);
-    element.setAttribute("capability-name", capabilityName);
-    element.setAttribute("token", token);
-    el.appendChild(element);
-  };
-
-  return <div ref={mount} />;
-};
+  return (
+    <iframe
+      ref={onRef}
+      srcDoc={srcDoc}
+      title="Compatible devices"
+      style={{ width: "100%", minHeight: "320px", border: "none" }}
+    />
+  )
+}
