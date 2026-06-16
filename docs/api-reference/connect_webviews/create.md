@@ -579,8 +579,10 @@ Possible enum values:
 - <code>sensi</code>
 - <code>keynest</code>
 - <code>korelock</code>
+- <code>keyincode</code>
 - <code>dormakaba_ambiance</code>
 - <code>ultraloq</code>
+- <code>sifely</code>
 - <code>ring</code>
 - <code>ical</code>
 - <code>lodgify</code>
