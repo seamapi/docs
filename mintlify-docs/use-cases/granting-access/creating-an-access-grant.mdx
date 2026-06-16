@@ -149,6 +149,119 @@ curl -X 'POST' \
 When you request `mobile_key`, Seam also generates an `instant_key_url` on the Access Grant — a shareable link that gives your user mobile access without downloading an app. See [Using Instant Keys](/use-cases/granting-access/using-instant-keys).
 </Info>
 
+### Requesting a Custom Access Code
+
+By default, Seam generates a PIN code for each `code` access method. To request a specific code instead — for example, to reuse a code a guest already knows — include a `code` value alongside `mode: "code"` in `requested_access_methods`. The code must be **4–9 digits** and contain only digits.
+
+<CodeGroup>
+
+```python Python
+from seam import Seam
+
+seam = Seam()
+
+access_grant = seam.access_grants.create(
+    user_identity={
+        "full_name": "Jane Doe",
+        "email_address": "jane@example.com",
+    },
+    device_ids=["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods=[{"mode": "code", "code": "1234"}],
+    starts_at="2025-07-13T15:00:00.000Z",
+    ends_at="2025-07-16T11:00:00.000Z",
+)
+```
+
+```javascript JavaScript
+import { Seam } from "seam";
+
+const seam = new Seam();
+
+const accessGrant = await seam.accessGrants.create({
+  user_identity: {
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+  },
+  device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  requested_access_methods: [{ mode: "code", code: "1234" }],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z",
+});
+```
+
+```ruby Ruby
+require "seam"
+
+seam = Seam.new()
+
+access_grant = seam.access_grants.create(
+  user_identity: {
+    full_name: "Jane Doe",
+    email_address: "jane@example.com",
+  },
+  device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+  requested_access_methods: [{ "mode": "code", "code": "1234" }],
+  starts_at: "2025-07-13T15:00:00.000Z",
+  ends_at: "2025-07-16T11:00:00.000Z"
+)
+```
+
+```php PHP
+<?php
+require 'vendor/autoload.php';
+
+$seam = new Seam\SeamClient();
+
+$access_grant = $seam->access_grants->create(
+    user_identity: [
+        "full_name" => "Jane Doe",
+        "email_address" => "jane@example.com",
+    ],
+    device_ids: ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    requested_access_methods: [["mode" => "code", "code" => "1234"]],
+    starts_at: "2025-07-13T15:00:00.000Z",
+    ends_at: "2025-07-16T11:00:00.000Z"
+);
+```
+
+```csharp C#
+// Coming soon!
+```
+
+```java Java
+// Coming soon!
+```
+
+```bash cURL (bash)
+curl -X 'POST' \
+  'https://connect.getseam.com/access_grants/create' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer ${SEAM_API_KEY}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "user_identity": {
+      "full_name": "Jane Doe",
+      "email_address": "jane@example.com"
+    },
+    "device_ids": ["6ba7b811-9dad-11d1-80b4-00c04fd430c8"],
+    "requested_access_methods": [{"mode": "code", "code": "1234"}],
+    "starts_at": "2025-07-13T15:00:00.000Z",
+    "ends_at": "2025-07-16T11:00:00.000Z"
+  }'
+```
+
+</CodeGroup>
+
+<Info>
+A requested code is a preference, not a guarantee. Seam applies it when it can and falls back to a generated code when it can't:
+
+- **The code is already in use on a device:** Seam assigns a different code for that device and records a warning on the Access Grant (`warning_code: "requested_code_unavailable"`) that includes both the original and the replacement code.
+- **The grant spans multiple Salto locks:** Seam ignores the requested code and assigns a single shared generated code across those devices, because Salto can't guarantee the same PIN on every device.
+- **The provider has stricter code-length limits:** Some devices accept a narrower range than 4–9 digits. If the requested code isn't valid for a device, Seam assigns a compatible code for that device instead.
+
+Always read the resulting `code` back from the access method (see [Step 2: Deliver the Access Methods](#step-2-deliver-the-access-methods)) rather than assuming the requested value was used, and check the grant's `warning_map` for any `requested_code_unavailable` warnings. For more on delivering and updating codes, see [Using PIN Codes](/use-cases/granting-access/using-pin-codes) and [Managing Access Methods](/use-cases/granting-access/managing-access-methods).
+</Info>
+
 ---
 
 ## Step 2: Deliver the Access Methods
