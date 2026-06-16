@@ -153,15 +153,33 @@ function buildBlock(manufacturer: string, capabilityName: string): string {
   ].join('\n')
 }
 
+const IMPORT_RE =
+  /^[ \t]*import \{ DeviceList \} from "\/snippets\/device-list\.jsx"[ \t]*\n?/m
+
 function ensureImport(content: string): string {
-  if (content.includes(IMPORT_LINE)) return content
-  const frontmatter = content.match(/^---\n[\s\S]*?\n---\n/)
-  if (!frontmatter) {
-    throw new Error('No frontmatter found; cannot add import.')
+  // Strip any existing import, then re-place it canonically. An import directly
+  // followed by an MDX expression (e.g. the {/* logo */} block) fails to parse
+  // with acorn ("Could not parse import/exports"); placing it immediately
+  // before the first Markdown heading guarantees it is followed by Markdown,
+  // which parses. Strip-then-place also repositions an import left in the wrong
+  // spot, and keeps re-runs idempotent.
+  const stripped = content.replace(IMPORT_RE, '')
+  const heading = stripped.match(/\n#{1,6}[ \t]/)
+  let result: string
+  if (heading && heading.index != null) {
+    const at = heading.index + 1
+    const before = stripped.slice(0, at).replace(/\n+$/, '\n')
+    result = `${before}\n${IMPORT_LINE}\n\n${stripped.slice(at)}`
+  } else {
+    const frontmatter = stripped.match(/^---\n[\s\S]*?\n---\n/)
+    if (!frontmatter) {
+      throw new Error('No frontmatter found; cannot add import.')
+    }
+    const head = frontmatter[0]
+    const rest = stripped.slice(head.length).replace(/^\n+/, '')
+    result = `${head}\n${IMPORT_LINE}\n\n${rest}`
   }
-  const head = frontmatter[0]
-  const rest = content.slice(head.length).replace(/^\n+/, '')
-  return `${head}\n${IMPORT_LINE}\n\n${rest}`
+  return result.replace(/\n{3,}/g, '\n\n')
 }
 
 function placeBlock(content: string, block: string): string {
