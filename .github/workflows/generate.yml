@@ -12,6 +12,9 @@ jobs:
     name: Generate code
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      STRAPI_API_URL: ${{ secrets.STRAPI_API_URL }}
+      STRAPI_AUTH_TOKEN: ${{ secrets.STRAPI_AUTH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -66,6 +69,17 @@ jobs:
           retry_wait_seconds: 1
           timeout_minutes: 2
           command: npm run generate:mintlify
+      # Requires STRAPI_API_URL and STRAPI_AUTH_TOKEN as GitHub Actions secrets
+      # (mirror them from the `docs` Doppler project). Skips cleanly until set.
+      - name: Sync brand logos from DeviceDB
+        if: ${{ env.STRAPI_API_URL != '' }}
+        continue-on-error: true
+        uses: nick-fields/retry@v3
+        with:
+          max_attempts: 3
+          retry_wait_seconds: 1
+          timeout_minutes: 2
+          command: npm run sync:logos
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
