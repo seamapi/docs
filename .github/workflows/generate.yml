@@ -80,6 +80,8 @@ jobs:
           retry_wait_seconds: 1
           timeout_minutes: 2
           command: npm run sync:logos
+      - name: Inject DeviceDB device lists
+        run: npm run inject:device-lists
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

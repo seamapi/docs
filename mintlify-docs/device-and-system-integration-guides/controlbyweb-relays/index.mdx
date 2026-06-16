@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Learn how to connect and control your ControlByWeb device with the Seam API.'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_controlbyweb_c67fb17fa0.svg"
@@ -324,3 +326,11 @@ In addition, if you'd like to explore other aspects of Seam, here is a list of h
 - [Core Concepts](/core-concepts/overview)
 
 If you have any questions or want to report an issue, email us at support@seam.co.
+
+## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="controlbyweb" capabilityName="can_remotely_unlock" />
+
+{/* devicedb-devices:end */}

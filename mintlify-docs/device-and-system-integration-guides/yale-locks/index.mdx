@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Yale door locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_yale_18c6b0e174.svg"
@@ -21,6 +23,12 @@ Yale manufacturers some of the most advanced smart locks on the market such as t
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="yale" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 The Seam integration is tailored for Yale Locks that are connected via the following platforms:
 

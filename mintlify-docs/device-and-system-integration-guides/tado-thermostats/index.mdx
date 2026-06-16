@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Tado thermostats with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Tado is a European smart home company focused on energy-efficient climate control for residential properties. Their smart thermostats connect to existing heating and cooling systems and provide remote control, scheduling, and energy-saving features like geofencing and open window detection. Tado is popular across Europe and offers both heating and cooling control for a wide range of HVAC systems.
@@ -13,6 +15,12 @@ Seam integrates with Tado thermostats to give you programmatic control over heat
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="tado" capabilityName="can_hvac_heat,can_hvac_cool,can_hvac_fan,can_program_thermostat_weekly_programs" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [Tado smart thermostats](https://www.tado.com/).
 

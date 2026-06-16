@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Akiles locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_akiles_a3887244ea.svg"
@@ -21,6 +23,12 @@ description: 'Guide for using Akiles locks with Seam'
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="akiles" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all Akiles locks. These locks require the [Akiles Gateway](https://akiles.app/en/products/smart-lock-system-gateway). Seam also supports the addition of the optional [Akiles Pinpad](https://akiles.app/en/products/smart-lock-system-pinpad) to enable entering access codes for devices that do not have an integrated keypad.
 

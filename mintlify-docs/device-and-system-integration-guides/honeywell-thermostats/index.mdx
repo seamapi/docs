@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Honeywell Resideo thermostats with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_honeywell_42d6e8a849.svg"
@@ -21,6 +23,12 @@ Honeywell Resideo produces Wi-Fi smart thermostats to manage energy costs while 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="honeywell" capabilityName="can_hvac_heat,can_hvac_cool,can_hvac_fan,can_program_thermostat_weekly_programs" />
+
+{/* devicedb-devices:end */}
 
 This integration supports [Honeywell Resideo Wi-Fi-enabled thermostats](https://www.resideo.com/us/en/products/air/thermostats/).
 

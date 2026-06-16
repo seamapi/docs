@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Sifely smart locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 Sifely produces smart locks and keyless entry systems built on the TTLock platform. Their product line includes deadbolts, lever locks, padlocks, and locker locks designed for residential and light commercial use. Sifely locks support keypad entry, Bluetooth, and Wi-Fi connectivity through the TTLock app and a compatible gateway.
@@ -13,6 +15,12 @@ Seam integrates with Sifely locks to provide remote lock and unlock actions and 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="sifely" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports Sifely smart locks that are paired with a [compatible TTLock gateway](https://ttlock.eu/shop/tag/ttlock+gateway/).
 

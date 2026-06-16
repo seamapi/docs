@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using 4SUITES locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_4suites_dcc09d51ac.svg"
@@ -21,6 +23,12 @@ description: 'Guide for using 4SUITES locks with Seam'
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="4suites" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [4SUITES locks, lock upgrades, and readers](https://www.4suiteshq.com/products/).
 

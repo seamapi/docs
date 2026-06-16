@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Nest thermostats with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_nest_b497cdbdc2.svg"
@@ -21,6 +23,12 @@ Google produces Nest smart thermostats as part of the Google smart home product 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="nest" capabilityName="can_hvac_heat,can_hvac_cool,can_hvac_fan,can_program_thermostat_weekly_programs" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [Nest thermostats](https://store.google.com/us/category/nest_thermostats).
 

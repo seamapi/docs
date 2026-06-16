@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Nuki locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_nuki_77f02ec49c.svg"
@@ -23,6 +25,12 @@ Seam also supports the Nuki Keypad accessory for access code-based entry. In add
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="nuki" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all Nuki Smart Lock and Nuki Opener models that are connected to Wi-Fi, either through built-in Wi-Fi or using the [Nuki Bridge](https://nuki.io/en/bridge/). Seam also supports the addition of the optional [Nuki Keypad](https://nuki.io/en/keypad-code/) to enable entering access codes to control the lock or opener.
 

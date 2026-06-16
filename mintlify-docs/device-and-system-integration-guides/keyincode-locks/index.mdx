@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using KeyInCode locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 ## Overview
 
 KeyInCode manufactures smart locks with built-in keypads designed for residential and commercial applications. Their locks provide keypad-based access management with cloud connectivity for remote control and access code programming.
@@ -13,6 +15,12 @@ Seam integrates with KeyInCode locks to provide remote lock and unlock actions, 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="keyincode" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports KeyInCode smart locks.
 

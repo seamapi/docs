@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Tedee locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_tedee_db65ea54db.svg"
@@ -21,6 +23,12 @@ Tedee produces smart locks and accompanying products for the residential, rental
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="tedee" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all Tedee smart lock models that are connected to Wi-Fi through the [Tedee smart bridge](https://tedee.com/product-info/bridge/#image-1). Seam also supports the addition of the optional [Tedee keypad](https://tedee.com/product-info/keypad/#image-1) to enable entering access codes to control the lock.
 

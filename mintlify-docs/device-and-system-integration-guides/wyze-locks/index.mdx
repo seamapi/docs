@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Wyze locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_wyze_cd3d68ae20.svg"
@@ -23,6 +25,12 @@ To integrate the Wyze Smart Lock with Seam, you must first install the Wyze Lock
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="wyze" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration supports the [Wyze Lock](https://www.wyze.com/products/wyze-lock), when accompanied by a [Wyze Lock Gateway](https://support.wyze.com/hc/en-us/articles/360037584772-How-does-Wyze-Lock-connect-to-the-internet-) that is connected to the internet. In addition, this integration supports access code functions for the optional [Wyze Lock Keypad](https://www.wyze.com/products/wyze-lock-keypad).
 

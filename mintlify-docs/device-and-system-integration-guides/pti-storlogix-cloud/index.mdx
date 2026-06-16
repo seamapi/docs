@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using the PTI Storlogix Cloud with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_pti_3819fabc95.svg"
@@ -21,6 +23,12 @@ This integration uses [Storlogix Cloud](https://ptisecurity.com/products/storlog
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="pti" capabilityName="can_remotely_unlock,can_provision_mobile_keys,can_program_online_access_codes,can_encode_plastic_cards" />
+
+{/* devicedb-devices:end */}
 
 Seam integrates with any site that has Storlogix Cloud installed.
 

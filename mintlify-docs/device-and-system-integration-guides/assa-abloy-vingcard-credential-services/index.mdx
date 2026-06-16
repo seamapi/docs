@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using ASSA ABLOY Credential Services with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_assa_abloy_0bec9e50f4.svg"
@@ -22,3 +24,11 @@ ASSA ABLOY Credential Services stores all the mobile credentials that your appli
 ## Setup Instructions
 
 For instructions on connecting ASSA ABLOY Credential Services to Seam, see the [ASSA ABLOY Vingcard Credential Services Setup Guide](./assa-abloy-vingcard-credential-services-setup-guide).
+
+## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="assa-abloy" capabilityName="can_remotely_unlock,can_provision_mobile_keys,can_program_online_access_codes,can_encode_plastic_cards" />
+
+{/* devicedb-devices:end */}

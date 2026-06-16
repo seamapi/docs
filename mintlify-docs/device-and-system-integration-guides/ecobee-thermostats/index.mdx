@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using ecobee thermostats with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_ecobee_dd41f24b30.svg"
@@ -26,6 +28,12 @@ ecobee smart thermostats are designed to lower energy costs. In addition to ener
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="ecobee" capabilityName="can_hvac_heat,can_hvac_cool,can_hvac_fan,can_program_thermostat_weekly_programs" />
+
+{/* devicedb-devices:end */}
 
 This integration supports all [ecobee thermostats](https://www.ecobee.com/en-us/smart-thermostats/).
 

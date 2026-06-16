@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Minut sensors with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_minut_6c8737be0b.svg"
@@ -21,6 +23,12 @@ Seam integrates with the Minut sensor to provide noise monitoring functions for 
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="minut" capabilityName="can_monitor" />
+
+{/* devicedb-devices:end */}
 
 This integration supports the [Minut sensor](https://www.minut.com/product/features).
 

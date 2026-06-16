@@ -4,6 +4,8 @@ sidebarTitle: 'Overview'
 description: 'Guide for using Salto KS door locks with Seam'
 ---
 
+import { DeviceList } from "/snippets/device-list.jsx"
+
 {/* devicedb-logo:start — managed by mintlify-codegen/sync-logos.ts; do not edit by hand */}
 <img
   src="https://strapi-media-bucket.fly.storage.tigris.dev/sq_salto_64d6c7978d.svg"
@@ -30,6 +32,12 @@ Salto Systems produces world-class electronic access control solutions. Their lo
 ---
 
 ## Supported Devices
+
+{/* devicedb-devices:start — managed by mintlify-codegen/inject-device-list.ts; do not edit by hand */}
+
+<DeviceList manufacturers="salto" capabilityName="can_remotely_unlock,can_program_online_access_codes,can_provision_mobile_keys" />
+
+{/* devicedb-devices:end */}
 
 This integration works any devices connected via their [Salto KS platform](https://saltoks.com/).
 
