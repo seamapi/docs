@@ -6,7 +6,7 @@
     "light": "/images/seam-logo-light.svg",
     "dark": "/images/seam-logo-dark.svg"
   },
-  "favicon": "/images/favicon.png",
+  "favicon": "/images/favicon.svg",
   "colors": {
     "primary": "#2563EB",
     "light": "#60A5FA",
