@@ -1035,14 +1035,6 @@
             "group": "Access Control Systems",
             "pages": [
               {
-                "group": "ASSA ABLOY Vingcard Credential Services",
-                "pages": [
-                  "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/index",
-                  "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/assa-abloy-vingcard-credential-services-setup-guide",
-                  "device-and-system-integration-guides/assa-abloy-vingcard-credential-services/sandbox-assa-abloy-vingcard-credential-services"
-                ]
-              },
-              {
                 "group": "ASSA ABLOY Visionline Access Control System",
                 "pages": [
                   "device-and-system-integration-guides/assa-abloy-visionline-access-control-system/index",
