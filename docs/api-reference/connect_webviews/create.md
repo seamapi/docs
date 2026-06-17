@@ -584,6 +584,7 @@ Possible enum values:
 - <code>ultraloq</code>
 - <code>dusaw</code>
 - <code>sifely</code>
+- <code>thirty_three_lock</code>
 - <code>ring</code>
 - <code>ical</code>
 - <code>lodgify</code>
