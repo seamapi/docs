@@ -61366,6 +61366,25 @@
           },
           {
             "in": "query",
+            "name": "parent_space_id",
+            "schema": {
+              "description": "Filter spaces to only include those whose parent space has the specified `parent_space_id`.",
+              "format": "uuid",
+              "type": "string",
+              "x-undocumented": "Only used internally."
+            }
+          },
+          {
+            "in": "query",
+            "name": "parent_space_key",
+            "schema": {
+              "description": "Filter spaces to only include those whose parent space has the specified `parent_space_key`.",
+              "type": "string",
+              "x-undocumented": "Only used internally."
+            }
+          },
+          {
+            "in": "query",
             "name": "limit",
             "schema": {
               "default": 500,
@@ -61474,6 +61493,17 @@
                     "description": "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
                     "nullable": true,
                     "type": "string"
+                  },
+                  "parent_space_id": {
+                    "description": "Filter spaces to only include those whose parent space has the specified `parent_space_id`.",
+                    "format": "uuid",
+                    "type": "string",
+                    "x-undocumented": "Only used internally."
+                  },
+                  "parent_space_key": {
+                    "description": "Filter spaces to only include those whose parent space has the specified `parent_space_key`.",
+                    "type": "string",
+                    "x-undocumented": "Only used internally."
                   },
                   "search": {
                     "description": "String for which to search. Filters returned spaces to include all records that satisfy a partial match using `name`, `space_key`, or `customer_key`.",
