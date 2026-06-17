@@ -4863,6 +4863,41 @@
                     "salto_ks_metadata"
                   ],
                   "type": "object"
+                },
+                {
+                  "description": "Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.",
+                  "properties": {
+                    "created_at": {
+                      "description": "Date and time at which Seam created the error.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "error_code": {
+                      "description": "Unique identifier of the type of error. Enables quick recognition and categorization of the issue.",
+                      "enum": [
+                        "dormakaba_sites_disconnected"
+                      ],
+                      "type": "string"
+                    },
+                    "is_bridge_error": {
+                      "description": "Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).",
+                      "type": "boolean"
+                    },
+                    "is_connected_account_error": {
+                      "description": "Indicates whether the error is related specifically to the connected account.",
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Detailed description of the error. Provides insights into the issue and potentially how to rectify it.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "created_at",
+                    "message",
+                    "error_code"
+                  ],
+                  "type": "object"
                 }
               ]
             },
