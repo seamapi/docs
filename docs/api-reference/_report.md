@@ -225,8 +225,12 @@ These items are intentionally undocumented.
     - `sync`: Only used internally.
 - `/seam/customer/v1/spaces/list`
     - `connected_account_id`: Only used internally.
+    - `parent_space_id`: Only used internally.
+    - `parent_space_key`: Only used internally.
 - `/spaces/list`
     - `connected_account_id`: Only used internally.
+    - `parent_space_id`: Only used internally.
+    - `parent_space_key`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
