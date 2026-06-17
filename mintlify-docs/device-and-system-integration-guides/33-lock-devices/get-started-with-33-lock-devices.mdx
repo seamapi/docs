@@ -123,7 +123,7 @@ import { Seam } from 'seam'
 const seam = new Seam() // Seam automatically uses your exported SEAM_API_KEY.
 
 const connectWebview = await seam.connectWebviews.create({
-  accepted_providers: ['ttlock'],
+  accepted_providers: ['thirty_three_lock', 'ttlock'],
 })
 
 console.log(connectWebview.login_successful) // false
@@ -140,7 +140,7 @@ curl -X 'POST' \
   -H "Authorization: Bearer ${SEAM_API_KEY}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "accepted_providers": ["ttlock"]
+  "accepted_providers": ["thirty_three_lock", "ttlock"]
 }' | jq -r '"Login Successful (false): " + (.connect_webview.login_successful | tostring),
   "URL: " + .connect_webview.url'
   # Use the returned Connect Webview URL to display
@@ -152,7 +152,7 @@ from seam import Seam
 
 seam = Seam()  # Seam automatically uses your exported SEAM_API_KEY.
 
-connect_webview = seam.connect_webviews.create(accepted_providers=["ttlock"])
+connect_webview = seam.connect_webviews.create(accepted_providers=["thirty_three_lock", "ttlock"])
 
 assert connect_webview.login_successful is False
 
@@ -167,7 +167,7 @@ require "seam"
 seam = Seam.new() # Seam automatically uses your exported SEAM_API_KEY.
 
 connect_webview = seam.connect_webviews.create(
-  accepted_providers: ["ttlock"]
+  accepted_providers: ["thirty_three_lock", "ttlock"]
 )
 
 puts connect_webview.login_successful # false
@@ -184,7 +184,7 @@ require 'vendor/autoload.php';
 $seam = new Seam\SeamClient(); // Seam automatically uses your exported SEAM_API_KEY.
 
 $connect_webview = $seam->connect_webviews->create(
-  accepted_providers: ["ttlock"]
+  accepted_providers: ["thirty_three_lock", "ttlock"]
 );
 
 echo $connect_webview->login_successful ? 'true' : 'false', "\n"; // false
