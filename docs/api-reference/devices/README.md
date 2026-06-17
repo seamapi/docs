@@ -5266,6 +5266,7 @@ A device provider resource.
 - <code>keyincode</code>
 - <code>dormakaba_ambiance</code>
 - <code>ultraloq</code>
+- <code>dusaw</code>
 - <code>sifely</code>
 - <code>ring</code>
 - <code>ical</code>
