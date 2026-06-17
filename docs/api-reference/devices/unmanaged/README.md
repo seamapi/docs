@@ -958,6 +958,54 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
   
   
 </details>
+<details>
+<summary><code>dormakaba_sites_disconnected</code></summary>
+
+Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.
+
+  **`created_at`** *Datetime*
+  
+  
+  Date and time at which Seam created the error.
+  
+  
+  ---
+
+  **`error_code`** *Enum*
+  
+  
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+  
+  Enum values:
+  
+  - <code>dormakaba_sites_disconnected</code>
+  
+  
+  ---
+
+  **`is_bridge_error`** *Boolean*
+  
+  
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
+  
+  
+  ---
+
+  **`is_connected_account_error`** *Boolean*
+  
+  
+  Indicates whether the error is related specifically to the connected account.
+  
+  
+  ---
+
+  **`message`** *String*
+  
+  
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+  
+  
+</details>
 
 ---
 
@@ -2084,6 +2132,12 @@ Indicates that the device is offline.
 **`device_removed`**
 
 Indicates that the device has been removed.
+
+---
+
+**`dormakaba_sites_disconnected`**
+
+Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.
 
 ---
 
