@@ -980,6 +980,13 @@
                 ]
               },
               {
+                "group": "Dusaw Locks",
+                "pages": [
+                  "device-and-system-integration-guides/dusaw-locks/index",
+                  "device-and-system-integration-guides/dusaw-locks/dusaw-setup-guide"
+                ]
+              },
+              {
                 "group": "igloohome Locks",
                 "pages": [
                   "device-and-system-integration-guides/igloohome-locks/index",
