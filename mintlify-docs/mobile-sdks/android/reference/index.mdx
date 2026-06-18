@@ -1,65 +1,30 @@
 ---
 title: 'Android SDK API Reference'
-description: 'Complete API reference for the Seam Android SDK — classes, data classes, enumerations, and sealed classes.'
-sidebarTitle: 'Overview'
+description: 'Public API surface of the Seam Android SDK.'
 ---
 
-> **Interim hand-authored reference.** This page is authored directly from the Seam Android SDK public Kotlin sources. The long-term plan is to generate these pages from KDoc via Dokka.
-
-The Seam Android SDK exposes a reactive, coroutine-friendly API built around `StateFlow` properties and suspend functions. Use `SeamSDK` as the single entry point for all SDK operations.
-
-## Quick Start
-
-```kotlin
-// 1. Initialize at app launch (suspend — call from a coroutine)
-SeamSDK.initialize(context, "seam_cst_...")
-
-// 2. Activate to begin credential sync
-SeamSDK.getInstance().activate()
-
-// 3. Observe credentials
-SeamSDK.getInstance().credentials.collect { credentials ->
-    // Update your UI
-}
-```
-
-## Classes
+> Auto-generated from the Seam Android SDK Kotlin sources. Do not edit by hand — see `mintlify-codegen/android-reference/`.
 
 <CardGroup cols={2}>
-  <Card title="SeamSDK" href="/mobile-sdks/android/reference/seam-sdk">
-    The main entry point for the Seam Android SDK. Manages SDK lifecycle, credential synchronization, unlock operations, and StateFlow-based status updates.
+  <Card title="SeamSDK" icon="android" href="/mobile-sdks/android/reference/seam-sdk">
+    This is the main entry point for the Seam Android SDK.
   </Card>
-</CardGroup>
-
-## Data Classes
-
-<CardGroup cols={2}>
-  <Card title="SeamCredential" href="/mobile-sdks/android/reference/seam-credential">
-    An immutable snapshot of a single access credential — its name, location, expiry, supported unlock proximities, and any active errors.
+  <Card title="SeamCredential" icon="android" href="/mobile-sdks/android/reference/seam-credential">
+    A Seam credential object.
   </Card>
-</CardGroup>
-
-## Enumerations
-
-<CardGroup cols={2}>
-  <Card title="UnlockProximity" href="/mobile-sdks/android/reference/unlock-proximity">
-    The required physical proximity for an unlock attempt: `TOUCH`, `NEARBY`, or `REMOTE`.
+  <Card title="SeamError" icon="android" href="/mobile-sdks/android/reference/seam-error">
+    Base class for all Seam errors.
   </Card>
-</CardGroup>
-
-## Sealed Classes
-
-<CardGroup cols={2}>
-  <Card title="SeamUnlockEvent" href="/mobile-sdks/android/reference/seam-unlock-event">
-    Events emitted to the `unlockStatus` StateFlow as an unlock operation progresses from scanning through access granted, timeout, or reader error.
+  <Card title="SeamCredentialError" icon="android" href="/mobile-sdks/android/reference/seam-credential-error">
+    A credential error is an error that is related to a credential.
   </Card>
-  <Card title="SeamError" href="/mobile-sdks/android/reference/seam-error">
-    Errors thrown by `SeamSDK` methods for initialization, activation, credential, and network failures.
+  <Card title="SeamRequiredUserInteraction" icon="android" href="/mobile-sdks/android/reference/seam-required-user-interaction">
+    A user interaction that is required to unlock a credential.
   </Card>
-  <Card title="SeamCredentialError" href="/mobile-sdks/android/reference/seam-credential-error">
-    Credential-specific errors that appear in `SeamCredential.errors` or are thrown wrapped in `SeamError.CredentialErrors`.
+  <Card title="SeamUnlockEvent" icon="android" href="/mobile-sdks/android/reference/seam-unlock-event">
+    Events related to the co.seam.core.api.SeamSDK.unlock operation.
   </Card>
-  <Card title="SeamRequiredUserInteraction" href="/mobile-sdks/android/reference/seam-required-user-interaction">
-    Actions the user must take to resolve a `SeamCredentialError.UserInteractionRequired` error — OTP authorization, enabling internet or Bluetooth, or granting permissions.
+  <Card title="UnlockProximity" icon="android" href="/mobile-sdks/android/reference/unlock-proximity">
+    Represents the proximity at which a credential used to unlock a door.
   </Card>
 </CardGroup>

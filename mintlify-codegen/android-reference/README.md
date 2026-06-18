@@ -1,52 +1,46 @@
-# Android Reference Page Generator (SCAFFOLD)
+# Android Reference Page Generator
 
-The Android counterpart of [`../ios-reference/`](../ios-reference/README.md). When
-complete, it will regenerate `mintlify-docs/mobile-sdks/android/reference/*.mdx`
-automatically from the Android SDK's Dokka output.
+The Android counterpart of [`../ios-reference/`](../ios-reference/README.md). It
+regenerates `mintlify-docs/mobile-sdks/android/reference/*.mdx` from the Seam
+Android SDK's public Kotlin sources. The generator **owns** these pages — it
+replaces them wholesale on each run, so the SDK's public KDoc is the source of
+truth (the same model as the iOS reference).
 
-## Current Status: Not Implemented — Hand-Authored Pages in Place
-
-> The Android reference MDX pages are currently **hand-authored** (DOC-231, #1155)
-> from the public Kotlin API in the `phone` repo
-> (`seam-phone-android/seam-phone-sdk-android/core/src/main/java/co/seam/core/api/*.kt`).
-> `generate.ts` is a **no-op stub**: it accepts `--archive` and exits 0 without
-> writing, so the sync workflow stays a safe no-op and never overwrites those
-> pages until the real generator lands.
-
-## Intended Pipeline
+## Pipeline
 
 ```
-phone/seam-phone-android/              ← Kotlin SDK (Dokka 1.9.10 configured)
-
-    ./gradlew dokkaHtmlMultiModule     ← aggregates each module's dokkaHtmlPartial
-    ↓
-build/dokka/htmlMultiModule/           ← Dokka output
+phone/seam-phone-android/seam-phone-sdk-android/   ← public Kotlin sources + KDoc
 
     tsx mintlify-codegen/android-reference/generate.ts \
-        --archive build/dokka/htmlMultiModule
+        --source /path/to/seam-phone-sdk-android
     ↓
-mintlify-docs/mobile-sdks/android/reference/*.mdx
+mintlify-docs/mobile-sdks/android/reference/*.mdx  (+ index.mdx)
 ```
 
-The phone-side workflow is `seamapi/phone`
-`.github/workflows/seam-phone-android-documentation.yml` — currently
-`workflow_dispatch`-only. Enable its `push:` trigger once this generator works.
-The docs-side automerge path (`mintlify-docs/mobile-sdks/**`) and the
-`seam-ci-bot[bot]` author gate already cover Android, so no `automerge.yml`
-change is needed.
+The phone-side workflow `seamapi/phone`
+`.github/workflows/seam-phone-android-documentation.yml` checks out both repos,
+runs this generator against the checked-out Kotlin sources, and opens an
+auto-merging PR authored by `seam-ci-bot[bot]`. The docs-side automerge path
+(`mintlify-docs/mobile-sdks/**`) and the `seam-ci-bot[bot]` author gate already
+cover Android, so no `automerge.yml` change is needed.
 
-## Key Design Decision Before Implementing
+## Why parse sources, not Dokka
 
 Unlike Swift-DocC (which emits clean per-symbol render JSON that
-`ios-reference/generate.ts` parses), Dokka 1.9 has no first-class JSON output.
-Pick one source to parse and design against a **real Dokka build's output**:
+`ios-reference/generate.ts` parses), Dokka 1.9 has no first-class structured
+output — only HTML, which is fragile to parse. The Seam Android public API is a
+small, well-KDoc'd surface, so the generator parses the `.kt` sources directly
+(no Gradle/Dokka build needed in CI). The `PAGES` manifest in `generate.ts` maps
+each public type to its source file and output slug — edit a row to add or
+retarget a page.
 
-- **`dokkaHtmlMultiModule`** — HTML; richest but hardest to parse cleanly.
-- **`dokkaGfmMultiModule`** (GFM plugin) — Markdown; closest to MDX, likely the
-  least work.
-- **Kotlin public sources** — parse `co.seam.core.api` declarations directly,
-  skipping Dokka entirely.
+## What it produces vs. what it can't
 
-Then mirror `../ios-reference/generate.ts` for the per-type page + index
-rendering, and match the structure of the existing hand-authored pages so the
-generator's first run is a clean diff rather than a rewrite.
+Each page gets: frontmatter, an `## Overview` (declaration + class KDoc),
+and member sections (properties / cases / methods) with signatures, KDoc prose,
+and `@param`/`@return`/`@throws` tables. KDoc `[Ref]` links become inline code.
+
+It is **bounded by the KDoc**: curated extras that aren't in the source (friendly
+provider-name tables, conceptual sections, hand-written examples) are not
+reproduced, and any stale KDoc (e.g. examples referencing renamed symbols) is
+emitted verbatim — fix those upstream in the SDK's KDoc.
