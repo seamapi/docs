@@ -3346,6 +3346,29 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
   ID of the affected access code.
 
+<strong><code>change_reason</code></strong> <i>String</i>
+
+  Human-readable reason for the change (e.g. `ongoing code auto-renewed`).
+
+<strong><code>changed_properties</code></strong> <i>List</i> <i>of Objects</i>
+
+  List of properties that changed on the access code.
+
+- <strong><code>new_value</code></strong> <i>String</i>
+
+  New value of the property, or null if cleared.
+
+
+- <strong><code>previous_value</code></strong> <i>String</i>
+
+  Previous value of the property, or null if not set.
+
+
+- <strong><code>property</code></strong> <i>String</i>
+
+  Name of the property that changed (e.g. `code`).
+
+
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the connected account, present when connected_account_id is provided.
