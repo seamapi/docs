@@ -3354,12 +3354,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
   List of properties that changed on the access code.
 
-- <strong><code>new_value</code></strong> <i>String</i>
-
-  New value of the property, or null if cleared.
-
-
-- <strong><code>previous_value</code></strong> <i>String</i>
+- <strong><code>from</code></strong> <i>String</i>
 
   Previous value of the property, or null if not set.
 
@@ -3367,6 +3362,11 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 - <strong><code>property</code></strong> <i>String</i>
 
   Name of the property that changed (e.g. `code`).
+
+
+- <strong><code>to</code></strong> <i>String</i>
+
+  New value of the property, or null if cleared.
 
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
