@@ -11,7 +11,7 @@ jobs:
     name: Get changes
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    if: github.actor == 'dependabot[bot]' || github.event.pull_request.user.login == 'seambot'
+    if: github.actor == 'dependabot[bot]' || github.event.pull_request.user.login == 'seambot' || github.event.pull_request.user.login == 'seam-ci-bot[bot]'
     permissions:
       checks: read
     outputs:
@@ -33,6 +33,7 @@ jobs:
             docs/api-reference/**
             mintlify-docs/openapi.json
             mintlify-docs/docs.json
+            mintlify-docs/mobile-sdks/**
   merge:
     name: Merge
     runs-on: ubuntu-latest
