@@ -189,12 +189,14 @@ function parseKdoc(raw: string | null): Kdoc {
       bodyLines.push(line)
     } else if (cursor.kind === 'param') {
       const p = params[cursor.idx]
-      if (p != null && line.trim() !== '')
-        {p.desc = `${p.desc} ${line.trim()}`.trim()}
+      if (p != null && line.trim() !== '') {
+        p.desc = `${p.desc} ${line.trim()}`.trim()
+      }
     } else if (cursor.kind === 'throws') {
       const t = throwsList[cursor.idx]
-      if (t != null && line.trim() !== '')
-        {t.desc = `${t.desc} ${line.trim()}`.trim()}
+      if (t != null && line.trim() !== '') {
+        t.desc = `${t.desc} ${line.trim()}`.trim()
+      }
     } else if (cursor.kind === 'returns') {
       if (line.trim() !== '') returns = `${returns} ${line.trim()}`.trim()
     }
@@ -383,8 +385,7 @@ function sliceType(text: string, typeName: string): TypeSlice {
   if (kind === 'data class' && ctorParamsRaw != null) {
     const props = parseConstructorProps(ctorParamsRaw)
     const body = props.map((p) => `    ${p.signature}`).join(',\n')
-    declaration =
-      `${modifiers} ${keyword} ${typeName}(\n${body}\n)`.trim()
+    declaration = `${modifiers} ${keyword} ${typeName}(\n${body}\n)`.trim()
   } else {
     const ctor =
       ctorParamsRaw != null
@@ -477,12 +478,13 @@ function extractBodyMembers(body: string, parentKind: TypeKind): MemberGroup[] {
         const name = fn[2] ?? ''
         const sig = extractFunctionSignature(code)
         if (isCompanion) companion.push({ name, signature: sig, doc })
-        else
-          {funcs.push({
+        else {
+          funcs.push({
             name: `${isSuspend ? 'suspend ' : ''}${name}`,
             signature: sig,
             doc,
-          })}
+          })
+        }
       } else if (nested != null) {
         const name = nested[3] ?? ''
         cases.push({ name, signature: extractNestedSignature(code), doc })
@@ -507,14 +509,16 @@ function extractBodyMembers(body: string, parentKind: TypeKind): MemberGroup[] {
   }
 
   const groups: MemberGroup[] = []
-  if (companion.length > 0)
-    {groups.push({ title: 'Companion object methods', members: companion })}
+  if (companion.length > 0) {
+    groups.push({ title: 'Companion object methods', members: companion })
+  }
   if (props.length > 0) groups.push({ title: 'Properties', members: props })
-  if (cases.length > 0)
-    {groups.push({
+  if (cases.length > 0) {
+    groups.push({
       title: parentKind === 'enum class' ? 'Values' : 'Cases',
       members: cases,
-    })}
+    })
+  }
   if (funcs.length > 0) groups.push({ title: 'Methods', members: funcs })
   return groups
 }
@@ -617,8 +621,9 @@ function renderMember(m: Member): string[] {
   if (m.doc.returns) lines.push('', `**Returns** — ${m.doc.returns}`)
   if (m.doc.throwsList.length > 0) {
     lines.push('', '**Throws**', '')
-    for (const t of m.doc.throwsList)
-      {lines.push(`- \`${t.type}\`${t.desc ? ` — ${t.desc}` : ''}`)}
+    for (const t of m.doc.throwsList) {
+      lines.push(`- \`${t.type}\`${t.desc ? ` — ${t.desc}` : ''}`)
+    }
   }
   lines.push('')
   return lines
