@@ -17,6 +17,7 @@ These items are intentionally undocumented.
 - `/seam/bridge/v1/bridge_connected_systems`: No undocumented message provided
 - `/seam/connect_webview/v1`: No undocumented message provided
 - `/seam/console/v1`: No undocumented message provided
+- `/seam/console/v1/sites`: No undocumented message provided
 - `/seam/console/v1/timelines`: No undocumented message provided
 - `/seam/console/v1/workspace/feature_flags`: No undocumented message provided
 - `/seam/customer/v1/access_grants`: No undocumented message provided
@@ -115,6 +116,10 @@ These items are intentionally undocumented.
 - `/seam/connect_webview/v1/reset`: Internal endpoint for driving Connect Webview flows programmatically.
 - `/seam/connect_webview/v1/submit`: Internal endpoint for driving Connect Webview flows programmatically.
 - `/seam/console/v1/get_resource_locator`: Internal endpoint for Console
+- `/seam/console/v1/sites/create`: Internal endpoint for Console
+- `/seam/console/v1/sites/delete`: Internal endpoint for Console
+- `/seam/console/v1/sites/list`: Internal endpoint for Console
+- `/seam/console/v1/sites/update`: Internal endpoint for Console
 - `/seam/console/v1/timelines/get`: Internal endpoint for Console
 - `/seam/console/v1/workspace/feature_flags/list`: Internal endpoint for Console
 - `/seam/customer/v1/access_grants/list`: Internal endpoint for customer portals.
