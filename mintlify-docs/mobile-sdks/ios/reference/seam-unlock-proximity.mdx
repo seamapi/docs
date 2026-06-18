@@ -1,63 +1,41 @@
 ---
 title: 'SeamUnlockProximity'
-description: 'The required physical proximity for an unlock attempt: touch, nearby, or remote.'
+description: 'Defines the **required proximity** for an unlock attempt.'
 ---
-
-> **Interim hand-authored reference.** This page is authored from the SeamSDK public Swift sources. See the [reference overview](/mobile-sdks/ios/reference) for context.
 
 ## Overview
 
-`SeamUnlockProximity` is a `public enum` that defines the required physical proximity for an unlock attempt. It is used as an input to `Seam.unlock(using:proximity:timeout:)` and as the element type of `SeamCredential.supportedUnlockProximities`.
-
 ```swift
-public enum SeamUnlockProximity
+enum SeamUnlockProximity
 ```
 
-This enum describes a **requirement**, not a capability — passing a proximity value tells the SDK the minimum physical closeness the caller requires for the operation.
+Defines the **required proximity** for an unlock attempt.
 
 ---
 
-## Cases
+## Enumeration Cases
 
-| Case | Description |
-|------|-------------|
-| `touch` | Requires the user's mobile device to be physically touching the lock hardware or reader. |
-| `nearby` | Requires the user to be within a few meters of the lock or reader (Bluetooth range). |
-| `remote` | No proximity requirement; the operation may be performed via network or relay. |
+### `SeamUnlockProximity.nearby`
 
----
-
-## Usage
-
-### Selecting proximity at unlock time
+Requires the user to be **within a few meters** of the lock/reader.
 
 ```swift
-// Use the credential's default (first value in supportedUnlockProximities)
-let publisher = try Seam.shared.unlock(using: credential.id)
-
-// Require tap/at-reader proximity
-let publisher = try Seam.shared.unlock(using: credential.id, proximity: .touch)
-
-// Require on-site Bluetooth proximity
-let publisher = try Seam.shared.unlock(using: credential.id, proximity: .nearby)
-
-// Allow remote unlock
-let publisher = try Seam.shared.unlock(using: credential.id, proximity: .remote)
+case nearby
 ```
 
-### Checking what a credential supports
+### `SeamUnlockProximity.remote`
+
+**No proximity requirement**; operation may be performed via network/relay.
 
 ```swift
-// Display UI based on what the credential supports
-if credential.supportedUnlockProximities.contains(.touch) {
-    showTapToUnlockButton()
-}
-if credential.supportedUnlockProximities.contains(.remote) {
-    showRemoteUnlockButton()
-}
-
-// The first entry is the credential's preferred/default proximity
-let defaultProximity = credential.supportedUnlockProximities.first
+case remote
 ```
 
-**See also:** [`SeamCredential.supportedUnlockProximities`](/mobile-sdks/ios/reference/seam-credential), [`Seam.unlock(using:proximity:timeout:)`](/mobile-sdks/ios/reference/seam)
+### `SeamUnlockProximity.touch`
+
+Requires the user’s mobile device to be **physically touching** the lock hardware/reader.
+
+```swift
+case touch
+```
+

@@ -1,0 +1,84 @@
+---
+title: 'SeamSDKService'
+description: ''
+---
+
+## Overview
+
+```swift
+@objc(SeamSDKService) final class SeamSDKService
+```
+
+---
+
+## Instance Properties
+
+### `credentials`
+
+```swift
+@objc var credentials: NSArray { get }
+```
+
+### `isActive`
+
+```swift
+@objc var isActive: NSNumber { get }
+```
+
+
+---
+
+## Instance Methods
+
+### `activate(_:)`
+
+```swift
+@objc(activateWithCompletion:) func activate(_ completion: @escaping (NSNumber, NSString?) -> Void)
+```
+
+### `credentialsPublisher()`
+
+```swift
+@objc(credentialsPublisher) func credentialsPublisher() -> AnyObject
+```
+
+### `isActivePublisher()`
+
+```swift
+@objc(isActivePublisher) func isActivePublisher() -> AnyObject
+```
+
+### `refresh(_:)`
+
+```swift
+@objc(refreshWithCompletion:) func refresh(_ completion: @escaping (NSNumber, NSArray?) -> Void)
+```
+
+### `unlock(credentialId:timeout:)`
+
+```swift
+@objc(unlockWithCredentialId:timeout:) func unlock(credentialId: NSString, timeout: NSNumber) -> AnyObject
+```
+
+
+---
+
+## Type Properties
+
+### `shared`
+
+```swift
+@objc(shared) static let shared: SeamSDKService
+```
+
+
+---
+
+## Type Methods
+
+### `initialize(clientSessionToken:)`
+
+```swift
+@objc(initializeWithClientSessionToken:) class func initialize(clientSessionToken: NSString) -> NSNumber
+```
+
