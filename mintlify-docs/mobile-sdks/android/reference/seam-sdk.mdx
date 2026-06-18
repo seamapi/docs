@@ -1,59 +1,67 @@
 ---
 title: 'SeamSDK'
-description: 'The main entry point for the Seam Android SDK. Manages SDK lifecycle, credential synchronization, unlock operations, and StateFlow-based status updates.'
+description: 'This is the main entry point for the Seam Android SDK.'
 ---
 
-> **Interim hand-authored reference.** This page is authored directly from the Seam Android SDK public Kotlin sources. See the [reference overview](/mobile-sdks/android/reference/index) for context.
+> Auto-generated from the Seam Android SDK Kotlin sources. Do not edit by hand — see `mintlify-codegen/android-reference/`.
 
 ## Overview
 
-`SeamSDK` is the single entry point for all Seam Android SDK operations. It is a `class` with a private constructor — obtain the instance via `SeamSDK.getInstance()` after calling `SeamSDK.initialize()`.
-
 ```kotlin
-class SeamSDK private constructor()
+class SeamSDK()
 ```
 
-**Thread Safety**
+This is the main entry point for the Seam Android SDK.
 
-- All `StateFlow` properties (`credentials`, `isActivated`, `unlockStatus`) are thread-safe.
-- All suspend functions can be called from any coroutine context.
-- `initialize` is thread-safe and idempotent.
+Use the `getInstance` function to get the instance of this class.
+You can only get the instance of the class after you have initialized the SDK by calling
+`initialize`.
 
-**Offline Behavior**
+The `initialize` function will initialize the SDK.
 
-- The SDK caches credentials and can work offline for unlock operations.
-- `activate()` requires an internet connection on first activation.
-- `refresh()` always requires an internet connection.
-- `unlock()` can work offline if credentials are already cached.
+## Thread Safety
+- All StateFlow properties (`credentials`, `isActivated`, `unlockStatus`) are thread-safe
+- All suspend functions can be called from any coroutine context
+- `initialize` is thread-safe and idempotent
+
+## StateFlow Lifecycle
+- `credentials`: Emits whenever credential list changes, survives configuration changes
+- `unlockStatus`: Emits unlock events, latest event is always available via .value
+- `isActivated`: Reflects current SDK activation state
+
+Collecting these flows is lifecycle-safe when used with Android lifecycle-aware scopes
+
+## Offline Behavior
+- SDK caches credentials and can work offline for unlock operations
+- `activate` requires internet connection initially
+- `refresh` requires internet connection
+- `unlock` can work offline if credentials are already cached
+
+## Error Recovery
+- Most operations can be safely retried after fixing underlying issues
+- Credential errors (in SeamCredential.errors) should be resolved before unlock
+- Network errors during activate/refresh are transient and can be retried
+
+## Background Processing
+- Unlock operations continue in background
+- StateFlow emissions work across app lifecycle
+
+## Lifecycle
+- Call `initialize` once per app session, typically in Application.onCreate()
+- `activate` when user wants to use credential features
+- No explicit cleanup needed - Android handles resource cleanup
+- `deactivate` stops background operations but preserves credentials
 
 ---
 
-## Companion Object Methods
+## Companion object methods
 
-### `initialize(context, clientSessionToken)`
+### `initialize`
 
-Initializes the Seam Android SDK. Call this once at app launch, typically in `Application.onCreate()`.
+Initializes the Seam Android SDK. This should be called once at the
+start of your application.
 
-```kotlin
-suspend fun initialize(context: Context, clientSessionToken: String)
-```
-
-**Parameters**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `context` | `Context` | The Android application context. |
-| `clientSessionToken` | `String` | A valid client session token for the app user. |
-
-**Throws**
-
-| Error | Description |
-|-------|-------------|
-| `SeamError.AlreadyInitialized` | The SDK is already initialized. Call `deactivate()` first to reinitialize. |
-| `SeamError.InternetConnectionRequired` | No internet connection is available. |
-| `SeamError.InvalidClientSessionToken` | The token format is invalid. |
-| `SeamError.DeactivationInProgress` | A deactivation is already in progress. |
-
+Example:
 ```kotlin
 try {
     SeamSDK.initialize(context, "seam_cst_...")
@@ -68,7 +76,7 @@ try {
         is SeamError.InternetConnectionRequired -> {
             // handle error when internet connection is required
         }
-        is SeamError.InvalidClientSessionToken -> {
+        is SeamError.InvalidClientSessionToken ->  {
             // handle error when client session token is invalid
         }
         else -> {
@@ -78,130 +86,325 @@ try {
 }
 ```
 
----
-
-### `getInstance()`
-
-Returns the singleton instance of `SeamSDK`. Thread-safe; can be called from any thread.
-
 ```kotlin
-fun getInstance(): SeamSDK
+suspend fun initialize(context: Context, clientSessionToken: String)
 ```
 
-**Returns:** The initialized `SeamSDK` instance.
+**Parameters**
+
+| Parameter | Description |
+| --- | --- |
+| `context` | the Android context. |
+| `clientSessionToken` | the client session token for the app user. |
 
 **Throws**
 
-| Error | Description |
-|-------|-------------|
-| `SeamError.InitializationRequired` | `initialize()` has not been called yet. |
+- `SeamError.AlreadyInitialized` — if the SDK is already initialized.
+- `SeamError.InternetConnectionRequired` — if no internet connection is available.
+- `SeamError.InvalidClientSessionToken` — if the token format is invalid.
+- `SeamError.DeactivationInProgress` — if a deactivation is in progress.
+
+### `getInstance`
+
+Returns the instance of `SeamSDK`. This can be used to get a handle to the
+SeamSDK after it has been initialized.
+
+This method is thread-safe and can be called from any thread.
 
 ```kotlin
-val seamSDK = SeamSDK.getInstance()
+fun getInstance() : SeamSDK
 ```
+
+**Returns** — The initialized SeamSDK instance.
+
+**Throws**
+
+- `SeamError.InitializationRequired` — if `initialize` has not been called yet.
 
 ---
 
-## StateFlow Properties
+## Properties
+
+### `isActivated`
+
+Returns whether the app user's phone has been activated.
+
+This StateFlow emits `true` after successful `activate` call and `false` after `deactivate`.
+The flow is thread-safe and can be collected from any coroutine context.
+Latest value is always available via `.value` property.
+
+```kotlin
+val isActivated
+```
 
 ### `credentials`
 
-The current list of `SeamCredential` objects for the app user. Emits an updated list whenever credentials change.
+Returns the list of `SeamCredential` for the current app user.
+
+This StateFlow emits an immutable list whenever credentials change.
+The list may be empty if no credentials are available or while loading.
+Check each credential's `errors` property to determine if it's ready for use.
+
+The flow is thread-safe and can be collected from any coroutine context.
+Latest value is always available via `.value` property.
 
 ```kotlin
-val credentials: StateFlow<List<SeamCredential>>
-```
+// Observe credentials
+seamSDK.credentials.collect { credentials ->
+    // credentials is a list of [SeamCredential]
+    if (credentials.isEmpty()) {
+        // handle no credentials
+    } else {
+        // handle credentials (e.g. display them)
+    }
+}
 
-The list may be empty while loading or if no credentials are available. Check each credential's `errors` property to determine if it is ready for use. Latest value is always available via `.value`.
-
-```kotlin
-// Observe credential changes
-lifecycleScope.launch {
-    seamSDK.credentials.collect { credentials ->
-        if (credentials.isEmpty()) {
-            // handle no credentials
-        } else {
-            // display credentials
+// handle credential errors
+SeamSDK.getInstance().credentials.collect { credentialsList ->
+    val errors = credentialsList.flatMap { it.errors }
+    errors.forEach { error ->
+        when (error) {
+            is SeamCredentialError.Expired -> { /* handle credential expiration error */ }
+            is SeamCredentialError.Loading -> { /* handle not loaded yet */ }
+            is SeamCredentialError.Unknown -> { /* handle unknown error */ }
+            is SeamCredentialError.UserInteractionRequired -> {
+                handleUserInteractionRequired(error.interaction)
+            }
         }
     }
 }
 
-// Handle credential errors
-lifecycleScope.launch {
-    SeamSDK.getInstance().credentials.collect { credentialsList ->
-        val errors = credentialsList.flatMap { it.errors }
-        errors.forEach { error ->
-            when (error) {
-                is SeamCredentialError.Expired -> { /* handle expiration */ }
-                is SeamCredentialError.Loading -> { /* handle not loaded yet */ }
-                is SeamCredentialError.Unknown -> { /* handle unknown error */ }
-                is SeamCredentialError.UserInteractionRequired -> {
-                    handleUserInteractionRequired(error.interaction)
-                }
+fun handleUserInteractionRequired(interaction: SeamRequiredUserInteraction) {
+    when (interaction) {
+         is SeamRequiredUserInteraction.CompleteOtpAuthorization -> { /* handle OTP authorization */ }
+         is SeamRequiredUserInteraction.EnableBluetooth -> { /* handle Bluetooth error */ }
+         is SeamRequiredUserInteraction.EnableInternet -> { /* handle Internet connection error*/ }
+         is SeamRequiredUserInteraction.GrantPermissions -> { /* handle permissions error*/ }
+    }
+}
+```
+
+```kotlin
+val credentials
+```
+
+### `unlockStatus`
+
+Returns the current status of the unlock feature.
+
+This StateFlow emits `SeamUnlockEvent` instances as unlock operations progress.
+Events include scanning, connection, access granted, errors, and timeout.
+The flow retains the latest event, accessible via `.value` property.
+
+Subscribe to this flow before calling `unlock` to ensure no events are missed.
+The flow is thread-safe and can be collected from any coroutine context.
+
+```kotlin
+val unlockStatus
+```
+
+---
+
+## Methods
+
+### `setUnlockEventListener`
+
+Sets the listener for the unlock events.
+
+```kotlin
+fun setUnlockEventListener(listener: (SeamUnlockEvent) -> Unit)
+```
+
+**Parameters**
+
+| Parameter | Description |
+| --- | --- |
+| `listener` | the listener to listen for unlock events. |
+
+### `setNotification`
+
+Sets the notification for the unlock feature. Required for Assa Abloy foreground scanning.
+
+```kotlin
+fun setNotification(notification: Notification)
+```
+
+**Parameters**
+
+| Parameter | Description |
+| --- | --- |
+| `notification` | the notification to use for the unlock feature. |
+
+### `setCredentialsListener`
+
+Sets the listener for the credentials.
+
+```kotlin
+fun setCredentialsListener(listener: (List<SeamCredential>) -> Unit)
+```
+
+**Parameters**
+
+| Parameter | Description |
+| --- | --- |
+| `listener` | the listener to listen for credentials. |
+
+### `listCredentials`
+
+Lists the credentials for the current app user.
+
+```kotlin
+fun listCredentials() : List<SeamCredential>
+```
+
+**Returns** — a SeamResult of a list of AcsPhoneCredential. If the SDK has not been initialized yet, the result will be a SeamFailure with `SeamError.InitializationRequired`.
+
+### `unlock`
+
+Unlocks the app user's phone.
+
+Initiates an unlock operation for the specified credential. Progress events are emitted
+to `unlockStatus` StateFlow. The operation continues even if the app goes to background.
+
+Works offline if credentials are already cached. Requires the device to have the
+necessary hardware (Bluetooth, NFC, etc.) and permissions granted.
+
+```kotlin
+val seamSDK = SeamSDK.getInstance()
+// Start collecting unlock events before unlock
+coroutineScope.launch {
+    seamSDK.unlockStatus.collect { event ->
+        when (event) {
+            is SeamUnlockEvent.ScanningStarted -> { /* handle scanning started */ }
+            is SeamUnlockEvent.Connecting -> { /* handle connecting */ }
+            is SeamUnlockEvent.AccessGranted -> { /* handle access granted */ }
+            is SeamUnlockEvent.Timeout -> { /* handle timeout */ }
+            is SeamUnlockEvent.ReaderError -> { /* handle reader error */ }
+            else -> { /* handle other events */ }
+        }
+    }
+}
+
+// Perform unlock
+try {
+    val credentialId = credential.id
+    // Timeout is optional
+    seamSDK.unlock(
+        credentialId = credentialId,
+        unlockProximity = UnlockProximity.TOUCH,
+        timeout = 30.seconds
+    )
+} catch (seamError: SeamError) {
+    when (seamError) {
+        is SeamError.ActivationRequired -> {
+            // handle error when SDK is not activated
+        }
+        is SeamError.CredentialErrors -> {
+            val credentialErrors = seamError.errors
+            handleCredentialErrors(credentialErrors)
+            // handle error when there are credential errors
+        }
+        is SeamError.InitializationRequired -> {
+            // handle error when SDK is not initialized
+        }
+        is SeamError.IntegrationNotFound -> {
+            // handle error when integration is not found, Such as Assa Abloy, Latch and Salto
+        }
+        is SeamError.InvalidCredentialId -> {
+            // handle error when credential ID is invalid
+        }
+        else -> {
+            // handle other errors
+        }
+    }
+}
+
+// Handle credential errors on unlock
+fun handleCredentialErrors(credentialErrors: List<SeamCredentialError>) {
+    credentialErrors.forEach { credentialError ->
+        when (credentialError) {
+            is SeamCredentialError.Invalid -> {
+                // handle error when credential is invalid
+            }
+
+            is SeamCredentialError.Expired -> {
+                // handle error when credential is expired
+            }
+
+            is SeamCredentialError.Loading -> {
+                // handle error when credential is not loaded yet
+            }
+
+            is SeamCredentialError.UserInteractionRequired -> {
+                // handle user interaction required credential error
+            }
+            is SeamCredentialError.InvalidUnlockProximity -> {
+                // handle invalid unlock proximity credential error
+            }
+            is SeamCredentialError.Unknown -> {
+                // handle unknown credential error
             }
         }
     }
 }
 ```
 
-**See also:** [`SeamCredential`](/mobile-sdks/android/reference/seam-credential)
-
----
-
-### `isActivated`
-
-Whether the SDK is currently activated. Emits `true` after a successful `activate()` call and `false` after `deactivate()`.
-
 ```kotlin
-val isActivated: StateFlow<Boolean>
+fun unlock(credentialId: CredentialId, unlockProximity: UnlockProximity? = null, timeout: Duration? = null) : Job
 ```
 
-Latest value is always available via `.value`.
+**Parameters**
+
+| Parameter | Description |
+| --- | --- |
+| `credentialId` | the credential ID to unlock. CredentialId is a type alias for String. |
+| `timeout` | the timeout for the unlock operation. If null, uses provider default. |
+| `unlockProximity` | the unlock proximity `UnlockProximity`. If null, uses provider default, which is the first in the list of `SeamCredential.supportedUnlockProximities`. The `SeamCredential` must have at least one supported unlock proximity. |
+
+**Returns** — a Job that can be used to cancel the unlock operation.
+
+**Throws**
+
+- `SeamError.InitializationRequired` — if the SDK has not been initialized yet.
+- `SeamError.IntegrationNotFound` — if the integration is not found.
+- `SeamError.InvalidCredentialId` — if the credential ID is invalid.
+- `SeamError.ActivationRequired` — if the app user's phone has not been activated yet.
+- `SeamError.CredentialErrors` — if the credential has unresolved errors.
+- `SeamError.InvalidUnlockProximity` — if the unlock proximity is invalid.
+
+### `suspend activate`
+
+Activates the app user's phone.
+
+Prepares the SDK for use by syncing with the server and setting up background services.
+This operation requires an active internet connection on first activation.
+Safe to call multiple times - subsequent calls are no-ops if already activated.
+
+After successful activation, `isActivated` will emit `true` and credentials will
+start syncing automatically.
 
 ```kotlin
-lifecycleScope.launch {
-    seamSDK.isActivated.collect { activated ->
-        updateActivationUI(activated)
-    }
-}
-```
-
----
-
-### `unlockStatus`
-
-The current status of the unlock operation. Emits `SeamUnlockEvent` instances as unlock operations progress.
-
-```kotlin
-val unlockStatus: StateFlow<SeamUnlockEvent>
-```
-
-The flow retains the latest event, accessible via `.value`. Subscribe to this flow **before** calling `unlock()` to ensure no events are missed.
-
-```kotlin
-lifecycleScope.launch {
-    seamSDK.unlockStatus.collect { event ->
-        when (event) {
-            is SeamUnlockEvent.ScanningStarted -> showScanningUI()
-            is SeamUnlockEvent.AccessGranted -> showSuccessUI()
-            is SeamUnlockEvent.Timeout -> showTimeoutError()
-            is SeamUnlockEvent.ReaderError -> showReaderError(event.message)
+val seamSDK = SeamSDK.getInstance()
+try {
+    // activate is a suspend function
+    seamSDK.activate()
+} catch (seamError: SeamError) {
+    when (seamError) {
+        is SeamError.InitializationRequired -> {
+            // handle error when SDK is already initialized
+        }
+        is SeamError.InternetConnectionRequired -> {
+            // handle error when internet connection is required
+        }
+        is SeamError.InvalidClientSessionToken ->  {
+            // handle error when client session token is invalid
+        }
+        else -> {
+            // handle other errors
         }
     }
 }
 ```
-
-**See also:** [`SeamUnlockEvent`](/mobile-sdks/android/reference/seam-unlock-event)
-
----
-
-## Suspend Methods
-
-### `activate()`
-
-Activates the SDK by syncing with the server and setting up background services. Requires an active internet connection on first activation. Safe to call multiple times — subsequent calls are no-ops if already activated.
-
-After successful activation, `isActivated` emits `true` and credentials begin syncing automatically.
 
 ```kotlin
 suspend fun activate()
@@ -209,60 +412,23 @@ suspend fun activate()
 
 **Throws**
 
-| Error | Description |
-|-------|-------------|
-| `SeamError.InitializationRequired` | `initialize()` has not been called. |
-| `SeamError.InternetConnectionRequired` | No internet connection is available. |
-| `SeamError.InvalidClientSessionToken` | The client session token is invalid. |
+- `SeamError.InitializationRequired` — if the SDK has not been initialized yet.
+- `SeamError.InternetConnectionRequired` — if no internet connection is available.
+- `SeamError.InvalidClientSessionToken` — if the client session token is invalid.
+
+### `suspend deactivate`
+
+Deactivates the app user's phone.
+
+Stops background operations and cleans up resources. Credentials remain cached
+and available for the next activation. After deactivation, `isActivated` will emit `false`.
+
+This method is safe to call multiple times and will not throw if already deactivated.
 
 ```kotlin
 val seamSDK = SeamSDK.getInstance()
 try {
-    seamSDK.activate()
-} catch (seamError: SeamError) {
-    when (seamError) {
-        is SeamError.InitializationRequired -> {
-            // handle error when SDK is not initialized
-        }
-        is SeamError.InternetConnectionRequired -> {
-            // handle error when internet connection is required
-        }
-        is SeamError.InvalidClientSessionToken -> {
-            // handle error when client session token is invalid
-        }
-        else -> {
-            // handle other errors
-        }
-    }
-}
-```
-
----
-
-### `deactivate(deintegrate)`
-
-Deactivates the SDK. Stops background operations and releases resources. Credentials remain cached and available for the next activation. Safe to call multiple times.
-
-```kotlin
-suspend fun deactivate(deintegrate: Boolean = false)
-```
-
-**Parameters**
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `deintegrate` | `Boolean` | `false` | If `true`, removes the device association and clears all state. |
-
-**Throws**
-
-| Error | Description |
-|-------|-------------|
-| `SeamError.InitializationRequired` | `initialize()` has not been called. |
-| `SeamError.DeactivationInProgress` | A deactivation is already in progress. |
-
-```kotlin
-val seamSDK = SeamSDK.getInstance()
-try {
+    // deactivate is a suspend function
     seamSDK.deactivate(deintegrate = true)
 } catch (seamError: SeamError) {
     when (seamError) {
@@ -270,7 +436,7 @@ try {
             // handle error when SDK is not initialized
         }
         is SeamError.DeactivationInProgress -> {
-            // handle error when deactivation is already in progress
+            // handle error when internet connection is required
         }
         else -> {
             // handle other errors
@@ -279,29 +445,36 @@ try {
 }
 ```
 
----
-
-### `refresh()`
-
-Manually syncs credentials with the server and updates the `credentials` StateFlow. Requires an active internet connection. In most cases, automatic background sync makes manual refresh unnecessary.
-
 ```kotlin
-suspend fun refresh(): List<SeamCredential>
+suspend fun deactivate(deintegrate: Boolean = false)
 ```
 
-**Returns:** The updated list of `SeamCredential` objects after the refresh completes.
+**Parameters**
+
+| Parameter | Description |
+| --- | --- |
+| `deintegrate` | If true, removes device association and clears all state. |
 
 **Throws**
 
-| Error | Description |
-|-------|-------------|
-| `SeamError.InitializationRequired` | `initialize()` has not been called. |
-| `SeamError.DeactivationInProgress` | A deactivation is in progress. |
+- `SeamError.InitializationRequired` — if the SDK has not been initialized yet.
+- `SeamError.DeactivationInProgress` — if a deactivation is already in progress.
+
+### `suspend refresh`
+
+Refreshes the credentials for the current app user.
+
+Manually triggers a sync with the server to fetch latest credentials.
+This operation requires an active internet connection. You should call
+`initialize` and `activate` first.
+
+The `credentials` StateFlow will be updated before this method returns.
+In most cases, automatic background sync makes manual refresh unnecessary.
 
 ```kotlin
 val seamSDK = SeamSDK.getInstance()
 try {
-    val updatedCredentials = seamSDK.refresh()
+    seamSDK.refresh()
 } catch (seamError: SeamError) {
     when (seamError) {
         is SeamError.InitializationRequired -> {
@@ -317,169 +490,13 @@ try {
 }
 ```
 
----
-
-## Non-Suspend Methods
-
-### `unlock(credentialId, unlockProximity?, timeout?)`
-
-Initiates an unlock operation for the specified credential. Progress events are emitted to the `unlockStatus` StateFlow. The operation continues even if the app moves to the background. Works offline if credentials are already cached.
-
 ```kotlin
-fun unlock(
-    credentialId: CredentialId,
-    unlockProximity: UnlockProximity? = null,
-    timeout: Duration? = null
-): Job
+suspend fun refresh() : List<SeamCredential>
 ```
 
-`CredentialId` is a type alias for `String`.
-
-**Parameters**
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `credentialId` | `CredentialId` | — | The credential ID to unlock. |
-| `unlockProximity` | `UnlockProximity?` | `null` | The required proximity for this attempt. If `null`, uses the provider default (the first value in `SeamCredential.supportedUnlockProximities`). |
-| `timeout` | `Duration?` | `null` | Maximum time to wait for the unlock operation. If `null`, uses the provider default. |
-
-**Returns:** A `Job` that can be used to cancel the unlock operation.
+**Returns** — The updated list of credentials after refresh completes.
 
 **Throws**
 
-| Error | Description |
-|-------|-------------|
-| `SeamError.InitializationRequired` | `initialize()` has not been called. |
-| `SeamError.ActivationRequired` | The SDK has not been activated. |
-| `SeamError.IntegrationNotFound` | No integration found for the credential's provider. |
-| `SeamError.InvalidCredentialId` | The credential ID is not recognized by the SDK. |
-| `SeamError.CredentialErrors` | The credential has one or more unresolved errors. |
-| `SeamError.InvalidUnlockProximity` | The specified unlock proximity is not supported by this credential. |
-
-```kotlin
-val seamSDK = SeamSDK.getInstance()
-
-// Start collecting unlock events before calling unlock
-coroutineScope.launch {
-    seamSDK.unlockStatus.collect { event ->
-        when (event) {
-            is SeamUnlockEvent.ScanningStarted -> { /* handle scanning started */ }
-            is SeamUnlockEvent.AccessGranted -> { /* handle access granted */ }
-            is SeamUnlockEvent.Timeout -> { /* handle timeout */ }
-            is SeamUnlockEvent.ReaderError -> { /* handle reader error */ }
-        }
-    }
-}
-
-// Perform unlock
-try {
-    seamSDK.unlock(
-        credentialId = credential.id!!,
-        unlockProximity = UnlockProximity.TOUCH,
-        timeout = 30.seconds
-    )
-} catch (seamError: SeamError) {
-    when (seamError) {
-        is SeamError.ActivationRequired -> { /* SDK not activated */ }
-        is SeamError.CredentialErrors -> {
-            handleCredentialErrors(seamError.errors)
-        }
-        is SeamError.InitializationRequired -> { /* SDK not initialized */ }
-        is SeamError.IntegrationNotFound -> { /* provider not found */ }
-        is SeamError.InvalidCredentialId -> { /* bad credential ID */ }
-        else -> { /* handle other errors */ }
-    }
-}
-```
-
-**See also:** [`UnlockProximity`](/mobile-sdks/android/reference/unlock-proximity), [`SeamUnlockEvent`](/mobile-sdks/android/reference/seam-unlock-event), [`SeamError`](/mobile-sdks/android/reference/seam-error)
-
----
-
-### `listCredentials()`
-
-Returns the current credential list synchronously. If the SDK has not been initialized, returns an empty list.
-
-```kotlin
-fun listCredentials(): List<SeamCredential>
-```
-
-**Returns:** The current list of `SeamCredential` objects.
-
-```kotlin
-val credentials = seamSDK.listCredentials()
-```
-
----
-
-### `setUnlockEventListener(listener)`
-
-Registers a callback to receive unlock events as an alternative to collecting the `unlockStatus` StateFlow.
-
-```kotlin
-fun setUnlockEventListener(listener: (SeamUnlockEvent) -> Unit)
-```
-
-**Parameters**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `listener` | `(SeamUnlockEvent) -> Unit` | A lambda invoked for each unlock event. |
-
-```kotlin
-seamSDK.setUnlockEventListener { event ->
-    when (event) {
-        is SeamUnlockEvent.ScanningStarted -> showScanningUI()
-        is SeamUnlockEvent.AccessGranted -> showSuccessUI()
-        is SeamUnlockEvent.Timeout -> showTimeoutError()
-        is SeamUnlockEvent.ReaderError -> showReaderError(event.message)
-    }
-}
-```
-
----
-
-### `setCredentialsListener(listener)`
-
-Registers a callback to receive credential list updates as an alternative to collecting the `credentials` StateFlow.
-
-```kotlin
-fun setCredentialsListener(listener: (List<SeamCredential>) -> Unit)
-```
-
-**Parameters**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `listener` | `(List<SeamCredential>) -> Unit` | A lambda invoked whenever the credential list changes. |
-
-```kotlin
-seamSDK.setCredentialsListener { credentials ->
-    updateCredentialList(credentials)
-}
-```
-
----
-
-### `setNotification(notification)`
-
-Sets the foreground service notification used during unlock scanning. Required for Assa Abloy foreground scanning.
-
-```kotlin
-fun setNotification(notification: Notification)
-```
-
-**Parameters**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `notification` | `Notification` | The notification to display while the foreground service is running. |
-
-```kotlin
-val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-    .setContentTitle("Scanning for doors…")
-    .setSmallIcon(R.drawable.ic_lock)
-    .build()
-
-seamSDK.setNotification(notification)
-```
+- `SeamError.InitializationRequired` — if the SDK has not been initialized yet.
+- `SeamError.DeactivationInProgress` — if a deactivation is in progress.

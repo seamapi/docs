@@ -1,81 +1,68 @@
 ---
 title: 'SeamRequiredUserInteraction'
-description: 'Actions the user must take to resolve a SeamCredentialError.UserInteractionRequired error — OTP authorization, enabling internet or Bluetooth, or granting permissions.'
+description: 'A user interaction that is required to unlock a credential.'
 ---
 
-> **Interim hand-authored reference.** This page is authored directly from the Seam Android SDK public Kotlin sources. See the [reference overview](/mobile-sdks/android/reference/index) for context.
+> Auto-generated from the Seam Android SDK Kotlin sources. Do not edit by hand — see `mintlify-codegen/android-reference/`.
 
 ## Overview
 
-`SeamRequiredUserInteraction` is a `sealed class` that describes the specific action a user must take to resolve a `SeamCredentialError.UserInteractionRequired` error. Inspect the subtype to determine what to prompt the user to do.
-
 ```kotlin
-sealed class SeamRequiredUserInteraction {
-    data class CompleteOtpAuthorization(val otpUrl: URL) : SeamRequiredUserInteraction()
-    class EnableInternet : SeamRequiredUserInteraction()
-    class EnableBluetooth : SeamRequiredUserInteraction()
-    class GrantPermissions(val permissions: List<String>) : SeamRequiredUserInteraction()
-}
+sealed class SeamRequiredUserInteraction
 ```
+
+A user interaction that is required to unlock a credential. This can be one of the following:
+- `CompleteOtpAuthorization`: complete an OTP authorization to unlock the credential.
+- `EnableInternet`: enable internet to unlock the credential.
+- `EnableBluetooth`: enable Bluetooth to unlock the credential.
+- `GrantPermissions`: grant the required permissions to unlock the credential.
 
 ---
 
-## Subtypes
-
-| Subtype | Description |
-|---------|-------------|
-| `CompleteOtpAuthorization(val otpUrl: URL)` | The user must complete OTP authorization at the provided URL to unlock with this credential. Open `otpUrl` in a browser. |
-| `EnableInternet` | The user must enable internet connectivity on their device. |
-| `EnableBluetooth` | The user must enable Bluetooth on their device. |
-| `GrantPermissions(val permissions: List<String>)` | The user must grant one or more permissions to the app. The `permissions` list contains the Android permission strings that need to be granted. |
+## Cases
 
 ### `CompleteOtpAuthorization`
+
+Complete an OTP authorization to unlock with the credential. The user needs to go to
+`otpUrl` to complete the authorization.
 
 ```kotlin
 data class CompleteOtpAuthorization(val otpUrl: URL) : SeamRequiredUserInteraction()
 ```
 
-The user must visit `otpUrl` in a browser to complete a one-time-password authorization step. This is required by certain access control providers before their credentials can be used.
+**Parameters**
+
+| Parameter | Description |
+| --- | --- |
+| `otpUrl` | the URL to complete the OTP authorization |
+
+### `EnableInternet`
+
+Enable internet to unlock with the credential. The user needs to enable internet on their device.
+
+```kotlin
+class EnableInternet : SeamRequiredUserInteraction()
+```
+
+### `EnableBluetooth`
+
+Enable Bluetooth to unlock the credential. The user needs to enable Bluetooth on their device.
+
+```kotlin
+class EnableBluetooth : SeamRequiredUserInteraction()
+```
 
 ### `GrantPermissions`
+
+Grant the required permissions to unlock with the credential. The user needs to grant the
+required permissions on their device.
 
 ```kotlin
 class GrantPermissions(val permissions: List<String>) : SeamRequiredUserInteraction()
 ```
 
-The `permissions` list contains Android permission strings (for example, `"android.permission.BLUETOOTH_SCAN"`) that the app must request from the user via the standard Android permissions API.
+**Parameters**
 
----
-
-## Example
-
-```kotlin
-fun handleUserInteraction(interaction: SeamRequiredUserInteraction) {
-    when (interaction) {
-        is SeamRequiredUserInteraction.CompleteOtpAuthorization -> {
-            // Open the OTP URL in a browser or WebView
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(interaction.otpUrl.toString()))
-            startActivity(intent)
-        }
-        is SeamRequiredUserInteraction.EnableInternet -> {
-            // Prompt the user to enable Wi-Fi or mobile data
-            showEnableInternetDialog()
-        }
-        is SeamRequiredUserInteraction.EnableBluetooth -> {
-            // Prompt the user to enable Bluetooth
-            val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT)
-        }
-        is SeamRequiredUserInteraction.GrantPermissions -> {
-            // Request the required permissions from the user
-            ActivityCompat.requestPermissions(
-                this,
-                interaction.permissions.toTypedArray(),
-                REQUEST_PERMISSIONS
-            )
-        }
-    }
-}
-```
-
-**See also:** [`SeamCredentialError.UserInteractionRequired`](/mobile-sdks/android/reference/seam-credential-error)
+| Parameter | Description |
+| --- | --- |
+| `permissions` | the permissions that need to be granted |

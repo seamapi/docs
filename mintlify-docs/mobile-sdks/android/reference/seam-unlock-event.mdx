@@ -1,85 +1,50 @@
 ---
 title: 'SeamUnlockEvent'
-description: 'Events emitted to the unlockStatus StateFlow as an unlock operation progresses from scanning through access granted, timeout, or reader error.'
+description: 'Events related to the co.seam.core.api.SeamSDK.unlock operation.'
 ---
 
-> **Interim hand-authored reference.** This page is authored directly from the Seam Android SDK public Kotlin sources. See the [reference overview](/mobile-sdks/android/reference/index) for context.
+> Auto-generated from the Seam Android SDK Kotlin sources. Do not edit by hand — see `mintlify-codegen/android-reference/`.
 
 ## Overview
 
-`SeamUnlockEvent` is a `sealed class` representing the stages of a door unlock operation. As `SeamSDK.getInstance().unlock()` progresses, the SDK emits these events to the `unlockStatus` StateFlow.
-
 ```kotlin
-sealed class SeamUnlockEvent {
-    class ScanningStarted : SeamUnlockEvent()
-    class AccessGranted : SeamUnlockEvent()
-    class Timeout : SeamUnlockEvent()
-    class ReaderError(val message: String) : SeamUnlockEvent()
-}
+sealed class SeamUnlockEvent
 ```
 
-Subscribe to `unlockStatus` **before** calling `unlock()` to ensure no events are missed.
+Events related to the `co.seam.core.api.SeamSDK.unlock` operation.
 
 ---
 
-## Subtypes
+## Cases
 
-| Subtype | Description |
-|---------|-------------|
-| `ScanningStarted` | The unlock operation has started scanning for a reader. |
-| `AccessGranted` | The reader granted access; entry is allowed. |
-| `Timeout` | The unlock operation timed out before completing. |
-| `ReaderError(val message: String)` | An error occurred while communicating with the reader. The `message` property contains diagnostic details. |
+### `ScanningStarted`
+
+The unlock operation has started scanning.
+
+```kotlin
+class ScanningStarted : SeamUnlockEvent()
+```
+
+### `AccessGranted`
+
+The unlock operation has been granted access.
+
+```kotlin
+class AccessGranted : SeamUnlockEvent()
+```
+
+### `Timeout`
+
+The unlock operation has timed out.
+
+```kotlin
+class Timeout : SeamUnlockEvent()
+```
 
 ### `ReaderError`
+
+An error has occurred while communicating with the reader.
 
 ```kotlin
 class ReaderError(val message: String) : SeamUnlockEvent()
 ```
-
-Emitted when the SDK encounters an error communicating with the reader hardware. The `message` property contains diagnostic details intended for developers — do not display it directly to end users.
-
----
-
-## Example
-
-```kotlin
-val seamSDK = SeamSDK.getInstance()
-
-// Subscribe before calling unlock
-lifecycleScope.launch {
-    seamSDK.unlockStatus.collect { event ->
-        when (event) {
-            is SeamUnlockEvent.ScanningStarted -> {
-                showScanningSpinner()
-            }
-            is SeamUnlockEvent.AccessGranted -> {
-                hideScanningSpinner()
-                showSuccessBanner()
-            }
-            is SeamUnlockEvent.Timeout -> {
-                hideScanningSpinner()
-                showTimeoutError()
-            }
-            is SeamUnlockEvent.ReaderError -> {
-                hideScanningSpinner()
-                // event.message contains diagnostic details
-                showReaderError()
-            }
-        }
-    }
-}
-
-// Then perform the unlock
-try {
-    seamSDK.unlock(
-        credentialId = credential.id!!,
-        unlockProximity = UnlockProximity.TOUCH
-    )
-} catch (seamError: SeamError) {
-    // Handle synchronous errors thrown before scanning begins
-    handleUnlockError(seamError)
-}
-```
-
-**See also:** [`SeamSDK.unlock()`](/mobile-sdks/android/reference/seam-sdk), [`UnlockProximity`](/mobile-sdks/android/reference/unlock-proximity)

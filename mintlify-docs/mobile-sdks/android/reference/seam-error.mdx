@@ -1,115 +1,133 @@
 ---
 title: 'SeamError'
-description: 'Errors thrown by SeamSDK methods for initialization, activation, credential, and network failures.'
+description: 'Base class for all Seam errors.'
 ---
 
-> **Interim hand-authored reference.** This page is authored directly from the Seam Android SDK public Kotlin sources. See the [reference overview](/mobile-sdks/android/reference/index) for context.
+> Auto-generated from the Seam Android SDK Kotlin sources. Do not edit by hand — see `mintlify-codegen/android-reference/`.
 
 ## Overview
-
-`SeamError` is a `sealed class` that extends `Exception`. It is the base class for all errors thrown by `SeamSDK`. Catch `SeamError` in a `try/catch` block when calling any SDK method.
 
 ```kotlin
 sealed class SeamError : Exception()
 ```
 
+Base class for all Seam errors.
+
+These errors are thrown by Seam classes and interfaces. They are all subclasses of
+`SeamError`.
+
 ---
 
-## Subtypes
+## Cases
 
-| Subtype | Description |
-|---------|-------------|
-| `InitializationRequired` | `SeamSDK.initialize()` has not been called. Call it before using any other SDK method. |
-| `ActivationRequired` | The SDK has not been activated. Call `SeamSDK.getInstance().activate()` first. |
-| `IntegrationNotFound` | No provider integration was found for the specified credential. Typically thrown when the integration package (Assa Abloy, Latch, Salto, etc.) is not included in the app. |
-| `AlreadyInitialized` | `SeamSDK.initialize()` was called while the SDK is already initialized. Call `deactivate()` first to reinitialize. |
-| `DeactivationInProgress` | A deactivation is already in progress. Wait for it to complete before calling other methods. |
-| `InvalidCredentialId` | The credential ID passed to `unlock()` is not recognized by the SDK. |
-| `CredentialErrors(val errors: List<SeamCredentialError>)` | The credential has one or more unresolved errors. Inspect the `errors` list before attempting to unlock. |
-| `InternetConnectionRequired` | An internet connection is required for this operation. |
-| `InvalidClientSessionToken(override val message: String)` | The client session token passed to `initialize()` is malformed or invalid. |
-| `InvalidUnlockProximity` | The `unlockProximity` passed to `unlock()` is not supported by the credential. |
-| `Unknown` | An unexpected or unclassified error occurred. |
+### `InitializationRequired`
+
+The SDK has not been initialized. Call `SeamSDK.initialize` first. Usually
+thrown when trying to call a method that requires the SDK to be initialized,
+such as `SeamSDK.unlock` or `SeamSDK.activate`.
+
+```kotlin
+class InitializationRequired : SeamError()
+```
+
+### `ActivationRequired`
+
+The app user's phone has not been activated. Call `SeamSDK.activate` first.
+
+```kotlin
+class ActivationRequired : SeamError()
+```
+
+### `IntegrationNotFound`
+
+No integration found for the specified credential. Usually thrown when trying to
+unlock a credential that doesn't have an integration (Assa Abloy, Latch, Salto, etc)
+associated with it.
+
+```kotlin
+class IntegrationNotFound : SeamError()
+```
+
+### `AlreadyInitialized`
+
+The SDK is already initialized. Thrown when trying to call
+`SeamSDK.initialize` multiple times. You can call `SeamSDK.deactivate` first.
+
+```kotlin
+class AlreadyInitialized : SeamError()
+```
+
+### `DeactivationInProgress`
+
+A deactivation is already in progress. Throw when trying to call
+`SeamSDK.deactivate` multiple times.
+
+```kotlin
+class DeactivationInProgress : SeamError()
+```
+
+### `InvalidCredentialId`
+
+The credential id is invalid. This error is usually thrown when trying to unlock
+with a credential that is invalid, or not recognized by the SDK.
+
+```kotlin
+class InvalidCredentialId : SeamError()
+```
 
 ### `CredentialErrors`
+
+There are multiple credential errors. Thrown when trying to unlock with a credential.
+Check the `errors` list for more details.
 
 ```kotlin
 class CredentialErrors(val errors: List<SeamCredentialError>) : SeamError()
 ```
 
-Thrown by `unlock()` when the target credential has one or more active errors that prevent unlocking. The `errors` list contains `SeamCredentialError` instances in priority order.
+**Parameters**
 
-**See also:** [`SeamCredentialError`](/mobile-sdks/android/reference/seam-credential-error)
+| Parameter | Description |
+| --- | --- |
+| `errors` | the list of errors |
+
+### `InternetConnectionRequired`
+
+The device does not have an internet connection. Usually thrown when trying to
+call a method that requires an internet connection, such as `SeamSDK.unlock`,
+`SeamSDK.initialize`, `SeamSDK.refresh`, `SeamSDK.activate` etc.
+
+```kotlin
+class InternetConnectionRequired : SeamError()
+```
 
 ### `InvalidClientSessionToken`
 
+The client session token is invalid. Trhown when trying to call
+`SeamSDK.initialize` with an invalid client session token.
+
 ```kotlin
 class InvalidClientSessionToken(
-    override val message: String = "Invalid client session token"
-) : SeamError()
 ```
 
-Thrown by `initialize()` when the provided token is malformed. The `message` property contains a human-readable description of the problem.
+**Parameters**
 
----
+| Parameter | Description |
+| --- | --- |
+| `message` | the error message |
 
-## Example — Handling `unlock()` errors
+### `InvalidUnlockProximity`
+
+The unlock proximity is invalid. Thrown when trying to unlock with an invalid unlock
+proximity.
 
 ```kotlin
-try {
-    SeamSDK.getInstance().unlock(
-        credentialId = credential.id!!,
-        unlockProximity = UnlockProximity.TOUCH
-    )
-} catch (seamError: SeamError) {
-    when (seamError) {
-        is SeamError.InitializationRequired -> {
-            // SDK not initialized — call SeamSDK.initialize() first
-        }
-        is SeamError.ActivationRequired -> {
-            // SDK not activated — call seamSDK.activate() first
-        }
-        is SeamError.IntegrationNotFound -> {
-            // Provider SDK (e.g. Assa Abloy, Latch, Salto) not found
-            // Check that the correct integration module is included
-        }
-        is SeamError.InvalidCredentialId -> {
-            // The credential ID is not recognized
-        }
-        is SeamError.CredentialErrors -> {
-            // Credential has unresolved errors — inspect seamError.errors
-            seamError.errors.forEach { credentialError ->
-                when (credentialError) {
-                    is SeamCredentialError.Expired -> {
-                        // credential is expired
-                    }
-                    is SeamCredentialError.Loading -> {
-                        // credential not fully loaded yet — retry shortly
-                    }
-                    is SeamCredentialError.UserInteractionRequired -> {
-                        handleUserInteraction(credentialError.interaction)
-                    }
-                    is SeamCredentialError.Unknown -> {
-                        // unknown credential error
-                    }
-                }
-            }
-        }
-        is SeamError.InvalidUnlockProximity -> {
-            // unlockProximity not supported by this credential
-            // Check credential.supportedUnlockProximities
-        }
-        is SeamError.InternetConnectionRequired -> {
-            // No internet — offline unlock may not be possible for this credential
-        }
-        is SeamError.Unknown -> {
-            // Unexpected error
-        }
-        else -> {
-            // Handle any remaining cases
-        }
-    }
-}
+class InvalidUnlockProximity : SeamError()
 ```
 
-**See also:** [`SeamCredentialError`](/mobile-sdks/android/reference/seam-credential-error), [`SeamSDK`](/mobile-sdks/android/reference/seam-sdk)
+### `Unknown`
+
+An unknown error occurred.
+
+```kotlin
+class Unknown : SeamError()
+```
