@@ -236,6 +236,9 @@ These items are intentionally undocumented.
     - `connected_account_id`: Only used internally.
     - `parent_space_id`: Only used internally.
     - `parent_space_key`: Only used internally.
+- `/spaces/update`
+    - `parent_space_id`: Only used internally.
+    - `parent_space_key`: Only used internally.
 - `/thermostats/cool`
     - `sync`: Only used internally.
 - `/thermostats/heat`
