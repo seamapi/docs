@@ -49544,7 +49544,8 @@
                 "hostaway",
                 "guesty",
                 "acuity_scheduling",
-                "omnitec"
+                "omnitec",
+                "slack"
               ],
               "type": "string"
             }
@@ -50113,7 +50114,8 @@
                       "hostaway",
                       "guesty",
                       "acuity_scheduling",
-                      "omnitec"
+                      "omnitec",
+                      "slack"
                     ],
                     "type": "string"
                   },
@@ -52929,7 +52931,8 @@
                 "hostaway",
                 "guesty",
                 "acuity_scheduling",
-                "omnitec"
+                "omnitec",
+                "slack"
               ],
               "type": "string"
             }
@@ -53496,7 +53499,8 @@
                       "hostaway",
                       "guesty",
                       "acuity_scheduling",
-                      "omnitec"
+                      "omnitec",
+                      "slack"
                     ],
                     "type": "string"
                   },
