@@ -1054,9 +1054,105 @@ List of general spaces or areas.
 
 <details>
 
+<summary><b><code>customer_data</code></b> <i>Object</i></summary>
+
+Reservation/stay-related defaults for the space (time zone, default check-in/out times, address).
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>customer_data.address</code></b> <i>String</i></summary>
+
+Postal address for the space.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>customer_data.default_checkin_time</code></b> <i>String</i></summary>
+
+Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>customer_data.default_checkout_time</code></b> <i>String</i></summary>
+
+Default check-out time for reservations at the space, as HH:mm or HH:mm:ss.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>customer_data.time_zone</code></b> <i>String</i></summary>
+
+IANA time zone for the space, e.g. America/Los_Angeles.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>duration_minutes</code></b> <i>Number</i></summary>
 
 Default duration of this space in minutes, when the space represents a fixed-length bookable slot (e.g. an appointment type). Used to interpret reservations booked against this space.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>geolocation</code></b> <i>Object</i></summary>
+
+Geographic coordinates (latitude and longitude) of the space.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>geolocation.latitude</code></b> <i>Number</i></summary>
+
+Latitude of the space, in decimal degrees.
+
+</details>
+
+---
+
+
+
+<details>
+
+<summary><b><code>geolocation.longitude</code></b> <i>Number</i></summary>
+
+Longitude of the space, in decimal degrees.
 
 </details>
 

@@ -36,6 +36,9 @@ Represents a space that is a logical grouping of devices and entrances. You can 
 <ResponseField name="customer_data" type="Object">
   Reservation/stay-related defaults for the space.
   <Expandable title="properties">
+    <ResponseField name="address" type="String">
+      Postal address for the space.
+    </ResponseField>
     <ResponseField name="default_checkin_time" type="String">
       Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.
     </ResponseField>
@@ -58,6 +61,18 @@ Represents a space that is a logical grouping of devices and entrances. You can 
 
 <ResponseField name="display_name" type="String">
   Display name for the space.
+</ResponseField>
+
+<ResponseField name="geolocation" type="Object">
+  Geographic coordinates (latitude and longitude) of the space.
+  <Expandable title="properties">
+    <ResponseField name="latitude" type="number">
+      Latitude of the space, in decimal degrees.
+    </ResponseField>
+    <ResponseField name="longitude" type="number">
+      Longitude of the space, in decimal degrees.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="name" type="String">

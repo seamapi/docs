@@ -56,6 +56,10 @@ Reservation/stay-related defaults for the space.
 <details>
   <summary>Child Properties</summary>
 
+  - <strong><code>address</code></strong> <i>String</i>
+  
+    Postal address for the space.
+
   - <strong><code>default_checkin_time</code></strong> <i>String</i>
   
     Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.
@@ -96,6 +100,27 @@ Display name for the space.
 
 
 
+
+---
+
+**`geolocation`** *Object*
+
+Geographic coordinates (latitude and longitude) of the space.
+
+
+
+<details>
+  <summary>Child Properties</summary>
+
+  - <strong><code>latitude</code></strong> <i>Number</i>
+  
+    Latitude of the space, in decimal degrees.
+
+  - <strong><code>longitude</code></strong> <i>Number</i>
+  
+    Longitude of the space, in decimal degrees.
+
+</details>
 
 ---
 

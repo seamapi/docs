@@ -191,6 +191,18 @@ Reservation/stay-related defaults for the space. Only the keys you provide are u
 
 <details>
 
+<summary><b><code>address</code></b> <i>String</i></summary>
+
+Postal address for the space.
+
+</details>
+
+---
+
+
+
+<details>
+
 <summary><b><code>default_checkin_time</code></b> <i>String</i></summary>
 
 Default check-in time for reservations at the space, as HH:mm or HH:mm:ss.
