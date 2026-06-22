@@ -44287,7 +44287,8 @@
                         "omnitec",
                         "yale_access",
                         "hid_cm",
-                        "google_nest"
+                        "google_nest",
+                        "slack"
                       ],
                       "type": "string"
                     },

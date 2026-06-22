@@ -595,6 +595,7 @@ Possible enum values:
 - <code>yale_access</code>
 - <code>hid_cm</code>
 - <code>google_nest</code>
+- <code>slack</code>
 </details>
 
 ---
