@@ -5058,6 +5058,12 @@
           },
           "customer_portal_theme": {
             "properties": {
+              "font_family": {
+                "type": "string"
+              },
+              "mono_font_family": {
+                "type": "string"
+              },
               "primary_color": {
                 "type": "string"
               },
