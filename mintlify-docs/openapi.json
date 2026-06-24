@@ -46666,7 +46666,12 @@
                           "pt-PT",
                           "fr-FR",
                           "it-IT",
-                          "es-ES"
+                          "es-ES",
+                          "de-DE",
+                          "nl-NL",
+                          "el-GR",
+                          "pl-PL",
+                          "ru-RU"
                         ],
                         "type": "string"
                       },
