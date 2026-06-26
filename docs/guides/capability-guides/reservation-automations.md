@@ -154,6 +154,72 @@ curl -X POST \
 The `push_data` [API reference](https://docs.seam.co/latest/api/customers/push_data) also documents `access_grants` and `bookings` as alternative top-level keys. This guide uses `reservations`, which is the recommended key for short-term booking workflows. If you use `access_grants` instead, use `access_grant_keys` (not `reservation_keys`) when calling [`delete_data`](https://docs.seam.co/latest/api/customers/delete_data).
 {% endhint %}
 
+#### Update a reservation
+
+To update an existing reservation, call `push_data` again with the **same `reservation_key`** and the new values. Seam diffs the incoming data against what it already has and reconfigures only what changed—you do not need to delete and recreate the reservation for routine edits.
+
+**Change the reservation time**
+
+When a guest extends their stay or a booking moves, send the updated `starts_at` and `ends_at`. Seam shifts the access window and reissues credentials as needed.
+
+```bash
+curl -X POST \
+  https://connect.getseam.com/customers/push_data \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "customer_key": "sample_customer_key",
+    "reservations": [
+      {
+        "reservation_key": "res_456",
+        "user_identity_key": "user_789",
+        "starts_at": "2025-08-12T19:47:27.490Z",
+        "ends_at": "2025-08-16T19:47:27.490Z",
+        "space_keys": ["unit-101-key"]
+      }
+    ]
+  }'
+```
+
+**Change the assigned space**
+
+When a guest is moved to a different unit, send the new `space_keys`. Seam revokes access on the previous space and issues access on the new one.
+
+```bash
+curl -X POST \
+  https://connect.getseam.com/customers/push_data \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "customer_key": "sample_customer_key",
+    "reservations": [
+      {
+        "reservation_key": "res_456",
+        "user_identity_key": "user_789",
+        "starts_at": "2025-08-12T19:47:27.490Z",
+        "ends_at": "2025-08-14T19:47:27.490Z",
+        "space_keys": ["unit-202-key"]
+      }
+    ]
+  }'
+```
+
+#### Choose a stable `reservation_key`
+
+The `reservation_key` is how Seam tells an update apart from a brand-new reservation. Use a value that stays constant for the life of the booking—typically your system's own reservation or booking ID.
+
+Do **not** derive the key from underlying resources such as a space, room number, device ID, or guest. If you do, the key changes whenever that resource changes, and Seam treats the next `push_data` as a different reservation: it creates a new one and leaves the original active, so two sets of credentials end up on the hardware.
+
+{% hint style="warning" %}
+If the `reservation_key` itself must change—for example, because it was built from data that is no longer stable—the only safe path is to [`delete_data`](https://docs.seam.co/latest/api/customers/delete_data) with the **old** key first, then `push_data` with the new key. This rolls back the original credentials before the new ones are issued and prevents orphaned access from lingering on the device.
+{% endhint %}
+
+#### Push only confirmed reservations
+
+Most booking systems move a reservation through several intermediate states—_inquiry_, _pending_, _tentative_, _on hold_—before it is actually confirmed. Send data to Seam only once the reservation is confirmed and access is genuinely needed.
+
+Every `push_data` call that changes a reservation can translate into a physical operation on a lock, keypad, or access control system. Seam handles this synchronization reliably, but each command sent to hardware is an opportunity for a device to be offline, rate-limited, or slow to respond. Pushing speculative or short-lived states multiplies those commands for bookings that may never need access, increasing both load and the chance of an avoidable error. Waiting until a reservation is confirmed keeps the data you send aligned with the access you actually intend to grant.
+
 ***
 
 ### 4. Use webhooks to listen for updates
