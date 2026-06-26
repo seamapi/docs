@@ -14859,6 +14859,11 @@
                 "format": "uuid",
                 "type": "string"
               },
+              "device_name": {
+                "description": "Name of the deleted device, captured at deletion time. The device record no longer exists when this event fires, so the name is preserved here. Null when the device had no resolvable name.",
+                "nullable": true,
+                "type": "string"
+              },
               "event_id": {
                 "description": "ID of the event.",
                 "format": "uuid",

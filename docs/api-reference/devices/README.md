@@ -5909,6 +5909,10 @@ A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 
   ID of the affected device.
 
+<strong><code>device_name</code></strong> <i>String</i>
+
+  Name of the deleted device, captured at deletion time. The device record no longer exists when this event fires, so the name is preserved here. Null when the device had no resolvable name.
+
 <strong><code>event_id</code></strong> <i>UUID</i>
 
   ID of the event.
