@@ -119,10 +119,6 @@ When enabled, multiple guests can share the same email address or phone number. 
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-03-31 at 23.46.11.png" alt=""><figcaption></figcaption></figure>
 
-#### When a staff member is created
-
-Seam creates access for the staff member to the property (space) associated with that staff member. Use this rule to automatically provision access for on-site staff—such as housekeeping or maintenance—alongside guest access. The same access method settings above determine which credentials are issued.
-
 ### 3. Push reservation data
 
 Use the `push_data` endpoint to send customer, user, and reservation data to Seam. Automations use this information to configure devices at the right times.
