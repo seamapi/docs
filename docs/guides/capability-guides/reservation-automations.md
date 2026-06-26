@@ -214,6 +214,40 @@ Do **not** derive the key from underlying resources such as a space, room number
 If the `reservation_key` itself must change—for example, because it was built from data that is no longer stable—the only safe path is to [`delete_data`](https://docs.seam.co/latest/api/customers/delete_data) with the **old** key first, then `push_data` with the new key. This rolls back the original credentials before the new ones are issued and prevents orphaned access from lingering on the device.
 {% endhint %}
 
+#### Bookings that span multiple rooms
+
+Some booking systems model a single booking as a parent reservation with multiple **sub-reservations**, where each sub-reservation occupies its own room. Don't collapse these into one `reservation_key` with several `space_keys`—the sub-reservations can be added, moved, or canceled independently, and a single key cannot track them apart.
+
+Instead, push **one reservation per sub-reservation**, and build each `reservation_key` from your two stable identifiers, `<reservation_id>_<sub_reservation_id>`, with that sub-reservation's own space:
+
+```bash
+curl -X POST \
+  https://connect.getseam.com/customers/push_data \
+  -H "Authorization: Bearer $SEAM_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "customer_key": "sample_customer_key",
+    "reservations": [
+      {
+        "reservation_key": "res_456_sub_1",
+        "user_identity_key": "user_789",
+        "starts_at": "2025-08-12T19:47:27.490Z",
+        "ends_at": "2025-08-14T19:47:27.490Z",
+        "space_keys": ["unit-101-key"]
+      },
+      {
+        "reservation_key": "res_456_sub_2",
+        "user_identity_key": "user_789",
+        "starts_at": "2025-08-12T19:47:27.490Z",
+        "ends_at": "2025-08-14T19:47:27.490Z",
+        "space_keys": ["unit-102-key"]
+      }
+    ]
+  }'
+```
+
+This keeps each room's access independently addressable: you can update or `delete_data` a single sub-reservation without touching the others. Both parts of the key remain stable booking identifiers, so this is consistent with the rule above—you are combining IDs, not deriving the key from the room itself.
+
 #### Push only confirmed reservations
 
 Most booking systems move a reservation through several intermediate states—_inquiry_, _pending_, _tentative_, _on hold_—before it is actually confirmed. Send data to Seam only once the reservation is confirmed and access is genuinely needed.
