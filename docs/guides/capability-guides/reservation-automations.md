@@ -63,18 +63,22 @@ The `space_key` is what you reference in `push_data` reservations. Without it, `
 
 ***
 
-### 2. Customize automation settings
+### 2. Configure automation rules
 
-After enabling automations, you can configure how access credentials are issued for each reservation. These settings are available in **Console** > **Developer** > **Automations** under the access automation section.
+Automation rules control what access Seam creates and when. Configure them in **Console** > **Developer** > **Automations**. Each rule is tied to an event—when a reservation is created, or when a staff member is created—and defines the access Seam issues in response.
 
-**Access methods**
+#### When a reservation is created
 
-Choose which credential types to issue when a reservation is created. You must enable at least one.
+Seam creates access for the guest to the property (space) associated with the reservation, valid for the duration of the reservation. The settings below control which credentials are issued and how.
+
+**Access methods to create (in order of preference)**
+
+Choose which credential types to issue. You must enable at least one. Drag the enabled methods to set their order of preference: for each door, Seam works down the list and creates access using the methods that door supports.
 
 | Method           | Description                                   |
 | ---------------- | --------------------------------------------- |
-| **PIN code**     | A numeric code the guest enters on a keypad.  |
 | **Plastic card** | A physical card encoded for the lock.         |
+| **PIN code**     | A numeric code the guest enters on a keypad.  |
 | **Mobile key**   | A digital key delivered to the guest's phone. |
 
 **Access method creation strategy**
@@ -114,6 +118,10 @@ The derived code is a best-effort preference, not a guarantee. If the code confl
 When enabled, multiple guests can share the same email address or phone number. This is useful when the same person has multiple reservations or holds different roles.
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-03-31 at 23.46.11.png" alt=""><figcaption></figcaption></figure>
+
+#### When a staff member is created
+
+Seam creates access for the staff member to the property (space) associated with that staff member. Use this rule to automatically provision access for on-site staff—such as housekeeping or maintenance—alongside guest access. The same access method settings above determine which credentials are issued.
 
 ### 3. Push reservation data
 
