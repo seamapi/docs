@@ -309,14 +309,29 @@ async function loadSymbolJson(
 // renderTypePage
 // ---------------------------------------------------------------------------
 
+/** Capitalize a DocC symbolKind ("class" -> "Class") for display. */
+function kindLabel(symbolKind: string): string {
+  return symbolKind.charAt(0).toUpperCase() + symbolKind.slice(1)
+}
+
+/**
+ * The symbol's abstract, or a kind-based label when DocC has none — so pages
+ * and index cards never ship an empty description.
+ */
+function descriptionFor(symbol: DoccSymbol): string {
+  return symbol.abstract || `${kindLabel(symbol.symbolKind)} reference`
+}
+
 export function renderTypePage(symbol: DoccSymbol): GeneratedPage {
   const slug = toSlug(symbol.title)
   const outputPath = `mobile-sdks/ios/reference/${slug}`
 
+  const description = descriptionFor(symbol)
+
   const lines: string[] = [
     `---`,
     `title: '${symbol.title}'`,
-    `description: '${symbol.abstract.replace(/'/g, "\\'")}'`,
+    `description: '${description.replace(/'/g, "\\'")}'`,
     `---`,
     ``,
     `## Overview`,
@@ -369,14 +384,10 @@ function renderIndexPage(symbols: DoccSymbol[]): string {
     .sort((a, b) => a.title.localeCompare(b.title))
     .map((s) => {
       const slug = toSlug(s.title)
-      const kindLabel =
-        s.symbolKind.charAt(0).toUpperCase() + s.symbolKind.slice(1)
-      const desc = s.abstract
-        ? s.abstract.replace(/'/g, "\\'")
-        : `${kindLabel} reference`
+      const desc = descriptionFor(s).replace(/'/g, "\\'")
       return [
         `  <Card title="${s.title}" icon="swift" href="/mobile-sdks/ios/reference/${slug}">`,
-        `    ${kindLabel} — ${desc}`,
+        `    ${kindLabel(s.symbolKind)} — ${desc}`,
         `  </Card>`,
       ].join('\n')
     })
@@ -465,11 +476,16 @@ function blocksToText(blocks: RawBlock[]): string {
 }
 
 function toSlug(name: string): string {
-  return name
-    .replace(/([A-Z])/g, '-$1')
-    .toLowerCase()
-    .replace(/^-/, '')
-    .replace(/-+/g, '-')
+  return (
+    name
+      // Split an acronym run from a following CapWord: "SDKService" -> "SDK-Service".
+      .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+      // Split a lowercase/digit from a following uppercase: "SeamSDK" -> "Seam-SDK".
+      .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+      .toLowerCase()
+      .replace(/^-/, '')
+      .replace(/-+/g, '-')
+  )
 }
 
 function resolveArchivePath(): string | null {
