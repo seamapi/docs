@@ -5087,6 +5087,15 @@
             "format": "uri",
             "type": "string"
           },
+          "message_overrides": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": "object"
+          },
           "name": {
             "nullable": true,
             "type": "string"

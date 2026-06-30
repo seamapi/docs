@@ -304,6 +304,7 @@ Items that are intentionally undocumented are not included in this section.
 - `customization_profile.customer_portal_theme`
 - `customization_profile.customization_profile_id`
 - `customization_profile.logo_url`
+- `customization_profile.message_overrides`
 - `customization_profile.name`
 - `customization_profile.primary_color`
 - `customization_profile.secondary_color`
@@ -526,6 +527,7 @@ Items that are intentionally undocumented are not included in this section.
     - `search`
 - `/workspaces/customization_profiles/create`
     - `customer_portal_theme`
+    - `message_overrides`
     - `name`
     - `primary_color`
     - `secondary_color`
@@ -534,6 +536,7 @@ Items that are intentionally undocumented are not included in this section.
 - `/workspaces/customization_profiles/update`
     - `customer_portal_theme`
     - `customization_profile_id`
+    - `message_overrides`
     - `name`
     - `primary_color`
     - `secondary_color`
