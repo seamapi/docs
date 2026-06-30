@@ -208,86 +208,6 @@ Indicates a provider-specific issue that prevents the access code from being set
   
 </details>
 <details>
-<summary><code>smartthings_failed_to_set_access_code</code></summary>
-
-Failed to set code on SmartThings device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>smartthings_failed_to_set_access_code</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>smartthings_failed_to_set_after_multiple_retries</code></summary>
-
-Failed to set code after multiple retries.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>smartthings_failed_to_set_after_multiple_retries</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>failed_to_set_on_device</code></summary>
 
 Failed to set code on device.
@@ -544,86 +464,6 @@ Indicates that the provider cannot confirm whether the access code was set or re
   
 </details>
 <details>
-<summary><code>kwikset_unable_to_confirm_code</code></summary>
-
-Unable to confirm that the access code is set on Kwikset device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>kwikset_unable_to_confirm_code</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>kwikset_unable_to_confirm_deletion</code></summary>
-
-Unable to confirm the deletion of the access code on Kwikset device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>kwikset_unable_to_confirm_deletion</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>code_modified_external_to_seam</code></summary>
 
 Code was modified or removed externally after Seam successfully set it on the device.
@@ -694,126 +534,6 @@ Code was modified or removed externally after Seam successfully set it on the de
   - <strong><code>to</code></strong> <i>String</i>
   
     The new value of the field.
-  
-  
-</details>
-<details>
-<summary><code>august_lock_invalid_code_length</code></summary>
-
-Invalid code length for August lock.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>august_lock_invalid_code_length</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>august_lock_missing_keypad</code></summary>
-
-August lock is missing a keypad.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>august_lock_missing_keypad</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>august_lock_temporarily_offline</code></summary>
-
-August lock is temporarily offline.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>august_lock_temporarily_offline</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
   
   
 </details>
@@ -898,126 +618,6 @@ Salto site user is not subscribed.
   
 </details>
 <details>
-<summary><code>wyze_duplicate_code_name</code></summary>
-
-Duplicate access code name detected.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>wyze_duplicate_code_name</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>wyze_potential_duplicate_code</code></summary>
-
-Potential duplicate access code detected.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>wyze_potential_duplicate_code</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>dormakaba_oracode_invalid_time_range</code></summary>
-
-No Dormakaba Oracode user levels configured for the requested time range.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>dormakaba_oracode_invalid_time_range</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
 <summary><code>insufficient_permissions</code></summary>
 
 Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.
@@ -1038,46 +638,6 @@ Admin role required—insufficient permissions to manage PINs on this device. Pl
   Enum values:
   
   - <code>insufficient_permissions</code>
-  
-  
-  ---
-
-  **`is_access_code_error`** *Boolean*
-  
-  
-  Indicates that this is an access code error.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
-  
-  
-</details>
-<details>
-<summary><code>keynest_unsupported_third_party_locker</code></summary>
-
-KeyNest locker is not supported.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the error.
-  
-  
-  ---
-
-  **`error_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>keynest_unsupported_third_party_locker</code>
   
   
   ---
@@ -1912,38 +1472,6 @@ Indicates a provider-specific issue that may affect the access code. Check the w
   
 </details>
 <details>
-<summary><code>smartthings_failed_to_set_access_code</code></summary>
-
-Failed to set code on SmartThings device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>smartthings_failed_to_set_access_code</code>
-  
-  
-</details>
-<details>
 <summary><code>schlage_detected_duplicate</code></summary>
 
 Duplicate access code detected.
@@ -1972,38 +1500,6 @@ Duplicate access code detected.
   Enum values:
   
   - <code>schlage_detected_duplicate</code>
-  
-  
-</details>
-<details>
-<summary><code>schlage_creation_outage</code></summary>
-
-Received an error when attempting to create this code.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>schlage_creation_outage</code>
   
   
 </details>
@@ -2202,38 +1698,6 @@ Third-party integration detected that may cause access codes to fail.
   
 </details>
 <details>
-<summary><code>august_lock_temporarily_offline</code></summary>
-
-August lock is temporarily offline.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>august_lock_temporarily_offline</code>
-  
-  
-</details>
-<details>
 <summary><code>igloo_algopin_must_be_used_within_24_hours</code></summary>
 
 Algopins must be used within 24 hours.
@@ -2298,38 +1762,6 @@ Management was transferred to another workspace.
   
 </details>
 <details>
-<summary><code>kwikset_unable_to_confirm_code</code></summary>
-
-Unable to confirm that the access code is set on Kwikset device.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>kwikset_unable_to_confirm_code</code>
-  
-  
-</details>
-<details>
 <summary><code>access_code_inactive</code></summary>
 
 Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
@@ -2358,38 +1790,6 @@ Indicates that the access code is disabled or inactive on the device. The code e
   Enum values:
   
   - <code>access_code_inactive</code>
-  
-  
-</details>
-<details>
-<summary><code>ultraloq_access_code_disabled</code></summary>
-
-Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.
-
-  **`created_at`** *Datetime*
-  
-  
-  Date and time at which Seam created the warning.
-  
-  
-  ---
-
-  **`message`** *String*
-  
-  
-  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
-  
-  
-  ---
-
-  **`warning_code`** *Enum*
-  
-  
-  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
-  
-  Enum values:
-  
-  - <code>ultraloq_access_code_disabled</code>
   
   
 </details>
@@ -2490,33 +1890,15 @@ Indicates that the account is disconnected.
 
 ---
 
-**`august_lock_invalid_code_length`**
-
-Invalid code length for August lock.
-
----
-
 **`august_lock_missing_bridge`**
 
 Indicates that the lock is not connected to a bridge.
 
 ---
 
-**`august_lock_missing_keypad`**
-
-August lock is missing a keypad.
-
----
-
 **`august_lock_not_authorized`**
 
 Indicates that the user is not authorized to use the August lock.
-
----
-
-**`august_lock_temporarily_offline`**
-
-August lock is temporarily offline.
 
 ---
 
@@ -2547,12 +1929,6 @@ Indicates that the device is offline.
 **`device_removed`**
 
 Indicates that the device has been removed.
-
----
-
-**`dormakaba_oracode_invalid_time_range`**
-
-No Dormakaba Oracode user levels configured for the requested time range.
 
 ---
 
@@ -2604,24 +1980,6 @@ Admin role required—insufficient permissions to manage PINs on this device. Pl
 
 ---
 
-**`keynest_unsupported_third_party_locker`**
-
-KeyNest locker is not supported.
-
----
-
-**`kwikset_unable_to_confirm_code`**
-
-Unable to confirm that the access code is set on Kwikset device.
-
----
-
-**`kwikset_unable_to_confirm_deletion`**
-
-Unable to confirm the deletion of the access code on Kwikset device.
-
----
-
 **`lockly_missing_wifi_bridge`**
 
 Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
@@ -2664,18 +2022,6 @@ Salto site user is not subscribed.
 
 ---
 
-**`smartthings_failed_to_set_access_code`**
-
-Failed to set code on SmartThings device.
-
----
-
-**`smartthings_failed_to_set_after_multiple_retries`**
-
-Failed to set code after multiple retries.
-
----
-
 **`subscription_required`**
 
 Indicates that a subscription is required to connect.
@@ -2688,30 +2034,12 @@ Indicates that the lock is not paired with a gateway.
 
 ---
 
-**`wyze_duplicate_code_name`**
-
-Duplicate access code name detected.
-
----
-
-**`wyze_potential_duplicate_code`**
-
-Potential duplicate access code detected.
-
----
-
 
 ## Warnings
 
 **`access_code_inactive`**
 
 Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
-
----
-
-**`august_lock_temporarily_offline`**
-
-August lock is temporarily offline.
 
 ---
 
@@ -2745,12 +2073,6 @@ Algopins must be used within 24 hours.
 
 ---
 
-**`kwikset_unable_to_confirm_code`**
-
-Unable to confirm that the access code is set on Kwikset device.
-
----
-
 **`management_transferred`**
 
 Management was transferred to another workspace.
@@ -2769,33 +2091,15 @@ The Schlage device's timezone is ambiguous and this code's schedule crosses a da
 
 ---
 
-**`schlage_creation_outage`**
-
-Received an error when attempting to create this code.
-
----
-
 **`schlage_detected_duplicate`**
 
 Duplicate access code detected.
 
 ---
 
-**`smartthings_failed_to_set_access_code`**
-
-Failed to set code on SmartThings device.
-
----
-
 **`third_party_integration_detected`**
 
 Third-party integration detected that may cause access codes to fail.
-
----
-
-**`ultraloq_access_code_disabled`**
-
-Access code is disabled on Ultraloq device. Re-enable through the Ultraloq mobile app.
 
 ---
 
