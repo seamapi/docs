@@ -765,6 +765,9 @@ These items are deprecated.
 - `batch`
 - `event: access_code.created`
 - `event: access_code.changed`
+- `event: access_code.name_changed`
+- `event: access_code.code_changed`
+- `event: access_code.time_frame_changed`
 - `event: access_code.scheduled_on_device`
 - `event: access_code.set_on_device`
 - `event: access_code.removed_from_device`

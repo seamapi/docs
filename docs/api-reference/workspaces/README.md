@@ -333,6 +333,7 @@ A production workspace resource.
   "is_publishable_key_auth_enabled": true,
   "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Production Workspace",
+  "organization_id": "8f9c4d2e-1a3b-4c5d-6e7f-8a9b0c1d2e3f",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
 ```
@@ -357,6 +358,7 @@ A sandbox workspace resource.
   "is_publishable_key_auth_enabled": true,
   "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Sandbox Workspace",
+  "organization_id": "8f9c4d2e-1a3b-4c5d-6e7f-8a9b0c1d2e3f",
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
 ```
@@ -381,6 +383,7 @@ A workspace resource.
   "is_publishable_key_auth_enabled": true,
   "publishable_key": "seam_pk1fGd41X_zKs0ZELRTEc8nWxiBsEXAMPLE",
   "name": "My Sandbox Workspace",
+  "organization_id": null,
   "workspace_id": "6a0b6282-6a98-4fef-811e-0904c485ac7a"
 }
 ```
@@ -478,6 +481,15 @@ Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/wor
 **`name`** *String*
 
 Name of the [workspace](https://docs.seam.co/core-concepts/workspaces).
+
+
+
+
+---
+
+**`organization_id`** *UUID*
+
+ID of the organization to which the [workspace](https://docs.seam.co/core-concepts/workspaces) belongs, or `null` if the workspace is not assigned to an organization.
 
 
 

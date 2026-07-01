@@ -268,6 +268,12 @@ Name of the workspace.
 
 ---
 
+**`organization_id`** *String*
+
+ID of the organization to assign the workspace to. The authenticated user must be the owner of the workspace and an admin of the target organization.
+
+---
+
 
 ## Response
 

@@ -139,6 +139,240 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 </Accordion>
 
+## `access_code.name_changed`
+
+The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "description": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.name_changed",
+  "from": {},
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "to": {},
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="description" type="String">
+  Human-readable description of the change and its source.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.name_changed`
+</ResponseField>
+
+<ResponseField name="from" type="Object">
+  The from.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="to" type="Object">
+  The to.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `access_code.code_changed`
+
+The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "description": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.code_changed",
+  "from": {},
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "to": {},
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="description" type="String">
+  Human-readable description of the change and its source.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.code_changed`
+</ResponseField>
+
+<ResponseField name="from" type="Object">
+  The from.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="to" type="Object">
+  The to.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `access_code.time_frame_changed`
+
+The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "description": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.time_frame_changed",
+  "from": {},
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "to": {},
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="description" type="String">
+  Human-readable description of the change and its source.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.time_frame_changed`
+</ResponseField>
+
+<ResponseField name="from" type="Object">
+  The from.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="to" type="Object">
+  The to.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
 ## `access_code.scheduled_on_device`
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
