@@ -83,6 +83,63 @@ function hasEnumValues(
   )
 }
 
+/**
+ * Build an illustrative sample value for an event property from its format.
+ * Values are fixed (never random) so generated payloads are stable across
+ * runs; this mirrors the value conventions in load-data.ts.
+ */
+function sampleValue(prop: EventProperty): unknown {
+  if (hasEnumValues(prop) && prop.values.length > 0) {
+    return prop.values[0]?.name ?? ''
+  }
+  switch (prop.format) {
+    case 'id':
+      return '00000000-0000-0000-0000-000000000000'
+    case 'datetime':
+      return '2025-01-01T00:00:00.000Z'
+    case 'boolean':
+      return true
+    case 'number':
+      return 0
+    case 'list':
+      return []
+    case 'object':
+    case 'record':
+      return {}
+    case 'string':
+      return ''
+    default:
+      return null
+  }
+}
+
+/**
+ * Synthesize an example webhook payload for an event so readers can see its
+ * shape without triggering the event. `event_type` gets the concrete type and
+ * `event_description` echoes the event's description (matching the real
+ * payload); every other field gets a type-appropriate placeholder.
+ */
+function buildEventSample(event: EventResource): Record<string, unknown> {
+  const sample: Record<string, unknown> = {}
+  for (const prop of event.properties) {
+    if (prop.isUndocumented) continue
+    if (prop.name === 'event_type') {
+      sample[prop.name] = event.eventType
+    } else if (prop.name === 'event_description') {
+      sample[prop.name] = event.description.trim()
+    } else {
+      sample[prop.name] = sampleValue(prop)
+    }
+  }
+  return sample
+}
+
+/** Render an event's example payload as a JSON code block. */
+function renderEventSample(event: EventResource): string {
+  const json = JSON.stringify(buildEventSample(event), null, 2)
+  return ['```json Example webhook payload', json, '```'].join('\n')
+}
+
 /** Render a single event property as a Mintlify `<ResponseField>`. */
 function renderEventProperty(prop: EventProperty): string {
   const body: string[] = []
@@ -113,9 +170,9 @@ function renderEventProperty(prop: EventProperty): string {
 }
 
 /**
- * Render one event: its type and description, followed by a collapsible
- * `<Accordion>` of its properties. Mintlify strips raw `<details>` elements, so
- * the collapsible must use the native `<Accordion>` component.
+ * Render one event: its type and description, an example payload showing its
+ * shape, then a collapsible `<Accordion>` of its properties. Mintlify strips
+ * raw `<details>` elements, so the collapsible uses the native `<Accordion>`.
  */
 function renderEvent(event: EventResource): string {
   const properties = event.properties
@@ -127,6 +184,8 @@ function renderEvent(event: EventResource): string {
     `**\`${event.eventType}\`**`,
     '',
     event.description.trim(),
+    '',
+    renderEventSample(event),
     '',
     '<Accordion title="Properties">',
     '',

@@ -3695,6 +3695,27 @@ Indicates that the Wyze Lock is not connected to a gateway.
 
 A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "access_code_is_managed": true,
+  "action_attempt_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "lock.locked",
+  "is_via_bluetooth": true,
+  "is_via_nfc": true,
+  "method": "keycode",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_id" type="String (UUID)">
@@ -3770,6 +3791,31 @@ A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 **`lock.unlocked`**
 
 A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "access_code_is_managed": true,
+  "acs_entrance_id": "00000000-0000-0000-0000-000000000000",
+  "acs_system_id": "00000000-0000-0000-0000-000000000000",
+  "acs_user_id": "00000000-0000-0000-0000-000000000000",
+  "action_attempt_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "lock.unlocked",
+  "is_via_bluetooth": true,
+  "is_via_nfc": true,
+  "method": "keycode",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "user_identity_id": "00000000-0000-0000-0000-000000000000",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -3870,6 +3916,22 @@ A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
 **`lock.access_denied`**
 
 The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "lock.access_denied",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 

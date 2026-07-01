@@ -265,6 +265,21 @@ For granting a person access to a space, [Access Grants](https://docs.seam.co/us
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was created.
 
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.created",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_id" type="String (UUID)">
@@ -314,6 +329,23 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 **`access_code.changed`**
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "change_reason": "",
+  "changed_properties": [],
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.changed",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -373,6 +405,22 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
 
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "code": "",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.scheduled_on_device",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_id" type="String (UUID)">
@@ -426,6 +474,22 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 **`access_code.set_on_device`**
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was set on a device.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "code": "",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.set_on_device",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -481,6 +545,21 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was removed from a device.
 
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.removed_from_device",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_id" type="String (UUID)">
@@ -530,6 +609,27 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 **`access_code.delay_in_setting_on_device`**
 
 There was an unusually long delay in setting an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) on a device.
+
+```json Example webhook payload
+{
+  "access_code_errors": [],
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "access_code_warnings": [],
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.delay_in_setting_on_device",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -605,6 +705,27 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be set on a device.
 
+```json Example webhook payload
+{
+  "access_code_errors": [],
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "access_code_warnings": [],
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.failed_to_set_on_device",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_errors" type="Array">
@@ -679,6 +800,22 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) f
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted.
 
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "code": "",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.deleted",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_id" type="String (UUID)">
@@ -732,6 +869,27 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 **`access_code.delay_in_removing_from_device`**
 
 There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.
+
+```json Example webhook payload
+{
+  "access_code_errors": [],
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "access_code_warnings": [],
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.delay_in_removing_from_device",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -807,6 +965,27 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be removed from a device.
 
+```json Example webhook payload
+{
+  "access_code_errors": [],
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "access_code_warnings": [],
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.failed_to_remove_from_device",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_errors" type="Array">
@@ -881,6 +1060,21 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) f
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was modified outside of Seam.
 
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.modified_external_to_seam",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_id" type="String (UUID)">
@@ -931,6 +1125,21 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.
 
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.deleted_external_to_seam",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="access_code_id" type="String (UUID)">
@@ -980,6 +1189,22 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 **`access_code.backup_access_code_pulled`**
 
 A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.
+
+```json Example webhook payload
+{
+  "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "backup_access_code_id": "",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "access_code.backup_access_code_pulled",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 

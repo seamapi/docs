@@ -287,6 +287,19 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 
 An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was added.
 
+```json Example webhook payload
+{
+  "acs_entrance_id": "00000000-0000-0000-0000-000000000000",
+  "acs_system_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "acs_entrance.added",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="acs_entrance_id" type="String (UUID)">
@@ -328,6 +341,19 @@ An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/r
 **`acs_entrance.removed`**
 
 An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was removed.
+
+```json Example webhook payload
+{
+  "acs_entrance_id": "00000000-0000-0000-0000-000000000000",
+  "acs_system_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "acs_entrance.removed",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 

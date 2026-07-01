@@ -2387,6 +2387,21 @@ Represents a [device](https://docs.seam.co/core-concepts/devices) that has been 
 
 The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.connected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -2436,6 +2451,21 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 **`device.added`**
 
 A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.added",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -2487,6 +2517,21 @@ A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was 
 
 A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.converted_to_unmanaged",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -2536,6 +2581,26 @@ A managed device was successfully converted to an [unmanaged device](https://doc
 **`device.disconnected`**
 
 The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "error_code": "account_disconnected",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.disconnected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -2609,6 +2674,21 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 
 A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.tampered",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -2658,6 +2738,22 @@ A [device](https://docs.seam.co/core-concepts/devices) detected that it was tamp
 **`device.low_battery`**
 
 A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.
+
+```json Example webhook payload
+{
+  "battery_level": 0,
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.low_battery",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -2712,6 +2808,23 @@ A [device](https://docs.seam.co/core-concepts/devices) battery level dropped bel
 **`device.battery_status_changed`**
 
 A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last `battery_status_changed` event.
+
+```json Example webhook payload
+{
+  "battery_level": 0,
+  "battery_status": "critical",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.battery_status_changed",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -2773,6 +2886,21 @@ A [device](https://docs.seam.co/core-concepts/devices) battery status changed si
 
 A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.removed",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -2822,6 +2950,22 @@ A [device](https://docs.seam.co/core-concepts/devices) was removed externally fr
 **`device.deleted`**
 
 A [device](https://docs.seam.co/core-concepts/devices) was deleted.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_name": "",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.deleted",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -2877,6 +3021,21 @@ A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 
 Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.third_party_integration_detected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -2926,6 +3085,21 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is usi
 **`device.third_party_integration_no_longer_detected`**
 
 Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.third_party_integration_no_longer_detected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -2977,6 +3151,21 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no 
 
 A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) activated privacy mode.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.salto.privacy_mode_activated",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -3027,6 +3216,21 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 
 A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) deactivated privacy mode.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.salto.privacy_mode_deactivated",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -3076,6 +3280,25 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 **`device.connection_became_flaky`**
 
 Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.connection_became_flaky",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -3143,6 +3366,21 @@ Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) conne
 
 Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.connection_stabilized",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -3192,6 +3430,25 @@ Seam detected that a previously-flaky [device](https://docs.seam.co/core-concept
 **`device.error.subscription_required`**
 
 A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.error.subscription_required",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -3259,6 +3516,21 @@ A third-party subscription is required to use all [device](https://docs.seam.co/
 
 A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.error.subscription_required.resolved",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -3309,6 +3581,21 @@ A third-party subscription is active or no longer required to use all [device](h
 
 An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.accessory_keypad_connected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -3358,6 +3645,25 @@ An accessory keypad was connected to a [device](https://docs.seam.co/core-concep
 **`device.accessory_keypad_disconnected`**
 
 An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_errors": [],
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_warnings": [],
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.accessory_keypad_disconnected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -3425,6 +3731,22 @@ An accessory keypad was disconnected from a [device](https://docs.seam.co/core-c
 
 The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "device_name": "",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.name_changed",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
 <Accordion title="Properties">
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -3478,6 +3800,25 @@ The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 **`camera.activated`**
 
 A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.
+
+```json Example webhook payload
+{
+  "activation_reason": "motion_detected",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "camera.activated",
+  "image_url": "",
+  "motion_sub_type": "human",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "video_url": "",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
@@ -3548,6 +3889,23 @@ A [camera](https://docs.seam.co/core-concepts/devices) was activated, for exampl
 **`device.doorbell_rang`**
 
 A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "device.doorbell_rang",
+  "image_url": "",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "video_url": "",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
 
 <Accordion title="Properties">
 
