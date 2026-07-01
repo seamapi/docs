@@ -321,6 +321,14 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
   ID of the affected access code.
 </ResponseField>
 
+<ResponseField name="change_reason" type="String">
+  Human-readable reason for the change (e.g. `ongoing code auto-renewed`).
+</ResponseField>
+
+<ResponseField name="changed_properties" type="Array">
+  List of properties that changed on the access code.
+</ResponseField>
+
 <ResponseField name="connected_account_custom_metadata" type="Object">
   Custom metadata of the connected account, present when connected_account_id is provided.
 </ResponseField>
