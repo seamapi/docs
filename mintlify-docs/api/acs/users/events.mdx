@@ -5,7 +5,7 @@ description: 'Webhook events that Seam emits for the ACS User resource, with exa
 
 ## `acs_user.created`
 
-An access system user was created.
+An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created.
 
 ```json Example webhook payload
 {
@@ -51,14 +51,14 @@ An access system user was created.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `acs_user.deleted`
 
-An access system user was deleted.
+An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted.
 
 ```json Example webhook payload
 {
@@ -104,7 +104,7 @@ An access system user was deleted.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>

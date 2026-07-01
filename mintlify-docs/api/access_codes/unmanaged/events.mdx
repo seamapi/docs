@@ -5,7 +5,7 @@ description: 'Webhook events that Seam emits for the Unmanaged Access Codes reso
 
 ## `access_code.unmanaged.converted_to_managed`
 
-An unmanaged access code was converted successfully to a managed access code.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.
 
 ```json Example webhook payload
 {
@@ -33,7 +33,7 @@ An unmanaged access code was converted successfully to a managed access code.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -61,14 +61,14 @@ An unmanaged access code was converted successfully to a managed access code.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.unmanaged.failed_to_convert_to_managed`
 
-An unmanaged access code failed to be converted to a managed access code.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.
 
 ```json Example webhook payload
 {
@@ -114,7 +114,7 @@ An unmanaged access code failed to be converted to a managed access code.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -154,14 +154,14 @@ An unmanaged access code failed to be converted to a managed access code.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.unmanaged.created`
 
-An unmanaged access code was created on a device.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.
 
 ```json Example webhook payload
 {
@@ -189,7 +189,7 @@ An unmanaged access code was created on a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -217,14 +217,14 @@ An unmanaged access code was created on a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.unmanaged.removed`
 
-An unmanaged access code was removed from a device.
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.
 
 ```json Example webhook payload
 {
@@ -252,7 +252,7 @@ An unmanaged access code was removed from a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -280,7 +280,7 @@ An unmanaged access code was removed from a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>

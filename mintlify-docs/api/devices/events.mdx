@@ -5,7 +5,7 @@ description: 'Webhook events that Seam emits for the Device resource, with examp
 
 ## `device.connected`
 
-The status of a device changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
+The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
 
 ```json Example webhook payload
 {
@@ -29,7 +29,7 @@ The status of a device changed from offline to online. That is, the `device.prop
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -61,14 +61,14 @@ The status of a device changed from offline to online. That is, the `device.prop
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.added`
 
-A device was added to Seam or was re-added to Seam after having been removed.
+A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
 
 ```json Example webhook payload
 {
@@ -92,7 +92,7 @@ A device was added to Seam or was re-added to Seam after having been removed.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -124,14 +124,14 @@ A device was added to Seam or was re-added to Seam after having been removed.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.converted_to_unmanaged`
 
-A managed device was successfully converted to an unmanaged device.
+A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 
 ```json Example webhook payload
 {
@@ -155,7 +155,7 @@ A managed device was successfully converted to an unmanaged device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -187,14 +187,14 @@ A managed device was successfully converted to an unmanaged device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.disconnected`
 
-The status of a device changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
+The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
 
 ```json Example webhook payload
 {
@@ -227,7 +227,7 @@ The status of a device changed from online to offline. That is, the `device.prop
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -277,14 +277,14 @@ The status of a device changed from online to offline. That is, the `device.prop
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.tampered`
 
-A device detected that it was tampered with, for example, opened or moved.
+A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
 
 ```json Example webhook payload
 {
@@ -308,7 +308,7 @@ A device detected that it was tampered with, for example, opened or moved.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -340,14 +340,14 @@ A device detected that it was tampered with, for example, opened or moved.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.low_battery`
 
-A device battery level dropped below the low threshold.
+A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.
 
 ```json Example webhook payload
 {
@@ -376,7 +376,7 @@ A device battery level dropped below the low threshold.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -408,14 +408,14 @@ A device battery level dropped below the low threshold.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.battery_status_changed`
 
-A device battery status changed since the last `battery_status_changed` event.
+A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last `battery_status_changed` event.
 
 ```json Example webhook payload
 {
@@ -451,7 +451,7 @@ A device battery status changed since the last `battery_status_changed` event.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -483,14 +483,14 @@ A device battery status changed since the last `battery_status_changed` event.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.removed`
 
-A device was removed externally from the connected account.
+A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).
 
 ```json Example webhook payload
 {
@@ -514,7 +514,7 @@ A device was removed externally from the connected account.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -546,14 +546,14 @@ A device was removed externally from the connected account.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.deleted`
 
-A device was deleted.
+A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 
 ```json Example webhook payload
 {
@@ -578,7 +578,7 @@ A device was deleted.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -614,14 +614,14 @@ A device was deleted.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.third_party_integration_detected`
 
-Seam detected that a device is using a third-party integration that will interfere with Seam device management.
+Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
 
 ```json Example webhook payload
 {
@@ -645,7 +645,7 @@ Seam detected that a device is using a third-party integration that will interfe
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -677,14 +677,14 @@ Seam detected that a device is using a third-party integration that will interfe
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.third_party_integration_no_longer_detected`
 
-Seam detected that a device is no longer using a third-party integration that was interfering with Seam device management.
+Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
 
 ```json Example webhook payload
 {
@@ -708,7 +708,7 @@ Seam detected that a device is no longer using a third-party integration that wa
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -740,14 +740,14 @@ Seam detected that a device is no longer using a third-party integration that wa
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.salto.privacy_mode_activated`
 
-A Salto device activated privacy mode.
+A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) activated privacy mode.
 
 ```json Example webhook payload
 {
@@ -771,7 +771,7 @@ A Salto device activated privacy mode.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -803,14 +803,14 @@ A Salto device activated privacy mode.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.salto.privacy_mode_deactivated`
 
-A Salto device deactivated privacy mode.
+A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) deactivated privacy mode.
 
 ```json Example webhook payload
 {
@@ -834,7 +834,7 @@ A Salto device deactivated privacy mode.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -866,14 +866,14 @@ A Salto device deactivated privacy mode.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.connection_became_flaky`
 
-Seam detected a flaky device connection.
+Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.
 
 ```json Example webhook payload
 {
@@ -905,7 +905,7 @@ Seam detected a flaky device connection.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -949,14 +949,14 @@ Seam detected a flaky device connection.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.connection_stabilized`
 
-Seam detected that a previously-flaky device connection stabilized.
+Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.
 
 ```json Example webhook payload
 {
@@ -980,7 +980,7 @@ Seam detected that a previously-flaky device connection stabilized.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -1012,14 +1012,14 @@ Seam detected that a previously-flaky device connection stabilized.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.error.subscription_required`
 
-A third-party subscription is required to use all device features.
+A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.
 
 ```json Example webhook payload
 {
@@ -1051,7 +1051,7 @@ A third-party subscription is required to use all device features.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -1095,14 +1095,14 @@ A third-party subscription is required to use all device features.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.error.subscription_required.resolved`
 
-A third-party subscription is active or no longer required to use all device features.
+A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.
 
 ```json Example webhook payload
 {
@@ -1126,7 +1126,7 @@ A third-party subscription is active or no longer required to use all device fea
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -1158,14 +1158,14 @@ A third-party subscription is active or no longer required to use all device fea
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.accessory_keypad_connected`
 
-An accessory keypad was connected to a device.
+An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).
 
 ```json Example webhook payload
 {
@@ -1189,7 +1189,7 @@ An accessory keypad was connected to a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -1221,14 +1221,14 @@ An accessory keypad was connected to a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.accessory_keypad_disconnected`
 
-An accessory keypad was disconnected from a device.
+An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).
 
 ```json Example webhook payload
 {
@@ -1260,7 +1260,7 @@ An accessory keypad was disconnected from a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -1304,14 +1304,14 @@ An accessory keypad was disconnected from a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.name_changed`
 
-The name of a device was changed.
+The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 
 ```json Example webhook payload
 {
@@ -1336,7 +1336,7 @@ The name of a device was changed.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -1372,14 +1372,14 @@ The name of a device was changed.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `camera.activated`
 
-A camera was activated, for example, by motion detection.
+A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.
 
 ```json Example webhook payload
 {
@@ -1413,7 +1413,7 @@ A camera was activated, for example, by motion detection.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -1459,14 +1459,14 @@ A camera was activated, for example, by motion detection.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `device.doorbell_rang`
 
-A doorbell button was pressed on a device.
+A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).
 
 ```json Example webhook payload
 {
@@ -1492,7 +1492,7 @@ A doorbell button was pressed on a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -1532,7 +1532,7 @@ A doorbell button was pressed on a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>

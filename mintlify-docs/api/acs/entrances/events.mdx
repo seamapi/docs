@@ -5,7 +5,7 @@ description: 'Webhook events that Seam emits for the Entrance resource, with exa
 
 ## `acs_entrance.added`
 
-An access system entrance was added.
+An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was added.
 
 ```json Example webhook payload
 {
@@ -51,14 +51,14 @@ An access system entrance was added.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `acs_entrance.removed`
 
-An access system entrance was removed.
+An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was removed.
 
 ```json Example webhook payload
 {
@@ -104,7 +104,7 @@ An access system entrance was removed.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>

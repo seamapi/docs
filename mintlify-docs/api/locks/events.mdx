@@ -5,7 +5,7 @@ description: 'Webhook events that Seam emits for the Lock resource, with example
 
 ## `lock.locked`
 
-A lock was locked.
+A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 
 ```json Example webhook payload
 {
@@ -47,7 +47,7 @@ A lock was locked.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -93,14 +93,14 @@ A lock was locked.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `lock.unlocked`
 
-A lock was unlocked.
+A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
 
 ```json Example webhook payload
 {
@@ -164,7 +164,7 @@ A lock was unlocked.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -200,7 +200,7 @@ A lock was unlocked.
 </ResponseField>
 
 <ResponseField name="method" type="Enum (String)">
-  Method by which the lock was unlocked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.
+  Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.
 
   Possible values: `keycode`, `manual`, `automatic`, `unknown`, `remote`
 </ResponseField>
@@ -216,14 +216,14 @@ A lock was unlocked.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `lock.access_denied`
 
-The lock denied access to a user after one or more consecutive invalid attempts to unlock the device.
+The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
 
 ```json Example webhook payload
 {
@@ -252,7 +252,7 @@ The lock denied access to a user after one or more consecutive invalid attempts 
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the event.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -284,7 +284,7 @@ The lock denied access to a user after one or more consecutive invalid attempts 
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>

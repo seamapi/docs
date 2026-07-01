@@ -5,7 +5,7 @@ description: 'Webhook events that Seam emits for the Access Code resource, with 
 
 ## `access_code.created`
 
-An access code was created.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was created.
 
 ```json Example webhook payload
 {
@@ -33,7 +33,7 @@ An access code was created.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -61,14 +61,14 @@ An access code was created.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.changed`
 
-An access code was changed.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed.
 
 ```json Example webhook payload
 {
@@ -106,7 +106,7 @@ An access code was changed.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -134,14 +134,14 @@ An access code was changed.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.scheduled_on_device`
 
-An access code was scheduled natively on a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
 
 ```json Example webhook payload
 {
@@ -174,7 +174,7 @@ An access code was scheduled natively on a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -202,14 +202,14 @@ An access code was scheduled natively on a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.set_on_device`
 
-An access code was set on a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was set on a device.
 
 ```json Example webhook payload
 {
@@ -242,7 +242,7 @@ An access code was set on a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -270,14 +270,14 @@ An access code was set on a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.removed_from_device`
 
-An access code was removed from a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was removed from a device.
 
 ```json Example webhook payload
 {
@@ -305,7 +305,7 @@ An access code was removed from a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -333,14 +333,14 @@ An access code was removed from a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.delay_in_setting_on_device`
 
-There was an unusually long delay in setting an access code on a device.
+There was an unusually long delay in setting an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) on a device.
 
 ```json Example webhook payload
 {
@@ -386,7 +386,7 @@ There was an unusually long delay in setting an access code on a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -426,14 +426,14 @@ There was an unusually long delay in setting an access code on a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.failed_to_set_on_device`
 
-An access code failed to be set on a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be set on a device.
 
 ```json Example webhook payload
 {
@@ -479,7 +479,7 @@ An access code failed to be set on a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -519,14 +519,14 @@ An access code failed to be set on a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.deleted`
 
-An access code was deleted.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted.
 
 ```json Example webhook payload
 {
@@ -559,7 +559,7 @@ An access code was deleted.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -587,14 +587,14 @@ An access code was deleted.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.delay_in_removing_from_device`
 
-There was an unusually long delay in removing an access code from a device.
+There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.
 
 ```json Example webhook payload
 {
@@ -640,7 +640,7 @@ There was an unusually long delay in removing an access code from a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -680,14 +680,14 @@ There was an unusually long delay in removing an access code from a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.failed_to_remove_from_device`
 
-An access code failed to be removed from a device.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be removed from a device.
 
 ```json Example webhook payload
 {
@@ -733,7 +733,7 @@ An access code failed to be removed from a device.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="connected_account_warnings" type="Array">
@@ -773,14 +773,14 @@ An access code failed to be removed from a device.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.modified_external_to_seam`
 
-An access code was modified outside of Seam.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was modified outside of Seam.
 
 ```json Example webhook payload
 {
@@ -808,7 +808,7 @@ An access code was modified outside of Seam.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -836,14 +836,14 @@ An access code was modified outside of Seam.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.deleted_external_to_seam`
 
-An access code was deleted outside of Seam.
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.
 
 ```json Example webhook payload
 {
@@ -871,7 +871,7 @@ An access code was deleted outside of Seam.
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -899,14 +899,14 @@ An access code was deleted outside of Seam.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `access_code.backup_access_code_pulled`
 
-A backup access code was pulled from the backup access code pool and set on a device.
+A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.
 
 ```json Example webhook payload
 {
@@ -939,7 +939,7 @@ A backup access code was pulled from the backup access code pool and set on a de
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the connected account associated with the affected access code.
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -967,7 +967,7 @@ A backup access code was pulled from the backup access code pool and set on a de
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the workspace associated with the event.
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
 </ResponseField>
 
 </Accordion>
