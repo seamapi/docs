@@ -5,6 +5,48 @@ description: 'Errors and warnings that Seam reports on the Connected Account res
 
 ## Errors
 
+Each error is an object with the following shape:
+
+```json Example error
+{
+  "error_code": "account_disconnected",
+  "message": "Indicates that the account is disconnected.",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "is_bridge_error": true,
+  "is_connected_account_error": true
+}
+```
+
+<Accordion title="Error object properties">
+
+<ResponseField name="error_code" type="Enum (String)">
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+  One of the error codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the error.
+</ResponseField>
+
+<ResponseField name="is_bridge_error" type="Boolean">
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
+</ResponseField>
+
+<ResponseField name="is_connected_account_error" type="Boolean">
+  Indicates whether the error is related specifically to the connected account.
+</ResponseField>
+
+<ResponseField name="salto_ks_metadata" type="Object">
+  Salto KS metadata associated with the connected account that has an error.
+</ResponseField>
+
+</Accordion>
+
 **`account_disconnected`**
 
 Indicates that the account is disconnected.
@@ -30,6 +72,38 @@ Indicates that the maximum number of users allowed for the site has been reached
 ---
 
 ## Warnings
+
+Each warning is an object with the following shape:
+
+```json Example warning
+{
+  "warning_code": "scheduled_maintenance_window",
+  "message": "Indicates that scheduled downtime is planned for the connected account.",
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+<Accordion title="Warning object properties">
+
+<ResponseField name="warning_code" type="Enum (String)">
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+  One of the warning codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the warning.
+</ResponseField>
+
+<ResponseField name="salto_ks_metadata" type="Object">
+  Salto KS metadata associated with the connected account that has a warning.
+</ResponseField>
+
+</Accordion>
 
 **`account_reauthorization_requested`**
 

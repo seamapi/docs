@@ -4,6 +4,13 @@ import { join } from 'node:path'
 
 import type { Blueprint } from '@seamapi/blueprint'
 
+import {
+  formatType,
+  hasEnumValues,
+  indent,
+  sampleValue,
+} from './property-fields.js'
+
 /**
  * Generate event documentation for the API reference.
  *
@@ -38,80 +45,6 @@ const EVENT_OBJECT_ROUTE = '/events'
 
 type EventResource = Blueprint['events'][number]
 type EventProperty = EventResource['properties'][number]
-
-/**
- * Map a blueprint property format to the type label used across the API object
- * pages (e.g. `id` -> `String (UUID)`, `enum` -> `Enum (String)`). Mirrors
- * `formatPropertyType` in generate.ts so event properties read the same as the
- * resource properties above them.
- */
-function formatType(prop: EventProperty): string {
-  switch (prop.format) {
-    case 'id':
-      return 'String (UUID)'
-    case 'datetime':
-      return 'String (ISO 8601)'
-    case 'enum':
-      return 'Enum (String)'
-    case 'list':
-      return 'Array'
-    case 'boolean':
-      return 'Boolean'
-    case 'string':
-      return 'String'
-    case 'object':
-    case 'record':
-      return 'Object'
-    default:
-      return (prop as { jsonType?: string }).jsonType ?? 'String'
-  }
-}
-
-function indent(text: string, spaces: number): string {
-  const pad = ' '.repeat(spaces)
-  return text
-    .split('\n')
-    .map((line) => (line.trim() ? pad + line : line))
-    .join('\n')
-}
-
-function hasEnumValues(
-  prop: EventProperty,
-): prop is EventProperty & { values: Array<{ name: string }> } {
-  return (
-    'values' in prop && Array.isArray((prop as { values?: unknown }).values)
-  )
-}
-
-/**
- * Build an illustrative sample value for an event property from its format.
- * Values are fixed (never random) so generated payloads are stable across
- * runs; this mirrors the value conventions in load-data.ts.
- */
-function sampleValue(prop: EventProperty): unknown {
-  if (hasEnumValues(prop) && prop.values.length > 0) {
-    return prop.values[0]?.name ?? ''
-  }
-  switch (prop.format) {
-    case 'id':
-      return '00000000-0000-0000-0000-000000000000'
-    case 'datetime':
-      return '2025-01-01T00:00:00.000Z'
-    case 'boolean':
-      return true
-    case 'number':
-      return 0
-    case 'list':
-      return []
-    case 'object':
-    case 'record':
-      return {}
-    case 'string':
-      return ''
-    default:
-      return null
-  }
-}
 
 /**
  * Synthesize an example webhook payload for an event so readers can see its

@@ -4,6 +4,8 @@ import { join } from 'node:path'
 
 import type { Blueprint, DiscriminatedListProperty } from '@seamapi/blueprint'
 
+import { formatType, indent, sampleValue } from './property-fields.js'
+
 /**
  * Generate error and warning documentation for the API reference.
  *
@@ -17,9 +19,11 @@ import type { Blueprint, DiscriminatedListProperty } from '@seamapi/blueprint'
  *
  * This module restores them from `blueprint.resources[].properties` on every
  * `npm run generate:mintlify`, producing one combined `errors.mdx` page per
- * resource with an `## Errors` and an `## Warnings` section. A standalone page
- * (rather than a section on the object page) renders full width and matches the
- * layout the events pages use.
+ * resource with an `## Errors` and an `## Warnings` section. Each section opens
+ * with the object shape (an example payload plus a properties accordion) and
+ * then lists every code with its meaning. A standalone page (rather than a
+ * section on the object page) renders full width and matches the layout the
+ * events pages use.
  *
  * `update-nav.ts` wires the generated pages into the sidebar after their object
  * (and events) page. Link canonicalization (Phase G) runs afterward so
@@ -96,6 +100,110 @@ function groupCodes(prop: Property | undefined): CodeGroup[] {
 }
 
 /**
+ * Order an object's properties for display: the discriminator first, then
+ * `message` and `created_at`, then everything else alphabetically. Keeps the
+ * example payload and properties list readable and consistent across pages.
+ */
+function orderProperties(props: Property[], discriminator: string): Property[] {
+  const priority = [discriminator, 'message', 'created_at']
+  const rank = (name: string): number => {
+    const i = priority.indexOf(name)
+    return i === -1 ? priority.length : i
+  }
+  return [...props].sort(
+    (a, b) => rank(a.name) - rank(b.name) || a.name.localeCompare(b.name),
+  )
+}
+
+/**
+ * The union of properties across a discriminated list's variants, deduplicated
+ * by name (first occurrence wins). Variants share a core shape (`error_code` or
+ * `warning_code`, `message`, `created_at`) plus a few variant-specific flags, so
+ * the union documents every field a reader might encounter.
+ */
+function unionProperties(prop: DiscriminatedListProperty): Property[] {
+  const byName = new Map<string, Property>()
+  for (const variant of prop.variants) {
+    for (const p of variant.properties) {
+      if (!byName.has(p.name)) byName.set(p.name, p)
+    }
+  }
+  return orderProperties([...byName.values()], prop.discriminator)
+}
+
+/** Build an example object from one variant: the concrete code and its message,
+ * with fixed sample values for the rest. */
+function buildExample(
+  variant: DiscriminatedListProperty['variants'][number],
+  discriminator: string,
+  code: string,
+): Record<string, unknown> {
+  const example: Record<string, unknown> = {}
+  for (const p of orderProperties(variant.properties, discriminator)) {
+    if (p.name === discriminator) example[p.name] = code
+    else if (p.name === 'message') {
+      example[p.name] = (variant.description ?? '').trim()
+    } else example[p.name] = sampleValue(p)
+  }
+  return example
+}
+
+/** Render one property of the object shape as a Mintlify `<ResponseField>`. */
+function renderShapeProperty(
+  prop: Property,
+  discriminator: string,
+  kind: string,
+): string {
+  const body = [
+    (prop.description ?? '').trim() || `The ${prop.name.replace(/_/g, ' ')}.`,
+  ]
+  if (prop.name === discriminator) {
+    body.push('', `One of the ${kind} codes listed below.`)
+  }
+  return [
+    `<ResponseField name="${prop.name}" type="${formatType(prop)}">`,
+    indent(body.join('\n'), 2),
+    '</ResponseField>',
+  ].join('\n')
+}
+
+/**
+ * Render the object shape for a section: an example payload (built from the
+ * first variant) and an accordion documenting every property. Returns '' when
+ * the property is missing or has no variants.
+ */
+function renderObjectShape(prop: Property | undefined, kind: string): string {
+  if (!isDiscriminatedListProperty(prop)) return ''
+  const first = prop.variants[0]
+  if (first == null) return ''
+
+  const code = variantCode(first, prop.discriminator) ?? ''
+  const json = JSON.stringify(
+    buildExample(first, prop.discriminator, code),
+    null,
+    2,
+  )
+  const fields = unionProperties(prop)
+    .map((p) => renderShapeProperty(p, prop.discriminator, kind))
+    .join('\n\n')
+  const title = kind.charAt(0).toUpperCase() + kind.slice(1)
+
+  return [
+    `Each ${kind} is an object with the following shape:`,
+    '',
+    `\`\`\`json Example ${kind}`,
+    json,
+    '```',
+    '',
+    `<Accordion title="${title} object properties">`,
+    '',
+    fields,
+    '',
+    '</Accordion>',
+  ].join('\n')
+}
+
+/**
  * Render one code entry as bold code plus its description, matching the
  * original GitBook layout.
  */
@@ -105,10 +213,21 @@ function renderEntry(entry: CodeEntry): string {
   return [`**\`${entry.code}\`**`, '', description, '', '---'].join('\n')
 }
 
-/** Render an `## Errors` or `## Warnings` section, or '' when there are none. */
-function renderSection(title: string, groups: CodeGroup[]): string {
+/**
+ * Render an `## Errors` or `## Warnings` section: the object shape followed by
+ * every code with its meaning. Returns '' when there are no codes. `kind` is the
+ * singular noun (`error`/`warning`) used in prose.
+ */
+function renderSection(
+  title: string,
+  kind: string,
+  prop: Property | undefined,
+  groups: CodeGroup[],
+): string {
   if (groups.length === 0) return ''
   const blocks: string[] = [`## ${title}`]
+  const shape = renderObjectShape(prop, kind)
+  if (shape) blocks.push(shape)
   for (const group of groups) {
     if (group.name != null) blocks.push(`### ${group.name}`)
     for (const entry of group.entries) blocks.push(renderEntry(entry))
@@ -191,12 +310,10 @@ export async function updateErrorPages(
   for (const resource of blueprint.resources) {
     if (resource.isUndocumented) continue
 
-    const errorGroups = groupCodes(
-      resource.properties.find((p) => p.name === 'errors'),
-    )
-    const warningGroups = groupCodes(
-      resource.properties.find((p) => p.name === 'warnings'),
-    )
+    const errorsProp = resource.properties.find((p) => p.name === 'errors')
+    const warningsProp = resource.properties.find((p) => p.name === 'warnings')
+    const errorGroups = groupCodes(errorsProp)
+    const warningGroups = groupCodes(warningsProp)
     if (errorGroups.length === 0 && warningGroups.length === 0) continue
 
     const resourceDir = join(docsDir, 'api', resource.routePath.slice(1))
@@ -213,8 +330,8 @@ export async function updateErrorPages(
     const noun = resourceNoun(objectContent, resource.routePath)
     const page = renderPage(
       noun,
-      renderSection('Errors', errorGroups),
-      renderSection('Warnings', warningGroups),
+      renderSection('Errors', 'error', errorsProp, errorGroups),
+      renderSection('Warnings', 'warning', warningsProp, warningGroups),
     )
     await writeFile(join(resourceDir, 'errors.mdx'), page)
     routes.push(resource.routePath)

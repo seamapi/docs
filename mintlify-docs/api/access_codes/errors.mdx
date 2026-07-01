@@ -5,6 +5,67 @@ description: 'Errors and warnings that Seam reports on the Access Code resource,
 
 ## Errors
 
+Each error is an object with the following shape:
+
+```json Example error
+{
+  "error_code": "provider_issue",
+  "message": "Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "is_access_code_error": true
+}
+```
+
+<Accordion title="Error object properties">
+
+<ResponseField name="error_code" type="Enum (String)">
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+  One of the error codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the error.
+</ResponseField>
+
+<ResponseField name="change_type" type="Enum (String)">
+  Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.
+</ResponseField>
+
+<ResponseField name="is_access_code_error" type="Boolean">
+  Indicates that this is an access code error.
+</ResponseField>
+
+<ResponseField name="is_bridge_error" type="Boolean">
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
+</ResponseField>
+
+<ResponseField name="is_connected_account_error" type="Boolean">
+  Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts/object) error.
+</ResponseField>
+
+<ResponseField name="is_device_error" type="Boolean">
+  Indicates that the error is not a device error.
+</ResponseField>
+
+<ResponseField name="managed_access_code_id" type="String (UUID)">
+  ID of the managed access code that conflicts with this managed access code, when Seam can identify it.
+</ResponseField>
+
+<ResponseField name="modified_fields" type="Array">
+  List of fields that were changed externally, with their previous and new values.
+</ResponseField>
+
+<ResponseField name="unmanaged_access_code_id" type="String (UUID)">
+  ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.
+</ResponseField>
+
+</Accordion>
+
 **`access_code_inactive`**
 
 Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
@@ -180,6 +241,42 @@ Indicates that the auxiliary heat is running.
 ---
 
 ## Warnings
+
+Each warning is an object with the following shape:
+
+```json Example warning
+{
+  "warning_code": "provider_issue",
+  "message": "Indicates a provider-specific issue that may affect the access code. Check the warning message for details.",
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+<Accordion title="Warning object properties">
+
+<ResponseField name="warning_code" type="Enum (String)">
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+  One of the warning codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the warning.
+</ResponseField>
+
+<ResponseField name="change_type" type="Enum (String)">
+  Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.
+</ResponseField>
+
+<ResponseField name="modified_fields" type="Array">
+  List of fields that were changed externally, with their previous and new values.
+</ResponseField>
+
+</Accordion>
 
 **`access_code_inactive`**
 

@@ -5,6 +5,34 @@ description: 'Errors and warnings that Seam reports on the ACS User resource, ea
 
 ## Errors
 
+Each error is an object with the following shape:
+
+```json Example error
+{
+  "error_code": "deleted_externally",
+  "message": "Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems) outside of Seam.",
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+<Accordion title="Error object properties">
+
+<ResponseField name="error_code" type="Enum (String)">
+  The error code.
+
+  One of the error codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the error.
+</ResponseField>
+
+</Accordion>
+
 **`deleted_externally`**
 
 Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems) outside of Seam.
@@ -42,6 +70,34 @@ Indicates that the [access system user](https://docs.seam.co/low-level-apis/acce
 ---
 
 ## Warnings
+
+Each warning is an object with the following shape:
+
+```json Example warning
+{
+  "warning_code": "being_deleted",
+  "message": "Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems). This is a temporary state, and the access system user will be deleted shortly.",
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+<Accordion title="Warning object properties">
+
+<ResponseField name="warning_code" type="Enum (String)">
+  The warning code.
+
+  One of the warning codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the warning.
+</ResponseField>
+
+</Accordion>
 
 **`being_deleted`**
 
