@@ -398,6 +398,7 @@
                 "pages": [
                   "api/access_grants/object",
                   "api/access_grants/events",
+                  "api/access_grants/errors",
                   "POST /access_grants/request_access_methods",
                   "POST /access_grants/create",
                   "POST /access_grants/delete",
@@ -420,6 +421,7 @@
                 "pages": [
                   "api/access_methods/object",
                   "api/access_methods/events",
+                  "api/access_methods/errors",
                   "POST /access_methods/assign_card",
                   "POST /access_methods/delete",
                   "POST /access_methods/encode",
@@ -446,6 +448,7 @@
                 "pages": [
                   "api/devices/object",
                   "api/devices/events",
+                  "api/devices/errors",
                   "POST /devices/get",
                   "POST /devices/list_device_providers",
                   "POST /devices/list",
@@ -467,6 +470,7 @@
                     "pages": [
                       "api/devices/unmanaged/object",
                       "api/devices/unmanaged/events",
+                      "api/devices/unmanaged/errors",
                       "POST /devices/unmanaged/get",
                       "POST /devices/unmanaged/list",
                       "POST /devices/unmanaged/update"
@@ -576,6 +580,7 @@
                     "pages": [
                       "api/acs/access_groups/object",
                       "api/acs/access_groups/events",
+                      "api/acs/access_groups/errors",
                       "POST /acs/access_groups/add_user",
                       "POST /acs/access_groups/get",
                       "POST /acs/access_groups/list",
@@ -590,6 +595,7 @@
                     "pages": [
                       "api/acs/users/object",
                       "api/acs/users/events",
+                      "api/acs/users/errors",
                       "POST /acs/users/add_to_access_group",
                       "POST /acs/users/create",
                       "POST /acs/users/delete",
@@ -608,6 +614,7 @@
                     "pages": [
                       "api/acs/credentials/object",
                       "api/acs/credentials/events",
+                      "api/acs/credentials/errors",
                       "POST /acs/credentials/assign",
                       "POST /acs/credentials/create",
                       "POST /acs/credentials/delete",
@@ -639,6 +646,7 @@
                     "pages": [
                       "api/acs/entrances/object",
                       "api/acs/entrances/events",
+                      "api/acs/entrances/errors",
                       "POST /acs/entrances/get",
                       "POST /acs/entrances/grant_access",
                       "POST /acs/entrances/list_credentials_with_access",
@@ -651,6 +659,7 @@
                     "pages": [
                       "api/acs/systems/object",
                       "api/acs/systems/events",
+                      "api/acs/systems/errors",
                       "POST /acs/systems/get",
                       "POST /acs/systems/list",
                       "POST /acs/systems/list_compatible_credential_manager_acs_systems",
@@ -680,6 +689,7 @@
                 "pages": [
                   "api/connected_accounts/object",
                   "api/connected_accounts/events",
+                  "api/connected_accounts/errors",
                   "POST /connected_accounts/delete",
                   "POST /connected_accounts/get",
                   "POST /connected_accounts/list",
@@ -697,6 +707,7 @@
                 "group": "User Identities",
                 "pages": [
                   "api/user_identities/object",
+                  "api/user_identities/errors",
                   "POST /user_identities/add_acs_user",
                   "POST /user_identities/create",
                   "POST /user_identities/delete",
@@ -817,6 +828,7 @@
                 "pages": [
                   "api/access_codes/object",
                   "api/access_codes/events",
+                  "api/access_codes/errors",
                   "POST /access_codes/create",
                   "POST /access_codes/create_multiple",
                   "POST /access_codes/delete",
@@ -838,6 +850,7 @@
                     "pages": [
                       "api/access_codes/unmanaged/object",
                       "api/access_codes/unmanaged/events",
+                      "api/access_codes/unmanaged/errors",
                       "POST /access_codes/unmanaged/convert_to_managed",
                       "POST /access_codes/unmanaged/delete",
                       "POST /access_codes/unmanaged/get",
