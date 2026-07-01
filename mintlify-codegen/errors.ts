@@ -131,8 +131,18 @@ function unionProperties(prop: DiscriminatedListProperty): Property[] {
   return orderProperties([...byName.values()], prop.discriminator)
 }
 
-/** Build an example object from one variant: the concrete code and its message,
- * with fixed sample values for the rest. */
+/** Strip Markdown link and inline-code syntax so a description reads as the
+ * plain-text string an API `message` field would actually contain
+ * (`[access grant](https://…)` -> `access grant`). */
+function toPlainText(md: string): string {
+  return md
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .trim()
+}
+
+/** Build an example object from one variant: the concrete code and a plain-text
+ * message, with fixed sample values for the rest. */
 function buildExample(
   variant: DiscriminatedListProperty['variants'][number],
   discriminator: string,
@@ -142,7 +152,8 @@ function buildExample(
   for (const p of orderProperties(variant.properties, discriminator)) {
     if (p.name === discriminator) example[p.name] = code
     else if (p.name === 'message') {
-      example[p.name] = (variant.description ?? '').trim()
+      example[p.name] =
+        toPlainText(variant.description ?? '') || 'A human-readable message.'
     } else example[p.name] = sampleValue(p)
   }
   return example
