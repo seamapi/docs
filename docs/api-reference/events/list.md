@@ -357,6 +357,9 @@ Types of the events that you want to list.
 Possible enum values:
 - <code>access_code.created</code>
 - <code>access_code.changed</code>
+- <code>access_code.name_changed</code>
+- <code>access_code.code_changed</code>
+- <code>access_code.time_frame_changed</code>
 - <code>access_code.scheduled_on_device</code>
 - <code>access_code.set_on_device</code>
 - <code>access_code.removed_from_device</code>

@@ -2712,6 +2712,183 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 ---
 
+**`access_code.name_changed`**
+
+The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>access_code_id</code></strong> <i>UUID</i>
+
+  ID of the affected access code.
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>description</code></strong> <i>String</i>
+
+  Human-readable description of the change and its source.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the affected access code.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `access_code.name_changed`
+
+<strong><code>from</code></strong> <i>Object</i>
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>to</code></strong> <i>Object</i>
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</details>
+
+---
+
+**`access_code.code_changed`**
+
+The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>access_code_id</code></strong> <i>UUID</i>
+
+  ID of the affected access code.
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>description</code></strong> <i>String</i>
+
+  Human-readable description of the change and its source.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the affected access code.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `access_code.code_changed`
+
+<strong><code>from</code></strong> <i>Object</i>
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>to</code></strong> <i>Object</i>
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</details>
+
+---
+
+**`access_code.time_frame_changed`**
+
+The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+
+<details>
+
+<summary>Properties</summary>
+
+<strong><code>access_code_id</code></strong> <i>UUID</i>
+
+  ID of the affected access code.
+
+<strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the connected account, present when connected_account_id is provided.
+
+<strong><code>connected_account_id</code></strong> <i>UUID</i>
+
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+
+<strong><code>created_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event was created.
+
+<strong><code>description</code></strong> <i>String</i>
+
+  Human-readable description of the change and its source.
+
+<strong><code>device_custom_metadata</code></strong> <i>Record</i>
+
+  Custom metadata of the device, present when device_id is provided.
+
+<strong><code>device_id</code></strong> <i>UUID</i>
+
+  ID of the device associated with the affected access code.
+
+<strong><code>event_id</code></strong> <i>UUID</i>
+
+  ID of the event.
+
+<strong><code>event_type</code></strong> <i>Enum</i>
+
+  Value: `access_code.time_frame_changed`
+
+<strong><code>from</code></strong> <i>Object</i>
+
+<strong><code>occurred_at</code></strong> <i>Datetime</i>
+
+  Date and time at which the event occurred.
+
+<strong><code>to</code></strong> <i>Object</i>
+
+<strong><code>workspace_id</code></strong> <i>UUID</i>
+
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</details>
+
+---
+
 **`access_code.scheduled_on_device`**
 
 An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
